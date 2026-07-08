@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/paidInFullReservationDialog.tsx",
+  "paidConfirmTitle": "Mark as Paid in Full",
+  "paidConfirmDescription": "Are you sure you want to mark this reservation as paid in full?",
+  "cancel": "Cancel",
+  "confirmPaid": "Mark as Paid",
+  "axios": {
+    "start": {
+      "title": "Updating reservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reservation marked as paid in full",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update reservation",
+      "time": 3000
+    }
+  }
+}

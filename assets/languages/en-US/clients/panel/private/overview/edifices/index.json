@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/edifices/index.tsx",
+  "title": "Edifices",
+  "description": "Buildings, floors and unit distribution.",
+  "failTitle": "Failed to load",
+  "failDescription": "Could not load dashboard. Click to retry.",
+  "totalEdifices": "Total edifices",
+  "totalEdificesDesc": "Number of buildings",
+  "totalFloors": "Floors",
+  "totalFloorsDesc": "Total floors",
+  "totalUnits": "Total units",
+  "totalUnitsDesc": "All units across edifices",
+  "avgFloorsPerEdifice": "Avg. floors per edifice",
+  "avgFloorsPerEdificeDesc": "Total floors ÷ edifices",
+  "unitsByStatus": "Units by status",
+  "available": "Available",
+  "reserved": "Reserved",
+  "sold": "Sold",
+  "unavailable": "Unavailable",
+  "avgUnitsPerEdifice": "Avg. units per edifice",
+  "avgUnitsPerEdificeDesc": "Total units ÷ edifices",
+  "edificeCards": "Edifices"
+}

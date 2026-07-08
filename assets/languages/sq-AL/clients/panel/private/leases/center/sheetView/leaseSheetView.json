@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx",
+  "lease": "Qira",
+  "overview": "Përmbledhje",
+  "status": "Statusi",
+  "startDate": "Data e fillimit",
+  "endDate": "Data e mbarimit",
+  "monthlyRent": "Qiraja mujore",
+  "depositPaid": "Depozita e paguar"
+}

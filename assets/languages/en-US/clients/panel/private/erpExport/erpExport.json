@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/erpExport/erpExport.tsx",
+  "title": "ERP / Accounting Export",
+  "description": "Export financial data to JSON or CSV for import into your accounting or ERP system.",
+  "datasetsLabel": "Datasets",
+  "datasetsPlaceholder": "Select datasets to export",
+  "dateFromLabel": "Date from",
+  "dateToLabel": "Date to",
+  "projectLabel": "Project",
+  "projectPlaceholder": "All projects",
+  "formatLabel": "Format",
+  "formatJson": "JSON (preview in browser)",
+  "formatCsv": "CSV (download file)",
+  "exportJson": "Preview JSON",
+  "exportCsv": "Export & Download CSV",
+  "exporting": "Exporting...",
+  "noData": "No data found for the selected filters.",
+  "datasetsRequired": "Select at least one dataset.",
+  "exportFailed": "Export failed",
+  "rowsExported": "{count} total rows — exported at {date}",
+  "dataset": {
+    "sales": "Sales",
+    "commissions": "Commissions",
+    "paymentPlans": "Payment Plan Installments",
+    "rentalPayments": "Rental Payments",
+    "unitCosts": "Unit Costs"
+  },
+  "preview": {
+    "sales": "Sales",
+    "commissions": "Commissions",
+    "paymentPlans": "Payment Plan Installments",
+    "rentalPayments": "Rental Payments",
+    "unitCosts": "Unit Costs",
+    "rows": "{count} rows"
+  }
+}

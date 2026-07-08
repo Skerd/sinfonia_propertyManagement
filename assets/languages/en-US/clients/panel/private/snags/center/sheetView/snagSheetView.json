@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/center/sheetView/snagSheetView.tsx",
+  "failedTitle": "Failed to load snag",
+  "failedDescription": "Something went wrong while loading this snag. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "snag": "Snag",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "unit": "Unit",
+  "location": "Location",
+  "status": "Status",
+  "severity": "Severity",
+  "reportedBy": "Reported by",
+  "assignedTo": "Assigned to",
+  "dueDate": "Due date",
+  "resolvedAt": "Resolved at",
+  "description": "Description",
+  "notes": "Notes",
+  "photos": "Photos",
+  "none": "None",
+  "statuses": {
+    "open": "Open",
+    "in_progress": "In Progress",
+    "resolved": "Resolved",
+    "rejected": "Rejected"
+  },
+  "severities": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "critical": "Critical"
+  }
+}

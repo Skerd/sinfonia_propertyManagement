@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/manualReservationClientEmailDialog.tsx",
+  "cancel": "Anulo",
+  "confirmSend": "Dërgo email",
+  "confirmTitles": {
+    "send_confirmation": "Të ridërgohet email i konfirmimit?",
+    "remind_3d": "Të dërgohet rikujtesa “3 ditë përpara”?",
+    "remind_1d": "Të dërgohet rikujtesa “1 ditë përpara”?",
+    "remind_today": "Të dërgohet rikujtesa e ditës së skadimit?",
+    "remind_remaining_days": "Të dërgohet rikujtesa me ditët e mbetura?",
+    "send_expired": "Të dërgohet emaili “rezervimi ka skaduar”?"
+  },
+  "confirmDescriptions": {
+    "send_confirmation": "Dërgon të njëjtin mesazh konfirmimi si në krijim (te emaili i klientit).",
+    "remind_3d": "Përdor shabllonin standard “3 ditë para përfundimit”.",
+    "remind_1d": "Përdor shabllonin standard “1 ditë para përfundimit”.",
+    "remind_today": "Përdor shabllonin standard “përfundon sot”.",
+    "remind_remaining_days": "Dërgon email me ditët e mbetura kalendarike (UTC) deri në datën e përfundimit.",
+    "send_expired": "Dërgon njoftimin që periudha e rezervimit ka përfunduar (pas datës së skadimit në UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Duke dërguar emailin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Emaili u dërgua me sukses",
+      "time": 3000
+    },
+    "error": {
+      "title": "Emaili nuk mund të dërgohej",
+      "time": 3000
+    }
+  }
+}

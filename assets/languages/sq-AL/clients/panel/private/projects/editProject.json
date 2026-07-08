@@ -1,0 +1,57 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Projekti nuk mund të përditësohej, ju lutemi provoni përsëri!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Projekti po përditësohet"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Projekti u përditësua me sukses!"
+    }
+  },
+  "commissions": "Normat e komisionit",
+  "currentImage": "Imazhi aktual",
+  "editDescription": "Redaktoni informacionin e projektit",
+  "title": "Redakto projektin",
+  "description": "Redaktoni informacionin e projektit",
+  "editTitle": "Redakto projektin",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të projektit. Ju lutemi provoni përsëri.",
+  "errorTitle": "Ngarkimi i projektit dështoi",
+  "form": {
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Fut përshkrimin e projektit",
+    "imageGalleryLabel": "Galeria e Imazheve",
+    "mainImageLabel": "Imazhi kryesor",
+    "mainImageRequired": "Kërkohet imazhi kryesor",
+    "nameLabel": "Emri i projektit",
+    "namePlaceholder": "Fut emrin e projektit",
+    "nameRequired": "Kërkohet emri i projektit",
+    "reservationCommissionRateLabel": "komisioni i rezervimit (%)",
+    "reservationCommissionRatePlaceholder": "0–100, opsionale",
+    "saleCommissionRateLabel": "Komisioni i shitjes (%)",
+    "saleCommissionRatePlaceholder": "0–100, opsionale",
+    "uploadNewImageHint": "Ngarko një imazh të ri për të zëvendësuar atë aktual",
+    "uploadNewImagesHint": "Ngarko imazhe të reja për t'i shtuar në galeri",
+    "uploadNewVideosHint": "Ngarko video të reja për t'i shtuar në galeri",
+    "videoGalleryLabel": "Video Galeria",
+    "mediaFilesLabel": "Dokumente & Skedarë",
+    "marketingBookletLabel": "Broshurë Marketingu"
+  },
+  "generalInfo": "Informacione të Përgjithshme",
+  "media": "Media",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
+  "uploadError": "Ngarkimi i skedarëve të medias dështoi",
+  "videosUploaded": "videot e ngarkuara",
+  "formHeader": {
+    "title": "Redakto projektin",
+    "description": "Redaktoni informacionin e projektit"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  }
+}

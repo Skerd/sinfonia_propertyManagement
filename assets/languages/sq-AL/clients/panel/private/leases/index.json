@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/index.tsx",
+  "title": "Kontratat e Qirasë",
+  "description": "Marrëveshjet e qirasë",
+  "createLease": "Kontratë e Re",
+  "noData": "Nuk u gjetën kontrata qiraje",
+  "failTitle": "Dështoi ngarkimi i kontratave",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të kontratave. Ju lutemi provoni sërish.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Referenca",
+    "unit": "Njësia",
+    "tenant": "Qiramarrësi",
+    "startDate": "Data e fillimit",
+    "endDate": "Data e mbarimit",
+    "monthlyRent": "Qiraja mujore",
+    "rentCurrency": "Monedha",
+    "depositAmount": "Depozita",
+    "depositPaid": "Depozita paguar",
+    "status": "Statusi",
+    "!enums": {
+      "status": {
+        "active": "Aktiv",
+        "expired": "Skaduar",
+        "terminated": "Ndërprerë"
+      }
+    }
+  }
+}

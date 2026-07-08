@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/cancelReservationDialog.tsx",
+  "cancelConfirmTitle": "Anulo rezervimin",
+  "cancelConfirmDescription": "Jeni i sigurt që dëshironi ta anuloni këtë rezervim? Ju lutemi jepni një arsye për anulimin.",
+  "cancelConfirmDescriptionNoReason": "Jeni i sigurt që dëshironi ta anuloni këtë rezervim?",
+  "cancellationReasonLabel": "Arsyeja e anulimit",
+  "cancellationReasonPlaceholder": "Shkruani arsyen e anulimit të këtij rezervimi...",
+  "cancel": "Anulo",
+  "confirmCancel": "Anulo rezervimin",
+  "axios": {
+    "start": {
+      "title": "Anulimi i rezervimit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rezervimi u anulua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rezervimi nuk mund të anulohej",
+      "time": 3000
+    }
+  }
+}

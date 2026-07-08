@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/edificesOverlay.tsx",
+  "title": "Edifice polygons overlay",
+  "description": "All edifice polygons displayed on the project main image.",
+  "noMainImage": "Project does not have a main image.",
+  "noEdificeSelected": "No edifice selected."
+}

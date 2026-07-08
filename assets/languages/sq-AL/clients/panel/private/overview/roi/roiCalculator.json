@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/roi/roiCalculator.tsx",
+  "roiCalculator": {
+    "title": "Llogaritësi ROI",
+    "description": "Llogarit kthimin nga investimi për njësi ose projekt bazuar në kostot dhe të ardhurat nga shitja/qiraja."
+  },
+  "projectLabel": "Projekti",
+  "projectPlaceholder": "Zgjidhni projektin...",
+  "edificeLabel": "Ndërtesa",
+  "edificePlaceholder": "Zgjidhni ndërtesën...",
+  "floorLabel": "Kati",
+  "floorPlaceholder": "Zgjidhni katin...",
+  "unitLabel": "Njësia",
+  "unitPlaceholder": "Zgjidhni njësinë (llogarit automatikisht)...",
+  "summary": "Përmbledhje",
+  "noResults": "Nuk u gjet asnjë njësi.",
+  "computedAt": "Llogaritur më",
+  "exportPdf": "Eksporto PDF",
+  "exportPdfLoading": "Duke gjeneruar PDF…",
+  "error": "Llogaritja e ROI dështoi. Ju lutemi provoni përsëri.",
+  "selectUnitHint": "Zgjidhni një njësi për të llogaritur ROI-në. Ndërtesa dhe kati ngushtojnë listën e njësive.",
+  "columns": {
+    "unit": "Njësia",
+    "status": "Statusi",
+    "salePrice": "Çmimi i shitjes",
+    "totalCosts": "Kosto totale",
+    "netProfit": "Fitimi neto",
+    "roi": "ROI %",
+    "monthlyRent": "Qiraja mujore",
+    "yield": "Rendimenti %"
+  },
+  "projectSummary": {
+    "totalUnits": "Njësi gjithsej",
+    "sold": "Shitur",
+    "available": "Disponibël",
+    "rented": "Me qira",
+    "totalRevenue": "Të ardhura totale",
+    "totalCosts": "Kosto totale",
+    "netProfit": "Fitimi neto",
+    "roi": "ROI",
+    "averageRoi": "ROI mesatar"
+  },
+  "pdf": {
+    "scope": "Fusha",
+    "unitsSection": "Detajet e njësive",
+    "chartsSection": "Grafikët"
+  },
+  "charts": {
+    "financialTitle": "Të ardhura vs kosto",
+    "unitsByStatusTitle": "Njësitë sipas statusit",
+    "totalUnits": "Totali",
+    "otherUnits": "Të tjera"
+  }
+}

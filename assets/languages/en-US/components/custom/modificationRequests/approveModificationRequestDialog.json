@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/approveModificationRequestDialog.tsx",
+  "title": "Approve",
+  "approveConfirmTitle": "Approve Modification Request",
+  "approveConfirmDescription": "Review and make a decision for this modification request at the {stage} stage.",
+  "stageLabel": "Approval Stage",
+  "architectStage": "Architect",
+  "engineerStage": "Engineer",
+  "ceoStage": "CEO",
+  "decisionLabel": "Decision",
+  "decisionPlaceholder": "Select decision",
+  "materialsPlanLabel": "Engineer Materials Plan",
+  "materialsPlanEmptyHint": "No materials plan available for this request yet.",
+  "materialsPlanAddPlaceholder": "Add engineer material item",
+  "rejectReasonLabel": "Reject Reason",
+  "rejectReasonPlaceholder": "Select reject reason",
+  "rejectReasonDesign": "Design",
+  "rejectReasonTechnical": "Technical",
+  "rejectReasonBudget": "Budget",
+  "rejectReasonOther": "Other",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Enter approval notes (optional)",
+  "mediaLabel": "Attachments",
+  "addFile": "Add file",
+  "approve": "Approve",
+  "reject": "Reject",
+  "cancel": "Cancel",
+  "confirmButton": "Submit Decision",
+  "axios": {
+    "start": {
+      "title": "Submitting decision…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Decision submitted",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not submit decision",
+      "time": 3000
+    }
+  }
+}

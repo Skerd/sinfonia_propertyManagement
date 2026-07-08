@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Kontrata nuk u përditësua, ju lutemi provoni sërish!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke përditësuar kontratën"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Kontrata u përditësua me sukses!"
+    }
+  },
+  "editDescription": "Përditëso detajet e kontratës së qirasë",
+  "editTitle": "Ndrysho Kontratën",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të kontratës. Ju lutemi provoni sërish.",
+  "errorTitle": "Dështoi ngarkimi i kontratës",
+  "form": {
+    "_idLabel": "ID e rekordit",
+    "contractMediaLabel": "Dokumenti i kontratës",
+    "depositAmountLabel": "Shuma e depozitës",
+    "depositPaidLabel": "Depozita paguar",
+    "endDateLabel": "Data e mbarimit",
+    "existingFiles": "Skedari aktual",
+    "monthlyRentLabel": "Qiraja mujore",
+    "newFiles": "Skedar i ri",
+    "notesLabel": "Shënime",
+    "rentCurrencyLabel": "Monedha",
+    "startDateLabel": "Data e fillimit",
+    "statusLabel": "Statusi",
+    "tenantLabel": "Qiramarrësi",
+    "tenantPlaceholder": "Tenant Placeholder",
+    "terminationDateLabel": "Data e ndërprerjes",
+    "terminationReasonLabel": "Arsyeja e ndërprerjes",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Unit Placeholder"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  },
+  "formHeader": {
+    "description": "Përditëso detajet e kontratës së qirasë",
+    "title": "Ndrysho Kontratën"
+  },
+  "generalInfo": "Detajet e Kontratës",
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
+  "title": "Title"
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/terminateLeaseDialog.tsx",
+  "dialogTitle": "Përfundo qiranë",
+  "dialogDescription": "Kjo e mbyll qiranë, heq pagesat e papaguara dhe e bën njësinë të disponueshme përsëri.",
+  "reasonLabel": "Arsyeja (opsionale)",
+  "reasonPlaceholder": "Pse po përfundon kjo qira?",
+  "cancel": "Anulo",
+  "submit": "Përfundo"
+}

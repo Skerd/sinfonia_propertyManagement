@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/index.tsx",
+  "title": "Vështrim i përgjithshëm",
+  "description": "Statistikat e sistemit",
+  "download": "Shkarkoni",
+  "refresh": "Rifresko",
+  "period": "Periudha",
+  "periodLast7Days": "7 ditët e fundit",
+  "periodLast30Days": "30 ditët e fundit",
+  "periodLast3Months": "3 muajt e fundit",
+  "periodLast12Months": "12 muajt e fundit",
+  "viewEntries": "Shiko regjistrimet",
+  "tabs": {
+    "overview": "Vështrim i përgjithshëm",
+    "analytics": "Analiza",
+    "projects": "Projektet",
+    "edifices": "Ndërtesat",
+    "units": "Njësitë",
+    "controlPanel": "Paneli i kontrollit",
+    "workflows": "Rrjedhat e punës",
+    "reports": "Raportet",
+    "notifications": "Njoftimet"
+  }
+}

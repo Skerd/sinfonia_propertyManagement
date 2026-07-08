@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualInstallmentClientEmails.tsx",
+  "cancel": "Cancel",
+  "confirmSend": "Send email",
+  "actionLabels": {
+    "installment_remind_3d": "Remind: 3 days before due date",
+    "installment_remind_1d": "Remind: 1 day before due date",
+    "installment_remind_today": "Remind: due date (today)",
+    "installment_remind_remaining_days": "Remind: days until due",
+    "installment_send_overdue": "Send installment overdue notice"
+  },
+  "confirmTitles": {
+    "installment_remind_3d": "Send 3-day installment reminder?",
+    "installment_remind_1d": "Send 1-day installment reminder?",
+    "installment_remind_today": "Send due-day installment reminder?",
+    "installment_remind_remaining_days": "Send days-until-due installment reminder?",
+    "installment_send_overdue": "Send installment overdue email?"
+  },
+  "confirmDescriptions": {
+    "installment_remind_3d": "Sends the standard “3 days before due” installment template for this installment.",
+    "installment_remind_1d": "Sends the standard “1 day before due” installment template for this installment.",
+    "installment_remind_today": "Sends the standard “due today” installment reminder for this installment.",
+    "installment_remind_remaining_days": "Sends an email stating how many whole calendar days remain (UTC) until this installment due date.",
+    "installment_send_overdue": "Sends the notice that this installment is overdue (after the due date end in UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Sending email…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Email sent successfully",
+      "time": 3000
+    },
+    "error": {
+      "title": "Email could not be sent",
+      "time": 3000
+    }
+  }
+}

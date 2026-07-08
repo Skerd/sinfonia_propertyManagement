@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/deliverModificationRequestDialog.tsx",
+  "title": "Modifikimi u dorëzua",
+  "deliverConfirmTitle": "Shënoni modifikimin si të dorëzuar",
+  "deliverConfirmDescription": "Kjo do të shënojë kërkesën për modifikim si të përfunduar dhe dorëzuar. Ky është hapi i fundit në rrjedhën e punës.",
+  "notesLabel": "Shënimet e dorëzimit",
+  "notesPlaceholder": "Fut çdo shënim dërgese (opsionale)",
+  "inspectionsLabel": "Lidhja e inspektimeve",
+  "mediaLabel": "Shtojcat e dorëzimit",
+  "addFile": "Shto skedar",
+  "selectInspectionsPlaceholder": "Zgjidh inspektimet për të lidhur...",
+  "searchInspections": "Kërkimi i inspektimeve...",
+  "noInspectionsFound": "Nuk u gjetën inspektime për këtë njësi",
+  "cancel": "Anulo",
+  "confirmButton": "Shënoni si të dorëzuar",
+  "axios": {
+    "start": {
+      "title": "Regjistrimi i dorëzimit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Dorëzimi u regjistrua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Dorëzimi nuk mund të regjistrohej",
+      "time": 3000
+    }
+  }
+}

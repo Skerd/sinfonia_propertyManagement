@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/index.tsx",
+  "title": "Klientët e mundshëm",
+  "description": "Menaxhoni të gjithë klientët e mundshëm të CRM",
+  "createLead": "Krijo klient të mundshëm",
+  "noData": "Nuk u gjet asnjë klient i mundshëm",
+  "failTitle": "Ngarkimi i klientëve të mundshëm dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të klientëve të mundshëm. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Referenca",
+    "firstName": "Emri",
+    "lastName": "Mbiemri",
+    "email": "Email",
+    "phone": "Telefoni",
+    "status": "Statusi",
+    "source": "Burimi",
+    "projectInterest": "Projekti i interesit",
+    "unitInterest": "Njësia e interesit",
+    "budget": "Buxheti",
+    "budgetCurrency": "Monedha",
+    "notes": "Shënime",
+    "assignedTo": "Caktuar tek",
+    "followUpDate": "Data e ndjekjes",
+    "convertedAt": "Konvertuar në",
+    "createdAt": "Krijuar në",
+    "createdBy": "Krijuar nga",
+    "updatedAt": "Përditësuar në",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "new": "I ri",
+        "contacted": "Kontaktuar",
+        "qualified": "I kualifikuar",
+        "proposal": "Propozim",
+        "negotiation": "Negocim",
+        "won": "Fituar",
+        "lost": "Humbur"
+      },
+      "source": {
+        "website": "Faqe interneti",
+        "referral": "Referim",
+        "social": "Rrjete sociale",
+        "event": "Ngjarje",
+        "cold_call": "Telefonatë",
+        "walk_in": "Vizitë direkte",
+        "other": "Tjetër"
+      }
+    }
+  }
+}

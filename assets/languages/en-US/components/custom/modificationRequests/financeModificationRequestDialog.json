@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/financeModificationRequestDialog.tsx",
+  "title": "Finance",
+  "description": "Add cost breakdown and finance information",
+  "confirmButton": "Submit Finance Details",
+  "form": {
+    "totalCostLabel": "Total Cost",
+    "totalCostPlaceholder": "Enter total cost",
+    "totalCostRequired": "Total cost is required",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "currencyRequired": "Currency is required",
+    "costBreakdownLabel": "Cost Breakdown",
+    "itemLabel": "Item",
+    "costLabel": "Cost",
+    "costPerItemLabel": "Cost / item",
+    "lineTotalLabel": "Line total",
+    "quantityLabel": "Quantity",
+    "unitLabel": "Unit",
+    "costPerUnitLabel": "Cost per unit",
+    "addFile": "Add file",
+    "filesSelected": "files selected",
+    "emptyBreakdownHint": "No line items yet",
+    "addLineItem": "Add line item",
+    "notesLabel": "Finance Notes",
+    "notesPlaceholder": "Enter finance notes",
+    "estimatedCompletionDateLabel": "Estimated Completion Date",
+    "estimatedCompletionDatePlaceholder": "Select date",
+    "mediaLabel": "Documents (Invoices, Quotes)",
+    "breakdownTotal": "Breakdown total",
+    "difference": "Difference"
+  },
+  "axios": {
+    "start": {
+      "title": "Submitting finance decision…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Finance decision submitted",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not submit finance decision",
+      "time": 3000
+    }
+  }
+}

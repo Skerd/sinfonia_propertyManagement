@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/center/cardView/constructorCard.tsx",
+  "active": "Aktiv",
+  "name": "Emri",
+  "logo": "Logo",
+  "email": "Email",
+  "vat": "TVSH",
+  "phoneNumber": "Numri i telefonit",
+  "website": "Faqja e internetit",
+  "description": "Përshkrimi",
+  "edifices": "Ndërtesat",
+  "address": "Adresa",
+  "deleted": "Fshirë"
+}

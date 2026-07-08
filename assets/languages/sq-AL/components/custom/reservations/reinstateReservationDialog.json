@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reinstateReservationDialog.tsx",
+  "title": "Rivendos rezervimin",
+  "reinstateConfirmTitle": "Rivendos rezervimin",
+  "reinstateConfirmDescription": "Kjo do ta shënojë sërish rezervimin si aktiv dhe do ta rezervojë njësinë nëse është ende e disponueshme. Të vazhdohet?",
+  "cancel": "Anulo",
+  "confirmReinstate": "Rivendos",
+  "axios": {
+    "start": {
+      "title": "Rivendosja e rezervimit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rezervimi u rivendos",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rezervimi nuk mund të rivendosej",
+      "time": 3000
+    }
+  }
+}

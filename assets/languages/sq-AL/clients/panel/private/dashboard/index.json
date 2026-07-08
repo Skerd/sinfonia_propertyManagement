@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
+  "title": "Paneli i pasurive të paluajtshme",
+  "description": "Pasqyrë e portofolit me ndërtesa, KPI dhe grafikët financiarë",
+  "period": "Periudha",
+  "paymentAlerts": "Sinjalizimet e pagesave",
+  "viewPaymentPlans": "Shikoni planet e pagesave",
+  "periodLast7Days": "7 ditët e fundit",
+  "periodLast30Days": "30 ditët e fundit",
+  "periodLast3Months": "3 muajt e fundit",
+  "periodLast12Months": "12 muajt e fundit",
+  "refresh": "Rifresko",
+  "totalUnits": "Njësitë totale",
+  "unitsSold": "Shitur",
+  "collected": "Të mbledhura",
+  "avgPricePerSqm": "Mesatarisht €/m²",
+  "unitStatusBreakdown": "Statusi i njësisë",
+  "failTitle": "Gabim",
+  "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
+  "selectEdifice": "Zgjidhni një ndërtesë për të parë KPI dhe grafikët",
+  "viewEntries": "Shiko regjistrimet"
+}

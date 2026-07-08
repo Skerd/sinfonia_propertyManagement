@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/paymentAlerts.tsx",
+  "title": "Alarmet e pagesave",
+  "viewAllLabel": "Shikoni planet e pagesave",
+  "overdueBadge": "i vonuar",
+  "unitLabel": "Njësia",
+  "dueDateLabel": "Data e duhur",
+  "daysLate": "ditë me vonesë",
+  "today": "Sot",
+  "daysRemaining": "ditë të mbetura",
+  "viewAllCount": "Shiko të gjitha",
+  "noUpcomingPayments": "Nuk ka pagesa të ardhshme",
+  "noOverduePayments": "Nuk ka pagesa të vonuara",
+  "overdueInstallment": "kësti i vonuar",
+  "overdueInstallments": "këstet e vonuara",
+  "viewPlansForDetails": "Shikoni planet e pagesave për detaje."
+}

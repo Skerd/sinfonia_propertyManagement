@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Project could not be created, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Creating project"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Project successfully created!"
+    }
+  },
+  "commissions": "Commissions",
+  "description": "Create a new real estate project",
+  "form": {
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter project description",
+    "imageGalleryLabel": "Image Gallery",
+    "mainImageLabel": "Main Image",
+    "mainImageRequired": "Main image is required",
+    "nameLabel": "Project Name",
+    "namePlaceholder": "Enter project name",
+    "nameRequired": "Project name is required",
+    "reservationCommissionRateLabel": "Reservation commission (%)",
+    "reservationCommissionRatePlaceholder": "0–100, optional",
+    "saleCommissionRateLabel": "Sale commission (%)",
+    "saleCommissionRatePlaceholder": "0–100, optional",
+    "uploadNewImageHint": "Upload a new image to replace the current one",
+    "uploadNewImagesHint": "Upload new images to add to the gallery",
+    "uploadNewVideosHint": "Upload new videos to add to the gallery",
+    "videoGalleryLabel": "Video Gallery",
+    "mediaFilesLabel": "Documents & Files",
+    "marketingBookletLabel": "Marketing Booklet"
+  },
+  "generalInfo": "General Information",
+  "media": "Media",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "title": "Create Project",
+  "uploadError": "Failed to upload media files",
+  "formHeader": {
+    "title": "Create Project",
+    "description": "Create a new real estate project"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Project"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx",
+  "title": "Modification Requests",
+  "description": "Manage client modification requests",
+  "descriptionWithContext": "Manage modification requests for this unit",
+  "createModificationRequest": "Create Request",
+  "noData": "No modification requests found",
+  "failTitle": "Failed to load modification requests",
+  "failDescription": "An error occurred while loading modification requests. Please try again.",
+  "status": "Status",
+  "deleted": "Deleted",
+  "name": "Name",
+  "requestTitle": "Title",
+  "deliveredAt": "Delivered",
+  "constructionType": "Construction Type",
+  "requestedBy": "Requested By",
+  "submittedAt": "Submitted At",
+  "view": "View",
+  "fields": {
+    "name": "Name",
+    "unit": "Unit",
+    "requestedBy": "Requested By",
+    "title": "Title",
+    "description": "Description",
+    "constructionType": "Construction Type",
+    "materials": "Engineer Materials",
+    "specifications": "Specifications",
+    "status": "Status",
+    "architectApproval": {
+      "decision": "Decision",
+      "user": "Reviewed By",
+      "notes": "Notes",
+      "reviewedAt": "Reviewed At"
+    },
+    "engineerApproval": {
+      "decision": "Decision",
+      "user": "Reviewed By",
+      "notes": "Notes",
+      "reviewedAt": "Reviewed At"
+    },
+    "ceoApproval": {
+      "decision": "Decision",
+      "user": "Reviewed By",
+      "notes": "Notes",
+      "reviewedAt": "Reviewed At"
+    },
+    "financeDetails": {
+      "totalCost": "Total Cost",
+      "currency": "Currency",
+      "costBreakdown": {
+        "item": "Item",
+        "cost": "Cost",
+        "quantity": "Quantity",
+        "unit": "Unit"
+      },
+      "media": "Media",
+      "notes": "Notes",
+      "estimatedCompletionDate": "Estimated Completion Date"
+    },
+    "clientNotifiedAt": "Client Notified At",
+    "notificationSent": "Notification Sent",
+    "submittedAt": "Submitted At",
+    "deliveryApproval": {
+      "decision": "Decision",
+      "user": "Reviewed By",
+      "notes": "Notes",
+      "reviewedAt": "Reviewed At"
+    },
+    "inspections": "Inspections",
+    "inspection": "Inspection",
+    "completedAt": "Completed At",
+    "cancelledAt": "Cancelled At",
+    "cancellationReason": "Cancellation Reason",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "constructionType": {
+        "materials": "Materials",
+        "room_division": "Room Division",
+        "flooring": "Flooring",
+        "utilities": "Utilities",
+        "structural": "Structural",
+        "electrical": "Electrical",
+        "plumbing": "Plumbing",
+        "hvac": "HVAC",
+        "cosmetic": "Cosmetic",
+        "other": "Other"
+      },
+      "status": {
+        "pending_architect": "Pending Architect",
+        "pending_engineer": "Pending Engineer",
+        "pending_ceo": "Pending CEO",
+        "pending_architect_revision": "Pending Architect Revision",
+        "pending_engineer_revision": "Pending Engineer Revision",
+        "pending_finance": "Pending Finance",
+        "finance_completed": "Finance Completed",
+        "pending_delivery": "Pending Delivery",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      },
+      "architectApproval": {
+        "decision": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "pending": "Pending"
+        }
+      },
+      "engineerApproval": {
+        "decision": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "pending": "Pending"
+        }
+      },
+      "ceoApproval": {
+        "decision": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "pending": "Pending"
+        }
+      },
+      "deliveryApproval": {
+        "decision": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "pending": "Pending"
+        }
+      }
+    }
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "yes": "Yes",
+  "no": "No"
+}

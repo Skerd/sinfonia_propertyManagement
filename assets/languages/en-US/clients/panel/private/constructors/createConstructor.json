@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
+  "title": "Create Constructor",
+  "description": "Create a new constructor",
+  "generalInfo": "General Information",
+  "howToReach": "How to reach us",
+  "addAddress": "Add new address",
+  "address": "Address",
+  "remove": "Remove",
+  "logo": "Logo",
+  "uploadError": "Failed to upload media files",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter constructor name",
+    "nameRequired": "Name is required",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter email address",
+    "emailInvalid": "Invalid email address",
+    "phoneNumberLabel": "Phone Number",
+    "phoneNumberPlaceholder": "Enter phone number",
+    "phoneNumberRequired": "Phone number is required",
+    "vatLabel": "VAT",
+    "vatPlaceholder": "Enter VAT number",
+    "vatRequired": "VAT is required",
+    "websiteLabel": "Website",
+    "websitePlaceholder": "Enter website URL",
+    "websiteInvalid": "Invalid website URL",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Select company",
+    "companyRequired": "Company is required",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter description",
+    "logoLabel": "Logo",
+    "uploadNewLogoHint": "Upload a new logo to replace the current one",
+    "streetLabel": "Street",
+    "streetPlaceholder": "Street",
+    "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "Postal code",
+    "cityLabel": "City",
+    "cityPlaceholder": "City",
+    "stateLabel": "State",
+    "statePlaceholder": "State",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Country",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating constructor",
+      "time": 3000
+    },
+    "success": {
+      "title": "Constructor successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Constructor could not be created, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create Constructor",
+    "description": "Create a new constructor"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Constructor"
+  }
+}

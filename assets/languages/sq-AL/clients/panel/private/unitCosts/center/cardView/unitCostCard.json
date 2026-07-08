@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx",
+  "failedTitle": "Ngarkimi i kostos së njësisë dështoi",
+  "failedDescription": "Diçka shkoi keq. Klikoni për të provuar përsëri.",
+  "purchaseDate": "Data e blerjes",
+  "purchasePerson": "Blerësi",
+  "documentSubtotal": "Nëntotali",
+  "unitCostVerification": {
+    "pending_verification": "Në pritje të verifikimit",
+    "verified": "E verifikuar",
+    "rejected": "E refuzuar",
+    "needs_revision": "Kërkon rivlerësim"
+  },
+  "unitCostPayment": {
+    "unpaid": "E papaguar",
+    "partially_paid": "Pjesërisht e paguar",
+    "paid": "E paguar",
+    "waived": "E falur",
+    "disputed": "Në mosmarrëveshje"
+  },
+  "invoiceNumber": "Nr. Faturës",
+  "vendorName": "Ofruesi",
+  "tag": "Etiketa",
+  "relatedModificationRequest": "Kërkesë Modifikimi"
+}

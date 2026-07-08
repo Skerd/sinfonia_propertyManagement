@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/manualReservationClientEmails.tsx",
+  "actionLabels": {
+    "send_confirmation": "Ridërgo email konfirmimi",
+    "remind_3d": "Rikujtesë: 3 ditë para skadimit",
+    "remind_1d": "Rikujtesë: 1 ditë para skadimit",
+    "remind_today": "Rikujtesë: dita e skadimit",
+    "remind_remaining_days": "Rikujtesë: ditët e mbetura",
+    "send_expired": "Dërgo njoftimin e skadimit"
+  }
+}

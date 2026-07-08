@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/projects/index.tsx",
+  "title": "Projektet",
+  "description": "Struktura e portofolit: projekte, ndërtesa, dysheme dhe njësi.",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
+  "totalProjects": "Totali i projekteve",
+  "totalProjectsDesc": "Numri i projekteve",
+  "totalEdifices": "Ndërtesat",
+  "totalEdificesDesc": "Totali i ndërtesave",
+  "totalFloors": "Dyshemetë",
+  "totalFloorsDesc": "Katet e përgjithshme nëpër ndërtesa",
+  "totalUnits": "Njësitë totale",
+  "totalUnitsDesc": "Të gjitha njësitë në portofol",
+  "unitsSold": "Njësitë e shitura",
+  "unitsSoldDesc": "Njësi të shitura në të gjithë portofolin",
+  "avgUnitsPerProject": "Mesatar njësi për projekt",
+  "avgUnitsPerProjectDesc": "Njësi totale ÷ projekte",
+  "avgFloorsPerEdifice": "Mesatar kate për ndërtesë",
+  "avgFloorsPerEdificeDesc": "Kate totale ÷ ndërtesa",
+  "projectCards": "Projektet",
+  "createProject": "Krijo projekt"
+}

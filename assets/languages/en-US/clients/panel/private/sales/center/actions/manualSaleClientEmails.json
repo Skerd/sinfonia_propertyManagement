@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualSaleClientEmails.tsx",
+  "cancel": "Cancel",
+  "confirmSend": "Send email",
+  "actionLabels": {
+    "send_sale_confirmation": "Resend sale confirmation email"
+  },
+  "confirmTitles": {
+    "send_sale_confirmation": "Resend sale confirmation email?"
+  },
+  "confirmDescriptions": {
+    "send_sale_confirmation": "This sends the same confirmation message as when the sale was created (to the buyer email on file), including the purchase contract when available."
+  },
+  "axios": {
+    "start": {
+      "title": "Sending email…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Email sent successfully",
+      "time": 3000
+    },
+    "error": {
+      "title": "Email could not be sent",
+      "time": 3000
+    }
+  }
+}

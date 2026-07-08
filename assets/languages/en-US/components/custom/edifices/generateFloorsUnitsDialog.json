@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/generateFloorsUnitsDialog.tsx",
+  "dialogTitle": "Generate Floors & Units",
+  "dialogDescription": "Upload a PDF brochure to automatically generate floors and units for this edifice.",
+  "warningMessage": "This action can take up to 1 minute to complete, please do not close this window until completed!",
+  "fileLabel": "PDF Brochure",
+  "cancel": "Cancel",
+  "generate": "Generate",
+  "processing": "Processing...",
+  "noFileSelected": "Please select a PDF file",
+  "invalidFileType": "Please select a valid PDF file",
+  "axios": {
+    "start": {
+      "title": "Generating floors and units from brochure",
+      "time": 60000
+    },
+    "success": {
+      "title": "Floors and units generated successfully!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Failed to generate floors and units. Please try again!",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Could not save update, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Updating record"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Construction update saved!"
+    }
+  },
+  "editDescription": "Edit construction progress update",
+  "editTitle": "Edit Construction Update",
+  "errorDescription": "An error occurred while loading the construction update. Please try again.",
+  "errorTitle": "Failed to load construction update",
+  "form": {
+    "_idLabel": "Record ID",
+    "addFile": "Add photo",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe construction progress",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice (optional)",
+    "existingFiles": "Existing photos",
+    "filesSelected": "photos selected",
+    "newFiles": "Add new photos",
+    "photosLabel": "Photos",
+    "progressPercentLabel": "Progress (%)",
+    "progressPercentPlaceholder": "0–100",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter update title",
+    "updateDateLabel": "Update Date",
+    "updateDatePlaceholder": "Select date"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  },
+  "formHeader": {
+    "description": "Edit construction progress update",
+    "title": "Edit Construction Update"
+  },
+  "generalInfo": "Update Details",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
+  "title": "Title"
+}

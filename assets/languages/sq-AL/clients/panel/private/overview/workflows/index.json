@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/workflows/index.tsx",
+  "title": "Rrjedhat e punës",
+  "description": "Përmbledhje e kërkesave të inspektimeve dhe modifikimeve.",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
+  "inspectionsSection": "Inspektimet",
+  "totalInspections": "Inspektime totale",
+  "totalInspectionsDesc": "Të gjitha inspektimet",
+  "followUpRequired": "Kërkohet ndjekja",
+  "followUpRequiredDesc": "Inspektimet që kërkojnë ndjekje",
+  "inspectionsByStatus": "Sipas statusit",
+  "modificationRequestsSection": "Kërkesat për modifikim",
+  "totalModificationRequests": "Kërkesat totale për modifikim",
+  "totalModificationRequestsDesc": "Të gjitha kërkesat për modifikim",
+  "openModificationRequests": "Kërkesat e hapura",
+  "openModificationRequestsDesc": "Nuk është përfunduar, refuzuar ose anuluar",
+  "modificationRequestsByStatus": "Sipas statusit"
+}

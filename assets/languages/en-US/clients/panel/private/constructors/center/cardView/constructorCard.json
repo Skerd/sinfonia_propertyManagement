@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/center/cardView/constructorCard.tsx",
+  "active": "Active",
+  "name": "Name",
+  "logo": "Logo",
+  "email": "Email",
+  "vat": "VAT",
+  "phoneNumber": "Phone Number",
+  "website": "Website",
+  "description": "Description",
+  "edifices": "Edifices",
+  "address": "Address",
+  "deleted": "Deleted"
+}

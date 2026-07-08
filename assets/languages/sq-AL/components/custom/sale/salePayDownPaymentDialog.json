@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayDownPaymentDialog.tsx",
+  "payDownPaymentTitle": "Shënoni parapagimin si të paguar",
+  "payDownPaymentDescription": "Ky veprim shënon paradhënien si të paguar.",
+  "confirmPayDownPayment": "Konfirmo",
+  "cancel": "Anulo",
+  "processing": "Po përpunohet...",
+  "downPaymentRecorded": "Parapagimi është shënuar si i paguar",
+  "downPaymentFailed": "Shënimi i paradhënies si të paguar dështoi",
+  "axios": {
+    "start": {
+      "title": "Po përpunohet...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Parapagimi është shënuar si i paguar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Shënimi i paradhënies si të paguar dështoi",
+      "time": 3000
+    }
+  }
+}

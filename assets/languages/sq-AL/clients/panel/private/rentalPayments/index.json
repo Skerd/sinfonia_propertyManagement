@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
+  "title": "Pagesat e Qirasë",
+  "description": "Regjistri i pagesave të qirasë",
+  "createRentalPayment": "Regjistro Pagesë",
+  "noData": "Nuk u gjetën pagesa qiraje",
+  "failTitle": "Dështoi ngarkimi i pagesave",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të pagesave. Ju lutemi provoni sërish.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Referenca",
+    "lease": "Kontrata",
+    "unit": "Njësia",
+    "dueDate": "Data e pagesës",
+    "amount": "Shuma",
+    "paidAmount": "Shuma paguar",
+    "currency": "Monedha",
+    "status": "Statusi",
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "paid": "Paguar",
+        "partial": "Pjesërisht",
+        "overdue": "E vonuar",
+        "waived": "Hequr dorë"
+      }
+    }
+  }
+}

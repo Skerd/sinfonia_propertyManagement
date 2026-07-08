@@ -1,0 +1,47 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Pagesa nuk u përditësua, ju lutemi provoni sërish!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke përditësuar pagesën"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Pagesa u përditësua me sukses!"
+    }
+  },
+  "editDescription": "Përditëso detajet e pagesës së qirasë",
+  "editTitle": "Ndrysho Pagesën",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të pagesës. Ju lutemi provoni sërish.",
+  "errorTitle": "Dështoi ngarkimi i pagesës",
+  "form": {
+    "_idLabel": "ID e rekordit",
+    "amountLabel": "Shuma",
+    "currencyLabel": "Monedha",
+    "dueDateLabel": "Data e pagesës",
+    "existingFiles": "Skedari aktual",
+    "leaseLabel": "Kontrata",
+    "leasePlaceholder": "Lease Placeholder",
+    "newFiles": "Skedar i ri",
+    "notesLabel": "Shënime",
+    "paidAmountLabel": "Shuma paguar",
+    "paidDateLabel": "Data e pagesës",
+    "receiptMediaLabel": "Faturë / Dëshmi pagese",
+    "statusLabel": "Statusi",
+    "unitLabel": "Njësia"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  },
+  "formHeader": {
+    "description": "Përditëso detajet e pagesës së qirasë",
+    "title": "Ndrysho Pagesën"
+  },
+  "generalInfo": "Detajet e Pagesës",
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
+  "title": "Title"
+}

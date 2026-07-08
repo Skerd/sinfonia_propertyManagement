@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Lloji i njësisë nuk mund të përditësohej, ju lutemi provoni përsëri!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Po përditëson llojin e njësisë"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Lloji i njësisë u përditësua me sukses!"
+    }
+  },
+  "editDescription": "Redaktoni informacionin e llojit të njësisë",
+  "editTitle": "Redakto llojin e njësisë",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të llojit të njësisë. Ju lutemi provoni përsëri.",
+  "errorTitle": "Ngarkimi i llojit të njësisë dështoi",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "categoryLabel": "Kategoria",
+    "categoryPlaceholder": "Zgjidhni kategorinë",
+    "categoryRequired": "Kërkohet kategoria",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Fut përshkrimin",
+    "groupLabel": "Grupi",
+    "groupPlaceholder": "Zgjidhni grupin",
+    "groupRequired": "Kërkohet grupi",
+    "iconLabel": "Ikona",
+    "iconPlaceholder": "Fut ikonën (p.sh., mdi-home)",
+    "isPrivateLabel": "Privat",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Futni emrin e llojit të njësisë",
+    "nameRequired": "Kërkohet emri",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Fut slug (p.sh., apartament)",
+    "slugRequired": "Slug është i nevojshëm"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  },
+  "formHeader": {
+    "description": "Redaktoni informacionin e llojit të njësisë",
+    "title": "Redakto llojin e njësisë"
+  },
+  "generalInfo": "Informacione të Përgjithshme",
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
+  "title": "Title"
+}

@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/finishWorkingSnagDialog.tsx",
+  "dialogTitle": "Përfundo punën",
+  "dialogDescription": "Shënoni këtë snag si të zgjidhur. Mund të shtoni shënime dhe foto përfundimi.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale përfundimi",
+  "photosLabel": "Foto",
+  "addPhotos": "Shto foto",
+  "cancel": "Anulo",
+  "submit": "Përfundo punën"
+}

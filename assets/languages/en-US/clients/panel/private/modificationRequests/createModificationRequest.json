@@ -1,0 +1,71 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/createModificationRequest.tsx",
+  "title": "Create Modification Request",
+  "description": "Create a new modification request",
+  "unitSelection": "Unit selection",
+  "generalInfo": "General information",
+  "details": "Details",
+  "errorTitle": "Unable to load unit",
+  "errorDescription": "Please try again.",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "floorLabel": "Floor",
+    "floorPlaceholder": "Select floor",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit",
+    "unitRequired": "Unit is required",
+    "requestedByLabel": "Requested By",
+    "requestedByPlaceholder": "Select client",
+    "requestedByRequired": "Client is required",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter request title",
+    "titleRequired": "Title is required",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter detailed description",
+    "descriptionRequired": "Description is required",
+    "constructionTypeLabel": "Construction Type",
+    "constructionTypePlaceholder": "Select type",
+    "constructionTypeRequired": "Construction type is required",
+    "constructionTypeOption": {
+      "materials": "Materials",
+      "room_division": "Room division",
+      "flooring": "Flooring",
+      "utilities": "Utilities",
+      "structural": "Structural",
+      "electrical": "Electrical",
+      "plumbing": "Plumbing",
+      "hvac": "HVAC",
+      "cosmetic": "Cosmetic",
+      "other": "Other"
+    },
+    "materialsLabel": "Materials",
+    "materialsPlaceholder": "Add material",
+    "specificationsLabel": "Specifications",
+    "specificationsPlaceholder": "Enter technical specifications"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating modification request",
+      "time": 3000
+    },
+    "success": {
+      "title": "Modification request successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Modification request could not be created, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create Modification Request",
+    "description": "Create a new modification request"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Request"
+  }
+}

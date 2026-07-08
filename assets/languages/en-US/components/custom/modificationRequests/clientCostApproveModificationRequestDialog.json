@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx",
+  "title": "Client Cost Approval",
+  "description": "Review the finance details and approve or reject the proposed cost for this modification request.",
+  "totalCostLabel": "Proposed Total Cost",
+  "decisionLabel": "Decision",
+  "decisionPlaceholder": "Select decision...",
+  "approve": "Approve",
+  "reject": "Reject",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional notes about your decision...",
+  "cancel": "Cancel",
+  "confirmButton": "Confirm Decision",
+  "axios": {
+    "start": {
+      "title": "Submitting decision…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Decision submitted",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not submit decision",
+      "time": 3000
+    }
+  }
+}

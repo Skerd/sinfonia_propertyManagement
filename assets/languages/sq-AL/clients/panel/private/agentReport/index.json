@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
+  "title": "Raporti i performancës së agjentëve",
+  "refresh": "Rifresko",
+  "noActivity": "Nuk u gjet asnjë aktivitet agjenti për periudhën e zgjedhur.",
+  "errorTitle": "Ngarkimi i raportit dështoi",
+  "errorDescription": "Ndodhi një gabim gjatë marrjes së raportit. Klikoni për të provuar përsëri.",
+  "errorTooltip": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "periodLabel": "Periudha",
+  "periodCustom": "Interval i personalizuar",
+  "dateFromLabel": "Data e fillimit",
+  "dateToLabel": "Data e mbarimit",
+  "agentsLabel": "Agjentët",
+  "agentsPlaceholder": "Të gjithë agjentët",
+  "selectDateRangeHint": "Zgjidhni një periudhë ose vendosni datën e fillimit dhe të mbarimit.",
+  "exportPdf": "Eksporto PDF",
+  "exportPdfLoading": "Duke eksportuar…",
+  "period": {
+    "last30": "30 ditët e fundit",
+    "last3months": "3 muajt e fundit",
+    "last6months": "6 muajt e fundit",
+    "last12months": "12 muajt e fundit"
+  },
+  "pdf": {
+    "period": "Periudha",
+    "generatedAt": "Gjeneruar më"
+  },
+  "columns": {
+    "agent": "Agjent",
+    "sales": "Shitje",
+    "cash": "Cash",
+    "paymentPlan": "Plan pagese",
+    "reservations": "Rezervime",
+    "converted": "Konvertuar",
+    "conversionRate": "Konvertim %",
+    "commissionPaid": "Komision i paguar",
+    "commissionPending": "Komision në pritje",
+    "avgRate": "Norma mesatare %"
+  }
+}

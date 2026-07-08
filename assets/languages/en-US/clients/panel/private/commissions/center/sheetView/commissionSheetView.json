@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx",
+  "failedTitle": "Failed to load commission",
+  "failedDescription": "Something went wrong while loading this commission. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "overview": "Overview",
+  "financials": "Financials",
+  "references": "References",
+  "dates": "Dates",
+  "notes": "Notes",
+  "and": "and",
+  "commission": "Commission",
+  "agent": "Agent",
+  "sourceType": "Source",
+  "sourceTypeEnum": {
+    "sale": "Sale",
+    "reservation": "Reservation"
+  },
+  "status": "Status",
+  "statusEnum": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "voided": "Voided"
+  },
+  "basis": "Commission basis",
+  "basisEnum": {
+    "depositAmount": "Reservation deposit",
+    "finalPrice": "Sale final price"
+  },
+  "basisTooltip": "How this commission is calculated or labeled (e.g. sale price, fixed fee).",
+  "basisAmount": "Basis amount",
+  "ratePercent": "Rate %",
+  "amount": "Amount",
+  "sale": "Sale",
+  "reservation": "Reservation",
+  "currency": "Currency",
+  "paidAt": "Paid at",
+  "voidedAt": "Voided at",
+  "modelType": "Commission"
+}

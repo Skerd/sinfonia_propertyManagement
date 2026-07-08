@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/cancelModificationRequestDialog.tsx",
+  "title": "Cancel Request",
+  "cancelConfirmTitle": "Cancel Modification Request",
+  "cancelConfirmDescription": "Are you sure you want to cancel this modification request? Please provide a reason for cancellation.",
+  "cancellationReasonLabel": "Cancellation Reason",
+  "cancellationReasonPlaceholder": "Enter the reason for cancelling this request...",
+  "cancel": "Cancel",
+  "confirmCancel": "Cancel Request",
+  "axios": {
+    "start": {
+      "title": "Cancelling request…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Modification request cancelled",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not cancel request",
+      "time": 3000
+    }
+  }
+}

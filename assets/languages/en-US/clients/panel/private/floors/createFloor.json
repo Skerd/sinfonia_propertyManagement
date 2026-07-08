@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "title": "Create Floor",
+  "description": "Create a new floor for this edifice",
+  "descriptionWithoutEdifice": "Create a new floor",
+  "generalInfo": "General Information",
+  "features": "Features",
+  "sharedSpaces": "Shared Spaces",
+  "floorLocation": "Floor Location on Project Image",
+  "uploadError": "Failed to upload media files",
+  "errorTitle": "Error",
+  "errorLoadingEdifice": "Error loading edifice data",
+  "selectFloorLocation": "Click on the project image to select the floor location. Click near the first point to close the polygon.",
+  "edificeNoMainImage": "Edifice does not have a main image. Please add a main image to the edifice first.",
+  "projectNoMainImage": "The project does not have a main image. Please add a main image to the project first.",
+  "errorLoadingProject": "Error loading project data",
+  "removeSharedSpace": "Remove shared space",
+  "noEdificeSelectedTitle": "No edifice selected",
+  "noEdificeSelectedDescription": "Please select an edifice first in order to specify floor location.",
+  "form": {
+    "nameLabel": "Floor Name",
+    "namePlaceholder": "Enter floor name",
+    "nameRequired": "Floor name is required",
+    "levelNumberLabel": "Level Number",
+    "levelNumberPlaceholder": "Enter level number (0 = ground, 1 = first, -1 = basement)",
+    "totalUnitsLabel": "Total Units",
+    "totalUnitsPlaceholder": "Enter total number of units",
+    "areaLabel": "Area (m²)",
+    "areaPlaceholder": "Enter floor area",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter floor description",
+    "isAccessibleLabel": "Accessible",
+    "isAccessibleDescription": "This floor is accessible for people with disabilities",
+    "hasEmergencyExitLabel": "Emergency Exit",
+    "hasEmergencyExitDescription": "This floor has an emergency exit",
+    "sharedSpacesLabel": "Shared Spaces",
+    "sharedSpacesPlaceholder": "Add shared space",
+    "mainImageLabel": "Main Image",
+    "mainImageRequired": "Main image is required",
+    "imageGalleryLabel": "Image Gallery",
+    "videoGalleryLabel": "Video Gallery",
+    "mediaFilesLabel": "Documents & Files",
+    "marketingBookletLabel": "Marketing Booklet",
+    "uploadNewImageHint": "Click to upload image",
+    "polygonMustBeClosed": "Please close the polygon by clicking the first point before submitting.",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeRequired": "Edifice is required"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating floor",
+      "time": 3000
+    },
+    "success": {
+      "title": "Floor successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Floor could not be created, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create Floor",
+    "description": "Create a new floor"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Floor"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
+  "title": "Agent Performance Report",
+  "refresh": "Refresh",
+  "noActivity": "No agent activity found for the selected period.",
+  "errorTitle": "Failed to load agent report",
+  "errorDescription": "Something went wrong while fetching the report. Click to try again.",
+  "errorTooltip": "Click to retry fetching the data.",
+  "periodLabel": "Period",
+  "periodCustom": "Custom range",
+  "dateFromLabel": "Start date",
+  "dateToLabel": "End date",
+  "agentsLabel": "Agents",
+  "agentsPlaceholder": "All agents",
+  "selectDateRangeHint": "Select a period or choose both start and end dates.",
+  "exportPdf": "Export PDF",
+  "exportPdfLoading": "Exporting…",
+  "period": {
+    "last30": "Last 30 days",
+    "last3months": "Last 3 months",
+    "last6months": "Last 6 months",
+    "last12months": "Last 12 months"
+  },
+  "pdf": {
+    "period": "Period",
+    "generatedAt": "Generated at"
+  },
+  "columns": {
+    "agent": "Agent",
+    "sales": "Sales",
+    "cash": "Cash",
+    "paymentPlan": "Payment Plan",
+    "reservations": "Reservations",
+    "converted": "Converted",
+    "conversionRate": "Conv. Rate",
+    "commissionPaid": "Commission Paid",
+    "commissionPending": "Commission Pending",
+    "avgRate": "Avg. Rate %"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/manualReservationClientEmailDialog.tsx",
+  "cancel": "Cancel",
+  "confirmSend": "Send email",
+  "confirmTitles": {
+    "send_confirmation": "Resend confirmation email?",
+    "remind_3d": "Send 3-day reminder email?",
+    "remind_1d": "Send 1-day reminder email?",
+    "remind_today": "Send expiration-day reminder email?",
+    "remind_remaining_days": "Send days-remaining reminder?",
+    "send_expired": "Send reservation expired email?"
+  },
+  "confirmDescriptions": {
+    "send_confirmation": "This sends the same confirmation message as when the reservation was created (to the client email on file).",
+    "remind_3d": "Sends the standard “3 days before end” reminder template.",
+    "remind_1d": "Sends the standard “1 day before end” reminder template.",
+    "remind_today": "Sends the standard “ends today” reminder template.",
+    "remind_remaining_days": "Sends an email stating how many whole calendar days remain (UTC) until the reservation end date.",
+    "send_expired": "Sends the notice that the reservation period has ended (after the expiration date in UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Sending email…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Email sent successfully",
+      "time": 3000
+    },
+    "error": {
+      "title": "Email could not be sent",
+      "time": 3000
+    }
+  }
+}

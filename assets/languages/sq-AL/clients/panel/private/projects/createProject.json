@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Projekti nuk mund të krijohej, ju lutemi provoni përsëri!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Krijimi i projektit"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Projekti u krijua me sukses!"
+    }
+  },
+  "commissions": "Komisionet",
+  "description": "Krijo një projekt të ri të pasurive të paluajtshme",
+  "form": {
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Fut përshkrimin e projektit",
+    "imageGalleryLabel": "Galeria e Imazheve",
+    "mainImageLabel": "Imazhi kryesor",
+    "mainImageRequired": "Kërkohet imazhi kryesor",
+    "nameLabel": "Emri i projektit",
+    "namePlaceholder": "Fut emrin e projektit",
+    "nameRequired": "Kërkohet emri i projektit",
+    "reservationCommissionRateLabel": "komisioni i rezervimit (%)",
+    "reservationCommissionRatePlaceholder": "0–100, opsionale",
+    "saleCommissionRateLabel": "Komisioni i shitjes (%)",
+    "saleCommissionRatePlaceholder": "0–100, opsionale",
+    "uploadNewImageHint": "Ngarko një imazh të ri për të zëvendësuar atë aktual",
+    "uploadNewImagesHint": "Ngarko imazhe të reja për t'i shtuar në galeri",
+    "uploadNewVideosHint": "Ngarko video të reja për t'i shtuar në galeri",
+    "videoGalleryLabel": "Video Galeria",
+    "mediaFilesLabel": "Dokumente & Skedarë",
+    "marketingBookletLabel": "Broshurë Marketingu"
+  },
+  "generalInfo": "Informacione të Përgjithshme",
+  "media": "Media",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "title": "Krijo projekt",
+  "uploadError": "Ngarkimi i skedarëve të medias dështoi",
+  "formHeader": {
+    "title": "Krijo projekt",
+    "description": "Krijo një projekt të ri të pasurive të paluajtshme"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo projekt"
+  }
+}

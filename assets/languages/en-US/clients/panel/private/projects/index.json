@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/index.tsx",
+  "createProject": "Create Project",
+  "description": "Manage all real estate projects",
+  "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "imageGallery": "Gallery",
+    "mainImage": "Image",
+    "name": "Name",
+    "reservationCommissionRatePercent": "Reservation Commission",
+    "saleCommissionRatePercent": "Sale Commission",
+    "videoGallery": "Videos"
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "title": "Projects"
+}

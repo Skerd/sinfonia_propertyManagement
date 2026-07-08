@@ -1,0 +1,57 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/index.tsx",
+  "title": "Komisionet",
+  "description": "Komisionet e shitjes dhe statusi i pagesës",
+  "cardTitle": "Komisioni",
+  "view": "Shiko",
+  "agent": "Agjenti",
+  "amount": "Shuma",
+  "ratePercent": "norma %",
+  "statusLabel": "Statusi",
+  "statusPending": "Në pritje",
+  "statusPaid": "I paguar",
+  "statusVoided": "I zbrazur",
+  "unit": "Njësia",
+  "paidAt": "Paguhet në",
+  "deletedLabel": "Regjistro",
+  "deleted": "Fshirë",
+  "markPaid": "Mark paguar",
+  "updateSuccess": "Komisioni i përditësuar",
+  "updateFail": "Komisioni nuk mund të përditësohej",
+  "noData": "Nuk u gjetën komisione",
+  "failTitle": "Ngarkimi i komisioneve dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të komisioneve. Ju lutemi provoni përsëri.",
+  "fields": {
+    "agent": "Agjenti",
+    "recordedByActionUser": "Regjistruar nga përdoruesi i veprimit",
+    "sourceType": "Lloji i burimit",
+    "basis": "Baza",
+    "basisAmount": "Shuma bazë",
+    "ratePercent": "norma %",
+    "amount": "Shuma",
+    "sale": "Shitje",
+    "reservation": "Rezervimi",
+    "currency": "Monedha",
+    "status": "Statusi",
+    "notes": "Shënime",
+    "paidAt": "Paguhet në",
+    "voidedAt": "E zbrazur në",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "sourceType": {
+        "sale": "Shitje",
+        "reservation": "Rezervimi"
+      },
+      "status": {
+        "pending": "Në pritje",
+        "paid": "I paguar",
+        "voided": "I zbrazur"
+      }
+    }
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "yes": "po",
+  "no": "Nr"
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/actions/marketingBooklet.tsx",
+  "title": "Marketing Booklet",
+  "axios": {
+    "start": {
+      "title": "Generating marketing booklet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Marketing booklet downloaded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not generate marketing booklet",
+      "time": 3000
+    }
+  }
+}

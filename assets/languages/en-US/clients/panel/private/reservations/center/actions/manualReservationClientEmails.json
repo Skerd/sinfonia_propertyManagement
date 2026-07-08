@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/manualReservationClientEmails.tsx",
+  "actionLabels": {
+    "send_confirmation": "Resend confirmation email",
+    "remind_3d": "Remind: 3 days before expiration",
+    "remind_1d": "Remind: 1 day before expiration",
+    "remind_today": "Remind: expiration day",
+    "remind_remaining_days": "Remind: days remaining",
+    "send_expired": "Send expired notice"
+  }
+}

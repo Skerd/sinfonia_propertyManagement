@@ -1,0 +1,101 @@
+{
+  "title": "Kontratat & Klientët",
+  "description": "Të gjitha kontratat dhe klientët në një vend. Kërko, filtro dhe menaxho lehtësisht.",
+  "contracts": {
+    "title": "Kontratat",
+    "description": "Të gjitha kontratat në një vend. Kërko, filtro dhe menaxho lehtësisht.",
+    "searchLabel": "Kërko",
+    "searchPlaceholder": "Kërko sipas emrit të klientit, njësisë, numrit të kontratës…",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Të gjithë projektet",
+    "contractTypeLabel": "Lloji i kontratës",
+    "contractTypePlaceholder": "Të gjithë llojet",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Të gjithë statuset",
+    "signatureDateLabel": "Data e nënshkrimit",
+    "signatureDateFromLabel": "Nga",
+    "signatureDateToLabel": "Deri",
+    "noResults": "Nuk u gjetën kontrata.",
+    "errorTitle": "Kontratat nuk u ngarkuan",
+    "errorDescription": "Provo përsëri ose ndrysho filtrat.",
+    "errorTooltip": "Kërkesa për regjistrin e kontratave dështoi",
+    "columns": {
+      "contractNumber": "Numri i kontratës",
+      "client": "Klienti",
+      "project": "Projekti",
+      "unit": "Njësia",
+      "contractType": "Lloji i kontratës",
+      "status": "Statusi",
+      "signatureDate": "Data e nënshkrimit",
+      "uploadDate": "Data e ngarkimit",
+      "agent": "Agjenti",
+      "paymentStatus": "Statusi i pagesës",
+      "actions": "Veprimet"
+    },
+    "contractType": {
+      "reservation": "Rezervim",
+      "cash_sale": "Shitblerje",
+      "payment_plan_sale": "Premtim Shitje"
+    },
+    "status": {
+      "active": "Rezervuar",
+      "expired": "Skaduar",
+      "cancelled": "Anuluar",
+      "sold": "Shitur"
+    },
+    "paymentStatus": {
+      "ok": "Në rregull",
+      "partially": "Pjesërisht",
+      "unpaid": "Pa paguar",
+      "no_payments": "Nuk ka pagesa"
+    },
+    "pagination": {
+      "summary": "{from} deri {to} nga {total} rezultate"
+    },
+    "viewAction": "Shiko"
+  },
+  "clients": {
+    "title": "Klientët",
+    "description": "Të gjithë klientët tuaj dhe njësitë e tyre të blera në një vend.",
+    "searchLabel": "Kërko",
+    "searchPlaceholder": "Kërko sipas emrit ose mbiemrit…",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Të gjithë projektet",
+    "typologyLabel": "Tipologjia",
+    "typologyPlaceholder": "Të gjitha tipologjitë",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Të gjithë statuset",
+    "valueRangeLabel": "Diapazoni i vlerës (EUR)",
+    "valueMinPlaceholder": "Min",
+    "valueMaxPlaceholder": "Max",
+    "noResults": "Nuk u gjetën klientë.",
+    "errorTitle": "Klientët nuk u ngarkuan",
+    "errorDescription": "Provo përsëri ose ndrysho filtrat.",
+    "errorTooltip": "Kërkesa për regjistrin e klientëve dështoi",
+    "columns": {
+      "name": "Emri",
+      "phone": "Telefoni",
+      "email": "Email",
+      "project": "Projekti",
+      "unit": "Njësia",
+      "typology": "Tipologjia",
+      "surface": "Sipërfaqja (m²)",
+      "unitValue": "Vlera e njësisë (EUR)",
+      "status": "Statusi",
+      "bookingDate": "Data e rezervimit",
+      "contractDate": "Data e kontratës",
+      "agent": "Agjenti",
+      "paid": "Paguar",
+      "remaining": "Mbetur",
+      "actions": "Veprimet"
+    },
+    "status": {
+      "sold": "Shitur",
+      "reserved": "Rezervuar"
+    },
+    "pagination": {
+      "summary": "{from} deri {to} nga {total} rezultate"
+    },
+    "viewAction": "Shiko"
+  }
+}

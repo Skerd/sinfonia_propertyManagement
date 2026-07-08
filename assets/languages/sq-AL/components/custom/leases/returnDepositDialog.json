@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/returnDepositDialog.tsx",
+  "dialogTitle": "Kthe depozitën",
+  "dialogDescription": "Regjistro që depozita e sigurisë i është kthyer qiramarrësit.",
+  "cancel": "Anulo",
+  "submit": "Kthe depozitën"
+}

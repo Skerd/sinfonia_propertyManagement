@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/returnDepositDialog.tsx",
+  "dialogTitle": "Return deposit",
+  "dialogDescription": "Record that the security deposit has been returned to the tenant.",
+  "cancel": "Cancel",
+  "submit": "Return deposit"
+}

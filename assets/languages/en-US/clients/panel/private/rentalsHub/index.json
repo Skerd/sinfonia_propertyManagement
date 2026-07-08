@@ -1,0 +1,81 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
+  "title": "Rentals Hub",
+  "description": "All leases and rent payments in one place. Search, filter and open details.",
+  "leases": {
+    "title": "Leases",
+    "description": "Company-wide lease registry.",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search by tenant, unit, lease reference…",
+    "projectLabel": "Project",
+    "projectPlaceholder": "All projects",
+    "statusLabel": "Status",
+    "statusPlaceholder": "All statuses",
+    "startDateLabel": "Start date",
+    "dateFromLabel": "From",
+    "dateToLabel": "To",
+    "noResults": "No leases found.",
+    "errorTitle": "Could not load leases",
+    "errorDescription": "Try again or adjust your filters.",
+    "viewAction": "View",
+    "previous": "Previous",
+    "next": "Next",
+    "columns": {
+      "reference": "Reference",
+      "tenant": "Tenant",
+      "project": "Project",
+      "unit": "Unit",
+      "status": "Status",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "monthlyRent": "Monthly rent",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "expired": "Expired",
+      "terminated": "Terminated"
+    },
+    "pagination": {
+      "summary": "{from} to {to} of {total} results"
+    }
+  },
+  "rentalPayments": {
+    "title": "Rent payments",
+    "description": "Company-wide rent payment ledger.",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search by tenant, lease, unit, status…",
+    "projectLabel": "Project",
+    "projectPlaceholder": "All projects",
+    "statusLabel": "Status",
+    "statusPlaceholder": "All statuses",
+    "dueDateLabel": "Due date",
+    "dateFromLabel": "From",
+    "dateToLabel": "To",
+    "noResults": "No rent payments found.",
+    "errorTitle": "Could not load rent payments",
+    "errorDescription": "Try again or adjust your filters.",
+    "viewAction": "View",
+    "previous": "Previous",
+    "next": "Next",
+    "columns": {
+      "reference": "Reference",
+      "lease": "Lease",
+      "tenant": "Tenant",
+      "unit": "Unit",
+      "status": "Status",
+      "dueDate": "Due date",
+      "amount": "Amount",
+      "actions": "Actions"
+    },
+    "status": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "overdue": "Overdue",
+      "waived": "Waived"
+    },
+    "pagination": {
+      "summary": "{from} to {to} of {total} results"
+    }
+  }
+}

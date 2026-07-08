@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/EdificeDetailPanel.tsx",
+  "floorPlan": "Plani i katit",
+  "paymentAlerts": "Sinjalizimet e pagesave",
+  "viewPaymentPlans": "Shikoni planet e pagesave",
+  "unitsList": "Lista e njësive",
+  "viewAllUnits": "Shiko të gjitha",
+  "units": "njësive"
+}

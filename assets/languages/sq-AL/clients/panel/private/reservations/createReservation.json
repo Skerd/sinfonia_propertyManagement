@@ -1,0 +1,80 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
+  "title": "Krijo Rezervim",
+  "description": "Krijo një rezervim të ri për këtë njësi",
+  "errorTitle": "Njësia nuk mund të ngarkohet",
+  "errorDescription": "Ju lutemi provoni përsëri.",
+  "sectionTitle": "Informacioni i Rezervimit",
+  "unitLocationTitle": "Vendndodhja e njësisë",
+  "generalInfo": "Detajet e rezervimit",
+  "documentsSectionTitle": "Dokumentet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën",
+    "floorLabel": "Kati",
+    "floorPlaceholder": "Zgjidhni dyshemenë",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidhni njësinë",
+    "unitRequired": "Kërkohet njësia",
+    "reservedByLabel": "Rezervuar nga",
+    "reservedByPlaceholder": "Zgjidhni përdorues",
+    "reservedByRequired": "Kërkohet përdorues",
+    "reservedByCompanyLabel": "Kompania",
+    "reservedByCompanyPlaceholder": "Zgjidhni kompaninë",
+    "reservedByCompanyRequired": "Kërkohet kompani",
+    "clientLabel": "Klienti",
+    "clientPlaceholder": "Zgjidhni klientin",
+    "clientRequired": "Kërkohet klienti",
+    "expirationDateLabel": "Data e skadimit",
+    "expirationDatePlaceholder": "Zgjidhni datën e skadencës",
+    "reservationNotesLabel": "Shënime",
+    "reservationNotesPlaceholder": "Futni shënimet e rezervimit",
+    "depositAmountLabel": "Shuma e depozitës",
+    "depositAmountPlaceholder": "Shkruani shumën e depozitës",
+    "depositCurrencyLabel": "Valuta e depozitës",
+    "depositCurrencyPlaceholder": "Zgjidhni monedhën",
+    "sourceLabel": "Burimi",
+    "sourcePlaceholder": "Zgjidhni burimin",
+    "sourceValues": {
+      "agent": "Agjenti",
+      "portal": "Portali",
+      "referral": "Referim",
+      "walk_in": "Vizitë direkte",
+      "social": "Rrjetet sociale",
+      "other": "Tjetër"
+    },
+    "referralCodeLabel": "Kodi i referimit",
+    "referralCodePlaceholder": "Shkruani kodin e referimit",
+    "paymentMethodLabel": "Mënyra e pagesës",
+    "paymentMethodPlaceholder": "Shkruani mënyrën e pagesës",
+    "reservationContractLabel": "Kontrata e rezervimit",
+    "uploadReservationContract": "Kontrata e ngarkimit",
+    "additionalDocumentsLabel": "Dokumente shtesë",
+    "uploadAdditionalDocuments": "Ngarko dokumente",
+    "filesSelected": "Skedarët e zgjedhur"
+  },
+  "axios": {
+    "start": {
+      "title": "Krijimi i rezervimit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rezervimi u krijua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rezervimi nuk mund të krijohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo Rezervim",
+    "description": "Krijo një rezervim të ri për këtë njësi"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo Rezervim"
+  }
+}

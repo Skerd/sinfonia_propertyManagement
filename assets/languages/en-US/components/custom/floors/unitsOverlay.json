@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/floors/unitsOverlay.tsx",
+  "title": "Unit polygons overlay",
+  "description": "All unit polygons displayed on the floor main image.",
+  "noMainImage": "Floor does not have a main image.",
+  "noUnitSelected": "No unit selected."
+}

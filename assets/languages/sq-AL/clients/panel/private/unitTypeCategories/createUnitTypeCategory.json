@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx",
+  "title": "Krijo kategori të llojit të njësisë",
+  "description": "Krijo një kategori të re",
+  "generalInfo": "Informacion i përgjithshëm",
+  "form": {
+    "nameLabel": "Emri",
+    "namePlaceholder": "Shkruani emrin e kategorisë",
+    "nameRequired": "Emri është i detyrueshëm"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar kategorinë",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategoria u krijua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kategoria nuk mund të krijohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo kategori të llojit të njësisë",
+    "description": "Krijo një kategori të re"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo kategorinë"
+  }
+}

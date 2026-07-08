@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/center/cardView/unitTypeCard.tsx",
+  "active": "Aktiv",
+  "name": "Emri",
+  "slug": "Slug",
+  "description": "Përshkrimi",
+  "icon": "Ikona",
+  "category": "Kategoria",
+  "group": "Grupi",
+  "isPrivate": "Lloji i aksesit",
+  "private": "Privat",
+  "public": "Publike",
+  "deleted": "Fshirë"
+}

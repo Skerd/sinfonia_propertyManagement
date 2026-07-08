@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx",
+  "failedTitle": "Ngarkimi i tipit të njësisë dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij tipi të njësisë. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "name": "Emri",
+  "unitType": "Lloji i njësisë",
+  "overview": "Vështrim i përgjithshëm",
+  "description": "Përshkrimi",
+  "slug": "Slug",
+  "category": "Kategoria",
+  "group": "Grupi",
+  "icon": "Ikona",
+  "isPrivate": "Lloji i aksesit",
+  "private": "Privat",
+  "public": "Publike",
+  "unitTypeVisibility": {
+    "true": "Privat",
+    "false": "Publike"
+  }
+}

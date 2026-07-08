@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx",
+  "title": "Create Unit Type Category",
+  "description": "Create a new unit type category",
+  "generalInfo": "General Information",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter category name",
+    "nameRequired": "Name is required"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating category",
+      "time": 3000
+    },
+    "success": {
+      "title": "Category successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Category could not be created, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create Unit Type Category",
+    "description": "Create a new unit type category"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Category"
+  }
+}

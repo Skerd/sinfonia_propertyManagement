@@ -1,0 +1,67 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Defekti nuk u përditësua, ju lutemi provoni sërish!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke përditësuar defektin"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Defekti u përditësua me sukses!"
+    }
+  },
+  "editDescription": "Përditëso detajet e defektit",
+  "editTitle": "Ndrysho Defektin",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+  "errorTitle": "Dështoi ngarkimi i defektit",
+  "form": {
+    "_idLabel": "ID e rekordit",
+    "addFile": "Shto foto",
+    "assignedToLabel": "Caktuar tek",
+    "assignedToPlaceholder": "Zgjidh personin e caktuar",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Detaje shtesë për defektin",
+    "dueDateLabel": "Afati",
+    "dueDatePlaceholder": "Zgjidh afatin",
+    "existingFiles": "Fotot ekzistuese",
+    "filesSelected": "foto të zgjedhura",
+    "locationLabel": "Vendndodhja",
+    "locationPlaceholder": "p.sh. tavan dhoma kryesore",
+    "newFiles": "Shto foto të reja",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime të brendshme",
+    "photosLabel": "Fotot",
+    "reportedByLabel": "Raportuar nga",
+    "reportedByPlaceholder": "Zgjidh raportuesin",
+    "severityCritical": "Kritike",
+    "severityHigh": "E lartë",
+    "severityLabel": "Ashpërsia",
+    "severityLow": "E ulët",
+    "severityMedium": "Mesatare",
+    "severityPlaceholder": "Zgjidh ashpërsinë",
+    "statusInProgress": "Në progres",
+    "statusLabel": "Statusi",
+    "statusOpen": "Hapur",
+    "statusPlaceholder": "Zgjidh statusin",
+    "statusRejected": "Refuzuar",
+    "statusResolved": "Zgjidhur",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Përshkruaj defektin",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidh njësinë"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  },
+  "formHeader": {
+    "description": "Përditëso detajet e defektit",
+    "title": "Ndrysho Defektin"
+  },
+  "generalInfo": "Detajet e Defektit",
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/editSnag.tsx",
+  "title": "Title"
+}

@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/createConstructionUpdate.tsx",
+  "title": "Add Construction Update",
+  "description": "Record a new construction progress update",
+  "generalInfo": "Update Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice (optional)",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter update title",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe construction progress",
+    "progressPercentLabel": "Progress (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Update Date",
+    "updateDatePlaceholder": "Select date",
+    "photosLabel": "Photos",
+    "addFile": "Add photo",
+    "filesSelected": "photos selected",
+    "existingFiles": "Existing photos",
+    "newFiles": "Add new photos"
+  },
+  "axios": {
+    "start": { "title": "Saving update", "time": 3000 },
+    "success": { "title": "Construction update saved!", "time": 3000 },
+    "error": { "title": "Could not save update, please try again!", "time": 3000 }
+  },
+  "formHeader": { "title": "Add Construction Update", "description": "Record a new construction progress update" },
+  "formButtons": { "cancel": "Cancel", "submit": "Save Update" }
+}

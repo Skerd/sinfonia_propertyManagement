@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx",
+  "failedTitle": "Failed to load unit cost",
+  "failedDescription": "Something went wrong. Click to retry.",
+  "purchaseDate": "Purchase date",
+  "purchasePerson": "Purchased by",
+  "documentSubtotal": "Subtotal",
+  "unitCostVerification": {
+    "pending_verification": "Pending verification",
+    "verified": "Verified",
+    "rejected": "Rejected",
+    "needs_revision": "Needs revision"
+  },
+  "unitCostPayment": {
+    "unpaid": "Unpaid",
+    "partially_paid": "Partially paid",
+    "paid": "Paid",
+    "waived": "Waived",
+    "disputed": "Disputed"
+  },
+  "invoiceNumber": "Invoice #",
+  "vendorName": "Vendor",
+  "tag": "Tag",
+  "relatedModificationRequest": "Modification Request"
+}

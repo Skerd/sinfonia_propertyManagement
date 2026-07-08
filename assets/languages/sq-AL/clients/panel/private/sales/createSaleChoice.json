@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/createSaleChoice.tsx",
+  "title": "Krijo shitje",
+  "description": "Zgjidhni se si dëshironi të krijoni shitjen.",
+  "cashSale": "Shitje me para në dorë",
+  "cashSaleDescription": "Pagesë e plotë një herë me kontratë dhe dokumente.",
+  "paymentPlanSale": "Shitja e planit të pagesës",
+  "paymentPlanSaleDescription": "Shitet me paradhënie dhe këste.",
+  "createCashSale": "Krijoni shitje në para",
+  "createPaymentPlanSale": "Krijo shitje të planit të pagesës"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/cancelModificationRequestDialog.tsx",
+  "title": "Anulo Kërkesën",
+  "cancelConfirmTitle": "Anulo kërkesën për modifikim",
+  "cancelConfirmDescription": "Jeni i sigurt që dëshironi ta anuloni këtë kërkesë modifikimi? Ju lutemi jepni një arsye për anulimin.",
+  "cancellationReasonLabel": "Arsyeja e anulimit",
+  "cancellationReasonPlaceholder": "Shkruani arsyen e anulimit të kësaj kërkese...",
+  "cancel": "Anulo",
+  "confirmCancel": "Anulo Kërkesën",
+  "axios": {
+    "start": {
+      "title": "Anulimi i kërkesës…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkesa e modifikimit u anulua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkesa nuk mund të anulohej",
+      "time": 3000
+    }
+  }
+}

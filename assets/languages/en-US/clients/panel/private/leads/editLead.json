@@ -1,0 +1,76 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/editLead.tsx",
+  "title": "Edit Lead",
+  "description": "Update lead information",
+  "editTitle": "Edit Lead",
+  "editDescription": "Update lead information",
+  "errorTitle": "Failed to load lead",
+  "errorDescription": "An error occurred while loading the lead. Please try again.",
+  "generalInfo": "General Information",
+  "interestInfo": "Property Interest",
+  "form": {
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Enter first name",
+    "firstNameRequired": "First name is required",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Enter last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter email address",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Enter phone number",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Select status",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Select source",
+    "projectInterestLabel": "Project Interest",
+    "projectInterestPlaceholder": "Select project",
+    "unitInterestLabel": "Unit Interest",
+    "unitInterestPlaceholder": "Select unit",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "Enter budget amount",
+    "budgetCurrencyLabel": "Budget Currency",
+    "budgetCurrencyPlaceholder": "Select currency",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Enter notes",
+    "assignedToLabel": "Assigned To",
+    "assignedToPlaceholder": "Select user",
+    "followUpDateLabel": "Follow-up Date",
+    "followUpDatePlaceholder": "Select date",
+    "statusNew": "New",
+    "statusContacted": "Contacted",
+    "statusQualified": "Qualified",
+    "statusProposal": "Proposal",
+    "statusNegotiation": "Negotiation",
+    "statusWon": "Won",
+    "statusLost": "Lost",
+    "sourceWebsite": "Website",
+    "sourceReferral": "Referral",
+    "sourceSocial": "Social Media",
+    "sourceEvent": "Event",
+    "sourceColdCall": "Cold Call",
+    "sourceWalkIn": "Walk-in",
+    "sourceOther": "Other"
+  },
+  "axios": {
+    "start": {
+      "title": "Updating lead",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead successfully updated!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lead could not be updated, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Lead",
+    "description": "Update lead information"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  }
+}

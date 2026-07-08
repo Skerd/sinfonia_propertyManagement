@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx",
+  "title": "Kronologjia e ndërtimit",
+  "description": "Pikat e progresit sipas datës së përditësimit. Kaloni kursorin për detaje, klikoni për të hapur regjistrin.",
+  "emptyTitle": "Ende pa përditësime",
+  "emptyDescription": "Shtoni një përditësim ndërtimi për të filluar kronologjinë.",
+  "failTitle": "Kronologjia nuk u ngarkua",
+  "failDescription": "Diçka shkoi keq. Klikoni për të provuar sërish.",
+  "noPhoto": "Pa foto",
+  "hint": "Kaloni kursorin për pamje · klikoni për detaje",
+  "updatesCount": "përditësime",
+  "loading": "Duke u ngarkuar…"
+}

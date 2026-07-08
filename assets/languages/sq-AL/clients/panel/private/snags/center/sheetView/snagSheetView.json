@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/center/sheetView/snagSheetView.tsx",
+  "failedTitle": "Dështoi ngarkimi i defektit",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit. Klikoni për të provuar sërish.",
+  "failedTooltipDescription": "Klikoni për të provuar sërish.",
+  "snag": "Defekt",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "unit": "Njësia",
+  "location": "Vendndodhja",
+  "status": "Statusi",
+  "severity": "Ashpërsia",
+  "reportedBy": "Raportuar nga",
+  "assignedTo": "Caktuar tek",
+  "dueDate": "Afati",
+  "resolvedAt": "Zgjidhur më",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "photos": "Fotot",
+  "none": "Asnjë",
+  "statuses": {
+    "open": "Hapur",
+    "in_progress": "Në progres",
+    "resolved": "Zgjidhur",
+    "rejected": "Refuzuar"
+  },
+  "severities": {
+    "low": "E ulët",
+    "medium": "Mesatare",
+    "high": "E lartë",
+    "critical": "Kritike"
+  }
+}

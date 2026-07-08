@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx",
+  "title": "Construction timeline",
+  "description": "Progress milestones ordered by update date. Hover a point for details, click to open the full record.",
+  "emptyTitle": "No updates yet",
+  "emptyDescription": "Add a construction update to start building the timeline.",
+  "failTitle": "Could not load timeline",
+  "failDescription": "Something went wrong while loading updates. Click to retry.",
+  "noPhoto": "No photo",
+  "hint": "Hover for preview · click to open details",
+  "updatesCount": "updates",
+  "loading": "Loading…"
+}

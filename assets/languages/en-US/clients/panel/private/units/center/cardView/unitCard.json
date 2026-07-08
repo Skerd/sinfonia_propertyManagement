@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx",
+  "failedTitle": "Failed to load unit data",
+  "failedDescription": "Failed to load data, click here to retry",
+  "floor": "Floor",
+  "data": {
+    "name": "Name",
+    "unitType": "Unit Type",
+    "unitNumber": "Unit Number",
+    "area": "Area",
+    "sharedArea": "Shared Area",
+    "description": "Description",
+    "rooms": "Rooms",
+    "numberOfBathrooms": "Bathrooms",
+    "price": "Price",
+    "isAvailable": "Availability",
+    "features": "Features",
+    "mainImage": "Main Image"
+  },
+  "features": {
+    "balcony": "Balcony",
+    "terrace": "Terrace",
+    "seaView": "Sea View",
+    "cityView": "City View",
+    "elevator": "Elevator",
+    "lakeView": "Lake View"
+  },
+  "edit": "Edit",
+  "delete": "Delete",
+  "deleted": "Deleted",
+  "active": "Active",
+  "available": "Available",
+  "notAvailable": "Not Available",
+  "reserved": "Reserved",
+  "sold": "Sold",
+  "statusAvailable": "Available",
+  "statusUnavailable": "Not Available",
+  "statusReserved": "Reserved",
+  "statusSold": "Sold",
+  "statusUnknown": "Unknown",
+  "priceNotSet": "Price Not Set",
+  "constructionStatus": {
+    "planned": "Planned",
+    "under_construction": "Under Construction",
+    "ready": "Ready",
+    "delivered": "Delivered"
+  }
+}

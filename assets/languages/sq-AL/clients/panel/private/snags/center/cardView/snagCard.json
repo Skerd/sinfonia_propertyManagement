@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/center/cardView/snagCard.tsx",
+  "noPhotos": "Nuk ka foto",
+  "statusLabel": "Statusi",
+  "severityLabel": "Ashpërsia",
+  "fields": {
+    "unit": "Njësia",
+    "location": "Vendndodhja",
+    "dueDate": "Afati",
+    "assignedTo": "Caktuar tek",
+    "!enums": {
+      "status": {
+        "open": "Hapur",
+        "in_progress": "Në progres",
+        "resolved": "Zgjidhur",
+        "rejected": "Refuzuar"
+      },
+      "severity": {
+        "low": "E ulët",
+        "medium": "Mesatare",
+        "high": "E lartë",
+        "critical": "Kritike"
+      }
+    }
+  }
+}

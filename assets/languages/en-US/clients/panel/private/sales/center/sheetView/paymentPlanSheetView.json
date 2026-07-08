@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx",
+  "failedTitle": "Failed to load payment plan",
+  "failedDescription": "Something went wrong while loading this payment plan. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "paymentPlan": "Payment Plan",
+  "overview": "Overview",
+  "code": "Code",
+  "status": "Status",
+  "paymentPlanStatusState": {
+    "active": "Active",
+    "completed": "Completed",
+    "defaulted": "Defaulted",
+    "cancelled": "Cancelled"
+  },
+  "numberOfInstallments": "Number of installments",
+  "financials": "Financials",
+  "totalAmount": "Total Amount",
+  "downPayment": "Down Payment",
+  "downPaymentPaid": "Down Payment Paid",
+  "downPaymentPaidState": {
+    "true": "Paid",
+    "false": "Not Paid"
+  },
+  "remainingBalance": "Remaining Balance",
+  "installmentAmount": "Installment Amount",
+  "interestRate": "Interest Rate",
+  "lateFeePercentage": "Late Fee Percentage",
+  "schedule": "Schedule",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "downPaymentDate": "Down payment date",
+  "gracePeriodDays": "Grace Period",
+  "notes": "Notes",
+  "installments": "Installments",
+  "totalInstallments": "Total installments:",
+  "installment": "Installment",
+  "dueDate": "Due Date",
+  "amount": "Amount",
+  "paidAmount": "Paid Amount",
+  "remainingAmount": "Remaining",
+  "actions": "Actions",
+  "installmentStatusState": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "overdue": "Overdue",
+    "cancelled": "Cancelled",
+    "partially_paid": "Partially Paid"
+  },
+  "pending": "Pending",
+  "noInstallments": "No installments found for this payment plan."
+}

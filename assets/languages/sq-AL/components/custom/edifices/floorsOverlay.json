@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/floorsOverlay.tsx",
+  "title": "Mbivendosja e shumëkëndëshave të dyshemesë",
+  "description": "Të gjithë poligonet e dyshemesë shfaqen në imazhin kryesor të ndërtesës.",
+  "noMainImage": "Edifice nuk ka një imazh kryesor.",
+  "noFloorSelected": "Asnjë kat i zgjedhur."
+}

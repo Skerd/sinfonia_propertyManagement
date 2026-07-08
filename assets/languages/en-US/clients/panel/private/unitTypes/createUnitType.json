@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/createUnitType.tsx",
+  "title": "Create Unit Type",
+  "description": "Create a new unit type",
+  "generalInfo": "General Information",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter unit type name",
+    "nameRequired": "Name is required",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "Select category",
+    "categoryRequired": "Category is required",
+    "groupLabel": "Group",
+    "groupPlaceholder": "Select group",
+    "groupRequired": "Group is required",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Enter slug (e.g., apartment)",
+    "slugRequired": "Slug is required",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter description",
+    "iconLabel": "Icon",
+    "iconPlaceholder": "Enter icon (e.g., mdi-home)",
+    "isPrivateLabel": "Private"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating unit type",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unit type successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Unit type could not be created, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create Unit Type",
+    "description": "Create a new unit type"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Unit Type"
+  }
+}

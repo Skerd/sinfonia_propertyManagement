@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/index.tsx",
+  "title": "Snagging List",
+  "description": "Defects, issues and punch list items",
+  "createSnag": "Report Defect",
+  "noData": "No snags found",
+  "failTitle": "Failed to load snagging list",
+  "failDescription": "An error occurred while loading snags. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "unit": "Unit",
+    "title": "Title",
+    "location": "Location",
+    "status": "Status",
+    "severity": "Severity",
+    "assignedTo": "Assigned To",
+    "dueDate": "Due Date",
+    "resolvedAt": "Resolved At",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "status": {
+        "open": "Open",
+        "in_progress": "In Progress",
+        "resolved": "Resolved",
+        "rejected": "Rejected"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
+  }
+}

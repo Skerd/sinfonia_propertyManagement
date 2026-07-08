@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx",
+  "failedTitle": "Dështoi ngarkimi i përditësimit",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit. Klikoni për të provuar sërish.",
+  "failedTooltipDescription": "Klikoni për të provuar sërish.",
+  "constructionUpdate": "Përditësim ndërtimi",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "progressPercent": "Progresi",
+  "updateDate": "Data e përditësimit",
+  "description": "Përshkrimi",
+  "photos": "Fotot",
+  "none": "Asnjë"
+}

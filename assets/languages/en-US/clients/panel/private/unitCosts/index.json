@@ -1,0 +1,73 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/index.tsx",
+  "title": "Unit costs",
+  "description": "Purchases and invoices by unit",
+  "descriptionWithContext": "Costs linked to this unit",
+  "createUnitCost": "New unit cost",
+  "createUnitCostExpenses": "Add expense",
+  "searchPlaceholder": "Search or filter…",
+  "tabs": {
+    "calendar": "Payment calendar",
+    "expenses": "Expenses"
+  },
+  "expenses": {
+    "summaryTotal": "Total expenses (filtered)",
+    "summarySuppliers": "Unique suppliers",
+    "summaryPeriod": "Period",
+    "placeholder": "—",
+    "periodRange": "— → —"
+  },
+  "calendar": {
+    "kpiPaid": "Paid",
+    "kpiPending": "Pending",
+    "kpiOverdue": "Overdue",
+    "financialCalendarTitle": "Financial calendar",
+    "detailForDay": "Payments on {date}",
+    "selectDay": "Select a day",
+    "noPaymentsDay": "No payments scheduled for this date.",
+    "errorTitle": "Could not load calendar",
+    "errorDescription": "Try again or switch to the expenses tab.",
+    "truncatedTitle": "Results limited",
+    "truncatedDescription": "Only the first {max} rows were loaded for this month. Refine filters or use the expenses table for full data.",
+    "badge": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    }
+  },
+  "financeFilters": {
+    "any": "All",
+    "apply": "Apply",
+    "clear": "Clear",
+    "unit": "Unit",
+    "unitPlaceholder": "All units",
+    "verificationLabel": "Verification",
+    "paymentLabel": "Payment status",
+    "vendorLabel": "Supplier",
+    "vendorPlaceholder": "Search supplier…",
+    "purchaserLabel": "Purchaser",
+    "purchaserPlaceholder": "All people",
+    "verification": {
+      "pending_verification": "Pending verification",
+      "verified": "Verified",
+      "rejected": "Rejected",
+      "needs_revision": "Needs revision"
+    },
+    "payment": {
+      "unpaid": "Unpaid",
+      "partially_paid": "Partially paid",
+      "paid": "Paid",
+      "waived": "Waived",
+      "disputed": "Disputed"
+    }
+  },
+  "fields": {
+    "name": "Reference",
+    "unit": "Unit",
+    "purchaseDate": "Purchase date",
+    "verificationStatus": "Verification",
+    "paymentStatus": "Payment",
+    "documentSubtotal": "Subtotal",
+    "currency": "Currency"
+  }
+}

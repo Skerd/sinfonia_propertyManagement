@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
+  "title": "Record Rental Payment",
+  "description": "Record a new rental payment",
+  "generalInfo": "Payment Details",
+  "form": {
+    "leaseLabel": "Lease",
+    "leasePlaceholder": "Select lease",
+    "unitLabel": "Unit",
+    "dueDateLabel": "Due Date",
+    "amountLabel": "Amount",
+    "currencyLabel": "Currency",
+    "statusLabel": "Status",
+    "notesLabel": "Notes",
+    "receiptMediaLabel": "Payment Receipt",
+    "existingFiles": "Current file",
+    "newFiles": "New file"
+  },
+  "axios": {
+    "start": { "title": "Recording payment", "time": 3000 },
+    "success": { "title": "Payment successfully recorded!", "time": 3000 },
+    "error": { "title": "Payment could not be recorded, please try again!", "time": 3000 }
+  },
+  "formHeader": { "title": "Record Rental Payment", "description": "Record a new rental payment" },
+  "formButtons": { "cancel": "Cancel", "submit": "Record Payment" }
+}

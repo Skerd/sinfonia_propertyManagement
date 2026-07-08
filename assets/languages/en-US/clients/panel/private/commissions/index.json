@@ -1,0 +1,57 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/index.tsx",
+  "title": "Commissions",
+  "description": "Sale commissions and payout status",
+  "cardTitle": "Commission",
+  "view": "View",
+  "agent": "Agent",
+  "amount": "Amount",
+  "ratePercent": "Rate %",
+  "statusLabel": "Status",
+  "statusPending": "Pending",
+  "statusPaid": "Paid",
+  "statusVoided": "Voided",
+  "unit": "Unit",
+  "paidAt": "Paid at",
+  "deletedLabel": "Record",
+  "deleted": "Deleted",
+  "markPaid": "Mark paid",
+  "updateSuccess": "Commission updated",
+  "updateFail": "Could not update commission",
+  "noData": "No commissions found",
+  "failTitle": "Failed to load commissions",
+  "failDescription": "An error occurred while loading commissions. Please try again.",
+  "fields": {
+    "agent": "Agent",
+    "recordedByActionUser": "Recorded By Action User",
+    "sourceType": "Source Type",
+    "basis": "Basis",
+    "basisAmount": "Basis Amount",
+    "ratePercent": "Rate %",
+    "amount": "Amount",
+    "sale": "Sale",
+    "reservation": "Reservation",
+    "currency": "Currency",
+    "status": "Status",
+    "notes": "Notes",
+    "paidAt": "Paid At",
+    "voidedAt": "Voided At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "sourceType": {
+        "sale": "Sale",
+        "reservation": "Reservation"
+      },
+      "status": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "voided": "Voided"
+      }
+    }
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "yes": "Yes",
+  "no": "No"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/projects/index.tsx",
+  "title": "Projects",
+  "description": "Portfolio structure: projects, edifices, floors and units.",
+  "failTitle": "Failed to load",
+  "failDescription": "Could not load dashboard. Click to retry.",
+  "totalProjects": "Total projects",
+  "totalProjectsDesc": "Number of projects",
+  "totalEdifices": "Edifices",
+  "totalEdificesDesc": "Total buildings",
+  "totalFloors": "Floors",
+  "totalFloorsDesc": "Total floors across edifices",
+  "totalUnits": "Total units",
+  "totalUnitsDesc": "All units in portfolio",
+  "unitsSold": "Units sold",
+  "unitsSoldDesc": "Sold units across portfolio",
+  "avgUnitsPerProject": "Avg. units per project",
+  "avgUnitsPerProjectDesc": "Total units ÷ projects",
+  "avgFloorsPerEdifice": "Avg. floors per edifice",
+  "avgFloorsPerEdificeDesc": "Total floors ÷ edifices",
+  "projectCards": "Projects",
+  "createProject": "Create project"
+}

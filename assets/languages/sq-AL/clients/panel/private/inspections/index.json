@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspections/index.tsx",
+  "title": "Inspektimet",
+  "description": "Menaxhoni inspektimet e njësisë",
+  "descriptionWithContext": "Menaxhoni inspektimet për këtë njësi",
+  "createInspection": "Krijo Inspektimin",
+  "noData": "Nuk u gjetën inspektime",
+  "failTitle": "Ngarkimi i inspektimeve dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të inspektimeve. Ju lutemi provoni përsëri.",
+  "status": "Statusi",
+  "deleted": "Fshirë",
+  "type": "Lloji",
+  "inspectionDate": "Data e Inspektimit",
+  "inspectedBy": "Inspektuar nga",
+  "rating": "Vlerësimi",
+  "view": "Shiko",
+  "fields": {
+    "name": "Emri",
+    "unit": "Njësia",
+    "inspectedBy": "Inspektor",
+    "inspectionDate": "Data",
+    "scheduledDate": "I planifikuar",
+    "type": "Lloji",
+    "status": "Statusi",
+    "notes": "Shënime",
+    "findings": {
+      "structuralIssues": "Çështjet Strukturore",
+      "electricalIssues": "Çështjet Elektrike",
+      "plumbingIssues": "Çështjet hidraulike",
+      "hvacIssues": "Çështjet e HVAC",
+      "safetyConcerns": "Shqetësimet e sigurisë",
+      "cosmeticIssues": "Çështje Kozmetike",
+      "otherObservations": "Vëzhgime të tjera"
+    },
+    "rating": "Vlerësimi",
+    "media": "Media",
+    "nextInspectionDate": "Data e ardhshme e inspektimit",
+    "followUpRequired": "Kërkohet ndjekja",
+    "followUpInspection": "Vazhdimi i Inspektimit",
+    "followedUpByInspection": "E ndjekur nga inspektimi",
+    "completedAt": "Përfunduar në",
+    "cancelledAt": "Anuluar në",
+    "cancellationReason": "Arsyeja e anulimit",
+    "clientSignedAt": "Nënshkruar më",
+    "createdAt": "Krijuar në",
+    "updatedAt": "Përditësuar në",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "type": {
+        "initial": "Fillestare",
+        "follow_up": "Ndiqni Up",
+        "final": "Final",
+        "routine": "Rutinë",
+        "complaint": "Ankesa",
+        "pre_sale": "Para Shitje",
+        "post_sale": "Pas shitjes"
+      },
+      "status": {
+        "scheduled": "I planifikuar",
+        "in_progress": "Në progres",
+        "completed": "E përfunduar",
+        "cancelled": "Anuluar",
+        "rescheduled": "Riplanifikuar"
+      }
+    }
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "yes": "po",
+  "no": "Nr"
+}

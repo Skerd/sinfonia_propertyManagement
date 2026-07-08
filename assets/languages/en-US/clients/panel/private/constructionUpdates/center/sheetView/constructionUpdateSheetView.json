@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx",
+  "failedTitle": "Failed to load construction update",
+  "failedDescription": "Something went wrong while loading this update. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "constructionUpdate": "Construction update",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "project": "Project",
+  "edifice": "Edifice",
+  "progressPercent": "Progress",
+  "updateDate": "Update date",
+  "description": "Description",
+  "photos": "Photos",
+  "none": "None"
+}

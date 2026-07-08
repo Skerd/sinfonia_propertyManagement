@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/deliverModificationRequestDialog.tsx",
+  "title": "Modification Delivered",
+  "deliverConfirmTitle": "Mark Modification as Delivered",
+  "deliverConfirmDescription": "This will mark the modification request as completed and delivered. This is the final step in the workflow.",
+  "notesLabel": "Delivery Notes",
+  "notesPlaceholder": "Enter any delivery notes (optional)",
+  "inspectionsLabel": "Link Inspections",
+  "mediaLabel": "Delivery Attachments",
+  "addFile": "Add file",
+  "selectInspectionsPlaceholder": "Select inspections to link...",
+  "searchInspections": "Search inspections...",
+  "noInspectionsFound": "No inspections found for this unit",
+  "cancel": "Cancel",
+  "confirmButton": "Mark as Delivered",
+  "axios": {
+    "start": {
+      "title": "Recording delivery…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Delivery recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not record delivery",
+      "time": 3000
+    }
+  }
+}

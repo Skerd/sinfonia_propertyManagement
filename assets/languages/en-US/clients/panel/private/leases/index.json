@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/index.tsx",
+  "title": "Leases",
+  "description": "Rental lease agreements",
+  "createLease": "New Lease",
+  "noData": "No leases found",
+  "failTitle": "Failed to load leases",
+  "failDescription": "An error occurred while loading leases. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "unit": "Unit",
+    "tenant": "Tenant",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "monthlyRent": "Monthly Rent",
+    "rentCurrency": "Currency",
+    "depositAmount": "Deposit",
+    "depositPaid": "Deposit Paid",
+    "status": "Status",
+    "!enums": {
+      "status": {
+        "active": "Active",
+        "expired": "Expired",
+        "terminated": "Terminated"
+      }
+    }
+  }
+}

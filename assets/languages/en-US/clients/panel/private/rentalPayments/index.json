@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
+  "title": "Rental Payments",
+  "description": "Tenant rental payment records",
+  "createRentalPayment": "Record Payment",
+  "noData": "No rental payments found",
+  "failTitle": "Failed to load rental payments",
+  "failDescription": "An error occurred while loading rental payments. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "lease": "Lease",
+    "unit": "Unit",
+    "dueDate": "Due Date",
+    "amount": "Amount",
+    "paidAmount": "Paid Amount",
+    "currency": "Currency",
+    "status": "Status",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "partial": "Partial",
+        "overdue": "Overdue",
+        "waived": "Waived"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/createLease.tsx",
+  "title": "Krijo Kontratë Qiraje",
+  "description": "Regjistro një marrëveshje të re qiraje",
+  "generalInfo": "Detajet e Kontratës",
+  "form": {
+    "unitLabel": "Njësia",
+    "tenantLabel": "Qiramarrësi",
+    "startDateLabel": "Data e fillimit",
+    "endDateLabel": "Data e mbarimit",
+    "monthlyRentLabel": "Qiraja mujore",
+    "rentCurrencyLabel": "Monedha",
+    "depositAmountLabel": "Shuma e depozitës",
+    "depositPaidLabel": "Depozita paguar",
+    "notesLabel": "Shënime",
+    "contractMediaLabel": "Dokumenti i kontratës",
+    "existingFiles": "Skedari aktual",
+    "newFiles": "Skedar i ri"
+  },
+  "axios": {
+    "start": { "title": "Duke krijuar kontratën", "time": 3000 },
+    "success": { "title": "Kontrata u krijua me sukses!", "time": 3000 },
+    "error": { "title": "Kontrata nuk u krijua, ju lutemi provoni sërish!", "time": 3000 }
+  },
+  "formHeader": { "title": "Krijo Kontratë Qiraje", "description": "Regjistro një marrëveshje të re qiraje" },
+  "formButtons": { "cancel": "Anulo", "submit": "Krijo Kontratën" }
+}

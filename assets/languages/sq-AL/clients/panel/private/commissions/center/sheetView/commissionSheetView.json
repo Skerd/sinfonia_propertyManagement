@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx",
+  "failedTitle": "Ngarkimi i komisionit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij komisioni. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "overview": "Vështrim i përgjithshëm",
+  "financials": "Financat",
+  "references": "Referencat",
+  "dates": "Datat",
+  "notes": "Shënime",
+  "and": "dhe",
+  "commission": "Komisioni",
+  "agent": "Agjenti",
+  "sourceType": "Burimi",
+  "sourceTypeEnum": {
+    "sale": "Shitje",
+    "reservation": "Rezervimi"
+  },
+  "status": "Statusi",
+  "statusEnum": {
+    "pending": "Në pritje",
+    "paid": "I paguar",
+    "voided": "I zbrazur"
+  },
+  "basis": "Baza e komisionit",
+  "basisEnum": {
+    "depositAmount": "Depoziti i rezervimit",
+    "finalPrice": "Çmimi përfundimtar i shitjes"
+  },
+  "basisTooltip": "Si llogaritet ose etiketohet ky komision (p.sh. çmimi i shitjes, tarifa fikse).",
+  "basisAmount": "Shuma bazë",
+  "ratePercent": "norma %",
+  "amount": "Shuma",
+  "sale": "Shitje",
+  "reservation": "Rezervimi",
+  "currency": "Monedha",
+  "paidAt": "Paguhet në",
+  "voidedAt": "I anuluar në",
+  "modelType": "Komisioni"
+}

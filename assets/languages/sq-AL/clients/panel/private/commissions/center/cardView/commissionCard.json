@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/cardView/commissionCard.tsx",
+  "overview": "Vështrim i përgjithshëm",
+  "clickToCopy": "Klikoni për të kopjuar",
+  "active": "Aktiv",
+  "unit": "Njësia",
+  "agent": "Agjenti",
+  "amount": "Shuma",
+  "ratePercent": "norma %",
+  "sourceType": "Burimi",
+  "status": "Statusi",
+  "statusEnum": {
+    "pending": "Në pritje",
+    "paid": "I paguar",
+    "voided": "I zbrazur"
+  },
+  "sourceTypeEnum": {
+    "sale": "Shitje",
+    "reservation": "Rezervimi"
+  },
+  "basis": "Baza e komisionit",
+  "notes": "Shënime",
+  "paidAt": "Paguhet në",
+  "voidedAt": "I anuluar në",
+  "recordedBy": "Regjistruar nga",
+  "deleted": "Fshirë",
+  "modelType": "Komisioni"
+}

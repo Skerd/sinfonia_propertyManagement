@@ -1,0 +1,17 @@
+{
+  "failedTitle": "Ngarkimi i planit të pagesës dështoi",
+  "failedDescription": "Ngarkimi i të dhënave dështoi. Kliko këtu për të riprovuar.",
+  "paymentPlan": "Plani i pagesës",
+  "status": "Statusi",
+  "paymentPlanStatusState": {
+    "active": "Aktiv",
+    "completed": "E përfunduar",
+    "defaulted": "E parazgjedhur",
+    "cancelled": "Anuluar"
+  },
+  "totalAmount": "Shuma totale",
+  "remainingBalance": "Bilanci i mbetur",
+  "numberOfInstallments": "Numri i kësteve",
+  "endDate": "Data e Fundit",
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+}

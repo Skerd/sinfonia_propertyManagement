@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx",
+  "failedTitle": "Ngarkimi i planit të pagesës dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij plani të pagesës. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "paymentPlan": "Plani i pagesës",
+  "overview": "Vështrim i përgjithshëm",
+  "code": "Kodi",
+  "status": "Statusi",
+  "paymentPlanStatusState": {
+    "active": "Aktiv",
+    "completed": "E përfunduar",
+    "defaulted": "E parazgjedhur",
+    "cancelled": "Anuluar"
+  },
+  "numberOfInstallments": "Numri i kësteve",
+  "financials": "Financat",
+  "totalAmount": "Shuma totale",
+  "downPayment": "Parapagim",
+  "downPaymentPaid": "Parapagimi i paguar",
+  "downPaymentPaidState": {
+    "true": "I paguar",
+    "false": "Nuk është paguar"
+  },
+  "remainingBalance": "Bilanci i mbetur",
+  "installmentAmount": "Shuma e këstit",
+  "interestRate": "Norma e interesit",
+  "lateFeePercentage": "Përqindja e tarifës së vonuar",
+  "schedule": "Orari",
+  "startDate": "Data e fillimit",
+  "endDate": "Data e Fundit",
+  "downPaymentDate": "Data e paradhënies",
+  "gracePeriodDays": "Periudha e mospagimit",
+  "notes": "Shënime",
+  "installments": "Këste",
+  "totalInstallments": "Totali i kësteve:",
+  "installment": "me këste",
+  "dueDate": "Data e Afatit",
+  "amount": "Shuma",
+  "paidAmount": "Shuma e paguar",
+  "remainingAmount": "E mbetur",
+  "actions": "Veprimet",
+  "installmentStatusState": {
+    "pending": "Në pritje",
+    "paid": "I paguar",
+    "overdue": "I vonuar",
+    "cancelled": "Anuluar",
+    "partially_paid": "Pjesërisht e paguar"
+  },
+  "pending": "Në pritje",
+  "noInstallments": "Nuk u gjetën këste për këtë plan pagese."
+}

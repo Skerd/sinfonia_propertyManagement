@@ -1,0 +1,135 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx",
+  "title": "Kërkesat për modifikim",
+  "description": "Menaxho kërkesat e modifikimit të klientit",
+  "descriptionWithContext": "Menaxho kërkesat për modifikim për këtë njësi",
+  "createModificationRequest": "Krijo kërkesë",
+  "noData": "Nuk u gjet asnjë kërkesë modifikimi",
+  "failTitle": "Ngarkimi i kërkesave për modifikim dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të kërkesave për modifikim. Ju lutemi provoni përsëri.",
+  "status": "Statusi",
+  "deleted": "Fshirë",
+  "name": "Emri",
+  "requestTitle": "Titulli",
+  "deliveredAt": "Dorëzuar",
+  "constructionType": "Lloji i ndërtimit",
+  "requestedBy": "Kërkuar nga",
+  "submittedAt": "Dorëzuar në",
+  "view": "Shiko",
+  "fields": {
+    "name": "Emri",
+    "unit": "Njësia",
+    "requestedBy": "Kërkuar nga",
+    "title": "Titulli",
+    "description": "Përshkrimi",
+    "constructionType": "Lloji i ndërtimit",
+    "materials": "Materiale inxhinierike",
+    "specifications": "Specifikimet",
+    "status": "Statusi",
+    "architectApproval": {
+      "decision": "Vendimi",
+      "user": "Shqyrtuar nga",
+      "notes": "Shënime",
+      "reviewedAt": "Shqyrtuar në"
+    },
+    "engineerApproval": {
+      "decision": "Vendimi",
+      "user": "Shqyrtuar nga",
+      "notes": "Shënime",
+      "reviewedAt": "Shqyrtuar në"
+    },
+    "ceoApproval": {
+      "decision": "Vendimi",
+      "user": "Shqyrtuar nga",
+      "notes": "Shënime",
+      "reviewedAt": "Shqyrtuar në"
+    },
+    "financeDetails": {
+      "totalCost": "Kostoja totale",
+      "currency": "Monedha",
+      "costBreakdown": {
+        "item": "Artikulli",
+        "cost": "Kostoja",
+        "quantity": "Sasia",
+        "unit": "Njësia"
+      },
+      "media": "Media",
+      "notes": "Shënime",
+      "estimatedCompletionDate": "Data e parashikuar e përfundimit"
+    },
+    "clientNotifiedAt": "Klienti njoftohet në",
+    "notificationSent": "Njoftimi u dërgua",
+    "submittedAt": "Dorëzuar në",
+    "deliveryApproval": {
+      "decision": "Vendimi",
+      "user": "Shqyrtuar nga",
+      "notes": "Shënime",
+      "reviewedAt": "Shqyrtuar në"
+    },
+    "inspections": "Inspektimet",
+    "inspection": "Inspektimi",
+    "completedAt": "Përfunduar në",
+    "cancelledAt": "Anuluar në",
+    "cancellationReason": "Arsyeja e anulimit",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "constructionType": {
+        "materials": "Materialet",
+        "room_division": "Ndarja e dhomës",
+        "flooring": "Dyshemeja",
+        "utilities": "Shërbimet komunale",
+        "structural": "Strukturore",
+        "electrical": "elektrike",
+        "plumbing": "Hidraulik",
+        "hvac": "HVAC",
+        "cosmetic": "Kozmetike",
+        "other": "Të tjera"
+      },
+      "status": {
+        "pending_architect": "Arkitekt në pritje",
+        "pending_engineer": "Inxhinier në pritje",
+        "pending_ceo": "CEO në pritje",
+        "pending_architect_revision": "Në pritje të rishikimit të arkitektit",
+        "pending_engineer_revision": "Rishikimi i inxhinierit në pritje",
+        "pending_finance": "Financa në pritje",
+        "finance_completed": "Financa e përfunduar",
+        "pending_delivery": "Në pritje të dorëzimit",
+        "completed": "E përfunduar",
+        "cancelled": "Anuluar"
+      },
+      "architectApproval": {
+        "decision": {
+          "approved": "Miratuar",
+          "rejected": "Refuzuar",
+          "pending": "Në pritje"
+        }
+      },
+      "engineerApproval": {
+        "decision": {
+          "approved": "Miratuar",
+          "rejected": "Refuzuar",
+          "pending": "Në pritje"
+        }
+      },
+      "ceoApproval": {
+        "decision": {
+          "approved": "Miratuar",
+          "rejected": "Refuzuar",
+          "pending": "Në pritje"
+        }
+      },
+      "deliveryApproval": {
+        "decision": {
+          "approved": "Miratuar",
+          "rejected": "Refuzuar",
+          "pending": "Në pritje"
+        }
+      }
+    }
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "yes": "po",
+  "no": "Nr"
+}

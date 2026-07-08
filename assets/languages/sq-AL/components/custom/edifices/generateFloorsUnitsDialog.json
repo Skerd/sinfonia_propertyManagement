@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/generateFloorsUnitsDialog.tsx",
+  "dialogTitle": "Gjeneroni dysheme dhe njësi",
+  "dialogDescription": "Ngarko një broshurë PDF për të gjeneruar automatikisht kate dhe njësi për këtë ndërtesë.",
+  "warningMessage": "Ky veprim mund të zgjasë deri në 1 minutë për t'u përfunduar, ju lutemi mos e mbyllni këtë dritare derisa të përfundoni!",
+  "fileLabel": "Broshura PDF",
+  "cancel": "Anulo",
+  "generate": "Gjeneroni",
+  "processing": "Po përpunohet...",
+  "noFileSelected": "Ju lutemi zgjidhni një skedar PDF",
+  "invalidFileType": "Ju lutemi zgjidhni një skedar të vlefshëm PDF",
+  "axios": {
+    "start": {
+      "title": "Gjenerimi i dyshemeve dhe njësive nga broshura",
+      "time": 60000
+    },
+    "success": {
+      "title": "Dyshemetë dhe njësitë u krijuan me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Dështoi në krijimin e dyshemeve dhe njësive. Ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  }
+}

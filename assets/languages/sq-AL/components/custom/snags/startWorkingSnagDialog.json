@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/startWorkingSnagDialog.tsx",
+  "dialogTitle": "Fillo punën",
+  "dialogDescription": "Konfirmoni që puna po fillon për këtë snag. Statusi do të ndryshojë në në progres.",
+  "assignedToLabel": "I caktuar te",
+  "unknownAssignee": "I panjohur",
+  "cancel": "Anulo",
+  "submit": "Fillo punën"
+}

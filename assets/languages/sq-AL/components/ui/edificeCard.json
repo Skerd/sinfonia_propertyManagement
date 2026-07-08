@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/ui/edificeCard.tsx",
+  "sold": "Shitur",
+  "reserved": "Rezervuar",
+  "reservedShort": "Rezervoni.",
+  "available": "Në dispozicion",
+  "availableShort": "Falas",
+  "blocked": "E bllokuar",
+  "blockedShort": "Blloko.",
+  "value": "Vlera",
+  "collected": "Të mbledhura",
+  "floor": "kat",
+  "floors": "dyshemetë"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reverseReservationPaymentDialog.tsx",
+  "title": "Pagesa e kundërt",
+  "reverseConfirmTitle": "Pagesa e kundërt",
+  "reverseConfirmDescription": "Kjo do të shënojë rezervimin si të papaguar plotësisht dhe do të anulojë çdo komision të lidhur në pritje. Të vazhdohet?",
+  "cancel": "Anulo",
+  "confirmReverse": "Pagesa e kundërt",
+  "axios": {
+    "start": {
+      "title": "Kthimi i pagesës…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pagesa u kthye",
+      "time": 3000
+    },
+    "error": {
+      "title": "Pagesa nuk mund të kthehej",
+      "time": 3000
+    }
+  }
+}

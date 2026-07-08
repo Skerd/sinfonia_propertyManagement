@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Unit type could not be updated, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Updating unit type"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Unit type successfully updated!"
+    }
+  },
+  "editDescription": "Edit unit type information",
+  "editTitle": "Edit Unit Type",
+  "errorDescription": "An error occurred while loading the unit type. Please try again.",
+  "errorTitle": "Failed to load unit type",
+  "form": {
+    "_idLabel": "Record ID",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "Select category",
+    "categoryRequired": "Category is required",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter description",
+    "groupLabel": "Group",
+    "groupPlaceholder": "Select group",
+    "groupRequired": "Group is required",
+    "iconLabel": "Icon",
+    "iconPlaceholder": "Enter icon (e.g., mdi-home)",
+    "isPrivateLabel": "Private",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter unit type name",
+    "nameRequired": "Name is required",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Enter slug (e.g., apartment)",
+    "slugRequired": "Slug is required"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  },
+  "formHeader": {
+    "description": "Edit unit type information",
+    "title": "Edit Unit Type"
+  },
+  "generalInfo": "General Information",
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
+  "title": "Title"
+}

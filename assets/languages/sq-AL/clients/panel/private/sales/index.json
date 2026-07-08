@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/index.tsx",
+  "title": "Shitjet",
+  "description": "Menaxhoni shitjet e njësive",
+  "descriptionWithContext": "Menaxhoni shitjet për këtë njësi",
+  "createSale": "Krijo shitje",
+  "createCashSale": "Krijoni shitje në para",
+  "createPaymentPlanSale": "Krijo shitje të planit të pagesës",
+  "view": "Shiko",
+  "noData": "Nuk u gjet asnjë shitje",
+  "failTitle": "Ngarkimi i shitjeve dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të shitjeve. Ju lutemi provoni përsëri.",
+  "status": "Statusi",
+  "deleted": "Fshirë",
+  "paymentType": "Lloji i pagesës",
+  "cash": "Paratë e gatshme",
+  "paymentPlan": "Plani i pagesës",
+  "paymentPlanStatus": "Statusi i planit të pagesës",
+  "saleDate": "Data e shitjes",
+  "finalPrice": "Çmimi përfundimtar",
+  "soldBy": "Shitur Nga",
+  "buyer": "Blerësi",
+  "fields": {
+    "name": "Emri",
+    "unit": "Njësia",
+    "paymentType": "Pagesa",
+    "reservation": "Rezervimi",
+    "listedUnitPrice": "Çmimi për njësi i listuar",
+    "reservationDepositAmount": "Depozita e Rezervimit",
+    "reservationExchangeRate": "Kursi i këmbimit të rezervimit",
+    "reservationConvertedAmount": "Shuma e konvertuar e rezervimit",
+    "localDiscount": "Zbritje lokale %",
+    "cashSale": {
+      "finalPrice": "Çmimi përfundimtar",
+      "saleDate": "Data",
+      "notes": "Shënime",
+      "transactionReference": "Transaksioni"
+    },
+    "paymentPlan": "Plani i pagesës",
+    "buyer": "Blerësi",
+    "buyerCompany": "Kompania blerëse",
+    "purchaseContract": "Kontrata e Blerjes",
+    "additionalDocuments": "Dokumentet Shtesë",
+    "soldBy": "Shitur Nga",
+    "saleDate": "Data e shitjes",
+    "finalPrice": "Çmimi përfundimtar",
+    "saleCurrency": "Monedha e shitjes",
+    "notes": "Shënime",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "paymentType": {
+        "cash": "Paratë e gatshme",
+        "payment_plan": "Plani i pagesës"
+      }
+    }
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "yes": "po",
+  "no": "Nr"
+}

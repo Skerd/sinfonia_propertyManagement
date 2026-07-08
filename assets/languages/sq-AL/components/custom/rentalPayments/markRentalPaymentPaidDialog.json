@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
+  "dialogTitle": "Shëno pagesën si të paguar",
+  "dialogDescription": "Regjistro pagesën e plotë prej {amount} për këtë këst qiraje.",
+  "cancel": "Anulo",
+  "submit": "Shëno të paguar"
+}

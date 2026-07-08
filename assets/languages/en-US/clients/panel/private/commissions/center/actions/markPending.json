@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPending.tsx",
+  "title": "Mark pending",
+  "pendingConfirmTitle": "Revert to pending?",
+  "pendingConfirmDescription": "This clears the paid status and sets the commission back to pending.",
+  "cancel": "Cancel",
+  "confirmPending": "Mark pending",
+  "axios": {
+    "start": {
+      "title": "Updating commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission set to pending",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update commission",
+      "time": 3000
+    }
+  }
+}

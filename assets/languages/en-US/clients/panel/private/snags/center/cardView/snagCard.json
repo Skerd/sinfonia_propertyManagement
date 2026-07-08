@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/center/cardView/snagCard.tsx",
+  "noPhotos": "No photos",
+  "statusLabel": "Status",
+  "severityLabel": "Severity",
+  "fields": {
+    "unit": "Unit",
+    "location": "Location",
+    "dueDate": "Due Date",
+    "assignedTo": "Assigned To",
+    "!enums": {
+      "status": {
+        "open": "Open",
+        "in_progress": "In Progress",
+        "resolved": "Resolved",
+        "rejected": "Rejected"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
+  }
+}

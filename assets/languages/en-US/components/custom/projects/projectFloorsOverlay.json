@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/projectFloorsOverlay.tsx",
+  "title": "Floor polygons overlay",
+  "description": "All floor polygons displayed on the project main image.",
+  "noMainImage": "Project does not have a main image.",
+  "noFloorSelected": "No floor selected."
+}

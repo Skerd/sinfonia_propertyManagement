@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/submitRevisionModificationRequestDialog.tsx",
+  "submitRevisionTitle": "Submit Revision",
+  "submitRevisionConfirmTitle": "Submit Revision",
+  "submitRevisionConfirmDescription": "Send this request back to the {stage} review queue.",
+  "submitRevisionConfirmButton": "Submit",
+  "architectStage": "Architect",
+  "engineerStage": "Engineer",
+  "cancel": "Cancel",
+  "axios": {
+    "start": {
+      "title": "Submitting revision…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Revision submitted",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not submit revision",
+      "time": 3000
+    }
+  }
+}

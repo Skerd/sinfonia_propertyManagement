@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/submitRevisionModificationRequestDialog.tsx",
+  "submitRevisionTitle": "Paraqisni një rishikim",
+  "submitRevisionConfirmTitle": "Paraqisni një rishikim",
+  "submitRevisionConfirmDescription": "Dërgoje këtë kërkesë përsëri në radhën e shqyrtimit {stage}.",
+  "submitRevisionConfirmButton": "Paraqisni",
+  "architectStage": "Arkitekt",
+  "engineerStage": "Inxhinier",
+  "cancel": "Anulo",
+  "axios": {
+    "start": {
+      "title": "Duke dërguar rishikimin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rishikimi u dërgua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rishikimi nuk mund të dërgohej",
+      "time": 3000
+    }
+  }
+}

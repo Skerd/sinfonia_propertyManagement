@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/terminateLeaseDialog.tsx",
+  "dialogTitle": "Terminate lease",
+  "dialogDescription": "This ends the lease, waives unpaid rent, and marks the unit available again.",
+  "reasonLabel": "Reason (optional)",
+  "reasonPlaceholder": "Why is this lease ending?",
+  "cancel": "Cancel",
+  "submit": "Terminate"
+}

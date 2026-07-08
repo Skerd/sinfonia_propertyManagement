@@ -1,0 +1,52 @@
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {compose} from "redux";
+import {useNavigate} from "react-router-dom";
+import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
+import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
+import {Building2} from "lucide-react";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {Project} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
+import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
+
+type ViewEdificesProps = WithLanguageType & {
+    project: Project
+}
+
+function ViewEdifices({
+    project,
+    resolveLanguageKey
+}: ViewEdificesProps) {
+
+    const dismissSheetIfHosted = useDismissSheetBeforeMenuNavigate();
+    const {read} = useAccess("edifices");
+    const navigate = useNavigate();
+
+    const shortcut = "1";
+    const viewEdifices = () => {
+        if (!read) return;
+        const params = new URLSearchParams();
+        params.set("projectId", project._id ?? "");
+        if (project.name) params.set("projectName", project.name);
+        dismissSheetIfHosted?.();
+        navigate(`/realEstate/edifices?${params.toString()}`);
+    };
+    useKeyboardShortcuts(shortcut, viewEdifices);
+
+    if (!read) {
+        return <></>;
+    }
+
+    return (
+        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); viewEdifices(); }}>
+            <Building2 size={16}/>
+            {resolveLanguageKey("title")}
+            <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
+        </DropdownMenuItem>
+    );
+}
+
+export default compose(
+    withLanguage("src/modules/propertyManagement/clients/panel/private/projects/center/actions/viewEdifices.tsx"),
+    withDebug(true, true)
+)(ViewEdifices);

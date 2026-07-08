@@ -1,0 +1,76 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/editLead.tsx",
+  "title": "Ndrysho klientin e mundshëm",
+  "description": "Përditëso informacionin e klientit të mundshëm",
+  "editTitle": "Ndrysho klientin e mundshëm",
+  "editDescription": "Përditëso informacionin e klientit të mundshëm",
+  "errorTitle": "Ngarkimi i klientit dështoi",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të klientit. Ju lutemi provoni përsëri.",
+  "generalInfo": "Informacione të Përgjithshme",
+  "interestInfo": "Interesi i pronës",
+  "form": {
+    "firstNameLabel": "Emri",
+    "firstNamePlaceholder": "Fut emrin",
+    "firstNameRequired": "Emri është i detyrueshëm",
+    "lastNameLabel": "Mbiemri",
+    "lastNamePlaceholder": "Fut mbiemrin",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Fut adresën e emailit",
+    "phoneLabel": "Telefoni",
+    "phonePlaceholder": "Fut numrin e telefonit",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Zgjidhni statusin",
+    "sourceLabel": "Burimi",
+    "sourcePlaceholder": "Zgjidhni burimin",
+    "projectInterestLabel": "Projekti i interesit",
+    "projectInterestPlaceholder": "Zgjidhni projektin",
+    "unitInterestLabel": "Njësia e interesit",
+    "unitInterestPlaceholder": "Zgjidhni njësinë",
+    "budgetLabel": "Buxheti",
+    "budgetPlaceholder": "Fut shumën e buxhetit",
+    "budgetCurrencyLabel": "Monedha e buxhetit",
+    "budgetCurrencyPlaceholder": "Zgjidhni monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Fut shënime",
+    "assignedToLabel": "Caktuar tek",
+    "assignedToPlaceholder": "Zgjidhni përdoruesin",
+    "followUpDateLabel": "Data e ndjekjes",
+    "followUpDatePlaceholder": "Zgjidhni datën",
+    "statusNew": "I ri",
+    "statusContacted": "Kontaktuar",
+    "statusQualified": "I kualifikuar",
+    "statusProposal": "Propozim",
+    "statusNegotiation": "Negocim",
+    "statusWon": "Fituar",
+    "statusLost": "Humbur",
+    "sourceWebsite": "Faqe interneti",
+    "sourceReferral": "Referim",
+    "sourceSocial": "Rrjete sociale",
+    "sourceEvent": "Ngjarje",
+    "sourceColdCall": "Telefonatë",
+    "sourceWalkIn": "Vizitë direkte",
+    "sourceOther": "Tjetër"
+  },
+  "axios": {
+    "start": {
+      "title": "Përditësimi i klientit të mundshëm",
+      "time": 3000
+    },
+    "success": {
+      "title": "Klienti i mundshëm u përditësua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Klienti i mundshëm nuk mund të përditësohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho klientin e mundshëm",
+    "description": "Përditëso informacionin e klientit të mundshëm"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

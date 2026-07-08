@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Ndryshimet nuk u ruajtën, ju lutemi provoni sërish!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Duke përditësuar rekordin"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Përditësimi u ruajt me sukses!"
+    }
+  },
+  "editDescription": "Ndrysho detajet e përditësimit të ndërtimit",
+  "editTitle": "Ndrysho Përditësimin",
+  "errorDescription": "Ndodhi një gabim. Ju lutemi provoni sërish.",
+  "errorTitle": "Dështoi ngarkimi i përditësimit",
+  "form": {
+    "_idLabel": "ID e rekordit",
+    "addFile": "Shto foto",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkruani progresin e ndërtimit",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën (opsionale)",
+    "existingFiles": "Fotot ekzistuese",
+    "filesSelected": "foto të zgjedhura",
+    "newFiles": "Shto foto të reja",
+    "photosLabel": "Fotot",
+    "progressPercentLabel": "Progresi (%)",
+    "progressPercentPlaceholder": "0–100",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Shkruaj titullin e përditësimit",
+    "updateDateLabel": "Data e përditësimit",
+    "updateDatePlaceholder": "Zgjidhni datën"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  },
+  "formHeader": {
+    "description": "Ndrysho detajet e përditësimit të ndërtimit",
+    "title": "Ndrysho Përditësimin"
+  },
+  "generalInfo": "Detajet e Përditësimit",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
+  "title": "Title"
+}

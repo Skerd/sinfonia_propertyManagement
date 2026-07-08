@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/financeModificationRequestDialog.tsx",
+  "title": "Financa",
+  "description": "Shto ndarjen e kostos dhe informacionin financiar",
+  "confirmButton": "Paraqisni Detajet e Financës",
+  "form": {
+    "totalCostLabel": "Kostoja totale",
+    "totalCostPlaceholder": "Shkruani koston totale",
+    "totalCostRequired": "Kërkohet kosto totale",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidhni monedhën",
+    "currencyRequired": "Kërkohet monedha",
+    "costBreakdownLabel": "Ndarja e kostos",
+    "itemLabel": "Artikulli",
+    "costLabel": "Kostoja",
+    "costPerItemLabel": "Kostoja / artikulli",
+    "lineTotalLabel": "Linja totale",
+    "quantityLabel": "Sasia",
+    "unitLabel": "Njësia",
+    "costPerUnitLabel": "Kostoja për njësi",
+    "addFile": "Shto skedar",
+    "filesSelected": "skedarët e zgjedhur",
+    "emptyBreakdownHint": "Nuk ka ende artikuj rreshti",
+    "addLineItem": "Shto artikullin e linjës",
+    "notesLabel": "Shënime Financiare",
+    "notesPlaceholder": "Futni shënimet financiare",
+    "estimatedCompletionDateLabel": "Data e parashikuar e përfundimit",
+    "estimatedCompletionDatePlaceholder": "Zgjidhni datën",
+    "mediaLabel": "Dokumentet (faturat, kuotat)",
+    "breakdownTotal": "Zbërthimi total",
+    "difference": "Diferenca"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke dërguar vendimin financiar…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Vendimi financiar u dërgua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Vendimi financiar nuk mund të dërgohej",
+      "time": 3000
+    }
+  }
+}

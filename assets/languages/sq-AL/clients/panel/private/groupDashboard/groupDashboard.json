@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/groupDashboard/groupDashboard.tsx",
+  "title": "Paneli i Grupit",
+  "hqDescription": "KPI-të e agreguara të të gjitha degëve.",
+  "branchDescription": "KPI-të e kësaj kompanie dhe degëve të saj.",
+  "computedAt": "Llogaritur më",
+  "groupTotalsTitle": "Totalet e grupit",
+  "branchBreakdownTitle": "Ndarja sipas degëve",
+  "branchColumn": "Dega",
+  "kpiTotalUnits": "Njësitë totale",
+  "kpiAvailableUnits": "Të lira",
+  "kpiSoldUnits": "Të shitura",
+  "kpiRentedUnits": "Të qira",
+  "kpiRevenue": "Të ardhura",
+  "kpiCommissions": "Komisione",
+  "kpiActiveLeases": "Qira aktive",
+  "kpiOpenSnags": "Defekte të hapura",
+  "noBranchesTitle": "Nuk u gjetën degë",
+  "noBranchesDescription": "Krijoni kompani të fëmijë duke vendosur kompaninë prind të kësaj organizate për të krahasuar KPI-të midis degëve.",
+  "failTitle": "Paneli i grupit nuk u ngarkua",
+  "failDescription": "Diçka shkoi keq gjatë marrjes së KPI-ve të grupit. Provoni përsëri."
+}

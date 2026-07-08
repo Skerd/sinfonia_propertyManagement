@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/index.tsx",
+  "createProject": "Krijo projekt",
+  "description": "Menaxhoni të gjitha projektet e pasurive të paluajtshme",
+  "fields": {
+    "createdAt": "Krijuar në",
+    "createdBy": "Krijuar nga",
+    "updatedAt": "Përditësuar në",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "imageGallery": "Galeria",
+    "mainImage": "Imazhi",
+    "name": "Emri",
+    "reservationCommissionRatePercent": "Komisioni i Rezervimeve",
+    "saleCommissionRatePercent": "Komisioni i shitjes",
+    "videoGallery": "Videot"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "title": "Projektet"
+}

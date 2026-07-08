@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualSaleClientEmails.tsx",
+  "cancel": "Anulo",
+  "confirmSend": "Dërgo email",
+  "actionLabels": {
+    "send_sale_confirmation": "Ridërgo email konfirmimi i shitjes"
+  },
+  "confirmTitles": {
+    "send_sale_confirmation": "Të ridërgohet email i konfirmimit të shitjes?"
+  },
+  "confirmDescriptions": {
+    "send_sale_confirmation": "Dërgon të njëjtin mesazh konfirmimi si në krijim të shitjes (te emaili i blerësit), përfshirë kontratën e blerjes kur është e disponueshme."
+  },
+  "axios": {
+    "start": {
+      "title": "Duke dërguar emailin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Emaili u dërgua me sukses",
+      "time": 3000
+    },
+    "error": {
+      "title": "Emaili nuk mund të dërgohej",
+      "time": 3000
+    }
+  }
+}

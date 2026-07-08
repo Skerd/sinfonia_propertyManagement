@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
+  "title": "Kategoritë e llojeve të njësive",
+  "description": "Menaxhoni kategoritë e llojeve të njësive",
+  "createUnitTypeCategory": "Krijo kategori",
+  "noData": "Nuk u gjet asnjë kategori",
+  "failTitle": "Ngarkimi i kategorive dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të kategorive. Ju lutemi provoni përsëri.",
+  "status": "Statusi",
+  "active": "Aktiv",
+  "deleted": "Fshirë",
+  "name": "Emri",
+  "fields": {
+    "name": "Emri",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  },
+  "searchPlaceholder": "Kërko ose shto filtra..."
+}

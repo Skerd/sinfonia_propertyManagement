@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx",
+  "noPhotos": "No photos",
+  "fields": {
+    "progressPercent": "Progress",
+    "updateDate": "Update date",
+    "project": "Project",
+    "edifice": "Edifice"
+  }
+}

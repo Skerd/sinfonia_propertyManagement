@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/center/cardView/projectCard.tsx",
+  "edifices": "Edifices",
+  "and": "and",
+  "data": {
+    "name": "Name",
+    "reservationCommission": "Reservation commission",
+    "reservationCommissionTooltip": "Reservation commission (%)",
+    "saleCommission": "Sale commission",
+    "saleCommissionTooltip": "Sale commission (%)"
+  },
+  "statistics": {
+    "area": "Building area",
+    "areaTooltip": "Sum of edifice building footprint (total area), not unit areas",
+    "edifices": "Edifices",
+    "edificesTooltip": "Total Edifices",
+    "floors": "Floors",
+    "floorsTooltip": "Total Floors",
+    "investment": "Invested",
+    "investmentTooltip": "Total Investment Value",
+    "units": "Units",
+    "unitsTooltip": "Total Units",
+    "available": "Available",
+    "availableDesc": "Available for sale",
+    "reserved": "Reserved",
+    "reservedDesc": "With active reservation",
+    "sold": "Sold",
+    "soldDesc": "Sold units",
+    "unavailable": "Unavailable",
+    "unavailableDesc": "Not available for sale"
+  },
+  "viewEdifices": "View Edifices"
+}

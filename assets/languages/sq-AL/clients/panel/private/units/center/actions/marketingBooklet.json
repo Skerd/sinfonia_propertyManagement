@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/actions/marketingBooklet.tsx",
+  "title": "Broshurë Marketingu",
+  "axios": {
+    "start": {
+      "title": "Duke gjeneruar broshurën e marketingut…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Broshura e marketingut u shkarkua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Broshura e marketingut nuk mund të gjenerohej",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/index.tsx",
+  "title": "Leads",
+  "description": "Manage all CRM leads",
+  "createLead": "Create Lead",
+  "noData": "No leads found",
+  "failTitle": "Failed to load leads",
+  "failDescription": "An error occurred while loading leads. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "status": "Status",
+    "source": "Source",
+    "projectInterest": "Project Interest",
+    "unitInterest": "Unit Interest",
+    "budget": "Budget",
+    "budgetCurrency": "Currency",
+    "notes": "Notes",
+    "assignedTo": "Assigned To",
+    "followUpDate": "Follow-up Date",
+    "convertedAt": "Converted At",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "status": {
+        "new": "New",
+        "contacted": "Contacted",
+        "qualified": "Qualified",
+        "proposal": "Proposal",
+        "negotiation": "Negotiation",
+        "won": "Won",
+        "lost": "Lost"
+      },
+      "source": {
+        "website": "Website",
+        "referral": "Referral",
+        "social": "Social Media",
+        "event": "Event",
+        "cold_call": "Cold Call",
+        "walk_in": "Walk-in",
+        "other": "Other"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/paymentAlerts.tsx",
+  "title": "Payment Alerts",
+  "viewAllLabel": "View payment plans",
+  "overdueBadge": "overdue",
+  "unitLabel": "Unit",
+  "dueDateLabel": "Due date",
+  "daysLate": "days late",
+  "today": "Today",
+  "daysRemaining": "days remaining",
+  "viewAllCount": "View all",
+  "noUpcomingPayments": "No upcoming payments",
+  "noOverduePayments": "No overdue payments",
+  "overdueInstallment": "overdue installment",
+  "overdueInstallments": "overdue installments",
+  "viewPlansForDetails": "View payment plans for details."
+}

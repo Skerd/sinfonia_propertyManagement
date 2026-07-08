@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/projectFloorsOverlay.tsx",
+  "title": "Mbivendosja e poligoneve të kateve",
+  "description": "Të gjithë poligonet e kateve të shfaqura mbi imazhin kryesor të projektit.",
+  "noMainImage": "Projekti nuk ka imazh kryesor.",
+  "noFloorSelected": "Asnjë kat i zgjedhur."
+}

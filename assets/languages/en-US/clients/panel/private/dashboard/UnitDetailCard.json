@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/UnitDetailCard.tsx",
+  "floor": "Floor",
+  "status": "Status",
+  "typology": "Unit Type",
+  "netArea": "Net Area",
+  "grossArea": "Gross Area",
+  "pricePerSqm": "Price/m²",
+  "totalPrice": "Total Price",
+  "client": "Client",
+  "edit": "Edit",
+  "statusAvailable": "Available",
+  "statusReserved": "Reserved",
+  "statusSold": "Sold",
+  "statusUnavailable": "Unavailable",
+  "statusUnknown": "Unknown"
+}

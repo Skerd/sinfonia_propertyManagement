@@ -1,0 +1,76 @@
+{
+  "addAddress": "Add new address",
+  "address": "Address",
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Constructor could not be updated, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Updating constructor"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Constructor successfully updated!"
+    }
+  },
+  "currentLogo": "Current Logo",
+  "editDescription": "Edit constructor information",
+  "editTitle": "Edit Constructor",
+  "errorDescription": "An error occurred while loading the constructor. Please try again.",
+  "errorTitle": "Failed to load constructor",
+  "form": {
+    "cityLabel": "City",
+    "cityPlaceholder": "City",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Select company",
+    "companyRequired": "Company is required",
+    "countryLabel": "Country",
+    "countryPlaceholder": "Country",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter description",
+    "emailInvalid": "Invalid email address",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter email address",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "logoLabel": "Logo",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter constructor name",
+    "nameRequired": "Name is required",
+    "phoneNumberLabel": "Phone Number",
+    "phoneNumberPlaceholder": "Enter phone number",
+    "phoneNumberRequired": "Phone number is required",
+    "postalCodeLabel": "Postal code",
+    "postalCodePlaceholder": "Postal code",
+    "stateLabel": "State",
+    "statePlaceholder": "State",
+    "streetLabel": "Street",
+    "streetPlaceholder": "Street",
+    "uploadNewLogoHint": "Upload a new logo to replace the current one",
+    "vatLabel": "VAT",
+    "vatPlaceholder": "Enter VAT number",
+    "vatRequired": "VAT is required",
+    "websiteInvalid": "Invalid website URL",
+    "websiteLabel": "Website",
+    "websitePlaceholder": "Enter website URL"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  },
+  "formHeader": {
+    "description": "Edit constructor information",
+    "title": "Edit Constructor"
+  },
+  "generalInfo": "General Information",
+  "howToReach": "How to reach us",
+  "logo": "Logo",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
+  "remove": "Remove",
+  "title": "Title",
+  "uploadError": "Failed to upload media files"
+}

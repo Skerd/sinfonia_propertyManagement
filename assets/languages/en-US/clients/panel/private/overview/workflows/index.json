@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/workflows/index.tsx",
+  "title": "Workflows",
+  "description": "Inspections and modification requests overview.",
+  "failTitle": "Failed to load",
+  "failDescription": "Could not load dashboard. Click to retry.",
+  "inspectionsSection": "Inspections",
+  "totalInspections": "Total inspections",
+  "totalInspectionsDesc": "All inspections",
+  "followUpRequired": "Follow-up required",
+  "followUpRequiredDesc": "Inspections requiring follow-up",
+  "inspectionsByStatus": "By status",
+  "modificationRequestsSection": "Modification requests",
+  "totalModificationRequests": "Total modification requests",
+  "totalModificationRequestsDesc": "All modification requests",
+  "openModificationRequests": "Open requests",
+  "openModificationRequestsDesc": "Not completed, rejected or cancelled",
+  "modificationRequestsByStatus": "By status"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/cancelInspectionDialog.tsx",
+  "cancelConfirmTitle": "Anulo inspektimin",
+  "cancelConfirmDescription": "Je i sigurt që dëshiron ta anulosh këtë inspektim? Fut një arsye më poshtë.",
+  "cancellationReasonLabel": "Arsyeja e anulimit",
+  "cancellationReasonPlaceholder": "p.sh. Qiramarrësi nuk disponohet, qasja në pronë është refuzuar...",
+  "cancel": "Anulo",
+  "confirmCancel": "Anulo inspektimin",
+  "axios": {
+    "start": {
+      "title": "Anulimi i inspektimit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspektimi u anulua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspektimi nuk mund të anulohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  }
+}

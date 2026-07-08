@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx",
+  "failedTitle": "Ngarkimi i të dhënave të njësisë dështoi",
+  "failedDescription": "Ngarkimi i të dhënave dështoi, klikoni këtu për të riprovuar",
+  "floor": "Kati",
+  "data": {
+    "name": "Emri",
+    "unitType": "Lloji i njësisë",
+    "unitNumber": "Numri i njësisë",
+    "area": "Zona",
+    "sharedArea": "Zonë e përbashkët",
+    "description": "Përshkrimi",
+    "rooms": "Dhomat",
+    "numberOfBathrooms": "Banjat",
+    "price": "Çmimi",
+    "isAvailable": "Disponueshmëria",
+    "features": "Veçoritë",
+    "mainImage": "Imazhi kryesor"
+  },
+  "features": {
+    "balcony": "Ballkon",
+    "terrace": "Tarracë",
+    "seaView": "Pamje nga deti",
+    "cityView": "Pamje e qytetit",
+    "elevator": "Ashensor",
+    "lakeView": "Pamje e Liqenit"
+  },
+  "edit": "Redakto",
+  "delete": "Fshije",
+  "deleted": "Fshirë",
+  "active": "Aktiv",
+  "available": "Në dispozicion",
+  "notAvailable": "Nuk disponohet",
+  "reserved": "Rezervuar",
+  "sold": "Shitur",
+  "statusAvailable": "Në dispozicion",
+  "statusUnavailable": "Nuk disponohet",
+  "statusReserved": "Rezervuar",
+  "statusSold": "Shitur",
+  "statusUnknown": "E panjohur",
+  "priceNotSet": "Çmimi nuk është vendosur",
+  "constructionStatus": {
+    "planned": "Planifikuar",
+    "under_construction": "Në ndërtim",
+    "ready": "Gati",
+    "delivered": "Dorëzuar"
+  }
+}

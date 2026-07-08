@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/erpExport/erpExport.tsx",
+  "title": "Eksporti ERP / Kontabilitet",
+  "description": "Eksporto të dhënat financiare në JSON ose CSV për importim në sistemin tuaj ERP.",
+  "datasetsLabel": "Grupet e të dhënave",
+  "datasetsPlaceholder": "Zgjidh grupet për eksport",
+  "dateFromLabel": "Data nga",
+  "dateToLabel": "Data deri",
+  "projectLabel": "Projekti",
+  "projectPlaceholder": "Të gjitha projektet",
+  "formatLabel": "Formati",
+  "formatJson": "JSON (parapamje në shfletues)",
+  "formatCsv": "CSV (shkarko skedarin)",
+  "exportJson": "Parapamje JSON",
+  "exportCsv": "Eksporto & shkarko CSV",
+  "exporting": "Duke eksportuar...",
+  "noData": "Nuk u gjetën të dhëna për filtrat e zgjedhur.",
+  "datasetsRequired": "Zgjidh të paktën një grup të dhënash.",
+  "exportFailed": "Eksporti dështoi",
+  "rowsExported": "{count} rreshta gjithsej — eksportuar më {date}",
+  "dataset": {
+    "sales": "Shitjet",
+    "commissions": "Komisionet",
+    "paymentPlans": "Këstet e planit të pagesës",
+    "rentalPayments": "Pagesat e qirasë",
+    "unitCosts": "Kostot e njësive"
+  },
+  "preview": {
+    "sales": "Shitjet",
+    "commissions": "Komisionet",
+    "paymentPlans": "Këstet e planit të pagesës",
+    "rentalPayments": "Pagesat e qirasë",
+    "unitCosts": "Kostot e njësive",
+    "rows": "{count} rreshta"
+  }
+}

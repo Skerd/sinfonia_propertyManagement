@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/index.tsx",
+  "title": "Lista e Defekteve",
+  "description": "Defekte, probleme dhe pika të pazgjidhura",
+  "createSnag": "Raporto Defekt",
+  "noData": "Nuk u gjetën defekte",
+  "failTitle": "Dështoi ngarkimi i listës",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të defekteve. Ju lutemi provoni sërish.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Referenca",
+    "unit": "Njësia",
+    "title": "Titulli",
+    "location": "Vendndodhja",
+    "status": "Statusi",
+    "severity": "Ashpërsia",
+    "assignedTo": "Caktuar tek",
+    "dueDate": "Afati",
+    "resolvedAt": "Zgjidhur më",
+    "createdAt": "Krijuar në",
+    "updatedAt": "Përditësuar në",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "open": "Hapur",
+        "in_progress": "Në progres",
+        "resolved": "Zgjidhur",
+        "rejected": "Refuzuar"
+      },
+      "severity": {
+        "low": "E ulët",
+        "medium": "Mesatare",
+        "high": "E lartë",
+        "critical": "Kritike"
+      }
+    }
+  }
+}

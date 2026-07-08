@@ -1,0 +1,69 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx",
+  "failedTitle": "Ngarkimi i rezervimit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij rezervimi. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "reservation": "Rezervimi",
+  "name": "Emri",
+  "overview": "Vështrim i përgjithshëm",
+  "dates": "Datat",
+  "deposit": "Depozitë",
+  "financialSummary": "Përmbledhje financiare",
+  "unitTotalPrice": "Çmimi total për njësi",
+  "amountPaidReservationDeposit": "Shuma e paguar / Depozita e Rezervimit",
+  "remainingBalance": "Bilanci i mbetur",
+  "reservationPaymentStatus": "Statusi i pagesës",
+  "paymentMethod": "Mënyra e pagesës",
+  "remainingBalanceDueDate": "Data e skadimit për bilancin e mbetur",
+  "reservationFinancialPaymentState": {
+    "fullyPaid": "Plotësisht i paguar",
+    "partiallyPaid": "Pjesërisht e paguar",
+    "unpaid": "E papaguar"
+  },
+  "notes": "Shënime",
+  "alerts": "Alarmet",
+  "unit": "Njësia",
+  "client": "Klienti",
+  "reservedBy": "Rezervuar nga",
+  "reservedByCompany": "Kompania",
+  "status": "Statusi",
+  "activeState": {
+    "true": "Aktiv",
+    "false": "Joaktiv"
+  },
+  "paid": "I paguar",
+  "paidState": {
+    "true": "I paguar",
+    "false": "E papaguar"
+  },
+  "reservationDate": "Data e Rezervimit",
+  "expirationDate": "Data e skadimit",
+  "cancelledAt": "Anuluar në",
+  "clientEmailTimeline": "Email për klientin dhe hapët",
+  "confirmationEmailSentAt": "Email i konfirmimit të rezervimit u dërgua",
+  "expirationReminderEmailAt3d": "Email rikujtues skadimi (3 ditë përpara)",
+  "expirationReminderEmailAt1d": "Email rikujtues skadimi (1 ditë përpara)",
+  "expirationReminderEmailAt0d": "Email rikujtues skadimi (ditë e skadimit)",
+  "reservationExpiredAt": "Rezervimi skadoi (e regjistruar)",
+  "depositAmount": "Shuma e depozitës",
+  "depositCurrency": "Valuta e depozitës",
+  "reservationContract": "Kontrata e rezervimit",
+  "additionalDocuments": "Dokumente shtesë",
+  "reservationStatus": "Statusi i rezervimit",
+  "statusValues": {
+    "active": "Aktiv",
+    "expired": "I skaduar",
+    "cancelled": "I anuluar",
+    "converted": "I konvertuar"
+  },
+  "source": "Burimi",
+  "sourceValues": {
+    "agent": "Agjenti",
+    "portal": "Portali",
+    "referral": "Referim",
+    "walk_in": "Vizitë direkte",
+    "social": "Rrjetet sociale",
+    "other": "Tjetër"
+  },
+  "referralCode": "Kodi i referimit"
+}

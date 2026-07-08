@@ -1,0 +1,67 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Could not update defect, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Updating defect"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Defect updated!"
+    }
+  },
+  "editDescription": "Update defect or snag item",
+  "editTitle": "Edit Defect",
+  "errorDescription": "An error occurred while loading the snag. Please try again.",
+  "errorTitle": "Failed to load defect",
+  "form": {
+    "_idLabel": "Record ID",
+    "addFile": "Add photo",
+    "assignedToLabel": "Assigned To",
+    "assignedToPlaceholder": "Select assignee",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Additional details about the defect",
+    "dueDateLabel": "Due Date",
+    "dueDatePlaceholder": "Select due date",
+    "existingFiles": "Existing photos",
+    "filesSelected": "photos selected",
+    "locationLabel": "Location",
+    "locationPlaceholder": "e.g. Master bedroom ceiling",
+    "newFiles": "Add new photos",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Internal notes",
+    "photosLabel": "Photos",
+    "reportedByLabel": "Reported By",
+    "reportedByPlaceholder": "Select reporter",
+    "severityCritical": "Critical",
+    "severityHigh": "High",
+    "severityLabel": "Severity",
+    "severityLow": "Low",
+    "severityMedium": "Medium",
+    "severityPlaceholder": "Select severity",
+    "statusInProgress": "In Progress",
+    "statusLabel": "Status",
+    "statusOpen": "Open",
+    "statusPlaceholder": "Select status",
+    "statusRejected": "Rejected",
+    "statusResolved": "Resolved",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Describe the defect",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  },
+  "formHeader": {
+    "description": "Update defect or snag item",
+    "title": "Edit Defect"
+  },
+  "generalInfo": "Defect Details",
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/editSnag.tsx",
+  "title": "Title"
+}

@@ -1,0 +1,57 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Project could not be updated, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Updating project"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Project successfully updated!"
+    }
+  },
+  "commissions": "Commission rates",
+  "currentImage": "Current image",
+  "editDescription": "Edit project information",
+  "title": "Edit Project",
+  "description": "Edit project information",
+  "editTitle": "Edit Project",
+  "errorDescription": "An error occurred while loading the project. Please try again.",
+  "errorTitle": "Failed to load project",
+  "form": {
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Enter project description",
+    "imageGalleryLabel": "Image Gallery",
+    "mainImageLabel": "Main Image",
+    "mainImageRequired": "Main image is required",
+    "nameLabel": "Project Name",
+    "namePlaceholder": "Enter project name",
+    "nameRequired": "Project name is required",
+    "reservationCommissionRateLabel": "Reservation commission (%)",
+    "reservationCommissionRatePlaceholder": "0–100, optional",
+    "saleCommissionRateLabel": "Sale commission (%)",
+    "saleCommissionRatePlaceholder": "0–100, optional",
+    "uploadNewImageHint": "Upload a new image to replace the current one",
+    "uploadNewImagesHint": "Upload new images to add to the gallery",
+    "uploadNewVideosHint": "Upload new videos to add to the gallery",
+    "videoGalleryLabel": "Video Gallery",
+    "mediaFilesLabel": "Documents & Files",
+    "marketingBookletLabel": "Marketing Booklet"
+  },
+  "generalInfo": "General Information",
+  "media": "Media",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
+  "uploadError": "Failed to upload media files",
+  "videosUploaded": "videos uploaded",
+  "formHeader": {
+    "title": "Edit Project",
+    "description": "Edit project information"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  }
+}

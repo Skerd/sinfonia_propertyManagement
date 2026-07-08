@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx",
+  "noPhotos": "Pa foto",
+  "fields": {
+    "progressPercent": "Progresi",
+    "updateDate": "Data e përditësimit",
+    "project": "Projekti",
+    "edifice": "Ndërtesa"
+  }
+}

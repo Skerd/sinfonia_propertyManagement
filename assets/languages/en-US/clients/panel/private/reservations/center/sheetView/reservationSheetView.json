@@ -1,0 +1,69 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx",
+  "failedTitle": "Failed to load reservation",
+  "failedDescription": "Something went wrong while loading this reservation. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "reservation": "Reservation",
+  "name": "Name",
+  "overview": "Overview",
+  "dates": "Dates",
+  "deposit": "Deposit",
+  "financialSummary": "Financial Summary",
+  "unitTotalPrice": "Unit Total Price",
+  "amountPaidReservationDeposit": "Amount Paid / Reservation Deposit",
+  "remainingBalance": "Remaining Balance",
+  "reservationPaymentStatus": "Payment Status",
+  "paymentMethod": "Payment Method",
+  "remainingBalanceDueDate": "Due Date for Remaining Balance",
+  "reservationFinancialPaymentState": {
+    "fullyPaid": "Fully Paid",
+    "partiallyPaid": "Partially Paid",
+    "unpaid": "Unpaid"
+  },
+  "notes": "Notes",
+  "alerts": "Alerts",
+  "unit": "Unit",
+  "client": "Client",
+  "reservedBy": "Reserved By",
+  "reservedByCompany": "Company",
+  "status": "Status",
+  "activeState": {
+    "true": "Active",
+    "false": "Inactive"
+  },
+  "paid": "Paid",
+  "paidState": {
+    "true": "Paid",
+    "false": "Unpaid"
+  },
+  "reservationDate": "Reservation Date",
+  "expirationDate": "Expiration Date",
+  "cancelledAt": "Cancelled At",
+  "clientEmailTimeline": "Client emails & milestones",
+  "confirmationEmailSentAt": "Reservation confirmation email sent",
+  "expirationReminderEmailAt3d": "Expiration reminder email (3 days before)",
+  "expirationReminderEmailAt1d": "Expiration reminder email (1 day before)",
+  "expirationReminderEmailAt0d": "Expiration reminder email (expiration day)",
+  "reservationExpiredAt": "Reservation expired (recorded)",
+  "depositAmount": "Deposit Amount",
+  "depositCurrency": "Deposit Currency",
+  "reservationContract": "Reservation contract",
+  "additionalDocuments": "Additional documents",
+  "reservationStatus": "Reservation Status",
+  "statusValues": {
+    "active": "Active",
+    "expired": "Expired",
+    "cancelled": "Cancelled",
+    "converted": "Converted"
+  },
+  "source": "Source",
+  "sourceValues": {
+    "agent": "Agent",
+    "portal": "Portal",
+    "referral": "Referral",
+    "walk_in": "Walk-In",
+    "social": "Social",
+    "other": "Other"
+  },
+  "referralCode": "Referral Code"
+}

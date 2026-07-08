@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/createLease.tsx",
+  "title": "Create Lease",
+  "description": "Register a new rental lease agreement",
+  "generalInfo": "Lease Details",
+  "form": {
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit",
+    "tenantLabel": "Tenant",
+    "tenantPlaceholder": "Select tenant",
+    "startDateLabel": "Start Date",
+    "endDateLabel": "End Date",
+    "monthlyRentLabel": "Monthly Rent",
+    "rentCurrencyLabel": "Currency",
+    "depositAmountLabel": "Deposit Amount",
+    "depositPaidLabel": "Deposit Paid",
+    "notesLabel": "Notes",
+    "contractMediaLabel": "Contract Document",
+    "existingFiles": "Current file",
+    "newFiles": "New file"
+  },
+  "axios": {
+    "start": { "title": "Creating lease", "time": 3000 },
+    "success": { "title": "Lease successfully created!", "time": 3000 },
+    "error": { "title": "Lease could not be created, please try again!", "time": 3000 }
+  },
+  "formHeader": { "title": "Create Lease", "description": "Register a new rental lease agreement" },
+  "formButtons": { "cancel": "Cancel", "submit": "Create Lease" }
+}

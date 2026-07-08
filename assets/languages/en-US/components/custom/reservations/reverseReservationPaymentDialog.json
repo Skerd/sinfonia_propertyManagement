@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reverseReservationPaymentDialog.tsx",
+  "reverseConfirmTitle": "Reverse Payment",
+  "reverseConfirmDescription": "This will mark the reservation as not paid in full and cancel any related pending commission. Continue?",
+  "cancel": "Cancel",
+  "confirmReverse": "Reverse Payment",
+  "axios": {
+    "start": {
+      "title": "Reversing payment…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment reversed",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not reverse payment",
+      "time": 3000
+    }
+  }
+}

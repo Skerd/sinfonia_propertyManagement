@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/assignSnagDialog.tsx",
+  "dialogTitle": "Cakto snag",
+  "dialogDescription": "Zgjidhni personin që do t'i caktohet ky snag.",
+  "assignedToLabel": "I caktuar",
+  "assignedToPlaceholder": "Zgjidhni një person",
+  "cancel": "Anulo",
+  "submit": "Cakto"
+}

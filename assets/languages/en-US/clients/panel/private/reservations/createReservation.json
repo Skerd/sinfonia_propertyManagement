@@ -1,0 +1,80 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
+  "title": "Create Reservation",
+  "description": "Create a new reservation for this unit",
+  "errorTitle": "Unable to load unit",
+  "errorDescription": "Please try again.",
+  "sectionTitle": "Reservation Information",
+  "unitLocationTitle": "Unit location",
+  "generalInfo": "Reservation details",
+  "documentsSectionTitle": "Documents",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "floorLabel": "Floor",
+    "floorPlaceholder": "Select floor",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit",
+    "unitRequired": "Unit is required",
+    "reservedByLabel": "Reserved By",
+    "reservedByPlaceholder": "Select user",
+    "reservedByRequired": "User is required",
+    "reservedByCompanyLabel": "Company",
+    "reservedByCompanyPlaceholder": "Select company",
+    "reservedByCompanyRequired": "Company is required",
+    "clientLabel": "Client",
+    "clientPlaceholder": "Select client",
+    "clientRequired": "Client is required",
+    "expirationDateLabel": "Expiration Date",
+    "expirationDatePlaceholder": "Select expiration date",
+    "reservationNotesLabel": "Notes",
+    "reservationNotesPlaceholder": "Enter reservation notes",
+    "depositAmountLabel": "Deposit Amount",
+    "depositAmountPlaceholder": "Enter deposit amount",
+    "depositCurrencyLabel": "Deposit Currency",
+    "depositCurrencyPlaceholder": "Select currency",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Select source",
+    "sourceValues": {
+      "agent": "Agent",
+      "portal": "Portal",
+      "referral": "Referral",
+      "walk_in": "Walk-In",
+      "social": "Social",
+      "other": "Other"
+    },
+    "referralCodeLabel": "Referral Code",
+    "referralCodePlaceholder": "Enter referral code",
+    "paymentMethodLabel": "Payment Method",
+    "paymentMethodPlaceholder": "Enter payment method",
+    "reservationContractLabel": "Reservation contract",
+    "uploadReservationContract": "Upload contract",
+    "additionalDocumentsLabel": "Additional documents",
+    "uploadAdditionalDocuments": "Upload documents",
+    "filesSelected": "Files selected"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating reservation",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reservation successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Reservation could not be created, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Create Reservation",
+    "description": "Create a new reservation for this unit"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Reservation"
+  }
+}

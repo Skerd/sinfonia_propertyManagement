@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/cancelReservationDialog.tsx",
+  "cancelConfirmTitle": "Cancel Reservation",
+  "cancelConfirmDescription": "Are you sure you want to cancel this reservation? Please provide a reason for cancellation.",
+  "cancelConfirmDescriptionNoReason": "Are you sure you want to cancel this reservation?",
+  "cancellationReasonLabel": "Cancellation Reason",
+  "cancellationReasonPlaceholder": "Enter the reason for cancelling this reservation...",
+  "cancel": "Cancel",
+  "confirmCancel": "Cancel Reservation",
+  "axios": {
+    "start": {
+      "title": "Cancelling reservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reservation cancelled",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not cancel reservation",
+      "time": 3000
+    }
+  }
+}

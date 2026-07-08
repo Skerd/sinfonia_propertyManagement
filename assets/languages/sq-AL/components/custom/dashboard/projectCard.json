@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/projectCard.tsx",
+  "sold": "Shitur",
+  "reserved": "Rezervuar",
+  "reservedShort": "Rezervoni.",
+  "available": "Në dispozicion",
+  "availableShort": "Falas",
+  "blocked": "E bllokuar",
+  "blockedShort": "Blloko.",
+  "value": "Vlera",
+  "collected": "Të mbledhura",
+  "edifice": "godinë",
+  "edifices": "godinat"
+}

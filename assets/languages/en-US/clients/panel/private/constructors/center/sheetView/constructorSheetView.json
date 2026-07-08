@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/center/sheetView/constructorSheetView.tsx",
+  "name": "Name",
+  "failedTitle": "Failed to load constructor",
+  "failedDescription": "Something went wrong while loading this constructor. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "modelTypeBadge": "Constructor",
+  "constructor": "Constructor",
+  "logo": "Logo",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "generalInfo": "General Information",
+  "overview": "Overview",
+  "description": "Description",
+  "vat": "VAT",
+  "phoneNumber": "Phone Number",
+  "email": "Email",
+  "website": "Website",
+  "edifices": "Edifices",
+  "address": "Address",
+  "howToReach": "How to reach us",
+  "form": {
+    "streetLabel": "Street",
+    "postalCodeLabel": "Postal code",
+    "cityLabel": "City",
+    "stateLabel": "State",
+    "countryLabel": "Country",
+    "latitudeLabel": "Latitude",
+    "longitudeLabel": "Longitude",
+    "logoLabel": "Logo"
+  }
+}

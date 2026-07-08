@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/edificesOverlay.tsx",
+  "title": "Mbivendosja e poligoneve të ndërtesës",
+  "description": "Të gjithë poligonet e ndërtesës shfaqen në imazhin kryesor të projektit.",
+  "noMainImage": "Projekti nuk ka një imazh kryesor.",
+  "noEdificeSelected": "Nuk u zgjodh asnjë ndërtesë."
+}

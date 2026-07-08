@@ -1,0 +1,76 @@
+{
+  "addAddress": "Shto adresë të re",
+  "address": "Adresa",
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Konstruktori nuk mund të përditësohej, ju lutemi provoni përsëri!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Po përditëson konstruktorin"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Konstruktori u përditësua me sukses!"
+    }
+  },
+  "currentLogo": "Logoja aktuale",
+  "editDescription": "Redaktoni informacionin e konstruktorit",
+  "editTitle": "Edit Constructor",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të konstruktorit. Ju lutemi provoni përsëri.",
+  "errorTitle": "Ngarkimi i konstruktorit dështoi",
+  "form": {
+    "cityLabel": "Qyteti",
+    "cityPlaceholder": "Qyteti",
+    "companyLabel": "Kompania",
+    "companyPlaceholder": "Zgjidhni kompaninë",
+    "companyRequired": "Kërkohet kompani",
+    "countryLabel": "Vendi",
+    "countryPlaceholder": "Vendi",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Fut përshkrimin",
+    "emailInvalid": "Adresë e pavlefshme emaili",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Fut adresën e emailit",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "latitudePlaceholder": "Gjerësia gjeografike",
+    "logoLabel": "Logo",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "longitudePlaceholder": "Gjatësia gjeografike",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Fut emrin e konstruktorit",
+    "nameRequired": "Kërkohet emri",
+    "phoneNumberLabel": "Numri i telefonit",
+    "phoneNumberPlaceholder": "Fut numrin e telefonit",
+    "phoneNumberRequired": "Kërkohet numri i telefonit",
+    "postalCodeLabel": "Kodi postar",
+    "postalCodePlaceholder": "Kodi postar",
+    "stateLabel": "Shtetit",
+    "statePlaceholder": "Shtetit",
+    "streetLabel": "Rruga",
+    "streetPlaceholder": "Rruga",
+    "uploadNewLogoHint": "Ngarko një logo të re për të zëvendësuar atë aktuale",
+    "vatLabel": "TVSH",
+    "vatPlaceholder": "Fut numrin e TVSH-së",
+    "vatRequired": "Kërkohet TVSH",
+    "websiteInvalid": "URL e pavlefshme uebsajti",
+    "websiteLabel": "Faqja e internetit",
+    "websitePlaceholder": "Fut URL-në e faqes në internet"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  },
+  "formHeader": {
+    "description": "Redaktoni informacionin e konstruktorit",
+    "title": "Edit Constructor"
+  },
+  "generalInfo": "Informacione të Përgjithshme",
+  "howToReach": "Si të arrini tek ne",
+  "logo": "Logo",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
+  "remove": "Hiq",
+  "title": "Title",
+  "uploadError": "Ngarkimi i skedarëve të medias dështoi"
+}

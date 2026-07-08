@@ -1,0 +1,73 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/index.tsx",
+  "title": "Kostot e njësisë",
+  "description": "Blerjet dhe faturat sipas njësisë",
+  "descriptionWithContext": "Kosto të lidhura me këtë njësi",
+  "createUnitCost": "Kosto e re e njësisë",
+  "createUnitCostExpenses": "Shto shpenzim",
+  "searchPlaceholder": "Kërko ose filtro…",
+  "tabs": {
+    "calendar": "Kalendar pagesash",
+    "expenses": "Shpenzime"
+  },
+  "expenses": {
+    "summaryTotal": "Shpenzime totale (filtruar)",
+    "summarySuppliers": "Furnitorë unikë",
+    "summaryPeriod": "Periudha",
+    "placeholder": "—",
+    "periodRange": "— → —"
+  },
+  "calendar": {
+    "kpiPaid": "Të paguara",
+    "kpiPending": "Në pritje",
+    "kpiOverdue": "Të vonuara",
+    "financialCalendarTitle": "Kalendar financiar",
+    "detailForDay": "Pagesa më {date}",
+    "selectDay": "Zgjidh një ditë",
+    "noPaymentsDay": "Nuk ka pagesa për këtë datë.",
+    "errorTitle": "Kalendari nuk u ngarkua",
+    "errorDescription": "Provoni përsëri ose kaloni në skedin e shpenzimeve.",
+    "truncatedTitle": "Rezultat i kufizuar",
+    "truncatedDescription": "U ngarkuan vetëm {max} rreshtat e parë për këtë muaj. Ngushtoni filtrat ose përdorni tryezën e shpenzimeve për të gjithë të dhënat.",
+    "badge": {
+      "paid": "Paguar",
+      "pending": "Në pritje",
+      "overdue": "Vonuar"
+    }
+  },
+  "financeFilters": {
+    "any": "Të gjitha",
+    "apply": "Apliko",
+    "clear": "Pastro",
+    "unit": "Njësia",
+    "unitPlaceholder": "Të gjitha njëësitë",
+    "verificationLabel": "Verifikimi",
+    "paymentLabel": "Statusi i pagesës",
+    "vendorLabel": "Furnitori",
+    "vendorPlaceholder": "Kërko furnitor…",
+    "purchaserLabel": "Personi",
+    "purchaserPlaceholder": "Të gjithë personat",
+    "verification": {
+      "pending_verification": "Në pritje verifikimi",
+      "verified": "I verifikuar",
+      "rejected": "I refuzuar",
+      "needs_revision": "Duhet të rishikohet"
+    },
+    "payment": {
+      "unpaid": "I papaguar",
+      "partially_paid": "I paguar pjesërisht",
+      "paid": "I paguar",
+      "waived": "Anuluar",
+      "disputed": "Diskutues"
+    }
+  },
+  "fields": {
+    "name": "Referenca",
+    "unit": "Njësia",
+    "purchaseDate": "Data e blerjes",
+    "verificationStatus": "Verifikimi",
+    "paymentStatus": "Pagesa",
+    "documentSubtotal": "Nëntotali",
+    "currency": "Monedha"
+  }
+}

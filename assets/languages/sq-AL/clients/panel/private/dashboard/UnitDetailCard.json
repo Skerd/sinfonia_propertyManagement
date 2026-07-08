@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/UnitDetailCard.tsx",
+  "floor": "Kati",
+  "status": "Statusi",
+  "typology": "Lloji i njësisë",
+  "netArea": "Sipërfaqja Neto",
+  "grossArea": "Sipërfaqja bruto",
+  "pricePerSqm": "Çmimi/m²",
+  "totalPrice": "Çmimi total",
+  "client": "Klienti",
+  "edit": "Redakto",
+  "statusAvailable": "E Lirë",
+  "statusReserved": "E Rezervuar",
+  "statusSold": "E Shitur",
+  "statusUnavailable": "E Bllokuar",
+  "statusUnknown": "E panjohur"
+}

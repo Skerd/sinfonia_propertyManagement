@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx",
+  "rentalPayment": "Pagesë qiraje",
+  "overview": "Përmbledhje",
+  "status": "Statusi",
+  "dueDate": "Afati",
+  "amount": "Shuma"
+}

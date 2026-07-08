@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/roi/roiCalculator.tsx",
+  "roiCalculator": {
+    "title": "ROI Calculator",
+    "description": "Calculate return on investment per unit or project based on costs and sale/rental revenue."
+  },
+  "projectLabel": "Project",
+  "projectPlaceholder": "Select project...",
+  "edificeLabel": "Edifice",
+  "edificePlaceholder": "Select edifice...",
+  "floorLabel": "Floor",
+  "floorPlaceholder": "Select floor...",
+  "unitLabel": "Unit",
+  "unitPlaceholder": "Select unit (auto-calculates on pick)...",
+  "summary": "Summary",
+  "noResults": "No units found.",
+  "computedAt": "Computed at",
+  "exportPdf": "Export PDF",
+  "exportPdfLoading": "Generating PDF…",
+  "error": "Failed to calculate ROI. Please try again.",
+  "selectUnitHint": "Select a unit to calculate its ROI. Edifice and floor narrow down the unit list.",
+  "columns": {
+    "unit": "Unit",
+    "status": "Status",
+    "salePrice": "Sale Price",
+    "totalCosts": "Total Costs",
+    "netProfit": "Net Profit",
+    "roi": "ROI %",
+    "monthlyRent": "Monthly Rent",
+    "yield": "Yield %"
+  },
+  "projectSummary": {
+    "totalUnits": "Total Units",
+    "sold": "Sold",
+    "available": "Available",
+    "rented": "Rented",
+    "totalRevenue": "Total Revenue",
+    "totalCosts": "Total Costs",
+    "netProfit": "Net Profit",
+    "roi": "ROI",
+    "averageRoi": "Average ROI"
+  },
+  "pdf": {
+    "scope": "Scope",
+    "unitsSection": "Unit breakdown",
+    "chartsSection": "Charts"
+  },
+  "charts": {
+    "financialTitle": "Revenue vs costs",
+    "unitsByStatusTitle": "Units by status",
+    "totalUnits": "Total",
+    "otherUnits": "Other"
+  }
+}

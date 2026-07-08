@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx",
+  "title": "Përditësimet e Ndërtimit",
+  "description": "Gjurmimi i progresit të ndërtimit",
+  "createConstructionUpdate": "Shto Përditësim",
+  "viewTimeline": "Kronologjia",
+  "noData": "Nuk u gjetën përditësime ndërtimi",
+  "failTitle": "Dështoi ngarkimi i përditësimeve",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "fields": {
+    "name": "Referenca",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "title": "Titulli",
+    "progressPercent": "Progresi %",
+    "updateDate": "Data e përditësimit",
+    "description": "Përshkrimi",
+    "createdAt": "Krijuar në",
+    "updatedAt": "Përditësuar në",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/editUnitTypeCategory.tsx",
+  "title": "Ndrysho kategorinë e llojit të njësisë",
+  "description": "Ndrysho kategorinë e llojit të njësisë",
+  "generalInfo": "Informacion i përgjithshëm",
+  "form": {
+    "nameLabel": "Emri",
+    "namePlaceholder": "Shkruani emrin e kategorisë",
+    "nameRequired": "Emri është i detyrueshëm"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke përditësuar kategorinë",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategoria u përditësua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kategoria nuk mund të përditësohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho kategorinë e llojit të njësisë",
+    "description": "Ndrysho kategorinë e llojit të njësisë"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj kategorinë"
+  }
+}

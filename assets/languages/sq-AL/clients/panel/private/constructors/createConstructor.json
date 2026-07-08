@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
+  "title": "Krijo Konstruktor",
+  "description": "Krijo një konstruktor të ri",
+  "generalInfo": "Informacione të Përgjithshme",
+  "howToReach": "Si të arrini tek ne",
+  "addAddress": "Shto adresë të re",
+  "address": "Adresa",
+  "remove": "Hiq",
+  "logo": "Logo",
+  "uploadError": "Ngarkimi i skedarëve të medias dështoi",
+  "form": {
+    "nameLabel": "Emri",
+    "namePlaceholder": "Fut emrin e konstruktorit",
+    "nameRequired": "Kërkohet emri",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Fut adresën e emailit",
+    "emailInvalid": "Adresë e pavlefshme emaili",
+    "phoneNumberLabel": "Numri i telefonit",
+    "phoneNumberPlaceholder": "Fut numrin e telefonit",
+    "phoneNumberRequired": "Kërkohet numri i telefonit",
+    "vatLabel": "TVSH",
+    "vatPlaceholder": "Fut numrin e TVSH-së",
+    "vatRequired": "Kërkohet TVSH",
+    "websiteLabel": "Faqja e internetit",
+    "websitePlaceholder": "Fut URL-në e faqes në internet",
+    "websiteInvalid": "URL e pavlefshme uebsajti",
+    "companyLabel": "Kompania",
+    "companyPlaceholder": "Zgjidhni kompaninë",
+    "companyRequired": "Kërkohet kompani",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Fut përshkrimin",
+    "logoLabel": "Logo",
+    "uploadNewLogoHint": "Ngarko një logo të re për të zëvendësuar atë aktuale",
+    "streetLabel": "Rruga",
+    "streetPlaceholder": "Rruga",
+    "postalCodeLabel": "Kodi postar",
+    "postalCodePlaceholder": "Kodi postar",
+    "cityLabel": "Qyteti",
+    "cityPlaceholder": "Qyteti",
+    "stateLabel": "Shtetit",
+    "statePlaceholder": "Shtetit",
+    "countryLabel": "Vendi",
+    "countryPlaceholder": "Vendi",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "latitudePlaceholder": "Gjerësia gjeografike",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "longitudePlaceholder": "Gjatësia gjeografike"
+  },
+  "axios": {
+    "start": {
+      "title": "Krijimi i konstruktorit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Konstruktori u krijua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konstruktori nuk mund të krijohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo Konstruktor",
+    "description": "Krijo një konstruktor të ri"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo Konstruktor"
+  }
+}

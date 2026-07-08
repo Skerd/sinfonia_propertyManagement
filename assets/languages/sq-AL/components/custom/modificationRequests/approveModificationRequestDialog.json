@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/approveModificationRequestDialog.tsx",
+  "title": "Mirato",
+  "approveConfirmTitle": "Mirato kërkesën për modifikim",
+  "approveConfirmDescription": "Rishikoni dhe merrni një vendim për këtë kërkesë modifikimi në fazën {stage}.",
+  "stageLabel": "Faza e miratimit",
+  "architectStage": "Arkitekt",
+  "engineerStage": "Inxhinier",
+  "ceoStage": "CEO",
+  "decisionLabel": "Vendimi",
+  "decisionPlaceholder": "Zgjidh vendimin",
+  "materialsPlanLabel": "Plani i Materialeve Inxhinierike",
+  "materialsPlanEmptyHint": "Nuk ka ende plan materialesh për këtë kërkesë.",
+  "materialsPlanAddPlaceholder": "Shto artikullin material inxhinierik",
+  "rejectReasonLabel": "Refuzoni arsyen",
+  "rejectReasonPlaceholder": "Zgjidh arsyen e refuzimit",
+  "rejectReasonDesign": "Dizajn",
+  "rejectReasonTechnical": "teknike",
+  "rejectReasonBudget": "Buxheti",
+  "rejectReasonOther": "Të tjera",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Fut shënimet e miratimit (opsionale)",
+  "mediaLabel": "Shtojcat",
+  "addFile": "Shto skedar",
+  "approve": "Mirato",
+  "reject": "Refuzo",
+  "cancel": "Anulo",
+  "confirmButton": "Paraqisni Vendimin",
+  "axios": {
+    "start": {
+      "title": "Duke dërguar vendimin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Vendimi u dërgua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Vendimi nuk mund të dërgohej",
+      "time": 3000
+    }
+  }
+}

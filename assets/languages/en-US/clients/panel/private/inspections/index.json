@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspections/index.tsx",
+  "title": "Inspections",
+  "description": "Manage unit inspections",
+  "descriptionWithContext": "Manage inspections for this unit",
+  "createInspection": "Create Inspection",
+  "noData": "No inspections found",
+  "failTitle": "Failed to load inspections",
+  "failDescription": "An error occurred while loading inspections. Please try again.",
+  "status": "Status",
+  "deleted": "Deleted",
+  "type": "Type",
+  "inspectionDate": "Inspection Date",
+  "inspectedBy": "Inspected By",
+  "rating": "Rating",
+  "view": "View",
+  "fields": {
+    "name": "Name",
+    "unit": "Unit",
+    "inspectedBy": "Inspector",
+    "inspectionDate": "Date",
+    "scheduledDate": "Scheduled",
+    "type": "Type",
+    "status": "Status",
+    "notes": "Notes",
+    "findings": {
+      "structuralIssues": "Structural Issues",
+      "electricalIssues": "Electrical Issues",
+      "plumbingIssues": "Plumbing Issues",
+      "hvacIssues": "HVAC Issues",
+      "safetyConcerns": "Safety Concerns",
+      "cosmeticIssues": "Cosmetic Issues",
+      "otherObservations": "Other Observations"
+    },
+    "rating": "Rating",
+    "media": "Media",
+    "nextInspectionDate": "Next Inspection Date",
+    "followUpRequired": "Follow Up Required",
+    "followUpInspection": "Follow Up Inspection",
+    "followedUpByInspection": "Followed Up By Inspection",
+    "completedAt": "Completed At",
+    "cancelledAt": "Cancelled At",
+    "cancellationReason": "Cancellation Reason",
+    "clientSignedAt": "Signed At",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "type": {
+        "initial": "Initial",
+        "follow_up": "Follow Up",
+        "final": "Final",
+        "routine": "Routine",
+        "complaint": "Complaint",
+        "pre_sale": "Pre Sale",
+        "post_sale": "Post Sale"
+      },
+      "status": {
+        "scheduled": "Scheduled",
+        "in_progress": "In Progress",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "rescheduled": "Rescheduled"
+      }
+    }
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "yes": "Yes",
+  "no": "No"
+}

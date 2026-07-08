@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/index.tsx",
+  "title": "Sales",
+  "description": "Manage unit sales",
+  "descriptionWithContext": "Manage sales for this unit",
+  "createSale": "Create Sale",
+  "createCashSale": "Create Cash Sale",
+  "createPaymentPlanSale": "Create Payment Plan Sale",
+  "view": "View",
+  "noData": "No sales found",
+  "failTitle": "Failed to load sales",
+  "failDescription": "An error occurred while loading sales. Please try again.",
+  "status": "Status",
+  "deleted": "Deleted",
+  "paymentType": "Payment Type",
+  "cash": "Cash",
+  "paymentPlan": "Payment Plan",
+  "paymentPlanStatus": "Payment Plan Status",
+  "saleDate": "Sale Date",
+  "finalPrice": "Final Price",
+  "soldBy": "Sold By",
+  "buyer": "Buyer",
+  "fields": {
+    "name": "Name",
+    "unit": "Unit",
+    "paymentType": "Payment",
+    "reservation": "Reservation",
+    "listedUnitPrice": "Listed Unit Price",
+    "reservationDepositAmount": "Reservation Deposit",
+    "reservationExchangeRate": "Reservation Exchange Rate",
+    "reservationConvertedAmount": "Reservation Converted Amount",
+    "localDiscount": "Local Discount %",
+    "cashSale": {
+      "finalPrice": "Final Price",
+      "saleDate": "Date",
+      "notes": "Notes",
+      "transactionReference": "Transaction"
+    },
+    "paymentPlan": "Payment Plan",
+    "buyer": "Buyer",
+    "buyerCompany": "Buyer Company",
+    "purchaseContract": "Purchase Contract",
+    "additionalDocuments": "Additional Documents",
+    "soldBy": "Sold By",
+    "saleDate": "Sale Date",
+    "finalPrice": "Final Price",
+    "saleCurrency": "Sale Currency",
+    "notes": "Notes",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "paymentType": {
+        "cash": "Cash",
+        "payment_plan": "Payment Plan"
+      }
+    }
+  },
+  "searchPlaceholder": "Search or add filters...",
+  "yes": "Yes",
+  "no": "No"
+}

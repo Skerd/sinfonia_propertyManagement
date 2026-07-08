@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
+  "title": "Unit Type Categories",
+  "description": "Manage unit type categories",
+  "createUnitTypeCategory": "Create Category",
+  "noData": "No unit type categories found",
+  "failTitle": "Failed to load unit type categories",
+  "failDescription": "An error occurred while loading unit type categories. Please try again.",
+  "status": "Status",
+  "active": "Active",
+  "deleted": "Deleted",
+  "name": "Name",
+  "fields": {
+    "name": "Name",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By"
+  },
+  "searchPlaceholder": "Search or add filters..."
+}

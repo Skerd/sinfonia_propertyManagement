@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
+  "payInstallmentTitle": "Pay Installment",
+  "payInstallmentDescription": "Record payment for this installment",
+  "paidAmount": "Paid Amount",
+  "remainingAmount": "Remaining",
+  "transactionId": "Transaction ID",
+  "transactionIdPlaceholder": "Optional transaction reference",
+  "notes": "Notes",
+  "notesPlaceholder": "Optional payment notes",
+  "cancel": "Cancel",
+  "processing": "Processing...",
+  "confirmPay": "Confirm Payment",
+  "paymentRecorded": "Payment recorded successfully",
+  "paymentFailed": "Failed to record payment",
+  "axios": {
+    "start": {
+      "title": "Processing...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded successfully",
+      "time": 3000
+    },
+    "error": {
+      "title": "Failed to record payment",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
+  "title": "Qendra e Qirave",
+  "description": "Të gjitha qiratë dhe pagesat e qirasë në një vend. Kërko, filtro dhe hap detajet.",
+  "leases": {
+    "title": "Qiratë",
+    "description": "Regjistri i qirave për kompaninë.",
+    "searchLabel": "Kërko",
+    "searchPlaceholder": "Kërko sipas qiramarrësit, njësisë, referencës…",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Të gjitha projektet",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Të gjitha statuset",
+    "startDateLabel": "Data e fillimit",
+    "dateFromLabel": "Nga",
+    "dateToLabel": "Deri",
+    "noResults": "Nuk u gjetën qira.",
+    "errorTitle": "Nuk u ngarkuan qiratë",
+    "errorDescription": "Provoni sërish ose ndryshoni filtrat.",
+    "viewAction": "Shiko",
+    "previous": "Prapa",
+    "next": "Para",
+    "columns": {
+      "reference": "Referenca",
+      "tenant": "Qiramarrësi",
+      "project": "Projekti",
+      "unit": "Njësia",
+      "status": "Statusi",
+      "startDate": "Fillimi",
+      "endDate": "Mbarimi",
+      "monthlyRent": "Qiraja mujore",
+      "actions": "Veprimet"
+    },
+    "status": {
+      "active": "Aktive",
+      "expired": "Skaduar",
+      "terminated": "E përfunduar"
+    },
+    "pagination": {
+      "summary": "{from} deri {to} nga {total} rezultate"
+    }
+  },
+  "rentalPayments": {
+    "title": "Pagesat e qirasë",
+    "description": "Regjistri i pagesave të qirasë për kompaninë.",
+    "searchLabel": "Kërko",
+    "searchPlaceholder": "Kërko sipas qiramarrësit, qirasë, njësisë…",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Të gjitha projektet",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Të gjitha statuset",
+    "dueDateLabel": "Afati",
+    "dateFromLabel": "Nga",
+    "dateToLabel": "Deri",
+    "noResults": "Nuk u gjetën pagesa.",
+    "errorTitle": "Nuk u ngarkuan pagesat",
+    "errorDescription": "Provoni sërish ose ndryshoni filtrat.",
+    "viewAction": "Shiko",
+    "previous": "Prapa",
+    "next": "Para",
+    "columns": {
+      "reference": "Referenca",
+      "lease": "Qiraja",
+      "tenant": "Qiramarrësi",
+      "unit": "Njësia",
+      "status": "Statusi",
+      "dueDate": "Afati",
+      "amount": "Shuma",
+      "actions": "Veprimet"
+    },
+    "status": {
+      "pending": "Në pritje",
+      "paid": "E paguar",
+      "overdue": "Me vonesë",
+      "waived": "E hequr"
+    },
+    "pagination": {
+      "summary": "{from} deri {to} nga {total} rezultate"
+    }
+  }
+}

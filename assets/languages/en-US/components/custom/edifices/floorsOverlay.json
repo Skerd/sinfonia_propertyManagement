@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/floorsOverlay.tsx",
+  "title": "Floor polygons overlay",
+  "description": "All floor polygons displayed on the edifice main image.",
+  "noMainImage": "Edifice does not have a main image.",
+  "noFloorSelected": "No floor selected."
+}

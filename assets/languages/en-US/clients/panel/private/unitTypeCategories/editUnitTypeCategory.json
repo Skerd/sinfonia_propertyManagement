@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/editUnitTypeCategory.tsx",
+  "title": "Edit Unit Type Category",
+  "description": "Edit unit type category",
+  "generalInfo": "General Information",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter category name",
+    "nameRequired": "Name is required"
+  },
+  "axios": {
+    "start": {
+      "title": "Updating category",
+      "time": 3000
+    },
+    "success": {
+      "title": "Category successfully updated!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Category could not be updated, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Unit Type Category",
+    "description": "Edit unit type category"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Category"
+  }
+}

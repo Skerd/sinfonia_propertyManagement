@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/center/cardView/leadCard.tsx",
+  "email": "Email",
+  "phone": "Telefoni",
+  "projectInterest": "Projekti",
+  "unitInterest": "Njësia",
+  "budget": "Buxheti",
+  "assignedTo": "Caktuar tek",
+  "followUpDate": "Ndjekja",
+  "statusLabel": "Statusi",
+  "sourceLabel": "Burimi",
+  "status": {
+    "new": "I ri",
+    "contacted": "Kontaktuar",
+    "qualified": "I kualifikuar",
+    "proposal": "Propozim",
+    "negotiation": "Negocim",
+    "won": "Fituar",
+    "lost": "Humbur"
+  },
+  "source": {
+    "website": "Faqe interneti",
+    "referral": "Referim",
+    "social": "Rrjete sociale",
+    "event": "Ngjarje",
+    "cold_call": "Telefonatë",
+    "walk_in": "Vizitë direkte",
+    "other": "Tjetër"
+  }
+}

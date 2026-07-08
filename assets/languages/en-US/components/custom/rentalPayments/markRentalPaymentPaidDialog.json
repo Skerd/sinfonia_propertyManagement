@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
+  "dialogTitle": "Mark payment paid",
+  "dialogDescription": "Record full payment of {amount} for this rent installment.",
+  "cancel": "Cancel",
+  "submit": "Mark paid"
+}

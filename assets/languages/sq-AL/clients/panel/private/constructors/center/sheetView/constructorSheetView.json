@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/center/sheetView/constructorSheetView.tsx",
+  "name": "Emri",
+  "failedTitle": "Ngarkimi i konstruktorit dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij konstruktori. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
+  "modelTypeBadge": "Konstruktor",
+  "constructor": "Konstruktor",
+  "logo": "Logo",
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "generalInfo": "Informacione të Përgjithshme",
+  "overview": "Vështrim i përgjithshëm",
+  "description": "Përshkrimi",
+  "vat": "TVSH",
+  "phoneNumber": "Numri i telefonit",
+  "email": "Email",
+  "website": "Faqja e internetit",
+  "edifices": "Ndërtesat",
+  "address": "Adresa",
+  "howToReach": "Si të arrini tek ne",
+  "form": {
+    "streetLabel": "Rruga",
+    "postalCodeLabel": "Kodi postar",
+    "cityLabel": "Qyteti",
+    "stateLabel": "Shtetit",
+    "countryLabel": "Vendi",
+    "latitudeLabel": "Gjerësia gjeografike",
+    "longitudeLabel": "Gjatësia gjeografike",
+    "logoLabel": "Logo"
+  }
+}

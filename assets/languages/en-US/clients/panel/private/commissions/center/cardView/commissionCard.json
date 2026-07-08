@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/cardView/commissionCard.tsx",
+  "overview": "Overview",
+  "clickToCopy": "Click to copy",
+  "active": "Active",
+  "unit": "Unit",
+  "agent": "Agent",
+  "amount": "Amount",
+  "ratePercent": "Rate %",
+  "sourceType": "Source",
+  "status": "Status",
+  "statusEnum": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "voided": "Voided"
+  },
+  "sourceTypeEnum": {
+    "sale": "Sale",
+    "reservation": "Reservation"
+  },
+  "basis": "Commission basis",
+  "notes": "Notes",
+  "paidAt": "Paid at",
+  "voidedAt": "Voided at",
+  "recordedBy": "Recorded by",
+  "deleted": "Deleted",
+  "modelType": "Commission"
+}

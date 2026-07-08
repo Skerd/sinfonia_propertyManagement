@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/createLead.tsx",
+  "title": "Krijo klient të mundshëm",
+  "description": "Regjistro një klient të mundshëm të ri në CRM",
+  "generalInfo": "Informacione të Përgjithshme",
+  "interestInfo": "Interesi i pronës",
+  "form": {
+    "firstNameLabel": "Emri",
+    "firstNamePlaceholder": "Fut emrin",
+    "firstNameRequired": "Emri është i detyrueshëm",
+    "lastNameLabel": "Mbiemri",
+    "lastNamePlaceholder": "Fut mbiemrin",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Fut adresën e emailit",
+    "phoneLabel": "Telefoni",
+    "phonePlaceholder": "Fut numrin e telefonit",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Zgjidhni statusin",
+    "sourceLabel": "Burimi",
+    "sourcePlaceholder": "Zgjidhni burimin",
+    "projectInterestLabel": "Projekti i interesit",
+    "projectInterestPlaceholder": "Zgjidhni projektin",
+    "unitInterestLabel": "Njësia e interesit",
+    "unitInterestPlaceholder": "Zgjidhni njësinë",
+    "budgetLabel": "Buxheti",
+    "budgetPlaceholder": "Fut shumën e buxhetit",
+    "budgetCurrencyLabel": "Monedha e buxhetit",
+    "budgetCurrencyPlaceholder": "Zgjidhni monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Fut shënime",
+    "assignedToLabel": "Caktuar tek",
+    "assignedToPlaceholder": "Zgjidhni përdoruesin",
+    "followUpDateLabel": "Data e ndjekjes",
+    "followUpDatePlaceholder": "Zgjidhni datën",
+    "statusNew": "I ri",
+    "statusContacted": "Kontaktuar",
+    "statusQualified": "I kualifikuar",
+    "statusProposal": "Propozim",
+    "statusNegotiation": "Negocim",
+    "statusWon": "Fituar",
+    "statusLost": "Humbur",
+    "sourceWebsite": "Faqe interneti",
+    "sourceReferral": "Referim",
+    "sourceSocial": "Rrjete sociale",
+    "sourceEvent": "Ngjarje",
+    "sourceColdCall": "Telefonatë",
+    "sourceWalkIn": "Vizitë direkte",
+    "sourceOther": "Tjetër"
+  },
+  "axios": {
+    "start": {
+      "title": "Krijimi i klientit të mundshëm",
+      "time": 3000
+    },
+    "success": {
+      "title": "Klienti i mundshëm u krijua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Klienti i mundshëm nuk mund të krijohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo klient të mundshëm",
+    "description": "Regjistro një klient të mundshëm të ri në CRM"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo klient"
+  }
+}

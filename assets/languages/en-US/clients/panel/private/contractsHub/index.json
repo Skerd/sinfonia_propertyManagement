@@ -1,0 +1,101 @@
+{
+  "title": "Contracts & Clients",
+  "description": "All contracts and clients in one place. Search, filter and manage easily.",
+  "contracts": {
+    "title": "Contracts",
+    "description": "All contracts in one place. Search, filter and manage easily.",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search by client name, unit, contract number…",
+    "projectLabel": "Project",
+    "projectPlaceholder": "All projects",
+    "contractTypeLabel": "Contract type",
+    "contractTypePlaceholder": "All types",
+    "statusLabel": "Status",
+    "statusPlaceholder": "All statuses",
+    "signatureDateLabel": "Signature date",
+    "signatureDateFromLabel": "From",
+    "signatureDateToLabel": "To",
+    "noResults": "No contracts found.",
+    "errorTitle": "Could not load contracts",
+    "errorDescription": "Try again or adjust your filters.",
+    "errorTooltip": "Contracts registry request failed",
+    "columns": {
+      "contractNumber": "Contract number",
+      "client": "Client",
+      "project": "Project",
+      "unit": "Unit",
+      "contractType": "Contract type",
+      "status": "Status",
+      "signatureDate": "Signature date",
+      "uploadDate": "Upload date",
+      "agent": "Agent",
+      "paymentStatus": "Payment status",
+      "actions": "Actions"
+    },
+    "contractType": {
+      "reservation": "Reservation",
+      "cash_sale": "Purchase-sale",
+      "payment_plan_sale": "Sale promise"
+    },
+    "status": {
+      "active": "Reserved",
+      "expired": "Expired",
+      "cancelled": "Cancelled",
+      "sold": "Sold"
+    },
+    "paymentStatus": {
+      "ok": "OK",
+      "partially": "Partial",
+      "unpaid": "Unpaid",
+      "no_payments": "No payments"
+    },
+    "pagination": {
+      "summary": "{from} to {to} of {total} results"
+    },
+    "viewAction": "View"
+  },
+  "clients": {
+    "title": "Clients",
+    "description": "All your clients and their purchased units in one place.",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search by name or surname…",
+    "projectLabel": "Project",
+    "projectPlaceholder": "All projects",
+    "typologyLabel": "Typology",
+    "typologyPlaceholder": "All typologies",
+    "statusLabel": "Status",
+    "statusPlaceholder": "All statuses",
+    "valueRangeLabel": "Value range (EUR)",
+    "valueMinPlaceholder": "Min",
+    "valueMaxPlaceholder": "Max",
+    "noResults": "No clients found.",
+    "errorTitle": "Could not load clients",
+    "errorDescription": "Try again or adjust your filters.",
+    "errorTooltip": "Clients registry request failed",
+    "columns": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "project": "Project",
+      "unit": "Unit",
+      "typology": "Typology",
+      "surface": "Surface (m²)",
+      "unitValue": "Unit value (EUR)",
+      "status": "Status",
+      "bookingDate": "Booking date",
+      "contractDate": "Contract date",
+      "agent": "Agent",
+      "paid": "Paid",
+      "remaining": "Remaining",
+      "actions": "Actions"
+    },
+    "status": {
+      "sold": "Sold",
+      "reserved": "Reserved"
+    },
+    "pagination": {
+      "summary": "{from} to {to} of {total} results"
+    },
+    "viewAction": "View"
+  }
+}

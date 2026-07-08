@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPaid.tsx",
+  "title": "Mark paid",
+  "paidConfirmTitle": "Mark commission paid?",
+  "paidConfirmDescription": "This sets the commission status to paid and records the paid time.",
+  "cancel": "Cancel",
+  "confirmPaid": "Mark paid",
+  "axios": {
+    "start": {
+      "title": "Updating commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission marked paid",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update commission",
+      "time": 3000
+    }
+  }
+}

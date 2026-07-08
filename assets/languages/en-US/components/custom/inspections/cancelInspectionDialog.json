@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/cancelInspectionDialog.tsx",
+  "cancelConfirmTitle": "Cancel Inspection",
+  "cancelConfirmDescription": "Are you sure you want to cancel this inspection? Enter a reason below.",
+  "cancellationReasonLabel": "Cancellation reason",
+  "cancellationReasonPlaceholder": "e.g. Tenant unavailable, property access denied...",
+  "cancel": "Cancel",
+  "confirmCancel": "Cancel inspection",
+  "axios": {
+    "start": {
+      "title": "Cancelling inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection cancelled successfully!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspection could not be cancelled, please try again!",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
+  "payInstallmentTitle": "Paguaj me këste",
+  "payInstallmentDescription": "Regjistro pagesën për këtë këst",
+  "paidAmount": "Shuma e paguar",
+  "remainingAmount": "E mbetur",
+  "transactionId": "ID e transaksionit",
+  "transactionIdPlaceholder": "Referenca opsionale e transaksionit",
+  "notes": "Shënime",
+  "notesPlaceholder": "Shënime opsionale pagese",
+  "cancel": "Anulo",
+  "processing": "Po përpunohet...",
+  "confirmPay": "Konfirmo pagesën",
+  "paymentRecorded": "Pagesa u regjistrua me sukses",
+  "paymentFailed": "Regjistrimi i pagesës dështoi",
+  "axios": {
+    "start": {
+      "title": "Po përpunohet...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pagesa u regjistrua me sukses",
+      "time": 3000
+    },
+    "error": {
+      "title": "Regjistrimi i pagesës dështoi",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
+  "dialogTitle": "Add activity",
+  "dialogDescription": "Log a CRM activity for this lead.",
+  "actionLabel": "Activity type",
+  "actionPlaceholder": "Select activity type",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional details about this activity",
+  "cancel": "Cancel",
+  "submit": "Add activity",
+  "activityActions": {
+    "called": "Called",
+    "emailed": "Emailed",
+    "meeting": "Meeting",
+    "site_visit": "Site visit",
+    "proposal_sent": "Proposal sent",
+    "follow_up": "Follow-up",
+    "note": "Note"
+  }
+}

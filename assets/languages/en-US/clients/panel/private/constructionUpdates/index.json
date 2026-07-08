@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx",
+  "title": "Construction Updates",
+  "description": "Track construction progress and milestones",
+  "createConstructionUpdate": "Add Update",
+  "viewTimeline": "Timeline",
+  "noData": "No construction updates found",
+  "failTitle": "Failed to load construction updates",
+  "failDescription": "An error occurred while loading construction updates. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "project": "Project",
+    "edifice": "Edifice",
+    "title": "Title",
+    "progressPercent": "Progress %",
+    "updateDate": "Update Date",
+    "description": "Description",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By"
+  }
+}

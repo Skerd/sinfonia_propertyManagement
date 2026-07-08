@@ -1,0 +1,71 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/createModificationRequest.tsx",
+  "title": "Krijo kërkesë për modifikim",
+  "description": "Krijo një kërkesë të re modifikimi",
+  "unitSelection": "Zgjedhja e njësisë",
+  "generalInfo": "Informacione të përgjithshme",
+  "details": "Detajet",
+  "errorTitle": "Njësia nuk mund të ngarkohet",
+  "errorDescription": "Ju lutemi provoni përsëri.",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën",
+    "floorLabel": "Kati",
+    "floorPlaceholder": "Zgjidhni dyshemenë",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidhni njësinë",
+    "unitRequired": "Kërkohet njësia",
+    "requestedByLabel": "Kërkuar nga",
+    "requestedByPlaceholder": "Zgjidhni klientin",
+    "requestedByRequired": "Kërkohet klienti",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Fut titullin e kërkesës",
+    "titleRequired": "Kërkohet titulli",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Futni përshkrimin e detajuar",
+    "descriptionRequired": "Kërkohet përshkrim",
+    "constructionTypeLabel": "Lloji i ndërtimit",
+    "constructionTypePlaceholder": "Zgjidhni llojin",
+    "constructionTypeRequired": "Kërkohet lloji i ndërtimit",
+    "constructionTypeOption": {
+      "materials": "Materialet",
+      "room_division": "Ndarja e dhomës",
+      "flooring": "Dyshemeja",
+      "utilities": "Shërbimet komunale",
+      "structural": "Strukturore",
+      "electrical": "elektrike",
+      "plumbing": "Hidraulik",
+      "hvac": "HVAC",
+      "cosmetic": "Kozmetike",
+      "other": "Të tjera"
+    },
+    "materialsLabel": "Materialet",
+    "materialsPlaceholder": "Shtoni materialin",
+    "specificationsLabel": "Specifikimet",
+    "specificationsPlaceholder": "Futni specifikimet teknike"
+  },
+  "axios": {
+    "start": {
+      "title": "Krijimi i kërkesës për modifikim",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kërkesa për modifikim u krijua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kërkesa për modifikim nuk mund të krijohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Krijo kërkesë për modifikim",
+    "description": "Krijo një kërkesë të re modifikimi"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo kërkesë"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayDownPaymentDialog.tsx",
+  "payDownPaymentTitle": "Mark Down Payment as Paid",
+  "payDownPaymentDescription": "This action marks the down payment as paid.",
+  "confirmPayDownPayment": "Confirm",
+  "cancel": "Cancel",
+  "processing": "Processing...",
+  "downPaymentRecorded": "Down payment marked as paid",
+  "downPaymentFailed": "Failed to mark down payment as paid",
+  "axios": {
+    "start": {
+      "title": "Processing...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Down payment marked as paid",
+      "time": 3000
+    },
+    "error": {
+      "title": "Failed to mark down payment as paid",
+      "time": 3000
+    }
+  }
+}

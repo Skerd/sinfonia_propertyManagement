@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Lease could not be updated, please try again!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Updating lease"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Lease successfully updated!"
+    }
+  },
+  "editDescription": "Update rental lease agreement details",
+  "editTitle": "Edit Lease",
+  "errorDescription": "An error occurred while loading the lease. Please try again.",
+  "errorTitle": "Failed to load lease",
+  "form": {
+    "_idLabel": "Record ID",
+    "contractMediaLabel": "Contract Document",
+    "depositAmountLabel": "Deposit Amount",
+    "depositPaidLabel": "Deposit Paid",
+    "endDateLabel": "End Date",
+    "existingFiles": "Current file",
+    "monthlyRentLabel": "Monthly Rent",
+    "newFiles": "New file",
+    "notesLabel": "Notes",
+    "rentCurrencyLabel": "Currency",
+    "startDateLabel": "Start Date",
+    "statusLabel": "Status",
+    "tenantLabel": "Tenant",
+    "tenantPlaceholder": "Tenant Placeholder",
+    "terminationDateLabel": "Termination Date",
+    "terminationReasonLabel": "Termination Reason",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Unit Placeholder"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  },
+  "formHeader": {
+    "description": "Update rental lease agreement details",
+    "title": "Edit Lease"
+  },
+  "generalInfo": "Lease Details",
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
+  "title": "Title"
+}

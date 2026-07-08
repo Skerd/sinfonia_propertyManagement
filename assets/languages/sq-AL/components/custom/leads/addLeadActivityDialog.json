@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
+  "dialogTitle": "Shto aktivitet",
+  "dialogDescription": "Regjistroni një aktivitet CRM për këtë lead.",
+  "actionLabel": "Lloji i aktivitetit",
+  "actionPlaceholder": "Zgjidhni llojin e aktivitetit",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Detaje opsionale për këtë aktivitet",
+  "cancel": "Anulo",
+  "submit": "Shto aktivitet",
+  "activityActions": {
+    "called": "Telefonatë",
+    "emailed": "Email",
+    "meeting": "Takim",
+    "site_visit": "Vizitë në vend",
+    "proposal_sent": "Propozim i dërguar",
+    "follow_up": "Ndjekje",
+    "note": "Shënim"
+  }
+}

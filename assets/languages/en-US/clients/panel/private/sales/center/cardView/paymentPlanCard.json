@@ -1,0 +1,17 @@
+{
+  "failedTitle": "Failed to load payment plan",
+  "failedDescription": "Failed to load data. Click here to retry.",
+  "paymentPlan": "Payment Plan",
+  "status": "Status",
+  "paymentPlanStatusState": {
+    "active": "Active",
+    "completed": "Completed",
+    "defaulted": "Defaulted",
+    "cancelled": "Cancelled"
+  },
+  "totalAmount": "Total Amount",
+  "remainingBalance": "Remaining Balance",
+  "numberOfInstallments": "Number of Installments",
+  "endDate": "End Date",
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+}

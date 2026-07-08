@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/createSaleChoice.tsx",
+  "title": "Create Sale",
+  "description": "Choose how you want to create the sale.",
+  "cashSale": "Cash Sale",
+  "cashSaleDescription": "One-time full payment with contract and documents.",
+  "paymentPlanSale": "Payment Plan Sale",
+  "paymentPlanSaleDescription": "Sale with down payment and installments.",
+  "createCashSale": "Create Cash Sale",
+  "createPaymentPlanSale": "Create Payment Plan Sale"
+}

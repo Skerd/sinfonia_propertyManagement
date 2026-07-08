@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/inspectionIssueListField.tsx",
+  "addIssue": "Shto problem",
+  "removeIssue": "Hiq problemin",
+  "keepIssue": "Mbaj",
+  "issue": "Çështja",
+  "addFindingPlaceholder": "Shto gjetjen",
+  "attachMedia": "Bashkëngjit media"
+}

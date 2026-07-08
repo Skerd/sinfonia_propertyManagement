@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/paidInFullReservationDialog.tsx",
+  "title": "I paguar plotësisht",
+  "paidConfirmTitle": "Shënoni si të paguar plotësisht",
+  "paidConfirmDescription": "Jeni i sigurt që dëshironi ta shënoni këtë rezervim si të paguar plotësisht?",
+  "cancel": "Anulo",
+  "confirmPaid": "Shëno si të paguar",
+  "axios": {
+    "start": {
+      "title": "Përditësimi i rezervimit…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rezervimi u shënua si i paguar plotësisht",
+      "time": 3000
+    },
+    "error": {
+      "title": "Rezervimi nuk mund të përditësohej",
+      "time": 3000
+    }
+  }
+}
