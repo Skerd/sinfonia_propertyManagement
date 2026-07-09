@@ -27,6 +27,7 @@ export default createGenericEditPage<Edifice, EditEdificeFormType>({
             city: data.address.city?._id,
         },
         investmentCurrency: data.investmentCurrency?._id,
+        saleCurrency: data.saleCurrency?._id,
         mainImage: data.mainImage?._id,
         imageGallery: data.imageGallery?.map((img) => img._id) ?? undefined,
         videoGallery: data.videoGallery?.map((vid) => vid._id) ?? undefined,
