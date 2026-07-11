@@ -1,4 +1,5 @@
 {
+  "path": "src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx",
   "title": "Contracts & Clients",
   "description": "All contracts and clients in one place. Search, filter and manage easily.",
   "contracts": {

@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/components/custom/reservations/reinstateReservationDialog.tsx",
-  "title": "Rivendos rezervimin",
   "reinstateConfirmTitle": "Rivendos rezervimin",
   "reinstateConfirmDescription": "Kjo do ta shënojë sërish rezervimin si aktiv dhe do ta rezervojë njësinë nëse është ende e disponueshme. Të vazhdohet?",
   "cancel": "Anulo",

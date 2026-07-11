@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/components/custom/reservations/reverseReservationPaymentDialog.tsx",
-  "title": "Pagesa e kundërt",
   "reverseConfirmTitle": "Pagesa e kundërt",
   "reverseConfirmDescription": "Kjo do të shënojë rezervimin si të papaguar plotësisht dhe do të anulojë çdo komision të lidhur në pritje. Të vazhdohet?",
   "cancel": "Anulo",

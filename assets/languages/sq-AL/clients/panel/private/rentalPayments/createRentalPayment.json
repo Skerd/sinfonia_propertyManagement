@@ -5,6 +5,7 @@
   "generalInfo": "Detajet e Pagesës",
   "form": {
     "leaseLabel": "Kontrata",
+    "leasePlaceholder": "Zgjidh kontratën",
     "unitLabel": "Njësia",
     "dueDateLabel": "Data e pagesës",
     "amountLabel": "Shuma",

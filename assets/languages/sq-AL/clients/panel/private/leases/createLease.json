@@ -5,7 +5,9 @@
   "generalInfo": "Detajet e Kontratës",
   "form": {
     "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidh njësinë",
     "tenantLabel": "Qiramarrësi",
+    "tenantPlaceholder": "Zgjidh qiramarrësin",
     "startDateLabel": "Data e fillimit",
     "endDateLabel": "Data e mbarimit",
     "monthlyRentLabel": "Qiraja mujore",

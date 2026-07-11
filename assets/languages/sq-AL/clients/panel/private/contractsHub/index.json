@@ -1,4 +1,5 @@
 {
+  "path": "src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx",
   "title": "Kontratat & Klientët",
   "description": "Të gjitha kontratat dhe klientët në një vend. Kërko, filtro dhe menaxho lehtësisht.",
   "contracts": {
