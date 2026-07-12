@@ -4,8 +4,12 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {IconReceiptDollar} from "@tabler/icons-react";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
+import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
+import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
+import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {buildTitleBreadcrumb} from "@coreModule/helpers/general";
 
 interface AllRentalPaymentsProps extends WithLanguageType {
     leaseId?: string;
@@ -24,7 +28,10 @@ function buildRentalPaymentEditPath(payment: RentalPayment) {
 
 function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPaymentsProps) {
     const extraFilters = leaseId ? {leaseId} : undefined;
-    const extraTitles  = leaseName ? [leaseName] : undefined;
+    const headerTitle = buildTitleBreadcrumb(
+        String(resolveLanguageKey("title")),
+        leaseName ? [leaseName] : [],
+    );
 
     return (
         <EntityListPage<RentalPayment>
@@ -40,11 +47,21 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             createLanguageKey="createRentalPayment"
             buildEditPath={buildRentalPaymentEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"
+            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
             extraFilters={extraFilters}
-            extraTitles={extraTitles}
+            headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}
+            renderCard={(payment, onDelete, onRestore, listRef) => (
+                <RentalPaymentCard
+                    payment={payment}
+                    onDelete={(row: RentalPayment | undefined, response?: DeletedData) => onDelete(row, response)}
+                    onRestore={() => onRestore(payment)}
+                    onActionSuccess={(updated?: RentalPayment) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
+                />
+            )}
             renderActionMenuChildren={(payment, bindRowAction) => (
                 <MarkRentalPaymentPaid payment={payment} onAction={bindRowAction} />
             )}

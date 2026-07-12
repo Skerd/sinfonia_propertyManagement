@@ -4,11 +4,14 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {IconFilePlus} from "@tabler/icons-react";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
+import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
 import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
+import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
+import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 
 interface AllLeasesProps extends WithLanguageType {
     unitId?: string;
@@ -39,10 +42,20 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             createLanguageKey="createLease"
             buildEditPath={buildLeaseEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/leases/index.tsx"
-            cardViewClassName="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx"
+            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
             extraFilters={extraFilters}
             rowActionMenu={{allowMenuForCustomChildren: true}}
+            renderCard={(lease, onDelete, onRestore, listRef) => (
+                <LeaseCard
+                    lease={lease}
+                    onDelete={(row: Lease | undefined, response?: DeletedData) => onDelete(row, response)}
+                    onRestore={() => onRestore(lease)}
+                    onActionSuccess={(updated?: Lease) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
+                />
+            )}
             renderActionMenuChildren={(lease, bindRowAction) => (
                 <>
                     <ViewLeasePayments lease={lease} />

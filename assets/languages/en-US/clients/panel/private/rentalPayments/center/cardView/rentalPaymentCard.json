@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx",
+  "statusLabel": "Status",
+  "fields": {
+    "amount": "Amount",
+    "unit": "Unit",
+    "lease": "Lease",
+    "dueDate": "Due Date",
+    "paidDate": "Paid Date",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "overdue": "Overdue",
+        "waived": "Waived"
+      }
+    }
+  }
+}

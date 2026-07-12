@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/cardView/leaseCard.tsx",
+  "statusLabel": "Statusi",
+  "fields": {
+    "tenant": "Qiraxhiu",
+    "unit": "Njësia",
+    "monthlyRent": "Qiraja Mujore",
+    "startDate": "Data e Fillimit",
+    "endDate": "Data e Përfundimit",
+    "!enums": {
+      "status": {
+        "active": "Aktive",
+        "expired": "E skaduar",
+        "terminated": "E ndërprerë"
+      }
+    }
+  }
+}

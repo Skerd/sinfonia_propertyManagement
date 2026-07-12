@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx",
+  "statusLabel": "Statusi",
+  "fields": {
+    "amount": "Shuma",
+    "unit": "Njësia",
+    "lease": "Qiraja",
+    "dueDate": "Afati",
+    "paidDate": "Data e Pagesës",
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "paid": "E paguar",
+        "overdue": "Me vonesë",
+        "waived": "E falur"
+      }
+    }
+  }
+}
