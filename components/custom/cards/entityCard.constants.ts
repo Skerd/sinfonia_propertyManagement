@@ -16,15 +16,15 @@ export const MEDIA_CAROUSEL_CLASS =
 
 /** Hierarchy entity lists (projects, edifices, floors, units). */
 export const GRID_HIERARCHY =
-    "grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5";
+    "grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-5";
 
 /** CRM / workflow entity lists. */
 export const GRID_TRANSACTIONAL =
-    "grid grid-cols-1 gap-2 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 pe-1";
+    "grid grid-cols-1 gap-2 lg:gap-4 md:grid-cols-2 md:gap-4 lg:grid-cols-3 pe-1";
 
 /** Wider transactional grids (leads, snags, etc.). */
 export const GRID_TRANSACTIONAL_WIDE =
-    "grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+    "grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4";
 
 export const DASHBOARD_SELECTABLE_RING =
     "ring-2 ring-primary shadow-lg shadow-primary/20";
