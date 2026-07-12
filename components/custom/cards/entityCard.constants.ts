@@ -26,7 +26,7 @@ export const MASONRY_HIERARCHY_BREAKPOINTS: {
     default: number;
     [key: number]: number;
 } = {
-    default: 5,
+    default: 4,
     1280: 3,
     1024: 2,
     768: 1,

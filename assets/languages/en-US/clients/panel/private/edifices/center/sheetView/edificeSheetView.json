@@ -64,6 +64,7 @@
     "availableUnits": "Available units",
     "reservedUnits": "Reserved units",
     "soldUnits": "Sold units",
+    "leasedUnits": "Leased units",
     "unavailableUnits": "Unavailable units",
     "totalArea": "Total area",
     "averagePrice": "Average unit price",

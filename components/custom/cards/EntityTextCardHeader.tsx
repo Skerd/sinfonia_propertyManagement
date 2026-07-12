@@ -26,27 +26,27 @@ export function EntityTextCardHeader({
     className,
 }: EntityTextCardHeaderProps) {
     return (
-        <div className={cn("flex items-start gap-2 p-2 pb-1", className)}>
-            {iconTile != null && <div className="shrink-0">{iconTile}</div>}
-            <div className="flex flex-1 min-w-0 flex-col gap-1">
-                <div className="flex min-w-0 items-start justify-between gap-2">
-                    <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+        <div className={cn("flex flex-col gap-1.5 p-2 pb-1", className)}>
+            <div className="flex min-w-0 items-center gap-2">
+                {iconTile != null && <div className="shrink-0 self-center">{iconTile}</div>}
+                <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
+                    <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
                         <div className="flex min-w-0 items-center gap-1">
-                            <div className="min-w-0 truncate font-semibold">{title}</div>
+                            <div className="min-w-0 truncate font-semibold leading-none">{title}</div>
                             {titleExtra}
                         </div>
                         {subtitle != null && subtitle !== "" && (
-                            <div className="truncate text-xs text-muted-foreground">{subtitle}</div>
+                            <div className="truncate text-xs leading-none text-muted-foreground">{subtitle}</div>
                         )}
                     </div>
                     {!hideActions && actionMenu != null && (
                         <EntityCardActionMenu variant="inline">{actionMenu}</EntityCardActionMenu>
                     )}
                 </div>
-                {badges != null && (
-                    <div className="flex flex-wrap items-center gap-1.5">{badges}</div>
-                )}
             </div>
+            {badges != null && (
+                <div className="flex flex-wrap items-center gap-1.5">{badges}</div>
+            )}
         </div>
     );
 }

@@ -63,7 +63,8 @@ function RealEstateDashboard({
         available: 0,
         reserved: 0,
         sold: 0,
-        blocked: 0
+        blocked: 0,
+        leased: 0,
     };
     const revenueChartProps = dashboardSummaryToRevenueChart(summary);
 

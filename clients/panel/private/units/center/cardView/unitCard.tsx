@@ -6,12 +6,13 @@ import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
+import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
+import {formatCardAreaM2, formatCardDecimal} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {
     IconBath,
     IconDoor,
-    IconFountain,
     IconGrid4x4,
     IconStack,
     IconListDetails,
@@ -88,7 +89,8 @@ function UnitCard({
                 videoGallery={unit.videoGallery || []}
                 showThumbnails={false}
                 allowFullScreen={false}
-                coverAfterFirst={true}
+                coverAfterFirst={false}
+                modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
             />
         ),
         [unit.videoGallery, unit.mainImage, unit.imageGallery],
@@ -152,13 +154,6 @@ function UnitCard({
                             {!small && (
                                 <>
                                     <InfoRow
-                                        icon={IconDoor}
-                                        label={resolveLanguageKey("data.unitNumber")}
-                                        tooltip={resolveLanguageKey("data.unitNumber")}
-                                        show={!!read?.unitNumber}
-                                        value={unit.unitNumber != null && unit.unitNumber !== "" ? `#${unit.unitNumber}` : null}
-                                    />
-                                    <InfoRow
                                         icon={IconStack}
                                         label={resolveLanguageKey("floor")}
                                         tooltip={resolveLanguageKey("floor")}
@@ -179,14 +174,7 @@ function UnitCard({
                                 label={resolveLanguageKey("data.area")}
                                 tooltip={resolveLanguageKey("data.area")}
                                 show={!!read?.area}
-                                value={unit.area != null && `${unit.area}m²`}
-                            />
-                            <InfoRow
-                                icon={IconFountain}
-                                label={resolveLanguageKey("data.sharedArea")}
-                                tooltip={resolveLanguageKey("data.sharedArea")}
-                                show={!!read?.sharedArea}
-                                value={unit.sharedArea != null && `${unit.sharedArea}m²`}
+                                value={unit.area != null && formatCardAreaM2(unit.area)}
                             />
                             <InfoRow
                                 icon={IconDoor}
@@ -211,7 +199,7 @@ function UnitCard({
                                     unit.price != null ? (
                                         <span className="text-green-600 font-semibold">
                                             {unit.priceCurrency?.symbol || unit.priceCurrency?.abbreviation || ""}
-                                            {unit.price.toLocaleString()}
+                                            {formatCardDecimal(unit.price)}
                                         </span>
                                     ) : null
                                 }

@@ -46,6 +46,7 @@
       },
       "status": {
         "pending": "Pending",
+        "pending_approval": "Pending approval",
         "paid": "Paid",
         "voided": "Voided"
       }

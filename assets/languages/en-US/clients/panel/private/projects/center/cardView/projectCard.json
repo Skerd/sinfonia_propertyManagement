@@ -26,6 +26,8 @@
     "reservedDesc": "With active reservation",
     "sold": "Sold",
     "soldDesc": "Sold units",
+    "leased": "Leased",
+    "leasedDesc": "Currently leased",
     "unavailable": "Unavailable",
     "unavailableDesc": "Not available for sale"
   },

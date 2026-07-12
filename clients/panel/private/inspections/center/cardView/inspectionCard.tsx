@@ -217,7 +217,7 @@ function InspectionCard({
                                             label={inspection.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                             tooltip={inspection.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                             show={!!read?.unit}
-                                            value={inspection.unit != null && (inspection.unit.name ?? inspection.unit.unitNumber ?? inspection.unit._id ?? null)}
+                                            value={inspection.unit != null && (inspection.unit.name ?? inspection.unit.unitNumber ?? null)}
                                         />
                                         <InfoRow
                                             icon={IconList}
@@ -226,15 +226,13 @@ function InspectionCard({
                                             show={!!read?.findings}
                                             value={totalFindingsCount}
                                         />
-                                        {!!inspection.notes && (
-                                            <InfoRow
-                                                icon={IconFileText}
-                                                label={resolveLanguageKey("notes")}
-                                                tooltip={resolveLanguageKey("notes")}
-                                                show={!!read?.notes}
-                                                value={""}
-                                                dontRenderValue={true}
-                                            />
+                                        {!!inspection.notes && !!read?.notes && (
+                                            <TooltipDisplayer tooltip={resolveLanguageKey("notes")}>
+                                                <Badge variant="outline" className="text-xs font-medium text-muted-foreground">
+                                                    <IconFileText className="h-3 w-3 mr-1" />
+                                                    {resolveLanguageKey("notes")}
+                                                </Badge>
+                                            </TooltipDisplayer>
                                         )}
                                     </div>
                                 ) : (
@@ -256,7 +254,7 @@ function InspectionCard({
                                                 label={inspection.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                                 tooltip={inspection.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                                 show={!!read?.unit}
-                                                value={inspection.unit != null && (inspection.unit.name ?? inspection.unit.unitNumber ?? inspection.unit._id ?? null)}
+                                                value={inspection.unit != null && (inspection.unit.name ?? inspection.unit.unitNumber ?? null)}
                                             />
                                             <InfoRow
                                                 icon={IconCalendarClock}
@@ -286,26 +284,6 @@ function InspectionCard({
                                                     tooltip={resolveLanguageKey("scheduledDate")}
                                                     show={true}
                                                     value={format(new Date(inspection.scheduledDate), "PP")}
-                                                />
-                                            )}
-                                            {!!inspection.completedAt && (
-                                                <InfoRow
-                                                    icon={IconCalendar}
-                                                    label={resolveLanguageKey("completedAt")}
-                                                    tooltip={resolveLanguageKey("completedAt")}
-                                                    show={!!read?.completedAt}
-                                                    className="text-green-600 dark:text-green-400"
-                                                    value={format(new Date(inspection.completedAt), "PP")}
-                                                />
-                                            )}
-                                            {!!inspection.cancelledAt && (
-                                                <InfoRow
-                                                    icon={IconCalendar}
-                                                    label={resolveLanguageKey("cancelledAt")}
-                                                    tooltip={resolveLanguageKey("cancelledAt")}
-                                                    show={!!read?.cancelledAt}
-                                                    className="text-red-600 dark:text-red-400"
-                                                    value={format(new Date(inspection.cancelledAt), "PP")}
                                                 />
                                             )}
                                         </div>

@@ -46,8 +46,9 @@
       },
       "status": {
         "pending": "Në pritje",
+        "pending_approval": "Në pritje të aprovimit",
         "paid": "I paguar",
-        "voided": "I zbrazur"
+        "voided": "I anuluar"
       }
     }
   },

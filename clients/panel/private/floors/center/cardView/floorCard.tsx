@@ -5,6 +5,8 @@ import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
+import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
+import {formatCardAreaM2} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
@@ -13,7 +15,6 @@ import {
     IconDoor,
     IconFireExtinguisher,
     IconGrid4x4,
-    IconStack,
     IconWheelchair,
 } from "@tabler/icons-react";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
@@ -73,7 +74,8 @@ function FloorCard({
             videoGallery={floor.videoGallery || []}
             showThumbnails={false}
             allowFullScreen={false}
-            coverAfterFirst={true}
+            coverAfterFirst={false}
+            modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
         />
     ), [floor.imageGallery, floor.videoGallery, floor.mainImage]);
 
@@ -133,13 +135,6 @@ function FloorCard({
                     <div className={CARD_BODY_CLASS}>
                         <div className={CARD_INFO_ROWS_CLASS}>
                             <InfoRow
-                                icon={IconStack}
-                                label={resolveLanguageKey("data.levelNumber")}
-                                tooltip={resolveLanguageKey("data.levelNumber")}
-                                show={!!read?.levelNumber}
-                                value={floor.levelNumber}
-                            />
-                            <InfoRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("data.units")}
                                 tooltip={resolveLanguageKey("data.units")}
@@ -151,23 +146,25 @@ function FloorCard({
                                 label={resolveLanguageKey("data.area")}
                                 tooltip={resolveLanguageKey("data.area")}
                                 show={!!read?.area}
-                                value={floor.area != null && `${floor.area}m²`}
-                            />
-                            <InfoRow
-                                icon={IconWheelchair}
-                                label={resolveLanguageKey("data.accessibleTooltip")}
-                                tooltip={resolveLanguageKey("data.accessibleTooltip")}
-                                show={!!read?.isAccessible}
-                                value={floor.isAccessible != null && resolveLanguageKey(floor.isAccessible ? "data.isAccessible" : "data.notAccessible")}
-                            />
-                            <InfoRow
-                                icon={IconFireExtinguisher}
-                                label={resolveLanguageKey("data.emergencyExitTooltip")}
-                                tooltip={resolveLanguageKey("data.emergencyExitTooltip")}
-                                show={!!read?.hasEmergencyExit}
-                                value={floor.hasEmergencyExit != null && resolveLanguageKey(floor.hasEmergencyExit ? "data.hasEmergencyExit" : "data.noEmergencyExit")}
+                                value={floor.area != null && formatCardAreaM2(floor.area)}
                             />
                         </div>
+                        {(!!floor.isAccessible || !!floor.hasEmergencyExit) && (
+                            <div className="flex flex-wrap gap-1">
+                                {!!floor.isAccessible && !!read?.isAccessible && (
+                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">
+                                        <IconWheelchair className="h-3 w-3" />
+                                        {resolveLanguageKey("data.isAccessible")}
+                                    </span>
+                                )}
+                                {!!floor.hasEmergencyExit && !!read?.hasEmergencyExit && (
+                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">
+                                        <IconFireExtinguisher className="h-3 w-3" />
+                                        {resolveLanguageKey("data.hasEmergencyExit")}
+                                    </span>
+                                )}
+                            </div>
+                        )}
                         {!!floor.statistics?.unitsByStatus && (
                             <div className="flex flex-col gap-1">
                                 <Separator />

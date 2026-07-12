@@ -12,6 +12,8 @@
   "reservedDesc": "Me rezervim aktiv",
   "sold": "Shitur",
   "soldDesc": "Njësi të shitura",
+  "leased": "Me qira",
+  "leasedDesc": "Aktualisht me qira",
   "unavailable": "I padisponueshëm",
   "unavailableDesc": "Nuk disponohet për shitje",
   "occupancyRate": "Shkalla e zënies",

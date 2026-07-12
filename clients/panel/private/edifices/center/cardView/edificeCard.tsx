@@ -7,6 +7,7 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
+import {formatCardAreaM2, formatCardDecimal} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -14,13 +15,10 @@ import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {
     IconCashBanknote,
     IconCarGarage,
-    IconDeviceIpadHorizontalDown,
-    IconDeviceIpadHorizontalUp,
     IconDoor,
     IconGrid4x4,
     IconStack,
     IconParkingCircle,
-    IconRuler3,
     IconTrees,
 } from "@tabler/icons-react";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
@@ -155,39 +153,18 @@ function EdificeCard({
                     {read && (
                         <div className={CARD_INFO_ROWS_CLASS}>
                                     <InfoRow
-                                        icon={IconRuler3}
-                                        label={resolveLanguageKey("data.distanceFromCityCenter")}
-                                        tooltip={resolveLanguageKey("data.distanceFromCityCenter")}
-                                        show={!!read?.distanceFromCityCenter}
-                                        value={edifice.distanceFromCityCenter != null ? `${edifice.distanceFromCityCenter}m` : null}
-                                    />
-                                    <InfoRow
                                         icon={IconGrid4x4}
                                         label={resolveLanguageKey("data.totalArea")}
                                         tooltip={resolveLanguageKey("data.totalArea")}
                                         show={!!read?.totalArea}
-                                        value={edifice.totalArea != null ? `${edifice.totalArea}m²` : null}
+                                        value={edifice.totalArea != null ? formatCardAreaM2(edifice.totalArea) : null}
                                     />
                                     <InfoRow
                                         icon={IconTrees}
                                         label={resolveLanguageKey("data.greenArea")}
                                         tooltip={resolveLanguageKey("data.greenArea")}
                                         show={!!read?.greenArea}
-                                        value={edifice.greenArea != null ? `${edifice.greenArea}m²` : null}
-                                    />
-                                    <InfoRow
-                                        icon={IconDeviceIpadHorizontalUp}
-                                        label={resolveLanguageKey("data.numberOfFloorsAboveGround")}
-                                        tooltip={resolveLanguageKey("data.numberOfFloorsAboveGround")}
-                                        show={!!read?.numberOfFloorsAboveGround}
-                                        value={edifice.numberOfFloorsAboveGround}
-                                    />
-                                    <InfoRow
-                                        icon={IconDeviceIpadHorizontalDown}
-                                        label={resolveLanguageKey("data.numberOfFloorsUnderGround")}
-                                        tooltip={resolveLanguageKey("data.numberOfFloorsUnderGround")}
-                                        show={!!read?.numberOfFloorsUnderGround}
-                                        value={edifice.numberOfFloorsUnderGround}
+                                        value={edifice.greenArea != null ? formatCardAreaM2(edifice.greenArea) : null}
                                     />
                                     <InfoRow
                                         icon={IconParkingCircle}
@@ -212,7 +189,7 @@ function EdificeCard({
                                             edifice.investmentValue != null && edifice.investmentCurrency?.symbol != null &&
                                             <span className="text-green-600">
                                                 {edifice.investmentCurrency.symbol}
-                                                {edifice.investmentValue.toLocaleString()}
+                                                {formatCardDecimal(edifice.investmentValue)}
                                             </span>
                                         }
                                     />

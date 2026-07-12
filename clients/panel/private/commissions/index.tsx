@@ -18,7 +18,7 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
             type: COLUMN_TYPE.ENUM,
             enumValues: [
                 {value: "pending",            label: resolveLanguageKey("fields.!enums.status.pending")  as string},
-                {value: "pending_approval",   label: "Pending Approval"},
+                {value: "pending_approval",   label: resolveLanguageKey("fields.!enums.status.pending_approval") as string},
                 {value: "paid",               label: resolveLanguageKey("fields.!enums.status.paid")     as string},
                 {value: "voided",             label: resolveLanguageKey("fields.!enums.status.voided")   as string},
             ],

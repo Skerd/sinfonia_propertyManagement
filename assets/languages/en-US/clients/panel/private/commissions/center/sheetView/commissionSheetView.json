@@ -12,15 +12,20 @@
   "commission": "Commission",
   "agent": "Agent",
   "sourceType": "Source",
-  "sourceTypeEnum": {
-    "sale": "Sale",
-    "reservation": "Reservation"
-  },
   "status": "Status",
-  "statusEnum": {
-    "pending": "Pending",
-    "paid": "Paid",
-    "voided": "Voided"
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "pending_approval": "Pending approval",
+        "paid": "Paid",
+        "voided": "Voided"
+      },
+      "sourceType": {
+        "sale": "Sale",
+        "reservation": "Reservation"
+      }
+    }
   },
   "basis": "Commission basis",
   "basisEnum": {

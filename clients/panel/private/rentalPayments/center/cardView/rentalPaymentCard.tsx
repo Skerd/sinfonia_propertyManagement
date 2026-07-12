@@ -5,13 +5,14 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {formatCardDecimal} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconCalendar, IconCurrencyDollar, IconDoor, IconFileText} from "@tabler/icons-react";
+import {IconCalendar, IconCurrencyDollar, IconDoor} from "@tabler/icons-react";
 import RentalPaymentSheetView from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
@@ -98,7 +99,7 @@ function RentalPaymentCard({
     const editPath = buildEditPath(payment);
     const amountDisplay =
         payment.amount != null
-            ? `${payment.amount}${payment.currency?.symbol ? ` ${payment.currency.symbol}` : ""}`
+            ? `${formatCardDecimal(payment.amount)}${payment.currency?.symbol ? ` ${payment.currency.symbol}` : ""}`
             : null;
 
     return (
@@ -143,12 +144,6 @@ function RentalPaymentCard({
                             label={resolveLanguageKey("fields.unit")}
                             show={!!read?.unit}
                             value={payment.unit?.name || payment.unit?.unitNumber}
-                        />
-                        <InfoRow
-                            icon={IconFileText}
-                            label={resolveLanguageKey("fields.lease")}
-                            show={!!read?.lease}
-                            value={payment.lease?.name}
                         />
                         <InfoRow
                             icon={IconCalendar}

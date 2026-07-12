@@ -6,8 +6,9 @@ import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Avatar, AvatarFallback} from "@coreModule/components/ui/avatar.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
-import {IconBuilding, IconCalendar, IconCurrencyDollar, IconDoor, IconMail, IconPhone, IconUser} from "@tabler/icons-react";
+import {IconBuilding, IconCalendar, IconCurrencyDollar, IconDoor, IconPhone, IconUser} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {formatCardDecimal} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
@@ -84,7 +85,7 @@ function LeadCard({
 
     const fullName = [lead.firstName, lead.lastName].filter(Boolean).join(" ");
     const budget = lead.budget != null
-        ? `${lead.budgetCurrency?.symbol ?? lead.budgetCurrency?.abbreviation ?? ""} ${lead.budget.toLocaleString()}`.trim()
+        ? `${lead.budgetCurrency?.symbol ?? lead.budgetCurrency?.abbreviation ?? ""} ${formatCardDecimal(lead.budget)}`.trim()
         : null;
 
     return (
@@ -134,20 +135,6 @@ function LeadCard({
                 <div className={CARD_BODY_CLASS}>
                     <div className={CARD_INFO_ROWS_CLASS}>
                         <InfoRow
-                            icon={IconMail}
-                            label={resolveLanguageKey("email")}
-                            show={!!read?.email}
-                            value={lead.email ? (
-                                <a
-                                    href={`mailto:${lead.email}`}
-                                    className="text-xs text-muted-foreground hover:underline"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    {lead.email}
-                                </a>
-                            ) : null}
-                        />
-                        <InfoRow
                             icon={IconPhone}
                             label={resolveLanguageKey("phone")}
                             show={!!read?.phone}
@@ -161,9 +148,6 @@ function LeadCard({
                                 </a>
                             ) : null}
                         />
-                    </div>
-                    <Separator />
-                    <div className={CARD_INFO_ROWS_CLASS}>
                         <InfoRow
                             icon={IconBuilding}
                             label={resolveLanguageKey("projectInterest")}

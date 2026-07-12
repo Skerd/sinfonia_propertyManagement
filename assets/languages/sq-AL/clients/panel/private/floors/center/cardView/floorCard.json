@@ -48,6 +48,8 @@
     "reservedDesc": "Me rezervim aktiv",
     "sold": "I shitur",
     "soldDesc": "Njësi të shitura",
+    "leased": "Me qira",
+    "leasedDesc": "Aktualisht me qira",
     "unavailable": "Jodisponibël",
     "unavailableDesc": "Nuk disponohet për shitje"
   }

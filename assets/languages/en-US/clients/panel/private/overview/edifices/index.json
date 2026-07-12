@@ -16,6 +16,7 @@
   "available": "Available",
   "reserved": "Reserved",
   "sold": "Sold",
+  "leased": "Leased",
   "unavailable": "Unavailable",
   "avgUnitsPerEdifice": "Avg. units per edifice",
   "avgUnitsPerEdificeDesc": "Total units ÷ edifices",

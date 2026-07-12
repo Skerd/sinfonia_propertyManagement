@@ -57,20 +57,24 @@ function CommissionSheetView({
                 ? "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/30"
                 : s === "voided"
                   ? "bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/30"
-                  : "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/30";
+                  : s === "pending_approval"
+                    ? "bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/30"
+                    : "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/30";
         return (
             <Badge variant="outline" className={cn("text-xs font-medium", className)}>
-                {resolveLanguageKey(`statusEnum.${s}`)}
+                {resolveLanguageKey(`fields.!enums.status.${s}`) as string}
             </Badge>
         );
     };
 
     const st = (asCommission.sourceType || "").toLowerCase();
-    const sourceLabel = resolveLanguageKey(`sourceTypeEnum.${st}`);
+    const sourceLabel = resolveLanguageKey(`fields.!enums.sourceType.${st}`) as string;
+
+    const agentTitle = commissionConfirmLabel(asCommission) ?? "—";
 
     const headerTitle = (
         <>
-            <span className="truncate text-3xl w-fit">{commissionConfirmLabel(asCommission) ?? "—"}</span>
+            <span className="truncate text-3xl w-fit">{agentTitle}</span>
             <Badge variant="secondary">{resolveLanguageKey("modelType")}</Badge>
         </>
     );

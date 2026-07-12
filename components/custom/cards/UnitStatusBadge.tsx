@@ -6,6 +6,7 @@ export type UnitAvailabilityStatus =
     | "reserved_unit"
     | "sold_unit"
     | "unavailable_unit"
+    | "rented_unit"
     | string;
 
 const STATUS_STYLE: Record<string, string> = {
@@ -13,6 +14,7 @@ const STATUS_STYLE: Record<string, string> = {
     reserved_unit: "border-status-reserved text-status-reserved bg-status-reserved/10",
     available_unit: "border-status-available text-status-available bg-status-available/10",
     unavailable_unit: "border-status-blocked text-status-blocked bg-status-blocked/10",
+    rented_unit: "border-violet-500 text-violet-600 dark:text-violet-400 bg-violet-500/10",
 };
 
 const STATUS_LABEL_KEY: Record<string, string> = {
@@ -20,6 +22,7 @@ const STATUS_LABEL_KEY: Record<string, string> = {
     reserved_unit: "statusReserved",
     available_unit: "statusAvailable",
     unavailable_unit: "statusUnavailable",
+    rented_unit: "statusLeased",
 };
 
 type UnitStatusBadgeProps = {
@@ -47,7 +50,9 @@ export function UnitStatusBadge({
                   ? "bg-status-reserved/90"
                   : status === "sold_unit"
                     ? "bg-status-sold/90"
-                    : "bg-status-blocked/90";
+                    : status === "rented_unit"
+                      ? "bg-violet-500/90"
+                      : "bg-status-blocked/90";
         return (
             <span
                 className={cn(
@@ -74,7 +79,7 @@ export function UnitStatusBadge({
 export function resolveUnitStatusKey(
     status: string | undefined,
     isAvailable: boolean | undefined,
-): "available" | "reserved" | "sold" | "notAvailable" | null {
+): "available" | "reserved" | "sold" | "leased" | "notAvailable" | null {
     if (status == null && isAvailable == null) return null;
     const resolved = status || (isAvailable ? "available_unit" : "unavailable_unit");
     switch (resolved) {
@@ -86,6 +91,8 @@ export function resolveUnitStatusKey(
             return "reserved";
         case "sold_unit":
             return "sold";
+        case "rented_unit":
+            return "leased";
         default:
             return isAvailable ? "available" : "notAvailable";
     }

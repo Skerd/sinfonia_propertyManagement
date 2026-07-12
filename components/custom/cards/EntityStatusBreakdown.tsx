@@ -43,6 +43,12 @@ export function EntityStatusBadgeRow({
             className: "border-status-sold/30 bg-status-sold/10 text-status-sold",
         },
         {
+            key: "leased",
+            labelKey: "statistics.leased",
+            descKey: "statistics.leasedDesc",
+            className: "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400",
+        },
+        {
             key: "unavailable",
             labelKey: "statistics.unavailable",
             descKey: "statistics.unavailableDesc",
@@ -77,6 +83,7 @@ export function EntityStatusBreakdown({
     reservedLabelKey = "reservedShort",
     availableLabelKey = "availableShort",
     blockedLabelKey = "blockedShort",
+    leasedLabelKey = "leasedShort",
     showSoldPercentage = true,
     totalValue,
     collectedAmount,
@@ -93,6 +100,7 @@ export function EntityStatusBreakdown({
     reservedLabelKey?: string;
     availableLabelKey?: string;
     blockedLabelKey?: string;
+    leasedLabelKey?: string;
     showSoldPercentage?: boolean;
     totalValue?: number;
     collectedAmount?: number;
@@ -127,18 +135,23 @@ export function EntityStatusBreakdown({
                         style={{width: `${(stats.reserved / totalUnits) * 100}%`}}
                     />
                     <div
+                        className="bg-violet-500 transition-all duration-500"
+                        style={{width: `${(stats.leased / totalUnits) * 100}%`}}
+                    />
+                    <div
                         className="bg-status-blocked transition-all duration-500"
                         style={{width: `${(stats.blocked / totalUnits) * 100}%`}}
                     />
                 </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-1.5 mb-4">
+            <div className="grid grid-cols-5 gap-1.5 mb-4">
                 {(
                     [
                         ["sold", stats.sold, "bg-status-sold/10 text-status-sold", soldLabelKey],
                         ["reserved", stats.reserved, "bg-status-reserved/10 text-status-reserved", reservedLabelKey],
                         ["available", stats.available, "bg-status-available/10 text-status-available", availableLabelKey],
+                        ["leased", stats.leased, "bg-violet-500/10 text-violet-600 dark:text-violet-400", leasedLabelKey],
                         ["blocked", stats.blocked, "bg-status-blocked/10 text-status-blocked", blockedLabelKey],
                     ] as const
                 ).map(([id, value, tone, labelKey]) => (

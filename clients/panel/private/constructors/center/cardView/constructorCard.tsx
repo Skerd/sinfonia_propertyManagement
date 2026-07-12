@@ -7,7 +7,7 @@ import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {Avatar, AvatarFallback, AvatarImage} from "@coreModule/components/ui/avatar.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {IconBuilding, IconGlobe, IconHash, IconMail, IconMapPin, IconPhone} from "@tabler/icons-react";
+import {IconBuilding, IconMail, IconMapPin, IconPhone} from "@tabler/icons-react";
 import {Constructor} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.dto.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
@@ -99,17 +99,6 @@ function ConstructorCard({
                                 title={!!read?.name ? constructor.name : null}
                                 badges={
                                     <>
-                                        {!!read?.vat && !!constructor.vat && (
-                                            <InfoRow
-                                                icon={IconHash}
-                                                label={resolveLanguageKey("vat")}
-                                                tooltip={resolveLanguageKey("vat")}
-                                                show={!!read?.vat}
-                                                value={
-                                                    <span className="text-xs text-muted-foreground truncate">{constructor.vat}</span>
-                                                }
-                                            />
-                                        )}
                                         {!!constructor.edifices && constructor.edifices.length > 0 && (
                                             <Badge variant="outline" className="text-xs">
                                                 {resolveLanguageKey("edifices")}: {constructor.edifices.length}
@@ -162,26 +151,6 @@ function ConstructorCard({
                                             <Badge variant="outline" asChild className="text-xs font-medium truncate max-w-[200px]">
                                                 <a href={`mailto:${constructor.email}`} onClick={(e) => e.stopPropagation()}>
                                                     {constructor.email}
-                                                </a>
-                                            </Badge>
-                                        ) : null
-                                    }
-                                />
-                                <InfoRow
-                                    icon={IconGlobe}
-                                    label={resolveLanguageKey("website")}
-                                    tooltip={resolveLanguageKey("website")}
-                                    show={!!read?.website}
-                                    value={
-                                        constructor.website ? (
-                                            <Badge variant="outline" asChild className="text-xs font-medium truncate max-w-[200px]">
-                                                <a
-                                                    href={constructor.website}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    onClick={(e) => e.stopPropagation()}
-                                                >
-                                                    {constructor.website}
                                                 </a>
                                             </Badge>
                                         ) : null

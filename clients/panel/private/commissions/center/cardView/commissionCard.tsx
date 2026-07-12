@@ -6,13 +6,14 @@ import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {Avatar, AvatarFallback} from "@coreModule/components/ui/avatar.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {formatCardDecimal} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
 import CommissionSheetView, {commissionConfirmLabel} from "@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx";
-import {format} from "date-fns";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
-import {IconCalendar, IconCurrencyDollar, IconFileText, IconHome, IconPercentage} from "@tabler/icons-react";
+import {IconCurrencyDollar, IconFileText, IconHome, IconUser} from "@tabler/icons-react";
 import {MdiIcon} from "@coreModule/components/custom/mdiIcons/mdiIcon.tsx";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
@@ -24,6 +25,7 @@ import {
     CARD_INFO_ROWS_CLASS,
     STATUS_BADGE_DANGER,
     STATUS_BADGE_INFO,
+    STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
 } from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
@@ -37,7 +39,15 @@ function commissionStatusBadgeClass(status: string): string {
     const s = (status || "").toLowerCase();
     if (s === "paid") return STATUS_BADGE_SUCCESS;
     if (s === "voided") return STATUS_BADGE_DANGER;
+    if (s === "pending_approval") return STATUS_BADGE_INFO;
     return STATUS_BADGE_WARNING;
+}
+
+function agentInitials(commission: Commission): string {
+    const a = commission.agent;
+    const f = a?.name?.[0] ?? "";
+    const l = a?.surname?.[0] ?? "";
+    return (f + l).toUpperCase() || "?";
 }
 
 function CommissionCard({
@@ -61,11 +71,13 @@ function CommissionCard({
 
     const unit = commission.unit;
     const unitValue =
-        unit != null ? (unit.name ?? unit.unitNumber ?? unit._id ?? null) : null;
+        unit != null ? (unit.name ?? unit.unitNumber ?? null) : null;
     const amountDisplay =
         commission.amount != null
-            ? `${commission.amount}${commission.currency?.name ? ` ${commission.currency.name}` : ""}`
+            ? `${formatCardDecimal(commission.amount)}${commission.currency?.name ? ` ${commission.currency.name}` : ""}`
             : null;
+    const agentTitle = commissionConfirmLabel(commission) ?? "—";
+    const statusKey = (commission.status || "").toLowerCase();
 
     return (
         <>
@@ -76,19 +88,24 @@ function CommissionCard({
                     )}
                     <div className="w-full min-w-0">
                         <EntityTextCardHeader
-                            title={
-                                <TooltipDisplayer tooltip={resolveLanguageKey("agent")} show={!!read?.agent}>
-                                    {commissionConfirmLabel(commission) ?? "—"}
+                            iconTile={
+                                <TooltipDisplayer tooltip={resolveLanguageKey("agent")}>
+                                    <Avatar className="h-10 w-10 shrink-0 rounded-xl border-0">
+                                        <AvatarFallback className="rounded-xl bg-muted/50 text-muted-foreground text-sm font-semibold">
+                                            {commission.agent ? agentInitials(commission) : <IconUser className="h-4 w-4" />}
+                                        </AvatarFallback>
+                                    </Avatar>
                                 </TooltipDisplayer>
                             }
+                            title={agentTitle}
                             badges={
                                 <>
                                     <TooltipDisplayer tooltip={resolveLanguageKey("status")}>
                                         <Badge
                                             variant="outline"
-                                            className={cn("text-xs font-medium", commissionStatusBadgeClass(commission.status))}
+                                            className={cn("inline-flex items-center text-xs font-medium", commissionStatusBadgeClass(commission.status))}
                                         >
-                                            {resolveLanguageKey(`statusEnum.${(commission.status || "").toLowerCase()}`)}
+                                            {resolveLanguageKey(`fields.!enums.status.${statusKey}`) as string}
                                         </Badge>
                                     </TooltipDisplayer>
                                     {!!commission.sourceType && (
@@ -96,11 +113,19 @@ function CommissionCard({
                                             <Badge
                                                 variant="outline"
                                                 className={cn(
-                                                    "text-xs font-medium",
+                                                    "inline-flex items-center text-xs font-medium",
                                                     commission.sourceType === "sale" ? STATUS_BADGE_INFO : "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400",
                                                 )}
                                             >
-                                                {resolveLanguageKey(`sourceTypeEnum.${commission.sourceType}`)}
+                                                {resolveLanguageKey(`fields.!enums.sourceType.${commission.sourceType}`) as string}
+                                            </Badge>
+                                        </TooltipDisplayer>
+                                    )}
+                                    {!!commission.notes && !!read?.notes && (
+                                        <TooltipDisplayer tooltip={resolveLanguageKey("notes")}>
+                                            <Badge variant="outline" className={cn("inline-flex items-center gap-1 text-xs font-medium", STATUS_BADGE_NEUTRAL)}>
+                                                <IconFileText className="h-3 w-3" />
+                                                {resolveLanguageKey("notes")}
                                             </Badge>
                                         </TooltipDisplayer>
                                     )}
@@ -132,13 +157,6 @@ function CommissionCard({
                                     value={amountDisplay}
                                 />
                                 <InfoRow
-                                    icon={IconPercentage}
-                                    label={resolveLanguageKey("ratePercent")}
-                                    tooltip={resolveLanguageKey("ratePercent")}
-                                    show={!!read?.ratePercent}
-                                    value={commission.ratePercent != null ? `${commission.ratePercent}%` : null}
-                                />
-                                <InfoRow
                                     icon={IconHome}
                                     iconReplacement={
                                         unit?.unitType?.icon ? (
@@ -158,33 +176,13 @@ function CommissionCard({
                                 {!!(commission.sale?.name || commission.reservation?.name) && (
                                     <InfoRow
                                         icon={IconCurrencyDollar}
-                                        label={resolveLanguageKey(commission.sourceType === "reservation" ? "sourceTypeEnum.reservation" : "sourceTypeEnum.sale")}
-                                        tooltip={resolveLanguageKey(commission.sourceType === "reservation" ? "sourceTypeEnum.reservation" : "sourceTypeEnum.sale")}
+                                        label={resolveLanguageKey(commission.sourceType === "reservation" ? "fields.!enums.sourceType.reservation" : "fields.!enums.sourceType.sale")}
+                                        tooltip={resolveLanguageKey(commission.sourceType === "reservation" ? "fields.!enums.sourceType.reservation" : "fields.!enums.sourceType.sale")}
                                         show={true}
                                         value={commission.sale?.name ?? commission.reservation?.name ?? null}
                                     />
                                 )}
                             </div>
-                            {commission.status === "paid" && !!commission.paidAt && (
-                                <InfoRow
-                                    icon={IconCalendar}
-                                    label={resolveLanguageKey("paidAt")}
-                                    tooltip={resolveLanguageKey("paidAt")}
-                                    show={true}
-                                    className="text-status-sold"
-                                    value={format(new Date(commission.paidAt), "PP")}
-                                />
-                            )}
-                            {!!commission.notes && (
-                                <InfoRow
-                                    icon={IconFileText}
-                                    label={resolveLanguageKey("notes")}
-                                    tooltip={resolveLanguageKey("notes")}
-                                    show={!!read?.notes}
-                                    value=""
-                                    dontRenderValue={true}
-                                />
-                            )}
                         </div>
                     </div>
                 </div>

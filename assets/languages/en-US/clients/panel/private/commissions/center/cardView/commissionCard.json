@@ -9,14 +9,20 @@
   "ratePercent": "Rate %",
   "sourceType": "Source",
   "status": "Status",
-  "statusEnum": {
-    "pending": "Pending",
-    "paid": "Paid",
-    "voided": "Voided"
-  },
-  "sourceTypeEnum": {
-    "sale": "Sale",
-    "reservation": "Reservation"
+  "statusLabel": "Status",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "pending_approval": "Pending approval",
+        "paid": "Paid",
+        "voided": "Voided"
+      },
+      "sourceType": {
+        "sale": "Sale",
+        "reservation": "Reservation"
+      }
+    }
   },
   "basis": "Commission basis",
   "notes": "Notes",

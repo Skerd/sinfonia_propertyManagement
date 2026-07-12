@@ -3,6 +3,7 @@ export type UnitsByStatusCounts = {
     reserved?: number;
     sold?: number;
     unavailable?: number;
+    leased?: number;
 };
 
 export type EntityStatusStats = {
@@ -10,6 +11,7 @@ export type EntityStatusStats = {
     reserved: number;
     available: number;
     blocked: number;
+    leased: number;
     totalUnits: number;
 };
 
@@ -21,10 +23,11 @@ export function unitsByStatusToEntityStats(
     const reserved = unitsByStatus?.reserved ?? 0;
     const sold = unitsByStatus?.sold ?? 0;
     const blocked = unitsByStatus?.unavailable ?? 0;
+    const leased = unitsByStatus?.leased ?? 0;
     const total =
         totalUnits ??
-        (available + reserved + sold + blocked || 0);
-    return {sold, reserved, available, blocked, totalUnits: total};
+        (available + reserved + sold + blocked + leased || 0);
+    return {sold, reserved, available, blocked, leased, totalUnits: total};
 }
 
 export function formatCompactCurrency(value: number): string {

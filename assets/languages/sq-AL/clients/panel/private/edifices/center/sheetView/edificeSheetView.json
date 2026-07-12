@@ -64,6 +64,7 @@
     "availableUnits": "Njësitë e disponueshme",
     "reservedUnits": "Njësi të rezervuara",
     "soldUnits": "Njësi të shitura",
+    "leasedUnits": "Njësi me qira",
     "unavailableUnits": "Njësi të padisponueshme",
     "totalArea": "Sipërfaqja totale",
     "averagePrice": "Çmimi mesatar për njësi",

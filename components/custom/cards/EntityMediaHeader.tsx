@@ -38,11 +38,11 @@ export function EntityMediaHeader({
                 </div>
             )}
 
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-3 pt-10 pb-2.5 z-10">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/30 to-transparent px-3 pt-6 pb-3 z-10">
                 <div className="flex items-end gap-2">
                     {showTitle && title != null && title !== "" && (
                         <TooltipDisplayer tooltip={title} show>
-                            <p className="font-bold text-white text-base leading-tight line-clamp-1 flex-1 min-w-0">
+                            <p className="font-bold text-white text-2xl leading-tight line-clamp-1 flex-1 min-w-0">
                                 {title}
                             </p>
                         </TooltipDisplayer>

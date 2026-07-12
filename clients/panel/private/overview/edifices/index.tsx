@@ -6,7 +6,7 @@ import type { Edifice } from "armonia/src/modules/propertyManagement/api/realEst
 import { ActionException } from "armonia/src/modules/core/types";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import { DashboardEdificeCard } from "@propertyManagementModule/components/custom/dashboard/edificeCard.tsx";
-import { Building2, Layers, Package, CalendarClock, TrendingUp, Ban } from "lucide-react";
+import { Building2, Layers, Package, CalendarClock, TrendingUp, Ban, KeyRound } from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -68,6 +68,7 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
   const available = summary?.unitsByStatus?.available ?? 0;
   const reserved = summary?.unitsByStatus?.reserved ?? 0;
   const sold = summary?.unitsByStatus?.sold ?? 0;
+  const leased = summary?.unitsByStatus?.leased ?? 0;
   const unavailable = summary?.unitsByStatus?.unavailable ?? 0;
   const avgFloorsPerEdifice = totalEdifices > 0 ? (totalFloors / totalEdifices).toFixed(1) : "0";
   const avgUnitsPerEdifice = totalEdifices > 0 ? (totalUnits / totalEdifices).toFixed(1) : "0";
@@ -92,10 +93,11 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
 
       <div>
         <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("unitsByStatus")}</h3>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
           <KpiCard compact title={resolveLanguageKey("available")} value={available.toLocaleString()} icon={Package} href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("reserved")} value={reserved.toLocaleString()} icon={CalendarClock} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("sold")} value={sold.toLocaleString()} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("leased")} value={leased.toLocaleString()} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("unavailable")} value={unavailable.toLocaleString()} icon={Ban} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
         </div>
       </div>

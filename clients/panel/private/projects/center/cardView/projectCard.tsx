@@ -5,9 +5,9 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {formatCardAreaM2} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import {Project} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {
@@ -16,7 +16,6 @@ import {
     IconDoor,
     IconGrid4x4,
     IconStack,
-    IconPercentage,
 } from "@tabler/icons-react";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityMediaHeader} from "@propertyManagementModule/components/custom/cards/EntityMediaHeader.tsx";
@@ -109,25 +108,8 @@ function ProjectCard({
                     }
                 />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
-                        <InfoRow
-                            icon={IconPercentage}
-                            label={resolveLanguageKey("data.saleCommission")}
-                            tooltip={resolveLanguageKey("data.saleCommissionTooltip")}
-                            show={!!read?.saleCommissionRatePercent}
-                            value={project.saleCommissionRatePercent != null && `${project.saleCommissionRatePercent}%`}
-                        />
-                        <InfoRow
-                            icon={IconPercentage}
-                            label={resolveLanguageKey("data.reservationCommission")}
-                            tooltip={resolveLanguageKey("data.reservationCommissionTooltip")}
-                            show={!!read?.reservationCommissionRatePercent}
-                            value={project.reservationCommissionRatePercent != null && `${project.reservationCommissionRatePercent}%`}
-                        />
-                    </div>
                     {!!project.statistics && (
                         <div className="flex flex-col gap-1">
-                            <Separator />
                             <div className={CARD_INFO_ROWS_CLASS}>
                                 <InfoRow
                                     icon={IconBuilding}
@@ -151,7 +133,7 @@ function ProjectCard({
                                     icon={IconGrid4x4}
                                     label={resolveLanguageKey("statistics.area")}
                                     tooltip={resolveLanguageKey("statistics.areaTooltip")}
-                                    value={project.statistics.totalArea != null && `${project.statistics.totalArea.toLocaleString()}m²`}
+                                    value={project.statistics.totalArea != null && formatCardAreaM2(project.statistics.totalArea)}
                                 />
                                 <InfoRow
                                     icon={IconChartArrowsVertical}

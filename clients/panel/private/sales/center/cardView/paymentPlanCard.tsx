@@ -92,7 +92,7 @@ function PaymentPlanCard({
 
     if (!read || !Object.keys(read).length) return <HiddenElement />;
 
-    const title = paymentPlan.name?.trim() || paymentPlan._id;
+    const title = paymentPlan.name?.trim() || "—";
 
     return (
         <EntityCardFetchGuard

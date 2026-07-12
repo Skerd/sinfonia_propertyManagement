@@ -5,7 +5,7 @@ import {
   StatusChart,
   unitsByStatusToChartData,
 } from "@propertyManagementModule/components/custom/dashboard/StatusChart.tsx";
-import { Layers, TrendingUp, Wallet, Users, Receipt } from "lucide-react";
+import { Layers, TrendingUp, Wallet, Users, Receipt, KeyRound } from "lucide-react";
 import AllUnits from "@propertyManagementModule/clients/panel/private/units";
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -41,6 +41,7 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
   const available = summary?.unitsByStatus?.available ?? 0;
   const reserved = summary?.unitsByStatus?.reserved ?? 0;
   const sold = summary?.unitsByStatus?.sold ?? 0;
+  const leased = summary?.unitsByStatus?.leased ?? 0;
   const unavailable = summary?.unitsByStatus?.unavailable ?? 0;
   const occupancyRatePercent = summary?.occupancyRatePercent ?? 0;
   const inventoryValue = summary?.inventoryValue ?? 0;
@@ -53,7 +54,7 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
 
   const statusChartData = summary?.unitsByStatus
     ? unitsByStatusToChartData(summary.unitsByStatus)
-    : { available: 0, reserved: 0, sold: 0, blocked: 0 };
+    : { available: 0, reserved: 0, sold: 0, blocked: 0, leased: 0 };
 
   const ctx = drillDownContext;
   const link = viewEntriesLabel;
@@ -67,11 +68,12 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
 
       <StatusChart data={statusChartData} title={resolveLanguageKey("unitStatusBreakdown")} />
 
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
         <KpiCard compact title={resolveLanguageKey("totalUnits")} value={totalUnits.toLocaleString()} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("available")} value={available.toLocaleString()} subtitle={resolveLanguageKey("availableDesc")} icon={Layers} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("reserved")} value={reserved.toLocaleString()} subtitle={resolveLanguageKey("reservedDesc")} icon={Users} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("sold")} value={sold.toLocaleString()} subtitle={resolveLanguageKey("soldDesc")} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("leased")} value={leased.toLocaleString()} subtitle={resolveLanguageKey("leasedDesc")} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
       </div>
 
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">

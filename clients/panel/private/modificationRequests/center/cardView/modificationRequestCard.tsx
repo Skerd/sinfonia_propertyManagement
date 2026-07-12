@@ -24,10 +24,8 @@ import {
     IconCalendar,
     IconCashBanknote,
     IconHome,
-    IconPackage,
     IconTag,
     IconUser,
-    IconX,
 } from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import DeletedInfo from "@coreModule/components/custom/deletedInfo";
@@ -124,7 +122,7 @@ function ModificationRequestCard({
         const mdiName = embeddedUnitType?.icon;
         const label = embeddedUnitType?.name || resolveLanguageKey("unit");
         const valueStr = displayRequest.unit
-            ? String(displayRequest.unit.name ?? displayRequest.unit.unitNumber ?? displayRequest.unit._id)
+            ? String(displayRequest.unit.name ?? displayRequest.unit.unitNumber ?? "")
             : "";
         return {label, valueStr, mdiName, tooltip: label};
     }, [displayRequest.unit, resolveLanguageKey]);
@@ -901,36 +899,6 @@ function ModificationRequestCard({
                                                         : null
                                                 }
                                                 icon={IconUser}
-                                            />
-                                        )}
-                                    </HiddenElement>
-                                    <HiddenElement>
-                                        {read?.completedAt && (
-                                            <InfoRow
-                                                show={!!read?.completedAt}
-                                                label={resolveLanguageKey("deliveredAt")}
-                                                className="text-green-400"
-                                                value={
-                                                    displayRequest.completedAt
-                                                        ? format(new Date(displayRequest.completedAt), "PPp")
-                                                        : null
-                                                }
-                                                icon={IconPackage}
-                                            />
-                                        )}
-                                    </HiddenElement>
-                                    <HiddenElement>
-                                        {read?.cancelledAt && (
-                                            <InfoRow
-                                                show={!!read?.cancelledAt}
-                                                label={resolveLanguageKey("cancelledAt")}
-                                                className="text-red-400"
-                                                value={
-                                                    displayRequest.cancelledAt
-                                                        ? format(new Date(displayRequest.cancelledAt), "PPp")
-                                                        : null
-                                                }
-                                                icon={IconX}
                                             />
                                         )}
                                     </HiddenElement>

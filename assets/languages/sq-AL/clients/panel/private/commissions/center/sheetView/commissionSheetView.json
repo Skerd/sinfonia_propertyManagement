@@ -12,15 +12,20 @@
   "commission": "Komisioni",
   "agent": "Agjenti",
   "sourceType": "Burimi",
-  "sourceTypeEnum": {
-    "sale": "Shitje",
-    "reservation": "Rezervimi"
-  },
   "status": "Statusi",
-  "statusEnum": {
-    "pending": "Në pritje",
-    "paid": "I paguar",
-    "voided": "I zbrazur"
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "pending_approval": "Në pritje të aprovimit",
+        "paid": "I paguar",
+        "voided": "I anuluar"
+      },
+      "sourceType": {
+        "sale": "Shitje",
+        "reservation": "Rezervimi"
+      }
+    }
   },
   "basis": "Baza e komisionit",
   "basisEnum": {

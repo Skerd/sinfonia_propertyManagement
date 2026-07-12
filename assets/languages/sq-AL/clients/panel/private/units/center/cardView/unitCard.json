@@ -33,10 +33,12 @@
   "notAvailable": "Nuk disponohet",
   "reserved": "Rezervuar",
   "sold": "Shitur",
+  "leased": "Me qira",
   "statusAvailable": "Në dispozicion",
   "statusUnavailable": "Nuk disponohet",
   "statusReserved": "Rezervuar",
   "statusSold": "Shitur",
+  "statusLeased": "Me qira",
   "statusUnknown": "E panjohur",
   "priceNotSet": "Çmimi nuk është vendosur",
   "constructionStatus": {

@@ -7,6 +7,8 @@
   "availableShort": "Free",
   "blocked": "Blocked",
   "blockedShort": "Block.",
+  "leased": "Leased",
+  "leasedShort": "Lease",
   "value": "Value",
   "collected": "Collected",
   "edifice": "edifice",

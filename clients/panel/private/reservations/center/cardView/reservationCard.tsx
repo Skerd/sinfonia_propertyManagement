@@ -214,15 +214,13 @@ function ReservationCard({
                     </Badge>
                 </TooltipDisplayer>
             )}
-            {!!reservation.reservationNotes && (
-                <InfoRow
-                    icon={IconFileText}
-                    label={resolveLanguageKey("notes")}
-                    tooltip={resolveLanguageKey("notes")}
-                    show={!!read?.reservationNotes}
-                    value={""}
-                    dontRenderValue={true}
-                />
+            {!!reservation.reservationNotes && !!read?.reservationNotes && (
+                <TooltipDisplayer tooltip={resolveLanguageKey("notes")}>
+                    <Badge variant="outline" className="text-xs font-medium text-muted-foreground">
+                        <IconFileText className="h-3 w-3 mr-1" />
+                        {resolveLanguageKey("notes")}
+                    </Badge>
+                </TooltipDisplayer>
             )}
         </>
     );
@@ -320,7 +318,7 @@ function ReservationCard({
                                 label={reservation.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 tooltip={reservation.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 show={!!read?.unit}
-                                value={reservation.unit != null && (reservation.unit.name ?? reservation.unit.unitNumber ?? reservation.unit._id ?? null)}
+                                value={reservation.unit != null && (reservation.unit.name ?? reservation.unit.unitNumber ?? null)}
                             />
                             <InfoRow
                                 icon={IconUser}
@@ -344,22 +342,13 @@ function ReservationCard({
                                 value={reservation.reservationDate != null ? format(new Date(reservation.reservationDate), "PP") : null}
                             />
                             {!small && (
-                                <>
-                                    <InfoRow
-                                        icon={IconCalendarClock}
-                                        label={resolveLanguageKey("expirationDate")}
-                                        tooltip={resolveLanguageKey("expirationDate")}
-                                        show={!!read?.expirationDate}
-                                        value={reservation.expirationDate != null ? format(new Date(reservation.expirationDate), "PP") : null}
-                                    />
-                                    <InfoRow
-                                        icon={IconCurrencyDollar}
-                                        label={resolveLanguageKey("depositAmount")}
-                                        tooltip={resolveLanguageKey("depositAmount")}
-                                        show={!!read?.depositAmount}
-                                        value={depositDisplayValue}
-                                    />
-                                </>
+                                <InfoRow
+                                    icon={IconCurrencyDollar}
+                                    label={resolveLanguageKey("depositAmount")}
+                                    tooltip={resolveLanguageKey("depositAmount")}
+                                    show={!!read?.depositAmount}
+                                    value={depositDisplayValue}
+                                />
                             )}
                         </div>
                     </div>

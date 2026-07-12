@@ -40,7 +40,7 @@ function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEn
 
   const hasData = summary != null;
   const statusChartData = unitsByStatusToChartData(
-    summary?.unitsByStatus ?? { available: 0, unavailable: 0, reserved: 0, sold: 0 }
+    summary?.unitsByStatus ?? { available: 0, unavailable: 0, reserved: 0, sold: 0, leased: 0 }
   );
 
   const ctx = drillDownContext;

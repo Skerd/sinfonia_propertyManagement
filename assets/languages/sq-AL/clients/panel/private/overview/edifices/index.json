@@ -16,6 +16,7 @@
   "available": "Në dispozicion",
   "reserved": "Rezervuar",
   "sold": "Shitur",
+  "leased": "Me qira",
   "unavailable": "I padisponueshëm",
   "avgUnitsPerEdifice": "Mesatar njësi për ndërtesë",
   "avgUnitsPerEdificeDesc": "Totali i njësive ÷ ndërtesa",

@@ -33,10 +33,12 @@
   "notAvailable": "Not Available",
   "reserved": "Reserved",
   "sold": "Sold",
+  "leased": "Leased",
   "statusAvailable": "Available",
   "statusUnavailable": "Not Available",
   "statusReserved": "Reserved",
   "statusSold": "Sold",
+  "statusLeased": "Leased",
   "statusUnknown": "Unknown",
   "priceNotSet": "Price Not Set",
   "constructionStatus": {

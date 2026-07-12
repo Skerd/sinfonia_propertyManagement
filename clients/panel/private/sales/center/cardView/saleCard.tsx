@@ -135,7 +135,7 @@ function SaleCard({
     const saleTitle =
         sale.name?.trim() ||
         [sale.unit?.name, sale.unit?.unitNumber].filter(Boolean).join(" · ") ||
-        sale._id;
+        "—";
     const soldByDisplay = fullName(sale.soldBy);
     const buyerDisplay = fullName(sale.buyer);
     const finalPriceDisplay =
@@ -223,15 +223,13 @@ function SaleCard({
                                                 </Badge>
                                             </TooltipDisplayer>
                                         )}
-                                        {!!sale.notes?.trim() && (
-                                            <InfoRow
-                                                icon={IconFileText}
-                                                label={resolveLanguageKey("notes")}
-                                                tooltip={resolveLanguageKey("notes")}
-                                                show={!!read?.notes}
-                                                value=""
-                                                dontRenderValue={true}
-                                            />
+                                        {!!sale.notes?.trim() && !!read?.notes && (
+                                            <TooltipDisplayer tooltip={resolveLanguageKey("notes")}>
+                                                <Badge variant="outline" className={cn("text-xs font-medium", STATUS_BADGE_NEUTRAL)}>
+                                                    <IconFileText className="h-3 w-3 mr-1" />
+                                                    {resolveLanguageKey("notes")}
+                                                </Badge>
+                                            </TooltipDisplayer>
                                         )}
                                     </>
                                 }
@@ -267,7 +265,7 @@ function SaleCard({
                                         show={!!read?.unit}
                                         value={
                                             sale.unit != null &&
-                                            (sale.unit.name ?? sale.unit.unitNumber ?? sale.unit._id ?? null)
+                                            (sale.unit.name ?? sale.unit.unitNumber ?? null)
                                         }
                                     />
                                     <InfoRow

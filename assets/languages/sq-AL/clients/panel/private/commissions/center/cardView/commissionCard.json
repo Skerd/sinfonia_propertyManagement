@@ -9,14 +9,20 @@
   "ratePercent": "norma %",
   "sourceType": "Burimi",
   "status": "Statusi",
-  "statusEnum": {
-    "pending": "Në pritje",
-    "paid": "I paguar",
-    "voided": "I zbrazur"
-  },
-  "sourceTypeEnum": {
-    "sale": "Shitje",
-    "reservation": "Rezervimi"
+  "statusLabel": "Statusi",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Në pritje",
+        "pending_approval": "Në pritje të aprovimit",
+        "paid": "I paguar",
+        "voided": "I anuluar"
+      },
+      "sourceType": {
+        "sale": "Shitje",
+        "reservation": "Rezervimi"
+      }
+    }
   },
   "basis": "Baza e komisionit",
   "notes": "Shënime",

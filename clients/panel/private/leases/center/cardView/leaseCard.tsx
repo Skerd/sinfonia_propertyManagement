@@ -5,13 +5,14 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {formatCardDecimal} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconCalendar, IconCurrencyDollar, IconDoor, IconUser} from "@tabler/icons-react";
+import {IconCalendar, IconCurrencyDollar, IconUser} from "@tabler/icons-react";
 import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
@@ -97,7 +98,7 @@ function LeaseCard({
     const editPath = buildEditPath(lease);
     const rentDisplay =
         lease.monthlyRent != null
-            ? `${lease.monthlyRent}${lease.rentCurrency?.symbol ? ` ${lease.rentCurrency.symbol}` : ""}`
+            ? `${formatCardDecimal(lease.monthlyRent)}${lease.rentCurrency?.symbol ? ` ${lease.rentCurrency.symbol}` : ""}`
             : null;
     const tenantName = [lease.tenant?.name, lease.tenant?.surname].filter(Boolean).join(" ");
 
@@ -139,12 +140,6 @@ function LeaseCard({
                             label={resolveLanguageKey("fields.tenant")}
                             show={!!read?.tenant}
                             value={tenantName || lease.tenant?.email}
-                        />
-                        <InfoRow
-                            icon={IconDoor}
-                            label={resolveLanguageKey("fields.unit")}
-                            show={!!read?.unit}
-                            value={lease.unit?.name || lease.unit?.unitNumber}
                         />
                         <InfoRow
                             icon={IconCurrencyDollar}

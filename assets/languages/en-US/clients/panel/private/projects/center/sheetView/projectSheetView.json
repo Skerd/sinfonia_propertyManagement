@@ -23,6 +23,7 @@
     "availableUnits": "Available units",
     "reservedUnits": "Reserved units",
     "soldUnits": "Sold units",
+    "leasedUnits": "Leased units",
     "unavailableUnits": "Unavailable units",
     "totalArea": "Total area (units)",
     "netArea": "Net area (units)",

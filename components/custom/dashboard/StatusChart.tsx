@@ -7,6 +7,7 @@ export interface StatusChartData {
   reserved: number;
   sold: number;
   blocked: number;
+  leased: number;
 }
 
 /** Map API UnitsByStatus (unavailable) to chart shape (blocked). */
@@ -16,6 +17,7 @@ export function unitsByStatusToChartData(units: UnitsByStatus): StatusChartData 
     reserved: units.reserved ?? 0,
     sold: units.sold ?? 0,
     blocked: units.unavailable ?? 0,
+    leased: units.leased ?? 0,
   };
 }
 
@@ -23,6 +25,7 @@ const COLORS = {
   available: 'hsl(199 89% 48%)',
   reserved: 'hsl(38 92% 50%)',
   sold: 'hsl(142 71% 45%)',
+  leased: 'hsl(271 81% 56%)',
   blocked: 'hsl(0 84% 60%)',
 };
 
@@ -30,6 +33,7 @@ const LABELS: Record<keyof StatusChartData, string> = {
   available: 'Të Lira',
   reserved: 'Të Rezervuara',
   sold: 'Të Shitura',
+  leased: 'Me Qira',
   blocked: 'Të Bllokuara',
 };
 
