@@ -14,9 +14,23 @@ export const MEDIA_HEADER_MIN_HEIGHT = "min-h-[200px]";
 export const MEDIA_CAROUSEL_CLASS =
     "w-full rounded-te-2xl rounded-b-none overflow-hidden min-h-[200px]";
 
-/** Hierarchy entity lists (projects, edifices, floors, units). */
+/** Hierarchy entity lists (projects, edifices, floors, units) — CSS grid fallback. */
 export const GRID_HIERARCHY =
     "grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-5";
+
+/**
+ * Pinterest masonry column counts for hierarchy lists.
+ * Keys are max-width breakpoints (react-masonry-css); mirrors GRID_HIERARCHY density.
+ */
+export const MASONRY_HIERARCHY_BREAKPOINTS: {
+    default: number;
+    [key: number]: number;
+} = {
+    default: 5,
+    1280: 3,
+    1024: 2,
+    768: 1,
+};
 
 /** CRM / workflow entity lists. */
 export const GRID_TRANSACTIONAL =

@@ -12,7 +12,7 @@ import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/ce
 import ViewUnitsOverlay from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx";
 import UnitsOverlay from "@propertyManagementModule/components/custom/floors/unitsOverlay.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_HIERARCHY} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {MASONRY_HIERARCHY_BREAKPOINTS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
@@ -71,7 +71,8 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
             quickFilters={quickFilters}
             configurations={{limit: 20}}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/floors/center/sheetView/floorSheetView.tsx"
-            cardViewClassName={GRID_HIERARCHY}
+            cardLayout="masonry"
+            masonryBreakpointCols={MASONRY_HIERARCHY_BREAKPOINTS}
             rowActionMenu={{allowMenuForCustomChildren: !!readUnits}}
             renderCard={(floor, onDelete, onRestore) => (
                 <FloorCard

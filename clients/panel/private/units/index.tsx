@@ -14,7 +14,7 @@ import UnitCard from "@propertyManagementModule/clients/panel/private/units/cent
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_HIERARCHY} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {MASONRY_HIERARCHY_BREAKPOINTS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 type AllUnitsProps = WithLanguageType & {
@@ -174,7 +174,8 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
             aboveToolbar={userFilterBar}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/units/center/sheetView/unitSheetView.tsx"
-            cardViewClassName={GRID_HIERARCHY}
+            cardLayout="masonry"
+            masonryBreakpointCols={MASONRY_HIERARCHY_BREAKPOINTS}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(unit, onDelete, onRestore) => (
                 <UnitCard

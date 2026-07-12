@@ -10,7 +10,7 @@ import ViewEdifices from "@propertyManagementModule/clients/panel/private/projec
 import ViewEdificesOverlay from "@propertyManagementModule/clients/panel/private/projects/center/actions/viewEdificesOverlay.tsx";
 import EdificesOverlay from "@propertyManagementModule/components/custom/projects/edificesOverlay.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_HIERARCHY} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {MASONRY_HIERARCHY_BREAKPOINTS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
@@ -43,7 +43,8 @@ function AllProjects({resolveLanguageKey}: WithLanguageType) {
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/projects/center/sheetView/projectSheetView.tsx"
-            cardViewClassName={GRID_HIERARCHY}
+            cardLayout="masonry"
+            masonryBreakpointCols={MASONRY_HIERARCHY_BREAKPOINTS}
             rowActionMenu={{allowMenuForCustomChildren: !!readEdifices}}
             renderCard={(project, onDelete, onRestore) => (
                 <ProjectCard
