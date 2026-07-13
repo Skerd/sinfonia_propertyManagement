@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/about/index.tsx",
+  "pageTitle": "About Pronix",
+  "historyLeft": "The real estate market has long been defined by fragmented systems and limited access. With a majority of transactions happening offline and prime units often sold through private networks before public listing, we saw a massive gap between premium property opportunities and the investors who deserved access to them.",
+  "historyRight": "Pronix was built to close that gap. We replaced opaque, manual operations with a structured, digital platform. By combining real-time data, independent legal verification, and accessible ownership models, Pronix is our answer to a market that demanded transparency, trust, and borderless entry.",
+  "missionBodyPrimary": "Every Pronix asset is backed by rigorous vetting and total transparency. Sourcing, legal, and financials live in one secure ecosystem, ",
+  "missionBodyMuted": "making your investment journey seamless from a single click to consistent quarterly returns.",
+  "founder1Name": "Founder 1",
+  "founder2Name": "Founder 2",
+  "quotePart1": "Pronix isn't just a platform; it's our commitment to ",
+  "quotePart2": "total transparency and borderless access."
+}

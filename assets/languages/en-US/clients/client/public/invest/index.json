@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/invest/index.tsx",
+  "title": "Invest in Albania",
+  "description": "Browse live properties — buy outright, co-own a share, or prepare for tokenized ownership.",
+  "tabRealEstate": "Real estate",
+  "tabCoOwnership": "Co-ownership",
+  "tabTokenization": "Tokenization",
+  "searchPlaceholder": "Search properties...",
+  "empty": "No properties match your filters.",
+  "tokenizationTitle": "Tokenization launching Q3 2026",
+  "tokenizationDescription": "A tokenized version of the same co-ownership structure — smaller entry points, faster secondary trades, identical legal backing.",
+  "fromShare": "From",
+  "yield": "yield",
+  "noImage": "No image"
+}

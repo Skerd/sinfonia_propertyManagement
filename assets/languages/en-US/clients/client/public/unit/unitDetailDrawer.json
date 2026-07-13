@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unit/unitDetailDrawer.tsx",
+  "title": "Unit details",
+  "area": "Area",
+  "bedrooms": "Bedrooms",
+  "bathrooms": "Bathrooms",
+  "sharePrice": "Share price",
+  "notFound": "Unit not found."
+}

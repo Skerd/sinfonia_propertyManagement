@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/technology/index.tsx",
+  "title": "Technology",
+  "description": "The platform behind every Pronix deal — from SPV structuring to quarterly distributions.",
+  "section1Title": "SPV-native architecture",
+  "section1Body": "Every property sits inside a dedicated legal entity. Ownership claims map directly to Albanian land registry records — not off-register promises.",
+  "section2Title": "Digital contracts",
+  "section2Body": "Reserve, sign, and track your ownership online. Paper where the law requires it; digital everywhere else.",
+  "section3Title": "Quarterly distributions",
+  "section3Body": "Rent flows in, expenses are deducted, and net yield is distributed on a fixed schedule — whether you own the whole building or a single share.",
+  "section4Title": "AI property advisor",
+  "section4Body": "Tell it your budget, timeline, and goals. Get matched properties with projected returns, instantly.",
+  "section5Title": "Live deal intelligence",
+  "section5Body": "Ask anything about a property, the market, or how co-ownership works. Real answers from real deal data.",
+  "section6Title": "Investor dashboard",
+  "section6Body": "Track every share, every distribution, every document — in one place.",
+  "section7Title": "Multilingual by default",
+  "section7Body": "Albanian, English, or Italian. The platform answers in the language you use."
+}

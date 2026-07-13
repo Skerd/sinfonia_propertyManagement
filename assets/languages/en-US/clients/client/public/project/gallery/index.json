@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/gallery/index.tsx",
+  "missingProjectId": "Select a project from the gallery.",
+  "notFound": "Project not found.",
+  "backToProjects": "All projects"
+}

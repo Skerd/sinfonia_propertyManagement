@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/3d/floor/index.tsx",
+  "backTo3d": "Back to 3D view",
+  "back": "Back",
+  "notFound": "Project not found.",
+  "propertiesTitle": "Properties",
+  "filterAvailable": "Avaliable",
+  "filterSold": "Sold",
+  "filterReserved": "Reserved",
+  "filterAll": "All",
+  "areaLabel": "Area",
+  "roomsLabel": "Rooms",
+  "floorLabel": "Floor",
+  "bathsLabel": "Baths",
+  "orientationLabel": "Orientation",
+  "noUnitsOnFloor": "No units on this floor for the selected filter.",
+  "floorSelected": "Floor",
+  "viewerEmptyProject": "No building overlays configured yet. Browse units in grid view.",
+  "viewerEmptyEdifice": "No floor overlays on this building. Browse units in grid view.",
+  "viewerEmptyFloor": "No unit overlays on this floor. Browse units in grid view.",
+  "viewGrid": "View grid"
+}
