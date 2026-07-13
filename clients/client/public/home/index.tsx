@@ -25,7 +25,7 @@ function HomePage(_: WithLanguageType) {
             <PublicSection nodeId="80:3907">
                 <CapabilitiesSection />
             </PublicSection>
-            <PublicSection nodeId="71:1839" flush fullBleed>
+            <PublicSection nodeId="71:1839">
                 <FeaturedPropertiesSection />
             </PublicSection>
             <PublicSection nodeId="80:1918" flush fullBleed>

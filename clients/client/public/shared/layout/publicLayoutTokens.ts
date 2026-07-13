@@ -93,8 +93,5 @@ export const PUBLIC_CARD_TITLE =
 /** @deprecated Carousel stage only — card lists use panel CSS grids */
 export const PUBLIC_FIGMA_ROW = "flex flex-nowrap items-stretch";
 
-/** Z-index for pinned featured-properties carousel layer (below hero cursor 50, menu 200). */
-export const PUBLIC_LAYER_CAROUSEL = 40;
-
-/** Z-index for fixed AI chat FAB and panel (above carousel 40, below menu 200). */
+/** Z-index for fixed AI chat FAB and panel (below menu 200). */
 export const PUBLIC_LAYER_CHAT = 100;
