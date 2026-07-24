@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/sheetView/designStageSheetView.tsx",
+  "designStage": "Design Stage",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "stageType": "Stage Type",
+  "sortOrder": "Sort Order",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "not_started": "Not Started",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "blocked": "Blocked"
+  }
+}

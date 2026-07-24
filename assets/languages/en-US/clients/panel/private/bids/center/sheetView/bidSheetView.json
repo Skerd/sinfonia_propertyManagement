@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Bid",
+  "overview": "Overview",
+  "name": "Reference",
+  "tender": "Tender",
+  "constructorRef": "Contractor",
+  "total": "Total",
+  "currency": "Currency",
+  "submittedAt": "Submitted At",
+  "coveringNotes": "Covering Notes",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "shortlisted": "Shortlisted",
+    "awarded": "Awarded",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/index.tsx",
+  "title": "Budget",
+  "description": "Budget register",
+  "createBudget": "Add Budget",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status",
+    "project": "Project"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/index.tsx",
+  "title": "Klasifikimi i Kostos",
+  "description": "Të dhëna referuese të standardeve zvicerane të kostos (eBKP-H / BKP / NPK / SIA)",
+  "createCostClassification": "Shto Klasifikim",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "standard": "Standardi",
+    "code": "Kodi",
+    "title": "Titulli",
+    "active": "Aktiv"
+  }
+}

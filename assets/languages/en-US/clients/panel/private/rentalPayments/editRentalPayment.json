@@ -24,7 +24,7 @@
     "dueDateLabel": "Due Date",
     "existingFiles": "Current file",
     "leaseLabel": "Lease",
-    "leasePlaceholder": "Lease Placeholder",
+    "leasePlaceholder": "Select lease",
     "newFiles": "New file",
     "notesLabel": "Notes",
     "paidAmountLabel": "Paid Amount",
@@ -43,5 +43,5 @@
   },
   "generalInfo": "Payment Details",
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
-  "title": "Title"
+  "title": "Edit Rental Payment"
 }

@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/estimateComparison/estimateComparison.tsx",
+  "title": "Krahasimi i Vlerësimeve",
+  "description": "Krahaso të njëjtin element kostoje (eBKP-H / BKP / NPK) mes projekteve dhe ndërtesave.",
+  "standardLabel": "Standardi",
+  "computedAt": "Llogaritur më",
+  "noDataTitle": "Nuk ka vlerësime të krahasueshme",
+  "noDataDescription": "Klasifiko zërat e BOQ-së me një kod nën këtë standard për t'i krahasuar mes projekteve.",
+  "occurrences": "Shfaqje",
+  "min": "Min",
+  "avg": "Mesatar",
+  "max": "Maks",
+  "total": "Totali",
+  "project": "Projekti",
+  "budget": "Buxheti",
+  "edifice": "Ndërtesa",
+  "plannedQty": "Sasia e planifikuar",
+  "plannedAmount": "Shuma e planifikuar",
+  "actualAmount": "Shuma aktuale",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "standards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "I personalizuar"
+  }
+}

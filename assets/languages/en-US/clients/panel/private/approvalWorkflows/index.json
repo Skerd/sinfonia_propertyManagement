@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/index.tsx",
+  "title": "Approval Workflows",
+  "description": "Freigabeprozess — approval routing for finance documents",
+  "createApprovalWorkflow": "Add Workflow",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "documentType": "Document Type",
+    "title": "Title",
+    "active": "Active"
+  }
+}

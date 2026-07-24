@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/index.tsx",
+  "title": "Plan Markups",
+  "description": "Bauleitung — 2D-plan markers (defects/decisions/orders/pendencies)",
+  "createPlanMarkup": "Add Markup",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "markerType": "Marker Type",
+    "status": "Status"
+  }
+}

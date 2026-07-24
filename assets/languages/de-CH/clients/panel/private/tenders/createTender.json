@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/createTender.tsx",
+  "title": "Ausschreibung hinzufügen",
+  "generalInfo": "Details",
+  "removeTrade": "Gewerk entfernen",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "specificationLabel": "Leistungsverzeichnis (LV)",
+    "specificationPlaceholder": "LV auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "tradesLabel": "Gewerke",
+    "tradesPlaceholder": "Gewerk hinzufügen",
+    "submissionDeadlineLabel": "Eingabetermin",
+    "submissionDeadlinePlaceholder": "Termin auswählen",
+    "openingDateLabel": "Öffnungsdatum",
+    "openingDatePlaceholder": "Öffnungsdatum auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ausschreibung hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

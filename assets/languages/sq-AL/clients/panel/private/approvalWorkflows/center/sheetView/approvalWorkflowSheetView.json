@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/sheetView/approvalWorkflowSheetView.tsx",
+  "approvalWorkflow": "Rrjedha e Miratimit",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "documentType": "Lloji i Dokumentit",
+  "title": "Titulli",
+  "approverRole": "Roli Miratues",
+  "thresholdAmount": "Shuma Kufi",
+  "thresholdCurrency": "Monedha Kufi",
+  "escalationRole": "Roli i Përshkallëzimit",
+  "active": "Aktiv",
+  "notes": "Shënime",
+  "documentTypes": {
+    "budget": "Buxheti",
+    "cost_estimate": "Vlerësimi i Kostos",
+    "contract": "Kontrata",
+    "variation_order": "Urdhri i Ndryshimit",
+    "contractor_invoice": "Fatura e Kontraktorit",
+    "progress_claim": "Kërkesa e Progresit"
+  },
+  "activeState": {
+    "true": "Aktiv",
+    "false": "Joaktiv"
+  }
+}

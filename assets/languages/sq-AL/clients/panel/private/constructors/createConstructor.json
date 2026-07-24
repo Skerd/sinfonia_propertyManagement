@@ -45,7 +45,22 @@
     "latitudeLabel": "Gjerësia gjeografike",
     "latitudePlaceholder": "Gjerësia gjeografike",
     "longitudeLabel": "Gjatësia gjeografike",
-    "longitudePlaceholder": "Gjatësia gjeografike"
+    "longitudePlaceholder": "Gjatësia gjeografike",
+    "partyTypeLabel": "Lloji i palës",
+    "partyTypePlaceholder": "Zgjidhni llojin e palës",
+    "partyTypeContractor": "Kontraktor",
+    "partyTypeArchitect": "Arkitekt",
+    "partyTypeEngineer": "Inxhinier",
+    "partyTypeQs": "Vlerësues sasior",
+    "partyTypePm": "Menaxher projekti",
+    "partyTypeSurveyor": "Gjeodet",
+    "partyTypeOther": "Tjetër",
+    "tradesLabel": "Zejet",
+    "tradesPlaceholder": "Fut zejet",
+    "insuranceExpiryLabel": "Skadimi i sigurimit",
+    "insuranceExpiryPlaceholder": "Zgjidhni datën e skadimit të sigurimit",
+    "performanceScoreLabel": "Rezultati i performancës",
+    "performanceScorePlaceholder": "Fut rezultatin e performancës"
   },
   "axios": {
     "start": {

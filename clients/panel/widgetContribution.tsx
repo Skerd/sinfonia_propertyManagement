@@ -37,6 +37,12 @@ const ConstructionUpdateSheetViewLazy = lazy(
 const SnagSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/snags/center/sheetView/snagSheetView.tsx"),
 );
+const ProjectDocumentSheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx"),
+);
+const PermitSheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/permits/center/sheetView/permitSheetView.tsx"),
+);
 const EdificeSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx"),
 );
@@ -84,6 +90,130 @@ const CommissionSheetViewLazy = lazy(
     () =>
         import("@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx"),
 );
+const MilestoneSheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx"),
+);
+const ScheduleTaskSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/scheduleTasks/center/sheetView/scheduleTaskSheetView.tsx"
+        ),
+);
+
+const BudgetSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/budgets/center/sheetView/budgetSheetView.tsx"
+        ),
+);
+const BoqItemSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/boqItems/center/sheetView/boqItemSheetView.tsx"
+        ),
+);
+const CostCommitmentSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/costCommitments/center/sheetView/costCommitmentSheetView.tsx"
+        ),
+);
+const WorkPackageSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/workPackages/center/sheetView/workPackageSheetView.tsx"
+        ),
+);
+const ConstructionContractSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/constructionContracts/center/sheetView/constructionContractSheetView.tsx"
+        ),
+);
+const ProgressClaimSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/progressClaims/center/sheetView/progressClaimSheetView.tsx"
+        ),
+);
+const RfiSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/rfis/center/sheetView/rfiSheetView.tsx"
+        ),
+);
+const SubmittalSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/submittals/center/sheetView/submittalSheetView.tsx"
+        ),
+);
+const VariationOrderSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/variationOrders/center/sheetView/variationOrderSheetView.tsx"
+        ),
+);
+const LandParcelSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/landParcels/center/sheetView/landParcelSheetView.tsx"
+        ),
+);
+const FeasibilityStudySheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/feasibilityStudies/center/sheetView/feasibilityStudySheetView.tsx"
+        ),
+);
+const SiteDiarySheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx"
+        ),
+);
+const SafetyIncidentSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/safetyIncidents/center/sheetView/safetyIncidentSheetView.tsx"
+        ),
+);
+const WarrantySheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/warranties/center/sheetView/warrantySheetView.tsx"
+        ),
+);
+const HandoverPackageSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx"
+        ),
+);
+const CommissioningRecordSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/commissioningRecords/center/sheetView/commissioningRecordSheetView.tsx"
+        ),
+);
+const DesignStageSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/designStages/center/sheetView/designStageSheetView.tsx"
+        ),
+);
+const InspectionChecklistTemplateSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx"
+        ),
+);
+const ConsultantAppointmentSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/consultantAppointments/center/sheetView/consultantAppointmentSheetView.tsx"
+        ),
+);
 
 function sheetFieldVisible(
     node: {permissions?: {read?: string}},
@@ -113,6 +243,8 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#ProjectSheetView": ProjectSheetViewLazy,
         "#ConstructionUpdateSheetView": ConstructionUpdateSheetViewLazy,
         "#SnagSheetView": SnagSheetViewLazy,
+        "#ProjectDocumentSheetView": ProjectDocumentSheetViewLazy,
+        "#PermitSheetView": PermitSheetViewLazy,
         "#EdificeSheetView": EdificeSheetViewLazy,
         "#FloorSheetView": FloorSheetViewLazy,
         "#UnitSheetView": UnitSheetViewLazy,
@@ -125,6 +257,27 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#UnitTypeSheetView": UnitTypeSheetViewLazy,
         "#ConstructorSheetView": ConstructorSheetViewLazy,
         "#CommissionSheetView": CommissionSheetViewLazy,
+        "#MilestoneSheetView": MilestoneSheetViewLazy,
+        "#ScheduleTaskSheetView": ScheduleTaskSheetViewLazy,
+        "#BudgetSheetView": BudgetSheetViewLazy,
+        "#BoqItemSheetView": BoqItemSheetViewLazy,
+        "#CostCommitmentSheetView": CostCommitmentSheetViewLazy,
+        "#WorkPackageSheetView": WorkPackageSheetViewLazy,
+        "#ConstructionContractSheetView": ConstructionContractSheetViewLazy,
+        "#ProgressClaimSheetView": ProgressClaimSheetViewLazy,
+        "#RfiSheetView": RfiSheetViewLazy,
+        "#SubmittalSheetView": SubmittalSheetViewLazy,
+        "#VariationOrderSheetView": VariationOrderSheetViewLazy,
+        "#LandParcelSheetView": LandParcelSheetViewLazy,
+        "#FeasibilityStudySheetView": FeasibilityStudySheetViewLazy,
+        "#SiteDiarySheetView": SiteDiarySheetViewLazy,
+        "#SafetyIncidentSheetView": SafetyIncidentSheetViewLazy,
+        "#WarrantySheetView": WarrantySheetViewLazy,
+        "#HandoverPackageSheetView": HandoverPackageSheetViewLazy,
+        "#CommissioningRecordSheetView": CommissioningRecordSheetViewLazy,
+        "#DesignStageSheetView": DesignStageSheetViewLazy,
+        "#InspectionChecklistTemplateSheetView": InspectionChecklistTemplateSheetViewLazy,
+        "#ConsultantAppointmentSheetView": ConsultantAppointmentSheetViewLazy,
     },
     referencesDefaultItemProps: {
         "#InspectionCard": "inspection",
@@ -241,6 +394,29 @@ const propertyManagementWidgetContribution: WidgetContribution = {
             labelFields: ["title", "name"],
         },
         "#SnagSheetView": {url: "/api/realEstate/snag/single", labelFields: ["title", "name"]},
+        "#ProjectDocumentSheetView": {url: "/api/realEstate/projectDocument/single", labelFields: ["title", "name"]},
+        "#PermitSheetView": {url: "/api/realEstate/permit/single", labelFields: ["title", "name"]},
+        "#MilestoneSheetView": {url: "/api/realEstate/milestone/single", labelFields: ["title", "name"]},
+        "#ScheduleTaskSheetView": {url: "/api/realEstate/scheduleTask/single", labelFields: ["title", "name"]},
+        "#BudgetSheetView": {url: "/api/realEstate/budget/single", labelFields: ["title", "name"]},
+        "#BoqItemSheetView": {url: "/api/realEstate/boqItem/single", labelFields: ["title", "name"]},
+        "#CostCommitmentSheetView": {url: "/api/realEstate/costCommitment/single", labelFields: ["title", "name"]},
+        "#WorkPackageSheetView": {url: "/api/realEstate/workPackage/single", labelFields: ["title", "name"]},
+        "#ConstructionContractSheetView": {url: "/api/realEstate/constructionContract/single", labelFields: ["title", "name"]},
+        "#ProgressClaimSheetView": {url: "/api/realEstate/progressClaim/single", labelFields: ["title", "name"]},
+        "#RfiSheetView": {url: "/api/realEstate/rfi/single", labelFields: ["title", "name"]},
+        "#SubmittalSheetView": {url: "/api/realEstate/submittal/single", labelFields: ["title", "name"]},
+        "#VariationOrderSheetView": {url: "/api/realEstate/variationOrder/single", labelFields: ["title", "name"]},
+        "#LandParcelSheetView": {url: "/api/realEstate/landParcel/single", labelFields: ["title", "name"]},
+        "#FeasibilityStudySheetView": {url: "/api/realEstate/feasibilityStudy/single", labelFields: ["title", "name"]},
+        "#SiteDiarySheetView": {url: "/api/realEstate/siteDiary/single", labelFields: ["title", "name"]},
+        "#SafetyIncidentSheetView": {url: "/api/realEstate/safetyIncident/single", labelFields: ["title", "name"]},
+        "#WarrantySheetView": {url: "/api/realEstate/warranty/single", labelFields: ["title", "name"]},
+        "#HandoverPackageSheetView": {url: "/api/realEstate/handoverPackage/single", labelFields: ["title", "name"]},
+        "#CommissioningRecordSheetView": {url: "/api/realEstate/commissioningRecord/single", labelFields: ["title", "name"]},
+        "#DesignStageSheetView": {url: "/api/realEstate/designStage/single", labelFields: ["title", "name"]},
+        "#InspectionChecklistTemplateSheetView": {url: "/api/realEstate/inspectionChecklistTemplate/single", labelFields: ["title", "name"]},
+        "#ConsultantAppointmentSheetView": {url: "/api/realEstate/consultantAppointment/single", labelFields: ["title", "name"]},
         "#UnitSaleCard": {url: "/api/realEstate/unit/sale/single", labelFields: ["name", "title"]},
         "#UnitReservationCard": {url: "/api/realEstate/unit/reservation/single", labelFields: ["name", "title"]},
         "#UnitPaymentPlanCard": {

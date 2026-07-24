@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/sheetView/safetyIncidentSheetView.tsx",
+  "safetyIncident": "Safety Incident",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "severity": "Severity",
+  "location": "Location",
+  "incidentDate": "Incident Date",
+  "personsInvolved": "Persons Involved",
+  "description": "Description",
+  "correctiveActions": "Corrective Actions",
+  "notes": "Notes",
+  "statuses": {
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "closed": "Closed"
+  },
+  "reportedBy": "Reported by"
+}

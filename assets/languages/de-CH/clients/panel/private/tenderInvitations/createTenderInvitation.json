@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/createTenderInvitation.tsx",
+  "title": "Einladung hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "tenderLabel": "Ausschreibung",
+    "tenderPlaceholder": "Ausschreibung auswählen",
+    "constructorLabel": "Unternehmer",
+    "constructorPlaceholder": "Unternehmer auswählen",
+    "invitedAtLabel": "Eingeladen am",
+    "invitedAtPlaceholder": "Datum auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Einladung hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

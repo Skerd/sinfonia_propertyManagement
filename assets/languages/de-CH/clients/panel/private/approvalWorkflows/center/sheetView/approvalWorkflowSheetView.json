@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/sheetView/approvalWorkflowSheetView.tsx",
+  "approvalWorkflow": "Freigabe-Workflow",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "documentType": "Dokumenttyp",
+  "title": "Bezeichnung",
+  "approverRole": "Freigeberrolle",
+  "thresholdAmount": "Schwellenbetrag",
+  "thresholdCurrency": "Schwellenwährung",
+  "escalationRole": "Eskalationsrolle",
+  "active": "Aktiv",
+  "notes": "Notizen",
+  "documentTypes": {
+    "budget": "Kostenvoranschlag",
+    "cost_estimate": "Kostenschätzung",
+    "contract": "Vertrag",
+    "variation_order": "Nachtrag",
+    "contractor_invoice": "Unternehmerrechnung",
+    "progress_claim": "Zahlungsantrag"
+  },
+  "activeState": {
+    "true": "Aktiv",
+    "false": "Inaktiv"
+  }
+}

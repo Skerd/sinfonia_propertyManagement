@@ -24,7 +24,7 @@
     "dueDateLabel": "Data e pagesës",
     "existingFiles": "Skedari aktual",
     "leaseLabel": "Kontrata",
-    "leasePlaceholder": "Lease Placeholder",
+    "leasePlaceholder": "Zgjidhni qiranë",
     "newFiles": "Skedar i ri",
     "notesLabel": "Shënime",
     "paidAmountLabel": "Shuma paguar",
@@ -43,5 +43,5 @@
   },
   "generalInfo": "Detajet e Pagesës",
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
-  "title": "Title"
+  "title": "Ndrysho Pagesën"
 }

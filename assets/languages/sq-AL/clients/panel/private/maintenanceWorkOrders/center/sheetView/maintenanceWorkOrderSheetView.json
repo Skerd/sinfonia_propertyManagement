@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/center/sheetView/maintenanceWorkOrderSheetView.tsx",
+  "maintenanceWorkOrder": "Urdhri i Punës",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "plan": "Plani",
+  "asset": "Aseti",
+  "type": "Lloji",
+  "assignee": "I Caktuari",
+  "costEstimate": "Kosto e Vlerësuar",
+  "actualCost": "Kosto Aktuale",
+  "dueDate": "Afati",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "open": "Hapur",
+    "assigned": "Caktuar",
+    "in_progress": "Në progres",
+    "done": "Kryer",
+    "verified": "Verifikuar",
+    "closed": "Mbyllur",
+    "cancelled": "Anuluar"
+  },
+  "types": {
+    "preventive": "Parandalues",
+    "corrective": "Korrigjues",
+    "renovation": "Rinovim"
+  }
+}

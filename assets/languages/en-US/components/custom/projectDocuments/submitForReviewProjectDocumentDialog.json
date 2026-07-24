@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/submitForReviewProjectDocumentDialog.tsx",
+  "dialogTitle": "Submit for review",
+  "dialogDescription": "Confirm that this document is ready to be submitted for review. Status will change to For Review.",
+  "cancel": "Cancel",
+  "submit": "Submit for Review"
+}

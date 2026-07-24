@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/editVariationOrder.tsx",
+  "title": "Ndrysho Variation Order",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "constructionContractLabel": "Kontrata e ndërtimit",
+    "constructionContractPlaceholder": "Zgjidh construction contract",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "costImpactLabel": "Ndikimi në kosto",
+    "costImpactPlaceholder": "Ndikimi në kosto",
+    "timeImpactDaysLabel": "Ditët e ndikimit në kohë",
+    "timeImpactDaysPlaceholder": "Ditët e ndikimit në kohë",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "modificationRequestLabel": "Kërkesa e modifikimit",
+    "modificationRequestPlaceholder": "Zgjidh kërkesën e modifikimit"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Variation Order",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

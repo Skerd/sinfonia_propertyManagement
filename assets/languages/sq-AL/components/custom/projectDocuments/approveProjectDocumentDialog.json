@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/approveProjectDocumentDialog.tsx",
+  "dialogTitle": "Miro dokumentin",
+  "dialogDescription": "Miro këtë dokument. Mund të shtoni shënime opsionale rishikimi.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale miratimi",
+  "cancel": "Anulo",
+  "submit": "Mirato"
+}

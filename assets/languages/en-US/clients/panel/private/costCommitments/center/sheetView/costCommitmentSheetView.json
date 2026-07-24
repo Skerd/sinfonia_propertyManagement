@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/center/sheetView/costCommitmentSheetView.tsx",
+  "costCommitment": "Cost Commitment",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "budget": "Budget",
+  "constructorRef": "Constructor",
+  "description": "Description",
+  "currency": "Currency",
+  "committedAmount": "Committed Amount",
+  "retentionPercent": "Retention Percent",
+  "issuedAt": "Issued At",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "issued": "Issued",
+    "partially_received": "Partially Received",
+    "closed": "Closed",
+    "cancelled": "Cancelled"
+  }
+}

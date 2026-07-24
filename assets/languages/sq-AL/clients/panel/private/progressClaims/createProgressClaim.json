@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/createProgressClaim.tsx",
+  "title": "Shto Progress Claim",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "constructionContractLabel": "Kontrata e ndërtimit",
+    "constructionContractPlaceholder": "Zgjidh construction contract",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "claimPeriodStartLabel": "Fillimi i periudhës së kërkesës",
+    "claimPeriodStartPlaceholder": "Fillimi i periudhës së kërkesës",
+    "claimPeriodEndLabel": "Fundi i periudhës së kërkesës",
+    "claimPeriodEndPlaceholder": "Fundi i periudhës së kërkesës",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "amountLabel": "Shuma",
+    "amountPlaceholder": "Shuma",
+    "certifiedAmountLabel": "Shuma e certifikuar",
+    "certifiedAmountPlaceholder": "Shuma e certifikuar",
+    "retentionHeldLabel": "Ndalesa e mbajtur",
+    "retentionHeldPlaceholder": "Ndalesa e mbajtur",
+    "retentionReleasedLabel": "Ndalesa e liruar",
+    "retentionReleasedPlaceholder": "Ndalesa e liruar",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Progress Claim",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

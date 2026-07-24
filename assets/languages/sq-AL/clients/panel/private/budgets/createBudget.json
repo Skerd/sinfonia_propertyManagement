@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/createBudget.tsx",
+  "title": "Shto Budget",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "versionLabel": "Versioni",
+    "versionPlaceholder": "Versioni",
+    "methodLabel": "Metoda e Vlerësimit",
+    "methodPlaceholder": "Zgjidh metodën",
+    "classificationStandardLabel": "Standardi i Klasifikimit",
+    "classificationStandardPlaceholder": "Zgjidh standardin",
+    "revisionNoLabel": "Nr. i Rishikimit (KV-Mutation)",
+    "revisionNoPlaceholder": "Numri i rishikimit",
+    "supersedesBudgetLabel": "Zëvendëson Buxhetin",
+    "supersedesBudgetPlaceholder": "Zgjidh rishikimin e mëparshëm",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "approvedTotalLabel": "Totali i miratuar",
+    "approvedTotalPlaceholder": "Totali i miratuar",
+    "contingencyPercentLabel": "Përqindja e rezervës",
+    "contingencyPercentPlaceholder": "Përqindja e rezervës",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Budget",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

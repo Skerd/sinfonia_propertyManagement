@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/editBidLine.tsx",
+  "title": "Angebotsposition bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "bidLabel": "Angebot",
+    "bidPlaceholder": "Angebot auswählen",
+    "specificationItemLabel": "LV-Position",
+    "specificationItemPlaceholder": "LV-Position auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "quantityLabel": "Menge",
+    "quantityPlaceholder": "Menge",
+    "unitPriceLabel": "Einheitspreis",
+    "unitPricePlaceholder": "Einheitspreis",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "sortIndexLabel": "Sortierindex",
+    "sortIndexPlaceholder": "Sortierreihenfolge",
+    "alternativeNoteLabel": "Alternativ-Notiz",
+    "alternativeNotePlaceholder": "Alternativ-Notiz"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Angebotsposition bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

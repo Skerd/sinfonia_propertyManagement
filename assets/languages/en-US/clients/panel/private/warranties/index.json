@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/index.tsx",
+  "title": "Warranty",
+  "description": "Warranty register",
+  "createWarranty": "Add Warranty",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status",
+    "project": "Project"
+  }
+}

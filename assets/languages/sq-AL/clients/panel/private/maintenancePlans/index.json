@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/index.tsx",
+  "title": "Planet e Mirëmbajtjes",
+  "description": "Planet e mirëmbajtjes / mirëmbajtjes së ndërtesës",
+  "createMaintenancePlan": "Shto Plan",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "planType": "Lloji i Planit"
+  }
+}

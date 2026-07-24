@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/sheetView/safetyIncidentSheetView.tsx",
+  "safetyIncident": "Incidenti i sigurisë",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "severity": "Rëndësia",
+  "location": "Vendndodhja",
+  "incidentDate": "Data e incidentit",
+  "personsInvolved": "Personat e përfshirë",
+  "description": "Përshkrimi",
+  "correctiveActions": "Veprimet korrigjuese",
+  "notes": "Shënime",
+  "statuses": {
+    "reported": "Raportuar",
+    "investigating": "Në hetim",
+    "closed": "Mbyllur"
+  },
+  "reportedBy": "Raportuar nga"
+}

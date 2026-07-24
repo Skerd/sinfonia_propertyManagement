@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/index.tsx",
+  "title": "Shënimet e Planit",
+  "description": "Bauleitung — shënues 2D në plan (defekte/vendime/urdhra/pezullime)",
+  "createPlanMarkup": "Shto Shënim",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "markerType": "Lloji i Shënuesit",
+    "status": "Statusi"
+  }
+}

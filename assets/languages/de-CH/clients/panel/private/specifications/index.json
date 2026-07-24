@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/index.tsx",
+  "title": "Leistungsverzeichnis (LV)",
+  "description": "Leistungsverzeichnis / Devisierung für die Ausschreibung",
+  "createSpecification": "LV hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "title": "Bezeichnung",
+    "standard": "Standard",
+    "status": "Status",
+    "project": "Projekt"
+  }
+}

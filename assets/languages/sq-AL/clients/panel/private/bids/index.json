@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/index.tsx",
+  "title": "Ofertat",
+  "description": "Angebote — ofertat e kontraktorëve për tenderë",
+  "createBid": "Shto Ofertë",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "tender": "Tenderi",
+    "constructorRef": "Kontraktori",
+    "status": "Statusi"
+  }
+}

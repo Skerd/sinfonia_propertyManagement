@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/renewPermitDialog.tsx",
+  "dialogTitle": "Rinovo lejen",
+  "dialogDescription": "Rinovo këtë leje duke caktuar një datë të re skadimi.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale të rinovimit",
+  "expiresAtLabel": "Data e re e skadimit",
+  "cancel": "Anulo",
+  "submit": "Rinovo"
+}

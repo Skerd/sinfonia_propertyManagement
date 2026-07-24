@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unit/unitDetailDrawer.tsx",
+  "title": "Detajet e njësisë",
+  "area": "Sipërfaqja",
+  "bedrooms": "Dhoma gjumi",
+  "bathrooms": "Banja",
+  "sharePrice": "Çmimi i kuotës",
+  "notFound": "Njësia nuk u gjet."
+}

@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/createCostClassification.tsx",
+  "title": "Shto Klasifikim",
+  "generalInfo": "Detajet",
+  "form": {
+    "standardLabel": "Standardi",
+    "standardPlaceholder": "Zgjidh standardin",
+    "codeLabel": "Kodi",
+    "codePlaceholder": "p.sh. C 2.1",
+    "parentCodeLabel": "Kodi Prind",
+    "parentCodePlaceholder": "p.sh. C",
+    "levelLabel": "Niveli",
+    "levelPlaceholder": "Niveli i hierarkisë",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "unitOfMeasureLabel": "Njësia Matëse",
+    "unitOfMeasurePlaceholder": "p.sh. m2",
+    "sortIndexLabel": "Renditja",
+    "sortIndexPlaceholder": "Rendi i renditjes",
+    "activeLabel": "Aktiv",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {"title": "Duke ruajtur...", "time": 3000},
+    "success": {"title": "U ruajt", "time": 3000},
+    "error": {"title": "Gabim", "time": 3000}
+  },
+  "formHeader": {"title": "Shto Klasifikim", "description": ""},
+  "formButtons": {"cancel": "Anulo", "submit": "Ruaj"}
+}

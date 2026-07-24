@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/center/cardView/milestoneCard.tsx",
+  "statusLabel": "Statusi",
+  "fields": {
+    "project": "Projekti",
+    "plannedEnd": "Mbarimi i planifikuar",
+    "weightPercent": "Pesha %",
+    "!enums": {
+      "status": {
+        "planned": "I planifikuar",
+        "in_progress": "Në proces",
+        "completed": "I përfunduar",
+        "delayed": "I vonuar",
+        "cancelled": "I anuluar"
+      }
+    }
+  }
+}

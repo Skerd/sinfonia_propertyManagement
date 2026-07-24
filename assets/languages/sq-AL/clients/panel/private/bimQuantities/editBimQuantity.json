@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/editBimQuantity.tsx",
+  "title": "Ndrysho Sasinë",
+  "generalInfo": "Detajet",
+  "form": {
+    "bimModelLabel": "Modeli BIM",
+    "bimModelPlaceholder": "Zgjidh modelin",
+    "ifcElementTypeLabel": "Lloji i Elementit IFC",
+    "ifcElementTypePlaceholder": "p.sh. IfcWall",
+    "classificationCodeLabel": "Kodi i Klasifikimit",
+    "classificationCodePlaceholder": "Kodi eBKP-H",
+    "quantityLabel": "Sasia",
+    "quantityPlaceholder": "Sasia",
+    "unitOfMeasureLabel": "Njësia Matëse",
+    "unitOfMeasurePlaceholder": "p.sh. m2",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Sasinë",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

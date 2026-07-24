@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/editSiteDiary.tsx",
+  "title": "Ndrysho Site Diary",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "diaryDateLabel": "Data e ditarit",
+    "diaryDatePlaceholder": "Data e ditarit",
+    "weatherLabel": "Moti",
+    "weatherPlaceholder": "Moti",
+    "workforceCountLabel": "Numri i fuqisë punëtore",
+    "workforceCountPlaceholder": "Numri i fuqisë punëtore",
+    "plantSummaryLabel": "Përmbledhja e makinerive",
+    "plantSummaryPlaceholder": "Përmbledhja e makinerive",
+    "workSummaryLabel": "Përmbledhja e punës",
+    "workSummaryPlaceholder": "Përmbledhja e punës",
+    "visitorsLabel": "Vizitorët",
+    "visitorsPlaceholder": "Vizitorët",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Site Diary",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

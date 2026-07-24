@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/editSafetyIncident.tsx",
+  "title": "Ndrysho Safety Incident",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "severityLabel": "Rëndësia",
+    "severityPlaceholder": "Zgjidh rëndësia",
+    "severity_low": "I ulët",
+    "severity_medium": "Mesatar",
+    "severity_high": "I lartë",
+    "severity_critical": "Kritik",
+    "locationLabel": "Vendndodhja",
+    "locationPlaceholder": "Vendndodhja",
+    "incidentDateLabel": "Data e incidentit",
+    "incidentDatePlaceholder": "Data e incidentit",
+    "personsInvolvedLabel": "Personat e përfshirë",
+    "personsInvolvedPlaceholder": "Personat e përfshirë",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "correctiveActionsLabel": "Veprimet korrigjuese",
+    "correctiveActionsPlaceholder": "Veprimet korrigjuese",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "reportedByLabel": "Raportuar nga",
+    "reportedByPlaceholder": "Zgjidh përdoruesin"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Safety Incident",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/center/sheetView/costClassificationSheetView.tsx",
+  "costClassification": "Cost Classification",
+  "overview": "Overview",
+  "name": "Reference",
+  "standard": "Standard",
+  "code": "Code",
+  "parentCode": "Parent Code",
+  "level": "Level",
+  "title": "Title",
+  "unitOfMeasure": "Unit of Measure",
+  "sortIndex": "Sort Index",
+  "active": "Active",
+  "notes": "Notes",
+  "standards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "sia": "SIA",
+    "custom": "Custom"
+  },
+  "activeState": {
+    "true": "Active",
+    "false": "Inactive"
+  }
+}

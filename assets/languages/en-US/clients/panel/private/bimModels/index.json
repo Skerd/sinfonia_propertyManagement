@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/index.tsx",
+  "title": "BIM Models",
+  "description": "BIM2COST — IFC models for quantity takeoff",
+  "createBimModel": "Add BIM Model",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "importStatus": "Import Status"
+  }
+}

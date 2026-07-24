@@ -21,7 +21,7 @@
   "details": "Detajet",
   "editDescription": "Përditëso detajet e kërkesës për modifikim",
   "editSectionTitle": "Kërkesë Detajet",
-  "editTitle": "Kërkesa për modifikim të modifikimit",
+  "editTitle": "Ndrysho Kërkesën për Modifikim",
   "engineerApprovalTitle": "Miratimi i inxhinierit",
   "errorDescription": "Ju lutemi provoni përsëri.",
   "errorTitle": "Kërkesa nuk mund të ngarkohet",
@@ -98,11 +98,11 @@
   },
   "formHeader": {
     "description": "Përditëso detajet e kërkesës për modifikim",
-    "title": "Kërkesa për modifikim të modifikimit"
+    "title": "Ndrysho Kërkesën për Modifikim"
   },
   "generalInfo": "Informacione të përgjithshme",
   "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/editModificationRequest.tsx",
   "requestDetailsTitle": "Kërkesë Detajet",
-  "title": "Title",
+  "title": "Ndrysho Kërkesën për Modifikim",
   "unitSelection": "Zgjedhja e njësisë"
 }

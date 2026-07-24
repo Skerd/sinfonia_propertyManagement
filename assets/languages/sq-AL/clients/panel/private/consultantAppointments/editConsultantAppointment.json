@@ -1,0 +1,70 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/editConsultantAppointment.tsx",
+  "title": "Ndrysho Consultant Appointment",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktori",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "roleLabel": "Roli",
+    "rolePlaceholder": "Zgjidh roli",
+    "role_architect": "Arkitekt",
+    "role_engineer": "Inxhinier",
+    "role_qs": "Vlerësues sasish",
+    "role_pm": "Menaxher Projekti",
+    "role_surveyor": "Topograf",
+    "role_other": "Tjetër",
+    "scopeLabel": "Fusha",
+    "scopePlaceholder": "Fusha",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "feeAmountLabel": "Shuma e tarifës",
+    "feeAmountPlaceholder": "Shuma e tarifës",
+    "startDateLabel": "Data e fillimit",
+    "startDatePlaceholder": "Data e fillimit",
+    "endDateLabel": "Data e mbarimit",
+    "endDatePlaceholder": "Data e mbarimit",
+    "deliverablesLabel": "Rezultatet e dorëzueshme",
+    "deliverablesPlaceholder": "Rezultatet e dorëzueshme",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "feeModelLabel": "Modeli i Tarifës",
+    "feeModelPlaceholder": "Zgjidh modelin",
+    "basisKindLabel": "Lloji i Bazës",
+    "basisKindPlaceholder": "Zgjidh bazën",
+    "adjustmentFactorLabel": "Faktori i Rregullimit",
+    "adjustmentFactorPlaceholder": "p.sh. 1.0",
+    "hourlyRateLabel": "Tarifa Orare",
+    "hourlyRatePlaceholder": "Tarifa orare",
+    "cappedAmountLabel": "Shuma e Kufizuar",
+    "cappedAmountPlaceholder": "Kufiri"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Consultant Appointment",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

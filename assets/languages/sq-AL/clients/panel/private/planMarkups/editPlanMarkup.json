@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/editPlanMarkup.tsx",
+  "title": "Ndrysho Shënimin",
+  "generalInfo": "Detajet",
+  "form": {
+    "planDocumentLabel": "Dokumenti i Planit",
+    "planDocumentPlaceholder": "Zgjidh dokumentin",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "markerTypeLabel": "Lloji i Shënuesit",
+    "markerTypePlaceholder": "Zgjidh llojin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "pageLabel": "Faqja",
+    "pagePlaceholder": "Faqja",
+    "layerLabel": "Shtresa",
+    "layerPlaceholder": "Shtresa",
+    "geometryXLabel": "Gjeometria X",
+    "geometryXPlaceholder": "0..1",
+    "geometryYLabel": "Gjeometria Y",
+    "geometryYPlaceholder": "0..1",
+    "geometryWLabel": "Gjeometria W",
+    "geometryWPlaceholder": "0..1",
+    "geometryHLabel": "Gjeometria H",
+    "geometryHPlaceholder": "0..1",
+    "createdOnSiteLabel": "Krijuar në Terren",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Shënimin",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

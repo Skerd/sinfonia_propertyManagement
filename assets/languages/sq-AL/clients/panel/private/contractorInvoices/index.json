@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/index.tsx",
+  "title": "Faturat e Kontraktorëve",
+  "description": "Unternehmerrechnungen të koduara në llogaritë BKP",
+  "createContractorInvoice": "Shto Faturë",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "invoiceNumber": "Nr. Faturës",
+    "status": "Statusi"
+  }
+}

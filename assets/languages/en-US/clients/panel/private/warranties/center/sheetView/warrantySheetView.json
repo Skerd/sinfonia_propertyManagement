@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/sheetView/warrantySheetView.tsx",
+  "warranty": "Warranty",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "unit": "Unit",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "retentionAmount": "Retention Amount",
+  "currency": "Currency",
+  "retentionReleaseDate": "Retention Release Date",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "active": "Active",
+    "expired": "Expired",
+    "void": "Void"
+  }
+}

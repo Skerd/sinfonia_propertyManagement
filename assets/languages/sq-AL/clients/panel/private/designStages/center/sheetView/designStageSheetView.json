@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/sheetView/designStageSheetView.tsx",
+  "designStage": "Faza e projektimit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "stageType": "Lloji i fazës",
+  "sortOrder": "Renditja",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "not_started": "Pa nisur",
+    "in_progress": "Në proces",
+    "completed": "Përfunduar",
+    "blocked": "Bllokuar"
+  }
+}

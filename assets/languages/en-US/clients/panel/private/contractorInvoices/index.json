@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/index.tsx",
+  "title": "Contractor Invoices",
+  "description": "Unternehmerrechnungen coded to BKP accounts",
+  "createContractorInvoice": "Add Invoice",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "invoiceNumber": "Invoice No.",
+    "status": "Status"
+  }
+}

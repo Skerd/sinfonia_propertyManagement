@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/index.tsx",
+  "title": "Permits",
+  "description": "Regulatory permits and compliance",
+  "createPermit": "Add Permit",
+  "noData": "No permits found",
+  "failTitle": "Failed to load permits",
+  "failDescription": "An error occurred while loading permits. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "statusLabel": "Status",
+  "fields": {
+    "name": "Reference",
+    "project": "Project",
+    "title": "Title",
+    "permitType": "Type",
+    "authority": "Authority",
+    "referenceNumber": "Reference No.",
+    "status": "Status",
+    "expiresAt": "Expires",
+    "submittedAt": "Submitted",
+    "approvedAt": "Approved",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Submitted",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "expired": "Expired"
+      }
+    }
+  }
+}

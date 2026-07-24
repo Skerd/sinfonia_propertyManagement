@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/sheetView/budgetSheetView.tsx",
+  "budget": "Buxheti",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "version": "Versioni",
+  "method": "Metoda e Vlerësimit",
+  "classificationStandard": "Standardi i Klasifikimit",
+  "revisionNo": "Nr. i Rishikimit",
+  "supersedesBudget": "Zëvendëson Buxhetin",
+  "currency": "Monedha",
+  "approvedTotal": "Totali i miratuar",
+  "contingencyPercent": "Përqindja e rezervës",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "pending_approval": "Në pritje të miratimit",
+    "approved": "Miratuar",
+    "locked": "Kyçur",
+    "superseded": "Zëvendësuar"
+  },
+  "methods": {
+    "ebkp_h": "eBKP-H",
+    "bkp": "BKP",
+    "custom": "I personalizuar"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "I personalizuar"
+  }
+}

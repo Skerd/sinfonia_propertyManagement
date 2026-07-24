@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidComparison/bidComparison.tsx",
+  "title": "Krahasimi i Ofertave",
+  "description": "Angebotsvergleich — ofertat e renditura sipas çmimit, cilësisë & plotësisë.",
+  "computedAt": "Llogaritur më",
+  "noTenderTitle": "Asnjë tender i zgjedhur",
+  "noTenderDescription": "Hap krahasimin nga një tender për të vlerësuar ofertat.",
+  "noBidsTitle": "Ende pa oferta",
+  "noBidsDescription": "Ofertat e dorëzuara për këtë tender do të renditen këtu.",
+  "contractor": "Kontraktori",
+  "total": "Totali",
+  "completeness": "Plotësia",
+  "priceScore": "Çmimi",
+  "qualityScore": "Cilësia",
+  "overallScore": "Gjithsej",
+  "status": "Statusi",
+  "recommended": "E rekomanduar",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri."
+}

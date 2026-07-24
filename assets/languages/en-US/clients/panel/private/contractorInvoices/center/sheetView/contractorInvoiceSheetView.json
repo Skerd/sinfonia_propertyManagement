@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/sheetView/contractorInvoiceSheetView.tsx",
+  "contractorInvoice": "Contractor Invoice",
+  "overview": "Overview",
+  "name": "Reference",
+  "invoiceNumber": "Invoice No.",
+  "project": "Project",
+  "constructorRef": "Contractor",
+  "invoiceDate": "Invoice Date",
+  "dueDate": "Due Date",
+  "grossAmount": "Gross",
+  "netAmount": "Net",
+  "vatAmount": "VAT",
+  "retentionHeld": "Retention Held",
+  "bkpAccountCode": "BKP Account",
+  "qrBillReference": "QR-Bill Ref",
+  "source": "Source",
+  "currency": "Currency",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "received": "Received",
+    "under_review": "Under Review",
+    "approved": "Approved",
+    "paid": "Paid",
+    "rejected": "Rejected",
+    "disputed": "Disputed"
+  },
+  "sources": {
+    "manual": "Manual",
+    "ap_inbox": "AP Inbox"
+  }
+}

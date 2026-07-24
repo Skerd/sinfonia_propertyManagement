@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/editFeeCalculation.tsx",
+  "title": "Ndrysho Llogaritjen",
+  "generalInfo": "Detajet",
+  "form": {
+    "consultantAppointmentLabel": "Emërimi i Konsulentit",
+    "consultantAppointmentPlaceholder": "Zgjidh emërimin",
+    "basisAmountLabel": "Shuma Bazë",
+    "basisAmountPlaceholder": "Shuma bazë",
+    "feePercentLabel": "Përqindja e Tarifës",
+    "feePercentPlaceholder": "p.sh. 12.5",
+    "adjustmentFactorLabel": "Faktori i Rregullimit",
+    "adjustmentFactorPlaceholder": "p.sh. 1.0",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Llogaritjen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

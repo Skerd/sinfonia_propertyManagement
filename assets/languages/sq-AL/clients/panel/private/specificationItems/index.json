@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/index.tsx",
+  "title": "Pozicionet e LV-së",
+  "description": "Pozicionet e listës së punimeve (NPK / R-pozicione)",
+  "createSpecificationItem": "Shto Pozicion",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "npkPosition": "Pozicioni NPK",
+    "status": "Statusi"
+  }
+}

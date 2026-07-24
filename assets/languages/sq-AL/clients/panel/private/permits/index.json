@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/index.tsx",
+  "title": "Lejet",
+  "description": "Leje rregullatore dhe pajtueshmëri",
+  "createPermit": "Shto Leje",
+  "noData": "Nuk u gjetën leje",
+  "failTitle": "Dështoi ngarkimi i lejeve",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të lejeve. Ju lutemi provoni sërish.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
+  "statusLabel": "Statusi",
+  "fields": {
+    "name": "Referenca",
+    "project": "Projekti",
+    "title": "Titulli",
+    "permitType": "Lloji",
+    "authority": "Autoriteti",
+    "referenceNumber": "Nr. Referencës",
+    "status": "Statusi",
+    "expiresAt": "Skadon",
+    "submittedAt": "Dorëzuar",
+    "approvedAt": "Miratuar",
+    "createdAt": "Krijuar në",
+    "updatedAt": "Përditësuar në",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Dorëzuar",
+        "under_review": "Në Shqyrtim",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "expired": "Skaduar"
+      }
+    }
+  }
+}

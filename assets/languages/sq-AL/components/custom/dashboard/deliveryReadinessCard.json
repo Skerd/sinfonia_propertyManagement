@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/deliveryReadinessCard.tsx",
+  "title": "Gatishmëria e dorëzimit",
+  "overall": "Gatishmëria e përgjithshme",
+  "empty": "Ende nuk ka të dhëna të listës së dorëzimit.",
+  "domain": {
+    "permits": "Leje të miratuara",
+    "requiredDeliverables": "Dorëzime të detyrueshme të miratuara",
+    "designStages": "Faza projektimi të përfunduara",
+    "milestones": "Momente kyçe të përfunduara",
+    "snags": "Defekte të zgjidhura",
+    "handoverPackages": "Paketa dorëzimi të përfunduara"
+  }
+}

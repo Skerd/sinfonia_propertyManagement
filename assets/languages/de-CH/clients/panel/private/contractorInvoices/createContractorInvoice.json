@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/createContractorInvoice.tsx",
+  "title": "Rechnung hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "constructorLabel": "Unternehmer",
+    "constructorPlaceholder": "Unternehmer auswählen",
+    "constructionContractLabel": "Vertrag",
+    "constructionContractPlaceholder": "Vertrag auswählen",
+    "invoiceNumberLabel": "Rechnungsnr.",
+    "invoiceNumberPlaceholder": "Rechnungsnummer",
+    "invoiceDateLabel": "Rechnungsdatum",
+    "invoiceDatePlaceholder": "Rechnungsdatum",
+    "dueDateLabel": "Fälligkeit",
+    "dueDatePlaceholder": "Fälligkeitsdatum",
+    "grossAmountLabel": "Brutto",
+    "grossAmountPlaceholder": "Betrag",
+    "netAmountLabel": "Netto",
+    "netAmountPlaceholder": "Betrag",
+    "vatAmountLabel": "MwSt",
+    "vatAmountPlaceholder": "Betrag",
+    "retentionHeldLabel": "Rückbehalt",
+    "retentionHeldPlaceholder": "Betrag",
+    "bkpAccountCodeLabel": "BKP-Konto",
+    "bkpAccountCodePlaceholder": "z.B. 211",
+    "qrBillReferenceLabel": "QR-Rechnung-Ref",
+    "qrBillReferencePlaceholder": "QR-Referenz",
+    "sourceLabel": "Quelle",
+    "sourcePlaceholder": "Quelle auswählen",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Rechnung hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

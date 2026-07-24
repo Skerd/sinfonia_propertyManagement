@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/editSubmittal.tsx",
+  "title": "Ndrysho Submittal",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "specReferenceLabel": "Referenca e specifikimit",
+    "specReferencePlaceholder": "Referenca e specifikimit",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "relatedDocumentLabel": "Dokumenti i lidhur",
+    "relatedDocumentPlaceholder": "Zgjidh related document",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "submittedByLabel": "Dorëzuar nga",
+    "submittedByPlaceholder": "Zgjidh përdoruesin",
+    "reviewedByLabel": "Shqyrtuar nga",
+    "reviewedByPlaceholder": "Zgjidh përdoruesin"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Submittal",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

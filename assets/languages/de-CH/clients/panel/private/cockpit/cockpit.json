@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/cockpit/cockpit.tsx",
+  "title": "Cockpit",
+  "companyScope": "Projektübergreifendes KPI-Cockpit mit Ampelstatus.",
+  "projectScope": "Projekt-KPI-Cockpit mit Ampelstatus.",
+  "computedAt": "Berechnet am",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "ampel": {
+    "green": "Im Plan",
+    "amber": "Beobachten",
+    "red": "Gefährdet"
+  },
+  "kpi": {
+    "costVariancePercent": "Kostenabweichung %",
+    "openRfis": "Offene RFIs",
+    "delayedMilestones": "Verzögerte Meilensteine",
+    "openTenders": "Offene Ausschreibungen",
+    "approvalBacklog": "Freigabe-Rückstand",
+    "unpaidApprovedInvoices": "Unbezahlte genehmigte Rechnungen"
+  }
+}

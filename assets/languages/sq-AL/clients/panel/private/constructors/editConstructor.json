@@ -17,7 +17,7 @@
   },
   "currentLogo": "Logoja aktuale",
   "editDescription": "Redaktoni informacionin e konstruktorit",
-  "editTitle": "Edit Constructor",
+  "editTitle": "Ndrysho Konstruktor",
   "errorDescription": "Ndodhi një gabim gjatë ngarkimit të konstruktorit. Ju lutemi provoni përsëri.",
   "errorTitle": "Ngarkimi i konstruktorit dështoi",
   "form": {
@@ -41,6 +41,21 @@
     "nameLabel": "Emri",
     "namePlaceholder": "Fut emrin e konstruktorit",
     "nameRequired": "Kërkohet emri",
+    "partyTypeLabel": "Lloji i palës",
+    "partyTypePlaceholder": "Zgjidhni llojin e palës",
+    "partyTypeContractor": "Kontraktor",
+    "partyTypeArchitect": "Arkitekt",
+    "partyTypeEngineer": "Inxhinier",
+    "partyTypeQs": "Vlerësues sasior",
+    "partyTypePm": "Menaxher projekti",
+    "partyTypeSurveyor": "Gjeodet",
+    "partyTypeOther": "Tjetër",
+    "tradesLabel": "Zejet",
+    "tradesPlaceholder": "Fut zejet",
+    "insuranceExpiryLabel": "Skadimi i sigurimit",
+    "insuranceExpiryPlaceholder": "Zgjidhni datën e skadimit të sigurimit",
+    "performanceScoreLabel": "Rezultati i performancës",
+    "performanceScorePlaceholder": "Fut rezultatin e performancës",
     "phoneNumberLabel": "Numri i telefonit",
     "phoneNumberPlaceholder": "Fut numrin e telefonit",
     "phoneNumberRequired": "Kërkohet numri i telefonit",
@@ -64,13 +79,13 @@
   },
   "formHeader": {
     "description": "Redaktoni informacionin e konstruktorit",
-    "title": "Edit Constructor"
+    "title": "Ndrysho Konstruktor"
   },
   "generalInfo": "Informacione të Përgjithshme",
   "howToReach": "Si të arrini tek ne",
   "logo": "Logo",
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
   "remove": "Hiq",
-  "title": "Title",
+  "title": "Ndrysho Konstruktor",
   "uploadError": "Ngarkimi i skedarëve të medias dështoi"
 }

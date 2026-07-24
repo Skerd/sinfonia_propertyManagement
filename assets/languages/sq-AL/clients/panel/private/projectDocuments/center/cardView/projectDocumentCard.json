@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/cardView/projectDocumentCard.tsx",
+  "statusLabel": "Statusi",
+  "isAsBuiltLabel": "Si u Ndërtua",
+  "disciplineLabel": "Disiplina",
+  "fields": {
+    "project": "Projekti",
+    "unit": "Njësia",
+    "documentNumber": "Numri i Dokumentit",
+    "documentType": "Lloji",
+    "discipline": "Disiplina",
+    "revision": "Rishikimi",
+    "revisionDate": "Data e Rishikimit",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "for_review": "Për Rishikim",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "superseded": "Zëvendësuar"
+      },
+      "discipline": {
+        "architectural": "Arkitekturore",
+        "structural": "Strukturore",
+        "mep": "MEP",
+        "civil": "Civile",
+        "fire": "Zjarri",
+        "landscape": "Peizazhi",
+        "other": "Tjetër"
+      },
+      "documentType": {
+        "drawing": "Vizatim",
+        "specification": "Specifikim",
+        "calculation": "Llogaritje",
+        "report": "Raport",
+        "as_built": "Si u Ndërtua",
+        "om_manual": "Manual O&M",
+        "other": "Tjetër"
+      }
+    }
+  }
+}

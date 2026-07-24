@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/index.tsx",
+  "title": "Modelet BIM",
+  "description": "BIM2COST — modele IFC për nxjerrjen e sasive",
+  "createBimModel": "Shto Model BIM",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "importStatus": "Statusi i Importit"
+  }
+}

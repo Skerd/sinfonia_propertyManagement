@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx",
+  "siteDiary": "Ditari i kantierit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "diaryDate": "Data e ditarit",
+  "weather": "Moti",
+  "workforceCount": "Numri i fuqisë punëtore",
+  "plantSummary": "Përmbledhja e makinerive",
+  "workSummary": "Përmbledhja e punës",
+  "visitors": "Vizitorët",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "published": "Publikuar"
+  }
+}

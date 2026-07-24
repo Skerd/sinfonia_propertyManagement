@@ -35,6 +35,10 @@ export default createGenericEditPage<Constructor, EditConstructorFormSurface>({
             phoneNumber: writeFields.phoneNumber ? data.phoneNumber : undefined,
             description: writeFields.description ? data.description : undefined,
             website: writeFields.website ? data.website : undefined,
+            partyType: writeFields.partyType ? data.partyType : undefined,
+            trades: writeFields.trades ? data.trades : undefined,
+            insuranceExpiry: writeFields.insuranceExpiry ? data.insuranceExpiry : undefined,
+            performanceScore: writeFields.performanceScore ? data.performanceScore : undefined,
             addresses: writeFields.addresses ? data.addresses : undefined,
         };
         const formData = new FormData();

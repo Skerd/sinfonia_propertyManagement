@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/sheetView/commissioningRecordSheetView.tsx",
+  "commissioningRecord": "Regjistrimi i vënies në punë",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "unit": "Njësia",
+  "handoverPackage": "Paketa e dorëzimit",
+  "systemName": "Emri i sistemit",
+  "testDate": "Data e testimit",
+  "resultNotes": "Shënime rezultati",
+  "notes": "Shënime",
+  "statuses": {
+    "pending": "Në pritje",
+    "passed": "Kaluar",
+    "failed": "Dështuar"
+  },
+  "inspectedBy": "Inspektuar nga"
+}

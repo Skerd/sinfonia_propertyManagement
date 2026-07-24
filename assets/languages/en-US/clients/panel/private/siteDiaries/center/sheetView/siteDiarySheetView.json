@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx",
+  "siteDiary": "Site Diary",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "diaryDate": "Diary Date",
+  "weather": "Weather",
+  "workforceCount": "Workforce Count",
+  "plantSummary": "Plant Summary",
+  "workSummary": "Work Summary",
+  "visitors": "Visitors",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "published": "Published"
+  }
+}

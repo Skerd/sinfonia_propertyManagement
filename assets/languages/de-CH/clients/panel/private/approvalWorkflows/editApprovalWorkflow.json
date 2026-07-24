@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/editApprovalWorkflow.tsx",
+  "title": "Workflow bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "documentTypeLabel": "Dokumenttyp",
+    "documentTypePlaceholder": "Dokumenttyp auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "approverRoleLabel": "Freigeberrolle",
+    "approverRolePlaceholder": "z.B. finance_manager",
+    "thresholdAmountLabel": "Schwellenbetrag",
+    "thresholdAmountPlaceholder": "Betrag, ab dem eskaliert wird",
+    "thresholdCurrencyLabel": "Schwellenwährung",
+    "thresholdCurrencyPlaceholder": "Währung auswählen",
+    "escalationRoleLabel": "Eskalationsrolle",
+    "escalationRolePlaceholder": "z.B. general_manager",
+    "activeLabel": "Aktiv",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Workflow bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

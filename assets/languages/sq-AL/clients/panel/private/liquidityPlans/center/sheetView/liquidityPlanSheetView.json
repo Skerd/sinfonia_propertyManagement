@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/sheetView/liquidityPlanSheetView.tsx",
+  "liquidityPlan": "Plani i Likuiditetit",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "project": "Projekti",
+  "title": "Titulli",
+  "horizonStart": "Fillimi i Horizontit",
+  "horizonEnd": "Fundi i Horizontit",
+  "granularity": "Granulariteti",
+  "currency": "Monedha",
+  "notes": "Shënime",
+  "granularities": {
+    "monthly": "Mujore",
+    "quarterly": "Tremujore",
+    "yearly": "Vjetore"
+  }
+}

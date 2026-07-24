@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/center/sheetView/approvalRequestSheetView.tsx",
+  "approvalRequest": "Kërkesa për Miratim",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "documentType": "Lloji i Dokumentit",
+  "workflow": "Rrjedha",
+  "targetType": "Lloji i Objektivit",
+  "amount": "Shuma",
+  "currentStage": "Faza Aktuale",
+  "primaryDecision": "Vendimi Parësor",
+  "escalationDecision": "Vendimi i Përshkallëzimit",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "documentTypes": {
+    "budget": "Buxheti",
+    "cost_estimate": "Vlerësimi i Kostos",
+    "contract": "Kontrata",
+    "variation_order": "Urdhri i Ndryshimit",
+    "contractor_invoice": "Fatura e Kontraktorit",
+    "progress_claim": "Kërkesa e Progresit"
+  },
+  "statuses": {
+    "pending": "Në pritje",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "cancelled": "Anuluar"
+  },
+  "stages": {
+    "primary": "Parësore",
+    "escalation": "Përshkallëzim",
+    "done": "Përfunduar"
+  },
+  "decisions": {
+    "pending": "Në pritje",
+    "visaed": "Vizuar",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Angebot",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "tender": "Ausschreibung",
+  "constructorRef": "Unternehmer",
+  "total": "Total",
+  "currency": "Währung",
+  "submittedAt": "Eingereicht am",
+  "coveringNotes": "Begleitnotizen",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "draft": "Entwurf",
+    "submitted": "Eingereicht",
+    "shortlisted": "Engere Wahl",
+    "awarded": "Vergeben",
+    "rejected": "Abgelehnt",
+    "withdrawn": "Zurückgezogen"
+  }
+}

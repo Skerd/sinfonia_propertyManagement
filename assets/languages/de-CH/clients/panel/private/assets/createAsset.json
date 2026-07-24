@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/createAsset.tsx",
+  "title": "Anlage hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "categoryLabel": "Kategorie",
+    "categoryPlaceholder": "z.B. HLK",
+    "manufacturerLabel": "Hersteller",
+    "manufacturerPlaceholder": "Hersteller",
+    "serialLabel": "Seriennummer",
+    "serialPlaceholder": "Seriennummer",
+    "installDateLabel": "Installationsdatum",
+    "installDatePlaceholder": "Installationsdatum",
+    "warrantyLabel": "Garantie",
+    "warrantyPlaceholder": "Garantie auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Anlage hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

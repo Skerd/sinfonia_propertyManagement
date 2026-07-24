@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/index.tsx",
+  "title": "BoqItem",
+  "description": "BoqItem register",
+  "createBoqItem": "Add BoqItem",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status",
+    "project": "Project"
+  }
+}

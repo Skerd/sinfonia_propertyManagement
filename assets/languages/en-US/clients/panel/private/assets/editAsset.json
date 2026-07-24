@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/editAsset.tsx",
+  "title": "Edit Asset",
+  "generalInfo": "Details",
+  "form": {
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "e.g. HVAC",
+    "manufacturerLabel": "Manufacturer",
+    "manufacturerPlaceholder": "Manufacturer",
+    "serialLabel": "Serial",
+    "serialPlaceholder": "Serial number",
+    "installDateLabel": "Install Date",
+    "installDatePlaceholder": "Install date",
+    "warrantyLabel": "Warranty",
+    "warrantyPlaceholder": "Select warranty",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Asset",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

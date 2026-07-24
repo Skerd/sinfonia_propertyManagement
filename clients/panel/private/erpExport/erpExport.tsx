@@ -34,6 +34,10 @@ function countRows(result: ErpExportResponse | null, dataset: ErpExportDataset):
         case "paymentPlans": return result.paymentPlanInstallments?.length ?? 0;
         case "rentalPayments": return result.rentalPayments?.length ?? 0;
         case "unitCosts": return result.unitCosts?.length ?? 0;
+        case "boqItems": return result.boqItems?.length ?? 0;
+        case "costCommitments": return result.costCommitments?.length ?? 0;
+        case "progressClaims": return result.progressClaims?.length ?? 0;
+        case "permits": return result.permits?.length ?? 0;
     }
 }
 
@@ -44,6 +48,10 @@ function datasetRows(result: ErpExportResponse, dataset: ErpExportDataset): Reco
         case "paymentPlans": return (result.paymentPlanInstallments ?? []) as Record<string, unknown>[];
         case "rentalPayments": return (result.rentalPayments ?? []) as Record<string, unknown>[];
         case "unitCosts": return (result.unitCosts ?? []) as Record<string, unknown>[];
+        case "boqItems": return (result.boqItems ?? []) as Record<string, unknown>[];
+        case "costCommitments": return (result.costCommitments ?? []) as Record<string, unknown>[];
+        case "progressClaims": return (result.progressClaims ?? []) as Record<string, unknown>[];
+        case "permits": return (result.permits ?? []) as Record<string, unknown>[];
     }
 }
 
@@ -53,6 +61,10 @@ const PREVIEW_TITLE_KEYS: Record<ErpExportDataset, string> = {
     paymentPlans: "preview.paymentPlans",
     rentalPayments: "preview.rentalPayments",
     unitCosts: "preview.unitCosts",
+    boqItems: "preview.boqItems",
+    costCommitments: "preview.costCommitments",
+    progressClaims: "preview.progressClaims",
+    permits: "preview.permits",
 };
 
 async function parseBlobError(blob: Blob): Promise<string> {

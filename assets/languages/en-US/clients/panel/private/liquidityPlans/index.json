@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx",
+  "title": "Liquidity Plans",
+  "description": "Liquiditätsplanung — inflow/outflow timeline",
+  "createLiquidityPlan": "Add Plan",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "project": "Project"
+  }
+}

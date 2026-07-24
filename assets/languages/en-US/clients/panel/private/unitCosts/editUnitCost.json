@@ -37,6 +37,12 @@
   "expenditureLine": "Line",
   "form": {
     "addFile": "Add file",
+    "boqItemLabel": "BOQ item",
+    "boqItemPlaceholder": "Select BOQ item",
+    "constructorLabel": "Constructor",
+    "constructorPlaceholder": "Select constructor",
+    "costCommitmentLabel": "Cost commitment",
+    "costCommitmentPlaceholder": "Select cost commitment",
     "currencyLabel": "Currency",
     "currencyPlaceholder": "Select currency",
     "edificeLabel": "Edifice",
@@ -46,7 +52,7 @@
     "filesSelected": "files selected",
     "floorLabel": "Floor",
     "floorPlaceholder": "Select floor",
-    "idLabel": "Id",
+    "idLabel": "ID",
     "invoiceMediaLabel": "Invoice documents",
     "invoiceNumberLabel": "Invoice / reference #",
     "newFilesLabel": "Add files",
@@ -119,5 +125,5 @@
   "quantity": "Quantity",
   "selectCategory": "Select category",
   "selectUnit": "Select unit",
-  "title": "Title"
+  "title": "Edit unit cost"
 }

@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/center/sheetView/specificationSheetView.tsx",
+  "specification": "Specification",
+  "overview": "Overview",
+  "name": "Reference",
+  "project": "Project",
+  "edifice": "Edifice",
+  "workPackage": "Work Package",
+  "standard": "Standard",
+  "title": "Title",
+  "currency": "Currency",
+  "totalEstimated": "Estimated Total",
+  "description": "Description",
+  "notes": "Notes",
+  "status": "Status",
+  "standards": {
+    "npk": "NPK",
+    "custom": "Custom"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "issued": "Issued",
+    "tender_ready": "Tender Ready",
+    "awarded": "Awarded",
+    "archived": "Archived"
+  }
+}

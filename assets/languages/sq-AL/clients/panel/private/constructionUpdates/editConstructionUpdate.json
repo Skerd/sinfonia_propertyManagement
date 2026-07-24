@@ -24,6 +24,10 @@
     "descriptionPlaceholder": "Përshkruani progresin e ndërtimit",
     "edificeLabel": "Ndërtesa",
     "edificePlaceholder": "Zgjidhni ndërtesën (opsionale)",
+    "milestoneLabel": "Piketa",
+    "milestonePlaceholder": "Zgjidhni piketën (opsionale)",
+    "scheduleTaskLabel": "Detyra e planifikuar",
+    "scheduleTaskPlaceholder": "Zgjidhni detyrën e planifikuar (opsionale)",
     "existingFiles": "Fotot ekzistuese",
     "filesSelected": "foto të zgjedhura",
     "newFiles": "Shto foto të reja",
@@ -47,5 +51,5 @@
   },
   "generalInfo": "Detajet e Përditësimit",
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
-  "title": "Title"
+  "title": "Ndrysho Përditësimin"
 }

@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
+  "title": "Add Commissioning Record",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit",
+    "handoverPackageLabel": "Handover Package",
+    "handoverPackagePlaceholder": "Select handover package",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "systemNameLabel": "System Name",
+    "systemNamePlaceholder": "System Name",
+    "testDateLabel": "Test Date",
+    "testDatePlaceholder": "Test Date",
+    "resultNotesLabel": "Result Notes",
+    "resultNotesPlaceholder": "Result Notes",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files",
+    "inspectedByLabel": "Inspected by",
+    "inspectedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Commissioning Record",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

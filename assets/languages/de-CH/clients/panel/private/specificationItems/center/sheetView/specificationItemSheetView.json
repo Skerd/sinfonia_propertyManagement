@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/center/sheetView/specificationItemSheetView.tsx",
+  "specificationItem": "LV-Position",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "specification": "Leistungsverzeichnis",
+  "title": "Bezeichnung",
+  "npkChapter": "NPK-Kapitel",
+  "npkPosition": "NPK-Position",
+  "isRPosition": "R-Position",
+  "classificationStandard": "Kostenstandard",
+  "classificationCode": "Kostencode",
+  "unitOfMeasure": "Masseinheit",
+  "quantity": "Menge",
+  "unitPrice": "Einheitspreis",
+  "lineTotal": "Positionstotal",
+  "currency": "Währung",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "active": "Aktiv",
+    "cancelled": "Storniert"
+  },
+  "rPositionState": {
+    "true": "R-Position",
+    "false": "Katalog"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Benutzerdefiniert"
+  }
+}

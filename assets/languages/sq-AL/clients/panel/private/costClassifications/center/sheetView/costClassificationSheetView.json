@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/center/sheetView/costClassificationSheetView.tsx",
+  "costClassification": "Klasifikimi i Kostos",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "standard": "Standardi",
+  "code": "Kodi",
+  "parentCode": "Kodi Prind",
+  "level": "Niveli",
+  "title": "Titulli",
+  "unitOfMeasure": "Njësia Matëse",
+  "sortIndex": "Renditja",
+  "active": "Aktiv",
+  "notes": "Shënime",
+  "standards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "sia": "SIA",
+    "custom": "I personalizuar"
+  },
+  "activeState": {
+    "true": "Aktiv",
+    "false": "Joaktiv"
+  }
+}

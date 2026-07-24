@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costControl/costControl.tsx",
+  "title": "Baukostenkontrolle",
+  "description": "Geschätzt vs. verpflichtet vs. fakturiert vs. bezahlt über BKP-Konten.",
+  "computedAt": "Berechnet am",
+  "noProjectTitle": "Kein Projekt gewählt",
+  "noProjectDescription": "Öffnen Sie die Baukostenkontrolle aus einem Projekt, um das BKP-Journal zu sehen.",
+  "noRowsTitle": "Noch keine BKP-codierten Kosten",
+  "noRowsDescription": "Codieren Sie BoQ-Positionen und Unternehmerrechnungen mit BKP-Konten.",
+  "byBkpTitle": "Nach BKP-Konto",
+  "bkpCode": "BKP",
+  "titleCol": "Bezeichnung",
+  "estimated": "Geschätzt",
+  "committed": "Verpflichtet",
+  "invoiced": "Fakturiert",
+  "certified": "Ausgewiesen",
+  "paid": "Bezahlt",
+  "variance": "Abweichung",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut."
+}

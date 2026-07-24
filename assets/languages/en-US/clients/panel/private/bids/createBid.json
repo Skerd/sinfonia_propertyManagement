@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/createBid.tsx",
+  "title": "Add Bid",
+  "generalInfo": "Details",
+  "form": {
+    "tenderLabel": "Tender",
+    "tenderPlaceholder": "Select tender",
+    "tenderInvitationLabel": "Invitation",
+    "tenderInvitationPlaceholder": "Select invitation",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "totalLabel": "Total",
+    "totalPlaceholder": "Total",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "coveringNotesLabel": "Covering Notes",
+    "coveringNotesPlaceholder": "Covering notes",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Bid",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

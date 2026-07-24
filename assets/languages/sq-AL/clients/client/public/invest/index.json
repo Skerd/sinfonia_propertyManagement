@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/invest/index.tsx",
+  "title": "Investoni në Shqipëri",
+  "description": "Shfletoni prona aktive — blini të plotë, bëhuni bashkëpronar i një kuote, ose përgatituni për pronësi të tokenizuar.",
+  "tabRealEstate": "Pasuri të paluajtshme",
+  "tabCoOwnership": "Bashkëpronësi",
+  "tabTokenization": "Tokenizim",
+  "searchPlaceholder": "Kërko prona...",
+  "empty": "Asnjë pronë nuk përputhet me filtrat tuaj.",
+  "tokenizationTitle": "Tokenizimi nis në tremujorin e tretë të 2026",
+  "tokenizationDescription": "Një version i tokenizuar i së njëjtës strukturë bashkëpronësie — pika hyrjeje më të vogla, shitje sekondare më të shpejta, i njëjti mbështetje juridike.",
+  "fromShare": "Nga",
+  "yield": "rendiment",
+  "noImage": "Pa imazh"
+}

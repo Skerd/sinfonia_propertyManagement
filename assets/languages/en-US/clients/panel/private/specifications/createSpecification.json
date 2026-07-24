@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/createSpecification.tsx",
+  "title": "Add Specification",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "workPackageLabel": "Work Package",
+    "workPackagePlaceholder": "Select work package",
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Select standard",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "totalEstimatedLabel": "Estimated Total",
+    "totalEstimatedPlaceholder": "Estimated Total",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {"title": "Saving...", "time": 3000},
+    "success": {"title": "Saved", "time": 3000},
+    "error": {"title": "Error", "time": 3000}
+  },
+  "formHeader": {"title": "Add Specification", "description": ""},
+  "formButtons": {"cancel": "Cancel", "submit": "Save"}
+}

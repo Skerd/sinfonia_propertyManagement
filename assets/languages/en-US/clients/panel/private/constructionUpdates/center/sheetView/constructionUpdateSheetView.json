@@ -9,6 +9,8 @@
   "title": "Title",
   "project": "Project",
   "edifice": "Edifice",
+  "milestone": "Milestone",
+  "scheduleTask": "Schedule Task",
   "progressPercent": "Progress",
   "updateDate": "Update date",
   "description": "Description",

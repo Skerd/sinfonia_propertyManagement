@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/editScheduleTask.tsx",
+  "title": "Ndrysho detyrën",
+  "editTitle": "Ndrysho detyrën",
+  "editDescription": "Përditësoni këtë detyrë plani",
+  "errorTitle": "Ngarkimi i detyrës dështoi",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të detyrës. Ju lutemi provoni përsëri.",
+  "generalInfo": "Detajet e detyrës",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën",
+    "milestoneLabel": "Momenti kyç",
+    "milestonePlaceholder": "Zgjidhni momentin kyç",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "p.sh. Hedhja e pllakës së katit përdhes",
+    "assigneeLabel": "Përgjegjësi",
+    "assigneePlaceholder": "Zgjidhni përgjegjësin",
+    "percentCompleteLabel": "Progresi %",
+    "percentCompletePlaceholder": "0 - 100",
+    "plannedStartLabel": "Fillimi i planifikuar",
+    "plannedStartPlaceholder": "Zgjidhni datën",
+    "plannedEndLabel": "Mbarimi i planifikuar",
+    "plannedEndPlaceholder": "Zgjidhni datën",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkruani këtë detyrë",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime të brendshme",
+    "mediaLabel": "Media",
+    "existingFiles": "Media ekzistuese",
+    "newFiles": "Shtoni media të reja",
+    "dependencyTypeLabel": "Lloji i Varësisë",
+    "dependencyTypePlaceholder": "Zgjidh varësinë",
+    "lagDaysLabel": "Vonesa (ditë)",
+    "lagDaysPlaceholder": "Ditë vonese",
+    "bkpCodeLabel": "Kodi BKP",
+    "bkpCodePlaceholder": "p.sh. 211"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke përditësuar detyrën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Detyra u përditësua!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Detyra nuk u përditësua, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho detyrën",
+    "description": "Përditësoni këtë detyrë plani"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

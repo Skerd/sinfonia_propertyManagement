@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/3d/floor/index.tsx",
+  "backTo3d": "Kthehu te pamja 3D",
+  "back": "Kthehu",
+  "notFound": "Projekti nuk u gjet.",
+  "propertiesTitle": "Pronat",
+  "filterAvailable": "E disponueshme",
+  "filterSold": "E shitur",
+  "filterReserved": "E rezervuar",
+  "filterAll": "Të gjitha",
+  "areaLabel": "Sipërfaqja",
+  "roomsLabel": "Dhoma",
+  "floorLabel": "Kati",
+  "bathsLabel": "Banja",
+  "orientationLabel": "Orientimi",
+  "noUnitsOnFloor": "Asnjë njësi në këtë kat për filtrin e zgjedhur.",
+  "floorSelected": "Kati",
+  "viewerEmptyProject": "Ende nuk ka konfiguruar mbivendosje ndërtesash. Shfletoni njësitë në pamjen me rrjetë.",
+  "viewerEmptyEdifice": "Nuk ka mbivendosje katesh në këtë ndërtesë. Shfletoni njësitë në pamjen me rrjetë.",
+  "viewerEmptyFloor": "Nuk ka mbivendosje njësish në këtë kat. Shfletoni njësitë në pamjen me rrjetë.",
+  "viewGrid": "Shiko rrjetën"
+}

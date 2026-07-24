@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/createMilestone.tsx",
+  "title": "Moment kyç i ri",
+  "description": "Krijoni një moment kyç të ri të projektit",
+  "generalInfo": "Detajet e momentit kyç",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "p.sh. Themeli i përfunduar",
+    "weightPercentLabel": "Pesha %",
+    "weightPercentPlaceholder": "0 - 100",
+    "plannedStartLabel": "Fillimi i planifikuar",
+    "plannedStartPlaceholder": "Zgjidhni datën",
+    "plannedEndLabel": "Mbarimi i planifikuar",
+    "plannedEndPlaceholder": "Zgjidhni datën",
+    "predecessorsLabel": "Paraardhësit",
+    "predecessorsPlaceholder": "Zgjidhni momentet kyçe paraardhëse",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkruani këtë moment kyç",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime të brendshme",
+    "mediaLabel": "Media",
+    "existingFiles": "Media ekzistuese",
+    "newFiles": "Shtoni media të reja"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke krijuar momentin kyç",
+      "time": 3000
+    },
+    "success": {
+      "title": "Momenti kyç u krijua!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Momenti kyç nuk u krijua, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Moment kyç i ri",
+    "description": "Krijoni një moment kyç të ri të projektit"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo momentin kyç"
+  }
+}

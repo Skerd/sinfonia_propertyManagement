@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/cardView/scheduleTaskCard.tsx",
+  "statusLabel": "Statusi",
+  "fields": {
+    "project": "Projekti",
+    "assignee": "Përgjegjësi",
+    "plannedEnd": "Mbarimi i planifikuar",
+    "percentComplete": "Progresi %",
+    "!enums": {
+      "status": {
+        "planned": "E planifikuar",
+        "in_progress": "Në proces",
+        "completed": "E përfunduar",
+        "delayed": "E vonuar",
+        "cancelled": "E anuluar"
+      }
+    }
+  }
+}

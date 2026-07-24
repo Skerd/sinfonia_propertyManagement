@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/editFeasibilityStudy.tsx",
+  "title": "Edit Feasibility Study",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "landParcelLabel": "Land Parcel",
+    "landParcelPlaceholder": "Select land parcel",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "assumptionsLabel": "Assumptions",
+    "assumptionsPlaceholder": "Assumptions",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "softCostEstimateLabel": "Soft Cost Estimate",
+    "softCostEstimatePlaceholder": "Soft Cost Estimate",
+    "hardCostEstimateLabel": "Hard Cost Estimate",
+    "hardCostEstimatePlaceholder": "Hard Cost Estimate",
+    "residualValueLabel": "Residual Value",
+    "residualValuePlaceholder": "Residual Value",
+    "irrPercentLabel": "IRR %",
+    "irrPercentPlaceholder": "IRR %",
+    "decisionLabel": "Decision",
+    "decisionPlaceholder": "Decision",
+    "decisionNotesLabel": "Decision Notes",
+    "decisionNotesPlaceholder": "Decision Notes",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files",
+    "decidedByLabel": "Decided by",
+    "decidedByPlaceholder": "Select user",
+    "decidedAtLabel": "Decided at",
+    "decidedAtPlaceholder": "Select date"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Feasibility Study",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

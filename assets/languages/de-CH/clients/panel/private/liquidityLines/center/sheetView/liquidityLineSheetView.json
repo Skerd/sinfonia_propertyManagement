@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/center/sheetView/liquidityLineSheetView.tsx",
+  "liquidityLine": "Liquiditätsposition",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "plan": "Plan",
+  "period": "Periode",
+  "direction": "Richtung",
+  "source": "Quelle",
+  "title": "Bezeichnung",
+  "plannedAmount": "Geplanter Betrag",
+  "actualAmount": "Ist-Betrag",
+  "currency": "Währung",
+  "notes": "Notizen",
+  "directions": {
+    "inflow": "Zufluss",
+    "outflow": "Abfluss"
+  },
+  "sources": {
+    "owner_contract": "Bauherrenvertrag",
+    "payment_plan": "Zahlungsplan",
+    "cost_commitment": "Verpflichtung",
+    "contractor_invoice": "Unternehmerrechnung",
+    "fee": "Honorar",
+    "manual": "Manuell"
+  }
+}

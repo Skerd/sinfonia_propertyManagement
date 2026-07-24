@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/sheetView/feasibilityStudySheetView.tsx",
+  "feasibilityStudy": "Studimi i fizibilitetit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "landParcel": "Parcela e tokës",
+  "assumptions": "Supozimet",
+  "currency": "Monedha",
+  "softCostEstimate": "Vlerësimi i kostove indirekte",
+  "hardCostEstimate": "Vlerësimi i kostove direkte",
+  "residualValue": "Vlera e mbetur",
+  "irrPercent": "IRR (%)",
+  "decision": "Vendimi",
+  "decisionNotes": "Shënime vendimi",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "in_review": "Në shqyrtim",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "archived": "Arkivuar"
+  },
+  "decidedBy": "Vendosur nga",
+  "decidedAt": "Vendosur më"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
+  "title": "Ndrysho Inspection Checklist Template",
+  "generalInfo": "Detajet",
+  "form": {
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "tradeLabel": "Zanati",
+    "tradePlaceholder": "Zanati",
+    "stageLabel": "Faza",
+    "stagePlaceholder": "Faza",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "itemsJsonLabel": "Artikujt e listës kontrolluese",
+    "itemsJsonPlaceholder": "Artikujt e listës kontrolluese",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Inspection Checklist Template",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

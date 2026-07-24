@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/createApprovalWorkflow.tsx",
+  "title": "Shto Rrjedhë",
+  "generalInfo": "Detajet",
+  "form": {
+    "documentTypeLabel": "Lloji i Dokumentit",
+    "documentTypePlaceholder": "Zgjidh llojin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "approverRoleLabel": "Roli Miratues",
+    "approverRolePlaceholder": "p.sh. finance_manager",
+    "thresholdAmountLabel": "Shuma Kufi",
+    "thresholdAmountPlaceholder": "Shuma mbi të cilën aplikohet përshkallëzimi",
+    "thresholdCurrencyLabel": "Monedha Kufi",
+    "thresholdCurrencyPlaceholder": "Zgjidh monedhën",
+    "escalationRoleLabel": "Roli i Përshkallëzimit",
+    "escalationRolePlaceholder": "p.sh. general_manager",
+    "activeLabel": "Aktiv",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Rrjedhë",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

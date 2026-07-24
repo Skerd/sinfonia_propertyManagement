@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/index.tsx",
+  "title": "Schedule Tasks",
+  "description": "Programme activities and works schedule",
+  "createScheduleTask": "New Task",
+  "noData": "No schedule tasks found",
+  "failTitle": "Failed to load schedule tasks",
+  "failDescription": "An error occurred while loading schedule tasks. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "project": "Project",
+    "edifice": "Building",
+    "milestone": "Milestone",
+    "status": "Status",
+    "assignee": "Assignee",
+    "percentComplete": "Progress %",
+    "plannedStart": "Planned Start",
+    "plannedEnd": "Planned End",
+    "actualStart": "Actual Start",
+    "actualEnd": "Actual End",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "in_progress": "In Progress",
+        "completed": "Completed",
+        "delayed": "Delayed",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

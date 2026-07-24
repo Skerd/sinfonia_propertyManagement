@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/center/sheetView/specificationItemSheetView.tsx",
+  "specificationItem": "LV Position",
+  "overview": "Overview",
+  "name": "Reference",
+  "specification": "Specification",
+  "title": "Title",
+  "npkChapter": "NPK Chapter",
+  "npkPosition": "NPK Position",
+  "isRPosition": "R-Position",
+  "classificationStandard": "Classification Standard",
+  "classificationCode": "Classification Code",
+  "unitOfMeasure": "Unit of Measure",
+  "quantity": "Quantity",
+  "unitPrice": "Unit Price",
+  "lineTotal": "Line Total",
+  "currency": "Currency",
+  "description": "Description",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "active": "Active",
+    "cancelled": "Cancelled"
+  },
+  "rPositionState": {
+    "true": "R-Position",
+    "false": "Catalogue"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/sheetView/maintenancePlanSheetView.tsx",
+  "maintenancePlan": "Plani i Mirëmbajtjes",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "asset": "Aseti",
+  "planType": "Lloji i Planit",
+  "intervalDays": "Intervali (ditë)",
+  "nextDueAt": "Afati i Ardhshëm",
+  "responsibleParty": "Përgjegjësi",
+  "notes": "Shënime",
+  "planTypes": {
+    "preventive": "Parandalues",
+    "statutory": "Ligjor",
+    "renovation": "Rinovim"
+  }
+}

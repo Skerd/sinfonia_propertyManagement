@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/editDesignStage.tsx",
+  "title": "Ndrysho Design Stage",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "stageTypeLabel": "Lloji i fazës",
+    "stageTypePlaceholder": "Zgjidh stage type",
+    "stageType_concept": "Koncept",
+    "stageType_schematic": "Skematik",
+    "stageType_design_development": "Zhvillimi i projektimit",
+    "stageType_construction_documents": "Dokumentet e ndërtimit",
+    "stageType_tender": "Tenderi",
+    "stageType_construction": "Ndërtim",
+    "stageType_as_built": "As-Built",
+    "sortOrderLabel": "Renditja",
+    "sortOrderPlaceholder": "Renditja",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Design Stage",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

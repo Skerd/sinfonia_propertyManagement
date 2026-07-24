@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx",
+  "handoverPackage": "Handover Package",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "unit": "Unit",
+  "omManualsComplete": "O&M Manuals Complete",
+  "asBuiltComplete": "As-Built Complete",
+  "keysTransferred": "Keys Transferred",
+  "trainingComplete": "Training Complete",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Completed"
+  }
+}

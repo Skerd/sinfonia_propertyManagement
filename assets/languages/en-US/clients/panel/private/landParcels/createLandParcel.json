@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
+  "title": "Add Land Parcel",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "cadastralReferenceLabel": "Cadastral Reference",
+    "cadastralReferencePlaceholder": "Cadastral Reference",
+    "areaSqmLabel": "Area (m²)",
+    "areaSqmPlaceholder": "Area (m²)",
+    "zoningLabel": "Zoning",
+    "zoningPlaceholder": "Zoning",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "acquisitionCostLabel": "Acquisition Cost",
+    "acquisitionCostPlaceholder": "Acquisition Cost",
+    "dueDiligenceStatusLabel": "Due Diligence Status",
+    "dueDiligenceStatusPlaceholder": "Due Diligence Status",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Land Parcel",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

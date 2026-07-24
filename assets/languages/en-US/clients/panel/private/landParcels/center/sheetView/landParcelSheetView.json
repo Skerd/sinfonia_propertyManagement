@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/sheetView/landParcelSheetView.tsx",
+  "landParcel": "Land Parcel",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "cadastralReference": "Cadastral Reference",
+  "areaSqm": "Area (m²)",
+  "zoning": "Zoning",
+  "currency": "Currency",
+  "acquisitionCost": "Acquisition Cost",
+  "dueDiligenceStatus": "Due Diligence Status",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "prospect": "Prospect",
+    "under_dd": "Under Dd",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  }
+}

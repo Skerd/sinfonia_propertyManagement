@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/index.tsx",
+  "title": "Bid Lines",
+  "description": "Priced lines of a bid against LV positions",
+  "createBidLine": "Add Bid Line",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "bid": "Bid",
+    "specificationItem": "LV Position"
+  }
+}

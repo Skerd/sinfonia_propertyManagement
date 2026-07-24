@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/index.tsx",
+  "title": "BIM Quantities",
+  "description": "Quantity takeoff mapped to eBKP-H codes",
+  "createBimQuantity": "Add Quantity",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "classificationCode": "Classification Code"
+  }
+}

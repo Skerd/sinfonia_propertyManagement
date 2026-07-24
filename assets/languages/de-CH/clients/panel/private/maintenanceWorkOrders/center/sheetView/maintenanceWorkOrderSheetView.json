@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/center/sheetView/maintenanceWorkOrderSheetView.tsx",
+  "maintenanceWorkOrder": "Arbeitsauftrag",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "plan": "Plan",
+  "asset": "Anlage",
+  "type": "Typ",
+  "assignee": "Zugewiesen",
+  "costEstimate": "Kostenschätzung",
+  "actualCost": "Ist-Kosten",
+  "dueDate": "Fälligkeit",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "open": "Offen",
+    "assigned": "Zugewiesen",
+    "in_progress": "In Arbeit",
+    "done": "Erledigt",
+    "verified": "Geprüft",
+    "closed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  },
+  "types": {
+    "preventive": "Präventiv",
+    "corrective": "Korrektiv",
+    "renovation": "Renovation"
+  }
+}

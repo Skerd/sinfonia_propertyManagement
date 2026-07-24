@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/sheetView/landParcelSheetView.tsx",
+  "landParcel": "Parcela e tokës",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "cadastralReference": "Referenca kadastrale",
+  "areaSqm": "Sipërfaqja (m²)",
+  "zoning": "Zonimi",
+  "currency": "Monedha",
+  "acquisitionCost": "Kosto e blerjes",
+  "dueDiligenceStatus": "Statusi i Due Diligence",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "prospect": "Klient potencial",
+    "under_dd": "Nën Due Diligence",
+    "acquired": "Blerë",
+    "disposed": "Nxjerrë nga përdorimi"
+  }
+}

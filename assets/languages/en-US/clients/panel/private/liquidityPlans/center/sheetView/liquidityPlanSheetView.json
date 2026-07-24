@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/sheetView/liquidityPlanSheetView.tsx",
+  "liquidityPlan": "Liquidity Plan",
+  "overview": "Overview",
+  "name": "Reference",
+  "project": "Project",
+  "title": "Title",
+  "horizonStart": "Horizon Start",
+  "horizonEnd": "Horizon End",
+  "granularity": "Granularity",
+  "currency": "Currency",
+  "notes": "Notes",
+  "granularities": {
+    "monthly": "Monthly",
+    "quarterly": "Quarterly",
+    "yearly": "Yearly"
+  }
+}

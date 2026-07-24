@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx",
+  "failedTitle": "Failed to load document",
+  "failedDescription": "Something went wrong while loading this document. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "projectDocument": "Document",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "documentNumber": "Document Number",
+  "project": "Project",
+  "edifice": "Edifice",
+  "floor": "Floor",
+  "unit": "Unit",
+  "discipline": "Discipline",
+  "documentType": "Document Type",
+  "revision": "Revision",
+  "revisionDate": "Revision Date",
+  "status": "Status",
+  "isAsBuilt": "As Built",
+  "supersedes": "Supersedes",
+  "description": "Description",
+  "notes": "Notes",
+  "media": "Files",
+  "none": "None",
+  "statuses": {
+    "draft": "Draft",
+    "for_review": "For Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "superseded": "Superseded"
+  },
+  "disciplines": {
+    "architectural": "Architectural",
+    "structural": "Structural",
+    "mep": "MEP",
+    "civil": "Civil",
+    "fire": "Fire",
+    "landscape": "Landscape",
+    "other": "Other"
+  },
+  "documentTypes": {
+    "drawing": "Drawing",
+    "specification": "Specification",
+    "calculation": "Calculation",
+    "report": "Report",
+    "as_built": "As Built",
+    "om_manual": "O&M Manual",
+    "other": "Other"
+  },
+  "designStage": "Design stage",
+  "isRequiredDeliverable": "Required deliverable"
+}

@@ -103,6 +103,6 @@
   "generalInfo": "General information",
   "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/editModificationRequest.tsx",
   "requestDetailsTitle": "Request Details",
-  "title": "Title",
+  "title": "Edit Modification Request",
   "unitSelection": "Unit selection"
 }

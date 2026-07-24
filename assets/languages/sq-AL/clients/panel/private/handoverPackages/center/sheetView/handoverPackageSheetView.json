@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx",
+  "handoverPackage": "Paketa e dorëzimit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "unit": "Njësia",
+  "omManualsComplete": "Manualet O&M të plotësuara",
+  "asBuiltComplete": "As-Built i plotësuar",
+  "keysTransferred": "Çelësat e dorëzuar",
+  "trainingComplete": "Trajnimi i përfunduar",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "in_progress": "Në proces",
+    "ready": "Gati",
+    "completed": "Përfunduar"
+  }
+}

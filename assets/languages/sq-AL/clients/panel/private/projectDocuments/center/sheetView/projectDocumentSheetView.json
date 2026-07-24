@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx",
+  "failedTitle": "Ngarkimi i dokumentit dështoi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit të këtij dokumenti. Kliko për të provuar sërish.",
+  "failedTooltipDescription": "Kliko për të provuar sërish marrjen e të dhënave.",
+  "projectDocument": "Dokument",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "documentNumber": "Numri i Dokumentit",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "floor": "Kati",
+  "unit": "Njësia",
+  "discipline": "Disiplina",
+  "documentType": "Lloji i Dokumentit",
+  "revision": "Rishikimi",
+  "revisionDate": "Data e Rishikimit",
+  "status": "Statusi",
+  "isAsBuilt": "Si-u-Ndërtua",
+  "supersedes": "Zëvendëson",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "media": "Skedarët",
+  "none": "Asnjë",
+  "statuses": {
+    "draft": "Draft",
+    "for_review": "Për Rishikim",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "superseded": "Zëvendësuar"
+  },
+  "disciplines": {
+    "architectural": "Arkitekturore",
+    "structural": "Strukturore",
+    "mep": "MEP",
+    "civil": "Civile",
+    "fire": "Zjarri",
+    "landscape": "Peizazhi",
+    "other": "Tjetër"
+  },
+  "documentTypes": {
+    "drawing": "Vizatim",
+    "specification": "Specifikim",
+    "calculation": "Llogaritje",
+    "report": "Raport",
+    "as_built": "Si-u-Ndërtua",
+    "om_manual": "Manual O&M",
+    "other": "Tjetër"
+  },
+  "designStage": "Faza e projektimit",
+  "isRequiredDeliverable": "Dorëzim i detyrueshëm"
+}

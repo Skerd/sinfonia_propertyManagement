@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/createWorkPackage.tsx",
+  "title": "Add Work Package",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "constructorLabel": "Constructor",
+    "constructorPlaceholder": "Select constructor",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "tradeLabel": "Trade",
+    "tradePlaceholder": "Trade",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "plannedStartLabel": "Planned Start",
+    "plannedStartPlaceholder": "Planned Start",
+    "plannedEndLabel": "Planned End",
+    "plannedEndPlaceholder": "Planned End",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Work Package",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

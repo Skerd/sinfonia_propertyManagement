@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/sheetView/planMarkupSheetView.tsx",
+  "planMarkup": "Plan Markup",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "markerType": "Marker Type",
+  "page": "Page",
+  "layer": "Layer",
+  "geometryX": "Geometry X",
+  "geometryY": "Geometry Y",
+  "description": "Description",
+  "createdOnSite": "Created On Site",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "open": "Open",
+    "in_progress": "In Progress",
+    "done": "Done",
+    "void": "Void"
+  },
+  "markerTypes": {
+    "defect": "Defect",
+    "decision": "Decision",
+    "order": "Order",
+    "pendency": "Pendency",
+    "info": "Info"
+  },
+  "onSiteState": {
+    "true": "On site",
+    "false": "Office"
+  }
+}

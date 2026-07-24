@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/editCommissioningRecord.tsx",
+  "title": "Ndrysho Commissioning Record",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidh njësia",
+    "handoverPackageLabel": "Paketa e dorëzimit",
+    "handoverPackagePlaceholder": "Zgjidh handover package",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "systemNameLabel": "Emri i sistemit",
+    "systemNamePlaceholder": "Emri i sistemit",
+    "testDateLabel": "Data e testimit",
+    "testDatePlaceholder": "Data e testimit",
+    "resultNotesLabel": "Shënime rezultati",
+    "resultNotesPlaceholder": "Shënime rezultati",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "inspectedByLabel": "Inspektuar nga",
+    "inspectedByPlaceholder": "Zgjidh përdoruesin"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Commissioning Record",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

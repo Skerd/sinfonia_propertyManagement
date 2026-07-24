@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/submitForReviewProjectDocumentDialog.tsx",
+  "dialogTitle": "Dërgo për rishikim",
+  "dialogDescription": "Konfirmo që ky dokument është gati për t'u dërguar për rishikim. Statusi do të ndryshojë në Për Rishikim.",
+  "cancel": "Anulo",
+  "submit": "Dërgo për Rishikim"
+}

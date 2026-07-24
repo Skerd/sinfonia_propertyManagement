@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/rejectProjectDocumentDialog.tsx",
+  "dialogTitle": "Refuzo dokumentin",
+  "dialogDescription": "Refuzo këtë dokument dhe ktheje në draft. Mund të shtoni shënime opsionale refuzimi.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale refuzimi",
+  "cancel": "Anulo",
+  "submit": "Refuzo"
+}

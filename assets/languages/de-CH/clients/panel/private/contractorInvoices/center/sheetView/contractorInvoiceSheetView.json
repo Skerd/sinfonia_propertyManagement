@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/sheetView/contractorInvoiceSheetView.tsx",
+  "contractorInvoice": "Unternehmerrechnung",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "invoiceNumber": "Rechnungsnr.",
+  "project": "Projekt",
+  "constructorRef": "Unternehmer",
+  "invoiceDate": "Rechnungsdatum",
+  "dueDate": "Fälligkeit",
+  "grossAmount": "Brutto",
+  "netAmount": "Netto",
+  "vatAmount": "MwSt",
+  "retentionHeld": "Rückbehalt",
+  "bkpAccountCode": "BKP-Konto",
+  "qrBillReference": "QR-Rechnung-Ref",
+  "source": "Quelle",
+  "currency": "Währung",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "received": "Erhalten",
+    "under_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "paid": "Bezahlt",
+    "rejected": "Abgelehnt",
+    "disputed": "Bestritten"
+  },
+  "sources": {
+    "manual": "Manuell",
+    "ap_inbox": "Kreditoren-Eingang"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/supersedeProjectDocumentDialog.tsx",
+  "dialogTitle": "Zëvendëso dokumentin",
+  "dialogDescription": "Shëno këtë dokument si të zëvendësuar. Lidhe rishikimin e ri me këtë përmes fushës Zëvendëson kur ta krijoni.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale",
+  "cancel": "Anulo",
+  "submit": "Zëvendëso"
+}

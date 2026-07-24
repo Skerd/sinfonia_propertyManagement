@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/editIncomingInvoice.tsx",
+  "title": "Edit Incoming Invoice",
+  "generalInfo": "Details",
+  "form": {
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "extractedSupplierNameLabel": "Supplier",
+    "extractedSupplierNamePlaceholder": "Supplier name",
+    "extractedIbanLabel": "IBAN",
+    "extractedIbanPlaceholder": "IBAN",
+    "extractedAmountLabel": "Amount",
+    "extractedAmountPlaceholder": "Amount",
+    "extractedCurrencyCodeLabel": "Currency Code",
+    "extractedCurrencyCodePlaceholder": "e.g. CHF",
+    "extractedInvoiceNumberLabel": "Invoice No.",
+    "extractedInvoiceNumberPlaceholder": "Invoice number",
+    "extractedInvoiceDateLabel": "Invoice Date",
+    "extractedInvoiceDatePlaceholder": "Invoice date",
+    "extractedDueDateLabel": "Due Date",
+    "extractedDueDatePlaceholder": "Due date",
+    "extractedQrReferenceLabel": "QR Reference",
+    "extractedQrReferencePlaceholder": "QR reference",
+    "matchedConstructorLabel": "Matched Contractor",
+    "matchedConstructorPlaceholder": "Select contractor",
+    "matchedContractLabel": "Matched Contract",
+    "matchedContractPlaceholder": "Select contract",
+    "bkpAccountCodeLabel": "BKP Account",
+    "bkpAccountCodePlaceholder": "e.g. 211",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Incoming Invoice",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

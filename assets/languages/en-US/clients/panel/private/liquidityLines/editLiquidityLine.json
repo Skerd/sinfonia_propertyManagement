@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/editLiquidityLine.tsx",
+  "title": "Edit Line",
+  "generalInfo": "Details",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Select plan",
+    "periodLabel": "Period",
+    "periodPlaceholder": "Period",
+    "directionLabel": "Direction",
+    "directionPlaceholder": "Select direction",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Select source",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "plannedAmountLabel": "Planned Amount",
+    "plannedAmountPlaceholder": "Amount",
+    "actualAmountLabel": "Actual Amount",
+    "actualAmountPlaceholder": "Amount",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Line",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

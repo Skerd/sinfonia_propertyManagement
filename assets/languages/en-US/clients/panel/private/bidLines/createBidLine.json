@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/createBidLine.tsx",
+  "title": "Add Bid Line",
+  "generalInfo": "Details",
+  "form": {
+    "bidLabel": "Bid",
+    "bidPlaceholder": "Select bid",
+    "specificationItemLabel": "LV Position",
+    "specificationItemPlaceholder": "Select LV position",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitPriceLabel": "Unit Price",
+    "unitPricePlaceholder": "Unit Price",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "alternativeNoteLabel": "Alternative Note",
+    "alternativeNotePlaceholder": "Alternative note"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Bid Line",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

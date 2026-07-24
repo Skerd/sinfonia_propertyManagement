@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
+  "title": "AP Inbox",
+  "description": "Kreditorenbewirtschaftung — incoming invoices (scan/OCR/QR-bill)",
+  "createIncomingInvoice": "Add Incoming Invoice",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status"
+  }
+}

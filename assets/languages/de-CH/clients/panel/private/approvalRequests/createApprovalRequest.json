@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/createApprovalRequest.tsx",
+  "title": "Antrag hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "documentTypeLabel": "Dokumenttyp",
+    "documentTypePlaceholder": "Dokumenttyp auswählen",
+    "workflowLabel": "Workflow",
+    "workflowPlaceholder": "Workflow auswählen",
+    "targetTypeLabel": "Zieltyp",
+    "targetTypePlaceholder": "z.B. contractorinvoices",
+    "targetIdLabel": "Ziel-ID",
+    "targetIdPlaceholder": "Ziel-Dokument-ID",
+    "amountLabel": "Betrag",
+    "amountPlaceholder": "Betrag",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Antrag hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

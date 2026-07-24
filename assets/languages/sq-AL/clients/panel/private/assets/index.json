@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/index.tsx",
+  "title": "Asetet",
+  "description": "Regjistri i komponentëve/pajisjeve (FM)",
+  "createAsset": "Shto Aset",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "lifecycleStatus": "Statusi i Ciklit"
+  }
+}

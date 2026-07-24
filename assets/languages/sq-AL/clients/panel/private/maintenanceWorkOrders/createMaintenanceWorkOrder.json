@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/createMaintenanceWorkOrder.tsx",
+  "title": "Shto Urdhër",
+  "generalInfo": "Detajet",
+  "form": {
+    "planLabel": "Plani",
+    "planPlaceholder": "Zgjidh planin",
+    "assetLabel": "Aseti",
+    "assetPlaceholder": "Zgjidh asetin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "typeLabel": "Lloji",
+    "typePlaceholder": "Zgjidh llojin",
+    "assigneeLabel": "I Caktuari",
+    "assigneePlaceholder": "Zgjidh të caktuarin",
+    "costEstimateLabel": "Kosto e Vlerësuar",
+    "costEstimatePlaceholder": "Shuma",
+    "actualCostLabel": "Kosto Aktuale",
+    "actualCostPlaceholder": "Shuma",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "dueDateLabel": "Afati",
+    "dueDatePlaceholder": "Afati",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Urdhër",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

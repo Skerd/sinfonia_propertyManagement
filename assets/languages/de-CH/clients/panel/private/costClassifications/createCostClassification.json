@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/createCostClassification.tsx",
+  "title": "Gliederung hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Standard auswählen",
+    "codeLabel": "Code",
+    "codePlaceholder": "z.B. C 2.1",
+    "parentCodeLabel": "Übergeordneter Code",
+    "parentCodePlaceholder": "z.B. C",
+    "levelLabel": "Stufe",
+    "levelPlaceholder": "Hierarchiestufe",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "unitOfMeasureLabel": "Masseinheit",
+    "unitOfMeasurePlaceholder": "z.B. m2",
+    "sortIndexLabel": "Sortierindex",
+    "sortIndexPlaceholder": "Sortierreihenfolge",
+    "activeLabel": "Aktiv",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {"title": "Wird gespeichert...", "time": 3000},
+    "success": {"title": "Gespeichert", "time": 3000},
+    "error": {"title": "Fehler", "time": 3000}
+  },
+  "formHeader": {"title": "Gliederung hinzufügen", "description": ""},
+  "formButtons": {"cancel": "Abbrechen", "submit": "Speichern"}
+}

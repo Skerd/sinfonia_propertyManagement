@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/markUnderReviewPermitDialog.tsx",
+  "dialogTitle": "Mark under review",
+  "dialogDescription": "Mark this submitted permit as under review by the authority.",
+  "cancel": "Cancel",
+  "submit": "Mark under review"
+}

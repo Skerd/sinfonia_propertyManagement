@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/editApprovalWorkflow.tsx",
+  "title": "Edit Workflow",
+  "generalInfo": "Details",
+  "form": {
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "approverRoleLabel": "Approver Role",
+    "approverRolePlaceholder": "e.g. finance_manager",
+    "thresholdAmountLabel": "Threshold Amount",
+    "thresholdAmountPlaceholder": "Amount above which escalation applies",
+    "thresholdCurrencyLabel": "Threshold Currency",
+    "thresholdCurrencyPlaceholder": "Select currency",
+    "escalationRoleLabel": "Escalation Role",
+    "escalationRolePlaceholder": "e.g. general_manager",
+    "activeLabel": "Active",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Workflow",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

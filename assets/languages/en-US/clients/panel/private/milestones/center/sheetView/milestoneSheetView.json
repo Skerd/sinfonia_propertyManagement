@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx",
+  "failedTitle": "Failed to load milestone",
+  "failedDescription": "Something went wrong while loading this milestone. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "milestone": "Milestone",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "project": "Project",
+  "edifice": "Building",
+  "status": "Status",
+  "weightPercent": "Weight %",
+  "plannedStart": "Planned start",
+  "plannedEnd": "Planned end",
+  "actualStart": "Actual start",
+  "actualEnd": "Actual end",
+  "description": "Description",
+  "notes": "Notes",
+  "media": "Media",
+  "none": "None",
+  "statuses": {
+    "planned": "Planned",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "delayed": "Delayed",
+    "cancelled": "Cancelled"
+  }
+}

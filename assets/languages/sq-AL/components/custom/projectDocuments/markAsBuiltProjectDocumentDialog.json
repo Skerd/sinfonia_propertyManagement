@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/markAsBuiltProjectDocumentDialog.tsx",
+  "dialogTitle": "Shëno si si-u-ndërtua",
+  "dialogDescription": "Konfirmo që ky dokument i miratuar pasqyron gjendjen si-u-ndërtua.",
+  "cancel": "Anulo",
+  "submit": "Shëno si Si-u-Ndërtua"
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/startMilestoneDialog.tsx",
+  "dialogTitle": "Fillo momentin kyç",
+  "dialogDescription": "Kaloje këtë moment kyç në proces dhe regjistro datën aktuale të fillimit.",
+  "cancel": "Anulo",
+  "submit": "Fillo momentin kyç"
+}

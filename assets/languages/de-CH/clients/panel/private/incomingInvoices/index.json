@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
+  "title": "Kreditoren-Eingang",
+  "description": "Kreditorenbewirtschaftung — Rechnungseingang (Scan/OCR/QR-Rechnung)",
+  "createIncomingInvoice": "Eingangsrechnung hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "title": "Bezeichnung",
+    "status": "Status"
+  }
+}

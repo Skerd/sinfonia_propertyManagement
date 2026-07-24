@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/createSubmittal.tsx",
+  "title": "Add Submittal",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "specReferenceLabel": "Spec Reference",
+    "specReferencePlaceholder": "Spec Reference",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "relatedDocumentLabel": "Related Document",
+    "relatedDocumentPlaceholder": "Select related document",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files",
+    "submittedByLabel": "Submitted by",
+    "submittedByPlaceholder": "Select user",
+    "reviewedByLabel": "Reviewed by",
+    "reviewedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Submittal",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

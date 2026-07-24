@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/createLiquidityPlan.tsx",
+  "title": "Shto Plan",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "horizonStartLabel": "Fillimi i Horizontit",
+    "horizonStartPlaceholder": "Fillimi",
+    "horizonEndLabel": "Fundi i Horizontit",
+    "horizonEndPlaceholder": "Fundi",
+    "granularityLabel": "Granulariteti",
+    "granularityPlaceholder": "Zgjidh granularitetin",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Plan",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

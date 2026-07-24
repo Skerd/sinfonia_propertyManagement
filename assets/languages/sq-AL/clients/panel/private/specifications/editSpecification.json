@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/editSpecification.tsx",
+  "title": "Ndrysho Specifikimin",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
+    "workPackageLabel": "Paketa e Punës",
+    "workPackagePlaceholder": "Zgjidh paketën e punës",
+    "standardLabel": "Standardi",
+    "standardPlaceholder": "Zgjidh standardin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "totalEstimatedLabel": "Totali i Vlerësuar",
+    "totalEstimatedPlaceholder": "Totali i Vlerësuar",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {"title": "Duke ruajtur...", "time": 3000},
+    "success": {"title": "U ruajt", "time": 3000},
+    "error": {"title": "Gabim", "time": 3000}
+  },
+  "formHeader": {"title": "Ndrysho Specifikimin", "description": ""},
+  "formButtons": {"cancel": "Anulo", "submit": "Ruaj"}
+}

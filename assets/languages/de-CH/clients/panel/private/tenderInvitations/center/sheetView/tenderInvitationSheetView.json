@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/center/sheetView/tenderInvitationSheetView.tsx",
+  "tenderInvitation": "Einladung",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "tender": "Ausschreibung",
+  "constructorRef": "Unternehmer",
+  "invitedAt": "Eingeladen am",
+  "respondedAt": "Beantwortet am",
+  "portalAccessToken": "Portal-Token",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "invited": "Eingeladen",
+    "viewing": "In Ansicht",
+    "submitted": "Eingereicht",
+    "declined": "Abgelehnt",
+    "withdrawn": "Zurückgezogen"
+  }
+}

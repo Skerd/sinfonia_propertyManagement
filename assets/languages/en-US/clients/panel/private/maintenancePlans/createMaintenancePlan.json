@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/createMaintenancePlan.tsx",
+  "title": "Add Plan",
+  "generalInfo": "Details",
+  "form": {
+    "assetLabel": "Asset",
+    "assetPlaceholder": "Select asset",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "planTypeLabel": "Plan Type",
+    "planTypePlaceholder": "Select type",
+    "intervalDaysLabel": "Interval (days)",
+    "intervalDaysPlaceholder": "e.g. 90",
+    "nextDueAtLabel": "Next Due At",
+    "nextDueAtPlaceholder": "Next due",
+    "responsiblePartyLabel": "Responsible Party",
+    "responsiblePartyPlaceholder": "Responsible",
+    "activeLabel": "Active",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Plan",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

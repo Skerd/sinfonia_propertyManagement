@@ -77,8 +77,13 @@
     "resolvedAtLabel": "Resolved At",
     "resolvedAtPlaceholder": "Select resolved date",
     "resolvedByLabel": "Resolved By",
-    "resolvedByPlaceholder": "Select resolver"
+    "resolvedByPlaceholder": "Select resolver",
+    "checklistTemplateLabel": "Checklist Template",
+    "checklistTemplatePlaceholder": "Select checklist template",
+    "checklistResponsesJsonLabel": "Checklist Responses",
+    "checklistResponsesJsonPlaceholder": "Checklist responses (JSON)"
   },
+  "checklist": "Checklist",
   "clientSignature": "Client Signature",
   "axios": {
     "start": {

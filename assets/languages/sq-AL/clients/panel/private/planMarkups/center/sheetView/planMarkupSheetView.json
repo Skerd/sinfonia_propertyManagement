@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/sheetView/planMarkupSheetView.tsx",
+  "planMarkup": "Shënimi i Planit",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "markerType": "Lloji i Shënuesit",
+  "page": "Faqja",
+  "layer": "Shtresa",
+  "geometryX": "Gjeometria X",
+  "geometryY": "Gjeometria Y",
+  "description": "Përshkrimi",
+  "createdOnSite": "Krijuar në Terren",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "open": "Hapur",
+    "in_progress": "Në progres",
+    "done": "Përfunduar",
+    "void": "Anuluar"
+  },
+  "markerTypes": {
+    "defect": "Defekt",
+    "decision": "Vendim",
+    "order": "Urdhër",
+    "pendency": "Pezullim",
+    "info": "Info"
+  },
+  "onSiteState": {
+    "true": "Në terren",
+    "false": "Zyrë"
+  }
+}

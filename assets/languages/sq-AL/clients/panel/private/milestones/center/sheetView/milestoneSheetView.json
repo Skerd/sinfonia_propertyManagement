@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx",
+  "failedTitle": "Ngarkimi i momentit kyç dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të këtij momenti kyç. Klikoni për të riprovuar.",
+  "failedTooltipDescription": "Klikoni për të riprovuar marrjen e të dhënave.",
+  "milestone": "Moment kyç",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "status": "Statusi",
+  "weightPercent": "Pesha %",
+  "plannedStart": "Fillimi i planifikuar",
+  "plannedEnd": "Mbarimi i planifikuar",
+  "actualStart": "Fillimi aktual",
+  "actualEnd": "Mbarimi aktual",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "media": "Media",
+  "none": "Asnjë",
+  "statuses": {
+    "planned": "I planifikuar",
+    "in_progress": "Në proces",
+    "completed": "I përfunduar",
+    "delayed": "I vonuar",
+    "cancelled": "I anuluar"
+  }
+}

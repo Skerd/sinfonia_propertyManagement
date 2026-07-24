@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx",
+  "title": "Planet e Likuiditetit",
+  "description": "Liquiditätsplanung — linja kohore hyrje/dalje",
+  "createLiquidityPlan": "Shto Plan",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "project": "Projekti"
+  }
+}

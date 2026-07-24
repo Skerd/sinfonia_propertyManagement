@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/cockpit/cockpit.tsx",
+  "title": "Kabina",
+  "companyScope": "Kabinë KPI mes projekteve me statusin semafor.",
+  "projectScope": "Kabinë KPI e projektit me statusin semafor.",
+  "computedAt": "Llogaritur më",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "ampel": {
+    "green": "Në rrugë",
+    "amber": "Kujdes",
+    "red": "Në rrezik"
+  },
+  "kpi": {
+    "costVariancePercent": "Variacioni i Kostos %",
+    "openRfis": "RFI të Hapura",
+    "delayedMilestones": "Pika Kyçe të Vonuara",
+    "openTenders": "Tenderë të Hapur",
+    "approvalBacklog": "Miratime në Pritje",
+    "unpaidApprovedInvoices": "Fatura të Miratuara Papaguar"
+  }
+}

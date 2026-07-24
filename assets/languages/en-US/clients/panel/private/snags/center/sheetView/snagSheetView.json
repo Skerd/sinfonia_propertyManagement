@@ -18,6 +18,13 @@
   "description": "Description",
   "notes": "Notes",
   "photos": "Photos",
+  "trade": "Trade",
+  "workPackage": "Work package",
+  "rootCause": "Root cause",
+  "costImpact": "Cost impact",
+  "isWarranty": "Under warranty",
+  "isDlp": "Within defects liability period",
+  "variationOrder": "Variation order",
   "none": "None",
   "statuses": {
     "open": "Open",

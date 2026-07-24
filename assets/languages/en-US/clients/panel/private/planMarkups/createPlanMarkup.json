@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/createPlanMarkup.tsx",
+  "title": "Add Markup",
+  "generalInfo": "Details",
+  "form": {
+    "planDocumentLabel": "Plan Document",
+    "planDocumentPlaceholder": "Select plan document",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "markerTypeLabel": "Marker Type",
+    "markerTypePlaceholder": "Select marker type",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "pageLabel": "Page",
+    "pagePlaceholder": "Page",
+    "layerLabel": "Layer",
+    "layerPlaceholder": "Layer",
+    "geometryXLabel": "Geometry X",
+    "geometryXPlaceholder": "0..1",
+    "geometryYLabel": "Geometry Y",
+    "geometryYPlaceholder": "0..1",
+    "geometryWLabel": "Geometry W",
+    "geometryWPlaceholder": "0..1",
+    "geometryHLabel": "Geometry H",
+    "geometryHPlaceholder": "0..1",
+    "createdOnSiteLabel": "Created On Site",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Markup",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

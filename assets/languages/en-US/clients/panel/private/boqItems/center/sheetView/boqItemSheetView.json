@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/sheetView/boqItemSheetView.tsx",
+  "boqItem": "BOQ Item",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "budget": "Budget",
+  "project": "Project",
+  "edifice": "Edifice",
+  "constructorRef": "Constructor",
+  "classificationStandard": "Classification Standard",
+  "classificationCode": "Classification Code",
+  "elementCode": "Element Code",
+  "wbsCode": "WBS Code",
+  "trade": "Trade",
+  "category": "Category",
+  "description": "Description",
+  "unitOfMeasure": "Unit Of Measure",
+  "plannedQty": "Planned Qty",
+  "plannedRate": "Planned Rate",
+  "plannedAmount": "Planned Amount",
+  "actualQty": "Actual Qty",
+  "actualAmount": "Actual Amount",
+  "currency": "Currency",
+  "notes": "Notes",
+  "statuses": {
+    "active": "Active",
+    "cancelled": "Cancelled"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  }
+}

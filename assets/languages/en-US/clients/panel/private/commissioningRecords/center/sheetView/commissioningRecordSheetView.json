@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/sheetView/commissioningRecordSheetView.tsx",
+  "commissioningRecord": "Commissioning Record",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "unit": "Unit",
+  "handoverPackage": "Handover Package",
+  "systemName": "System Name",
+  "testDate": "Test Date",
+  "resultNotes": "Result Notes",
+  "notes": "Notes",
+  "statuses": {
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed"
+  },
+  "inspectedBy": "Inspected by"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/sheetView/budgetSheetView.tsx",
+  "budget": "Budget",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "version": "Version",
+  "method": "Estimate Method",
+  "classificationStandard": "Classification Standard",
+  "revisionNo": "Revision No.",
+  "supersedesBudget": "Supersedes Budget",
+  "currency": "Currency",
+  "approvedTotal": "Approved Total",
+  "contingencyPercent": "Contingency Percent",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  },
+  "methods": {
+    "ebkp_h": "eBKP-H",
+    "bkp": "BKP",
+    "custom": "Custom"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  }
+}

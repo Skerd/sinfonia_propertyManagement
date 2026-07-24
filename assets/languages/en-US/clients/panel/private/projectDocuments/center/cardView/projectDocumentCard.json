@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/cardView/projectDocumentCard.tsx",
+  "statusLabel": "Status",
+  "isAsBuiltLabel": "As-Built",
+  "disciplineLabel": "Discipline",
+  "fields": {
+    "project": "Project",
+    "unit": "Unit",
+    "documentNumber": "Document Number",
+    "documentType": "Type",
+    "discipline": "Discipline",
+    "revision": "Revision",
+    "revisionDate": "Revision Date",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "for_review": "For Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Architectural",
+        "structural": "Structural",
+        "mep": "MEP",
+        "civil": "Civil",
+        "fire": "Fire",
+        "landscape": "Landscape",
+        "other": "Other"
+      },
+      "documentType": {
+        "drawing": "Drawing",
+        "specification": "Specification",
+        "calculation": "Calculation",
+        "report": "Report",
+        "as_built": "As Built",
+        "om_manual": "O&M Manual",
+        "other": "Other"
+      }
+    }
+  }
+}

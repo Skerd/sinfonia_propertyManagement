@@ -16,6 +16,10 @@
   "phoneNumber": "Numri i telefonit",
   "email": "Email",
   "website": "Faqja e internetit",
+  "partyType": "Lloji i palës",
+  "trades": "Zejet",
+  "insuranceExpiry": "Skadimi i sigurimit",
+  "performanceScore": "Rezultati i performancës",
   "edifices": "Ndërtesat",
   "address": "Adresa",
   "howToReach": "Si të arrini tek ne",
@@ -28,5 +32,14 @@
     "latitudeLabel": "Gjerësia gjeografike",
     "longitudeLabel": "Gjatësia gjeografike",
     "logoLabel": "Logo"
+  },
+  "partyTypes": {
+    "contractor": "Kontraktor",
+    "architect": "Arkitekt",
+    "engineer": "Inxhinier",
+    "qs": "Vlerësues sasior",
+    "pm": "Menaxher projekti",
+    "surveyor": "Gjeodet",
+    "other": "Tjetër"
   }
 }

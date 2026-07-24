@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/sheetView/contractorInvoiceSheetView.tsx",
+  "contractorInvoice": "Fatura e Kontraktorit",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "invoiceNumber": "Nr. Faturës",
+  "project": "Projekti",
+  "constructorRef": "Kontraktori",
+  "invoiceDate": "Data e Faturës",
+  "dueDate": "Afati",
+  "grossAmount": "Bruto",
+  "netAmount": "Neto",
+  "vatAmount": "TVSH",
+  "retentionHeld": "Garancia e Mbajtur",
+  "bkpAccountCode": "Llogaria BKP",
+  "qrBillReference": "Ref QR",
+  "source": "Burimi",
+  "currency": "Monedha",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "received": "Pranuar",
+    "under_review": "Në shqyrtim",
+    "approved": "Miratuar",
+    "paid": "Paguar",
+    "rejected": "Refuzuar",
+    "disputed": "Kontestuar"
+  },
+  "sources": {
+    "manual": "Manual",
+    "ap_inbox": "Kutia AP"
+  }
+}

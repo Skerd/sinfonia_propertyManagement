@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/editProgressClaim.tsx",
+  "title": "Edit Progress Claim",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "constructionContractLabel": "Construction Contract",
+    "constructionContractPlaceholder": "Select construction contract",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "claimPeriodStartLabel": "Claim Period Start",
+    "claimPeriodStartPlaceholder": "Claim Period Start",
+    "claimPeriodEndLabel": "Claim Period End",
+    "claimPeriodEndPlaceholder": "Claim Period End",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "amountLabel": "Amount",
+    "amountPlaceholder": "Amount",
+    "certifiedAmountLabel": "Certified Amount",
+    "certifiedAmountPlaceholder": "Certified Amount",
+    "retentionHeldLabel": "Retention Held",
+    "retentionHeldPlaceholder": "Retention Held",
+    "retentionReleasedLabel": "Retention Released",
+    "retentionReleasedPlaceholder": "Retention Released",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Progress Claim",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

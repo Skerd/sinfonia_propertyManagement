@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/createFeeCalculation.tsx",
+  "title": "Honorar hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "consultantAppointmentLabel": "Beauftragung",
+    "consultantAppointmentPlaceholder": "Beauftragung auswählen",
+    "basisAmountLabel": "Basisbetrag",
+    "basisAmountPlaceholder": "Basisbetrag",
+    "feePercentLabel": "Honorarprozent",
+    "feePercentPlaceholder": "z.B. 12.5",
+    "adjustmentFactorLabel": "Anpassungsfaktor",
+    "adjustmentFactorPlaceholder": "z.B. 1.0",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Honorar hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

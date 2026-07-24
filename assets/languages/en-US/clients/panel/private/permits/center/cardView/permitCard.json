@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/center/cardView/permitCard.tsx",
+  "statusLabel": "Status",
+  "fields": {
+    "project": "Project",
+    "permitType": "Permit Type",
+    "authority": "Authority",
+    "referenceNumber": "Reference No.",
+    "expiresAt": "Expires",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Submitted",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "expired": "Expired"
+      },
+      "permitType": {
+        "building": "Building",
+        "excavation": "Excavation",
+        "environmental": "Environmental",
+        "fire": "Fire",
+        "utility": "Utility",
+        "occupancy": "Occupancy",
+        "zoning": "Zoning",
+        "other": "Other"
+      }
+    }
+  }
+}

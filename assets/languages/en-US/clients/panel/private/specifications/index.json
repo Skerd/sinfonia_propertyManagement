@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/index.tsx",
+  "title": "Specification (LV)",
+  "description": "Leistungsverzeichnis / bill of works for tendering",
+  "createSpecification": "Add Specification",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "standard": "Standard",
+    "status": "Status",
+    "project": "Project"
+  }
+}

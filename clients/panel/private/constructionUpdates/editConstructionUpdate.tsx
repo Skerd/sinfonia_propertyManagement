@@ -13,6 +13,8 @@ export default createGenericEditPage<ConstructionUpdate, EditConstructionUpdateF
         ...data,
         project: data.project?._id ?? data.project,
         edifice: data.edifice?._id ?? data.edifice,
+        milestone: (data.milestone as any)?._id ?? data.milestone,
+        scheduleTask: (data.scheduleTask as any)?._id ?? data.scheduleTask,
         updateDate: data.updateDate
             ? new Date(data.updateDate).toISOString().split("T")[0]
             : undefined,

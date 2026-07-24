@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/center/sheetView/rfiSheetView.tsx",
+  "rfi": "RFI",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "question": "Pyetja",
+  "answer": "Përgjigjja",
+  "dueDate": "Data e afatit",
+  "relatedDocument": "Dokumenti i lidhur",
+  "notes": "Shënime",
+  "statuses": {
+    "open": "Hapur",
+    "answered": "Përgjigjur",
+    "closed": "Mbyllur",
+    "void": "I pavlefshëm"
+  },
+  "askedBy": "Pyetur nga",
+  "answeredBy": "Përgjigjur nga"
+}

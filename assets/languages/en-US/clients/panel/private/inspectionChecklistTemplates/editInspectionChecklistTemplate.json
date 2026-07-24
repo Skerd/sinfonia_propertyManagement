@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
+  "title": "Edit Inspection Checklist Template",
+  "generalInfo": "Details",
+  "form": {
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "tradeLabel": "Trade",
+    "tradePlaceholder": "Trade",
+    "stageLabel": "Stage",
+    "stagePlaceholder": "Stage",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "itemsJsonLabel": "Checklist Items",
+    "itemsJsonPlaceholder": "Checklist Items",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Inspection Checklist Template",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

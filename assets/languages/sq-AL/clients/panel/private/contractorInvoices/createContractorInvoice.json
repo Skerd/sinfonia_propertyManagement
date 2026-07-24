@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/createContractorInvoice.tsx",
+  "title": "Shto Faturë",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktorin",
+    "constructionContractLabel": "Kontrata",
+    "constructionContractPlaceholder": "Zgjidh kontratën",
+    "invoiceNumberLabel": "Nr. Faturës",
+    "invoiceNumberPlaceholder": "Numri i faturës",
+    "invoiceDateLabel": "Data e Faturës",
+    "invoiceDatePlaceholder": "Data e faturës",
+    "dueDateLabel": "Afati",
+    "dueDatePlaceholder": "Afati",
+    "grossAmountLabel": "Bruto",
+    "grossAmountPlaceholder": "Shuma",
+    "netAmountLabel": "Neto",
+    "netAmountPlaceholder": "Shuma",
+    "vatAmountLabel": "TVSH",
+    "vatAmountPlaceholder": "Shuma",
+    "retentionHeldLabel": "Garancia e Mbajtur",
+    "retentionHeldPlaceholder": "Shuma",
+    "bkpAccountCodeLabel": "Llogaria BKP",
+    "bkpAccountCodePlaceholder": "p.sh. 211",
+    "qrBillReferenceLabel": "Ref QR",
+    "qrBillReferencePlaceholder": "Referenca QR",
+    "sourceLabel": "Burimi",
+    "sourcePlaceholder": "Zgjidh burimin",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Faturë",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

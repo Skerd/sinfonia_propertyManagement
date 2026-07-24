@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/sheetView/incomingInvoiceSheetView.tsx",
+  "incomingInvoice": "Fatura Hyrëse",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "ocrStatus": "Statusi OCR",
+  "extractedSupplierName": "Furnitori",
+  "extractedIban": "IBAN",
+  "extractedAmount": "Shuma",
+  "extractedCurrencyCode": "Kodi i Monedhës",
+  "extractedInvoiceNumber": "Nr. Faturës",
+  "extractedInvoiceDate": "Data e Faturës",
+  "extractedDueDate": "Afati",
+  "extractedQrReference": "Referenca QR",
+  "matchedConstructor": "Kontraktori i Përputhur",
+  "bkpAccountCode": "Llogaria BKP",
+  "createdContractorInvoice": "Fatura e Krijuar",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "inbox": "Kutia",
+    "classified": "Klasifikuar",
+    "routed": "Rutuar",
+    "posted": "Postuar",
+    "rejected": "Refuzuar"
+  },
+  "ocrStatuses": {
+    "pending": "Në pritje",
+    "done": "Përfunduar",
+    "failed": "Dështuar"
+  }
+}

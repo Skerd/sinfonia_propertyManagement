@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/createBidLine.tsx",
+  "title": "Shto Rresht",
+  "generalInfo": "Detajet",
+  "form": {
+    "bidLabel": "Oferta",
+    "bidPlaceholder": "Zgjidh ofertën",
+    "specificationItemLabel": "Pozicioni LV",
+    "specificationItemPlaceholder": "Zgjidh pozicionin LV",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "quantityLabel": "Sasia",
+    "quantityPlaceholder": "Sasia",
+    "unitPriceLabel": "Çmimi për Njësi",
+    "unitPricePlaceholder": "Çmimi për Njësi",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "sortIndexLabel": "Renditja",
+    "sortIndexPlaceholder": "Rendi",
+    "alternativeNoteLabel": "Shënim Alternativ",
+    "alternativeNotePlaceholder": "Shënim alternativ"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Rresht",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

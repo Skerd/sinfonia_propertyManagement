@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidComparison/bidComparison.tsx",
+  "title": "Angebotsvergleich",
+  "description": "Angebote nach Preis, Qualität & Vollständigkeit bewertet.",
+  "computedAt": "Berechnet am",
+  "noTenderTitle": "Keine Ausschreibung gewählt",
+  "noTenderDescription": "Öffnen Sie den Angebotsvergleich aus einer Ausschreibung, um die Angebote zu bewerten.",
+  "noBidsTitle": "Noch keine Angebote",
+  "noBidsDescription": "Eingereichte Angebote für diese Ausschreibung werden hier bewertet.",
+  "contractor": "Unternehmer",
+  "total": "Total",
+  "completeness": "Vollständigkeit",
+  "priceScore": "Preis",
+  "qualityScore": "Qualität",
+  "overallScore": "Gesamt",
+  "status": "Status",
+  "recommended": "Empfohlen",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut."
+}

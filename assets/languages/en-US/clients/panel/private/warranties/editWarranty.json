@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/editWarranty.tsx",
+  "title": "Edit Warranty",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "startDateLabel": "Start Date",
+    "startDatePlaceholder": "Start Date",
+    "endDateLabel": "End Date",
+    "endDatePlaceholder": "End Date",
+    "retentionAmountLabel": "Retention Amount",
+    "retentionAmountPlaceholder": "Retention Amount",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "retentionReleaseDateLabel": "Retention Release Date",
+    "retentionReleaseDatePlaceholder": "Retention Release Date",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Warranty",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

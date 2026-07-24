@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/index.tsx",
+  "title": "Liquiditätspositionen",
+  "description": "Geplante/tatsächliche Zu- und Abflusspositionen",
+  "createLiquidityLine": "Position hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "plan": "Plan",
+    "direction": "Richtung"
+  }
+}

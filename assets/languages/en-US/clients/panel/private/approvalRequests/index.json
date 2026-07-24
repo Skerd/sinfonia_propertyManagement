@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/index.tsx",
+  "title": "Approval Requests",
+  "description": "Freigabe requests routed through workflows",
+  "createApprovalRequest": "Add Request",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "documentType": "Document Type",
+    "status": "Status"
+  }
+}

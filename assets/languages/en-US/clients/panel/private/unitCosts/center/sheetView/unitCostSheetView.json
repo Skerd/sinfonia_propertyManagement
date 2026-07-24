@@ -1,6 +1,9 @@
 {
+  "boqItem": "BOQ item",
   "category": "Category",
+  "constructor": "Constructor",
   "cost": "Amount",
+  "costCommitment": "Cost commitment",
   "costPerUnit": "Price / unit",
   "currency": "Currency",
   "documentSubtotal": "Subtotal",

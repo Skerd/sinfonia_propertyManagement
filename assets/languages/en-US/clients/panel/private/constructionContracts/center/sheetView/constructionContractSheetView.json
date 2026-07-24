@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/center/sheetView/constructionContractSheetView.tsx",
+  "constructionContract": "Construction Contract",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "workPackage": "Work Package",
+  "constructorRef": "Constructor",
+  "description": "Description",
+  "currency": "Currency",
+  "contractValue": "Contract Value",
+  "retentionPercent": "Retention Percent",
+  "performanceBond": "Performance Bond",
+  "paymentTerms": "Payment Terms",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "active": "Active",
+    "suspended": "Suspended",
+    "completed": "Completed",
+    "terminated": "Terminated"
+  },
+  "approvedVariationsTotal": "Approved variations total",
+  "certifiedClaimsTotal": "Certified claims total"
+}

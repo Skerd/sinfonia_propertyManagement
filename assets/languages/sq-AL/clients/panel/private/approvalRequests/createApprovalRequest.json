@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/createApprovalRequest.tsx",
+  "title": "Shto Kërkesë",
+  "generalInfo": "Detajet",
+  "form": {
+    "documentTypeLabel": "Lloji i Dokumentit",
+    "documentTypePlaceholder": "Zgjidh llojin",
+    "workflowLabel": "Rrjedha",
+    "workflowPlaceholder": "Zgjidh rrjedhën",
+    "targetTypeLabel": "Lloji i Objektivit",
+    "targetTypePlaceholder": "p.sh. contractorinvoices",
+    "targetIdLabel": "ID e Objektivit",
+    "targetIdPlaceholder": "ID e dokumentit",
+    "amountLabel": "Shuma",
+    "amountPlaceholder": "Shuma",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Kërkesë",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

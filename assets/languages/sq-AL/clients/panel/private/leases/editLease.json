@@ -31,11 +31,11 @@
     "startDateLabel": "Data e fillimit",
     "statusLabel": "Statusi",
     "tenantLabel": "Qiramarrësi",
-    "tenantPlaceholder": "Tenant Placeholder",
+    "tenantPlaceholder": "Zgjidhni qiramarrësin",
     "terminationDateLabel": "Data e ndërprerjes",
     "terminationReasonLabel": "Arsyeja e ndërprerjes",
     "unitLabel": "Njësia",
-    "unitPlaceholder": "Unit Placeholder"
+    "unitPlaceholder": "Zgjidhni njësinë"
   },
   "formButtons": {
     "cancel": "Anulo",
@@ -47,5 +47,5 @@
   },
   "generalInfo": "Detajet e Kontratës",
   "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
-  "title": "Title"
+  "title": "Ndrysho Kontratën"
 }

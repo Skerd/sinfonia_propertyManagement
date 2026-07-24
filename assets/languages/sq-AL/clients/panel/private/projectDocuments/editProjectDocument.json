@@ -1,0 +1,82 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/editProjectDocument.tsx",
+  "title": "Titulli",
+  "generalInfo": "Detajet e Dokumentit",
+  "editTitle": "Modifiko Dokumentin",
+  "editDescription": "Përditëso detajet e dokumentit të projektit",
+  "errorTitle": "Ngarkimi i dokumentit dështoi",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të dokumentit. Ju lutemi provoni sërish.",
+  "form": {
+    "_idLabel": "ID e Regjistrit",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
+    "floorLabel": "Kati",
+    "floorPlaceholder": "Zgjidh katin",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidh njësinë",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli i dokumentit",
+    "documentNumberLabel": "Numri i Dokumentit",
+    "documentNumberPlaceholder": "Kodi i vizatimit",
+    "disciplineLabel": "Disiplina",
+    "disciplinePlaceholder": "Zgjidh disiplinën",
+    "disciplineArchitectural": "Arkitekturore",
+    "disciplineStructural": "Strukturore",
+    "disciplineMep": "MEP",
+    "disciplineCivil": "Civile",
+    "disciplineFire": "Zjarri",
+    "disciplineLandscape": "Peizazhi",
+    "disciplineOther": "Tjetër",
+    "documentTypeLabel": "Lloji i Dokumentit",
+    "documentTypePlaceholder": "Zgjidh llojin e dokumentit",
+    "documentTypeDrawing": "Vizatim",
+    "documentTypeSpecification": "Specifikim",
+    "documentTypeCalculation": "Llogaritje",
+    "documentTypeReport": "Raport",
+    "documentTypeAsBuilt": "Si-u-Ndërtua",
+    "documentTypeOmManual": "Manual O&M",
+    "documentTypeOther": "Tjetër",
+    "revisionLabel": "Rishikimi",
+    "revisionPlaceholder": "p.sh. A",
+    "revisionDateLabel": "Data e Rishikimit",
+    "revisionDatePlaceholder": "Zgjidh datën e rishikimit",
+    "supersedesLabel": "Zëvendëson",
+    "supersedesPlaceholder": "Zgjidh dokumentin që zëvendësohet",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Detaje shtesë për dokumentin",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime të brendshme",
+    "mediaLabel": "Skedarët",
+    "addFile": "Shto skedar",
+    "filesSelected": "skedarë të zgjedhur",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Shto skedarë të rinj",
+    "designStageLabel": "Faza e projektimit",
+    "designStagePlaceholder": "Zgjidh fazën e projektimit",
+    "isRequiredDeliverableLabel": "Dorëzim i detyrueshëm për përfundimin e fazës"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke përditësuar dokumentin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Dokumenti u përditësua!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Dokumenti nuk u përditësua, ju lutemi provoni sërish!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifiko Dokumentin",
+    "description": "Përditëso detajet e dokumentit të projektit"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Ndryshimet"
+  }
+}

@@ -68,7 +68,7 @@
     "typePlaceholder": "Zgjidhni llojin",
     "typeInitial": "Fillestare",
     "typeFollowUp": "Përcjellja",
-    "typeFinal": "Final",
+    "typeFinal": "Përfundimtar",
     "typeRoutine": "Rutinë",
     "typeComplaint": "Ankesa",
     "typePreSale": "Para-shitje",
@@ -78,8 +78,13 @@
     "statusInProgress": "Në progres",
     "statusCompleted": "E përfunduar",
     "statusCancelled": "Anuluar",
-    "statusRescheduled": "Riplanifikuar"
+    "statusRescheduled": "Riplanifikuar",
+    "checklistTemplateLabel": "Modeli i listës kontrolluese",
+    "checklistTemplatePlaceholder": "Zgjidhni modelin e listës kontrolluese",
+    "checklistResponsesJsonLabel": "Përgjigjet e listës kontrolluese",
+    "checklistResponsesJsonPlaceholder": "Përgjigjet e listës kontrolluese (JSON)"
   },
+  "checklist": "Lista kontrolluese",
   "clientSignature": "Nënshkrimi i Klientit",
   "axios": {
     "start": {

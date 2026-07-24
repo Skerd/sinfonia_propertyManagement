@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/sheetView/submittalSheetView.tsx",
+  "submittal": "Dorëzimi",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "specReference": "Referenca e specifikimit",
+  "description": "Përshkrimi",
+  "relatedDocument": "Dokumenti i lidhur",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dorëzuar",
+    "revise_and_resubmit": "Rishiko dhe ridorëzo",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
+  },
+  "submittedBy": "Dorëzuar nga",
+  "reviewedBy": "Shqyrtuar nga"
+}

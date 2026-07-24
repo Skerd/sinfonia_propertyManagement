@@ -8,6 +8,10 @@
     "projectPlaceholder": "Zgjidhni projektin",
     "edificeLabel": "Ndërtesa",
     "edificePlaceholder": "Zgjidhni ndërtesën (opsionale)",
+    "milestoneLabel": "Piketa",
+    "milestonePlaceholder": "Zgjidhni piketën (opsionale)",
+    "scheduleTaskLabel": "Detyra e planifikuar",
+    "scheduleTaskPlaceholder": "Zgjidhni detyrën e planifikuar (opsionale)",
     "titleLabel": "Titulli",
     "titlePlaceholder": "Shkruaj titullin e përditësimit",
     "descriptionLabel": "Përshkrimi",
@@ -23,10 +27,25 @@
     "newFiles": "Shto foto të reja"
   },
   "axios": {
-    "start": { "title": "Duke ruajtur përditësimin", "time": 3000 },
-    "success": { "title": "Përditësimi u ruajt me sukses!", "time": 3000 },
-    "error": { "title": "Përditësimi nuk u ruajt, ju lutemi provoni sërish!", "time": 3000 }
+    "start": {
+      "title": "Duke ruajtur përditësimin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Përditësimi u ruajt me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Përditësimi nuk u ruajt, ju lutemi provoni sërish!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Shto Përditësim Ndërtimi", "description": "Regjistro një përditësim të ri progresi ndërtimi" },
-  "formButtons": { "cancel": "Anulo", "submit": "Ruaj Përditësimin" }
+  "formHeader": {
+    "title": "Shto Përditësim Ndërtimi",
+    "description": "Regjistro një përditësim të ri progresi ndërtimi"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj Përditësimin"
+  }
 }

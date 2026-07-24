@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/index.tsx",
+  "title": "Angebotspositionen",
+  "description": "Bepreiste Positionen eines Angebots zu LV-Positionen",
+  "createBidLine": "Angebotsposition hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "bid": "Angebot",
+    "specificationItem": "LV-Position"
+  }
+}

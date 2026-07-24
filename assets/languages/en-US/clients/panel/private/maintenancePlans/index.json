@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/index.tsx",
+  "title": "Maintenance Plans",
+  "description": "Instandhaltung / Gebäudeunterhalt plans",
+  "createMaintenancePlan": "Add Plan",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "planType": "Plan Type"
+  }
+}

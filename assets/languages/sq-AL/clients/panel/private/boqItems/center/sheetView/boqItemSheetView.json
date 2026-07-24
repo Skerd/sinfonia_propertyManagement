@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/sheetView/boqItemSheetView.tsx",
+  "boqItem": "Zëri i BOQ-së",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "budget": "Buxheti",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "constructorRef": "Kontraktori",
+  "classificationStandard": "Standardi i Klasifikimit",
+  "classificationCode": "Kodi i Klasifikimit",
+  "elementCode": "Kodi i Elementit",
+  "wbsCode": "Kodi WBS",
+  "trade": "Zanati",
+  "category": "Kategoria",
+  "description": "Përshkrimi",
+  "unitOfMeasure": "Njësia matëse",
+  "plannedQty": "Sasia e planifikuar",
+  "plannedRate": "Tarifa e planifikuar",
+  "plannedAmount": "Shuma e planifikuar",
+  "actualQty": "Sasia aktuale",
+  "actualAmount": "Shuma aktuale",
+  "currency": "Monedha",
+  "notes": "Shënime",
+  "statuses": {
+    "active": "Aktiv",
+    "cancelled": "Anuluar"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "I personalizuar"
+  }
+}

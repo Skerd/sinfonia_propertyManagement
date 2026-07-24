@@ -78,8 +78,13 @@
     "statusInProgress": "In Progress",
     "statusCompleted": "Completed",
     "statusCancelled": "Cancelled",
-    "statusRescheduled": "Rescheduled"
+    "statusRescheduled": "Rescheduled",
+    "checklistTemplateLabel": "Checklist Template",
+    "checklistTemplatePlaceholder": "Select checklist template",
+    "checklistResponsesJsonLabel": "Checklist Responses",
+    "checklistResponsesJsonPlaceholder": "Checklist responses (JSON)"
   },
+  "checklist": "Checklist",
   "clientSignature": "Client Signature",
   "axios": {
     "start": {

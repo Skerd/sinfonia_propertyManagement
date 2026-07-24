@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx",
+  "title": "Llogaritjet e Tarifave",
+  "description": "Honorarberechnung — llogaritje tarifash sipas SIA",
+  "createFeeCalculation": "Shto Llogaritje",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "status": "Statusi"
+  }
+}

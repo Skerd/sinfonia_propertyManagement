@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/center/sheetView/specificationSheetView.tsx",
+  "specification": "Specifikimi",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "workPackage": "Paketa e Punës",
+  "standard": "Standardi",
+  "title": "Titulli",
+  "currency": "Monedha",
+  "totalEstimated": "Totali i Vlerësuar",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "standards": {
+    "npk": "NPK",
+    "custom": "I personalizuar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "issued": "Lëshuar",
+    "tender_ready": "Gati për Tender",
+    "awarded": "Dhënë",
+    "archived": "Arkivuar"
+  }
+}

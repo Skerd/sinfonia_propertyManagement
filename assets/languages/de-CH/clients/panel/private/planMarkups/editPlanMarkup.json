@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/editPlanMarkup.tsx",
+  "title": "Markierung bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "planDocumentLabel": "Plandokument",
+    "planDocumentPlaceholder": "Plandokument auswählen",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "markerTypeLabel": "Markertyp",
+    "markerTypePlaceholder": "Markertyp auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "pageLabel": "Seite",
+    "pagePlaceholder": "Seite",
+    "layerLabel": "Ebene",
+    "layerPlaceholder": "Ebene",
+    "geometryXLabel": "Geometrie X",
+    "geometryXPlaceholder": "0..1",
+    "geometryYLabel": "Geometrie Y",
+    "geometryYPlaceholder": "0..1",
+    "geometryWLabel": "Geometrie B",
+    "geometryWPlaceholder": "0..1",
+    "geometryHLabel": "Geometrie H",
+    "geometryHPlaceholder": "0..1",
+    "createdOnSiteLabel": "Vor Ort erstellt",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Markierung bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

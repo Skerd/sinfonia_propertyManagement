@@ -17,6 +17,7 @@ import Header from "@coreModule/components/custom/header.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {PaymentAlerts} from "@propertyManagementModule/components/custom/dashboard/paymentAlerts.tsx";
+import DeliveryReadinessCard from "@propertyManagementModule/components/custom/dashboard/deliveryReadinessCard.tsx";
 import {buildDrillDownContextFromPeriod} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import {
@@ -173,6 +174,10 @@ function RealEstateDashboard({
                                 viewAllLabel={resolveLanguageKey("viewPaymentPlans")}
                             />
 
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                            <DeliveryReadinessCard edificeId={selectedEdifice._id} />
                         </div>
 
                         <EdificeDetailPanel

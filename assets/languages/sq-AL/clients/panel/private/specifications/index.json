@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/index.tsx",
+  "title": "Specifikimi (LV)",
+  "description": "Lista e punimeve / Leistungsverzeichnis për tenderim",
+  "createSpecification": "Shto Specifikim",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "standard": "Standardi",
+    "status": "Statusi",
+    "project": "Projekti"
+  }
+}

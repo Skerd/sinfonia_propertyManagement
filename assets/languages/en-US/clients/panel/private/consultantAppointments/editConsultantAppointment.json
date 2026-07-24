@@ -1,0 +1,70 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/editConsultantAppointment.tsx",
+  "title": "Edit Consultant Appointment",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "constructorLabel": "Constructor",
+    "constructorPlaceholder": "Select constructor",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "roleLabel": "Role",
+    "rolePlaceholder": "Select role",
+    "role_architect": "Architect",
+    "role_engineer": "Engineer",
+    "role_qs": "QS",
+    "role_pm": "PM",
+    "role_surveyor": "Surveyor",
+    "role_other": "Other",
+    "scopeLabel": "Scope",
+    "scopePlaceholder": "Scope",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "feeAmountLabel": "Fee Amount",
+    "feeAmountPlaceholder": "Fee Amount",
+    "startDateLabel": "Start Date",
+    "startDatePlaceholder": "Start Date",
+    "endDateLabel": "End Date",
+    "endDatePlaceholder": "End Date",
+    "deliverablesLabel": "Deliverables",
+    "deliverablesPlaceholder": "Deliverables",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files",
+    "feeModelLabel": "Fee Model",
+    "feeModelPlaceholder": "Select fee model",
+    "basisKindLabel": "Basis Kind",
+    "basisKindPlaceholder": "Select basis",
+    "adjustmentFactorLabel": "Adjustment Factor",
+    "adjustmentFactorPlaceholder": "e.g. 1.0",
+    "hourlyRateLabel": "Hourly Rate",
+    "hourlyRatePlaceholder": "Hourly rate",
+    "cappedAmountLabel": "Capped Amount",
+    "cappedAmountPlaceholder": "Cap"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Consultant Appointment",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/createBid.tsx",
+  "title": "Shto Ofertë",
+  "generalInfo": "Detajet",
+  "form": {
+    "tenderLabel": "Tenderi",
+    "tenderPlaceholder": "Zgjidh tenderin",
+    "tenderInvitationLabel": "Ftesa",
+    "tenderInvitationPlaceholder": "Zgjidh ftesën",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktorin",
+    "totalLabel": "Totali",
+    "totalPlaceholder": "Totali",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "coveringNotesLabel": "Shënime Shoqëruese",
+    "coveringNotesPlaceholder": "Shënime shoqëruese",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Ofertë",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

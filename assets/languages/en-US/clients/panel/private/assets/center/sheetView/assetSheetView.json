@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/center/sheetView/assetSheetView.tsx",
+  "asset": "Asset",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "edifice": "Edifice",
+  "category": "Category",
+  "manufacturer": "Manufacturer",
+  "serial": "Serial",
+  "installDate": "Install Date",
+  "notes": "Notes",
+  "lifecycleStatus": "Lifecycle Status",
+  "lifecycleStatuses": {
+    "planned": "Planned",
+    "active": "Active",
+    "maintenance": "Maintenance",
+    "retired": "Retired"
+  }
+}

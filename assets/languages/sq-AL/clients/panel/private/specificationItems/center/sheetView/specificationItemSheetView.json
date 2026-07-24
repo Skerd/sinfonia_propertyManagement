@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/center/sheetView/specificationItemSheetView.tsx",
+  "specificationItem": "Pozicioni i LV-së",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "specification": "Specifikimi",
+  "title": "Titulli",
+  "npkChapter": "Kapitulli NPK",
+  "npkPosition": "Pozicioni NPK",
+  "isRPosition": "R-Pozicion",
+  "classificationStandard": "Standardi i Klasifikimit",
+  "classificationCode": "Kodi i Klasifikimit",
+  "unitOfMeasure": "Njësia Matëse",
+  "quantity": "Sasia",
+  "unitPrice": "Çmimi për Njësi",
+  "lineTotal": "Totali i Rreshtit",
+  "currency": "Monedha",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "active": "Aktiv",
+    "cancelled": "Anuluar"
+  },
+  "rPositionState": {
+    "true": "R-Pozicion",
+    "false": "Katalog"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "I personalizuar"
+  }
+}

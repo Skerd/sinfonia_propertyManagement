@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/markDelayedMilestoneDialog.tsx",
+  "dialogTitle": "Shëno momentin kyç si të vonuar",
+  "dialogDescription": "Shëno këtë moment kyç si të vonuar. Mund të shtoni një arsye.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Arsye opsionale për vonesën",
+  "cancel": "Anulo",
+  "submit": "Shëno si të vonuar"
+}

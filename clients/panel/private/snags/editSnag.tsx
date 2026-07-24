@@ -15,6 +15,8 @@ export default createGenericEditPage<Snag, EditSnagFormType>({
         reportedBy: (data.reportedBy as any)?._id ?? data.reportedBy,
         assignedTo: (data.assignedTo as any)?._id ?? data.assignedTo,
         dueDate:    data.dueDate ? new Date(data.dueDate).toISOString().split("T")[0] : undefined,
+        workPackage:    (data.workPackage as any)?._id ?? data.workPackage,
+        variationOrder: (data.variationOrder as any)?._id ?? data.variationOrder,
         photos:     data.photos?.map((m: any) => m._id ?? m) ?? [],
     }),
     buildFormExtras: (_entityId, _params, entity) => ({

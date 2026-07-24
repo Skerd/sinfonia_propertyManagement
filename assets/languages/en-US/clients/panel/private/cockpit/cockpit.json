@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/cockpit/cockpit.tsx",
+  "title": "Cockpit",
+  "companyScope": "Cross-project KPI cockpit with traffic-light status.",
+  "projectScope": "Project KPI cockpit with traffic-light status.",
+  "computedAt": "Computed at",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "ampel": {
+    "green": "On track",
+    "amber": "Watch",
+    "red": "At risk"
+  },
+  "kpi": {
+    "costVariancePercent": "Cost Variance %",
+    "openRfis": "Open RFIs",
+    "delayedMilestones": "Delayed Milestones",
+    "openTenders": "Open Tenders",
+    "approvalBacklog": "Approval Backlog",
+    "unpaidApprovedInvoices": "Unpaid Approved Invoices"
+  }
+}

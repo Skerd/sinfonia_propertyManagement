@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/index.tsx",
+  "title": "Bids",
+  "description": "Angebote — contractor offers against tenders",
+  "createBid": "Add Bid",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "tender": "Tender",
+    "constructorRef": "Contractor",
+    "status": "Status"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/startScheduleTaskDialog.tsx",
+  "dialogTitle": "Start task",
+  "dialogDescription": "Move this task to in progress and record its actual start date.",
+  "cancel": "Cancel",
+  "submit": "Start task"
+}

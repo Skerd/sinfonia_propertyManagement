@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/center/sheetView/tenderInvitationSheetView.tsx",
+  "tenderInvitation": "Ftesa",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "tender": "Tenderi",
+  "constructorRef": "Kontraktori",
+  "invitedAt": "Ftuar Më",
+  "respondedAt": "Përgjigjur Më",
+  "portalAccessToken": "Token i Portalit",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "invited": "Ftuar",
+    "viewing": "Duke shikuar",
+    "submitted": "Dorëzuar",
+    "declined": "Refuzuar",
+    "withdrawn": "Tërhequr"
+  }
+}

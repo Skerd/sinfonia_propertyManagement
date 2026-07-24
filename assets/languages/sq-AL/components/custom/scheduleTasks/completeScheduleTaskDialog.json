@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/completeScheduleTaskDialog.tsx",
+  "dialogTitle": "Përfundo detyrën",
+  "dialogDescription": "Shëno këtë detyrë si të përfunduar dhe regjistro datën aktuale të mbarimit.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale të përfundimit",
+  "cancel": "Anulo",
+  "submit": "Përfundo detyrën"
+}

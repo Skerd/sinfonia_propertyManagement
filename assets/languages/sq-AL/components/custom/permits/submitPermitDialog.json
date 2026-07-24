@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/submitPermitDialog.tsx",
+  "dialogTitle": "Dërgo lejen",
+  "dialogDescription": "Dërgoje këtë leje te autoriteti. Statusi do të ndryshojë në e dërguar.",
+  "cancel": "Anulo",
+  "submit": "Dërgo"
+}

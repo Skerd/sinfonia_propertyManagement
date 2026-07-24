@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/index.tsx",
+  "title": "Ftesat për Tender",
+  "description": "Kontraktorët e ftuar për tender (qasje Bauplattform)",
+  "createTenderInvitation": "Shto Ftesë",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "tender": "Tenderi",
+    "constructorRef": "Kontraktori",
+    "status": "Statusi"
+  }
+}

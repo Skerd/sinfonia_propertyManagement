@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/rejectPermitDialog.tsx",
+  "dialogTitle": "Refuzo lejen",
+  "dialogDescription": "Refuzo këtë leje. Statusi do të ndryshojë në e refuzuar.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Arsyeja opsionale e refuzimit",
+  "cancel": "Anulo",
+  "submit": "Refuzo"
+}

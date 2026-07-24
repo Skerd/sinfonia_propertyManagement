@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/index.tsx",
+  "title": "Freigabe-Workflows",
+  "description": "Freigabeprozess — Freigabesteuerung für Finanzdokumente",
+  "createApprovalWorkflow": "Workflow hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "documentType": "Dokumenttyp",
+    "title": "Bezeichnung",
+    "active": "Aktiv"
+  }
+}

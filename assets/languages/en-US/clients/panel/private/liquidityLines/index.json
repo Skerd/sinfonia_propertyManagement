@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/index.tsx",
+  "title": "Liquidity Lines",
+  "description": "Planned/actual inflow & outflow lines",
+  "createLiquidityLine": "Add Line",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "plan": "Plan",
+    "direction": "Direction"
+  }
+}

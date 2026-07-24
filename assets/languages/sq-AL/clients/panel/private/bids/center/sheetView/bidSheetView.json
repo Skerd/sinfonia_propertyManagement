@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Oferta",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "tender": "Tenderi",
+  "constructorRef": "Kontraktori",
+  "total": "Totali",
+  "currency": "Monedha",
+  "submittedAt": "Dorëzuar Më",
+  "coveringNotes": "Shënime Shoqëruese",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dorëzuar",
+    "shortlisted": "Në listë të ngushtë",
+    "awarded": "Fituar",
+    "rejected": "Refuzuar",
+    "withdrawn": "Tërhequr"
+  }
+}

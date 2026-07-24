@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
+  "title": "ConsultantAppointment",
+  "description": "ConsultantAppointment register",
+  "createConsultantAppointment": "Add ConsultantAppointment",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status",
+    "project": "Project"
+  }
+}

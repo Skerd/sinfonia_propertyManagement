@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/index.tsx",
+  "title": "Tender Invitations",
+  "description": "Invited contractors per tender (Bauplattform access)",
+  "createTenderInvitation": "Add Invitation",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "tender": "Tender",
+    "constructorRef": "Contractor",
+    "status": "Status"
+  }
+}

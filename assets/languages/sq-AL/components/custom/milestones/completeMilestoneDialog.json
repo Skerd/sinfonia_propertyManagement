@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/completeMilestoneDialog.tsx",
+  "dialogTitle": "Përfundo momentin kyç",
+  "dialogDescription": "Shëno këtë moment kyç si të përfunduar dhe regjistro datën aktuale të mbarimit.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale të përfundimit",
+  "cancel": "Anulo",
+  "submit": "Përfundo momentin kyç"
+}

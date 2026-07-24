@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/startMilestoneDialog.tsx",
+  "dialogTitle": "Start milestone",
+  "dialogDescription": "Move this milestone to in progress and record its actual start date.",
+  "cancel": "Cancel",
+  "submit": "Start milestone"
+}

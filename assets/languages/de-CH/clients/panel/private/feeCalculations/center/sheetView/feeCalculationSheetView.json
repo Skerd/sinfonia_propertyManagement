@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/sheetView/feeCalculationSheetView.tsx",
+  "feeCalculation": "Honorarberechnung",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "consultantAppointment": "Beauftragung",
+  "basisAmount": "Basisbetrag",
+  "feePercent": "Honorarprozent",
+  "adjustmentFactor": "Anpassungsfaktor",
+  "totalFee": "Gesamthonorar",
+  "currency": "Währung",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "planned": "Geplant",
+    "earned": "Verdient",
+    "invoiced": "Fakturiert",
+    "paid": "Bezahlt"
+  }
+}

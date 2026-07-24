@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/estimateComparison/estimateComparison.tsx",
+  "title": "Kostenvergleich",
+  "description": "Dasselbe Kostenelement (eBKP-H / BKP / NPK) über Projekte und Gebäude hinweg vergleichen.",
+  "standardLabel": "Standard",
+  "computedAt": "Berechnet am",
+  "noDataTitle": "Keine vergleichbaren Kostenermittlungen",
+  "noDataDescription": "Ordnen Sie LV-/BoQ-Positionen einen Code in diesem Standard zu, um sie projektübergreifend zu vergleichen.",
+  "occurrences": "Vorkommen",
+  "min": "Min.",
+  "avg": "Ø",
+  "max": "Max.",
+  "total": "Total",
+  "project": "Projekt",
+  "budget": "Kostenvoranschlag",
+  "edifice": "Gebäude",
+  "plannedQty": "Geplante Menge",
+  "plannedAmount": "Geplanter Betrag",
+  "actualAmount": "Ist-Betrag",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "standards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Benutzerdefiniert"
+  }
+}

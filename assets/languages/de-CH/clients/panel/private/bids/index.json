@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/index.tsx",
+  "title": "Angebote",
+  "description": "Angebote der Unternehmer zu Ausschreibungen",
+  "createBid": "Angebot hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "tender": "Ausschreibung",
+    "constructorRef": "Unternehmer",
+    "status": "Status"
+  }
+}

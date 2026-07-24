@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/editSpecification.tsx",
+  "title": "LV bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "workPackageLabel": "Arbeitspaket",
+    "workPackagePlaceholder": "Arbeitspaket auswählen",
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Standard auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "totalEstimatedLabel": "Geschätztes Total",
+    "totalEstimatedPlaceholder": "Geschätztes Total",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {"title": "Wird gespeichert...", "time": 3000},
+    "success": {"title": "Gespeichert", "time": 3000},
+    "error": {"title": "Fehler", "time": 3000}
+  },
+  "formHeader": {"title": "LV bearbeiten", "description": ""},
+  "formButtons": {"cancel": "Abbrechen", "submit": "Speichern"}
+}

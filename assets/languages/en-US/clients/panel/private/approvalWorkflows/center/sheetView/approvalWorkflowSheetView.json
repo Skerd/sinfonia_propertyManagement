@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/sheetView/approvalWorkflowSheetView.tsx",
+  "approvalWorkflow": "Approval Workflow",
+  "overview": "Overview",
+  "name": "Reference",
+  "documentType": "Document Type",
+  "title": "Title",
+  "approverRole": "Approver Role",
+  "thresholdAmount": "Threshold Amount",
+  "thresholdCurrency": "Threshold Currency",
+  "escalationRole": "Escalation Role",
+  "active": "Active",
+  "notes": "Notes",
+  "documentTypes": {
+    "budget": "Budget",
+    "cost_estimate": "Cost Estimate",
+    "contract": "Contract",
+    "variation_order": "Variation Order",
+    "contractor_invoice": "Contractor Invoice",
+    "progress_claim": "Progress Claim"
+  },
+  "activeState": {
+    "true": "Active",
+    "false": "Inactive"
+  }
+}

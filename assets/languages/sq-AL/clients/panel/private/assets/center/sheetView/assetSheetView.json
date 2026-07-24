@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/center/sheetView/assetSheetView.tsx",
+  "asset": "Aseti",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "edifice": "Ndërtesa",
+  "category": "Kategoria",
+  "manufacturer": "Prodhuesi",
+  "serial": "Seria",
+  "installDate": "Data e Instalimit",
+  "notes": "Shënime",
+  "lifecycleStatus": "Statusi i Ciklit",
+  "lifecycleStatuses": {
+    "planned": "Planifikuar",
+    "active": "Aktiv",
+    "maintenance": "Mirëmbajtje",
+    "retired": "Nxjerrë"
+  }
+}

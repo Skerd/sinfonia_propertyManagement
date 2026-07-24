@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/center/sheetView/constructionContractSheetView.tsx",
+  "constructionContract": "Kontrata e ndërtimit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "workPackage": "Paketa e punës",
+  "constructorRef": "Kontraktori",
+  "description": "Përshkrimi",
+  "currency": "Monedha",
+  "contractValue": "Vlera e kontratës",
+  "retentionPercent": "Përqindja e ndalesës",
+  "performanceBond": "Garancia e performancës",
+  "paymentTerms": "Kushtet e pagesës",
+  "startDate": "Data e fillimit",
+  "endDate": "Data e mbarimit",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "active": "Aktiv",
+    "suspended": "Pezulluar",
+    "completed": "Përfunduar",
+    "terminated": "Ndërprerë"
+  },
+  "approvedVariationsTotal": "Totali i variacioneve të miratuara",
+  "certifiedClaimsTotal": "Totali i kërkesave të certifikuara"
+}

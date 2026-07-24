@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/sections/constructionProgressSection.tsx",
+  "title": "Construction progress",
+  "completeLabel": "complete",
+  "updatesTitle": "Latest updates from the site",
+  "milestonePlanned": "Planned",
+  "milestoneInProgress": "In progress",
+  "milestoneCompleted": "Completed",
+  "milestoneDelayed": "Delayed"
+}

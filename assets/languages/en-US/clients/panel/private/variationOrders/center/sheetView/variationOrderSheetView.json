@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/center/sheetView/variationOrderSheetView.tsx",
+  "variationOrder": "Variation Order",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "constructionContract": "Construction Contract",
+  "description": "Description",
+  "currency": "Currency",
+  "costImpact": "Cost Impact",
+  "timeImpactDays": "Time Impact Days",
+  "notes": "Notes",
+  "statuses": {
+    "pending_architect": "Pending Architect",
+    "pending_qs": "Pending Qs",
+    "pending_client": "Pending Client",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  },
+  "modificationRequest": "Modification request"
+}

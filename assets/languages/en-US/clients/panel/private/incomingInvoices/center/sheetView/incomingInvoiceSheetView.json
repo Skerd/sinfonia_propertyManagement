@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/sheetView/incomingInvoiceSheetView.tsx",
+  "incomingInvoice": "Incoming Invoice",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "ocrStatus": "OCR Status",
+  "extractedSupplierName": "Supplier",
+  "extractedIban": "IBAN",
+  "extractedAmount": "Amount",
+  "extractedCurrencyCode": "Currency Code",
+  "extractedInvoiceNumber": "Invoice No.",
+  "extractedInvoiceDate": "Invoice Date",
+  "extractedDueDate": "Due Date",
+  "extractedQrReference": "QR Reference",
+  "matchedConstructor": "Matched Contractor",
+  "bkpAccountCode": "BKP Account",
+  "createdContractorInvoice": "Created Invoice",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "inbox": "Inbox",
+    "classified": "Classified",
+    "routed": "Routed",
+    "posted": "Posted",
+    "rejected": "Rejected"
+  },
+  "ocrStatuses": {
+    "pending": "Pending",
+    "done": "Done",
+    "failed": "Failed"
+  }
+}

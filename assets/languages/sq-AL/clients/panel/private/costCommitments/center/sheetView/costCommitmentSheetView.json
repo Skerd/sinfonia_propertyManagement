@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/center/sheetView/costCommitmentSheetView.tsx",
+  "costCommitment": "Angazhimi i kostos",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "budget": "Buxheti",
+  "constructorRef": "Kontraktori",
+  "description": "Përshkrimi",
+  "currency": "Monedha",
+  "committedAmount": "Shuma e angazhuar",
+  "retentionPercent": "Përqindja e ndalesës",
+  "issuedAt": "Lëshuar më",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "issued": "Lëshuar",
+    "partially_received": "Marrë pjesërisht",
+    "closed": "Mbyllur",
+    "cancelled": "Anuluar"
+  }
+}

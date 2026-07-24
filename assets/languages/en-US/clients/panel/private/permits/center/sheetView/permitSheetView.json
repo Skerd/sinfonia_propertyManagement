@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/center/sheetView/permitSheetView.tsx",
+  "failedTitle": "Failed to load permit",
+  "failedDescription": "Something went wrong while loading this permit. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "none": "None",
+  "permit": "Permit",
+  "overview": "Overview",
+  "description": "Description",
+  "name": "Reference",
+  "title": "Title",
+  "project": "Project",
+  "edifice": "Edifice",
+  "status": "Status",
+  "permitType": "Type",
+  "authority": "Authority",
+  "referenceNumber": "Reference No.",
+  "submittedAt": "Submitted",
+  "approvedAt": "Approved",
+  "expiresAt": "Expires",
+  "notes": "Notes",
+  "media": "Media",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "under_review": "Under Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "expired": "Expired"
+  },
+  "permitTypes": {
+    "building": "Building",
+    "excavation": "Excavation",
+    "environmental": "Environmental",
+    "fire": "Fire",
+    "utility": "Utility",
+    "occupancy": "Occupancy",
+    "zoning": "Zoning",
+    "other": "Other"
+  }
+}

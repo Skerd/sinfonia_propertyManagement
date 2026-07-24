@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/systemMap/index.tsx",
+  "title": "Harta e sistemit të menaxhimit të pronave",
+  "description": "Hartë interaktive e modeleve të portofolit, shitjeve, qirave, dorëzimit, kostove dhe cilësisë — plus rrjedhat kryesore të biznesit. Lëvizni, zmadhoni dhe klikoni nyjet për detaje.",
+  "tabs": {
+    "models": "Grafiku i modeleve",
+    "flows": "Si funksionon",
+    "capabilities": "Aftësitë"
+  }
+}

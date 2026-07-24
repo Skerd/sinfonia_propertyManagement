@@ -1,0 +1,82 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/editProjectDocument.tsx",
+  "title": "Title",
+  "generalInfo": "Document Details",
+  "editTitle": "Edit Document",
+  "editDescription": "Update project document details",
+  "errorTitle": "Failed to load document",
+  "errorDescription": "An error occurred while loading the document. Please try again.",
+  "form": {
+    "_idLabel": "Record ID",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "floorLabel": "Floor",
+    "floorPlaceholder": "Select floor",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Document title",
+    "documentNumberLabel": "Document Number",
+    "documentNumberPlaceholder": "Drawing code",
+    "disciplineLabel": "Discipline",
+    "disciplinePlaceholder": "Select discipline",
+    "disciplineArchitectural": "Architectural",
+    "disciplineStructural": "Structural",
+    "disciplineMep": "MEP",
+    "disciplineCivil": "Civil",
+    "disciplineFire": "Fire",
+    "disciplineLandscape": "Landscape",
+    "disciplineOther": "Other",
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "documentTypeDrawing": "Drawing",
+    "documentTypeSpecification": "Specification",
+    "documentTypeCalculation": "Calculation",
+    "documentTypeReport": "Report",
+    "documentTypeAsBuilt": "As Built",
+    "documentTypeOmManual": "O&M Manual",
+    "documentTypeOther": "Other",
+    "revisionLabel": "Revision",
+    "revisionPlaceholder": "e.g. A",
+    "revisionDateLabel": "Revision Date",
+    "revisionDatePlaceholder": "Select revision date",
+    "supersedesLabel": "Supersedes",
+    "supersedesPlaceholder": "Select document being replaced",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Additional details about the document",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Internal notes",
+    "mediaLabel": "Files",
+    "addFile": "Add file",
+    "filesSelected": "files selected",
+    "existingFiles": "Existing files",
+    "newFiles": "Add new files",
+    "designStageLabel": "Design stage",
+    "designStagePlaceholder": "Select design stage",
+    "isRequiredDeliverableLabel": "Required deliverable for stage completion"
+  },
+  "axios": {
+    "start": {
+      "title": "Updating document",
+      "time": 3000
+    },
+    "success": {
+      "title": "Document updated!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update document, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Document",
+    "description": "Update project document details"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  }
+}

@@ -45,7 +45,22 @@
     "latitudeLabel": "Latitude",
     "latitudePlaceholder": "Latitude",
     "longitudeLabel": "Longitude",
-    "longitudePlaceholder": "Longitude"
+    "longitudePlaceholder": "Longitude",
+    "partyTypeLabel": "Party Type",
+    "partyTypePlaceholder": "Select party type",
+    "partyTypeContractor": "Contractor",
+    "partyTypeArchitect": "Architect",
+    "partyTypeEngineer": "Engineer",
+    "partyTypeQs": "Quantity Surveyor",
+    "partyTypePm": "Project Manager",
+    "partyTypeSurveyor": "Surveyor",
+    "partyTypeOther": "Other",
+    "tradesLabel": "Trades",
+    "tradesPlaceholder": "Enter trades",
+    "insuranceExpiryLabel": "Insurance Expiry",
+    "insuranceExpiryPlaceholder": "Select insurance expiry date",
+    "performanceScoreLabel": "Performance Score",
+    "performanceScorePlaceholder": "Enter performance score"
   },
   "axios": {
     "start": {

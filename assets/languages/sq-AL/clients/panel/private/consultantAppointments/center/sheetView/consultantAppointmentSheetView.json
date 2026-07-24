@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/center/sheetView/consultantAppointmentSheetView.tsx",
+  "consultantAppointment": "Caktimi i konsulentit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "constructorRef": "Kontraktori",
+  "role": "Roli",
+  "scope": "Fusha",
+  "currency": "Monedha",
+  "feeAmount": "Shuma e tarifës",
+  "startDate": "Data e fillimit",
+  "endDate": "Data e mbarimit",
+  "deliverables": "Rezultatet e dorëzueshme",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "active": "Aktiv",
+    "completed": "Përfunduar",
+    "terminated": "Ndërprerë"
+  }
+}

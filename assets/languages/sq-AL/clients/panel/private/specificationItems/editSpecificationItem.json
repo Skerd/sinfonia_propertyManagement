@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/editSpecificationItem.tsx",
+  "title": "Ndrysho Pozicionin",
+  "generalInfo": "Detajet",
+  "form": {
+    "specificationLabel": "Specifikimi",
+    "specificationPlaceholder": "Zgjidh specifikimin",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli i pozicionit",
+    "npkChapterLabel": "Kapitulli NPK",
+    "npkChapterPlaceholder": "p.sh. 211",
+    "npkPositionLabel": "Pozicioni NPK",
+    "npkPositionPlaceholder": "Kodi i pozicionit CRB",
+    "isRPositionLabel": "R-Pozicion (i lirë / jashtë CRB)",
+    "classificationStandardLabel": "Standardi i Klasifikimit",
+    "classificationStandardPlaceholder": "Zgjidh standardin",
+    "classificationCodeLabel": "Kodi i Klasifikimit",
+    "classificationCodePlaceholder": "Kodi eBKP-H / BKP",
+    "unitOfMeasureLabel": "Njësia Matëse",
+    "unitOfMeasurePlaceholder": "p.sh. m2",
+    "quantityLabel": "Sasia",
+    "quantityPlaceholder": "Sasia",
+    "unitPriceLabel": "Çmimi për Njësi",
+    "unitPricePlaceholder": "Çmimi për Njësi",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "sortIndexLabel": "Renditja",
+    "sortIndexPlaceholder": "Rendi i renditjes",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {"title": "Duke ruajtur...", "time": 3000},
+    "success": {"title": "U ruajt", "time": 3000},
+    "error": {"title": "Gabim", "time": 3000}
+  },
+  "formHeader": {"title": "Ndrysho Pozicionin", "description": ""},
+  "formButtons": {"cancel": "Anulo", "submit": "Ruaj"}
+}

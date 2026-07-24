@@ -11,6 +11,8 @@ export default createGenericCreatePage<CreateConstructionUpdateFormType>({
     defaultValues: (params) => ({
         project: params.get("projectId") ?? "",
         edifice: params.get("edificeId") ?? "",
+        milestone: params.get("milestoneId") ?? "",
+        scheduleTask: params.get("scheduleTaskId") ?? "",
         title: "",
         progressPercent: 0,
         updateDate: new Date().toISOString().split("T")[0],

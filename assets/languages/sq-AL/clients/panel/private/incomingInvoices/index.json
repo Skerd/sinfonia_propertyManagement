@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
+  "title": "Kutia AP",
+  "description": "Kreditorenbewirtschaftung — faturat hyrëse (skanim/OCR/QR)",
+  "createIncomingInvoice": "Shto Faturë Hyrëse",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "status": "Statusi"
+  }
+}

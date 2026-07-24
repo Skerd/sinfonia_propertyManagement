@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/center/sheetView/bimQuantitySheetView.tsx",
+  "bimQuantity": "Sasia BIM",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "bimModel": "Modeli BIM",
+  "ifcElementType": "Lloji i Elementit IFC",
+  "classificationCode": "Kodi i Klasifikimit",
+  "quantity": "Sasia",
+  "unitOfMeasure": "Njësia Matëse",
+  "notes": "Shënime"
+}

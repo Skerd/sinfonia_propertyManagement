@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/technology/index.tsx",
+  "title": "Teknologjia",
+  "description": "Platforma pas çdo transaksioni të Pronix — nga strukturimi i SPV-ve deri te shpërndarjet tremujore.",
+  "section1Title": "Arkitekturë e bazuar në SPV",
+  "section1Body": "Çdo pronë qëndron brenda një subjekti juridik të dedikuar. Të drejtat e pronësisë lidhen drejtpërdrejt me regjistrin shqiptar të pasurive të paluajtshme — jo premtime jashtë regjistrit.",
+  "section2Title": "Kontrata dixhitale",
+  "section2Body": "Rezervoni, nënshkruani dhe ndiqni pronësinë tuaj online. Letra atje ku e kërkon ligji; dixhitale kudo tjetër.",
+  "section3Title": "Shpërndarje tremujore",
+  "section3Body": "Qiraja hyn, shpenzimet zbriten dhe rendimenti neto shpërndahet sipas një kalendari fiks — pavarësisht nëse zotëroni të gjithë ndërtesën apo një kuotë të vetme.",
+  "section4Title": "Këshilltar prone me IA",
+  "section4Body": "Tregojini buxhetin, afatin dhe qëllimet tuaja. Merrni prona të përputhura me kthime të parashikuara, në çast.",
+  "section5Title": "Inteligjencë e transaksioneve në kohë reale",
+  "section5Body": "Pyesni çdo gjë për një pronë, tregun ose se si funksionon bashkëpronësia. Përgjigje reale nga të dhëna reale transaksionesh.",
+  "section6Title": "Paneli i investitorit",
+  "section6Body": "Ndiqni çdo kuotë, çdo shpërndarje, çdo dokument — në një vend të vetëm.",
+  "section7Title": "Shumëgjuhësh si parazgjedhje",
+  "section7Body": "Shqip, anglisht ose italisht. Platforma përgjigjet në gjuhën që përdorni."
+}

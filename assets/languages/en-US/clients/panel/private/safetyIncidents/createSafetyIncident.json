@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/createSafetyIncident.tsx",
+  "title": "Add Safety Incident",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "severityLabel": "Severity",
+    "severityPlaceholder": "Select severity",
+    "severity_low": "Low",
+    "severity_medium": "Medium",
+    "severity_high": "High",
+    "severity_critical": "Critical",
+    "locationLabel": "Location",
+    "locationPlaceholder": "Location",
+    "incidentDateLabel": "Incident Date",
+    "incidentDatePlaceholder": "Incident Date",
+    "personsInvolvedLabel": "Persons Involved",
+    "personsInvolvedPlaceholder": "Persons Involved",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "correctiveActionsLabel": "Corrective Actions",
+    "correctiveActionsPlaceholder": "Corrective Actions",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files",
+    "reportedByLabel": "Reported by",
+    "reportedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Safety Incident",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

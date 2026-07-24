@@ -37,6 +37,9 @@
   "dates": "Dates",
   "people": "People",
   "alerts": "Alerts",
+  "checklist": "Checklist",
+  "checklistTemplate": "Checklist Template",
+  "checklistResponsesJson": "Checklist Responses",
   "types": {
     "initial": "Initial",
     "followUp": "Follow-up",

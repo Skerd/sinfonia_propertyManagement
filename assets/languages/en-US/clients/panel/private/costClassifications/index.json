@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/index.tsx",
+  "title": "Cost Classification",
+  "description": "Swiss cost-standard reference data (eBKP-H / BKP / NPK / SIA)",
+  "createCostClassification": "Add Classification",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "standard": "Standard",
+    "code": "Code",
+    "title": "Title",
+    "active": "Active"
+  }
+}

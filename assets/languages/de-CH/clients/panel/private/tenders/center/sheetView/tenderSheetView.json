@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/center/sheetView/tenderSheetView.tsx",
+  "tender": "Ausschreibung",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "specification": "Leistungsverzeichnis (LV)",
+  "title": "Bezeichnung",
+  "trades": "Gewerke",
+  "submissionDeadline": "Eingabetermin",
+  "openingDate": "Öffnungsdatum",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "draft": "Entwurf",
+    "published": "Veröffentlicht",
+    "closing": "Wird geschlossen",
+    "closed": "Geschlossen",
+    "awarded": "Vergeben",
+    "cancelled": "Storniert"
+  }
+}

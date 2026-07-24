@@ -82,7 +82,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
         updateRow: (id: string | number, patch: Partial<UnitCost>) => void;
     } | null>(null);
 
-    const handleDelete = (cost: UnitCost, response?: DeletedData & Partial<UnitCost>) => {
+    const handleDelete = (cost: UnitCost, response?: DeletedData) => {
         if (response?.deletedAt != null || response?.deletedBy != null) {
             listRef.current?.updateRow?.(cost._id, {
                 deletedAt: response.deletedAt,
@@ -101,7 +101,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
     };
 
     const handleRestore = (cost: UnitCost) => {
-        listRef.current?.updateRow?.(cost._id, { deletedAt: undefined, deletedBy: undefined });
+        listRef.current?.updateRow?.(cost._id, { deletedAt: undefined, deletedBy: undefined } as Partial<UnitCost>);
         if (!!sheetCost) {
             setSheetCost({
                 ...sheetCost,

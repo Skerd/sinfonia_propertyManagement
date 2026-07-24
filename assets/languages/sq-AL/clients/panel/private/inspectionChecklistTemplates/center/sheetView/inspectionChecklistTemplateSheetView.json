@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
+  "inspectionChecklistTemplate": "Modeli i listës së inspektimit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "trade": "Zanati",
+  "stage": "Faza",
+  "description": "Përshkrimi",
+  "itemsJson": "Artikujt e listës kontrolluese",
+  "notes": "Shënime",
+  "statuses": {
+    "active": "Aktiv",
+    "archived": "Arkivuar"
+  }
+}

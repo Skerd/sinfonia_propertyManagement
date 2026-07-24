@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/sheetView/warrantySheetView.tsx",
+  "warranty": "Garancia",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "unit": "Njësia",
+  "startDate": "Data e fillimit",
+  "endDate": "Data e mbarimit",
+  "retentionAmount": "Shuma e ndalesës",
+  "currency": "Monedha",
+  "retentionReleaseDate": "Data e lirimit të ndalesës",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "active": "Aktiv",
+    "expired": "Skaduar",
+    "void": "I pavlefshëm"
+  }
+}

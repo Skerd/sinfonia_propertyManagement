@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/editSpecificationItem.tsx",
+  "title": "Edit Position",
+  "generalInfo": "Details",
+  "form": {
+    "specificationLabel": "Specification",
+    "specificationPlaceholder": "Select specification",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Position title",
+    "npkChapterLabel": "NPK Chapter",
+    "npkChapterPlaceholder": "e.g. 211",
+    "npkPositionLabel": "NPK Position",
+    "npkPositionPlaceholder": "CRB position code",
+    "isRPositionLabel": "R-Position (free / not in CRB)",
+    "classificationStandardLabel": "Classification Standard",
+    "classificationStandardPlaceholder": "Select standard",
+    "classificationCodeLabel": "Classification Code",
+    "classificationCodePlaceholder": "eBKP-H / BKP code",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitPriceLabel": "Unit Price",
+    "unitPricePlaceholder": "Unit Price",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {"title": "Saving...", "time": 3000},
+    "success": {"title": "Saved", "time": 3000},
+    "error": {"title": "Error", "time": 3000}
+  },
+  "formHeader": {"title": "Edit Position", "description": ""},
+  "formButtons": {"cancel": "Cancel", "submit": "Save"}
+}

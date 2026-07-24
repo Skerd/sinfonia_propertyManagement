@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/createContractorInvoice.tsx",
+  "title": "Add Invoice",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "constructionContractLabel": "Contract",
+    "constructionContractPlaceholder": "Select contract",
+    "invoiceNumberLabel": "Invoice No.",
+    "invoiceNumberPlaceholder": "Invoice number",
+    "invoiceDateLabel": "Invoice Date",
+    "invoiceDatePlaceholder": "Invoice date",
+    "dueDateLabel": "Due Date",
+    "dueDatePlaceholder": "Due date",
+    "grossAmountLabel": "Gross",
+    "grossAmountPlaceholder": "Amount",
+    "netAmountLabel": "Net",
+    "netAmountPlaceholder": "Amount",
+    "vatAmountLabel": "VAT",
+    "vatAmountPlaceholder": "Amount",
+    "retentionHeldLabel": "Retention Held",
+    "retentionHeldPlaceholder": "Amount",
+    "bkpAccountCodeLabel": "BKP Account",
+    "bkpAccountCodePlaceholder": "e.g. 211",
+    "qrBillReferenceLabel": "QR-Bill Ref",
+    "qrBillReferencePlaceholder": "QR reference",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Select source",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Invoice",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/editMaintenancePlan.tsx",
+  "title": "Ndrysho Planin",
+  "generalInfo": "Detajet",
+  "form": {
+    "assetLabel": "Aseti",
+    "assetPlaceholder": "Zgjidh asetin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "planTypeLabel": "Lloji i Planit",
+    "planTypePlaceholder": "Zgjidh llojin",
+    "intervalDaysLabel": "Intervali (ditë)",
+    "intervalDaysPlaceholder": "p.sh. 90",
+    "nextDueAtLabel": "Afati i Ardhshëm",
+    "nextDueAtPlaceholder": "Afati",
+    "responsiblePartyLabel": "Përgjegjësi",
+    "responsiblePartyPlaceholder": "Përgjegjësi",
+    "activeLabel": "Aktiv",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Planin",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

@@ -37,6 +37,12 @@
   "expenditureLine": "Rreshti",
   "form": {
     "addFile": "Shto skedar",
+    "boqItemLabel": "Artikulli i BOQ-së",
+    "boqItemPlaceholder": "Zgjidh artikullin e BOQ-së",
+    "constructorLabel": "Konstruktori",
+    "constructorPlaceholder": "Zgjidh konstruktorin",
+    "costCommitmentLabel": "Angazhimi i kostos",
+    "costCommitmentPlaceholder": "Zgjidh angazhimin e kostos",
     "currencyLabel": "Monedha",
     "currencyPlaceholder": "Zgjidh monedhën",
     "edificeLabel": "Ndërtesa",
@@ -46,7 +52,7 @@
     "filesSelected": "skedarë të zgjedhur",
     "floorLabel": "Kati",
     "floorPlaceholder": "Zgjidh katin",
-    "idLabel": "Id",
+    "idLabel": "ID",
     "invoiceMediaLabel": "Dokumentet e faturës",
     "invoiceNumberLabel": "Fatura / referenca #",
     "newFilesLabel": "Shto skedarë",
@@ -119,5 +125,5 @@
   "quantity": "Sasia",
   "selectCategory": "Zgjidh kategorinë",
   "selectUnit": "Zgjidh njësinë",
-  "title": "Title"
+  "title": "Ndrysho koston e njësisë"
 }

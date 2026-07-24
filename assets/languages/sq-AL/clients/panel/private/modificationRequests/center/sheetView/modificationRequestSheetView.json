@@ -17,7 +17,7 @@
   "constructionType": "Lloji i ndërtimit",
   "architectApproval": "Arkitekt",
   "engineerApproval": "Inxhinier",
-  "ceoApproval": "CEO",
+  "ceoApproval": "Drejtor Ekzekutiv",
   "finance": "Financa",
   "financeDetails": "Detajet e financave",
   "financeCompleted": "Financa e përfunduar",
@@ -104,7 +104,7 @@
   "types": {
     "initial": "Fillestare",
     "followUp": "Përcjellja",
-    "final": "Final",
+    "final": "Përfundimtar",
     "routine": "Rutinë",
     "complaint": "Ankesa",
     "preSale": "Para-shitje",

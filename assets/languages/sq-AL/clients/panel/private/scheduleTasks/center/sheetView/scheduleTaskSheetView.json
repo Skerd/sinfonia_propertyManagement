@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/sheetView/scheduleTaskSheetView.tsx",
+  "failedTitle": "Ngarkimi i detyrës dështoi",
+  "failedDescription": "Diçka shkoi keq gjatë ngarkimit të kësaj detyre. Klikoni për të riprovuar.",
+  "failedTooltipDescription": "Klikoni për të riprovuar marrjen e të dhënave.",
+  "scheduleTask": "Detyrë plani",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "milestone": "Momenti kyç",
+  "status": "Statusi",
+  "assignee": "Përgjegjësi",
+  "percentComplete": "Progresi %",
+  "plannedStart": "Fillimi i planifikuar",
+  "plannedEnd": "Mbarimi i planifikuar",
+  "actualStart": "Fillimi aktual",
+  "actualEnd": "Mbarimi aktual",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "media": "Media",
+  "none": "Asnjë",
+  "statuses": {
+    "planned": "E planifikuar",
+    "in_progress": "Në proces",
+    "completed": "E përfunduar",
+    "delayed": "E vonuar",
+    "cancelled": "E anuluar"
+  }
+}

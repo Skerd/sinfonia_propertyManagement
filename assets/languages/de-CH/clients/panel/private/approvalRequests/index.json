@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/index.tsx",
+  "title": "Freigabeanträge",
+  "description": "Freigabeanträge über Workflows gesteuert",
+  "createApprovalRequest": "Antrag hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "documentType": "Dokumenttyp",
+    "status": "Status"
+  }
+}

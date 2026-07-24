@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/index.tsx",
+  "title": "Milestones",
+  "description": "Project milestones and delivery gates",
+  "createMilestone": "New Milestone",
+  "noData": "No milestones found",
+  "failTitle": "Failed to load milestones",
+  "failDescription": "An error occurred while loading milestones. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "project": "Project",
+    "edifice": "Building",
+    "status": "Status",
+    "weightPercent": "Weight %",
+    "plannedStart": "Planned Start",
+    "plannedEnd": "Planned End",
+    "actualStart": "Actual Start",
+    "actualEnd": "Actual End",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "in_progress": "In Progress",
+        "completed": "Completed",
+        "delayed": "Delayed",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

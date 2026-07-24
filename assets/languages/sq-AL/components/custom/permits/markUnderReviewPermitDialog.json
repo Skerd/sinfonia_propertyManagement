@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/markUnderReviewPermitDialog.tsx",
+  "dialogTitle": "Shëno në shqyrtim",
+  "dialogDescription": "Shëno këtë leje të dërguar si në shqyrtim nga autoriteti.",
+  "cancel": "Anulo",
+  "submit": "Shëno në shqyrtim"
+}

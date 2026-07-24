@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/sections/constructionProgressSection.tsx",
+  "title": "Ecuria e ndërtimit",
+  "completeLabel": "e përfunduar",
+  "updatesTitle": "Përditësimet e fundit nga kantieri",
+  "milestonePlanned": "E planifikuar",
+  "milestoneInProgress": "Në proces",
+  "milestoneCompleted": "E përfunduar",
+  "milestoneDelayed": "E vonuar"
+}

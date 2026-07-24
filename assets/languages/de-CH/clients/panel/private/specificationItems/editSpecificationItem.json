@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/editSpecificationItem.tsx",
+  "title": "Position bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "specificationLabel": "Leistungsverzeichnis",
+    "specificationPlaceholder": "LV auswählen",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Positionsbezeichnung",
+    "npkChapterLabel": "NPK-Kapitel",
+    "npkChapterPlaceholder": "z.B. 211",
+    "npkPositionLabel": "NPK-Position",
+    "npkPositionPlaceholder": "CRB-Positionscode",
+    "isRPositionLabel": "R-Position (frei / nicht im CRB)",
+    "classificationStandardLabel": "Kostenstandard",
+    "classificationStandardPlaceholder": "Standard auswählen",
+    "classificationCodeLabel": "Kostencode",
+    "classificationCodePlaceholder": "eBKP-H / BKP-Code",
+    "unitOfMeasureLabel": "Masseinheit",
+    "unitOfMeasurePlaceholder": "z.B. m2",
+    "quantityLabel": "Menge",
+    "quantityPlaceholder": "Menge",
+    "unitPriceLabel": "Einheitspreis",
+    "unitPricePlaceholder": "Einheitspreis",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "sortIndexLabel": "Sortierindex",
+    "sortIndexPlaceholder": "Sortierreihenfolge",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {"title": "Wird gespeichert...", "time": 3000},
+    "success": {"title": "Gespeichert", "time": 3000},
+    "error": {"title": "Fehler", "time": 3000}
+  },
+  "formHeader": {"title": "Position bearbeiten", "description": ""},
+  "formButtons": {"cancel": "Abbrechen", "submit": "Speichern"}
+}

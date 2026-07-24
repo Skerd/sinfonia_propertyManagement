@@ -1,0 +1,60 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/editConstructionContract.tsx",
+  "title": "Ndrysho Construction Contract",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "workPackageLabel": "Paketa e punës",
+    "workPackagePlaceholder": "Zgjidh work package",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktori",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "contractValueLabel": "Vlera e kontratës",
+    "contractValuePlaceholder": "Vlera e kontratës",
+    "retentionPercentLabel": "Përqindja e ndalesës",
+    "retentionPercentPlaceholder": "Përqindja e ndalesës",
+    "performanceBondLabel": "Garancia e performancës",
+    "performanceBondPlaceholder": "Garancia e performancës",
+    "paymentTermsLabel": "Kushtet e pagesës",
+    "paymentTermsPlaceholder": "Kushtet e pagesës",
+    "startDateLabel": "Data e fillimit",
+    "startDatePlaceholder": "Data e fillimit",
+    "endDateLabel": "Data e mbarimit",
+    "endDatePlaceholder": "Data e mbarimit",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Construction Contract",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

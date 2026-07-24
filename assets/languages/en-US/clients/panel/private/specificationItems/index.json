@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/index.tsx",
+  "title": "LV Positions",
+  "description": "Leistungsverzeichnis positions (NPK / R-positions)",
+  "createSpecificationItem": "Add Position",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "npkPosition": "NPK Position",
+    "status": "Status"
+  }
+}

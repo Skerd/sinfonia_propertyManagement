@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/approvePermitDialog.tsx",
+  "dialogTitle": "Mirato lejen",
+  "dialogDescription": "Mirato këtë leje. Opsionalisht cakto një datë skadimi dhe shto shënime.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale të miratimit",
+  "expiresAtLabel": "Data e skadimit",
+  "cancel": "Anulo",
+  "submit": "Mirato"
+}

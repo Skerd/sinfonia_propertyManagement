@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/index.tsx",
+  "title": "Rreshtat e Likuiditetit",
+  "description": "Rreshta të planifikuar/aktualë hyrje & dalje",
+  "createLiquidityLine": "Shto Rresht",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "plan": "Plani",
+    "direction": "Drejtimi"
+  }
+}

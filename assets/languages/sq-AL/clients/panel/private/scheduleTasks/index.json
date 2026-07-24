@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/index.tsx",
+  "title": "Detyrat e planit",
+  "description": "Aktivitetet e programit dhe orari i punimeve",
+  "createScheduleTask": "Detyrë e re",
+  "noData": "Nuk u gjetën detyra plani",
+  "failTitle": "Ngarkimi i detyrave të planit dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të detyrave të planit. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërkoni ose shtoni filtra...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "milestone": "Momenti kyç",
+    "status": "Statusi",
+    "assignee": "Përgjegjësi",
+    "percentComplete": "Progresi %",
+    "plannedStart": "Fillimi i planifikuar",
+    "plannedEnd": "Mbarimi i planifikuar",
+    "actualStart": "Fillimi aktual",
+    "actualEnd": "Mbarimi aktual",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "planned": "E planifikuar",
+        "in_progress": "Në proces",
+        "completed": "E përfunduar",
+        "delayed": "E vonuar",
+        "cancelled": "E anuluar"
+      }
+    }
+  }
+}

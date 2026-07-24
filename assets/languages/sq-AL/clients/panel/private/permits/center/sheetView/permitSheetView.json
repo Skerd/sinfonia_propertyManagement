@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/center/sheetView/permitSheetView.tsx",
+  "failedTitle": "Dështoi ngarkimi i lejes",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit të kësaj leje. Klikoni për të provuar sërish.",
+  "failedTooltipDescription": "Klikoni për të rifreskuar të dhënat.",
+  "none": "Asnjë",
+  "permit": "Leja",
+  "overview": "Përmbledhje",
+  "description": "Përshkrimi",
+  "name": "Referenca",
+  "title": "Titulli",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "status": "Statusi",
+  "permitType": "Lloji",
+  "authority": "Autoriteti",
+  "referenceNumber": "Nr. Referencës",
+  "submittedAt": "Dorëzuar",
+  "approvedAt": "Miratuar",
+  "expiresAt": "Skadon",
+  "notes": "Shënime",
+  "media": "Media",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dorëzuar",
+    "under_review": "Në Shqyrtim",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "expired": "Skaduar"
+  },
+  "permitTypes": {
+    "building": "Ndërtimi",
+    "excavation": "Gërmimi",
+    "environmental": "Mjedisore",
+    "fire": "Zjarri",
+    "utility": "Shërbime Komunale",
+    "occupancy": "Përdorimi",
+    "zoning": "Zonimi",
+    "other": "Tjetër"
+  }
+}

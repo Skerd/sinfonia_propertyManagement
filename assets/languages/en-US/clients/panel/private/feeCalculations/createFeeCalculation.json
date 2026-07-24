@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/createFeeCalculation.tsx",
+  "title": "Add Fee Calc",
+  "generalInfo": "Details",
+  "form": {
+    "consultantAppointmentLabel": "Consultant Appointment",
+    "consultantAppointmentPlaceholder": "Select appointment",
+    "basisAmountLabel": "Basis Amount",
+    "basisAmountPlaceholder": "Basis amount",
+    "feePercentLabel": "Fee Percent",
+    "feePercentPlaceholder": "e.g. 12.5",
+    "adjustmentFactorLabel": "Adjustment Factor",
+    "adjustmentFactorPlaceholder": "e.g. 1.0",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Fee Calc",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

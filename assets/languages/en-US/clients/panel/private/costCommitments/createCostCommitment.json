@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/createCostCommitment.tsx",
+  "title": "Add Cost Commitment",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "Select budget",
+    "constructorLabel": "Constructor",
+    "constructorPlaceholder": "Select constructor",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "committedAmountLabel": "Committed Amount",
+    "committedAmountPlaceholder": "Committed Amount",
+    "retentionPercentLabel": "Retention Percent",
+    "retentionPercentPlaceholder": "Retention Percent",
+    "issuedAtLabel": "Issued At",
+    "issuedAtPlaceholder": "Issued At",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Cost Commitment",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/editLiquidityLine.tsx",
+  "title": "Position bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Plan auswählen",
+    "periodLabel": "Periode",
+    "periodPlaceholder": "Periode",
+    "directionLabel": "Richtung",
+    "directionPlaceholder": "Richtung auswählen",
+    "sourceLabel": "Quelle",
+    "sourcePlaceholder": "Quelle auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "plannedAmountLabel": "Geplanter Betrag",
+    "plannedAmountPlaceholder": "Betrag",
+    "actualAmountLabel": "Ist-Betrag",
+    "actualAmountPlaceholder": "Betrag",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Position bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

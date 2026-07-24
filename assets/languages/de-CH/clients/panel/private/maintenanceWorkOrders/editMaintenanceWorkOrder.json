@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/editMaintenanceWorkOrder.tsx",
+  "title": "Auftrag bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Plan auswählen",
+    "assetLabel": "Anlage",
+    "assetPlaceholder": "Anlage auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "typeLabel": "Typ",
+    "typePlaceholder": "Typ auswählen",
+    "assigneeLabel": "Zugewiesen",
+    "assigneePlaceholder": "Zuweisen auswählen",
+    "costEstimateLabel": "Kostenschätzung",
+    "costEstimatePlaceholder": "Betrag",
+    "actualCostLabel": "Ist-Kosten",
+    "actualCostPlaceholder": "Betrag",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "dueDateLabel": "Fälligkeit",
+    "dueDatePlaceholder": "Fälligkeit",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Auftrag bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

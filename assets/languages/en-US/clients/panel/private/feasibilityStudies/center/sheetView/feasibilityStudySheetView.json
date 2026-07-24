@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/sheetView/feasibilityStudySheetView.tsx",
+  "feasibilityStudy": "Feasibility Study",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "landParcel": "Land Parcel",
+  "assumptions": "Assumptions",
+  "currency": "Currency",
+  "softCostEstimate": "Soft Cost Estimate",
+  "hardCostEstimate": "Hard Cost Estimate",
+  "residualValue": "Residual Value",
+  "irrPercent": "IRR %",
+  "decision": "Decision",
+  "decisionNotes": "Decision Notes",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  },
+  "decidedBy": "Decided by",
+  "decidedAt": "Decided at"
+}

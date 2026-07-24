@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
+  "title": "Ndrysho Handover Package",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidh njësia",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "omManualsCompleteLabel": "Manualet O&M të plotësuara",
+    "asBuiltCompleteLabel": "As-Built i plotësuar",
+    "keysTransferredLabel": "Çelësat e dorëzuar",
+    "trainingCompleteLabel": "Trajnimi i përfunduar",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Handover Package",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

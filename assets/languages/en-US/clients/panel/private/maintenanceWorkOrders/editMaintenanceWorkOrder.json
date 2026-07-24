@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/editMaintenanceWorkOrder.tsx",
+  "title": "Edit Work Order",
+  "generalInfo": "Details",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Select plan",
+    "assetLabel": "Asset",
+    "assetPlaceholder": "Select asset",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "typeLabel": "Type",
+    "typePlaceholder": "Select type",
+    "assigneeLabel": "Assignee",
+    "assigneePlaceholder": "Select assignee",
+    "costEstimateLabel": "Cost Estimate",
+    "costEstimatePlaceholder": "Amount",
+    "actualCostLabel": "Actual Cost",
+    "actualCostPlaceholder": "Amount",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "dueDateLabel": "Due Date",
+    "dueDatePlaceholder": "Due date",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Work Order",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

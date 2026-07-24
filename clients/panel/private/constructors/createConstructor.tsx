@@ -23,6 +23,10 @@ export default createGenericCreatePage<CreateConstructorFormSurface>({
             description: data.description,
             website: data.website,
             vat: data.vat,
+            partyType: data.partyType,
+            trades: data.trades,
+            insuranceExpiry: data.insuranceExpiry,
+            performanceScore: data.performanceScore,
             addresses: (data.addresses || []).map((address) => ({
                 street: address.street,
                 postalCode: address.postalCode,

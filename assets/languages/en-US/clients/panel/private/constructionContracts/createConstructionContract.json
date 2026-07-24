@@ -1,0 +1,60 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/createConstructionContract.tsx",
+  "title": "Add Construction Contract",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "workPackageLabel": "Work Package",
+    "workPackagePlaceholder": "Select work package",
+    "constructorLabel": "Constructor",
+    "constructorPlaceholder": "Select constructor",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency",
+    "contractValueLabel": "Contract Value",
+    "contractValuePlaceholder": "Contract Value",
+    "retentionPercentLabel": "Retention Percent",
+    "retentionPercentPlaceholder": "Retention Percent",
+    "performanceBondLabel": "Performance Bond",
+    "performanceBondPlaceholder": "Performance Bond",
+    "paymentTermsLabel": "Payment Terms",
+    "paymentTermsPlaceholder": "Payment Terms",
+    "startDateLabel": "Start Date",
+    "startDatePlaceholder": "Start Date",
+    "endDateLabel": "End Date",
+    "endDatePlaceholder": "End Date",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "New files"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Construction Contract",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/editLiquidityPlan.tsx",
+  "title": "Plan bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "horizonStartLabel": "Horizont-Start",
+    "horizonStartPlaceholder": "Start",
+    "horizonEndLabel": "Horizont-Ende",
+    "horizonEndPlaceholder": "Ende",
+    "granularityLabel": "Granularität",
+    "granularityPlaceholder": "Granularität auswählen",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Plan bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

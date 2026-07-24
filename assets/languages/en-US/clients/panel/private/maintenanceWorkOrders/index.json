@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/index.tsx",
+  "title": "Work Orders",
+  "description": "Maintenance work orders (FM)",
+  "createMaintenanceWorkOrder": "Add Work Order",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/createFeasibilityStudy.tsx",
+  "title": "Shto Feasibility Study",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "landParcelLabel": "Parcela e tokës",
+    "landParcelPlaceholder": "Zgjidh land parcel",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "assumptionsLabel": "Supozimet",
+    "assumptionsPlaceholder": "Supozimet",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "softCostEstimateLabel": "Vlerësimi i kostove indirekte",
+    "softCostEstimatePlaceholder": "Vlerësimi i kostove indirekte",
+    "hardCostEstimateLabel": "Vlerësimi i kostove direkte",
+    "hardCostEstimatePlaceholder": "Vlerësimi i kostove direkte",
+    "residualValueLabel": "Vlera e mbetur",
+    "residualValuePlaceholder": "Vlera e mbetur",
+    "irrPercentLabel": "IRR (%)",
+    "irrPercentPlaceholder": "IRR (%)",
+    "decisionLabel": "Vendimi",
+    "decisionPlaceholder": "Vendimi",
+    "decisionNotesLabel": "Shënime vendimi",
+    "decisionNotesPlaceholder": "Shënime vendimi",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "decidedByLabel": "Vendosur nga",
+    "decidedByPlaceholder": "Zgjidh përdoruesin",
+    "decidedAtLabel": "Vendosur më",
+    "decidedAtPlaceholder": "Zgjidh datën"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Feasibility Study",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

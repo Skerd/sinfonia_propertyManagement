@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx",
+  "title": "Fee Calculations",
+  "description": "Honorarberechnung — SIA-norm fee calculations",
+  "createFeeCalculation": "Add Fee Calc",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "status": "Status"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/rejectPermitDialog.tsx",
+  "dialogTitle": "Reject permit",
+  "dialogDescription": "Reject this permit. Its status will change to rejected.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional rejection reason",
+  "cancel": "Cancel",
+  "submit": "Reject"
+}

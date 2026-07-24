@@ -37,6 +37,12 @@
   "expenditureLine": "Line",
   "form": {
     "addFile": "Add file",
+    "boqItemLabel": "BOQ item",
+    "boqItemPlaceholder": "Select BOQ item",
+    "constructorLabel": "Constructor",
+    "constructorPlaceholder": "Select constructor",
+    "costCommitmentLabel": "Cost commitment",
+    "costCommitmentPlaceholder": "Select cost commitment",
     "currencyLabel": "Currency",
     "currencyPlaceholder": "Select currency",
     "edificeLabel": "Edifice",

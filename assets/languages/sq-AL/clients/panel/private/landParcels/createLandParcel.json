@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
+  "title": "Shto Land Parcel",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "cadastralReferenceLabel": "Referenca kadastrale",
+    "cadastralReferencePlaceholder": "Referenca kadastrale",
+    "areaSqmLabel": "Sipërfaqja (m²)",
+    "areaSqmPlaceholder": "Sipërfaqja (m²)",
+    "zoningLabel": "Zonimi",
+    "zoningPlaceholder": "Zonimi",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "acquisitionCostLabel": "Kosto e blerjes",
+    "acquisitionCostPlaceholder": "Kosto e blerjes",
+    "dueDiligenceStatusLabel": "Statusi i Due Diligence",
+    "dueDiligenceStatusPlaceholder": "Statusi i Due Diligence",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Land Parcel",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

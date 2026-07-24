@@ -23,7 +23,11 @@
     "commissions": "Komisionet",
     "paymentPlans": "Këstet e planit të pagesës",
     "rentalPayments": "Pagesat e qirasë",
-    "unitCosts": "Kostot e njësive"
+    "unitCosts": "Kostot e njësive",
+    "boqItems": "Zërat e BOQ",
+    "costCommitments": "Angazhimet e kostos",
+    "progressClaims": "Kërkesat e progresit",
+    "permits": "Lejet"
   },
   "preview": {
     "sales": "Shitjet",
@@ -31,6 +35,10 @@
     "paymentPlans": "Këstet e planit të pagesës",
     "rentalPayments": "Pagesat e qirasë",
     "unitCosts": "Kostot e njësive",
+    "boqItems": "Zërat e BOQ",
+    "costCommitments": "Angazhimet e kostos",
+    "progressClaims": "Kërkesat e progresit",
+    "permits": "Lejet",
     "rows": "{count} rreshta"
   }
 }

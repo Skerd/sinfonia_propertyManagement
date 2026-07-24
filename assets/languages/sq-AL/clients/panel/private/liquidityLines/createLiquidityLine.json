@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/createLiquidityLine.tsx",
+  "title": "Shto Rresht",
+  "generalInfo": "Detajet",
+  "form": {
+    "planLabel": "Plani",
+    "planPlaceholder": "Zgjidh planin",
+    "periodLabel": "Periudha",
+    "periodPlaceholder": "Periudha",
+    "directionLabel": "Drejtimi",
+    "directionPlaceholder": "Zgjidh drejtimin",
+    "sourceLabel": "Burimi",
+    "sourcePlaceholder": "Zgjidh burimin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "plannedAmountLabel": "Shuma e Planifikuar",
+    "plannedAmountPlaceholder": "Shuma",
+    "actualAmountLabel": "Shuma Aktuale",
+    "actualAmountPlaceholder": "Shuma",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Rresht",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

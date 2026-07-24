@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/center/sheetView/bimQuantitySheetView.tsx",
+  "bimQuantity": "BIM-Menge",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "bimModel": "BIM-Modell",
+  "ifcElementType": "IFC-Elementtyp",
+  "classificationCode": "Kostencode",
+  "quantity": "Menge",
+  "unitOfMeasure": "Masseinheit",
+  "notes": "Notizen"
+}

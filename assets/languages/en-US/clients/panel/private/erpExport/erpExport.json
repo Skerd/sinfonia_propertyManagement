@@ -23,7 +23,11 @@
     "commissions": "Commissions",
     "paymentPlans": "Payment Plan Installments",
     "rentalPayments": "Rental Payments",
-    "unitCosts": "Unit Costs"
+    "unitCosts": "Unit Costs",
+    "boqItems": "BOQ Items",
+    "costCommitments": "Cost Commitments",
+    "progressClaims": "Progress Claims",
+    "permits": "Permits"
   },
   "preview": {
     "sales": "Sales",
@@ -31,6 +35,10 @@
     "paymentPlans": "Payment Plan Installments",
     "rentalPayments": "Rental Payments",
     "unitCosts": "Unit Costs",
+    "boqItems": "BOQ Items",
+    "costCommitments": "Cost Commitments",
+    "progressClaims": "Progress Claims",
+    "permits": "Permits",
     "rows": "{count} rows"
   }
 }

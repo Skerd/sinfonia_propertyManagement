@@ -69,6 +69,7 @@ propertyManagement/
 | `dashboard` / `groupDashboard` | Analytics dashboards |
 | `agentReport` | Agent reports |
 | `overview` | Portfolio overview |
+| `systemMap` | Interactive architecture map (`/realEstate/systemmap`) |
 | `erpExport` | ERP export UI |
 
 ## Custom components

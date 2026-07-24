@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/index.tsx",
+  "title": "Ausschreibungen",
+  "description": "Ausschreibungen & Submissionskalender",
+  "createTender": "Ausschreibung hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "title": "Bezeichnung",
+    "status": "Status",
+    "submissionDeadline": "Eingabetermin"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/center/sheetView/consultantAppointmentSheetView.tsx",
+  "consultantAppointment": "Consultant Appointment",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "constructorRef": "Constructor",
+  "role": "Role",
+  "scope": "Scope",
+  "currency": "Currency",
+  "feeAmount": "Fee Amount",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "deliverables": "Deliverables",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "active": "Active",
+    "completed": "Completed",
+    "terminated": "Terminated"
+  }
+}

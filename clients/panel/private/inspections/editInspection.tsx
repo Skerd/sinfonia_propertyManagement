@@ -23,6 +23,7 @@ export default createGenericEditPage<Inspection, EditInspectionFormData>({
         nextInspectionDate: data.nextInspectionDate ? new Date(data.nextInspectionDate).toISOString().split("T")[0] : undefined,
         clientSignedAt: data.clientSignedAt ? new Date(data.clientSignedAt).toISOString().split("T")[0] : undefined,
         followUpInspection: (data.followUpInspection as any)?._id,
+        checklistTemplate: (data.checklistTemplate as any)?._id ?? data.checklistTemplate,
         findings: normalizeFindingsFromApi(data.findings as Record<string, unknown>),
         media: Array.isArray(data.media) ? data.media.map((m: any) => m._id || m).filter(Boolean) : [],
         clientSignatureMediaId: undefined,

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/center/sheetView/approvalRequestSheetView.tsx",
+  "approvalRequest": "Freigabeantrag",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "documentType": "Dokumenttyp",
+  "workflow": "Workflow",
+  "targetType": "Zieltyp",
+  "amount": "Betrag",
+  "currentStage": "Aktuelle Stufe",
+  "primaryDecision": "Primärentscheid",
+  "escalationDecision": "Eskalationsentscheid",
+  "notes": "Notizen",
+  "status": "Status",
+  "documentTypes": {
+    "budget": "Kostenvoranschlag",
+    "cost_estimate": "Kostenschätzung",
+    "contract": "Vertrag",
+    "variation_order": "Nachtrag",
+    "contractor_invoice": "Unternehmerrechnung",
+    "progress_claim": "Zahlungsantrag"
+  },
+  "statuses": {
+    "pending": "Ausstehend",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "cancelled": "Storniert"
+  },
+  "stages": {
+    "primary": "Primär",
+    "escalation": "Eskalation",
+    "done": "Erledigt"
+  },
+  "decisions": {
+    "pending": "Ausstehend",
+    "visaed": "Visiert",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/cancelMilestoneDialog.tsx",
+  "dialogTitle": "Anulo momentin kyç",
+  "dialogDescription": "Anulo këtë moment kyç. Kjo do ta ndalojë ndjekjen e tij si aktiv.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Arsye opsionale për anulimin",
+  "cancel": "Kthehu",
+  "submit": "Anulo momentin kyç"
+}

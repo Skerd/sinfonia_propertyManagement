@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/index.tsx",
+  "title": "FeasibilityStudy",
+  "description": "FeasibilityStudy register",
+  "createFeasibilityStudy": "Add FeasibilityStudy",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status",
+    "project": "Project"
+  }
+}

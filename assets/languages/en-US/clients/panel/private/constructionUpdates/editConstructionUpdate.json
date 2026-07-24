@@ -24,6 +24,10 @@
     "descriptionPlaceholder": "Describe construction progress",
     "edificeLabel": "Edifice",
     "edificePlaceholder": "Select edifice (optional)",
+    "milestoneLabel": "Milestone",
+    "milestonePlaceholder": "Select milestone (optional)",
+    "scheduleTaskLabel": "Schedule Task",
+    "scheduleTaskPlaceholder": "Select schedule task (optional)",
     "existingFiles": "Existing photos",
     "filesSelected": "photos selected",
     "newFiles": "Add new photos",
@@ -47,5 +51,5 @@
   },
   "generalInfo": "Update Details",
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
-  "title": "Title"
+  "title": "Edit Construction Update"
 }

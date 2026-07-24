@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/index.tsx",
+  "title": "Documents & Drawings",
+  "description": "Project document and drawing register",
+  "createProjectDocument": "Add Document",
+  "noData": "No documents found",
+  "failTitle": "Failed to load documents",
+  "failDescription": "An error occurred while loading documents. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "statusLabel": "Status",
+  "fields": {
+    "name": "Reference",
+    "project": "Project",
+    "title": "Title",
+    "documentNumber": "Document No.",
+    "discipline": "Discipline",
+    "documentType": "Type",
+    "status": "Status",
+    "revision": "Revision",
+    "isAsBuilt": "As-Built",
+    "createdAt": "Created At",
+    "updatedAt": "Updated At",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "for_review": "For Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "superseded": "Superseded"
+      }
+    }
+  }
+}

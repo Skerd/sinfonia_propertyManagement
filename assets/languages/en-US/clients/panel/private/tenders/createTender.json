@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/createTender.tsx",
+  "title": "Add Tender",
+  "generalInfo": "Details",
+  "removeTrade": "Remove trade",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice",
+    "specificationLabel": "Specification (LV)",
+    "specificationPlaceholder": "Select specification",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "tradesLabel": "Trades",
+    "tradesPlaceholder": "Add a trade",
+    "submissionDeadlineLabel": "Submission Deadline",
+    "submissionDeadlinePlaceholder": "Select deadline",
+    "openingDateLabel": "Opening Date",
+    "openingDatePlaceholder": "Select opening date",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {"title": "Saving...", "time": 3000},
+    "success": {"title": "Saved", "time": 3000},
+    "error": {"title": "Error", "time": 3000}
+  },
+  "formHeader": {"title": "Add Tender", "description": ""},
+  "formButtons": {"cancel": "Cancel", "submit": "Save"}
+}

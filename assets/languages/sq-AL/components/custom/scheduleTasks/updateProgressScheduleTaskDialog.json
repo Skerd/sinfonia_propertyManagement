@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/updateProgressScheduleTaskDialog.tsx",
+  "dialogTitle": "Përditëso progresin",
+  "dialogDescription": "Përditësoni përqindjen e përfundimit për këtë detyrë.",
+  "percentCompleteLabel": "Progresi %",
+  "percentCompletePlaceholder": "0 - 100",
+  "cancel": "Anulo",
+  "submit": "Përditëso progresin"
+}

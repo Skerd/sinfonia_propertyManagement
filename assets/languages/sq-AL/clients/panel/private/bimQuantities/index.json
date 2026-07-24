@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/index.tsx",
+  "title": "Sasitë BIM",
+  "description": "Nxjerrja e sasive e mapuar në kodet eBKP-H",
+  "createBimQuantity": "Shto Sasi",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "classificationCode": "Kodi i Klasifikimit"
+  }
+}

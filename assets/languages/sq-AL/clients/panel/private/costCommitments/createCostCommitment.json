@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/createCostCommitment.tsx",
+  "title": "Shto Cost Commitment",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "budgetLabel": "Buxheti",
+    "budgetPlaceholder": "Zgjidh buxheti",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktori",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedha",
+    "committedAmountLabel": "Shuma e angazhuar",
+    "committedAmountPlaceholder": "Shuma e angazhuar",
+    "retentionPercentLabel": "Përqindja e ndalesës",
+    "retentionPercentPlaceholder": "Përqindja e ndalesës",
+    "issuedAtLabel": "Lëshuar më",
+    "issuedAtPlaceholder": "Lëshuar më",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Cost Commitment",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

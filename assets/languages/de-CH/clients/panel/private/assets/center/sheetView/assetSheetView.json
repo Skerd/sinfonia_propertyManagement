@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/center/sheetView/assetSheetView.tsx",
+  "asset": "Anlage",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "edifice": "Gebäude",
+  "category": "Kategorie",
+  "manufacturer": "Hersteller",
+  "serial": "Seriennummer",
+  "installDate": "Installationsdatum",
+  "notes": "Notizen",
+  "lifecycleStatus": "Lebenszyklusstatus",
+  "lifecycleStatuses": {
+    "planned": "Geplant",
+    "active": "Aktiv",
+    "maintenance": "Wartung",
+    "retired": "Ausser Betrieb"
+  }
+}

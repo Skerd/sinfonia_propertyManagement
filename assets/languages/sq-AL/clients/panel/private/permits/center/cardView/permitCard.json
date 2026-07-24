@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/center/cardView/permitCard.tsx",
+  "statusLabel": "Statusi",
+  "fields": {
+    "project": "Projekti",
+    "permitType": "Lloji i Lejes",
+    "authority": "Autoriteti",
+    "referenceNumber": "Nr. Referencës",
+    "expiresAt": "Skadon",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Dorëzuar",
+        "under_review": "Në Shqyrtim",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "expired": "Skaduar"
+      },
+      "permitType": {
+        "building": "Ndërtimi",
+        "excavation": "Gërmimi",
+        "environmental": "Mjedisore",
+        "fire": "Zjarri",
+        "utility": "Shërbime Komunale",
+        "occupancy": "Përdorimi",
+        "zoning": "Zonimi",
+        "other": "Tjetër"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/createIncomingInvoice.tsx",
+  "title": "Shto Faturë Hyrëse",
+  "generalInfo": "Detajet",
+  "form": {
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "extractedSupplierNameLabel": "Furnitori",
+    "extractedSupplierNamePlaceholder": "Emri i furnitorit",
+    "extractedIbanLabel": "IBAN",
+    "extractedIbanPlaceholder": "IBAN",
+    "extractedAmountLabel": "Shuma",
+    "extractedAmountPlaceholder": "Shuma",
+    "extractedCurrencyCodeLabel": "Kodi i Monedhës",
+    "extractedCurrencyCodePlaceholder": "p.sh. CHF",
+    "extractedInvoiceNumberLabel": "Nr. Faturës",
+    "extractedInvoiceNumberPlaceholder": "Numri i faturës",
+    "extractedInvoiceDateLabel": "Data e Faturës",
+    "extractedInvoiceDatePlaceholder": "Data e faturës",
+    "extractedDueDateLabel": "Afati",
+    "extractedDueDatePlaceholder": "Afati",
+    "extractedQrReferenceLabel": "Referenca QR",
+    "extractedQrReferencePlaceholder": "Referenca QR",
+    "matchedConstructorLabel": "Kontraktori i Përputhur",
+    "matchedConstructorPlaceholder": "Zgjidh kontraktorin",
+    "matchedContractLabel": "Kontrata e Përputhur",
+    "matchedContractPlaceholder": "Zgjidh kontratën",
+    "bkpAccountCodeLabel": "Llogaria BKP",
+    "bkpAccountCodePlaceholder": "p.sh. 211",
+    "currencyLabel": "Monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Faturë Hyrëse",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

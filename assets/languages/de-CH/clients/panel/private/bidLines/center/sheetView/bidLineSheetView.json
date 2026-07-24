@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/center/sheetView/bidLineSheetView.tsx",
+  "bidLine": "Angebotsposition",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "bid": "Angebot",
+  "specificationItem": "LV-Position",
+  "title": "Bezeichnung",
+  "quantity": "Menge",
+  "unitPrice": "Einheitspreis",
+  "lineTotal": "Positionstotal",
+  "currency": "Währung",
+  "alternativeNote": "Alternativ-Notiz"
+}

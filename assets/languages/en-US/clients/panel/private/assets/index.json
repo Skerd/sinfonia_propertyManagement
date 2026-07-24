@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/index.tsx",
+  "title": "Assets",
+  "description": "Building component / equipment register (FM)",
+  "createAsset": "Add Asset",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "lifecycleStatus": "Lifecycle Status"
+  }
+}

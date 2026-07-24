@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/sheetView/progressClaimSheetView.tsx",
+  "progressClaim": "Kërkesa për progres",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "constructionContract": "Kontrata e ndërtimit",
+  "claimPeriodStart": "Fillimi i periudhës së kërkesës",
+  "claimPeriodEnd": "Fundi i periudhës së kërkesës",
+  "currency": "Monedha",
+  "amount": "Shuma",
+  "certifiedAmount": "Shuma e certifikuar",
+  "retentionHeld": "Ndalesa e mbajtur",
+  "retentionReleased": "Ndalesa e liruar",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dorëzuar",
+    "certified": "Certifikuar",
+    "paid": "Paguar",
+    "rejected": "Refuzuar"
+  }
+}

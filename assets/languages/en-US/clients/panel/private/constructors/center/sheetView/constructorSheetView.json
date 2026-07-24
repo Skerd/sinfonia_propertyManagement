@@ -16,6 +16,10 @@
   "phoneNumber": "Phone Number",
   "email": "Email",
   "website": "Website",
+  "partyType": "Party Type",
+  "trades": "Trades",
+  "insuranceExpiry": "Insurance Expiry",
+  "performanceScore": "Performance Score",
   "edifices": "Edifices",
   "address": "Address",
   "howToReach": "How to reach us",
@@ -28,5 +32,14 @@
     "latitudeLabel": "Latitude",
     "longitudeLabel": "Longitude",
     "logoLabel": "Logo"
+  },
+  "partyTypes": {
+    "contractor": "Contractor",
+    "architect": "Architect",
+    "engineer": "Engineer",
+    "qs": "Quantity Surveyor",
+    "pm": "Project Manager",
+    "surveyor": "Surveyor",
+    "other": "Other"
   }
 }

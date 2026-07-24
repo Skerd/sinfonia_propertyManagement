@@ -31,11 +31,11 @@
     "startDateLabel": "Start Date",
     "statusLabel": "Status",
     "tenantLabel": "Tenant",
-    "tenantPlaceholder": "Tenant Placeholder",
+    "tenantPlaceholder": "Select tenant",
     "terminationDateLabel": "Termination Date",
     "terminationReasonLabel": "Termination Reason",
     "unitLabel": "Unit",
-    "unitPlaceholder": "Unit Placeholder"
+    "unitPlaceholder": "Select unit"
   },
   "formButtons": {
     "cancel": "Cancel",
@@ -47,5 +47,5 @@
   },
   "generalInfo": "Lease Details",
   "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
-  "title": "Title"
+  "title": "Edit Lease"
 }

@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/index.tsx",
+  "title": "Anlagen",
+  "description": "Bauteil-/Anlagenregister (FM)",
+  "createAsset": "Anlage hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "title": "Bezeichnung",
+    "lifecycleStatus": "Lebenszyklusstatus"
+  }
+}

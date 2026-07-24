@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/editIncomingInvoice.tsx",
+  "title": "Eingangsrechnung bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "extractedSupplierNameLabel": "Lieferant",
+    "extractedSupplierNamePlaceholder": "Lieferantenname",
+    "extractedIbanLabel": "IBAN",
+    "extractedIbanPlaceholder": "IBAN",
+    "extractedAmountLabel": "Betrag",
+    "extractedAmountPlaceholder": "Betrag",
+    "extractedCurrencyCodeLabel": "Währungscode",
+    "extractedCurrencyCodePlaceholder": "z.B. CHF",
+    "extractedInvoiceNumberLabel": "Rechnungsnr.",
+    "extractedInvoiceNumberPlaceholder": "Rechnungsnummer",
+    "extractedInvoiceDateLabel": "Rechnungsdatum",
+    "extractedInvoiceDatePlaceholder": "Rechnungsdatum",
+    "extractedDueDateLabel": "Fälligkeit",
+    "extractedDueDatePlaceholder": "Fälligkeitsdatum",
+    "extractedQrReferenceLabel": "QR-Referenz",
+    "extractedQrReferencePlaceholder": "QR-Referenz",
+    "matchedConstructorLabel": "Zugeordneter Unternehmer",
+    "matchedConstructorPlaceholder": "Unternehmer auswählen",
+    "matchedContractLabel": "Zugeordneter Vertrag",
+    "matchedContractPlaceholder": "Vertrag auswählen",
+    "bkpAccountCodeLabel": "BKP-Konto",
+    "bkpAccountCodePlaceholder": "z.B. 211",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Eingangsrechnung bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

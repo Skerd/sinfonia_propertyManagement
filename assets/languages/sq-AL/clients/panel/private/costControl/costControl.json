@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costControl/costControl.tsx",
+  "title": "Kontrolli i Kostove",
+  "description": "Baukostenkontrolle — vlerësuar vs angazhuar vs faturuar vs paguar sipas llogarive BKP.",
+  "computedAt": "Llogaritur më",
+  "noProjectTitle": "Asnjë projekt i zgjedhur",
+  "noProjectDescription": "Hap kontrollin e kostove nga një projekt për të parë librin BKP.",
+  "noRowsTitle": "Ende pa kosto të koduara BKP",
+  "noRowsDescription": "Kodo zërat BOQ dhe faturat me llogari BKP për të mbushur librin.",
+  "byBkpTitle": "Sipas llogarisë BKP",
+  "bkpCode": "BKP",
+  "titleCol": "Titulli",
+  "estimated": "Vlerësuar",
+  "committed": "Angazhuar",
+  "invoiced": "Faturuar",
+  "certified": "Certifikuar",
+  "paid": "Paguar",
+  "variance": "Variacioni",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri."
+}

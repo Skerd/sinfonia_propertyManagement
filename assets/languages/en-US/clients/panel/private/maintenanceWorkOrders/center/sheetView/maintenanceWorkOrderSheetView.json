@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/center/sheetView/maintenanceWorkOrderSheetView.tsx",
+  "maintenanceWorkOrder": "Work Order",
+  "overview": "Overview",
+  "name": "Reference",
+  "title": "Title",
+  "plan": "Plan",
+  "asset": "Asset",
+  "type": "Type",
+  "assignee": "Assignee",
+  "costEstimate": "Cost Estimate",
+  "actualCost": "Actual Cost",
+  "dueDate": "Due Date",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "open": "Open",
+    "assigned": "Assigned",
+    "in_progress": "In Progress",
+    "done": "Done",
+    "verified": "Verified",
+    "closed": "Closed",
+    "cancelled": "Cancelled"
+  },
+  "types": {
+    "preventive": "Preventive",
+    "corrective": "Corrective",
+    "renovation": "Renovation"
+  }
+}

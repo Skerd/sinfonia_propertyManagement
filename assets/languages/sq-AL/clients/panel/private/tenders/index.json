@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/index.tsx",
+  "title": "Tenderët",
+  "description": "Ausschreibungen — tenderimi & kalendari i dorëzimeve",
+  "createTender": "Shto Tender",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "status": "Statusi",
+    "submissionDeadline": "Afati"
+  }
+}

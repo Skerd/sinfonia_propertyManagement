@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/index.tsx",
+  "title": "Tenders",
+  "description": "Ausschreibungen — tendering & submission calendar",
+  "createTender": "Add Tender",
+  "noData": "No records found",
+  "failTitle": "Failed to load",
+  "failDescription": "Please try again.",
+  "searchPlaceholder": "Search...",
+  "fields": {
+    "name": "Reference",
+    "title": "Title",
+    "status": "Status",
+    "submissionDeadline": "Deadline"
+  }
+}

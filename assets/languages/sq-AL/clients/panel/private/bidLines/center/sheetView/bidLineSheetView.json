@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/center/sheetView/bidLineSheetView.tsx",
+  "bidLine": "Rreshti i Ofertës",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "bid": "Oferta",
+  "specificationItem": "Pozicioni LV",
+  "title": "Titulli",
+  "quantity": "Sasia",
+  "unitPrice": "Çmimi për Njësi",
+  "lineTotal": "Totali i Rreshtit",
+  "currency": "Monedha",
+  "alternativeNote": "Shënim Alternativ"
+}

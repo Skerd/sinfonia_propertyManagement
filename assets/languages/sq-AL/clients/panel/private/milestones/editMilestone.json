@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/editMilestone.tsx",
+  "title": "Ndrysho momentin kyç",
+  "editTitle": "Ndrysho momentin kyç",
+  "editDescription": "Përditësoni këtë moment kyç të projektit",
+  "errorTitle": "Ngarkimi i momentit kyç dështoi",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të momentit kyç. Ju lutemi provoni përsëri.",
+  "generalInfo": "Detajet e momentit kyç",
+  "form": {
+    "_idLabel": "ID e regjistrimit",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "p.sh. Themeli i përfunduar",
+    "weightPercentLabel": "Pesha %",
+    "weightPercentPlaceholder": "0 - 100",
+    "plannedStartLabel": "Fillimi i planifikuar",
+    "plannedStartPlaceholder": "Zgjidhni datën",
+    "plannedEndLabel": "Mbarimi i planifikuar",
+    "plannedEndPlaceholder": "Zgjidhni datën",
+    "predecessorsLabel": "Paraardhësit",
+    "predecessorsPlaceholder": "Zgjidhni momentet kyçe paraardhëse",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkruani këtë moment kyç",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime të brendshme",
+    "mediaLabel": "Media",
+    "existingFiles": "Media ekzistuese",
+    "newFiles": "Shtoni media të reja"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke përditësuar momentin kyç",
+      "time": 3000
+    },
+    "success": {
+      "title": "Momenti kyç u përditësua!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Momenti kyç nuk u përditësua, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho momentin kyç",
+    "description": "Përditësoni këtë moment kyç të projektit"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

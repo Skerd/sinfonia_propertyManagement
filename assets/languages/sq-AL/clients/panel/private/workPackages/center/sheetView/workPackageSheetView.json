@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/sheetView/workPackageSheetView.tsx",
+  "workPackage": "Paketa e punës",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "constructorRef": "Kontraktori",
+  "trade": "Zanati",
+  "description": "Përshkrimi",
+  "plannedStart": "Fillimi i planifikuar",
+  "plannedEnd": "Fundi i planifikuar",
+  "notes": "Shënime",
+  "statuses": {
+    "planned": "Planifikuar",
+    "active": "Aktiv",
+    "completed": "Përfunduar",
+    "cancelled": "Anuluar"
+  }
+}

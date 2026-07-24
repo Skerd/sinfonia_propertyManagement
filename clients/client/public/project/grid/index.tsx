@@ -12,6 +12,7 @@ import CtaSection from "@propertyManagementModule/clients/client/public/home/sec
 import OpenProjectGridToolbarSection from "@propertyManagementModule/clients/client/public/project/sections/openProjectGridToolbarSection.tsx";
 import OpenProjectGridCardsSection from "@propertyManagementModule/clients/client/public/project/sections/openProjectGridCardsSection.tsx";
 import OpenProjectUnitsFilterPanel from "@propertyManagementModule/clients/client/public/project/components/openProjectUnitsFilterPanel.tsx";
+import ConstructionProgressSection from "@propertyManagementModule/clients/client/public/project/sections/constructionProgressSection.tsx";
 import {useProjectId} from "@propertyManagementModule/clients/client/public/project/shared/useProjectId.ts";
 import {MarketingProjectSingleResponse} from "@propertyManagementModule/clients/client/public/project/shared/openProjectShell.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
@@ -134,6 +135,9 @@ function ProjectGridPage(props: ProjectGridPageProps) {
                             priceBounds={priceBounds}
                             sortKey={sortKey}
                         />
+                    </PublicSection>
+                    <PublicSection nodeId="construction-progress">
+                        <ConstructionProgressSection projectId={projectId!} />
                     </PublicSection>
                     <OpenProjectUnitsFilterPanel
                         open={filterPanelOpen}

@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/center/sheetView/specificationSheetView.tsx",
+  "specification": "Leistungsverzeichnis",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "workPackage": "Arbeitspaket",
+  "standard": "Standard",
+  "title": "Bezeichnung",
+  "currency": "Währung",
+  "totalEstimated": "Geschätztes Total",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "status": "Status",
+  "standards": {
+    "npk": "NPK",
+    "custom": "Benutzerdefiniert"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "issued": "Ausgestellt",
+    "tender_ready": "Ausschreibungsbereit",
+    "awarded": "Vergeben",
+    "archived": "Archiviert"
+  }
+}

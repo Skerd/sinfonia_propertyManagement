@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/index.tsx",
+  "title": "Ausschreibungs-Einladungen",
+  "description": "Eingeladene Unternehmer pro Ausschreibung (Bauplattform-Zugang)",
+  "createTenderInvitation": "Einladung hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "name": "Referenz",
+    "tender": "Ausschreibung",
+    "constructorRef": "Unternehmer",
+    "status": "Status"
+  }
+}

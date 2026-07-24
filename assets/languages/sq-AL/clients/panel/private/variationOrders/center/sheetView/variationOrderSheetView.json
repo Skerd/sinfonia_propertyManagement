@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/center/sheetView/variationOrderSheetView.tsx",
+  "variationOrder": "Urdhri i ndryshimit",
+  "overview": "Përmbledhje",
+  "media": "Bashkëngjitje",
+  "name": "Referenca",
+  "title": "Titulli",
+  "status": "Statusi",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "constructionContract": "Kontrata e ndërtimit",
+  "description": "Përshkrimi",
+  "currency": "Monedha",
+  "costImpact": "Ndikimi në kosto",
+  "timeImpactDays": "Ditët e ndikimit në kohë",
+  "notes": "Shënime",
+  "statuses": {
+    "pending_architect": "Në pritje të arkitektit",
+    "pending_qs": "Në pritje të vlerësuesit të sasive",
+    "pending_client": "Në pritje të klientit",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar",
+    "cancelled": "Anuluar"
+  },
+  "modificationRequest": "Kërkesa e modifikimit"
+}

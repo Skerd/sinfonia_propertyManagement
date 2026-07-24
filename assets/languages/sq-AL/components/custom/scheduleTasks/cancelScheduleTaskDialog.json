@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/cancelScheduleTaskDialog.tsx",
+  "dialogTitle": "Anulo detyrën",
+  "dialogDescription": "Anulo këtë detyrë. Kjo do ta ndalojë ndjekjen e saj si aktive.",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Arsye opsionale për anulimin",
+  "cancel": "Kthehu",
+  "submit": "Anulo detyrën"
+}

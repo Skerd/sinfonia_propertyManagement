@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/center/sheetView/liquidityLineSheetView.tsx",
+  "liquidityLine": "Rreshti i Likuiditetit",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "plan": "Plani",
+  "period": "Periudha",
+  "direction": "Drejtimi",
+  "source": "Burimi",
+  "title": "Titulli",
+  "plannedAmount": "Shuma e Planifikuar",
+  "actualAmount": "Shuma Aktuale",
+  "currency": "Monedha",
+  "notes": "Shënime",
+  "directions": {
+    "inflow": "Hyrje",
+    "outflow": "Dalje"
+  },
+  "sources": {
+    "owner_contract": "Kontratë Pronari",
+    "payment_plan": "Plan Pagese",
+    "cost_commitment": "Angazhim",
+    "contractor_invoice": "Faturë Kontraktori",
+    "fee": "Tarifë",
+    "manual": "Manual"
+  }
+}

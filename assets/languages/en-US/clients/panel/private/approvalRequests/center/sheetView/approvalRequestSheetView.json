@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/center/sheetView/approvalRequestSheetView.tsx",
+  "approvalRequest": "Approval Request",
+  "overview": "Overview",
+  "name": "Reference",
+  "documentType": "Document Type",
+  "workflow": "Workflow",
+  "targetType": "Target Type",
+  "amount": "Amount",
+  "currentStage": "Current Stage",
+  "primaryDecision": "Primary Decision",
+  "escalationDecision": "Escalation Decision",
+  "notes": "Notes",
+  "status": "Status",
+  "documentTypes": {
+    "budget": "Budget",
+    "cost_estimate": "Cost Estimate",
+    "contract": "Contract",
+    "variation_order": "Variation Order",
+    "contractor_invoice": "Contractor Invoice",
+    "progress_claim": "Progress Claim"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  },
+  "stages": {
+    "primary": "Primary",
+    "escalation": "Escalation",
+    "done": "Done"
+  },
+  "decisions": {
+    "pending": "Pending",
+    "visaed": "Visaed",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  }
+}

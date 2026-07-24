@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/editPermit.tsx",
+  "title": "Ndrysho Lejen",
+  "description": "Përditëso detajet e lejes",
+  "generalInfo": "Detajet e Lejes",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli i lejes",
+    "permitTypeLabel": "Lloji i Lejes",
+    "permitTypePlaceholder": "Zgjidhni llojin",
+    "typeBuilding": "Ndërtimi",
+    "typeExcavation": "Gërmimi",
+    "typeEnvironmental": "Mjedisore",
+    "typeFire": "Zjarri",
+    "typeUtility": "Shërbime Komunale",
+    "typeOccupancy": "Përdorimi",
+    "typeZoning": "Zonimi",
+    "typeOther": "Tjetër",
+    "authorityLabel": "Autoriteti",
+    "authorityPlaceholder": "Organi rregullator",
+    "referenceNumberLabel": "Numri i Referencës",
+    "referenceNumberPlaceholder": "Referenca zyrtare",
+    "expiresAtLabel": "Skadon më",
+    "expiresAtPlaceholder": "Zgjidhni datën",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime të brendshme",
+    "mediaLabel": "Dokumente",
+    "existingFiles": "Dokumente ekzistuese",
+    "newFiles": "Shto dokumente"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur lejen",
+      "time": 3000
+    },
+    "success": {
+      "title": "Leja u ruajt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Leja nuk u ruajt",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Lejen",
+    "description": "Përditëso detajet e lejes"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

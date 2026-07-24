@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/editRfi.tsx",
+  "title": "Ndrysho Rfi",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "questionLabel": "Pyetja",
+    "questionPlaceholder": "Pyetja",
+    "answerLabel": "Përgjigjja",
+    "answerPlaceholder": "Përgjigjja",
+    "dueDateLabel": "Data e afatit",
+    "dueDatePlaceholder": "Data e afatit",
+    "relatedDocumentLabel": "Dokumenti i lidhur",
+    "relatedDocumentPlaceholder": "Zgjidh related document",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime",
+    "mediaLabel": "Bashkëngjitje",
+    "existingFiles": "Skedarët ekzistues",
+    "newFiles": "Skedarë të rinj",
+    "askedByLabel": "Pyetur nga",
+    "askedByPlaceholder": "Zgjidh përdoruesin",
+    "answeredByLabel": "Përgjigjur nga",
+    "answeredByPlaceholder": "Zgjidh përdoruesin"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Rfi",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

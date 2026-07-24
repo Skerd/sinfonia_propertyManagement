@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/sheetView/maintenancePlanSheetView.tsx",
+  "maintenancePlan": "Wartungsplan",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "asset": "Anlage",
+  "planType": "Plantyp",
+  "intervalDays": "Intervall (Tage)",
+  "nextDueAt": "Nächste Fälligkeit",
+  "responsibleParty": "Verantwortlich",
+  "notes": "Notizen",
+  "planTypes": {
+    "preventive": "Präventiv",
+    "statutory": "Gesetzlich",
+    "renovation": "Renovation"
+  }
+}

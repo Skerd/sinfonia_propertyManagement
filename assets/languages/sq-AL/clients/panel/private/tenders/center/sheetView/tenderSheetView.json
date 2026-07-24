@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/center/sheetView/tenderSheetView.tsx",
+  "tender": "Tenderi",
+  "overview": "Përmbledhje",
+  "name": "Referenca",
+  "project": "Projekti",
+  "edifice": "Ndërtesa",
+  "specification": "Specifikimi (LV)",
+  "title": "Titulli",
+  "trades": "Zanatet",
+  "submissionDeadline": "Afati i Dorëzimit",
+  "openingDate": "Data e Hapjes",
+  "description": "Përshkrimi",
+  "notes": "Shënime",
+  "status": "Statusi",
+  "statuses": {
+    "draft": "Draft",
+    "published": "Publikuar",
+    "closing": "Duke u mbyllur",
+    "closed": "Mbyllur",
+    "awarded": "Dhënë",
+    "cancelled": "Anuluar"
+  }
+}

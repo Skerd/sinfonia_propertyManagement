@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/sheetView/progressClaimSheetView.tsx",
+  "progressClaim": "Progress Claim",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "constructionContract": "Construction Contract",
+  "claimPeriodStart": "Claim Period Start",
+  "claimPeriodEnd": "Claim Period End",
+  "currency": "Currency",
+  "amount": "Amount",
+  "certifiedAmount": "Certified Amount",
+  "retentionHeld": "Retention Held",
+  "retentionReleased": "Retention Released",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "certified": "Certified",
+    "paid": "Paid",
+    "rejected": "Rejected"
+  }
+}

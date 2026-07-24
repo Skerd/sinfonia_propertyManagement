@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/createWorkPackage.tsx",
+  "title": "Shto Work Package",
+  "generalInfo": "Detajet",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projekti",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesa",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktori",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "tradeLabel": "Zanati",
+    "tradePlaceholder": "Zanati",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "plannedStartLabel": "Fillimi i planifikuar",
+    "plannedStartPlaceholder": "Fillimi i planifikuar",
+    "plannedEndLabel": "Fundi i planifikuar",
+    "plannedEndPlaceholder": "Fundi i planifikuar",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Work Package",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

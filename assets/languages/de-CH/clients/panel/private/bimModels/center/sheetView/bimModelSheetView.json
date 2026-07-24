@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/center/sheetView/bimModelSheetView.tsx",
+  "bimModel": "BIM-Modell",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "project": "Projekt",
+  "version": "Version",
+  "elementCount": "Elementanzahl",
+  "notes": "Notizen",
+  "importStatus": "Importstatus",
+  "importStatuses": {
+    "uploaded": "Hochgeladen",
+    "importing": "Importiert",
+    "imported": "Importiert",
+    "failed": "Fehlgeschlagen"
+  }
+}

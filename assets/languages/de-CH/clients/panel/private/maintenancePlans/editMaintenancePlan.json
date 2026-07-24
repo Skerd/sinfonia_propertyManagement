@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/editMaintenancePlan.tsx",
+  "title": "Plan bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "assetLabel": "Anlage",
+    "assetPlaceholder": "Anlage auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "planTypeLabel": "Plantyp",
+    "planTypePlaceholder": "Typ auswählen",
+    "intervalDaysLabel": "Intervall (Tage)",
+    "intervalDaysPlaceholder": "z.B. 90",
+    "nextDueAtLabel": "Nächste Fälligkeit",
+    "nextDueAtPlaceholder": "Fälligkeit",
+    "responsiblePartyLabel": "Verantwortlich",
+    "responsiblePartyPlaceholder": "Verantwortlich",
+    "activeLabel": "Aktiv",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Plan bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

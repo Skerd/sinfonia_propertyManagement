@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/index.tsx",
+  "title": "Rrjedhat e Miratimit",
+  "description": "Freigabeprozess — miratimi i dokumenteve financiare",
+  "createApprovalWorkflow": "Shto Rrjedhë",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ju lutem provoni përsëri.",
+  "searchPlaceholder": "Kërko...",
+  "fields": {
+    "name": "Referenca",
+    "documentType": "Lloji i Dokumentit",
+    "title": "Titulli",
+    "active": "Aktiv"
+  }
+}

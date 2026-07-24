@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/createTenderInvitation.tsx",
+  "title": "Shto Ftesë",
+  "generalInfo": "Detajet",
+  "form": {
+    "tenderLabel": "Tenderi",
+    "tenderPlaceholder": "Zgjidh tenderin",
+    "constructorLabel": "Kontraktori",
+    "constructorPlaceholder": "Zgjidh kontraktorin",
+    "invitedAtLabel": "Ftuar Më",
+    "invitedAtPlaceholder": "Zgjidh datën",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shto Ftesë",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

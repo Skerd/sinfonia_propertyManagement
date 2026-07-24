@@ -61,7 +61,7 @@ function InspectionSheetView({
 
     const deleteRestoreConfirmLabel = read.name && asInspection.name ? asInspection.name : undefined;
 
-    const editPath = resolvedUnitId && entityId ? buildInspectionEditPath(asInspection, resolvedUnitId, resolvedUnitName) : "";
+    const editPath = resolvedUnitId && entityId ? buildInspectionEditPath(asInspection) : "";
 
     if (!viewConfig) return null;
     if (!entityId) return null;

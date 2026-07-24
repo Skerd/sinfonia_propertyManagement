@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/center/sheetView/tenderSheetView.tsx",
+  "tender": "Tender",
+  "overview": "Overview",
+  "name": "Reference",
+  "project": "Project",
+  "edifice": "Edifice",
+  "specification": "Specification (LV)",
+  "title": "Title",
+  "trades": "Trades",
+  "submissionDeadline": "Submission Deadline",
+  "openingDate": "Opening Date",
+  "description": "Description",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "draft": "Draft",
+    "published": "Published",
+    "closing": "Closing",
+    "closed": "Closed",
+    "awarded": "Awarded",
+    "cancelled": "Cancelled"
+  }
+}

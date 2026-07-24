@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/editCostClassification.tsx",
+  "title": "Edit Classification",
+  "generalInfo": "Details",
+  "form": {
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Select standard",
+    "codeLabel": "Code",
+    "codePlaceholder": "e.g. C 2.1",
+    "parentCodeLabel": "Parent Code",
+    "parentCodePlaceholder": "e.g. C",
+    "levelLabel": "Level",
+    "levelPlaceholder": "Hierarchy level",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Title",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "activeLabel": "Active",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {"title": "Saving...", "time": 3000},
+    "success": {"title": "Saved", "time": 3000},
+    "error": {"title": "Error", "time": 3000}
+  },
+  "formHeader": {"title": "Edit Classification", "description": ""},
+  "formButtons": {"cancel": "Cancel", "submit": "Save"}
+}

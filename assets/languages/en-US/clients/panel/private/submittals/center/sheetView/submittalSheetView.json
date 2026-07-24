@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/sheetView/submittalSheetView.tsx",
+  "submittal": "Submittal",
+  "overview": "Overview",
+  "media": "Attachments",
+  "name": "Reference",
+  "title": "Title",
+  "status": "Status",
+  "project": "Project",
+  "edifice": "Edifice",
+  "specReference": "Spec Reference",
+  "description": "Description",
+  "relatedDocument": "Related Document",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "revise_and_resubmit": "Revise And Resubmit",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "submittedBy": "Submitted by",
+  "reviewedBy": "Reviewed by"
+}

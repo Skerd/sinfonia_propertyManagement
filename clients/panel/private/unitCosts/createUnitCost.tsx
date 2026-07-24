@@ -36,6 +36,9 @@ export default createGenericCreatePage<CreateUnitCostFormData>({
         invoiceNumber: undefined,
         vendorName: undefined,
         relatedModificationRequest: undefined,
+        constructorRef: undefined,
+        boqItem: undefined,
+        costCommitment: undefined,
         expenditureItems: [],
         invoiceMedia: undefined,
     }),
@@ -71,6 +74,9 @@ export default createGenericCreatePage<CreateUnitCostFormData>({
         if (data.invoiceNumber != null && data.invoiceNumber !== "") formData.append("invoiceNumber", data.invoiceNumber);
         if (data.vendorName != null && data.vendorName !== "") formData.append("vendorName", data.vendorName);
         if (data.relatedModificationRequest) formData.append("relatedModificationRequest", data.relatedModificationRequest);
+        if (data.constructorRef) formData.append("constructorRef", data.constructorRef);
+        if (data.boqItem) formData.append("boqItem", data.boqItem);
+        if (data.costCommitment) formData.append("costCommitment", data.costCommitment);
 
         const lines = Array.isArray(data.expenditureItems) ? data.expenditureItems : [];
         const rowIndices: number[] = [];

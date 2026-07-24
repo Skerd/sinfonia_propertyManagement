@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/index.tsx",
+  "title": "Momentet kyçe",
+  "description": "Momentet kyçe të projektit dhe pikat e dorëzimit",
+  "createMilestone": "Moment kyç i ri",
+  "noData": "Nuk u gjetën momente kyçe",
+  "failTitle": "Ngarkimi i momenteve kyçe dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të momenteve kyçe. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërkoni ose shtoni filtra...",
+  "fields": {
+    "name": "Referenca",
+    "title": "Titulli",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "status": "Statusi",
+    "weightPercent": "Pesha %",
+    "plannedStart": "Fillimi i planifikuar",
+    "plannedEnd": "Mbarimi i planifikuar",
+    "actualStart": "Fillimi aktual",
+    "actualEnd": "Mbarimi aktual",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "!enums": {
+      "status": {
+        "planned": "I planifikuar",
+        "in_progress": "Në proces",
+        "completed": "I përfunduar",
+        "delayed": "I vonuar",
+        "cancelled": "I anuluar"
+      }
+    }
+  }
+}

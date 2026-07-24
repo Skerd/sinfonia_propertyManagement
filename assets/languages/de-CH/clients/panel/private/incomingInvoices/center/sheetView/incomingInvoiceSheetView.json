@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/sheetView/incomingInvoiceSheetView.tsx",
+  "incomingInvoice": "Eingangsrechnung",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "ocrStatus": "OCR-Status",
+  "extractedSupplierName": "Lieferant",
+  "extractedIban": "IBAN",
+  "extractedAmount": "Betrag",
+  "extractedCurrencyCode": "Währungscode",
+  "extractedInvoiceNumber": "Rechnungsnr.",
+  "extractedInvoiceDate": "Rechnungsdatum",
+  "extractedDueDate": "Fälligkeit",
+  "extractedQrReference": "QR-Referenz",
+  "matchedConstructor": "Zugeordneter Unternehmer",
+  "bkpAccountCode": "BKP-Konto",
+  "createdContractorInvoice": "Erstellte Rechnung",
+  "notes": "Notizen",
+  "status": "Status",
+  "statuses": {
+    "inbox": "Eingang",
+    "classified": "Klassifiziert",
+    "routed": "Weitergeleitet",
+    "posted": "Verbucht",
+    "rejected": "Abgelehnt"
+  },
+  "ocrStatuses": {
+    "pending": "Ausstehend",
+    "done": "Erledigt",
+    "failed": "Fehlgeschlagen"
+  }
+}

@@ -18,6 +18,13 @@
   "description": "Përshkrimi",
   "notes": "Shënime",
   "photos": "Fotot",
+  "trade": "Zeja",
+  "workPackage": "Paketa e punës",
+  "rootCause": "Shkaku rrënjësor",
+  "costImpact": "Impakti në kosto",
+  "isWarranty": "Në garanci",
+  "isDlp": "Brenda periudhës së përgjegjësisë për defekte",
+  "variationOrder": "Urdhëri i variacionit",
   "none": "Asnjë",
   "statuses": {
     "open": "Hapur",

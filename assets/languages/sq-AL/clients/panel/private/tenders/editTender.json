@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/editTender.tsx",
+  "title": "Ndrysho Tenderin",
+  "generalInfo": "Detajet",
+  "removeTrade": "Hiq zanatin",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidh projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
+    "specificationLabel": "Specifikimi (LV)",
+    "specificationPlaceholder": "Zgjidh specifikimin",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Titulli",
+    "tradesLabel": "Zanatet",
+    "tradesPlaceholder": "Shto një zanat",
+    "submissionDeadlineLabel": "Afati i Dorëzimit",
+    "submissionDeadlinePlaceholder": "Zgjidh afatin",
+    "openingDateLabel": "Data e Hapjes",
+    "openingDatePlaceholder": "Zgjidh datën e hapjes",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Përshkrimi",
+    "notesLabel": "Shënime",
+    "notesPlaceholder": "Shënime"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho Tenderin",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

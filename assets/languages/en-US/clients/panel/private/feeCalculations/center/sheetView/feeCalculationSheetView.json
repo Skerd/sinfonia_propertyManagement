@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/sheetView/feeCalculationSheetView.tsx",
+  "feeCalculation": "Fee Calculation",
+  "overview": "Overview",
+  "name": "Reference",
+  "consultantAppointment": "Consultant Appointment",
+  "basisAmount": "Basis Amount",
+  "feePercent": "Fee Percent",
+  "adjustmentFactor": "Adjustment Factor",
+  "totalFee": "Total Fee",
+  "currency": "Currency",
+  "notes": "Notes",
+  "status": "Status",
+  "statuses": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  }
+}
