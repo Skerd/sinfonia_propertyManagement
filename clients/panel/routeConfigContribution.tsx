@@ -27,6 +27,7 @@ import AllUnitTypeCategories from "@propertyManagementModule/clients/panel/priva
 import CreateConstructor from "@propertyManagementModule/clients/panel/private/constructors/createConstructor.tsx";
 import EditConstructor from "@propertyManagementModule/clients/panel/private/constructors/editConstructor.tsx";
 import AllConstructors from "@propertyManagementModule/clients/panel/private/constructors";
+import PropertyManagementConfigGate from "@propertyManagementModule/clients/panel/private/propertyManagementConfig";
 import AllModificationRequests from "@propertyManagementModule/clients/panel/private/modificationRequests";
 import CreateReservation from "@propertyManagementModule/clients/panel/private/reservations/createReservation.tsx";
 import AllReservations from "@propertyManagementModule/clients/panel/private/reservations";
@@ -235,6 +236,9 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
                 if (action === "create") return <CreateConstructor />;
                 if (action === "edit") return <EditConstructor entityId={constructorId} entityName={constructorName} />;
                 return <AllConstructors />;
+            }
+            if (resource === "propertyManagementConfig") {
+                return <PropertyManagementConfigGate />;
             }
             return undefined;
         }

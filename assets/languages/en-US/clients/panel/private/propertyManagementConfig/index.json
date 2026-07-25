@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
+  "title": "Sales & Handover",
+  "errors": {
+    "missingConfigId": "Could not load company settings."
+  }
+}

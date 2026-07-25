@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
+  "title": "Shitjet & Dorëzimi",
+  "generalInfo": "Portat e rrjedhës së punës",
+  "form": {
+    "requiresSaleApprovalLabel": "Kërko miratim të menaxherit kur krijohet një shitje",
+    "requiresHandoverPackageForHandoverLabel": "Kërko paketë dorëzimi të përfunduar para regjistrimit të dorëzimit"
+  },
+  "axios": {
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Shitjet & Dorëzimi",
+    "description": "Politika e shitjeve dhe dorëzimit për Real Estate në nivel kompanie."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
+}

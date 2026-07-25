@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
+  "title": "Shitjet & Dorëzimi",
+  "errors": {
+    "missingConfigId": "Cilësimet e kompanisë nuk u ngarkuan."
+  }
+}

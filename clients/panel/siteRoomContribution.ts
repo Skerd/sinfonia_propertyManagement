@@ -7,6 +7,7 @@ const propertyManagementSiteRoomContribution: SiteRoomContribution = {
         unitTypes: "unitTypes_configurations",
         unitTypeCategories: "unitTypeCategories_configurations",
         constructors: "constructors_configurations",
+        propertyManagementConfig: "propertyManagementConfig_configurations",
     },
 };
 

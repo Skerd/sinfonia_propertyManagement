@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
+  "title": "Sales & Handover",
+  "generalInfo": "Workflow gates",
+  "form": {
+    "requiresSaleApprovalLabel": "Require manager approval when creating a sale",
+    "requiresHandoverPackageForHandoverLabel": "Require a completed handover package before recording handover"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Sales & Handover",
+    "description": "Company-wide sales and handover policy for Real Estate."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
+}
