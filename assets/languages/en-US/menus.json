@@ -1,0 +1,278 @@
+{
+  "realEstate": {
+    "title": "Real Estate",
+    "systemMap": {
+      "title": "System Map"
+    },
+    "overview": {
+      "title": "Overview"
+    },
+    "dashboard": {
+      "title": "Dashboard"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "edifices": {
+      "title": "Edifices"
+    },
+    "floors": {
+      "title": "Floors"
+    },
+    "units": {
+      "title": "Units"
+    },
+    "inspections": {
+      "title": "Inspections"
+    },
+    "unitCosts": {
+      "title": "Unit costs"
+    },
+    "modificationRequests": {
+      "title": "Modification Requests"
+    },
+    "reservations": {
+      "title": "Reservations"
+    },
+    "sales": {
+      "title": "Sales"
+    },
+    "contractsHub": {
+      "title": "Contracts & Clients"
+    },
+    "paymentPlans": {
+      "title": "Payment Plans"
+    },
+    "constructors": {
+      "title": "Constructors"
+    },
+    "unitTypeCategories": {
+      "title": "Unit Type Categories"
+    },
+    "unitTypes": {
+      "title": "Unit Types"
+    },
+    "commissions": {
+      "title": "Commissions"
+    },
+    "leads": {
+      "title": "Leads"
+    },
+    "unitAvailability": {
+      "title": "Availability Calendar"
+    },
+    "ownersAndRentals": {
+      "title": "Owners & Rentals"
+    },
+    "rentalsHub": {
+      "title": "Rentals Hub"
+    },
+    "leases": {
+      "title": "Leases"
+    },
+    "rentalPayments": {
+      "title": "Rental Payments"
+    },
+    "constructionUpdates": {
+      "title": "Construction Updates"
+    },
+    "snags": {
+      "title": "Snagging List"
+    },
+    "development": {
+      "title": "Development"
+    },
+    "projectDocuments": {
+      "title": "Project Documents"
+    },
+    "permits": {
+      "title": "Permits"
+    },
+    "delivery": {
+      "title": "Delivery"
+    },
+    "cost": {
+      "title": "Cost Control"
+    },
+    "qualityHse": {
+      "title": "Quality & HSE"
+    },
+    "milestones": {
+      "title": "Milestones"
+    },
+    "scheduleTasks": {
+      "title": "Schedule Tasks"
+    },
+    "costClassifications": {
+      "title": "Cost Classifications"
+    },
+    "budgets": {
+      "title": "Budgets"
+    },
+    "boqItems": {
+      "title": "BOQ Items"
+    },
+    "estimateComparison": {
+      "title": "Estimate Comparison"
+    },
+    "tendering": {
+      "title": "Tendering"
+    },
+    "specifications": {
+      "title": "Specifications (LV)"
+    },
+    "specificationItems": {
+      "title": "LV Positions"
+    },
+    "tenders": {
+      "title": "Tenders"
+    },
+    "tenderInvitations": {
+      "title": "Tender Invitations"
+    },
+    "bids": {
+      "title": "Bids"
+    },
+    "bidLines": {
+      "title": "Bid Lines"
+    },
+    "costCommitments": {
+      "title": "Commitments / POs"
+    },
+    "workPackages": {
+      "title": "Work Packages"
+    },
+    "constructionContracts": {
+      "title": "Construction Contracts"
+    },
+    "progressClaims": {
+      "title": "Progress Claims"
+    },
+    "rfis": {
+      "title": "RFIs"
+    },
+    "submittals": {
+      "title": "Submittals"
+    },
+    "variationOrders": {
+      "title": "Variation Orders"
+    },
+    "landParcels": {
+      "title": "Land Parcels"
+    },
+    "feasibilityStudies": {
+      "title": "Feasibility Studies"
+    },
+    "siteDiaries": {
+      "title": "Site Diaries"
+    },
+    "safetyIncidents": {
+      "title": "Safety Incidents"
+    },
+    "warranties": {
+      "title": "Warranties / DLP"
+    },
+    "handoverPackages": {
+      "title": "Handover Packages"
+    },
+    "commissioningRecords": {
+      "title": "Commissioning"
+    },
+    "designStages": {
+      "title": "Design Stages"
+    },
+    "inspectionChecklistTemplates": {
+      "title": "Inspection Checklists"
+    },
+    "consultantAppointments": {
+      "title": "Consultant Appointments"
+    },
+    "bidComparison": {
+      "title": "Bid Comparison"
+    },
+    "financeApproval": {
+      "title": "Finance & Approval"
+    },
+    "approvalWorkflows": {
+      "title": "Approval Workflows"
+    },
+    "approvalRequests": {
+      "title": "Approval Requests"
+    },
+    "contractorInvoices": {
+      "title": "Contractor Invoices"
+    },
+    "incomingInvoices": {
+      "title": "AP Inbox"
+    },
+    "costControl": {
+      "title": "Cost Control"
+    },
+    "liquidityPlans": {
+      "title": "Liquidity Plans"
+    },
+    "liquidityLines": {
+      "title": "Liquidity Lines"
+    },
+    "feeCalculations": {
+      "title": "Fee Calculations"
+    },
+    "planMarkups": {
+      "title": "Plan Markups"
+    },
+    "cockpit": {
+      "title": "Cockpit"
+    },
+    "facilityMgmt": {
+      "title": "Facility Management"
+    },
+    "assets": {
+      "title": "Assets"
+    },
+    "maintenancePlans": {
+      "title": "Maintenance Plans"
+    },
+    "maintenanceWorkOrders": {
+      "title": "Work Orders"
+    },
+    "bimIntegrations": {
+      "title": "BIM & Integrations"
+    },
+    "bimModels": {
+      "title": "BIM Models"
+    },
+    "bimQuantities": {
+      "title": "BIM Quantities"
+    },
+    "agentReport": {
+      "title": "Agent Report"
+    },
+    "ownerPortal": {
+      "title": "Rentals Hub"
+    },
+    "roi": {
+      "title": "ROI Calculator"
+    },
+    "groupDashboard": {
+      "title": "Group Dashboard"
+    },
+    "erpExport": {
+      "title": "ERP Export"
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "groupDashboard": {
+      "title": "Group Dashboard"
+    },
+    "agentReport": {
+      "title": "Agent Report"
+    },
+    "roi": {
+      "title": "ROI Calculator"
+    },
+    "erpExport": {
+      "title": "ERP Export"
+    }
+  }
+}

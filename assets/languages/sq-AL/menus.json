@@ -1,0 +1,278 @@
+{
+  "realEstate": {
+    "title": "Pasuri të paluajtshme",
+    "systemMap": {
+      "title": "Harta e sistemit"
+    },
+    "overview": {
+      "title": "Vështrim i përgjithshëm"
+    },
+    "dashboard": {
+      "title": "Paneli"
+    },
+    "projects": {
+      "title": "Projektet"
+    },
+    "edifices": {
+      "title": "Ndërtesat"
+    },
+    "floors": {
+      "title": "Dyshemetë"
+    },
+    "units": {
+      "title": "Njësitë"
+    },
+    "inspections": {
+      "title": "Inspektimet"
+    },
+    "unitCosts": {
+      "title": "Kostot e njësisë"
+    },
+    "modificationRequests": {
+      "title": "Kërkesat për modifikim"
+    },
+    "reservations": {
+      "title": "Rezervimet"
+    },
+    "sales": {
+      "title": "Shitjet"
+    },
+    "contractsHub": {
+      "title": "Kontratat & Klientët"
+    },
+    "paymentPlans": {
+      "title": "Planet e Pagesave"
+    },
+    "constructors": {
+      "title": "Konstruktorët"
+    },
+    "unitTypeCategories": {
+      "title": "Kategoritë e llojeve të njësive"
+    },
+    "unitTypes": {
+      "title": "Llojet e njësive"
+    },
+    "commissions": {
+      "title": "Komisionet"
+    },
+    "leads": {
+      "title": "Drejtimet"
+    },
+    "unitAvailability": {
+      "title": "Kalendari i Disponueshmërisë"
+    },
+    "ownersAndRentals": {
+      "title": "Pronarë & Qira"
+    },
+    "rentalsHub": {
+      "title": "Qendra e Qirave"
+    },
+    "leases": {
+      "title": "Kontratat e Qirasë"
+    },
+    "rentalPayments": {
+      "title": "Pagesat e Qirasë"
+    },
+    "constructionUpdates": {
+      "title": "Përditësimet e Ndërtimit"
+    },
+    "snags": {
+      "title": "Lista e Defekteve"
+    },
+    "development": {
+      "title": "Zhvillimi"
+    },
+    "projectDocuments": {
+      "title": "Dokumentet e Projektit"
+    },
+    "permits": {
+      "title": "Lejet"
+    },
+    "delivery": {
+      "title": "Dorëzimi"
+    },
+    "cost": {
+      "title": "Kontrolli i Kostove"
+    },
+    "qualityHse": {
+      "title": "Cilësia & HSE"
+    },
+    "milestones": {
+      "title": "Pikat Kyçe"
+    },
+    "scheduleTasks": {
+      "title": "Detyrat e Programit"
+    },
+    "costClassifications": {
+      "title": "Klasifikimet e Kostos"
+    },
+    "budgets": {
+      "title": "Buxhetet"
+    },
+    "boqItems": {
+      "title": "BOQ"
+    },
+    "estimateComparison": {
+      "title": "Krahasimi i Vlerësimeve"
+    },
+    "tendering": {
+      "title": "Tenderimi"
+    },
+    "specifications": {
+      "title": "Specifikimet (LV)"
+    },
+    "specificationItems": {
+      "title": "Pozicionet e LV-së"
+    },
+    "tenders": {
+      "title": "Tenderët"
+    },
+    "tenderInvitations": {
+      "title": "Ftesat për Tender"
+    },
+    "bids": {
+      "title": "Ofertat"
+    },
+    "bidLines": {
+      "title": "Rreshtat e Ofertës"
+    },
+    "costCommitments": {
+      "title": "Angazhimet / PO"
+    },
+    "workPackages": {
+      "title": "Paketat e Punës"
+    },
+    "constructionContracts": {
+      "title": "Kontratat e Ndërtimit"
+    },
+    "progressClaims": {
+      "title": "Kërkesat e Progresit"
+    },
+    "rfis": {
+      "title": "RFI"
+    },
+    "submittals": {
+      "title": "Submittals"
+    },
+    "variationOrders": {
+      "title": "Urdhrat e Ndryshimit"
+    },
+    "landParcels": {
+      "title": "Parcelat"
+    },
+    "feasibilityStudies": {
+      "title": "Studimet e Fizibilitetit"
+    },
+    "siteDiaries": {
+      "title": "Ditari i Sheshit"
+    },
+    "safetyIncidents": {
+      "title": "Incidentet e Sigurisë"
+    },
+    "warranties": {
+      "title": "Garancitë / DLP"
+    },
+    "handoverPackages": {
+      "title": "Paketat e Dorëzimit"
+    },
+    "commissioningRecords": {
+      "title": "Komisionimi"
+    },
+    "designStages": {
+      "title": "Fazat e Projektimit"
+    },
+    "inspectionChecklistTemplates": {
+      "title": "Listat e Kontrollit"
+    },
+    "consultantAppointments": {
+      "title": "Emërimet e Konsulentëve"
+    },
+    "bidComparison": {
+      "title": "Krahasimi i Ofertave"
+    },
+    "financeApproval": {
+      "title": "Financa & Miratimi"
+    },
+    "approvalWorkflows": {
+      "title": "Rrjedhat e Miratimit"
+    },
+    "approvalRequests": {
+      "title": "Kërkesat për Miratim"
+    },
+    "contractorInvoices": {
+      "title": "Faturat e Kontraktorëve"
+    },
+    "incomingInvoices": {
+      "title": "Kutia AP"
+    },
+    "costControl": {
+      "title": "Kontrolli i Kostove"
+    },
+    "liquidityPlans": {
+      "title": "Planet e Likuiditetit"
+    },
+    "liquidityLines": {
+      "title": "Rreshtat e Likuiditetit"
+    },
+    "feeCalculations": {
+      "title": "Llogaritjet e Tarifave"
+    },
+    "planMarkups": {
+      "title": "Shënimet e Planit"
+    },
+    "cockpit": {
+      "title": "Kabina"
+    },
+    "facilityMgmt": {
+      "title": "Menaxhimi i Objektit"
+    },
+    "assets": {
+      "title": "Asetet"
+    },
+    "maintenancePlans": {
+      "title": "Planet e Mirëmbajtjes"
+    },
+    "maintenanceWorkOrders": {
+      "title": "Urdhrat e Punës"
+    },
+    "bimIntegrations": {
+      "title": "BIM & Integrime"
+    },
+    "bimModels": {
+      "title": "Modelet BIM"
+    },
+    "bimQuantities": {
+      "title": "Sasitë BIM"
+    },
+    "agentReport": {
+      "title": "Raporti i Agjentit"
+    },
+    "ownerPortal": {
+      "title": "Qendra e Qirave"
+    },
+    "roi": {
+      "title": "Llogaritësi ROI"
+    },
+    "groupDashboard": {
+      "title": "Paneli i Grupit"
+    },
+    "erpExport": {
+      "title": "Eksporti ERP"
+    }
+  },
+  "reports": {
+    "title": "Raportet",
+    "groupDashboard": {
+      "title": "Paneli i Grupit"
+    },
+    "agentReport": {
+      "title": "Raporti i Agjentit"
+    },
+    "roi": {
+      "title": "Llogaritësi ROI"
+    },
+    "erpExport": {
+      "title": "Eksporti ERP"
+    }
+  }
+}
