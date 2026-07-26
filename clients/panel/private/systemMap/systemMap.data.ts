@@ -1,4 +1,4 @@
-import type {SystemMapDataset} from "@eCommerceModule/clients/panel/private/systemMap/systemMap.types.ts";
+import type {SystemMapDataset} from "@coreModule/components/custom/systemMap/systemMap.types.ts";
 
 /**
  * Hand-curated System Map for propertyManagement (panel menu: realEstate).
