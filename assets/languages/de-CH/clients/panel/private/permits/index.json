@@ -1,0 +1,57 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/index.tsx",
+  "title": "Bewilligungen",
+  "description": "Regulatory permits und compliance",
+  "createPermit": "Bewilligung hinzufügen",
+  "noData": "Keine bewilligungen gefunden",
+  "failTitle": "Bewilligungen konnten nicht geladen werden",
+  "failDescription": "Beim Laden von bewilligungen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "statusLabel": "Status",
+  "fields": {
+    "approvedAt": "Genehmigt",
+    "authority": "Authority",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "expiresAt": "Expires",
+    "expiryReminderSentAt0d": "Expiry Reminder Sent At0d",
+    "expiryReminderSentAt30d": "Expiry Reminder Sent At30d",
+    "expiryReminderSentAt3d": "Expiry Reminder Sent At3d",
+    "expiryReminderSentAt7d": "Expiry Reminder Sent At7d",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "permitType": "Typ",
+    "project": "Projekt",
+    "referenceNumber": "Referenz Keine.",
+    "renewedAt": "Renewed Am",
+    "status": "Status",
+    "submittedAt": "Eingereicht",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "submitted": "Eingereicht",
+        "under_review": "In Prüfung",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "expired": "Abgelaufen"
+      },
+      "permitType": {
+        "building": "Gebäude",
+        "excavation": "Excavation",
+        "environmental": "Environmental",
+        "fire": "Brandschutz",
+        "utility": "Utility",
+        "occupancy": "Occupancy",
+        "zoning": "Zonierung",
+        "other": "Andere"
+      }
+    }
+  }
+}

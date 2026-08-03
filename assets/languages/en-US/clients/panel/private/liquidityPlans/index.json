@@ -8,8 +8,25 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "granularity": "Granularity",
+    "horizonEnd": "Horizon End",
+    "horizonStart": "Horizon Start",
     "name": "Reference",
+    "notes": "Notes",
+    "project": "Project",
     "title": "Title",
-    "project": "Project"
+    "updatedAt": "Updated At",
+    "!enums": {
+      "granularity": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "yearly": "Yearly"
+      }
+    }
   }
 }

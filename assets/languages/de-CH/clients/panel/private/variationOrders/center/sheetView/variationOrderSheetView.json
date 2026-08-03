@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/center/sheetView/variationOrderSheetView.tsx",
+  "variationOrder": "Nachtrag",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "constructionContract": "Bauvertrag",
+  "description": "Beschreibung",
+  "currency": "Währung",
+  "costImpact": "Kosten Impact",
+  "timeImpactDays": "Time Impact Tage",
+  "notes": "Notizen",
+  "statuses": {
+    "pending_architect": "Ausstehend Architect",
+    "pending_qs": "Ausstehend Qs",
+    "pending_client": "Ausstehend Kunde",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "cancelled": "Storniert"
+  },
+  "modificationRequest": "Änderungsantrag"
+}

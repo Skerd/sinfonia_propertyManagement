@@ -8,8 +8,40 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "actualCost": "Kostoja Aktuale",
+    "asset": "Aseti",
+    "assignee": "I Caktuari",
+    "costEstimate": "Vlerësimi i Kostos",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "dueDate": "Data e Skadencës",
+    "edifice": "Ndërtesa",
+    "linkedSnag": "Linked Snag",
     "name": "Referenca",
+    "notes": "Shënime",
+    "plan": "Plani",
+    "status": "Statusi",
     "title": "Titulli",
-    "status": "Statusi"
+    "type": "Lloji",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "type": {
+        "preventive": "Parandaluese",
+        "corrective": "Korrigjuese",
+        "renovation": "Rinovim"
+      },
+      "status": {
+        "open": "Hapur",
+        "assigned": "Caktuar",
+        "in_progress": "Në Progres",
+        "done": "Përfunduar",
+        "verified": "Verifikuar",
+        "closed": "Mbyllur",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

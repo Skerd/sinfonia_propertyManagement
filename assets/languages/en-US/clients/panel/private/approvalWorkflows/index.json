@@ -8,9 +8,29 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
+    "active": "Active",
+    "approverRole": "Approver Role",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
     "documentType": "Document Type",
+    "escalationRole": "Escalation Role",
+    "name": "Reference",
+    "notes": "Notes",
+    "thresholdAmount": "Threshold Amount",
+    "thresholdCurrency": "Threshold Currency",
     "title": "Title",
-    "active": "Active"
+    "updatedAt": "Updated At",
+    "!enums": {
+      "documentType": {
+        "budget": "Budget",
+        "cost_estimate": "Cost Estimate",
+        "contract": "Contract",
+        "variation_order": "Variation Order",
+        "contractor_invoice": "Contractor Invoice",
+        "progress_claim": "Progress Claim"
+      }
+    }
   }
 }

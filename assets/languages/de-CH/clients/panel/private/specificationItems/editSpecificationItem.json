@@ -10,16 +10,16 @@
     "titleLabel": "Bezeichnung",
     "titlePlaceholder": "Positionsbezeichnung",
     "npkChapterLabel": "NPK-Kapitel",
-    "npkChapterPlaceholder": "z.B. 211",
+    "npkChapterPlaceholder": "Z.B. 211",
     "npkPositionLabel": "NPK-Position",
     "npkPositionPlaceholder": "CRB-Positionscode",
     "isRPositionLabel": "R-Position (frei / nicht im CRB)",
     "classificationStandardLabel": "Kostenstandard",
     "classificationStandardPlaceholder": "Standard auswählen",
     "classificationCodeLabel": "Kostencode",
-    "classificationCodePlaceholder": "eBKP-H / BKP-Code",
+    "classificationCodePlaceholder": "EBKP-H / BKP-Code",
     "unitOfMeasureLabel": "Masseinheit",
-    "unitOfMeasurePlaceholder": "z.B. m2",
+    "unitOfMeasurePlaceholder": "Z.B. m2",
     "quantityLabel": "Menge",
     "quantityPlaceholder": "Menge",
     "unitPriceLabel": "Einheitspreis",
@@ -34,10 +34,25 @@
     "notesPlaceholder": "Notizen"
   },
   "axios": {
-    "start": {"title": "Wird gespeichert...", "time": 3000},
-    "success": {"title": "Gespeichert", "time": 3000},
-    "error": {"title": "Fehler", "time": 3000}
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
   },
-  "formHeader": {"title": "Position bearbeiten", "description": ""},
-  "formButtons": {"cancel": "Abbrechen", "submit": "Speichern"}
+  "formHeader": {
+    "title": "Position bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
 }

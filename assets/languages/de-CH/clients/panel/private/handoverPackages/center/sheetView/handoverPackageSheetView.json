@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx",
+  "handoverPackage": "Übergabepaket",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "unit": "Einheit",
+  "omManualsComplete": "O&M Anleitungen Vollständig",
+  "asBuiltComplete": "As-Built Vollständig",
+  "keysTransferred": "Schlüssel Übergeben",
+  "trainingComplete": "Schulung Vollständig",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "in_progress": "In Bearbeitung",
+    "ready": "Ready",
+    "completed": "Abgeschlossen"
+  }
+}

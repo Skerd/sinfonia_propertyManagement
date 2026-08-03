@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/index.tsx",
+  "title": "FeasibilityStudy",
+  "description": "FeasibilityStudy register",
+  "createFeasibilityStudy": "FeasibilityStudy hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "assumptions": "Annahmen",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "decidedAt": "Decided Am",
+    "decidedBy": "Decided Von",
+    "decision": "Entscheid",
+    "decisionNotes": "Entscheid Notizen",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "hardCostEstimate": "Hart Kosten Schätzung",
+    "irrPercent": "IRR %",
+    "landParcel": "Grundstück",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "residualValue": "Residual Wert",
+    "softCostEstimate": "Weich Kosten Schätzung",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "in_review": "In Prüfung",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "archived": "Archiviert"
+      }
+    }
+  }
+}

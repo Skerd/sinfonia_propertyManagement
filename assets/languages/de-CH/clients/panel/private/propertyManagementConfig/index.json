@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
+  "title": "Sales & Übergabe",
+  "errors": {
+    "missingConfigId": "Konnte nicht laden firma einstellungen."
+  }
+}

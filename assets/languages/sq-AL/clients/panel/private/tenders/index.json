@@ -8,9 +8,31 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
     "name": "Referenca",
-    "title": "Titulli",
+    "notes": "Shënime",
+    "openingDate": "Data e Hapjes",
+    "project": "Projekti",
+    "specification": "Specifikimi",
     "status": "Statusi",
-    "submissionDeadline": "Afati"
+    "submissionDeadline": "Afati",
+    "title": "Titulli",
+    "trades": "Zejet",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "published": "Publikuar",
+        "closing": "Në Mbyllje",
+        "closed": "Mbyllur",
+        "awarded": "Fitues",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

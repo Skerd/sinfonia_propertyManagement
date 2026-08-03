@@ -9,20 +9,30 @@
   "searchPlaceholder": "Search or add filters...",
   "statusLabel": "Status",
   "fields": {
-    "name": "Reference",
-    "project": "Project",
-    "title": "Title",
-    "permitType": "Type",
-    "authority": "Authority",
-    "referenceNumber": "Reference No.",
-    "status": "Status",
-    "expiresAt": "Expires",
-    "submittedAt": "Submitted",
     "approvedAt": "Approved",
+    "authority": "Authority",
     "createdAt": "Created At",
-    "updatedAt": "Updated At",
+    "createdBy": "Created By",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "expiresAt": "Expires",
+    "expiryReminderSentAt0d": "Expiry Reminder Sent At0d",
+    "expiryReminderSentAt30d": "Expiry Reminder Sent At30d",
+    "expiryReminderSentAt3d": "Expiry Reminder Sent At3d",
+    "expiryReminderSentAt7d": "Expiry Reminder Sent At7d",
+    "media": "Media",
+    "name": "Reference",
+    "notes": "Notes",
+    "permitType": "Type",
+    "project": "Project",
+    "referenceNumber": "Reference No.",
+    "renewedAt": "Renewed At",
+    "status": "Status",
+    "submittedAt": "Submitted",
+    "title": "Title",
+    "updatedAt": "Updated At",
     "!enums": {
       "status": {
         "draft": "Draft",
@@ -31,6 +41,16 @@
         "approved": "Approved",
         "rejected": "Rejected",
         "expired": "Expired"
+      },
+      "permitType": {
+        "building": "Building",
+        "excavation": "Excavation",
+        "environmental": "Environmental",
+        "fire": "Fire",
+        "utility": "Utility",
+        "occupancy": "Occupancy",
+        "zoning": "Zoning",
+        "other": "Other"
       }
     }
   }

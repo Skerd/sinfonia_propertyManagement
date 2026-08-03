@@ -8,8 +8,43 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "bkpAccountCode": "BKP-Konto",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "createdContractorInvoice": "Erstellte Unternehmerrechnung",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "extractedAmount": "Extrahierter Betrag",
+    "extractedCurrencyCode": "Extrahierte Währung",
+    "extractedDueDate": "Extrahiertes Fälligkeitsdatum",
+    "extractedIban": "IBAN",
+    "extractedInvoiceDate": "Extracted Invoice Date",
+    "extractedInvoiceNumber": "Extrahierte Rechnungsnr.",
+    "extractedQrReference": "Extrahierte QR-Referenz",
+    "extractedSupplierName": "Lieferantenname",
+    "matchedConstructor": "Zugeordneter Unternehmer",
+    "matchedContract": "Matched Contract",
     "name": "Referenz",
+    "notes": "Notizen",
+    "ocrStatus": "OCR-Status",
+    "project": "Projekt",
+    "status": "Status",
     "title": "Bezeichnung",
-    "status": "Status"
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "ocrStatus": {
+        "pending": "Ausstehend",
+        "done": "Erledigt",
+        "failed": "Fehlgeschlagen"
+      },
+      "status": {
+        "inbox": "Posteingang",
+        "classified": "Klassifiziert",
+        "routed": "Weitergeleitet",
+        "posted": "Gebucht",
+        "rejected": "Abgelehnt"
+      }
+    }
   }
 }

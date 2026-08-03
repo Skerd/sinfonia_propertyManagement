@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayDownPaymentDialog.tsx",
+  "payDownPaymentTitle": "Mark Anzahlung Zahlung as Bezahlt",
+  "payDownPaymentDescription": "Diese aktion marks die anzahlung zahlung as bezahlt.",
+  "confirmPayDownPayment": "Bestätigen",
+  "cancel": "Abbrechen",
+  "processing": "Processing...",
+  "downPaymentRecorded": "Anzahlung zahlung marked as bezahlt",
+  "downPaymentFailed": "Fehlgeschlagen bis mark anzahlung zahlung as bezahlt",
+  "axios": {
+    "start": {
+      "title": "Processing...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Anzahlung zahlung marked as bezahlt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehlgeschlagen bis mark anzahlung zahlung as bezahlt",
+      "time": 3000
+    }
+  }
+}

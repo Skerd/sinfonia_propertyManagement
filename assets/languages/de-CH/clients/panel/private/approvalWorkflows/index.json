@@ -8,9 +8,29 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
+    "active": "Aktiv",
+    "approverRole": "Freigaberolle",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
     "documentType": "Dokumenttyp",
+    "escalationRole": "Eskalationsrolle",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "thresholdAmount": "Schwellenbetrag",
+    "thresholdCurrency": "Schwellenwährung",
     "title": "Bezeichnung",
-    "active": "Aktiv"
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "documentType": {
+        "budget": "Budget",
+        "cost_estimate": "Cost Estimate",
+        "contract": "Contract",
+        "variation_order": "Variation Order",
+        "contractor_invoice": "Unternehmerrechnung",
+        "progress_claim": "Progress Claim"
+      }
+    }
   }
 }

@@ -8,9 +8,41 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "classificationCode": "Klassifikationscode",
+    "classificationStandard": "Klassifikationsstandard",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "isRPosition": "R-Position",
+    "lineTotal": "Positionsbetrag",
     "name": "Referenz",
-    "title": "Bezeichnung",
+    "notes": "Notizen",
+    "npkChapter": "NPK-Kapitel",
     "npkPosition": "NPK-Position",
-    "status": "Status"
+    "project": "Projekt",
+    "quantity": "Menge",
+    "sortIndex": "Sortierung",
+    "specification": "Leistungsverzeichnis",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "unitOfMeasure": "Masseinheit",
+    "unitPrice": "Einheitspreis",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Benutzerdefiniert"
+      },
+      "status": {
+        "active": "Aktiv",
+        "cancelled": "Annulliert"
+      }
+    }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/center/sheetView/costCommitmentSheetView.tsx",
+  "costCommitment": "Kostenverpflichtung",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "budget": "Kostenvoranschlag",
+  "constructorRef": "Unternehmer",
+  "description": "Beschreibung",
+  "currency": "Währung",
+  "committedAmount": "Committed Betrag",
+  "retentionPercent": "Einbehalt Percent",
+  "issuedAt": "Issued Am",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "issued": "Ausgestellt",
+    "partially_received": "Partially Empfangen",
+    "closed": "Geschlossen",
+    "cancelled": "Storniert"
+  }
+}

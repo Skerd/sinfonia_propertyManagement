@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx",
+  "failedTitle": "Provision konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese provision. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "overview": "Übersicht",
+  "financials": "Financials",
+  "references": "References",
+  "dates": "Dates",
+  "notes": "Notizen",
+  "and": "und",
+  "commission": "Provision",
+  "agent": "Makler",
+  "sourceType": "Quelle",
+  "status": "Status",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "pending_approval": "Ausstehend freigabe",
+        "paid": "Bezahlt",
+        "voided": "Voided"
+      },
+      "sourceType": {
+        "sale": "Verkauf",
+        "reservation": "Reservation"
+      }
+    }
+  },
+  "basis": "Provision basis",
+  "basisEnum": {
+    "depositAmount": "Reservation anzahlung",
+    "finalPrice": "Verkauf end preis"
+  },
+  "basisTooltip": "How diese provision ist calculated oder labeled (e.g. verkauf preis, fixed honorar).",
+  "basisAmount": "Basisbetrag",
+  "ratePercent": "Satz %",
+  "amount": "Betrag",
+  "sale": "Verkauf",
+  "reservation": "Reservation",
+  "currency": "Währung",
+  "paidAt": "Bezahlt am",
+  "voidedAt": "Voided am",
+  "modelType": "Provision"
+}

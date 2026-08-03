@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unit/unitDetailDrawer.tsx",
+  "title": "Einheit details",
+  "area": "Fläche",
+  "bedrooms": "Bedrooms",
+  "bathrooms": "Bäder",
+  "sharePrice": "Share preis",
+  "notFound": "Einheit nicht gefunden."
+}

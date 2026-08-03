@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/createPermit.tsx",
+  "title": "Bewilligung hinzufügen",
+  "description": "Register a neu regulatory bewilligung",
+  "generalInfo": "Bewilligung Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bewilligung bezeichnung",
+    "permitTypeLabel": "Bewilligung Typ",
+    "permitTypePlaceholder": "Typ auswählen",
+    "typeBuilding": "Gebäude",
+    "typeExcavation": "Excavation",
+    "typeEnvironmental": "Environmental",
+    "typeFire": "Brandschutz",
+    "typeUtility": "Utility",
+    "typeOccupancy": "Occupancy",
+    "typeZoning": "Zonierung",
+    "typeOther": "Andere",
+    "authorityLabel": "Authority",
+    "authorityPlaceholder": "Regulatory body",
+    "referenceNumberLabel": "Referenz Nummer",
+    "referenceNumberPlaceholder": "Official referenz",
+    "expiresAtLabel": "Expires Am",
+    "expiresAtPlaceholder": "Datum auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Dateien",
+    "existingFiles": "Existing files",
+    "newFiles": "Dateien hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Bewilligung wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bewilligung erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen bewilligung",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Bewilligung hinzufügen",
+    "description": "Register a neu regulatory bewilligung"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Bewilligung hinzufügen"
+  }
+}

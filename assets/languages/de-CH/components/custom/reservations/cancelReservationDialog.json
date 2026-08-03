@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/cancelReservationDialog.tsx",
+  "cancelConfirmTitle": "Abbrechen Reservation",
+  "cancelConfirmDescription": "Sind sie sicher sie want bis abbrechen diese reservation? Bitte provide a grund für annullierung.",
+  "cancelConfirmDescriptionNoReason": "Sind sie sicher sie want bis abbrechen diese reservation?",
+  "cancellationReasonLabel": "Annullierungsgrund",
+  "cancellationReasonPlaceholder": "Die grund für cancelling diese reservation... eingeben",
+  "cancel": "Abbrechen",
+  "confirmCancel": "Abbrechen Reservation",
+  "axios": {
+    "start": {
+      "title": "Cancelling reservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reservation annulliert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht abbrechen reservation",
+      "time": 3000
+    }
+  }
+}

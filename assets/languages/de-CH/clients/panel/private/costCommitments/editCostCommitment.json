@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/editCostCommitment.tsx",
+  "title": "Kostenverpflichtung bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "budgetLabel": "Kostenvoranschlag",
+    "budgetPlaceholder": "Budget auswählen",
+    "constructorLabel": "Unternehmer",
+    "constructorPlaceholder": "Unternehmer auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "committedAmountLabel": "Committed Betrag",
+    "committedAmountPlaceholder": "Committed Betrag",
+    "retentionPercentLabel": "Einbehalt Percent",
+    "retentionPercentPlaceholder": "Einbehalt Percent",
+    "issuedAtLabel": "Issued Am",
+    "issuedAtPlaceholder": "Issued Am",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Kostenverpflichtung bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

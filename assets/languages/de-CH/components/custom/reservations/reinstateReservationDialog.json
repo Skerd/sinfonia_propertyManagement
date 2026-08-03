@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reinstateReservationDialog.tsx",
+  "reinstateConfirmTitle": "Reinstate Reservation",
+  "reinstateConfirmDescription": "Diese will mark die reservation as aktiv erneut und reserve die einheit if it ist still verfügbar. Weiter?",
+  "cancel": "Abbrechen",
+  "confirmReinstate": "Reinstate",
+  "axios": {
+    "start": {
+      "title": "Reinstating reservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reservation reinstated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht reinstate reservation",
+      "time": 3000
+    }
+  }
+}

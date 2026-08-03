@@ -1,0 +1,69 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx",
+  "failedTitle": "Reservation konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese reservation. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "reservation": "Reservation",
+  "name": "Name",
+  "overview": "Übersicht",
+  "dates": "Dates",
+  "deposit": "Anzahlung",
+  "financialSummary": "Financial Übersicht",
+  "unitTotalPrice": "Einheit Total Preis",
+  "amountPaidReservationDeposit": "Betrag Bezahlt / Reservation Anzahlung",
+  "remainingBalance": "Restsaldo",
+  "reservationPaymentStatus": "Zahlung Status",
+  "paymentMethod": "Zahlungsart",
+  "remainingBalanceDueDate": "Fällig Datum für Rest Saldo",
+  "reservationFinancialPaymentState": {
+    "fullyPaid": "Fully Bezahlt",
+    "partiallyPaid": "Partially Bezahlt",
+    "unpaid": "Unbezahlt"
+  },
+  "notes": "Notizen",
+  "alerts": "Alerts",
+  "unit": "Einheit",
+  "client": "Kunde",
+  "reservedBy": "Reserviert von",
+  "reservedByCompany": "Firma",
+  "status": "Status",
+  "activeState": {
+    "true": "Aktiv",
+    "false": "Inaktiv"
+  },
+  "paid": "Bezahlt",
+  "paidState": {
+    "true": "Bezahlt",
+    "false": "Unbezahlt"
+  },
+  "reservationDate": "Reservationsdatum",
+  "expirationDate": "Ablaufdatum",
+  "cancelledAt": "Annulliert am",
+  "clientEmailTimeline": "Kunde emails & milestones",
+  "confirmationEmailSentAt": "Reservation confirmation e-Mail sent",
+  "expirationReminderEmailAt3d": "Ablauf reminder e-Mail (3 tage before)",
+  "expirationReminderEmailAt1d": "Ablauf reminder e-Mail (1 day before)",
+  "expirationReminderEmailAt0d": "Ablauf reminder e-Mail (ablauf day)",
+  "reservationExpiredAt": "Reservation abgelaufen (recorded)",
+  "depositAmount": "Anzahlungsbetrag",
+  "depositCurrency": "Anzahlungswährung",
+  "reservationContract": "Reservationsvertrag",
+  "additionalDocuments": "Zusätzliche Dokumente",
+  "reservationStatus": "Reservation Status",
+  "statusValues": {
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "cancelled": "Storniert",
+    "converted": "Umgewandelt"
+  },
+  "source": "Quelle",
+  "sourceValues": {
+    "agent": "Makler",
+    "portal": "Portal",
+    "referral": "Empfehlung",
+    "walk_in": "Walk-in",
+    "social": "Social",
+    "other": "Andere"
+  },
+  "referralCode": "Empfehlungscode"
+}

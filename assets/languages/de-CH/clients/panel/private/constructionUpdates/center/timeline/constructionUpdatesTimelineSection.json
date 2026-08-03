@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx",
+  "title": "Bau timeline",
+  "description": "Fortschritt milestones ordered von aktualisieren datum. Hover a point für details, click bis offen die full protokoll.",
+  "emptyTitle": "Keine updates yet",
+  "emptyDescription": "A bau aktualisieren bis start gebäude die timeline. hinzufügen",
+  "failTitle": "Konnte nicht laden timeline",
+  "failDescription": "Something went wrong während laden updates. Click bis retry.",
+  "noPhoto": "Keine foto",
+  "hint": "Hover für preview · click bis offen details",
+  "updatesCount": "updates",
+  "loading": "Laden…"
+}

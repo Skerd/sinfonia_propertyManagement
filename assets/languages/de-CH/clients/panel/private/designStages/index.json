@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/index.tsx",
+  "title": "DesignStage",
+  "description": "DesignStage register",
+  "createDesignStage": "DesignStage hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "sortOrder": "Sortierung",
+    "stageType": "Phase Typ",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "not_started": "Nicht Started",
+        "in_progress": "In Bearbeitung",
+        "completed": "Abgeschlossen",
+        "blocked": "Blocked"
+      },
+      "stageType": {
+        "concept": "Concept",
+        "schematic": "Schematic",
+        "design_development": "Planung Development",
+        "construction_documents": "Bau Dokumente",
+        "tender": "Ausschreibung",
+        "construction": "Bau",
+        "as_built": "As-Built"
+      }
+    }
+  }
+}

@@ -8,22 +8,30 @@
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të detyrave të planit. Ju lutemi provoni përsëri.",
   "searchPlaceholder": "Kërkoni ose shtoni filtra...",
   "fields": {
-    "name": "Referenca",
-    "title": "Titulli",
-    "project": "Projekti",
-    "edifice": "Ndërtesa",
-    "milestone": "Momenti kyç",
-    "status": "Statusi",
-    "assignee": "Përgjegjësi",
-    "percentComplete": "Progresi %",
-    "plannedStart": "Fillimi i planifikuar",
-    "plannedEnd": "Mbarimi i planifikuar",
-    "actualStart": "Fillimi aktual",
     "actualEnd": "Mbarimi aktual",
+    "actualStart": "Fillimi aktual",
+    "assignee": "Përgjegjësi",
+    "bkpCode": "BKP Code",
     "createdAt": "Krijuar më",
-    "updatedAt": "Përditësuar më",
+    "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
+    "dependencyType": "Dependency Type",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "lagDays": "Lag Days",
+    "media": "Media",
+    "milestone": "Momenti kyç",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "percentComplete": "Progresi %",
+    "plannedEnd": "Mbarimi i planifikuar",
+    "plannedStart": "Fillimi i planifikuar",
+    "predecessors": "Predecessors",
+    "project": "Projekti",
+    "status": "Statusi",
+    "title": "Titulli",
+    "updatedAt": "Përditësuar më",
     "!enums": {
       "status": {
         "planned": "E planifikuar",
@@ -31,6 +39,12 @@
         "completed": "E përfunduar",
         "delayed": "E vonuar",
         "cancelled": "E anuluar"
+      },
+      "dependencyType": {
+        "FS": "Fs",
+        "SS": "Ss",
+        "FF": "Ff",
+        "SF": "Sf"
       }
     }
   }

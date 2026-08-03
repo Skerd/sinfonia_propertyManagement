@@ -20,25 +20,51 @@
   "depositAmount": "Shuma e depozitës",
   "view": "Shiko",
   "fields": {
-    "name": "Emri",
-    "unit": "Njësia",
-    "reservedBy": "Rezervuar nga",
-    "reservedByCompany": "Rezervuar nga kompania",
-    "client": "Klienti",
-    "reservationDate": "Data e Rezervimit",
-    "expirationDate": "Data e skadimit",
-    "reservationNotes": "Shënime Rezervimi",
-    "depositAmount": "Shuma e depozitës",
-    "depositCurrency": "Valuta e depozitës",
-    "paid": "I paguar",
-    "isActive": "Është Aktiv",
-    "cancelledAt": "Anuluar në",
+    "additionalDocuments": "Additional Documents",
     "cancellationReason": "Arsyeja e anulimit",
+    "cancelledAt": "Anuluar në",
+    "client": "Klienti",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "depositAmount": "Shuma e depozitës",
+    "depositCurrency": "Valuta e depozitës",
+    "expirationDate": "Data e skadimit",
+    "isActive": "Është Aktiv",
+    "name": "Emri",
+    "paid": "I paguar",
+    "paymentMethod": "Payment Method",
+    "referralCode": "Referral Code",
+    "reservationContract": "Reservation Contract",
+    "reservationDate": "Data e Rezervimit",
+    "reservationNotes": "Shënime Rezervimi",
+    "reservedBy": "Rezervuar nga",
+    "reservedByCompany": "Rezervuar nga kompania",
+    "source": "Burimi",
+    "status": "Statusi",
+    "unit": "Njësia",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "source": {
+        "agent": "Agent",
+        "portal": "Portal",
+        "referral": "Referral",
+        "walk_in": "Walk-in",
+        "social": "Social Media",
+        "other": "Tjetër"
+      },
+      "status": {
+        "active": "Aktive",
+        "expired": "Skaduar",
+        "cancelled": "Anuluar",
+        "converted": "Konvertuar"
+      }
+    }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",
-  "no": "Nr"
+  "no": "Nr",
+  "expired": "Skaduar",
+  "converted": "Konvertuar"
 }

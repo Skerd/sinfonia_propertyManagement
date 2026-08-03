@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/actions/marketingBooklet.tsx",
+  "title": "Marketingbroschüre",
+  "axios": {
+    "start": {
+      "title": "Generating marketing broschüre…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Marketing broschüre downloaded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht generate marketing broschüre",
+      "time": 3000
+    }
+  }
+}

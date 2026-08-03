@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/createUnitType.tsx",
+  "title": "Einheitstyp erstellen",
+  "description": "A neu einheit typ erstellen",
+  "generalInfo": "Allgemeine Informationen",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Einheit typ name eingeben",
+    "nameRequired": "Name ist erforderlich",
+    "categoryLabel": "Kategorie",
+    "categoryPlaceholder": "Kategorie auswählen",
+    "categoryRequired": "Kategorie ist erforderlich",
+    "groupLabel": "Group",
+    "groupPlaceholder": "Group auswählen",
+    "groupRequired": "Group ist erforderlich",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Slug (e.g., apartment) eingeben",
+    "slugRequired": "Slug ist erforderlich",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung eingeben",
+    "iconLabel": "Icon",
+    "iconPlaceholder": "Icon (e.g., mdi-startseite) eingeben",
+    "isPrivateLabel": "Privat"
+  },
+  "axios": {
+    "start": {
+      "title": "Einheitstyp wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Einheitstyp erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Einheitstyp konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Einheitstyp erstellen",
+    "description": "A neu einheit typ erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Einheitstyp erstellen"
+  }
+}

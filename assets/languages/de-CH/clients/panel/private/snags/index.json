@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/index.tsx",
+  "title": "Snagging Liste",
+  "description": "Defects, issues und punch liste positionen",
+  "createSnag": "Bericht Mangel",
+  "noData": "Keine mängel gefunden",
+  "failTitle": "Snagging liste konnten nicht geladen werden",
+  "failDescription": "Beim Laden von mängel ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "assignedTo": "Zugewiesen an",
+    "costImpact": "Kosten Impact",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "dueDate": "Fälligkeit",
+    "isDlp": "DLP",
+    "isWarranty": "Garantie Forderung",
+    "location": "Standort",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "photos": "Fotos",
+    "reportedBy": "Reported Von",
+    "resolvedAt": "Resolved Am",
+    "rootCause": "Root Cause",
+    "severity": "Schweregrad",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "trade": "Gewerk",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "variationOrder": "Nachtrag",
+    "workPackage": "Arbeitspaket",
+    "!enums": {
+      "status": {
+        "open": "Offen",
+        "in_progress": "In Bearbeitung",
+        "resolved": "Resolved",
+        "rejected": "Abgelehnt"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
+  }
+}

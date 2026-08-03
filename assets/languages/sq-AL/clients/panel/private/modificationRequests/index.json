@@ -17,28 +17,36 @@
   "submittedAt": "Dorëzuar në",
   "view": "Shiko",
   "fields": {
-    "name": "Emri",
-    "unit": "Njësia",
-    "requestedBy": "Kërkuar nga",
-    "title": "Titulli",
-    "description": "Përshkrimi",
-    "constructionType": "Lloji i ndërtimit",
-    "materials": "Materiale inxhinierike",
-    "specifications": "Specifikimet",
-    "status": "Statusi",
     "architectApproval": {
       "decision": "Vendimi",
       "user": "Shqyrtuar nga",
       "notes": "Shënime",
       "reviewedAt": "Shqyrtuar në"
     },
-    "engineerApproval": {
+    "cancellationReason": "Arsyeja e anulimit",
+    "cancelledAt": "Anuluar në",
+    "ceoApproval": {
       "decision": "Vendimi",
       "user": "Shqyrtuar nga",
       "notes": "Shënime",
       "reviewedAt": "Shqyrtuar në"
     },
-    "ceoApproval": {
+    "clientCostApproval": "Client Cost Approval",
+    "clientNotifiedAt": "Klienti njoftohet në",
+    "completedAt": "Përfunduar në",
+    "constructionType": "Lloji i ndërtimit",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "deliveryApproval": {
+      "decision": "Vendimi",
+      "user": "Shqyrtuar nga",
+      "notes": "Shënime",
+      "reviewedAt": "Shqyrtuar në"
+    },
+    "description": "Përshkrimi",
+    "engineerApproval": {
       "decision": "Vendimi",
       "user": "Shqyrtuar nga",
       "notes": "Shënime",
@@ -57,23 +65,19 @@
       "notes": "Shënime",
       "estimatedCompletionDate": "Data e parashikuar e përfundimit"
     },
-    "clientNotifiedAt": "Klienti njoftohet në",
-    "notificationSent": "Njoftimi u dërgua",
-    "submittedAt": "Dorëzuar në",
-    "deliveryApproval": {
-      "decision": "Vendimi",
-      "user": "Shqyrtuar nga",
-      "notes": "Shënime",
-      "reviewedAt": "Shqyrtuar në"
-    },
-    "inspections": "Inspektimet",
     "inspection": "Inspektimi",
-    "completedAt": "Përfunduar në",
-    "cancelledAt": "Anuluar në",
-    "cancellationReason": "Arsyeja e anulimit",
-    "createdBy": "Krijuar nga",
-    "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga",
+    "inspections": "Inspektimet",
+    "materials": "Materiale inxhinierike",
+    "name": "Emri",
+    "notificationSent": "Njoftimi u dërgua",
+    "requestedBy": "Kërkuar nga",
+    "specifications": "Specifikimet",
+    "stageDueDate": "Stage Due Date",
+    "status": "Statusi",
+    "submittedAt": "Dorëzuar në",
+    "title": "Titulli",
+    "unit": "Njësia",
+    "updatedAt": "Përditësuar më",
     "!enums": {
       "constructionType": {
         "materials": "Materialet",
@@ -126,6 +130,10 @@
           "rejected": "Refuzuar",
           "pending": "Në pritje"
         }
+      },
+      "source": {
+        "engineer_material": "Engineer Material",
+        "manual": "Manual"
       }
     }
   },

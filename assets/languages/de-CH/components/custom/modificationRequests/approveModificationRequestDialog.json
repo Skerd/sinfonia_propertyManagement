@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/approveModificationRequestDialog.tsx",
+  "title": "Genehmigen",
+  "approveConfirmTitle": "Genehmigen Änderung Antrag",
+  "approveConfirmDescription": "Prüfung und make a entscheid für diese änderung antrag am die {phase} phase.",
+  "stageLabel": "Freigabe Phase",
+  "architectStage": "Architect",
+  "engineerStage": "Engineer",
+  "ceoStage": "CEO",
+  "decisionLabel": "Entscheid",
+  "decisionPlaceholder": "Entscheid auswählen",
+  "materialsPlanLabel": "Engineer Materials Plan",
+  "materialsPlanEmptyHint": "Keine materials plan verfügbar für diese antrag yet.",
+  "materialsPlanAddPlaceholder": "Engineer material position hinzufügen",
+  "rejectReasonLabel": "Ablehnen Grund",
+  "rejectReasonPlaceholder": "Ablehnen grund auswählen",
+  "rejectReasonDesign": "Planung",
+  "rejectReasonTechnical": "Technical",
+  "rejectReasonBudget": "Kostenvoranschlag",
+  "rejectReasonOther": "Andere",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Freigabe notizen (optional) eingeben",
+  "mediaLabel": "Attachments",
+  "addFile": "Datei hinzufügen",
+  "approve": "Genehmigen",
+  "reject": "Ablehnen",
+  "cancel": "Abbrechen",
+  "confirmButton": "Submit Entscheid",
+  "axios": {
+    "start": {
+      "title": "Submitting entscheid…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Entscheid eingereicht",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht submit entscheid",
+      "time": 3000
+    }
+  }
+}

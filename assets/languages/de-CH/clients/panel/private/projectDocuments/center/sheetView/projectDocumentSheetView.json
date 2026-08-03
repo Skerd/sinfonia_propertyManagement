@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx",
+  "failedTitle": "Dokument konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese dokument. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "projectDocument": "Dokument",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "documentNumber": "Dokument Nummer",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "floor": "Geschoss",
+  "unit": "Einheit",
+  "discipline": "Disziplin",
+  "documentType": "Dokumenttyp",
+  "revision": "Revision",
+  "revisionDate": "Revision Datum",
+  "status": "Status",
+  "isAsBuilt": "As Built",
+  "supersedes": "Ersetzt",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "media": "Dateien",
+  "none": "Keine",
+  "statuses": {
+    "draft": "Entwurf",
+    "for_review": "Für Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "superseded": "Superseded"
+  },
+  "disciplines": {
+    "architectural": "Architektur",
+    "structural": "Tragwerk",
+    "mep": "MEP",
+    "civil": "Tiefbau",
+    "fire": "Brandschutz",
+    "landscape": "Landschaft",
+    "other": "Andere"
+  },
+  "documentTypes": {
+    "drawing": "Plan",
+    "specification": "Leistungsverzeichnis",
+    "calculation": "Berechnung",
+    "report": "Bericht",
+    "as_built": "As Built",
+    "om_manual": "O&M Manuell",
+    "other": "Andere"
+  },
+  "designStage": "Planungsphase",
+  "isRequiredDeliverable": "Erforderlich lieferobjekt"
+}

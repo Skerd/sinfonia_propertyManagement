@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/renewPermitDialog.tsx",
+  "dialogTitle": "Renew bewilligung",
+  "dialogDescription": "Renew diese bewilligung von setting a neu expiry datum.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional renewal notizen",
+  "expiresAtLabel": "Neu expiry datum",
+  "cancel": "Abbrechen",
+  "submit": "Renew"
+}

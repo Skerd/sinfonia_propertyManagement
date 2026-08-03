@@ -11,10 +11,13 @@
   "deleted": "Fshirë",
   "name": "Emri",
   "fields": {
-    "name": "Emri",
+    "company": "Company",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "name": "Emri",
+    "updatedAt": "Përditësuar më"
   },
   "searchPlaceholder": "Kërko ose shto filtra..."
 }

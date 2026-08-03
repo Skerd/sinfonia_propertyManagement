@@ -16,16 +16,9 @@
   "failDescription": "An error occurred while loading units. Please try again.",
   "failTitle": "Failed to load units",
   "fields": {
-    "!enums": {
-      "status": {
-        "available_unit": "Available Unit",
-        "reserved_unit": "Reserved Unit",
-        "sold_unit": "Sold Unit",
-        "unavailable_unit": "Unavailable Unit"
-      }
-    },
     "area": "Area",
     "connectedUnits": "Connected Units",
+    "constructionStatus": "Construction Status",
     "createdAt": "Created At",
     "createdBy": "Created By",
     "deletedAt": "Deleted",
@@ -43,17 +36,21 @@
     "inspections": "Inspections",
     "isAvailable": "Available",
     "mainImage": "Image",
+    "marketingBooklet": "Marketing Booklet",
+    "mediaFiles": "Media Files",
     "modificationRequests": "Modification Requests",
     "name": "Name",
     "netArea": "Net Area",
     "numberOfBathrooms": "Bathrooms",
     "numberOfRooms": "Rooms",
+    "orientation": "Orientation",
     "polygonCoordinates": {
       "x": "X",
       "y": "Y"
     },
     "price": "Price",
     "priceCurrency": "Currency",
+    "priceHistory": "Price History",
     "project": "Project",
     "reservation": "Reservation",
     "reservationCommissionRatePercent": "Reservation Commission",
@@ -64,7 +61,33 @@
     "unitNumber": "Number",
     "unitType": "Type",
     "updatedAt": "Updated At",
-    "videoGallery": "Videos"
+    "verandaArea": "Veranda Area",
+    "videoGallery": "Videos",
+    "!enums": {
+      "status": {
+        "available_unit": "Available Unit",
+        "reserved_unit": "Reserved Unit",
+        "sold_unit": "Sold Unit",
+        "unavailable_unit": "Unavailable Unit",
+        "rented_unit": "Rented"
+      },
+      "orientation": {
+        "N": "N",
+        "S": "S",
+        "E": "E",
+        "W": "W",
+        "NE": "Ne",
+        "NW": "Nw",
+        "SE": "Se",
+        "SW": "Sw"
+      },
+      "constructionStatus": {
+        "planned": "Planned",
+        "under_construction": "Under Construction",
+        "ready": "Ready",
+        "delivered": "Delivered"
+      }
+    }
   },
   "floor": "Floor",
   "floors": "Floors",
@@ -88,5 +111,6 @@
   "unitNumber": "Unit Number",
   "unitType": "Unit Type",
   "units": "Units",
-  "yes": "Yes"
+  "yes": "Yes",
+  "rented": "Rented"
 }

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/sheetView/commissioningRecordSheetView.tsx",
+  "commissioningRecord": "Inbetriebnahmeprotokoll",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "unit": "Einheit",
+  "handoverPackage": "Übergabepaket",
+  "systemName": "System Name",
+  "testDate": "Test Datum",
+  "resultNotes": "Ergebnis Notizen",
+  "notes": "Notizen",
+  "statuses": {
+    "pending": "Ausstehend",
+    "passed": "Passed",
+    "failed": "Fehlgeschlagen"
+  },
+  "inspectedBy": "Geprüft von"
+}

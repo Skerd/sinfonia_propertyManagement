@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx",
+  "title": "Baufortschritte",
+  "description": "Track bau fortschritt und milestones",
+  "createConstructionUpdate": "Aktualisieren hinzufügen",
+  "viewTimeline": "Timeline",
+  "noData": "Keine baufortschritte gefunden",
+  "failTitle": "Baufortschritte konnten nicht geladen werden",
+  "failDescription": "Beim Laden von baufortschritte ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "milestone": "Meilenstein",
+    "name": "Referenz",
+    "photos": "Fotos",
+    "progressPercent": "Fortschritt %",
+    "project": "Projekt",
+    "scheduleTask": "Terminaufgabe",
+    "title": "Bezeichnung",
+    "updateDate": "Aktualisieren Datum",
+    "updatedAt": "Aktualisiert am"
+  }
+}

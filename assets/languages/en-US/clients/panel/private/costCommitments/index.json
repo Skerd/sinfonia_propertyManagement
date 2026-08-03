@@ -8,9 +8,33 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "budget": "Budget",
+    "committedAmount": "Committed Amount",
+    "constructorRef": "Constructor",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "issuedAt": "Issued At",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "retentionPercent": "Retention %",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "issued": "Issued",
+        "partially_received": "Partially Received",
+        "closed": "Closed",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

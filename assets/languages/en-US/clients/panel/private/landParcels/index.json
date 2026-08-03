@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "acquisitionCost": "Acquisition Cost",
+    "areaSqm": "Area (m²)",
+    "cadastralReference": "Cadastral Reference",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "dueDiligenceStatus": "Due Diligence Status",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "zoning": "Zoning",
+    "!enums": {
+      "status": {
+        "prospect": "Prospect",
+        "under_dd": "Under DD",
+        "acquired": "Acquired",
+        "disposed": "Disposed"
+      }
+    }
   }
 }

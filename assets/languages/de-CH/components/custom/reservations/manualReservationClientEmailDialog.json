@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/manualReservationClientEmailDialog.tsx",
+  "cancel": "Abbrechen",
+  "confirmSend": "Send e-Mail",
+  "confirmTitles": {
+    "send_confirmation": "Resend confirmation e-Mail?",
+    "remind_3d": "Send 3-day reminder e-Mail?",
+    "remind_1d": "Send 1-day reminder e-Mail?",
+    "remind_today": "Send ablauf-day reminder e-Mail?",
+    "remind_remaining_days": "Send tage-rest reminder?",
+    "send_expired": "Send reservation abgelaufen e-Mail?"
+  },
+  "confirmDescriptions": {
+    "send_confirmation": "Diese sends die same confirmation nachricht as when die reservation was erstellt (bis die kunde e-Mail on datei).",
+    "remind_3d": "Sends die standard “3 tage before end” reminder vorlage.",
+    "remind_1d": "Sends die standard “1 day before end” reminder vorlage.",
+    "remind_today": "Sends die standard “ends heute” reminder vorlage.",
+    "remind_remaining_days": "Sends ein e-Mail stating how many whole calendar tage remain (UTC) until die reservation end datum.",
+    "send_expired": "Sends die notice that die reservation periode has ended (after die ablauf datum in UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Sending e-Mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-Mail sent erfolgreich",
+      "time": 3000
+    },
+    "error": {
+      "title": "E-Mail konnte nicht werden sent",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/roi/roiCalculator.tsx",
+  "roiCalculator": {
+    "title": "ROI Calculator",
+    "description": "Calculate return on investition per einheit oder projekt based on costs und sale/rental revenue."
+  },
+  "projectLabel": "Projekt",
+  "projectPlaceholder": "Projekt... auswählen",
+  "edificeLabel": "Gebäude",
+  "edificePlaceholder": "Gebäude... auswählen",
+  "floorLabel": "Geschoss",
+  "floorPlaceholder": "Geschoss... auswählen",
+  "unitLabel": "Einheit",
+  "unitPlaceholder": "Einheit (auto-calculates on pick)... auswählen",
+  "summary": "Übersicht",
+  "noResults": "Keine units gefunden.",
+  "computedAt": "Berechnet am",
+  "exportPdf": "Export PDF",
+  "exportPdfLoading": "Generating PDF…",
+  "error": "Fehlgeschlagen bis calculate ROI. Bitte versuchen erneut.",
+  "selectUnitHint": "A einheit bis calculate its ROI. Gebäude und geschoss narrow anzahlung die einheit liste. auswählen",
+  "columns": {
+    "unit": "Einheit",
+    "status": "Status",
+    "salePrice": "Verkauf Preis",
+    "totalCosts": "Total Costs",
+    "netProfit": "Netto Profit",
+    "roi": "ROI %",
+    "monthlyRent": "Monthly Rent",
+    "yield": "Yield %"
+  },
+  "projectSummary": {
+    "totalUnits": "Einheiten total",
+    "sold": "Verkauft",
+    "available": "Verfügbar",
+    "rented": "Vermietet",
+    "totalRevenue": "Total Revenue",
+    "totalCosts": "Total Costs",
+    "netProfit": "Netto Profit",
+    "roi": "ROI",
+    "averageRoi": "Average ROI"
+  },
+  "pdf": {
+    "scope": "Umfang",
+    "unitsSection": "Einheit breakdown",
+    "chartsSection": "Charts"
+  },
+  "charts": {
+    "financialTitle": "Revenue vs costs",
+    "unitsByStatusTitle": "Units von status",
+    "totalUnits": "Total",
+    "otherUnits": "Andere"
+  }
+}

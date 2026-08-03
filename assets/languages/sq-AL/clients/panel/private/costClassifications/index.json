@@ -8,10 +8,30 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
-    "standard": "Standardi",
+    "active": "Aktiv",
     "code": "Kodi",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "level": "Level",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "parentCode": "Parent Code",
+    "sortIndex": "Renditja",
+    "standard": "Standardi",
     "title": "Titulli",
-    "active": "Aktiv"
+    "unitOfMeasure": "Njësia Matëse",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "standard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "sia": "SIA",
+        "custom": "I Personalizuar"
+      }
+    }
   }
 }

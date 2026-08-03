@@ -8,9 +8,37 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "correctiveActions": "Veprimet Korrigjuese",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "incidentDate": "Data e Incidentit",
+    "location": "Vendndodhja",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "personsInvolved": "Personat e Përfshirë",
+    "project": "Project",
+    "reportedBy": "Raportuar nga",
+    "severity": "Rëndesia",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "reported": "Raportuar",
+        "investigating": "Në Investigim",
+        "closed": "Mbyllur"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
   }
 }

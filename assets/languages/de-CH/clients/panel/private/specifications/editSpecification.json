@@ -23,10 +23,25 @@
     "notesPlaceholder": "Notizen"
   },
   "axios": {
-    "start": {"title": "Wird gespeichert...", "time": 3000},
-    "success": {"title": "Gespeichert", "time": 3000},
-    "error": {"title": "Fehler", "time": 3000}
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
   },
-  "formHeader": {"title": "LV bearbeiten", "description": ""},
-  "formButtons": {"cancel": "Abbrechen", "submit": "Speichern"}
+  "formHeader": {
+    "title": "LV bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
 }

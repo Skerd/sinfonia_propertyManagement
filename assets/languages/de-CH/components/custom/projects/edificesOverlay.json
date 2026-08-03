@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/edificesOverlay.tsx",
+  "title": "Gebäude polygons overlay",
+  "description": "Alle gebäude polygons displayed on die projekt haupt bild.",
+  "noMainImage": "Projekt does nicht have a haupt bild.",
+  "noEdificeSelected": "Keine gebäude selected."
+}

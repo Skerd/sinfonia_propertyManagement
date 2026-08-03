@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/markDelayedMilestoneDialog.tsx",
+  "dialogTitle": "Mark meilenstein delayed",
+  "dialogDescription": "Flag diese meilenstein as delayed. Sie can hinzufügen a grund.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional grund für die delay",
+  "cancel": "Abbrechen",
+  "submit": "Mark delayed"
+}

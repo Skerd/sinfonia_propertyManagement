@@ -9,19 +9,30 @@
   "searchPlaceholder": "Search or add filters...",
   "statusLabel": "Status",
   "fields": {
-    "name": "Reference",
-    "project": "Project",
-    "title": "Title",
-    "documentNumber": "Document No.",
-    "discipline": "Discipline",
-    "documentType": "Type",
-    "status": "Status",
-    "revision": "Revision",
-    "isAsBuilt": "As-Built",
     "createdAt": "Created At",
-    "updatedAt": "Updated At",
+    "createdBy": "Created By",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
+    "description": "Description",
+    "designStage": "Design Stage",
+    "discipline": "Discipline",
+    "documentNumber": "Document No.",
+    "documentType": "Type",
+    "edifice": "Edifice",
+    "floor": "Floor",
+    "isAsBuilt": "As-Built",
+    "isRequiredDeliverable": "Required Deliverable",
+    "media": "Media",
+    "name": "Reference",
+    "notes": "Notes",
+    "project": "Project",
+    "revision": "Revision",
+    "revisionDate": "Revision Date",
+    "status": "Status",
+    "supersedes": "Supersedes",
+    "title": "Title",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
     "!enums": {
       "status": {
         "draft": "Draft",
@@ -29,6 +40,24 @@
         "approved": "Approved",
         "rejected": "Rejected",
         "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Architectural",
+        "structural": "Structural",
+        "mep": "MEP",
+        "civil": "Civil",
+        "fire": "Fire",
+        "landscape": "Landscape",
+        "other": "Other"
+      },
+      "documentType": {
+        "drawing": "Drawing",
+        "specification": "Specification",
+        "calculation": "Calculation",
+        "report": "Report",
+        "as_built": "As-Built",
+        "om_manual": "O&M Manual",
+        "other": "Other"
       }
     }
   }

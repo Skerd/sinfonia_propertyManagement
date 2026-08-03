@@ -8,8 +8,34 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "actualAmount": "Shuma Aktuale",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "direction": "Drejtimi",
     "name": "Referenca",
+    "notes": "Shënime",
+    "period": "Periudha",
     "plan": "Plani",
-    "direction": "Drejtimi"
+    "plannedAmount": "Shuma e Planifikuar",
+    "source": "Burimi",
+    "title": "Titulli",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "direction": {
+        "inflow": "Hyrje",
+        "outflow": "Dalje"
+      },
+      "source": {
+        "owner_contract": "Kontrata e Pronarit",
+        "payment_plan": "Plani i Pagesës",
+        "cost_commitment": "Angazhimi i Kostos",
+        "contractor_invoice": "Fatura e Ndërtuesit",
+        "fee": "Tarifa",
+        "manual": "Manual"
+      }
+    }
   }
 }

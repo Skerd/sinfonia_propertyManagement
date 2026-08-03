@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
+  "title": "Sales & Übergabe",
+  "generalInfo": "Workflow gates",
+  "form": {
+    "requiresSaleApprovalLabel": "Require manager freigabe when creating a verkauf",
+    "requiresHandoverPackageForHandoverLabel": "Require a abgeschlossen übergabe paket before recording übergabe"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Sales & Übergabe",
+    "description": "Firma-wide sales und übergabe policy für Real Estate."
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

@@ -8,9 +8,25 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "itemsJson": "Items Json",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "stage": "Stage",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trade": "Zeja",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "active": "Aktive",
+        "archived": "Arkivuar"
+      }
+    }
   }
 }

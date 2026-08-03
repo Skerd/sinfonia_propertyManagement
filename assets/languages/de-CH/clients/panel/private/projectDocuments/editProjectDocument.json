@@ -1,0 +1,82 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/editProjectDocument.tsx",
+  "title": "Bezeichnung",
+  "generalInfo": "Dokument Details",
+  "editTitle": "Dokument bearbeiten",
+  "editDescription": "Aktualisieren projekt dokument details",
+  "errorTitle": "Dokument konnten nicht geladen werden",
+  "errorDescription": "Beim Laden von die dokument ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "floorLabel": "Geschoss",
+    "floorPlaceholder": "Geschoss auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Dokument bezeichnung",
+    "documentNumberLabel": "Dokument Nummer",
+    "documentNumberPlaceholder": "Plan code",
+    "disciplineLabel": "Disziplin",
+    "disciplinePlaceholder": "Disziplin auswählen",
+    "disciplineArchitectural": "Architektur",
+    "disciplineStructural": "Tragwerk",
+    "disciplineMep": "MEP",
+    "disciplineCivil": "Tiefbau",
+    "disciplineFire": "Brandschutz",
+    "disciplineLandscape": "Landschaft",
+    "disciplineOther": "Andere",
+    "documentTypeLabel": "Dokumenttyp",
+    "documentTypePlaceholder": "Dokumenttyp auswählen",
+    "documentTypeDrawing": "Plan",
+    "documentTypeSpecification": "Leistungsverzeichnis",
+    "documentTypeCalculation": "Berechnung",
+    "documentTypeReport": "Bericht",
+    "documentTypeAsBuilt": "As Built",
+    "documentTypeOmManual": "O&M Manuell",
+    "documentTypeOther": "Andere",
+    "revisionLabel": "Revision",
+    "revisionPlaceholder": "E.g. A",
+    "revisionDateLabel": "Revision Datum",
+    "revisionDatePlaceholder": "Revision datum auswählen",
+    "supersedesLabel": "Ersetzt",
+    "supersedesPlaceholder": "Dokument being replaced auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Zusätzlich details about die dokument",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Dateien",
+    "addFile": "Datei hinzufügen",
+    "filesSelected": "Files selected",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files hinzufügen",
+    "designStageLabel": "Planungsphase",
+    "designStagePlaceholder": "Planungsphase auswählen",
+    "isRequiredDeliverableLabel": "Erforderlich lieferobjekt für phase fertigstellung"
+  },
+  "axios": {
+    "start": {
+      "title": "Dokument wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Dokument aktualisiert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren dokument, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Dokument bearbeiten",
+    "description": "Aktualisieren projekt dokument details"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  }
+}

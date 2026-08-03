@@ -8,8 +8,44 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
+    "bkpAccountCode": "Llogaria BKP",
+    "constructionContract": "Kontrata e Ndërtimit",
+    "constructorRef": "Ndërtuesi",
+    "costCommitment": "Angazhimi i Kostos",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "dueDate": "Data e Skadencës",
+    "edifice": "Ndërtesa",
+    "grossAmount": "Shuma Bruto",
+    "invoiceDate": "Data e Faturës",
     "invoiceNumber": "Nr. Faturës",
-    "status": "Statusi"
+    "name": "Referenca",
+    "netAmount": "Shuma Neto",
+    "notes": "Shënime",
+    "progressClaim": "Kërkesa e Progresit",
+    "project": "Projekti",
+    "qrBillReference": "Referenca QR-Bill",
+    "retentionHeld": "Mbajtja",
+    "source": "Burimi",
+    "status": "Statusi",
+    "updatedAt": "Përditësuar më",
+    "vatAmount": "TVSH",
+    "!enums": {
+      "source": {
+        "manual": "Manual",
+        "ap_inbox": "Inbox AP"
+      },
+      "status": {
+        "received": "Marrë",
+        "under_review": "Në Shqyrtim",
+        "approved": "Miratuar",
+        "paid": "Paguar",
+        "rejected": "Refuzuar",
+        "disputed": "Në Kontest"
+      }
+    }
   }
 }

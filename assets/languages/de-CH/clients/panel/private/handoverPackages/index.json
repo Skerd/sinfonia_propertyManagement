@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
+  "title": "HandoverPackage",
+  "description": "HandoverPackage register",
+  "createHandoverPackage": "HandoverPackage hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "asBuiltComplete": "As-Built Vollständig",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "keysTransferred": "Schlüssel Übergeben",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "omManualsComplete": "O&M Anleitungen Vollständig",
+    "project": "Projekt",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "trainingComplete": "Schulung Vollständig",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "in_progress": "In Bearbeitung",
+        "ready": "Ready",
+        "completed": "Abgeschlossen"
+      }
+    }
+  }
+}

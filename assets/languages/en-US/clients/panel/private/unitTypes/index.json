@@ -20,16 +20,19 @@
   "private": "Private",
   "public": "Public",
   "fields": {
-    "name": "Name",
-    "slug": "Slug",
     "category": "Category",
-    "group": "Group",
-    "description": "Description",
-    "icon": "Icon",
-    "isPrivate": "Is Private",
+    "company": "Company",
+    "createdAt": "Created At",
     "createdBy": "Created By",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted By"
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "group": "Group",
+    "icon": "Icon",
+    "isPrivate": "Is Private",
+    "name": "Name",
+    "slug": "Slug",
+    "updatedAt": "Updated At"
   },
   "searchPlaceholder": "Search or add filters..."
 }

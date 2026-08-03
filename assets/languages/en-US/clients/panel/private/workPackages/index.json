@@ -8,9 +8,29 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "constructorRef": "Constructor",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "plannedEnd": "Planned End",
+    "plannedStart": "Planned Start",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trade": "Trade",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "active": "Active",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

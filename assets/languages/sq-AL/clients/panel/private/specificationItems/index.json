@@ -8,9 +8,41 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "classificationCode": "Kodi i Klasifikimit",
+    "classificationStandard": "Standardi i Klasifikimit",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "isRPosition": "Pozicion R",
+    "lineTotal": "Totali i Rreshtit",
     "name": "Referenca",
-    "title": "Titulli",
+    "notes": "Shënime",
+    "npkChapter": "Kapitulli NPK",
     "npkPosition": "Pozicioni NPK",
-    "status": "Statusi"
+    "project": "Projekti",
+    "quantity": "Sasia",
+    "sortIndex": "Renditja",
+    "specification": "Specifikimi",
+    "status": "Statusi",
+    "title": "Titulli",
+    "unitOfMeasure": "Njësia Matëse",
+    "unitPrice": "Çmimi për Njësi",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "I Personalizuar"
+      },
+      "status": {
+        "active": "Aktive",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

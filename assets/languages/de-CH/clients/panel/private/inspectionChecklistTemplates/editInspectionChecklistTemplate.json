@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
+  "title": "Abnahme-Checklisten-Vorlage bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "tradeLabel": "Gewerk",
+    "tradePlaceholder": "Gewerk",
+    "stageLabel": "Phase",
+    "stagePlaceholder": "Phase",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "itemsJsonLabel": "Checkliste Positionen",
+    "itemsJsonPlaceholder": "Checkliste Positionen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Abnahme-Checklisten-Vorlage bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

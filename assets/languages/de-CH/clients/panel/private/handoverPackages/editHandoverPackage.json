@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
+  "title": "Übergabepaket bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "omManualsCompleteLabel": "O&M Anleitungen Vollständig",
+    "asBuiltCompleteLabel": "As-Built Vollständig",
+    "keysTransferredLabel": "Schlüssel Übergeben",
+    "trainingCompleteLabel": "Schulung Vollständig",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Übergabepaket bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

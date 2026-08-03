@@ -8,9 +8,45 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "actualAmount": "Actual Amount",
+    "actualQty": "Actual Qty",
+    "budget": "Budget",
+    "category": "Category",
+    "classificationCode": "Classification Code",
+    "classificationStandard": "Classification Standard",
+    "constructorRef": "Constructor",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "elementCode": "Element Code",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "plannedAmount": "Planned Amount",
+    "plannedQty": "Planned Qty",
+    "plannedRate": "Planned Rate",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trade": "Trade",
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Updated At",
+    "wbsCode": "WBS Code",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "active": "Active",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

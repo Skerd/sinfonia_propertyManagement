@@ -8,8 +8,40 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "actualCost": "Actual Cost",
+    "asset": "Asset",
+    "assignee": "Assignee",
+    "costEstimate": "Cost Estimate",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "dueDate": "Due Date",
+    "edifice": "Edifice",
+    "linkedSnag": "Linked Snag",
     "name": "Reference",
+    "notes": "Notes",
+    "plan": "Plan",
+    "status": "Status",
     "title": "Title",
-    "status": "Status"
+    "type": "Type",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "type": {
+        "preventive": "Preventive",
+        "corrective": "Corrective",
+        "renovation": "Renovation"
+      },
+      "status": {
+        "open": "Open",
+        "assigned": "Assigned",
+        "in_progress": "In Progress",
+        "done": "Done",
+        "verified": "Verified",
+        "closed": "Closed",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

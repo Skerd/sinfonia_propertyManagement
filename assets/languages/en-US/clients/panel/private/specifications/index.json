@@ -8,10 +8,34 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
     "standard": "Standard",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "totalEstimated": "Total Estimated",
+    "updatedAt": "Updated At",
+    "workPackage": "Work Package",
+    "!enums": {
+      "standard": {
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "draft": "Draft",
+        "issued": "Issued",
+        "tender_ready": "Tender Ready",
+        "awarded": "Awarded",
+        "archived": "Archived"
+      }
+    }
   }
 }

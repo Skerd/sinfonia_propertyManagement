@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "relatedDocument": "Dokumenti i Lidhur",
+    "reviewedBy": "Rishikuar nga",
+    "specReference": "Referenca e Specifikimit",
     "status": "Status",
-    "project": "Project"
+    "submittedBy": "Dërguar nga",
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Dërguar",
+        "revise_and_resubmit": "Rishiko & Ridërgo",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar"
+      }
+    }
   }
 }

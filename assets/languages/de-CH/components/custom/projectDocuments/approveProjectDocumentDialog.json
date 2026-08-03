@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/approveProjectDocumentDialog.tsx",
+  "dialogTitle": "Genehmigen dokument",
+  "dialogDescription": "Genehmigen diese dokument. Sie can hinzufügen optional prüfung notizen.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional freigabe notizen",
+  "cancel": "Abbrechen",
+  "submit": "Genehmigen"
+}

@@ -8,9 +8,30 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
-    "tender": "Ausschreibung",
     "constructorRef": "Unternehmer",
-    "status": "Status"
+    "coveringNotes": "Anschreiben",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "status": "Status",
+    "submittedAt": "Eingereicht am",
+    "tender": "Ausschreibung",
+    "tenderInvitation": "Ausschreibungseinladung",
+    "total": "Total",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "submitted": "Eingereicht",
+        "shortlisted": "Shortlist",
+        "awarded": "Zuschlag",
+        "rejected": "Abgelehnt",
+        "withdrawn": "Zurückgezogen"
+      }
+    }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/assignSnagDialog.tsx",
+  "dialogTitle": "Assign mangel",
+  "dialogDescription": "A person bis assign diese mangel bis. auswählen",
+  "assignedToLabel": "Zugewiesen",
+  "assignedToPlaceholder": "A person auswählen",
+  "cancel": "Abbrechen",
+  "submit": "Zuweisen"
+}

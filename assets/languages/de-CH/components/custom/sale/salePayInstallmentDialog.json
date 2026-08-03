@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
+  "payInstallmentTitle": "Pay Rate",
+  "payInstallmentDescription": "Protokoll zahlung für diese rate",
+  "paidAmount": "Bezahlt Betrag",
+  "remainingAmount": "Rest",
+  "transactionId": "Transaktion ID",
+  "transactionIdPlaceholder": "Optional transaktion referenz",
+  "notes": "Notizen",
+  "notesPlaceholder": "Optional zahlung notizen",
+  "cancel": "Abbrechen",
+  "processing": "Processing...",
+  "confirmPay": "Confirm Zahlung",
+  "paymentRecorded": "Zahlung recorded erfolgreich",
+  "paymentFailed": "Fehlgeschlagen bis protokoll zahlung",
+  "axios": {
+    "start": {
+      "title": "Processing...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zahlung recorded erfolgreich",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehlgeschlagen bis protokoll zahlung",
+      "time": 3000
+    }
+  }
+}

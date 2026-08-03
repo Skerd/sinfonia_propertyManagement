@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx",
+  "failedTitle": "Einheitstyp konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese einheit typ. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "name": "Name",
+  "unitType": "Einheitstyp",
+  "overview": "Übersicht",
+  "description": "Beschreibung",
+  "slug": "Slug",
+  "category": "Kategorie",
+  "group": "Group",
+  "icon": "Icon",
+  "isPrivate": "Zugriff typ",
+  "private": "Privat",
+  "public": "Öffentlich",
+  "unitTypeVisibility": {
+    "true": "Privat",
+    "false": "Öffentlich"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/createProjectDocument.tsx",
+  "title": "Neu Projekt Dokument",
+  "description": "Register a neu plan oder dokument",
+  "generalInfo": "Dokument Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "floorLabel": "Geschoss",
+    "floorPlaceholder": "Geschoss auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Dokument bezeichnung",
+    "documentNumberLabel": "Dokument Nummer",
+    "documentNumberPlaceholder": "Plan code",
+    "disciplineLabel": "Disziplin",
+    "disciplinePlaceholder": "Disziplin auswählen",
+    "disciplineArchitectural": "Architektur",
+    "disciplineStructural": "Tragwerk",
+    "disciplineMep": "MEP",
+    "disciplineCivil": "Tiefbau",
+    "disciplineFire": "Brandschutz",
+    "disciplineLandscape": "Landschaft",
+    "disciplineOther": "Andere",
+    "documentTypeLabel": "Dokumenttyp",
+    "documentTypePlaceholder": "Dokumenttyp auswählen",
+    "documentTypeDrawing": "Plan",
+    "documentTypeSpecification": "Leistungsverzeichnis",
+    "documentTypeCalculation": "Berechnung",
+    "documentTypeReport": "Bericht",
+    "documentTypeAsBuilt": "As Built",
+    "documentTypeOmManual": "O&M Manuell",
+    "documentTypeOther": "Andere",
+    "revisionLabel": "Revision",
+    "revisionPlaceholder": "E.g. A",
+    "revisionDateLabel": "Revision Datum",
+    "revisionDatePlaceholder": "Revision datum auswählen",
+    "supersedesLabel": "Ersetzt",
+    "supersedesPlaceholder": "Dokument being replaced auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Zusätzlich details about die dokument",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Dateien",
+    "addFile": "Datei hinzufügen",
+    "filesSelected": "Files selected",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files hinzufügen",
+    "designStageLabel": "Planungsphase",
+    "designStagePlaceholder": "Planungsphase auswählen",
+    "isRequiredDeliverableLabel": "Erforderlich lieferobjekt für phase fertigstellung"
+  },
+  "axios": {
+    "start": {
+      "title": "Dokument wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Dokument erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen dokument, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Neu Projekt Dokument",
+    "description": "Register a neu plan oder dokument"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Dokument erstellen"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reverseReservationPaymentDialog.tsx",
+  "reverseConfirmTitle": "Reverse Zahlung",
+  "reverseConfirmDescription": "Diese will mark die reservation as nicht bezahlt in full und abbrechen any zugehörig ausstehend provision. Weiter?",
+  "cancel": "Abbrechen",
+  "confirmReverse": "Reverse Zahlung",
+  "axios": {
+    "start": {
+      "title": "Reversing zahlung…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Zahlung reversed",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht reverse zahlung",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/center/cardView/unitTypeCard.tsx",
+  "active": "Aktiv",
+  "name": "Name",
+  "slug": "Slug",
+  "description": "Beschreibung",
+  "icon": "Icon",
+  "category": "Kategorie",
+  "group": "Group",
+  "isPrivate": "Zugriff typ",
+  "private": "Privat",
+  "public": "Öffentlich",
+  "deleted": "Gelöscht"
+}

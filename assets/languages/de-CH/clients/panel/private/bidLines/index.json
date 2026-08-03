@@ -8,8 +8,20 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
+    "alternativeNote": "Alternativnotiz",
     "bid": "Angebot",
-    "specificationItem": "LV-Position"
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "lineTotal": "Positionsbetrag",
+    "name": "Referenz",
+    "quantity": "Menge",
+    "sortIndex": "Sortierung",
+    "specificationItem": "LV-Position",
+    "title": "Bezeichnung",
+    "unitPrice": "Einheitspreis",
+    "updatedAt": "Aktualisiert am"
   }
 }

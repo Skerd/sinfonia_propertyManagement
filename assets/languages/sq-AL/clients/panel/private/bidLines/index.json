@@ -8,8 +8,20 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
+    "alternativeNote": "Shënim Alternativ",
     "bid": "Oferta",
-    "specificationItem": "Pozicioni LV"
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "lineTotal": "Totali i Rreshtit",
+    "name": "Referenca",
+    "quantity": "Sasia",
+    "sortIndex": "Renditja",
+    "specificationItem": "Pozicioni LV",
+    "title": "Titulli",
+    "unitPrice": "Çmimi për Njësi",
+    "updatedAt": "Përditësuar më"
   }
 }

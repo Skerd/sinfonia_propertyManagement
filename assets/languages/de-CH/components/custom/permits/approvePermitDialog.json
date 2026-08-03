@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/approvePermitDialog.tsx",
+  "dialogTitle": "Genehmigen bewilligung",
+  "dialogDescription": "Genehmigen diese bewilligung. Optionally set ein expiry datum und hinzufügen notizen.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional freigabe notizen",
+  "expiresAtLabel": "Expiry datum",
+  "cancel": "Abbrechen",
+  "submit": "Genehmigen"
+}

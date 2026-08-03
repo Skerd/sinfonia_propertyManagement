@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/submitForReviewProjectDocumentDialog.tsx",
+  "dialogTitle": "Submit für prüfung",
+  "dialogDescription": "Confirm that diese dokument ist ready bis werden eingereicht für prüfung. Status will change bis Für Prüfung.",
+  "cancel": "Abbrechen",
+  "submit": "Submit für Prüfung"
+}

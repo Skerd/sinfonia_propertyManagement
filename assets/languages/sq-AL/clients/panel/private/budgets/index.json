@@ -8,9 +8,47 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "approvedTotal": "Approved Total",
+    "bimSource": "Burimi BIM",
+    "classificationStandard": "Standardi i Klasifikimit",
+    "contingencyPercent": "Contingency Percent",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "method": "Metoda",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "revisionNo": "Nr. Revizionit",
     "status": "Status",
-    "project": "Project"
+    "supersedesBudget": "Zëvendëson Buxhetin",
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "version": "Versioni",
+    "!enums": {
+      "method": {
+        "ebkp_h": "eBKP-H",
+        "bkp": "BKP",
+        "custom": "I Personalizuar"
+      },
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "I Personalizuar"
+      },
+      "status": {
+        "draft": "Draft",
+        "pending_approval": "Në Pritje të Miratimit",
+        "approved": "Miratuar",
+        "locked": "I Kyçur",
+        "superseded": "Zëvendësuar"
+      }
+    }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPaid.tsx",
+  "title": "Mark bezahlt",
+  "paidConfirmTitle": "Mark provision bezahlt?",
+  "paidConfirmDescription": "Diese sets die provision status bis bezahlt und einträge die bezahlt time.",
+  "cancel": "Abbrechen",
+  "confirmPaid": "Mark bezahlt",
+  "axios": {
+    "start": {
+      "title": "Provision wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Provision marked bezahlt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren provision",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/finance/index.tsx",
+  "missingProjectId": "A projekt von die galerie. auswählen",
+  "notFound": "Projekt nicht gefunden.",
+  "backToProjects": "Alle projects",
+  "financeIntro": "Investition übersicht und projected returns für diese development.",
+  "priceHistory": "Preis history",
+  "chartAriaLabel": "Preis per square meter over time",
+  "chartTooltipValue": "{{label}} — {{wert}}",
+  "minInvestment": "Minimum investition",
+  "projectedYield": "Projected yield",
+  "ownership": "Ownership modell"
+}

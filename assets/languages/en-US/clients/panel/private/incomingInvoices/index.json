@@ -8,8 +8,43 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "bkpAccountCode": "BKP Account",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "createdContractorInvoice": "Created Contractor Invoice",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "extractedAmount": "Extracted Amount",
+    "extractedCurrencyCode": "Extracted Currency",
+    "extractedDueDate": "Extracted Due Date",
+    "extractedIban": "IBAN",
+    "extractedInvoiceDate": "Extracted Invoice Date",
+    "extractedInvoiceNumber": "Extracted Invoice No.",
+    "extractedQrReference": "Extracted QR Reference",
+    "extractedSupplierName": "Supplier Name",
+    "matchedConstructor": "Matched Constructor",
+    "matchedContract": "Matched Contract",
     "name": "Reference",
+    "notes": "Notes",
+    "ocrStatus": "OCR Status",
+    "project": "Project",
+    "status": "Status",
     "title": "Title",
-    "status": "Status"
+    "updatedAt": "Updated At",
+    "!enums": {
+      "ocrStatus": {
+        "pending": "Pending",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "status": {
+        "inbox": "Inbox",
+        "classified": "Classified",
+        "routed": "Routed",
+        "posted": "Posted",
+        "rejected": "Rejected"
+      }
+    }
   }
 }

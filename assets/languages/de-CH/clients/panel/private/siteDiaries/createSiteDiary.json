@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/createSiteDiary.tsx",
+  "title": "Bautagebuch hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "diaryDateLabel": "Tagebuch Datum",
+    "diaryDatePlaceholder": "Tagebuch Datum",
+    "weatherLabel": "Wetter",
+    "weatherPlaceholder": "Wetter",
+    "workforceCountLabel": "Personal Anzahl",
+    "workforceCountPlaceholder": "Personal Anzahl",
+    "plantSummaryLabel": "Geräte Übersicht",
+    "plantSummaryPlaceholder": "Geräte Übersicht",
+    "workSummaryLabel": "Arbeit Übersicht",
+    "workSummaryPlaceholder": "Arbeit Übersicht",
+    "visitorsLabel": "Besucher",
+    "visitorsPlaceholder": "Besucher",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Bautagebuch hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

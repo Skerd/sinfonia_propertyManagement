@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/inspectionIssueListField.tsx",
+  "addIssue": "Issue hinzufügen",
+  "removeIssue": "Entfernen issue",
+  "keepIssue": "Keep",
+  "issue": "Issue",
+  "addFindingPlaceholder": "Finding hinzufügen",
+  "attachMedia": "Attach medien"
+}

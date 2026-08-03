@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/createConstructionUpdate.tsx",
+  "title": "Baufortschritt hinzufügen",
+  "description": "Protokoll a neu bau fortschritt aktualisieren",
+  "generalInfo": "Aktualisieren Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude (optional) auswählen",
+    "milestoneLabel": "Meilenstein",
+    "milestonePlaceholder": "Meilenstein (optional) auswählen",
+    "scheduleTaskLabel": "Terminaufgabe",
+    "scheduleTaskPlaceholder": "Terminplan aufgabe (optional) auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Aktualisieren bezeichnung eingeben",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Describe bau fortschritt",
+    "progressPercentLabel": "Fortschritt (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Aktualisieren Datum",
+    "updateDatePlaceholder": "Datum auswählen",
+    "photosLabel": "Fotos",
+    "addFile": "Foto hinzufügen",
+    "filesSelected": "Photos selected",
+    "existingFiles": "Existing photos",
+    "newFiles": "Neu photos hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving aktualisieren",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bau aktualisieren gespeichert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht speichern aktualisieren, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Baufortschritt hinzufügen",
+    "description": "Protokoll a neu bau fortschritt aktualisieren"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Aktualisieren"
+  }
+}

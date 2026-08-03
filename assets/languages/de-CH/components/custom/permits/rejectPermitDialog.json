@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/rejectPermitDialog.tsx",
+  "dialogTitle": "Ablehnen bewilligung",
+  "dialogDescription": "Ablehnen diese bewilligung. Its status will change bis abgelehnt.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional rejection grund",
+  "cancel": "Abbrechen",
+  "submit": "Ablehnen"
+}

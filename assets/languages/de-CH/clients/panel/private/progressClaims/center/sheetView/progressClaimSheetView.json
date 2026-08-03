@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/sheetView/progressClaimSheetView.tsx",
+  "progressClaim": "Zahlungsantrag",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "constructionContract": "Bauvertrag",
+  "claimPeriodStart": "Forderung Periode Start",
+  "claimPeriodEnd": "Forderung Periode End",
+  "currency": "Währung",
+  "amount": "Betrag",
+  "certifiedAmount": "Certified Betrag",
+  "retentionHeld": "Rückbehalt",
+  "retentionReleased": "Einbehalt Released",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "submitted": "Eingereicht",
+    "certified": "Ausgewiesen",
+    "paid": "Bezahlt",
+    "rejected": "Abgelehnt"
+  }
+}

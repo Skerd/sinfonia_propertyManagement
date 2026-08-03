@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
+  "title": "Real Estate Dashboard",
+  "description": "Portfolio übersicht mit edifices, KPIs, und financial charts",
+  "period": "Periode",
+  "paymentAlerts": "Zahlung alerts",
+  "viewPaymentPlans": "Zahlung plans anzeigen",
+  "periodLast7Days": "Nach 7 tage",
+  "periodLast30Days": "Nach 30 tage",
+  "periodLast3Months": "Nach 3 months",
+  "periodLast12Months": "Nach 12 months",
+  "refresh": "Refresh",
+  "totalUnits": "Einheiten total",
+  "unitsSold": "Verkauft",
+  "collected": "Eingezogen",
+  "avgPricePerSqm": "Avg €/m²",
+  "unitStatusBreakdown": "Einheit status",
+  "failTitle": "Fehler",
+  "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
+  "selectEdifice": "Ein gebäude bis anzeigen KPIs und charts auswählen",
+  "viewEntries": "Entries anzeigen"
+}

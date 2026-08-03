@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/editSubmittal.tsx",
+  "title": "Einreichung bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "specReferenceLabel": "Spec Referenz",
+    "specReferencePlaceholder": "Spec Referenz",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "relatedDocumentLabel": "Zugehörig Dokument",
+    "relatedDocumentPlaceholder": "Zugehörig dokument auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "submittedByLabel": "Eingereicht von",
+    "submittedByPlaceholder": "Benutzer auswählen",
+    "reviewedByLabel": "Reviewed von",
+    "reviewedByPlaceholder": "Benutzer auswählen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Einreichung bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

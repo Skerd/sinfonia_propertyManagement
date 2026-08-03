@@ -8,8 +8,20 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
+    "alternativeNote": "Alternative Note",
     "bid": "Bid",
-    "specificationItem": "LV Position"
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "lineTotal": "Line Total",
+    "name": "Reference",
+    "quantity": "Quantity",
+    "sortIndex": "Sort Order",
+    "specificationItem": "LV Position",
+    "title": "Title",
+    "unitPrice": "Unit Price",
+    "updatedAt": "Updated At"
   }
 }

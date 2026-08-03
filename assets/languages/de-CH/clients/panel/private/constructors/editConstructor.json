@@ -1,0 +1,91 @@
+{
+  "addAddress": "Neu adresse hinzufügen",
+  "address": "Adresse",
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Unternehmer konnte nicht aktualisiert werden, bitte erneut versuchen!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Unternehmer wird aktualisiert"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Unternehmer erfolgreich aktualisiert!"
+    }
+  },
+  "currentLogo": "Current Logo",
+  "editDescription": "Unternehmer informationen bearbeiten",
+  "editTitle": "Unternehmer bearbeiten",
+  "errorDescription": "Beim Laden von die unternehmer ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Unternehmer konnten nicht geladen werden",
+  "form": {
+    "cityLabel": "Ort",
+    "cityPlaceholder": "Ort",
+    "companyLabel": "Firma",
+    "companyPlaceholder": "Firma auswählen",
+    "companyRequired": "Firma ist erforderlich",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung eingeben",
+    "emailInvalid": "Invalid e-Mail adresse",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail-Adresse eingeben",
+    "latitudeLabel": "Breitengrad",
+    "latitudePlaceholder": "Breitengrad",
+    "logoLabel": "Logo",
+    "longitudeLabel": "Längengrad",
+    "longitudePlaceholder": "Längengrad",
+    "nameLabel": "Name",
+    "namePlaceholder": "Unternehmer name eingeben",
+    "nameRequired": "Name ist erforderlich",
+    "partyTypeLabel": "Partei Typ",
+    "partyTypePlaceholder": "Partei typ auswählen",
+    "partyTypeContractor": "Unternehmer",
+    "partyTypeArchitect": "Architect",
+    "partyTypeEngineer": "Engineer",
+    "partyTypeQs": "Menge Surveyor",
+    "partyTypePm": "Projekt Manager",
+    "partyTypeSurveyor": "Surveyor",
+    "partyTypeOther": "Andere",
+    "tradesLabel": "Gewerke",
+    "tradesPlaceholder": "Trades eingeben",
+    "insuranceExpiryLabel": "Insurance Expiry",
+    "insuranceExpiryPlaceholder": "Insurance expiry datum auswählen",
+    "performanceScoreLabel": "Performance Score",
+    "performanceScorePlaceholder": "Performance score eingeben",
+    "phoneNumberLabel": "Telefon Nummer",
+    "phoneNumberPlaceholder": "Telefonnummer eingeben",
+    "phoneNumberRequired": "Telefon nummer ist erforderlich",
+    "postalCodeLabel": "Postleitzahl",
+    "postalCodePlaceholder": "Postleitzahl",
+    "stateLabel": "Kanton",
+    "statePlaceholder": "Kanton",
+    "streetLabel": "Strasse",
+    "streetPlaceholder": "Strasse",
+    "uploadNewLogoHint": "Upload a neu logo bis replace die current one",
+    "vatLabel": "VAT",
+    "vatPlaceholder": "MWST nummer eingeben",
+    "vatRequired": "MwSt ist erforderlich",
+    "websiteInvalid": "Invalid website URL",
+    "websiteLabel": "Website",
+    "websitePlaceholder": "Website URL eingeben"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  },
+  "formHeader": {
+    "description": "Unternehmer informationen bearbeiten",
+    "title": "Unternehmer bearbeiten"
+  },
+  "generalInfo": "Allgemeine Informationen",
+  "howToReach": "How bis reach us",
+  "logo": "Logo",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
+  "remove": "Entfernen",
+  "title": "Unternehmer bearbeiten",
+  "uploadError": "Fehlgeschlagen bis upload medien files"
+}

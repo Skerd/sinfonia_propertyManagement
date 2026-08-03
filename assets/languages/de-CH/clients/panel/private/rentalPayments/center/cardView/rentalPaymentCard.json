@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx",
+  "statusLabel": "Status",
+  "fields": {
+    "amount": "Betrag",
+    "unit": "Einheit",
+    "lease": "Mietvertrag",
+    "dueDate": "Fälligkeit",
+    "paidDate": "Bezahlt Datum",
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "paid": "Bezahlt",
+        "overdue": "Overdue",
+        "waived": "Waived"
+      }
+    }
+  }
+}

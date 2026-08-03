@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/rejectProjectDocumentDialog.tsx",
+  "dialogTitle": "Ablehnen dokument",
+  "dialogDescription": "Ablehnen diese dokument und send it back bis entwurf. Sie can hinzufügen optional rejection notizen.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional rejection notizen",
+  "cancel": "Abbrechen",
+  "submit": "Ablehnen"
+}

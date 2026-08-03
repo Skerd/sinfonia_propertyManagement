@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/index.tsx",
+  "title": "WorkPackage",
+  "description": "WorkPackage register",
+  "createWorkPackage": "WorkPackage hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "constructorRef": "Unternehmer",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "plannedEnd": "Geplant End",
+    "plannedStart": "Geplant Start",
+    "project": "Projekt",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "trade": "Gewerk",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "planned": "Geplant",
+        "active": "Aktiv",
+        "completed": "Abgeschlossen",
+        "cancelled": "Storniert"
+      }
+    }
+  }
+}

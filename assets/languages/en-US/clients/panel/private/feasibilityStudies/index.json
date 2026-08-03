@@ -8,9 +8,37 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "assumptions": "Assumptions",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "decidedAt": "Decided At",
+    "decidedBy": "Decided By",
+    "decision": "Decision",
+    "decisionNotes": "Decision Notes",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "hardCostEstimate": "Hard Cost Estimate",
+    "irrPercent": "IRR %",
+    "landParcel": "Land Parcel",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "residualValue": "Residual Value",
+    "softCostEstimate": "Soft Cost Estimate",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "in_review": "In Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "archived": "Archived"
+      }
+    }
   }
 }

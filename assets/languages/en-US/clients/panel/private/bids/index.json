@@ -8,9 +8,30 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
-    "tender": "Tender",
     "constructorRef": "Contractor",
-    "status": "Status"
+    "coveringNotes": "Covering Notes",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "name": "Reference",
+    "notes": "Notes",
+    "status": "Status",
+    "submittedAt": "Submitted At",
+    "tender": "Tender",
+    "tenderInvitation": "Tender Invitation",
+    "total": "Total",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Submitted",
+        "shortlisted": "Shortlisted",
+        "awarded": "Awarded",
+        "rejected": "Rejected",
+        "withdrawn": "Withdrawn"
+      }
+    }
   }
 }

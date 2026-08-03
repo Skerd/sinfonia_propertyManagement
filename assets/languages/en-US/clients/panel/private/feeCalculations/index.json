@@ -8,7 +8,27 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "adjustmentFactor": "Adjustment Factor",
+    "basisAmount": "Basis Amount",
+    "consultantAppointment": "Consultant Appointment",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "feePercent": "Fee %",
     "name": "Reference",
-    "status": "Status"
+    "notes": "Notes",
+    "status": "Status",
+    "totalFee": "Total Fee",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "earned": "Earned",
+        "invoiced": "Invoiced",
+        "paid": "Paid"
+      }
+    }
   }
 }

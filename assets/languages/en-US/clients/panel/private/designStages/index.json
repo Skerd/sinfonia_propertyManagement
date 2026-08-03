@@ -8,9 +8,36 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "sortOrder": "Sort Order",
+    "stageType": "Stage Type",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "not_started": "Not Started",
+        "in_progress": "In Progress",
+        "completed": "Completed",
+        "blocked": "Blocked"
+      },
+      "stageType": {
+        "concept": "Concept",
+        "schematic": "Schematic",
+        "design_development": "Design Development",
+        "construction_documents": "Construction Documents",
+        "tender": "Tender",
+        "construction": "Construction",
+        "as_built": "As-Built"
+      }
+    }
   }
 }

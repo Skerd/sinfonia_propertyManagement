@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/center/sheetView/constructionContractSheetView.tsx",
+  "constructionContract": "Bauvertrag",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "workPackage": "Arbeitspaket",
+  "constructorRef": "Unternehmer",
+  "description": "Beschreibung",
+  "currency": "Währung",
+  "contractValue": "Vertrag Wert",
+  "retentionPercent": "Einbehalt Percent",
+  "performanceBond": "Performance Bond",
+  "paymentTerms": "Zahlung Terms",
+  "startDate": "Startdatum",
+  "endDate": "Enddatum",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "active": "Aktiv",
+    "suspended": "Suspended",
+    "completed": "Abgeschlossen",
+    "terminated": "Terminated"
+  },
+  "approvedVariationsTotal": "Genehmigt variations total",
+  "certifiedClaimsTotal": "Certified claims total"
+}

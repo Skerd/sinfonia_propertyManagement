@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
+  "title": "Inbetriebnahmeprotokoll hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "handoverPackageLabel": "Übergabepaket",
+    "handoverPackagePlaceholder": "Übergabepaket auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "systemNameLabel": "System Name",
+    "systemNamePlaceholder": "System Name",
+    "testDateLabel": "Test Datum",
+    "testDatePlaceholder": "Test Datum",
+    "resultNotesLabel": "Ergebnis Notizen",
+    "resultNotesPlaceholder": "Ergebnis Notizen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "inspectedByLabel": "Geprüft von",
+    "inspectedByPlaceholder": "Benutzer auswählen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Inbetriebnahmeprotokoll hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

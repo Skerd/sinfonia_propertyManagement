@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/createBudget.tsx",
+  "title": "Kostenvoranschlag hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "versionLabel": "Version",
+    "versionPlaceholder": "Version",
+    "methodLabel": "Schätzung Methode",
+    "methodPlaceholder": "Methode auswählen",
+    "classificationStandardLabel": "Kostenstandard",
+    "classificationStandardPlaceholder": "Standard auswählen",
+    "revisionNoLabel": "Revision Keine. (KV-Mutation)",
+    "revisionNoPlaceholder": "Revision nummer",
+    "supersedesBudgetLabel": "Ersetzt Budget",
+    "supersedesBudgetPlaceholder": "Prior revision auswählen",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "approvedTotalLabel": "Genehmigt Total",
+    "approvedTotalPlaceholder": "Genehmigt Total",
+    "contingencyPercentLabel": "Contingency Percent",
+    "contingencyPercentPlaceholder": "Contingency Percent",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Kostenvoranschlag hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/sheetView/warrantySheetView.tsx",
+  "warranty": "Garantie",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "unit": "Einheit",
+  "startDate": "Startdatum",
+  "endDate": "Enddatum",
+  "retentionAmount": "Einbehalt Betrag",
+  "currency": "Währung",
+  "retentionReleaseDate": "Einbehalt Release Datum",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "statuses": {
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "void": "Ungültig"
+  }
+}

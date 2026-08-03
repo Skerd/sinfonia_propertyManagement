@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/markUnderReviewPermitDialog.tsx",
+  "dialogTitle": "Mark unter prüfung",
+  "dialogDescription": "Mark diese eingereicht bewilligung as unter prüfung von die authority.",
+  "cancel": "Abbrechen",
+  "submit": "Mark unter prüfung"
+}

@@ -9,19 +9,30 @@
   "searchPlaceholder": "Search or add filters...",
   "statusLabel": "Status",
   "fields": {
-    "name": "Reference",
-    "project": "Project",
-    "title": "Title",
-    "documentNumber": "Document No.",
-    "discipline": "Discipline",
-    "documentType": "Type",
-    "status": "Status",
-    "revision": "Revision",
-    "isAsBuilt": "As-Built",
     "createdAt": "Created At",
-    "updatedAt": "Updated At",
+    "createdBy": "Krijuar nga",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
+    "description": "Përshkrimi",
+    "designStage": "Faza e Projektimit",
+    "discipline": "Discipline",
+    "documentNumber": "Document No.",
+    "documentType": "Type",
+    "edifice": "Ndërtesa",
+    "floor": "Kati",
+    "isAsBuilt": "As-Built",
+    "isRequiredDeliverable": "Dorëzim i Detyrueshëm",
+    "media": "Media",
+    "name": "Reference",
+    "notes": "Shënime",
+    "project": "Project",
+    "revision": "Revision",
+    "revisionDate": "Data e Revizionit",
+    "status": "Status",
+    "supersedes": "Zëvendëson",
+    "title": "Title",
+    "unit": "Njësia",
+    "updatedAt": "Updated At",
     "!enums": {
       "status": {
         "draft": "Draft",
@@ -29,6 +40,24 @@
         "approved": "Approved",
         "rejected": "Rejected",
         "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Arkitekturor",
+        "structural": "Strukturor",
+        "mep": "MEP",
+        "civil": "Civil",
+        "fire": "Zjarr",
+        "landscape": "Peizazh",
+        "other": "Tjetër"
+      },
+      "documentType": {
+        "drawing": "Vizatim",
+        "specification": "Specifikim",
+        "calculation": "Llogaritje",
+        "report": "Raport",
+        "as_built": "As-Built",
+        "om_manual": "Manual O&M",
+        "other": "Tjetër"
       }
     }
   }

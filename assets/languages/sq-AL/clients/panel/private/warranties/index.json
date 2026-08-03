@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "endDate": "Data e Përfundimit",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "retentionAmount": "Shuma e Mbajtur",
+    "retentionReleaseDate": "Data e Lirimit të Mbajtjes",
+    "startDate": "Data e Fillimit",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "unit": "Njësia",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "active": "Aktive",
+        "expired": "Skaduar",
+        "void": "I Pavlefshëm"
+      }
+    }
   }
 }

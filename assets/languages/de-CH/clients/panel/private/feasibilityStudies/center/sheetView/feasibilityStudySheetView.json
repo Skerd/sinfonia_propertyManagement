@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/sheetView/feasibilityStudySheetView.tsx",
+  "feasibilityStudy": "Machbarkeitsstudie",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "landParcel": "Grundstück",
+  "assumptions": "Annahmen",
+  "currency": "Währung",
+  "softCostEstimate": "Weich Kosten Schätzung",
+  "hardCostEstimate": "Hart Kosten Schätzung",
+  "residualValue": "Residual Wert",
+  "irrPercent": "IRR %",
+  "decision": "Entscheid",
+  "decisionNotes": "Entscheid Notizen",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "in_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "archived": "Archiviert"
+  },
+  "decidedBy": "Decided von",
+  "decidedAt": "Decided am"
+}

@@ -8,8 +8,27 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "active": "Active",
+    "asset": "Asset",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "edifice": "Edifice",
+    "intervalDays": "Interval (Days)",
     "name": "Reference",
+    "nextDueAt": "Next Due",
+    "notes": "Notes",
+    "planType": "Plan Type",
+    "responsibleParty": "Responsible Party",
     "title": "Title",
-    "planType": "Plan Type"
+    "updatedAt": "Updated At",
+    "!enums": {
+      "planType": {
+        "preventive": "Preventive",
+        "statutory": "Statutory",
+        "renovation": "Renovation"
+      }
+    }
   }
 }

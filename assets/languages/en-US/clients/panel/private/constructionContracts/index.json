@@ -8,9 +8,38 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "approvedVariationsTotal": "Approved Variations Total",
+    "certifiedClaimsTotal": "Certified Claims Total",
+    "constructorRef": "Constructor",
+    "contractValue": "Contract Value",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "endDate": "End Date",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "paymentTerms": "Payment Terms",
+    "performanceBond": "Performance Bond",
+    "project": "Project",
+    "retentionPercent": "Retention %",
+    "startDate": "Start Date",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "workPackage": "Work Package",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "active": "Active",
+        "suspended": "Suspended",
+        "completed": "Completed",
+        "terminated": "Terminated"
+      }
+    }
   }
 }

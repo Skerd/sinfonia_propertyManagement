@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
+  "title": "Makler Performance Bericht",
+  "refresh": "Refresh",
+  "noActivity": "Keine makler activity gefunden für die selected periode.",
+  "errorTitle": "Maklerbericht konnten nicht geladen werden",
+  "errorDescription": "Something went wrong während fetching die bericht. Click bis versuchen erneut.",
+  "errorTooltip": "Click bis retry fetching die daten.",
+  "periodLabel": "Periode",
+  "periodCustom": "Custom range",
+  "dateFromLabel": "Startdatum",
+  "dateToLabel": "Enddatum",
+  "agentsLabel": "Agents",
+  "agentsPlaceholder": "Alle agents",
+  "selectDateRangeHint": "A periode oder choose both start und end dates. auswählen",
+  "exportPdf": "Export PDF",
+  "exportPdfLoading": "Exporting…",
+  "period": {
+    "last30": "Nach 30 tage",
+    "last3months": "Nach 3 months",
+    "last6months": "Nach 6 months",
+    "last12months": "Nach 12 months"
+  },
+  "pdf": {
+    "period": "Periode",
+    "generatedAt": "Generated am"
+  },
+  "columns": {
+    "agent": "Makler",
+    "sales": "Verkäufe",
+    "cash": "Bar",
+    "paymentPlan": "Zahlungsplan",
+    "reservations": "Reservationen",
+    "converted": "Umgewandelt",
+    "conversionRate": "Conv. Satz",
+    "commissionPaid": "Provision Bezahlt",
+    "commissionPending": "Provision Ausstehend",
+    "avgRate": "Avg. Satz %"
+  }
+}

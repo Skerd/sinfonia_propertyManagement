@@ -9,16 +9,20 @@
   "failDescription": "An error occurred while loading construction updates. Please try again.",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
-    "name": "Reference",
-    "project": "Project",
-    "edifice": "Edifice",
-    "title": "Title",
-    "progressPercent": "Progress %",
-    "updateDate": "Update Date",
-    "description": "Description",
     "createdAt": "Created At",
-    "updatedAt": "Updated At",
+    "createdBy": "Created By",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted By"
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "milestone": "Milestone",
+    "name": "Reference",
+    "photos": "Photos",
+    "progressPercent": "Progress %",
+    "project": "Project",
+    "scheduleTask": "Schedule Task",
+    "title": "Title",
+    "updateDate": "Update Date",
+    "updatedAt": "Updated At"
   }
 }

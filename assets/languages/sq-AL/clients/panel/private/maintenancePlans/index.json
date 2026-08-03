@@ -8,8 +8,27 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "active": "Aktive",
+    "asset": "Aseti",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "edifice": "Ndërtesa",
+    "intervalDays": "Intervali (Ditë)",
     "name": "Referenca",
+    "nextDueAt": "Afati i Ardhshëm",
+    "notes": "Shënime",
+    "planType": "Lloji i Planit",
+    "responsibleParty": "Pala Përgjegjëse",
     "title": "Titulli",
-    "planType": "Lloji i Planit"
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "planType": {
+        "preventive": "Parandaluese",
+        "statutory": "Ligjore",
+        "renovation": "Rinovim"
+      }
+    }
   }
 }

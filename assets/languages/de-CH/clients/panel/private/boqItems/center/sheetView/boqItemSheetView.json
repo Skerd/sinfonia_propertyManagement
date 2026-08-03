@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/sheetView/boqItemSheetView.tsx",
+  "boqItem": "LV-Position",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "budget": "Kostenvoranschlag",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "constructorRef": "Unternehmer",
+  "classificationStandard": "Kostenstandard",
+  "classificationCode": "Kostencode",
+  "elementCode": "Element Code",
+  "wbsCode": "WBS Code",
+  "trade": "Gewerk",
+  "category": "Kategorie",
+  "description": "Beschreibung",
+  "unitOfMeasure": "Einheit Von Mass",
+  "plannedQty": "Geplante Menge",
+  "plannedRate": "Geplant Satz",
+  "plannedAmount": "Geplanter Betrag",
+  "actualQty": "Effektiv Menge",
+  "actualAmount": "Ist-Betrag",
+  "currency": "Währung",
+  "notes": "Notizen",
+  "statuses": {
+    "active": "Aktiv",
+    "cancelled": "Storniert"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Benutzerdefiniert"
+  }
+}

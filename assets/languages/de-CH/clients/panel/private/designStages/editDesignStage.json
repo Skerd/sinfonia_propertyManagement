@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/editDesignStage.tsx",
+  "title": "Planungsphase bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "stageTypeLabel": "Phase Typ",
+    "stageTypePlaceholder": "Phase typ auswählen",
+    "stageType_concept": "Concept",
+    "stageType_schematic": "Schematic",
+    "stageType_design_development": "Planung Development",
+    "stageType_construction_documents": "Bau Dokumente",
+    "stageType_tender": "Ausschreibung",
+    "stageType_construction": "Bau",
+    "stageType_as_built": "As-Built",
+    "sortOrderLabel": "Sortierung",
+    "sortOrderPlaceholder": "Sortierung",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Planungsphase bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

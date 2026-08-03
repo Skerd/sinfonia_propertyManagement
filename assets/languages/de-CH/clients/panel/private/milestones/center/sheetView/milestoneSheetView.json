@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx",
+  "failedTitle": "Meilenstein konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese meilenstein. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "milestone": "Meilenstein",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "status": "Status",
+  "weightPercent": "Weight %",
+  "plannedStart": "Geplant start",
+  "plannedEnd": "Geplant end",
+  "actualStart": "Effektiv start",
+  "actualEnd": "Effektiv end",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "media": "Medien",
+  "none": "Keine",
+  "statuses": {
+    "planned": "Geplant",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "delayed": "Delayed",
+    "cancelled": "Storniert"
+  }
+}

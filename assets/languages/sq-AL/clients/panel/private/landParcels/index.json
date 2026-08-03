@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "acquisitionCost": "Kostoja e Blerjes",
+    "areaSqm": "Sipërfaqja (m²)",
+    "cadastralReference": "Referenca Kadastrale",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "dueDiligenceStatus": "Statusi i Due Diligence",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "zoning": "Zonimi",
+    "!enums": {
+      "status": {
+        "prospect": "Prospekt",
+        "under_dd": "Në Due Diligence",
+        "acquired": "Blerë",
+        "disposed": "Alienuar"
+      }
+    }
   }
 }

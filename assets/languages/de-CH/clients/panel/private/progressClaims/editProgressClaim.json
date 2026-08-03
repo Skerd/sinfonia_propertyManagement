@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/editProgressClaim.tsx",
+  "title": "Zahlungsantrag bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "constructionContractLabel": "Bauvertrag",
+    "constructionContractPlaceholder": "Bauvertrag auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "claimPeriodStartLabel": "Forderung Periode Start",
+    "claimPeriodStartPlaceholder": "Forderung Periode Start",
+    "claimPeriodEndLabel": "Forderung Periode End",
+    "claimPeriodEndPlaceholder": "Forderung Periode End",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "amountLabel": "Betrag",
+    "amountPlaceholder": "Betrag",
+    "certifiedAmountLabel": "Certified Betrag",
+    "certifiedAmountPlaceholder": "Certified Betrag",
+    "retentionHeldLabel": "Rückbehalt",
+    "retentionHeldPlaceholder": "Rückbehalt",
+    "retentionReleasedLabel": "Einbehalt Released",
+    "retentionReleasedPlaceholder": "Einbehalt Released",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Zahlungsantrag bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

@@ -8,9 +8,45 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
-    "title": "Titulli",
+    "assignee": "I Caktuari",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "createdOnSite": "Created On Site",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "geometryH": "Lartësia",
+    "geometryW": "Gjerësia",
+    "geometryX": "X",
+    "geometryY": "Y",
+    "layer": "Shtresa",
+    "linkedRfi": "Linked RFI",
+    "linkedScheduleTask": "Linked Schedule Task",
+    "linkedSnag": "Linked Snag",
     "markerType": "Lloji i Shënuesit",
-    "status": "Statusi"
+    "media": "Media",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "page": "Faqja",
+    "planDocument": "Dokumenti i Planit",
+    "project": "Projekti",
+    "status": "Statusi",
+    "title": "Titulli",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "markerType": {
+        "defect": "Defekt",
+        "decision": "Vendim",
+        "order": "Urdhër",
+        "pendency": "Në Pritje",
+        "info": "Info"
+      },
+      "status": {
+        "open": "Hapur",
+        "in_progress": "Në Progres",
+        "done": "Përfunduar",
+        "void": "I Pavlefshëm"
+      }
+    }
   }
 }

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/floors/unitsOverlay.tsx",
+  "title": "Einheit polygons overlay",
+  "description": "Alle einheit polygons displayed on die geschoss haupt bild.",
+  "noMainImage": "Geschoss does nicht have a haupt bild.",
+  "noUnitSelected": "Keine einheit selected."
+}

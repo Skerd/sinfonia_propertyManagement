@@ -1,0 +1,143 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx",
+  "title": "Änderungsanträge",
+  "description": "Kunde änderung requests verwalten",
+  "descriptionWithContext": "Änderung requests für diese einheit verwalten",
+  "createModificationRequest": "Antrag erstellen",
+  "noData": "Keine änderungsanträge gefunden",
+  "failTitle": "Änderungsanträge konnten nicht geladen werden",
+  "failDescription": "Beim Laden von änderungsanträge ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "status": "Status",
+  "deleted": "Gelöscht",
+  "name": "Name",
+  "requestTitle": "Bezeichnung",
+  "deliveredAt": "Delivered",
+  "constructionType": "Bau Typ",
+  "requestedBy": "Requested Von",
+  "submittedAt": "Eingereicht am",
+  "view": "Anzeigen",
+  "fields": {
+    "architectApproval": {
+      "decision": "Entscheid",
+      "user": "Reviewed Von",
+      "notes": "Notizen",
+      "reviewedAt": "Reviewed Am"
+    },
+    "cancellationReason": "Annullierungsgrund",
+    "cancelledAt": "Annulliert am",
+    "ceoApproval": {
+      "decision": "Entscheid",
+      "user": "Reviewed Von",
+      "notes": "Notizen",
+      "reviewedAt": "Reviewed Am"
+    },
+    "clientCostApproval": "Kunde Kosten Freigabe",
+    "clientNotifiedAt": "Kunde Notified Am",
+    "completedAt": "Abgeschlossen Am",
+    "constructionType": "Bau Typ",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "deliveryApproval": {
+      "decision": "Entscheid",
+      "user": "Reviewed Von",
+      "notes": "Notizen",
+      "reviewedAt": "Reviewed Am"
+    },
+    "description": "Beschreibung",
+    "engineerApproval": {
+      "decision": "Entscheid",
+      "user": "Reviewed Von",
+      "notes": "Notizen",
+      "reviewedAt": "Reviewed Am"
+    },
+    "financeDetails": {
+      "totalCost": "Total Kosten",
+      "currency": "Währung",
+      "costBreakdown": {
+        "item": "Position",
+        "cost": "Kosten",
+        "quantity": "Menge",
+        "unit": "Einheit"
+      },
+      "media": "Medien",
+      "notes": "Notizen",
+      "estimatedCompletionDate": "Estimated Fertigstellung Datum"
+    },
+    "inspection": "Abnahme",
+    "inspections": "Abnahmen",
+    "materials": "Engineer Materials",
+    "name": "Name",
+    "notificationSent": "Benachrichtigung Sent",
+    "requestedBy": "Requested Von",
+    "specifications": "Leistungsverzeichnisse",
+    "stageDueDate": "Phase Fällig Datum",
+    "status": "Status",
+    "submittedAt": "Eingereicht am",
+    "title": "Bezeichnung",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "constructionType": {
+        "materials": "Materials",
+        "room_division": "Room Division",
+        "flooring": "Flooring",
+        "utilities": "Utilities",
+        "structural": "Tragwerk",
+        "electrical": "Electrical",
+        "plumbing": "Plumbing",
+        "hvac": "HVAC",
+        "cosmetic": "Cosmetic",
+        "other": "Andere"
+      },
+      "status": {
+        "pending_architect": "Ausstehend Architect",
+        "pending_engineer": "Ausstehend Engineer",
+        "pending_ceo": "Ausstehend CEO",
+        "pending_architect_revision": "Ausstehend Architect Revision",
+        "pending_engineer_revision": "Ausstehend Engineer Revision",
+        "pending_finance": "Ausstehend Finanzen",
+        "finance_completed": "Finanzen Abgeschlossen",
+        "pending_delivery": "Ausstehend Delivery",
+        "completed": "Abgeschlossen",
+        "cancelled": "Storniert"
+      },
+      "architectApproval": {
+        "decision": {
+          "approved": "Genehmigt",
+          "rejected": "Abgelehnt",
+          "pending": "Ausstehend"
+        }
+      },
+      "engineerApproval": {
+        "decision": {
+          "approved": "Genehmigt",
+          "rejected": "Abgelehnt",
+          "pending": "Ausstehend"
+        }
+      },
+      "ceoApproval": {
+        "decision": {
+          "approved": "Genehmigt",
+          "rejected": "Abgelehnt",
+          "pending": "Ausstehend"
+        }
+      },
+      "deliveryApproval": {
+        "decision": {
+          "approved": "Genehmigt",
+          "rejected": "Abgelehnt",
+          "pending": "Ausstehend"
+        }
+      },
+      "source": {
+        "engineer_material": "Engineer Material",
+        "manual": "Manuell"
+      }
+    }
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "yes": "Ja",
+  "no": "Nein"
+}

@@ -17,28 +17,36 @@
   "submittedAt": "Submitted At",
   "view": "View",
   "fields": {
-    "name": "Name",
-    "unit": "Unit",
-    "requestedBy": "Requested By",
-    "title": "Title",
-    "description": "Description",
-    "constructionType": "Construction Type",
-    "materials": "Engineer Materials",
-    "specifications": "Specifications",
-    "status": "Status",
     "architectApproval": {
       "decision": "Decision",
       "user": "Reviewed By",
       "notes": "Notes",
       "reviewedAt": "Reviewed At"
     },
-    "engineerApproval": {
+    "cancellationReason": "Cancellation Reason",
+    "cancelledAt": "Cancelled At",
+    "ceoApproval": {
       "decision": "Decision",
       "user": "Reviewed By",
       "notes": "Notes",
       "reviewedAt": "Reviewed At"
     },
-    "ceoApproval": {
+    "clientCostApproval": "Client Cost Approval",
+    "clientNotifiedAt": "Client Notified At",
+    "completedAt": "Completed At",
+    "constructionType": "Construction Type",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "deliveryApproval": {
+      "decision": "Decision",
+      "user": "Reviewed By",
+      "notes": "Notes",
+      "reviewedAt": "Reviewed At"
+    },
+    "description": "Description",
+    "engineerApproval": {
       "decision": "Decision",
       "user": "Reviewed By",
       "notes": "Notes",
@@ -57,23 +65,19 @@
       "notes": "Notes",
       "estimatedCompletionDate": "Estimated Completion Date"
     },
-    "clientNotifiedAt": "Client Notified At",
-    "notificationSent": "Notification Sent",
-    "submittedAt": "Submitted At",
-    "deliveryApproval": {
-      "decision": "Decision",
-      "user": "Reviewed By",
-      "notes": "Notes",
-      "reviewedAt": "Reviewed At"
-    },
-    "inspections": "Inspections",
     "inspection": "Inspection",
-    "completedAt": "Completed At",
-    "cancelledAt": "Cancelled At",
-    "cancellationReason": "Cancellation Reason",
-    "createdBy": "Created By",
-    "deletedAt": "Deleted",
-    "deletedBy": "Deleted By",
+    "inspections": "Inspections",
+    "materials": "Engineer Materials",
+    "name": "Name",
+    "notificationSent": "Notification Sent",
+    "requestedBy": "Requested By",
+    "specifications": "Specifications",
+    "stageDueDate": "Stage Due Date",
+    "status": "Status",
+    "submittedAt": "Submitted At",
+    "title": "Title",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
     "!enums": {
       "constructionType": {
         "materials": "Materials",
@@ -126,6 +130,10 @@
           "rejected": "Rejected",
           "pending": "Pending"
         }
+      },
+      "source": {
+        "engineer_material": "Engineer Material",
+        "manual": "Manual"
       }
     }
   },

@@ -1,0 +1,60 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/createConstructionContract.tsx",
+  "title": "Bauvertrag hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "workPackageLabel": "Arbeitspaket",
+    "workPackagePlaceholder": "Arbeitspaket auswählen",
+    "constructorLabel": "Unternehmer",
+    "constructorPlaceholder": "Unternehmer auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "contractValueLabel": "Vertrag Wert",
+    "contractValuePlaceholder": "Vertrag Wert",
+    "retentionPercentLabel": "Einbehalt Percent",
+    "retentionPercentPlaceholder": "Einbehalt Percent",
+    "performanceBondLabel": "Performance Bond",
+    "performanceBondPlaceholder": "Performance Bond",
+    "paymentTermsLabel": "Zahlung Terms",
+    "paymentTermsPlaceholder": "Zahlung Terms",
+    "startDateLabel": "Startdatum",
+    "startDatePlaceholder": "Startdatum",
+    "endDateLabel": "Enddatum",
+    "endDatePlaceholder": "Enddatum",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Bauvertrag hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

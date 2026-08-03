@@ -8,8 +8,44 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
+    "bkpAccountCode": "BKP-Konto",
+    "constructionContract": "Bauvertrag",
+    "constructorRef": "Unternehmer",
+    "costCommitment": "Kostenverpflichtung",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "dueDate": "Fälligkeitsdatum",
+    "edifice": "Gebäude",
+    "grossAmount": "Bruttobetrag",
+    "invoiceDate": "Rechnungsdatum",
     "invoiceNumber": "Rechnungsnr.",
-    "status": "Status"
+    "name": "Referenz",
+    "netAmount": "Nettobetrag",
+    "notes": "Notizen",
+    "progressClaim": "Fortschrittsrechnung",
+    "project": "Projekt",
+    "qrBillReference": "QR-Rechnung Referenz",
+    "retentionHeld": "Einbehalt",
+    "source": "Quelle",
+    "status": "Status",
+    "updatedAt": "Aktualisiert am",
+    "vatAmount": "MwSt.-Betrag",
+    "!enums": {
+      "source": {
+        "manual": "Manuell",
+        "ap_inbox": "AP-Posteingang"
+      },
+      "status": {
+        "received": "Empfangen",
+        "under_review": "In Prüfung",
+        "approved": "Genehmigt",
+        "paid": "Bezahlt",
+        "rejected": "Abgelehnt",
+        "disputed": "Bestritten"
+      }
+    }
   }
 }

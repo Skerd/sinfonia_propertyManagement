@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/startScheduleTaskDialog.tsx",
+  "dialogTitle": "Start aufgabe",
+  "dialogDescription": "Move diese aufgabe bis in fortschritt und protokoll its effektiv start datum.",
+  "cancel": "Abbrechen",
+  "submit": "Start aufgabe"
+}

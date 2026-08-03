@@ -8,10 +8,30 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
-    "standard": "Standard",
+    "active": "Active",
     "code": "Code",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "level": "Level",
+    "name": "Reference",
+    "notes": "Notes",
+    "parentCode": "Parent Code",
+    "sortIndex": "Sort Order",
+    "standard": "Standard",
     "title": "Title",
-    "active": "Active"
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "standard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "sia": "SIA",
+        "custom": "Custom"
+      }
+    }
   }
 }

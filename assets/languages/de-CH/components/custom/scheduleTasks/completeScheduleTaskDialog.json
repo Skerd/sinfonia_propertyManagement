@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/completeScheduleTaskDialog.tsx",
+  "dialogTitle": "Vollständig aufgabe",
+  "dialogDescription": "Mark diese aufgabe as abgeschlossen und protokoll its effektiv end datum.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional fertigstellung notizen",
+  "cancel": "Abbrechen",
+  "submit": "Vollständig aufgabe"
+}

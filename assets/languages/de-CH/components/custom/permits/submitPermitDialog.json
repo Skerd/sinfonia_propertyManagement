@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/submitPermitDialog.tsx",
+  "dialogTitle": "Submit bewilligung",
+  "dialogDescription": "Submit diese bewilligung bis die authority. Its status will change bis eingereicht.",
+  "cancel": "Abbrechen",
+  "submit": "Absenden"
+}

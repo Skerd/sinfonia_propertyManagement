@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "answer": "Përgjigja",
+    "answeredBy": "Përgjigjur nga",
+    "askedBy": "Pyetur nga",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "dueDate": "Data e Skadencës",
+    "edifice": "Ndërtesa",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "question": "Pyetja",
+    "relatedDocument": "Dokumenti i Lidhur",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "open": "Hapur",
+        "answered": "Përgjigjur",
+        "closed": "Mbyllur",
+        "void": "I Pavlefshëm"
+      }
+    }
   }
 }

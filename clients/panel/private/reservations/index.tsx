@@ -73,9 +73,9 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
             type: COLUMN_TYPE.ENUM,
             enumValues: [
                 {value: "active",    label: resolveLanguageKey("active")    as string},
-                {value: "expired",   label: "Expired"},
+                {value: "expired",   label: resolveLanguageKey("expired")   as string},
                 {value: "cancelled", label: resolveLanguageKey("cancelled") as string},
-                {value: "converted", label: "Converted"},
+                {value: "converted", label: resolveLanguageKey("converted") as string},
             ],
         },
         {

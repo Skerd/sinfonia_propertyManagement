@@ -8,9 +8,37 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "assumptions": "Supozimet",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "decidedAt": "Decided At",
+    "decidedBy": "Decided By",
+    "decision": "Decision",
+    "decisionNotes": "Decision Notes",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "hardCostEstimate": "Vlerësimi i Kostove të Forta",
+    "irrPercent": "IRR %",
+    "landParcel": "Parcela",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "residualValue": "Vlera e Mbetur",
+    "softCostEstimate": "Vlerësimi i Kostove të Buta",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "in_review": "Në Shqyrtim",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "archived": "Arkivuar"
+      }
+    }
   }
 }

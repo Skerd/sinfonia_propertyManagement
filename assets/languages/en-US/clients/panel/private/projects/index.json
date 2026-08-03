@@ -5,15 +5,17 @@
   "fields": {
     "createdAt": "Created At",
     "createdBy": "Created By",
-    "updatedAt": "Updated At",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
     "description": "Description",
     "imageGallery": "Gallery",
     "mainImage": "Image",
+    "marketingBooklet": "Marketing Booklet",
+    "mediaFiles": "Media Files",
     "name": "Name",
     "reservationCommissionRatePercent": "Reservation Commission",
     "saleCommissionRatePercent": "Sale Commission",
+    "updatedAt": "Updated At",
     "videoGallery": "Videos"
   },
   "searchPlaceholder": "Search or add filters...",

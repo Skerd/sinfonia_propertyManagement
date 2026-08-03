@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/editPermit.tsx",
+  "title": "Bewilligung bearbeiten",
+  "description": "Register a neu regulatory bewilligung",
+  "generalInfo": "Bewilligung Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bewilligung bezeichnung",
+    "permitTypeLabel": "Bewilligung Typ",
+    "permitTypePlaceholder": "Typ auswählen",
+    "typeBuilding": "Gebäude",
+    "typeExcavation": "Excavation",
+    "typeEnvironmental": "Environmental",
+    "typeFire": "Brandschutz",
+    "typeUtility": "Utility",
+    "typeOccupancy": "Occupancy",
+    "typeZoning": "Zonierung",
+    "typeOther": "Andere",
+    "authorityLabel": "Authority",
+    "authorityPlaceholder": "Regulatory body",
+    "referenceNumberLabel": "Referenz Nummer",
+    "referenceNumberPlaceholder": "Official referenz",
+    "expiresAtLabel": "Expires Am",
+    "expiresAtPlaceholder": "Datum auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Dateien",
+    "existingFiles": "Existing files",
+    "newFiles": "Dateien hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Saving bewilligung",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bewilligung gespeichert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht speichern bewilligung",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Bewilligung bearbeiten",
+    "description": "Aktualisieren bewilligung details"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

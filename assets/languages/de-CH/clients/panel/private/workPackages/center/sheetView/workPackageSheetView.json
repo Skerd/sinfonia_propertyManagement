@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/sheetView/workPackageSheetView.tsx",
+  "workPackage": "Arbeitspaket",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "constructorRef": "Unternehmer",
+  "trade": "Gewerk",
+  "description": "Beschreibung",
+  "plannedStart": "Geplant Start",
+  "plannedEnd": "Geplant End",
+  "notes": "Notizen",
+  "statuses": {
+    "planned": "Geplant",
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  }
+}

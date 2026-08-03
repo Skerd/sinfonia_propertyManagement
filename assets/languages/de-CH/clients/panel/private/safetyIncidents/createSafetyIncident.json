@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/createSafetyIncident.tsx",
+  "title": "Sicherheitsvorfall hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "severityLabel": "Schweregrad",
+    "severityPlaceholder": "Schweregrad auswählen",
+    "severity_low": "Low",
+    "severity_medium": "Medium",
+    "severity_high": "High",
+    "severity_critical": "Critical",
+    "locationLabel": "Standort",
+    "locationPlaceholder": "Standort",
+    "incidentDateLabel": "Vorfall Datum",
+    "incidentDatePlaceholder": "Vorfall Datum",
+    "personsInvolvedLabel": "Personen Beteiligt",
+    "personsInvolvedPlaceholder": "Personen Beteiligt",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "correctiveActionsLabel": "Korrektiv Massnahmen",
+    "correctiveActionsPlaceholder": "Korrektiv Massnahmen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "reportedByLabel": "Reported von",
+    "reportedByPlaceholder": "Benutzer auswählen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Sicherheitsvorfall hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

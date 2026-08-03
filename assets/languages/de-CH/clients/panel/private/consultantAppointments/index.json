@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
+  "title": "ConsultantAppointment",
+  "description": "ConsultantAppointment register",
+  "createConsultantAppointment": "ConsultantAppointment hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "adjustmentFactor": "Anpassungsfaktor",
+    "basisKind": "Basis",
+    "cappedAmount": "Capped Betrag",
+    "constructorRef": "Unternehmer",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "deliverables": "Deliverables",
+    "endDate": "Enddatum",
+    "feeAmount": "Honorar Betrag",
+    "feeModel": "Honorar Modell",
+    "hourlyRate": "Hourly Satz",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "role": "Rolle",
+    "scope": "Umfang",
+    "startDate": "Startdatum",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "feeModel": {
+        "sia_102": "SIA 102",
+        "sia_103": "SIA 103",
+        "sia_108": "SIA 108",
+        "lump_sum": "Lump Sum",
+        "time_based": "Time-based"
+      },
+      "basisKind": {
+        "construction_cost": "Bau Kosten",
+        "fixed": "Fixed",
+        "hourly": "Hourly"
+      },
+      "status": {
+        "draft": "Entwurf",
+        "active": "Aktiv",
+        "completed": "Abgeschlossen",
+        "terminated": "Terminated"
+      },
+      "role": {
+        "architect": "Architect",
+        "engineer": "Engineer",
+        "qs": "Qs",
+        "pm": "Pm",
+        "surveyor": "Surveyor",
+        "other": "Andere"
+      }
+    }
+  }
+}

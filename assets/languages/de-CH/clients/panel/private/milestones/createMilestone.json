@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/createMilestone.tsx",
+  "title": "Neu Meilenstein",
+  "description": "A neu projekt meilenstein erstellen",
+  "generalInfo": "Meilenstein Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "E.g. Foundation vollständig",
+    "weightPercentLabel": "Weight %",
+    "weightPercentPlaceholder": "0 - 100",
+    "plannedStartLabel": "Geplant Start",
+    "plannedStartPlaceholder": "Datum auswählen",
+    "plannedEndLabel": "Geplant End",
+    "plannedEndPlaceholder": "Datum auswählen",
+    "predecessorsLabel": "Predecessors",
+    "predecessorsPlaceholder": "Preceding milestones auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Describe diese meilenstein",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Medien",
+    "existingFiles": "Existing medien",
+    "newFiles": "Neu medien hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Meilenstein wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Meilenstein erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen meilenstein, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Neu Meilenstein",
+    "description": "A neu projekt meilenstein erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Meilenstein erstellen"
+  }
+}

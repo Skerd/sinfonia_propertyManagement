@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
+  "title": "LandParcel",
+  "description": "LandParcel register",
+  "createLandParcel": "LandParcel hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "acquisitionCost": "Erwerb Kosten",
+    "areaSqm": "Fläche (m²)",
+    "cadastralReference": "Kataster Referenz",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "dueDiligenceStatus": "Fällig Due-Diligence Status",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "zoning": "Zonierung",
+    "!enums": {
+      "status": {
+        "prospect": "Prospect",
+        "under_dd": "Unter DD",
+        "acquired": "Acquired",
+        "disposed": "Disposed"
+      }
+    }
+  }
+}

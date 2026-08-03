@@ -8,9 +8,33 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "budget": "Buxheti",
+    "committedAmount": "Shuma e Angazhuar",
+    "constructorRef": "Ndërtuesi",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "issuedAt": "Issued At",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "retentionPercent": "Mbajtja %",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "issued": "Lëshuar",
+        "partially_received": "Pjesërisht Marrë",
+        "closed": "Mbyllur",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

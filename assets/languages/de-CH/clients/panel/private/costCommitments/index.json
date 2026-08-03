@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/index.tsx",
+  "title": "CostCommitment",
+  "description": "CostCommitment register",
+  "createCostCommitment": "CostCommitment hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "budget": "Kostenvoranschlag",
+    "committedAmount": "Committed Betrag",
+    "constructorRef": "Unternehmer",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "issuedAt": "Issued Am",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "retentionPercent": "Einbehalt %",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "issued": "Ausgestellt",
+        "partially_received": "Partially Empfangen",
+        "closed": "Geschlossen",
+        "cancelled": "Storniert"
+      }
+    }
+  }
+}

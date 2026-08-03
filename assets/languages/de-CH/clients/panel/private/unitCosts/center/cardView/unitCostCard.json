@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx",
+  "failedTitle": "Einheitskosten konnten nicht geladen werden",
+  "failedDescription": "Something went wrong. Click bis retry.",
+  "purchaseDate": "Kauf datum",
+  "purchasePerson": "Purchased von",
+  "documentSubtotal": "Zwischensumme",
+  "unitCostVerification": {
+    "pending_verification": "Ausstehend verifizierung",
+    "verified": "Verifiziert",
+    "rejected": "Abgelehnt",
+    "needs_revision": "Needs revision"
+  },
+  "unitCostPayment": {
+    "unpaid": "Unbezahlt",
+    "partially_paid": "Partially bezahlt",
+    "paid": "Bezahlt",
+    "waived": "Waived",
+    "disputed": "Bestritten"
+  },
+  "invoiceNumber": "Rechnung #",
+  "vendorName": "Lieferant",
+  "tag": "Tag",
+  "relatedModificationRequest": "Änderungsantrag"
+}

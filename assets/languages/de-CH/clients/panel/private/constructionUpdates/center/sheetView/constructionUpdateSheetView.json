@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx",
+  "failedTitle": "Baufortschritt konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese aktualisieren. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "constructionUpdate": "Baufortschritt",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "milestone": "Meilenstein",
+  "scheduleTask": "Terminaufgabe",
+  "progressPercent": "Fortschritt",
+  "updateDate": "Aktualisieren datum",
+  "description": "Beschreibung",
+  "photos": "Fotos",
+  "none": "Keine"
+}

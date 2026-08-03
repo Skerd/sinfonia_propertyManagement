@@ -8,9 +8,30 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
-    "tender": "Tenderi",
     "constructorRef": "Kontraktori",
-    "status": "Statusi"
+    "coveringNotes": "Shënime Mbuluese",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "status": "Statusi",
+    "submittedAt": "Dërguar më",
+    "tender": "Tenderi",
+    "tenderInvitation": "Ftesa e Tenderit",
+    "total": "Total",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Dërguar",
+        "shortlisted": "Në Listën e Shkurtër",
+        "awarded": "Fitues",
+        "rejected": "Refuzuar",
+        "withdrawn": "Tërhequr"
+      }
+    }
   }
 }

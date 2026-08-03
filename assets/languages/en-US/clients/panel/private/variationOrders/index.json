@@ -8,9 +8,35 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "billedAt": "Billed At",
+    "billingReference": "Billing Reference",
+    "constructionContract": "Construction Contract",
+    "costImpact": "Cost Impact",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "media": "Media",
+    "modificationRequest": "Modification Request",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "timeImpactDays": "Time Impact Days",
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "pending_architect": "Pending Architect",
+        "pending_qs": "Pending QS",
+        "pending_client": "Pending Client",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

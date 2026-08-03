@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx",
+  "rentalPayment": "Rent zahlung",
+  "overview": "Übersicht",
+  "status": "Status",
+  "dueDate": "Fälligkeitsdatum",
+  "amount": "Betrag"
+}

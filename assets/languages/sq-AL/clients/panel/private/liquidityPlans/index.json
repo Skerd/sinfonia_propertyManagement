@@ -8,8 +8,25 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "granularity": "Granularity",
+    "horizonEnd": "Horizon End",
+    "horizonStart": "Horizon Start",
     "name": "Referenca",
+    "notes": "Shënime",
+    "project": "Projekti",
     "title": "Titulli",
-    "project": "Projekti"
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "granularity": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "yearly": "Yearly"
+      }
+    }
   }
 }

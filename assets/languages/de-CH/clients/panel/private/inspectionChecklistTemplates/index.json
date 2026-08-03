@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
+  "title": "InspectionChecklistTemplate",
+  "description": "InspectionChecklistTemplate register",
+  "createInspectionChecklistTemplate": "InspectionChecklistTemplate hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "itemsJson": "Positionen Json",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "stage": "Phase",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "trade": "Gewerk",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "active": "Aktiv",
+        "archived": "Archiviert"
+      }
+    }
+  }
+}

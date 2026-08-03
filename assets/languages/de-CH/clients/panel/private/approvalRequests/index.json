@@ -8,8 +8,35 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
+    "amount": "Betrag",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "currentStage": "Aktuelle Stufe",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
     "documentType": "Dokumenttyp",
-    "status": "Status"
+    "escalationDecision": "Eskalationsentscheidung",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "primaryDecision": "Primäre Entscheidung",
+    "status": "Status",
+    "targetId": "Ziel-ID",
+    "targetType": "Zieltyp",
+    "updatedAt": "Aktualisiert am",
+    "workflow": "Workflow",
+    "!enums": {
+      "currentStage": {
+        "primary": "Primär",
+        "escalation": "Eskalation",
+        "done": "Erledigt"
+      },
+      "status": {
+        "pending": "Ausstehend",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "cancelled": "Annulliert"
+      }
+    }
   }
 }

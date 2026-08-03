@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/center/sheetView/permitSheetView.tsx",
+  "failedTitle": "Bewilligung konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese bewilligung. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "none": "Keine",
+  "permit": "Bewilligung",
+  "overview": "Übersicht",
+  "description": "Beschreibung",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "status": "Status",
+  "permitType": "Typ",
+  "authority": "Authority",
+  "referenceNumber": "Referenz Keine.",
+  "submittedAt": "Eingereicht",
+  "approvedAt": "Genehmigt",
+  "expiresAt": "Expires",
+  "notes": "Notizen",
+  "media": "Medien",
+  "statuses": {
+    "draft": "Entwurf",
+    "submitted": "Eingereicht",
+    "under_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "expired": "Abgelaufen"
+  },
+  "permitTypes": {
+    "building": "Gebäude",
+    "excavation": "Excavation",
+    "environmental": "Environmental",
+    "fire": "Brandschutz",
+    "utility": "Utility",
+    "occupancy": "Occupancy",
+    "zoning": "Zonierung",
+    "other": "Andere"
+  }
+}

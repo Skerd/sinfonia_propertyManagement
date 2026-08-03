@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "title": "Geschoss erstellen",
+  "description": "A neu geschoss für diese gebäude erstellen",
+  "descriptionWithoutEdifice": "A neu geschoss erstellen",
+  "generalInfo": "Allgemeine Informationen",
+  "features": "Features",
+  "sharedSpaces": "Shared Plätze",
+  "floorLocation": "Geschoss Standort on Projekt Bild",
+  "uploadError": "Fehlgeschlagen bis upload medien files",
+  "errorTitle": "Fehler",
+  "errorLoadingEdifice": "Fehler laden gebäude daten",
+  "selectFloorLocation": "Click on die projekt bild bis auswählen die geschoss standort. Click near die vor point bis close die polygon.",
+  "edificeNoMainImage": "Gebäude does nicht have a haupt bild. Bitte hinzufügen a haupt bild bis die gebäude vor.",
+  "projectNoMainImage": "Die projekt does nicht have a haupt bild. Bitte hinzufügen a haupt bild bis die projekt vor.",
+  "errorLoadingProject": "Fehler laden projekt daten",
+  "removeSharedSpace": "Entfernen shared space",
+  "noEdificeSelectedTitle": "Keine gebäude selected",
+  "noEdificeSelectedDescription": "Bitte auswählen ein gebäude vor in auftrag bis specify geschoss standort.",
+  "form": {
+    "nameLabel": "Geschoss Name",
+    "namePlaceholder": "Geschoss name eingeben",
+    "nameRequired": "Geschoss name ist erforderlich",
+    "levelNumberLabel": "Level Nummer",
+    "levelNumberPlaceholder": "Level nummer (0 = ground, 1 = vor, -1 = basement) eingeben",
+    "totalUnitsLabel": "Einheiten total",
+    "totalUnitsPlaceholder": "Total nummer von units eingeben",
+    "areaLabel": "Fläche (m²)",
+    "areaPlaceholder": "Geschoss fläche eingeben",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Geschoss beschreibung eingeben",
+    "isAccessibleLabel": "Accessible",
+    "isAccessibleDescription": "Diese geschoss ist accessible für people mit disabilities",
+    "hasEmergencyExitLabel": "Emergency Exit",
+    "hasEmergencyExitDescription": "Diese geschoss has ein emergency exit",
+    "sharedSpacesLabel": "Shared Plätze",
+    "sharedSpacesPlaceholder": "Shared space hinzufügen",
+    "mainImageLabel": "Haupt Bild",
+    "mainImageRequired": "Haupt bild ist erforderlich",
+    "imageGalleryLabel": "Bild Galerie",
+    "videoGalleryLabel": "Video Galerie",
+    "mediaFilesLabel": "Dokumente & Dateien",
+    "marketingBookletLabel": "Marketingbroschüre",
+    "uploadNewImageHint": "Click bis upload bild",
+    "polygonMustBeClosed": "Bitte close die polygon von clicking die vor point before submitting.",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeRequired": "Gebäude ist erforderlich"
+  },
+  "axios": {
+    "start": {
+      "title": "Geschoss wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Geschoss erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Geschoss konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Geschoss erstellen",
+    "description": "A neu geschoss erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Geschoss erstellen"
+  }
+}

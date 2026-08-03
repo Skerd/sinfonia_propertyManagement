@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
+  "inspectionChecklistTemplate": "Abnahme-Checklisten-Vorlage",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "trade": "Gewerk",
+  "stage": "Phase",
+  "description": "Beschreibung",
+  "itemsJson": "Checkliste Positionen",
+  "notes": "Notizen",
+  "statuses": {
+    "active": "Aktiv",
+    "archived": "Archiviert"
+  }
+}

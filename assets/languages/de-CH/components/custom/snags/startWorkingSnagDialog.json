@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/startWorkingSnagDialog.tsx",
+  "dialogTitle": "Start working",
+  "dialogDescription": "Confirm that arbeit ist starting on diese mangel. Status will change bis in fortschritt.",
+  "assignedToLabel": "Zugewiesen an",
+  "unknownAssignee": "Unknown",
+  "cancel": "Abbrechen",
+  "submit": "Start working"
+}

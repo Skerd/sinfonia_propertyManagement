@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/index.tsx",
+  "title": "Dokumente & Drawings",
+  "description": "Projekt dokument und plan register",
+  "createProjectDocument": "Dokument hinzufügen",
+  "noData": "Keine dokumente gefunden",
+  "failTitle": "Dokumente konnten nicht geladen werden",
+  "failDescription": "Beim Laden von dokumente ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "statusLabel": "Status",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "designStage": "Planungsphase",
+    "discipline": "Disziplin",
+    "documentNumber": "Dokument Keine.",
+    "documentType": "Typ",
+    "edifice": "Gebäude",
+    "floor": "Geschoss",
+    "isAsBuilt": "As-Built",
+    "isRequiredDeliverable": "Erforderlich Lieferobjekt",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "revision": "Revision",
+    "revisionDate": "Revision Datum",
+    "status": "Status",
+    "supersedes": "Ersetzt",
+    "title": "Bezeichnung",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "for_review": "Für Prüfung",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Architektur",
+        "structural": "Tragwerk",
+        "mep": "MEP",
+        "civil": "Tiefbau",
+        "fire": "Brandschutz",
+        "landscape": "Landschaft",
+        "other": "Andere"
+      },
+      "documentType": {
+        "drawing": "Plan",
+        "specification": "Leistungsverzeichnis",
+        "calculation": "Berechnung",
+        "report": "Bericht",
+        "as_built": "As-Built",
+        "om_manual": "O&M Manuell",
+        "other": "Andere"
+      }
+    }
+  }
+}

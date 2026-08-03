@@ -8,9 +8,27 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
-    "tender": "Ausschreibung",
     "constructorRef": "Unternehmer",
-    "status": "Status"
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "invitedAt": "Invited At",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "portalAccessToken": "Portal Access Token",
+    "respondedAt": "Responded At",
+    "status": "Status",
+    "tender": "Ausschreibung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "invited": "Invited",
+        "viewing": "Viewing",
+        "submitted": "Eingereicht",
+        "declined": "Declined",
+        "withdrawn": "Zurückgezogen"
+      }
+    }
   }
 }

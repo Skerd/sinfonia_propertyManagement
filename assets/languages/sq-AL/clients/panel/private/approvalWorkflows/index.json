@@ -8,9 +8,29 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
+    "active": "Aktiv",
+    "approverRole": "Roli i Miratuesit",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
     "documentType": "Lloji i Dokumentit",
+    "escalationRole": "Roli i Eskalimit",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "thresholdAmount": "Pragu i Shumës",
+    "thresholdCurrency": "Monedha e Pragut",
     "title": "Titulli",
-    "active": "Aktiv"
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "documentType": {
+        "budget": "Budget",
+        "cost_estimate": "Cost Estimate",
+        "contract": "Contract",
+        "variation_order": "Variation Order",
+        "contractor_invoice": "Fatura e Ndërtuesit",
+        "progress_claim": "Progress Claim"
+      }
+    }
   }
 }

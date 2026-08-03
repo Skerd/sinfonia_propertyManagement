@@ -1,0 +1,47 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Zahlung konnte nicht aktualisiert werden, bitte erneut versuchen!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Zahlung wird aktualisiert"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Zahlung erfolgreich aktualisiert!"
+    }
+  },
+  "editDescription": "Aktualisieren miete zahlung details",
+  "editTitle": "Mietzahlung bearbeiten",
+  "errorDescription": "Beim Laden von die miete zahlung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Mietzahlung konnten nicht geladen werden",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "amountLabel": "Betrag",
+    "currencyLabel": "Währung",
+    "dueDateLabel": "Fälligkeit",
+    "existingFiles": "Current datei",
+    "leaseLabel": "Mietvertrag",
+    "leasePlaceholder": "Mietvertrag auswählen",
+    "newFiles": "Neu datei",
+    "notesLabel": "Notizen",
+    "paidAmountLabel": "Bezahlt Betrag",
+    "paidDateLabel": "Zahlung Datum",
+    "receiptMediaLabel": "Zahlung Receipt",
+    "statusLabel": "Status",
+    "unitLabel": "Einheit"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  },
+  "formHeader": {
+    "description": "Aktualisieren miete zahlung details",
+    "title": "Mietzahlung bearbeiten"
+  },
+  "generalInfo": "Zahlung Details",
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
+  "title": "Mietzahlung bearbeiten"
+}

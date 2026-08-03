@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
+  "title": "Einheitstyp-Kategorien",
+  "description": "Einheitstyp-Kategorien verwalten",
+  "createUnitTypeCategory": "Kategorie erstellen",
+  "noData": "Keine einheitstyp-Kategorien gefunden",
+  "failTitle": "Einheitstyp-Kategorien konnten nicht geladen werden",
+  "failDescription": "Beim Laden von einheitstyp-Kategorien ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "status": "Status",
+  "active": "Aktiv",
+  "deleted": "Gelöscht",
+  "name": "Name",
+  "fields": {
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "name": "Name",
+    "updatedAt": "Aktualisiert am"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen..."
+}

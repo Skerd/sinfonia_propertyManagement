@@ -8,8 +8,34 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "actualAmount": "Actual Amount",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "direction": "Direction",
     "name": "Reference",
+    "notes": "Notes",
+    "period": "Period",
     "plan": "Plan",
-    "direction": "Direction"
+    "plannedAmount": "Planned Amount",
+    "source": "Source",
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "direction": {
+        "inflow": "Inflow",
+        "outflow": "Outflow"
+      },
+      "source": {
+        "owner_contract": "Owner Contract",
+        "payment_plan": "Payment Plan",
+        "cost_commitment": "Cost Commitment",
+        "contractor_invoice": "Contractor Invoice",
+        "fee": "Fee",
+        "manual": "Manual"
+      }
+    }
   }
 }

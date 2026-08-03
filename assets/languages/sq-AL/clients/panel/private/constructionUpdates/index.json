@@ -9,16 +9,20 @@
   "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
   "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
-    "name": "Referenca",
-    "project": "Projekti",
-    "edifice": "Ndërtesa",
-    "title": "Titulli",
-    "progressPercent": "Progresi %",
-    "updateDate": "Data e përditësimit",
-    "description": "Përshkrimi",
     "createdAt": "Krijuar në",
-    "updatedAt": "Përditësuar në",
+    "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "milestone": "Milestone",
+    "name": "Referenca",
+    "photos": "Fotot",
+    "progressPercent": "Progresi %",
+    "project": "Projekti",
+    "scheduleTask": "Schedule Task",
+    "title": "Titulli",
+    "updateDate": "Data e përditësimit",
+    "updatedAt": "Përditësuar në"
   }
 }

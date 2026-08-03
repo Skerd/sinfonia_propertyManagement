@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "answer": "Answer",
+    "answeredBy": "Answered By",
+    "askedBy": "Asked By",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "dueDate": "Due Date",
+    "edifice": "Edifice",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "question": "Question",
+    "relatedDocument": "Related Document",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "open": "Open",
+        "answered": "Answered",
+        "closed": "Closed",
+        "void": "Void"
+      }
+    }
   }
 }

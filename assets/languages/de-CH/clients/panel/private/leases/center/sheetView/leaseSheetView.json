@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx",
+  "lease": "Mietvertrag",
+  "overview": "Übersicht",
+  "status": "Status",
+  "startDate": "Startdatum",
+  "endDate": "Enddatum",
+  "monthlyRent": "Monthly rent",
+  "depositPaid": "Anzahlung bezahlt"
+}

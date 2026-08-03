@@ -8,7 +8,27 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "adjustmentFactor": "Anpassungsfaktor",
+    "basisAmount": "Basisbetrag",
+    "consultantAppointment": "Planerauftrag",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "feePercent": "Honorar %",
     "name": "Referenz",
-    "status": "Status"
+    "notes": "Notizen",
+    "status": "Status",
+    "totalFee": "Gesamthonorar",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "planned": "Geplant",
+        "earned": "Erarbeitet",
+        "invoiced": "Fakturiert",
+        "paid": "Bezahlt"
+      }
+    }
   }
 }

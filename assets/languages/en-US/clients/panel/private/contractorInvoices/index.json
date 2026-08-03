@@ -8,8 +8,44 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
+    "bkpAccountCode": "BKP Account",
+    "constructionContract": "Construction Contract",
+    "constructorRef": "Constructor",
+    "costCommitment": "Cost Commitment",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "dueDate": "Due Date",
+    "edifice": "Edifice",
+    "grossAmount": "Gross Amount",
+    "invoiceDate": "Invoice Date",
     "invoiceNumber": "Invoice No.",
-    "status": "Status"
+    "name": "Reference",
+    "netAmount": "Net Amount",
+    "notes": "Notes",
+    "progressClaim": "Progress Claim",
+    "project": "Project",
+    "qrBillReference": "QR-Bill Reference",
+    "retentionHeld": "Retention Held",
+    "source": "Source",
+    "status": "Status",
+    "updatedAt": "Updated At",
+    "vatAmount": "VAT Amount",
+    "!enums": {
+      "source": {
+        "manual": "Manual",
+        "ap_inbox": "AP Inbox"
+      },
+      "status": {
+        "received": "Received",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "paid": "Paid",
+        "rejected": "Rejected",
+        "disputed": "Disputed"
+      }
+    }
   }
 }

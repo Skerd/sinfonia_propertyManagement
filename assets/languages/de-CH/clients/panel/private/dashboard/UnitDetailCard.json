@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/UnitDetailCard.tsx",
+  "floor": "Geschoss",
+  "status": "Status",
+  "typology": "Einheitstyp",
+  "netArea": "Nettowohnfläche",
+  "grossArea": "Brutto Fläche",
+  "pricePerSqm": "Price/m²",
+  "totalPrice": "Total Preis",
+  "client": "Kunde",
+  "edit": "Bearbeiten",
+  "statusAvailable": "Verfügbar",
+  "statusReserved": "Reserviert",
+  "statusSold": "Verkauft",
+  "statusUnavailable": "Nicht verfügbar",
+  "statusUnknown": "Unknown"
+}

@@ -8,9 +8,47 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "approvedTotal": "Approved Total",
+    "bimSource": "BIM Source",
+    "classificationStandard": "Classification Standard",
+    "contingencyPercent": "Contingency Percent",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "method": "Method",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "revisionNo": "Revision No.",
     "status": "Status",
-    "project": "Project"
+    "supersedesBudget": "Supersedes Budget",
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "version": "Version",
+    "!enums": {
+      "method": {
+        "ebkp_h": "eBKP-H",
+        "bkp": "BKP",
+        "custom": "Custom"
+      },
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "draft": "Draft",
+        "pending_approval": "Pending Approval",
+        "approved": "Approved",
+        "locked": "Locked",
+        "superseded": "Superseded"
+      }
+    }
   }
 }

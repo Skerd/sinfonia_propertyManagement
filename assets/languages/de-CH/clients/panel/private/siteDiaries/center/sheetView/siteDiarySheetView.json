@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx",
+  "siteDiary": "Bautagebuch",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "diaryDate": "Tagebuch Datum",
+  "weather": "Wetter",
+  "workforceCount": "Personal Anzahl",
+  "plantSummary": "Geräte Übersicht",
+  "workSummary": "Arbeit Übersicht",
+  "visitors": "Besucher",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "published": "Veröffentlicht"
+  }
+}

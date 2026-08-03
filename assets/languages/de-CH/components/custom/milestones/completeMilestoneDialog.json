@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/completeMilestoneDialog.tsx",
+  "dialogTitle": "Vollständig meilenstein",
+  "dialogDescription": "Mark diese meilenstein as abgeschlossen und protokoll its effektiv end datum.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional fertigstellung notizen",
+  "cancel": "Abbrechen",
+  "submit": "Vollständig meilenstein"
+}

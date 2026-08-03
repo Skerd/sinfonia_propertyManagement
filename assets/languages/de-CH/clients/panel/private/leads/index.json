@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/index.tsx",
+  "title": "Leads",
+  "description": "Alle CRM-Leads verwalten",
+  "createLead": "Lead erstellen",
+  "noData": "Keine Leads gefunden",
+  "failTitle": "Leads konnten nicht geladen werden",
+  "failDescription": "Beim Laden der Leads ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "activityLog": "Activity Log",
+    "assignedTo": "Zugewiesen an",
+    "budget": "Kostenvoranschlag",
+    "budgetCurrency": "Währung",
+    "convertedAt": "Umgewandelt Am",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "email": "E-Mail",
+    "firstName": "Vorname",
+    "followUpDate": "Folgedatum",
+    "lastName": "Nachname",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "phone": "Telefon",
+    "projectInterest": "Projektinteresse",
+    "source": "Quelle",
+    "status": "Status",
+    "unitInterest": "Einheitsinteresse",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "new": "Neu",
+        "contacted": "Kontaktiert",
+        "qualified": "Qualifiziert",
+        "proposal": "Angebot",
+        "negotiation": "Verhandlung",
+        "won": "Gewonnen",
+        "lost": "Verloren"
+      },
+      "source": {
+        "website": "Website",
+        "referral": "Empfehlung",
+        "social": "Social Media",
+        "event": "Event",
+        "cold_call": "Kaltakquise",
+        "walk_in": "Walk-in",
+        "other": "Andere"
+      }
+    }
+  }
+}

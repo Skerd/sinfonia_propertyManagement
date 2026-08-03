@@ -1,0 +1,55 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Konnte nicht speichern aktualisieren, bitte versuchen erneut!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Protokoll wird aktualisiert"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Bau aktualisieren gespeichert!"
+    }
+  },
+  "editDescription": "Bau fortschritt aktualisieren bearbeiten",
+  "editTitle": "Baufortschritt bearbeiten",
+  "errorDescription": "Beim Laden von die bau aktualisieren ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Baufortschritt konnten nicht geladen werden",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "addFile": "Foto hinzufügen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Describe bau fortschritt",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude (optional) auswählen",
+    "milestoneLabel": "Meilenstein",
+    "milestonePlaceholder": "Meilenstein (optional) auswählen",
+    "scheduleTaskLabel": "Terminaufgabe",
+    "scheduleTaskPlaceholder": "Terminplan aufgabe (optional) auswählen",
+    "existingFiles": "Existing photos",
+    "filesSelected": "Photos selected",
+    "newFiles": "Neu photos hinzufügen",
+    "photosLabel": "Fotos",
+    "progressPercentLabel": "Fortschritt (%)",
+    "progressPercentPlaceholder": "0–100",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Aktualisieren bezeichnung eingeben",
+    "updateDateLabel": "Aktualisieren Datum",
+    "updateDatePlaceholder": "Datum auswählen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  },
+  "formHeader": {
+    "description": "Bau fortschritt aktualisieren bearbeiten",
+    "title": "Baufortschritt bearbeiten"
+  },
+  "generalInfo": "Aktualisieren Details",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
+  "title": "Baufortschritt bearbeiten"
+}

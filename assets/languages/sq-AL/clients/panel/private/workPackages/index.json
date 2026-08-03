@@ -8,9 +8,29 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "constructorRef": "Ndërtuesi",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "plannedEnd": "Përfundimi i Planifikuar",
+    "plannedStart": "Fillimi i Planifikuar",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trade": "Zeja",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "planned": "Planifikuar",
+        "active": "Aktive",
+        "completed": "Përfunduar",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

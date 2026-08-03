@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "asBuiltComplete": "As-Built Complete",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "keysTransferred": "Keys Transferred",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "omManualsComplete": "O&M Manuals Complete",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trainingComplete": "Training Complete",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "in_progress": "In Progress",
+        "ready": "Ready",
+        "completed": "Completed"
+      }
+    }
   }
 }

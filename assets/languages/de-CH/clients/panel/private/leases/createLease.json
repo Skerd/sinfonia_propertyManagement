@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/createLease.tsx",
+  "title": "Mietvertrag erstellen",
+  "description": "Register a neu miete mietvertrag agreement",
+  "generalInfo": "Mietvertrag Details",
+  "form": {
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "tenantLabel": "Tenant",
+    "tenantPlaceholder": "Tenant auswählen",
+    "startDateLabel": "Startdatum",
+    "endDateLabel": "Enddatum",
+    "monthlyRentLabel": "Monthly Rent",
+    "rentCurrencyLabel": "Währung",
+    "depositAmountLabel": "Anzahlungsbetrag",
+    "depositPaidLabel": "Anzahlung Bezahlt",
+    "notesLabel": "Notizen",
+    "contractMediaLabel": "Vertrag Dokument",
+    "existingFiles": "Current datei",
+    "newFiles": "Neu datei"
+  },
+  "axios": {
+    "start": {
+      "title": "Mietvertrag wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mietvertrag erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Mietvertrag konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Mietvertrag erstellen",
+    "description": "Register a neu miete mietvertrag agreement"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Mietvertrag erstellen"
+  }
+}

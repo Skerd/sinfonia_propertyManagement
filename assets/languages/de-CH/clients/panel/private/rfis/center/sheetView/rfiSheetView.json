@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/center/sheetView/rfiSheetView.tsx",
+  "rfi": "RFI",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "question": "Frage",
+  "answer": "Antwort",
+  "dueDate": "Fälligkeit",
+  "relatedDocument": "Zugehörig Dokument",
+  "notes": "Notizen",
+  "statuses": {
+    "open": "Offen",
+    "answered": "Beantwortet",
+    "closed": "Geschlossen",
+    "void": "Ungültig"
+  },
+  "askedBy": "Gefragt von",
+  "answeredBy": "Beantwortet von"
+}

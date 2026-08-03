@@ -1,0 +1,70 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/createConsultantAppointment.tsx",
+  "title": "Beauftragung hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "constructorLabel": "Unternehmer",
+    "constructorPlaceholder": "Unternehmer auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "roleLabel": "Rolle",
+    "rolePlaceholder": "Rolle auswählen",
+    "role_architect": "Architect",
+    "role_engineer": "Engineer",
+    "role_qs": "QS",
+    "role_pm": "PM",
+    "role_surveyor": "Surveyor",
+    "role_other": "Andere",
+    "scopeLabel": "Umfang",
+    "scopePlaceholder": "Umfang",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "feeAmountLabel": "Honorar Betrag",
+    "feeAmountPlaceholder": "Honorar Betrag",
+    "startDateLabel": "Startdatum",
+    "startDatePlaceholder": "Startdatum",
+    "endDateLabel": "Enddatum",
+    "endDatePlaceholder": "Enddatum",
+    "deliverablesLabel": "Deliverables",
+    "deliverablesPlaceholder": "Deliverables",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "feeModelLabel": "Honorar Modell",
+    "feeModelPlaceholder": "Honorar modell auswählen",
+    "basisKindLabel": "Basis Kind",
+    "basisKindPlaceholder": "Basis auswählen",
+    "adjustmentFactorLabel": "Anpassungsfaktor",
+    "adjustmentFactorPlaceholder": "Z.B. 1.0",
+    "hourlyRateLabel": "Hourly Satz",
+    "hourlyRatePlaceholder": "Hourly satz",
+    "cappedAmountLabel": "Capped Betrag",
+    "cappedAmountPlaceholder": "Cap"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Beauftragung hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

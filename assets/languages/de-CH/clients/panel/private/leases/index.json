@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/index.tsx",
+  "title": "Mietverträge",
+  "description": "Miete mietvertrag agreements",
+  "createLease": "Neu Mietvertrag",
+  "noData": "Keine mietverträge gefunden",
+  "failTitle": "Mietverträge konnten nicht geladen werden",
+  "failDescription": "Beim Laden von mietverträge ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "contractMedia": "Vertrag Medien",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "depositAmount": "Anzahlung",
+    "depositPaid": "Anzahlung Bezahlt",
+    "depositReturnedAt": "Anzahlung Returned Am",
+    "endDate": "Enddatum",
+    "monthlyRent": "Monthly Rent",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "rentCurrency": "Währung",
+    "startDate": "Startdatum",
+    "status": "Status",
+    "tenant": "Tenant",
+    "terminationDate": "Termination Datum",
+    "terminationReason": "Termination Grund",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "active": "Aktiv",
+        "expired": "Abgelaufen",
+        "terminated": "Terminated"
+      }
+    }
+  }
+}

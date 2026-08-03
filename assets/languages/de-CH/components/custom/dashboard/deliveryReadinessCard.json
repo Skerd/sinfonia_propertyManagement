@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/deliveryReadinessCard.tsx",
+  "title": "Delivery readiness",
+  "overall": "Overall readiness",
+  "empty": "Keine delivery checkliste daten yet.",
+  "domain": {
+    "permits": "Permits genehmigt",
+    "requiredDeliverables": "Erforderlich deliverables genehmigt",
+    "designStages": "Planung stages abgeschlossen",
+    "milestones": "Milestones abgeschlossen",
+    "snags": "Snags resolved",
+    "handoverPackages": "Übergabe packages abgeschlossen"
+  }
+}

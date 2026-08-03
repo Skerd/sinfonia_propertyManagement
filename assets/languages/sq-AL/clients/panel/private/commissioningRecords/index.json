@@ -8,9 +8,30 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "edifice": "Ndërtesa",
+    "handoverPackage": "Paketa e Dorëzimit",
+    "inspectedBy": "Inspektuar nga",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "resultNotes": "Shënime të Rezultatit",
     "status": "Status",
-    "project": "Project"
+    "systemName": "Emri i Sistemit",
+    "testDate": "Data e Testit",
+    "title": "Title",
+    "unit": "Njësia",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "pending": "Në Pritje",
+        "passed": "Kaluar",
+        "failed": "Dështuar"
+      }
+    }
   }
 }

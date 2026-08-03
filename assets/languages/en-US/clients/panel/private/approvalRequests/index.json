@@ -8,8 +8,35 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
+    "amount": "Amount",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "currentStage": "Current Stage",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
     "documentType": "Document Type",
-    "status": "Status"
+    "escalationDecision": "Escalation Decision",
+    "name": "Reference",
+    "notes": "Notes",
+    "primaryDecision": "Primary Decision",
+    "status": "Status",
+    "targetId": "Target ID",
+    "targetType": "Target Type",
+    "updatedAt": "Updated At",
+    "workflow": "Workflow",
+    "!enums": {
+      "currentStage": {
+        "primary": "Primary",
+        "escalation": "Escalation",
+        "done": "Done"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

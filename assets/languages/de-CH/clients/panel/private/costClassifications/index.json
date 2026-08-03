@@ -8,10 +8,30 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "name": "Referenz",
-    "standard": "Standard",
+    "active": "Aktiv",
     "code": "Code",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "level": "Level",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "parentCode": "Parent Code",
+    "sortIndex": "Sortierung",
+    "standard": "Standard",
     "title": "Bezeichnung",
-    "active": "Aktiv"
+    "unitOfMeasure": "Masseinheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "standard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "sia": "SIA",
+        "custom": "Benutzerdefiniert"
+      }
+    }
   }
 }

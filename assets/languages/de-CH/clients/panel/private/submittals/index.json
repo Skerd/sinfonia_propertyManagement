@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/index.tsx",
+  "title": "Einreichung",
+  "description": "Einreichung register",
+  "createSubmittal": "Einreichung hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "relatedDocument": "Zugehörig Dokument",
+    "reviewedBy": "Reviewed Von",
+    "specReference": "Spec Referenz",
+    "status": "Status",
+    "submittedBy": "Eingereicht Von",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "submitted": "Eingereicht",
+        "revise_and_resubmit": "Revise & Resubmit",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt"
+      }
+    }
+  }
+}

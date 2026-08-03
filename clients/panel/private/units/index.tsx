@@ -126,7 +126,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                 {value: UnitStatus.AVAILABLE,   label: resolveLanguageKey("available")  as string},
                 {value: UnitStatus.RESERVED,    label: resolveLanguageKey("reserved")   as string},
                 {value: UnitStatus.SOLD,        label: resolveLanguageKey("sold")       as string},
-                {value: UnitStatus.RENTED,      label: "Rented"},
+                {value: UnitStatus.RENTED,      label: resolveLanguageKey("rented") as string},
                 {value: UnitStatus.UNAVAILABLE, label: resolveLanguageKey("notAvailable") as string},
             ],
         },

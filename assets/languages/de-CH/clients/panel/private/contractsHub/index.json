@@ -1,0 +1,102 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx",
+  "title": "Verträge & Kunden",
+  "description": "Alle contracts und clients in one place. Suchen, filter und verwalten easily.",
+  "contracts": {
+    "title": "Verträge",
+    "description": "Alle contracts in one place. Suchen, filter und verwalten easily.",
+    "searchLabel": "Suchen",
+    "searchPlaceholder": "Suchen von kunde name, einheit, vertrag nummer…",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Alle projects",
+    "contractTypeLabel": "Vertrag typ",
+    "contractTypePlaceholder": "Alle types",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Alle statuses",
+    "signatureDateLabel": "Signature datum",
+    "signatureDateFromLabel": "Von",
+    "signatureDateToLabel": "Bis",
+    "noResults": "Keine contracts gefunden.",
+    "errorTitle": "Konnte nicht laden contracts",
+    "errorDescription": "Versuchen erneut oder adjust ihr filters.",
+    "errorTooltip": "Contracts registry antrag fehlgeschlagen",
+    "columns": {
+      "contractNumber": "Vertrag nummer",
+      "client": "Kunde",
+      "project": "Projekt",
+      "unit": "Einheit",
+      "contractType": "Vertrag typ",
+      "status": "Status",
+      "signatureDate": "Signature datum",
+      "uploadDate": "Upload datum",
+      "agent": "Makler",
+      "paymentStatus": "Zahlung status",
+      "actions": "Aktionen"
+    },
+    "contractType": {
+      "reservation": "Reservation",
+      "cash_sale": "Kauf-verkauf",
+      "payment_plan_sale": "Verkauf promise"
+    },
+    "status": {
+      "active": "Reserviert",
+      "expired": "Abgelaufen",
+      "cancelled": "Storniert",
+      "sold": "Verkauft"
+    },
+    "paymentStatus": {
+      "ok": "OK",
+      "partially": "Teilweise",
+      "unpaid": "Unbezahlt",
+      "no_payments": "Keine payments"
+    },
+    "pagination": {
+      "summary": "{von} bis {bis} von {total} results"
+    },
+    "viewAction": "Anzeigen"
+  },
+  "clients": {
+    "title": "Kunden",
+    "description": "Alle ihr clients und their purchased units in one place.",
+    "searchLabel": "Suchen",
+    "searchPlaceholder": "Suchen von name oder surname…",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Alle projects",
+    "typologyLabel": "Typology",
+    "typologyPlaceholder": "Alle typologies",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Alle statuses",
+    "valueRangeLabel": "Wert range (EUR)",
+    "valueMinPlaceholder": "Min.",
+    "valueMaxPlaceholder": "Max.",
+    "noResults": "Keine clients gefunden.",
+    "errorTitle": "Konnte nicht laden clients",
+    "errorDescription": "Versuchen erneut oder adjust ihr filters.",
+    "errorTooltip": "Clients registry antrag fehlgeschlagen",
+    "columns": {
+      "name": "Name",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "project": "Projekt",
+      "unit": "Einheit",
+      "typology": "Typology",
+      "surface": "Surface (m²)",
+      "unitValue": "Einheit wert (EUR)",
+      "status": "Status",
+      "bookingDate": "Buchung datum",
+      "contractDate": "Vertrag datum",
+      "agent": "Makler",
+      "paid": "Bezahlt",
+      "remaining": "Rest",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "sold": "Verkauft",
+      "reserved": "Reserviert"
+    },
+    "pagination": {
+      "summary": "{von} bis {bis} von {total} results"
+    },
+    "viewAction": "Anzeigen"
+  }
+}

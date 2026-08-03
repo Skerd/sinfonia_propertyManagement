@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "asBuiltComplete": "As-Built i Plotë",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "keysTransferred": "Çelësat e Transferuar",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "omManualsComplete": "Manuale O&M të Plota",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trainingComplete": "Trajnimi i Plotë",
+    "unit": "Njësia",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "in_progress": "Në Progres",
+        "ready": "Gati",
+        "completed": "Përfunduar"
+      }
+    }
   }
 }

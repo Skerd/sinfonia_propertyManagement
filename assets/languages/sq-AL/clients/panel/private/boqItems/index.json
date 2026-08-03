@@ -8,9 +8,45 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "actualAmount": "Shuma Aktuale",
+    "actualQty": "Sasia Aktuale",
+    "budget": "Buxheti",
+    "category": "Kategoria",
+    "classificationCode": "Kodi i Klasifikimit",
+    "classificationStandard": "Standardi i Klasifikimit",
+    "constructorRef": "Ndërtuesi",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "elementCode": "Kodi i Elementit",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "plannedAmount": "Shuma e Planifikuar",
+    "plannedQty": "Sasia e Planifikuar",
+    "plannedRate": "Tarifa e Planifikuar",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trade": "Zeja",
+    "unitOfMeasure": "Njësia Matëse",
+    "updatedAt": "Përditësuar më",
+    "wbsCode": "Kodi WBS",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "I Personalizuar"
+      },
+      "status": {
+        "active": "Aktive",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

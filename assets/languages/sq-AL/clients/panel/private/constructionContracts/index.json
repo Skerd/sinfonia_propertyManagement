@@ -8,9 +8,38 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "approvedVariationsTotal": "Totali i Variacioneve të Miratuara",
+    "certifiedClaimsTotal": "Totali i Kërkesave të Certifikuara",
+    "constructorRef": "Ndërtuesi",
+    "contractValue": "Vlera e Kontratës",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "endDate": "Data e Përfundimit",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "paymentTerms": "Payment Terms",
+    "performanceBond": "Performance Bond",
+    "project": "Project",
+    "retentionPercent": "Mbajtja %",
+    "startDate": "Data e Fillimit",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "workPackage": "Paketa e Punës",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "active": "Aktive",
+        "suspended": "Pezulluar",
+        "completed": "Përfunduar",
+        "terminated": "Ndërprerë"
+      }
+    }
   }
 }

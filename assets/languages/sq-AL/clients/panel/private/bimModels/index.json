@@ -8,8 +8,27 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "edifice": "Ndërtesa",
+    "elementCount": "Numri i Elementeve",
+    "importStatus": "Statusi i Importit",
     "name": "Referenca",
+    "notes": "Shënime",
+    "project": "Projekti",
+    "sourceFile": "Skedari Burim",
     "title": "Titulli",
-    "importStatus": "Statusi i Importit"
+    "updatedAt": "Përditësuar më",
+    "version": "Versioni",
+    "!enums": {
+      "importStatus": {
+        "uploaded": "Ngarkuar",
+        "importing": "Duke Importuar",
+        "imported": "Importuar",
+        "failed": "Dështuar"
+      }
+    }
   }
 }

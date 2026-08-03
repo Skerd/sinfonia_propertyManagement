@@ -8,22 +8,30 @@
   "failDescription": "An error occurred while loading schedule tasks. Please try again.",
   "searchPlaceholder": "Search or add filters...",
   "fields": {
-    "name": "Reference",
-    "title": "Title",
-    "project": "Project",
-    "edifice": "Building",
-    "milestone": "Milestone",
-    "status": "Status",
-    "assignee": "Assignee",
-    "percentComplete": "Progress %",
-    "plannedStart": "Planned Start",
-    "plannedEnd": "Planned End",
-    "actualStart": "Actual Start",
     "actualEnd": "Actual End",
+    "actualStart": "Actual Start",
+    "assignee": "Assignee",
+    "bkpCode": "BKP Code",
     "createdAt": "Created At",
-    "updatedAt": "Updated At",
+    "createdBy": "Created By",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
+    "dependencyType": "Dependency Type",
+    "description": "Description",
+    "edifice": "Building",
+    "lagDays": "Lag Days",
+    "media": "Media",
+    "milestone": "Milestone",
+    "name": "Reference",
+    "notes": "Notes",
+    "percentComplete": "Progress %",
+    "plannedEnd": "Planned End",
+    "plannedStart": "Planned Start",
+    "predecessors": "Predecessors",
+    "project": "Project",
+    "status": "Status",
+    "title": "Title",
+    "updatedAt": "Updated At",
     "!enums": {
       "status": {
         "planned": "Planned",
@@ -31,6 +39,12 @@
         "completed": "Completed",
         "delayed": "Delayed",
         "cancelled": "Cancelled"
+      },
+      "dependencyType": {
+        "FS": "Fs",
+        "SS": "Ss",
+        "FF": "Ff",
+        "SF": "Sf"
       }
     }
   }

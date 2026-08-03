@@ -16,16 +16,9 @@
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të njësive. Ju lutemi provoni përsëri.",
   "failTitle": "Ngarkimi i njësive dështoi",
   "fields": {
-    "!enums": {
-      "status": {
-        "available_unit": "Njësia e disponueshme",
-        "reserved_unit": "Njësi e rezervuar",
-        "sold_unit": "Njësia e shitur",
-        "unavailable_unit": "Njësia e padisponueshme"
-      }
-    },
     "area": "Zona",
     "connectedUnits": "Njësitë e lidhura",
+    "constructionStatus": "Construction Status",
     "createdAt": "Krijuar në",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
@@ -43,17 +36,21 @@
     "inspections": "Inspektimet",
     "isAvailable": "Në dispozicion",
     "mainImage": "Imazhi",
+    "marketingBooklet": "Broshura Marketing",
+    "mediaFiles": "Skedarët Media",
     "modificationRequests": "Kërkesat për modifikim",
     "name": "Emri",
     "netArea": "Sipërfaqja Neto",
     "numberOfBathrooms": "Banjat",
     "numberOfRooms": "Dhomat",
+    "orientation": "Orientation",
     "polygonCoordinates": {
       "x": "X",
       "y": "Y"
     },
     "price": "Çmimi",
     "priceCurrency": "Monedha",
+    "priceHistory": "Price History",
     "project": "Projekti",
     "reservation": "Rezervimi",
     "reservationCommissionRatePercent": "Komisioni i Rezervimeve",
@@ -64,7 +61,33 @@
     "unitNumber": "Numri",
     "unitType": "Lloji",
     "updatedAt": "Përditësuar në",
-    "videoGallery": "Videot"
+    "verandaArea": "Veranda Area",
+    "videoGallery": "Videot",
+    "!enums": {
+      "status": {
+        "available_unit": "Njësia e disponueshme",
+        "reserved_unit": "Njësi e rezervuar",
+        "sold_unit": "Njësia e shitur",
+        "unavailable_unit": "Njësia e padisponueshme",
+        "rented_unit": "Me Qira"
+      },
+      "orientation": {
+        "N": "N",
+        "S": "S",
+        "E": "E",
+        "W": "W",
+        "NE": "Ne",
+        "NW": "Nw",
+        "SE": "Se",
+        "SW": "Sw"
+      },
+      "constructionStatus": {
+        "planned": "Planifikuar",
+        "under_construction": "Under Construction",
+        "ready": "Gati",
+        "delivered": "Delivered"
+      }
+    }
   },
   "floor": "Kati",
   "floors": "Dyshemetë",
@@ -88,5 +111,6 @@
   "unitNumber": "Numri i njësisë",
   "unitType": "Lloji i njësisë",
   "units": "Njësitë",
-  "yes": "po"
+  "yes": "po",
+  "rented": "Me Qira"
 }

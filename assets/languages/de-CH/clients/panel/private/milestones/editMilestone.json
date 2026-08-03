@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/editMilestone.tsx",
+  "title": "Meilenstein bearbeiten",
+  "editTitle": "Meilenstein bearbeiten",
+  "editDescription": "Aktualisieren diese projekt meilenstein",
+  "errorTitle": "Meilenstein konnten nicht geladen werden",
+  "errorDescription": "Beim Laden von die meilenstein ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "generalInfo": "Meilenstein Details",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "E.g. Foundation vollständig",
+    "weightPercentLabel": "Weight %",
+    "weightPercentPlaceholder": "0 - 100",
+    "plannedStartLabel": "Geplant Start",
+    "plannedStartPlaceholder": "Datum auswählen",
+    "plannedEndLabel": "Geplant End",
+    "plannedEndPlaceholder": "Datum auswählen",
+    "predecessorsLabel": "Predecessors",
+    "predecessorsPlaceholder": "Preceding milestones auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Describe diese meilenstein",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Medien",
+    "existingFiles": "Existing medien",
+    "newFiles": "Neu medien hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Meilenstein wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Meilenstein aktualisiert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren meilenstein, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Meilenstein bearbeiten",
+    "description": "Aktualisieren diese projekt meilenstein"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  }
+}

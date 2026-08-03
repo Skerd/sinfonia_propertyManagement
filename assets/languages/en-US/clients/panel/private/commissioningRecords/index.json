@@ -8,9 +8,30 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "edifice": "Edifice",
+    "handoverPackage": "Handover Package",
+    "inspectedBy": "Inspected By",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "resultNotes": "Result Notes",
     "status": "Status",
-    "project": "Project"
+    "systemName": "System Name",
+    "testDate": "Test Date",
+    "title": "Title",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "passed": "Passed",
+        "failed": "Failed"
+      }
+    }
   }
 }

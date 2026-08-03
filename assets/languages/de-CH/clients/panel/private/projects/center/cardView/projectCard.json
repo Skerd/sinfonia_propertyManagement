@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/center/cardView/projectCard.tsx",
+  "edifices": "Gebäude",
+  "and": "und",
+  "data": {
+    "name": "Name",
+    "reservationCommission": "Reservation provision",
+    "reservationCommissionTooltip": "Reservation provision (%)",
+    "saleCommission": "Verkauf provision",
+    "saleCommissionTooltip": "Verkauf provision (%)"
+  },
+  "statistics": {
+    "area": "Gebäude fläche",
+    "areaTooltip": "Sum von gebäude gebäude footprint (total fläche), nicht einheit areas",
+    "edifices": "Gebäude",
+    "edificesTooltip": "Total Edifices",
+    "floors": "Geschosse",
+    "floorsTooltip": "Geschosse total",
+    "investment": "Invested",
+    "investmentTooltip": "Total Investition Wert",
+    "units": "Einheiten",
+    "unitsTooltip": "Einheiten total",
+    "available": "Verfügbar",
+    "availableDesc": "Verfügbar für verkauf",
+    "reserved": "Reserviert",
+    "reservedDesc": "Mit aktiv reservation",
+    "sold": "Verkauft",
+    "soldDesc": "Verkaufte Einheiten",
+    "leased": "Leased",
+    "leasedDesc": "Currently leased",
+    "unavailable": "Nicht verfügbar",
+    "unavailableDesc": "Nicht verfügbar für verkauf"
+  },
+  "viewEdifices": "Gebäude anzeigen"
+}

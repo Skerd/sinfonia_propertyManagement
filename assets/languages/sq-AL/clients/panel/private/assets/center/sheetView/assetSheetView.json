@@ -16,5 +16,7 @@
     "active": "Aktiv",
     "maintenance": "Mirëmbajtje",
     "retired": "Nxjerrë"
-  }
+  },
+  "unit": "Njësia",
+  "warranty": "Garancia"
 }

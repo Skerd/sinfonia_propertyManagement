@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/createScheduleTask.tsx",
+  "title": "Neu Aufgabe",
+  "description": "A neu terminplan aufgabe erstellen",
+  "generalInfo": "Aufgabe Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "milestoneLabel": "Meilenstein",
+    "milestonePlaceholder": "Meilenstein auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "E.g. Pour ground geschoss slab",
+    "assigneeLabel": "Zugewiesen",
+    "assigneePlaceholder": "Zuweisen auswählen",
+    "percentCompleteLabel": "Fortschritt %",
+    "percentCompletePlaceholder": "0 - 100",
+    "plannedStartLabel": "Geplant Start",
+    "plannedStartPlaceholder": "Datum auswählen",
+    "plannedEndLabel": "Geplant End",
+    "plannedEndPlaceholder": "Datum auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Describe diese aufgabe",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Medien",
+    "existingFiles": "Existing medien",
+    "newFiles": "Neu medien hinzufügen",
+    "dependencyTypeLabel": "Dependency Typ",
+    "dependencyTypePlaceholder": "Dependency auswählen",
+    "lagDaysLabel": "Lag (tage)",
+    "lagDaysPlaceholder": "Lag tage",
+    "bkpCodeLabel": "BKP Code",
+    "bkpCodePlaceholder": "Z.B. 211"
+  },
+  "axios": {
+    "start": {
+      "title": "Aufgabe wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Aufgabe erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht erstellen aufgabe, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Neu Aufgabe",
+    "description": "A neu terminplan aufgabe erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Aufgabe erstellen"
+  }
+}

@@ -8,9 +8,31 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
     "name": "Referenz",
-    "title": "Bezeichnung",
+    "notes": "Notizen",
+    "openingDate": "Eröffnungsdatum",
+    "project": "Projekt",
+    "specification": "Leistungsverzeichnis",
     "status": "Status",
-    "submissionDeadline": "Eingabetermin"
+    "submissionDeadline": "Eingabetermin",
+    "title": "Bezeichnung",
+    "trades": "Gewerke",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "published": "Publiziert",
+        "closing": "In Schliessung",
+        "closed": "Geschlossen",
+        "awarded": "Zuschlag",
+        "cancelled": "Annulliert"
+      }
+    }
   }
 }

@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/index.tsx",
+  "title": "ConstructionContract",
+  "description": "ConstructionContract register",
+  "createConstructionContract": "ConstructionContract hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "approvedVariationsTotal": "Genehmigt Variations Total",
+    "certifiedClaimsTotal": "Certified Claims Total",
+    "constructorRef": "Unternehmer",
+    "contractValue": "Vertrag Wert",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "endDate": "Enddatum",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "paymentTerms": "Zahlung Terms",
+    "performanceBond": "Performance Bond",
+    "project": "Projekt",
+    "retentionPercent": "Einbehalt %",
+    "startDate": "Startdatum",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "workPackage": "Arbeitspaket",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "active": "Aktiv",
+        "suspended": "Suspended",
+        "completed": "Abgeschlossen",
+        "terminated": "Terminated"
+      }
+    }
+  }
+}

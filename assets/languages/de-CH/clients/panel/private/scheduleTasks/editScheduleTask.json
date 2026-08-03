@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/editScheduleTask.tsx",
+  "title": "Aufgabe bearbeiten",
+  "editTitle": "Aufgabe bearbeiten",
+  "editDescription": "Aktualisieren diese terminplan aufgabe",
+  "errorTitle": "Aufgabe konnten nicht geladen werden",
+  "errorDescription": "Beim Laden von die aufgabe ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "generalInfo": "Aufgabe Details",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "milestoneLabel": "Meilenstein",
+    "milestonePlaceholder": "Meilenstein auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "E.g. Pour ground geschoss slab",
+    "assigneeLabel": "Zugewiesen",
+    "assigneePlaceholder": "Zuweisen auswählen",
+    "percentCompleteLabel": "Fortschritt %",
+    "percentCompletePlaceholder": "0 - 100",
+    "plannedStartLabel": "Geplant Start",
+    "plannedStartPlaceholder": "Datum auswählen",
+    "plannedEndLabel": "Geplant End",
+    "plannedEndPlaceholder": "Datum auswählen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Describe diese aufgabe",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "mediaLabel": "Medien",
+    "existingFiles": "Existing medien",
+    "newFiles": "Neu medien hinzufügen",
+    "dependencyTypeLabel": "Dependency Typ",
+    "dependencyTypePlaceholder": "Dependency auswählen",
+    "lagDaysLabel": "Lag (tage)",
+    "lagDaysPlaceholder": "Lag tage",
+    "bkpCodeLabel": "BKP Code",
+    "bkpCodePlaceholder": "Z.B. 211"
+  },
+  "axios": {
+    "start": {
+      "title": "Aufgabe wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Aufgabe aktualisiert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht aktualisieren aufgabe, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aufgabe bearbeiten",
+    "description": "Aktualisieren diese terminplan aufgabe"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  }
+}

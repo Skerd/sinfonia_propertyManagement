@@ -8,7 +8,17 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "bimModel": "Modeli BIM",
+    "classificationCode": "Kodi i Klasifikimit",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "ifcElementType": "Ifc Element Type",
     "name": "Referenca",
-    "classificationCode": "Kodi i Klasifikimit"
+    "notes": "Shënime",
+    "quantity": "Sasia",
+    "unitOfMeasure": "Njësia Matëse",
+    "updatedAt": "Përditësuar më"
   }
 }

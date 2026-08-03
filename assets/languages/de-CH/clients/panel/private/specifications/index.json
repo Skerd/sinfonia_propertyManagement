@@ -8,10 +8,34 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
     "name": "Referenz",
-    "title": "Bezeichnung",
+    "notes": "Notizen",
+    "project": "Projekt",
     "standard": "Standard",
     "status": "Status",
-    "project": "Projekt"
+    "title": "Bezeichnung",
+    "totalEstimated": "Geschätztes Total",
+    "updatedAt": "Aktualisiert am",
+    "workPackage": "Arbeitspaket",
+    "!enums": {
+      "standard": {
+        "npk": "NPK",
+        "custom": "Benutzerdefiniert"
+      },
+      "status": {
+        "draft": "Entwurf",
+        "issued": "Ausgestellt",
+        "tender_ready": "Ausschreibungsbereit",
+        "awarded": "Zuschlag",
+        "archived": "Archiviert"
+      }
+    }
   }
 }

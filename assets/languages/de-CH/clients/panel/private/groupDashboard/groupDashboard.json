@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/groupDashboard/groupDashboard.tsx",
+  "title": "Gruppen-Dashboard",
+  "hqDescription": "Aggregated KPIs across alle branches.",
+  "branchDescription": "KPIs für diese firma und its sibling branches.",
+  "computedAt": "Berechnet am",
+  "groupTotalsTitle": "Group totals",
+  "branchBreakdownTitle": "Branch breakdown",
+  "branchColumn": "Branch",
+  "kpiTotalUnits": "Einheiten total",
+  "kpiAvailableUnits": "Verfügbar",
+  "kpiSoldUnits": "Verkauft",
+  "kpiRentedUnits": "Vermietet",
+  "kpiRevenue": "Revenue",
+  "kpiCommissions": "Provisionen",
+  "kpiActiveLeases": "Aktiv leases",
+  "kpiOpenSnags": "Offen snags",
+  "noBranchesTitle": "Keine branch companies gefunden",
+  "noBranchesDescription": "Child companies von setting their parent firma bis diese organisation bis compare KPIs across branches. erstellen",
+  "failTitle": "Konnte nicht laden group dashboard",
+  "failDescription": "Something went wrong während fetching group KPIs. Versuchen erneut."
+}

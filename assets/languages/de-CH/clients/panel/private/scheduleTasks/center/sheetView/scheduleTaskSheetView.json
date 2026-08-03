@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/sheetView/scheduleTaskSheetView.tsx",
+  "failedTitle": "Aufgabe konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese aufgabe. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "scheduleTask": "Terminaufgabe",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "milestone": "Meilenstein",
+  "status": "Status",
+  "assignee": "Zugewiesen",
+  "percentComplete": "Fortschritt %",
+  "plannedStart": "Geplant start",
+  "plannedEnd": "Geplant end",
+  "actualStart": "Effektiv start",
+  "actualEnd": "Effektiv end",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "media": "Medien",
+  "none": "Keine",
+  "statuses": {
+    "planned": "Geplant",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "delayed": "Delayed",
+    "cancelled": "Storniert"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/cardView/scheduleTaskCard.tsx",
+  "statusLabel": "Status",
+  "fields": {
+    "project": "Projekt",
+    "assignee": "Zugewiesen",
+    "plannedEnd": "Geplant End",
+    "percentComplete": "Fortschritt %",
+    "!enums": {
+      "status": {
+        "planned": "Geplant",
+        "in_progress": "In Bearbeitung",
+        "completed": "Abgeschlossen",
+        "delayed": "Delayed",
+        "cancelled": "Storniert"
+      }
+    }
+  }
+}

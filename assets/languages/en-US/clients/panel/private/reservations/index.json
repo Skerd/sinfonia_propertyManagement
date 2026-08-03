@@ -20,25 +20,51 @@
   "depositAmount": "Deposit Amount",
   "view": "View",
   "fields": {
-    "name": "Name",
-    "unit": "Unit",
-    "reservedBy": "Reserved By",
-    "reservedByCompany": "Reserved By Company",
-    "client": "Client",
-    "reservationDate": "Reservation Date",
-    "expirationDate": "Expiration Date",
-    "reservationNotes": "Reservation Notes",
-    "depositAmount": "Deposit Amount",
-    "depositCurrency": "Deposit Currency",
-    "paid": "Paid",
-    "isActive": "Is Active",
-    "cancelledAt": "Cancelled At",
+    "additionalDocuments": "Additional Documents",
     "cancellationReason": "Cancellation Reason",
+    "cancelledAt": "Cancelled At",
+    "client": "Client",
+    "createdAt": "Created At",
     "createdBy": "Created By",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted By"
+    "deletedBy": "Deleted By",
+    "depositAmount": "Deposit Amount",
+    "depositCurrency": "Deposit Currency",
+    "expirationDate": "Expiration Date",
+    "isActive": "Is Active",
+    "name": "Name",
+    "paid": "Paid",
+    "paymentMethod": "Payment Method",
+    "referralCode": "Referral Code",
+    "reservationContract": "Reservation Contract",
+    "reservationDate": "Reservation Date",
+    "reservationNotes": "Reservation Notes",
+    "reservedBy": "Reserved By",
+    "reservedByCompany": "Reserved By Company",
+    "source": "Source",
+    "status": "Status",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "source": {
+        "agent": "Agent",
+        "portal": "Portal",
+        "referral": "Referral",
+        "walk_in": "Walk-in",
+        "social": "Social Media",
+        "other": "Other"
+      },
+      "status": {
+        "active": "Active",
+        "expired": "Expired",
+        "cancelled": "Cancelled",
+        "converted": "Converted"
+      }
+    }
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "expired": "Expired",
+  "converted": "Converted"
 }

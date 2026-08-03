@@ -1,0 +1,71 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/createModificationRequest.tsx",
+  "title": "Änderungsantrag erstellen",
+  "description": "A neu änderung antrag erstellen",
+  "unitSelection": "Einheit selection",
+  "generalInfo": "Allgemeine Informationen",
+  "details": "Details",
+  "errorTitle": "Unable bis laden einheit",
+  "errorDescription": "Bitte versuchen Sie es erneut.",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "floorLabel": "Geschoss",
+    "floorPlaceholder": "Geschoss auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "unitRequired": "Einheit ist erforderlich",
+    "requestedByLabel": "Requested Von",
+    "requestedByPlaceholder": "Kunde auswählen",
+    "requestedByRequired": "Kunde ist erforderlich",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Antrag bezeichnung eingeben",
+    "titleRequired": "Bezeichnung ist erforderlich",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Detailed beschreibung eingeben",
+    "descriptionRequired": "Beschreibung ist erforderlich",
+    "constructionTypeLabel": "Bau Typ",
+    "constructionTypePlaceholder": "Typ auswählen",
+    "constructionTypeRequired": "Bau typ ist erforderlich",
+    "constructionTypeOption": {
+      "materials": "Materials",
+      "room_division": "Room division",
+      "flooring": "Flooring",
+      "utilities": "Utilities",
+      "structural": "Tragwerk",
+      "electrical": "Electrical",
+      "plumbing": "Plumbing",
+      "hvac": "HVAC",
+      "cosmetic": "Cosmetic",
+      "other": "Andere"
+    },
+    "materialsLabel": "Materials",
+    "materialsPlaceholder": "Material hinzufügen",
+    "specificationsLabel": "Leistungsverzeichnisse",
+    "specificationsPlaceholder": "Technical specifications eingeben"
+  },
+  "axios": {
+    "start": {
+      "title": "Änderungsantrag wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Änderungsantrag erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Änderungsantrag konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Änderungsantrag erstellen",
+    "description": "A neu änderung antrag erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Antrag erstellen"
+  }
+}

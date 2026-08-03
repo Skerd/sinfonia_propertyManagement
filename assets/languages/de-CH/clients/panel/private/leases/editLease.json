@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Mietvertrag konnte nicht aktualisiert werden, bitte erneut versuchen!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mietvertrag wird aktualisiert"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Mietvertrag erfolgreich aktualisiert!"
+    }
+  },
+  "editDescription": "Aktualisieren miete mietvertrag agreement details",
+  "editTitle": "Mietvertrag bearbeiten",
+  "errorDescription": "Beim Laden von die mietvertrag ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Mietvertrag konnten nicht geladen werden",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "contractMediaLabel": "Vertrag Dokument",
+    "depositAmountLabel": "Anzahlungsbetrag",
+    "depositPaidLabel": "Anzahlung Bezahlt",
+    "endDateLabel": "Enddatum",
+    "existingFiles": "Current datei",
+    "monthlyRentLabel": "Monthly Rent",
+    "newFiles": "Neu datei",
+    "notesLabel": "Notizen",
+    "rentCurrencyLabel": "Währung",
+    "startDateLabel": "Startdatum",
+    "statusLabel": "Status",
+    "tenantLabel": "Tenant",
+    "tenantPlaceholder": "Tenant auswählen",
+    "terminationDateLabel": "Termination Datum",
+    "terminationReasonLabel": "Termination Grund",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  },
+  "formHeader": {
+    "description": "Aktualisieren miete mietvertrag agreement details",
+    "title": "Mietvertrag bearbeiten"
+  },
+  "generalInfo": "Mietvertrag Details",
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
+  "title": "Mietvertrag bearbeiten"
+}

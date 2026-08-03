@@ -8,8 +8,29 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "category": "Kategoria",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "edifice": "Ndërtesa",
+    "installDate": "Data e Instalimit",
+    "lifecycleStatus": "Statusi i Ciklit",
+    "manufacturer": "Prodhuesi",
     "name": "Referenca",
+    "notes": "Shënime",
+    "serial": "Seriali",
     "title": "Titulli",
-    "lifecycleStatus": "Statusi i Ciklit"
+    "unit": "Njësia",
+    "updatedAt": "Përditësuar më",
+    "warranty": "Garancia",
+    "!enums": {
+      "lifecycleStatus": {
+        "planned": "Planifikuar",
+        "active": "Aktive",
+        "maintenance": "Mirëmbajtje",
+        "retired": "Jashtë Përdorimit"
+      }
+    }
   }
 }

@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/index.tsx",
+  "title": "ProgressClaim",
+  "description": "ProgressClaim register",
+  "createProgressClaim": "ProgressClaim hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "amount": "Betrag",
+    "certifiedAmount": "Certified Betrag",
+    "claimPeriodEnd": "Forderung Periode End",
+    "claimPeriodStart": "Forderung Periode Start",
+    "constructionContract": "Bauvertrag",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "retentionHeld": "Rückbehalt",
+    "retentionReleased": "Einbehalt Released",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "submitted": "Eingereicht",
+        "certified": "Ausgewiesen",
+        "paid": "Bezahlt",
+        "rejected": "Abgelehnt"
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
+  "title": "Vermietungen",
+  "description": "Alle leases und rent payments in one place. Suchen, filter und offen details.",
+  "leases": {
+    "title": "Mietverträge",
+    "description": "Firma-wide mietvertrag registry.",
+    "searchLabel": "Suchen",
+    "searchPlaceholder": "Suchen von tenant, einheit, mietvertrag referenz…",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Alle projects",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Alle statuses",
+    "startDateLabel": "Startdatum",
+    "dateFromLabel": "Von",
+    "dateToLabel": "Bis",
+    "noResults": "Keine leases gefunden.",
+    "errorTitle": "Konnte nicht laden leases",
+    "errorDescription": "Versuchen erneut oder adjust ihr filters.",
+    "viewAction": "Anzeigen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "columns": {
+      "reference": "Referenz",
+      "tenant": "Tenant",
+      "project": "Projekt",
+      "unit": "Einheit",
+      "status": "Status",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "monthlyRent": "Monthly rent",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "expired": "Abgelaufen",
+      "terminated": "Terminated"
+    },
+    "pagination": {
+      "summary": "{von} bis {bis} von {total} results"
+    }
+  },
+  "rentalPayments": {
+    "title": "Rent payments",
+    "description": "Firma-wide rent zahlung hauptbuch.",
+    "searchLabel": "Suchen",
+    "searchPlaceholder": "Suchen von tenant, mietvertrag, einheit, status…",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Alle projects",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Alle statuses",
+    "dueDateLabel": "Fälligkeitsdatum",
+    "dateFromLabel": "Von",
+    "dateToLabel": "Bis",
+    "noResults": "Keine rent payments gefunden.",
+    "errorTitle": "Konnte nicht laden rent payments",
+    "errorDescription": "Versuchen erneut oder adjust ihr filters.",
+    "viewAction": "Anzeigen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "columns": {
+      "reference": "Referenz",
+      "lease": "Mietvertrag",
+      "tenant": "Tenant",
+      "unit": "Einheit",
+      "status": "Status",
+      "dueDate": "Fälligkeitsdatum",
+      "amount": "Betrag",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "pending": "Ausstehend",
+      "paid": "Bezahlt",
+      "overdue": "Overdue",
+      "waived": "Waived"
+    },
+    "pagination": {
+      "summary": "{von} bis {bis} von {total} results"
+    }
+  }
+}

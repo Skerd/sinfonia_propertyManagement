@@ -1,0 +1,75 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/createSnag.tsx",
+  "title": "Bericht Mangel",
+  "description": "Bericht a neu mangel oder mangel position",
+  "generalInfo": "Mangel Details",
+  "form": {
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Describe die mangel",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Zusätzlich details about die mangel",
+    "locationLabel": "Standort",
+    "locationPlaceholder": "E.g. Master bedroom ceiling",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Status auswählen",
+    "statusOpen": "Offen",
+    "statusInProgress": "In Bearbeitung",
+    "statusResolved": "Resolved",
+    "statusRejected": "Abgelehnt",
+    "severityLabel": "Schweregrad",
+    "severityPlaceholder": "Schweregrad auswählen",
+    "severityLow": "Low",
+    "severityMedium": "Medium",
+    "severityHigh": "High",
+    "severityCritical": "Critical",
+    "reportedByLabel": "Reported Von",
+    "reportedByPlaceholder": "Reporter auswählen",
+    "assignedToLabel": "Zugewiesen an",
+    "assignedToPlaceholder": "Zuweisen auswählen",
+    "dueDateLabel": "Fälligkeit",
+    "dueDatePlaceholder": "Fällig datum auswählen",
+    "tradeLabel": "Gewerk",
+    "tradePlaceholder": "E.g. Electrical, Plumbing",
+    "workPackageLabel": "Arbeitspaket",
+    "workPackagePlaceholder": "Arbeitspaket auswählen",
+    "variationOrderLabel": "Nachtrag",
+    "variationOrderPlaceholder": "Nachtragsauftrag auswählen",
+    "costImpactLabel": "Kosten Impact",
+    "costImpactPlaceholder": "Kosten impact eingeben",
+    "isWarrantyLabel": "Unter Garantie",
+    "isDlpLabel": "Within Defects Liability Periode",
+    "rootCauseLabel": "Root Cause",
+    "rootCausePlaceholder": "Describe die root cause",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Internal notizen",
+    "photosLabel": "Fotos",
+    "addFile": "Foto hinzufügen",
+    "filesSelected": "Photos selected",
+    "existingFiles": "Existing photos",
+    "newFiles": "Neu photos hinzufügen"
+  },
+  "axios": {
+    "start": {
+      "title": "Reporting mangel",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mangel reported!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht bericht mangel, bitte versuchen erneut!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Bericht Mangel",
+    "description": "Bericht a neu mangel oder mangel position"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Bericht Mangel"
+  }
+}

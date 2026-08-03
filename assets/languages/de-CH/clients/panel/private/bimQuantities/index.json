@@ -8,7 +8,17 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "bimModel": "BIM-Modell",
+    "classificationCode": "Kostencode",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "ifcElementType": "Ifc Element Type",
     "name": "Referenz",
-    "classificationCode": "Kostencode"
+    "notes": "Notizen",
+    "quantity": "Menge",
+    "unitOfMeasure": "Masseinheit",
+    "updatedAt": "Aktualisiert am"
   }
 }

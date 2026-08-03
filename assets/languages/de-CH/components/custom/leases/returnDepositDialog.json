@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/returnDepositDialog.tsx",
+  "dialogTitle": "Return anzahlung",
+  "dialogDescription": "Protokoll that die sicherheit anzahlung has been returned bis die tenant.",
+  "cancel": "Abbrechen",
+  "submit": "Return anzahlung"
+}

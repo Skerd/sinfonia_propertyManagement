@@ -26,7 +26,7 @@
     "retentionHeldLabel": "Rückbehalt",
     "retentionHeldPlaceholder": "Betrag",
     "bkpAccountCodeLabel": "BKP-Konto",
-    "bkpAccountCodePlaceholder": "z.B. 211",
+    "bkpAccountCodePlaceholder": "Z.B. 211",
     "qrBillReferenceLabel": "QR-Rechnung-Ref",
     "qrBillReferencePlaceholder": "QR-Referenz",
     "sourceLabel": "Quelle",

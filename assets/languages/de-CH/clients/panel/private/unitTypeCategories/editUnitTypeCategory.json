@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/editUnitTypeCategory.tsx",
+  "title": "Einheitstyp-Kategorie bearbeiten",
+  "description": "Einheitstyp-Kategorie bearbeiten",
+  "generalInfo": "Allgemeine Informationen",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Kategorie name eingeben",
+    "nameRequired": "Name ist erforderlich"
+  },
+  "axios": {
+    "start": {
+      "title": "Kategorie wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kategorie erfolgreich aktualisiert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kategorie konnte nicht aktualisiert werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Einheitstyp-Kategorie bearbeiten",
+    "description": "Einheitstyp-Kategorie bearbeiten"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Kategorie"
+  }
+}

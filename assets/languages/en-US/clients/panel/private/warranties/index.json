@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "endDate": "End Date",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "retentionAmount": "Retention Amount",
+    "retentionReleaseDate": "Retention Release Date",
+    "startDate": "Start Date",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "active": "Active",
+        "expired": "Expired",
+        "void": "Void"
+      }
+    }
   }
 }

@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/index.tsx",
+  "title": "Terminaufgaben",
+  "description": "Programme activities und works terminplan",
+  "createScheduleTask": "Neu Aufgabe",
+  "noData": "Keine terminaufgaben gefunden",
+  "failTitle": "Terminaufgaben konnten nicht geladen werden",
+  "failDescription": "Beim Laden von terminaufgaben ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "actualEnd": "Effektiv End",
+    "actualStart": "Effektiv Start",
+    "assignee": "Zugewiesen",
+    "bkpCode": "BKP Code",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "dependencyType": "Dependency Typ",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "lagDays": "Lag Tage",
+    "media": "Medien",
+    "milestone": "Meilenstein",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "percentComplete": "Fortschritt %",
+    "plannedEnd": "Geplant End",
+    "plannedStart": "Geplant Start",
+    "predecessors": "Predecessors",
+    "project": "Projekt",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "planned": "Geplant",
+        "in_progress": "In Bearbeitung",
+        "completed": "Abgeschlossen",
+        "delayed": "Delayed",
+        "cancelled": "Storniert"
+      },
+      "dependencyType": {
+        "FS": "Fs",
+        "SS": "Ss",
+        "FF": "Ff",
+        "SF": "Sf"
+      }
+    }
+  }
+}

@@ -8,9 +8,57 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "adjustmentFactor": "Adjustment Factor",
+    "basisKind": "Basis",
+    "cappedAmount": "Capped Amount",
+    "constructorRef": "Constructor",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "currency": "Currency",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "deliverables": "Deliverables",
+    "endDate": "End Date",
+    "feeAmount": "Fee Amount",
+    "feeModel": "Fee Model",
+    "hourlyRate": "Hourly Rate",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "role": "Role",
+    "scope": "Scope",
+    "startDate": "Start Date",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "feeModel": {
+        "sia_102": "SIA 102",
+        "sia_103": "SIA 103",
+        "sia_108": "SIA 108",
+        "lump_sum": "Lump Sum",
+        "time_based": "Time-based"
+      },
+      "basisKind": {
+        "construction_cost": "Construction Cost",
+        "fixed": "Fixed",
+        "hourly": "Hourly"
+      },
+      "status": {
+        "draft": "Draft",
+        "active": "Active",
+        "completed": "Completed",
+        "terminated": "Terminated"
+      },
+      "role": {
+        "architect": "Architect",
+        "engineer": "Engineer",
+        "qs": "Qs",
+        "pm": "Pm",
+        "surveyor": "Surveyor",
+        "other": "Other"
+      }
+    }
   }
 }

@@ -8,8 +8,35 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
-    "name": "Referenca",
+    "amount": "Shuma",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "currentStage": "Faza Aktuale",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
     "documentType": "Lloji i Dokumentit",
-    "status": "Statusi"
+    "escalationDecision": "Vendimi i Eskalimit",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "primaryDecision": "Vendimi Primar",
+    "status": "Statusi",
+    "targetId": "ID e Synimit",
+    "targetType": "Lloji i Synimit",
+    "updatedAt": "Përditësuar më",
+    "workflow": "Rrjedha e Punës",
+    "!enums": {
+      "currentStage": {
+        "primary": "Primar",
+        "escalation": "Eskalim",
+        "done": "Përfunduar"
+      },
+      "status": {
+        "pending": "Në Pritje",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

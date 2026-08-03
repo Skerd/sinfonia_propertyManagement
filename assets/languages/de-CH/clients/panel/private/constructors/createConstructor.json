@@ -1,0 +1,87 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
+  "title": "Unternehmer erstellen",
+  "description": "A neu unternehmer erstellen",
+  "generalInfo": "Allgemeine Informationen",
+  "howToReach": "How bis reach us",
+  "addAddress": "Neu adresse hinzufügen",
+  "address": "Adresse",
+  "remove": "Entfernen",
+  "logo": "Logo",
+  "uploadError": "Fehlgeschlagen bis upload medien files",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Unternehmer name eingeben",
+    "nameRequired": "Name ist erforderlich",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail-Adresse eingeben",
+    "emailInvalid": "Invalid e-Mail adresse",
+    "phoneNumberLabel": "Telefon Nummer",
+    "phoneNumberPlaceholder": "Telefonnummer eingeben",
+    "phoneNumberRequired": "Telefon nummer ist erforderlich",
+    "vatLabel": "VAT",
+    "vatPlaceholder": "MWST nummer eingeben",
+    "vatRequired": "MwSt ist erforderlich",
+    "websiteLabel": "Website",
+    "websitePlaceholder": "Website URL eingeben",
+    "websiteInvalid": "Invalid website URL",
+    "companyLabel": "Firma",
+    "companyPlaceholder": "Firma auswählen",
+    "companyRequired": "Firma ist erforderlich",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung eingeben",
+    "logoLabel": "Logo",
+    "uploadNewLogoHint": "Upload a neu logo bis replace die current one",
+    "streetLabel": "Strasse",
+    "streetPlaceholder": "Strasse",
+    "postalCodeLabel": "Postleitzahl",
+    "postalCodePlaceholder": "Postleitzahl",
+    "cityLabel": "Ort",
+    "cityPlaceholder": "Ort",
+    "stateLabel": "Kanton",
+    "statePlaceholder": "Kanton",
+    "countryLabel": "Land",
+    "countryPlaceholder": "Land",
+    "latitudeLabel": "Breitengrad",
+    "latitudePlaceholder": "Breitengrad",
+    "longitudeLabel": "Längengrad",
+    "longitudePlaceholder": "Längengrad",
+    "partyTypeLabel": "Partei Typ",
+    "partyTypePlaceholder": "Partei typ auswählen",
+    "partyTypeContractor": "Unternehmer",
+    "partyTypeArchitect": "Architect",
+    "partyTypeEngineer": "Engineer",
+    "partyTypeQs": "Menge Surveyor",
+    "partyTypePm": "Projekt Manager",
+    "partyTypeSurveyor": "Surveyor",
+    "partyTypeOther": "Andere",
+    "tradesLabel": "Gewerke",
+    "tradesPlaceholder": "Trades eingeben",
+    "insuranceExpiryLabel": "Insurance Expiry",
+    "insuranceExpiryPlaceholder": "Insurance expiry datum auswählen",
+    "performanceScoreLabel": "Performance Score",
+    "performanceScorePlaceholder": "Performance score eingeben"
+  },
+  "axios": {
+    "start": {
+      "title": "Unternehmer wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unternehmer erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Unternehmer konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Unternehmer erstellen",
+    "description": "A neu unternehmer erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Unternehmer erstellen"
+  }
+}

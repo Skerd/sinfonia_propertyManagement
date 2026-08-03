@@ -8,10 +8,34 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
     "name": "Referenca",
-    "title": "Titulli",
+    "notes": "Shënime",
+    "project": "Projekti",
     "standard": "Standardi",
     "status": "Statusi",
-    "project": "Projekti"
+    "title": "Titulli",
+    "totalEstimated": "Totali i Vlerësuar",
+    "updatedAt": "Përditësuar më",
+    "workPackage": "Paketa e Punës",
+    "!enums": {
+      "standard": {
+        "npk": "NPK",
+        "custom": "I Personalizuar"
+      },
+      "status": {
+        "draft": "Draft",
+        "issued": "Lëshuar",
+        "tender_ready": "Gati për Tender",
+        "awarded": "Fitues",
+        "archived": "Arkivuar"
+      }
+    }
   }
 }

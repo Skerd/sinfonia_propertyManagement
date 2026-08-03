@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/terminateLeaseDialog.tsx",
+  "dialogTitle": "Terminate mietvertrag",
+  "dialogDescription": "Diese ends die mietvertrag, waives unbezahlt rent, und marks die einheit verfügbar erneut.",
+  "reasonLabel": "Grund (optional)",
+  "reasonPlaceholder": "Why ist diese mietvertrag ending?",
+  "cancel": "Abbrechen",
+  "submit": "Terminate"
+}

@@ -8,9 +8,36 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "sortOrder": "Sort Order",
+    "stageType": "Stage Type",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "not_started": "Not Started",
+        "in_progress": "Në Progres",
+        "completed": "Përfunduar",
+        "blocked": "Blocked"
+      },
+      "stageType": {
+        "concept": "Concept",
+        "schematic": "Schematic",
+        "design_development": "Design Development",
+        "construction_documents": "Construction Documents",
+        "tender": "Tender",
+        "construction": "Construction",
+        "as_built": "As-Built"
+      }
+    }
   }
 }

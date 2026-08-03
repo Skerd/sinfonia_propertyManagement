@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/editVariationOrder.tsx",
+  "title": "Nachtrag bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "constructionContractLabel": "Bauvertrag",
+    "constructionContractPlaceholder": "Bauvertrag auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "costImpactLabel": "Kosten Impact",
+    "costImpactPlaceholder": "Kosten Impact",
+    "timeImpactDaysLabel": "Time Impact Tage",
+    "timeImpactDaysPlaceholder": "Time Impact Tage",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "modificationRequestLabel": "Änderungsantrag",
+    "modificationRequestPlaceholder": "Änderungsantrag auswählen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Nachtrag bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

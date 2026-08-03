@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx",
+  "failedTitle": "Zahlungsplan konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese zahlung plan. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "paymentPlan": "Zahlungsplan",
+  "overview": "Übersicht",
+  "code": "Code",
+  "status": "Status",
+  "paymentPlanStatusState": {
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "defaulted": "Defaulted",
+    "cancelled": "Storniert"
+  },
+  "numberOfInstallments": "Anzahl Raten",
+  "financials": "Financials",
+  "totalAmount": "Total Betrag",
+  "downPayment": "Anzahlung",
+  "downPaymentPaid": "Anzahlung Zahlung Bezahlt",
+  "downPaymentPaidState": {
+    "true": "Bezahlt",
+    "false": "Nicht Bezahlt"
+  },
+  "remainingBalance": "Restsaldo",
+  "installmentAmount": "Rate Betrag",
+  "interestRate": "Zinssatz",
+  "lateFeePercentage": "Verzugsgebühr %",
+  "schedule": "Terminplan",
+  "startDate": "Startdatum",
+  "endDate": "Enddatum",
+  "downPaymentDate": "Anzahlung zahlung datum",
+  "gracePeriodDays": "Nachfrist",
+  "notes": "Notizen",
+  "installments": "Raten",
+  "totalInstallments": "Total raten:",
+  "installment": "Rate",
+  "dueDate": "Fälligkeit",
+  "amount": "Betrag",
+  "paidAmount": "Bezahlt Betrag",
+  "remainingAmount": "Rest",
+  "actions": "Aktionen",
+  "installmentStatusState": {
+    "pending": "Ausstehend",
+    "paid": "Bezahlt",
+    "overdue": "Overdue",
+    "cancelled": "Storniert",
+    "partially_paid": "Partially Bezahlt"
+  },
+  "pending": "Ausstehend",
+  "noInstallments": "Keine raten gefunden für diese zahlung plan."
+}

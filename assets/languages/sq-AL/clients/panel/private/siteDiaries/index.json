@@ -8,9 +8,29 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "diaryDate": "Data e Ditarit",
+    "edifice": "Ndërtesa",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "plantSummary": "Përmbledhja e Makinerive",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "visitors": "Vizitorët",
+    "weather": "Moti",
+    "workSummary": "Përmbledhja e Punës",
+    "workforceCount": "Numri i Fuqisë Punëtore",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "published": "Publikuar"
+      }
+    }
   }
 }

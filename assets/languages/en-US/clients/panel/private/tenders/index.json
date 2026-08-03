@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "openingDate": "Opening Date",
+    "project": "Project",
+    "specification": "Specification",
     "status": "Status",
-    "submissionDeadline": "Deadline"
+    "submissionDeadline": "Deadline",
+    "title": "Title",
+    "trades": "Trades",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "published": "Published",
+        "closing": "Closing",
+        "closed": "Closed",
+        "awarded": "Awarded",
+        "cancelled": "Cancelled"
+      }
+    }
   }
 }

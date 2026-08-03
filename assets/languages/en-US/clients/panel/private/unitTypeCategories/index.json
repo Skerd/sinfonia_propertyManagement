@@ -11,10 +11,13 @@
   "deleted": "Deleted",
   "name": "Name",
   "fields": {
-    "name": "Name",
+    "company": "Company",
+    "createdAt": "Created At",
     "createdBy": "Created By",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted By"
+    "deletedBy": "Deleted By",
+    "name": "Name",
+    "updatedAt": "Updated At"
   },
   "searchPlaceholder": "Search or add filters..."
 }

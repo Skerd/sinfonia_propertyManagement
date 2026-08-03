@@ -1,0 +1,17 @@
+{
+  "failedTitle": "Zahlungsplan konnten nicht geladen werden",
+  "failedDescription": "Daten. Click here bis retry. konnten nicht geladen werden",
+  "paymentPlan": "Zahlungsplan",
+  "status": "Status",
+  "paymentPlanStatusState": {
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "defaulted": "Defaulted",
+    "cancelled": "Storniert"
+  },
+  "totalAmount": "Total Betrag",
+  "remainingBalance": "Restsaldo",
+  "numberOfInstallments": "Anzahl Raten",
+  "endDate": "Enddatum",
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+}

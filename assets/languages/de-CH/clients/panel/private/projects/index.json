@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/index.tsx",
+  "createProject": "Projekt erstellen",
+  "description": "Alle Immobilienprojekte verwalten",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "imageGallery": "Galerie",
+    "mainImage": "Bild",
+    "marketingBooklet": "Marketingbroschüre",
+    "mediaFiles": "Medien Files",
+    "name": "Name",
+    "reservationCommissionRatePercent": "Reservation Provision",
+    "saleCommissionRatePercent": "Verkauf Provision",
+    "updatedAt": "Aktualisiert am",
+    "videoGallery": "Videos"
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "title": "Projekte"
+}

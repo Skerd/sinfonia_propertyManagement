@@ -1,0 +1,149 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/index.tsx",
+  "title": "Einheitskosten",
+  "description": "Purchases und invoices von einheit",
+  "descriptionWithContext": "Costs verknüpft bis diese einheit",
+  "createUnitCost": "Neu einheit kosten",
+  "createUnitCostExpenses": "Expense hinzufügen",
+  "searchPlaceholder": "Suchen oder filter…",
+  "tabs": {
+    "calendar": "Zahlung calendar",
+    "expenses": "Expenses"
+  },
+  "expenses": {
+    "summaryTotal": "Total expenses (filtered)",
+    "summarySuppliers": "Unique suppliers",
+    "summaryPeriod": "Periode",
+    "placeholder": "—",
+    "periodRange": "— → —"
+  },
+  "calendar": {
+    "kpiPaid": "Bezahlt",
+    "kpiPending": "Ausstehend",
+    "kpiOverdue": "Overdue",
+    "financialCalendarTitle": "Financial calendar",
+    "detailForDay": "Payments on {datum}",
+    "selectDay": "A day auswählen",
+    "noPaymentsDay": "Keine payments scheduled für diese datum.",
+    "errorTitle": "Konnte nicht laden calendar",
+    "errorDescription": "Versuchen erneut oder switch bis die expenses tab.",
+    "truncatedTitle": "Results limited",
+    "truncatedDescription": "Only die vor {max} zeilen were loaded für diese monat. Refine filters oder use die expenses tabelle für full daten.",
+    "badge": {
+      "paid": "Bezahlt",
+      "pending": "Ausstehend",
+      "overdue": "Overdue"
+    }
+  },
+  "financeFilters": {
+    "any": "Alle",
+    "apply": "Anwenden",
+    "clear": "Leeren",
+    "unit": "Einheit",
+    "unitPlaceholder": "Alle units",
+    "verificationLabel": "Verifizierung",
+    "paymentLabel": "Zahlung status",
+    "vendorLabel": "Lieferant",
+    "vendorPlaceholder": "Suchen lieferant…",
+    "purchaserLabel": "Purchaser",
+    "purchaserPlaceholder": "Alle people",
+    "verification": {
+      "pending_verification": "Ausstehend verifizierung",
+      "verified": "Verifiziert",
+      "rejected": "Abgelehnt",
+      "needs_revision": "Needs revision"
+    },
+    "payment": {
+      "unpaid": "Unbezahlt",
+      "partially_paid": "Partially bezahlt",
+      "paid": "Bezahlt",
+      "waived": "Waived",
+      "disputed": "Bestritten"
+    }
+  },
+  "fields": {
+    "NOTE": "Notiz",
+    "boqItem": "LV-Position",
+    "budgetCurrency": "Budgetwährung",
+    "budgetedAmount": "Budgeted Betrag",
+    "constructorRef": "Unternehmer",
+    "costCommitment": "Kostenverpflichtung",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "documentSubtotal": "Zwischensumme",
+    "edifice": "Gebäude",
+    "floor": "Geschoss",
+    "invoiceNumber": "Rechnungsnr.",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "paymentDate": "Zahlung Datum",
+    "paymentStatus": "Zahlung",
+    "project": "Projekt",
+    "purchaseDate": "Kauf datum",
+    "purchasePerson": "Kauf Person",
+    "relatedModificationRequest": "Zugehörig Änderung Antrag",
+    "tag": "Tag",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "vendorName": "Lieferant",
+    "verificationStatus": "Verifizierung",
+    "!enums": {
+      "category": {
+        "materials_general": "Materials Allgemein",
+        "finishes_flooring": "Finishes Flooring",
+        "finishes_paint_wallcovering": "Finishes Paint Wallcovering",
+        "plumbing_sanitary": "Plumbing Sanitary",
+        "electrical_lighting": "Electrical Lighting",
+        "hvac": "HVAC",
+        "fixtures_hardware": "Fixtures Hardware",
+        "appliances": "Appliances",
+        "windows_doors": "Windows Doors",
+        "structural_masonry": "Tragwerk Masonry",
+        "professional_services": "Professional Services",
+        "permits_fees_taxes": "Permits Fees Taxes"
+      },
+      "unit": {
+        "piece": "Piece",
+        "pair": "Pair",
+        "set": "Set",
+        "box": "Box",
+        "pack": "Pack",
+        "pallet": "Pallet",
+        "roll": "Roll",
+        "sheet": "Detailansicht",
+        "bundle": "Bundle",
+        "kg": "Kg",
+        "g": "G",
+        "t": "T",
+        "lb": "Lb",
+        "l": "L",
+        "ml": "Ml",
+        "gal": "Gal",
+        "m": "M",
+        "cm": "Cm",
+        "mm": "Mm",
+        "m2": "M2",
+        "m3": "M3",
+        "linear_m": "Linear M",
+        "hour": "Stunde",
+        "day": "Day"
+      },
+      "verificationStatus": {
+        "pending_verification": "Ausstehend Verifizierung",
+        "verified": "Verifiziert",
+        "rejected": "Abgelehnt",
+        "needs_revision": "Needs Revision"
+      },
+      "paymentStatus": {
+        "unpaid": "Unbezahlt",
+        "partially_paid": "Partially Bezahlt",
+        "paid": "Bezahlt",
+        "waived": "Waived",
+        "disputed": "Bestritten"
+      }
+    }
+  }
+}

@@ -8,9 +8,29 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "diaryDate": "Diary Date",
+    "edifice": "Edifice",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "plantSummary": "Plant Summary",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "visitors": "Visitors",
+    "weather": "Weather",
+    "workSummary": "Work Summary",
+    "workforceCount": "Workforce Count",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "published": "Published"
+      }
+    }
   }
 }

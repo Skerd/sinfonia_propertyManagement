@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/index.tsx",
+  "title": "VariationOrder",
+  "description": "VariationOrder register",
+  "createVariationOrder": "VariationOrder hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "billedAt": "Billed Am",
+    "billingReference": "Abrechnung Referenz",
+    "constructionContract": "Bauvertrag",
+    "costImpact": "Kosten Impact",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "media": "Medien",
+    "modificationRequest": "Änderungsantrag",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "status": "Status",
+    "timeImpactDays": "Time Impact Tage",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "pending_architect": "Ausstehend Architect",
+        "pending_qs": "Ausstehend QS",
+        "pending_client": "Ausstehend Kunde",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "cancelled": "Storniert"
+      }
+    }
+  }
+}

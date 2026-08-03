@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Einheitstyp konnte nicht aktualisiert werden, bitte erneut versuchen!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Einheitstyp wird aktualisiert"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Einheitstyp erfolgreich aktualisiert!"
+    }
+  },
+  "editDescription": "Einheit typ informationen bearbeiten",
+  "editTitle": "Einheitstyp bearbeiten",
+  "errorDescription": "Beim Laden von die einheit typ ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Einheitstyp konnten nicht geladen werden",
+  "form": {
+    "_idLabel": "Protokoll ID",
+    "categoryLabel": "Kategorie",
+    "categoryPlaceholder": "Kategorie auswählen",
+    "categoryRequired": "Kategorie ist erforderlich",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung eingeben",
+    "groupLabel": "Group",
+    "groupPlaceholder": "Group auswählen",
+    "groupRequired": "Group ist erforderlich",
+    "iconLabel": "Icon",
+    "iconPlaceholder": "Icon (e.g., mdi-startseite) eingeben",
+    "isPrivateLabel": "Privat",
+    "nameLabel": "Name",
+    "namePlaceholder": "Einheit typ name eingeben",
+    "nameRequired": "Name ist erforderlich",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Slug (e.g., apartment) eingeben",
+    "slugRequired": "Slug ist erforderlich"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  },
+  "formHeader": {
+    "description": "Einheit typ informationen bearbeiten",
+    "title": "Einheitstyp bearbeiten"
+  },
+  "generalInfo": "Allgemeine Informationen",
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
+  "title": "Bezeichnung"
+}

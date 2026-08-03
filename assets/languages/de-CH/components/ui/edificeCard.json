@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/ui/edificeCard.tsx",
+  "sold": "Verkauft",
+  "reserved": "Reserviert",
+  "reservedShort": "Reserv.",
+  "available": "Verfügbar",
+  "availableShort": "Free",
+  "blocked": "Blocked",
+  "blockedShort": "Block.",
+  "value": "Wert",
+  "collected": "Eingezogen",
+  "floor": "geschoss",
+  "floors": "geschosse"
+}

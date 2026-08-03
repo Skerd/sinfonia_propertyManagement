@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx",
+  "failedTitle": "Einheit daten konnten nicht geladen werden",
+  "failedDescription": "Daten, click here bis retry konnten nicht geladen werden",
+  "floor": "Geschoss",
+  "data": {
+    "name": "Name",
+    "unitType": "Einheitstyp",
+    "unitNumber": "Einheit Nummer",
+    "area": "Fläche",
+    "sharedArea": "Gemeinschaftsfläche",
+    "description": "Beschreibung",
+    "rooms": "Zimmer",
+    "numberOfBathrooms": "Bäder",
+    "price": "Preis",
+    "isAvailable": "Availability",
+    "features": "Features",
+    "mainImage": "Haupt Bild"
+  },
+  "features": {
+    "balcony": "Balkon",
+    "terrace": "Terrasse",
+    "seaView": "Meerblick",
+    "cityView": "Stadtblick",
+    "elevator": "Lift",
+    "lakeView": "Seeblick"
+  },
+  "edit": "Bearbeiten",
+  "delete": "Löschen",
+  "deleted": "Gelöscht",
+  "active": "Aktiv",
+  "available": "Verfügbar",
+  "notAvailable": "Nicht verfügbar",
+  "reserved": "Reserviert",
+  "sold": "Verkauft",
+  "leased": "Leased",
+  "statusAvailable": "Verfügbar",
+  "statusUnavailable": "Nicht verfügbar",
+  "statusReserved": "Reserviert",
+  "statusSold": "Verkauft",
+  "statusLeased": "Leased",
+  "statusUnknown": "Unknown",
+  "priceNotSet": "Preis Nicht Set",
+  "constructionStatus": {
+    "planned": "Geplant",
+    "under_construction": "Unter Bau",
+    "ready": "Ready",
+    "delivered": "Delivered"
+  }
+}

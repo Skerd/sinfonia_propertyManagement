@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/index.tsx",
+  "title": "Kostenvoranschlag",
+  "description": "Budget register",
+  "createBudget": "Kostenvoranschlag hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "approvedTotal": "Genehmigt Total",
+    "bimSource": "BIM Quelle",
+    "classificationStandard": "Kostenstandard",
+    "contingencyPercent": "Contingency Percent",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "method": "Methode",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "revisionNo": "Revision Keine.",
+    "status": "Status",
+    "supersedesBudget": "Ersetzt Budget",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "version": "Version",
+    "!enums": {
+      "method": {
+        "ebkp_h": "eBKP-H",
+        "bkp": "BKP",
+        "custom": "Benutzerdefiniert"
+      },
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Benutzerdefiniert"
+      },
+      "status": {
+        "draft": "Entwurf",
+        "pending_approval": "Ausstehend Freigabe",
+        "approved": "Genehmigt",
+        "locked": "Locked",
+        "superseded": "Superseded"
+      }
+    }
+  }
+}

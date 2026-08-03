@@ -8,8 +8,27 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "edifice": "Gebäude",
+    "elementCount": "Elementanzahl",
+    "importStatus": "Importstatus",
     "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "sourceFile": "Quelldatei",
     "title": "Bezeichnung",
-    "importStatus": "Importstatus"
+    "updatedAt": "Aktualisiert am",
+    "version": "Version",
+    "!enums": {
+      "importStatus": {
+        "uploaded": "Hochgeladen",
+        "importing": "Importiert",
+        "imported": "Importiert",
+        "failed": "Fehlgeschlagen"
+      }
+    }
   }
 }

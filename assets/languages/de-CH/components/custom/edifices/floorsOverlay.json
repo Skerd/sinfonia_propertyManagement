@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/floorsOverlay.tsx",
+  "title": "Geschoss polygons overlay",
+  "description": "Alle geschoss polygons displayed on die gebäude haupt bild.",
+  "noMainImage": "Gebäude does nicht have a haupt bild.",
+  "noFloorSelected": "Keine geschoss selected."
+}

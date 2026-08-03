@@ -8,8 +8,29 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "category": "Category",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "edifice": "Edifice",
+    "installDate": "Install Date",
+    "lifecycleStatus": "Lifecycle Status",
+    "manufacturer": "Manufacturer",
     "name": "Reference",
+    "notes": "Notes",
+    "serial": "Serial",
     "title": "Title",
-    "lifecycleStatus": "Lifecycle Status"
+    "unit": "Unit",
+    "updatedAt": "Updated At",
+    "warranty": "Warranty",
+    "!enums": {
+      "lifecycleStatus": {
+        "planned": "Planned",
+        "active": "Active",
+        "maintenance": "Maintenance",
+        "retired": "Retired"
+      }
+    }
   }
 }

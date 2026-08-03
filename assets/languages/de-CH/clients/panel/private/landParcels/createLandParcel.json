@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
+  "title": "Grundstück hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "cadastralReferenceLabel": "Kataster Referenz",
+    "cadastralReferencePlaceholder": "Kataster Referenz",
+    "areaSqmLabel": "Fläche (m²)",
+    "areaSqmPlaceholder": "Fläche (m²)",
+    "zoningLabel": "Zonierung",
+    "zoningPlaceholder": "Zonierung",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "acquisitionCostLabel": "Erwerb Kosten",
+    "acquisitionCostPlaceholder": "Erwerb Kosten",
+    "dueDiligenceStatusLabel": "Fällig Due-Diligence Status",
+    "dueDiligenceStatusPlaceholder": "Fällig Due-Diligence Status",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Grundstück hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

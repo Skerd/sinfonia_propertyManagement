@@ -8,8 +8,29 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "category": "Kategorie",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "edifice": "Gebäude",
+    "installDate": "Installationsdatum",
+    "lifecycleStatus": "Lebenszyklusstatus",
+    "manufacturer": "Hersteller",
     "name": "Referenz",
+    "notes": "Notizen",
+    "serial": "Seriennummer",
     "title": "Bezeichnung",
-    "lifecycleStatus": "Lebenszyklusstatus"
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "warranty": "Garantie",
+    "!enums": {
+      "lifecycleStatus": {
+        "planned": "Geplant",
+        "active": "Aktiv",
+        "maintenance": "Wartung",
+        "retired": "Ausser Betrieb"
+      }
+    }
   }
 }

@@ -1,0 +1,80 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
+  "title": "Reservation erstellen",
+  "description": "A neu reservation für diese einheit erstellen",
+  "errorTitle": "Unable bis laden einheit",
+  "errorDescription": "Bitte versuchen Sie es erneut.",
+  "sectionTitle": "Reservation Informationen",
+  "unitLocationTitle": "Einheit standort",
+  "generalInfo": "Reservation details",
+  "documentsSectionTitle": "Dokumente",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "floorLabel": "Geschoss",
+    "floorPlaceholder": "Geschoss auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "unitRequired": "Einheit ist erforderlich",
+    "reservedByLabel": "Reserviert von",
+    "reservedByPlaceholder": "Benutzer auswählen",
+    "reservedByRequired": "Benutzer ist erforderlich",
+    "reservedByCompanyLabel": "Firma",
+    "reservedByCompanyPlaceholder": "Firma auswählen",
+    "reservedByCompanyRequired": "Firma ist erforderlich",
+    "clientLabel": "Kunde",
+    "clientPlaceholder": "Kunde auswählen",
+    "clientRequired": "Kunde ist erforderlich",
+    "expirationDateLabel": "Ablaufdatum",
+    "expirationDatePlaceholder": "Ablaufdatum auswählen",
+    "reservationNotesLabel": "Notizen",
+    "reservationNotesPlaceholder": "Reservationsnotizen eingeben",
+    "depositAmountLabel": "Anzahlungsbetrag",
+    "depositAmountPlaceholder": "Anzahlungsbetrag eingeben",
+    "depositCurrencyLabel": "Anzahlungswährung",
+    "depositCurrencyPlaceholder": "Währung auswählen",
+    "sourceLabel": "Quelle",
+    "sourcePlaceholder": "Quelle auswählen",
+    "sourceValues": {
+      "agent": "Makler",
+      "portal": "Portal",
+      "referral": "Empfehlung",
+      "walk_in": "Walk-in",
+      "social": "Social",
+      "other": "Andere"
+    },
+    "referralCodeLabel": "Empfehlungscode",
+    "referralCodePlaceholder": "Empfehlungscode eingeben",
+    "paymentMethodLabel": "Zahlungsart",
+    "paymentMethodPlaceholder": "Zahlungsart eingeben",
+    "reservationContractLabel": "Reservationsvertrag",
+    "uploadReservationContract": "Upload vertrag",
+    "additionalDocumentsLabel": "Zusätzliche Dokumente",
+    "uploadAdditionalDocuments": "Upload dokumente",
+    "filesSelected": "Files selected"
+  },
+  "axios": {
+    "start": {
+      "title": "Reservation wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Reservation erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Reservation konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Reservation erstellen",
+    "description": "A neu reservation für diese einheit erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Reservation erstellen"
+  }
+}

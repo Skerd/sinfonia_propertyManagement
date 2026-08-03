@@ -16,5 +16,7 @@
     "active": "Active",
     "maintenance": "Maintenance",
     "retired": "Retired"
-  }
+  },
+  "unit": "Unit",
+  "warranty": "Warranty"
 }

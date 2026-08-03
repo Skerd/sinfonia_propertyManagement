@@ -1,0 +1,57 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Projekt konnte nicht aktualisiert werden, bitte erneut versuchen!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Projekt wird aktualisiert"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Projekt erfolgreich aktualisiert!"
+    }
+  },
+  "commissions": "Provision rates",
+  "currentImage": "Current bild",
+  "editDescription": "Projekt informationen bearbeiten",
+  "title": "Projekt bearbeiten",
+  "description": "Projekt informationen bearbeiten",
+  "editTitle": "Projekt bearbeiten",
+  "errorDescription": "Beim Laden von die projekt ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Projekt konnten nicht geladen werden",
+  "form": {
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Projekt beschreibung eingeben",
+    "imageGalleryLabel": "Bild Galerie",
+    "mainImageLabel": "Haupt Bild",
+    "mainImageRequired": "Haupt bild ist erforderlich",
+    "nameLabel": "Projekt Name",
+    "namePlaceholder": "Projekt name eingeben",
+    "nameRequired": "Projekt name ist erforderlich",
+    "reservationCommissionRateLabel": "Reservation provision (%)",
+    "reservationCommissionRatePlaceholder": "0–100, optional",
+    "saleCommissionRateLabel": "Verkauf provision (%)",
+    "saleCommissionRatePlaceholder": "0–100, optional",
+    "uploadNewImageHint": "Upload a neu bild bis replace die current one",
+    "uploadNewImagesHint": "Upload neu images bis hinzufügen bis die galerie",
+    "uploadNewVideosHint": "Upload neu videos bis hinzufügen bis die galerie",
+    "videoGalleryLabel": "Video Galerie",
+    "mediaFilesLabel": "Dokumente & Dateien",
+    "marketingBookletLabel": "Marketingbroschüre"
+  },
+  "generalInfo": "Allgemeine Informationen",
+  "media": "Medien",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
+  "uploadError": "Fehlgeschlagen bis upload medien files",
+  "videosUploaded": "Videos uploaded",
+  "formHeader": {
+    "title": "Projekt bearbeiten",
+    "description": "Projekt informationen bearbeiten"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern Änderungen"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/index.tsx",
+  "title": "CommissioningRecord",
+  "description": "CommissioningRecord register",
+  "createCommissioningRecord": "CommissioningRecord hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "edifice": "Gebäude",
+    "handoverPackage": "Übergabepaket",
+    "inspectedBy": "Geprüft Von",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "resultNotes": "Ergebnis Notizen",
+    "status": "Status",
+    "systemName": "System Name",
+    "testDate": "Test Datum",
+    "title": "Bezeichnung",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "passed": "Passed",
+        "failed": "Fehlgeschlagen"
+      }
+    }
+  }
+}

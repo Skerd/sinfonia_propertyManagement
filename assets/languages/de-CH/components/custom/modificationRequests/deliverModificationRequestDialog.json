@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/deliverModificationRequestDialog.tsx",
+  "title": "Änderung Delivered",
+  "deliverConfirmTitle": "Mark Änderung as Delivered",
+  "deliverConfirmDescription": "Diese will mark die änderung antrag as abgeschlossen und delivered. Diese ist die end step in die workflow.",
+  "notesLabel": "Delivery Notizen",
+  "notesPlaceholder": "Any delivery notizen (optional) eingeben",
+  "inspectionsLabel": "Link Inspections",
+  "mediaLabel": "Delivery Attachments",
+  "addFile": "Datei hinzufügen",
+  "selectInspectionsPlaceholder": "Inspections bis link... auswählen",
+  "searchInspections": "Suchen inspections...",
+  "noInspectionsFound": "Keine inspections gefunden für diese einheit",
+  "cancel": "Abbrechen",
+  "confirmButton": "Mark as Delivered",
+  "axios": {
+    "start": {
+      "title": "Recording delivery…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Delivery recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht protokoll delivery",
+      "time": 3000
+    }
+  }
+}

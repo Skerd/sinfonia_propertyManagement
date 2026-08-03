@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/createWarranty.tsx",
+  "title": "Garantie hinzufügen",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "startDateLabel": "Startdatum",
+    "startDatePlaceholder": "Startdatum",
+    "endDateLabel": "Enddatum",
+    "endDatePlaceholder": "Enddatum",
+    "retentionAmountLabel": "Einbehalt Betrag",
+    "retentionAmountPlaceholder": "Einbehalt Betrag",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "retentionReleaseDateLabel": "Einbehalt Release Datum",
+    "retentionReleaseDatePlaceholder": "Einbehalt Release Datum",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Garantie hinzufügen",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

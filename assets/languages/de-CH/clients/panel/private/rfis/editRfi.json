@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/editRfi.tsx",
+  "title": "RFI bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "questionLabel": "Frage",
+    "questionPlaceholder": "Frage",
+    "answerLabel": "Antwort",
+    "answerPlaceholder": "Antwort",
+    "dueDateLabel": "Fälligkeit",
+    "dueDatePlaceholder": "Fälligkeit",
+    "relatedDocumentLabel": "Zugehörig Dokument",
+    "relatedDocumentPlaceholder": "Zugehörig dokument auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "askedByLabel": "Gefragt von",
+    "askedByPlaceholder": "Benutzer auswählen",
+    "answeredByLabel": "Beantwortet von",
+    "answeredByPlaceholder": "Benutzer auswählen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "RFI bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

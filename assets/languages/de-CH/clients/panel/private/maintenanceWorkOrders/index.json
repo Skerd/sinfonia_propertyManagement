@@ -8,8 +8,40 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "actualCost": "Ist-Kosten",
+    "asset": "Anlage",
+    "assignee": "Zuständig",
+    "costEstimate": "Kostenschätzung",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "dueDate": "Fälligkeitsdatum",
+    "edifice": "Gebäude",
+    "linkedSnag": "Linked Snag",
     "name": "Referenz",
+    "notes": "Notizen",
+    "plan": "Plan",
+    "status": "Status",
     "title": "Bezeichnung",
-    "status": "Status"
+    "type": "Typ",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "type": {
+        "preventive": "Präventiv",
+        "corrective": "Korrektiv",
+        "renovation": "Sanierung"
+      },
+      "status": {
+        "open": "Offen",
+        "assigned": "Zugewiesen",
+        "in_progress": "In Bearbeitung",
+        "done": "Erledigt",
+        "verified": "Verifiziert",
+        "closed": "Geschlossen",
+        "cancelled": "Annulliert"
+      }
+    }
   }
 }

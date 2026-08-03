@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
+  "title": "Unternehmer",
+  "description": "Alle constructors verwalten",
+  "createConstructor": "Unternehmer erstellen",
+  "noData": "Keine unternehmer gefunden",
+  "failTitle": "Unternehmer konnten nicht geladen werden",
+  "failDescription": "Beim Laden von unternehmer ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "status": "Status",
+  "active": "Aktiv",
+  "deleted": "Gelöscht",
+  "name": "Name",
+  "logo": "Logo",
+  "email": "E-Mail",
+  "vat": "VAT",
+  "phoneNumber": "Telefon Nummer",
+  "website": "Website",
+  "edifices": "Gebäude",
+  "fields": {
+    "addresses": "Addresses",
+    "company": "Firma",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "email": "E-Mail",
+    "insuranceExpiry": "Insurance Expiry",
+    "logo": "Logo",
+    "name": "Name",
+    "partyType": "Partei Typ",
+    "performanceScore": "Performance Score",
+    "phoneNumber": "Telefon Nummer",
+    "trades": "Gewerke",
+    "updatedAt": "Aktualisiert am",
+    "vat": "VAT",
+    "website": "Website",
+    "!enums": {
+      "partyType": {
+        "contractor": "Unternehmer",
+        "architect": "Architect",
+        "engineer": "Engineer",
+        "qs": "Qs",
+        "pm": "Pm",
+        "surveyor": "Surveyor",
+        "other": "Andere"
+      }
+    }
+  },
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "yes": "Ja",
+  "no": "Nein"
+}

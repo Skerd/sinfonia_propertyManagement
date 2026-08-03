@@ -8,8 +8,27 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "active": "Aktiv",
+    "asset": "Anlage",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "edifice": "Gebäude",
+    "intervalDays": "Intervall (Tage)",
     "name": "Referenz",
+    "nextDueAt": "Nächste Fälligkeit",
+    "notes": "Notizen",
+    "planType": "Plantyp",
+    "responsibleParty": "Verantwortliche Partei",
     "title": "Bezeichnung",
-    "planType": "Plantyp"
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "planType": {
+        "preventive": "Präventiv",
+        "statutory": "Gesetzlich",
+        "renovation": "Sanierung"
+      }
+    }
   }
 }

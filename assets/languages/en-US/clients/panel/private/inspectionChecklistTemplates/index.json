@@ -8,9 +8,25 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "itemsJson": "Items Json",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "stage": "Stage",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "trade": "Trade",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "active": "Active",
+        "archived": "Archived"
+      }
+    }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/cardView/projectDocumentCard.tsx",
+  "statusLabel": "Status",
+  "isAsBuiltLabel": "As-Built",
+  "disciplineLabel": "Disziplin",
+  "fields": {
+    "project": "Projekt",
+    "unit": "Einheit",
+    "documentNumber": "Dokument Nummer",
+    "documentType": "Typ",
+    "discipline": "Disziplin",
+    "revision": "Revision",
+    "revisionDate": "Revision Datum",
+    "!enums": {
+      "status": {
+        "draft": "Entwurf",
+        "for_review": "Für Prüfung",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Architektur",
+        "structural": "Tragwerk",
+        "mep": "MEP",
+        "civil": "Tiefbau",
+        "fire": "Brandschutz",
+        "landscape": "Landschaft",
+        "other": "Andere"
+      },
+      "documentType": {
+        "drawing": "Plan",
+        "specification": "Leistungsverzeichnis",
+        "calculation": "Berechnung",
+        "report": "Bericht",
+        "as_built": "As Built",
+        "om_manual": "O&M Manuell",
+        "other": "Andere"
+      }
+    }
+  }
+}

@@ -8,8 +8,43 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "bkpAccountCode": "Llogaria BKP",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "createdContractorInvoice": "Fatura e Krijuar e Ndërtuesit",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "extractedAmount": "Shuma e Nxjerrë",
+    "extractedCurrencyCode": "Monedha e Nxjerrë",
+    "extractedDueDate": "Skadenca e Nxjerrë",
+    "extractedIban": "IBAN",
+    "extractedInvoiceDate": "Extracted Invoice Date",
+    "extractedInvoiceNumber": "Nr. Faturës së Nxjerrë",
+    "extractedQrReference": "Referenca QR e Nxjerrë",
+    "extractedSupplierName": "Emri i Furnizuesit",
+    "matchedConstructor": "Ndërtuesi i Përputhur",
+    "matchedContract": "Matched Contract",
     "name": "Referenca",
+    "notes": "Shënime",
+    "ocrStatus": "Statusi OCR",
+    "project": "Projekti",
+    "status": "Statusi",
     "title": "Titulli",
-    "status": "Statusi"
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "ocrStatus": {
+        "pending": "Në Pritje",
+        "done": "Përfunduar",
+        "failed": "Dështuar"
+      },
+      "status": {
+        "inbox": "Inbox",
+        "classified": "Klasifikuar",
+        "routed": "Drejtuar",
+        "posted": "Postuar",
+        "rejected": "Refuzuar"
+      }
+    }
   }
 }

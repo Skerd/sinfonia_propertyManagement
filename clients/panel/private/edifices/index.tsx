@@ -40,9 +40,12 @@ function AllEdifices({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "energyClass",
-            label: "Energy Class",
+            label: resolveLanguageKey("fields.energyClass") as string,
             type: COLUMN_TYPE.ENUM,
-            enumValues: EDIFICE_ENERGY_CLASS_VALUES.map((v) => ({value: v, label: v})),
+            enumValues: EDIFICE_ENERGY_CLASS_VALUES.map((v) => ({
+                value: v,
+                label: (resolveLanguageKey(`fields.!enums.energyClass.${v}`) as string) || v,
+            })),
         },
         {
             field: "numberOfFloors",

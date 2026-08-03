@@ -8,9 +8,45 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
-    "title": "Title",
+    "assignee": "Assignee",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "createdOnSite": "Created On Site",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "geometryH": "Height",
+    "geometryW": "Width",
+    "geometryX": "X",
+    "geometryY": "Y",
+    "layer": "Layer",
+    "linkedRfi": "Linked RFI",
+    "linkedScheduleTask": "Linked Schedule Task",
+    "linkedSnag": "Linked Snag",
     "markerType": "Marker Type",
-    "status": "Status"
+    "media": "Media",
+    "name": "Reference",
+    "notes": "Notes",
+    "page": "Page",
+    "planDocument": "Plan Document",
+    "project": "Project",
+    "status": "Status",
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "markerType": {
+        "defect": "Defect",
+        "decision": "Decision",
+        "order": "Order",
+        "pendency": "Pendency",
+        "info": "Info"
+      },
+      "status": {
+        "open": "Open",
+        "in_progress": "In Progress",
+        "done": "Done",
+        "void": "Void"
+      }
+    }
   }
 }

@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Projekt konnte nicht erstellt werden, bitte erneut versuchen!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Projekt wird erstellt"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Projekt erfolgreich erstellt!"
+    }
+  },
+  "commissions": "Provisionen",
+  "description": "A neu real estate projekt erstellen",
+  "form": {
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Projekt beschreibung eingeben",
+    "imageGalleryLabel": "Bild Galerie",
+    "mainImageLabel": "Haupt Bild",
+    "mainImageRequired": "Haupt bild ist erforderlich",
+    "nameLabel": "Projekt Name",
+    "namePlaceholder": "Projekt name eingeben",
+    "nameRequired": "Projekt name ist erforderlich",
+    "reservationCommissionRateLabel": "Reservation provision (%)",
+    "reservationCommissionRatePlaceholder": "0–100, optional",
+    "saleCommissionRateLabel": "Verkauf provision (%)",
+    "saleCommissionRatePlaceholder": "0–100, optional",
+    "uploadNewImageHint": "Upload a neu bild bis replace die current one",
+    "uploadNewImagesHint": "Upload neu images bis hinzufügen bis die galerie",
+    "uploadNewVideosHint": "Upload neu videos bis hinzufügen bis die galerie",
+    "videoGalleryLabel": "Video Galerie",
+    "mediaFilesLabel": "Dokumente & Dateien",
+    "marketingBookletLabel": "Marketingbroschüre"
+  },
+  "generalInfo": "Allgemeine Informationen",
+  "media": "Medien",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "title": "Projekt erstellen",
+  "uploadError": "Fehlgeschlagen bis upload medien files",
+  "formHeader": {
+    "title": "Projekt erstellen",
+    "description": "A neu real estate projekt erstellen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Projekt erstellen"
+  }
+}

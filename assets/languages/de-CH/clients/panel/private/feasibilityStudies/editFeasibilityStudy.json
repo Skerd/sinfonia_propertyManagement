@@ -1,0 +1,62 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/editFeasibilityStudy.tsx",
+  "title": "Machbarkeitsstudie bearbeiten",
+  "generalInfo": "Details",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "landParcelLabel": "Grundstück",
+    "landParcelPlaceholder": "Grundstück auswählen",
+    "titleLabel": "Bezeichnung",
+    "titlePlaceholder": "Bezeichnung",
+    "assumptionsLabel": "Annahmen",
+    "assumptionsPlaceholder": "Annahmen",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "softCostEstimateLabel": "Weich Kosten Schätzung",
+    "softCostEstimatePlaceholder": "Weich Kosten Schätzung",
+    "hardCostEstimateLabel": "Hart Kosten Schätzung",
+    "hardCostEstimatePlaceholder": "Hart Kosten Schätzung",
+    "residualValueLabel": "Residual Wert",
+    "residualValuePlaceholder": "Residual Wert",
+    "irrPercentLabel": "IRR %",
+    "irrPercentPlaceholder": "IRR %",
+    "decisionLabel": "Entscheid",
+    "decisionPlaceholder": "Entscheid",
+    "decisionNotesLabel": "Entscheid Notizen",
+    "decisionNotesPlaceholder": "Entscheid Notizen",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen",
+    "mediaLabel": "Attachments",
+    "existingFiles": "Existing files",
+    "newFiles": "Neu files",
+    "decidedByLabel": "Decided von",
+    "decidedByPlaceholder": "Benutzer auswählen",
+    "decidedAtLabel": "Decided am",
+    "decidedAtPlaceholder": "Datum auswählen"
+  },
+  "axios": {
+    "start": {
+      "title": "Wird gespeichert...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Gespeichert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Fehler",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Machbarkeitsstudie bearbeiten",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Speichern"
+  }
+}

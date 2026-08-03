@@ -8,9 +8,35 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "billedAt": "Faturuar më",
+    "billingReference": "Referenca e Faturimit",
+    "constructionContract": "Kontrata e Ndërtimit",
+    "costImpact": "Ndikimi në Kosto",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "media": "Media",
+    "modificationRequest": "Kërkesa e Modifikimit",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
     "status": "Status",
-    "project": "Project"
+    "timeImpactDays": "Time Impact Days",
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "pending_architect": "Në Pritje të Arkitektit",
+        "pending_qs": "Në Pritje të QS",
+        "pending_client": "Në Pritje të Klientit",
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "cancelled": "Anuluar"
+      }
+    }
   }
 }

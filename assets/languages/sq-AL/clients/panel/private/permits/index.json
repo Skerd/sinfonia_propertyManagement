@@ -9,20 +9,30 @@
   "searchPlaceholder": "Kërko ose shto filtra...",
   "statusLabel": "Statusi",
   "fields": {
-    "name": "Referenca",
-    "project": "Projekti",
-    "title": "Titulli",
-    "permitType": "Lloji",
-    "authority": "Autoriteti",
-    "referenceNumber": "Nr. Referencës",
-    "status": "Statusi",
-    "expiresAt": "Skadon",
-    "submittedAt": "Dorëzuar",
     "approvedAt": "Miratuar",
+    "authority": "Autoriteti",
     "createdAt": "Krijuar në",
-    "updatedAt": "Përditësuar në",
+    "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "edifice": "Ndërtesa",
+    "expiresAt": "Skadon",
+    "expiryReminderSentAt0d": "Expiry Reminder Sent At0d",
+    "expiryReminderSentAt30d": "Expiry Reminder Sent At30d",
+    "expiryReminderSentAt3d": "Expiry Reminder Sent At3d",
+    "expiryReminderSentAt7d": "Expiry Reminder Sent At7d",
+    "media": "Media",
+    "name": "Referenca",
+    "notes": "Shënime",
+    "permitType": "Lloji",
+    "project": "Projekti",
+    "referenceNumber": "Nr. Referencës",
+    "renewedAt": "Renewed At",
+    "status": "Statusi",
+    "submittedAt": "Dorëzuar",
+    "title": "Titulli",
+    "updatedAt": "Përditësuar në",
     "!enums": {
       "status": {
         "draft": "Draft",
@@ -31,6 +41,16 @@
         "approved": "Miratuar",
         "rejected": "Refuzuar",
         "expired": "Skaduar"
+      },
+      "permitType": {
+        "building": "Building",
+        "excavation": "Excavation",
+        "environmental": "Environmental",
+        "fire": "Zjarr",
+        "utility": "Utility",
+        "occupancy": "Occupancy",
+        "zoning": "Zoning",
+        "other": "Tjetër"
       }
     }
   }

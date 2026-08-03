@@ -8,9 +8,31 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "edifice": "Edifice",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Notes",
+    "project": "Project",
+    "relatedDocument": "Related Document",
+    "reviewedBy": "Reviewed By",
+    "specReference": "Spec Reference",
     "status": "Status",
-    "project": "Project"
+    "submittedBy": "Submitted By",
+    "title": "Title",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Submitted",
+        "revise_and_resubmit": "Revise & Resubmit",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      }
+    }
   }
 }

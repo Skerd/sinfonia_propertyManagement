@@ -17,17 +17,35 @@
   "website": "Website",
   "edifices": "Edifices",
   "fields": {
-    "name": "Name",
-    "email": "Email",
-    "phoneNumber": "Phone Number",
     "addresses": "Addresses",
-    "description": "Description",
-    "logo": "Logo",
-    "website": "Website",
-    "vat": "VAT",
+    "company": "Company",
+    "createdAt": "Created At",
     "createdBy": "Created By",
     "deletedAt": "Deleted",
-    "deletedBy": "Deleted By"
+    "deletedBy": "Deleted By",
+    "description": "Description",
+    "email": "Email",
+    "insuranceExpiry": "Insurance Expiry",
+    "logo": "Logo",
+    "name": "Name",
+    "partyType": "Party Type",
+    "performanceScore": "Performance Score",
+    "phoneNumber": "Phone Number",
+    "trades": "Trades",
+    "updatedAt": "Updated At",
+    "vat": "VAT",
+    "website": "Website",
+    "!enums": {
+      "partyType": {
+        "contractor": "Contractor",
+        "architect": "Architect",
+        "engineer": "Engineer",
+        "qs": "Qs",
+        "pm": "Pm",
+        "surveyor": "Surveyor",
+        "other": "Other"
+      }
+    }
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",

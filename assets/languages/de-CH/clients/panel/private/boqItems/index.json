@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/index.tsx",
+  "title": "BoqItem",
+  "description": "BoqItem register",
+  "createBoqItem": "BoqItem hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "actualAmount": "Ist-Betrag",
+    "actualQty": "Effektiv Menge",
+    "budget": "Kostenvoranschlag",
+    "category": "Kategorie",
+    "classificationCode": "Kostencode",
+    "classificationStandard": "Kostenstandard",
+    "constructorRef": "Unternehmer",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "elementCode": "Element Code",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "plannedAmount": "Geplanter Betrag",
+    "plannedQty": "Geplante Menge",
+    "plannedRate": "Geplant Satz",
+    "project": "Projekt",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "trade": "Gewerk",
+    "unitOfMeasure": "Masseinheit",
+    "updatedAt": "Aktualisiert am",
+    "wbsCode": "WBS Code",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Benutzerdefiniert"
+      },
+      "status": {
+        "active": "Aktiv",
+        "cancelled": "Storniert"
+      }
+    }
+  }
+}

@@ -8,9 +8,27 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
-    "name": "Reference",
-    "tender": "Tender",
     "constructorRef": "Contractor",
-    "status": "Status"
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "invitedAt": "Invited At",
+    "name": "Reference",
+    "notes": "Notes",
+    "portalAccessToken": "Portal Access Token",
+    "respondedAt": "Responded At",
+    "status": "Status",
+    "tender": "Tender",
+    "updatedAt": "Updated At",
+    "!enums": {
+      "status": {
+        "invited": "Invited",
+        "viewing": "Viewing",
+        "submitted": "Submitted",
+        "declined": "Declined",
+        "withdrawn": "Withdrawn"
+      }
+    }
   }
 }

@@ -8,8 +8,25 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "granularity": "Granularity",
+    "horizonEnd": "Horizon End",
+    "horizonStart": "Horizon Start",
     "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
     "title": "Bezeichnung",
-    "project": "Projekt"
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "granularity": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "yearly": "Yearly"
+      }
+    }
   }
 }

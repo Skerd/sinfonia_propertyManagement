@@ -17,17 +17,35 @@
   "website": "Faqja e internetit",
   "edifices": "Ndërtesat",
   "fields": {
-    "name": "Emri",
-    "email": "Email",
-    "phoneNumber": "Numri i telefonit",
     "addresses": "Adresat",
-    "description": "Përshkrimi",
-    "logo": "Logo",
-    "website": "Faqja e internetit",
-    "vat": "TVSH",
+    "company": "Company",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "email": "Email",
+    "insuranceExpiry": "Insurance Expiry",
+    "logo": "Logo",
+    "name": "Emri",
+    "partyType": "Party Type",
+    "performanceScore": "Performance Score",
+    "phoneNumber": "Numri i telefonit",
+    "trades": "Zejet",
+    "updatedAt": "Përditësuar më",
+    "vat": "TVSH",
+    "website": "Faqja e internetit",
+    "!enums": {
+      "partyType": {
+        "contractor": "Contractor",
+        "architect": "Architect",
+        "engineer": "Engineer",
+        "qs": "Qs",
+        "pm": "Pm",
+        "surveyor": "Surveyor",
+        "other": "Tjetër"
+      }
+    }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",

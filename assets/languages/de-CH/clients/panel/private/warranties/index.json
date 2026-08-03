@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/index.tsx",
+  "title": "Garantie",
+  "description": "Garantie register",
+  "createWarranty": "Garantie hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "endDate": "Enddatum",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "project": "Projekt",
+    "retentionAmount": "Einbehalt Betrag",
+    "retentionReleaseDate": "Einbehalt Release Datum",
+    "startDate": "Startdatum",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "active": "Aktiv",
+        "expired": "Abgelaufen",
+        "void": "Ungültig"
+      }
+    }
+  }
+}

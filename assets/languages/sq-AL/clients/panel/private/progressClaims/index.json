@@ -8,9 +8,34 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "amount": "Shuma",
+    "certifiedAmount": "Shuma e Certifikuar",
+    "claimPeriodEnd": "Fundi i Periudhës",
+    "claimPeriodStart": "Fillimi i Periudhës",
+    "constructionContract": "Kontrata e Ndërtimit",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "retentionHeld": "Mbajtja",
+    "retentionReleased": "Retention Released",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "draft": "Draft",
+        "submitted": "Dërguar",
+        "certified": "Certifikuar",
+        "paid": "Paguar",
+        "rejected": "Refuzuar"
+      }
+    }
   }
 }

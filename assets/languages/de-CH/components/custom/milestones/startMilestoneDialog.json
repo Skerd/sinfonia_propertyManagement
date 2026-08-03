@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/startMilestoneDialog.tsx",
+  "dialogTitle": "Start meilenstein",
+  "dialogDescription": "Move diese meilenstein bis in fortschritt und protokoll its effektiv start datum.",
+  "cancel": "Abbrechen",
+  "submit": "Start meilenstein"
+}

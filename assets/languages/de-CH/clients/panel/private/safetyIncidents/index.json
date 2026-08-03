@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/index.tsx",
+  "title": "SafetyIncident",
+  "description": "SafetyIncident register",
+  "createSafetyIncident": "SafetyIncident hinzufügen",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen...",
+  "fields": {
+    "correctiveActions": "Korrektiv Massnahmen",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "description": "Beschreibung",
+    "edifice": "Gebäude",
+    "incidentDate": "Vorfall Datum",
+    "location": "Standort",
+    "media": "Medien",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "personsInvolved": "Personen Beteiligt",
+    "project": "Projekt",
+    "reportedBy": "Reported Von",
+    "severity": "Schweregrad",
+    "status": "Status",
+    "title": "Bezeichnung",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "reported": "Reported",
+        "investigating": "Investigating",
+        "closed": "Geschlossen"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
+  }
+}

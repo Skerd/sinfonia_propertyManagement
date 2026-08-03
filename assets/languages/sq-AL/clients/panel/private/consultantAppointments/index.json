@@ -8,9 +8,57 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "adjustmentFactor": "Faktori i Rregullimit",
+    "basisKind": "Baza",
+    "cappedAmount": "Capped Amount",
+    "constructorRef": "Ndërtuesi",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "deliverables": "Deliverables",
+    "endDate": "Data e Përfundimit",
+    "feeAmount": "Shuma e Tarifës",
+    "feeModel": "Modeli i Tarifës",
+    "hourlyRate": "Hourly Rate",
+    "media": "Media",
     "name": "Reference",
-    "title": "Title",
+    "notes": "Shënime",
+    "project": "Project",
+    "role": "Roli",
+    "scope": "Fusha",
+    "startDate": "Data e Fillimit",
     "status": "Status",
-    "project": "Project"
+    "title": "Title",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "feeModel": {
+        "sia_102": "SIA 102",
+        "sia_103": "SIA 103",
+        "sia_108": "SIA 108",
+        "lump_sum": "Shumë Fikse",
+        "time_based": "Sipas Kohës"
+      },
+      "basisKind": {
+        "construction_cost": "Kosto Ndërtimi",
+        "fixed": "Fikse",
+        "hourly": "Me Orë"
+      },
+      "status": {
+        "draft": "Draft",
+        "active": "Aktive",
+        "completed": "Përfunduar",
+        "terminated": "Ndërprerë"
+      },
+      "role": {
+        "architect": "Architect",
+        "engineer": "Engineer",
+        "qs": "Qs",
+        "pm": "Pm",
+        "surveyor": "Surveyor",
+        "other": "Tjetër"
+      }
+    }
   }
 }

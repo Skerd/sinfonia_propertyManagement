@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
+  "title": "Mietzahlungen",
+  "description": "Tenant miete zahlung einträge",
+  "createRentalPayment": "Protokoll Zahlung",
+  "noData": "Keine mietzahlungen gefunden",
+  "failTitle": "Mietzahlungen konnten nicht geladen werden",
+  "failDescription": "Beim Laden von mietzahlungen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "amount": "Betrag",
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "currency": "Währung",
+    "deletedAt": "Gelöscht",
+    "deletedBy": "Gelöscht von",
+    "dueDate": "Fälligkeit",
+    "lease": "Mietvertrag",
+    "name": "Referenz",
+    "notes": "Notizen",
+    "paidAmount": "Bezahlt Betrag",
+    "paidDate": "Bezahlt Datum",
+    "receiptMedia": "Receipt Medien",
+    "status": "Status",
+    "unit": "Einheit",
+    "updatedAt": "Aktualisiert am",
+    "!enums": {
+      "status": {
+        "pending": "Ausstehend",
+        "paid": "Bezahlt",
+        "partial": "Teilweise",
+        "overdue": "Overdue",
+        "waived": "Waived"
+      }
+    }
+  }
+}

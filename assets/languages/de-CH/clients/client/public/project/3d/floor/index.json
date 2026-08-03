@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/3d/floor/index.tsx",
+  "backTo3d": "Zurück zu 3D anzeigen",
+  "back": "Zurück",
+  "notFound": "Projekt nicht gefunden.",
+  "propertiesTitle": "Properties",
+  "filterAvailable": "Avaliable",
+  "filterSold": "Verkauft",
+  "filterReserved": "Reserviert",
+  "filterAll": "Alle",
+  "areaLabel": "Fläche",
+  "roomsLabel": "Zimmer",
+  "floorLabel": "Geschoss",
+  "bathsLabel": "Baths",
+  "orientationLabel": "Ausrichtung",
+  "noUnitsOnFloor": "Keine units on diese geschoss für die selected filter.",
+  "floorSelected": "Geschoss",
+  "viewerEmptyProject": "Keine gebäude overlays configured yet. Browse units in grid anzeigen.",
+  "viewerEmptyEdifice": "Keine geschoss overlays on diese gebäude. Browse units in grid anzeigen.",
+  "viewerEmptyFloor": "Keine einheit overlays on diese geschoss. Browse units in grid anzeigen.",
+  "viewGrid": "Grid anzeigen"
+}

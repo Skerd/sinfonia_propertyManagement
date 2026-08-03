@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/finishWorkingSnagDialog.tsx",
+  "dialogTitle": "Abschliessen working",
+  "dialogDescription": "Mark diese mangel as resolved. Sie can hinzufügen fertigstellung notizen und photos.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional fertigstellung notizen",
+  "photosLabel": "Fotos",
+  "addPhotos": "Fotos hinzufügen",
+  "cancel": "Abbrechen",
+  "submit": "Abschliessen working"
+}

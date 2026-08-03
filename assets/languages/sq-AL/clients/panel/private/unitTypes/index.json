@@ -20,16 +20,19 @@
   "private": "Privat",
   "public": "Publike",
   "fields": {
-    "name": "Emri",
-    "slug": "Slug",
     "category": "Kategoria",
-    "group": "Grupi",
-    "description": "Përshkrimi",
-    "icon": "Ikona",
-    "isPrivate": "Është Privat",
+    "company": "Company",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
-    "deletedBy": "Fshirë nga"
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "group": "Grupi",
+    "icon": "Ikona",
+    "isPrivate": "Është Privat",
+    "name": "Emri",
+    "slug": "Slug",
+    "updatedAt": "Përditësuar më"
   },
   "searchPlaceholder": "Kërko ose shto filtra..."
 }

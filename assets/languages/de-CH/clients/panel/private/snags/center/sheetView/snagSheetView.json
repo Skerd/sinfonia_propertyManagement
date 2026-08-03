@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/center/sheetView/snagSheetView.tsx",
+  "failedTitle": "Mangel konnten nicht geladen werden",
+  "failedDescription": "Something went wrong während laden diese mangel. Click bis retry.",
+  "failedTooltipDescription": "Click bis retry fetching daten.",
+  "snag": "Mangel",
+  "overview": "Übersicht",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "unit": "Einheit",
+  "location": "Standort",
+  "status": "Status",
+  "severity": "Schweregrad",
+  "reportedBy": "Reported von",
+  "assignedTo": "Zugewiesen an",
+  "dueDate": "Fälligkeitsdatum",
+  "resolvedAt": "Resolved am",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "photos": "Fotos",
+  "trade": "Gewerk",
+  "workPackage": "Arbeitspaket",
+  "rootCause": "Root cause",
+  "costImpact": "Kosten impact",
+  "isWarranty": "Unter garantie",
+  "isDlp": "Within defects liability periode",
+  "variationOrder": "Nachtragsauftrag",
+  "none": "Keine",
+  "statuses": {
+    "open": "Offen",
+    "in_progress": "In Bearbeitung",
+    "resolved": "Resolved",
+    "rejected": "Abgelehnt"
+  },
+  "severities": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "critical": "Critical"
+  }
+}

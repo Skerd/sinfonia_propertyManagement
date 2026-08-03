@@ -1,0 +1,72 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/createLead.tsx",
+  "title": "Lead erstellen",
+  "description": "Neuen CRM-Lead erfassen",
+  "generalInfo": "Allgemeine Informationen",
+  "interestInfo": "Property Interesse",
+  "form": {
+    "firstNameLabel": "Vorname",
+    "firstNamePlaceholder": "Vorname eingeben",
+    "firstNameRequired": "Vorname ist erforderlich",
+    "lastNameLabel": "Nachname",
+    "lastNamePlaceholder": "Nachname eingeben",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail-Adresse eingeben",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "Telefonnummer eingeben",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Status auswählen",
+    "sourceLabel": "Quelle",
+    "sourcePlaceholder": "Quelle auswählen",
+    "projectInterestLabel": "Projektinteresse",
+    "projectInterestPlaceholder": "Projekt auswählen",
+    "unitInterestLabel": "Einheitsinteresse",
+    "unitInterestPlaceholder": "Einheit auswählen",
+    "budgetLabel": "Kostenvoranschlag",
+    "budgetPlaceholder": "Budgetbetrag eingeben",
+    "budgetCurrencyLabel": "Budgetwährung",
+    "budgetCurrencyPlaceholder": "Währung auswählen",
+    "notesLabel": "Notizen",
+    "notesPlaceholder": "Notizen eingeben",
+    "assignedToLabel": "Zugewiesen an",
+    "assignedToPlaceholder": "Benutzer auswählen",
+    "followUpDateLabel": "Folgedatum",
+    "followUpDatePlaceholder": "Datum auswählen",
+    "statusNew": "Neu",
+    "statusContacted": "Kontaktiert",
+    "statusQualified": "Qualifiziert",
+    "statusProposal": "Angebot",
+    "statusNegotiation": "Verhandlung",
+    "statusWon": "Gewonnen",
+    "statusLost": "Verloren",
+    "sourceWebsite": "Website",
+    "sourceReferral": "Empfehlung",
+    "sourceSocial": "Social Media",
+    "sourceEvent": "Event",
+    "sourceColdCall": "Kaltakquise",
+    "sourceWalkIn": "Walk-in",
+    "sourceOther": "Andere"
+  },
+  "axios": {
+    "start": {
+      "title": "Lead wird erstellt",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead erfolgreich erstellt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lead konnte nicht erstellt werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Lead erstellen",
+    "description": "Neuen CRM-Lead erfassen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Lead erstellen"
+  }
+}

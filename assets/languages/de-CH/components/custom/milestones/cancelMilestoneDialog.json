@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/cancelMilestoneDialog.tsx",
+  "dialogTitle": "Abbrechen meilenstein",
+  "dialogDescription": "Abbrechen diese meilenstein. Diese will stop it von being tracked as aktiv.",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optional grund für annullierung",
+  "cancel": "Zurück",
+  "submit": "Abbrechen meilenstein"
+}

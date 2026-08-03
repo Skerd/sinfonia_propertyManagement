@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/sheetView/budgetSheetView.tsx",
+  "budget": "Kostenvoranschlag",
+  "overview": "Übersicht",
+  "media": "Attachments",
+  "name": "Referenz",
+  "title": "Bezeichnung",
+  "status": "Status",
+  "project": "Projekt",
+  "edifice": "Gebäude",
+  "version": "Version",
+  "method": "Schätzung Methode",
+  "classificationStandard": "Kostenstandard",
+  "revisionNo": "Revision Keine.",
+  "supersedesBudget": "Ersetzt Budget",
+  "currency": "Währung",
+  "approvedTotal": "Genehmigt Total",
+  "contingencyPercent": "Contingency Percent",
+  "description": "Beschreibung",
+  "notes": "Notizen",
+  "statuses": {
+    "draft": "Entwurf",
+    "pending_approval": "Ausstehend Freigabe",
+    "approved": "Genehmigt",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  },
+  "methods": {
+    "ebkp_h": "eBKP-H",
+    "bkp": "BKP",
+    "custom": "Benutzerdefiniert"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Benutzerdefiniert"
+  }
+}

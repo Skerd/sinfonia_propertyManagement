@@ -8,7 +8,27 @@
   "failDescription": "Ju lutem provoni përsëri.",
   "searchPlaceholder": "Kërko...",
   "fields": {
+    "adjustmentFactor": "Faktori i Rregullimit",
+    "basisAmount": "Shuma Bazë",
+    "consultantAppointment": "Emërimi i Konsulentit",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "currency": "Monedha",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "feePercent": "Tarifa %",
     "name": "Referenca",
-    "status": "Statusi"
+    "notes": "Shënime",
+    "status": "Statusi",
+    "totalFee": "Tarifa Totale",
+    "updatedAt": "Përditësuar më",
+    "!enums": {
+      "status": {
+        "planned": "Planifikuar",
+        "earned": "Fituar",
+        "invoiced": "Faturuar",
+        "paid": "Paguar"
+      }
+    }
   }
 }

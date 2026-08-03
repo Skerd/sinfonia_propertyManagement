@@ -8,7 +8,17 @@
   "failDescription": "Please try again.",
   "searchPlaceholder": "Search...",
   "fields": {
+    "bimModel": "BIM Model",
+    "classificationCode": "Classification Code",
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "ifcElementType": "Ifc Element Type",
     "name": "Reference",
-    "classificationCode": "Classification Code"
+    "notes": "Notes",
+    "quantity": "Quantity",
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Updated At"
   }
 }

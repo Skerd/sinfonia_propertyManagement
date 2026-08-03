@@ -8,7 +8,7 @@
     "workflowLabel": "Workflow",
     "workflowPlaceholder": "Workflow auswählen",
     "targetTypeLabel": "Zieltyp",
-    "targetTypePlaceholder": "z.B. contractorinvoices",
+    "targetTypePlaceholder": "Z.B. contractorinvoices",
     "targetIdLabel": "Ziel-ID",
     "targetIdPlaceholder": "Ziel-Dokument-ID",
     "amountLabel": "Betrag",

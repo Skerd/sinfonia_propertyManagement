@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/cancelInspectionDialog.tsx",
+  "cancelConfirmTitle": "Abbrechen Abnahme",
+  "cancelConfirmDescription": "Sind sie sicher sie want bis abbrechen diese abnahme? Eingeben a grund below.",
+  "cancellationReasonLabel": "Annullierungsgrund",
+  "cancellationReasonPlaceholder": "E.g. Tenant nicht verfügbar, property zugriff denied...",
+  "cancel": "Abbrechen",
+  "confirmCancel": "Abbrechen abnahme",
+  "axios": {
+    "start": {
+      "title": "Cancelling abnahme",
+      "time": 3000
+    },
+    "success": {
+      "title": "Abnahme annulliert erfolgreich!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Abnahme konnte nicht werden annulliert, bitte versuchen erneut!",
+      "time": 3000
+    }
+  }
+}

@@ -16,5 +16,7 @@
     "active": "Aktiv",
     "maintenance": "Wartung",
     "retired": "Ausser Betrieb"
-  }
+  },
+  "unit": "Einheit",
+  "warranty": "Garantie"
 }

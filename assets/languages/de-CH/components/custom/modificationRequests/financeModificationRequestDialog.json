@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/financeModificationRequestDialog.tsx",
+  "title": "Finanzen",
+  "description": "Kosten breakdown und finanzen informationen hinzufügen",
+  "confirmButton": "Submit Finanzen Details",
+  "form": {
+    "totalCostLabel": "Total Kosten",
+    "totalCostPlaceholder": "Total kosten eingeben",
+    "totalCostRequired": "Total kosten ist erforderlich",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen",
+    "currencyRequired": "Währung ist erforderlich",
+    "costBreakdownLabel": "Kosten Breakdown",
+    "itemLabel": "Position",
+    "costLabel": "Kosten",
+    "costPerItemLabel": "Kosten / position",
+    "lineTotalLabel": "Position total",
+    "quantityLabel": "Menge",
+    "unitLabel": "Einheit",
+    "costPerUnitLabel": "Kosten per einheit",
+    "addFile": "Datei hinzufügen",
+    "filesSelected": "Files selected",
+    "emptyBreakdownHint": "Keine position positionen yet",
+    "addLineItem": "Position position hinzufügen",
+    "notesLabel": "Finanzen Notizen",
+    "notesPlaceholder": "Finanzen notizen eingeben",
+    "estimatedCompletionDateLabel": "Estimated Fertigstellung Datum",
+    "estimatedCompletionDatePlaceholder": "Datum auswählen",
+    "mediaLabel": "Dokumente (Invoices, Quotes)",
+    "breakdownTotal": "Breakdown total",
+    "difference": "Difference"
+  },
+  "axios": {
+    "start": {
+      "title": "Submitting finanzen entscheid…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Finanzen entscheid eingereicht",
+      "time": 3000
+    },
+    "error": {
+      "title": "Konnte nicht submit finanzen entscheid",
+      "time": 3000
+    }
+  }
+}
