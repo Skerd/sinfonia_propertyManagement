@@ -38,18 +38,20 @@ function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, h
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? entity.title : null}
-                    subtitle={!!read?.npkPosition && !!entity.npkPosition ? entity.npkPosition : (!!read?.name && !!entity.name ? entity.name : undefined)}
-                    badges={
-                        <>
-                            {!!read?.status && !!entity.status ? (
+                    title={entity.title}
+                    subtitle={entity.npkPosition || entity.name}
+                    badges={<>
+                            {entity.status ? (
                                 <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{entity.status}</Badge>
                             ) : null}
-                            {!!read?.isRPosition && entity.isRPosition ? (
+                            {entity.isRPosition ? (
                                 <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>R</Badge>
                             ) : null}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!(read?.npkPosition || read?.name)}
+                    showBadges={!!(read?.status || read?.isRPosition)}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu accessModel="specificationitems" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />

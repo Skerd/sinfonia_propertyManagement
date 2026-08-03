@@ -19,5 +19,11 @@
     "passed": "Passed",
     "failed": "Failed"
   },
-  "inspectedBy": "Inspected by"
+  "inspectedBy": "Inspected by",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

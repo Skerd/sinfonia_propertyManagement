@@ -17,5 +17,11 @@
     "in_progress": "Në proces",
     "completed": "Përfunduar",
     "blocked": "Bllokuar"
-  }
+  },
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

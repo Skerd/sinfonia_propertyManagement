@@ -3,5 +3,11 @@
   "title": "Sales & Handover",
   "errors": {
     "missingConfigId": "Could not load company settings."
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

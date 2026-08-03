@@ -20,5 +20,11 @@
     "investigating": "Investigating",
     "closed": "Geschlossen"
   },
-  "reportedBy": "Reported von"
+  "reportedBy": "Reported von",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

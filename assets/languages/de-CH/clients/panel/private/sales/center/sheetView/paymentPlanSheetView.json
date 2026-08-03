@@ -48,5 +48,11 @@
     "partially_paid": "Partially Bezahlt"
   },
   "pending": "Ausstehend",
-  "noInstallments": "Keine raten gefunden für diese zahlung plan."
+  "noInstallments": "Keine raten gefunden für diese zahlung plan.",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

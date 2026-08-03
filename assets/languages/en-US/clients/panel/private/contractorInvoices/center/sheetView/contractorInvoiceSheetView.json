@@ -29,5 +29,11 @@
   "sources": {
     "manual": "Manual",
     "ap_inbox": "AP Inbox"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

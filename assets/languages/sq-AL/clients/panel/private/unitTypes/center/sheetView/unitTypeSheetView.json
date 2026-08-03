@@ -17,5 +17,11 @@
   "unitTypeVisibility": {
     "true": "Privat",
     "false": "Publike"
-  }
+  },
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

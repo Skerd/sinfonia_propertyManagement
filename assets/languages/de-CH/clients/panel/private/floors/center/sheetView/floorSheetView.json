@@ -60,5 +60,11 @@
     "pendingVerificationUnitCostsTooltip": "Rolled up von units: costs ausstehend verifizierung oder needing revision",
     "totalUnitCostDocuments": "Einheit kosten dokumente",
     "totalUnitCostDocumentsTooltip": "Total anzahl von kosten dokumente across units on diese geschoss"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

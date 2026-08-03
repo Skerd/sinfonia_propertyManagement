@@ -26,5 +26,11 @@
     "archived": "Archived"
   },
   "decidedBy": "Decided by",
-  "decidedAt": "Decided at"
+  "decidedAt": "Decided at",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

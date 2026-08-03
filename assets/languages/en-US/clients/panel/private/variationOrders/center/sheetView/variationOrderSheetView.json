@@ -22,5 +22,11 @@
     "rejected": "Rejected",
     "cancelled": "Cancelled"
   },
-  "modificationRequest": "Modification request"
+  "modificationRequest": "Modification request",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

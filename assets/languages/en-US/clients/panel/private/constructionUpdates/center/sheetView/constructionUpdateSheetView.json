@@ -15,5 +15,11 @@
   "updateDate": "Update date",
   "description": "Description",
   "photos": "Photos",
-  "none": "None"
+  "none": "None",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

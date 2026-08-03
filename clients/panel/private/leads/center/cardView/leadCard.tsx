@@ -92,16 +92,9 @@ function LeadCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    iconTile={
-                        <Avatar className="h-12 w-12 shrink-0 rounded-xl border border-border">
-                            <AvatarFallback className="rounded-xl bg-muted text-muted-foreground text-sm font-semibold">
-                                {getInitials(lead)}
-                            </AvatarFallback>
-                        </Avatar>
-                    }
-                    title={!!read?.firstName ? (fullName || lead.name) : null}
-                    badges={
-                        <>
+                    title={(fullName || lead.name)}
+                    subtitle={undefined}
+                    badges={<>
                             {!!read?.status && lead.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
                                     <Badge variant="outline" className={cn("text-xs", getStatusBadgeClass(lead.status))}>
@@ -118,6 +111,9 @@ function LeadCard({
                             )}
                         </>
                     }
+                    showTitle={!!read?.firstName}
+                    showSubtitle={false}
+                    showBadges={!!(read?.status || read?.source)}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

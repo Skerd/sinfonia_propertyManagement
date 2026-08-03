@@ -110,5 +110,11 @@
     "preSale": "Pre-verkauf",
     "postSale": "Post-verkauf"
   },
-  "modelType": "Änderungsantrag"
+  "modelType": "Änderungsantrag",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

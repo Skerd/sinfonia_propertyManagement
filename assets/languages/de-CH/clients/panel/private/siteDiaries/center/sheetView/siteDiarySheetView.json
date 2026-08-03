@@ -18,5 +18,11 @@
   "statuses": {
     "draft": "Entwurf",
     "published": "Veröffentlicht"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

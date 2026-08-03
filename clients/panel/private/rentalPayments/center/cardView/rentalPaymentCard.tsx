@@ -106,17 +106,18 @@ function RentalPaymentCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.name ? (payment.name || "—") : null}
-                    subtitle={!!read?.lease ? payment.lease?.name : undefined}
-                    badges={
-                        !!read?.status && !!payment.status ? (
-                            <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
-                                <Badge variant="secondary" className={cn("text-xs", statusBadgeClass(payment.status))}>
-                                    {resolveLanguageKey(`fields.!enums.status.${payment.status}`) as string}
-                                </Badge>
-                            </TooltipDisplayer>
-                        ) : null
-                    }
+                    title={payment.name || "—"}
+                    subtitle={payment.lease?.name}
+                    badges={payment.status ? (
+                        <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
+                            <Badge variant="secondary" className={cn("text-xs", statusBadgeClass(payment.status))}>
+                                {resolveLanguageKey(`fields.!enums.status.${payment.status}`) as string}
+                            </Badge>
+                        </TooltipDisplayer>
+                    ) : null}
+                    showTitle={!!read?.name}
+                    showSubtitle={!!read?.lease}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

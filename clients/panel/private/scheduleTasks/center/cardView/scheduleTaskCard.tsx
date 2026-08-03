@@ -97,10 +97,9 @@ function ScheduleTaskCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? scheduleTask.title : null}
-                    subtitle={!!read?.name && !!scheduleTask.name ? scheduleTask.name : undefined}
-                    badges={
-                        <>
+                    title={scheduleTask.title}
+                    subtitle={scheduleTask.name}
+                    badges={<>
                             {!!read?.status && !!scheduleTask.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
                                     <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
@@ -110,6 +109,9 @@ function ScheduleTaskCard({
                             )}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!read?.name}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

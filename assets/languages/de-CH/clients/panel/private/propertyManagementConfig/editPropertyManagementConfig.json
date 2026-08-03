@@ -27,5 +27,11 @@
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Speichern"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

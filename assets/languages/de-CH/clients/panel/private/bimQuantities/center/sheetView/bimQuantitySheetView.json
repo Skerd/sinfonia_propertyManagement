@@ -8,5 +8,11 @@
   "classificationCode": "Kostencode",
   "quantity": "Menge",
   "unitOfMeasure": "Masseinheit",
-  "notes": "Notizen"
+  "notes": "Notizen",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

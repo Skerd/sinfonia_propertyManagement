@@ -96,7 +96,8 @@ function ConstructorCard({
                                         </Avatar>
                                     </TooltipDisplayer>
                                 }
-                                title={!!read?.name ? constructor.name : null}
+                                title={constructor.name}
+                                showTitle={!!read?.name}
                                 badges={
                                     <>
                                         {!!constructor.edifices && constructor.edifices.length > 0 && (
@@ -106,6 +107,7 @@ function ConstructorCard({
                                         )}
                                     </>
                                 }
+                                showBadges={!!read?.edifices}
                                 hideActions={hideActions}
                                 actionMenu={
                                     <ActionMenu

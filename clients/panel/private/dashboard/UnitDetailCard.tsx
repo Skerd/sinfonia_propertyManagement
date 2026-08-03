@@ -8,6 +8,7 @@ import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
+import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import UnitSheetView from "@propertyManagementModule/clients/panel/private/units/center/sheetView/unitSheetView.tsx";
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import {
@@ -72,6 +73,10 @@ function UnitDetailCardInner({
     const editPath = buildUnitEditPath(unit);
     const deleteLabel = unitDeleteConfirmLabel(read as Record<string, unknown> | undefined, unit);
 
+    if (!read || !Object.keys(read).length) {
+        return <HiddenElement />;
+    }
+
     return (
         <>
             <Card
@@ -93,14 +98,31 @@ function UnitDetailCardInner({
                         <div className="min-w-0">
                             <div className="flex flex-wrap items-center gap-2">
                                 <h3 className="font-display font-semibold text-xl truncate">
-                                    {unitNumber}
+                                    <HiddenElement randomLength={10}>
+                                        {read?.name || read?.unitNumber ? unitNumber : null}
+                                    </HiddenElement>
                                     {floorName !== "—" && (
-                                        <span className="text-muted-foreground font-normal"> · {floorName}</span>
+                                        <span className="text-muted-foreground font-normal">
+                                            {" · "}
+                                            <HiddenElement randomLength={6}>
+                                                {read?.floor ? floorName : null}
+                                            </HiddenElement>
+                                        </span>
                                     )}
                                 </h3>
-                                <UnitStatusBadge status={status} resolveLanguageKey={resolveLanguageKey} />
+                                <HiddenElement randomLength={6}>
+                                    {read?.status ? (
+                                        <UnitStatusBadge status={status} resolveLanguageKey={resolveLanguageKey} />
+                                    ) : null}
+                                </HiddenElement>
                             </div>
-                            {typology !== "—" && <p className="text-sm text-muted-foreground mt-0.5">{typology}</p>}
+                            {typology !== "—" && (
+                                <p className="text-sm text-muted-foreground mt-0.5">
+                                    <HiddenElement randomLength={8}>
+                                        {read?.unitType ? typology : null}
+                                    </HiddenElement>
+                                </p>
+                            )}
                         </div>
                         <EntityCardActionMenu variant="inline">
                             <ActionMenu
@@ -119,19 +141,43 @@ function UnitDetailCardInner({
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         <div>
                             <p className="text-xs text-muted-foreground">{resolveLanguageKey("netArea")}</p>
-                            <p className="font-mono font-medium">{netArea != null ? `${netArea} m²` : "—"}</p>
+                            <p className="font-mono font-medium">
+                                <HiddenElement randomLength={6}>
+                                    {read?.netArea || read?.area
+                                        ? (netArea != null ? `${netArea} m²` : "—")
+                                        : null}
+                                </HiddenElement>
+                            </p>
                         </div>
                         <div>
                             <p className="text-xs text-muted-foreground">{resolveLanguageKey("grossArea")}</p>
-                            <p className="font-mono font-medium">{grossArea != null ? `${grossArea} m²` : "—"}</p>
+                            <p className="font-mono font-medium">
+                                <HiddenElement randomLength={6}>
+                                    {read?.area
+                                        ? (grossArea != null ? `${grossArea} m²` : "—")
+                                        : null}
+                                </HiddenElement>
+                            </p>
                         </div>
                         <div>
                             <p className="text-xs text-muted-foreground">{resolveLanguageKey("pricePerSqm")}</p>
-                            <p className="font-mono font-semibold text-primary">{pricePerSqm > 0 ? formatCurrency(pricePerSqm) : "—"}</p>
+                            <p className="font-mono font-semibold text-primary">
+                                <HiddenElement randomLength={8}>
+                                    {read?.price || read?.statistics
+                                        ? (pricePerSqm > 0 ? formatCurrency(pricePerSqm) : "—")
+                                        : null}
+                                </HiddenElement>
+                            </p>
                         </div>
                         <div>
                             <p className="text-xs text-muted-foreground">{resolveLanguageKey("totalPrice")}</p>
-                            <p className="font-mono font-semibold text-primary">{totalPrice > 0 ? formatCurrency(totalPrice) : "—"}</p>
+                            <p className="font-mono font-semibold text-primary">
+                                <HiddenElement randomLength={8}>
+                                    {read?.price
+                                        ? (totalPrice > 0 ? formatCurrency(totalPrice) : "—")
+                                        : null}
+                                </HiddenElement>
+                            </p>
                         </div>
                     </div>
                 </div>

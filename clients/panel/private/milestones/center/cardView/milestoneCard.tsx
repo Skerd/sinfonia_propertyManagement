@@ -95,10 +95,9 @@ function MilestoneCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? milestone.title : null}
-                    subtitle={!!read?.name && !!milestone.name ? milestone.name : undefined}
-                    badges={
-                        <>
+                    title={milestone.title}
+                    subtitle={milestone.name}
+                    badges={<>
                             {!!read?.status && !!milestone.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
                                     <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
@@ -108,6 +107,9 @@ function MilestoneCard({
                             )}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!read?.name}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

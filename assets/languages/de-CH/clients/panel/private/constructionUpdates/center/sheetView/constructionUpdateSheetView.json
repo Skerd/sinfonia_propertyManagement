@@ -15,5 +15,11 @@
   "updateDate": "Aktualisieren datum",
   "description": "Beschreibung",
   "photos": "Fotos",
-  "none": "Keine"
+  "none": "Keine",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

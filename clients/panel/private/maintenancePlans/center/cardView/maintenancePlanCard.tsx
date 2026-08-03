@@ -36,9 +36,11 @@ function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, h
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.name ? entity.name : null}
-                    subtitle={!!read?.planType && !!entity.planType ? entity.planType : undefined}
+                    title={entity.name}
+                    subtitle={entity.planType}
                     badges={null}
+                    showTitle={!!read?.name}
+                    showSubtitle={!!read?.planType}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu accessModel="maintenanceplans" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />

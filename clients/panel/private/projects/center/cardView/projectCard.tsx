@@ -115,30 +115,35 @@ function ProjectCard({
                                     icon={IconBuilding}
                                     label={resolveLanguageKey("statistics.edifices")}
                                     tooltip={resolveLanguageKey("statistics.edificesTooltip")}
+                                    show={!!read?.statistics}
                                     value={project.statistics.totalEdifices != null && project.statistics.totalEdifices}
                                 />
                                 <InfoRow
                                     icon={IconStack}
                                     label={resolveLanguageKey("statistics.floors")}
                                     tooltip={resolveLanguageKey("statistics.floorsTooltip")}
+                                    show={!!read?.statistics}
                                     value={project.statistics.totalFloors != null && project.statistics.totalFloors}
                                 />
                                 <InfoRow
                                     icon={IconDoor}
                                     label={resolveLanguageKey("statistics.units")}
                                     tooltip={resolveLanguageKey("statistics.unitsTooltip")}
+                                    show={!!read?.statistics}
                                     value={project.statistics.totalUnits != null && project.statistics.totalUnits}
                                 />
                                 <InfoRow
                                     icon={IconGrid4x4}
                                     label={resolveLanguageKey("statistics.area")}
                                     tooltip={resolveLanguageKey("statistics.areaTooltip")}
+                                    show={!!read?.statistics}
                                     value={project.statistics.totalArea != null && formatCardAreaM2(project.statistics.totalArea)}
                                 />
                                 <InfoRow
                                     icon={IconChartArrowsVertical}
                                     label={resolveLanguageKey("statistics.investment")}
                                     tooltip={resolveLanguageKey("statistics.investmentTooltip")}
+                                    show={!!read?.statistics}
                                     value={
                                         project.statistics?.totalInvestmentValue && Array.isArray(project.statistics.totalInvestmentValue) && project.statistics.totalInvestmentValue.length > 0 &&
                                         <div className="text-green-600 flex flex-wrap gap-1">

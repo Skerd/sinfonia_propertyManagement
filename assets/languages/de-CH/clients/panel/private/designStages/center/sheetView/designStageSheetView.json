@@ -17,5 +17,11 @@
     "in_progress": "In Bearbeitung",
     "completed": "Abgeschlossen",
     "blocked": "Blocked"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

@@ -20,5 +20,11 @@
     "under_dd": "Nën Due Diligence",
     "acquired": "Blerë",
     "disposed": "Nxjerrë nga përdorimi"
-  }
+  },
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

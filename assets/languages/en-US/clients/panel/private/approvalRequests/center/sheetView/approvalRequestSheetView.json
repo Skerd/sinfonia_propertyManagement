@@ -36,5 +36,11 @@
     "visaed": "Visaed",
     "approved": "Approved",
     "rejected": "Rejected"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

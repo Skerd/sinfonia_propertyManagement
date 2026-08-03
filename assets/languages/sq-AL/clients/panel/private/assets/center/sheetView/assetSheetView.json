@@ -18,5 +18,11 @@
     "retired": "Nxjerrë"
   },
   "unit": "Njësia",
-  "warranty": "Garancia"
+  "warranty": "Garancia",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

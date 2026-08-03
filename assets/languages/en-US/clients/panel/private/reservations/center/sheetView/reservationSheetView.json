@@ -65,5 +65,11 @@
     "social": "Social",
     "other": "Other"
   },
-  "referralCode": "Referral Code"
+  "referralCode": "Referral Code",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

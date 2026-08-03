@@ -18,5 +18,11 @@
     "awarded": "Vergeben",
     "rejected": "Abgelehnt",
     "withdrawn": "Zurückgezogen"
-  }
+  },
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

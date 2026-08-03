@@ -92,19 +92,19 @@ function ConstructionUpdateCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? update.title : null}
-                    subtitle={!!read?.name && !!update.name ? update.name : undefined}
+                    title={update.title}
+                    subtitle={update.name}
                     badges={
                         <>
-                            {!!read?.updateDate && formattedDate && (
+                            {formattedDate ? (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("fields.updateDate") as string}>
                                     <Badge variant="outline" className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                                         <IconCalendar className="h-3 w-3" />
                                         {formattedDate}
                                     </Badge>
                                 </TooltipDisplayer>
-                            )}
-                            {!!read?.progressPercent && update.progressPercent != null && (
+                            ) : null}
+                            {update.progressPercent != null ? (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("fields.progressPercent") as string}>
                                     <Badge
                                         variant="outline"
@@ -113,17 +113,15 @@ function ConstructionUpdateCard({
                                         {update.progressPercent}%
                                     </Badge>
                                 </TooltipDisplayer>
-                            )}
+                            ) : null}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!read?.name}
+                    showBadges={!!(read?.updateDate || read?.progressPercent)}
                     hideActions={hideActions}
                     actionMenu={
-                        <ActionMenu
-                            accessModel="constructionUpdates"
-                            deletedData={update}
-                            onAction={(a: string) => setAction(a)}
-                            editPath={editPath}
-                        />
+                        <ActionMenu accessModel="constructionUpdates" deletedData={update} onAction={(a: string) => setAction(a)} editPath={editPath} />
                     }
                 />
                 <Separator />

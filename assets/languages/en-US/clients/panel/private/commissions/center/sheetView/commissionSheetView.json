@@ -41,5 +41,11 @@
   "currency": "Currency",
   "paidAt": "Paid at",
   "voidedAt": "Voided at",
-  "modelType": "Commission"
+  "modelType": "Commission",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

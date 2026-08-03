@@ -203,12 +203,14 @@ function EdificeCard({
                                             icon={IconStack}
                                             label={resolveLanguageKey("statistics.floors")}
                                             tooltip={resolveLanguageKey("statistics.floorsTooltip")}
+                                            show={!!read?.statistics}
                                             value={edifice.statistics.totalFloors != null && edifice.statistics.totalFloors}
                                         />
                                         <InfoRow
                                             icon={IconDoor}
                                             label={resolveLanguageKey("statistics.units")}
                                             tooltip={resolveLanguageKey("statistics.unitsTooltip")}
+                                            show={!!read?.statistics}
                                             value={edifice.statistics.totalUnits != null && edifice.statistics.totalUnits}
                                         />
                                     </div>

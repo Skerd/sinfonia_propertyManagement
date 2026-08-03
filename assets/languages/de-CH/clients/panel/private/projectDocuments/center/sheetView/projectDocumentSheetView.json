@@ -49,5 +49,11 @@
     "other": "Andere"
   },
   "designStage": "Planungsphase",
-  "isRequiredDeliverable": "Erforderlich lieferobjekt"
+  "isRequiredDeliverable": "Erforderlich lieferobjekt",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

@@ -114,5 +114,11 @@
     "pendingVerificationUnitCostsTooltip": "Document totals for costs pending verification or needing revision (not yet verified)",
     "unitCostDocumentCount": "Unit cost documents",
     "unitCostDocumentCountTooltip": "Count of registered cost documents for this unit (non-deleted)"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

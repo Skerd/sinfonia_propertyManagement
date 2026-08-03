@@ -97,10 +97,9 @@ function PermitCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? permit.title : null}
-                    subtitle={!!read?.name && !!permit.name ? permit.name : undefined}
-                    badges={
-                        <>
+                    title={permit.title}
+                    subtitle={permit.name}
+                    badges={<>
                             {!!read?.status && !!permit.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
                                     <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
@@ -110,6 +109,9 @@ function PermitCard({
                             )}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!read?.name}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

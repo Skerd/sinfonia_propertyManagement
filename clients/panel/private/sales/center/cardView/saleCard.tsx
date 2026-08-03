@@ -166,16 +166,17 @@ function SaleCard({
                         <div className="w-full min-w-0">
                             <EntityTextCardHeader
                                 title={
-                                    <TooltipDisplayer tooltip={saleTitle} show={!!read?.name}>
+                                    <TooltipDisplayer tooltip={saleTitle} show>
                                         <span className="flex items-center gap-1 truncate">
                                             {saleTitle}
                                             <CopyTooltip text={sale.name ?? saleTitle} />
                                         </span>
                                     </TooltipDisplayer>
                                 }
+                                showTitle={!!read?.name}
                                 badges={
                                     <>
-                                        {!!read?.paymentType && sale.paymentType && (
+                                        {sale.paymentType && (
                                             <TooltipDisplayer tooltip={resolveLanguageKey("paymentType")}>
                                                 <Badge
                                                     variant="outline"
@@ -195,7 +196,7 @@ function SaleCard({
                                                 </Badge>
                                             </TooltipDisplayer>
                                         )}
-                                        {!!read?.paymentPlan && sale.paymentPlan?.name && (
+                                        {sale.paymentPlan?.name && (
                                             <TooltipDisplayer tooltip={resolveLanguageKey("paymentPlan")}>
                                                 <Badge variant="outline" className={cn("flex items-center gap-1 text-xs font-medium", STATUS_BADGE_INFO)}>
                                                     <IconCreditCard className="h-3 w-3 shrink-0" />
@@ -223,7 +224,7 @@ function SaleCard({
                                                 </Badge>
                                             </TooltipDisplayer>
                                         )}
-                                        {!!sale.notes?.trim() && !!read?.notes && (
+                                        {!!sale.notes?.trim() && (
                                             <TooltipDisplayer tooltip={resolveLanguageKey("notes")}>
                                                 <Badge variant="outline" className={cn("text-xs font-medium", STATUS_BADGE_NEUTRAL)}>
                                                     <IconFileText className="h-3 w-3 mr-1" />
@@ -233,6 +234,7 @@ function SaleCard({
                                         )}
                                     </>
                                 }
+                                showBadges={!!(read?.paymentType || read?.paymentPlan || read?.reservation || read?.approvalStatus || read?.notes)}
                                 actionMenu={
                                     <ActionMenu
                                         accessModel={"sales"}

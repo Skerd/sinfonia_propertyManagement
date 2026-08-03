@@ -60,5 +60,11 @@
     "pendingVerificationUnitCostsTooltip": "Rolled up from units: costs pending verification or needing revision",
     "totalUnitCostDocuments": "Unit cost documents",
     "totalUnitCostDocumentsTooltip": "Total count of cost documents across units on this floor"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

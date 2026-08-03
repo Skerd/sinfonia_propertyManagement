@@ -23,5 +23,11 @@
     "contractor_invoice": "Contractor Invoice",
     "fee": "Fee",
     "manual": "Manual"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

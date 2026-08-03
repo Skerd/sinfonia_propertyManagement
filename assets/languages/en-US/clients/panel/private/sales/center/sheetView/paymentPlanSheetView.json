@@ -48,5 +48,11 @@
     "partially_paid": "Partially Paid"
   },
   "pending": "Pending",
-  "noInstallments": "No installments found for this payment plan."
+  "noInstallments": "No installments found for this payment plan.",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

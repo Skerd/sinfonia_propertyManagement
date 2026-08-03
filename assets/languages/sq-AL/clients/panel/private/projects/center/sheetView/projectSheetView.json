@@ -53,5 +53,11 @@
   "project": "Projekti",
   "reservationCommissionShort": "Rev.",
   "saleCommissionShort": "Shitje",
-  "statisticsTitle": "Statistikat"
+  "statisticsTitle": "Statistikat",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

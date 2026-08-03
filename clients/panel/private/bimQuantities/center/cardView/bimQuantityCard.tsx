@@ -36,9 +36,11 @@ function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, h
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.name ? entity.name : null}
-                    subtitle={!!read?.classificationCode && !!entity.classificationCode ? entity.classificationCode : undefined}
+                    title={entity.name}
+                    subtitle={entity.classificationCode}
                     badges={null}
+                    showTitle={!!read?.name}
+                    showSubtitle={!!read?.classificationCode}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu accessModel="bimquantities" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />

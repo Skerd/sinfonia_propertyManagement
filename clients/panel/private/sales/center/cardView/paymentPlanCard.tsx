@@ -110,15 +110,16 @@ function PaymentPlanCard({
                 >
                     <EntityTextCardHeader
                         title={
-                            <TooltipDisplayer tooltip={resolveLanguageKey("paymentPlan")} show={!!read?.name}>
+                            <TooltipDisplayer tooltip={resolveLanguageKey("paymentPlan")} show>
                                 <span className="flex items-center gap-1 truncate">
                                     {title}
                                     <CopyTooltip text={paymentPlan.name ?? paymentPlan._id} />
                                 </span>
                             </TooltipDisplayer>
                         }
+                        showTitle={!!read?.name}
                         badges={
-                            !!read?.status && paymentPlan.status ? (
+                            paymentPlan.status ? (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("status")}>
                                     <Badge
                                         variant="outline"
@@ -132,6 +133,7 @@ function PaymentPlanCard({
                                 </TooltipDisplayer>
                             ) : undefined
                         }
+                        showBadges={!!read?.status}
                         actionMenu={
                             <ActionMenu
                                 accessModel={"paymentPlans"}

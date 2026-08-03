@@ -50,5 +50,11 @@
     "proposal_sent": "sent a proposal",
     "follow_up": "followed up",
     "note": "added a note"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

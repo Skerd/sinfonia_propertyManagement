@@ -1,5 +1,6 @@
 import type {ReactNode} from "react";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {EntityCardActionMenu} from "./EntityCardActionMenu.tsx";
 
 type EntityTextCardHeaderProps = {
@@ -12,6 +13,12 @@ type EntityTextCardHeaderProps = {
     actionMenu?: ReactNode;
     hideActions?: boolean;
     className?: string;
+    /** When false, title is masked with HiddenElement (city-style field permission). */
+    showTitle?: boolean;
+    /** When false, subtitle is masked with HiddenElement. */
+    showSubtitle?: boolean;
+    /** When false, badges are masked with HiddenElement. */
+    showBadges?: boolean;
 };
 
 /** Header row for text-first entity cards: optional icon tile, title, badges, inline action menu. */
@@ -24,7 +31,13 @@ export function EntityTextCardHeader({
     actionMenu,
     hideActions = false,
     className,
+    showTitle = true,
+    showSubtitle = true,
+    showBadges = true,
 }: EntityTextCardHeaderProps) {
+    const hasSubtitle = subtitle != null && subtitle !== "";
+    const hasBadges = badges != null;
+
     return (
         <div className={cn("flex flex-col gap-1.5 p-2 pb-1", className)}>
             <div className="flex min-w-0 items-center gap-2">
@@ -32,11 +45,19 @@ export function EntityTextCardHeader({
                 <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
                     <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
                         <div className="flex min-w-0 items-center gap-1">
-                            <div className="min-w-0 truncate font-semibold leading-none">{title}</div>
+                            <div className="min-w-0 truncate font-semibold leading-none">
+                                <HiddenElement randomLength={10}>
+                                    {showTitle ? title : null}
+                                </HiddenElement>
+                            </div>
                             {titleExtra}
                         </div>
-                        {subtitle != null && subtitle !== "" && (
-                            <div className="truncate text-xs leading-none text-muted-foreground">{subtitle}</div>
+                        {(hasSubtitle || !showSubtitle) && (
+                            <div className="truncate text-xs leading-none text-muted-foreground">
+                                <HiddenElement randomLength={8}>
+                                    {showSubtitle && hasSubtitle ? subtitle : null}
+                                </HiddenElement>
+                            </div>
                         )}
                     </div>
                     {!hideActions && actionMenu != null && (
@@ -44,8 +65,12 @@ export function EntityTextCardHeader({
                     )}
                 </div>
             </div>
-            {badges != null && (
-                <div className="flex flex-wrap items-center gap-1.5">{badges}</div>
+            {(hasBadges || !showBadges) && (
+                <div className="flex flex-wrap items-center gap-1.5">
+                    <HiddenElement randomLength={6}>
+                        {showBadges && hasBadges ? badges : null}
+                    </HiddenElement>
+                </div>
             )}
         </div>
     );

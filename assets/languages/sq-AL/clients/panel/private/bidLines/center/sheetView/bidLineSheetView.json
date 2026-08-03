@@ -10,5 +10,11 @@
   "unitPrice": "Çmimi për Njësi",
   "lineTotal": "Totali i Rreshtit",
   "currency": "Monedha",
-  "alternativeNote": "Shënim Alternativ"
+  "alternativeNote": "Shënim Alternativ",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

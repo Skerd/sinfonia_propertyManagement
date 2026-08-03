@@ -98,10 +98,9 @@ function SnagCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? snag.title : null}
-                    subtitle={!!read?.name && !!snag.name ? snag.name : undefined}
-                    badges={
-                        <>
+                    title={snag.title}
+                    subtitle={snag.name}
+                    badges={<>
                             {!!read?.status && !!snag.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
                                     <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
@@ -118,6 +117,9 @@ function SnagCard({
                             )}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!read?.name}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

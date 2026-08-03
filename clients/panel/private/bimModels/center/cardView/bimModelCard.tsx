@@ -38,11 +38,14 @@ function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, h
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.name ? entity.name : null}
-                    subtitle={!!read?.version && !!entity.version ? entity.version : undefined}
-                    badges={!!read?.importStatus && !!entity.importStatus ? (
+                    title={entity.name}
+                    subtitle={entity.version}
+                    badges={entity.importStatus ? (
                         <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{entity.importStatus}</Badge>
                     ) : null}
+                    showTitle={!!read?.name}
+                    showSubtitle={!!read?.version}
+                    showBadges={!!read?.importStatus}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu accessModel="bimmodels" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />

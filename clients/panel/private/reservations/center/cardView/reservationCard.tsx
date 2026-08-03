@@ -243,6 +243,7 @@ function ReservationCard({
                                 <CopyTooltip text={reservation?.name} />
                             </span>
                         }
+                        showTitle={!!read?.name}
                         hideActions={hideActions}
                         actionMenu={
                             <ActionMenu
@@ -275,14 +276,16 @@ function ReservationCard({
                 <div className="w-full min-w-0">
                     <EntityTextCardHeader
                         title={
-                            <TooltipDisplayer tooltip={reservation.name} show={!!read?.name}>
+                            <TooltipDisplayer tooltip={reservation.name} show>
                                 <span className="flex items-center gap-1 truncate">
                                     {reservation.name}
                                     <CopyTooltip text={reservation?.name} />
                                 </span>
                             </TooltipDisplayer>
                         }
+                        showTitle={!!read?.name}
                         badges={statusBadges}
+                        showBadges={!!read?.status}
                         hideActions={hideActions}
                         actionMenu={
                             <ActionMenu

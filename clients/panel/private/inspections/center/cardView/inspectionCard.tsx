@@ -277,12 +277,12 @@ function InspectionCard({
                                                 show={!!read?.nextInspectionDate}
                                                 value={inspection.nextInspectionDate != null && format(new Date(inspection.nextInspectionDate), "PP")}
                                             />
-                                            {!!read?.scheduledDate && !!inspection.scheduledDate && inspection.status === "scheduled" && (
+                                            {!!inspection.scheduledDate && inspection.status === "scheduled" && (
                                                 <InfoRow
                                                     icon={IconCalendar}
                                                     label={resolveLanguageKey("scheduledDate")}
                                                     tooltip={resolveLanguageKey("scheduledDate")}
-                                                    show={true}
+                                                    show={!!read?.scheduledDate}
                                                     value={format(new Date(inspection.scheduledDate), "PP")}
                                                 />
                                             )}

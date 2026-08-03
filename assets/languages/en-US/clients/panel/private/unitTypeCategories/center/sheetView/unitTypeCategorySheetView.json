@@ -2,5 +2,11 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/center/sheetView/unitTypeCategorySheetView.tsx",
   "overview": "Overview",
   "name": "Name",
-  "unitTypeCategory": "Unit Type Category"
+  "unitTypeCategory": "Unit Type Category",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

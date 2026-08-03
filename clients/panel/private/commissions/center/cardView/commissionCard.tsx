@@ -98,6 +98,7 @@ function CommissionCard({
                                 </TooltipDisplayer>
                             }
                             title={agentTitle}
+                            showTitle={!!read?.agent}
                             badges={
                                 <>
                                     <TooltipDisplayer tooltip={resolveLanguageKey("status")}>
@@ -121,7 +122,7 @@ function CommissionCard({
                                             </Badge>
                                         </TooltipDisplayer>
                                     )}
-                                    {!!commission.notes && !!read?.notes && (
+                                    {!!commission.notes && (
                                         <TooltipDisplayer tooltip={resolveLanguageKey("notes")}>
                                             <Badge variant="outline" className={cn("inline-flex items-center gap-1 text-xs font-medium", STATUS_BADGE_NEUTRAL)}>
                                                 <IconFileText className="h-3 w-3" />
@@ -131,6 +132,7 @@ function CommissionCard({
                                     )}
                                 </>
                             }
+                            showBadges={!!(read?.status || read?.sourceType || read?.notes)}
                             actionMenu={
                                 <ActionMenu
                                     accessModel={"commissions"}
@@ -178,7 +180,7 @@ function CommissionCard({
                                         icon={IconCurrencyDollar}
                                         label={resolveLanguageKey(commission.sourceType === "reservation" ? "fields.!enums.sourceType.reservation" : "fields.!enums.sourceType.sale")}
                                         tooltip={resolveLanguageKey(commission.sourceType === "reservation" ? "fields.!enums.sourceType.reservation" : "fields.!enums.sourceType.sale")}
-                                        show={true}
+                                        show={!!(read?.sale || read?.reservation)}
                                         value={commission.sale?.name ?? commission.reservation?.name ?? null}
                                     />
                                 )}

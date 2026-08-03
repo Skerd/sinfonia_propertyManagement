@@ -48,5 +48,11 @@
     "partially_paid": "Pjesërisht e paguar"
   },
   "pending": "Në pritje",
-  "noInstallments": "Nuk u gjetën këste për këtë plan pagese."
+  "noInstallments": "Nuk u gjetën këste për këtë plan pagese.",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

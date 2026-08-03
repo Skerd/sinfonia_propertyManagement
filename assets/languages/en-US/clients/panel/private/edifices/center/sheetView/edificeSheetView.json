@@ -84,5 +84,11 @@
     "pendingVerificationUnitCostsTooltip": "Rolled up from units: spend on costs pending verification or revision",
     "totalUnitCostDocuments": "Unit cost documents",
     "totalUnitCostDocumentsTooltip": "Total registered cost documents across units in this edifice"
-  }
+  },
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
 }

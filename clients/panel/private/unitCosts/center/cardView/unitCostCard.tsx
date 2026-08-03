@@ -148,6 +148,7 @@ function UnitCostCard({
                                         <CopyTooltip text={unitCost.name} />
                                     </span>
                                 }
+                                showTitle={!!read?.name}
                                 badges={
                                     <>
                                         <TooltipDisplayer tooltip={verificationLabel}>
@@ -170,6 +171,7 @@ function UnitCostCard({
                                         )}
                                     </>
                                 }
+                                showBadges={!!(read?.verificationStatus || read?.paymentStatus || read?.tag)}
                                 hideActions={hideActions}
                                 actionMenu={
                                     <ActionMenu

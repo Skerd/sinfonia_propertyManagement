@@ -52,5 +52,11 @@
   "notes": "Notizen",
   "finalPrice": "Endpreis",
   "saleDate": "Verkaufsdatum",
-  "currency": "Währung"
+  "currency": "Währung",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

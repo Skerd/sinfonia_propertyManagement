@@ -2,5 +2,11 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/center/sheetView/unitTypeCategorySheetView.tsx",
   "overview": "Përmbledhje",
   "name": "Emri",
-  "unitTypeCategory": "Kategoria e llojit të njësisë"
+  "unitTypeCategory": "Kategoria e llojit të njësisë",
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

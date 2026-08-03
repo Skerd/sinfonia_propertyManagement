@@ -10,5 +10,11 @@
   "unitPrice": "Einheitspreis",
   "lineTotal": "Positionstotal",
   "currency": "Währung",
-  "alternativeNote": "Alternativ-Notiz"
+  "alternativeNote": "Alternativ-Notiz",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

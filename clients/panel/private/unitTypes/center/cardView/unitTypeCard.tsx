@@ -80,19 +80,15 @@ function UnitTypeCard({
                                         </div>
                                     </TooltipDisplayer>
                                 }
-                                title={
-                                    !!read?.name ? (
-                                        <span className="text-lg font-semibold truncate">{unitType.name}</span>
-                                    ) : null
-                                }
+                                title={<span className="text-lg font-semibold truncate">{unitType.name}</span>}
+                                showTitle={!!read?.name}
                                 subtitle={
-                                    !!read?.slug ? (
-                                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                                            <IconHash className="h-3 w-3 shrink-0" />
-                                            {unitType.slug}
-                                        </span>
-                                    ) : undefined
+                                    <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                                        <IconHash className="h-3 w-3 shrink-0" />
+                                        {unitType.slug}
+                                    </span>
                                 }
+                                showSubtitle={!!read?.slug}
                                 badges={
                                     <>
                                         {!!unitType.category?.name && (
@@ -109,6 +105,7 @@ function UnitTypeCard({
                                         )}
                                     </>
                                 }
+                                showBadges={!!(read?.category || read?.group || read?.isPrivate)}
                                 hideActions={hideActions}
                                 actionMenu={
                                     <ActionMenu

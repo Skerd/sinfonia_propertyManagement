@@ -68,11 +68,8 @@ function UnitTypeCategoryCard({
                                         <IconTag className="h-5 w-5 text-muted-foreground" />
                                     </div>
                                 }
-                                title={
-                                    !!read?.name ? (
-                                        <span className="text-lg font-semibold truncate">{category.name}</span>
-                                    ) : null
-                                }
+                                title={<span className="text-lg font-semibold truncate">{category.name}</span>}
+                                showTitle={!!read?.name}
                                 hideActions={hideActions}
                                 actionMenu={
                                     <ActionMenu

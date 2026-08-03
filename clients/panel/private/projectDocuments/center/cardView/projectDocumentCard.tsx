@@ -102,10 +102,9 @@ function ProjectDocumentCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.title ? projectDocument.title : null}
-                    subtitle={!!read?.name && !!projectDocument.name ? projectDocument.name : undefined}
-                    badges={
-                        <>
+                    title={projectDocument.title}
+                    subtitle={projectDocument.name}
+                    badges={<>
                             {!!read?.status && !!projectDocument.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
                                     <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
@@ -122,6 +121,9 @@ function ProjectDocumentCard({
                             )}
                         </>
                     }
+                    showTitle={!!read?.title}
+                    showSubtitle={!!read?.name}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

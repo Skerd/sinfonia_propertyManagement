@@ -114,5 +114,11 @@
     "pendingVerificationUnitCostsTooltip": "Totalet e dokumenteve të kostove në pritje të verifikimit ose që duhen përditësuar",
     "unitCostDocumentCount": "Dokumente kostoje",
     "unitCostDocumentCountTooltip": "Numri i dokumenteve të regjistruara për këtë njësi (jo të fshira)"
-  }
+  },
+  "lifecycle": "Cikli i jetës",
+  "createdAt": "Krijuar më",
+  "updatedAt": "Përditësuar më",
+  "createdBy": "Krijuar nga",
+  "deletedAt": "Fshirë më",
+  "deletedBy": "Fshirë nga"
 }

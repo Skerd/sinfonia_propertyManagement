@@ -106,17 +106,18 @@ function LeaseCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={!!read?.name ? (lease.name || "—") : null}
-                    subtitle={!!read?.unit ? (lease.unit?.name || lease.unit?.unitNumber) : undefined}
-                    badges={
-                        !!read?.status && !!lease.status ? (
-                            <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
-                                <Badge variant="secondary" className={cn("text-xs", statusBadgeClass(lease.status))}>
-                                    {resolveLanguageKey(`fields.!enums.status.${lease.status}`) as string}
-                                </Badge>
-                            </TooltipDisplayer>
-                        ) : null
-                    }
+                    title={lease.name || "—"}
+                    subtitle={lease.unit?.name || lease.unit?.unitNumber}
+                    badges={lease.status ? (
+                        <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
+                            <Badge variant="secondary" className={cn("text-xs", statusBadgeClass(lease.status))}>
+                                {resolveLanguageKey(`fields.!enums.status.${lease.status}`) as string}
+                            </Badge>
+                        </TooltipDisplayer>
+                    ) : null}
+                    showTitle={!!read?.name}
+                    showSubtitle={!!read?.unit}
+                    showBadges={!!read?.status}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

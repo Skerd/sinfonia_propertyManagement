@@ -4,5 +4,11 @@
   "overview": "Übersicht",
   "status": "Status",
   "dueDate": "Fälligkeitsdatum",
-  "amount": "Betrag"
+  "amount": "Betrag",
+  "lifecycle": "Lebenszyklus",
+  "createdAt": "Erstellt am",
+  "updatedAt": "Aktualisiert am",
+  "createdBy": "Erstellt von",
+  "deletedAt": "Gelöscht am",
+  "deletedBy": "Gelöscht von"
 }

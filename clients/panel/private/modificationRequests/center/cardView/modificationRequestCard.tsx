@@ -253,6 +253,7 @@ function ModificationRequestCard({
                                     !!approval.user &&
                                     <InfoRow
                                         label={resolveLanguageKey("reviewedBy")}
+                                        show={!!permissions.user}
                                         value={
                                             <div className="flex items-center space-x-1">
                                                 <HiddenElement>
@@ -283,6 +284,7 @@ function ModificationRequestCard({
                                     !!approval.reviewedAt &&
                                     <InfoRow
                                         label={resolveLanguageKey("reviewedAt")}
+                                        show={!!permissions.reviewedAt}
                                         value={
                                             <div className="flex items-center space-x-1">
                                                 {format(new Date(approval.reviewedAt), "PPp")}
@@ -397,6 +399,7 @@ function ModificationRequestCard({
                     <CardContent className="space-y-2">
                         <InfoRow
                             label={resolveLanguageKey("totalCost")}
+                            show={!!permissions.totalCost}
                             value={<HiddenElement>
                                 {
                                     permissions.totalCost &&
@@ -416,6 +419,7 @@ function ModificationRequestCard({
                         />
                         <InfoRow
                             label={resolveLanguageKey("estimatedCompletionDate")}
+                            show={!!permissions.estimatedCompletionDate}
                             value={<HiddenElement>
                                 {
                                     permissions.estimatedCompletionDate &&
