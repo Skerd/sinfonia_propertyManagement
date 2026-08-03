@@ -74,5 +74,5 @@ function AllProjects({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projects/index.tsx"),
-    withDebug(true, false, "projects"),
+    withDebug(true, true, "projects"),
 )(AllProjects);
