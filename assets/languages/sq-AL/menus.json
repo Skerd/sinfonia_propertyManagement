@@ -277,5 +277,21 @@
     "erpExport": {
       "title": "Eksporti ERP"
     }
+  },
+  "tenancy": {
+    "systemSettings": {
+      "constructors": {
+        "title": "Konstruktorët"
+      },
+      "unitTypeCategories": {
+        "title": "Kategoritë e llojeve të njësive"
+      },
+      "unitTypes": {
+        "title": "Llojet e njësive"
+      },
+      "propertyManagement": {
+        "title": "Pasuri të paluajtshme"
+      }
+    }
   }
 }

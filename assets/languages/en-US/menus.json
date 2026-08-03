@@ -2,7 +2,7 @@
   "realEstate": {
     "title": "Real Estate",
     "systemMap": {
-      "title": "System Map"
+      "title": "System map"
     },
     "overview": {
       "title": "Overview"
@@ -29,7 +29,7 @@
       "title": "Unit costs"
     },
     "modificationRequests": {
-      "title": "Modification Requests"
+      "title": "Modification requests"
     },
     "reservations": {
       "title": "Reservations"
@@ -38,22 +38,22 @@
       "title": "Sales"
     },
     "contractsHub": {
-      "title": "Contracts & Clients"
+      "title": "Contracts & clients"
     },
     "paymentPlans": {
-      "title": "Payment Plans"
+      "title": "Payment plans"
     },
     "constructors": {
       "title": "Constructors"
     },
     "salesAndHandover": {
-      "title": "Sales & Handover"
+      "title": "Sales & handover"
     },
     "unitTypeCategories": {
-      "title": "Unit Type Categories"
+      "title": "Unit type categories"
     },
     "unitTypes": {
-      "title": "Unit Types"
+      "title": "Unit types"
     },
     "commissions": {
       "title": "Commissions"
@@ -62,31 +62,31 @@
       "title": "Leads"
     },
     "unitAvailability": {
-      "title": "Availability Calendar"
+      "title": "Availability calendar"
     },
     "ownersAndRentals": {
-      "title": "Owners & Rentals"
+      "title": "Owners & rentals"
     },
     "rentalsHub": {
-      "title": "Rentals Hub"
+      "title": "Rentals hub"
     },
     "leases": {
       "title": "Leases"
     },
     "rentalPayments": {
-      "title": "Rental Payments"
+      "title": "Rental payments"
     },
     "constructionUpdates": {
-      "title": "Construction Updates"
+      "title": "Construction updates"
     },
     "snags": {
-      "title": "Snagging List"
+      "title": "Snagging list"
     },
     "development": {
       "title": "Development"
     },
     "projectDocuments": {
-      "title": "Project Documents"
+      "title": "Project documents"
     },
     "permits": {
       "title": "Permits"
@@ -95,7 +95,7 @@
       "title": "Delivery"
     },
     "cost": {
-      "title": "Cost Control"
+      "title": "Cost control"
     },
     "qualityHse": {
       "title": "Quality & HSE"
@@ -104,19 +104,19 @@
       "title": "Milestones"
     },
     "scheduleTasks": {
-      "title": "Schedule Tasks"
+      "title": "Schedule tasks"
     },
     "costClassifications": {
-      "title": "Cost Classifications"
+      "title": "Cost classifications"
     },
     "budgets": {
       "title": "Budgets"
     },
     "boqItems": {
-      "title": "BOQ Items"
+      "title": "BOQ items"
     },
     "estimateComparison": {
-      "title": "Estimate Comparison"
+      "title": "Estimate comparison"
     },
     "tendering": {
       "title": "Tendering"
@@ -125,157 +125,173 @@
       "title": "Specifications (LV)"
     },
     "specificationItems": {
-      "title": "LV Positions"
+      "title": "LV positions"
     },
     "tenders": {
       "title": "Tenders"
     },
     "tenderInvitations": {
-      "title": "Tender Invitations"
+      "title": "Tender invitations"
     },
     "bids": {
       "title": "Bids"
     },
     "bidLines": {
-      "title": "Bid Lines"
+      "title": "Bid lines"
     },
     "costCommitments": {
-      "title": "Commitments / POs"
+      "title": "Commitments / P os"
     },
     "workPackages": {
-      "title": "Work Packages"
+      "title": "Work packages"
     },
     "constructionContracts": {
-      "title": "Construction Contracts"
+      "title": "Construction contracts"
     },
     "progressClaims": {
-      "title": "Progress Claims"
+      "title": "Progress claims"
     },
     "rfis": {
-      "title": "RFIs"
+      "title": "Rf is"
     },
     "submittals": {
       "title": "Submittals"
     },
     "variationOrders": {
-      "title": "Variation Orders"
+      "title": "Variation orders"
     },
     "landParcels": {
-      "title": "Land Parcels"
+      "title": "Land parcels"
     },
     "feasibilityStudies": {
-      "title": "Feasibility Studies"
+      "title": "Feasibility studies"
     },
     "siteDiaries": {
-      "title": "Site Diaries"
+      "title": "Site diaries"
     },
     "safetyIncidents": {
-      "title": "Safety Incidents"
+      "title": "Safety incidents"
     },
     "warranties": {
       "title": "Warranties / DLP"
     },
     "handoverPackages": {
-      "title": "Handover Packages"
+      "title": "Handover packages"
     },
     "commissioningRecords": {
       "title": "Commissioning"
     },
     "designStages": {
-      "title": "Design Stages"
+      "title": "Design stages"
     },
     "inspectionChecklistTemplates": {
-      "title": "Inspection Checklists"
+      "title": "Inspection checklists"
     },
     "consultantAppointments": {
-      "title": "Consultant Appointments"
+      "title": "Consultant appointments"
     },
     "bidComparison": {
-      "title": "Bid Comparison"
+      "title": "Bid comparison"
     },
     "financeApproval": {
-      "title": "Finance & Approval"
+      "title": "Finance & approval"
     },
     "approvalWorkflows": {
-      "title": "Approval Workflows"
+      "title": "Approval workflows"
     },
     "approvalRequests": {
-      "title": "Approval Requests"
+      "title": "Approval requests"
     },
     "contractorInvoices": {
-      "title": "Contractor Invoices"
+      "title": "Contractor invoices"
     },
     "incomingInvoices": {
-      "title": "AP Inbox"
+      "title": "AP inbox"
     },
     "costControl": {
-      "title": "Cost Control"
+      "title": "Cost control"
     },
     "liquidityPlans": {
-      "title": "Liquidity Plans"
+      "title": "Liquidity plans"
     },
     "liquidityLines": {
-      "title": "Liquidity Lines"
+      "title": "Liquidity lines"
     },
     "feeCalculations": {
-      "title": "Fee Calculations"
+      "title": "Fee calculations"
     },
     "planMarkups": {
-      "title": "Plan Markups"
+      "title": "Plan markups"
     },
     "cockpit": {
       "title": "Cockpit"
     },
     "facilityMgmt": {
-      "title": "Facility Management"
+      "title": "Facility management"
     },
     "assets": {
       "title": "Assets"
     },
     "maintenancePlans": {
-      "title": "Maintenance Plans"
+      "title": "Maintenance plans"
     },
     "maintenanceWorkOrders": {
-      "title": "Work Orders"
+      "title": "Work orders"
     },
     "bimIntegrations": {
-      "title": "BIM & Integrations"
+      "title": "BIM & integrations"
     },
     "bimModels": {
-      "title": "BIM Models"
+      "title": "BIM models"
     },
     "bimQuantities": {
-      "title": "BIM Quantities"
+      "title": "BIM quantities"
     },
     "agentReport": {
-      "title": "Agent Report"
+      "title": "Agent report"
     },
     "ownerPortal": {
-      "title": "Rentals Hub"
+      "title": "Rentals hub"
     },
     "roi": {
-      "title": "ROI Calculator"
+      "title": "ROI calculator"
     },
     "groupDashboard": {
-      "title": "Group Dashboard"
+      "title": "Group dashboard"
     },
     "erpExport": {
-      "title": "ERP Export"
+      "title": "ERP export"
     }
   },
   "reports": {
     "title": "Reports",
     "groupDashboard": {
-      "title": "Group Dashboard"
+      "title": "Group dashboard"
     },
     "agentReport": {
-      "title": "Agent Report"
+      "title": "Agent report"
     },
     "roi": {
-      "title": "ROI Calculator"
+      "title": "ROI calculator"
     },
     "erpExport": {
-      "title": "ERP Export"
+      "title": "ERP export"
+    }
+  },
+  "tenancy": {
+    "systemSettings": {
+      "constructors": {
+        "title": "Constructors"
+      },
+      "unitTypeCategories": {
+        "title": "Unit type categories"
+      },
+      "unitTypes": {
+        "title": "Unit types"
+      },
+      "propertyManagement": {
+        "title": "Real Estate"
+      }
     }
   }
 }
