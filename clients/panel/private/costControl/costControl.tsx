@@ -96,7 +96,7 @@ function CostControl({resolveLanguageKey, data, loading, error, onFilterChange, 
                                         <TableCell className="text-right whitespace-nowrap">{fmt(row.estimated)}</TableCell>
                                         <TableCell className="text-right whitespace-nowrap">{fmt(row.invoiced)}</TableCell>
                                         <TableCell className="text-right whitespace-nowrap">{fmt(row.paid)}</TableCell>
-                                        <TableCell className={`text-right whitespace-nowrap ${row.variance < 0 ? "text-amber-600 font-medium" : ""}`}>{fmt(row.variance)}</TableCell>
+                                        <TableCell className={`text-right whitespace-nowrap ${row.variance < 0 ? "text-warning font-medium" : ""}`}>{fmt(row.variance)}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

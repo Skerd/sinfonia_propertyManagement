@@ -14,7 +14,7 @@ const STATUS_STYLE: Record<string, string> = {
     reserved_unit: "border-status-reserved text-status-reserved bg-status-reserved/10",
     available_unit: "border-status-available text-status-available bg-status-available/10",
     unavailable_unit: "border-status-blocked text-status-blocked bg-status-blocked/10",
-    rented_unit: "border-violet-500 text-violet-600 dark:text-violet-400 bg-violet-500/10",
+    rented_unit: "border-primary/50 text-primary bg-primary/10",
 };
 
 const STATUS_LABEL_KEY: Record<string, string> = {
@@ -51,7 +51,7 @@ export function UnitStatusBadge({
                   : status === "sold_unit"
                     ? "bg-status-sold/90"
                     : status === "rented_unit"
-                      ? "bg-violet-500/90"
+                      ? "bg-primary/90"
                       : "bg-status-blocked/90";
         return (
             <span

@@ -187,7 +187,7 @@ function EdificeCard({
                                         show={!!read?.investmentValue || !!read?.investmentCurrency}
                                         value={
                                             edifice.investmentValue != null && edifice.investmentCurrency?.symbol != null &&
-                                            <span className="text-green-600">
+                                            <span className="text-success">
                                                 {edifice.investmentCurrency.symbol}
                                                 {formatCardDecimal(edifice.investmentValue)}
                                             </span>

@@ -146,7 +146,7 @@ function ProjectCard({
                                     show={!!read?.statistics}
                                     value={
                                         project.statistics?.totalInvestmentValue && Array.isArray(project.statistics.totalInvestmentValue) && project.statistics.totalInvestmentValue.length > 0 &&
-                                        <div className="text-green-600 flex flex-wrap gap-1">
+                                        <div className="text-success flex flex-wrap gap-1">
                                             {
                                                 project.statistics.totalInvestmentValue.map((inv, index, array) => {
                                                     const {currency, value} = inv;

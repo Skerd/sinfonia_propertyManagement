@@ -376,7 +376,7 @@ function ApproveModificationRequestDialog({
                         <AlertDialogAction
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleApprove(); }}
                             disabled={loading}
-                            className={cn({"hover:bg-green-700 hover:text-white": decision === "approved", "text-destructive-foreground hover:text-white hover:bg-destructive/90": decision === "rejected"})}
+                            className={cn({"hover:bg-success hover:text-white": decision === "approved", "text-destructive-foreground hover:text-white hover:bg-destructive/90": decision === "rejected"})}
                         >
                             {(loading) ? <LoaderCircle className="animate-spin"/> : (decision === "approved" ? <CheckCircle2 /> : <XCircle />)}
                             <p>{resolveLanguageKey("confirmButton")}</p>

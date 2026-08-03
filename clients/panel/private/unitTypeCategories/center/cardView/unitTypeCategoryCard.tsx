@@ -88,7 +88,7 @@ function UnitTypeCategoryCard({
             {action === "view" && (
                 <UnitTypeCategorySheetView
                     open={action === "view"}
-                    onOpenChange={(open) => !open && setAction("")}
+                    onOpenChange={(open: boolean) => !open && setAction("")}
                     unitTypeCategory={category}
                     hideActions={hideActions}
                     onDelete={onDelete}

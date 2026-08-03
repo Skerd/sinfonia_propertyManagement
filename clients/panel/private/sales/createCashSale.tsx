@@ -214,7 +214,7 @@ export function CashSaleReceiptSection({
                                         <div className="flex flex-col w-full items-stretch p-2 space-y-2">
                                             <div className="flex justify-between">
                                                 <p className="tracking-wide">{resolveLanguageKey("form.unitPriceLabel")}:</p>
-                                                <p className="font-semibold text-green-600">
+                                                <p className="font-semibold text-success">
                                                     {unit?.price?.toLocaleString()} {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
@@ -225,12 +225,12 @@ export function CashSaleReceiptSection({
                                                     </p>
                                                     <HiddenElement>
                                                         {readReservation.depositAmount && (
-                                                            <p className="font-semibold text-red-500">
+                                                            <p className="font-semibold text-destructive">
                                                                 {unit?.reservation &&
                                                                 reservation.depositCurrency?._id?.toString() !==
                                                                 unit.priceCurrency?._id?.toString() &&
                                                                 !reservationExchangeRate ? (
-                                                                    <span className="text-red-500">
+                                                                    <span className="text-destructive">
                                                                         {resolveLanguageKey("pleaseSetReservationToUnitCurrencyExchangeRate")}
                                                                     </span>
                                                                 ) : (
@@ -247,7 +247,7 @@ export function CashSaleReceiptSection({
                                                 <p className="">
                                                     {resolveLanguageKey("form.discountApplied")} ({Number(localDiscount || 0)}%)
                                                 </p>
-                                                <p className="font-semibold text-red-500">
+                                                <p className="font-semibold text-destructive">
                                                     -
                                                     {((Number(localDiscount || 0) / 100) * (unit.price || 0)).toLocaleString()}{" "}
                                                     {unit?.priceCurrency?.name}
@@ -293,7 +293,7 @@ export function CashSaleReceiptSection({
                                                 <p className="font-semibold">
                                                     {
                                                         !!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate ?
-                                                        <span className="text-red-500">
+                                                        <span className="text-destructive">
                                                             {resolveLanguageKey("pleaseSetUnitToSaleCurrencyExchangeRate")}
                                                         </span>
                                                         : finalPrice < 0 ?

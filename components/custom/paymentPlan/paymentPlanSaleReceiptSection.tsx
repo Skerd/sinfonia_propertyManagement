@@ -534,12 +534,12 @@ export default function PaymentPlanSaleReceiptSection({
                         <span className="font-semibold">
                             {
                                 !!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate ?
-                                <span className="text-red-500">
+                                <span className="text-destructive">
                                     {resolveLanguageKey("pleaseSetUnitToSaleCurrencyExchangeRate")}
                                 </span>
                                 :
                                 isFinancedNegative ?
-                                <span className="text-red-500">
+                                <span className="text-destructive">
                                     {financedAmount.toLocaleString()} {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                 </span>
                                 :
@@ -598,15 +598,15 @@ export default function PaymentPlanSaleReceiptSection({
                     {principalResidualCheck.blocksSubmit && principalResidualCheck.residual != null ? (
                         <Alert
                             className={cn(
-                                "border-amber-600/50 bg-amber-500/10",
-                                "dark:border-amber-500/40 dark:bg-amber-950/30",
+                                "border-warning/50 bg-warning/10",
+                                "dark:border-warning/40 dark:bg-warning/30",
                             )}
                         >
-                            <AlertTriangle className="h-4 w-4 text-amber-700 dark:text-amber-400" />
-                            <AlertTitle className="text-amber-900 dark:text-amber-100">
+                            <AlertTriangle className="h-4 w-4 text-warning" />
+                            <AlertTitle className="text-warning">
                                 {resolveLanguageKey("principalResidualWarningTitle")}
                             </AlertTitle>
-                            <AlertDescription className="text-amber-950/90 dark:text-amber-50/90">
+                            <AlertDescription className="text-warning/90">
                                 {resolveLanguageKey("principalResidualWarningDescription")}{" "}
                                 <span className="font-semibold tabular-nums">
                                     {principalResidualCheck.residual.toLocaleString()}{" "}
@@ -739,7 +739,7 @@ export default function PaymentPlanSaleReceiptSection({
                                         <div className="flex flex-col w-full items-stretch p-2 space-y-2">
                                             <div className="flex justify-between">
                                                 <p className="tracking-wide">{resolveLanguageKey("form.unitPriceLabel")}:</p>
-                                                <p className="font-semibold text-green-600">
+                                                <p className="font-semibold text-success">
                                                     {unit?.price?.toLocaleString()} {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
@@ -752,12 +752,12 @@ export default function PaymentPlanSaleReceiptSection({
                                                     <HiddenElement>
                                                         {
                                                             readReservation.depositAmount &&
-                                                            <p className="font-semibold text-red-500">
+                                                            <p className="font-semibold text-destructive">
                                                                 {unit?.reservation &&
                                                                 reservation.depositCurrency?._id?.toString() !==
                                                                     unit.priceCurrency?._id?.toString() &&
                                                                 !reservationExchangeRate ? (
-                                                                    <span className="text-red-500">
+                                                                    <span className="text-destructive">
                                                                         {resolveLanguageKey(
                                                                             "pleaseSetReservationToUnitCurrencyExchangeRate",
                                                                         )}
@@ -774,7 +774,7 @@ export default function PaymentPlanSaleReceiptSection({
                                                 <p>
                                                     {resolveLanguageKey("form.discountApplied")} ({Number(localDiscount || 0)}%)
                                                 </p>
-                                                <p className="font-semibold text-red-500">
+                                                <p className="font-semibold text-destructive">
                                                     -
                                                     {((Number(localDiscount || 0) / 100) * (unit.price || 0)).toLocaleString()}{" "}
                                                     {unit?.priceCurrency?.name}
@@ -823,7 +823,7 @@ export default function PaymentPlanSaleReceiptSection({
                                                 <p className="font-semibold">
                                                     {
                                                         !!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate ?
-                                                        <span className="text-red-500">
+                                                        <span className="text-destructive">
                                                             {resolveLanguageKey("pleaseSetUnitToSaleCurrencyExchangeRate")}
                                                         </span>
                                                         : finalPrice < 0 ?

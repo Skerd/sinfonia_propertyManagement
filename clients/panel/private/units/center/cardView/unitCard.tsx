@@ -197,7 +197,7 @@ function UnitCard({
                                 show={!!read?.price}
                                 value={
                                     unit.price != null ? (
-                                        <span className="text-green-600 font-semibold">
+                                        <span className="text-success font-semibold">
                                             {unit.priceCurrency?.symbol || unit.priceCurrency?.abbreviation || ""}
                                             {formatCardDecimal(unit.price)}
                                         </span>
@@ -207,27 +207,27 @@ function UnitCard({
                         </div>
                         {(unit.hasBalcony || unit.hasTerrace || unit.hasSeaView || unit.hasCityView || unit.hasLakeView || unit.hasElevator) && (
                             <div className="flex flex-wrap gap-1">
-                                {unit.hasBalcony && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">{resolveLanguageKey("features.balcony")}</span>}
-                                {unit.hasTerrace && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">{resolveLanguageKey("features.terrace")}</span>}
-                                {unit.hasSeaView && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">{resolveLanguageKey("features.seaView")}</span>}
-                                {unit.hasCityView && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">{resolveLanguageKey("features.cityView")}</span>}
-                                {unit.hasLakeView && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">{resolveLanguageKey("features.lakeView")}</span>}
-                                {unit.hasElevator && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">{resolveLanguageKey("features.elevator")}</span>}
+                                {unit.hasBalcony && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.balcony")}</span>}
+                                {unit.hasTerrace && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.terrace")}</span>}
+                                {unit.hasSeaView && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.seaView")}</span>}
+                                {unit.hasCityView && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.cityView")}</span>}
+                                {unit.hasLakeView && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.lakeView")}</span>}
+                                {unit.hasElevator && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.elevator")}</span>}
                             </div>
                         )}
                         {(!!unit.orientation || !!unit.constructionStatus) && (
                             <div className="flex flex-wrap gap-1">
                                 {!!unit.orientation && (
-                                    <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 font-medium">
+                                    <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-muted text-muted-foreground font-medium">
                                         {unit.orientation}
                                     </span>
                                 )}
                                 {!!unit.constructionStatus && (
                                     <span className={cn("inline-flex items-center text-xs px-1.5 py-0.5 rounded-md font-medium", {
-                                        "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400": unit.constructionStatus === "planned",
-                                        "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400": unit.constructionStatus === "under_construction",
-                                        "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400": unit.constructionStatus === "ready",
-                                        "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400": unit.constructionStatus === "delivered",
+                                        "bg-info/10 text-info dark:bg-info/30": unit.constructionStatus === "planned",
+                                        "bg-warning/10 text-warning dark:bg-warning/30": unit.constructionStatus === "under_construction",
+                                        "bg-success/10 text-success dark:bg-success/30": unit.constructionStatus === "ready",
+                                        "bg-success text-success-foreground": unit.constructionStatus === "delivered",
                                     })}>
                                         {resolveLanguageKey(`constructionStatus.${unit.constructionStatus}`)}
                                     </span>

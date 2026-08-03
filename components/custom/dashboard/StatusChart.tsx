@@ -1,5 +1,11 @@
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 import type { UnitsByStatus } from 'armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts';
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from '@coreModule/components/ui/chart.tsx';
 import { DashboardWidgetCard } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
 
 export interface StatusChartData {
@@ -21,14 +27,6 @@ export function unitsByStatusToChartData(units: UnitsByStatus): StatusChartData 
   };
 }
 
-const COLORS = {
-  available: 'hsl(199 89% 48%)',
-  reserved: 'hsl(38 92% 50%)',
-  sold: 'hsl(142 71% 45%)',
-  leased: 'hsl(271 81% 56%)',
-  blocked: 'hsl(0 84% 60%)',
-};
-
 const LABELS: Record<keyof StatusChartData, string> = {
   available: 'Të Lira',
   reserved: 'Të Rezervuara',
@@ -36,6 +34,15 @@ const LABELS: Record<keyof StatusChartData, string> = {
   leased: 'Me Qira',
   blocked: 'Të Bllokuara',
 };
+
+/** Keyed by status so the slice, the legend swatch and the tooltip all resolve the same token. */
+const CHART_CONFIG = {
+  available: { label: LABELS.available, color: 'var(--status-available)' },
+  reserved: { label: LABELS.reserved, color: 'var(--status-reserved)' },
+  sold: { label: LABELS.sold, color: 'var(--status-sold)' },
+  leased: { label: LABELS.leased, color: 'var(--status-leased)' },
+  blocked: { label: LABELS.blocked, color: 'var(--status-blocked)' },
+} satisfies ChartConfig;
 
 export interface StatusChartProps {
   data: StatusChartData;
@@ -45,9 +52,11 @@ export interface StatusChartProps {
 
 export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = 'Totali' }: StatusChartProps) {
   const chartData = (Object.keys(LABELS) as (keyof StatusChartData)[]).map((key) => ({
+    status: key,
     name: LABELS[key],
     value: data[key] ?? 0,
-    color: COLORS[key],
+    /** Root-level token, not the chart-scoped `--color-*`, so the legend below resolves it too. */
+    color: `var(--status-${key})`,
   }));
 
   const total = chartData.reduce((sum, item) => sum + item.value, 0);
@@ -62,37 +71,26 @@ export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = '
         </p>
       }
     >
-      <div className="h-44">
-        <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
-            <Pie
-              data={chartData}
-              cx="50%"
-              cy="50%"
-              innerRadius={40}
-              outerRadius={58}
-              paddingAngle={4}
-              dataKey="value"
-              strokeWidth={0}
-            >
-              {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </Pie>
-            <Tooltip
-              contentStyle={{
-                backgroundColor: 'var(--card)',
-                border: '1px solid var(--border)',
-                borderRadius: '0.75rem',
-                color: 'var(--card-foreground)',
-              }}
-              itemStyle={{ color: 'var(--card-foreground)' }}
-              labelStyle={{ color: 'var(--card-foreground)' }}
-              formatter={(value: number, name: string) => [`${value}`, name ?? '']}
-            />
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
+      <ChartContainer config={CHART_CONFIG} className="aspect-auto h-44 w-full">
+        <PieChart>
+          <ChartTooltip content={<ChartTooltipContent nameKey="status" hideLabel />} />
+          <Pie
+            data={chartData}
+            cx="50%"
+            cy="50%"
+            innerRadius={40}
+            outerRadius={58}
+            paddingAngle={4}
+            dataKey="value"
+            nameKey="status"
+            strokeWidth={0}
+          >
+            {chartData.map((entry) => (
+              <Cell key={entry.status} fill={entry.color} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ChartContainer>
 
       <div className="grid grid-cols-2 gap-2 mt-3">
         {chartData.map((item) => (

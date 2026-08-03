@@ -1,4 +1,10 @@
-import { Area, AreaChart, Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { Area, AreaChart, Bar, BarChart, Cell, XAxis, YAxis } from 'recharts';
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from '@coreModule/components/ui/chart.tsx';
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -18,6 +24,10 @@ type AnalyticsChartProps = {
   noDataLabel?: string;
 };
 
+const SALES_CONFIG = {
+  count: { label: 'Sales', color: 'var(--chart-1)' },
+} satisfies ChartConfig;
+
 export function AnalyticsChart({ salesByPeriod, noDataLabel }: AnalyticsChartProps) {
   const data = salesByPeriod.map((d) => ({
     name: formatMonth(d.month),
@@ -33,31 +43,31 @@ export function AnalyticsChart({ salesByPeriod, noDataLabel }: AnalyticsChartPro
   }
 
   return (
-    <ResponsiveContainer width="100%" height={260}>
+    <ChartContainer config={SALES_CONFIG} className="aspect-auto h-[260px] w-full">
       <AreaChart data={data}>
         <XAxis
           dataKey="name"
-          stroke="#888888"
+          stroke="var(--muted-foreground)"
           fontSize={12}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          stroke="#888888"
+          stroke="var(--muted-foreground)"
           fontSize={12}
           tickLine={false}
           axisLine={false}
         />
+        <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
         <Area
           type="monotone"
           dataKey="count"
-          stroke="currentColor"
-          className="text-primary"
-          fill="currentColor"
+          stroke="var(--color-count)"
+          fill="var(--color-count)"
           fillOpacity={0.15}
         />
       </AreaChart>
-    </ResponsiveContainer>
+    </ChartContainer>
   );
 }
 
@@ -65,6 +75,10 @@ type RevenueChartProps = {
   revenueByPeriod: PeriodDatum[];
   noDataLabel?: string;
 };
+
+const REVENUE_CONFIG = {
+  total: { label: 'Revenue', color: 'var(--chart-1)' },
+} satisfies ChartConfig;
 
 export function RevenueChart({ revenueByPeriod, noDataLabel }: RevenueChartProps) {
   const data = revenueByPeriod.map((d) => ({
@@ -81,30 +95,26 @@ export function RevenueChart({ revenueByPeriod, noDataLabel }: RevenueChartProps
   }
 
   return (
-    <ResponsiveContainer width="100%" height={260}>
+    <ChartContainer config={REVENUE_CONFIG} className="aspect-auto h-[260px] w-full">
       <BarChart data={data}>
         <XAxis
           dataKey="name"
-          stroke="#888888"
+          stroke="var(--muted-foreground)"
           fontSize={12}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          stroke="#888888"
+          stroke="var(--muted-foreground)"
           fontSize={12}
           tickLine={false}
           axisLine={false}
           tickFormatter={(value) => `$${value}`}
         />
-        <Bar
-          dataKey="total"
-          fill="currentColor"
-          radius={[4, 4, 0, 0]}
-          className="fill-primary"
-        />
+        <ChartTooltip cursor={{ fill: 'var(--muted)', fillOpacity: 0.6 }} content={<ChartTooltipContent />} />
+        <Bar dataKey="total" fill="var(--color-total)" radius={[4, 4, 0, 0]} />
       </BarChart>
-    </ResponsiveContainer>
+    </ChartContainer>
   );
 }
 
@@ -115,11 +125,19 @@ type PaymentTypeChartProps = {
   noDataLabel?: string;
 };
 
+const PAYMENT_TYPE_CONFIG = {
+  cash: { label: 'Cash', color: 'var(--chart-1)' },
+  payment_plan: { label: 'Payment plan', color: 'var(--chart-2)' },
+} satisfies ChartConfig;
+
 export function PaymentTypeChart({ salesByPaymentType, noDataLabel }: PaymentTypeChartProps) {
-  const data = [
-    { name: 'Cash', value: salesByPaymentType?.cash ?? 0, fill: 'hsl(var(--chart-1))' },
-    { name: 'Payment plan', value: salesByPaymentType?.payment_plan ?? 0, fill: 'hsl(var(--chart-2))' },
-  ].filter((d) => d.value > 0);
+  const data = (Object.keys(PAYMENT_TYPE_CONFIG) as (keyof SalesByPaymentType)[])
+    .map((key) => ({
+      key,
+      name: String(PAYMENT_TYPE_CONFIG[key].label),
+      value: salesByPaymentType?.[key] ?? 0,
+    }))
+    .filter((d) => d.value > 0);
 
   if (data.length === 0) {
     return (
@@ -129,18 +147,21 @@ export function PaymentTypeChart({ salesByPaymentType, noDataLabel }: PaymentTyp
     );
   }
 
-  const colors = ['hsl(var(--chart-1))', 'hsl(var(--chart-2))'];
   return (
-    <ResponsiveContainer width="100%" height={160}>
+    <ChartContainer config={PAYMENT_TYPE_CONFIG} className="aspect-auto h-[160px] w-full">
       <BarChart data={data} layout="vertical" margin={{ left: 0, right: 24 }}>
-        <XAxis type="number" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-        <YAxis type="category" dataKey="name" width={100} stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+        <XAxis type="number" stroke="var(--muted-foreground)" fontSize={12} tickLine={false} axisLine={false} />
+        <YAxis type="category" dataKey="name" width={100} stroke="var(--muted-foreground)" fontSize={12} tickLine={false} axisLine={false} />
+        <ChartTooltip
+          cursor={{ fill: 'var(--muted)', fillOpacity: 0.6 }}
+          content={<ChartTooltipContent nameKey="key" hideLabel />}
+        />
         <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-          {data.map((_, i) => (
-            <Cell key={i} fill={colors[i % colors.length]} />
+          {data.map((entry) => (
+            <Cell key={entry.key} fill={`var(--color-${entry.key})`} />
           ))}
         </Bar>
       </BarChart>
-    </ResponsiveContainer>
+    </ChartContainer>
   );
 }

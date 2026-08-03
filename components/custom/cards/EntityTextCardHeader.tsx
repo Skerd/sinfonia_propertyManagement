@@ -1,4 +1,10 @@
 import type {ReactNode} from "react";
+import {
+    CardAction,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@coreModule/components/ui/card.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {EntityCardActionMenu} from "./EntityCardActionMenu.tsx";
@@ -21,7 +27,14 @@ type EntityTextCardHeaderProps = {
     showBadges?: boolean;
 };
 
-/** Header row for text-first entity cards: optional icon tile, title, badges, inline action menu. */
+/**
+ * Header row for text-first entity cards: optional icon tile, title, badges,
+ * inline action menu.
+ *
+ * Built on the Card header slots so spacing, the action column and the
+ * title/description type scale come from the primitive. That is what keeps
+ * ~119 entity cards consistent without each one restating its own layout.
+ */
 export function EntityTextCardHeader({
     iconTile,
     title,
@@ -37,41 +50,42 @@ export function EntityTextCardHeader({
 }: EntityTextCardHeaderProps) {
     const hasSubtitle = subtitle != null && subtitle !== "";
     const hasBadges = badges != null;
+    const showActions = !hideActions && actionMenu != null;
 
     return (
-        <div className={cn("flex flex-col gap-1.5 p-2 pb-1", className)}>
+        <CardHeader className={cn("gap-1.5 px-2 pt-2 pb-1", className)}>
             <div className="flex min-w-0 items-center gap-2">
                 {iconTile != null && <div className="shrink-0 self-center">{iconTile}</div>}
-                <div className="flex min-w-0 flex-1 items-center justify-between gap-2">
-                    <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
-                        <div className="flex min-w-0 items-center gap-1">
-                            <div className="min-w-0 truncate font-semibold leading-none">
-                                <HiddenElement randomLength={10}>
-                                    {showTitle ? title : null}
-                                </HiddenElement>
-                            </div>
-                            {titleExtra}
-                        </div>
-                        {(hasSubtitle || !showSubtitle) && (
-                            <div className="truncate text-xs leading-none text-muted-foreground">
-                                <HiddenElement randomLength={8}>
-                                    {showSubtitle && hasSubtitle ? subtitle : null}
-                                </HiddenElement>
-                            </div>
-                        )}
+                <div className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
+                    <div className="flex min-w-0 items-center gap-1">
+                        <CardTitle className="min-w-0 truncate text-sm leading-none font-semibold">
+                            <HiddenElement randomLength={10}>
+                                {showTitle ? title : null}
+                            </HiddenElement>
+                        </CardTitle>
+                        {titleExtra}
                     </div>
-                    {!hideActions && actionMenu != null && (
-                        <EntityCardActionMenu variant="inline">{actionMenu}</EntityCardActionMenu>
+                    {(hasSubtitle || !showSubtitle) && (
+                        <CardDescription className="truncate text-xs leading-none">
+                            <HiddenElement randomLength={8}>
+                                {showSubtitle && hasSubtitle ? subtitle : null}
+                            </HiddenElement>
+                        </CardDescription>
                     )}
                 </div>
             </div>
+            {showActions && (
+                <CardAction className="-mr-1">
+                    <EntityCardActionMenu variant="inline">{actionMenu}</EntityCardActionMenu>
+                </CardAction>
+            )}
             {(hasBadges || !showBadges) && (
-                <div className="flex flex-wrap items-center gap-1.5">
+                <div className="col-start-1 flex flex-wrap items-center gap-1.5">
                     <HiddenElement randomLength={6}>
                         {showBadges && hasBadges ? badges : null}
                     </HiddenElement>
                 </div>
             )}
-        </div>
+        </CardHeader>
     );
 }

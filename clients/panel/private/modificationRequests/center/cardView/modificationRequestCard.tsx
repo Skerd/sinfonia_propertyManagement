@@ -156,9 +156,9 @@ function ModificationRequestCard({
     }
 
     const getApprovalDecisionColor = (decision: string) => {
-        if (decision === "approved") return "bg-green-500/20 text-green-700 dark:text-green-400 border-green-500/30";
-        if (decision === "rejected") return "bg-red-500/20 text-red-700 dark:text-red-400 border-red-500/30";
-        return "bg-yellow-500/20 text-yellow-700 dark:text-yellow-400 border-yellow-500/30";
+        if (decision === "approved") return "bg-success/20 text-success border-success/30";
+        if (decision === "rejected") return "bg-destructive/20 text-destructive border-destructive/30";
+        return "bg-warning/20 text-warning border-warning/30";
     };
     const getStageStatus = (stage: string) => {
         switch (stage) {
@@ -193,13 +193,13 @@ function ModificationRequestCard({
     const getStageDotClass = (status: string) => {
         switch (status) {
             case "completed":
-                return "bg-green-500 border-green-600 ring-2 ring-green-500/20";
+                return "bg-success border-success/50 ring-2 ring-success/20";
             case "rejected":
-                return "bg-red-500 border-red-600 ring-2 ring-red-500/20";
+                return "bg-destructive border-destructive/50 ring-2 ring-destructive/20";
             case "current":
-                return "bg-yellow-500 border-yellow-600 ring-2 ring-yellow-500/20 animate-pulse";
+                return "bg-warning border-warning/50 ring-2 ring-warning/20 animate-pulse";
             default:
-                return "bg-gray-300 border-gray-400 dark:bg-gray-600 dark:border-gray-500";
+                return "bg-muted border-border";
         }
     };
     const getLineClass = (fromStatus: string, toStatus: string) => {
@@ -207,15 +207,15 @@ function ModificationRequestCard({
         const to = getStageStatus(toStatus);
 
         if (from === "completed" && (to === "completed" || to === "current" || to === "rejected")) {
-            return "bg-green-500";
+            return "bg-success";
         }
         if (from === "rejected" || to === "rejected") {
-            return "bg-red-500";
+            return "bg-destructive";
         }
         if (from === "current") {
-            return "bg-yellow-500";
+            return "bg-warning";
         }
-        return "bg-gray-300 dark:bg-gray-600";
+        return "bg-muted";
     };
 
     const renderApprovalPopoverContent = (
@@ -406,7 +406,7 @@ function ModificationRequestCard({
                                     <>
                                         {
                                             financeDetails.totalCost !== undefined ?
-                                            <div className="text-green-400 font-semibold">
+                                            <div className="text-success font-semibold">
                                                 {formatFinanceCurrency(financeDetails)}{Number(financeDetails.totalCost).toLocaleString()}
                                             </div>
                                             :
@@ -462,7 +462,7 @@ function ModificationRequestCard({
                                                                         {
                                                                             !!cPermissions.quantity && !!cPermissions.cost &&
                                                                             <>
-                                                                                <p className="text-green-400">
+                                                                                <p className="text-success">
                                                                                     {formatFinanceCurrency(financeDetails)}{((item.cost ?? 0) * (item.quantity ?? 0)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                                                                 </p>
                                                                             </>
@@ -557,7 +557,7 @@ function ModificationRequestCard({
                             <>
                                 <div className={cn("h-0.5 w-full absolute top-2", getLineClass("architect", "engineer"))} />
                                 <TooltipDisplayer
-                                    contentClassName={cn("p-0 bg-[#00000000]")}
+                                    contentClassName={cn("p-0 bg-transparent")}
                                     tooltipRender={() => {
                                         return (
                                             <div className="max-w-90 min-w-fit p-0">
@@ -599,7 +599,7 @@ function ModificationRequestCard({
                                     <>
                                         <div className={cn("h-0.5 w-full absolute top-2", getLineClass("engineer", "ceo"))} />
                                         <TooltipDisplayer
-                                            contentClassName={cn("p-0 min-w-fit bg-[#00000000]")}
+                                            contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                             tooltipRender={() => {
                                                 return (
                                                     <div className="max-w-90  p-0">
@@ -641,7 +641,7 @@ function ModificationRequestCard({
                                     <>
                                         <div className={cn("h-0.5 w-full absolute top-2", getLineClass("ceo", "finance"))} />
                                         <TooltipDisplayer
-                                            contentClassName={cn("p-0 min-w-fit bg-[#00000000]")}
+                                            contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                             tooltipRender={() => {
                                                 return (
                                                     <div className="max-w-90  p-0">
@@ -680,7 +680,7 @@ function ModificationRequestCard({
                         <div className={cn("relative flex flex-col cursor-pointer group items-center grow")}>
                             <div className={cn("h-0.5 w-full absolute top-2", getLineClass("finance", "delivery"))} />
                             <TooltipDisplayer
-                                contentClassName={cn("p-0 min-w-fit bg-[#00000000]")}
+                                contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                 tooltipRender={() => {
                                     return (
                                         <div className="max-w-90  p-0">
@@ -715,7 +715,7 @@ function ModificationRequestCard({
                                     <>
                                         <div className={cn("h-0.5 w-full absolute top-2", getLineClass("delivery", "delivery"))} />
                                         <TooltipDisplayer
-                                            contentClassName={cn("p-0 min-w-fit bg-[#00000000]")}
+                                            contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                             tooltipRender={() => {
                                                 return (
                                                     <div className="max-w-90  p-0">
@@ -767,7 +767,7 @@ function ModificationRequestCard({
                             />
                         }
                         <div className="w-full min-w-0">
-                            <div className={cn(CARD_BODY_CLASS, "dark:bg-card")}>
+                            <div className={CARD_BODY_CLASS}>
                                 <div className="relative w-full max-w-full">
                                     <div className="relative flex flex-wrap items-center gap-2">
                                         <HiddenElement>
@@ -912,7 +912,7 @@ function ModificationRequestCard({
                                             <>
                                                 <InfoRow
                                                     label={resolveLanguageKey("totalCost")}
-                                                    className="text-green-400"
+                                                    className="text-success"
                                                     value={
                                                         <div className="flex items-center space-x-0">
                                                             <HiddenElement>

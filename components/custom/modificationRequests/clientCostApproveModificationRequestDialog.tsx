@@ -124,7 +124,7 @@ function ClientCostApproveModificationRequestDialog({
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleSubmit(); }}
                         disabled={loading}
                         className={cn({
-                            "hover:bg-green-700 hover:text-white": decision === "approved",
+                            "hover:bg-success hover:text-white": decision === "approved",
                             "text-destructive-foreground hover:text-white hover:bg-destructive/90": decision === "rejected",
                         })}
                     >

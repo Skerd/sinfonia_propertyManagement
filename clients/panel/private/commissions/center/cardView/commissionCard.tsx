@@ -115,7 +115,7 @@ function CommissionCard({
                                                 variant="outline"
                                                 className={cn(
                                                     "inline-flex items-center text-xs font-medium",
-                                                    commission.sourceType === "sale" ? STATUS_BADGE_INFO : "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400",
+                                                    commission.sourceType === "sale" ? STATUS_BADGE_INFO : "border-primary/30 bg-primary/10 text-primary",
                                                 )}
                                             >
                                                 {resolveLanguageKey(`fields.!enums.sourceType.${commission.sourceType}`) as string}

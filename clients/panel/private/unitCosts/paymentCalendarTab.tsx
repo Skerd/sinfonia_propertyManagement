@@ -131,9 +131,9 @@ function PaymentCalendarTab({
                     <span className="tabular-nums">{day.date.getDate()}</span>
                     {dots && (dots.paid || dots.pending || dots.overdue) ? (
                         <span className="flex h-2 justify-center gap-0.5">
-                            {dots.paid ? <span className="size-1 shrink-0 rounded-full bg-emerald-500" /> : null}
-                            {dots.pending ? <span className="size-1 shrink-0 rounded-full bg-amber-500" /> : null}
-                            {dots.overdue ? <span className="size-1 shrink-0 rounded-full bg-red-500" /> : null}
+                            {dots.paid ? <span className="size-1 shrink-0 rounded-full bg-success" /> : null}
+                            {dots.pending ? <span className="size-1 shrink-0 rounded-full bg-warning" /> : null}
+                            {dots.overdue ? <span className="size-1 shrink-0 rounded-full bg-destructive" /> : null}
                         </span>
                     ) : null}
                 </CalendarDayButton>
@@ -173,7 +173,7 @@ function PaymentCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiPaid")}</CardTitle>
-                                <CheckCircle2 className="size-4 text-emerald-500" />
+                                <CheckCircle2 className="size-4 text-success" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">{kpis.paidLine}</p>
@@ -182,7 +182,7 @@ function PaymentCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiPending")}</CardTitle>
-                                <Clock className="size-4 text-amber-500" />
+                                <Clock className="size-4 text-warning" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">{kpis.pendingLine}</p>
@@ -191,7 +191,7 @@ function PaymentCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiOverdue")}</CardTitle>
-                                <AlertTriangle className="size-4 text-red-500" />
+                                <AlertTriangle className="size-4 text-destructive" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">{kpis.overdueLine}</p>

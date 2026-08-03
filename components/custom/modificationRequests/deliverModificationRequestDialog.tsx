@@ -232,7 +232,7 @@ function DeliverModificationRequestDialog({
                         <AlertDialogAction
                             onClick={(e) => {e.preventDefault(); e.stopPropagation(); handleDeliver();}}
                             disabled={loading}
-                            className="hover:text-white hover:bg-green-700"
+                            className="hover:text-white hover:bg-success"
                         >
                             {(loading) ? <LoaderCircle className="animate-spin"/> : <Package />}
                             <p>{resolveLanguageKey("confirmButton")}</p>

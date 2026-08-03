@@ -116,9 +116,9 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
                     request={request}
                     unitId={unitId ?? request.unit?._id ?? ""}
                     unitName={unitName}
-                    onDelete={(row, response) => onDelete(row ?? request, response)}
+                    onDelete={(row?: ModificationRequest, response?: DeletedData) => onDelete(row ?? request, response)}
                     onRestore={() => onRestore(request)}
-                    onModified={(updated) => updated && listRef.current?.updateRow?.(updated._id, updated)}
+                    onModified={(updated: ModificationRequest | undefined) => updated && listRef.current?.updateRow?.(updated._id, updated)}
                 />
             )}
             renderActionMenuChildren={(request, bindRowAction, {replaceRow}) => (

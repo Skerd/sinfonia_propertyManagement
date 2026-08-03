@@ -46,7 +46,7 @@ export function EntityStatusBadgeRow({
             key: "leased",
             labelKey: "statistics.leased",
             descKey: "statistics.leasedDesc",
-            className: "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400",
+            className: "border-primary/30 bg-primary/10 text-primary",
         },
         {
             key: "unavailable",
@@ -135,7 +135,7 @@ export function EntityStatusBreakdown({
                         style={{width: `${(stats.reserved / totalUnits) * 100}%`}}
                     />
                     <div
-                        className="bg-violet-500 transition-all duration-500"
+                        className="bg-primary transition-all duration-500"
                         style={{width: `${(stats.leased / totalUnits) * 100}%`}}
                     />
                     <div
@@ -151,7 +151,7 @@ export function EntityStatusBreakdown({
                         ["sold", stats.sold, "bg-status-sold/10 text-status-sold", soldLabelKey],
                         ["reserved", stats.reserved, "bg-status-reserved/10 text-status-reserved", reservedLabelKey],
                         ["available", stats.available, "bg-status-available/10 text-status-available", availableLabelKey],
-                        ["leased", stats.leased, "bg-violet-500/10 text-violet-600 dark:text-violet-400", leasedLabelKey],
+                        ["leased", stats.leased, "bg-primary/10 text-primary", leasedLabelKey],
                         ["blocked", stats.blocked, "bg-status-blocked/10 text-status-blocked", blockedLabelKey],
                     ] as const
                 ).map(([id, value, tone, labelKey]) => (

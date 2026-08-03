@@ -132,7 +132,7 @@ function GroupDashboard({
                                             key={col.key}
                                             className={`text-right whitespace-nowrap ${
                                                 col.key === "openSnags" && branch[col.key] > 0
-                                                    ? "text-amber-600 font-medium"
+                                                    ? "text-warning font-medium"
                                                     : ""
                                             }`}
                                         >

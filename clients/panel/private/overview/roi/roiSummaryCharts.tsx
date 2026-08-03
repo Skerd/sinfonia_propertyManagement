@@ -6,32 +6,44 @@ import {
     Cell,
     Pie,
     PieChart,
-    ResponsiveContainer,
-    Tooltip,
     XAxis,
     YAxis,
 } from "recharts";
 import type {RoiProjectSummary} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {
+    ChartContainer,
+    ChartTooltip,
+    type ChartConfig,
+} from "@coreModule/components/ui/chart.tsx";
 
 type RoiSummaryChartsProps = {
     summary: RoiProjectSummary;
     resolveLanguageKey: ResolveLanguageKey;
 };
 
+/** Unit statuses reuse the domain tokens; `rented` is the same concept as the `leased` status. */
 const STATUS_COLORS = {
-    sold: "hsl(142 71% 45%)",
-    available: "hsl(199 89% 48%)",
-    rented: "hsl(271 81% 56%)",
-    other: "hsl(220 9% 46%)",
+    sold: "var(--status-sold)",
+    available: "var(--status-available)",
+    rented: "var(--status-leased)",
+    other: "var(--muted-foreground)",
 };
+
+const FINANCIAL_CONFIG = {
+    value: {color: "var(--chart-1)"},
+} satisfies ChartConfig;
+
+const STATUS_CONFIG = {
+    value: {color: "var(--chart-1)"},
+} satisfies ChartConfig;
 
 function formatMoney(value: number, symbol?: string): string {
     const formatted = value.toLocaleString(undefined, {maximumFractionDigits: 0});
     return symbol ? `${formatted} ${symbol}` : formatted;
 }
 
-function ChartTooltip({
+function FinancialTooltip({
     active,
     payload,
     currencySymbol,
@@ -43,7 +55,7 @@ function ChartTooltip({
     if (!active || !payload?.length) return null;
     const item = payload[0];
     return (
-        <div className="rounded-lg border bg-card px-3 py-2 text-sm shadow-md">
+        <div className="rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl">
             <p className="font-medium text-card-foreground">{item.name}</p>
             <p className="text-muted-foreground">{formatMoney(item.value ?? 0, currencySymbol)}</p>
         </div>
@@ -60,7 +72,7 @@ function StatusTooltip({
     if (!active || !payload?.length) return null;
     const item = payload[0];
     return (
-        <div className="rounded-lg border bg-card px-3 py-2 text-sm shadow-md">
+        <div className="rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl">
             <p className="font-medium text-card-foreground">{item.name}</p>
             <p className="text-muted-foreground">{item.value ?? 0}</p>
         </div>
@@ -75,17 +87,17 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
         {
             name: rk("projectSummary.totalRevenue"),
             value: Math.max(0, summary.totalRevenue),
-            fill: "hsl(142 71% 45%)",
+            fill: "var(--success)",
         },
         {
             name: rk("projectSummary.totalCosts"),
             value: Math.max(0, summary.totalCosts),
-            fill: "hsl(0 84% 60%)",
+            fill: "var(--destructive)",
         },
         {
             name: rk("projectSummary.netProfit"),
             value: summary.netProfit,
-            fill: summary.netProfit >= 0 ? "hsl(142 71% 45%)" : "hsl(0 84% 60%)",
+            fill: summary.netProfit >= 0 ? "var(--success)" : "var(--destructive)",
         },
     ], [summary, rk]);
 
@@ -118,58 +130,55 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="border rounded-lg p-4 space-y-3">
                 <h3 className="font-medium text-sm text-muted-foreground">{rk("charts.financialTitle")}</h3>
-                <div className="h-56 overflow-hidden">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={financialData} margin={{top: 12, right: 12, left: 4, bottom: 8}}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
-                            <XAxis
-                                dataKey="name"
-                                tick={{fill: "var(--muted-foreground)", fontSize: 11}}
-                                axisLine={{stroke: "var(--border)"}}
-                                interval={0}
-                                tickFormatter={(v: string) => v.length > 12 ? `${v.slice(0, 11)}…` : v}
-                            />
-                            <YAxis
-                                domain={yDomain}
-                                tick={{fill: "var(--muted-foreground)", fontSize: 11}}
-                                axisLine={{stroke: "var(--border)"}}
-                                tickFormatter={(v: number) => formatMoney(v, currency)}
-                                width={72}
-                            />
-                            <Tooltip content={<ChartTooltip currencySymbol={currency} />} cursor={{fill: "var(--muted)", fillOpacity: 0.4}} />
-                            <Bar dataKey="value" radius={[4, 4, 0, 0]}>
-                                {financialData.map((entry) => (
-                                    <Cell key={entry.name} fill={entry.fill} />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
-                </div>
+                <ChartContainer config={FINANCIAL_CONFIG} className="aspect-auto h-56 w-full overflow-hidden">
+                    <BarChart data={financialData} margin={{top: 12, right: 12, left: 4, bottom: 8}}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
+                        <XAxis
+                            dataKey="name"
+                            tick={{fill: "var(--muted-foreground)", fontSize: 11}}
+                            axisLine={{stroke: "var(--border)"}}
+                            interval={0}
+                            tickFormatter={(v: string) => v.length > 12 ? `${v.slice(0, 11)}…` : v}
+                        />
+                        <YAxis
+                            domain={yDomain}
+                            tick={{fill: "var(--muted-foreground)", fontSize: 11}}
+                            axisLine={{stroke: "var(--border)"}}
+                            tickFormatter={(v: number) => formatMoney(v, currency)}
+                            width={72}
+                        />
+                        <ChartTooltip content={<FinancialTooltip currencySymbol={currency} />} cursor={{fill: "var(--muted)", fillOpacity: 0.4}} />
+                        <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                            {financialData.map((entry) => (
+                                <Cell key={entry.name} fill={entry.fill} />
+                            ))}
+                        </Bar>
+                    </BarChart>
+                </ChartContainer>
             </div>
 
             <div className="border rounded-lg p-4 space-y-3">
                 <h3 className="font-medium text-sm text-muted-foreground">{rk("charts.unitsByStatusTitle")}</h3>
-                <div className="h-44">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                            <Pie
-                                data={statusData}
-                                cx="50%"
-                                cy="50%"
-                                innerRadius={44}
-                                outerRadius={64}
-                                paddingAngle={3}
-                                dataKey="value"
-                                strokeWidth={0}
-                            >
-                                {statusData.map((entry) => (
-                                    <Cell key={entry.name} fill={entry.color} />
-                                ))}
-                            </Pie>
-                            <Tooltip content={<StatusTooltip />} />
-                        </PieChart>
-                    </ResponsiveContainer>
-                </div>
+                <ChartContainer config={STATUS_CONFIG} className="aspect-auto h-44 w-full">
+                    <PieChart>
+                        <ChartTooltip content={<StatusTooltip />} />
+                        <Pie
+                            data={statusData}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={44}
+                            outerRadius={64}
+                            paddingAngle={3}
+                            dataKey="value"
+                            nameKey="name"
+                            strokeWidth={0}
+                        >
+                            {statusData.map((entry) => (
+                                <Cell key={entry.name} fill={entry.color} />
+                            ))}
+                        </Pie>
+                    </PieChart>
+                </ChartContainer>
                 <div className="grid grid-cols-2 gap-2">
                     {statusData.map((item) => (
                         <div key={item.name} className="flex items-center gap-2 text-xs">
@@ -184,7 +193,7 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
                     {rk("charts.totalUnits")}: <span className="text-foreground font-semibold">{statusTotal}</span>
                     {" · "}
                     {rk("projectSummary.roi")}:{" "}
-                    <span className={summary.roiPercent >= 0 ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                    <span className={summary.roiPercent >= 0 ? "text-success font-semibold" : "text-destructive font-semibold"}>
                         {summary.roiPercent.toFixed(1)}%
                     </span>
                 </p>

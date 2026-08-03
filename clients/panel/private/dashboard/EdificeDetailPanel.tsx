@@ -8,6 +8,12 @@ import {UnitDetailCard} from "./UnitDetailCard.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+} from "@coreModule/components/ui/card.tsx";
 
 export interface EdificeDetailPanelProps extends WithLanguageType {
     edificeId: string;
@@ -58,31 +64,33 @@ function EdificeDetailPanelInner({
     }, [edificeId]);
 
     return (
-        <div className="flex flex-col rounded-xl border border-border bg-card/50 p-4" style={{border: "0px solid blue"}}>
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-border">
-                <h3 className="font-display font-semibold">{edificeName}</h3>
-            </div>
+        <Card>
+            <CardHeader className="border-b pb-4">
+                <CardTitle className="font-display font-semibold">{edificeName}</CardTitle>
+            </CardHeader>
 
-            <div className="space-y-6 lg:space-y-0">
+            <CardContent>
                 {
                     loading ?
                         <Loader/>
                         :
-                        <div className="lg:grid grid-cols-1 lg:grid-cols-3 lg:gap-6 lg:items-start" style={{border: "0px solid yellow"}}>
+                        <div className="lg:grid grid-cols-1 lg:grid-cols-3 lg:gap-6 lg:items-start">
                             {/* Left: Floorplan → Unit detail → Units list */}
-                            <div className="flex flex-col gap-6 min-w-0 col-span-2" style={{border: "0px solid red"}}>
-                                <section className="col-span-2 border rounded-lg p-4">
-                                    <FloorPlanGrid
-                                        units={units}
-                                        floors={floors}
-                                        projectId={projectId}
-                                        projectName={projectName}
-                                        edificeId={edificeId}
-                                        edificeName={edificeName}
-                                        onUnitClick={(unit) => {setSelectedUnit(unit); setClicked(Date.now())}}
-                                        floorPlanTitle={resolveLanguageKey("floorPlan")}
-                                    />
-                                </section>
+                            <div className="flex flex-col gap-6 min-w-0 col-span-2">
+                                <Card size="sm" className="col-span-2">
+                                    <CardContent>
+                                        <FloorPlanGrid
+                                            units={units}
+                                            floors={floors}
+                                            projectId={projectId}
+                                            projectName={projectName}
+                                            edificeId={edificeId}
+                                            edificeName={edificeName}
+                                            onUnitClick={(unit) => {setSelectedUnit(unit); setClicked(Date.now())}}
+                                            floorPlanTitle={resolveLanguageKey("floorPlan")}
+                                        />
+                                    </CardContent>
+                                </Card>
                             </div>
                             {
                                 selectedUnit &&
@@ -101,9 +109,8 @@ function EdificeDetailPanelInner({
                             }
                         </div>
                 }
-            </div>
-
-        </div>
+            </CardContent>
+        </Card>
     );
 }
 

@@ -20,8 +20,8 @@ function windowBadge(w: UnitAvailabilityWindow) {
 
 function statusBadge(status: string) {
     switch (status) {
-        case "available_unit":   return <Badge variant="default" className="bg-green-600">Available</Badge>;
-        case "reserved_unit":    return <Badge variant="default" className="bg-yellow-500">Reserved</Badge>;
+        case "available_unit":   return <Badge variant="default" className="bg-success">Available</Badge>;
+        case "reserved_unit":    return <Badge variant="default" className="bg-warning">Reserved</Badge>;
         case "sold_unit":        return <Badge variant="destructive">Sold</Badge>;
         case "unavailable_unit": return <Badge variant="secondary">Unavailable</Badge>;
         default:                 return <Badge variant="secondary">{status}</Badge>;

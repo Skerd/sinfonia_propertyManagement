@@ -124,7 +124,7 @@ function InspectionCard({
         if (s === 'in_progress') return STATUS_BADGE_WARNING;
         if (s === 'completed') return STATUS_BADGE_SUCCESS;
         if (s === 'cancelled') return STATUS_BADGE_DANGER;
-        if (s === 'rescheduled') return "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400";
+        if (s === 'rescheduled') return "border-primary/30 bg-primary/10 text-primary";
         return STATUS_BADGE_NEUTRAL;
     }
 
@@ -169,7 +169,7 @@ function InspectionCard({
                         />
                     }
                     <div className="w-full min-w-0">
-                        <div className="relative dark:bg-card">
+                        <div className="relative">
                             <div className="p-2 space-y-1">
                                 {!!read?.name && (
                                     <p className="font-semibold text-base leading-tight line-clamp-1">{inspection.name}</p>

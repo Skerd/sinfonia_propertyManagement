@@ -9,9 +9,9 @@ type BuildingStackSectionProps = {
 };
 
 const statusColors = {
-    available: "bg-emerald-500",
-    reserved: "bg-amber-400",
-    sold: "bg-red-400",
+    available: "bg-success",
+    reserved: "bg-warning/20",
+    sold: "bg-destructive/20",
 };
 
 function BuildingStackSection({project, onUnitSelect}: BuildingStackSectionProps) {

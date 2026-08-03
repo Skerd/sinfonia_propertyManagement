@@ -4,13 +4,16 @@ import {
     CartesianGrid,
     Line,
     LineChart,
-    ResponsiveContainer,
-    Tooltip,
     XAxis,
     YAxis,
 } from "recharts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {
+    ChartContainer,
+    ChartTooltip,
+    type ChartConfig,
+} from "@coreModule/components/ui/chart.tsx";
 
 export type SheetPriceHistoryEntry = {
     price: number;
@@ -82,7 +85,7 @@ function PriceHistoryTooltip({
     if (!point) return null;
 
     return (
-        <div className="rounded-lg border border-border bg-card px-3 py-2 text-xs shadow-md">
+        <div className="rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl">
             <div className="font-semibold text-card-foreground">{point.label}</div>
             <div className="mt-1 text-card-foreground">{formatPrice(point.price, currencyPrefix)}</div>
             {point.changedBy ? (
@@ -99,6 +102,10 @@ function PriceHistoryTooltip({
     );
 }
 
+const PRICE_CHART_CONFIG = {
+    price: {color: "var(--chart-1)"},
+} satisfies ChartConfig;
+
 function SingleCurrencyChart({
     currencyPrefix,
     points,
@@ -109,7 +116,7 @@ function SingleCurrencyChart({
     resolveLanguageKey: ResolveLanguageKey;
 }) {
     return (
-        <ResponsiveContainer width="100%" height={220}>
+        <ChartContainer config={PRICE_CHART_CONFIG} className="aspect-auto h-[220px] w-full">
             <LineChart data={points} margin={{top: 8, right: 8, left: 0, bottom: 0}}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
                 <XAxis
@@ -126,7 +133,7 @@ function SingleCurrencyChart({
                     width={72}
                     tickFormatter={(value: number) => formatPrice(value, currencyPrefix)}
                 />
-                <Tooltip
+                <ChartTooltip
                     content={
                         <PriceHistoryTooltip
                             currencyPrefix={currencyPrefix}
@@ -137,13 +144,13 @@ function SingleCurrencyChart({
                 <Line
                     type="monotone"
                     dataKey="price"
-                    stroke="var(--primary)"
+                    stroke="var(--color-price)"
                     strokeWidth={2}
-                    dot={{r: 3, fill: "var(--primary)", strokeWidth: 0}}
+                    dot={{r: 3, fill: "var(--color-price)", strokeWidth: 0}}
                     activeDot={{r: 5}}
                 />
             </LineChart>
-        </ResponsiveContainer>
+        </ChartContainer>
     );
 }
 

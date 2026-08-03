@@ -80,7 +80,7 @@ function BidComparison({resolveLanguageKey, data, loading, error, onFilterChange
                             </TableHeader>
                             <TableBody>
                                 {data.rows.map((row) => (
-                                    <TableRow key={row.bidId} className={row.recommended ? "bg-emerald-50 dark:bg-emerald-950/30" : ""}>
+                                    <TableRow key={row.bidId} className={row.recommended ? "bg-success/10 dark:bg-success/30" : ""}>
                                         <TableCell className="font-medium whitespace-nowrap">
                                             {row.constructorName || row.bidName || "—"}
                                             {row.recommended ? <Badge variant="secondary" className="ml-2 text-xs">{resolveLanguageKey("recommended")}</Badge> : null}

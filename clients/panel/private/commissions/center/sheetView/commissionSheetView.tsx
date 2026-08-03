@@ -54,12 +54,12 @@ function CommissionSheetView({
         const s = (status || "").toLowerCase();
         const className =
             s === "paid"
-                ? "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/30"
+                ? "bg-success/10 text-success border-success/30"
                 : s === "voided"
-                  ? "bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/30"
+                  ? "bg-destructive/10 text-destructive border-destructive/30"
                   : s === "pending_approval"
-                    ? "bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/30"
-                    : "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/30";
+                    ? "bg-info/10 text-info border-info/30"
+                    : "bg-warning/10 text-warning border-warning/30";
         return (
             <Badge variant="outline" className={cn("text-xs font-medium", className)}>
                 {resolveLanguageKey(`fields.!enums.status.${s}`) as string}

@@ -336,7 +336,7 @@ function FinanceModificationRequestDialog({
                                         hasMismatch && (
                                         <span className={cn(
                                             "flex items-center gap-1.5 text-sm font-medium",
-                                            difference > 0 ? "text-amber-600 dark:text-amber-400" : "text-rose-600 dark:text-rose-400"
+                                            difference > 0 ? "text-warning" : "text-destructive"
                                         )}>
                                             <AlertTriangle size={16} />
                                             {resolveLanguageKey("form.difference")}: {difference > 0 ? "+" : ""}{difference.toLocaleString(undefined, { minimumFractionDigits: 2 })}
@@ -475,7 +475,7 @@ function FinanceModificationRequestDialog({
                             }}
                             form="finance-form"
                             disabled={loading || hasMismatch}
-                            className="bg-green-600 text-white hover:bg-green-700"
+                            className="bg-success text-white hover:bg-success"
                         >
                             {loading ? <LoaderCircle className="animate-spin" size={16} /> : <DollarSign size={16} className="" />}
                             {resolveLanguageKey("confirmButton")}

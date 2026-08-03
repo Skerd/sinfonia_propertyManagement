@@ -42,7 +42,7 @@ function getStatusBadgeClass(status?: string): string {
         case "new":         return STATUS_BADGE_INFO;
         case "contacted":   return STATUS_BADGE_NEUTRAL;
         case "qualified":   return "border-status-sold/30 bg-status-sold/10 text-status-sold";
-        case "proposal":    return "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400";
+        case "proposal":    return "border-primary/30 bg-primary/10 text-primary";
         case "negotiation": return "border-status-reserved/30 bg-status-reserved/10 text-status-reserved";
         case "won":         return "border-status-sold/30 bg-status-sold/10 text-status-sold";
         case "lost":        return "border-status-blocked/30 bg-status-blocked/10 text-status-blocked";

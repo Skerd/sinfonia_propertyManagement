@@ -47,13 +47,13 @@ function formatMoney(value: number | undefined): string {
 function getInstallmentStatusStyles(status?: string): {bg: string; text: string; border: string} {
     const lowered = status?.toLowerCase() ?? "";
     if (lowered === "paid") {
-        return {bg: "bg-green-500/10", text: "text-green-600 dark:text-green-400", border: "border-green-500/30"};
+        return {bg: "bg-success/10", text: "text-success", border: "border-success/30"};
     }
     if (lowered === "overdue" || lowered === "cancelled") {
-        return {bg: "bg-red-500/10", text: "text-red-600 dark:text-red-400", border: "border-red-500/30"};
+        return {bg: "bg-destructive/10", text: "text-destructive", border: "border-destructive/30"};
     }
     if (lowered === "partially_paid") {
-        return {bg: "bg-amber-500/10", text: "text-amber-600 dark:text-amber-400", border: "border-amber-500/30"};
+        return {bg: "bg-warning/10", text: "text-warning", border: "border-warning/30"};
     }
     return {bg: "bg-muted/50", text: "text-muted-foreground", border: "border-muted"};
 }

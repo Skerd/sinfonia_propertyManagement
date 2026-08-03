@@ -81,7 +81,7 @@ function UnitDetailCardInner({
         <>
             <Card
                 className={cn(
-                    "group glass-card overflow-hidden relative animate-in fade-in-0 duration-200",
+                    "group border border-border bg-card/80 backdrop-blur-sm overflow-hidden relative animate-in fade-in-0 duration-200",
                     isDeleted && "border-l-4 border-l-destructive",
                 )}
                 data-cursor-element-id={`unit-detail-${unit._id}`}

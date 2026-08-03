@@ -1,5 +1,12 @@
 import type {ReactNode} from "react";
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@coreModule/components/ui/card.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
 type DashboardWidgetCardProps = {
@@ -23,7 +30,8 @@ export function DashboardWidgetCard({
     footer,
 }: DashboardWidgetCardProps) {
     return (
-        <Card className={cn(glass && "glass-card", className)}>
+        // Card already supplies the ring; `glass` only adds the translucent surface.
+        <Card className={cn(glass && "bg-card/80 backdrop-blur-sm", className)}>
             <CardHeader className="pb-2">
                 <CardTitle className="font-display text-lg">{title}</CardTitle>
                 {description != null && description !== "" && (
@@ -31,9 +39,7 @@ export function DashboardWidgetCard({
                 )}
             </CardHeader>
             <CardContent className={cn("pt-0", contentClassName)}>{children}</CardContent>
-            {footer != null && (
-                <div className="px-6 pb-4 pt-0 border-t border-border mt-2">{footer}</div>
-            )}
+            {footer != null && <CardFooter className="justify-center">{footer}</CardFooter>}
         </Card>
     );
 }

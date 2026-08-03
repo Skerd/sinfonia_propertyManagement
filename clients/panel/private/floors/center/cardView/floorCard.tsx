@@ -152,13 +152,13 @@ function FloorCard({
                         {(!!floor.isAccessible || !!floor.hasEmergencyExit) && (
                             <div className="flex flex-wrap gap-1">
                                 {!!floor.isAccessible && !!read?.isAccessible && (
-                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">
+                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">
                                         <IconWheelchair className="h-3 w-3" />
                                         {resolveLanguageKey("data.isAccessible")}
                                     </span>
                                 )}
                                 {!!floor.hasEmergencyExit && !!read?.hasEmergencyExit && (
-                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400 font-medium">
+                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">
                                         <IconFireExtinguisher className="h-3 w-3" />
                                         {resolveLanguageKey("data.hasEmergencyExit")}
                                     </span>

@@ -13,9 +13,9 @@ type Props = WithLanguageType & WithAxiosType<CockpitResponse, {projectId?: stri
 };
 
 const AMPEL: Record<string, string> = {
-    green: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 border-emerald-300",
-    amber: "bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300 border-amber-300",
-    red: "bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-300 border-red-300",
+    green: "bg-success/10 text-success dark:bg-success/40 border-success/30",
+    amber: "bg-warning/10 text-warning dark:bg-warning/40 border-warning/30",
+    red: "bg-destructive/10 text-destructive dark:bg-destructive/40 border-destructive/30",
 };
 
 function Cockpit({resolveLanguageKey, data, loading, error, onFilterChange, projectId}: Props) {
@@ -42,7 +42,7 @@ function Cockpit({resolveLanguageKey, data, loading, error, onFilterChange, proj
                     <div key={kpi.key} className={`border rounded-lg p-4 ${AMPEL[kpi.ampel] ?? ""}`}>
                         <div className="flex items-center justify-between">
                             <span className="text-sm font-medium">{resolveLanguageKey(`kpi.${kpi.key}`)}</span>
-                            <span className="inline-block h-3 w-3 rounded-full" style={{backgroundColor: kpi.ampel === "green" ? "#10b981" : kpi.ampel === "amber" ? "#f59e0b" : "#ef4444"}} />
+                            <span className="inline-block h-3 w-3 rounded-full" style={{backgroundColor: kpi.ampel === "green" ? "var(--success)" : kpi.ampel === "amber" ? "var(--warning)" : "var(--destructive)"}} />
                         </div>
                         <div className="mt-2 text-2xl font-semibold">
                             {kpi.value.toLocaleString(undefined, {maximumFractionDigits: 1})}{kpi.unit === "%" ? "%" : ""}

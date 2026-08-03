@@ -8,7 +8,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAccess } from "@coreModule/helpers/hocs/withAccess.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import { buildTitleBreadcrumb } from "@coreModule/helpers/general";
-import CardAndTableView from "@coreModule/components/custom/cardAndTableView.tsx";
+import CardAndTableView, {type EntityListApi} from "@coreModule/components/custom/cardAndTableView.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import UnitCostCard from "@propertyManagementModule/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx";
@@ -77,10 +77,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
         );
     };
 
-    const listRef = useRef<{
-        refetch: () => void;
-        updateRow: (id: string | number, patch: Partial<UnitCost>) => void;
-    } | null>(null);
+    const listRef = useRef<EntityListApi<UnitCost> | null>(null);
 
     const handleDelete = (cost: UnitCost, response?: DeletedData) => {
         if (response?.deletedAt != null || response?.deletedBy != null) {

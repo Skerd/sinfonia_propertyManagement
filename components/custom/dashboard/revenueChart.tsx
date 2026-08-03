@@ -5,11 +5,16 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
 } from 'recharts';
 import type { DashboardSummary } from 'armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts';
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@coreModule/components/ui/chart.tsx";
+import { chartTooltipValueFormatter } from "@coreModule/components/custom/chartTooltipFormatter.tsx";
 import { DashboardWidgetCard } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
 
 /** Data props for the revenue chart (from API/summary). */
@@ -85,6 +90,24 @@ function RevenueChartInner({
 }: RevenueChartProps) {
   const unsoldValue = availableValue + blockedValue;
 
+  /** Keys mirror the `Bar` dataKeys so the tooltip resolves label and color from here. */
+  const chartConfig = {
+    collected: { label: resolveLanguageKey('collected'), color: 'var(--status-sold)' },
+    pendingSales: {
+      label: resolveLanguageKey('pendingSales'),
+      color: 'color-mix(in oklch, var(--status-sold) 50%, transparent)',
+    },
+    pendingReservations: {
+      label: resolveLanguageKey('pendingReservations'),
+      color: 'color-mix(in oklch, var(--status-reserved) 50%, transparent)',
+    },
+    availableValue: { label: resolveLanguageKey('availableValue'), color: 'var(--status-available)' },
+    blockedValue: { label: resolveLanguageKey('blockedValue'), color: 'var(--status-blocked)' },
+    reservedValue: { label: resolveLanguageKey('reservedValue'), color: 'var(--status-reserved)' },
+    soldValue: { label: resolveLanguageKey('soldValue'), color: 'var(--status-sold)' },
+    totalExpenses: { label: resolveLanguageKey('totalExpenses'), color: 'var(--destructive)' },
+  } satisfies ChartConfig;
+
   const data = [
     {
       name: resolveLanguageKey('revenue'),
@@ -107,44 +130,40 @@ function RevenueChartInner({
 
   return (
     <DashboardWidgetCard title={resolveLanguageKey('title')} contentClassName="pt-0">
-      <div className="h-72">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} layout="vertical" barCategoryGap="20%">
-            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" horizontal={false} />
-            <XAxis
-              type="number"
-              tickFormatter={formatChartValue}
-              tick={{ fill: 'var(--muted-foreground)', fontSize: 12 }}
-              axisLine={{ stroke: 'var(--border)' }}
-            />
-            <YAxis
-              type="category"
-              dataKey="name"
-              tick={{ fill: 'var(--foreground)', fontSize: 13 }}
-              axisLine={{ stroke: 'var(--border)' }}
-              width={100}
-            />
-            <Tooltip
-              formatter={(value: number) => formatChartValue(value)}
-              cursor={{ fill: 'var(--muted)', fillOpacity: 0.75 }}
-              contentStyle={{
-                backgroundColor: 'var(--card)',
-                border: '1px solid var(--border)',
-                borderRadius: '0.75rem',
-                color: 'var(--card-foreground)',
-              }}
-            />
-            <Bar dataKey="collected" name={resolveLanguageKey('collected')} stackId="a" fill="var(--status-sold)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="pendingSales" name={resolveLanguageKey('pendingSales')} stackId="a" fill="color-mix(in oklch, var(--status-sold) 50%, transparent)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="pendingReservations" name={resolveLanguageKey('pendingReservations')} stackId="a" fill="color-mix(in oklch, var(--status-reserved) 50%, transparent)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="availableValue" name={resolveLanguageKey('availableValue')} stackId="b" fill="var(--status-available)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="blockedValue" name={resolveLanguageKey('blockedValue')} stackId="b" fill="var(--status-blocked)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="reservedValue" name={resolveLanguageKey('reservedValue')} stackId="b" fill="var(--status-reserved)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="soldValue" name={resolveLanguageKey('soldValue')} stackId="b" fill="var(--status-sold)" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="totalExpenses" name={resolveLanguageKey('totalExpenses')} fill="var(--destructive)" radius={[0, 4, 4, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+      <ChartContainer config={chartConfig} className="aspect-auto h-72 w-full">
+        <BarChart data={data} layout="vertical" barCategoryGap="20%">
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" horizontal={false} />
+          <XAxis
+            type="number"
+            tickFormatter={formatChartValue}
+            tick={{ fill: 'var(--muted-foreground)', fontSize: 12 }}
+            axisLine={{ stroke: 'var(--border)' }}
+          />
+          <YAxis
+            type="category"
+            dataKey="name"
+            tick={{ fill: 'var(--foreground)', fontSize: 13 }}
+            axisLine={{ stroke: 'var(--border)' }}
+            width={100}
+          />
+          <ChartTooltip
+            cursor={{ fill: 'var(--muted)', fillOpacity: 0.75 }}
+            content={
+              <ChartTooltipContent
+                formatter={chartTooltipValueFormatter(chartConfig, formatChartValue)}
+              />
+            }
+          />
+          <Bar dataKey="collected" stackId="a" fill="var(--color-collected)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="pendingSales" stackId="a" fill="var(--color-pendingSales)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="pendingReservations" stackId="a" fill="var(--color-pendingReservations)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="availableValue" stackId="b" fill="var(--color-availableValue)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="blockedValue" stackId="b" fill="var(--color-blockedValue)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="reservedValue" stackId="b" fill="var(--color-reservedValue)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="soldValue" stackId="b" fill="var(--color-soldValue)" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="totalExpenses" fill="var(--color-totalExpenses)" radius={[0, 4, 4, 0]} />
+        </BarChart>
+      </ChartContainer>
 
       <div className="grid grid-cols-4 gap-4 mt-6 pt-4 border-t border-border">
         <div className="text-center">

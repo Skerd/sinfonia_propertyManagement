@@ -32,11 +32,11 @@ function CancelInspection({
 
     return (
         <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
-            <XCircle className="text-amber-600" size={16}/>
-            <p className="text-amber-600">
+            <XCircle className="text-warning" size={16}/>
+            <p className="text-warning">
                 {resolveLanguageKey("title")}
             </p>
-            <DropdownMenuShortcut className="text-amber-600">⌘{shortcut}</DropdownMenuShortcut>
+            <DropdownMenuShortcut className="text-warning">⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>
     );
 }

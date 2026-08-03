@@ -327,15 +327,15 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.sold")}</p>
-                                                    <p className="font-semibold text-lg text-green-600">{result.project.soldUnits}</p>
+                                                    <p className="font-semibold text-lg text-success">{result.project.soldUnits}</p>
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.available")}</p>
-                                                    <p className="font-semibold text-lg text-blue-600">{result.project.availableUnits}</p>
+                                                    <p className="font-semibold text-lg text-info">{result.project.availableUnits}</p>
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.rented")}</p>
-                                                    <p className="font-semibold text-lg text-purple-600">{result.project.rentedUnits}</p>
+                                                    <p className="font-semibold text-lg text-primary">{result.project.rentedUnits}</p>
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.totalRevenue")}</p>
@@ -347,13 +347,13 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.netProfit")}</p>
-                                                    <p className={`font-semibold ${result.project.netProfit >= 0 ? "text-green-600" : "text-red-600"}`}>
+                                                    <p className={`font-semibold ${result.project.netProfit >= 0 ? "text-success" : "text-destructive"}`}>
                                                         {fmt(result.project.netProfit)}
                                                     </p>
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.roi")}</p>
-                                                    <p className={`font-bold text-lg ${result.project.roiPercent >= 0 ? "text-green-600" : "text-red-600"}`}>
+                                                    <p className={`font-bold text-lg ${result.project.roiPercent >= 0 ? "text-success" : "text-destructive"}`}>
                                                         {fmt(result.project.roiPercent)}%
                                                     </p>
                                                 </div>
@@ -397,10 +397,10 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                     <td className="px-4 py-2 text-right">
                                                         {fmt(u.totalCosts)} {u.costCurrencySymbol ?? ""}
                                                     </td>
-                                                    <td className={`px-4 py-2 text-right font-medium ${(u.netProfit ?? 0) >= 0 ? "text-green-600" : "text-red-600"}`}>
+                                                    <td className={`px-4 py-2 text-right font-medium ${(u.netProfit ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
                                                         {fmt(u.netProfit)}
                                                     </td>
-                                                    <td className={`px-4 py-2 text-right font-bold ${(u.roiPercent ?? 0) >= 0 ? "text-green-600" : "text-red-600"}`}>
+                                                    <td className={`px-4 py-2 text-right font-bold ${(u.roiPercent ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
                                                         {u.roiPercent !== undefined ? `${fmt(u.roiPercent)}%` : "—"}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">

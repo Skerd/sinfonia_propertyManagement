@@ -45,9 +45,9 @@ function formatDate(value?: string) {
 }
 
 function progressTone(percent: number) {
-    if (percent >= 75) return "border-green-500 bg-green-500/10 text-green-700 dark:text-green-400";
-    if (percent >= 40) return "border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400";
-    return "border-sky-500 bg-sky-500/10 text-sky-700 dark:text-sky-400";
+    if (percent >= 75) return "border-success/50 bg-success/10 text-success";
+    if (percent >= 40) return "border-warning/50 bg-warning/10 text-warning";
+    return "border-info/50 bg-info/10 text-info";
 }
 
 function TimelinePreview({
