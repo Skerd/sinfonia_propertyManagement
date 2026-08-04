@@ -98,10 +98,16 @@
         "pending_architect_revision": "Ausstehend Architect Revision",
         "pending_engineer_revision": "Ausstehend Engineer Revision",
         "pending_finance": "Ausstehend Finanzen",
+        "pending_client_approval": "Ausstehend Kundenfreigabe",
         "finance_completed": "Finanzen Abgeschlossen",
         "pending_delivery": "Ausstehend Delivery",
         "completed": "Abgeschlossen",
         "cancelled": "Storniert"
+      },
+      "decision": {
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "pending": "Ausstehend"
       },
       "architectApproval": {
         "decision": {
@@ -125,6 +131,13 @@
         }
       },
       "deliveryApproval": {
+        "decision": {
+          "approved": "Genehmigt",
+          "rejected": "Abgelehnt",
+          "pending": "Ausstehend"
+        }
+      },
+      "clientCostApproval": {
         "decision": {
           "approved": "Genehmigt",
           "rejected": "Abgelehnt",

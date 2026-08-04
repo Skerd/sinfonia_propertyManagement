@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -22,7 +23,6 @@ import {EntityCardShell} from "@propertyManagementModule/components/custom/cards
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
 import {
     CARD_BODY_CLASS,
-    CARD_INFO_ROWS_CLASS,
     STATUS_BADGE_DANGER,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
@@ -135,7 +135,7 @@ function LeaseCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconUser}
                             label={resolveLanguageKey("fields.tenant")}
@@ -160,7 +160,7 @@ function LeaseCard({
                             show={!!read?.endDate}
                             value={formatDate(lease.endDate)}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

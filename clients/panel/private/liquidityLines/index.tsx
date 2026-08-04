@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {LiquidityLine} from "armonia/src/modules/propertyManagement/api/realEstate/private/liquidityLine/liquidityLine.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -30,7 +30,7 @@ function AllLiquidityLines({resolveLanguageKey}: Props) {
             buildEditPath={buildEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/liquidityLines/center/sheetView/liquidityLineSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             renderCard={(row, onDelete, onRestore) => (
                 <LiquidityLineCard
                     entity={row}

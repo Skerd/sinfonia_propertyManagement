@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -19,7 +20,7 @@ import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.ts
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import StartScheduleTask, {START_SCHEDULE_TASK_ACTION} from "@propertyManagementModule/clients/panel/private/scheduleTasks/center/actions/start.tsx";
 import CompleteScheduleTask, {COMPLETE_SCHEDULE_TASK_ACTION} from "@propertyManagementModule/clients/panel/private/scheduleTasks/center/actions/complete.tsx";
 import UpdateProgressScheduleTask, {UPDATE_PROGRESS_SCHEDULE_TASK_ACTION} from "@propertyManagementModule/clients/panel/private/scheduleTasks/center/actions/updateProgress.tsx";
@@ -131,7 +132,7 @@ function ScheduleTaskCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconFolder}
                             label={resolveLanguageKey("fields.project")}
@@ -156,7 +157,7 @@ function ScheduleTaskCard({
                             show={!!read?.percentComplete && typeof scheduleTask.percentComplete === "number"}
                             value={typeof scheduleTask.percentComplete === "number" ? `${scheduleTask.percentComplete}%` : undefined}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

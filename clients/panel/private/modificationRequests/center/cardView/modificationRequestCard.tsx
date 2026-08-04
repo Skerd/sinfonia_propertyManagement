@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -39,7 +40,6 @@ import {EntityCardFetchGuard} from "@propertyManagementModule/components/custom/
 import {EntityCardActionMenu} from "@propertyManagementModule/components/custom/cards/EntityCardActionMenu.tsx";
 import {
     CARD_BODY_CLASS,
-    CARD_INFO_ROWS_CLASS,
     STATUS_BADGE_DANGER,
     STATUS_BADGE_INFO,
     STATUS_BADGE_SUCCESS,
@@ -227,7 +227,7 @@ function ModificationRequestCard({
     ) => {
 
         return (
-            <Card className="space-y-2 w-full gap-0 min-w-56">
+            <Card className="flex flex-col gap-y-2 w-full gap-0 min-w-56">
                 <div className="flex items-center gap-2 px-4 pt-4 pb-2">
                     <p className="text-sm font-semibold">{stageLabel}</p>
                     <HiddenElement>
@@ -237,14 +237,14 @@ function ModificationRequestCard({
                                 {
                                     !!approval.decision &&
                                     <p className={`text-xs px-2 py-0.5 rounded-md border ${getApprovalDecisionColor(approval?.decision)}`}>
-                                        {resolveLanguageKey(approval?.decision)}
+                                        {resolveLanguageKey(`decisions.${approval?.decision}`)}
                                     </p>
                                 }
                             </>
                         }
                     </HiddenElement>
                 </div>
-                <CardContent className="space-y-2">
+                <CardContent className="flex flex-col gap-y-2">
                     <HiddenElement>
                         {
                             permissions.user &&
@@ -255,7 +255,7 @@ function ModificationRequestCard({
                                         label={resolveLanguageKey("reviewedBy")}
                                         show={!!permissions.user}
                                         value={
-                                            <div className="flex items-center space-x-1">
+                                            <div className="flex items-center gap-x-1">
                                                 <HiddenElement>
                                                     {
                                                         permissions.user?.keys?.name &&
@@ -286,7 +286,7 @@ function ModificationRequestCard({
                                         label={resolveLanguageKey("reviewedAt")}
                                         show={!!permissions.reviewedAt}
                                         value={
-                                            <div className="flex items-center space-x-1">
+                                            <div className="flex items-center gap-x-1">
                                                 {format(new Date(approval.reviewedAt), "PPp")}
                                             </div>
                                         }
@@ -333,7 +333,7 @@ function ModificationRequestCard({
                                     Array.isArray(approval?.materialsPlan) && approval.materialsPlan.length > 0 &&
                                     <div className="pt-1 border-t">
                                         <p className="text-xs font-medium text-muted-foreground mb-1">{resolveLanguageKey("materials")}</p>
-                                        <div className="space-y-1 max-h-32 overflow-y-auto">
+                                        <div className="flex flex-col gap-y-1 max-h-32 overflow-y-auto">
                                             {
                                                 approval.materialsPlan.map((material: any, index: number) => {
                                                     return (
@@ -380,7 +380,7 @@ function ModificationRequestCard({
     const renderFinancePopoverContent = (financeDetails: any, stageLabel: string, permissions: any = {}) => {
         const cPermissions = permissions.costBreakdown?.keys || {};
         return (
-            <Card className="space-y-2 w-full gap-0 min-w-56">
+            <Card className="flex flex-col gap-y-2 w-full gap-0 min-w-56">
                 <div className="flex items-center gap-2 px-4 pt-4 pb-2">
                     <p className="text-sm font-semibold">{stageLabel}</p>
                     {
@@ -390,13 +390,13 @@ function ModificationRequestCard({
                         </p>
                         :
                         <p className={`text-xs px-2 py-0.5 rounded-md border ${getApprovalDecisionColor("pending")}`}>
-                            {resolveLanguageKey("pending")}
+                            {resolveLanguageKey("decisions.pending")}
                         </p>
                     }
                 </div>
                 {
                     !!financeDetails &&
-                    <CardContent className="space-y-2">
+                    <CardContent className="flex flex-col gap-y-2">
                         <InfoRow
                             label={resolveLanguageKey("totalCost")}
                             show={!!permissions.totalCost}
@@ -444,7 +444,7 @@ function ModificationRequestCard({
                                 <>
                                     <div className="text-xs pt-1 border-t">
                                         <p className="font-medium text-muted-foreground mb-1">{resolveLanguageKey("costBreakdown")}</p>
-                                        <div className="space-y-1.5 max-h-40 overflow-y-auto">
+                                        <div className="flex flex-col gap-y-1.5 max-h-40 overflow-y-auto">
                                             {
                                                 financeDetails.costBreakdown?.map((item: any, index: number) => {
                                                         return (
@@ -471,7 +471,7 @@ function ModificationRequestCard({
                                                                 </div>
                                                                 <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1 text-muted-foreground">
 
-                                                                    <div className="flex items-center space-x-1">
+                                                                    <div className="flex items-center gap-x-1">
                                                                         <p className="text-xs">{resolveLanguageKey("quantity")}:</p>
                                                                         <HiddenElement>
                                                                             {
@@ -482,7 +482,7 @@ function ModificationRequestCard({
                                                                             }
                                                                         </HiddenElement>
                                                                     </div>
-                                                                    <div className="flex items-center space-x-1">
+                                                                    <div className="flex items-center gap-x-1">
                                                                         <p className="text-xs">{resolveLanguageKey("units")}:</p>
                                                                         <HiddenElement>
                                                                             {
@@ -493,7 +493,7 @@ function ModificationRequestCard({
                                                                             }
                                                                         </HiddenElement>
                                                                     </div>
-                                                                    <div className="flex items-center space-x-1">
+                                                                    <div className="flex items-center gap-x-1">
                                                                         <p className="text-xs">{resolveLanguageKey("cost")}/{resolveLanguageKey("unit")}:</p>
                                                                         <HiddenElement>
                                                                             {
@@ -769,7 +769,7 @@ function ModificationRequestCard({
                         <div className="w-full min-w-0">
                             <div className={CARD_BODY_CLASS}>
                                 <div className="relative w-full max-w-full">
-                                    <div className="relative flex flex-wrap items-center gap-2">
+                                    <div className="flex flex-wrap items-center gap-2 pr-8">
                                         <HiddenElement>
                                             {
                                                 read?.name &&
@@ -814,25 +814,6 @@ function ModificationRequestCard({
                                                 </>
                                             }
                                         </HiddenElement>
-                                        <EntityCardActionMenu variant="inline">
-                                            <ActionMenu
-                                                accessModel={"modificationRequests"}
-                                                deletedData={displayRequest}
-                                                hideEdit={modificationRequestShouldHideEdit(displayRequest, write)}
-                                                onAction={(a: string) => setAction(a)}
-                                                editPath={modificationRequestEditPath(displayRequest._id, displayRequest.name ?? "", resolvedUnitId, resolvedUnitName)}
-                                                allowMenuForCustomChildren={true}
-                                            >
-                                                <ModificationRequestRowMenuExtras
-                                                    request={displayRequest}
-                                                    onAction={(a: string) => setAction(a)}
-                                                    onModified={(updated: any) => {
-                                                        setLocalRequest(updated);
-                                                        onModified?.(updated);
-                                                    }}
-                                                />
-                                            </ActionMenu>
-                                        </EntityCardActionMenu>
                                     </div>
                                     <HiddenElement>
                                         {
@@ -842,8 +823,27 @@ function ModificationRequestCard({
                                             </>
                                         }
                                     </HiddenElement>
+                                    <EntityCardActionMenu>
+                                        <ActionMenu
+                                            accessModel={"modificationRequests"}
+                                            deletedData={displayRequest}
+                                            hideEdit={modificationRequestShouldHideEdit(displayRequest, write)}
+                                            onAction={(a: string) => setAction(a)}
+                                            editPath={modificationRequestEditPath(displayRequest._id, displayRequest.name ?? "", resolvedUnitId, resolvedUnitName)}
+                                            allowMenuForCustomChildren={true}
+                                        >
+                                            <ModificationRequestRowMenuExtras
+                                                request={displayRequest}
+                                                onAction={(a: string) => setAction(a)}
+                                                onModified={(updated: any) => {
+                                                    setLocalRequest(updated);
+                                                    onModified?.(updated);
+                                                }}
+                                            />
+                                        </ActionMenu>
+                                    </EntityCardActionMenu>
                                 </div>
-                                <div className={cn(CARD_INFO_ROWS_CLASS, "grid grid-cols-1 sm:grid-cols-2 gap-1")}>
+                                <InfoRowGroup className={cn("grid grid-cols-1 sm:grid-cols-2 gap-1")}>
                                     <HiddenElement>
                                         {read?.unit && (
                                             <InfoRow
@@ -914,7 +914,7 @@ function ModificationRequestCard({
                                                     label={resolveLanguageKey("totalCost")}
                                                     className="text-success"
                                                     value={
-                                                        <div className="flex items-center space-x-0">
+                                                        <div className="flex items-center gap-x-0">
                                                             <HiddenElement>
                                                                 {
                                                                     (read?.financeDetails?.keys?.currency?.keys?.symbol || read?.financeDetails?.keys?.currency?.keys?.abbreviation || read?.financeDetails?.keys?.currency?.keys?.name) &&
@@ -942,7 +942,7 @@ function ModificationRequestCard({
                                             </>
                                         }
                                     </HiddenElement>
-                                </div>
+                                </InfoRowGroup>
                                 {/* Timeline */}
                                 <div className="flex w-full flex-nowrap">
                                     {renderArchitectApproval("architect", resolveLanguageKey("architectApproval"))}

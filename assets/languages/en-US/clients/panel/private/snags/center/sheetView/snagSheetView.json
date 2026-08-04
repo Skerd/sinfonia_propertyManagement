@@ -26,6 +26,8 @@
   "isDlp": "Within defects liability period",
   "variationOrder": "Variation order",
   "none": "None",
+  "yes": "Yes",
+  "no": "No",
   "statuses": {
     "open": "Open",
     "in_progress": "In Progress",

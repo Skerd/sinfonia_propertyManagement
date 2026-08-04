@@ -169,7 +169,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         <div className="flex flex-col h-full overflow-hidden">
             <Header title={rk("title")} description={rk("description")} />
 
-            <div className="shrink-0 border-b px-4 py-3 space-y-3">
+            <div className="flex flex-col shrink-0 border-b px-4 py-3 gap-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 items-end">
                     <div className="flex flex-col gap-1.5 sm:col-span-2 lg:col-span-2 xl:col-span-2">
                         <Label className="text-xs">{rk("datasetsLabel")}</Label>
@@ -253,7 +253,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
 
             <div className="flex-1 overflow-auto p-4">
                 {result && format === "json" && (
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-y-4">
                         {ERP_EXPORT_DATASET_VALUES.filter((ds) => selectedDatasetSet.has(ds)).map((dataset) => {
                             const rows = datasetRows(result, dataset);
                             if (!rows.length) return null;

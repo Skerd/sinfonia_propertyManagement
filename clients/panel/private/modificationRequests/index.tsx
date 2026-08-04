@@ -3,11 +3,11 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useMemo} from "react";
-import {buildTitleBreadcrumb, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import ModificationRequestCard from "@propertyManagementModule/clients/panel/private/modificationRequests/center/cardView/modificationRequestCard.tsx";
 import ModificationRequestSheetView from "@propertyManagementModule/clients/panel/private/modificationRequests/center/sheetView/modificationRequestSheetView.tsx";
@@ -55,6 +55,7 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
                 {value: "pending_architect_revision", label: resolveLanguageKey("fields.!enums.status.pending_architect_revision") as string},
                 {value: "pending_engineer_revision",  label: resolveLanguageKey("fields.!enums.status.pending_engineer_revision")  as string},
                 {value: "pending_finance",            label: resolveLanguageKey("fields.!enums.status.pending_finance")            as string},
+                {value: "pending_client_approval",    label: resolveLanguageKey("fields.!enums.status.pending_client_approval")    as string},
                 {value: "finance_completed",          label: resolveLanguageKey("fields.!enums.status.finance_completed")          as string},
                 {value: "pending_delivery",           label: resolveLanguageKey("fields.!enums.status.pending_delivery")           as string},
                 {value: "completed",                  label: resolveLanguageKey("fields.!enums.status.completed")                  as string},
@@ -81,7 +82,7 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
     ], [resolveLanguageKey]);
 
     const headerTitle = useMemo(
-        () => buildTitleBreadcrumb(resolveLanguageKey("title") as string, [unitName]),
+        () => buildPageTitle(resolveLanguageKey("title") as string, [unitName]),
         [resolveLanguageKey, unitName],
     );
 
@@ -106,7 +107,7 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
             syncExtraFiltersKeys={["unitId"]}
             buildEditPath={buildModificationRequestEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            cardViewClassName={cn(GRID_TRANSACTIONAL, "md:grid-cols-3 mt-0.5")}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4, "mt-0.5")}
             rowActionMenu={{
                 allowMenuForCustomChildren: true,
                 hideEdit: (request) => modificationRequestShouldHideEdit(request, write),

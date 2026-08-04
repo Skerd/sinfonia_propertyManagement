@@ -26,6 +26,8 @@
   "isDlp": "Brenda periudhës së përgjegjësisë për defekte",
   "variationOrder": "Urdhëri i variacionit",
   "none": "Asnjë",
+  "yes": "Po",
+  "no": "Jo",
   "statuses": {
     "open": "Hapur",
     "in_progress": "Në progres",

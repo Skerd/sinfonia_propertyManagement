@@ -56,7 +56,7 @@ export function UnitStatusBadge({
         return (
             <span
                 className={cn(
-                    "shrink-0 text-xs px-2 py-0.5 rounded-full font-semibold text-white mb-0.5",
+                    "shrink-0 text-xs px-2 py-0.5 rounded-full font-semibold text-status-foreground mb-0.5",
                     overlayTone,
                     className,
                 )}

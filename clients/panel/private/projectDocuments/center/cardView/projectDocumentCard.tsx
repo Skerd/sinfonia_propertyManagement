@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -19,7 +20,7 @@ import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.ts
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS, STATUS_BADGE_NEUTRAL, STATUS_BADGE_WARNING} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL, STATUS_BADGE_WARNING} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import SubmitForReviewProjectDocument, {SUBMIT_FOR_REVIEW_PROJECT_DOCUMENT_ACTION} from "@propertyManagementModule/clients/panel/private/projectDocuments/center/actions/submitForReview.tsx";
 import ApproveProjectDocument, {APPROVE_PROJECT_DOCUMENT_ACTION} from "@propertyManagementModule/clients/panel/private/projectDocuments/center/actions/approve.tsx";
 import RejectProjectDocument, {REJECT_PROJECT_DOCUMENT_ACTION} from "@propertyManagementModule/clients/panel/private/projectDocuments/center/actions/reject.tsx";
@@ -143,7 +144,7 @@ function ProjectDocumentCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconBuilding}
                             label={resolveLanguageKey("fields.project")}
@@ -162,16 +163,16 @@ function ProjectDocumentCard({
                             show={!!read?.documentNumber && !!projectDocument.documentNumber}
                             value={projectDocument.documentNumber}
                         />
-                    </div>
+                    </InfoRowGroup>
                     <Separator />
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.revisionDate")}
                             show={!!read?.revisionDate}
                             value={formatDate(projectDocument.revisionDate)}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

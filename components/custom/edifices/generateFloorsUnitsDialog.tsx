@@ -107,7 +107,7 @@ function GenerateFloorsUnitsDialog({
                     </DialogDescription>
                 </DialogHeader>
                 
-                <div className="space-y-4 ">
+                <div className="flex flex-col gap-y-4 ">
                     <Alert>
                         <AlertTriangle className="h-4 w-4" />
                         <AlertDescription>
@@ -115,7 +115,7 @@ function GenerateFloorsUnitsDialog({
                         </AlertDescription>
                     </Alert>
 
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-y-2">
                         <p className="text-sm font-medium">
                             {resolveLanguageKey("fileLabel")}
                         </p>

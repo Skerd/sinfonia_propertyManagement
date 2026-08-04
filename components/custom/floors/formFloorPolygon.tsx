@@ -190,7 +190,7 @@ export default function FormFloorPolygon({
     }[];
 
     return (
-        <div className="space-y-2">
+        <div className="flex flex-col gap-y-2">
             <p className="text-sm text-muted-foreground">{resolveLanguageKey(hintKey)}</p>
             <PolygonSelector
                 resolveLanguageKey={resolveLanguageKey}

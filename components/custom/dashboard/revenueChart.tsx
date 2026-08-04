@@ -15,6 +15,7 @@ import {
   type ChartConfig,
 } from "@coreModule/components/ui/chart.tsx";
 import { chartTooltipValueFormatter } from "@coreModule/components/custom/chartTooltipFormatter.tsx";
+import { formatCurrency } from "@coreModule/helpers/general";
 import { DashboardWidgetCard } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
 
 /** Data props for the revenue chart (from API/summary). */
@@ -73,10 +74,13 @@ export function dashboardSummaryToRevenueChart(summary: DashboardSummary | null 
   };
 }
 
+/**
+ * Compact currency through `Intl` rather than a hand-rolled divide-and-suffix:
+ * the previous version emitted `1.6M €` regardless of locale while the axis on
+ * the neighbouring chart emitted `$1600000`.
+ */
 function formatChartValue(value: number): string {
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M €`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(0)}K €`;
-  return `${value} €`;
+  return formatCurrency(value, "EUR", {compact: true});
 }
 
 function RevenueChartInner({
@@ -165,30 +169,30 @@ function RevenueChartInner({
         </BarChart>
       </ChartContainer>
 
-      <div className="grid grid-cols-4 gap-4 mt-6 pt-4 border-t border-border">
+      <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(8rem,100%),1fr))] gap-4 border-t border-border pt-4">
         <div className="text-center">
-          <p className="text-status-sold text-2xl font-display font-bold">
+          <p className="font-display text-2xl font-bold tabular-nums text-status-sold">
             {formatChartValue(collectedAmount)}
           </p>
-          <p className="text-muted-foreground text-sm">{resolveLanguageKey('collected')}</p>
+          <p className="text-sm text-muted-foreground">{resolveLanguageKey('collected')}</p>
         </div>
         <div className="text-center">
-          <p className="text-status-reserved text-2xl font-display font-bold">
+          <p className="font-display text-2xl font-bold tabular-nums text-status-reserved">
             {formatChartValue(soldValue + reservedValue - collectedAmount)}
           </p>
-          <p className="text-muted-foreground text-sm">{resolveLanguageKey('pending')}</p>
+          <p className="text-sm text-muted-foreground">{resolveLanguageKey('pending')}</p>
         </div>
         <div className="text-center">
-          <p className="text-status-available text-2xl font-display font-bold">
+          <p className="font-display text-2xl font-bold tabular-nums text-status-available">
             {formatChartValue(unsoldValue)}
           </p>
-          <p className="text-muted-foreground text-sm">{resolveLanguageKey('unsold')}</p>
+          <p className="text-sm text-muted-foreground">{resolveLanguageKey('unsold')}</p>
         </div>
         <div className="text-center">
-          <p className="text-destructive text-2xl font-display font-bold">
+          <p className="font-display text-2xl font-bold tabular-nums text-destructive">
             {formatChartValue(totalExpenses)}
           </p>
-          <p className="text-muted-foreground text-sm">{resolveLanguageKey('expenses')}</p>
+          <p className="text-sm text-muted-foreground">{resolveLanguageKey('expenses')}</p>
         </div>
       </div>
     </DashboardWidgetCard>

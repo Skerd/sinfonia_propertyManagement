@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -11,17 +12,17 @@ import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconBuilding, IconCalendar, IconStack2} from "@tabler/icons-react";
+import {IconBuilding, IconCalendar, IconLabel, IconStack2} from "@tabler/icons-react";
 import ConstructionUpdateSheetView from "@propertyManagementModule/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
 import {
     CARD_BODY_CLASS,
-    CARD_INFO_ROWS_CLASS,
     STATUS_BADGE_INFO,
     STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
@@ -92,18 +93,14 @@ function ConstructionUpdateCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={update.title}
-                    subtitle={update.name}
+                    title={
+                        <span className="flex min-w-0 items-center gap-1">
+                            <span className="truncate">{update.title}</span>
+                            {!!read?.name && update.name ? <CopyTooltip text={update.name} /> : null}
+                        </span>
+                    }
                     badges={
                         <>
-                            {formattedDate ? (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("fields.updateDate") as string}>
-                                    <Badge variant="outline" className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                                        <IconCalendar className="h-3 w-3" />
-                                        {formattedDate}
-                                    </Badge>
-                                </TooltipDisplayer>
-                            ) : null}
                             {update.progressPercent != null ? (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("fields.progressPercent") as string}>
                                     <Badge
@@ -114,10 +111,17 @@ function ConstructionUpdateCard({
                                     </Badge>
                                 </TooltipDisplayer>
                             ) : null}
+                            {formattedDate ? (
+                                <TooltipDisplayer tooltip={resolveLanguageKey("fields.updateDate") as string}>
+                                    <Badge variant="outline" className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                                        <IconCalendar className="h-3 w-3 shrink-0" />
+                                        {formattedDate}
+                                    </Badge>
+                                </TooltipDisplayer>
+                            ) : null}
                         </>
                     }
                     showTitle={!!read?.title}
-                    showSubtitle={!!read?.name}
                     showBadges={!!(read?.updateDate || read?.progressPercent)}
                     hideActions={hideActions}
                     actionMenu={
@@ -126,7 +130,13 @@ function ConstructionUpdateCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
+                        <InfoRow
+                            icon={IconLabel}
+                            label={resolveLanguageKey("fields.name")}
+                            show={!!read?.name}
+                            value={update.name}
+                        />
                         <InfoRow
                             icon={IconBuilding}
                             label={resolveLanguageKey("fields.project")}
@@ -139,7 +149,7 @@ function ConstructionUpdateCard({
                             show={!!read?.edifice}
                             value={update.edifice?.name}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

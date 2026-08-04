@@ -199,7 +199,7 @@ function ApproveModificationRequestDialog({
                             {resolveLanguageKey("approveConfirmDescription").replace("{stage}", getStageLabel())}
                         </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <div className="space-y-4">
+                    <div className="flex flex-col gap-y-4">
 
                         <div className="rounded-md border p-3 bg-muted/40">
                             <p className="text-xs text-muted-foreground mb-2">{resolveLanguageKey("stageLabel")}</p>
@@ -222,7 +222,7 @@ function ApproveModificationRequestDialog({
                                 {materials.length === 0 ? (
                                     <p className="text-xs text-muted-foreground">{resolveLanguageKey("materialsPlanEmptyHint")}</p>
                                 ) : (
-                                    <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
+                                    <div className="flex flex-col gap-y-2 max-h-64 overflow-y-auto pr-1">
                                         {materials.map((material, idx) => (
                                             <div key={`material-${idx}`} className="grid grid-cols-1 md:grid-cols-12 gap-2 rounded-md border p-2">
                                                 <input
@@ -376,7 +376,7 @@ function ApproveModificationRequestDialog({
                         <AlertDialogAction
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleApprove(); }}
                             disabled={loading}
-                            className={cn({"hover:bg-success hover:text-white": decision === "approved", "text-destructive-foreground hover:text-white hover:bg-destructive/90": decision === "rejected"})}
+                            className={cn({"hover:bg-success hover:text-success-foreground": decision === "approved", "text-destructive-foreground hover:bg-destructive/90": decision === "rejected"})}
                         >
                             {(loading) ? <LoaderCircle className="animate-spin"/> : (decision === "approved" ? <CheckCircle2 /> : <XCircle />)}
                             <p>{resolveLanguageKey("confirmButton")}</p>

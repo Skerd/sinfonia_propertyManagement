@@ -42,10 +42,16 @@
     "pending_architect_revision": "Ausstehend architect revision",
     "pending_engineer_revision": "Ausstehend engineer revision",
     "pending_finance": "Ausstehend finanzen",
+    "pending_client_approval": "Ausstehend Kundenfreigabe",
     "finance_completed": "Finanzen abgeschlossen",
     "pending_delivery": "Ausstehend delivery",
     "completed": "Abgeschlossen",
     "cancelled": "Storniert"
+  },
+  "decisions": {
+    "pending": "Ausstehend",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt"
   },
   "stageDueDate": "Phase fällig datum",
   "constructionTypes": {

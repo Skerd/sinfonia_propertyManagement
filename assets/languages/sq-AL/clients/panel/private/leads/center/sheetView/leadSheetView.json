@@ -43,13 +43,15 @@
     "other": "Tjetër"
   },
   "activityActions": {
-    "called": "telefonoi",
-    "emailed": "dërgoi email",
-    "meeting": "mbajti një takim",
-    "site_visit": "bëri një vizitë në vend",
-    "proposal_sent": "dërgoi një propozim",
-    "follow_up": "ndjeki",
-    "note": "shtoi një shënim"
+    "called": "Telefonatë",
+    "emailed": "Email",
+    "meeting": "Takim",
+    "site_visit": "Vizitë në vend",
+    "proposal_sent": "Propozim i dërguar",
+    "follow_up": "Ndjekje",
+    "note": "Shënim",
+    "status_update": "Përditësim statusi",
+    "created": "Krijuar"
   },
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",

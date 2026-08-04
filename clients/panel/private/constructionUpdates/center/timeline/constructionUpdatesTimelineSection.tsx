@@ -71,7 +71,7 @@ function TimelinePreview({
                     {String(resolveLanguageKey("noPhoto"))}
                 </div>
             )}
-            <div className="space-y-1.5 bg-card px-3 py-2.5 text-card-foreground">
+            <div className="flex flex-col gap-y-1.5 bg-card px-3 py-2.5 text-card-foreground">
                 <p className="text-sm font-semibold leading-tight">{update.title}</p>
                 <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1">
@@ -176,22 +176,22 @@ function ConstructionUpdatesTimelineSection({
                     </div>
                     <div className="flex shrink-0 flex-wrap items-center justify-end gap-1.5">
                         {loading && (
-                            <Badge variant="outline" className="text-[10px]">
+                            <Badge variant="outline" className="text-3xs">
                                 {String(resolveLanguageKey("loading"))}
                             </Badge>
                         )}
                         {!loading && !error && updates.length > 0 && (
                             <>
                                 {latestProgress != null && (
-                                    <Badge variant="secondary" className="text-[10px]">
+                                    <Badge variant="secondary" className="text-3xs">
                                         {latestProgress}%
                                     </Badge>
                                 )}
-                                <Badge variant="outline" className="text-[10px]">
+                                <Badge variant="outline" className="text-3xs">
                                     {updates.length} {String(resolveLanguageKey("updatesCount"))}
                                 </Badge>
                                 {dateRangeLabel && (
-                                    <Badge variant="outline" className="hidden text-[10px] sm:inline-flex">
+                                    <Badge variant="outline" className="hidden text-3xs sm:inline-flex">
                                         {dateRangeLabel}
                                     </Badge>
                                 )}
@@ -272,7 +272,7 @@ function ConstructionUpdatesTimelineSection({
                                                 </Tooltip>
 
                                                 <div className="mt-3 w-full px-1 text-center">
-                                                    <p className="text-[11px] font-medium text-muted-foreground">
+                                                    <p className="text-2xs font-medium text-muted-foreground">
                                                         {formatDate(update.updateDate)}
                                                     </p>
                                                     <p className="mt-0.5 text-xs font-semibold leading-snug line-clamp-2">
@@ -287,11 +287,11 @@ function ConstructionUpdatesTimelineSection({
                                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t pt-3 text-xs text-muted-foreground">
                                     <span>{String(resolveLanguageKey("hint"))}</span>
                                     <div className="flex flex-wrap gap-2">
-                                        <Badge variant="outline" className="text-[10px]">
+                                        <Badge variant="outline" className="text-3xs">
                                             {updates.length} {String(resolveLanguageKey("updatesCount"))}
                                         </Badge>
                                         {dateRangeLabel && (
-                                            <Badge variant="outline" className="text-[10px]">
+                                            <Badge variant="outline" className="text-3xs">
                                                 {dateRangeLabel}
                                             </Badge>
                                         )}

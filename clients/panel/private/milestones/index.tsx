@@ -2,9 +2,9 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconFlag} from "@tabler/icons-react";
-import {buildTitleBreadcrumb} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general";
 import type {Milestone} from "armonia/src/modules/propertyManagement/api/realEstate/private/milestone/milestone.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import MilestoneCard from "@propertyManagementModule/clients/panel/private/milestones/center/cardView/milestoneCard.tsx";
@@ -33,7 +33,7 @@ function buildMilestoneEditPath(milestone: Milestone) {
 
 function AllMilestones({resolveLanguageKey, projectId, projectName}: AllMilestonesProps) {
     const extraFilters = projectId ? {projectId} : undefined;
-    const headerTitle = buildTitleBreadcrumb(
+    const headerTitle = buildPageTitle(
         String(resolveLanguageKey("title")),
         projectName ? [projectName] : [],
     );
@@ -53,7 +53,7 @@ function AllMilestones({resolveLanguageKey, projectId, projectName}: AllMileston
             buildEditPath={buildMilestoneEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
             headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}

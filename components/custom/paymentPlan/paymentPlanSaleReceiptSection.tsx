@@ -528,7 +528,7 @@ export default function PaymentPlanSaleReceiptSection({
                         {resolveLanguageKey("paymentPlanScheduleTitle")}
                     </p>
                 </CardHeader>
-                <CardContent className="border-t px-2 w-full pt-4 space-y-3">
+                <CardContent className="flex flex-col border-t px-2 w-full pt-4 gap-y-3">
                     <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">{resolveLanguageKey("financedAmountLabel")}</span>
                         <span className="font-semibold">
@@ -721,7 +721,7 @@ export default function PaymentPlanSaleReceiptSection({
                                     }}
                                 />
                                 :
-                                <div className="text space-y-2 font-semibold">
+                                <div className="flex flex-col text gap-y-2 font-semibold">
                                     {unit?.reservation && (
                                         <ReservationCard
                                             fetchId={unit.reservation._id}
@@ -736,7 +736,7 @@ export default function PaymentPlanSaleReceiptSection({
                                             "group p-0 h-fit relative transition-all duration-300 hover:shadow-md hover:cursor-pointer",
                                         )}
                                     >
-                                        <div className="flex flex-col w-full items-stretch p-2 space-y-2">
+                                        <div className="flex flex-col w-full items-stretch p-2 gap-y-2">
                                             <div className="flex justify-between">
                                                 <p className="tracking-wide">{resolveLanguageKey("form.unitPriceLabel")}:</p>
                                                 <p className="font-semibold text-success">

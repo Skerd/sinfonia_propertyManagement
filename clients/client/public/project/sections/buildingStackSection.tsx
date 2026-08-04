@@ -20,13 +20,13 @@ function BuildingStackSection({project, onUnitSelect}: BuildingStackSectionProps
     return (
         <section className="py-12">
             <h2 className={`mb-8 ${PUBLIC_HEADING}`}>Building stack</h2>
-            <div className="space-y-4">
+            <div className="flex flex-col gap-y-4">
                 {project.edifices?.map((edifice) => (
-                    <div key={edifice._id} className="overflow-hidden rounded-[5px] border border-pronix-border">
+                    <div key={edifice._id} className="overflow-hidden rounded-sm border border-pronix-border">
                         <button
                             type="button"
                             onClick={() => setExpandedEdifice(expandedEdifice === edifice._id ? null : edifice._id)}
-                            className="flex w-full items-center justify-between bg-[#fafafa] px-6 py-4 text-left"
+                            className="flex w-full items-center justify-between bg-muted px-6 py-4 text-left"
                         >
                             <span className={`${PUBLIC_BODY} font-aeonik-medium text-pronix-ink`}>{edifice.name}</span>
                             <span className="font-aeonik-light text-pronix-ink-muted">{edifice.floors?.length ?? 0} floors</span>
@@ -42,7 +42,7 @@ function BuildingStackSection({project, onUnitSelect}: BuildingStackSectionProps
                                                     key={unit._id}
                                                     type="button"
                                                     onClick={() => onUnitSelect(unit._id)}
-                                                    className="group flex items-center gap-2 rounded-[3px] border border-pronix-border px-3 py-2 transition hover:border-pronix-blue"
+                                                    className="group flex items-center gap-2 rounded-xs border border-pronix-border px-3 py-2 transition hover:border-pronix-blue"
                                                 >
                                                     <span className={cn("size-2 rounded-full", statusColors[unit.status])} />
                                                     <span className="font-aeonik-light text-sm text-pronix-ink group-hover:text-pronix-blue">{unit.name}</span>

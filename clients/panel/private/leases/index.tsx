@@ -11,7 +11,7 @@ import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/l
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
 import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 
 interface AllLeasesProps extends WithLanguageType {
     unitId?: string;
@@ -43,7 +43,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             buildEditPath={buildLeaseEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(lease, onDelete, onRestore, listRef) => (

@@ -103,8 +103,8 @@ function AddLeadActivityDialog({
                         {resolveLanguageKey("dialogDescription")}
                     </DialogDescription>
                 </DialogHeader>
-                <div className="space-y-4 py-2">
-                    <div className="space-y-2">
+                <div className="flex flex-col gap-y-4 py-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("actionLabel")}</Label>
                         <SimpleSelect
                             options={actionOptions}
@@ -114,7 +114,7 @@ function AddLeadActivityDialog({
                             disabled={loading}
                         />
                     </div>
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("notesLabel")}</Label>
                         <Textarea
                             value={notes}

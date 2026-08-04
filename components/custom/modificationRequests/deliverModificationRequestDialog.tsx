@@ -129,7 +129,7 @@ function DeliverModificationRequestDialog({
                             {resolveLanguageKey("deliverConfirmDescription")}
                         </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <div className="py-4 space-y-4">
+                    <div className="flex flex-col py-4 gap-y-4">
                         <div>
                             <Label htmlFor="notes" className="mb-2">
                                 {resolveLanguageKey("notesLabel")}
@@ -232,7 +232,7 @@ function DeliverModificationRequestDialog({
                         <AlertDialogAction
                             onClick={(e) => {e.preventDefault(); e.stopPropagation(); handleDeliver();}}
                             disabled={loading}
-                            className="hover:text-white hover:bg-success"
+                            className="hover:text-success-foreground hover:bg-success"
                         >
                             {(loading) ? <LoaderCircle className="animate-spin"/> : <Package />}
                             <p>{resolveLanguageKey("confirmButton")}</p>

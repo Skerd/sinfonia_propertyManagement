@@ -6,7 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconFrustumPlus} from "@tabler/icons-react";
 import {X} from "lucide-react";
 import {ApiSelect} from "@coreModule/components/custom/apiSelect";
-import {buildTitleBreadcrumb, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import {UnitStatus} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.constants.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -14,7 +14,7 @@ import UnitCard from "@propertyManagementModule/clients/panel/private/units/cent
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {MASONRY_HIERARCHY_BREAKPOINTS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 type AllUnitsProps = WithLanguageType & {
@@ -33,7 +33,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
     const floorName   = searchParams.get("floorName")   || undefined;
 
     const headerTitle = useMemo(
-        () => buildTitleBreadcrumb(resolveLanguageKey("title") as string, [projectName, edificeName, floorName]),
+        () => buildPageTitle(resolveLanguageKey("title") as string, [projectName, edificeName, floorName]),
         [resolveLanguageKey, projectName, edificeName, floorName],
     );
 
@@ -174,8 +174,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
             aboveToolbar={userFilterBar}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/units/center/sheetView/unitSheetView.tsx"
-            cardLayout="masonry"
-            masonryBreakpointCols={MASONRY_HIERARCHY_BREAKPOINTS}
+            cardViewClassName={GRID_HIERARCHY}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(unit, onDelete, onRestore) => (
                 <UnitCard

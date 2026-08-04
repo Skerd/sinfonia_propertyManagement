@@ -84,7 +84,7 @@ function EdificeGalleryInner({
   }
 
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-y-3">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold">{resolveLanguageKey("edificesTitle") ?? "Edifices"}</h3>
         <div className="flex items-center gap-1">

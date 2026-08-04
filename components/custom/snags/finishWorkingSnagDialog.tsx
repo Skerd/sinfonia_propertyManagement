@@ -108,8 +108,8 @@ function FinishWorkingSnagDialog({
                         {resolveLanguageKey("dialogDescription")}
                     </DialogDescription>
                 </DialogHeader>
-                <div className="space-y-4 py-2">
-                    <div className="space-y-2">
+                <div className="flex flex-col gap-y-4 py-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("notesLabel")}</Label>
                         <Textarea
                             value={notes}
@@ -120,7 +120,7 @@ function FinishWorkingSnagDialog({
                             className="resize-none max-h-80"
                         />
                     </div>
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("photosLabel")}</Label>
                         <input
                             ref={mediaInputRef}

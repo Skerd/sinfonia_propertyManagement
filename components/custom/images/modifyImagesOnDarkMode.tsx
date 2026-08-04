@@ -18,7 +18,7 @@ export function ModifyImagesOnDarkMode({
     className,
 }: ModifyImagesOnDarkModeProps) {
     return (
-        <span className="absolute inset-0 block overflow-hidden bg-background dark:bg-black">
+        <span className="absolute inset-0 block overflow-hidden bg-background">
             <img
                 src={src}
                 alt={alt}

@@ -43,13 +43,15 @@
     "other": "Other"
   },
   "activityActions": {
-    "called": "called",
-    "emailed": "emailed",
-    "meeting": "had a meeting",
-    "site_visit": "had a site visit",
-    "proposal_sent": "sent a proposal",
-    "follow_up": "followed up",
-    "note": "added a note"
+    "called": "Called",
+    "emailed": "Emailed",
+    "meeting": "Meeting",
+    "site_visit": "Site visit",
+    "proposal_sent": "Proposal sent",
+    "follow_up": "Follow-up",
+    "note": "Note",
+    "status_update": "Status update",
+    "created": "Created"
   },
   "lifecycle": "Lifecycle",
   "createdAt": "Created at",

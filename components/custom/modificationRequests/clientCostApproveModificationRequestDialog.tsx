@@ -80,7 +80,7 @@ function ClientCostApproveModificationRequestDialog({
                         {resolveLanguageKey("description")}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="space-y-4 py-2">
+                <div className="flex flex-col gap-y-4 py-2">
                     {totalCost != null && (
                         <div className="rounded-md border p-3 bg-muted/40">
                             <p className="text-xs text-muted-foreground mb-1">{resolveLanguageKey("totalCostLabel")}</p>
@@ -124,8 +124,8 @@ function ClientCostApproveModificationRequestDialog({
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleSubmit(); }}
                         disabled={loading}
                         className={cn({
-                            "hover:bg-success hover:text-white": decision === "approved",
-                            "text-destructive-foreground hover:text-white hover:bg-destructive/90": decision === "rejected",
+                            "hover:bg-success hover:text-success-foreground": decision === "approved",
+                            "text-destructive-foreground hover:bg-destructive/90": decision === "rejected",
                         })}
                     >
                         {loading ? <LoaderCircle className="animate-spin" /> : decision === "approved" ? <CheckCircle2 /> : <XCircle />}

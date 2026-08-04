@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -25,7 +26,7 @@ import {EntityCardShell} from "@propertyManagementModule/components/custom/cards
 import {EntityMediaHeader} from "@propertyManagementModule/components/custom/cards/EntityMediaHeader.tsx";
 import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
 import {EntityCardFetchGuard} from "@propertyManagementModule/components/custom/cards/EntityCardFetchGuard.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import EdificeSheetView from "@propertyManagementModule/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx";
 import ViewFloors from "@propertyManagementModule/clients/panel/private/edifices/center/actions/viewFloors.tsx";
 import ViewFloorsOverlay from "@propertyManagementModule/clients/panel/private/edifices/center/actions/viewFloorsOverlay.tsx";
@@ -151,7 +152,7 @@ function EdificeCard({
                 />
                 <div className={CARD_BODY_CLASS}>
                     {read && (
-                        <div className={CARD_INFO_ROWS_CLASS}>
+                        <InfoRowGroup>
                                     <InfoRow
                                         icon={IconGrid4x4}
                                         label={resolveLanguageKey("data.totalArea")}
@@ -193,27 +194,25 @@ function EdificeCard({
                                             </span>
                                         }
                                     />
-                                </div>
+                                </InfoRowGroup>
                             )}
                             {!!edifice.statistics && (
                                 <div className="flex flex-col gap-1">
                                     <Separator />
-                                    <div className={CARD_INFO_ROWS_CLASS}>
+                                    <InfoRowGroup>
                                         <InfoRow
                                             icon={IconStack}
                                             label={resolveLanguageKey("statistics.floors")}
                                             tooltip={resolveLanguageKey("statistics.floorsTooltip")}
-                                            show={!!read?.statistics}
                                             value={edifice.statistics.totalFloors != null && edifice.statistics.totalFloors}
                                         />
                                         <InfoRow
                                             icon={IconDoor}
                                             label={resolveLanguageKey("statistics.units")}
                                             tooltip={resolveLanguageKey("statistics.unitsTooltip")}
-                                            show={!!read?.statistics}
                                             value={edifice.statistics.totalUnits != null && edifice.statistics.totalUnits}
                                         />
-                                    </div>
+                                    </InfoRowGroup>
                                     <EntityStatusBadgeRow
                                         unitsByStatus={edifice.statistics.unitsByStatus}
                                         resolveLanguageKey={resolveLanguageKey}

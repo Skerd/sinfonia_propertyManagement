@@ -98,10 +98,16 @@
         "pending_architect_revision": "Pending Architect Revision",
         "pending_engineer_revision": "Pending Engineer Revision",
         "pending_finance": "Pending Finance",
+        "pending_client_approval": "Pending Client Approval",
         "finance_completed": "Finance Completed",
         "pending_delivery": "Pending Delivery",
         "completed": "Completed",
         "cancelled": "Cancelled"
+      },
+      "decision": {
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "pending": "Pending"
       },
       "architectApproval": {
         "decision": {
@@ -125,6 +131,13 @@
         }
       },
       "deliveryApproval": {
+        "decision": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "pending": "Pending"
+        }
+      },
+      "clientCostApproval": {
         "decision": {
           "approved": "Approved",
           "rejected": "Rejected",

@@ -4,8 +4,9 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconBackhoe} from "@tabler/icons-react";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import {buildTitleBreadcrumb} from "@coreModule/helpers/general";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {buildPageTitle} from "@coreModule/helpers/general";
 import type {ConstructionUpdate} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructionUpdate/constructionUpdate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ConstructionUpdateCard from "@propertyManagementModule/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx";
@@ -28,7 +29,7 @@ function buildEditPath(update: ConstructionUpdate) {
 
 function AllConstructionUpdates({resolveLanguageKey, projectId, projectName}: AllConstructionUpdatesProps) {
     const extraFilters = projectId ? {projectId} : undefined;
-    const headerTitle = buildTitleBreadcrumb(
+    const headerTitle = buildPageTitle(
         String(resolveLanguageKey("title")),
         projectName ? [projectName] : [],
     );
@@ -47,7 +48,7 @@ function AllConstructionUpdates({resolveLanguageKey, projectId, projectName}: Al
                 buildEditPath={buildEditPath}
                 resolveLanguageKey={resolveLanguageKey}
                 sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx"
-                cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+                cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
                 extraFilters={extraFilters}
                 headerTitle={headerTitle}
                 aboveToolbar={(

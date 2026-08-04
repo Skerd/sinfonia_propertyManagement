@@ -178,7 +178,7 @@ function FinanceModificationRequestDialog({
     return (
         <AlertDialog open={open} onOpenChange={handleOpenChange}>
                 <AlertDialogContent className="max-w-7xl min-w-[40vw] w-[95vw] max-h-[90vh] overflow-y-auto overflow-x-hidden">
-                    <AlertDialogHeader className="shrink-0 space-y-2">
+                    <AlertDialogHeader className="flex flex-col shrink-0 gap-y-2">
                         <AlertDialogTitle>{resolveLanguageKey("title")}</AlertDialogTitle>
                         <AlertDialogDescription>
                             {resolveLanguageKey("description")}
@@ -475,7 +475,7 @@ function FinanceModificationRequestDialog({
                             }}
                             form="finance-form"
                             disabled={loading || hasMismatch}
-                            className="bg-success text-white hover:bg-success"
+                            className="bg-success text-success-foreground hover:bg-success"
                         >
                             {loading ? <LoaderCircle className="animate-spin" size={16} /> : <DollarSign size={16} className="" />}
                             {resolveLanguageKey("confirmButton")}

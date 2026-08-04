@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -24,7 +25,6 @@ import {EntityCardFetchGuard} from "@propertyManagementModule/components/custom/
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
 import {
     CARD_BODY_CLASS,
-    CARD_INFO_ROWS_CLASS,
     STATUS_BADGE_DANGER,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
@@ -150,7 +150,7 @@ function PaymentPlanCard({
                         }
                     />
                     <div className={CARD_BODY_CLASS}>
-                        <div className={cn(CARD_INFO_ROWS_CLASS, "grid grid-cols-2 lg:grid-cols-3 px-1", {"lg:grid-cols-3": !small})}>
+                        <InfoRowGroup className={cn("grid grid-cols-2 lg:grid-cols-3 px-1", {"lg:grid-cols-3": !small})}>
                             <InfoRow
                                 icon={IconWallet}
                                 label={resolveLanguageKey("remainingBalance")}
@@ -172,7 +172,7 @@ function PaymentPlanCard({
                                 show={!!read?.endDate}
                                 value={paymentPlan.endDate ? format(new Date(paymentPlan.endDate), "PP") : null}
                             />
-                        </div>
+                        </InfoRowGroup>
                     </div>
                 </EntityCardShell>
 

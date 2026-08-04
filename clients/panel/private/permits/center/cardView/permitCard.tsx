@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -19,7 +20,7 @@ import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.ts
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import SubmitPermit, {SUBMIT_PERMIT_ACTION} from "@propertyManagementModule/clients/panel/private/permits/center/actions/submit.tsx";
 import MarkUnderReviewPermit, {MARK_UNDER_REVIEW_PERMIT_ACTION} from "@propertyManagementModule/clients/panel/private/permits/center/actions/markUnderReview.tsx";
 import ApprovePermit, {APPROVE_PERMIT_ACTION} from "@propertyManagementModule/clients/panel/private/permits/center/actions/approve.tsx";
@@ -131,7 +132,7 @@ function PermitCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconFolder}
                             label={resolveLanguageKey("fields.project")}
@@ -150,9 +151,9 @@ function PermitCard({
                             show={!!read?.authority && !!permit.authority}
                             value={permit.authority}
                         />
-                    </div>
+                    </InfoRowGroup>
                     <Separator />
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconHash}
                             label={resolveLanguageKey("fields.referenceNumber")}
@@ -165,7 +166,7 @@ function PermitCard({
                             show={!!read?.expiresAt && !!permit.expiresAt}
                             value={formatDate(permit.expiresAt)}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

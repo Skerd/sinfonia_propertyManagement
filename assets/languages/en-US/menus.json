@@ -278,6 +278,12 @@
       "title": "ERP export"
     }
   },
+  "finance": {
+    "title": "Finance",
+    "unitCosts": {
+      "title": "Unit costs"
+    }
+  },
   "tenancy": {
     "systemSettings": {
       "constructors": {

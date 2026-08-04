@@ -278,6 +278,12 @@
       "title": "Eksporti ERP"
     }
   },
+  "finance": {
+    "title": "Financat",
+    "unitCosts": {
+      "title": "Kostot e njësisë"
+    }
+  },
   "tenancy": {
     "systemSettings": {
       "constructors": {

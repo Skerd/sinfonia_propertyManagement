@@ -2,6 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx",
   "noPhotos": "Keine photos",
   "fields": {
+    "name": "Code",
     "progressPercent": "Fortschritt",
     "updateDate": "Aktualisieren datum",
     "project": "Projekt",

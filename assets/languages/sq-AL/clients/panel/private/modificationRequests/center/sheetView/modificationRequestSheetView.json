@@ -25,6 +25,7 @@
   "totalCost": "Kostoja totale",
   "currency": "Monedha",
   "total": "Gjithsej",
+  "documentSubtotal": "Nëntotali",
   "cost": "Kostoja",
   "costBreakdown": "Ndarja e kostos",
   "quantity": "Sasia",
@@ -75,10 +76,16 @@
     "pending_architect_revision": "Në pritje të rishikimit të arkitektit",
     "pending_engineer_revision": "Në pritje të rishikimit inxhinierik",
     "pending_finance": "Financat në pritje",
+    "pending_client_approval": "Në pritje të miratimit të klientit",
     "finance_completed": "Financat e përfunduara",
     "pending_delivery": "Në pritje të dorëzimit",
     "completed": "E përfunduar",
     "cancelled": "Anuluar"
+  },
+  "decisions": {
+    "pending": "Në pritje",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
   },
   "constructionTypes": {
     "materials": "Materialet",

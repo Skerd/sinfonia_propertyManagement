@@ -26,7 +26,7 @@ function HeroGallerySection({project}: HeroGallerySectionProps) {
                                 key={img}
                                 type="button"
                                 onClick={() => setActiveIndex(index)}
-                                className={`size-16 overflow-hidden rounded-[3px] border-2 ${index === activeIndex ? "border-white" : "border-transparent opacity-70"}`}
+                                className={`size-16 overflow-hidden rounded-xs border-2 ${index === activeIndex ? "border-overlay-foreground" : "border-transparent opacity-70"}`}
                             >
                                 <img alt="" className="size-full object-cover" src={img} />
                             </button>

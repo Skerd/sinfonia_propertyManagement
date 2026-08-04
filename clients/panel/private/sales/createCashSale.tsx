@@ -196,7 +196,7 @@ export function CashSaleReceiptSection({
                                     }}
                                 />
                             ) : (
-                                <div className="text space-y-2 font-semibold" style={{border: "0px solid red"}}>
+                                <div className="flex flex-col text gap-y-2 font-semibold" style={{border: "0px solid red"}}>
                                     {unit?.reservation && (
                                         <ReservationCard
                                             fetchId={unit.reservation._id}
@@ -211,7 +211,7 @@ export function CashSaleReceiptSection({
                                             "group p-0 h-fit relative transition-all duration-300 hover:shadow-md hover:cursor-pointer",
                                         )}
                                     >
-                                        <div className="flex flex-col w-full items-stretch p-2 space-y-2">
+                                        <div className="flex flex-col w-full items-stretch p-2 gap-y-2">
                                             <div className="flex justify-between">
                                                 <p className="tracking-wide">{resolveLanguageKey("form.unitPriceLabel")}:</p>
                                                 <p className="font-semibold text-success">

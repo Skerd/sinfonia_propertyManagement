@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {useEffect} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -91,7 +92,7 @@ function GroupDashboard({
                 <h2 className="font-semibold mb-3 text-sm uppercase tracking-wide text-muted-foreground">
                     {resolveLanguageKey("groupTotalsTitle")}
                 </h2>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <div className={GRID_KPI}>
                     {KPI_CONFIG.map(col => (
                         <KpiCard
                             key={col.key}

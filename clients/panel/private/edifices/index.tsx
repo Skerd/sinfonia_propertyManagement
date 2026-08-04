@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconBuildingPlus} from "@tabler/icons-react";
-import {buildTitleBreadcrumb, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EdificeCard from "@propertyManagementModule/clients/panel/private/edifices/center/cardView/edificeCard.tsx";
@@ -14,7 +14,7 @@ import GenerateFloorsUnits from "@propertyManagementModule/clients/panel/private
 import FloorsOverlay from "@propertyManagementModule/components/custom/edifices/floorsOverlay.tsx";
 import GenerateFloorsUnitsDialog from "@propertyManagementModule/components/custom/edifices/generateFloorsUnitsDialog.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {MASONRY_HIERARCHY_BREAKPOINTS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {EDIFICE_ENERGY_CLASS_VALUES} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.constants.ts";
@@ -73,12 +73,11 @@ function AllEdifices({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createEdifice"
             buildEditPath={buildEdificeEditPath}
             resolveLanguageKey={listResolveLanguageKey}
-            headerTitle={buildTitleBreadcrumb(resolveLanguageKey("title") as string, [projectName ?? ""])}
+            headerTitle={buildPageTitle(resolveLanguageKey("title") as string, [projectName ?? ""])}
             extraFilters={{project: projectId ?? undefined}}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx"
-            cardLayout="masonry"
-            masonryBreakpointCols={MASONRY_HIERARCHY_BREAKPOINTS}
+            cardViewClassName={GRID_HIERARCHY}
             rowActionMenu={{allowMenuForCustomChildren: !!readFloors}}
             renderCard={(edifice, onDelete, onRestore) => (
                 <EdificeCard

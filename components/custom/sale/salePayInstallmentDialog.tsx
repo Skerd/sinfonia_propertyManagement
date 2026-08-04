@@ -92,8 +92,8 @@ function SalePayInstallmentDialog({
                         {resolveLanguageKey("payInstallmentDescription") || `Record payment for installment #${installment?.installmentNumber ?? ""}`}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="py-4 space-y-4">
-                    <div className="space-y-2">
+                <div className="flex flex-col py-4 gap-y-4">
+                    <div className="flex flex-col gap-y-2">
                         <Label htmlFor="paidAmount">{resolveLanguageKey("paidAmount") || "Paid Amount"} *</Label>
                         <Input
                             id="paidAmount"
@@ -108,7 +108,7 @@ function SalePayInstallmentDialog({
                             {resolveLanguageKey("remainingAmount") || "Remaining"}: {Math.max(0, remainingAmount).toLocaleString()}
                         </p>
                     </div>
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label htmlFor="transactionId">{resolveLanguageKey("transactionId") || "Transaction ID"}</Label>
                         <Input
                             id="transactionId"
@@ -118,7 +118,7 @@ function SalePayInstallmentDialog({
                             disabled={loading}
                         />
                     </div>
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label htmlFor="notes">{resolveLanguageKey("notes") || "Notes"}</Label>
                         <Textarea
                             id="notes"

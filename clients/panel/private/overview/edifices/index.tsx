@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import {formatNumber} from "@coreModule/helpers/general";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import { useNavigate } from "react-router-dom";
 import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
@@ -77,28 +79,28 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
   const link = viewEntriesLabel;
 
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-y-3">
       <div>
         <h2 className="text-sm font-semibold mb-1">{resolveLanguageKey("title")}</h2>
         <p className="text-muted-foreground text-xs">{resolveLanguageKey("description")}</p>
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={totalEdifices.toLocaleString()} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={totalFloors.toLocaleString()} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={totalUnits.toLocaleString()} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+      <div className={GRID_KPI}>
+        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={Building2} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("avgUnitsPerEdifice")} value={avgUnitsPerEdifice} subtitle={resolveLanguageKey("avgUnitsPerEdificeDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
       </div>
 
       <div>
         <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("unitsByStatus")}</h3>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-          <KpiCard compact title={resolveLanguageKey("available")} value={available.toLocaleString()} icon={Package} href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("reserved")} value={reserved.toLocaleString()} icon={CalendarClock} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("sold")} value={sold.toLocaleString()} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("leased")} value={leased.toLocaleString()} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("unavailable")} value={unavailable.toLocaleString()} icon={Ban} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} icon={Package} href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} icon={CalendarClock} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} icon={Ban} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
         </div>
       </div>
 

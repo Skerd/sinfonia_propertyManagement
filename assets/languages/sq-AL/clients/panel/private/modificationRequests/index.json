@@ -98,10 +98,16 @@
         "pending_architect_revision": "Në pritje të rishikimit të arkitektit",
         "pending_engineer_revision": "Rishikimi i inxhinierit në pritje",
         "pending_finance": "Financa në pritje",
+        "pending_client_approval": "Në pritje të miratimit të klientit",
         "finance_completed": "Financa e përfunduar",
         "pending_delivery": "Në pritje të dorëzimit",
         "completed": "E përfunduar",
         "cancelled": "Anuluar"
+      },
+      "decision": {
+        "approved": "Miratuar",
+        "rejected": "Refuzuar",
+        "pending": "Në pritje"
       },
       "architectApproval": {
         "decision": {
@@ -125,6 +131,13 @@
         }
       },
       "deliveryApproval": {
+        "decision": {
+          "approved": "Miratuar",
+          "rejected": "Refuzuar",
+          "pending": "Në pritje"
+        }
+      },
+      "clientCostApproval": {
         "decision": {
           "approved": "Miratuar",
           "rejected": "Refuzuar",

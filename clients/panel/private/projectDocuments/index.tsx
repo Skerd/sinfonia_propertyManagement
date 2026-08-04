@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconFileDescription} from "@tabler/icons-react";
 import type {ProjectDocument} from "armonia/src/modules/propertyManagement/api/realEstate/private/projectDocument/projectDocument.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -50,7 +50,7 @@ function AllProjectDocuments({resolveLanguageKey, projectId, projectName}: AllPr
             buildEditPath={buildEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderActionMenuChildren={(doc, bindRowAction) => (

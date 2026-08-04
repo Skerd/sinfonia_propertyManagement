@@ -278,6 +278,12 @@
       "title": "ERP-Export"
     }
   },
+  "finance": {
+    "title": "Finanzen",
+    "unitCosts": {
+      "title": "Einheitskosten"
+    }
+  },
   "tenancy": {
     "systemSettings": {
       "constructors": {

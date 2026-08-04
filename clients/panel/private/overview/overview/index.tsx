@@ -1,4 +1,6 @@
 import { compose } from "redux";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {
   IconCash,
   IconCircleCheck,
@@ -112,11 +114,11 @@ function DashboardOverview({
       {/* Primary KPIs */}
       <div>
         <h2 className="sr-only">{resolveLanguageKey("primaryKpis")}</h2>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("totalRevenue")}
-            value={`$${totalRevenue.toLocaleString()}`}
+            value={formatCurrency(totalRevenue)}
             subtitle={revenueSubtitle}
             icon={IconCoin as never}
             variant="primary"
@@ -134,7 +136,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("activeReservations")}
-            value={activeReservations.toLocaleString()}
+            value={formatNumber(activeReservations)}
             subtitle={resolveLanguageKey("activeReservationsDesc")}
             icon={IconUsers as never}
             variant="warning"
@@ -144,7 +146,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("sales")}
-            value={totalSales.toLocaleString()}
+            value={formatNumber(totalSales)}
             subtitle={resolveLanguageKey("totalSalesDesc")}
             icon={IconCreditCard as never}
             variant="success"
@@ -162,7 +164,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("unitsSold")}
-            value={unitsSold.toLocaleString()}
+            value={formatNumber(unitsSold)}
             subtitle={resolveLanguageKey("unitsSoldDesc")}
             icon={IconTrendingUp as never}
             variant="success"
@@ -175,11 +177,11 @@ function DashboardOverview({
        {/*Financial KPIs*/}
       <div>
         <h2 className="sr-only">{resolveLanguageKey("financialKpis")}</h2>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+        <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("averageSalePrice")}
-            value={`$${averageSalePrice.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}
+            value={formatCurrency(averageSalePrice)}
             subtitle={resolveLanguageKey("averageSalePriceDesc")}
             icon={IconCoin as never}
             variant="default"
@@ -189,7 +191,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("inventoryValue")}
-            value={`$${inventoryValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}
+            value={formatCurrency(inventoryValue)}
             subtitle={resolveLanguageKey("inventoryValueDesc")}
             icon={IconPackage as never}
             variant="default"
@@ -199,7 +201,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("cashSales")}
-            value={cashSales.toLocaleString()}
+            value={formatNumber(cashSales)}
             subtitle={resolveLanguageKey("cashSalesDesc")}
             icon={IconCash as never}
             variant="default"
@@ -209,7 +211,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("paymentPlanSales")}
-            value={paymentPlanSales.toLocaleString()}
+            value={formatNumber(paymentPlanSales)}
             subtitle={resolveLanguageKey("paymentPlanSalesDesc")}
             icon={IconReceipt as never}
             variant="default"
@@ -232,11 +234,11 @@ function DashboardOverview({
       {/* Unit-cost KPIs (verified / procurement pipeline) */}
       <div>
         <h2 className="sr-only">{resolveLanguageKey("unitCostsKpis")}</h2>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("verifiedPaidCosts")}
-            value={`$${verifiedPaidCostsSum.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}
+            value={formatCurrency(verifiedPaidCostsSum)}
             subtitle={resolveLanguageKey("verifiedPaidCostsDesc")}
             icon={IconReceipt as never}
             variant="default"
@@ -246,7 +248,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("verifiedOutstandingCosts")}
-            value={`$${verifiedOutstandingCostsSum.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}
+            value={formatCurrency(verifiedOutstandingCostsSum)}
             subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")}
             icon={IconReceipt as never}
             variant="warning"
@@ -256,7 +258,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("pendingVerificationCosts")}
-            value={`$${pendingVerificationCostsSum.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}
+            value={formatCurrency(pendingVerificationCostsSum)}
             subtitle={resolveLanguageKey("pendingVerificationCostsDesc")}
             icon={IconFileText as never}
             variant="default"
@@ -266,7 +268,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("totalUnitCostDocuments")}
-            value={unitCostDocsCount.toLocaleString()}
+            value={formatNumber(unitCostDocsCount)}
             subtitle={resolveLanguageKey("totalUnitCostDocumentsDesc")}
             icon={IconPackage as never}
             variant="default"
@@ -279,11 +281,11 @@ function DashboardOverview({
        {/*Operations KPIs*/}
       <div className="hidden sm:block">
         <h2 className="sr-only">{resolveLanguageKey("operationsKpis")}</h2>
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+        <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("totalInspections")}
-            value={totalInspections.toLocaleString()}
+            value={formatNumber(totalInspections)}
             subtitle={resolveLanguageKey("totalInspectionsDesc")}
             icon={IconFileCheck as never}
             variant="default"
@@ -293,7 +295,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("openModificationRequests")}
-            value={openModificationRequests.toLocaleString()}
+            value={formatNumber(openModificationRequests)}
             subtitle={resolveLanguageKey("openModificationRequestsDesc")}
             icon={IconFileText as never}
             variant="default"
@@ -303,7 +305,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("expiringReservationsCount")}
-            value={expiringReservationsCount.toLocaleString()}
+            value={formatNumber(expiringReservationsCount)}
             subtitle={resolveLanguageKey("expiringReservationsCountDesc")}
             icon={IconClock as never}
             variant="warning"
@@ -313,7 +315,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("totalReservationDeposits")}
-            value={`$${totalReservationDeposits.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}
+            value={formatCurrency(totalReservationDeposits)}
             subtitle={resolveLanguageKey("totalReservationDepositsDesc")}
             icon={IconWallet as never}
             variant="default"
@@ -323,7 +325,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("paymentPlansCompleted")}
-            value={paymentPlansCompleted.toLocaleString()}
+            value={formatNumber(paymentPlansCompleted)}
             subtitle={resolveLanguageKey("paymentPlansCompletedDesc")}
             icon={IconCircleCheck as never}
             variant="success"
@@ -354,7 +356,7 @@ function DashboardOverview({
         <Card className="col-span-1 py-3 lg:col-span-4">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("overview")}</CardTitle>
-            <CardDescription className="text-[11px]">{resolveLanguageKey("revenueByMonth")}</CardDescription>
+            <CardDescription className="text-2xs">{resolveLanguageKey("revenueByMonth")}</CardDescription>
           </CardHeader>
           <CardContent className="px-3 pb-3 ps-1.5 pt-0">
             <Overview
@@ -366,7 +368,7 @@ function DashboardOverview({
         <Card className="col-span-1 py-3 lg:col-span-3">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("recentSales")}</CardTitle>
-            <CardDescription className="text-[11px]">
+            <CardDescription className="text-2xs">
               {recentSales.length} {resolveLanguageKey("salesSmall")}
             </CardDescription>
           </CardHeader>

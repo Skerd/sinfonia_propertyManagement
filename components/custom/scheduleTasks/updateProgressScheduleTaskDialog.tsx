@@ -73,7 +73,7 @@ function UpdateProgressScheduleTaskDialog({
                         {resolveLanguageKey("dialogDescription")}
                     </DialogDescription>
                 </DialogHeader>
-                <div className="space-y-2 py-2">
+                <div className="flex flex-col gap-y-2 py-2">
                     <Label>{resolveLanguageKey("percentCompleteLabel")}</Label>
                     <Input
                         type="number"

@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -19,7 +20,7 @@ import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.ts
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import StartMilestone, {START_MILESTONE_ACTION} from "@propertyManagementModule/clients/panel/private/milestones/center/actions/start.tsx";
 import CompleteMilestone, {COMPLETE_MILESTONE_ACTION} from "@propertyManagementModule/clients/panel/private/milestones/center/actions/complete.tsx";
 import MarkDelayedMilestone, {MARK_DELAYED_MILESTONE_ACTION} from "@propertyManagementModule/clients/panel/private/milestones/center/actions/markDelayed.tsx";
@@ -128,7 +129,7 @@ function MilestoneCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconFolder}
                             label={resolveLanguageKey("fields.project")}
@@ -147,7 +148,7 @@ function MilestoneCard({
                             show={!!read?.weightPercent && typeof milestone.weightPercent === "number"}
                             value={typeof milestone.weightPercent === "number" ? `${milestone.weightPercent}%` : undefined}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

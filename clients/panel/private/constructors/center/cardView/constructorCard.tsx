@@ -62,6 +62,8 @@ function ConstructorCard({
     const {href: phoneHref, display: phoneDisplay} = phoneParts(constructor);
 
     const {read, restore} = useAccess("constructors");
+    const edificesCount = constructor.edifices?.length ?? 0;
+    const hasEdifices = edificesCount > 0;
 
     if (hideAfterDeletion || !restore) {
         return <></>;
@@ -99,15 +101,12 @@ function ConstructorCard({
                                 title={constructor.name}
                                 showTitle={!!read?.name}
                                 badges={
-                                    <>
-                                        {!!constructor.edifices && constructor.edifices.length > 0 && (
-                                            <Badge variant="outline" className="text-xs">
-                                                {resolveLanguageKey("edifices")}: {constructor.edifices.length}
-                                            </Badge>
-                                        )}
-                                    </>
+                                    hasEdifices ? (
+                                        <Badge variant="outline" className="text-xs">
+                                            {resolveLanguageKey("edifices")}: {edificesCount}
+                                        </Badge>
+                                    ) : undefined
                                 }
-                                showBadges={!!read?.edifices}
                                 hideActions={hideActions}
                                 actionMenu={
                                     <ActionMenu

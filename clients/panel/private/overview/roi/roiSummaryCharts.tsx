@@ -1,4 +1,5 @@
 import {useMemo} from "react";
+import {formatNumber} from "@coreModule/helpers/general";
 import {
     Bar,
     BarChart,
@@ -39,7 +40,7 @@ const STATUS_CONFIG = {
 } satisfies ChartConfig;
 
 function formatMoney(value: number, symbol?: string): string {
-    const formatted = value.toLocaleString(undefined, {maximumFractionDigits: 0});
+    const formatted = formatNumber(value);
     return symbol ? `${formatted} ${symbol}` : formatted;
 }
 
@@ -128,7 +129,7 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="border rounded-lg p-4 space-y-3">
+            <div className="flex flex-col border rounded-lg p-4 gap-y-3">
                 <h3 className="font-medium text-sm text-muted-foreground">{rk("charts.financialTitle")}</h3>
                 <ChartContainer config={FINANCIAL_CONFIG} className="aspect-auto h-56 w-full overflow-hidden">
                     <BarChart data={financialData} margin={{top: 12, right: 12, left: 4, bottom: 8}}>
@@ -157,7 +158,7 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
                 </ChartContainer>
             </div>
 
-            <div className="border rounded-lg p-4 space-y-3">
+            <div className="flex flex-col border rounded-lg p-4 gap-y-3">
                 <h3 className="font-medium text-sm text-muted-foreground">{rk("charts.unitsByStatusTitle")}</h3>
                 <ChartContainer config={STATUS_CONFIG} className="aspect-auto h-44 w-full">
                     <PieChart>

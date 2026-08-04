@@ -43,13 +43,15 @@
     "other": "Andere"
   },
   "activityActions": {
-    "called": "called",
-    "emailed": "emailed",
-    "meeting": "Had a meeting",
-    "site_visit": "Had a baustelle visit",
-    "proposal_sent": "Sent a proposal",
-    "follow_up": "Followed up",
-    "note": "Added a note"
+    "called": "Angerufen",
+    "emailed": "E-Mail gesendet",
+    "meeting": "Besprechung",
+    "site_visit": "Besichtigung",
+    "proposal_sent": "Angebot gesendet",
+    "follow_up": "Nachfassung",
+    "note": "Notiz",
+    "status_update": "Statusaktualisierung",
+    "created": "Erstellt"
   },
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",

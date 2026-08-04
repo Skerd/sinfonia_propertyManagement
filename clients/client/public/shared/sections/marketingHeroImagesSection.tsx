@@ -29,10 +29,10 @@ function MarketingHeroImagesSection({
                     <h1 className={PUBLIC_TITLE}>{resolveLanguageKey(titleKey)}</h1>
                     <p className={`mt-6 max-w-xl ${PUBLIC_BODY}`}>{resolveLanguageKey(bodyKey)}</p>
                 </div>
-                <div className="relative aspect-[799/616] w-full min-w-0 overflow-hidden rounded-[5px]" data-node-id="331:2856">
+                <div className="relative aspect-[799/616] w-full min-w-0 overflow-hidden rounded-sm" data-node-id="331:2856">
                     <img alt="" aria-hidden className="absolute inset-0 size-full object-cover" src={heroScene} />
                     <div
-                        className="absolute bottom-0 right-[4%] top-0 w-[min(30%,15rem)] overflow-hidden rounded-[5px]"
+                        className="absolute bottom-0 right-[4%] top-0 w-[min(30%,15rem)] overflow-hidden rounded-sm"
                         data-node-id="331:2857"
                     >
                         <img alt="" aria-hidden className="size-full object-cover object-top" src={heroPerson} />

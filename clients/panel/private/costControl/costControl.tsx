@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {useEffect} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -62,7 +63,7 @@ function CostControl({resolveLanguageKey, data, loading, error, onFilterChange, 
                 </p>
             </Header>
 
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
+            <div className={GRID_KPI}>
                 {kpis.map(k => (
                     <KpiCard key={k.key} title={resolveLanguageKey(k.labelKey)} value={fmt((data.totals as any)[k.key])} icon={k.icon} variant={(k as any).variant} compact />
                 ))}

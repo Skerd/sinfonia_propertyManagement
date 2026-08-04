@@ -25,6 +25,7 @@
   "totalCost": "Total Cost",
   "currency": "Currency",
   "total": "Total",
+  "documentSubtotal": "Subtotal",
   "cost": "Cost",
   "costBreakdown": "Cost Breakdown",
   "quantity": "Quantity",
@@ -75,10 +76,16 @@
     "pending_architect_revision": "Pending architect revision",
     "pending_engineer_revision": "Pending engineer revision",
     "pending_finance": "Pending finance",
+    "pending_client_approval": "Pending client approval",
     "finance_completed": "Finance completed",
     "pending_delivery": "Pending delivery",
     "completed": "Completed",
     "cancelled": "Cancelled"
+  },
+  "decisions": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected"
   },
   "constructionTypes": {
     "materials": "Materials",

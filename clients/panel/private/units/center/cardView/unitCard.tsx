@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -24,7 +25,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityMediaHeader} from "@propertyManagementModule/components/custom/cards/EntityMediaHeader.tsx";
 import {EntityCardFetchGuard} from "@propertyManagementModule/components/custom/cards/EntityCardFetchGuard.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {UnitStatusBadge, resolveUnitStatusKey} from "@propertyManagementModule/components/custom/cards/UnitStatusBadge.tsx";
 import UnitSheetView from "@propertyManagementModule/clients/panel/private/units/center/sheetView/unitSheetView.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
@@ -150,7 +151,7 @@ function UnitCard({
                         }
                     />
                     <div className={CARD_BODY_CLASS}>
-                        <div className={CARD_INFO_ROWS_CLASS}>
+                        <InfoRowGroup>
                             {!small && (
                                 <>
                                     <InfoRow
@@ -204,7 +205,7 @@ function UnitCard({
                                     ) : null
                                 }
                             />
-                        </div>
+                        </InfoRowGroup>
                         {(unit.hasBalcony || unit.hasTerrace || unit.hasSeaView || unit.hasCityView || unit.hasLakeView || unit.hasElevator) && (
                             <div className="flex flex-wrap gap-1">
                                 {unit.hasBalcony && <span className="inline-flex items-center text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">{resolveLanguageKey("features.balcony")}</span>}

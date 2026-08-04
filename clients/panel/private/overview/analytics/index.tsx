@@ -1,5 +1,7 @@
 import { Building2, Wallet, Layers, TrendingUp, FileCheck } from "lucide-react";
-import { AnalyticsChart, PaymentTypeChart, RevenueChart } from "./analytics-chart.tsx";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import { AnalyticsChart, PaymentTypeChart, RevenueByPeriodChart } from "./analytics-chart.tsx";
+import { formatCurrency, formatNumber } from "@coreModule/helpers/general";
 import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import {
@@ -7,7 +9,7 @@ import {
   unitsByStatusToChartData,
 } from "@propertyManagementModule/components/custom/dashboard/StatusChart.tsx";
 import {
-  RevenueChart as FinancialOverviewChart,
+  RevenueChart as PortfolioValueChart,
   dashboardSummaryToRevenueChart,
 } from "@propertyManagementModule/components/custom/dashboard/revenueChart.tsx";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
@@ -48,11 +50,11 @@ function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEn
 
   if (!hasData) {
     return (
-      <div className="space-y-3">
+      <div className="flex flex-col gap-y-3">
         <Card className="py-3">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("title")}</CardTitle>
-            <CardDescription className="text-[11px]">{resolveLanguageKey("description")}</CardDescription>
+            <CardDescription className="text-2xs">{resolveLanguageKey("description")}</CardDescription>
           </CardHeader>
           <CardContent className="px-3 pb-3 pt-0">
             <div className="flex h-[260px] items-center justify-center text-muted-foreground text-xs">
@@ -65,27 +67,27 @@ function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEn
   }
 
   return (
-    <div className="space-y-3">
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={totalUnits.toLocaleString()} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={activePaymentPlans.toLocaleString()} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={Wallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={overdueInstallments.toLocaleString()} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={Wallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={`$${totalOutstanding.toLocaleString()}`} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={Wallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
+    <div className="flex flex-col gap-y-3">
+      <div className={GRID_KPI}>
+        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={formatNumber(activePaymentPlans)} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={Wallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={formatNumber(overdueInstallments)} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={Wallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatCurrency(totalOutstanding)} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={Wallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-        <KpiCard compact title={resolveLanguageKey("totalProjects")} value={totalProjects.toLocaleString()} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={Building2} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={totalEdifices.toLocaleString()} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={totalFloors.toLocaleString()} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+      <div className={GRID_KPI}>
+        <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={Building2} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={TrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("followUpInspections")} value={followUpInspections.toLocaleString()} subtitle={resolveLanguageKey("followUpInspectionsDesc")} icon={FileCheck} href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("followUpInspections")} value={formatNumber(followUpInspections)} subtitle={resolveLanguageKey("followUpInspectionsDesc")} icon={FileCheck} href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
       </div>
 
       <div className="grid gap-2 lg:grid-cols-2">
         <Card className="py-3">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("salesByMonth")}</CardTitle>
-            <CardDescription className="text-[11px]">{resolveLanguageKey("salesByMonthDesc")}</CardDescription>
+            <CardDescription className="text-2xs">{resolveLanguageKey("salesByMonthDesc")}</CardDescription>
           </CardHeader>
           <CardContent className="px-3 pb-3 pt-0">
             <AnalyticsChart salesByPeriod={salesByPeriod} noDataLabel={resolveLanguageKey("noSalesData")} />
@@ -94,10 +96,10 @@ function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEn
         <Card className="py-3">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("revenueByMonth")}</CardTitle>
-            <CardDescription className="text-[11px]">{resolveLanguageKey("revenueByMonthDesc")}</CardDescription>
+            <CardDescription className="text-2xs">{resolveLanguageKey("revenueByMonthDesc")}</CardDescription>
           </CardHeader>
           <CardContent className="px-3 pb-3 pt-0">
-            <RevenueChart revenueByPeriod={revenueByPeriod} noDataLabel={resolveLanguageKey("noRevenueData")} />
+            <RevenueByPeriodChart revenueByPeriod={revenueByPeriod} noDataLabel={resolveLanguageKey("noRevenueData")} />
           </CardContent>
         </Card>
       </div>
@@ -106,14 +108,14 @@ function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEn
         <Card className="py-3 lg:col-span-1">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("salesByPaymentType")}</CardTitle>
-            <CardDescription className="text-[11px]">{resolveLanguageKey("salesByPaymentTypeDesc")}</CardDescription>
+            <CardDescription className="text-2xs">{resolveLanguageKey("salesByPaymentTypeDesc")}</CardDescription>
           </CardHeader>
           <CardContent className="px-3 pb-3 pt-0 max-w-md">
             <PaymentTypeChart salesByPaymentType={salesByPaymentType} noDataLabel={resolveLanguageKey("noPaymentTypeData")} />
           </CardContent>
         </Card>
         <div className="lg:col-span-2">
-          <FinancialOverviewChart {...dashboardSummaryToRevenueChart(summary)} />
+          <PortfolioValueChart {...dashboardSummaryToRevenueChart(summary)} />
         </div>
       </div>
 

@@ -78,7 +78,7 @@ function DashboardEdificeCardInner({resolveLanguageKey, edifice, onClick, isSele
                     totalValue={stats.totalValue}
                     collectedAmount={stats.collectedAmount}
                     footer={
-                        <div className="mt-3 flex items-center text-[10px] text-muted-foreground">
+                        <div className="mt-3 flex items-center text-3xs text-muted-foreground">
                             <div className="flex items-center gap-1.5">
                                 <IconBuilding size={12}/>
                                 <span>

@@ -2,7 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {DesignStage} from "armonia/src/modules/propertyManagement/api/realEstate/private/designStage/designStage.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -33,7 +33,7 @@ function AllDesignStages({resolveLanguageKey, projectId}: Props) {
             buildEditPath={buildEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/designStages/center/sheetView/designStageSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={projectId ? {projectId} : undefined}
             renderCard={(row, onDelete, onRestore) => (
                 <DesignStageCard

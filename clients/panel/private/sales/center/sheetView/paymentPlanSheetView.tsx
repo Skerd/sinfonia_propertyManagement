@@ -139,7 +139,7 @@ function PaymentPlanSheetView({
                 }
             >
                 {!!access.read?.installments && (
-                    <div className="space-y-2">
+                    <div className="flex flex-col gap-y-2">
                         <div className="flex items-center justify-between">
                             <p className="text-sm font-semibold">{resolveLanguageKey("installments")}</p>
                             <p className="text-xs text-muted-foreground">
@@ -187,7 +187,7 @@ function PaymentPlanSheetView({
                                                         <Badge
                                                             variant="outline"
                                                             className={cn(
-                                                                "text-[11px] font-medium",
+                                                                "text-2xs font-medium",
                                                                 statusStyles.bg,
                                                                 statusStyles.text,
                                                                 statusStyles.border,

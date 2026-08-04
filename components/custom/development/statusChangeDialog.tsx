@@ -89,9 +89,9 @@ export default function StatusChangeDialog({
                     <DialogTitle>{title}</DialogTitle>
                     {description ? <DialogDescription>{description}</DialogDescription> : null}
                 </DialogHeader>
-                <div className="space-y-4 py-2">
+                <div className="flex flex-col gap-y-4 py-2">
                     {showDate && (
-                        <div className="space-y-2">
+                        <div className="flex flex-col gap-y-2">
                             <Label>{dateLabel}</Label>
                             <Input
                                 type="date"
@@ -102,7 +102,7 @@ export default function StatusChangeDialog({
                         </div>
                     )}
                     {showNotes && (
-                        <div className="space-y-2">
+                        <div className="flex flex-col gap-y-2">
                             <Label>{notesLabel}</Label>
                             <Textarea
                                 value={notes}

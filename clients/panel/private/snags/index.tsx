@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconClipboardCheck} from "@tabler/icons-react";
 import type {Snag} from "armonia/src/modules/propertyManagement/api/realEstate/private/snag/snag.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -46,7 +47,7 @@ function AllSnags({resolveLanguageKey, unitId, unitName}: AllSnagsProps) {
             buildEditPath={buildSnagEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/snags/center/sheetView/snagSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             extraFilters={extraFilters}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderActionMenuChildren={(snag, bindRowAction) => (

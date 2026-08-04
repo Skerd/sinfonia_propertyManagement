@@ -1,4 +1,6 @@
 import {useEffect, useState, useMemo} from "react";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {compose} from "redux";
 import type {DashboardFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import type {DashboardFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.type.ts";
@@ -36,23 +38,16 @@ function RealEstateDashboard({
     onFilterChange,
 }: RealEstateDashboardProps) {
     const [periodKey, setPeriodKey] = useState<string>("last12months");
+    // Filter, not a hard gate: null means portfolio aggregate.
     const [selectedEdifice, setSelectedEdifice] = useState<Edifice | null>(null);
 
     useEffect(() => {
-        if (selectedEdifice) {
-            onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice._id}));
-        }
+        onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}));
     }, [selectedEdifice, periodKey]);
 
     const handlePeriodChange = (value: string) => {
         setPeriodKey(value);
-        if (selectedEdifice) {
-            onFilterChange(buildDashboardFilter(value, {edificeId: selectedEdifice._id}));
-        }
-    };
-
-    const handleEdificesLoaded = (edifices: Edifice[]) => {
-        setSelectedEdifice((prev) => (prev === null && edifices.length > 0 ? edifices[0] : prev));
+        onFilterChange(buildDashboardFilter(value, {edificeId: selectedEdifice?._id}));
     };
 
     const summary = dashboardData?.summary;
@@ -75,15 +70,15 @@ function RealEstateDashboard({
     }, [periodKey, selectedEdifice]);
 
     const viewEntriesLabel = resolveLanguageKey("viewEntries") as string;
+    const hasData = !!dashboardData?.summary;
 
-    const hasSelection = !!selectedEdifice;
-    if (loading && !dashboardData && hasSelection) return <Loader/>;
-    if (error && hasSelection) {
+    if (loading && !dashboardData) return <Loader/>;
+    if (error) {
         return (
             <ErrorView
                 title={resolveLanguageKey("failTitle")}
                 description={resolveLanguageKey("failDescription")}
-                onClick={() => selectedEdifice && onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice._id}))}
+                onClick={() => onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}))}
             />
         );
     }
@@ -97,7 +92,7 @@ function RealEstateDashboard({
                 <DashboardPeriodToolbar
                     periodKey={periodKey}
                     onPeriodChange={handlePeriodChange}
-                    onRefresh={() => selectedEdifice && onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice._id}))}
+                    onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}))}
                     periodLabel={resolveLanguageKey("period") as string}
                     periodLast7Days={resolveLanguageKey("periodLast7Days") as string}
                     periodLast30Days={resolveLanguageKey("periodLast30Days") as string}
@@ -110,24 +105,22 @@ function RealEstateDashboard({
             <div className="flex flex-col gap-4">
                 <EdificeGallery
                     selectedEdificeId={selectedEdifice?._id ?? null}
-                    onSelectEdifice={(e: Edifice) => setSelectedEdifice(e)}
-                    onEdificesLoaded={handleEdificesLoaded}
+                    onSelectEdifice={(e: Edifice) =>
+                        setSelectedEdifice((prev) => (prev?._id === e._id ? null : e))
+                    }
                 />
 
-                {!hasSelection && (
+                {!hasData ? (
                     <DashboardWidgetEmpty
-                        message={resolveLanguageKey("selectEdifice") ?? "Select an edifice to view KPIs and charts"}
+                        message={String(resolveLanguageKey("noData") || "No dashboard data yet")}
                     />
-                )}
-
-                {
-                    hasSelection &&
+                ) : (
                     <>
-                        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                        <div className={GRID_KPI}>
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("totalUnits") ?? "Total Units"}
-                                value={totalUnits.toLocaleString()}
+                                value={formatNumber(totalUnits)}
                                 icon={IconStack as never}
                                 href={kpi.kpiUnitsTotal(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
@@ -135,7 +128,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("unitsSold") ?? "Sold"}
-                                value={unitsSold.toLocaleString()}
+                                value={formatNumber(unitsSold)}
                                 icon={IconTrendingUp as never}
                                 variant="success"
                                 href={kpi.kpiUnitsSold(drillDownContext)}
@@ -144,7 +137,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("collected") ?? "Collected"}
-                                value={`$${collectedAmount.toLocaleString(undefined, {maximumFractionDigits: 0})}`}
+                                value={formatCurrency(collectedAmount)}
                                 icon={IconWallet as never}
                                 variant="primary"
                                 href={kpi.kpiCollected(drillDownContext)}
@@ -153,7 +146,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("avgPricePerSqm") ?? "Avg €/m²"}
-                                value={`$${avgPricePerSqm.toLocaleString()}`}
+                                value={formatCurrency(avgPricePerSqm)}
                                 icon={IconCoin as never}
                                 href={kpi.kpiAvgPricePerSqm(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
@@ -173,25 +166,28 @@ function RealEstateDashboard({
                                 title={resolveLanguageKey("paymentAlerts")}
                                 viewAllLabel={resolveLanguageKey("viewPaymentPlans")}
                             />
-
                         </div>
 
-                        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-                            <DeliveryReadinessCard edificeId={selectedEdifice._id} />
-                        </div>
+                        {selectedEdifice && (
+                            <>
+                                <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+                                    <DeliveryReadinessCard edificeId={selectedEdifice._id} />
+                                </div>
 
-                        <EdificeDetailPanel
-                            edificeId={selectedEdifice._id}
-                            edificeName={selectedEdifice.name}
-                            projectId={selectedEdifice.project?._id}
-                            projectName={selectedEdifice.project?.name}
-                            onClose={() => setSelectedEdifice(null)}
-                        />
+                                <EdificeDetailPanel
+                                    edificeId={selectedEdifice._id}
+                                    edificeName={selectedEdifice.name}
+                                    projectId={selectedEdifice.project?._id}
+                                    projectName={selectedEdifice.project?.name}
+                                    onClose={() => setSelectedEdifice(null)}
+                                />
+                            </>
+                        )}
                     </>
-                }
+                )}
 
-                <div className="min-h-dvh flex flex-col" style={{marginTop: "30px"}}>
-                    <div className="min-h-0 flex-1 flex flex-col">
+                <div className="mt-8 flex min-h-dvh flex-col">
+                    <div className="flex min-h-0 flex-1 flex-col">
                         <AllUnits showHeader={false} edificeId={selectedEdifice?._id}/>
                     </div>
                 </div>

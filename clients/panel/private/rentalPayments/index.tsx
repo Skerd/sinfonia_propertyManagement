@@ -8,8 +8,8 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
 import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import {buildTitleBreadcrumb} from "@coreModule/helpers/general";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {buildPageTitle} from "@coreModule/helpers/general";
 
 interface AllRentalPaymentsProps extends WithLanguageType {
     leaseId?: string;
@@ -28,7 +28,7 @@ function buildRentalPaymentEditPath(payment: RentalPayment) {
 
 function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPaymentsProps) {
     const extraFilters = leaseId ? {leaseId} : undefined;
-    const headerTitle = buildTitleBreadcrumb(
+    const headerTitle = buildPageTitle(
         String(resolveLanguageKey("title")),
         leaseName ? [leaseName] : [],
     );
@@ -48,7 +48,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             buildEditPath={buildRentalPaymentEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
             headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}

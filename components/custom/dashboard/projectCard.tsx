@@ -98,7 +98,7 @@ function DashboardProjectCardInner({
         totalValue={stats.totalValue}
         collectedAmount={stats.collectedAmount}
         footer={
-          <div className="mt-3 flex items-center justify-between text-[10px] text-muted-foreground">
+          <div className="mt-3 flex items-center justify-between text-3xs text-muted-foreground">
             <div className="flex items-center gap-1.5">
               <IconBuilding size={12} />
               <span>

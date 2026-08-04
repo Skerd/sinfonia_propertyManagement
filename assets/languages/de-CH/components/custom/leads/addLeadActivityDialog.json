@@ -9,12 +9,12 @@
   "cancel": "Abbrechen",
   "submit": "Activity hinzufügen",
   "activityActions": {
-    "called": "Called",
-    "emailed": "Emailed",
-    "meeting": "Meeting",
-    "site_visit": "Baustelle visit",
-    "proposal_sent": "Proposal sent",
-    "follow_up": "Follow-up",
+    "called": "Angerufen",
+    "emailed": "E-Mail gesendet",
+    "meeting": "Besprechung",
+    "site_visit": "Besichtigung",
+    "proposal_sent": "Angebot gesendet",
+    "follow_up": "Nachfassung",
     "note": "Notiz"
   }
 }

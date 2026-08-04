@@ -175,11 +175,11 @@ export default function PaymentPlanInstallmentsField({
                 )
             }
         >
-            <div className="space-y-3" style={{border: "0px solid red"}}>
+            <div className="flex flex-col gap-y-3" style={{border: "0px solid red"}}>
                 {
                     installments && fields.map((field, index) => {
                         return (
-                            <div key={field.id} className="p-4 border rounded-lg space-y-3 bg-muted/20">
+                            <div key={field.id} className="flex flex-col p-4 border rounded-lg gap-y-3 bg-muted/20">
                                 <div className="flex items-center justify-between">
                                     <p className="text-sm font-medium">
                                         {resolveLanguageKey("form.installment")} {index + 1}

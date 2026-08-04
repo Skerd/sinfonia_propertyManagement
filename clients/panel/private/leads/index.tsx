@@ -3,7 +3,8 @@ import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {IconUserPlus} from "@tabler/icons-react";
 import type {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
@@ -66,7 +67,7 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/leads/center/sheetView/leadSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderActionMenuChildren={(lead, bindRowAction) => (
                 <AddLeadActivity lead={lead} onAction={bindRowAction} />

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import {formatNumber} from "@coreModule/helpers/general";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import { useNavigate } from "react-router-dom";
 import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
@@ -74,21 +76,21 @@ function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
   const link = viewEntriesLabel;
 
   return (
-    <div className="space-y-3">
+    <div className="flex flex-col gap-y-3">
       <div>
         <h2 className="text-sm font-semibold mb-1">{resolveLanguageKey("title")}</h2>
         <p className="text-muted-foreground text-xs">{resolveLanguageKey("description")}</p>
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard compact title={resolveLanguageKey("totalProjects")} value={totalProjects.toLocaleString()} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuilding as never} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={totalEdifices.toLocaleString()} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuilding as never} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={totalFloors.toLocaleString()} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack as never} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={totalUnits.toLocaleString()} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack as never} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+      <div className={GRID_KPI}>
+        <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuilding as never} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuilding as never} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack as never} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack as never} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-3">
-        <KpiCard compact title={resolveLanguageKey("unitsSold")} value={unitsSold.toLocaleString()} subtitle={resolveLanguageKey("unitsSoldDesc")} icon={IconTrendingUp as never} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+      <div className={GRID_KPI}>
+        <KpiCard compact title={resolveLanguageKey("unitsSold")} value={formatNumber(unitsSold)} subtitle={resolveLanguageKey("unitsSoldDesc")} icon={IconTrendingUp as never} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("avgUnitsPerProject")} value={avgUnitsPerProject} subtitle={resolveLanguageKey("avgUnitsPerProjectDesc")} icon={IconStack as never} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={IconBuilding as never} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
       </div>

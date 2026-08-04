@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconSquarePlus2} from "@tabler/icons-react";
-import {buildTitleBreadcrumb} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
@@ -17,8 +17,8 @@ import ManualReservationClientEmailDialog, {
     parseManualClientEmailAction,
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 function decodeSearchParam(value: string | null): string | undefined {
@@ -43,7 +43,7 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
     const edificeName = decodeSearchParam(searchParams.get("edificeName"));
 
     const headerTitle = useMemo(
-        () => buildTitleBreadcrumb(resolveLanguageKey("title") as string, [edificeName, unitName]),
+        () => buildPageTitle(resolveLanguageKey("title") as string, [edificeName, unitName]),
         [resolveLanguageKey, edificeName, unitName],
     );
 
@@ -107,7 +107,7 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx"
-            cardViewClassName={cn(GRID_TRANSACTIONAL, "md:grid-cols-3")}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             rowActionMenu={{
                 allowMenuForCustomChildren: true,
                 hideEdit: true,

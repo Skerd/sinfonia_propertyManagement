@@ -163,7 +163,7 @@ function UnitDetailCardInner({
                             <p className="text-xs text-muted-foreground">{resolveLanguageKey("pricePerSqm")}</p>
                             <p className="font-mono font-semibold text-primary">
                                 <HiddenElement randomLength={8}>
-                                    {read?.price || read?.statistics
+                                    {read?.price
                                         ? (pricePerSqm > 0 ? formatCurrency(pricePerSqm) : "—")
                                         : null}
                                 </HiddenElement>

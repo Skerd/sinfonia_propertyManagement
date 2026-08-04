@@ -4,6 +4,7 @@
   "statusLabel": "Status",
   "severityLabel": "Severity",
   "fields": {
+    "name": "Code",
     "unit": "Unit",
     "location": "Location",
     "dueDate": "Due Date",

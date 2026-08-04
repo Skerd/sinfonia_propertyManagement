@@ -41,7 +41,7 @@ function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
                 description={String(resolveLanguageKey("description"))}
             />
 
-            <div className="flex-1 overflow-auto p-4 space-y-10">
+            <div className="flex-1 overflow-auto p-4 gap-y-10">
                 <LeasesTableSection
                     resolveLanguageKey={resolveLanguageKey}
                     timezone={timezone}

@@ -38,10 +38,10 @@ function FormExpenditureItemsFieldInner({
     }));
 
     return (
-        <div className="col-span-full space-y-3 w-full">
+        <div className="flex flex-col col-span-full gap-y-3 w-full">
             {label ? <p className="text-sm font-medium">{label}</p> : null}
             {fields.map((field, index) => (
-                <div key={field.id} className="rounded-lg border border-border/60 p-3 space-y-2 bg-muted/20">
+                <div key={field.id} className="flex flex-col rounded-lg border border-border/60 p-3 gap-y-2 bg-muted/20">
                     <div className="flex justify-between items-center gap-2">
                         <span className="text-xs font-medium text-muted-foreground">
                             {resolveLanguageKey("expenditureLine")} #{index + 1}

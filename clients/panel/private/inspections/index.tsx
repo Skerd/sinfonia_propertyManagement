@@ -3,9 +3,9 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useMemo} from "react";
-import {buildTitleBreadcrumb, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
 import InspectionSheetView from "@propertyManagementModule/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx";
@@ -14,6 +14,7 @@ import CancelInspectionDialog from "@propertyManagementModule/components/custom/
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconTextPlus} from "@tabler/icons-react";
+import { cn } from "@coreModule/components/lib/utils";
 
 export function buildInspectionEditPath(inspection: Inspection): string {
     return buildUrlWithExistingParams(window.location.href, "/realEstate/inspections/edit", {
@@ -72,7 +73,7 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
     ], [resolveLanguageKey]);
 
     const headerTitle = useMemo(
-        () => buildTitleBreadcrumb(resolveLanguageKey("title") as string, [projectName, edificeName, floorName, unitName]),
+        () => buildPageTitle(resolveLanguageKey("title") as string, [projectName, edificeName, floorName, unitName]),
         [resolveLanguageKey, unitName],
     );
 
@@ -97,7 +98,7 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
             // syncExtraFiltersKeys={["unitId"]}
             buildEditPath={buildInspectionEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            cardViewClassName={GRID_TRANSACTIONAL}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_3, "mt-0.5")}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(inspection, onDelete, onRestore, listRef) => (
                 <InspectionCard

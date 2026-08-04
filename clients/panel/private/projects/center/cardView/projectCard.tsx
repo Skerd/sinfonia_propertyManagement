@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useMemo} from "react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -20,7 +21,7 @@ import {
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityMediaHeader} from "@propertyManagementModule/components/custom/cards/EntityMediaHeader.tsx";
 import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import ProjectSheetView from "@propertyManagementModule/clients/panel/private/projects/center/sheetView/projectSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
@@ -110,40 +111,35 @@ function ProjectCard({
                 <div className={CARD_BODY_CLASS}>
                     {!!project.statistics && (
                         <div className="flex flex-col gap-1">
-                            <div className={CARD_INFO_ROWS_CLASS}>
+                            <InfoRowGroup>
                                 <InfoRow
                                     icon={IconBuilding}
                                     label={resolveLanguageKey("statistics.edifices")}
                                     tooltip={resolveLanguageKey("statistics.edificesTooltip")}
-                                    show={!!read?.statistics}
                                     value={project.statistics.totalEdifices != null && project.statistics.totalEdifices}
                                 />
                                 <InfoRow
                                     icon={IconStack}
                                     label={resolveLanguageKey("statistics.floors")}
                                     tooltip={resolveLanguageKey("statistics.floorsTooltip")}
-                                    show={!!read?.statistics}
                                     value={project.statistics.totalFloors != null && project.statistics.totalFloors}
                                 />
                                 <InfoRow
                                     icon={IconDoor}
                                     label={resolveLanguageKey("statistics.units")}
                                     tooltip={resolveLanguageKey("statistics.unitsTooltip")}
-                                    show={!!read?.statistics}
                                     value={project.statistics.totalUnits != null && project.statistics.totalUnits}
                                 />
                                 <InfoRow
                                     icon={IconGrid4x4}
                                     label={resolveLanguageKey("statistics.area")}
                                     tooltip={resolveLanguageKey("statistics.areaTooltip")}
-                                    show={!!read?.statistics}
                                     value={project.statistics.totalArea != null && formatCardAreaM2(project.statistics.totalArea)}
                                 />
                                 <InfoRow
                                     icon={IconChartArrowsVertical}
                                     label={resolveLanguageKey("statistics.investment")}
                                     tooltip={resolveLanguageKey("statistics.investmentTooltip")}
-                                    show={!!read?.statistics}
                                     value={
                                         project.statistics?.totalInvestmentValue && Array.isArray(project.statistics.totalInvestmentValue) && project.statistics.totalInvestmentValue.length > 0 &&
                                         <div className="text-success flex flex-wrap gap-1">
@@ -165,7 +161,7 @@ function ProjectCard({
                                         </div>
                                     }
                                 />
-                            </div>
+                            </InfoRowGroup>
                             <EntityStatusBadgeRow
                                 unitsByStatus={project.statistics.unitsByStatus}
                                 resolveLanguageKey={resolveLanguageKey}

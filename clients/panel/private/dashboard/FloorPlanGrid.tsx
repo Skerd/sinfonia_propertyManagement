@@ -156,9 +156,9 @@ export function FloorPlanGrid({
     }, [selectedFloorId])
 
     return (
-        <div className="space-y-2">
+        <div className="flex flex-col gap-y-2">
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-x-2">
                 <Button size="sm" variant="outline" onClick={() => setShowOverlay(showOverlay === "blocks" ? "image" : "blocks")}>
                     {showOverlay === "blocks" ? <ArrowLeftRight /> : <ArrowRightLeft />}
                 </Button>
@@ -172,7 +172,7 @@ export function FloorPlanGrid({
                         sortedFloors.map((floor) => {
                             const floorUnits = unitsByFloor.get(floor._id) ?? [];
                             return (
-                                <div key={floor._id} className="space-y-0 grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-2">
+                                <div key={floor._id} className="gap-y-0 grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-2">
                                     <div
                                         className="col-span-1 md:col-span-1 lg:col-span-1 flex items-center justify-center border rounded-lg">
                                         <h4 className="text-xs font-medium text-muted-foreground mb-0">{floor.name ?? floor.levelNumber ?? "—"}</h4>
@@ -217,7 +217,7 @@ export function FloorPlanGrid({
                         loadingEdifice ?
                         <Loader />
                         : edificeData?.mainImage ?
-                        <div className="space-x-2 grid grid-cols-1 xl:grid-cols-2 gap-2 w-full">
+                        <div className="gap-x-2 grid grid-cols-1 xl:grid-cols-2 gap-2 w-full">
 
                             <PolygonSelector
                                 imageUrl={`/api/auxiliary/media/${edificeData.project?.mainImage?._id || edificeData.mainImage._id || edificeData.mainImage}`}
@@ -254,7 +254,7 @@ export function FloorPlanGrid({
                                                             const floorUnits = unitsByFloor.get(floor._id) ?? [];
                                                             if (floorUnits.length === 0) return null;
                                                             return (
-                                                                <div key={floor._id} className="space-y-2 w-full">
+                                                                <div key={floor._id} className="flex flex-col gap-y-2 w-full">
                                                                     <div className="w-full flex items-center justify-center border rounded-lg">
                                                                         <h4 className="text-xs font-medium text-muted-foreground mb-0">{floor.name ?? floor.levelNumber ?? "—"}</h4>
                                                                     </div>

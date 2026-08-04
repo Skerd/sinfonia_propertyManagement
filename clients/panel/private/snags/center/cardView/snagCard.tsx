@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -11,15 +12,16 @@ import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconAlertTriangle, IconCalendar, IconDoor, IconMapPin} from "@tabler/icons-react";
+import {IconAlertTriangle, IconCalendar, IconDoor, IconLabel, IconMapPin} from "@tabler/icons-react";
 import SnagSheetView from "@propertyManagementModule/clients/panel/private/snags/center/sheetView/snagSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS, STATUS_BADGE_NEUTRAL, STATUS_BADGE_WARNING} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL, STATUS_BADGE_WARNING} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import AssignSnag, {ASSIGN_SNAG_ACTION} from "@propertyManagementModule/clients/panel/private/snags/center/actions/assign.tsx";
 import StartWorkingSnag, {START_WORKING_SNAG_ACTION} from "@propertyManagementModule/clients/panel/private/snags/center/actions/startWorking.tsx";
 import FinishWorkingSnag, {FINISH_WORKING_SNAG_ACTION} from "@propertyManagementModule/clients/panel/private/snags/center/actions/finishWorking.tsx";
@@ -98,12 +100,17 @@ function SnagCard({
         <>
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
-                    title={snag.title}
-                    subtitle={snag.name}
-                    badges={<>
+                    title={
+                        <span className="flex min-w-0 items-center gap-1">
+                            <span className="truncate">{snag.title}</span>
+                            {!!read?.name && snag.name ? <CopyTooltip text={snag.name} /> : null}
+                        </span>
+                    }
+                    badges={
+                        <>
                             {!!read?.status && !!snag.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
-                                    <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
+                                    <Badge variant="outline" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
                                         {getStatusLabel(resolveLanguageKey, snag.status)}
                                     </Badge>
                                 </TooltipDisplayer>
@@ -118,8 +125,7 @@ function SnagCard({
                         </>
                     }
                     showTitle={!!read?.title}
-                    showSubtitle={!!read?.name}
-                    showBadges={!!read?.status}
+                    showBadges={!!(read?.status || read?.severity)}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu
@@ -137,7 +143,13 @@ function SnagCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
+                        <InfoRow
+                            icon={IconLabel}
+                            label={resolveLanguageKey("fields.name")}
+                            show={!!read?.name}
+                            value={snag.name}
+                        />
                         <InfoRow
                             icon={IconDoor}
                             label={resolveLanguageKey("fields.unit")}
@@ -156,16 +168,13 @@ function SnagCard({
                             show={!!read?.dueDate}
                             value={formatDate(snag.dueDate)}
                         />
-                    </div>
-                    <Separator />
-                    <div className={CARD_INFO_ROWS_CLASS}>
                         <InfoRow
                             icon={IconAlertTriangle}
                             label={resolveLanguageKey("fields.assignedTo")}
                             show={!!read?.assignedTo && !!(snag.assignedTo?.name || snag.assignedTo?.surname)}
                             value={[snag.assignedTo?.name, snag.assignedTo?.surname].filter(Boolean).join(" ")}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

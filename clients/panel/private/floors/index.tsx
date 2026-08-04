@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconStackPush} from "@tabler/icons-react";
-import {buildTitleBreadcrumb, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import FloorCard from "@propertyManagementModule/clients/panel/private/floors/center/cardView/floorCard.tsx";
@@ -12,7 +12,7 @@ import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/ce
 import ViewUnitsOverlay from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx";
 import UnitsOverlay from "@propertyManagementModule/components/custom/floors/unitsOverlay.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {MASONRY_HIERARCHY_BREAKPOINTS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
@@ -65,14 +65,13 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createFloor"
             buildEditPath={buildFloorEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            headerTitle={buildTitleBreadcrumb(resolveLanguageKey("title") as string, [projectName, edificeName])}
+            headerTitle={buildPageTitle(resolveLanguageKey("title") as string, [projectName, edificeName])}
             headerDescription={resolveLanguageKey("description") as string}
             extraFilters={{edifice: edificeId ?? undefined}}
             quickFilters={quickFilters}
             configurations={{limit: 20}}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/floors/center/sheetView/floorSheetView.tsx"
-            cardLayout="masonry"
-            masonryBreakpointCols={MASONRY_HIERARCHY_BREAKPOINTS}
+            cardViewClassName={GRID_HIERARCHY}
             rowActionMenu={{allowMenuForCustomChildren: !!readUnits}}
             renderCard={(floor, onDelete, onRestore) => (
                 <FloorCard

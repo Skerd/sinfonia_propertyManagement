@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -24,7 +25,6 @@ import {EntityCardShell} from "@propertyManagementModule/components/custom/cards
 import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
 import {
     CARD_BODY_CLASS,
-    CARD_INFO_ROWS_CLASS,
     STATUS_BADGE_INFO,
     STATUS_BADGE_NEUTRAL,
 } from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
@@ -93,7 +93,6 @@ function LeadCard({
             <EntityCardShell onClick={() => setAction("view")}>
                 <EntityTextCardHeader
                     title={(fullName || lead.name)}
-                    subtitle={undefined}
                     badges={<>
                             {!!read?.status && lead.status && (
                                 <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
@@ -112,7 +111,6 @@ function LeadCard({
                         </>
                     }
                     showTitle={!!read?.firstName}
-                    showSubtitle={false}
                     showBadges={!!(read?.status || read?.source)}
                     hideActions={hideActions}
                     actionMenu={
@@ -129,7 +127,7 @@ function LeadCard({
                 />
                 <Separator />
                 <div className={CARD_BODY_CLASS}>
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconPhone}
                             label={resolveLanguageKey("phone")}
@@ -170,9 +168,9 @@ function LeadCard({
                                 <span className="text-xs font-medium text-status-sold">{budget}</span>
                             ) : null}
                         />
-                    </div>
+                    </InfoRowGroup>
                     <Separator />
-                    <div className={CARD_INFO_ROWS_CLASS}>
+                    <InfoRowGroup>
                         <InfoRow
                             icon={IconUser}
                             label={resolveLanguageKey("assignedTo")}
@@ -191,7 +189,7 @@ function LeadCard({
                                 <span className="text-xs text-muted-foreground">{lead.followUpDate}</span>
                             ) : null}
                         />
-                    </div>
+                    </InfoRowGroup>
                 </div>
             </EntityCardShell>
 

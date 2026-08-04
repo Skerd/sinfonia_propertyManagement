@@ -4,7 +4,7 @@ import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconCash} from "@tabler/icons-react";
-import {buildTitleBreadcrumb, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
@@ -15,7 +15,8 @@ import SaleSheetView, {
     saleDeleteRestoreConfirmLabel,
 } from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
 
 function AllSales({resolveLanguageKey}: WithLanguageType) {
     const [searchParams] = useSearchParams();
@@ -25,7 +26,7 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
     const edificeName = searchParams.get("edificeName") || undefined;
 
     const headerTitle = useMemo(
-        () => buildTitleBreadcrumb(resolveLanguageKey("title") as string, [edificeName, unitName]),
+        () => buildPageTitle(resolveLanguageKey("title") as string, [edificeName, unitName]),
         [resolveLanguageKey, edificeName, unitName],
     );
 
@@ -85,7 +86,7 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
                     onRestore={onRestore}
                 />
             )}
-            cardViewClassName={GRID_TRANSACTIONAL}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(sale, onDelete, onRestore) => (
                 <SaleCard

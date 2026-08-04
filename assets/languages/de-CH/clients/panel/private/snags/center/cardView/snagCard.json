@@ -4,6 +4,7 @@
   "statusLabel": "Status",
   "severityLabel": "Schweregrad",
   "fields": {
+    "name": "Code",
     "unit": "Einheit",
     "location": "Standort",
     "dueDate": "Fälligkeit",

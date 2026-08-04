@@ -26,6 +26,8 @@
   "isDlp": "Within defects liability periode",
   "variationOrder": "Nachtragsauftrag",
   "none": "Keine",
+  "yes": "Ja",
+  "no": "Nein",
   "statuses": {
     "open": "Offen",
     "in_progress": "In Bearbeitung",

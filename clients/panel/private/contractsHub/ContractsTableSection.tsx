@@ -103,7 +103,7 @@ export default function ContractsTableSection({
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
     return (
-        <section className="space-y-4">
+        <section className="flex flex-col gap-y-4">
             <div>
                 <h2 className="text-lg font-semibold">{rk("title")}</h2>
                 <p className="text-sm text-muted-foreground">{rk("description")}</p>
@@ -111,7 +111,7 @@ export default function ContractsTableSection({
 
             <div className="rounded-lg border overflow-hidden">
                 <ContractsHubFilterToolbar>
-                    <div className="space-y-3">
+                    <div className="flex flex-col gap-y-3">
                         <div className="flex flex-col gap-1.5">
                             <Label className="text-xs font-medium text-muted-foreground">{rk("searchLabel")}</Label>
                             <Input

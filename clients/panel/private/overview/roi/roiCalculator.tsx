@@ -205,7 +205,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
     }
 
     return (
-        <div className="p-6 space-y-6">
+        <div className="flex flex-col p-6 gap-y-6">
 
             <Header
                 title={rk("roiCalculator.title")}
@@ -302,7 +302,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                         <>
                             {
                                 result &&
-                                <div className="space-y-6">
+                                <div className="flex flex-col gap-y-6">
                                     <div className="flex justify-end">
                                         <Button
                                             type="button"
@@ -316,7 +316,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                     </div>
                                     {
                                         result.project &&
-                                        <div className="border rounded-lg p-5 space-y-4">
+                                        <div className="flex flex-col border rounded-lg p-5 gap-y-4">
                                             <h2 className="font-semibold text-lg">
                                                 {summaryTitle}
                                             </h2>

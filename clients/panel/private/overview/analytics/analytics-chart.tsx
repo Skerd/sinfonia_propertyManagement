@@ -5,16 +5,16 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from '@coreModule/components/ui/chart.tsx';
+import { formatCurrency, formatDate, formatNumber } from '@coreModule/helpers/general';
 
-const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTH_AXIS_FORMAT: Intl.DateTimeFormatOptions = {month: 'short', year: 'numeric'};
 
+/** `"2026-06"` to a locale month label. */
 function formatMonth(monthStr: string): string {
   if (!monthStr) return '';
-  const parts = monthStr.split('-').map(Number);
-  const y = parts[0];
-  const m = parts[1] ?? 1;
-  const name = MONTH_NAMES[m - 1] ?? '';
-  return name ? `${name} ${y}` : monthStr;
+  const [year, month] = monthStr.split('-').map(Number);
+  if (!Number.isFinite(year)) return monthStr;
+  return formatDate(new Date(year, (month ?? 1) - 1, 1), {format: MONTH_AXIS_FORMAT});
 }
 
 type PeriodDatum = { month: string; count?: number; totalRevenue?: number };
@@ -57,6 +57,7 @@ export function AnalyticsChart({ salesByPeriod, noDataLabel }: AnalyticsChartPro
           fontSize={12}
           tickLine={false}
           axisLine={false}
+          tickFormatter={(value: number) => formatNumber(value, {compact: true})}
         />
         <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
         <Area
@@ -71,7 +72,7 @@ export function AnalyticsChart({ salesByPeriod, noDataLabel }: AnalyticsChartPro
   );
 }
 
-type RevenueChartProps = {
+type RevenueByPeriodChartProps = {
   revenueByPeriod: PeriodDatum[];
   noDataLabel?: string;
 };
@@ -80,7 +81,12 @@ const REVENUE_CONFIG = {
   total: { label: 'Revenue', color: 'var(--chart-1)' },
 } satisfies ChartConfig;
 
-export function RevenueChart({ revenueByPeriod, noDataLabel }: RevenueChartProps) {
+/**
+ * Revenue per month. Named for what it plots rather than `RevenueChart`,
+ * which collided with the stacked portfolio-value chart of the same name -
+ * the analytics page imported both and had to alias one at the call site.
+ */
+export function RevenueByPeriodChart({ revenueByPeriod, noDataLabel }: RevenueByPeriodChartProps) {
   const data = revenueByPeriod.map((d) => ({
     name: formatMonth(d.month),
     total: d.totalRevenue ?? 0,
@@ -109,7 +115,7 @@ export function RevenueChart({ revenueByPeriod, noDataLabel }: RevenueChartProps
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value: number) => formatCurrency(value, 'EUR', {compact: true})}
         />
         <ChartTooltip cursor={{ fill: 'var(--muted)', fillOpacity: 0.6 }} content={<ChartTooltipContent />} />
         <Bar dataKey="total" fill="var(--color-total)" radius={[4, 4, 0, 0]} />

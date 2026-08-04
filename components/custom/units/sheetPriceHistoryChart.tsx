@@ -197,9 +197,9 @@ export default function SheetPriceHistoryChart({
     }
 
     return (
-        <div className={cn("space-y-4", className)}>
+        <div className={cn("flex flex-col gap-y-4", className)}>
             {series.map(({prefix, points}) => (
-                <div key={prefix} className="space-y-2">
+                <div key={prefix} className="flex flex-col gap-y-2">
                     {series.length > 1 ? (
                         <div className="text-xs font-medium text-muted-foreground">
                             {resolveLanguageKey("priceHistory.currencySeries")}: {prefix}

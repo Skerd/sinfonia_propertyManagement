@@ -88,8 +88,8 @@ function AssignSnagDialog({
                         {resolveLanguageKey("dialogDescription")}
                     </DialogDescription>
                 </DialogHeader>
-                <div className="space-y-4 py-2">
-                    <div className="space-y-2">
+                <div className="flex flex-col gap-y-4 py-2">
+                    <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("assignedToLabel")}</Label>
                         <ApiSelect
                             apiUrl="/api/company/users/select"

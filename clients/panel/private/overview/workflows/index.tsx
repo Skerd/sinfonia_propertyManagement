@@ -1,4 +1,6 @@
 import { compose } from "redux";
+import {formatNumber} from "@coreModule/helpers/general";
+import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import { ActionException } from "armonia/src/modules/core/types";
 import { Badge } from "@coreModule/components/ui/badge.tsx";
@@ -51,18 +53,18 @@ function WorkflowsTab({ resolveLanguageKey, dashboardData, loading, error, onRef
 
       <div>
         <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("inspectionsSection")}</h3>
-        <div className="grid gap-2 sm:grid-cols-2">
-          <KpiCard compact title={resolveLanguageKey("totalInspections")} value={totalInspections.toLocaleString()} subtitle={resolveLanguageKey("totalInspectionsDesc")} icon={IconFileCheck as never} href={kpi.kpiTotalInspections(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("followUpRequired")} value={followUpRequiredCount.toLocaleString()} subtitle={resolveLanguageKey("followUpRequiredDesc")} icon={IconAlertCircle as never} variant="warning" href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("totalInspections")} value={formatNumber(totalInspections)} subtitle={resolveLanguageKey("totalInspectionsDesc")} icon={IconFileCheck as never} href={kpi.kpiTotalInspections(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("followUpRequired")} value={formatNumber(followUpRequiredCount)} subtitle={resolveLanguageKey("followUpRequiredDesc")} icon={IconAlertCircle as never} variant="warning" href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
         </div>
         {Object.keys(inspectionsByStatus).length > 0 && (
           <div className="mt-3">
-            <p className="text-muted-foreground text-[11px] font-medium mb-1.5">
+            <p className="text-muted-foreground text-2xs font-medium mb-1.5">
               {resolveLanguageKey("inspectionsByStatus")}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {Object.entries(inspectionsByStatus).map(([status, count]) => (
-                <Badge key={status} variant="outline" className="text-[11px] font-medium">
+                <Badge key={status} variant="outline" className="text-2xs font-medium">
                   {status}: {count}
                 </Badge>
               ))}
@@ -73,18 +75,18 @@ function WorkflowsTab({ resolveLanguageKey, dashboardData, loading, error, onRef
 
       <div>
         <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("modificationRequestsSection")}</h3>
-        <div className="grid gap-2 sm:grid-cols-2">
-          <KpiCard compact title={resolveLanguageKey("totalModificationRequests")} value={totalModificationRequests.toLocaleString()} subtitle={resolveLanguageKey("totalModificationRequestsDesc")} icon={IconFileText as never} href={kpi.kpiTotalModificationRequests(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("openModificationRequests")} value={openModificationRequests.toLocaleString()} subtitle={resolveLanguageKey("openModificationRequestsDesc")} icon={IconFileText as never} variant="warning" href={kpi.kpiOpenModificationRequests(ctx)} linkLabel={link} />
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("totalModificationRequests")} value={formatNumber(totalModificationRequests)} subtitle={resolveLanguageKey("totalModificationRequestsDesc")} icon={IconFileText as never} href={kpi.kpiTotalModificationRequests(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("openModificationRequests")} value={formatNumber(openModificationRequests)} subtitle={resolveLanguageKey("openModificationRequestsDesc")} icon={IconFileText as never} variant="warning" href={kpi.kpiOpenModificationRequests(ctx)} linkLabel={link} />
         </div>
         {Object.keys(modificationRequestsByStatus).length > 0 && (
           <div className="mt-3">
-            <p className="text-muted-foreground text-[11px] font-medium mb-1.5">
+            <p className="text-muted-foreground text-2xs font-medium mb-1.5">
               {resolveLanguageKey("modificationRequestsByStatus")}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {Object.entries(modificationRequestsByStatus).map(([status, count]) => (
-                <Badge key={status} variant="outline" className="text-[11px] font-medium">
+                <Badge key={status} variant="outline" className="text-2xs font-medium">
                   {status}: {count}
                 </Badge>
               ))}

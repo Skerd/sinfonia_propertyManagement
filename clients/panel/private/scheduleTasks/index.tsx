@@ -2,9 +2,9 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL_WIDE} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconListCheck} from "@tabler/icons-react";
-import {buildTitleBreadcrumb} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general";
 import type {ScheduleTask} from "armonia/src/modules/propertyManagement/api/realEstate/private/scheduleTask/scheduleTask.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ScheduleTaskCard from "@propertyManagementModule/clients/panel/private/scheduleTasks/center/cardView/scheduleTaskCard.tsx";
@@ -35,7 +35,7 @@ function buildScheduleTaskEditPath(scheduleTask: ScheduleTask) {
 
 function AllScheduleTasks({resolveLanguageKey, projectId, projectName}: AllScheduleTasksProps) {
     const extraFilters = projectId ? {projectId} : undefined;
-    const headerTitle = buildTitleBreadcrumb(
+    const headerTitle = buildPageTitle(
         String(resolveLanguageKey("title")),
         projectName ? [projectName] : [],
     );
@@ -55,7 +55,7 @@ function AllScheduleTasks({resolveLanguageKey, projectId, projectName}: AllSched
             buildEditPath={buildScheduleTaskEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/sheetView/scheduleTaskSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL_WIDE}
+            cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
             headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}

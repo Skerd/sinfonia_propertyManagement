@@ -4,6 +4,7 @@
   "statusLabel": "Statusi",
   "severityLabel": "Ashpërsia",
   "fields": {
+    "name": "Kodi",
     "unit": "Njësia",
     "location": "Vendndodhja",
     "dueDate": "Afati",

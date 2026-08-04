@@ -97,10 +97,10 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='analytics' className='space-y-4'>
+                        <TabsContent value='analytics' className='flex flex-col gap-y-4'>
                             <Analytics dashboardData={dashboardData} {...tabDrillDownProps} />
                         </TabsContent>
-                        <TabsContent value='projects' className='space-y-4'>
+                        <TabsContent value='projects' className='flex flex-col gap-y-4'>
                             <ProjectsTab
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -109,7 +109,7 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='edifices' className='space-y-4'>
+                        <TabsContent value='edifices' className='flex flex-col gap-y-4'>
                             <EdificesTab
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -118,7 +118,7 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='units' className='space-y-4'>
+                        <TabsContent value='units' className='flex flex-col gap-y-4'>
                             <UnitsTab
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -127,7 +127,7 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='workflows' className='space-y-4'>
+                        <TabsContent value='workflows' className='flex flex-col gap-y-4'>
                             <WorkflowsTab
                                 dashboardData={dashboardData}
                                 loading={loading}

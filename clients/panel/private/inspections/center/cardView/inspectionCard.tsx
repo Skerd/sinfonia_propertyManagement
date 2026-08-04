@@ -170,7 +170,7 @@ function InspectionCard({
                     }
                     <div className="w-full min-w-0">
                         <div className="relative">
-                            <div className="p-2 space-y-1">
+                            <div className="flex flex-col p-2 gap-y-1">
                                 {!!read?.name && (
                                     <p className="font-semibold text-base leading-tight line-clamp-1">{inspection.name}</p>
                                 )}

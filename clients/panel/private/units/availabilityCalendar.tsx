@@ -62,7 +62,7 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
     }, [projectId, dateFrom, dateTo]);
 
     return (
-        <div className="p-6 space-y-6 max-w-5xl mx-auto">
+        <div className="flex flex-col p-6 gap-y-6 max-w-5xl mx-auto">
             <div>
                 <h1 className="text-2xl font-bold">Unit Availability Calendar</h1>
                 <p className="text-muted-foreground text-sm mt-1">
@@ -72,7 +72,7 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
 
             {/* Filters */}
             <div className="flex flex-wrap gap-4 items-end border rounded-lg p-4 bg-muted/30">
-                <div className="space-y-1">
+                <div className="flex flex-col gap-y-1">
                     <Label className="text-xs">Project ID (optional)</Label>
                     <Input
                         className="w-60 h-8 text-sm"
@@ -81,11 +81,11 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
                         onChange={(e) => setProjectId(e.target.value)}
                     />
                 </div>
-                <div className="space-y-1">
+                <div className="flex flex-col gap-y-1">
                     <Label className="text-xs">From</Label>
                     <Input type="date" className="w-38 h-8 text-sm" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
                 </div>
-                <div className="space-y-1">
+                <div className="flex flex-col gap-y-1">
                     <Label className="text-xs">To</Label>
                     <Input type="date" className="w-38 h-8 text-sm" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
                 </div>
@@ -101,7 +101,7 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
             )}
 
             {data && (
-                <div className="space-y-3">
+                <div className="flex flex-col gap-y-3">
                     <p className="text-xs text-muted-foreground">
                         Showing {data.entries.length} unit{data.entries.length !== 1 ? "s" : ""} &nbsp;·&nbsp;
                         {fmtDate(data.dateFrom)} – {fmtDate(data.dateTo)}

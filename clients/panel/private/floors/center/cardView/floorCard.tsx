@@ -1,4 +1,5 @@
 import {compose} from "redux";
+import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
 import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
@@ -21,7 +22,7 @@ import {EntityCardShell} from "@propertyManagementModule/components/custom/cards
 import {EntityMediaHeader} from "@propertyManagementModule/components/custom/cards/EntityMediaHeader.tsx";
 import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
 import {EntityCardFetchGuard} from "@propertyManagementModule/components/custom/cards/EntityCardFetchGuard.tsx";
-import {CARD_BODY_CLASS, CARD_INFO_ROWS_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {CARD_BODY_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import FloorSheetView from "@propertyManagementModule/clients/panel/private/floors/center/sheetView/floorSheetView.tsx";
 import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -133,7 +134,7 @@ function FloorCard({
                         }
                     />
                     <div className={CARD_BODY_CLASS}>
-                        <div className={CARD_INFO_ROWS_CLASS}>
+                        <InfoRowGroup>
                             <InfoRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("data.units")}
@@ -148,7 +149,7 @@ function FloorCard({
                                 show={!!read?.area}
                                 value={floor.area != null && formatCardAreaM2(floor.area)}
                             />
-                        </div>
+                        </InfoRowGroup>
                         {(!!floor.isAccessible || !!floor.hasEmergencyExit) && (
                             <div className="flex flex-wrap gap-1">
                                 {!!floor.isAccessible && !!read?.isAccessible && (

@@ -171,7 +171,7 @@ function PaymentCalendarTab({
                 ) : (
                     <>
                         <Card>
-                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                            <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiPaid")}</CardTitle>
                                 <CheckCircle2 className="size-4 text-success" />
                             </CardHeader>
@@ -180,7 +180,7 @@ function PaymentCalendarTab({
                             </CardContent>
                         </Card>
                         <Card>
-                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                            <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiPending")}</CardTitle>
                                 <Clock className="size-4 text-warning" />
                             </CardHeader>
@@ -189,7 +189,7 @@ function PaymentCalendarTab({
                             </CardContent>
                         </Card>
                         <Card>
-                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                            <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiOverdue")}</CardTitle>
                                 <AlertTriangle className="size-4 text-destructive" />
                             </CardHeader>
@@ -253,7 +253,7 @@ function PaymentCalendarTab({
                     <CardContent className="pt-0">
                         <ScrollArea className="h-[min(480px,calc(100vh-320px))] pe-2">
                             {loading ? (
-                                <div className="space-y-2">
+                                <div className="flex flex-col gap-y-2">
                                     <Skeleton className="h-16 w-full" />
                                     <Skeleton className="h-16 w-full" />
                                 </div>
@@ -267,7 +267,7 @@ function PaymentCalendarTab({
                                             <li key={cost._id}>
                                                 <Card>
                                                     <CardContent className="flex flex-wrap items-start justify-between gap-2 p-4">
-                                                        <div className="min-w-0 space-y-1">
+                                                        <div className="flex flex-col min-w-0 gap-y-1">
                                                             <p className="truncate font-medium">
                                                                 {cost.purchasePerson?.name}{" "}
                                                                 {cost.purchasePerson?.surname ?? ""}

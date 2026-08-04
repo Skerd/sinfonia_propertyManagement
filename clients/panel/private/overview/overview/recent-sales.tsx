@@ -17,14 +17,14 @@ export const RecentSales: React.FC<RecentSalesProps> = ({
 }) => {
   if (!recentSales.length) {
     return (
-      <div className="py-2 text-center text-muted-foreground text-[11px]">
+      <div className="py-2 text-center text-muted-foreground text-2xs">
         {noSalesLabel}
       </div>
     );
   }
 
   return (
-    <div className="space-y-1">
+    <div className="flex flex-col gap-y-1">
       {recentSales.map((item) => {
         const name =
           item.soldBy?.fullName ??
@@ -40,17 +40,17 @@ export const RecentSales: React.FC<RecentSalesProps> = ({
         return (
           <div className="flex items-center gap-2 py-0.5" key={item._id}>
             <Avatar className="h-6 w-6 shrink-0">
-              <AvatarFallback className="text-[10px]">{initials || "?"}</AvatarFallback>
+              <AvatarFallback className="text-3xs">{initials || "?"}</AvatarFallback>
             </Avatar>
             <div className="flex min-w-0 flex-1 items-baseline justify-between gap-2">
               <div className="min-w-0 shrink">
-                <span className="truncate text-[11px] font-medium text-foreground">{name}</span>
-                <span className="text-muted-foreground text-[11px]">
+                <span className="truncate text-2xs font-medium text-foreground">{name}</span>
+                <span className="text-muted-foreground text-2xs">
                   {" · "}
                   {unitLabelPrefix} {unitLabel}
                 </span>
               </div>
-              <span className="shrink-0 text-[11px] font-semibold tabular-nums text-foreground">
+              <span className="shrink-0 text-2xs font-semibold tabular-nums text-foreground">
                 +${(item.finalPrice ?? 0).toLocaleString()}
               </span>
             </div>
