@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/project/detailPage.tsx",
-  "backToInvest": "Zurück zu invest",
-  "amenities": "Amenities",
-  "checkAvailability": "Check availability",
+  "backToInvest": "Zurück zu Investieren",
+  "amenities": "Ausstattung",
+  "checkAvailability": "Verfügbarkeit prüfen",
   "notFound": "Projekt nicht gefunden."
 }

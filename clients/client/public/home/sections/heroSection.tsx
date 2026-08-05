@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import FigmaMenu from "@propertyManagementModule/clients/client/public/shared/figmaMenu.tsx";
 import {usePublicIsMobile} from "@propertyManagementModule/clients/client/public/shared/hooks/usePublicIsMobile.ts";
+import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const CURSOR_SIZE = 239;
 const CURSOR_RADIUS = CURSOR_SIZE / 2;
@@ -13,7 +14,7 @@ type CursorPosition = {
     y: number;
 };
 
-function ViewPropertiesCursor({position}: {position: CursorPosition}) {
+function ViewPropertiesCursor({position, label}: {position: CursorPosition; label: string}) {
     return (
         <div
             className="pointer-events-none fixed z-[50] flex size-[15rem] items-center justify-center rounded-full backdrop-blur-[17px] transition-opacity duration-200"
@@ -29,13 +30,15 @@ function ViewPropertiesCursor({position}: {position: CursorPosition}) {
                 className="font-aeonik-light text-xl not-italic leading-tight text-white uppercase whitespace-pre"
                 data-node-id="49:34"
             >
-                {`View  properties`}
+                {label}
             </p>
         </div>
     );
 }
 
-function HeroSection() {
+type HeroSectionProps = Pick<PublicLanguageProps, "resolveLanguageKey">;
+
+function HeroSection({resolveLanguageKey}: HeroSectionProps) {
     const navigate = useNavigate();
     const isMobile = usePublicIsMobile();
     const heroRef = useRef<HTMLDivElement>(null);
@@ -83,7 +86,7 @@ function HeroSection() {
             setCursorOverMenu(false);
             setCursorPos({x: event.clientX, y: event.clientY});
         },
-        [heroInView, isMenuTarget, isMobile],
+        [heroInView, isMobile, isMenuTarget],
     );
 
     const handleMouseLeave = useCallback(() => {
@@ -102,10 +105,15 @@ function HeroSection() {
     );
 
     const showCustomCursor = !isMobile && heroInView && cursorPos !== null && !cursorOverMenu;
+    const heroTitle = String(resolveLanguageKey("heroTitle"));
+    const cursorLabel = String(resolveLanguageKey("heroCursor"));
 
     return (
         <>
-            {showCustomCursor && createPortal(<ViewPropertiesCursor position={cursorPos} />, document.body)}
+            {showCustomCursor && createPortal(
+                <ViewPropertiesCursor position={cursorPos} label={cursorLabel} />,
+                document.body,
+            )}
             <div
                 ref={heroRef}
                 className={`relative min-h-[100svh] min-w-0 w-full overflow-hidden ${showCustomCursor ? "cursor-none" : ""}`}
@@ -136,7 +144,7 @@ function HeroSection() {
                         className="mt-auto max-w-4xl pb-10 font-aeonik-medium text-3xl leading-none text-white not-italic sm:pb-12 sm:text-4xl md:text-5xl lg:max-w-5xl lg:pb-16 lg:text-[64px]"
                         data-node-id="37:133"
                     >
-                        Real estate, reimagined without the complexity, commitment, or compromise.
+                        {heroTitle}
                     </p>
                 </div>
             </div>

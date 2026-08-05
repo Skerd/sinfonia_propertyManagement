@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/3d/floor/index.tsx",
+  "backTo3d": "Torna alla vista 3D",
+  "back": "Indietro",
+  "notFound": "Progetto non trovato.",
+  "propertiesTitle": "Immobili",
+  "filterAvailable": "Disponibile",
+  "filterSold": "Venduto",
+  "filterReserved": "Prenotato",
+  "filterAll": "Tutti",
+  "areaLabel": "Superficie",
+  "roomsLabel": "Locali",
+  "floorLabel": "Piano",
+  "bathsLabel": "Bagni",
+  "orientationLabel": "Orientamento",
+  "noUnitsOnFloor": "Nessuna unità su questo piano per il filtro selezionato.",
+  "floorSelected": "Piano",
+  "viewerEmptyProject": "Nessuna sovrapposizione edificio configurata. Esplora le unità nella vista a griglia.",
+  "viewerEmptyEdifice": "Nessuna sovrapposizione piano su questo edificio. Esplora le unità nella vista a griglia.",
+  "viewerEmptyFloor": "Nessuna sovrapposizione unità su questo piano. Esplora le unità nella vista a griglia.",
+  "viewGrid": "Vista griglia"
+}

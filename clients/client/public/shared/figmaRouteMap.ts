@@ -22,6 +22,8 @@ export const figmaPublicRoutes: FigmaPublicRoute[] = [
     {path: "/project/grid", label: "Open project - Grid view", nodeId: "494:548", frameName: "Open project - Grid view", height: 4363},
     {path: "/property", label: "Property View", nodeId: "515:4258", frameName: "Property view", height: 3636},
     {path: "/contact", label: "Contact", nodeId: "305:228", frameName: "Contact us", height: 1117},
+    {path: "/privacy", label: "Privacy Policy", nodeId: "legal:privacy", frameName: "Privacy Policy", height: 2000},
+    {path: "/terms", label: "Terms of Conditions", nodeId: "legal:terms", frameName: "Terms of Conditions", height: 2000},
 ];
 
 export const figmaMenuLinks = [

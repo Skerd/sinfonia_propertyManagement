@@ -2,6 +2,14 @@ import type {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 export type PublicLanguageProps = Pick<WithLanguageType, "resolveLanguageKey" | "currentLanguage" | "languageCode">;
 
+/** Replaces `{{key}}` placeholders in a translation string. */
+export function fillLanguageTemplate(template: string, vars: Record<string, string | number>): string {
+    return Object.entries(vars).reduce(
+        (result, [key, value]) => result.replaceAll(`{{${key}}}`, String(value)),
+        template,
+    );
+}
+
 export type PropertyTypeId = "apartment" | "studio" | "penthouse" | "commercial" | "villa";
 
 export type MarketingPolygonCoordinate = {x: number; y: number};

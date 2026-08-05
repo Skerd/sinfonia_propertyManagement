@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/privacy/index.tsx",
+  "pageTitle": "Politique de confidentialité",
+  "lastUpdated": "Dernière mise à jour : 20 juillet 2026",
+  "intro": "La présente Politique de confidentialité explique comment Pronix collecte, utilise, stocke et partage les informations personnelles lorsque vous visitez notre site web, créez un compte ou utilisez notre plateforme d'investissement immobilier.",
+  "section1Title": "Qui sommes-nous",
+  "section1Body": "Pronix exploite une plateforme numérique d'investissement immobilier. Pour toute question relative à la confidentialité, contactez-nous à {{email}} ou via la page Contact de ce site web.",
+  "section2Title": "Informations que nous collectons",
+  "section2Body": "Nous pouvons collecter les informations que vous fournissez directement, telles que votre nom, votre adresse e-mail, votre numéro de téléphone et les messages envoyés via des formulaires.\n\nNous pouvons également collecter des données de compte et de vérification nécessaires au fonctionnement des processus de copropriété et d'investissement, ainsi que des données techniques telles que le type d'appareil, le navigateur, la localisation approximative et les pages visitées.",
+  "section3Title": "Comment nous utilisons vos informations",
+  "section3Body": "Nous utilisons les informations personnelles pour :\n• fournir et améliorer la plateforme Pronix\n• répondre aux demandes de renseignements et d'assistance\n• traiter les candidatures, réservations et documents d'investissement\n• communiquer les mises à jour produit et les avis de service\n• maintenir la sécurité, prévenir la fraude et respecter les obligations légales",
+  "section4Title": "Bases juridiques",
+  "section4Body": "Selon votre localisation, nous traitons les données personnelles sur la base d'un ou plusieurs des éléments suivants : votre consentement, l'exécution d'un contrat, nos intérêts légitimes à exploiter et sécuriser la plateforme, et la conformité à la loi applicable.",
+  "section5Title": "Partage et sous-traitants",
+  "section5Body": "Nous ne vendons pas vos informations personnelles. Nous pouvons partager des données avec des prestataires de services de confiance qui nous aident à héberger l'infrastructure, traiter les communications, vérifier l'identité ou fournir des fonctionnalités de la plateforme — uniquement dans la mesure nécessaire à la fourniture de ces services et sous des garanties appropriées.\n\nNous pouvons également divulguer des informations lorsque la loi, un règlement ou une procédure juridique valide l'exige.",
+  "section6Title": "Conservation et sécurité",
+  "section6Body": "Nous conservons les informations personnelles uniquement aussi longtemps que nécessaire aux fins décrites dans la présente politique, ou comme l'exige la loi. Nous appliquons des mesures administratives, techniques et organisationnelles conçues pour protéger les données personnelles contre l'accès non autorisé, la perte ou l'utilisation abusive.",
+  "section7Title": "Vos droits",
+  "section7Body": "Sous réserve de la loi applicable, vous pouvez demander l'accès, la rectification ou la suppression de vos informations personnelles, et vous pouvez vous opposer à certains traitements ou en demander la limitation. Vous pouvez également retirer votre consentement lorsque le traitement repose sur le consentement.\n\nPour exercer ces droits, contactez {{email}}. Vous pouvez également déposer une plainte auprès de votre autorité locale de protection des données.",
+  "section8Title": "Modifications de cette politique",
+  "section8Body": "Nous pouvons mettre à jour la présente Politique de confidentialité de temps à autre. La date « Dernière mise à jour » en haut de cette page sera modifiée en conséquence. L'utilisation continue de Pronix après une mise à jour signifie que vous acceptez la politique révisée."
+}

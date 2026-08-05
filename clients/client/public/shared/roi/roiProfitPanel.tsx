@@ -14,6 +14,7 @@ type RoiProfitPanelProps = {
     results: RoiCalculationResult;
     holdingPeriod: number;
     title?: string;
+    totalReturnLabel?: string;
     rows?: RoiProfitRow[];
     footer?: ReactNode;
     disclaimer?: string;
@@ -42,6 +43,7 @@ function RoiProfitPanel({
     results,
     holdingPeriod,
     title = "Profit",
+    totalReturnLabel = "Total return",
     rows,
     footer,
     disclaimer,
@@ -59,7 +61,7 @@ function RoiProfitPanel({
                 <div className="mx-auto flex w-full max-w-xl flex-col gap-10 md:gap-16">
                     <div className="flex w-full flex-col items-start not-italic gap-6 md:gap-6">
                         <div className="flex w-full flex-col items-start gap-3 text-white leading-[1.1]">
-                            <p className="font-aeonik-medium w-full cursor-default text-lg md:text-2xl">Total return</p>
+                            <p className="font-aeonik-medium w-full cursor-default text-lg md:text-2xl">{totalReturnLabel}</p>
                             <p className={`font-kamerik-bold w-full ${PUBLIC_TITLE}`}>
                                 {formatEuro(results.totalReturn)}
                             </p>
@@ -91,7 +93,7 @@ function RoiProfitPanel({
         <div className="bg-[#0247fe] p-6 md:p-8" data-node-id={dataNodeId}>
             <p className={`text-center ${PUBLIC_SUBTITLE} text-white`}>{title}</p>
             <div className="mt-6 text-white">
-                <p className="font-aeonik-medium text-lg md:text-2xl">Total return</p>
+                <p className="font-aeonik-medium text-lg md:text-2xl">{totalReturnLabel}</p>
                 <p className="mt-2 font-aeonik-medium text-3xl leading-[1.1] md:text-5xl">{formatEuro(results.totalReturn)}</p>
                 <div className="mt-6 flex flex-col gap-4 text-base md:text-2xl">
                     {displayRows.map((row) => (

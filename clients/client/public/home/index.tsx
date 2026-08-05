@@ -19,7 +19,7 @@ import type {MarketingStatsResponse} from "@propertyManagementModule/clients/cli
 type HomePageProps = WithLanguageType & WithAxiosType<MarketingStatsResponse>;
 
 function HomePage(props: HomePageProps) {
-    const {onFilterChange} = props;
+    const {resolveLanguageKey, onFilterChange} = props;
     const initialFetchDone = useRef(false);
 
     useEffect(() => {
@@ -31,31 +31,37 @@ function HomePage(props: HomePageProps) {
         // Intentionally mount-only: onFilterChange identity changes every withAxios render.
     }, []);
 
+    const t = (key: string) => String(resolveLanguageKey(key));
+
     return (
         <PublicPageShell nodeId="41:196" nodeName="Homepage">
             <PublicSection nodeId="41:197" flush>
-                <HeroSection />
+                <HeroSection resolveLanguageKey={resolveLanguageKey} />
             </PublicSection>
             <PublicSection nodeId="142:1209">
-                <AboutSection data={props.data} loading={props.loading} />
+                <AboutSection
+                    resolveLanguageKey={resolveLanguageKey}
+                    data={props.data}
+                    loading={props.loading}
+                />
             </PublicSection>
             <PublicSection nodeId="80:3907">
-                <CapabilitiesSection />
+                <CapabilitiesSection resolveLanguageKey={resolveLanguageKey} />
             </PublicSection>
             <PublicSection nodeId="71:1839">
                 <FeaturedPropertiesSection />
             </PublicSection>
             <PublicSection nodeId="80:1918" flush fullBleed>
-                <OwnershipSection />
+                <OwnershipSection resolveLanguageKey={resolveLanguageKey} />
             </PublicSection>
             <PublicSection nodeId="94:255">
-                <RoiCalculatorSection />
+                <RoiCalculatorSection resolveLanguageKey={resolveLanguageKey} />
             </PublicSection>
             <PublicSection nodeId="80:3906" flush contentFrame>
-                <PlatformSection />
+                <PlatformSection resolveLanguageKey={resolveLanguageKey} />
             </PublicSection>
             <PublicSection nodeId="357:340">
-                <CtaSection />
+                <CtaSection resolveLanguageKey={t} />
             </PublicSection>
             <PublicSection nodeId="357:360" flush fullBleed>
                 <FooterSection />

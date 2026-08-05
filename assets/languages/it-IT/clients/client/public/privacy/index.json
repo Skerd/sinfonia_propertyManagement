@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/privacy/index.tsx",
+  "pageTitle": "Informativa sulla privacy",
+  "lastUpdated": "Ultimo aggiornamento: 20 luglio 2026",
+  "intro": "La presente Informativa sulla privacy spiega come Pronix raccoglie, utilizza, conserva e condivide le informazioni personali quando visitate il nostro sito web, create un account o utilizzate la nostra piattaforma di investimento immobiliare.",
+  "section1Title": "Chi siamo",
+  "section1Body": "Pronix gestisce una piattaforma digitale di investimento immobiliare. Per domande relative alla privacy, contattateci all'indirizzo {{email}} o tramite la pagina Contatti di questo sito web.",
+  "section2Title": "Informazioni che raccogliamo",
+  "section2Body": "Possiamo raccogliere informazioni fornite direttamente da voi, come nome, indirizzo e-mail, numero di telefono e messaggi inviati tramite moduli.\n\nPossiamo inoltre raccogliere dati dell'account e di verifica necessari per gestire i flussi di co-proprietà e investimento, nonché dati tecnici come tipo di dispositivo, browser, posizione approssimativa e pagine visitate.",
+  "section3Title": "Come utilizziamo le vostre informazioni",
+  "section3Body": "Utilizziamo le informazioni personali per:\n• fornire e migliorare la piattaforma Pronix\n• rispondere a richieste di informazioni e assistenza\n• elaborare candidature, prenotazioni e documentazione di investimento\n• comunicare aggiornamenti sui prodotti e avvisi di servizio\n• mantenere la sicurezza, prevenire le frodi e adempiere agli obblighi legali",
+  "section4Title": "Basi giuridiche",
+  "section4Body": "A seconda della vostra posizione, trattiamo i dati personali sulla base di uno o più dei seguenti elementi: il vostro consenso, l'esecuzione di un contratto, i nostri legittimi interessi nel gestire e proteggere la piattaforma e la conformità alla legge applicabile.",
+  "section5Title": "Condivisione e responsabili del trattamento",
+  "section5Body": "Non vendiamo le vostre informazioni personali. Possiamo condividere dati con fornitori di servizi fidati che ci aiutano a ospitare l'infrastruttura, elaborare le comunicazioni, verificare l'identità o fornire funzionalità della piattaforma — solo nella misura necessaria per erogare tali servizi e con adeguate misure di tutela.\n\nPossiamo inoltre divulgare informazioni quando richiesto dalla legge, da un regolamento o da un valido procedimento legale.",
+  "section6Title": "Conservazione e sicurezza",
+  "section6Body": "Conserviamo le informazioni personali solo per il tempo necessario alle finalità descritte nella presente informativa, o come richiesto dalla legge. Applichiamo misure amministrative, tecniche e organizzative progettate per proteggere i dati personali da accessi non autorizzati, perdita o uso improprio.",
+  "section7Title": "I vostri diritti",
+  "section7Body": "Fatto salvo quanto previsto dalla legge applicabile, potete richiedere l'accesso, la rettifica o la cancellazione delle vostre informazioni personali, e potete opporvi o limitare determinati trattamenti. Potete inoltre revocare il consenso quando il trattamento si basa sul consenso.\n\nPer esercitare tali diritti, contattate {{email}}. Potete anche presentare un reclamo all'autorità locale per la protezione dei dati.",
+  "section8Title": "Modifiche alla presente informativa",
+  "section8Body": "Possiamo aggiornare la presente Informativa sulla privacy di tanto in tanto. La data «Ultimo aggiornamento» in cima a questa pagina cambierà di conseguenza. L'uso continuato di Pronix dopo un aggiornamento implica l'accettazione dell'informativa revisionata."
+}

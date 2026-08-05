@@ -1,6 +1,8 @@
+import {useMemo} from "react";
 import {useAiChat} from "@propertyManagementModule/clients/client/public/shared/aiChat/aiChatContext.tsx";
 import {FIGMA_PLATFORM_SECTION} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {PUBLIC_BODY, PUBLIC_CARD_TITLE, PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
 import type {CSSProperties} from "react";
 
@@ -8,7 +10,12 @@ const {orbWidthRatio, orbRemCap, descriptionRemCap} = FIGMA_PLATFORM_SECTION;
 const ORB_SLOT = `min(${orbWidthRatio * 100}%, ${orbRemCap}rem)`;
 const DESC_MAX_WIDTH = `min(100%, ${descriptionRemCap}rem)`;
 
-type PlatformFeature = (typeof PLATFORM_FEATURES)[number];
+type PlatformFeature = {
+    nodeId: string;
+    index: string;
+    title: string;
+    description: string;
+};
 
 function FeatureHead({index, title, nodeId}: Pick<PlatformFeature, "index" | "title" | "nodeId">) {
     return (
@@ -34,47 +41,25 @@ function FeatureDescription({description}: Pick<PlatformFeature, "description">)
     );
 }
 
-const PLATFORM_FEATURES = [
-    {
-        nodeId: "150:1410",
-        index: "01/",
-        title: "AI property advisor",
-        description:
-            "Tell it your budget, timeline, and goals — get matched properties with projected returns, instantly.",
-    },
-    {
-        nodeId: "150:1416",
-        index: "02/",
-        title: "Live deal intelligence",
-        description:
-            "Ask anything about a property, the market, or how co-ownership works. Real answers, drawn from real deal data.",
-    },
-    {
-        nodeId: "150:1422",
-        index: "03/",
-        title: "Always on, always learning",
-        description:
-            "The platform improves with every question, every transaction, every new property listed.",
-    },
-    {
-        nodeId: "156:1479",
-        index: "04/",
-        title: " Multilingual by default",
-        description: "Ask in Albanian, English, or Italian. The platform answers in the language you use.",
-    },
+const PLATFORM_FEATURE_KEYS = [
+    {nodeId: "150:1410", index: "01/", titleKey: "platform1Title", bodyKey: "platform1Body"},
+    {nodeId: "150:1416", index: "02/", titleKey: "platform2Title", bodyKey: "platform2Body"},
+    {nodeId: "150:1422", index: "03/", titleKey: "platform3Title", bodyKey: "platform3Body"},
+    {nodeId: "156:1479", index: "04/", titleKey: "platform4Title", bodyKey: "platform4Body"},
 ] as const;
 
 type PlatformOrbButtonProps = {
     onClick: () => void;
     className?: string;
+    ariaLabel: string;
 };
 
-function PlatformOrbButton({onClick, className}: PlatformOrbButtonProps) {
+function PlatformOrbButton({onClick, className, ariaLabel}: PlatformOrbButtonProps) {
     return (
         <button
             type="button"
             onClick={onClick}
-            aria-label="Open AI assistant"
+            aria-label={ariaLabel}
             data-node-id="150:1469"
             className={`aspect-square w-[min(72vw,100%)] max-w-full shrink-0 cursor-pointer border-0 bg-transparent p-0 md:w-[min(100cqw,100cqh)] ${className ?? ""}`}
         >
@@ -83,8 +68,23 @@ function PlatformOrbButton({onClick, className}: PlatformOrbButtonProps) {
     );
 }
 
-function PlatformSection() {
+type PlatformSectionProps = Pick<PublicLanguageProps, "resolveLanguageKey">;
+
+function PlatformSection({resolveLanguageKey}: PlatformSectionProps) {
     const {open} = useAiChat();
+    const t = (key: string) => String(resolveLanguageKey(key));
+    const openAiLabel = t("platformOpenAi");
+
+    const features = useMemo(
+        () =>
+            PLATFORM_FEATURE_KEYS.map((feature) => ({
+                nodeId: feature.nodeId,
+                index: feature.index,
+                title: t(feature.titleKey),
+                description: t(feature.bodyKey),
+            })),
+        [resolveLanguageKey],
+    );
 
     return (
         <div className="relative min-w-0 w-full overflow-x-clip overflow-y-clip">
@@ -92,7 +92,7 @@ function PlatformSection() {
                 className={`mx-auto mb-6 max-w-3xl text-center md:mb-8 lg:mb-10 ${PUBLIC_TITLE}`}
                 data-node-id="94:609"
             >
-                Built on a platform that does the work for you.
+                {t("platformTitle")}
             </p>
 
             <div
@@ -100,7 +100,7 @@ function PlatformSection() {
                 data-node-id="150:1409"
                 style={{"--platform-orb-slot": ORB_SLOT} as CSSProperties}
             >
-                {PLATFORM_FEATURES.map((feature, index) => (
+                {features.map((feature, index) => (
                     <div key={feature.nodeId} className="contents">
                         <div className="flex min-w-0 flex-col gap-3 md:hidden">
                             <FeatureHead index={feature.index} title={feature.title} nodeId={feature.nodeId} />
@@ -116,14 +116,14 @@ function PlatformSection() {
 
                         {index === 1 && (
                             <div className="flex justify-center md:hidden">
-                                <PlatformOrbButton onClick={open} />
+                                <PlatformOrbButton onClick={open} ariaLabel={openAiLabel} />
                             </div>
                         )}
                     </div>
                 ))}
 
                 <div className="@container hidden min-h-0 min-w-0 items-center justify-center md:col-start-2 md:row-start-1 md:row-span-4 md:flex">
-                    <PlatformOrbButton onClick={open} />
+                    <PlatformOrbButton onClick={open} ariaLabel={openAiLabel} />
                 </div>
             </div>
         </div>

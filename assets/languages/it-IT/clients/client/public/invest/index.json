@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/invest/index.tsx",
+  "title": "Investi in Albania",
+  "description": "Esplora immobili attivi — acquista per intero, co-possiedi una quota o preparati alla proprietà tokenizzata.",
+  "tabRealEstate": "Immobili",
+  "tabCoOwnership": "Co-proprietà",
+  "tabTokenization": "Tokenizzazione",
+  "searchPlaceholder": "Cerca immobili...",
+  "empty": "Nessun immobile corrisponde ai tuoi filtri.",
+  "tokenizationTitle": "Tokenizzazione in arrivo Q3 2026",
+  "tokenizationDescription": "Una versione tokenizzata della stessa struttura di co-proprietà — soglie di ingresso più basse, scambi secondari più rapidi, identico respaldo legale.",
+  "fromShare": "Da",
+  "yield": "rendimento",
+  "noImage": "Nessuna immagine"
+}

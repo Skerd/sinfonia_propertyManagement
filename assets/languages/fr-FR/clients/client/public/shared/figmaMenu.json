@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/shared/figmaMenu.tsx",
+  "navProperties": "Biens",
+  "navAbout": "À propos de Pronix",
+  "navInvestors": "Pour les investisseurs",
+  "navDevelopers": "Pour les promoteurs",
+  "navContact": "Contact",
+  "logIn": "Se connecter",
+  "getStarted": "Commencer",
+  "close": "Fermer",
+  "languageGroup": "Langue",
+  "navMenu": "Menu de navigation",
+  "openMenu": "Ouvrir le menu",
+  "closeMenu": "Fermer le menu"
+}

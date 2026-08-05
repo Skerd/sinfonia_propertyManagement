@@ -4,6 +4,7 @@ import {compose} from "redux";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
+import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {FIGMA_FOOTER_SECTION} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {
@@ -12,7 +13,7 @@ import {
     PUBLIC_GRID_FOOTER_MAIN,
     PUBLIC_SECTION_BASE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-import type {MarketingCompanyResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import type {MarketingCompanyResponse, PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
 
@@ -162,17 +163,20 @@ function isValidEmail(value: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function validateContactForm(values: MarketingContactFormType): ContactFieldErrors {
+function validateContactForm(
+    values: MarketingContactFormType,
+    resolveLanguageKey: PublicLanguageProps["resolveLanguageKey"],
+): ContactFieldErrors {
     const errors: ContactFieldErrors = {};
-    if (!values.name.trim()) errors.name = "Name is required.";
-    if (!values.surname.trim()) errors.surname = "Surname is required.";
+    if (!values.name.trim()) errors.name = String(resolveLanguageKey("nameRequired"));
+    if (!values.surname.trim()) errors.surname = String(resolveLanguageKey("surnameRequired"));
     if (!values.email.trim()) {
-        errors.email = "Email is required.";
+        errors.email = String(resolveLanguageKey("emailRequired"));
     } else if (!isValidEmail(values.email.trim())) {
-        errors.email = "Enter a valid email.";
+        errors.email = String(resolveLanguageKey("emailInvalid"));
     }
-    if (!values.phone.trim()) errors.phone = "Number is required.";
-    if (!values.message.trim()) errors.message = "Message is required.";
+    if (!values.phone.trim()) errors.phone = String(resolveLanguageKey("numberRequired"));
+    if (!values.message.trim()) errors.message = String(resolveLanguageKey("messageRequired"));
     return errors;
 }
 
@@ -194,11 +198,13 @@ function FooterNumberField({
     onChange,
     disabled,
     hasError,
+    placeholder,
 }: {
     value: string;
     onChange: (value: string) => void;
     disabled?: boolean;
     hasError?: boolean;
+    placeholder: string;
 }) {
     return (
         <div
@@ -209,36 +215,29 @@ function FooterNumberField({
             data-node-id="357:2469"
         >
             <label className="sr-only" htmlFor="footer-number">
-                Number
+                {placeholder}
             </label>
             <input
                 id="footer-number"
                 type="tel"
                 name="phone"
                 autoComplete="tel"
-                placeholder=" "
+                placeholder={placeholder}
                 value={value}
                 disabled={disabled}
                 onChange={(e) => onChange(e.target.value)}
                 aria-invalid={hasError || undefined}
-                className={cn(fieldInputClass, "peer leading-[17.15px]")}
+                className={cn(fieldInputClass, "leading-[17.15px]")}
                 style={{fontSize: `min(${fieldFontCqwCap}cqw, 20px)`}}
             />
-            <span
-                aria-hidden
-                className="pointer-events-none absolute left-[min(0.61cqw,10px)] font-aeonik-medium not-italic leading-[17.15px] text-white peer-focus:hidden peer-[:not(:placeholder-shown)]:hidden"
-                style={{fontSize: `min(${fieldFontCqwCap}cqw, 20px)`}}
-            >
-                <span className="uppercase">n</span>
-                <span>umber</span>
-            </span>
         </div>
     );
 }
 
-type FooterContactFormProps = WithAxiosType<MarketingContactFormResponseType, MarketingContactFormType>;
+type FooterContactFormProps = Pick<PublicLanguageProps, "resolveLanguageKey"> &
+    WithAxiosType<MarketingContactFormResponseType, MarketingContactFormType>;
 
-function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContactFormProps) {
+function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, error}: FooterContactFormProps) {
     const fieldPad = "px-[min(0.61cqw,10px)] py-[min(1.46cqw,24px)]";
     const fieldText = {fontSize: `min(${fieldFontCqwCap}cqw, 20px)`};
     const [name, setName] = useState("");
@@ -283,7 +282,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
             phone: phone.trim(),
             message: message.trim(),
         };
-        const errors = validateContactForm(values);
+        const errors = validateContactForm(values, resolveLanguageKey);
         setFieldErrors(errors);
         if (Object.keys(errors).length > 0) return;
         onPost(values);
@@ -300,7 +299,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                 style={{fontSize: `min(${introFontCqwCap}cqw, 24px)`}}
                 data-node-id="357:2462"
             >
-                {`Get in touch and let's talk about where you want to go.`}
+                {String(resolveLanguageKey("formIntro"))}
             </p>
             <div className="flex w-full min-w-0 flex-col items-start" data-node-id="357:2463">
                 <div
@@ -321,7 +320,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                                     type="text"
                                     name="name"
                                     autoComplete="given-name"
-                                    placeholder="Name"
+                                    placeholder={String(resolveLanguageKey("namePlaceholder"))}
                                     value={name}
                                     disabled={loading}
                                     aria-invalid={!!fieldErrors.name || undefined}
@@ -348,7 +347,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                                     type="text"
                                     name="surname"
                                     autoComplete="family-name"
-                                    placeholder="Surname"
+                                    placeholder={String(resolveLanguageKey("surnamePlaceholder"))}
                                     value={surname}
                                     disabled={loading}
                                     aria-invalid={!!fieldErrors.surname || undefined}
@@ -376,7 +375,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                                 type="email"
                                 name="email"
                                 autoComplete="email"
-                                placeholder="Email"
+                                placeholder={String(resolveLanguageKey("emailPlaceholder"))}
                                 value={email}
                                 disabled={loading}
                                 aria-invalid={!!fieldErrors.email || undefined}
@@ -396,6 +395,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                             value={phone}
                             disabled={loading}
                             hasError={!!fieldErrors.phone}
+                            placeholder={String(resolveLanguageKey("numberPlaceholder"))}
                             onChange={(value) => {
                                 setSubmitted(false);
                                 clearFieldError("phone");
@@ -414,7 +414,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                         >
                             <textarea
                                 name="message"
-                                placeholder="Message"
+                                placeholder={String(resolveLanguageKey("messagePlaceholder"))}
                                 rows={3}
                                 value={message}
                                 disabled={loading}
@@ -450,7 +450,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                         className="font-aeonik-medium whitespace-nowrap not-italic leading-[17.15px]"
                         style={{fontSize: `min(${sendFontCqwCap}cqw, 24px)`}}
                     >
-                        {loading ? "Sending…" : "Send"}
+                        {loading ? String(resolveLanguageKey("sending")) : String(resolveLanguageKey("send"))}
                     </span>
                 </button>
                 {submitted ? (
@@ -459,7 +459,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                         className="font-aeonik-medium w-full min-w-0 text-left leading-[1.3] text-white/90"
                         style={{fontSize: `min(${fieldFontCqwCap}cqw, 18px)`}}
                     >
-                        Thanks — we received your message and will get back to you soon.
+                        {String(resolveLanguageKey("formSuccess"))}
                     </p>
                 ) : null}
                 {error && !submitted && Object.keys(fieldErrors).length === 0 ? (
@@ -468,7 +468,7 @@ function FooterContactFormInner({onPost, loading, innerRef, error}: FooterContac
                         className="font-aeonik-medium w-full min-w-0 text-left leading-[1.3] text-red-200"
                         style={{fontSize: `min(${fieldFontCqwCap}cqw, 18px)`}}
                     >
-                        Something went wrong. Please try again.
+                        {String(resolveLanguageKey("formError"))}
                     </p>
                 ) : null}
             </div>
@@ -482,7 +482,7 @@ const FooterContactForm = compose(
         true,
     ),
     withDebug(true, true),
-)(FooterContactFormInner) as unknown as React.ComponentType;
+)(FooterContactFormInner) as unknown as React.ComponentType<Pick<PublicLanguageProps, "resolveLanguageKey">>;
 
 function buildSocialLinks(data: MarketingCompanyResponse | null | undefined): FooterNavLink[] {
     if (!data) {
@@ -501,9 +501,9 @@ function buildSocialLinks(data: MarketingCompanyResponse | null | undefined): Fo
     return links;
 }
 
-type FooterSectionProps = WithAxiosType<MarketingCompanyResponse>;
+type FooterSectionProps = PublicLanguageProps & WithAxiosType<MarketingCompanyResponse>;
 
-function FooterSectionInner({data, onFilterChange}: FooterSectionProps) {
+function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSectionProps) {
     const initialFetchDone = useRef(false);
 
     useEffect(() => {
@@ -561,34 +561,34 @@ function FooterSectionInner({data, onFilterChange}: FooterSectionProps) {
                         >
                             <FooterLinkColumn
                                 nodeId="357:2442"
-                                title="Explore"
+                                title={String(resolveLanguageKey("explore"))}
                                 links={[
-                                    {label: "Properties", to: "/projects"},
-                                    {label: "About Pronix", to: "/about"},
-                                    {label: "How it works"},
-                                    {label: "For developers", to: "/developers"},
+                                    {label: String(resolveLanguageKey("linkProperties")), to: "/projects"},
+                                    {label: String(resolveLanguageKey("linkAbout")), to: "/about"},
+                                    {label: String(resolveLanguageKey("linkHowItWorks"))},
+                                    {label: String(resolveLanguageKey("linkDevelopers")), to: "/developers"},
                                 ]}
                             />
                             {socialLinks.length > 0 ? (
                                 <FooterLinkColumn
                                     nodeId="357:2448"
-                                    title="Social"
+                                    title={String(resolveLanguageKey("social"))}
                                     links={socialLinks}
                                 />
                             ) : null}
                             <FooterLinkColumn
                                 nodeId="357:2453"
-                                title="Support"
+                                title={String(resolveLanguageKey("support"))}
                                 links={[
-                                    {label: "Privacy Policy"},
-                                    {label: "Terms of Conditions"},
+                                    {label: String(resolveLanguageKey("linkPrivacy")), to: "/privacy"},
+                                    {label: String(resolveLanguageKey("linkTerms")), to: "/terms"},
                                 ]}
                             />
                         </div>
                         <FooterContactRow email={data?.email} phoneNumber={data?.phoneNumber} />
                     </div>
 
-                    <FooterContactForm />
+                    <FooterContactForm resolveLanguageKey={resolveLanguageKey} />
                 </div>
             </div>
         </section>
@@ -601,4 +601,5 @@ export default compose(
         true,
     ),
     withDebug(true, true),
+    withLanguage("src/modules/propertyManagement/clients/client/public/shared/sections/footerSection.tsx"),
 )(FooterSectionInner) as unknown as React.ComponentType;

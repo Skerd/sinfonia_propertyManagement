@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx",
+  "eyebrow": "Kollektion",
+  "title": "Ausgewählte Immobilien",
+  "body": "Entdecken Sie unsere Kollektion Premium-Immobilien — Wohnungen, Villen und Gewerbeflächen an den besten Standorten.",
+  "typeApartment": "Wohnung",
+  "typeStudio": "Studio",
+  "typePenthouse": "Penthouse",
+  "typeCommercial": "Gewerbe",
+  "typeVilla": "Villa",
+  "typeProject": "Projekt",
+  "locationFallback": "Albanien",
+  "prevAria": "Vorherige ausgewählte Immobilien",
+  "nextAria": "Nächste ausgewählte Immobilien",
+  "slidesAria": "Diashow ausgewählter Immobilien",
+  "goToAria": "Zu {{title}} wechseln"
+}

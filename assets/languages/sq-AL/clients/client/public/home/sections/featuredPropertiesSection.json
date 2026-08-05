@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx",
+  "eyebrow": "Koleksioni",
+  "title": "Prona të veçuara",
+  "body": "Eksploroni koleksionin tonë të pronave premium — apartamente, vila dhe hapësira komerciale në lokacionet më të mira.",
+  "typeApartment": "Apartament",
+  "typeStudio": "Studio",
+  "typePenthouse": "Penthouse",
+  "typeCommercial": "Komerciale",
+  "typeVilla": "Vilë",
+  "typeProject": "Projekt",
+  "locationFallback": "Shqipëri",
+  "prevAria": "Pronat e veçuara të mëparshme",
+  "nextAria": "Pronat e veçuara të ardhshme",
+  "slidesAria": "Slajdet e pronave të veçuara",
+  "goToAria": "Shko te {{title}}"
+}

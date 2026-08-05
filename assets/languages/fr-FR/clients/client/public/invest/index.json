@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/invest/index.tsx",
+  "title": "Investir en Albanie",
+  "description": "Parcourez les biens en direct — achetez en totalité, copossédez une part ou préparez-vous à la propriété tokenisée.",
+  "tabRealEstate": "Immobilier",
+  "tabCoOwnership": "Copropriété",
+  "tabTokenization": "Tokenisation",
+  "searchPlaceholder": "Rechercher des biens…",
+  "empty": "Aucun bien ne correspond à vos filtres.",
+  "tokenizationTitle": "Tokenisation lancée au Q3 2026",
+  "tokenizationDescription": "Une version tokenisée de la même structure de copropriété — seuils d'entrée plus bas, transactions secondaires plus rapides, même garantie juridique.",
+  "fromShare": "À partir de",
+  "yield": "rendement",
+  "noImage": "Aucune image"
+}

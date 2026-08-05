@@ -18,6 +18,8 @@ const AboutPage = lazy(() => import("@propertyManagementModule/clients/client/pu
 const InvestorsPage = lazy(() => import("@propertyManagementModule/clients/client/public/investors/index.tsx"));
 const DevelopersPage = lazy(() => import("@propertyManagementModule/clients/client/public/developers/index.tsx"));
 const ContactPage = lazy(() => import("@propertyManagementModule/clients/client/public/contact/index.tsx"));
+const PrivacyPage = lazy(() => import("@propertyManagementModule/clients/client/public/privacy/index.tsx"));
+const TermsPage = lazy(() => import("@propertyManagementModule/clients/client/public/terms/index.tsx"));
 const PropertyPage = lazy(() => import("@propertyManagementModule/clients/client/public/property/index.tsx"));
 const Project3dPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/3d/index.tsx"));
 const Project3dFloorPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/3d/floor/index.tsx"));
@@ -57,6 +59,8 @@ function PublicApp() {
                                 <Route path="investors" element={<ErrorBoundary><InvestorsPage /></ErrorBoundary>} />
                                 <Route path="developers" element={<ErrorBoundary><DevelopersPage /></ErrorBoundary>} />
                                 <Route path="contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
+                                <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
+                                <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
                                 <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
                                 <Route path="project/3d" element={<ErrorBoundary><Project3dPage /></ErrorBoundary>} />
                                 <Route path="project/3d/floor" element={<ErrorBoundary><Project3dFloorPage /></ErrorBoundary>} />

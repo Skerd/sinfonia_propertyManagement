@@ -5,7 +5,11 @@ import {
     PUBLIC_GRID_CELL,
     PUBLIC_TITLE_FIGMA,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-import type {MarketingStatsResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import type {
+    MarketingStatsResponse,
+    PublicLanguageProps,
+} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 
 type StatCardData = {
@@ -15,26 +19,23 @@ type StatCardData = {
     nodeId: string;
 };
 
-const STAT_CARD_META: Omit<StatCardData, "number">[] = [
+const STAT_CARD_KEYS = [
     {
         nodeId: "I142:1192;142:1073",
-        label: "Total projects",
-        hoverText:
-            "Across Albania's growing development pipeline — apartments, villas, and commercial units — every property structured under the same SPV framework.",
+        labelKey: "statProjectsLabel",
+        hoverKey: "statProjectsHover",
     },
     {
         nodeId: "I142:1192;142:1160",
-        label: "Total units",
-        hoverText:
-            "Individual residential and commercial units available for full purchase or co-ownership, with detailed floor plans, projected yields, and unit-level documentation on every listing.",
+        labelKey: "statUnitsLabel",
+        hoverKey: "statUnitsHover",
     },
     {
         nodeId: "I142:1192;142:1082",
-        label: "Total value",
-        hoverText:
-            "Combined market value of every property structured through Pronix — entry-level co-ownership shares and full developments alike, all routed through the same regulated SPV framework.",
+        labelKey: "statValueLabel",
+        hoverKey: "statValueHover",
     },
-];
+] as const;
 
 const {
     numberFontCqwCap,
@@ -76,7 +77,11 @@ function formatCompactMagnitude(value: number, opts?: {currency?: boolean; symbo
     return `${prefix}${Math.round(abs)}`;
 }
 
-function buildStatCards(stats: MarketingStatsResponse | null | undefined, loading: boolean): StatCardData[] {
+function buildStatCards(
+    stats: MarketingStatsResponse | null | undefined,
+    loading: boolean,
+    resolveLanguageKey: PublicLanguageProps["resolveLanguageKey"],
+): StatCardData[] {
     const currency = stats?.valueCurrency;
     const numbers = loading && !stats
         ? ["—", "—", "—"]
@@ -90,8 +95,10 @@ function buildStatCards(stats: MarketingStatsResponse | null | undefined, loadin
             }),
         ];
 
-    return STAT_CARD_META.map((meta, index) => ({
-        ...meta,
+    return STAT_CARD_KEYS.map((meta, index) => ({
+        nodeId: meta.nodeId,
+        label: String(resolveLanguageKey(meta.labelKey)),
+        hoverText: String(resolveLanguageKey(meta.hoverKey)),
         number: numbers[index]!,
     }));
 }
@@ -172,11 +179,15 @@ function StatCard({
     );
 }
 
-type AboutSectionProps = Pick<WithAxiosType<MarketingStatsResponse>, "data" | "loading">;
+type AboutSectionProps = Pick<WithAxiosType<MarketingStatsResponse>, "data" | "loading"> &
+    Pick<PublicLanguageProps, "resolveLanguageKey">;
 
-function AboutSection({data, loading}: AboutSectionProps) {
+function AboutSection({data, loading, resolveLanguageKey}: AboutSectionProps) {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const statCards = useMemo(() => buildStatCards(data, loading), [data, loading]);
+    const statCards = useMemo(
+        () => buildStatCards(data, loading, resolveLanguageKey),
+        [data, loading, resolveLanguageKey],
+    );
 
     const proseValue = formatCompactMagnitude(data?.totalValue ?? 0, {
         currency: true,
@@ -185,6 +196,12 @@ function AboutSection({data, loading}: AboutSectionProps) {
     });
     const proseProjects = formatCompactMagnitude(data?.totalProjects ?? 0);
     const proseCoOwners = formatCompactMagnitude(data?.totalCoOwners ?? 0);
+    const aboutPrimary = fillLanguageTemplate(String(resolveLanguageKey("aboutProsePrimary")), {
+        value: proseValue,
+        projects: proseProjects,
+        coOwners: proseCoOwners,
+    });
+    const aboutMuted = String(resolveLanguageKey("aboutProseMuted"));
 
     return (
         <div className="relative min-w-0 w-full overflow-x-clip" data-node-id="142:1209">
@@ -206,10 +223,10 @@ function AboutSection({data, loading}: AboutSectionProps) {
             </div>
             <p className={`mt-8 min-w-0 max-w-full cursor-default break-words md:mt-10 ${PUBLIC_TITLE_FIGMA}`} data-node-id="87:158">
                 <span className="cursor-default text-pronix-ink leading-[1.1]">
-                    {`Pronix is a real estate investment platform built for Albania. Since launch, we've structured over ${proseValue} in property, across ${proseProjects} developments, on behalf of ${proseCoOwners} co-owners`}
+                    {aboutPrimary}
                 </span>
                 <span className="cursor-default text-pronix-ink-faded leading-[1.1]">
-                    {` — with every share legally registered and quarterly rent paid without delay.`}
+                    {aboutMuted}
                 </span>
             </p>
         </div>

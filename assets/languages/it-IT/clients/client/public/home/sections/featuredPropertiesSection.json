@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx",
+  "eyebrow": "Collezione",
+  "title": "Immobili in evidenza",
+  "body": "Esplora la nostra collezione di immobili premium — appartamenti, ville e spazi commerciali nelle migliori location.",
+  "typeApartment": "Appartamento",
+  "typeStudio": "Monolocale",
+  "typePenthouse": "Attico",
+  "typeCommercial": "Commerciale",
+  "typeVilla": "Villa",
+  "typeProject": "Progetto",
+  "locationFallback": "Albania",
+  "prevAria": "Immobili in evidenza precedenti",
+  "nextAria": "Immobili in evidenza successivi",
+  "slidesAria": "Slide degli immobili in evidenza",
+  "goToAria": "Vai a {{title}}"
+}

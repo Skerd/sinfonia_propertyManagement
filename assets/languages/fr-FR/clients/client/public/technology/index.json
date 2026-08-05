@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/technology/index.tsx",
+  "title": "Technologie",
+  "description": "La plateforme derrière chaque transaction Pronix — de la structuration SPV aux distributions trimestrielles.",
+  "section1Title": "Architecture native SPV",
+  "section1Body": "Chaque bien est détenu par une entité juridique dédiée. Les droits de propriété correspondent directement aux enregistrements du registre foncier albanais — pas de promesses hors registre.",
+  "section2Title": "Contrats numériques",
+  "section2Body": "Réservez, signez et suivez votre propriété en ligne. Papier là où la loi l'exige ; numérique partout ailleurs.",
+  "section3Title": "Distributions trimestrielles",
+  "section3Body": "Les loyers entrent, les charges sont déduites, et le rendement net est distribué selon un calendrier fixe — que vous possédiez l'immeuble en entier ou une seule part.",
+  "section4Title": "Conseiller immobilier IA",
+  "section4Body": "Indiquez votre budget, votre calendrier et vos objectifs. Obtenez instantanément des biens correspondants avec rendements projetés.",
+  "section5Title": "Intelligence transactionnelle en direct",
+  "section5Body": "Posez toute question sur un bien, le marché ou le fonctionnement de la copropriété. Des réponses concrètes tirées de données transactionnelles réelles.",
+  "section6Title": "Tableau de bord investisseur",
+  "section6Body": "Suivez chaque part, chaque distribution, chaque document — en un seul endroit.",
+  "section7Title": "Multilingue par défaut",
+  "section7Body": "Albanais, anglais ou italien. La plateforme répond dans la langue que vous utilisez."
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/privacy/index.tsx",
+  "pageTitle": "Datenschutzerklärung",
+  "lastUpdated": "Zuletzt aktualisiert: 20. Juli 2026",
+  "intro": "Diese Datenschutzerklärung erläutert, wie Pronix personenbezogene Informationen erhebt, verwendet, speichert und weitergibt, wenn Sie unsere Website besuchen, ein Konto erstellen oder unsere Immobilien-Investitionsplattform nutzen.",
+  "section1Title": "Wer wir sind",
+  "section1Body": "Pronix betreibt eine digitale Immobilien-Investitionsplattform. Bei datenschutzbezogenen Fragen kontaktieren Sie uns unter {{email}} oder über die Kontaktseite auf dieser Website.",
+  "section2Title": "Welche Informationen wir erheben",
+  "section2Body": "Wir können Informationen erheben, die Sie uns direkt mitteilen, wie Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer und über Formulare übermittelte Nachrichten.\n\nWir können auch Kontodaten und Verifizierungsdetails erheben, die für Miteigentums- und Investitionsprozesse erforderlich sind, sowie technische Daten wie Gerätetyp, Browser, ungefähren Standort und besuchte Seiten.",
+  "section3Title": "Wie wir Ihre Informationen verwenden",
+  "section3Body": "Wir verwenden personenbezogene Informationen, um:\n• die Pronix-Plattform bereitzustellen und zu verbessern\n• Anfragen und Supportanfragen zu beantworten\n• Anträge, Reservierungen und Investitionsdokumentation zu bearbeiten\n• Produktaktualisierungen und Servicehinweise zu kommunizieren\n• die Sicherheit zu gewährleisten, Betrug zu verhindern und gesetzliche Pflichten zu erfüllen",
+  "section4Title": "Rechtsgrundlagen",
+  "section4Body": "Je nach Ihrem Standort verarbeiten wir personenbezogene Daten auf Grundlage einer oder mehrerer der folgenden Rechtsgrundlagen: Ihrer Einwilligung, der Vertragserfüllung, unserer berechtigten Interessen am Betrieb und an der Sicherheit der Plattform sowie der Einhaltung geltenden Rechts.",
+  "section5Title": "Weitergabe und Auftragsverarbeiter",
+  "section5Body": "Wir verkaufen Ihre personenbezogenen Informationen nicht. Wir können Daten mit vertrauenswürdigen Dienstleistern teilen, die uns beim Hosting der Infrastruktur, bei der Kommunikationsverarbeitung, bei der Identitätsprüfung oder bei der Bereitstellung von Plattformfunktionen unterstützen — nur soweit dies zur Erbringung dieser Dienste erforderlich ist und unter angemessenen Schutzvorkehrungen.\n\nWir können Informationen auch offenlegen, wenn dies gesetzlich, durch Vorschriften oder durch ein gültiges rechtliches Verfahren erforderlich ist.",
+  "section6Title": "Aufbewahrung und Sicherheit",
+  "section6Body": "Wir bewahren personenbezogene Informationen nur so lange auf, wie es für die in dieser Richtlinie beschriebenen Zwecke erforderlich ist oder gesetzlich vorgeschrieben wird. Wir wenden administrative, technische und organisatorische Massnahmen an, die darauf ausgelegt sind, personenbezogene Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.",
+  "section7Title": "Ihre Rechte",
+  "section7Body": "Vorbehaltlich geltenden Rechts können Sie Zugang zu, Berichtigung oder Löschung Ihrer personenbezogenen Informationen verlangen und der Verarbeitung oder einer Einschränkung bestimmter Verarbeitungen widersprechen. Sie können Ihre Einwilligung widerrufen, sofern die Verarbeitung auf einer Einwilligung beruht.\n\nUm diese Rechte auszuüben, kontaktieren Sie {{email}}. Sie können auch eine Beschwerde bei Ihrer lokalen Datenschutzbehörde einreichen.",
+  "section8Title": "Änderungen dieser Richtlinie",
+  "section8Body": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Das Datum «Zuletzt aktualisiert» oben auf dieser Seite ändert sich entsprechend. Die fortgesetzte Nutzung von Pronix nach einer Aktualisierung bedeutet, dass Sie die überarbeitete Richtlinie anerkennen."
+}

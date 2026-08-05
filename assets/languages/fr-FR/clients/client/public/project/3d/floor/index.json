@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/project/3d/floor/index.tsx",
+  "backTo3d": "Retour à la vue 3D",
+  "back": "Retour",
+  "notFound": "Projet introuvable.",
+  "propertiesTitle": "Biens",
+  "filterAvailable": "Disponible",
+  "filterSold": "Vendu",
+  "filterReserved": "Réservé",
+  "filterAll": "Tous",
+  "areaLabel": "Surface",
+  "roomsLabel": "Pièces",
+  "floorLabel": "Étage",
+  "bathsLabel": "Salles de bain",
+  "orientationLabel": "Orientation",
+  "noUnitsOnFloor": "Aucune unité à cet étage pour le filtre sélectionné.",
+  "floorSelected": "Étage",
+  "viewerEmptyProject": "Aucun calque de bâtiment configuré pour le moment. Parcourez les unités en vue grille.",
+  "viewerEmptyEdifice": "Aucun calque d'étage sur ce bâtiment. Parcourez les unités en vue grille.",
+  "viewerEmptyFloor": "Aucun calque d'unité à cet étage. Parcourez les unités en vue grille.",
+  "viewGrid": "Voir la grille"
+}

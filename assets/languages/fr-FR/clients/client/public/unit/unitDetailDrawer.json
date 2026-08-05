@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unit/unitDetailDrawer.tsx",
+  "title": "Détails de l'unité",
+  "area": "Surface",
+  "bedrooms": "Chambres",
+  "bathrooms": "Salles de bain",
+  "sharePrice": "Prix de la part",
+  "notFound": "Unité introuvable."
+}

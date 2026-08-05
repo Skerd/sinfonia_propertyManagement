@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/terms/index.tsx",
+  "pageTitle": "Conditions générales",
+  "lastUpdated": "Dernière mise à jour : 20 juillet 2026",
+  "intro": "Les présentes Conditions générales (« Conditions ») régissent votre accès à et votre utilisation du site web et de la plateforme Pronix. En utilisant Pronix, vous acceptez les présentes Conditions.",
+  "section1Title": "Acceptation des conditions",
+  "section1Body": "En accédant à ou en utilisant Pronix, vous confirmez être juridiquement apte à accepter les présentes Conditions et à les respecter. Si vous n'êtes pas d'accord, n'utilisez pas la plateforme.",
+  "section2Title": "La plateforme Pronix",
+  "section2Body": "Pronix fournit des outils numériques et des informations relatifs à la consultation immobilière, aux structures de copropriété et aux services connexes. Les investissements, ventes et transferts de propriété spécifiques peuvent être soumis à des contrats, informations et exigences réglementaires distincts.\n\nRien sur le site web ne constitue un conseil juridique, fiscal ou en investissement, sauf indication expresse dans un accord signé.",
+  "section3Title": "Comptes et éligibilité",
+  "section3Body": "Certaines fonctionnalités nécessitent un compte. Vous êtes responsable de la sécurité de vos identifiants et de l'activité effectuée sous votre compte. Vous devez fournir des informations exactes et les mettre à jour lorsqu'elles changent.\n\nL'accès à certaines fonctionnalités d'investissement peut nécessiter une vérification d'identité et des contrôles d'éligibilité.",
+  "section4Title": "Utilisation acceptable",
+  "section4Body": "Vous acceptez de ne pas utiliser la plateforme de manière abusive, notamment en tentant un accès non autorisé, en perturbant les services, en extrayant du contenu en violation des présentes Conditions, en soumettant de fausses informations ou en utilisant Pronix à des fins illégales.",
+  "section5Title": "Propriété intellectuelle",
+  "section5Body": "Pronix et ses concédants de licence détiennent le contenu de la plateforme, l'image de marque, les logiciels et le design, à l'exception du contenu que vous fournissez légalement. Vous ne pouvez pas copier, modifier ou distribuer les contenus Pronix sans autorisation écrite préalable, sauf dans les cas permis par la loi.",
+  "section6Title": "Clauses de non-responsabilité",
+  "section6Body": "La plateforme et le contenu du site web sont fournis « en l'état » et « selon disponibilité ». Dans toute la mesure permise par la loi, Pronix décline toute garantie de qualité marchande, d'adéquation à un usage particulier et de non-contrefaçon.\n\nLes annonces immobilières, projections et rendements sont indicatifs et peuvent changer. Les performances passées ou projetées ne garantissent pas les résultats futurs.",
+  "section7Title": "Limitation de responsabilité",
+  "section7Body": "Dans toute la mesure permise par la loi, Pronix n'est pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, ni de la perte de profits, de données ou d'opportunités commerciales découlant de votre utilisation de la plateforme.\n\nRien dans les présentes Conditions n'exclut une responsabilité qui ne peut être exclue en vertu de la loi applicable.",
+  "section8Title": "Modifications, droit applicable et contact",
+  "section8Body": "Nous pouvons mettre à jour les présentes Conditions périodiquement. La date « Dernière mise à jour » sera modifiée en conséquence. L'utilisation continue après modification signifie que vous acceptez les Conditions mises à jour.\n\nLes présentes Conditions sont régies par les lois applicables aux activités de Pronix en Albania, sans préjudice des protections impératives des consommateurs qui peuvent s'appliquer là où vous résidez.\n\nQuestions concernant les présentes Conditions : {{email}}."
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/terms/index.tsx",
+  "pageTitle": "Termini e condizioni",
+  "lastUpdated": "Ultimo aggiornamento: 20 luglio 2026",
+  "intro": "I presenti Termini e condizioni («Termini») regolano l'accesso e l'utilizzo del sito web e della piattaforma Pronix. Utilizzando Pronix, accettate i presenti Termini.",
+  "section1Title": "Accettazione dei termini",
+  "section1Body": "Accedendo o utilizzando Pronix, confermate di essere legalmente in grado di accettare i presenti Termini e di rispettarli. Se non siete d'accordo, non utilizzate la piattaforma.",
+  "section2Title": "La piattaforma Pronix",
+  "section2Body": "Pronix fornisce strumenti digitali e informazioni relative alla consultazione immobiliare, alle strutture di co-proprietà e ai servizi correlati. Investimenti, vendite e trasferimenti di proprietà specifici possono essere soggetti a contratti, informative e requisiti normativi separati.\n\nNulla sul sito web costituisce consulenza legale, fiscale o di investimento, salvo quanto espressamente indicato in un accordo firmato.",
+  "section3Title": "Account e idoneità",
+  "section3Body": "Alcune funzionalità richiedono un account. Siete responsabili della sicurezza delle vostre credenziali e dell'attività svolta con il vostro account. Dovete fornire informazioni accurate e aggiornarle quando cambiano.\n\nL'accesso a determinate funzionalità di investimento può richiedere la verifica dell'identità e controlli di idoneità.",
+  "section4Title": "Uso accettabile",
+  "section4Body": "Accettate di non utilizzare impropriamente la piattaforma, inclusi tentativi di accesso non autorizzato, interruzione dei servizi, estrazione di contenuti in violazione dei presenti Termini, invio di informazioni false o utilizzo di Pronix per scopi illeciti.",
+  "section5Title": "Proprietà intellettuale",
+  "section5Body": "Pronix e i suoi licenzianti detengono i contenuti della piattaforma, il branding, il software e il design, ad eccezione dei contenuti che fornite legittimamente. Non potete copiare, modificare o distribuire materiali Pronix senza previa autorizzazione scritta, salvo quanto consentito dalla legge.",
+  "section6Title": "Esclusioni di responsabilità",
+  "section6Body": "La piattaforma e i contenuti del sito web sono forniti «così come sono» e «come disponibili». Nella misura massima consentita dalla legge, Pronix declina garanzie di commerciabilità, idoneità a uno scopo particolare e non violazione.\n\nGli annunci immobiliari, le proiezioni e i rendimenti sono a titolo illustrativo e possono variare. Le performance passate o previste non costituiscono garanzia di risultati futuri.",
+  "section7Title": "Limitazione di responsabilità",
+  "section7Body": "Nella misura massima consentita dalla legge, Pronix non è responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, né per la perdita di profitti, dati o opportunità commerciali derivanti dall'utilizzo della piattaforma.\n\nNulla nei presenti Termini esclude responsabilità che non possa essere esclusa ai sensi della legge applicabile.",
+  "section8Title": "Modifiche, legge applicabile e contatti",
+  "section8Body": "Possiamo aggiornare periodicamente i presenti Termini. La data «Ultimo aggiornamento» cambierà di conseguenza. L'uso continuato dopo le modifiche implica l'accettazione dei Termini aggiornati.\n\nI presenti Termini sono regolati dalle leggi applicabili alle operazioni di Pronix in Albania, fatti salvi i diritti inderogabili di tutela del consumatore che possono applicarsi nel luogo in cui risiedete.\n\nDomande sui presenti Termini: {{email}}."
+}

@@ -6,14 +6,22 @@ export function formatPercent(value: number, maximumFractionDigits = 1) {
     return `${value.toLocaleString(undefined, {maximumFractionDigits})}%`;
 }
 
-export function formatYears(value: number) {
+export type YearUnitLabels = {
+    singular: string;
+    plural: string;
+};
+
+const DEFAULT_YEAR_LABELS: YearUnitLabels = {singular: "Year", plural: "Years"};
+const DEFAULT_YEAR_LABELS_SHORT: YearUnitLabels = {singular: "year", plural: "years"};
+
+export function formatYears(value: number, labels: YearUnitLabels = DEFAULT_YEAR_LABELS) {
     const rounded = Math.round(value);
-    return `${rounded} ${rounded === 1 ? "Year" : "Years"}`;
+    return `${rounded} ${rounded === 1 ? labels.singular : labels.plural}`;
 }
 
-export function formatYearsShort(value: number) {
+export function formatYearsShort(value: number, labels: YearUnitLabels = DEFAULT_YEAR_LABELS_SHORT) {
     const rounded = Math.round(value);
-    return `${rounded} ${rounded === 1 ? "year" : "years"}`;
+    return `${rounded} ${rounded === 1 ? labels.singular : labels.plural}`;
 }
 
 export function formatPaybackYears(payback: number) {

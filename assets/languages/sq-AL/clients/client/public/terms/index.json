@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/terms/index.tsx",
+  "pageTitle": "Kushtet e përdorimit",
+  "lastUpdated": "Përditësuar për herë të fundit: 20 korrik 2026",
+  "intro": "Këto Kushte Përdorimi (\"Kushtet\") rregullojnë qasjen dhe përdorimin tuaj të website-it dhe platformës Pronix. Duke përdorur Pronix, ju pranoni këto Kushte.",
+  "section1Title": "Pranimi i kushteve",
+  "section1Body": "Duke hyrë ose përdorur Pronix, ju konfirmoni se jeni në gjendje ligjore të lidhni këto Kushte dhe se do t'i respektoni ato. Nëse nuk jeni dakord, mos e përdorni platformën.",
+  "section2Title": "Platforma Pronix",
+  "section2Body": "Pronix ofron mjete dhe informacion dixhital të lidhur me shfletimin e pasurive të paluajtshme, strukturat e bashkë-pronarësisë dhe shërbimet e ngjashme. Investimet, shitjet dhe transferimet specifike të pronësisë mund të jenë subjekt i kontratave, zbulimeve dhe kërkesave rregullatore të veçanta.\n\nAsgjë në website nuk përbën këshillë ligjore, tatimore ose investimi, përveç nëse thuhet shprehimisht në një marrëveshje të nënshkruar.",
+  "section3Title": "Llogaritë dhe përshtatshmëria",
+  "section3Body": "Disa funksionalitete kërkojnë një llogari. Ju jeni përgjegjës për mbajtjen e sigurt të kredencialeve tuaja dhe për aktivitetin nën llogarinë tuaj. Duhet të jepni informacion të saktë dhe ta përditësoni kur ndryshon.\n\nQasja në funksionalitete të caktuara investimi mund të kërkojë verifikim identiteti dhe kontrolle përshtatshmërie.",
+  "section4Title": "Përdorimi i pranueshëm",
+  "section4Body": "Ju pranoni të mos e keqpërdorni platformën, duke përfshirë përpjekjet për qasje të paautorizuar, ndërprerjen e shërbimeve, mbledhjen e përmbajtjes në kundërshtim me këto Kushte, dërgimin e informacionit të rremë ose përdorimin e Pronix për qëllime të paligjshme.",
+  "section5Title": "Prona intelektuale",
+  "section5Body": "Pronix dhe licencuesit e saj zotërojnë përmbajtjen e platformës, markën, softuerin dhe dizajnin, përveç përmbajtjes që ju jepni ligjërisht. Nuk mund të kopjoni, modifikoni ose shpërndani materiale Pronix pa leje paraprake me shkrim, përveç siç lejohet me ligj.",
+  "section6Title": "Mohime përgjegjësie",
+  "section6Body": "Platforma dhe përmbajtja e website-it ofrohen \"siç janë\" dhe \"siç janë të disponueshme\". Në masën më të plotë të lejuar me ligj, Pronix mohon garancitë e tregtueshmërisë, përshtatshmërisë për një qëllim të caktuar dhe mos-shkeljes.\n\nListimet e pronave, projeksionet dhe rendimentet janë ilustruese dhe mund të ndryshojnë. Performanca e kaluar ose e projektuar nuk është garanci e rezultateve të ardhshme.",
+  "section7Title": "Kufizimi i përgjegjësisë",
+  "section7Body": "Në masën më të plotë të lejuar me ligj, Pronix nuk mban përgjegjësi për dëme indirekte, të rastësishme, speciale, pasojore ose ndëshkuese, ose për humbjen e fitimeve, të dhënave ose mundësive të biznesit që rrjedhin nga përdorimi juaj i platformës.\n\nAsgjë në këto Kushte nuk përjashton përgjegjësinë që nuk mund të përjashtohet sipas ligjit të zbatueshëm.",
+  "section8Title": "Ndryshime, ligji zbatues dhe kontakt",
+  "section8Body": "Ne mund t'i përditësojmë këto Kushte periodikisht. Data \"Përditësuar për herë të fundit\" do të ndryshojë kur e bëjmë këtë. Përdorimi i vazhdueshëm pas ndryshimeve do të thotë se pranoni Kushtet e përditësuara.\n\nKëto Kushte rregullohen nga ligjet e zbatueshme për operacionet e Pronix në Shqipëri, pa paragjykuar mbrojtjet e detyrueshme të konsumatorit që mund të aplikohen aty ku jetoni.\n\nPyetje rreth këtyre Kushteve: {{email}}."
+}

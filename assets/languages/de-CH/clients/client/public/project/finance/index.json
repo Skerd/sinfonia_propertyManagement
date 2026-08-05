@@ -1,13 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/project/finance/index.tsx",
-  "missingProjectId": "A projekt von die galerie. auswählen",
+  "missingProjectId": "Wählen Sie ein Projekt aus der Galerie.",
   "notFound": "Projekt nicht gefunden.",
-  "backToProjects": "Alle projects",
-  "financeIntro": "Investition übersicht und projected returns für diese development.",
-  "priceHistory": "Preis history",
-  "chartAriaLabel": "Preis per square meter over time",
-  "chartTooltipValue": "{{label}} — {{wert}}",
-  "minInvestment": "Minimum investition",
-  "projectedYield": "Projected yield",
-  "ownership": "Ownership modell"
+  "backToProjects": "Alle Projekte",
+  "financeIntro": "Investitionsübersicht und prognostizierte Renditen für diese Entwicklung.",
+  "priceHistory": "Preisverlauf",
+  "chartAriaLabel": "Preis pro Quadratmeter im Zeitverlauf",
+  "chartTooltipValue": "{{label}} — {{value}}",
+  "minInvestment": "Mindestinvestition",
+  "projectedYield": "Prognostizierte Rendite",
+  "ownership": "Eigentumsmodell"
 }

@@ -1,3 +1,4 @@
+import {useMemo} from "react";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {
     PUBLIC_GRID_CELL,
@@ -8,63 +9,72 @@ import {
 import OwnershipInteractiveCard, {
     type OwnershipCardContent,
 } from "@propertyManagementModule/clients/client/public/shared/sections/ownershipInteractiveCard.tsx";
+import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
-const OWNERSHIP_CARDS: OwnershipCardContent[] = [
-    {
-        nodeId: "142:764",
-        layoutVariant: "1",
-        image: figmaAssets.ownership1,
-        imageCrop: "default" as const,
-        title: "Buy a property",
-        body: "Purchase an apartment, villa, or commercial unit outright. Standard sale, standard title, full control — no platform in between once the deal closes.",
-        includedLabel: "What's included:",
-        checklist: [
-            "Full legal title in your name",
-            "Digital contracts and reservation in minutes",
-            "0% buyer commission",
-            "Full access to floor plans and unit documentation",
-            "Direct line to the developer",
-            "Keys at completion",
-        ],
-        ctaLabel: "Browse properties",
-    },
-    {
-        nodeId: "142:801",
-        layoutVariant: "2",
-        image: figmaAssets.ownership2,
-        imageCrop: "coown" as const,
-        title: "Co-own ",
-        body: "Fund 40% of your share. An SPV covers the remaining 60% through a mortgage. Your ownership is recorded with the Albanian land registry.",
-        includedLabel: "What's included:",
-        checklist: [
-            "Legal co-ownership through a dedicated SPV",
-            "Your share recorded with the land registry",
-            "40% equity / 60% mortgage structure",
-            "Quarterly rent distribution",
-            "Professional property management",
-        ],
-        ctaLabel: "Browse properties",
-    },
-    {
-        nodeId: "142:837",
-        layoutVariant: "3",
-        image: figmaAssets.ownership3,
-        imageCrop: "default" as const,
-        title: "Tokenize",
-        body: "A tokenized version of the same co-ownership structure — smaller entry points, faster secondary trades, identical legal backing. Launching Q3 2026.",
-        includedLabel: "What's included:",
-        checklist: [
-            "Same SPV and land registry structure as co-ownership",
-            "Lower entry point",
-            "24/7 secondary trading",
-            "Digital asset wallet and distribution",
-            "Regulated under [framework, to confirm]",
-        ],
-        ctaLabel: "Learn more",
-    },
-];
+type OwnershipSectionProps = Pick<PublicLanguageProps, "resolveLanguageKey">;
 
-function OwnershipSection() {
+function OwnershipSection({resolveLanguageKey}: OwnershipSectionProps) {
+    const t = (key: string) => String(resolveLanguageKey(key));
+    const includedLabel = t("ownershipIncludedLabel");
+
+    const ownershipCards: OwnershipCardContent[] = useMemo(
+        () => [
+            {
+                nodeId: "142:764",
+                layoutVariant: "1",
+                image: figmaAssets.ownership1,
+                imageCrop: "default" as const,
+                title: t("ownBuyTitle"),
+                body: t("ownBuyBody"),
+                includedLabel,
+                checklist: [
+                    t("ownBuyCheck1"),
+                    t("ownBuyCheck2"),
+                    t("ownBuyCheck3"),
+                    t("ownBuyCheck4"),
+                    t("ownBuyCheck5"),
+                    t("ownBuyCheck6"),
+                ],
+                ctaLabel: t("ownBuyCta"),
+            },
+            {
+                nodeId: "142:801",
+                layoutVariant: "2",
+                image: figmaAssets.ownership2,
+                imageCrop: "coown" as const,
+                title: t("ownCoownTitle"),
+                body: t("ownCoownBody"),
+                includedLabel,
+                checklist: [
+                    t("ownCoownCheck1"),
+                    t("ownCoownCheck2"),
+                    t("ownCoownCheck3"),
+                    t("ownCoownCheck4"),
+                    t("ownCoownCheck5"),
+                ],
+                ctaLabel: t("ownCoownCta"),
+            },
+            {
+                nodeId: "142:837",
+                layoutVariant: "3",
+                image: figmaAssets.ownership3,
+                imageCrop: "default" as const,
+                title: t("ownTokenTitle"),
+                body: t("ownTokenBody"),
+                includedLabel,
+                checklist: [
+                    t("ownTokenCheck1"),
+                    t("ownTokenCheck2"),
+                    t("ownTokenCheck3"),
+                    t("ownTokenCheck4"),
+                    t("ownTokenCheck5"),
+                ],
+                ctaLabel: t("ownTokenCta"),
+            },
+        ],
+        [resolveLanguageKey],
+    );
+
     return (
         <div className="relative min-w-0 w-full overflow-hidden bg-[#181818]" data-node-id="80:1918">
             <video
@@ -94,13 +104,13 @@ function OwnershipSection() {
                         className="flex flex-col items-center gap-2 text-center text-white not-italic leading-[1.2]"
                         data-node-id="94:350"
                     >
-                        <p className={`${PUBLIC_TITLE_FIGMA} text-white`}>Three ways to own </p>
+                        <p className={`${PUBLIC_TITLE_FIGMA} text-white`}>{t("ownershipTitle")}</p>
                         <p className={`${PUBLIC_SUBTITLE} max-w-[824px] text-white/90`}>
-                            Full property, a fractional share, or — soon — a digital stake.{" "}
+                            {t("ownershipSubtitle")}
                         </p>
                     </div>
                     <div className={`w-full min-w-0 items-stretch ${PUBLIC_GRID_SALES}`} data-node-id="94:353">
-                        {OWNERSHIP_CARDS.map((card) => (
+                        {ownershipCards.map((card) => (
                             <div key={card.nodeId} className={`${PUBLIC_GRID_CELL} flex flex-col`}>
                                 <OwnershipInteractiveCard
                                     card={card}

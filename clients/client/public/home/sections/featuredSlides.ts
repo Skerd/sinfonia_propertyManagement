@@ -12,26 +12,30 @@ export type FeaturedSlide = {
     type: string;
 };
 
-export const FEATURED_SECTION_COPY =
-    "Explore our collection of premium properties — apartments, villas and commercial spaces in the best locations.";
+export type FeaturedTypeLabels = Record<PropertyTypeId | "project" | "locationFallback", string>;
 
-const PROPERTY_TYPE_LABELS: Record<PropertyTypeId, string> = {
+const DEFAULT_TYPE_LABELS: FeaturedTypeLabels = {
     apartment: "Apartment",
     studio: "Studio",
     penthouse: "Penthouse",
     commercial: "Commercial",
     villa: "Villa",
+    project: "Project",
+    locationFallback: "Albania",
 };
 
-function propertyTypeLabel(types: PropertyTypeId[] | undefined): string {
+function propertyTypeLabel(types: PropertyTypeId[] | undefined, labels: FeaturedTypeLabels): string {
     const first = types?.[0];
     if (!first) {
-        return "Project";
+        return labels.project;
     }
-    return PROPERTY_TYPE_LABELS[first] ?? "Project";
+    return labels[first] ?? labels.project;
 }
 
-export function mapFeaturedProjectsToSlides(projects: MarketingFeaturedProject[]): FeaturedSlide[] {
+export function mapFeaturedProjectsToSlides(
+    projects: MarketingFeaturedProject[],
+    labels: FeaturedTypeLabels = DEFAULT_TYPE_LABELS,
+): FeaturedSlide[] {
     return projects.map((project, index) => {
         const image =
             resolveMarketingMediaUrl(project.mainImage) ?? projectsAssets.cardPlaceholder;
@@ -40,8 +44,8 @@ export function mapFeaturedProjectsToSlides(projects: MarketingFeaturedProject[]
             projectId: project._id,
             image,
             title: project.name,
-            location: project.city || project.location || "Albania",
-            type: propertyTypeLabel(project.propertyTypes),
+            location: project.city || project.location || labels.locationFallback,
+            type: propertyTypeLabel(project.propertyTypes, labels),
         };
     });
 }

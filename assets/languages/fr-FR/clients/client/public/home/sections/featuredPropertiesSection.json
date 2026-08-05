@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx",
+  "eyebrow": "Collection",
+  "title": "Biens à la une",
+  "body": "Explorez notre collection de biens premium — appartements, villas et espaces commerciaux dans les meilleures localisations.",
+  "typeApartment": "Appartement",
+  "typeStudio": "Studio",
+  "typePenthouse": "Penthouse",
+  "typeCommercial": "Commercial",
+  "typeVilla": "Villa",
+  "typeProject": "Projet",
+  "locationFallback": "Albanie",
+  "prevAria": "Biens à la une précédents",
+  "nextAria": "Biens à la une suivants",
+  "slidesAria": "Diapositives des biens à la une",
+  "goToAria": "Aller à {{title}}"
+}

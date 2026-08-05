@@ -3,19 +3,20 @@ import {useNavigate} from "react-router-dom";
 import {compose} from "redux";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {useReducedMotion} from "motion/react";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {
-    FEATURED_SECTION_COPY,
     mapFeaturedProjectsToSlides,
     type FeaturedSlide,
+    type FeaturedTypeLabels,
 } from "@propertyManagementModule/clients/client/public/home/sections/featuredSlides.ts";
 import FadeIn from "@propertyManagementModule/clients/client/public/shared/fadeIn.tsx";
 import {
     PUBLIC_BODY,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {MarketingFeaturedProjectsResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const CARD_GAP_PX = 12;
@@ -43,7 +44,7 @@ type DragState = {
     projectId: string | null;
 };
 
-type FeaturedPropertiesSectionProps = WithAxiosType<MarketingFeaturedProjectsResponse>;
+type FeaturedPropertiesSectionProps = WithAxiosType<MarketingFeaturedProjectsResponse> & WithLanguageType;
 
 function formatIndex(index: number) {
     return String(index + 1).padStart(2, "0");
@@ -78,7 +79,7 @@ function wrapOffset(offset: number, setWidth: number) {
     return next;
 }
 
-function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: FeaturedPropertiesSectionProps) {
+function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveLanguageKey}: FeaturedPropertiesSectionProps) {
     const navigate = useNavigate();
     const initialFetchDone = useRef(false);
     const viewportRef = useRef<HTMLDivElement>(null);
@@ -91,6 +92,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
     const dragRef = useRef<DragState | null>(null);
     const reducedMotion = useReducedMotion();
     const [activeIndex, setActiveIndex] = useState(0);
+    const t = (key: string) => String(resolveLanguageKey(key));
 
     useEffect(() => {
         if (initialFetchDone.current) {
@@ -100,9 +102,22 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
         onFilterChange({});
     }, []);
 
+    const typeLabels = useMemo<FeaturedTypeLabels>(
+        () => ({
+            apartment: t("typeApartment"),
+            studio: t("typeStudio"),
+            penthouse: t("typePenthouse"),
+            commercial: t("typeCommercial"),
+            villa: t("typeVilla"),
+            project: t("typeProject"),
+            locationFallback: t("locationFallback"),
+        }),
+        [resolveLanguageKey],
+    );
+
     const slides = useMemo(
-        () => mapFeaturedProjectsToSlides(data?.projects ?? []),
-        [data?.projects],
+        () => mapFeaturedProjectsToSlides(data?.projects ?? [], typeLabels),
+        [data?.projects, typeLabels],
     );
     const slideCount = slides.length;
     const loopedSlides = useMemo(() => buildLoopedSlides(slides), [slides]);
@@ -435,10 +450,10 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
             <div className="w-full" data-node-id="71:1839" data-name="Featured properties">
                 <FadeIn className="mb-8 max-w-2xl md:mb-12">
                     <p className="font-aeonik-medium mb-3 cursor-default text-sm tracking-[0.18em] text-pronix-blue uppercase">
-                        Collection
+                        {t("eyebrow")}
                     </p>
-                    <h2 className={PUBLIC_TITLE}>Featured properties</h2>
-                    <p className={`mt-4 ${PUBLIC_BODY}`}>{FEATURED_SECTION_COPY}</p>
+                    <h2 className={PUBLIC_TITLE}>{t("title")}</h2>
+                    <p className={`mt-4 ${PUBLIC_BODY}`}>{t("body")}</p>
                 </FadeIn>
             </div>
         );
@@ -451,10 +466,10 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
             <FadeIn className="mb-8 flex items-end justify-between gap-6 md:mb-12">
                 <div className="max-w-2xl">
                     <p className="font-aeonik-medium mb-3 cursor-default text-sm tracking-[0.18em] text-pronix-blue uppercase">
-                        Collection
+                        {t("eyebrow")}
                     </p>
-                    <h2 className={PUBLIC_TITLE}>Featured properties</h2>
-                    <p className={`mt-4 ${PUBLIC_BODY}`}>{FEATURED_SECTION_COPY}</p>
+                    <h2 className={PUBLIC_TITLE}>{t("title")}</h2>
+                    <p className={`mt-4 ${PUBLIC_BODY}`}>{t("body")}</p>
                 </div>
                 <div className="hidden shrink-0 items-center gap-3 sm:flex">
                     <span className="font-aeonik-light hidden text-sm text-pronix-ink-muted tabular-nums md:inline">
@@ -466,7 +481,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
                     </span>
                     <button
                         type="button"
-                        aria-label="Previous featured properties"
+                        aria-label={t("prevAria")}
                         className="flex size-12 items-center justify-center rounded-[5px] border border-pronix-border text-pronix-ink transition duration-300 hover:border-pronix-blue hover:bg-pronix-blue hover:text-white"
                         onClick={() => scrollByCard(-1)}
                     >
@@ -474,7 +489,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
                     </button>
                     <button
                         type="button"
-                        aria-label="Next featured properties"
+                        aria-label={t("nextAria")}
                         className="flex size-12 items-center justify-center rounded-[5px] border border-pronix-border text-pronix-ink transition duration-300 hover:border-pronix-blue hover:bg-pronix-blue hover:text-white"
                         onClick={() => scrollByCard(1)}
                     >
@@ -559,13 +574,13 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: Feature
                         style={{width: `${scrollProgress}%`}}
                     />
                 </div>
-                <div className="flex shrink-0 gap-1.5" role="tablist" aria-label="Featured property slides">
+                <div className="flex shrink-0 gap-1.5" role="tablist" aria-label={t("slidesAria")}>
                     {slides.map((slide, index) => (
                         <button
                             key={slide.projectId}
                             type="button"
                             role="tab"
-                            aria-label={`Go to ${slide.title}`}
+                            aria-label={fillLanguageTemplate(t("goToAria"), {title: slide.title})}
                             aria-selected={index === activeIndex}
                             className={`h-1.5 rounded-sm transition-all duration-300 ${
                                 index === activeIndex

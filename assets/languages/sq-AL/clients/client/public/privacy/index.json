@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/privacy/index.tsx",
+  "pageTitle": "Politika e privatësisë",
+  "lastUpdated": "Përditësuar për herë të fundit: 20 korrik 2026",
+  "intro": "Kjo Politikë e Privatësisë shpjegon se si Pronix mbledh, përdor, ruan dhe ndan informacionin personal kur vizitoni faqen tonë të internetit, krijoni një llogari ose përdorni platformën tonë të investimeve në pasuri të paluajtshme.",
+  "section1Title": "Kush jemi ne",
+  "section1Body": "Pronix operon një platformë dixhitale investimi në pasuri të paluajtshme. Për pyetje të lidhura me privatësinë, na kontaktoni në {{email}} ose përmes faqes Kontakt në këtë website.",
+  "section2Title": "Informacioni që mbledhim",
+  "section2Body": "Mund të mbledhim informacion që jepni drejtpërdrejt, si emri, adresa e emailit, numri i telefonit dhe mesazhet e dërguara përmes formularëve.\n\nMund të mbledhim gjithashtu detaje llogarie dhe verifikimi të nevojshme për të operuar rrjedhat e punës të bashkë-pronarësisë dhe investimeve, si dhe të dhëna teknike si lloji i pajisjes, shfletuesi, vendndodhja e përafërt dhe faqet e vizituara.",
+  "section3Title": "Si e përdorim informacionin tuaj",
+  "section3Body": "Ne e përdorim informacionin personal për të:\n• Ofruar dhe përmirësuar platformën Pronix\n• Përgjigjur pyetjeve dhe kërkesave për mbështetje\n• Përpunuar aplikime, rezervime dhe dokumentacion investimi\n• Komunikuar përditësime produkti dhe njoftime shërbimi\n• Ruajtur sigurinë, parandaluar mashtrimin dhe përmbushur detyrimet ligjore",
+  "section4Title": "Bazat ligjore",
+  "section4Body": "Në varësi të vendndodhjes suaj, ne i përpunojmë të dhënat personale bazuar në një ose më shumë nga sa vijon: pëlqimi juaj, përmbushja e një kontrate, interesat tona legjitime për të operuar dhe siguruar platformën, dhe përputhshmëria me ligjin e zbatueshëm.",
+  "section5Title": "Ndarja dhe përpunuesit",
+  "section5Body": "Ne nuk e shesim informacionin tuaj personal. Mund të ndajmë të dhëna me ofrues shërbimesh të besuar që na ndihmojnë të hostojmë infrastrukturën, të përpunojmë komunikimet, të verifikojmë identitetin ose të ofrojmë funksionalitete platforme — vetëm sa nevojitet për të ofruar ato shërbime dhe nën mbrojtje të përshtatshme.\n\nMund të zbulojmë informacion edhe kur kërkohet me ligj, rregullore ose procedurë ligjore të vlefshme.",
+  "section6Title": "Ruajtja dhe siguria",
+  "section6Body": "Ne e ruajmë informacionin personal vetëm për aq kohë sa nevojitet për qëllimet e përshkruara në këtë politikë, ose siç kërkohet me ligj. Ne zbatojmë masa administrative, teknike dhe organizative të dizajnuara për të mbrojtur të dhënat personale kundër aksesit të paautorizuar, humbjes ose keqpërdorimit.",
+  "section7Title": "Të drejtat tuaja",
+  "section7Body": "Në varësi të ligjit të zbatueshëm, mund të kërkoni qasje, korrigjim ose fshirje të informacionit tuaj personal, dhe mund të kundërshtoni ose kufizoni përpunimin e caktuar. Mund të tërhiqni gjithashtu pëlqimin kur përpunimi bazohet në pëlqim.\n\nPër të ushtruar këto të drejta, kontaktoni {{email}}. Mund të paraqisni gjithashtu ankesë te autoriteti lokal i mbrojtjes së të dhënave.",
+  "section8Title": "Ndryshime në këtë politikë",
+  "section8Body": "Ne mund ta përditësojmë këtë Politikë Privatësie herë pas here. Data \"Përditësuar për herë të fundit\" në krye të kësaj faqeje do të ndryshojë kur e bëjmë këtë. Përdorimi i vazhdueshëm i Pronix pas një përditësimi do të thotë se e pranoni politikën e rishikuar."
+}

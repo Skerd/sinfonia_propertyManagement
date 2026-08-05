@@ -1,0 +1,15 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/shared/figmaMenu.tsx",
+  "navProperties": "Pronat",
+  "navAbout": "Rreth Pronix",
+  "navInvestors": "Për investitorët",
+  "navDevelopers": "Për zhvilluesit",
+  "navContact": "Kontakt",
+  "logIn": "Hyr",
+  "getStarted": "Fillo",
+  "close": "Mbyll",
+  "languageGroup": "Gjuha",
+  "navMenu": "Menuja e navigimit",
+  "openMenu": "Hap menunë",
+  "closeMenu": "Mbyll menunë"
+}

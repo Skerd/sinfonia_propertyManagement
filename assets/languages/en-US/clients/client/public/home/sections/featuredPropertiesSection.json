@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx",
+  "eyebrow": "Collection",
+  "title": "Featured properties",
+  "body": "Explore our collection of premium properties — apartments, villas and commercial spaces in the best locations.",
+  "typeApartment": "Apartment",
+  "typeStudio": "Studio",
+  "typePenthouse": "Penthouse",
+  "typeCommercial": "Commercial",
+  "typeVilla": "Villa",
+  "typeProject": "Project",
+  "locationFallback": "Albania",
+  "prevAria": "Previous featured properties",
+  "nextAria": "Next featured properties",
+  "slidesAria": "Featured property slides",
+  "goToAria": "Go to {{title}}"
+}

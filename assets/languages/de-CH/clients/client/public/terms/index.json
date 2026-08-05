@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/terms/index.tsx",
+  "pageTitle": "Allgemeine Geschäftsbedingungen",
+  "lastUpdated": "Zuletzt aktualisiert: 20. Juli 2026",
+  "intro": "Diese Allgemeinen Geschäftsbedingungen («AGB») regeln Ihren Zugang zu und Ihre Nutzung der Pronix-Website und -Plattform. Durch die Nutzung von Pronix stimmen Sie diesen AGB zu.",
+  "section1Title": "Annahme der Bedingungen",
+  "section1Body": "Durch den Zugriff auf oder die Nutzung von Pronix bestätigen Sie, dass Sie rechtlich in der Lage sind, diese AGB einzugehen, und dass Sie diese einhalten werden. Wenn Sie nicht einverstanden sind, nutzen Sie die Plattform nicht.",
+  "section2Title": "Die Pronix-Plattform",
+  "section2Body": "Pronix stellt digitale Tools und Informationen im Zusammenhang mit Immobiliensuche, Miteigentumsstrukturen und verwandten Dienstleistungen bereit. Bestimmte Investitionen, Verkäufe und Eigentumsübertragungen können separaten Verträgen, Offenlegungen und regulatorischen Anforderungen unterliegen.\n\nNichts auf der Website stellt Rechts-, Steuer- oder Anlageberatung dar, sofern dies nicht ausdrücklich in einer unterzeichneten Vereinbarung angegeben ist.",
+  "section3Title": "Konten und Berechtigung",
+  "section3Body": "Einige Funktionen erfordern ein Konto. Sie sind dafür verantwortlich, Ihre Zugangsdaten sicher aufzubewahren und für Aktivitäten unter Ihrem Konto. Sie müssen korrekte Informationen angeben und diese bei Änderungen aktualisieren.\n\nDer Zugang zu bestimmten Investitionsfunktionen kann eine Identitätsprüfung und Berechtigungsprüfungen erfordern.",
+  "section4Title": "Zulässige Nutzung",
+  "section4Body": "Sie erklären sich damit einverstanden, die Plattform nicht missbräuchlich zu nutzen, einschliesslich durch Versuche unbefugten Zugriffs, Störung der Dienste, Scraping von Inhalten entgegen diesen AGB, Übermittlung falscher Informationen oder Nutzung von Pronix für rechtswidrige Zwecke.",
+  "section5Title": "Geistiges Eigentum",
+  "section5Body": "Pronix und seine Lizenzgeber besitzen die Plattforminhalte, das Branding, die Software und das Design, ausser Inhalte, die Sie rechtmässig bereitstellen. Sie dürfen Pronix-Materialien ohne vorherige schriftliche Genehmigung nicht kopieren, ändern oder verbreiten, ausser soweit gesetzlich zulässig.",
+  "section6Title": "Haftungsausschlüsse",
+  "section6Body": "Die Plattform und die Website-Inhalte werden «wie besehen» und «wie verfügbar» bereitgestellt. Soweit gesetzlich zulässig, lehnt Pronix Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung ab.\n\nImmobilienangebote, Prognosen und Renditen sind illustrativ und können sich ändern. Vergangene oder prognostizierte Performance ist keine Garantie für zukünftige Ergebnisse.",
+  "section7Title": "Haftungsbeschränkung",
+  "section7Body": "Soweit gesetzlich zulässig, haftet Pronix nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden oder für entgangenen Gewinn, Datenverlust oder entgangene Geschäftsmöglichkeiten, die aus Ihrer Nutzung der Plattform entstehen.\n\nNichts in diesen AGB schliesst eine Haftung aus, die nach geltendem Recht nicht ausgeschlossen werden kann.",
+  "section8Title": "Änderungen, anwendbares Recht und Kontakt",
+  "section8Body": "Wir können diese AGB regelmässig aktualisieren. Das Datum «Zuletzt aktualisiert» ändert sich entsprechend. Die fortgesetzte Nutzung nach Änderungen bedeutet, dass Sie die aktualisierten AGB akzeptieren.\n\nDiese AGB unterliegen den für die Geschäftstätigkeit von Pronix in Albania geltenden Gesetzen, unbeschadet zwingender Verbraucherschutzvorschriften, die an Ihrem Wohnort gelten können.\n\nFragen zu diesen AGB: {{email}}."
+}

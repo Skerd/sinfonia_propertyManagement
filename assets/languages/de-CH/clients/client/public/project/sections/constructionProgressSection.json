@@ -1,10 +1,10 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/project/sections/constructionProgressSection.tsx",
-  "title": "Bau fortschritt",
-  "completeLabel": "vollständig",
-  "updatesTitle": "Latest updates von die baustelle",
+  "title": "Baufortschritt",
+  "completeLabel": "abgeschlossen",
+  "updatesTitle": "Neueste Updates von der Baustelle",
   "milestonePlanned": "Geplant",
   "milestoneInProgress": "In Bearbeitung",
   "milestoneCompleted": "Abgeschlossen",
-  "milestoneDelayed": "Delayed"
+  "milestoneDelayed": "Verzögert"
 }

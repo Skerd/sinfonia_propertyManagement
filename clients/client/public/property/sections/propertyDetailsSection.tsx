@@ -9,6 +9,7 @@ import RoiFigmaSlider from "@propertyManagementModule/clients/client/public/shar
 import RoiProfitPanel from "@propertyManagementModule/clients/client/public/shared/roi/roiProfitPanel.tsx";
 import RoiRentalTypeSelect from "@propertyManagementModule/clients/client/public/shared/roi/roiRentalTypeSelect.tsx";
 import {useUnitRoiCalculator} from "@propertyManagementModule/clients/client/public/shared/roi/useUnitRoiCalculator.ts";
+import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
 type PropertyDetailsSectionProps = PublicLanguageProps & {
@@ -121,11 +122,21 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
         unitArea,
     });
 
+    const yearLabels = {
+        singular: String(resolveLanguageKey("year")),
+        plural: String(resolveLanguageKey("years")),
+    };
+    const holdingYears = Math.round(inputs.holdingPeriod);
+    const yearUnit = holdingYears === 1 ? yearLabels.singular : yearLabels.plural;
+
     const profitRows = [
         {label: resolveLanguageKey("annualGross"), value: formatEuro(results.annualGross), bordered: true},
         {label: resolveLanguageKey("annualNet"), value: formatEuro(results.annualNet), bordered: true},
         {
-            label: `${resolveLanguageKey("capitalGain")} (${Math.round(inputs.holdingPeriod)} yr):`,
+            label: fillLanguageTemplate(String(resolveLanguageKey("capitalGainWithYears")), {
+                years: holdingYears,
+                unit: yearUnit,
+            }),
             value: formatEuro(results.capitalGain),
             bordered: true,
         },
@@ -233,7 +244,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                             max={sliderBounds.holdingPeriod.max}
                             step={sliderBounds.holdingPeriod.step}
                             onChange={(value) => setInput("holdingPeriod", value)}
-                            formatValue={formatYearsShort}
+                            formatValue={(value) => formatYearsShort(value, yearLabels)}
                         />
                     </div>
                 </div>

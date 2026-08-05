@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unit/unitDetailDrawer.tsx",
+  "title": "Dettagli unità",
+  "area": "Superficie",
+  "bedrooms": "Camere da letto",
+  "bathrooms": "Bagni",
+  "sharePrice": "Prezzo quota",
+  "notFound": "Unità non trovata."
+}

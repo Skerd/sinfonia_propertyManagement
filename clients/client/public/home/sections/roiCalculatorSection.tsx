@@ -4,22 +4,33 @@ import {
     PUBLIC_SUBTITLE,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-import {formatEuro, formatPercent, formatYears} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
+import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {
+    formatEuro,
+    formatPercent,
+    formatYears,
+    formatYearsShort,
+} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
 import RoiFigmaSlider from "@propertyManagementModule/clients/client/public/shared/roi/roiFigmaSlider.tsx";
 import RoiProfitPanel from "@propertyManagementModule/clients/client/public/shared/roi/roiProfitPanel.tsx";
 import {useShareRoiCalculator} from "@propertyManagementModule/clients/client/public/shared/roi/useShareRoiCalculator.ts";
 
-function RoiCalculatorSection() {
+type RoiCalculatorSectionProps = Pick<PublicLanguageProps, "resolveLanguageKey">;
+
+function RoiCalculatorSection({resolveLanguageKey}: RoiCalculatorSectionProps) {
     const {inputs, setInput, results, sliderBounds} = useShareRoiCalculator();
+    const t = (key: string) => String(resolveLanguageKey(key));
+    const yearLabels = {singular: t("roiYearCapital"), plural: t("roiYearsCapital")};
+    const yearLabelsShort = {singular: t("roiYear"), plural: t("roiYears")};
 
     return (
         <div className="relative w-full" data-node-id="94:255">
             <div className="flex w-full flex-col items-center gap-4 text-center md:gap-6 lg:gap-8" data-node-id="94:256">
                 <p className={`w-full ${PUBLIC_TITLE}`} data-node-id="94:257">
-                    See what a share could return.
+                    {t("roiTitle")}
                 </p>
                 <p className={`max-w-3xl ${PUBLIC_SUBTITLE} text-pronix-ink-muted`} data-node-id="94:258">
-                    Project rent, appreciation, and total return on a live Pronix property.
+                    {t("roiSubtitle")}
                 </p>
             </div>
 
@@ -32,12 +43,12 @@ function RoiCalculatorSection() {
                         className="mb-8 cursor-default text-center font-aeonik-medium text-pronix-ink not-italic text-xl md:text-2xl leading-[1.1] lg:mb-12"
                         data-node-id="94:284"
                     >
-                        ROI Calculator
+                        {t("roiCalculatorLabel")}
                     </p>
                     <div className="mx-auto flex w-full max-w-xl flex-col gap-8 md:gap-11" data-node-id="94:285">
                         <RoiFigmaSlider
                             dataNodeId="94:286"
-                            label="Share amount"
+                            label={t("roiShareAmount")}
                             value={inputs.shareAmount}
                             min={sliderBounds.shareAmount.min}
                             max={sliderBounds.shareAmount.max}
@@ -48,17 +59,17 @@ function RoiCalculatorSection() {
                         />
                         <RoiFigmaSlider
                             dataNodeId="94:296"
-                            label="Hold period"
+                            label={t("roiHoldPeriod")}
                             value={inputs.holdingPeriod}
                             min={sliderBounds.holdingPeriod.min}
                             max={sliderBounds.holdingPeriod.max}
                             step={sliderBounds.holdingPeriod.step}
                             onChange={(value) => setInput("holdingPeriod", value)}
-                            formatValue={formatYears}
+                            formatValue={(value) => formatYears(value, yearLabels)}
                         />
                         <RoiFigmaSlider
                             dataNodeId="94:306"
-                            label="Projected yield"
+                            label={t("roiProjectedYield")}
                             value={inputs.monthlyYield}
                             min={sliderBounds.monthlyYield.min}
                             max={sliderBounds.monthlyYield.max}
@@ -69,7 +80,7 @@ function RoiCalculatorSection() {
                         />
                         <RoiFigmaSlider
                             dataNodeId="94:339"
-                            label="Appreciation rate"
+                            label={t("roiAppreciationRate")}
                             value={inputs.annualAppreciation}
                             min={sliderBounds.annualAppreciation.min}
                             max={sliderBounds.annualAppreciation.max}
@@ -84,8 +95,15 @@ function RoiCalculatorSection() {
                     variant="home"
                     results={results}
                     holdingPeriod={inputs.holdingPeriod}
+                    title={t("roiProfit")}
+                    totalReturnLabel={t("roiTotalReturn")}
+                    rows={[
+                        {label: t("roiAnnualRental"), value: formatEuro(results.annualGross), bordered: true},
+                        {label: t("roiCapitalAppreciation"), value: formatEuro(results.capitalGain), bordered: true},
+                        {label: t("roiHoldingPeriod"), value: formatYearsShort(inputs.holdingPeriod, yearLabelsShort), bordered: false},
+                    ]}
                     dataNodeId="94:260"
-                    disclaimer="Projections based on your inputs and current market assumptions. Actual returns vary and may be lower — including loss of principal."
+                    disclaimer={t("roiDisclaimer")}
                     footer={
                         <div className="flex w-full flex-col items-center" data-node-id="94:277">
                             <Link
@@ -99,7 +117,7 @@ function RoiCalculatorSection() {
                                 data-node-id="94:278"
                             >
                                 <span className="font-aeonik-medium whitespace-nowrap text-center not-italic text-base leading-[17.15px] md:text-xl lg:text-[24px]">
-                                    Run this on a live property
+                                    {t("roiCta")}
                                 </span>
                             </Link>
                         </div>

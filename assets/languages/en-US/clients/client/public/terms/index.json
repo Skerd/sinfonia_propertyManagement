@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/terms/index.tsx",
+  "pageTitle": "Terms of Conditions",
+  "lastUpdated": "Last updated: July 20, 2026",
+  "intro": "These Terms of Conditions (“Terms”) govern your access to and use of the Pronix website and platform. By using Pronix, you agree to these Terms.",
+  "section1Title": "Acceptance of terms",
+  "section1Body": "By accessing or using Pronix, you confirm that you are legally able to enter into these Terms and that you will comply with them. If you do not agree, do not use the platform.",
+  "section2Title": "The Pronix platform",
+  "section2Body": "Pronix provides digital tools and information related to real estate browsing, co-ownership structures, and related services. Specific investments, sales, and ownership transfers may be subject to separate contracts, disclosures, and regulatory requirements.\n\nNothing on the website constitutes legal, tax, or investment advice unless expressly stated in a signed agreement.",
+  "section3Title": "Accounts and eligibility",
+  "section3Body": "Some features require an account. You are responsible for keeping your credentials secure and for activity under your account. You must provide accurate information and update it when it changes.\n\nAccess to certain investment features may require identity verification and eligibility checks.",
+  "section4Title": "Acceptable use",
+  "section4Body": "You agree not to misuse the platform, including by attempting unauthorized access, disrupting services, scraping content in violation of these Terms, submitting false information, or using Pronix for unlawful purposes.",
+  "section5Title": "Intellectual property",
+  "section5Body": "Pronix and its licensors own the platform content, branding, software, and design, except for content you lawfully provide. You may not copy, modify, or distribute Pronix materials without prior written permission, except as allowed by law.",
+  "section6Title": "Disclaimers",
+  "section6Body": "The platform and website content are provided on an “as is” and “as available” basis. To the fullest extent permitted by law, Pronix disclaims warranties of merchantability, fitness for a particular purpose, and non-infringement.\n\nProperty listings, projections, and yields are illustrative and may change. Past or projected performance is not a guarantee of future results.",
+  "section7Title": "Limitation of liability",
+  "section7Body": "To the fullest extent permitted by law, Pronix is not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or business opportunities arising from your use of the platform.\n\nNothing in these Terms excludes liability that cannot be excluded under applicable law.",
+  "section8Title": "Changes, governing law, and contact",
+  "section8Body": "We may update these Terms periodically. The “Last updated” date will change when we do. Continued use after changes means you accept the updated Terms.\n\nThese Terms are governed by the laws applicable to Pronix’s operations in Albania, without prejudice to mandatory consumer protections that may apply where you live.\n\nQuestions about these Terms: {{email}}."
+}

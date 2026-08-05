@@ -1,11 +1,35 @@
-import {useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {createPortal} from "react-dom";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import mainConfig from "@coreModule/assets/languages/mainConfig.json";
+import useSelectedLanguage from "@coreModule/helpers/hooks/useSelectedLanguage.ts";
+import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
+import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {figmaImageCropStyle, FIGMA_IMAGE_CROPS} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {figmaMenuLinks} from "@propertyManagementModule/clients/client/public/shared/figmaRouteMap.ts";
 import {usePublicIsMobile} from "@propertyManagementModule/clients/client/public/shared/hooks/usePublicIsMobile.ts";
+
+type SupportedMenuLanguage = {
+    languageCode: string;
+    name: string;
+    shortCode: string;
+};
+
+const MENU_LANGUAGES = mainConfig.supportedLanguages as SupportedMenuLanguage[];
+
+const FIGMA_MENU_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/public/shared/figmaMenu.tsx";
+
+const FIGMA_MENU_LINK_KEYS: Record<string, string> = {
+    "/projects": "navProperties",
+    "/about": "navAbout",
+    "/investors": "navInvestors",
+    "/developers": "navDevelopers",
+    "/contact": "navContact",
+};
 
 type FigmaMenuProps = {
     variant?: "hero" | "light";
@@ -18,6 +42,25 @@ type AnchorRect = {
 };
 
 const VIEWPORT_MARGIN = 8;
+
+/** Loads figmaMenu locale JSON for the active language (works inside portals). */
+function useFigmaMenuT() {
+    const {currentLanguage} = useSelectedLanguage(
+        FIGMA_MENU_LANGUAGE_PATH.replaceAll("/", "_"),
+        FIGMA_MENU_LANGUAGE_PATH,
+    );
+
+    return useCallback(
+        (key: string) => {
+            if (!currentLanguage || typeof currentLanguage !== "object") {
+                return `---${key}---`;
+            }
+            const value = (currentLanguage as Record<string, unknown>)[key];
+            return typeof value === "string" ? value : `---${key}---`;
+        },
+        [currentLanguage],
+    );
+}
 
 function getPanelPosition(anchorRect: AnchorRect) {
     const panelWidth = Math.min(512, window.innerWidth - VIEWPORT_MARGIN * 2);
@@ -83,7 +126,36 @@ function MenuGridIcon({variant, hovered}: {variant: "hero" | "light"; hovered: b
     );
 }
 
+function MenuLanguageButtons({className}: {className?: string}) {
+    const t = useFigmaMenuT();
+    const dispatch = useDispatch();
+    const languageCode = useSelector((state: RootState) => state.language.languageCode);
+
+    return (
+        <div className={className ?? "flex items-center gap-4"} role="group" aria-label={t("languageGroup")}>
+            {MENU_LANGUAGES.map((language) => {
+                const isActive = language.languageCode === languageCode;
+                return (
+                    <button
+                        key={language.languageCode}
+                        type="button"
+                        aria-pressed={isActive}
+                        aria-label={language.name}
+                        onClick={() => dispatch(changeLanguage(language.languageCode))}
+                        className={`cursor-pointer text-xl text-white not-italic transition-opacity duration-200 hover:opacity-70 ${
+                            isActive ? "font-aeonik-medium" : "font-aeonik-light opacity-70"
+                        }`}
+                    >
+                        {language.shortCode}
+                    </button>
+                );
+            })}
+        </div>
+    );
+}
+
 function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: () => void}) {
+    const t = useFigmaMenuT();
     const [controlsHovered, setControlsHovered] = useState(false);
     const [visible, setVisible] = useState(false);
 
@@ -99,7 +171,7 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
             className="fixed inset-0 z-[200]"
             role="dialog"
             aria-modal="true"
-            aria-label="Navigation menu"
+            aria-label={t("navMenu")}
             onClick={onClose}
         >
             <div
@@ -124,7 +196,7 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                     onMouseLeave={() => setControlsHovered(false)}
                 >
                     <MenuMoonIcon variant="hero" hovered={controlsHovered} />
-                    <button type="button" onClick={onClose} className="cursor-pointer" aria-label="Close menu">
+                    <button type="button" onClick={onClose} className="cursor-pointer" aria-label={t("closeMenu")}>
                         <MenuGridIcon variant="hero" hovered />
                     </button>
                 </div>
@@ -137,7 +209,7 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                             onClick={onClose}
                             className={`${PUBLIC_HEADING} !cursor-pointer leading-none text-white transition-colors duration-200 hover:text-white/30`}
                         >
-                            {link.label}
+                            {t(FIGMA_MENU_LINK_KEYS[link.path] ?? link.path)}
                         </Link>
                     ))}
                 </nav>
@@ -149,47 +221,49 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                         type="button"
                         className="font-aeonik-light w-[200px] cursor-pointer rounded-[5px] border border-white/30 px-2.5 py-3 text-xl text-white not-italic transition-colors duration-200 hover:bg-white/10"
                     >
-                        Log in
+                        {t("logIn")}
                     </button>
                     <button
                         type="button"
                         className="font-aeonik-light w-[200px] cursor-pointer rounded-[5px] bg-white px-2.5 py-3 text-xl text-[#0d37a4] not-italic transition-opacity duration-200 hover:opacity-90"
                     >
-                        Get started
+                        {t("getStarted")}
                     </button>
                 </div>
 
-                <div className="absolute left-11 top-[509px] flex items-center gap-4">
-                    {["EN", "IT", "DE", "FR", "AL"].map((lang, i) => (
-                        <span key={lang} className={`font-aeonik-${i === 0 ? "medium" : "light"} text-xl text-white not-italic`}>
-                            {lang}
-                        </span>
-                    ))}
-                </div>
+                <MenuLanguageButtons className="absolute left-11 top-[509px] flex items-center gap-4" />
             </div>
         </div>
     );
 }
 
 function MobileNavDrawer({open, onClose}: {open: boolean; onClose: () => void}) {
+    const t = useFigmaMenuT();
+
     if (!open) {
         return null;
     }
 
     return createPortal(
-        <div className="fixed inset-0 z-[200] md:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div className="fixed inset-0 z-[200] md:hidden" role="dialog" aria-modal="true" aria-label={t("navMenu")}>
             <div className="absolute inset-0 bg-black/40" onClick={onClose} />
             <div className="absolute inset-y-0 right-0 flex w-[min(100vw,320px)] flex-col gap-6 bg-pronix-blue p-6 text-white">
-                <button type="button" className="self-end font-aeonik-medium text-lg" onClick={onClose} aria-label="Close menu">
-                    Close
+                <button
+                    type="button"
+                    className="self-end font-aeonik-medium text-lg"
+                    onClick={onClose}
+                    aria-label={t("closeMenu")}
+                >
+                    {t("close")}
                 </button>
                 <nav className="flex flex-col gap-4">
                     {figmaMenuLinks.map((link) => (
                         <Link key={link.path} to={link.path} onClick={onClose} className="font-aeonik-medium text-2xl">
-                            {link.label}
+                            {t(FIGMA_MENU_LINK_KEYS[link.path] ?? link.path)}
                         </Link>
                     ))}
                 </nav>
+                <MenuLanguageButtons className="mt-auto flex flex-wrap items-center gap-4" />
             </div>
         </div>,
         document.body,
@@ -197,6 +271,7 @@ function MobileNavDrawer({open, onClose}: {open: boolean; onClose: () => void}) 
 }
 
 function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
+    const t = useFigmaMenuT();
     const isMobile = usePublicIsMobile();
     const [open, setOpen] = useState(false);
     const [anchorRect, setAnchorRect] = useState<AnchorRect | null>(null);
@@ -242,7 +317,7 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
                         ref={gridTriggerRef}
                         type="button"
                         className="cursor-pointer"
-                        aria-label="Open menu"
+                        aria-label={t("openMenu")}
                         aria-expanded={open}
                         onClick={handleOpen}
                     >
