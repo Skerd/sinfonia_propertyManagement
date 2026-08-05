@@ -12,6 +12,7 @@
   "phone": "Phone",
   "status": "Status",
   "source": "Source",
+  "interest": "Interest",
   "projectInterest": "Project Interest",
   "unitInterest": "Unit Interest",
   "budget": "Budget",
@@ -40,6 +41,13 @@
     "event": "Event",
     "cold_call": "Cold Call",
     "walk_in": "Walk-in",
+    "other": "Other"
+  },
+  "interests": {
+    "partnerships": "Partnerships",
+    "investments": "Investments",
+    "platform_support": "Platform support",
+    "reservation": "Reservation",
     "other": "Other"
   },
   "activityActions": {

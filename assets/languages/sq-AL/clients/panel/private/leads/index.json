@@ -25,6 +25,7 @@
     "notes": "Shënime",
     "phone": "Telefoni",
     "projectInterest": "Projekti i interesit",
+    "interest": "Interesi",
     "source": "Burimi",
     "status": "Statusi",
     "unitInterest": "Njësia e interesit",
@@ -46,6 +47,13 @@
         "event": "Ngjarje",
         "cold_call": "Telefonatë",
         "walk_in": "Vizitë direkte",
+        "other": "Tjetër"
+      },
+      "interest": {
+        "partnerships": "Partneritete",
+        "investments": "Investime",
+        "platform_support": "Mbështetje për platformën",
+        "reservation": "Rezervim",
         "other": "Tjetër"
       }
     }

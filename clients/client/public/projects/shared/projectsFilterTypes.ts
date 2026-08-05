@@ -28,8 +28,8 @@ export function createDefaultFilters(bounds: ProjectsPriceBounds): ProjectsFilte
         propertyType: null,
         bedrooms: "any",
         areaSqm: "",
-        priceMin: bounds.min,
-        priceMax: bounds.max,
+        priceMin: Math.round(bounds.min),
+        priceMax: Math.round(bounds.max),
     };
 }
 

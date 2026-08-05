@@ -3,7 +3,7 @@ import {usePublicFavorites} from "@propertyManagementModule/clients/client/publi
 import PublicFavoriteHeartIcon from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartIcon.tsx";
 
 const heartButtonClassName =
-    "relative flex size-9 shrink-0 items-center justify-center rounded-full border border-[rgba(24,24,24,0.1)] bg-white";
+    "relative flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[rgba(24,24,24,0.1)] bg-white transition duration-200 hover:border-pronix-ink hover:shadow-sm active:scale-95";
 
 type PublicFavoritesBasketButtonProps = {
     resolveLanguageKey: ResolveLanguageKey;

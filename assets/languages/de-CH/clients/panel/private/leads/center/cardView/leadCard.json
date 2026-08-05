@@ -9,6 +9,7 @@
   "followUpDate": "Follow-up",
   "statusLabel": "Status",
   "sourceLabel": "Quelle",
+  "interestLabel": "Interesse",
   "status": {
     "new": "Neu",
     "contacted": "Kontaktiert",
@@ -26,5 +27,12 @@
     "cold_call": "Kaltakquise",
     "walk_in": "Walk-in",
     "other": "Andere"
+  },
+  "interest": {
+    "partnerships": "Partnerschaften",
+    "investments": "Investitionen",
+    "platform_support": "Plattform-Support",
+    "reservation": "Reservierung",
+    "other": "Sonstiges"
   }
 }

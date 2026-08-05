@@ -13,7 +13,11 @@ export const PUBLIC_GRID_PROJECTS =
 
 /** Figma Projects Gallery row 268:715 — 3 cols at xl, not panel admin density */
 export const PUBLIC_GRID_PROJECTS_GALLERY =
-    "grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 pe-1";
+    "grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 xl:grid-cols-3 pe-1";
+
+/** Project units catalog — denser than projects gallery so more apartments fit per row */
+export const PUBLIC_GRID_UNITS =
+    "grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 pe-1";
 
 /** Panel sales/index.tsx cardViewClassName */
 export const PUBLIC_GRID_SALES =
@@ -62,33 +66,34 @@ export const PUBLIC_CONTENT_FRAME =
 /** @deprecated Use PUBLIC_CONTENT_FRAME */
 export const PUBLIC_CONTAINER = PUBLIC_CONTENT_FRAME;
 
-export const PUBLIC_SECTION = "w-full py-12 md:py-16 lg:py-24";
+/** Vertical rhythm between marketing blocks — keep modest; headers are flush. */
+export const PUBLIC_SECTION = "w-full py-8 md:py-12 lg:py-16";
 
 export const PUBLIC_SECTION_FLUSH = "w-full py-0";
 
 export const PUBLIC_TITLE =
-    "font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-3xl sm:text-4xl md:text-5xl lg:text-[56px]";
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-3xl sm:text-4xl md:text-5xl lg:text-[56px]";
 
 export const PUBLIC_TITLE_FIGMA =
-    "font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-3xl sm:text-4xl md:text-5xl lg:text-[56px]";
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-3xl sm:text-4xl md:text-5xl lg:text-[56px]";
 
 export const PUBLIC_SUBTITLE =
-    "font-aeonik-light text-pronix-ink not-italic leading-[1.4] text-lg sm:text-xl md:text-2xl lg:text-[24px]";
+    "cursor-default font-aeonik-light text-pronix-ink not-italic leading-[1.4] text-lg sm:text-xl md:text-2xl lg:text-[24px]";
 
 export const PUBLIC_BODY =
-    "font-aeonik-light text-pronix-ink-muted not-italic leading-normal text-base md:text-lg lg:text-[20px]";
+    "cursor-default font-aeonik-light text-pronix-ink-muted not-italic leading-normal text-base md:text-lg lg:text-[20px]";
 
 /** Section / panel headings (Figma 32px at md). */
 export const PUBLIC_HEADING =
-    "font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-2xl md:text-[32px]";
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-2xl md:text-[32px]";
 
 /** Projects Gallery page title (Figma 268:238 — ~120px at 1728 canvas). */
 export const PUBLIC_GALLERY_PAGE_TITLE =
-    "font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl";
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl";
 
 /** Card titles inside grids (Figma 28px at lg). */
 export const PUBLIC_CARD_TITLE =
-    "font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-xl md:text-2xl lg:text-[28px]";
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-xl md:text-2xl lg:text-[28px]";
 
 /** @deprecated Carousel stage only — card lists use panel CSS grids */
 export const PUBLIC_FIGMA_ROW = "flex flex-nowrap items-stretch";

@@ -8,7 +8,7 @@ type PageHeaderSectionProps = {
 /** Figma menu bar `35:139` — single header per page (not duplicated in layout). */
 function PageHeaderSection({variant = "light"}: PageHeaderSectionProps) {
     return (
-        <div className={`${PUBLIC_CONTAINER} py-4 md:py-[45px]`} data-node-id="268:328" data-name="Menu">
+        <div className={`${PUBLIC_CONTAINER} py-4 md:py-6 lg:py-8`} data-node-id="268:328" data-name="Menu">
             <FigmaMenu variant={variant} />
         </div>
     );

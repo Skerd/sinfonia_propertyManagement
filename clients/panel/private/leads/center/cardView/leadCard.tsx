@@ -108,10 +108,17 @@ function LeadCard({
                                     </Badge>
                                 </TooltipDisplayer>
                             )}
+                            {!!read?.interest && lead.interest && (
+                                <TooltipDisplayer tooltip={resolveLanguageKey("interestLabel") as string}>
+                                    <Badge variant="outline" className="text-xs text-muted-foreground">
+                                        {resolveLanguageKey(`interest.${lead.interest}`)}
+                                    </Badge>
+                                </TooltipDisplayer>
+                            )}
                         </>
                     }
                     showTitle={!!read?.firstName}
-                    showBadges={!!(read?.status || read?.source)}
+                    showBadges={!!(read?.status || read?.source || read?.interest)}
                     hideActions={hideActions}
                     actionMenu={
                         <ActionMenu

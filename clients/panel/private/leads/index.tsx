@@ -52,6 +52,18 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
                 {value: "other",     label: resolveLanguageKey("fields.!enums.source.other")     as string},
             ],
         },
+        {
+            field: "interest",
+            label: resolveLanguageKey("fields.interest") as string,
+            type: COLUMN_TYPE.ENUM,
+            enumValues: [
+                {value: "partnerships",     label: resolveLanguageKey("fields.!enums.interest.partnerships")     as string},
+                {value: "investments",      label: resolveLanguageKey("fields.!enums.interest.investments")      as string},
+                {value: "platform_support", label: resolveLanguageKey("fields.!enums.interest.platform_support") as string},
+                {value: "reservation",      label: resolveLanguageKey("fields.!enums.interest.reservation")      as string},
+                {value: "other",            label: resolveLanguageKey("fields.!enums.interest.other")            as string},
+            ],
+        },
     ], [resolveLanguageKey]);
 
     return (

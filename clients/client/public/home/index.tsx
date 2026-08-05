@@ -1,6 +1,8 @@
+import {useEffect, useRef} from "react";
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import PublicPageShell from "@propertyManagementModule/clients/client/public/shared/layout/publicPageShell.tsx";
 import PublicSection from "@propertyManagementModule/clients/client/public/shared/layout/publicSection.tsx";
 import HeroSection from "@propertyManagementModule/clients/client/public/home/sections/heroSection.tsx";
@@ -12,15 +14,30 @@ import RoiCalculatorSection from "@propertyManagementModule/clients/client/publi
 import PlatformSection from "@propertyManagementModule/clients/client/public/home/sections/platformSection.tsx";
 import CtaSection from "@propertyManagementModule/clients/client/public/shared/sections/ctaSection.tsx";
 import FooterSection from "@propertyManagementModule/clients/client/public/shared/sections/footerSection.tsx";
+import type {MarketingStatsResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
-function HomePage(_: WithLanguageType) {
+type HomePageProps = WithLanguageType & WithAxiosType<MarketingStatsResponse>;
+
+function HomePage(props: HomePageProps) {
+    const {onFilterChange} = props;
+    const initialFetchDone = useRef(false);
+
+    useEffect(() => {
+        if (initialFetchDone.current) {
+            return;
+        }
+        initialFetchDone.current = true;
+        onFilterChange({});
+        // Intentionally mount-only: onFilterChange identity changes every withAxios render.
+    }, []);
+
     return (
         <PublicPageShell nodeId="41:196" nodeName="Homepage">
             <PublicSection nodeId="41:197" flush>
                 <HeroSection />
             </PublicSection>
             <PublicSection nodeId="142:1209">
-                <AboutSection />
+                <AboutSection data={props.data} loading={props.loading} />
             </PublicSection>
             <PublicSection nodeId="80:3907">
                 <CapabilitiesSection />
@@ -49,5 +66,6 @@ function HomePage(_: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/client/public/home/index.tsx"),
+    withAxios<MarketingStatsResponse>({method: "post", url: "/api/realEstate/marketingStats", data: {}}, true),
     withDebug(true, true),
 )(HomePage);

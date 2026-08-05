@@ -49,6 +49,8 @@
   "gallery": "Galeria",
   "mediaFiles": "Dokumente & Skedarë",
   "marketingBooklet": "Broshurë Marketingu",
+  "featuredOnHomepage": "I veçuar",
+  "featuredOnHomepageTooltip": "Shfaqet në karuselin e veçuar të faqes publike",
   "overview": "Vështrim i përgjithshëm",
   "project": "Projekti",
   "reservationCommissionShort": "Rev.",

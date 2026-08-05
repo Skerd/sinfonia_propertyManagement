@@ -2,7 +2,7 @@
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 2.5625rem;
+    height: 2rem;
     margin: 0;
     background: transparent;
     outline: none;
@@ -10,16 +10,16 @@
 }
 
 .projects-filter-range::-webkit-slider-runnable-track {
-    height: 0.625rem;
+    height: 0.5rem;
     background: transparent;
 }
 
 .projects-filter-range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 2.5625rem;
-    height: 2.5625rem;
-    margin-top: -1rem;
+    width: 2rem;
+    height: 2rem;
+    margin-top: -0.75rem;
     border: none;
     border-radius: 50%;
     background: var(--filter-range-thumb) center / contain no-repeat;
@@ -28,13 +28,13 @@
 }
 
 .projects-filter-range::-moz-range-track {
-    height: 0.625rem;
+    height: 0.5rem;
     background: transparent;
 }
 
 .projects-filter-range::-moz-range-thumb {
-    width: 2.5625rem;
-    height: 2.5625rem;
+    width: 2rem;
+    height: 2rem;
     border: none;
     border-radius: 50%;
     background: var(--filter-range-thumb) center / contain no-repeat;
@@ -45,7 +45,7 @@
 .projects-filter-dual-range {
     position: relative;
     width: 100%;
-    height: 2.5625rem;
+    height: 2rem;
 }
 
 .projects-filter-dual-range .projects-filter-range-min {

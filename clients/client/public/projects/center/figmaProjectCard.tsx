@@ -20,7 +20,9 @@ function FigmaProjectCard({project, resolveLanguageKey}: FigmaProjectCardProps) 
     return (
         <Link
             to={`/project/gallery?projectId=${project._id}`}
-            className="relative flex w-full min-w-0 flex-col overflow-hidden rounded-[5px] border border-pronix-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            draggable={false}
+            onDragStart={(event) => event.preventDefault()}
+            className="relative flex w-full min-w-0 cursor-pointer flex-col overflow-hidden rounded-[5px] border border-pronix-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             data-name="Project card"
             data-node-id="268:716"
         >

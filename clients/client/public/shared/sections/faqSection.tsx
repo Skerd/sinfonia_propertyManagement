@@ -54,8 +54,10 @@ function FaqSection({
                                 type="button"
                                 onClick={() => toggleItem(index)}
                                 aria-expanded={isOpen}
-                                className={`flex w-full items-center justify-between gap-4 p-4 text-left md:p-6 ${
-                                    isOpen ? "bg-pronix-blue" : "border border-pronix-border bg-white"
+                                className={`flex w-full cursor-pointer items-center justify-between gap-4 p-4 text-left transition duration-200 md:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/30 focus-visible:ring-offset-2 ${
+                                    isOpen
+                                        ? "bg-pronix-blue hover:bg-pronix-blue/90"
+                                        : "border border-pronix-border bg-white hover:border-[rgba(24,24,24,0.35)] hover:bg-pronix-ink/[0.03] hover:shadow-sm"
                                 }`}
                             >
                                 <p

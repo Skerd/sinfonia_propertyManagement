@@ -93,20 +93,20 @@ function OpenProjectGridToolbarSection({
                         </button>
                     ))}
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex shrink-0 items-center gap-4">
                     <PublicFavoritesBasketButton resolveLanguageKey={resolveLanguageKey} />
                     <button
                         type="button"
                         onClick={onOpenFilters}
-                        className="flex items-center text-pronix-ink"
+                        className="flex shrink-0 cursor-pointer items-center gap-4 rounded-[5px] border border-pronix-border px-4 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.28)] hover:bg-pronix-ink/[0.02] sm:px-6 sm:py-2.5"
                         data-node-id="495:665"
                     >
-                        <img alt="" aria-hidden className="size-7 md:size-8" src={projectsAssets.filterIcon} />
-                        <span className="ml-3 font-aeonik-light text-lg not-italic md:text-2xl">
+                        <img alt="" aria-hidden className="size-9 shrink-0" src={projectsAssets.filterIcon} />
+                        <span className="font-aeonik-light text-xl text-pronix-ink not-italic md:text-2xl lg:text-3xl">
                             {resolveLanguageKey("filtersLabel")}
                         </span>
                         {filtersActive ? (
-                            <span className="ml-3 size-2 shrink-0 rounded-full bg-pronix-blue" aria-hidden />
+                            <span className="size-2 shrink-0 rounded-full bg-pronix-blue" aria-hidden />
                         ) : null}
                     </button>
                 </div>

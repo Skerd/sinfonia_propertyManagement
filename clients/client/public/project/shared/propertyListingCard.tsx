@@ -2,11 +2,6 @@ import {Link} from "react-router-dom";
 import PublicFavoriteHeartButton from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartButton.tsx";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import {MarketingUnitStatus} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
-import {
-    PUBLIC_CARD_TITLE,
-    PUBLIC_SUBTITLE,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-
 import {PropertyTypeId} from "@propertyManagementModule/clients/client/public/projects/shared/projectsFilterTypes.ts";
 
 export type PropertyListingCardUnit = {
@@ -40,6 +35,8 @@ type PropertyListingCardProps = {
     projectName?: string;
     nodeId?: string;
     variant?: "grid" | "compact";
+    highlighted?: boolean;
+    onHoverChange?: (unitId: string | null) => void;
 };
 
 function statusLabel(status: string, availableLabel: string, soldLabel: string, reservedLabel: string) {
@@ -50,16 +47,18 @@ function statusLabel(status: string, availableLabel: string, soldLabel: string, 
 }
 
 function statusOverlayClassName(status: string): string {
+    const base =
+        "rounded-full px-2.5 py-1 font-aeonik-light text-xs leading-[1.2] text-white backdrop-blur-[17px] sm:px-3 sm:py-1.5 sm:text-sm";
     if (status === "available") {
-        return "rounded-full bg-[rgba(91,184,93,0.4)] px-4 py-2 font-aeonik-light text-base leading-[1.2] text-white backdrop-blur-[17px]";
+        return `${base} bg-[rgba(91,184,93,0.4)]`;
     }
     if (status === "reserved") {
-        return "rounded-full bg-[rgba(245,158,11,0.45)] px-4 py-2 font-aeonik-light text-base leading-[1.2] text-white backdrop-blur-[17px]";
+        return `${base} bg-[rgba(245,158,11,0.45)]`;
     }
     if (status === "sold") {
-        return "rounded-full bg-[rgba(24,24,24,0.45)] px-4 py-2 font-aeonik-light text-base leading-[1.2] text-white backdrop-blur-[17px]";
+        return `${base} bg-[rgba(24,24,24,0.45)]`;
     }
-    return "rounded-full bg-[rgba(24,24,24,0.45)] px-4 py-2 font-aeonik-light text-base leading-[1.2] text-white backdrop-blur-[17px]";
+    return `${base} bg-[rgba(24,24,24,0.45)]`;
 }
 
 function PropertyListingCard({
@@ -78,6 +77,8 @@ function PropertyListingCard({
     projectName,
     nodeId,
     variant = "grid",
+    highlighted = false,
+    onHoverChange,
 }: PropertyListingCardProps) {
     const image = unit.imageUrl ?? projectsAssets.cardPlaceholder;
     const statusText = statusLabel(unit.status, availableLabel, soldLabel, reservedLabel);
@@ -85,13 +86,24 @@ function PropertyListingCard({
     const areaText = unit.areaSqm != null ? `${unit.areaSqm} m²` : "—";
     const roomsText = unit.bedrooms != null ? String(unit.bedrooms) : "—";
     const bathsText = unit.bathrooms != null ? String(unit.bathrooms) : "—";
+    const hoverHandlers = onHoverChange
+        ? {
+              onMouseEnter: () => onHoverChange(unit._id),
+              onMouseLeave: () => onHoverChange(null),
+              onFocus: () => onHoverChange(unit._id),
+              onBlur: () => onHoverChange(null),
+          }
+        : undefined;
 
     if (variant === "compact") {
         return (
             <Link
                 to={`/property?projectId=${projectId}&unitId=${unit._id}`}
-                className="relative flex w-full min-w-0 overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.1)] bg-white transition hover:shadow-md"
+                className={`relative flex w-full min-w-0 overflow-hidden rounded-[5px] border bg-white transition hover:shadow-md ${
+                    highlighted ? "border-pronix-blue shadow-md ring-1 ring-pronix-blue/30" : "border-[rgba(24,24,24,0.1)]"
+                }`}
                 data-node-id={nodeId}
+                {...hoverHandlers}
             >
                 <div className="relative aspect-[230/182] w-[40%] min-w-[7.5rem] shrink-0 overflow-hidden sm:max-w-[45%]">
                     <img alt={unit.name} className="size-full object-cover" src={image} />
@@ -134,13 +146,13 @@ function PropertyListingCard({
             className="relative flex w-full min-w-0 flex-col overflow-hidden rounded-[5px] border border-pronix-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             data-node-id={nodeId}
         >
-            <div className="flex flex-col gap-5 p-4 sm:gap-6 sm:p-6">
+            <div className="flex flex-col gap-3 p-3 sm:gap-4 sm:p-4">
                 <div className="relative w-full" data-node-id="495:674">
-                    <div className="relative aspect-[515/449] min-h-[12.5rem] w-full overflow-hidden rounded-[2px]">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px]">
                         <img alt={unit.name} className="size-full object-cover" src={image} />
                     </div>
-                    <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-4">
-                        <div className="pointer-events-auto flex flex-wrap gap-2">
+                    <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-2 sm:p-3">
+                        <div className="pointer-events-auto flex flex-wrap gap-1.5">
                             <span className={statusOverlayClassName(unit.status)} data-node-id="497:927">
                                 {statusText}
                             </span>
@@ -157,42 +169,44 @@ function PropertyListingCard({
                             />
                         ) : (
                             <div
-                                className="pointer-events-auto flex size-9 shrink-0 items-center justify-center rounded-full border border-[rgba(24,24,24,0.1)] bg-white"
+                                className="pointer-events-auto flex size-8 shrink-0 items-center justify-center rounded-full border border-[rgba(24,24,24,0.1)] bg-white"
                                 data-node-id="545:1735"
                             >
-                                <img alt="" aria-hidden className="size-6" src={projectsAssets.heartOutline} />
+                                <img alt="" aria-hidden className="size-5" src={projectsAssets.heartOutline} />
                             </div>
                         )}
                     </div>
                 </div>
 
-                <div className="flex min-w-0 flex-col gap-2" data-node-id="497:926">
-                    <h2 className={`${PUBLIC_CARD_TITLE} wrap-break-word`}>{unit.name}</h2>
-                    <p className={`${PUBLIC_SUBTITLE} wrap-break-word text-pronix-ink-muted`}>
+                <div className="flex min-w-0 flex-col gap-1" data-node-id="497:926">
+                    <h2 className="wrap-break-word font-aeonik-medium text-base leading-[1.2] text-pronix-ink not-italic sm:text-lg md:text-xl">
+                        {unit.name}
+                    </h2>
+                    <p className="wrap-break-word font-aeonik-light text-sm leading-[1.4] text-pronix-ink-muted not-italic sm:text-base">
                         {unit.floorLabel ?? "—"}
                     </p>
                 </div>
 
                 <div className="flex w-full min-w-0 flex-col" data-node-id="497:931">
-                    <div className="flex flex-wrap gap-3">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-pronix-border px-4 py-2 font-aeonik-light text-base text-pronix-ink">
+                    <div className="flex flex-wrap gap-1.5">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-pronix-border px-2.5 py-1 font-aeonik-light text-xs text-pronix-ink sm:text-sm">
                             {areaLabel}: {areaText}
                         </span>
-                        <span className="inline-flex items-center gap-2 rounded-full border border-pronix-border px-4 py-2 font-aeonik-light text-base text-pronix-ink">
-                            <img alt="" aria-hidden className="size-5" src={projectsAssets.iconUnits} />
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-pronix-border px-2.5 py-1 font-aeonik-light text-xs text-pronix-ink sm:text-sm">
+                            <img alt="" aria-hidden className="size-4" src={projectsAssets.iconUnits} />
                             {roomsLabel}: {roomsText}
                         </span>
-                        <span className="inline-flex items-center gap-2 rounded-full border border-pronix-border px-4 py-2 font-aeonik-light text-base text-pronix-ink">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-pronix-border px-2.5 py-1 font-aeonik-light text-xs text-pronix-ink sm:text-sm">
                             {bathsLabel}: {bathsText}
                         </span>
                         {unit.orientation ? (
-                            <span className="inline-flex items-center gap-2 rounded-full border border-pronix-border px-4 py-2 font-aeonik-light text-base text-pronix-ink">
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-pronix-border px-2.5 py-1 font-aeonik-light text-xs text-pronix-ink sm:text-sm">
                                 {orientationLabel}: {unit.orientation}
                             </span>
                         ) : null}
                     </div>
-                    <div className="mt-6 flex justify-center" data-node-id="497:950">
-                        <p className="rounded-[2px] border border-pronix-blue px-3 py-3 font-aeonik-medium text-xl leading-[1.2] text-pronix-blue not-italic sm:text-2xl">
+                    <div className="mt-3 flex justify-center sm:mt-4" data-node-id="497:950">
+                        <p className="rounded-[2px] border border-pronix-blue px-2.5 py-1.5 font-aeonik-medium text-base leading-[1.2] text-pronix-blue not-italic sm:px-3 sm:py-2 sm:text-lg">
                             {priceText}
                         </p>
                     </div>

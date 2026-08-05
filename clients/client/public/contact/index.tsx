@@ -9,10 +9,10 @@ import ContactContentSection from "@propertyManagementModule/clients/client/publ
 function ContactPage(props: WithLanguageType) {
     return (
         <PublicPageShell nodeId="305:228" nodeName="Contact us">
-            <PublicSection>
+            <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
-            <PublicSection>
+            <PublicSection className="pt-2 pb-6 md:pt-4 md:pb-10 lg:pt-0 lg:pb-12">
                 <ContactContentSection {...props} />
             </PublicSection>
         </PublicPageShell>

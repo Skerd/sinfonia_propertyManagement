@@ -90,11 +90,11 @@ function InvestorsOwnershipSection({resolveLanguageKey, assets = investorsAssets
                     </p>
                 </div>
                 <div
-                    className="grid w-full min-w-0 grid-cols-1 gap-2 pe-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-3"
+                    className="grid w-full min-w-0 grid-cols-1 items-stretch gap-2 pe-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-3"
                     data-node-id="368:4873"
                 >
                     {cards.map((card) => (
-                        <div key={card.nodeId} className={PUBLIC_GRID_CELL}>
+                        <div key={card.nodeId} className={`${PUBLIC_GRID_CELL} flex flex-col`}>
                             <OwnershipInteractiveCard
                                 card={card}
                                 checkCircle={assets.checkCircle}

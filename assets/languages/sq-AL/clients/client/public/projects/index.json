@@ -42,7 +42,11 @@
   "favoritesBasket": "Hap të preferuarat",
   "favoritesTitle": "Të preferuarat",
   "favoritesClose": "Mbyll të preferuarat",
-  "favoritesEmpty": "Ende nuk keni ruajtur asnjë projekt apo njësi.",
+  "favoritesEmpty": "Asgjë e ruajtur ende",
+  "favoritesEmptyHint": "Prekni zemrën te një projekt ose njësi për ta mbajtur këtu.",
+  "favoritesBrowse": "Shfleto projektet",
+  "favoritesSavedOne": "artikull i ruajtur",
+  "favoritesSavedMany": "artikuj të ruajtur",
   "favoritesProjects": "Projektet",
   "favoritesUnits": "Njësitë"
 }

@@ -42,7 +42,11 @@
   "favoritesBasket": "Offen favorites",
   "favoritesTitle": "Favorites",
   "favoritesClose": "Close favorites",
-  "favoritesEmpty": "Sie have nicht gespeichert any projects oder units yet.",
+  "favoritesEmpty": "Noch nichts gespeichert",
+  "favoritesEmptyHint": "Tippen Sie auf das Herz bei einem Projekt oder einer Einheit, um es hier zu behalten.",
+  "favoritesBrowse": "Projekte durchsuchen",
+  "favoritesSavedOne": "gespeichertes Element",
+  "favoritesSavedMany": "gespeicherte Elemente",
   "favoritesProjects": "Projekte",
   "favoritesUnits": "Einheiten"
 }

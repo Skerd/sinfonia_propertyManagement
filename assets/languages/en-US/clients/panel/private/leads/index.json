@@ -25,6 +25,7 @@
     "notes": "Notes",
     "phone": "Phone",
     "projectInterest": "Project Interest",
+    "interest": "Interest",
     "source": "Source",
     "status": "Status",
     "unitInterest": "Unit Interest",
@@ -46,6 +47,13 @@
         "event": "Event",
         "cold_call": "Cold Call",
         "walk_in": "Walk-in",
+        "other": "Other"
+      },
+      "interest": {
+        "partnerships": "Partnerships",
+        "investments": "Investments",
+        "platform_support": "Platform support",
+        "reservation": "Reservation",
         "other": "Other"
       }
     }

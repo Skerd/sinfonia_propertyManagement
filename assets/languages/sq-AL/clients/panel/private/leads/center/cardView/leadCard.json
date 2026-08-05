@@ -9,6 +9,7 @@
   "followUpDate": "Ndjekja",
   "statusLabel": "Statusi",
   "sourceLabel": "Burimi",
+  "interestLabel": "Interesi",
   "status": {
     "new": "I ri",
     "contacted": "Kontaktuar",
@@ -25,6 +26,13 @@
     "event": "Ngjarje",
     "cold_call": "Telefonatë",
     "walk_in": "Vizitë direkte",
+    "other": "Tjetër"
+  },
+  "interest": {
+    "partnerships": "Partneritete",
+    "investments": "Investime",
+    "platform_support": "Mbështetje për platformën",
+    "reservation": "Rezervim",
     "other": "Tjetër"
   }
 }

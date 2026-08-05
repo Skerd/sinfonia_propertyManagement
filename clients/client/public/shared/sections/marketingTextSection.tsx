@@ -13,7 +13,7 @@ type MarketingTextSectionProps = PublicLanguageProps & {
 
 function MarketingTextSection({resolveLanguageKey, block}: MarketingTextSectionProps) {
     return (
-        <div className="relative w-full py-8 md:py-16" data-node-id={block.nodeId}>
+        <div className="relative w-full" data-node-id={block.nodeId}>
             {block.titleKey && <h2 className={PUBLIC_TITLE}>{resolveLanguageKey(block.titleKey)}</h2>}
             {block.bodyKey && (
                 <p className={`max-w-[1084px] ${PUBLIC_SUBTITLE} ${block.titleKey ? "mt-4 md:mt-6" : ""}`}>

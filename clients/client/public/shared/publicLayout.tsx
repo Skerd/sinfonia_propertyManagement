@@ -3,12 +3,14 @@ import {AiChatProvider} from "@propertyManagementModule/clients/client/public/sh
 import PublicAiChat from "@propertyManagementModule/clients/client/public/shared/aiChat/publicAiChat.tsx";
 import {PublicFavoritesProvider} from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesContext.tsx";
 import PublicFavoritesPanelHost from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesPanelHost.tsx";
+import PublicScrollToTop from "@propertyManagementModule/clients/client/public/shared/publicScrollToTop.tsx";
 
 /** Routes render their own Figma header via PageHeaderSection — no duplicate navbar here. */
 function PublicLayout() {
     return (
         <PublicFavoritesProvider>
             <AiChatProvider>
+                <PublicScrollToTop />
                 <div className="min-h-screen bg-white">
                     <Outlet />
                 </div>

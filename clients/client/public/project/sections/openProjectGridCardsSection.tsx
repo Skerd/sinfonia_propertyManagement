@@ -14,7 +14,7 @@ import {
 import {ProjectsPriceBounds} from "@propertyManagementModule/clients/client/public/projects/shared/projectsFilterTypes.ts";
 import {
     PUBLIC_GRID_CELL,
-    PUBLIC_GRID_PROJECTS_GALLERY,
+    PUBLIC_GRID_UNITS,
     PUBLIC_SUBTITLE,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
@@ -102,7 +102,7 @@ function OpenProjectGridCardsSection({
                         {section.floorGroups.map((floorGroup) => (
                             <div key={floorGroup.floorId} className="flex flex-col gap-4">
                                 <h3 className={PUBLIC_SUBTITLE}>{floorGroup.floorLabel}</h3>
-                                <div className={PUBLIC_GRID_PROJECTS_GALLERY}>
+                                <div className={PUBLIC_GRID_UNITS}>
                                     {floorGroup.units.map((unit) => (
                                         <div key={unit._id} className={PUBLIC_GRID_CELL}>
                                             <PropertyListingCard

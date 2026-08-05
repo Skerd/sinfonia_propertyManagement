@@ -27,7 +27,7 @@ export type NumberedStepCardProps = {
 export function NumberedStepCard({number, numberLeftRatio, titleLeftRatio, title, body, nodeId}: NumberedStepCardProps) {
     return (
         <div
-            className="group relative aspect-[386.75/535] w-full min-w-0 overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] bg-white transition-all duration-500 hover:border-[rgba(24,24,24,0.1)] hover:bg-pronix-blue @container"
+            className="group relative aspect-[386.75/535] w-full min-w-0 cursor-default overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] bg-white transition-all duration-500 hover:border-[rgba(24,24,24,0.1)] hover:bg-pronix-blue @container"
             data-node-id={nodeId}
         >
             <p

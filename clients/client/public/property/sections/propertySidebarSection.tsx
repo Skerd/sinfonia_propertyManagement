@@ -6,9 +6,11 @@ import {
     PUBLIC_SUBTITLE,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
 
 type PropertySidebarSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
+    onReserve: () => void;
 };
 
 const MISSING_VALUE = "—";
@@ -31,16 +33,18 @@ function formatUnitPrice(unit: MarketingUnitSingle, onRequest: string) {
     return `${symbol}${unit.price.toLocaleString()}`;
 }
 
-function PropertySidebarSection({resolveLanguageKey, unit}: PropertySidebarSectionProps) {
+function PropertySidebarSection({resolveLanguageKey, unit, onReserve}: PropertySidebarSectionProps) {
     const priceLabel = formatUnitPrice(unit, resolveLanguageKey("priceOnRequest"));
     const areaLabel = unit.grossAreaSqm != null ? `${unit.grossAreaSqm} m²` : MISSING_VALUE;
     const roomsLabel = unit.bedrooms != null ? String(unit.bedrooms) : MISSING_VALUE;
     const bathsLabel = unit.bathrooms != null ? String(unit.bathrooms) : MISSING_VALUE;
     const floorLabel = formatFloorLabel(unit);
+    const orientationLabel = unit.orientation ?? MISSING_VALUE;
+    const unitTypeLabel = unit.unitTypeName?.trim() || MISSING_VALUE;
     const specImage = resolveMarketingMediaUrl(unit.floorPlanImage) ?? propertyAssets.specArea;
 
     return (
-        <div className="relative w-full max-w-xl lg:max-w-[599px]" data-node-id="515:6253">
+        <div className="relative w-full lg:sticky lg:top-6" data-node-id="515:6253">
             <div
                 className="relative overflow-hidden rounded-[5px] border border-pronix-border bg-white p-5 md:p-6"
                 data-node-id="515:6120"
@@ -76,7 +80,7 @@ function PropertySidebarSection({resolveLanguageKey, unit}: PropertySidebarSecti
                                 {resolveLanguageKey("orientation")}
                             </p>
                             <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>
-                                {MISSING_VALUE}
+                                {orientationLabel}
                             </p>
                         </div>
                         <div>
@@ -99,14 +103,28 @@ function PropertySidebarSection({resolveLanguageKey, unit}: PropertySidebarSecti
                             </p>
                             <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>{bathsLabel}</p>
                         </div>
+                        <div>
+                            <p className="font-aeonik-light text-base text-pronix-ink-muted not-italic md:text-xl">
+                                {resolveLanguageKey("unitType")}
+                            </p>
+                            <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>{unitTypeLabel}</p>
+                        </div>
                     </div>
                     <div className="my-6 h-px w-full bg-pronix-border" />
                     <button
                         type="button"
-                        className="w-full rounded-[5px] bg-pronix-blue py-4 font-aeonik-medium text-white not-italic transition hover:opacity-90 md:py-5 md:text-lg"
+                        onClick={onReserve}
+                        className={cn(
+                            "flex w-full cursor-pointer items-center justify-center border border-pronix-ink px-6 py-4 md:py-5",
+                            "bg-transparent text-pronix-ink transition-colors duration-200",
+                            "hover:bg-pronix-ink hover:text-white",
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+                        )}
                         data-node-id="515:6169"
                     >
-                        {resolveLanguageKey("reserveOnline")}
+                        <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg">
+                            {resolveLanguageKey("reserveOnline")}
+                        </span>
                     </button>
                 </div>
                 <div

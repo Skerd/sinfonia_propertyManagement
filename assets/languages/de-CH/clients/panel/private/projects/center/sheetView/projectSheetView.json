@@ -49,6 +49,8 @@
   "gallery": "Galerie",
   "mediaFiles": "Dokumente & Dateien",
   "marketingBooklet": "Marketingbroschüre",
+  "featuredOnHomepage": "Featured",
+  "featuredOnHomepageTooltip": "Wird im Featured-Karussell der öffentlichen Startseite angezeigt",
   "overview": "Übersicht",
   "project": "Projekt",
   "reservationCommissionShort": "Resv.",

@@ -1,5 +1,4 @@
 import {OpenProjectContentProps} from "@propertyManagementModule/clients/client/public/project/shared/openProjectShell.tsx";
-import ProjectViewActions from "@propertyManagementModule/clients/client/public/project/shared/projectViewActions.tsx";
 import OpenProjectFinancePriceChart from "@propertyManagementModule/clients/client/public/project/components/openProjectFinancePriceChart.tsx";
 import {projectAssets} from "@propertyManagementModule/clients/client/public/project/projectAssets.ts";
 import {PUBLIC_HEADING, PUBLIC_SUBTITLE, PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
@@ -50,10 +49,6 @@ function OpenProjectFinanceSection({project, resolveLanguageKey}: OpenProjectCon
                         }}
                     />
                 </div>
-            </div>
-
-            <div className="lg:col-span-2">
-                <ProjectViewActions />
             </div>
         </div>
     );

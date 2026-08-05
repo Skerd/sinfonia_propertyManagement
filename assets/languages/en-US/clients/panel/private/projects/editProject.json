@@ -39,9 +39,13 @@
     "uploadNewVideosHint": "Upload new videos to add to the gallery",
     "videoGalleryLabel": "Video Gallery",
     "mediaFilesLabel": "Documents & Files",
-    "marketingBookletLabel": "Marketing Booklet"
+    "marketingBookletLabel": "Marketing Booklet",
+    "featuredOnHomepageLabel": "Featured on homepage",
+    "featuredSortOrderLabel": "Featured sort order",
+    "featuredSortOrderPlaceholder": "0 = first"
   },
   "generalInfo": "General Information",
+  "homepageFeatured": "Homepage featured",
   "media": "Media",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
   "uploadError": "Failed to upload media files",

@@ -21,7 +21,7 @@ export function createPublicMarketingPage(
         const {resolveLanguageKey, currentLanguage, languageCode} = props;
 
         const sections: ReactNode[] = [
-            <PublicSection key="header">
+            <PublicSection key="header" flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>,
             ...blocks.map((block) => (
@@ -38,7 +38,7 @@ export function createPublicMarketingPage(
 
         if (options?.includeFooter !== false) {
             sections.push(
-                <PublicSection key="footer" fullBleed>
+                <PublicSection key="footer" flush fullBleed>
                     <FooterSection />
                 </PublicSection>,
             );

@@ -25,6 +25,7 @@
     "notes": "Notizen",
     "phone": "Telefon",
     "projectInterest": "Projektinteresse",
+    "interest": "Interesse",
     "source": "Quelle",
     "status": "Status",
     "unitInterest": "Einheitsinteresse",
@@ -47,6 +48,13 @@
         "cold_call": "Kaltakquise",
         "walk_in": "Walk-in",
         "other": "Andere"
+      },
+      "interest": {
+        "partnerships": "Partnerschaften",
+        "investments": "Investitionen",
+        "platform_support": "Plattform-Support",
+        "reservation": "Reservierung",
+        "other": "Sonstiges"
       }
     }
   }

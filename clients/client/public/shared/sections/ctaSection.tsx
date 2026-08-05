@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {figmaImageCropStyle, FIGMA_IMAGE_CROPS} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {PUBLIC_GRID_TWO_COL, PUBLIC_SUBTITLE, PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
@@ -44,9 +45,16 @@ function CtaSection({
                         </div>
                         <Link
                             to="/projects"
-                            className="inline-flex w-fit items-center justify-center rounded-[5px] border border-[rgba(24,24,24,0.2)] px-6 py-3"
+                            className={cn(
+                                "inline-flex w-fit cursor-pointer items-center justify-center border border-pronix-ink px-6 py-3 md:px-12 md:py-4",
+                                "bg-transparent text-pronix-ink transition-colors duration-200",
+                                "hover:bg-pronix-ink hover:text-white",
+                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+                            )}
                         >
-                            <p className={`${PUBLIC_SUBTITLE} whitespace-nowrap text-pronix-ink`}>{browse}</p>
+                            <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg lg:text-[24px]">
+                                {browse}
+                            </span>
                         </Link>
                     </div>
                     <div className="relative min-h-[12rem] w-full shrink-0 overflow-hidden sm:min-h-[16rem] lg:min-h-0 lg:w-auto lg:flex-[0_0_30%]">
@@ -61,20 +69,27 @@ function CtaSection({
 
                 <Link
                     to="/developers"
-                    className="relative block aspect-[802/691] w-full min-w-0 overflow-hidden rounded-[5px]"
+                    className="group relative block aspect-[802/691] w-full min-w-0 overflow-hidden rounded-[5px]"
                     data-node-id="357:351"
                 >
                     <div className="absolute inset-0 bg-pronix-cream" />
                     <img
                         alt=""
                         aria-hidden
-                        className="absolute inset-0 size-full object-cover"
+                        className="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                         src={figmaAssets.ctaScene}
+                    />
+                    <div
+                        className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15"
+                        aria-hidden
                     />
                     <div className="absolute bottom-[8%] left-[5%] w-[min(40%,15rem)] sm:bottom-[10%] sm:left-[6%]" data-node-id="357:354">
                         <div
-                            className="rounded-[5px] border border-[rgba(255,255,255,0.2)] p-5 backdrop-blur-[47px]"
-                            style={{background: "rgba(255, 255, 255, 0.1)"}}
+                            className={cn(
+                                "rounded-[5px] border border-[rgba(255,255,255,0.2)] p-5 backdrop-blur-[47px]",
+                                "bg-[rgba(255,255,255,0.1)] transition-all duration-500 ease-out",
+                                "group-hover:-translate-y-1 group-hover:border-white/45 group-hover:bg-[rgba(255,255,255,0.2)]",
+                            )}
                         >
                             <div className="relative mb-4 size-12 overflow-hidden">
                                 <img alt="" aria-hidden className="size-full" src={figmaAssets.ctaEllipse} />

@@ -3,29 +3,65 @@ import {PublicLanguageProps, MarketingUnitSingle} from "@propertyManagementModul
 import {
     PUBLIC_BODY,
     PUBLIC_HEADING,
-    PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {formatEuro, formatPercent, formatYearsShort} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
 import RoiFigmaSlider from "@propertyManagementModule/clients/client/public/shared/roi/roiFigmaSlider.tsx";
 import RoiProfitPanel from "@propertyManagementModule/clients/client/public/shared/roi/roiProfitPanel.tsx";
 import RoiRentalTypeSelect from "@propertyManagementModule/clients/client/public/shared/roi/roiRentalTypeSelect.tsx";
 import {useUnitRoiCalculator} from "@propertyManagementModule/clients/client/public/shared/roi/useUnitRoiCalculator.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
 
 type PropertyDetailsSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
+    onRequestInfo: () => void;
 };
 
 const MISSING_VALUE = "—";
 
-const AREA_PRICING_ROWS = [
-    {labelKey: "area", getValue: (unit: MarketingUnitSingle) => formatAreaSqm(unit.grossAreaSqm)},
-    {labelKey: "sharedArea", getValue: (unit: MarketingUnitSingle) => formatAreaSqm(unit.sharedAreaSqm)},
-    {labelKey: "netArea", getValue: (unit: MarketingUnitSingle) => formatAreaSqm(unit.netAreaSqm ?? unit.areaSqm)},
-    {labelKey: "price", getValue: (unit: MarketingUnitSingle, onRequest: string) => formatUnitPrice(unit, onRequest)},
-    {labelKey: "rooms", getValue: (unit: MarketingUnitSingle) => formatCount(unit.bedrooms)},
-    {labelKey: "baths", getValue: (unit: MarketingUnitSingle) => formatCount(unit.bathrooms)},
-    {labelKey: "averagePricePerSquareMeter", getValue: (unit: MarketingUnitSingle) => formatPricePerSqm(unit.averagePricePerSquareMeter)},
-] as const;
+type DetailValueGetter = (unit: MarketingUnitSingle, resolveLanguageKey: PublicLanguageProps["resolveLanguageKey"]) => string;
+
+const AREA_PRICING_ROWS: {labelKey: string; getValue: DetailValueGetter}[] = [
+    {labelKey: "unitNumber", getValue: (unit) => unit.unitNumber?.trim() || MISSING_VALUE},
+    {labelKey: "unitType", getValue: (unit) => unit.unitTypeName?.trim() || MISSING_VALUE},
+    {
+        labelKey: "propertyType",
+        getValue: (unit, resolveLanguageKey) =>
+            unit.propertyType ? resolveLanguageKey(`propertyType_${unit.propertyType}`) : MISSING_VALUE,
+    },
+    {labelKey: "area", getValue: (unit) => formatAreaSqm(unit.grossAreaSqm)},
+    {labelKey: "sharedArea", getValue: (unit) => formatAreaSqm(unit.sharedAreaSqm)},
+    {labelKey: "netArea", getValue: (unit) => formatAreaSqm(unit.netAreaSqm ?? unit.areaSqm)},
+    {labelKey: "verandaArea", getValue: (unit) => formatAreaSqm(unit.verandaAreaSqm)},
+    {
+        labelKey: "price",
+        getValue: (unit, resolveLanguageKey) => formatUnitPrice(unit, resolveLanguageKey("priceOnRequest")),
+    },
+    {labelKey: "rooms", getValue: (unit) => formatCount(unit.bedrooms)},
+    {labelKey: "baths", getValue: (unit) => formatCount(unit.bathrooms)},
+    {labelKey: "orientation", getValue: (unit) => unit.orientation ?? MISSING_VALUE},
+    {
+        labelKey: "floor",
+        getValue: (unit) => {
+            if (unit.floorLabel) return unit.floorLabel;
+            if (unit.floorLevel != null && unit.totalFloorsInEdifice != null) {
+                return `${unit.floorLevel}/${unit.totalFloorsInEdifice}`;
+            }
+            if (unit.floorLevel != null) return String(unit.floorLevel);
+            return MISSING_VALUE;
+        },
+    },
+    {
+        labelKey: "averagePricePerSquareMeter",
+        getValue: (unit) => formatPricePerSqm(unit.averagePricePerSquareMeter),
+    },
+    {
+        labelKey: "constructionStatus",
+        getValue: (unit, resolveLanguageKey) =>
+            unit.constructionStatus
+                ? resolveLanguageKey(`constructionStatus_${unit.constructionStatus}`)
+                : MISSING_VALUE,
+    },
+];
 
 const FEATURE_ROWS = [
     {labelKey: "hasBalcony", field: "hasBalcony"},
@@ -65,18 +101,18 @@ function formatPricePerSqm(
 
 function DetailRow({label, value}: {label: string; value: string}) {
     return (
-        <div className="flex items-center justify-between border-b border-pronix-border px-3 py-3">
+        <div className="flex items-center justify-between gap-4 border-b border-pronix-border px-3 py-3">
             <span className="font-aeonik-light text-base text-pronix-ink not-italic md:text-xl lg:text-2xl">
                 {label}
             </span>
-            <span className="font-aeonik-light text-base text-pronix-ink not-italic md:text-xl lg:text-2xl">
+            <span className="shrink-0 text-right font-aeonik-light text-base text-pronix-ink not-italic md:text-xl lg:text-2xl">
                 {value}
             </span>
         </div>
     );
 }
 
-function PropertyDetailsSection({resolveLanguageKey, unit}: PropertyDetailsSectionProps) {
+function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: PropertyDetailsSectionProps) {
     const unitPrice = unit.price ?? unit.sharePrice ?? 0;
     const unitArea = unit.netAreaSqm ?? unit.areaSqm ?? 1;
 
@@ -97,12 +133,9 @@ function PropertyDetailsSection({resolveLanguageKey, unit}: PropertyDetailsSecti
     ];
 
     return (
-        <div className="relative w-full max-w-5xl" data-node-id="515:6131">
+        <div className="relative w-full" data-node-id="515:6131">
             <div data-node-id="515:6252">
-                <h1 className={`${PUBLIC_TITLE} leading-[1.1]`} data-node-id="515:6118">
-                    {unit.name}
-                </h1>
-                <p className={`mt-6 ${PUBLIC_BODY}`} data-node-id="515:6129">
+                <p className={PUBLIC_BODY} data-node-id="515:6129">
                     {unit.description ?? MISSING_VALUE}
                 </p>
             </div>
@@ -116,11 +149,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit}: PropertyDetailsSecti
                         <DetailRow
                             key={row.labelKey}
                             label={resolveLanguageKey(row.labelKey)}
-                            value={
-                                row.labelKey === "price"
-                                    ? row.getValue(unit, resolveLanguageKey("priceOnRequest"))
-                                    : row.getValue(unit)
-                            }
+                            value={row.getValue(unit, resolveLanguageKey)}
                         />
                     ))}
                 </div>
@@ -227,10 +256,18 @@ function PropertyDetailsSection({resolveLanguageKey, unit}: PropertyDetailsSecti
                     </p>
                     <button
                         type="button"
-                        className="shrink-0 rounded-[5px] border border-white px-6 py-3 font-aeonik-light text-lg text-white not-italic transition hover:bg-white/10 md:text-2xl"
+                        onClick={onRequestInfo}
+                        className={cn(
+                            "flex shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white px-6 py-3 md:px-8 md:py-4",
+                            "bg-transparent text-white transition-colors duration-200",
+                            "hover:bg-white hover:text-pronix-blue",
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue",
+                        )}
                         data-node-id="522:6339"
                     >
-                        {resolveLanguageKey("requestInfo")}
+                        <span className="font-aeonik-medium whitespace-nowrap not-italic text-lg leading-[17.15px] md:text-2xl">
+                            {resolveLanguageKey("requestInfo")}
+                        </span>
                     </button>
                 </div>
             </div>

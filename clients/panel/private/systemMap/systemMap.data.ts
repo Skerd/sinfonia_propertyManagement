@@ -94,8 +94,9 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
             label: "Lead",
             cluster: "sales",
             module: "propertyManagement",
-            description: "Sales pipeline interest linked to project and optionally a unit.",
-            keyFields: ["status", "project", "unit", "user", "currency"],
+            description:
+                "Sales pipeline interest linked to project and optionally a unit. Public website contact (footer Get-in-touch) creates leads via POST /api/realEstate/marketingContact with source=website.",
+            keyFields: ["status", "source", "project", "unit", "user", "currency"],
             apiPath: "/api/realEstate/lead",
             panelRoute: "/realEstate/leads",
             position: {x: 560, y: 40},
@@ -865,7 +866,8 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
                     id: "ps-lead",
                     label: "Lead",
                     description: "Capture interest",
-                    detail: "/api/realEstate/lead — linked to Project and optional Unit.",
+                    detail:
+                        "Panel CRUD /api/realEstate/lead; public website intake POST /api/realEstate/marketingContact (source=website). Linked to Project and optional Unit.",
                     position: {x: 0, y: 80},
                 },
                 {
@@ -1073,6 +1075,8 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
                 "/api/realEstate/marketingUnit",
                 "/api/realEstate/marketingProjects",
                 "/api/realEstate/marketingAvailability",
+                "/api/realEstate/marketingStats",
+                "/api/realEstate/marketingFeaturedProjects",
             ],
         },
     ],

@@ -10,6 +10,8 @@ type ProjectViewerSidebarProps = {
     selectedFloorId: string;
     selectedEdifice?: MarketingEdificeListItem;
     selectedFloor?: MarketingFloorListItem;
+    hoveredId?: string | null;
+    onHoverId?: (id: string | null) => void;
     onSelectEdifice: (edificeId: string) => void;
     onSelectFloor: (floorId: string) => void;
     resolveLanguageKey: (key: string) => string;
@@ -37,6 +39,8 @@ function ProjectViewerSidebar({
     selectedFloorId,
     selectedEdifice,
     selectedFloor,
+    hoveredId = null,
+    onHoverId,
     onSelectEdifice,
     onSelectFloor,
     resolveLanguageKey,
@@ -86,6 +90,7 @@ function ProjectViewerSidebar({
                     {resolveLanguageKey(titleKey)}
                 </p>
             </div>
+
             <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
                 {items.length === 0 ? (
                     <p className="px-2 py-4 font-aeonik-light text-base text-pronix-ink-muted md:text-lg">
@@ -95,15 +100,22 @@ function ProjectViewerSidebar({
                     <ul className="flex flex-col gap-1">
                         {items.map((item) => {
                             const active = item.id === selectedId;
+                            const hovered = item.id === hoveredId;
                             return (
                                 <li key={item.id}>
                                     <button
                                         type="button"
                                         onClick={() => onSelect(item.id)}
+                                        onMouseEnter={() => onHoverId?.(item.id)}
+                                        onMouseLeave={() => onHoverId?.(null)}
+                                        onFocus={() => onHoverId?.(item.id)}
+                                        onBlur={() => onHoverId?.(null)}
                                         className={`flex w-full flex-col rounded-[5px] px-3 py-3 text-left transition ${
                                             active
                                                 ? "bg-pronix-blue text-white"
-                                                : "text-pronix-ink hover:bg-[rgba(24,24,24,0.04)]"
+                                                : hovered
+                                                  ? "bg-[rgba(2,71,254,0.08)] text-pronix-ink"
+                                                  : "text-pronix-ink hover:bg-[rgba(24,24,24,0.04)]"
                                         }`}
                                     >
                                         <span className="font-aeonik-medium text-base md:text-lg">{item.label}</span>

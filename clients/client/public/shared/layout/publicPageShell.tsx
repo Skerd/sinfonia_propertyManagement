@@ -9,7 +9,7 @@ type PublicPageShellProps = {
 function PublicPageShell({nodeId, nodeName, children}: PublicPageShellProps) {
     return (
         <div
-            className="relative min-h-screen min-w-0 w-full overflow-x-hidden bg-white [scrollbar-gutter:stable]"
+            className="public-page-shell relative min-h-screen min-w-0 w-full cursor-default overflow-x-hidden bg-white [scrollbar-gutter:stable]"
             data-node-id={nodeId}
             data-name={nodeName}
         >

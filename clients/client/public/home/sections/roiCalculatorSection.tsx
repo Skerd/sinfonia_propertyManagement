@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {
     PUBLIC_SUBTITLE,
     PUBLIC_TITLE,
@@ -13,7 +14,7 @@ function RoiCalculatorSection() {
 
     return (
         <div className="relative w-full" data-node-id="94:255">
-            <div className="flex w-full flex-col items-center gap-6 text-center md:gap-10 lg:gap-11" data-node-id="94:256">
+            <div className="flex w-full flex-col items-center gap-4 text-center md:gap-6 lg:gap-8" data-node-id="94:256">
                 <p className={`w-full ${PUBLIC_TITLE}`} data-node-id="94:257">
                     See what a share could return.
                 </p>
@@ -23,12 +24,12 @@ function RoiCalculatorSection() {
             </div>
 
             <div
-                className="mt-8 flex w-full flex-col overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] md:mt-10 lg:mt-[37px] lg:flex-row"
+                className="mt-6 flex w-full flex-col overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] md:mt-8 lg:flex-row"
                 data-node-id="94:259"
             >
-                <div className="flex w-full flex-col bg-white p-6 sm:p-8 md:p-10 lg:w-1/2 lg:min-h-[min(80vh,49rem)]" data-node-id="94:282">
+                <div className="flex w-full flex-col bg-white p-6 sm:p-8 md:p-10 lg:w-1/2 lg:min-h-[min(70vh,42rem)]" data-node-id="94:282">
                     <p
-                        className="mb-8 text-center font-aeonik-medium text-pronix-ink not-italic text-xl md:text-2xl leading-[1.1] lg:mb-12"
+                        className="mb-8 cursor-default text-center font-aeonik-medium text-pronix-ink not-italic text-xl md:text-2xl leading-[1.1] lg:mb-12"
                         data-node-id="94:284"
                     >
                         ROI Calculator
@@ -89,12 +90,17 @@ function RoiCalculatorSection() {
                         <div className="flex w-full flex-col items-center" data-node-id="94:277">
                             <Link
                                 to="/projects"
-                                className="flex w-full items-center justify-center rounded-[5px] bg-white px-6 py-3 md:px-12 md:py-4"
+                                className={cn(
+                                    "flex w-full cursor-pointer items-center justify-center border border-white px-6 py-3 md:px-12 md:py-4",
+                                    "bg-transparent text-white transition-colors duration-200",
+                                    "hover:bg-white hover:text-pronix-blue",
+                                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0247fe]",
+                                )}
                                 data-node-id="94:278"
                             >
-                                <p className="font-kamerik-book whitespace-nowrap text-center text-pronix-ink not-italic text-base md:text-xl tracking-wide">
+                                <span className="font-aeonik-medium whitespace-nowrap text-center not-italic text-base leading-[17.15px] md:text-xl lg:text-[24px]">
                                     Run this on a live property
-                                </p>
+                                </span>
                             </Link>
                         </div>
                     }

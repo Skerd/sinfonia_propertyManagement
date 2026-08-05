@@ -75,6 +75,9 @@ function ProjectsGallerySection(props: ProjectsGallerySectionProps) {
     function handleResetFilters() {
         const defaults = createDefaultFilters(priceBounds);
         setDraftFilters(defaults);
+        setAppliedFilters(defaults);
+        onFilterChange(buildCatalogFilterRequest(defaults));
+        setFilterOpen(false);
     }
 
     return (
@@ -88,7 +91,7 @@ function ProjectsGallerySection(props: ProjectsGallerySectionProps) {
                     <button
                         type="button"
                         onClick={openFilterPanel}
-                        className="flex shrink-0 items-center gap-4 rounded-[5px] border border-pronix-border px-4 py-2 sm:px-6 sm:py-2.5"
+                        className="flex shrink-0 cursor-pointer items-center gap-4 rounded-[5px] border border-pronix-border px-4 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.28)] hover:bg-pronix-ink/[0.02] sm:px-6 sm:py-2.5"
                         data-node-id="268:380"
                     >
                     <img
@@ -108,7 +111,7 @@ function ProjectsGallerySection(props: ProjectsGallerySectionProps) {
                 </div>
             </div>
 
-            <div className="mt-8 min-h-[400px] md:mt-11" data-node-id="277:225">
+            <div className="mt-4 min-h-[280px] md:mt-6" data-node-id="277:225">
                 {loading ? (
                     <Loader />
                 ) : projects.length === 0 ? (

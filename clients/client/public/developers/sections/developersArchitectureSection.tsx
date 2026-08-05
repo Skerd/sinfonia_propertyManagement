@@ -26,10 +26,10 @@ function ArchitectureCard({num, titleKey, bodyKey, variant, nodeId, resolveLangu
             className="group relative aspect-[512/795] w-full min-w-0 overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] bg-white transition-all duration-500 hover:border-[rgba(255,255,255,0.2)] hover:bg-pronix-blue"
             data-node-id={nodeId}
         >
-            <p className={`absolute left-6 top-6 z-10 ${PUBLIC_HEADING} transition-colors duration-500 group-hover:text-white`}>
+            <p className={`absolute left-6 top-6 z-10 sm:left-8 sm:top-8 ${PUBLIC_HEADING} transition-colors duration-500 group-hover:text-white`}>
                 {num}
             </p>
-            <div className="relative z-10 flex flex-col items-start gap-3 p-6 pt-16 not-italic sm:p-8">
+            <div className="relative z-10 flex flex-col items-start gap-3 p-6 pt-16 not-italic sm:px-8 sm:pb-8 sm:pt-20">
                 <p className={`${PUBLIC_HEADING} transition-colors duration-500 group-hover:text-white`}>
                     {resolveLanguageKey(titleKey)}
                 </p>

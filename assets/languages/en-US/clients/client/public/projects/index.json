@@ -42,7 +42,11 @@
   "favoritesBasket": "Open favorites",
   "favoritesTitle": "Favorites",
   "favoritesClose": "Close favorites",
-  "favoritesEmpty": "You have not saved any projects or units yet.",
+  "favoritesEmpty": "Nothing saved yet",
+  "favoritesEmptyHint": "Tap the heart on a project or unit to keep it here.",
+  "favoritesBrowse": "Browse projects",
+  "favoritesSavedOne": "saved item",
+  "favoritesSavedMany": "saved items",
   "favoritesProjects": "Projects",
   "favoritesUnits": "Units"
 }

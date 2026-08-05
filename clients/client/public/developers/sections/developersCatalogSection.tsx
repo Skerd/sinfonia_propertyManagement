@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {developersAssets} from "@propertyManagementModule/clients/client/public/developers/developersAssets.ts";
 import {FIGMA_DEVELOPERS_CATALOG} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
@@ -46,12 +48,20 @@ function DevelopersCatalogSection({resolveLanguageKey}: PublicLanguageProps) {
                     <p className={`${PUBLIC_SUBTITLE} text-white/90`} data-node-id="389:615">
                         {resolveLanguageKey("catalogBody")}
                     </p>
-                    <div
-                        className="inline-flex items-center justify-center rounded-[5px] border border-white px-6 py-3 font-aeonik-light text-lg not-italic leading-[1.1] md:text-2xl"
+                    <Link
+                        to="/contact"
+                        className={cn(
+                            "inline-flex w-fit cursor-pointer items-center justify-center border border-white px-6 py-3 md:px-12 md:py-4",
+                            "bg-transparent text-white transition-colors duration-200",
+                            "hover:bg-white hover:text-pronix-blue",
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue",
+                        )}
                         data-node-id="389:617"
                     >
-                        {resolveLanguageKey("catalogCta")}
-                    </div>
+                        <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg lg:text-[24px]">
+                            {resolveLanguageKey("catalogCta")}
+                        </span>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,10 +1,20 @@
-import {useCallback, useEffect, useState, type MouseEvent, type SyntheticEvent} from "react";
+import {
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
+    type MouseEvent,
+    type PointerEvent as ReactPointerEvent,
+    type SyntheticEvent,
+} from "react";
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     type CarouselApi,
 } from "@coreModule/components/ui/carousel.tsx";
+
+const DRAG_THRESHOLD_PX = 10;
 
 type ProjectCardImageCarouselProps = {
     images: string[];
@@ -19,6 +29,9 @@ function stopCardNavigation(event: SyntheticEvent) {
 function ProjectCardImageCarousel({images, alt}: ProjectCardImageCarouselProps) {
     const [api, setApi] = useState<CarouselApi | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const pointerStartX = useRef<number | null>(null);
+    const didDragRef = useRef(false);
+    const canDrag = images.length > 1;
 
     useEffect(() => {
         if (!api) {
@@ -41,24 +54,63 @@ function ProjectCardImageCarousel({images, alt}: ProjectCardImageCarouselProps) 
         [api],
     );
 
-    const handleCarouselClick = (event: MouseEvent<HTMLDivElement>) => {
-        stopCardNavigation(event);
+    const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+        if (!canDrag || event.button !== 0) {
+            return;
+        }
+        pointerStartX.current = event.clientX;
+        didDragRef.current = false;
     };
 
-    const showDots = images.length > 1;
+    const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+        if (pointerStartX.current == null) {
+            return;
+        }
+        if (Math.abs(event.clientX - pointerStartX.current) >= DRAG_THRESHOLD_PX) {
+            didDragRef.current = true;
+        }
+    };
+
+    const handlePointerUp = () => {
+        pointerStartX.current = null;
+    };
+
+    /** Taps open the project; pans only block navigation after a real drag. */
+    const handleCarouselClick = (event: MouseEvent<HTMLDivElement>) => {
+        if (didDragRef.current) {
+            stopCardNavigation(event);
+            didDragRef.current = false;
+        }
+    };
+
+    const showDots = canDrag;
 
     return (
         <div
             className="relative aspect-[515/449] min-h-[12.5rem] w-full overflow-hidden rounded-[2px]"
             onClick={handleCarouselClick}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
         >
-            <Carousel setApi={setApi} opts={{loop: false, align: "start"}} className="size-full">
+            <Carousel
+                setApi={setApi}
+                opts={{
+                    loop: canDrag,
+                    align: "start",
+                    dragFree: false,
+                    watchDrag: canDrag,
+                    dragThreshold: DRAG_THRESHOLD_PX,
+                }}
+                className={`size-full select-none ${canDrag ? "cursor-grab active:cursor-grabbing" : ""}`}
+            >
                 <CarouselContent className="-ml-0 size-full">
                     {images.map((image, index) => (
                         <CarouselItem key={`${image}-${index}`} className="basis-full pl-0">
                             <img
                                 alt={index === 0 ? alt : `${alt} ${index + 1}`}
-                                className="aspect-[515/449] min-h-[12.5rem] size-full object-cover"
+                                className="pointer-events-none aspect-[515/449] min-h-[12.5rem] size-full select-none object-cover"
                                 src={image}
                                 draggable={false}
                             />

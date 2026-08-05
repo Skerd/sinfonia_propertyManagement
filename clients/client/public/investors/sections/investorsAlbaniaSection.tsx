@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {investorsAssets} from "@propertyManagementModule/clients/client/public/investors/investorsAssets.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
@@ -82,9 +83,16 @@ function InvestorsAlbaniaSection({resolveLanguageKey}: PublicLanguageProps) {
                 </div>
                 <Link
                     to="/projects"
-                    className="inline-flex w-fit items-center justify-center rounded-[5px] border border-pronix-border px-6 py-3 font-aeonik-light text-lg text-pronix-ink not-italic md:text-2xl leading-[1.1]"
+                    className={cn(
+                        "inline-flex w-fit cursor-pointer items-center justify-center border border-pronix-ink px-6 py-3 md:px-12 md:py-4",
+                        "bg-transparent text-pronix-ink transition-colors duration-200",
+                        "hover:bg-pronix-ink hover:text-white",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+                    )}
                 >
-                    {resolveLanguageKey("albaniaCta")}
+                    <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg lg:text-[24px]">
+                        {resolveLanguageKey("albaniaCta")}
+                    </span>
                 </Link>
             </div>
         </div>

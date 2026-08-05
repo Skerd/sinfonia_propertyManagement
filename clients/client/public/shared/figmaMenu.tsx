@@ -135,7 +135,7 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                             key={link.path}
                             to={link.path}
                             onClick={onClose}
-                            className={`${PUBLIC_HEADING} leading-none text-white transition-colors duration-200 hover:text-white/30`}
+                            className={`${PUBLIC_HEADING} !cursor-pointer leading-none text-white transition-colors duration-200 hover:text-white/30`}
                         >
                             {link.label}
                         </Link>

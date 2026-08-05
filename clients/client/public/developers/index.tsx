@@ -8,7 +8,6 @@ import FooterSection from "@propertyManagementModule/clients/client/public/share
 import CtaSection from "@propertyManagementModule/clients/client/public/shared/sections/ctaSection.tsx";
 import DevelopersHeroTitleSection from "@propertyManagementModule/clients/client/public/developers/sections/developersHeroTitleSection.tsx";
 import DevelopersDemoSection from "@propertyManagementModule/clients/client/public/developers/sections/developersDemoSection.tsx";
-import DevelopersDataStripSection from "@propertyManagementModule/clients/client/public/developers/sections/developersDataStripSection.tsx";
 import DevelopersArchitectureSection from "@propertyManagementModule/clients/client/public/developers/sections/developersArchitectureSection.tsx";
 import DevelopersFeaturesSection from "@propertyManagementModule/clients/client/public/developers/sections/developersFeaturesSection.tsx";
 import DevelopersCatalogSection from "@propertyManagementModule/clients/client/public/developers/sections/developersCatalogSection.tsx";
@@ -18,17 +17,14 @@ import DevelopersFaqSection from "@propertyManagementModule/clients/client/publi
 function DevelopersPage(props: WithLanguageType) {
     return (
         <PublicPageShell nodeId="343:294" nodeName="For developers">
-            <PublicSection>
+            <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
             <PublicSection nodeId="368:5026">
                 <DevelopersHeroTitleSection {...props} />
             </PublicSection>
             <PublicSection nodeId="368:5030">
-                <DevelopersDemoSection />
-            </PublicSection>
-            <PublicSection nodeId="368:5039">
-                <DevelopersDataStripSection {...props} />
+                <DevelopersDemoSection {...props} />
             </PublicSection>
             <PublicSection nodeId="387:32339">
                 <DevelopersArchitectureSection {...props} />

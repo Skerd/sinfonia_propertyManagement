@@ -19,7 +19,7 @@ type AboutPageProps = WithLanguageType & WithAxiosType<MarketingTeamResponse>;
 function AboutPage(props: AboutPageProps) {
     return (
         <PublicPageShell nodeId="331:676" nodeName="About PRONIX">
-            <PublicSection>
+            <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
             <PublicSection nodeId="368:4979">

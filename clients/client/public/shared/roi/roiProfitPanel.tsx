@@ -52,14 +52,14 @@ function RoiProfitPanel({
 
     if (variant === "home") {
         return (
-            <div className="flex w-full flex-col bg-[#0247fe] p-6 sm:p-8 md:p-10 lg:w-1/2 lg:min-h-[min(80vh,49rem)]" data-node-id={dataNodeId}>
-                <p className="mb-8 text-center font-aeonik-medium text-white not-italic text-xl md:text-2xl leading-[1.1] lg:mb-14">
+            <div className="flex w-full cursor-default flex-col bg-[#0247fe] p-6 sm:p-8 md:p-10 lg:w-1/2 lg:min-h-[min(70vh,42rem)]" data-node-id={dataNodeId}>
+                <p className="mb-8 cursor-default text-center font-aeonik-medium text-white not-italic text-xl md:text-2xl leading-[1.1] lg:mb-14">
                     {title}
                 </p>
                 <div className="mx-auto flex w-full max-w-xl flex-col gap-10 md:gap-16">
                     <div className="flex w-full flex-col items-start not-italic gap-6 md:gap-6">
                         <div className="flex w-full flex-col items-start gap-3 text-white leading-[1.1]">
-                            <p className="font-aeonik-medium w-full text-lg md:text-2xl">Total return</p>
+                            <p className="font-aeonik-medium w-full cursor-default text-lg md:text-2xl">Total return</p>
                             <p className={`font-kamerik-bold w-full ${PUBLIC_TITLE}`}>
                                 {formatEuro(results.totalReturn)}
                             </p>
@@ -68,10 +68,10 @@ function RoiProfitPanel({
                             {displayRows.map((row) => (
                                 <div
                                     key={row.label}
-                                    className={`flex w-full items-center justify-between px-2 py-3 md:px-[10px] md:py-4 ${row.bordered !== false ? "border-b border-[#f5ede4]" : ""}`}
+                                    className={`flex w-full cursor-default items-center justify-between px-2 py-3 md:px-[10px] md:py-4 ${row.bordered !== false ? "border-b border-[#f5ede4]" : ""}`}
                                 >
-                                    <p className="font-aeonik-medium">{row.label}</p>
-                                    <p className="font-kamerik-bold">{row.value}</p>
+                                    <p className="font-aeonik-medium cursor-default">{row.label}</p>
+                                    <p className="font-kamerik-bold cursor-default">{row.value}</p>
                                 </div>
                             ))}
                         </div>
@@ -79,7 +79,7 @@ function RoiProfitPanel({
                     {footer}
                 </div>
                 {disclaimer && (
-                    <p className="mt-8 font-aeonik-light text-center text-white not-italic text-xs leading-[1.1] md:mt-auto md:pt-8 lg:mx-auto lg:max-w-[min(100%,29rem)]">
+                    <p className="mt-8 cursor-default font-aeonik-light text-center text-white not-italic text-xs leading-[1.1] md:mt-auto md:pt-8 lg:mx-auto lg:max-w-[min(100%,29rem)]">
                         {disclaimer}
                     </p>
                 )}

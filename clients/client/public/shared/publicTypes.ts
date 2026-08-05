@@ -64,6 +64,31 @@ export type MarketingEdificeListItem = {
     _id: string;
     name: string;
     mainImage?: string;
+    location?: string;
+    street?: string;
+    city?: string;
+    postalCode?: string;
+    totalAreaSqm?: number;
+    greenAreaSqm?: number;
+    floorCount?: number;
+    floorsAboveGround?: number;
+    floorsUnderGround?: number;
+    parkingSpaces?: number;
+    garages?: number;
+    distanceFromCityCenterM?: number;
+    investedAmount?: number;
+    investedCurrency?: string;
+    pricePerSqm?: number;
+    verandaPricePerSqm?: number;
+    saleCurrency?: string;
+    energyClass?: string;
+    expectedCompletionYear?: number;
+    constructionStartYear?: number;
+    commercialFacilities?: string[];
+    neighborhoodFacilities?: string[];
+    constructors?: string[];
+    unitCount?: number;
+    availableUnitCount?: number;
     floorsCoordinates?: MarketingPolygonItem[];
     floors?: MarketingFloorListItem[];
 };
@@ -93,6 +118,7 @@ export type MarketingUnitSingle = {
     name: string;
     projectId: string;
     status: string;
+    unitNumber?: string;
     areaSqm?: number;
     bedrooms?: number;
     bathrooms?: number;
@@ -104,6 +130,7 @@ export type MarketingUnitSingle = {
     grossAreaSqm?: number;
     netAreaSqm?: number;
     sharedAreaSqm?: number;
+    verandaAreaSqm?: number;
     floorLabel?: string;
     floorLevel?: string | number;
     totalFloorsInEdifice?: number;
@@ -111,6 +138,8 @@ export type MarketingUnitSingle = {
     floorPlanImage?: string;
     priceCurrency?: MarketingUnitPriceCurrency;
     unitTypeName?: string;
+    orientation?: "N" | "S" | "E" | "W" | "NE" | "NW" | "SE" | "SW";
+    constructionStatus?: "planned" | "under_construction" | "ready" | "delivered";
     averagePricePerSquareMeter?: MarketingUnitPricePerSqm;
     hasBalcony?: boolean;
     hasTerrace?: boolean;
@@ -154,6 +183,35 @@ export type MarketingTeamResponse = {
     members: MarketingTeamMember[];
 };
 
+export type MarketingStatsCurrency = {
+    symbol?: string;
+    abbreviation?: string;
+};
+
+export type MarketingStatsResponse = {
+    totalProjects: number;
+    totalUnits: number;
+    totalValue: number;
+    valueCurrency?: MarketingStatsCurrency;
+    totalCoOwners: number;
+};
+
+export type MarketingCompanyAddress = {
+    label: string;
+    latitude?: number;
+    longitude?: number;
+};
+
+export type MarketingCompanyResponse = {
+    email?: string;
+    phoneNumber?: string;
+    addresses?: MarketingCompanyAddress[];
+    website?: string;
+    linkedin?: string;
+    instagram?: string;
+    facebook?: string;
+};
+
 export type MarketingAvailabilityDay = {
     date: string;
     availableSlots: number;
@@ -162,4 +220,19 @@ export type MarketingAvailabilityDay = {
 
 export type MarketingAvailabilityResponse = {
     days: MarketingAvailabilityDay[];
+};
+
+export type MarketingFeaturedProject = {
+    _id: string;
+    name: string;
+    slug?: string;
+    location?: string;
+    city?: string;
+    mainImage?: string;
+    propertyTypes?: PropertyTypeId[];
+};
+
+export type MarketingFeaturedProjectsResponse = {
+    projects: MarketingFeaturedProject[];
+    total: number;
 };

@@ -4,8 +4,13 @@ import {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import {computePriceHistogram} from "@propertyManagementModule/clients/client/public/projects/shared/computePriceHistogram.ts";
 import {roiThumbCenterCss} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
-import {PUBLIC_SUBTITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import "./projectsFilterRange.css";
+
+const filterLabelClassName =
+    "cursor-default font-aeonik-light text-pronix-ink not-italic leading-[1.4] text-base md:text-lg";
+
+const priceInputShellClassName =
+    "flex min-w-[9.5rem] flex-1 flex-col items-center rounded-[5px] border border-pronix-border px-3 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.4)] hover:shadow-sm focus-within:border-pronix-blue focus-within:shadow-sm sm:max-w-[12rem]";
 
 type ProjectsPriceRangeFilterProps = {
     priceMin: number;
@@ -16,17 +21,34 @@ type ProjectsPriceRangeFilterProps = {
     resolveLanguageKey: ResolveLanguageKey;
 };
 
-const THUMB_SIZE_PX = 41;
-const TRACK_HEIGHT_PX = 10;
-const HISTOGRAM_MAX_HEIGHT_PX = 56;
-const BAR_WIDTH_PX = 7;
+const THUMB_SIZE_PX = 32;
+const TRACK_HEIGHT_PX = 8;
+const HISTOGRAM_MAX_HEIGHT_PX = 40;
+const BAR_WIDTH_PX = 6;
 
 const rangeThumbStyle = {
     "--filter-range-thumb": `url(${projectsAssets.priceSliderThumb})`,
 } as CSSProperties;
 
+function roundPrice(value: number) {
+    return Math.round(value);
+}
+
+function formatPrice(value: number) {
+    return roundPrice(value).toLocaleString();
+}
+
+function parsePrice(raw: string) {
+    const cleaned = raw.replace(/[^\d-]/g, "");
+    if (cleaned === "" || cleaned === "-") {
+        return null;
+    }
+    const parsed = Number(cleaned);
+    return Number.isFinite(parsed) ? parsed : null;
+}
+
 function clampPrice(value: number, bounds: ProjectsPriceBounds) {
-    return Math.min(bounds.max, Math.max(bounds.min, value));
+    return roundPrice(Math.min(bounds.max, Math.max(bounds.min, value)));
 }
 
 function thumbRatio(value: number, bounds: ProjectsPriceBounds) {
@@ -46,6 +68,8 @@ function ProjectsPriceRangeFilter({
     resolveLanguageKey,
 }: ProjectsPriceRangeFilterProps) {
     const [minThumbOnTop, setMinThumbOnTop] = useState(false);
+    const [minDraft, setMinDraft] = useState<string | null>(null);
+    const [maxDraft, setMaxDraft] = useState<string | null>(null);
     const step = Math.max(1, Math.round((bounds.max - bounds.min) / 100));
     const minRatio = thumbRatio(priceMin, bounds);
     const maxRatio = thumbRatio(priceMax, bounds);
@@ -59,24 +83,26 @@ function ProjectsPriceRangeFilter({
 
     function handleMinChange(nextMin: number) {
         const clamped = clampPrice(nextMin, bounds);
-        onChange({priceMin: clamped, priceMax: Math.max(clamped, priceMax)});
+        onChange({priceMin: clamped, priceMax: Math.max(clamped, roundPrice(priceMax))});
     }
 
     function handleMaxChange(nextMax: number) {
         const clamped = clampPrice(nextMax, bounds);
-        onChange({priceMin: Math.min(priceMin, clamped), priceMax: clamped});
+        onChange({priceMin: Math.min(roundPrice(priceMin), clamped), priceMax: clamped});
     }
 
     function handleMinInput(raw: string) {
-        const parsed = Number(raw);
-        if (Number.isFinite(parsed)) {
+        setMinDraft(raw);
+        const parsed = parsePrice(raw);
+        if (parsed != null) {
             handleMinChange(parsed);
         }
     }
 
     function handleMaxInput(raw: string) {
-        const parsed = Number(raw);
-        if (Number.isFinite(parsed)) {
+        setMaxDraft(raw);
+        const parsed = parsePrice(raw);
+        if (parsed != null) {
             handleMaxChange(parsed);
         }
     }
@@ -84,12 +110,12 @@ function ProjectsPriceRangeFilter({
     const sliderDisabled = bounds.max <= bounds.min;
 
     return (
-        <div className="flex w-full flex-col gap-4" data-node-id="268:530">
-            <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>{resolveLanguageKey("filterPriceRange")}</p>
+        <div className="flex w-full flex-col gap-2" data-node-id="268:530">
+            <p className={filterLabelClassName}>{resolveLanguageKey("filterPriceRange")}</p>
 
-            <div className="relative w-full" style={{height: HISTOGRAM_MAX_HEIGHT_PX + THUMB_SIZE_PX + 8}}>
+            <div className="relative w-full" style={{height: HISTOGRAM_MAX_HEIGHT_PX + THUMB_SIZE_PX + 6}}>
                 <div
-                    className="absolute left-0 right-0 flex items-end gap-[3px]"
+                    className="absolute left-0 right-0 flex items-end gap-[2px]"
                     style={{top: 0, height: HISTOGRAM_MAX_HEIGHT_PX}}
                     data-node-id="268:592"
                     aria-hidden
@@ -114,7 +140,7 @@ function ProjectsPriceRangeFilter({
 
                 <div
                     className="absolute inset-x-0"
-                    style={{top: HISTOGRAM_MAX_HEIGHT_PX + 8, height: THUMB_SIZE_PX}}
+                    style={{top: HISTOGRAM_MAX_HEIGHT_PX + 6, height: THUMB_SIZE_PX}}
                     data-node-id="268:559"
                 >
                     <div
@@ -168,31 +194,31 @@ function ProjectsPriceRangeFilter({
                 </div>
             </div>
 
-            <div className="flex items-start justify-between gap-4" data-node-id="268:612">
-                <label className="flex w-20 shrink-0 flex-col items-center rounded-[5px] border border-pronix-border p-3">
+            <div className="flex items-start justify-between gap-3" data-node-id="268:612">
+                <label className={priceInputShellClassName}>
                     <span className="sr-only">{resolveLanguageKey("filterPriceMin")}</span>
                     <input
-                        type="number"
-                        min={bounds.min}
-                        max={bounds.max}
-                        step={step}
-                        value={priceMin}
+                        type="text"
+                        inputMode="numeric"
+                        value={minDraft ?? formatPrice(priceMin)}
                         disabled={sliderDisabled}
+                        onFocus={() => setMinDraft(String(roundPrice(priceMin)))}
+                        onBlur={() => setMinDraft(null)}
                         onChange={(event) => handleMinInput(event.target.value)}
-                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-lg text-pronix-ink not-italic outline-none md:text-2xl"
+                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-base tabular-nums text-pronix-ink not-italic outline-none md:text-lg"
                     />
                 </label>
-                <label className="flex w-20 shrink-0 flex-col items-center rounded-[5px] border border-pronix-border p-3">
+                <label className={priceInputShellClassName}>
                     <span className="sr-only">{resolveLanguageKey("filterPriceMax")}</span>
                     <input
-                        type="number"
-                        min={bounds.min}
-                        max={bounds.max}
-                        step={step}
-                        value={priceMax}
+                        type="text"
+                        inputMode="numeric"
+                        value={maxDraft ?? formatPrice(priceMax)}
                         disabled={sliderDisabled}
+                        onFocus={() => setMaxDraft(String(roundPrice(priceMax)))}
+                        onBlur={() => setMaxDraft(null)}
                         onChange={(event) => handleMaxInput(event.target.value)}
-                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-lg text-pronix-blue not-italic outline-none md:text-2xl"
+                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-base tabular-nums text-pronix-blue not-italic outline-none md:text-lg"
                     />
                 </label>
             </div>

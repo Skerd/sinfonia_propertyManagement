@@ -12,6 +12,7 @@
   "phone": "Telefon",
   "status": "Status",
   "source": "Quelle",
+  "interest": "Interesse",
   "projectInterest": "Projektinteresse",
   "unitInterest": "Einheitsinteresse",
   "budget": "Kostenvoranschlag",
@@ -41,6 +42,13 @@
     "cold_call": "Kaltakquise",
     "walk_in": "Walk-in",
     "other": "Andere"
+  },
+  "interests": {
+    "partnerships": "Partnerschaften",
+    "investments": "Investitionen",
+    "platform_support": "Plattform-Support",
+    "reservation": "Reservierung",
+    "other": "Sonstiges"
   },
   "activityActions": {
     "called": "Angerufen",

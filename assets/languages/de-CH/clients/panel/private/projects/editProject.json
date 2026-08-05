@@ -39,9 +39,13 @@
     "uploadNewVideosHint": "Upload neu videos bis hinzufügen bis die galerie",
     "videoGalleryLabel": "Video Galerie",
     "mediaFilesLabel": "Dokumente & Dateien",
-    "marketingBookletLabel": "Marketingbroschüre"
+    "marketingBookletLabel": "Marketingbroschüre",
+    "featuredOnHomepageLabel": "Auf Startseite hervorheben",
+    "featuredSortOrderLabel": "Reihenfolge (Startseite)",
+    "featuredSortOrderPlaceholder": "0 = zuerst"
   },
   "generalInfo": "Allgemeine Informationen",
+  "homepageFeatured": "Startseite Featured",
   "media": "Medien",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
   "uploadError": "Fehlgeschlagen bis upload medien files",

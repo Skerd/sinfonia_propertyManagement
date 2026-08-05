@@ -18,7 +18,7 @@ import InvestorsFaqSection from "@propertyManagementModule/clients/client/public
 function InvestorsPage(props: WithLanguageType) {
     return (
         <PublicPageShell nodeId="331:2854" nodeName="For investors">
-            <PublicSection>
+            <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
             <PublicSection nodeId="368:4868">

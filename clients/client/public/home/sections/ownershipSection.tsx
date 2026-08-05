@@ -88,8 +88,8 @@ function OwnershipSection() {
                 className="pointer-events-none absolute inset-0 bg-[rgba(2,71,254,0.2)] mix-blend-soft-light"
                 data-node-id="150:1255"
             />
-            <div className="relative z-10 min-w-0 w-full overflow-x-hidden px-4 py-16 sm:px-6 lg:px-[52px] lg:py-24" data-node-id="94:349">
-                <div className="mx-auto flex w-full min-w-0 max-w-[1728px] flex-col items-center gap-8 lg:gap-11">
+            <div className="relative z-10 min-w-0 w-full overflow-x-hidden px-4 py-12 sm:px-6 lg:px-[52px] lg:py-16" data-node-id="94:349">
+                <div className="mx-auto flex w-full min-w-0 max-w-[1728px] flex-col items-center gap-6 lg:gap-8">
                     <div
                         className="flex flex-col items-center gap-2 text-center text-white not-italic leading-[1.2]"
                         data-node-id="94:350"
@@ -99,9 +99,9 @@ function OwnershipSection() {
                             Full property, a fractional share, or — soon — a digital stake.{" "}
                         </p>
                     </div>
-                    <div className={`w-full min-w-0 ${PUBLIC_GRID_SALES}`} data-node-id="94:353">
+                    <div className={`w-full min-w-0 items-stretch ${PUBLIC_GRID_SALES}`} data-node-id="94:353">
                         {OWNERSHIP_CARDS.map((card) => (
-                            <div key={card.nodeId} className={PUBLIC_GRID_CELL}>
+                            <div key={card.nodeId} className={`${PUBLIC_GRID_CELL} flex flex-col`}>
                                 <OwnershipInteractiveCard
                                     card={card}
                                     checkCircle={figmaAssets.checkCircle}

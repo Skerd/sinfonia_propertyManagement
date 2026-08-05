@@ -12,8 +12,8 @@ type PlatformFeature = (typeof PLATFORM_FEATURES)[number];
 
 function FeatureHead({index, title, nodeId}: Pick<PlatformFeature, "index" | "title" | "nodeId">) {
     return (
-        <div className="relative flex min-w-0 items-start gap-4 md:gap-7" data-node-id={nodeId}>
-            <p className="font-aeonik-medium min-w-[2rem] shrink-0 whitespace-nowrap text-base not-italic leading-[1.2] text-pronix-ink md:text-xl">
+        <div className="relative flex min-w-0 cursor-default items-start gap-4 md:gap-7" data-node-id={nodeId}>
+            <p className="font-aeonik-medium min-w-[2rem] shrink-0 cursor-default whitespace-nowrap text-base not-italic leading-[1.2] text-pronix-ink md:text-xl">
                 {index}
             </p>
             <p className={`${PUBLIC_CARD_TITLE} relative min-w-0`}>
@@ -89,7 +89,7 @@ function PlatformSection() {
     return (
         <div className="relative min-w-0 w-full overflow-x-clip overflow-y-clip">
             <p
-                className={`mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16 ${PUBLIC_TITLE}`}
+                className={`mx-auto mb-6 max-w-3xl text-center md:mb-8 lg:mb-10 ${PUBLIC_TITLE}`}
                 data-node-id="94:609"
             >
                 Built on a platform that does the work for you.

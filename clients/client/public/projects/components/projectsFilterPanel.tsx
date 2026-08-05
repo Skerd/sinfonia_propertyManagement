@@ -15,9 +15,9 @@ import {
 } from "@propertyManagementModule/clients/client/public/projects/shared/projectsFilterTypes.ts";
 import {
     PUBLIC_CONTENT_FRAME,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE,
+    PUBLIC_HEADING,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 
 type ProjectsFilterPanelProps = {
     open: boolean;
@@ -34,7 +34,18 @@ type ProjectsFilterPanelProps = {
 };
 
 const selectInnerClassName =
-    "min-w-0 flex-1 appearance-none border-0 bg-transparent font-aeonik-light text-base text-pronix-ink not-italic outline-none md:text-2xl";
+    "min-w-0 flex-1 appearance-none border-0 bg-transparent font-aeonik-light text-base text-pronix-ink not-italic outline-none md:text-lg";
+
+const filterLabelClassName =
+    "cursor-default font-aeonik-light text-pronix-ink not-italic leading-[1.4] text-base md:text-lg";
+
+const filterFieldShellClassName =
+    "flex items-center justify-between gap-3 rounded-[5px] border border-pronix-border px-3 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.4)] hover:shadow-sm focus-within:border-pronix-blue focus-within:shadow-sm md:px-4";
+
+const filterChipIdleClassName =
+    "border border-pronix-border text-pronix-ink hover:border-pronix-blue hover:bg-pronix-blue/5 hover:shadow-sm";
+
+const filterChipActiveClassName = "border border-transparent bg-pronix-blue text-white shadow-sm";
 
 type FilterSelectRowProps = {
     label: ReactNode;
@@ -46,16 +57,16 @@ type FilterSelectRowProps = {
 
 function FilterSelectRow({label, value, onChange, children, dataNodeId}: FilterSelectRowProps) {
     return (
-        <label className="flex min-w-0 flex-col gap-4" data-node-id={dataNodeId}>
-            <span className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>{label}</span>
-            <div className="flex items-center justify-between gap-4 rounded-[5px] border border-pronix-border px-4 py-3 md:px-6">
+        <label className="flex min-w-0 flex-col gap-2" data-node-id={dataNodeId}>
+            <span className={filterLabelClassName}>{label}</span>
+            <div className={filterFieldShellClassName}>
                 <select value={value} onChange={(event) => onChange(event.target.value)} className={selectInnerClassName}>
                     {children}
                 </select>
                 <img
                     alt=""
                     aria-hidden
-                    className="size-6 shrink-0 pointer-events-none"
+                    className="size-5 shrink-0 pointer-events-none"
                     src={projectsAssets.filterChevronRight}
                 />
             </div>
@@ -85,8 +96,12 @@ function ProjectsFilterPanel({
                 onClose();
             }
         };
+        const unlockScroll = lockPublicBodyScroll();
         window.addEventListener("keydown", onKey);
-        return () => window.removeEventListener("keydown", onKey);
+        return () => {
+            unlockScroll();
+            window.removeEventListener("keydown", onKey);
+        };
     }, [open, onClose]);
 
     if (!open) {
@@ -114,27 +129,27 @@ function ProjectsFilterPanel({
                 onClick={(event) => event.stopPropagation()}
                 data-node-id="268:391"
             >
-                <div className={`${PUBLIC_CONTENT_FRAME} flex flex-col gap-10 py-8 md:gap-12 md:py-12`}>
+                <div className={`${PUBLIC_CONTENT_FRAME} flex flex-col gap-5 py-5 md:gap-6 md:py-6`}>
                     <div
-                        className="flex items-center justify-between border-b border-pronix-border pb-6"
+                        className="flex items-center justify-between border-b border-pronix-border pb-3"
                         data-node-id="268:398"
                     >
-                        <h2 id="projects-filter-title" className={PUBLIC_TITLE} data-node-id="268:392">
+                        <h2 id="projects-filter-title" className={PUBLIC_HEADING} data-node-id="268:392">
                             {resolveLanguageKey("filtersTitle")}
                         </h2>
                         <button
                             type="button"
                             onClick={onClose}
-                            className="flex size-11 items-center justify-center rounded-[5px] border border-pronix-border"
+                            className="flex size-9 items-center justify-center rounded-[5px] border border-pronix-border transition duration-200 hover:border-pronix-ink hover:bg-pronix-ink/5 hover:shadow-sm"
                             aria-label={resolveLanguageKey("filterClose") as string}
                             data-node-id="268:395"
                         >
-                            <img alt="" aria-hidden className="size-8 md:size-9" src={projectsAssets.filterClose} />
+                            <img alt="" aria-hidden className="size-6" src={projectsAssets.filterClose} />
                         </button>
                     </div>
 
-                    <div className="flex flex-col gap-10 md:gap-12" data-node-id="268:529">
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10" data-node-id="268:496">
+                    <div className="flex flex-col gap-5 md:gap-6" data-node-id="268:529">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-4" data-node-id="268:496">
                             <FilterSelectRow
                                 label={resolveLanguageKey("filterProject")}
                                 value={draft.projectId}
@@ -163,12 +178,12 @@ function ProjectsFilterPanel({
                             </FilterSelectRow>
                         </div>
 
-                        <div className="flex flex-col gap-4" data-node-id="268:656">
-                            <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>
+                        <div className="flex flex-col gap-2" data-node-id="268:656">
+                            <p className={filterLabelClassName}>
                                 {resolveLanguageKey("filterPropertyType")}
                             </p>
                             <div
-                                className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"
+                                className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5"
                                 data-node-id="268:658"
                             >
                                 {PROPERTY_TYPE_IDS.map((type) => {
@@ -183,13 +198,11 @@ function ProjectsFilterPanel({
                                             key={type}
                                             type="button"
                                             onClick={() => togglePropertyType(type)}
-                                            className={`flex flex-col gap-2.5 rounded-[5px] border p-3 text-left transition md:gap-2.5 md:p-3 ${
-                                                active
-                                                    ? "border-transparent bg-pronix-blue text-white"
-                                                    : "border-pronix-border text-pronix-ink"
+                                            className={`flex flex-col gap-1.5 rounded-[5px] border p-2 text-left transition duration-200 ${
+                                                active ? filterChipActiveClassName : filterChipIdleClassName
                                             }`}
                                         >
-                                            <div className="relative size-[45px] shrink-0 overflow-hidden">
+                                            <div className="relative size-8 shrink-0 overflow-hidden">
                                                 <div className="absolute inset-[18.89%_20%_18.89%_17.78%]">
                                                     <img
                                                         alt=""
@@ -199,7 +212,7 @@ function ProjectsFilterPanel({
                                                     />
                                                 </div>
                                             </div>
-                                            <span className="font-aeonik-light text-base not-italic md:text-2xl">
+                                            <span className="font-aeonik-light text-sm not-italic md:text-base">
                                                 {resolveLanguageKey(`propertyType${type.charAt(0).toUpperCase()}${type.slice(1)}`)}
                                             </span>
                                         </button>
@@ -208,11 +221,11 @@ function ProjectsFilterPanel({
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-4" data-node-id="268:497">
-                            <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>
+                        <div className="flex flex-col gap-2" data-node-id="268:497">
+                            <p className={filterLabelClassName}>
                                 {resolveLanguageKey("filterBedrooms")}
                             </p>
-                            <div className="flex flex-wrap gap-3 md:gap-6" data-node-id="268:499">
+                            <div className="flex flex-wrap gap-2" data-node-id="268:499">
                                 {BEDROOM_FILTERS.map((bedroom) => {
                                     const active = draft.bedrooms === bedroom;
                                     const labelKey =
@@ -226,10 +239,8 @@ function ProjectsFilterPanel({
                                             key={bedroom}
                                             type="button"
                                             onClick={() => patchDraft({bedrooms: bedroom})}
-                                            className={`min-w-16 rounded-[5px] px-4 py-3 font-aeonik-light text-base not-italic transition md:min-w-20 md:px-5 md:text-2xl ${
-                                                active
-                                                    ? "bg-pronix-blue text-white"
-                                                    : "border border-pronix-border text-pronix-ink"
+                                            className={`min-w-12 rounded-[5px] px-3 py-2 font-aeonik-light text-sm not-italic transition duration-200 md:min-w-14 md:text-base ${
+                                                active ? filterChipActiveClassName : filterChipIdleClassName
                                             }`}
                                         >
                                             {resolveLanguageKey(labelKey)}
@@ -239,23 +250,23 @@ function ProjectsFilterPanel({
                             </div>
                         </div>
 
-                        <label className="flex max-w-md flex-col gap-4" data-node-id="268:704">
-                            <span className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>
+                        <label className="flex max-w-md flex-col gap-2" data-node-id="268:704">
+                            <span className={filterLabelClassName}>
                                 {resolveLanguageKey("filterArea")}
                             </span>
-                            <div className="flex items-center justify-between gap-4 rounded-[5px] border border-pronix-border px-4 py-3 md:px-6">
+                            <div className={filterFieldShellClassName}>
                                 <input
                                     type="text"
                                     inputMode="decimal"
                                     value={draft.areaSqm}
                                     onChange={(event) => patchDraft({areaSqm: event.target.value})}
                                     placeholder={resolveLanguageKey("filterAreaPlaceholder") as string}
-                                    className="min-w-0 flex-1 border-0 bg-transparent font-aeonik-light text-base text-pronix-ink not-italic outline-none md:text-2xl"
+                                    className="min-w-0 flex-1 border-0 bg-transparent font-aeonik-light text-base text-pronix-ink not-italic outline-none md:text-lg"
                                 />
                                 <img
                                     alt=""
                                     aria-hidden
-                                    className="size-6 shrink-0 pointer-events-none"
+                                    className="size-5 shrink-0 pointer-events-none"
                                     src={projectsAssets.filterChevronRight}
                                     data-node-id="268:708"
                                 />
@@ -271,11 +282,11 @@ function ProjectsFilterPanel({
                             resolveLanguageKey={resolveLanguageKey}
                         />
 
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2" data-node-id="268:2905">
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2" data-node-id="268:2905">
                             <button
                                 type="button"
                                 onClick={onReset}
-                                className="rounded-[5px] border border-pronix-blue px-4 py-4 font-aeonik-medium text-lg text-pronix-blue not-italic md:text-xl"
+                                className="cursor-pointer rounded-[5px] border border-pronix-blue px-4 py-2.5 font-aeonik-medium text-base text-pronix-blue not-italic transition duration-200 hover:bg-pronix-blue/5 hover:shadow-sm md:text-lg"
                                 data-node-id="268:2906"
                             >
                                 {resolveLanguageKey("filterReset")}
@@ -283,7 +294,7 @@ function ProjectsFilterPanel({
                             <button
                                 type="button"
                                 onClick={onApply}
-                                className="rounded-[5px] bg-pronix-blue px-4 py-4 font-aeonik-medium text-lg text-white not-italic md:text-xl"
+                                className="cursor-pointer rounded-[5px] bg-pronix-blue px-4 py-2.5 font-aeonik-medium text-base text-white not-italic transition duration-200 hover:opacity-90 hover:shadow-md md:text-lg"
                                 data-node-id="268:2908"
                             >
                                 {resolveLanguageKey("filterApply")}

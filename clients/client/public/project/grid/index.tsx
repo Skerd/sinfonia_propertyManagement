@@ -93,12 +93,15 @@ function ProjectGridPage(props: ProjectGridPageProps) {
     }
 
     function handleResetFilters() {
-        setDraftUnitFilters(createDefaultUnitFilters(priceBounds));
+        const defaults = createDefaultUnitFilters(priceBounds);
+        setDraftUnitFilters(defaults);
+        setAppliedUnitFilters(defaults);
+        setFilterPanelOpen(false);
     }
 
     return (
         <PublicPageShell nodeId="494:548" nodeName="Open project - Grid view">
-            <PublicSection>
+            <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
             {loading && !project ? (
@@ -116,25 +119,25 @@ function ProjectGridPage(props: ProjectGridPageProps) {
             ) : (
                 <>
                     <PublicSection nodeId="495:670">
-                        <OpenProjectGridToolbarSection
-                            {...contentProps!}
-                            apartmentCount={apartmentCount}
-                            activeFilter={activeFilter}
-                            onFilterChange={setActiveFilter}
-                            sortKey={sortKey}
-                            onSortChange={setSortKey}
-                            filtersActive={filtersActive}
-                            onOpenFilters={openFilterPanel}
-                        />
-                    </PublicSection>
-                    <PublicSection nodeId="495:671">
-                        <OpenProjectGridCardsSection
-                            {...contentProps!}
-                            activeFilter={activeFilter}
-                            unitFilters={appliedUnitFilters}
-                            priceBounds={priceBounds}
-                            sortKey={sortKey}
-                        />
+                        <div className="flex flex-col gap-6 md:gap-8">
+                            <OpenProjectGridToolbarSection
+                                {...contentProps!}
+                                apartmentCount={apartmentCount}
+                                activeFilter={activeFilter}
+                                onFilterChange={setActiveFilter}
+                                sortKey={sortKey}
+                                onSortChange={setSortKey}
+                                filtersActive={filtersActive}
+                                onOpenFilters={openFilterPanel}
+                            />
+                            <OpenProjectGridCardsSection
+                                {...contentProps!}
+                                activeFilter={activeFilter}
+                                unitFilters={appliedUnitFilters}
+                                priceBounds={priceBounds}
+                                sortKey={sortKey}
+                            />
+                        </div>
                     </PublicSection>
                     <PublicSection nodeId="construction-progress">
                         <ConstructionProgressSection projectId={projectId!} />

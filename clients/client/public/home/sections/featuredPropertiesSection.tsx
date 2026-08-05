@@ -1,9 +1,14 @@
-import {useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent} from "react";
+import React, {useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent} from "react";
+import {useNavigate} from "react-router-dom";
+import {compose} from "redux";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {useReducedMotion} from "motion/react";
+import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {
     FEATURED_SECTION_COPY,
-    featuredSlides,
+    mapFeaturedProjectsToSlides,
     type FeaturedSlide,
 } from "@propertyManagementModule/clients/client/public/home/sections/featuredSlides.ts";
 import FadeIn from "@propertyManagementModule/clients/client/public/shared/fadeIn.tsx";
@@ -11,6 +16,7 @@ import {
     PUBLIC_BODY,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import type {MarketingFeaturedProjectsResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const CARD_GAP_PX = 12;
 /** Three identical strips — wrap is always invisible because clones match. */
@@ -19,28 +25,42 @@ const FOCUS_SCALE = 1;
 const SIDE_SCALE = 0.78;
 const SIDE_SINK_PX = 28;
 const SIDE_TILT_DEG = 10;
+/** Ignore sub-threshold jitter so taps still open the property. */
+const DRAG_THRESHOLD_PX = 14;
 
 type LoopedSlide = FeaturedSlide & {
     key: string;
     logicalIndex: number;
 };
 
+type DragState = {
+    pointerId: number;
+    startX: number;
+    startY: number;
+    lastX: number;
+    lastTime: number;
+    dragging: boolean;
+    projectId: string | null;
+};
+
+type FeaturedPropertiesSectionProps = WithAxiosType<MarketingFeaturedProjectsResponse>;
+
 function formatIndex(index: number) {
     return String(index + 1).padStart(2, "0");
 }
 
-function buildLoopedSlides(): LoopedSlide[] {
-    const slides: LoopedSlide[] = [];
+function buildLoopedSlides(slides: FeaturedSlide[]): LoopedSlide[] {
+    const looped: LoopedSlide[] = [];
     for (let copy = 0; copy < LOOP_COPIES; copy++) {
-        for (const slide of featuredSlides) {
-            slides.push({
+        for (const slide of slides) {
+            looped.push({
                 ...slide,
-                key: `${copy}-${slide.id}`,
+                key: `${copy}-${slide.projectId}`,
                 logicalIndex: slide.id,
             });
         }
     }
-    return slides;
+    return looped;
 }
 
 /** Keep offset in the middle strip so left/right wrapping never hits an empty edge. */
@@ -58,7 +78,9 @@ function wrapOffset(offset: number, setWidth: number) {
     return next;
 }
 
-function FeaturedPropertiesSection() {
+function FeaturedPropertiesSectionInner({data, loading, onFilterChange}: FeaturedPropertiesSectionProps) {
+    const navigate = useNavigate();
+    const initialFetchDone = useRef(false);
     const viewportRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const offsetRef = useRef(0);
@@ -66,10 +88,24 @@ function FeaturedPropertiesSection() {
     const strideRef = useRef(0);
     const velocityRef = useRef(0);
     const rafRef = useRef(0);
-    const dragRef = useRef<{pointerId: number; lastX: number; lastTime: number} | null>(null);
+    const dragRef = useRef<DragState | null>(null);
     const reducedMotion = useReducedMotion();
-    const loopedSlides = useMemo(() => buildLoopedSlides(), []);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        if (initialFetchDone.current) {
+            return;
+        }
+        initialFetchDone.current = true;
+        onFilterChange({});
+    }, []);
+
+    const slides = useMemo(
+        () => mapFeaturedProjectsToSlides(data?.projects ?? []),
+        [data?.projects],
+    );
+    const slideCount = slides.length;
+    const loopedSlides = useMemo(() => buildLoopedSlides(slides), [slides]);
 
     const applyCoverflow = useCallback(() => {
         const viewport = viewportRef.current;
@@ -98,6 +134,8 @@ function FeaturedPropertiesSection() {
 
             card.style.transform = `translateY(${sink}px) rotateY(${tilt}deg) scale(${scale})`;
             card.style.zIndex = String(z);
+            // Side cards overlap in 3D space and steal hits — only near-focus cards receive input.
+            card.style.pointerEvents = Math.abs(signed) < 0.9 ? "auto" : "none";
         });
     }, [reducedMotion]);
 
@@ -113,29 +151,28 @@ function FeaturedPropertiesSection() {
     const syncActiveIndex = useCallback(() => {
         const setWidth = setWidthRef.current;
         const stride = strideRef.current;
-        if (setWidth <= 0 || stride <= 0) {
+        if (setWidth <= 0 || stride <= 0 || slideCount <= 0) {
             return;
         }
         const local = ((offsetRef.current % setWidth) + setWidth) % setWidth;
-        const index = Math.round(local / stride) % featuredSlides.length;
+        const index = Math.round(local / stride) % slideCount;
         setActiveIndex((current) => (current === index ? current : index));
-    }, []);
+    }, [slideCount]);
 
     const measure = useCallback(() => {
         const track = trackRef.current;
         const viewport = viewportRef.current;
-        if (!track || !viewport) {
+        if (!track || !viewport || slideCount <= 0) {
             return;
         }
 
         const cards = track.querySelectorAll<HTMLElement>("[data-featured-card]");
-        if (cards.length < featuredSlides.length * 2) {
+        if (cards.length < slideCount * 2) {
             return;
         }
 
         const first = cards[0];
-        const secondSetFirst = cards[featuredSlides.length];
-        // Prefer measured strip distance (includes gaps) so wrap is pixel-perfect.
+        const secondSetFirst = cards[slideCount];
         const setWidth = secondSetFirst.offsetLeft - first.offsetLeft;
         const stride = first.offsetWidth + CARD_GAP_PX;
         if (setWidth <= 0 || stride <= 0) {
@@ -147,7 +184,7 @@ function FeaturedPropertiesSection() {
         offsetRef.current = wrapOffset(offsetRef.current || setWidth, setWidth);
         applyTransform();
         syncActiveIndex();
-    }, [applyTransform, syncActiveIndex]);
+    }, [applyTransform, slideCount, syncActiveIndex]);
 
     const stopInertia = useCallback(() => {
         if (rafRef.current) {
@@ -214,6 +251,9 @@ function FeaturedPropertiesSection() {
     );
 
     useEffect(() => {
+        if (slideCount <= 0) {
+            return;
+        }
         measure();
         const viewport = viewportRef.current;
         if (!viewport) {
@@ -227,16 +267,22 @@ function FeaturedPropertiesSection() {
         }
 
         const onWheel = (event: WheelEvent) => {
-            // Only claim horizontal intent so vertical page scroll still works over the strip.
-            if (Math.abs(event.deltaX) <= Math.abs(event.deltaY) || Math.abs(event.deltaX) < 0.5) {
+            const horizontal = event.deltaX;
+            const vertical = event.deltaY;
+            // Drive the gallery on horizontal / shift+wheel; leave plain vertical to page scroll.
+            const dominant =
+                Math.abs(horizontal) >= Math.abs(vertical) || event.shiftKey
+                    ? horizontal || vertical
+                    : 0;
+            if (Math.abs(dominant) < 0.5) {
                 return;
             }
             event.preventDefault();
             stopInertia();
-            offsetRef.current = wrapOffset(offsetRef.current + event.deltaX, setWidthRef.current);
+            offsetRef.current = wrapOffset(offsetRef.current + dominant, setWidthRef.current);
             applyTransform();
             syncActiveIndex();
-            velocityRef.current = event.deltaX * 0.35;
+            velocityRef.current = dominant * 0.35;
             startInertia();
         };
 
@@ -247,17 +293,58 @@ function FeaturedPropertiesSection() {
             viewport.removeEventListener("wheel", onWheel);
             stopInertia();
         };
-    }, [applyTransform, measure, startInertia, stopInertia, syncActiveIndex]);
+    }, [applyTransform, measure, slideCount, startInertia, stopInertia, syncActiveIndex]);
+
+    const projectIdFromPoint = (clientX: number, clientY: number) => {
+        const stack = document.elementsFromPoint(clientX, clientY);
+        let bestId: string | null = null;
+        let bestZ = -Infinity;
+        for (const node of stack) {
+            if (!(node instanceof Element)) {
+                continue;
+            }
+            const card = node.closest("[data-featured-card]");
+            if (!(card instanceof HTMLElement)) {
+                continue;
+            }
+            const id = card.getAttribute("data-project-id");
+            if (!id) {
+                continue;
+            }
+            const z = Number(card.style.zIndex || 0);
+            if (z >= bestZ) {
+                bestZ = z;
+                bestId = id;
+            }
+        }
+        return bestId;
+    };
+
+    const openProject = useCallback(
+        (projectId: string) => {
+            navigate(`/project/gallery?projectId=${projectId}`);
+        },
+        [navigate],
+    );
 
     const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
         if (event.button !== 0) {
             return;
         }
         stopInertia();
+        window.getSelection()?.removeAllRanges();
+        const fromTarget =
+            (event.target as Element | null)?.closest?.("[data-featured-card]")?.getAttribute(
+                "data-project-id",
+            ) ?? null;
         dragRef.current = {
             pointerId: event.pointerId,
+            startX: event.clientX,
+            startY: event.clientY,
             lastX: event.clientX,
             lastTime: performance.now(),
+            dragging: false,
+            projectId: projectIdFromPoint(event.clientX, event.clientY) ?? fromTarget,
         };
         event.currentTarget.setPointerCapture(event.pointerId);
     };
@@ -267,6 +354,20 @@ function FeaturedPropertiesSection() {
         if (!drag || drag.pointerId !== event.pointerId) {
             return;
         }
+
+        const totalDx = event.clientX - drag.startX;
+        const totalDy = event.clientY - drag.startY;
+        if (!drag.dragging) {
+            if (Math.hypot(totalDx, totalDy) < DRAG_THRESHOLD_PX) {
+                return;
+            }
+            drag.dragging = true;
+            window.getSelection()?.removeAllRanges();
+            drag.lastX = event.clientX;
+            drag.lastTime = performance.now();
+            return;
+        }
+
         const now = performance.now();
         const dx = event.clientX - drag.lastX;
         const dt = Math.max(1, now - drag.lastTime);
@@ -287,6 +388,16 @@ function FeaturedPropertiesSection() {
         if (event.currentTarget.hasPointerCapture(event.pointerId)) {
             event.currentTarget.releasePointerCapture(event.pointerId);
         }
+
+        if (!drag.dragging) {
+            const projectId =
+                drag.projectId ?? projectIdFromPoint(event.clientX, event.clientY);
+            if (projectId) {
+                openProject(projectId);
+            }
+            return;
+        }
+
         startInertia();
     };
 
@@ -298,30 +409,48 @@ function FeaturedPropertiesSection() {
     const scrollToIndex = (logicalIndex: number) => {
         const stride = strideRef.current;
         const setWidth = setWidthRef.current;
-        if (stride <= 0 || setWidth <= 0) {
+        if (stride <= 0 || setWidth <= 0 || slideCount <= 0) {
             return;
         }
 
         const local = ((offsetRef.current % setWidth) + setWidth) % setWidth;
-        const current = Math.round(local / stride) % featuredSlides.length;
+        const current = Math.round(local / stride) % slideCount;
         let steps = logicalIndex - current;
-        const half = featuredSlides.length / 2;
+        const half = slideCount / 2;
         if (steps > half) {
-            steps -= featuredSlides.length;
+            steps -= slideCount;
         }
         if (steps < -half) {
-            steps += featuredSlides.length;
+            steps += slideCount;
         }
         animateBy(steps * stride);
     };
 
-    const scrollProgress = ((activeIndex + 1) / featuredSlides.length) * 100;
+    if (!loading && slideCount === 0) {
+        return null;
+    }
+
+    if (loading && slideCount === 0) {
+        return (
+            <div className="w-full" data-node-id="71:1839" data-name="Featured properties">
+                <FadeIn className="mb-8 max-w-2xl md:mb-12">
+                    <p className="font-aeonik-medium mb-3 cursor-default text-sm tracking-[0.18em] text-pronix-blue uppercase">
+                        Collection
+                    </p>
+                    <h2 className={PUBLIC_TITLE}>Featured properties</h2>
+                    <p className={`mt-4 ${PUBLIC_BODY}`}>{FEATURED_SECTION_COPY}</p>
+                </FadeIn>
+            </div>
+        );
+    }
+
+    const scrollProgress = ((activeIndex + 1) / slideCount) * 100;
 
     return (
         <div className="w-full" data-node-id="71:1839" data-name="Featured properties">
             <FadeIn className="mb-8 flex items-end justify-between gap-6 md:mb-12">
                 <div className="max-w-2xl">
-                    <p className="font-aeonik-medium mb-3 text-sm tracking-[0.18em] text-pronix-blue uppercase">
+                    <p className="font-aeonik-medium mb-3 cursor-default text-sm tracking-[0.18em] text-pronix-blue uppercase">
                         Collection
                     </p>
                     <h2 className={PUBLIC_TITLE}>Featured properties</h2>
@@ -332,7 +461,7 @@ function FeaturedPropertiesSection() {
                         {formatIndex(activeIndex)}
                         <span className="text-pronix-ink-faded">
                             {" "}
-                            / {String(featuredSlides.length).padStart(2, "0")}
+                            / {String(slideCount).padStart(2, "0")}
                         </span>
                     </span>
                     <button
@@ -356,31 +485,43 @@ function FeaturedPropertiesSection() {
 
             <div
                 ref={viewportRef}
-                className="relative cursor-grab overflow-hidden touch-pan-y py-6 active:cursor-grabbing [perspective:1200px]"
+                className="relative cursor-grab select-none overflow-hidden touch-pan-y py-6 [-webkit-user-select:none] active:cursor-grabbing [perspective:1200px]"
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={endDrag}
                 onPointerCancel={endDrag}
+                onLostPointerCapture={endDrag}
             >
                 <div
                     ref={trackRef}
-                    className="flex w-max items-end gap-3 will-change-transform [transform-style:preserve-3d]"
+                    className="flex w-max items-end gap-3 will-change-transform select-none [transform-style:preserve-3d]"
                     style={{transform: "translate3d(0,0,0)"}}
                 >
-                    {loopedSlides.map((slide) => {
-                        return (
-                            <article
-                                key={slide.key}
-                                data-featured-card
-                                data-logical-index={slide.logicalIndex}
-                                data-node-id={slide.nodeId}
-                                className="group relative w-[min(86vw,400px)] shrink-0 origin-bottom overflow-hidden rounded-[5px] border border-pronix-border bg-white md:w-[400px]"
-                                style={{transform: "translateY(0) rotateY(0deg) scale(1)"}}
-                            >
+                    {loopedSlides.map((slide) => (
+                        <article
+                            key={slide.key}
+                            role="link"
+                            tabIndex={0}
+                            data-featured-card
+                            data-project-id={slide.projectId}
+                            data-logical-index={slide.logicalIndex}
+                            className="group relative w-[min(86vw,400px)] shrink-0 origin-bottom cursor-pointer select-none md:w-[400px]"
+                            style={{transform: "translateY(0) rotateY(0deg) scale(1)"}}
+                            draggable={false}
+                            onDragStart={(event) => event.preventDefault()}
+                            onKeyDown={(event) => {
+                                if (event.key === "Enter" || event.key === " ") {
+                                    event.preventDefault();
+                                    openProject(slide.projectId);
+                                }
+                            }}
+                        >
+                            {/* pointer-events-none: hover/click always hit the article, not children or overlaps */}
+                            <div className="pointer-events-none overflow-hidden rounded-[5px] border border-pronix-border bg-white">
                                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-pronix-cream">
                                     <img
                                         alt={slide.title}
-                                        className="pointer-events-none size-full object-cover"
+                                        className="size-full object-cover select-none"
                                         src={slide.image}
                                         draggable={false}
                                     />
@@ -405,9 +546,9 @@ function FeaturedPropertiesSection() {
                                         className="mt-3 h-px w-0 bg-pronix-blue transition-all duration-500 ease-out group-hover:w-12"
                                     />
                                 </div>
-                            </article>
-                        );
-                    })}
+                            </div>
+                        </article>
+                    ))}
                 </div>
             </div>
 
@@ -419,9 +560,9 @@ function FeaturedPropertiesSection() {
                     />
                 </div>
                 <div className="flex shrink-0 gap-1.5" role="tablist" aria-label="Featured property slides">
-                    {featuredSlides.map((slide, index) => (
+                    {slides.map((slide, index) => (
                         <button
-                            key={slide.id}
+                            key={slide.projectId}
                             type="button"
                             role="tab"
                             aria-label={`Go to ${slide.title}`}
@@ -440,4 +581,11 @@ function FeaturedPropertiesSection() {
     );
 }
 
-export default FeaturedPropertiesSection;
+export default compose(
+    withLanguage("src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx"),
+    withAxios<MarketingFeaturedProjectsResponse>(
+        {method: "post", url: "/api/realEstate/marketingFeaturedProjects", data: {}},
+        true,
+    ),
+    withDebug(true, true),
+)(FeaturedPropertiesSectionInner) as unknown as React.ComponentType;

@@ -62,11 +62,11 @@ function RoiFigmaSlider({
     }
 
     return (
-        <div className="relative w-full shrink-0" data-node-id={dataNodeId}>
-            <div className="mb-2 flex items-start justify-between gap-4">
-                <p className={labelClass}>{label}</p>
+        <div className="relative w-full shrink-0 cursor-default" data-node-id={dataNodeId}>
+            <div className="mb-2 flex cursor-default items-start justify-between gap-4">
+                <p className={`cursor-default ${labelClass}`}>{label}</p>
                 <p
-                    className={valueClass}
+                    className={`cursor-default ${valueClass}`}
                     style={{
                         textAlign: valueAlign === "center" ? "center" : valueAlign,
                     }}

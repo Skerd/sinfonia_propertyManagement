@@ -28,10 +28,10 @@ function ProjectsPage(props: ProjectsPageProps) {
 
     return (
         <PublicPageShell nodeId="268:235" nodeName="Projects Gallery">
-            <PublicSection>
+            <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
-            <PublicSection nodeId="278:690">
+            <PublicSection nodeId="278:690" className="pt-2 pb-8 md:pt-4 md:pb-12 lg:pt-0 lg:pb-16">
                 <ProjectsGallerySection {...props} />
             </PublicSection>
             <PublicSection nodeId="268:759">
