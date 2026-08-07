@@ -36,7 +36,16 @@
     "marketingBookletLabel": "Broshurë Marketingu",
     "featuredOnHomepageLabel": "I veçuar në faqen kryesore",
     "featuredSortOrderLabel": "Renditja e veçuar",
-    "featuredSortOrderPlaceholder": "0 = i pari"
+    "featuredSortOrderPlaceholder": "0 = i pari",
+    "socialLinksSectionTitle": "Lidhjet sociale",
+    "socialLinkAddRow": "Shto lidhje sociale",
+    "socialLinkRemoveRow": "Hiq",
+    "socialLinkRowTitle": "Lidhje pa titull",
+    "socialLinkNameLabel": "Emri",
+    "socialLinkNamePlaceholder": "p.sh. Instagram",
+    "socialLinkUrlLabel": "Lidhja",
+    "socialLinkUrlPlaceholder": "https://",
+    "socialLinkLogoLabel": "Logo"
   },
   "generalInfo": "Informacione të Përgjithshme",
   "homepageFeatured": "I veçuar në faqen kryesore",

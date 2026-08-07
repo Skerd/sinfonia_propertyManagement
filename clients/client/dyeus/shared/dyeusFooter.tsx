@@ -13,8 +13,6 @@ const exploreLinks = [
     {label: "Journal", to: "/journal"},
 ] as const;
 
-const followLinks = ["Instagram", "Facebook", "Linkedin"] as const;
-
 const moreLinks = [
     {label: "Privacy Policy", to: "/privacy"},
     {label: "Terms of Conditions", to: "/terms"},
@@ -30,6 +28,12 @@ type CatalogResponse = {
 type AvailabilityStats = {
     soldUnitCount: number;
     unitCount: number;
+};
+
+type SocialLink = {
+    name: string;
+    link: string;
+    logo?: string;
 };
 
 function formatAvailabilityBanner(stats: AvailabilityStats | null): string {
@@ -75,10 +79,12 @@ function DyeusFooter() {
     const [contactOpen, setContactOpen] = useState(false);
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
     const [availability, setAvailability] = useState<AvailabilityStats | null>(null);
+    const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
 
     useEffect(() => {
         if (!projectId) {
             setAvailability(null);
+            setSocialLinks([]);
             return;
         }
 
@@ -91,16 +97,33 @@ function DyeusFooter() {
                 );
                 if (cancelled) return;
                 const project = (res.data.projects ?? []).find((item) => item._id === projectId);
-                if (!project || project.unitCount == null) {
+                if (!project) {
                     setAvailability(null);
+                    setSocialLinks([]);
                     return;
                 }
-                setAvailability({
-                    unitCount: project.unitCount,
-                    soldUnitCount: project.soldUnitCount ?? 0,
-                });
+                if (project.unitCount == null) {
+                    setAvailability(null);
+                } else {
+                    setAvailability({
+                        unitCount: project.unitCount,
+                        soldUnitCount: project.soldUnitCount ?? 0,
+                    });
+                }
+                setSocialLinks(
+                    (project.socialLinks ?? []).filter(
+                        (item): item is SocialLink =>
+                            typeof item?.name === "string" &&
+                            item.name.trim().length > 0 &&
+                            typeof item?.link === "string" &&
+                            item.link.trim().length > 0,
+                    ),
+                );
             } catch {
-                if (!cancelled) setAvailability(null);
+                if (!cancelled) {
+                    setAvailability(null);
+                    setSocialLinks([]);
+                }
             }
         })();
 
@@ -154,16 +177,31 @@ function DyeusFooter() {
                         </Link>
                     </div>
 
-                    <div className="flex flex-col gap-3">
-                        <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
-                            Follow us
-                        </p>
-                        {followLinks.map((label) => (
-                            <a key={label} href="#" className={footerLinkClassName}>
-                                {label}
-                            </a>
-                        ))}
-                    </div>
+                    {socialLinks.length > 0 ? (
+                        <div className="flex flex-col gap-3">
+                            <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
+                                Follow us
+                            </p>
+                            {socialLinks.map((item) => (
+                                <a
+                                    key={`${item.name}-${item.link}`}
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${footerLinkClassName} inline-flex items-center gap-2`}
+                                >
+                                    {item.logo ? (
+                                        <img
+                                            src={item.logo}
+                                            alt=""
+                                            className="size-5 object-contain"
+                                        />
+                                    ) : null}
+                                    {item.name}
+                                </a>
+                            ))}
+                        </div>
+                    ) : null}
 
                     <div className="flex flex-col gap-3">
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">

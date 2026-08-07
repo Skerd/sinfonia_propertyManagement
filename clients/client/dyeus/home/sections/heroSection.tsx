@@ -1,13 +1,24 @@
+import {useEffect, useState} from "react";
 import DyeusHeader from "@propertyManagementModule/clients/client/dyeus/shared/dyeusHeader.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {
+    useDyeusSocialLinks,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusSocialLinks.ts";
 
-const socials = [
-    {src: dyeusAssets.iconFacebook, label: "Facebook", href: "#"},
-    {src: dyeusAssets.iconInstagram, label: "Instagram", href: "#"},
-    {src: dyeusAssets.iconPinterest, label: "Pinterest", href: "#"},
-] as const;
+const heroLinkClassName =
+    "inline-flex items-center font-dyeus-serif text-xl leading-[1.2] text-dyeus-cream underline decoration-transparent underline-offset-4 transition-[color,text-decoration-color,opacity] duration-300 hover:text-dyeus-bronze hover:decoration-dyeus-bronze";
+
+const heroLogoLinkClassName =
+    "inline-flex size-6 items-center justify-center opacity-90 transition-opacity duration-300 hover:opacity-100";
 
 function HeroSection() {
+    const {socialLinks} = useDyeusSocialLinks();
+    const [logoFailed, setLogoFailed] = useState<Record<string, boolean>>({});
+
+    useEffect(() => {
+        setLogoFailed({});
+    }, [socialLinks]);
+
     return (
         <section className="relative h-svh w-full overflow-hidden">
             <video
@@ -31,34 +42,53 @@ function HeroSection() {
             </h1>
 
             <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-8 px-6 pb-8 md:inset-x-[60px] md:bottom-[5.5%] md:flex-row md:items-end md:justify-between md:gap-12 md:px-0 md:pb-0">
-                <div className="flex flex-wrap items-center gap-4 md:gap-6">
-                    <p className="font-dyeus-serif text-lg font-bold text-dyeus-cream md:text-2xl">
-                        Follow Dyeus
-                    </p>
-                    <img
-                        src={dyeusAssets.lineFollow}
-                        alt=""
-                        className="hidden h-px w-[50px] rotate-180 opacity-80 md:block"
-                    />
-                    <div className="flex items-center gap-6 opacity-60 md:gap-8">
-                        {socials.map((social) => (
-                            <a
-                                key={social.label}
-                                href={social.href}
-                                aria-label={social.label}
-                                className="size-6"
-                            >
-                                <img
-                                    src={social.src}
-                                    alt=""
-                                    className="size-6 brightness-0 invert"
-                                />
-                            </a>
-                        ))}
+                {socialLinks.length > 0 ? (
+                    <div className="flex flex-wrap items-center gap-4 md:gap-6">
+                        <p className="font-dyeus-serif text-lg font-bold text-dyeus-cream md:text-2xl">
+                            Follow Dyeus
+                        </p>
+                        <img
+                            src={dyeusAssets.lineFollow}
+                            alt=""
+                            className="hidden h-px w-[50px] rotate-180 opacity-80 md:block"
+                        />
+                        <div className="flex flex-wrap items-center gap-6 md:gap-8">
+                            {socialLinks.map((social) => {
+                                const key = `${social.name}-${social.link}`;
+                                const showLogo = Boolean(social.logo) && !logoFailed[key];
+                                return (
+                                    <a
+                                        key={key}
+                                        href={social.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={social.name}
+                                        className={showLogo ? heroLogoLinkClassName : heroLinkClassName}
+                                    >
+                                        {showLogo ? (
+                                            <img
+                                                src={social.logo}
+                                                alt=""
+                                                className="size-6 object-contain"
+                                                onError={() =>
+                                                    setLogoFailed((prev) => ({...prev, [key]: true}))
+                                                }
+                                            />
+                                        ) : (
+                                            <span>{social.name}</span>
+                                        )}
+                                    </a>
+                                );
+                            })}
+                        </div>
                     </div>
-                </div>
+                ) : null}
 
-                <p className="max-w-[534px] font-dyeus-serif text-xl leading-[1.2] text-dyeus-cream md:text-[32px]">
+                <p
+                    className={`max-w-[534px] font-dyeus-serif text-xl leading-[1.2] text-dyeus-cream md:text-[32px] ${
+                        socialLinks.length === 0 ? "md:ml-auto" : ""
+                    }`}
+                >
                     A private collection of residences, villas, and suites between the Ionian Sea and
                     the mountains of Southern Albania.
                 </p>

@@ -42,7 +42,16 @@
     "marketingBookletLabel": "Marketingbroschüre",
     "featuredOnHomepageLabel": "Auf Startseite hervorheben",
     "featuredSortOrderLabel": "Reihenfolge (Startseite)",
-    "featuredSortOrderPlaceholder": "0 = zuerst"
+    "featuredSortOrderPlaceholder": "0 = zuerst",
+    "socialLinksSectionTitle": "Social-Links",
+    "socialLinkAddRow": "Social-Link hinzufügen",
+    "socialLinkRemoveRow": "Entfernen",
+    "socialLinkRowTitle": "Unbenannter Link",
+    "socialLinkNameLabel": "Name",
+    "socialLinkNamePlaceholder": "z. B. Instagram",
+    "socialLinkUrlLabel": "Link",
+    "socialLinkUrlPlaceholder": "https://",
+    "socialLinkLogoLabel": "Logo"
   },
   "generalInfo": "Allgemeine Informationen",
   "homepageFeatured": "Startseite Featured",

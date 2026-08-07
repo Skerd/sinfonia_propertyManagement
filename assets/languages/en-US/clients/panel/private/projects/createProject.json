@@ -36,7 +36,16 @@
     "marketingBookletLabel": "Marketing Booklet",
     "featuredOnHomepageLabel": "Featured on homepage",
     "featuredSortOrderLabel": "Featured sort order",
-    "featuredSortOrderPlaceholder": "0 = first"
+    "featuredSortOrderPlaceholder": "0 = first",
+    "socialLinksSectionTitle": "Social links",
+    "socialLinkAddRow": "Add social link",
+    "socialLinkRemoveRow": "Remove",
+    "socialLinkRowTitle": "Untitled link",
+    "socialLinkNameLabel": "Name",
+    "socialLinkNamePlaceholder": "e.g. Instagram",
+    "socialLinkUrlLabel": "Link",
+    "socialLinkUrlPlaceholder": "https://",
+    "socialLinkLogoLabel": "Logo"
   },
   "generalInfo": "General Information",
   "homepageFeatured": "Homepage featured",

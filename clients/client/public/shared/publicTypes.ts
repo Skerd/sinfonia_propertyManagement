@@ -41,6 +41,7 @@ export type MarketingProject = {
     propertyTypes?: PropertyTypeId[];
     bedroomRange?: {min: number; max: number};
     areaSqmRange?: {min: number; max: number};
+    socialLinks?: {name: string; link: string; logo?: string}[];
 };
 
 export type MarketingUnitStatus = "available" | "reserved" | "sold";

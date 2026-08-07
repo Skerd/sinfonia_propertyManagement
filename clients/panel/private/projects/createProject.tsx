@@ -8,5 +8,8 @@ export default createGenericCreatePage<CreateProjectFormType>({
     model: "projects",
     apiUrl: "/api/realEstate/project",
     schema: createProjectFormSchema,
-    submitIcon: <IconFolderPlus />
+    submitIcon: <IconFolderPlus />,
+    defaultValues: {
+        socialLinks: [],
+    } as unknown as CreateProjectFormType,
 });
