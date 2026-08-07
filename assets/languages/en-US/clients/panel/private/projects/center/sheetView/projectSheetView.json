@@ -68,5 +68,8 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "magazine": "Magazine",
+  "magazineTitle": "Magazine title",
+  "magazineDescription": "Magazine description"
 }

@@ -83,6 +83,9 @@ const UnitCostSheetViewLazy = lazy(
 const UnitTypeSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx"),
 );
+const StoryTypeSheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx"),
+);
 const ConstructorSheetViewLazy = lazy(
     () =>
         import(
@@ -259,6 +262,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#InspectionSheetView": InspectionSheetViewLazy,
         "#UnitCostSheetView": UnitCostSheetViewLazy,
         "#UnitTypeSheetView": UnitTypeSheetViewLazy,
+        "#StoryTypeSheetView": StoryTypeSheetViewLazy,
         "#ConstructorSheetView": ConstructorSheetViewLazy,
         "#CommissionSheetView": CommissionSheetViewLazy,
         "#MilestoneSheetView": MilestoneSheetViewLazy,
@@ -379,6 +383,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#FloorSheetView": {url: "/api/realEstate/floor/single", labelFields: ["name"]},
         "#UnitSheetView": {url: "/api/realEstate/unit/single", labelFields: ["unitNumber", "name"]},
         "#UnitTypeSheetView": {url: "/api/realEstate/unitType/single", labelFields: ["name"]},
+        "#StoryTypeSheetView": {url: "/api/realEstate/storyType/single", labelFields: ["name"]},
         "#InspectionSheetView": {url: "/api/realEstate/unit/inspection/single", labelFields: ["name", "title"]},
         "#UnitCostSheetView": {url: "/api/realEstate/unit/cost/single", labelFields: ["name", "title"]},
         "#ModificationRequestSheetView": {

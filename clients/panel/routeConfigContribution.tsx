@@ -21,6 +21,9 @@ import CreateModificationRequest from "@propertyManagementModule/clients/panel/p
 import CreateUnitType from "@propertyManagementModule/clients/panel/private/unitTypes/createUnitType.tsx";
 import EditUnitType from "@propertyManagementModule/clients/panel/private/unitTypes/editUnitType.tsx";
 import AllUnitTypes from "@propertyManagementModule/clients/panel/private/unitTypes";
+import CreateStoryType from "@propertyManagementModule/clients/panel/private/storyTypes/createStoryType.tsx";
+import EditStoryType from "@propertyManagementModule/clients/panel/private/storyTypes/editStoryType.tsx";
+import AllStoryTypes from "@propertyManagementModule/clients/panel/private/storyTypes";
 import CreateUnitTypeCategory from "@propertyManagementModule/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx";
 import EditUnitTypeCategory from "@propertyManagementModule/clients/panel/private/unitTypeCategories/editUnitTypeCategory.tsx";
 import AllUnitTypeCategories from "@propertyManagementModule/clients/panel/private/unitTypeCategories";
@@ -218,6 +221,8 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
             const action = segments[3];
             const unitTypeId = searchParams.get("unitTypeId") || undefined;
             const unitTypeName = safeDecode(searchParams.get("unitTypeName")) || undefined;
+            const storyTypeId = searchParams.get("storyTypeId") || undefined;
+            const storyTypeName = safeDecode(searchParams.get("storyTypeName")) || undefined;
             const unitTypeCategoryId = searchParams.get("unitTypeCategoryId") || undefined;
             const unitTypeCategoryName = safeDecode(searchParams.get("unitTypeCategoryName")) || undefined;
             const constructorId = searchParams.get("constructorId") || undefined;
@@ -234,6 +239,11 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
                 if (action === "create") return <CreateUnitType />;
                 if (action === "edit") return <EditUnitType entityId={unitTypeId} entityName={unitTypeName} />;
                 return <AllUnitTypes />;
+            }
+            if (resource === "storyTypes") {
+                if (action === "create") return <CreateStoryType />;
+                if (action === "edit") return <EditStoryType entityId={storyTypeId} entityName={storyTypeName} />;
+                return <AllStoryTypes />;
             }
             if (resource === "constructors") {
                 if (action === "create") return <CreateConstructor />;

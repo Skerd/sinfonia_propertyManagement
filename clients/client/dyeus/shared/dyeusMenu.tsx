@@ -51,7 +51,7 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
                     <button
                         type="button"
                         onClick={onClose}
-                        className="font-dyeus-sans text-sm uppercase tracking-[0.22em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
+                        className="cursor-pointer font-dyeus-sans text-sm uppercase tracking-[0.22em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
                     >
                         Close
                     </button>

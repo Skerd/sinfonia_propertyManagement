@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/cardView/storyTypeCard.tsx",
+  "active": "Active",
+  "name": "Name",
+  "slug": "Slug",
+  "description": "Description",
+  "sortOrder": "Sort order",
+  "deleted": "Deleted"
+}

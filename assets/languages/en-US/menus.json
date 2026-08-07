@@ -55,6 +55,9 @@
     "unitTypes": {
       "title": "Unit types"
     },
+    "storyTypes": {
+      "title": "Story types"
+    },
     "commissions": {
       "title": "Commissions"
     },
@@ -297,6 +300,9 @@
       },
       "unitTypes": {
         "title": "Unit types"
+      },
+      "storyTypes": {
+        "title": "Story types"
       },
       "propertyManagement": {
         "title": "Real Estate"

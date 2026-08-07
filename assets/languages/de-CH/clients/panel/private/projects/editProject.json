@@ -51,7 +51,13 @@
     "socialLinkNamePlaceholder": "z. B. Instagram",
     "socialLinkUrlLabel": "Link",
     "socialLinkUrlPlaceholder": "https://",
-    "socialLinkLogoLabel": "Logo"
+    "socialLinkLogoLabel": "Logo",
+    "magazineSectionTitle": "Magazine",
+    "magazineFileLabel": "Magazine PDF",
+    "magazineTitleLabel": "Magazine title",
+    "magazineTitlePlaceholder": "Enter magazine title",
+    "magazineDescriptionLabel": "Magazine description",
+    "magazineDescriptionPlaceholder": "Enter magazine description"
   },
   "generalInfo": "Allgemeine Informationen",
   "homepageFeatured": "Startseite Featured",

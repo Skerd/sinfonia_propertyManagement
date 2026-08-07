@@ -20,7 +20,7 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                     <button
                         type="button"
                         onClick={() => setMenuOpen(true)}
-                        className="relative z-10 flex h-[18px] w-[56px] items-center"
+                        className="group relative z-10 flex h-[18px] w-[56px] cursor-pointer items-center"
                         aria-label="Open menu"
                         aria-haspopup="dialog"
                         aria-expanded={menuOpen}
@@ -28,7 +28,9 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                         <img
                             src={dyeusAssets.iconMenu}
                             alt=""
-                            className={`h-[18px] w-[56px] object-contain ${isHero ? "" : "brightness-0"}`}
+                            className={`h-[18px] w-[56px] object-contain transition-opacity duration-300 group-hover:opacity-60 ${
+                                isHero ? "" : "brightness-0"
+                            }`}
                         />
                     </button>
 

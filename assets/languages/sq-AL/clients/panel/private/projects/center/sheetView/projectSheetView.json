@@ -68,5 +68,8 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "magazine": "Magazine",
+  "magazineTitle": "Magazine title",
+  "magazineDescription": "Magazine description"
 }

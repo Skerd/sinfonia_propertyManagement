@@ -17,6 +17,9 @@ export default createGenericEditPage<Project, EditProjectFormType>({
         videoGallery: data.videoGallery?.map((vid) => vid._id) ?? [],
         mediaFiles: data.mediaFiles?.map((f) => f._id) ?? [],
         marketingBooklet: data.marketingBooklet?._id,
+        magazineFile: data.magazineFile?._id,
+        magazineTitle: data.magazineTitle ?? "",
+        magazineDescription: data.magazineDescription ?? "",
         socialLinks: (data.socialLinks ?? []).map((item) => ({
             name: item.name,
             link: item.link,

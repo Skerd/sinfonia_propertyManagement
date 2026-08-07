@@ -295,11 +295,29 @@ export type MarketingStory = {
     edificeName?: string;
     unitId?: string;
     unitName?: string;
+    storyTypeId?: string;
+    storyTypeName?: string;
+    storyTypeSlug?: string;
+};
+
+export type MarketingStoryType = {
+    _id: string;
+    name: string;
+    slug?: string;
+    sortOrder?: number;
+};
+
+export type MarketingMagazine = {
+    title?: string;
+    description?: string;
+    fileUrl?: string;
 };
 
 export type MarketingStoriesResponse = {
     stories: MarketingStory[];
     total: number;
+    storyTypes?: MarketingStoryType[];
+    magazine?: MarketingMagazine;
 };
 
 export type MarketingStorySingleResponse = {

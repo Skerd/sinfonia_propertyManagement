@@ -45,7 +45,13 @@
     "socialLinkNamePlaceholder": "p.sh. Instagram",
     "socialLinkUrlLabel": "Lidhja",
     "socialLinkUrlPlaceholder": "https://",
-    "socialLinkLogoLabel": "Logo"
+    "socialLinkLogoLabel": "Logo",
+    "magazineSectionTitle": "Magazine",
+    "magazineFileLabel": "Magazine PDF",
+    "magazineTitleLabel": "Magazine title",
+    "magazineTitlePlaceholder": "Enter magazine title",
+    "magazineDescriptionLabel": "Magazine description",
+    "magazineDescriptionPlaceholder": "Enter magazine description"
   },
   "generalInfo": "Informacione të Përgjithshme",
   "homepageFeatured": "I veçuar në faqen kryesore",

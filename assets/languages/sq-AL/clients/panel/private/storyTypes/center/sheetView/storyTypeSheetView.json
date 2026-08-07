@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
+  "failedTitle": "Failed to load story type",
+  "failedDescription": "Something went wrong while loading this story type. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "name": "Name",
+  "storyType": "Story type",
+  "overview": "Overview",
+  "description": "Description",
+  "slug": "Slug",
+  "sortOrder": "Sort order",
+  "lifecycle": "Lifecycle",
+  "createdAt": "Created at",
+  "updatedAt": "Updated at",
+  "createdBy": "Created by",
+  "deletedAt": "Deleted at",
+  "deletedBy": "Deleted by"
+}

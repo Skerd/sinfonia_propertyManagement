@@ -12,6 +12,7 @@ export default createGenericEditPage<Story, EditStoryFormType>({
     mapEntityData: (data) => ({
         ...data,
         project: data.project?._id ?? data.project,
+        storyType: data.storyType?._id ?? data.storyType,
         edifice: data.edifice?._id ?? data.edifice,
         unit: data.unit?._id ?? data.unit,
         publishedAt: data.publishedAt

@@ -12,6 +12,7 @@ export default createGenericCreatePage<CreateStoryFormType>({
         project: params.get("projectId") ?? "",
         edifice: params.get("edificeId") ?? undefined,
         unit: params.get("unitId") ?? undefined,
+        storyType: "",
         title: "",
         content: "",
         excerpt: "",

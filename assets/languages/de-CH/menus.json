@@ -55,6 +55,9 @@
     "unitTypes": {
       "title": "Einheitstypen"
     },
+    "storyTypes": {
+      "title": "Story-Typen"
+    },
     "commissions": {
       "title": "Provisionen"
     },
@@ -297,6 +300,9 @@
       },
       "unitTypes": {
         "title": "Einheitstypen"
+      },
+      "storyTypes": {
+        "title": "Story-Typen"
       },
       "propertyManagement": {
         "title": "Immobilien"

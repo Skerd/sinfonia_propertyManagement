@@ -68,5 +68,8 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "magazine": "Magazine",
+  "magazineTitle": "Magazine title",
+  "magazineDescription": "Magazine description"
 }

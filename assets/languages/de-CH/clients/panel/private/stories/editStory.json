@@ -23,13 +23,32 @@
     "publishedAtLabel": "Published date",
     "publishedAtPlaceholder": "Select date",
     "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "0"
+    "sortOrderPlaceholder": "0",
+    "storyTypeLabel": "Story type",
+    "storyTypePlaceholder": "Select story type",
+    "storyTypeRequired": "Story type is required"
   },
   "axios": {
-    "start": { "title": "Saving story", "time": 3000 },
-    "success": { "title": "Story updated!", "time": 3000 },
-    "error": { "title": "Could not update story, please try again!", "time": 3000 }
+    "start": {
+      "title": "Saving story",
+      "time": 3000
+    },
+    "success": {
+      "title": "Story updated!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update story, please try again!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Edit Story", "description": "Update journal story content and media" },
-  "formButtons": { "cancel": "Cancel", "submit": "Save Changes" }
+  "formHeader": {
+    "title": "Edit Story",
+    "description": "Update journal story content and media"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  },
+  "storyType": "Story type"
 }

@@ -21,6 +21,16 @@ import iconAvailable from "@propertyManagementModule/assets/images/dyeus/icon-av
 import iconCheck from "@propertyManagementModule/assets/images/dyeus/icon-check.svg";
 import iconArrowRight from "@propertyManagementModule/assets/images/dyeus/icon-arrow-right.svg";
 import iconBackTop from "@propertyManagementModule/assets/images/dyeus/icon-back-top.svg";
+import magazineSpread from "@propertyManagementModule/assets/images/dyeus/magazine-spread.png";
+import aboutHeroPoster from "@propertyManagementModule/assets/images/dyeus/about-hero.png";
+import aboutHeroVideo from "@propertyManagementModule/assets/images/dyeus/about-hero.mp4";
+import aboutPool from "@propertyManagementModule/assets/images/dyeus/about-pool.png";
+import aboutStairs from "@propertyManagementModule/assets/images/dyeus/about-stairs.png";
+import aboutPlan from "@propertyManagementModule/assets/images/dyeus/about-plan.png";
+import aboutArtech from "@propertyManagementModule/assets/images/dyeus/about-artech.png";
+import aboutPress1 from "@propertyManagementModule/assets/images/dyeus/about-press-1.png";
+import aboutPress2 from "@propertyManagementModule/assets/images/dyeus/about-press-2.png";
+import aboutPress3 from "@propertyManagementModule/assets/images/dyeus/about-press-3.png";
 
 export const dyeusAssets = {
     heroBg,
@@ -46,6 +56,16 @@ export const dyeusAssets = {
     iconCheck,
     iconArrowRight,
     iconBackTop,
+    magazineSpread,
+    aboutHeroPoster,
+    aboutHeroVideo,
+    aboutPool,
+    aboutStairs,
+    aboutPlan,
+    aboutArtech,
+    aboutPress1,
+    aboutPress2,
+    aboutPress3,
     // Temporary aliases for non-home pages until those screens are cloned
     hero: heroBg,
     villaPool: villaFeature,

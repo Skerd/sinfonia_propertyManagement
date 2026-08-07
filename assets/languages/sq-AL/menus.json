@@ -55,6 +55,9 @@
     "unitTypes": {
       "title": "Llojet e njësive"
     },
+    "storyTypes": {
+      "title": "Llojet e historive"
+    },
     "commissions": {
       "title": "Komisionet"
     },
@@ -297,6 +300,9 @@
       },
       "unitTypes": {
         "title": "Llojet e njësive"
+      },
+      "storyTypes": {
+        "title": "Llojet e historive"
       },
       "propertyManagement": {
         "title": "Pasuri të paluajtshme"

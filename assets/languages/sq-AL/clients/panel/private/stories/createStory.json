@@ -23,13 +23,32 @@
     "publishedAtLabel": "Published date",
     "publishedAtPlaceholder": "Select date",
     "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "0"
+    "sortOrderPlaceholder": "0",
+    "storyTypeLabel": "Story type",
+    "storyTypePlaceholder": "Select story type",
+    "storyTypeRequired": "Story type is required"
   },
   "axios": {
-    "start": { "title": "Saving story", "time": 3000 },
-    "success": { "title": "Story saved!", "time": 3000 },
-    "error": { "title": "Could not save story, please try again!", "time": 3000 }
+    "start": {
+      "title": "Saving story",
+      "time": 3000
+    },
+    "success": {
+      "title": "Story saved!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not save story, please try again!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Add Story", "description": "Create a journal story for a project, edifice, or unit" },
-  "formButtons": { "cancel": "Cancel", "submit": "Save Story" }
+  "formHeader": {
+    "title": "Add Story",
+    "description": "Create a journal story for a project, edifice, or unit"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Story"
+  },
+  "storyType": "Story type"
 }
