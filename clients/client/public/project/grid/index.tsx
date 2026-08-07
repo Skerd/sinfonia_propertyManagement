@@ -8,12 +8,14 @@ import PublicPageShell from "@propertyManagementModule/clients/client/public/sha
 import PublicSection from "@propertyManagementModule/clients/client/public/shared/layout/publicSection.tsx";
 import PageHeaderSection from "@propertyManagementModule/clients/client/public/shared/sections/pageHeaderSection.tsx";
 import FooterSection from "@propertyManagementModule/clients/client/public/home/sections/footerSection.tsx";
-import CtaSection from "@propertyManagementModule/clients/client/public/home/sections/ctaSection.tsx";
+import CtaSection from "@propertyManagementModule/clients/client/public/shared/sections/ctaSection.tsx";
 import OpenProjectGridToolbarSection from "@propertyManagementModule/clients/client/public/project/sections/openProjectGridToolbarSection.tsx";
 import OpenProjectGridCardsSection from "@propertyManagementModule/clients/client/public/project/sections/openProjectGridCardsSection.tsx";
 import OpenProjectUnitsFilterPanel from "@propertyManagementModule/clients/client/public/project/components/openProjectUnitsFilterPanel.tsx";
 import ConstructionProgressSection from "@propertyManagementModule/clients/client/public/project/sections/constructionProgressSection.tsx";
 import {useProjectId} from "@propertyManagementModule/clients/client/public/project/shared/useProjectId.ts";
+import {useProjectViewerParams} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerParams.ts";
+import {useProjectUnitStatusFilter} from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
 import {MarketingProjectSingleResponse} from "@propertyManagementModule/clients/client/public/project/shared/openProjectShell.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 import {deriveUnitPriceBounds} from "@propertyManagementModule/clients/client/public/project/shared/applyProjectUnitsFilters.ts";
@@ -25,22 +27,11 @@ import {
 
 type ProjectGridPageProps = WithLanguageType & WithAxiosType<MarketingProjectSingleResponse, {projectId: string}>;
 
-function countUnits(project: MarketingProjectSingleResponse["project"]) {
-    if (project?.unitCount != null) {
-        return project.unitCount;
-    }
-    return (
-        project?.edifices?.reduce(
-            (sum, edifice) => sum + (edifice.floors?.reduce((fSum, floor) => fSum + (floor.units?.length ?? 0), 0) ?? 0),
-            0,
-        ) ?? 0
-    );
-}
-
 function ProjectGridPage(props: ProjectGridPageProps) {
     const {resolveLanguageKey, currentLanguage, languageCode, data, loading, onFilterChange} = props;
     const projectId = useProjectId();
-    const [activeFilter, setActiveFilter] = useState("all");
+    const {edificeId, floorId} = useProjectViewerParams();
+    const {activeFilter, setActiveFilter} = useProjectUnitStatusFilter();
     const [sortKey, setSortKey] = useState<ProjectUnitsSortKey>("default");
     const [filterPanelOpen, setFilterPanelOpen] = useState(false);
     const project = data?.project;
@@ -75,7 +66,15 @@ function ProjectGridPage(props: ProjectGridPageProps) {
         }
     }, [allUnits, appliedUnitFilters, priceBounds]);
 
-    const apartmentCount = useMemo(() => (project ? countUnits(project) : 0), [project]);
+    const apartmentCount = useMemo(() => {
+        const scoped = allUnits.filter((unit) => {
+            if (edificeId && unit.edificeId !== edificeId) return false;
+            if (floorId && unit.floorId !== floorId) return false;
+            return true;
+        });
+        if (activeFilter === "all") return scoped.length;
+        return scoped.filter((unit) => unit.status === activeFilter).length;
+    }, [allUnits, edificeId, floorId, activeFilter]);
     const filtersActive = hasActiveUnitFilters(appliedUnitFilters, priceBounds);
 
     const contentProps = project
@@ -136,6 +135,8 @@ function ProjectGridPage(props: ProjectGridPageProps) {
                                 unitFilters={appliedUnitFilters}
                                 priceBounds={priceBounds}
                                 sortKey={sortKey}
+                                edificeId={edificeId || undefined}
+                                floorId={floorId || undefined}
                             />
                         </div>
                     </PublicSection>

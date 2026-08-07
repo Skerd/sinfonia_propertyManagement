@@ -1,32 +1,28 @@
-import {useMemo, useState} from "react";
+import {useMemo} from "react";
 import {OpenProjectContentProps} from "@propertyManagementModule/clients/client/public/project/shared/openProjectShell.tsx";
 import PropertyListingCard from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 import {useProjectViewerParams} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerParams.ts";
+import {
+    PROJECT_UNIT_STATUS_FILTERS,
+    useProjectUnitStatusFilter,
+} from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
 
 type OpenProject3dFloorPropertiesSectionProps = Pick<OpenProjectContentProps, "project" | "resolveLanguageKey"> & {
-    activeFilter?: string;
-    onFilterChange?: (filter: string) => void;
     hoveredUnitId?: string | null;
     onUnitHover?: (unitId: string | null) => void;
     className?: string;
 };
 
-const FILTERS = ["available", "sold", "reserved", "all"] as const;
-
 function OpenProject3dFloorPropertiesSection({
     project,
     resolveLanguageKey,
-    activeFilter: controlledFilter,
-    onFilterChange,
     hoveredUnitId = null,
     onUnitHover,
     className = "",
 }: OpenProject3dFloorPropertiesSectionProps) {
     const {floorId} = useProjectViewerParams();
-    const [internalFilter, setInternalFilter] = useState("all");
-    const activeFilter = controlledFilter ?? internalFilter;
-    const setFilter = onFilterChange ?? setInternalFilter;
+    const {activeFilter, setActiveFilter} = useProjectUnitStatusFilter();
 
     const units = useMemo(() => {
         const allUnits = flattenCatalogUnits(project);
@@ -52,11 +48,11 @@ function OpenProject3dFloorPropertiesSection({
                     {resolveLanguageKey("propertiesTitle")}
                 </h2>
                 <div className="mt-3 flex flex-wrap gap-2 md:gap-3" data-node-id="543:644">
-                    {FILTERS.map((filter) => (
+                    {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
                         <button
                             key={filter}
                             type="button"
-                            onClick={() => setFilter(filter)}
+                            onClick={() => setActiveFilter(filter)}
                             className={`rounded-[5px] px-3 py-1.5 font-aeonik-light text-base not-italic transition md:text-xl ${
                                 activeFilter === filter
                                     ? "bg-pronix-blue text-white"

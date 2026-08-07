@@ -12,34 +12,42 @@ import {
     PROJECT_UNITS_SORT_KEYS,
     ProjectUnitsSortKey,
 } from "@propertyManagementModule/clients/client/public/project/shared/projectUnitsFilterTypes.ts";
+import {
+    PROJECT_UNIT_STATUS_FILTERS,
+    useProjectUnitStatusFilter,
+} from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
+import {useProjectViewerParams} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerParams.ts";
 import {PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-
-const STATUS_FILTERS = ["available", "sold", "reserved", "all"] as const;
 
 const sortSelectClassName =
     "min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent font-aeonik-light text-lg text-pronix-ink not-italic outline-none md:text-2xl";
 
-function countUnits(project: OpenProjectContentProps["project"]) {
-    if (project.unitCount != null) {
-        return project.unitCount;
-    }
-    return (
-        project.edifices?.reduce(
-            (sum, edifice) => sum + (edifice.floors?.reduce((fSum, floor) => fSum + (floor.units?.length ?? 0), 0) ?? 0),
-            0,
-        ) ?? 0
-    );
-}
-
 function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
     const {project, resolveLanguageKey} = props;
-    const [activeFilter, setActiveFilter] = useState("all");
+    const {edificeId, floorId} = useProjectViewerParams();
+    const {activeFilter, setActiveFilter} = useProjectUnitStatusFilter();
     const [sortKey, setSortKey] = useState<ProjectUnitsSortKey>("default");
     const [filterPanelOpen, setFilterPanelOpen] = useState(false);
 
     const allUnits = useMemo(() => flattenCatalogUnits(project), [project]);
+    const scopedUnits = useMemo(() => {
+        return allUnits.filter((unit) => {
+            if (edificeId && unit.edificeId !== edificeId) {
+                return false;
+            }
+            if (floorId && unit.floorId !== floorId) {
+                return false;
+            }
+            return true;
+        });
+    }, [allUnits, edificeId, floorId]);
     const priceBounds = useMemo(() => deriveUnitPriceBounds(allUnits), [allUnits]);
-    const apartmentCount = useMemo(() => countUnits(project), [project]);
+    const apartmentCount = useMemo(() => {
+        if (activeFilter === "all") {
+            return scopedUnits.length;
+        }
+        return scopedUnits.filter((unit) => unit.status === activeFilter).length;
+    }, [scopedUnits, activeFilter]);
 
     const [appliedUnitFilters, setAppliedUnitFilters] = useState(() => createDefaultUnitFilters(priceBounds));
     const [draftUnitFilters, setDraftUnitFilters] = useState(() => createDefaultUnitFilters(priceBounds));
@@ -99,7 +107,7 @@ function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap items-center gap-3 md:gap-8">
-                    {STATUS_FILTERS.map((filter) => (
+                    {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
                         <button
                             key={filter}
                             type="button"
@@ -138,6 +146,8 @@ function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
                 unitFilters={appliedUnitFilters}
                 priceBounds={priceBounds}
                 sortKey={sortKey}
+                edificeId={edificeId || undefined}
+                floorId={floorId || undefined}
             />
 
             <OpenProjectUnitsFilterPanel

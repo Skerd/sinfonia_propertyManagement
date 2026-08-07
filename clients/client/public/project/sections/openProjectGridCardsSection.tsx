@@ -24,6 +24,10 @@ type OpenProjectGridCardsSectionProps = OpenProjectContentProps & {
     unitFilters: ProjectUnitsFilterState;
     priceBounds: ProjectsPriceBounds;
     sortKey: ProjectUnitsSortKey;
+    /** When set (e.g. from polygon viewer URL), only show this edifice. */
+    edificeId?: string;
+    /** When set, only show this floor. */
+    floorId?: string;
 };
 
 function formatFloorHeading(name: string | undefined, levelNumber: string | number | undefined): string {
@@ -47,14 +51,16 @@ function OpenProjectGridCardsSection({
     unitFilters,
     priceBounds,
     sortKey,
+    edificeId,
+    floorId,
 }: OpenProjectGridCardsSectionProps) {
     const groupedSections = useMemo(() => {
-        const edifices = project.edifices ?? [];
+        const edifices = (project.edifices ?? []).filter((edifice) => !edificeId || edifice._id === edificeId);
         return edifices
             .map((edifice) => {
-                const floors = [...(edifice.floors ?? [])].sort(
-                    (a, b) => parseFloorLevel(b.levelNumber) - parseFloorLevel(a.levelNumber),
-                );
+                const floors = [...(edifice.floors ?? [])]
+                    .filter((floor) => !floorId || floor._id === floorId)
+                    .sort((a, b) => parseFloorLevel(b.levelNumber) - parseFloorLevel(a.levelNumber));
                 const floorGroups = floors
                     .map((floor) => {
                         const units = flattenCatalogUnits({
@@ -79,7 +85,7 @@ function OpenProjectGridCardsSection({
                 };
             })
             .filter((section) => section.floorGroups.length > 0);
-    }, [project, activeFilter, unitFilters, priceBounds, sortKey, resolveLanguageKey]);
+    }, [project, activeFilter, unitFilters, priceBounds, sortKey, resolveLanguageKey, edificeId, floorId]);
 
     const hasUnits = groupedSections.some((section) => section.floorGroups.length > 0);
 

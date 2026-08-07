@@ -13,6 +13,7 @@ export type PropertyListingCardUnit = {
     bathrooms?: number;
     floorLabel?: string;
     floorId?: string;
+    edificeId?: string;
     orientation?: string;
     price?: number;
     propertyType?: PropertyTypeId;
