@@ -84,7 +84,10 @@
     "saleCommissionRateLabel": "Verkauf Provision Satz (%)",
     "saleCommissionRatePlaceholder": "Verkauf provision satz eingeben",
     "reservationCommissionRateLabel": "Reservation Provision Satz (%)",
-    "reservationCommissionRatePlaceholder": "Reservation provision satz eingeben"
+    "reservationCommissionRatePlaceholder": "Reservation provision satz eingeben",
+    "featuredOnHomepageLabel": "Auf Startseite hervorheben",
+    "featuredSortOrderLabel": "Reihenfolge (Startseite)",
+    "featuredSortOrderPlaceholder": "0 = zuerst"
   },
   "axios": {
     "start": {
@@ -107,5 +110,6 @@
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Einheit erstellen"
-  }
+  },
+  "homepageFeatured": "Startseite Featured"
 }

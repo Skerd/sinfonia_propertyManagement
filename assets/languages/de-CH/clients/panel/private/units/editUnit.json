@@ -91,7 +91,10 @@
     "saleCommissionRateLabel": "Verkauf provision (%)",
     "saleCommissionRatePlaceholder": "0–100, optional",
     "reservationCommissionRateLabel": "Reservation provision (%)",
-    "reservationCommissionRatePlaceholder": "0–100, optional"
+    "reservationCommissionRatePlaceholder": "0–100, optional",
+    "featuredOnHomepageLabel": "Auf Startseite hervorheben",
+    "featuredSortOrderLabel": "Reihenfolge (Startseite)",
+    "featuredSortOrderPlaceholder": "0 = zuerst"
   },
   "axios": {
     "start": {
@@ -114,5 +117,6 @@
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Speichern Änderungen"
-  }
+  },
+  "homepageFeatured": "Startseite Featured"
 }

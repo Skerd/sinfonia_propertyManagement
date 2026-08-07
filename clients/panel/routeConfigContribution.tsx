@@ -56,6 +56,9 @@ import RoiCalculator from "@propertyManagementModule/clients/panel/private/overv
 import AllConstructionUpdates from "@propertyManagementModule/clients/panel/private/constructionUpdates";
 import CreateConstructionUpdate from "@propertyManagementModule/clients/panel/private/constructionUpdates/createConstructionUpdate.tsx";
 import EditConstructionUpdate from "@propertyManagementModule/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx";
+import AllStories from "@propertyManagementModule/clients/panel/private/stories";
+import CreateStory from "@propertyManagementModule/clients/panel/private/stories/createStory.tsx";
+import EditStory from "@propertyManagementModule/clients/panel/private/stories/editStory.tsx";
 import AllSnags from "@propertyManagementModule/clients/panel/private/snags";
 import CreateSnag from "@propertyManagementModule/clients/panel/private/snags/createSnag.tsx";
 import EditSnag from "@propertyManagementModule/clients/panel/private/snags/editSnag.tsx";
@@ -270,6 +273,8 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
         const permitName = safeDecode(searchParams.get("permitName")) || undefined;
         const constructionUpdateId = searchParams.get("constructionUpdateId") || undefined;
         const constructionUpdateName = safeDecode(searchParams.get("constructionUpdateName")) || undefined;
+        const storyId = searchParams.get("storyId") || undefined;
+        const storyName = safeDecode(searchParams.get("storyName")) || undefined;
         const leadId = searchParams.get("leadId") || undefined;
         const leadName = safeDecode(searchParams.get("leadName")) || undefined;
         const leaseId = searchParams.get("leaseId") || undefined;
@@ -320,6 +325,14 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
                 return <EditConstructionUpdate entityId={constructionUpdateId} entityName={constructionUpdateName} />;
             }
             return <AllConstructionUpdates projectId={projectId} projectName={projectName} />;
+        }
+
+        if (subview === "stories") {
+            if (action === "create") return <CreateStory />;
+            if (action === "edit" && storyId) {
+                return <EditStory entityId={storyId} entityName={storyName} />;
+            }
+            return <AllStories projectId={projectId} projectName={projectName} />;
         }
 
         if (subview === "projects") {

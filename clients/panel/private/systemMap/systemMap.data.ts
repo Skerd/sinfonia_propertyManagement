@@ -309,6 +309,17 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
             panelRoute: "/realEstate/constructionUpdates",
             position: {x: 1080, y: 640},
         },
+        {
+            id: "Story",
+            label: "Story",
+            cluster: "portfolio",
+            module: "propertyManagement",
+            description: "Marketing journal story with title, content, and media galleries, scoped to project / edifice / unit.",
+            keyFields: ["project", "edifice?", "unit?", "title", "content", "mainImage", "imageGallery", "videoGallery", "published"],
+            apiPath: "/api/realEstate/story",
+            panelRoute: "/realEstate/stories",
+            position: {x: 280, y: 520},
+        },
 
         // ── Cost ────────────────────────────────────────────────────
         {
@@ -803,6 +814,9 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
         {id: "e-ho-sale", source: "Sale", target: "HandoverPackage", label: "handover gated by"},
         {id: "e-ho-pr", source: "HandoverPackage", target: "Project", label: "for"},
         {id: "e-cu-pr", source: "ConstructionUpdate", target: "Project", label: "updates"},
+        {id: "e-story-pr", source: "Story", target: "Project", label: "about"},
+        {id: "e-story-ed", source: "Story", target: "Edifice", label: "optional"},
+        {id: "e-story-un", source: "Story", target: "Unit", label: "optional"},
         {id: "e-bud-pr", source: "Budget", target: "Project", label: "for"},
         {id: "e-boq-bud", source: "BoqItem", target: "Budget", label: "line of"},
         {id: "e-bud-cc", source: "Budget", target: "CostClassification", label: "classified by (eBKP-H/BKP)"},
@@ -1077,6 +1091,7 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
                 "/api/realEstate/marketingAvailability",
                 "/api/realEstate/marketingStats",
                 "/api/realEstate/marketingFeaturedProjects",
+                "/api/realEstate/marketingFeaturedUnits",
             ],
         },
     ],

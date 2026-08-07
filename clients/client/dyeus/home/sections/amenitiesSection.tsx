@@ -1,35 +1,63 @@
+import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+
 const amenities = [
-    "Boutique Hotel",
-    "Infinity Pools",
-    "Private Terraces",
-    "Gardens",
-    "Sunset Lounge",
-    "Parking Spaces",
-    "Pool Bar",
-    "Bar & Restaurant",
-    "Private Beach",
+    {label: "Boutique Hotel", active: false},
+    {label: "Infinity Pools", active: true},
+    {label: "Private Terraces", active: false},
+    {label: "Gardens", active: false},
+    {label: "Sunset Lounge", active: false},
+    {label: "Parking Spaces", active: false},
+    {label: "Pool Bar", active: false},
+    {label: "Bar & Restaurant", active: false},
+    {label: "Private Beach", active: false},
 ] as const;
 
 function AmenitiesSection() {
     return (
-        <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28">
-            <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-end">
-                <div>
-                    <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">Lifestyle</p>
-                    <h2 className="mt-4 font-dyeus-serif text-4xl leading-tight md:text-5xl">
-                        Amenities designed for effortless coastal living
-                    </h2>
+        <section className="mx-auto max-w-[1728px] px-6 py-16 md:px-[60px] md:py-20">
+            <p className="max-w-[1281px] font-dyeus-serif text-[clamp(1.75rem,4vw,4rem)] font-bold leading-none text-dyeus-ink">
+                Life at DYEUS happens outdoors — in the water, under the olive trees, on terraces that
+                open straight to the sea. Every shared space is made for the slow, private rhythm of the
+                coast.
+            </p>
+
+            <div className="mt-12 flex flex-col gap-10 lg:mt-16 lg:flex-row lg:items-start lg:justify-between">
+                <p className="max-w-[340px] font-dyeus-serif text-base leading-[1.2] text-dyeus-ink md:text-xl">
+                    Behind all of it is a quiet kind of care. The grounds, the pools, the running of the
+                    residence — handled by the hotel alongside it, whether you&apos;re here for the season
+                    or a single weekend. What&apos;s left is time that finally belongs to you: mornings with
+                    nothing to manage, and evenings that ask for nothing in return.
+                </p>
+
+                <div className="flex flex-col gap-8 lg:w-[1020px] lg:flex-row lg:items-start lg:justify-between">
+                    <ul className="flex flex-col gap-3 font-dyeus-serif text-[clamp(2rem,4vw,4rem)] font-extrabold leading-none">
+                        {amenities.map((item) => (
+                            <li
+                                key={item.label}
+                                className={item.active ? "text-dyeus-bronze" : "text-dyeus-ink-faded"}
+                            >
+                                {item.label}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="h-[360px] w-full overflow-hidden lg:h-[467px] lg:w-[374px] lg:shrink-0">
+                        <img
+                            src={dyeusAssets.amenitySide}
+                            alt=""
+                            className="size-full object-cover"
+                        />
+                    </div>
                 </div>
-                <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
-                    {amenities.map((item) => (
-                        <li
-                            key={item}
-                            className="border-b border-dyeus-border pb-3 font-dyeus-sans text-base text-dyeus-ink-muted"
-                        >
-                            {item}
-                        </li>
-                    ))}
-                </ul>
+            </div>
+
+            <div className="mt-16 grid gap-8 md:grid-cols-2">
+                <div className="aspect-[788/1018] overflow-hidden">
+                    <img src={dyeusAssets.galleryLeft} alt="" className="size-full object-cover" />
+                </div>
+                <div className="aspect-[788/1018] overflow-hidden">
+                    <img src={dyeusAssets.galleryRight} alt="" className="size-full object-cover" />
+                </div>
             </div>
         </section>
     );

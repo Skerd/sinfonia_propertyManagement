@@ -1,23 +1,80 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Britanica";
+    src: url("../../assets/fonts/dyeus/Britanica-Heavy.ttf") format("truetype");
+    font-weight: 950;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
-    --color-dyeus-ink: #2a2622;
-    --color-dyeus-ink-muted: rgba(42, 38, 34, 0.72);
-    --color-dyeus-ink-faded: rgba(42, 38, 34, 0.38);
-    --color-dyeus-cream: #f3eee6;
+    --color-dyeus-ink: #181818;
+    --color-dyeus-ink-muted: rgba(24, 24, 24, 0.6);
+    --color-dyeus-ink-faded: rgba(24, 24, 24, 0.2);
+    --color-dyeus-cream: #f2eee6;
     --color-dyeus-sand: #e7dfd2;
-    --color-dyeus-bronze: #9a7b4f;
-    --color-dyeus-bronze-deep: #7a613d;
-    --color-dyeus-border: rgba(42, 38, 34, 0.14);
-    --color-dyeus-white: #fffcf7;
-    --font-dyeus-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-    --font-dyeus-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --color-dyeus-bronze: #b28e6b;
+    --color-dyeus-bronze-deep: #9a7b4f;
+    --color-dyeus-border: rgba(24, 24, 24, 0.2);
+    --color-dyeus-white: #f2eee6;
+    --color-dyeus-available: #1fbe6a;
+    --font-dyeus-serif: "Britanica", ui-serif, Georgia, serif;
+    --font-dyeus-sans: "Britanica", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
     body {
         @apply bg-dyeus-cream text-dyeus-ink antialiased;
-        font-family: var(--font-dyeus-sans);
+        font-family: var(--font-dyeus-serif);
     }
 }
 
@@ -28,5 +85,18 @@
 
     .font-dyeus-sans {
         font-family: var(--font-dyeus-sans);
+    }
+
+    .dyeus-marquee {
+        animation: dyeus-marquee 40s linear infinite;
+    }
+}
+
+@keyframes dyeus-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
     }
 }

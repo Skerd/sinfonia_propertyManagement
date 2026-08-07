@@ -104,6 +104,7 @@ export type MarketingEdificeListItem = {
 export type MarketingProjectSingle = MarketingProject & {
     description?: string;
     amenities?: string[];
+    videoGallery?: string[];
     latitude?: number;
     longitude?: number;
     floorPlans?: {label: string; url: string}[];
@@ -243,4 +244,61 @@ export type MarketingFeaturedProject = {
 export type MarketingFeaturedProjectsResponse = {
     projects: MarketingFeaturedProject[];
     total: number;
+};
+
+export type MarketingFeaturedUnit = {
+    _id: string;
+    name: string;
+    unitNumber?: string;
+    status: MarketingUnitStatus;
+    areaSqm?: number;
+    bedrooms?: number;
+    bathrooms?: number;
+    price?: number;
+    mainImage?: string;
+    imageGallery?: string[];
+    propertyType?: PropertyTypeId;
+    hasSeaView?: boolean;
+    hasCityView?: boolean;
+    hasLakeView?: boolean;
+    hasBalcony?: boolean;
+    hasTerrace?: boolean;
+    projectId?: string;
+    projectName?: string;
+    edificeId?: string;
+    edificeName?: string;
+    floorId?: string;
+    floorLabel?: string;
+};
+
+export type MarketingFeaturedUnitsResponse = {
+    units: MarketingFeaturedUnit[];
+    total: number;
+};
+
+export type MarketingStory = {
+    _id: string;
+    title: string;
+    content: string;
+    excerpt?: string;
+    mainImage?: string;
+    imageGallery?: string[];
+    videoGallery?: string[];
+    publishedAt?: string;
+    sortOrder?: number;
+    projectId?: string;
+    projectName?: string;
+    edificeId?: string;
+    edificeName?: string;
+    unitId?: string;
+    unitName?: string;
+};
+
+export type MarketingStoriesResponse = {
+    stories: MarketingStory[];
+    total: number;
+};
+
+export type MarketingStorySingleResponse = {
+    story: MarketingStory;
 };

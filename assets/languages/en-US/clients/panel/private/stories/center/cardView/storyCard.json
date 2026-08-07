@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/center/cardView/storyCard.tsx",
+  "published": "Published",
+  "draft": "Draft",
+  "fields": {
+    "name": "Code",
+    "published": "Status",
+    "publishedAt": "Published date",
+    "project": "Project",
+    "edifice": "Edifice",
+    "unit": "Unit"
+  }
+}

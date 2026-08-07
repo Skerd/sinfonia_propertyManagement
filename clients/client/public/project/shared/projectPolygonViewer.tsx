@@ -139,6 +139,7 @@ function ProjectPolygonViewer({
                 dashboard
                 borderless
                 disabled
+                hideControls
                 imageUrl={imageUrl}
                 phantomPoints={phantomPoints}
                 phantomHoverContent={renderHover}

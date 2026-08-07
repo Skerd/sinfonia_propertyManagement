@@ -79,6 +79,9 @@
     "constructionUpdates": {
       "title": "Construction updates"
     },
+    "stories": {
+      "title": "Stories"
+    },
     "snags": {
       "title": "Snagging list"
     },

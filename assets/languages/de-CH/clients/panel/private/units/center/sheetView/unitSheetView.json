@@ -120,5 +120,7 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "featuredOnHomepage": "Featured",
+  "featuredOnHomepageTooltip": "Wird im Featured-Bereich der öffentlichen Startseite angezeigt"
 }

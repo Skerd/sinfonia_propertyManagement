@@ -6,18 +6,20 @@ import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/d
 import HeroSection from "@propertyManagementModule/clients/client/dyeus/home/sections/heroSection.tsx";
 import IntroSection from "@propertyManagementModule/clients/client/dyeus/home/sections/introSection.tsx";
 import ImagerySection from "@propertyManagementModule/clients/client/dyeus/home/sections/imagerySection.tsx";
-import AmenitiesSection from "@propertyManagementModule/clients/client/dyeus/home/sections/amenitiesSection.tsx";
+import FeaturesTickerSection from "@propertyManagementModule/clients/client/dyeus/home/sections/featuresTickerSection.tsx";
 import FeaturedResidencesSection from "@propertyManagementModule/clients/client/dyeus/home/sections/featuredResidencesSection.tsx";
+import AmenitiesSection from "@propertyManagementModule/clients/client/dyeus/home/sections/amenitiesSection.tsx";
 import LocationSection from "@propertyManagementModule/clients/client/dyeus/home/sections/locationSection.tsx";
 
 function HomePage() {
     return (
-        <DyeusPageShell nodeId="44:2" nodeName="Home">
+        <DyeusPageShell nodeId="287:12" nodeName="Home">
             <HeroSection />
             <IntroSection />
             <ImagerySection />
-            <AmenitiesSection />
+            <FeaturesTickerSection />
             <FeaturedResidencesSection />
+            <AmenitiesSection />
             <LocationSection />
             <DyeusFooter />
         </DyeusPageShell>

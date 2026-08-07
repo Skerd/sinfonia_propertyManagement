@@ -34,6 +34,9 @@ const ConstructionUpdateSheetViewLazy = lazy(
             "@propertyManagementModule/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx"
         ),
 );
+const StorySheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/stories/center/sheetView/storySheetView.tsx"),
+);
 const SnagSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/snags/center/sheetView/snagSheetView.tsx"),
 );
@@ -242,6 +245,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#PaymentPlanCard": PaymentPlanCard,
         "#ProjectSheetView": ProjectSheetViewLazy,
         "#ConstructionUpdateSheetView": ConstructionUpdateSheetViewLazy,
+        "#StorySheetView": StorySheetViewLazy,
         "#SnagSheetView": SnagSheetViewLazy,
         "#ProjectDocumentSheetView": ProjectDocumentSheetViewLazy,
         "#PermitSheetView": PermitSheetViewLazy,
@@ -391,6 +395,10 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#CommissionSheetView": {url: "/api/realEstate/commission/single", labelFields: ["name", "title"]},
         "#ConstructionUpdateSheetView": {
             url: "/api/realEstate/constructionUpdate/single",
+            labelFields: ["title", "name"],
+        },
+        "#StorySheetView": {
+            url: "/api/realEstate/story/single",
             labelFields: ["title", "name"],
         },
         "#SnagSheetView": {url: "/api/realEstate/snag/single", labelFields: ["title", "name"]},

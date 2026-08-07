@@ -1,19 +1,46 @@
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 
+const accessPoints = [
+    ["5 minutes from Main Road", "Immediate sea road access"],
+    ["3 minutes from Drymades Beach", "10 minutes from Palasë Beach"],
+    ["3 minutes from Dhermi Beach", "85 m from the Sea"],
+] as const;
+
 function LocationSection() {
     return (
-        <section className="relative min-h-[70vh] overflow-hidden">
-            <img src={dyeusAssets.coastline} alt="" className="absolute inset-0 size-full object-cover" />
-            <div className="absolute inset-0 bg-dyeus-ink/35" />
-            <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-[1440px] flex-col justify-end px-6 py-16 md:px-12 md:py-24">
-                <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-white/80">Location</p>
-                <h2 className="mt-4 max-w-2xl font-dyeus-serif text-4xl text-dyeus-white md:text-6xl">
-                    Easy access to everything
-                </h2>
-                <p className="mt-4 max-w-xl font-dyeus-sans text-base leading-relaxed text-dyeus-white/85">
-                    Nestled along an unspoiled stretch of coastline — close to clear waters, mountain light, and the
-                    rhythm of Mediterranean life.
-                </p>
+        <section className="relative overflow-hidden">
+            <div className="relative mx-auto max-w-[1728px] px-6 pb-10 pt-8 md:px-[60px]">
+                <div className="mx-auto flex max-w-[1178px] flex-col items-center gap-[22px]">
+                    <h2 className="text-center font-dyeus-serif text-[clamp(2.5rem,5vw,5rem)] font-bold leading-none text-dyeus-ink">
+                        Easy access to everything
+                    </h2>
+                    <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-16">
+                        {accessPoints.map((column) => (
+                            <div key={column[0]} className="flex flex-col gap-3">
+                                {column.map((item) => (
+                                    <div key={item} className="flex items-start gap-2.5">
+                                        <img
+                                            src={dyeusAssets.iconCheck}
+                                            alt=""
+                                            className="mt-0.5 size-7 shrink-0"
+                                        />
+                                        <p className="font-dyeus-serif text-lg leading-[1.1] text-dyeus-ink md:text-2xl">
+                                            {item}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative h-[60vh] min-h-[420px] w-full overflow-hidden md:h-[999px]">
+                <img
+                    src={dyeusAssets.locationCoast}
+                    alt=""
+                    className="absolute inset-0 size-full object-cover object-[center_30%]"
+                />
             </div>
         </section>
     );

@@ -84,7 +84,10 @@
     "saleCommissionRateLabel": "Sale Commission Rate (%)",
     "saleCommissionRatePlaceholder": "Enter sale commission rate",
     "reservationCommissionRateLabel": "Reservation Commission Rate (%)",
-    "reservationCommissionRatePlaceholder": "Enter reservation commission rate"
+    "reservationCommissionRatePlaceholder": "Enter reservation commission rate",
+    "featuredOnHomepageLabel": "Featured on homepage",
+    "featuredSortOrderLabel": "Featured sort order",
+    "featuredSortOrderPlaceholder": "0 = first"
   },
   "axios": {
     "start": {
@@ -107,5 +110,6 @@
   "formButtons": {
     "cancel": "Cancel",
     "submit": "Create Unit"
-  }
+  },
+  "homepageFeatured": "Homepage featured"
 }

@@ -1,15 +1,59 @@
-/**
- * Visual placeholders matching the Dyeus Figma mood (Mediterranean luxury).
- * Replace with exported Figma/MCP assets when the Figma plugin is available.
- */
+import heroBg from "@propertyManagementModule/assets/images/dyeus/hero-bg.png";
+import heroVideo from "@propertyManagementModule/assets/images/dyeus/hero-video.mp4";
+import logoHero from "@propertyManagementModule/assets/images/dyeus/logo-hero.png";
+import logoFooter from "@propertyManagementModule/assets/images/dyeus/logo-footer.png";
+import mandala from "@propertyManagementModule/assets/images/dyeus/mandala.png";
+import villaFeature from "@propertyManagementModule/assets/images/dyeus/villa-feature.png";
+import residenceC01 from "@propertyManagementModule/assets/images/dyeus/residence-c01.png";
+import residenceC04 from "@propertyManagementModule/assets/images/dyeus/residence-c04.png";
+import amenitySide from "@propertyManagementModule/assets/images/dyeus/amenity-side.png";
+import galleryLeft from "@propertyManagementModule/assets/images/dyeus/gallery-left.png";
+import galleryRight from "@propertyManagementModule/assets/images/dyeus/gallery-right.png";
+import locationCoast from "@propertyManagementModule/assets/images/dyeus/location-coast.jpg";
+import iconMenu from "@propertyManagementModule/assets/images/dyeus/icon-menu.svg";
+import iconLang from "@propertyManagementModule/assets/images/dyeus/icon-lang.svg";
+import iconFacebook from "@propertyManagementModule/assets/images/dyeus/icon-facebook.svg";
+import iconInstagram from "@propertyManagementModule/assets/images/dyeus/icon-instagram.svg";
+import iconPinterest from "@propertyManagementModule/assets/images/dyeus/icon-pinterest.svg";
+import lineFollow from "@propertyManagementModule/assets/images/dyeus/line-follow.svg";
+import dividerPillar from "@propertyManagementModule/assets/images/dyeus/divider-pillar.svg";
+import iconAvailable from "@propertyManagementModule/assets/images/dyeus/icon-available.svg";
+import iconCheck from "@propertyManagementModule/assets/images/dyeus/icon-check.svg";
+import iconArrowRight from "@propertyManagementModule/assets/images/dyeus/icon-arrow-right.svg";
+import iconBackTop from "@propertyManagementModule/assets/images/dyeus/icon-back-top.svg";
+
 export const dyeusAssets = {
-    hero: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80",
-    villaPool: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80",
-    terrace: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
-    interior: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
-    coastline: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80",
-    architecture: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
-    lounge: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
-    night: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cd7a?auto=format&fit=crop&w=2000&q=80",
-    lifestyle: "https://images.unsplash.com/photo-1502672265-ee1c6b024b3c?auto=format&fit=crop&w=1600&q=80",
+    heroBg,
+    heroVideo,
+    logoHero,
+    logoFooter,
+    mandala,
+    villaFeature,
+    residenceC01,
+    residenceC04,
+    amenitySide,
+    galleryLeft,
+    galleryRight,
+    locationCoast,
+    iconMenu,
+    iconLang,
+    iconFacebook,
+    iconInstagram,
+    iconPinterest,
+    lineFollow,
+    dividerPillar,
+    iconAvailable,
+    iconCheck,
+    iconArrowRight,
+    iconBackTop,
+    // Temporary aliases for non-home pages until those screens are cloned
+    hero: heroBg,
+    villaPool: villaFeature,
+    terrace: amenitySide,
+    interior: galleryLeft,
+    architecture: galleryRight,
+    lounge: residenceC01,
+    night: locationCoast,
+    coastline: locationCoast,
+    lifestyle: residenceC04,
 } as const;

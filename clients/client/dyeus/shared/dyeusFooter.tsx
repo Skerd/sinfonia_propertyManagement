@@ -1,31 +1,214 @@
+import {useState} from "react";
 import {Link} from "react-router-dom";
-import {dyeusMenuLinks} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusRouteMap.ts";
+import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
+
+const exploreLinks = [
+    {label: "About Us", to: "/about"},
+    {label: "Residences", to: "/residences"},
+    {label: "Gallery", to: "/gallery"},
+    {label: "Journal", to: "/journal"},
+] as const;
+
+const residenceLinks = [
+    "1+1 Sea View",
+    "2+1 Sea View",
+    "1+1 Mountain View",
+    "2+1 Mountain View",
+] as const;
+
+const followLinks = ["Instagram", "Facebook", "Linkedin"] as const;
+
+const moreLinks = [
+    {label: "Privacy Policy", to: "/privacy"},
+    {label: "Terms of Conditions", to: "/terms"},
+] as const;
+
+const footerLinkClassName =
+    "font-dyeus-serif text-xl leading-[1.2] text-dyeus-ink underline decoration-transparent underline-offset-4 transition-[color,text-decoration-color] duration-300 hover:text-dyeus-bronze hover:decoration-dyeus-bronze";
+
+function MandalaPattern() {
+    return (
+        <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-[100px] bottom-0 overflow-hidden opacity-40"
+        >
+            <div className="absolute inset-y-0 right-0 flex w-[70%] flex-col justify-start gap-4 pt-4">
+                {Array.from({length: 7}).map((_, row) => (
+                    <div key={row} className="flex gap-4">
+                        {Array.from({length: 16}).map((__, col) => (
+                            <div key={col} className="h-16 w-[62px] shrink-0 overflow-hidden">
+                                <img
+                                    src={dyeusAssets.mandala}
+                                    alt=""
+                                    className="relative left-[-43.58%] top-[-42.95%] h-[182.81%] w-[189.91%] max-w-none"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
+            <div
+                className="absolute inset-0"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(163.75deg, #f2eee6 55%, rgba(242, 238, 230, 0.85) 68%, rgba(242, 238, 230, 0) 86%)",
+                }}
+            />
+        </div>
+    );
+}
 
 function DyeusFooter() {
+    const [contactOpen, setContactOpen] = useState(false);
+
     return (
-        <footer className="bg-dyeus-ink text-dyeus-cream">
-            <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-24">
-                <p className="font-dyeus-serif text-[18vw] leading-none tracking-[0.08em] text-dyeus-cream/95 md:text-[12vw]">
-                    DYEUS
-                </p>
-                <div className="mt-10 flex flex-col gap-8 border-t border-white/15 pt-8 md:mt-14 md:flex-row md:items-start md:justify-between">
-                    <nav className="flex flex-wrap gap-x-6 gap-y-3">
-                        {dyeusMenuLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                className="font-dyeus-sans text-sm text-dyeus-cream/75 transition hover:text-dyeus-cream"
-                            >
+        <footer className="relative w-full overflow-hidden bg-dyeus-cream text-dyeus-ink">
+            <div className="w-full bg-dyeus-bronze">
+                <div className="mx-auto flex h-auto max-w-[1728px] flex-col items-start justify-between gap-4 px-6 py-5 md:h-[100px] md:flex-row md:items-center md:px-[61px] md:py-0">
+                    <p className="font-dyeus-serif text-[clamp(1.5rem,2.5vw,2.75rem)] font-bold leading-none text-dyeus-cream">
+                        Limited Availability. 24 of 67 Residences sold
+                    </p>
+                    <Link
+                        to="/contact"
+                        className="rounded-[4px] border border-[rgba(242,238,230,0.6)] px-6 py-3 font-dyeus-serif text-lg font-bold leading-[1.2] text-dyeus-cream transition-[background-color,border-color,color] duration-300 hover:border-dyeus-cream hover:bg-dyeus-cream hover:text-dyeus-bronze md:text-2xl"
+                    >
+                        Secure your residence
+                    </Link>
+                </div>
+            </div>
+
+            <div className="relative mx-auto min-h-[586px] max-w-[1728px] px-6 pb-8 pt-11 md:px-[61px]">
+                <MandalaPattern />
+
+                <div className="relative z-10 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-6">
+                    <div className="flex flex-col gap-3">
+                        <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
+                            Explore
+                        </p>
+                        {exploreLinks.map((link) => (
+                            <Link key={link.to} to={link.to} className={footerLinkClassName}>
                                 {link.label}
                             </Link>
                         ))}
-                    </nav>
-                    <div className="flex flex-col gap-2 font-dyeus-sans text-sm text-dyeus-cream/55">
-                        <p>Mediterranean coast · Albania</p>
-                        <p>© {new Date().getFullYear()} Dyeus Residence</p>
+                    </div>
+
+                    <div className="flex flex-col gap-3">
+                        <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
+                            Residences
+                        </p>
+                        {residenceLinks.map((label) => (
+                            <Link key={label} to="/residences" className={footerLinkClassName}>
+                                {label}
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className="flex flex-col gap-3">
+                        <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
+                            Follow us
+                        </p>
+                        {followLinks.map((label) => (
+                            <a key={label} href="#" className={footerLinkClassName}>
+                                {label}
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="flex flex-col gap-3">
+                        <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
+                            More
+                        </p>
+                        {moreLinks.map((link) => (
+                            <Link key={link.to} to={link.to} className={footerLinkClassName}>
+                                {link.label}
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className="col-span-2 flex w-full max-w-[401px] flex-col gap-3 md:col-span-1">
+                        <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
+                            Contact Us
+                        </p>
+                        <button
+                            type="button"
+                            onClick={() => setContactOpen(true)}
+                            className="flex w-full cursor-pointer items-center justify-between gap-2.5 border-b border-dyeus-ink p-3 font-dyeus-serif text-xl leading-[1.2] text-dyeus-ink transition-colors duration-300 hover:text-dyeus-bronze"
+                        >
+                            <span>Get in touch</span>
+                            <img src={dyeusAssets.iconArrowRight} alt="" className="size-6" />
+                        </button>
                     </div>
                 </div>
+
+                <div className="relative z-10 mt-16 md:mt-[180px]">
+                    <Link
+                        to="/"
+                        aria-label="Dyeus home"
+                        className="block font-dyeus-serif text-[clamp(3.75rem,10vw,8.625rem)] font-light leading-none tracking-[0.18em] text-dyeus-ink"
+                    >
+                        DYEUS
+                    </Link>
+                </div>
+
+                <div className="relative z-10 mt-8 flex flex-col gap-4 md:mt-6 md:flex-row md:items-center">
+                    <p className="font-dyeus-serif text-xl text-dyeus-ink md:min-w-[420px]">
+                        © All rights reserved Dyeus Residences
+                    </p>
+                    <button
+                        type="button"
+                        onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}
+                        className="group flex items-center gap-3 font-dyeus-serif text-xl text-dyeus-ink transition-colors duration-300 hover:text-dyeus-bronze md:absolute md:left-1/2 md:-translate-x-1/2"
+                    >
+                        <img
+                            src={dyeusAssets.iconBackTop}
+                            alt=""
+                            className="size-4 transition-transform duration-300 group-hover:-translate-y-1 cursor-pointer"
+                        />
+                        <span className="underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-300 group-hover:decoration-dyeus-bronze cursor-pointer">
+                            Back to top
+                        </span>
+                    </button>
+                </div>
             </div>
+
+            {contactOpen ? (
+                <div
+                    className="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4"
+                    role="presentation"
+                    onClick={() => setContactOpen(false)}
+                >
+                    <div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="dyeus-footer-contact-title"
+                        className="w-full max-w-xl overflow-visible bg-dyeus-cream p-6 shadow-lg md:p-8"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <div className="flex items-start justify-between gap-4">
+                            <div>
+                                <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">
+                                    Contact
+                                </p>
+                                <h2
+                                    id="dyeus-footer-contact-title"
+                                    className="mt-2 font-dyeus-serif text-3xl md:text-4xl"
+                                >
+                                    Begin the conversation
+                                </h2>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setContactOpen(false)}
+                                className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
+                            >
+                                Close
+                            </button>
+                        </div>
+                        <DyeusMarketingContactForm className="mt-6" />
+                    </div>
+                </div>
+            ) : null}
         </footer>
     );
 }

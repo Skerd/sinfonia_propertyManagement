@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/editStory.tsx",
+  "title": "Edit Story",
+  "description": "Update journal story content and media",
+  "generalInfo": "Story Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice (optional)",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit (optional)",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter story title",
+    "excerptLabel": "Excerpt",
+    "excerptPlaceholder": "Short teaser shown on the journal card",
+    "contentLabel": "Content",
+    "contentPlaceholder": "Write the full story content",
+    "mainImageLabel": "Main image",
+    "imageGalleryLabel": "Image gallery",
+    "videoGalleryLabel": "Video gallery",
+    "publishedLabel": "Published",
+    "publishedAtLabel": "Published date",
+    "publishedAtPlaceholder": "Select date",
+    "sortOrderLabel": "Sort order",
+    "sortOrderPlaceholder": "0"
+  },
+  "axios": {
+    "start": { "title": "Saving story", "time": 3000 },
+    "success": { "title": "Story updated!", "time": 3000 },
+    "error": { "title": "Could not update story, please try again!", "time": 3000 }
+  },
+  "formHeader": { "title": "Edit Story", "description": "Update journal story content and media" },
+  "formButtons": { "cancel": "Cancel", "submit": "Save Changes" }
+}

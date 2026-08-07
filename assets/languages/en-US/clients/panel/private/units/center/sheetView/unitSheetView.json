@@ -120,5 +120,7 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "featuredOnHomepage": "Featured",
+  "featuredOnHomepageTooltip": "Shown in the public homepage featured residences section"
 }

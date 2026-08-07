@@ -91,7 +91,10 @@
     "saleCommissionRateLabel": "Komisioni i shitjes (%)",
     "saleCommissionRatePlaceholder": "0–100, opsionale",
     "reservationCommissionRateLabel": "komisioni i rezervimit (%)",
-    "reservationCommissionRatePlaceholder": "0–100, opsionale"
+    "reservationCommissionRatePlaceholder": "0–100, opsionale",
+    "featuredOnHomepageLabel": "I veçuar në faqen kryesore",
+    "featuredSortOrderLabel": "Renditja e veçuar",
+    "featuredSortOrderPlaceholder": "0 = i pari"
   },
   "axios": {
     "start": {
@@ -114,5 +117,6 @@
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Ruaj Ndryshimet"
-  }
+  },
+  "homepageFeatured": "I veçuar në faqen kryesore"
 }

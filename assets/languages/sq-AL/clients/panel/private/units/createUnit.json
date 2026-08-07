@@ -84,7 +84,10 @@
     "saleCommissionRateLabel": "Norma e komisionit të shitjes (%)",
     "saleCommissionRatePlaceholder": "Futni normën e komisionit të shitjes",
     "reservationCommissionRateLabel": "Norma e komisionit të rezervimit (%)",
-    "reservationCommissionRatePlaceholder": "Futni tarifën e komisionit të rezervimit"
+    "reservationCommissionRatePlaceholder": "Futni tarifën e komisionit të rezervimit",
+    "featuredOnHomepageLabel": "I veçuar në faqen kryesore",
+    "featuredSortOrderLabel": "Renditja e veçuar",
+    "featuredSortOrderPlaceholder": "0 = i pari"
   },
   "axios": {
     "start": {
@@ -107,5 +110,6 @@
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Krijo njësi"
-  }
+  },
+  "homepageFeatured": "I veçuar në faqen kryesore"
 }

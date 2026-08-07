@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/createStory.tsx",
+  "title": "Add Story",
+  "description": "Create a journal story for a project, edifice, or unit",
+  "generalInfo": "Story Details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "Select edifice (optional)",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "Select unit (optional)",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter story title",
+    "excerptLabel": "Excerpt",
+    "excerptPlaceholder": "Short teaser shown on the journal card",
+    "contentLabel": "Content",
+    "contentPlaceholder": "Write the full story content",
+    "mainImageLabel": "Main image",
+    "imageGalleryLabel": "Image gallery",
+    "videoGalleryLabel": "Video gallery",
+    "publishedLabel": "Published",
+    "publishedAtLabel": "Published date",
+    "publishedAtPlaceholder": "Select date",
+    "sortOrderLabel": "Sort order",
+    "sortOrderPlaceholder": "0"
+  },
+  "axios": {
+    "start": { "title": "Saving story", "time": 3000 },
+    "success": { "title": "Story saved!", "time": 3000 },
+    "error": { "title": "Could not save story, please try again!", "time": 3000 }
+  },
+  "formHeader": { "title": "Add Story", "description": "Create a journal story for a project, edifice, or unit" },
+  "formButtons": { "cancel": "Cancel", "submit": "Save Story" }
+}

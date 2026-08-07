@@ -1,15 +1,14 @@
-import {useEffect, useRef, useState, type FormEvent} from "react";
+import {useEffect, useRef, useState} from "react";
 import {compose} from "redux";
 import {Link, useSearchParams} from "react-router-dom";
-import {toast} from "sonner";
 import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import DyeusPageShell from "@propertyManagementModule/clients/client/dyeus/shared/dyeusPageShell.tsx";
 import DyeusHeader from "@propertyManagementModule/clients/client/dyeus/shared/dyeusHeader.tsx";
 import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/dyeusFooter.tsx";
+import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
@@ -23,12 +22,6 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
     const unit = data?.unit;
     const requestedKeyRef = useRef("");
     const [contactOpen, setContactOpen] = useState(false);
-    const [name, setName] = useState("");
-    const [surname, setSurname] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [message, setMessage] = useState("");
-    const [submitting, setSubmitting] = useState(false);
 
     useEffect(() => {
         const requestedKey = `${projectId}:${unitId}`;
@@ -44,35 +37,7 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
 
     const gallery = unit?.imageGallery?.length
         ? unit.imageGallery
-        : [unit?.floorPlanImage, dyeusAssets.interior, dyeusAssets.terrace].filter(Boolean) as string[];
-
-    const submitEnquiry = async (event: FormEvent) => {
-        event.preventDefault();
-        setSubmitting(true);
-        try {
-            await apiClient.post("/api/realEstate/marketingContact", {
-                name,
-                surname,
-                email,
-                phone,
-                message: message || `Enquiry for unit ${unit?.name ?? unitId}`,
-                interest: "reservation",
-                projectInterest: projectId || undefined,
-                unitInterest: unitId || undefined,
-            });
-            toast.success("Enquiry sent.");
-            setContactOpen(false);
-            setName("");
-            setSurname("");
-            setEmail("");
-            setPhone("");
-            setMessage("");
-        } catch {
-            toast.error("Could not send enquiry.");
-        } finally {
-            setSubmitting(false);
-        }
-    };
+        : [unit?.floorPlanImage, dyeusAssets.villaFeature, dyeusAssets.amenitySide].filter(Boolean) as string[];
 
     return (
         <DyeusPageShell nodeId="44:property" nodeName="Property">
@@ -99,7 +64,7 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                             <div>
                                 <div className="relative aspect-[16/11] overflow-hidden bg-dyeus-sand">
                                     <img
-                                        src={gallery[0] || dyeusAssets.interior}
+                                        src={gallery[0] || dyeusAssets.villaFeature}
                                         alt=""
                                         className="size-full object-cover"
                                     />
@@ -163,14 +128,14 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                 </div>
             </div>
 
-            {contactOpen && (
+            {contactOpen && unit ? (
                 <div className="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4">
-                    <form
-                        onSubmit={submitEnquiry}
-                        className="w-full max-w-md bg-dyeus-cream p-6 shadow-lg md:p-8"
-                    >
+                    <div className="w-full max-w-md bg-dyeus-cream p-6 shadow-lg md:p-8">
                         <div className="flex items-start justify-between gap-4">
-                            <h2 className="font-dyeus-serif text-3xl">Request information</h2>
+                            <div>
+                                <h2 className="font-dyeus-serif text-3xl">Request information</h2>
+                                <p className="mt-1 font-dyeus-sans text-sm text-dyeus-ink-muted">{unit.name}</p>
+                            </div>
                             <button
                                 type="button"
                                 onClick={() => setContactOpen(false)}
@@ -179,56 +144,17 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                                 Close
                             </button>
                         </div>
-                        <div className="mt-6 flex flex-col gap-4">
-                            <input
-                                required
-                                placeholder="First name"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                className="border-b border-dyeus-border bg-transparent py-2 font-dyeus-sans outline-none"
-                            />
-                            <input
-                                required
-                                placeholder="Surname"
-                                value={surname}
-                                onChange={(e) => setSurname(e.target.value)}
-                                className="border-b border-dyeus-border bg-transparent py-2 font-dyeus-sans outline-none"
-                            />
-                            <input
-                                required
-                                type="email"
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="border-b border-dyeus-border bg-transparent py-2 font-dyeus-sans outline-none"
-                            />
-                            <input
-                                required
-                                type="tel"
-                                placeholder="Phone"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                className="border-b border-dyeus-border bg-transparent py-2 font-dyeus-sans outline-none"
-                            />
-                            <textarea
-                                required
-                                rows={4}
-                                placeholder="Message"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                className="border border-dyeus-border bg-transparent p-3 font-dyeus-sans outline-none"
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            disabled={submitting}
-                            className="mt-6 w-full bg-dyeus-ink py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream disabled:opacity-60"
-                        >
-                            {submitting ? "Sending…" : "Send"}
-                        </button>
-                    </form>
+                        <DyeusMarketingContactForm
+                            className="mt-6"
+                            lockInterestToReservation
+                            projectInterest={projectId}
+                            unitInterest={unitId}
+                            defaultMessage={`Enquiry for unit ${unit.name}`}
+                            submitLabel="Send"
+                        />
+                    </div>
                 </div>
-            )}
+            ) : null}
 
             <DyeusFooter />
         </DyeusPageShell>

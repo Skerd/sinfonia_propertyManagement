@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/index.tsx",
+  "title": "Stories",
+  "description": "Journal stories for projects, edifices, and units",
+  "createStory": "Add Story",
+  "noData": "No stories found",
+  "failTitle": "Failed to load stories",
+  "failDescription": "An error occurred while loading stories. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "createdAt": "Created At",
+    "createdBy": "Created By",
+    "deletedAt": "Deleted",
+    "deletedBy": "Deleted By",
+    "content": "Content",
+    "edifice": "Edifice",
+    "excerpt": "Excerpt",
+    "imageGallery": "Image gallery",
+    "mainImage": "Main image",
+    "name": "Reference",
+    "project": "Project",
+    "published": "Published",
+    "publishedAt": "Published At",
+    "sortOrder": "Sort order",
+    "title": "Title",
+    "unit": "Unit",
+    "updatedAt": "Updated At",
+    "videoGallery": "Video gallery"
+  }
+}
