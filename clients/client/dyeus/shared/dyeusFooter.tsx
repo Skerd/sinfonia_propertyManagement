@@ -1,20 +1,16 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
+import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusProjectId.ts";
+import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const exploreLinks = [
     {label: "About Us", to: "/about"},
     {label: "Residences", to: "/residences"},
     {label: "Gallery", to: "/gallery"},
     {label: "Journal", to: "/journal"},
-] as const;
-
-const residenceLinks = [
-    "1+1 Sea View",
-    "2+1 Sea View",
-    "1+1 Mountain View",
-    "2+1 Mountain View",
 ] as const;
 
 const followLinks = ["Instagram", "Facebook", "Linkedin"] as const;
@@ -26,6 +22,22 @@ const moreLinks = [
 
 const footerLinkClassName =
     "font-dyeus-serif text-xl leading-[1.2] text-dyeus-ink underline decoration-transparent underline-offset-4 transition-[color,text-decoration-color] duration-300 hover:text-dyeus-bronze hover:decoration-dyeus-bronze";
+
+type CatalogResponse = {
+    projects?: MarketingProject[];
+};
+
+type AvailabilityStats = {
+    soldUnitCount: number;
+    unitCount: number;
+};
+
+function formatAvailabilityBanner(stats: AvailabilityStats | null): string {
+    if (!stats || stats.unitCount <= 0) {
+        return "Limited Availability";
+    }
+    return `Limited Availability. ${stats.soldUnitCount} of ${stats.unitCount} Residences sold`;
+}
 
 function MandalaPattern() {
     return (
@@ -61,13 +73,53 @@ function MandalaPattern() {
 
 function DyeusFooter() {
     const [contactOpen, setContactOpen] = useState(false);
+    const {projectId, loading: resolvingProject} = useDyeusProjectId();
+    const [availability, setAvailability] = useState<AvailabilityStats | null>(null);
+
+    useEffect(() => {
+        if (!projectId) {
+            setAvailability(null);
+            return;
+        }
+
+        let cancelled = false;
+        (async () => {
+            try {
+                const res = await apiClient.post<CatalogResponse>(
+                    "/api/realEstate/marketingProjectsCatalog",
+                    {},
+                );
+                if (cancelled) return;
+                const project = (res.data.projects ?? []).find((item) => item._id === projectId);
+                if (!project || project.unitCount == null) {
+                    setAvailability(null);
+                    return;
+                }
+                setAvailability({
+                    unitCount: project.unitCount,
+                    soldUnitCount: project.soldUnitCount ?? 0,
+                });
+            } catch {
+                if (!cancelled) setAvailability(null);
+            }
+        })();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [projectId]);
+
+    const availabilityLabel =
+        resolvingProject && !availability
+            ? "Limited Availability"
+            : formatAvailabilityBanner(availability);
 
     return (
         <footer className="relative w-full overflow-hidden bg-dyeus-cream text-dyeus-ink">
             <div className="w-full bg-dyeus-bronze">
                 <div className="mx-auto flex h-auto max-w-[1728px] flex-col items-start justify-between gap-4 px-6 py-5 md:h-[100px] md:flex-row md:items-center md:px-[61px] md:py-0">
                     <p className="font-dyeus-serif text-[clamp(1.5rem,2.5vw,2.75rem)] font-bold leading-none text-dyeus-cream">
-                        Limited Availability. 24 of 67 Residences sold
+                        {availabilityLabel}
                     </p>
                     <Link
                         to="/contact"
@@ -97,11 +149,9 @@ function DyeusFooter() {
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
                             Residences
                         </p>
-                        {residenceLinks.map((label) => (
-                            <Link key={label} to="/residences" className={footerLinkClassName}>
-                                {label}
-                            </Link>
-                        ))}
+                        <Link to="/residences" className={footerLinkClassName}>
+                            View all residences
+                        </Link>
                     </div>
 
                     <div className="flex flex-col gap-3">

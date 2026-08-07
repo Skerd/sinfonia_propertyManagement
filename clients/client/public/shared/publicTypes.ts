@@ -35,6 +35,7 @@ export type MarketingProject = {
     status?: string;
     unitCount?: number;
     availableUnitCount?: number;
+    soldUnitCount?: number;
     edificeCount?: number;
     floorCount?: number;
     propertyTypes?: PropertyTypeId[];
@@ -97,6 +98,7 @@ export type MarketingEdificeListItem = {
     constructors?: string[];
     unitCount?: number;
     availableUnitCount?: number;
+    soldUnitCount?: number;
     floorsCoordinates?: MarketingPolygonItem[];
     floors?: MarketingFloorListItem[];
 };
