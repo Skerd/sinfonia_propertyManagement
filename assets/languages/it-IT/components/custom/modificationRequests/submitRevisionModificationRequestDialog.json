@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/submitRevisionModificationRequestDialog.tsx",
+  "submitRevisionTitle": "Invia revisione",
+  "submitRevisionConfirmTitle": "Invia revisione",
+  "submitRevisionConfirmDescription": "Rimanda questa richiesta alla coda di revisione {stage}.",
+  "submitRevisionConfirmButton": "Invia",
+  "architectStage": "Architetto",
+  "engineerStage": "Ingegnere",
+  "cancel": "Annulla",
+  "axios": {
+    "start": {
+      "title": "Invio revisione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Revisione inviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare la revisione",
+      "time": 3000
+    }
+  }
+}

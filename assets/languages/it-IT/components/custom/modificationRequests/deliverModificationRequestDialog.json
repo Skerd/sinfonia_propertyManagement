@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/deliverModificationRequestDialog.tsx",
+  "title": "Modifica consegnata",
+  "deliverConfirmTitle": "Segna modifica come consegnata",
+  "deliverConfirmDescription": "Questo segnerà la richiesta di modifica come completata e consegnata. È l'ultimo passo del flusso di lavoro.",
+  "notesLabel": "Note di consegna",
+  "notesPlaceholder": "Inserisci eventuali note di consegna (facoltativo)",
+  "inspectionsLabel": "Collega ispezioni",
+  "mediaLabel": "Allegati di consegna",
+  "addFile": "Aggiungi file",
+  "selectInspectionsPlaceholder": "Seleziona le ispezioni da collegare...",
+  "searchInspections": "Cerca ispezioni...",
+  "noInspectionsFound": "Nessuna ispezione trovata per questa unità",
+  "cancel": "Annulla",
+  "confirmButton": "Segna come consegnata",
+  "axios": {
+    "start": {
+      "title": "Registrazione consegna…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Consegna registrata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile registrare la consegna",
+      "time": 3000
+    }
+  }
+}

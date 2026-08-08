@@ -1,0 +1,71 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/createModificationRequest.tsx",
+  "title": "Crea richiesta di modifica",
+  "description": "Crea una nuova richiesta di modifica",
+  "unitSelection": "Selezione unità",
+  "generalInfo": "Informazioni generali",
+  "details": "Dettagli",
+  "errorTitle": "Impossibile caricare l'unità",
+  "errorDescription": "Riprova.",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Seleziona piano",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità",
+    "unitRequired": "L'unità è obbligatoria",
+    "requestedByLabel": "Richiesto da",
+    "requestedByPlaceholder": "Seleziona cliente",
+    "requestedByRequired": "Il cliente è obbligatorio",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Inserisci il titolo della richiesta",
+    "titleRequired": "Il titolo è obbligatorio",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci una descrizione dettagliata",
+    "descriptionRequired": "La descrizione è obbligatoria",
+    "constructionTypeLabel": "Tipo di costruzione",
+    "constructionTypePlaceholder": "Seleziona tipo",
+    "constructionTypeRequired": "Il tipo di costruzione è obbligatorio",
+    "constructionTypeOption": {
+      "materials": "Materiali",
+      "room_division": "Divisione ambienti",
+      "flooring": "Pavimentazione",
+      "utilities": "Impianti",
+      "structural": "Strutturale",
+      "electrical": "Elettrico",
+      "plumbing": "Idraulica",
+      "hvac": "HVAC",
+      "cosmetic": "Estetico",
+      "other": "Altro"
+    },
+    "materialsLabel": "Materiali",
+    "materialsPlaceholder": "Aggiungi materiale",
+    "specificationsLabel": "Specifiche",
+    "specificationsPlaceholder": "Inserisci le specifiche tecniche"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione richiesta di modifica",
+      "time": 3000
+    },
+    "success": {
+      "title": "Richiesta di modifica creata con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la richiesta di modifica, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea richiesta di modifica",
+    "description": "Crea una nuova richiesta di modifica"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea richiesta"
+  }
+}

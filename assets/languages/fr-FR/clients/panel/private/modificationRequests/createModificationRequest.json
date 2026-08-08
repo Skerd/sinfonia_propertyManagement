@@ -1,0 +1,71 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/createModificationRequest.tsx",
+  "title": "Créer une demande de modification",
+  "description": "Créer une nouvelle demande de modification",
+  "unitSelection": "Sélection de l'unité",
+  "generalInfo": "Informations générales",
+  "details": "Détails",
+  "errorTitle": "Impossible de charger l'unité",
+  "errorDescription": "Veuillez réessayer.",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Sélectionner un bâtiment",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Sélectionner un étage",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité",
+    "unitRequired": "L'unité est obligatoire",
+    "requestedByLabel": "Demandé par",
+    "requestedByPlaceholder": "Sélectionner un client",
+    "requestedByRequired": "Le client est obligatoire",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Saisir le titre de la demande",
+    "titleRequired": "Le titre est obligatoire",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir une description détaillée",
+    "descriptionRequired": "La description est obligatoire",
+    "constructionTypeLabel": "Type de construction",
+    "constructionTypePlaceholder": "Sélectionner un type",
+    "constructionTypeRequired": "Le type de construction est obligatoire",
+    "constructionTypeOption": {
+      "materials": "Matériaux",
+      "room_division": "Division des pièces",
+      "flooring": "Revêtement de sol",
+      "utilities": "Réseaux",
+      "structural": "Structurel",
+      "electrical": "Électricité",
+      "plumbing": "Plomberie",
+      "hvac": "CVC",
+      "cosmetic": "Esthétique",
+      "other": "Autre"
+    },
+    "materialsLabel": "Matériaux",
+    "materialsPlaceholder": "Ajouter un matériau",
+    "specificationsLabel": "Spécifications",
+    "specificationsPlaceholder": "Saisir les spécifications techniques"
+  },
+  "axios": {
+    "start": {
+      "title": "Création de la demande de modification",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de modification créée avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "La demande de modification n'a pas pu être créée, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une demande de modification",
+    "description": "Créer une nouvelle demande de modification"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer la demande"
+  }
+}

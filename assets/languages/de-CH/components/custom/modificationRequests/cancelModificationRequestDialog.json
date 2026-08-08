@@ -1,23 +1,23 @@
 {
   "path": "src/modules/propertyManagement/components/custom/modificationRequests/cancelModificationRequestDialog.tsx",
-  "title": "Abbrechen Antrag",
-  "cancelConfirmTitle": "Abbrechen Änderung Antrag",
-  "cancelConfirmDescription": "Sind sie sicher sie want bis abbrechen diese änderung antrag? Bitte provide a grund für annullierung.",
+  "title": "Antrag abbrechen",
+  "cancelConfirmTitle": "Änderungsantrag abbrechen",
+  "cancelConfirmDescription": "Sind Sie sicher, dass Sie diesen Änderungsantrag abbrechen möchten? Bitte geben Sie einen Annullierungsgrund an.",
   "cancellationReasonLabel": "Annullierungsgrund",
-  "cancellationReasonPlaceholder": "Die grund für cancelling diese antrag... eingeben",
+  "cancellationReasonPlaceholder": "Grund für die Annullierung dieses Antrags eingeben...",
   "cancel": "Abbrechen",
-  "confirmCancel": "Abbrechen Antrag",
+  "confirmCancel": "Antrag abbrechen",
   "axios": {
     "start": {
-      "title": "Cancelling antrag…",
+      "title": "Antrag wird abgebrochen…",
       "time": 3000
     },
     "success": {
-      "title": "Änderung antrag annulliert",
+      "title": "Änderungsantrag annulliert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht abbrechen antrag",
+      "title": "Antrag konnte nicht abgebrochen werden",
       "time": 3000
     }
   }

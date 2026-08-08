@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/submitRevisionModificationRequestDialog.tsx",
+  "submitRevisionTitle": "Soumettre la révision",
+  "submitRevisionConfirmTitle": "Soumettre la révision",
+  "submitRevisionConfirmDescription": "Renvoyer cette demande dans la file d'examen {stage}.",
+  "submitRevisionConfirmButton": "Soumettre",
+  "architectStage": "Architecte",
+  "engineerStage": "Ingénieur",
+  "cancel": "Annuler",
+  "axios": {
+    "start": {
+      "title": "Soumission de la révision…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Révision soumise",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de soumettre la révision",
+      "time": 3000
+    }
+  }
+}

@@ -1,46 +1,46 @@
 {
   "path": "src/modules/propertyManagement/components/custom/modificationRequests/financeModificationRequestDialog.tsx",
   "title": "Finanzen",
-  "description": "Kosten breakdown und finanzen informationen hinzufügen",
-  "confirmButton": "Submit Finanzen Details",
+  "description": "Kostenaufschlüsselung und Finanzinformationen hinzufügen",
+  "confirmButton": "Finanzdetails einreichen",
   "form": {
-    "totalCostLabel": "Total Kosten",
-    "totalCostPlaceholder": "Total kosten eingeben",
-    "totalCostRequired": "Total kosten ist erforderlich",
+    "totalCostLabel": "Gesamtkosten",
+    "totalCostPlaceholder": "Gesamtkosten eingeben",
+    "totalCostRequired": "Gesamtkosten sind erforderlich",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
     "currencyRequired": "Währung ist erforderlich",
-    "costBreakdownLabel": "Kosten Breakdown",
+    "costBreakdownLabel": "Kostenaufschlüsselung",
     "itemLabel": "Position",
     "costLabel": "Kosten",
-    "costPerItemLabel": "Kosten / position",
-    "lineTotalLabel": "Position total",
+    "costPerItemLabel": "Kosten / Position",
+    "lineTotalLabel": "Positionstotal",
     "quantityLabel": "Menge",
     "unitLabel": "Einheit",
-    "costPerUnitLabel": "Kosten per einheit",
+    "costPerUnitLabel": "Kosten pro Einheit",
     "addFile": "Datei hinzufügen",
-    "filesSelected": "Files selected",
-    "emptyBreakdownHint": "Keine position positionen yet",
-    "addLineItem": "Position position hinzufügen",
-    "notesLabel": "Finanzen Notizen",
-    "notesPlaceholder": "Finanzen notizen eingeben",
-    "estimatedCompletionDateLabel": "Estimated Fertigstellung Datum",
+    "filesSelected": "Dateien ausgewählt",
+    "emptyBreakdownHint": "Noch keine Positionen",
+    "addLineItem": "Position hinzufügen",
+    "notesLabel": "Finanznotizen",
+    "notesPlaceholder": "Finanznotizen eingeben",
+    "estimatedCompletionDateLabel": "Voraussichtliches Fertigstellungsdatum",
     "estimatedCompletionDatePlaceholder": "Datum auswählen",
-    "mediaLabel": "Dokumente (Invoices, Quotes)",
-    "breakdownTotal": "Breakdown total",
-    "difference": "Difference"
+    "mediaLabel": "Dokumente (Rechnungen, Offerten)",
+    "breakdownTotal": "Aufschlüsselungs-Total",
+    "difference": "Differenz"
   },
   "axios": {
     "start": {
-      "title": "Submitting finanzen entscheid…",
+      "title": "Finanzentscheid wird eingereicht…",
       "time": 3000
     },
     "success": {
-      "title": "Finanzen entscheid eingereicht",
+      "title": "Finanzentscheid eingereicht",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht submit finanzen entscheid",
+      "title": "Finanzentscheid konnte nicht eingereicht werden",
       "time": 3000
     }
   }

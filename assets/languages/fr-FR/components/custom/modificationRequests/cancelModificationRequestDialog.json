@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/cancelModificationRequestDialog.tsx",
+  "title": "Annuler la demande",
+  "cancelConfirmTitle": "Annuler la demande de modification",
+  "cancelConfirmDescription": "Êtes-vous sûr de vouloir annuler cette demande de modification ? Veuillez indiquer un motif d'annulation.",
+  "cancellationReasonLabel": "Motif d'annulation",
+  "cancellationReasonPlaceholder": "Saisir le motif d'annulation de cette demande...",
+  "cancel": "Annuler",
+  "confirmCancel": "Annuler la demande",
+  "axios": {
+    "start": {
+      "title": "Annulation de la demande…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Demande de modification annulée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'annuler la demande",
+      "time": 3000
+    }
+  }
+}

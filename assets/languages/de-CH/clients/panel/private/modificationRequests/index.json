@@ -1,59 +1,59 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx",
   "title": "Änderungsanträge",
-  "description": "Kunde änderung requests verwalten",
-  "descriptionWithContext": "Änderung requests für diese einheit verwalten",
+  "description": "Kunden-Änderungsanträge verwalten",
+  "descriptionWithContext": "Änderungsanträge für diese Einheit verwalten",
   "createModificationRequest": "Antrag erstellen",
-  "noData": "Keine änderungsanträge gefunden",
+  "noData": "Keine Änderungsanträge gefunden",
   "failTitle": "Änderungsanträge konnten nicht geladen werden",
-  "failDescription": "Beim Laden von änderungsanträge ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "failDescription": "Beim Laden der Änderungsanträge ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
   "status": "Status",
   "deleted": "Gelöscht",
   "name": "Name",
   "requestTitle": "Bezeichnung",
-  "deliveredAt": "Delivered",
-  "constructionType": "Bau Typ",
-  "requestedBy": "Requested Von",
+  "deliveredAt": "Geliefert",
+  "constructionType": "Bautyp",
+  "requestedBy": "Angefragt von",
   "submittedAt": "Eingereicht am",
   "view": "Anzeigen",
   "fields": {
     "architectApproval": {
       "decision": "Entscheid",
-      "user": "Reviewed Von",
+      "user": "Geprüft von",
       "notes": "Notizen",
-      "reviewedAt": "Reviewed Am"
+      "reviewedAt": "Geprüft am"
     },
     "cancellationReason": "Annullierungsgrund",
     "cancelledAt": "Annulliert am",
     "ceoApproval": {
       "decision": "Entscheid",
-      "user": "Reviewed Von",
+      "user": "Geprüft von",
       "notes": "Notizen",
-      "reviewedAt": "Reviewed Am"
+      "reviewedAt": "Geprüft am"
     },
-    "clientCostApproval": "Kunde Kosten Freigabe",
-    "clientNotifiedAt": "Kunde Notified Am",
-    "completedAt": "Abgeschlossen Am",
-    "constructionType": "Bau Typ",
+    "clientCostApproval": "Kundenkostenfreigabe",
+    "clientNotifiedAt": "Kunde benachrichtigt am",
+    "completedAt": "Abgeschlossen am",
+    "constructionType": "Bautyp",
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von",
     "deliveryApproval": {
       "decision": "Entscheid",
-      "user": "Reviewed Von",
+      "user": "Geprüft von",
       "notes": "Notizen",
-      "reviewedAt": "Reviewed Am"
+      "reviewedAt": "Geprüft am"
     },
     "description": "Beschreibung",
     "engineerApproval": {
       "decision": "Entscheid",
-      "user": "Reviewed Von",
+      "user": "Geprüft von",
       "notes": "Notizen",
-      "reviewedAt": "Reviewed Am"
+      "reviewedAt": "Geprüft am"
     },
     "financeDetails": {
-      "totalCost": "Total Kosten",
+      "totalCost": "Gesamtkosten",
       "currency": "Währung",
       "costBreakdown": {
         "item": "Position",
@@ -63,44 +63,47 @@
       },
       "media": "Medien",
       "notes": "Notizen",
-      "estimatedCompletionDate": "Estimated Fertigstellung Datum"
+      "estimatedCompletionDate": "Voraussichtliches Fertigstellungsdatum"
     },
     "inspection": "Abnahme",
     "inspections": "Abnahmen",
-    "materials": "Engineer Materials",
+    "materials": "Ingenieur-Materialien",
     "name": "Name",
-    "notificationSent": "Benachrichtigung Sent",
-    "requestedBy": "Requested Von",
+    "notificationSent": "Benachrichtigung gesendet",
+    "requestedBy": "Angefragt von",
     "specifications": "Leistungsverzeichnisse",
-    "stageDueDate": "Phase Fällig Datum",
+    "stageDueDate": "Phasen-Fälligkeitsdatum",
     "status": "Status",
     "submittedAt": "Eingereicht am",
     "title": "Bezeichnung",
+    "project": "Projekt",
+    "edifice": "Gebäude",
+    "floor": "Geschoss",
     "unit": "Einheit",
     "updatedAt": "Aktualisiert am",
     "!enums": {
       "constructionType": {
-        "materials": "Materials",
-        "room_division": "Room Division",
-        "flooring": "Flooring",
-        "utilities": "Utilities",
+        "materials": "Materialien",
+        "room_division": "Raumaufteilung",
+        "flooring": "Bodenbelag",
+        "utilities": "Haustechnik",
         "structural": "Tragwerk",
-        "electrical": "Electrical",
-        "plumbing": "Plumbing",
-        "hvac": "HVAC",
-        "cosmetic": "Cosmetic",
+        "electrical": "Elektro",
+        "plumbing": "Sanitär",
+        "hvac": "HLK",
+        "cosmetic": "Kosmetik",
         "other": "Andere"
       },
       "status": {
-        "pending_architect": "Ausstehend Architect",
-        "pending_engineer": "Ausstehend Engineer",
+        "pending_architect": "Ausstehend Architekt",
+        "pending_engineer": "Ausstehend Ingenieur",
         "pending_ceo": "Ausstehend CEO",
-        "pending_architect_revision": "Ausstehend Architect Revision",
-        "pending_engineer_revision": "Ausstehend Engineer Revision",
+        "pending_architect_revision": "Ausstehend Architektenrevision",
+        "pending_engineer_revision": "Ausstehend Ingenieurrevision",
         "pending_finance": "Ausstehend Finanzen",
         "pending_client_approval": "Ausstehend Kundenfreigabe",
-        "finance_completed": "Finanzen Abgeschlossen",
-        "pending_delivery": "Ausstehend Delivery",
+        "finance_completed": "Finanzen abgeschlossen",
+        "pending_delivery": "Ausstehend Lieferung",
         "completed": "Abgeschlossen",
         "cancelled": "Storniert"
       },
@@ -145,7 +148,7 @@
         }
       },
       "source": {
-        "engineer_material": "Engineer Material",
+        "engineer_material": "Ingenieur-Material",
         "manual": "Manuell"
       }
     }

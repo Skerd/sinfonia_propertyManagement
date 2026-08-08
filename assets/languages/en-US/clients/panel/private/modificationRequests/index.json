@@ -76,6 +76,9 @@
     "status": "Status",
     "submittedAt": "Submitted At",
     "title": "Title",
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
     "unit": "Unit",
     "updatedAt": "Updated At",
     "!enums": {

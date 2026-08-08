@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/financeModificationRequestDialog.tsx",
+  "title": "Finanze",
+  "description": "Aggiungi dettaglio costi e informazioni finanziarie",
+  "confirmButton": "Invia dettagli finanziari",
+  "form": {
+    "totalCostLabel": "Costo totale",
+    "totalCostPlaceholder": "Inserisci costo totale",
+    "totalCostRequired": "Il costo totale è obbligatorio",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "currencyRequired": "La valuta è obbligatoria",
+    "costBreakdownLabel": "Dettaglio costi",
+    "itemLabel": "Voce",
+    "costLabel": "Costo",
+    "costPerItemLabel": "Costo / voce",
+    "lineTotalLabel": "Totale riga",
+    "quantityLabel": "Quantità",
+    "unitLabel": "Unità",
+    "costPerUnitLabel": "Costo per unità",
+    "addFile": "Aggiungi file",
+    "filesSelected": "file selezionati",
+    "emptyBreakdownHint": "Nessuna riga ancora",
+    "addLineItem": "Aggiungi riga",
+    "notesLabel": "Note finanziarie",
+    "notesPlaceholder": "Inserisci note finanziarie",
+    "estimatedCompletionDateLabel": "Data di completamento stimata",
+    "estimatedCompletionDatePlaceholder": "Seleziona data",
+    "mediaLabel": "Documenti (fatture, preventivi)",
+    "breakdownTotal": "Totale dettaglio",
+    "difference": "Differenza"
+  },
+  "axios": {
+    "start": {
+      "title": "Invio decisione finanziaria…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Decisione finanziaria inviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare la decisione finanziaria",
+      "time": 3000
+    }
+  }
+}

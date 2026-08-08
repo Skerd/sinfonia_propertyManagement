@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/deliverModificationRequestDialog.tsx",
+  "title": "Modification livrée",
+  "deliverConfirmTitle": "Marquer la modification comme livrée",
+  "deliverConfirmDescription": "Cela marquera la demande de modification comme terminée et livrée. Il s'agit de la dernière étape du flux de travail.",
+  "notesLabel": "Notes de livraison",
+  "notesPlaceholder": "Saisir des notes de livraison (facultatif)",
+  "inspectionsLabel": "Lier des inspections",
+  "mediaLabel": "Pièces jointes de livraison",
+  "addFile": "Ajouter un fichier",
+  "selectInspectionsPlaceholder": "Sélectionner les inspections à lier...",
+  "searchInspections": "Rechercher des inspections...",
+  "noInspectionsFound": "Aucune inspection trouvée pour cette unité",
+  "cancel": "Annuler",
+  "confirmButton": "Marquer comme livré",
+  "axios": {
+    "start": {
+      "title": "Enregistrement de la livraison…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Livraison enregistrée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'enregistrer la livraison",
+      "time": 3000
+    }
+  }
+}

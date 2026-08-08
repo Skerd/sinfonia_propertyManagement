@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx",
+  "title": "Approvazione costi cliente",
+  "description": "Esamina i dettagli finanziari e approva o rifiuta il costo proposto per questa richiesta di modifica.",
+  "totalCostLabel": "Costo totale proposto",
+  "decisionLabel": "Decisione",
+  "decisionPlaceholder": "Seleziona decisione...",
+  "approve": "Approva",
+  "reject": "Rifiuta",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Note facoltative sulla tua decisione...",
+  "cancel": "Annulla",
+  "confirmButton": "Conferma decisione",
+  "axios": {
+    "start": {
+      "title": "Invio decisione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Decisione inviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare la decisione",
+      "time": 3000
+    }
+  }
+}

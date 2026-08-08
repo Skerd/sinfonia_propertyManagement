@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/approveModificationRequestDialog.tsx",
+  "title": "Approuver",
+  "approveConfirmTitle": "Approuver la demande de modification",
+  "approveConfirmDescription": "Examinez et prenez une décision pour cette demande de modification à l'étape {stage}.",
+  "stageLabel": "Étape d'approbation",
+  "architectStage": "Architecte",
+  "engineerStage": "Ingénieur",
+  "ceoStage": "CEO",
+  "decisionLabel": "Décision",
+  "decisionPlaceholder": "Sélectionner une décision",
+  "materialsPlanLabel": "Plan des matériaux ingénieur",
+  "materialsPlanEmptyHint": "Aucun plan de matériaux disponible pour cette demande pour le moment.",
+  "materialsPlanAddPlaceholder": "Ajouter un matériau ingénieur",
+  "rejectReasonLabel": "Motif de refus",
+  "rejectReasonPlaceholder": "Sélectionner un motif de refus",
+  "rejectReasonDesign": "Conception",
+  "rejectReasonTechnical": "Technique",
+  "rejectReasonBudget": "Budget",
+  "rejectReasonOther": "Autre",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Saisir des notes d'approbation (facultatif)",
+  "mediaLabel": "Pièces jointes",
+  "addFile": "Ajouter un fichier",
+  "approve": "Approuver",
+  "reject": "Refuser",
+  "cancel": "Annuler",
+  "confirmButton": "Soumettre la décision",
+  "axios": {
+    "start": {
+      "title": "Soumission de la décision…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Décision soumise",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de soumettre la décision",
+      "time": 3000
+    }
+  }
+}

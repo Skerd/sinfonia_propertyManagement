@@ -1,19 +1,19 @@
 {
   "path": "src/modules/propertyManagement/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx",
-  "title": "Kunde Kosten Freigabe",
-  "description": "Prüfung die finanzen details und genehmigen oder ablehnen die proposed kosten für diese änderung antrag.",
-  "totalCostLabel": "Proposed Total Kosten",
+  "title": "Kundenkostenfreigabe",
+  "description": "Prüfen Sie die Finanzdetails und genehmigen oder lehnen Sie die vorgeschlagenen Kosten für diesen Änderungsantrag ab.",
+  "totalCostLabel": "Vorgeschlagene Gesamtkosten",
   "decisionLabel": "Entscheid",
-  "decisionPlaceholder": "Entscheid... auswählen",
+  "decisionPlaceholder": "Entscheid auswählen...",
   "approve": "Genehmigen",
   "reject": "Ablehnen",
   "notesLabel": "Notizen",
-  "notesPlaceholder": "Optional notizen about ihr entscheid...",
+  "notesPlaceholder": "Optionale Notizen zu Ihrem Entscheid...",
   "cancel": "Abbrechen",
-  "confirmButton": "Confirm Entscheid",
+  "confirmButton": "Entscheid bestätigen",
   "axios": {
     "start": {
-      "title": "Submitting entscheid…",
+      "title": "Entscheid wird eingereicht…",
       "time": 3000
     },
     "success": {
@@ -21,7 +21,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht submit entscheid",
+      "title": "Entscheid konnte nicht eingereicht werden",
       "time": 3000
     }
   }

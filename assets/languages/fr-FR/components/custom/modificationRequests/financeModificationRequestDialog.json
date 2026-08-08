@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/financeModificationRequestDialog.tsx",
+  "title": "Finances",
+  "description": "Ajouter le détail des coûts et les informations financières",
+  "confirmButton": "Soumettre les détails financiers",
+  "form": {
+    "totalCostLabel": "Coût total",
+    "totalCostPlaceholder": "Saisir le coût total",
+    "totalCostRequired": "Le coût total est obligatoire",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "currencyRequired": "La devise est obligatoire",
+    "costBreakdownLabel": "Détail des coûts",
+    "itemLabel": "Poste",
+    "costLabel": "Coût",
+    "costPerItemLabel": "Coût / poste",
+    "lineTotalLabel": "Total de la ligne",
+    "quantityLabel": "Quantité",
+    "unitLabel": "Unité",
+    "costPerUnitLabel": "Coût par unité",
+    "addFile": "Ajouter un fichier",
+    "filesSelected": "fichiers sélectionnés",
+    "emptyBreakdownHint": "Aucune ligne pour le moment",
+    "addLineItem": "Ajouter une ligne",
+    "notesLabel": "Notes financières",
+    "notesPlaceholder": "Saisir les notes financières",
+    "estimatedCompletionDateLabel": "Date d'achèvement estimée",
+    "estimatedCompletionDatePlaceholder": "Sélectionner une date",
+    "mediaLabel": "Documents (factures, devis)",
+    "breakdownTotal": "Total du détail",
+    "difference": "Différence"
+  },
+  "axios": {
+    "start": {
+      "title": "Soumission de la décision financière…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Décision financière soumise",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de soumettre la décision financière",
+      "time": 3000
+    }
+  }
+}

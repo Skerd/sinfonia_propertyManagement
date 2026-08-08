@@ -1,34 +1,34 @@
 {
   "path": "src/modules/propertyManagement/components/custom/modificationRequests/approveModificationRequestDialog.tsx",
   "title": "Genehmigen",
-  "approveConfirmTitle": "Genehmigen Änderung Antrag",
-  "approveConfirmDescription": "Prüfung und make a entscheid für diese änderung antrag am die {phase} phase.",
-  "stageLabel": "Freigabe Phase",
-  "architectStage": "Architect",
-  "engineerStage": "Engineer",
+  "approveConfirmTitle": "Änderungsantrag genehmigen",
+  "approveConfirmDescription": "Prüfen und entscheiden Sie über diesen Änderungsantrag in der Phase {stage}.",
+  "stageLabel": "Freigabephase",
+  "architectStage": "Architekt",
+  "engineerStage": "Ingenieur",
   "ceoStage": "CEO",
   "decisionLabel": "Entscheid",
   "decisionPlaceholder": "Entscheid auswählen",
-  "materialsPlanLabel": "Engineer Materials Plan",
-  "materialsPlanEmptyHint": "Keine materials plan verfügbar für diese antrag yet.",
-  "materialsPlanAddPlaceholder": "Engineer material position hinzufügen",
-  "rejectReasonLabel": "Ablehnen Grund",
-  "rejectReasonPlaceholder": "Ablehnen grund auswählen",
+  "materialsPlanLabel": "Ingenieur-Materialplan",
+  "materialsPlanEmptyHint": "Für diesen Antrag ist noch kein Materialplan verfügbar.",
+  "materialsPlanAddPlaceholder": "Ingenieur-Material hinzufügen",
+  "rejectReasonLabel": "Ablehnungsgrund",
+  "rejectReasonPlaceholder": "Ablehnungsgrund auswählen",
   "rejectReasonDesign": "Planung",
-  "rejectReasonTechnical": "Technical",
-  "rejectReasonBudget": "Kostenvoranschlag",
+  "rejectReasonTechnical": "Technisch",
+  "rejectReasonBudget": "Budget",
   "rejectReasonOther": "Andere",
   "notesLabel": "Notizen",
-  "notesPlaceholder": "Freigabe notizen (optional) eingeben",
-  "mediaLabel": "Attachments",
+  "notesPlaceholder": "Freigabenotizen eingeben (optional)",
+  "mediaLabel": "Anhänge",
   "addFile": "Datei hinzufügen",
   "approve": "Genehmigen",
   "reject": "Ablehnen",
   "cancel": "Abbrechen",
-  "confirmButton": "Submit Entscheid",
+  "confirmButton": "Entscheid einreichen",
   "axios": {
     "start": {
-      "title": "Submitting entscheid…",
+      "title": "Entscheid wird eingereicht…",
       "time": 3000
     },
     "success": {
@@ -36,7 +36,7 @@
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht submit entscheid",
+      "title": "Entscheid konnte nicht eingereicht werden",
       "time": 3000
     }
   }

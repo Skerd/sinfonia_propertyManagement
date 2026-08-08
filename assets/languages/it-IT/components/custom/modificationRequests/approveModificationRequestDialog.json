@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/modificationRequests/approveModificationRequestDialog.tsx",
+  "title": "Approva",
+  "approveConfirmTitle": "Approva richiesta di modifica",
+  "approveConfirmDescription": "Esamina e prendi una decisione per questa richiesta di modifica nella fase {stage}.",
+  "stageLabel": "Fase di approvazione",
+  "architectStage": "Architetto",
+  "engineerStage": "Ingegnere",
+  "ceoStage": "CEO",
+  "decisionLabel": "Decisione",
+  "decisionPlaceholder": "Seleziona decisione",
+  "materialsPlanLabel": "Piano materiali ingegnere",
+  "materialsPlanEmptyHint": "Nessun piano materiali disponibile per questa richiesta al momento.",
+  "materialsPlanAddPlaceholder": "Aggiungi materiale ingegnere",
+  "rejectReasonLabel": "Motivo di rifiuto",
+  "rejectReasonPlaceholder": "Seleziona motivo di rifiuto",
+  "rejectReasonDesign": "Progetto",
+  "rejectReasonTechnical": "Tecnico",
+  "rejectReasonBudget": "Budget",
+  "rejectReasonOther": "Altro",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Inserisci note di approvazione (facoltativo)",
+  "mediaLabel": "Allegati",
+  "addFile": "Aggiungi file",
+  "approve": "Approva",
+  "reject": "Rifiuta",
+  "cancel": "Annulla",
+  "confirmButton": "Invia decisione",
+  "axios": {
+    "start": {
+      "title": "Invio decisione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Decisione inviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare la decisione",
+      "time": 3000
+    }
+  }
+}

@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/createModificationRequest.tsx",
   "title": "Änderungsantrag erstellen",
-  "description": "A neu änderung antrag erstellen",
-  "unitSelection": "Einheit selection",
+  "description": "Neuen Änderungsantrag erstellen",
+  "unitSelection": "Einheitenauswahl",
   "generalInfo": "Allgemeine Informationen",
   "details": "Details",
-  "errorTitle": "Unable bis laden einheit",
+  "errorTitle": "Einheit konnte nicht geladen werden",
   "errorDescription": "Bitte versuchen Sie es erneut.",
   "form": {
     "projectLabel": "Projekt",
@@ -17,34 +17,34 @@
     "unitLabel": "Einheit",
     "unitPlaceholder": "Einheit auswählen",
     "unitRequired": "Einheit ist erforderlich",
-    "requestedByLabel": "Requested Von",
+    "requestedByLabel": "Angefragt von",
     "requestedByPlaceholder": "Kunde auswählen",
     "requestedByRequired": "Kunde ist erforderlich",
     "titleLabel": "Bezeichnung",
-    "titlePlaceholder": "Antrag bezeichnung eingeben",
+    "titlePlaceholder": "Antragsbezeichnung eingeben",
     "titleRequired": "Bezeichnung ist erforderlich",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "Detailed beschreibung eingeben",
+    "descriptionPlaceholder": "Detaillierte Beschreibung eingeben",
     "descriptionRequired": "Beschreibung ist erforderlich",
-    "constructionTypeLabel": "Bau Typ",
+    "constructionTypeLabel": "Bautyp",
     "constructionTypePlaceholder": "Typ auswählen",
-    "constructionTypeRequired": "Bau typ ist erforderlich",
+    "constructionTypeRequired": "Bautyp ist erforderlich",
     "constructionTypeOption": {
-      "materials": "Materials",
-      "room_division": "Room division",
-      "flooring": "Flooring",
-      "utilities": "Utilities",
+      "materials": "Materialien",
+      "room_division": "Raumaufteilung",
+      "flooring": "Bodenbelag",
+      "utilities": "Haustechnik",
       "structural": "Tragwerk",
-      "electrical": "Electrical",
-      "plumbing": "Plumbing",
-      "hvac": "HVAC",
-      "cosmetic": "Cosmetic",
+      "electrical": "Elektro",
+      "plumbing": "Sanitär",
+      "hvac": "HLK",
+      "cosmetic": "Kosmetik",
       "other": "Andere"
     },
-    "materialsLabel": "Materials",
+    "materialsLabel": "Materialien",
     "materialsPlaceholder": "Material hinzufügen",
     "specificationsLabel": "Leistungsverzeichnisse",
-    "specificationsPlaceholder": "Technical specifications eingeben"
+    "specificationsPlaceholder": "Technische Spezifikationen eingeben"
   },
   "axios": {
     "start": {
@@ -62,7 +62,7 @@
   },
   "formHeader": {
     "title": "Änderungsantrag erstellen",
-    "description": "A neu änderung antrag erstellen"
+    "description": "Neuen Änderungsantrag erstellen"
   },
   "formButtons": {
     "cancel": "Abbrechen",

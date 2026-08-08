@@ -41,9 +41,39 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
 
     const createPath = buildUrlWithExistingParams(window.location.href, "/realEstate/modificationRequests/create");
 
-    const extraFilters = useMemo(() => (unitId ? {unitId} : undefined), [unitId]);
+    const extraFilters = useMemo(() => (unitId ? {unit: unitId} : undefined), [unitId]);
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+            asExtraParam: true,
+        },
+        {
+            field: "edifice",
+            label: resolveLanguageKey("fields.edifice") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/edifice/select",
+            dependsOn: "project",
+            asExtraParam: true,
+        },
+        {
+            field: "floor",
+            label: resolveLanguageKey("fields.floor") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/floor/select",
+            dependsOn: ["edifice", "project"],
+            asExtraParam: true,
+        },
+        {
+            field: "unit",
+            label: resolveLanguageKey("fields.unit") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/unit/select",
+            dependsOn: ["floor", "edifice", "project"],
+        },
         {
             field: "status",
             label: resolveLanguageKey("fields.status") as string,
@@ -104,7 +134,6 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
             headerDescription={headerDescription}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
-            syncExtraFiltersKeys={["unitId"]}
             buildEditPath={buildModificationRequestEditPath}
             resolveLanguageKey={resolveLanguageKey}
             cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4, "mt-0.5")}

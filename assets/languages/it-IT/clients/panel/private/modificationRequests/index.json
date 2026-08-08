@@ -1,0 +1,159 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx",
+  "title": "Richieste di modifica",
+  "description": "Gestisci le richieste di modifica dei clienti",
+  "descriptionWithContext": "Gestisci le richieste di modifica di questa unità",
+  "createModificationRequest": "Crea richiesta",
+  "noData": "Nessuna richiesta di modifica trovata",
+  "failTitle": "Caricamento richieste di modifica non riuscito",
+  "failDescription": "Si è verificato un errore durante il caricamento delle richieste di modifica. Riprova.",
+  "status": "Stato",
+  "deleted": "Eliminato",
+  "name": "Nome",
+  "requestTitle": "Titolo",
+  "deliveredAt": "Consegnato",
+  "constructionType": "Tipo di costruzione",
+  "requestedBy": "Richiesto da",
+  "submittedAt": "Inviato il",
+  "view": "Visualizza",
+  "fields": {
+    "architectApproval": {
+      "decision": "Decisione",
+      "user": "Revisionato da",
+      "notes": "Note",
+      "reviewedAt": "Revisionato il"
+    },
+    "cancellationReason": "Motivo di annullamento",
+    "cancelledAt": "Annullato il",
+    "ceoApproval": {
+      "decision": "Decisione",
+      "user": "Revisionato da",
+      "notes": "Note",
+      "reviewedAt": "Revisionato il"
+    },
+    "clientCostApproval": "Approvazione costi cliente",
+    "clientNotifiedAt": "Cliente notificato il",
+    "completedAt": "Completato il",
+    "constructionType": "Tipo di costruzione",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "deliveryApproval": {
+      "decision": "Decisione",
+      "user": "Revisionato da",
+      "notes": "Note",
+      "reviewedAt": "Revisionato il"
+    },
+    "description": "Descrizione",
+    "engineerApproval": {
+      "decision": "Decisione",
+      "user": "Revisionato da",
+      "notes": "Note",
+      "reviewedAt": "Revisionato il"
+    },
+    "financeDetails": {
+      "totalCost": "Costo totale",
+      "currency": "Valuta",
+      "costBreakdown": {
+        "item": "Voce",
+        "cost": "Costo",
+        "quantity": "Quantità",
+        "unit": "Unità"
+      },
+      "media": "Media",
+      "notes": "Note",
+      "estimatedCompletionDate": "Data di completamento stimata"
+    },
+    "inspection": "Ispezione",
+    "inspections": "Ispezioni",
+    "materials": "Materiali ingegnere",
+    "name": "Nome",
+    "notificationSent": "Notifica inviata",
+    "requestedBy": "Richiesto da",
+    "specifications": "Specifiche",
+    "stageDueDate": "Scadenza fase",
+    "status": "Stato",
+    "submittedAt": "Inviato il",
+    "title": "Titolo",
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "constructionType": {
+        "materials": "Materiali",
+        "room_division": "Divisione ambienti",
+        "flooring": "Pavimentazione",
+        "utilities": "Impianti",
+        "structural": "Strutturale",
+        "electrical": "Elettrico",
+        "plumbing": "Idraulica",
+        "hvac": "HVAC",
+        "cosmetic": "Estetico",
+        "other": "Altro"
+      },
+      "status": {
+        "pending_architect": "In attesa architetto",
+        "pending_engineer": "In attesa ingegnere",
+        "pending_ceo": "In attesa CEO",
+        "pending_architect_revision": "In attesa revisione architetto",
+        "pending_engineer_revision": "In attesa revisione ingegnere",
+        "pending_finance": "In attesa finanze",
+        "pending_client_approval": "In attesa approvazione cliente",
+        "finance_completed": "Finanze completate",
+        "pending_delivery": "In attesa consegna",
+        "completed": "Completato",
+        "cancelled": "Annullato"
+      },
+      "decision": {
+        "approved": "Approvato",
+        "rejected": "Rifiutato",
+        "pending": "In attesa"
+      },
+      "architectApproval": {
+        "decision": {
+          "approved": "Approvato",
+          "rejected": "Rifiutato",
+          "pending": "In attesa"
+        }
+      },
+      "engineerApproval": {
+        "decision": {
+          "approved": "Approvato",
+          "rejected": "Rifiutato",
+          "pending": "In attesa"
+        }
+      },
+      "ceoApproval": {
+        "decision": {
+          "approved": "Approvato",
+          "rejected": "Rifiutato",
+          "pending": "In attesa"
+        }
+      },
+      "deliveryApproval": {
+        "decision": {
+          "approved": "Approvato",
+          "rejected": "Rifiutato",
+          "pending": "In attesa"
+        }
+      },
+      "clientCostApproval": {
+        "decision": {
+          "approved": "Approvato",
+          "rejected": "Rifiutato",
+          "pending": "In attesa"
+        }
+      },
+      "source": {
+        "engineer_material": "Materiale ingegnere",
+        "manual": "Manuale"
+      }
+    }
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "yes": "Sì",
+  "no": "No"
+}
