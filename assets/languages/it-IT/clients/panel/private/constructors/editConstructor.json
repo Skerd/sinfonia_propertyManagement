@@ -1,0 +1,91 @@
+{
+  "addAddress": "Aggiungi indirizzo",
+  "address": "Indirizzo",
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aggiornare il costruttore, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento costruttore"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Costruttore aggiornato con successo!"
+    }
+  },
+  "currentLogo": "Logo attuale",
+  "editDescription": "Modifica le informazioni del costruttore",
+  "editTitle": "Modifica costruttore",
+  "errorDescription": "Si è verificato un errore durante il caricamento del costruttore. Riprova.",
+  "errorTitle": "Impossibile caricare il costruttore",
+  "form": {
+    "cityLabel": "Città",
+    "cityPlaceholder": "Città",
+    "companyLabel": "Azienda",
+    "companyPlaceholder": "Seleziona azienda",
+    "companyRequired": "L’azienda è obbligatoria",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Paese",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci descrizione",
+    "emailInvalid": "Indirizzo email non valido",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Inserisci l’indirizzo email",
+    "latitudeLabel": "Latitudine",
+    "latitudePlaceholder": "Latitudine",
+    "logoLabel": "Logo",
+    "longitudeLabel": "Longitudine",
+    "longitudePlaceholder": "Longitudine",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome del costruttore",
+    "nameRequired": "Il nome è obbligatorio",
+    "partyTypeLabel": "Tipo di parte",
+    "partyTypePlaceholder": "Seleziona tipo di parte",
+    "partyTypeContractor": "Appaltatore",
+    "partyTypeArchitect": "Architetto",
+    "partyTypeEngineer": "Ingegnere",
+    "partyTypeQs": "Computista",
+    "partyTypePm": "Project manager",
+    "partyTypeSurveyor": "Geometra",
+    "partyTypeOther": "Altro",
+    "tradesLabel": "Mestieri",
+    "tradesPlaceholder": "Inserisci i mestieri",
+    "insuranceExpiryLabel": "Scadenza assicurazione",
+    "insuranceExpiryPlaceholder": "Seleziona la data di scadenza dell’assicurazione",
+    "performanceScoreLabel": "Punteggio prestazioni",
+    "performanceScorePlaceholder": "Inserisci il punteggio prestazioni",
+    "phoneNumberLabel": "Numero di telefono",
+    "phoneNumberPlaceholder": "Inserisci il numero di telefono",
+    "phoneNumberRequired": "Il numero di telefono è obbligatorio",
+    "postalCodeLabel": "CAP",
+    "postalCodePlaceholder": "CAP",
+    "stateLabel": "Provincia",
+    "statePlaceholder": "Provincia",
+    "streetLabel": "Via",
+    "streetPlaceholder": "Via",
+    "uploadNewLogoHint": "Carica un nuovo logo per sostituire quello attuale",
+    "vatLabel": "IVA",
+    "vatPlaceholder": "Inserisci la partita IVA",
+    "vatRequired": "La partita IVA è obbligatoria",
+    "websiteInvalid": "URL del sito web non valido",
+    "websiteLabel": "Sito web",
+    "websitePlaceholder": "Inserisci l’URL del sito web"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Modifica le informazioni del costruttore",
+    "title": "Modifica costruttore"
+  },
+  "generalInfo": "Informazioni generali",
+  "howToReach": "Come raggiungerci",
+  "logo": "Logo",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
+  "remove": "Rimuovi",
+  "title": "Modifica costruttore",
+  "uploadError": "Caricamento file multimediali non riuscito"
+}

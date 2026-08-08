@@ -1,0 +1,87 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
+  "title": "Crea costruttore",
+  "description": "Crea un nuovo costruttore",
+  "generalInfo": "Informazioni generali",
+  "howToReach": "Come raggiungerci",
+  "addAddress": "Aggiungi indirizzo",
+  "address": "Indirizzo",
+  "remove": "Rimuovi",
+  "logo": "Logo",
+  "uploadError": "Caricamento file multimediali non riuscito",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome del costruttore",
+    "nameRequired": "Il nome è obbligatorio",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Inserisci l’indirizzo email",
+    "emailInvalid": "Indirizzo email non valido",
+    "phoneNumberLabel": "Numero di telefono",
+    "phoneNumberPlaceholder": "Inserisci il numero di telefono",
+    "phoneNumberRequired": "Il numero di telefono è obbligatorio",
+    "vatLabel": "IVA",
+    "vatPlaceholder": "Inserisci la partita IVA",
+    "vatRequired": "La partita IVA è obbligatoria",
+    "websiteLabel": "Sito web",
+    "websitePlaceholder": "Inserisci l’URL del sito web",
+    "websiteInvalid": "URL del sito web non valido",
+    "companyLabel": "Azienda",
+    "companyPlaceholder": "Seleziona azienda",
+    "companyRequired": "L’azienda è obbligatoria",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci descrizione",
+    "logoLabel": "Logo",
+    "uploadNewLogoHint": "Carica un nuovo logo per sostituire quello attuale",
+    "streetLabel": "Via",
+    "streetPlaceholder": "Via",
+    "postalCodeLabel": "CAP",
+    "postalCodePlaceholder": "CAP",
+    "cityLabel": "Città",
+    "cityPlaceholder": "Città",
+    "stateLabel": "Provincia",
+    "statePlaceholder": "Provincia",
+    "countryLabel": "Paese",
+    "countryPlaceholder": "Paese",
+    "latitudeLabel": "Latitudine",
+    "latitudePlaceholder": "Latitudine",
+    "longitudeLabel": "Longitudine",
+    "longitudePlaceholder": "Longitudine",
+    "partyTypeLabel": "Tipo di parte",
+    "partyTypePlaceholder": "Seleziona tipo di parte",
+    "partyTypeContractor": "Appaltatore",
+    "partyTypeArchitect": "Architetto",
+    "partyTypeEngineer": "Ingegnere",
+    "partyTypeQs": "Computista",
+    "partyTypePm": "Project manager",
+    "partyTypeSurveyor": "Geometra",
+    "partyTypeOther": "Altro",
+    "tradesLabel": "Mestieri",
+    "tradesPlaceholder": "Inserisci i mestieri",
+    "insuranceExpiryLabel": "Scadenza assicurazione",
+    "insuranceExpiryPlaceholder": "Seleziona la data di scadenza dell’assicurazione",
+    "performanceScoreLabel": "Punteggio prestazioni",
+    "performanceScorePlaceholder": "Inserisci il punteggio prestazioni"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione costruttore",
+      "time": 3000
+    },
+    "success": {
+      "title": "Costruttore creato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il costruttore, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea costruttore",
+    "description": "Crea un nuovo costruttore"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea costruttore"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
+  "title": "Constructeurs",
+  "description": "Gérer tous les constructeurs",
+  "createConstructor": "Créer un constructeur",
+  "noData": "Aucun constructeur trouvé",
+  "failTitle": "Échec du chargement des constructeurs",
+  "failDescription": "Une erreur est survenue lors du chargement des constructeurs. Veuillez réessayer.",
+  "status": "Statut",
+  "active": "Actif",
+  "deleted": "Supprimé",
+  "name": "Nom",
+  "logo": "Logo",
+  "email": "E-mail",
+  "vat": "TVA",
+  "phoneNumber": "Numéro de téléphone",
+  "website": "Site web",
+  "edifices": "Édifices",
+  "fields": {
+    "addresses": "Adresses",
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "email": "E-mail",
+    "insuranceExpiry": "Expiration de l’assurance",
+    "logo": "Logo",
+    "name": "Nom",
+    "partyType": "Type de partie",
+    "performanceScore": "Score de performance",
+    "phoneNumber": "Numéro de téléphone",
+    "trades": "Métiers",
+    "updatedAt": "Mis à jour le",
+    "vat": "TVA",
+    "website": "Site web",
+    "!enums": {
+      "partyType": {
+        "contractor": "Entrepreneur",
+        "architect": "Architecte",
+        "engineer": "Ingénieur",
+        "qs": "Métreur",
+        "pm": "Chef de projet",
+        "surveyor": "Géomètre",
+        "other": "Autre"
+      }
+    }
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "yes": "Oui",
+  "no": "Non"
+}

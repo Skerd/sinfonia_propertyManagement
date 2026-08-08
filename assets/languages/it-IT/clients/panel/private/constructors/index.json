@@ -1,0 +1,53 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
+  "title": "Costruttori",
+  "description": "Gestisci tutti i costruttori",
+  "createConstructor": "Crea costruttore",
+  "noData": "Nessun costruttore trovato",
+  "failTitle": "Impossibile caricare i costruttori",
+  "failDescription": "Si è verificato un errore durante il caricamento dei costruttori. Riprova.",
+  "status": "Stato",
+  "active": "Attivo",
+  "deleted": "Eliminato",
+  "name": "Nome",
+  "logo": "Logo",
+  "email": "Email",
+  "vat": "IVA",
+  "phoneNumber": "Numero di telefono",
+  "website": "Sito web",
+  "edifices": "Edifici",
+  "fields": {
+    "addresses": "Indirizzi",
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "email": "Email",
+    "insuranceExpiry": "Scadenza assicurazione",
+    "logo": "Logo",
+    "name": "Nome",
+    "partyType": "Tipo di parte",
+    "performanceScore": "Punteggio prestazioni",
+    "phoneNumber": "Numero di telefono",
+    "trades": "Mestieri",
+    "updatedAt": "Aggiornato il",
+    "vat": "IVA",
+    "website": "Sito web",
+    "!enums": {
+      "partyType": {
+        "contractor": "Appaltatore",
+        "architect": "Architetto",
+        "engineer": "Ingegnere",
+        "qs": "Computista",
+        "pm": "Project manager",
+        "surveyor": "Geometra",
+        "other": "Altro"
+      }
+    }
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "yes": "Sì",
+  "no": "No"
+}

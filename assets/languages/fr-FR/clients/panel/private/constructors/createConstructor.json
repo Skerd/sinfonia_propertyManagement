@@ -1,0 +1,87 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
+  "title": "Créer un constructeur",
+  "description": "Créer un nouveau constructeur",
+  "generalInfo": "Informations générales",
+  "howToReach": "Coordonnées",
+  "addAddress": "Ajouter une adresse",
+  "address": "Adresse",
+  "remove": "Supprimer",
+  "logo": "Logo",
+  "uploadError": "Échec du téléversement des fichiers",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Saisir le nom du constructeur",
+    "nameRequired": "Le nom est obligatoire",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Saisir l’adresse e-mail",
+    "emailInvalid": "Adresse e-mail invalide",
+    "phoneNumberLabel": "Numéro de téléphone",
+    "phoneNumberPlaceholder": "Saisir le numéro de téléphone",
+    "phoneNumberRequired": "Le numéro de téléphone est obligatoire",
+    "vatLabel": "TVA",
+    "vatPlaceholder": "Saisir le numéro de TVA",
+    "vatRequired": "La TVA est obligatoire",
+    "websiteLabel": "Site web",
+    "websitePlaceholder": "Saisir l’URL du site web",
+    "websiteInvalid": "URL du site web invalide",
+    "companyLabel": "Entreprise",
+    "companyPlaceholder": "Sélectionner une entreprise",
+    "companyRequired": "L’entreprise est obligatoire",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir une description",
+    "logoLabel": "Logo",
+    "uploadNewLogoHint": "Téléverser un nouveau logo pour remplacer l’actuel",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Rue",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Ville",
+    "stateLabel": "Région",
+    "statePlaceholder": "Région",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Pays",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude",
+    "partyTypeLabel": "Type de partie",
+    "partyTypePlaceholder": "Sélectionner le type de partie",
+    "partyTypeContractor": "Entrepreneur",
+    "partyTypeArchitect": "Architecte",
+    "partyTypeEngineer": "Ingénieur",
+    "partyTypeQs": "Métreur",
+    "partyTypePm": "Chef de projet",
+    "partyTypeSurveyor": "Géomètre",
+    "partyTypeOther": "Autre",
+    "tradesLabel": "Métiers",
+    "tradesPlaceholder": "Saisir les métiers",
+    "insuranceExpiryLabel": "Expiration de l’assurance",
+    "insuranceExpiryPlaceholder": "Sélectionner la date d’expiration de l’assurance",
+    "performanceScoreLabel": "Score de performance",
+    "performanceScorePlaceholder": "Saisir le score de performance"
+  },
+  "axios": {
+    "start": {
+      "title": "Création du constructeur",
+      "time": 3000
+    },
+    "success": {
+      "title": "Constructeur créé avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Le constructeur n’a pas pu être créé, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un constructeur",
+    "description": "Créer un nouveau constructeur"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un constructeur"
+  }
+}

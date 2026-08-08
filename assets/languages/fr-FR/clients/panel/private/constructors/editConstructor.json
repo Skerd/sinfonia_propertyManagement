@@ -1,0 +1,91 @@
+{
+  "addAddress": "Ajouter une adresse",
+  "address": "Adresse",
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Le constructeur n’a pas pu être mis à jour, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour du constructeur"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Constructeur mis à jour avec succès !"
+    }
+  },
+  "currentLogo": "Logo actuel",
+  "editDescription": "Modifier les informations du constructeur",
+  "editTitle": "Modifier le constructeur",
+  "errorDescription": "Une erreur est survenue lors du chargement du constructeur. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du constructeur",
+  "form": {
+    "cityLabel": "Ville",
+    "cityPlaceholder": "Ville",
+    "companyLabel": "Entreprise",
+    "companyPlaceholder": "Sélectionner une entreprise",
+    "companyRequired": "L’entreprise est obligatoire",
+    "countryLabel": "Pays",
+    "countryPlaceholder": "Pays",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir une description",
+    "emailInvalid": "Adresse e-mail invalide",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Saisir l’adresse e-mail",
+    "latitudeLabel": "Latitude",
+    "latitudePlaceholder": "Latitude",
+    "logoLabel": "Logo",
+    "longitudeLabel": "Longitude",
+    "longitudePlaceholder": "Longitude",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Saisir le nom du constructeur",
+    "nameRequired": "Le nom est obligatoire",
+    "partyTypeLabel": "Type de partie",
+    "partyTypePlaceholder": "Sélectionner le type de partie",
+    "partyTypeContractor": "Entrepreneur",
+    "partyTypeArchitect": "Architecte",
+    "partyTypeEngineer": "Ingénieur",
+    "partyTypeQs": "Métreur",
+    "partyTypePm": "Chef de projet",
+    "partyTypeSurveyor": "Géomètre",
+    "partyTypeOther": "Autre",
+    "tradesLabel": "Métiers",
+    "tradesPlaceholder": "Saisir les métiers",
+    "insuranceExpiryLabel": "Expiration de l’assurance",
+    "insuranceExpiryPlaceholder": "Sélectionner la date d’expiration de l’assurance",
+    "performanceScoreLabel": "Score de performance",
+    "performanceScorePlaceholder": "Saisir le score de performance",
+    "phoneNumberLabel": "Numéro de téléphone",
+    "phoneNumberPlaceholder": "Saisir le numéro de téléphone",
+    "phoneNumberRequired": "Le numéro de téléphone est obligatoire",
+    "postalCodeLabel": "Code postal",
+    "postalCodePlaceholder": "Code postal",
+    "stateLabel": "Région",
+    "statePlaceholder": "Région",
+    "streetLabel": "Rue",
+    "streetPlaceholder": "Rue",
+    "uploadNewLogoHint": "Téléverser un nouveau logo pour remplacer l’actuel",
+    "vatLabel": "TVA",
+    "vatPlaceholder": "Saisir le numéro de TVA",
+    "vatRequired": "La TVA est obligatoire",
+    "websiteInvalid": "URL du site web invalide",
+    "websiteLabel": "Site web",
+    "websitePlaceholder": "Saisir l’URL du site web"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Modifier les informations du constructeur",
+    "title": "Modifier le constructeur"
+  },
+  "generalInfo": "Informations générales",
+  "howToReach": "Coordonnées",
+  "logo": "Logo",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
+  "remove": "Supprimer",
+  "title": "Modifier le constructeur",
+  "uploadError": "Échec du téléversement des fichiers"
+}
