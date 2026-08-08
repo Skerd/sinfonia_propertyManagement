@@ -13,39 +13,39 @@
       "title": "Einheitstyp erfolgreich aktualisiert!"
     }
   },
-  "editDescription": "Einheit typ informationen bearbeiten",
+  "editDescription": "Einheitstypinformationen bearbeiten",
   "editTitle": "Einheitstyp bearbeiten",
-  "errorDescription": "Beim Laden von die einheit typ ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "errorTitle": "Einheitstyp konnten nicht geladen werden",
+  "errorDescription": "Beim Laden des Einheitstyps ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+  "errorTitle": "Einheitstyp konnte nicht geladen werden",
   "form": {
-    "_idLabel": "Protokoll ID",
+    "_idLabel": "Datensatz-ID",
     "categoryLabel": "Kategorie",
     "categoryPlaceholder": "Kategorie auswählen",
     "categoryRequired": "Kategorie ist erforderlich",
     "descriptionLabel": "Beschreibung",
     "descriptionPlaceholder": "Beschreibung eingeben",
-    "groupLabel": "Group",
-    "groupPlaceholder": "Group auswählen",
-    "groupRequired": "Group ist erforderlich",
+    "groupLabel": "Gruppe",
+    "groupPlaceholder": "Gruppe auswählen",
+    "groupRequired": "Gruppe ist erforderlich",
     "iconLabel": "Icon",
-    "iconPlaceholder": "Icon (e.g., mdi-startseite) eingeben",
+    "iconPlaceholder": "Icon eingeben (z. B. mdi-home)",
     "isPrivateLabel": "Privat",
     "nameLabel": "Name",
-    "namePlaceholder": "Einheit typ name eingeben",
+    "namePlaceholder": "Einheitstypname eingeben",
     "nameRequired": "Name ist erforderlich",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Slug (e.g., apartment) eingeben",
+    "slugPlaceholder": "Slug eingeben (z. B. apartment)",
     "slugRequired": "Slug ist erforderlich"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern Änderungen"
+    "submit": "Änderungen speichern"
   },
   "formHeader": {
-    "description": "Einheit typ informationen bearbeiten",
+    "description": "Einheitstypinformationen bearbeiten",
     "title": "Einheitstyp bearbeiten"
   },
   "generalInfo": "Allgemeine Informationen",
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
-  "title": "Bezeichnung"
+  "title": "Einheitstyp bearbeiten"
 }

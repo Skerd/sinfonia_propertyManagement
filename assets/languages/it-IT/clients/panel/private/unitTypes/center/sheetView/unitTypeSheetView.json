@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx",
+  "failedTitle": "Impossibile caricare il tipo di unità",
+  "failedDescription": "Si è verificato un errore durante il caricamento di questo tipo di unità. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "name": "Nome",
+  "unitType": "Tipo di unità",
+  "overview": "Panoramica",
+  "description": "Descrizione",
+  "slug": "Slug",
+  "category": "Categoria",
+  "group": "Gruppo",
+  "icon": "Icona",
+  "isPrivate": "Tipo di accesso",
+  "private": "Privato",
+  "public": "Pubblico",
+  "unitTypeVisibility": {
+    "true": "Privato",
+    "false": "Pubblico"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

@@ -6,8 +6,8 @@
   "description": "Beschreibung",
   "icon": "Icon",
   "category": "Kategorie",
-  "group": "Group",
-  "isPrivate": "Zugriff typ",
+  "group": "Gruppe",
+  "isPrivate": "Zugriffsart",
   "private": "Privat",
   "public": "Öffentlich",
   "deleted": "Gelöscht"

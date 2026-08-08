@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/createUnitType.tsx",
+  "title": "Crea tipo di unità",
+  "description": "Crea un nuovo tipo di unità",
+  "generalInfo": "Informazioni generali",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome del tipo di unità",
+    "nameRequired": "Il nome è obbligatorio",
+    "categoryLabel": "Categoria",
+    "categoryPlaceholder": "Seleziona categoria",
+    "categoryRequired": "La categoria è obbligatoria",
+    "groupLabel": "Gruppo",
+    "groupPlaceholder": "Seleziona gruppo",
+    "groupRequired": "Il gruppo è obbligatorio",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Inserisci lo slug (es. apartment)",
+    "slugRequired": "Lo slug è obbligatorio",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci descrizione",
+    "iconLabel": "Icona",
+    "iconPlaceholder": "Inserisci icona (es. mdi-home)",
+    "isPrivateLabel": "Privato"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione tipo di unità",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tipo di unità creato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il tipo di unità, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea tipo di unità",
+    "description": "Crea un nuovo tipo di unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea tipo di unità"
+  }
+}

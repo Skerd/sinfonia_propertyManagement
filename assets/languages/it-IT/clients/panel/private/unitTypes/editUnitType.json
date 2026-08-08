@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aggiornare il tipo di unità, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento tipo di unità"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Tipo di unità aggiornato con successo!"
+    }
+  },
+  "editDescription": "Modifica le informazioni del tipo di unità",
+  "editTitle": "Modifica tipo di unità",
+  "errorDescription": "Si è verificato un errore durante il caricamento del tipo di unità. Riprova.",
+  "errorTitle": "Impossibile caricare il tipo di unità",
+  "form": {
+    "_idLabel": "ID record",
+    "categoryLabel": "Categoria",
+    "categoryPlaceholder": "Seleziona categoria",
+    "categoryRequired": "La categoria è obbligatoria",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci descrizione",
+    "groupLabel": "Gruppo",
+    "groupPlaceholder": "Seleziona gruppo",
+    "groupRequired": "Il gruppo è obbligatorio",
+    "iconLabel": "Icona",
+    "iconPlaceholder": "Inserisci icona (es. mdi-home)",
+    "isPrivateLabel": "Privato",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome del tipo di unità",
+    "nameRequired": "Il nome è obbligatorio",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Inserisci lo slug (es. apartment)",
+    "slugRequired": "Lo slug è obbligatorio"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Modifica le informazioni del tipo di unità",
+    "title": "Modifica tipo di unità"
+  },
+  "generalInfo": "Informazioni generali",
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
+  "title": "Modifica tipo di unità"
+}

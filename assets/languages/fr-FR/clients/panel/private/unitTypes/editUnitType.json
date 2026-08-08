@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Le type d’unité n’a pas pu être mis à jour, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour du type d’unité"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Type d’unité mis à jour avec succès !"
+    }
+  },
+  "editDescription": "Modifier les informations du type d’unité",
+  "editTitle": "Modifier le type d’unité",
+  "errorDescription": "Une erreur est survenue lors du chargement du type d’unité. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du type d’unité",
+  "form": {
+    "_idLabel": "Identifiant",
+    "categoryLabel": "Catégorie",
+    "categoryPlaceholder": "Sélectionner une catégorie",
+    "categoryRequired": "La catégorie est obligatoire",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir une description",
+    "groupLabel": "Groupe",
+    "groupPlaceholder": "Sélectionner un groupe",
+    "groupRequired": "Le groupe est obligatoire",
+    "iconLabel": "Icône",
+    "iconPlaceholder": "Saisir l’icône (ex. : mdi-home)",
+    "isPrivateLabel": "Privé",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Saisir le nom du type d’unité",
+    "nameRequired": "Le nom est obligatoire",
+    "slugLabel": "Identifiant",
+    "slugPlaceholder": "Saisir l’identifiant (ex. : apartment)",
+    "slugRequired": "L’identifiant est obligatoire"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Modifier les informations du type d’unité",
+    "title": "Modifier le type d’unité"
+  },
+  "generalInfo": "Informations générales",
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
+  "title": "Modifier le type d’unité"
+}
