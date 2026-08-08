@@ -1,40 +1,40 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
-  "title": "Create Story Type",
-  "description": "Create a new story type",
-  "generalInfo": "General Information",
+  "title": "Story-Typ erstellen",
+  "description": "Neuen Story-Typ erstellen",
+  "generalInfo": "Allgemeine Informationen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Enter story type name",
-    "nameRequired": "Name is required",
+    "namePlaceholder": "Story-Typnamen eingeben",
+    "nameRequired": "Name ist erforderlich",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Enter slug (e.g., residential)",
-    "slugRequired": "Slug is required",
-    "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Enter description",
-    "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "Enter sort order"
+    "slugPlaceholder": "Slug eingeben (z. B. residential)",
+    "slugRequired": "Slug ist erforderlich",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung eingeben",
+    "sortOrderLabel": "Sortierreihenfolge",
+    "sortOrderPlaceholder": "Sortierreihenfolge eingeben"
   },
   "axios": {
     "start": {
-      "title": "Creating story type",
+      "title": "Story-Typ wird erstellt",
       "time": 3000
     },
     "success": {
-      "title": "Story type successfully created!",
+      "title": "Story-Typ erfolgreich erstellt!",
       "time": 3000
     },
     "error": {
-      "title": "Story type could not be created, please try again!",
+      "title": "Story-Typ konnte nicht erstellt werden, bitte erneut versuchen!",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Create Story Type",
-    "description": "Create a new story type"
+    "title": "Story-Typ erstellen",
+    "description": "Neuen Story-Typ erstellen"
   },
   "formButtons": {
-    "cancel": "Cancel",
-    "submit": "Create Story Type"
+    "cancel": "Abbrechen",
+    "submit": "Story-Typ erstellen"
   }
 }

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
+  "title": "Crea tipo di storia",
+  "description": "Crea un nuovo tipo di storia",
+  "generalInfo": "Informazioni generali",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome del tipo di storia",
+    "nameRequired": "Il nome è obbligatorio",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Inserisci lo slug (es. residential)",
+    "slugRequired": "Lo slug è obbligatorio",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci descrizione",
+    "sortOrderLabel": "Ordine di visualizzazione",
+    "sortOrderPlaceholder": "Inserisci l’ordine di visualizzazione"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione tipo di storia",
+      "time": 3000
+    },
+    "success": {
+      "title": "Tipo di storia creato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il tipo di storia, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea tipo di storia",
+    "description": "Crea un nuovo tipo di storia"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea tipo di storia"
+  }
+}

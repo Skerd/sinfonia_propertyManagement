@@ -2,43 +2,43 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Story type could not be updated, please try again!"
+      "title": "Story-Typ konnte nicht aktualisiert werden, bitte erneut versuchen!"
     },
     "start": {
       "time": 3000,
-      "title": "Updating story type"
+      "title": "Story-Typ wird aktualisiert"
     },
     "success": {
       "time": 3000,
-      "title": "Story type successfully updated!"
+      "title": "Story-Typ erfolgreich aktualisiert!"
     }
   },
-  "editDescription": "Edit story type information",
-  "editTitle": "Edit Story Type",
-  "errorDescription": "An error occurred while loading the story type. Please try again.",
-  "errorTitle": "Failed to load story type",
+  "editDescription": "Story-Typinformationen bearbeiten",
+  "editTitle": "Story-Typ bearbeiten",
+  "errorDescription": "Beim Laden des Story-Typs ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+  "errorTitle": "Story-Typ konnte nicht geladen werden",
   "form": {
-    "_idLabel": "Record ID",
-    "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Enter description",
+    "_idLabel": "Datensatz-ID",
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Beschreibung eingeben",
     "nameLabel": "Name",
-    "namePlaceholder": "Enter story type name",
-    "nameRequired": "Name is required",
+    "namePlaceholder": "Story-Typnamen eingeben",
+    "nameRequired": "Name ist erforderlich",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Enter slug (e.g., residential)",
-    "slugRequired": "Slug is required",
-    "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "Enter sort order"
+    "slugPlaceholder": "Slug eingeben (z. B. residential)",
+    "slugRequired": "Slug ist erforderlich",
+    "sortOrderLabel": "Sortierreihenfolge",
+    "sortOrderPlaceholder": "Sortierreihenfolge eingeben"
   },
   "formButtons": {
-    "cancel": "Cancel",
-    "submit": "Save Changes"
+    "cancel": "Abbrechen",
+    "submit": "Änderungen speichern"
   },
   "formHeader": {
-    "description": "Edit story type information",
-    "title": "Edit Story Type"
+    "description": "Story-Typinformationen bearbeiten",
+    "title": "Story-Typ bearbeiten"
   },
-  "generalInfo": "General Information",
+  "generalInfo": "Allgemeine Informationen",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
-  "title": "Title"
+  "title": "Story-Typ bearbeiten"
 }

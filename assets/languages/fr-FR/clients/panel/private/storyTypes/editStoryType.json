@@ -1,0 +1,44 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Le type d’histoire n’a pas pu être mis à jour, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour du type d’histoire"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Type d’histoire mis à jour avec succès !"
+    }
+  },
+  "editDescription": "Modifier les informations du type d’histoire",
+  "editTitle": "Modifier le type d’histoire",
+  "errorDescription": "Une erreur est survenue lors du chargement du type d’histoire. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du type d’histoire",
+  "form": {
+    "_idLabel": "Identifiant",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir une description",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Saisir le nom du type d’histoire",
+    "nameRequired": "Le nom est obligatoire",
+    "slugLabel": "Identifiant",
+    "slugPlaceholder": "Saisir l’identifiant (ex. : residential)",
+    "slugRequired": "L’identifiant est obligatoire",
+    "sortOrderLabel": "Ordre de tri",
+    "sortOrderPlaceholder": "Saisir l’ordre de tri"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Modifier les informations du type d’histoire",
+    "title": "Modifier le type d’histoire"
+  },
+  "generalInfo": "Informations générales",
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
+  "title": "Modifier le type d’histoire"
+}

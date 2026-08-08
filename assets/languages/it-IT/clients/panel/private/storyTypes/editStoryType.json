@@ -1,0 +1,44 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aggiornare il tipo di storia, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento tipo di storia"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Tipo di storia aggiornato con successo!"
+    }
+  },
+  "editDescription": "Modifica le informazioni del tipo di storia",
+  "editTitle": "Modifica tipo di storia",
+  "errorDescription": "Si è verificato un errore durante il caricamento del tipo di storia. Riprova.",
+  "errorTitle": "Impossibile caricare il tipo di storia",
+  "form": {
+    "_idLabel": "ID record",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci descrizione",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome del tipo di storia",
+    "nameRequired": "Il nome è obbligatorio",
+    "slugLabel": "Slug",
+    "slugPlaceholder": "Inserisci lo slug (es. residential)",
+    "slugRequired": "Lo slug è obbligatorio",
+    "sortOrderLabel": "Ordine di visualizzazione",
+    "sortOrderPlaceholder": "Inserisci l’ordine di visualizzazione"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Modifica le informazioni del tipo di storia",
+    "title": "Modifica tipo di storia"
+  },
+  "generalInfo": "Informazioni generali",
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
+  "title": "Modifica tipo di storia"
+}

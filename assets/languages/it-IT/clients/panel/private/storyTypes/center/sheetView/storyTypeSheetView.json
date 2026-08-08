@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
+  "failedTitle": "Impossibile caricare il tipo di storia",
+  "failedDescription": "Si è verificato un errore durante il caricamento di questo tipo di storia. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "name": "Nome",
+  "storyType": "Tipo di storia",
+  "overview": "Panoramica",
+  "description": "Descrizione",
+  "slug": "Slug",
+  "sortOrder": "Ordine di visualizzazione",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
+  "title": "Tipi di storia",
+  "description": "Descrizione",
+  "createStoryType": "Crea tipo di storia",
+  "noData": "Nessun tipo di storia trovato",
+  "failTitle": "Impossibile caricare i tipi di storia",
+  "failDescription": "Si è verificato un errore durante il caricamento dei tipi di storia. Riprova.",
+  "status": "Stato",
+  "active": "Attivo",
+  "deleted": "Eliminato",
+  "name": "Nome",
+  "slug": "Slug",
+  "sortOrder": "Ordine di visualizzazione",
+  "fields": {
+    "company": "Azienda",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "name": "Nome",
+    "slug": "Slug",
+    "sortOrder": "Ordine di visualizzazione",
+    "updatedAt": "Aggiornato il"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri..."
+}

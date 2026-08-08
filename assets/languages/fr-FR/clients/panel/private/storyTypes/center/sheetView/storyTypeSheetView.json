@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
+  "failedTitle": "Échec du chargement du type d’histoire",
+  "failedDescription": "Une erreur est survenue lors du chargement de ce type d’histoire. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour relancer le chargement des données.",
+  "name": "Nom",
+  "storyType": "Type d’histoire",
+  "overview": "Aperçu",
+  "description": "Description",
+  "slug": "Identifiant",
+  "sortOrder": "Ordre de tri",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

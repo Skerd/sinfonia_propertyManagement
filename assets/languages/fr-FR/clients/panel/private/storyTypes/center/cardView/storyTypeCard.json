@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/cardView/storyTypeCard.tsx",
+  "active": "Actif",
+  "name": "Nom",
+  "slug": "Identifiant",
+  "description": "Description",
+  "sortOrder": "Ordre de tri",
+  "deleted": "Supprimé"
+}
