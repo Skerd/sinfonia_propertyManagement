@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/center/cardView/storyCard.tsx",
+  "published": "Pubblicato",
+  "draft": "Bozza",
+  "fields": {
+    "name": "Codice",
+    "published": "Stato",
+    "publishedAt": "Data di pubblicazione",
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "unit": "Unità"
+  }
+}

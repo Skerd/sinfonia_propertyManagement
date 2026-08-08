@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/editStory.tsx",
+  "title": "Modifica storia",
+  "description": "Aggiorna contenuto e media della storia",
+  "generalInfo": "Dettagli della storia",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio (facoltativo)",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità (facoltativo)",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Inserisci il titolo della storia",
+    "excerptLabel": "Estratto",
+    "excerptPlaceholder": "Breve anteprima mostrata sulla card del journal",
+    "contentLabel": "Contenuto",
+    "contentPlaceholder": "Scrivi il contenuto completo della storia",
+    "mainImageLabel": "Immagine principale",
+    "imageGalleryLabel": "Galleria immagini",
+    "videoGalleryLabel": "Galleria video",
+    "publishedLabel": "Pubblicato",
+    "publishedAtLabel": "Data di pubblicazione",
+    "publishedAtPlaceholder": "Seleziona data",
+    "sortOrderLabel": "Ordine di visualizzazione",
+    "sortOrderPlaceholder": "0",
+    "storyTypeLabel": "Tipo di storia",
+    "storyTypePlaceholder": "Seleziona tipo di storia",
+    "storyTypeRequired": "Il tipo di storia è obbligatorio"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio storia",
+      "time": 3000
+    },
+    "success": {
+      "title": "Storia aggiornata!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la storia, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica storia",
+    "description": "Aggiorna contenuto e media della storia"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "storyType": "Tipo di storia"
+}

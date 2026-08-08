@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/createStory.tsx",
+  "title": "Ajouter un récit",
+  "description": "Créer un récit journal pour un projet, un édifice ou une unité",
+  "generalInfo": "Détails du récit",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Sélectionner un édifice (facultatif)",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité (facultatif)",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Saisir le titre du récit",
+    "excerptLabel": "Extrait",
+    "excerptPlaceholder": "Court teaser affiché sur la carte du journal",
+    "contentLabel": "Contenu",
+    "contentPlaceholder": "Rédiger le contenu complet du récit",
+    "mainImageLabel": "Image principale",
+    "imageGalleryLabel": "Galerie d’images",
+    "videoGalleryLabel": "Galerie vidéo",
+    "publishedLabel": "Publié",
+    "publishedAtLabel": "Date de publication",
+    "publishedAtPlaceholder": "Sélectionner une date",
+    "sortOrderLabel": "Ordre de tri",
+    "sortOrderPlaceholder": "0",
+    "storyTypeLabel": "Type de récit",
+    "storyTypePlaceholder": "Sélectionner un type de récit",
+    "storyTypeRequired": "Le type de récit est obligatoire"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement du récit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Récit enregistré !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d’enregistrer le récit, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un récit",
+    "description": "Créer un récit journal pour un projet, un édifice ou une unité"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer le récit"
+  },
+  "storyType": "Type de récit"
+}

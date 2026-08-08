@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/editStory.tsx",
+  "title": "Modifier le récit",
+  "description": "Mettre à jour le contenu et les médias du récit",
+  "generalInfo": "Détails du récit",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Sélectionner un édifice (facultatif)",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité (facultatif)",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Saisir le titre du récit",
+    "excerptLabel": "Extrait",
+    "excerptPlaceholder": "Court teaser affiché sur la carte du journal",
+    "contentLabel": "Contenu",
+    "contentPlaceholder": "Rédiger le contenu complet du récit",
+    "mainImageLabel": "Image principale",
+    "imageGalleryLabel": "Galerie d’images",
+    "videoGalleryLabel": "Galerie vidéo",
+    "publishedLabel": "Publié",
+    "publishedAtLabel": "Date de publication",
+    "publishedAtPlaceholder": "Sélectionner une date",
+    "sortOrderLabel": "Ordre de tri",
+    "sortOrderPlaceholder": "0",
+    "storyTypeLabel": "Type de récit",
+    "storyTypePlaceholder": "Sélectionner un type de récit",
+    "storyTypeRequired": "Le type de récit est obligatoire"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement du récit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Récit mis à jour !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour le récit, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier le récit",
+    "description": "Mettre à jour le contenu et les médias du récit"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "storyType": "Type de récit"
+}

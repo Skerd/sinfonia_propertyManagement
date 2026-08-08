@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/center/cardView/storyCard.tsx",
+  "published": "Publié",
+  "draft": "Brouillon",
+  "fields": {
+    "name": "Code",
+    "published": "Statut",
+    "publishedAt": "Date de publication",
+    "project": "Projet",
+    "edifice": "Édifice",
+    "unit": "Unité"
+  }
+}

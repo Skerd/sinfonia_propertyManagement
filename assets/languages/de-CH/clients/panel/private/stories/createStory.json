@@ -1,54 +1,54 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/stories/createStory.tsx",
-  "title": "Add Story",
-  "description": "Create a journal story for a project, edifice, or unit",
-  "generalInfo": "Story Details",
+  "title": "Geschichte hinzufügen",
+  "description": "Journal-Geschichte für ein Projekt, Gebäude oder eine Einheit erstellen",
+  "generalInfo": "Geschichtsdetails",
   "form": {
-    "projectLabel": "Project",
-    "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice (optional)",
-    "unitLabel": "Unit",
-    "unitPlaceholder": "Select unit (optional)",
-    "titleLabel": "Title",
-    "titlePlaceholder": "Enter story title",
-    "excerptLabel": "Excerpt",
-    "excerptPlaceholder": "Short teaser shown on the journal card",
-    "contentLabel": "Content",
-    "contentPlaceholder": "Write the full story content",
-    "mainImageLabel": "Main image",
-    "imageGalleryLabel": "Image gallery",
-    "videoGalleryLabel": "Video gallery",
-    "publishedLabel": "Published",
-    "publishedAtLabel": "Published date",
-    "publishedAtPlaceholder": "Select date",
-    "sortOrderLabel": "Sort order",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt auswählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude auswählen (optional)",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Einheit auswählen (optional)",
+    "titleLabel": "Titel",
+    "titlePlaceholder": "Titel der Geschichte eingeben",
+    "excerptLabel": "Kurztext",
+    "excerptPlaceholder": "Kurzer Teaser auf der Journal-Karte",
+    "contentLabel": "Inhalt",
+    "contentPlaceholder": "Vollständigen Inhalt der Geschichte schreiben",
+    "mainImageLabel": "Hauptbild",
+    "imageGalleryLabel": "Bildergalerie",
+    "videoGalleryLabel": "Videogalerie",
+    "publishedLabel": "Veröffentlicht",
+    "publishedAtLabel": "Veröffentlichungsdatum",
+    "publishedAtPlaceholder": "Datum auswählen",
+    "sortOrderLabel": "Sortierreihenfolge",
     "sortOrderPlaceholder": "0",
-    "storyTypeLabel": "Story type",
-    "storyTypePlaceholder": "Select story type",
-    "storyTypeRequired": "Story type is required"
+    "storyTypeLabel": "Geschichtstyp",
+    "storyTypePlaceholder": "Geschichtstyp auswählen",
+    "storyTypeRequired": "Geschichtstyp ist erforderlich"
   },
   "axios": {
     "start": {
-      "title": "Saving story",
+      "title": "Geschichte wird gespeichert",
       "time": 3000
     },
     "success": {
-      "title": "Story saved!",
+      "title": "Geschichte gespeichert!",
       "time": 3000
     },
     "error": {
-      "title": "Could not save story, please try again!",
+      "title": "Geschichte konnte nicht gespeichert werden, bitte erneut versuchen!",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Add Story",
-    "description": "Create a journal story for a project, edifice, or unit"
+    "title": "Geschichte hinzufügen",
+    "description": "Journal-Geschichte für ein Projekt, Gebäude oder eine Einheit erstellen"
   },
   "formButtons": {
-    "cancel": "Cancel",
-    "submit": "Save Story"
+    "cancel": "Abbrechen",
+    "submit": "Geschichte speichern"
   },
-  "storyType": "Story type"
+  "storyType": "Geschichtstyp"
 }

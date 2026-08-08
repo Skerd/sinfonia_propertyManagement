@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/index.tsx",
+  "title": "Storie",
+  "description": "Storie del journal per progetti, edifici e unità",
+  "createStory": "Aggiungi storia",
+  "noData": "Nessuna storia trovata",
+  "failTitle": "Caricamento storie non riuscito",
+  "failDescription": "Si è verificato un errore durante il caricamento delle storie. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "content": "Contenuto",
+    "edifice": "Edificio",
+    "excerpt": "Estratto",
+    "imageGallery": "Galleria immagini",
+    "mainImage": "Immagine principale",
+    "name": "Riferimento",
+    "project": "Progetto",
+    "published": "Pubblicato",
+    "publishedAt": "Data di pubblicazione",
+    "sortOrder": "Ordine di visualizzazione",
+    "storyType": "Tipo di storia",
+    "title": "Titolo",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "videoGallery": "Galleria video"
+  }
+}

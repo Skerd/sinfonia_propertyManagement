@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/index.tsx",
+  "title": "Récits",
+  "description": "Récits journal pour projets, édifices et unités",
+  "createStory": "Ajouter un récit",
+  "noData": "Aucun récit trouvé",
+  "failTitle": "Échec du chargement des récits",
+  "failDescription": "Une erreur est survenue lors du chargement des récits. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "content": "Contenu",
+    "edifice": "Édifice",
+    "excerpt": "Extrait",
+    "imageGallery": "Galerie d’images",
+    "mainImage": "Image principale",
+    "name": "Référence",
+    "project": "Projet",
+    "published": "Publié",
+    "publishedAt": "Date de publication",
+    "sortOrder": "Ordre de tri",
+    "storyType": "Type de récit",
+    "title": "Titre",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "videoGallery": "Galerie vidéo"
+  }
+}

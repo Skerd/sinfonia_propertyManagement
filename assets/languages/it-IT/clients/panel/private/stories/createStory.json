@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/stories/createStory.tsx",
+  "title": "Aggiungi storia",
+  "description": "Crea una storia del journal per un progetto, edificio o unità",
+  "generalInfo": "Dettagli della storia",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio (facoltativo)",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità (facoltativo)",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Inserisci il titolo della storia",
+    "excerptLabel": "Estratto",
+    "excerptPlaceholder": "Breve anteprima mostrata sulla card del journal",
+    "contentLabel": "Contenuto",
+    "contentPlaceholder": "Scrivi il contenuto completo della storia",
+    "mainImageLabel": "Immagine principale",
+    "imageGalleryLabel": "Galleria immagini",
+    "videoGalleryLabel": "Galleria video",
+    "publishedLabel": "Pubblicato",
+    "publishedAtLabel": "Data di pubblicazione",
+    "publishedAtPlaceholder": "Seleziona data",
+    "sortOrderLabel": "Ordine di visualizzazione",
+    "sortOrderPlaceholder": "0",
+    "storyTypeLabel": "Tipo di storia",
+    "storyTypePlaceholder": "Seleziona tipo di storia",
+    "storyTypeRequired": "Il tipo di storia è obbligatorio"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio storia",
+      "time": 3000
+    },
+    "success": {
+      "title": "Storia salvata!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile salvare la storia, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi storia",
+    "description": "Crea una storia del journal per un progetto, edificio o unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva storia"
+  },
+  "storyType": "Tipo di storia"
+}
