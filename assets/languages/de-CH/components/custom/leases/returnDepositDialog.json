@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leases/returnDepositDialog.tsx",
-  "dialogTitle": "Return anzahlung",
-  "dialogDescription": "Protokoll that die sicherheit anzahlung has been returned bis die tenant.",
+  "dialogTitle": "Kaution zurückerstatten",
+  "dialogDescription": "Erfassen, dass die Kaution an den Mieter zurückerstattet wurde.",
   "cancel": "Abbrechen",
-  "submit": "Return anzahlung"
+  "submit": "Kaution zurückerstatten"
 }

@@ -36,7 +36,28 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
     );
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => {
-        if (unitId) return [];
+        const statusAndTenant: QuickFilterDef[] = [
+            {
+                field: "tenant",
+                label: resolveLanguageKey("fields.tenant") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/company/users/select",
+                postBodyKeys: ["administration"],
+                asExtraParam: true,
+            },
+            {
+                field: "status",
+                label: resolveLanguageKey("fields.status") as string,
+                type: COLUMN_TYPE.ENUM,
+                asExtraParam: true,
+                enumValues: [
+                    {value: "active", label: resolveLanguageKey("fields.!enums.status.active") as string},
+                    {value: "expired", label: resolveLanguageKey("fields.!enums.status.expired") as string},
+                    {value: "terminated", label: resolveLanguageKey("fields.!enums.status.terminated") as string},
+                ],
+            },
+        ];
+        if (unitId) return statusAndTenant;
         return [
             {
                 field: "project",
@@ -68,16 +89,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                 apiUrl: "/api/realEstate/unit/select",
                 dependsOn: ["floor", "edifice", "project"],
             },
-            {
-                field: "status",
-                label: resolveLanguageKey("fields.status") as string,
-                type: COLUMN_TYPE.ENUM,
-                enumValues: [
-                    {value: "active", label: resolveLanguageKey("fields.!enums.status.active") as string},
-                    {value: "expired", label: resolveLanguageKey("fields.!enums.status.expired") as string},
-                    {value: "terminated", label: resolveLanguageKey("fields.!enums.status.terminated") as string},
-                ],
-            },
+            ...statusAndTenant,
         ];
     }, [resolveLanguageKey, unitId]);
 
@@ -98,6 +110,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx"
             cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
+            extraParams={{administration: false}}
             quickFilters={quickFilters}
             headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}

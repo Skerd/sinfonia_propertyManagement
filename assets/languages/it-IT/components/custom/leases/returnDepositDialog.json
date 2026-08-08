@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/returnDepositDialog.tsx",
+  "dialogTitle": "Restituisci deposito",
+  "dialogDescription": "Registra che il deposito cauzionale è stato restituito all’inquilino.",
+  "cancel": "Annulla",
+  "submit": "Restituisci deposito"
+}

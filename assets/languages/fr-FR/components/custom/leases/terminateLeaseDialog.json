@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/terminateLeaseDialog.tsx",
+  "dialogTitle": "Résilier le bail",
+  "dialogDescription": "Cela met fin au bail, annule les loyers impayés et rend l’unité disponible.",
+  "reasonLabel": "Motif (facultatif)",
+  "reasonPlaceholder": "Pourquoi ce bail se termine-t-il ?",
+  "cancel": "Annuler",
+  "submit": "Résilier"
+}

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/cardView/leaseCard.tsx",
+  "statusLabel": "Stato",
+  "fields": {
+    "tenant": "Inquilino",
+    "unit": "Unità",
+    "monthlyRent": "Affitto mensile",
+    "startDate": "Data inizio",
+    "endDate": "Data fine",
+    "!enums": {
+      "status": {
+        "active": "Attivo",
+        "expired": "Scaduto",
+        "terminated": "Risolto"
+      }
+    }
+  }
+}

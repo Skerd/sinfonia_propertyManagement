@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/returnDepositDialog.tsx",
+  "dialogTitle": "Restituer le dépôt",
+  "dialogDescription": "Enregistrer que le dépôt de garantie a été restitué au locataire.",
+  "cancel": "Annuler",
+  "submit": "Restituer le dépôt"
+}

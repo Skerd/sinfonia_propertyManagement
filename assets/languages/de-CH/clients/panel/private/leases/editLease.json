@@ -13,39 +13,39 @@
       "title": "Mietvertrag erfolgreich aktualisiert!"
     }
   },
-  "editDescription": "Aktualisieren miete mietvertrag agreement details",
+  "editDescription": "Mietvertragsdetails aktualisieren",
   "editTitle": "Mietvertrag bearbeiten",
-  "errorDescription": "Beim Laden von die mietvertrag ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "errorTitle": "Mietvertrag konnten nicht geladen werden",
+  "errorDescription": "Beim Laden des Mietvertrags ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+  "errorTitle": "Mietvertrag konnte nicht geladen werden",
   "form": {
-    "_idLabel": "Protokoll ID",
-    "contractMediaLabel": "Vertrag Dokument",
-    "depositAmountLabel": "Anzahlungsbetrag",
-    "depositPaidLabel": "Anzahlung Bezahlt",
+    "_idLabel": "Datensatz-ID",
+    "contractMediaLabel": "Vertragsdokument",
+    "depositAmountLabel": "Kautionsbetrag",
+    "depositPaidLabel": "Kaution bezahlt",
     "endDateLabel": "Enddatum",
-    "existingFiles": "Current datei",
-    "monthlyRentLabel": "Monthly Rent",
-    "newFiles": "Neu datei",
+    "existingFiles": "Aktuelle Datei",
+    "monthlyRentLabel": "Monatsmiete",
+    "newFiles": "Neue Datei",
     "notesLabel": "Notizen",
     "rentCurrencyLabel": "Währung",
     "startDateLabel": "Startdatum",
     "statusLabel": "Status",
-    "tenantLabel": "Tenant",
-    "tenantPlaceholder": "Tenant auswählen",
-    "terminationDateLabel": "Termination Datum",
-    "terminationReasonLabel": "Termination Grund",
+    "tenantLabel": "Mieter",
+    "tenantPlaceholder": "Mieter auswählen",
+    "terminationDateLabel": "Kündigungsdatum",
+    "terminationReasonLabel": "Kündigungsgrund",
     "unitLabel": "Einheit",
     "unitPlaceholder": "Einheit auswählen"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern Änderungen"
+    "submit": "Änderungen speichern"
   },
   "formHeader": {
-    "description": "Aktualisieren miete mietvertrag agreement details",
+    "description": "Mietvertragsdetails aktualisieren",
     "title": "Mietvertrag bearbeiten"
   },
-  "generalInfo": "Mietvertrag Details",
+  "generalInfo": "Mietvertragsdetails",
   "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
   "title": "Mietvertrag bearbeiten"
 }

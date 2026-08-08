@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Le bail n’a pas pu être mis à jour, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour du bail"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Bail mis à jour avec succès !"
+    }
+  },
+  "editDescription": "Mettre à jour les détails du contrat de location",
+  "editTitle": "Modifier le bail",
+  "errorDescription": "Une erreur est survenue lors du chargement du bail. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du bail",
+  "form": {
+    "_idLabel": "Identifiant",
+    "contractMediaLabel": "Document du contrat",
+    "depositAmountLabel": "Montant du dépôt",
+    "depositPaidLabel": "Dépôt payé",
+    "endDateLabel": "Date de fin",
+    "existingFiles": "Fichier actuel",
+    "monthlyRentLabel": "Loyer mensuel",
+    "newFiles": "Nouveau fichier",
+    "notesLabel": "Notes",
+    "rentCurrencyLabel": "Devise",
+    "startDateLabel": "Date de début",
+    "statusLabel": "Statut",
+    "tenantLabel": "Locataire",
+    "tenantPlaceholder": "Sélectionner un locataire",
+    "terminationDateLabel": "Date de résiliation",
+    "terminationReasonLabel": "Motif de résiliation",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Mettre à jour les détails du contrat de location",
+    "title": "Modifier le bail"
+  },
+  "generalInfo": "Détails du bail",
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
+  "title": "Modifier le bail"
+}

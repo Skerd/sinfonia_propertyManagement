@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/createLease.tsx",
+  "title": "Crea contratto",
+  "description": "Registra un nuovo contratto di locazione",
+  "generalInfo": "Dettagli contratto",
+  "form": {
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità",
+    "tenantLabel": "Inquilino",
+    "tenantPlaceholder": "Seleziona inquilino",
+    "startDateLabel": "Data inizio",
+    "endDateLabel": "Data fine",
+    "monthlyRentLabel": "Affitto mensile",
+    "rentCurrencyLabel": "Valuta",
+    "depositAmountLabel": "Importo deposito",
+    "depositPaidLabel": "Deposito pagato",
+    "notesLabel": "Note",
+    "contractMediaLabel": "Documento contratto",
+    "existingFiles": "File attuale",
+    "newFiles": "Nuovo file"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione contratto",
+      "time": 3000
+    },
+    "success": {
+      "title": "Contratto creato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare il contratto, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea contratto",
+    "description": "Registra un nuovo contratto di locazione"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea contratto"
+  }
+}

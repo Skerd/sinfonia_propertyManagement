@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx",
+  "lease": "Contratto",
+  "overview": "Panoramica",
+  "status": "Stato",
+  "startDate": "Data inizio",
+  "endDate": "Data fine",
+  "monthlyRent": "Affitto mensile",
+  "depositPaid": "Deposito pagato",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

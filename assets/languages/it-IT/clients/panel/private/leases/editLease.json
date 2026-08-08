@@ -1,0 +1,51 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aggiornare il contratto, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento contratto"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Contratto aggiornato con successo!"
+    }
+  },
+  "editDescription": "Aggiorna i dettagli del contratto di locazione",
+  "editTitle": "Modifica contratto",
+  "errorDescription": "Si è verificato un errore durante il caricamento del contratto. Riprova.",
+  "errorTitle": "Impossibile caricare il contratto",
+  "form": {
+    "_idLabel": "ID record",
+    "contractMediaLabel": "Documento contratto",
+    "depositAmountLabel": "Importo deposito",
+    "depositPaidLabel": "Deposito pagato",
+    "endDateLabel": "Data fine",
+    "existingFiles": "File attuale",
+    "monthlyRentLabel": "Affitto mensile",
+    "newFiles": "Nuovo file",
+    "notesLabel": "Note",
+    "rentCurrencyLabel": "Valuta",
+    "startDateLabel": "Data inizio",
+    "statusLabel": "Stato",
+    "tenantLabel": "Inquilino",
+    "tenantPlaceholder": "Seleziona inquilino",
+    "terminationDateLabel": "Data risoluzione",
+    "terminationReasonLabel": "Motivo risoluzione",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Aggiorna i dettagli del contratto di locazione",
+    "title": "Modifica contratto"
+  },
+  "generalInfo": "Dettagli contratto",
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
+  "title": "Modifica contratto"
+}

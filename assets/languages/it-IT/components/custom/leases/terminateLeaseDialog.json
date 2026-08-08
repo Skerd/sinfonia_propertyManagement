@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/terminateLeaseDialog.tsx",
+  "dialogTitle": "Risolvi contratto",
+  "dialogDescription": "Termina il contratto, annulla gli affitti non pagati e rende di nuovo disponibile l’unità.",
+  "reasonLabel": "Motivo (facoltativo)",
+  "reasonPlaceholder": "Perché termina questo contratto?",
+  "cancel": "Annulla",
+  "submit": "Risolvi"
+}

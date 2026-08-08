@@ -1,9 +1,9 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leases/terminateLeaseDialog.tsx",
-  "dialogTitle": "Terminate mietvertrag",
-  "dialogDescription": "Diese ends die mietvertrag, waives unbezahlt rent, und marks die einheit verfügbar erneut.",
+  "dialogTitle": "Mietvertrag beenden",
+  "dialogDescription": "Beendet den Mietvertrag, erlässt offene Mieten und macht die Einheit wieder verfügbar.",
   "reasonLabel": "Grund (optional)",
-  "reasonPlaceholder": "Why ist diese mietvertrag ending?",
+  "reasonPlaceholder": "Warum endet dieser Mietvertrag?",
   "cancel": "Abbrechen",
-  "submit": "Terminate"
+  "submit": "Beenden"
 }

@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/createLease.tsx",
+  "title": "Créer un bail",
+  "description": "Enregistrer un nouveau contrat de location",
+  "generalInfo": "Détails du bail",
+  "form": {
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité",
+    "tenantLabel": "Locataire",
+    "tenantPlaceholder": "Sélectionner un locataire",
+    "startDateLabel": "Date de début",
+    "endDateLabel": "Date de fin",
+    "monthlyRentLabel": "Loyer mensuel",
+    "rentCurrencyLabel": "Devise",
+    "depositAmountLabel": "Montant du dépôt",
+    "depositPaidLabel": "Dépôt payé",
+    "notesLabel": "Notes",
+    "contractMediaLabel": "Document du contrat",
+    "existingFiles": "Fichier actuel",
+    "newFiles": "Nouveau fichier"
+  },
+  "axios": {
+    "start": {
+      "title": "Création du bail",
+      "time": 3000
+    },
+    "success": {
+      "title": "Bail créé avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Le bail n’a pas pu être créé, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un bail",
+    "description": "Enregistrer un nouveau contrat de location"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer un bail"
+  }
+}
