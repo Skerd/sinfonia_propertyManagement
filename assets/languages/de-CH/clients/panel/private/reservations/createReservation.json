@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
   "title": "Reservation erstellen",
-  "description": "A neu reservation für diese einheit erstellen",
-  "errorTitle": "Unable bis laden einheit",
+  "description": "Eine neue Reservation für diese Einheit erstellen",
+  "errorTitle": "Einheit konnte nicht geladen werden",
   "errorDescription": "Bitte versuchen Sie es erneut.",
-  "sectionTitle": "Reservation Informationen",
-  "unitLocationTitle": "Einheit standort",
-  "generalInfo": "Reservation details",
+  "sectionTitle": "Reservationsinformationen",
+  "unitLocationTitle": "Standort der Einheit",
+  "generalInfo": "Reservationsdetails",
   "documentsSectionTitle": "Dokumente",
   "form": {
     "projectLabel": "Projekt",
@@ -41,8 +41,8 @@
       "agent": "Makler",
       "portal": "Portal",
       "referral": "Empfehlung",
-      "walk_in": "Walk-in",
-      "social": "Social",
+      "walk_in": "Direktbesuch",
+      "social": "Soziale Medien",
       "other": "Andere"
     },
     "referralCodeLabel": "Empfehlungscode",
@@ -50,10 +50,10 @@
     "paymentMethodLabel": "Zahlungsart",
     "paymentMethodPlaceholder": "Zahlungsart eingeben",
     "reservationContractLabel": "Reservationsvertrag",
-    "uploadReservationContract": "Upload vertrag",
+    "uploadReservationContract": "Vertrag hochladen",
     "additionalDocumentsLabel": "Zusätzliche Dokumente",
-    "uploadAdditionalDocuments": "Upload dokumente",
-    "filesSelected": "Files selected"
+    "uploadAdditionalDocuments": "Dokumente hochladen",
+    "filesSelected": "Dateien ausgewählt"
   },
   "axios": {
     "start": {
@@ -71,7 +71,7 @@
   },
   "formHeader": {
     "title": "Reservation erstellen",
-    "description": "A neu reservation für diese einheit erstellen"
+    "description": "Eine neue Reservation für diese Einheit erstellen"
   },
   "formButtons": {
     "cancel": "Abbrechen",

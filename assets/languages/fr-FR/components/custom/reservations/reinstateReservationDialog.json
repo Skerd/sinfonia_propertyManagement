@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reinstateReservationDialog.tsx",
+  "reinstateConfirmTitle": "Rétablir la réservation",
+  "reinstateConfirmDescription": "Cela marquera à nouveau la réservation comme active et réservera l'unité si elle est encore disponible. Continuer ?",
+  "cancel": "Annuler",
+  "confirmReinstate": "Rétablir",
+  "axios": {
+    "start": {
+      "title": "Rétablissement de la réservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Réservation rétablie",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de rétablir la réservation",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/paidInFullReservationDialog.tsx",
+  "paidConfirmTitle": "Marquer comme payée intégralement",
+  "paidConfirmDescription": "Voulez-vous vraiment marquer cette réservation comme payée intégralement ?",
+  "cancel": "Annuler",
+  "confirmPaid": "Marquer comme payée",
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la réservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Réservation marquée comme payée intégralement",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la réservation",
+      "time": 3000
+    }
+  }
+}

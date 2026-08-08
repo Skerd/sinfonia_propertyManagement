@@ -1,34 +1,34 @@
 {
   "path": "src/modules/propertyManagement/components/custom/reservations/manualReservationClientEmailDialog.tsx",
   "cancel": "Abbrechen",
-  "confirmSend": "Send e-Mail",
+  "confirmSend": "E-Mail senden",
   "confirmTitles": {
-    "send_confirmation": "Resend confirmation e-Mail?",
-    "remind_3d": "Send 3-day reminder e-Mail?",
-    "remind_1d": "Send 1-day reminder e-Mail?",
-    "remind_today": "Send ablauf-day reminder e-Mail?",
-    "remind_remaining_days": "Send tage-rest reminder?",
-    "send_expired": "Send reservation abgelaufen e-Mail?"
+    "send_confirmation": "Bestätigungs-E-Mail erneut senden?",
+    "remind_3d": "3-Tage-Erinnerungs-E-Mail senden?",
+    "remind_1d": "1-Tag-Erinnerungs-E-Mail senden?",
+    "remind_today": "Ablauftags-Erinnerungs-E-Mail senden?",
+    "remind_remaining_days": "Erinnerung zu verbleibenden Tagen senden?",
+    "send_expired": "E-Mail zur abgelaufenen Reservation senden?"
   },
   "confirmDescriptions": {
-    "send_confirmation": "Diese sends die same confirmation nachricht as when die reservation was erstellt (bis die kunde e-Mail on datei).",
-    "remind_3d": "Sends die standard “3 tage before end” reminder vorlage.",
-    "remind_1d": "Sends die standard “1 day before end” reminder vorlage.",
-    "remind_today": "Sends die standard “ends heute” reminder vorlage.",
-    "remind_remaining_days": "Sends ein e-Mail stating how many whole calendar tage remain (UTC) until die reservation end datum.",
-    "send_expired": "Sends die notice that die reservation periode has ended (after die ablauf datum in UTC)."
+    "send_confirmation": "Dies sendet dieselbe Bestätigungsnachricht wie bei der Erstellung der Reservation (an die hinterlegte Kunden-E-Mail).",
+    "remind_3d": "Sendet die Standardvorlage «3 Tage vor Ende».",
+    "remind_1d": "Sendet die Standardvorlage «1 Tag vor Ende».",
+    "remind_today": "Sendet die Standardvorlage «endet heute».",
+    "remind_remaining_days": "Sendet eine E-Mail mit der Anzahl ganzer Kalendertage (UTC) bis zum Enddatum der Reservation.",
+    "send_expired": "Sendet die Mitteilung, dass die Reservationsperiode beendet ist (nach dem Ablaufdatum in UTC)."
   },
   "axios": {
     "start": {
-      "title": "Sending e-Mail…",
+      "title": "E-Mail wird gesendet…",
       "time": 3000
     },
     "success": {
-      "title": "E-Mail sent erfolgreich",
+      "title": "E-Mail erfolgreich gesendet",
       "time": 3000
     },
     "error": {
-      "title": "E-Mail konnte nicht werden sent",
+      "title": "E-Mail konnte nicht gesendet werden",
       "time": 3000
     }
   }

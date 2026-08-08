@@ -157,7 +157,7 @@ function ReservationSheetView({
                 onClose={() => setAction("")}
                 reservation={asReservation}
                 pendingAction={manualEmailAction}
-                onSuccess={() => setAction("")}
+                onSuccess={handleWorkflowSuccess}
             />
         )}
         </>

@@ -1,0 +1,80 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
+  "title": "Crea prenotazione",
+  "description": "Crea una nuova prenotazione per questa unità",
+  "errorTitle": "Impossibile caricare l'unità",
+  "errorDescription": "Riprova.",
+  "sectionTitle": "Informazioni sulla prenotazione",
+  "unitLocationTitle": "Posizione dell'unità",
+  "generalInfo": "Dettagli della prenotazione",
+  "documentsSectionTitle": "Documenti",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Seleziona piano",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità",
+    "unitRequired": "L'unità è obbligatoria",
+    "reservedByLabel": "Prenotato da",
+    "reservedByPlaceholder": "Seleziona utente",
+    "reservedByRequired": "L'utente è obbligatorio",
+    "reservedByCompanyLabel": "Azienda",
+    "reservedByCompanyPlaceholder": "Seleziona azienda",
+    "reservedByCompanyRequired": "L'azienda è obbligatoria",
+    "clientLabel": "Cliente",
+    "clientPlaceholder": "Seleziona cliente",
+    "clientRequired": "Il cliente è obbligatorio",
+    "expirationDateLabel": "Data di scadenza",
+    "expirationDatePlaceholder": "Seleziona data di scadenza",
+    "reservationNotesLabel": "Note",
+    "reservationNotesPlaceholder": "Inserisci le note di prenotazione",
+    "depositAmountLabel": "Importo del deposito",
+    "depositAmountPlaceholder": "Inserisci l'importo del deposito",
+    "depositCurrencyLabel": "Valuta del deposito",
+    "depositCurrencyPlaceholder": "Seleziona valuta",
+    "sourceLabel": "Fonte",
+    "sourcePlaceholder": "Seleziona fonte",
+    "sourceValues": {
+      "agent": "Agente",
+      "portal": "Portale",
+      "referral": "Referral",
+      "walk_in": "Visita spontanea",
+      "social": "Social",
+      "other": "Altro"
+    },
+    "referralCodeLabel": "Codice referral",
+    "referralCodePlaceholder": "Inserisci codice referral",
+    "paymentMethodLabel": "Metodo di pagamento",
+    "paymentMethodPlaceholder": "Inserisci metodo di pagamento",
+    "reservationContractLabel": "Contratto di prenotazione",
+    "uploadReservationContract": "Carica contratto",
+    "additionalDocumentsLabel": "Documenti aggiuntivi",
+    "uploadAdditionalDocuments": "Carica documenti",
+    "filesSelected": "File selezionati"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione prenotazione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prenotazione creata con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la prenotazione, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea prenotazione",
+    "description": "Crea una nuova prenotazione per questa unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea prenotazione"
+  }
+}

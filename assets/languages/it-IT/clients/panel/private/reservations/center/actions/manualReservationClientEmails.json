@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/manualReservationClientEmails.tsx",
+  "actionLabels": {
+    "send_confirmation": "Reinvia e-mail di conferma",
+    "remind_3d": "Promemoria: 3 giorni prima della scadenza",
+    "remind_1d": "Promemoria: 1 giorno prima della scadenza",
+    "remind_today": "Promemoria: giorno di scadenza",
+    "remind_remaining_days": "Promemoria: giorni rimanenti",
+    "send_expired": "Invia avviso di scadenza"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reverseReservationPaymentDialog.tsx",
+  "reverseConfirmTitle": "Annuler le paiement",
+  "reverseConfirmDescription": "Cela marquera la réservation comme non payée intégralement et annulera toute commission en attente associée. Continuer ?",
+  "cancel": "Annuler",
+  "confirmReverse": "Annuler le paiement",
+  "axios": {
+    "start": {
+      "title": "Annulation du paiement…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Paiement annulé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'annuler le paiement",
+      "time": 3000
+    }
+  }
+}

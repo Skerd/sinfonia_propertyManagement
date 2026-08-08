@@ -476,7 +476,10 @@ function ReservationCard({
                                 onClose={() => setAction("")}
                                 reservation={reservation}
                                 pendingAction={manualEmailAction}
-                                onSuccess={() => setAction("")}
+                                onSuccess={(updated?: Reservation) => {
+                                    handleModify(updated);
+                                    setAction("");
+                                }}
                             />
                         )}
                     </>

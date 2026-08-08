@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/manualReservationClientEmailDialog.tsx",
+  "cancel": "Annulla",
+  "confirmSend": "Invia e-mail",
+  "confirmTitles": {
+    "send_confirmation": "Reinviare l'e-mail di conferma?",
+    "remind_3d": "Inviare l'e-mail di promemoria a 3 giorni?",
+    "remind_1d": "Inviare l'e-mail di promemoria a 1 giorno?",
+    "remind_today": "Inviare l'e-mail di promemoria nel giorno di scadenza?",
+    "remind_remaining_days": "Inviare il promemoria dei giorni rimanenti?",
+    "send_expired": "Inviare l'e-mail di prenotazione scaduta?"
+  },
+  "confirmDescriptions": {
+    "send_confirmation": "Invia lo stesso messaggio di conferma della creazione della prenotazione (all'e-mail del cliente registrata).",
+    "remind_3d": "Invia il modello standard di promemoria « 3 giorni prima della fine ».",
+    "remind_1d": "Invia il modello standard di promemoria « 1 giorno prima della fine ».",
+    "remind_today": "Invia il modello standard di promemoria « termina oggi ».",
+    "remind_remaining_days": "Invia un'e-mail con il numero di giorni di calendario interi rimanenti (UTC) fino alla data di fine della prenotazione.",
+    "send_expired": "Invia l'avviso che il periodo di prenotazione è terminato (dopo la data di scadenza in UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Invio e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-mail inviata con successo",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare l'e-mail",
+      "time": 3000
+    }
+  }
+}

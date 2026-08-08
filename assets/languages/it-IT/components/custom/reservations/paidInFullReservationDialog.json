@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/paidInFullReservationDialog.tsx",
+  "paidConfirmTitle": "Contrassegna come pagata per intero",
+  "paidConfirmDescription": "Sei sicuro di voler contrassegnare questa prenotazione come pagata per intero?",
+  "cancel": "Annulla",
+  "confirmPaid": "Contrassegna come pagata",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento prenotazione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prenotazione contrassegnata come pagata per intero",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la prenotazione",
+      "time": 3000
+    }
+  }
+}

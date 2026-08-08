@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/manualReservationClientEmailDialog.tsx",
+  "cancel": "Annuler",
+  "confirmSend": "Envoyer l'e-mail",
+  "confirmTitles": {
+    "send_confirmation": "Renvoyer l'e-mail de confirmation ?",
+    "remind_3d": "Envoyer l'e-mail de rappel à 3 jours ?",
+    "remind_1d": "Envoyer l'e-mail de rappel à 1 jour ?",
+    "remind_today": "Envoyer l'e-mail de rappel le jour d'expiration ?",
+    "remind_remaining_days": "Envoyer le rappel des jours restants ?",
+    "send_expired": "Envoyer l'e-mail de réservation expirée ?"
+  },
+  "confirmDescriptions": {
+    "send_confirmation": "Ceci envoie le même message de confirmation qu'à la création de la réservation (à l'e-mail client enregistré).",
+    "remind_3d": "Envoie le modèle standard de rappel « 3 jours avant la fin ».",
+    "remind_1d": "Envoie le modèle standard de rappel « 1 jour avant la fin ».",
+    "remind_today": "Envoie le modèle standard de rappel « se termine aujourd'hui ».",
+    "remind_remaining_days": "Envoie un e-mail indiquant le nombre de jours calendaires entiers restants (UTC) jusqu'à la date de fin de la réservation.",
+    "send_expired": "Envoie l'avis que la période de réservation est terminée (après la date d'expiration en UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Envoi de l'e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-mail envoyé avec succès",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'e-mail n'a pas pu être envoyé",
+      "time": 3000
+    }
+  }
+}

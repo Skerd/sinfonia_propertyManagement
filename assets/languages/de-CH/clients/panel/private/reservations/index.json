@@ -31,6 +31,11 @@
     "depositAmount": "Anzahlungsbetrag",
     "depositCurrency": "Anzahlungswährung",
     "expirationDate": "Ablaufdatum",
+    "confirmationEmailSentAt": "Bestätigungs-E-Mail gesendet am",
+    "expirationReminderEmailAt3d": "Ablauf-Erinnerungs-E-Mail (3 Tage)",
+    "expirationReminderEmailAt1d": "Ablauf-Erinnerungs-E-Mail (1 Tag)",
+    "expirationReminderEmailAt0d": "Ablauf-Erinnerungs-E-Mail (Ablauftag)",
+    "expiredAt": "Abgelaufen am",
     "isActive": "Aktiv",
     "name": "Name",
     "paid": "Bezahlt",
@@ -43,6 +48,9 @@
     "reservedByCompany": "Reserviert von Firma",
     "source": "Quelle",
     "status": "Status",
+    "project": "Projekt",
+    "edifice": "Gebäude",
+    "floor": "Geschoss",
     "unit": "Einheit",
     "updatedAt": "Aktualisiert am",
     "!enums": {
@@ -50,8 +58,8 @@
         "agent": "Makler",
         "portal": "Portal",
         "referral": "Empfehlung",
-        "walk_in": "Walk-in",
-        "social": "Social Media",
+        "walk_in": "Direktbesuch",
+        "social": "Soziale Medien",
         "other": "Andere"
       },
       "status": {

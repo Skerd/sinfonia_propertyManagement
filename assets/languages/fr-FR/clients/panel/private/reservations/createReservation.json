@@ -1,0 +1,80 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
+  "title": "Créer une réservation",
+  "description": "Créer une nouvelle réservation pour cette unité",
+  "errorTitle": "Impossible de charger l'unité",
+  "errorDescription": "Veuillez réessayer.",
+  "sectionTitle": "Informations de réservation",
+  "unitLocationTitle": "Emplacement de l'unité",
+  "generalInfo": "Détails de la réservation",
+  "documentsSectionTitle": "Documents",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Sélectionner un bâtiment",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Sélectionner un étage",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité",
+    "unitRequired": "L'unité est obligatoire",
+    "reservedByLabel": "Réservé par",
+    "reservedByPlaceholder": "Sélectionner un utilisateur",
+    "reservedByRequired": "L'utilisateur est obligatoire",
+    "reservedByCompanyLabel": "Entreprise",
+    "reservedByCompanyPlaceholder": "Sélectionner une entreprise",
+    "reservedByCompanyRequired": "L'entreprise est obligatoire",
+    "clientLabel": "Client",
+    "clientPlaceholder": "Sélectionner un client",
+    "clientRequired": "Le client est obligatoire",
+    "expirationDateLabel": "Date d'expiration",
+    "expirationDatePlaceholder": "Sélectionner la date d'expiration",
+    "reservationNotesLabel": "Notes",
+    "reservationNotesPlaceholder": "Saisir les notes de réservation",
+    "depositAmountLabel": "Montant de l'acompte",
+    "depositAmountPlaceholder": "Saisir le montant de l'acompte",
+    "depositCurrencyLabel": "Devise de l'acompte",
+    "depositCurrencyPlaceholder": "Sélectionner une devise",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Sélectionner une source",
+    "sourceValues": {
+      "agent": "Agent",
+      "portal": "Portail",
+      "referral": "Parrainage",
+      "walk_in": "Visite spontanée",
+      "social": "Réseaux sociaux",
+      "other": "Autre"
+    },
+    "referralCodeLabel": "Code de parrainage",
+    "referralCodePlaceholder": "Saisir le code de parrainage",
+    "paymentMethodLabel": "Mode de paiement",
+    "paymentMethodPlaceholder": "Saisir le mode de paiement",
+    "reservationContractLabel": "Contrat de réservation",
+    "uploadReservationContract": "Téléverser le contrat",
+    "additionalDocumentsLabel": "Documents supplémentaires",
+    "uploadAdditionalDocuments": "Téléverser des documents",
+    "filesSelected": "Fichiers sélectionnés"
+  },
+  "axios": {
+    "start": {
+      "title": "Création de la réservation",
+      "time": 3000
+    },
+    "success": {
+      "title": "Réservation créée avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "La réservation n'a pas pu être créée, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer une réservation",
+    "description": "Créer une nouvelle réservation pour cette unité"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer la réservation"
+  }
+}

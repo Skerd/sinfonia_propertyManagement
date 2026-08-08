@@ -25,12 +25,12 @@ export function parseManualClientEmailAction(action: string): ManualReservationC
 }
 
 type ManualReservationClientEmailDialogProps = WithLanguageType &
-    WithAxiosType<{ ok: true }, ManualReservationClientEmailForm> & {
+    WithAxiosType<Reservation, ManualReservationClientEmailForm> & {
         open: boolean;
         onClose: () => void;
         reservation: Reservation;
         pendingAction: ManualReservationClientEmailForm["action"];
-        onSuccess?: () => void;
+        onSuccess?: (updated?: Reservation) => void;
     };
 
 function ManualReservationClientEmailDialog({
@@ -45,8 +45,8 @@ function ManualReservationClientEmailDialog({
     loading,
 }: ManualReservationClientEmailDialogProps) {
     useImperativeHandle(innerRef, () => ({
-        success: () => {
-            onSuccess?.();
+        success: (responseData?: Reservation) => {
+            onSuccess?.(responseData);
             onClose();
         },
     }));

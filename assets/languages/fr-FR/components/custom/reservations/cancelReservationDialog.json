@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/cancelReservationDialog.tsx",
+  "cancelConfirmTitle": "Annuler la réservation",
+  "cancelConfirmDescription": "Voulez-vous vraiment annuler cette réservation ? Veuillez indiquer un motif d'annulation.",
+  "cancelConfirmDescriptionNoReason": "Voulez-vous vraiment annuler cette réservation ?",
+  "cancellationReasonLabel": "Motif d'annulation",
+  "cancellationReasonPlaceholder": "Saisir le motif d'annulation de cette réservation...",
+  "cancel": "Annuler",
+  "confirmCancel": "Annuler la réservation",
+  "axios": {
+    "start": {
+      "title": "Annulation de la réservation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Réservation annulée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'annuler la réservation",
+      "time": 3000
+    }
+  }
+}

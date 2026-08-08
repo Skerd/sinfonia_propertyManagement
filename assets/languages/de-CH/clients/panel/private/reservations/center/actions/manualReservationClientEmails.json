@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/manualReservationClientEmails.tsx",
   "actionLabels": {
-    "send_confirmation": "Resend confirmation e-Mail",
-    "remind_3d": "Remind: 3 tage before ablauf",
-    "remind_1d": "Remind: 1 day before ablauf",
-    "remind_today": "Remind: ablauf day",
-    "remind_remaining_days": "Remind: tage rest",
-    "send_expired": "Send abgelaufen notice"
+    "send_confirmation": "Bestätigungs-E-Mail erneut senden",
+    "remind_3d": "Erinnerung: 3 Tage vor Ablauf",
+    "remind_1d": "Erinnerung: 1 Tag vor Ablauf",
+    "remind_today": "Erinnerung: Ablauftag",
+    "remind_remaining_days": "Erinnerung: verbleibende Tage",
+    "send_expired": "Ablaufmitteilung senden"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/reservations/reinstateReservationDialog.tsx",
+  "reinstateConfirmTitle": "Ripristina prenotazione",
+  "reinstateConfirmDescription": "Questo contrassegnerà di nuovo la prenotazione come attiva e prenoterà l'unità se è ancora disponibile. Continuare?",
+  "cancel": "Annulla",
+  "confirmReinstate": "Ripristina",
+  "axios": {
+    "start": {
+      "title": "Ripristino prenotazione…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prenotazione ripristinata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile ripristinare la prenotazione",
+      "time": 3000
+    }
+  }
+}
