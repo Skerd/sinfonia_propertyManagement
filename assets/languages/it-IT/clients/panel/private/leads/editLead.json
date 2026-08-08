@@ -1,0 +1,83 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/editLead.tsx",
+  "title": "Modifica lead",
+  "description": "Aggiorna le informazioni del lead",
+  "editTitle": "Modifica lead",
+  "editDescription": "Aggiorna le informazioni del lead",
+  "errorTitle": "Caricamento lead non riuscito",
+  "errorDescription": "Si è verificato un errore durante il caricamento del lead. Riprova.",
+  "generalInfo": "Informazioni generali",
+  "interestInfo": "Interesse immobiliare",
+  "form": {
+    "firstNameLabel": "Nome",
+    "firstNamePlaceholder": "Inserisci il nome",
+    "firstNameRequired": "Il nome è obbligatorio",
+    "lastNameLabel": "Cognome",
+    "lastNamePlaceholder": "Inserisci il cognome",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Inserisci l'indirizzo e-mail",
+    "phoneLabel": "Telefono",
+    "phonePlaceholder": "Inserisci il numero di telefono",
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Seleziona lo stato",
+    "sourceLabel": "Fonte",
+    "sourcePlaceholder": "Seleziona la fonte",
+    "interestLabel": "Interesse",
+    "interestPlaceholder": "Seleziona l'interesse",
+    "interestPartnerships": "Partnership",
+    "interestInvestments": "Investimenti",
+    "interestPlatformSupport": "Supporto piattaforma",
+    "interestReservation": "Prenotazione",
+    "interestOther": "Altro",
+    "projectInterestLabel": "Interesse progetto",
+    "projectInterestPlaceholder": "Seleziona un progetto",
+    "unitInterestLabel": "Interesse unità",
+    "unitInterestPlaceholder": "Seleziona un'unità",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "Inserisci l'importo del budget",
+    "budgetCurrencyLabel": "Valuta del budget",
+    "budgetCurrencyPlaceholder": "Seleziona la valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Inserisci le note",
+    "assignedToLabel": "Assegnato a",
+    "assignedToPlaceholder": "Seleziona un utente",
+    "followUpDateLabel": "Data di follow-up",
+    "followUpDatePlaceholder": "Seleziona una data",
+    "statusNew": "Nuovo",
+    "statusContacted": "Contattato",
+    "statusQualified": "Qualificato",
+    "statusProposal": "Proposta",
+    "statusNegotiation": "Negoziazione",
+    "statusWon": "Vinto",
+    "statusLost": "Perso",
+    "sourceWebsite": "Sito web",
+    "sourceReferral": "Segnalazione",
+    "sourceSocial": "Social media",
+    "sourceEvent": "Evento",
+    "sourceColdCall": "Cold call",
+    "sourceWalkIn": "Visita spontanea",
+    "sourceOther": "Altro"
+  },
+  "axios": {
+    "start": {
+      "title": "Aggiornamento lead",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead aggiornato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il lead, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica lead",
+    "description": "Aggiorna le informazioni del lead"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

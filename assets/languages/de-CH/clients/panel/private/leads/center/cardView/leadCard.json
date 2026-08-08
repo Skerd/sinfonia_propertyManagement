@@ -4,9 +4,9 @@
   "phone": "Telefon",
   "projectInterest": "Projekt",
   "unitInterest": "Einheit",
-  "budget": "Kostenvoranschlag",
+  "budget": "Budget",
   "assignedTo": "Zugewiesen an",
-  "followUpDate": "Follow-up",
+  "followUpDate": "Nachfassung",
   "statusLabel": "Status",
   "sourceLabel": "Quelle",
   "interestLabel": "Interesse",
@@ -23,9 +23,9 @@
     "website": "Website",
     "referral": "Empfehlung",
     "social": "Social",
-    "event": "Event",
+    "event": "Veranstaltung",
     "cold_call": "Kaltakquise",
-    "walk_in": "Walk-in",
+    "walk_in": "Spontanbesuch",
     "other": "Andere"
   },
   "interest": {

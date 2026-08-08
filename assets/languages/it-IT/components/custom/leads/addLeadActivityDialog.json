@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
+  "dialogTitle": "Aggiungi attività",
+  "dialogDescription": "Registra un'attività CRM per questo lead.",
+  "actionLabel": "Tipo di attività",
+  "actionPlaceholder": "Seleziona il tipo di attività",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Dettagli opzionali su questa attività",
+  "cancel": "Annulla",
+  "submit": "Aggiungi attività",
+  "activityActions": {
+    "called": "Chiamata",
+    "emailed": "E-mail inviata",
+    "meeting": "Riunione",
+    "site_visit": "Visita in loco",
+    "proposal_sent": "Proposta inviata",
+    "follow_up": "Follow-up",
+    "note": "Nota"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/editLead.tsx",
+  "title": "Modifier le prospect",
+  "description": "Mettre à jour les informations du prospect",
+  "editTitle": "Modifier le prospect",
+  "editDescription": "Mettre à jour les informations du prospect",
+  "errorTitle": "Échec du chargement du prospect",
+  "errorDescription": "Une erreur s'est produite lors du chargement du prospect. Veuillez réessayer.",
+  "generalInfo": "Informations générales",
+  "interestInfo": "Intérêt immobilier",
+  "form": {
+    "firstNameLabel": "Prénom",
+    "firstNamePlaceholder": "Saisir le prénom",
+    "firstNameRequired": "Le prénom est obligatoire",
+    "lastNameLabel": "Nom",
+    "lastNamePlaceholder": "Saisir le nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Saisir l'adresse e-mail",
+    "phoneLabel": "Téléphone",
+    "phonePlaceholder": "Saisir le numéro de téléphone",
+    "statusLabel": "Statut",
+    "statusPlaceholder": "Sélectionner le statut",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Sélectionner la source",
+    "interestLabel": "Intérêt",
+    "interestPlaceholder": "Sélectionner l'intérêt",
+    "interestPartnerships": "Partenariats",
+    "interestInvestments": "Investissements",
+    "interestPlatformSupport": "Support plateforme",
+    "interestReservation": "Réservation",
+    "interestOther": "Autre",
+    "projectInterestLabel": "Intérêt projet",
+    "projectInterestPlaceholder": "Sélectionner un projet",
+    "unitInterestLabel": "Intérêt unité",
+    "unitInterestPlaceholder": "Sélectionner une unité",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "Saisir le montant du budget",
+    "budgetCurrencyLabel": "Devise du budget",
+    "budgetCurrencyPlaceholder": "Sélectionner la devise",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Saisir des notes",
+    "assignedToLabel": "Assigné à",
+    "assignedToPlaceholder": "Sélectionner un utilisateur",
+    "followUpDateLabel": "Date de suivi",
+    "followUpDatePlaceholder": "Sélectionner une date",
+    "statusNew": "Nouveau",
+    "statusContacted": "Contacté",
+    "statusQualified": "Qualifié",
+    "statusProposal": "Proposition",
+    "statusNegotiation": "Négociation",
+    "statusWon": "Gagné",
+    "statusLost": "Perdu",
+    "sourceWebsite": "Site web",
+    "sourceReferral": "Recommandation",
+    "sourceSocial": "Réseaux sociaux",
+    "sourceEvent": "Événement",
+    "sourceColdCall": "Appel à froid",
+    "sourceWalkIn": "Visite spontanée",
+    "sourceOther": "Autre"
+  },
+  "axios": {
+    "start": {
+      "title": "Mise à jour du prospect",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prospect mis à jour avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Le prospect n'a pas pu être mis à jour, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier le prospect",
+    "description": "Mettre à jour les informations du prospect"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  }
+}

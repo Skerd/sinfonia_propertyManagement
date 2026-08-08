@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/center/cardView/leadCard.tsx",
+  "email": "E-mail",
+  "phone": "Telefono",
+  "projectInterest": "Progetto",
+  "unitInterest": "Unità",
+  "budget": "Budget",
+  "assignedTo": "Assegnato a",
+  "followUpDate": "Follow-up",
+  "statusLabel": "Stato",
+  "sourceLabel": "Fonte",
+  "interestLabel": "Interesse",
+  "status": {
+    "new": "Nuovo",
+    "contacted": "Contattato",
+    "qualified": "Qualificato",
+    "proposal": "Proposta",
+    "negotiation": "Negoziazione",
+    "won": "Vinto",
+    "lost": "Perso"
+  },
+  "source": {
+    "website": "Sito web",
+    "referral": "Segnalazione",
+    "social": "Social",
+    "event": "Evento",
+    "cold_call": "Cold call",
+    "walk_in": "Visita spontanea",
+    "other": "Altro"
+  },
+  "interest": {
+    "partnerships": "Partnership",
+    "investments": "Investimenti",
+    "platform_support": "Supporto piattaforma",
+    "reservation": "Prenotazione",
+    "other": "Altro"
+  }
+}

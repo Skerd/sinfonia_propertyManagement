@@ -25,6 +25,18 @@ function buildLeadEditPath(lead: Lead) {
 function AllLeads({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
+            field: "projectInterest",
+            label: resolveLanguageKey("fields.projectInterest") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+        },
+        {
+            field: "unitInterest",
+            label: resolveLanguageKey("fields.unitInterest") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/unit/select",
+        },
+        {
             field: "status",
             label: resolveLanguageKey("fields.status") as string,
             type: COLUMN_TYPE.ENUM,

@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/index.tsx",
+  "title": "Prospects",
+  "description": "Gérer tous les prospects CRM",
+  "createLead": "Créer un prospect",
+  "noData": "Aucun prospect trouvé",
+  "failTitle": "Échec du chargement des prospects",
+  "failDescription": "Une erreur s'est produite lors du chargement des prospects. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "activityLog": "Journal d'activité",
+    "assignedTo": "Assigné à",
+    "budget": "Budget",
+    "budgetCurrency": "Devise",
+    "convertedAt": "Converti le",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "email": "E-mail",
+    "firstName": "Prénom",
+    "followUpDate": "Date de suivi",
+    "lastName": "Nom",
+    "name": "Référence",
+    "notes": "Notes",
+    "phone": "Téléphone",
+    "projectInterest": "Intérêt projet",
+    "interest": "Intérêt",
+    "source": "Source",
+    "status": "Statut",
+    "unitInterest": "Intérêt unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "new": "Nouveau",
+        "contacted": "Contacté",
+        "qualified": "Qualifié",
+        "proposal": "Proposition",
+        "negotiation": "Négociation",
+        "won": "Gagné",
+        "lost": "Perdu"
+      },
+      "source": {
+        "website": "Site web",
+        "referral": "Recommandation",
+        "social": "Réseaux sociaux",
+        "event": "Événement",
+        "cold_call": "Appel à froid",
+        "walk_in": "Visite spontanée",
+        "other": "Autre"
+      },
+      "interest": {
+        "partnerships": "Partenariats",
+        "investments": "Investissements",
+        "platform_support": "Support plateforme",
+        "reservation": "Réservation",
+        "other": "Autre"
+      }
+    }
+  }
+}

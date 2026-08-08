@@ -1,13 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/leads/editLead.tsx",
   "title": "Lead bearbeiten",
-  "description": "Aktualisieren lead informationen",
+  "description": "Lead-Informationen aktualisieren",
   "editTitle": "Lead bearbeiten",
-  "editDescription": "Aktualisieren lead informationen",
-  "errorTitle": "Lead konnten nicht geladen werden",
-  "errorDescription": "Beim Laden von die lead ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "editDescription": "Lead-Informationen aktualisieren",
+  "errorTitle": "Lead konnte nicht geladen werden",
+  "errorDescription": "Beim Laden des Leads ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
   "generalInfo": "Allgemeine Informationen",
-  "interestInfo": "Property Interesse",
+  "interestInfo": "Immobilieninteresse",
   "form": {
     "firstNameLabel": "Vorname",
     "firstNamePlaceholder": "Vorname eingeben",
@@ -33,7 +33,7 @@
     "projectInterestPlaceholder": "Projekt auswählen",
     "unitInterestLabel": "Einheitsinteresse",
     "unitInterestPlaceholder": "Einheit auswählen",
-    "budgetLabel": "Kostenvoranschlag",
+    "budgetLabel": "Budget",
     "budgetPlaceholder": "Budgetbetrag eingeben",
     "budgetCurrencyLabel": "Budgetwährung",
     "budgetCurrencyPlaceholder": "Währung auswählen",
@@ -41,7 +41,7 @@
     "notesPlaceholder": "Notizen eingeben",
     "assignedToLabel": "Zugewiesen an",
     "assignedToPlaceholder": "Benutzer auswählen",
-    "followUpDateLabel": "Folgedatum",
+    "followUpDateLabel": "Nachfassungsdatum",
     "followUpDatePlaceholder": "Datum auswählen",
     "statusNew": "Neu",
     "statusContacted": "Kontaktiert",
@@ -52,10 +52,10 @@
     "statusLost": "Verloren",
     "sourceWebsite": "Website",
     "sourceReferral": "Empfehlung",
-    "sourceSocial": "Social Media",
-    "sourceEvent": "Event",
+    "sourceSocial": "Soziale Medien",
+    "sourceEvent": "Veranstaltung",
     "sourceColdCall": "Kaltakquise",
-    "sourceWalkIn": "Walk-in",
+    "sourceWalkIn": "Spontanbesuch",
     "sourceOther": "Andere"
   },
   "axios": {
@@ -74,10 +74,10 @@
   },
   "formHeader": {
     "title": "Lead bearbeiten",
-    "description": "Aktualisieren lead informationen"
+    "description": "Lead-Informationen aktualisieren"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern Änderungen"
+    "submit": "Änderungen speichern"
   }
 }

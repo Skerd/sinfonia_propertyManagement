@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leads/index.tsx",
+  "title": "Lead",
+  "description": "Gestisci tutti i lead CRM",
+  "createLead": "Crea lead",
+  "noData": "Nessun lead trovato",
+  "failTitle": "Caricamento lead non riuscito",
+  "failDescription": "Si è verificato un errore durante il caricamento dei lead. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "activityLog": "Registro attività",
+    "assignedTo": "Assegnato a",
+    "budget": "Budget",
+    "budgetCurrency": "Valuta",
+    "convertedAt": "Convertito il",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "email": "E-mail",
+    "firstName": "Nome",
+    "followUpDate": "Data di follow-up",
+    "lastName": "Cognome",
+    "name": "Riferimento",
+    "notes": "Note",
+    "phone": "Telefono",
+    "projectInterest": "Interesse progetto",
+    "interest": "Interesse",
+    "source": "Fonte",
+    "status": "Stato",
+    "unitInterest": "Interesse unità",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "new": "Nuovo",
+        "contacted": "Contattato",
+        "qualified": "Qualificato",
+        "proposal": "Proposta",
+        "negotiation": "Negoziazione",
+        "won": "Vinto",
+        "lost": "Perso"
+      },
+      "source": {
+        "website": "Sito web",
+        "referral": "Segnalazione",
+        "social": "Social media",
+        "event": "Evento",
+        "cold_call": "Cold call",
+        "walk_in": "Visita spontanea",
+        "other": "Altro"
+      },
+      "interest": {
+        "partnerships": "Partnership",
+        "investments": "Investimenti",
+        "platform_support": "Supporto piattaforma",
+        "reservation": "Prenotazione",
+        "other": "Altro"
+      }
+    }
+  }
+}
