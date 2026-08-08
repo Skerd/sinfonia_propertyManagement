@@ -42,11 +42,14 @@
   "checklistResponsesJson": "Checklist Responses",
   "types": {
     "initial": "Initial",
+    "follow_up": "Follow-up",
     "followUp": "Follow-up",
     "final": "Final",
     "routine": "Routine",
     "complaint": "Complaint",
+    "pre_sale": "Pre-sale",
     "preSale": "Pre-sale",
+    "post_sale": "Post-sale",
     "postSale": "Post-sale"
   },
   "statuses": {

@@ -48,6 +48,9 @@
     "scheduledDate": "Scheduled",
     "status": "Status",
     "type": "Type",
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
     "unit": "Unit",
     "updatedAt": "Updated At",
     "!enums": {

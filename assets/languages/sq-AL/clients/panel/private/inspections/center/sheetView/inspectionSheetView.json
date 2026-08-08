@@ -42,11 +42,14 @@
   "checklistResponsesJson": "Përgjigjet e listës kontrolluese",
   "types": {
     "initial": "Fillestare",
+    "follow_up": "Përcjellja",
     "followUp": "Përcjellja",
     "final": "Përfundimtar",
     "routine": "Rutinë",
     "complaint": "Ankesa",
+    "pre_sale": "Para-shitje",
     "preSale": "Para-shitje",
+    "post_sale": "Pas shitjes",
     "postSale": "Pas shitjes"
   },
   "statuses": {

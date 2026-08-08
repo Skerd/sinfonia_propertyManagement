@@ -40,6 +40,36 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+            asExtraParam: true,
+        },
+        {
+            field: "edifice",
+            label: resolveLanguageKey("fields.edifice") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/edifice/select",
+            dependsOn: "project",
+            asExtraParam: true,
+        },
+        {
+            field: "floor",
+            label: resolveLanguageKey("fields.floor") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/floor/select",
+            dependsOn: ["edifice", "project"],
+            asExtraParam: true,
+        },
+        {
+            field: "unit",
+            label: resolveLanguageKey("fields.unit") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/unit/select",
+            dependsOn: ["floor", "edifice", "project"],
+        },
+        {
             field: "status",
             label: resolveLanguageKey("fields.status") as string,
             type: COLUMN_TYPE.ENUM,

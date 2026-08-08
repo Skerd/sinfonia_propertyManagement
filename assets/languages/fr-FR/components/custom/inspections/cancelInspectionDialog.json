@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/cancelInspectionDialog.tsx",
+  "cancelConfirmTitle": "Annuler l'inspection",
+  "cancelConfirmDescription": "Voulez-vous vraiment annuler cette inspection ? Indiquez un motif ci-dessous.",
+  "cancellationReasonLabel": "Motif d'annulation",
+  "cancellationReasonPlaceholder": "p. ex. Locataire indisponible, accès au bien refusé...",
+  "cancel": "Annuler",
+  "confirmCancel": "Annuler l'inspection",
+  "axios": {
+    "start": {
+      "title": "Annulation de l'inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection annulée avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'inspection n'a pas pu être annulée, veuillez réessayer !",
+      "time": 3000
+    }
+  }
+}
