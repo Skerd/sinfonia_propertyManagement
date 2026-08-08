@@ -1,81 +1,93 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
-  "title": "Vermietungen",
-  "description": "Alle leases und rent payments in one place. Suchen, filter und offen details.",
+  "title": "Vermietungszentrale",
+  "description": "Alle Mietverträge und Mietzahlungen an einem Ort. Suchen, filtern und Details öffnen.",
   "leases": {
     "title": "Mietverträge",
-    "description": "Firma-wide mietvertrag registry.",
+    "description": "Firmenweite Mietvertragsübersicht.",
     "searchLabel": "Suchen",
-    "searchPlaceholder": "Suchen von tenant, einheit, mietvertrag referenz…",
+    "searchPlaceholder": "Nach Mieter, Einheit, Vertragsreferenz suchen…",
     "projectLabel": "Projekt",
-    "projectPlaceholder": "Alle projects",
+    "projectPlaceholder": "Alle Projekte",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Alle Gebäude",
+    "floorLabel": "Geschoss",
+    "floorPlaceholder": "Alle Geschosse",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Alle Einheiten",
     "statusLabel": "Status",
-    "statusPlaceholder": "Alle statuses",
+    "statusPlaceholder": "Alle Status",
     "startDateLabel": "Startdatum",
     "dateFromLabel": "Von",
     "dateToLabel": "Bis",
-    "noResults": "Keine leases gefunden.",
-    "errorTitle": "Konnte nicht laden leases",
-    "errorDescription": "Versuchen erneut oder adjust ihr filters.",
+    "noResults": "Keine Mietverträge gefunden.",
+    "errorTitle": "Mietverträge konnten nicht geladen werden",
+    "errorDescription": "Erneut versuchen oder Filter anpassen.",
     "viewAction": "Anzeigen",
     "previous": "Zurück",
     "next": "Weiter",
     "columns": {
       "reference": "Referenz",
-      "tenant": "Tenant",
+      "tenant": "Mieter",
       "project": "Projekt",
       "unit": "Einheit",
       "status": "Status",
       "startDate": "Startdatum",
       "endDate": "Enddatum",
-      "monthlyRent": "Monthly rent",
+      "monthlyRent": "Monatsmiete",
       "actions": "Aktionen"
     },
     "status": {
       "active": "Aktiv",
       "expired": "Abgelaufen",
-      "terminated": "Terminated"
+      "terminated": "Beendet"
     },
     "pagination": {
-      "summary": "{von} bis {bis} von {total} results"
+      "summary": "{from} bis {to} von {total} Ergebnissen"
     }
   },
   "rentalPayments": {
-    "title": "Rent payments",
-    "description": "Firma-wide rent zahlung hauptbuch.",
+    "title": "Mietzahlungen",
+    "description": "Firmenweites Mietzahlungsjournal.",
     "searchLabel": "Suchen",
-    "searchPlaceholder": "Suchen von tenant, mietvertrag, einheit, status…",
+    "searchPlaceholder": "Nach Mieter, Vertrag, Einheit, Status suchen…",
     "projectLabel": "Projekt",
-    "projectPlaceholder": "Alle projects",
+    "projectPlaceholder": "Alle Projekte",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Alle Gebäude",
+    "floorLabel": "Geschoss",
+    "floorPlaceholder": "Alle Geschosse",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Alle Einheiten",
     "statusLabel": "Status",
-    "statusPlaceholder": "Alle statuses",
+    "statusPlaceholder": "Alle Status",
     "dueDateLabel": "Fälligkeitsdatum",
     "dateFromLabel": "Von",
     "dateToLabel": "Bis",
-    "noResults": "Keine rent payments gefunden.",
-    "errorTitle": "Konnte nicht laden rent payments",
-    "errorDescription": "Versuchen erneut oder adjust ihr filters.",
+    "noResults": "Keine Mietzahlungen gefunden.",
+    "errorTitle": "Mietzahlungen konnten nicht geladen werden",
+    "errorDescription": "Erneut versuchen oder Filter anpassen.",
     "viewAction": "Anzeigen",
     "previous": "Zurück",
     "next": "Weiter",
     "columns": {
       "reference": "Referenz",
       "lease": "Mietvertrag",
-      "tenant": "Tenant",
+      "tenant": "Mieter",
       "unit": "Einheit",
       "status": "Status",
-      "dueDate": "Fälligkeitsdatum",
+      "dueDate": "Fälligkeit",
       "amount": "Betrag",
       "actions": "Aktionen"
     },
     "status": {
       "pending": "Ausstehend",
       "paid": "Bezahlt",
-      "overdue": "Overdue",
-      "waived": "Waived"
+      "overdue": "Überfällig",
+      "waived": "Erlassen"
     },
     "pagination": {
-      "summary": "{von} bis {bis} von {total} results"
+      "summary": "{from} bis {to} von {total} Ergebnissen"
     }
   }
 }

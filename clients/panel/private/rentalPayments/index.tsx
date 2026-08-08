@@ -1,7 +1,8 @@
 import {compose} from "redux";
+import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {IconReceiptDollar} from "@tabler/icons-react";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -10,6 +11,7 @@ import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/cu
 import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {buildPageTitle} from "@coreModule/helpers/general";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 interface AllRentalPaymentsProps extends WithLanguageType {
     leaseId?: string;
@@ -27,11 +29,58 @@ function buildRentalPaymentEditPath(payment: RentalPayment) {
 }
 
 function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPaymentsProps) {
-    const extraFilters = leaseId ? {leaseId} : undefined;
+    const extraFilters = useMemo(() => (leaseId ? {lease: leaseId} : undefined), [leaseId]);
     const headerTitle = buildPageTitle(
         String(resolveLanguageKey("title")),
         leaseName ? [leaseName] : [],
     );
+
+    const quickFilters = useMemo<QuickFilterDef[]>(() => {
+        if (leaseId) return [];
+        return [
+            {
+                field: "project",
+                label: resolveLanguageKey("fields.project") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/realEstate/project/select",
+                asExtraParam: true,
+            },
+            {
+                field: "edifice",
+                label: resolveLanguageKey("fields.edifice") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/realEstate/edifice/select",
+                dependsOn: "project",
+                asExtraParam: true,
+            },
+            {
+                field: "floor",
+                label: resolveLanguageKey("fields.floor") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/realEstate/floor/select",
+                dependsOn: ["edifice", "project"],
+                asExtraParam: true,
+            },
+            {
+                field: "unit",
+                label: resolveLanguageKey("fields.unit") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/realEstate/unit/select",
+                dependsOn: ["floor", "edifice", "project"],
+            },
+            {
+                field: "status",
+                label: resolveLanguageKey("fields.status") as string,
+                type: COLUMN_TYPE.ENUM,
+                enumValues: [
+                    {value: "pending", label: resolveLanguageKey("fields.!enums.status.pending") as string},
+                    {value: "paid", label: resolveLanguageKey("fields.!enums.status.paid") as string},
+                    {value: "overdue", label: resolveLanguageKey("fields.!enums.status.overdue") as string},
+                    {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived") as string},
+                ],
+            },
+        ];
+    }, [resolveLanguageKey, leaseId]);
 
     return (
         <EntityListPage<RentalPayment>
@@ -50,6 +99,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"
             cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={extraFilters}
+            quickFilters={quickFilters}
             headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(payment, onDelete, onRestore, listRef) => (

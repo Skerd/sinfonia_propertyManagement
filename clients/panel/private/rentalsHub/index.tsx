@@ -12,6 +12,13 @@ import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx";
 import RentalPaymentSheetView from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
+import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
+import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
+import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
+import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
+import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
+import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
+import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
 import LeasesTableSection from "./LeasesTableSection.tsx";
 import RentalPaymentsTableSection from "./RentalPaymentsTableSection.tsx";
 
@@ -23,15 +30,41 @@ type SheetState =
 function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
     const [sheet, setSheet] = useState<SheetState>(null);
+    const [action, setAction] = useState("");
+
+    const closeSheet = useCallback(() => {
+        setSheet(null);
+        setAction("");
+    }, []);
 
     const openLeaseRow = useCallback(async (row: LeaseRegistryRow) => {
         const res = await apiClient.post<Lease>("/api/realEstate/lease/single", {_id: row._id});
+        setAction("");
         setSheet({type: "lease", entity: res.data});
     }, []);
 
     const openPaymentRow = useCallback(async (row: RentalPaymentRegistryRow) => {
         const res = await apiClient.post<RentalPayment>("/api/realEstate/rentalPayment/single", {_id: row._id});
+        setAction("");
         setSheet({type: "rentalPayment", entity: res.data});
+    }, []);
+
+    const patchLease = useCallback((updated?: Lease) => {
+        if (!updated?._id) return;
+        setSheet((prev) =>
+            prev?.type === "lease" && prev.entity._id === updated._id
+                ? {type: "lease", entity: {...prev.entity, ...updated}}
+                : prev,
+        );
+    }, []);
+
+    const patchPayment = useCallback((updated?: RentalPayment) => {
+        if (!updated?._id) return;
+        setSheet((prev) =>
+            prev?.type === "rentalPayment" && prev.entity._id === updated._id
+                ? {type: "rentalPayment", entity: {...prev.entity, ...updated}}
+                : prev,
+        );
     }, []);
 
     return (
@@ -55,21 +88,72 @@ function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
             </div>
 
             {sheet?.type === "lease" && (
-                <LeaseSheetView
-                    open
-                    onOpenChange={(open: boolean) => { if (!open) setSheet(null); }}
-                    lease={sheet.entity}
-                    hideActions
-                />
+                <>
+                    <LeaseSheetView
+                        open
+                        onOpenChange={(open: boolean) => { if (!open) closeSheet(); }}
+                        lease={sheet.entity}
+                        actionMenuAllowCustomChildren
+                        onActionMenuAction={setAction}
+                        actionMenuChildren={(
+                            <>
+                                <ViewLeasePayments lease={sheet.entity} />
+                                <TerminateLease lease={sheet.entity} onAction={setAction} />
+                                <ReturnDeposit lease={sheet.entity} onAction={setAction} />
+                            </>
+                        )}
+                        onSheetRowPatched={(row) => patchLease(row as Lease)}
+                    />
+                    {action === TERMINATE_LEASE_ACTION && (
+                        <TerminateLeaseDialog
+                            open
+                            onClose={() => setAction("")}
+                            lease={sheet.entity}
+                            onSuccess={(updated?: Lease) => {
+                                patchLease(updated);
+                                setAction("");
+                            }}
+                        />
+                    )}
+                    {action === RETURN_DEPOSIT_ACTION && (
+                        <ReturnDepositDialog
+                            open
+                            onClose={() => setAction("")}
+                            lease={sheet.entity}
+                            onSuccess={(updated?: Lease) => {
+                                patchLease(updated);
+                                setAction("");
+                            }}
+                        />
+                    )}
+                </>
             )}
 
             {sheet?.type === "rentalPayment" && (
-                <RentalPaymentSheetView
-                    open
-                    onOpenChange={(open: boolean) => { if (!open) setSheet(null); }}
-                    rentalPayment={sheet.entity}
-                    hideActions
-                />
+                <>
+                    <RentalPaymentSheetView
+                        open
+                        onOpenChange={(open: boolean) => { if (!open) closeSheet(); }}
+                        rentalPayment={sheet.entity}
+                        actionMenuAllowCustomChildren
+                        onActionMenuAction={setAction}
+                        actionMenuChildren={(
+                            <MarkRentalPaymentPaid payment={sheet.entity} onAction={setAction} />
+                        )}
+                        onSheetRowPatched={(row) => patchPayment(row as RentalPayment)}
+                    />
+                    {action === MARK_RENTAL_PAYMENT_PAID_ACTION && (
+                        <MarkRentalPaymentPaidDialog
+                            open
+                            onClose={() => setAction("")}
+                            payment={sheet.entity}
+                            onSuccess={(updated?: RentalPayment) => {
+                                patchPayment(updated);
+                                setAction("");
+                            }}
+                        />
+                    )}
+                </>
             )}
         </div>
     );

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
+  "title": "Pagamenti affitto",
+  "description": "Registri dei pagamenti affitto degli inquilini",
+  "createRentalPayment": "Registra pagamento",
+  "noData": "Nessun pagamento trovato",
+  "failTitle": "Impossibile caricare i pagamenti",
+  "failDescription": "Si è verificato un errore durante il caricamento dei pagamenti. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "amount": "Importo",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "dueDate": "Data di scadenza",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "lease": "Contratto",
+    "name": "Riferimento",
+    "notes": "Note",
+    "paidAmount": "Importo pagato",
+    "paidDate": "Data pagamento",
+    "project": "Progetto",
+    "receiptMedia": "Ricevuta",
+    "status": "Stato",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "paid": "Pagato",
+        "partial": "Parziale",
+        "overdue": "In ritardo",
+        "waived": "Annullato"
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {generateUUID} from "@coreModule/helpers/general";
+import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
 
 export function fmtDate(iso: string | undefined, timezone?: string): string {
     if (!iso) return "—";
@@ -64,4 +66,31 @@ export function paymentStatusBadgeVariant(
         case "waived": return "outline";
         default: return "outline";
     }
+}
+
+function buildFilterRule(field: string, value: string | string[]): FilterRule | undefined {
+    const values = (Array.isArray(value) ? value : [value]).filter(Boolean);
+    if (values.length === 0) return undefined;
+    return {
+        id: generateUUID(),
+        field,
+        operator: values.length === 1 ? "equals" : "in",
+        value: values.length === 1 ? values[0] : values,
+    };
+}
+
+function buildEqualsFilterGroup(entries: {field: string; value: string | string[]}[]): FilterGroup | undefined {
+    const rules = entries
+        .map(({field, value}) => buildFilterRule(field, value))
+        .filter((r): r is FilterRule => !!r);
+    if (rules.length === 0) return undefined;
+    return {id: generateUUID(), operator: "and", rules, groups: []};
+}
+
+/** Build ApiSelect `postBody` with DSL filters for cascading hierarchy selects. */
+export function selectBodyWithFilters(
+    entries: {field: string; value: string | string[]}[],
+): Record<string, unknown> | undefined {
+    const filters = buildEqualsFilterGroup(entries);
+    return filters ? {filters} : undefined;
 }

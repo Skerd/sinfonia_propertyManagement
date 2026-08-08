@@ -1,0 +1,93 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
+  "title": "Hub locazioni",
+  "description": "Tutti i contratti di locazione e i pagamenti degli affitti in un unico posto. Cerca, filtra e apri i dettagli.",
+  "leases": {
+    "title": "Contratti di locazione",
+    "description": "Registro dei contratti a livello aziendale.",
+    "searchLabel": "Cerca",
+    "searchPlaceholder": "Cerca per inquilino, unità, riferimento contratto…",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Tutti i progetti",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Tutti gli edifici",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Tutti i piani",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Tutte le unità",
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Tutti gli stati",
+    "startDateLabel": "Data inizio",
+    "dateFromLabel": "Da",
+    "dateToLabel": "A",
+    "noResults": "Nessun contratto trovato.",
+    "errorTitle": "Impossibile caricare i contratti",
+    "errorDescription": "Riprova o modifica i filtri.",
+    "viewAction": "Visualizza",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "columns": {
+      "reference": "Riferimento",
+      "tenant": "Inquilino",
+      "project": "Progetto",
+      "unit": "Unità",
+      "status": "Stato",
+      "startDate": "Data inizio",
+      "endDate": "Data fine",
+      "monthlyRent": "Affitto mensile",
+      "actions": "Azioni"
+    },
+    "status": {
+      "active": "Attivo",
+      "expired": "Scaduto",
+      "terminated": "Risolto"
+    },
+    "pagination": {
+      "summary": "{from}–{to} di {total} risultati"
+    }
+  },
+  "rentalPayments": {
+    "title": "Pagamenti affitto",
+    "description": "Registro aziendale dei pagamenti degli affitti.",
+    "searchLabel": "Cerca",
+    "searchPlaceholder": "Cerca per inquilino, contratto, unità, stato…",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Tutti i progetti",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Tutti gli edifici",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Tutti i piani",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Tutte le unità",
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Tutti gli stati",
+    "dueDateLabel": "Data di scadenza",
+    "dateFromLabel": "Da",
+    "dateToLabel": "A",
+    "noResults": "Nessun pagamento trovato.",
+    "errorTitle": "Impossibile caricare i pagamenti",
+    "errorDescription": "Riprova o modifica i filtri.",
+    "viewAction": "Visualizza",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "columns": {
+      "reference": "Riferimento",
+      "lease": "Contratto",
+      "tenant": "Inquilino",
+      "unit": "Unità",
+      "status": "Stato",
+      "dueDate": "Scadenza",
+      "amount": "Importo",
+      "actions": "Azioni"
+    },
+    "status": {
+      "pending": "In sospeso",
+      "paid": "Pagato",
+      "overdue": "In ritardo",
+      "waived": "Annullato"
+    },
+    "pagination": {
+      "summary": "{from}–{to} di {total} risultati"
+    }
+  }
+}

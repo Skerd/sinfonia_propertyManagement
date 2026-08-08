@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/index.tsx",
+  "title": "Baux",
+  "description": "Contrats de location",
+  "createLease": "Nouveau bail",
+  "noData": "Aucun bail trouvé",
+  "failTitle": "Échec du chargement des baux",
+  "failDescription": "Une erreur est survenue lors du chargement des baux. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "contractMedia": "Document du contrat",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "depositAmount": "Dépôt de garantie",
+    "depositPaid": "Dépôt payé",
+    "depositReturnedAt": "Dépôt restitué le",
+    "edifice": "Édifice",
+    "endDate": "Date de fin",
+    "floor": "Étage",
+    "monthlyRent": "Loyer mensuel",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "rentCurrency": "Devise",
+    "startDate": "Date de début",
+    "status": "Statut",
+    "tenant": "Locataire",
+    "terminationDate": "Date de résiliation",
+    "terminationReason": "Motif de résiliation",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "active": "Actif",
+        "expired": "Expiré",
+        "terminated": "Résilié"
+      }
+    }
+  }
+}

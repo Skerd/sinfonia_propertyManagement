@@ -173,6 +173,15 @@ function LeaseCard({
                             lease={lease}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            actionMenuAllowCustomChildren
+                            onActionMenuAction={setAction}
+                            actionMenuChildren={(
+                                <>
+                                    <ViewLeasePayments lease={lease} />
+                                    <TerminateLease lease={lease} onAction={(a: string) => setAction(a)} />
+                                    <ReturnDeposit lease={lease} onAction={(a: string) => setAction(a)} />
+                                </>
+                            )}
                         />
                     )}
                     {action === "delete" && (

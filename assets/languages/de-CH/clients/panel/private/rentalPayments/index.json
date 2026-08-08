@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Mietzahlungen",
-  "description": "Tenant miete zahlung einträge",
-  "createRentalPayment": "Protokoll Zahlung",
-  "noData": "Keine mietzahlungen gefunden",
+  "description": "Mietzahlungen der Mieter",
+  "createRentalPayment": "Zahlung erfassen",
+  "noData": "Keine Mietzahlungen gefunden",
   "failTitle": "Mietzahlungen konnten nicht geladen werden",
-  "failDescription": "Beim Laden von mietzahlungen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "failDescription": "Beim Laden der Mietzahlungen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "amount": "Betrag",
@@ -15,12 +15,15 @@
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von",
     "dueDate": "Fälligkeit",
+    "edifice": "Gebäude",
+    "floor": "Geschoss",
     "lease": "Mietvertrag",
     "name": "Referenz",
     "notes": "Notizen",
-    "paidAmount": "Bezahlt Betrag",
-    "paidDate": "Bezahlt Datum",
-    "receiptMedia": "Receipt Medien",
+    "paidAmount": "Bezahlter Betrag",
+    "paidDate": "Zahlungsdatum",
+    "project": "Projekt",
+    "receiptMedia": "Quittung",
     "status": "Status",
     "unit": "Einheit",
     "updatedAt": "Aktualisiert am",
@@ -29,8 +32,8 @@
         "pending": "Ausstehend",
         "paid": "Bezahlt",
         "partial": "Teilweise",
-        "overdue": "Overdue",
-        "waived": "Waived"
+        "overdue": "Überfällig",
+        "waived": "Erlassen"
       }
     }
   }

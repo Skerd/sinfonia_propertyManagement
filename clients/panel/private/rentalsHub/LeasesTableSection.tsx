@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 import {Eye} from "lucide-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -23,6 +23,7 @@ import {
     leaseStatusBadgeVariant,
     paginationSummary,
     personName,
+    selectBodyWithFilters,
     unitLabel,
 } from "./rentalsHubHelpers.ts";
 import {RentalsHubFilterField, RentalsHubFilterToolbar} from "./RentalsHubFilterField.tsx";
@@ -44,7 +45,10 @@ export default function LeasesTableSection({
 
     const [searchInput, setSearchInput] = useState("");
     const [debouncedSearch, setDebouncedSearch] = useState("");
-    const [projectId, setProjectId] = useState("");
+    const [project, setProject] = useState("");
+    const [edifice, setEdifice] = useState("");
+    const [floor, setFloor] = useState("");
+    const [unit, setUnit] = useState("");
     const [status, setStatus] = useState("");
     const [startDateFrom, setStartDateFrom] = useState("");
     const [startDateTo, setStartDateTo] = useState("");
@@ -54,12 +58,35 @@ export default function LeasesTableSection({
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<HttpError | null>(null);
 
+    const edificeSelectBody = useMemo(
+        () => selectBodyWithFilters([{field: "project", value: project}]),
+        [project],
+    );
+    const floorSelectBody = useMemo(
+        () => selectBodyWithFilters([
+            {field: "edifice", value: edifice},
+            {field: "project", value: project},
+        ]),
+        [edifice, project],
+    );
+    const unitSelectBody = useMemo(
+        () => selectBodyWithFilters([
+            {field: "floor", value: floor},
+            {field: "edifice", value: edifice},
+            {field: "project", value: project},
+        ]),
+        [floor, edifice, project],
+    );
+
     const fetchData = useCallback(async () => {
         setLoading(true);
         setError(null);
         const body: LeasesListFormType = {page, limit: PAGE_SIZE};
         if (debouncedSearch.trim()) body.search = debouncedSearch.trim();
-        if (projectId) body.projectId = projectId;
+        if (project) body.project = project;
+        if (edifice) body.edifice = edifice;
+        if (floor) body.floor = floor;
+        if (unit) body.unit = unit;
         if (status) body.status = status as LeasesListFormType["status"];
         if (startDateFrom) body.startDateFrom = startDateFrom;
         if (startDateTo) body.startDateTo = startDateTo;
@@ -76,7 +103,7 @@ export default function LeasesTableSection({
         } finally {
             setLoading(false);
         }
-    }, [page, projectId, debouncedSearch, startDateFrom, startDateTo, status]);
+    }, [page, project, edifice, floor, unit, debouncedSearch, startDateFrom, startDateTo, status]);
 
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(searchInput), 300);
@@ -89,7 +116,7 @@ export default function LeasesTableSection({
 
     useEffect(() => {
         setPage(1);
-    }, [debouncedSearch, projectId, status, startDateFrom, startDateTo]);
+    }, [debouncedSearch, project, edifice, floor, unit, status, startDateFrom, startDateTo]);
 
     const rows = data?.data ?? [];
     const total = data?.total ?? 0;
@@ -113,14 +140,64 @@ export default function LeasesTableSection({
                                 placeholder={rk("searchPlaceholder")}
                             />
                         </div>
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-wrap items-end gap-3">
                             <RentalsHubFilterField label={rk("projectLabel")}>
                                 <ApiSelect
                                     apiUrl="/api/realEstate/project/select"
-                                    method="POST"
                                     placeholder={rk("projectPlaceholder")}
-                                    value={projectId}
-                                    onValueChange={(v: string | string[]) => setProjectId(typeof v === "string" ? v : "")}
+                                    value={project}
+                                    onValueChange={(v: string | string[]) => {
+                                        setProject(typeof v === "string" ? v : "");
+                                        setEdifice("");
+                                        setFloor("");
+                                        setUnit("");
+                                    }}
+                                    className="h-9 w-full"
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
+                            </RentalsHubFilterField>
+                            <RentalsHubFilterField label={rk("edificeLabel")}>
+                                <ApiSelect
+                                    key={`edifice-${project || "none"}`}
+                                    apiUrl="/api/realEstate/edifice/select"
+                                    postBody={edificeSelectBody}
+                                    placeholder={rk("edificePlaceholder")}
+                                    value={edifice}
+                                    onValueChange={(v: string | string[]) => {
+                                        setEdifice(typeof v === "string" ? v : "");
+                                        setFloor("");
+                                        setUnit("");
+                                    }}
+                                    disabled={!project}
+                                    className="h-9 w-full"
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
+                            </RentalsHubFilterField>
+                            <RentalsHubFilterField label={rk("floorLabel")}>
+                                <ApiSelect
+                                    key={`floor-${edifice || project || "none"}`}
+                                    apiUrl="/api/realEstate/floor/select"
+                                    postBody={floorSelectBody}
+                                    placeholder={rk("floorPlaceholder")}
+                                    value={floor}
+                                    onValueChange={(v: string | string[]) => {
+                                        setFloor(typeof v === "string" ? v : "");
+                                        setUnit("");
+                                    }}
+                                    disabled={!edifice && !project}
+                                    className="h-9 w-full"
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
+                            </RentalsHubFilterField>
+                            <RentalsHubFilterField label={rk("unitLabel")}>
+                                <ApiSelect
+                                    key={`unit-${floor || edifice || project || "none"}`}
+                                    apiUrl="/api/realEstate/unit/select"
+                                    postBody={unitSelectBody}
+                                    placeholder={rk("unitPlaceholder")}
+                                    value={unit}
+                                    onValueChange={(v: string | string[]) => setUnit(typeof v === "string" ? v : "")}
+                                    disabled={!project && !edifice && !floor}
                                     className="h-9 w-full"
                                     resolveLanguageKey={resolveLanguageKey}
                                 />

@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/index.tsx",
+  "title": "Contratti di locazione",
+  "description": "Contratti di locazione",
+  "createLease": "Nuovo contratto",
+  "noData": "Nessun contratto trovato",
+  "failTitle": "Impossibile caricare i contratti",
+  "failDescription": "Si è verificato un errore durante il caricamento dei contratti. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "contractMedia": "Documento contratto",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "depositAmount": "Deposito",
+    "depositPaid": "Deposito pagato",
+    "depositReturnedAt": "Deposito restituito il",
+    "edifice": "Edificio",
+    "endDate": "Data fine",
+    "floor": "Piano",
+    "monthlyRent": "Affitto mensile",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "rentCurrency": "Valuta",
+    "startDate": "Data inizio",
+    "status": "Stato",
+    "tenant": "Inquilino",
+    "terminationDate": "Data risoluzione",
+    "terminationReason": "Motivo risoluzione",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "active": "Attivo",
+        "expired": "Scaduto",
+        "terminated": "Risolto"
+      }
+    }
+  }
+}

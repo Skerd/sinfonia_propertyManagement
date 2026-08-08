@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
+  "title": "Loyers",
+  "description": "Paiements de loyer des locataires",
+  "createRentalPayment": "Enregistrer un paiement",
+  "noData": "Aucun loyer trouvé",
+  "failTitle": "Échec du chargement des loyers",
+  "failDescription": "Une erreur est survenue lors du chargement des loyers. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "amount": "Montant",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "dueDate": "Date d’échéance",
+    "edifice": "Édifice",
+    "floor": "Étage",
+    "lease": "Bail",
+    "name": "Référence",
+    "notes": "Notes",
+    "paidAmount": "Montant payé",
+    "paidDate": "Date de paiement",
+    "project": "Projet",
+    "receiptMedia": "Reçu",
+    "status": "Statut",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "paid": "Payé",
+        "partial": "Partiel",
+        "overdue": "En retard",
+        "waived": "Annulé"
+      }
+    }
+  }
+}

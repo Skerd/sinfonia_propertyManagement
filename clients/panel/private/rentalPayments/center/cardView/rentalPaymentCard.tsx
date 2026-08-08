@@ -171,6 +171,11 @@ function RentalPaymentCard({
                             rentalPayment={payment}
                             onDelete={onDelete}
                             onRestore={onRestore}
+                            actionMenuAllowCustomChildren
+                            onActionMenuAction={setAction}
+                            actionMenuChildren={(
+                                <MarkRentalPaymentPaid payment={payment} onAction={(a: string) => setAction(a)} />
+                            )}
                         />
                     )}
                     {action === "delete" && (

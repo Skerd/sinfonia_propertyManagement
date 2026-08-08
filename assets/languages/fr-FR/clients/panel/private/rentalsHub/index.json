@@ -1,0 +1,93 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
+  "title": "Centre des locations",
+  "description": "Tous les baux et loyers au même endroit. Recherchez, filtrez et ouvrez les détails.",
+  "leases": {
+    "title": "Baux",
+    "description": "Registre des baux à l’échelle de l’entreprise.",
+    "searchLabel": "Recherche",
+    "searchPlaceholder": "Rechercher par locataire, unité, référence de bail…",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Tous les projets",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Tous les édifices",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Tous les étages",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Toutes les unités",
+    "statusLabel": "Statut",
+    "statusPlaceholder": "Tous les statuts",
+    "startDateLabel": "Date de début",
+    "dateFromLabel": "Du",
+    "dateToLabel": "Au",
+    "noResults": "Aucun bail trouvé.",
+    "errorTitle": "Impossible de charger les baux",
+    "errorDescription": "Réessayez ou ajustez vos filtres.",
+    "viewAction": "Voir",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "columns": {
+      "reference": "Référence",
+      "tenant": "Locataire",
+      "project": "Projet",
+      "unit": "Unité",
+      "status": "Statut",
+      "startDate": "Date de début",
+      "endDate": "Date de fin",
+      "monthlyRent": "Loyer mensuel",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Actif",
+      "expired": "Expiré",
+      "terminated": "Résilié"
+    },
+    "pagination": {
+      "summary": "{from} à {to} sur {total} résultats"
+    }
+  },
+  "rentalPayments": {
+    "title": "Loyers",
+    "description": "Grand livre des paiements de loyer.",
+    "searchLabel": "Recherche",
+    "searchPlaceholder": "Rechercher par locataire, bail, unité, statut…",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Tous les projets",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Tous les édifices",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Tous les étages",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Toutes les unités",
+    "statusLabel": "Statut",
+    "statusPlaceholder": "Tous les statuts",
+    "dueDateLabel": "Date d’échéance",
+    "dateFromLabel": "Du",
+    "dateToLabel": "Au",
+    "noResults": "Aucun loyer trouvé.",
+    "errorTitle": "Impossible de charger les loyers",
+    "errorDescription": "Réessayez ou ajustez vos filtres.",
+    "viewAction": "Voir",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "columns": {
+      "reference": "Référence",
+      "lease": "Bail",
+      "tenant": "Locataire",
+      "unit": "Unité",
+      "status": "Statut",
+      "dueDate": "Échéance",
+      "amount": "Montant",
+      "actions": "Actions"
+    },
+    "status": {
+      "pending": "En attente",
+      "paid": "Payé",
+      "overdue": "En retard",
+      "waived": "Annulé"
+    },
+    "pagination": {
+      "summary": "{from} à {to} sur {total} résultats"
+    }
+  }
+}

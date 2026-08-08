@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {useEffect, useState} from "react";
+import {useEffect, useState, type ReactNode} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
@@ -16,6 +16,10 @@ export type RentalPaymentSheetViewOwnProps = {
     onDelete?: (response?: DeletedData) => void;
     onRestore?: () => void;
     fetchId?: string;
+    actionMenuChildren?: ReactNode;
+    actionMenuAllowCustomChildren?: boolean;
+    onActionMenuAction?: (action: string) => void;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
 };
 
 function buildRentalPaymentEditPath(payment: RentalPayment) {
@@ -34,6 +38,10 @@ function RentalPaymentSheetView({
     onDelete = () => {},
     onRestore = () => {},
     fetchId,
+    actionMenuChildren,
+    actionMenuAllowCustomChildren,
+    onActionMenuAction,
+    onSheetRowPatched,
 }: RentalPaymentSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, any>>(paymentProp || {_id: fetchId});
     const access = useAccess("rentalpayments");
@@ -62,6 +70,10 @@ function RentalPaymentSheetView({
             onDelete={onDelete}
             onRestore={onRestore}
             editPath={buildRentalPaymentEditPath(sheetData as RentalPayment)}
+            actionMenuChildren={actionMenuChildren}
+            actionMenuAllowCustomChildren={actionMenuAllowCustomChildren}
+            onActionMenuAction={onActionMenuAction}
+            onSheetRowPatched={onSheetRowPatched}
         />
     );
 }
