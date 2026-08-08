@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/index.tsx",
+  "title": "Liste des réserves",
+  "description": "Défauts, réserves et points de reprise",
+  "createSnag": "Signaler un défaut",
+  "noData": "Aucune réserve trouvée",
+  "failTitle": "Échec du chargement de la liste des réserves",
+  "failDescription": "Une erreur est survenue lors du chargement des réserves. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "assignedTo": "Assigné à",
+    "costImpact": "Impact coût",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "dueDate": "Échéance",
+    "edifice": "Édifice",
+    "floor": "Étage",
+    "isDlp": "Période de garantie (DLP)",
+    "isWarranty": "Réclamation garantie",
+    "location": "Emplacement",
+    "name": "Référence",
+    "notes": "Notes",
+    "photos": "Photos",
+    "project": "Projet",
+    "reportedBy": "Signalé par",
+    "resolvedAt": "Résolu le",
+    "rootCause": "Cause racine",
+    "severity": "Gravité",
+    "status": "Statut",
+    "title": "Titre",
+    "trade": "Corps de métier",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "variationOrder": "Ordre de modification",
+    "workPackage": "Lot de travaux",
+    "!enums": {
+      "status": {
+        "open": "Ouvert",
+        "in_progress": "En cours",
+        "resolved": "Résolu",
+        "rejected": "Rejeté"
+      },
+      "severity": {
+        "low": "Faible",
+        "medium": "Moyenne",
+        "high": "Élevée",
+        "critical": "Critique"
+      }
+    }
+  }
+}

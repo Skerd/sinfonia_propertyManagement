@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/index.tsx",
+  "title": "Lista snagging",
+  "description": "Difetti, riserve e punti di ripresa",
+  "createSnag": "Segnala difetto",
+  "noData": "Nessuno snag trovato",
+  "failTitle": "Caricamento lista snagging non riuscito",
+  "failDescription": "Si è verificato un errore durante il caricamento degli snag. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "assignedTo": "Assegnato a",
+    "costImpact": "Impatto costi",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "dueDate": "Scadenza",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "isDlp": "Periodo di garanzia (DLP)",
+    "isWarranty": "Reclamo in garanzia",
+    "location": "Posizione",
+    "name": "Riferimento",
+    "notes": "Note",
+    "photos": "Foto",
+    "project": "Progetto",
+    "reportedBy": "Segnalato da",
+    "resolvedAt": "Risolto il",
+    "rootCause": "Causa principale",
+    "severity": "Gravità",
+    "status": "Stato",
+    "title": "Titolo",
+    "trade": "Mestiere",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "variationOrder": "Ordine di variazione",
+    "workPackage": "Pacchetto di lavoro",
+    "!enums": {
+      "status": {
+        "open": "Aperto",
+        "in_progress": "In corso",
+        "resolved": "Risolto",
+        "rejected": "Rifiutato"
+      },
+      "severity": {
+        "low": "Bassa",
+        "medium": "Media",
+        "high": "Alta",
+        "critical": "Critica"
+      }
+    }
+  }
+}

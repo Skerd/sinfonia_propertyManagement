@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/finishWorkingSnagDialog.tsx",
+  "dialogTitle": "Terminer le travail",
+  "dialogDescription": "Marquer cette réserve comme résolue. Vous pouvez ajouter des notes et des photos de finition.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Notes de finition (facultatif)",
+  "photosLabel": "Photos",
+  "addPhotos": "Ajouter des photos",
+  "cancel": "Annuler",
+  "submit": "Terminer le travail"
+}

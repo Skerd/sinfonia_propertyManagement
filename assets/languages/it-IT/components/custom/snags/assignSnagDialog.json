@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/assignSnagDialog.tsx",
+  "dialogTitle": "Assegna snag",
+  "dialogDescription": "Seleziona una persona a cui assegnare questo snag.",
+  "assignedToLabel": "Assegnatario",
+  "assignedToPlaceholder": "Seleziona una persona",
+  "cancel": "Annulla",
+  "submit": "Assegna"
+}

@@ -22,6 +22,7 @@
     "name": "Reference",
     "notes": "Notes",
     "photos": "Photos",
+    "project": "Project",
     "reportedBy": "Reported By",
     "resolvedAt": "Resolved At",
     "rootCause": "Root Cause",
@@ -33,6 +34,8 @@
     "updatedAt": "Updated At",
     "variationOrder": "Variation Order",
     "workPackage": "Work Package",
+    "edifice": "Edifice",
+    "floor": "Floor",
     "!enums": {
       "status": {
         "open": "Open",

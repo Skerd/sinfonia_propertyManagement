@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/assignSnagDialog.tsx",
+  "dialogTitle": "Assigner la réserve",
+  "dialogDescription": "Sélectionnez une personne à qui assigner cette réserve.",
+  "assignedToLabel": "Assigné",
+  "assignedToPlaceholder": "Sélectionner une personne",
+  "cancel": "Annuler",
+  "submit": "Assigner"
+}

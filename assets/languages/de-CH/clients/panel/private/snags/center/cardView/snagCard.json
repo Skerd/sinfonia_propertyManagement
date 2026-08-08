@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/snags/center/cardView/snagCard.tsx",
-  "noPhotos": "Keine photos",
+  "noPhotos": "Keine Fotos",
   "statusLabel": "Status",
   "severityLabel": "Schweregrad",
   "fields": {
@@ -13,14 +13,14 @@
       "status": {
         "open": "Offen",
         "in_progress": "In Bearbeitung",
-        "resolved": "Resolved",
+        "resolved": "Behoben",
         "rejected": "Abgelehnt"
       },
       "severity": {
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High",
-        "critical": "Critical"
+        "low": "Niedrig",
+        "medium": "Mittel",
+        "high": "Hoch",
+        "critical": "Kritisch"
       }
     }
   }

@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/startWorkingSnagDialog.tsx",
+  "dialogTitle": "Inizia lavoro",
+  "dialogDescription": "Conferma l’avvio del lavoro su questo snag. Lo stato passerà a « in corso ».",
+  "assignedToLabel": "Assegnato a",
+  "unknownAssignee": "Sconosciuto",
+  "cancel": "Annulla",
+  "submit": "Inizia lavoro"
+}

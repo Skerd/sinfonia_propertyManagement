@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/finishWorkingSnagDialog.tsx",
+  "dialogTitle": "Termina lavoro",
+  "dialogDescription": "Segna questo snag come risolto. Puoi aggiungere note e foto di completamento.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Note di completamento (facoltative)",
+  "photosLabel": "Foto",
+  "addPhotos": "Aggiungi foto",
+  "cancel": "Annulla",
+  "submit": "Termina lavoro"
+}

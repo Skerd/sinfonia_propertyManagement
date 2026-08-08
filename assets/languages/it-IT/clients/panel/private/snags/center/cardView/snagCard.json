@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/center/cardView/snagCard.tsx",
+  "noPhotos": "Nessuna foto",
+  "statusLabel": "Stato",
+  "severityLabel": "Gravità",
+  "fields": {
+    "name": "Codice",
+    "unit": "Unità",
+    "location": "Posizione",
+    "dueDate": "Scadenza",
+    "assignedTo": "Assegnato a",
+    "!enums": {
+      "status": {
+        "open": "Aperto",
+        "in_progress": "In corso",
+        "resolved": "Risolto",
+        "rejected": "Rifiutato"
+      },
+      "severity": {
+        "low": "Bassa",
+        "medium": "Media",
+        "high": "Alta",
+        "critical": "Critica"
+      }
+    }
+  }
+}

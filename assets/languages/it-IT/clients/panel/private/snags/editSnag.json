@@ -1,0 +1,79 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aggiornare il difetto, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento difetto"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Difetto aggiornato!"
+    }
+  },
+  "editDescription": "Aggiorna snag o difetto",
+  "editTitle": "Modifica difetto",
+  "errorDescription": "Si è verificato un errore durante il caricamento dello snag. Riprova.",
+  "errorTitle": "Caricamento difetto non riuscito",
+  "form": {
+    "_idLabel": "ID record",
+    "addFile": "Aggiungi foto",
+    "assignedToLabel": "Assegnato a",
+    "assignedToPlaceholder": "Seleziona assegnatario",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Dettagli aggiuntivi sul difetto",
+    "dueDateLabel": "Scadenza",
+    "dueDatePlaceholder": "Seleziona data",
+    "existingFiles": "Foto esistenti",
+    "filesSelected": "foto selezionate",
+    "locationLabel": "Posizione",
+    "locationPlaceholder": "es. Soffitto camera padronale",
+    "newFiles": "Aggiungi nuove foto",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note interne",
+    "photosLabel": "Foto",
+    "tradeLabel": "Mestiere",
+    "tradePlaceholder": "es. Elettricista, Idraulico",
+    "workPackageLabel": "Pacchetto di lavoro",
+    "workPackagePlaceholder": "Seleziona pacchetto",
+    "variationOrderLabel": "Ordine di variazione",
+    "variationOrderPlaceholder": "Seleziona ordine di variazione",
+    "costImpactLabel": "Impatto costi",
+    "costImpactPlaceholder": "Inserisci impatto costi",
+    "isWarrantyLabel": "In garanzia",
+    "isDlpLabel": "Nel periodo di garanzia (DLP)",
+    "rootCauseLabel": "Causa principale",
+    "rootCausePlaceholder": "Descrivi la causa principale",
+    "reportedByLabel": "Segnalato da",
+    "reportedByPlaceholder": "Seleziona segnalatore",
+    "severityCritical": "Critica",
+    "severityHigh": "Alta",
+    "severityLabel": "Gravità",
+    "severityLow": "Bassa",
+    "severityMedium": "Media",
+    "severityPlaceholder": "Seleziona gravità",
+    "statusInProgress": "In corso",
+    "statusLabel": "Stato",
+    "statusOpen": "Aperto",
+    "statusPlaceholder": "Seleziona stato",
+    "statusRejected": "Rifiutato",
+    "statusResolved": "Risolto",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Descrivi il difetto",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Seleziona unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Aggiorna snag o difetto",
+    "title": "Modifica difetto"
+  },
+  "generalInfo": "Dettagli del difetto",
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/editSnag.tsx",
+  "title": "Titolo"
+}

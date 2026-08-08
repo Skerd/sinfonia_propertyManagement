@@ -1,0 +1,79 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossible de mettre à jour le défaut, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour du défaut"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Défaut mis à jour !"
+    }
+  },
+  "editDescription": "Mettre à jour la réserve ou le défaut",
+  "editTitle": "Modifier le défaut",
+  "errorDescription": "Une erreur est survenue lors du chargement de la réserve. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du défaut",
+  "form": {
+    "_idLabel": "ID de l’enregistrement",
+    "addFile": "Ajouter une photo",
+    "assignedToLabel": "Assigné à",
+    "assignedToPlaceholder": "Sélectionner l’assigné",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Détails supplémentaires sur le défaut",
+    "dueDateLabel": "Échéance",
+    "dueDatePlaceholder": "Sélectionner une date",
+    "existingFiles": "Photos existantes",
+    "filesSelected": "photos sélectionnées",
+    "locationLabel": "Emplacement",
+    "locationPlaceholder": "ex. Plafond de la chambre principale",
+    "newFiles": "Ajouter de nouvelles photos",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes internes",
+    "photosLabel": "Photos",
+    "tradeLabel": "Corps de métier",
+    "tradePlaceholder": "ex. Électricité, Plomberie",
+    "workPackageLabel": "Lot de travaux",
+    "workPackagePlaceholder": "Sélectionner un lot",
+    "variationOrderLabel": "Ordre de modification",
+    "variationOrderPlaceholder": "Sélectionner un ordre de modification",
+    "costImpactLabel": "Impact coût",
+    "costImpactPlaceholder": "Saisir l’impact coût",
+    "isWarrantyLabel": "Sous garantie",
+    "isDlpLabel": "Dans la période de garantie (DLP)",
+    "rootCauseLabel": "Cause racine",
+    "rootCausePlaceholder": "Décrire la cause racine",
+    "reportedByLabel": "Signalé par",
+    "reportedByPlaceholder": "Sélectionner le déclarant",
+    "severityCritical": "Critique",
+    "severityHigh": "Élevée",
+    "severityLabel": "Gravité",
+    "severityLow": "Faible",
+    "severityMedium": "Moyenne",
+    "severityPlaceholder": "Sélectionner la gravité",
+    "statusInProgress": "En cours",
+    "statusLabel": "Statut",
+    "statusOpen": "Ouvert",
+    "statusPlaceholder": "Sélectionner un statut",
+    "statusRejected": "Rejeté",
+    "statusResolved": "Résolu",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Décrire le défaut",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Sélectionner une unité"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Mettre à jour la réserve ou le défaut",
+    "title": "Modifier le défaut"
+  },
+  "generalInfo": "Détails du défaut",
+  "path": "src/modules/propertyManagement/clients/panel/private/snags/editSnag.tsx",
+  "title": "Titre"
+}

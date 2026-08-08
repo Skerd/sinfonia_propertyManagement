@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/snags/startWorkingSnagDialog.tsx",
+  "dialogTitle": "Démarrer le travail",
+  "dialogDescription": "Confirmez que le travail commence sur cette réserve. Le statut passera à « en cours ».",
+  "assignedToLabel": "Assigné à",
+  "unknownAssignee": "Inconnu",
+  "cancel": "Annuler",
+  "submit": "Démarrer le travail"
+}
