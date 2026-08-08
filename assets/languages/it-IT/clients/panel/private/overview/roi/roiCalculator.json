@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/roi/roiCalculator.tsx",
+  "roiCalculator": {
+    "title": "Calcolatore ROI",
+    "description": "Calcola il ritorno sull’investimento per unità o progetto in base a costi e ricavi da vendita/affitto."
+  },
+  "projectLabel": "Progetto",
+  "projectPlaceholder": "Seleziona progetto...",
+  "edificeLabel": "Edificio",
+  "edificePlaceholder": "Seleziona edificio...",
+  "floorLabel": "Piano",
+  "floorPlaceholder": "Seleziona piano...",
+  "unitLabel": "Unità",
+  "unitPlaceholder": "Seleziona unità (calcolo automatico)...",
+  "summary": "Riepilogo",
+  "noResults": "Nessuna unità trovata.",
+  "computedAt": "Calcolato il",
+  "exportPdf": "Esporta PDF",
+  "exportPdfLoading": "Generazione PDF…",
+  "error": "Calcolo ROI non riuscito. Riprova.",
+  "selectUnitHint": "Seleziona un’unità per calcolarne il ROI. Edificio e piano restringono l’elenco delle unità.",
+  "columns": {
+    "unit": "Unità",
+    "status": "Stato",
+    "salePrice": "Prezzo di vendita",
+    "totalCosts": "Costi totali",
+    "netProfit": "Utile netto",
+    "roi": "ROI %",
+    "monthlyRent": "Affitto mensile",
+    "yield": "Rendimento %"
+  },
+  "projectSummary": {
+    "totalUnits": "Unità totali",
+    "sold": "Vendute",
+    "available": "Disponibili",
+    "rented": "Affittate",
+    "totalRevenue": "Ricavi totali",
+    "totalCosts": "Costi totali",
+    "netProfit": "Utile netto",
+    "roi": "ROI",
+    "averageRoi": "ROI medio"
+  },
+  "pdf": {
+    "scope": "Ambito",
+    "unitsSection": "Dettaglio unità",
+    "chartsSection": "Grafici"
+  },
+  "charts": {
+    "financialTitle": "Ricavi vs costi",
+    "unitsByStatusTitle": "Unità per stato",
+    "totalUnits": "Totale",
+    "otherUnits": "Altre"
+  }
+}
