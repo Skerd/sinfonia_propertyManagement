@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/generateFloorsUnitsDialog.tsx",
+  "dialogTitle": "Genera piani e unità",
+  "dialogDescription": "Carica una brochure PDF per generare automaticamente piani e unità per questo edificio.",
+  "warningMessage": "Questa azione può richiedere fino a 1 minuto. Non chiudere questa finestra fino al completamento!",
+  "fileLabel": "Brochure PDF",
+  "cancel": "Annulla",
+  "generate": "Genera",
+  "processing": "Elaborazione...",
+  "noFileSelected": "Seleziona un file PDF",
+  "invalidFileType": "Seleziona un file PDF valido",
+  "axios": {
+    "start": {
+      "title": "Generazione piani e unità dalla brochure",
+      "time": 60000
+    },
+    "success": {
+      "title": "Piani e unità generati con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Generazione non riuscita. Riprova!",
+      "time": 3000
+    }
+  }
+}

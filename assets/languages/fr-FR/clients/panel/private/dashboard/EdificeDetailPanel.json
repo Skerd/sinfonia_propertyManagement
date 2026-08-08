@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/EdificeDetailPanel.tsx",
+  "floorPlan": "Plan d'étage",
+  "paymentAlerts": "Alertes de paiement",
+  "viewPaymentPlans": "Voir les plans de paiement",
+  "unitsList": "Liste des unités",
+  "viewAllUnits": "Tout voir",
+  "units": "unités"
+}

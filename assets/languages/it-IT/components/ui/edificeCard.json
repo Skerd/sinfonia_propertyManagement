@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/ui/edificeCard.tsx",
+  "sold": "Venduto",
+  "reserved": "Prenotato",
+  "reservedShort": "Pren.",
+  "available": "Disponibile",
+  "availableShort": "Libero",
+  "blocked": "Bloccato",
+  "blockedShort": "Blocc.",
+  "value": "Valore",
+  "collected": "Incassato",
+  "floor": "piano",
+  "floors": "piani"
+}

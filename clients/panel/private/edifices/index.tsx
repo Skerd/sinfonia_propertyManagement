@@ -17,7 +17,6 @@ import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entity
 import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
-import {EDIFICE_ENERGY_CLASS_VALUES} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.constants.ts";
 
 export function buildEdificeEditPath(edifice: Edifice){
     return buildUrlWithExistingParams(
@@ -39,13 +38,10 @@ function AllEdifices({resolveLanguageKey}: WithLanguageType) {
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
-            field: "energyClass",
-            label: resolveLanguageKey("fields.energyClass") as string,
-            type: COLUMN_TYPE.ENUM,
-            enumValues: EDIFICE_ENERGY_CLASS_VALUES.map((v) => ({
-                value: v,
-                label: (resolveLanguageKey(`fields.!enums.energyClass.${v}`) as string) || v,
-            })),
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
         },
         {
             field: "numberOfFloors",

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/floorsOverlay.tsx",
+  "title": "Calque des polygones d'étages",
+  "description": "Tous les polygones d'étages affichés sur l'image principale du bâtiment.",
+  "noMainImage": "Le bâtiment n'a pas d'image principale.",
+  "noFloorSelected": "Aucun étage sélectionné."
+}

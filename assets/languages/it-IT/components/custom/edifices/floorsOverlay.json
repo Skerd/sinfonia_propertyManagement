@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/floorsOverlay.tsx",
+  "title": "Overlay poligoni piani",
+  "description": "Tutti i poligoni dei piani visualizzati sull'immagine principale dell'edificio.",
+  "noMainImage": "L'edificio non ha un'immagine principale.",
+  "noFloorSelected": "Nessun piano selezionato."
+}

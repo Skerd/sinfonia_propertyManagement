@@ -1,25 +1,25 @@
 {
   "path": "src/modules/propertyManagement/components/custom/edifices/generateFloorsUnitsDialog.tsx",
-  "dialogTitle": "Generate Floors & Units",
-  "dialogDescription": "Upload a PDF brochure bis automatically generate floors und units für diese gebäude.",
-  "warningMessage": "Diese aktion can take up bis 1 minute bis vollständig, bitte do nicht close diese window until abgeschlossen!",
-  "fileLabel": "PDF Brochure",
+  "dialogTitle": "Geschosse & Einheiten generieren",
+  "dialogDescription": "Laden Sie eine PDF-Broschüre hoch, um Geschosse und Einheiten für dieses Gebäude automatisch zu generieren.",
+  "warningMessage": "Dieser Vorgang kann bis zu 1 Minute dauern. Schliessen Sie dieses Fenster erst nach Abschluss!",
+  "fileLabel": "PDF-Broschüre",
   "cancel": "Abbrechen",
-  "generate": "Generate",
-  "processing": "Processing...",
-  "noFileSelected": "Bitte auswählen a PDF datei",
-  "invalidFileType": "Bitte auswählen a valid PDF datei",
+  "generate": "Generieren",
+  "processing": "Verarbeitung...",
+  "noFileSelected": "Bitte eine PDF-Datei auswählen",
+  "invalidFileType": "Bitte eine gültige PDF-Datei auswählen",
   "axios": {
     "start": {
-      "title": "Generating floors und units von brochure",
+      "title": "Geschosse und Einheiten werden aus der Broschüre generiert",
       "time": 60000
     },
     "success": {
-      "title": "Floors und units generated erfolgreich!",
+      "title": "Geschosse und Einheiten erfolgreich generiert!",
       "time": 3000
     },
     "error": {
-      "title": "Fehlgeschlagen bis generate floors und units. Bitte versuchen erneut!",
+      "title": "Generierung fehlgeschlagen. Bitte erneut versuchen!",
       "time": 3000
     }
   }

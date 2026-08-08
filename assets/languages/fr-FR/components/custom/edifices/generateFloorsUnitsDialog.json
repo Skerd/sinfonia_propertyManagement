@@ -1,0 +1,26 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/edifices/generateFloorsUnitsDialog.tsx",
+  "dialogTitle": "Générer étages et unités",
+  "dialogDescription": "Téléversez une brochure PDF pour générer automatiquement les étages et unités de ce bâtiment.",
+  "warningMessage": "Cette action peut prendre jusqu'à 1 minute. Ne fermez pas cette fenêtre avant la fin !",
+  "fileLabel": "Brochure PDF",
+  "cancel": "Annuler",
+  "generate": "Générer",
+  "processing": "Traitement...",
+  "noFileSelected": "Veuillez sélectionner un fichier PDF",
+  "invalidFileType": "Veuillez sélectionner un fichier PDF valide",
+  "axios": {
+    "start": {
+      "title": "Génération des étages et unités depuis la brochure",
+      "time": 60000
+    },
+    "success": {
+      "title": "Étages et unités générés avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Échec de la génération. Veuillez réessayer !",
+      "time": 3000
+    }
+  }
+}
