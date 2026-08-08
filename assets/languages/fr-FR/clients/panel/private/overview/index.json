@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/index.tsx",
+  "title": "Vue d'ensemble",
+  "description": "Statistiques système",
+  "download": "Télécharger",
+  "refresh": "Actualiser",
+  "period": "Période",
+  "periodLast7Days": "7 derniers jours",
+  "periodLast30Days": "30 derniers jours",
+  "periodLast3Months": "3 derniers mois",
+  "periodLast12Months": "12 derniers mois",
+  "viewEntries": "Voir les entrées",
+  "tabs": {
+    "overview": "Vue d'ensemble",
+    "analytics": "Analyses",
+    "projects": "Projets",
+    "edifices": "Bâtiments",
+    "units": "Unités",
+    "controlPanel": "Panneau de contrôle",
+    "workflows": "Flux de travail",
+    "reports": "Rapports",
+    "notifications": "Notifications"
+  }
+}

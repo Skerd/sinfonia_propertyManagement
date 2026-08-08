@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/projects/index.tsx",
+  "title": "Projets",
+  "description": "Structure du portefeuille : projets, bâtiments, étages et unités.",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "totalProjects": "Total des projets",
+  "totalProjectsDesc": "Nombre de projets",
+  "totalEdifices": "Bâtiments",
+  "totalEdificesDesc": "Total des bâtiments",
+  "totalFloors": "Étages",
+  "totalFloorsDesc": "Total des étages sur les bâtiments",
+  "totalUnits": "Total des unités",
+  "totalUnitsDesc": "Toutes les unités du portefeuille",
+  "unitsSold": "Unités vendues",
+  "unitsSoldDesc": "Unités vendues dans le portefeuille",
+  "avgUnitsPerProject": "Moy. unités par projet",
+  "avgUnitsPerProjectDesc": "Total unités ÷ projets",
+  "avgFloorsPerEdifice": "Moy. étages par bâtiment",
+  "avgFloorsPerEdificeDesc": "Total étages ÷ bâtiments",
+  "projectCards": "Projets",
+  "createProject": "Créer un projet"
+}

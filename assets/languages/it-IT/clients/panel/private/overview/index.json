@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/index.tsx",
+  "title": "Panoramica",
+  "description": "Statistiche di sistema",
+  "download": "Scarica",
+  "refresh": "Aggiorna",
+  "period": "Periodo",
+  "periodLast7Days": "Ultimi 7 giorni",
+  "periodLast30Days": "Ultimi 30 giorni",
+  "periodLast3Months": "Ultimi 3 mesi",
+  "periodLast12Months": "Ultimi 12 mesi",
+  "viewEntries": "Vedi voci",
+  "tabs": {
+    "overview": "Panoramica",
+    "analytics": "Analisi",
+    "projects": "Progetti",
+    "edifices": "Edifici",
+    "units": "Unità",
+    "controlPanel": "Pannello di controllo",
+    "workflows": "Flussi di lavoro",
+    "reports": "Report",
+    "notifications": "Notifiche"
+  }
+}

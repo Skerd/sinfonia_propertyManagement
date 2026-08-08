@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/workflows/index.tsx",
+  "title": "Flussi di lavoro",
+  "description": "Panoramica di ispezioni e richieste di modifica.",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "inspectionsSection": "Ispezioni",
+  "totalInspections": "Ispezioni totali",
+  "totalInspectionsDesc": "Tutte le ispezioni",
+  "followUpRequired": "Follow-up richiesto",
+  "followUpRequiredDesc": "Ispezioni che richiedono follow-up",
+  "inspectionsByStatus": "Per stato",
+  "modificationRequestsSection": "Richieste di modifica",
+  "totalModificationRequests": "Richieste di modifica totali",
+  "totalModificationRequestsDesc": "Tutte le richieste di modifica",
+  "openModificationRequests": "Richieste aperte",
+  "openModificationRequestsDesc": "Non completate, rifiutate o annullate",
+  "modificationRequestsByStatus": "Per stato"
+}

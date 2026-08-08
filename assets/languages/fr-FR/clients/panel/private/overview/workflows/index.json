@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/overview/workflows/index.tsx",
+  "title": "Flux de travail",
+  "description": "Vue d'ensemble des inspections et des demandes de modification.",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "inspectionsSection": "Inspections",
+  "totalInspections": "Total des inspections",
+  "totalInspectionsDesc": "Toutes les inspections",
+  "followUpRequired": "Suivi requis",
+  "followUpRequiredDesc": "Inspections nécessitant un suivi",
+  "inspectionsByStatus": "Par statut",
+  "modificationRequestsSection": "Demandes de modification",
+  "totalModificationRequests": "Total des demandes de modification",
+  "totalModificationRequestsDesc": "Toutes les demandes de modification",
+  "openModificationRequests": "Demandes ouvertes",
+  "openModificationRequestsDesc": "Non terminées, refusées ou annulées",
+  "modificationRequestsByStatus": "Par statut"
+}
