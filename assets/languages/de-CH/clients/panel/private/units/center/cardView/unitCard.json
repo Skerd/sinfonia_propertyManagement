@@ -1,21 +1,21 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx",
-  "failedTitle": "Einheit daten konnten nicht geladen werden",
-  "failedDescription": "Daten, click here bis retry konnten nicht geladen werden",
+  "failedTitle": "Einheitendaten konnten nicht geladen werden",
+  "failedDescription": "Daten konnten nicht geladen werden, hier klicken zum erneuten Versuch",
   "floor": "Geschoss",
   "data": {
     "name": "Name",
     "unitType": "Einheitstyp",
-    "unitNumber": "Einheit Nummer",
+    "unitNumber": "Einheitennummer",
     "area": "Fläche",
     "sharedArea": "Gemeinschaftsfläche",
     "description": "Beschreibung",
     "rooms": "Zimmer",
     "numberOfBathrooms": "Bäder",
     "price": "Preis",
-    "isAvailable": "Availability",
-    "features": "Features",
-    "mainImage": "Haupt Bild"
+    "isAvailable": "Verfügbarkeit",
+    "features": "Ausstattung",
+    "mainImage": "Hauptbild"
   },
   "features": {
     "balcony": "Balkon",
@@ -33,18 +33,18 @@
   "notAvailable": "Nicht verfügbar",
   "reserved": "Reserviert",
   "sold": "Verkauft",
-  "leased": "Leased",
+  "leased": "Vermietet",
   "statusAvailable": "Verfügbar",
   "statusUnavailable": "Nicht verfügbar",
   "statusReserved": "Reserviert",
   "statusSold": "Verkauft",
-  "statusLeased": "Leased",
-  "statusUnknown": "Unknown",
-  "priceNotSet": "Preis Nicht Set",
+  "statusLeased": "Vermietet",
+  "statusUnknown": "Unbekannt",
+  "priceNotSet": "Preis nicht festgelegt",
   "constructionStatus": {
     "planned": "Geplant",
-    "under_construction": "Unter Bau",
-    "ready": "Ready",
-    "delivered": "Delivered"
+    "under_construction": "Im Bau",
+    "ready": "Bereit",
+    "delivered": "Übergeben"
   }
 }

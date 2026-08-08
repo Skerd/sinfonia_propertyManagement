@@ -119,6 +119,26 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+        },
+        {
+            field: "edifice",
+            label: resolveLanguageKey("fields.edifice") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/edifice/select",
+            dependsOn: "project",
+        },
+        {
+            field: "floor",
+            label: resolveLanguageKey("fields.floor") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/floor/select",
+            dependsOn: ["edifice", "project"],
+        },
+        {
             field: "status",
             label: resolveLanguageKey("status") as string,
             type: COLUMN_TYPE.ENUM,

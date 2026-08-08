@@ -4,14 +4,14 @@
   "status": "Status",
   "typology": "Einheitstyp",
   "netArea": "Nettowohnfläche",
-  "grossArea": "Brutto Fläche",
-  "pricePerSqm": "Price/m²",
-  "totalPrice": "Total Preis",
+  "grossArea": "Bruttofläche",
+  "pricePerSqm": "Preis/m²",
+  "totalPrice": "Gesamtpreis",
   "client": "Kunde",
   "edit": "Bearbeiten",
   "statusAvailable": "Verfügbar",
   "statusReserved": "Reserviert",
   "statusSold": "Verkauft",
   "statusUnavailable": "Nicht verfügbar",
-  "statusUnknown": "Unknown"
+  "statusUnknown": "Unbekannt"
 }

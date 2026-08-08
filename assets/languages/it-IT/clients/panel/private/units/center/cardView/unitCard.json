@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx",
+  "failedTitle": "Caricamento dati unità non riuscito",
+  "failedDescription": "Caricamento dati non riuscito, clicca qui per riprovare",
+  "floor": "Piano",
+  "data": {
+    "name": "Nome",
+    "unitType": "Tipo di unità",
+    "unitNumber": "Numero unità",
+    "area": "Superficie",
+    "sharedArea": "Superficie comune",
+    "description": "Descrizione",
+    "rooms": "Locali",
+    "numberOfBathrooms": "Bagni",
+    "price": "Prezzo",
+    "isAvailable": "Disponibilità",
+    "features": "Caratteristiche",
+    "mainImage": "Immagine principale"
+  },
+  "features": {
+    "balcony": "Balcone",
+    "terrace": "Terrazza",
+    "seaView": "Vista mare",
+    "cityView": "Vista città",
+    "elevator": "Ascensore",
+    "lakeView": "Vista lago"
+  },
+  "edit": "Modifica",
+  "delete": "Elimina",
+  "deleted": "Eliminato",
+  "active": "Attivo",
+  "available": "Disponibile",
+  "notAvailable": "Non disponibile",
+  "reserved": "Prenotato",
+  "sold": "Venduto",
+  "leased": "Affittato",
+  "statusAvailable": "Disponibile",
+  "statusUnavailable": "Non disponibile",
+  "statusReserved": "Prenotato",
+  "statusSold": "Venduto",
+  "statusLeased": "Affittato",
+  "statusUnknown": "Sconosciuto",
+  "priceNotSet": "Prezzo non impostato",
+  "constructionStatus": {
+    "planned": "Pianificato",
+    "under_construction": "In costruzione",
+    "ready": "Pronto",
+    "delivered": "Consegnato"
+  }
+}

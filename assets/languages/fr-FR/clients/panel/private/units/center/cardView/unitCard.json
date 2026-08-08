@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx",
+  "failedTitle": "Échec du chargement des données de l'unité",
+  "failedDescription": "Échec du chargement des données, cliquez ici pour réessayer",
+  "floor": "Étage",
+  "data": {
+    "name": "Nom",
+    "unitType": "Type d'unité",
+    "unitNumber": "Numéro d'unité",
+    "area": "Surface",
+    "sharedArea": "Surface commune",
+    "description": "Description",
+    "rooms": "Pièces",
+    "numberOfBathrooms": "Salles de bain",
+    "price": "Prix",
+    "isAvailable": "Disponibilité",
+    "features": "Caractéristiques",
+    "mainImage": "Image principale"
+  },
+  "features": {
+    "balcony": "Balcon",
+    "terrace": "Terrasse",
+    "seaView": "Vue sur la mer",
+    "cityView": "Vue sur la ville",
+    "elevator": "Ascenseur",
+    "lakeView": "Vue sur le lac"
+  },
+  "edit": "Modifier",
+  "delete": "Supprimer",
+  "deleted": "Supprimé",
+  "active": "Actif",
+  "available": "Disponible",
+  "notAvailable": "Non disponible",
+  "reserved": "Réservé",
+  "sold": "Vendu",
+  "leased": "Loué",
+  "statusAvailable": "Disponible",
+  "statusUnavailable": "Non disponible",
+  "statusReserved": "Réservé",
+  "statusSold": "Vendu",
+  "statusLeased": "Loué",
+  "statusUnknown": "Inconnu",
+  "priceNotSet": "Prix non défini",
+  "constructionStatus": {
+    "planned": "Planifié",
+    "under_construction": "En construction",
+    "ready": "Prêt",
+    "delivered": "Livré"
+  }
+}

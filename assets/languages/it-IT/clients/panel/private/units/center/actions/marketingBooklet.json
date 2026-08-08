@@ -1,17 +1,17 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/center/actions/marketingBooklet.tsx",
-  "title": "Marketingbroschüre",
+  "title": "Brochure marketing",
   "axios": {
     "start": {
-      "title": "Marketingbroschüre wird erstellt…",
+      "title": "Generazione brochure marketing…",
       "time": 3000
     },
     "success": {
-      "title": "Marketingbroschüre heruntergeladen",
+      "title": "Brochure marketing scaricata",
       "time": 3000
     },
     "error": {
-      "title": "Marketingbroschüre konnte nicht erstellt werden",
+      "title": "Impossibile generare la brochure marketing",
       "time": 3000
     }
   }

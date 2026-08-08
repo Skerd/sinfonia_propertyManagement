@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/UnitDetailCard.tsx",
+  "floor": "Étage",
+  "status": "Statut",
+  "typology": "Type d'unité",
+  "netArea": "Surface nette",
+  "grossArea": "Surface brute",
+  "pricePerSqm": "Prix/m²",
+  "totalPrice": "Prix total",
+  "client": "Client",
+  "edit": "Modifier",
+  "statusAvailable": "Disponible",
+  "statusReserved": "Réservé",
+  "statusSold": "Vendu",
+  "statusUnavailable": "Indisponible",
+  "statusUnknown": "Inconnu"
+}

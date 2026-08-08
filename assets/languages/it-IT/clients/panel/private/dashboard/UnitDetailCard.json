@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/UnitDetailCard.tsx",
+  "floor": "Piano",
+  "status": "Stato",
+  "typology": "Tipo di unità",
+  "netArea": "Superficie netta",
+  "grossArea": "Superficie lorda",
+  "pricePerSqm": "Prezzo/m²",
+  "totalPrice": "Prezzo totale",
+  "client": "Cliente",
+  "edit": "Modifica",
+  "statusAvailable": "Disponibile",
+  "statusReserved": "Prenotato",
+  "statusSold": "Venduto",
+  "statusUnavailable": "Non disponibile",
+  "statusUnknown": "Sconosciuto"
+}
