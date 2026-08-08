@@ -5,6 +5,10 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {
+    useDyeusT,
+    type DyeusTranslate,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import type {
     MarketingFeaturedUnit,
@@ -12,39 +16,47 @@ import type {
     MarketingUnitStatus,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
+const HOME_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
+
 type FeaturedResidencesSectionProps = WithAxiosType<MarketingFeaturedUnitsResponse>;
 
-const STATUS_LABEL: Record<MarketingUnitStatus, string> = {
-    available: "Available",
-    reserved: "Reserved",
-    sold: "Sold",
+const STATUS_KEYS: Record<MarketingUnitStatus, string> = {
+    available: "statusAvailable",
+    reserved: "statusReserved",
+    sold: "statusSold",
 };
 
-const BEDROOM_LABELS: Record<number, string> = {
-    1: "One-Bedroom Residence",
-    2: "Two-Bedroom Residence",
-    3: "Three-Bedroom Residence",
-    4: "Four-Bedroom Residence",
+const BEDROOM_KEYS: Record<number, string> = {
+    1: "oneBedroomResidence",
+    2: "twoBedroomResidence",
+    3: "threeBedroomResidence",
+    4: "fourBedroomResidence",
 };
 
-function formatUnitTitle(unit: MarketingFeaturedUnit): string {
+function formatUnitTitle(unit: MarketingFeaturedUnit, t: DyeusTranslate): string {
     const parts: string[] = [];
 
     if (unit.propertyType === "villa") {
-        parts.push("Private Villa");
+        parts.push(t("privateVilla"));
     } else if (unit.propertyType === "penthouse") {
-        parts.push("Penthouse");
+        parts.push(t("penthouse"));
     } else if (unit.propertyType === "studio") {
-        parts.push("Studio Residence");
+        parts.push(t("studioResidence"));
     } else if (unit.bedrooms != null) {
-        parts.push(BEDROOM_LABELS[unit.bedrooms] ?? `${unit.bedrooms}-Bedroom Residence`);
+        const bedroomKey = BEDROOM_KEYS[unit.bedrooms];
+        parts.push(
+            bedroomKey
+                ? t(bedroomKey)
+                : t("bedroomResidence", {count: unit.bedrooms}),
+        );
     } else {
         parts.push(unit.name);
     }
 
-    if (unit.hasSeaView) parts.push("Sea View");
-    else if (unit.hasCityView) parts.push("City View");
-    else if (unit.hasLakeView) parts.push("Lake View");
+    if (unit.hasSeaView) parts.push(t("seaView"));
+    else if (unit.hasCityView) parts.push(t("cityView"));
+    else if (unit.hasLakeView) parts.push(t("lakeView"));
 
     return parts.join(" • ");
 }
@@ -62,6 +74,7 @@ function unitHref(unit: MarketingFeaturedUnit): string {
 }
 
 function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidencesSectionProps) {
+    const {t} = useDyeusT(HOME_LANGUAGE_PATH);
     const units = useMemo(() => data?.units ?? [], [data?.units]);
 
     if (loading && units.length === 0) {
@@ -80,13 +93,13 @@ function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidenc
         <section className="mx-auto max-w-[1728px] px-6 py-12 md:px-[60px] md:py-16">
             <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
                 <h2 className="font-dyeus-serif text-[clamp(2.5rem,6vw,6.25rem)] font-bold leading-none text-dyeus-ink">
-                    Featured Residences
+                    {t("featuredTitle")}
                 </h2>
                 <Link
                     to="/residences"
                     className="font-dyeus-serif text-lg text-dyeus-ink underline decoration-solid underline-offset-4 md:text-2xl"
                 >
-                    View all residences
+                    {t("viewAllResidences")}
                 </Link>
             </div>
 
@@ -97,7 +110,8 @@ function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidenc
                         resolveMarketingMediaUrl(unit.imageGallery?.[0]) ??
                         dyeusAssets.residenceC01;
                     const wide = index === 0;
-                    const statusLabel = STATUS_LABEL[unit.status] ?? "Available";
+                    const statusKey = STATUS_KEYS[unit.status] ?? "statusAvailable";
+                    const statusLabel = t(statusKey);
                     const galleryCount = Math.max(1, unit.imageGallery?.length ?? 1);
 
                     return (
@@ -141,7 +155,7 @@ function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidenc
                                     </span>
                                 </div>
                                 <p className="font-dyeus-serif text-xl leading-none text-dyeus-ink-muted md:text-2xl">
-                                    {formatUnitTitle(unit)}
+                                    {formatUnitTitle(unit, t)}
                                 </p>
                             </div>
 

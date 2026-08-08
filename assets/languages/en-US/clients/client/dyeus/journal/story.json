@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/story.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/story.tsx",
+  "backToJournal": "← Journal",
+  "missingParam": "Missing story parameter.",
+  "loadError": "Unable to load this story.",
+  "notFound": "Story not found.",
+  "eyebrow": "Journal",
+  "imageGalleryAria": "Image gallery",
+  "openImage": "Open image {{index}}",
+  "slide": "Slide {{index}}",
+  "videoGalleryAria": "Video gallery",
+  "videos": "Videos",
+  "playVideo": "Play video {{index}}"
 }

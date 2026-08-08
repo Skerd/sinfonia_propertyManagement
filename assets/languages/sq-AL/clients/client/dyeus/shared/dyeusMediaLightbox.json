@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMediaLightbox.tsx",
+  "imageViewer": "Shikuesi i imazheve",
+  "videoPlayer": "Luajtësi i videos",
+  "close": "Mbyll",
+  "previous": "Prapa",
+  "next": "Para",
+  "counter": "{{current}} / {{total}}"
+}

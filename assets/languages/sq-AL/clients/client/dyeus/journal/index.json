@@ -1,3 +1,12 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/index.tsx",
+  "eyebrow": "Journal",
+  "title": "Histori nga Dyeus",
+  "lead": "Shënime nga Dhërmi — mbi ndërtimin e DYEUS, jetën e bregut dhe çfarë do të thotë të zotërosh një pjesë të Rivierës Shqiptare.",
+  "filterBy": "Filtro sipas:",
+  "filterAll": "Të gjitha",
+  "empty": "Historitë do të shfaqen këtu pasi të publikohen.",
+  "magazineFallbackTitle": "Revista DYEUS: një vështrim më i afërt",
+  "viewMagazine": "Shiko revistën",
+  "loadingMagazine": "Duke ngarkuar revistën…"
 }

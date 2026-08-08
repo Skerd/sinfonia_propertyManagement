@@ -9,11 +9,15 @@ import {
     type ProjectUnitStatusFilter,
 } from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
+import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {
     MarketingFloorListItem,
     MarketingPolygonItem,
     MarketingProjectSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+
+const HOME_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
 
 type DyeusPropertiesListProps = {
     project: MarketingProjectSingle;
@@ -26,11 +30,11 @@ type DyeusPropertiesListProps = {
     className?: string;
 };
 
-const FILTER_LABELS: Record<ProjectUnitStatusFilter, string> = {
-    available: "Available",
-    sold: "Sold",
-    reserved: "Reserved",
-    all: "All",
+const FILTER_KEYS: Record<ProjectUnitStatusFilter, string> = {
+    available: "filterAvailable",
+    sold: "filterSold",
+    reserved: "filterReserved",
+    all: "filterAll",
 };
 
 function DyeusPropertiesList({
@@ -43,6 +47,7 @@ function DyeusPropertiesList({
     onUnitClick,
     className,
 }: DyeusPropertiesListProps) {
+    const {t} = useDyeusT(HOME_LANGUAGE_PATH);
     const [activeFilter, setActiveFilter] = useState<ProjectUnitStatusFilter>("available");
     const selectedFloor = floors.find((floor) => floor._id === floorId);
 
@@ -68,13 +73,13 @@ function DyeusPropertiesList({
         >
             <div className="flex shrink-0 items-start justify-between gap-3 px-5 pt-5 md:px-6 md:pt-6">
                 <h2 className="font-dyeus-serif text-[clamp(2rem,4vw,3rem)] font-bold leading-none">
-                    Residences
+                    {t("residencesTitle")}
                 </h2>
                 <button
                     type="button"
                     onClick={onClose}
                     className="cursor-pointer pt-1 text-dyeus-ink transition hover:text-dyeus-bronze"
-                    aria-label="Close residences panel"
+                    aria-label={t("closeResidencesPanel")}
                 >
                     <X className="size-3.5" strokeWidth={1.5} />
                 </button>
@@ -95,7 +100,7 @@ function DyeusPropertiesList({
                                     : "border-dyeus-border bg-transparent text-dyeus-ink hover:border-dyeus-bronze hover:text-dyeus-bronze",
                             )}
                         >
-                            {FILTER_LABELS[filter]}
+                            {t(FILTER_KEYS[filter])}
                         </button>
                     );
                 })}
@@ -127,7 +132,7 @@ function DyeusPropertiesList({
                         <img src={floorPlanImage} alt="" className="absolute inset-0 size-full object-contain" />
                     ) : (
                         <div className="flex size-full items-center justify-center font-dyeus-serif text-2xl text-dyeus-ink-faded">
-                            Floor plan
+                            {t("floorPlan")}
                         </div>
                     )}
                 </div>
@@ -135,17 +140,17 @@ function DyeusPropertiesList({
 
             <div className="mt-4 min-h-0 flex-1 overflow-auto px-5 pb-5 md:px-6 md:pb-6">
                 <div className="grid grid-cols-[minmax(0,1.1fr)_repeat(4,minmax(0,0.7fr))_minmax(0,1.1fr)] gap-x-3 border-b border-dyeus-border pb-2 font-dyeus-sans text-sm text-dyeus-ink">
-                    <span>Name</span>
-                    <span>Area</span>
-                    <span>Rooms</span>
-                    <span>Baths</span>
-                    <span>Floor</span>
-                    <span>Price</span>
+                    <span>{t("colName")}</span>
+                    <span>{t("colArea")}</span>
+                    <span>{t("colRooms")}</span>
+                    <span>{t("colBaths")}</span>
+                    <span>{t("colFloor")}</span>
+                    <span>{t("colPrice")}</span>
                 </div>
 
                 {filtered.length === 0 ? (
                     <p className="mt-6 font-dyeus-sans text-sm text-dyeus-ink-muted">
-                        No residences match this filter.
+                        {t("emptyFilter")}
                     </p>
                 ) : (
                     <ul>

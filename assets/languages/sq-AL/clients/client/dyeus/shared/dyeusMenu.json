@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMenu.tsx",
+  "menuAria": "Meny",
+  "close": "Mbyll",
+  "brand": "DYEUS",
+  "tagline": "Një koleksion privat rezidencash, villash dhe suitesh midis Detit Jon dhe maleve të Shqipërisë Jugore.",
+  "language": "Gjuha",
+  "languageGroup": "Gjuha",
+  "navAbout": "Rreth nesh",
+  "navResidences": "Rezidenca",
+  "navGallery": "Galeria",
+  "navJournal": "Journal",
+  "navContact": "Kontakt"
+}

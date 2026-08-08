@@ -8,12 +8,19 @@ import {useProjectViewerState} from "@propertyManagementModule/clients/client/pu
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
 import DyeusPropertiesList from "@propertyManagementModule/clients/client/dyeus/home/sections/dyeusPropertiesList.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {
+    useDyeusT,
+    type DyeusTranslate,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {
     MarketingEdificeListItem,
     MarketingFloorListItem,
     MarketingPolygonItem,
     MarketingProjectSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+
+const RESIDENCES_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx";
 
 type DyeusResidencesPolygonViewerProps = {
     project: MarketingProjectSingle;
@@ -24,13 +31,13 @@ function resolveImageUrl(url: string | undefined, fallback: string): string {
     return resolveMarketingMediaUrl(url) ?? fallback;
 }
 
-function formatFloorLabel(floor: MarketingFloorListItem | undefined, fallback: string): string {
-    if (!floor) return fallback;
+function formatFloorLabel(t: DyeusTranslate, floor: MarketingFloorListItem | undefined): string {
+    if (!floor) return t("floorFallback");
     if (floor.name?.trim()) return floor.name;
     const level = parseFloorLevel(floor.levelNumber);
-    if (level === -1) return "Basement";
-    if (level === 0) return "Ground";
-    return `Floor ${level}`;
+    if (level === -1) return t("basement");
+    if (level === 0) return t("ground");
+    return t("floorN", {level});
 }
 
 function DyeusViewerSidebar({
@@ -45,6 +52,7 @@ function DyeusViewerSidebar({
     onHoverId,
     onSelectEdifice,
     onSelectFloor,
+    t,
 }: {
     level: "project" | "edifice" | "floor";
     edifices: MarketingEdificeListItem[];
@@ -57,41 +65,50 @@ function DyeusViewerSidebar({
     onHoverId?: (id: string | null) => void;
     onSelectEdifice: (edificeId: string) => void;
     onSelectFloor: (floorId: string) => void;
+    t: DyeusTranslate;
 }) {
     const items =
         level === "project"
             ? edifices.map((edifice) => ({
                   id: edifice._id,
-                  label: edifice.name || "Residence",
-                  meta: edifice.floors?.length != null ? `${edifice.floors.length} Floors` : undefined,
+                  label: edifice.name || t("residenceFallback"),
+                  meta:
+                      edifice.floors?.length != null
+                          ? t("floorsMeta", {count: edifice.floors.length})
+                          : undefined,
               }))
             : sortedFloors.map((floor) => ({
                   id: floor._id,
-                  label: formatFloorLabel(floor, "Floor"),
-                  meta: floor.units?.length != null ? `${floor.units.length} Units` : undefined,
+                  label: formatFloorLabel(t, floor),
+                  meta:
+                      floor.units?.length != null
+                          ? t("unitsMeta", {count: floor.units.length})
+                          : undefined,
               }));
 
     const selectedId = level === "project" ? selectedEdificeId : selectedFloorId;
     const onSelect = level === "project" ? onSelectEdifice : onSelectFloor;
     const contextTitle =
         level === "floor"
-            ? formatFloorLabel(selectedFloor, "Floor")
+            ? formatFloorLabel(t, selectedFloor)
             : level === "edifice"
-              ? selectedEdifice?.name || "Residence"
-              : "Project overview";
-    const listLabel = level === "project" ? "Buildings" : "Floors";
+              ? selectedEdifice?.name || t("residenceFallback")
+              : t("projectOverview");
+    const listLabel = level === "project" ? t("buildings") : t("floors");
 
     return (
         <aside className="flex h-full min-h-0 w-full flex-col overflow-hidden border border-dyeus-border bg-dyeus-white">
             <div className="border-b border-dyeus-border px-5 pb-4 pt-5">
-                <p className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">Exploring</p>
+                <p className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">
+                    {t("exploring")}
+                </p>
                 <h2 className="mt-1 font-dyeus-serif text-2xl text-dyeus-ink">{contextTitle}</h2>
                 <p className="mt-3 font-dyeus-sans text-sm text-dyeus-ink-muted">{listLabel}</p>
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
                 {items.length === 0 ? (
                     <p className="px-2 py-4 font-dyeus-sans text-sm text-dyeus-ink-muted">
-                        {level === "project" ? "No buildings available." : "No floors available."}
+                        {level === "project" ? t("noBuildings") : t("noFloors")}
                     </p>
                 ) : (
                     <ul className="flex flex-col gap-1">
@@ -139,6 +156,7 @@ function DyeusViewerSidebar({
 }
 
 function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolygonViewerProps) {
+    const {t} = useDyeusT(RESIDENCES_LANGUAGE_PATH);
     const navigate = useNavigate();
     const [imageHoveredId, setImageHoveredId] = useState<string | null>(null);
     const [sidebarHoveredId, setSidebarHoveredId] = useState<string | null>(null);
@@ -204,8 +222,8 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
               (imageHoveredId && phantomIds.has(imageHoveredId) && imageHoveredId) ||
               null;
 
-    const edificeName = selectedEdifice?.name || "Residence";
-    const floorName = formatFloorLabel(selectedFloor, "Floor");
+    const edificeName = selectedEdifice?.name || t("residenceFallback");
+    const floorName = formatFloorLabel(t, selectedFloor);
     const stayHovered = !atProjectLevel ? selectedFloorId || undefined : undefined;
     const openUnit = (unitId: string) => {
         navigate(`/property?projectId=${project._id}&unitId=${unitId}`);
@@ -233,9 +251,7 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
     ) : (
         <div className="flex h-full min-h-0 flex-col items-center justify-center gap-4 border border-dashed border-dyeus-border bg-dyeus-sand/40 p-6 text-center">
             <img alt={project.name} className="max-h-[280px] w-full max-w-lg object-cover" src={imageUrl} />
-            <p className="font-dyeus-sans text-sm text-dyeus-ink-muted">
-                Interactive overview is not available for this level yet.
-            </p>
+            <p className="font-dyeus-sans text-sm text-dyeus-ink-muted">{t("interactiveUnavailable")}</p>
         </div>
     );
 
@@ -247,11 +263,11 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
                         type="button"
                         onClick={goBack}
                         className="flex shrink-0 items-center justify-center p-1 text-dyeus-ink transition hover:bg-dyeus-sand"
-                        aria-label="Go back"
+                        aria-label={t("goBack")}
                     >
                         <ChevronLeft className="size-8 md:size-10" strokeWidth={1.5} aria-hidden />
                     </button>
-                    <nav aria-label="Viewer location" className="flex min-w-0 items-center gap-2">
+                    <nav aria-label={t("viewerLocationAria")} className="flex min-w-0 items-center gap-2">
                         {level === "floor" ? (
                             <button
                                 type="button"
@@ -306,6 +322,7 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
                             onHoverId={setSidebarHoveredId}
                             onSelectEdifice={selectEdifice}
                             onSelectFloor={selectFloor}
+                            t={t}
                         />
                     )}
                 </div>

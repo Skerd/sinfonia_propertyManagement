@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx",
+  "pageTitle": "Politique de confidentialité",
+  "eyebrow": "Mentions légales",
+  "lastUpdated": "Dernière mise à jour : 7 août 2026",
+  "intro": "Cette Politique de confidentialité explique comment Dyeus Residences collecte, utilise, conserve et partage les informations personnelles lorsque vous visitez notre site web ou soumettez une demande concernant nos résidences.",
+  "section1Title": "Qui nous sommes",
+  "section1Body": "Dyeus Residences exploite ce site web pour présenter notre projet de résidences côtières et recevoir les demandes de potentiels acheteurs et partenaires. Pour toute question relative à la confidentialité, contactez-nous via la page Contact de ce site.",
+  "section2Title": "Informations que nous collectons",
+  "section2Body": "Nous pouvons collecter les informations que vous fournissez directement, telles que votre nom, adresse e-mail, numéro de téléphone et messages soumis via les formulaires.\n\nNous pouvons également collecter des données techniques telles que le type d'appareil, le navigateur, la localisation approximative et les pages visitées lorsque vous parcourez le site.",
+  "section3Title": "Comment nous utilisons vos informations",
+  "section3Body": "Nous utilisons les informations personnelles pour :\n• Répondre aux demandes et aux réservations\n• Fournir des informations sur les résidences, la disponibilité et les visites\n• Améliorer le site et l'expérience des visiteurs\n• Envoyer les mises à jour de service ou de projet que vous avez demandées\n• Assurer la sécurité, prévenir les abus et respecter les obligations légales",
+  "section4Title": "Bases juridiques",
+  "section4Body": "Selon votre localisation, nous traitons les données personnelles sur l'une ou plusieurs des bases suivantes : votre consentement, les démarches précontractuelles à votre demande, nos intérêts légitimes à exploiter et sécuriser ce site, et le respect du droit applicable.",
+  "section5Title": "Partage et sous-traitants",
+  "section5Body": "Nous ne vendons pas vos informations personnelles. Nous pouvons partager des données avec des prestataires de confiance qui nous aident à héberger l'infrastructure, traiter les communications ou fournir des fonctionnalités du site — uniquement dans la mesure nécessaire et sous des garanties appropriées.\n\nNous pouvons également divulguer des informations lorsque la loi, un règlement ou une procédure légale valide l'exige.",
+  "section6Title": "Conservation et sécurité",
+  "section6Body": "Nous conservons les informations personnelles uniquement aussi longtemps que nécessaire aux finalités décrites dans cette politique, ou comme l'exige la loi. Nous appliquons des mesures administratives, techniques et organisationnelles destinées à protéger les données personnelles contre l'accès non autorisé, la perte ou l'usage abusif.",
+  "section7Title": "Vos droits",
+  "section7Body": "Sous réserve du droit applicable, vous pouvez demander l'accès, la correction ou la suppression de vos informations personnelles, et vous opposer à certains traitements ou les restreindre. Vous pouvez aussi retirer votre consentement lorsque le traitement est fondé sur le consentement.\n\nPour exercer ces droits, contactez-nous via la page Contact. Vous pouvez également déposer une plainte auprès de votre autorité locale de protection des données.",
+  "section8Title": "Modifications de cette politique",
+  "section8Body": "Nous pouvons mettre à jour cette Politique de confidentialité de temps à autre. La date « Dernière mise à jour » en haut de cette page changera alors. L'utilisation continue du site Dyeus après une mise à jour signifie que vous prenez acte de la politique révisée."
 }

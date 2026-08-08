@@ -4,6 +4,10 @@ import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared
 import {
     useDyeusSocialLinks,
 } from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusSocialLinks.ts";
+import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
+
+const HOME_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
 
 const heroLinkClassName =
     "inline-flex items-center font-dyeus-serif text-xl leading-[1.2] text-dyeus-cream underline decoration-transparent underline-offset-4 transition-[color,text-decoration-color,opacity] duration-300 hover:text-dyeus-bronze hover:decoration-dyeus-bronze";
@@ -12,6 +16,7 @@ const heroLogoLinkClassName =
     "inline-flex size-6 items-center justify-center opacity-90 transition-opacity duration-300 hover:opacity-100";
 
 function HeroSection() {
+    const {t} = useDyeusT(HOME_LANGUAGE_PATH);
     const {socialLinks} = useDyeusSocialLinks();
     const [logoFailed, setLogoFailed] = useState<Record<string, boolean>>({});
 
@@ -36,16 +41,16 @@ function HeroSection() {
             <DyeusHeader variant="hero" />
 
             <h1 className="absolute left-6 top-[22%] z-10 max-w-[18ch] font-dyeus-serif text-[clamp(2.75rem,7vw,7.5rem)] font-bold leading-none text-dyeus-cream md:left-[53px] md:top-[22%] md:max-w-[1081px]">
-                Luxury living.
+                {t("heroTitleLine1")}
                 <br />
-                Smart Investment
+                {t("heroTitleLine2")}
             </h1>
 
             <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-8 px-6 pb-8 md:inset-x-[60px] md:bottom-[5.5%] md:flex-row md:items-end md:justify-between md:gap-12 md:px-0 md:pb-0">
                 {socialLinks.length > 0 ? (
                     <div className="flex flex-wrap items-center gap-4 md:gap-6">
                         <p className="font-dyeus-serif text-lg font-bold text-dyeus-cream md:text-2xl">
-                            Follow Dyeus
+                            {t("followDyeus")}
                         </p>
                         <img
                             src={dyeusAssets.lineFollow}
@@ -89,8 +94,7 @@ function HeroSection() {
                         socialLinks.length === 0 ? "md:ml-auto" : ""
                     }`}
                 >
-                    A private collection of residences, villas, and suites between the Ionian Sea and
-                    the mountains of Southern Albania.
+                    {t("heroDescription")}
                 </p>
             </div>
         </section>

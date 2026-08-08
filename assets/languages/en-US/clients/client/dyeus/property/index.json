@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx",
+  "backToResidences": "← Residences",
+  "missingParams": "Missing project or unit parameters.",
+  "loadError": "Unable to load this residence.",
+  "area": "Area",
+  "bedrooms": "Bedrooms",
+  "bathrooms": "Bathrooms",
+  "price": "Price",
+  "requestInfo": "Request information",
+  "close": "Close",
+  "send": "Send",
+  "defaultMessage": "Enquiry for unit {{name}}"
 }

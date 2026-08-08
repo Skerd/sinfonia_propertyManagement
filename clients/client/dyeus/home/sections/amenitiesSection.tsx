@@ -1,32 +1,32 @@
+import {useMemo} from "react";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 
-const amenities = [
-    {label: "Boutique Hotel", active: false},
-    {label: "Infinity Pools", active: true},
-    {label: "Private Terraces", active: false},
-    {label: "Gardens", active: false},
-    {label: "Sunset Lounge", active: false},
-    {label: "Parking Spaces", active: false},
-    {label: "Pool Bar", active: false},
-    {label: "Bar & Restaurant", active: false},
-    {label: "Private Beach", active: false},
-] as const;
+const HOME_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
+
+/** Matches prior design: “Infinity Pools” highlighted (2nd amenity). */
+const ACTIVE_AMENITY_INDEX = 1;
 
 function AmenitiesSection() {
+    const {t, tList} = useDyeusT(HOME_LANGUAGE_PATH);
+
+    const amenities = useMemo(() => {
+        return tList("amenities").map((label, index) => ({
+            label,
+            active: index === ACTIVE_AMENITY_INDEX,
+        }));
+    }, [tList]);
+
     return (
         <section className="mx-auto max-w-[1728px] px-6 py-16 md:px-[60px] md:py-20">
             <p className="max-w-[1281px] font-dyeus-serif text-[clamp(1.75rem,4vw,4rem)] font-bold leading-none text-dyeus-ink">
-                Life at DYEUS happens outdoors — in the water, under the olive trees, on terraces that
-                open straight to the sea. Every shared space is made for the slow, private rhythm of the
-                coast.
+                {t("amenitiesLead1")}
             </p>
 
             <div className="mt-12 flex flex-col gap-10 lg:mt-16 lg:flex-row lg:items-start lg:justify-between">
                 <p className="max-w-[340px] font-dyeus-serif text-base leading-[1.2] text-dyeus-ink md:text-xl">
-                    Behind all of it is a quiet kind of care. The grounds, the pools, the running of the
-                    residence — handled by the hotel alongside it, whether you&apos;re here for the season
-                    or a single weekend. What&apos;s left is time that finally belongs to you: mornings with
-                    nothing to manage, and evenings that ask for nothing in return.
+                    {t("amenitiesLead2")}
                 </p>
 
                 <div className="flex flex-col gap-8 lg:w-[1020px] lg:flex-row lg:items-start lg:justify-between">

@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx",
+  "pageTitle": "Politika e privatësisë",
+  "eyebrow": "Ligjore",
+  "lastUpdated": "Përditësuar së fundi: 7 gusht 2026",
+  "intro": "Kjo Politikë e privatësisë shpjegon se si Dyeus Residences mbledh, përdor, ruan dhe ndan informacionin personal kur vizitoni faqen tonë ose dërgoni një kërkesë për residencat tona.",
+  "section1Title": "Kush jemi",
+  "section1Body": "Dyeus Residences operon këtë faqe për të prezantuar projektin tonë të residencave bregdetare dhe për të marrë kërkesa nga blerës dhe partnerë të mundshëm. Për pyetje lidhur me privatësinë, na kontaktoni përmes faqes Kontakt në këtë website.",
+  "section2Title": "Informacioni që mbledhim",
+  "section2Body": "Mund të mbledhim informacionin që jepni drejtpërdrejt, si emri, adresa e-mail, numri i telefonit dhe mesazhet e dërguara përmes formularëve.\n\nMund të mbledhim gjithashtu të dhëna teknike si lloji i pajisjes, shfletuesi, vendndodhja e përafërt dhe faqet e vizituara kur shfletoni sitin.",
+  "section3Title": "Si e përdorim informacionin tuaj",
+  "section3Body": "Ne përdorim informacionin personal për të:\n• Përgjigjur kërkesave dhe rezervimeve\n• Ofruar informacion për residencat, disponueshmërinë dhe vizitat\n• Përmirësuar faqen dhe përvojën e vizitorëve\n• Dërguar përditësime shërbimi ose projekti që keni kërkuar\n• Ruajtur sigurinë, parandaluar keqpërdorimin dhe përmbushur detyrimet ligjore",
+  "section4Title": "Bazat ligjore",
+  "section4Body": "Sipas vendndodhjes suaj, ne përpunojmë të dhënat personale mbi një ose më shumë nga bazat e mëposhtme: pëlqimi juaj, hapat e ndërmarra me kërkesën tuaj para lidhjes së një kontrate, interesat tona të legjitimuara për operimin dhe sigurimin e kësaj faqeje, dhe respektimin e ligjit në fuqi.",
+  "section5Title": "Ndarja dhe përpunuesit",
+  "section5Body": "Ne nuk i shesim informacionet tuaja personale. Mund t'i ndajmë të dhënat me ofrues shërbimesh të besuar që na ndihmojnë në hosting, komunikime ose funksione të faqes — vetëm sa është e nevojshme dhe me garanci të përshtatshme.\n\nMund të zbulojmë gjithashtu informacion kur e kërkon ligji, rregullorja ose një proces i vlefshëm ligjor.",
+  "section6Title": "Ruajtja dhe siguria",
+  "section6Body": "Ne i ruajmë informacionet personale vetëm sa kohë është e nevojshme për qëllimet e përshkruara në këtë politikë, ose sipas kërkesës së ligjit. Aplikojmë masa administrative, teknike dhe organizative të dizajnuara për të mbrojtur të dhënat personale nga aksesi i paautorizuar, humbja ose keqpërdorimi.",
+  "section7Title": "Të drejtat tuaja",
+  "section7Body": "Sipas ligjit në fuqi, mund të kërkoni akses, korrigjim ose fshirje të informacionit tuaj personal, dhe mund të kundërshtoni ose kufizoni përpunime të caktuara. Mund gjithashtu të tërhiqni pëlqimin kur përpunimi bazohet në pëlqim.\n\nPër të ushtruar këto të drejta, na kontaktoni përmes faqes Kontakt. Mund të paraqisni gjithashtu ankesë te autoriteti lokal i mbrojtjes së të dhënave.",
+  "section8Title": "Ndryshimet e kësaj politike",
+  "section8Body": "Mund ta përditësojmë këtë Politikë të privatësisë herë pas here. Data «Përditësuar së fundi» në krye të kësaj faqeje do të ndryshojë kur ta bëjmë. Përdorimi i vazhdueshëm i faqes Dyeus pas një përditësimi do të thotë se e pranoni politikën e rishikuar."
 }

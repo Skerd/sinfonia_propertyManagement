@@ -4,17 +4,24 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusProjectId.ts";
+import {
+    useDyeusT,
+    type DyeusTranslate,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
+
+const FORM_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
 
 type ContactFieldKey = keyof MarketingContactFormType;
 type ContactFieldErrors = Partial<Record<ContactFieldKey, string>>;
 
 const INTEREST_OPTIONS = [
-    {value: "reservation", label: "Reservation"},
-    {value: "investments", label: "Investments"},
-    {value: "partnerships", label: "Partnerships"},
-    {value: "other", label: "Other"},
+    {value: "reservation", labelKey: "interestReservation"},
+    {value: "investments", labelKey: "interestInvestments"},
+    {value: "partnerships", labelKey: "interestPartnerships"},
+    {value: "other", labelKey: "interestOther"},
 ] as const;
 
 const fieldInputClass =
@@ -24,17 +31,20 @@ function isValidEmail(value: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function validateContactForm(values: MarketingContactFormType): ContactFieldErrors {
+function validateContactForm(
+    values: MarketingContactFormType,
+    t: DyeusTranslate,
+): ContactFieldErrors {
     const errors: ContactFieldErrors = {};
-    if (!values.name.trim()) errors.name = "First name is required.";
-    if (!values.surname.trim()) errors.surname = "Surname is required.";
+    if (!values.name.trim()) errors.name = t("errorFirstName");
+    if (!values.surname.trim()) errors.surname = t("errorSurname");
     if (!values.email.trim()) {
-        errors.email = "Email is required.";
+        errors.email = t("errorEmailRequired");
     } else if (!isValidEmail(values.email.trim())) {
-        errors.email = "Enter a valid email.";
+        errors.email = t("errorEmailInvalid");
     }
-    if (!values.phone.trim()) errors.phone = "Phone is required.";
-    if (!values.message.trim()) errors.message = "Message is required.";
+    if (!values.phone.trim()) errors.phone = t("errorPhone");
+    if (!values.message.trim()) errors.message = t("errorMessage");
     return errors;
 }
 
@@ -71,9 +81,10 @@ function DyeusMarketingContactFormInner({
     unitInterest,
     defaultEmail = "",
     defaultMessage = "",
-    submitLabel = "Send enquiry",
+    submitLabel,
     className,
 }: FormInnerProps) {
+    const {t} = useDyeusT(FORM_LANGUAGE_PATH);
     const {projectId: dyeusProjectId, loading: resolvingProject} = useDyeusProjectId();
     const effectiveProjectInterest = (projectInterest || dyeusProjectId).trim();
     const [name, setName] = useState("");
@@ -85,6 +96,8 @@ function DyeusMarketingContactFormInner({
     const [fieldErrors, setFieldErrors] = useState<ContactFieldErrors>({});
     const [submitted, setSubmitted] = useState(false);
     const [projectError, setProjectError] = useState<string | null>(null);
+
+    const resolvedSubmitLabel = submitLabel ?? t("sendEnquiry");
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
@@ -118,7 +131,7 @@ function DyeusMarketingContactFormInner({
         setProjectError(null);
 
         if (!effectiveProjectInterest) {
-            setProjectError("Unable to resolve the Dyeus project. Please try again.");
+            setProjectError(t("projectMissing"));
             return;
         }
 
@@ -135,7 +148,7 @@ function DyeusMarketingContactFormInner({
             ...(unitInterest ? {unitInterest} : {}),
             ...(resolvedInterest ? {interest: resolvedInterest} : {}),
         };
-        const errors = validateContactForm(values);
+        const errors = validateContactForm(values, t);
         setFieldErrors(errors);
         if (Object.keys(errors).length > 0) return;
 
@@ -147,7 +160,7 @@ function DyeusMarketingContactFormInner({
             <div className="flex flex-col gap-5 sm:flex-row sm:gap-5">
                 <label className="flex min-w-0 flex-1 flex-col gap-2">
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
-                        First name
+                        {t("firstName")}
                     </span>
                     <input
                         type="text"
@@ -167,7 +180,7 @@ function DyeusMarketingContactFormInner({
                 </label>
                 <label className="flex min-w-0 flex-1 flex-col gap-2">
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
-                        Surname
+                        {t("surname")}
                     </span>
                     <input
                         type="text"
@@ -189,7 +202,7 @@ function DyeusMarketingContactFormInner({
 
             <label className="flex flex-col gap-2">
                 <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
-                    Email
+                    {t("email")}
                 </span>
                 <input
                     type="email"
@@ -210,7 +223,7 @@ function DyeusMarketingContactFormInner({
 
             <label className="flex flex-col gap-2">
                 <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
-                    Phone
+                    {t("phone")}
                 </span>
                 <input
                     type="tel"
@@ -232,7 +245,7 @@ function DyeusMarketingContactFormInner({
             {!lockInterestToReservation ? (
                 <label className="flex flex-col gap-2">
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
-                        Interest
+                        {t("interest")}
                     </span>
                     <select
                         name="interest"
@@ -248,11 +261,11 @@ function DyeusMarketingContactFormInner({
                         )}
                     >
                         <option value="" disabled>
-                            Select interest
+                            {t("selectInterest")}
                         </option>
                         {INTEREST_OPTIONS.map((option) => (
                             <option key={option.value} value={option.value}>
-                                {option.label}
+                                {t(option.labelKey)}
                             </option>
                         ))}
                     </select>
@@ -261,7 +274,7 @@ function DyeusMarketingContactFormInner({
 
             <label className="flex flex-col gap-2">
                 <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
-                    Message
+                    {t("message")}
                 </span>
                 <textarea
                     name="message"
@@ -288,12 +301,12 @@ function DyeusMarketingContactFormInner({
                 onClick={handleSend}
                 className="mt-2 cursor-pointer bg-dyeus-ink px-6 py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream transition hover:bg-dyeus-bronze-deep disabled:cursor-not-allowed disabled:opacity-60"
             >
-                {loading ? "Sending…" : resolvingProject ? "Loading…" : submitLabel}
+                {loading ? t("sending") : resolvingProject ? t("loading") : resolvedSubmitLabel}
             </button>
 
             {submitted ? (
                 <p role="status" className="font-dyeus-sans text-sm text-dyeus-ink">
-                    Thank you — we received your enquiry and will be in touch shortly.
+                    {t("success")}
                 </p>
             ) : null}
             {projectError ? (
@@ -303,7 +316,7 @@ function DyeusMarketingContactFormInner({
             ) : null}
             {error && !submitted && !projectError && Object.keys(fieldErrors).length === 0 ? (
                 <p role="alert" className="font-dyeus-sans text-sm text-red-700">
-                    Unable to send your enquiry. Please try again.
+                    {t("failure")}
                 </p>
             ) : null}
         </div>

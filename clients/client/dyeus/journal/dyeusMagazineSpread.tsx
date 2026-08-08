@@ -2,6 +2,7 @@ import {useEffect, useMemo, useRef, useState} from "react";
 import * as pdfjs from "pdfjs-dist";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 
 // Must match the installed pdfjs-dist version (copied into /public).
@@ -19,6 +20,7 @@ type DyeusMagazineSpreadProps = {
  * Falls back to the static Figma spread when no PDF is available or load fails.
  */
 export default function DyeusMagazineSpread({fileUrl, className}: DyeusMagazineSpreadProps) {
+    const {t} = useDyeusT("src/modules/propertyManagement/clients/client/dyeus/journal/index.tsx");
     const resolvedUrl = useMemo(() => resolveMarketingMediaUrl(fileUrl), [fileUrl]);
     const containerRef = useRef<HTMLDivElement>(null);
     const leftCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -132,7 +134,7 @@ export default function DyeusMagazineSpread({fileUrl, className}: DyeusMagazineS
         <div ref={containerRef} className={cn("relative w-full overflow-hidden", className)}>
             {!ready ? (
                 <div className="flex aspect-[705/495] w-full items-center justify-center bg-dyeus-sand/30">
-                    <span className="font-dyeus-sans text-sm text-dyeus-ink-muted">Loading magazine…</span>
+                    <span className="font-dyeus-sans text-sm text-dyeus-ink-muted">{t("loadingMagazine")}</span>
                 </div>
             ) : null}
             <div

@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/story.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/story.tsx",
+  "backToJournal": "← Journal",
+  "missingParam": "Mungon parametri i historisë.",
+  "loadError": "Nuk mund të ngarkohet kjo histori.",
+  "notFound": "Historia nuk u gjet.",
+  "eyebrow": "Journal",
+  "imageGalleryAria": "Galeria e imazheve",
+  "openImage": "Hap imazhin {{index}}",
+  "slide": "Slajdi {{index}}",
+  "videoGalleryAria": "Galeria e videove",
+  "videos": "Video",
+  "playVideo": "Luaj videon {{index}}"
 }

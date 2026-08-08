@@ -2,7 +2,7 @@ import {type ComponentType, useEffect, useMemo} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
 import {ArrowUpRight} from "lucide-react";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType, type ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -18,48 +18,46 @@ type AboutStoriesFilter = {
     projectId: string;
 };
 
-type AboutPageProps = WithAxiosType<MarketingStoriesResponse, AboutStoriesFilter>;
+type AboutPageProps = WithAxiosType<MarketingStoriesResponse, AboutStoriesFilter> & WithLanguageType;
 
-const introFacts = [
-    {label: "Location:", value: "Dhermi, Albania"},
-    {label: "Year:", value: "2027"},
-    {label: "Project size:", value: "6500 m²"},
-    {label: "Apartments:", value: "47"},
-    {label: "Duplex:", value: "18"},
+const INTRO_FACT_KEYS = [
+    {labelKey: "locationLabel", valueKey: "locationValue"},
+    {labelKey: "yearLabel", valueKey: "yearValue"},
+    {labelKey: "projectSizeLabel", valueKey: "projectSizeValue"},
+    {labelKey: "apartmentsLabel", valueKey: "apartmentsValue"},
+    {labelKey: "duplexLabel", valueKey: "duplexValue"},
 ] as const;
 
-const facilityFacts = [
-    "150 Parking Spaces",
-    "5100 m² Underground Parking Area",
-    "3000 m² Landscape Green Area",
-    "1 Boutique Hotel",
-] as const;
-
-const pressTickerItems = ["Appearances", "News & Press"] as const;
-
-const fallbackPressStories = [
+const FALLBACK_PRESS_KEYS = [
     {
         _id: "fallback-1",
-        title: "A Local's Guide to Dhërmi, Beyond the Beaches",
-        meta: "June 18, 2025 • News",
+        titleKey: "fallbackPress1Title",
+        metaKey: "fallbackPress1Meta",
         image: dyeusAssets.aboutPress1,
-        href: "/journal",
     },
     {
         _id: "fallback-2",
-        title: "Where to Find the Best Sunsets on the Albanian Riviera",
-        meta: "June 18, 2025 • News",
+        titleKey: "fallbackPress2Title",
+        metaKey: "fallbackPress2Meta",
         image: dyeusAssets.aboutPress2,
-        href: "/journal",
     },
     {
         _id: "fallback-3",
-        title: "Seven Beaches Within Reach of DYEUS",
-        meta: "June 18, 2025 • News",
+        titleKey: "fallbackPress3Title",
+        metaKey: "fallbackPress3Meta",
         image: dyeusAssets.aboutPress3,
-        href: "/journal",
     },
 ] as const;
+
+function t(resolveLanguageKey: ResolveLanguageKey, key: string): string {
+    return String(resolveLanguageKey(key));
+}
+
+function tList(resolveLanguageKey: ResolveLanguageKey, key: string): string[] {
+    const value = resolveLanguageKey(key, true);
+    if (!Array.isArray(value)) return [];
+    return value.filter((item): item is string => typeof item === "string");
+}
 
 function storyHref(storyId: string, projectId?: string) {
     const params = new URLSearchParams();
@@ -68,7 +66,11 @@ function storyHref(storyId: string, projectId?: string) {
     return `/journal/story?${params.toString()}`;
 }
 
-function formatStoryMeta(publishedAt?: string, storyTypeName?: string) {
+function formatStoryMeta(
+    resolveLanguageKey: ResolveLanguageKey,
+    publishedAt?: string,
+    storyTypeName?: string,
+) {
     const dateLabel = publishedAt
         ? new Date(publishedAt).toLocaleDateString("en-US", {
               month: "long",
@@ -76,12 +78,12 @@ function formatStoryMeta(publishedAt?: string, storyTypeName?: string) {
               year: "numeric",
           })
         : null;
-    const typeLabel = storyTypeName || "News";
+    const typeLabel = storyTypeName || t(resolveLanguageKey, "newsDefault");
     if (dateLabel) return `${dateLabel} • ${typeLabel}`;
     return typeLabel;
 }
 
-function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) {
+function AboutPageInner({data, loading, error, onFilterChange, resolveLanguageKey}: AboutPageProps) {
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
 
     useEffect(() => {
@@ -90,17 +92,48 @@ function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) 
         // onFilterChange identity changes every withAxios render — do not add to deps.
     }, [projectId]);
 
+    const introFacts = useMemo(
+        () =>
+            INTRO_FACT_KEYS.map((fact) => ({
+                label: t(resolveLanguageKey, fact.labelKey),
+                value: t(resolveLanguageKey, fact.valueKey),
+            })),
+        [resolveLanguageKey],
+    );
+
+    const facilityFacts = useMemo(
+        () => tList(resolveLanguageKey, "facilityFacts"),
+        [resolveLanguageKey],
+    );
+
+    const pressTickerItems = useMemo(
+        () => [t(resolveLanguageKey, "pressAppearances"), t(resolveLanguageKey, "pressNews")],
+        [resolveLanguageKey],
+    );
+
+    const fallbackPressStories = useMemo(
+        () =>
+            FALLBACK_PRESS_KEYS.map((story) => ({
+                _id: story._id,
+                title: t(resolveLanguageKey, story.titleKey),
+                meta: t(resolveLanguageKey, story.metaKey),
+                image: story.image,
+                href: "/journal",
+            })),
+        [resolveLanguageKey],
+    );
+
     const liveStories = useMemo(() => {
         return (data?.stories ?? []).slice(0, 3).map((story) => ({
             _id: story._id,
             title: story.title,
-            meta: formatStoryMeta(story.publishedAt, story.storyTypeName),
+            meta: formatStoryMeta(resolveLanguageKey, story.publishedAt, story.storyTypeName),
             image: resolveMarketingMediaUrl(story.mainImage) || dyeusAssets.aboutPress1,
             href: storyHref(story._id, projectId || story.projectId),
         }));
-    }, [data?.stories, projectId]);
+    }, [data?.stories, projectId, resolveLanguageKey]);
 
-    const pressStories = liveStories.length > 0 ? liveStories : [...fallbackPressStories];
+    const pressStories = liveStories.length > 0 ? liveStories : fallbackPressStories;
     const showPressLoader = resolvingProject || (loading && liveStories.length === 0 && !!projectId && !error);
     const pressTicker = [...pressTickerItems, ...pressTickerItems, ...pressTickerItems, ...pressTickerItems];
 
@@ -111,20 +144,20 @@ function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) 
 
                 <section className="mx-auto max-w-[1728px] px-6 pt-28 md:px-[60px] md:pt-36">
                     <h1 className="max-w-[1130px] font-dyeus-serif text-[clamp(2.25rem,5vw,4rem)] font-bold leading-none text-dyeus-ink">
-                        The making of DYEUS, on the west-facing coast above Dhërmi, Albania
+                        {t(resolveLanguageKey, "title")}
                     </h1>
 
                     <div className="mt-10 grid grid-cols-1 gap-3 font-dyeus-sans text-2xl leading-[1.2] text-dyeus-ink md:mt-14 md:grid-cols-[1fr_1.15fr] md:text-[32px]">
                         <a href="#introduction" className="transition-colors hover:text-dyeus-bronze">
-                            About DYEUS
+                            {t(resolveLanguageKey, "aboutDyeus")}
                         </a>
                         <a href="#making" className="transition-colors hover:text-dyeus-bronze">
-                            From wild shore to residence
+                            {t(resolveLanguageKey, "fromWildShore")}
                         </a>
                     </div>
                 </section>
 
-                <section className="mt-6 w-full md:mt-8" aria-label="Coastline">
+                <section className="mt-6 w-full md:mt-8" aria-label={t(resolveLanguageKey, "coastAria")}>
                     <div className="relative aspect-[1730/902] w-full overflow-hidden bg-dyeus-sand/40">
                         <video
                             autoPlay
@@ -146,7 +179,7 @@ function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) 
                 >
                     <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
                         <h2 className="font-dyeus-serif text-[32px] font-bold leading-[1.2] text-dyeus-ink">
-                            Introduction
+                            {t(resolveLanguageKey, "introduction")}
                         </h2>
                         <div className="w-full max-w-[802px]">
                             {introFacts.map((fact, index) => (
@@ -164,11 +197,7 @@ function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) 
                     </div>
 
                     <p className="mt-10 ml-auto max-w-[415px] font-dyeus-serif text-base leading-[1.2] text-dyeus-ink md:mt-14 md:text-xl">
-                        It comprises 65 residences across two typologies: 47 apartments and 18 duplexes,
-                        arranged over a 6,500 m² site with 3,000 m² of landscaped grounds, each oriented to
-                        the Ionian and opening onto a private sea-view terrace. Shared facilities include a
-                        boutique hotel, infinity pools, a pool bar and restaurant, private beach, gardens,
-                        and 150 parking spaces across a 5,100 m² underground level.
+                        {t(resolveLanguageKey, "introBody")}
                     </p>
                 </section>
 
@@ -230,13 +259,13 @@ function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) 
                     <div className="h-[72px] w-px bg-dyeus-ink md:h-[124px]" aria-hidden />
                     <div className="space-y-6 text-center md:space-y-8">
                         <p className="font-dyeus-serif text-[clamp(1.75rem,4vw,4rem)] font-bold leading-none text-dyeus-ink">
-                            We didn&apos;t set out to build on this coast. We set out to be worthy of it,{" "}
+                            {t(resolveLanguageKey, "quotePart1")}{" "}
                             <span className="text-dyeus-bronze">
-                                and to add only what Dhërmi could carry.
+                                {t(resolveLanguageKey, "quotePart2")}
                             </span>
                         </p>
                         <p className="font-dyeus-serif text-2xl font-bold leading-[1.2] text-dyeus-ink md:text-[40px]">
-                            Artech Group
+                            {t(resolveLanguageKey, "quoteAttribution")}
                         </p>
                     </div>
                     <div className="h-[72px] w-px bg-dyeus-ink md:h-[124px]" aria-hidden />
@@ -252,26 +281,23 @@ function AboutPageInner({data, loading, error, onFilterChange}: AboutPageProps) 
                     </div>
                     <div className="mt-8 flex flex-col gap-8 lg:mt-12 lg:flex-row lg:items-start lg:justify-between">
                         <h2 className="shrink-0 font-dyeus-serif text-[32px] font-bold leading-[1.2] text-dyeus-ink">
-                            Artech Group
+                            {t(resolveLanguageKey, "artechTitle")}
                         </h2>
                         <div className="grid w-full max-w-[972px] gap-7 md:grid-cols-2">
                             <p className="font-dyeus-serif text-base leading-none text-dyeus-ink md:text-xl">
-                                ARTECH is a Tirana-based architecture studio working across Albania and
-                                internationally, on projects from residential and hospitality to universities,
-                                workplace and social housing. DYEUS draws on that breadth — a hospitality-grade
-                                development shaped by a studio fluent across building types.
+                                {t(resolveLanguageKey, "artechBody1")}
                             </p>
                             <p className="font-dyeus-serif text-base leading-none text-dyeus-ink md:text-xl">
-                                ARTECH&apos;s work is thoughtful, contextual and forward-looking, pairing design
-                                excellence with technical rigor. Shaped by collaborations with leading European
-                                practices, the studio brings global experience and local knowledge to DYEUS,
-                                drawing the residences from the Dhërmi coastline itself.
+                                {t(resolveLanguageKey, "artechBody2")}
                             </p>
                         </div>
                     </div>
                 </section>
 
-                <section className="overflow-hidden pb-20 md:pb-28" aria-label="News and press">
+                <section
+                    className="overflow-hidden pb-20 md:pb-28"
+                    aria-label={t(resolveLanguageKey, "pressAria")}
+                >
                     <div className="dyeus-marquee mb-10 flex w-max items-center gap-12 md:mb-11">
                         {pressTicker.map((item, index) => (
                             <div key={`${item}-${index}`} className="flex items-center gap-12">

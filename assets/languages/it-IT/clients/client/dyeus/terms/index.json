@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/terms/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/terms/index.tsx",
+  "pageTitle": "Termini e condizioni",
+  "eyebrow": "Legale",
+  "lastUpdated": "Ultimo aggiornamento: 7 agosto 2026",
+  "intro": "Questi Termini e condizioni (“Termini”) regolano l'accesso e l'uso del sito web di Dyeus Residences. Utilizzando questo sito, accetti questi Termini.",
+  "section1Title": "Accettazione dei termini",
+  "section1Body": "Accedendo o utilizzando il sito di Dyeus Residences, confermi di essere legalmente in grado di accettare questi Termini e di rispettarli. Se non sei d'accordo, non utilizzare il sito.",
+  "section2Title": "Il sito Dyeus",
+  "section2Body": "Questo sito presenta informazioni su Dyeus Residences, comprese residenze, servizi, ubicazione e contenuti correlati al progetto. Disponibilità, prezzi, planimetrie e specifiche possono cambiare e non costituiscono un'offerta vincolante salvo conferma in un accordo firmato.\n\nNulla sul sito costituisce consulenza legale, fiscale o di investimento.",
+  "section3Title": "Richieste e prenotazioni",
+  "section3Body": "L'invio di un modulo di contatto o di una richiesta di prenotazione non crea un contratto di acquisto. Qualsiasi vendita, prenotazione o impegno correlato è soggetto a documentazione separata, informative e alla legge applicabile.",
+  "section4Title": "Uso accettabile",
+  "section4Body": "Accetti di non fare un uso improprio del sito, incluso tentare accessi non autorizzati, interrompere i servizi, estrarre contenuti in violazione di questi Termini, inviare informazioni false o utilizzare il sito per scopi illeciti.",
+  "section5Title": "Proprietà intellettuale",
+  "section5Body": "Dyeus Residences e i suoi licenzianti detengono i contenuti del sito, il branding, le immagini, il software e il design, salvo i contenuti che fornisci legittimamente. Non puoi copiare, modificare o distribuire materiali Dyeus senza previa autorizzazione scritta, salvo quanto consentito dalla legge.",
+  "section6Title": "Esclusioni di garanzia",
+  "section6Body": "Il sito e i suoi contenuti sono forniti “così come sono” e “come disponibili”. Nella misura massima consentita dalla legge, Dyeus Residences declina ogni garanzia di commerciabilità, idoneità a uno scopo particolare e non violazione.\n\nImmagini, render e descrizioni sono illustrativi e possono differire dalle residenze finite.",
+  "section7Title": "Limitazione di responsabilità",
+  "section7Body": "Nella misura massima consentita dalla legge, Dyeus Residences non è responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, né per perdita di profitti, dati o opportunità commerciali derivanti dall'uso del sito.\n\nNulla in questi Termini esclude responsabilità che non possono essere escluse ai sensi della legge applicabile.",
+  "section8Title": "Modifiche, legge applicabile e contatti",
+  "section8Body": "Possiamo aggiornare periodicamente questi Termini. La data “Ultimo aggiornamento” cambierà quando lo faremo. L'uso continuato dopo le modifiche implica l'accettazione dei Termini aggiornati.\n\nQuesti Termini sono regolati dalle leggi applicabili alle attività di Dyeus Residences in Albania, fatti salvi i diritti imperativi dei consumatori che possono applicarsi dove vivi.\n\nDomande su questi Termini: utilizza la pagina Contatti di questo sito."
 }

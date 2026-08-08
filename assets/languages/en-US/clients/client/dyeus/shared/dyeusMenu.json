@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMenu.tsx",
+  "menuAria": "Menu",
+  "close": "Close",
+  "brand": "DYEUS",
+  "tagline": "A private collection of residences, villas, and suites between the Ionian Sea and the mountains of Southern Albania.",
+  "language": "Language",
+  "languageGroup": "Language",
+  "navAbout": "About us",
+  "navResidences": "Residences",
+  "navGallery": "Gallery",
+  "navJournal": "Journal",
+  "navContact": "Contact"
+}

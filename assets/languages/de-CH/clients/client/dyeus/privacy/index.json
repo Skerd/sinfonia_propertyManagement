@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx",
+  "pageTitle": "Datenschutzrichtlinie",
+  "eyebrow": "Rechtliches",
+  "lastUpdated": "Zuletzt aktualisiert: 7. August 2026",
+  "intro": "Diese Datenschutzrichtlinie erklärt, wie Dyeus Residences personenbezogene Daten erhebt, verwendet, speichert und teilt, wenn Sie unsere Website besuchen oder eine Anfrage zu unseren Residenzen stellen.",
+  "section1Title": "Wer wir sind",
+  "section1Body": "Dyeus Residences betreibt diese Website, um unser Küstenresidenzprojekt vorzustellen und Anfragen von Interessenten und Partnern entgegenzunehmen. Bei datenschutzbezogenen Fragen kontaktieren Sie uns über die Kontaktseite dieser Website.",
+  "section2Title": "Welche Informationen wir erheben",
+  "section2Body": "Wir können Informationen erheben, die Sie direkt bereitstellen, wie Name, E-Mail-Adresse, Telefonnummer und über Formulare übermittelte Nachrichten.\n\nWir können auch technische Daten wie Gerätetyp, Browser, ungefähren Standort und besuchte Seiten erheben, wenn Sie die Website nutzen.",
+  "section3Title": "Wie wir Ihre Informationen verwenden",
+  "section3Body": "Wir verwenden personenbezogene Daten, um:\n• Anfragen und Reservierungsanfragen zu beantworten\n• Informationen zu Residenzen, Verfügbarkeit und Besichtigungen bereitzustellen\n• Website und Nutzererlebnis zu verbessern\n• von Ihnen angeforderte Service- oder Projektupdates zu senden\n• Sicherheit zu gewährleisten, Missbrauch zu verhindern und gesetzliche Pflichten zu erfüllen",
+  "section4Title": "Rechtsgrundlagen",
+  "section4Body": "Je nach Ihrem Standort verarbeiten wir personenbezogene Daten auf einer oder mehreren der folgenden Grundlagen: Ihrer Einwilligung, vorvertraglichen Massnahmen auf Ihre Anfrage, unseren berechtigten Interessen am Betrieb und der Sicherung dieser Website sowie der Einhaltung geltenden Rechts.",
+  "section5Title": "Weitergabe und Auftragsverarbeiter",
+  "section5Body": "Wir verkaufen Ihre personenbezogenen Daten nicht. Wir können Daten mit vertrauenswürdigen Dienstleistern teilen, die uns bei Hosting, Kommunikation oder Website-Funktionen unterstützen — nur soweit erforderlich und mit angemessenen Schutzmassnahmen.\n\nWir können Informationen auch offenlegen, wenn dies gesetzlich, regulatorisch oder durch ein gültiges Rechtsverfahren erforderlich ist.",
+  "section6Title": "Aufbewahrung und Sicherheit",
+  "section6Body": "Wir bewahren personenbezogene Daten nur so lange auf, wie es für die in dieser Richtlinie beschriebenen Zwecke erforderlich ist oder gesetzlich vorgeschrieben wird. Wir setzen administrative, technische und organisatorische Massnahmen ein, um personenbezogene Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.",
+  "section7Title": "Ihre Rechte",
+  "section7Body": "Vorbehaltlich geltenden Rechts können Sie Auskunft, Berichtigung oder Löschung Ihrer personenbezogenen Daten verlangen sowie Widerspruch einlegen oder bestimmte Verarbeitungen einschränken. Sie können auch Einwilligungen widerrufen, soweit die Verarbeitung auf Einwilligung beruht.\n\nZur Ausübung dieser Rechte kontaktieren Sie uns über die Kontaktseite. Sie können auch bei Ihrer lokalen Datenschutzbehörde Beschwerde einlegen.",
+  "section8Title": "Änderungen dieser Richtlinie",
+  "section8Body": "Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Das Datum „Zuletzt aktualisiert“ oben auf dieser Seite ändert sich dann. Die fortgesetzte Nutzung der Dyeus-Website nach einer Aktualisierung bedeutet, dass Sie die überarbeitete Richtlinie zur Kenntnis nehmen."
 }

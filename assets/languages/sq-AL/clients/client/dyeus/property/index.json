@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx",
+  "backToResidences": "← Residenca",
+  "missingParams": "Mungojnë parametrat e projektit ose njësisë.",
+  "loadError": "Nuk mund të ngarkohet kjo residencë.",
+  "area": "Sipërfaqja",
+  "bedrooms": "Dhoma gjumi",
+  "bathrooms": "Banjo",
+  "price": "Çmimi",
+  "requestInfo": "Kërko informacion",
+  "close": "Mbyll",
+  "send": "Dërgo",
+  "defaultMessage": "Kërkesë për njësinë {{name}}"
 }

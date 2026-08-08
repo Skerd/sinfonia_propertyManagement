@@ -3,19 +3,26 @@ import {Link} from "react-router-dom";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
 import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusProjectId.ts";
+import {
+    useDyeusT,
+    type DyeusTranslate,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
+const FOOTER_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusFooter.tsx";
+
 const exploreLinks = [
-    {label: "About Us", to: "/about"},
-    {label: "Residences", to: "/residences"},
-    {label: "Gallery", to: "/gallery"},
-    {label: "Journal", to: "/journal"},
+    {labelKey: "navAbout", to: "/about"},
+    {labelKey: "navResidences", to: "/residences"},
+    {labelKey: "navGallery", to: "/gallery"},
+    {labelKey: "navJournal", to: "/journal"},
 ] as const;
 
 const moreLinks = [
-    {label: "Privacy Policy", to: "/privacy"},
-    {label: "Terms of Conditions", to: "/terms"},
+    {labelKey: "privacy", to: "/privacy"},
+    {labelKey: "terms", to: "/terms"},
 ] as const;
 
 const footerLinkClassName =
@@ -36,11 +43,17 @@ type SocialLink = {
     logo?: string;
 };
 
-function formatAvailabilityBanner(stats: AvailabilityStats | null): string {
+function formatAvailabilityBanner(
+    stats: AvailabilityStats | null,
+    t: DyeusTranslate,
+): string {
     if (!stats || stats.unitCount <= 0) {
-        return "Limited Availability";
+        return t("limitedAvailability");
     }
-    return `Limited Availability. ${stats.soldUnitCount} of ${stats.unitCount} Residences sold`;
+    return t("limitedAvailabilityCount", {
+        sold: stats.soldUnitCount,
+        total: stats.unitCount,
+    });
 }
 
 function MandalaPattern() {
@@ -76,6 +89,7 @@ function MandalaPattern() {
 }
 
 function DyeusFooter() {
+    const {t} = useDyeusT(FOOTER_LANGUAGE_PATH);
     const [contactOpen, setContactOpen] = useState(false);
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
     const [availability, setAvailability] = useState<AvailabilityStats | null>(null);
@@ -134,8 +148,8 @@ function DyeusFooter() {
 
     const availabilityLabel =
         resolvingProject && !availability
-            ? "Limited Availability"
-            : formatAvailabilityBanner(availability);
+            ? t("limitedAvailability")
+            : formatAvailabilityBanner(availability, t);
 
     return (
         <footer className="relative w-full overflow-hidden bg-dyeus-cream text-dyeus-ink">
@@ -148,7 +162,7 @@ function DyeusFooter() {
                         to="/contact"
                         className="rounded-[4px] border border-[rgba(242,238,230,0.6)] px-6 py-3 font-dyeus-serif text-lg font-bold leading-[1.2] text-dyeus-cream transition-[background-color,border-color,color] duration-300 hover:border-dyeus-cream hover:bg-dyeus-cream hover:text-dyeus-bronze md:text-2xl"
                     >
-                        Secure your residence
+                        {t("secureResidence")}
                     </Link>
                 </div>
             </div>
@@ -159,28 +173,28 @@ function DyeusFooter() {
                 <div className="relative z-10 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-6">
                     <div className="flex flex-col gap-3">
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
-                            Explore
+                            {t("explore")}
                         </p>
                         {exploreLinks.map((link) => (
                             <Link key={link.to} to={link.to} className={footerLinkClassName}>
-                                {link.label}
+                                {t(link.labelKey)}
                             </Link>
                         ))}
                     </div>
 
                     <div className="flex flex-col gap-3">
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
-                            Residences
+                            {t("residences")}
                         </p>
                         <Link to="/residences" className={footerLinkClassName}>
-                            View all residences
+                            {t("viewAllResidences")}
                         </Link>
                     </div>
 
                     {socialLinks.length > 0 ? (
                         <div className="flex flex-col gap-3">
                             <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
-                                Follow us
+                                {t("followUs")}
                             </p>
                             {socialLinks.map((item) => (
                                 <a
@@ -205,25 +219,25 @@ function DyeusFooter() {
 
                     <div className="flex flex-col gap-3">
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
-                            More
+                            {t("more")}
                         </p>
                         {moreLinks.map((link) => (
                             <Link key={link.to} to={link.to} className={footerLinkClassName}>
-                                {link.label}
+                                {t(link.labelKey)}
                             </Link>
                         ))}
                     </div>
 
                     <div className="col-span-2 flex w-full max-w-[401px] flex-col gap-3 md:col-span-1">
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
-                            Contact Us
+                            {t("contactUs")}
                         </p>
                         <button
                             type="button"
                             onClick={() => setContactOpen(true)}
                             className="flex w-full cursor-pointer items-center justify-between gap-2.5 border-b border-dyeus-ink p-3 font-dyeus-serif text-xl leading-[1.2] text-dyeus-ink transition-colors duration-300 hover:text-dyeus-bronze"
                         >
-                            <span>Get in touch</span>
+                            <span>{t("getInTouch")}</span>
                             <img src={dyeusAssets.iconArrowRight} alt="" className="size-6" />
                         </button>
                     </div>
@@ -232,16 +246,16 @@ function DyeusFooter() {
                 <div className="relative z-10 mt-16 md:mt-[180px]">
                     <Link
                         to="/"
-                        aria-label="Dyeus home"
+                        aria-label={t("homeAria")}
                         className="block font-dyeus-serif text-[clamp(3.75rem,10vw,8.625rem)] font-light leading-none tracking-[0.18em] text-dyeus-ink"
                     >
-                        DYEUS
+                        {t("brand")}
                     </Link>
                 </div>
 
                 <div className="relative z-10 mt-8 flex flex-col gap-4 md:mt-6 md:flex-row md:items-center">
                     <p className="font-dyeus-serif text-xl text-dyeus-ink md:min-w-[420px]">
-                        © All rights reserved Dyeus Residences
+                        {t("copyright")}
                     </p>
                     <button
                         type="button"
@@ -254,7 +268,7 @@ function DyeusFooter() {
                             className="size-4 transition-transform duration-300 group-hover:-translate-y-1 cursor-pointer"
                         />
                         <span className="underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-300 group-hover:decoration-dyeus-bronze cursor-pointer">
-                            Back to top
+                            {t("backToTop")}
                         </span>
                     </button>
                 </div>
@@ -276,13 +290,13 @@ function DyeusFooter() {
                         <div className="flex items-start justify-between gap-4">
                             <div>
                                 <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">
-                                    Contact
+                                    {t("contactEyebrow")}
                                 </p>
                                 <h2
                                     id="dyeus-footer-contact-title"
                                     className="mt-2 font-dyeus-serif text-3xl md:text-4xl"
                                 >
-                                    Begin the conversation
+                                    {t("contactTitle")}
                                 </h2>
                             </div>
                             <button
@@ -290,7 +304,7 @@ function DyeusFooter() {
                                 onClick={() => setContactOpen(false)}
                                 className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
                             >
-                                Close
+                                {t("close")}
                             </button>
                         </div>
                         <DyeusMarketingContactForm className="mt-6" />

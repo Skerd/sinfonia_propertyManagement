@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx",
+  "pageTitle": "Privacy Policy",
+  "eyebrow": "Legal",
+  "lastUpdated": "Last updated: August 7, 2026",
+  "intro": "This Privacy Policy explains how Dyeus Residences collects, uses, stores, and shares personal information when you visit our website or submit an enquiry about our residences.",
+  "section1Title": "Who we are",
+  "section1Body": "Dyeus Residences operates this website to present our coastal residence project and to receive enquiries from prospective buyers and partners. For privacy-related questions, contact us through the Contact page on this website.",
+  "section2Title": "Information we collect",
+  "section2Body": "We may collect information you provide directly, such as your name, email address, phone number, and messages submitted through forms.\n\nWe may also collect technical data such as device type, browser, approximate location, and pages visited when you browse the site.",
+  "section3Title": "How we use your information",
+  "section3Body": "We use personal information to:\n• Respond to enquiries and reservation requests\n• Provide information about residences, availability, and visits\n• Improve the website and visitor experience\n• Send service or project updates you have requested\n• Maintain security, prevent misuse, and meet legal obligations",
+  "section4Title": "Legal bases",
+  "section4Body": "Depending on your location, we process personal data based on one or more of the following: your consent, steps taken at your request before entering a contract, our legitimate interests in operating and securing this website, and compliance with applicable law.",
+  "section5Title": "Sharing and processors",
+  "section5Body": "We do not sell your personal information. We may share data with trusted service providers who help us host infrastructure, process communications, or deliver website features — only as needed to provide those services and under appropriate safeguards.\n\nWe may also disclose information when required by law, regulation, or valid legal process.",
+  "section6Title": "Retention and security",
+  "section6Body": "We retain personal information only as long as needed for the purposes described in this policy, or as required by law. We apply administrative, technical, and organizational measures designed to protect personal data against unauthorized access, loss, or misuse.",
+  "section7Title": "Your rights",
+  "section7Body": "Subject to applicable law, you may request access to, correction of, or deletion of your personal information, and you may object to or restrict certain processing. You may also withdraw consent where processing is based on consent.\n\nTo exercise these rights, reach us through the Contact page. You may also lodge a complaint with your local data protection authority.",
+  "section8Title": "Changes to this policy",
+  "section8Body": "We may update this Privacy Policy from time to time. The “Last updated” date at the top of this page will change when we do. Continued use of the Dyeus website after an update means you acknowledge the revised policy."
 }

@@ -2,7 +2,7 @@ import {type ComponentType, useEffect, useMemo, useState} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
 import {ArrowUpRight} from "lucide-react";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -20,7 +20,7 @@ type JournalFilter = {
     storyTypeId?: string;
 };
 
-type JournalPageProps = WithAxiosType<MarketingStoriesResponse, JournalFilter>;
+type JournalPageProps = WithAxiosType<MarketingStoriesResponse, JournalFilter> & WithLanguageType;
 
 function storyHref(storyId: string, projectId?: string) {
     const params = new URLSearchParams();
@@ -29,7 +29,14 @@ function storyHref(storyId: string, projectId?: string) {
     return `/journal/story?${params.toString()}`;
 }
 
-function JournalPageInner({data, loading, error, onFilterChange}: JournalPageProps) {
+function JournalPageInner({
+    data,
+    loading,
+    error,
+    onFilterChange,
+    resolveLanguageKey,
+}: JournalPageProps) {
+    const t = (key: string) => String(resolveLanguageKey(key));
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
     const [selectedStoryTypeId, setSelectedStoryTypeId] = useState<string>("");
 
@@ -52,19 +59,18 @@ function JournalPageInner({data, loading, error, onFilterChange}: JournalPagePro
             <div className="relative">
                 <DyeusHeader variant="solid" />
                 <div className="mx-auto max-w-[1440px] px-6 pb-20 pt-28 md:px-12 md:pb-28 md:pt-36">
-                    <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">Journal</p>
+                    <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">{t("eyebrow")}</p>
                     <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-16">
-                        <h1 className="font-dyeus-serif text-5xl md:text-7xl">Stories from Dyeus</h1>
+                        <h1 className="font-dyeus-serif text-5xl md:text-7xl">{t("title")}</h1>
                         <p className="max-w-[28rem] shrink-0 font-dyeus-sans text-base leading-relaxed text-dyeus-ink md:text-lg">
-                            Notes from Dhërmi — on the building of DYEUS, the life of the coast, and what it
-                            means to own a piece of the Albanian Riviera.
+                            {t("lead")}
                         </p>
                     </div>
 
                     {storyTypes.length > 0 ? (
                         <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-3">
                             <span className="font-dyeus-sans text-sm text-dyeus-ink-muted md:text-base">
-                                Filter by:
+                                {t("filterBy")}
                             </span>
                             <button
                                 type="button"
@@ -76,7 +82,7 @@ function JournalPageInner({data, loading, error, onFilterChange}: JournalPagePro
                                         : "text-dyeus-ink hover:text-dyeus-bronze",
                                 )}
                             >
-                                All
+                                {t("filterAll")}
                             </button>
                             {storyTypes.map((type) => {
                                 const active = selectedStoryTypeId === type._id;
@@ -105,7 +111,7 @@ function JournalPageInner({data, loading, error, onFilterChange}: JournalPagePro
                         </div>
                     ) : !projectId || error || stories.length === 0 ? (
                         <p className="mt-14 font-dyeus-sans text-sm text-dyeus-ink-muted">
-                            Stories will appear here once published.
+                            {t("empty")}
                         </p>
                     ) : (
                         <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -158,7 +164,7 @@ function JournalPageInner({data, loading, error, onFilterChange}: JournalPagePro
                                 <div className="flex w-full flex-col items-start gap-8 lg:w-[48%]">
                                     <div className="space-y-3">
                                         <h2 className="font-dyeus-serif text-4xl font-black leading-[1.1] text-[#061935] md:text-5xl lg:text-[64px]">
-                                            {magazine?.title || "The DYEUS Magazine: A closer look"}
+                                            {magazine?.title || t("magazineFallbackTitle")}
                                         </h2>
                                         {magazine?.description ? (
                                             <p className="font-dyeus-sans text-lg leading-[1.3] text-[rgba(6,25,53,0.7)] md:text-2xl">
@@ -173,7 +179,7 @@ function JournalPageInner({data, loading, error, onFilterChange}: JournalPagePro
                                             rel="noreferrer"
                                             className="inline-flex items-center justify-center rounded-[5px] border border-[rgba(24,24,24,0.2)] px-12 py-4 font-dyeus-serif text-xl font-bold text-dyeus-ink transition-colors hover:border-dyeus-ink hover:bg-dyeus-ink hover:text-dyeus-cream md:text-2xl"
                                         >
-                                            View magazine
+                                            {t("viewMagazine")}
                                         </a>
                                     ) : null}
                                 </div>

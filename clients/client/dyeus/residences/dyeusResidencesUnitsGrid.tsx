@@ -14,39 +14,50 @@ import {
 } from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
 import {useProjectViewerParams} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerParams.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {
+    useDyeusT,
+    type DyeusTranslate,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {
     MarketingProjectSingle,
     MarketingUnitStatus,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {PropertyListingCardUnit} from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
 
+const RESIDENCES_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx";
+
 type DyeusResidencesUnitsGridProps = {
     project: MarketingProjectSingle;
 };
 
-const STATUS_LABEL: Record<MarketingUnitStatus | "all", string> = {
-    available: "Available",
-    sold: "Sold",
-    reserved: "Reserved",
-    all: "All",
+const STATUS_KEY: Record<MarketingUnitStatus | "all", string> = {
+    available: "statusAvailable",
+    sold: "statusSold",
+    reserved: "statusReserved",
+    all: "statusAll",
 };
 
-const SORT_LABEL: Record<ProjectUnitsSortKey, string> = {
-    default: "Default",
-    priceAsc: "Price ↑",
-    priceDesc: "Price ↓",
-    areaAsc: "Area ↑",
-    areaDesc: "Area ↓",
-    roomsAsc: "Rooms ↑",
-    nameAsc: "Name",
+const SORT_KEY: Record<ProjectUnitsSortKey, string> = {
+    default: "sortDefault",
+    priceAsc: "sortPriceAsc",
+    priceDesc: "sortPriceDesc",
+    areaAsc: "sortAreaAsc",
+    areaDesc: "sortAreaDesc",
+    roomsAsc: "sortRoomsAsc",
+    nameAsc: "sortNameAsc",
 };
 
-function formatFloorHeading(name: string | undefined, levelNumber: string | number | undefined): string {
+function formatFloorHeading(
+    t: DyeusTranslate,
+    name: string | undefined,
+    levelNumber: string | number | undefined,
+): string {
     if (name?.trim()) return name;
     const level = parseFloorLevel(levelNumber);
-    if (level === -1) return "Basement";
-    if (level === 0) return "Ground floor";
-    return `Floor ${level}`;
+    if (level === -1) return t("basement");
+    if (level === 0) return t("groundFloor");
+    return t("floorN", {level});
 }
 
 function formatPrice(price: number | undefined): string {
@@ -54,13 +65,21 @@ function formatPrice(price: number | undefined): string {
     return `€${Math.round(price).toLocaleString("en-US")}`;
 }
 
-function DyeusUnitCard({unit, projectId}: {unit: PropertyListingCardUnit; projectId: string}) {
+function DyeusUnitCard({
+    unit,
+    projectId,
+    t,
+}: {
+    unit: PropertyListingCardUnit;
+    projectId: string;
+    t: DyeusTranslate;
+}) {
     const status = (unit.status as MarketingUnitStatus) || "available";
-    const statusLabel = STATUS_LABEL[status] ?? status;
+    const statusLabel = t(STATUS_KEY[status] ?? "statusAvailable");
     const meta = [
         unit.areaSqm != null ? `${unit.areaSqm} m²` : null,
-        unit.bedrooms != null ? `${unit.bedrooms} bed` : null,
-        unit.bathrooms != null ? `${unit.bathrooms} bath` : null,
+        unit.bedrooms != null ? t("bedMeta", {count: unit.bedrooms}) : null,
+        unit.bathrooms != null ? t("bathMeta", {count: unit.bathrooms}) : null,
         unit.floorLabel || null,
     ]
         .filter(Boolean)
@@ -99,6 +118,7 @@ function DyeusUnitCard({unit, projectId}: {unit: PropertyListingCardUnit; projec
 }
 
 function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
+    const {t} = useDyeusT(RESIDENCES_LANGUAGE_PATH);
     const {edificeId, floorId} = useProjectViewerParams();
     const {activeFilter, setActiveFilter} = useProjectUnitStatusFilter();
     const [sortKey, setSortKey] = useState<ProjectUnitsSortKey>("default");
@@ -123,10 +143,10 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
         const floor = edifice?.floors?.find((item) => item._id === floorId);
         const parts = [
             edifice?.name || null,
-            floor ? formatFloorHeading(floor.name, floor.levelNumber) : null,
+            floor ? formatFloorHeading(t, floor.name, floor.levelNumber) : null,
         ].filter(Boolean);
         return parts.length > 0 ? parts.join(" · ") : null;
-    }, [project.edifices, edificeId, floorId]);
+    }, [project.edifices, edificeId, floorId, t]);
 
     const groupedSections = useMemo(() => {
         const edifices = (project.edifices ?? []).filter((edifice) => !edificeId || edifice._id === edificeId);
@@ -148,19 +168,19 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
                         const sorted = sortCatalogUnits(statusFiltered, sortKey);
                         return {
                             floorId: floor._id,
-                            floorLabel: formatFloorHeading(floor.name, floor.levelNumber),
+                            floorLabel: formatFloorHeading(t, floor.name, floor.levelNumber),
                             units: sorted,
                         };
                     })
                     .filter((group) => group.units.length > 0);
                 return {
                     edificeId: edifice._id,
-                    edificeLabel: edifice.name || "Residence",
+                    edificeLabel: edifice.name || t("residenceFallback"),
                     floorGroups,
                 };
             })
             .filter((section) => section.floorGroups.length > 0);
-    }, [project, activeFilter, sortKey, edificeId, floorId]);
+    }, [project, activeFilter, sortKey, edificeId, floorId, t]);
 
     const hasUnits = groupedSections.some((section) => section.floorGroups.length > 0);
 
@@ -168,26 +188,27 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
         <div className="flex w-full flex-col gap-6 md:gap-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                    <h2 className="font-dyeus-serif text-4xl text-dyeus-ink md:text-5xl">Units</h2>
+                    <h2 className="font-dyeus-serif text-4xl text-dyeus-ink md:text-5xl">{t("unitsTitle")}</h2>
                     {scopedContext ? (
                         <p className="mt-2 font-dyeus-sans text-sm text-dyeus-ink-muted">{scopedContext}</p>
                     ) : null}
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
                     <p className="font-dyeus-sans text-base text-dyeus-ink md:text-lg">
-                        {apartmentCount} {apartmentCount === 1 ? "apartment" : "apartments"}
+                        {apartmentCount}{" "}
+                        {apartmentCount === 1 ? t("apartmentSingular") : t("apartmentPlural")}
                     </p>
                     <label className="flex w-full max-w-xs cursor-pointer items-center justify-between gap-4 border border-dyeus-border bg-dyeus-white px-4 py-2 sm:w-auto">
-                        <span className="sr-only">Sort by</span>
+                        <span className="sr-only">{t("sortBy")}</span>
                         <select
                             value={sortKey}
                             onChange={(event) => setSortKey(event.target.value as ProjectUnitsSortKey)}
                             className="min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent font-dyeus-sans text-base text-dyeus-ink outline-none"
-                            aria-label="Sort by"
+                            aria-label={t("sortBy")}
                         >
                             {PROJECT_UNITS_SORT_KEYS.map((key) => (
                                 <option key={key} value={key}>
-                                    {SORT_LABEL[key]}
+                                    {t(SORT_KEY[key])}
                                 </option>
                             ))}
                         </select>
@@ -211,15 +232,13 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
                                 : "border border-dyeus-border text-dyeus-ink-muted hover:text-dyeus-ink",
                         )}
                     >
-                        {STATUS_LABEL[filter]}
+                        {t(STATUS_KEY[filter])}
                     </button>
                 ))}
             </div>
 
             {!hasUnits ? (
-                <p className="font-dyeus-sans text-sm text-dyeus-ink-muted">
-                    No units match this filter.
-                </p>
+                <p className="font-dyeus-sans text-sm text-dyeus-ink-muted">{t("emptyUnits")}</p>
             ) : (
                 <div className="flex flex-col gap-10 md:gap-12">
                     {groupedSections.map((section) => (
@@ -238,6 +257,7 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
                                                 key={unit._id}
                                                 unit={unit}
                                                 projectId={project._id}
+                                                t={t}
                                             />
                                         ))}
                                     </div>

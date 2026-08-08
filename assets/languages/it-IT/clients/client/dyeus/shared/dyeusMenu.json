@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMenu.tsx",
+  "menuAria": "Menu",
+  "close": "Chiudi",
+  "brand": "DYEUS",
+  "tagline": "Una collezione privata di residenze, ville e suite tra il Mar Ionio e le montagne dell'Albania meridionale.",
+  "language": "Lingua",
+  "languageGroup": "Lingua",
+  "navAbout": "Chi siamo",
+  "navResidences": "Residenze",
+  "navGallery": "Galleria",
+  "navJournal": "Journal",
+  "navContact": "Contatti"
+}

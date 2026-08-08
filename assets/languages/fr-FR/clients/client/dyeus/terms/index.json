@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/terms/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/terms/index.tsx",
+  "pageTitle": "Conditions générales",
+  "eyebrow": "Mentions légales",
+  "lastUpdated": "Dernière mise à jour : 7 août 2026",
+  "intro": "Ces Conditions générales (« Conditions ») régissent votre accès et votre utilisation du site web de Dyeus Residences. En utilisant ce site, vous acceptez ces Conditions.",
+  "section1Title": "Acceptation des conditions",
+  "section1Body": "En accédant ou en utilisant le site de Dyeus Residences, vous confirmez que vous êtes légalement en mesure d'accepter ces Conditions et que vous les respecterez. Si vous n'êtes pas d'accord, n'utilisez pas le site.",
+  "section2Title": "Le site Dyeus",
+  "section2Body": "Ce site présente des informations sur Dyeus Residences, y compris les résidences, équipements, emplacement et contenus liés au projet. La disponibilité, les prix, les plans et les spécifications peuvent évoluer et ne constituent pas une offre contraignante sauf confirmation dans un accord signé.\n\nRien sur le site ne constitue un conseil juridique, fiscal ou d'investissement.",
+  "section3Title": "Demandes et réservations",
+  "section3Body": "L'envoi d'un formulaire de contact ou d'une demande de réservation ne crée pas de contrat d'achat. Toute vente, réservation ou engagement associé est soumis à une documentation distincte, à des informations et au droit applicable.",
+  "section4Title": "Utilisation acceptable",
+  "section4Body": "Vous acceptez de ne pas faire un usage abusif du site, notamment en tentant un accès non autorisé, en perturbant les services, en extrayant du contenu en violation de ces Conditions, en soumettant de fausses informations ou en utilisant le site à des fins illicites.",
+  "section5Title": "Propriété intellectuelle",
+  "section5Body": "Dyeus Residences et ses concédants détiennent le contenu du site, la marque, les images, le logiciel et le design, sauf le contenu que vous fournissez licitement. Vous ne pouvez pas copier, modifier ou distribuer les matériaux Dyeus sans autorisation écrite préalable, sauf dans les cas autorisés par la loi.",
+  "section6Title": "Clauses de non-responsabilité",
+  "section6Body": "Le site et son contenu sont fournis « en l'état » et « selon disponibilité ». Dans toute la mesure permise par la loi, Dyeus Residences décline les garanties de qualité marchande, d'adéquation à un usage particulier et de non-contrefaçon.\n\nLes images, rendus et descriptions sont illustratifs et peuvent différer des résidences finales.",
+  "section7Title": "Limitation de responsabilité",
+  "section7Body": "Dans toute la mesure permise par la loi, Dyeus Residences n'est pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, ni des pertes de profits, de données ou d'opportunités commerciales résultant de votre utilisation du site.\n\nRien dans ces Conditions n'exclut une responsabilité qui ne peut être exclue en vertu du droit applicable.",
+  "section8Title": "Modifications, droit applicable et contact",
+  "section8Body": "Nous pouvons mettre à jour ces Conditions périodiquement. La date « Dernière mise à jour » changera alors. L'utilisation continue après les modifications signifie que vous acceptez les Conditions mises à jour.\n\nCes Conditions sont régies par les lois applicables aux activités de Dyeus Residences en Albanie, sans préjudice des protections obligatoires des consommateurs pouvant s'appliquer là où vous vivez.\n\nQuestions sur ces Conditions : utilisez la page Contact de ce site."
 }

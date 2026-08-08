@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import DyeusPageShell from "@propertyManagementModule/clients/client/dyeus/shared/dyeusPageShell.tsx";
 import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/dyeusFooter.tsx";
@@ -11,7 +11,7 @@ import FeaturedResidencesSection from "@propertyManagementModule/clients/client/
 import AmenitiesSection from "@propertyManagementModule/clients/client/dyeus/home/sections/amenitiesSection.tsx";
 import LocationSection from "@propertyManagementModule/clients/client/dyeus/home/sections/locationSection.tsx";
 
-function HomePage() {
+function HomePage(_props: WithLanguageType) {
     return (
         <DyeusPageShell nodeId="287:12" nodeName="Home">
             <HeroSection />

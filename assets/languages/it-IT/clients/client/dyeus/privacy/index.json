@@ -1,3 +1,23 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/privacy/index.tsx",
+  "pageTitle": "Informativa sulla privacy",
+  "eyebrow": "Legale",
+  "lastUpdated": "Ultimo aggiornamento: 7 agosto 2026",
+  "intro": "Questa Informativa sulla privacy spiega come Dyeus Residences raccoglie, utilizza, conserva e condivide i dati personali quando visiti il nostro sito web o invii una richiesta sulle nostre residenze.",
+  "section1Title": "Chi siamo",
+  "section1Body": "Dyeus Residences gestisce questo sito web per presentare il nostro progetto di residenze costiere e ricevere richieste da potenziali acquirenti e partner. Per domande relative alla privacy, contattaci tramite la pagina Contatti di questo sito.",
+  "section2Title": "Informazioni che raccogliamo",
+  "section2Body": "Possiamo raccogliere le informazioni che fornisci direttamente, come nome, indirizzo e-mail, numero di telefono e messaggi inviati tramite i moduli.\n\nPossiamo anche raccogliere dati tecnici come tipo di dispositivo, browser, posizione approssimativa e pagine visitate quando navighi sul sito.",
+  "section3Title": "Come utilizziamo le tue informazioni",
+  "section3Body": "Utilizziamo i dati personali per:\n• Rispondere a richieste e prenotazioni\n• Fornire informazioni su residenze, disponibilità e visite\n• Migliorare il sito e l'esperienza dei visitatori\n• Inviare aggiornamenti di servizio o di progetto che hai richiesto\n• Garantire la sicurezza, prevenire abusi e adempiere agli obblighi di legge",
+  "section4Title": "Basi giuridiche",
+  "section4Body": "A seconda della tua ubicazione, trattiamo i dati personali sulla base di uno o più dei seguenti elementi: il tuo consenso, le misure precontrattuali adottate su tua richiesta, i nostri legittimi interessi nella gestione e nella sicurezza di questo sito e il rispetto della legge applicabile.",
+  "section5Title": "Condivisione e responsabili del trattamento",
+  "section5Body": "Non vendiamo i tuoi dati personali. Possiamo condividere i dati con fornitori di servizi fidati che ci aiutano a ospitare l'infrastruttura, gestire le comunicazioni o fornire le funzionalità del sito — solo nella misura necessaria e con adeguate garanzie.\n\nPossiamo inoltre divulgare informazioni quando richiesto da legge, regolamento o provvedimento legale valido.",
+  "section6Title": "Conservazione e sicurezza",
+  "section6Body": "Conserviamo i dati personali solo per il tempo necessario alle finalità descritte in questa informativa o come richiesto dalla legge. Applichiamo misure amministrative, tecniche e organizzative pensate per proteggere i dati personali da accessi non autorizzati, perdita o uso improprio.",
+  "section7Title": "I tuoi diritti",
+  "section7Body": "Nei limiti della legge applicabile, puoi richiedere l'accesso, la rettifica o la cancellazione dei tuoi dati personali e opporti o limitare determinati trattamenti. Puoi inoltre revocare il consenso ove il trattamento si basi sul consenso.\n\nPer esercitare questi diritti, contattaci tramite la pagina Contatti. Puoi anche presentare reclamo all'autorità di protezione dei dati competente.",
+  "section8Title": "Modifiche a questa informativa",
+  "section8Body": "Possiamo aggiornare questa Informativa sulla privacy di tanto in tanto. La data “Ultimo aggiornamento” in cima a questa pagina cambierà quando lo faremo. L'uso continuato del sito Dyeus dopo un aggiornamento implica che riconosci l'informativa rivista."
 }

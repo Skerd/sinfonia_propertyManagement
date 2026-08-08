@@ -7,11 +7,18 @@ import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
 import DyeusPropertiesList from "@propertyManagementModule/clients/client/dyeus/home/sections/dyeusPropertiesList.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {
+    useDyeusT,
+    type DyeusTranslate,
+} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {
     MarketingFloorListItem,
     MarketingPolygonItem,
     MarketingProjectSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+
+const HOME_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
 
 type DyeusProjectPolygonViewerProps = {
     project: MarketingProjectSingle;
@@ -24,17 +31,18 @@ function resolveImageUrl(url: string | undefined, fallback: string): string {
     return resolveMarketingMediaUrl(url) ?? fallback;
 }
 
-function formatFloorLabel(floor: MarketingFloorListItem | undefined, fallback: string): string {
-    if (!floor) return fallback;
+function formatFloorLabel(t: DyeusTranslate, floor: MarketingFloorListItem | undefined): string {
+    if (!floor) return t("floorFallback");
     if (floor.name?.trim()) return floor.name;
     const level = parseFloorLevel(floor.levelNumber);
-    if (level === -1) return "Basement";
-    if (level === 0) return "Ground";
-    return `Floor ${level}`;
+    if (level === -1) return t("basement");
+    if (level === 0) return t("ground");
+    return t("floorN", {level});
 }
 
 function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonViewerProps) {
     const navigate = useNavigate();
+    const {t} = useDyeusT(HOME_LANGUAGE_PATH);
     const edifices = project.edifices ?? [];
     const singleEdifice = edifices.length === 1;
 
@@ -137,8 +145,8 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
         (imageHoveredId && phantomIds.has(imageHoveredId) && imageHoveredId) ||
         "";
 
-    const edificeName = selectedEdifice?.name || "Residence";
-    const floorName = formatFloorLabel(selectedFloor, "Floor");
+    const edificeName = selectedEdifice?.name || t("residenceFallback");
+    const floorName = formatFloorLabel(t, selectedFloor);
     const showBack = level === "floor" || (level === "edifice" && !singleEdifice);
     const showUnitSelector = level === "floor" && !!selectedFloor;
 
@@ -196,12 +204,12 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                 type="button"
                                 onClick={goBack}
                                 className="flex size-7 shrink-0 cursor-pointer items-center justify-center rounded text-dyeus-ink/80 transition hover:bg-dyeus-sand/80 hover:text-dyeus-ink"
-                                aria-label="Go back"
+                                aria-label={t("goBack")}
                             >
                                 <ChevronLeft className="size-4" strokeWidth={1.75} aria-hidden />
                             </button>
                             <nav
-                                aria-label="Viewer location"
+                                aria-label={t("viewerLocationAria")}
                                 className="flex min-w-0 items-center gap-1.5 font-dyeus-serif text-sm leading-none text-dyeus-ink md:text-[0.9375rem]"
                             >
                                 {level === "floor" ? (
@@ -246,7 +254,7 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                         : "border-dyeus-cream/70 bg-dyeus-ink/35 text-dyeus-cream hover:bg-dyeus-cream hover:text-dyeus-ink",
                                 )}
                             >
-                                {edifice.name || "Residence"}
+                                {edifice.name || t("residenceFallback")}
                             </button>
                         ))}
                     </div>

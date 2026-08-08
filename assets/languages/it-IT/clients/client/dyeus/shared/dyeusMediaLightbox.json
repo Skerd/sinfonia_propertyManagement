@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMediaLightbox.tsx",
+  "imageViewer": "Visualizzatore immagini",
+  "videoPlayer": "Lettore video",
+  "close": "Chiudi",
+  "previous": "Precedente",
+  "next": "Successivo",
+  "counter": "{{current}} / {{total}}"
+}

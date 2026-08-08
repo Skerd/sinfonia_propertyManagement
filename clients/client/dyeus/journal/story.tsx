@@ -11,7 +11,7 @@ import {
 import {compose} from "redux";
 import {Link, useSearchParams} from "react-router-dom";
 import {Play} from "lucide-react";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -26,9 +26,12 @@ import DyeusHeader from "@propertyManagementModule/clients/client/dyeus/shared/d
 import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/dyeusFooter.tsx";
 import DyeusMediaLightbox from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMediaLightbox.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
-import type {MarketingStorySingleResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {
+    fillLanguageTemplate,
+    type MarketingStorySingleResponse,
+} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
-type StoryPageProps = WithAxiosType<MarketingStorySingleResponse, {storyId: string}>;
+type StoryPageProps = WithAxiosType<MarketingStorySingleResponse, {storyId: string}> & WithLanguageType;
 
 type LightboxState =
     | {kind: "image"; index: number}
@@ -62,7 +65,8 @@ function formatPublishedAt(value?: string) {
     }
 }
 
-function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) {
+function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKey}: StoryPageProps) {
+    const t = (key: string) => String(resolveLanguageKey(key));
     const [searchParams] = useSearchParams();
     const storyId = searchParams.get("storyId")?.trim() ?? "";
     const projectId = searchParams.get("projectId")?.trim() ?? "";
@@ -167,23 +171,23 @@ function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) 
                         to={journalHref}
                         className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
                     >
-                        ← Journal
+                        {t("backToJournal")}
                     </Link>
 
                     {!storyId ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">Missing story parameter.</p>
+                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("missingParam")}</p>
                     ) : error ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">Unable to load this story.</p>
+                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("loadError")}</p>
                     ) : loading && !story ? (
                         <div className="mt-20 flex justify-center">
                             <Loader />
                         </div>
                     ) : !story ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">Story not found.</p>
+                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("notFound")}</p>
                     ) : (
                         <article className="mt-10">
                             <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">
-                                Journal
+                                {t("eyebrow")}
                             </p>
                             <h1 className="mt-4 max-w-4xl font-dyeus-serif text-4xl md:text-6xl lg:text-7xl">
                                 {story.title}
@@ -213,7 +217,7 @@ function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) 
                                         onPointerMove={handlePointerMove}
                                         onPointerUp={handlePointerUp}
                                         onPointerCancel={handlePointerUp}
-                                        aria-label="Image gallery"
+                                        aria-label={t("imageGalleryAria")}
                                     >
                                         <Carousel
                                             setApi={setApi}
@@ -233,7 +237,9 @@ function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) 
                                                             type="button"
                                                             className="size-full cursor-zoom-in"
                                                             onClick={(event) => handleSlideClick(event, index)}
-                                                            aria-label={`Open image ${index + 1}`}
+                                                            aria-label={fillLanguageTemplate(t("openImage"), {
+                                                                index: index + 1,
+                                                            })}
                                                         >
                                                             <img
                                                                 src={src}
@@ -264,7 +270,9 @@ function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) 
                                                                 ? "#8B6B4A"
                                                                 : "rgba(36, 28, 22, 0.2)",
                                                     }}
-                                                    aria-label={`Slide ${index + 1}`}
+                                                    aria-label={fillLanguageTemplate(t("slide"), {
+                                                        index: index + 1,
+                                                    })}
                                                 />
                                             ))}
                                         </div>
@@ -279,9 +287,9 @@ function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) 
                             </div>
 
                             {videos.length > 0 ? (
-                                <section className="mt-16" aria-label="Video gallery">
+                                <section className="mt-16" aria-label={t("videoGalleryAria")}>
                                     <p className="mb-6 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">
-                                        Videos
+                                        {t("videos")}
                                     </p>
                                     <div className="grid gap-4 sm:grid-cols-2">
                                         {videos.map((src, index) => (
@@ -290,7 +298,9 @@ function StoryPageInner({data, loading, error, onFilterChange}: StoryPageProps) 
                                                 type="button"
                                                 onClick={() => setLightbox({kind: "video", index})}
                                                 className="group relative aspect-video cursor-pointer overflow-hidden bg-dyeus-sand"
-                                                aria-label={`Play video ${index + 1}`}
+                                                aria-label={fillLanguageTemplate(t("playVideo"), {
+                                                    index: index + 1,
+                                                })}
                                             >
                                                 <video
                                                     src={src}

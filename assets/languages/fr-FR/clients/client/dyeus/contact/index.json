@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/contact/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/contact/index.tsx",
+  "eyebrow": "Contact",
+  "title": "Commencer la conversation",
+  "lead": "Partagez quelques détails et notre équipe organisera une présentation privée de Dyeus Residence."
 }

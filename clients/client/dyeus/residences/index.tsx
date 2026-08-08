@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {compose} from "redux";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -15,9 +15,11 @@ import type {MarketingProjectSingle} from "@propertyManagementModule/clients/cli
 
 type MarketingProjectSingleResponse = {project: MarketingProjectSingle};
 
-type ResidencesPageProps = WithAxiosType<MarketingProjectSingleResponse, {projectId: string}>;
+type ResidencesPageProps = WithLanguageType &
+    WithAxiosType<MarketingProjectSingleResponse, {projectId: string}>;
 
-function ResidencesPage({data, loading, onFilterChange}: ResidencesPageProps) {
+function ResidencesPage({data, loading, onFilterChange, resolveLanguageKey}: ResidencesPageProps) {
+    const t = (key: string) => String(resolveLanguageKey(key));
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
 
     useEffect(() => {
@@ -30,15 +32,15 @@ function ResidencesPage({data, loading, onFilterChange}: ResidencesPageProps) {
     const project = data?.project;
 
     return (
-        <DyeusPageShell nodeId="44:residences" nodeName="Residences">
+        <DyeusPageShell nodeId="44:residences" nodeName={t("eyebrow")}>
             <div className="relative">
                 <DyeusHeader variant="solid" />
                 <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-28 md:px-12 md:pt-36">
                     <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">
-                        Residences
+                        {t("eyebrow")}
                     </p>
                     <h1 className="mt-3 font-dyeus-serif text-5xl md:text-7xl">
-                        {project?.name ?? "Dyeus Residence"}
+                        {project?.name ?? t("fallbackTitle")}
                     </h1>
 
                     {(resolvingProject || (loading && !project)) && (
@@ -49,9 +51,7 @@ function ResidencesPage({data, loading, onFilterChange}: ResidencesPageProps) {
 
                     {!resolvingProject && !projectId && (
                         <p className="mt-12 font-dyeus-sans text-sm text-dyeus-ink-muted">
-                            No Dyeus project is available for this company origin yet. Set{" "}
-                            <code className="text-dyeus-bronze">VITE_DYEUS_PROJECT_ID</code> or ensure a
-                            marketing project named Dyeus exists.
+                            {t("noProject")}
                         </p>
                     )}
 

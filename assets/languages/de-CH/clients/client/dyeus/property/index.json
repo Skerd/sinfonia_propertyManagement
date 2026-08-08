@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx",
+  "backToResidences": "← Residenzen",
+  "missingParams": "Projekt- oder Einheitenparameter fehlen.",
+  "loadError": "Diese Residenz konnte nicht geladen werden.",
+  "area": "Fläche",
+  "bedrooms": "Schlafzimmer",
+  "bathrooms": "Bäder",
+  "price": "Preis",
+  "requestInfo": "Informationen anfragen",
+  "close": "Schliessen",
+  "send": "Senden",
+  "defaultMessage": "Anfrage für Einheit {{name}}"
 }

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {ChevronLeft, ChevronRight, X} from "lucide-react";
+import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 
 type DyeusMediaLightboxProps = {
     images?: string[];
@@ -10,6 +11,9 @@ type DyeusMediaLightboxProps = {
     onClose: () => void;
 };
 
+const LIGHTBOX_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMediaLightbox.tsx";
+
 function DyeusMediaLightbox({
     images = [],
     videos = [],
@@ -17,6 +21,7 @@ function DyeusMediaLightbox({
     initialIndex = 0,
     onClose,
 }: DyeusMediaLightboxProps) {
+    const {t} = useDyeusT(LIGHTBOX_LANGUAGE_PATH);
     const items = kind === "image" ? images : videos;
     const [index, setIndex] = useState(() =>
         Math.min(Math.max(initialIndex, 0), Math.max(items.length - 1, 0)),
@@ -57,7 +62,7 @@ function DyeusMediaLightbox({
         <div
             role="dialog"
             aria-modal="true"
-            aria-label={kind === "image" ? "Image viewer" : "Video player"}
+            aria-label={kind === "image" ? t("imageViewer") : t("videoPlayer")}
             className="fixed inset-0 z-[200] flex items-center justify-center bg-dyeus-ink/92 p-4 md:p-10"
             onClick={onClose}
         >
@@ -65,7 +70,7 @@ function DyeusMediaLightbox({
                 type="button"
                 onClick={onClose}
                 className="absolute right-4 top-4 z-10 flex size-10 cursor-pointer items-center justify-center text-dyeus-cream transition hover:text-dyeus-bronze md:right-6 md:top-6"
-                aria-label="Close"
+                aria-label={t("close")}
             >
                 <X className="size-6" strokeWidth={1.5} />
             </button>
@@ -75,7 +80,7 @@ function DyeusMediaLightbox({
                     <button
                         type="button"
                         className="absolute left-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:left-4 md:size-12"
-                        aria-label="Previous"
+                        aria-label={t("previous")}
                         onClick={(e) => {
                             e.stopPropagation();
                             setIndex((current) => (current - 1 + items.length) % items.length);
@@ -86,7 +91,7 @@ function DyeusMediaLightbox({
                     <button
                         type="button"
                         className="absolute right-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:right-4 md:size-12"
-                        aria-label="Next"
+                        aria-label={t("next")}
                         onClick={(e) => {
                             e.stopPropagation();
                             setIndex((current) => (current + 1) % items.length);
@@ -121,7 +126,7 @@ function DyeusMediaLightbox({
 
             {showNav ? (
                 <p className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 font-dyeus-sans text-xs tracking-[0.18em] text-dyeus-cream/70">
-                    {index + 1} / {items.length}
+                    {t("counter", {current: index + 1, total: items.length})}
                 </p>
             ) : null}
         </div>

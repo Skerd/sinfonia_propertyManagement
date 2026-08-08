@@ -1,3 +1,12 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/gallery/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/gallery/index.tsx",
+  "eyebrow": "Galerie",
+  "title": "Espaces & atmosphère",
+  "imageGalleryAria": "Galerie d'images",
+  "images": "Images",
+  "openImage": "Ouvrir l'image {{index}}",
+  "videoGalleryAria": "Galerie vidéo",
+  "videos": "Vidéos",
+  "playVideo": "Lire la vidéo {{index}}",
+  "empty": "Aucun média de galerie n'a encore été ajouté à ce projet."
 }

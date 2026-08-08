@@ -15,16 +15,21 @@ import {
 import DyeusMediaLightbox from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMediaLightbox.tsx";
 import {resolveProjectGalleryImages} from "@propertyManagementModule/clients/client/public/project/shared/resolveProjectFallbackImage.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const DRAG_THRESHOLD_PX = 10;
 const MOBILE_DESCRIPTION_COLLAPSE_CHARS = 180;
+
+const RESIDENCES_LANGUAGE_PATH =
+    "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx";
 
 type DyeusResidencesProjectInfoProps = {
     project: MarketingProjectSingle;
 };
 
 function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) {
+    const {t} = useDyeusT(RESIDENCES_LANGUAGE_PATH);
     const displayImages = resolveProjectGalleryImages(project);
     const [api, setApi] = useState<CarouselApi | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
@@ -81,10 +86,12 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
     };
 
     const stats: string[] = [];
-    if (project.floorCount != null) stats.push(`${project.floorCount} Floors`);
-    if (project.unitCount != null) stats.push(`${project.unitCount} Units`);
-    if (project.edificeCount != null) stats.push(`${project.edificeCount} Buildings`);
-    if (project.availableUnitCount != null) stats.push(`${project.availableUnitCount} Available`);
+    if (project.floorCount != null) stats.push(t("floorsStat", {count: project.floorCount}));
+    if (project.unitCount != null) stats.push(t("unitsStat", {count: project.unitCount}));
+    if (project.edificeCount != null) stats.push(t("buildingsStat", {count: project.edificeCount}));
+    if (project.availableUnitCount != null) {
+        stats.push(t("availableStat", {count: project.availableUnitCount}));
+    }
 
     const amenities = (project.amenities ?? []).filter((item) => item.trim().length > 0);
     const location = [project.location, project.city].filter(Boolean).join(" · ");
@@ -144,7 +151,7 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                                 height: 8,
                                 background: index === activeIndex ? "#8B6B4A" : "rgba(36, 28, 22, 0.2)",
                             }}
-                            aria-label={`Slide ${index + 1}`}
+                            aria-label={t("slide", {index: index + 1})}
                         />
                     ))}
                 </div>
@@ -185,7 +192,7 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                                 onClick={() => setDescriptionExpanded((open) => !open)}
                                 aria-expanded={descriptionExpanded}
                             >
-                                {descriptionExpanded ? "Read less" : "Read more"}
+                                {descriptionExpanded ? t("readLess") : t("readMore")}
                             </button>
                         )}
                     </div>
@@ -208,9 +215,9 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
 
                 {project.minSharePrice != null && (
                     <p className="font-dyeus-serif text-2xl text-dyeus-bronze md:text-3xl">
-                        From €{project.minSharePrice.toLocaleString()}
+                        {t("fromPrice", {price: project.minSharePrice.toLocaleString()})}
                         {project.projectedYieldPercent != null
-                            ? ` · ${project.projectedYieldPercent}% yield`
+                            ? t("yieldSuffix", {percent: project.projectedYieldPercent})
                             : ""}
                     </p>
                 )}
@@ -218,7 +225,7 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                 {amenities.length > 0 && (
                     <div className="flex flex-col gap-2">
                         <p className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">
-                            Amenities
+                            {t("amenitiesLabel")}
                         </p>
                         <ul className="flex flex-wrap gap-2">
                             {amenities.map((amenity) => (

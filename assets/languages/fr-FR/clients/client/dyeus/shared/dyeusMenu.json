@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMenu.tsx",
+  "menuAria": "Menu",
+  "close": "Fermer",
+  "brand": "DYEUS",
+  "tagline": "Une collection privée de résidences, villas et suites entre la mer Ionienne et les montagnes du sud de l'Albanie.",
+  "language": "Langue",
+  "languageGroup": "Langue",
+  "navAbout": "À propos",
+  "navResidences": "Résidences",
+  "navGallery": "Galerie",
+  "navJournal": "Journal",
+  "navContact": "Contact"
+}

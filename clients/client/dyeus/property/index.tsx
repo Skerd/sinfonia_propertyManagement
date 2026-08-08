@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {compose} from "redux";
 import {Link, useSearchParams} from "react-router-dom";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -10,12 +10,17 @@ import DyeusHeader from "@propertyManagementModule/clients/client/dyeus/shared/d
 import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/dyeusFooter.tsx";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
-import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {
+    fillLanguageTemplate,
+    type MarketingUnitSingle,
+} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 type MarketingUnitResponse = {unit: MarketingUnitSingle};
-type PropertyPageProps = WithAxiosType<MarketingUnitResponse, {projectId: string; unitId: string}>;
+type PropertyPageProps = WithLanguageType &
+    WithAxiosType<MarketingUnitResponse, {projectId: string; unitId: string}>;
 
-function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps) {
+function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}: PropertyPageProps) {
+    const t = (key: string) => String(resolveLanguageKey(key));
     const [searchParams] = useSearchParams();
     const projectId = searchParams.get("projectId") ?? "";
     const unitId = searchParams.get("unitId") ?? "";
@@ -37,7 +42,9 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
 
     const gallery = unit?.imageGallery?.length
         ? unit.imageGallery
-        : [unit?.floorPlanImage, dyeusAssets.villaFeature, dyeusAssets.amenitySide].filter(Boolean) as string[];
+        : ([unit?.floorPlanImage, dyeusAssets.villaFeature, dyeusAssets.amenitySide].filter(
+              Boolean,
+          ) as string[]);
 
     return (
         <DyeusPageShell nodeId="44:property" nodeName="Property">
@@ -48,13 +55,13 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                         to={`/residences${projectId ? `?projectId=${projectId}` : ""}`}
                         className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
                     >
-                        ← Residences
+                        {t("backToResidences")}
                     </Link>
 
                     {!projectId || !unitId ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">Missing project or unit parameters.</p>
+                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("missingParams")}</p>
                     ) : error ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">Unable to load this residence.</p>
+                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("loadError")}</p>
                     ) : loading && !unit ? (
                         <div className="mt-20 flex justify-center">
                             <Loader />
@@ -87,25 +94,25 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                                 <dl className="mt-8 space-y-4 border-t border-dyeus-border pt-6 font-dyeus-sans text-sm">
                                     {unit.areaSqm != null && (
                                         <div className="flex justify-between gap-4">
-                                            <dt className="text-dyeus-ink-faded">Area</dt>
+                                            <dt className="text-dyeus-ink-faded">{t("area")}</dt>
                                             <dd>{unit.areaSqm} m²</dd>
                                         </div>
                                     )}
                                     {unit.bedrooms != null && (
                                         <div className="flex justify-between gap-4">
-                                            <dt className="text-dyeus-ink-faded">Bedrooms</dt>
+                                            <dt className="text-dyeus-ink-faded">{t("bedrooms")}</dt>
                                             <dd>{unit.bedrooms}</dd>
                                         </div>
                                     )}
                                     {unit.bathrooms != null && (
                                         <div className="flex justify-between gap-4">
-                                            <dt className="text-dyeus-ink-faded">Bathrooms</dt>
+                                            <dt className="text-dyeus-ink-faded">{t("bathrooms")}</dt>
                                             <dd>{unit.bathrooms}</dd>
                                         </div>
                                     )}
                                     {unit.price != null && (
                                         <div className="flex justify-between gap-4">
-                                            <dt className="text-dyeus-ink-faded">Price</dt>
+                                            <dt className="text-dyeus-ink-faded">{t("price")}</dt>
                                             <dd>{unit.price.toLocaleString()}</dd>
                                         </div>
                                     )}
@@ -120,7 +127,7 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                                     onClick={() => setContactOpen(true)}
                                     className="mt-8 w-full bg-dyeus-ink px-6 py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream transition hover:bg-dyeus-bronze-deep"
                                 >
-                                    Request information
+                                    {t("requestInfo")}
                                 </button>
                             </aside>
                         </div>
@@ -133,7 +140,7 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                     <div className="w-full max-w-md bg-dyeus-cream p-6 shadow-lg md:p-8">
                         <div className="flex items-start justify-between gap-4">
                             <div>
-                                <h2 className="font-dyeus-serif text-3xl">Request information</h2>
+                                <h2 className="font-dyeus-serif text-3xl">{t("requestInfo")}</h2>
                                 <p className="mt-1 font-dyeus-sans text-sm text-dyeus-ink-muted">{unit.name}</p>
                             </div>
                             <button
@@ -141,7 +148,7 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                                 onClick={() => setContactOpen(false)}
                                 className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-muted"
                             >
-                                Close
+                                {t("close")}
                             </button>
                         </div>
                         <DyeusMarketingContactForm
@@ -149,8 +156,8 @@ function PropertyPage({data, loading, error, onFilterChange}: PropertyPageProps)
                             lockInterestToReservation
                             projectInterest={projectId}
                             unitInterest={unitId}
-                            defaultMessage={`Enquiry for unit ${unit.name}`}
-                            submitLabel="Send"
+                            defaultMessage={fillLanguageTemplate(t("defaultMessage"), {name: unit.name})}
+                            submitLabel={t("send")}
                         />
                     </div>
                 </div>

@@ -1,3 +1,12 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/journal/index.tsx",
+  "eyebrow": "Journal",
+  "title": "Stories from Dyeus",
+  "lead": "Notes from Dhërmi — on the building of DYEUS, the life of the coast, and what it means to own a piece of the Albanian Riviera.",
+  "filterBy": "Filter by:",
+  "filterAll": "All",
+  "empty": "Stories will appear here once published.",
+  "magazineFallbackTitle": "The DYEUS Magazine: A closer look",
+  "viewMagazine": "View magazine",
+  "loadingMagazine": "Loading magazine…"
 }

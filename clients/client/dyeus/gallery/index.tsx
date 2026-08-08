@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState} from "react";
 import {compose} from "redux";
 import {Play} from "lucide-react";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
@@ -12,10 +12,13 @@ import DyeusMediaLightbox from "@propertyManagementModule/clients/client/dyeus/s
 import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusProjectId.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
-import type {MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {
+    fillLanguageTemplate,
+    type MarketingProjectSingle,
+} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 type MarketingProjectSingleResponse = {project: MarketingProjectSingle};
-type GalleryPageProps = WithAxiosType<MarketingProjectSingleResponse, {projectId: string}>;
+type GalleryPageProps = WithAxiosType<MarketingProjectSingleResponse, {projectId: string}> & WithLanguageType;
 
 type LightboxState =
     | {kind: "image"; index: number}
@@ -46,7 +49,8 @@ function dedupeUrls(urls: Array<string | undefined | null>): string[] {
     return result;
 }
 
-function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
+function GalleryPage({data, loading, onFilterChange, resolveLanguageKey}: GalleryPageProps) {
+    const t = (key: string) => String(resolveLanguageKey(key));
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
     const [lightbox, setLightbox] = useState<LightboxState>(null);
 
@@ -77,8 +81,8 @@ function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
             <div className="relative">
                 <DyeusHeader variant="solid" />
                 <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-28 md:px-12 md:pt-36">
-                    <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">Gallery</p>
-                    <h1 className="mt-4 font-dyeus-serif text-5xl md:text-7xl">Spaces &amp; atmosphere</h1>
+                    <p className="font-dyeus-sans text-xs uppercase tracking-[0.24em] text-dyeus-bronze">{t("eyebrow")}</p>
+                    <h1 className="mt-4 font-dyeus-serif text-5xl md:text-7xl">{t("title")}</h1>
 
                     {showLoader ? (
                         <div className="mt-16 flex min-h-[280px] items-center justify-center">
@@ -87,10 +91,10 @@ function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
                     ) : (
                         <>
                             {images.length > 0 ? (
-                                <section className="mt-12" aria-label="Image gallery">
+                                <section className="mt-12" aria-label={t("imageGalleryAria")}>
                                     {showSectionLabels ? (
                                         <p className="mb-6 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">
-                                            Images
+                                            {t("images")}
                                         </p>
                                     ) : null}
                                     <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
@@ -100,7 +104,9 @@ function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
                                                 type="button"
                                                 onClick={() => setLightbox({kind: "image", index})}
                                                 className="mb-4 block w-full cursor-zoom-in break-inside-avoid overflow-hidden"
-                                                aria-label={`Open image ${index + 1}`}
+                                                aria-label={fillLanguageTemplate(t("openImage"), {
+                                                    index: index + 1,
+                                                })}
                                             >
                                                 <img src={src} alt="" className="w-full object-cover" />
                                             </button>
@@ -110,10 +116,13 @@ function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
                             ) : null}
 
                             {videos.length > 0 ? (
-                                <section className={images.length > 0 ? "mt-16" : "mt-12"} aria-label="Video gallery">
+                                <section
+                                    className={images.length > 0 ? "mt-16" : "mt-12"}
+                                    aria-label={t("videoGalleryAria")}
+                                >
                                     {showSectionLabels || images.length === 0 ? (
                                         <p className="mb-6 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">
-                                            Videos
+                                            {t("videos")}
                                         </p>
                                     ) : null}
                                     <div className="grid gap-4 sm:grid-cols-2">
@@ -123,7 +132,9 @@ function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
                                                 type="button"
                                                 onClick={() => setLightbox({kind: "video", index})}
                                                 className="group relative aspect-video cursor-pointer overflow-hidden bg-dyeus-sand"
-                                                aria-label={`Play video ${index + 1}`}
+                                                aria-label={fillLanguageTemplate(t("playVideo"), {
+                                                    index: index + 1,
+                                                })}
                                             >
                                                 <video
                                                     src={src}
@@ -145,7 +156,7 @@ function GalleryPage({data, loading, onFilterChange}: GalleryPageProps) {
 
                             {!showLoader && project && images.length === 0 && videos.length === 0 ? (
                                 <p className="mt-12 font-dyeus-sans text-sm text-dyeus-ink-muted">
-                                    No gallery media has been added to this project yet.
+                                    {t("empty")}
                                 </p>
                             ) : null}
                         </>

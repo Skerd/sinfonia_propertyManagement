@@ -1,3 +1,12 @@
 {
-  "path": "src/modules/propertyManagement/clients/client/dyeus/gallery/index.tsx"
+  "path": "src/modules/propertyManagement/clients/client/dyeus/gallery/index.tsx",
+  "eyebrow": "Galeria",
+  "title": "Hapësira & atmosferë",
+  "imageGalleryAria": "Galeria e imazheve",
+  "images": "Imazhe",
+  "openImage": "Hap imazhin {{index}}",
+  "videoGalleryAria": "Galeria e videove",
+  "videos": "Video",
+  "playVideo": "Luaj videon {{index}}",
+  "empty": "Ende nuk është shtuar media galerie për këtë projekt."
 }
