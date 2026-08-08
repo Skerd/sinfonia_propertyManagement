@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/editUnitTypeCategory.tsx",
+  "title": "Modifier la catégorie de type d’unité",
+  "description": "Modifier la catégorie de type d’unité",
+  "generalInfo": "Informations générales",
+  "form": {
+    "nameLabel": "Nom",
+    "namePlaceholder": "Saisir le nom de la catégorie",
+    "nameRequired": "Le nom est obligatoire"
+  },
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la catégorie",
+      "time": 3000
+    },
+    "success": {
+      "title": "Catégorie mise à jour avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "La catégorie n’a pas pu être mise à jour, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier la catégorie de type d’unité",
+    "description": "Modifier la catégorie de type d’unité"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer la catégorie"
+  }
+}

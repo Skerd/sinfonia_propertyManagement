@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx",
+  "title": "Crea categoria tipo unità",
+  "description": "Crea una nuova categoria di tipo unità",
+  "generalInfo": "Informazioni generali",
+  "form": {
+    "nameLabel": "Nome",
+    "namePlaceholder": "Inserisci il nome della categoria",
+    "nameRequired": "Il nome è obbligatorio"
+  },
+  "axios": {
+    "start": {
+      "title": "Creazione categoria",
+      "time": 3000
+    },
+    "success": {
+      "title": "Categoria creata con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile creare la categoria, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea categoria tipo unità",
+    "description": "Crea una nuova categoria di tipo unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea categoria"
+  }
+}

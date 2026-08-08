@@ -5,7 +5,7 @@
   "generalInfo": "Allgemeine Informationen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Kategorie name eingeben",
+    "namePlaceholder": "Kategorienamen eingeben",
     "nameRequired": "Name ist erforderlich"
   },
   "axios": {
@@ -28,6 +28,6 @@
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern Kategorie"
+    "submit": "Kategorie speichern"
   }
 }

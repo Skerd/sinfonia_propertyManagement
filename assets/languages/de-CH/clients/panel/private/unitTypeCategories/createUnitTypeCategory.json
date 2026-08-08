@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx",
   "title": "Einheitstyp-Kategorie erstellen",
-  "description": "A neu einheit typ kategorie erstellen",
+  "description": "Neue Einheitstyp-Kategorie erstellen",
   "generalInfo": "Allgemeine Informationen",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Kategorie name eingeben",
+    "namePlaceholder": "Kategorienamen eingeben",
     "nameRequired": "Name ist erforderlich"
   },
   "axios": {
@@ -24,7 +24,7 @@
   },
   "formHeader": {
     "title": "Einheitstyp-Kategorie erstellen",
-    "description": "A neu einheit typ kategorie erstellen"
+    "description": "Neue Einheitstyp-Kategorie erstellen"
   },
   "formButtons": {
     "cancel": "Abbrechen",

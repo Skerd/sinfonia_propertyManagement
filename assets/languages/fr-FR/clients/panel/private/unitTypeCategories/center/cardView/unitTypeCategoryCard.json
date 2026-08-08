@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/center/cardView/unitTypeCategoryCard.tsx",
+  "active": "Actif",
+  "name": "Nom",
+  "deleted": "Supprimé",
+  "unitTypeCategory": "Catégorie de type d’unité"
+}

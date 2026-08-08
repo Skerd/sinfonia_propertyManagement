@@ -1,0 +1,12 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/center/sheetView/unitTypeCategorySheetView.tsx",
+  "overview": "Aperçu",
+  "name": "Nom",
+  "unitTypeCategory": "Catégorie de type d’unité",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

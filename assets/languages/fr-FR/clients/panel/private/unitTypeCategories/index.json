@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
+  "title": "Catégories de types d’unités",
+  "description": "Gérer les catégories de types d’unités",
+  "createUnitTypeCategory": "Créer une catégorie",
+  "noData": "Aucune catégorie de type d’unité trouvée",
+  "failTitle": "Échec du chargement des catégories de types d’unités",
+  "failDescription": "Une erreur est survenue lors du chargement des catégories de types d’unités. Veuillez réessayer.",
+  "status": "Statut",
+  "active": "Actif",
+  "deleted": "Supprimé",
+  "name": "Nom",
+  "fields": {
+    "company": "Entreprise",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "name": "Nom",
+    "updatedAt": "Mis à jour le"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+}
