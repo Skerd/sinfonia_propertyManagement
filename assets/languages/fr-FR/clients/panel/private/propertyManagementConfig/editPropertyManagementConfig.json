@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
+  "title": "Ventes & remise",
+  "generalInfo": "Contrôles du flux de travail",
+  "form": {
+    "requiresSaleApprovalLabel": "Exiger l’approbation d’un responsable lors de la création d’une vente",
+    "requiresHandoverPackageForHandoverLabel": "Exiger un dossier de remise terminé avant d’enregistrer la remise"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ventes & remise",
+    "description": "Politique de vente et de remise pour l’immobilier, au niveau de l’entreprise."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}

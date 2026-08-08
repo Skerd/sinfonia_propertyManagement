@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
+  "title": "Vendite e consegna",
+  "generalInfo": "Controlli del flusso di lavoro",
+  "form": {
+    "requiresSaleApprovalLabel": "Richiedi l’approvazione del responsabile alla creazione di una vendita",
+    "requiresHandoverPackageForHandoverLabel": "Richiedi un pacchetto di consegna completato prima di registrare la consegna"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Vendite e consegna",
+    "description": "Politica aziendale di vendita e consegna per il real estate."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

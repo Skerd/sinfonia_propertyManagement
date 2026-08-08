@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
+  "title": "Ventes & remise",
+  "errors": {
+    "missingConfigId": "Impossible de charger les paramètres de l’entreprise."
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par"
+}
