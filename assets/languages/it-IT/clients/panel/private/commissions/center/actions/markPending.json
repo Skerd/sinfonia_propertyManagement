@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPending.tsx",
+  "title": "Segna come in attesa",
+  "pendingConfirmTitle": "Ripristinare lo stato in attesa?",
+  "pendingConfirmDescription": "Questo cancella lo stato pagato e riporta la commissione in attesa.",
+  "cancel": "Annulla",
+  "confirmPending": "Segna come in attesa",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento commissione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commissione impostata come in attesa",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la commissione",
+      "time": 3000
+    }
+  }
+}

@@ -1,21 +1,21 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPaid.tsx",
-  "title": "Mark bezahlt",
-  "paidConfirmTitle": "Mark provision bezahlt?",
-  "paidConfirmDescription": "Diese sets die provision status bis bezahlt und einträge die bezahlt time.",
+  "title": "Als bezahlt markieren",
+  "paidConfirmTitle": "Provision als bezahlt markieren?",
+  "paidConfirmDescription": "Dadurch wird der Provisionsstatus auf bezahlt gesetzt und der Zahlungszeitpunkt erfasst.",
   "cancel": "Abbrechen",
-  "confirmPaid": "Mark bezahlt",
+  "confirmPaid": "Als bezahlt markieren",
   "axios": {
     "start": {
       "title": "Provision wird aktualisiert",
       "time": 3000
     },
     "success": {
-      "title": "Provision marked bezahlt",
+      "title": "Provision als bezahlt markiert",
       "time": 3000
     },
     "error": {
-      "title": "Konnte nicht aktualisieren provision",
+      "title": "Provision konnte nicht aktualisiert werden",
       "time": 3000
     }
   }

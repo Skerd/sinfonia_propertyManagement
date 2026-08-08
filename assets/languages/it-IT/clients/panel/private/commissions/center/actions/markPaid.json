@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPaid.tsx",
+  "title": "Segna come pagata",
+  "paidConfirmTitle": "Segnare la commissione come pagata?",
+  "paidConfirmDescription": "Questo imposta lo stato della commissione su pagata e registra l'ora del pagamento.",
+  "cancel": "Annulla",
+  "confirmPaid": "Segna come pagata",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento commissione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commissione segnata come pagata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la commissione",
+      "time": 3000
+    }
+  }
+}

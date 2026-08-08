@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx",
+  "failedTitle": "Caricamento commissione non riuscito",
+  "failedDescription": "Si è verificato un errore durante il caricamento di questa commissione. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per riprovare a caricare i dati.",
+  "overview": "Panoramica",
+  "financials": "Finanze",
+  "references": "Riferimenti",
+  "dates": "Date",
+  "notes": "Note",
+  "and": "e",
+  "commission": "Commissione",
+  "agent": "Agente",
+  "sourceType": "Origine",
+  "status": "Stato",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "In attesa",
+        "pending_approval": "In attesa di approvazione",
+        "paid": "Pagata",
+        "voided": "Annullata"
+      },
+      "sourceType": {
+        "sale": "Vendita",
+        "reservation": "Prenotazione"
+      }
+    }
+  },
+  "basis": "Base commissione",
+  "basisEnum": {
+    "depositAmount": "Deposito di prenotazione",
+    "finalPrice": "Prezzo finale di vendita"
+  },
+  "basisTooltip": "Come viene calcolata o etichettata questa commissione (ad es. prezzo di vendita, tariffa fissa).",
+  "basisAmount": "Importo base",
+  "ratePercent": "Aliquota %",
+  "amount": "Importo",
+  "sale": "Vendita",
+  "reservation": "Prenotazione",
+  "currency": "Valuta",
+  "paidAt": "Pagata il",
+  "voidedAt": "Annullata il",
+  "modelType": "Commissione",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creata il",
+  "updatedAt": "Aggiornata il",
+  "createdBy": "Creata da",
+  "deletedAt": "Eliminata il",
+  "deletedBy": "Eliminata da"
+}

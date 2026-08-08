@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPending.tsx",
+  "title": "Marquer en attente",
+  "pendingConfirmTitle": "Revenir en attente ?",
+  "pendingConfirmDescription": "Cela efface le statut payé et remet la commission en attente.",
+  "cancel": "Annuler",
+  "confirmPending": "Marquer en attente",
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission remise en attente",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la commission",
+      "time": 3000
+    }
+  }
+}

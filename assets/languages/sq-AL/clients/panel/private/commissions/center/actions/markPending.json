@@ -1,17 +1,17 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPending.tsx",
-  "title": "Shënoni në pritje",
+  "title": "Shëno në pritje",
   "pendingConfirmTitle": "Të rikthehet në pritje?",
   "pendingConfirmDescription": "Kjo pastron statusin e paguar dhe e kthen komisionin në pritje.",
   "cancel": "Anulo",
-  "confirmPending": "Shënoni në pritje",
+  "confirmPending": "Shëno në pritje",
   "axios": {
     "start": {
-      "title": "Komisioni i përditësimit",
+      "title": "Po përditësohet komisioni",
       "time": 3000
     },
     "success": {
-      "title": "Komisioni është në pritje",
+      "title": "Komisioni u vendos në pritje",
       "time": 3000
     },
     "error": {

@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx",
+  "failedTitle": "Échec du chargement de la commission",
+  "failedDescription": "Une erreur s'est produite lors du chargement de cette commission. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour réessayer de charger les données.",
+  "overview": "Aperçu",
+  "financials": "Finances",
+  "references": "Références",
+  "dates": "Dates",
+  "notes": "Notes",
+  "and": "et",
+  "commission": "Commission",
+  "agent": "Agent",
+  "sourceType": "Source",
+  "status": "Statut",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "En attente",
+        "pending_approval": "En attente d'approbation",
+        "paid": "Payée",
+        "voided": "Annulée"
+      },
+      "sourceType": {
+        "sale": "Vente",
+        "reservation": "Réservation"
+      }
+    }
+  },
+  "basis": "Base de commission",
+  "basisEnum": {
+    "depositAmount": "Acompte de réservation",
+    "finalPrice": "Prix final de vente"
+  },
+  "basisTooltip": "Comment cette commission est calculée ou libellée (p. ex. prix de vente, honoraires fixes).",
+  "basisAmount": "Montant de base",
+  "ratePercent": "Taux %",
+  "amount": "Montant",
+  "sale": "Vente",
+  "reservation": "Réservation",
+  "currency": "Devise",
+  "paidAt": "Payée le",
+  "voidedAt": "Annulée le",
+  "modelType": "Commission",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créée le",
+  "updatedAt": "Mise à jour le",
+  "createdBy": "Créée par",
+  "deletedAt": "Supprimée le",
+  "deletedBy": "Supprimée par"
+}

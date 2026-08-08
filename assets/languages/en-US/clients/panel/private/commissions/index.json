@@ -46,6 +46,10 @@
     "status": "Status",
     "updatedAt": "Updated At",
     "voidedAt": "Voided At",
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
+    "unit": "Unit",
     "!enums": {
       "sourceType": {
         "sale": "Sale",

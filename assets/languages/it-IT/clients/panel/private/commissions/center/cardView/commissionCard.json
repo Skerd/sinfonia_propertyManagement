@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/cardView/commissionCard.tsx",
+  "overview": "Panoramica",
+  "clickToCopy": "Clicca per copiare",
+  "active": "Attiva",
+  "unit": "Unità",
+  "agent": "Agente",
+  "amount": "Importo",
+  "ratePercent": "Aliquota %",
+  "sourceType": "Origine",
+  "status": "Stato",
+  "statusLabel": "Stato",
+  "fields": {
+    "!enums": {
+      "status": {
+        "pending": "In attesa",
+        "pending_approval": "In attesa di approvazione",
+        "paid": "Pagata",
+        "voided": "Annullata"
+      },
+      "sourceType": {
+        "sale": "Vendita",
+        "reservation": "Prenotazione"
+      }
+    }
+  },
+  "basis": "Base commissione",
+  "notes": "Note",
+  "paidAt": "Pagata il",
+  "voidedAt": "Annullata il",
+  "recordedBy": "Registrata da",
+  "deleted": "Eliminata",
+  "modelType": "Commissione"
+}

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/cardView/commissionCard.tsx",
   "overview": "Übersicht",
-  "clickToCopy": "Click bis copy",
+  "clickToCopy": "Zum Kopieren klicken",
   "active": "Aktiv",
   "unit": "Einheit",
   "agent": "Makler",
@@ -14,9 +14,9 @@
     "!enums": {
       "status": {
         "pending": "Ausstehend",
-        "pending_approval": "Ausstehend freigabe",
+        "pending_approval": "Freigabe ausstehend",
         "paid": "Bezahlt",
-        "voided": "Voided"
+        "voided": "Annulliert"
       },
       "sourceType": {
         "sale": "Verkauf",
@@ -24,11 +24,11 @@
       }
     }
   },
-  "basis": "Provision basis",
+  "basis": "Provisionsbasis",
   "notes": "Notizen",
   "paidAt": "Bezahlt am",
-  "voidedAt": "Voided am",
-  "recordedBy": "Recorded von",
+  "voidedAt": "Annulliert am",
+  "recordedBy": "Erfasst von",
   "deleted": "Gelöscht",
   "modelType": "Provision"
 }
