@@ -1,51 +1,36 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/createConstructionUpdate.tsx",
   "title": "Baufortschritt hinzufügen",
-  "description": "Protokoll a neu bau fortschritt aktualisieren",
-  "generalInfo": "Aktualisieren Details",
+  "description": "Einen neuen Baufortschritt erfassen",
+  "generalInfo": "Details zur Aktualisierung",
   "form": {
     "projectLabel": "Projekt",
     "projectPlaceholder": "Projekt auswählen",
     "edificeLabel": "Gebäude",
-    "edificePlaceholder": "Gebäude (optional) auswählen",
+    "edificePlaceholder": "Gebäude auswählen (optional)",
     "milestoneLabel": "Meilenstein",
-    "milestonePlaceholder": "Meilenstein (optional) auswählen",
+    "milestonePlaceholder": "Meilenstein auswählen (optional)",
     "scheduleTaskLabel": "Terminaufgabe",
-    "scheduleTaskPlaceholder": "Terminplan aufgabe (optional) auswählen",
+    "scheduleTaskPlaceholder": "Terminaufgabe auswählen (optional)",
     "titleLabel": "Bezeichnung",
-    "titlePlaceholder": "Aktualisieren bezeichnung eingeben",
+    "titlePlaceholder": "Bezeichnung der Aktualisierung eingeben",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "Describe bau fortschritt",
+    "descriptionPlaceholder": "Baufortschritt beschreiben",
     "progressPercentLabel": "Fortschritt (%)",
     "progressPercentPlaceholder": "0–100",
-    "updateDateLabel": "Aktualisieren Datum",
+    "updateDateLabel": "Aktualisierungsdatum",
     "updateDatePlaceholder": "Datum auswählen",
     "photosLabel": "Fotos",
     "addFile": "Foto hinzufügen",
-    "filesSelected": "Photos selected",
-    "existingFiles": "Existing photos",
-    "newFiles": "Neu photos hinzufügen"
+    "filesSelected": "Fotos ausgewählt",
+    "existingFiles": "Vorhandene Fotos",
+    "newFiles": "Neue Fotos hinzufügen"
   },
   "axios": {
-    "start": {
-      "title": "Saving aktualisieren",
-      "time": 3000
-    },
-    "success": {
-      "title": "Bau aktualisieren gespeichert!",
-      "time": 3000
-    },
-    "error": {
-      "title": "Konnte nicht speichern aktualisieren, bitte versuchen erneut!",
-      "time": 3000
-    }
+    "start": { "title": "Aktualisierung wird gespeichert", "time": 3000 },
+    "success": { "title": "Baufortschritt gespeichert!", "time": 3000 },
+    "error": { "title": "Aktualisierung konnte nicht gespeichert werden, bitte erneut versuchen!", "time": 3000 }
   },
-  "formHeader": {
-    "title": "Baufortschritt hinzufügen",
-    "description": "Protokoll a neu bau fortschritt aktualisieren"
-  },
-  "formButtons": {
-    "cancel": "Abbrechen",
-    "submit": "Speichern Aktualisieren"
-  }
+  "formHeader": { "title": "Baufortschritt hinzufügen", "description": "Einen neuen Baufortschritt erfassen" },
+  "formButtons": { "cancel": "Abbrechen", "submit": "Aktualisierung speichern" }
 }

@@ -1,0 +1,55 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile salvare l’aggiornamento, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento del record"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Aggiornamento cantiere salvato!"
+    }
+  },
+  "editDescription": "Modifica l’aggiornamento di avanzamento lavori",
+  "editTitle": "Modifica aggiornamento cantiere",
+  "errorDescription": "Si è verificato un errore durante il caricamento dell’aggiornamento. Riprova.",
+  "errorTitle": "Caricamento dell’aggiornamento non riuscito",
+  "form": {
+    "_idLabel": "ID record",
+    "addFile": "Aggiungi foto",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrivi l’avanzamento dei lavori",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio (opzionale)",
+    "milestoneLabel": "Milestone",
+    "milestonePlaceholder": "Seleziona milestone (opzionale)",
+    "scheduleTaskLabel": "Attività di programma",
+    "scheduleTaskPlaceholder": "Seleziona attività di programma (opzionale)",
+    "existingFiles": "Foto esistenti",
+    "filesSelected": "foto selezionate",
+    "newFiles": "Aggiungi nuove foto",
+    "photosLabel": "Foto",
+    "progressPercentLabel": "Avanzamento (%)",
+    "progressPercentPlaceholder": "0–100",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Inserisci il titolo dell’aggiornamento",
+    "updateDateLabel": "Data aggiornamento",
+    "updateDatePlaceholder": "Seleziona data"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Modifica l’aggiornamento di avanzamento lavori",
+    "title": "Modifica aggiornamento cantiere"
+  },
+  "generalInfo": "Dettagli aggiornamento",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
+  "title": "Modifica aggiornamento cantiere"
+}

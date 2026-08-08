@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx",
+  "title": "Avancement des travaux",
+  "description": "Suivre l’avancement des travaux et les jalons",
+  "createConstructionUpdate": "Ajouter une mise à jour",
+  "viewTimeline": "Chronologie",
+  "noData": "Aucune mise à jour de chantier trouvée",
+  "failTitle": "Échec du chargement des mises à jour",
+  "failDescription": "Une erreur est survenue lors du chargement des mises à jour. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Édifice",
+    "milestone": "Jalon",
+    "name": "Référence",
+    "photos": "Photos",
+    "progressPercent": "Avancement %",
+    "project": "Projet",
+    "scheduleTask": "Tâche du planning",
+    "title": "Titre",
+    "updateDate": "Date de mise à jour",
+    "updatedAt": "Mis à jour le"
+  }
+}

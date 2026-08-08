@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx",
   "title": "Baufortschritte",
-  "description": "Track bau fortschritt und milestones",
-  "createConstructionUpdate": "Aktualisieren hinzufügen",
-  "viewTimeline": "Timeline",
-  "noData": "Keine baufortschritte gefunden",
+  "description": "Baufortschritt und Meilensteine nachverfolgen",
+  "createConstructionUpdate": "Aktualisierung hinzufügen",
+  "viewTimeline": "Zeitachse",
+  "noData": "Keine Baufortschritte gefunden",
   "failTitle": "Baufortschritte konnten nicht geladen werden",
-  "failDescription": "Beim Laden von baufortschritte ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "failDescription": "Beim Laden der Baufortschritte ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
@@ -22,7 +22,7 @@
     "project": "Projekt",
     "scheduleTask": "Terminaufgabe",
     "title": "Bezeichnung",
-    "updateDate": "Aktualisieren Datum",
+    "updateDate": "Aktualisierungsdatum",
     "updatedAt": "Aktualisiert am"
   }
 }

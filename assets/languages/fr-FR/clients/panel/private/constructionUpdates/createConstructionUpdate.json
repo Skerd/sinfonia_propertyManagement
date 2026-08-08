@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/createConstructionUpdate.tsx",
+  "title": "Ajouter une mise à jour chantier",
+  "description": "Enregistrer une nouvelle mise à jour d’avancement des travaux",
+  "generalInfo": "Détails de la mise à jour",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Sélectionner un édifice (optionnel)",
+    "milestoneLabel": "Jalon",
+    "milestonePlaceholder": "Sélectionner un jalon (optionnel)",
+    "scheduleTaskLabel": "Tâche du planning",
+    "scheduleTaskPlaceholder": "Sélectionner une tâche du planning (optionnel)",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Saisir le titre de la mise à jour",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Décrire l’avancement des travaux",
+    "progressPercentLabel": "Avancement (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Date de mise à jour",
+    "updateDatePlaceholder": "Sélectionner une date",
+    "photosLabel": "Photos",
+    "addFile": "Ajouter une photo",
+    "filesSelected": "photos sélectionnées",
+    "existingFiles": "Photos existantes",
+    "newFiles": "Ajouter de nouvelles photos"
+  },
+  "axios": {
+    "start": { "title": "Enregistrement de la mise à jour", "time": 3000 },
+    "success": { "title": "Mise à jour chantier enregistrée !", "time": 3000 },
+    "error": { "title": "Impossible d’enregistrer la mise à jour, veuillez réessayer !", "time": 3000 }
+  },
+  "formHeader": { "title": "Ajouter une mise à jour chantier", "description": "Enregistrer une nouvelle mise à jour d’avancement des travaux" },
+  "formButtons": { "cancel": "Annuler", "submit": "Enregistrer la mise à jour" }
+}

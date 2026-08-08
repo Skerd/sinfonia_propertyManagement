@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx",
+  "title": "Aggiornamenti cantiere",
+  "description": "Monitorare l’avanzamento dei lavori e le milestone",
+  "createConstructionUpdate": "Aggiungi aggiornamento",
+  "viewTimeline": "Cronologia",
+  "noData": "Nessun aggiornamento cantiere trovato",
+  "failTitle": "Caricamento degli aggiornamenti non riuscito",
+  "failDescription": "Si è verificato un errore durante il caricamento degli aggiornamenti. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "milestone": "Milestone",
+    "name": "Riferimento",
+    "photos": "Foto",
+    "progressPercent": "Avanzamento %",
+    "project": "Progetto",
+    "scheduleTask": "Attività di programma",
+    "title": "Titolo",
+    "updateDate": "Data aggiornamento",
+    "updatedAt": "Aggiornato il"
+  }
+}

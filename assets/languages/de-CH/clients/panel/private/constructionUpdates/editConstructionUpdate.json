@@ -2,54 +2,54 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Konnte nicht speichern aktualisieren, bitte versuchen erneut!"
+      "title": "Aktualisierung konnte nicht gespeichert werden, bitte erneut versuchen!"
     },
     "start": {
       "time": 3000,
-      "title": "Protokoll wird aktualisiert"
+      "title": "Datensatz wird aktualisiert"
     },
     "success": {
       "time": 3000,
-      "title": "Bau aktualisieren gespeichert!"
+      "title": "Baufortschritt gespeichert!"
     }
   },
-  "editDescription": "Bau fortschritt aktualisieren bearbeiten",
+  "editDescription": "Baufortschritt bearbeiten",
   "editTitle": "Baufortschritt bearbeiten",
-  "errorDescription": "Beim Laden von die bau aktualisieren ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "errorTitle": "Baufortschritt konnten nicht geladen werden",
+  "errorDescription": "Beim Laden des Baufortschritts ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "errorTitle": "Baufortschritt konnte nicht geladen werden",
   "form": {
-    "_idLabel": "Protokoll ID",
+    "_idLabel": "Datensatz-ID",
     "addFile": "Foto hinzufügen",
     "descriptionLabel": "Beschreibung",
-    "descriptionPlaceholder": "Describe bau fortschritt",
+    "descriptionPlaceholder": "Baufortschritt beschreiben",
     "edificeLabel": "Gebäude",
-    "edificePlaceholder": "Gebäude (optional) auswählen",
+    "edificePlaceholder": "Gebäude auswählen (optional)",
     "milestoneLabel": "Meilenstein",
-    "milestonePlaceholder": "Meilenstein (optional) auswählen",
+    "milestonePlaceholder": "Meilenstein auswählen (optional)",
     "scheduleTaskLabel": "Terminaufgabe",
-    "scheduleTaskPlaceholder": "Terminplan aufgabe (optional) auswählen",
-    "existingFiles": "Existing photos",
-    "filesSelected": "Photos selected",
-    "newFiles": "Neu photos hinzufügen",
+    "scheduleTaskPlaceholder": "Terminaufgabe auswählen (optional)",
+    "existingFiles": "Vorhandene Fotos",
+    "filesSelected": "Fotos ausgewählt",
+    "newFiles": "Neue Fotos hinzufügen",
     "photosLabel": "Fotos",
     "progressPercentLabel": "Fortschritt (%)",
     "progressPercentPlaceholder": "0–100",
     "projectLabel": "Projekt",
     "projectPlaceholder": "Projekt auswählen",
     "titleLabel": "Bezeichnung",
-    "titlePlaceholder": "Aktualisieren bezeichnung eingeben",
-    "updateDateLabel": "Aktualisieren Datum",
+    "titlePlaceholder": "Bezeichnung der Aktualisierung eingeben",
+    "updateDateLabel": "Aktualisierungsdatum",
     "updateDatePlaceholder": "Datum auswählen"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern Änderungen"
+    "submit": "Änderungen speichern"
   },
   "formHeader": {
-    "description": "Bau fortschritt aktualisieren bearbeiten",
+    "description": "Baufortschritt bearbeiten",
     "title": "Baufortschritt bearbeiten"
   },
-  "generalInfo": "Aktualisieren Details",
+  "generalInfo": "Details zur Aktualisierung",
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
   "title": "Baufortschritt bearbeiten"
 }

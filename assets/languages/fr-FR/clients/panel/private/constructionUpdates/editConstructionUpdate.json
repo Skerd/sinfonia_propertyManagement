@@ -1,0 +1,55 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossible d’enregistrer la mise à jour, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour de l’enregistrement"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Mise à jour chantier enregistrée !"
+    }
+  },
+  "editDescription": "Modifier la mise à jour d’avancement des travaux",
+  "editTitle": "Modifier la mise à jour chantier",
+  "errorDescription": "Une erreur est survenue lors du chargement de la mise à jour. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement de la mise à jour",
+  "form": {
+    "_idLabel": "ID de l’enregistrement",
+    "addFile": "Ajouter une photo",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Décrire l’avancement des travaux",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Sélectionner un édifice (optionnel)",
+    "milestoneLabel": "Jalon",
+    "milestonePlaceholder": "Sélectionner un jalon (optionnel)",
+    "scheduleTaskLabel": "Tâche du planning",
+    "scheduleTaskPlaceholder": "Sélectionner une tâche du planning (optionnel)",
+    "existingFiles": "Photos existantes",
+    "filesSelected": "photos sélectionnées",
+    "newFiles": "Ajouter de nouvelles photos",
+    "photosLabel": "Photos",
+    "progressPercentLabel": "Avancement (%)",
+    "progressPercentPlaceholder": "0–100",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Saisir le titre de la mise à jour",
+    "updateDateLabel": "Date de mise à jour",
+    "updateDatePlaceholder": "Sélectionner une date"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Modifier la mise à jour d’avancement des travaux",
+    "title": "Modifier la mise à jour chantier"
+  },
+  "generalInfo": "Détails de la mise à jour",
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/editConstructionUpdate.tsx",
+  "title": "Modifier la mise à jour chantier"
+}

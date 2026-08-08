@@ -1,13 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx",
-  "title": "Bau timeline",
-  "description": "Fortschritt milestones ordered von aktualisieren datum. Hover a point für details, click bis offen die full protokoll.",
-  "emptyTitle": "Keine updates yet",
-  "emptyDescription": "A bau aktualisieren bis start gebäude die timeline. hinzufügen",
-  "failTitle": "Konnte nicht laden timeline",
-  "failDescription": "Something went wrong während laden updates. Click bis retry.",
-  "noPhoto": "Keine foto",
-  "hint": "Hover für preview · click bis offen details",
-  "updatesCount": "updates",
+  "title": "Bau-Zeitachse",
+  "description": "Fortschritts-Meilensteine nach Aktualisierungsdatum sortiert. Zeigen Sie auf einen Punkt für Details, klicken Sie, um den vollständigen Datensatz zu öffnen.",
+  "emptyTitle": "Noch keine Aktualisierungen",
+  "emptyDescription": "Fügen Sie einen Baufortschritt hinzu, um die Zeitachse zu starten.",
+  "failTitle": "Zeitachse konnte nicht geladen werden",
+  "failDescription": "Beim Laden der Aktualisierungen ist etwas schiefgelaufen. Klicken Sie, um es erneut zu versuchen.",
+  "noPhoto": "Kein Foto",
+  "hint": "Für Vorschau zeigen · klicken zum Öffnen der Details",
+  "updatesCount": "Aktualisierungen",
   "loading": "Laden…"
 }

@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/createConstructionUpdate.tsx",
+  "title": "Aggiungi aggiornamento cantiere",
+  "description": "Registra un nuovo aggiornamento di avanzamento lavori",
+  "generalInfo": "Dettagli aggiornamento",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio (opzionale)",
+    "milestoneLabel": "Milestone",
+    "milestonePlaceholder": "Seleziona milestone (opzionale)",
+    "scheduleTaskLabel": "Attività di programma",
+    "scheduleTaskPlaceholder": "Seleziona attività di programma (opzionale)",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Inserisci il titolo dell’aggiornamento",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrivi l’avanzamento dei lavori",
+    "progressPercentLabel": "Avanzamento (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Data aggiornamento",
+    "updateDatePlaceholder": "Seleziona data",
+    "photosLabel": "Foto",
+    "addFile": "Aggiungi foto",
+    "filesSelected": "foto selezionate",
+    "existingFiles": "Foto esistenti",
+    "newFiles": "Aggiungi nuove foto"
+  },
+  "axios": {
+    "start": { "title": "Salvataggio aggiornamento", "time": 3000 },
+    "success": { "title": "Aggiornamento cantiere salvato!", "time": 3000 },
+    "error": { "title": "Impossibile salvare l’aggiornamento, riprova!", "time": 3000 }
+  },
+  "formHeader": { "title": "Aggiungi aggiornamento cantiere", "description": "Registra un nuovo aggiornamento di avanzamento lavori" },
+  "formButtons": { "cancel": "Annulla", "submit": "Salva aggiornamento" }
+}

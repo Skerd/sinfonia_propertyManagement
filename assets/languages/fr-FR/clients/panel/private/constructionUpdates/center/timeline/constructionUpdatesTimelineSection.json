@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx",
+  "title": "Chronologie du chantier",
+  "description": "Jalons d’avancement classés par date de mise à jour. Survolez un point pour les détails, cliquez pour ouvrir l’enregistrement.",
+  "emptyTitle": "Aucune mise à jour pour le moment",
+  "emptyDescription": "Ajoutez une mise à jour chantier pour commencer la chronologie.",
+  "failTitle": "Impossible de charger la chronologie",
+  "failDescription": "Une erreur est survenue lors du chargement des mises à jour. Cliquez pour réessayer.",
+  "noPhoto": "Aucune photo",
+  "hint": "Survolez pour l’aperçu · cliquez pour ouvrir les détails",
+  "updatesCount": "mises à jour",
+  "loading": "Chargement…"
+}

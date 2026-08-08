@@ -1,12 +1,13 @@
 import {compose} from "redux";
-import {useState} from "react";
+import {useMemo, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconBackhoe} from "@tabler/icons-react";
-import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {buildPageTitle} from "@coreModule/helpers/general";
+import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import type {ConstructionUpdate} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructionUpdate/constructionUpdate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ConstructionUpdateCard from "@propertyManagementModule/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx";
@@ -28,12 +29,30 @@ function buildEditPath(update: ConstructionUpdate) {
 }
 
 function AllConstructionUpdates({resolveLanguageKey, projectId, projectName}: AllConstructionUpdatesProps) {
-    const extraFilters = projectId ? {projectId} : undefined;
+    const extraParams = useMemo(() => (projectId ? {project: projectId} : undefined), [projectId]);
     const headerTitle = buildPageTitle(
         String(resolveLanguageKey("title")),
         projectName ? [projectName] : [],
     );
     const [sheetUpdate, setSheetUpdate] = useState<ConstructionUpdate | null>(null);
+
+    const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+            asExtraParam: true,
+        },
+        {
+            field: "edifice",
+            label: resolveLanguageKey("fields.edifice") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/edifice/select",
+            dependsOn: "project",
+            asExtraParam: true,
+        },
+    ], [resolveLanguageKey]);
 
     return (
         <>
@@ -49,7 +68,8 @@ function AllConstructionUpdates({resolveLanguageKey, projectId, projectName}: Al
                 resolveLanguageKey={resolveLanguageKey}
                 sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx"
                 cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
-                extraFilters={extraFilters}
+                extraParams={extraParams}
+                quickFilters={quickFilters}
                 headerTitle={headerTitle}
                 aboveToolbar={(
                     <ConstructionUpdatesTimelineSection

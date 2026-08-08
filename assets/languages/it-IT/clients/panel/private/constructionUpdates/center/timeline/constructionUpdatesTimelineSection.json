@@ -1,0 +1,13 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx",
+  "title": "Cronologia cantiere",
+  "description": "Milestone di avanzamento ordinate per data aggiornamento. Passa il cursore su un punto per i dettagli, clicca per aprire il record.",
+  "emptyTitle": "Nessun aggiornamento ancora",
+  "emptyDescription": "Aggiungi un aggiornamento cantiere per avviare la cronologia.",
+  "failTitle": "Impossibile caricare la cronologia",
+  "failDescription": "Si è verificato un errore durante il caricamento degli aggiornamenti. Clicca per riprovare.",
+  "noPhoto": "Nessuna foto",
+  "hint": "Passa il cursore per l’anteprima · clicca per aprire i dettagli",
+  "updatesCount": "aggiornamenti",
+  "loading": "Caricamento…"
+}

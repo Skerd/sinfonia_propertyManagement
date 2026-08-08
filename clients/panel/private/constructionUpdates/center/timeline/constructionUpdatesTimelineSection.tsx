@@ -1,7 +1,9 @@
 import {compose} from "redux";
 import {useCallback, useEffect, useMemo, useState} from "react";
+import {useSearchParams} from "react-router-dom";
 import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {readQuickFiltersFromUrl} from "@coreModule/helpers/hooks/useListUrlState.ts";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import SimpleError from "@coreModule/components/custom/errorViewWrapper.tsx";
@@ -25,11 +27,13 @@ import {IconRoute} from "@tabler/icons-react";
 import {Building, CalendarDays, ChevronRight, FolderOpen} from "lucide-react";
 
 type ConstructionUpdatesTimelineSectionProps = WithLanguageType & {
+    /** Route-scoped project (e.g. navigated from a project page). Overridden by quick filter. */
     projectId?: string;
     onSelectUpdate?: (update: ConstructionUpdate) => void;
 };
 
-const NODE_WIDTH_REM = 7;
+const NODE_MIN_WIDTH_REM = 10;
+const QUICK_FILTER_FIELDS = ["project", "edifice"] as const;
 
 function formatDate(value?: string) {
     if (!value) return "";
@@ -44,10 +48,12 @@ function formatDate(value?: string) {
     }
 }
 
+const NODE_SIZE_REM = 2.75; // h-11 / w-11
+
 function progressTone(percent: number) {
-    if (percent >= 75) return "border-success/50 bg-success/10 text-success";
-    if (percent >= 40) return "border-warning/50 bg-warning/10 text-warning";
-    return "border-info/50 bg-info/10 text-info";
+    if (percent >= 75) return "border-success text-success ring-4 ring-success/15";
+    if (percent >= 40) return "border-warning text-warning ring-4 ring-warning/15";
+    return "border-info text-info ring-4 ring-info/15";
 }
 
 function TimelinePreview({
@@ -104,10 +110,19 @@ function ConstructionUpdatesTimelineSection({
     onSelectUpdate,
     resolveLanguageKey,
 }: ConstructionUpdatesTimelineSectionProps) {
+    const [searchParams] = useSearchParams();
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [updates, setUpdates] = useState<ConstructionUpdate[]>([]);
+
+    const {filterProject, filterEdifice} = useMemo(() => {
+        const fromUrl = readQuickFiltersFromUrl(searchParams, [...QUICK_FILTER_FIELDS]);
+        return {
+            filterProject: fromUrl.project ?? projectId ?? undefined,
+            filterEdifice: fromUrl.edifice ?? undefined,
+        };
+    }, [searchParams, projectId]);
 
     const fetchTimeline = useCallback(async () => {
         setLoading(true);
@@ -119,7 +134,8 @@ function ConstructionUpdatesTimelineSection({
                 sortBy: "updateDate",
                 sortOrder: "asc",
             };
-            if (projectId) body.projectId = projectId;
+            if (filterProject) body.project = filterProject;
+            if (filterEdifice) body.edifice = filterEdifice;
 
             const res = await apiClient.post<TableResponse<ConstructionUpdate>>(
                 "/api/realEstate/constructionUpdate",
@@ -135,7 +151,7 @@ function ConstructionUpdatesTimelineSection({
         } finally {
             setLoading(false);
         }
-    }, [projectId]);
+    }, [filterProject, filterEdifice]);
 
     useEffect(() => {
         void fetchTimeline();
@@ -148,6 +164,7 @@ function ConstructionUpdatesTimelineSection({
     }, [updates]);
 
     const latestProgress = updates[updates.length - 1]?.progressPercent;
+    const showContext = !filterEdifice;
 
     return (
         <Collapsible open={open} onOpenChange={setOpen} className="group/timeline mb-3">
@@ -227,60 +244,75 @@ function ConstructionUpdatesTimelineSection({
                             <TooltipProvider delayDuration={200}>
                                 <div className="overflow-x-auto pb-1">
                                     <div
-                                        className="relative mx-auto flex min-w-max items-start pt-1"
-                                        style={{minWidth: `${updates.length * NODE_WIDTH_REM}rem`}}
+                                        className="relative flex w-full items-start pt-1"
+                                        style={{minWidth: `${updates.length * NODE_MIN_WIDTH_REM}rem`}}
                                     >
-                                        <div
-                                            className="pointer-events-none absolute top-[1.375rem] h-0.5 rounded-full bg-gradient-to-r from-border via-primary/35 to-border"
-                                            style={{
-                                                left: `${NODE_WIDTH_REM / 2}rem`,
-                                                right: `${NODE_WIDTH_REM / 2}rem`,
-                                            }}
-                                        />
+                                        {updates.map((update, index) => {
+                                            const contextLabel =
+                                                update.edifice?.name ?? update.project?.name;
+                                            const isLast = index === updates.length - 1;
 
-                                        {updates.map((update) => (
-                                            <div
-                                                key={update._id}
-                                                className="relative flex shrink-0 flex-col items-center"
-                                                style={{width: `${NODE_WIDTH_REM}rem`}}
-                                            >
-                                                <Tooltip>
-                                                    <TooltipTrigger asChild>
-                                                        <button
-                                                            type="button"
-                                                            className={cn(
-                                                                "relative z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 text-xs font-bold shadow-sm outline-none",
-                                                                "transition-transform hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-ring",
-                                                                progressTone(update.progressPercent ?? 0),
-                                                            )}
-                                                            onClick={() => onSelectUpdate?.(update)}
-                                                            aria-label={update.title}
-                                                        >
-                                                            {update.progressPercent}%
-                                                        </button>
-                                                    </TooltipTrigger>
-                                                    <TooltipContent
-                                                        side="top"
-                                                        sideOffset={10}
-                                                        className="w-auto max-w-none border bg-card p-0 text-card-foreground shadow-xl [&>svg]:hidden"
-                                                    >
-                                                        <TimelinePreview
-                                                            update={update}
-                                                            resolveLanguageKey={resolveLanguageKey}
+                                            return (
+                                                <div
+                                                    key={update._id}
+                                                    className="relative flex min-w-0 flex-1 flex-col items-center"
+                                                    style={{minWidth: `${NODE_MIN_WIDTH_REM}rem`}}
+                                                >
+                                                    {!isLast && (
+                                                        <div
+                                                            className="pointer-events-none absolute z-0 h-0.5 bg-gradient-to-r from-primary/40 to-border"
+                                                            style={{
+                                                                top: `${NODE_SIZE_REM / 2}rem`,
+                                                                left: `calc(50% + ${NODE_SIZE_REM / 2}rem)`,
+                                                                width: `calc(100% - ${NODE_SIZE_REM}rem)`,
+                                                            }}
+                                                            aria-hidden
                                                         />
-                                                    </TooltipContent>
-                                                </Tooltip>
+                                                    )}
 
-                                                <div className="mt-3 w-full px-1 text-center">
-                                                    <p className="text-2xs font-medium text-muted-foreground">
-                                                        {formatDate(update.updateDate)}
-                                                    </p>
-                                                    <p className="mt-0.5 text-xs font-semibold leading-snug line-clamp-2">
-                                                        {update.title}
-                                                    </p>
+                                                    <Tooltip>
+                                                        <TooltipTrigger asChild>
+                                                            <button
+                                                                type="button"
+                                                                className={cn(
+                                                                    "relative z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 bg-card text-xs font-bold shadow-sm outline-none",
+                                                                    "transition-transform hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-ring",
+                                                                    progressTone(update.progressPercent ?? 0),
+                                                                )}
+                                                                onClick={() => onSelectUpdate?.(update)}
+                                                                aria-label={update.title}
+                                                            >
+                                                                {update.progressPercent}%
+                                                            </button>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent
+                                                            side="top"
+                                                            sideOffset={10}
+                                                            className="w-auto max-w-none border bg-card p-0 text-card-foreground shadow-xl [&>svg]:hidden"
+                                                        >
+                                                            <TimelinePreview
+                                                                update={update}
+                                                                resolveLanguageKey={resolveLanguageKey}
+                                                            />
+                                                        </TooltipContent>
+                                                    </Tooltip>
+
+                                                    <div className="mt-3 flex h-[4.25rem] w-full flex-col items-center px-2 text-center">
+                                                        <p className="text-2xs font-medium tabular-nums text-muted-foreground">
+                                                            {formatDate(update.updateDate)}
+                                                        </p>
+                                                        <p className="mt-0.5 w-full text-xs font-semibold leading-snug line-clamp-2">
+                                                            {update.title}
+                                                        </p>
+                                                        {showContext && contextLabel && (
+                                                            <p className="mt-0.5 w-full text-2xs text-muted-foreground line-clamp-1">
+                                                                {contextLabel}
+                                                            </p>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 </div>
 
