@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/groupDashboard/groupDashboard.tsx",
+  "title": "Dashboard di gruppo",
+  "hqDescription": "KPI aggregati di tutte le filiali.",
+  "branchDescription": "KPI di questa azienda e delle filiali sorelle.",
+  "computedAt": "Calcolato il",
+  "groupTotalsTitle": "Totali di gruppo",
+  "branchBreakdownTitle": "Dettaglio per filiale",
+  "branchColumn": "Filiale",
+  "kpiTotalUnits": "Unità totali",
+  "kpiAvailableUnits": "Disponibili",
+  "kpiSoldUnits": "Vendute",
+  "kpiRentedUnits": "Affittate",
+  "kpiRevenue": "Ricavi",
+  "kpiCommissions": "Commissioni",
+  "kpiActiveLeases": "Contratti attivi",
+  "kpiOpenSnags": "Difetti aperti",
+  "noBranchesTitle": "Nessuna filiale trovata",
+  "noBranchesDescription": "Crea aziende figlie impostando questa organizzazione come azienda madre per confrontare i KPI tra le filiali.",
+  "failTitle": "Impossibile caricare la dashboard di gruppo",
+  "failDescription": "Si è verificato un errore durante il recupero dei KPI di gruppo. Riprova."
+}

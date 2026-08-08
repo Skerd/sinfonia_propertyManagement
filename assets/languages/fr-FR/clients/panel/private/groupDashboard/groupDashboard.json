@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/groupDashboard/groupDashboard.tsx",
+  "title": "Tableau de bord du groupe",
+  "hqDescription": "Indicateurs agrégés de toutes les filiales.",
+  "branchDescription": "Indicateurs de cette société et de ses filiales sœurs.",
+  "computedAt": "Calculé le",
+  "groupTotalsTitle": "Totaux du groupe",
+  "branchBreakdownTitle": "Répartition par filiale",
+  "branchColumn": "Filiale",
+  "kpiTotalUnits": "Unités totales",
+  "kpiAvailableUnits": "Disponibles",
+  "kpiSoldUnits": "Vendues",
+  "kpiRentedUnits": "Louées",
+  "kpiRevenue": "Chiffre d’affaires",
+  "kpiCommissions": "Commissions",
+  "kpiActiveLeases": "Baux actifs",
+  "kpiOpenSnags": "Réserves ouvertes",
+  "noBranchesTitle": "Aucune filiale trouvée",
+  "noBranchesDescription": "Créez des sociétés filles en définissant cette organisation comme société mère pour comparer les indicateurs entre filiales.",
+  "failTitle": "Impossible de charger le tableau de bord du groupe",
+  "failDescription": "Une erreur est survenue lors de la récupération des indicateurs du groupe. Veuillez réessayer."
+}
