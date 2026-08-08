@@ -95,18 +95,21 @@ function PaymentCalendarTab({
     const [calendarMonth, setCalendarMonth] = useState(() => new Date());
     const [selectedDay, setSelectedDay] = useState<Date | undefined>(() => new Date());
 
-    const calendarFetchOpts = useMemo(
-        () => ({
-            unitId: embeddedUnitId?.trim()
-                ? embeddedUnitId.trim()
-                : appliedFinanceFilters.unitId?.trim() || undefined,
+    const calendarFetchOpts = useMemo(() => {
+        const unit = embeddedUnitId?.trim()
+            ? embeddedUnitId.trim()
+            : appliedFinanceFilters.unit?.trim() || undefined;
+        return {
+            unit,
+            project: unit ? undefined : (appliedFinanceFilters.project?.trim() || undefined),
+            edifice: unit ? undefined : (appliedFinanceFilters.edifice?.trim() || undefined),
+            floor: unit ? undefined : (appliedFinanceFilters.floor?.trim() || undefined),
             verificationStatus: appliedFinanceFilters.verificationStatus?.trim() || undefined,
             paymentStatus: appliedFinanceFilters.paymentStatus?.trim() || undefined,
             vendorContains: appliedFinanceFilters.vendorContains,
             purchasePersonId: appliedFinanceFilters.purchasePersonId,
-        }),
-        [embeddedUnitId, appliedFinanceFilters],
-    );
+        };
+    }, [embeddedUnitId, appliedFinanceFilters]);
 
     const { rows, loading, error, truncated } = useFinanceCalendarMonth(calendarMonth, calendarFetchOpts);
 

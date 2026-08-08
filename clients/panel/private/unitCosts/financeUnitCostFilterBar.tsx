@@ -11,7 +11,10 @@ import {
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.constants.ts";
 
 export type FinanceToolbarValues = {
-    unitId: string;
+    project: string;
+    edifice: string;
+    floor: string;
+    unit: string;
     verificationStatus: string;
     paymentStatus: string;
     vendorContains: string;
@@ -20,7 +23,10 @@ export type FinanceToolbarValues = {
 
 export function emptyFinanceToolbarValues(): FinanceToolbarValues {
     return {
-        unitId: "",
+        project: "",
+        edifice: "",
+        floor: "",
+        unit: "",
         verificationStatus: "",
         paymentStatus: "",
         vendorContains: "",
@@ -34,9 +40,26 @@ export type FinanceUnitCostFilterBarProps = {
     onApply: () => void;
     onClear: () => void;
     resolveLanguageKey: ResolveLanguageKey;
-    /** When set (embedded unitCosts), hide unit selector and omit unit from toolbar state. */
+    /** When set (embedded unitCosts), hide hierarchy selectors — scope is fixed to that unit. */
     lockedUnitId?: string;
 };
+
+function depFilters(field: string, parents: Array<{field: string; value: string}>) {
+    if (parents.length === 0) return undefined;
+    return {
+        filters: {
+            id: `fin-${field}-deps`,
+            operator: "and" as const,
+            rules: parents.map((p) => ({
+                id: `fin-${field}-dep-${p.field}`,
+                field: p.field,
+                operator: "equals" as const,
+                value: p.value,
+            })),
+            groups: [],
+        },
+    };
+}
 
 function FinanceUnitCostFilterBar({
     value,
@@ -65,23 +88,101 @@ function FinanceUnitCostFilterBar({
 
     const patch = (partial: Partial<FinanceToolbarValues>) => onChange({ ...value, ...partial });
 
+    const projectParents: Array<{field: string; value: string}> = [];
+    const edificeParents = value.project ? [{field: "project", value: value.project}] : [];
+    const floorParents = [
+        ...(value.edifice ? [{field: "edifice", value: value.edifice}] : []),
+        ...(value.project ? [{field: "project", value: value.project}] : []),
+    ];
+    const unitParents = [
+        ...(value.floor ? [{field: "floor", value: value.floor}] : []),
+        ...(value.edifice ? [{field: "edifice", value: value.edifice}] : []),
+        ...(value.project ? [{field: "project", value: value.project}] : []),
+    ];
+
     return (
         <Card>
             <CardContent className="flex flex-wrap items-end gap-3 pt-4">
                 {!lockedUnitId && (
-                    <div className="flex min-w-[200px] max-w-[min(100vw,320px)] flex-1 flex-col gap-2">
-                        <Label className="text-muted-foreground">{str("financeFilters.unit")}</Label>
-                        <ApiSelect
-                            apiUrl="/api/realEstate/unit/select"
-                            method="POST"
-                            placeholder={str("financeFilters.unitPlaceholder")}
-                            value={value.unitId || undefined}
-                            onValueChange={(v: string) => patch({ unitId: v })}
-                            pageSize={50}
-                            className="w-full"
-                            resolveLanguageKey={resolveLanguageKey}
-                        />
-                    </div>
+                    <>
+                        <div className="flex min-w-[180px] max-w-[min(100vw,280px)] flex-1 flex-col gap-2">
+                            <Label className="text-muted-foreground">{str("financeFilters.project")}</Label>
+                            <ApiSelect
+                                key={`project-${value.project || "none"}`}
+                                apiUrl="/api/realEstate/project/select"
+                                postBody={depFilters("project", projectParents)}
+                                placeholder={str("financeFilters.projectPlaceholder")}
+                                value={value.project || undefined}
+                                onValueChange={(v: string) =>
+                                    patch({
+                                        project: v || "",
+                                        edifice: "",
+                                        floor: "",
+                                        unit: "",
+                                    })
+                                }
+                                pageSize={50}
+                                className="w-full"
+                                resolveLanguageKey={resolveLanguageKey}
+                            />
+                        </div>
+                        <div className="flex min-w-[180px] max-w-[min(100vw,280px)] flex-1 flex-col gap-2">
+                            <Label className="text-muted-foreground">{str("financeFilters.edifice")}</Label>
+                            <ApiSelect
+                                key={`edifice-${value.project || "none"}`}
+                                apiUrl="/api/realEstate/edifice/select"
+                                postBody={depFilters("edifice", edificeParents)}
+                                placeholder={str("financeFilters.edificePlaceholder")}
+                                value={value.edifice || undefined}
+                                onValueChange={(v: string) =>
+                                    patch({
+                                        edifice: v || "",
+                                        floor: "",
+                                        unit: "",
+                                    })
+                                }
+                                disabled={!value.project}
+                                pageSize={50}
+                                className="w-full"
+                                resolveLanguageKey={resolveLanguageKey}
+                            />
+                        </div>
+                        <div className="flex min-w-[160px] max-w-[min(100vw,240px)] flex-1 flex-col gap-2">
+                            <Label className="text-muted-foreground">{str("financeFilters.floor")}</Label>
+                            <ApiSelect
+                                key={`floor-${value.edifice || value.project || "none"}`}
+                                apiUrl="/api/realEstate/floor/select"
+                                postBody={depFilters("floor", floorParents)}
+                                placeholder={str("financeFilters.floorPlaceholder")}
+                                value={value.floor || undefined}
+                                onValueChange={(v: string) =>
+                                    patch({
+                                        floor: v || "",
+                                        unit: "",
+                                    })
+                                }
+                                disabled={!value.edifice && !value.project}
+                                pageSize={50}
+                                className="w-full"
+                                resolveLanguageKey={resolveLanguageKey}
+                            />
+                        </div>
+                        <div className="flex min-w-[180px] max-w-[min(100vw,280px)] flex-1 flex-col gap-2">
+                            <Label className="text-muted-foreground">{str("financeFilters.unit")}</Label>
+                            <ApiSelect
+                                key={`unit-${value.floor || value.edifice || value.project || "none"}`}
+                                apiUrl="/api/realEstate/unit/select"
+                                postBody={depFilters("unit", unitParents)}
+                                placeholder={str("financeFilters.unitPlaceholder")}
+                                value={value.unit || undefined}
+                                onValueChange={(v: string) => patch({ unit: v || "" })}
+                                disabled={!value.project && !value.edifice && !value.floor}
+                                pageSize={50}
+                                className="w-full"
+                                resolveLanguageKey={resolveLanguageKey}
+                            />
+                        </div>
+                    </>
                 )}
                 <div className="flex min-w-40 max-w-[min(100vw,240px)] flex-1 flex-col gap-2">
                     <Label className="text-muted-foreground">{str("financeFilters.verificationLabel")}</Label>
@@ -117,7 +218,6 @@ function FinanceUnitCostFilterBar({
                     <Label className="text-muted-foreground">{str("financeFilters.purchaserLabel")}</Label>
                     <ApiSelect
                         apiUrl="/api/company/users/select"
-                        method="POST"
                         postBody={{ administration: true }}
                         placeholder={str("financeFilters.purchaserPlaceholder")}
                         value={value.purchasePersonId || undefined}

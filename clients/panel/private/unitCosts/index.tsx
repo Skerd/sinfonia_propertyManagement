@@ -31,7 +31,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@coreModule/components
 const FINANCE_TAB_QUERY = "financeTab";
 
 /** Props merged into `CardAndTableView` POST body — kept in sync so clearing toolbar drops stale IDs. */
-const UNIT_COST_LIST_SYNC_KEYS = ["unitId", "verificationStatus", "paymentStatus"] as const;
+const UNIT_COST_LIST_SYNC_KEYS = [
+    "project",
+    "edifice",
+    "floor",
+    "unit",
+    "verificationStatus",
+    "paymentStatus",
+] as const;
 
 type AllUnitCostsProps = WithLanguageType & {
     unitId?: string;
@@ -112,8 +119,17 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
 
     const expenseExtraFilters = useMemo(() => {
         const next: Record<string, unknown> = {};
-        const resolvedUnitId = (unitId?.trim() || financeApplied.unitId?.trim()) ?? "";
-        if (resolvedUnitId) next.unitId = resolvedUnitId;
+        const resolvedUnit = (unitId?.trim() || financeApplied.unit?.trim()) ?? "";
+        if (resolvedUnit) {
+            next.unit = resolvedUnit;
+        } else {
+            const project = financeApplied.project?.trim();
+            if (project) next.project = project;
+            const edifice = financeApplied.edifice?.trim();
+            if (edifice) next.edifice = edifice;
+            const floor = financeApplied.floor?.trim();
+            if (floor) next.floor = floor;
+        }
         const verification = financeApplied.verificationStatus?.trim();
         if (verification) next.verificationStatus = verification;
         const paymentSt = financeApplied.paymentStatus?.trim();

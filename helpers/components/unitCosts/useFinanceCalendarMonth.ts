@@ -9,7 +9,10 @@ const PAGE_LIMIT = 200;
 export const FINANCE_CALENDAR_MAX_ROWS = 5000;
 
 export type FinanceCalendarFetchOptions = {
-    unitId?: string;
+    project?: string;
+    edifice?: string;
+    floor?: string;
+    unit?: string;
     verificationStatus?: string;
     paymentStatus?: string;
     vendorContains?: string;
@@ -29,7 +32,7 @@ function monthRangeYmd(month: Date): { start: string; end: string } {
 export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFetchOptions = {}) {
     const y = month.getFullYear();
     const mo = month.getMonth();
-    const { unitId, verificationStatus, paymentStatus, vendorContains, purchasePersonId } = options;
+    const { project, edifice, floor, unit, verificationStatus, paymentStatus, vendorContains, purchasePersonId } = options;
 
     const [rows, setRows] = useState<UnitCost[]>([]);
     const [total, setTotal] = useState<number>(0);
@@ -58,7 +61,13 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
                     sortOrder: "asc",
                     filter,
                 };
-                if (unitId) body.unitId = unitId;
+                if (unit) {
+                    body.unit = unit;
+                } else {
+                    if (project) body.project = project;
+                    if (edifice) body.edifice = edifice;
+                    if (floor) body.floor = floor;
+                }
                 if (verificationStatus) body.verificationStatus = verificationStatus;
                 if (paymentStatus) body.paymentStatus = paymentStatus;
 
@@ -84,7 +93,7 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
         } finally {
             setLoading(false);
         }
-    }, [y, mo, unitId, verificationStatus, paymentStatus, vendorContains, purchasePersonId]);
+    }, [y, mo, project, edifice, floor, unit, verificationStatus, paymentStatus, vendorContains, purchasePersonId]);
 
     useEffect(() => {
         load();

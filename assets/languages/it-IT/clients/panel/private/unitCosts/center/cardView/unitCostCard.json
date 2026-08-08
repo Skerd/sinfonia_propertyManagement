@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx",
+  "failedTitle": "Impossibile caricare il costo unità",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "purchaseDate": "Data acquisto",
+  "purchasePerson": "Acquistato da",
+  "documentSubtotal": "Subtotale",
+  "unitCostVerification": {
+    "pending_verification": "Verifica in sospeso",
+    "verified": "Verificato",
+    "rejected": "Rifiutato",
+    "needs_revision": "Revisione necessaria"
+  },
+  "unitCostPayment": {
+    "unpaid": "Non pagato",
+    "partially_paid": "Parzialmente pagato",
+    "paid": "Pagato",
+    "waived": "Annullato",
+    "disputed": "Contestato"
+  },
+  "invoiceNumber": "Fattura n.",
+  "vendorName": "Fornitore",
+  "tag": "Tag",
+  "relatedModificationRequest": "Richiesta di modifica"
+}
