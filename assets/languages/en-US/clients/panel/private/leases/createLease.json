@@ -16,14 +16,30 @@
     "depositPaidLabel": "Deposit Paid",
     "notesLabel": "Notes",
     "contractMediaLabel": "Contract Document",
+    "addFile": "Add file",
     "existingFiles": "Current file",
     "newFiles": "New file"
   },
   "axios": {
-    "start": { "title": "Creating lease", "time": 3000 },
-    "success": { "title": "Lease successfully created!", "time": 3000 },
-    "error": { "title": "Lease could not be created, please try again!", "time": 3000 }
+    "start": {
+      "title": "Creating lease",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lease successfully created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lease could not be created, please try again!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Create Lease", "description": "Register a new rental lease agreement" },
-  "formButtons": { "cancel": "Cancel", "submit": "Create Lease" }
+  "formHeader": {
+    "title": "Create Lease",
+    "description": "Register a new rental lease agreement"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Lease"
+  }
 }

@@ -5,7 +5,7 @@
   "createRentalPayment": "Zahlung erfassen",
   "noData": "Keine Mietzahlungen gefunden",
   "failTitle": "Mietzahlungen konnten nicht geladen werden",
-  "failDescription": "Beim Laden der Mietzahlungen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "failDescription": "Beim Laden der Mietzahlungen ist ein Fehler aufgetreten. Bitte erneut versuchen.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "amount": "Betrag",

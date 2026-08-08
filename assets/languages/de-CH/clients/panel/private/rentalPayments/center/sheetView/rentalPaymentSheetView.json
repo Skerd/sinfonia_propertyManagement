@@ -1,10 +1,16 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx",
-  "rentalPayment": "Rent zahlung",
+  "rentalPayment": "Mietzahlung",
   "overview": "Übersicht",
   "status": "Status",
-  "dueDate": "Fälligkeitsdatum",
+  "dueDate": "Fälligkeit",
   "amount": "Betrag",
+  "statuses": {
+    "pending": "Ausstehend",
+    "paid": "Bezahlt",
+    "overdue": "Überfällig",
+    "waived": "Erlassen"
+  },
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",
   "updatedAt": "Aktualisiert am",

@@ -13,35 +13,36 @@
       "title": "Zahlung erfolgreich aktualisiert!"
     }
   },
-  "editDescription": "Aktualisieren miete zahlung details",
+  "editDescription": "Mietzahlungsdetails aktualisieren",
   "editTitle": "Mietzahlung bearbeiten",
-  "errorDescription": "Beim Laden von die miete zahlung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "errorTitle": "Mietzahlung konnten nicht geladen werden",
+  "errorDescription": "Beim Laden der Mietzahlung ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+  "errorTitle": "Mietzahlung konnte nicht geladen werden",
   "form": {
-    "_idLabel": "Protokoll ID",
+    "_idLabel": "Datensatz-ID",
     "amountLabel": "Betrag",
     "currencyLabel": "Währung",
     "dueDateLabel": "Fälligkeit",
-    "existingFiles": "Current datei",
+    "addFile": "Datei hinzufügen",
+    "existingFiles": "Aktuelle Datei",
     "leaseLabel": "Mietvertrag",
     "leasePlaceholder": "Mietvertrag auswählen",
-    "newFiles": "Neu datei",
+    "newFiles": "Neue Datei",
     "notesLabel": "Notizen",
-    "paidAmountLabel": "Bezahlt Betrag",
-    "paidDateLabel": "Zahlung Datum",
-    "receiptMediaLabel": "Zahlung Receipt",
+    "paidAmountLabel": "Bezahlter Betrag",
+    "paidDateLabel": "Zahlungsdatum",
+    "receiptMediaLabel": "Zahlungsbeleg",
     "statusLabel": "Status",
     "unitLabel": "Einheit"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Speichern Änderungen"
+    "submit": "Änderungen speichern"
   },
   "formHeader": {
-    "description": "Aktualisieren miete zahlung details",
+    "description": "Mietzahlungsdetails aktualisieren",
     "title": "Mietzahlung bearbeiten"
   },
-  "generalInfo": "Zahlung Details",
+  "generalInfo": "Zahlungsdetails",
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
   "title": "Mietzahlung bearbeiten"
 }

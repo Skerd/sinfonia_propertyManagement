@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
+  "title": "Registra pagamento affitto",
+  "description": "Registra un nuovo pagamento affitto",
+  "generalInfo": "Dettagli pagamento",
+  "form": {
+    "leaseLabel": "Contratto",
+    "leasePlaceholder": "Seleziona contratto",
+    "unitLabel": "Unità",
+    "dueDateLabel": "Data di scadenza",
+    "amountLabel": "Importo",
+    "currencyLabel": "Valuta",
+    "statusLabel": "Stato",
+    "notesLabel": "Note",
+    "receiptMediaLabel": "Ricevuta di pagamento",
+    "addFile": "Aggiungi file",
+    "existingFiles": "File attuale",
+    "newFiles": "Nuovo file"
+  },
+  "axios": {
+    "start": {
+      "title": "Registrazione pagamento",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pagamento registrato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile registrare il pagamento, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Registra pagamento affitto",
+    "description": "Registra un nuovo pagamento affitto"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Registra pagamento"
+  }
+}

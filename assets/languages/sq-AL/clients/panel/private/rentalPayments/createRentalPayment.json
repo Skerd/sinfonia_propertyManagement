@@ -13,14 +13,30 @@
     "statusLabel": "Statusi",
     "notesLabel": "Shënime",
     "receiptMediaLabel": "Faturë / Dëshmi pagese",
+    "addFile": "Shto skedar",
     "existingFiles": "Skedari aktual",
     "newFiles": "Skedar i ri"
   },
   "axios": {
-    "start": { "title": "Duke regjistruar pagesën", "time": 3000 },
-    "success": { "title": "Pagesa u regjistrua me sukses!", "time": 3000 },
-    "error": { "title": "Pagesa nuk u regjistrua, ju lutemi provoni sërish!", "time": 3000 }
+    "start": {
+      "title": "Duke regjistruar pagesën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pagesa u regjistrua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Pagesa nuk u regjistrua, ju lutemi provoni sërish!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Regjistro Pagesë Qiraje", "description": "Regjistro një pagesë të re qiraje" },
-  "formButtons": { "cancel": "Anulo", "submit": "Regjistro Pagesën" }
+  "formHeader": {
+    "title": "Regjistro Pagesë Qiraje",
+    "description": "Regjistro një pagesë të re qiraje"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Regjistro Pagesën"
+  }
 }

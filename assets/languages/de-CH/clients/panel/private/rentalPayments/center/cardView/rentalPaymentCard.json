@@ -6,13 +6,13 @@
     "unit": "Einheit",
     "lease": "Mietvertrag",
     "dueDate": "Fälligkeit",
-    "paidDate": "Bezahlt Datum",
+    "paidDate": "Zahlungsdatum",
     "!enums": {
       "status": {
         "pending": "Ausstehend",
         "paid": "Bezahlt",
-        "overdue": "Overdue",
-        "waived": "Waived"
+        "overdue": "Überfällig",
+        "waived": "Erlassen"
       }
     }
   }

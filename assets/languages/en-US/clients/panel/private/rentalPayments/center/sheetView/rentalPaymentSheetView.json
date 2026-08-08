@@ -5,6 +5,12 @@
   "status": "Status",
   "dueDate": "Due date",
   "amount": "Amount",
+  "statuses": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "overdue": "Overdue",
+    "waived": "Waived"
+  },
   "lifecycle": "Lifecycle",
   "createdAt": "Created at",
   "updatedAt": "Updated at",

@@ -5,6 +5,12 @@
   "status": "Statusi",
   "dueDate": "Afati",
   "amount": "Shuma",
+  "statuses": {
+    "pending": "Në pritje",
+    "paid": "Paguar",
+    "overdue": "E vonuar",
+    "waived": "Hequr dorë"
+  },
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",

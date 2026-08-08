@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
+  "dialogTitle": "Segna pagamento come pagato",
+  "dialogDescription": "Registra il pagamento completo di {amount} per questa rata di affitto.",
+  "cancel": "Annulla",
+  "submit": "Segna pagato"
+}

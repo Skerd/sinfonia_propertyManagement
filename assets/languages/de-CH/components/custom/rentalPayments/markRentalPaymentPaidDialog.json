@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
-  "dialogTitle": "Mark zahlung bezahlt",
-  "dialogDescription": "Protokoll full zahlung von {betrag} für diese rent rate.",
+  "dialogTitle": "Zahlung als bezahlt markieren",
+  "dialogDescription": "Vollständige Zahlung von {amount} für diese Mietrate erfassen.",
   "cancel": "Abbrechen",
-  "submit": "Mark bezahlt"
+  "submit": "Als bezahlt markieren"
 }

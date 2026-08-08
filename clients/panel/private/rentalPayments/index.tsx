@@ -36,7 +36,19 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
     );
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => {
-        if (leaseId) return [];
+        const statusFilter: QuickFilterDef = {
+            field: "status",
+            label: resolveLanguageKey("fields.status") as string,
+            type: COLUMN_TYPE.ENUM,
+            asExtraParam: true,
+            enumValues: [
+                {value: "pending", label: resolveLanguageKey("fields.!enums.status.pending") as string},
+                {value: "paid", label: resolveLanguageKey("fields.!enums.status.paid") as string},
+                {value: "overdue", label: resolveLanguageKey("fields.!enums.status.overdue") as string},
+                {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived") as string},
+            ],
+        };
+        if (leaseId) return [statusFilter];
         return [
             {
                 field: "project",
@@ -69,16 +81,13 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 dependsOn: ["floor", "edifice", "project"],
             },
             {
-                field: "status",
-                label: resolveLanguageKey("fields.status") as string,
-                type: COLUMN_TYPE.ENUM,
-                enumValues: [
-                    {value: "pending", label: resolveLanguageKey("fields.!enums.status.pending") as string},
-                    {value: "paid", label: resolveLanguageKey("fields.!enums.status.paid") as string},
-                    {value: "overdue", label: resolveLanguageKey("fields.!enums.status.overdue") as string},
-                    {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived") as string},
-                ],
+                field: "lease",
+                label: resolveLanguageKey("fields.lease") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/realEstate/lease/select",
+                asExtraParam: true,
             },
+            statusFilter,
         ];
     }, [resolveLanguageKey, leaseId]);
 

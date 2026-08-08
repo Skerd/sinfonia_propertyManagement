@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx",
+  "rentalPayment": "Pagamento affitto",
+  "overview": "Panoramica",
+  "status": "Stato",
+  "dueDate": "Data di scadenza",
+  "amount": "Importo",
+  "statuses": {
+    "pending": "In sospeso",
+    "paid": "Pagato",
+    "overdue": "In ritardo",
+    "waived": "Annullato"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da"
+}

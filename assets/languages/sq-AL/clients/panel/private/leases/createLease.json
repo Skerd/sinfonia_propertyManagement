@@ -16,14 +16,30 @@
     "depositPaidLabel": "Depozita paguar",
     "notesLabel": "Shënime",
     "contractMediaLabel": "Dokumenti i kontratës",
+    "addFile": "Shto skedar",
     "existingFiles": "Skedari aktual",
     "newFiles": "Skedar i ri"
   },
   "axios": {
-    "start": { "title": "Duke krijuar kontratën", "time": 3000 },
-    "success": { "title": "Kontrata u krijua me sukses!", "time": 3000 },
-    "error": { "title": "Kontrata nuk u krijua, ju lutemi provoni sërish!", "time": 3000 }
+    "start": {
+      "title": "Duke krijuar kontratën",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kontrata u krijua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kontrata nuk u krijua, ju lutemi provoni sërish!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Krijo Kontratë Qiraje", "description": "Regjistro një marrëveshje të re qiraje" },
-  "formButtons": { "cancel": "Anulo", "submit": "Krijo Kontratën" }
+  "formHeader": {
+    "title": "Krijo Kontratë Qiraje",
+    "description": "Regjistro një marrëveshje të re qiraje"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Krijo Kontratën"
+  }
 }

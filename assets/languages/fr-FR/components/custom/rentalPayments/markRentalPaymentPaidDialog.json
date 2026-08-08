@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
+  "dialogTitle": "Marquer le paiement comme payé",
+  "dialogDescription": "Enregistrer le paiement intégral de {amount} pour cette échéance de loyer.",
+  "cancel": "Annuler",
+  "submit": "Marquer payé"
+}

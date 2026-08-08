@@ -1,0 +1,48 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Le paiement n’a pas pu être mis à jour, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Mise à jour du paiement"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Paiement mis à jour avec succès !"
+    }
+  },
+  "editDescription": "Mettre à jour les détails du loyer",
+  "editTitle": "Modifier le loyer",
+  "errorDescription": "Une erreur est survenue lors du chargement du loyer. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du loyer",
+  "form": {
+    "_idLabel": "Identifiant",
+    "amountLabel": "Montant",
+    "currencyLabel": "Devise",
+    "dueDateLabel": "Date d’échéance",
+    "addFile": "Ajouter un fichier",
+    "existingFiles": "Fichier actuel",
+    "leaseLabel": "Bail",
+    "leasePlaceholder": "Sélectionner un bail",
+    "newFiles": "Nouveau fichier",
+    "notesLabel": "Notes",
+    "paidAmountLabel": "Montant payé",
+    "paidDateLabel": "Date de paiement",
+    "receiptMediaLabel": "Reçu de paiement",
+    "statusLabel": "Statut",
+    "unitLabel": "Unité"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications"
+  },
+  "formHeader": {
+    "description": "Mettre à jour les détails du loyer",
+    "title": "Modifier le loyer"
+  },
+  "generalInfo": "Détails du paiement",
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
+  "title": "Modifier le loyer"
+}

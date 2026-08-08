@@ -1,0 +1,48 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Impossibile aggiornare il pagamento, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento pagamento"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Pagamento aggiornato con successo!"
+    }
+  },
+  "editDescription": "Aggiorna i dettagli del pagamento affitto",
+  "editTitle": "Modifica pagamento affitto",
+  "errorDescription": "Si è verificato un errore durante il caricamento del pagamento. Riprova.",
+  "errorTitle": "Impossibile caricare il pagamento",
+  "form": {
+    "_idLabel": "ID record",
+    "amountLabel": "Importo",
+    "currencyLabel": "Valuta",
+    "dueDateLabel": "Data di scadenza",
+    "addFile": "Aggiungi file",
+    "existingFiles": "File attuale",
+    "leaseLabel": "Contratto",
+    "leasePlaceholder": "Seleziona contratto",
+    "newFiles": "Nuovo file",
+    "notesLabel": "Note",
+    "paidAmountLabel": "Importo pagato",
+    "paidDateLabel": "Data pagamento",
+    "receiptMediaLabel": "Ricevuta di pagamento",
+    "statusLabel": "Stato",
+    "unitLabel": "Unità"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  },
+  "formHeader": {
+    "description": "Aggiorna i dettagli del pagamento affitto",
+    "title": "Modifica pagamento affitto"
+  },
+  "generalInfo": "Dettagli pagamento",
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
+  "title": "Modifica pagamento affitto"
+}

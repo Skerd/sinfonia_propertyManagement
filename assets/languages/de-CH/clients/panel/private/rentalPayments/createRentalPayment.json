@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Protokoll Miete Zahlung",
-  "description": "Protokoll a neu miete zahlung",
-  "generalInfo": "Zahlung Details",
+  "title": "Mietzahlung erfassen",
+  "description": "Neue Mietzahlung erfassen",
+  "generalInfo": "Zahlungsdetails",
   "form": {
     "leaseLabel": "Mietvertrag",
     "leasePlaceholder": "Mietvertrag auswählen",
@@ -12,30 +12,31 @@
     "currencyLabel": "Währung",
     "statusLabel": "Status",
     "notesLabel": "Notizen",
-    "receiptMediaLabel": "Zahlung Receipt",
-    "existingFiles": "Current datei",
-    "newFiles": "Neu datei"
+    "receiptMediaLabel": "Zahlungsbeleg",
+    "addFile": "Datei hinzufügen",
+    "existingFiles": "Aktuelle Datei",
+    "newFiles": "Neue Datei"
   },
   "axios": {
     "start": {
-      "title": "Recording zahlung",
+      "title": "Zahlung wird erfasst",
       "time": 3000
     },
     "success": {
-      "title": "Zahlung erfolgreich recorded!",
+      "title": "Zahlung erfolgreich erfasst!",
       "time": 3000
     },
     "error": {
-      "title": "Zahlung konnte nicht werden recorded, bitte versuchen erneut!",
+      "title": "Zahlung konnte nicht erfasst werden, bitte erneut versuchen!",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Protokoll Miete Zahlung",
-    "description": "Protokoll a neu miete zahlung"
+    "title": "Mietzahlung erfassen",
+    "description": "Neue Mietzahlung erfassen"
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Protokoll Zahlung"
+    "submit": "Zahlung erfassen"
   }
 }

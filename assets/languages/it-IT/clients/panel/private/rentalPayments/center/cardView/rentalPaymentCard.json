@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx",
+  "statusLabel": "Stato",
+  "fields": {
+    "amount": "Importo",
+    "unit": "Unità",
+    "lease": "Contratto",
+    "dueDate": "Data di scadenza",
+    "paidDate": "Data pagamento",
+    "!enums": {
+      "status": {
+        "pending": "In sospeso",
+        "paid": "Pagato",
+        "overdue": "In ritardo",
+        "waived": "Annullato"
+      }
+    }
+  }
+}

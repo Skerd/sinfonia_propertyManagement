@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
+  "title": "Enregistrer un loyer",
+  "description": "Enregistrer un nouveau paiement de loyer",
+  "generalInfo": "Détails du paiement",
+  "form": {
+    "leaseLabel": "Bail",
+    "leasePlaceholder": "Sélectionner un bail",
+    "unitLabel": "Unité",
+    "dueDateLabel": "Date d’échéance",
+    "amountLabel": "Montant",
+    "currencyLabel": "Devise",
+    "statusLabel": "Statut",
+    "notesLabel": "Notes",
+    "receiptMediaLabel": "Reçu de paiement",
+    "addFile": "Ajouter un fichier",
+    "existingFiles": "Fichier actuel",
+    "newFiles": "Nouveau fichier"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement du paiement",
+      "time": 3000
+    },
+    "success": {
+      "title": "Paiement enregistré avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Le paiement n’a pas pu être enregistré, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Enregistrer un loyer",
+    "description": "Enregistrer un nouveau paiement de loyer"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer le paiement"
+  }
+}

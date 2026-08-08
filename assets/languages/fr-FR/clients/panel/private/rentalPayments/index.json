@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Loyers",
   "description": "Paiements de loyer des locataires",
-  "createRentalPayment": "Enregistrer un paiement",
+  "createRentalPayment": "Enregistrer le paiement",
   "noData": "Aucun loyer trouvé",
   "failTitle": "Échec du chargement des loyers",
   "failDescription": "Une erreur est survenue lors du chargement des loyers. Veuillez réessayer.",
