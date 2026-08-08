@@ -38,9 +38,39 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
     const createPath = buildUrlWithExistingParams(window.location.href, "/realEstate/sales/create");
 
     const extraFilters = useMemo(() => (unitId ? {unit: unitId} : undefined), [unitId]);
-    const extraParams = useMemo(() => (edificeId ? {edificeId} : undefined), [edificeId]);
+    const extraParams = useMemo(() => (edificeId ? {edifice: edificeId} : undefined), [edificeId]);
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+            asExtraParam: true,
+        },
+        {
+            field: "edifice",
+            label: resolveLanguageKey("fields.edifice") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/edifice/select",
+            dependsOn: "project",
+            asExtraParam: true,
+        },
+        {
+            field: "floor",
+            label: resolveLanguageKey("fields.floor") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/floor/select",
+            dependsOn: ["edifice", "project"],
+            asExtraParam: true,
+        },
+        {
+            field: "unit",
+            label: resolveLanguageKey("fields.unit") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/unit/select",
+            dependsOn: ["floor", "edifice", "project"],
+        },
         {
             field: "paymentType",
             label: resolveLanguageKey("paymentType") as string,
@@ -48,6 +78,16 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
             enumValues: [
                 {value: "cash",         label: resolveLanguageKey("fields.!enums.paymentType.cash")         as string},
                 {value: "payment_plan", label: resolveLanguageKey("fields.!enums.paymentType.payment_plan") as string},
+            ],
+        },
+        {
+            field: "approvalStatus",
+            label: resolveLanguageKey("fields.approvalStatus") as string,
+            type: COLUMN_TYPE.ENUM,
+            enumValues: [
+                {value: "pending_approval", label: resolveLanguageKey("fields.!enums.approvalStatus.pending_approval") as string},
+                {value: "approved",         label: resolveLanguageKey("fields.!enums.approvalStatus.approved")         as string},
+                {value: "rejected",         label: resolveLanguageKey("fields.!enums.approvalStatus.rejected")         as string},
             ],
         },
     ], [resolveLanguageKey]);

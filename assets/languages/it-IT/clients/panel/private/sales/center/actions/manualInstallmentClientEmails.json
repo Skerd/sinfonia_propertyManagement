@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualInstallmentClientEmails.tsx",
+  "cancel": "Annulla",
+  "confirmSend": "Invia e-mail",
+  "actionLabels": {
+    "installment_remind_3d": "Promemoria: 3 giorni prima della scadenza",
+    "installment_remind_1d": "Promemoria: 1 giorno prima della scadenza",
+    "installment_remind_today": "Promemoria: giorno di scadenza (oggi)",
+    "installment_remind_remaining_days": "Promemoria: giorni rimanenti alla scadenza",
+    "installment_send_overdue": "Invia avviso di rata scaduta"
+  },
+  "confirmTitles": {
+    "installment_remind_3d": "Inviare il promemoria rata a 3 giorni?",
+    "installment_remind_1d": "Inviare il promemoria rata a 1 giorno?",
+    "installment_remind_today": "Inviare il promemoria rata del giorno di scadenza?",
+    "installment_remind_remaining_days": "Inviare il promemoria dei giorni rimanenti?",
+    "installment_send_overdue": "Inviare l'e-mail di rata scaduta?"
+  },
+  "confirmDescriptions": {
+    "installment_remind_3d": "Invia il modello standard «3 giorni prima della scadenza» per questa rata.",
+    "installment_remind_1d": "Invia il modello standard «1 giorno prima della scadenza» per questa rata.",
+    "installment_remind_today": "Invia il promemoria standard «scadenza oggi» per questa rata.",
+    "installment_remind_remaining_days": "Invia un'e-mail che indica quanti giorni di calendario interi restano (UTC) fino alla data di scadenza di questa rata.",
+    "installment_send_overdue": "Invia l'avviso che questa rata è scaduta (dopo la fine della data di scadenza in UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Invio e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-mail inviata con successo",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'e-mail non è stata inviata",
+      "time": 3000
+    }
+  }
+}

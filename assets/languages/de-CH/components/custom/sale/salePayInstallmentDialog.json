@@ -1,29 +1,29 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
-  "payInstallmentTitle": "Pay Rate",
-  "payInstallmentDescription": "Protokoll zahlung für diese rate",
-  "paidAmount": "Bezahlt Betrag",
-  "remainingAmount": "Rest",
-  "transactionId": "Transaktion ID",
-  "transactionIdPlaceholder": "Optional transaktion referenz",
+  "payInstallmentTitle": "Rate bezahlen",
+  "payInstallmentDescription": "Zahlung für diese Rate erfassen",
+  "paidAmount": "Bezahlter Betrag",
+  "remainingAmount": "Restbetrag",
+  "transactionId": "Transaktions-ID",
+  "transactionIdPlaceholder": "Optionale Transaktionsreferenz",
   "notes": "Notizen",
-  "notesPlaceholder": "Optional zahlung notizen",
+  "notesPlaceholder": "Optionale Zahlungsnotizen",
   "cancel": "Abbrechen",
-  "processing": "Processing...",
-  "confirmPay": "Confirm Zahlung",
-  "paymentRecorded": "Zahlung recorded erfolgreich",
-  "paymentFailed": "Fehlgeschlagen bis protokoll zahlung",
+  "processing": "Wird verarbeitet...",
+  "confirmPay": "Zahlung bestätigen",
+  "paymentRecorded": "Zahlung erfolgreich erfasst",
+  "paymentFailed": "Zahlung konnte nicht erfasst werden",
   "axios": {
     "start": {
-      "title": "Processing...",
+      "title": "Wird verarbeitet...",
       "time": 3000
     },
     "success": {
-      "title": "Zahlung recorded erfolgreich",
+      "title": "Zahlung erfolgreich erfasst",
       "time": 3000
     },
     "error": {
-      "title": "Fehlgeschlagen bis protokoll zahlung",
+      "title": "Zahlung konnte nicht erfasst werden",
       "time": 3000
     }
   }

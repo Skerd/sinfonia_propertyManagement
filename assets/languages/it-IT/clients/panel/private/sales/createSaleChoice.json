@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/createSaleChoice.tsx",
+  "title": "Crea vendita",
+  "description": "Scegli come creare la vendita.",
+  "cashSale": "Vendita in contanti",
+  "cashSaleDescription": "Pagamento integrale in un'unica soluzione con contratto e documenti.",
+  "paymentPlanSale": "Vendita con piano di pagamento",
+  "paymentPlanSaleDescription": "Vendita con acconto e rate.",
+  "createCashSale": "Crea vendita in contanti",
+  "createPaymentPlanSale": "Crea vendita con piano di pagamento"
+}

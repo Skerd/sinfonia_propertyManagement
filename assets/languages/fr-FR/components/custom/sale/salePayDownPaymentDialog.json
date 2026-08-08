@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayDownPaymentDialog.tsx",
+  "payDownPaymentTitle": "Marquer l'acompte comme payé",
+  "payDownPaymentDescription": "Cette action marque l'acompte comme payé.",
+  "confirmPayDownPayment": "Confirmer",
+  "cancel": "Annuler",
+  "processing": "Traitement...",
+  "downPaymentRecorded": "Acompte marqué comme payé",
+  "downPaymentFailed": "Échec du marquage de l'acompte comme payé",
+  "axios": {
+    "start": {
+      "title": "Traitement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Acompte marqué comme payé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Échec du marquage de l'acompte comme payé",
+      "time": 3000
+    }
+  }
+}

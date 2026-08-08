@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/sales/createSaleChoice.tsx",
   "title": "Verkauf erstellen",
-  "description": "Choose how sie want bis erstellen die verkauf.",
-  "cashSale": "Cash Verkauf",
-  "cashSaleDescription": "One-time full zahlung mit vertrag und dokumente.",
-  "paymentPlanSale": "Zahlung Plan Verkauf",
-  "paymentPlanSaleDescription": "Verkauf mit anzahlung zahlung und raten.",
-  "createCashSale": "Cash Verkauf erstellen",
-  "createPaymentPlanSale": "Zahlung Plan Verkauf erstellen"
+  "description": "Wählen Sie, wie der Verkauf erstellt werden soll.",
+  "cashSale": "Barverkauf",
+  "cashSaleDescription": "Einmalige Vollzahlung mit Vertrag und Dokumenten.",
+  "paymentPlanSale": "Verkauf mit Zahlungsplan",
+  "paymentPlanSaleDescription": "Verkauf mit Anzahlung und Raten.",
+  "createCashSale": "Barverkauf erstellen",
+  "createPaymentPlanSale": "Verkauf mit Zahlungsplan erstellen"
 }

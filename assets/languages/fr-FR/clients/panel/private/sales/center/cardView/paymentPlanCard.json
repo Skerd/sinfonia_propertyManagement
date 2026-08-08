@@ -1,0 +1,17 @@
+{
+  "failedTitle": "Échec du chargement du plan de paiement",
+  "failedDescription": "Échec du chargement des données. Cliquez ici pour réessayer.",
+  "paymentPlan": "Plan de paiement",
+  "status": "Statut",
+  "paymentPlanStatusState": {
+    "active": "Actif",
+    "completed": "Terminé",
+    "defaulted": "En défaut",
+    "cancelled": "Annulé"
+  },
+  "totalAmount": "Montant total",
+  "remainingBalance": "Solde restant",
+  "numberOfInstallments": "Nombre d'échéances",
+  "endDate": "Date de fin",
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+}

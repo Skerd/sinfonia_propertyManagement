@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualSaleClientEmails.tsx",
+  "cancel": "Annuler",
+  "confirmSend": "Envoyer l'e-mail",
+  "actionLabels": {
+    "send_sale_confirmation": "Renvoyer l'e-mail de confirmation de vente"
+  },
+  "confirmTitles": {
+    "send_sale_confirmation": "Renvoyer l'e-mail de confirmation de vente ?"
+  },
+  "confirmDescriptions": {
+    "send_sale_confirmation": "Cela envoie le même message de confirmation qu'à la création de la vente (à l'e-mail de l'acheteur enregistré), y compris le contrat d'achat lorsqu'il est disponible."
+  },
+  "axios": {
+    "start": {
+      "title": "Envoi de l'e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-mail envoyé avec succès",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'e-mail n'a pas pu être envoyé",
+      "time": 3000
+    }
+  }
+}

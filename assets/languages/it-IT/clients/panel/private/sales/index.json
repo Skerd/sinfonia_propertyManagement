@@ -1,0 +1,105 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/index.tsx",
+  "title": "Vendite",
+  "description": "Gestire le vendite delle unità",
+  "descriptionWithContext": "Gestire le vendite per questa unità",
+  "createSale": "Crea vendita",
+  "createCashSale": "Crea vendita in contanti",
+  "createPaymentPlanSale": "Crea vendita con piano di pagamento",
+  "view": "Visualizza",
+  "noData": "Nessuna vendita trovata",
+  "failTitle": "Caricamento vendite non riuscito",
+  "failDescription": "Si è verificato un errore durante il caricamento delle vendite. Riprova.",
+  "status": "Stato",
+  "deleted": "Eliminata",
+  "paymentType": "Tipo di pagamento",
+  "cash": "Contanti",
+  "paymentPlan": "Piano di pagamento",
+  "paymentPlanStatus": "Stato del piano di pagamento",
+  "saleDate": "Data di vendita",
+  "finalPrice": "Prezzo finale",
+  "soldBy": "Venduto da",
+  "buyer": "Acquirente",
+  "fields": {
+    "additionalDocuments": "Documenti aggiuntivi",
+    "approvalStatus": "Stato di approvazione",
+    "buyer": "Acquirente",
+    "buyerCompany": "Azienda acquirente",
+    "cashSale": {
+      "finalPrice": "Prezzo finale",
+      "saleDate": "Data",
+      "notes": "Note",
+      "transactionReference": "Transazione"
+    },
+    "createdAt": "Creata il",
+    "createdBy": "Creata da",
+    "deedNumber": "Numero atto",
+    "deletedAt": "Eliminata",
+    "deletedBy": "Eliminata da",
+    "finalPrice": "Prezzo finale",
+    "handedOverBy": "Consegnata da",
+    "handoverCertificate": "Certificato di consegna",
+    "handoverDate": "Data di consegna",
+    "handoverNotes": "Note di consegna",
+    "listedUnitCurrency": "Valuta del prezzo listato",
+    "listedUnitPrice": "Prezzo listato dell'unità",
+    "localDiscount": "Sconto locale %",
+    "name": "Nome",
+    "notaryName": "Nome del notaio",
+    "notes": "Note",
+    "paymentPlan": "Piano di pagamento",
+    "paymentType": "Pagamento",
+    "purchaseContract": "Contratto di acquisto",
+    "reservation": "Prenotazione",
+    "reservationConvertedAmount": "Importo prenotazione convertito",
+    "reservationDepositAmount": "Deposito di prenotazione",
+    "reservationDepositCurrency": "Valuta del deposito di prenotazione",
+    "reservationExchangeRate": "Tasso di cambio della prenotazione",
+    "saleApproval": {
+      "decision": "Decisione",
+      "user": "Revisionato da",
+      "notes": "Note",
+      "reviewedAt": "Revisionato il",
+      "media": "Media"
+    },
+    "saleCurrency": "Valuta di vendita",
+    "saleDate": "Data di vendita",
+    "saleExchangeRate": "Tasso di cambio della vendita",
+    "soldBy": "Venduto da",
+    "titleTransferCertificate": "Certificato di trasferimento del titolo",
+    "titleTransferDate": "Data di trasferimento del titolo",
+    "transactionReference": "Riferimento transazione",
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "unit": "Unità",
+    "updatedAt": "Aggiornata il",
+    "!enums": {
+      "paymentType": {
+        "cash": "Contanti",
+        "payment_plan": "Piano di pagamento"
+      },
+      "approvalStatus": {
+        "pending_approval": "In attesa di approvazione",
+        "approved": "Approvata",
+        "rejected": "Rifiutata"
+      },
+      "saleApproval": {
+        "decision": {
+          "approved": "Approvata",
+          "rejected": "Rifiutata",
+          "pending": "In attesa"
+        }
+      },
+      "decision": {
+        "approved": "Approvata",
+        "rejected": "Rifiutata",
+        "pending": "In attesa"
+      }
+    },
+    "saleConfirmationEmailSentAt": "E-mail di conferma vendita inviata il"
+  },
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "yes": "Sì",
+  "no": "No"
+}

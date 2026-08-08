@@ -22,7 +22,7 @@
   "buyer": "Blerësi",
   "fields": {
     "additionalDocuments": "Dokumentet Shtesë",
-    "approvalStatus": "Approval Status",
+    "approvalStatus": "Statusi i aprovimit",
     "buyer": "Blerësi",
     "buyerCompany": "Kompania blerëse",
     "cashSale": {
@@ -33,19 +33,19 @@
     },
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
-    "deedNumber": "Deed Number",
+    "deedNumber": "Numri i aktit",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
     "finalPrice": "Çmimi përfundimtar",
-    "handedOverBy": "Handed Over By",
-    "handoverCertificate": "Handover Certificate",
-    "handoverDate": "Handover Date",
-    "handoverNotes": "Handover Notes",
-    "listedUnitCurrency": "Listed Unit Currency",
+    "handedOverBy": "Dorëzuar nga",
+    "handoverCertificate": "Certifikata e dorëzimit",
+    "handoverDate": "Data e dorëzimit",
+    "handoverNotes": "Shënimet e dorëzimit",
+    "listedUnitCurrency": "Monedha e çmimit të listuar",
     "listedUnitPrice": "Çmimi për njësi i listuar",
     "localDiscount": "Zbritje lokale %",
     "name": "Emri",
-    "notaryName": "Notary Name",
+    "notaryName": "Emri i noterit",
     "notes": "Shënime",
     "paymentPlan": "Plani i pagesës",
     "paymentType": "Pagesa",
@@ -53,24 +53,51 @@
     "reservation": "Rezervimi",
     "reservationConvertedAmount": "Shuma e konvertuar e rezervimit",
     "reservationDepositAmount": "Depozita e Rezervimit",
-    "reservationDepositCurrency": "Reservation Deposit Currency",
+    "reservationDepositCurrency": "Monedha e depozitës së rezervimit",
     "reservationExchangeRate": "Kursi i këmbimit të rezervimit",
-    "saleApproval": "Sale Approval",
+    "saleApproval": {
+      "decision": "Vendimi",
+      "user": "Rishikuar nga",
+      "notes": "Shënime",
+      "reviewedAt": "Rishikuar më",
+      "media": "Media"
+    },
     "saleCurrency": "Monedha e shitjes",
     "saleDate": "Data e shitjes",
-    "saleExchangeRate": "Sale Exchange Rate",
+    "saleExchangeRate": "Kursi i këmbimit të shitjes",
     "soldBy": "Shitur Nga",
-    "titleTransferCertificate": "Title Transfer Certificate",
-    "titleTransferDate": "Title Transfer Date",
-    "transactionReference": "Transaction Reference",
+    "titleTransferCertificate": "Certifikata e transferimit të titullit",
+    "titleTransferDate": "Data e transferimit të titullit",
+    "transactionReference": "Referenca e transaksionit",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "floor": "Kati",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
     "!enums": {
       "paymentType": {
         "cash": "Paratë e gatshme",
         "payment_plan": "Plani i pagesës"
+      },
+      "approvalStatus": {
+        "pending_approval": "Në pritje të aprovimit",
+        "approved": "Aprovuar",
+        "rejected": "Refuzuar"
+      },
+      "saleApproval": {
+        "decision": {
+          "approved": "Aprovuar",
+          "rejected": "Refuzuar",
+          "pending": "Në pritje"
+        }
+      },
+      "decision": {
+        "approved": "Aprovuar",
+        "rejected": "Refuzuar",
+        "pending": "Në pritje"
       }
-    }
+    },
+    "saleConfirmationEmailSentAt": "Email-i i konfirmimit të shitjes u dërgua më"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",

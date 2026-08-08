@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayDownPaymentDialog.tsx",
+  "payDownPaymentTitle": "Segna l'acconto come pagato",
+  "payDownPaymentDescription": "Questa azione segna l'acconto come pagato.",
+  "confirmPayDownPayment": "Conferma",
+  "cancel": "Annulla",
+  "processing": "Elaborazione...",
+  "downPaymentRecorded": "Acconto segnato come pagato",
+  "downPaymentFailed": "Impossibile segnare l'acconto come pagato",
+  "axios": {
+    "start": {
+      "title": "Elaborazione...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Acconto segnato come pagato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile segnare l'acconto come pagato",
+      "time": 3000
+    }
+  }
+}

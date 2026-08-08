@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
+  "payInstallmentTitle": "Payer l'échéance",
+  "payInstallmentDescription": "Enregistrer le paiement de cette échéance",
+  "paidAmount": "Montant payé",
+  "remainingAmount": "Restant",
+  "transactionId": "ID de transaction",
+  "transactionIdPlaceholder": "Référence de transaction facultative",
+  "notes": "Notes",
+  "notesPlaceholder": "Notes de paiement facultatives",
+  "cancel": "Annuler",
+  "processing": "Traitement...",
+  "confirmPay": "Confirmer le paiement",
+  "paymentRecorded": "Paiement enregistré avec succès",
+  "paymentFailed": "Échec de l'enregistrement du paiement",
+  "axios": {
+    "start": {
+      "title": "Traitement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Paiement enregistré avec succès",
+      "time": 3000
+    },
+    "error": {
+      "title": "Échec de l'enregistrement du paiement",
+      "time": 3000
+    }
+  }
+}

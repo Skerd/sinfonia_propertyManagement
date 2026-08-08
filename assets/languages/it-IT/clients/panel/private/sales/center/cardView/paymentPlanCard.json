@@ -1,0 +1,17 @@
+{
+  "failedTitle": "Caricamento piano di pagamento non riuscito",
+  "failedDescription": "Caricamento dati non riuscito. Clicca qui per riprovare.",
+  "paymentPlan": "Piano di pagamento",
+  "status": "Stato",
+  "paymentPlanStatusState": {
+    "active": "Attivo",
+    "completed": "Completato",
+    "defaulted": "Inadempiente",
+    "cancelled": "Annullato"
+  },
+  "totalAmount": "Importo totale",
+  "remainingBalance": "Saldo residuo",
+  "numberOfInstallments": "Numero di rate",
+  "endDate": "Data di fine",
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+}

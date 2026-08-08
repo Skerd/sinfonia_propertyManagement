@@ -55,7 +55,13 @@
     "reservationDepositAmount": "Reservation Deposit",
     "reservationDepositCurrency": "Reservation Deposit Currency",
     "reservationExchangeRate": "Reservation Exchange Rate",
-    "saleApproval": "Sale Approval",
+    "saleApproval": {
+      "decision": "Decision",
+      "user": "Reviewed By",
+      "notes": "Notes",
+      "reviewedAt": "Reviewed At",
+      "media": "Media"
+    },
     "saleCurrency": "Sale Currency",
     "saleDate": "Sale Date",
     "saleExchangeRate": "Sale Exchange Rate",
@@ -63,14 +69,35 @@
     "titleTransferCertificate": "Title Transfer Certificate",
     "titleTransferDate": "Title Transfer Date",
     "transactionReference": "Transaction Reference",
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
     "unit": "Unit",
     "updatedAt": "Updated At",
     "!enums": {
       "paymentType": {
         "cash": "Cash",
         "payment_plan": "Payment Plan"
+      },
+      "approvalStatus": {
+        "pending_approval": "Pending Approval",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "saleApproval": {
+        "decision": {
+          "approved": "Approved",
+          "rejected": "Rejected",
+          "pending": "Pending"
+        }
+      },
+      "decision": {
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "pending": "Pending"
       }
-    }
+    },
+    "saleConfirmationEmailSentAt": "Sale Confirmation Email Sent At"
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",

@@ -1,0 +1,105 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/index.tsx",
+  "title": "Ventes",
+  "description": "Gérer les ventes d'unités",
+  "descriptionWithContext": "Gérer les ventes pour cette unité",
+  "createSale": "Créer une vente",
+  "createCashSale": "Créer une vente comptant",
+  "createPaymentPlanSale": "Créer une vente avec plan de paiement",
+  "view": "Voir",
+  "noData": "Aucune vente trouvée",
+  "failTitle": "Échec du chargement des ventes",
+  "failDescription": "Une erreur s'est produite lors du chargement des ventes. Veuillez réessayer.",
+  "status": "Statut",
+  "deleted": "Supprimé",
+  "paymentType": "Type de paiement",
+  "cash": "Comptant",
+  "paymentPlan": "Plan de paiement",
+  "paymentPlanStatus": "Statut du plan de paiement",
+  "saleDate": "Date de vente",
+  "finalPrice": "Prix final",
+  "soldBy": "Vendu par",
+  "buyer": "Acheteur",
+  "fields": {
+    "additionalDocuments": "Documents supplémentaires",
+    "approvalStatus": "Statut d'approbation",
+    "buyer": "Acheteur",
+    "buyerCompany": "Entreprise acheteuse",
+    "cashSale": {
+      "finalPrice": "Prix final",
+      "saleDate": "Date",
+      "notes": "Notes",
+      "transactionReference": "Transaction"
+    },
+    "createdAt": "Créée le",
+    "createdBy": "Créée par",
+    "deedNumber": "Numéro d'acte",
+    "deletedAt": "Supprimée",
+    "deletedBy": "Supprimée par",
+    "finalPrice": "Prix final",
+    "handedOverBy": "Remise par",
+    "handoverCertificate": "Certificat de remise",
+    "handoverDate": "Date de remise",
+    "handoverNotes": "Notes de remise",
+    "listedUnitCurrency": "Devise du prix affiché",
+    "listedUnitPrice": "Prix affiché de l'unité",
+    "localDiscount": "Remise locale %",
+    "name": "Nom",
+    "notaryName": "Nom du notaire",
+    "notes": "Notes",
+    "paymentPlan": "Plan de paiement",
+    "paymentType": "Paiement",
+    "purchaseContract": "Contrat d'achat",
+    "reservation": "Réservation",
+    "reservationConvertedAmount": "Montant de réservation converti",
+    "reservationDepositAmount": "Acompte de réservation",
+    "reservationDepositCurrency": "Devise de l'acompte de réservation",
+    "reservationExchangeRate": "Taux de change de la réservation",
+    "saleApproval": {
+      "decision": "Décision",
+      "user": "Examiné par",
+      "notes": "Notes",
+      "reviewedAt": "Examiné le",
+      "media": "Médias"
+    },
+    "saleCurrency": "Devise de vente",
+    "saleDate": "Date de vente",
+    "saleExchangeRate": "Taux de change de la vente",
+    "soldBy": "Vendu par",
+    "titleTransferCertificate": "Certificat de transfert de titre",
+    "titleTransferDate": "Date de transfert de titre",
+    "transactionReference": "Référence de transaction",
+    "project": "Projet",
+    "edifice": "Bâtiment",
+    "floor": "Étage",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "paymentType": {
+        "cash": "Comptant",
+        "payment_plan": "Plan de paiement"
+      },
+      "approvalStatus": {
+        "pending_approval": "En attente d'approbation",
+        "approved": "Approuvée",
+        "rejected": "Rejetée"
+      },
+      "saleApproval": {
+        "decision": {
+          "approved": "Approuvée",
+          "rejected": "Rejetée",
+          "pending": "En attente"
+        }
+      },
+      "decision": {
+        "approved": "Approuvée",
+        "rejected": "Rejetée",
+        "pending": "En attente"
+      }
+    },
+    "saleConfirmationEmailSentAt": "E-mail de confirmation de vente envoyé le"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "yes": "Oui",
+  "no": "Non"
+}

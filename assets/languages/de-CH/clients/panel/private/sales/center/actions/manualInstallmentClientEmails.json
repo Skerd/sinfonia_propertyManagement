@@ -1,39 +1,39 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualInstallmentClientEmails.tsx",
   "cancel": "Abbrechen",
-  "confirmSend": "Send e-Mail",
+  "confirmSend": "E-Mail senden",
   "actionLabels": {
-    "installment_remind_3d": "Remind: 3 tage before fällig datum",
-    "installment_remind_1d": "Remind: 1 day before fällig datum",
-    "installment_remind_today": "Remind: fällig datum (heute)",
-    "installment_remind_remaining_days": "Remind: tage until fällig",
-    "installment_send_overdue": "Send rate overdue notice"
+    "installment_remind_3d": "Erinnerung: 3 Tage vor Fälligkeit",
+    "installment_remind_1d": "Erinnerung: 1 Tag vor Fälligkeit",
+    "installment_remind_today": "Erinnerung: Fälligkeitstag (heute)",
+    "installment_remind_remaining_days": "Erinnerung: Tage bis zur Fälligkeit",
+    "installment_send_overdue": "Mahnung für überfällige Rate senden"
   },
   "confirmTitles": {
-    "installment_remind_3d": "Send 3-day rate reminder?",
-    "installment_remind_1d": "Send 1-day rate reminder?",
-    "installment_remind_today": "Send fällig-day rate reminder?",
-    "installment_remind_remaining_days": "Send tage-until-fällig rate reminder?",
-    "installment_send_overdue": "Send rate overdue e-Mail?"
+    "installment_remind_3d": "3-Tage-Ratenerinnerung senden?",
+    "installment_remind_1d": "1-Tag-Ratenerinnerung senden?",
+    "installment_remind_today": "Erinnerung am Fälligkeitstag senden?",
+    "installment_remind_remaining_days": "Erinnerung mit verbleibenden Tagen senden?",
+    "installment_send_overdue": "E-Mail für überfällige Rate senden?"
   },
   "confirmDescriptions": {
-    "installment_remind_3d": "Sends die standard “3 tage before fällig” rate vorlage für diese rate.",
-    "installment_remind_1d": "Sends die standard “1 day before fällig” rate vorlage für diese rate.",
-    "installment_remind_today": "Sends die standard “fällig heute” rate reminder für diese rate.",
-    "installment_remind_remaining_days": "Sends ein e-Mail stating how many whole calendar tage remain (UTC) until diese rate fällig datum.",
-    "installment_send_overdue": "Sends die notice that diese rate ist overdue (after die fällig datum end in UTC)."
+    "installment_remind_3d": "Sendet die Standardvorlage «3 Tage vor Fälligkeit» für diese Rate.",
+    "installment_remind_1d": "Sendet die Standardvorlage «1 Tag vor Fälligkeit» für diese Rate.",
+    "installment_remind_today": "Sendet die Standarderinnerung «heute fällig» für diese Rate.",
+    "installment_remind_remaining_days": "Sendet eine E-Mail mit der Anzahl ganzer Kalendertage (UTC) bis zum Fälligkeitsdatum dieser Rate.",
+    "installment_send_overdue": "Sendet die Mitteilung, dass diese Rate überfällig ist (nach Ende des Fälligkeitstags in UTC)."
   },
   "axios": {
     "start": {
-      "title": "Sending e-Mail…",
+      "title": "E-Mail wird gesendet…",
       "time": 3000
     },
     "success": {
-      "title": "E-Mail sent erfolgreich",
+      "title": "E-Mail erfolgreich gesendet",
       "time": 3000
     },
     "error": {
-      "title": "E-Mail konnte nicht werden sent",
+      "title": "E-Mail konnte nicht gesendet werden",
       "time": 3000
     }
   }

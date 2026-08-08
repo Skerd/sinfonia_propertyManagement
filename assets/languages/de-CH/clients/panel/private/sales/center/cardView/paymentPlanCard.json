@@ -1,15 +1,15 @@
 {
-  "failedTitle": "Zahlungsplan konnten nicht geladen werden",
-  "failedDescription": "Daten. Click here bis retry. konnten nicht geladen werden",
+  "failedTitle": "Zahlungsplan konnte nicht geladen werden",
+  "failedDescription": "Daten konnten nicht geladen werden. Klicken Sie hier, um es erneut zu versuchen.",
   "paymentPlan": "Zahlungsplan",
   "status": "Status",
   "paymentPlanStatusState": {
     "active": "Aktiv",
     "completed": "Abgeschlossen",
-    "defaulted": "Defaulted",
+    "defaulted": "Im Verzug",
     "cancelled": "Storniert"
   },
-  "totalAmount": "Total Betrag",
+  "totalAmount": "Gesamtbetrag",
   "remainingBalance": "Restsaldo",
   "numberOfInstallments": "Anzahl Raten",
   "endDate": "Enddatum",

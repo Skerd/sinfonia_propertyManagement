@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
+  "payInstallmentTitle": "Paga la rata",
+  "payInstallmentDescription": "Registra il pagamento di questa rata",
+  "paidAmount": "Importo pagato",
+  "remainingAmount": "Rimanente",
+  "transactionId": "ID transazione",
+  "transactionIdPlaceholder": "Riferimento transazione facoltativo",
+  "notes": "Note",
+  "notesPlaceholder": "Note di pagamento facoltative",
+  "cancel": "Annulla",
+  "processing": "Elaborazione...",
+  "confirmPay": "Conferma pagamento",
+  "paymentRecorded": "Pagamento registrato con successo",
+  "paymentFailed": "Registrazione del pagamento non riuscita",
+  "axios": {
+    "start": {
+      "title": "Elaborazione...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Pagamento registrato con successo",
+      "time": 3000
+    },
+    "error": {
+      "title": "Registrazione del pagamento non riuscita",
+      "time": 3000
+    }
+  }
+}

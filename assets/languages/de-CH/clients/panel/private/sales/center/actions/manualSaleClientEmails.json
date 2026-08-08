@@ -1,27 +1,27 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualSaleClientEmails.tsx",
   "cancel": "Abbrechen",
-  "confirmSend": "Send e-Mail",
+  "confirmSend": "E-Mail senden",
   "actionLabels": {
-    "send_sale_confirmation": "Resend verkauf confirmation e-Mail"
+    "send_sale_confirmation": "Verkaufsbestätigung erneut senden"
   },
   "confirmTitles": {
-    "send_sale_confirmation": "Resend verkauf confirmation e-Mail?"
+    "send_sale_confirmation": "Verkaufsbestätigung erneut senden?"
   },
   "confirmDescriptions": {
-    "send_sale_confirmation": "Diese sends die same confirmation nachricht as when die verkauf was erstellt (bis die käufer e-Mail on datei), including die kauf vertrag when verfügbar."
+    "send_sale_confirmation": "Sendet dieselbe Bestätigungsnachricht wie bei der Erstellung des Verkaufs (an die hinterlegte Käufer-E-Mail), einschliesslich des Kaufvertrags falls verfügbar."
   },
   "axios": {
     "start": {
-      "title": "Sending e-Mail…",
+      "title": "E-Mail wird gesendet…",
       "time": 3000
     },
     "success": {
-      "title": "E-Mail sent erfolgreich",
+      "title": "E-Mail erfolgreich gesendet",
       "time": 3000
     },
     "error": {
-      "title": "E-Mail konnte nicht werden sent",
+      "title": "E-Mail konnte nicht gesendet werden",
       "time": 3000
     }
   }

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/manualInstallmentClientEmails.tsx",
+  "cancel": "Annuler",
+  "confirmSend": "Envoyer l'e-mail",
+  "actionLabels": {
+    "installment_remind_3d": "Rappel : 3 jours avant l'échéance",
+    "installment_remind_1d": "Rappel : 1 jour avant l'échéance",
+    "installment_remind_today": "Rappel : jour d'échéance (aujourd'hui)",
+    "installment_remind_remaining_days": "Rappel : jours restants jusqu'à l'échéance",
+    "installment_send_overdue": "Envoyer l'avis de retard d'échéance"
+  },
+  "confirmTitles": {
+    "installment_remind_3d": "Envoyer le rappel d'échéance à 3 jours ?",
+    "installment_remind_1d": "Envoyer le rappel d'échéance à 1 jour ?",
+    "installment_remind_today": "Envoyer le rappel d'échéance du jour ?",
+    "installment_remind_remaining_days": "Envoyer le rappel des jours restants ?",
+    "installment_send_overdue": "Envoyer l'e-mail de retard d'échéance ?"
+  },
+  "confirmDescriptions": {
+    "installment_remind_3d": "Envoie le modèle standard « 3 jours avant l'échéance » pour cette échéance.",
+    "installment_remind_1d": "Envoie le modèle standard « 1 jour avant l'échéance » pour cette échéance.",
+    "installment_remind_today": "Envoie le rappel standard « échéance aujourd'hui » pour cette échéance.",
+    "installment_remind_remaining_days": "Envoie un e-mail indiquant combien de jours calendaires entiers restent (UTC) jusqu'à la date d'échéance de cette échéance.",
+    "installment_send_overdue": "Envoie l'avis que cette échéance est en retard (après la fin de la date d'échéance en UTC)."
+  },
+  "axios": {
+    "start": {
+      "title": "Envoi de l'e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-mail envoyé avec succès",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'e-mail n'a pas pu être envoyé",
+      "time": 3000
+    }
+  }
+}
