@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/center/cardView/projectCard.tsx",
+  "edifices": "Edifici",
+  "and": "e",
+  "data": {
+    "name": "Nome",
+    "reservationCommission": "Commissione di prenotazione",
+    "reservationCommissionTooltip": "Commissione di prenotazione (%)",
+    "saleCommission": "Commissione di vendita",
+    "saleCommissionTooltip": "Commissione di vendita (%)"
+  },
+  "statistics": {
+    "area": "Superficie dell'edificio",
+    "areaTooltip": "Somma delle impronte degli edifici (superficie totale), non delle superfici delle unità",
+    "edifices": "Edifici",
+    "edificesTooltip": "Totale edifici",
+    "floors": "Piani",
+    "floorsTooltip": "Totale piani",
+    "investment": "Investito",
+    "investmentTooltip": "Valore totale dell'investimento",
+    "units": "Unità",
+    "unitsTooltip": "Totale unità",
+    "available": "Disponibile",
+    "availableDesc": "Disponibile alla vendita",
+    "reserved": "Prenotato",
+    "reservedDesc": "Con prenotazione attiva",
+    "sold": "Venduto",
+    "soldDesc": "Unità vendute",
+    "leased": "In affitto",
+    "leasedDesc": "Attualmente in affitto",
+    "unavailable": "Non disponibile",
+    "unavailableDesc": "Non disponibile alla vendita"
+  },
+  "viewEdifices": "Vedi edifici"
+}

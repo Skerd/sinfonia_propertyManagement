@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/projects/projectFloorsOverlay.tsx",
-  "title": "Geschoss polygons overlay",
-  "description": "Alle geschoss polygons displayed on die projekt haupt bild.",
-  "noMainImage": "Projekt does nicht have a haupt bild.",
-  "noFloorSelected": "Keine geschoss selected."
+  "title": "Geschosspolygone-Overlay",
+  "description": "Alle Geschosspolygone auf dem Hauptbild des Projekts.",
+  "noMainImage": "Das Projekt hat kein Hauptbild.",
+  "noFloorSelected": "Kein Geschoss ausgewählt."
 }

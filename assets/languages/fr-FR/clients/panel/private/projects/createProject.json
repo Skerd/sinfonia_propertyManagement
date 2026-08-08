@@ -1,0 +1,70 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Le projet n'a pas pu être créé, veuillez réessayer !"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Création du projet"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Projet créé avec succès !"
+    }
+  },
+  "commissions": "Commissions",
+  "description": "Créer un nouveau projet immobilier",
+  "form": {
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir la description du projet",
+    "imageGalleryLabel": "Galerie d'images",
+    "mainImageLabel": "Image principale",
+    "mainImageRequired": "L'image principale est obligatoire",
+    "nameLabel": "Nom du projet",
+    "namePlaceholder": "Saisir le nom du projet",
+    "nameRequired": "Le nom du projet est obligatoire",
+    "reservationCommissionRateLabel": "Commission de réservation (%)",
+    "reservationCommissionRatePlaceholder": "0–100, facultatif",
+    "saleCommissionRateLabel": "Commission de vente (%)",
+    "saleCommissionRatePlaceholder": "0–100, facultatif",
+    "uploadNewImageHint": "Téléverser une nouvelle image pour remplacer l'actuelle",
+    "uploadNewImagesHint": "Téléverser de nouvelles images pour les ajouter à la galerie",
+    "uploadNewVideosHint": "Téléverser de nouvelles vidéos pour les ajouter à la galerie",
+    "videoGalleryLabel": "Galerie vidéo",
+    "mediaFilesLabel": "Documents et fichiers",
+    "marketingBookletLabel": "Brochure marketing",
+    "featuredOnHomepageLabel": "Mis en avant sur la page d'accueil",
+    "featuredSortOrderLabel": "Ordre de mise en avant",
+    "featuredSortOrderPlaceholder": "0 = premier",
+    "socialLinksSectionTitle": "Liens sociaux",
+    "socialLinkAddRow": "Ajouter un lien social",
+    "socialLinkRemoveRow": "Supprimer",
+    "socialLinkRowTitle": "Lien sans titre",
+    "socialLinkNameLabel": "Nom",
+    "socialLinkNamePlaceholder": "p. ex. Instagram",
+    "socialLinkUrlLabel": "Lien",
+    "socialLinkUrlPlaceholder": "https://",
+    "socialLinkLogoLabel": "Logo",
+    "magazineSectionTitle": "Magazine",
+    "magazineFileLabel": "PDF du magazine",
+    "magazineTitleLabel": "Titre du magazine",
+    "magazineTitlePlaceholder": "Saisir le titre du magazine",
+    "magazineDescriptionLabel": "Description du magazine",
+    "magazineDescriptionPlaceholder": "Saisir la description du magazine"
+  },
+  "generalInfo": "Informations générales",
+  "homepageFeatured": "Mise en avant page d'accueil",
+  "media": "Médias",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "title": "Créer un projet",
+  "uploadError": "Échec du téléversement des fichiers média",
+  "formHeader": {
+    "title": "Créer un projet",
+    "description": "Créer un nouveau projet immobilier"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer le projet"
+  }
+}

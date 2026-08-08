@@ -1,0 +1,76 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Il progetto non può essere aggiornato, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Aggiornamento del progetto"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Progetto aggiornato con successo!"
+    }
+  },
+  "commissions": "Aliquote di commissione",
+  "currentImage": "Immagine attuale",
+  "editDescription": "Modifica le informazioni del progetto",
+  "title": "Modifica progetto",
+  "description": "Modifica le informazioni del progetto",
+  "editTitle": "Modifica progetto",
+  "errorDescription": "Si è verificato un errore durante il caricamento del progetto. Riprova.",
+  "errorTitle": "Caricamento del progetto non riuscito",
+  "form": {
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci la descrizione del progetto",
+    "imageGalleryLabel": "Galleria immagini",
+    "mainImageLabel": "Immagine principale",
+    "mainImageRequired": "L'immagine principale è obbligatoria",
+    "nameLabel": "Nome del progetto",
+    "namePlaceholder": "Inserisci il nome del progetto",
+    "nameRequired": "Il nome del progetto è obbligatorio",
+    "reservationCommissionRateLabel": "Commissione di prenotazione (%)",
+    "reservationCommissionRatePlaceholder": "0–100, facoltativo",
+    "saleCommissionRateLabel": "Commissione di vendita (%)",
+    "saleCommissionRatePlaceholder": "0–100, facoltativo",
+    "uploadNewImageHint": "Carica una nuova immagine per sostituire quella attuale",
+    "uploadNewImagesHint": "Carica nuove immagini da aggiungere alla galleria",
+    "uploadNewVideosHint": "Carica nuovi video da aggiungere alla galleria",
+    "videoGalleryLabel": "Galleria video",
+    "mediaFilesLabel": "Documenti e file",
+    "marketingBookletLabel": "Brochure marketing",
+    "featuredOnHomepageLabel": "In evidenza sulla homepage",
+    "featuredSortOrderLabel": "Ordine in evidenza",
+    "featuredSortOrderPlaceholder": "0 = primo",
+    "socialLinksSectionTitle": "Link social",
+    "socialLinkAddRow": "Aggiungi link social",
+    "socialLinkRemoveRow": "Rimuovi",
+    "socialLinkRowTitle": "Link senza titolo",
+    "socialLinkNameLabel": "Nome",
+    "socialLinkNamePlaceholder": "es. Instagram",
+    "socialLinkUrlLabel": "Link",
+    "socialLinkUrlPlaceholder": "https://",
+    "socialLinkLogoLabel": "Logo",
+    "magazineSectionTitle": "Rivista",
+    "magazineFileLabel": "PDF della rivista",
+    "magazineTitleLabel": "Titolo della rivista",
+    "magazineTitlePlaceholder": "Inserisci il titolo della rivista",
+    "magazineDescriptionLabel": "Descrizione della rivista",
+    "magazineDescriptionPlaceholder": "Inserisci la descrizione della rivista"
+  },
+  "generalInfo": "Informazioni generali",
+  "homepageFeatured": "In evidenza sulla homepage",
+  "media": "Media",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
+  "uploadError": "Caricamento dei file multimediali non riuscito",
+  "videosUploaded": "video caricati",
+  "formHeader": {
+    "title": "Modifica progetto",
+    "description": "Modifica le informazioni del progetto"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva modifiche"
+  }
+}

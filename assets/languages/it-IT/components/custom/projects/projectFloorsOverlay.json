@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/projectFloorsOverlay.tsx",
+  "title": "Overlay poligoni piani",
+  "description": "Tutti i poligoni dei piani visualizzati sull'immagine principale del progetto.",
+  "noMainImage": "Il progetto non ha un'immagine principale.",
+  "noFloorSelected": "Nessun piano selezionato."
+}

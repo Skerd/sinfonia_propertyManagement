@@ -1,0 +1,70 @@
+{
+  "axios": {
+    "error": {
+      "time": 3000,
+      "title": "Il progetto non può essere creato, riprova!"
+    },
+    "start": {
+      "time": 3000,
+      "title": "Creazione del progetto"
+    },
+    "success": {
+      "time": 3000,
+      "title": "Progetto creato con successo!"
+    }
+  },
+  "commissions": "Commissioni",
+  "description": "Crea un nuovo progetto immobiliare",
+  "form": {
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci la descrizione del progetto",
+    "imageGalleryLabel": "Galleria immagini",
+    "mainImageLabel": "Immagine principale",
+    "mainImageRequired": "L'immagine principale è obbligatoria",
+    "nameLabel": "Nome del progetto",
+    "namePlaceholder": "Inserisci il nome del progetto",
+    "nameRequired": "Il nome del progetto è obbligatorio",
+    "reservationCommissionRateLabel": "Commissione di prenotazione (%)",
+    "reservationCommissionRatePlaceholder": "0–100, facoltativo",
+    "saleCommissionRateLabel": "Commissione di vendita (%)",
+    "saleCommissionRatePlaceholder": "0–100, facoltativo",
+    "uploadNewImageHint": "Carica una nuova immagine per sostituire quella attuale",
+    "uploadNewImagesHint": "Carica nuove immagini da aggiungere alla galleria",
+    "uploadNewVideosHint": "Carica nuovi video da aggiungere alla galleria",
+    "videoGalleryLabel": "Galleria video",
+    "mediaFilesLabel": "Documenti e file",
+    "marketingBookletLabel": "Brochure marketing",
+    "featuredOnHomepageLabel": "In evidenza sulla homepage",
+    "featuredSortOrderLabel": "Ordine in evidenza",
+    "featuredSortOrderPlaceholder": "0 = primo",
+    "socialLinksSectionTitle": "Link social",
+    "socialLinkAddRow": "Aggiungi link social",
+    "socialLinkRemoveRow": "Rimuovi",
+    "socialLinkRowTitle": "Link senza titolo",
+    "socialLinkNameLabel": "Nome",
+    "socialLinkNamePlaceholder": "es. Instagram",
+    "socialLinkUrlLabel": "Link",
+    "socialLinkUrlPlaceholder": "https://",
+    "socialLinkLogoLabel": "Logo",
+    "magazineSectionTitle": "Rivista",
+    "magazineFileLabel": "PDF della rivista",
+    "magazineTitleLabel": "Titolo della rivista",
+    "magazineTitlePlaceholder": "Inserisci il titolo della rivista",
+    "magazineDescriptionLabel": "Descrizione della rivista",
+    "magazineDescriptionPlaceholder": "Inserisci la descrizione della rivista"
+  },
+  "generalInfo": "Informazioni generali",
+  "homepageFeatured": "In evidenza sulla homepage",
+  "media": "Media",
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "title": "Crea progetto",
+  "uploadError": "Caricamento dei file multimediali non riuscito",
+  "formHeader": {
+    "title": "Crea progetto",
+    "description": "Crea un nuovo progetto immobiliare"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Crea progetto"
+  }
+}

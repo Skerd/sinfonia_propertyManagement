@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/edificesOverlay.tsx",
+  "title": "Calque des polygones de bâtiments",
+  "description": "Tous les polygones de bâtiments affichés sur l'image principale du projet.",
+  "noMainImage": "Le projet n'a pas d'image principale.",
+  "noEdificeSelected": "Aucun bâtiment sélectionné."
+}

@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/center/cardView/projectCard.tsx",
+  "edifices": "Bâtiments",
+  "and": "et",
+  "data": {
+    "name": "Nom",
+    "reservationCommission": "Commission de réservation",
+    "reservationCommissionTooltip": "Commission de réservation (%)",
+    "saleCommission": "Commission de vente",
+    "saleCommissionTooltip": "Commission de vente (%)"
+  },
+  "statistics": {
+    "area": "Surface du bâtiment",
+    "areaTooltip": "Somme des empreintes au sol des bâtiments (surface totale), hors surfaces des unités",
+    "edifices": "Bâtiments",
+    "edificesTooltip": "Nombre total de bâtiments",
+    "floors": "Étages",
+    "floorsTooltip": "Nombre total d'étages",
+    "investment": "Investi",
+    "investmentTooltip": "Valeur totale d'investissement",
+    "units": "Unités",
+    "unitsTooltip": "Nombre total d'unités",
+    "available": "Disponible",
+    "availableDesc": "Disponible à la vente",
+    "reserved": "Réservé",
+    "reservedDesc": "Avec réservation active",
+    "sold": "Vendu",
+    "soldDesc": "Unités vendues",
+    "leased": "Loué",
+    "leasedDesc": "Actuellement loué",
+    "unavailable": "Indisponible",
+    "unavailableDesc": "Non disponible à la vente"
+  },
+  "viewEdifices": "Voir les bâtiments"
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projects/edificesOverlay.tsx",
+  "title": "Overlay poligoni edifici",
+  "description": "Tutti i poligoni degli edifici visualizzati sull'immagine principale del progetto.",
+  "noMainImage": "Il progetto non ha un'immagine principale.",
+  "noEdificeSelected": "Nessun edificio selezionato."
+}

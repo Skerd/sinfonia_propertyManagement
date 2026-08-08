@@ -41,13 +41,13 @@
       "title": "Verträge & Kunden"
     },
     "paymentPlans": {
-      "title": "Zahlung plans"
+      "title": "Zahlungspläne"
     },
     "constructors": {
       "title": "Unternehmer"
     },
     "salesAndHandover": {
-      "title": "Sales & übergabe"
+      "title": "Verkauf & Übergabe"
     },
     "unitTypeCategories": {
       "title": "Einheitstyp-Kategorien"
@@ -65,10 +65,10 @@
       "title": "Leads"
     },
     "unitAvailability": {
-      "title": "Availability calendar"
+      "title": "Verfügbarkeitskalender"
     },
     "ownersAndRentals": {
-      "title": "Owners & rentals"
+      "title": "Eigentümer & Vermietung"
     },
     "rentalsHub": {
       "title": "Vermietungen"
@@ -86,10 +86,10 @@
       "title": "Stories"
     },
     "snags": {
-      "title": "Snagging liste"
+      "title": "Mängelliste"
     },
     "development": {
-      "title": "Development"
+      "title": "Entwicklung"
     },
     "projectDocuments": {
       "title": "Projektdokumente"
@@ -98,13 +98,13 @@
       "title": "Bewilligungen"
     },
     "delivery": {
-      "title": "Delivery"
+      "title": "Übergabe"
     },
     "cost": {
       "title": "Kostenkontrolle"
     },
     "qualityHse": {
-      "title": "Quality & HSE"
+      "title": "Qualität & HSE"
     },
     "milestones": {
       "title": "Meilensteine"
@@ -260,7 +260,7 @@
       "title": "Vermietungen"
     },
     "roi": {
-      "title": "ROI calculator"
+      "title": "ROI-Rechner"
     },
     "groupDashboard": {
       "title": "Gruppen-Dashboard"
@@ -270,7 +270,7 @@
     }
   },
   "reports": {
-    "title": "Reports",
+    "title": "Berichte",
     "groupDashboard": {
       "title": "Gruppen-Dashboard"
     },
@@ -278,7 +278,7 @@
       "title": "Maklerbericht"
     },
     "roi": {
-      "title": "ROI calculator"
+      "title": "ROI-Rechner"
     },
     "erpExport": {
       "title": "ERP-Export"

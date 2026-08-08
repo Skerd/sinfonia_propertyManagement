@@ -56,7 +56,7 @@
   "toggleReferenceListView": "Social-Links-Ansicht umschalten",
   "mediaFiles": "Dokumente & Dateien",
   "marketingBooklet": "Marketingbroschüre",
-  "featuredOnHomepage": "Featured",
+  "featuredOnHomepage": "Hervorgehoben",
   "featuredOnHomepageTooltip": "Wird im Featured-Karussell der öffentlichen Startseite angezeigt",
   "overview": "Übersicht",
   "project": "Projekt",
@@ -69,7 +69,7 @@
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
-  "magazine": "Magazine",
-  "magazineTitle": "Magazine title",
-  "magazineDescription": "Magazine description"
+  "magazine": "Magazin",
+  "magazineTitle": "Magazin-Titel",
+  "magazineDescription": "Magazinbeschreibung"
 }

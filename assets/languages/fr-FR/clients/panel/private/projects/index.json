@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projects/index.tsx",
+  "createProject": "Créer un projet",
+  "description": "Gérer tous les projets immobiliers",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "featuredOnHomepage": "Mis en avant sur la page d'accueil",
+    "featuredSortOrder": "Ordre de mise en avant",
+    "imageGallery": "Galerie",
+    "magazineDescription": "Description du magazine",
+    "magazineFile": "PDF du magazine",
+    "magazineTitle": "Titre du magazine",
+    "mainImage": "Image",
+    "marketingBooklet": "Brochure marketing",
+    "mediaFiles": "Fichiers média",
+    "name": "Nom",
+    "reservationCommissionRatePercent": "Commission de réservation",
+    "saleCommissionRatePercent": "Commission de vente",
+    "updatedAt": "Mis à jour le",
+    "videoGallery": "Vidéos"
+  },
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "title": "Projets"
+}

@@ -1,0 +1,312 @@
+{
+  "realEstate": {
+    "title": "Immobilier",
+    "systemMap": {
+      "title": "Carte système"
+    },
+    "overview": {
+      "title": "Aperçu"
+    },
+    "dashboard": {
+      "title": "Tableau de bord"
+    },
+    "projects": {
+      "title": "Projets"
+    },
+    "edifices": {
+      "title": "Bâtiments"
+    },
+    "floors": {
+      "title": "Étages"
+    },
+    "units": {
+      "title": "Unités"
+    },
+    "inspections": {
+      "title": "Inspections"
+    },
+    "unitCosts": {
+      "title": "Coûts des unités"
+    },
+    "modificationRequests": {
+      "title": "Demandes de modification"
+    },
+    "reservations": {
+      "title": "Réservations"
+    },
+    "sales": {
+      "title": "Ventes"
+    },
+    "contractsHub": {
+      "title": "Contrats & clients"
+    },
+    "paymentPlans": {
+      "title": "Plans de paiement"
+    },
+    "constructors": {
+      "title": "Constructeurs"
+    },
+    "salesAndHandover": {
+      "title": "Ventes & remise"
+    },
+    "unitTypeCategories": {
+      "title": "Catégories de types d'unités"
+    },
+    "unitTypes": {
+      "title": "Types d'unités"
+    },
+    "storyTypes": {
+      "title": "Types d'histoires"
+    },
+    "commissions": {
+      "title": "Commissions"
+    },
+    "leads": {
+      "title": "Prospects"
+    },
+    "unitAvailability": {
+      "title": "Calendrier de disponibilité"
+    },
+    "ownersAndRentals": {
+      "title": "Propriétaires & locations"
+    },
+    "rentalsHub": {
+      "title": "Centre des locations"
+    },
+    "leases": {
+      "title": "Baux"
+    },
+    "rentalPayments": {
+      "title": "Paiements de loyer"
+    },
+    "constructionUpdates": {
+      "title": "Avancement des travaux"
+    },
+    "stories": {
+      "title": "Histoires"
+    },
+    "snags": {
+      "title": "Liste des défauts"
+    },
+    "development": {
+      "title": "Développement"
+    },
+    "projectDocuments": {
+      "title": "Documents de projet"
+    },
+    "permits": {
+      "title": "Permis"
+    },
+    "delivery": {
+      "title": "Livraison"
+    },
+    "cost": {
+      "title": "Contrôle des coûts"
+    },
+    "qualityHse": {
+      "title": "Qualité & HSE"
+    },
+    "milestones": {
+      "title": "Jalons"
+    },
+    "scheduleTasks": {
+      "title": "Tâches du planning"
+    },
+    "costClassifications": {
+      "title": "Classifications de coûts"
+    },
+    "budgets": {
+      "title": "Budgets"
+    },
+    "boqItems": {
+      "title": "Postes DQ"
+    },
+    "estimateComparison": {
+      "title": "Comparaison des estimations"
+    },
+    "tendering": {
+      "title": "Appels d'offres"
+    },
+    "specifications": {
+      "title": "Devis descriptifs (LV)"
+    },
+    "specificationItems": {
+      "title": "Positions LV"
+    },
+    "tenders": {
+      "title": "Appels d'offres"
+    },
+    "tenderInvitations": {
+      "title": "Invitations à soumissionner"
+    },
+    "bids": {
+      "title": "Offres"
+    },
+    "bidLines": {
+      "title": "Lignes d'offre"
+    },
+    "costCommitments": {
+      "title": "Engagements / BC"
+    },
+    "workPackages": {
+      "title": "Lots de travaux"
+    },
+    "constructionContracts": {
+      "title": "Contrats de construction"
+    },
+    "progressClaims": {
+      "title": "Situations de travaux"
+    },
+    "rfis": {
+      "title": "RFI"
+    },
+    "submittals": {
+      "title": "Soumissions"
+    },
+    "variationOrders": {
+      "title": "Ordres de modification"
+    },
+    "landParcels": {
+      "title": "Parcelles"
+    },
+    "feasibilityStudies": {
+      "title": "Études de faisabilité"
+    },
+    "siteDiaries": {
+      "title": "Journaux de chantier"
+    },
+    "safetyIncidents": {
+      "title": "Incidents de sécurité"
+    },
+    "warranties": {
+      "title": "Garanties / DLP"
+    },
+    "handoverPackages": {
+      "title": "Dossiers de remise"
+    },
+    "commissioningRecords": {
+      "title": "Mise en service"
+    },
+    "designStages": {
+      "title": "Phases de conception"
+    },
+    "inspectionChecklistTemplates": {
+      "title": "Listes de contrôle"
+    },
+    "consultantAppointments": {
+      "title": "Mandats de consultants"
+    },
+    "bidComparison": {
+      "title": "Comparaison des offres"
+    },
+    "financeApproval": {
+      "title": "Finance & approbation"
+    },
+    "approvalWorkflows": {
+      "title": "Workflows d'approbation"
+    },
+    "approvalRequests": {
+      "title": "Demandes d'approbation"
+    },
+    "contractorInvoices": {
+      "title": "Factures entrepreneurs"
+    },
+    "incomingInvoices": {
+      "title": "Boîte AP"
+    },
+    "costControl": {
+      "title": "Contrôle des coûts"
+    },
+    "liquidityPlans": {
+      "title": "Plans de liquidité"
+    },
+    "liquidityLines": {
+      "title": "Lignes de liquidité"
+    },
+    "feeCalculations": {
+      "title": "Calculs d'honoraires"
+    },
+    "planMarkups": {
+      "title": "Annotations de plans"
+    },
+    "cockpit": {
+      "title": "Cockpit"
+    },
+    "facilityMgmt": {
+      "title": "Facility management"
+    },
+    "assets": {
+      "title": "Actifs"
+    },
+    "maintenancePlans": {
+      "title": "Plans de maintenance"
+    },
+    "maintenanceWorkOrders": {
+      "title": "Ordres de travail"
+    },
+    "bimIntegrations": {
+      "title": "BIM & intégrations"
+    },
+    "bimModels": {
+      "title": "Modèles BIM"
+    },
+    "bimQuantities": {
+      "title": "Quantités BIM"
+    },
+    "agentReport": {
+      "title": "Rapport agent"
+    },
+    "ownerPortal": {
+      "title": "Centre des locations"
+    },
+    "roi": {
+      "title": "Calculateur ROI"
+    },
+    "groupDashboard": {
+      "title": "Tableau de bord groupe"
+    },
+    "erpExport": {
+      "title": "Export ERP"
+    }
+  },
+  "reports": {
+    "title": "Rapports",
+    "groupDashboard": {
+      "title": "Tableau de bord groupe"
+    },
+    "agentReport": {
+      "title": "Rapport agent"
+    },
+    "roi": {
+      "title": "Calculateur ROI"
+    },
+    "erpExport": {
+      "title": "Export ERP"
+    }
+  },
+  "finance": {
+    "title": "Finance",
+    "unitCosts": {
+      "title": "Coûts des unités"
+    }
+  },
+  "tenancy": {
+    "systemSettings": {
+      "constructors": {
+        "title": "Constructeurs"
+      },
+      "unitTypeCategories": {
+        "title": "Catégories de types d'unités"
+      },
+      "unitTypes": {
+        "title": "Types d'unités"
+      },
+      "storyTypes": {
+        "title": "Types d'histoires"
+      },
+      "propertyManagement": {
+        "title": "Immobilier"
+      }
+    }
+  }
+}
