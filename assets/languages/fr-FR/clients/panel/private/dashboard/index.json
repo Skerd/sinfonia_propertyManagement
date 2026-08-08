@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
+  "title": "Tableau de bord immobilier",
+  "description": "Vue d'ensemble du portefeuille avec bâtiments, KPI et graphiques financiers",
+  "period": "Période",
+  "paymentAlerts": "Alertes de paiement",
+  "viewPaymentPlans": "Voir les plans de paiement",
+  "periodLast7Days": "7 derniers jours",
+  "periodLast30Days": "30 derniers jours",
+  "periodLast3Months": "3 derniers mois",
+  "periodLast12Months": "12 derniers mois",
+  "refresh": "Actualiser",
+  "totalUnits": "Total des unités",
+  "unitsSold": "Vendues",
+  "collected": "Encaissé",
+  "avgPricePerSqm": "Moy. €/m²",
+  "unitStatusBreakdown": "Statut des unités",
+  "failTitle": "Erreur",
+  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "selectEdifice": "Sélectionnez un bâtiment pour voir les KPI et les graphiques",
+  "viewEntries": "Voir les entrées",
+  "noData": "Aucune donnée du tableau de bord pour le moment"
+}

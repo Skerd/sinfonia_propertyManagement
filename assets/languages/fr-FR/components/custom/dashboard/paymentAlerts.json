@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/paymentAlerts.tsx",
+  "title": "Alertes de paiement",
+  "viewAllLabel": "Voir les plans de paiement",
+  "overdueBadge": "en retard",
+  "unitLabel": "Unité",
+  "dueDateLabel": "Date d'échéance",
+  "daysLate": "jours de retard",
+  "today": "Aujourd'hui",
+  "daysRemaining": "jours restants",
+  "viewAllCount": "Tout voir",
+  "noUpcomingPayments": "Aucun paiement à venir",
+  "noOverduePayments": "Aucun paiement en retard",
+  "overdueInstallment": "échéance en retard",
+  "overdueInstallments": "échéances en retard",
+  "viewPlansForDetails": "Voir les plans de paiement pour les détails."
+}

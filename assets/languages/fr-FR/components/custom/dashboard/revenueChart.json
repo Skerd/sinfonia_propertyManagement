@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/revenueChart.tsx",
+  "title": "Aperçu financier",
+  "revenue": "Revenu",
+  "inventory": "Inventaire",
+  "expenses": "Dépenses",
+  "collected": "Encaissé",
+  "pendingSales": "En attente (Ventes)",
+  "pendingReservations": "En attente (Réservations)",
+  "availableValue": "Valeur disponible",
+  "blockedValue": "Valeur bloquée",
+  "reservedValue": "Valeur réservée",
+  "soldValue": "Valeur vendue",
+  "totalExpenses": "Dépenses totales",
+  "pending": "En attente",
+  "unsold": "Non vendu"
+}

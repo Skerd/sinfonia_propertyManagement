@@ -18,5 +18,6 @@
   "failTitle": "Fehler",
   "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
   "selectEdifice": "Ein gebäude bis anzeigen KPIs und charts auswählen",
-  "viewEntries": "Entries anzeigen"
+  "viewEntries": "Entries anzeigen",
+  "noData": "Noch keine Dashboard-Daten"
 }

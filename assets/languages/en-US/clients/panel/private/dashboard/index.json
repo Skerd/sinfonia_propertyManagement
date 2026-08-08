@@ -18,5 +18,6 @@
   "failTitle": "Error",
   "failDescription": "Could not load dashboard. Click to retry.",
   "selectEdifice": "Select an edifice to view KPIs and charts",
-  "viewEntries": "View entries"
+  "viewEntries": "View entries",
+  "noData": "No dashboard data yet"
 }

@@ -18,5 +18,6 @@
   "failTitle": "Gabim",
   "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
   "selectEdifice": "Zgjidhni një ndërtesë për të parë KPI dhe grafikët",
-  "viewEntries": "Shiko regjistrimet"
+  "viewEntries": "Shiko regjistrimet",
+  "noData": "Ende nuk ka të dhëna të panelit"
 }

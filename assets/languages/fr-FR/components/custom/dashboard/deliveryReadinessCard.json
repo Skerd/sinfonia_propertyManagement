@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/deliveryReadinessCard.tsx",
+  "title": "Préparation à la livraison",
+  "overall": "Préparation globale",
+  "empty": "Aucune donnée de checklist de livraison pour le moment.",
+  "domain": {
+    "permits": "Permis approuvés",
+    "requiredDeliverables": "Livrables requis approuvés",
+    "designStages": "Étapes de conception terminées",
+    "milestones": "Jalons terminés",
+    "snags": "Réserves résolues",
+    "handoverPackages": "Dossiers de remise terminés"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/projectCard.tsx",
+  "sold": "Vendu",
+  "reserved": "Réservé",
+  "reservedShort": "Réserv.",
+  "available": "Disponible",
+  "availableShort": "Libre",
+  "blocked": "Bloqué",
+  "blockedShort": "Bloq.",
+  "leased": "Loué",
+  "leasedShort": "Loc.",
+  "value": "Valeur",
+  "collected": "Encaissé",
+  "edifice": "bâtiment",
+  "edifices": "bâtiments"
+}

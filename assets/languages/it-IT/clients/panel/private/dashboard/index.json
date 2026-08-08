@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
+  "title": "Dashboard immobiliare",
+  "description": "Panoramica del portafoglio con edifici, KPI e grafici finanziari",
+  "period": "Periodo",
+  "paymentAlerts": "Avvisi di pagamento",
+  "viewPaymentPlans": "Vedi piani di pagamento",
+  "periodLast7Days": "Ultimi 7 giorni",
+  "periodLast30Days": "Ultimi 30 giorni",
+  "periodLast3Months": "Ultimi 3 mesi",
+  "periodLast12Months": "Ultimi 12 mesi",
+  "refresh": "Aggiorna",
+  "totalUnits": "Unità totali",
+  "unitsSold": "Vendute",
+  "collected": "Incassato",
+  "avgPricePerSqm": "Media €/m²",
+  "unitStatusBreakdown": "Stato unità",
+  "failTitle": "Errore",
+  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "selectEdifice": "Seleziona un edificio per vedere KPI e grafici",
+  "viewEntries": "Vedi voci",
+  "noData": "Nessun dato della dashboard ancora"
+}

@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/paymentAlerts.tsx",
+  "title": "Avvisi di pagamento",
+  "viewAllLabel": "Vedi piani di pagamento",
+  "overdueBadge": "scaduto",
+  "unitLabel": "Unità",
+  "dueDateLabel": "Data di scadenza",
+  "daysLate": "giorni di ritardo",
+  "today": "Oggi",
+  "daysRemaining": "giorni rimanenti",
+  "viewAllCount": "Vedi tutti",
+  "noUpcomingPayments": "Nessun pagamento in arrivo",
+  "noOverduePayments": "Nessun pagamento scaduto",
+  "overdueInstallment": "rata scaduta",
+  "overdueInstallments": "rate scadute",
+  "viewPlansForDetails": "Vedi i piani di pagamento per i dettagli."
+}
