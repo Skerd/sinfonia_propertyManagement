@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
+  "title": "Report prestazioni agenti",
+  "refresh": "Aggiorna",
+  "noActivity": "Nessuna attività degli agenti trovata per il periodo selezionato.",
+  "errorTitle": "Impossibile caricare il report agenti",
+  "errorDescription": "Si è verificato un errore durante il recupero del report. Clicca per riprovare.",
+  "errorTooltip": "Clicca per riprovare a caricare i dati.",
+  "periodLabel": "Periodo",
+  "periodCustom": "Intervallo personalizzato",
+  "dateFromLabel": "Data inizio",
+  "dateToLabel": "Data fine",
+  "agentsLabel": "Agenti",
+  "agentsPlaceholder": "Tutti gli agenti",
+  "selectDateRangeHint": "Seleziona un periodo oppure scegli data di inizio e di fine.",
+  "exportPdf": "Esporta PDF",
+  "exportPdfLoading": "Esportazione…",
+  "period": {
+    "last30": "Ultimi 30 giorni",
+    "last3months": "Ultimi 3 mesi",
+    "last6months": "Ultimi 6 mesi",
+    "last12months": "Ultimi 12 mesi"
+  },
+  "pdf": {
+    "period": "Periodo",
+    "generatedAt": "Generato il"
+  },
+  "columns": {
+    "agent": "Agente",
+    "sales": "Vendite",
+    "cash": "Contanti",
+    "paymentPlan": "Piano di pagamento",
+    "reservations": "Prenotazioni",
+    "converted": "Convertite",
+    "conversionRate": "Tasso di conv.",
+    "commissionPaid": "Commissione pagata",
+    "commissionPending": "Commissione in sospeso",
+    "avgRate": "Tasso medio %"
+  }
+}

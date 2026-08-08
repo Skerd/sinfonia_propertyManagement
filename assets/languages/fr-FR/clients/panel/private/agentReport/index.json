@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
+  "title": "Rapport de performance des agents",
+  "refresh": "Actualiser",
+  "noActivity": "Aucune activité d’agent trouvée pour la période sélectionnée.",
+  "errorTitle": "Échec du chargement du rapport des agents",
+  "errorDescription": "Une erreur est survenue lors de la récupération du rapport. Cliquez pour réessayer.",
+  "errorTooltip": "Cliquez pour relancer le chargement des données.",
+  "periodLabel": "Période",
+  "periodCustom": "Plage personnalisée",
+  "dateFromLabel": "Date de début",
+  "dateToLabel": "Date de fin",
+  "agentsLabel": "Agents",
+  "agentsPlaceholder": "Tous les agents",
+  "selectDateRangeHint": "Sélectionnez une période ou choisissez une date de début et de fin.",
+  "exportPdf": "Exporter en PDF",
+  "exportPdfLoading": "Export en cours…",
+  "period": {
+    "last30": "30 derniers jours",
+    "last3months": "3 derniers mois",
+    "last6months": "6 derniers mois",
+    "last12months": "12 derniers mois"
+  },
+  "pdf": {
+    "period": "Période",
+    "generatedAt": "Généré le"
+  },
+  "columns": {
+    "agent": "Agent",
+    "sales": "Ventes",
+    "cash": "Comptant",
+    "paymentPlan": "Plan de paiement",
+    "reservations": "Réservations",
+    "converted": "Converties",
+    "conversionRate": "Taux de conv.",
+    "commissionPaid": "Commission payée",
+    "commissionPending": "Commission en attente",
+    "avgRate": "Taux moyen %"
+  }
+}

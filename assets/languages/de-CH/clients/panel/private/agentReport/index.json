@@ -1,29 +1,29 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
-  "title": "Makler Performance Bericht",
-  "refresh": "Refresh",
-  "noActivity": "Keine makler activity gefunden für die selected periode.",
-  "errorTitle": "Maklerbericht konnten nicht geladen werden",
-  "errorDescription": "Something went wrong während fetching die bericht. Click bis versuchen erneut.",
-  "errorTooltip": "Click bis retry fetching die daten.",
-  "periodLabel": "Periode",
-  "periodCustom": "Custom range",
+  "title": "Makler-Leistungsbericht",
+  "refresh": "Aktualisieren",
+  "noActivity": "Keine Makleraktivität für den ausgewählten Zeitraum gefunden.",
+  "errorTitle": "Maklerbericht konnte nicht geladen werden",
+  "errorDescription": "Beim Abrufen des Berichts ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "errorTooltip": "Klicken Sie, um das Laden der Daten erneut zu versuchen.",
+  "periodLabel": "Zeitraum",
+  "periodCustom": "Benutzerdefinierter Zeitraum",
   "dateFromLabel": "Startdatum",
   "dateToLabel": "Enddatum",
-  "agentsLabel": "Agents",
-  "agentsPlaceholder": "Alle agents",
-  "selectDateRangeHint": "A periode oder choose both start und end dates. auswählen",
-  "exportPdf": "Export PDF",
-  "exportPdfLoading": "Exporting…",
+  "agentsLabel": "Makler",
+  "agentsPlaceholder": "Alle Makler",
+  "selectDateRangeHint": "Wählen Sie einen Zeitraum oder geben Sie Start- und Enddatum an.",
+  "exportPdf": "PDF exportieren",
+  "exportPdfLoading": "Wird exportiert…",
   "period": {
-    "last30": "Nach 30 tage",
-    "last3months": "Nach 3 months",
-    "last6months": "Nach 6 months",
-    "last12months": "Nach 12 months"
+    "last30": "Letzte 30 Tage",
+    "last3months": "Letzte 3 Monate",
+    "last6months": "Letzte 6 Monate",
+    "last12months": "Letzte 12 Monate"
   },
   "pdf": {
-    "period": "Periode",
-    "generatedAt": "Generated am"
+    "period": "Zeitraum",
+    "generatedAt": "Erstellt am"
   },
   "columns": {
     "agent": "Makler",
@@ -32,9 +32,9 @@
     "paymentPlan": "Zahlungsplan",
     "reservations": "Reservationen",
     "converted": "Umgewandelt",
-    "conversionRate": "Conv. Satz",
-    "commissionPaid": "Provision Bezahlt",
-    "commissionPending": "Provision Ausstehend",
-    "avgRate": "Avg. Satz %"
+    "conversionRate": "Konversionsrate",
+    "commissionPaid": "Provision bezahlt",
+    "commissionPending": "Provision ausstehend",
+    "avgRate": "Durchschn. Satz %"
   }
 }
