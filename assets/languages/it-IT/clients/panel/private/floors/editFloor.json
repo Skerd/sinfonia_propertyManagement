@@ -1,0 +1,75 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
+  "title": "Modifica piano",
+  "description": "Aggiorna le informazioni del piano",
+  "editTitle": "Modifica piano",
+  "editDescription": "Aggiorna le informazioni del piano",
+  "errorTitle": "Caricamento piano non riuscito",
+  "errorDescription": "Clicca qui per riprovare",
+  "errorLoadingEdifice": "Errore nel caricamento dei dati dell'edificio",
+  "generalInfo": "Informazioni generali",
+  "features": "Caratteristiche",
+  "sharedSpaces": "Spazi comuni",
+  "floorLocation": "Posizione del piano sull'immagine del progetto",
+  "uploadError": "Caricamento dei file multimediali non riuscito",
+  "selectFloorLocation": "Clicca sull'immagine del progetto per selezionare la posizione del piano. Clicca vicino al primo punto per chiudere il poligono.",
+  "edificeNoMainImage": "L'edificio non ha un'immagine principale. Aggiungi prima un'immagine principale all'edificio.",
+  "projectNoMainImage": "Il progetto non ha un'immagine principale. Aggiungi prima un'immagine principale al progetto.",
+  "errorLoadingProject": "Errore nel caricamento dei dati del progetto",
+  "noEdificeSelectedTitle": "Nessun edificio selezionato",
+  "noEdificeSelectedDescription": "Seleziona prima un edificio per definire la posizione del piano.",
+  "form": {
+    "nameLabel": "Nome del piano",
+    "namePlaceholder": "Inserisci il nome del piano",
+    "nameRequired": "Il nome del piano è obbligatorio",
+    "levelNumberLabel": "Numero di piano",
+    "levelNumberPlaceholder": "Inserisci il numero di piano (0 = terra, 1 = primo, -1 = interrato)",
+    "totalUnitsLabel": "Unità totali",
+    "totalUnitsPlaceholder": "Inserisci il numero totale di unità",
+    "areaLabel": "Superficie (m²)",
+    "areaPlaceholder": "Inserisci la superficie del piano",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Inserisci la descrizione del piano",
+    "isAccessibleLabel": "Accessibile",
+    "isAccessibleDescription": "Questo piano è accessibile alle persone con disabilità",
+    "hasEmergencyExitLabel": "Uscita di emergenza",
+    "hasEmergencyExitDescription": "Questo piano ha un'uscita di emergenza",
+    "sharedSpacesLabel": "Spazi comuni",
+    "sharedSpacesPlaceholder": "Aggiungi spazio comune",
+    "mainImageLabel": "Immagine principale",
+    "mainImageRequired": "L'immagine principale è obbligatoria",
+    "imageGalleryLabel": "Galleria immagini",
+    "videoGalleryLabel": "Galleria video",
+    "mediaFilesLabel": "Documenti e file",
+    "marketingBookletLabel": "Brochure marketing",
+    "uploadNewImageHint": "Clicca per caricare un'immagine",
+    "polygonMustBeClosed": "Chiudi il poligono cliccando sul primo punto prima di inviare.",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeRequired": "L'edificio è obbligatorio"
+  },
+  "axios": {
+    "start": {
+      "title": "Aggiornamento del piano",
+      "time": 3000
+    },
+    "success": {
+      "title": "Piano aggiornato con successo!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare il piano, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica piano",
+    "description": "Aggiorna le informazioni del piano"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Aggiorna piano"
+  }
+}

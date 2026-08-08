@@ -1,0 +1,75 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
+  "title": "Modifier l'étage",
+  "description": "Mettre à jour les informations de l'étage",
+  "editTitle": "Modifier l'étage",
+  "editDescription": "Mettre à jour les informations de l'étage",
+  "errorTitle": "Échec du chargement de l'étage",
+  "errorDescription": "Cliquez ici pour réessayer",
+  "errorLoadingEdifice": "Erreur lors du chargement des données du bâtiment",
+  "generalInfo": "Informations générales",
+  "features": "Caractéristiques",
+  "sharedSpaces": "Espaces communs",
+  "floorLocation": "Emplacement de l'étage sur l'image du projet",
+  "uploadError": "Échec du téléversement des fichiers média",
+  "selectFloorLocation": "Cliquez sur l'image du projet pour sélectionner l'emplacement de l'étage. Cliquez près du premier point pour fermer le polygone.",
+  "edificeNoMainImage": "Le bâtiment n'a pas d'image principale. Ajoutez d'abord une image principale au bâtiment.",
+  "projectNoMainImage": "Le projet n'a pas d'image principale. Ajoutez d'abord une image principale au projet.",
+  "errorLoadingProject": "Erreur lors du chargement des données du projet",
+  "noEdificeSelectedTitle": "Aucun bâtiment sélectionné",
+  "noEdificeSelectedDescription": "Sélectionnez d'abord un bâtiment pour définir l'emplacement de l'étage.",
+  "form": {
+    "nameLabel": "Nom de l'étage",
+    "namePlaceholder": "Saisir le nom de l'étage",
+    "nameRequired": "Le nom de l'étage est obligatoire",
+    "levelNumberLabel": "Numéro d'étage",
+    "levelNumberPlaceholder": "Saisir le numéro d'étage (0 = rez-de-chaussée, 1 = premier, -1 = sous-sol)",
+    "totalUnitsLabel": "Unités totales",
+    "totalUnitsPlaceholder": "Saisir le nombre total d'unités",
+    "areaLabel": "Surface (m²)",
+    "areaPlaceholder": "Saisir la surface de l'étage",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir la description de l'étage",
+    "isAccessibleLabel": "Accessible",
+    "isAccessibleDescription": "Cet étage est accessible aux personnes à mobilité réduite",
+    "hasEmergencyExitLabel": "Issue de secours",
+    "hasEmergencyExitDescription": "Cet étage dispose d'une issue de secours",
+    "sharedSpacesLabel": "Espaces communs",
+    "sharedSpacesPlaceholder": "Ajouter un espace commun",
+    "mainImageLabel": "Image principale",
+    "mainImageRequired": "L'image principale est obligatoire",
+    "imageGalleryLabel": "Galerie d'images",
+    "videoGalleryLabel": "Galerie vidéo",
+    "mediaFilesLabel": "Documents et fichiers",
+    "marketingBookletLabel": "Brochure marketing",
+    "uploadNewImageHint": "Cliquer pour téléverser une image",
+    "polygonMustBeClosed": "Veuillez fermer le polygone en cliquant sur le premier point avant de soumettre.",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Sélectionner un bâtiment",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeRequired": "Le bâtiment est obligatoire"
+  },
+  "axios": {
+    "start": {
+      "title": "Mise à jour de l'étage",
+      "time": 3000
+    },
+    "success": {
+      "title": "Étage mis à jour avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour l'étage, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier l'étage",
+    "description": "Mettre à jour les informations de l'étage"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Mettre à jour l'étage"
+  }
+}

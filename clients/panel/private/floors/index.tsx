@@ -37,6 +37,19 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
+            field: "project",
+            label: resolveLanguageKey("fields.project") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/project/select",
+        },
+        {
+            field: "edifice",
+            label: resolveLanguageKey("fields.edifice") as string,
+            type: COLUMN_TYPE.OBJECT_ID,
+            apiUrl: "/api/realEstate/edifice/select",
+            dependsOn: "project",
+        },
+        {
             field: "levelNumber",
             label: resolveLanguageKey("fields.levelNumber") as string,
             type: COLUMN_TYPE.NUMBER,

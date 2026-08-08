@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/floors/unitsOverlay.tsx",
+  "title": "Overlay poligoni unità",
+  "description": "Tutti i poligoni delle unità visualizzati sull'immagine principale del piano.",
+  "noMainImage": "Il piano non ha un'immagine principale.",
+  "noUnitSelected": "Nessuna unità selezionata."
+}

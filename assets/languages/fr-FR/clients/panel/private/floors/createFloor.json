@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "title": "Créer un étage",
+  "description": "Créer un nouvel étage pour ce bâtiment",
+  "descriptionWithoutEdifice": "Créer un nouvel étage",
+  "generalInfo": "Informations générales",
+  "features": "Caractéristiques",
+  "sharedSpaces": "Espaces communs",
+  "floorLocation": "Emplacement de l'étage sur l'image du projet",
+  "uploadError": "Échec du téléversement des fichiers média",
+  "errorTitle": "Erreur",
+  "errorLoadingEdifice": "Erreur lors du chargement des données du bâtiment",
+  "selectFloorLocation": "Cliquez sur l'image du projet pour sélectionner l'emplacement de l'étage. Cliquez près du premier point pour fermer le polygone.",
+  "edificeNoMainImage": "Le bâtiment n'a pas d'image principale. Ajoutez d'abord une image principale au bâtiment.",
+  "projectNoMainImage": "Le projet n'a pas d'image principale. Ajoutez d'abord une image principale au projet.",
+  "errorLoadingProject": "Erreur lors du chargement des données du projet",
+  "removeSharedSpace": "Supprimer l'espace commun",
+  "noEdificeSelectedTitle": "Aucun bâtiment sélectionné",
+  "noEdificeSelectedDescription": "Sélectionnez d'abord un bâtiment pour définir l'emplacement de l'étage.",
+  "form": {
+    "nameLabel": "Nom de l'étage",
+    "namePlaceholder": "Saisir le nom de l'étage",
+    "nameRequired": "Le nom de l'étage est obligatoire",
+    "levelNumberLabel": "Numéro d'étage",
+    "levelNumberPlaceholder": "Saisir le numéro d'étage (0 = rez-de-chaussée, 1 = premier, -1 = sous-sol)",
+    "totalUnitsLabel": "Unités totales",
+    "totalUnitsPlaceholder": "Saisir le nombre total d'unités",
+    "areaLabel": "Surface (m²)",
+    "areaPlaceholder": "Saisir la surface de l'étage",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Saisir la description de l'étage",
+    "isAccessibleLabel": "Accessible",
+    "isAccessibleDescription": "Cet étage est accessible aux personnes à mobilité réduite",
+    "hasEmergencyExitLabel": "Issue de secours",
+    "hasEmergencyExitDescription": "Cet étage dispose d'une issue de secours",
+    "sharedSpacesLabel": "Espaces communs",
+    "sharedSpacesPlaceholder": "Ajouter un espace commun",
+    "mainImageLabel": "Image principale",
+    "mainImageRequired": "L'image principale est obligatoire",
+    "imageGalleryLabel": "Galerie d'images",
+    "videoGalleryLabel": "Galerie vidéo",
+    "mediaFilesLabel": "Documents et fichiers",
+    "marketingBookletLabel": "Brochure marketing",
+    "uploadNewImageHint": "Cliquer pour téléverser une image",
+    "polygonMustBeClosed": "Veuillez fermer le polygone en cliquant sur le premier point avant de soumettre.",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Sélectionner un bâtiment",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeRequired": "Le bâtiment est obligatoire"
+  },
+  "axios": {
+    "start": {
+      "title": "Création de l'étage",
+      "time": 3000
+    },
+    "success": {
+      "title": "Étage créé avec succès !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de créer l'étage, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un étage",
+    "description": "Créer un nouvel étage"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Créer l'étage"
+  }
+}

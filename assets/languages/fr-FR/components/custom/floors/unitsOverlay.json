@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/floors/unitsOverlay.tsx",
+  "title": "Superposition des polygones d'unités",
+  "description": "Tous les polygones d'unités affichés sur l'image principale de l'étage.",
+  "noMainImage": "L'étage n'a pas d'image principale.",
+  "noUnitSelected": "Aucune unité sélectionnée."
+}
