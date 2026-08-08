@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 import {Eye} from "lucide-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -23,6 +23,7 @@ import {
     fmtSurface,
     paginationSummary,
     personName,
+    selectBodyWithFilters,
     unitLabel,
 } from "./contractsHubHelpers.ts";
 import {ContractsHubFilterField, ContractsHubFilterToolbar} from "./ContractsHubFilterField.tsx";
@@ -44,7 +45,10 @@ export default function ClientsTableSection({
 
     const [searchInput, setSearchInput] = useState("");
     const [debouncedSearch, setDebouncedSearch] = useState("");
-    const [projectId, setProjectId] = useState("");
+    const [project, setProject] = useState("");
+    const [edifice, setEdifice] = useState("");
+    const [floor, setFloor] = useState("");
+    const [unit, setUnit] = useState("");
     const [unitTypeId, setUnitTypeId] = useState("");
     const [status, setStatus] = useState("");
     const [valueMin, setValueMin] = useState("");
@@ -55,12 +59,35 @@ export default function ClientsTableSection({
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<HttpError | null>(null);
 
+    const edificeSelectBody = useMemo(
+        () => selectBodyWithFilters([{field: "project", value: project}]),
+        [project],
+    );
+    const floorSelectBody = useMemo(
+        () => selectBodyWithFilters([
+            {field: "edifice", value: edifice},
+            {field: "project", value: project},
+        ]),
+        [edifice, project],
+    );
+    const unitSelectBody = useMemo(
+        () => selectBodyWithFilters([
+            {field: "floor", value: floor},
+            {field: "edifice", value: edifice},
+            {field: "project", value: project},
+        ]),
+        [floor, edifice, project],
+    );
+
     const fetchData = useCallback(async () => {
         setLoading(true);
         setError(null);
         const body: ClientsListFormType = {page, limit: PAGE_SIZE};
         if (debouncedSearch.trim()) body.search = debouncedSearch.trim();
-        if (projectId) body.projectId = projectId;
+        if (project) body.project = project;
+        if (edifice) body.edifice = edifice;
+        if (floor) body.floor = floor;
+        if (unit) body.unit = unit;
         if (unitTypeId) body.unitTypeId = unitTypeId;
         if (status) body.status = status as ClientsListFormType["status"];
         if (valueMin.trim()) body.valueMin = Number(valueMin);
@@ -78,7 +105,7 @@ export default function ClientsTableSection({
         } finally {
             setLoading(false);
         }
-    }, [page, projectId, debouncedSearch, status, unitTypeId, valueMax, valueMin]);
+    }, [page, project, edifice, floor, unit, debouncedSearch, status, unitTypeId, valueMax, valueMin]);
 
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(searchInput), 300);
@@ -91,7 +118,7 @@ export default function ClientsTableSection({
 
     useEffect(() => {
         setPage(1);
-    }, [debouncedSearch, projectId, unitTypeId, status, valueMin, valueMax]);
+    }, [debouncedSearch, project, edifice, floor, unit, unitTypeId, status, valueMin, valueMax]);
 
     const rows = data?.data ?? [];
     const total = data?.total ?? 0;
@@ -123,8 +150,62 @@ export default function ClientsTableSection({
                                     apiUrl="/api/realEstate/project/select"
                                     method="POST"
                                     placeholder={rk("projectPlaceholder")}
-                                    value={projectId}
-                                    onValueChange={(v: string | string[]) => setProjectId(typeof v === "string" ? v : "")}
+                                    value={project}
+                                    onValueChange={(v: string | string[]) => {
+                                        setProject(typeof v === "string" ? v : "");
+                                        setEdifice("");
+                                        setFloor("");
+                                        setUnit("");
+                                    }}
+                                    className="h-9 w-full"
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
+                            </ContractsHubFilterField>
+
+                            <ContractsHubFilterField label={rk("edificeLabel")}>
+                                <ApiSelect
+                                    key={`edifice-${project || "none"}`}
+                                    apiUrl="/api/realEstate/edifice/select"
+                                    method="POST"
+                                    postBody={edificeSelectBody}
+                                    placeholder={rk("edificePlaceholder")}
+                                    value={edifice}
+                                    onValueChange={(v: string | string[]) => {
+                                        setEdifice(typeof v === "string" ? v : "");
+                                        setFloor("");
+                                        setUnit("");
+                                    }}
+                                    className="h-9 w-full"
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
+                            </ContractsHubFilterField>
+
+                            <ContractsHubFilterField label={rk("floorLabel")}>
+                                <ApiSelect
+                                    key={`floor-${edifice || project || "none"}`}
+                                    apiUrl="/api/realEstate/floor/select"
+                                    method="POST"
+                                    postBody={floorSelectBody}
+                                    placeholder={rk("floorPlaceholder")}
+                                    value={floor}
+                                    onValueChange={(v: string | string[]) => {
+                                        setFloor(typeof v === "string" ? v : "");
+                                        setUnit("");
+                                    }}
+                                    className="h-9 w-full"
+                                    resolveLanguageKey={resolveLanguageKey}
+                                />
+                            </ContractsHubFilterField>
+
+                            <ContractsHubFilterField label={rk("unitLabel")}>
+                                <ApiSelect
+                                    key={`unit-${floor || edifice || project || "none"}`}
+                                    apiUrl="/api/realEstate/unit/select"
+                                    method="POST"
+                                    postBody={unitSelectBody}
+                                    placeholder={rk("unitPlaceholder")}
+                                    value={unit}
+                                    onValueChange={(v: string | string[]) => setUnit(typeof v === "string" ? v : "")}
                                     className="h-9 w-full"
                                     resolveLanguageKey={resolveLanguageKey}
                                 />
@@ -285,7 +366,7 @@ export default function ClientsTableSection({
                             disabled={page <= 1}
                             onClick={() => setPage((p) => Math.max(1, p - 1))}
                         >
-                            Previous
+                            {rk("pagination.previous")}
                         </Button>
                         <Button
                             type="button"
@@ -294,7 +375,7 @@ export default function ClientsTableSection({
                             disabled={page >= totalPages}
                             onClick={() => setPage((p) => p + 1)}
                         >
-                            Next
+                            {rk("pagination.next")}
                         </Button>
                     </div>
                 </div>

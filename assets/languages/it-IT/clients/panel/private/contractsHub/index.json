@@ -1,0 +1,118 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx",
+  "title": "Contratti e clienti",
+  "description": "Tutti i contratti e i clienti in un unico posto. Cerca, filtra e gestisci facilmente.",
+  "contracts": {
+    "title": "Contratti",
+    "description": "Tutti i contratti in un unico posto. Cerca, filtra e gestisci facilmente.",
+    "searchLabel": "Cerca",
+    "searchPlaceholder": "Cerca per nome cliente, unità, numero contratto…",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Tutti i progetti",
+    "contractTypeLabel": "Tipo di contratto",
+    "contractTypePlaceholder": "Tutti i tipi",
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Tutti gli stati",
+    "signatureDateLabel": "Data di firma",
+    "signatureDateFromLabel": "Da",
+    "signatureDateToLabel": "A",
+    "noResults": "Nessun contratto trovato.",
+    "errorTitle": "Impossibile caricare i contratti",
+    "errorDescription": "Riprova o modifica i filtri.",
+    "errorTooltip": "Richiesta al registro contratti non riuscita",
+    "columns": {
+      "contractNumber": "Numero contratto",
+      "client": "Cliente",
+      "project": "Progetto",
+      "unit": "Unità",
+      "contractType": "Tipo di contratto",
+      "status": "Stato",
+      "signatureDate": "Data di firma",
+      "uploadDate": "Data di caricamento",
+      "agent": "Agente",
+      "paymentStatus": "Stato pagamento",
+      "actions": "Azioni"
+    },
+    "contractType": {
+      "reservation": "Prenotazione",
+      "cash_sale": "Compravendita",
+      "payment_plan_sale": "Promessa di vendita"
+    },
+    "status": {
+      "active": "Prenotato",
+      "expired": "Scaduto",
+      "cancelled": "Annullato",
+      "sold": "Venduto"
+    },
+    "paymentStatus": {
+      "ok": "OK",
+      "partially": "Parziale",
+      "unpaid": "Non pagato",
+      "no_payments": "Nessun pagamento"
+    },
+    "pagination": {
+      "summary": "{from} a {to} di {total} risultati",
+      "previous": "Precedente",
+      "next": "Successivo"
+    },
+    "viewAction": "Visualizza",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Tutti gli edifici",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Tutti i piani",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Tutte le unità"
+  },
+  "clients": {
+    "title": "Clienti",
+    "description": "Tutti i tuoi clienti e le loro unità acquistate in un unico posto.",
+    "searchLabel": "Cerca",
+    "searchPlaceholder": "Cerca per nome o cognome…",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Tutti i progetti",
+    "typologyLabel": "Tipologia",
+    "typologyPlaceholder": "Tutte le tipologie",
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Tutti gli stati",
+    "valueRangeLabel": "Fascia di valore (EUR)",
+    "valueMinPlaceholder": "Min",
+    "valueMaxPlaceholder": "Max",
+    "noResults": "Nessun cliente trovato.",
+    "errorTitle": "Impossibile caricare i clienti",
+    "errorDescription": "Riprova o modifica i filtri.",
+    "errorTooltip": "Richiesta al registro clienti non riuscita",
+    "columns": {
+      "name": "Nome",
+      "phone": "Telefono",
+      "email": "Email",
+      "project": "Progetto",
+      "unit": "Unità",
+      "typology": "Tipologia",
+      "surface": "Superficie (m²)",
+      "unitValue": "Valore unità (EUR)",
+      "status": "Stato",
+      "bookingDate": "Data di prenotazione",
+      "contractDate": "Data contratto",
+      "agent": "Agente",
+      "paid": "Pagato",
+      "remaining": "Rimanente",
+      "actions": "Azioni"
+    },
+    "status": {
+      "sold": "Venduto",
+      "reserved": "Prenotato"
+    },
+    "pagination": {
+      "summary": "{from} a {to} di {total} risultati",
+      "previous": "Precedente",
+      "next": "Successivo"
+    },
+    "viewAction": "Visualizza",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Tutti gli edifici",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Tutti i piani",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Tutte le unità"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/createConstructionContract.tsx",
+  "title": "Crea contratto di costruzione",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio",
+    "workPackageLabel": "Pacchetto di lavoro",
+    "workPackagePlaceholder": "Seleziona pacchetto di lavoro",
+    "constructorLabel": "Costruttore",
+    "constructorPlaceholder": "Seleziona costruttore",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "contractValueLabel": "Valore del contratto",
+    "contractValuePlaceholder": "Valore del contratto",
+    "retentionPercentLabel": "Percentuale di ritenuta",
+    "retentionPercentPlaceholder": "Percentuale di ritenuta",
+    "performanceBondLabel": "Garanzia di buona esecuzione",
+    "performanceBondPlaceholder": "Garanzia di buona esecuzione",
+    "paymentTermsLabel": "Termini di pagamento",
+    "paymentTermsPlaceholder": "Termini di pagamento",
+    "startDateLabel": "Data di inizio",
+    "startDatePlaceholder": "Data di inizio",
+    "endDateLabel": "Data di fine",
+    "endDatePlaceholder": "Data di fine",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Crea contratto di costruzione",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

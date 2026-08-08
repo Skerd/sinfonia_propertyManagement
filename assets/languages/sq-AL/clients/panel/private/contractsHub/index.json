@@ -36,7 +36,7 @@
     "contractType": {
       "reservation": "Rezervim",
       "cash_sale": "Shitblerje",
-      "payment_plan_sale": "Premtim Shitje"
+      "payment_plan_sale": "Premtim shitje"
     },
     "status": {
       "active": "Rezervuar",
@@ -51,9 +51,17 @@
       "no_payments": "Nuk ka pagesa"
     },
     "pagination": {
-      "summary": "{from} deri {to} nga {total} rezultate"
+      "summary": "{from} deri {to} nga {total} rezultate",
+      "previous": "Mëparshëm",
+      "next": "Tjetër"
     },
-    "viewAction": "Shiko"
+    "viewAction": "Shiko",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Të gjitha ndërtesat",
+    "floorLabel": "Kati",
+    "floorPlaceholder": "Të gjithë katet",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Të gjitha njësitë"
   },
   "clients": {
     "title": "Klientët",
@@ -68,7 +76,7 @@
     "statusPlaceholder": "Të gjithë statuset",
     "valueRangeLabel": "Diapazoni i vlerës (EUR)",
     "valueMinPlaceholder": "Min",
-    "valueMaxPlaceholder": "Max",
+    "valueMaxPlaceholder": "Maks",
     "noResults": "Nuk u gjetën klientë.",
     "errorTitle": "Klientët nuk u ngarkuan",
     "errorDescription": "Provo përsëri ose ndrysho filtrat.",
@@ -95,8 +103,16 @@
       "reserved": "Rezervuar"
     },
     "pagination": {
-      "summary": "{from} deri {to} nga {total} rezultate"
+      "summary": "{from} deri {to} nga {total} rezultate",
+      "previous": "Mëparshëm",
+      "next": "Tjetër"
     },
-    "viewAction": "Shiko"
+    "viewAction": "Shiko",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Të gjitha ndërtesat",
+    "floorLabel": "Kati",
+    "floorPlaceholder": "Të gjithë katet",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Të gjitha njësitë"
   }
 }

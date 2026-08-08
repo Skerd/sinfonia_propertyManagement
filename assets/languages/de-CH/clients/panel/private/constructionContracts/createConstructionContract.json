@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/createConstructionContract.tsx",
-  "title": "Bauvertrag hinzufügen",
+  "title": "Bauvertrag erstellen",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -17,23 +17,23 @@
     "descriptionPlaceholder": "Beschreibung",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
-    "contractValueLabel": "Vertrag Wert",
-    "contractValuePlaceholder": "Vertrag Wert",
-    "retentionPercentLabel": "Einbehalt Percent",
-    "retentionPercentPlaceholder": "Einbehalt Percent",
-    "performanceBondLabel": "Performance Bond",
-    "performanceBondPlaceholder": "Performance Bond",
-    "paymentTermsLabel": "Zahlung Terms",
-    "paymentTermsPlaceholder": "Zahlung Terms",
+    "contractValueLabel": "Vertragswert",
+    "contractValuePlaceholder": "Vertragswert",
+    "retentionPercentLabel": "Einbehalt in Prozent",
+    "retentionPercentPlaceholder": "Einbehalt in Prozent",
+    "performanceBondLabel": "Erfüllungsgarantie",
+    "performanceBondPlaceholder": "Erfüllungsgarantie",
+    "paymentTermsLabel": "Zahlungsbedingungen",
+    "paymentTermsPlaceholder": "Zahlungsbedingungen",
     "startDateLabel": "Startdatum",
     "startDatePlaceholder": "Startdatum",
     "endDateLabel": "Enddatum",
     "endDatePlaceholder": "Enddatum",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
-    "newFiles": "Neu files"
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Vorhandene Dateien",
+    "newFiles": "Neue Dateien"
   },
   "axios": {
     "start": {
@@ -50,7 +50,7 @@
     }
   },
   "formHeader": {
-    "title": "Bauvertrag hinzufügen",
+    "title": "Bauvertrag erstellen",
     "description": ""
   },
   "formButtons": {

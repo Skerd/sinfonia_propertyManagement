@@ -1,22 +1,22 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/createConstructionContract.tsx",
-  "title": "Shto Construction Contract",
+  "title": "Krijo kontratë ndërtimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
-    "projectPlaceholder": "Zgjidh projekti",
+    "projectPlaceholder": "Zgjidh projektin",
     "edificeLabel": "Ndërtesa",
-    "edificePlaceholder": "Zgjidh ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
     "workPackageLabel": "Paketa e punës",
-    "workPackagePlaceholder": "Zgjidh work package",
-    "constructorLabel": "Kontraktori",
-    "constructorPlaceholder": "Zgjidh kontraktori",
+    "workPackagePlaceholder": "Zgjidh paketën e punës",
+    "constructorLabel": "Ndërtuesi",
+    "constructorPlaceholder": "Zgjidh ndërtuesin",
     "titleLabel": "Titulli",
     "titlePlaceholder": "Titulli",
     "descriptionLabel": "Përshkrimi",
     "descriptionPlaceholder": "Përshkrimi",
     "currencyLabel": "Monedha",
-    "currencyPlaceholder": "Zgjidh monedha",
+    "currencyPlaceholder": "Zgjidh monedhën",
     "contractValueLabel": "Vlera e kontratës",
     "contractValuePlaceholder": "Vlera e kontratës",
     "retentionPercentLabel": "Përqindja e ndalesës",
@@ -50,7 +50,7 @@
     }
   },
   "formHeader": {
-    "title": "Shto Construction Contract",
+    "title": "Krijo kontratë ndërtimi",
     "description": ""
   },
   "formButtons": {

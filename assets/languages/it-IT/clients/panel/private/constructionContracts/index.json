@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/index.tsx",
+  "title": "Contratti di costruzione",
+  "description": "Gestire i contratti di costruzione",
+  "createConstructionContract": "Crea contratto di costruzione",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "approvedVariationsTotal": "Totale variazioni approvate",
+    "certifiedClaimsTotal": "Totale reclami certificati",
+    "constructorRef": "Costruttore",
+    "contractValue": "Valore del contratto",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "endDate": "Data di fine",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "paymentTerms": "Termini di pagamento",
+    "performanceBond": "Garanzia di buona esecuzione",
+    "project": "Progetto",
+    "retentionPercent": "Ritenuta %",
+    "startDate": "Data di inizio",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "workPackage": "Pacchetto di lavoro",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "active": "Attivo",
+        "suspended": "Sospeso",
+        "completed": "Completato",
+        "terminated": "Risolto"
+      }
+    }
+  }
+}

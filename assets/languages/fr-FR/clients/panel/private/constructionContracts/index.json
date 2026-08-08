@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/index.tsx",
+  "title": "Contrats de construction",
+  "description": "Gérer les contrats de construction",
+  "createConstructionContract": "Créer un contrat de construction",
+  "noData": "Aucun enregistrement trouvé",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher...",
+  "fields": {
+    "approvedVariationsTotal": "Total des variations approuvées",
+    "certifiedClaimsTotal": "Total des réclamations certifiées",
+    "constructorRef": "Constructeur",
+    "contractValue": "Valeur du contrat",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Édifice",
+    "endDate": "Date de fin",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "paymentTerms": "Conditions de paiement",
+    "performanceBond": "Garantie de bonne exécution",
+    "project": "Projet",
+    "retentionPercent": "Retenue %",
+    "startDate": "Date de début",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "workPackage": "Lot de travaux",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "active": "Actif",
+        "suspended": "Suspendu",
+        "completed": "Terminé",
+        "terminated": "Résilié"
+      }
+    }
+  }
+}

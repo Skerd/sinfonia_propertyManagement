@@ -1,0 +1,118 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx",
+  "title": "Contrats & clients",
+  "description": "Tous les contrats et clients au même endroit. Recherchez, filtrez et gérez facilement.",
+  "contracts": {
+    "title": "Contrats",
+    "description": "Tous les contrats au même endroit. Recherchez, filtrez et gérez facilement.",
+    "searchLabel": "Rechercher",
+    "searchPlaceholder": "Rechercher par nom de client, unité, numéro de contrat…",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Tous les projets",
+    "contractTypeLabel": "Type de contrat",
+    "contractTypePlaceholder": "Tous les types",
+    "statusLabel": "Statut",
+    "statusPlaceholder": "Tous les statuts",
+    "signatureDateLabel": "Date de signature",
+    "signatureDateFromLabel": "Du",
+    "signatureDateToLabel": "Au",
+    "noResults": "Aucun contrat trouvé.",
+    "errorTitle": "Impossible de charger les contrats",
+    "errorDescription": "Réessayez ou ajustez vos filtres.",
+    "errorTooltip": "Échec de la requête du registre des contrats",
+    "columns": {
+      "contractNumber": "Numéro de contrat",
+      "client": "Client",
+      "project": "Projet",
+      "unit": "Unité",
+      "contractType": "Type de contrat",
+      "status": "Statut",
+      "signatureDate": "Date de signature",
+      "uploadDate": "Date de téléversement",
+      "agent": "Agent",
+      "paymentStatus": "Statut de paiement",
+      "actions": "Actions"
+    },
+    "contractType": {
+      "reservation": "Réservation",
+      "cash_sale": "Achat-vente",
+      "payment_plan_sale": "Promesse de vente"
+    },
+    "status": {
+      "active": "Réservé",
+      "expired": "Expiré",
+      "cancelled": "Annulé",
+      "sold": "Vendu"
+    },
+    "paymentStatus": {
+      "ok": "OK",
+      "partially": "Partiel",
+      "unpaid": "Impayé",
+      "no_payments": "Aucun paiement"
+    },
+    "pagination": {
+      "summary": "{from} à {to} sur {total} résultats",
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "viewAction": "Voir",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Tous les édifices",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Tous les étages",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Toutes les unités"
+  },
+  "clients": {
+    "title": "Clients",
+    "description": "Tous vos clients et leurs unités achetées au même endroit.",
+    "searchLabel": "Rechercher",
+    "searchPlaceholder": "Rechercher par nom ou prénom…",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Tous les projets",
+    "typologyLabel": "Typologie",
+    "typologyPlaceholder": "Toutes les typologies",
+    "statusLabel": "Statut",
+    "statusPlaceholder": "Tous les statuts",
+    "valueRangeLabel": "Plage de valeur (EUR)",
+    "valueMinPlaceholder": "Min",
+    "valueMaxPlaceholder": "Max",
+    "noResults": "Aucun client trouvé.",
+    "errorTitle": "Impossible de charger les clients",
+    "errorDescription": "Réessayez ou ajustez vos filtres.",
+    "errorTooltip": "Échec de la requête du registre des clients",
+    "columns": {
+      "name": "Nom",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "project": "Projet",
+      "unit": "Unité",
+      "typology": "Typologie",
+      "surface": "Surface (m²)",
+      "unitValue": "Valeur de l'unité (EUR)",
+      "status": "Statut",
+      "bookingDate": "Date de réservation",
+      "contractDate": "Date du contrat",
+      "agent": "Agent",
+      "paid": "Payé",
+      "remaining": "Restant",
+      "actions": "Actions"
+    },
+    "status": {
+      "sold": "Vendu",
+      "reserved": "Réservé"
+    },
+    "pagination": {
+      "summary": "{from} à {to} sur {total} résultats",
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "viewAction": "Voir",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Tous les édifices",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Tous les étages",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Toutes les unités"
+  }
+}

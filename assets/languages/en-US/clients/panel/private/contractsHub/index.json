@@ -51,9 +51,17 @@
       "no_payments": "No payments"
     },
     "pagination": {
-      "summary": "{from} to {to} of {total} results"
+      "summary": "{from} to {to} of {total} results",
+      "previous": "Previous",
+      "next": "Next"
     },
-    "viewAction": "View"
+    "viewAction": "View",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "All edifices",
+    "floorLabel": "Floor",
+    "floorPlaceholder": "All floors",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "All units"
   },
   "clients": {
     "title": "Clients",
@@ -95,8 +103,16 @@
       "reserved": "Reserved"
     },
     "pagination": {
-      "summary": "{from} to {to} of {total} results"
+      "summary": "{from} to {to} of {total} results",
+      "previous": "Previous",
+      "next": "Next"
     },
-    "viewAction": "View"
+    "viewAction": "View",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "All edifices",
+    "floorLabel": "Floor",
+    "floorPlaceholder": "All floors",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "All units"
   }
 }

@@ -1,0 +1,60 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/createConstructionContract.tsx",
+  "title": "Créer un contrat de construction",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Édifice",
+    "edificePlaceholder": "Sélectionner un édifice",
+    "workPackageLabel": "Lot de travaux",
+    "workPackagePlaceholder": "Sélectionner un lot de travaux",
+    "constructorLabel": "Constructeur",
+    "constructorPlaceholder": "Sélectionner un constructeur",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "contractValueLabel": "Valeur du contrat",
+    "contractValuePlaceholder": "Valeur du contrat",
+    "retentionPercentLabel": "Pourcentage de retenue",
+    "retentionPercentPlaceholder": "Pourcentage de retenue",
+    "performanceBondLabel": "Garantie de bonne exécution",
+    "performanceBondPlaceholder": "Garantie de bonne exécution",
+    "paymentTermsLabel": "Conditions de paiement",
+    "paymentTermsPlaceholder": "Conditions de paiement",
+    "startDateLabel": "Date de début",
+    "startDatePlaceholder": "Date de début",
+    "endDateLabel": "Date de fin",
+    "endDatePlaceholder": "Date de fin",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Créer un contrat de construction",
+    "description": ""
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

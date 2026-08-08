@@ -1,17 +1,17 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/index.tsx",
-  "title": "ConstructionContract",
-  "description": "ConstructionContract register",
-  "createConstructionContract": "ConstructionContract hinzufügen",
+  "title": "Bauverträge",
+  "description": "Bauverträge verwalten",
+  "createConstructionContract": "Bauvertrag erstellen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen...",
   "fields": {
-    "approvedVariationsTotal": "Genehmigt Variations Total",
-    "certifiedClaimsTotal": "Certified Claims Total",
+    "approvedVariationsTotal": "Summe genehmigter Variationen",
+    "certifiedClaimsTotal": "Summe zertifizierter Forderungen",
     "constructorRef": "Unternehmer",
-    "contractValue": "Vertrag Wert",
+    "contractValue": "Vertragswert",
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",
     "currency": "Währung",
@@ -23,8 +23,8 @@
     "media": "Medien",
     "name": "Referenz",
     "notes": "Notizen",
-    "paymentTerms": "Zahlung Terms",
-    "performanceBond": "Performance Bond",
+    "paymentTerms": "Zahlungsbedingungen",
+    "performanceBond": "Erfüllungsgarantie",
     "project": "Projekt",
     "retentionPercent": "Einbehalt %",
     "startDate": "Startdatum",
@@ -36,9 +36,9 @@
       "status": {
         "draft": "Entwurf",
         "active": "Aktiv",
-        "suspended": "Suspended",
+        "suspended": "Ausgesetzt",
         "completed": "Abgeschlossen",
-        "terminated": "Terminated"
+        "terminated": "Beendet"
       }
     }
   }
