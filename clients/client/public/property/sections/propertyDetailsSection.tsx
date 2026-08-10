@@ -31,9 +31,9 @@ const AREA_PRICING_ROWS: {labelKey: string; getValue: DetailValueGetter}[] = [
         getValue: (unit, resolveLanguageKey) =>
             unit.propertyType ? resolveLanguageKey(`propertyType_${unit.propertyType}`) : MISSING_VALUE,
     },
-    {labelKey: "area", getValue: (unit) => formatAreaSqm(unit.grossAreaSqm)},
+    {labelKey: "area", getValue: (unit) => formatAreaSqm(unit.areaSqm ?? unit.grossAreaSqm)},
     {labelKey: "sharedArea", getValue: (unit) => formatAreaSqm(unit.sharedAreaSqm)},
-    {labelKey: "netArea", getValue: (unit) => formatAreaSqm(unit.netAreaSqm ?? unit.areaSqm)},
+    {labelKey: "netArea", getValue: (unit) => formatAreaSqm(unit.netAreaSqm)},
     {labelKey: "verandaArea", getValue: (unit) => formatAreaSqm(unit.verandaAreaSqm)},
     {
         labelKey: "price",
@@ -117,7 +117,7 @@ function DetailRow({label, value}: {label: string; value: string}) {
 
 function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: PropertyDetailsSectionProps) {
     const unitPrice = unit.price ?? unit.sharePrice ?? 0;
-    const unitArea = unit.netAreaSqm ?? unit.areaSqm ?? 1;
+    const unitArea = unit.areaSqm ?? unit.grossAreaSqm ?? 1;
     const priceHistory = unit.priceHistory ?? [];
     const priceHistoryPlot = buildPropertyPriceHistoryPlot(priceHistory);
 

@@ -129,15 +129,13 @@ function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}
                       value: unit.propertyType ? t(`propertyType_${unit.propertyType}`) : null,
                   },
                   {label: t("grossArea"), value: formatAreaSqm(unit.grossAreaSqm)},
-                  {label: t("netArea"), value: formatAreaSqm(unit.netAreaSqm ?? unit.areaSqm)},
+                  {label: t("netArea"), value: formatAreaSqm(unit.netAreaSqm)},
                   {label: t("sharedArea"), value: formatAreaSqm(unit.sharedAreaSqm)},
                   {label: t("verandaArea"), value: formatAreaSqm(unit.verandaAreaSqm)},
                   {
                       label: t("area"),
                       value:
-                          unit.grossAreaSqm == null &&
-                          unit.netAreaSqm == null &&
-                          unit.areaSqm != null
+                          unit.grossAreaSqm == null && unit.areaSqm != null
                               ? formatAreaSqm(unit.areaSqm)
                               : null,
                   },
