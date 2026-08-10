@@ -82,6 +82,8 @@
   "floorN": "Kati {{level}}",
   "floorFallback": "Kati",
   "goBack": "Kthehu mbrapa",
+  "showPolygons": "Shfaq konturet",
+  "hidePolygons": "Fshih konturet",
   "viewerLocationAria": "Vendndodhja e shikuesit",
   "projectOverview": "Përmbledhja e projektit",
   "exploring": "Duke eksploruar",

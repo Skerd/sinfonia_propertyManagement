@@ -82,6 +82,8 @@
   "floorN": "Piano {{level}}",
   "floorFallback": "Piano",
   "goBack": "Torna indietro",
+  "showPolygons": "Mostra i contorni",
+  "hidePolygons": "Nascondi i contorni",
   "viewerLocationAria": "Posizione nel visualizzatore",
   "projectOverview": "Panoramica del progetto",
   "exploring": "Esplorazione",

@@ -82,6 +82,8 @@
   "floorN": "Étage {{level}}",
   "floorFallback": "Étage",
   "goBack": "Retour",
+  "showPolygons": "Afficher les contours",
+  "hidePolygons": "Masquer les contours",
   "viewerLocationAria": "Emplacement du visualiseur",
   "projectOverview": "Aperçu du projet",
   "exploring": "Exploration",

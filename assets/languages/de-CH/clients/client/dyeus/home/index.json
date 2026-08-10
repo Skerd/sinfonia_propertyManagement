@@ -82,6 +82,8 @@
   "floorN": "Etage {{level}}",
   "floorFallback": "Etage",
   "goBack": "Zurück",
+  "showPolygons": "Umrisse anzeigen",
+  "hidePolygons": "Umrisse ausblenden",
   "viewerLocationAria": "Viewer-Standort",
   "projectOverview": "Projektübersicht",
   "exploring": "Erkunden",

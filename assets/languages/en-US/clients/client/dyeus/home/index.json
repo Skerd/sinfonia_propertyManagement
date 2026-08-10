@@ -82,6 +82,8 @@
   "floorN": "Floor {{level}}",
   "floorFallback": "Floor",
   "goBack": "Go back",
+  "showPolygons": "Show outlines",
+  "hidePolygons": "Hide outlines",
   "viewerLocationAria": "Viewer location",
   "projectOverview": "Project overview",
   "exploring": "Exploring",

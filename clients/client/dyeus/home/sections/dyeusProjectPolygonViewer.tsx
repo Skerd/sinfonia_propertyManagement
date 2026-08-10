@@ -1,6 +1,6 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {ChevronLeft} from "lucide-react";
+import {ChevronLeft, Eye, EyeOff} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
@@ -113,6 +113,7 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
     const [listHoveredId, setListHoveredId] = useState<string | null>(null);
     const [imageAspect, setImageAspect] = useState(FALLBACK_IMAGE_ASPECT);
     const [panelMaxHeight, setPanelMaxHeight] = useState<number | undefined>(undefined);
+    const [phantomsAlwaysVisible, setPhantomsAlwaysVisible] = useState(true);
     const imageColRef = useRef<HTMLDivElement>(null);
     // Seed single-edifice selection on first paint — a post-mount effect remounts the
     // canvas (project → edifice) and flickers the image.
@@ -306,7 +307,7 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
             <div className="flex w-full flex-col overflow-hidden border border-dyeus-border bg-dyeus-white lg:flex-row lg:items-start">
                 <div
                     ref={imageColRef}
-                    className="relative w-full min-w-0 flex-1 overflow-hidden bg-dyeus-sand"
+                    className="relative w-full min-w-0 max-h-[90svh] flex-1 overflow-hidden bg-dyeus-sand"
                     style={{aspectRatio: String(imageAspect)}}
                 >
                     <div className="absolute inset-0 size-full [&_[data-slot=card]]:size-full [&_[data-slot=card]]:max-w-none [&_[data-slot=card]]:rounded-none [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
@@ -318,7 +319,7 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                             disabled
                             hideControls
                             objectFit="contain"
-                            phantomsAlwaysVisible
+                            phantomsAlwaysVisible={phantomsAlwaysVisible}
                             imageUrl={canvasImageUrl}
                             phantomPoints={phantomPoints}
                             phantomHoverContent={renderHover}
@@ -369,6 +370,28 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                     ) : null}
                                 </nav>
                             </div>
+                        </div>
+                    ) : null}
+
+                    {phantomPoints.length > 0 ? (
+                        <div className="absolute right-3 top-3 z-30 md:right-4 md:top-4">
+                            <button
+                                type="button"
+                                onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
+                                aria-pressed={phantomsAlwaysVisible}
+                                aria-label={
+                                    phantomsAlwaysVisible
+                                        ? t("hidePolygons")
+                                        : t("showPolygons")
+                                }
+                                className="flex size-8 cursor-pointer items-center justify-center rounded-md bg-dyeus-cream/90 text-dyeus-ink/80 shadow-sm backdrop-blur-sm transition hover:bg-dyeus-cream hover:text-dyeus-ink"
+                            >
+                                {phantomsAlwaysVisible ? (
+                                    <Eye className="size-4" strokeWidth={1.75} aria-hidden />
+                                ) : (
+                                    <EyeOff className="size-4" strokeWidth={1.75} aria-hidden />
+                                )}
+                            </button>
                         </div>
                     ) : null}
                 </div>
