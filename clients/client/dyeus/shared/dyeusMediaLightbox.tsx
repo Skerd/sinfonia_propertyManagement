@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {createPortal} from "react-dom";
 import {ChevronLeft, ChevronRight, X} from "lucide-react";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 
@@ -58,12 +59,12 @@ function DyeusMediaLightbox({
     const src = items[index] ?? items[0];
     const showNav = items.length > 1;
 
-    return (
+    return createPortal(
         <div
             role="dialog"
             aria-modal="true"
             aria-label={kind === "image" ? t("imageViewer") : t("videoPlayer")}
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-dyeus-ink/92 p-4 md:p-10"
+            className="fixed inset-0 z-[300] flex items-center justify-center bg-dyeus-ink/92 p-4 md:p-10"
             onClick={onClose}
         >
             <button
@@ -129,7 +130,8 @@ function DyeusMediaLightbox({
                     {t("counter", {current: index + 1, total: items.length})}
                 </p>
             ) : null}
-        </div>
+        </div>,
+        document.body,
     );
 }
 

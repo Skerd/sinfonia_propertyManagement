@@ -61,6 +61,9 @@
   ],
   "residencesTitle": "Residenzen",
   "closeResidencesPanel": "Residenzen-Panel schliessen",
+  "expandFloorPlan": "Grundriss vergrössern",
+  "closeFloorPlan": "Grundriss schliessen",
+  "floorPlanDialog": "Grundriss-Ansicht",
   "filterAvailable": "Verfügbar",
   "filterSold": "Verkauft",
   "filterReserved": "Reserviert",
@@ -79,5 +82,14 @@
   "floorN": "Etage {{level}}",
   "floorFallback": "Etage",
   "goBack": "Zurück",
-  "viewerLocationAria": "Viewer-Standort"
+  "viewerLocationAria": "Viewer-Standort",
+  "projectOverview": "Projektübersicht",
+  "exploring": "Erkunden",
+  "buildings": "Gebäude",
+  "floors": "Stockwerke",
+  "floorsMeta": "{{count}} Stockwerke",
+  "unitsMeta": "{{count}} Einheiten",
+  "noBuildings": "Keine Gebäude verfügbar.",
+  "noFloors": "Keine Stockwerke verfügbar."
 }
+

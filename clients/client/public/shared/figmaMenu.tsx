@@ -64,7 +64,7 @@ function useFigmaMenuT() {
 
 function getPanelPosition(anchorRect: AnchorRect) {
     const panelWidth = Math.min(512, window.innerWidth - VIEWPORT_MARGIN * 2);
-    const panelHeight = Math.min(575, window.innerHeight - VIEWPORT_MARGIN * 2);
+    const panelHeight = Math.min(480, window.innerHeight - VIEWPORT_MARGIN * 2);
     let top = anchorRect.top - 24;
     let left = anchorRect.left - Math.min(458, panelWidth * 0.85);
 
@@ -214,24 +214,7 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                     ))}
                 </nav>
 
-                <div className="absolute left-1/2 top-[383px] w-[min(90%,460px)] -translate-x-1/2 border-t border-white/30" />
-
-                <div className="absolute left-11 top-[418px] flex flex-wrap items-center gap-[22px]">
-                    <button
-                        type="button"
-                        className="font-aeonik-light w-[200px] cursor-pointer rounded-[5px] border border-white/30 px-2.5 py-3 text-xl text-white not-italic transition-colors duration-200 hover:bg-white/10"
-                    >
-                        {t("logIn")}
-                    </button>
-                    <button
-                        type="button"
-                        className="font-aeonik-light w-[200px] cursor-pointer rounded-[5px] bg-white px-2.5 py-3 text-xl text-[#0d37a4] not-italic transition-opacity duration-200 hover:opacity-90"
-                    >
-                        {t("getStarted")}
-                    </button>
-                </div>
-
-                <MenuLanguageButtons className="absolute left-11 top-[509px] flex items-center gap-4" />
+                <MenuLanguageButtons className="absolute left-11 top-[418px] flex items-center gap-4" />
             </div>
         </div>
     );

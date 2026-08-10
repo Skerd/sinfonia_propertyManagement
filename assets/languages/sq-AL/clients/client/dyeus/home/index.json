@@ -61,6 +61,9 @@
   ],
   "residencesTitle": "Residenca",
   "closeResidencesPanel": "Mbyll panelin e residencave",
+  "expandFloorPlan": "Zmadho planin e katit",
+  "closeFloorPlan": "Mbyll planin e katit",
+  "floorPlanDialog": "Shikuesi i planit të katit",
   "filterAvailable": "E disponueshme",
   "filterSold": "E shitur",
   "filterReserved": "E rezervuar",
@@ -79,5 +82,14 @@
   "floorN": "Kati {{level}}",
   "floorFallback": "Kati",
   "goBack": "Kthehu mbrapa",
-  "viewerLocationAria": "Vendndodhja e shikuesit"
+  "viewerLocationAria": "Vendndodhja e shikuesit",
+  "projectOverview": "Përmbledhja e projektit",
+  "exploring": "Duke eksploruar",
+  "buildings": "Ndërtesat",
+  "floors": "Katet",
+  "floorsMeta": "{{count}} kate",
+  "unitsMeta": "{{count}} njësi",
+  "noBuildings": "Nuk ka ndërtesa të disponueshme.",
+  "noFloors": "Nuk ka kate të disponueshme."
 }
+

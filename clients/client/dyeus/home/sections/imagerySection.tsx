@@ -48,7 +48,7 @@ function ImagerySectionInner({data, loading, onFilterChange, error}: ImagerySect
 
     if (resolvingProject || (loading && !project && projectId)) {
         return (
-            <section className="relative flex aspect-[1728/974] w-full items-center justify-center overflow-hidden bg-dyeus-sand">
+            <section className="relative flex min-h-[28rem] w-full items-center justify-center overflow-hidden bg-dyeus-sand">
                 <Loader />
             </section>
         );
@@ -59,7 +59,7 @@ function ImagerySectionInner({data, loading, onFilterChange, error}: ImagerySect
     }
 
     return (
-        <section className="relative w-screen max-w-[100vw] overflow-hidden">
+        <section className="relative w-full overflow-hidden">
             <DyeusProjectPolygonViewer project={project} />
         </section>
     );

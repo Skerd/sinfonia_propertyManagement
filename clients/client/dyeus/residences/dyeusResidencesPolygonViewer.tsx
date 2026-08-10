@@ -237,6 +237,7 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
                 borderless
                 disabled
                 hideControls
+                objectFit="contain"
                 imageUrl={imageUrl}
                 phantomPoints={phantomPoints}
                 phantomHoverContent={renderHover}

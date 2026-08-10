@@ -61,6 +61,9 @@
   ],
   "residencesTitle": "Residences",
   "closeResidencesPanel": "Close residences panel",
+  "expandFloorPlan": "Expand floor plan",
+  "closeFloorPlan": "Close floor plan",
+  "floorPlanDialog": "Floor plan viewer",
   "filterAvailable": "Available",
   "filterSold": "Sold",
   "filterReserved": "Reserved",
@@ -79,5 +82,13 @@
   "floorN": "Floor {{level}}",
   "floorFallback": "Floor",
   "goBack": "Go back",
-  "viewerLocationAria": "Viewer location"
+  "viewerLocationAria": "Viewer location",
+  "projectOverview": "Project overview",
+  "exploring": "Exploring",
+  "buildings": "Buildings",
+  "floors": "Floors",
+  "floorsMeta": "{{count}} floors",
+  "unitsMeta": "{{count}} units",
+  "noBuildings": "No buildings available.",
+  "noFloors": "No floors available."
 }
