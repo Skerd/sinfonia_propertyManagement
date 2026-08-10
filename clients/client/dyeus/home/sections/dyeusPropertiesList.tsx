@@ -15,6 +15,7 @@ import type {
     MarketingFloorListItem,
     MarketingPolygonItem,
     MarketingProjectSingle,
+    MarketingUnitStatus,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const HOME_LANGUAGE_PATH =
@@ -32,11 +33,20 @@ type DyeusPropertiesListProps = {
     className?: string;
 };
 
+type StatusColoredPolygon = MarketingPolygonItem & {fill: string; stroke: string};
+
 const FILTER_KEYS: Record<ProjectUnitStatusFilter, string> = {
     available: "filterAvailable",
     sold: "filterSold",
     reserved: "filterReserved",
     all: "filterAll",
+};
+
+/** Floor-plan polygon colors by unit commercial status (green / yellow / red). */
+const UNIT_STATUS_POLYGON_COLORS: Record<MarketingUnitStatus, {fill: string; stroke: string}> = {
+    available: {fill: "rgba(31, 190, 106, 0.5)", stroke: "rgba(31, 190, 106, 0.9)"},
+    reserved: {fill: "rgba(234, 179, 8, 0.5)", stroke: "rgba(234, 179, 8, 0.9)"},
+    sold: {fill: "rgba(220, 38, 38, 0.5)", stroke: "rgba(220, 38, 38, 0.9)"},
 };
 
 const UNIT_GRID =
@@ -52,7 +62,7 @@ function FloorPlanPolygonViewer({
 }: {
     floorKey: string;
     imageUrl: string;
-    unitPolygons: MarketingPolygonItem[];
+    unitPolygons: StatusColoredPolygon[];
     hoveredUnitId?: string | null;
     onUnitHover?: (unitId: string | null) => void;
     onUnitClick?: (unitId: string) => void;
@@ -69,7 +79,7 @@ function FloorPlanPolygonViewer({
             phantomsAlwaysVisible
             imageUrl={imageUrl}
             phantomPoints={unitPolygons}
-            onFloorClick={(item) => onUnitClick?.(item._id)}
+            onFloorClick={(item: any) => onUnitClick?.(item._id)}
             stayHovered={hoveredUnitId || undefined}
             externalHoveredId={hoveredUnitId || ""}
             onPhantomHoverChange={onUnitHover}
@@ -214,7 +224,14 @@ function DyeusPropertiesList({
         activeFilter === "all" ? units : units.filter((unit) => unit.status === activeFilter);
 
     const floorPlanImage = resolveMarketingMediaUrl(selectedFloor?.mainImage);
-    const unitPolygons: MarketingPolygonItem[] = selectedFloor?.unitsCoordinates ?? [];
+    const unitPolygons: StatusColoredPolygon[] = useMemo(() => {
+        const statusById = new Map(units.map((unit) => [unit._id, unit.status as MarketingUnitStatus]));
+        return (selectedFloor?.unitsCoordinates ?? []).map((polygon) => {
+            const status = statusById.get(polygon._id) ?? "available";
+            const colors = UNIT_STATUS_POLYGON_COLORS[status] ?? UNIT_STATUS_POLYGON_COLORS.available;
+            return {...polygon, ...colors};
+        });
+    }, [selectedFloor?.unitsCoordinates, units]);
     const showFloorPlan = Boolean(floorId);
     const canExpandFloorPlan = Boolean(floorPlanImage);
 
