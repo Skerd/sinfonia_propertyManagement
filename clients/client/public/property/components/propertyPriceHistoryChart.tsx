@@ -1,31 +1,33 @@
 import {useMemo, useState, type MouseEvent} from "react";
+import type {MarketingUnitPriceHistoryEntry} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {
-    buildFinanceSmoothPath,
-    FINANCE_CHART_VIEWBOX,
-    FINANCE_HORIZONTAL_GRID_LINES,
-    FINANCE_PRICE_HIGHLIGHT_LABEL,
-    FINANCE_X_LABELS,
-    FINANCE_Y_SCALE_LABELS,
-    formatFinanceScaleLabel,
-    mapFinanceHistoryToPlot,
-    scaleFinanceGridLine,
-    type FinanceChartPoint,
-} from "@propertyManagementModule/clients/client/public/project/shared/projectFinancePriceHistoryData.ts";
+    buildPriceHistorySmoothPath,
+    buildPropertyPriceHistoryPlot,
+    PRICE_HISTORY_CHART_VIEWBOX,
+    PRICE_HISTORY_HORIZONTAL_GRID_LINES,
+    scalePriceHistoryGridLine,
+    type PropertyPriceHistoryPoint,
+} from "@propertyManagementModule/clients/client/public/property/shared/propertyPriceHistoryData.ts";
 
 const PRONIX_BLUE = "#0247fe";
 const STRIPE_SPACING = 14;
 
-type OpenProjectFinancePriceChartProps = {
+type PropertyPriceHistoryChartProps = {
+    entries: MarketingUnitPriceHistoryEntry[];
     ariaLabel: string;
-    formatTooltip: (label: string, scaleLabel: string) => string;
+    formatTooltip: (label: string, value: string) => string;
 };
 
-function findNearestPoint(points: FinanceChartPoint[], clientX: number, svgRect: DOMRect): FinanceChartPoint | null {
+function findNearestPoint(
+    points: PropertyPriceHistoryPoint[],
+    clientX: number,
+    svgRect: DOMRect,
+): PropertyPriceHistoryPoint | null {
     if (points.length === 0) {
         return null;
     }
 
-    const relativeX = ((clientX - svgRect.left) / svgRect.width) * FINANCE_CHART_VIEWBOX.width;
+    const relativeX = ((clientX - svgRect.left) / svgRect.width) * PRICE_HISTORY_CHART_VIEWBOX.width;
     let nearest = points[0];
     let nearestDistance = Math.abs(relativeX - nearest.x);
 
@@ -40,12 +42,17 @@ function findNearestPoint(points: FinanceChartPoint[], clientX: number, svgRect:
     return nearest;
 }
 
-function OpenProjectFinancePriceChart({ariaLabel, formatTooltip}: OpenProjectFinancePriceChartProps) {
-    const plotPoints = useMemo(() => mapFinanceHistoryToPlot(), []);
-    const linePath = useMemo(() => buildFinanceSmoothPath(plotPoints), [plotPoints]);
-    const highlightPoint = plotPoints.find((point) => point.label === FINANCE_PRICE_HIGHLIGHT_LABEL) ?? null;
-    const [hoverPoint, setHoverPoint] = useState<FinanceChartPoint | null>(null);
+function PropertyPriceHistoryChart({entries, ariaLabel, formatTooltip}: PropertyPriceHistoryChartProps) {
+    const plot = useMemo(() => buildPropertyPriceHistoryPlot(entries), [entries]);
+    const plotPoints = plot?.points ?? [];
+    const linePath = useMemo(() => buildPriceHistorySmoothPath(plotPoints), [plotPoints]);
+    const highlightPoint = plotPoints.length > 0 ? plotPoints[plotPoints.length - 1] : null;
+    const [hoverPoint, setHoverPoint] = useState<PropertyPriceHistoryPoint | null>(null);
     const activePoint = hoverPoint ?? highlightPoint;
+
+    if (!plot || plotPoints.length === 0) {
+        return null;
+    }
 
     function handleMouseMove(event: MouseEvent<SVGSVGElement>) {
         const svg = event.currentTarget;
@@ -58,13 +65,10 @@ function OpenProjectFinancePriceChart({ariaLabel, formatTooltip}: OpenProjectFin
     }
 
     return (
-        <div className="flex w-full flex-col">
-            <div
-                className="relative aspect-[963/605] min-h-[280px] w-full md:min-h-[400px]"
-                data-node-id="475:1927"
-            >
+        <div className="flex w-full flex-col gap-1">
+            <div className="relative h-[140px] w-full sm:h-[160px] md:h-[180px]">
                 <svg
-                    viewBox={`0 0 ${FINANCE_CHART_VIEWBOX.width} ${FINANCE_CHART_VIEWBOX.height}`}
+                    viewBox={`0 0 ${PRICE_HISTORY_CHART_VIEWBOX.width} ${PRICE_HISTORY_CHART_VIEWBOX.height}`}
                     preserveAspectRatio="none"
                     className="size-full"
                     role="img"
@@ -74,48 +78,48 @@ function OpenProjectFinancePriceChart({ariaLabel, formatTooltip}: OpenProjectFin
                 >
                     <defs>
                         <pattern
-                            id="financeVerticalStripes"
+                            id="propertyPriceVerticalStripes"
                             patternUnits="userSpaceOnUse"
                             width={STRIPE_SPACING}
-                            height={FINANCE_CHART_VIEWBOX.height}
+                            height={PRICE_HISTORY_CHART_VIEWBOX.height}
                         >
                             <line
                                 x1={STRIPE_SPACING / 2}
                                 x2={STRIPE_SPACING / 2}
                                 y1={0}
-                                y2={FINANCE_CHART_VIEWBOX.height}
+                                y2={PRICE_HISTORY_CHART_VIEWBOX.height}
                                 stroke="rgba(2, 71, 254, 0.1)"
                                 strokeWidth={1}
                             />
                         </pattern>
-                        <linearGradient id="financeStripeFade" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="propertyPriceStripeFade" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stopColor="#ffffff" stopOpacity={1} />
                             <stop offset="55%" stopColor="#ffffff" stopOpacity={1} />
                             <stop offset="100%" stopColor="#ffffff" stopOpacity={0} />
                         </linearGradient>
-                        <mask id="financeStripeMask">
+                        <mask id="propertyPriceStripeMask">
                             <rect
-                                width={FINANCE_CHART_VIEWBOX.width}
-                                height={FINANCE_CHART_VIEWBOX.height}
-                                fill="url(#financeStripeFade)"
+                                width={PRICE_HISTORY_CHART_VIEWBOX.width}
+                                height={PRICE_HISTORY_CHART_VIEWBOX.height}
+                                fill="url(#propertyPriceStripeFade)"
                             />
                         </mask>
-                        <linearGradient id="financeHighlightLine" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="propertyPriceHighlightLine" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stopColor={PRONIX_BLUE} stopOpacity={0.85} />
                             <stop offset="100%" stopColor={PRONIX_BLUE} stopOpacity={0} />
                         </linearGradient>
                     </defs>
 
                     <rect
-                        width={FINANCE_CHART_VIEWBOX.width}
-                        height={FINANCE_CHART_VIEWBOX.height}
-                        fill="url(#financeVerticalStripes)"
-                        mask="url(#financeStripeMask)"
+                        width={PRICE_HISTORY_CHART_VIEWBOX.width}
+                        height={PRICE_HISTORY_CHART_VIEWBOX.height}
+                        fill="url(#propertyPriceVerticalStripes)"
+                        mask="url(#propertyPriceStripeMask)"
                     />
 
-                    <g data-node-id="475:1990">
-                        {FINANCE_HORIZONTAL_GRID_LINES.map((line) => {
-                            const scaled = scaleFinanceGridLine(line.y, line.width);
+                    <g>
+                        {PRICE_HISTORY_HORIZONTAL_GRID_LINES.map((line) => {
+                            const scaled = scalePriceHistoryGridLine(line.y, line.width);
                             return (
                                 <line
                                     key={`${line.y}-${line.width}`}
@@ -135,7 +139,7 @@ function OpenProjectFinancePriceChart({ariaLabel, formatTooltip}: OpenProjectFin
                             x1={activePoint.x}
                             x2={activePoint.x}
                             y1={activePoint.y}
-                            y2={FINANCE_CHART_VIEWBOX.height}
+                            y2={PRICE_HISTORY_CHART_VIEWBOX.height}
                             stroke={PRONIX_BLUE}
                             strokeOpacity={0.2}
                             strokeWidth={1.5}
@@ -147,8 +151,8 @@ function OpenProjectFinancePriceChart({ariaLabel, formatTooltip}: OpenProjectFin
                             x1={highlightPoint.x}
                             x2={highlightPoint.x}
                             y1={highlightPoint.y}
-                            y2={FINANCE_CHART_VIEWBOX.height}
-                            stroke="url(#financeHighlightLine)"
+                            y2={PRICE_HISTORY_CHART_VIEWBOX.height}
+                            stroke="url(#propertyPriceHighlightLine)"
                             strokeWidth={1.5}
                         />
                     ) : null}
@@ -187,35 +191,29 @@ function OpenProjectFinancePriceChart({ariaLabel, formatTooltip}: OpenProjectFin
 
                 {activePoint ? (
                     <div
-                        className="pointer-events-none absolute z-10 rounded-[5px] border border-pronix-border bg-white px-3 py-2 font-aeonik-light text-sm text-pronix-ink not-italic shadow-sm md:text-base"
+                        className="pointer-events-none absolute z-10 rounded-[5px] border border-pronix-border bg-white px-2 py-1 font-aeonik-light text-xs text-pronix-ink not-italic shadow-sm"
                         style={{
-                            left: `${(activePoint.x / FINANCE_CHART_VIEWBOX.width) * 100}%`,
-                            top: `${(activePoint.y / FINANCE_CHART_VIEWBOX.height) * 100}%`,
-                            transform: "translate(-50%, calc(-100% - 12px))",
+                            left: `${(activePoint.x / PRICE_HISTORY_CHART_VIEWBOX.width) * 100}%`,
+                            top: `${(activePoint.y / PRICE_HISTORY_CHART_VIEWBOX.height) * 100}%`,
+                            transform: "translate(-50%, calc(-100% - 8px))",
                         }}
                     >
-                        {formatTooltip(activePoint.label, formatFinanceScaleLabel(activePoint.value))}
+                        {formatTooltip(activePoint.label, activePoint.displayPrice)}
                     </div>
                 ) : null}
             </div>
 
-            <div
-                className="hidden px-0 pb-4 font-aeonik-light text-sm text-pronix-ink-muted not-italic md:block lg:text-lg"
-                data-node-id="475:1967"
-            >
-                {FINANCE_Y_SCALE_LABELS.join(" · ")}
+            <div className="hidden px-0 font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic md:block">
+                {plot.yLabels.join(" · ")}
             </div>
 
-            <div
-                className="flex flex-wrap justify-between gap-2 px-0 pb-4 font-aeonik-light text-xs text-pronix-ink-muted not-italic md:text-lg"
-                data-node-id="475:1942"
-            >
-                {FINANCE_X_LABELS.map((month) => (
-                    <span key={month}>{month}</span>
+            <div className="flex flex-wrap justify-between gap-2 px-0 font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic">
+                {plot.xLabels.map((month, index) => (
+                    <span key={`${month}-${index}`}>{month}</span>
                 ))}
             </div>
         </div>
     );
 }
 
-export default OpenProjectFinancePriceChart;
+export default PropertyPriceHistoryChart;

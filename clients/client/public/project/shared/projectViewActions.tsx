@@ -2,9 +2,7 @@ import {Link, useLocation, useSearchParams} from "react-router-dom";
 import {projectAssets} from "@propertyManagementModule/clients/client/public/project/projectAssets.ts";
 
 const TABS = [
-    {path: "/project/3d", icon: projectAssets.icon3d, label: "3D", nodeId: "472:993"},
-    {path: "/project/gallery", icon: projectAssets.iconGallery, label: "Gallery", nodeId: "472:991"},
-    {path: "/project/finance", icon: projectAssets.iconFinance, label: "Finance", nodeId: "472:989"},
+    {path: "/project", icon: projectAssets.iconGallery, label: "Project", nodeId: "472:991"},
 ] as const;
 
 function ProjectViewActions() {
@@ -40,12 +38,6 @@ function ProjectViewActions() {
                     </Link>
                 );
             })}
-            <Link
-                to={`/project/grid${suffix}`}
-                className="ml-1 font-aeonik-light text-base text-pronix-blue hover:underline sm:text-lg"
-            >
-                Grid
-            </Link>
         </nav>
     );
 }

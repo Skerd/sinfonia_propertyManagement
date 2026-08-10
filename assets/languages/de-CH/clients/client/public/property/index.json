@@ -86,5 +86,8 @@
   "phoneRequired": "Telefonnummer ist erforderlich.",
   "messageRequired": "Nachricht ist erforderlich.",
   "formSuccess": "Vielen Dank — wir haben Ihre Nachricht erhalten und melden uns in Kürze.",
-  "formError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  "formError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+  "priceHistory": "Preisverlauf",
+  "priceHistoryChartAriaLabel": "Preisverlauf der Einheit über die Zeit",
+  "priceHistoryChartTooltip": "{{label}} — {{value}}"
 }

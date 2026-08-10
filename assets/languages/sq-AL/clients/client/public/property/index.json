@@ -86,5 +86,8 @@
   "phoneRequired": "Numri i telefonit është i detyrueshëm.",
   "messageRequired": "Mesazhi është i detyrueshëm.",
   "formSuccess": "Faleminderit — e morëm mesazhin tuaj dhe do t'ju kontaktojmë së shpejti.",
-  "formError": "Diçka shkoi keq. Ju lutemi provoni sërish."
+  "formError": "Diçka shkoi keq. Ju lutemi provoni sërish.",
+  "priceHistory": "Historiku i çmimeve",
+  "priceHistoryChartAriaLabel": "Historiku i çmimit të njësisë në kohë",
+  "priceHistoryChartTooltip": "{{label}} — {{value}}"
 }

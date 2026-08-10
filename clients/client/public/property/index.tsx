@@ -57,7 +57,7 @@ function PropertyPage(props: PropertyPageProps) {
             navigate(-1);
             return;
         }
-        navigate(projectId ? `/project/grid?projectId=${projectId}` : "/projects");
+        navigate(projectId ? `/project?projectId=${projectId}` : "/projects");
     };
 
     const openContactForm = (titleKey: "requestInfo" | "reserveOnline") => {

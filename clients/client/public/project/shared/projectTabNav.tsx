@@ -1,10 +1,7 @@
 import {Link, useLocation, useSearchParams} from "react-router-dom";
 
 const TABS = [
-    {path: "/project/gallery", label: "Gallery"},
-    {path: "/project/finance", label: "Finance"},
-    {path: "/project/3d", label: "3D"},
-    {path: "/project/grid", label: "Grid"},
+    {path: "/project", label: "Project"},
 ] as const;
 
 function ProjectTabNav() {

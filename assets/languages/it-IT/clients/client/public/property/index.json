@@ -83,5 +83,8 @@
   "phoneRequired": "Il numero di telefono è obbligatorio.",
   "messageRequired": "Il messaggio è obbligatorio.",
   "formSuccess": "Grazie — abbiamo ricevuto il tuo messaggio e ti risponderemo al più presto.",
-  "formError": "Qualcosa è andato storto. Riprova."
+  "formError": "Qualcosa è andato storto. Riprova.",
+  "priceHistory": "Storico prezzi",
+  "priceHistoryChartAriaLabel": "Storico del prezzo dell'unità nel tempo",
+  "priceHistoryChartTooltip": "{{label}} — {{value}}"
 }

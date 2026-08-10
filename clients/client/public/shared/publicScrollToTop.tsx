@@ -1,15 +1,15 @@
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 
-/** Resets window scroll when navigating between public routes (incl. query changes). */
+/** Resets window scroll when navigating between public routes (pathname only; query changes keep scroll). */
 function PublicScrollToTop() {
-    const {pathname, search} = useLocation();
+    const {pathname} = useLocation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
-    }, [pathname, search]);
+    }, [pathname]);
 
     return null;
 }

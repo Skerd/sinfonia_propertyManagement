@@ -78,7 +78,7 @@ function ProjectFavoriteRow({
 }) {
     return (
         <FavoriteRowShell
-            to={`/project/gallery?projectId=${project._id}`}
+            to={`/project?projectId=${project._id}`}
             imageUrl={project.mainImage}
             onNavigate={onNavigate}
             heart={

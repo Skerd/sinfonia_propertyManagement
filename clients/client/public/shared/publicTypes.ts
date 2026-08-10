@@ -125,6 +125,13 @@ export type MarketingUnitPricePerSqm = {
     currency?: MarketingUnitPriceCurrency;
 };
 
+export type MarketingUnitPriceHistoryEntry = {
+    price: number;
+    currency?: MarketingUnitPriceCurrency;
+    changedAt?: string;
+    reason?: string;
+};
+
 export type MarketingUnitSingle = {
     _id: string;
     name: string;
@@ -159,6 +166,7 @@ export type MarketingUnitSingle = {
     hasCityView?: boolean;
     hasLakeView?: boolean;
     hasElevator?: boolean;
+    priceHistory?: MarketingUnitPriceHistoryEntry[];
 };
 
 export type MarketingTeamMember = {

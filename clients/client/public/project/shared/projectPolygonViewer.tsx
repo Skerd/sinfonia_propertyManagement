@@ -158,7 +158,7 @@ function ProjectPolygonViewer({
                 {resolveLanguageKey(emptyKey)}
             </p>
             <Link
-                to={`/project/grid?projectId=${project._id}`}
+                to={`/project?projectId=${project._id}`}
                 className="font-aeonik-medium text-base text-pronix-blue hover:underline"
             >
                 {resolveLanguageKey("viewGrid")}

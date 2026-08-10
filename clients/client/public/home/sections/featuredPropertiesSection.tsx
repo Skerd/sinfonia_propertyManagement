@@ -337,7 +337,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
 
     const openProject = useCallback(
         (projectId: string) => {
-            navigate(`/project/gallery?projectId=${projectId}`);
+            navigate(`/project?projectId=${projectId}`);
         },
         [navigate],
     );

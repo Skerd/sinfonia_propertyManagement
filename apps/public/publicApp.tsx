@@ -21,11 +21,7 @@ const ContactPage = lazy(() => import("@propertyManagementModule/clients/client/
 const PrivacyPage = lazy(() => import("@propertyManagementModule/clients/client/public/privacy/index.tsx"));
 const TermsPage = lazy(() => import("@propertyManagementModule/clients/client/public/terms/index.tsx"));
 const PropertyPage = lazy(() => import("@propertyManagementModule/clients/client/public/property/index.tsx"));
-const Project3dPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/3d/index.tsx"));
-const Project3dFloorPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/3d/floor/index.tsx"));
-const ProjectGalleryPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/gallery/index.tsx"));
-const ProjectFinancePage = lazy(() => import("@propertyManagementModule/clients/client/public/project/finance/index.tsx"));
-const ProjectGridPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/grid/index.tsx"));
+const ProjectPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/gallery/index.tsx"));
 
 function ToasterContainer() {
     const isMobile = useIsMobile();
@@ -62,11 +58,7 @@ function PublicApp() {
                                 <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
                                 <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
                                 <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
-                                <Route path="project/3d" element={<ErrorBoundary><Project3dPage /></ErrorBoundary>} />
-                                <Route path="project/3d/floor" element={<ErrorBoundary><Project3dFloorPage /></ErrorBoundary>} />
-                                <Route path="project/gallery" element={<ErrorBoundary><ProjectGalleryPage /></ErrorBoundary>} />
-                                <Route path="project/finance" element={<ErrorBoundary><ProjectFinancePage /></ErrorBoundary>} />
-                                <Route path="project/grid" element={<ErrorBoundary><ProjectGridPage /></ErrorBoundary>} />
+                                <Route path="project" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
                             </Route>
                         </Routes>
                     </Suspense>

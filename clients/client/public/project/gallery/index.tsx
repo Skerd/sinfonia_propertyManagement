@@ -4,7 +4,7 @@ import OpenProject3dSection from "@propertyManagementModule/clients/client/publi
 import OpenProjectEmbeddedGridSection from "@propertyManagementModule/clients/client/public/project/sections/openProjectEmbeddedGridSection.tsx";
 import type {OpenProjectContentProps} from "@propertyManagementModule/clients/client/public/project/shared/openProjectShell.tsx";
 
-function OpenProjectGalleryPageContent(props: OpenProjectContentProps) {
+function OpenProjectPageContent(props: OpenProjectContentProps) {
     return (
         <div className="flex w-full flex-col gap-10 md:gap-16">
             <OpenProjectGallerySection {...props} />
@@ -17,6 +17,6 @@ function OpenProjectGalleryPageContent(props: OpenProjectContentProps) {
 export default createOpenProjectPage(
     "src/modules/propertyManagement/clients/client/public/project/gallery/index.tsx",
     "472:997",
-    "Open project - Gallery",
-    (props) => <OpenProjectGalleryPageContent {...props} />,
+    "Open project",
+    (props) => <OpenProjectPageContent {...props} />,
 );

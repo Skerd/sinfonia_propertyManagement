@@ -1,4 +1,5 @@
 import {propertyAssets} from "@propertyManagementModule/clients/client/public/property/propertyAssets.ts";
+import PropertyPriceHistoryChart from "@propertyManagementModule/clients/client/public/property/components/propertyPriceHistoryChart.tsx";
 import {PublicLanguageProps, MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {
     PUBLIC_BODY,
@@ -11,6 +12,7 @@ import RoiRentalTypeSelect from "@propertyManagementModule/clients/client/public
 import {useUnitRoiCalculator} from "@propertyManagementModule/clients/client/public/shared/roi/useUnitRoiCalculator.ts";
 import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {buildPropertyPriceHistoryPlot} from "@propertyManagementModule/clients/client/public/property/shared/propertyPriceHistoryData.ts";
 
 type PropertyDetailsSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
@@ -116,6 +118,8 @@ function DetailRow({label, value}: {label: string; value: string}) {
 function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: PropertyDetailsSectionProps) {
     const unitPrice = unit.price ?? unit.sharePrice ?? 0;
     const unitArea = unit.netAreaSqm ?? unit.areaSqm ?? 1;
+    const priceHistory = unit.priceHistory ?? [];
+    const priceHistoryPlot = buildPropertyPriceHistoryPlot(priceHistory);
 
     const {inputs, setInput, results, sliderBounds} = useUnitRoiCalculator({
         unitPrice,
@@ -189,6 +193,29 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                     })}
                 </div>
             </div>
+
+            {priceHistoryPlot ? (
+                <div className="mt-8 flex w-full flex-col overflow-hidden rounded-[5px] border border-pronix-border">
+                    <div className="flex items-center justify-between gap-3 border-b border-pronix-border px-4 py-3 md:px-5">
+                        <p className="font-aeonik-medium text-base text-pronix-ink not-italic md:text-lg">
+                            {resolveLanguageKey("priceHistory")}
+                        </p>
+                        <p className="font-aeonik-medium text-base text-pronix-ink not-italic md:text-lg">
+                            {priceHistoryPlot.latestDisplayPrice}
+                        </p>
+                    </div>
+                    <div className="relative w-full px-4 py-3 md:px-5 md:py-4">
+                        <PropertyPriceHistoryChart
+                            entries={priceHistory}
+                            ariaLabel={String(resolveLanguageKey("priceHistoryChartAriaLabel"))}
+                            formatTooltip={(label, value) => {
+                                const template = String(resolveLanguageKey("priceHistoryChartTooltip"));
+                                return template.replace("{{label}}", label).replace("{{value}}", value);
+                            }}
+                        />
+                    </div>
+                </div>
+            ) : null}
 
             <div
                 className="relative mt-8 grid w-full grid-cols-1 overflow-hidden rounded-[5px] border border-pronix-border lg:grid-cols-2"
