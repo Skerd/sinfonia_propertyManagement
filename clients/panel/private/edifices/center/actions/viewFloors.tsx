@@ -8,7 +8,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
-import {buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type ViewFloorsProps = WithLanguageType & { edifice: Edifice; }
 
@@ -25,15 +25,15 @@ function ViewFloors({
     const viewFloors = () => {
         if (!read) return;
         dismissSheetIfHosted?.();
-        navigate(buildUrlWithExistingParams(
-            window.location.href,
-            "/realEstate/floors",
-            {
+        navigate(buildListNavigationUrl({
+            path: "/realEstate/floors",
+            from: window.location.search,
+            policy: "carry",
+            scope: {
                 edificeId: edifice._id ?? "",
                 edificeName: edifice.name,
-            }
-        ));
-
+            },
+        }));
     }
     useKeyboardShortcuts(shortcut, viewFloors);
 

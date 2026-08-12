@@ -7,7 +7,7 @@ import {ClipboardCheck} from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
-import {buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type InspectionsProps = WithLanguageType & {
     unitId: string;
@@ -30,14 +30,15 @@ function Inspections({
     const shortcut = "i";
     const viewInspections = () => {
         dismissSheetIfHosted?.();
-        navigate(buildUrlWithExistingParams(
-            window.location.href,
-            "/realEstate/inspections",
-            {
+        navigate(buildListNavigationUrl({
+            path: "/realEstate/inspections",
+            from: window.location.search,
+            policy: "scoped",
+            scope: {
                 unitId: unitId ?? "",
                 unitName: unitName,
-            }
-        ));
+            },
+        }));
     }
     useKeyboardShortcuts(shortcut, viewInspections);
 

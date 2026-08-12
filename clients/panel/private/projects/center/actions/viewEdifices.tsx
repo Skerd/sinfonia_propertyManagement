@@ -8,6 +8,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Project} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type ViewEdificesProps = WithLanguageType & {
     project: Project
@@ -25,11 +26,17 @@ function ViewEdifices({
     const shortcut = "1";
     const viewEdifices = () => {
         if (!read) return;
-        const params = new URLSearchParams();
-        params.set("projectId", project._id ?? "");
-        if (project.name) params.set("projectName", project.name);
         dismissSheetIfHosted?.();
-        navigate(`/realEstate/edifices?${params.toString()}`);
+        // Scoped entry: project scope only — do not carry units/projects list filters.
+        navigate(buildListNavigationUrl({
+            path: "/realEstate/edifices",
+            from: window.location.search,
+            policy: "scoped",
+            scope: {
+                projectId: project._id ?? "",
+                projectName: project.name,
+            },
+        }));
     };
     useKeyboardShortcuts(shortcut, viewEdifices);
 

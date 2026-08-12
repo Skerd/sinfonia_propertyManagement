@@ -7,7 +7,7 @@ import { Receipt } from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import { useAccess } from "@coreModule/helpers/hocs/withAccess.tsx";
 import { useDismissSheetBeforeMenuNavigate } from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
-import {buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type UnitCostsActionProps = WithLanguageType & {
     unitId: string;
@@ -27,14 +27,15 @@ function UnitCostsAction({ unitId, unitName, resolveLanguageKey }: UnitCostsActi
     const shortcut = "c";
     const openUnitCosts = () => {
         dismissSheetIfHosted?.();
-        navigate(buildUrlWithExistingParams(
-            window.location.href,
-            "/realEstate/unitCosts",
-            {
+        navigate(buildListNavigationUrl({
+            path: "/realEstate/unitCosts",
+            from: window.location.search,
+            policy: "scoped",
+            scope: {
                 unitId: unitId ?? "",
                 unitName: unitName,
-            }
-        ));
+            },
+        }));
     };
     useKeyboardShortcuts(shortcut, openUnitCosts);
 

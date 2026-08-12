@@ -7,7 +7,7 @@ import {Wrench} from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
-import {buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type ModificationRequestsProps = WithLanguageType & {
     unitId: string;
@@ -30,14 +30,15 @@ function ModificationRequests({
     const shortcut = "m";
     const viewModificationRequests = () => {
         dismissSheetIfHosted?.();
-        navigate(buildUrlWithExistingParams(
-            window.location.href,
-            "/realEstate/modificationRequests",
-            {
+        navigate(buildListNavigationUrl({
+            path: "/realEstate/modificationRequests",
+            from: window.location.search,
+            policy: "scoped",
+            scope: {
                 unitId: unitId ?? "",
                 unitName: unitName,
-            }
-        ));
+            },
+        }));
     }
     useKeyboardShortcuts(shortcut, viewModificationRequests);
 

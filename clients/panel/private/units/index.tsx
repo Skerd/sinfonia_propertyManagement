@@ -1,6 +1,6 @@
 import {compose} from "redux";
 import {useSearchParams} from "react-router-dom";
-import {useMemo, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconFrustumPlus} from "@tabler/icons-react";
@@ -16,14 +16,21 @@ import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModu
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
+import {
+    readExtraParamLabelsFromUrl,
+    readExtraParamsFromUrl,
+    writeExtraParam,
+} from "@coreModule/helpers/hooks/useListUrlState.ts";
 
 type AllUnitsProps = WithLanguageType & {
     edificeId?: string;
     showHeader?: boolean;
 };
 
+const UNIT_EXTRA_PARAM_KEYS = ["reservedBy", "boughtFrom"] as const;
+
 function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = true}: AllUnitsProps) {
-    const [searchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const projectId   = searchParams.get("projectId")   || undefined;
     const projectName = searchParams.get("projectName") || undefined;
@@ -49,8 +56,58 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
     // reservedBy / boughtFrom target users on the Reservation / Sale documents, which
     // the DSL filter engine can't reach, so they travel as plain list params (resolved
     // to units by the backend `extraListFilter`) instead of quick-filter DSL rules.
-    const [reservedBy, setReservedBy] = useState<string>("");
-    const [boughtFrom, setBoughtFrom] = useState<string>("");
+    // Mirrored in the URL as `ep_reservedBy` / `ep_boughtFrom` (+ `_label` for display).
+    const [reservedBy, setReservedByState] = useState(() => {
+        const fromUrl = readExtraParamsFromUrl(searchParams, [...UNIT_EXTRA_PARAM_KEYS]);
+        return fromUrl.reservedBy ?? "";
+    });
+    const [boughtFrom, setBoughtFromState] = useState(() => {
+        const fromUrl = readExtraParamsFromUrl(searchParams, [...UNIT_EXTRA_PARAM_KEYS]);
+        return fromUrl.boughtFrom ?? "";
+    });
+    const [reservedByLabel, setReservedByLabel] = useState(() => {
+        const fromUrl = readExtraParamLabelsFromUrl(searchParams, [...UNIT_EXTRA_PARAM_KEYS]);
+        return fromUrl.reservedBy ?? "";
+    });
+    const [boughtFromLabel, setBoughtFromLabel] = useState(() => {
+        const fromUrl = readExtraParamLabelsFromUrl(searchParams, [...UNIT_EXTRA_PARAM_KEYS]);
+        return fromUrl.boughtFrom ?? "";
+    });
+
+    useEffect(() => {
+        const fromUrl = readExtraParamsFromUrl(searchParams, [...UNIT_EXTRA_PARAM_KEYS]);
+        const labelsFromUrl = readExtraParamLabelsFromUrl(searchParams, [...UNIT_EXTRA_PARAM_KEYS]);
+        setReservedByState(fromUrl.reservedBy ?? "");
+        setBoughtFromState(fromUrl.boughtFrom ?? "");
+        setReservedByLabel(labelsFromUrl.reservedBy ?? "");
+        setBoughtFromLabel(labelsFromUrl.boughtFrom ?? "");
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchParams.toString()]);
+
+    const setReservedBy = (value: string, label?: string) => {
+        if (value === reservedBy) {
+            if (value && label && label !== reservedByLabel) {
+                setReservedByLabel(label);
+                writeExtraParam(setSearchParams, "reservedBy", value, label);
+            }
+            return;
+        }
+        setReservedByState(value);
+        setReservedByLabel(label ?? "");
+        writeExtraParam(setSearchParams, "reservedBy", value || null, label || null);
+    };
+    const setBoughtFrom = (value: string, label?: string) => {
+        if (value === boughtFrom) {
+            if (value && label && label !== boughtFromLabel) {
+                setBoughtFromLabel(label);
+                writeExtraParam(setSearchParams, "boughtFrom", value, label);
+            }
+            return;
+        }
+        setBoughtFromState(value);
+        setBoughtFromLabel(label ?? "");
+        writeExtraParam(setSearchParams, "boughtFrom", value || null, label || null);
+    };
 
     const extraParams = useMemo(
         () => ({
@@ -58,6 +115,15 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
             ...(boughtFrom && {boughtFrom}),
         }),
         [reservedBy, boughtFrom],
+    );
+
+    const reservedByDefaultOptions = useMemo(
+        () => (reservedBy && reservedByLabel ? [{value: reservedBy, label: reservedByLabel}] : []),
+        [reservedBy, reservedByLabel],
+    );
+    const boughtFromDefaultOptions = useMemo(
+        () => (boughtFrom && boughtFromLabel ? [{value: boughtFrom, label: boughtFromLabel}] : []),
+        [boughtFrom, boughtFromLabel],
     );
 
     const userFilterBar = (
@@ -71,7 +137,13 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                         apiUrl="/api/company/users/select"
                         postBody={{administration: true}}
                         value={reservedBy}
-                        onValueChange={(v: string | string[]) => setReservedBy(typeof v === "string" ? v : "")}
+                        defaultOptions={reservedByDefaultOptions}
+                        onValueChange={(v: string | string[], label?: string | string[]) =>
+                            setReservedBy(
+                                typeof v === "string" ? v : "",
+                                typeof label === "string" ? label : undefined,
+                            )
+                        }
                         placeholder={resolveLanguageKey("reservedByPlaceholder") as string}
                         className="h-8 text-sm min-w-[160px] max-w-[220px]"
                         pageSize={50}
@@ -97,7 +169,13 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                         apiUrl="/api/company/users/select"
                         postBody={{administration: false}}
                         value={boughtFrom}
-                        onValueChange={(v: string | string[]) => setBoughtFrom(typeof v === "string" ? v : "")}
+                        defaultOptions={boughtFromDefaultOptions}
+                        onValueChange={(v: string | string[], label?: string | string[]) =>
+                            setBoughtFrom(
+                                typeof v === "string" ? v : "",
+                                typeof label === "string" ? label : undefined,
+                            )
+                        }
                         placeholder={resolveLanguageKey("boughtFromPlaceholder") as string}
                         className="h-8 text-sm min-w-[160px] max-w-[220px]"
                         pageSize={50}

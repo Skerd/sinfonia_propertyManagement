@@ -7,7 +7,7 @@ import {DollarSign} from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheetMenuNavigateDismiss.tsx";
-import {buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type SalesProps = WithLanguageType & {
     unitId: string;
@@ -30,14 +30,15 @@ function Sales({
     const shortcut = "s";
     const viewSales = () => {
         dismissSheetIfHosted?.();
-        navigate(buildUrlWithExistingParams(
-            window.location.href,
-            "/realEstate/sales",
-            {
+        navigate(buildListNavigationUrl({
+            path: "/realEstate/sales",
+            from: window.location.search,
+            policy: "scoped",
+            scope: {
                 unitId: unitId ?? "",
                 unitName: unitName,
-            }
-        ));
+            },
+        }));
     }
     useKeyboardShortcuts(shortcut, viewSales);
 

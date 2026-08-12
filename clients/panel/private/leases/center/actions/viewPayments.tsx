@@ -5,6 +5,7 @@ import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {Banknote} from "lucide-react";
 import {useNavigate} from "react-router-dom";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
+import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type ViewLeasePaymentsProps = WithLanguageType & {
     lease?: Lease;
@@ -14,12 +15,22 @@ function ViewLeasePayments({lease, resolveLanguageKey}: ViewLeasePaymentsProps) 
     const navigate = useNavigate();
     if (!lease?._id || lease.deletedAt) return null;
 
-    const params = new URLSearchParams();
-    params.set("leaseId", lease._id);
-    if (lease.name) params.set("leaseName", lease.name);
-
     return (
-        <DropdownMenuItem onClick={() => navigate(`/realEstate/rentalPayments?${params.toString()}`)}>
+        <DropdownMenuItem
+            onClick={() =>
+                navigate(
+                    buildListNavigationUrl({
+                        path: "/realEstate/rentalPayments",
+                        from: window.location.search,
+                        policy: "scoped",
+                        scope: {
+                            leaseId: lease._id ?? "",
+                            leaseName: lease.name,
+                        },
+                    }),
+                )
+            }
+        >
             <Banknote className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
