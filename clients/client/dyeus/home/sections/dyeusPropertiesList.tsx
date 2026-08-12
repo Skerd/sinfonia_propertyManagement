@@ -49,8 +49,10 @@ const UNIT_STATUS_POLYGON_COLORS: Record<MarketingUnitStatus, {fill: string; str
     sold: {fill: "rgba(220, 38, 38, 0.5)", stroke: "rgba(220, 38, 38, 0.9)"},
 };
 
-const UNIT_GRID =
+const UNIT_GRID_WITH_FLOOR =
     "grid grid-cols-[minmax(0,1.1fr)_repeat(4,minmax(0,0.7fr))_minmax(0,1.1fr)] gap-x-3";
+const UNIT_GRID_NO_FLOOR =
+    "grid grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.7fr))_minmax(0,1.1fr)] gap-x-3";
 
 function FloorPlanPolygonViewer({
     floorKey,
@@ -129,6 +131,7 @@ function UnitsTable({
     onUnitHover,
     emptyLabel,
     colLabels,
+    showFloor = false,
 }: {
     projectId: string;
     units: ReturnType<typeof flattenCatalogUnits>;
@@ -143,15 +146,18 @@ function UnitsTable({
         floor: string;
         price: string;
     };
+    /** Floor column is redundant in the compact side panel (already scoped to a floor). */
+    showFloor?: boolean;
 }) {
+    const gridClass = showFloor ? UNIT_GRID_WITH_FLOOR : UNIT_GRID_NO_FLOOR;
     return (
         <div className="min-h-0 flex-1 overflow-auto">
-            <div className={cn(UNIT_GRID, "sticky top-0 z-[1] border-b border-dyeus-border bg-dyeus-cream pb-2 font-dyeus-sans text-sm text-dyeus-ink")}>
+            <div className={cn(gridClass, "sticky top-0 z-[1] border-b border-dyeus-border bg-dyeus-cream pb-2 font-dyeus-sans text-sm text-dyeus-ink")}>
                 <span>{colLabels.name}</span>
                 <span>{colLabels.area}</span>
                 <span>{colLabels.rooms}</span>
                 <span>{colLabels.baths}</span>
-                <span>{colLabels.floor}</span>
+                {showFloor ? <span>{colLabels.floor}</span> : null}
                 <span>{colLabels.price}</span>
             </div>
 
@@ -166,7 +172,7 @@ function UnitsTable({
                                 <Link
                                     to={`/property?projectId=${projectId}&unitId=${unit._id}`}
                                     className={cn(
-                                        UNIT_GRID,
+                                        gridClass,
                                         "py-2.5 font-dyeus-sans text-sm transition",
                                         highlighted
                                             ? "bg-dyeus-bronze/10 text-dyeus-bronze"
@@ -181,7 +187,7 @@ function UnitsTable({
                                     <span>{unit.areaSqm != null ? `${unit.areaSqm} m²` : "—"}</span>
                                     <span>{unit.bedrooms ?? "—"}</span>
                                     <span>{unit.bathrooms ?? "—"}</span>
-                                    <span>{unit.floorLabel ?? "—"}</span>
+                                    {showFloor ? <span>{unit.floorLabel ?? "—"}</span> : null}
                                     <span>
                                         {unit.price != null ? `€${unit.price.toLocaleString()}` : "—"}
                                     </span>
@@ -207,7 +213,7 @@ function DyeusPropertiesList({
     className,
 }: DyeusPropertiesListProps) {
     const {t} = useDyeusT(HOME_LANGUAGE_PATH);
-    const [activeFilter, setActiveFilter] = useState<ProjectUnitStatusFilter>("available");
+    const [activeFilter, setActiveFilter] = useState<ProjectUnitStatusFilter>("all");
     const [floorPlanExpanded, setFloorPlanExpanded] = useState(false);
     const selectedFloor = floors.find((floor) => floor._id === floorId);
 
@@ -226,12 +232,18 @@ function DyeusPropertiesList({
     const floorPlanImage = resolveMarketingMediaUrl(selectedFloor?.mainImage);
     const unitPolygons: StatusColoredPolygon[] = useMemo(() => {
         const statusById = new Map(units.map((unit) => [unit._id, unit.status as MarketingUnitStatus]));
-        return (selectedFloor?.unitsCoordinates ?? []).map((polygon) => {
-            const status = statusById.get(polygon._id) ?? "available";
-            const colors = UNIT_STATUS_POLYGON_COLORS[status] ?? UNIT_STATUS_POLYGON_COLORS.available;
-            return {...polygon, ...colors};
-        });
-    }, [selectedFloor?.unitsCoordinates, units]);
+        const allowedIds =
+            activeFilter === "all"
+                ? null
+                : new Set(filtered.map((unit) => unit._id));
+        return (selectedFloor?.unitsCoordinates ?? [])
+            .filter((polygon) => !allowedIds || allowedIds.has(polygon._id))
+            .map((polygon) => {
+                const status = statusById.get(polygon._id) ?? "available";
+                const colors = UNIT_STATUS_POLYGON_COLORS[status] ?? UNIT_STATUS_POLYGON_COLORS.available;
+                return {...polygon, ...colors};
+            });
+    }, [selectedFloor?.unitsCoordinates, units, filtered, activeFilter]);
     const showFloorPlan = Boolean(floorId);
     const canExpandFloorPlan = Boolean(floorPlanImage);
 
@@ -297,7 +309,7 @@ function DyeusPropertiesList({
                         {floorPlanImage && unitPolygons.length > 0 ? (
                             <div className="absolute inset-0">
                                 <FloorPlanPolygonViewer
-                                    floorKey={selectedFloor?._id ?? floorId}
+                                    floorKey={`${selectedFloor?._id ?? floorId}:${activeFilter}`}
                                     imageUrl={floorPlanImage}
                                     unitPolygons={unitPolygons}
                                     hoveredUnitId={hoveredUnitId}
@@ -361,7 +373,7 @@ function DyeusPropertiesList({
                               <div className="relative min-h-[40vh] min-w-0 flex-1 bg-dyeus-sand lg:min-h-0 [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
                                   {unitPolygons.length > 0 ? (
                                       <FloorPlanPolygonViewer
-                                          floorKey={`expanded-${selectedFloor?._id ?? floorId}`}
+                                          floorKey={`expanded-${selectedFloor?._id ?? floorId}:${activeFilter}`}
                                           imageUrl={floorPlanImage}
                                           unitPolygons={unitPolygons}
                                           hoveredUnitId={hoveredUnitId}
@@ -404,6 +416,7 @@ function DyeusPropertiesList({
                                           onUnitHover={onUnitHover}
                                           emptyLabel={t("emptyFilter")}
                                           colLabels={colLabels}
+                                          showFloor
                                       />
                                   </div>
                               </aside>
