@@ -4,7 +4,6 @@ import {useEffect, useMemo, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconFrustumPlus} from "@tabler/icons-react";
-import {X} from "lucide-react";
 import {ApiSelect} from "@coreModule/components/custom/apiSelect";
 import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
@@ -148,16 +147,6 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                         className="h-8 text-sm min-w-[160px] max-w-[220px]"
                         pageSize={50}
                     />
-                    {reservedBy && (
-                        <button
-                            type="button"
-                            onClick={() => setReservedBy("")}
-                            className="absolute right-1.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                            aria-label={resolveLanguageKey("clear") as string}
-                        >
-                            <X className="size-3.5" />
-                        </button>
-                    )}
                 </div>
             </div>
             <div className="flex items-center gap-1">
@@ -180,16 +169,6 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                         className="h-8 text-sm min-w-[160px] max-w-[220px]"
                         pageSize={50}
                     />
-                    {boughtFrom && (
-                        <button
-                            type="button"
-                            onClick={() => setBoughtFrom("")}
-                            className="absolute right-1.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                            aria-label={resolveLanguageKey("clear") as string}
-                        >
-                            <X className="size-3.5" />
-                        </button>
-                    )}
                 </div>
             </div>
         </div>
