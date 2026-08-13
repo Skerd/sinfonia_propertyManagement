@@ -52,6 +52,7 @@
     "sourceEvent": "Evento",
     "sourceColdCall": "Cold call",
     "sourceWalkIn": "Visita spontanea",
+    "sourceChat": "Chat del sito",
     "sourceOther": "Altro"
   },
   "axios": {

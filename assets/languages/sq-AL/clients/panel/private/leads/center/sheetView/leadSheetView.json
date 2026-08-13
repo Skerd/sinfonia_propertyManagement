@@ -12,6 +12,7 @@
   "phone": "Telefoni",
   "status": "Statusi",
   "source": "Burimi",
+  "chat": "Chat i faqes",
   "interest": "Interesi",
   "projectInterest": "Projekti i interesit",
   "unitInterest": "Njësia e interesit",
@@ -41,6 +42,7 @@
     "event": "Ngjarje",
     "cold_call": "Telefonatë",
     "walk_in": "Vizitë direkte",
+    "chat": "Chat në faqe",
     "other": "Tjetër"
   },
   "interests": {

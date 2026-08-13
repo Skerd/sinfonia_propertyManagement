@@ -18,7 +18,9 @@ function PublicAiChat() {
             {!isOpen && (
                 <button
                     type="button"
-                    onClick={open}
+                    /* Wrapped: `open` takes an optional context object, and React
+                       would otherwise pass the MouseEvent into it. */
+                    onClick={() => open()}
                     className="flex size-16 cursor-pointer items-center justify-center border-0 bg-transparent p-0 transition-transform duration-300 hover:scale-110 md:size-20"
                     data-node-id="37:143"
                     data-name="AI Orb"

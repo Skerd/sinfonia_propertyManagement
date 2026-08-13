@@ -26,6 +26,7 @@
     "event": "Veranstaltung",
     "cold_call": "Kaltakquise",
     "walk_in": "Spontanbesuch",
+    "chat": "Website-Chat",
     "other": "Andere"
   },
   "interest": {
@@ -34,5 +35,6 @@
     "platform_support": "Plattform-Support",
     "reservation": "Reservierung",
     "other": "Sonstiges"
-  }
+  },
+  "chat": "Website-Chat"
 }

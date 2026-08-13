@@ -49,6 +49,10 @@ function AboutPage(props: AboutPageProps) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/client/public/about/index.tsx"),
-    withAxios<MarketingTeamResponse>({method: "post", url: "/api/realEstate/marketingTeam", data: {}}, true),
+    withAxios<MarketingTeamResponse>({
+        method: "post",
+        url: "/api/realEstate/marketingTeam",
+        data: {}
+    }, true),
     withDebug(true, true),
 )(AboutPage);

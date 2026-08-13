@@ -26,6 +26,7 @@
     "event": "Ngjarje",
     "cold_call": "Telefonatë",
     "walk_in": "Vizitë direkte",
+    "chat": "Chat në faqe",
     "other": "Tjetër"
   },
   "interest": {
@@ -34,5 +35,6 @@
     "platform_support": "Mbështetje për platformën",
     "reservation": "Rezervim",
     "other": "Tjetër"
-  }
+  },
+  "chat": "Chat i faqes"
 }

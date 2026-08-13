@@ -52,6 +52,7 @@
     "sourceEvent": "Ngjarje",
     "sourceColdCall": "Telefonatë",
     "sourceWalkIn": "Vizitë direkte",
+    "sourceChat": "Chat i faqes",
     "sourceOther": "Tjetër"
   },
   "axios": {

@@ -26,6 +26,7 @@
     "event": "Événement",
     "cold_call": "Appel à froid",
     "walk_in": "Visite spontanée",
+    "chat": "Chat du site",
     "other": "Autre"
   },
   "interest": {
@@ -34,5 +35,6 @@
     "platform_support": "Support plateforme",
     "reservation": "Réservation",
     "other": "Autre"
-  }
+  },
+  "chat": "Chat du site"
 }

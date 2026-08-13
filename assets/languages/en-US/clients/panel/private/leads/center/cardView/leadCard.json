@@ -26,6 +26,7 @@
     "event": "Event",
     "cold_call": "Cold Call",
     "walk_in": "Walk-in",
+    "chat": "Website chat",
     "other": "Other"
   },
   "interest": {
@@ -34,5 +35,6 @@
     "platform_support": "Platform support",
     "reservation": "Reservation",
     "other": "Other"
-  }
+  },
+  "chat": "Website chat"
 }

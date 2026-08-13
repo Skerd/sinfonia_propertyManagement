@@ -12,6 +12,7 @@
   "phone": "Phone",
   "status": "Status",
   "source": "Source",
+  "chat": "Website chat",
   "interest": "Interest",
   "projectInterest": "Project Interest",
   "unitInterest": "Unit Interest",
@@ -41,6 +42,7 @@
     "event": "Event",
     "cold_call": "Cold Call",
     "walk_in": "Walk-in",
+    "chat": "Website chat",
     "other": "Other"
   },
   "interests": {

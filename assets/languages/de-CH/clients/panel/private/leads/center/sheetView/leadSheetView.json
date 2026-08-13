@@ -12,6 +12,7 @@
   "phone": "Telefon",
   "status": "Status",
   "source": "Quelle",
+  "chat": "Website-Chat",
   "interest": "Interesse",
   "projectInterest": "Projektinteresse",
   "unitInterest": "Einheitsinteresse",
@@ -41,6 +42,7 @@
     "event": "Veranstaltung",
     "cold_call": "Kaltakquise",
     "walk_in": "Spontanbesuch",
+    "chat": "Website-Chat",
     "other": "Andere"
   },
   "interests": {
