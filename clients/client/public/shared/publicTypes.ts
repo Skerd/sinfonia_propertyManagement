@@ -169,13 +169,6 @@ export type MarketingUnitSingle = {
     priceHistory?: MarketingUnitPriceHistoryEntry[];
 };
 
-export type MarketingTeamMember = {
-    _id: string;
-    name: string;
-    role: string;
-    image?: string;
-};
-
 export type MarketingProjectsResponse = {
     projects: MarketingProject[];
     total: number;
@@ -197,10 +190,6 @@ export type MarketingProjectsCatalogResponse = {
 
 export type MarketingProjectCatalogSingleResponse = {
     project: MarketingProjectSingle;
-};
-
-export type MarketingTeamResponse = {
-    members: MarketingTeamMember[];
 };
 
 export type MarketingStatsCurrency = {

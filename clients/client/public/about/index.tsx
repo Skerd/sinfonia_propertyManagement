@@ -1,8 +1,6 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import {MarketingTeamResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import PublicPageShell from "@propertyManagementModule/clients/client/public/shared/layout/publicPageShell.tsx";
 import PublicSection from "@propertyManagementModule/clients/client/public/shared/layout/publicSection.tsx";
 import PageHeaderSection from "@propertyManagementModule/clients/client/public/shared/sections/pageHeaderSection.tsx";
@@ -14,7 +12,7 @@ import AboutMissionSection from "@propertyManagementModule/clients/client/public
 import AboutFoundersSection from "@propertyManagementModule/clients/client/public/about/sections/aboutFoundersSection.tsx";
 import AboutQuoteSection from "@propertyManagementModule/clients/client/public/about/sections/aboutQuoteSection.tsx";
 
-type AboutPageProps = WithLanguageType & WithAxiosType<MarketingTeamResponse>;
+type AboutPageProps = WithLanguageType;
 
 function AboutPage(props: AboutPageProps) {
     return (
@@ -32,7 +30,7 @@ function AboutPage(props: AboutPageProps) {
                 <AboutMissionSection {...props} />
             </PublicSection>
             <PublicSection nodeId="368:4999">
-                <AboutFoundersSection {...props} data={props.data ?? undefined} loading={props.loading} />
+                <AboutFoundersSection {...props} />
             </PublicSection>
             <PublicSection nodeId="368:4994">
                 <AboutQuoteSection {...props} />
@@ -49,10 +47,5 @@ function AboutPage(props: AboutPageProps) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/client/public/about/index.tsx"),
-    withAxios<MarketingTeamResponse>({
-        method: "post",
-        url: "/api/realEstate/marketingTeam",
-        data: {}
-    }, true),
     withDebug(true, true),
 )(AboutPage);
