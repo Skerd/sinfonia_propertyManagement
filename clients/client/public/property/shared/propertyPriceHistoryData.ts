@@ -1,4 +1,4 @@
-import {format, isValid, parseISO} from "date-fns";
+import {format, isValid, parseISO, subMonths} from "date-fns";
 import type {MarketingUnitPriceHistoryEntry} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 export const PRICE_HISTORY_CHART_VIEWBOX = {width: 963, height: 605} as const;
@@ -138,21 +138,32 @@ export function buildPropertyPriceHistoryPlot(entries: MarketingUnitPriceHistory
         return null;
     }
 
-    const prefix = currencyPrefix(sorted[sorted.length - 1] ?? sorted[0]);
-    const prices = sorted.map((entry) => entry.price);
+    const first = sorted[0];
+    const pastDate = first.date ? subMonths(first.date, 6) : null;
+    const series = [
+        {
+            ...first,
+            date: pastDate,
+            changedAt: pastDate?.toISOString() ?? first.changedAt,
+        },
+        ...sorted,
+    ];
+
+    const prefix = currencyPrefix(series[series.length - 1] ?? series[0]);
+    const prices = series.map((entry) => entry.price);
     const minPrice = Math.min(...prices);
     const maxPrice = Math.max(...prices);
     const yTickCount = 6;
     const {plotMin, plotMax} = buildPriceAxisBounds(minPrice, maxPrice, yTickCount);
     const plotRange = Math.max(plotMax - plotMin, 1);
 
-    const sameMonth = sorted.every((entry) => {
-        const first = sorted[0]?.date;
-        return !entry.date || !first
-            || (entry.date.getFullYear() === first.getFullYear() && entry.date.getMonth() === first.getMonth());
+    const sameMonth = series.every((entry) => {
+        const start = series[0]?.date;
+        return !entry.date || !start
+            || (entry.date.getFullYear() === start.getFullYear() && entry.date.getMonth() === start.getMonth());
     });
 
-    const points: PropertyPriceHistoryPoint[] = sorted.map((entry, index) => {
+    const points: PropertyPriceHistoryPoint[] = series.map((entry, index) => {
         const label = entry.date
             ? format(entry.date, sameMonth ? "dd MMM" : "MMM yyyy")
             : entry.changedAt ?? `Point ${index + 1}`;
@@ -162,7 +173,7 @@ export function buildPropertyPriceHistoryPlot(entries: MarketingUnitPriceHistory
             value: Math.min(100, Math.max(0, normalized * 100)),
             price: entry.price,
             displayPrice: formatPropertyHistoryPrice(entry.price, prefix),
-            x: PLOT_INSET_X + (index / Math.max(1, sorted.length - 1)) * PLOT_WIDTH,
+            x: PLOT_INSET_X + (index / Math.max(1, series.length - 1)) * PLOT_WIDTH,
             y: PLOT_BOTTOM - normalized * PLOT_HEIGHT,
         };
     });

@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {openProjectFigmaPath} from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaPaths.ts";
 import {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
@@ -19,7 +20,7 @@ function FigmaProjectCard({project, resolveLanguageKey}: FigmaProjectCardProps) 
 
     return (
         <Link
-            to={`/project?projectId=${project._id}`}
+            to={openProjectFigmaPath("3d", project._id)}
             draggable={false}
             onDragStart={(event) => event.preventDefault()}
             className="relative flex w-full min-w-0 cursor-pointer flex-col overflow-hidden rounded-[5px] border border-pronix-border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-lg"

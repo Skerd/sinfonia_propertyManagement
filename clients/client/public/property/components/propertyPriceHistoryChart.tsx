@@ -16,6 +16,8 @@ type PropertyPriceHistoryChartProps = {
     entries: MarketingUnitPriceHistoryEntry[];
     ariaLabel: string;
     formatTooltip: (label: string, value: string) => string;
+    fillHeight?: boolean;
+    showCaptions?: boolean;
 };
 
 function findNearestPoint(
@@ -42,7 +44,13 @@ function findNearestPoint(
     return nearest;
 }
 
-function PropertyPriceHistoryChart({entries, ariaLabel, formatTooltip}: PropertyPriceHistoryChartProps) {
+function PropertyPriceHistoryChart({
+    entries,
+    ariaLabel,
+    formatTooltip,
+    fillHeight = false,
+    showCaptions = true,
+}: PropertyPriceHistoryChartProps) {
     const plot = useMemo(() => buildPropertyPriceHistoryPlot(entries), [entries]);
     const plotPoints = plot?.points ?? [];
     const linePath = useMemo(() => buildPriceHistorySmoothPath(plotPoints), [plotPoints]);
@@ -65,8 +73,8 @@ function PropertyPriceHistoryChart({entries, ariaLabel, formatTooltip}: Property
     }
 
     return (
-        <div className="flex w-full flex-col gap-1">
-            <div className="relative h-[140px] w-full sm:h-[160px] md:h-[180px]">
+        <div className={`flex w-full flex-col gap-1 ${fillHeight ? "h-full min-h-0" : ""}`}>
+            <div className={`relative w-full ${fillHeight ? "min-h-0 flex-1" : "h-[140px] sm:h-[160px] md:h-[180px]"}`}>
                 <svg
                     viewBox={`0 0 ${PRICE_HISTORY_CHART_VIEWBOX.width} ${PRICE_HISTORY_CHART_VIEWBOX.height}`}
                     preserveAspectRatio="none"
@@ -203,6 +211,8 @@ function PropertyPriceHistoryChart({entries, ariaLabel, formatTooltip}: Property
                 ) : null}
             </div>
 
+            {showCaptions ? (
+                <>
             <div className="hidden px-0 font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic md:block">
                 {plot.yLabels.join(" · ")}
             </div>
@@ -212,6 +222,8 @@ function PropertyPriceHistoryChart({entries, ariaLabel, formatTooltip}: Property
                     <span key={`${month}-${index}`}>{month}</span>
                 ))}
             </div>
+                </>
+            ) : null}
         </div>
     );
 }

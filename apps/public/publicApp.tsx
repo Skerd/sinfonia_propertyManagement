@@ -24,6 +24,7 @@ const PrivacyPage = lazy(() => import("@propertyManagementModule/clients/client/
 const TermsPage = lazy(() => import("@propertyManagementModule/clients/client/public/terms/index.tsx"));
 const PropertyPage = lazy(() => import("@propertyManagementModule/clients/client/public/property/index.tsx"));
 const ProjectPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/gallery/index.tsx"));
+const OpenProjectFigmaPage = lazy(() => import("@propertyManagementModule/clients/client/public/openProjectFigma/index.tsx"));
 
 function ToasterContainer() {
     const isMobile = useIsMobile();
@@ -63,6 +64,8 @@ function PublicApp() {
                                     <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
                                     <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
                                     <Route path="project" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
+                                    <Route path="open-project" element={<ErrorBoundary><OpenProjectFigmaPage /></ErrorBoundary>} />
+                                    <Route path="open-project/:view" element={<ErrorBoundary><OpenProjectFigmaPage /></ErrorBoundary>} />
                                 </Route>
                             </Routes>
                         </Suspense>

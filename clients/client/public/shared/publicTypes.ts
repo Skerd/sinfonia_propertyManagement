@@ -100,6 +100,7 @@ export type MarketingEdificeListItem = {
     unitCount?: number;
     availableUnitCount?: number;
     soldUnitCount?: number;
+    priceHistory?: MarketingUnitPriceHistoryEntry[];
     floorsCoordinates?: MarketingPolygonItem[];
     floors?: MarketingFloorListItem[];
 };

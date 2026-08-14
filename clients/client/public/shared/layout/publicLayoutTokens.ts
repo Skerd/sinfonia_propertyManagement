@@ -2,7 +2,7 @@
 export const PUBLIC_FIGMA_MAX_WIDTH = 1728;
 
 /** Panel CardAndTableView scroll root — min-w-0 overflow-x-hidden. */
-export const PUBLIC_SECTION_BASE = "relative min-w-0 w-full overflow-x-hidden";
+export const PUBLIC_SECTION_BASE = "relative min-w-0 w-full overflow-x-clip";
 
 /** Panel entity card cell wrapper (CardAndTableView) + min-w-0 for grid shrink. */
 export const PUBLIC_GRID_CELL = "h-full min-h-0 min-w-0";
@@ -58,6 +58,10 @@ export const PUBLIC_CARD_GRID = PUBLIC_GRID_PROJECTS;
 
 /** @deprecated Use PUBLIC_GRID_SALES */
 export const PUBLIC_CARD_GRID_3 = PUBLIC_GRID_SALES;
+
+/** Page chrome matching home FigmaMenu (`35:139`) — full-bleed, 45px top on lg. */
+export const PUBLIC_PAGE_HEADER =
+    "w-full min-w-0 px-4 sm:px-6 lg:px-[52px] pt-8 sm:pt-10 lg:pt-[45px]";
 
 /** Centered content column for section padding (existing marketing sections). */
 export const PUBLIC_CONTENT_FRAME =

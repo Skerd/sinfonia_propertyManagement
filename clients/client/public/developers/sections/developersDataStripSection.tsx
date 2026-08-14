@@ -17,18 +17,28 @@ function splitStat(text: string): {value: string; label: string} {
 
 function DevelopersDataStripSection({resolveLanguageKey}: PublicLanguageProps) {
     return (
-        <div className="grid w-full grid-cols-2" data-node-id="368:5039">
-            {STATS.map((stat, index) => {
+        <div className="relative grid w-full grid-cols-2" data-node-id="368:5039">
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 left-1/2 z-[1] flex w-px -translate-x-1/2 flex-col justify-between"
+            >
+                <span className="h-[calc(50%-24px)] w-px bg-pronix-border" />
+                <span className="h-[calc(50%-24px)] w-px bg-pronix-border" />
+            </div>
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-1/2 z-[1] flex h-px -translate-y-1/2 justify-between"
+            >
+                <span className="h-px w-[calc(50%-24px)] bg-pronix-border" />
+                <span className="h-px w-[calc(50%-24px)] bg-pronix-border" />
+            </div>
+            {STATS.map((stat) => {
                 const {value, label} = splitStat(resolveLanguageKey(stat.key));
-                const isLeftCol = index % 2 === 0;
-                const isTopRow = index < 2;
 
                 return (
                     <div
                         key={stat.key}
-                        className={`flex flex-col items-center justify-center px-3 py-6 text-center ${
-                            isLeftCol ? "border-r border-pronix-border" : ""
-                        } ${isTopRow ? "border-b border-pronix-border" : ""}`}
+                        className="flex flex-col items-center justify-center px-3 py-6 text-center"
                     >
                         <p
                             className="font-aeonik-bold text-[32px] leading-[1.2] tracking-normal text-[#0247FE] not-italic"
