@@ -1,7 +1,7 @@
 import {useMemo} from "react";
 import {useAiChat} from "@propertyManagementModule/clients/client/public/shared/aiChat/aiChatContext.tsx";
 import {FIGMA_PLATFORM_SECTION} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
-import {PUBLIC_BODY, PUBLIC_CARD_TITLE, PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {PUBLIC_CARD_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
 import type {CSSProperties} from "react";
@@ -20,10 +20,10 @@ type PlatformFeature = {
 function FeatureHead({index, title, nodeId}: Pick<PlatformFeature, "index" | "title" | "nodeId">) {
     return (
         <div className="relative flex min-w-0 cursor-default items-start gap-4 md:gap-7" data-node-id={nodeId}>
-            <p className="font-aeonik-medium min-w-[2rem] shrink-0 cursor-default whitespace-nowrap text-base not-italic leading-[1.2] text-pronix-ink md:text-xl">
+            <p className="font-aeonik-medium min-w-[2.75rem] shrink-0 cursor-default whitespace-nowrap text-[28px] not-italic leading-[1.2] tracking-normal text-pronix-ink md:min-w-[2rem] md:text-xl">
                 {index}
             </p>
-            <p className={`${PUBLIC_CARD_TITLE} relative min-w-0`}>
+            <p className={`${PUBLIC_CARD_TITLE} relative min-w-0 max-md:text-[28px]`}>
                 {title}
             </p>
         </div>
@@ -33,7 +33,7 @@ function FeatureHead({index, title, nodeId}: Pick<PlatformFeature, "index" | "ti
 function FeatureDescription({description}: Pick<PlatformFeature, "description">) {
     return (
         <p
-            className={`font-aeonik-light relative min-w-0 not-italic leading-[1.2] text-pronix-ink md:justify-self-end ${PUBLIC_BODY}`}
+            className="relative min-w-0 cursor-default font-aeonik-light text-[20.2px] not-italic leading-[1.2] tracking-normal text-pronix-ink md:text-lg lg:text-[20px]"
             style={{maxWidth: DESC_MAX_WIDTH}}
         >
             {description}
@@ -87,43 +87,53 @@ function PlatformSection({resolveLanguageKey}: PlatformSectionProps) {
     );
 
     return (
-        <div className="relative min-w-0 w-full overflow-x-clip overflow-y-clip">
+        <div className="relative min-w-0 w-full overflow-x-clip overflow-y-clip py-12 md:py-0">
             <p
-                className={`mx-auto mb-6 max-w-3xl text-center md:mb-8 lg:mb-10 ${PUBLIC_TITLE}`}
+                className="mb-2 max-w-3xl cursor-default text-left font-aeonik-medium text-[40px] not-italic leading-none tracking-normal text-pronix-ink md:mx-auto md:mb-3 md:text-center md:text-5xl lg:mb-4 lg:text-[56px]"
                 data-node-id="94:609"
             >
                 {t("platformTitle")}
             </p>
 
+            <div className="mb-8 flex justify-center md:hidden">
+                <PlatformOrbButton onClick={open} ariaLabel={openAiLabel} />
+            </div>
+
             <div
-                className="grid w-full min-w-0 grid-cols-1 gap-y-8 md:grid-cols-[minmax(0,1fr)_var(--platform-orb-slot)_minmax(0,1fr)] md:grid-rows-[repeat(4,minmax(0,auto))] md:items-center md:gap-x-6 md:gap-y-10 lg:gap-y-11"
+                className="grid w-full min-w-0 grid-cols-1 gap-y-8 md:grid-cols-[minmax(0,1fr)_var(--platform-orb-slot)_minmax(0,1fr)] md:items-stretch md:gap-x-2 lg:gap-x-3"
                 data-node-id="150:1409"
                 style={{"--platform-orb-slot": ORB_SLOT} as CSSProperties}
             >
-                {features.map((feature, index) => (
-                    <div key={feature.nodeId} className="contents">
-                        <div className="flex min-w-0 flex-col gap-3 md:hidden">
-                            <FeatureHead index={feature.index} title={feature.title} nodeId={feature.nodeId} />
-                            <FeatureDescription description={feature.description} />
-                        </div>
-
-                        <div className="hidden min-w-0 md:col-start-1 md:block" style={{gridRow: index + 1}}>
-                            <FeatureHead index={feature.index} title={feature.title} nodeId={feature.nodeId} />
-                        </div>
-                        <div className="hidden min-w-0 md:col-start-3 md:block md:justify-self-end" style={{gridRow: index + 1}}>
-                            <FeatureDescription description={feature.description} />
-                        </div>
-
-                        {index === 1 && (
-                            <div className="flex justify-center md:hidden">
-                                <PlatformOrbButton onClick={open} ariaLabel={openAiLabel} />
-                            </div>
-                        )}
+                {features.map((feature) => (
+                    <div key={feature.nodeId} className="flex min-w-0 flex-col gap-3 md:hidden">
+                        <FeatureHead index={feature.index} title={feature.title} nodeId={feature.nodeId} />
+                        <FeatureDescription description={feature.description} />
                     </div>
                 ))}
 
-                <div className="@container hidden min-h-0 min-w-0 items-center justify-center md:col-start-2 md:row-start-1 md:row-span-4 md:flex">
+                <div className="hidden min-h-0 min-w-0 md:col-start-1 md:flex md:items-center md:justify-end">
+                    <div className="flex h-[70%] w-max max-w-full flex-col justify-between">
+                        {features.map((feature) => (
+                            <FeatureHead
+                                key={feature.nodeId}
+                                index={feature.index}
+                                title={feature.title}
+                                nodeId={feature.nodeId}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="@container hidden min-h-0 min-w-0 items-center justify-center md:col-start-2 md:flex">
                     <PlatformOrbButton onClick={open} ariaLabel={openAiLabel} />
+                </div>
+
+                <div className="hidden min-h-0 min-w-0 md:col-start-3 md:flex md:items-center md:justify-start">
+                    <div className="flex h-[70%] w-max max-w-full flex-col justify-between">
+                        {features.map((feature) => (
+                            <FeatureDescription key={feature.nodeId} description={feature.description} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

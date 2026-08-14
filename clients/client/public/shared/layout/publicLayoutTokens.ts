@@ -47,11 +47,11 @@ export const PUBLIC_GRID_TWO_COL = "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-
 
 /** Footer link columns — panel-style progressive grid (overview KPI pattern) */
 export const PUBLIC_GRID_FOOTER_LINKS =
-    "grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3";
+    "grid min-w-0 grid-cols-1 gap-y-4 lg:grid-cols-3 lg:gap-8";
 
 /** Footer main row — proportional Figma split without fixed px widths */
 export const PUBLIC_GRID_FOOTER_MAIN =
-    "grid min-w-0 w-full grid-cols-1 gap-10 lg:grid-cols-[minmax(0,854fr)_minmax(0,532fr)] lg:items-start";
+    "grid min-w-0 w-full grid-cols-1 gap-10 lg:grid-cols-[minmax(0,854fr)_minmax(0,532fr)] lg:items-stretch";
 
 /** @deprecated Use PUBLIC_GRID_PROJECTS */
 export const PUBLIC_CARD_GRID = PUBLIC_GRID_PROJECTS;
@@ -67,7 +67,7 @@ export const PUBLIC_CONTENT_FRAME =
 export const PUBLIC_CONTAINER = PUBLIC_CONTENT_FRAME;
 
 /** Vertical rhythm between marketing blocks — keep modest; headers are flush. */
-export const PUBLIC_SECTION = "w-full py-8 md:py-12 lg:py-16";
+export const PUBLIC_SECTION = "w-full py-12 md:py-12 lg:py-16";
 
 export const PUBLIC_SECTION_FLUSH = "w-full py-0";
 

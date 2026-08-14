@@ -1,6 +1,7 @@
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {FIGMA_HERO_ORB, FIGMA_PLATFORM_ORB} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
+import type {CSSProperties} from "react";
 
 type AiOrbVisualProps = {
     variant: "hero" | "platform";
@@ -9,6 +10,7 @@ type AiOrbVisualProps = {
     clipped?: boolean;
     /** Hide the ellipse glow layer (platform section center orb). */
     hideGlow?: boolean;
+    style?: CSSProperties;
 };
 
 type OrbTokens = typeof FIGMA_HERO_ORB;
@@ -19,6 +21,7 @@ function FluidOrbCanvas({
     className,
     clipGlow,
     hideGlow,
+    style,
 }: {
     tokens: OrbTokens;
     clipped?: boolean;
@@ -26,6 +29,7 @@ function FluidOrbCanvas({
     /** Clip ellipse glow bleed when glow is shown. */
     clipGlow?: boolean;
     hideGlow?: boolean;
+    style?: CSSProperties;
 }) {
     const overflowClass = clipped || (clipGlow && !hideGlow) ? "overflow-hidden" : "overflow-visible";
 
@@ -61,6 +65,8 @@ function FluidOrbCanvas({
                         maskSize: `${tokens.maskWidthRatio * 100}cqw ${tokens.maskHeightRatio * 100}cqw`,
                         WebkitMaskPosition: `${tokens.maskXRatio * 100}cqw ${tokens.maskYRatio * 100}cqw`,
                         maskPosition: `${tokens.maskXRatio * 100}cqw ${tokens.maskYRatio * 100}cqw`,
+                        opacity: style?.opacity,
+                        transition: style?.transition,
                     }}
                 />
             </div>
@@ -68,12 +74,12 @@ function FluidOrbCanvas({
     );
 }
 
-function AiOrbVisual({variant, className, clipped, hideGlow}: AiOrbVisualProps) {
+function AiOrbVisual({variant, className, clipped, hideGlow, style}: AiOrbVisualProps) {
     if (variant === "platform") {
-        return <FluidOrbCanvas tokens={FIGMA_PLATFORM_ORB} hideGlow clipped className={className} />;
+        return <FluidOrbCanvas tokens={FIGMA_PLATFORM_ORB} hideGlow clipped className={className} style={style} />;
     }
 
-    return <FluidOrbCanvas tokens={FIGMA_HERO_ORB} clipped={clipped} hideGlow={hideGlow} className={className} />;
+    return <FluidOrbCanvas tokens={FIGMA_HERO_ORB} clipped={clipped} hideGlow={hideGlow} className={className} style={style} />;
 }
 
 export default AiOrbVisual;

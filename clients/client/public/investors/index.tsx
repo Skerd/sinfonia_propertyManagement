@@ -21,13 +21,13 @@ function InvestorsPage(props: WithLanguageType) {
             <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
-            <PublicSection nodeId="368:4868">
+            <PublicSection nodeId="368:4868" className="!pb-20 md:!pb-12 lg:!pb-16">
                 <InvestorsHeroTitleSection {...props} />
             </PublicSection>
-            <PublicSection nodeId="368:4865" flush fullBleed>
+            <PublicSection nodeId="368:4865" flush fullBleed className="!pt-6 !pb-10 md:!py-0">
                 <InvestorsHeroStripSection />
             </PublicSection>
-            <PublicSection nodeId="368:4869">
+            <PublicSection nodeId="368:4869" className="!pt-16 md:!pt-12 lg:!pt-16">
                 <InvestorsOwnershipSection {...props} />
             </PublicSection>
             <PublicSection nodeId="357:4708" flush fullBleed>

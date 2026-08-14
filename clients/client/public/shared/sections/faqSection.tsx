@@ -1,8 +1,6 @@
 import {useState} from "react";
 import {
     PUBLIC_CONTAINER,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 
 export type FaqItem = {
@@ -39,10 +37,14 @@ function FaqSection({
     }
 
     return (
-        <div className={`${PUBLIC_CONTAINER} flex w-full flex-col items-center gap-6 py-8 md:gap-8`} data-node-id={nodeId}>
-            <div className="text-center text-pronix-ink not-italic">
-                <h2 className={PUBLIC_TITLE}>{resolveLanguageKey(titleKey)}</h2>
-                <p className={`mt-3 ${PUBLIC_SUBTITLE}`}>{resolveLanguageKey(subtitleKey)}</p>
+        <div className={`${PUBLIC_CONTAINER} flex w-full flex-col items-start gap-6 pt-16 pb-8 md:items-center md:gap-8 md:py-8`} data-node-id={nodeId}>
+            <div className="w-full text-left text-pronix-ink not-italic md:text-center">
+                <h2 className="cursor-default font-aeonik-medium text-[40px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-5xl lg:text-[56px]">
+                    {resolveLanguageKey(titleKey)}
+                </h2>
+                <p className="mt-3 cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]">
+                    {resolveLanguageKey(subtitleKey)}
+                </p>
             </div>
             <div className="flex w-full max-w-[1090px] flex-col gap-6 md:gap-8">
                 {items.map((item, index) => {
@@ -61,7 +63,7 @@ function FaqSection({
                                 }`}
                             >
                                 <p
-                                    className={`font-aeonik-medium text-base not-italic md:text-xl lg:text-2xl leading-[1.2] ${
+                                    className={`font-aeonik-medium text-[20px] not-italic md:text-xl lg:text-2xl leading-[1.2] tracking-normal ${
                                         isOpen ? "text-white" : "text-pronix-ink"
                                     }`}
                                 >
@@ -76,7 +78,7 @@ function FaqSection({
                             </button>
                             {isOpen && item.aKey && (
                                 <div className="border border-t-0 border-pronix-border bg-white p-4 md:p-6">
-                                    <p className="font-aeonik-light text-base text-pronix-ink not-italic md:text-xl lg:text-2xl leading-[1.2]">
+                                    <p className="font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-xl lg:text-2xl">
                                         {resolveLanguageKey(item.aKey)}
                                     </p>
                                 </div>

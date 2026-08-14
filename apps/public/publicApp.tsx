@@ -10,6 +10,8 @@ import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import {getLocalStorageValue, setLocalStorageValue} from "@coreModule/helpers/context/localStorage/localStorageProvider.ts";
 import {generateUUID} from "@coreModule/helpers/general";
 import PublicLayout from "@propertyManagementModule/clients/client/public/shared/publicLayout.tsx";
+import PublicHomeIntroSplash from "@propertyManagementModule/clients/client/public/home/sections/publicHomeIntroSplash.tsx";
+import {PublicIntroProvider} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
 import {sinfoniaRouterBasename} from "@coreModule/helpers/sinfoniaRouterBasename";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/public/home/index.tsx"));
@@ -46,22 +48,25 @@ function PublicApp() {
         <Provider store={store}>
             <LanguageProvider storageKey="vite-ui-language">
                 <BrowserRouter basename={sinfoniaRouterBasename()}>
-                    <Suspense fallback={<Loader />}>
-                        <Routes>
-                            <Route element={<PublicLayout />}>
-                                <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
-                                <Route path="projects" element={<ErrorBoundary><ProjectsPage /></ErrorBoundary>} />
-                                <Route path="about" element={<ErrorBoundary><AboutPage /></ErrorBoundary>} />
-                                <Route path="investors" element={<ErrorBoundary><InvestorsPage /></ErrorBoundary>} />
-                                <Route path="developers" element={<ErrorBoundary><DevelopersPage /></ErrorBoundary>} />
-                                <Route path="contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
-                                <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
-                                <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
-                                <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
-                                <Route path="project" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
-                            </Route>
-                        </Routes>
-                    </Suspense>
+                    <PublicIntroProvider>
+                        <PublicHomeIntroSplash />
+                        <Suspense fallback={<Loader />}>
+                            <Routes>
+                                <Route element={<PublicLayout />}>
+                                    <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
+                                    <Route path="projects" element={<ErrorBoundary><ProjectsPage /></ErrorBoundary>} />
+                                    <Route path="about" element={<ErrorBoundary><AboutPage /></ErrorBoundary>} />
+                                    <Route path="investors" element={<ErrorBoundary><InvestorsPage /></ErrorBoundary>} />
+                                    <Route path="developers" element={<ErrorBoundary><DevelopersPage /></ErrorBoundary>} />
+                                    <Route path="contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
+                                    <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
+                                    <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
+                                    <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
+                                    <Route path="project" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
+                                </Route>
+                            </Routes>
+                        </Suspense>
+                    </PublicIntroProvider>
                 </BrowserRouter>
             </LanguageProvider>
             <ToasterContainer />

@@ -20,22 +20,22 @@ function AboutPage(props: AboutPageProps) {
             <PublicSection flush>
                 <PageHeaderSection variant="light" />
             </PublicSection>
-            <PublicSection nodeId="368:4979">
+            <PublicSection nodeId="368:4979" className="!py-6 md:!py-12 lg:!py-16">
                 <AboutIntroSection {...props} />
             </PublicSection>
-            <PublicSection nodeId="368:4982">
+            <PublicSection nodeId="368:4982" className="!py-4 md:!py-12 lg:!py-16">
                 <AboutVideoSection />
             </PublicSection>
-            <PublicSection nodeId="368:4989">
+            <PublicSection nodeId="368:4989" className="!py-6 md:!py-12 lg:!py-16">
                 <AboutMissionSection {...props} />
             </PublicSection>
-            <PublicSection nodeId="368:4999">
+            <PublicSection nodeId="368:4999" className="!py-6 md:!py-12 lg:!py-16">
                 <AboutFoundersSection {...props} />
             </PublicSection>
-            <PublicSection nodeId="368:4994">
+            <PublicSection nodeId="368:4994" className="!py-2 md:!py-12 lg:!py-16">
                 <AboutQuoteSection {...props} />
             </PublicSection>
-            <PublicSection nodeId="357:2477">
+            <PublicSection nodeId="357:2477" className="!py-6 md:!py-12 lg:!py-16">
                 <CtaSection />
             </PublicSection>
             <PublicSection nodeId="357:2497" flush fullBleed>

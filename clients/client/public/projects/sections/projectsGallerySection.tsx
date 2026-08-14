@@ -82,7 +82,7 @@ function ProjectsGallerySection(props: ProjectsGallerySectionProps) {
 
     return (
         <div className={PUBLIC_SECTION_BASE} data-node-id="278:690">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between" data-node-id="268:390">
+            <div className="flex flex-row items-center justify-between gap-4" data-node-id="268:390">
                 <h1 className={`shrink-0 ${PUBLIC_GALLERY_PAGE_TITLE}`} data-node-id="268:238">
                     {resolveLanguageKey("title")}
                 </h1>

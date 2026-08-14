@@ -29,7 +29,7 @@ function DevelopersDemoSection({resolveLanguageKey}: PublicLanguageProps) {
                 </div>
             </div>
 
-            <div className="w-full shrink-0 sm:max-w-md lg:w-[min(100%,22rem)] xl:w-[26rem]">
+            <div className="w-full shrink-0 lg:w-[min(100%,26rem)] xl:w-[28rem]">
                 <DevelopersDataStripSection resolveLanguageKey={resolveLanguageKey} />
             </div>
         </div>

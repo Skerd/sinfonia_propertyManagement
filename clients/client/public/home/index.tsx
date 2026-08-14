@@ -52,7 +52,7 @@ function HomePage(props: HomePageProps) {
                 <FeaturedPropertiesSection />
             </PublicSection>
             <PublicSection nodeId="80:1918" flush fullBleed>
-                <OwnershipSection resolveLanguageKey={resolveLanguageKey} />
+                <OwnershipSection key="ownership-carousel" resolveLanguageKey={resolveLanguageKey} />
             </PublicSection>
             <PublicSection nodeId="94:255">
                 <RoiCalculatorSection resolveLanguageKey={resolveLanguageKey} />

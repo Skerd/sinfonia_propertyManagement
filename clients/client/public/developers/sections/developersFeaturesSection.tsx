@@ -2,11 +2,9 @@ import {developersAssets} from "@propertyManagementModule/clients/client/public/
 import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {FIGMA_DEVELOPERS_FEATURE_CARD} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {
-    PUBLIC_BODY,
     PUBLIC_CONTAINER,
     PUBLIC_GRID_CELL,
     PUBLIC_GRID_DEVELOPERS_FEATURES,
-    PUBLIC_SUBTITLE,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 
@@ -41,8 +39,12 @@ function FeatureCard({titleKey, bodyKey, nodeId, imageSrc, resolveLanguageKey}: 
                     paddingBottom: `${copyPadXRatio * 100}%`,
                 }}
             >
-                <p className={`${PUBLIC_SUBTITLE} text-pronix-ink`}>{resolveLanguageKey(titleKey)}</p>
-                <p className={`${PUBLIC_BODY} text-pronix-ink-muted`}>{resolveLanguageKey(bodyKey)}</p>
+                <p className="cursor-default font-aeonik-medium text-[20px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-2xl lg:text-[24px]">
+                    {resolveLanguageKey(titleKey)}
+                </p>
+                <p className="cursor-default font-aeonik-light text-[16px] leading-[1.2] tracking-normal text-pronix-ink-muted not-italic md:text-lg lg:text-[20px]">
+                    {resolveLanguageKey(bodyKey)}
+                </p>
             </div>
         </div>
     );
@@ -94,12 +96,15 @@ function DevelopersFeaturesSection({resolveLanguageKey}: PublicLanguageProps) {
     ];
 
     return (
-        <div className={`${PUBLIC_CONTAINER} relative flex w-full flex-col items-center gap-8 md:gap-11`} data-node-id="388:1265">
-            <div className="text-center text-pronix-ink not-italic" data-node-id="388:1259">
-                <h2 className={PUBLIC_TITLE} data-node-id="388:1262">
+        <div className={`${PUBLIC_CONTAINER} relative flex w-full flex-col items-start gap-8 md:items-center md:gap-11`} data-node-id="388:1265">
+            <div className="w-full text-left text-pronix-ink not-italic md:text-center" data-node-id="388:1259">
+                <h2
+                    className={`${PUBLIC_TITLE} !text-[40px] !leading-[1.2] md:!text-5xl lg:!text-[56px]`}
+                    data-node-id="388:1262"
+                >
                     {resolveLanguageKey("featuresTitle")}
                 </h2>
-                <p className={`mx-auto mt-3 max-w-3xl ${PUBLIC_SUBTITLE}`} data-node-id="388:1263">
+                <p className="mt-3 max-w-3xl cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:mx-auto md:text-2xl md:leading-[1.4] lg:text-[24px]" data-node-id="388:1263">
                     {resolveLanguageKey("featuresSubtitle")}
                 </p>
             </div>

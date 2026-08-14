@@ -2,15 +2,7 @@ import {PublicLanguageProps} from "@propertyManagementModule/clients/client/publ
 import {aboutAssets} from "@propertyManagementModule/clients/client/public/about/aboutAssets.ts";
 import {FIGMA_ABOUT_MISSION} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 
-const {
-    logoWidth,
-    logoHeight,
-    logoColumnRatio,
-    titleFontCqwCap,
-    titleFontRemCap,
-    titleLineHeight,
-    mutedColor,
-} = FIGMA_ABOUT_MISSION;
+const {logoWidth, logoHeight, logoColumnRatio, mutedColor} = FIGMA_ABOUT_MISSION;
 
 function AboutMissionSection({resolveLanguageKey}: PublicLanguageProps) {
     return (
@@ -29,11 +21,7 @@ function AboutMissionSection({resolveLanguageKey}: PublicLanguageProps) {
                 />
                 <div aria-hidden className="hidden min-w-0 lg:block" />
                 <p
-                    className="min-w-0 font-aeonik-medium text-pronix-ink not-italic [word-break:break-word]"
-                    style={{
-                        fontSize: `min(${titleFontCqwCap}cqw, ${titleFontRemCap}rem)`,
-                        lineHeight: titleLineHeight,
-                    }}
+                    className="min-w-0 font-aeonik-medium text-[32px] leading-[1.1] tracking-normal text-pronix-ink not-italic [word-break:break-word] lg:[font-size:min(3.94575cqw,4rem)]"
                     data-node-id="368:4989"
                 >
                     {resolveLanguageKey("missionBodyPrimary")}

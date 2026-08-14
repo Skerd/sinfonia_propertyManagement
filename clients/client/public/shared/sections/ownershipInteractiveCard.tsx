@@ -1,7 +1,8 @@
+import {useState} from "react";
 import {Link} from "react-router-dom";
+import {ChevronDown} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {ownershipImageCropStyle, type OwnershipImageCropKey} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
-import {PUBLIC_BODY, PUBLIC_CARD_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 
 export type OwnershipCardContent = {
     image: string;
@@ -23,16 +24,13 @@ type OwnershipInteractiveCardProps = {
 };
 
 function CheckItem({label, checkCircle, variant}: {label: string; checkCircle: string; variant: "light" | "dark"}) {
+    const labelColor = variant === "light" ? "text-pronix-ink" : "text-white";
     return (
         <div className="relative flex w-full min-w-0 shrink-0 items-start gap-2">
             <div className="relative size-6 shrink-0">
                 <img alt="" aria-hidden className="absolute inset-0 block size-full" src={checkCircle} />
             </div>
-            <p
-                className={`min-w-0 flex-1 ${PUBLIC_BODY} leading-[1.2] ${
-                    variant === "light" ? "text-pronix-ink" : "text-white"
-                }`}
-            >
+            <p className={`min-w-0 flex-1 cursor-default font-aeonik-light text-[20px] font-light not-italic leading-[1.2] ${labelColor}`}>
                 {label}
             </p>
         </div>
@@ -84,15 +82,15 @@ function OwnershipInteractiveCard({card, checkCircle, variant}: OwnershipInterac
     const layoutVariant = card.layoutVariant ?? "1";
     const darkHoverBlur =
         layoutVariant === "1" ? "hover:backdrop-blur-[47.5px]" : "hover:backdrop-blur-[17.5px]";
+    const textColor = variant === "light" ? "text-pronix-ink" : "text-white";
+    const [includedOpen, setIncludedOpen] = useState(false);
 
     return (
         <div
             className={cn(
                 // flex-1 + self-stretch fill the grid cell; % height alone is unreliable in CSS grid.
                 "group relative flex min-h-0 w-full min-w-0 flex-1 cursor-default flex-col self-stretch gap-6 rounded-[5px] p-6 transition-all duration-500 sm:p-8",
-                variant === "light"
-                    ? "border border-pronix-border bg-white"
-                    : `border border-[rgba(255,255,255,0.4)] hover:bg-[rgba(255,255,255,0.05)] ${darkHoverBlur}`,
+                variant === "light" ? "border border-pronix-border bg-white" : `border border-[rgba(255,255,255,0.4)] hover:bg-[rgba(255,255,255,0.05)] ${darkHoverBlur}`,
             )}
             data-node-id={card.nodeId}
         >
@@ -107,37 +105,41 @@ function OwnershipInteractiveCard({card, checkCircle, variant}: OwnershipInterac
                     />
                 </div>
                 <div className="flex w-full min-w-0 flex-col items-start gap-3 not-italic leading-[1.2]">
-                    <p
-                        className={`w-full min-w-0 ${PUBLIC_CARD_TITLE} ${
-                            variant === "light" ? "text-pronix-ink" : "text-white"
-                        }`}
-                    >
+                    <p className={`w-full min-w-0 cursor-default font-aeonik-medium text-[28px] font-medium not-italic leading-[1.2] ${textColor}`}>
                         {card.title}
                     </p>
-                    <p
-                        className={`w-full min-w-0 font-aeonik-light ${PUBLIC_BODY} leading-[1.2] ${
-                            variant === "light" ? "text-pronix-ink" : "text-white"
-                        }`}
-                    >
+                    <p className={`w-full min-w-0 cursor-default font-aeonik-light text-[20px] font-light not-italic leading-[1.2] ${textColor}`}>
                         {card.body}
                     </p>
                 </div>
                 <div className="flex w-full min-w-0 flex-col items-start gap-2">
-                    <p
-                        className={`w-full min-w-0 font-aeonik-medium text-base not-italic leading-[1.2] sm:text-lg ${
-                            variant === "light" ? "text-pronix-ink" : "text-white"
-                        }`}
+                    <button
+                        type="button"
+                        className={`flex w-full min-w-0 items-center justify-between gap-3 text-left md:pointer-events-none ${textColor}`}
+                        aria-expanded={includedOpen}
+                        onClick={() => setIncludedOpen((open) => !open)}
                     >
-                        {card.includedLabel}
-                    </p>
-                    <div className="flex w-full min-w-0 flex-col items-start gap-3">
+                        <span className="min-w-0 font-aeonik-medium text-base not-italic leading-[1.2] sm:text-lg">
+                            {card.includedLabel}
+                        </span>
+                        <ChevronDown
+                            className={cn(
+                                "size-5 shrink-0 md:hidden transition-transform duration-200",
+                                includedOpen ? "rotate-180" : "rotate-0",
+                            )}
+                            aria-hidden
+                        />
+                    </button>
+                    <div className={cn("flex w-full min-w-0 flex-col items-start gap-3", !includedOpen && "max-md:hidden")}>
                         {card.checklist.map((item) => (
                             <CheckItem key={item} label={item} checkCircle={checkCircle} variant={variant} />
                         ))}
                     </div>
                 </div>
+
+                <OwnershipCta href={card.ctaHref} label={card.ctaLabel} variant={variant} />
+
             </div>
-            <OwnershipCta href={card.ctaHref} label={card.ctaLabel} variant={variant} />
         </div>
     );
 }

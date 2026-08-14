@@ -25,6 +25,11 @@
         font-weight: 500;
     }
 
+    .font-aeonik-bold {
+        font-family: var(--font-aeonik);
+        font-weight: 700;
+    }
+
     .font-aeonik-light {
         font-family: var(--font-aeonik);
         font-weight: 300;
@@ -38,6 +43,15 @@
     .font-kamerik-book {
         font-family: var(--font-kamerik);
         font-weight: 400;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
     }
 }
 

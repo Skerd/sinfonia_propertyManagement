@@ -1,9 +1,5 @@
 import {Link} from "react-router-dom";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {
     formatEuro,
@@ -25,11 +21,19 @@ function RoiCalculatorSection({resolveLanguageKey}: RoiCalculatorSectionProps) {
 
     return (
         <div className="relative w-full" data-node-id="94:255">
-            <div className="flex w-full flex-col items-center gap-4 text-center md:gap-6 lg:gap-8" data-node-id="94:256">
-                <p className={`w-full ${PUBLIC_TITLE}`} data-node-id="94:257">
+            <div className="flex w-full flex-col items-start gap-4 text-left md:items-center md:gap-6 md:text-center lg:gap-8" data-node-id="94:256">
+                <p
+                    className="w-full font-aeonik-medium text-[40px] font-medium leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-5xl lg:text-[56px]"
+                    data-node-id="94:257"
+                    style={{fontWeight: 500}}
+                >
                     {t("roiTitle")}
                 </p>
-                <p className={`max-w-3xl ${PUBLIC_SUBTITLE} text-pronix-ink-muted`} data-node-id="94:258">
+                <p
+                    className="max-w-3xl font-aeonik-light text-[18px] font-light leading-[1.1] tracking-normal text-pronix-ink-muted not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]"
+                    data-node-id="94:258"
+                    style={{fontWeight: 300}}
+                >
                     {t("roiSubtitle")}
                 </p>
             </div>
@@ -40,12 +44,13 @@ function RoiCalculatorSection({resolveLanguageKey}: RoiCalculatorSectionProps) {
             >
                 <div className="flex w-full flex-col bg-white p-6 sm:p-8 md:p-10 lg:w-1/2 lg:min-h-[min(70vh,42rem)]" data-node-id="94:282">
                     <p
-                        className="mb-8 cursor-default text-center font-aeonik-medium text-pronix-ink not-italic text-xl md:text-2xl leading-[1.1] lg:mb-12"
+                        className="mb-8 cursor-default text-center font-aeonik-medium text-[20.83px] font-medium leading-[1.1] tracking-normal text-pronix-ink not-italic md:text-2xl lg:mb-12"
                         data-node-id="94:284"
+                        style={{fontWeight: 500}}
                     >
                         {t("roiCalculatorLabel")}
                     </p>
-                    <div className="mx-auto flex w-full max-w-xl flex-col gap-8 md:gap-11" data-node-id="94:285">
+                    <div className="mx-auto flex w-full max-w-xl flex-col gap-4 md:gap-11" data-node-id="94:285">
                         <RoiFigmaSlider
                             dataNodeId="94:286"
                             label={t("roiShareAmount")}
@@ -124,6 +129,12 @@ function RoiCalculatorSection({resolveLanguageKey}: RoiCalculatorSectionProps) {
                     }
                 />
             </div>
+            <p
+                className="mt-4 cursor-default font-aeonik-light text-[16px] font-light italic leading-[1.1] tracking-normal text-pronix-ink md:hidden"
+                style={{fontWeight: 300}}
+            >
+                {t("roiDisclaimer")}
+            </p>
         </div>
     );
 }

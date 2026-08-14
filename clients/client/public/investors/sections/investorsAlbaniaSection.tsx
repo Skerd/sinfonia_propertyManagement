@@ -10,8 +10,6 @@ import {
 } from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {
     PUBLIC_CONTAINER,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 
 const CHECK_KEYS = ["albaniaCheck1", "albaniaCheck2", "albaniaCheck3", "albaniaCheck4", "albaniaCheck5"] as const;
@@ -22,7 +20,7 @@ function InvestorsAlbaniaSection({resolveLanguageKey}: PublicLanguageProps) {
 
     return (
         <div
-            className={`${PUBLIC_CONTAINER} flex w-full flex-col gap-10 py-8 lg:flex-row lg:items-center lg:gap-[min(20vw,324px)]`}
+            className={`${PUBLIC_CONTAINER} flex w-full flex-col gap-10 py-8 pb-16 md:pb-8 lg:flex-row lg:items-center lg:gap-[min(20vw,324px)]`}
             data-node-id="353:537"
         >
             <div className="relative mx-auto w-full max-w-[868px] shrink-0" style={{aspectRatio: collageAspect}}>
@@ -68,14 +66,31 @@ function InvestorsAlbaniaSection({resolveLanguageKey}: PublicLanguageProps) {
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-6 md:max-w-md md:gap-8 lg:max-w-none xl:max-w-md">
                 <div>
-                    <h2 className={PUBLIC_TITLE}>{resolveLanguageKey("albaniaTitle")}</h2>
-                    <p className={`mt-3 ${PUBLIC_SUBTITLE}`}>{resolveLanguageKey("albaniaBody")}</p>
+                    <h2 className="cursor-default font-aeonik-medium text-[40px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-5xl lg:text-[56px]">
+                        {resolveLanguageKey("albaniaTitle")}
+                    </h2>
+                    <p className="mt-3 cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]">
+                        {resolveLanguageKey("albaniaBody")}
+                    </p>
                 </div>
                 <div className="flex flex-col gap-3">
                     {CHECK_KEYS.map((key) => (
                         <div key={key} className="flex items-start gap-2.5">
-                            <img alt="" aria-hidden className="mt-1 size-6 shrink-0" src={investorsAssets.checkCircle} />
-                            <p className="font-aeonik-light text-base text-pronix-ink not-italic md:text-lg lg:text-2xl leading-[1.2]">
+                            <span
+                                className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-[#0247FE]"
+                                aria-hidden
+                            >
+                                <svg viewBox="0 0 12 12" className="size-3" fill="none">
+                                    <path
+                                        d="M2 6.2 4.6 8.8 10 3.2"
+                                        stroke="white"
+                                        strokeWidth="1.6"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </span>
+                            <p className="font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-lg lg:text-2xl">
                                 {resolveLanguageKey(key)}
                             </p>
                         </div>

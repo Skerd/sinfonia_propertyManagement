@@ -1,10 +1,6 @@
-import {useMemo, useState} from "react";
+import {useMemo, useRef, useState} from "react";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {FIGMA_STAT_CARD, figmaImageCropStyle, FIGMA_IMAGE_CROPS} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
-import {
-    PUBLIC_GRID_CELL,
-    PUBLIC_TITLE_FIGMA,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import type {
     MarketingStatsResponse,
     PublicLanguageProps,
@@ -40,19 +36,20 @@ const STAT_CARD_KEYS = [
 const {
     numberFontCqwCap,
     labelFontCqwCap,
-    hoverTextFontCqwCap,
     logoLeftRatio,
     logoTopRatio,
     logoWidthRatio,
     logoHeightRatio,
-    hoverTextLeftRatio,
-    hoverTextTopRatio,
     statBlockLeftRatio,
     statBlockTopRatio,
 } = FIGMA_STAT_CARD;
 
 const STAT_BLOCK_EXPANDED_LEFT_RATIO = 23 / FIGMA_STAT_CARD.defaultWidth;
 const STAT_BLOCK_EXPANDED_TOP_RATIO = 30 / FIGMA_STAT_CARD.height;
+const STAT_ROW_GROW_TOTAL = FIGMA_STAT_CARD.expandedWidth + FIGMA_STAT_CARD.collapsedWidth * 2;
+const HOVER_TEXT_WIDTH_ROW_RATIO =
+    (FIGMA_STAT_CARD.hoverTextWidthRatio * FIGMA_STAT_CARD.defaultWidth) / STAT_ROW_GROW_TOTAL;
+const HOVER_TEXT_LEFT_ROW_RATIO = 23 / STAT_ROW_GROW_TOTAL;
 
 function currencyPrefix(symbol?: string, abbreviation?: string): string {
     return symbol?.trim() || (abbreviation ? `${abbreviation} ` : "€");
@@ -114,15 +111,46 @@ function StatCard({
     onHover: () => void;
     onLeave: () => void;
 }) {
+    const touchStart = useRef<{x: number; y: number} | null>(null);
+
     return (
         <div
-            className={`group relative aspect-[525/515] w-full min-w-0 cursor-default select-none overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] transition-all duration-500 @container ${
+            className={`group relative w-full min-w-0 cursor-default select-none overflow-hidden rounded-[5px] border border-[rgba(24,24,24,0.2)] transition-[background-color,filter] duration-500 max-md:aspect-[525/515] md:h-full ${
                 isExpanded ? "bg-[#0247fe]" : "bg-white"
             }`}
             data-node-id={card.nodeId}
-            onMouseEnter={onHover}
-            onMouseLeave={onLeave}
+            onPointerEnter={(event) => {
+                if (event.pointerType === "mouse") {
+                    onHover();
+                }
+            }}
+            onPointerLeave={(event) => {
+                if (event.pointerType === "mouse") {
+                    onLeave();
+                }
+            }}
+            onPointerDown={(event) => {
+                if (event.pointerType === "mouse") {
+                    return;
+                }
+                touchStart.current = {x: event.clientX, y: event.clientY};
+            }}
+            onPointerUp={(event) => {
+                if (event.pointerType === "mouse") {
+                    return;
+                }
+                const start = touchStart.current;
+                touchStart.current = null;
+                if (!start) {
+                    return;
+                }
+                if (Math.abs(event.clientX - start.x) > 10 || Math.abs(event.clientY - start.y) > 10) {
+                    return;
+                }
+                onHover();
+            }}
         >
+            <div className="@container pointer-events-none absolute inset-0">
             <div
                 className="absolute flex flex-col items-start not-italic leading-[1.2] transition-all duration-500"
                 style={{
@@ -132,7 +160,7 @@ function StatCard({
             >
                 <p
                     className={`font-aeonik-medium whitespace-nowrap ${isExpanded ? "text-white" : "text-pronix-ink"}`}
-                    style={{fontSize: `min(${numberFontCqwCap}cqw, 64px)`}}
+                    style={{fontSize: `min(${isExpanded ? 18 : numberFontCqwCap}cqw, ${isExpanded ? 96 : 64}px)`}}
                 >
                     {card.number}
                 </p>
@@ -143,20 +171,6 @@ function StatCard({
                     {card.label}
                 </p>
             </div>
-
-            {isExpanded && (
-                <p
-                    className="absolute break-words font-aeonik-medium leading-[1.2] text-white not-italic"
-                    style={{
-                        left: `${hoverTextLeftRatio * 100}%`,
-                        top: `${hoverTextTopRatio * 100}%`,
-                        right: `${statBlockLeftRatio * 100}%`,
-                        fontSize: `min(${hoverTextFontCqwCap}cqw, 24px)`,
-                    }}
-                >
-                    {card.hoverText}
-                </p>
-            )}
 
             <div
                 className="absolute overflow-hidden"
@@ -170,10 +184,29 @@ function StatCard({
                 <img
                     alt=""
                     aria-hidden
-                    className={`absolute max-w-none transition-[filter] duration-500 ${isExpanded ? "invert" : ""}`}
+                    className={`absolute max-w-none transition-[filter] duration-500 ${
+                        isExpanded ? "brightness-0 invert" : ""
+                    }`}
                     src={figmaAssets.aboutLogo}
                     style={figmaImageCropStyle(FIGMA_IMAGE_CROPS.aboutHeroStrip)}
                 />
+            </div>
+            </div>
+
+            <div
+                className="pointer-events-none absolute inset-x-0 overflow-hidden max-md:top-auto max-md:bottom-[6%] max-md:max-h-[55%] max-md:flex max-md:items-end md:top-auto md:bottom-[5.83%] md:max-h-none"
+            >
+                <p
+                    className="font-aeonik-medium leading-[1.2] text-white not-italic max-md:ml-4 max-md:w-[calc(100%-2rem)] max-md:text-[14px] max-md:leading-[1.25] md:text-[24px] md:leading-[1.2] md:w-[var(--stat-hover-w)] md:ml-[var(--stat-hover-ml)]"
+                    style={{
+                        ["--stat-hover-w" as string]: `calc((100cqw - ${FIGMA_STAT_CARD.gap * 2}px) * ${HOVER_TEXT_WIDTH_ROW_RATIO})`,
+                        ["--stat-hover-ml" as string]: `calc((100cqw - ${FIGMA_STAT_CARD.gap * 2}px) * ${HOVER_TEXT_LEFT_ROW_RATIO})`,
+                        transform: isExpanded ? "translateX(0)" : "translateX(-110%)",
+                        transition: "transform 500ms ease-in-out",
+                    }}
+                >
+                    {card.hoverText}
+                </p>
             </div>
         </div>
     );
@@ -204,28 +237,51 @@ function AboutSection({data, loading, resolveLanguageKey}: AboutSectionProps) {
     const aboutMuted = String(resolveLanguageKey("aboutProseMuted"));
 
     return (
-        <div className="relative min-w-0 w-full overflow-x-clip" data-node-id="142:1209">
-            <div
-                className="grid min-w-0 grid-cols-1 gap-8 md:grid-cols-3 md:[grid-template-columns:repeat(3,minmax(0,1fr))]"
-                data-node-id="142:1192"
-                data-name="Component 16"
-            >
-                {statCards.map((card, index) => (
-                    <div key={card.nodeId} className={PUBLIC_GRID_CELL}>
-                        <StatCard
-                            card={card}
-                            isExpanded={hoveredIndex === index}
-                            onHover={() => setHoveredIndex(index)}
-                            onLeave={() => setHoveredIndex(null)}
-                        />
-                    </div>
-                ))}
+        <div className="relative min-w-0 w-full md:overflow-x-clip" data-node-id="142:1209">
+            <div className="relative min-w-0 w-full">
+                <div
+                    aria-hidden
+                    className="pointer-events-none invisible hidden md:block"
+                    style={{
+                        width: `calc((100% - ${FIGMA_STAT_CARD.gap * 2}px) / 3)`,
+                        aspectRatio: `${FIGMA_STAT_CARD.defaultWidth} / ${FIGMA_STAT_CARD.height}`,
+                    }}
+                />
+                <div
+                    className="@container hide-scrollbar flex min-w-0 snap-x snap-mandatory flex-row items-stretch gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:absolute md:inset-0 md:snap-none md:gap-8 md:overflow-visible"
+                    data-node-id="142:1192"
+                    data-name="Component 16"
+                >
+                    {statCards.map((card, index) => (
+                        <div
+                            key={card.nodeId}
+                            className={`min-h-0 min-w-0 max-md:w-[80%] max-md:shrink-0 max-md:snap-start md:h-full md:w-full md:basis-0 md:transition-[flex-grow] md:duration-500 md:ease-in-out ${
+                                hoveredIndex === index
+                                    ? "md:grow-[869]"
+                                    : hoveredIndex !== null
+                                      ? "md:grow-[353]"
+                                      : "md:grow-[525]"
+                            }`}
+                        >
+                            <StatCard
+                                card={card}
+                                isExpanded={hoveredIndex === index}
+                                onHover={() => setHoveredIndex(index)}
+                                onLeave={() => setHoveredIndex(null)}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
-            <p className={`mt-8 min-w-0 max-w-full cursor-default break-words md:mt-10 ${PUBLIC_TITLE_FIGMA}`} data-node-id="87:158">
-                <span className="cursor-default text-pronix-ink leading-[1.1]">
+            <p
+                className="mt-8 ml-auto min-w-0 w-full cursor-default break-words font-aeonik-medium not-italic leading-[1.1] text-3xl sm:text-4xl md:mt-10 md:w-2/3 md:text-5xl lg:text-[64px]"
+                data-node-id="87:158"
+                style={{fontWeight: 500}}
+            >
+                <span className="cursor-default text-pronix-ink" style={{fontWeight: 500}}>
                     {aboutPrimary}
                 </span>
-                <span className="cursor-default text-pronix-ink-faded leading-[1.1]">
+                <span className="cursor-default text-pronix-ink-faded" style={{fontWeight: 500}}>
                     {aboutMuted}
                 </span>
             </p>

@@ -10,9 +10,14 @@ import {
     MarketingCompanyResponse,
     PublicLanguageProps,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
-import {PUBLIC_SUBTITLE, PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
+
+const CONTACT_INFO_LABEL =
+    "font-aeonik-light text-[20px] leading-none tracking-normal text-pronix-ink-muted not-italic md:text-base md:leading-[1.4]";
+
+const CONTACT_INFO_VALUE =
+    "cursor-default font-aeonik-medium text-[24px] leading-none tracking-normal text-pronix-ink not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]";
 
 type ContactContentSectionProps = PublicLanguageProps & WithAxiosType<MarketingCompanyResponse>;
 
@@ -27,8 +32,10 @@ const INTEREST_OPTIONS = [
     {value: "other", labelKey: "interestOther"},
 ] as const;
 
-const fieldClass =
-    "w-full rounded-[5px] border px-4 py-3 font-aeonik-light text-base text-pronix-ink outline-none transition-colors md:text-lg disabled:cursor-not-allowed disabled:opacity-60";
+const fieldInputClass =
+    "w-full min-w-0 cursor-text border-0 bg-transparent font-aeonik-light text-[20px] leading-[17.15px] tracking-normal text-pronix-ink outline-none placeholder:text-pronix-ink/50 md:text-lg md:leading-none disabled:cursor-not-allowed disabled:opacity-60";
+const fieldShellClass = "flex w-full min-w-0 items-center border-b px-2.5 py-4";
+const fieldShellErrorClass = (hasError: boolean) => (hasError ? "border-red-500" : "border-pronix-ink/30");
 
 function googleMapsUrl(address: MarketingCompanyAddress): string {
     if (address.latitude != null && address.longitude != null) {
@@ -127,124 +134,138 @@ function ContactFormInner({resolveLanguageKey, onPost, loading, innerRef, error}
 
     return (
         <>
-            <div className="mt-6 flex flex-col gap-4 md:mt-8" data-node-id="320:570">
-                <div className="flex flex-col gap-4 sm:flex-row sm:gap-4">
-                    <div className="min-w-0 flex-1">
-                        <input
-                            type="text"
-                            name="name"
-                            autoComplete="given-name"
-                            placeholder={resolveLanguageKey("namePlaceholder")}
-                            value={name}
-                            disabled={loading}
-                            aria-invalid={!!fieldErrors.name || undefined}
-                            onChange={(e) => {
-                                setSubmitted(false);
-                                clearFieldError("name");
-                                setName(e.target.value);
-                            }}
-                            className={cn(fieldClass, fieldErrors.name ? "border-red-500" : "border-pronix-border")}
-                        />
+            <div className="mt-10 flex flex-col gap-6 md:mt-12 md:gap-8" data-node-id="320:570">
+                <div className="grid w-full min-w-0 grid-cols-2 gap-4 sm:gap-8">
+                    <div className="min-w-0">
+                        <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.name))}>
+                            <input
+                                type="text"
+                                name="name"
+                                autoComplete="given-name"
+                                placeholder={resolveLanguageKey("namePlaceholder")}
+                                value={name}
+                                disabled={loading}
+                                aria-invalid={!!fieldErrors.name || undefined}
+                                onChange={(e) => {
+                                    setSubmitted(false);
+                                    clearFieldError("name");
+                                    setName(e.target.value);
+                                }}
+                                className={fieldInputClass}
+                            />
+                        </div>
                         <FieldError message={fieldErrors.name} />
                     </div>
-                    <div className="min-w-0 flex-1">
-                        <input
-                            type="text"
-                            name="surname"
-                            autoComplete="family-name"
-                            placeholder={resolveLanguageKey("lastNamePlaceholder")}
-                            value={surname}
-                            disabled={loading}
-                            aria-invalid={!!fieldErrors.surname || undefined}
-                            onChange={(e) => {
-                                setSubmitted(false);
-                                clearFieldError("surname");
-                                setSurname(e.target.value);
-                            }}
-                            className={cn(fieldClass, fieldErrors.surname ? "border-red-500" : "border-pronix-border")}
-                        />
+                    <div className="min-w-0">
+                        <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.surname))}>
+                            <input
+                                type="text"
+                                name="surname"
+                                autoComplete="family-name"
+                                placeholder={resolveLanguageKey("lastNamePlaceholder")}
+                                value={surname}
+                                disabled={loading}
+                                aria-invalid={!!fieldErrors.surname || undefined}
+                                onChange={(e) => {
+                                    setSubmitted(false);
+                                    clearFieldError("surname");
+                                    setSurname(e.target.value);
+                                }}
+                                className={fieldInputClass}
+                            />
+                        </div>
                         <FieldError message={fieldErrors.surname} />
                     </div>
                 </div>
                 <div className="w-full min-w-0">
-                    <input
-                        type="email"
-                        name="email"
-                        autoComplete="email"
-                        placeholder={resolveLanguageKey("emailPlaceholder")}
-                        value={email}
-                        disabled={loading}
-                        aria-invalid={!!fieldErrors.email || undefined}
-                        onChange={(e) => {
-                            setSubmitted(false);
-                            clearFieldError("email");
-                            setEmail(e.target.value);
-                        }}
-                        className={cn(fieldClass, fieldErrors.email ? "border-red-500" : "border-pronix-border")}
-                    />
+                    <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.email))}>
+                        <input
+                            type="email"
+                            name="email"
+                            autoComplete="email"
+                            placeholder={resolveLanguageKey("emailPlaceholder")}
+                            value={email}
+                            disabled={loading}
+                            aria-invalid={!!fieldErrors.email || undefined}
+                            onChange={(e) => {
+                                setSubmitted(false);
+                                clearFieldError("email");
+                                setEmail(e.target.value);
+                            }}
+                            className={fieldInputClass}
+                        />
+                    </div>
                     <FieldError message={fieldErrors.email} />
                 </div>
                 <div className="w-full min-w-0">
-                    <input
-                        type="tel"
-                        name="phone"
-                        autoComplete="tel"
-                        placeholder={resolveLanguageKey("phonePlaceholder")}
-                        value={phone}
-                        disabled={loading}
-                        aria-invalid={!!fieldErrors.phone || undefined}
-                        onChange={(e) => {
-                            setSubmitted(false);
-                            clearFieldError("phone");
-                            setPhone(e.target.value);
-                        }}
-                        className={cn(fieldClass, fieldErrors.phone ? "border-red-500" : "border-pronix-border")}
-                    />
+                    <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.phone))}>
+                        <input
+                            type="tel"
+                            name="phone"
+                            autoComplete="tel"
+                            placeholder={resolveLanguageKey("phonePlaceholder")}
+                            value={phone}
+                            disabled={loading}
+                            aria-invalid={!!fieldErrors.phone || undefined}
+                            onChange={(e) => {
+                                setSubmitted(false);
+                                clearFieldError("phone");
+                                setPhone(e.target.value);
+                            }}
+                            className={fieldInputClass}
+                        />
+                    </div>
                     <FieldError message={fieldErrors.phone} />
                 </div>
                 <div className="w-full min-w-0">
-                    <select
-                        name="interest"
-                        value={interest}
-                        disabled={loading}
-                        onChange={(e) => {
-                            setSubmitted(false);
-                            setInterest(e.target.value);
-                        }}
-                        className={cn(
-                            fieldClass,
-                            "border-pronix-border",
-                            interest ? "text-pronix-ink" : "text-pronix-ink-muted",
-                        )}
-                    >
-                        <option value="" disabled>
-                            {resolveLanguageKey("interestPlaceholder")}
-                        </option>
-                        {INTEREST_OPTIONS.map((option) => (
-                            <option key={option.value} value={option.value}>
-                                {resolveLanguageKey(option.labelKey)}
+                    <div className={cn(fieldShellClass, "border-pronix-ink/30")}>
+                        <select
+                            name="interest"
+                            value={interest}
+                            disabled={loading}
+                            onChange={(e) => {
+                                setSubmitted(false);
+                                setInterest(e.target.value);
+                            }}
+                            className={cn(
+                                fieldInputClass,
+                                "appearance-none bg-transparent",
+                                interest ? "text-pronix-ink" : "text-pronix-ink/50",
+                            )}
+                        >
+                            <option value="" disabled>
+                                {resolveLanguageKey("interestPlaceholder")}
                             </option>
-                        ))}
-                    </select>
+                            {INTEREST_OPTIONS.map((option) => (
+                                <option key={option.value} value={option.value} className="text-pronix-ink">
+                                    {resolveLanguageKey(option.labelKey)}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <div className="w-full min-w-0">
-                    <textarea
-                        name="message"
-                        placeholder={resolveLanguageKey("messagePlaceholder")}
-                        value={message}
-                        disabled={loading}
-                        aria-invalid={!!fieldErrors.message || undefined}
-                        onChange={(e) => {
-                            setSubmitted(false);
-                            clearFieldError("message");
-                            setMessage(e.target.value);
-                        }}
+                    <div
                         className={cn(
-                            fieldClass,
-                            "min-h-[100px] resize-none",
-                            fieldErrors.message ? "border-red-500" : "border-pronix-border",
+                            "flex min-h-[116px] w-full min-w-0 items-start border-b px-2.5 py-4",
+                            fieldShellErrorClass(!!fieldErrors.message),
                         )}
-                    />
+                    >
+                        <textarea
+                            name="message"
+                            placeholder={resolveLanguageKey("messagePlaceholder")}
+                            rows={3}
+                            value={message}
+                            disabled={loading}
+                            aria-invalid={!!fieldErrors.message || undefined}
+                            onChange={(e) => {
+                                setSubmitted(false);
+                                clearFieldError("message");
+                                setMessage(e.target.value);
+                            }}
+                            className={cn(fieldInputClass, "min-h-[4.5rem] resize-none")}
+                        />
+                    </div>
                     <FieldError message={fieldErrors.message} />
                 </div>
             </div>
@@ -305,7 +326,9 @@ function ContactContentSectionInner({
     return (
         <div className="relative grid w-full grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10" data-node-id="305:228">
             <div className="min-w-0" data-node-id="320:583">
-                <h1 className={`max-w-lg ${PUBLIC_TITLE}`}>{resolveLanguageKey("title")}</h1>
+                <h1 className="max-w-lg cursor-default font-aeonik-medium text-[40px] leading-[1.1] tracking-normal text-pronix-ink not-italic md:text-5xl md:leading-[1.2] lg:text-[56px]">
+                    {resolveLanguageKey("title")}
+                </h1>
                 <ContactForm
                     resolveLanguageKey={resolveLanguageKey}
                     currentLanguage={currentLanguage}
@@ -314,25 +337,25 @@ function ContactContentSectionInner({
                 <div className="mt-8 flex flex-col gap-6" data-node-id="320:586">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2" data-node-id="320:587">
                         <div data-node-id="320:588">
-                            <p className="font-aeonik-light text-sm text-pronix-ink-muted not-italic md:text-base leading-[1.4]">
+                            <p className={CONTACT_INFO_LABEL}>
                                 {resolveLanguageKey("phoneLabel")}
                             </p>
-                            <p className={`mt-2 font-aeonik-medium ${PUBLIC_SUBTITLE} text-pronix-ink`}>
+                            <p className={`mt-2 ${CONTACT_INFO_VALUE}`}>
                                 {data?.phoneNumber ?? ""}
                             </p>
                         </div>
                         <div data-node-id="320:591">
-                            <p className="font-aeonik-light text-sm text-pronix-ink-muted not-italic md:text-base leading-[1.4]">
+                            <p className={CONTACT_INFO_LABEL}>
                                 {resolveLanguageKey("emailLabel")}
                             </p>
-                            <p className={`mt-2 font-aeonik-medium ${PUBLIC_SUBTITLE} text-pronix-ink`}>
+                            <p className={`mt-2 ${CONTACT_INFO_VALUE}`}>
                                 {data?.email ?? ""}
                             </p>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2" data-node-id="320:594">
                         <div data-node-id="320:595">
-                            <p className="font-aeonik-light text-sm text-pronix-ink-muted not-italic md:text-base leading-[1.4]">
+                            <p className={CONTACT_INFO_LABEL}>
                                 {resolveLanguageKey("addressLabel")}
                             </p>
                             {addresses.length > 0 ? (
@@ -343,7 +366,7 @@ function ContactContentSectionInner({
                                                 href={googleMapsUrl(address)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className={`font-aeonik-medium ${PUBLIC_SUBTITLE} text-pronix-ink transition hover:opacity-70`}
+                                                className={`${CONTACT_INFO_VALUE} transition hover:opacity-70`}
                                             >
                                                 {address.label}
                                             </a>
@@ -351,14 +374,14 @@ function ContactContentSectionInner({
                                     ))}
                                 </ul>
                             ) : (
-                                <p className={`mt-2 font-aeonik-medium ${PUBLIC_SUBTITLE} text-pronix-ink`} />
+                                <p className={`mt-2 ${CONTACT_INFO_VALUE}`} />
                             )}
                         </div>
                         <div data-node-id="320:598">
-                            <p className="font-aeonik-light text-sm text-pronix-ink-muted not-italic md:text-base leading-[1.4]">
+                            <p className={CONTACT_INFO_LABEL}>
                                 {resolveLanguageKey("hoursLabel")}
                             </p>
-                            <p className={`mt-2 font-aeonik-medium ${PUBLIC_SUBTITLE} text-pronix-ink`}>
+                            <p className={`mt-2 ${CONTACT_INFO_VALUE}`}>
                                 {resolveLanguageKey("hoursValue")}
                             </p>
                         </div>

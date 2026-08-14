@@ -2,13 +2,12 @@ import {PublicLanguageProps} from "@propertyManagementModule/clients/client/publ
 import {investorsAssets} from "@propertyManagementModule/clients/client/public/investors/investorsAssets.ts";
 import {
     PUBLIC_GRID_CELL,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE_FIGMA,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {type OwnershipImageCropKey} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import OwnershipInteractiveCard, {
     type OwnershipCardContent,
 } from "@propertyManagementModule/clients/client/public/shared/sections/ownershipInteractiveCard.tsx";
+import {PublicSnapCarousel} from "@propertyManagementModule/clients/client/public/shared/sections/publicSnapCarousel.tsx";
 
 type OwnershipAssets = Pick<typeof investorsAssets, "cardBuy" | "cardCoown" | "cardToken" | "checkCircle">;
 
@@ -80,29 +79,29 @@ function InvestorsOwnershipSection({resolveLanguageKey, assets = investorsAssets
 
     return (
         <div className="relative min-w-0 w-full overflow-x-hidden" data-node-id="368:4869">
-            <div className="flex w-full min-w-0 flex-col items-center gap-8 lg:gap-11">
-                <div className="flex flex-col items-center gap-2 text-center text-pronix-ink not-italic" data-node-id="368:4870">
-                    <p className={PUBLIC_TITLE_FIGMA} data-node-id="368:4871">
+            <div className="flex w-full min-w-0 flex-col items-start gap-8 lg:items-center lg:gap-11">
+                <div className="flex w-full flex-col items-start gap-2 text-left text-pronix-ink not-italic md:items-center md:text-center" data-node-id="368:4870">
+                    <p className="cursor-default font-aeonik-medium text-[40px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-5xl lg:text-[56px]" data-node-id="368:4871">
                         {resolveLanguageKey("cardsTitle")}
                     </p>
-                    <p className={PUBLIC_SUBTITLE} data-node-id="368:4872">
+                    <p className="cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]" data-node-id="368:4872">
                         {resolveLanguageKey("cardsSubtitle")}
                     </p>
                 </div>
-                <div
-                    className="grid w-full min-w-0 grid-cols-1 items-stretch gap-2 pe-1 md:grid-cols-2 lg:gap-4 xl:grid-cols-3"
-                    data-node-id="368:4873"
+                <PublicSnapCarousel
+                    rowNodeId="368:4873"
+                    scrollerClassName="hide-scrollbar w-full min-w-0 flex snap-x snap-mandatory gap-0 overflow-x-auto overflow-y-hidden overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:snap-none md:grid-cols-2 md:gap-2 md:overflow-visible lg:grid-cols-3 lg:gap-4 pe-1"
+                    itemClassName={`${PUBLIC_GRID_CELL} flex flex-col max-md:w-full max-md:shrink-0 max-md:snap-start`}
                 >
                     {cards.map((card) => (
-                        <div key={card.nodeId} className={`${PUBLIC_GRID_CELL} flex flex-col`}>
-                            <OwnershipInteractiveCard
-                                card={card}
-                                checkCircle={assets.checkCircle}
-                                variant="light"
-                            />
-                        </div>
+                        <OwnershipInteractiveCard
+                            key={card.nodeId}
+                            card={card}
+                            checkCircle={assets.checkCircle}
+                            variant="light"
+                        />
                     ))}
-                </div>
+                </PublicSnapCarousel>
             </div>
         </div>
     );

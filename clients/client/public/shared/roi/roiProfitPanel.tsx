@@ -62,7 +62,7 @@ function RoiProfitPanel({
                     <div className="flex w-full flex-col items-start not-italic gap-6 md:gap-6">
                         <div className="flex w-full flex-col items-start gap-3 text-white leading-[1.1]">
                             <p className="font-aeonik-medium w-full cursor-default text-lg md:text-2xl">{totalReturnLabel}</p>
-                            <p className={`font-kamerik-bold w-full ${PUBLIC_TITLE}`}>
+                            <p className={`font-kamerik-bold w-full ${PUBLIC_TITLE} !text-white`}>
                                 {formatEuro(results.totalReturn)}
                             </p>
                         </div>
@@ -81,7 +81,7 @@ function RoiProfitPanel({
                     {footer}
                 </div>
                 {disclaimer && (
-                    <p className="mt-8 cursor-default font-aeonik-light text-center text-white not-italic text-xs leading-[1.1] md:mt-auto md:pt-8 lg:mx-auto lg:max-w-[min(100%,29rem)]">
+                    <p className="mt-8 hidden cursor-default font-aeonik-light text-center text-white not-italic text-xs leading-[1.1] md:mt-auto md:block md:pt-8 lg:mx-auto lg:max-w-[min(100%,29rem)]">
                         {disclaimer}
                     </p>
                 )}

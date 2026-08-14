@@ -1,10 +1,5 @@
 import {figmaNumberedStepLeftRatio} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
-import {NumberedStepCard} from "@propertyManagementModule/clients/client/public/shared/sections/numberedStepCardsSection.tsx";
-import {
-    PUBLIC_GRID_CELL,
-    PUBLIC_GRID_NUMBERED_STEPS,
-    PUBLIC_TITLE_FIGMA,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {NumberedStepCardsRow} from "@propertyManagementModule/clients/client/public/shared/sections/numberedStepCardsSection.tsx";
 import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const CAPABILITY_CARDS = [
@@ -45,25 +40,25 @@ const CAPABILITY_CARDS = [
 type CapabilitiesSectionProps = Pick<PublicLanguageProps, "resolveLanguageKey">;
 
 function CapabilitiesSection({resolveLanguageKey}: CapabilitiesSectionProps) {
+    const cards = CAPABILITY_CARDS.map((card) => ({
+        nodeId: card.nodeId,
+        number: card.number,
+        numberLeftRatio: figmaNumberedStepLeftRatio(card.numberLeftPx),
+        titleLeftRatio: figmaNumberedStepLeftRatio(card.titleLeftPx),
+        title: String(resolveLanguageKey(card.titleKey)),
+        body: String(resolveLanguageKey(card.bodyKey)),
+    }));
+
     return (
         <div className="relative min-w-0 w-full overflow-x-hidden" data-node-id="80:3907">
-            <h2 className={`mb-11 text-center ${PUBLIC_TITLE_FIGMA}`} data-node-id="80:3908">
+            <h2
+                className="mb-11 text-left font-aeonik-medium text-[40px] font-medium leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-center md:text-5xl lg:text-[56px]"
+                data-node-id="80:3908"
+                style={{fontWeight: 500}}
+            >
                 {String(resolveLanguageKey("capabilitiesTitle"))}
             </h2>
-            <div className={PUBLIC_GRID_NUMBERED_STEPS} data-node-id="80:3913">
-                {CAPABILITY_CARDS.map((card) => (
-                    <div key={card.nodeId} className={PUBLIC_GRID_CELL}>
-                        <NumberedStepCard
-                            nodeId={card.nodeId}
-                            number={card.number}
-                            numberLeftRatio={figmaNumberedStepLeftRatio(card.numberLeftPx)}
-                            titleLeftRatio={figmaNumberedStepLeftRatio(card.titleLeftPx)}
-                            title={String(resolveLanguageKey(card.titleKey))}
-                            body={String(resolveLanguageKey(card.bodyKey))}
-                        />
-                    </div>
-                ))}
-            </div>
+            <NumberedStepCardsRow rowNodeId="80:3913" cards={cards} />
         </div>
     );
 }

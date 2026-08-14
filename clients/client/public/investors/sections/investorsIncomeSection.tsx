@@ -7,8 +7,6 @@ import {
 import {
     PUBLIC_BODY,
     PUBLIC_CONTAINER,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 
 function InvestorsIncomeSection({resolveLanguageKey}: PublicLanguageProps) {
@@ -30,8 +28,10 @@ function InvestorsIncomeSection({resolveLanguageKey}: PublicLanguageProps) {
                 </div>
 
                 <div className="order-1 flex flex-col gap-6 lg:order-2 lg:col-start-2 lg:row-start-1">
-                    <h2 className={PUBLIC_TITLE}>{resolveLanguageKey("incomeTitle")}</h2>
-                    <div className={`flex flex-col gap-6 ${PUBLIC_SUBTITLE}`}>
+                    <h2 className="cursor-default font-aeonik-medium text-[40px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-5xl lg:text-[56px]">
+                        {resolveLanguageKey("incomeTitle")}
+                    </h2>
+                    <div className="flex flex-col gap-6 cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]">
                         <p>{resolveLanguageKey("incomeBody1")}</p>
                         <p>{resolveLanguageKey("incomeBody2")}</p>
                     </div>

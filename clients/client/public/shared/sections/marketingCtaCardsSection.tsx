@@ -22,14 +22,14 @@ function MarketingCtaCardsSection({ctaBuilding, ctaScene, nodeId = "357:340"}: M
                 </div>
                 <div className="relative aspect-[802/691] w-full min-w-0 overflow-hidden rounded-sm bg-pronix-cream" data-node-id="357:351">
                     <img alt="" aria-hidden className="absolute inset-0 size-full object-cover" src={ctaScene} />
-                    <div className="absolute bottom-[8%] left-[5%] w-[min(40%,15rem)]">
+                    <div className="absolute bottom-5 left-5 w-[min(62%,13.5rem)] sm:bottom-8 sm:left-8 sm:w-[min(42%,16rem)]">
                         <div
-                            className="rounded-sm border border-[rgba(255,255,255,0.2)] p-5 backdrop-blur-[47px]"
+                            className="flex flex-col gap-8 rounded-sm border border-[rgba(255,255,255,0.2)] p-4 backdrop-blur-[47px] sm:gap-20 sm:p-5"
                             style={{background: "rgba(255, 255, 255, 0.1)"}}
                         >
-                            <div className="relative mb-4 size-12 overflow-hidden">
+                            <div className="relative size-12 shrink-0">
                                 <img alt="" aria-hidden className="size-full" src={figmaAssets.ctaEllipse} />
-                                <div className="relative ml-1 mt-1 h-[19px] w-[31px] overflow-hidden">
+                                <div className="absolute left-1/2 top-1/2 h-[32%] w-[54%] -translate-x-1/2 -translate-y-1/2 overflow-hidden">
                                     <img
                                         alt=""
                                         aria-hidden

@@ -1,9 +1,12 @@
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
+import {usePublicIsMobile} from "@propertyManagementModule/clients/client/public/shared/hooks/usePublicIsMobile.ts";
 import {roiThumbCenterCss} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
 
 const HOME_THUMB_PX = 41;
+const HOME_THUMB_MOBILE_PX = 22;
 const PROPERTY_THUMB_PX = 28;
 const TRACK_HEIGHT_PX = 10;
+const TRACK_HEIGHT_MOBILE_PX = 7;
 
 type RoiFigmaSliderProps = {
     label: string;
@@ -44,14 +47,16 @@ function RoiFigmaSlider({
     logoCentered = false,
     dataNodeId,
 }: RoiFigmaSliderProps) {
+    const isMobile = usePublicIsMobile();
     const clampedValue = clamp(value, min, max);
     const ratio = thumbRatio(clampedValue, min, max);
     const isHome = variant === "home";
-    const thumbSizePx = isHome ? HOME_THUMB_PX : PROPERTY_THUMB_PX;
+    const thumbSizePx = isHome ? (isMobile ? HOME_THUMB_MOBILE_PX : HOME_THUMB_PX) : PROPERTY_THUMB_PX;
     const thumbCenter = roiThumbCenterCss(ratio, thumbSizePx);
+    const trackHeightPx = isHome && isMobile ? TRACK_HEIGHT_MOBILE_PX : TRACK_HEIGHT_PX;
 
     const labelClass = isHome
-        ? "font-aeonik-medium text-pronix-ink not-italic text-lg md:text-2xl leading-[1.1]"
+        ? "font-aeonik-medium font-medium tracking-normal text-pronix-ink not-italic text-[16.66px] md:text-2xl leading-[1.1]"
         : "font-aeonik-medium text-lg text-pronix-ink not-italic md:text-2xl";
     const valueClass = isHome
         ? "font-aeonik-light text-pronix-ink not-italic whitespace-nowrap text-lg md:text-2xl leading-[1.1] shrink-0"
@@ -77,11 +82,11 @@ function RoiFigmaSlider({
             <div className="relative w-full" style={{height: thumbSizePx}}>
                 <div
                     className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 rounded-full bg-[rgba(24,24,24,0.1)]"
-                    style={{height: TRACK_HEIGHT_PX}}
+                    style={{height: trackHeightPx}}
                 />
                 <div
                     className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-pronix-blue"
-                    style={{height: TRACK_HEIGHT_PX, width: thumbCenter}}
+                    style={{height: trackHeightPx, width: thumbCenter}}
                 />
                 <input
                     type="range"
@@ -104,7 +109,13 @@ function RoiFigmaSlider({
                     <img alt="" aria-hidden className="block size-full max-w-none" src={figmaAssets.roiThumb} />
                     {isHome && (
                         <div
-                            className={`absolute overflow-hidden ${logoCentered ? "left-1/2 top-1/2 h-[15px] w-[25px] -translate-x-1/2 -translate-y-1/2" : "left-[8px] top-1/2 h-[18.909px] w-[26px] -translate-y-1/2"}`}
+                            className={`absolute overflow-hidden ${
+                                isMobile
+                                    ? "inset-[4px]"
+                                    : logoCentered
+                                      ? "left-1/2 top-1/2 h-[15px] w-[25px] -translate-x-1/2 -translate-y-1/2"
+                                      : "left-[8px] top-1/2 h-[18.909px] w-[26px] -translate-y-1/2"
+                            }`}
                         >
                             <img
                                 alt=""

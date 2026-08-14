@@ -1,11 +1,9 @@
 import {Link} from "react-router-dom";
 import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import InvestorsCatalogGlobeVisual from "@propertyManagementModule/clients/client/public/investors/sections/investorsCatalogGlobeVisual.tsx";
-import {
-    PUBLIC_CONTAINER,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {PUBLIC_CONTAINER} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+
+const CATALOG_EMPHASIS = "font-aeonik-medium text-[18px] leading-none md:text-[inherit] md:leading-[inherit]";
 
 function InvestorsCatalogSection({resolveLanguageKey}: PublicLanguageProps) {
     return (
@@ -18,22 +16,24 @@ function InvestorsCatalogSection({resolveLanguageKey}: PublicLanguageProps) {
                 className={`relative z-10 ${PUBLIC_CONTAINER} grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,520fr)_minmax(0,860fr)] lg:gap-12`}
             >
                 <div className="max-w-xl text-white">
-                    <h2 className={`${PUBLIC_TITLE} text-white`}>{resolveLanguageKey("catalogTitle")}</h2>
-                    <div className={`mt-6 space-y-6 md:mt-8 ${PUBLIC_SUBTITLE} text-white/90`}>
+                    <h2 className="cursor-default font-aeonik-medium text-[40px] leading-none tracking-normal text-white not-italic md:text-5xl md:leading-[1.2] lg:text-[56px]">
+                        {resolveLanguageKey("catalogTitle")}
+                    </h2>
+                    <div className="mt-6 space-y-6 md:mt-8 cursor-default font-aeonik-light text-[18px] leading-none tracking-normal text-white/90 not-italic md:text-2xl md:leading-[1.4] lg:text-[24px]">
                         <p>
                             {resolveLanguageKey("catalogBodyP1BeforeQ3")}
-                            <span className="font-aeonik-medium">{resolveLanguageKey("catalogBodyP1Q3")}</span>
+                            <span className={CATALOG_EMPHASIS}>{resolveLanguageKey("catalogBodyP1Q3")}</span>
                             {resolveLanguageKey("catalogBodyP1AfterQ3")}
-                            <span className="font-aeonik-medium">{resolveLanguageKey("catalogBodyP1BoldDigital")}</span>
+                            <span className={CATALOG_EMPHASIS}>{resolveLanguageKey("catalogBodyP1BoldDigital")}</span>
                             {resolveLanguageKey("catalogBodyP1Rest1")}
-                            <span className="font-aeonik-medium">{resolveLanguageKey("catalogBodyP1BoldSpv")}</span>
+                            <span className={CATALOG_EMPHASIS}>{resolveLanguageKey("catalogBodyP1BoldSpv")}</span>
                             {resolveLanguageKey("catalogBodyP1Rest2")}
                         </p>
                         <p>
                             {resolveLanguageKey("catalogBodyP2BeforeMin")}
-                            <span className="font-aeonik-medium">{resolveLanguageKey("catalogBodyP2BoldMin")}</span>
+                            <span className={CATALOG_EMPHASIS}>{resolveLanguageKey("catalogBodyP2BoldMin")}</span>
                             {resolveLanguageKey("catalogBodyP2Mid")}
-                            <span className="font-aeonik-medium">{resolveLanguageKey("catalogBodyP2BoldEntry")}</span>
+                            <span className={CATALOG_EMPHASIS}>{resolveLanguageKey("catalogBodyP2BoldEntry")}</span>
                             {resolveLanguageKey("catalogBodyP2Rest")}
                         </p>
                     </div>

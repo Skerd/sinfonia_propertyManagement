@@ -11,7 +11,7 @@ function PublicLayout() {
         <PublicFavoritesProvider>
             <AiChatProvider>
                 <PublicScrollToTop />
-                <div className="min-h-screen bg-white">
+                <div className="min-h-screen min-w-0 w-full overflow-x-hidden bg-white">
                     <Outlet />
                 </div>
                 <PublicAiChat />

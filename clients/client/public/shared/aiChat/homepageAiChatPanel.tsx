@@ -611,7 +611,7 @@ function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
                             <div className="pointer-events-none size-16 shrink-0 overflow-hidden md:size-[4.5rem]">
                                 <AiOrbVisual variant="hero" />
                             </div>
-                            <p className="max-w-[19rem] shrink-0 text-center font-aeonik-light text-[15px] leading-relaxed text-white/95 md:text-base">
+                            <p className="max-w-[19rem] shrink-0 text-center font-aeonik-medium text-lg font-semibold leading-snug text-white md:text-xl">
                                 {idleCopy}
                             </p>
                         </div>

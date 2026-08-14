@@ -11,5 +11,9 @@
   "languageGroup": "Lingua",
   "navMenu": "Menu di navigazione",
   "openMenu": "Apri menu",
-  "closeMenu": "Chiudi menu"
+  "closeMenu": "Chiudi menu",
+  "socialGroup": "Social",
+  "socialInstagram": "Instagram",
+  "socialFacebook": "Facebook",
+  "socialLinkedin": "LinkedIn"
 }

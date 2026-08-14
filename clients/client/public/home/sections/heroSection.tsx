@@ -2,8 +2,9 @@ import {useCallback, useEffect, useRef, useState, type MouseEvent} from "react";
 import {createPortal} from "react-dom";
 import {useNavigate} from "react-router-dom";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
-import FigmaMenu from "@propertyManagementModule/clients/client/public/shared/figmaMenu.tsx";
+import FigmaMenu, {shouldIgnoreHeroNavigate, usePublicMenuOpen} from "@propertyManagementModule/clients/client/public/shared/figmaMenu.tsx";
 import {usePublicIsMobile} from "@propertyManagementModule/clients/client/public/shared/hooks/usePublicIsMobile.ts";
+import {publicIntroChromeStyle, usePublicIntroChrome} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
 import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const CURSOR_SIZE = 239;
@@ -45,6 +46,8 @@ function HeroSection({resolveLanguageKey}: HeroSectionProps) {
     const [heroInView, setHeroInView] = useState(false);
     const [cursorPos, setCursorPos] = useState<CursorPosition | null>(null);
     const [cursorOverMenu, setCursorOverMenu] = useState(false);
+    const {chromeRevealed} = usePublicIntroChrome();
+    const menuOpen = usePublicMenuOpen();
 
     useEffect(() => {
         const element = heroRef.current;
@@ -73,7 +76,8 @@ function HeroSection({resolveLanguageKey}: HeroSectionProps) {
 
     const handleMouseMove = useCallback(
         (event: MouseEvent<HTMLDivElement>) => {
-            if (!heroInView || isMobile) {
+            if (!heroInView || isMobile || !chromeRevealed || menuOpen) {
+                setCursorPos(null);
                 return;
             }
 
@@ -86,7 +90,7 @@ function HeroSection({resolveLanguageKey}: HeroSectionProps) {
             setCursorOverMenu(false);
             setCursorPos({x: event.clientX, y: event.clientY});
         },
-        [heroInView, isMobile, isMenuTarget],
+        [heroInView, isMobile, isMenuTarget, chromeRevealed, menuOpen],
     );
 
     const handleMouseLeave = useCallback(() => {
@@ -96,15 +100,15 @@ function HeroSection({resolveLanguageKey}: HeroSectionProps) {
 
     const handleClick = useCallback(
         (event: MouseEvent<HTMLDivElement>) => {
-            if (isMenuTarget(event.target)) {
+            if (shouldIgnoreHeroNavigate() || menuOpen || isMenuTarget(event.target)) {
                 return;
             }
             navigate("/projects");
         },
-        [isMenuTarget, navigate],
+        [isMenuTarget, navigate, menuOpen],
     );
 
-    const showCustomCursor = !isMobile && heroInView && cursorPos !== null && !cursorOverMenu;
+    const showCustomCursor = !menuOpen && !isMobile && chromeRevealed && heroInView && cursorPos !== null && !cursorOverMenu;
     const heroTitle = String(resolveLanguageKey("heroTitle"));
     const cursorLabel = String(resolveLanguageKey("heroCursor"));
 
@@ -134,15 +138,25 @@ function HeroSection({resolveLanguageKey}: HeroSectionProps) {
                     data-node-id="78:1914"
                     data-name="BG video 1"
                 />
+                <div
+                    className="pointer-events-none absolute inset-0 z-[1] bg-black/20"
+                    aria-hidden
+                />
 
                 <div className="relative z-10 flex min-h-[100svh] w-full min-w-0 flex-col px-4 sm:px-6 lg:px-[52px]">
-                    <div className="pt-8 sm:pt-10 lg:pt-[45px]" data-node-id="35:139" data-name="Menu">
+                    <div
+                        className="pt-8 sm:pt-10 lg:pt-[45px]"
+                        data-node-id="35:139"
+                        data-name="Menu"
+                        style={publicIntroChromeStyle(chromeRevealed)}
+                    >
                         <FigmaMenu variant="hero" />
                     </div>
 
                     <p
                         className="mt-auto max-w-4xl pb-10 font-aeonik-medium text-3xl leading-none text-white not-italic sm:pb-12 sm:text-4xl md:text-5xl lg:max-w-5xl lg:pb-16 lg:text-[64px]"
                         data-node-id="37:133"
+                        style={publicIntroChromeStyle(chromeRevealed)}
                     >
                         {heroTitle}
                     </p>

@@ -3,11 +3,9 @@ import {developersAssets} from "@propertyManagementModule/clients/client/public/
 import {FIGMA_DEVELOPERS_ARCH} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {
     PUBLIC_GRID_CELL,
-    PUBLIC_GRID_INSPECTIONS,
     PUBLIC_HEADING,
-    PUBLIC_SUBTITLE,
-    PUBLIC_TITLE_FIGMA,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {PublicSnapCarousel} from "@propertyManagementModule/clients/client/public/shared/sections/publicSnapCarousel.tsx";
 
 const {circleGraphicWidthRatio, arrowGraphicWidthRatio, arrowBottomRatio} = FIGMA_DEVELOPERS_ARCH;
 
@@ -30,10 +28,10 @@ function ArchitectureCard({num, titleKey, bodyKey, variant, nodeId, resolveLangu
                 {num}
             </p>
             <div className="relative z-10 flex flex-col items-start gap-3 p-6 pt-16 not-italic sm:px-8 sm:pb-8 sm:pt-20">
-                <p className={`${PUBLIC_HEADING} transition-colors duration-500 group-hover:text-white`}>
+                <p className="cursor-default font-aeonik-medium text-[24px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-[32px] transition-colors duration-500 group-hover:text-white">
                     {resolveLanguageKey(titleKey)}
                 </p>
-                <p className={`${PUBLIC_SUBTITLE} text-pronix-ink-muted transition-colors duration-500 group-hover:text-white/80`}>
+                <p className="cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink-muted not-italic md:text-2xl md:leading-[1.4] lg:text-[24px] transition-colors duration-500 group-hover:text-white/80">
                     {resolveLanguageKey(bodyKey)}
                 </p>
             </div>
@@ -91,47 +89,45 @@ function ArchitectureCard({num, titleKey, bodyKey, variant, nodeId, resolveLangu
 function DevelopersArchitectureSection({resolveLanguageKey}: PublicLanguageProps) {
     return (
         <div className="relative flex min-w-0 w-full flex-col items-center overflow-x-hidden" data-node-id="387:32339">
-            <div className="flex w-full min-w-0 flex-col items-center gap-8 lg:gap-11">
-                <div className="text-center text-pronix-ink not-italic" data-node-id="368:20222">
-                    <h2 className={PUBLIC_TITLE_FIGMA} data-node-id="368:20229">
+            <div className="flex w-full min-w-0 flex-col items-start gap-8 lg:items-center lg:gap-11">
+                <div className="w-full text-left text-pronix-ink not-italic md:text-center" data-node-id="368:20222">
+                    <h2 className="cursor-default font-aeonik-medium text-[40px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-5xl lg:text-[56px]" data-node-id="368:20229">
                         {resolveLanguageKey("architectureTitle")}
                     </h2>
-                    <p className={`mx-auto mt-3 max-w-3xl ${PUBLIC_SUBTITLE}`} data-node-id="368:20230">
+                    <p className="mt-3 max-w-3xl cursor-default font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:mx-auto md:text-2xl md:leading-[1.4] lg:text-[24px]" data-node-id="368:20230">
                         {resolveLanguageKey("architectureSubtitle")}
                     </p>
                 </div>
-                <div className={`w-full min-w-0 ${PUBLIC_GRID_INSPECTIONS}`} data-node-id="387:32320">
-                    <div className={PUBLIC_GRID_CELL}>
-                        <ArchitectureCard
-                            num="01"
-                            titleKey="arch1Title"
-                            bodyKey="arch1Body"
-                            variant={1}
-                            nodeId="389:512"
-                            resolveLanguageKey={resolveLanguageKey}
-                        />
-                    </div>
-                    <div className={PUBLIC_GRID_CELL}>
-                        <ArchitectureCard
-                            num="02"
-                            titleKey="arch2Title"
-                            bodyKey="arch2Body"
-                            variant={2}
-                            nodeId="389:525"
-                            resolveLanguageKey={resolveLanguageKey}
-                        />
-                    </div>
-                    <div className={PUBLIC_GRID_CELL}>
-                        <ArchitectureCard
-                            num="03"
-                            titleKey="arch3Title"
-                            bodyKey="arch3Body"
-                            variant={3}
-                            nodeId="389:551"
-                            resolveLanguageKey={resolveLanguageKey}
-                        />
-                    </div>
-                </div>
+                <PublicSnapCarousel
+                    rowNodeId="387:32320"
+                    scrollerClassName="hide-scrollbar w-full min-w-0 flex snap-x snap-mandatory gap-0 overflow-x-auto overflow-y-hidden overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:snap-none md:grid-cols-2 md:gap-2 md:overflow-visible lg:grid-cols-3 lg:gap-4 pe-1"
+                    itemClassName={`${PUBLIC_GRID_CELL} max-md:w-full max-md:shrink-0 max-md:snap-start`}
+                >
+                    <ArchitectureCard
+                        num="01"
+                        titleKey="arch1Title"
+                        bodyKey="arch1Body"
+                        variant={1}
+                        nodeId="389:512"
+                        resolveLanguageKey={resolveLanguageKey}
+                    />
+                    <ArchitectureCard
+                        num="02"
+                        titleKey="arch2Title"
+                        bodyKey="arch2Body"
+                        variant={2}
+                        nodeId="389:525"
+                        resolveLanguageKey={resolveLanguageKey}
+                    />
+                    <ArchitectureCard
+                        num="03"
+                        titleKey="arch3Title"
+                        bodyKey="arch3Body"
+                        variant={3}
+                        nodeId="389:551"
+                        resolveLanguageKey={resolveLanguageKey}
+                    />
+                </PublicSnapCarousel>
             </div>
         </div>
     );

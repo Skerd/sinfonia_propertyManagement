@@ -11,8 +11,7 @@ import {
 
 type AboutFoundersSectionProps = PublicLanguageProps;
 
-const {imageAspect, nameGapCqwCap, nameGapRemCap, nameFontCqwCap, nameFontRemCap, nameLineHeight, crops} =
-    FIGMA_ABOUT_FOUNDERS;
+const {imageAspect, nameGapCqwCap, nameGapRemCap, crops} = FIGMA_ABOUT_FOUNDERS;
 
 const STATIC_FOUNDERS = [
     {image: aboutAssets.founder1, nameKey: "founder1Name", nodeId: "368:5000", cropKey: "founder1" as const},
@@ -46,11 +45,7 @@ function AboutFoundersSection({resolveLanguageKey}: AboutFoundersSectionProps) {
                                 />
                             </div>
                             <p
-                                className="font-aeonik-medium text-pronix-ink not-italic"
-                                style={{
-                                    fontSize: `min(${nameFontCqwCap}cqw, ${nameFontRemCap}rem)`,
-                                    lineHeight: nameLineHeight,
-                                }}
+                                className="font-aeonik-medium text-[40px] leading-[1.1] tracking-normal text-pronix-ink not-italic lg:[font-size:min(2.7127cqw,2.75rem)]"
                                 data-node-id={founder.nodeId === "368:5000" ? "368:5002" : "368:5005"}
                             >
                                 {name}

@@ -1,18 +1,24 @@
 import {useAiChat} from "@propertyManagementModule/clients/client/public/shared/aiChat/aiChatContext.tsx";
 import HomepageAiChatPanel from "@propertyManagementModule/clients/client/public/shared/aiChat/homepageAiChatPanel.tsx";
 import {PUBLIC_LAYER_CHAT} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {publicIntroChromeStyle, usePublicIntroChrome} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
 
 const PANEL_GAP = 12;
 
 function PublicAiChat() {
     const {isOpen, open} = useAiChat();
+    const {chromeRevealed} = usePublicIntroChrome();
 
     return (
         <div
             aria-live="polite"
             className="fixed bottom-4 right-4 flex flex-col items-end md:bottom-8 md:right-8"
-            style={{gap: PANEL_GAP, zIndex: PUBLIC_LAYER_CHAT}}
+            style={{
+                gap: PANEL_GAP,
+                zIndex: PUBLIC_LAYER_CHAT,
+                pointerEvents: chromeRevealed ? "auto" : "none",
+            }}
         >
             {isOpen && <HomepageAiChatPanel />}
             {!isOpen && (
@@ -26,7 +32,13 @@ function PublicAiChat() {
                     data-name="AI Orb"
                     aria-label="Open AI assistant"
                 >
-                    <AiOrbVisual variant="hero" className="size-full" clipped hideGlow />
+                    <AiOrbVisual
+                        variant="hero"
+                        className="size-full"
+                        clipped
+                        hideGlow
+                        style={publicIntroChromeStyle(chromeRevealed)}
+                    />
                 </button>
             )}
         </div>

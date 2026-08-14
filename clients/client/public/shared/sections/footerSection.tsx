@@ -1,4 +1,5 @@
-import React, {useEffect, useImperativeHandle, useRef, useState} from "react";
+import React, {useEffect, useImperativeHandle, useRef, useState, type CSSProperties} from "react";
+import {ChevronRight} from "lucide-react";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -6,7 +7,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
-import {FIGMA_FOOTER_SECTION} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
+import {FIGMA_FOOTER_SECTION, FIGMA_IMAGE_CROPS, figmaImageCropStyle} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {
     PUBLIC_CONTENT_FRAME,
     PUBLIC_GRID_FOOTER_LINKS,
@@ -34,7 +35,10 @@ const {
 } = FIGMA_FOOTER_SECTION;
 
 const fieldInputClass =
-    "w-full min-w-0 cursor-text border-0 bg-transparent font-aeonik-medium text-white outline-none placeholder:text-white/50";
+    "w-full min-w-0 cursor-text border-0 bg-transparent font-aeonik-medium text-[20px] leading-[17.15px] tracking-normal text-white outline-none placeholder:text-white/50 lg:[font-size:var(--footer-field-fs)]";
+const fieldFontSizeVar = {
+    "--footer-field-fs": `min(${fieldFontCqwCap}cqw, 20px)`,
+} as CSSProperties;
 
 /** Matches figmaMenu white-on-blue nav: fade on hover so links read as interactive. */
 const footerLinkHoverClass =
@@ -57,75 +61,112 @@ function FooterLinkColumn({
     links: FooterNavLink[];
     nodeId: string;
 }) {
+    const [open, setOpen] = useState(false);
+    const panelId = `${nodeId.replace(/:/g, "-")}-links`;
+    const linkClassName = cn(
+        "font-aeonik-light w-full min-w-0 cursor-pointer text-xl leading-none tracking-normal",
+        "lg:leading-normal lg:[font-size:var(--footer-link-fs)]",
+        footerLinkHoverClass,
+    );
+    const linkStyle = {"--footer-link-fs": `min(${linkFontCqwCap}cqw, 24px)`} as CSSProperties;
+
     return (
         <div
-            className="flex min-w-0 flex-col items-start not-italic text-white"
+            className="flex w-full min-w-0 flex-col items-stretch not-italic text-white lg:items-start"
             style={{gap: linkItemGap}}
             data-node-id={nodeId}
         >
-            <p
-                className="font-aeonik-medium w-full min-w-0 cursor-default leading-normal"
-                style={{fontSize: `min(${titleFontCqwCap}cqw, 32px)`}}
+            <button
+                type="button"
+                aria-expanded={open}
+                aria-controls={panelId}
+                onClick={() => setOpen((current) => !current)}
+                className="flex w-full min-w-0 cursor-pointer items-center justify-between gap-4 bg-transparent p-0 text-left lg:pointer-events-none lg:cursor-default"
             >
-                {title}
-            </p>
-            {links.map((link) => {
-                const className = cn(
-                    "font-aeonik-light w-full min-w-0 cursor-pointer leading-normal",
-                    footerLinkHoverClass,
-                );
-                const style = {fontSize: `min(${linkFontCqwCap}cqw, 24px)`};
-                if (link.to) {
+                <span
+                    className="font-aeonik-medium min-w-0 text-2xl leading-none tracking-normal text-white lg:[font-size:var(--footer-col-title-fs)]"
+                    style={{"--footer-col-title-fs": `min(${titleFontCqwCap}cqw, 32px)`} as CSSProperties}
+                >
+                    {title}
+                </span>
+                <ChevronRight
+                    aria-hidden
+                    className={cn(
+                        "size-6 shrink-0 text-white transition-transform duration-200 lg:hidden",
+                        open && "rotate-90",
+                    )}
+                    strokeWidth={1.5}
+                />
+            </button>
+            <div
+                id={panelId}
+                className={cn("flex w-full min-w-0 flex-col items-start", open ? "flex" : "hidden lg:flex")}
+                style={{gap: linkItemGap}}
+            >
+                {links.map((link) => {
+                    if (link.to) {
+                        return (
+                            <Link key={link.label} to={link.to} className={linkClassName} style={linkStyle}>
+                                {link.label}
+                            </Link>
+                        );
+                    }
+                    if (link.href) {
+                        return (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={linkClassName}
+                                style={linkStyle}
+                            >
+                                {link.label}
+                            </a>
+                        );
+                    }
                     return (
-                        <Link key={link.label} to={link.to} className={className} style={style}>
+                        <span key={link.label} className={linkClassName} style={linkStyle}>
                             {link.label}
-                        </Link>
+                        </span>
                     );
-                }
-                if (link.href) {
-                    return (
-                        <a
-                            key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={className}
-                            style={style}
-                        >
-                            {link.label}
-                        </a>
-                    );
-                }
-                return (
-                    <span key={link.label} className={className} style={style}>
-                        {link.label}
-                    </span>
-                );
-            })}
+                })}
+            </div>
         </div>
     );
 }
 
-function FooterContactRow({email, phoneNumber}: {email?: string; phoneNumber?: string}) {
+function FooterContactRow({
+    email,
+    phoneNumber,
+    heading,
+}: {
+    email?: string;
+    phoneNumber?: string;
+    heading: string;
+}) {
     if (!email && !phoneNumber) {
         return null;
     }
 
     const contactClass = cn(
-        "font-aeonik-medium cursor-pointer whitespace-nowrap not-italic leading-normal",
+        "cursor-pointer whitespace-nowrap font-[family-name:var(--font-aeonik)] text-lg font-normal not-italic leading-none tracking-normal",
+        "lg:font-aeonik-medium lg:leading-normal lg:[font-size:var(--footer-contact-fs)]",
         footerLinkHoverClass,
     );
+    const contactStyle = {"--footer-contact-fs": `min(${contactFontCqwCap}cqw, 24px)`} as CSSProperties;
 
     return (
-        <div
-            className="flex min-w-0 flex-wrap items-center gap-[min(1.13cqw,18.6px)]"
-            data-node-id="357:2457"
-        >
+        <div className="mt-auto flex min-w-0 flex-col items-start gap-3 lg:gap-0" data-node-id="357:2457">
+            <p className="font-aeonik-medium w-full min-w-0 text-2xl leading-none tracking-normal text-white lg:hidden">
+                {heading}
+            </p>
+            <div className="flex min-w-0 flex-wrap items-center gap-[min(1.13cqw,18.6px)]">
             {email ? (
                 <a
                     href={`mailto:${email}`}
                     className={contactClass}
-                    style={{fontSize: `min(${contactFontCqwCap}cqw, 24px)`}}
+                    style={contactStyle}
                     data-node-id="357:2458"
                 >
                     {email}
@@ -146,12 +187,25 @@ function FooterContactRow({email, phoneNumber}: {email?: string; phoneNumber?: s
                 <a
                     href={`tel:${phoneNumber.replace(/[^\d+]/g, "")}`}
                     className={contactClass}
-                    style={{fontSize: `min(${contactFontCqwCap}cqw, 24px)`}}
+                    style={contactStyle}
                     data-node-id="357:2460"
                 >
                     {phoneNumber}
                 </a>
             ) : null}
+            </div>
+            <Link
+                to="/"
+                className="relative mt-4 mb-1 block h-11 w-[220px] shrink-0 overflow-hidden sm:h-12 sm:w-[240px] lg:hidden"
+                data-name="Logo"
+            >
+                <img
+                    alt="Pronix"
+                    className="absolute max-w-none"
+                    src={figmaAssets.heroLogo}
+                    style={figmaImageCropStyle(FIGMA_IMAGE_CROPS.menuLogo)}
+                />
+            </Link>
         </div>
     );
 }
@@ -227,8 +281,8 @@ function FooterNumberField({
                 disabled={disabled}
                 onChange={(e) => onChange(e.target.value)}
                 aria-invalid={hasError || undefined}
-                className={cn(fieldInputClass, "leading-[17.15px]")}
-                style={{fontSize: `min(${fieldFontCqwCap}cqw, 20px)`}}
+                className={fieldInputClass}
+                style={fieldFontSizeVar}
             />
         </div>
     );
@@ -239,7 +293,6 @@ type FooterContactFormProps = Pick<PublicLanguageProps, "resolveLanguageKey"> &
 
 function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, error}: FooterContactFormProps) {
     const fieldPad = "px-[min(0.61cqw,10px)] py-[min(1.46cqw,24px)]";
-    const fieldText = {fontSize: `min(${fieldFontCqwCap}cqw, 20px)`};
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
@@ -291,12 +344,12 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
     return (
         <div
             className="order-1 flex min-w-0 flex-col items-start lg:order-2"
-            style={{gap: `min(${formIntroGapCqwCap}cqw, 32px)`}}
+            style={{gap: `max(1.75rem, min(${formIntroGapCqwCap}cqw, 32px))`}}
             data-node-id="357:2461"
         >
             <p
-                className="font-aeonik-medium min-w-0 cursor-default not-italic leading-[1.2] text-white"
-                style={{fontSize: `min(${introFontCqwCap}cqw, 24px)`}}
+                className="font-aeonik-medium min-w-0 cursor-default text-2xl not-italic leading-[1.2] tracking-normal text-white lg:[font-size:var(--footer-intro-fs)]"
+                style={{"--footer-intro-fs": `min(${introFontCqwCap}cqw, 24px)`} as CSSProperties}
                 data-node-id="357:2462"
             >
                 {String(resolveLanguageKey("formIntro"))}
@@ -329,8 +382,8 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                         clearFieldError("name");
                                         setName(e.target.value);
                                     }}
-                                    className={cn(fieldInputClass, "leading-[17.15px]")}
-                                    style={fieldText}
+                                    className={fieldInputClass}
+                                    style={fieldFontSizeVar}
                                 />
                             </div>
                             <FieldError message={fieldErrors.name} />
@@ -356,8 +409,8 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                         clearFieldError("surname");
                                         setSurname(e.target.value);
                                     }}
-                                    className={cn(fieldInputClass, "leading-[17.15px]")}
-                                    style={fieldText}
+                                    className={fieldInputClass}
+                                    style={fieldFontSizeVar}
                                 />
                             </div>
                             <FieldError message={fieldErrors.surname} />
@@ -384,8 +437,8 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                     clearFieldError("email");
                                     setEmail(e.target.value);
                                 }}
-                                className={cn(fieldInputClass, "leading-[17.15px]")}
-                                style={fieldText}
+                                className={fieldInputClass}
+                                style={fieldFontSizeVar}
                             />
                         </div>
                         <FieldError message={fieldErrors.email} />
@@ -424,8 +477,8 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                     clearFieldError("message");
                                     setMessage(e.target.value);
                                 }}
-                                className={cn(fieldInputClass, "min-h-[4.5rem] resize-none leading-[17.15px]")}
-                                style={fieldText}
+                                className={cn(fieldInputClass, "min-h-[4.5rem] resize-none")}
+                                style={fieldFontSizeVar}
                             />
                         </div>
                         <FieldError message={fieldErrors.message} />
@@ -438,7 +491,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                     disabled={loading}
                     onClick={handleSend}
                     className={cn(
-                        "flex w-full min-w-0 cursor-pointer items-center justify-center border border-white px-[min(2.91cqw,48px)] py-[min(0.97cqw,16px)]",
+                        "flex w-full min-w-0 cursor-pointer items-center justify-center border border-white px-6 py-4 lg:px-[min(2.91cqw,48px)] lg:py-[min(0.97cqw,16px)]",
                         "bg-transparent text-white transition-colors duration-200",
                         "hover:bg-white hover:text-pronix-blue",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue",
@@ -447,8 +500,8 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                     data-node-id="357:2473"
                 >
                     <span
-                        className="font-aeonik-medium whitespace-nowrap not-italic leading-[17.15px]"
-                        style={{fontSize: `min(${sendFontCqwCap}cqw, 24px)`}}
+                        className="font-aeonik-medium whitespace-nowrap text-[20px] not-italic leading-[17.15px] tracking-normal lg:[font-size:var(--footer-send-fs)]"
+                        style={{"--footer-send-fs": `min(${sendFontCqwCap}cqw, 24px)`} as CSSProperties}
                     >
                         {loading ? String(resolveLanguageKey("sending")) : String(resolveLanguageKey("send"))}
                     </span>
@@ -523,7 +576,7 @@ function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSe
                 PUBLIC_SECTION_BASE,
                 "@container relative overflow-hidden bg-pronix-blue",
             )}
-            style={{paddingTop: `min(${sectionPadCqwCap}cqw, 53px)`, paddingBottom: `min(${sectionPadCqwCap}cqw, 53px)`}}
+            style={{paddingTop: `max(3.5rem, min(${sectionPadCqwCap}cqw, 53px))`, paddingBottom: `max(1.25rem, min(${sectionPadCqwCap}cqw, 53px))`}}
             data-node-id="357:360"
         >
             <img
@@ -534,7 +587,7 @@ function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSe
             />
             <div
                 className={cn(PUBLIC_CONTENT_FRAME, "relative z-10 flex min-w-0 flex-col")}
-                style={{gap: `min(${headlineGapCqwCap}cqw, 44px)`}}
+                style={{gap: `max(2.75rem, min(${headlineGapCqwCap}cqw, 44px))`}}
                 data-node-id="357:2437"
             >
                 <div className="relative w-full min-w-0" data-node-id="357:2438">
@@ -551,7 +604,7 @@ function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSe
                     data-node-id="357:2439"
                 >
                     <div
-                        className="order-2 flex min-w-0 flex-col justify-between gap-10 lg:order-1 lg:gap-16"
+                        className="order-2 flex h-full min-w-0 flex-col justify-between gap-4 lg:order-1 lg:gap-16"
                         data-node-id="357:2440"
                     >
                         <div
@@ -585,7 +638,11 @@ function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSe
                                 ]}
                             />
                         </div>
-                        <FooterContactRow email={data?.email} phoneNumber={data?.phoneNumber} />
+                        <FooterContactRow
+                            heading={String(resolveLanguageKey("contact"))}
+                            email={data?.email}
+                            phoneNumber={data?.phoneNumber}
+                        />
                     </div>
 
                     <FooterContactForm resolveLanguageKey={resolveLanguageKey} />

@@ -26,8 +26,10 @@ const FOCUS_SCALE = 1;
 const SIDE_SCALE = 0.78;
 const SIDE_SINK_PX = 28;
 const SIDE_TILT_DEG = 10;
-/** Ignore sub-threshold jitter so taps still open the property. */
-const DRAG_THRESHOLD_PX = 14;
+/** Movement before we treat the gesture as a carousel swipe vs a tap. */
+const AXIS_LOCK_PX = 8;
+const TAP_SLOP_PX = 12;
+const TAP_MAX_MS = 500;
 
 type LoopedSlide = FeaturedSlide & {
     key: string;
@@ -38,9 +40,12 @@ type DragState = {
     pointerId: number;
     startX: number;
     startY: number;
+    startTime: number;
     lastX: number;
     lastTime: number;
-    dragging: boolean;
+    maxAbsX: number;
+    maxAbsY: number;
+    axis: "undecided" | "x" | "y";
     projectId: string | null;
 };
 
@@ -356,9 +361,12 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
             pointerId: event.pointerId,
             startX: event.clientX,
             startY: event.clientY,
+            startTime: performance.now(),
             lastX: event.clientX,
             lastTime: performance.now(),
-            dragging: false,
+            maxAbsX: 0,
+            maxAbsY: 0,
+            axis: "undecided",
             projectId: projectIdFromPoint(event.clientX, event.clientY) ?? fromTarget,
         };
         event.currentTarget.setPointerCapture(event.pointerId);
@@ -372,17 +380,30 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
 
         const totalDx = event.clientX - drag.startX;
         const totalDy = event.clientY - drag.startY;
-        if (!drag.dragging) {
-            if (Math.hypot(totalDx, totalDy) < DRAG_THRESHOLD_PX) {
+        drag.maxAbsX = Math.max(drag.maxAbsX, Math.abs(totalDx));
+        drag.maxAbsY = Math.max(drag.maxAbsY, Math.abs(totalDy));
+
+        if (drag.axis === "undecided") {
+            if (drag.maxAbsX < AXIS_LOCK_PX && drag.maxAbsY < AXIS_LOCK_PX) {
                 return;
             }
-            drag.dragging = true;
-            window.getSelection()?.removeAllRanges();
+            drag.axis = drag.maxAbsX >= drag.maxAbsY ? "x" : "y";
             drag.lastX = event.clientX;
             drag.lastTime = performance.now();
+            if (drag.axis === "y") {
+                if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+                    event.currentTarget.releasePointerCapture(event.pointerId);
+                }
+                return;
+            }
+        }
+
+        if (drag.axis !== "x") {
             return;
         }
 
+        event.preventDefault();
+        window.getSelection()?.removeAllRanges();
         const now = performance.now();
         const dx = event.clientX - drag.lastX;
         const dt = Math.max(1, now - drag.lastTime);
@@ -404,16 +425,28 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
             event.currentTarget.releasePointerCapture(event.pointerId);
         }
 
-        if (!drag.dragging) {
-            const projectId =
-                drag.projectId ?? projectIdFromPoint(event.clientX, event.clientY);
-            if (projectId) {
-                openProject(projectId);
-            }
+        if (drag.axis === "x") {
+            startInertia();
             return;
         }
 
-        startInertia();
+        if (drag.axis === "y") {
+            return;
+        }
+
+        const elapsed = performance.now() - drag.startTime;
+        const isTap =
+            drag.maxAbsX < TAP_SLOP_PX &&
+            drag.maxAbsY < TAP_SLOP_PX &&
+            elapsed < TAP_MAX_MS;
+        if (!isTap) {
+            return;
+        }
+
+        const projectId = drag.projectId ?? projectIdFromPoint(event.clientX, event.clientY);
+        if (projectId) {
+            openProject(projectId);
+        }
     };
 
     const scrollByCard = (direction: -1 | 1) => {
@@ -500,7 +533,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
 
             <div
                 ref={viewportRef}
-                className="relative cursor-grab select-none overflow-hidden touch-pan-y py-6 [-webkit-user-select:none] active:cursor-grabbing [perspective:1200px]"
+                className="relative cursor-grab select-none overflow-hidden py-6 [-webkit-user-select:none] active:cursor-grabbing [perspective:1200px] [touch-action:none]"
                 onPointerDown={onPointerDown}
                 onPointerMove={onPointerMove}
                 onPointerUp={endDrag}
