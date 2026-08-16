@@ -1,244 +1,143 @@
 import {compose} from "redux";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
 import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
-import {formatCardAreaM2} from "@propertyManagementModule/helpers/general/formatCardNumber.ts";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {
-    IconDoor,
-    IconFireExtinguisher,
-    IconGrid4x4,
-    IconWheelchair,
-} from "@tabler/icons-react";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityMediaHeader} from "@propertyManagementModule/components/custom/cards/EntityMediaHeader.tsx";
-import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
-import {EntityCardFetchGuard} from "@propertyManagementModule/components/custom/cards/EntityCardFetchGuard.tsx";
-import {CARD_BODY_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import FloorSheetView from "@propertyManagementModule/clients/panel/private/floors/center/sheetView/floorSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
+import {IconDoor, IconFireExtinguisher, IconGrid4x4, IconWheelchair} from "@tabler/icons-react";
+import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
+import FloorSheetView from "@propertyManagementModule/clients/panel/private/floors/center/sheetView/floorSheetView.tsx";
 import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnits.tsx";
 import ViewUnitsOverlay from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx";
 import UnitsOverlay from "@propertyManagementModule/components/custom/floors/unitsOverlay.tsx";
-import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import {buildFloorEditPath} from "@propertyManagementModule/clients/panel/private/floors";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
-type FloorCardProps = WithLanguageType & WithAxiosType<Floor, {_id: string}> & {
+type FloorCardProps = WithLanguageType & {
     floor: Floor;
-    single?: boolean;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deletedFloor?: Floor, response?: DeletedData) => void;
     onRestore?: () => void;
-    hideActions?: boolean;
-    fetchId?: string;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Floor> | null>;
 };
 
 function FloorCard({
-    floor: floorProp,
+    floor,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
-    hideActions = false,
     fetchId,
-    onFilterChange,
-    loading,
-    error,
-    innerRef
+    hideActions = false,
+    onDelete,
+    onRestore,
+    sheetOnly = false,
+    innerRef,
 }: FloorCardProps) {
-
-    const {action, setAction, entity: floor, setEntity: setFloor, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: floorProp,
-        onDeleteProp,
-        onRestoreProp,
-        syncPropOnChange: !fetchId,
-    });
-    const [forceReload, setForceReload] = useState<number>(1);
-
-    const {read} = useAccess("floors");
-    const {read: readUnits} = useAccess("units");
-
-    const galleryMemo = useMemo(() => (
-        <GalleryCarousel
-            mainImage={floor.mainImage}
-            imageGallery={floor.imageGallery || []}
-            videoGallery={floor.videoGallery || []}
-            showThumbnails={false}
-            allowFullScreen={false}
-            coverAfterFirst={false}
-            modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
-        />
-    ), [floor.imageGallery, floor.videoGallery, floor.mainImage]);
-
-    useEffect(() => {
-        if (fetchId) {
-            onFilterChange({_id: fetchId});
-        }
-    }, [fetchId, forceReload]);
-
-    useImperativeHandle(innerRef, () => ({
-        success: (data: Floor) => {
-            setFloor(data);
-        },
-    }));
-
-    if (hideAfterDeletion) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) return <HiddenElement />;
-
     return (
-        <EntityCardFetchGuard
+        <EntityCard
+            resource="floors"
+            entity={floor}
             fetchId={fetchId}
-            loading={loading}
-            error={error}
-            failedTitle={resolveLanguageKey("failedTitle")}
-            failedDescription={resolveLanguageKey("failedDescription")}
-            onRetry={() => setForceReload((prev) => prev + 1)}
+            singleUrl="/api/realEstate/floor/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={buildFloorEditPath}
+            Sheet={FloorSheetView}
+            sheetEntityProp="floor"
+            deleteUrl="/api/realEstate/floor"
+            restoreUrl="/api/realEstate/floor/restore"
+            failedTitle={String(resolveLanguageKey("failedTitle"))}
+            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            titlePath="name"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity}) => (
+                <>
+                    {action === "viewUnitsOverlay" && (
+                        <UnitsOverlay
+                            floorMainImageId={entity.mainImage?._id ?? ""}
+                            floorName={entity.name}
+                            unitsCoordinates={entity.unitsCoordinates}
+                            openUnitOverlay
+                            onClose={() => setAction("")}
+                        />
+                    )}
+                </>
+            )}
         >
-            <>
-                <EntityCardShell
-                    onClick={fetchId ? undefined : () => setAction("view")}
-                    disableClick={!!fetchId}
-                >
-                    <EntityMediaHeader
-                        carouselKey={"floor_carousel" + floor._id}
-                        showMedia={!!(read?.mainImage || read?.imageGallery || read?.videoGallery)}
-                        gallery={galleryMemo}
-                        title={floor.name}
-                        subtitle={floor.edifice?.name}
-                        showTitle={!!read?.name}
-                        showSubtitle={!!floor.edifice?.name}
-                        hideActions={hideActions}
-                        actionMenu={
-                            <ActionMenu
-                                accessModel={"floors"}
-                                deletedData={floor}
-                                onAction={(a: string) => setAction(a)}
-                                editPath={buildFloorEditPath(floor)}
-                                allowMenuForCustomChildren={!!readUnits}
-                            >
-                                <ViewUnits floor={floor} />
-                                <ViewUnitsOverlay onAction={(a: string) => setAction(a)} />
-                            </ActionMenu>
-                        }
+            {({entity, setAction}) => (
+                <>
+                    <GalleryCarousel
+                        mainImage={entity.mainImage}
+                        imageGallery={entity.imageGallery || []}
+                        videoGallery={entity.videoGallery || []}
+                        showThumbnails={false}
+                        allowFullScreen={false}
+                        coverAfterFirst={false}
+                        modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
                     />
-                    <div className={CARD_BODY_CLASS}>
-                        <InfoRowGroup>
-                            <InfoRow
-                                icon={IconDoor}
-                                label={resolveLanguageKey("data.units")}
-                                tooltip={resolveLanguageKey("data.units")}
-                                show={!!read?.totalUnits}
-                                value={floor.totalUnits}
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={entity.name}
+                        subtitle={entity.edifice?.name}
+                        subtitlePath="edifice.name"
+                    >
+                        <ViewUnits floor={entity} />
+                        <ViewUnitsOverlay onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
+                            icon={IconDoor}
+                            label={resolveLanguageKey("data.units")}
+                            tooltip={resolveLanguageKey("data.units")}
+                            path="totalUnits"
+                            type="number"
+                            value={entity.totalUnits}
+                        />
+                        <DisplayRow
+                            icon={IconGrid4x4}
+                            label={resolveLanguageKey("data.area")}
+                            tooltip={resolveLanguageKey("data.area")}
+                            path="area"
+                            type="area"
+                            value={entity.area}
+                        />
+                        <DisplayRow
+                            icon={IconWheelchair}
+                            label={resolveLanguageKey("data.isAccessible")}
+                            tooltip={resolveLanguageKey("data.isAccessible")}
+                            path="isAccessible"
+                            type="boolean"
+                            value={entity.isAccessible}
+                        />
+                        <DisplayRow
+                            icon={IconFireExtinguisher}
+                            label={resolveLanguageKey("data.hasEmergencyExit")}
+                            tooltip={resolveLanguageKey("data.hasEmergencyExit")}
+                            path="hasEmergencyExit"
+                            type="boolean"
+                            value={entity.hasEmergencyExit}
+                        />
+                        {entity.statistics?.unitsByStatus ? (
+                            <EntityStatusBadgeRow
+                                unitsByStatus={entity.statistics.unitsByStatus}
+                                resolveLanguageKey={resolveLanguageKey}
                             />
-                            <InfoRow
-                                icon={IconGrid4x4}
-                                label={resolveLanguageKey("data.area")}
-                                tooltip={resolveLanguageKey("data.area")}
-                                show={!!read?.area}
-                                value={floor.area != null && formatCardAreaM2(floor.area)}
-                            />
-                        </InfoRowGroup>
-                        {(!!floor.isAccessible || !!floor.hasEmergencyExit) && (
-                            <div className="flex flex-wrap gap-1">
-                                {!!floor.isAccessible && !!read?.isAccessible && (
-                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">
-                                        <IconWheelchair className="h-3 w-3" />
-                                        {resolveLanguageKey("data.isAccessible")}
-                                    </span>
-                                )}
-                                {!!floor.hasEmergencyExit && !!read?.hasEmergencyExit && (
-                                    <span className="inline-flex items-center gap-1 text-xs px-1.5 py-0.5 rounded-md bg-info/10 text-info dark:bg-info/30 font-medium">
-                                        <IconFireExtinguisher className="h-3 w-3" />
-                                        {resolveLanguageKey("data.hasEmergencyExit")}
-                                    </span>
-                                )}
-                            </div>
-                        )}
-                        {!!floor.statistics?.unitsByStatus && (
-                            <div className="flex flex-col gap-1">
-                                <Separator />
-                                <EntityStatusBadgeRow
-                                    unitsByStatus={floor.statistics.unitsByStatus}
-                                    resolveLanguageKey={resolveLanguageKey}
-                                />
-                            </div>
-                        )}
-                    </div>
-                </EntityCardShell>
-
-                {!!action && (
-                    <>
-                        {action === "view" && (
-                            <FloorSheetView
-                                open={action === "view"}
-                                onOpenChange={() => setAction("")}
-                                floor={floor}
-                                onDelete={onDelete}
-                                onRestore={onRestore}
-                            />
-                        )}
-                        {action === "delete" && (
-                            <DeleteAction
-                                accessModel={"floors"}
-                                deleteId={floor._id}
-                                openAlert={action === "delete"}
-                                name={read?.name && floor.name}
-                                confirmName={read?.name && floor.name}
-                                onSuccess={onDelete}
-                                onCancel={() => setAction("")}
-                                url={`/api/realEstate/floor`}
-                            />
-                        )}
-                        {action === "restore" && (
-                            <RestoreAction
-                                accessModel={"floors"}
-                                deleteId={floor._id}
-                                openAlert={action === "restore"}
-                                name={read?.name && floor.name}
-                                confirmName={read?.name && floor.name}
-                                onSuccess={onRestore}
-                                onCancel={() => setAction("")}
-                                url={`/api/realEstate/floor/restore`}
-                            />
-                        )}
-                        {action === "viewUnitsOverlay" && (
-                            <UnitsOverlay
-                                floorMainImageId={floor.mainImage?._id ?? ""}
-                                floorName={floor.name}
-                                unitsCoordinates={floor.unitsCoordinates}
-                                openUnitOverlay={action === "viewUnitsOverlay"}
-                                onClose={() => setAction("")}
-                            />
-                        )}
-                    </>
-                )}
-            </>
-        </EntityCardFetchGuard>
+                        ) : null}
+                    </EntityCard.Body>
+                </>
+            )}
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.floor),
     withLanguage("src/modules/propertyManagement/clients/panel/private/floors/center/cardView/floorCard.tsx"),
-    withAxios(
-        {
-            url: "/api/realEstate/floor/single",
-            method: "POST",
-            data: {},
-        },
-        true,
-    ),
     withDebug(true, true),
 )(FloorCard);

@@ -1,26 +1,14 @@
 import {compose} from "redux";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Milestone} from "armonia/src/modules/propertyManagement/api/realEstate/private/milestone/milestone.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {IconCalendar, IconFolder, IconPercentage} from "@tabler/icons-react";
 import MilestoneSheetView from "@propertyManagementModule/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import StartMilestone, {START_MILESTONE_ACTION} from "@propertyManagementModule/clients/panel/private/milestones/center/actions/start.tsx";
 import CompleteMilestone, {COMPLETE_MILESTONE_ACTION} from "@propertyManagementModule/clients/panel/private/milestones/center/actions/complete.tsx";
 import MarkDelayedMilestone, {MARK_DELAYED_MILESTONE_ACTION} from "@propertyManagementModule/clients/panel/private/milestones/center/actions/markDelayed.tsx";
@@ -29,13 +17,21 @@ import StartMilestoneDialog from "@propertyManagementModule/components/custom/mi
 import CompleteMilestoneDialog from "@propertyManagementModule/components/custom/milestones/completeMilestoneDialog.tsx";
 import MarkDelayedMilestoneDialog from "@propertyManagementModule/components/custom/milestones/markDelayedMilestoneDialog.tsx";
 import CancelMilestoneDialog from "@propertyManagementModule/components/custom/milestones/cancelMilestoneDialog.tsx";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {ReactNode, RefObject} from "react";
 
 type MilestoneCardProps = WithLanguageType & {
     milestone: Milestone;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deletedMilestone?: Milestone, response?: DeletedData) => void;
     onRestore?: () => void;
     onActionSuccess?: (updated?: Milestone) => void;
-    hideActions?: boolean;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Milestone> | null>;
 };
 
 function buildEditPath(milestone: Milestone) {
@@ -47,166 +43,124 @@ function buildEditPath(milestone: Milestone) {
     return `/realEstate/milestones/edit?${params.toString()}`;
 }
 
-function formatDate(value?: string) {
-    if (!value) return undefined;
-    try {
-        return new Date(value).toLocaleDateString();
-    } catch {
-        return value;
-    }
-}
-
-function getStatusLabel(resolveLanguageKey: (key: string) => unknown, status?: string) {
-    if (!status) return undefined;
-    return resolveLanguageKey(`fields.!enums.status.${status}`) as string;
-}
-
 function MilestoneCard({
-    milestone: milestoneProp,
+    milestone,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
-    onActionSuccess,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
+    onActionSuccess,
+    sheetOnly = false,
+    innerRef,
 }: MilestoneCardProps) {
-    const {action, setAction, entity: milestone, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: milestoneProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const handleActionSuccess = (updated?: Milestone) => {
-        if (updated) setEntity(updated);
-        onActionSuccess?.(updated);
-        setAction("");
-    };
-
-    const {read, write, restore} = useAccess("milestones");
-
-    if (hideAfterDeletion || !restore) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const editPath = buildEditPath(milestone);
-
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={milestone.title}
-                    subtitle={milestone.name}
-                    badges={<>
-                            {!!read?.status && !!milestone.status && (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
-                                    <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
-                                        {getStatusLabel(resolveLanguageKey, milestone.status)}
-                                    </Badge>
-                                </TooltipDisplayer>
-                            )}
-                        </>
-                    }
-                    showTitle={!!read?.title}
-                    showSubtitle={!!read?.name}
-                    showBadges={!!read?.status}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu
-                            accessModel="milestones"
-                            deletedData={milestone}
-                            onAction={(a: string) => setAction(a)}
-                            editPath={editPath}
-                            allowMenuForCustomChildren={!!write && !milestone.deletedAt}
-                        >
-                            <StartMilestone milestone={milestone} onAction={(a: string) => setAction(a)} />
-                            <CompleteMilestone milestone={milestone} onAction={(a: string) => setAction(a)} />
-                            <MarkDelayedMilestone milestone={milestone} onAction={(a: string) => setAction(a)} />
-                            <CancelMilestone milestone={milestone} onAction={(a: string) => setAction(a)} />
-                        </ActionMenu>
-                    }
-                />
-                <Separator />
-                <div className={CARD_BODY_CLASS}>
-                    <InfoRowGroup>
-                        <InfoRow
+        <EntityCard
+            resource="milestones"
+            entity={milestone}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/milestone/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={buildEditPath}
+            Sheet={MilestoneSheetView}
+            sheetEntityProp="milestone"
+            deleteUrl="/api/realEstate/milestone"
+            restoreUrl="/api/realEstate/milestone/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="title"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity, setEntity}) => {
+                const handleSuccess = (updated?: Milestone) => {
+                    if (updated) setEntity({...entity, ...updated});
+                    onActionSuccess?.(updated);
+                    setAction("");
+                };
+                return (
+                    <>
+                        {action === START_MILESTONE_ACTION && (
+                            <StartMilestoneDialog open onClose={() => setAction("")} milestone={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === COMPLETE_MILESTONE_ACTION && (
+                            <CompleteMilestoneDialog open onClose={() => setAction("")} milestone={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === MARK_DELAYED_MILESTONE_ACTION && (
+                            <MarkDelayedMilestoneDialog open onClose={() => setAction("")} milestone={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === CANCEL_MILESTONE_ACTION && (
+                            <CancelMilestoneDialog open onClose={() => setAction("")} milestone={entity} onSuccess={handleSuccess} />
+                        )}
+                    </>
+                );
+            }}
+        >
+            {({entity, setAction}) => (
+                <>
+                    <EntityCard.Header
+                        titlePath="title"
+                        title={entity.title}
+                        subtitle={entity.name}
+                        subtitlePath="name"
+                        badges={
+                            entity.status ? (
+                                <DisplayValue
+                                    path="status"
+                                    type="enum"
+                                    languageKeyCategory="fields.!enums.status"
+                                    value={entity.status}
+                                >
+                                    {(formatted: ReactNode) => (
+                                        <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
+                                            <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
+                                                {formatted}
+                                            </Badge>
+                                        </TooltipDisplayer>
+                                    )}
+                                </DisplayValue>
+                            ) : undefined
+                        }
+                    >
+                        <StartMilestone milestone={entity} onAction={setAction} />
+                        <CompleteMilestone milestone={entity} onAction={setAction} />
+                        <MarkDelayedMilestone milestone={entity} onAction={setAction} />
+                        <CancelMilestone milestone={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
                             icon={IconFolder}
                             label={resolveLanguageKey("fields.project")}
-                            show={!!read?.project}
-                            value={milestone.project?.name}
+                            tooltip={resolveLanguageKey("fields.project")}
+                            path="project"
+                            value={entity.project?.name}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.plannedEnd")}
-                            show={!!read?.plannedEnd && !!milestone.plannedEnd}
-                            value={formatDate(milestone.plannedEnd)}
+                            tooltip={resolveLanguageKey("fields.plannedEnd")}
+                            path="plannedEnd"
+                            type="date"
+                            value={entity.plannedEnd}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconPercentage}
                             label={resolveLanguageKey("fields.weightPercent")}
-                            show={!!read?.weightPercent && typeof milestone.weightPercent === "number"}
-                            value={typeof milestone.weightPercent === "number" ? `${milestone.weightPercent}%` : undefined}
+                            tooltip={resolveLanguageKey("fields.weightPercent")}
+                            path="weightPercent"
+                            type="number"
+                            value={entity.weightPercent}
                         />
-                    </InfoRowGroup>
-                </div>
-            </EntityCardShell>
-
-            {!!action && (
-                <>
-                    {action === "view" && (
-                        <MilestoneSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            milestone={milestone}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel="milestones"
-                            deleteId={milestone._id}
-                            openAlert={action === "delete"}
-                            name={read?.title && milestone.title}
-                            confirmName={read?.title && milestone.title}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/milestone"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel="milestones"
-                            deleteId={milestone._id}
-                            openAlert={action === "restore"}
-                            name={read?.title && milestone.title}
-                            confirmName={read?.title && milestone.title}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/milestone/restore"
-                        />
-                    )}
-                    {action === START_MILESTONE_ACTION && (
-                        <StartMilestoneDialog open onClose={() => setAction("")} milestone={milestone} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === COMPLETE_MILESTONE_ACTION && (
-                        <CompleteMilestoneDialog open onClose={() => setAction("")} milestone={milestone} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === MARK_DELAYED_MILESTONE_ACTION && (
-                        <MarkDelayedMilestoneDialog open onClose={() => setAction("")} milestone={milestone} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === CANCEL_MILESTONE_ACTION && (
-                        <CancelMilestoneDialog open onClose={() => setAction("")} milestone={milestone} onSuccess={handleActionSuccess} />
-                    )}
+                    </EntityCard.Body>
                 </>
             )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.milestone),
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/cardView/milestoneCard.tsx"),
     withDebug(true, true),
 )(MilestoneCard);

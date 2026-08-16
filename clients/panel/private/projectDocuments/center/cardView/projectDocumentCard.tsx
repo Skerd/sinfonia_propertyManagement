@@ -1,26 +1,14 @@
 import {compose} from "redux";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {ProjectDocument} from "armonia/src/modules/propertyManagement/api/realEstate/private/projectDocument/projectDocument.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {IconBuilding, IconCalendar, IconDoor, IconHash} from "@tabler/icons-react";
 import ProjectDocumentSheetView from "@propertyManagementModule/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL, STATUS_BADGE_WARNING} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {STATUS_BADGE_NEUTRAL, STATUS_BADGE_WARNING} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import SubmitForReviewProjectDocument, {SUBMIT_FOR_REVIEW_PROJECT_DOCUMENT_ACTION} from "@propertyManagementModule/clients/panel/private/projectDocuments/center/actions/submitForReview.tsx";
 import ApproveProjectDocument, {APPROVE_PROJECT_DOCUMENT_ACTION} from "@propertyManagementModule/clients/panel/private/projectDocuments/center/actions/approve.tsx";
 import RejectProjectDocument, {REJECT_PROJECT_DOCUMENT_ACTION} from "@propertyManagementModule/clients/panel/private/projectDocuments/center/actions/reject.tsx";
@@ -31,13 +19,21 @@ import ApproveProjectDocumentDialog from "@propertyManagementModule/components/c
 import RejectProjectDocumentDialog from "@propertyManagementModule/components/custom/projectDocuments/rejectProjectDocumentDialog.tsx";
 import SupersedeProjectDocumentDialog from "@propertyManagementModule/components/custom/projectDocuments/supersedeProjectDocumentDialog.tsx";
 import MarkAsBuiltProjectDocumentDialog from "@propertyManagementModule/components/custom/projectDocuments/markAsBuiltProjectDocumentDialog.tsx";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {ReactNode, RefObject} from "react";
 
 type ProjectDocumentCardProps = WithLanguageType & {
     projectDocument: ProjectDocument;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deletedProjectDocument?: ProjectDocument, response?: DeletedData) => void;
     onRestore?: () => void;
     onActionSuccess?: (updated?: ProjectDocument) => void;
-    hideActions?: boolean;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<ProjectDocument> | null>;
 };
 
 function buildEditPath(projectDocument: ProjectDocument) {
@@ -49,216 +45,177 @@ function buildEditPath(projectDocument: ProjectDocument) {
     return `/realEstate/projectDocuments/edit?${params.toString()}`;
 }
 
-function formatDate(value?: string) {
-    if (!value) return undefined;
-    try {
-        return new Date(value).toLocaleDateString();
-    } catch {
-        return value;
-    }
-}
-
-function getStatusLabel(resolveLanguageKey: (key: string) => unknown, status?: string) {
-    if (!status) return undefined;
-    return resolveLanguageKey(`fields.!enums.status.${status}`) as string;
-}
-
-function getDisciplineLabel(resolveLanguageKey: (key: string) => unknown, discipline?: string) {
-    if (!discipline) return undefined;
-    return resolveLanguageKey(`fields.!enums.discipline.${discipline}`) as string;
-}
-
 function ProjectDocumentCard({
-    projectDocument: projectDocumentProp,
+    projectDocument,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
-    onActionSuccess,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
+    onActionSuccess,
+    sheetOnly = false,
+    innerRef,
 }: ProjectDocumentCardProps) {
-    const {action, setAction, entity: projectDocument, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: projectDocumentProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const handleActionSuccess = (updated?: ProjectDocument) => {
-        if (updated) setEntity(updated);
-        onActionSuccess?.(updated);
-        setAction("");
-    };
-
-    const {read, write, restore} = useAccess("projectdocuments");
-
-    if (hideAfterDeletion || !restore) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const editPath = buildEditPath(projectDocument);
-
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={projectDocument.title}
-                    subtitle={projectDocument.name}
-                    badges={<>
-                            {!!read?.status && !!projectDocument.status && (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
-                                    <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
-                                        {getStatusLabel(resolveLanguageKey, projectDocument.status)}
-                                    </Badge>
-                                </TooltipDisplayer>
-                            )}
-                            {!!read?.discipline && !!projectDocument.discipline && (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("disciplineLabel") as string}>
-                                    <Badge variant="outline" className={cn("text-xs", STATUS_BADGE_WARNING)}>
-                                        {getDisciplineLabel(resolveLanguageKey, projectDocument.discipline)}
-                                    </Badge>
-                                </TooltipDisplayer>
-                            )}
-                        </>
-                    }
-                    showTitle={!!read?.title}
-                    showSubtitle={!!read?.name}
-                    showBadges={!!read?.status}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu
-                            accessModel="projectdocuments"
-                            deletedData={projectDocument}
-                            onAction={(a: string) => setAction(a)}
-                            editPath={editPath}
-                            allowMenuForCustomChildren={!!write && !projectDocument.deletedAt}
-                        >
-                            <SubmitForReviewProjectDocument projectDocument={projectDocument} onAction={(a: string) => setAction(a)} />
-                            <ApproveProjectDocument projectDocument={projectDocument} onAction={(a: string) => setAction(a)} />
-                            <RejectProjectDocument projectDocument={projectDocument} onAction={(a: string) => setAction(a)} />
-                            <SupersedeProjectDocument projectDocument={projectDocument} onAction={(a: string) => setAction(a)} />
-                            <MarkAsBuiltProjectDocument projectDocument={projectDocument} onAction={(a: string) => setAction(a)} />
-                        </ActionMenu>
-                    }
-                />
-                <Separator />
-                <div className={CARD_BODY_CLASS}>
-                    <InfoRowGroup>
-                        <InfoRow
+        <EntityCard
+            resource="projectdocuments"
+            entity={projectDocument}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/projectDocument/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={buildEditPath}
+            Sheet={ProjectDocumentSheetView}
+            sheetEntityProp="projectDocument"
+            deleteUrl="/api/realEstate/projectDocument"
+            restoreUrl="/api/realEstate/projectDocument/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="title"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity, setEntity}) => {
+                const handleSuccess = (updated?: ProjectDocument) => {
+                    if (updated) setEntity({...entity, ...updated});
+                    onActionSuccess?.(updated);
+                    setAction("");
+                };
+                return (
+                    <>
+                        {action === SUBMIT_FOR_REVIEW_PROJECT_DOCUMENT_ACTION && (
+                            <SubmitForReviewProjectDocumentDialog
+                                open
+                                onClose={() => setAction("")}
+                                projectDocument={entity}
+                                onSuccess={handleSuccess}
+                            />
+                        )}
+                        {action === APPROVE_PROJECT_DOCUMENT_ACTION && (
+                            <ApproveProjectDocumentDialog
+                                open
+                                onClose={() => setAction("")}
+                                projectDocument={entity}
+                                onSuccess={handleSuccess}
+                            />
+                        )}
+                        {action === REJECT_PROJECT_DOCUMENT_ACTION && (
+                            <RejectProjectDocumentDialog
+                                open
+                                onClose={() => setAction("")}
+                                projectDocument={entity}
+                                onSuccess={handleSuccess}
+                            />
+                        )}
+                        {action === SUPERSEDE_PROJECT_DOCUMENT_ACTION && (
+                            <SupersedeProjectDocumentDialog
+                                open
+                                onClose={() => setAction("")}
+                                projectDocument={entity}
+                                onSuccess={handleSuccess}
+                            />
+                        )}
+                        {action === MARK_AS_BUILT_PROJECT_DOCUMENT_ACTION && (
+                            <MarkAsBuiltProjectDocumentDialog
+                                open
+                                onClose={() => setAction("")}
+                                projectDocument={entity}
+                                onSuccess={handleSuccess}
+                            />
+                        )}
+                    </>
+                );
+            }}
+        >
+            {({entity, setAction}) => (
+                <>
+                    <EntityCard.Header
+                        titlePath="title"
+                        title={entity.title}
+                        subtitle={entity.name}
+                        subtitlePath="name"
+                        badges={
+                            <>
+                                {entity.status ? (
+                                    <DisplayValue
+                                        path="status"
+                                        type="enum"
+                                        languageKeyCategory="fields.!enums.status"
+                                        value={entity.status}
+                                    >
+                                        {(formatted: ReactNode) => (
+                                            <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
+                                                <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
+                                                    {formatted}
+                                                </Badge>
+                                            </TooltipDisplayer>
+                                        )}
+                                    </DisplayValue>
+                                ) : null}
+                                {entity.discipline ? (
+                                    <DisplayValue
+                                        path="discipline"
+                                        type="enum"
+                                        languageKeyCategory="fields.!enums.discipline"
+                                        value={entity.discipline}
+                                    >
+                                        {(formatted: ReactNode) => (
+                                            <TooltipDisplayer tooltip={resolveLanguageKey("disciplineLabel") as string}>
+                                                <Badge variant="outline" className={cn("text-xs", STATUS_BADGE_WARNING)}>
+                                                    {formatted}
+                                                </Badge>
+                                            </TooltipDisplayer>
+                                        )}
+                                    </DisplayValue>
+                                ) : null}
+                            </>
+                        }
+                    >
+                        <SubmitForReviewProjectDocument projectDocument={entity} onAction={setAction} />
+                        <ApproveProjectDocument projectDocument={entity} onAction={setAction} />
+                        <RejectProjectDocument projectDocument={entity} onAction={setAction} />
+                        <SupersedeProjectDocument projectDocument={entity} onAction={setAction} />
+                        <MarkAsBuiltProjectDocument projectDocument={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
                             icon={IconBuilding}
                             label={resolveLanguageKey("fields.project")}
-                            show={!!read?.project}
-                            value={projectDocument.project?.name}
+                            tooltip={resolveLanguageKey("fields.project")}
+                            path="project"
+                            value={entity.project?.name}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconDoor}
                             label={resolveLanguageKey("fields.unit")}
-                            show={!!read?.unit && !!projectDocument.unit}
-                            value={projectDocument.unit?.name || projectDocument.unit?.unitNumber}
+                            tooltip={resolveLanguageKey("fields.unit")}
+                            path="unit"
+                            value={entity.unit?.name || entity.unit?.unitNumber}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconHash}
                             label={resolveLanguageKey("fields.documentNumber")}
-                            show={!!read?.documentNumber && !!projectDocument.documentNumber}
-                            value={projectDocument.documentNumber}
+                            tooltip={resolveLanguageKey("fields.documentNumber")}
+                            path="documentNumber"
+                            value={entity.documentNumber}
                         />
-                    </InfoRowGroup>
-                    <Separator />
-                    <InfoRowGroup>
-                        <InfoRow
+                        <DisplayRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.revisionDate")}
-                            show={!!read?.revisionDate}
-                            value={formatDate(projectDocument.revisionDate)}
+                            tooltip={resolveLanguageKey("fields.revisionDate")}
+                            path="revisionDate"
+                            type="date"
+                            value={entity.revisionDate}
                         />
-                    </InfoRowGroup>
-                </div>
-            </EntityCardShell>
-
-            {!!action && (
-                <>
-                    {action === "view" && (
-                        <ProjectDocumentSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            projectDocument={projectDocument}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel="projectdocuments"
-                            deleteId={projectDocument._id}
-                            openAlert={action === "delete"}
-                            name={read?.title && projectDocument.title}
-                            confirmName={read?.title && projectDocument.title}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/projectDocument"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel="projectdocuments"
-                            deleteId={projectDocument._id}
-                            openAlert={action === "restore"}
-                            name={read?.title && projectDocument.title}
-                            confirmName={read?.title && projectDocument.title}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/projectDocument/restore"
-                        />
-                    )}
-                    {action === SUBMIT_FOR_REVIEW_PROJECT_DOCUMENT_ACTION && (
-                        <SubmitForReviewProjectDocumentDialog
-                            open
-                            onClose={() => setAction("")}
-                            projectDocument={projectDocument}
-                            onSuccess={handleActionSuccess}
-                        />
-                    )}
-                    {action === APPROVE_PROJECT_DOCUMENT_ACTION && (
-                        <ApproveProjectDocumentDialog
-                            open
-                            onClose={() => setAction("")}
-                            projectDocument={projectDocument}
-                            onSuccess={handleActionSuccess}
-                        />
-                    )}
-                    {action === REJECT_PROJECT_DOCUMENT_ACTION && (
-                        <RejectProjectDocumentDialog
-                            open
-                            onClose={() => setAction("")}
-                            projectDocument={projectDocument}
-                            onSuccess={handleActionSuccess}
-                        />
-                    )}
-                    {action === SUPERSEDE_PROJECT_DOCUMENT_ACTION && (
-                        <SupersedeProjectDocumentDialog
-                            open
-                            onClose={() => setAction("")}
-                            projectDocument={projectDocument}
-                            onSuccess={handleActionSuccess}
-                        />
-                    )}
-                    {action === MARK_AS_BUILT_PROJECT_DOCUMENT_ACTION && (
-                        <MarkAsBuiltProjectDocumentDialog
-                            open
-                            onClose={() => setAction("")}
-                            projectDocument={projectDocument}
-                            onSuccess={handleActionSuccess}
-                        />
-                    )}
+                    </EntityCard.Body>
                 </>
             )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.projectDocument),
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/cardView/projectDocumentCard.tsx"),
     withDebug(true, true),
 )(ProjectDocumentCard);

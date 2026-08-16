@@ -14,7 +14,7 @@ import {buildInspectionEditPath} from "@propertyManagementModule/clients/panel/p
 export type InspectionSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     inspection?: Inspection;
     unitId?: string;
     unitName?: string;

@@ -1,41 +1,17 @@
 import {compose} from "redux";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
-import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import type {ConstructionUpdate} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructionUpdate/constructionUpdate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
-import {IconBuilding, IconCalendar, IconLabel, IconStack2} from "@tabler/icons-react";
+import {IconBuilding, IconCalendar, IconLabel, IconPercentage, IconStack2} from "@tabler/icons-react";
 import ConstructionUpdateSheetView from "@propertyManagementModule/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {
-    CARD_BODY_CLASS,
-    STATUS_BADGE_INFO,
-    STATUS_BADGE_SUCCESS,
-    STATUS_BADGE_WARNING,
-} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
-type ConstructionUpdateCardProps = WithLanguageType & {
-    constructionUpdate: ConstructionUpdate;
-    onDelete?: (deletedUpdate?: ConstructionUpdate, response?: DeletedData) => void;
-    onRestore?: () => void;
-    hideActions?: boolean;
-};
-
-function buildEditPath(update: ConstructionUpdate) {
+function constructionUpdateEditPath(update: ConstructionUpdate) {
     const params = new URLSearchParams();
     params.set("constructionUpdateId", update._id);
     if (update.name) params.set("constructionUpdateName", update.name);
@@ -44,158 +20,104 @@ function buildEditPath(update: ConstructionUpdate) {
     return `/realEstate/constructionUpdates/edit?${params.toString()}`;
 }
 
-function formatUpdateDate(value?: string) {
-    if (!value) return undefined;
-    try {
-        return new Date(value).toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-    } catch {
-        return value;
-    }
-}
-
-function progressBadgeClass(percent: number) {
-    if (percent >= 75) return STATUS_BADGE_SUCCESS;
-    if (percent >= 40) return STATUS_BADGE_WARNING;
-    return STATUS_BADGE_INFO;
-}
+type ConstructionUpdateCardProps = WithLanguageType & {
+    constructionUpdate: ConstructionUpdate;
+    fetchId?: string;
+    hideActions?: boolean;
+    onDelete?: (deletedUpdate?: ConstructionUpdate, response?: DeletedData) => void;
+    onRestore?: () => void;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<ConstructionUpdate> | null>;
+};
 
 function ConstructionUpdateCard({
-    constructionUpdate: updateProp,
+    constructionUpdate,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
+    sheetOnly = false,
+    innerRef,
 }: ConstructionUpdateCardProps) {
-
-    const {action, setAction, entity: update, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: updateProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const {read, restore} = useAccess("constructionUpdates");
-
-    if (hideAfterDeletion || !restore) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const editPath = buildEditPath(update);
-    const formattedDate = formatUpdateDate(update.updateDate);
-
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={
-                        <span className="flex min-w-0 items-center gap-1">
-                            <span className="truncate">{update.title}</span>
-                            {!!read?.name && update.name ? <CopyTooltip text={update.name} /> : null}
-                        </span>
-                    }
-                    badges={
-                        <>
-                            {update.progressPercent != null ? (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("fields.progressPercent") as string}>
-                                    <Badge
-                                        variant="outline"
-                                        className={cn("text-xs font-semibold tabular-nums", progressBadgeClass(update.progressPercent))}
-                                    >
-                                        {update.progressPercent}%
-                                    </Badge>
-                                </TooltipDisplayer>
-                            ) : null}
-                            {formattedDate ? (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("fields.updateDate") as string}>
-                                    <Badge variant="outline" className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                                        <IconCalendar className="h-3 w-3 shrink-0" />
-                                        {formattedDate}
-                                    </Badge>
-                                </TooltipDisplayer>
-                            ) : null}
-                        </>
-                    }
-                    showTitle={!!read?.title}
-                    showBadges={!!(read?.updateDate || read?.progressPercent)}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu accessModel="constructionUpdates" deletedData={update} onAction={(a: string) => setAction(a)} editPath={editPath} />
-                    }
-                />
-                <Separator />
-                <div className={CARD_BODY_CLASS}>
-                    <InfoRowGroup>
-                        <InfoRow
+        <EntityCard
+            resource="constructionUpdates"
+            entity={constructionUpdate}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/constructionUpdate/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={constructionUpdateEditPath}
+            Sheet={ConstructionUpdateSheetView}
+            sheetEntityProp="constructionUpdate"
+            deleteUrl="/api/realEstate/constructionUpdate"
+            restoreUrl="/api/realEstate/constructionUpdate/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="title"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+        >
+            {({entity}) => (
+                <>
+                    <EntityCard.Header
+                        titlePath="title"
+                        title={
+                            <span className="flex min-w-0 items-center gap-1">
+                                <span className="truncate">{entity.title}</span>
+                                {entity.name ? <CopyTooltip text={entity.name} /> : null}
+                            </span>
+                        }
+                    />
+                    <EntityCard.Body>
+                        <DisplayRow
                             icon={IconLabel}
                             label={resolveLanguageKey("fields.name")}
-                            show={!!read?.name}
-                            value={update.name}
+                            tooltip={resolveLanguageKey("fields.name")}
+                            path="name"
+                            value={entity.name}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconBuilding}
                             label={resolveLanguageKey("fields.project")}
-                            show={!!read?.project}
-                            value={update.project?.name}
+                            tooltip={resolveLanguageKey("fields.project")}
+                            path="project.name"
+                            value={entity.project?.name}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconStack2}
                             label={resolveLanguageKey("fields.edifice")}
-                            show={!!read?.edifice}
-                            value={update.edifice?.name}
+                            tooltip={resolveLanguageKey("fields.edifice")}
+                            path="edifice.name"
+                            value={entity.edifice?.name}
                         />
-                    </InfoRowGroup>
-                </div>
-            </EntityCardShell>
-
-            {!!action && (
-                <>
-                    {action === "view" && (
-                        <ConstructionUpdateSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            constructionUpdate={update}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
+                        <DisplayRow
+                            icon={IconPercentage}
+                            label={resolveLanguageKey("fields.progressPercent")}
+                            tooltip={resolveLanguageKey("fields.progressPercent")}
+                            path="progressPercent"
+                            type="number"
+                            value={entity.progressPercent}
                         />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel="constructionUpdates"
-                            deleteId={update._id}
-                            openAlert={action === "delete"}
-                            name={read?.title && update.title}
-                            confirmName={read?.title && update.title}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/constructionUpdate"
+                        <DisplayRow
+                            icon={IconCalendar}
+                            label={resolveLanguageKey("fields.updateDate")}
+                            tooltip={resolveLanguageKey("fields.updateDate")}
+                            path="updateDate"
+                            type="date"
+                            value={entity.updateDate}
                         />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel="constructionUpdates"
-                            deleteId={update._id}
-                            openAlert={action === "restore"}
-                            name={read?.title && update.title}
-                            confirmName={read?.title && update.title}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/constructionUpdate/restore"
-                        />
-                    )}
+                    </EntityCard.Body>
                 </>
             )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.constructionUpdate),
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx"),
     withDebug(true, true),
 )(ConstructionUpdateCard);

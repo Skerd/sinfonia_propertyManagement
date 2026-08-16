@@ -20,7 +20,7 @@ import CancelModificationRequestDialog from "@propertyManagementModule/component
 export type ModificationRequestSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     request?: ModificationRequest;
     unitId: string;
     unitName?: string;

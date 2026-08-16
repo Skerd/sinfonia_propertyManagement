@@ -31,7 +31,7 @@ export function buildPaymentPlanEditPath(paymentPlan: PaymentPlan): string {
 type PaymentPlanSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     paymentPlan?: PaymentPlan;
     hideActions?: boolean;
     onDelete?: (paymentPlan: PaymentPlan, response?: DeletedData) => void;

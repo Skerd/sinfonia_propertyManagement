@@ -87,7 +87,8 @@ function UnitTypeCard({
                             label={resolveLanguageKey("isPrivate")}
                             tooltip={resolveLanguageKey("isPrivate")}
                             path="isPrivate"
-                            value={ entity.isPrivate ? resolveLanguageKey("private") : resolveLanguageKey("public")}
+                            type="boolean"
+                            value={entity.isPrivate}
                         />
                     </EntityCard.Body>
                 </>

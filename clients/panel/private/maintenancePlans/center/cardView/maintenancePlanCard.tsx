@@ -1,69 +1,73 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import type {MaintenancePlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/maintenancePlan/maintenancePlan.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/maintenancePlans/center/sheetView/maintenancePlanSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
-type Props = WithLanguageType & {
-    entity: MaintenancePlan;
-    onDelete?: (deleted?: MaintenancePlan, response?: DeletedData) => void;
-    onRestore?: () => void;
-    hideActions?: boolean;
-};
-
-function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, hideActions = false}: Props) {
-    const {action, setAction, entity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({entityProp: prop, onDeleteProp, onRestoreProp});
-    const {read, restore} = useAccess("maintenanceplans");
-    if (hideAfterDeletion || !restore) return <></>;
-    if (!read || !Object.keys(read).length) return <HiddenElement />;
+function maintenancePlanEditPath(entity: MaintenancePlan) {
     const params = new URLSearchParams();
     params.set("maintenancePlanId", entity._id);
     if (entity.name) params.set("maintenancePlanName", entity.name);
-    const editPath = `/realEstate/maintenancePlans/edit?${params.toString()}`;
+    return `/realEstate/maintenancePlans/edit?${params.toString()}`;
+}
+
+type MaintenancePlanCardProps = WithLanguageType & {
+    entity: MaintenancePlan;
+    fetchId?: string;
+    hideActions?: boolean;
+    onDelete?: (deleted?: MaintenancePlan, response?: DeletedData) => void;
+    onRestore?: () => void;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<MaintenancePlan> | null>;
+};
+
+function MaintenancePlanCard({
+    entity,
+    fetchId,
+    hideActions = false,
+    onDelete,
+    onRestore,
+    sheetOnly = false,
+    innerRef,
+}: MaintenancePlanCardProps) {
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={entity.name}
-                    subtitle={entity.planType}
-                    badges={null}
-                    showTitle={!!read?.name}
-                    showSubtitle={!!read?.planType}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu accessModel="maintenanceplans" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />
-                    }
+        <EntityCard
+            resource="maintenanceplans"
+            entity={entity}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/maintenancePlan/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={maintenancePlanEditPath}
+            Sheet={Sheet}
+            sheetEntityProp="entity"
+            deleteUrl="/api/realEstate/maintenancePlan"
+            restoreUrl="/api/realEstate/maintenancePlan/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="name"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+        >
+            {({entity: row}) => (
+                <EntityCard.Header
+                    titlePath="name"
+                    title={row.name}
+                    subtitle={row.planType}
+                    subtitlePath="planType"
                 />
-                <Separator />
-                <div className={CARD_BODY_CLASS} />
-            </EntityCardShell>
-            {action === "view" && (
-                <Sheet open onOpenChange={() => setAction("")} entity={entity} onDelete={onDelete} onRestore={onRestore} />
             )}
-            {action === "delete" && (
-                <DeleteAction accessModel="maintenanceplans" deleteId={entity._id} openAlert name={entity.name} confirmName={entity.name} onSuccess={onDelete} onCancel={() => setAction("")} url="/api/realEstate/maintenancePlan" />
-            )}
-            {action === "restore" && (
-                <RestoreAction accessModel="maintenanceplans" deleteId={entity._id} openAlert name={entity.name} confirmName={entity.name} onSuccess={onRestore} onCancel={() => setAction("")} url="/api/realEstate/maintenancePlan/restore" />
-            )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.entity),
     withLanguage("src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx"),
     withDebug(true, true),
-)(Card);
+)(MaintenancePlanCard);

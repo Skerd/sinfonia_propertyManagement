@@ -17,7 +17,7 @@ import {buildEdificeEditPath} from "@propertyManagementModule/clients/panel/priv
 export type EdificeSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row or bootstrap from `#SmallInfoCard` while `/single` loads. */
+    /** Full row or bootstrap from `#DisplayCard` while `/single` loads. */
     edifice?: Edifice;
     projectId?: string;
     projectName?: string;

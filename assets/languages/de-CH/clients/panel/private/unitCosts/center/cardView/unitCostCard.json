@@ -4,6 +4,8 @@
   "failedDescription": "Etwas ist schiefgelaufen. Zum erneuten Versuch klicken.",
   "purchaseDate": "Kaufdatum",
   "purchasePerson": "Gekauft von",
+  "verificationStatus": "Verifizierung",
+  "paymentStatus": "Zahlung",
   "documentSubtotal": "Zwischensumme",
   "unitCostVerification": {
     "pending_verification": "Verifizierung ausstehend",

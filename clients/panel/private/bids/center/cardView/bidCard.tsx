@@ -1,74 +1,79 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import type {Bid} from "armonia/src/modules/propertyManagement/api/realEstate/private/bid/bid.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/bids/center/sheetView/bidSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
-type Props = WithLanguageType & {
+function bidEditPath(bid: Bid) {
+    const params = new URLSearchParams();
+    params.set("bidId", bid._id);
+    if (bid.name) params.set("bidName", bid.name);
+    return `/realEstate/bids/edit?${params.toString()}`;
+}
+
+type BidCardProps = WithLanguageType & {
     entity: Bid;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deleted?: Bid, response?: DeletedData) => void;
     onRestore?: () => void;
-    hideActions?: boolean;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Bid> | null>;
 };
 
-function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, hideActions = false}: Props) {
-    const {action, setAction, entity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({entityProp: prop, onDeleteProp, onRestoreProp});
-    const {read, restore} = useAccess("bids");
-    if (hideAfterDeletion || !restore) return <></>;
-    if (!read || !Object.keys(read).length) return <HiddenElement />;
-    const params = new URLSearchParams();
-    params.set("bidId", entity._id);
-    if (entity.name) params.set("bidName", entity.name);
-    const editPath = `/realEstate/bids/edit?${params.toString()}`;
+function BidCard({
+    entity,
+    fetchId,
+    hideActions = false,
+    onDelete,
+    onRestore,
+    sheetOnly = false,
+    innerRef,
+}: BidCardProps) {
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={entity.name}
-                    subtitle={entity.constructorRef?.name}
-                    badges={entity.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{entity.status}</Badge>
+        <EntityCard
+            resource="bids"
+            entity={entity}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/bid/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={bidEditPath}
+            Sheet={Sheet}
+            sheetEntityProp="entity"
+            deleteUrl="/api/realEstate/bid"
+            restoreUrl="/api/realEstate/bid/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="name"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+        >
+            {({entity: row}) => (
+                <EntityCard.Header
+                    titlePath="name"
+                    title={row.name}
+                    subtitle={row.constructorRef?.name}
+                    subtitlePath="constructorRef"
+                    badges={row.status ? (
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{row.status}</Badge>
                     ) : null}
-                    showTitle={!!read?.name}
-                    showSubtitle={!!read?.constructorRef}
-                    showBadges={!!read?.status}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu accessModel="bids" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />
-                    }
                 />
-                <Separator />
-                <div className={CARD_BODY_CLASS} />
-            </EntityCardShell>
-            {action === "view" && (
-                <Sheet open onOpenChange={() => setAction("")} entity={entity} onDelete={onDelete} onRestore={onRestore} />
             )}
-            {action === "delete" && (
-                <DeleteAction accessModel="bids" deleteId={entity._id} openAlert name={entity.name} confirmName={entity.name} onSuccess={onDelete} onCancel={() => setAction("")} url="/api/realEstate/bid" />
-            )}
-            {action === "restore" && (
-                <RestoreAction accessModel="bids" deleteId={entity._id} openAlert name={entity.name} confirmName={entity.name} onSuccess={onRestore} onCancel={() => setAction("")} url="/api/realEstate/bid/restore" />
-            )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.entity),
     withLanguage("src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx"),
     withDebug(true, true),
-)(Card);
+)(BidCard);

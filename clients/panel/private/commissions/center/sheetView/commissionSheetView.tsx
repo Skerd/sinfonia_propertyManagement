@@ -13,7 +13,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 export type CommissionSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     commission?: Commission;
     hideActions?: boolean;
     onModifySuccess?: (updated?: Commission) => void;

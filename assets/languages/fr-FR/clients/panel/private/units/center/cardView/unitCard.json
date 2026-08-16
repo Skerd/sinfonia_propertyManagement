@@ -41,6 +41,7 @@
   "statusLeased": "Loué",
   "statusUnknown": "Inconnu",
   "priceNotSet": "Prix non défini",
+  "constructionStatusLabel": "État de construction",
   "constructionStatus": {
     "planned": "Planifié",
     "under_construction": "En construction",

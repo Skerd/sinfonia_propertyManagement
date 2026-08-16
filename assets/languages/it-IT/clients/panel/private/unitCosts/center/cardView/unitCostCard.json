@@ -4,6 +4,8 @@
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "purchaseDate": "Data acquisto",
   "purchasePerson": "Acquistato da",
+  "verificationStatus": "Verifica",
+  "paymentStatus": "Pagamento",
   "documentSubtotal": "Subtotale",
   "unitCostVerification": {
     "pending_verification": "Verifica in sospeso",

@@ -45,7 +45,7 @@ export function saleDeleteRestoreConfirmLabel(
 export type SaleSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     sale?: Sale;
     unitId?: string;
     unitName?: string;

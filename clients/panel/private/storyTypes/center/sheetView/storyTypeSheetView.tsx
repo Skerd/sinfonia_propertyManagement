@@ -11,7 +11,7 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 export type StoryTypeSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     storyType?: StoryType;
     hideActions?: boolean;
     onDelete?: (response?: DeleteResponse) => void;

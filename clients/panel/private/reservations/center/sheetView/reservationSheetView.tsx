@@ -28,7 +28,7 @@ export function reservationsListPath(unitId?: string, unitName?: string): string
 export type ReservationSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     reservation?: Reservation;
     hideActions?: boolean;
     /** Same contract as {@link SheetViewRenderer}: delete modal passes {@link DeletedData} only. */

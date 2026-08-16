@@ -41,6 +41,7 @@
   "statusLeased": "Me qira",
   "statusUnknown": "E panjohur",
   "priceNotSet": "Çmimi nuk është vendosur",
+  "constructionStatusLabel": "Statusi i ndërtimit",
   "constructionStatus": {
     "planned": "Planifikuar",
     "under_construction": "Në ndërtim",

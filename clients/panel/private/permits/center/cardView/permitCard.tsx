@@ -1,26 +1,14 @@
 import {compose} from "redux";
-import {InfoRowGroup} from "@coreModule/components/custom/infoRowGroup.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import type {Permit} from "armonia/src/modules/propertyManagement/api/realEstate/private/permit/permit.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
-import InfoRow from "@coreModule/components/custom/infoRow.tsx";
 import {IconBuildingBank, IconCalendar, IconFolder, IconHash, IconShieldCheck} from "@tabler/icons-react";
 import PermitSheetView from "@propertyManagementModule/clients/panel/private/permits/center/sheetView/permitSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import SubmitPermit, {SUBMIT_PERMIT_ACTION} from "@propertyManagementModule/clients/panel/private/permits/center/actions/submit.tsx";
 import MarkUnderReviewPermit, {MARK_UNDER_REVIEW_PERMIT_ACTION} from "@propertyManagementModule/clients/panel/private/permits/center/actions/markUnderReview.tsx";
 import ApprovePermit, {APPROVE_PERMIT_ACTION} from "@propertyManagementModule/clients/panel/private/permits/center/actions/approve.tsx";
@@ -31,13 +19,21 @@ import MarkUnderReviewPermitDialog from "@propertyManagementModule/components/cu
 import ApprovePermitDialog from "@propertyManagementModule/components/custom/permits/approvePermitDialog.tsx";
 import RejectPermitDialog from "@propertyManagementModule/components/custom/permits/rejectPermitDialog.tsx";
 import RenewPermitDialog from "@propertyManagementModule/components/custom/permits/renewPermitDialog.tsx";
+import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {ReactNode, RefObject} from "react";
 
 type PermitCardProps = WithLanguageType & {
     permit: Permit;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deleted?: Permit, response?: DeletedData) => void;
     onRestore?: () => void;
     onActionSuccess?: (updated?: Permit) => void;
-    hideActions?: boolean;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<Permit> | null>;
 };
 
 function buildEditPath(permit: Permit) {
@@ -49,185 +45,143 @@ function buildEditPath(permit: Permit) {
     return `/realEstate/permits/edit?${params.toString()}`;
 }
 
-function formatDate(value?: string) {
-    if (!value) return undefined;
-    try {
-        return new Date(value).toLocaleDateString();
-    } catch {
-        return value;
-    }
-}
-
-function getEnumLabel(resolveLanguageKey: (key: string) => unknown, category: string, value?: string) {
-    if (!value) return undefined;
-    return resolveLanguageKey(`fields.!enums.${category}.${value}`) as string;
-}
-
 function PermitCard({
-    permit: permitProp,
+    permit,
     resolveLanguageKey,
-    onDelete: onDeleteProp,
-    onRestore: onRestoreProp,
-    onActionSuccess,
+    fetchId,
     hideActions = false,
+    onDelete,
+    onRestore,
+    onActionSuccess,
+    sheetOnly = false,
+    innerRef,
 }: PermitCardProps) {
-    const {action, setAction, entity: permit, setEntity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({
-        entityProp: permitProp,
-        onDeleteProp,
-        onRestoreProp,
-    });
-
-    const handleActionSuccess = (updated?: Permit) => {
-        if (updated) setEntity(updated);
-        onActionSuccess?.(updated);
-        setAction("");
-    };
-
-    const {read, write, restore} = useAccess("permits");
-
-    if (hideAfterDeletion || !restore) {
-        return <></>;
-    }
-    if (!read || !Object.keys(read).length) {
-        return <HiddenElement />;
-    }
-
-    const editPath = buildEditPath(permit);
-
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={permit.title}
-                    subtitle={permit.name}
-                    badges={<>
-                            {!!read?.status && !!permit.status && (
-                                <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
-                                    <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
-                                        {getEnumLabel(resolveLanguageKey, "status", permit.status)}
-                                    </Badge>
-                                </TooltipDisplayer>
-                            )}
-                        </>
-                    }
-                    showTitle={!!read?.title}
-                    showSubtitle={!!read?.name}
-                    showBadges={!!read?.status}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu
-                            accessModel="permits"
-                            deletedData={permit}
-                            onAction={(a: string) => setAction(a)}
-                            editPath={editPath}
-                            allowMenuForCustomChildren={!!write && !permit.deletedAt}
-                        >
-                            <SubmitPermit permit={permit} onAction={(a: string) => setAction(a)} />
-                            <MarkUnderReviewPermit permit={permit} onAction={(a: string) => setAction(a)} />
-                            <ApprovePermit permit={permit} onAction={(a: string) => setAction(a)} />
-                            <RejectPermit permit={permit} onAction={(a: string) => setAction(a)} />
-                            <RenewPermit permit={permit} onAction={(a: string) => setAction(a)} />
-                        </ActionMenu>
-                    }
-                />
-                <Separator />
-                <div className={CARD_BODY_CLASS}>
-                    <InfoRowGroup>
-                        <InfoRow
+        <EntityCard
+            resource="permits"
+            entity={permit}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/permit/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={buildEditPath}
+            Sheet={PermitSheetView}
+            sheetEntityProp="permit"
+            deleteUrl="/api/realEstate/permit"
+            restoreUrl="/api/realEstate/permit/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="title"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity, setEntity}) => {
+                const handleSuccess = (updated?: Permit) => {
+                    if (updated) setEntity({...entity, ...updated});
+                    onActionSuccess?.(updated);
+                    setAction("");
+                };
+                return (
+                    <>
+                        {action === SUBMIT_PERMIT_ACTION && (
+                            <SubmitPermitDialog open onClose={() => setAction("")} permit={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === MARK_UNDER_REVIEW_PERMIT_ACTION && (
+                            <MarkUnderReviewPermitDialog open onClose={() => setAction("")} permit={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === APPROVE_PERMIT_ACTION && (
+                            <ApprovePermitDialog open onClose={() => setAction("")} permit={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === REJECT_PERMIT_ACTION && (
+                            <RejectPermitDialog open onClose={() => setAction("")} permit={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === RENEW_PERMIT_ACTION && (
+                            <RenewPermitDialog open onClose={() => setAction("")} permit={entity} onSuccess={handleSuccess} />
+                        )}
+                    </>
+                );
+            }}
+        >
+            {({entity, setAction}) => (
+                <>
+                    <EntityCard.Header
+                        titlePath="title"
+                        title={entity.title}
+                        subtitle={entity.name}
+                        subtitlePath="name"
+                        badges={
+                            entity.status ? (
+                                <DisplayValue
+                                    path="status"
+                                    type="enum"
+                                    languageKeyCategory="fields.!enums.status"
+                                    value={entity.status}
+                                >
+                                    {(formatted: ReactNode) => (
+                                        <TooltipDisplayer tooltip={resolveLanguageKey("statusLabel") as string}>
+                                            <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
+                                                {formatted}
+                                            </Badge>
+                                        </TooltipDisplayer>
+                                    )}
+                                </DisplayValue>
+                            ) : undefined
+                        }
+                    >
+                        <SubmitPermit permit={entity} onAction={setAction} />
+                        <MarkUnderReviewPermit permit={entity} onAction={setAction} />
+                        <ApprovePermit permit={entity} onAction={setAction} />
+                        <RejectPermit permit={entity} onAction={setAction} />
+                        <RenewPermit permit={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    <EntityCard.Body>
+                        <DisplayRow
                             icon={IconFolder}
                             label={resolveLanguageKey("fields.project")}
-                            show={!!read?.project}
-                            value={permit.project?.name}
+                            tooltip={resolveLanguageKey("fields.project")}
+                            path="project"
+                            value={entity.project?.name}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconShieldCheck}
                             label={resolveLanguageKey("fields.permitType")}
-                            show={!!read?.permitType}
-                            value={getEnumLabel(resolveLanguageKey, "permitType", permit.permitType)}
+                            tooltip={resolveLanguageKey("fields.permitType")}
+                            path="permitType"
+                            type="enum"
+                            languageKeyCategory="fields.!enums.permitType"
+                            value={entity.permitType}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconBuildingBank}
                             label={resolveLanguageKey("fields.authority")}
-                            show={!!read?.authority && !!permit.authority}
-                            value={permit.authority}
+                            tooltip={resolveLanguageKey("fields.authority")}
+                            path="authority"
+                            value={entity.authority}
                         />
-                    </InfoRowGroup>
-                    <Separator />
-                    <InfoRowGroup>
-                        <InfoRow
+                        <DisplayRow
                             icon={IconHash}
                             label={resolveLanguageKey("fields.referenceNumber")}
-                            show={!!read?.referenceNumber && !!permit.referenceNumber}
-                            value={permit.referenceNumber}
+                            tooltip={resolveLanguageKey("fields.referenceNumber")}
+                            path="referenceNumber"
+                            value={entity.referenceNumber}
                         />
-                        <InfoRow
+                        <DisplayRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.expiresAt")}
-                            show={!!read?.expiresAt && !!permit.expiresAt}
-                            value={formatDate(permit.expiresAt)}
+                            tooltip={resolveLanguageKey("fields.expiresAt")}
+                            path="expiresAt"
+                            type="date"
+                            value={entity.expiresAt}
                         />
-                    </InfoRowGroup>
-                </div>
-            </EntityCardShell>
-
-            {!!action && (
-                <>
-                    {action === "view" && (
-                        <PermitSheetView
-                            open={action === "view"}
-                            onOpenChange={() => setAction("")}
-                            permit={permit}
-                            onDelete={onDelete}
-                            onRestore={onRestore}
-                        />
-                    )}
-                    {action === "delete" && (
-                        <DeleteAction
-                            accessModel="permits"
-                            deleteId={permit._id}
-                            openAlert={action === "delete"}
-                            name={read?.title && permit.title}
-                            confirmName={read?.title && permit.title}
-                            onSuccess={onDelete}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/permit"
-                        />
-                    )}
-                    {action === "restore" && (
-                        <RestoreAction
-                            accessModel="permits"
-                            deleteId={permit._id}
-                            openAlert={action === "restore"}
-                            name={read?.title && permit.title}
-                            confirmName={read?.title && permit.title}
-                            onSuccess={onRestore}
-                            onCancel={() => setAction("")}
-                            url="/api/realEstate/permit/restore"
-                        />
-                    )}
-                    {action === SUBMIT_PERMIT_ACTION && (
-                        <SubmitPermitDialog open onClose={() => setAction("")} permit={permit} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === MARK_UNDER_REVIEW_PERMIT_ACTION && (
-                        <MarkUnderReviewPermitDialog open onClose={() => setAction("")} permit={permit} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === APPROVE_PERMIT_ACTION && (
-                        <ApprovePermitDialog open onClose={() => setAction("")} permit={permit} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === REJECT_PERMIT_ACTION && (
-                        <RejectPermitDialog open onClose={() => setAction("")} permit={permit} onSuccess={handleActionSuccess} />
-                    )}
-                    {action === RENEW_PERMIT_ACTION && (
-                        <RenewPermitDialog open onClose={() => setAction("")} permit={permit} onSuccess={handleActionSuccess} />
-                    )}
+                    </EntityCard.Body>
                 </>
             )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.permit),
     withLanguage("src/modules/propertyManagement/clients/panel/private/permits/center/cardView/permitCard.tsx"),
     withDebug(true, true),
 )(PermitCard);

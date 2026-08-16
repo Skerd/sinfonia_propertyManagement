@@ -16,7 +16,7 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 export type ProjectSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     project?: Project;
     hideActions?: boolean;
     onDelete?: (response?: DeletedData) => void;

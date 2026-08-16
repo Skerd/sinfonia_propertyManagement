@@ -15,7 +15,7 @@ import {buildFloorEditPath} from "@propertyManagementModule/clients/panel/privat
 export type FloorSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
-    /** Full row from list/card, or bootstrap from SmallInfoCard while `/single` loads. */
+    /** Full row from list/card, or bootstrap from DisplayCard while `/single` loads. */
     floor?: Floor;
     hideActions?: boolean;
     onDelete?: (response?: DeleteResponse) => void;

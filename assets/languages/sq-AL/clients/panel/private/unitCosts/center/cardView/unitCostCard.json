@@ -4,6 +4,8 @@
   "failedDescription": "Diçka shkoi keq. Klikoni për të provuar përsëri.",
   "purchaseDate": "Data e blerjes",
   "purchasePerson": "Blerësi",
+  "verificationStatus": "Verifikimi",
+  "paymentStatus": "Pagesa",
   "documentSubtotal": "Nëntotali",
   "unitCostVerification": {
     "pending_verification": "Në pritje të verifikimit",

@@ -41,6 +41,7 @@
   "statusLeased": "Leased",
   "statusUnknown": "Unknown",
   "priceNotSet": "Price Not Set",
+  "constructionStatusLabel": "Construction status",
   "constructionStatus": {
     "planned": "Planned",
     "under_construction": "Under Construction",

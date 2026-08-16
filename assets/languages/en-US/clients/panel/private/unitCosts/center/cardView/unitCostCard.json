@@ -4,6 +4,8 @@
   "failedDescription": "Something went wrong. Click to retry.",
   "purchaseDate": "Purchase date",
   "purchasePerson": "Purchased by",
+  "verificationStatus": "Verification",
+  "paymentStatus": "Payment",
   "documentSubtotal": "Subtotal",
   "unitCostVerification": {
     "pending_verification": "Pending verification",

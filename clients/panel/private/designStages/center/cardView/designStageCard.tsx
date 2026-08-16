@@ -1,74 +1,79 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import type {DesignStage} from "armonia/src/modules/propertyManagement/api/realEstate/private/designStage/designStage.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {withDeletedDrawer} from "@coreModule/helpers/hocs/withDeletedDrawer.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/designStages/center/sheetView/designStageSheetView.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import {useEntityCard} from "@coreModule/helpers/hooks/useEntityCard.ts";
-import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
-import {EntityTextCardHeader} from "@propertyManagementModule/components/custom/cards/EntityTextCardHeader.tsx";
-import {CARD_BODY_CLASS, STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import type {RefObject} from "react";
 
-type Props = WithLanguageType & {
+function designStageEditPath(designStage: DesignStage) {
+    const params = new URLSearchParams();
+    params.set("designStageId", designStage._id);
+    if (designStage.name) params.set("designStageName", designStage.name);
+    return `/realEstate/designStages/edit?${params.toString()}`;
+}
+
+type DesignStageCardProps = WithLanguageType & {
     entity: DesignStage;
+    fetchId?: string;
+    hideActions?: boolean;
     onDelete?: (deleted?: DesignStage, response?: DeletedData) => void;
     onRestore?: () => void;
-    hideActions?: boolean;
+    sheetOnly?: boolean;
+    innerRef?: RefObject<WithAxiosLifecycleRef<DesignStage> | null>;
 };
 
-function Card({entity: prop, onDelete: onDeleteProp, onRestore: onRestoreProp, hideActions = false}: Props) {
-    const {action, setAction, entity, hideAfterDeletion, onDelete, onRestore} = useEntityCard({entityProp: prop, onDeleteProp, onRestoreProp});
-    const {read, restore} = useAccess("designstages");
-    if (hideAfterDeletion || !restore) return <></>;
-    if (!read || !Object.keys(read).length) return <HiddenElement />;
-    const params = new URLSearchParams();
-    params.set("designStageId", entity._id);
-    if (entity.name) params.set("designStageName", entity.name);
-    const editPath = `/realEstate/designStages/edit?${params.toString()}`;
+function DesignStageCard({
+    entity,
+    fetchId,
+    hideActions = false,
+    onDelete,
+    onRestore,
+    sheetOnly = false,
+    innerRef,
+}: DesignStageCardProps) {
     return (
-        <>
-            <EntityCardShell onClick={() => setAction("view")}>
-                <EntityTextCardHeader
-                    title={entity.title}
-                    subtitle={entity.name}
-                    badges={entity.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{entity.status}</Badge>
+        <EntityCard
+            resource="designstages"
+            entity={entity}
+            fetchId={fetchId}
+            singleUrl="/api/realEstate/designStage/single"
+            onDelete={onDelete}
+            onRestore={onRestore}
+            hideActions={hideActions}
+            sheetOnly={sheetOnly}
+            editPath={designStageEditPath}
+            Sheet={Sheet}
+            sheetEntityProp="entity"
+            deleteUrl="/api/realEstate/designStage"
+            restoreUrl="/api/realEstate/designStage/restore"
+            failedTitle=""
+            failedDescription=""
+            titlePath="title"
+            innerRef={innerRef}
+            sheetProps={() => ({fetchId})}
+        >
+            {({entity: row}) => (
+                <EntityCard.Header
+                    titlePath="title"
+                    title={row.title}
+                    subtitle={row.name}
+                    subtitlePath="name"
+                    badges={row.status ? (
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{row.status}</Badge>
                     ) : null}
-                    showTitle={!!read?.title}
-                    showSubtitle={!!read?.name}
-                    showBadges={!!read?.status}
-                    hideActions={hideActions}
-                    actionMenu={
-                        <ActionMenu accessModel="designstages" deletedData={entity} onAction={(a: string) => setAction(a)} editPath={editPath} />
-                    }
                 />
-                <Separator />
-                <div className={CARD_BODY_CLASS} />
-            </EntityCardShell>
-            {action === "view" && (
-                <Sheet open onOpenChange={() => setAction("")} entity={entity} onDelete={onDelete} onRestore={onRestore} />
             )}
-            {action === "delete" && (
-                <DeleteAction accessModel="designstages" deleteId={entity._id} openAlert name={entity.title} confirmName={entity.title} onSuccess={onDelete} onCancel={() => setAction("")} url="/api/realEstate/designStage" />
-            )}
-            {action === "restore" && (
-                <RestoreAction accessModel="designstages" deleteId={entity._id} openAlert name={entity.title} confirmName={entity.title} onSuccess={onRestore} onCancel={() => setAction("")} url="/api/realEstate/designStage/restore" />
-            )}
-        </>
+        </EntityCard>
     );
 }
 
 export default compose(
-    (Component: any) => withDeletedDrawer(Component, (props: any) => props.entity),
     withLanguage("src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx"),
     withDebug(true, true),
-)(Card);
+)(DesignStageCard);
