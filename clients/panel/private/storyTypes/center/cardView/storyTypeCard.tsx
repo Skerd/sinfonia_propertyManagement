@@ -62,8 +62,6 @@ function StoryTypeCard({
                     <EntityCard.Header
                         titlePath="name"
                         title={entity.name}
-                        subtitle={entity.slug}
-                        subtitlePath="slug"
                     />
                     <EntityCard.Body>
                         <DisplayRow

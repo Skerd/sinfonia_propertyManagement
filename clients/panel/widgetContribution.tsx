@@ -83,6 +83,12 @@ const UnitCostSheetViewLazy = lazy(
 const UnitTypeSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx"),
 );
+const UnitTypeCategorySheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/unitTypeCategories/center/sheetView/unitTypeCategorySheetView.tsx"
+        ),
+);
 const StoryTypeSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx"),
 );
@@ -262,6 +268,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#InspectionSheetView": InspectionSheetViewLazy,
         "#UnitCostSheetView": UnitCostSheetViewLazy,
         "#UnitTypeSheetView": UnitTypeSheetViewLazy,
+        "#UnitTypeCategorySheetView": UnitTypeCategorySheetViewLazy,
         "#StoryTypeSheetView": StoryTypeSheetViewLazy,
         "#ConstructorSheetView": ConstructorSheetViewLazy,
         "#CommissionSheetView": CommissionSheetViewLazy,
@@ -383,6 +390,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#FloorSheetView": {url: "/api/realEstate/floor/single", labelFields: ["name"]},
         "#UnitSheetView": {url: "/api/realEstate/unit/single", labelFields: ["unitNumber", "name"]},
         "#UnitTypeSheetView": {url: "/api/realEstate/unitType/single", labelFields: ["name"]},
+        "#UnitTypeCategorySheetView": {url: "/api/realEstate/unitTypeCategory/single", labelFields: ["name"]},
         "#StoryTypeSheetView": {url: "/api/realEstate/storyType/single", labelFields: ["name"]},
         "#InspectionSheetView": {url: "/api/realEstate/unit/inspection/single", labelFields: ["name", "title"]},
         "#UnitCostSheetView": {url: "/api/realEstate/unit/cost/single", labelFields: ["name", "title"]},
