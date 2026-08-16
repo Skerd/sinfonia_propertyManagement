@@ -38,7 +38,7 @@
   },
   "formHeader": {
     "title": "LV hinzufügen",
-    "description": ""
+    "description": "Angaben für record erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

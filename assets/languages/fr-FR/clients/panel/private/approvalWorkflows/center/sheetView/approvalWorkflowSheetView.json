@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/sheetView/approvalWorkflowSheetView.tsx",
+  "approvalWorkflow": "Approval Workflow",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "documentType": "Document Type",
+  "title": "Titre",
+  "approverRole": "Approver Role",
+  "thresholdAmount": "Threshold Amount",
+  "thresholdCurrency": "Threshold Currency",
+  "escalationRole": "Escalation Role",
+  "active": "Actif",
+  "notes": "Notes",
+  "documentTypes": {
+    "budget": "Budget",
+    "cost_estimate": "Cost Estimate",
+    "contract": "Contrat",
+    "variation_order": "Variation Order",
+    "contractor_invoice": "Contractor Invoice",
+    "progress_claim": "Progress Claim"
+  },
+  "activeState": {
+    "true": "Actif",
+    "false": "Inactive"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger circuit d'approbation",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

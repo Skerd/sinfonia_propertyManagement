@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/createSiteDiary.tsx",
-  "title": "Shto Site Diary",
+  "title": "Shto ditar sheshi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Site Diary",
-    "description": ""
+    "title": "Shto ditar sheshi",
+    "description": "Plotëso të dhënat për të krijuar ditar sheshi."
   },
   "formButtons": {
     "cancel": "Anulo",

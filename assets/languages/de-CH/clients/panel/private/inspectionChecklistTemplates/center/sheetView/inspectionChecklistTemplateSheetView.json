@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
   "inspectionChecklistTemplate": "Abnahme-Checklisten-Vorlage",
   "overview": "Übersicht",
-  "media": "Attachments",
+  "media": "Anhänge",
   "name": "Referenz",
   "title": "Bezeichnung",
   "status": "Status",
@@ -20,5 +20,8 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "failedTitle": "Abnahme-Checkliste konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

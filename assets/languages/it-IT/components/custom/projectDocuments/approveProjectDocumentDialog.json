@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/approveProjectDocumentDialog.tsx",
+  "dialogTitle": "Approve document",
+  "dialogDescription": "Approve this document. You can add optional review notes.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Optional approval notes",
+  "cancel": "Annulla",
+  "submit": "Approve"
+}

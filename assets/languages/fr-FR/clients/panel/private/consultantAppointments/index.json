@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
+  "title": "Mandats de consultants",
+  "description": "Mandats d'architectes, d'ingénieurs et de spécialistes (honoraires SIA)",
+  "createConsultantAppointment": "Ajouter un mandat",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "adjustmentFactor": "Facteur d'ajustement",
+    "basisKind": "Basis",
+    "cappedAmount": "Montant plafonné",
+    "constructorRef": "Entrepreneur",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "deliverables": "Livrables",
+    "endDate": "Date de fin",
+    "feeAmount": "Montant des honoraires",
+    "feeModel": "Modèle d'honoraires",
+    "hourlyRate": "Taux horaire",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "role": "Rôle",
+    "scope": "Périmètre",
+    "startDate": "Date de début",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "feeModel": {
+        "sia_102": "SIA 102",
+        "sia_103": "SIA 103",
+        "sia_108": "SIA 108",
+        "lump_sum": "Forfait",
+        "time_based": "À l'heure"
+      },
+      "basisKind": {
+        "construction_cost": "Coût de construction",
+        "fixed": "Fixe",
+        "hourly": "Horaire"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "active": "Actif",
+        "completed": "Terminé",
+        "terminated": "Résilié"
+      },
+      "role": {
+        "architect": "Architecte",
+        "engineer": "Ingénieur",
+        "qs": "QS",
+        "pm": "PM",
+        "surveyor": "Géomètre",
+        "other": "Autre"
+      }
+    }
+  }
+}

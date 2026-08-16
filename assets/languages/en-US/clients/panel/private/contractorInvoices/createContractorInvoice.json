@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/createContractorInvoice.tsx",
-  "title": "Add Invoice",
+  "title": "Add invoice",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -51,8 +51,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Invoice",
-    "description": ""
+    "title": "Add invoice",
+    "description": "Enter the details to create a new contractor invoice."
   },
   "formButtons": {
     "cancel": "Cancel",

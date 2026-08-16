@@ -15,5 +15,8 @@
         "cancelled": "E anuluar"
       }
     }
-  }
+  },
+  "failedTitle": "Dështoi ngarkimi i record",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

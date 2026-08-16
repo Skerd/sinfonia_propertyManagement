@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/editFeeCalculation.tsx",
-  "title": "Honorar bearbeiten",
+  "title": "Honorarberechnung bearbeiten",
   "generalInfo": "Details",
   "form": {
     "consultantAppointmentLabel": "Beauftragung",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Honorar bearbeiten",
-    "description": ""
+    "title": "Honorarberechnung bearbeiten",
+    "description": "Angaben für diesen Honorarberechnung aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

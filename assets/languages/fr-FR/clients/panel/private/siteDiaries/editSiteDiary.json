@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/editSiteDiary.tsx",
+  "title": "Modifier journal de chantier",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "diaryDateLabel": "Diary Date",
+    "diaryDatePlaceholder": "Diary Date",
+    "weatherLabel": "Weather",
+    "weatherPlaceholder": "Weather",
+    "workforceCountLabel": "Workforce Count",
+    "workforceCountPlaceholder": "Workforce Count",
+    "plantSummaryLabel": "Plant Summary",
+    "plantSummaryPlaceholder": "Plant Summary",
+    "workSummaryLabel": "Work Summary",
+    "workSummaryPlaceholder": "Work Summary",
+    "visitorsLabel": "Visitors",
+    "visitorsPlaceholder": "Visitors",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier journal de chantier",
+    "description": "Mettez à jour les informations de ce journal de chantier."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/cardView/warrantyCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/cardView/warrantyCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i garanci",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "active": "Aktive",
+    "expired": "Skaduar",
+    "void": "I Pavlefshëm"
+  },
+  "statuses": {
+    "active": "Aktive",
+    "expired": "Skaduar",
+    "void": "I Pavlefshëm"
+  }
 }

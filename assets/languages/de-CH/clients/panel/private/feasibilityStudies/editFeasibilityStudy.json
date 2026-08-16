@@ -29,8 +29,8 @@
     "descriptionPlaceholder": "Beschreibung",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "decidedByLabel": "Decided von",
     "decidedByPlaceholder": "Benutzer auswählen",
@@ -53,7 +53,7 @@
   },
   "formHeader": {
     "title": "Machbarkeitsstudie bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Machbarkeitsstudie aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

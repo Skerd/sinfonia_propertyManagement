@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx",
+  "failedTitle": "Impossibile caricare pacchetto di consegna",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Completato"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Completato"
+  }
+}

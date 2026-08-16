@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/index.tsx",
+  "title": "Bid Lines",
+  "description": "Priced lines of a bid against LV positions",
+  "createBidLine": "Add Bid Line",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "alternativeNote": "Alternative Note",
+    "bid": "Bid",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "lineTotal": "Line Total",
+    "name": "Riferimento",
+    "quantity": "Quantity",
+    "sortIndex": "Sort Order",
+    "specificationItem": "LV Position",
+    "title": "Titolo",
+    "unitPrice": "Unit Price",
+    "updatedAt": "Aggiornato il"
+  }
+}

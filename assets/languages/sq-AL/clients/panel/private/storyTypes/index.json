@@ -1,18 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
-  "title": "Story Types",
-  "description": "Manage all story types",
-  "createStoryType": "Create Story Type",
-  "noData": "No story types found",
-  "failTitle": "Failed to load story types",
-  "failDescription": "An error occurred while loading story types. Please try again.",
-  "status": "Status",
-  "active": "Active",
-  "deleted": "Deleted",
-  "name": "Name",
-  "slug": "Slug",
-  "sortOrder": "Sort order",
-  "description": "Description",
+  "title": "Llojet e historive",
+  "description": "Menaxho llojet e historive të ditarit të projektit",
+  "createStoryType": "Krijo lloj historie",
+  "noData": "Nuk u gjetën lloje historish",
+  "failTitle": "Ngarkimi i llojeve të historive dështoi",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
   "fields": {
     "company": "Company",
     "createdAt": "Created At",
@@ -25,5 +18,5 @@
     "sortOrder": "Sort order",
     "updatedAt": "Updated At"
   },
-  "searchPlaceholder": "Search or add filters..."
+  "searchPlaceholder": "Kërko ose shto filtra..."
 }

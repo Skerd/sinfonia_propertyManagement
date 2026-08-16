@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/center/sheetView/bimQuantitySheetView.tsx",
+  "bimQuantity": "BIM Quantity",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "bimModel": "BIM Model",
+  "ifcElementType": "IFC Element Type",
+  "classificationCode": "Classification Code",
+  "quantity": "Quantity",
+  "unitOfMeasure": "Unit of Measure",
+  "notes": "Note",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

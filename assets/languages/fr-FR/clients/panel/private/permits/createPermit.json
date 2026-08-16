@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/createPermit.tsx",
+  "title": "Add Permit",
+  "description": "Register a new regulatory permit",
+  "generalInfo": "Permit Details",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Permit title",
+    "permitTypeLabel": "Permit Type",
+    "permitTypePlaceholder": "Select type",
+    "typeBuilding": "Building",
+    "typeExcavation": "Excavation",
+    "typeEnvironmental": "Environmental",
+    "typeFire": "Fire",
+    "typeUtility": "Utility",
+    "typeOccupancy": "Occupancy",
+    "typeZoning": "Zoning",
+    "typeOther": "Autre",
+    "authorityLabel": "Authority",
+    "authorityPlaceholder": "Regulatory body",
+    "referenceNumberLabel": "Reference Number",
+    "referenceNumberPlaceholder": "Official reference",
+    "expiresAtLabel": "Expires At",
+    "expiresAtPlaceholder": "Select date",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Internal notes",
+    "mediaLabel": "Files",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Add files"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating permit",
+      "time": 3000
+    },
+    "success": {
+      "title": "Permit created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create permit",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Permit",
+    "description": "Register a new regulatory permit"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Add Permit"
+  }
+}

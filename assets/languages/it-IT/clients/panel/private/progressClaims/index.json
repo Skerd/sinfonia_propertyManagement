@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/index.tsx",
+  "title": "Stati di avanzamento",
+  "description": "Stati di avanzamento delle imprese",
+  "createProgressClaim": "Aggiungi SAL",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "amount": "Importo",
+    "certifiedAmount": "Certified Amount",
+    "claimPeriodEnd": "Claim Period End",
+    "claimPeriodStart": "Claim Period Start",
+    "constructionContract": "Construction Contract",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "retentionHeld": "Retention Held",
+    "retentionReleased": "Retention Released",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "submitted": "Submitted",
+        "certified": "Certified",
+        "paid": "Paid",
+        "rejected": "Rejected"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/editPlanMarkup.tsx",
-  "title": "Ndrysho Shënimin",
+  "title": "Ndrysho shënim plani",
   "generalInfo": "Detajet",
   "form": {
     "planDocumentLabel": "Dokumenti i Planit",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Shënimin",
-    "description": ""
+    "title": "Ndrysho shënim plani",
+    "description": "Përditëso të dhënat e këtij shënim plani."
   },
   "formButtons": {
     "cancel": "Anulo",

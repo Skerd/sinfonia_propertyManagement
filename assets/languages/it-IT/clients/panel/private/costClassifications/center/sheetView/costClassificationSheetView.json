@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/center/sheetView/costClassificationSheetView.tsx",
+  "costClassification": "Cost Classification",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "standard": "Standard",
+  "code": "Code",
+  "parentCode": "Parent Code",
+  "level": "Level",
+  "title": "Titolo",
+  "unitOfMeasure": "Unit of Measure",
+  "sortIndex": "Sort Index",
+  "active": "Attivo",
+  "notes": "Note",
+  "standards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "sia": "SIA",
+    "custom": "Custom"
+  },
+  "activeState": {
+    "true": "Attivo",
+    "false": "Inactive"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

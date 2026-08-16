@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/cardView/submittalCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/cardView/submittalCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i dorëzim materialesh",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "submitted": "Dërguar",
+    "revise_and_resubmit": "Rishiko & Ridërgo",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dërguar",
+    "revise_and_resubmit": "Rishiko & Ridërgo",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
+  }
 }

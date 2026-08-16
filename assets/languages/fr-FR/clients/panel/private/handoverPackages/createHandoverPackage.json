@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/createHandoverPackage.tsx",
+  "title": "Ajouter un dossier",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Select unit",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "omManualsCompleteLabel": "O&M Manuals Complete",
+    "asBuiltCompleteLabel": "As-Built Complete",
+    "keysTransferredLabel": "Keys Transferred",
+    "trainingCompleteLabel": "Training Complete",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un dossier",
+    "description": "Saisissez les informations pour créer un dossier de réception."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/createWorkPackage.tsx",
+  "title": "Aggiungi pacchetto",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "constructorLabel": "Impresa",
+    "constructorPlaceholder": "Seleziona impresa",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "tradeLabel": "Trade",
+    "tradePlaceholder": "Trade",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "plannedStartLabel": "Planned Start",
+    "plannedStartPlaceholder": "Planned Start",
+    "plannedEndLabel": "Planned End",
+    "plannedEndPlaceholder": "Planned End",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi pacchetto",
+    "description": "Inserisci i dati per creare un pacchetto di lavoro."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

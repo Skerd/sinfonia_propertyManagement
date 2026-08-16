@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/cardView/incomingInvoiceCard.tsx",
+  "failedTitle": "Impossibile caricare fattura in arrivo",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "inbox": "Inbox",
+    "classified": "Classified",
+    "routed": "Routed",
+    "posted": "Posted",
+    "rejected": "Rejected"
+  },
+  "statuses": {
+    "inbox": "Inbox",
+    "classified": "Classified",
+    "routed": "Routed",
+    "posted": "Posted",
+    "rejected": "Rejected"
+  }
+}

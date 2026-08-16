@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/editBimModel.tsx",
+  "title": "Modifica modello BIM",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "versionLabel": "Version",
+    "versionPlaceholder": "Version",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica modello BIM",
+    "description": "Aggiorna i dati di questo modello BIM."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

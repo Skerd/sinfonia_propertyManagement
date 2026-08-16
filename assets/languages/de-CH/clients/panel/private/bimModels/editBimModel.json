@@ -30,7 +30,7 @@
   },
   "formHeader": {
     "title": "BIM-Modell bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen BIM-Modell aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

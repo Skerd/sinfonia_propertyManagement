@@ -31,5 +31,8 @@
     "unavailable": "Jodisponibël",
     "unavailableDesc": "Nuk disponohet për shitje"
   },
-  "viewEdifices": "Shiko Ndërtesat"
+  "viewEdifices": "Shiko Ndërtesat",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

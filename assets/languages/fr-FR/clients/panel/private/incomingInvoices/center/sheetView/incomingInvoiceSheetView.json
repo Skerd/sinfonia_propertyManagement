@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/sheetView/incomingInvoiceSheetView.tsx",
+  "incomingInvoice": "Incoming Invoice",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "title": "Titre",
+  "ocrStatus": "OCR Status",
+  "extractedSupplierName": "Supplier",
+  "extractedIban": "IBAN",
+  "extractedAmount": "Montant",
+  "extractedCurrencyCode": "Currency Code",
+  "extractedInvoiceNumber": "Invoice No.",
+  "extractedInvoiceDate": "Invoice Date",
+  "extractedDueDate": "Échéance",
+  "extractedQrReference": "QR Reference",
+  "matchedConstructor": "Matched Contractor",
+  "bkpAccountCode": "BKP Account",
+  "createdContractorInvoice": "Created Invoice",
+  "notes": "Notes",
+  "status": "Statut",
+  "statuses": {
+    "inbox": "Inbox",
+    "classified": "Classified",
+    "routed": "Routed",
+    "posted": "Posted",
+    "rejected": "Rejected"
+  },
+  "ocrStatuses": {
+    "pending": "Pending",
+    "done": "Done",
+    "failed": "Failed"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger facture entrante",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

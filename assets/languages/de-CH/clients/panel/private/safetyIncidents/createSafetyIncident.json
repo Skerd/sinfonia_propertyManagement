@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/createSafetyIncident.tsx",
-  "title": "Sicherheitsvorfall hinzufügen",
+  "title": "Vorfall hinzufügen",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -27,8 +27,8 @@
     "correctiveActionsPlaceholder": "Korrektiv Massnahmen",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "reportedByLabel": "Reported von",
     "reportedByPlaceholder": "Benutzer auswählen"
@@ -48,8 +48,8 @@
     }
   },
   "formHeader": {
-    "title": "Sicherheitsvorfall hinzufügen",
-    "description": ""
+    "title": "Vorfall hinzufügen",
+    "description": "Angaben für Sicherheitsvorfall erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

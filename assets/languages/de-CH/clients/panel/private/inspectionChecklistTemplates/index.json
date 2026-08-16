@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
-  "title": "InspectionChecklistTemplate",
-  "description": "InspectionChecklistTemplate register",
-  "createInspectionChecklistTemplate": "InspectionChecklistTemplate hinzufügen",
+  "title": "Abnahme-Checklisten",
+  "description": "Wiederverwendbare Vorlagen für Abnahme und Übergabe",
+  "createInspectionChecklistTemplate": "Checkliste hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

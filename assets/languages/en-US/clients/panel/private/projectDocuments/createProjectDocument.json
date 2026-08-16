@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/createProjectDocument.tsx",
-  "title": "New Project Document",
+  "title": "Add document",
   "description": "Register a new drawing or document",
   "generalInfo": "Document Details",
   "form": {
@@ -68,8 +68,8 @@
     }
   },
   "formHeader": {
-    "title": "New Project Document",
-    "description": "Register a new drawing or document"
+    "title": "Add document",
+    "description": "Enter the details to create a new document."
   },
   "formButtons": {
     "cancel": "Cancel",

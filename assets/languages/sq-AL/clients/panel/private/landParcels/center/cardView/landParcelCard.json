@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i parcelë",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "prospect": "Prospekt",
+    "under_dd": "Në Due Diligence",
+    "acquired": "Blerë",
+    "disposed": "Alienuar"
+  },
+  "statuses": {
+    "prospect": "Prospekt",
+    "under_dd": "Në Due Diligence",
+    "acquired": "Blerë",
+    "disposed": "Alienuar"
+  }
 }

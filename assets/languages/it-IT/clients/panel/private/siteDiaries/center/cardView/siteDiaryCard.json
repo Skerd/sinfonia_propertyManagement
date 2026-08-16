@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/cardView/siteDiaryCard.tsx",
+  "failedTitle": "Impossibile caricare giornale di cantiere",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "published": "Published"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "published": "Published"
+  }
+}

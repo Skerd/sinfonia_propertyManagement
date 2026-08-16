@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/editVariationOrder.tsx",
-  "title": "Ndrysho Variation Order",
+  "title": "Ndrysho urdhrë ndryshimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Variation Order",
-    "description": ""
+    "title": "Ndrysho urdhrë ndryshimi",
+    "description": "Përditëso të dhënat e këtij urdhrë ndryshimi."
   },
   "formButtons": {
     "cancel": "Anulo",

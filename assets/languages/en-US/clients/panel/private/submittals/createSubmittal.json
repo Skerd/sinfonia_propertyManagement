@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/submittals/createSubmittal.tsx",
-  "title": "Add Submittal",
+  "title": "Add submittal",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Submittal",
-    "description": ""
+    "title": "Add submittal",
+    "description": "Enter the details to create a new submittal."
   },
   "formButtons": {
     "cancel": "Cancel",

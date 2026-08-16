@@ -1,0 +1,70 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/createConsultantAppointment.tsx",
+  "title": "Ajouter un mandat",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "constructorLabel": "Entrepreneur",
+    "constructorPlaceholder": "Sélectionner un entrepreneur",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "roleLabel": "Rôle",
+    "rolePlaceholder": "Sélectionner un rôle",
+    "role_architect": "Architecte",
+    "role_engineer": "Ingénieur",
+    "role_qs": "QS",
+    "role_pm": "PM",
+    "role_surveyor": "Géomètre",
+    "role_other": "Autre",
+    "scopeLabel": "Périmètre",
+    "scopePlaceholder": "Périmètre",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "feeAmountLabel": "Montant des honoraires",
+    "feeAmountPlaceholder": "Montant des honoraires",
+    "startDateLabel": "Date de début",
+    "startDatePlaceholder": "Date de début",
+    "endDateLabel": "Date de fin",
+    "endDatePlaceholder": "Date de fin",
+    "deliverablesLabel": "Livrables",
+    "deliverablesPlaceholder": "Livrables",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers",
+    "feeModelLabel": "Modèle d'honoraires",
+    "feeModelPlaceholder": "Select fee model",
+    "basisKindLabel": "Basis Kind",
+    "basisKindPlaceholder": "Select basis",
+    "adjustmentFactorLabel": "Facteur d'ajustement",
+    "adjustmentFactorPlaceholder": "e.g. 1.0",
+    "hourlyRateLabel": "Taux horaire",
+    "hourlyRatePlaceholder": "Hourly rate",
+    "cappedAmountLabel": "Montant plafonné",
+    "cappedAmountPlaceholder": "Cap"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un mandat",
+    "description": "Saisissez les informations pour créer un mandat de consultant."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

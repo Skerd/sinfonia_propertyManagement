@@ -30,7 +30,7 @@
   },
   "formHeader": {
     "title": "BIM-Modell hinzufügen",
-    "description": ""
+    "description": "Angaben für BIM-Modell erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

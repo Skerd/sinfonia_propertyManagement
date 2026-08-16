@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/createIncomingInvoice.tsx",
-  "title": "Add Incoming Invoice",
+  "title": "Add incoming invoice",
   "generalInfo": "Details",
   "form": {
     "titleLabel": "Title",
@@ -49,8 +49,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Incoming Invoice",
-    "description": ""
+    "title": "Add incoming invoice",
+    "description": "Enter the details to create a new incoming invoice."
   },
   "formButtons": {
     "cancel": "Cancel",

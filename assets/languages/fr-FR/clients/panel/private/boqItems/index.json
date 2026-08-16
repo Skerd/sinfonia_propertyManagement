@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/index.tsx",
+  "title": "Postes DQ",
+  "description": "Devis quantitatif et postes mesurés",
+  "createBoqItem": "Ajouter un poste DQ",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "actualAmount": "Actual Amount",
+    "actualQty": "Actual Qty",
+    "budget": "Budget",
+    "category": "Category",
+    "classificationCode": "Classification Code",
+    "classificationStandard": "Classification Standard",
+    "constructorRef": "Entrepreneur",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "elementCode": "Element Code",
+    "name": "Référence",
+    "notes": "Notes",
+    "plannedAmount": "Planned Amount",
+    "plannedQty": "Planned Qty",
+    "plannedRate": "Planned Rate",
+    "project": "Projet",
+    "status": "Statut",
+    "title": "Titre",
+    "trade": "Trade",
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Mis à jour le",
+    "wbsCode": "WBS Code",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "active": "Actif",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

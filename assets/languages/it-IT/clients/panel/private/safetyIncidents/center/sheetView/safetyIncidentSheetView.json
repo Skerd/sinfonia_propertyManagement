@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/sheetView/safetyIncidentSheetView.tsx",
+  "safetyIncident": "Safety Incident",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "severity": "Severity",
+  "location": "Location",
+  "incidentDate": "Incident Date",
+  "personsInvolved": "Persons Involved",
+  "description": "Descrizione",
+  "correctiveActions": "Corrective Actions",
+  "notes": "Note",
+  "statuses": {
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "closed": "Closed"
+  },
+  "reportedBy": "Reported by",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare incidente di sicurezza",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

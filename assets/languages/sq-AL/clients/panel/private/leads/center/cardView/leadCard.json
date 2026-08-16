@@ -36,5 +36,8 @@
     "reservation": "Rezervim",
     "other": "Tjetër"
   },
-  "chat": "Chat i faqes"
+  "chat": "Chat i faqes",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i kërkesë progresi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "submitted": "Dërguar",
+    "certified": "Certifikuar",
+    "paid": "Paguar",
+    "rejected": "Refuzuar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dërguar",
+    "certified": "Certifikuar",
+    "paid": "Paguar",
+    "rejected": "Refuzuar"
+  }
 }

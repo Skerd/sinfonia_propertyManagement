@@ -71,8 +71,8 @@ function ScheduleTaskCard({
             sheetEntityProp="scheduleTask"
             deleteUrl="/api/realEstate/scheduleTask"
             restoreUrl="/api/realEstate/scheduleTask/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

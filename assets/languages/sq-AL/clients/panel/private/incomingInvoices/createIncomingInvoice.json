@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/createIncomingInvoice.tsx",
-  "title": "Shto Faturë Hyrëse",
+  "title": "Shto faturë hyrëse",
   "generalInfo": "Detajet",
   "form": {
     "titleLabel": "Titulli",
@@ -49,8 +49,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Faturë Hyrëse",
-    "description": ""
+    "title": "Shto faturë hyrëse",
+    "description": "Plotëso të dhënat për të krijuar faturë hyrëse."
   },
   "formButtons": {
     "cancel": "Anulo",

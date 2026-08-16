@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/editMaintenanceWorkOrder.tsx",
+  "title": "Edit Work Order",
+  "generalInfo": "Dettagli",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Select plan",
+    "assetLabel": "Asset",
+    "assetPlaceholder": "Select asset",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "typeLabel": "Tipo",
+    "typePlaceholder": "Select type",
+    "assigneeLabel": "Assignee",
+    "assigneePlaceholder": "Select assignee",
+    "costEstimateLabel": "Cost Estimate",
+    "costEstimatePlaceholder": "Importo",
+    "actualCostLabel": "Actual Cost",
+    "actualCostPlaceholder": "Importo",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "dueDateLabel": "Scadenza",
+    "dueDatePlaceholder": "Due date",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Work Order",
+    "description": "Aggiorna i dati di questo record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

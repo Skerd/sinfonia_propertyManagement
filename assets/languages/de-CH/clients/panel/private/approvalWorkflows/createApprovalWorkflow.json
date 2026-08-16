@@ -35,7 +35,7 @@
   },
   "formHeader": {
     "title": "Workflow hinzufügen",
-    "description": ""
+    "description": "Angaben für Freigabe-Workflow erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

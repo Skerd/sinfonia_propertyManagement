@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/createFeeCalculation.tsx",
-  "title": "Add Fee Calc",
+  "title": "Add fee calculation",
   "generalInfo": "Details",
   "form": {
     "consultantAppointmentLabel": "Consultant Appointment",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Fee Calc",
-    "description": ""
+    "title": "Add fee calculation",
+    "description": "Enter the details to create a new fee calculation."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/sheetView/approvalWorkflowSheetView.tsx",
+  "approvalWorkflow": "Approval Workflow",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "documentType": "Document Type",
+  "title": "Titolo",
+  "approverRole": "Approver Role",
+  "thresholdAmount": "Threshold Amount",
+  "thresholdCurrency": "Threshold Currency",
+  "escalationRole": "Escalation Role",
+  "active": "Attivo",
+  "notes": "Note",
+  "documentTypes": {
+    "budget": "Budget",
+    "cost_estimate": "Cost Estimate",
+    "contract": "Contratto",
+    "variation_order": "Variation Order",
+    "contractor_invoice": "Contractor Invoice",
+    "progress_claim": "Progress Claim"
+  },
+  "activeState": {
+    "true": "Attivo",
+    "false": "Inactive"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare flusso di approvazione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

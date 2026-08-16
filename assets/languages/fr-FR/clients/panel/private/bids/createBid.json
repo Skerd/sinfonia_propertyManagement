@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/createBid.tsx",
+  "title": "Ajouter une offre",
+  "generalInfo": "Détails",
+  "form": {
+    "tenderLabel": "Tender",
+    "tenderPlaceholder": "Select tender",
+    "tenderInvitationLabel": "Invitation",
+    "tenderInvitationPlaceholder": "Select invitation",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "totalLabel": "Total",
+    "totalPlaceholder": "Total",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "coveringNotesLabel": "Covering Notes",
+    "coveringNotesPlaceholder": "Covering notes",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter une offre",
+    "description": "Saisissez les informations pour créer un offre."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

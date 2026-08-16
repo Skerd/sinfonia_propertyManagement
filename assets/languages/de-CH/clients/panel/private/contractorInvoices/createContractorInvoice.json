@@ -52,7 +52,7 @@
   },
   "formHeader": {
     "title": "Rechnung hinzufügen",
-    "description": ""
+    "description": "Angaben für Unternehmerrechnung erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

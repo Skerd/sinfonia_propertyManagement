@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/createPlanMarkup.tsx",
-  "title": "Shto Shënim",
+  "title": "Shto shënim",
   "generalInfo": "Detajet",
   "form": {
     "planDocumentLabel": "Dokumenti i Planit",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Shënim",
-    "description": ""
+    "title": "Shto shënim",
+    "description": "Plotëso të dhënat për të krijuar shënim plani."
   },
   "formButtons": {
     "cancel": "Anulo",

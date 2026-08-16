@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/cardView/budgetCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/cardView/budgetCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i buxhet",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "pending_approval": "Në Pritje të Miratimit",
+    "approved": "Miratuar",
+    "locked": "I Kyçur",
+    "superseded": "Zëvendësuar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "pending_approval": "Në Pritje të Miratimit",
+    "approved": "Miratuar",
+    "locked": "I Kyçur",
+    "superseded": "Zëvendësuar"
+  }
 }

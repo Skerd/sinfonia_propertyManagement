@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i paketë dorëzimi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "in_progress": "Në Progres",
+    "ready": "Gati",
+    "completed": "Përfunduar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "in_progress": "Në Progres",
+    "ready": "Gati",
+    "completed": "Përfunduar"
+  }
 }

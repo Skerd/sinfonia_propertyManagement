@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
+  "title": "Pacchetti di consegna",
+  "description": "Documentazione as-built per proprietari e gestori",
+  "createHandoverPackage": "Aggiungi pacchetto",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "asBuiltComplete": "As-Built Complete",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "keysTransferred": "Keys Transferred",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "omManualsComplete": "O&M Manuals Complete",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "trainingComplete": "Training Complete",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "in_progress": "In Progress",
+        "ready": "Ready",
+        "completed": "Completato"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Vendite e consegna",
+  "title": "Modifica Vendite & consegna",
   "generalInfo": "Controlli del flusso di lavoro",
   "form": {
     "requiresSaleApprovalLabel": "Richiedi l’approvazione del responsabile alla creazione di una vendita",
@@ -21,8 +21,8 @@
     }
   },
   "formHeader": {
-    "title": "Vendite e consegna",
-    "description": "Politica aziendale di vendita e consegna per il real estate."
+    "title": "Modifica Vendite & consegna",
+    "description": "Aggiorna i dati di questo Vendite & consegna."
   },
   "formButtons": {
     "cancel": "Annulla",

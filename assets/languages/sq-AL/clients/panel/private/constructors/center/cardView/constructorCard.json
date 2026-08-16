@@ -10,5 +10,8 @@
   "description": "Përshkrimi",
   "edifices": "Ndërtesat",
   "address": "Adresa",
-  "deleted": "Fshirë"
+  "deleted": "Fshirë",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

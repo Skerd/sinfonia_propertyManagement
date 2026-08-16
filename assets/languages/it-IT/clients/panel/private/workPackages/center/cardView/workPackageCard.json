@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/cardView/workPackageCard.tsx",
+  "failedTitle": "Impossibile caricare pacchetto di lavoro",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "planned": "Planned",
+    "active": "Attivo",
+    "completed": "Completato",
+    "cancelled": "Cancelled"
+  },
+  "statuses": {
+    "planned": "Planned",
+    "active": "Attivo",
+    "completed": "Completato",
+    "cancelled": "Cancelled"
+  }
+}

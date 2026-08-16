@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/cardView/submittalCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/cardView/submittalCard.tsx",
+  "failedTitle": "Failed to load submittal",
+  "failedDescription": "Something went wrong while loading this submittal. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "revise_and_resubmit": "Revise & Resubmit",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "revise_and_resubmit": "Revise & Resubmit",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  }
 }

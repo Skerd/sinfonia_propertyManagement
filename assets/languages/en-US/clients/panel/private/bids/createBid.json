@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bids/createBid.tsx",
-  "title": "Add Bid",
+  "title": "Add bid",
   "generalInfo": "Details",
   "form": {
     "tenderLabel": "Tender",
@@ -33,8 +33,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Bid",
-    "description": ""
+    "title": "Add bid",
+    "description": "Enter the details to create a new bid."
   },
   "formButtons": {
     "cancel": "Cancel",

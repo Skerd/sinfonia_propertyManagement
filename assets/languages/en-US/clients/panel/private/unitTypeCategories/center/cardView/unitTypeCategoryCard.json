@@ -3,5 +3,8 @@
   "active": "Active",
   "name": "Name",
   "deleted": "Deleted",
-  "unitTypeCategory": "Unit Type Category"
+  "unitTypeCategory": "Unit Type Category",
+  "failedTitle": "Failed to load this record",
+  "failedDescription": "Something went wrong while loading. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

@@ -32,7 +32,7 @@
   },
   "formHeader": {
     "title": "Add Quantity",
-    "description": ""
+    "description": "Enter the details to create a new record."
   },
   "formButtons": {
     "cancel": "Cancel",

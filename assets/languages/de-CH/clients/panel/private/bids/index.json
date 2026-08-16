@@ -6,7 +6,7 @@
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "constructorRef": "Unternehmer",
     "coveringNotes": "Anschreiben",

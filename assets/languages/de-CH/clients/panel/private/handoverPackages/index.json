@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
-  "title": "HandoverPackage",
-  "description": "HandoverPackage register",
-  "createHandoverPackage": "HandoverPackage hinzufügen",
+  "title": "Übergabepakete",
+  "description": "Übergabedokumentation für Eigentümer und Betreiber",
+  "createHandoverPackage": "Übergabepaket hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "asBuiltComplete": "As-Built Vollständig",
     "createdAt": "Erstellt am",

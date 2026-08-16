@@ -1,0 +1,70 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/createConsultantAppointment.tsx",
+  "title": "Aggiungi incarico",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "constructorLabel": "Impresa",
+    "constructorPlaceholder": "Seleziona impresa",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "roleLabel": "Ruolo",
+    "rolePlaceholder": "Seleziona ruolo",
+    "role_architect": "Architetto",
+    "role_engineer": "Ingegnere",
+    "role_qs": "QS",
+    "role_pm": "PM",
+    "role_surveyor": "Geometra",
+    "role_other": "Altro",
+    "scopeLabel": "Ambito",
+    "scopePlaceholder": "Ambito",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "feeAmountLabel": "Importo onorario",
+    "feeAmountPlaceholder": "Importo onorario",
+    "startDateLabel": "Data inizio",
+    "startDatePlaceholder": "Data inizio",
+    "endDateLabel": "Data fine",
+    "endDatePlaceholder": "Data fine",
+    "deliverablesLabel": "Deliverable",
+    "deliverablesPlaceholder": "Deliverable",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file",
+    "feeModelLabel": "Modello di onorario",
+    "feeModelPlaceholder": "Select fee model",
+    "basisKindLabel": "Basis Kind",
+    "basisKindPlaceholder": "Select basis",
+    "adjustmentFactorLabel": "Fattore di adeguamento",
+    "adjustmentFactorPlaceholder": "e.g. 1.0",
+    "hourlyRateLabel": "Tariffa oraria",
+    "hourlyRatePlaceholder": "Hourly rate",
+    "cappedAmountLabel": "Importo massimo",
+    "cappedAmountPlaceholder": "Cap"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi incarico",
+    "description": "Inserisci i dati per creare un incarico di consulente."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

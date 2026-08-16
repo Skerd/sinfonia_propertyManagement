@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/designStages/index.tsx",
-  "title": "DesignStage",
-  "description": "DesignStage register",
-  "createDesignStage": "DesignStage hinzufügen",
+  "title": "Planungsphasen",
+  "description": "SIA-Planungsphasen und Lieferobjekte",
+  "createDesignStage": "Planungsphase hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

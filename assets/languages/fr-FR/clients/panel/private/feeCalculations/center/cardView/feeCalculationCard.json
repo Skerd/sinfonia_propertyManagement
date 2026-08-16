@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx",
+  "failedTitle": "Impossible de charger calcul d'honoraires",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  },
+  "statuses": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  }
+}

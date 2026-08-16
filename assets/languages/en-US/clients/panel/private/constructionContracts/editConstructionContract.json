@@ -51,7 +51,7 @@
   },
   "formHeader": {
     "title": "Edit Construction Contract",
-    "description": ""
+    "description": "Update the details for this record."
   },
   "formButtons": {
     "cancel": "Cancel",

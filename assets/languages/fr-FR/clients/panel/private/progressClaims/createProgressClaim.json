@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/createProgressClaim.tsx",
+  "title": "Ajouter une situation",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "constructionContractLabel": "Construction Contract",
+    "constructionContractPlaceholder": "Select construction contract",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "claimPeriodStartLabel": "Claim Period Start",
+    "claimPeriodStartPlaceholder": "Claim Period Start",
+    "claimPeriodEndLabel": "Claim Period End",
+    "claimPeriodEndPlaceholder": "Claim Period End",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "amountLabel": "Montant",
+    "amountPlaceholder": "Montant",
+    "certifiedAmountLabel": "Certified Amount",
+    "certifiedAmountPlaceholder": "Certified Amount",
+    "retentionHeldLabel": "Retention Held",
+    "retentionHeldPlaceholder": "Retention Held",
+    "retentionReleasedLabel": "Retention Released",
+    "retentionReleasedPlaceholder": "Retention Released",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter une situation",
+    "description": "Saisissez les informations pour créer un situation de travaux."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

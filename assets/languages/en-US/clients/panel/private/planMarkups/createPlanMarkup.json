@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/createPlanMarkup.tsx",
-  "title": "Add Markup",
+  "title": "Add markup",
   "generalInfo": "Details",
   "form": {
     "planDocumentLabel": "Plan Document",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Markup",
-    "description": ""
+    "title": "Add markup",
+    "description": "Enter the details to create a new plan markup."
   },
   "formButtons": {
     "cancel": "Cancel",

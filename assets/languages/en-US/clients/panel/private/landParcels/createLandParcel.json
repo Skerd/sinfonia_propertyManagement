@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
-  "title": "Add Land Parcel",
+  "title": "Add land parcel",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Land Parcel",
-    "description": ""
+    "title": "Add land parcel",
+    "description": "Enter the details to create a new land parcel."
   },
   "formButtons": {
     "cancel": "Cancel",

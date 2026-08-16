@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/index.tsx",
+  "title": "Journaux de chantier",
+  "description": "Relevés journaliers: météo, effectifs, visiteurs",
+  "createSiteDiary": "Ajouter un journal",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "diaryDate": "Diary Date",
+    "edifice": "Bâtiment",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "plantSummary": "Plant Summary",
+    "project": "Projet",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "visitors": "Visitors",
+    "weather": "Weather",
+    "workSummary": "Work Summary",
+    "workforceCount": "Workforce Count",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "published": "Published"
+      }
+    }
+  }
+}

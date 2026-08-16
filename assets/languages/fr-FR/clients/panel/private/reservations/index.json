@@ -12,7 +12,7 @@
   "name": "Nom",
   "cancelled": "Annulée",
   "paidInFull": "Payée intégralement",
-  "active": "Active",
+  "active": "Actif",
   "inactive": "Inactive",
   "reservedBy": "Réservé par",
   "client": "Client",
@@ -36,7 +36,7 @@
     "expirationReminderEmailAt1d": "E-mail de rappel d'expiration (1 jour)",
     "expirationReminderEmailAt0d": "E-mail de rappel d'expiration (jour J)",
     "expiredAt": "Expirée le",
-    "isActive": "Active",
+    "isActive": "Actif",
     "name": "Nom",
     "paid": "Payée",
     "paymentMethod": "Mode de paiement",
@@ -63,7 +63,7 @@
         "other": "Autre"
       },
       "status": {
-        "active": "Active",
+        "active": "Actif",
         "expired": "Expirée",
         "cancelled": "Annulée",
         "converted": "Convertie"

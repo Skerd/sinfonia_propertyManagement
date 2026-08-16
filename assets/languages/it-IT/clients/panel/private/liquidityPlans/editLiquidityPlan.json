@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/editLiquidityPlan.tsx",
+  "title": "Modifica piano di liquidità",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "horizonStartLabel": "Horizon Start",
+    "horizonStartPlaceholder": "Start",
+    "horizonEndLabel": "Horizon End",
+    "horizonEndPlaceholder": "End",
+    "granularityLabel": "Granularity",
+    "granularityPlaceholder": "Select granularity",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica piano di liquidità",
+    "description": "Aggiorna i dati di questo piano di liquidità."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

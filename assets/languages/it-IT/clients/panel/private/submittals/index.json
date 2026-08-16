@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/index.tsx",
+  "title": "Sottomissioni",
+  "description": "Sottomissioni di materiali e disegni di officina",
+  "createSubmittal": "Aggiungi sottomissione",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "relatedDocument": "Related Document",
+    "reviewedBy": "Reviewed By",
+    "specReference": "Spec Reference",
+    "status": "Stato",
+    "submittedBy": "Submitted By",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "submitted": "Submitted",
+        "revise_and_resubmit": "Revise & Resubmit",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      }
+    }
+  }
+}

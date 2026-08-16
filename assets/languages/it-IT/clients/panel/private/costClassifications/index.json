@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/index.tsx",
+  "title": "Cost Classification",
+  "description": "Swiss cost-standard reference data (eBKP-H / BKP / NPK / SIA)",
+  "createCostClassification": "Add Classification",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "active": "Attivo",
+    "code": "Code",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "level": "Level",
+    "name": "Riferimento",
+    "notes": "Note",
+    "parentCode": "Parent Code",
+    "sortIndex": "Sort Order",
+    "standard": "Standard",
+    "title": "Titolo",
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "standard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "sia": "SIA",
+        "custom": "Custom"
+      }
+    }
+  }
+}

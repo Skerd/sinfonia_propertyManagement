@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bimModels/index.tsx",
   "title": "BIM-Modelle",
-  "description": "BIM2COST — IFC-Modelle für Mengenermittlung",
+  "description": "IFC-Modelle für die Mengenermittlung (BIM2COST)",
   "createBimModel": "BIM-Modell hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

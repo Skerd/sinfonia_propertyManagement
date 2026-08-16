@@ -53,5 +53,6 @@
     "rescheduled": "Rescheduled"
   },
   "failedTitle": "Could not load inspection",
-  "failedDescription": "Tap to try again."
+  "failedDescription": "Tap to try again.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

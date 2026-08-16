@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/index.tsx",
+  "title": "Études de faisabilité",
+  "description": "Faisabilité site, coûts et rendement des parcelles",
+  "createFeasibilityStudy": "Ajouter une étude",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "assumptions": "Assumptions",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "decidedAt": "Decided At",
+    "decidedBy": "Decided By",
+    "decision": "Decision",
+    "decisionNotes": "Decision Notes",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "hardCostEstimate": "Hard Cost Estimate",
+    "irrPercent": "IRR %",
+    "landParcel": "Land Parcel",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "residualValue": "Residual Value",
+    "softCostEstimate": "Soft Cost Estimate",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "in_review": "In Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "archived": "Archived"
+      }
+    }
+  }
+}

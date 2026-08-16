@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx",
-  "title": "Llogaritjet e Tarifave",
-  "description": "Honorarberechnung — llogaritje tarifash sipas SIA",
-  "createFeeCalculation": "Shto Llogaritje",
+  "title": "Llogaritjet e tarifave",
+  "description": "Llogaritjet e tarifave sipas normës SIA",
+  "createFeeCalculation": "Shto llogaritje",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "adjustmentFactor": "Faktori i Rregullimit",
     "basisAmount": "Shuma Bazë",

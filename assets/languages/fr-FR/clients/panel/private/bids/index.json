@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/index.tsx",
+  "title": "Offres",
+  "description": "Offres des entreprises sur les appels d'offres",
+  "createBid": "Ajouter une offre",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "constructorRef": "Contractor",
+    "coveringNotes": "Covering Notes",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "name": "Référence",
+    "notes": "Notes",
+    "status": "Statut",
+    "submittedAt": "Submitted At",
+    "tender": "Tender",
+    "tenderInvitation": "Tender Invitation",
+    "total": "Total",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "submitted": "Submitted",
+        "shortlisted": "Shortlisted",
+        "awarded": "Awarded",
+        "rejected": "Rejected",
+        "withdrawn": "Withdrawn"
+      }
+    }
+  }
+}

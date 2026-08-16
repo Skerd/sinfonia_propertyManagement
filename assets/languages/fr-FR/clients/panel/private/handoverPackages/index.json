@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
+  "title": "Dossiers de réception",
+  "description": "Dossiers de réception as-built pour propriétaires et exploitants",
+  "createHandoverPackage": "Ajouter un dossier",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "asBuiltComplete": "As-Built Complete",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "keysTransferred": "Keys Transferred",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "omManualsComplete": "O&M Manuals Complete",
+    "project": "Projet",
+    "status": "Statut",
+    "title": "Titre",
+    "trainingComplete": "Training Complete",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "in_progress": "In Progress",
+        "ready": "Ready",
+        "completed": "Terminé"
+      }
+    }
+  }
+}

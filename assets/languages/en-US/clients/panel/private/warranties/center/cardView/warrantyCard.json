@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/cardView/warrantyCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/cardView/warrantyCard.tsx",
+  "failedTitle": "Failed to load warranty",
+  "failedDescription": "Something went wrong while loading this warranty. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "active": "Active",
+    "expired": "Expired",
+    "void": "Void"
+  },
+  "statuses": {
+    "active": "Active",
+    "expired": "Expired",
+    "void": "Void"
+  }
 }

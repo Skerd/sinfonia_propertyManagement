@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx",
+  "failedTitle": "Failed to load feasibility study",
+  "failedDescription": "Something went wrong while loading this feasibility study. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "draft": "Draft",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  }
 }

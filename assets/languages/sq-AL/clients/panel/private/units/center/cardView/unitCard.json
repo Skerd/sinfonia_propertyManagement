@@ -47,5 +47,6 @@
     "under_construction": "Në ndërtim",
     "ready": "Gati",
     "delivered": "Dorëzuar"
-  }
+  },
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

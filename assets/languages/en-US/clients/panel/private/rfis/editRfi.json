@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rfis/editRfi.tsx",
-  "title": "Edit Rfi",
+  "title": "Edit RFI",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Rfi",
-    "description": ""
+    "title": "Edit RFI",
+    "description": "Update the details for this RFI."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -36,5 +36,8 @@
     "reservation": "Réservation",
     "other": "Autre"
   },
-  "chat": "Chat du site"
+  "chat": "Chat du site",
+  "failedTitle": "Impossible de charger cet enregistrement",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

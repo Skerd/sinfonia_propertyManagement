@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/center/cardView/permitCard.tsx",
+  "statusLabel": "Stato",
+  "fields": {
+    "project": "Progetto",
+    "permitType": "Permit Type",
+    "authority": "Authority",
+    "referenceNumber": "Reference No.",
+    "expiresAt": "Expires",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "submitted": "Submitted",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "expired": "Expired"
+      },
+      "permitType": {
+        "building": "Building",
+        "excavation": "Excavation",
+        "environmental": "Environmental",
+        "fire": "Fire",
+        "utility": "Utility",
+        "occupancy": "Occupancy",
+        "zoning": "Zoning",
+        "other": "Altro"
+      }
+    }
+  },
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

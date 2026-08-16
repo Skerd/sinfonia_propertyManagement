@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/editApprovalWorkflow.tsx",
-  "title": "Workflow bearbeiten",
+  "title": "Freigabe-Workflow bearbeiten",
   "generalInfo": "Details",
   "form": {
     "documentTypeLabel": "Dokumenttyp",
@@ -34,8 +34,8 @@
     }
   },
   "formHeader": {
-    "title": "Workflow bearbeiten",
-    "description": ""
+    "title": "Freigabe-Workflow bearbeiten",
+    "description": "Angaben für diesen Freigabe-Workflow aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

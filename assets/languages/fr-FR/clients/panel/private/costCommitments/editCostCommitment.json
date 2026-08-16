@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/editCostCommitment.tsx",
+  "title": "Modifier engagement de coût",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "Select budget",
+    "constructorLabel": "Entrepreneur",
+    "constructorPlaceholder": "Sélectionner un entrepreneur",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "committedAmountLabel": "Committed Amount",
+    "committedAmountPlaceholder": "Committed Amount",
+    "retentionPercentLabel": "Retention Percent",
+    "retentionPercentPlaceholder": "Retention Percent",
+    "issuedAtLabel": "Issued At",
+    "issuedAtPlaceholder": "Issued At",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier engagement de coût",
+    "description": "Mettez à jour les informations de ce engagement de coût."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

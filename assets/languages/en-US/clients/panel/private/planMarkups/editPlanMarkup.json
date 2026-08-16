@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/editPlanMarkup.tsx",
-  "title": "Edit Markup",
+  "title": "Edit plan markup",
   "generalInfo": "Details",
   "form": {
     "planDocumentLabel": "Plan Document",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Markup",
-    "description": ""
+    "title": "Edit plan markup",
+    "description": "Update the details for this plan markup."
   },
   "formButtons": {
     "cancel": "Cancel",

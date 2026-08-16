@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/editSafetyIncident.tsx",
-  "title": "Edit Safety Incident",
+  "title": "Edit safety incident",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -48,8 +48,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Safety Incident",
-    "description": ""
+    "title": "Edit safety incident",
+    "description": "Update the details for this safety incident."
   },
   "formButtons": {
     "cancel": "Cancel",

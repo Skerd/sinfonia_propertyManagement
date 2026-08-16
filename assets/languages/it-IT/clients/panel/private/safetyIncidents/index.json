@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/index.tsx",
+  "title": "Incidenti di sicurezza",
+  "description": "Incidenti, near miss e follow-up HSE",
+  "createSafetyIncident": "Aggiungi incidente",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "correctiveActions": "Corrective Actions",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "incidentDate": "Incident Date",
+    "location": "Location",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "personsInvolved": "Persons Involved",
+    "project": "Progetto",
+    "reportedBy": "Reported By",
+    "severity": "Severity",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "reported": "Reported",
+        "investigating": "Investigating",
+        "closed": "Closed"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
+  }
+}

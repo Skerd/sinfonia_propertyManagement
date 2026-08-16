@@ -41,7 +41,7 @@
   },
   "formHeader": {
     "title": "Planungsphase bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Planungsphase aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

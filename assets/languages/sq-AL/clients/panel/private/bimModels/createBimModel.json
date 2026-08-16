@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bimModels/createBimModel.tsx",
-  "title": "Shto Model BIM",
+  "title": "Shto model BIM",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -29,8 +29,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Model BIM",
-    "description": ""
+    "title": "Shto model BIM",
+    "description": "Plotëso të dhënat për të krijuar model BIM."
   },
   "formButtons": {
     "cancel": "Anulo",

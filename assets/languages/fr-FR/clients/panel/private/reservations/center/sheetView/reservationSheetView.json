@@ -28,7 +28,7 @@
   "reservedByCompany": "Entreprise",
   "status": "Statut",
   "activeState": {
-    "true": "Active",
+    "true": "Actif",
     "false": "Inactive"
   },
   "paid": "Payée",
@@ -51,7 +51,7 @@
   "additionalDocuments": "Documents supplémentaires",
   "reservationStatus": "Statut de la réservation",
   "statusValues": {
-    "active": "Active",
+    "active": "Actif",
     "expired": "Expirée",
     "cancelled": "Annulée",
     "converted": "Convertie"

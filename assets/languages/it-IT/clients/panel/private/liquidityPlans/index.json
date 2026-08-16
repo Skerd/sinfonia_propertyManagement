@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx",
+  "title": "Piani di liquidità",
+  "description": "Calendario di entrate e uscite di cassa",
+  "createLiquidityPlan": "Aggiungi piano",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "granularity": "Granularity",
+    "horizonEnd": "Horizon End",
+    "horizonStart": "Horizon Start",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "granularity": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "yearly": "Yearly"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/center/sheetView/tenderInvitationSheetView.tsx",
+  "tenderInvitation": "Invitation",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "tender": "Tender",
+  "constructorRef": "Contractor",
+  "invitedAt": "Invited At",
+  "respondedAt": "Responded At",
+  "portalAccessToken": "Portal Token",
+  "notes": "Notes",
+  "status": "Statut",
+  "statuses": {
+    "invited": "Invited",
+    "viewing": "Viewing",
+    "submitted": "Submitted",
+    "declined": "Declined",
+    "withdrawn": "Withdrawn"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger record",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

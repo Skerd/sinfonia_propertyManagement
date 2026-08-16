@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/index.tsx",
-  "title": "VariationOrder",
-  "description": "VariationOrder register",
-  "createVariationOrder": "VariationOrder hinzufügen",
+  "title": "Nachtragsaufträge",
+  "description": "Nachträge, Mehrleistungen und Umfangsänderungen",
+  "createVariationOrder": "Nachtrag hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "billedAt": "Billed Am",
     "billingReference": "Abrechnung Referenz",

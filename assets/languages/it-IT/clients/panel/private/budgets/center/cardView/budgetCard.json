@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/cardView/budgetCard.tsx",
+  "failedTitle": "Impossibile caricare budget",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/editProgressClaim.tsx",
-  "title": "Edit Progress Claim",
+  "title": "Edit progress claim",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -46,8 +46,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Progress Claim",
-    "description": ""
+    "title": "Edit progress claim",
+    "description": "Update the details for this progress claim."
   },
   "formButtons": {
     "cancel": "Cancel",

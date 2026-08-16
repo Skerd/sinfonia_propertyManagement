@@ -34,7 +34,7 @@
   },
   "formHeader": {
     "title": "Antrag hinzufügen",
-    "description": ""
+    "description": "Angaben für Freigabeantrag erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

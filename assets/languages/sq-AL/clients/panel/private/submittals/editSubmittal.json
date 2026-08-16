@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/submittals/editSubmittal.tsx",
-  "title": "Ndrysho Submittal",
+  "title": "Ndrysho dorëzim materialesh",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Submittal",
-    "description": ""
+    "title": "Ndrysho dorëzim materialesh",
+    "description": "Përditëso të dhënat e këtij dorëzim materialesh."
   },
   "formButtons": {
     "cancel": "Anulo",

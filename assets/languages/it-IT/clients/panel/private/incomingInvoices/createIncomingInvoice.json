@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/createIncomingInvoice.tsx",
+  "title": "Aggiungi fattura",
+  "generalInfo": "Dettagli",
+  "form": {
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "extractedSupplierNameLabel": "Supplier",
+    "extractedSupplierNamePlaceholder": "Supplier name",
+    "extractedIbanLabel": "IBAN",
+    "extractedIbanPlaceholder": "IBAN",
+    "extractedAmountLabel": "Importo",
+    "extractedAmountPlaceholder": "Importo",
+    "extractedCurrencyCodeLabel": "Currency Code",
+    "extractedCurrencyCodePlaceholder": "e.g. CHF",
+    "extractedInvoiceNumberLabel": "Invoice No.",
+    "extractedInvoiceNumberPlaceholder": "Invoice number",
+    "extractedInvoiceDateLabel": "Invoice Date",
+    "extractedInvoiceDatePlaceholder": "Invoice date",
+    "extractedDueDateLabel": "Scadenza",
+    "extractedDueDatePlaceholder": "Due date",
+    "extractedQrReferenceLabel": "QR Reference",
+    "extractedQrReferencePlaceholder": "QR reference",
+    "matchedConstructorLabel": "Matched Contractor",
+    "matchedConstructorPlaceholder": "Select contractor",
+    "matchedContractLabel": "Matched Contract",
+    "matchedContractPlaceholder": "Select contract",
+    "bkpAccountCodeLabel": "BKP Account",
+    "bkpAccountCodePlaceholder": "e.g. 211",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi fattura",
+    "description": "Inserisci i dati per creare un fattura in arrivo."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/markAsBuiltProjectDocumentDialog.tsx",
+  "dialogTitle": "Mark as built",
+  "dialogDescription": "Confirm that this approved document reflects the as-built condition.",
+  "cancel": "Annuler",
+  "submit": "Mark as Built"
+}

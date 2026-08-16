@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i fazë projektimi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "not_started": "Not Started",
+    "in_progress": "Në Progres",
+    "completed": "Përfunduar",
+    "blocked": "Blocked"
+  },
+  "statuses": {
+    "not_started": "Not Started",
+    "in_progress": "Në Progres",
+    "completed": "Përfunduar",
+    "blocked": "Blocked"
+  }
 }

@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
   "title": "Kutia AP",
-  "description": "Kreditorenbewirtschaftung — faturat hyrëse (skanim/OCR/QR)",
-  "createIncomingInvoice": "Shto Faturë Hyrëse",
+  "description": "Faturat hyrëse — skanim, OCR dhe faturë QR",
+  "createIncomingInvoice": "Shto faturë hyrëse",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "bkpAccountCode": "Llogaria BKP",
     "createdAt": "Krijuar më",

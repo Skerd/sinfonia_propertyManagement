@@ -23,5 +23,6 @@
   "invoiceNumber": "Invoice #",
   "vendorName": "Vendor",
   "tag": "Tag",
-  "relatedModificationRequest": "Modification Request"
+  "relatedModificationRequest": "Modification Request",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

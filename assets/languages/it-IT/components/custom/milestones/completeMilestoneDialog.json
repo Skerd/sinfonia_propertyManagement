@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/milestones/completeMilestoneDialog.tsx",
+  "dialogTitle": "Complete milestone",
+  "dialogDescription": "Mark this milestone as completed and record its actual end date.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Optional completion notes",
+  "cancel": "Annulla",
+  "submit": "Complete milestone"
+}

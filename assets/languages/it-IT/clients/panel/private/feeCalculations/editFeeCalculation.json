@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/editFeeCalculation.tsx",
+  "title": "Modifica calcolo onorari",
+  "generalInfo": "Dettagli",
+  "form": {
+    "consultantAppointmentLabel": "Incarico di consulenza",
+    "consultantAppointmentPlaceholder": "Select appointment",
+    "basisAmountLabel": "Basis Amount",
+    "basisAmountPlaceholder": "Basis amount",
+    "feePercentLabel": "Fee Percent",
+    "feePercentPlaceholder": "e.g. 12.5",
+    "adjustmentFactorLabel": "Fattore di adeguamento",
+    "adjustmentFactorPlaceholder": "e.g. 1.0",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica calcolo onorari",
+    "description": "Aggiorna i dati di questo calcolo onorari."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

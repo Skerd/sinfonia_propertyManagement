@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/editCostCommitment.tsx",
+  "title": "Modifica impegno di costo",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "budgetLabel": "Budget",
+    "budgetPlaceholder": "Select budget",
+    "constructorLabel": "Impresa",
+    "constructorPlaceholder": "Seleziona impresa",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "committedAmountLabel": "Committed Amount",
+    "committedAmountPlaceholder": "Committed Amount",
+    "retentionPercentLabel": "Retention Percent",
+    "retentionPercentPlaceholder": "Retention Percent",
+    "issuedAtLabel": "Issued At",
+    "issuedAtPlaceholder": "Issued At",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica impegno di costo",
+    "description": "Aggiorna i dati di questo impegno di costo."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

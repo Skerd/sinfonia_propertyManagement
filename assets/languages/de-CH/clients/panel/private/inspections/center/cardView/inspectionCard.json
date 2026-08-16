@@ -53,5 +53,6 @@
     "rescheduled": "Neu geplant"
   },
   "failedTitle": "Abnahme konnte nicht geladen werden",
-  "failedDescription": "Tippen zum erneuten Versuch."
+  "failedDescription": "Tippen zum erneuten Versuch.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

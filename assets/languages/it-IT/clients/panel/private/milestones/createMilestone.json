@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/createMilestone.tsx",
+  "title": "New Milestone",
+  "description": "Create a new project milestone",
+  "generalInfo": "Milestone Details",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "e.g. Foundation complete",
+    "weightPercentLabel": "Weight %",
+    "weightPercentPlaceholder": "0 - 100",
+    "plannedStartLabel": "Planned Start",
+    "plannedStartPlaceholder": "Select date",
+    "plannedEndLabel": "Planned End",
+    "plannedEndPlaceholder": "Select date",
+    "predecessorsLabel": "Predecessors",
+    "predecessorsPlaceholder": "Select preceding milestones",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Describe this milestone",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Internal notes",
+    "mediaLabel": "Media",
+    "existingFiles": "Existing media",
+    "newFiles": "Add new media"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating milestone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Milestone created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create milestone, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "New Milestone",
+    "description": "Create a new project milestone"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Create Milestone"
+  }
+}

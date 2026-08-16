@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx",
+  "failedTitle": "Failed to load design stage",
+  "failedDescription": "Something went wrong while loading this design stage. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "not_started": "Not Started",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "blocked": "Blocked"
+  },
+  "statuses": {
+    "not_started": "Not Started",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "blocked": "Blocked"
+  }
 }

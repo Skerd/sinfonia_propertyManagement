@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/editRfi.tsx",
+  "title": "Modifier RFI",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "questionLabel": "Question",
+    "questionPlaceholder": "Question",
+    "answerLabel": "Answer",
+    "answerPlaceholder": "Answer",
+    "dueDateLabel": "Échéance",
+    "dueDatePlaceholder": "Échéance",
+    "relatedDocumentLabel": "Related Document",
+    "relatedDocumentPlaceholder": "Select related document",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers",
+    "askedByLabel": "Asked by",
+    "askedByPlaceholder": "Select user",
+    "answeredByLabel": "Answered by",
+    "answeredByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier RFI",
+    "description": "Mettez à jour les informations de ce RFI."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

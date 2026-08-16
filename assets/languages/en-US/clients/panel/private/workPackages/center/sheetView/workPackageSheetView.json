@@ -25,5 +25,8 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "failedTitle": "Failed to load work package",
+  "failedDescription": "Something went wrong while loading this work package. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

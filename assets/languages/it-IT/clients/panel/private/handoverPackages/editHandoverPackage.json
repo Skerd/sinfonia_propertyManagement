@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
+  "title": "Modifica pacchetto di consegna",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Select unit",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "omManualsCompleteLabel": "O&M Manuals Complete",
+    "asBuiltCompleteLabel": "As-Built Complete",
+    "keysTransferredLabel": "Keys Transferred",
+    "trainingCompleteLabel": "Training Complete",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica pacchetto di consegna",
+    "description": "Aggiorna i dati di questo pacchetto di consegna."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

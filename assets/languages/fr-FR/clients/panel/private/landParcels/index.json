@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
+  "title": "Parcelles",
+  "description": "Parcelles cadastrales et terrains à développer",
+  "createLandParcel": "Ajouter une parcelle",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "acquisitionCost": "Acquisition Cost",
+    "areaSqm": "Area (m²)",
+    "cadastralReference": "Cadastral Reference",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "dueDiligenceStatus": "Due Diligence Status",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "zoning": "Zoning",
+    "!enums": {
+      "status": {
+        "prospect": "Prospect",
+        "under_dd": "Under DD",
+        "acquired": "Acquired",
+        "disposed": "Disposed"
+      }
+    }
+  }
+}

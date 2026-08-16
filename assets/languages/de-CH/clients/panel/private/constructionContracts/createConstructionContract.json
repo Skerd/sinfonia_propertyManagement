@@ -51,7 +51,7 @@
   },
   "formHeader": {
     "title": "Bauvertrag erstellen",
-    "description": ""
+    "description": "Angaben für record erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

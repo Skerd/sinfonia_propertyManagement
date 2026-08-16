@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/warranties/createWarranty.tsx",
-  "title": "Add Warranty",
+  "title": "Add warranty",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Warranty",
-    "description": ""
+    "title": "Add warranty",
+    "description": "Enter the details to create a new warranty."
   },
   "formButtons": {
     "cancel": "Cancel",

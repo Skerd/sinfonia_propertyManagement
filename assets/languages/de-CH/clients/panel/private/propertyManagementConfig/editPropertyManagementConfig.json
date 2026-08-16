@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Verkauf & Übergabe",
+  "title": "Verkauf & Übergabe bearbeiten",
   "generalInfo": "Workflow-Steuerungen",
   "form": {
     "requiresSaleApprovalLabel": "Managerfreigabe beim Erstellen eines Verkaufs verlangen",
@@ -21,8 +21,8 @@
     }
   },
   "formHeader": {
-    "title": "Verkauf & Übergabe",
-    "description": "Unternehmensweite Verkaufs- und Übergaberichtlinien für Real Estate."
+    "title": "Verkauf & Übergabe bearbeiten",
+    "description": "Angaben für diesen Verkauf & Übergabe aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

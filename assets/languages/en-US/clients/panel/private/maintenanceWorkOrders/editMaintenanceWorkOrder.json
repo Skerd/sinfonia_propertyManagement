@@ -42,7 +42,7 @@
   },
   "formHeader": {
     "title": "Edit Work Order",
-    "description": ""
+    "description": "Update the details for this record."
   },
   "formButtons": {
     "cancel": "Cancel",

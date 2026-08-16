@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
+  "title": "Aggiungi particella",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "cadastralReferenceLabel": "Cadastral Reference",
+    "cadastralReferencePlaceholder": "Cadastral Reference",
+    "areaSqmLabel": "Area (m²)",
+    "areaSqmPlaceholder": "Area (m²)",
+    "zoningLabel": "Zoning",
+    "zoningPlaceholder": "Zoning",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "acquisitionCostLabel": "Acquisition Cost",
+    "acquisitionCostPlaceholder": "Acquisition Cost",
+    "dueDiligenceStatusLabel": "Due Diligence Status",
+    "dueDiligenceStatusPlaceholder": "Due Diligence Status",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi particella",
+    "description": "Inserisci i dati per creare un particella."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

@@ -5,5 +5,8 @@
   "slug": "Slug",
   "description": "Beschreibung",
   "sortOrder": "Sortierreihenfolge",
-  "deleted": "Gelöscht"
+  "deleted": "Gelöscht",
+  "failedTitle": "Story-Typen konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

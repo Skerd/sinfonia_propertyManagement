@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/editPlanMarkup.tsx",
-  "title": "Markierung bearbeiten",
+  "title": "Planmarkierung bearbeiten",
   "generalInfo": "Details",
   "form": {
     "planDocumentLabel": "Plandokument",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Markierung bearbeiten",
-    "description": ""
+    "title": "Planmarkierung bearbeiten",
+    "description": "Angaben für diesen Planmarkierung aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

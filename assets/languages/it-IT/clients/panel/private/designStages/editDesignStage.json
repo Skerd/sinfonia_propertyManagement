@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/editDesignStage.tsx",
+  "title": "Modifica fase di progettazione",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "stageTypeLabel": "Stage Type",
+    "stageTypePlaceholder": "Select stage type",
+    "stageType_concept": "Concept",
+    "stageType_schematic": "Schematic",
+    "stageType_design_development": "Design Development",
+    "stageType_construction_documents": "Construction Documents",
+    "stageType_tender": "Tender",
+    "stageType_construction": "Construction",
+    "stageType_as_built": "As-Built",
+    "sortOrderLabel": "Sort Order",
+    "sortOrderPlaceholder": "Sort Order",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica fase di progettazione",
+    "description": "Aggiorna i dati di questo fase di progettazione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

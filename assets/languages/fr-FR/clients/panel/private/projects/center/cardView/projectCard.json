@@ -31,5 +31,8 @@
     "unavailable": "Indisponible",
     "unavailableDesc": "Non disponible à la vente"
   },
-  "viewEdifices": "Voir les bâtiments"
+  "viewEdifices": "Voir les bâtiments",
+  "failedTitle": "Impossible de charger cet enregistrement",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

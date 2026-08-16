@@ -51,10 +51,25 @@
     "newFiles": "Add new photos"
   },
   "axios": {
-    "start": { "title": "Reporting defect", "time": 3000 },
-    "success": { "title": "Defect reported!", "time": 3000 },
-    "error": { "title": "Could not report defect, please try again!", "time": 3000 }
+    "start": {
+      "title": "Reporting defect",
+      "time": 3000
+    },
+    "success": {
+      "title": "Defect reported!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not report defect, please try again!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Report Defect", "description": "Report a new snag or defect item" },
-  "formButtons": { "cancel": "Cancel", "submit": "Report Defect" }
+  "formHeader": {
+    "title": "Report Defect",
+    "description": "Report a new snag or defect item"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Report Defect"
+  }
 }

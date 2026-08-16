@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/createApprovalWorkflow.tsx",
-  "title": "Add Workflow",
+  "title": "Add workflow",
   "generalInfo": "Details",
   "form": {
     "documentTypeLabel": "Document Type",
@@ -34,8 +34,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Workflow",
-    "description": ""
+    "title": "Add workflow",
+    "description": "Enter the details to create a new approval workflow."
   },
   "formButtons": {
     "cancel": "Cancel",

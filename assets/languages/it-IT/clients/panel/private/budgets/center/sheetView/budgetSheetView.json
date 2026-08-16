@@ -1,0 +1,49 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/sheetView/budgetSheetView.tsx",
+  "budget": "Budget",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "version": "Version",
+  "method": "Estimate Method",
+  "classificationStandard": "Classification Standard",
+  "revisionNo": "Revision No.",
+  "supersedesBudget": "Supersedes Budget",
+  "currency": "Valuta",
+  "approvedTotal": "Approved Total",
+  "contingencyPercent": "Contingency Percent",
+  "description": "Descrizione",
+  "notes": "Note",
+  "statuses": {
+    "draft": "Bozza",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  },
+  "methods": {
+    "ebkp_h": "eBKP-H",
+    "bkp": "BKP",
+    "custom": "Custom"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare budget",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

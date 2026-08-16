@@ -1,0 +1,56 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/createProgressClaim.tsx",
+  "title": "Aggiungi SAL",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "constructionContractLabel": "Construction Contract",
+    "constructionContractPlaceholder": "Select construction contract",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "claimPeriodStartLabel": "Claim Period Start",
+    "claimPeriodStartPlaceholder": "Claim Period Start",
+    "claimPeriodEndLabel": "Claim Period End",
+    "claimPeriodEndPlaceholder": "Claim Period End",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "amountLabel": "Importo",
+    "amountPlaceholder": "Importo",
+    "certifiedAmountLabel": "Certified Amount",
+    "certifiedAmountPlaceholder": "Certified Amount",
+    "retentionHeldLabel": "Retention Held",
+    "retentionHeldPlaceholder": "Retention Held",
+    "retentionReleasedLabel": "Retention Released",
+    "retentionReleasedPlaceholder": "Retention Released",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi SAL",
+    "description": "Inserisci i dati per creare un stato di avanzamento."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

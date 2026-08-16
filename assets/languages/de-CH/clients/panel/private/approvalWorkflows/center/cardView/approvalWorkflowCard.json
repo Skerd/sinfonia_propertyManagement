@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/cardView/approvalWorkflowCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/cardView/approvalWorkflowCard.tsx",
+  "failedTitle": "Freigabe-Workflow konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

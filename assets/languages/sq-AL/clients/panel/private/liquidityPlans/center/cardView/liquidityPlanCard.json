@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/cardView/liquidityPlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/cardView/liquidityPlanCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i plan likuiditeti",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

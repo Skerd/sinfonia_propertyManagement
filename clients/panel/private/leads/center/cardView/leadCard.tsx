@@ -64,8 +64,8 @@ function LeadCard({
             sheetEntityProp="lead"
             deleteUrl="/api/realEstate/lead"
             restoreUrl="/api/realEstate/lead/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="firstName"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

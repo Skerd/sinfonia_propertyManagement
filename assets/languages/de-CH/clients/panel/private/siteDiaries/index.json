@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/index.tsx",
-  "title": "SiteDiary",
-  "description": "SiteDiary register",
-  "createSiteDiary": "SiteDiary hinzufügen",
+  "title": "Bautagebücher",
+  "description": "Tägliche Baustellenberichte: Wetter, Personal, Besucher",
+  "createSiteDiary": "Bautagebuch hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

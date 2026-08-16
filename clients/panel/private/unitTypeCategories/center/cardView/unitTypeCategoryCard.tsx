@@ -27,6 +27,7 @@ type UnitTypeCategoryCardProps = WithLanguageType & {
 };
 
 function UnitTypeCategoryCard({
+    resolveLanguageKey,
     unitTypeCategory,
     fetchId,
     hideActions = false,
@@ -50,8 +51,8 @@ function UnitTypeCategoryCard({
             sheetEntityProp="unitTypeCategory"
             deleteUrl="/api/realEstate/unitTypeCategory"
             restoreUrl="/api/realEstate/unitTypeCategory/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
         >

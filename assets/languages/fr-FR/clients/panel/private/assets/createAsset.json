@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/createAsset.tsx",
+  "title": "Add Asset",
+  "generalInfo": "Détails",
+  "form": {
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "e.g. HVAC",
+    "manufacturerLabel": "Manufacturer",
+    "manufacturerPlaceholder": "Manufacturer",
+    "serialLabel": "Serial",
+    "serialPlaceholder": "Serial number",
+    "installDateLabel": "Install Date",
+    "installDatePlaceholder": "Install date",
+    "warrantyLabel": "Garantie",
+    "warrantyPlaceholder": "Select warranty",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Asset",
+    "description": "Saisissez les informations pour créer un record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

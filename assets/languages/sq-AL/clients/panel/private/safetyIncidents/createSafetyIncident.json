@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/createSafetyIncident.tsx",
-  "title": "Shto Safety Incident",
+  "title": "Shto incident sigurie",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -48,8 +48,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Safety Incident",
-    "description": ""
+    "title": "Shto incident sigurie",
+    "description": "Plotëso të dhënat për të krijuar incident sigurie."
   },
   "formButtons": {
     "cancel": "Anulo",

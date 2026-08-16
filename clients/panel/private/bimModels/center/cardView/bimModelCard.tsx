@@ -29,6 +29,7 @@ type BimModelCardProps = WithLanguageType & {
 };
 
 function BimModelCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function BimModelCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/bimModel"
             restoreUrl="/api/realEstate/bimModel/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/createMaintenancePlan.tsx",
-  "title": "Add Plan",
+  "title": "Add plan",
   "generalInfo": "Details",
   "form": {
     "assetLabel": "Asset",
@@ -36,8 +36,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Plan",
-    "description": ""
+    "title": "Add plan",
+    "description": "Enter the details to create a new maintenance plan."
   },
   "formButtons": {
     "cancel": "Cancel",

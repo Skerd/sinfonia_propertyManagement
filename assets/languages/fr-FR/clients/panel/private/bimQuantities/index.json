@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/index.tsx",
+  "title": "BIM Quantities",
+  "description": "Quantity takeoff mapped to eBKP-H codes",
+  "createBimQuantity": "Add Quantity",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher...",
+  "fields": {
+    "bimModel": "BIM Model",
+    "classificationCode": "Classification Code",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "ifcElementType": "Ifc Element Type",
+    "name": "Référence",
+    "notes": "Notes",
+    "quantity": "Quantity",
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Mis à jour le"
+  }
+}

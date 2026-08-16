@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/createApprovalWorkflow.tsx",
-  "title": "Shto Rrjedhë",
+  "title": "Shto rrjedhë",
   "generalInfo": "Detajet",
   "form": {
     "documentTypeLabel": "Lloji i Dokumentit",
@@ -34,8 +34,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Rrjedhë",
-    "description": ""
+    "title": "Shto rrjedhë",
+    "description": "Plotëso të dhënat për të krijuar rrjedhë miratimi."
   },
   "formButtons": {
     "cancel": "Anulo",

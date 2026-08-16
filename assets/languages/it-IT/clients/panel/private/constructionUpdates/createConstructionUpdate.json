@@ -27,10 +27,25 @@
     "newFiles": "Aggiungi nuove foto"
   },
   "axios": {
-    "start": { "title": "Salvataggio aggiornamento", "time": 3000 },
-    "success": { "title": "Aggiornamento cantiere salvato!", "time": 3000 },
-    "error": { "title": "Impossibile salvare l’aggiornamento, riprova!", "time": 3000 }
+    "start": {
+      "title": "Salvataggio aggiornamento",
+      "time": 3000
+    },
+    "success": {
+      "title": "Aggiornamento cantiere salvato!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile salvare l’aggiornamento, riprova!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Aggiungi aggiornamento cantiere", "description": "Registra un nuovo aggiornamento di avanzamento lavori" },
-  "formButtons": { "cancel": "Annulla", "submit": "Salva aggiornamento" }
+  "formHeader": {
+    "title": "Aggiungi aggiornamento cantiere",
+    "description": "Registra un nuovo aggiornamento di avanzamento lavori"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva aggiornamento"
+  }
 }

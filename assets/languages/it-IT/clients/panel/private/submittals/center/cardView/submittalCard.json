@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/cardView/submittalCard.tsx",
+  "failedTitle": "Impossibile caricare sottomissione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "revise_and_resubmit": "Revise & Resubmit",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "revise_and_resubmit": "Revise & Resubmit",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  }
+}

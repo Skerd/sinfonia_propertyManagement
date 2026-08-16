@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx",
-  "failedTitle": "Ngarkimi i dokumentit dështoi",
-  "failedDescription": "Ndodhi një gabim gjatë ngarkimit të këtij dokumenti. Kliko për të provuar sërish.",
-  "failedTooltipDescription": "Kliko për të provuar sërish marrjen e të dhënave.",
+  "failedTitle": "Dështoi ngarkimi i dokument",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
   "projectDocument": "Dokument",
   "overview": "Përmbledhje",
   "name": "Referenca",

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/cardView/scheduleTaskCard.tsx",
+  "statusLabel": "Stato",
+  "fields": {
+    "project": "Progetto",
+    "assignee": "Assignee",
+    "plannedEnd": "Planned End",
+    "percentComplete": "Progress %",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "in_progress": "In Progress",
+        "completed": "Completato",
+        "delayed": "Delayed",
+        "cancelled": "Cancelled"
+      }
+    }
+  },
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

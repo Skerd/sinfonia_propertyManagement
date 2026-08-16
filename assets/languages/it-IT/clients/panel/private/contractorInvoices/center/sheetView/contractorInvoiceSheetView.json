@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/sheetView/contractorInvoiceSheetView.tsx",
+  "contractorInvoice": "Contractor Invoice",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "invoiceNumber": "Invoice No.",
+  "project": "Progetto",
+  "constructorRef": "Contractor",
+  "invoiceDate": "Invoice Date",
+  "dueDate": "Scadenza",
+  "grossAmount": "Gross",
+  "netAmount": "Net",
+  "vatAmount": "VAT",
+  "retentionHeld": "Retention Held",
+  "bkpAccountCode": "BKP Account",
+  "qrBillReference": "QR-Bill Ref",
+  "source": "Source",
+  "currency": "Valuta",
+  "notes": "Note",
+  "status": "Stato",
+  "statuses": {
+    "received": "Received",
+    "under_review": "Under Review",
+    "approved": "Approved",
+    "paid": "Paid",
+    "rejected": "Rejected",
+    "disputed": "Disputed"
+  },
+  "sources": {
+    "manual": "Manual",
+    "ap_inbox": "AP Inbox"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare fattura d'impresa",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

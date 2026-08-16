@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/editProjectDocument.tsx",
-  "title": "Bezeichnung",
+  "title": "Dokument bearbeiten",
   "generalInfo": "Dokument Details",
   "editTitle": "Dokument bearbeiten",
   "editDescription": "Aktualisieren projekt dokument details",
@@ -51,7 +51,7 @@
     "mediaLabel": "Dateien",
     "addFile": "Datei hinzufügen",
     "filesSelected": "Files selected",
-    "existingFiles": "Existing files",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files hinzufügen",
     "designStageLabel": "Planungsphase",
     "designStagePlaceholder": "Planungsphase auswählen",
@@ -73,7 +73,7 @@
   },
   "formHeader": {
     "title": "Dokument bearbeiten",
-    "description": "Aktualisieren projekt dokument details"
+    "description": "Angaben für diesen Dokument aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

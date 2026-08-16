@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costControl/costControl.tsx",
+  "title": "Cost Control",
+  "description": "Baukostenkontrolle — estimated vs committed vs invoiced vs paid over BKP accounts.",
+  "computedAt": "Computed at",
+  "noProjectTitle": "No project selected",
+  "noProjectDescription": "Open cost control from a project to see its BKP ledger.",
+  "noRowsTitle": "No BKP-coded costs yet",
+  "noRowsDescription": "Code BOQ items and contractor invoices with BKP accounts to populate the ledger.",
+  "byBkpTitle": "By BKP account",
+  "bkpCode": "BKP",
+  "titleCol": "Titre",
+  "estimated": "Estimated",
+  "committed": "Committed",
+  "invoiced": "Invoiced",
+  "certified": "Certified",
+  "paid": "Paid",
+  "variance": "Variance",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Veuillez réessayer."
+}

@@ -1,3 +1,22 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/cardView/contractorInvoiceCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/cardView/contractorInvoiceCard.tsx",
+  "failedTitle": "Unternehmerrechnung konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "received": "Empfangen",
+    "under_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "paid": "Bezahlt",
+    "rejected": "Abgelehnt",
+    "disputed": "Bestritten"
+  },
+  "statuses": {
+    "received": "Empfangen",
+    "under_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "paid": "Bezahlt",
+    "rejected": "Abgelehnt",
+    "disputed": "Bestritten"
+  }
 }

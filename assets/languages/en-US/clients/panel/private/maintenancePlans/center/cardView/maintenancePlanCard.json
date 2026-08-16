@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx",
+  "failedTitle": "Failed to load maintenance plan",
+  "failedDescription": "Something went wrong while loading this maintenance plan. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

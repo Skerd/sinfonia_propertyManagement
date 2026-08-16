@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/center/sheetView/bidLineSheetView.tsx",
+  "bidLine": "Bid Line",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "bid": "Bid",
+  "specificationItem": "LV Position",
+  "title": "Titolo",
+  "quantity": "Quantity",
+  "unitPrice": "Unit Price",
+  "lineTotal": "Line Total",
+  "currency": "Valuta",
+  "alternativeNote": "Alternative Note",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

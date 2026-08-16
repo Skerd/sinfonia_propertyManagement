@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/designStages/editDesignStage.tsx",
-  "title": "Ndrysho Design Stage",
+  "title": "Ndrysho fazë projektimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Design Stage",
-    "description": ""
+    "title": "Ndrysho fazë projektimi",
+    "description": "Përditëso të dhënat e këtij fazë projektimi."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/editFeasibilityStudy.tsx",
-  "title": "Ndrysho Feasibility Study",
+  "title": "Ndrysho studim fizibiliteti",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -52,8 +52,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Feasibility Study",
-    "description": ""
+    "title": "Ndrysho studim fizibiliteti",
+    "description": "Përditëso të dhënat e këtij studim fizibiliteti."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/index.tsx",
+  "title": "Impegni / PO",
+  "description": "Ordini di acquisto e impegni rispetto al budget",
+  "createCostCommitment": "Aggiungi impegno",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "budget": "Budget",
+    "committedAmount": "Committed Amount",
+    "constructorRef": "Impresa",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "issuedAt": "Issued At",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "retentionPercent": "Retention %",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "issued": "Issued",
+        "partially_received": "Partially Received",
+        "closed": "Closed",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

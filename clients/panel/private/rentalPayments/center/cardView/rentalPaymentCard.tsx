@@ -58,8 +58,8 @@ function RentalPaymentCard({
             sheetEntityProp="rentalPayment"
             deleteUrl="/api/realEstate/rentalPayment"
             restoreUrl="/api/realEstate/rentalPayment/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setAction}) => ({

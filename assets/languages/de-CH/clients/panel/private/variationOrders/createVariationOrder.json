@@ -21,8 +21,8 @@
     "timeImpactDaysPlaceholder": "Time Impact Tage",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "modificationRequestLabel": "Änderungsantrag",
     "modificationRequestPlaceholder": "Änderungsantrag auswählen"
@@ -43,7 +43,7 @@
   },
   "formHeader": {
     "title": "Nachtrag hinzufügen",
-    "description": ""
+    "description": "Angaben für Nachtragsauftrag erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

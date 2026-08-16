@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Sales & Handover",
+  "title": "Edit Sales & handover",
   "generalInfo": "Workflow gates",
   "form": {
     "requiresSaleApprovalLabel": "Require manager approval when creating a sale",
@@ -21,8 +21,8 @@
     }
   },
   "formHeader": {
-    "title": "Sales & Handover",
-    "description": "Company-wide sales and handover policy for Real Estate."
+    "title": "Edit Sales & handover",
+    "description": "Update the details for this Sales & handover."
   },
   "formButtons": {
     "cancel": "Cancel",

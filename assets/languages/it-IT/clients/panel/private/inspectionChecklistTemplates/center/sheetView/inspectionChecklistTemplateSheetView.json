@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
+  "inspectionChecklistTemplate": "Inspection Checklist Template",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "trade": "Trade",
+  "stage": "Stage",
+  "description": "Descrizione",
+  "itemsJson": "Checklist Items",
+  "notes": "Note",
+  "statuses": {
+    "active": "Attivo",
+    "archived": "Archived"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare checklist di ispezione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

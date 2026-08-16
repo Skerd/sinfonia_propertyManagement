@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/cardView/safetyIncidentCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/cardView/safetyIncidentCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i incident sigurie",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "reported": "Raportuar",
+    "investigating": "Në Investigim",
+    "closed": "Mbyllur"
+  },
+  "statuses": {
+    "reported": "Raportuar",
+    "investigating": "Në Investigim",
+    "closed": "Mbyllur"
+  }
 }

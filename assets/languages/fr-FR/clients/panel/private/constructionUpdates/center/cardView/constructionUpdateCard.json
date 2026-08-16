@@ -7,5 +7,8 @@
     "updateDate": "Date de mise à jour",
     "project": "Projet",
     "edifice": "Édifice"
-  }
+  },
+  "failedTitle": "Impossible de charger record",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

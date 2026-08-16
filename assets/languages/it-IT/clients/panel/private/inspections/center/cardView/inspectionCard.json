@@ -30,7 +30,7 @@
   "clickToCopy": "(clicca per copiare)",
   "deleted": "Eliminato",
   "edit": "Modifica",
-  "dates": "Date",
+  "dates": "Data",
   "people": "Persone",
   "alerts": "Avvisi",
   "types": {
@@ -53,5 +53,6 @@
     "rescheduled": "Ripianificata"
   },
   "failedTitle": "Impossibile caricare l'ispezione",
-  "failedDescription": "Tocca per riprovare."
+  "failedDescription": "Tocca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

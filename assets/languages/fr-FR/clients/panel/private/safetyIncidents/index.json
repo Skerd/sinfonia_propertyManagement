@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/index.tsx",
+  "title": "Incidents de sécurité",
+  "description": "Incidents, presque-accidents et suivi HSE",
+  "createSafetyIncident": "Ajouter un incident",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "correctiveActions": "Corrective Actions",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "incidentDate": "Incident Date",
+    "location": "Location",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "personsInvolved": "Persons Involved",
+    "project": "Projet",
+    "reportedBy": "Reported By",
+    "severity": "Severity",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "reported": "Reported",
+        "investigating": "Investigating",
+        "closed": "Closed"
+      },
+      "severity": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    }
+  }
+}

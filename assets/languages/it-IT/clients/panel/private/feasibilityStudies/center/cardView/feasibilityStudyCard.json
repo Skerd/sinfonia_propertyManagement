@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx",
+  "failedTitle": "Impossibile caricare studio di fattibilità",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  }
+}

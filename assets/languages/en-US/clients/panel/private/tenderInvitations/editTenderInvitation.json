@@ -28,7 +28,7 @@
   },
   "formHeader": {
     "title": "Edit Invitation",
-    "description": ""
+    "description": "Update the details for this record."
   },
   "formButtons": {
     "cancel": "Cancel",

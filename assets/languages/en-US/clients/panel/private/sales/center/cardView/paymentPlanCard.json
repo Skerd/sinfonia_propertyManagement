@@ -13,5 +13,6 @@
   "remainingBalance": "Remaining Balance",
   "numberOfInstallments": "Number of Installments",
   "endDate": "End Date",
-  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rfis/createRfi.tsx",
-  "title": "Shto Rfi",
+  "title": "Shto RFI",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Rfi",
-    "description": ""
+    "title": "Shto RFI",
+    "description": "Plotëso të dhënat për të krijuar RFI."
   },
   "formButtons": {
     "cancel": "Anulo",

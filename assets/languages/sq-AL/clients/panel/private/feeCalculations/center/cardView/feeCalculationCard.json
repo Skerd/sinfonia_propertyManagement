@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i llogaritje tarife",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "planned": "Planifikuar",
+    "earned": "Fituar",
+    "invoiced": "Faturuar",
+    "paid": "Paguar"
+  },
+  "statuses": {
+    "planned": "Planifikuar",
+    "earned": "Fituar",
+    "invoiced": "Faturuar",
+    "paid": "Paguar"
+  }
 }

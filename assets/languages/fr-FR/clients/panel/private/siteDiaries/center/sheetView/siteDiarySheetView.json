@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx",
+  "siteDiary": "Site Diary",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "edifice": "Bâtiment",
+  "diaryDate": "Diary Date",
+  "weather": "Weather",
+  "workforceCount": "Workforce Count",
+  "plantSummary": "Plant Summary",
+  "workSummary": "Work Summary",
+  "visitors": "Visitors",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Brouillon",
+    "published": "Published"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger journal de chantier",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

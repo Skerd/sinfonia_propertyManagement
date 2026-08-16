@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/index.tsx",
+  "title": "Schedule Tasks",
+  "description": "Programme activities and works schedule",
+  "createScheduleTask": "New Task",
+  "noData": "No schedule tasks found",
+  "failTitle": "Failed to load schedule tasks",
+  "failDescription": "An error occurred while loading schedule tasks. Please try again.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "actualEnd": "Actual End",
+    "actualStart": "Actual Start",
+    "assignee": "Assignee",
+    "bkpCode": "BKP Code",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "dependencyType": "Dependency Type",
+    "description": "Descrizione",
+    "edifice": "Building",
+    "lagDays": "Lag Days",
+    "media": "Media",
+    "milestone": "Milestone",
+    "name": "Riferimento",
+    "notes": "Note",
+    "percentComplete": "Progress %",
+    "plannedEnd": "Planned End",
+    "plannedStart": "Planned Start",
+    "predecessors": "Predecessors",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "in_progress": "In Progress",
+        "completed": "Completato",
+        "delayed": "Delayed",
+        "cancelled": "Cancelled"
+      },
+      "dependencyType": {
+        "FS": "Fs",
+        "SS": "Ss",
+        "FF": "Ff",
+        "SF": "Sf"
+      }
+    }
+  }
+}

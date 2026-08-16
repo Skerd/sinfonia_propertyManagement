@@ -9,5 +9,6 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "description": "Firmenvorgaben für Verkauf, Reservation und Übergabe"
 }

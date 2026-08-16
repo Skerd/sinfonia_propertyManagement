@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/center/sheetView/rfiSheetView.tsx",
+  "rfi": "Rfi",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "edifice": "Bâtiment",
+  "question": "Question",
+  "answer": "Answer",
+  "dueDate": "Échéance",
+  "relatedDocument": "Related Document",
+  "notes": "Notes",
+  "statuses": {
+    "open": "Open",
+    "answered": "Answered",
+    "closed": "Closed",
+    "void": "Void"
+  },
+  "askedBy": "Asked by",
+  "answeredBy": "Answered by",
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger RFI",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

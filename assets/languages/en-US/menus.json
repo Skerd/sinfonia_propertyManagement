@@ -146,7 +146,7 @@
       "title": "Bid lines"
     },
     "costCommitments": {
-      "title": "Commitments / P os"
+      "title": "Commitments / POs"
     },
     "workPackages": {
       "title": "Work packages"
@@ -158,7 +158,7 @@
       "title": "Progress claims"
     },
     "rfis": {
-      "title": "Rf is"
+      "title": "RFIs"
     },
     "submittals": {
       "title": "Submittals"
@@ -283,6 +283,9 @@
     "erpExport": {
       "title": "ERP export"
     }
+  },
+  "propertyManagement": {
+    "title": "Property Management"
   },
   "finance": {
     "title": "Finance",

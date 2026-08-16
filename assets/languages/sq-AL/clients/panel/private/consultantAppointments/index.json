@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
-  "title": "ConsultantAppointment",
-  "description": "ConsultantAppointment register",
-  "createConsultantAppointment": "Add ConsultantAppointment",
-  "noData": "No records found",
-  "failTitle": "Failed to load",
-  "failDescription": "Please try again.",
-  "searchPlaceholder": "Search...",
+  "title": "Emërimet e konsulentëve",
+  "description": "Mandatet e arkitektëve, inxhinierëve dhe specialistëve (tarifat SIA)",
+  "createConsultantAppointment": "Shto emërim konsulenti",
+  "noData": "Nuk u gjetën të dhëna",
+  "failTitle": "Ngarkimi dështoi",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "adjustmentFactor": "Faktori i Rregullimit",
     "basisKind": "Baza",
@@ -54,8 +54,8 @@
       "role": {
         "architect": "Architect",
         "engineer": "Engineer",
-        "qs": "Qs",
-        "pm": "Pm",
+        "qs": "QS",
+        "pm": "PM",
         "surveyor": "Surveyor",
         "other": "Tjetër"
       }

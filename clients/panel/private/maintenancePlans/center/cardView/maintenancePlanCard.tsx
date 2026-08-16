@@ -26,6 +26,7 @@ type MaintenancePlanCardProps = WithLanguageType & {
 };
 
 function MaintenancePlanCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -49,8 +50,8 @@ function MaintenancePlanCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/maintenancePlan"
             restoreUrl="/api/realEstate/maintenancePlan/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

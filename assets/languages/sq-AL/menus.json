@@ -284,6 +284,9 @@
       "title": "Eksporti ERP"
     }
   },
+  "propertyManagement": {
+    "title": "Menaxhimi i Pronave"
+  },
   "finance": {
     "title": "Financat",
     "unitCosts": {

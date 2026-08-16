@@ -60,7 +60,7 @@
   },
   "formHeader": {
     "title": "LV-Position bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen LV-Position aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

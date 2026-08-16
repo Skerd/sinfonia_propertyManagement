@@ -29,6 +29,7 @@ type IncomingInvoiceCardProps = WithLanguageType & {
 };
 
 function IncomingInvoiceCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function IncomingInvoiceCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/incomingInvoice"
             restoreUrl="/api/realEstate/incomingInvoice/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
@@ -65,7 +66,7 @@ function IncomingInvoiceCard({
                     subtitle={row.extractedSupplierName}
                     subtitlePath="extractedSupplierName"
                     badges={row.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{row.status}</Badge>
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
                     ) : null}
                 />
             )}

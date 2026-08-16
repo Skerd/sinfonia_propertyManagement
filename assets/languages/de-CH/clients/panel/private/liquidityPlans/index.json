@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx",
   "title": "Liquiditätspläne",
-  "description": "Liquiditätsplanung — Zu-/Abfluss-Zeitachse",
+  "description": "Zeitplan der Ein- und Auszahlungen des Projekts",
   "createLiquidityPlan": "Plan hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

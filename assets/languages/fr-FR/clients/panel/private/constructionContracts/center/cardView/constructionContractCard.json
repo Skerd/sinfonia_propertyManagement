@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/center/cardView/constructionContractCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionContracts/center/cardView/constructionContractCard.tsx",
+  "failedTitle": "Impossible de charger record",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

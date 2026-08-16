@@ -23,5 +23,6 @@
   "invoiceNumber": "Facture n°",
   "vendorName": "Fournisseur",
   "tag": "Tag",
-  "relatedModificationRequest": "Demande de modification"
+  "relatedModificationRequest": "Demande de modification",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

@@ -66,8 +66,8 @@ function ProjectCard({
             sheetEntityProp="project"
             deleteUrl="/api/realEstate/project"
             restoreUrl="/api/realEstate/project/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

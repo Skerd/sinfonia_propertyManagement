@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx",
+  "failedTitle": "Impossible de charger poste DQ",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "active": "Actif",
+    "cancelled": "Cancelled"
+  },
+  "statuses": {
+    "active": "Actif",
+    "cancelled": "Cancelled"
+  }
+}

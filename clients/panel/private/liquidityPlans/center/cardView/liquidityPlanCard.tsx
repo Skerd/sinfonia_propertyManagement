@@ -26,6 +26,7 @@ type LiquidityPlanCardProps = WithLanguageType & {
 };
 
 function LiquidityPlanCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -49,8 +50,8 @@ function LiquidityPlanCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/liquidityPlan"
             restoreUrl="/api/realEstate/liquidityPlan/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

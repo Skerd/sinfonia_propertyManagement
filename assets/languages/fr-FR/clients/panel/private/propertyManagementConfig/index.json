@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
-  "title": "Ventes & remise",
+  "title": "Ventes & réception",
   "errors": {
     "missingConfigId": "Impossible de charger les paramètres de l’entreprise."
   },
@@ -9,5 +9,6 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "description": "Paramètres société pour ventes, réservations et réception"
 }

@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/cardView/planMarkupCard.tsx",
+  "failedTitle": "Impossibile caricare annotazione di piano",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "open": "Open",
+    "in_progress": "In Progress",
+    "done": "Done",
+    "void": "Void"
+  },
+  "statuses": {
+    "open": "Open",
+    "in_progress": "In Progress",
+    "done": "Done",
+    "void": "Void"
+  }
+}

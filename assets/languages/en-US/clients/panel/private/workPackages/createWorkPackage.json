@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/workPackages/createWorkPackage.tsx",
-  "title": "Add Work Package",
+  "title": "Add work package",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -37,8 +37,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Work Package",
-    "description": ""
+    "title": "Add work package",
+    "description": "Enter the details to create a new work package."
   },
   "formButtons": {
     "cancel": "Cancel",

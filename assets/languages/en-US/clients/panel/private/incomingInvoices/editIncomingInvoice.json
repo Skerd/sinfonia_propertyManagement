@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/editIncomingInvoice.tsx",
-  "title": "Edit Incoming Invoice",
+  "title": "Edit incoming invoice",
   "generalInfo": "Details",
   "form": {
     "titleLabel": "Title",
@@ -49,8 +49,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Incoming Invoice",
-    "description": ""
+    "title": "Edit incoming invoice",
+    "description": "Update the details for this incoming invoice."
   },
   "formButtons": {
     "cancel": "Cancel",

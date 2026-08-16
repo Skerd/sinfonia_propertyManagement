@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/createBudget.tsx",
-  "title": "Shto Budget",
+  "title": "Shto buxhet",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -45,8 +45,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Budget",
-    "description": ""
+    "title": "Shto buxhet",
+    "description": "Plotëso të dhënat për të krijuar buxhet."
   },
   "formButtons": {
     "cancel": "Anulo",

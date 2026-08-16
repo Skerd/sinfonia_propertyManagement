@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/index.tsx",
+  "title": "Plans de maintenance",
+  "description": "Intervalles d'entretien préventif du bâtiment",
+  "createMaintenancePlan": "Ajouter un plan",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "active": "Actif",
+    "asset": "Asset",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "edifice": "Bâtiment",
+    "intervalDays": "Interval (Days)",
+    "name": "Référence",
+    "nextDueAt": "Next Due",
+    "notes": "Notes",
+    "planType": "Plan Type",
+    "responsibleParty": "Responsible Party",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "planType": {
+        "preventive": "Preventive",
+        "statutory": "Statutory",
+        "renovation": "Renovation"
+      }
+    }
+  }
+}

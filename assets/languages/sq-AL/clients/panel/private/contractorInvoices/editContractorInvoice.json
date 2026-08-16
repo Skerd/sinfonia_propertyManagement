@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/editContractorInvoice.tsx",
-  "title": "Ndrysho Faturën",
+  "title": "Ndrysho faturë kontraktori",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -51,8 +51,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Faturën",
-    "description": ""
+    "title": "Ndrysho faturë kontraktori",
+    "description": "Përditëso të dhënat e këtij faturë kontraktori."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -38,7 +38,7 @@
   },
   "formHeader": {
     "title": "Add Line",
-    "description": ""
+    "description": "Enter the details to create a new record."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bimModels/createBimModel.tsx",
-  "title": "Add BIM Model",
+  "title": "Add BIM model",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -29,8 +29,8 @@
     }
   },
   "formHeader": {
-    "title": "Add BIM Model",
-    "description": ""
+    "title": "Add BIM model",
+    "description": "Enter the details to create a new BIM model."
   },
   "formButtons": {
     "cancel": "Cancel",

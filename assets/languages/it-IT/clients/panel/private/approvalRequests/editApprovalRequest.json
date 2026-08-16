@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/editApprovalRequest.tsx",
+  "title": "Modifica richiesta di approvazione",
+  "generalInfo": "Dettagli",
+  "form": {
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "workflowLabel": "Workflow",
+    "workflowPlaceholder": "Select workflow",
+    "targetTypeLabel": "Target Type",
+    "targetTypePlaceholder": "e.g. contractorinvoices",
+    "targetIdLabel": "Target ID",
+    "targetIdPlaceholder": "Target document id",
+    "amountLabel": "Importo",
+    "amountPlaceholder": "Importo",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica richiesta di approvazione",
+    "description": "Aggiorna i dati di questo richiesta di approvazione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

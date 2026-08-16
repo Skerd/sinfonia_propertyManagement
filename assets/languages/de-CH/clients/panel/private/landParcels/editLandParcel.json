@@ -23,8 +23,8 @@
     "descriptionPlaceholder": "Beschreibung",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files"
   },
   "axios": {
@@ -43,7 +43,7 @@
   },
   "formHeader": {
     "title": "Grundstück bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Grundstück aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

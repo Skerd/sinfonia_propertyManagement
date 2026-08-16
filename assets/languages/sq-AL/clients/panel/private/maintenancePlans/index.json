@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/index.tsx",
-  "title": "Planet e Mirëmbajtjes",
-  "description": "Planet e mirëmbajtjes / mirëmbajtjes së ndërtesës",
-  "createMaintenancePlan": "Shto Plan",
+  "title": "Planet e mirëmbajtjes",
+  "description": "Intervalet e planifikuara të mirëmbajtjes së objektit",
+  "createMaintenancePlan": "Shto plan",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "active": "Aktive",
     "asset": "Aseti",

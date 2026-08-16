@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/editProgressClaim.tsx",
-  "title": "Zahlungsantrag bearbeiten",
+  "title": "Fortschrittsrechnung bearbeiten",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -27,8 +27,8 @@
     "descriptionPlaceholder": "Beschreibung",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files"
   },
   "axios": {
@@ -46,8 +46,8 @@
     }
   },
   "formHeader": {
-    "title": "Zahlungsantrag bearbeiten",
-    "description": ""
+    "title": "Fortschrittsrechnung bearbeiten",
+    "description": "Angaben für diesen Fortschrittsrechnung aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
+  "title": "Modifier liste de contrôle",
+  "generalInfo": "Détails",
+  "form": {
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "tradeLabel": "Trade",
+    "tradePlaceholder": "Trade",
+    "stageLabel": "Stage",
+    "stagePlaceholder": "Stage",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "itemsJsonLabel": "Checklist Items",
+    "itemsJsonPlaceholder": "Checklist Items",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier liste de contrôle",
+    "description": "Mettez à jour les informations de ce liste de contrôle."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

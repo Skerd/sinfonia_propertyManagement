@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/index.tsx",
+  "title": "Piani di manutenzione",
+  "description": "Intervalli di manutenzione programmata dell'edificio",
+  "createMaintenancePlan": "Aggiungi piano",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "active": "Attivo",
+    "asset": "Asset",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "edifice": "Edificio",
+    "intervalDays": "Interval (Days)",
+    "name": "Riferimento",
+    "nextDueAt": "Next Due",
+    "notes": "Note",
+    "planType": "Plan Type",
+    "responsibleParty": "Responsible Party",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "planType": {
+        "preventive": "Preventive",
+        "statutory": "Statutory",
+        "renovation": "Renovation"
+      }
+    }
+  }
+}

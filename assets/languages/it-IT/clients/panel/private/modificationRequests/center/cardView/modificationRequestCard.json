@@ -65,5 +65,6 @@
     "hvac": "HVAC",
     "cosmetic": "Estetico",
     "other": "Altro"
-  }
+  },
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

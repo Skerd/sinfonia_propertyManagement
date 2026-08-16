@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/cardView/commissionCard.tsx",
   "overview": "Aperçu",
   "clickToCopy": "Cliquer pour copier",
-  "active": "Active",
+  "active": "Actif",
   "unit": "Unité",
   "agent": "Agent",
   "amount": "Montant",
@@ -30,5 +30,8 @@
   "voidedAt": "Annulée le",
   "recordedBy": "Enregistrée par",
   "deleted": "Supprimée",
-  "modelType": "Commission"
+  "modelType": "Commission",
+  "failedTitle": "Impossible de charger cet enregistrement",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

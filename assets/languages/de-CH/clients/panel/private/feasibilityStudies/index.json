@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/index.tsx",
-  "title": "FeasibilityStudy",
-  "description": "FeasibilityStudy register",
-  "createFeasibilityStudy": "FeasibilityStudy hinzufügen",
+  "title": "Machbarkeitsstudien",
+  "description": "Standort-, Kosten- und Renditeanalysen für Entwicklungsgrundstücke",
+  "createFeasibilityStudy": "Studie hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "assumptions": "Annahmen",
     "createdAt": "Erstellt am",

@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/cardView/safetyIncidentCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/cardView/safetyIncidentCard.tsx",
+  "failedTitle": "Failed to load safety incident",
+  "failedDescription": "Something went wrong while loading this safety incident. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "closed": "Closed"
+  },
+  "statuses": {
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "closed": "Closed"
+  }
 }

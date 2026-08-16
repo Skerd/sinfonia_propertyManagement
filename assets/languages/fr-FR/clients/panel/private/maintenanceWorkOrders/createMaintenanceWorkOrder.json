@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/createMaintenanceWorkOrder.tsx",
+  "title": "Add Work Order",
+  "generalInfo": "Détails",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Select plan",
+    "assetLabel": "Asset",
+    "assetPlaceholder": "Select asset",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "typeLabel": "Type",
+    "typePlaceholder": "Select type",
+    "assigneeLabel": "Assignee",
+    "assigneePlaceholder": "Select assignee",
+    "costEstimateLabel": "Cost Estimate",
+    "costEstimatePlaceholder": "Montant",
+    "actualCostLabel": "Actual Cost",
+    "actualCostPlaceholder": "Montant",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "dueDateLabel": "Échéance",
+    "dueDatePlaceholder": "Due date",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Work Order",
+    "description": "Saisissez les informations pour créer un record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
+  "title": "Ajouter un procès-verbal",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Select unit",
+    "handoverPackageLabel": "Handover Package",
+    "handoverPackagePlaceholder": "Select handover package",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "systemNameLabel": "System Name",
+    "systemNamePlaceholder": "System Name",
+    "testDateLabel": "Test Date",
+    "testDatePlaceholder": "Test Date",
+    "resultNotesLabel": "Result Notes",
+    "resultNotesPlaceholder": "Result Notes",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers",
+    "inspectedByLabel": "Inspected by",
+    "inspectedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un procès-verbal",
+    "description": "Saisissez les informations pour créer un procès-verbal de mise en service."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

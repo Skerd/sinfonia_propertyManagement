@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/editProjectDocument.tsx",
-  "title": "Titulli",
+  "title": "Ndrysho dokument",
   "generalInfo": "Detajet e Dokumentit",
   "editTitle": "Modifiko Dokumentin",
   "editDescription": "Përditëso detajet e dokumentit të projektit",
@@ -72,8 +72,8 @@
     }
   },
   "formHeader": {
-    "title": "Modifiko Dokumentin",
-    "description": "Përditëso detajet e dokumentit të projektit"
+    "title": "Ndrysho dokument",
+    "description": "Përditëso të dhënat e këtij dokument."
   },
   "formButtons": {
     "cancel": "Anulo",

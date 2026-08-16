@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/cardView/approvalWorkflowCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/cardView/approvalWorkflowCard.tsx",
+  "failedTitle": "Failed to load approval workflow",
+  "failedDescription": "Something went wrong while loading this approval workflow. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

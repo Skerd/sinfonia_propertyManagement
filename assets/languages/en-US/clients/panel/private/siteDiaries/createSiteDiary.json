@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/createSiteDiary.tsx",
-  "title": "Add Site Diary",
+  "title": "Add site diary",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Site Diary",
-    "description": ""
+    "title": "Add site diary",
+    "description": "Enter the details to create a new site diary."
   },
   "formButtons": {
     "cancel": "Cancel",

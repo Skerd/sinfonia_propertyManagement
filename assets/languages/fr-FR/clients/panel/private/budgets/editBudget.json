@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/editBudget.tsx",
+  "title": "Modifier budget",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "versionLabel": "Version",
+    "versionPlaceholder": "Version",
+    "methodLabel": "Estimate Method",
+    "methodPlaceholder": "Select method",
+    "classificationStandardLabel": "Classification Standard",
+    "classificationStandardPlaceholder": "Select standard",
+    "revisionNoLabel": "Revision No. (KV-Mutation)",
+    "revisionNoPlaceholder": "Revision number",
+    "supersedesBudgetLabel": "Supersedes Budget",
+    "supersedesBudgetPlaceholder": "Select prior revision",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "approvedTotalLabel": "Approved Total",
+    "approvedTotalPlaceholder": "Approved Total",
+    "contingencyPercentLabel": "Contingency Percent",
+    "contingencyPercentPlaceholder": "Contingency Percent",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier budget",
+    "description": "Mettez à jour les informations de ce budget."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

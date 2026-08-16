@@ -71,8 +71,8 @@ function PermitCard({
             sheetEntityProp="permit"
             deleteUrl="/api/realEstate/permit"
             restoreUrl="/api/realEstate/permit/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

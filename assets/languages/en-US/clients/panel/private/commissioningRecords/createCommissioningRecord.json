@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
-  "title": "Add Commissioning Record",
+  "title": "Add commissioning record",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Commissioning Record",
-    "description": ""
+    "title": "Add commissioning record",
+    "description": "Enter the details to create a new commissioning record."
   },
   "formButtons": {
     "cancel": "Cancel",

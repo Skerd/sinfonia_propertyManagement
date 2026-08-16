@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/scheduleTasks/createScheduleTask.tsx",
+  "title": "New Task",
+  "description": "Create a new schedule task",
+  "generalInfo": "Task Details",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building",
+    "milestoneLabel": "Milestone",
+    "milestonePlaceholder": "Select milestone",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "e.g. Pour ground floor slab",
+    "assigneeLabel": "Assignee",
+    "assigneePlaceholder": "Select assignee",
+    "percentCompleteLabel": "Progress %",
+    "percentCompletePlaceholder": "0 - 100",
+    "plannedStartLabel": "Planned Start",
+    "plannedStartPlaceholder": "Select date",
+    "plannedEndLabel": "Planned End",
+    "plannedEndPlaceholder": "Select date",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Describe this task",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Internal notes",
+    "mediaLabel": "Media",
+    "existingFiles": "Existing media",
+    "newFiles": "Add new media",
+    "dependencyTypeLabel": "Dependency Type",
+    "dependencyTypePlaceholder": "Select dependency",
+    "lagDaysLabel": "Lag (days)",
+    "lagDaysPlaceholder": "Lag days",
+    "bkpCodeLabel": "BKP Code",
+    "bkpCodePlaceholder": "e.g. 211"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating task",
+      "time": 3000
+    },
+    "success": {
+      "title": "Task created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create task, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "New Task",
+    "description": "Create a new schedule task"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Create Task"
+  }
+}

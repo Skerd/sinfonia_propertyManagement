@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/createTenderInvitation.tsx",
+  "title": "Add Invitation",
+  "generalInfo": "Détails",
+  "form": {
+    "tenderLabel": "Tender",
+    "tenderPlaceholder": "Select tender",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "invitedAtLabel": "Invited At",
+    "invitedAtPlaceholder": "Select date",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Invitation",
+    "description": "Saisissez les informations pour créer un record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

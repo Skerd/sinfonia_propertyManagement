@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/createFeeCalculation.tsx",
-  "title": "Honorar hinzufügen",
+  "title": "Berechnung hinzufügen",
   "generalInfo": "Details",
   "form": {
     "consultantAppointmentLabel": "Beauftragung",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Honorar hinzufügen",
-    "description": ""
+    "title": "Berechnung hinzufügen",
+    "description": "Angaben für Honorarberechnung erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

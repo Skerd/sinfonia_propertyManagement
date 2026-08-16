@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx",
-  "title": "Abnahme-Checklisten-Vorlage hinzufügen",
+  "title": "Checkliste hinzufügen",
   "generalInfo": "Details",
   "form": {
     "titleLabel": "Bezeichnung",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Abnahme-Checklisten-Vorlage hinzufügen",
-    "description": ""
+    "title": "Checkliste hinzufügen",
+    "description": "Angaben für Abnahme-Checkliste erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

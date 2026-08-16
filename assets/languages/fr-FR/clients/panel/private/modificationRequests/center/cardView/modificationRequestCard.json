@@ -65,5 +65,6 @@
     "hvac": "CVC",
     "cosmetic": "Esthétique",
     "other": "Autre"
-  }
+  },
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

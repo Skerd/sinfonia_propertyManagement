@@ -65,5 +65,6 @@
     "hvac": "HVAC",
     "cosmetic": "Kozmetike",
     "other": "Të tjera"
-  }
+  },
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

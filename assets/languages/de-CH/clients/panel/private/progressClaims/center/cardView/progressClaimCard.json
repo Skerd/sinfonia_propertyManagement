@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx",
+  "failedTitle": "Fortschrittsrechnung konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "draft": "Entwurf",
+    "submitted": "Eingereicht",
+    "certified": "Ausgewiesen",
+    "paid": "Bezahlt",
+    "rejected": "Abgelehnt"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "submitted": "Eingereicht",
+    "certified": "Ausgewiesen",
+    "paid": "Bezahlt",
+    "rejected": "Abgelehnt"
+  }
 }

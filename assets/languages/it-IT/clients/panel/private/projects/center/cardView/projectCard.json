@@ -31,5 +31,8 @@
     "unavailable": "Non disponibile",
     "unavailableDesc": "Non disponibile alla vendita"
   },
-  "viewEdifices": "Vedi edifici"
+  "viewEdifices": "Vedi edifici",
+  "failedTitle": "Impossibile caricare questo record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

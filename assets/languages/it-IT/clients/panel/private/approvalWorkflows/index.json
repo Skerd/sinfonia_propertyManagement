@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/index.tsx",
+  "title": "Flussi di approvazione",
+  "description": "Instradamento di approvazione per budget, contratti e fatture",
+  "createApprovalWorkflow": "Aggiungi flusso",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "active": "Attivo",
+    "approverRole": "Approver Role",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "documentType": "Document Type",
+    "escalationRole": "Escalation Role",
+    "name": "Riferimento",
+    "notes": "Note",
+    "thresholdAmount": "Threshold Amount",
+    "thresholdCurrency": "Threshold Currency",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "documentType": {
+        "budget": "Budget",
+        "cost_estimate": "Cost Estimate",
+        "contract": "Contratto",
+        "variation_order": "Variation Order",
+        "contractor_invoice": "Contractor Invoice",
+        "progress_claim": "Progress Claim"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/cardView/contractorInvoiceCard.tsx",
+  "failedTitle": "Impossible de charger facture d'entreprise",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "received": "Received",
+    "under_review": "Under Review",
+    "approved": "Approved",
+    "paid": "Paid",
+    "rejected": "Rejected",
+    "disputed": "Disputed"
+  },
+  "statuses": {
+    "received": "Received",
+    "under_review": "Under Review",
+    "approved": "Approved",
+    "paid": "Paid",
+    "rejected": "Rejected",
+    "disputed": "Disputed"
+  }
+}

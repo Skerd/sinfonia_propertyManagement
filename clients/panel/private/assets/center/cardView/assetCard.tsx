@@ -29,6 +29,7 @@ type AssetCardProps = WithLanguageType & {
 };
 
 function AssetCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function AssetCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/asset"
             restoreUrl="/api/realEstate/asset/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

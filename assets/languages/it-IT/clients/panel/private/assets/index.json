@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/index.tsx",
+  "title": "Assets",
+  "description": "Building component / equipment register (FM)",
+  "createAsset": "Add Asset",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "category": "Category",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "edifice": "Edificio",
+    "installDate": "Install Date",
+    "lifecycleStatus": "Lifecycle Status",
+    "manufacturer": "Manufacturer",
+    "name": "Riferimento",
+    "notes": "Note",
+    "serial": "Serial",
+    "title": "Titolo",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "warranty": "Garanzia",
+    "!enums": {
+      "lifecycleStatus": {
+        "planned": "Planned",
+        "active": "Attivo",
+        "maintenance": "Maintenance",
+        "retired": "Retired"
+      }
+    }
+  }
+}

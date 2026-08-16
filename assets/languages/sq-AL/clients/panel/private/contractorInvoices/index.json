@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/index.tsx",
-  "title": "Faturat e Kontraktorëve",
-  "description": "Unternehmerrechnungen të koduara në llogaritë BKP",
-  "createContractorInvoice": "Shto Faturë",
+  "title": "Faturat e kontraktorëve",
+  "description": "Faturat e kontraktorëve të koduara në llogaritë BKP",
+  "createContractorInvoice": "Shto faturë",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "bkpAccountCode": "Llogaria BKP",
     "constructionContract": "Kontrata e Ndërtimit",

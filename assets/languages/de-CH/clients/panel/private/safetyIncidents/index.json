@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/index.tsx",
-  "title": "SafetyIncident",
-  "description": "SafetyIncident register",
-  "createSafetyIncident": "SafetyIncident hinzufügen",
+  "title": "Sicherheitsvorfälle",
+  "description": "Sicherheitsvorfälle, Beinaheunfälle und Nachverfolgung",
+  "createSafetyIncident": "Vorfall hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "correctiveActions": "Korrektiv Massnahmen",
     "createdAt": "Erstellt am",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/editVariationOrder.tsx",
-  "title": "Nachtrag bearbeiten",
+  "title": "Nachtragsauftrag bearbeiten",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -21,8 +21,8 @@
     "timeImpactDaysPlaceholder": "Time Impact Tage",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "modificationRequestLabel": "Änderungsantrag",
     "modificationRequestPlaceholder": "Änderungsantrag auswählen"
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Nachtrag bearbeiten",
-    "description": ""
+    "title": "Nachtragsauftrag bearbeiten",
+    "description": "Angaben für diesen Nachtragsauftrag aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

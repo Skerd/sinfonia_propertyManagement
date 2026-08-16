@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/createVariationOrder.tsx",
-  "title": "Shto Variation Order",
+  "title": "Shto urdhër ndryshimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Variation Order",
-    "description": ""
+    "title": "Shto urdhër ndryshimi",
+    "description": "Plotëso të dhënat për të krijuar urdhrë ndryshimi."
   },
   "formButtons": {
     "cancel": "Anulo",

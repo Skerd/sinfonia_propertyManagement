@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/createCostCommitment.tsx",
-  "title": "Kostenverpflichtung hinzufügen",
+  "title": "Verpflichtung hinzufügen",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -25,8 +25,8 @@
     "issuedAtPlaceholder": "Issued Am",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files"
   },
   "axios": {
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Kostenverpflichtung hinzufügen",
-    "description": ""
+    "title": "Verpflichtung hinzufügen",
+    "description": "Angaben für Kostenverpflichtung erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

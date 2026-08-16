@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/assets/center/sheetView/assetSheetView.tsx",
+  "asset": "Asset",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "edifice": "Edificio",
+  "category": "Category",
+  "manufacturer": "Manufacturer",
+  "serial": "Serial",
+  "installDate": "Install Date",
+  "notes": "Note",
+  "lifecycleStatus": "Lifecycle Status",
+  "lifecycleStatuses": {
+    "planned": "Planned",
+    "active": "Attivo",
+    "maintenance": "Maintenance",
+    "retired": "Retired"
+  },
+  "unit": "Unità",
+  "warranty": "Garanzia",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

@@ -30,5 +30,8 @@
   "voidedAt": "Anuluar më",
   "recordedBy": "Regjistruar nga",
   "deleted": "Fshirë",
-  "modelType": "Komisioni"
+  "modelType": "Komisioni",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

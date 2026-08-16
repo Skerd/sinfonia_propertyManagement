@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/index.tsx",
+  "title": "Ordres de modification",
+  "description": "Avenants, plus-values et changements de périmètre",
+  "createVariationOrder": "Ajouter un ordre",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "billedAt": "Billed At",
+    "billingReference": "Billing Reference",
+    "constructionContract": "Construction Contract",
+    "costImpact": "Cost Impact",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "media": "Médias",
+    "modificationRequest": "Modification Request",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "status": "Statut",
+    "timeImpactDays": "Time Impact Days",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "pending_architect": "Pending Architect",
+        "pending_qs": "Pending QS",
+        "pending_client": "Pending Client",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

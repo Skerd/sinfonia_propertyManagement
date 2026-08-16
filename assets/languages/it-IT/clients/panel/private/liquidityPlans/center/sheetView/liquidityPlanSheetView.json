@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/sheetView/liquidityPlanSheetView.tsx",
+  "liquidityPlan": "Liquidity Plan",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "project": "Progetto",
+  "title": "Titolo",
+  "horizonStart": "Horizon Start",
+  "horizonEnd": "Horizon End",
+  "granularity": "Granularity",
+  "currency": "Valuta",
+  "notes": "Note",
+  "granularities": {
+    "monthly": "Monthly",
+    "quarterly": "Quarterly",
+    "yearly": "Yearly"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare piano di liquidità",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

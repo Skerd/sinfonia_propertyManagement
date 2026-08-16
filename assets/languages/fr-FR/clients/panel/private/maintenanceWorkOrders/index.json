@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/index.tsx",
+  "title": "Work Orders",
+  "description": "Maintenance work orders (FM)",
+  "createMaintenanceWorkOrder": "Add Work Order",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher...",
+  "fields": {
+    "actualCost": "Actual Cost",
+    "asset": "Asset",
+    "assignee": "Assignee",
+    "costEstimate": "Cost Estimate",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "dueDate": "Échéance",
+    "edifice": "Bâtiment",
+    "linkedSnag": "Linked Snag",
+    "name": "Référence",
+    "notes": "Notes",
+    "plan": "Plan",
+    "status": "Statut",
+    "title": "Titre",
+    "type": "Type",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "type": {
+        "preventive": "Preventive",
+        "corrective": "Corrective",
+        "renovation": "Renovation"
+      },
+      "status": {
+        "open": "Open",
+        "assigned": "Assigned",
+        "in_progress": "In Progress",
+        "done": "Done",
+        "verified": "Verified",
+        "closed": "Closed",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

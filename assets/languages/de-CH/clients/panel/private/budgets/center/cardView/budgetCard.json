@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/cardView/budgetCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/cardView/budgetCard.tsx",
+  "failedTitle": "Budget konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "draft": "Entwurf",
+    "pending_approval": "Ausstehend Freigabe",
+    "approved": "Genehmigt",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "pending_approval": "Ausstehend Freigabe",
+    "approved": "Genehmigt",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  }
 }

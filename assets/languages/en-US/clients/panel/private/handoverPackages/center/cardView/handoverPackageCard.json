@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx",
+  "failedTitle": "Failed to load handover package",
+  "failedDescription": "Something went wrong while loading this handover package. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "draft": "Draft",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Completed"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Completed"
+  }
 }

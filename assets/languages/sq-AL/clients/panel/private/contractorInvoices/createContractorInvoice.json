@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/createContractorInvoice.tsx",
-  "title": "Shto Faturë",
+  "title": "Shto faturë",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -51,8 +51,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Faturë",
-    "description": ""
+    "title": "Shto faturë",
+    "description": "Plotëso të dhënat për të krijuar faturë kontraktori."
   },
   "formButtons": {
     "cancel": "Anulo",

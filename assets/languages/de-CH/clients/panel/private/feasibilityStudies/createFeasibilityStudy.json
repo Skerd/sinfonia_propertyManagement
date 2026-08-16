@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/createFeasibilityStudy.tsx",
-  "title": "Machbarkeitsstudie hinzufügen",
+  "title": "Studie hinzufügen",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -29,8 +29,8 @@
     "descriptionPlaceholder": "Beschreibung",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "decidedByLabel": "Decided von",
     "decidedByPlaceholder": "Benutzer auswählen",
@@ -52,8 +52,8 @@
     }
   },
   "formHeader": {
-    "title": "Machbarkeitsstudie hinzufügen",
-    "description": ""
+    "title": "Studie hinzufügen",
+    "description": "Angaben für Machbarkeitsstudie erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

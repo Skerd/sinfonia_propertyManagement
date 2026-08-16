@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/workPackages/editWorkPackage.tsx",
-  "title": "Edit Work Package",
+  "title": "Edit work package",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -37,8 +37,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Work Package",
-    "description": ""
+    "title": "Edit work package",
+    "description": "Update the details for this work package."
   },
   "formButtons": {
     "cancel": "Cancel",

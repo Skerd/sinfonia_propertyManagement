@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/createFeasibilityStudy.tsx",
-  "title": "Shto Feasibility Study",
+  "title": "Shto studim fizibiliteti",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -52,8 +52,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Feasibility Study",
-    "description": ""
+    "title": "Shto studim fizibiliteti",
+    "description": "Plotëso të dhënat për të krijuar studim fizibiliteti."
   },
   "formButtons": {
     "cancel": "Anulo",

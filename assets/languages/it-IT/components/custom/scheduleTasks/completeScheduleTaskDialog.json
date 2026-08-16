@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/completeScheduleTaskDialog.tsx",
+  "dialogTitle": "Complete task",
+  "dialogDescription": "Mark this task as completed and record its actual end date.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Optional completion notes",
+  "cancel": "Annulla",
+  "submit": "Complete task"
+}

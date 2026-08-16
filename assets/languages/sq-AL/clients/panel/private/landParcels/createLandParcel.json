@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
-  "title": "Shto Land Parcel",
+  "title": "Shto parcelë",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Land Parcel",
-    "description": ""
+    "title": "Shto parcelë",
+    "description": "Plotëso të dhënat për të krijuar parcelë."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bids/createBid.tsx",
-  "title": "Shto Ofertë",
+  "title": "Shto ofertë",
   "generalInfo": "Detajet",
   "form": {
     "tenderLabel": "Tenderi",
@@ -33,8 +33,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Ofertë",
-    "description": ""
+    "title": "Shto ofertë",
+    "description": "Plotëso të dhënat për të krijuar ofertë."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -31,10 +31,25 @@
     "newFiles": "Add new media"
   },
   "axios": {
-    "start": { "title": "Updating milestone", "time": 3000 },
-    "success": { "title": "Milestone updated!", "time": 3000 },
-    "error": { "title": "Could not update milestone, please try again!", "time": 3000 }
+    "start": {
+      "title": "Updating milestone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Milestone updated!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update milestone, please try again!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Edit Milestone", "description": "Update this project milestone" },
-  "formButtons": { "cancel": "Cancel", "submit": "Save Changes" }
+  "formHeader": {
+    "title": "Edit Milestone",
+    "description": "Update this project milestone"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save Changes"
+  }
 }

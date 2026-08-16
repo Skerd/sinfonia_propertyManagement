@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/editBidLine.tsx",
+  "title": "Edit Bid Line",
+  "generalInfo": "Dettagli",
+  "form": {
+    "bidLabel": "Bid",
+    "bidPlaceholder": "Select bid",
+    "specificationItemLabel": "LV Position",
+    "specificationItemPlaceholder": "Select LV position",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitPriceLabel": "Unit Price",
+    "unitPricePlaceholder": "Unit Price",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "alternativeNoteLabel": "Alternative Note",
+    "alternativeNotePlaceholder": "Alternative note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Bid Line",
+    "description": "Aggiorna i dati di questo record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

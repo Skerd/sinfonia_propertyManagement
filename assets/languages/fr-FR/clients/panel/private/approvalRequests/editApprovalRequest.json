@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/editApprovalRequest.tsx",
+  "title": "Modifier demande d'approbation",
+  "generalInfo": "Détails",
+  "form": {
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "workflowLabel": "Workflow",
+    "workflowPlaceholder": "Select workflow",
+    "targetTypeLabel": "Target Type",
+    "targetTypePlaceholder": "e.g. contractorinvoices",
+    "targetIdLabel": "Target ID",
+    "targetIdPlaceholder": "Target document id",
+    "amountLabel": "Montant",
+    "amountPlaceholder": "Montant",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier demande d'approbation",
+    "description": "Mettez à jour les informations de ce demande d'approbation."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

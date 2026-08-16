@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
-  "title": "Sales & Handover",
+  "title": "Sales & handover",
   "errors": {
     "missingConfigId": "Could not load company settings."
   },
@@ -9,5 +9,6 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "description": "Company defaults for sales, reservations and handover"
 }

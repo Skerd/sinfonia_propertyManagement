@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/editApprovalWorkflow.tsx",
-  "title": "Ndrysho Rrjedhën",
+  "title": "Ndrysho rrjedhë miratimi",
   "generalInfo": "Detajet",
   "form": {
     "documentTypeLabel": "Lloji i Dokumentit",
@@ -34,8 +34,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Rrjedhën",
-    "description": ""
+    "title": "Ndrysho rrjedhë miratimi",
+    "description": "Përditëso të dhënat e këtij rrjedhë miratimi."
   },
   "formButtons": {
     "cancel": "Anulo",

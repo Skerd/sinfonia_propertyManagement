@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/sheetView/warrantySheetView.tsx",
+  "warranty": "Garanzia",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "unit": "Unità",
+  "startDate": "Data inizio",
+  "endDate": "Data fine",
+  "retentionAmount": "Retention Amount",
+  "currency": "Valuta",
+  "retentionReleaseDate": "Retention Release Date",
+  "description": "Descrizione",
+  "notes": "Note",
+  "statuses": {
+    "active": "Attivo",
+    "expired": "Expired",
+    "void": "Void"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare garanzia",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

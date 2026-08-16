@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx",
+  "failedTitle": "Impossibile caricare verbale di collaudo",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed"
+  }
+}

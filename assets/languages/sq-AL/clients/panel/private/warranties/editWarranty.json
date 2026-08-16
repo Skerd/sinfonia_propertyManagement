@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/warranties/editWarranty.tsx",
-  "title": "Ndrysho Warranty",
+  "title": "Ndrysho garanci",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Warranty",
-    "description": ""
+    "title": "Ndrysho garanci",
+    "description": "Përditëso të dhënat e këtij garanci."
   },
   "formButtons": {
     "cancel": "Anulo",

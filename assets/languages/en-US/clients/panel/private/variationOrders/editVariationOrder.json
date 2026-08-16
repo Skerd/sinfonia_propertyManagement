@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/editVariationOrder.tsx",
-  "title": "Edit Variation Order",
+  "title": "Edit variation order",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Variation Order",
-    "description": ""
+    "title": "Edit variation order",
+    "description": "Update the details for this variation order."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -25,8 +25,8 @@
     "descriptionPlaceholder": "Beschreibung",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files"
   },
   "axios": {
@@ -45,7 +45,7 @@
   },
   "formHeader": {
     "title": "Garantie hinzufügen",
-    "description": ""
+    "description": "Angaben für Garantie erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

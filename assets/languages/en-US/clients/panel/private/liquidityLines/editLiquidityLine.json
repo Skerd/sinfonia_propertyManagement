@@ -38,7 +38,7 @@
   },
   "formHeader": {
     "title": "Edit Line",
-    "description": ""
+    "description": "Update the details for this record."
   },
   "formButtons": {
     "cancel": "Cancel",

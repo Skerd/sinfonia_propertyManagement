@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx",
+  "failedTitle": "Impossibile caricare fase di progettazione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "not_started": "Not Started",
+    "in_progress": "In Progress",
+    "completed": "Completato",
+    "blocked": "Blocked"
+  },
+  "statuses": {
+    "not_started": "Not Started",
+    "in_progress": "In Progress",
+    "completed": "Completato",
+    "blocked": "Blocked"
+  }
+}

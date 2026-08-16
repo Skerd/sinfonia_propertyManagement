@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/cardView/incomingInvoiceCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/cardView/incomingInvoiceCard.tsx",
+  "failedTitle": "Eingangsrechnung konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "inbox": "Posteingang",
+    "classified": "Klassifiziert",
+    "routed": "Weitergeleitet",
+    "posted": "Gebucht",
+    "rejected": "Abgelehnt"
+  },
+  "statuses": {
+    "inbox": "Posteingang",
+    "classified": "Klassifiziert",
+    "routed": "Weitergeleitet",
+    "posted": "Gebucht",
+    "rejected": "Abgelehnt"
+  }
 }

@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
-  "title": "ConsultantAppointment",
-  "description": "ConsultantAppointment register",
-  "createConsultantAppointment": "Add ConsultantAppointment",
-  "noData": "No records found",
-  "failTitle": "Failed to load",
-  "failDescription": "Please try again.",
-  "searchPlaceholder": "Search...",
+  "title": "Consultant appointments",
+  "description": "Architect, engineer and specialist mandates (SIA fees)",
+  "createConsultantAppointment": "Add consultant appointment",
+  "noData": "No consultant appointments found",
+  "failTitle": "Failed to load consultant appointments",
+  "failDescription": "An error occurred while loading. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "adjustmentFactor": "Adjustment Factor",
     "basisKind": "Basis",
@@ -54,8 +54,8 @@
       "role": {
         "architect": "Architect",
         "engineer": "Engineer",
-        "qs": "Qs",
-        "pm": "Pm",
+        "qs": "QS",
+        "pm": "PM",
         "surveyor": "Surveyor",
         "other": "Other"
       }

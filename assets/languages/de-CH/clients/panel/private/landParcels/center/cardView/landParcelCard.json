@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx",
+  "failedTitle": "Grundstück konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "prospect": "Prospect",
+    "under_dd": "Unter DD",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  },
+  "statuses": {
+    "prospect": "Prospect",
+    "under_dd": "Unter DD",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  }
 }

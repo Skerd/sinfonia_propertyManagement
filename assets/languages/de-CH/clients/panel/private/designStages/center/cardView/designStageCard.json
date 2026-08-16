@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx",
+  "failedTitle": "Planungsphase konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "not_started": "Nicht Started",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "blocked": "Blocked"
+  },
+  "statuses": {
+    "not_started": "Nicht Started",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "blocked": "Blocked"
+  }
 }

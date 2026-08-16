@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/sheetView/planMarkupSheetView.tsx",
+  "planMarkup": "Plan Markup",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "markerType": "Marker Type",
+  "page": "Page",
+  "layer": "Layer",
+  "geometryX": "Geometry X",
+  "geometryY": "Geometry Y",
+  "description": "Descrizione",
+  "createdOnSite": "Created On Site",
+  "notes": "Note",
+  "status": "Stato",
+  "statuses": {
+    "open": "Open",
+    "in_progress": "In Progress",
+    "done": "Done",
+    "void": "Void"
+  },
+  "markerTypes": {
+    "defect": "Defect",
+    "decision": "Decision",
+    "order": "Order",
+    "pendency": "Pendency",
+    "info": "Info"
+  },
+  "onSiteState": {
+    "true": "On site",
+    "false": "Office"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare annotazione di piano",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/createCostCommitment.tsx",
-  "title": "Add Cost Commitment",
+  "title": "Add commitment",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Cost Commitment",
-    "description": ""
+    "title": "Add commitment",
+    "description": "Enter the details to create a new cost commitment."
   },
   "formButtons": {
     "cancel": "Cancel",

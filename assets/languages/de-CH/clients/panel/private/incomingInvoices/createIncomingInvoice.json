@@ -50,7 +50,7 @@
   },
   "formHeader": {
     "title": "Eingangsrechnung hinzufügen",
-    "description": ""
+    "description": "Angaben für Eingangsrechnung erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

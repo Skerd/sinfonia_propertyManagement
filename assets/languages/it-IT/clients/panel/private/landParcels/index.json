@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
+  "title": "Particelle",
+  "description": "Particelle catastali e terreni di sviluppo",
+  "createLandParcel": "Aggiungi particella",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "acquisitionCost": "Acquisition Cost",
+    "areaSqm": "Area (m²)",
+    "cadastralReference": "Cadastral Reference",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "dueDiligenceStatus": "Due Diligence Status",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "zoning": "Zoning",
+    "!enums": {
+      "status": {
+        "prospect": "Prospect",
+        "under_dd": "Under DD",
+        "acquired": "Acquired",
+        "disposed": "Disposed"
+      }
+    }
+  }
+}

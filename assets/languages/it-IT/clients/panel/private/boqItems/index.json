@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/index.tsx",
+  "title": "Voci computo",
+  "description": "Computo metrico e voci misurate",
+  "createBoqItem": "Aggiungi voce computo",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "actualAmount": "Actual Amount",
+    "actualQty": "Actual Qty",
+    "budget": "Budget",
+    "category": "Category",
+    "classificationCode": "Classification Code",
+    "classificationStandard": "Classification Standard",
+    "constructorRef": "Impresa",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "elementCode": "Element Code",
+    "name": "Riferimento",
+    "notes": "Note",
+    "plannedAmount": "Planned Amount",
+    "plannedQty": "Planned Qty",
+    "plannedRate": "Planned Rate",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "trade": "Trade",
+    "unitOfMeasure": "Unit of Measure",
+    "updatedAt": "Aggiornato il",
+    "wbsCode": "WBS Code",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "active": "Attivo",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

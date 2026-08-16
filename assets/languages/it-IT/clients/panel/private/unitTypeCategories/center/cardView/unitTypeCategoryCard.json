@@ -3,5 +3,8 @@
   "active": "Attivo",
   "name": "Nome",
   "deleted": "Eliminato",
-  "unitTypeCategory": "Categoria tipo unità"
+  "unitTypeCategory": "Categoria tipo unità",
+  "failedTitle": "Impossibile caricare questo record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

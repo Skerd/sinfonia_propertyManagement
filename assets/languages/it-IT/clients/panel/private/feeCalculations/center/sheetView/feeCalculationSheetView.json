@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/sheetView/feeCalculationSheetView.tsx",
+  "feeCalculation": "Fee Calculation",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "consultantAppointment": "Incarico di consulenza",
+  "basisAmount": "Basis Amount",
+  "feePercent": "Fee Percent",
+  "adjustmentFactor": "Fattore di adeguamento",
+  "totalFee": "Total Fee",
+  "currency": "Valuta",
+  "notes": "Note",
+  "status": "Stato",
+  "statuses": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare calcolo onorari",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

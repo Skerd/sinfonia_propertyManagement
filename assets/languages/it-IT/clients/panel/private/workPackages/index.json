@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/index.tsx",
+  "title": "Pacchetti di lavoro",
+  "description": "Lotti di lavorazione per acquisti ed esecuzione",
+  "createWorkPackage": "Aggiungi pacchetto",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "constructorRef": "Impresa",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "name": "Riferimento",
+    "notes": "Note",
+    "plannedEnd": "Planned End",
+    "plannedStart": "Planned Start",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "trade": "Trade",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "active": "Attivo",
+        "completed": "Completato",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

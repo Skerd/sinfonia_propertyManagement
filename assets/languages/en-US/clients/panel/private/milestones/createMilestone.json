@@ -27,10 +27,25 @@
     "newFiles": "Add new media"
   },
   "axios": {
-    "start": { "title": "Creating milestone", "time": 3000 },
-    "success": { "title": "Milestone created!", "time": 3000 },
-    "error": { "title": "Could not create milestone, please try again!", "time": 3000 }
+    "start": {
+      "title": "Creating milestone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Milestone created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create milestone, please try again!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "New Milestone", "description": "Create a new project milestone" },
-  "formButtons": { "cancel": "Cancel", "submit": "Create Milestone" }
+  "formHeader": {
+    "title": "New Milestone",
+    "description": "Create a new project milestone"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Create Milestone"
+  }
 }

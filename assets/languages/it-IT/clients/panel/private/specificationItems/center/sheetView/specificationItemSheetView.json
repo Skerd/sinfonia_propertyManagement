@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/center/sheetView/specificationItemSheetView.tsx",
+  "specificationItem": "LV Position",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "specification": "Specification",
+  "title": "Titolo",
+  "npkChapter": "NPK Chapter",
+  "npkPosition": "NPK Position",
+  "isRPosition": "R-Position",
+  "classificationStandard": "Classification Standard",
+  "classificationCode": "Classification Code",
+  "unitOfMeasure": "Unit of Measure",
+  "quantity": "Quantity",
+  "unitPrice": "Unit Price",
+  "lineTotal": "Line Total",
+  "currency": "Valuta",
+  "description": "Descrizione",
+  "notes": "Note",
+  "status": "Stato",
+  "statuses": {
+    "active": "Attivo",
+    "cancelled": "Cancelled"
+  },
+  "rPositionState": {
+    "true": "R-Position",
+    "false": "Catalogue"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

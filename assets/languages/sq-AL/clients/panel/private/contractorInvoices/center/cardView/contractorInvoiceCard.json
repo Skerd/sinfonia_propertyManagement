@@ -1,3 +1,22 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/cardView/contractorInvoiceCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/cardView/contractorInvoiceCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i faturë kontraktori",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "received": "Marrë",
+    "under_review": "Në Shqyrtim",
+    "approved": "Miratuar",
+    "paid": "Paguar",
+    "rejected": "Refuzuar",
+    "disputed": "Në Kontest"
+  },
+  "statuses": {
+    "received": "Marrë",
+    "under_review": "Në Shqyrtim",
+    "approved": "Miratuar",
+    "paid": "Paguar",
+    "rejected": "Refuzuar",
+    "disputed": "Në Kontest"
+  }
 }

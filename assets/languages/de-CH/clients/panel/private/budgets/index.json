@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/index.tsx",
-  "title": "Kostenvoranschlag",
-  "description": "Budget register",
-  "createBudget": "Kostenvoranschlag hinzufügen",
+  "title": "Budgets",
+  "description": "Projektbudgets und Abweichungen",
+  "createBudget": "Budget hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "approvedTotal": "Genehmigt Total",
     "bimSource": "BIM Quelle",

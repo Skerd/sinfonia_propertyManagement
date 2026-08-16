@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx",
+  "failedTitle": "Failed to load commissioning record",
+  "failedDescription": "Something went wrong while loading this commissioning record. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed"
+  }
 }

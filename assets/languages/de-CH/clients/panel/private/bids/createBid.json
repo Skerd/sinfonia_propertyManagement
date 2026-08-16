@@ -34,7 +34,7 @@
   },
   "formHeader": {
     "title": "Angebot hinzufügen",
-    "description": ""
+    "description": "Angaben für Angebot erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

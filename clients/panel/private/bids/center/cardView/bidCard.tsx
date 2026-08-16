@@ -29,6 +29,7 @@ type BidCardProps = WithLanguageType & {
 };
 
 function BidCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function BidCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/bid"
             restoreUrl="/api/realEstate/bid/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
@@ -65,7 +66,7 @@ function BidCard({
                     subtitle={row.constructorRef?.name}
                     subtitlePath="constructorRef"
                     badges={row.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{row.status}</Badge>
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
                     ) : null}
                 />
             )}

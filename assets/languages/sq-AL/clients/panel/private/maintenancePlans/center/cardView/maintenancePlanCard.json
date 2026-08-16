@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i plan mirëmbajtjeje",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

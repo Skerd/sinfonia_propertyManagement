@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/center/sheetView/tenderSheetView.tsx",
+  "tender": "Tender",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "specification": "Specification (LV)",
+  "title": "Titolo",
+  "trades": "Trades",
+  "submissionDeadline": "Submission Deadline",
+  "openingDate": "Opening Date",
+  "description": "Descrizione",
+  "notes": "Note",
+  "status": "Stato",
+  "statuses": {
+    "draft": "Bozza",
+    "published": "Published",
+    "closing": "Closing",
+    "closed": "Closed",
+    "awarded": "Awarded",
+    "cancelled": "Cancelled"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/index.tsx",
+  "title": "Annotazioni sui piani",
+  "description": "Marcatori 2D: difetti, decisioni, ordini e pendenze",
+  "createPlanMarkup": "Aggiungi annotazione",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "assignee": "Assignee",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "createdOnSite": "Created On Site",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "geometryH": "Height",
+    "geometryW": "Width",
+    "geometryX": "X",
+    "geometryY": "Y",
+    "layer": "Layer",
+    "linkedRfi": "Linked RFI",
+    "linkedScheduleTask": "Linked Schedule Task",
+    "linkedSnag": "Linked Snag",
+    "markerType": "Marker Type",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "page": "Page",
+    "planDocument": "Plan Document",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "markerType": {
+        "defect": "Defect",
+        "decision": "Decision",
+        "order": "Order",
+        "pendency": "Pendency",
+        "info": "Info"
+      },
+      "status": {
+        "open": "Open",
+        "in_progress": "In Progress",
+        "done": "Done",
+        "void": "Void"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/systemMap/index.tsx",
+  "title": "Property Management System Map",
+  "description": "Interactive map of portfolio, sales, leasing, delivery, cost, and quality models — plus the core business flows. Pan, zoom, and click nodes for details.",
+  "tabs": {
+    "models": "Model graph",
+    "flows": "How it works",
+    "capabilities": "Capabilities"
+  }
+}

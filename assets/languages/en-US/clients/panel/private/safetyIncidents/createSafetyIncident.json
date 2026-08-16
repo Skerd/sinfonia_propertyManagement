@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/createSafetyIncident.tsx",
-  "title": "Add Safety Incident",
+  "title": "Add safety incident",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -48,8 +48,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Safety Incident",
-    "description": ""
+    "title": "Add safety incident",
+    "description": "Enter the details to create a new safety incident."
   },
   "formButtons": {
     "cancel": "Cancel",

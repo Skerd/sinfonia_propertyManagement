@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/index.tsx",
+  "title": "Budget",
+  "description": "Budget di progetto e scostamenti",
+  "createBudget": "Aggiungi budget",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "approvedTotal": "Approved Total",
+    "bimSource": "BIM Source",
+    "classificationStandard": "Classification Standard",
+    "contingencyPercent": "Contingency Percent",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "method": "Method",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "revisionNo": "Revision No.",
+    "status": "Stato",
+    "supersedesBudget": "Supersedes Budget",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "version": "Version",
+    "!enums": {
+      "method": {
+        "ebkp_h": "eBKP-H",
+        "bkp": "BKP",
+        "custom": "Custom"
+      },
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "draft": "Bozza",
+        "pending_approval": "Pending Approval",
+        "approved": "Approved",
+        "locked": "Locked",
+        "superseded": "Superseded"
+      }
+    }
+  }
+}

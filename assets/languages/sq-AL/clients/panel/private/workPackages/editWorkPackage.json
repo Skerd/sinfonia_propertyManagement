@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/workPackages/editWorkPackage.tsx",
-  "title": "Ndrysho Work Package",
+  "title": "Ndrysho paketë pune",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -37,8 +37,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Work Package",
-    "description": ""
+    "title": "Ndrysho paketë pune",
+    "description": "Përditëso të dhënat e këtij paketë pune."
   },
   "formButtons": {
     "cancel": "Anulo",

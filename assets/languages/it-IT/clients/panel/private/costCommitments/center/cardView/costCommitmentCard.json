@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/center/cardView/costCommitmentCard.tsx",
+  "failedTitle": "Impossibile caricare impegno di costo",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "issued": "Issued",
+    "partially_received": "Partially Received",
+    "closed": "Closed",
+    "cancelled": "Cancelled"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "issued": "Issued",
+    "partially_received": "Partially Received",
+    "closed": "Closed",
+    "cancelled": "Cancelled"
+  }
+}

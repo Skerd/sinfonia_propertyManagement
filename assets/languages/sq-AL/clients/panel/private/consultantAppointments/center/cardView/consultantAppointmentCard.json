@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/center/cardView/consultantAppointmentCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/center/cardView/consultantAppointmentCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i emërim konsulenti",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "active": "Aktive",
+    "completed": "Përfunduar",
+    "terminated": "Ndërprerë"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "active": "Aktive",
+    "completed": "Përfunduar",
+    "terminated": "Ndërprerë"
+  }
 }

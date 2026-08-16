@@ -19,8 +19,8 @@
     "relatedDocumentPlaceholder": "Zugehörig dokument auswählen",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "askedByLabel": "Gefragt von",
     "askedByPlaceholder": "Benutzer auswählen",
@@ -43,7 +43,7 @@
   },
   "formHeader": {
     "title": "RFI hinzufügen",
-    "description": ""
+    "description": "Angaben für RFI erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

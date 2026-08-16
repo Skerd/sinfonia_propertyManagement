@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/designStages/createDesignStage.tsx",
-  "title": "Shto Design Stage",
+  "title": "Shto fazë projektimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Design Stage",
-    "description": ""
+    "title": "Shto fazë projektimi",
+    "description": "Plotëso të dhënat për të krijuar fazë projektimi."
   },
   "formButtons": {
     "cancel": "Anulo",

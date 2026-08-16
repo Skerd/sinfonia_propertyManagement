@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/createDesignStage.tsx",
+  "title": "Ajouter une phase",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "stageTypeLabel": "Stage Type",
+    "stageTypePlaceholder": "Select stage type",
+    "stageType_concept": "Concept",
+    "stageType_schematic": "Schematic",
+    "stageType_design_development": "Design Development",
+    "stageType_construction_documents": "Construction Documents",
+    "stageType_tender": "Tender",
+    "stageType_construction": "Construction",
+    "stageType_as_built": "As-Built",
+    "sortOrderLabel": "Sort Order",
+    "sortOrderPlaceholder": "Sort Order",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter une phase",
+    "description": "Saisissez les informations pour créer un phase de conception."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

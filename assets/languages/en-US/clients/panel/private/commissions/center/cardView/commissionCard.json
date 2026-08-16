@@ -30,5 +30,8 @@
   "voidedAt": "Voided at",
   "recordedBy": "Recorded by",
   "deleted": "Deleted",
-  "modelType": "Commission"
+  "modelType": "Commission",
+  "failedTitle": "Failed to load this record",
+  "failedDescription": "Something went wrong while loading. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/createProjectDocument.tsx",
-  "title": "Dokument i Ri i Projektit",
+  "title": "Shto dokument",
   "description": "Regjistro një vizatim ose dokument të ri",
   "generalInfo": "Detajet e Dokumentit",
   "form": {
@@ -68,8 +68,8 @@
     }
   },
   "formHeader": {
-    "title": "Dokument i Ri i Projektit",
-    "description": "Regjistro një vizatim ose dokument të ri"
+    "title": "Shto dokument",
+    "description": "Plotëso të dhënat për të krijuar dokument."
   },
   "formButtons": {
     "cancel": "Anulo",

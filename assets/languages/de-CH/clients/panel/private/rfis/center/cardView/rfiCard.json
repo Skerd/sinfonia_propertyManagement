@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/rfis/center/cardView/rfiCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/center/cardView/rfiCard.tsx",
+  "failedTitle": "RFI konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "open": "Offen",
+    "answered": "Beantwortet",
+    "closed": "Geschlossen",
+    "void": "Ungültig"
+  },
+  "statuses": {
+    "open": "Offen",
+    "answered": "Beantwortet",
+    "closed": "Geschlossen",
+    "void": "Ungültig"
+  }
 }

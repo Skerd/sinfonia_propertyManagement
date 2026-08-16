@@ -23,10 +23,25 @@
     "notesPlaceholder": "Shënime"
   },
   "axios": {
-    "start": {"title": "Duke ruajtur...", "time": 3000},
-    "success": {"title": "U ruajt", "time": 3000},
-    "error": {"title": "Gabim", "time": 3000}
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
   },
-  "formHeader": {"title": "Shto Specifikim", "description": ""},
-  "formButtons": {"cancel": "Anulo", "submit": "Ruaj"}
+  "formHeader": {
+    "title": "Shto Specifikim",
+    "description": "Plotëso të dhënat për të krijuar record."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
 }

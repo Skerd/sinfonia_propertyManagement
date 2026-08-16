@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
-  "failedTitle": "Failed to load story type",
-  "failedDescription": "Something went wrong while loading this story type. Click to retry.",
-  "failedTooltipDescription": "Click to retry fetching data.",
+  "failedTitle": "Dështoi ngarkimi i Llojet e historive",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
   "name": "Name",
   "storyType": "Story type",
   "overview": "Overview",

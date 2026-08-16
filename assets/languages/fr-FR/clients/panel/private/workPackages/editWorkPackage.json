@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/editWorkPackage.tsx",
+  "title": "Modifier lot de travaux",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "constructorLabel": "Entrepreneur",
+    "constructorPlaceholder": "Sélectionner un entrepreneur",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "tradeLabel": "Trade",
+    "tradePlaceholder": "Trade",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "plannedStartLabel": "Planned Start",
+    "plannedStartPlaceholder": "Planned Start",
+    "plannedEndLabel": "Planned End",
+    "plannedEndPlaceholder": "Planned End",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier lot de travaux",
+    "description": "Mettez à jour les informations de ce lot de travaux."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

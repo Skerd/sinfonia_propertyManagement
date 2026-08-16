@@ -51,10 +51,25 @@
     "newFiles": "Neue Fotos hinzufügen"
   },
   "axios": {
-    "start": { "title": "Mangel wird gemeldet", "time": 3000 },
-    "success": { "title": "Mangel gemeldet!", "time": 3000 },
-    "error": { "title": "Mangel konnte nicht gemeldet werden, bitte erneut versuchen!", "time": 3000 }
+    "start": {
+      "title": "Mangel wird gemeldet",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mangel gemeldet!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Mangel konnte nicht gemeldet werden, bitte erneut versuchen!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Mangel melden", "description": "Neuen Mangel oder Defekt melden" },
-  "formButtons": { "cancel": "Abbrechen", "submit": "Mangel melden" }
+  "formHeader": {
+    "title": "Mangel melden",
+    "description": "Neuen Mangel oder Defekt melden"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Mangel melden"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx",
-  "title": "Vendite e consegna",
+  "title": "Vendite & consegna",
   "errors": {
     "missingConfigId": "Impossibile caricare le impostazioni aziendali."
   },
@@ -9,5 +9,6 @@
   "updatedAt": "Aggiornato il",
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
-  "deletedBy": "Eliminato da"
+  "deletedBy": "Eliminato da",
+  "description": "Impostazioni aziendali per vendite, prenotazioni e consegna"
 }

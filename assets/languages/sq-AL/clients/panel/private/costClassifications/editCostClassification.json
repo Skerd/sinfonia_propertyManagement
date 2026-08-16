@@ -22,10 +22,25 @@
     "notesPlaceholder": "Shënime"
   },
   "axios": {
-    "start": {"title": "Duke ruajtur...", "time": 3000},
-    "success": {"title": "U ruajt", "time": 3000},
-    "error": {"title": "Gabim", "time": 3000}
+    "start": {
+      "title": "Duke ruajtur...",
+      "time": 3000
+    },
+    "success": {
+      "title": "U ruajt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Gabim",
+      "time": 3000
+    }
   },
-  "formHeader": {"title": "Ndrysho Klasifikimin", "description": ""},
-  "formButtons": {"cancel": "Anulo", "submit": "Ruaj"}
+  "formHeader": {
+    "title": "Ndrysho Klasifikimin",
+    "description": "Përditëso të dhënat e këtij record."
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj"
+  }
 }

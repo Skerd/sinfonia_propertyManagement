@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/editSpecification.tsx",
+  "title": "Edit Specification",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "workPackageLabel": "Work Package",
+    "workPackagePlaceholder": "Select work package",
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Select standard",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "totalEstimatedLabel": "Estimated Total",
+    "totalEstimatedPlaceholder": "Estimated Total",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Specification",
+    "description": "Mettez à jour les informations de ce record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

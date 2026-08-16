@@ -1,0 +1,49 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/center/sheetView/approvalRequestSheetView.tsx",
+  "approvalRequest": "Approval Request",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "documentType": "Document Type",
+  "workflow": "Workflow",
+  "targetType": "Target Type",
+  "amount": "Importo",
+  "currentStage": "Current Stage",
+  "primaryDecision": "Primary Decision",
+  "escalationDecision": "Escalation Decision",
+  "notes": "Note",
+  "status": "Stato",
+  "documentTypes": {
+    "budget": "Budget",
+    "cost_estimate": "Cost Estimate",
+    "contract": "Contratto",
+    "variation_order": "Variation Order",
+    "contractor_invoice": "Contractor Invoice",
+    "progress_claim": "Progress Claim"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  },
+  "stages": {
+    "primary": "Primary",
+    "escalation": "Escalation",
+    "done": "Done"
+  },
+  "decisions": {
+    "pending": "Pending",
+    "visaed": "Visaed",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare richiesta di approvazione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

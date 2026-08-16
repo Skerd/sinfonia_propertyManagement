@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i regjistrim komisionimi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "pending": "Në Pritje",
+    "passed": "Kaluar",
+    "failed": "Dështuar"
+  },
+  "statuses": {
+    "pending": "Në Pritje",
+    "passed": "Kaluar",
+    "failed": "Dështuar"
+  }
 }

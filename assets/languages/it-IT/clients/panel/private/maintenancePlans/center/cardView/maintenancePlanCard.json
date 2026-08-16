@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx",
+  "failedTitle": "Impossibile caricare piano di manutenzione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

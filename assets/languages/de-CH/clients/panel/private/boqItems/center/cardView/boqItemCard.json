@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx",
+  "failedTitle": "LV-Position konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "active": "Aktiv",
+    "cancelled": "Storniert"
+  },
+  "statuses": {
+    "active": "Aktiv",
+    "cancelled": "Storniert"
+  }
 }

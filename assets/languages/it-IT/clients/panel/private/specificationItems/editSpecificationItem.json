@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/editSpecificationItem.tsx",
+  "title": "Edit Position",
+  "generalInfo": "Dettagli",
+  "form": {
+    "specificationLabel": "Specification",
+    "specificationPlaceholder": "Select specification",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Position title",
+    "npkChapterLabel": "NPK Chapter",
+    "npkChapterPlaceholder": "e.g. 211",
+    "npkPositionLabel": "NPK Position",
+    "npkPositionPlaceholder": "CRB position code",
+    "isRPositionLabel": "R-Position (free / not in CRB)",
+    "classificationStandardLabel": "Classification Standard",
+    "classificationStandardPlaceholder": "Select standard",
+    "classificationCodeLabel": "Classification Code",
+    "classificationCodePlaceholder": "eBKP-H / BKP code",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitPriceLabel": "Unit Price",
+    "unitPricePlaceholder": "Unit Price",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Position",
+    "description": "Aggiorna i dati di questo record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

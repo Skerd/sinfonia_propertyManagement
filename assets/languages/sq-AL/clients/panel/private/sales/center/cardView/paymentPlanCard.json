@@ -13,5 +13,6 @@
   "remainingBalance": "Bilanci i mbetur",
   "numberOfInstallments": "Numri i kësteve",
   "endDate": "Data e Fundit",
-  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

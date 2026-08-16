@@ -13,5 +13,6 @@
   "remainingBalance": "Solde restant",
   "numberOfInstallments": "Nombre d'échéances",
   "endDate": "Date de fin",
-  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

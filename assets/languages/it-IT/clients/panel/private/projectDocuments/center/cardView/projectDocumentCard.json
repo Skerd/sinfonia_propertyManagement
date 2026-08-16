@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/center/cardView/projectDocumentCard.tsx",
+  "statusLabel": "Stato",
+  "isAsBuiltLabel": "As-Built",
+  "disciplineLabel": "Discipline",
+  "fields": {
+    "project": "Progetto",
+    "unit": "Unità",
+    "documentNumber": "Document Number",
+    "documentType": "Tipo",
+    "discipline": "Discipline",
+    "revision": "Revision",
+    "revisionDate": "Revision Date",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "for_review": "For Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Architectural",
+        "structural": "Structural",
+        "mep": "MEP",
+        "civil": "Civil",
+        "fire": "Fire",
+        "landscape": "Landscape",
+        "other": "Altro"
+      },
+      "documentType": {
+        "drawing": "Drawing",
+        "specification": "Specification",
+        "calculation": "Calculation",
+        "report": "Report",
+        "as_built": "As Built",
+        "om_manual": "O&M Manual",
+        "other": "Altro"
+      }
+    }
+  },
+  "failedTitle": "Impossibile caricare documento",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "for_review": "For Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "superseded": "Superseded"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "for_review": "For Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "superseded": "Superseded"
+  }
+}

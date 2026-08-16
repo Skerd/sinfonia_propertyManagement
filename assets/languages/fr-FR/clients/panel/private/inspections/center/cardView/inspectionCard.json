@@ -53,5 +53,6 @@
     "rescheduled": "Replanifiée"
   },
   "failedTitle": "Impossible de charger l'inspection",
-  "failedDescription": "Appuyez pour réessayer."
+  "failedDescription": "Appuyez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

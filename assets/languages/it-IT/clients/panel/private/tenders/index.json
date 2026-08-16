@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/index.tsx",
+  "title": "Tenders",
+  "description": "Ausschreibungen — tendering & submission calendar",
+  "createTender": "Add Tender",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "name": "Riferimento",
+    "notes": "Note",
+    "openingDate": "Opening Date",
+    "project": "Progetto",
+    "specification": "Specification",
+    "status": "Stato",
+    "submissionDeadline": "Deadline",
+    "title": "Titolo",
+    "trades": "Trades",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "published": "Published",
+        "closing": "Closing",
+        "closed": "Closed",
+        "awarded": "Awarded",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

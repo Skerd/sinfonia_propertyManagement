@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/editContractorInvoice.tsx",
-  "title": "Edit Invoice",
+  "title": "Edit contractor invoice",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -51,8 +51,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Invoice",
-    "description": ""
+    "title": "Edit contractor invoice",
+    "description": "Update the details for this contractor invoice."
   },
   "formButtons": {
     "cancel": "Cancel",

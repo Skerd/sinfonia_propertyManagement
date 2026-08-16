@@ -35,10 +35,10 @@
     "submit": "Änderungen speichern"
   },
   "formHeader": {
-    "description": "Story-Typinformationen bearbeiten",
-    "title": "Story-Typ bearbeiten"
+    "description": "Angaben für diesen Story-Typen aktualisieren.",
+    "title": "Story-Typen bearbeiten"
   },
   "generalInfo": "Allgemeine Informationen",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
-  "title": "Story-Typ bearbeiten"
+  "title": "Story-Typen bearbeiten"
 }

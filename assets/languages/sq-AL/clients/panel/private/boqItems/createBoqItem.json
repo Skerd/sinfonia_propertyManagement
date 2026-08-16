@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/boqItems/createBoqItem.tsx",
-  "title": "Shto Boq Item",
+  "title": "Shto pozicion BOQ",
   "generalInfo": "Detajet",
   "form": {
     "budgetLabel": "Buxheti",
@@ -59,8 +59,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Boq Item",
-    "description": ""
+    "title": "Shto pozicion BOQ",
+    "description": "Plotëso të dhënat për të krijuar pozicion BOQ."
   },
   "formButtons": {
     "cancel": "Anulo",

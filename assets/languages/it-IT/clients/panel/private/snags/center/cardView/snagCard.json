@@ -23,5 +23,8 @@
         "critical": "Critica"
       }
     }
-  }
+  },
+  "failedTitle": "Impossibile caricare questo record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

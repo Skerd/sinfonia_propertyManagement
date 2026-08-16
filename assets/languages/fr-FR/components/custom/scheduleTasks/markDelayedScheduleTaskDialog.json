@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/markDelayedScheduleTaskDialog.tsx",
+  "dialogTitle": "Mark task delayed",
+  "dialogDescription": "Flag this task as delayed. You can add a reason.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional reason for the delay",
+  "cancel": "Annuler",
+  "submit": "Mark delayed"
+}

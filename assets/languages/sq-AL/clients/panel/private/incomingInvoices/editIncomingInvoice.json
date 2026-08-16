@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/editIncomingInvoice.tsx",
-  "title": "Ndrysho Faturën Hyrëse",
+  "title": "Ndrysho faturë hyrëse",
   "generalInfo": "Detajet",
   "form": {
     "titleLabel": "Titulli",
@@ -49,8 +49,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Faturën Hyrëse",
-    "description": ""
+    "title": "Ndrysho faturë hyrëse",
+    "description": "Përditëso të dhënat e këtij faturë hyrëse."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -52,5 +52,6 @@
     "leasedDesc": "Actuellement loué",
     "unavailable": "Indisponible",
     "unavailableDesc": "Non disponible à la vente"
-  }
+  },
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

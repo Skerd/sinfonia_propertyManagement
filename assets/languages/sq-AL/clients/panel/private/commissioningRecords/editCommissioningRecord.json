@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/editCommissioningRecord.tsx",
-  "title": "Ndrysho Commissioning Record",
+  "title": "Ndrysho regjistrim komisionimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Commissioning Record",
-    "description": ""
+    "title": "Ndrysho regjistrim komisionimi",
+    "description": "Përditëso të dhënat e këtij regjistrim komisionimi."
   },
   "formButtons": {
     "cancel": "Anulo",

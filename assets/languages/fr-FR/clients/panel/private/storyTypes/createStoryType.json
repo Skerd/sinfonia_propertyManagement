@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
-  "title": "Créer un type d’histoire",
+  "title": "Créer un type",
   "description": "Créer un nouveau type d’histoire",
   "generalInfo": "Informations générales",
   "form": {
@@ -30,8 +30,8 @@
     }
   },
   "formHeader": {
-    "title": "Créer un type d’histoire",
-    "description": "Créer un nouveau type d’histoire"
+    "title": "Créer un type",
+    "description": "Saisissez les informations pour créer un Types d'histoires."
   },
   "formButtons": {
     "cancel": "Annuler",

@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/editTenderInvitation.tsx",
+  "title": "Edit Invitation",
+  "generalInfo": "Détails",
+  "form": {
+    "tenderLabel": "Tender",
+    "tenderPlaceholder": "Select tender",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "invitedAtLabel": "Invited At",
+    "invitedAtPlaceholder": "Select date",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Invitation",
+    "description": "Mettez à jour les informations de ce record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

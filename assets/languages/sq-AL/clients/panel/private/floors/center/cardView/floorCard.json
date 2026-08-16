@@ -52,5 +52,6 @@
     "leasedDesc": "Aktualisht me qira",
     "unavailable": "Jodisponibël",
     "unavailableDesc": "Nuk disponohet për shitje"
-  }
+  },
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

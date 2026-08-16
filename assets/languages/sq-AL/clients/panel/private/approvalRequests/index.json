@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/index.tsx",
-  "title": "Kërkesat për Miratim",
-  "description": "Kërkesat Freigabe përmes rrjedhave",
-  "createApprovalRequest": "Shto Kërkesë",
+  "title": "Kërkesat për miratim",
+  "description": "Dokumentet financiare në rrjedhën e miratimit",
+  "createApprovalRequest": "Shto kërkesë",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "amount": "Shuma",
     "createdAt": "Krijuar më",

@@ -1,0 +1,49 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/center/sheetView/approvalRequestSheetView.tsx",
+  "approvalRequest": "Approval Request",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "documentType": "Document Type",
+  "workflow": "Workflow",
+  "targetType": "Target Type",
+  "amount": "Montant",
+  "currentStage": "Current Stage",
+  "primaryDecision": "Primary Decision",
+  "escalationDecision": "Escalation Decision",
+  "notes": "Notes",
+  "status": "Statut",
+  "documentTypes": {
+    "budget": "Budget",
+    "cost_estimate": "Cost Estimate",
+    "contract": "Contrat",
+    "variation_order": "Variation Order",
+    "contractor_invoice": "Contractor Invoice",
+    "progress_claim": "Progress Claim"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  },
+  "stages": {
+    "primary": "Primary",
+    "escalation": "Escalation",
+    "done": "Done"
+  },
+  "decisions": {
+    "pending": "Pending",
+    "visaed": "Visaed",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger demande d'approbation",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

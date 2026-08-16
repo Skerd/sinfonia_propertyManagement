@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Shitjet & Dorëzimi",
+  "title": "Ndrysho Shitjet & Dorëzimi",
   "generalInfo": "Portat e rrjedhës së punës",
   "form": {
     "requiresSaleApprovalLabel": "Kërko miratim të menaxherit kur krijohet një shitje",
@@ -21,8 +21,8 @@
     }
   },
   "formHeader": {
-    "title": "Shitjet & Dorëzimi",
-    "description": "Politika e shitjeve dhe dorëzimit për Real Estate në nivel kompanie."
+    "title": "Ndrysho Shitjet & Dorëzimi",
+    "description": "Përditëso të dhënat e këtij Shitjet & Dorëzimi."
   },
   "formButtons": {
     "cancel": "Anulo",

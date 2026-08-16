@@ -3,5 +3,8 @@
   "active": "Aktiv",
   "name": "Emri",
   "deleted": "Fshirë",
-  "unitTypeCategory": "Kategoria e llojit të njësisë"
+  "unitTypeCategory": "Kategoria e llojit të njësisë",
+  "failedTitle": "Ngarkimi dështoi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

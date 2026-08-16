@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/index.tsx",
-  "title": "CostCommitment",
-  "description": "CostCommitment register",
-  "createCostCommitment": "CostCommitment hinzufügen",
+  "title": "Verpflichtungen / Bestellungen",
+  "description": "Bestellungen und Kostenverpflichtungen gegenüber dem Budget",
+  "createCostCommitment": "Verpflichtung hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "budget": "Kostenvoranschlag",
     "committedAmount": "Committed Betrag",

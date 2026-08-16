@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx",
+  "failedTitle": "Impossible de charger liste de contrôle",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "active": "Actif",
+    "archived": "Archived"
+  },
+  "statuses": {
+    "active": "Actif",
+    "archived": "Archived"
+  }
+}

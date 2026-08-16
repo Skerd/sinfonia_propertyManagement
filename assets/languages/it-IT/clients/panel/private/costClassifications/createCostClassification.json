@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costClassifications/createCostClassification.tsx",
+  "title": "Add Classification",
+  "generalInfo": "Dettagli",
+  "form": {
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Select standard",
+    "codeLabel": "Code",
+    "codePlaceholder": "e.g. C 2.1",
+    "parentCodeLabel": "Parent Code",
+    "parentCodePlaceholder": "e.g. C",
+    "levelLabel": "Level",
+    "levelPlaceholder": "Hierarchy level",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "activeLabel": "Attivo",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Classification",
+    "description": "Inserisci i dati per creare un record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

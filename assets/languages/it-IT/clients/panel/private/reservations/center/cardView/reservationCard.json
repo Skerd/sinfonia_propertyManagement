@@ -29,7 +29,7 @@
   "clickToCopy": "(clicca per copiare)",
   "overview": "Panoramica",
   "basicInformation": "Informazioni di base",
-  "dates": "Date",
+  "dates": "Data",
   "people": "Persone",
   "alerts": "Avvisi",
   "modelType": "Prenotazione",
@@ -43,5 +43,6 @@
     "walk_in": "Visita spontanea",
     "social": "Social",
     "other": "Altro"
-  }
+  },
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

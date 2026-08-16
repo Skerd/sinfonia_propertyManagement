@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/index.tsx",
+  "title": "Offerte",
+  "description": "Offerte delle imprese sulle gare",
+  "createBid": "Aggiungi offerta",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "constructorRef": "Contractor",
+    "coveringNotes": "Covering Notes",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "name": "Riferimento",
+    "notes": "Note",
+    "status": "Stato",
+    "submittedAt": "Submitted At",
+    "tender": "Tender",
+    "tenderInvitation": "Tender Invitation",
+    "total": "Total",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "submitted": "Submitted",
+        "shortlisted": "Shortlisted",
+        "awarded": "Awarded",
+        "rejected": "Rejected",
+        "withdrawn": "Withdrawn"
+      }
+    }
+  }
+}

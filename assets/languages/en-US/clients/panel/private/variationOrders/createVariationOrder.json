@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/createVariationOrder.tsx",
-  "title": "Add Variation Order",
+  "title": "Add variation order",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Variation Order",
-    "description": ""
+    "title": "Add variation order",
+    "description": "Enter the details to create a new variation order."
   },
   "formButtons": {
     "cancel": "Cancel",

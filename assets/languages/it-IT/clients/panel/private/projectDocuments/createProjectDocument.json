@@ -1,0 +1,78 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/createProjectDocument.tsx",
+  "title": "Aggiungi documento",
+  "description": "Register a new drawing or document",
+  "generalInfo": "Document Details",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Select floor",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Select unit",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Document title",
+    "documentNumberLabel": "Document Number",
+    "documentNumberPlaceholder": "Drawing code",
+    "disciplineLabel": "Discipline",
+    "disciplinePlaceholder": "Select discipline",
+    "disciplineArchitectural": "Architectural",
+    "disciplineStructural": "Structural",
+    "disciplineMep": "MEP",
+    "disciplineCivil": "Civil",
+    "disciplineFire": "Fire",
+    "disciplineLandscape": "Landscape",
+    "disciplineOther": "Altro",
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "documentTypeDrawing": "Drawing",
+    "documentTypeSpecification": "Specification",
+    "documentTypeCalculation": "Calculation",
+    "documentTypeReport": "Report",
+    "documentTypeAsBuilt": "As Built",
+    "documentTypeOmManual": "O&M Manual",
+    "documentTypeOther": "Altro",
+    "revisionLabel": "Revision",
+    "revisionPlaceholder": "e.g. A",
+    "revisionDateLabel": "Revision Date",
+    "revisionDatePlaceholder": "Select revision date",
+    "supersedesLabel": "Supersedes",
+    "supersedesPlaceholder": "Select document being replaced",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Additional details about the document",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Internal notes",
+    "mediaLabel": "Files",
+    "addFile": "Add file",
+    "filesSelected": "files selected",
+    "existingFiles": "File esistenti",
+    "newFiles": "Add new files",
+    "designStageLabel": "Design stage",
+    "designStagePlaceholder": "Select design stage",
+    "isRequiredDeliverableLabel": "Required deliverable for stage completion"
+  },
+  "axios": {
+    "start": {
+      "title": "Creating document",
+      "time": 3000
+    },
+    "success": {
+      "title": "Document created!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not create document, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi documento",
+    "description": "Inserisci i dati per creare un documento."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Create Document"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
+  "title": "Boîte AP",
+  "description": "Factures fournisseurs — scan, OCR et QR-facture",
+  "createIncomingInvoice": "Ajouter une facture",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "bkpAccountCode": "BKP Account",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "createdContractorInvoice": "Created Contractor Invoice",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "extractedAmount": "Extracted Amount",
+    "extractedCurrencyCode": "Extracted Currency",
+    "extractedDueDate": "Extracted Due Date",
+    "extractedIban": "IBAN",
+    "extractedInvoiceDate": "Extracted Invoice Date",
+    "extractedInvoiceNumber": "Extracted Invoice No.",
+    "extractedQrReference": "Extracted QR Reference",
+    "extractedSupplierName": "Supplier Name",
+    "matchedConstructor": "Matched Constructor",
+    "matchedContract": "Matched Contract",
+    "name": "Référence",
+    "notes": "Notes",
+    "ocrStatus": "OCR Status",
+    "project": "Projet",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "ocrStatus": {
+        "pending": "Pending",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "status": {
+        "inbox": "Inbox",
+        "classified": "Classified",
+        "routed": "Routed",
+        "posted": "Posted",
+        "rejected": "Rejected"
+      }
+    }
+  }
+}

@@ -29,6 +29,7 @@ type BidLineCardProps = WithLanguageType & {
 };
 
 function BidLineCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function BidLineCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/bidLine"
             restoreUrl="/api/realEstate/bidLine/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/createBudget.tsx",
+  "title": "Aggiungi budget",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "versionLabel": "Version",
+    "versionPlaceholder": "Version",
+    "methodLabel": "Estimate Method",
+    "methodPlaceholder": "Select method",
+    "classificationStandardLabel": "Classification Standard",
+    "classificationStandardPlaceholder": "Select standard",
+    "revisionNoLabel": "Revision No. (KV-Mutation)",
+    "revisionNoPlaceholder": "Revision number",
+    "supersedesBudgetLabel": "Supersedes Budget",
+    "supersedesBudgetPlaceholder": "Select prior revision",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "approvedTotalLabel": "Approved Total",
+    "approvedTotalPlaceholder": "Approved Total",
+    "contingencyPercentLabel": "Contingency Percent",
+    "contingencyPercentPlaceholder": "Contingency Percent",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi budget",
+    "description": "Inserisci i dati per creare un budget."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

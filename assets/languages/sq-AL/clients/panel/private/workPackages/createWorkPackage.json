@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/workPackages/createWorkPackage.tsx",
-  "title": "Shto Work Package",
+  "title": "Shto paketë pune",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -37,8 +37,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Work Package",
-    "description": ""
+    "title": "Shto paketë pune",
+    "description": "Plotëso të dhënat për të krijuar paketë pune."
   },
   "formButtons": {
     "cancel": "Anulo",

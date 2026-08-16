@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
+  "title": "Incarichi di consulenza",
+  "description": "Incarichi di architetti, ingegneri e specialisti (onorari SIA)",
+  "createConsultantAppointment": "Aggiungi incarico",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "adjustmentFactor": "Fattore di adeguamento",
+    "basisKind": "Basis",
+    "cappedAmount": "Importo massimo",
+    "constructorRef": "Impresa",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "deliverables": "Deliverable",
+    "endDate": "Data fine",
+    "feeAmount": "Importo onorario",
+    "feeModel": "Modello di onorario",
+    "hourlyRate": "Tariffa oraria",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "role": "Ruolo",
+    "scope": "Ambito",
+    "startDate": "Data inizio",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "feeModel": {
+        "sia_102": "SIA 102",
+        "sia_103": "SIA 103",
+        "sia_108": "SIA 108",
+        "lump_sum": "Forfait",
+        "time_based": "A tempo"
+      },
+      "basisKind": {
+        "construction_cost": "Costo di costruzione",
+        "fixed": "Fisso",
+        "hourly": "Orario"
+      },
+      "status": {
+        "draft": "Bozza",
+        "active": "Attivo",
+        "completed": "Completato",
+        "terminated": "Terminato"
+      },
+      "role": {
+        "architect": "Architetto",
+        "engineer": "Ingegnere",
+        "qs": "QS",
+        "pm": "PM",
+        "surveyor": "Geometra",
+        "other": "Altro"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/editSafetyIncident.tsx",
-  "title": "Ndrysho Safety Incident",
+  "title": "Ndrysho incident sigurie",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -48,8 +48,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Safety Incident",
-    "description": ""
+    "title": "Ndrysho incident sigurie",
+    "description": "Përditëso të dhënat e këtij incident sigurie."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -23,10 +23,25 @@
     "notesPlaceholder": "Notes"
   },
   "axios": {
-    "start": {"title": "Saving...", "time": 3000},
-    "success": {"title": "Saved", "time": 3000},
-    "error": {"title": "Error", "time": 3000}
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
   },
-  "formHeader": {"title": "Edit Specification", "description": ""},
-  "formButtons": {"cancel": "Cancel", "submit": "Save"}
+  "formHeader": {
+    "title": "Edit Specification",
+    "description": "Update the details for this record."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
 }

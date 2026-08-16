@@ -29,6 +29,7 @@ type DesignStageCardProps = WithLanguageType & {
 };
 
 function DesignStageCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function DesignStageCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/designStage"
             restoreUrl="/api/realEstate/designStage/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
@@ -65,7 +66,7 @@ function DesignStageCard({
                     subtitle={row.name}
                     subtitlePath="name"
                     badges={row.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{row.status}</Badge>
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
                     ) : null}
                 />
             )}

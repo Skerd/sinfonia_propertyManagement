@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/submittals/createSubmittal.tsx",
-  "title": "Shto Submittal",
+  "title": "Shto dorëzim",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Submittal",
-    "description": ""
+    "title": "Shto dorëzim",
+    "description": "Plotëso të dhënat për të krijuar dorëzim materialesh."
   },
   "formButtons": {
     "cancel": "Anulo",

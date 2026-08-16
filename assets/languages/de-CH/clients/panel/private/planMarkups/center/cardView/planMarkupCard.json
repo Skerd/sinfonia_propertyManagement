@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/cardView/planMarkupCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/cardView/planMarkupCard.tsx",
+  "failedTitle": "Planmarkierung konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "open": "Offen",
+    "in_progress": "In Bearbeitung",
+    "done": "Erledigt",
+    "void": "Ungültig"
+  },
+  "statuses": {
+    "open": "Offen",
+    "in_progress": "In Bearbeitung",
+    "done": "Erledigt",
+    "void": "Ungültig"
+  }
 }

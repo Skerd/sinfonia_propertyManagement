@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
-  "title": "Ndrysho Handover Package",
+  "title": "Ndrysho paketë dorëzimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -38,8 +38,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Handover Package",
-    "description": ""
+    "title": "Ndrysho paketë dorëzimi",
+    "description": "Përditëso të dhënat e këtij paketë dorëzimi."
   },
   "formButtons": {
     "cancel": "Anulo",

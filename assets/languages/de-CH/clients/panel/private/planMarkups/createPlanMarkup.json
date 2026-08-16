@@ -45,7 +45,7 @@
   },
   "formHeader": {
     "title": "Markierung hinzufügen",
-    "description": ""
+    "description": "Angaben für Planmarkierung erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

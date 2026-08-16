@@ -13,5 +13,6 @@
   "remainingBalance": "Saldo residuo",
   "numberOfInstallments": "Numero di rate",
   "endDate": "Data di fine",
-  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

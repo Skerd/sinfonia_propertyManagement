@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
-  "title": "LandParcel",
-  "description": "LandParcel register",
-  "createLandParcel": "LandParcel hinzufügen",
+  "title": "Grundstücke",
+  "description": "Katasterparzellen und Entwicklungsgrundstücke",
+  "createLandParcel": "Grundstück hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "acquisitionCost": "Erwerb Kosten",
     "areaSqm": "Fläche (m²)",

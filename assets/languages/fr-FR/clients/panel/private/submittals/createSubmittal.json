@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/createSubmittal.tsx",
+  "title": "Ajouter une soumission",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "specReferenceLabel": "Spec Reference",
+    "specReferencePlaceholder": "Spec Reference",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "relatedDocumentLabel": "Related Document",
+    "relatedDocumentPlaceholder": "Select related document",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers",
+    "submittedByLabel": "Submitted by",
+    "submittedByPlaceholder": "Select user",
+    "reviewedByLabel": "Reviewed by",
+    "reviewedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter une soumission",
+    "description": "Saisissez les informations pour créer un soumission."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx",
+  "failedTitle": "Übergabepaket konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "draft": "Entwurf",
+    "in_progress": "In Bearbeitung",
+    "ready": "Ready",
+    "completed": "Abgeschlossen"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "in_progress": "In Bearbeitung",
+    "ready": "Ready",
+    "completed": "Abgeschlossen"
+  }
 }

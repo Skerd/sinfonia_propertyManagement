@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/editLandParcel.tsx",
-  "title": "Ndrysho Land Parcel",
+  "title": "Ndrysho parcelë",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Land Parcel",
-    "description": ""
+    "title": "Ndrysho parcelë",
+    "description": "Përditëso të dhënat e këtij parcelë."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/editBudget.tsx",
-  "title": "Edit Budget",
+  "title": "Edit budget",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -45,8 +45,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Budget",
-    "description": ""
+    "title": "Edit budget",
+    "description": "Update the details for this budget."
   },
   "formButtons": {
     "cancel": "Cancel",

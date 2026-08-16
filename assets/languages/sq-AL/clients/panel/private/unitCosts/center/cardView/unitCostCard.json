@@ -23,5 +23,6 @@
   "invoiceNumber": "Nr. Faturës",
   "vendorName": "Ofruesi",
   "tag": "Etiketa",
-  "relatedModificationRequest": "Kërkesë Modifikimi"
+  "relatedModificationRequest": "Kërkesë Modifikimi",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

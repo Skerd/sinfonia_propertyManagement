@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/createProgressClaim.tsx",
-  "title": "Add Progress Claim",
+  "title": "Add progress claim",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -46,8 +46,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Progress Claim",
-    "description": ""
+    "title": "Add progress claim",
+    "description": "Enter the details to create a new progress claim."
   },
   "formButtons": {
     "cancel": "Cancel",

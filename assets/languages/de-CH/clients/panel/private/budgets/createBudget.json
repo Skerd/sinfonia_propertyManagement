@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/createBudget.tsx",
-  "title": "Kostenvoranschlag hinzufügen",
+  "title": "Budget hinzufügen",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -45,8 +45,8 @@
     }
   },
   "formHeader": {
-    "title": "Kostenvoranschlag hinzufügen",
-    "description": ""
+    "title": "Budget hinzufügen",
+    "description": "Angaben für Budget erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

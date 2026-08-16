@@ -29,6 +29,7 @@ type TenderInvitationCardProps = WithLanguageType & {
 };
 
 function TenderInvitationCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function TenderInvitationCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/tenderInvitation"
             restoreUrl="/api/realEstate/tenderInvitation/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
@@ -65,7 +66,7 @@ function TenderInvitationCard({
                     subtitle={row.constructorRef?.name}
                     subtitlePath="constructorRef"
                     badges={row.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{row.status}</Badge>
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
                     ) : null}
                 />
             )}

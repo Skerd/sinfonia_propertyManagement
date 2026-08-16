@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx",
+  "failedTitle": "Impossibile caricare stato di avanzamento",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "certified": "Certified",
+    "paid": "Paid",
+    "rejected": "Rejected"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "certified": "Certified",
+    "paid": "Paid",
+    "rejected": "Rejected"
+  }
+}

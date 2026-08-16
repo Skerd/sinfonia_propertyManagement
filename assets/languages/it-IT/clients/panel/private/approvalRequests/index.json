@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/index.tsx",
+  "title": "Richieste di approvazione",
+  "description": "Documenti finanziari nel flusso di approvazione",
+  "createApprovalRequest": "Aggiungi richiesta",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "amount": "Importo",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "currentStage": "Current Stage",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "documentType": "Document Type",
+    "escalationDecision": "Escalation Decision",
+    "name": "Riferimento",
+    "notes": "Note",
+    "primaryDecision": "Primary Decision",
+    "status": "Stato",
+    "targetId": "Target ID",
+    "targetType": "Target Type",
+    "updatedAt": "Aggiornato il",
+    "workflow": "Workflow",
+    "!enums": {
+      "currentStage": {
+        "primary": "Primary",
+        "escalation": "Escalation",
+        "done": "Done"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

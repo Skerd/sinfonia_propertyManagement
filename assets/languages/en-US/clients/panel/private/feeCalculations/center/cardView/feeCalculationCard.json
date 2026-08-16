@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx",
+  "failedTitle": "Failed to load fee calculation",
+  "failedDescription": "Something went wrong while loading this fee calculation. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  },
+  "statuses": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  }
 }

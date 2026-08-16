@@ -1,27 +1,27 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx",
-  "title": "ConsultantAppointment",
-  "description": "ConsultantAppointment register",
-  "createConsultantAppointment": "ConsultantAppointment hinzufügen",
+  "title": "Planeraufträge",
+  "description": "Mandate für Architekten, Ingenieure und Fachplaner (SIA-Honorare)",
+  "createConsultantAppointment": "Planerauftrag hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "adjustmentFactor": "Anpassungsfaktor",
     "basisKind": "Basis",
-    "cappedAmount": "Capped Betrag",
+    "cappedAmount": "Deckelbetrag",
     "constructorRef": "Unternehmer",
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",
     "currency": "Währung",
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von",
-    "deliverables": "Deliverables",
+    "deliverables": "Lieferobjekte",
     "endDate": "Enddatum",
-    "feeAmount": "Honorar Betrag",
-    "feeModel": "Honorar Modell",
-    "hourlyRate": "Hourly Satz",
+    "feeAmount": "Honorarbetrag",
+    "feeModel": "Honorarmodell",
+    "hourlyRate": "Stundensatz",
     "media": "Medien",
     "name": "Referenz",
     "notes": "Notizen",
@@ -37,26 +37,26 @@
         "sia_102": "SIA 102",
         "sia_103": "SIA 103",
         "sia_108": "SIA 108",
-        "lump_sum": "Lump Sum",
-        "time_based": "Time-based"
+        "lump_sum": "Pauschale",
+        "time_based": "Zeitaufwand"
       },
       "basisKind": {
-        "construction_cost": "Bau Kosten",
-        "fixed": "Fixed",
-        "hourly": "Hourly"
+        "construction_cost": "Baukosten",
+        "fixed": "Fix",
+        "hourly": "Stundenweise"
       },
       "status": {
         "draft": "Entwurf",
         "active": "Aktiv",
         "completed": "Abgeschlossen",
-        "terminated": "Terminated"
+        "terminated": "Beendet"
       },
       "role": {
-        "architect": "Architect",
-        "engineer": "Engineer",
-        "qs": "Qs",
-        "pm": "Pm",
-        "surveyor": "Surveyor",
+        "architect": "Architekt",
+        "engineer": "Ingenieur",
+        "qs": "QS",
+        "pm": "PL",
+        "surveyor": "Geometer",
         "other": "Andere"
       }
     }

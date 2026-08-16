@@ -56,8 +56,8 @@ function StoryCard({
             sheetEntityProp="story"
             deleteUrl="/api/realEstate/story"
             restoreUrl="/api/realEstate/story/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

@@ -1,3 +1,16 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx",
+  "failedTitle": "Inbetriebnahmeprotokoll konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "pending": "Ausstehend",
+    "passed": "Passed",
+    "failed": "Fehlgeschlagen"
+  },
+  "statuses": {
+    "pending": "Ausstehend",
+    "passed": "Passed",
+    "failed": "Fehlgeschlagen"
+  }
 }

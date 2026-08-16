@@ -23,5 +23,6 @@
   "invoiceNumber": "Rechnung Nr.",
   "vendorName": "Lieferant",
   "tag": "Tag",
-  "relatedModificationRequest": "Änderungsanfrage"
+  "relatedModificationRequest": "Änderungsanfrage",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

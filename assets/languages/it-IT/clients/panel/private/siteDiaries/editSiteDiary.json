@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/editSiteDiary.tsx",
+  "title": "Modifica giornale di cantiere",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "diaryDateLabel": "Diary Date",
+    "diaryDatePlaceholder": "Diary Date",
+    "weatherLabel": "Weather",
+    "weatherPlaceholder": "Weather",
+    "workforceCountLabel": "Workforce Count",
+    "workforceCountPlaceholder": "Workforce Count",
+    "plantSummaryLabel": "Plant Summary",
+    "plantSummaryPlaceholder": "Plant Summary",
+    "workSummaryLabel": "Work Summary",
+    "workSummaryPlaceholder": "Work Summary",
+    "visitorsLabel": "Visitors",
+    "visitorsPlaceholder": "Visitors",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica giornale di cantiere",
+    "description": "Aggiorna i dati di questo giornale di cantiere."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

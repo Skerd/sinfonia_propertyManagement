@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/index.tsx",
-  "title": "Shënimet e Planit",
-  "description": "Bauleitung — shënues 2D në plan (defekte/vendime/urdhra/pezullime)",
-  "createPlanMarkup": "Shto Shënim",
+  "title": "Shënimet e planit",
+  "description": "Shënime 2D në plan për defekte, vendime, urdhra dhe pika të hapura",
+  "createPlanMarkup": "Shto shënim",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "assignee": "I Caktuari",
     "createdAt": "Krijuar më",

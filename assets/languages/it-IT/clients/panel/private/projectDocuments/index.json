@@ -1,0 +1,64 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/index.tsx",
+  "title": "Documenti di progetto",
+  "description": "Disegni, documenti e file as-built del progetto",
+  "createProjectDocument": "Aggiungi documento",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "statusLabel": "Stato",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "designStage": "Design Stage",
+    "discipline": "Discipline",
+    "documentNumber": "Document No.",
+    "documentType": "Tipo",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "isAsBuilt": "As-Built",
+    "isRequiredDeliverable": "Required Deliverable",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "revision": "Revision",
+    "revisionDate": "Revision Date",
+    "status": "Stato",
+    "supersedes": "Supersedes",
+    "title": "Titolo",
+    "unit": "Unità",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "for_review": "For Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "superseded": "Superseded"
+      },
+      "discipline": {
+        "architectural": "Architectural",
+        "structural": "Structural",
+        "mep": "MEP",
+        "civil": "Civil",
+        "fire": "Fire",
+        "landscape": "Landscape",
+        "other": "Altro"
+      },
+      "documentType": {
+        "drawing": "Drawing",
+        "specification": "Specification",
+        "calculation": "Calculation",
+        "report": "Report",
+        "as_built": "As-Built",
+        "om_manual": "O&M Manual",
+        "other": "Altro"
+      }
+    }
+  }
+}

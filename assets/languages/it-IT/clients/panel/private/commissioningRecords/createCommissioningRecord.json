@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
+  "title": "Aggiungi verbale",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Select unit",
+    "handoverPackageLabel": "Handover Package",
+    "handoverPackagePlaceholder": "Select handover package",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "systemNameLabel": "System Name",
+    "systemNamePlaceholder": "System Name",
+    "testDateLabel": "Test Date",
+    "testDatePlaceholder": "Test Date",
+    "resultNotesLabel": "Result Notes",
+    "resultNotesPlaceholder": "Result Notes",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file",
+    "inspectedByLabel": "Inspected by",
+    "inspectedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi verbale",
+    "description": "Inserisci i dati per creare un verbale di collaudo."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

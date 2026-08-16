@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/designStages/editDesignStage.tsx",
-  "title": "Edit Design Stage",
+  "title": "Edit design stage",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Design Stage",
-    "description": ""
+    "title": "Edit design stage",
+    "description": "Update the details for this design stage."
   },
   "formButtons": {
     "cancel": "Cancel",

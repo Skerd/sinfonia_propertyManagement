@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx",
+  "title": "Plans de liquidités",
+  "description": "Calendrier des encaissements et décaissements",
+  "createLiquidityPlan": "Ajouter un plan",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "granularity": "Granularity",
+    "horizonEnd": "Horizon End",
+    "horizonStart": "Horizon Start",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "granularity": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "yearly": "Yearly"
+      }
+    }
+  }
+}

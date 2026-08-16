@@ -1,0 +1,57 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/permits/index.tsx",
+  "title": "Permits",
+  "description": "Regulatory permits and compliance",
+  "createPermit": "Add Permit",
+  "noData": "No permits found",
+  "failTitle": "Failed to load permits",
+  "failDescription": "An error occurred while loading permits. Please try again.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "statusLabel": "Statut",
+  "fields": {
+    "approvedAt": "Approved",
+    "authority": "Authority",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "expiresAt": "Expires",
+    "expiryReminderSentAt0d": "Expiry Reminder Sent At0d",
+    "expiryReminderSentAt30d": "Expiry Reminder Sent At30d",
+    "expiryReminderSentAt3d": "Expiry Reminder Sent At3d",
+    "expiryReminderSentAt7d": "Expiry Reminder Sent At7d",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "permitType": "Type",
+    "project": "Projet",
+    "referenceNumber": "Reference No.",
+    "renewedAt": "Renewed At",
+    "status": "Statut",
+    "submittedAt": "Submitted",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "submitted": "Submitted",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "expired": "Expired"
+      },
+      "permitType": {
+        "building": "Building",
+        "excavation": "Excavation",
+        "environmental": "Environmental",
+        "fire": "Fire",
+        "utility": "Utility",
+        "occupancy": "Occupancy",
+        "zoning": "Zoning",
+        "other": "Autre"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/editApprovalRequest.tsx",
-  "title": "Edit Request",
+  "title": "Edit approval request",
   "generalInfo": "Details",
   "form": {
     "documentTypeLabel": "Document Type",
@@ -33,8 +33,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Request",
-    "description": ""
+    "title": "Edit approval request",
+    "description": "Update the details for this approval request."
   },
   "formButtons": {
     "cancel": "Cancel",

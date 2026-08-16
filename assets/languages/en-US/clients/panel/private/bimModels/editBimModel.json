@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bimModels/editBimModel.tsx",
-  "title": "Edit BIM Model",
+  "title": "Edit BIM model",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -29,8 +29,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit BIM Model",
-    "description": ""
+    "title": "Edit BIM model",
+    "description": "Update the details for this BIM model."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/index.tsx",
   "title": "Unternehmerrechnungen",
-  "description": "Unternehmerrechnungen auf BKP-Konten codiert",
+  "description": "Unternehmerrechnungen auf BKP-Konten kontiert",
   "createContractorInvoice": "Rechnung hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "bkpAccountCode": "BKP-Konto",
     "constructionContract": "Bauvertrag",

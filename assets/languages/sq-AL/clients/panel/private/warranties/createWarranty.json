@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/warranties/createWarranty.tsx",
-  "title": "Shto Warranty",
+  "title": "Shto garanci",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Warranty",
-    "description": ""
+    "title": "Shto garanci",
+    "description": "Plotëso të dhënat për të krijuar garanci."
   },
   "formButtons": {
     "cancel": "Anulo",

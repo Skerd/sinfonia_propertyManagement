@@ -39,7 +39,7 @@
   },
   "formHeader": {
     "title": "Ausschreibung hinzufügen",
-    "description": ""
+    "description": "Angaben für record erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

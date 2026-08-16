@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/editCommissioningRecord.tsx",
-  "title": "Edit Commissioning Record",
+  "title": "Edit commissioning record",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Commissioning Record",
-    "description": ""
+    "title": "Edit commissioning record",
+    "description": "Update the details for this commissioning record."
   },
   "formButtons": {
     "cancel": "Cancel",

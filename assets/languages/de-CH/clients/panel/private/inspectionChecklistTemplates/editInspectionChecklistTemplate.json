@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
-  "title": "Abnahme-Checklisten-Vorlage bearbeiten",
+  "title": "Abnahme-Checkliste bearbeiten",
   "generalInfo": "Details",
   "form": {
     "titleLabel": "Bezeichnung",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Abnahme-Checklisten-Vorlage bearbeiten",
-    "description": ""
+    "title": "Abnahme-Checkliste bearbeiten",
+    "description": "Angaben für diesen Abnahme-Checkliste aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

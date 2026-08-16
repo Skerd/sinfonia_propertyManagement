@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/editLandParcel.tsx",
-  "title": "Edit Land Parcel",
+  "title": "Edit land parcel",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Land Parcel",
-    "description": ""
+    "title": "Edit land parcel",
+    "description": "Update the details for this land parcel."
   },
   "formButtons": {
     "cancel": "Cancel",

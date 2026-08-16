@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/estimateComparison/estimateComparison.tsx",
+  "title": "Estimate Comparison",
+  "description": "Benchmark the same cost element (eBKP-H / BKP / NPK) across projects and buildings.",
+  "standardLabel": "Standard",
+  "computedAt": "Computed at",
+  "noDataTitle": "No comparable estimates",
+  "noDataDescription": "Classify BOQ items with a code under this standard to compare them across projects.",
+  "occurrences": "Occurrences",
+  "min": "Min",
+  "avg": "Avg",
+  "max": "Max",
+  "total": "Total",
+  "project": "Progetto",
+  "budget": "Budget",
+  "edifice": "Edificio",
+  "plannedQty": "Planned Qty",
+  "plannedAmount": "Planned Amount",
+  "actualAmount": "Actual Amount",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "standards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  }
+}

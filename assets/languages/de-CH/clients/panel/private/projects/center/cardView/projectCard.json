@@ -31,5 +31,8 @@
     "unavailable": "Nicht verfügbar",
     "unavailableDesc": "Nicht verfügbar für verkauf"
   },
-  "viewEdifices": "Gebäude anzeigen"
+  "viewEdifices": "Gebäude anzeigen",
+  "failedTitle": "Datensatz konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

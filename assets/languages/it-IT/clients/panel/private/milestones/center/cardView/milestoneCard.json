@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/center/cardView/milestoneCard.tsx",
+  "statusLabel": "Stato",
+  "fields": {
+    "project": "Progetto",
+    "plannedEnd": "Planned End",
+    "weightPercent": "Weight %",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "in_progress": "In Progress",
+        "completed": "Completato",
+        "delayed": "Delayed",
+        "cancelled": "Cancelled"
+      }
+    }
+  },
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

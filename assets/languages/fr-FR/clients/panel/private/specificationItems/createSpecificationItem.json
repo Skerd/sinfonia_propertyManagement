@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/createSpecificationItem.tsx",
+  "title": "Add Position",
+  "generalInfo": "Détails",
+  "form": {
+    "specificationLabel": "Specification",
+    "specificationPlaceholder": "Select specification",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Position title",
+    "npkChapterLabel": "NPK Chapter",
+    "npkChapterPlaceholder": "e.g. 211",
+    "npkPositionLabel": "NPK Position",
+    "npkPositionPlaceholder": "CRB position code",
+    "isRPositionLabel": "R-Position (free / not in CRB)",
+    "classificationStandardLabel": "Classification Standard",
+    "classificationStandardPlaceholder": "Select standard",
+    "classificationCodeLabel": "Classification Code",
+    "classificationCodePlaceholder": "eBKP-H / BKP code",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitPriceLabel": "Unit Price",
+    "unitPricePlaceholder": "Unit Price",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "sortIndexLabel": "Sort Index",
+    "sortIndexPlaceholder": "Sort order",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Position",
+    "description": "Saisissez les informations pour créer un record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

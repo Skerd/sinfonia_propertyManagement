@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/index.tsx",
-  "title": "Dokumente & Drawings",
-  "description": "Projekt dokument und plan register",
+  "title": "Projektdokumente",
+  "description": "Pläne, Dokumente und Ausführungsunterlagen",
   "createProjectDocument": "Dokument hinzufügen",
-  "noData": "Keine dokumente gefunden",
-  "failTitle": "Dokumente konnten nicht geladen werden",
-  "failDescription": "Beim Laden von dokumente ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "noData": "Keine Einträge gefunden",
+  "failTitle": "Laden fehlgeschlagen",
+  "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "statusLabel": "Status",
   "fields": {

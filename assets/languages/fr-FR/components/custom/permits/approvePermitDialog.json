@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/approvePermitDialog.tsx",
+  "dialogTitle": "Approve permit",
+  "dialogDescription": "Approve this permit. Optionally set an expiry date and add notes.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional approval notes",
+  "expiresAtLabel": "Expiry date",
+  "cancel": "Annuler",
+  "submit": "Approve"
+}

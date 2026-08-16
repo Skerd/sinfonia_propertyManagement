@@ -32,7 +32,7 @@
   },
   "formHeader": {
     "title": "Menge hinzufügen",
-    "description": ""
+    "description": "Angaben für record erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

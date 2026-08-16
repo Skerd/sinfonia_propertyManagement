@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/index.tsx",
+  "title": "Modelli BIM",
+  "description": "Modelli IFC per il computo (BIM2COST)",
+  "createBimModel": "Aggiungi modello BIM",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "edifice": "Edificio",
+    "elementCount": "Element Count",
+    "importStatus": "Import Status",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "sourceFile": "Source File",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "version": "Version",
+    "!enums": {
+      "importStatus": {
+        "uploaded": "Uploaded",
+        "importing": "Importing",
+        "imported": "Imported",
+        "failed": "Failed"
+      }
+    }
+  }
+}

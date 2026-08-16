@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
-  "title": "Kreditoren-Eingang",
-  "description": "Kreditorenbewirtschaftung — Rechnungseingang (Scan/OCR/QR-Rechnung)",
+  "title": "Kreditoren-Posteingang",
+  "description": "Eingangsrechnungen — Scan, OCR und QR-Rechnung",
   "createIncomingInvoice": "Eingangsrechnung hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "bkpAccountCode": "BKP-Konto",
     "createdAt": "Erstellt am",

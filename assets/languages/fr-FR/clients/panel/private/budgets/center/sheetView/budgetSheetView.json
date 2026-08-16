@@ -1,0 +1,49 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/center/sheetView/budgetSheetView.tsx",
+  "budget": "Budget",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "edifice": "Bâtiment",
+  "version": "Version",
+  "method": "Estimate Method",
+  "classificationStandard": "Classification Standard",
+  "revisionNo": "Revision No.",
+  "supersedesBudget": "Supersedes Budget",
+  "currency": "Devise",
+  "approvedTotal": "Approved Total",
+  "contingencyPercent": "Contingency Percent",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Brouillon",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "locked": "Locked",
+    "superseded": "Superseded"
+  },
+  "methods": {
+    "ebkp_h": "eBKP-H",
+    "bkp": "BKP",
+    "custom": "Custom"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger budget",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

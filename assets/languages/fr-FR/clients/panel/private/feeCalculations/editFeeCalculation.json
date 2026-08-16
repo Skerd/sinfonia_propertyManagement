@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/editFeeCalculation.tsx",
+  "title": "Modifier calcul d'honoraires",
+  "generalInfo": "Détails",
+  "form": {
+    "consultantAppointmentLabel": "Mandat de consultant",
+    "consultantAppointmentPlaceholder": "Select appointment",
+    "basisAmountLabel": "Basis Amount",
+    "basisAmountPlaceholder": "Basis amount",
+    "feePercentLabel": "Fee Percent",
+    "feePercentPlaceholder": "e.g. 12.5",
+    "adjustmentFactorLabel": "Facteur d'ajustement",
+    "adjustmentFactorPlaceholder": "e.g. 1.0",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier calcul d'honoraires",
+    "description": "Mettez à jour les informations de ce calcul d'honoraires."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

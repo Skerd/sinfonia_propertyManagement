@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx",
+  "title": "Calculs d'honoraires",
+  "description": "Calculs d'honoraires selon normes SIA",
+  "createFeeCalculation": "Ajouter un calcul",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "adjustmentFactor": "Facteur d'ajustement",
+    "basisAmount": "Basis Amount",
+    "consultantAppointment": "Mandat de consultant",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "feePercent": "Fee %",
+    "name": "Référence",
+    "notes": "Notes",
+    "status": "Statut",
+    "totalFee": "Total Fee",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "earned": "Earned",
+        "invoiced": "Invoiced",
+        "paid": "Paid"
+      }
+    }
+  }
+}

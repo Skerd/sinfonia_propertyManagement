@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bids/index.tsx",
   "title": "Ofertat",
-  "description": "Angebote — ofertat e kontraktorëve për tenderë",
-  "createBid": "Shto Ofertë",
+  "description": "Ofertat e kontraktorëve ndaj tenderëve",
+  "createBid": "Shto ofertë",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "constructorRef": "Kontraktori",
     "coveringNotes": "Shënime Mbuluese",

@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/cardView/workPackageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/cardView/workPackageCard.tsx",
+  "failedTitle": "Arbeitspaket konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "planned": "Geplant",
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  },
+  "statuses": {
+    "planned": "Geplant",
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
+  }
 }

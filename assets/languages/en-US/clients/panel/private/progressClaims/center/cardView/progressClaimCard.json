@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx",
+  "failedTitle": "Failed to load progress claim",
+  "failedDescription": "Something went wrong while loading this progress claim. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "certified": "Certified",
+    "paid": "Paid",
+    "rejected": "Rejected"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "certified": "Certified",
+    "paid": "Paid",
+    "rejected": "Rejected"
+  }
 }

@@ -60,7 +60,7 @@
   },
   "formHeader": {
     "title": "LV-Position hinzufügen",
-    "description": ""
+    "description": "Angaben für LV-Position erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

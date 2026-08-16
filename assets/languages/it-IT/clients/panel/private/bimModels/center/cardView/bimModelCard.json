@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/center/cardView/bimModelCard.tsx",
+  "failedTitle": "Impossibile caricare modello BIM",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

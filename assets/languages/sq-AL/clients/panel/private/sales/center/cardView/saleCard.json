@@ -39,5 +39,6 @@
     "approved": "Aprovuar",
     "rejected": "Refuzuar"
   },
-  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/saleCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/saleCard.tsx",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

@@ -34,7 +34,7 @@
   },
   "formHeader": {
     "title": "Plan hinzufügen",
-    "description": ""
+    "description": "Angaben für Liquiditätsplan erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

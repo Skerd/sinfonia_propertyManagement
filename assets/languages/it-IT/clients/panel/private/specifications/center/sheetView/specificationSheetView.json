@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/center/sheetView/specificationSheetView.tsx",
+  "specification": "Specification",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "workPackage": "Work Package",
+  "standard": "Standard",
+  "title": "Titolo",
+  "currency": "Valuta",
+  "totalEstimated": "Estimated Total",
+  "description": "Descrizione",
+  "notes": "Note",
+  "status": "Stato",
+  "standards": {
+    "npk": "NPK",
+    "custom": "Custom"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "issued": "Issued",
+    "tender_ready": "Tender Ready",
+    "awarded": "Awarded",
+    "archived": "Archived"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

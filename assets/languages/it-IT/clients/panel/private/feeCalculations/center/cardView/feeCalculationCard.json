@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx",
+  "failedTitle": "Impossibile caricare calcolo onorari",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  },
+  "statuses": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  }
+}

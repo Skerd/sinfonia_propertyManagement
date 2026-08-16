@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/editTender.tsx",
+  "title": "Edit Tender",
+  "generalInfo": "Détails",
+  "removeTrade": "Remove trade",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "specificationLabel": "Specification (LV)",
+    "specificationPlaceholder": "Select specification",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "tradesLabel": "Trades",
+    "tradesPlaceholder": "Add a trade",
+    "submissionDeadlineLabel": "Submission Deadline",
+    "submissionDeadlinePlaceholder": "Select deadline",
+    "openingDateLabel": "Opening Date",
+    "openingDatePlaceholder": "Select opening date",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Tender",
+    "description": "Mettez à jour les informations de ce record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

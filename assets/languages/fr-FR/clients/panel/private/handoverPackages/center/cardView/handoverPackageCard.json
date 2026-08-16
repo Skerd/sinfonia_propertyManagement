@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx",
+  "failedTitle": "Impossible de charger dossier de réception",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "draft": "Brouillon",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Terminé"
+  },
+  "statuses": {
+    "draft": "Brouillon",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Terminé"
+  }
+}

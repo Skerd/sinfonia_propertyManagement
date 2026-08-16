@@ -53,5 +53,6 @@
     "rescheduled": "Riplanifikuar"
   },
   "failedTitle": "Inspektimi nuk mund të ngarkohej",
-  "failedDescription": "Trokit për të provuar sërish."
+  "failedDescription": "Trokit për të provuar sërish.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/center/cardView/bimModelCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/center/cardView/bimModelCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i model BIM",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

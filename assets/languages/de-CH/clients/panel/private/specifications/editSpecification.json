@@ -38,7 +38,7 @@
   },
   "formHeader": {
     "title": "LV bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen record aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

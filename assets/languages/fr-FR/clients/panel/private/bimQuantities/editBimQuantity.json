@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/editBimQuantity.tsx",
+  "title": "Edit Quantity",
+  "generalInfo": "Détails",
+  "form": {
+    "bimModelLabel": "BIM Model",
+    "bimModelPlaceholder": "Select model",
+    "ifcElementTypeLabel": "IFC Element Type",
+    "ifcElementTypePlaceholder": "e.g. IfcWall",
+    "classificationCodeLabel": "Classification Code",
+    "classificationCodePlaceholder": "eBKP-H code",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Quantity",
+    "description": "Mettez à jour les informations de ce record."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

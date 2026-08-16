@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/createLandParcel.tsx",
+  "title": "Ajouter une parcelle",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "cadastralReferenceLabel": "Cadastral Reference",
+    "cadastralReferencePlaceholder": "Cadastral Reference",
+    "areaSqmLabel": "Area (m²)",
+    "areaSqmPlaceholder": "Area (m²)",
+    "zoningLabel": "Zoning",
+    "zoningPlaceholder": "Zoning",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "acquisitionCostLabel": "Acquisition Cost",
+    "acquisitionCostPlaceholder": "Acquisition Cost",
+    "dueDiligenceStatusLabel": "Due Diligence Status",
+    "dueDiligenceStatusPlaceholder": "Due Diligence Status",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter une parcelle",
+    "description": "Saisissez les informations pour créer un parcelle."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

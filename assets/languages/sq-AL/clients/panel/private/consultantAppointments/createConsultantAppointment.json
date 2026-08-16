@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/createConsultantAppointment.tsx",
-  "title": "Shto Consultant Appointment",
+  "title": "Shto emërim konsulenti",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -60,8 +60,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Consultant Appointment",
-    "description": ""
+    "title": "Shto emërim konsulenti",
+    "description": "Plotëso të dhënat për të krijuar emërim konsulenti."
   },
   "formButtons": {
     "cancel": "Anulo",

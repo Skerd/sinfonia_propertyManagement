@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/editBudget.tsx",
-  "title": "Ndrysho Budget",
+  "title": "Ndrysho buxhet",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -45,8 +45,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Budget",
-    "description": ""
+    "title": "Ndrysho buxhet",
+    "description": "Përditëso të dhënat e këtij buxhet."
   },
   "formButtons": {
     "cancel": "Anulo",

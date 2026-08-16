@@ -1,0 +1,58 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/editSafetyIncident.tsx",
+  "title": "Modifier incident de sécurité",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "severityLabel": "Severity",
+    "severityPlaceholder": "Select severity",
+    "severity_low": "Low",
+    "severity_medium": "Medium",
+    "severity_high": "High",
+    "severity_critical": "Critical",
+    "locationLabel": "Location",
+    "locationPlaceholder": "Location",
+    "incidentDateLabel": "Incident Date",
+    "incidentDatePlaceholder": "Incident Date",
+    "personsInvolvedLabel": "Persons Involved",
+    "personsInvolvedPlaceholder": "Persons Involved",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Description",
+    "correctiveActionsLabel": "Corrective Actions",
+    "correctiveActionsPlaceholder": "Corrective Actions",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes",
+    "mediaLabel": "Pièces jointes",
+    "existingFiles": "Fichiers existants",
+    "newFiles": "Nouveaux fichiers",
+    "reportedByLabel": "Reported by",
+    "reportedByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier incident de sécurité",
+    "description": "Mettez à jour les informations de ce incident de sécurité."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

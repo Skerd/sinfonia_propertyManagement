@@ -21,8 +21,8 @@
     "resultNotesPlaceholder": "Ergebnis Notizen",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "inspectedByLabel": "Geprüft von",
     "inspectedByPlaceholder": "Benutzer auswählen"
@@ -43,7 +43,7 @@
   },
   "formHeader": {
     "title": "Inbetriebnahmeprotokoll bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Inbetriebnahmeprotokoll aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rfis/index.tsx",
-  "title": "RFI",
-  "description": "Rfi register",
+  "title": "RFIs",
+  "description": "Informationsanfragen von Baustelle und Planung",
   "createRfi": "RFI hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "answer": "Antwort",
     "answeredBy": "Beantwortet Von",

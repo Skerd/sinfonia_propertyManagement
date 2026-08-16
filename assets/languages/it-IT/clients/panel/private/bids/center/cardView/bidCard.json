@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "failedTitle": "Impossibile caricare offerta",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "shortlisted": "Shortlisted",
+    "awarded": "Awarded",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  },
+  "statuses": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "shortlisted": "Shortlisted",
+    "awarded": "Awarded",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  }
+}

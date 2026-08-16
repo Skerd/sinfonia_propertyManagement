@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/editContractorInvoice.tsx",
+  "title": "Modifica fattura d'impresa",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "constructionContractLabel": "Contratto",
+    "constructionContractPlaceholder": "Select contract",
+    "invoiceNumberLabel": "Invoice No.",
+    "invoiceNumberPlaceholder": "Invoice number",
+    "invoiceDateLabel": "Invoice Date",
+    "invoiceDatePlaceholder": "Invoice date",
+    "dueDateLabel": "Scadenza",
+    "dueDatePlaceholder": "Due date",
+    "grossAmountLabel": "Gross",
+    "grossAmountPlaceholder": "Importo",
+    "netAmountLabel": "Net",
+    "netAmountPlaceholder": "Importo",
+    "vatAmountLabel": "VAT",
+    "vatAmountPlaceholder": "Importo",
+    "retentionHeldLabel": "Retention Held",
+    "retentionHeldPlaceholder": "Importo",
+    "bkpAccountCodeLabel": "BKP Account",
+    "bkpAccountCodePlaceholder": "e.g. 211",
+    "qrBillReferenceLabel": "QR-Bill Ref",
+    "qrBillReferencePlaceholder": "QR reference",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Select source",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica fattura d'impresa",
+    "description": "Aggiorna i dati di questo fattura d'impresa."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

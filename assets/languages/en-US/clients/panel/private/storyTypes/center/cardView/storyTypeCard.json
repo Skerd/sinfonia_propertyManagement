@@ -5,5 +5,8 @@
   "slug": "Slug",
   "description": "Description",
   "sortOrder": "Sort order",
-  "deleted": "Deleted"
+  "deleted": "Deleted",
+  "failedTitle": "Failed to load Story types",
+  "failedDescription": "Something went wrong while loading this Story types. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

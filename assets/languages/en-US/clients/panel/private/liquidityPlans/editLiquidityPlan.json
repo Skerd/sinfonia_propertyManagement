@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/editLiquidityPlan.tsx",
-  "title": "Edit Plan",
+  "title": "Edit liquidity plan",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -33,8 +33,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Plan",
-    "description": ""
+    "title": "Edit liquidity plan",
+    "description": "Update the details for this liquidity plan."
   },
   "formButtons": {
     "cancel": "Cancel",

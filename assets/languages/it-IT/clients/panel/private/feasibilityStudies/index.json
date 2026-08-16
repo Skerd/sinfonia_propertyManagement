@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/index.tsx",
+  "title": "Studi di fattibilità",
+  "description": "Fattibilità di sito, costi e rendimento dei lotti",
+  "createFeasibilityStudy": "Aggiungi studio",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "assumptions": "Assumptions",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "decidedAt": "Decided At",
+    "decidedBy": "Decided By",
+    "decision": "Decision",
+    "decisionNotes": "Decision Notes",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "hardCostEstimate": "Hard Cost Estimate",
+    "irrPercent": "IRR %",
+    "landParcel": "Land Parcel",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "residualValue": "Residual Value",
+    "softCostEstimate": "Soft Cost Estimate",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "in_review": "In Review",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "archived": "Archived"
+      }
+    }
+  }
+}

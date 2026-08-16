@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/createPlanMarkup.tsx",
+  "title": "Aggiungi annotazione",
+  "generalInfo": "Dettagli",
+  "form": {
+    "planDocumentLabel": "Plan Document",
+    "planDocumentPlaceholder": "Select plan document",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "markerTypeLabel": "Marker Type",
+    "markerTypePlaceholder": "Select marker type",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "pageLabel": "Page",
+    "pagePlaceholder": "Page",
+    "layerLabel": "Layer",
+    "layerPlaceholder": "Layer",
+    "geometryXLabel": "Geometry X",
+    "geometryXPlaceholder": "0..1",
+    "geometryYLabel": "Geometry Y",
+    "geometryYPlaceholder": "0..1",
+    "geometryWLabel": "Geometry W",
+    "geometryWPlaceholder": "0..1",
+    "geometryHLabel": "Geometry H",
+    "geometryHPlaceholder": "0..1",
+    "createdOnSiteLabel": "Created On Site",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi annotazione",
+    "description": "Inserisci i dati per creare un annotazione di piano."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

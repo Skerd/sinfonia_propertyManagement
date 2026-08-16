@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/createSpecification.tsx",
+  "title": "Add Specification",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "workPackageLabel": "Work Package",
+    "workPackagePlaceholder": "Select work package",
+    "standardLabel": "Standard",
+    "standardPlaceholder": "Select standard",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "totalEstimatedLabel": "Estimated Total",
+    "totalEstimatedPlaceholder": "Estimated Total",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Specification",
+    "description": "Inserisci i dati per creare un record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

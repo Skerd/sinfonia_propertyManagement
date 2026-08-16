@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx",
+  "failedTitle": "Impossibile caricare voce computo",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "active": "Attivo",
+    "cancelled": "Cancelled"
+  },
+  "statuses": {
+    "active": "Attivo",
+    "cancelled": "Cancelled"
+  }
+}

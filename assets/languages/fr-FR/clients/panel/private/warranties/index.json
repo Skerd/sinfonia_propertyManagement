@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/index.tsx",
+  "title": "Garanties / DLP",
+  "description": "Périodes de garantie et de responsabilité des défauts",
+  "createWarranty": "Ajouter une garantie",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "endDate": "Date de fin",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "retentionAmount": "Retention Amount",
+    "retentionReleaseDate": "Retention Release Date",
+    "startDate": "Date de début",
+    "status": "Statut",
+    "title": "Titre",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "active": "Actif",
+        "expired": "Expired",
+        "void": "Void"
+      }
+    }
+  }
+}

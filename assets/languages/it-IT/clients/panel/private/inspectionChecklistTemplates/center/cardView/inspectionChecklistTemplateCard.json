@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx",
+  "failedTitle": "Impossibile caricare checklist di ispezione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "active": "Attivo",
+    "archived": "Archived"
+  },
+  "statuses": {
+    "active": "Attivo",
+    "archived": "Archived"
+  }
+}

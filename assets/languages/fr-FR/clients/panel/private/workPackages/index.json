@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/index.tsx",
+  "title": "Lots de travaux",
+  "description": "Lots de corps d'état pour achats et exécution",
+  "createWorkPackage": "Ajouter un lot",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "constructorRef": "Entrepreneur",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "name": "Référence",
+    "notes": "Notes",
+    "plannedEnd": "Planned End",
+    "plannedStart": "Planned Start",
+    "project": "Projet",
+    "status": "Statut",
+    "title": "Titre",
+    "trade": "Trade",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "active": "Actif",
+        "completed": "Terminé",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

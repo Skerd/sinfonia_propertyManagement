@@ -9,5 +9,8 @@
     "project": "Project",
     "edifice": "Edifice",
     "unit": "Unit"
-  }
+  },
+  "failedTitle": "Failed to load this record",
+  "failedDescription": "Something went wrong while loading. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

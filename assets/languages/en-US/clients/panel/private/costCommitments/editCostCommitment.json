@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/editCostCommitment.tsx",
-  "title": "Edit Cost Commitment",
+  "title": "Edit cost commitment",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Cost Commitment",
-    "description": ""
+    "title": "Edit cost commitment",
+    "description": "Update the details for this cost commitment."
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -32,7 +32,7 @@
   },
   "formHeader": {
     "title": "Menge bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen record aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

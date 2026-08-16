@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rfis/editRfi.tsx",
-  "title": "Ndrysho Rfi",
+  "title": "Ndrysho RFI",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Rfi",
-    "description": ""
+    "title": "Ndrysho RFI",
+    "description": "Përditëso të dhënat e këtij RFI."
   },
   "formButtons": {
     "cancel": "Anulo",

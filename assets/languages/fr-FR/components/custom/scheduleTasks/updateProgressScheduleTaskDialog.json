@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/scheduleTasks/updateProgressScheduleTaskDialog.tsx",
+  "dialogTitle": "Update progress",
+  "dialogDescription": "Update the completion percentage for this task.",
+  "percentCompleteLabel": "Progress %",
+  "percentCompletePlaceholder": "0 - 100",
+  "cancel": "Annuler",
+  "submit": "Update progress"
+}

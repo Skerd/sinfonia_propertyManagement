@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/warranties/editWarranty.tsx",
-  "title": "Edit Warranty",
+  "title": "Edit warranty",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Warranty",
-    "description": ""
+    "title": "Edit warranty",
+    "description": "Update the details for this warranty."
   },
   "formButtons": {
     "cancel": "Cancel",

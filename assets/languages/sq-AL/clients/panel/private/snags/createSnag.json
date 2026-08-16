@@ -51,10 +51,25 @@
     "newFiles": "Shto foto të reja"
   },
   "axios": {
-    "start": { "title": "Duke raportuar defektin", "time": 3000 },
-    "success": { "title": "Defekti u raportua me sukses!", "time": 3000 },
-    "error": { "title": "Defekti nuk u raportua, ju lutemi provoni sërish!", "time": 3000 }
+    "start": {
+      "title": "Duke raportuar defektin",
+      "time": 3000
+    },
+    "success": {
+      "title": "Defekti u raportua me sukses!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Defekti nuk u raportua, ju lutemi provoni sërish!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Raporto Defekt", "description": "Raporto një defekt ose problem të ri" },
-  "formButtons": { "cancel": "Anulo", "submit": "Raporto Defektin" }
+  "formHeader": {
+    "title": "Raporto Defekt",
+    "description": "Raporto një defekt ose problem të ri"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Raporto Defektin"
+  }
 }

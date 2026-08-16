@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
-  "title": "Edit Inspection Checklist Template",
+  "title": "Edit inspection checklist",
   "generalInfo": "Details",
   "form": {
     "titleLabel": "Title",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Inspection Checklist Template",
-    "description": ""
+    "title": "Edit inspection checklist",
+    "description": "Update the details for this inspection checklist."
   },
   "formButtons": {
     "cancel": "Cancel",

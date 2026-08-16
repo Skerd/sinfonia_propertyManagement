@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/sheetView/workPackageSheetView.tsx",
+  "workPackage": "Work Package",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "constructorRef": "Impresa",
+  "trade": "Trade",
+  "description": "Descrizione",
+  "plannedStart": "Planned Start",
+  "plannedEnd": "Planned End",
+  "notes": "Note",
+  "statuses": {
+    "planned": "Planned",
+    "active": "Attivo",
+    "completed": "Completato",
+    "cancelled": "Cancelled"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare pacchetto di lavoro",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

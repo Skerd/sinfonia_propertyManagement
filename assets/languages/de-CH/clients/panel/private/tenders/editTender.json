@@ -39,7 +39,7 @@
   },
   "formHeader": {
     "title": "Ausschreibung bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen record aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

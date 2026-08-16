@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/editApprovalWorkflow.tsx",
+  "title": "Modifica flusso di approvazione",
+  "generalInfo": "Dettagli",
+  "form": {
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "approverRoleLabel": "Approver Role",
+    "approverRolePlaceholder": "e.g. finance_manager",
+    "thresholdAmountLabel": "Threshold Amount",
+    "thresholdAmountPlaceholder": "Amount above which escalation applies",
+    "thresholdCurrencyLabel": "Threshold Currency",
+    "thresholdCurrencyPlaceholder": "Seleziona valuta",
+    "escalationRoleLabel": "Escalation Role",
+    "escalationRolePlaceholder": "e.g. general_manager",
+    "activeLabel": "Attivo",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica flusso di approvazione",
+    "description": "Aggiorna i dati di questo flusso di approvazione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

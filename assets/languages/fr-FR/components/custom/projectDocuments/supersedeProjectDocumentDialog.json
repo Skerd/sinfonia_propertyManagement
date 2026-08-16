@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/supersedeProjectDocumentDialog.tsx",
+  "dialogTitle": "Supersede document",
+  "dialogDescription": "Mark this document as superseded. Link the new revision to this one using the Supersedes field when creating it.",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional notes",
+  "cancel": "Annuler",
+  "submit": "Supersede"
+}

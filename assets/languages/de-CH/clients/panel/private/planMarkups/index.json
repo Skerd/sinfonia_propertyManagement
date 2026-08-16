@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/index.tsx",
-  "title": "Plan-Markierungen",
-  "description": "Bauleitung — 2D-Plan-Marker (Mängel/Entscheide/Aufträge/Pendenzen)",
+  "title": "Planmarkierungen",
+  "description": "2D-Planmarkierungen für Mängel, Entscheide, Befehle und Pendenzen",
   "createPlanMarkup": "Markierung hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "assignee": "Zuständig",
     "createdAt": "Erstellt am",

@@ -31,7 +31,7 @@
   },
   "formHeader": {
     "title": "Crea tipo di storia",
-    "description": "Crea un nuovo tipo di storia"
+    "description": "Inserisci i dati per creare un Tipi di storia."
   },
   "formButtons": {
     "cancel": "Annulla",

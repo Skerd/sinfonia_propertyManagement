@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/boqItems/editBoqItem.tsx",
-  "title": "Edit Boq Item",
+  "title": "Edit BOQ item",
   "generalInfo": "Details",
   "form": {
     "budgetLabel": "Budget",
@@ -59,8 +59,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Boq Item",
-    "description": ""
+    "title": "Edit BOQ item",
+    "description": "Update the details for this BOQ item."
   },
   "formButtons": {
     "cancel": "Cancel",

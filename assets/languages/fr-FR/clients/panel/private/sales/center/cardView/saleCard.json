@@ -1,7 +1,7 @@
 {
   "failedTitle": "Échec du chargement de la vente",
   "failedDescription": "Échec du chargement des données. Cliquez ici pour réessayer.",
-  "active": "Active",
+  "active": "Actif",
   "sale": "Vente",
   "paymentType": "Type de paiement",
   "cash": "Comptant",
@@ -39,5 +39,6 @@
     "approved": "Approuvée",
     "rejected": "Rejetée"
   },
-  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/saleCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/saleCard.tsx",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

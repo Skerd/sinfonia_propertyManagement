@@ -56,7 +56,7 @@
     "t": "Tonne métrique"
   },
   "measureUnitLabel": "Unité de mesure",
-  "name": "Reference",
+  "name": "Référence",
   "notes": "Notes",
   "notesLabel": "Notes",
   "overview": "Aperçu",
@@ -113,5 +113,6 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

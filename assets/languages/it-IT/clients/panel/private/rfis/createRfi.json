@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/createRfi.tsx",
+  "title": "Aggiungi RFI",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "questionLabel": "Question",
+    "questionPlaceholder": "Question",
+    "answerLabel": "Answer",
+    "answerPlaceholder": "Answer",
+    "dueDateLabel": "Scadenza",
+    "dueDatePlaceholder": "Scadenza",
+    "relatedDocumentLabel": "Related Document",
+    "relatedDocumentPlaceholder": "Select related document",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file",
+    "askedByLabel": "Asked by",
+    "askedByPlaceholder": "Select user",
+    "answeredByLabel": "Answered by",
+    "answeredByPlaceholder": "Select user"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi RFI",
+    "description": "Inserisci i dati per creare un RFI."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

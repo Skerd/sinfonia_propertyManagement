@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/createLiquidityPlan.tsx",
+  "title": "Aggiungi piano",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "horizonStartLabel": "Horizon Start",
+    "horizonStartPlaceholder": "Start",
+    "horizonEndLabel": "Horizon End",
+    "horizonEndPlaceholder": "End",
+    "granularityLabel": "Granularity",
+    "granularityPlaceholder": "Select granularity",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi piano",
+    "description": "Inserisci i dati per creare un piano di liquidità."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

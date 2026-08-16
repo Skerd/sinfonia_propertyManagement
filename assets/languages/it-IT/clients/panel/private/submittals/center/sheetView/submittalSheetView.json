@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/center/sheetView/submittalSheetView.tsx",
+  "submittal": "Submittal",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "specReference": "Spec Reference",
+  "description": "Descrizione",
+  "relatedDocument": "Related Document",
+  "notes": "Note",
+  "statuses": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "revise_and_resubmit": "Revise And Resubmit",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "submittedBy": "Submitted by",
+  "reviewedBy": "Reviewed by",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare sottomissione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

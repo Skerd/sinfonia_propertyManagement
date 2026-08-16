@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
-  "title": "Shto Commissioning Record",
+  "title": "Shto regjistrim komisionimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Commissioning Record",
-    "description": ""
+    "title": "Shto regjistrim komisionimi",
+    "description": "Plotëso të dhënat për të krijuar regjistrim komisionimi."
   },
   "formButtons": {
     "cancel": "Anulo",

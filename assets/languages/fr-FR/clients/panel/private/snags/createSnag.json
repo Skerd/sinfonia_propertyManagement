@@ -51,10 +51,25 @@
     "newFiles": "Ajouter de nouvelles photos"
   },
   "axios": {
-    "start": { "title": "Signalement du défaut", "time": 3000 },
-    "success": { "title": "Défaut signalé !", "time": 3000 },
-    "error": { "title": "Impossible de signaler le défaut, veuillez réessayer !", "time": 3000 }
+    "start": {
+      "title": "Signalement du défaut",
+      "time": 3000
+    },
+    "success": {
+      "title": "Défaut signalé !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de signaler le défaut, veuillez réessayer !",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Signaler un défaut", "description": "Signaler une nouvelle réserve ou un défaut" },
-  "formButtons": { "cancel": "Annuler", "submit": "Signaler le défaut" }
+  "formHeader": {
+    "title": "Signaler un défaut",
+    "description": "Signaler une nouvelle réserve ou un défaut"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Signaler le défaut"
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/sheetView/landParcelSheetView.tsx",
+  "landParcel": "Land Parcel",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "cadastralReference": "Cadastral Reference",
+  "areaSqm": "Area (m²)",
+  "zoning": "Zoning",
+  "currency": "Devise",
+  "acquisitionCost": "Acquisition Cost",
+  "dueDiligenceStatus": "Due Diligence Status",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "prospect": "Prospect",
+    "under_dd": "Under Dd",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger parcelle",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

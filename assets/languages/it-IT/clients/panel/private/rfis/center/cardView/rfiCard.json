@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/center/cardView/rfiCard.tsx",
+  "failedTitle": "Impossibile caricare RFI",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "open": "Open",
+    "answered": "Answered",
+    "closed": "Closed",
+    "void": "Void"
+  },
+  "statuses": {
+    "open": "Open",
+    "answered": "Answered",
+    "closed": "Closed",
+    "void": "Void"
+  }
+}

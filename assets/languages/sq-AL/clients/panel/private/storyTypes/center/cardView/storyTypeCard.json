@@ -5,5 +5,8 @@
   "slug": "Slug",
   "description": "Description",
   "sortOrder": "Sort order",
-  "deleted": "Deleted"
+  "deleted": "Deleted",
+  "failedTitle": "Dështoi ngarkimi i Llojet e historive",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

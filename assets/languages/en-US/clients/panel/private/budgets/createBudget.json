@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/createBudget.tsx",
-  "title": "Add Budget",
+  "title": "Add budget",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -45,8 +45,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Budget",
-    "description": ""
+    "title": "Add budget",
+    "description": "Enter the details to create a new budget."
   },
   "formButtons": {
     "cancel": "Cancel",

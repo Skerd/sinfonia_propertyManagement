@@ -7,5 +7,8 @@
     "updateDate": "Update date",
     "project": "Project",
     "edifice": "Edifice"
-  }
+  },
+  "failedTitle": "Failed to load record",
+  "failedDescription": "Something went wrong while loading this record. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

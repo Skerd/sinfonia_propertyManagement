@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/sheetView/landParcelSheetView.tsx",
+  "landParcel": "Land Parcel",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "cadastralReference": "Cadastral Reference",
+  "areaSqm": "Area (m²)",
+  "zoning": "Zoning",
+  "currency": "Valuta",
+  "acquisitionCost": "Acquisition Cost",
+  "dueDiligenceStatus": "Due Diligence Status",
+  "description": "Descrizione",
+  "notes": "Note",
+  "statuses": {
+    "prospect": "Prospect",
+    "under_dd": "Under Dd",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare particella",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

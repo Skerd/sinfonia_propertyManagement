@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/editWarranty.tsx",
+  "title": "Modifica garanzia",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Select unit",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "startDateLabel": "Data inizio",
+    "startDatePlaceholder": "Data inizio",
+    "endDateLabel": "Data fine",
+    "endDatePlaceholder": "Data fine",
+    "retentionAmountLabel": "Retention Amount",
+    "retentionAmountPlaceholder": "Retention Amount",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "retentionReleaseDateLabel": "Retention Release Date",
+    "retentionReleaseDatePlaceholder": "Retention Release Date",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica garanzia",
+    "description": "Aggiorna i dati di questo garanzia."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

@@ -146,7 +146,7 @@
       "title": "Offertpositionen"
     },
     "costCommitments": {
-      "title": "Commitments / P os"
+      "title": "Verpflichtungen / Bestellungen"
     },
     "workPackages": {
       "title": "Arbeitspakete"
@@ -158,7 +158,7 @@
       "title": "Fortschrittsrechnungen"
     },
     "rfis": {
-      "title": "Rf ist"
+      "title": "RFIs"
     },
     "submittals": {
       "title": "Einreichungen"
@@ -191,7 +191,7 @@
       "title": "Planungsphasen"
     },
     "inspectionChecklistTemplates": {
-      "title": "Abnahme checklists"
+      "title": "Abnahme-Checklisten"
     },
     "consultantAppointments": {
       "title": "Planeraufträge"
@@ -242,7 +242,7 @@
       "title": "Wartungspläne"
     },
     "maintenanceWorkOrders": {
-      "title": "Arbeit aufträge"
+      "title": "Arbeitsaufträge"
     },
     "bimIntegrations": {
       "title": "BIM & integrations"
@@ -283,6 +283,9 @@
     "erpExport": {
       "title": "ERP-Export"
     }
+  },
+  "propertyManagement": {
+    "title": "Liegenschaftsverwaltung"
   },
   "finance": {
     "title": "Finanzen",

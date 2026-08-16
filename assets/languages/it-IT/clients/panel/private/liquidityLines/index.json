@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/index.tsx",
+  "title": "Liquidity Lines",
+  "description": "Planned/actual inflow & outflow lines",
+  "createLiquidityLine": "Add Line",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "actualAmount": "Actual Amount",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "direction": "Direction",
+    "name": "Riferimento",
+    "notes": "Note",
+    "period": "Period",
+    "plan": "Plan",
+    "plannedAmount": "Planned Amount",
+    "source": "Source",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "direction": {
+        "inflow": "Inflow",
+        "outflow": "Outflow"
+      },
+      "source": {
+        "owner_contract": "Owner Contract",
+        "payment_plan": "Payment Plan",
+        "cost_commitment": "Cost Commitment",
+        "contractor_invoice": "Contractor Invoice",
+        "fee": "Fee",
+        "manual": "Manual"
+      }
+    }
+  }
+}

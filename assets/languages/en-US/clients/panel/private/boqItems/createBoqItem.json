@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/boqItems/createBoqItem.tsx",
-  "title": "Add Boq Item",
+  "title": "Add BOQ item",
   "generalInfo": "Details",
   "form": {
     "budgetLabel": "Budget",
@@ -59,8 +59,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Boq Item",
-    "description": ""
+    "title": "Add BOQ item",
+    "description": "Enter the details to create a new BOQ item."
   },
   "formButtons": {
     "cancel": "Cancel",

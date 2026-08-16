@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/cardView/planMarkupCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/planMarkups/center/cardView/planMarkupCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i shënim plani",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "open": "Hapur",
+    "in_progress": "Në Progres",
+    "done": "Përfunduar",
+    "void": "I Pavlefshëm"
+  },
+  "statuses": {
+    "open": "Hapur",
+    "in_progress": "Në Progres",
+    "done": "Përfunduar",
+    "void": "I Pavlefshëm"
+  }
 }

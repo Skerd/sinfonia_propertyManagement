@@ -23,8 +23,8 @@
     "visitorsPlaceholder": "Besucher",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files"
   },
   "axios": {
@@ -43,7 +43,7 @@
   },
   "formHeader": {
     "title": "Bautagebuch bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Bautagebuch aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/renewPermitDialog.tsx",
+  "dialogTitle": "Renew permit",
+  "dialogDescription": "Renew this permit by setting a new expiry date.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Optional renewal notes",
+  "expiresAtLabel": "New expiry date",
+  "cancel": "Annulla",
+  "submit": "Renew"
+}

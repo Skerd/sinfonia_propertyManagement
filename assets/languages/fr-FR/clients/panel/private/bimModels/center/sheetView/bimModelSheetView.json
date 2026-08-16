@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/center/sheetView/bimModelSheetView.tsx",
+  "bimModel": "BIM Model",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "title": "Titre",
+  "project": "Projet",
+  "version": "Version",
+  "elementCount": "Element Count",
+  "notes": "Notes",
+  "importStatus": "Import Status",
+  "importStatuses": {
+    "uploaded": "Uploaded",
+    "importing": "Importing",
+    "imported": "Imported",
+    "failed": "Failed"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger modèle BIM",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

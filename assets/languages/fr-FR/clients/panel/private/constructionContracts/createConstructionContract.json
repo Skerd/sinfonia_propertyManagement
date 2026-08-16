@@ -51,7 +51,7 @@
   },
   "formHeader": {
     "title": "Créer un contrat de construction",
-    "description": ""
+    "description": "Saisissez les informations pour créer un record."
   },
   "formButtons": {
     "cancel": "Annuler",

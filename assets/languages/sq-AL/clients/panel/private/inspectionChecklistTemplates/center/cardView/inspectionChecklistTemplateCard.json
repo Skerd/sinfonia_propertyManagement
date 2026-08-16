@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i listë kontrolli inspektimi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "active": "Aktive",
+    "archived": "Arkivuar"
+  },
+  "statuses": {
+    "active": "Aktive",
+    "archived": "Arkivuar"
+  }
 }

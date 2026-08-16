@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/warranties/index.tsx",
-  "title": "Garantie",
-  "description": "Garantie register",
+  "title": "Garantien / Mängelhaftung",
+  "description": "Mängelhaftung und Garantiefristen nach der Übergabe",
   "createWarranty": "Garantie hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

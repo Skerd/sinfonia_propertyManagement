@@ -1,0 +1,33 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx",
+  "handoverPackage": "Handover Package",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "edifice": "Bâtiment",
+  "unit": "Unité",
+  "omManualsComplete": "O&M Manuals Complete",
+  "asBuiltComplete": "As-Built Complete",
+  "keysTransferred": "Keys Transferred",
+  "trainingComplete": "Training Complete",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "draft": "Brouillon",
+    "in_progress": "In Progress",
+    "ready": "Ready",
+    "completed": "Terminé"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger dossier de réception",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

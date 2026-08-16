@@ -69,8 +69,8 @@ function MilestoneCard({
             sheetEntityProp="milestone"
             deleteUrl="/api/realEstate/milestone"
             restoreUrl="/api/realEstate/milestone/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

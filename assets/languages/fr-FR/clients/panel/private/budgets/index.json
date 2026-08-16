@@ -1,0 +1,54 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/budgets/index.tsx",
+  "title": "Budgets",
+  "description": "Budgets de projet et écarts",
+  "createBudget": "Ajouter un budget",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "approvedTotal": "Approved Total",
+    "bimSource": "BIM Source",
+    "classificationStandard": "Classification Standard",
+    "contingencyPercent": "Contingency Percent",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "method": "Method",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "revisionNo": "Revision No.",
+    "status": "Statut",
+    "supersedesBudget": "Supersedes Budget",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "version": "Version",
+    "!enums": {
+      "method": {
+        "ebkp_h": "eBKP-H",
+        "bkp": "BKP",
+        "custom": "Custom"
+      },
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "pending_approval": "Pending Approval",
+        "approved": "Approved",
+        "locked": "Locked",
+        "superseded": "Superseded"
+      }
+    }
+  }
+}

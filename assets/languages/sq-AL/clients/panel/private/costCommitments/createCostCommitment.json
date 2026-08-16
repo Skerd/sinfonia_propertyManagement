@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/createCostCommitment.tsx",
-  "title": "Shto Cost Commitment",
+  "title": "Shto angazhim",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Cost Commitment",
-    "description": ""
+    "title": "Shto angazhim",
+    "description": "Plotëso të dhënat për të krijuar angazhim kostoje."
   },
   "formButtons": {
     "cancel": "Anulo",

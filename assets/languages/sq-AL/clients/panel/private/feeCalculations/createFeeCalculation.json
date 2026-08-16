@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/createFeeCalculation.tsx",
-  "title": "Shto Llogaritje",
+  "title": "Shto llogaritje",
   "generalInfo": "Detajet",
   "form": {
     "consultantAppointmentLabel": "Emërimi i Konsulentit",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Llogaritje",
-    "description": ""
+    "title": "Shto llogaritje",
+    "description": "Plotëso të dhënat për të krijuar llogaritje tarife."
   },
   "formButtons": {
     "cancel": "Anulo",

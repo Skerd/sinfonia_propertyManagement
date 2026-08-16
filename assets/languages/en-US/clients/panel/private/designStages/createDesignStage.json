@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/designStages/createDesignStage.tsx",
-  "title": "Add Design Stage",
+  "title": "Add design stage",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Design Stage",
-    "description": ""
+    "title": "Add design stage",
+    "description": "Enter the details to create a new design stage."
   },
   "formButtons": {
     "cancel": "Cancel",

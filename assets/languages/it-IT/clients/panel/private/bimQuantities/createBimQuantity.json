@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimQuantities/createBimQuantity.tsx",
+  "title": "Add Quantity",
+  "generalInfo": "Dettagli",
+  "form": {
+    "bimModelLabel": "BIM Model",
+    "bimModelPlaceholder": "Select model",
+    "ifcElementTypeLabel": "IFC Element Type",
+    "ifcElementTypePlaceholder": "e.g. IfcWall",
+    "classificationCodeLabel": "Classification Code",
+    "classificationCodePlaceholder": "eBKP-H code",
+    "quantityLabel": "Quantity",
+    "quantityPlaceholder": "Quantity",
+    "unitOfMeasureLabel": "Unit of Measure",
+    "unitOfMeasurePlaceholder": "e.g. m2",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Quantity",
+    "description": "Inserisci i dati per creare un record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

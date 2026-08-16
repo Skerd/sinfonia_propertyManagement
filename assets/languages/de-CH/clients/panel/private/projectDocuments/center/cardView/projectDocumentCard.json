@@ -38,5 +38,22 @@
         "other": "Andere"
       }
     }
+  },
+  "failedTitle": "Dokument konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "draft": "Entwurf",
+    "for_review": "Für Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "superseded": "Superseded"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "for_review": "Für Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "superseded": "Superseded"
   }
 }

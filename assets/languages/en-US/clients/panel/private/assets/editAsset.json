@@ -36,7 +36,7 @@
   },
   "formHeader": {
     "title": "Edit Asset",
-    "description": ""
+    "description": "Update the details for this record."
   },
   "formButtons": {
     "cancel": "Cancel",

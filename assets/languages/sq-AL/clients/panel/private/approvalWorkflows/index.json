@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/index.tsx",
-  "title": "Rrjedhat e Miratimit",
-  "description": "Freigabeprozess — miratimi i dokumenteve financiare",
-  "createApprovalWorkflow": "Shto Rrjedhë",
+  "title": "Rrjedhat e miratimit",
+  "description": "Rrjedha e miratimit për buxhete, kontrata dhe fatura",
+  "createApprovalWorkflow": "Shto rrjedhë",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "active": "Aktiv",
     "approverRole": "Roli i Miratuesit",

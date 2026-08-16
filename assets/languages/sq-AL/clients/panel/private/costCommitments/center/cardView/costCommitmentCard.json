@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/center/cardView/costCommitmentCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/center/cardView/costCommitmentCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i angazhim kostoje",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "issued": "Lëshuar",
+    "partially_received": "Pjesërisht Marrë",
+    "closed": "Mbyllur",
+    "cancelled": "Anuluar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "issued": "Lëshuar",
+    "partially_received": "Pjesërisht Marrë",
+    "closed": "Mbyllur",
+    "cancelled": "Anuluar"
+  }
 }

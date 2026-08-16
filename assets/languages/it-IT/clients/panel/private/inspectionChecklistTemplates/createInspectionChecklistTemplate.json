@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx",
+  "title": "Aggiungi checklist",
+  "generalInfo": "Dettagli",
+  "form": {
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "tradeLabel": "Trade",
+    "tradePlaceholder": "Trade",
+    "stageLabel": "Stage",
+    "stagePlaceholder": "Stage",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "itemsJsonLabel": "Checklist Items",
+    "itemsJsonPlaceholder": "Checklist Items",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi checklist",
+    "description": "Inserisci i dati per creare un checklist di ispezione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

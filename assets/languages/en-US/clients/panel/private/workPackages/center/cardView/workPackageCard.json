@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/cardView/workPackageCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/cardView/workPackageCard.tsx",
+  "failedTitle": "Failed to load work package",
+  "failedDescription": "Something went wrong while loading this work package. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "planned": "Planned",
+    "active": "Active",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "statuses": {
+    "planned": "Planned",
+    "active": "Active",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
 }

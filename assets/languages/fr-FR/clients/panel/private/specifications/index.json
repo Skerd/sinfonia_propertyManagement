@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specifications/index.tsx",
+  "title": "Specification (LV)",
+  "description": "Leistungsverzeichnis / bill of works for tendering",
+  "createSpecification": "Add Specification",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "standard": "Standard",
+    "status": "Statut",
+    "title": "Titre",
+    "totalEstimated": "Total Estimated",
+    "updatedAt": "Mis à jour le",
+    "workPackage": "Work Package",
+    "!enums": {
+      "standard": {
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "issued": "Issued",
+        "tender_ready": "Tender Ready",
+        "awarded": "Awarded",
+        "archived": "Archived"
+      }
+    }
+  }
+}

@@ -1,3 +1,22 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i ofertë",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "submitted": "Dërguar",
+    "shortlisted": "Në Listën e Shkurtër",
+    "awarded": "Fitues",
+    "rejected": "Refuzuar",
+    "withdrawn": "Tërhequr"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Dërguar",
+    "shortlisted": "Në Listën e Shkurtër",
+    "awarded": "Fitues",
+    "rejected": "Refuzuar",
+    "withdrawn": "Tërhequr"
+  }
 }

@@ -55,8 +55,8 @@ function ConstructionUpdateCard({
             sheetEntityProp="constructionUpdate"
             deleteUrl="/api/realEstate/constructionUpdate"
             restoreUrl="/api/realEstate/constructionUpdate/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

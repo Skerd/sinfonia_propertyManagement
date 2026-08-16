@@ -1,3 +1,6 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/center/cardView/bidLineCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/bidLines/center/cardView/bidLineCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i record",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/index.tsx",
+  "title": "Mise en service",
+  "description": "Procès-verbaux de mise en service des installations",
+  "createCommissioningRecord": "Ajouter un procès-verbal",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "edifice": "Bâtiment",
+    "handoverPackage": "Handover Package",
+    "inspectedBy": "Inspected By",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "resultNotes": "Result Notes",
+    "status": "Statut",
+    "systemName": "System Name",
+    "testDate": "Test Date",
+    "title": "Titre",
+    "unit": "Unité",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "pending": "Pending",
+        "passed": "Passed",
+        "failed": "Failed"
+      }
+    }
+  }
+}

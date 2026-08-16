@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/cardView/liquidityPlanCard.tsx",
+  "failedTitle": "Impossibile caricare piano di liquidità",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

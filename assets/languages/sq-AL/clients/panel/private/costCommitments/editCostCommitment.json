@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/editCostCommitment.tsx",
-  "title": "Ndrysho Cost Commitment",
+  "title": "Ndrysho angazhim kostoje",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Cost Commitment",
-    "description": ""
+    "title": "Ndrysho angazhim kostoje",
+    "description": "Përditëso të dhënat e këtij angazhim kostoje."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bidComparison/bidComparison.tsx",
+  "title": "Bid Comparison",
+  "description": "Angebotsvergleich — ranked bids by price, quality & completeness.",
+  "computedAt": "Computed at",
+  "noTenderTitle": "No tender selected",
+  "noTenderDescription": "Open bid comparison from a tender to score its bids.",
+  "noBidsTitle": "No bids yet",
+  "noBidsDescription": "Bids submitted for this tender will be ranked here.",
+  "contractor": "Contractor",
+  "total": "Total",
+  "completeness": "Completeness",
+  "priceScore": "Price",
+  "qualityScore": "Quality",
+  "overallScore": "Overall",
+  "status": "Stato",
+  "recommended": "Recommended",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova."
+}

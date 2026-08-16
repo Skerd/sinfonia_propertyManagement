@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/cardView/siteDiaryCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/cardView/siteDiaryCard.tsx",
+  "failedTitle": "Bautagebuch konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "draft": "Entwurf",
+    "published": "Veröffentlicht"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "published": "Veröffentlicht"
+  }
 }

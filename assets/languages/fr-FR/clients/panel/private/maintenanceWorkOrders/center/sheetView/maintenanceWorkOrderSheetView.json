@@ -1,0 +1,39 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/center/sheetView/maintenanceWorkOrderSheetView.tsx",
+  "maintenanceWorkOrder": "Work Order",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "title": "Titre",
+  "plan": "Plan",
+  "asset": "Asset",
+  "type": "Type",
+  "assignee": "Assignee",
+  "costEstimate": "Cost Estimate",
+  "actualCost": "Actual Cost",
+  "dueDate": "Échéance",
+  "notes": "Notes",
+  "status": "Statut",
+  "statuses": {
+    "open": "Open",
+    "assigned": "Assigned",
+    "in_progress": "In Progress",
+    "done": "Done",
+    "verified": "Verified",
+    "closed": "Closed",
+    "cancelled": "Cancelled"
+  },
+  "types": {
+    "preventive": "Preventive",
+    "corrective": "Corrective",
+    "renovation": "Renovation"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger record",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

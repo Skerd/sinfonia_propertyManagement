@@ -22,10 +22,25 @@
     "notesPlaceholder": "Notes"
   },
   "axios": {
-    "start": {"title": "Saving...", "time": 3000},
-    "success": {"title": "Saved", "time": 3000},
-    "error": {"title": "Error", "time": 3000}
+    "start": {
+      "title": "Saving...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Saved",
+      "time": 3000
+    },
+    "error": {
+      "title": "Error",
+      "time": 3000
+    }
   },
-  "formHeader": {"title": "Add Classification", "description": ""},
-  "formButtons": {"cancel": "Cancel", "submit": "Save"}
+  "formHeader": {
+    "title": "Add Classification",
+    "description": "Enter the details to create a new record."
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save"
+  }
 }

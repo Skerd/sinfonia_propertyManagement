@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/index.tsx",
+  "title": "Ordini di variante",
+  "description": "Varianti, extra e cambiamenti di ambito",
+  "createVariationOrder": "Aggiungi variante",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "billedAt": "Billed At",
+    "billingReference": "Billing Reference",
+    "constructionContract": "Construction Contract",
+    "costImpact": "Cost Impact",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "edifice": "Edificio",
+    "media": "Media",
+    "modificationRequest": "Modification Request",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "status": "Stato",
+    "timeImpactDays": "Time Impact Days",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "pending_architect": "Pending Architect",
+        "pending_qs": "Pending QS",
+        "pending_client": "Pending Client",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

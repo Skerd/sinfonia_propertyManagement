@@ -51,7 +51,7 @@
   },
   "formHeader": {
     "title": "Add Construction Contract",
-    "description": ""
+    "description": "Enter the details to create a new record."
   },
   "formButtons": {
     "cancel": "Cancel",

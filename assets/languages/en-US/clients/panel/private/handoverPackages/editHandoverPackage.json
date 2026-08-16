@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
-  "title": "Edit Handover Package",
+  "title": "Edit handover package",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -38,8 +38,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Handover Package",
-    "description": ""
+    "title": "Edit handover package",
+    "description": "Update the details for this handover package."
   },
   "formButtons": {
     "cancel": "Cancel",

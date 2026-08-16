@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/editMaintenancePlan.tsx",
-  "title": "Edit Plan",
+  "title": "Edit maintenance plan",
   "generalInfo": "Details",
   "form": {
     "assetLabel": "Asset",
@@ -36,8 +36,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Plan",
-    "description": ""
+    "title": "Edit maintenance plan",
+    "description": "Update the details for this maintenance plan."
   },
   "formButtons": {
     "cancel": "Cancel",

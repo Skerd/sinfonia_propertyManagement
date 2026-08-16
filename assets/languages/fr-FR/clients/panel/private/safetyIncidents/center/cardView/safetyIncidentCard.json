@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/cardView/safetyIncidentCard.tsx",
+  "failedTitle": "Impossible de charger incident de sécurité",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "closed": "Closed"
+  },
+  "statuses": {
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "closed": "Closed"
+  }
+}

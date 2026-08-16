@@ -1,0 +1,44 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/createApprovalWorkflow.tsx",
+  "title": "Ajouter un circuit",
+  "generalInfo": "Détails",
+  "form": {
+    "documentTypeLabel": "Document Type",
+    "documentTypePlaceholder": "Select document type",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "approverRoleLabel": "Approver Role",
+    "approverRolePlaceholder": "e.g. finance_manager",
+    "thresholdAmountLabel": "Threshold Amount",
+    "thresholdAmountPlaceholder": "Amount above which escalation applies",
+    "thresholdCurrencyLabel": "Threshold Currency",
+    "thresholdCurrencyPlaceholder": "Sélectionner une devise",
+    "escalationRoleLabel": "Escalation Role",
+    "escalationRolePlaceholder": "e.g. general_manager",
+    "activeLabel": "Actif",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un circuit",
+    "description": "Saisissez les informations pour créer un circuit d'approbation."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

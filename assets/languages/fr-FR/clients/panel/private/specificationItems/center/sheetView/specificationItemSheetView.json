@@ -1,0 +1,45 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/center/sheetView/specificationItemSheetView.tsx",
+  "specificationItem": "LV Position",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "specification": "Specification",
+  "title": "Titre",
+  "npkChapter": "NPK Chapter",
+  "npkPosition": "NPK Position",
+  "isRPosition": "R-Position",
+  "classificationStandard": "Classification Standard",
+  "classificationCode": "Classification Code",
+  "unitOfMeasure": "Unit of Measure",
+  "quantity": "Quantity",
+  "unitPrice": "Unit Price",
+  "lineTotal": "Line Total",
+  "currency": "Devise",
+  "description": "Description",
+  "notes": "Notes",
+  "status": "Statut",
+  "statuses": {
+    "active": "Actif",
+    "cancelled": "Cancelled"
+  },
+  "rPositionState": {
+    "true": "R-Position",
+    "false": "Catalogue"
+  },
+  "classificationStandards": {
+    "ebkp_h": "eBKP-H",
+    "ebkp_bau": "eBKP-Bau",
+    "bkp": "BKP",
+    "npk": "NPK",
+    "custom": "Custom"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger record",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

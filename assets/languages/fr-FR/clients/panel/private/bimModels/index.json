@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bimModels/index.tsx",
+  "title": "Modèles BIM",
+  "description": "Modèles IFC pour le métré (BIM2COST)",
+  "createBimModel": "Ajouter un modèle BIM",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "edifice": "Bâtiment",
+    "elementCount": "Element Count",
+    "importStatus": "Import Status",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "sourceFile": "Source File",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "version": "Version",
+    "!enums": {
+      "importStatus": {
+        "uploaded": "Uploaded",
+        "importing": "Importing",
+        "imported": "Imported",
+        "failed": "Failed"
+      }
+    }
+  }
+}

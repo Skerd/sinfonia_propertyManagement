@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx",
-  "title": "Add Inspection Checklist Template",
+  "title": "Add checklist",
   "generalInfo": "Details",
   "form": {
     "titleLabel": "Title",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Inspection Checklist Template",
-    "description": ""
+    "title": "Add checklist",
+    "description": "Enter the details to create a new inspection checklist."
   },
   "formButtons": {
     "cancel": "Cancel",

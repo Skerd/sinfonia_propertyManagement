@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/boqItems/editBoqItem.tsx",
-  "title": "Ndrysho Boq Item",
+  "title": "Ndrysho pozicion BOQ",
   "generalInfo": "Detajet",
   "form": {
     "budgetLabel": "Buxheti",
@@ -59,8 +59,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Boq Item",
-    "description": ""
+    "title": "Ndrysho pozicion BOQ",
+    "description": "Përditëso të dhënat e këtij pozicion BOQ."
   },
   "formButtons": {
     "cancel": "Anulo",

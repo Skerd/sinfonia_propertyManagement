@@ -38,5 +38,22 @@
         "other": "Other"
       }
     }
+  },
+  "failedTitle": "Failed to load document",
+  "failedDescription": "Something went wrong while loading this document. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "draft": "Draft",
+    "for_review": "For Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "superseded": "Superseded"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "for_review": "For Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "superseded": "Superseded"
   }
 }

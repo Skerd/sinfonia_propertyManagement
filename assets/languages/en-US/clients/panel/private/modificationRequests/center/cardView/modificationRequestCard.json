@@ -65,5 +65,6 @@
     "hvac": "HVAC",
     "cosmetic": "Cosmetic",
     "other": "Other"
-  }
+  },
+  "failedTooltipDescription": "Click to retry fetching data."
 }

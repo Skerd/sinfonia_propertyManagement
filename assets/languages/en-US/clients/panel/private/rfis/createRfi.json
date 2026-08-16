@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rfis/createRfi.tsx",
-  "title": "Add Rfi",
+  "title": "Add RFI",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Rfi",
-    "description": ""
+    "title": "Add RFI",
+    "description": "Enter the details to create a new RFI."
   },
   "formButtons": {
     "cancel": "Cancel",

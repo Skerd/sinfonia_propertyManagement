@@ -43,5 +43,6 @@
     "walk_in": "Walk-in",
     "social": "Social",
     "other": "Other"
-  }
+  },
+  "failedTooltipDescription": "Click to retry fetching data."
 }

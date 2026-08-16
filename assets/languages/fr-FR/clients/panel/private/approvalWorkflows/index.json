@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/index.tsx",
+  "title": "Circuits d'approbation",
+  "description": "Circuit d'approbation pour budgets, contrats et factures",
+  "createApprovalWorkflow": "Ajouter un circuit",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "active": "Actif",
+    "approverRole": "Approver Role",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "documentType": "Document Type",
+    "escalationRole": "Escalation Role",
+    "name": "Référence",
+    "notes": "Notes",
+    "thresholdAmount": "Threshold Amount",
+    "thresholdCurrency": "Threshold Currency",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "documentType": {
+        "budget": "Budget",
+        "cost_estimate": "Cost Estimate",
+        "contract": "Contrat",
+        "variation_order": "Variation Order",
+        "contractor_invoice": "Contractor Invoice",
+        "progress_claim": "Progress Claim"
+      }
+    }
+  }
+}

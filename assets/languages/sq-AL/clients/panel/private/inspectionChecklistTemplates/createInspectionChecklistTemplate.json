@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx",
-  "title": "Shto Inspection Checklist Template",
+  "title": "Shto listë kontrolli",
   "generalInfo": "Detajet",
   "form": {
     "titleLabel": "Titulli",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Inspection Checklist Template",
-    "description": ""
+    "title": "Shto listë kontrolli",
+    "description": "Plotëso të dhënat për të krijuar listë kontrolli inspektimi."
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -1,0 +1,51 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/index.tsx",
+  "title": "Factures d'entreprises",
+  "description": "Factures d'entreprises imputées aux comptes BKP",
+  "createContractorInvoice": "Ajouter une facture",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "bkpAccountCode": "BKP Account",
+    "constructionContract": "Construction Contract",
+    "constructorRef": "Entrepreneur",
+    "costCommitment": "Cost Commitment",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "dueDate": "Échéance",
+    "edifice": "Bâtiment",
+    "grossAmount": "Gross Amount",
+    "invoiceDate": "Invoice Date",
+    "invoiceNumber": "Invoice No.",
+    "name": "Référence",
+    "netAmount": "Net Amount",
+    "notes": "Notes",
+    "progressClaim": "Progress Claim",
+    "project": "Projet",
+    "qrBillReference": "QR-Bill Reference",
+    "retentionHeld": "Retention Held",
+    "source": "Source",
+    "status": "Statut",
+    "updatedAt": "Mis à jour le",
+    "vatAmount": "VAT Amount",
+    "!enums": {
+      "source": {
+        "manual": "Manual",
+        "ap_inbox": "AP Inbox"
+      },
+      "status": {
+        "received": "Received",
+        "under_review": "Under Review",
+        "approved": "Approved",
+        "paid": "Paid",
+        "rejected": "Rejected",
+        "disputed": "Disputed"
+      }
+    }
+  }
+}

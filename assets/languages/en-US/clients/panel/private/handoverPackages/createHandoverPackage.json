@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/createHandoverPackage.tsx",
-  "title": "Add Handover Package",
+  "title": "Add handover package",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -38,8 +38,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Handover Package",
-    "description": ""
+    "title": "Add handover package",
+    "description": "Enter the details to create a new handover package."
   },
   "formButtons": {
     "cancel": "Cancel",

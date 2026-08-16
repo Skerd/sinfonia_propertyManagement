@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Ventes & remise",
+  "title": "Modifier Ventes & réception",
   "generalInfo": "Contrôles du flux de travail",
   "form": {
     "requiresSaleApprovalLabel": "Exiger l’approbation d’un responsable lors de la création d’une vente",
@@ -21,8 +21,8 @@
     }
   },
   "formHeader": {
-    "title": "Ventes & remise",
-    "description": "Politique de vente et de remise pour l’immobilier, au niveau de l’entreprise."
+    "title": "Modifier Ventes & réception",
+    "description": "Mettez à jour les informations de ce Ventes & réception."
   },
   "formButtons": {
     "cancel": "Annuler",

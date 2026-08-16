@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx",
-  "title": "Planet e Likuiditetit",
-  "description": "Liquiditätsplanung — linja kohore hyrje/dalje",
-  "createLiquidityPlan": "Shto Plan",
+  "title": "Planet e likuiditetit",
+  "description": "Afati kohor i hyrjeve dhe daljeve të mjeteve",
+  "createLiquidityPlan": "Shto plan",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Ju lutem provoni përsëri.",
-  "searchPlaceholder": "Kërko...",
+  "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",

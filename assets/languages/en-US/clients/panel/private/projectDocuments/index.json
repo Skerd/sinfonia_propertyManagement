@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/index.tsx",
-  "title": "Documents & Drawings",
-  "description": "Project document and drawing register",
-  "createProjectDocument": "Add Document",
+  "title": "Project documents",
+  "description": "Drawings, documents and as-built files for the project",
+  "createProjectDocument": "Add document",
   "noData": "No documents found",
   "failTitle": "Failed to load documents",
-  "failDescription": "An error occurred while loading documents. Please try again.",
+  "failDescription": "An error occurred while loading. Please try again.",
   "searchPlaceholder": "Search or add filters...",
   "statusLabel": "Status",
   "fields": {

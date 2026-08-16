@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/editFeasibilityStudy.tsx",
-  "title": "Edit Feasibility Study",
+  "title": "Edit feasibility study",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -52,8 +52,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Feasibility Study",
-    "description": ""
+    "title": "Edit feasibility study",
+    "description": "Update the details for this feasibility study."
   },
   "formButtons": {
     "cancel": "Cancel",

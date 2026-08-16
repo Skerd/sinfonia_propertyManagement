@@ -1,0 +1,42 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/approvalRequests/index.tsx",
+  "title": "Demandes d'approbation",
+  "description": "Documents financiers dans le circuit d'approbation",
+  "createApprovalRequest": "Ajouter une demande",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "amount": "Montant",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "currentStage": "Current Stage",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "documentType": "Document Type",
+    "escalationDecision": "Escalation Decision",
+    "name": "Référence",
+    "notes": "Notes",
+    "primaryDecision": "Primary Decision",
+    "status": "Statut",
+    "targetId": "Target ID",
+    "targetType": "Target Type",
+    "updatedAt": "Mis à jour le",
+    "workflow": "Workflow",
+    "!enums": {
+      "currentStage": {
+        "primary": "Primary",
+        "escalation": "Escalation",
+        "done": "Done"
+      },
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

@@ -51,7 +51,7 @@
   },
   "formHeader": {
     "title": "Modifica contratto di costruzione",
-    "description": ""
+    "description": "Aggiorna i dati di questo record."
   },
   "formButtons": {
     "cancel": "Annulla",

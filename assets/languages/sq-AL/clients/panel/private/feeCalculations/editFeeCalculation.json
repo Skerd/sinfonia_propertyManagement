@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/editFeeCalculation.tsx",
-  "title": "Ndrysho Llogaritjen",
+  "title": "Ndrysho llogaritje tarife",
   "generalInfo": "Detajet",
   "form": {
     "consultantAppointmentLabel": "Emërimi i Konsulentit",
@@ -31,8 +31,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Llogaritjen",
-    "description": ""
+    "title": "Ndrysho llogaritje tarife",
+    "description": "Përditëso të dhënat e këtij llogaritje tarife."
   },
   "formButtons": {
     "cancel": "Anulo",

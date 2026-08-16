@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/workPackages/index.tsx",
-  "title": "WorkPackage",
-  "description": "WorkPackage register",
-  "createWorkPackage": "WorkPackage hinzufügen",
+  "title": "Arbeitspakete",
+  "description": "Gewerkepakete für Beschaffung und Ausführung",
+  "createWorkPackage": "Arbeitspaket hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "constructorRef": "Unternehmer",
     "createdAt": "Erstellt am",

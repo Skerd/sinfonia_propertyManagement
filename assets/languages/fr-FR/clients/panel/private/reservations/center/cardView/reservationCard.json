@@ -13,7 +13,7 @@
   "depositAmount": "Montant de l'acompte",
   "notes": "Notes",
   "status": "Statut",
-  "active": "Active",
+  "active": "Actif",
   "inactive": "Inactive",
   "paid": "Payée",
   "notPaid": "Non payée",
@@ -43,5 +43,6 @@
     "walk_in": "Visite spontanée",
     "social": "Réseaux sociaux",
     "other": "Autre"
-  }
+  },
+  "failedTooltipDescription": "Cliquez pour recharger les données."
 }

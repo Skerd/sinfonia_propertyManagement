@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/cardView/siteDiaryCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/cardView/siteDiaryCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i ditar sheshi",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "draft": "Draft",
+    "published": "Publikuar"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "published": "Publikuar"
+  }
 }

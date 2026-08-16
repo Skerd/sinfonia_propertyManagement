@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/createMaintenancePlan.tsx",
-  "title": "Shto Plan",
+  "title": "Shto plan",
   "generalInfo": "Detajet",
   "form": {
     "assetLabel": "Aseti",
@@ -36,8 +36,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Plan",
-    "description": ""
+    "title": "Shto plan",
+    "description": "Plotëso të dhënat për të krijuar plan mirëmbajtjeje."
   },
   "formButtons": {
     "cancel": "Anulo",

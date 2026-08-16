@@ -28,7 +28,7 @@
   },
   "formHeader": {
     "title": "Add Invitation",
-    "description": ""
+    "description": "Enter the details to create a new record."
   },
   "formButtons": {
     "cancel": "Cancel",

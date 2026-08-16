@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx",
+  "siteDiary": "Site Diary",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "diaryDate": "Diary Date",
+  "weather": "Weather",
+  "workforceCount": "Workforce Count",
+  "plantSummary": "Plant Summary",
+  "workSummary": "Work Summary",
+  "visitors": "Visitors",
+  "notes": "Note",
+  "statuses": {
+    "draft": "Bozza",
+    "published": "Published"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare giornale di cantiere",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

@@ -1,0 +1,59 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/editIncomingInvoice.tsx",
+  "title": "Modifier facture entrante",
+  "generalInfo": "Détails",
+  "form": {
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "extractedSupplierNameLabel": "Supplier",
+    "extractedSupplierNamePlaceholder": "Supplier name",
+    "extractedIbanLabel": "IBAN",
+    "extractedIbanPlaceholder": "IBAN",
+    "extractedAmountLabel": "Montant",
+    "extractedAmountPlaceholder": "Montant",
+    "extractedCurrencyCodeLabel": "Currency Code",
+    "extractedCurrencyCodePlaceholder": "e.g. CHF",
+    "extractedInvoiceNumberLabel": "Invoice No.",
+    "extractedInvoiceNumberPlaceholder": "Invoice number",
+    "extractedInvoiceDateLabel": "Invoice Date",
+    "extractedInvoiceDatePlaceholder": "Invoice date",
+    "extractedDueDateLabel": "Échéance",
+    "extractedDueDatePlaceholder": "Due date",
+    "extractedQrReferenceLabel": "QR Reference",
+    "extractedQrReferencePlaceholder": "QR reference",
+    "matchedConstructorLabel": "Matched Contractor",
+    "matchedConstructorPlaceholder": "Select contractor",
+    "matchedContractLabel": "Matched Contract",
+    "matchedContractPlaceholder": "Select contract",
+    "bkpAccountCodeLabel": "BKP Account",
+    "bkpAccountCodePlaceholder": "e.g. 211",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifier facture entrante",
+    "description": "Mettez à jour les informations de ce facture entrante."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

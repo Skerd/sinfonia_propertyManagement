@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenders/createTender.tsx",
+  "title": "Add Tender",
+  "generalInfo": "Dettagli",
+  "removeTrade": "Remove trade",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "specificationLabel": "Specification (LV)",
+    "specificationPlaceholder": "Select specification",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "tradesLabel": "Trades",
+    "tradesPlaceholder": "Add a trade",
+    "submissionDeadlineLabel": "Submission Deadline",
+    "submissionDeadlinePlaceholder": "Select deadline",
+    "openingDateLabel": "Opening Date",
+    "openingDatePlaceholder": "Select opening date",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Add Tender",
+    "description": "Inserisci i dati per creare un record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

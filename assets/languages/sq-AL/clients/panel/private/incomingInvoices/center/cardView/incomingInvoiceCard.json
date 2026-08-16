@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/cardView/incomingInvoiceCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/cardView/incomingInvoiceCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i faturë hyrëse",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "inbox": "Inbox",
+    "classified": "Klasifikuar",
+    "routed": "Drejtuar",
+    "posted": "Postuar",
+    "rejected": "Refuzuar"
+  },
+  "statuses": {
+    "inbox": "Inbox",
+    "classified": "Klasifikuar",
+    "routed": "Drejtuar",
+    "posted": "Postuar",
+    "rejected": "Refuzuar"
+  }
 }

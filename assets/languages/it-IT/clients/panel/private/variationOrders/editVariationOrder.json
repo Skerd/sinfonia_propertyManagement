@@ -1,0 +1,52 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/editVariationOrder.tsx",
+  "title": "Modifica ordine di variante",
+  "generalInfo": "Dettagli",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "constructionContractLabel": "Construction Contract",
+    "constructionContractPlaceholder": "Select construction contract",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Descrizione",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "costImpactLabel": "Cost Impact",
+    "costImpactPlaceholder": "Cost Impact",
+    "timeImpactDaysLabel": "Time Impact Days",
+    "timeImpactDaysPlaceholder": "Time Impact Days",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note",
+    "mediaLabel": "Allegati",
+    "existingFiles": "File esistenti",
+    "newFiles": "Nuovi file",
+    "modificationRequestLabel": "Modification request",
+    "modificationRequestPlaceholder": "Select modification request"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica ordine di variante",
+    "description": "Aggiorna i dati di questo ordine di variante."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

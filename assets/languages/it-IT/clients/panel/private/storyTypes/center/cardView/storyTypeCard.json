@@ -5,5 +5,8 @@
   "slug": "Slug",
   "description": "Descrizione",
   "sortOrder": "Ordine di visualizzazione",
-  "deleted": "Eliminato"
+  "deleted": "Eliminato",
+  "failedTitle": "Impossibile caricare Tipi di storia",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

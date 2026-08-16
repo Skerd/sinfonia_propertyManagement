@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/submittals/editSubmittal.tsx",
-  "title": "Edit Submittal",
+  "title": "Edit submittal",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -40,8 +40,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Submittal",
-    "description": ""
+    "title": "Edit submittal",
+    "description": "Update the details for this submittal."
   },
   "formButtons": {
     "cancel": "Cancel",

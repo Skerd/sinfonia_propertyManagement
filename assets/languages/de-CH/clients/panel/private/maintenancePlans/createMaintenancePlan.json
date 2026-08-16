@@ -37,7 +37,7 @@
   },
   "formHeader": {
     "title": "Plan hinzufügen",
-    "description": ""
+    "description": "Angaben für Wartungsplan erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

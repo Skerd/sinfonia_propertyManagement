@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
-  "title": "Create Story Type",
+  "title": "Create story type",
   "description": "Create a new story type",
   "generalInfo": "General Information",
   "form": {
@@ -30,8 +30,8 @@
     }
   },
   "formHeader": {
-    "title": "Create Story Type",
-    "description": "Create a new story type"
+    "title": "Create story type",
+    "description": "Enter the details to create a new Story types."
   },
   "formButtons": {
     "cancel": "Cancel",

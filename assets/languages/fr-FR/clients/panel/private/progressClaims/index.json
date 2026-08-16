@@ -1,0 +1,41 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/index.tsx",
+  "title": "Situations de travaux",
+  "description": "Situations de travaux des entreprises",
+  "createProgressClaim": "Ajouter une situation",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "amount": "Montant",
+    "certifiedAmount": "Certified Amount",
+    "claimPeriodEnd": "Claim Period End",
+    "claimPeriodStart": "Claim Period Start",
+    "constructionContract": "Construction Contract",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "retentionHeld": "Retention Held",
+    "retentionReleased": "Retention Released",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "submitted": "Submitted",
+        "certified": "Certified",
+        "paid": "Paid",
+        "rejected": "Rejected"
+      }
+    }
+  }
+}

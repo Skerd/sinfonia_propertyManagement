@@ -284,6 +284,9 @@
       "title": "Export ERP"
     }
   },
+  "propertyManagement": {
+    "title": "Gestion immobilière"
+  },
   "finance": {
     "title": "Finance",
     "unitCosts": {

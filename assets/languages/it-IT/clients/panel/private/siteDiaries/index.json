@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/index.tsx",
+  "title": "Giornali di cantiere",
+  "description": "Registri giornalieri: meteo, manodopera, visitatori",
+  "createSiteDiary": "Aggiungi giornale",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "diaryDate": "Diary Date",
+    "edifice": "Edificio",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "plantSummary": "Plant Summary",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "visitors": "Visitors",
+    "weather": "Weather",
+    "workSummary": "Work Summary",
+    "workforceCount": "Workforce Count",
+    "!enums": {
+      "status": {
+        "draft": "Bozza",
+        "published": "Published"
+      }
+    }
+  }
+}

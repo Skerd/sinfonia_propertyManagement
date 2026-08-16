@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx",
+  "title": "Calcoli onorari",
+  "description": "Calcolo onorari secondo norme SIA",
+  "createFeeCalculation": "Aggiungi calcolo",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "adjustmentFactor": "Fattore di adeguamento",
+    "basisAmount": "Basis Amount",
+    "consultantAppointment": "Incarico di consulenza",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "feePercent": "Fee %",
+    "name": "Riferimento",
+    "notes": "Note",
+    "status": "Stato",
+    "totalFee": "Total Fee",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "planned": "Planned",
+        "earned": "Earned",
+        "invoiced": "Invoiced",
+        "paid": "Paid"
+      }
+    }
+  }
+}

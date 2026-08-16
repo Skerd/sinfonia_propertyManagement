@@ -1,0 +1,47 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/editLiquidityLine.tsx",
+  "title": "Edit Line",
+  "generalInfo": "Dettagli",
+  "form": {
+    "planLabel": "Plan",
+    "planPlaceholder": "Select plan",
+    "periodLabel": "Period",
+    "periodPlaceholder": "Period",
+    "directionLabel": "Direction",
+    "directionPlaceholder": "Select direction",
+    "sourceLabel": "Source",
+    "sourcePlaceholder": "Select source",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "plannedAmountLabel": "Planned Amount",
+    "plannedAmountPlaceholder": "Importo",
+    "actualAmountLabel": "Actual Amount",
+    "actualAmountPlaceholder": "Importo",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Line",
+    "description": "Aggiorna i dati di questo record."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

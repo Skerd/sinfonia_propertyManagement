@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/index.tsx",
-  "title": "ProgressClaim",
-  "description": "ProgressClaim register",
-  "createProgressClaim": "ProgressClaim hinzufügen",
+  "title": "Fortschrittsrechnungen",
+  "description": "Fortschrittsrechnungen der Unternehmer zu Bauverträgen",
+  "createProgressClaim": "Fortschrittsrechnung hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "amount": "Betrag",
     "certifiedAmount": "Certified Betrag",

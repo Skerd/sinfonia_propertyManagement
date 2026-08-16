@@ -51,10 +51,25 @@
     "newFiles": "Aggiungi nuove foto"
   },
   "axios": {
-    "start": { "title": "Segnalazione difetto", "time": 3000 },
-    "success": { "title": "Difetto segnalato!", "time": 3000 },
-    "error": { "title": "Impossibile segnalare il difetto, riprova!", "time": 3000 }
+    "start": {
+      "title": "Segnalazione difetto",
+      "time": 3000
+    },
+    "success": {
+      "title": "Difetto segnalato!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile segnalare il difetto, riprova!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Segnala difetto", "description": "Segnala un nuovo snag o difetto" },
-  "formButtons": { "cancel": "Annulla", "submit": "Segnala difetto" }
+  "formHeader": {
+    "title": "Segnala difetto",
+    "description": "Segnala un nuovo snag o difetto"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Segnala difetto"
+  }
 }

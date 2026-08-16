@@ -29,6 +29,7 @@ type ApprovalWorkflowCardProps = WithLanguageType & {
 };
 
 function ApprovalWorkflowCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function ApprovalWorkflowCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/approvalWorkflow"
             restoreUrl="/api/realEstate/approvalWorkflow/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

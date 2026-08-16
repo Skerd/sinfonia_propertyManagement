@@ -1,0 +1,50 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx",
+  "title": "Inbox AP",
+  "description": "Fatture fornitori — scansione, OCR e QR-bill",
+  "createIncomingInvoice": "Aggiungi fattura",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "bkpAccountCode": "BKP Account",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "createdContractorInvoice": "Created Contractor Invoice",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "extractedAmount": "Extracted Amount",
+    "extractedCurrencyCode": "Extracted Currency",
+    "extractedDueDate": "Extracted Due Date",
+    "extractedIban": "IBAN",
+    "extractedInvoiceDate": "Extracted Invoice Date",
+    "extractedInvoiceNumber": "Extracted Invoice No.",
+    "extractedQrReference": "Extracted QR Reference",
+    "extractedSupplierName": "Supplier Name",
+    "matchedConstructor": "Matched Constructor",
+    "matchedContract": "Matched Contract",
+    "name": "Riferimento",
+    "notes": "Note",
+    "ocrStatus": "OCR Status",
+    "project": "Progetto",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "ocrStatus": {
+        "pending": "Pending",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "status": {
+        "inbox": "Inbox",
+        "classified": "Classified",
+        "routed": "Routed",
+        "posted": "Posted",
+        "rejected": "Rejected"
+      }
+    }
+  }
+}

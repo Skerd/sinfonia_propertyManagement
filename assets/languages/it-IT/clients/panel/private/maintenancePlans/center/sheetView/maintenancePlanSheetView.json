@@ -1,0 +1,27 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/sheetView/maintenancePlanSheetView.tsx",
+  "maintenancePlan": "Maintenance Plan",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "asset": "Asset",
+  "planType": "Plan Type",
+  "intervalDays": "Interval (days)",
+  "nextDueAt": "Next Due At",
+  "responsibleParty": "Responsible Party",
+  "notes": "Note",
+  "planTypes": {
+    "preventive": "Preventive",
+    "statutory": "Statutory",
+    "renovation": "Renovation"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare piano di manutenzione",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

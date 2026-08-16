@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/variationOrders/center/cardView/variationOrderCard.tsx",
+  "failedTitle": "Impossible de charger ordre de modification",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "pending_architect": "Pending Architect",
+    "pending_qs": "Pending QS",
+    "pending_client": "Pending Client",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  },
+  "statuses": {
+    "pending_architect": "Pending Architect",
+    "pending_qs": "Pending QS",
+    "pending_client": "Pending Client",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "cancelled": "Cancelled"
+  }
+}

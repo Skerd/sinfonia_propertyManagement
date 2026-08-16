@@ -1,0 +1,48 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/specificationItems/index.tsx",
+  "title": "LV Positions",
+  "description": "Leistungsverzeichnis positions (NPK / R-positions)",
+  "createSpecificationItem": "Add Position",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Riprova.",
+  "searchPlaceholder": "Cerca...",
+  "fields": {
+    "classificationCode": "Classification Code",
+    "classificationStandard": "Classification Standard",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "currency": "Valuta",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "description": "Descrizione",
+    "isRPosition": "R-Position",
+    "lineTotal": "Line Total",
+    "name": "Riferimento",
+    "notes": "Note",
+    "npkChapter": "NPK Chapter",
+    "npkPosition": "NPK Position",
+    "project": "Progetto",
+    "quantity": "Quantity",
+    "sortIndex": "Sort Order",
+    "specification": "Specification",
+    "status": "Stato",
+    "title": "Titolo",
+    "unitOfMeasure": "Unit of Measure",
+    "unitPrice": "Unit Price",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "classificationStandard": {
+        "ebkp_h": "eBKP-H",
+        "ebkp_bau": "eBKP-Bau",
+        "bkp": "BKP",
+        "npk": "NPK",
+        "custom": "Custom"
+      },
+      "status": {
+        "active": "Attivo",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

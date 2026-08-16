@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/permits/submitPermitDialog.tsx",
+  "dialogTitle": "Submit permit",
+  "dialogDescription": "Submit this permit to the authority. Its status will change to submitted.",
+  "cancel": "Annuler",
+  "submit": "Submit"
+}

@@ -1,0 +1,46 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/editMaintenancePlan.tsx",
+  "title": "Modifica piano di manutenzione",
+  "generalInfo": "Dettagli",
+  "form": {
+    "assetLabel": "Asset",
+    "assetPlaceholder": "Select asset",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Select edifice",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "Titolo",
+    "planTypeLabel": "Plan Type",
+    "planTypePlaceholder": "Select type",
+    "intervalDaysLabel": "Interval (days)",
+    "intervalDaysPlaceholder": "e.g. 90",
+    "nextDueAtLabel": "Next Due At",
+    "nextDueAtPlaceholder": "Next due",
+    "responsiblePartyLabel": "Responsible Party",
+    "responsiblePartyPlaceholder": "Responsible",
+    "activeLabel": "Attivo",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica piano di manutenzione",
+    "description": "Aggiorna i dati di questo piano di manutenzione."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

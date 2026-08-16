@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx",
   "title": "Honorarberechnungen",
-  "description": "Honorarberechnung — SIA-normkonforme Honorare",
-  "createFeeCalculation": "Honorar hinzufügen",
+  "description": "Honorarberechnungen nach SIA-Norm",
+  "createFeeCalculation": "Berechnung hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen...",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "adjustmentFactor": "Anpassungsfaktor",
     "basisAmount": "Basisbetrag",

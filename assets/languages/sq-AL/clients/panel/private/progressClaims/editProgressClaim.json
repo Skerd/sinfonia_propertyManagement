@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/progressClaims/editProgressClaim.tsx",
-  "title": "Ndrysho Progress Claim",
+  "title": "Ndrysho kërkesë progresi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -46,8 +46,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Progress Claim",
-    "description": ""
+    "title": "Ndrysho kërkesë progresi",
+    "description": "Përditëso të dhënat e këtij kërkesë progresi."
   },
   "formButtons": {
     "cancel": "Anulo",

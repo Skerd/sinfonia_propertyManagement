@@ -20,5 +20,8 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "failedTitle": "Failed to load liquidity plan",
+  "failedDescription": "Something went wrong while loading this liquidity plan. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

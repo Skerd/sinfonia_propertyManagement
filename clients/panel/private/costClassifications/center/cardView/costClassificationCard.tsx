@@ -29,6 +29,7 @@ type CostClassificationCardProps = WithLanguageType & {
 };
 
 function CostClassificationCard({
+    resolveLanguageKey,
     entity,
     fetchId,
     hideActions = false,
@@ -52,8 +53,8 @@ function CostClassificationCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/costClassification"
             restoreUrl="/api/realEstate/costClassification/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

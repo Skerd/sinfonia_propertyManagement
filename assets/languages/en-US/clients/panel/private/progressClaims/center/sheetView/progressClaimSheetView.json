@@ -29,5 +29,8 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "failedTitle": "Failed to load progress claim",
+  "failedDescription": "Something went wrong while loading this progress claim. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

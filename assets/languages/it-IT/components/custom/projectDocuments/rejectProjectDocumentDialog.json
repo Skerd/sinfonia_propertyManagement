@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/projectDocuments/rejectProjectDocumentDialog.tsx",
+  "dialogTitle": "Reject document",
+  "dialogDescription": "Reject this document and send it back to draft. You can add optional rejection notes.",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Optional rejection notes",
+  "cancel": "Annulla",
+  "submit": "Reject"
+}

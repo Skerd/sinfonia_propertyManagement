@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/approvalWorkflows/editApprovalWorkflow.tsx",
-  "title": "Edit Workflow",
+  "title": "Edit approval workflow",
   "generalInfo": "Details",
   "form": {
     "documentTypeLabel": "Document Type",
@@ -34,8 +34,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Workflow",
-    "description": ""
+    "title": "Edit approval workflow",
+    "description": "Update the details for this approval workflow."
   },
   "formButtons": {
     "cancel": "Cancel",

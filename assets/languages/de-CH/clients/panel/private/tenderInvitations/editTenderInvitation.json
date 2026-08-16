@@ -28,7 +28,7 @@
   },
   "formHeader": {
     "title": "Einladung bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen record aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

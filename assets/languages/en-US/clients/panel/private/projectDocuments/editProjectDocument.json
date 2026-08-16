@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/editProjectDocument.tsx",
-  "title": "Title",
+  "title": "Edit document",
   "generalInfo": "Document Details",
   "editTitle": "Edit Document",
   "editDescription": "Update project document details",
@@ -72,8 +72,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Document",
-    "description": "Update project document details"
+    "title": "Edit document",
+    "description": "Update the details for this document."
   },
   "formButtons": {
     "cancel": "Cancel",

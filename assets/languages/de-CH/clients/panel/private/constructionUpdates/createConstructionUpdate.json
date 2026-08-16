@@ -27,10 +27,25 @@
     "newFiles": "Neue Fotos hinzufügen"
   },
   "axios": {
-    "start": { "title": "Aktualisierung wird gespeichert", "time": 3000 },
-    "success": { "title": "Baufortschritt gespeichert!", "time": 3000 },
-    "error": { "title": "Aktualisierung konnte nicht gespeichert werden, bitte erneut versuchen!", "time": 3000 }
+    "start": {
+      "title": "Aktualisierung wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Baufortschritt gespeichert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Aktualisierung konnte nicht gespeichert werden, bitte erneut versuchen!",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Baufortschritt hinzufügen", "description": "Einen neuen Baufortschritt erfassen" },
-  "formButtons": { "cancel": "Abbrechen", "submit": "Aktualisierung speichern" }
+  "formHeader": {
+    "title": "Baufortschritt hinzufügen",
+    "description": "Einen neuen Baufortschritt erfassen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Aktualisierung speichern"
+  }
 }

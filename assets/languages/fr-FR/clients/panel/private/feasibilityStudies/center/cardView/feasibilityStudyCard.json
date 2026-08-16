@@ -1,0 +1,20 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx",
+  "failedTitle": "Impossible de charger étude de faisabilité",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "status": {
+    "draft": "Brouillon",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  },
+  "statuses": {
+    "draft": "Brouillon",
+    "in_review": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "archived": "Archived"
+  }
+}

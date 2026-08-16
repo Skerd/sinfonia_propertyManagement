@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/consultantAppointments/editConsultantAppointment.tsx",
-  "title": "Edit Consultant Appointment",
+  "title": "Edit consultant appointment",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -60,8 +60,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Consultant Appointment",
-    "description": ""
+    "title": "Edit consultant appointment",
+    "description": "Update the details for this consultant appointment."
   },
   "formButtons": {
     "cancel": "Cancel",

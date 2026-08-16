@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/center/sheetView/designStageSheetView.tsx",
+  "designStage": "Design Stage",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "edifice": "Bâtiment",
+  "stageType": "Stage Type",
+  "sortOrder": "Sort Order",
+  "description": "Description",
+  "notes": "Notes",
+  "statuses": {
+    "not_started": "Not Started",
+    "in_progress": "In Progress",
+    "completed": "Terminé",
+    "blocked": "Blocked"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger phase de conception",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

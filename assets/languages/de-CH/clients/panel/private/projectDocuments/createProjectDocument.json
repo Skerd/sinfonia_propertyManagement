@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projectDocuments/createProjectDocument.tsx",
-  "title": "Neu Projekt Dokument",
+  "title": "Dokument hinzufügen",
   "description": "Register a neu plan oder dokument",
   "generalInfo": "Dokument Details",
   "form": {
@@ -47,7 +47,7 @@
     "mediaLabel": "Dateien",
     "addFile": "Datei hinzufügen",
     "filesSelected": "Files selected",
-    "existingFiles": "Existing files",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files hinzufügen",
     "designStageLabel": "Planungsphase",
     "designStagePlaceholder": "Planungsphase auswählen",
@@ -68,8 +68,8 @@
     }
   },
   "formHeader": {
-    "title": "Neu Projekt Dokument",
-    "description": "Register a neu plan oder dokument"
+    "title": "Dokument hinzufügen",
+    "description": "Angaben für Dokument erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

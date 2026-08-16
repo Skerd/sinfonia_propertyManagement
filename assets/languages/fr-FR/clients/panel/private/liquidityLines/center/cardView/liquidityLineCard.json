@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/center/cardView/liquidityLineCard.tsx",
+  "failedTitle": "Impossible de charger record",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

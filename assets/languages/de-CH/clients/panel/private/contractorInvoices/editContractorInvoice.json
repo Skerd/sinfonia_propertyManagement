@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractorInvoices/editContractorInvoice.tsx",
-  "title": "Rechnung bearbeiten",
+  "title": "Unternehmerrechnung bearbeiten",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -51,8 +51,8 @@
     }
   },
   "formHeader": {
-    "title": "Rechnung bearbeiten",
-    "description": ""
+    "title": "Unternehmerrechnung bearbeiten",
+    "description": "Angaben für diesen Unternehmerrechnung aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

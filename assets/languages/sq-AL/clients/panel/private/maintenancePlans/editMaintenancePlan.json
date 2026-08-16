@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/editMaintenancePlan.tsx",
-  "title": "Ndrysho Planin",
+  "title": "Ndrysho plan mirëmbajtjeje",
   "generalInfo": "Detajet",
   "form": {
     "assetLabel": "Aseti",
@@ -36,8 +36,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Planin",
-    "description": ""
+    "title": "Ndrysho plan mirëmbajtjeje",
+    "description": "Përditëso të dhënat e këtij plan mirëmbajtjeje."
   },
   "formButtons": {
     "cancel": "Anulo",

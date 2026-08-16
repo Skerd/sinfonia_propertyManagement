@@ -50,7 +50,7 @@
   },
   "formHeader": {
     "title": "Eingangsrechnung bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Eingangsrechnung aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -43,5 +43,6 @@
     "walk_in": "Walk-in",
     "social": "Social",
     "other": "Të tjera"
-  }
+  },
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

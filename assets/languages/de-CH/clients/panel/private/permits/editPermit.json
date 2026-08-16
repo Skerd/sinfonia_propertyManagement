@@ -31,7 +31,7 @@
     "notesLabel": "Notizen",
     "notesPlaceholder": "Internal notizen",
     "mediaLabel": "Dateien",
-    "existingFiles": "Existing files",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Dateien hinzufügen"
   },
   "axios": {

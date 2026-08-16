@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/createHandoverPackage.tsx",
-  "title": "Shto Handover Package",
+  "title": "Shto paketë dorëzimi",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -38,8 +38,8 @@
     }
   },
   "formHeader": {
-    "title": "Shto Handover Package",
-    "description": ""
+    "title": "Shto paketë dorëzimi",
+    "description": "Plotëso të dhënat për të krijuar paketë dorëzimi."
   },
   "formButtons": {
     "cancel": "Anulo",

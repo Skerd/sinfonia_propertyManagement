@@ -1,0 +1,40 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/costCommitments/index.tsx",
+  "title": "Engagements / BC",
+  "description": "Bons de commande et engagements par rapport au budget",
+  "createCostCommitment": "Ajouter un engagement",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "budget": "Budget",
+    "committedAmount": "Committed Amount",
+    "constructorRef": "Entrepreneur",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "currency": "Devise",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "issuedAt": "Issued At",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "retentionPercent": "Retention %",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "issued": "Issued",
+        "partially_received": "Partially Received",
+        "closed": "Closed",
+        "cancelled": "Cancelled"
+      }
+    }
+  }
+}

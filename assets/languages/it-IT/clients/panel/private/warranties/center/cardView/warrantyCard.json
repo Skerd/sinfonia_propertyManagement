@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/warranties/center/cardView/warrantyCard.tsx",
+  "failedTitle": "Impossibile caricare garanzia",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "status": {
+    "active": "Attivo",
+    "expired": "Expired",
+    "void": "Void"
+  },
+  "statuses": {
+    "active": "Attivo",
+    "expired": "Expired",
+    "void": "Void"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityLines/center/sheetView/liquidityLineSheetView.tsx",
+  "liquidityLine": "Liquidity Line",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "plan": "Plan",
+  "period": "Period",
+  "direction": "Direction",
+  "source": "Source",
+  "title": "Titolo",
+  "plannedAmount": "Planned Amount",
+  "actualAmount": "Actual Amount",
+  "currency": "Valuta",
+  "notes": "Note",
+  "directions": {
+    "inflow": "Inflow",
+    "outflow": "Outflow"
+  },
+  "sources": {
+    "owner_contract": "Owner Contract",
+    "payment_plan": "Payment Plan",
+    "cost_commitment": "Commitment",
+    "contractor_invoice": "Contractor Invoice",
+    "fee": "Fee",
+    "manual": "Manual"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare record",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

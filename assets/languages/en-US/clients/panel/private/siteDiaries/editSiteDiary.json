@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/siteDiaries/editSiteDiary.tsx",
-  "title": "Edit Site Diary",
+  "title": "Edit site diary",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Edit Site Diary",
-    "description": ""
+    "title": "Edit site diary",
+    "description": "Update the details for this site diary."
   },
   "formButtons": {
     "cancel": "Cancel",

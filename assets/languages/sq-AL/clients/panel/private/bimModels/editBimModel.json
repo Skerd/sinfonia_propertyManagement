@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/bimModels/editBimModel.tsx",
-  "title": "Ndrysho Modelin",
+  "title": "Ndrysho model BIM",
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
@@ -29,8 +29,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Modelin",
-    "description": ""
+    "title": "Ndrysho model BIM",
+    "description": "Përditëso të dhënat e këtij model BIM."
   },
   "formButtons": {
     "cancel": "Anulo",

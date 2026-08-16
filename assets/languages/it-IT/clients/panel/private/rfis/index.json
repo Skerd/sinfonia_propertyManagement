@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/rfis/index.tsx",
+  "title": "RFI",
+  "description": "Richieste di informazioni da cantiere e progettazione",
+  "createRfi": "Aggiungi RFI",
+  "noData": "Nessun record trovato",
+  "failTitle": "Caricamento non riuscito",
+  "failDescription": "Si è verificato un errore. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "answer": "Answer",
+    "answeredBy": "Answered By",
+    "askedBy": "Asked By",
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato",
+    "deletedBy": "Eliminato da",
+    "dueDate": "Scadenza",
+    "edifice": "Edificio",
+    "media": "Media",
+    "name": "Riferimento",
+    "notes": "Note",
+    "project": "Progetto",
+    "question": "Question",
+    "relatedDocument": "Related Document",
+    "status": "Stato",
+    "title": "Titolo",
+    "updatedAt": "Aggiornato il",
+    "!enums": {
+      "status": {
+        "open": "Open",
+        "answered": "Answered",
+        "closed": "Closed",
+        "void": "Void"
+      }
+    }
+  }
+}

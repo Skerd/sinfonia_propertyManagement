@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workPackages/center/sheetView/workPackageSheetView.tsx",
+  "workPackage": "Work Package",
+  "overview": "Aperçu",
+  "media": "Pièces jointes",
+  "name": "Référence",
+  "title": "Titre",
+  "status": "Statut",
+  "project": "Projet",
+  "edifice": "Bâtiment",
+  "constructorRef": "Entrepreneur",
+  "trade": "Trade",
+  "description": "Description",
+  "plannedStart": "Planned Start",
+  "plannedEnd": "Planned End",
+  "notes": "Notes",
+  "statuses": {
+    "planned": "Planned",
+    "active": "Actif",
+    "completed": "Terminé",
+    "cancelled": "Cancelled"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger lot de travaux",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

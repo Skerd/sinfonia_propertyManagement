@@ -43,5 +43,6 @@
     "walk_in": "Direktbesuch",
     "social": "Soziale Medien",
     "other": "Andere"
-  }
+  },
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
 }

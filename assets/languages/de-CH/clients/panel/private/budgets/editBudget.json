@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/budgets/editBudget.tsx",
-  "title": "Kostenvoranschlag bearbeiten",
+  "title": "Budget bearbeiten",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -45,8 +45,8 @@
     }
   },
   "formHeader": {
-    "title": "Kostenvoranschlag bearbeiten",
-    "description": ""
+    "title": "Budget bearbeiten",
+    "description": "Angaben für diesen Budget aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

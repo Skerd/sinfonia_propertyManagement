@@ -1,3 +1,18 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx",
+  "failedTitle": "Failed to load land parcel",
+  "failedDescription": "Something went wrong while loading this land parcel. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "prospect": "Prospect",
+    "under_dd": "Under DD",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  },
+  "statuses": {
+    "prospect": "Prospect",
+    "under_dd": "Under DD",
+    "acquired": "Acquired",
+    "disposed": "Disposed"
+  }
 }

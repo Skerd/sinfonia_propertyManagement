@@ -38,7 +38,7 @@
   },
   "formHeader": {
     "title": "Arbeitspaket bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Arbeitspaket aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -1,0 +1,55 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/milestones/editMilestone.tsx",
+  "title": "Edit Milestone",
+  "editTitle": "Edit Milestone",
+  "editDescription": "Update this project milestone",
+  "errorTitle": "Failed to load milestone",
+  "errorDescription": "An error occurred while loading the milestone. Please try again.",
+  "generalInfo": "Milestone Details",
+  "form": {
+    "_idLabel": "Record ID",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "e.g. Foundation complete",
+    "weightPercentLabel": "Weight %",
+    "weightPercentPlaceholder": "0 - 100",
+    "plannedStartLabel": "Planned Start",
+    "plannedStartPlaceholder": "Select date",
+    "plannedEndLabel": "Planned End",
+    "plannedEndPlaceholder": "Select date",
+    "predecessorsLabel": "Predecessors",
+    "predecessorsPlaceholder": "Select preceding milestones",
+    "descriptionLabel": "Descrizione",
+    "descriptionPlaceholder": "Describe this milestone",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Internal notes",
+    "mediaLabel": "Media",
+    "existingFiles": "Existing media",
+    "newFiles": "Add new media"
+  },
+  "axios": {
+    "start": {
+      "title": "Updating milestone",
+      "time": 3000
+    },
+    "success": {
+      "title": "Milestone updated!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update milestone, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit Milestone",
+    "description": "Update this project milestone"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Save Changes"
+  }
+}

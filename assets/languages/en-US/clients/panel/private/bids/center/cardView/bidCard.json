@@ -1,3 +1,22 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx",
+  "failedTitle": "Failed to load bid",
+  "failedDescription": "Something went wrong while loading this bid. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "status": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "shortlisted": "Shortlisted",
+    "awarded": "Awarded",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  },
+  "statuses": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "shortlisted": "Shortlisted",
+    "awarded": "Awarded",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  }
 }

@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/editBid.tsx",
+  "title": "Modifica offerta",
+  "generalInfo": "Dettagli",
+  "form": {
+    "tenderLabel": "Tender",
+    "tenderPlaceholder": "Select tender",
+    "tenderInvitationLabel": "Invitation",
+    "tenderInvitationPlaceholder": "Select invitation",
+    "constructorLabel": "Contractor",
+    "constructorPlaceholder": "Select contractor",
+    "totalLabel": "Total",
+    "totalPlaceholder": "Total",
+    "currencyLabel": "Valuta",
+    "currencyPlaceholder": "Seleziona valuta",
+    "coveringNotesLabel": "Covering Notes",
+    "coveringNotesPlaceholder": "Covering notes",
+    "notesLabel": "Note",
+    "notesPlaceholder": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Salvato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Errore",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Modifica offerta",
+    "description": "Aggiorna i dati di questo offerta."
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva"
+  }
+}

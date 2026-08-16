@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/createCommissioningRecord.tsx",
-  "title": "Inbetriebnahmeprotokoll hinzufügen",
+  "title": "Protokoll hinzufügen",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Projekt",
@@ -21,8 +21,8 @@
     "resultNotesPlaceholder": "Ergebnis Notizen",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "inspectedByLabel": "Geprüft von",
     "inspectedByPlaceholder": "Benutzer auswählen"
@@ -42,8 +42,8 @@
     }
   },
   "formHeader": {
-    "title": "Inbetriebnahmeprotokoll hinzufügen",
-    "description": ""
+    "title": "Protokoll hinzufügen",
+    "description": "Angaben für Inbetriebnahmeprotokoll erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/bids/center/sheetView/bidSheetView.tsx",
+  "bid": "Bid",
+  "overview": "Panoramica",
+  "name": "Riferimento",
+  "tender": "Tender",
+  "constructorRef": "Contractor",
+  "total": "Total",
+  "currency": "Valuta",
+  "submittedAt": "Submitted At",
+  "coveringNotes": "Covering Notes",
+  "notes": "Note",
+  "status": "Stato",
+  "statuses": {
+    "draft": "Bozza",
+    "submitted": "Submitted",
+    "shortlisted": "Shortlisted",
+    "awarded": "Awarded",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  },
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare offerta",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

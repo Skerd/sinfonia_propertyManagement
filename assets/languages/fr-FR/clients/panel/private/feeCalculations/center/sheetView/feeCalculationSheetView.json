@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/feeCalculations/center/sheetView/feeCalculationSheetView.tsx",
+  "feeCalculation": "Fee Calculation",
+  "overview": "Aperçu",
+  "name": "Référence",
+  "consultantAppointment": "Mandat de consultant",
+  "basisAmount": "Basis Amount",
+  "feePercent": "Fee Percent",
+  "adjustmentFactor": "Facteur d'ajustement",
+  "totalFee": "Total Fee",
+  "currency": "Devise",
+  "notes": "Notes",
+  "status": "Statut",
+  "statuses": {
+    "planned": "Planned",
+    "earned": "Earned",
+    "invoiced": "Invoiced",
+    "paid": "Paid"
+  },
+  "lifecycle": "Cycle de vie",
+  "createdAt": "Créé le",
+  "updatedAt": "Mis à jour le",
+  "createdBy": "Créé par",
+  "deletedAt": "Supprimé le",
+  "deletedBy": "Supprimé par",
+  "failedTitle": "Impossible de charger calcul d'honoraires",
+  "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

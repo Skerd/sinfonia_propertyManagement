@@ -1,3 +1,14 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx",
+  "failedTitle": "Dështoi ngarkimi i pozicion BOQ",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "status": {
+    "active": "Aktive",
+    "cancelled": "Anuluar"
+  },
+  "statuses": {
+    "active": "Aktive",
+    "cancelled": "Anuluar"
+  }
 }

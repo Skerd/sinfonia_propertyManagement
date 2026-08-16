@@ -63,8 +63,8 @@ function SnagCard({
             sheetEntityProp="snag"
             deleteUrl="/api/realEstate/snag"
             restoreUrl="/api/realEstate/snag/restore"
-            failedTitle=""
-            failedDescription=""
+            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
+            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

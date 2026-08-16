@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/sheetView/commissioningRecordSheetView.tsx",
+  "commissioningRecord": "Commissioning Record",
+  "overview": "Panoramica",
+  "media": "Allegati",
+  "name": "Riferimento",
+  "title": "Titolo",
+  "status": "Stato",
+  "project": "Progetto",
+  "edifice": "Edificio",
+  "unit": "Unità",
+  "handoverPackage": "Handover Package",
+  "systemName": "System Name",
+  "testDate": "Test Date",
+  "resultNotes": "Result Notes",
+  "notes": "Note",
+  "statuses": {
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed"
+  },
+  "inspectedBy": "Inspected by",
+  "lifecycle": "Ciclo di vita",
+  "createdAt": "Creato il",
+  "updatedAt": "Aggiornato il",
+  "createdBy": "Creato da",
+  "deletedAt": "Eliminato il",
+  "deletedBy": "Eliminato da",
+  "failedTitle": "Impossibile caricare verbale di collaudo",
+  "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/liquidityPlans/createLiquidityPlan.tsx",
+  "title": "Ajouter un plan",
+  "generalInfo": "Détails",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre",
+    "horizonStartLabel": "Horizon Start",
+    "horizonStartPlaceholder": "Start",
+    "horizonEndLabel": "Horizon End",
+    "horizonEndPlaceholder": "End",
+    "granularityLabel": "Granularity",
+    "granularityPlaceholder": "Select granularity",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise",
+    "notesLabel": "Notes",
+    "notesPlaceholder": "Notes"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement...",
+      "time": 3000
+    },
+    "success": {
+      "title": "Enregistré",
+      "time": 3000
+    },
+    "error": {
+      "title": "Erreur",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un plan",
+    "description": "Saisissez les informations pour créer un plan de liquidités."
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer"
+  }
+}

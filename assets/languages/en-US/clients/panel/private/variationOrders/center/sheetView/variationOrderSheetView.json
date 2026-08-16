@@ -16,7 +16,7 @@
   "notes": "Notes",
   "statuses": {
     "pending_architect": "Pending Architect",
-    "pending_qs": "Pending Qs",
+    "pending_qs": "Pending QS",
     "pending_client": "Pending Client",
     "approved": "Approved",
     "rejected": "Rejected",
@@ -28,5 +28,8 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "failedTitle": "Failed to load variation order",
+  "failedDescription": "Something went wrong while loading this variation order. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
 }

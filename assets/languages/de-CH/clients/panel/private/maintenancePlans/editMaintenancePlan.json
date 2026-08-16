@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/maintenancePlans/editMaintenancePlan.tsx",
-  "title": "Plan bearbeiten",
+  "title": "Wartungsplan bearbeiten",
   "generalInfo": "Details",
   "form": {
     "assetLabel": "Anlage",
@@ -36,8 +36,8 @@
     }
   },
   "formHeader": {
-    "title": "Plan bearbeiten",
-    "description": ""
+    "title": "Wartungsplan bearbeiten",
+    "description": "Angaben für diesen Wartungsplan aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

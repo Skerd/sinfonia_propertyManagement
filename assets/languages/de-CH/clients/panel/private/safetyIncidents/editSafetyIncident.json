@@ -27,8 +27,8 @@
     "correctiveActionsPlaceholder": "Korrektiv Massnahmen",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "reportedByLabel": "Reported von",
     "reportedByPlaceholder": "Benutzer auswählen"
@@ -49,7 +49,7 @@
   },
   "formHeader": {
     "title": "Sicherheitsvorfall bearbeiten",
-    "description": ""
+    "description": "Angaben für diesen Sicherheitsvorfall aktualisieren."
   },
   "formButtons": {
     "cancel": "Abbrechen",

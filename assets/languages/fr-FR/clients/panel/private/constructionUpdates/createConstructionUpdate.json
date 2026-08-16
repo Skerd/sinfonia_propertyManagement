@@ -27,10 +27,25 @@
     "newFiles": "Ajouter de nouvelles photos"
   },
   "axios": {
-    "start": { "title": "Enregistrement de la mise à jour", "time": 3000 },
-    "success": { "title": "Mise à jour chantier enregistrée !", "time": 3000 },
-    "error": { "title": "Impossible d’enregistrer la mise à jour, veuillez réessayer !", "time": 3000 }
+    "start": {
+      "title": "Enregistrement de la mise à jour",
+      "time": 3000
+    },
+    "success": {
+      "title": "Mise à jour chantier enregistrée !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d’enregistrer la mise à jour, veuillez réessayer !",
+      "time": 3000
+    }
   },
-  "formHeader": { "title": "Ajouter une mise à jour chantier", "description": "Enregistrer une nouvelle mise à jour d’avancement des travaux" },
-  "formButtons": { "cancel": "Annuler", "submit": "Enregistrer la mise à jour" }
+  "formHeader": {
+    "title": "Ajouter une mise à jour chantier",
+    "description": "Enregistrer une nouvelle mise à jour d’avancement des travaux"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer la mise à jour"
+  }
 }

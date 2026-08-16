@@ -1,0 +1,34 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/tenderInvitations/index.tsx",
+  "title": "Tender Invitations",
+  "description": "Invited contractors per tender (Bauplattform access)",
+  "createTenderInvitation": "Add Invitation",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher...",
+  "fields": {
+    "constructorRef": "Contractor",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "invitedAt": "Invited At",
+    "name": "Référence",
+    "notes": "Notes",
+    "portalAccessToken": "Portal Access Token",
+    "respondedAt": "Responded At",
+    "status": "Statut",
+    "tender": "Tender",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "invited": "Invited",
+        "viewing": "Viewing",
+        "submitted": "Submitted",
+        "declined": "Declined",
+        "withdrawn": "Withdrawn"
+      }
+    }
+  }
+}

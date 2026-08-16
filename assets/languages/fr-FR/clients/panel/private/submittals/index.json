@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/submittals/index.tsx",
+  "title": "Soumissions",
+  "description": "Soumissions de matériaux et plans d'atelier",
+  "createSubmittal": "Ajouter une soumission",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "media": "Médias",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "relatedDocument": "Related Document",
+    "reviewedBy": "Reviewed By",
+    "specReference": "Spec Reference",
+    "status": "Statut",
+    "submittedBy": "Submitted By",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "draft": "Brouillon",
+        "submitted": "Submitted",
+        "revise_and_resubmit": "Revise & Resubmit",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      }
+    }
+  }
+}

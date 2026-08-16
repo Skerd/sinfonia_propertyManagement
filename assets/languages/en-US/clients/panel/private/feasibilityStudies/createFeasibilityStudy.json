@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/createFeasibilityStudy.tsx",
-  "title": "Add Feasibility Study",
+  "title": "Add feasibility study",
   "generalInfo": "Details",
   "form": {
     "projectLabel": "Project",
@@ -52,8 +52,8 @@
     }
   },
   "formHeader": {
-    "title": "Add Feasibility Study",
-    "description": ""
+    "title": "Add feasibility study",
+    "description": "Enter the details to create a new feasibility study."
   },
   "formButtons": {
     "cancel": "Cancel",

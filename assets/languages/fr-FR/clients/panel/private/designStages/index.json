@@ -1,0 +1,43 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/designStages/index.tsx",
+  "title": "Phases de conception",
+  "description": "Phases SIA et livrables de conception",
+  "createDesignStage": "Ajouter une phase",
+  "noData": "Aucun enregistrement",
+  "failTitle": "Échec du chargement",
+  "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé",
+    "deletedBy": "Supprimé par",
+    "description": "Description",
+    "edifice": "Bâtiment",
+    "name": "Référence",
+    "notes": "Notes",
+    "project": "Projet",
+    "sortOrder": "Sort Order",
+    "stageType": "Stage Type",
+    "status": "Statut",
+    "title": "Titre",
+    "updatedAt": "Mis à jour le",
+    "!enums": {
+      "status": {
+        "not_started": "Not Started",
+        "in_progress": "In Progress",
+        "completed": "Terminé",
+        "blocked": "Blocked"
+      },
+      "stageType": {
+        "concept": "Concept",
+        "schematic": "Schematic",
+        "design_development": "Design Development",
+        "construction_documents": "Construction Documents",
+        "tender": "Tender",
+        "construction": "Construction",
+        "as_built": "As-Built"
+      }
+    }
+  }
+}

@@ -17,8 +17,8 @@
     "relatedDocumentPlaceholder": "Zugehörig dokument auswählen",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Notizen",
-    "mediaLabel": "Attachments",
-    "existingFiles": "Existing files",
+    "mediaLabel": "Anhänge",
+    "existingFiles": "Bestehende Dateien",
     "newFiles": "Neu files",
     "submittedByLabel": "Eingereicht von",
     "submittedByPlaceholder": "Benutzer auswählen",
@@ -41,7 +41,7 @@
   },
   "formHeader": {
     "title": "Einreichung hinzufügen",
-    "description": ""
+    "description": "Angaben für Einreichung erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",

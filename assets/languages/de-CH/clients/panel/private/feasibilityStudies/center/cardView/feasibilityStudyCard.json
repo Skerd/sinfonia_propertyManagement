@@ -1,3 +1,20 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx",
+  "failedTitle": "Machbarkeitsstudie konnte nicht geladen werden",
+  "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "status": {
+    "draft": "Entwurf",
+    "in_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "archived": "Archiviert"
+  },
+  "statuses": {
+    "draft": "Entwurf",
+    "in_review": "In Prüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "archived": "Archiviert"
+  }
 }

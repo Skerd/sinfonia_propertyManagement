@@ -41,7 +41,7 @@
   },
   "formHeader": {
     "title": "Planungsphase hinzufügen",
-    "description": ""
+    "description": "Angaben für Planungsphase erfassen."
   },
   "formButtons": {
     "cancel": "Abbrechen",
