@@ -74,5 +74,5 @@ function UnitTypeSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitTypes"),
 )(UnitTypeSheetView);

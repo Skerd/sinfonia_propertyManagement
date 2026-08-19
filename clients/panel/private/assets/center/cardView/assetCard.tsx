@@ -76,5 +76,5 @@ function AssetCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/assets/center/cardView/assetCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "assets"),
 )(AssetCard);

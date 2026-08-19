@@ -158,5 +158,5 @@ function UnitCostCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitCosts"),
 )(UnitCostCard);

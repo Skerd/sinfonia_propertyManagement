@@ -42,5 +42,5 @@ function AllStoryTypes({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "storyTypes"),
 )(AllStoryTypes);

@@ -32,5 +32,5 @@ function CancelMilestone({onAction, milestone, resolveLanguageKey}: CancelMilest
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/actions/cancel.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(CancelMilestone);

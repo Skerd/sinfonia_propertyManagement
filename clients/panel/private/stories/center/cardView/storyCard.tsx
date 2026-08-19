@@ -127,5 +127,5 @@ function StoryCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/stories/center/cardView/storyCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "stories"),
 )(StoryCard);

@@ -272,5 +272,5 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "units"),
 )(AllUnits);

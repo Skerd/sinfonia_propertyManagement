@@ -70,5 +70,5 @@ function PermitSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/permits/center/sheetView/permitSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "permits"),
 )(PermitSheetView);

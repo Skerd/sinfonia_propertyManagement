@@ -162,5 +162,5 @@ function MilestoneCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/cardView/milestoneCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(MilestoneCard);

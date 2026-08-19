@@ -201,6 +201,7 @@ import EditScheduleTask from "@propertyManagementModule/clients/panel/private/sc
 import ErpExport from "@propertyManagementModule/clients/panel/private/erpExport/erpExport.tsx";
 import GroupDashboard from "@propertyManagementModule/clients/panel/private/groupDashboard/groupDashboard.tsx";
 import PropertyManagementSystemMap from "@propertyManagementModule/clients/panel/private/systemMap";
+import PropertyManagementWorkflow from "@propertyManagementModule/clients/panel/private/workflow";
 import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/clients/panel/moduleContributions/routeConfigContribution.types.ts";
 
 function safeDecode(value: string | null): string | undefined {
@@ -295,6 +296,10 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
 
         if (subview === "systemmap") {
             return <PropertyManagementSystemMap />;
+        }
+
+        if (subview === "workflow") {
+            return <PropertyManagementWorkflow />;
         }
 
         if (subview === "overview") {

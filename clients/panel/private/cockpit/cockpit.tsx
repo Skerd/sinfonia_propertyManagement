@@ -61,5 +61,5 @@ export default compose(
         {url: "/api/realEstate/cockpit", method: "post", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, ["projects", "units"]),
 )(Cockpit);

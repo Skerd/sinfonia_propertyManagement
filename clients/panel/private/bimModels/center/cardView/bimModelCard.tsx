@@ -76,5 +76,5 @@ function BimModelCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bimModels/center/cardView/bimModelCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bimmodels"),
 )(BimModelCard);

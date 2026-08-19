@@ -48,5 +48,5 @@ function AllConsultantAppointments({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/consultantAppointments/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "consultantappointments"),
 )(AllConsultantAppointments);

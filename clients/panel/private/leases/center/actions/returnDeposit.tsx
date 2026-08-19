@@ -32,5 +32,5 @@ function ReturnDeposit({onAction, lease, resolveLanguageKey}: ReturnDepositProps
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leases/center/actions/returnDeposit.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leases"),
 )(ReturnDeposit);

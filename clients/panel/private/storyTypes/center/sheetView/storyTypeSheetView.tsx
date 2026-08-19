@@ -74,5 +74,5 @@ function StoryTypeSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "storyTypes"),
 )(StoryTypeSheetView);

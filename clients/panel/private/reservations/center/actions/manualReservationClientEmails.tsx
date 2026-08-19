@@ -109,5 +109,5 @@ function ManualReservationClientEmails({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/center/actions/manualReservationClientEmails.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(ManualReservationClientEmails);

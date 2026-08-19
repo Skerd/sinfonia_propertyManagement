@@ -76,5 +76,5 @@ function InspectionChecklistTemplateCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inspectionchecklisttemplates"),
 )(InspectionChecklistTemplateCard);

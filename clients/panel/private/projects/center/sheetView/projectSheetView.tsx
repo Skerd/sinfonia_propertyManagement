@@ -116,5 +116,5 @@ function ProjectSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projects/center/sheetView/projectSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["projects", "edifices"]),
 )(ProjectSheetView);

@@ -32,5 +32,5 @@ function FinishWorkingSnag({onAction, snag, resolveLanguageKey}: FinishWorkingSn
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/snags/center/actions/finishWorking.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(FinishWorkingSnag);

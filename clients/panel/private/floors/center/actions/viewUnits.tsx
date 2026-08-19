@@ -48,5 +48,5 @@ function ViewUnits({floor, resolveLanguageKey}: ViewUnitsProps) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/floors/center/actions/viewUnits.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "units")
 )(ViewUnits);

@@ -280,7 +280,7 @@ function PaymentPlanSheetView({
 
 const ComposedPaymentPlanSheetView = compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["paymentPlans", "sales"]),
 )(PaymentPlanSheetView);
 
 export default ComposedPaymentPlanSheetView;

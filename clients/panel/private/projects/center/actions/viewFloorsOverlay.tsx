@@ -37,5 +37,5 @@ function ViewFloorsOverlay({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projects/center/actions/viewFloorsOverlay.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "floors")
 )(ViewFloorsOverlay);

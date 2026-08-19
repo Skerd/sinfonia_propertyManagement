@@ -836,5 +836,5 @@ function ModificationRequestCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/modificationRequests/center/cardView/modificationRequestCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "modificationRequests"),
 )(ModificationRequestCard);

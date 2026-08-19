@@ -74,5 +74,5 @@ function FeeCalculationCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/feeCalculations/center/cardView/feeCalculationCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "feecalculations"),
 )(FeeCalculationCard);

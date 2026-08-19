@@ -184,5 +184,5 @@ function ProjectCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projects/center/cardView/projectCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projects"),
 )(ProjectCard);

@@ -81,5 +81,5 @@ function StoryTypeCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/storyTypes/center/cardView/storyTypeCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "storyTypes"),
 )(StoryTypeCard);

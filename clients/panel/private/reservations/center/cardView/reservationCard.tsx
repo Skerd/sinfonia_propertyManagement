@@ -195,5 +195,5 @@ function ReservationCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/center/cardView/reservationCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(ReservationCard);

@@ -4,6 +4,9 @@
     "systemMap": {
       "title": "Carte système"
     },
+    "workflow": {
+      "title": "Workflow"
+    },
     "overview": {
       "title": "Aperçu"
     },

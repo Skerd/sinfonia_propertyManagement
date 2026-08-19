@@ -116,5 +116,5 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/floors/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["floors", "units"]),
 )(AllFloors);

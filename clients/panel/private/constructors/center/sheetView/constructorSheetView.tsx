@@ -75,5 +75,5 @@ function ConstructorSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructors/center/sheetView/constructorSheetView.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "constructors")
 )(ConstructorSheetView);

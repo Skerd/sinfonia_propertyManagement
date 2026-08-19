@@ -76,5 +76,5 @@ function SubmittalCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/submittals/center/cardView/submittalCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "submittals"),
 )(SubmittalCard);

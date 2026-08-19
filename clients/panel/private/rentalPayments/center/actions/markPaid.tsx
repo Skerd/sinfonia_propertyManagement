@@ -32,5 +32,5 @@ function MarkRentalPaymentPaid({onAction, payment, resolveLanguageKey}: MarkRent
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/rentalPayments/center/actions/markPaid.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "rentalpayments"),
 )(MarkRentalPaymentPaid);

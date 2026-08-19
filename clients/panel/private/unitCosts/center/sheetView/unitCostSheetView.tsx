@@ -86,5 +86,5 @@ function UnitCostSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitCosts/center/sheetView/unitCostSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitCosts"),
 )(UnitCostSheetView);

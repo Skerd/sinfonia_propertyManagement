@@ -169,5 +169,5 @@ function SnagCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/snags/center/cardView/snagCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(SnagCard);

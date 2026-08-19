@@ -76,5 +76,5 @@ function TenderCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/tenders/center/cardView/tenderCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "tenders"),
 )(TenderCard);

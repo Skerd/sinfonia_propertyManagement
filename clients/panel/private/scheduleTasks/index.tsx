@@ -101,5 +101,5 @@ function AllScheduleTasks({resolveLanguageKey, projectId, projectName}: AllSched
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(AllScheduleTasks);

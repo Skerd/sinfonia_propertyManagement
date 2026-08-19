@@ -32,5 +32,5 @@ function UpdateProgressScheduleTask({onAction, scheduleTask, resolveLanguageKey}
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/actions/updateProgress.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(UpdateProgressScheduleTask);

@@ -161,5 +161,5 @@ function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["leases", "rentalpayments"]),
 )(RentalsHubPage);

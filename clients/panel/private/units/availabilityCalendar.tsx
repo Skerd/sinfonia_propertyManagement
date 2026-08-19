@@ -159,5 +159,5 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "units"),
 )(UnitAvailabilityCalendar);

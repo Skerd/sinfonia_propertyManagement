@@ -70,5 +70,5 @@ function MaintenancePlanCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/maintenancePlans/center/cardView/maintenancePlanCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "maintenanceplans"),
 )(MaintenancePlanCard);

@@ -32,5 +32,5 @@ function StartWorkingSnag({onAction, snag, resolveLanguageKey}: StartWorkingSnag
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/snags/center/actions/startWorking.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(StartWorkingSnag);

@@ -126,5 +126,5 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leads/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leads"),
 )(AllLeads);

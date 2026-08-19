@@ -76,5 +76,5 @@ function PlanMarkupCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/planMarkups/center/cardView/planMarkupCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "planmarkups"),
 )(PlanMarkupCard);

@@ -166,5 +166,5 @@ function LeadCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leads/center/cardView/leadCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leads"),
 )(LeadCard);

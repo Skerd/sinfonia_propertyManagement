@@ -76,5 +76,5 @@ function ContractorInvoiceCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/contractorInvoices/center/cardView/contractorInvoiceCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "contractorinvoices"),
 )(ContractorInvoiceCard);

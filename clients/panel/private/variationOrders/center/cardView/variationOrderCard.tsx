@@ -76,5 +76,5 @@ function VariationOrderCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/variationOrders/center/cardView/variationOrderCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "variationorders"),
 )(VariationOrderCard);

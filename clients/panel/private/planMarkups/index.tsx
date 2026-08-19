@@ -44,5 +44,5 @@ function AllPlanMarkups({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/planMarkups/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "planmarkups"),
 )(AllPlanMarkups);

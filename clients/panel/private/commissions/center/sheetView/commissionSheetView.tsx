@@ -119,5 +119,5 @@ function CommissionSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "commissions"),
 )(CommissionSheetView);

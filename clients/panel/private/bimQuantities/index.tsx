@@ -44,5 +44,5 @@ function AllBimQuantitys({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bimQuantities/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bimquantities"),
 )(AllBimQuantitys);

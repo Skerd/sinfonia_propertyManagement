@@ -95,5 +95,5 @@ function AllProjectDocuments({resolveLanguageKey, projectId, projectName}: AllPr
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(AllProjectDocuments);

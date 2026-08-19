@@ -48,5 +48,5 @@ function AllInspectionChecklistTemplates({resolveLanguageKey, projectId}: Props)
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inspectionchecklisttemplates"),
 )(AllInspectionChecklistTemplates);

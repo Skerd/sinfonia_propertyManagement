@@ -72,5 +72,5 @@ function MilestoneSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/sheetView/milestoneSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(MilestoneSheetView);

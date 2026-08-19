@@ -76,5 +76,5 @@ function IncomingInvoiceCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/incomingInvoices/center/cardView/incomingInvoiceCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "incominginvoices"),
 )(IncomingInvoiceCard);

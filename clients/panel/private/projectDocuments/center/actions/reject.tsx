@@ -32,5 +32,5 @@ function RejectProjectDocument({onAction, projectDocument, resolveLanguageKey}: 
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/actions/reject.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(RejectProjectDocument);

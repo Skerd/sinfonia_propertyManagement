@@ -42,5 +42,5 @@ function AllUnitTypes({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitTypes"),
 )(AllUnitTypes);

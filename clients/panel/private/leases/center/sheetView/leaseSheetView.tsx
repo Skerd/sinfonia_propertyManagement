@@ -80,5 +80,5 @@ function LeaseSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leases"),
 )(LeaseSheetView);

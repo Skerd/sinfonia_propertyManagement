@@ -35,5 +35,5 @@ function SalePayDownPaymentAction({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/center/actions/salePayDownPaymentAction.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "paymentPlans"),
 )(SalePayDownPaymentAction);

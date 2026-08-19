@@ -32,5 +32,5 @@ function CancelScheduleTask({onAction, scheduleTask, resolveLanguageKey}: Cancel
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/actions/cancel.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(CancelScheduleTask);

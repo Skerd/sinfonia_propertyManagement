@@ -112,5 +112,5 @@ export default compose(
         },
         false,
     ),
-    withDebug(true, true),
+    withDebug(true, true, ["bids", "bidlines"]),
 )(BidComparison);

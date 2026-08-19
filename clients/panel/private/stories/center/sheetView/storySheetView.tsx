@@ -72,5 +72,5 @@ function StorySheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/stories/center/sheetView/storySheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "stories"),
 )(StorySheetView);

@@ -38,5 +38,5 @@ function SalePayInstallmentAction({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/center/actions/salePayInstallmentAction.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "paymentPlans"),
 )(SalePayInstallmentAction);

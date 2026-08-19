@@ -100,7 +100,7 @@ function FloorSheetView({
 
 const ComposedFloorSheetView = compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/floors/center/sheetView/floorSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["floors", "units"]),
 )(FloorSheetView);
 
 export default ComposedFloorSheetView;

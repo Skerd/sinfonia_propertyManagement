@@ -147,5 +147,5 @@ function RentalPaymentCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "rentalpayments"),
 )(RentalPaymentCard);

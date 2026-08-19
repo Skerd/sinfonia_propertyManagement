@@ -48,5 +48,5 @@ function AllHandoverPackages({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "handoverpackages"),
 )(AllHandoverPackages);

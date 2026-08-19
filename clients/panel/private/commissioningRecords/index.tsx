@@ -48,5 +48,5 @@ function AllCommissioningRecords({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/commissioningRecords/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "commissioningrecords"),
 )(AllCommissioningRecords);

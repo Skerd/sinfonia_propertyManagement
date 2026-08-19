@@ -48,5 +48,5 @@ function AllVariationOrders({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/variationOrders/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "variationorders"),
 )(AllVariationOrders);

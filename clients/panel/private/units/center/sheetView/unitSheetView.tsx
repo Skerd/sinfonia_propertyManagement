@@ -80,5 +80,5 @@ function UnitSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/center/sheetView/unitSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "units"),
 )(UnitSheetView);

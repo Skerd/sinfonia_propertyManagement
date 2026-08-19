@@ -152,6 +152,7 @@ function buildPropertyManagementNavGroup(resolveLanguageKey: ResolveLanguageKey)
     const items: NavItem[] = [
         navLink(resolveLanguageKey, re("cockpit"), "/realEstate/cockpit", Gauge),
         navLink(resolveLanguageKey, re("systemMap"), "/realEstate/systemmap", Network),
+        navLink(resolveLanguageKey, re("workflow"), "/realEstate/workflow", Workflow),
         navCollapsible(resolveLanguageKey, re("development"), Landmark, [
             navLink(resolveLanguageKey, re("landParcels"), "/realEstate/landParcels", MapPin),
             navLink(resolveLanguageKey, re("feasibilityStudies"), "/realEstate/feasibilityStudies", Scale),

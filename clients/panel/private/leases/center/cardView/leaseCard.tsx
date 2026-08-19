@@ -156,5 +156,5 @@ function LeaseCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leases/center/cardView/leaseCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leases"),
 )(LeaseCard);

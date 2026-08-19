@@ -76,5 +76,5 @@ function FeasibilityStudyCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/feasibilityStudies/center/cardView/feasibilityStudyCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "feasibilitystudies"),
 )(FeasibilityStudyCard);

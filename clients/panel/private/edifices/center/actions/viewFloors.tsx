@@ -52,5 +52,5 @@ function ViewFloors({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/edifices/center/actions/viewFloors.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "floors")
 )(ViewFloors);

@@ -76,5 +76,5 @@ function ProgressClaimCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/progressClaims/center/cardView/progressClaimCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "progressclaims"),
 )(ProgressClaimCard);

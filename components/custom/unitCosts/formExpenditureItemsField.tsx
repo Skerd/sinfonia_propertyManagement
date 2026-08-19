@@ -187,5 +187,5 @@ function FormExpenditureItemsFieldInner({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/components/custom/unitCosts/formExpenditureItemsField.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitCosts"),
 )(FormExpenditureItemsFieldInner);

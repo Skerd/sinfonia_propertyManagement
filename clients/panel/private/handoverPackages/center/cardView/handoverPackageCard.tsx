@@ -76,5 +76,5 @@ function HandoverPackageCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "handoverpackages"),
 )(HandoverPackageCard);

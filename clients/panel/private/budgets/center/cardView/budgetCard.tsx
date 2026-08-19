@@ -76,5 +76,5 @@ function BudgetCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/budgets/center/cardView/budgetCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "budgets"),
 )(BudgetCard);

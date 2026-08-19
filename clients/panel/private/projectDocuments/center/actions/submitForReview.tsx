@@ -32,5 +32,5 @@ function SubmitForReviewProjectDocument({onAction, projectDocument, resolveLangu
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/actions/submitForReview.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(SubmitForReviewProjectDocument);

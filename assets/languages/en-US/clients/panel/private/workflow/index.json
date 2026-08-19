@@ -1,0 +1,5 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workflow/index.tsx",
+  "title": "Workflow",
+  "description": "Operational flows for each Property Management menu — development, delivery, cost control, tendering, finance & approval, quality & HSE, facility management, and BIM. Switch flows, pan, zoom, and click a step for details."
+}

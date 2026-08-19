@@ -207,5 +207,5 @@ function EdificeCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/edifices/center/cardView/edificeCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "edifices"),
 )(EdificeCard);

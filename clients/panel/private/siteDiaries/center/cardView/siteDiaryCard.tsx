@@ -76,5 +76,5 @@ function SiteDiaryCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/siteDiaries/center/cardView/siteDiaryCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "sitediaries"),
 )(SiteDiaryCard);

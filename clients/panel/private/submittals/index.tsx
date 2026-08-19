@@ -48,5 +48,5 @@ function AllSubmittals({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/submittals/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "submittals"),
 )(AllSubmittals);

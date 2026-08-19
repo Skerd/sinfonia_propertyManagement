@@ -183,5 +183,5 @@ function PermitCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/permits/center/cardView/permitCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "permits"),
 )(PermitCard);

@@ -113,5 +113,5 @@ function InspectionSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inspections"),
 )(InspectionSheetView);

@@ -32,5 +32,5 @@ function ApproveProjectDocument({onAction, projectDocument, resolveLanguageKey}:
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/actions/approve.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(ApproveProjectDocument);

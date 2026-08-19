@@ -32,5 +32,5 @@ function MarkDelayedMilestone({onAction, milestone, resolveLanguageKey}: MarkDel
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/actions/markDelayed.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(MarkDelayedMilestone);

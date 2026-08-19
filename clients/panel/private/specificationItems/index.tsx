@@ -47,5 +47,5 @@ function AllSpecificationItems({resolveLanguageKey, specificationId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/specificationItems/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "specificationitems"),
 )(AllSpecificationItems);

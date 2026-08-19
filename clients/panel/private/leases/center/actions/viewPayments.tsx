@@ -39,5 +39,5 @@ function ViewLeasePayments({lease, resolveLanguageKey}: ViewLeasePaymentsProps) 
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leases/center/actions/viewPayments.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leases"),
 )(ViewLeasePayments);

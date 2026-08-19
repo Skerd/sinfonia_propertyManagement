@@ -32,5 +32,5 @@ function CompleteMilestone({onAction, milestone, resolveLanguageKey}: CompleteMi
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/actions/complete.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(CompleteMilestone);

@@ -44,5 +44,5 @@ function AllCostClassifications({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/costClassifications/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "costclassifications"),
 )(AllCostClassifications);

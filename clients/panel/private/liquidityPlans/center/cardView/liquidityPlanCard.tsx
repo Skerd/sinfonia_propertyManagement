@@ -70,5 +70,5 @@ function LiquidityPlanCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/cardView/liquidityPlanCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "liquidityplans"),
 )(LiquidityPlanCard);

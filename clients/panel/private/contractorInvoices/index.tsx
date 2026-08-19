@@ -44,5 +44,5 @@ function AllContractorInvoices({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/contractorInvoices/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "contractorinvoices"),
 )(AllContractorInvoices);

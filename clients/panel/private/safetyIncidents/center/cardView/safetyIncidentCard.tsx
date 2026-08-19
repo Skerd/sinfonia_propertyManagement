@@ -76,5 +76,5 @@ function SafetyIncidentCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/safetyIncidents/center/cardView/safetyIncidentCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "safetyincidents"),
 )(SafetyIncidentCard);

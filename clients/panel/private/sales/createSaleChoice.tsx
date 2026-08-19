@@ -83,5 +83,5 @@ function CreateSaleChoice({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/createSaleChoice.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "sales")
 )(CreateSaleChoice);

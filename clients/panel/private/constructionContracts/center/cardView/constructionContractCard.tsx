@@ -76,5 +76,5 @@ function ConstructionContractCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionContracts/center/cardView/constructionContractCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructioncontracts"),
 )(ConstructionContractCard);

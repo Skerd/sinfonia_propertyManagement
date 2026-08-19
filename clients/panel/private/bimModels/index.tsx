@@ -44,5 +44,5 @@ function AllBimModels({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bimModels/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bimmodels"),
 )(AllBimModels);

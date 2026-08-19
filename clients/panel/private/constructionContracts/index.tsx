@@ -88,5 +88,5 @@ function AllConstructionContracts({resolveLanguageKey, projectId: propProjectId}
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionContracts/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructioncontracts"),
 )(AllConstructionContracts);

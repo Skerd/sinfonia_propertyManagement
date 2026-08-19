@@ -30,5 +30,5 @@ function UnitCostInvoicePdfActionMenuItemInner({
 
 export default compose(
     withLanguage(UNIT_COST_SHEET_VIEW_LANG_PATH),
-    withDebug(true, true),
+    withDebug(true, true, "unitCosts"),
 )(UnitCostInvoicePdfActionMenuItemInner);

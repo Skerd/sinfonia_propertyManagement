@@ -153,5 +153,5 @@ export default compose(
         },
         true
     ),
-    withDebug(true, true)
+    withDebug(true, true, ["projects", "units"])
 )(Dashboard)

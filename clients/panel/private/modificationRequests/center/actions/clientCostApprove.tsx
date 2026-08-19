@@ -19,5 +19,5 @@ function ClientCostApprove({onAction, resolveLanguageKey}: ClientCostApproveProp
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/modificationRequests/center/actions/clientCostApprove.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "modificationRequests"),
 )(ClientCostApprove);

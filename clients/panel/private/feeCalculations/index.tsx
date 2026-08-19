@@ -44,5 +44,5 @@ function AllFeeCalculations({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/feeCalculations/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "feecalculations"),
 )(AllFeeCalculations);

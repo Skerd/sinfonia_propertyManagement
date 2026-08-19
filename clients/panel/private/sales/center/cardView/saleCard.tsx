@@ -146,5 +146,5 @@ function SaleCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/center/cardView/saleCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "sales"),
 )(SaleCard);

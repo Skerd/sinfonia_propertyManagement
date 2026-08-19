@@ -69,5 +69,5 @@ function UnitTypeCategoryCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitTypeCategories/center/cardView/unitTypeCategoryCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitTypeCategories"),
 )(UnitTypeCategoryCard);

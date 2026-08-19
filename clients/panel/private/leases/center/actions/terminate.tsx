@@ -29,5 +29,5 @@ function TerminateLease({onAction, lease, resolveLanguageKey}: TerminateLeasePro
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leases/center/actions/terminate.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leases"),
 )(TerminateLease);

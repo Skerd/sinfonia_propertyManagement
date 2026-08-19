@@ -32,5 +32,5 @@ function CompleteScheduleTask({onAction, scheduleTask, resolveLanguageKey}: Comp
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/actions/complete.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(CompleteScheduleTask);

@@ -53,5 +53,5 @@ function Reservations({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/center/actions/reservations.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "units")
 )(Reservations);

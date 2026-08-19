@@ -435,5 +435,5 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/overview/roi/roiCalculator.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["projects", "units"]),
 )(RoiCalculator);

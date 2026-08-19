@@ -48,5 +48,5 @@ function AllWarrantys({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/warranties/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "warranties"),
 )(AllWarrantys);

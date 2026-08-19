@@ -72,5 +72,5 @@ function ConstructionUpdateSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/sheetView/constructionUpdateSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructionUpdates"),
 )(ConstructionUpdateSheetView);

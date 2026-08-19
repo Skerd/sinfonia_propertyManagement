@@ -72,5 +72,5 @@ function ProjectDocumentSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/sheetView/projectDocumentSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(ProjectDocumentSheetView);

@@ -42,5 +42,5 @@ function AllConstructors({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructors/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructors"),
 )(AllConstructors);

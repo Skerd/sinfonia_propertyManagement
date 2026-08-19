@@ -184,5 +184,5 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/inspections/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inspections"),
 )(AllInspections);

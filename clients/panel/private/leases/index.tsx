@@ -148,5 +148,5 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leases/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leases"),
 )(AllLeases);

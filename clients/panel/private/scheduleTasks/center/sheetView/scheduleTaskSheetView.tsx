@@ -72,5 +72,5 @@ function ScheduleTaskSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/sheetView/scheduleTaskSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(ScheduleTaskSheetView);

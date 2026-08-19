@@ -182,5 +182,5 @@ function UnitCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/center/cardView/unitCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "units"),
 )(UnitCard);

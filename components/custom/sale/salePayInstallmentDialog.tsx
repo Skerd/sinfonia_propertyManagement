@@ -173,5 +173,5 @@ export default compose(
         {url: "/api/realEstate/unit/sale/payInstallment", method: "post", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, ["paymentPlans", "sales"]),
 )(SalePayInstallmentDialog);

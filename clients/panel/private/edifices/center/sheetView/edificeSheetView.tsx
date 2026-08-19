@@ -126,5 +126,5 @@ function EdificeSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["edifices", "floors"]),
 )(EdificeSheetView);

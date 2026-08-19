@@ -47,5 +47,5 @@ function PropertyManagementConfigGate({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projects"),
 )(PropertyManagementConfigGate);

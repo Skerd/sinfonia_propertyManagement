@@ -76,5 +76,5 @@ function WarrantyCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/warranties/center/cardView/warrantyCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "warranties"),
 )(WarrantyCard);

@@ -76,5 +76,5 @@ function CostClassificationCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/costClassifications/center/cardView/costClassificationCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "costclassifications"),
 )(CostClassificationCard);

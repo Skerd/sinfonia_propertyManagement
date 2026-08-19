@@ -76,5 +76,5 @@ function RfiCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/rfis/center/cardView/rfiCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "rfis"),
 )(RfiCard);

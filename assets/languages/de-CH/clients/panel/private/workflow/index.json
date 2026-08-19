@@ -1,0 +1,5 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/workflow/index.tsx",
+  "title": "Workflow",
+  "description": "Abläufe je Menü der Liegenschaftsverwaltung — Entwicklung, Ausführung, Kostenkontrolle, Submission, Finanzen & Freigabe, Qualität & HSE, Facility Management und BIM. Abläufe wechseln, zoomen und einen Schritt anklicken für Details."
+}

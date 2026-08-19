@@ -115,7 +115,7 @@ function SaleSheetView({
 
 const ComposedSaleSheetView = compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/center/sheetView/saleSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "sales"),
 )(SaleSheetView);
 
 export default ComposedSaleSheetView;

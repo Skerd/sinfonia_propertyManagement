@@ -80,5 +80,5 @@ function RentalPaymentSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "rentalpayments"),
 )(RentalPaymentSheetView);

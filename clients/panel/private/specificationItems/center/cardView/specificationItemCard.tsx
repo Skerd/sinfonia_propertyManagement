@@ -83,5 +83,5 @@ function SpecificationItemCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/specificationItems/center/cardView/specificationItemCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "specificationitems"),
 )(SpecificationItemCard);

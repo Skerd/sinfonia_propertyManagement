@@ -76,5 +76,5 @@ function BidCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bids/center/cardView/bidCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bids"),
 )(BidCard);

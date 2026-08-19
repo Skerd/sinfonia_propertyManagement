@@ -76,5 +76,5 @@ function TenderInvitationCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/tenderInvitations/center/cardView/tenderInvitationCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "tenderinvitations"),
 )(TenderInvitationCard);

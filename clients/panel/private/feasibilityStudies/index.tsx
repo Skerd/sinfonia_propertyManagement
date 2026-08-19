@@ -48,5 +48,5 @@ function AllFeasibilityStudys({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/feasibilityStudies/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "feasibilitystudies"),
 )(AllFeasibilityStudys);

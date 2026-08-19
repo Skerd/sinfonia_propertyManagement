@@ -27,5 +27,5 @@ function ReinstateReservation({onAction, resolveLanguageKey}: ReinstateReservati
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/center/actions/reinstate.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(ReinstateReservation);

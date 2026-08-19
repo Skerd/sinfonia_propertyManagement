@@ -95,5 +95,5 @@ function AllPermits({resolveLanguageKey, projectId, projectName}: AllPermitsProp
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/permits/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "permits"),
 )(AllPermits);

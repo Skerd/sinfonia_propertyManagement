@@ -166,5 +166,5 @@ function ReservationSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(ReservationSheetView);

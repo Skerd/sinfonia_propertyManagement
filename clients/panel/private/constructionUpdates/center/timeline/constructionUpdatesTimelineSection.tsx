@@ -340,5 +340,5 @@ function ConstructionUpdatesTimelineSection({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/timeline/constructionUpdatesTimelineSection.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructionUpdates"),
 )(ConstructionUpdatesTimelineSection);

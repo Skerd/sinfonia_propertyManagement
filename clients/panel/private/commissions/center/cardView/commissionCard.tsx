@@ -129,5 +129,5 @@ function CommissionCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/commissions/center/cardView/commissionCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "commissions"),
 )(CommissionCard);

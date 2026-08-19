@@ -72,5 +72,5 @@ function LeadSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leads/center/sheetView/leadSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leads"),
 )(LeadSheetView);

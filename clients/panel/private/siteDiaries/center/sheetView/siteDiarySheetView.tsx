@@ -48,5 +48,5 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/siteDiaries/center/sheetView/siteDiarySheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "sitediaries"),
 )(Sheet);

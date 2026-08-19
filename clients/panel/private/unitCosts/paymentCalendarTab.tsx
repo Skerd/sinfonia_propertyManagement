@@ -314,5 +314,5 @@ function PaymentCalendarTab({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitCosts/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitCosts"),
 )(PaymentCalendarTab);

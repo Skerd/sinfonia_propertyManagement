@@ -70,5 +70,5 @@ function BimQuantityCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bimQuantities/center/cardView/bimQuantityCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bimquantities"),
 )(BimQuantityCard);

@@ -33,5 +33,5 @@ function CancelModificationRequest({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/modificationRequests/center/actions/cancel.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "modificationRequests"),
 )(CancelModificationRequest);

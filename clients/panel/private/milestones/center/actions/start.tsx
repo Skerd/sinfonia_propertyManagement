@@ -32,5 +32,5 @@ function StartMilestone({onAction, milestone, resolveLanguageKey}: StartMileston
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/center/actions/start.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(StartMilestone);

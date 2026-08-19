@@ -76,5 +76,5 @@ function LandParcelCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/landParcels/center/cardView/landParcelCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "landparcels"),
 )(LandParcelCard);

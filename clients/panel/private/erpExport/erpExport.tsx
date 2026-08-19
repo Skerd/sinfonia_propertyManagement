@@ -327,5 +327,5 @@ function ExportDataTable({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/erpExport/erpExport.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts", "boqItems", "costCommitments", "progressClaims", "permits"]),
 )(ErpExportPage);

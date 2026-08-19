@@ -92,5 +92,5 @@ function AllStories({resolveLanguageKey, projectId, projectName}: AllStoriesProp
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/stories/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "stories"),
 )(AllStories);

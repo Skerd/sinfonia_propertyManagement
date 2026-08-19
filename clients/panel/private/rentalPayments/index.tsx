@@ -146,5 +146,5 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "rentalpayments"),
 )(AllRentalPayments);

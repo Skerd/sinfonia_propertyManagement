@@ -150,5 +150,5 @@ function AllSnags({resolveLanguageKey, unitId, unitName}: AllSnagsProps) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/snags/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(AllSnags);

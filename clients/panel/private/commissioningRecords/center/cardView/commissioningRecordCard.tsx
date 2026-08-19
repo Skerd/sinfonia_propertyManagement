@@ -76,5 +76,5 @@ function CommissioningRecordCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/commissioningRecords/center/cardView/commissioningRecordCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "commissioningrecords"),
 )(CommissioningRecordCard);

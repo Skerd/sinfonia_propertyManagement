@@ -37,5 +37,5 @@ function ViewEdificesOverlay({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projects/center/actions/viewEdificesOverlay.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "edifices")
 )(ViewEdificesOverlay);

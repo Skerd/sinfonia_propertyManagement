@@ -96,5 +96,5 @@ function AllMilestones({resolveLanguageKey, projectId, projectName}: AllMileston
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/milestones/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "milestones"),
 )(AllMilestones);

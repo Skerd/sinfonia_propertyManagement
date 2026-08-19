@@ -204,5 +204,5 @@ function InspectionCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/inspections/center/cardView/inspectionCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inspections"),
 )(InspectionCard);

@@ -55,5 +55,5 @@ function ViewEdifices({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projects/center/actions/viewEdifices.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "edifices")
 )(ViewEdifices);

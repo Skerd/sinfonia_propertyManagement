@@ -28,5 +28,5 @@ function Action({onAction, permit, resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/permits/center/actions/markUnderReview.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "permits"),
 )(Action);

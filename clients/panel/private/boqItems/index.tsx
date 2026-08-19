@@ -48,5 +48,5 @@ function AllBoqItems({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/boqItems/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "boqitems"),
 )(AllBoqItems);

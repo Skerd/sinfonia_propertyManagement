@@ -44,5 +44,5 @@ function AllTenderInvitations({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/tenderInvitations/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "tenderinvitations"),
 )(AllTenderInvitations);

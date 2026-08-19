@@ -44,5 +44,5 @@ function AllLiquidityPlans({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/liquidityPlans/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "liquidityplans"),
 )(AllLiquidityPlans);

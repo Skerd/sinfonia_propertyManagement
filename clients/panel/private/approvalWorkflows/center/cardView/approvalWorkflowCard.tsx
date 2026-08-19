@@ -76,5 +76,5 @@ function ApprovalWorkflowCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/approvalWorkflows/center/cardView/approvalWorkflowCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "approvalworkflows"),
 )(ApprovalWorkflowCard);

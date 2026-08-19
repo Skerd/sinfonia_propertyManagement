@@ -32,5 +32,5 @@ function AssignSnag({onAction, snag, resolveLanguageKey}: AssignSnagProps) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/snags/center/actions/assign.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(AssignSnag);

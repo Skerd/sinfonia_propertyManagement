@@ -76,5 +76,5 @@ function ApprovalRequestCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/approvalRequests/center/cardView/approvalRequestCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "approvalrequests"),
 )(ApprovalRequestCard);

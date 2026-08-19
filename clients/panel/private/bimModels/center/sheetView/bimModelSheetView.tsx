@@ -48,5 +48,5 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bimModels/center/sheetView/bimModelSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bimmodels"),
 )(Sheet);

@@ -87,5 +87,5 @@ export default compose(
         },
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "rentalpayments"),
 )(MarkRentalPaymentPaidDialog);

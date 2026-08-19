@@ -53,5 +53,5 @@ function ModificationRequests({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/center/actions/modificationRequests.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "units")
 )(ModificationRequests);

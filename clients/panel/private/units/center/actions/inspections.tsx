@@ -53,5 +53,5 @@ function Inspections({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/center/actions/inspections.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "units")
 )(Inspections);

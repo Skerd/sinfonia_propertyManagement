@@ -144,5 +144,5 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "sales"),
 )(AllSales);

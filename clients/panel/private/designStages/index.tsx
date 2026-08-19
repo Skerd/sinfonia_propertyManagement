@@ -48,5 +48,5 @@ function AllDesignStages({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/designStages/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "designstages"),
 )(AllDesignStages);

@@ -32,5 +32,5 @@ function MarkDelayedScheduleTask({onAction, scheduleTask, resolveLanguageKey}: M
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/actions/markDelayed.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(MarkDelayedScheduleTask);

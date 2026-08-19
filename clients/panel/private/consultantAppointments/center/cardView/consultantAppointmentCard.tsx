@@ -76,5 +76,5 @@ function ConsultantAppointmentCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/consultantAppointments/center/cardView/consultantAppointmentCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "consultantappointments"),
 )(ConsultantAppointmentCard);

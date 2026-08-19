@@ -70,5 +70,5 @@ function LiquidityLineCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/liquidityLines/center/cardView/liquidityLineCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "liquiditylines"),
 )(LiquidityLineCard);

@@ -99,5 +99,5 @@ function UnitTypeCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/unitTypes/center/cardView/unitTypeCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "unitTypes"),
 )(UnitTypeCard);

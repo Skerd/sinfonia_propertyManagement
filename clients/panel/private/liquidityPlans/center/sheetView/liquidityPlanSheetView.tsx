@@ -48,5 +48,5 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/liquidityPlans/center/sheetView/liquidityPlanSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "liquidityplans"),
 )(Sheet);

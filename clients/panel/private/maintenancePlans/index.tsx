@@ -44,5 +44,5 @@ function AllMaintenancePlans({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/maintenancePlans/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "maintenanceplans"),
 )(AllMaintenancePlans);

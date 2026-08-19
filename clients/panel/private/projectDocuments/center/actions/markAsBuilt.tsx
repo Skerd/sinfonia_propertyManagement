@@ -32,5 +32,5 @@ function MarkAsBuiltProjectDocument({onAction, projectDocument, resolveLanguageK
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/actions/markAsBuilt.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(MarkAsBuiltProjectDocument);

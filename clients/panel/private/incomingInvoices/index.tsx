@@ -44,5 +44,5 @@ function AllIncomingInvoices({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/incomingInvoices/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "incominginvoices"),
 )(AllIncomingInvoices);

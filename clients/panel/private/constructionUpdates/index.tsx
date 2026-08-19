@@ -100,5 +100,5 @@ function AllConstructionUpdates({resolveLanguageKey, projectId, projectName}: Al
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionUpdates/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructionUpdates"),
 )(AllConstructionUpdates);

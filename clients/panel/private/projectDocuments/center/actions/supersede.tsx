@@ -32,5 +32,5 @@ function SupersedeProjectDocument({onAction, projectDocument, resolveLanguageKey
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/projectDocuments/center/actions/supersede.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "projectdocuments"),
 )(SupersedeProjectDocument);

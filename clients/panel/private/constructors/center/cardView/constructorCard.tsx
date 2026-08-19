@@ -102,5 +102,5 @@ function ConstructorCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructors/center/cardView/constructorCard.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, "constructors")
 )(ConstructorCard);

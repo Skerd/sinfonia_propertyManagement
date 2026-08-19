@@ -43,5 +43,5 @@ function CancelInspection({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/inspections/center/actions/cancel.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "inspections"),
 )(CancelInspection);

@@ -27,5 +27,5 @@ function ReverseReservationPayment({onAction, resolveLanguageKey}: ReversePaymen
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/center/actions/reversePayment.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(ReverseReservationPayment);

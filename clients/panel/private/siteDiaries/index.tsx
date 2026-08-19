@@ -48,5 +48,5 @@ function AllSiteDiarys({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/siteDiaries/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "sitediaries"),
 )(AllSiteDiarys);

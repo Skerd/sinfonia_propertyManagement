@@ -76,5 +76,5 @@ function BoqItemCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/boqItems/center/cardView/boqItemCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "boqitems"),
 )(BoqItemCard);

@@ -39,5 +39,5 @@ function GenerateFloorsUnits({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/edifices/center/actions/generateFloorsUnits.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, ["floors", "units"])
 )(GenerateFloorsUnits);

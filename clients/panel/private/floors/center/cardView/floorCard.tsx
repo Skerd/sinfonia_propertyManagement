@@ -139,5 +139,5 @@ function FloorCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/floors/center/cardView/floorCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "floors"),
 )(FloorCard);

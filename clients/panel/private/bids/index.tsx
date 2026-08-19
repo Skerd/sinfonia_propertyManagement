@@ -44,5 +44,5 @@ function AllBids({resolveLanguageKey}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/bids/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "bids"),
 )(AllBids);

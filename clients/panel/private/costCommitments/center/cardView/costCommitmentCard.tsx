@@ -76,5 +76,5 @@ function CostCommitmentCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/costCommitments/center/cardView/costCommitmentCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "costcommitments"),
 )(CostCommitmentCard);

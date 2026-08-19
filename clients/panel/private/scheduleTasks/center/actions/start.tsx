@@ -32,5 +32,5 @@ function StartScheduleTask({onAction, scheduleTask, resolveLanguageKey}: StartSc
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/actions/start.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(StartScheduleTask);

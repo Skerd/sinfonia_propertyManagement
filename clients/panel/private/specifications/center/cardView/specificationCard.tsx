@@ -76,5 +76,5 @@ function SpecificationCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/specifications/center/cardView/specificationCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "specifications"),
 )(SpecificationCard);

@@ -76,5 +76,5 @@ function WorkPackageCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/workPackages/center/cardView/workPackageCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "workpackages"),
 )(WorkPackageCard);

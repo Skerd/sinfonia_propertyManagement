@@ -76,5 +76,5 @@ function DesignStageCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/designStages/center/cardView/designStageCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "designstages"),
 )(DesignStageCard);

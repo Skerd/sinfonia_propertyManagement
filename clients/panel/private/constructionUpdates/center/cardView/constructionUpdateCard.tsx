@@ -119,5 +119,5 @@ function ConstructionUpdateCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/constructionUpdates/center/cardView/constructionUpdateCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "constructionUpdates"),
 )(ConstructionUpdateCard);

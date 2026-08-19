@@ -48,5 +48,5 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/costCommitments/center/sheetView/costCommitmentSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "costcommitments"),
 )(Sheet);

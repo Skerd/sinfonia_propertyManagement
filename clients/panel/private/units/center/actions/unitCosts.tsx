@@ -56,5 +56,5 @@ function UnitCostsAction({ unitId, unitName, resolveLanguageKey }: UnitCostsActi
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/units/center/actions/unitCosts.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["units", "unitCosts"]),
 )(UnitCostsAction);

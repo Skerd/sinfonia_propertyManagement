@@ -176,5 +176,5 @@ function ScheduleTaskCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/scheduleTasks/center/cardView/scheduleTaskCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "scheduletasks"),
 )(ScheduleTaskCard);

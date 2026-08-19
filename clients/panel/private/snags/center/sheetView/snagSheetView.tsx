@@ -72,5 +72,5 @@ function SnagSheetView({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/snags/center/sheetView/snagSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(SnagSheetView);

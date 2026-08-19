@@ -48,5 +48,5 @@ function AllWorkPackages({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/workPackages/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "workpackages"),
 )(AllWorkPackages);

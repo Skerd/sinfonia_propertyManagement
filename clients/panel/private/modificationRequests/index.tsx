@@ -197,5 +197,5 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "modificationRequests"),
 )(AllModificationRequests);

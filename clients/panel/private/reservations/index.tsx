@@ -215,5 +215,5 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(AllReservations);

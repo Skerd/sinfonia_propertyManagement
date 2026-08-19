@@ -111,5 +111,5 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/commissions/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "commissions"),
 )(AllCommissions);

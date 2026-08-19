@@ -79,5 +79,5 @@ export default compose(
         {method: "post", url: "/api/realEstate/dashboard/deliveryReadiness", data: {}},
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "units"),
 )(DeliveryReadinessCardInner) as unknown as React.ComponentType<{projectId?: string; edificeId?: string}>;

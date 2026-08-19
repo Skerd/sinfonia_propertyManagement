@@ -132,5 +132,5 @@ function PaymentPlanCard({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "paymentPlans"),
 )(PaymentPlanCard);

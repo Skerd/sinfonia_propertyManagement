@@ -31,5 +31,5 @@ function FinanceModificationRequest({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/modificationRequests/center/actions/finance.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "modificationRequests"),
 )(FinanceModificationRequest);

@@ -115,5 +115,5 @@ export default compose(
         {url: "/api/realEstate/costControl", method: "post", data: {}},
         false,
     ),
-    withDebug(true, true),
+    withDebug(true, true, ["budgets", "costCommitments"]),
 )(CostControl);

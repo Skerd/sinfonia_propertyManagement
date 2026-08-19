@@ -35,5 +35,5 @@ function ViewUnitsOverlay({onAction, resolveLanguageKey}: ViewUnitsOverlayProps)
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx"),
-    withDebug(true, true)
+    withDebug(true, true, ["floors", "units"])
 )(ViewUnitsOverlay);

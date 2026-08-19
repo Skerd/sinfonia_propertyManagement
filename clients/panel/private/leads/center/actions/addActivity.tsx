@@ -30,5 +30,5 @@ function AddLeadActivity({onAction, lead, resolveLanguageKey}: AddLeadActivityPr
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/leads/center/actions/addActivity.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "leads"),
 )(AddLeadActivity);

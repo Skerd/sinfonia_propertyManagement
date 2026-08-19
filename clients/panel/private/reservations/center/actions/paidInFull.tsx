@@ -27,5 +27,5 @@ function PaidInFullReservation({onAction, resolveLanguageKey}: PaidInFullReserva
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/reservations/center/actions/paidInFull.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "reservations"),
 )(PaidInFullReservation);

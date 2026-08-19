@@ -48,5 +48,5 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/maintenanceWorkOrders/center/sheetView/maintenanceWorkOrderSheetView.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "maintenanceworkorders"),
 )(Sheet);

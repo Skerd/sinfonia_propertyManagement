@@ -129,5 +129,5 @@ export default compose(
         },
         true,
     ),
-    withDebug(true, true),
+    withDebug(true, true, "snags"),
 )(AssignSnagDialog);

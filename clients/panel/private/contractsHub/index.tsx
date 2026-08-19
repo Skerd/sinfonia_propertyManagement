@@ -125,5 +125,5 @@ function ContractsHubPage({resolveLanguageKey}: WithLanguageType) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, ["sales", "reservations"]),
 )(ContractsHubPage);

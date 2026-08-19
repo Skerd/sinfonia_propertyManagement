@@ -47,5 +47,5 @@ function AllTenders({resolveLanguageKey, projectId}: Props) {
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/tenders/index.tsx"),
-    withDebug(true, true),
+    withDebug(true, true, "tenders"),
 )(AllTenders);
