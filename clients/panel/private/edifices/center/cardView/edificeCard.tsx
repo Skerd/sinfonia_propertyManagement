@@ -6,10 +6,8 @@ import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/pri
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {
     IconCashBanknote,
-    IconCarGarage,
     IconDoor,
     IconGrid4x4,
-    IconParkingCircle,
     IconStack,
     IconTrees,
 } from "@tabler/icons-react";
@@ -148,22 +146,6 @@ function EdificeCard({
                                 path="greenArea"
                                 type="area"
                                 value={entity.greenArea}
-                            />
-                            <DisplayRow
-                                icon={IconParkingCircle}
-                                label={resolveLanguageKey("data.numberOfParkingSpaces")}
-                                tooltip={resolveLanguageKey("data.numberOfParkingSpaces")}
-                                path="numberOfParkingSpaces"
-                                type="number"
-                                value={entity.numberOfParkingSpaces}
-                            />
-                            <DisplayRow
-                                icon={IconCarGarage}
-                                label={resolveLanguageKey("data.numberOfGarages")}
-                                tooltip={resolveLanguageKey("data.numberOfGarages")}
-                                path="numberOfGarages"
-                                type="number"
-                                value={entity.numberOfGarages}
                             />
                             <DisplayRow
                                 icon={IconCashBanknote}

@@ -9,6 +9,7 @@ import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/
 import {IconCalendar, IconCalendarClock, IconHome, IconList, IconStar, IconTag} from "@tabler/icons-react";
 import {buildInspectionEditPath} from "@propertyManagementModule/clients/panel/private/inspections";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import {CARD_INFO_ROWS_TWO_COL_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
@@ -111,7 +112,7 @@ function InspectionCard({
                         <EntityCard.Header titlePath="name" title={entity.name}>
                             {entity.status === "scheduled" ? <CancelInspection onAction={setAction} /> : null}
                         </EntityCard.Header>
-                        <EntityCard.Body>
+                        <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
                             <DisplayRow
                                 icon={IconTag}
                                 label={resolveLanguageKey("type")}
