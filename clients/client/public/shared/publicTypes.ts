@@ -145,7 +145,9 @@ export type MarketingUnitSingle = {
     price?: number;
     sharePrice?: number;
     projectedYield?: number;
+    mainImage?: string;
     imageGallery?: string[];
+    videoGallery?: string[];
     description?: string;
     grossAreaSqm?: number;
     netAreaSqm?: number;

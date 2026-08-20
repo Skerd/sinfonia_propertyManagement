@@ -18,6 +18,9 @@ type PropertyPriceHistoryChartProps = {
     formatTooltip: (label: string, value: string) => string;
     fillHeight?: boolean;
     showCaptions?: boolean;
+    accentColor?: string;
+    tooltipClassName?: string;
+    captionClassName?: string;
 };
 
 function findNearestPoint(
@@ -50,6 +53,9 @@ function PropertyPriceHistoryChart({
     formatTooltip,
     fillHeight = false,
     showCaptions = true,
+    accentColor = PRONIX_BLUE,
+    tooltipClassName,
+    captionClassName,
 }: PropertyPriceHistoryChartProps) {
     const plot = useMemo(() => buildPropertyPriceHistoryPlot(entries), [entries]);
     const plotPoints = plot?.points ?? [];
@@ -96,7 +102,8 @@ function PropertyPriceHistoryChart({
                                 x2={STRIPE_SPACING / 2}
                                 y1={0}
                                 y2={PRICE_HISTORY_CHART_VIEWBOX.height}
-                                stroke="rgba(2, 71, 254, 0.1)"
+                                stroke={accentColor}
+                                strokeOpacity={0.1}
                                 strokeWidth={1}
                             />
                         </pattern>
@@ -113,8 +120,8 @@ function PropertyPriceHistoryChart({
                             />
                         </mask>
                         <linearGradient id="propertyPriceHighlightLine" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor={PRONIX_BLUE} stopOpacity={0.85} />
-                            <stop offset="100%" stopColor={PRONIX_BLUE} stopOpacity={0} />
+                            <stop offset="0%" stopColor={accentColor} stopOpacity={0.85} />
+                            <stop offset="100%" stopColor={accentColor} stopOpacity={0} />
                         </linearGradient>
                     </defs>
 
@@ -148,7 +155,7 @@ function PropertyPriceHistoryChart({
                             x2={activePoint.x}
                             y1={activePoint.y}
                             y2={PRICE_HISTORY_CHART_VIEWBOX.height}
-                            stroke={PRONIX_BLUE}
+                            stroke={accentColor}
                             strokeOpacity={0.2}
                             strokeWidth={1.5}
                         />
@@ -168,7 +175,7 @@ function PropertyPriceHistoryChart({
                     <path
                         d={linePath}
                         fill="none"
-                        stroke={PRONIX_BLUE}
+                        stroke={accentColor}
                         strokeWidth={2.5}
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -180,7 +187,7 @@ function PropertyPriceHistoryChart({
                             cy={activePoint.y}
                             r={5}
                             fill="#ffffff"
-                            stroke={PRONIX_BLUE}
+                            stroke={accentColor}
                             strokeWidth={2}
                         />
                     ) : null}
@@ -191,7 +198,7 @@ function PropertyPriceHistoryChart({
                             cy={highlightPoint.y}
                             r={7}
                             fill="#ffffff"
-                            stroke={PRONIX_BLUE}
+                            stroke={accentColor}
                             strokeWidth={2}
                         />
                     ) : null}
@@ -199,7 +206,10 @@ function PropertyPriceHistoryChart({
 
                 {activePoint ? (
                     <div
-                        className="pointer-events-none absolute z-10 rounded-[5px] border border-pronix-border bg-white px-2 py-1 font-aeonik-light text-xs text-pronix-ink not-italic shadow-sm"
+                        className={`pointer-events-none absolute z-10 rounded-[5px] border px-2 py-1 shadow-sm ${
+                            tooltipClassName ??
+                            "border-pronix-border bg-white font-aeonik-light text-xs text-pronix-ink not-italic"
+                        }`}
                         style={{
                             left: `${(activePoint.x / PRICE_HISTORY_CHART_VIEWBOX.width) * 100}%`,
                             top: `${(activePoint.y / PRICE_HISTORY_CHART_VIEWBOX.height) * 100}%`,
@@ -213,11 +223,11 @@ function PropertyPriceHistoryChart({
 
             {showCaptions ? (
                 <>
-            <div className="hidden px-0 font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic md:block">
+            <div className={`hidden px-0 md:block ${captionClassName ?? "font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic"}`}>
                 {plot.yLabels.join(" · ")}
             </div>
 
-            <div className="flex flex-wrap justify-between gap-2 px-0 font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic">
+            <div className={`flex flex-wrap justify-between gap-2 px-0 ${captionClassName ?? "font-aeonik-light text-[11px] leading-4 text-pronix-ink-muted not-italic"}`}>
                 {plot.xLabels.map((month, index) => (
                     <span key={`${month}-${index}`}>{month}</span>
                 ))}

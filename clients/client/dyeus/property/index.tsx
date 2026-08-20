@@ -1,7 +1,7 @@
-import {useEffect, useMemo, useRef, useState, type ReactNode} from "react";
+import {useEffect, useRef, useState} from "react";
 import {compose} from "redux";
-import {Link, useSearchParams} from "react-router-dom";
-import {Play} from "lucide-react";
+import {useNavigate, useSearchParams} from "react-router-dom";
+import {ChevronLeft} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -10,8 +10,9 @@ import DyeusPageShell from "@propertyManagementModule/clients/client/dyeus/share
 import DyeusHeader from "@propertyManagementModule/clients/client/dyeus/shared/dyeusHeader.tsx";
 import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/dyeusFooter.tsx";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
-import DyeusMediaLightbox from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMediaLightbox.tsx";
-import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
+import DyeusPropertyGallerySection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertyGallerySection.tsx";
+import DyeusPropertyDetailsSection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertyDetailsSection.tsx";
+import DyeusPropertySidebarSection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertySidebarSection.tsx";
 import {
     fillLanguageTemplate,
     type MarketingUnitSingle,
@@ -20,80 +21,31 @@ import {
 type MarketingUnitResponse = {unit: MarketingUnitSingle};
 type PropertyPageProps = WithLanguageType &
     WithAxiosType<MarketingUnitResponse, {projectId: string; unitId: string}>;
-type LightboxState = {kind: "image" | "video"; index: number};
-
-const VIDEO_EXT_RE = /\.(mp4|webm|ogg|mov|m4v)(\?|#|$)/i;
-
-function isVideoUrl(url: string) {
-    return VIDEO_EXT_RE.test(url);
-}
-
-const STATUS_KEYS: Record<string, string> = {
-    available: "statusAvailable",
-    reserved: "statusReserved",
-    sold: "statusSold",
-};
-
-const FEATURE_ROWS = [
-    {labelKey: "hasBalcony", field: "hasBalcony"},
-    {labelKey: "hasTerrace", field: "hasTerrace"},
-    {labelKey: "hasSeaView", field: "hasSeaView"},
-    {labelKey: "hasCityView", field: "hasCityView"},
-    {labelKey: "hasLakeView", field: "hasLakeView"},
-    {labelKey: "hasElevator", field: "hasElevator"},
-] as const;
-
-function formatNumber(value: number) {
-    return value.toFixed(2);
-}
-
-function formatAreaSqm(value?: number) {
-    return value != null ? `${formatNumber(value)} m²` : null;
-}
-
-function formatCount(value?: number) {
-    return value != null ? formatNumber(value) : null;
-}
-
-function formatUnitPrice(unit: MarketingUnitSingle, onRequest: string) {
-    if (unit.price == null) return onRequest;
-    const symbol = unit.priceCurrency?.symbol ?? unit.priceCurrency?.abbreviation ?? "€";
-    return `${symbol}${formatNumber(unit.price)}`;
-}
-
-function formatPricePerSqm(pricePerSqm?: MarketingUnitSingle["averagePricePerSquareMeter"]) {
-    if (pricePerSqm?.value == null) return null;
-    const symbol = pricePerSqm.currency?.symbol ?? pricePerSqm.currency?.abbreviation ?? "€";
-    return `${symbol}${formatNumber(pricePerSqm.value)}/m²`;
-}
-
-function formatFloor(unit: MarketingUnitSingle) {
-    if (unit.floorLabel) return unit.floorLabel;
-    if (unit.floorLevel != null && unit.totalFloorsInEdifice != null) {
-        return `${unit.floorLevel}/${unit.totalFloorsInEdifice}`;
-    }
-    if (unit.floorLevel != null) return String(unit.floorLevel);
-    return null;
-}
-
-function DetailRow({label, value}: {label: string; value: ReactNode}) {
-    return (
-        <div className="flex justify-between gap-4">
-            <dt className="text-dyeus-ink-muted">{label}</dt>
-            <dd className="text-right">{value}</dd>
-        </div>
-    );
-}
+type ContactMode = "requestInfo" | "reserve";
 
 function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}: PropertyPageProps) {
     const t = (key: string) => String(resolveLanguageKey(key));
+    const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const projectId = searchParams.get("projectId") ?? "";
     const unitId = searchParams.get("unitId") ?? "";
     const unit = data?.unit;
     const requestedKeyRef = useRef("");
     const [contactOpen, setContactOpen] = useState(false);
-    const [lightbox, setLightbox] = useState<LightboxState | null>(null);
+    const [contactMode, setContactMode] = useState<ContactMode>("requestInfo");
+
+    useEffect(() => {
+        if (!contactOpen) return;
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") setContactOpen(false);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [contactOpen]);
+
+    const hasRequiredParams = Boolean(projectId && unitId);
+    const isWaitingForFetch = hasRequiredParams && !unit && !error;
+    const showLoader = !unit && (loading || isWaitingForFetch);
 
     useEffect(() => {
         const requestedKey = `${projectId}:${unitId}`;
@@ -107,223 +59,120 @@ function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}
         // onFilterChange identity changes every withAxios render — do not add to deps.
     }, [projectId, unitId]);
 
-    const mediaUrls = useMemo(() => {
-        if (!unit) return [] as string[];
-        if (unit.imageGallery?.length) return unit.imageGallery.filter(Boolean);
-        return [unit.floorPlanImage, dyeusAssets.villaFeature, dyeusAssets.amenitySide].filter(
-            Boolean,
-        ) as string[];
-    }, [unit]);
+    const handleBack = () => {
+        const historyIdx = (window.history.state as {idx?: number} | null)?.idx;
+        if (typeof historyIdx === "number" && historyIdx > 0) {
+            navigate(-1);
+            return;
+        }
+        navigate(projectId ? `/residences?projectId=${projectId}` : "/residences");
+    };
 
-    const images = useMemo(() => mediaUrls.filter((url) => !isVideoUrl(url)), [mediaUrls]);
-    const videos = useMemo(() => mediaUrls.filter(isVideoUrl), [mediaUrls]);
-    const gallery = images.length > 0 ? images : mediaUrls.length === 0 ? [dyeusAssets.villaFeature] : [];
+    const openContactForm = (mode: ContactMode) => {
+        setContactMode(mode);
+        setContactOpen(true);
+    };
 
-    const detailRows = unit
-        ? (
-              [
-                  {label: t("unitNumber"), value: unit.unitNumber?.trim() || null},
-                  {label: t("unitType"), value: unit.unitTypeName?.trim() || null},
-                  {
-                      label: t("propertyType"),
-                      value: unit.propertyType ? t(`propertyType_${unit.propertyType}`) : null,
-                  },
-                  {label: t("grossArea"), value: formatAreaSqm(unit.grossAreaSqm)},
-                  {label: t("netArea"), value: formatAreaSqm(unit.netAreaSqm)},
-                  {label: t("sharedArea"), value: formatAreaSqm(unit.sharedAreaSqm)},
-                  {label: t("verandaArea"), value: formatAreaSqm(unit.verandaAreaSqm)},
-                  {
-                      label: t("area"),
-                      value:
-                          unit.grossAreaSqm == null && unit.areaSqm != null
-                              ? formatAreaSqm(unit.areaSqm)
-                              : null,
-                  },
-                  {label: t("bedrooms"), value: formatCount(unit.bedrooms)},
-                  {label: t("bathrooms"), value: formatCount(unit.bathrooms)},
-                  {label: t("floor"), value: formatFloor(unit)},
-                  {label: t("orientation"), value: unit.orientation ?? null},
-                  {
-                      label: t("constructionStatus"),
-                      value: unit.constructionStatus
-                          ? t(`constructionStatus_${unit.constructionStatus}`)
-                          : null,
-                  },
-                  {label: t("price"), value: formatUnitPrice(unit, t("priceOnRequest"))},
-                  {
-                      label: t("averagePricePerSquareMeter"),
-                      value: formatPricePerSqm(unit.averagePricePerSquareMeter),
-                  },
-                  {
-                      label: t("projectedYield"),
-                      value:
-                          unit.projectedYield != null
-                              ? `${formatNumber(unit.projectedYield)}%`
-                              : null,
-                  },
-              ] as {label: string; value: string | null}[]
-          ).filter((row) => row.value != null)
-        : [];
+    function renderMainContent() {
+        if (!hasRequiredParams) {
+            return <p className="font-dyeus-serif text-lg text-dyeus-ink-muted md:text-2xl">{t("missingParams")}</p>;
+        }
 
-    const featureRows = unit
-        ? FEATURE_ROWS.filter((row) => unit[row.field] != null).map((row) => ({
-              label: t(row.labelKey),
-              value: unit[row.field] ? t("yes") : t("no"),
-          }))
-        : [];
+        if (error) {
+            return (
+                <div>
+                    <p className="font-dyeus-serif text-lg text-dyeus-ink-muted md:text-2xl">{t("loadError")}</p>
+                    {error.message ? (
+                        <p className="mt-3 font-dyeus-serif text-base text-dyeus-ink-muted md:text-lg">
+                            {error.message}
+                        </p>
+                    ) : null}
+                </div>
+            );
+        }
 
-    const statusLabel = unit
-        ? t(STATUS_KEYS[unit.status] ?? "statusAvailable")
-        : "";
+        if (showLoader) {
+            return (
+                <div className="flex min-h-[400px] items-center justify-center">
+                    <Loader />
+                </div>
+            );
+        }
+
+        if (!unit) {
+            return <p className="font-dyeus-serif text-lg text-dyeus-ink-muted md:text-2xl">{t("notFound")}</p>;
+        }
+
+        return (
+            <>
+                <DyeusPropertyGallerySection unit={unit} t={t} />
+                <div className="mt-8 grid w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 md:mt-12">
+                    <div className="min-w-0 lg:col-span-7 xl:col-span-8">
+                        <DyeusPropertyDetailsSection
+                            unit={unit}
+                            t={t}
+                            onRequestInfo={() => openContactForm("requestInfo")}
+                        />
+                    </div>
+                    <div className="min-w-0 lg:col-span-5 xl:col-span-4">
+                        <DyeusPropertySidebarSection
+                            unit={unit}
+                            t={t}
+                            onReserve={() => openContactForm("reserve")}
+                        />
+                    </div>
+                </div>
+            </>
+        );
+    }
 
     return (
         <DyeusPageShell nodeId="44:property" nodeName="Property">
             <div className="relative">
                 <DyeusHeader variant="solid" />
-                <div className="mx-auto max-w-[1440px] px-6 pb-20 pt-28 md:px-12 md:pt-36">
-                    <Link
-                        to={`/residences${projectId ? `?projectId=${projectId}` : ""}`}
-                        className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
-                    >
-                        {t("backToResidences")}
-                    </Link>
-
-                    {!projectId || !unitId ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("missingParams")}</p>
-                    ) : error ? (
-                        <p className="mt-10 font-dyeus-sans text-dyeus-ink-muted">{t("loadError")}</p>
-                    ) : loading && !unit ? (
-                        <div className="mt-20 flex justify-center">
-                            <Loader />
-                        </div>
-                    ) : unit ? (
-                        <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-                            <div>
-                                {gallery.length > 0 ? (
-                                    <>
-                                        <button
-                                            type="button"
-                                            onClick={() => setLightbox({kind: "image", index: 0})}
-                                            className="relative aspect-[16/11] w-full cursor-zoom-in overflow-hidden bg-dyeus-sand"
-                                            aria-label={fillLanguageTemplate(t("openImage"), {index: 1})}
-                                        >
-                                            <img
-                                                src={gallery[0] || dyeusAssets.villaFeature}
-                                                alt=""
-                                                className="size-full object-cover"
-                                            />
-                                        </button>
-                                        {gallery.length > 1 && (
-                                            <div className="mt-3 grid grid-cols-3 gap-3">
-                                                {gallery.slice(1, 4).map((src, thumbIndex) => {
-                                                    const index = thumbIndex + 1;
-                                                    return (
-                                                        <button
-                                                            key={`${src}-${index}`}
-                                                            type="button"
-                                                            onClick={() => setLightbox({kind: "image", index})}
-                                                            className="relative aspect-[4/3] cursor-zoom-in overflow-hidden"
-                                                            aria-label={fillLanguageTemplate(t("openImage"), {
-                                                                index: index + 1,
-                                                            })}
-                                                        >
-                                                            <img
-                                                                src={src}
-                                                                alt=""
-                                                                className="size-full object-cover"
-                                                            />
-                                                        </button>
-                                                    );
-                                                })}
-                                            </div>
-                                        )}
-                                    </>
-                                ) : null}
-                                {videos.length > 0 ? (
-                                    <div className={`grid gap-3 sm:grid-cols-2 ${gallery.length > 0 ? "mt-3" : ""}`}>
-                                        {videos.map((src, index) => (
-                                            <button
-                                                key={`${src}-${index}`}
-                                                type="button"
-                                                onClick={() => setLightbox({kind: "video", index})}
-                                                className="group relative aspect-video cursor-pointer overflow-hidden bg-dyeus-sand"
-                                                aria-label={fillLanguageTemplate(t("playVideo"), {
-                                                    index: index + 1,
-                                                })}
-                                            >
-                                                <video
-                                                    src={src}
-                                                    muted
-                                                    playsInline
-                                                    preload="metadata"
-                                                    className="pointer-events-none size-full object-cover"
-                                                />
-                                                <span className="absolute inset-0 flex items-center justify-center bg-dyeus-ink/25 transition group-hover:bg-dyeus-ink/40">
-                                                    <span className="flex size-12 items-center justify-center rounded-full bg-dyeus-cream/95 text-dyeus-ink shadow-sm">
-                                                        <Play
-                                                            className="ml-0.5 size-5 fill-current"
-                                                            strokeWidth={1.25}
-                                                        />
-                                                    </span>
-                                                </span>
-                                            </button>
-                                        ))}
-                                    </div>
-                                ) : null}
-                            </div>
-                            <aside className="bg-dyeus-white p-6 md:p-8">
-                                <p className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-bronze">
-                                    {statusLabel}
-                                </p>
-                                <h1 className="mt-3 font-dyeus-serif text-4xl md:text-5xl">{unit.name}</h1>
-                                {detailRows.length > 0 && (
-                                    <dl className="mt-8 space-y-4 border-t border-dyeus-border pt-6 font-dyeus-sans text-sm">
-                                        {detailRows.map((row) => (
-                                            <DetailRow key={row.label} label={row.label} value={row.value} />
-                                        ))}
-                                    </dl>
-                                )}
-                                {featureRows.length > 0 && (
-                                    <div className="mt-8 border-t border-dyeus-border pt-6">
-                                        <h2 className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-ink-muted">
-                                            {t("features")}
-                                        </h2>
-                                        <dl className="mt-4 space-y-4 font-dyeus-sans text-sm">
-                                            {featureRows.map((row) => (
-                                                <DetailRow
-                                                    key={row.label}
-                                                    label={row.label}
-                                                    value={row.value}
-                                                />
-                                            ))}
-                                        </dl>
-                                    </div>
-                                )}
-                                {unit.description && (
-                                    <p className="mt-6 font-dyeus-sans text-sm leading-relaxed text-dyeus-ink-muted">
-                                        {unit.description}
-                                    </p>
-                                )}
-                                <button
-                                    type="button"
-                                    onClick={() => setContactOpen(true)}
-                                    className="mt-8 w-full bg-dyeus-ink px-6 py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream transition hover:bg-dyeus-bronze-deep"
-                                >
-                                    {t("requestInfo")}
-                                </button>
-                            </aside>
-                        </div>
-                    ) : null}
+                <div className="mx-auto max-w-[1728px] px-6 pb-20 pt-28 md:px-[60px] md:pt-36">
+                    <div className="mb-8 flex min-w-0 items-center gap-2 sm:gap-3 md:mb-10 md:gap-4">
+                        <button
+                            type="button"
+                            onClick={handleBack}
+                            className="-ml-2 flex shrink-0 items-center justify-center p-1 text-dyeus-ink transition hover:text-dyeus-bronze sm:-ml-2.5 md:-ml-3"
+                            aria-label={t("back")}
+                        >
+                            <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                        </button>
+                        {unit?.name ? (
+                            <h1 className="min-w-0 flex-1 font-dyeus-serif text-4xl font-bold leading-[1.1] text-dyeus-ink sm:text-5xl md:text-6xl lg:text-7xl">
+                                {unit.name}
+                            </h1>
+                        ) : null}
+                    </div>
+                    {renderMainContent()}
                 </div>
             </div>
 
             {contactOpen && unit ? (
-                <div className="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4">
-                    <div className="w-full max-w-md bg-dyeus-cream p-6 shadow-lg md:p-8">
+                <div
+                    className="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="dyeus-property-contact-title"
+                    onClick={() => setContactOpen(false)}
+                >
+                    <div
+                        className="w-full max-w-md bg-dyeus-cream p-6 shadow-lg md:p-8"
+                        onClick={(event) => event.stopPropagation()}
+                    >
                         <div className="flex items-start justify-between gap-4">
                             <div>
-                                <h2 className="font-dyeus-serif text-3xl">{t("requestInfo")}</h2>
-                                <p className="mt-1 font-dyeus-sans text-sm text-dyeus-ink-muted">{unit.name}</p>
+                                <h2
+                                    id="dyeus-property-contact-title"
+                                    className="font-dyeus-serif text-3xl"
+                                >
+                                    {t(contactMode === "reserve" ? "reserveOnline" : "requestInfo")}
+                                </h2>
+                                <p className="mt-1 font-dyeus-sans text-sm text-dyeus-ink-muted">
+                                    {t("formUnitLabel")}: {unit.name}
+                                </p>
                             </div>
                             <button
                                 type="button"
@@ -334,8 +183,9 @@ function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}
                             </button>
                         </div>
                         <DyeusMarketingContactForm
+                            key={`${contactMode}:${projectId}:${unitId}`}
                             className="mt-6"
-                            lockInterestToReservation
+                            lockInterestToReservation={contactMode === "reserve"}
                             projectInterest={projectId}
                             unitInterest={unitId}
                             defaultMessage={fillLanguageTemplate(t("defaultMessage"), {name: unit.name})}
@@ -343,16 +193,6 @@ function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}
                         />
                     </div>
                 </div>
-            ) : null}
-
-            {lightbox ? (
-                <DyeusMediaLightbox
-                    kind={lightbox.kind}
-                    images={images.length > 0 ? images : gallery}
-                    videos={videos}
-                    initialIndex={lightbox.index}
-                    onClose={() => setLightbox(null)}
-                />
             ) : null}
 
             <DyeusFooter />
