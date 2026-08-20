@@ -230,7 +230,7 @@ const propertyManagementSidebarContribution: SidebarContribution = {
     getNavGroups(resolveLanguageKey: ResolveLanguageKey): NavGroup[] {
         return [
             buildRealEstateNavGroup(resolveLanguageKey),
-            buildPropertyManagementNavGroup(resolveLanguageKey),
+            // buildPropertyManagementNavGroup(resolveLanguageKey),
         ];
     },
 };
