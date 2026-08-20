@@ -10,6 +10,7 @@ import {
     type DyeusTranslate,
 } from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
+import {PublicSnapCarousel} from "@propertyManagementModule/clients/client/public/shared/sections/publicSnapCarousel.tsx";
 import type {
     MarketingFeaturedUnit,
     MarketingFeaturedUnitsResponse,
@@ -73,6 +74,75 @@ function unitHref(unit: MarketingFeaturedUnit): string {
     return `/property?${params.toString()}`;
 }
 
+const SNAP_SCROLLER =
+    "hide-scrollbar flex w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:snap-none lg:gap-8 lg:overflow-visible";
+
+function FeaturedResidenceCard({
+    unit,
+    wide,
+    t,
+}: {
+    unit: MarketingFeaturedUnit;
+    wide: boolean;
+    t: DyeusTranslate;
+}) {
+    const image =
+        resolveMarketingMediaUrl(unit.mainImage) ??
+        resolveMarketingMediaUrl(unit.imageGallery?.[0]) ??
+        dyeusAssets.residenceC01;
+    const statusKey = STATUS_KEYS[unit.status] ?? "statusAvailable";
+    const statusLabel = t(statusKey);
+    const galleryCount = Math.max(1, unit.imageGallery?.length ?? 1);
+
+    return (
+        <Link
+            to={unitHref(unit)}
+            className={`flex h-full flex-col gap-6 border border-dyeus-border p-6 ${
+                wide ? "lg:w-[645px] lg:shrink-0" : "lg:w-[450px] lg:shrink-0"
+            }`}
+        >
+            <div className="relative h-[300px] overflow-hidden rounded-[5px] md:h-[420px] lg:h-[635px]">
+                <img src={image} alt="" className="size-full object-cover" />
+                <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-1.5 lg:flex">
+                    {Array.from({length: Math.min(galleryCount, 5)}, (_, dotIndex) => (
+                        <span
+                            key={dotIndex}
+                            className={
+                                dotIndex === 0
+                                    ? "h-3 w-8 rounded-[22px] bg-white"
+                                    : "size-3 rounded-[22px] bg-white/50"
+                            }
+                        />
+                    ))}
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-between gap-3">
+                    <p className="font-dyeus-serif text-[clamp(1.75rem,2.5vw,2.5rem)] font-bold leading-none text-dyeus-ink">
+                        {unit.unitNumber || unit.name}
+                    </p>
+                    <span className="flex items-center gap-1 rounded-full bg-[rgba(18,183,106,0.1)] px-4 py-2 backdrop-blur-[47px]">
+                        <img src={dyeusAssets.iconAvailable} alt="" className="size-[18px]" />
+                        <span className="font-dyeus-serif text-sm font-bold leading-[1.2] text-dyeus-available md:text-xl">
+                            {statusLabel}
+                        </span>
+                    </span>
+                </div>
+                <p className="font-dyeus-serif text-xl leading-none text-dyeus-ink-muted md:text-2xl">
+                    {formatUnitTitle(unit, t)}
+                </p>
+            </div>
+
+            <div className="flex items-center justify-center rounded-[4px] border border-dyeus-ink-muted py-3">
+                <p className="font-dyeus-serif text-xl font-bold leading-[1.2] text-dyeus-ink md:text-2xl">
+                    {formatPrice(unit.price)}
+                </p>
+            </div>
+        </Link>
+    );
+}
+
 function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidencesSectionProps) {
     const {t} = useDyeusT(HOME_LANGUAGE_PATH);
     const units = useMemo(() => data?.units ?? [], [data?.units]);
@@ -103,70 +173,23 @@ function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidenc
                 </Link>
             </div>
 
-            <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:gap-8">
-                {units.map((unit, index) => {
-                    const image =
-                        resolveMarketingMediaUrl(unit.mainImage) ??
-                        resolveMarketingMediaUrl(unit.imageGallery?.[0]) ??
-                        dyeusAssets.residenceC01;
-                    const wide = index === 0;
-                    const statusKey = STATUS_KEYS[unit.status] ?? "statusAvailable";
-                    const statusLabel = t(statusKey);
-                    const galleryCount = Math.max(1, unit.imageGallery?.length ?? 1);
-
-                    return (
-                        <Link
+            <div className="relative mt-8 min-w-0 w-full overflow-x-hidden">
+                <PublicSnapCarousel
+                    scrollerClassName={SNAP_SCROLLER}
+                    itemClassName="max-lg:w-full max-lg:min-w-full max-lg:shrink-0 max-lg:snap-start lg:contents"
+                    activeDotClassName="bg-dyeus-ink"
+                    inactiveDotClassName="bg-dyeus-ink/20"
+                    dotsHiddenClassName="lg:hidden"
+                >
+                    {units.map((unit, index) => (
+                        <FeaturedResidenceCard
                             key={unit._id}
-                            to={unitHref(unit)}
-                            className={`flex flex-col gap-6 border border-dyeus-border p-6 ${
-                                wide ? "lg:w-[645px] lg:shrink-0" : "lg:w-[450px] lg:shrink-0"
-                            }`}
-                        >
-                            <div className="relative h-[420px] overflow-hidden rounded-[5px] md:h-[635px]">
-                                <img
-                                    src={image}
-                                    alt=""
-                                    className="size-full object-cover"
-                                />
-                                <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-1.5">
-                                    {Array.from({length: Math.min(galleryCount, 5)}, (_, dotIndex) => (
-                                        <span
-                                            key={dotIndex}
-                                            className={
-                                                dotIndex === 0
-                                                    ? "h-3 w-8 rounded-[22px] bg-white"
-                                                    : "size-3 rounded-[22px] bg-white/50"
-                                            }
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col gap-4">
-                                <div className="flex items-center justify-between gap-3">
-                                    <p className="font-dyeus-serif text-[clamp(1.75rem,2.5vw,2.5rem)] font-bold leading-none text-dyeus-ink">
-                                        {unit.unitNumber || unit.name}
-                                    </p>
-                                    <span className="flex items-center gap-1 rounded-full bg-[rgba(18,183,106,0.1)] px-4 py-2 backdrop-blur-[47px]">
-                                        <img src={dyeusAssets.iconAvailable} alt="" className="size-[18px]" />
-                                        <span className="font-dyeus-serif text-sm font-bold leading-[1.2] text-dyeus-available md:text-xl">
-                                            {statusLabel}
-                                        </span>
-                                    </span>
-                                </div>
-                                <p className="font-dyeus-serif text-xl leading-none text-dyeus-ink-muted md:text-2xl">
-                                    {formatUnitTitle(unit, t)}
-                                </p>
-                            </div>
-
-                            <div className="flex items-center justify-center rounded-[4px] border border-dyeus-ink-muted py-3">
-                                <p className="font-dyeus-serif text-xl font-bold leading-[1.2] text-dyeus-ink md:text-2xl">
-                                    {formatPrice(unit.price)}
-                                </p>
-                            </div>
-                        </Link>
-                    );
-                })}
+                            unit={unit}
+                            wide={index === 0}
+                            t={t}
+                        />
+                    ))}
+                </PublicSnapCarousel>
             </div>
         </section>
     );

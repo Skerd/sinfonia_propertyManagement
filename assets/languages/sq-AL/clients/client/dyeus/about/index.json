@@ -31,11 +31,5 @@
   "pressAppearances": "Paraqitje",
   "pressNews": "Lajme & shtyp",
   "pressAria": "Lajme dhe shtyp",
-  "newsDefault": "Lajme",
-  "fallbackPress1Title": "Udhëzues lokal për Dhërmi, përtej plazheve",
-  "fallbackPress1Meta": "18 qershor 2025 • Lajme",
-  "fallbackPress2Title": "Ku të gjeni perëndimet më të bukura në Rivierën Shqiptare",
-  "fallbackPress2Meta": "18 qershor 2025 • Lajme",
-  "fallbackPress3Title": "Shtatë plazhe brenda arritjes së DYEUS",
-  "fallbackPress3Meta": "18 qershor 2025 • Lajme"
+  "newsDefault": "Lajme"
 }

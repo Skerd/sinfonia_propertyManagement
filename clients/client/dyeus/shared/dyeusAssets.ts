@@ -28,9 +28,6 @@ import aboutPool from "@propertyManagementModule/assets/images/dyeus/about-pool.
 import aboutStairs from "@propertyManagementModule/assets/images/dyeus/about-stairs.png";
 import aboutPlan from "@propertyManagementModule/assets/images/dyeus/about-plan.png";
 import aboutArtech from "@propertyManagementModule/assets/images/dyeus/about-artech.png";
-import aboutPress1 from "@propertyManagementModule/assets/images/dyeus/about-press-1.png";
-import aboutPress2 from "@propertyManagementModule/assets/images/dyeus/about-press-2.png";
-import aboutPress3 from "@propertyManagementModule/assets/images/dyeus/about-press-3.png";
 
 export const dyeusAssets = {
     heroBg,
@@ -63,9 +60,6 @@ export const dyeusAssets = {
     aboutStairs,
     aboutPlan,
     aboutArtech,
-    aboutPress1,
-    aboutPress2,
-    aboutPress3,
     // Temporary aliases for non-home pages until those screens are cloned
     hero: heroBg,
     villaPool: villaFeature,

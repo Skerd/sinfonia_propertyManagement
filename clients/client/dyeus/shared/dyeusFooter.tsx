@@ -154,7 +154,7 @@ function DyeusFooter() {
     return (
         <footer className="relative w-full overflow-hidden bg-dyeus-cream text-dyeus-ink">
             <div className="w-full bg-dyeus-bronze">
-                <div className="mx-auto flex h-auto max-w-[1728px] flex-col items-start justify-between gap-4 px-6 py-5 md:h-[100px] md:flex-row md:items-center md:px-[61px] md:py-0">
+                <div className="flex h-auto w-full flex-col items-start justify-between gap-4 px-6 py-5 md:h-[100px] md:flex-row md:items-center md:px-[61px] md:py-0">
                     <p className="font-dyeus-serif text-[clamp(1.5rem,2.5vw,2.75rem)] font-bold leading-none text-dyeus-cream">
                         {availabilityLabel}
                     </p>
@@ -167,7 +167,7 @@ function DyeusFooter() {
                 </div>
             </div>
 
-            <div className="relative mx-auto min-h-[586px] max-w-[1728px] px-6 pb-8 pt-11 md:px-[61px]">
+            <div className="relative min-h-[586px] w-full px-6 pb-8 pt-11 md:px-[61px]">
                 <MandalaPattern />
 
                 <div className="relative z-10 grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-6">

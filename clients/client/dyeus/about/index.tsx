@@ -28,27 +28,6 @@ const INTRO_FACT_KEYS = [
     {labelKey: "duplexLabel", valueKey: "duplexValue"},
 ] as const;
 
-const FALLBACK_PRESS_KEYS = [
-    {
-        _id: "fallback-1",
-        titleKey: "fallbackPress1Title",
-        metaKey: "fallbackPress1Meta",
-        image: dyeusAssets.aboutPress1,
-    },
-    {
-        _id: "fallback-2",
-        titleKey: "fallbackPress2Title",
-        metaKey: "fallbackPress2Meta",
-        image: dyeusAssets.aboutPress2,
-    },
-    {
-        _id: "fallback-3",
-        titleKey: "fallbackPress3Title",
-        metaKey: "fallbackPress3Meta",
-        image: dyeusAssets.aboutPress3,
-    },
-] as const;
-
 function t(resolveLanguageKey: ResolveLanguageKey, key: string): string {
     return String(resolveLanguageKey(key));
 }
@@ -111,30 +90,18 @@ function AboutPageInner({data, loading, error, onFilterChange, resolveLanguageKe
         [resolveLanguageKey],
     );
 
-    const fallbackPressStories = useMemo(
-        () =>
-            FALLBACK_PRESS_KEYS.map((story) => ({
-                _id: story._id,
-                title: t(resolveLanguageKey, story.titleKey),
-                meta: t(resolveLanguageKey, story.metaKey),
-                image: story.image,
-                href: "/journal",
-            })),
-        [resolveLanguageKey],
-    );
-
-    const liveStories = useMemo(() => {
+    const stories = useMemo(() => {
         return (data?.stories ?? []).slice(0, 3).map((story) => ({
             _id: story._id,
             title: story.title,
             meta: formatStoryMeta(resolveLanguageKey, story.publishedAt, story.storyTypeName),
-            image: resolveMarketingMediaUrl(story.mainImage) || dyeusAssets.aboutPress1,
+            image: resolveMarketingMediaUrl(story.mainImage),
             href: storyHref(story._id, projectId || story.projectId),
         }));
     }, [data?.stories, projectId, resolveLanguageKey]);
 
-    const pressStories = liveStories.length > 0 ? liveStories : fallbackPressStories;
-    const showPressLoader = resolvingProject || (loading && liveStories.length === 0 && !!projectId && !error);
+    const showStoriesLoader = resolvingProject || (loading && stories.length === 0 && !!projectId && !error);
+    const showStoriesSection = showStoriesLoader || stories.length > 0;
     const pressTicker = [...pressTickerItems, ...pressTickerItems, ...pressTickerItems, ...pressTickerItems];
 
     return (
@@ -294,61 +261,65 @@ function AboutPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                     </div>
                 </section>
 
-                <section
-                    className="overflow-hidden pb-20 md:pb-28"
-                    aria-label={t(resolveLanguageKey, "pressAria")}
-                >
-                    <div className="dyeus-marquee mb-10 flex w-max items-center gap-12 md:mb-11">
-                        {pressTicker.map((item, index) => (
-                            <div key={`${item}-${index}`} className="flex items-center gap-12">
-                                <div className="size-10 shrink-0 overflow-hidden md:size-[65px]">
-                                    <img
-                                        src={dyeusAssets.mandala}
-                                        alt=""
-                                        className="relative left-[-36.85%] top-[-36.51%] size-[173.33%] max-w-none"
-                                    />
+                {showStoriesSection ? (
+                    <section
+                        className="overflow-hidden pb-20 md:pb-28"
+                        aria-label={t(resolveLanguageKey, "pressAria")}
+                    >
+                        <div className="dyeus-marquee mb-10 flex w-max items-center gap-12 md:mb-11">
+                            {pressTicker.map((item, index) => (
+                                <div key={`${item}-${index}`} className="flex items-center gap-12">
+                                    <div className="size-10 shrink-0 overflow-hidden md:size-[65px]">
+                                        <img
+                                            src={dyeusAssets.mandala}
+                                            alt=""
+                                            className="relative left-[-36.85%] top-[-36.51%] size-[173.33%] max-w-none"
+                                        />
+                                    </div>
+                                    <p className="whitespace-nowrap font-dyeus-serif text-3xl font-bold leading-none text-dyeus-ink md:text-[64px]">
+                                        {item}
+                                    </p>
                                 </div>
-                                <p className="whitespace-nowrap font-dyeus-serif text-3xl font-bold leading-none text-dyeus-ink md:text-[64px]">
-                                    {item}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
 
-                    <div className="mx-auto max-w-[1728px] px-6 md:px-[60px]">
-                        {showPressLoader ? (
-                            <div className="flex items-center justify-center py-24">
-                                <Loader />
-                            </div>
-                        ) : (
-                            <div className="grid gap-8 md:grid-cols-3">
-                                {pressStories.map((story) => (
-                                    <Link key={story._id} to={story.href} className="group block">
-                                        <article className="relative aspect-[521/665] overflow-hidden bg-dyeus-sand/40">
-                                            <img
-                                                src={story.image}
-                                                alt=""
-                                                className="size-full object-cover transition duration-700 group-hover:scale-105"
-                                            />
-                                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/5" />
-                                            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
-                                                <div className="min-w-0 space-y-2">
-                                                    <p className="font-dyeus-sans text-sm text-white/90 md:text-xl">
-                                                        {story.meta}
-                                                    </p>
-                                                    <h3 className="font-dyeus-serif text-2xl font-extrabold leading-none text-white md:text-[32px]">
-                                                        {story.title}
-                                                    </h3>
+                        <div className="mx-auto max-w-[1728px] px-6 md:px-[60px]">
+                            {showStoriesLoader ? (
+                                <div className="flex items-center justify-center py-24">
+                                    <Loader />
+                                </div>
+                            ) : (
+                                <div className="grid gap-8 md:grid-cols-3">
+                                    {stories.map((story) => (
+                                        <Link key={story._id} to={story.href} className="group block">
+                                            <article className="relative aspect-[521/665] overflow-hidden bg-dyeus-sand/40">
+                                                {story.image ? (
+                                                    <img
+                                                        src={story.image}
+                                                        alt=""
+                                                        className="size-full object-cover transition duration-700 group-hover:scale-105"
+                                                    />
+                                                ) : null}
+                                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/5" />
+                                                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+                                                    <div className="min-w-0 space-y-2">
+                                                        <p className="font-dyeus-sans text-sm text-white/90 md:text-xl">
+                                                            {story.meta}
+                                                        </p>
+                                                        <h3 className="font-dyeus-serif text-2xl font-extrabold leading-none text-white md:text-[32px]">
+                                                            {story.title}
+                                                        </h3>
+                                                    </div>
+                                                    <ArrowUpRight className="size-8 shrink-0 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                                 </div>
-                                                <ArrowUpRight className="size-8 shrink-0 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                            </div>
-                                        </article>
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                </section>
+                                            </article>
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </section>
+                ) : null}
             </div>
             <DyeusFooter />
         </DyeusPageShell>

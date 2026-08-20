@@ -5,8 +5,10 @@ type PublicSnapCarouselProps = {
     scrollerClassName: string;
     itemClassName?: string;
     rowNodeId?: string;
+    activeDotClassName?: string;
     inactiveDotClassName?: string;
     dotsClassName?: string;
+    dotsHiddenClassName?: string;
 };
 
 export function PublicSnapCarousel({
@@ -14,8 +16,10 @@ export function PublicSnapCarousel({
     scrollerClassName,
     itemClassName,
     rowNodeId,
+    activeDotClassName = "bg-pronix-blue",
     inactiveDotClassName = "bg-[#d9d9d9]",
     dotsClassName,
+    dotsHiddenClassName = "md:hidden",
 }: PublicSnapCarouselProps) {
     const items = Children.toArray(children);
     const scrollerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +68,7 @@ export function PublicSnapCarousel({
                     </div>
                 ))}
             </div>
-            <div className={`mt-3 flex w-full items-center justify-center gap-2.5 md:hidden ${dotsClassName ?? ""}`} role="tablist" aria-label="Carousel">
+            <div className={`mt-3 flex w-full items-center justify-center gap-2.5 ${dotsHiddenClassName} ${dotsClassName ?? ""}`} role="tablist" aria-label="Carousel">
                 {items.map((child, index) => {
                     const isActive = index === activeIndex;
                     return (
@@ -77,7 +81,7 @@ export function PublicSnapCarousel({
                             onClick={() => scrollToIndex(index)}
                             className={
                                 isActive
-                                    ? "h-2.5 w-8 shrink-0 rounded-full bg-pronix-blue"
+                                    ? `h-2.5 w-8 shrink-0 rounded-full ${activeDotClassName}`
                                     : `size-2.5 shrink-0 rounded-full ${inactiveDotClassName}`
                             }
                         />

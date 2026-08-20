@@ -26,7 +26,7 @@ function IntroSection() {
     );
 
     return (
-        <section className="mx-auto max-w-[1728px] px-6 pb-16 pt-16 md:px-[60px] md:pb-20 md:pt-[60px]">
+        <section className="w-full px-6 pb-16 pt-16 md:px-[60px] md:pb-20 md:pt-[60px]">
             <div className="flex items-start justify-between gap-8">
                 <p className="max-w-[1295px] font-dyeus-serif text-[clamp(1.75rem,4vw,4rem)] font-bold leading-none text-dyeus-ink">
                     {t("introLead")}
