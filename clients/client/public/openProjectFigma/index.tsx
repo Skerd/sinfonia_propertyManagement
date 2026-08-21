@@ -1,4 +1,4 @@
-import {useEffect, useState, type ReactNode} from "react";
+import {useEffect, useMemo, useState, type ReactNode} from "react";
 import {compose} from "redux";
 import {Link, Navigate, useParams, useSearchParams} from "react-router-dom";
 import {ChevronLeft} from "lucide-react";
@@ -14,6 +14,7 @@ import {useProjectId} from "@propertyManagementModule/clients/client/public/proj
 import {resolveProjectFallbackImage} from "@propertyManagementModule/clients/client/public/project/shared/resolveProjectFallbackImage.ts";
 import OpenProjectFigma3dStage from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigma3dStage.tsx";
 import OpenProjectFigmaFloorPanel from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaFloorPanel.tsx";
+import OpenProjectFigmaUnitPanel from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaUnitPanel.tsx";
 import type {MarketingEdificeListItem, MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {
     isOpenProjectFigmaView,
@@ -24,6 +25,8 @@ import OpenProjectFigmaGalleryStage from "@propertyManagementModule/clients/clie
 import OpenProjectFigmaEdificeStats from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaEdificeStats.tsx";
 import OpenProjectFigmaFinanceChart from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaFinanceChart.tsx";
 import OpenProjectFigmaGridView from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaGridView.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 
 type MarketingProjectSingleResponse = {project: MarketingProjectSingle};
 
@@ -150,12 +153,27 @@ function OpenProjectFigma3dPage({
     const selectedFloor = selectedEdifice?.floors?.find((floor) => floor._id === selectedFloorId);
     const placeholderImage = resolveProjectFallbackImage(project);
     const [hoveredUnitId, setHoveredUnitId] = useState<string | null>(null);
+    const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
+    const unitPanelOpen = Boolean(selectedUnitId);
+    const selectedUnitLabel = useMemo(() => {
+        if (!selectedUnitId) {
+            return undefined;
+        }
+        return flattenCatalogUnits(project).find((unit) => unit._id === selectedUnitId)?.name;
+    }, [project, selectedUnitId]);
+
+    useEffect(() => {
+        setSelectedUnitId(null);
+        setHoveredUnitId(null);
+    }, [selectedFloorId]);
 
     const clearFloor = () => {
         const params = new URLSearchParams(searchParams);
         params.set("projectId", project._id);
         params.delete("edificeId");
         params.delete("floorId");
+        setSelectedUnitId(null);
+        setHoveredUnitId(null);
         setSearchParams(params);
     };
 
@@ -187,7 +205,7 @@ function OpenProjectFigma3dPage({
                     </PublicSection>
                 </div>
 
-                <div className={`absolute inset-x-4 top-24 text-white sm:inset-x-6 lg:inset-x-[52px] lg:top-28 ${selectedFloor ? "lg:pr-[32rem]" : ""}`}>
+                <div className="absolute inset-x-4 top-24 z-30 text-white sm:inset-x-6 lg:inset-x-[52px] lg:top-28">
                     <div className="flex min-w-0 items-center gap-2 sm:gap-3 md:gap-4">
                         <Link
                             to="/projects"
@@ -196,24 +214,37 @@ function OpenProjectFigma3dPage({
                         >
                             <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
                         </Link>
-                        <h1 className="min-w-0 flex-1 wrap-break-word font-aeonik-medium text-4xl leading-[1.2] tracking-normal not-italic sm:text-5xl lg:text-[83.1px]">
+                        <h1 className="min-w-0 flex-1 truncate whitespace-nowrap font-aeonik-medium text-4xl leading-[1.2] tracking-normal not-italic sm:text-5xl lg:text-[83.1px]">
                             {project.name}
                         </h1>
                     </div>
-                    {selectedEdifice?.name ? (
-                        <p className="mt-1.5 font-aeonik-light text-xl leading-[1.2] lg:text-2xl">{selectedEdifice.name}</p>
-                    ) : null}
-                    {project.location || selectedEdifice?.location ? (
-                        <p className="mt-1.5 font-aeonik-light text-xl leading-[1.2] lg:text-2xl">
-                            {selectedEdifice?.location || project.location}
-                        </p>
-                    ) : null}
-                    <Link
-                        to={openProjectFigmaPath("grid", project._id)}
-                        className="pointer-events-auto mt-3 inline-block font-aeonik-light text-lg text-white underline decoration-white/70 underline-offset-4 transition hover:decoration-white lg:text-xl"
+                    {/* Meta stays left of panels — must not push panel top/height. */}
+                    <div
+                        className={cn(
+                            selectedFloor
+                                ? unitPanelOpen
+                                    ? "lg:max-w-[calc(100%-min(calc(100vw-6.5rem),calc(30rem+1rem+50vw))-1rem)]"
+                                    : "lg:max-w-[calc(100%-31rem)]"
+                                : undefined,
+                        )}
                     >
-                        {resolveLanguageKey("viewAllUnits")}
-                    </Link>
+                        {selectedEdifice?.name ? (
+                            <p className="mt-1.5 truncate font-aeonik-light text-xl leading-[1.2] lg:text-2xl">
+                                {selectedEdifice.name}
+                            </p>
+                        ) : null}
+                        {project.location || selectedEdifice?.location ? (
+                            <p className="mt-1.5 truncate font-aeonik-light text-xl leading-[1.2] lg:text-2xl">
+                                {selectedEdifice?.location || project.location}
+                            </p>
+                        ) : null}
+                        <Link
+                            to={openProjectFigmaPath("grid", project._id)}
+                            className="pointer-events-auto mt-3 inline-block font-aeonik-light text-lg text-white underline decoration-white/70 underline-offset-4 transition hover:decoration-white lg:text-xl"
+                        >
+                            {resolveLanguageKey("viewAllUnits")}
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="pointer-events-auto absolute bottom-10 left-4 z-30 sm:left-6 lg:left-[52px]">
@@ -221,20 +252,58 @@ function OpenProjectFigma3dPage({
                 </div>
 
                 {selectedFloor ? (
-                    <aside className="pointer-events-auto absolute inset-x-4 top-36 bottom-32 z-20 flex min-h-0 flex-col overflow-hidden sm:inset-x-6 sm:top-44 lg:inset-x-auto lg:top-1/2 lg:bottom-auto lg:right-[52px] lg:h-[70dvh] lg:max-h-[70dvh] lg:w-[30rem] lg:-translate-y-1/2">
-                        <OpenProjectFigmaFloorPanel
-                            project={project}
-                            floorId={selectedFloor._id}
-                            resolveLanguageKey={resolveLanguageKey}
-                            hoveredUnitId={hoveredUnitId}
-                            onUnitHover={setHoveredUnitId}
-                            onClose={clearFloor}
-                            panelTitle={
-                                selectedEdifice
-                                    ? `${selectedEdifice.name} / ${formatFloorHeading(selectedFloor)}`
-                                    : formatFloorHeading(selectedFloor)
-                            }
-                        />
+                    <aside
+                        className={cn(
+                            "pointer-events-auto absolute inset-x-4 top-36 bottom-32 z-20 flex min-h-0 overflow-hidden sm:inset-x-6 sm:top-44",
+                            // Clear project title only; edifice / address / link sit in the left column and do not shrink panel height.
+                            "lg:inset-x-auto lg:right-[52px] lg:top-[14rem] lg:bottom-32 lg:h-auto lg:max-h-none lg:translate-y-0",
+                            "transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                            unitPanelOpen
+                                ? "lg:w-[min(calc(100vw-6.5rem),calc(30rem+1rem+50vw))]"
+                                : "lg:w-[30rem]",
+                        )}
+                    >
+                        <div
+                            className={cn(
+                                "flex h-full min-h-0 w-full gap-4",
+                                unitPanelOpen ? "flex-col lg:flex-row" : "flex-col",
+                            )}
+                        >
+                            <div
+                                className={cn(
+                                    "min-h-0 min-w-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                                    unitPanelOpen
+                                        ? "hidden h-full lg:flex lg:w-[30rem] lg:shrink-0 lg:flex-col"
+                                        : "flex h-full w-full flex-col",
+                                )}
+                            >
+                                <OpenProjectFigmaFloorPanel
+                                    project={project}
+                                    floorId={selectedFloor._id}
+                                    resolveLanguageKey={resolveLanguageKey}
+                                    hoveredUnitId={hoveredUnitId}
+                                    selectedUnitId={selectedUnitId}
+                                    onUnitHover={setHoveredUnitId}
+                                    onUnitSelect={setSelectedUnitId}
+                                    onClose={clearFloor}
+                                    panelTitle={
+                                        selectedEdifice
+                                            ? `${selectedEdifice.name} / ${formatFloorHeading(selectedFloor)}`
+                                            : formatFloorHeading(selectedFloor)
+                                    }
+                                />
+                            </div>
+                            {selectedUnitId ? (
+                                <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col animate-in fade-in slide-in-from-right-4 duration-500 lg:basis-[50vw] lg:max-w-[50vw]">
+                                    <OpenProjectFigmaUnitPanel
+                                        projectId={project._id}
+                                        unitId={selectedUnitId}
+                                        unitLabel={selectedUnitLabel}
+                                        onClose={() => setSelectedUnitId(null)}
+                                    />
+                                </div>
+                            ) : null}
+                        </div>
                     </aside>
                 ) : null}
             </div>

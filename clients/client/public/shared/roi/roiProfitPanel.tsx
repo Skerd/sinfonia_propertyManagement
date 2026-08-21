@@ -1,7 +1,11 @@
 import type {ReactNode} from "react";
-import {PUBLIC_SUBTITLE, PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {
+    PUBLIC_SUBTITLE,
+    PUBLIC_TITLE,
+} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import type {RoiCalculationResult} from "@propertyManagementModule/clients/client/public/shared/roi/calculateRoi.ts";
 import {formatEuro, formatYearsShort} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
 
 export type RoiProfitRow = {
     label: string;
@@ -19,6 +23,7 @@ type RoiProfitPanelProps = {
     footer?: ReactNode;
     disclaimer?: string;
     dataNodeId?: string;
+    compact?: boolean;
 };
 
 function defaultHomeRows(results: RoiCalculationResult, holdingPeriod: number): RoiProfitRow[] {
@@ -48,6 +53,7 @@ function RoiProfitPanel({
     footer,
     disclaimer,
     dataNodeId,
+    compact = false,
 }: RoiProfitPanelProps) {
     const displayRows =
         rows ?? (variant === "home" ? defaultHomeRows(results, holdingPeriod) : defaultPropertyRows(results, holdingPeriod));
@@ -90,22 +96,77 @@ function RoiProfitPanel({
     }
 
     return (
-        <div className="bg-[#0247fe] p-6 md:p-8" data-node-id={dataNodeId}>
-            <p className={`text-center ${PUBLIC_SUBTITLE} text-white`}>{title}</p>
-            <div className="mt-6 text-white">
-                <p className="font-aeonik-medium text-lg md:text-2xl">{totalReturnLabel}</p>
-                <p className="mt-2 font-aeonik-medium text-3xl leading-[1.1] md:text-5xl">{formatEuro(results.totalReturn)}</p>
-                <div className="mt-6 flex flex-col gap-4 text-base md:text-2xl">
+        <div className={cn("bg-[#0247fe]", compact ? "p-5 md:p-7" : "p-6 md:p-8")} data-node-id={dataNodeId}>
+            <p
+                className={cn(
+                    "text-center text-white not-italic",
+                    compact ? "font-aeonik-medium text-sm" : `text-center ${PUBLIC_SUBTITLE} text-white`,
+                )}
+            >
+                {title}
+            </p>
+            <div className={cn("text-white", compact ? "mt-4 md:px-12" : "mt-6")}>
+                <p
+                    className={cn(
+                        "not-italic",
+                        compact ? "font-aeonik-light text-sm" : "font-aeonik-medium text-lg md:text-2xl",
+                    )}
+                >
+                    {totalReturnLabel}
+                </p>
+                <p
+                    className={cn(
+                        "mt-2 not-italic",
+                        compact
+                            ? "font-aeonik-medium text-base leading-[1.2]"
+                            : "font-aeonik-medium text-3xl leading-[1.1] md:text-5xl",
+                    )}
+                >
+                    {formatEuro(results.totalReturn)}
+                </p>
+                <div
+                    className={cn(
+                        "flex flex-col",
+                        compact ? "mt-4 gap-2.5" : "mt-6 gap-4 text-base md:text-2xl",
+                    )}
+                >
                     {displayRows.map((row) => (
-                        <div key={row.label} className="flex items-center justify-between border-b border-white/20 pb-4">
-                            <span className="font-aeonik-light not-italic">{row.label}</span>
-                            <span className="font-aeonik-medium not-italic">{row.value}</span>
+                        <div
+                            key={row.label}
+                            className={cn(
+                                "flex items-center justify-between border-b border-white/20",
+                                compact ? "pb-2" : "pb-4",
+                            )}
+                        >
+                            <span
+                                className={cn(
+                                    "font-aeonik-light not-italic",
+                                    compact && "text-sm",
+                                )}
+                            >
+                                {row.label}
+                            </span>
+                            <span
+                                className={cn(
+                                    "not-italic",
+                                    compact ? "font-aeonik-light text-sm" : "font-aeonik-medium",
+                                )}
+                            >
+                                {row.value}
+                            </span>
                         </div>
                     ))}
                 </div>
             </div>
             {disclaimer && (
-                <p className="mt-8 font-aeonik-light text-sm text-white not-italic md:text-base leading-[1.1]">{disclaimer}</p>
+                <p
+                    className={cn(
+                        "font-aeonik-light text-white not-italic leading-[1.1]",
+                        compact ? "mt-5 text-sm md:px-12" : "mt-8 text-sm md:text-base",
+                    )}
+                >
+                    {disclaimer}
+                </p>
             )}
         </div>
     );

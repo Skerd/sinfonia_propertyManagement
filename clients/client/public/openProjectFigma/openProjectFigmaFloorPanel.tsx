@@ -1,6 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {LayoutGrid, List, X} from "lucide-react";
-import {Link, useNavigate} from "react-router-dom";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
@@ -16,6 +15,7 @@ import type {
     MarketingUnitStatus,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import type {PropertyListingCardUnit} from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
 
 const UNIT_GRID = "grid grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.7fr))_minmax(0,1.1fr)] gap-x-3";
 
@@ -39,21 +39,35 @@ type OpenProjectFigmaFloorPanelProps = {
     floorId: string;
     resolveLanguageKey: WithLanguageType["resolveLanguageKey"];
     hoveredUnitId?: string | null;
+    selectedUnitId?: string | null;
     onUnitHover?: (unitId: string | null) => void;
+    onUnitSelect?: (unitId: string) => void;
     onClose?: () => void;
     panelTitle?: string;
 };
+
+function resolveUnitIdFromPolygon(
+    units: PropertyListingCardUnit[],
+    item: Pick<MarketingPolygonItem, "_id" | "name">,
+): string {
+    return (
+        units.find((unit) => unit._id === item._id)?._id ??
+        units.find((unit) => unit.name === item.name)?._id ??
+        item._id
+    );
+}
 
 function OpenProjectFigmaFloorPanel({
     project,
     floorId,
     resolveLanguageKey,
     hoveredUnitId = null,
+    selectedUnitId = null,
     onUnitHover,
+    onUnitSelect,
     onClose,
     panelTitle,
 }: OpenProjectFigmaFloorPanelProps) {
-    const navigate = useNavigate();
     const {activeFilter, setActiveFilter} = useProjectUnitStatusFilter();
     const [layout, setLayout] = useState<PanelLayout>("list");
     const listScrollerRef = useRef<HTMLDivElement>(null);
@@ -91,23 +105,28 @@ function OpenProjectFigmaFloorPanel({
             });
     }, [selectedFloor?.unitsCoordinates, units, filtered, activeFilter]);
 
-    const hoverTargetId = useMemo(() => {
-        if (!hoveredUnitId) {
+    const highlightUnitId = useMemo(() => {
+        const candidateId = hoveredUnitId || selectedUnitId;
+        if (!candidateId) {
             return null;
         }
-        if (filtered.some((unit) => unit._id === hoveredUnitId)) {
-            return hoveredUnitId;
+        if (filtered.some((unit) => unit._id === candidateId)) {
+            return candidateId;
         }
-        const polygon = selectedFloor?.unitsCoordinates?.find((item) => item._id === hoveredUnitId);
+        const polygon = selectedFloor?.unitsCoordinates?.find((item) => item._id === candidateId);
         return polygon ? (filtered.find((unit) => unit.name === polygon.name)?._id ?? null) : null;
-    }, [hoveredUnitId, filtered, selectedFloor?.unitsCoordinates]);
+    }, [hoveredUnitId, selectedUnitId, filtered, selectedFloor?.unitsCoordinates]);
+
+    const selectUnit = (unitId: string) => {
+        onUnitSelect?.(unitId);
+    };
 
     useEffect(() => {
-        if (!hoverTargetId) {
+        if (!highlightUnitId) {
             return;
         }
         const scroller = listScrollerRef.current;
-        const row = rowRefs.current.get(hoverTargetId);
+        const row = rowRefs.current.get(highlightUnitId);
         if (!scroller || !row || scroller.clientHeight <= 0) {
             return;
         }
@@ -123,7 +142,7 @@ function OpenProjectFigmaFloorPanel({
 
         const nextTop = rowTop < viewStart ? rowTop - headerHeight : rowBottom - scroller.clientHeight;
         scroller.scrollTo({top: Math.max(0, nextTop), behavior: "smooth"});
-    }, [hoverTargetId]);
+    }, [highlightUnitId]);
 
     return (
         <aside
@@ -182,31 +201,31 @@ function OpenProjectFigmaFloorPanel({
             </div>
 
             {layout === "list" ? (
-            <div className="relative mx-5 shrink-0 overflow-hidden rounded-[5px] bg-[rgba(24,24,24,0.04)] md:mx-6">
-                <div className="relative aspect-[470/272] w-full [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
-                    {floorPlanImage && unitPolygons.length > 0 ? (
-                        <div className="absolute inset-0">
-                            <PolygonSelector
-                                key={`${floorId}:${activeFilter}`}
-                                fillHeight
-                                dashboard
-                                borderless
-                                disabled
-                                hideControls
-                                objectFit="contain"
-                                phantomsAlwaysVisible
-                                imageUrl={floorPlanImage}
-                                phantomPoints={unitPolygons}
-                                onFloorClick={(item) =>
-                                    navigate(`/property?projectId=${project._id}&unitId=${item._id}`)
-                                }
-                                stayHovered={hoveredUnitId || undefined}
-                                externalHoveredId={hoveredUnitId || ""}
-                                onPhantomHoverChange={onUnitHover}
-                                initialPoints={[]}
-                                onPointsChange={() => {}}
-                            />
-                        </div>
+                            <div className="relative mx-5 shrink-0 overflow-hidden rounded-[5px] bg-[rgba(24,24,24,0.04)] md:mx-6 [&_[data-slot=card]]:pointer-events-auto">
+                                <div className="relative aspect-[470/272] w-full [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
+                                    {floorPlanImage && unitPolygons.length > 0 ? (
+                                        <div className="absolute inset-0">
+                                            <PolygonSelector
+                                                key={`${floorId}:${activeFilter}`}
+                                                fillHeight
+                                                dashboard
+                                                borderless
+                                                disabled
+                                                hideControls
+                                                objectFit="contain"
+                                                phantomsAlwaysVisible
+                                                imageUrl={floorPlanImage}
+                                                phantomPoints={unitPolygons}
+                                                onFloorClick={(item) =>
+                                                    selectUnit(resolveUnitIdFromPolygon(units, item))
+                                                }
+                                                stayHovered={selectedUnitId || hoveredUnitId || undefined}
+                                                externalHoveredId={hoveredUnitId || selectedUnitId || ""}
+                                                onPhantomHoverChange={onUnitHover}
+                                                initialPoints={[]}
+                                                onPointsChange={() => {}}
+                                            />
+                                        </div>
                     ) : floorPlanImage ? (
                         <img src={floorPlanImage} alt="" className="absolute inset-0 size-full object-contain" />
                     ) : (
@@ -248,7 +267,7 @@ function OpenProjectFigmaFloorPanel({
                     ) : layout === "grid" ? (
                         <ul className="flex flex-col gap-3">
                             {filtered.map((unit) => {
-                                const highlighted = hoverTargetId === unit._id;
+                                const highlighted = highlightUnitId === unit._id;
                                 const status = (unit.status as MarketingUnitStatus) || "available";
                                 const badge = STATUS_BADGE[status] ?? STATUS_BADGE.available;
                                 const statusText = resolveLanguageKey(
@@ -265,10 +284,11 @@ function OpenProjectFigmaFloorPanel({
                                             }
                                         }}
                                     >
-                                        <Link
-                                            to={`/property?projectId=${project._id}&unitId=${unit._id}`}
+                                        <button
+                                            type="button"
+                                            onClick={() => selectUnit(unit._id)}
                                             className={cn(
-                                                "flex min-h-[9.5rem] overflow-hidden rounded-[5px] border bg-white transition",
+                                                "flex min-h-[9.5rem] w-full overflow-hidden rounded-[5px] border bg-white text-left transition",
                                                 highlighted
                                                     ? "border-pronix-blue ring-1 ring-pronix-blue/30"
                                                     : "border-pronix-border hover:border-pronix-ink/20",
@@ -351,7 +371,7 @@ function OpenProjectFigmaFloorPanel({
                                                     </p>
                                                 </div>
                                             </div>
-                                        </Link>
+                                        </button>
                                     </li>
                                 );
                             })}
@@ -359,7 +379,7 @@ function OpenProjectFigmaFloorPanel({
                     ) : (
                         <ul>
                             {filtered.map((unit) => {
-                                const highlighted = hoverTargetId === unit._id;
+                                const highlighted = highlightUnitId === unit._id;
                                 return (
                                     <li
                                         key={unit._id}
@@ -371,11 +391,12 @@ function OpenProjectFigmaFloorPanel({
                                             }
                                         }}
                                     >
-                                        <Link
-                                            to={`/property?projectId=${project._id}&unitId=${unit._id}`}
+                                        <button
+                                            type="button"
+                                            onClick={() => selectUnit(unit._id)}
                                             className={cn(
                                                 UNIT_GRID,
-                                                "cursor-pointer py-2.5 font-aeonik-light text-sm transition",
+                                                "w-full cursor-pointer py-2.5 text-left font-aeonik-light text-sm transition",
                                                 highlighted
                                                     ? "bg-pronix-blue/10 text-pronix-blue"
                                                     : "text-pronix-ink hover:bg-[rgba(24,24,24,0.04)]",
@@ -392,7 +413,7 @@ function OpenProjectFigmaFloorPanel({
                                             <span>
                                                 {unit.price != null ? `€${unit.price.toLocaleString()}` : "—"}
                                             </span>
-                                        </Link>
+                                        </button>
                                     </li>
                                 );
                             })}

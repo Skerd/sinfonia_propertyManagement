@@ -9,9 +9,11 @@ const TILE =
 
 type PropertyGallerySectionProps = {
     unit: MarketingUnitSingle;
+    /** Shorter gallery for dense side panels (e.g. open-project unit panel). */
+    compact?: boolean;
 };
 
-function PropertyGallerySection({unit}: PropertyGallerySectionProps) {
+function PropertyGallerySection({unit, compact = false}: PropertyGallerySectionProps) {
     const images = (unit.imageGallery ?? [])
         .map((url) => resolveMarketingMediaUrl(url))
         .filter(Boolean) as string[];
@@ -32,6 +34,61 @@ function PropertyGallerySection({unit}: PropertyGallerySectionProps) {
         setActiveIndex(Math.min(index, displayImages.length - 1));
         setLightboxOpen(true);
     };
+
+    if (compact) {
+        return (
+            <>
+                <div
+                    className="grid h-[calc(70dvh/2)] min-h-[12rem] max-h-[24rem] w-full grid-cols-[1.4fr_1fr] grid-rows-2 gap-1.5"
+                    data-node-id="515:4305"
+                >
+                    <button
+                        type="button"
+                        className={`${TILE} row-span-2`}
+                        onClick={() => openAt(0)}
+                        data-node-id="515:6179"
+                    >
+                        <img alt={unit.name} className="size-full object-cover" src={mainImage} />
+                    </button>
+                    <button
+                        type="button"
+                        className={TILE}
+                        onClick={() => openAt(1)}
+                        data-node-id="515:6182"
+                    >
+                        <img alt="" aria-hidden className="size-full object-cover" src={topRight} />
+                    </button>
+                    {extraCount > 0 ? (
+                        <div className="grid min-h-0 grid-cols-2 gap-1.5" data-node-id="515:6187">
+                            <button type="button" className={TILE} onClick={() => openAt(2)}>
+                                <img alt="" aria-hidden className="size-full object-cover" src={bottomRight} />
+                            </button>
+                            <button
+                                type="button"
+                                className={`${TILE} flex items-center justify-center bg-white font-aeonik-medium text-sm leading-none text-pronix-ink`}
+                                onClick={() => openAt(3)}
+                                aria-label={`+${extraCount}`}
+                            >
+                                +{extraCount}
+                            </button>
+                        </div>
+                    ) : (
+                        <button
+                            type="button"
+                            className={TILE}
+                            onClick={() => openAt(2)}
+                            data-node-id="515:6187"
+                        >
+                            <img alt="" aria-hidden className="size-full object-cover" src={bottomRight} />
+                        </button>
+                    )}
+                </div>
+                {lightboxOpen && (
+                    <ImageLightbox images={lightboxMedia} initialIndex={activeIndex} onClose={() => setLightboxOpen(false)} />
+                )}
+            </>
+        );
+    }
 
     return (
         <>
@@ -57,11 +114,7 @@ function PropertyGallerySection({unit}: PropertyGallerySectionProps) {
                 </button>
                 {extraCount > 0 ? (
                     <div className="grid min-h-0 grid-cols-2 gap-3 sm:gap-4 md:gap-5" data-node-id="515:6187">
-                        <button
-                            type="button"
-                            className={TILE}
-                            onClick={() => openAt(2)}
-                        >
+                        <button type="button" className={TILE} onClick={() => openAt(2)}>
                             <img alt="" aria-hidden className="size-full object-cover" src={bottomRight} />
                         </button>
                         <button

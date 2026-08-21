@@ -91,6 +91,19 @@ export const PUBLIC_BODY =
 export const PUBLIC_HEADING =
     "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-2xl md:text-[32px]";
 
+/** Compact type scale matching open-project floor list (`font-aeonik-light text-sm`). */
+export const PUBLIC_TITLE_COMPACT =
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-xl md:text-2xl";
+
+export const PUBLIC_SUBTITLE_COMPACT =
+    "cursor-default font-aeonik-light text-pronix-ink not-italic leading-[1.3] text-sm";
+
+export const PUBLIC_BODY_COMPACT =
+    "cursor-default font-aeonik-light text-pronix-ink-muted not-italic leading-snug text-sm";
+
+export const PUBLIC_HEADING_COMPACT =
+    "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-base";
+
 /** Projects Gallery page title (Figma 268:238 — ~120px at 1728 canvas). */
 export const PUBLIC_GALLERY_PAGE_TITLE =
     "cursor-default font-aeonik-medium text-pronix-ink not-italic leading-[1.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl";

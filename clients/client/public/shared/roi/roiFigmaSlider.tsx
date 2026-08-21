@@ -17,6 +17,7 @@ type RoiFigmaSliderProps = {
     onChange: (value: number) => void;
     formatValue: (value: number) => string;
     variant?: "home" | "property";
+    compact?: boolean;
     valueAlign?: "left" | "center" | "right";
     logoCentered?: boolean;
     dataNodeId?: string;
@@ -43,6 +44,7 @@ function RoiFigmaSlider({
     onChange,
     formatValue,
     variant = "home",
+    compact = false,
     valueAlign = "right",
     logoCentered = false,
     dataNodeId,
@@ -55,12 +57,16 @@ function RoiFigmaSlider({
     const thumbCenter = roiThumbCenterCss(ratio, thumbSizePx);
     const trackHeightPx = isHome && isMobile ? TRACK_HEIGHT_MOBILE_PX : TRACK_HEIGHT_PX;
 
-    const labelClass = isHome
-        ? "font-aeonik-medium font-medium tracking-normal text-pronix-ink not-italic text-[16.66px] md:text-2xl leading-[1.1]"
-        : "font-aeonik-medium text-lg text-pronix-ink not-italic md:text-2xl";
-    const valueClass = isHome
-        ? "font-aeonik-light text-pronix-ink not-italic whitespace-nowrap text-lg md:text-2xl leading-[1.1] shrink-0"
-        : "font-aeonik-light text-lg text-pronix-ink not-italic md:text-2xl";
+    const labelClass = compact
+        ? "font-aeonik-light text-sm text-pronix-ink not-italic leading-[1.3]"
+        : isHome
+          ? "font-aeonik-medium font-medium tracking-normal text-pronix-ink not-italic text-[16.66px] md:text-2xl leading-[1.1]"
+          : "font-aeonik-medium text-lg text-pronix-ink not-italic md:text-2xl";
+    const valueClass = compact
+        ? "font-aeonik-light text-sm text-pronix-ink not-italic whitespace-nowrap leading-[1.3] shrink-0"
+        : isHome
+          ? "font-aeonik-light text-pronix-ink not-italic whitespace-nowrap text-lg md:text-2xl leading-[1.1] shrink-0"
+          : "font-aeonik-light text-lg text-pronix-ink not-italic md:text-2xl";
 
     function handleRangeChange(nextValue: number) {
         onChange(nextValue);

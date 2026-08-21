@@ -3,7 +3,9 @@ import PropertyPriceHistoryChart from "@propertyManagementModule/clients/client/
 import {PublicLanguageProps, MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {
     PUBLIC_BODY,
+    PUBLIC_BODY_COMPACT,
     PUBLIC_HEADING,
+    PUBLIC_HEADING_COMPACT,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {formatEuro, formatPercent, formatYearsShort} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
 import RoiFigmaSlider from "@propertyManagementModule/clients/client/public/shared/roi/roiFigmaSlider.tsx";
@@ -17,6 +19,10 @@ import {buildPropertyPriceHistoryPlot} from "@propertyManagementModule/clients/c
 type PropertyDetailsSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
     onRequestInfo: () => void;
+    /** Break ROI/CTA onto full-width rows (e.g. open-project unit panel side-by-side layout). */
+    breakoutSecondary?: boolean;
+    /** Smaller type for dense side panels. */
+    compact?: boolean;
 };
 
 const MISSING_VALUE = "—";
@@ -102,24 +108,48 @@ function formatPricePerSqm(
     return `${symbol}${formatted}/m²`;
 }
 
-function DetailRow({label, value}: {label: string; value: string}) {
+function DetailRow({label, value, compact = false}: {label: string; value: string; compact?: boolean}) {
     return (
-        <div className="flex items-center justify-between gap-4 border-b border-pronix-border px-3 py-3">
-            <span className="font-aeonik-light text-base text-pronix-ink not-italic md:text-xl lg:text-2xl">
+        <div
+            className={cn(
+                "flex items-center justify-between gap-4 border-b border-pronix-border",
+                compact ? "px-2 py-2" : "px-3 py-3",
+            )}
+        >
+            <span
+                className={cn(
+                    "font-aeonik-light text-pronix-ink not-italic",
+                    compact ? "text-sm" : "text-base md:text-xl lg:text-2xl",
+                )}
+            >
                 {label}
             </span>
-            <span className="shrink-0 text-right font-aeonik-light text-base text-pronix-ink not-italic md:text-xl lg:text-2xl">
+            <span
+                className={cn(
+                    "shrink-0 text-right font-aeonik-light text-pronix-ink not-italic",
+                    compact ? "text-sm" : "text-base md:text-xl lg:text-2xl",
+                )}
+            >
                 {value}
             </span>
         </div>
     );
 }
 
-function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: PropertyDetailsSectionProps) {
+function PropertyDetailsSection({
+    resolveLanguageKey,
+    unit,
+    onRequestInfo,
+    breakoutSecondary = false,
+    compact = false,
+}: PropertyDetailsSectionProps) {
     const unitPrice = unit.price ?? unit.sharePrice ?? 0;
     const unitArea = unit.areaSqm ?? unit.grossAreaSqm ?? 1;
     const priceHistory = unit.priceHistory ?? [];
     const priceHistoryPlot = buildPropertyPriceHistoryPlot(priceHistory);
+    const bodyClass = compact ? PUBLIC_BODY_COMPACT : PUBLIC_BODY;
+    const headingClass = compact ? PUBLIC_HEADING_COMPACT : PUBLIC_HEADING;
+    const sectionGap = compact ? "mt-5" : "mt-8";
 
     const {inputs, setInput, results, sliderBounds} = useUnitRoiCalculator({
         unitPrice,
@@ -147,22 +177,23 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
         {label: resolveLanguageKey("monthlyNet"), value: formatEuro(results.monthlyNet), bordered: false},
     ];
 
-    return (
-        <div className="relative w-full" data-node-id="515:6131">
+    const primary = (
+        <>
             <div data-node-id="515:6252">
-                <p className={PUBLIC_BODY} data-node-id="515:6129">
+                <p className={bodyClass} data-node-id="515:6129">
                     {unit.description ?? MISSING_VALUE}
                 </p>
             </div>
 
-            <div className="mt-8 w-full" data-node-id="515:6223">
-                <h2 className={PUBLIC_HEADING} data-node-id="515:6175">
+            <div className={`${sectionGap} w-full`} data-node-id="515:6223">
+                <h2 className={headingClass} data-node-id="515:6175">
                     {resolveLanguageKey("areaAndPricing")}
                 </h2>
                 <div className="mt-3 border-t border-pronix-border" data-node-id="515:6218">
                     {AREA_PRICING_ROWS.map((row) => (
                         <DetailRow
                             key={row.labelKey}
+                            compact={compact}
                             label={resolveLanguageKey(row.labelKey)}
                             value={row.getValue(unit, resolveLanguageKey)}
                         />
@@ -170,8 +201,8 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                 </div>
             </div>
 
-            <div className="mt-8 w-full">
-                <h2 className={PUBLIC_HEADING}>
+            <div className={`${sectionGap} w-full`}>
+                <h2 className={headingClass}>
                     {resolveLanguageKey("features")}
                 </h2>
                 <div className="mt-3 border-t border-pronix-border">
@@ -186,6 +217,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                         return (
                             <DetailRow
                                 key={row.labelKey}
+                                compact={compact}
                                 label={resolveLanguageKey(row.labelKey)}
                                 value={display}
                             />
@@ -195,12 +227,12 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
             </div>
 
             {priceHistoryPlot ? (
-                <div className="mt-8 flex w-full flex-col overflow-hidden rounded-[5px] border border-pronix-border">
+                <div className={`${sectionGap} flex w-full flex-col overflow-hidden rounded-[5px] border border-pronix-border`}>
                     <div className="flex items-center justify-between gap-3 border-b border-pronix-border px-4 py-3 md:px-5">
-                        <p className="font-aeonik-medium text-base text-pronix-ink not-italic md:text-lg">
+                        <p className={cn("font-aeonik-medium text-pronix-ink not-italic", compact ? "text-sm" : "text-base md:text-lg")}>
                             {resolveLanguageKey("priceHistory")}
                         </p>
-                        <p className="font-aeonik-medium text-base text-pronix-ink not-italic md:text-lg">
+                        <p className={cn("font-aeonik-medium text-pronix-ink not-italic", compact ? "text-sm" : "text-base md:text-lg")}>
                             {priceHistoryPlot.latestDisplayPrice}
                         </p>
                     </div>
@@ -216,25 +248,41 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                     </div>
                 </div>
             ) : null}
+        </>
+    );
 
+    const secondary = (
+        <>
             <div
-                className="relative mt-8 grid w-full grid-cols-1 overflow-hidden rounded-[5px] border border-pronix-border lg:grid-cols-2"
+                className={cn(
+                    "relative grid w-full grid-cols-1 overflow-hidden rounded-[5px] border border-pronix-border",
+                    sectionGap,
+                    breakoutSecondary ? "min-[40rem]:grid-cols-2" : "lg:grid-cols-2",
+                )}
                 data-node-id="520:6254"
             >
-                <div className="bg-white p-6 md:p-8" data-node-id="520:6277">
-                    <p className={`text-center ${PUBLIC_HEADING}`} data-node-id="520:6279">
+                <div className={cn("bg-white", compact ? "p-4 md:p-5" : "p-6 md:p-8")} data-node-id="520:6277">
+                    <p
+                        className={cn(
+                            "text-center text-pronix-ink not-italic",
+                            compact ? "font-aeonik-medium text-sm" : headingClass,
+                        )}
+                        data-node-id="520:6279"
+                    >
                         {resolveLanguageKey("roiTitle")}
                     </p>
-                    <div className="mx-auto mt-6 flex max-w-md flex-col gap-6">
+                    <div className={cn("mx-auto flex max-w-md flex-col", compact ? "mt-4 gap-4" : "mt-6 gap-6")}>
                         <RoiRentalTypeSelect
                             label={resolveLanguageKey("rentalType")}
                             value={inputs.rentalType}
                             onChange={(value) => setInput("rentalType", value)}
                             longTermLabel={resolveLanguageKey("rentalTypeLongTerm")}
                             shortTermLabel={resolveLanguageKey("rentalTypeShortTerm")}
+                            compact={compact}
                         />
                         <RoiFigmaSlider
                             variant="property"
+                            compact={compact}
                             label={resolveLanguageKey("monthlyRent")}
                             value={inputs.monthlyRent}
                             min={sliderBounds.monthlyRent.min}
@@ -245,6 +293,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                         />
                         <RoiFigmaSlider
                             variant="property"
+                            compact={compact}
                             label={resolveLanguageKey("occupancyRate")}
                             value={inputs.occupancyRate}
                             min={sliderBounds.occupancyRate.min}
@@ -255,6 +304,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                         />
                         <RoiFigmaSlider
                             variant="property"
+                            compact={compact}
                             label={resolveLanguageKey("annualAppreciation")}
                             value={inputs.annualAppreciation}
                             min={sliderBounds.annualAppreciation.min}
@@ -265,6 +315,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                         />
                         <RoiFigmaSlider
                             variant="property"
+                            compact={compact}
                             label={resolveLanguageKey("holdingPeriod")}
                             value={inputs.holdingPeriod}
                             min={sliderBounds.holdingPeriod.min}
@@ -277,6 +328,7 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                 </div>
                 <RoiProfitPanel
                     variant="property"
+                    compact={compact}
                     results={results}
                     holdingPeriod={inputs.holdingPeriod}
                     title={resolveLanguageKey("profitTitle")}
@@ -286,29 +338,77 @@ function PropertyDetailsSection({resolveLanguageKey, unit, onRequestInfo}: Prope
                 />
             </div>
 
-            <div className="relative mt-8 min-h-[100px] w-full overflow-hidden rounded-[5px] md:min-h-[122px]" data-node-id="522:6333">
+            <div
+                className={cn(
+                    "relative w-full overflow-hidden rounded-[5px]",
+                    sectionGap,
+                    compact ? "min-h-[88px] md:min-h-[100px]" : "min-h-[100px] md:min-h-[122px]",
+                )}
+                data-node-id="522:6333"
+            >
                 <img alt="" aria-hidden className="absolute inset-0 size-full object-cover" src={propertyAssets.ctaInfoBg} />
-                <div className="relative flex w-full flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center md:px-8" data-node-id="522:6343">
-                    <p className="font-aeonik-medium text-2xl text-white not-italic sm:max-w-md md:text-4xl lg:text-5xl leading-[1.2]" data-node-id="522:6337">
+                <div
+                    className={cn(
+                        "relative flex w-full flex-col items-start justify-between gap-4 sm:flex-row sm:items-center",
+                        compact ? "px-4 py-4 md:px-5" : "px-6 py-6 md:px-8",
+                    )}
+                    data-node-id="522:6343"
+                >
+                    <p
+                        className={cn(
+                            "font-aeonik-medium text-white not-italic leading-[1.2] sm:max-w-md",
+                            compact ? "text-base md:text-lg" : "text-2xl md:text-4xl lg:text-5xl",
+                        )}
+                        data-node-id="522:6337"
+                    >
                         {resolveLanguageKey("notSureTitle")}
                     </p>
                     <button
                         type="button"
                         onClick={onRequestInfo}
                         className={cn(
-                            "flex shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white px-6 py-3 md:px-8 md:py-4",
+                            "flex shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white",
+                            compact ? "px-4 py-2.5 md:px-5 md:py-3" : "px-6 py-3 md:px-8 md:py-4",
                             "bg-transparent text-white transition-colors duration-200",
                             "hover:bg-white hover:text-pronix-blue",
                             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue",
                         )}
                         data-node-id="522:6339"
                     >
-                        <span className="font-aeonik-medium whitespace-nowrap not-italic text-lg leading-[17.15px] md:text-2xl">
+                        <span
+                            className={cn(
+                                "font-aeonik-medium whitespace-nowrap not-italic leading-[17.15px]",
+                                compact ? "text-sm" : "text-lg md:text-2xl",
+                            )}
+                        >
                             {resolveLanguageKey("requestInfo")}
                         </span>
                     </button>
                 </div>
             </div>
+        </>
+    );
+
+    if (breakoutSecondary) {
+        return (
+            <>
+                <div
+                    className="relative w-full min-w-0 min-[48rem]:order-1 min-[48rem]:col-span-7"
+                    data-node-id="515:6131"
+                >
+                    {primary}
+                </div>
+                <div className="relative w-full min-w-0 min-[48rem]:order-3 min-[48rem]:col-span-12">
+                    {secondary}
+                </div>
+            </>
+        );
+    }
+
+    return (
+        <div className="relative w-full" data-node-id="515:6131">
+            {primary}
+            {secondary}
         </div>
     );
 }
