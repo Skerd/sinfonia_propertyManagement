@@ -105,7 +105,7 @@
     "notCollectedAmount": "Obblighi in sospeso",
     "notCollectedAmountTooltip": "Caparre di prenotazione non pagate più saldo del piano di pagamento non pagato (acconto e rate), per valuta",
     "averagePricePerSquareMeter": "Prezzo di listino medio al m²",
-    "averagePricePerSquareMeterTooltip": "Prezzo di listino diviso per la superficie dell'unità, per valuta",
+    "averagePricePerSquareMeterTooltip": "Prezzo di listino diviso per la superficie dell'unità più veranda, per valuta",
     "verifiedPaidUnitCosts": "Costi verificati e pagati",
     "verifiedPaidUnitCostsTooltip": "Totale delle voci di acquisto sui costi verificati e contrassegnati come pagati, per valuta",
     "verifiedOutstandingUnitCosts": "Verificato — pagamento in sospeso",

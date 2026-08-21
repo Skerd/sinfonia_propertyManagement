@@ -105,7 +105,7 @@
     "notCollectedAmount": "Outstanding obligations",
     "notCollectedAmountTooltip": "Unpaid reservation deposits plus unpaid payment-plan balance (down payment and installments), by currency",
     "averagePricePerSquareMeter": "Average list price per m²",
-    "averagePricePerSquareMeterTooltip": "Listing price divided by unit area, by currency",
+    "averagePricePerSquareMeterTooltip": "Listing price divided by unit area plus veranda, by currency",
     "verifiedPaidUnitCosts": "Verified & paid costs",
     "verifiedPaidUnitCostsTooltip": "Total purchase line items on costs verified and marked paid, by currency",
     "verifiedOutstandingUnitCosts": "Verified — outstanding payment",

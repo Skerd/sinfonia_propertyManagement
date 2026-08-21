@@ -105,7 +105,7 @@
     "notCollectedAmount": "Detyrimet e papaguara",
     "notCollectedAmountTooltip": "Depozitat e rezervimit të papaguara plus gjendjen e planit të pagesave të papaguara (parapagesë dhe këste), sipas monedhës",
     "averagePricePerSquareMeter": "Çmimi mesatar i listës për m²",
-    "averagePricePerSquareMeterTooltip": "Çmimi i listimit i ndarë sipas sipërfaqes për njësi, sipas monedhës",
+    "averagePricePerSquareMeterTooltip": "Çmimi i listimit i ndarë me sipërfaqen e njësisë plus verandën, sipas monedhës",
     "verifiedPaidUnitCosts": "Kosto të verifikuara dhe të paguara",
     "verifiedPaidUnitCostsTooltip": "Shuma e rreshtave të blerjes për kosto të verifikuara dhe të shënuara si të paguara, sipas monedhës",
     "verifiedOutstandingUnitCosts": "Të verifikuara — pagesë e paplotë",

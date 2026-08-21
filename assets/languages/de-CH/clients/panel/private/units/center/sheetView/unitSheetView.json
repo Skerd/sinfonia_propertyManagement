@@ -105,7 +105,7 @@
     "notCollectedAmount": "Offene Verpflichtungen",
     "notCollectedAmountTooltip": "Unbezahlte Reservationsanzahlungen zuzüglich unbezahltem Zahlungsplansaldo (Anzahlung und Raten), nach Währung",
     "averagePricePerSquareMeter": "Durchschnittlicher Listenpreis pro m²",
-    "averagePricePerSquareMeterTooltip": "Inseratspreis geteilt durch Einheitenfläche, nach Währung",
+    "averagePricePerSquareMeterTooltip": "Inseratspreis geteilt durch Einheitenfläche plus Veranda, nach Währung",
     "verifiedPaidUnitCosts": "Verifizierte & bezahlte Kosten",
     "verifiedPaidUnitCostsTooltip": "Summe der Einkaufspositionen bei verifizierten und als bezahlt markierten Kosten, nach Währung",
     "verifiedOutstandingUnitCosts": "Verifiziert — offene Zahlung",

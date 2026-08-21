@@ -105,7 +105,7 @@
     "notCollectedAmount": "Obligations en cours",
     "notCollectedAmountTooltip": "Acomptes de réservation non payés plus solde du plan de paiement non payé (acompte et échéances), par devise",
     "averagePricePerSquareMeter": "Prix catalogue moyen au m²",
-    "averagePricePerSquareMeterTooltip": "Prix d'annonce divisé par la surface de l'unité, par devise",
+    "averagePricePerSquareMeterTooltip": "Prix d'annonce divisé par la surface de l'unité plus véranda, par devise",
     "verifiedPaidUnitCosts": "Coûts vérifiés et payés",
     "verifiedPaidUnitCostsTooltip": "Total des lignes d'achat sur les coûts vérifiés et marqués comme payés, par devise",
     "verifiedOutstandingUnitCosts": "Vérifié — paiement en attente",

@@ -60,7 +60,7 @@ function UnitDetailCardInner({
     const footprint = (Number(unit.area) || 0) + (Number(unit.sharedArea) || 0);
     const netArea = unit.netArea ?? (footprint > 0 ? footprint : undefined) ?? unit.area;
     const grossArea = unit.area ?? (footprint > 0 ? footprint : undefined) ?? unit.netArea;
-    const unitArea = Number(unit.area) || 0;
+    const unitArea = (Number(unit.area) || 0) + (Number(unit.verandaArea) || 0);
     const pricePerSqm = unit.statistics?.averagePricePerSquareMeter?.value ?? (unitArea > 0 && unit.price != null ? unit.price / unitArea : 0);
     const totalPrice = unit.price ?? 0;
 
