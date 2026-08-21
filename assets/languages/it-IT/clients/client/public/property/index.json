@@ -1,6 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/property/index.tsx",
   "back": "Indietro",
+  "favoritesAdd": "Aggiungi ai preferiti",
+  "favoritesRemove": "Rimuovi dai preferiti",
   "missingParams": "Seleziona un'unità dalla griglia o dalla vista 3D del progetto.",
   "loadError": "Impossibile caricare questo immobile. Riprova o torna al progetto.",
   "notFound": "Immobile non trovato.",

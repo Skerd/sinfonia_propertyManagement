@@ -1,6 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/property/index.tsx",
   "back": "Kthehu",
+  "favoritesAdd": "Shto te të preferuarat",
+  "favoritesRemove": "Hiq nga të preferuarat",
   "missingParams": "Zgjidhni një njësi nga rrjeta e projektit ose pamja 3D.",
   "loadError": "Nuk arritëm ta ngarkojmë këtë pronë. Ju lutemi provoni sërish ose kthehuni te projekti.",
   "notFound": "Prona nuk u gjet.",

@@ -14,6 +14,7 @@ import PropertyGallerySection from "@propertyManagementModule/clients/client/pub
 import PropertyDetailsSection from "@propertyManagementModule/clients/client/public/property/sections/propertyDetailsSection.tsx";
 import PropertySidebarSection from "@propertyManagementModule/clients/client/public/property/sections/propertySidebarSection.tsx";
 import PropertyContactFormModal from "@propertyManagementModule/clients/client/public/property/sections/propertyContactFormModal.tsx";
+import PublicFavoriteHeartButton from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartButton.tsx";
 import {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {PUBLIC_GALLERY_PAGE_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 
@@ -168,6 +169,22 @@ function PropertyPage(props: PropertyPageProps) {
                     </button>
                     {unit?.name ? (
                         <h1 className={`min-w-0 flex-1 wrap-break-word ${PUBLIC_GALLERY_PAGE_TITLE}`}>{unit.name}</h1>
+                    ) : null}
+                    {unit ? (
+                        <PublicFavoriteHeartButton
+                            kind="unit"
+                            projectId={unit.projectId || projectId}
+                            unit={{
+                                _id: unit._id,
+                                name: unit.name,
+                                status: unit.status,
+                                floorLabel: unit.floorLabel,
+                                price: unit.price,
+                                imageUrl: unit.mainImage ?? unit.imageGallery?.[0],
+                            }}
+                            addLabel={String(resolveLanguageKey("favoritesAdd"))}
+                            removeLabel={String(resolveLanguageKey("favoritesRemove"))}
+                        />
                     ) : null}
                 </div>
             </PublicSection>

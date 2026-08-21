@@ -1,6 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/property/index.tsx",
   "back": "Back",
+  "favoritesAdd": "Add to favorites",
+  "favoritesRemove": "Remove from favorites",
   "missingParams": "Select a unit from a project grid or 3D view.",
   "loadError": "Unable to load this property. Please try again or go back to the project.",
   "notFound": "Property not found.",

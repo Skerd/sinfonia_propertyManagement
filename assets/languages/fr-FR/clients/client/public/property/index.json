@@ -1,6 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/property/index.tsx",
   "back": "Retour",
+  "favoritesAdd": "Ajouter aux favoris",
+  "favoritesRemove": "Retirer des favoris",
   "missingParams": "Sélectionnez une unité depuis la grille ou la vue 3D d'un projet.",
   "loadError": "Impossible de charger ce bien. Veuillez réessayer ou retourner au projet.",
   "notFound": "Bien introuvable.",
