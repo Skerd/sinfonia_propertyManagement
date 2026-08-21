@@ -1,7 +1,7 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {type ResolveLanguageKey, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconCalendarClock, IconCurrencyDollar, IconHome, IconUser} from "@tabler/icons-react";
+import {IconCalendarClock, IconCurrencyDollar, IconHome, IconNotes, IconUser} from "@tabler/icons-react";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
@@ -15,9 +15,21 @@ import ManualReservationClientEmailDialog, {
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
 import ReservationSheetView from "@propertyManagementModule/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {
+    CARD_INFO_ROWS_TWO_COL_CLASS,
+    STATUS_BADGE_DANGER,
+    STATUS_BADGE_INFO,
+    STATUS_BADGE_NEUTRAL,
+    STATUS_BADGE_SUCCESS,
+    STATUS_BADGE_WARNING,
+} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import {useEffect, type RefObject} from "react";
+import {useEffect, type ReactNode, type RefObject} from "react";
 
 function ReservationReady({
     entity,
@@ -30,6 +42,99 @@ function ReservationReady({
         onReady?.(entity);
     }, [entity, onReady]);
     return null;
+}
+
+/** Whole UTC calendar days from today to expiration day. 0 = expires today. */
+function utcCalendarDaysUntilExpirationDay(iso: string): number {
+    const exp = new Date(iso);
+    const expStart = Date.UTC(exp.getUTCFullYear(), exp.getUTCMonth(), exp.getUTCDate());
+    const n = new Date();
+    const todayStart = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
+    return Math.round((expStart - todayStart) / 86400000);
+}
+
+function reservationStatusBadgeClass(status: NonNullable<Reservation["status"]>): string {
+    switch (status) {
+        case "active":
+            return STATUS_BADGE_NEUTRAL;
+        case "converted":
+            return STATUS_BADGE_SUCCESS;
+        case "expired":
+        case "cancelled":
+            return STATUS_BADGE_DANGER;
+        default:
+            return STATUS_BADGE_NEUTRAL;
+    }
+}
+
+function expirationBadgeMeta(
+    expirationDate: string,
+    resolveLanguageKey: ResolveLanguageKey,
+): {label: string; className: string} {
+    const days = utcCalendarDaysUntilExpirationDay(expirationDate);
+    if (days < 0) {
+        return {label: String(resolveLanguageKey("expired")), className: STATUS_BADGE_DANGER};
+    }
+    if (days === 0) {
+        return {label: String(resolveLanguageKey("expiresToday")), className: STATUS_BADGE_WARNING};
+    }
+    if (days === 1) {
+        return {label: String(resolveLanguageKey("expiresIn1Day")), className: STATUS_BADGE_WARNING};
+    }
+    const label = String(resolveLanguageKey("expiresInDays")).replace("{count}", String(days));
+    return {
+        label,
+        className: days <= 3 ? STATUS_BADGE_WARNING : STATUS_BADGE_INFO,
+    };
+}
+
+function ReservationCardBadges({
+    entity,
+    resolveLanguageKey,
+}: {
+    entity: Reservation;
+    resolveLanguageKey: ResolveLanguageKey;
+}): ReactNode {
+    const status = entity.status;
+    const expirationDate = entity.expirationDate;
+    const notes = entity.reservationNotes?.trim();
+    const expiration = expirationDate ? expirationBadgeMeta(expirationDate, resolveLanguageKey) : null;
+
+    if (!status && !expiration && !notes) return null;
+
+    return (
+        <>
+            {status ? (
+                <DisplayValue path="status" value={status}>
+                    {() => (
+                        <Badge variant="outline" className={cn("text-xs", reservationStatusBadgeClass(status))}>
+                            {String(resolveLanguageKey(`statusValues.${status}`, true) || status)}
+                        </Badge>
+                    )}
+                </DisplayValue>
+            ) : null}
+            {expiration && expirationDate ? (
+                <DisplayValue path="expirationDate" value={expirationDate}>
+                    {() => (
+                        <Badge variant="secondary" className={cn("text-xs gap-1", expiration.className)}>
+                            <IconCalendarClock className="size-3" aria-hidden />
+                            {expiration.label}
+                        </Badge>
+                    )}
+                </DisplayValue>
+            ) : null}
+            {notes ? (
+                <DisplayValue path="reservationNotes" value={notes}>
+                    {() => (
+                        <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                            <IconNotes className="size-3" aria-hidden />
+                            {String(resolveLanguageKey("notes"))}
+                        </span>
+                    )}
+                </DisplayValue>
+            ) : null}
+        </>
+    );
 }
 
 type ReservationCardProps = WithLanguageType & {
@@ -121,7 +226,10 @@ function ReservationCard({
                 );
             }}
         >
-            {({entity, setAction}) => (
+            {({entity, setAction}) => {
+                const hasNotes = Boolean(entity.reservationNotes?.trim());
+                const hasBadges = Boolean(entity.status || entity.expirationDate || hasNotes);
+                return (
                 <>
                     <ReservationReady entity={entity} onReady={onReady} />
                     <EntityCard.Header
@@ -139,11 +247,19 @@ function ReservationCard({
                                 <CopyTooltip text={entity.name} />
                             </span>
                         }
+                        badges={
+                            hasBadges ? (
+                                <ReservationCardBadges entity={entity} resolveLanguageKey={resolveLanguageKey} />
+                            ) : undefined
+                        }
                     >
                         <ReservationRowMenuExtras reservation={entity} onAction={setAction} />
                     </EntityCard.Header>
+                    {hasBadges && (
+                        <Separator className="-mx-(--density-pad) w-auto self-stretch" />
+                    )}
                     {!extraSmall && (
-                        <EntityCard.Body>
+                        <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
                             <DisplayRow
                                 icon={IconHome}
                                 label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
@@ -172,7 +288,7 @@ function ReservationCard({
                                 label={resolveLanguageKey("reservationDate")}
                                 tooltip={resolveLanguageKey("reservationDate")}
                                 path="reservationDate"
-                                type="date"
+                                type="dateTime"
                                 value={entity.reservationDate}
                             />
                             {!small && (
@@ -188,7 +304,8 @@ function ReservationCard({
                         </EntityCard.Body>
                     )}
                 </>
-            )}
+                );
+            }}
         </EntityCard>
     );
 }

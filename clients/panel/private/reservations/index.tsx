@@ -17,7 +17,7 @@ import ManualReservationClientEmailDialog, {
     parseManualClientEmailAction,
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
@@ -137,7 +137,7 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx"
-            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_3)}
             rowActionMenu={{
                 allowMenuForCustomChildren: true,
                 hideEdit: true,
