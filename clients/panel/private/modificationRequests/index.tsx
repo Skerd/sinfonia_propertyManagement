@@ -7,7 +7,7 @@ import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/ge
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import ModificationRequestCard from "@propertyManagementModule/clients/panel/private/modificationRequests/center/cardView/modificationRequestCard.tsx";
 import ModificationRequestSheetView from "@propertyManagementModule/clients/panel/private/modificationRequests/center/sheetView/modificationRequestSheetView.tsx";
@@ -136,7 +136,7 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
             quickFilters={quickFilters}
             buildEditPath={buildModificationRequestEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4, "mt-0.5")}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_3)}
             rowActionMenu={{
                 allowMenuForCustomChildren: true,
                 hideEdit: (request) => modificationRequestShouldHideEdit(request, write),
