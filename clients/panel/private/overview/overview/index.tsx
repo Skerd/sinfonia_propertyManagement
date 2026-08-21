@@ -348,6 +348,7 @@ function DashboardOverview({
           alerts={paymentAlerts}
           title={resolveLanguageKey("paymentAlerts")}
           viewAllLabel={resolveLanguageKey("viewPaymentPlans")}
+          drillDownContext={ctx}
         />
       </div>
 

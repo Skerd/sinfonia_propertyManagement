@@ -11,12 +11,19 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import { DashboardWidgetCard, DashboardWidgetEmpty } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
+import type { KpiDrillDownContext } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
+import {
+  kpiPaymentAlertPlans,
+  kpiPaymentAlertReservations,
+} from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
 
 export interface PaymentAlertsProps extends WithLanguageType {
   overdueCount: number;
   alerts?: PaymentAlertItem[];
   title?: string;
   viewAllLabel?: string;
+  /** Optional scope (edifice) for filtered footer drill-downs. */
+  drillDownContext?: KpiDrillDownContext;
 }
 
 function formatCurrency(value: number): string {
@@ -31,11 +38,16 @@ function getAlertStyle(days: number) {
   return { bg: 'bg-primary/10', border: 'border-primary/30', icon: IconBell, iconColor: 'text-primary' };
 }
 
+function alertKind(alert: PaymentAlertItem): "installment" | "reservation" {
+  return alert.kind === "reservation" ? "reservation" : "installment";
+}
+
 function PaymentAlertsInner({
   overdueCount,
   alerts,
   title,
   viewAllLabel,
+  drillDownContext = {},
   resolveLanguageKey,
   languageCode = 'en-US',
 }: PaymentAlertsProps) {
@@ -47,6 +59,8 @@ function PaymentAlertsInner({
   const effectiveTitle = title ?? resolveLanguageKey('title');
   const effectiveViewAllLabel = viewAllLabel ?? resolveLanguageKey('viewAllLabel');
   const locale = languageCode === 'sq-AL' ? 'sq-AL' : 'en-US';
+  const paymentPlansHref = kpiPaymentAlertPlans(drillDownContext);
+  const reservationsHref = kpiPaymentAlertReservations(drillDownContext);
 
   return (
     <DashboardWidgetCard
@@ -54,13 +68,22 @@ function PaymentAlertsInner({
       glass
       contentClassName="pt-0"
       footer={
-        <Button
-          variant="link"
-          className="w-full py-1.5 h-auto text-primary text-xs"
-          onClick={() => navigate('/realEstate/sales')}
-        >
-          {effectiveViewAllLabel}
-        </Button>
+        <div className="flex w-full flex-col gap-0.5">
+          <Button
+            variant="link"
+            className="w-full py-1.5 h-auto text-primary text-xs"
+            onClick={() => navigate(paymentPlansHref)}
+          >
+            {effectiveViewAllLabel}
+          </Button>
+          <Button
+            variant="link"
+            className="w-full py-1.5 h-auto text-primary text-xs"
+            onClick={() => navigate(reservationsHref)}
+          >
+            {resolveLanguageKey('viewReservationsLabel')}
+          </Button>
+        </div>
       }
     >
       <div className="flex items-center justify-end mb-3 -mt-1">
@@ -78,9 +101,10 @@ function PaymentAlertsInner({
               const style = getAlertStyle(alert.daysUntilDue);
               const IconComponent = style.icon;
               const unitLabel = alert.unit.unitNumber ?? alert.unit.name ?? alert.unit._id;
+              const kind = alertKind(alert);
               return (
                 <div
-                  key={`${alert.unit._id}-${index}`}
+                  key={`${kind}-${alert.reservationId ?? alert.unit._id}-${index}`}
                   className={cn(
                     'px-2.5 py-2 rounded-md border transition-colors hover:border-opacity-80',
                     style.bg,
@@ -100,6 +124,11 @@ function PaymentAlertsInner({
                           {formatCurrency(alert.installment.amount)}
                         </span>
                       </div>
+                      {kind === "reservation" && (
+                        <p className="text-2xs text-muted-foreground mt-0.5">
+                          {resolveLanguageKey('reservationLabel')}
+                        </p>
+                      )}
                       <div className="flex items-center justify-between mt-1 gap-1.5">
                         <span className="text-xs text-muted-foreground">
                           {new Date(alert.installment.dueDate).toLocaleDateString(locale)}
@@ -131,7 +160,14 @@ function PaymentAlertsInner({
             <button
               type="button"
               className="w-full mt-3 py-1.5 text-primary text-xs font-medium hover:underline"
-              onClick={() => navigate('/realEstate/sales')}
+              onClick={() =>
+                navigate(
+                  alerts!.some((a) => alertKind(a) === 'reservation') &&
+                    !alerts!.some((a) => alertKind(a) === 'installment')
+                    ? reservationsHref
+                    : paymentPlansHref
+                )
+              }
             >
               {resolveLanguageKey('viewAllCount')} ({alerts!.length})
             </button>

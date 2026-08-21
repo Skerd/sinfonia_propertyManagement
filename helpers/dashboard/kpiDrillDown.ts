@@ -128,12 +128,33 @@ export const kpiExpiringReservations = (ctx: KpiDrillDownContext) => {
 };
 export const kpiReservationDeposits = (ctx: KpiDrillDownContext) => kpiActiveReservations(ctx);
 
+/** Payment-alerts widget: unpaid/partial active reservations with expiration ≤ now+30d. */
+export const kpiPaymentAlertReservations = (ctx: KpiDrillDownContext = {}) => {
+    const end = new Date();
+    end.setDate(end.getDate() + 30);
+    return reservationsUrl(ctx, [
+        buildFilterRule("isActive", "equals", true),
+        buildFilterRule("paid", "equals", false),
+        buildFilterRule("expirationDate", "lessThanOrEqual", toISODate(end)),
+    ]);
+};
+
 // ── Payment plans (best-effort → sales with payment_plan) ────────────────────
 
 export const kpiActivePaymentPlans = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
 export const kpiOverdueInstallments = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
 export const kpiTotalOutstanding = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
 export const kpiPaymentPlansCompleted = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
+
+/**
+ * Payment-alerts widget → sales with payment plans.
+ * Omits dashboard saleDate period (alerts are due-date based, not sale-date based).
+ */
+export const kpiPaymentAlertPlans = (ctx: KpiDrillDownContext = {}) =>
+    buildListDrillDownUrl("/realEstate/sales", {
+        filter: buildFilterGroup([buildFilterRule("paymentType", "equals", SALE_PAYMENT_PLAN)]),
+        queryParams: contextQueryParams(ctx),
+    });
 
 // ── Unit costs ───────────────────────────────────────────────────────────────
 

@@ -165,6 +165,7 @@ function RealEstateDashboard({
                                 alerts={dashboardData?.paymentAlerts ?? []}
                                 title={resolveLanguageKey("paymentAlerts")}
                                 viewAllLabel={resolveLanguageKey("viewPaymentPlans")}
+                                drillDownContext={drillDownContext}
                             />
                         </div>
 
