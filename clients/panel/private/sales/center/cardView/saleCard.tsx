@@ -1,16 +1,100 @@
 import {compose} from "redux";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {type ResolveLanguageKey, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
-import {IconCalendarClock, IconCurrencyDollar, IconHome, IconPackage, IconUser} from "@tabler/icons-react";
+import {
+    IconBuilding,
+    IconBuildingCommunity,
+    IconCalendarClock,
+    IconCurrencyDollar,
+    IconHome,
+    IconPackage,
+    IconUser,
+} from "@tabler/icons-react";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import SaleSheetView, {buildSaleEditPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
+import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {Separator} from "@coreModule/components/ui/separator.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {
+    CARD_INFO_ROWS_TWO_COL_CLASS,
+    STATUS_BADGE_INFO,
+    STATUS_BADGE_NEUTRAL,
+    STATUS_BADGE_SUCCESS,
+} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {RefObject} from "react";
+import type {ReactNode, RefObject} from "react";
+
+function paymentTypeBadgeClass(paymentType: string): string {
+    switch (paymentType) {
+        case "cash":
+            return STATUS_BADGE_SUCCESS;
+        case "payment_plan":
+            return STATUS_BADGE_INFO;
+        default:
+            return STATUS_BADGE_NEUTRAL;
+    }
+}
+
+function paymentTypeLabel(paymentType: string, resolveLanguageKey: ResolveLanguageKey): string {
+    if (paymentType === "cash") return String(resolveLanguageKey("cash"));
+    if (paymentType === "payment_plan") return String(resolveLanguageKey("paymentPlan"));
+    return paymentType;
+}
+
+function SaleCardBadges({
+    entity,
+    resolveLanguageKey,
+}: {
+    entity: Sale;
+    resolveLanguageKey: ResolveLanguageKey;
+}): ReactNode {
+    const paymentType = entity.paymentType;
+    const projectName = entity.project?.name;
+    const edificeName = entity.edifice?.name;
+
+    if (!paymentType && !projectName && !edificeName) return null;
+
+    return (
+        <>
+            {paymentType ? (
+                <DisplayValue path="paymentType" value={paymentType}>
+                    {() => (
+                        <Badge variant="outline" className={cn("text-xs", paymentTypeBadgeClass(paymentType))}>
+                            {paymentTypeLabel(paymentType, resolveLanguageKey)}
+                        </Badge>
+                    )}
+                </DisplayValue>
+            ) : null}
+            {/* project/edifice are denormalized dependents (sheet uses skipReadAccessGate) */}
+            {projectName ? (
+                <DisplayValue value={projectName} show>
+                    {() => (
+                        <Badge variant="secondary" className={cn("text-xs gap-1", STATUS_BADGE_NEUTRAL)}>
+                            <IconBuilding className="size-3" aria-hidden />
+                            {projectName}
+                        </Badge>
+                    )}
+                </DisplayValue>
+            ) : null}
+            {edificeName ? (
+                <DisplayValue value={edificeName} show>
+                    {() => (
+                        <Badge variant="secondary" className={cn("text-xs gap-1", STATUS_BADGE_NEUTRAL)}>
+                            <IconBuildingCommunity className="size-3" aria-hidden />
+                            {edificeName}
+                        </Badge>
+                    )}
+                </DisplayValue>
+            ) : null}
+        </>
+    );
+}
 
 type SaleCardProps = WithLanguageType & {
     sale: Sale;
@@ -71,6 +155,9 @@ function SaleCard({
                     entity.name?.trim() ||
                     [entity.unit?.name, entity.unit?.unitNumber].filter(Boolean).join(" · ") ||
                     "—";
+                const hasBadges = Boolean(
+                    entity.paymentType || entity.project?.name || entity.edifice?.name,
+                );
                 return (
                     <>
                         <EntityCard.Header
@@ -81,10 +168,18 @@ function SaleCard({
                                     <CopyTooltip text={entity.name ?? saleTitle} />
                                 </span>
                             }
+                            badges={
+                                hasBadges ? (
+                                    <SaleCardBadges entity={entity} resolveLanguageKey={resolveLanguageKey} />
+                                ) : undefined
+                            }
                         >
                             <SaleRowMenuExtras sale={entity} />
                         </EntityCard.Header>
-                        <EntityCard.Body>
+                        {hasBadges && (
+                            <Separator className="-mx-(--density-pad) w-auto self-stretch" />
+                        )}
+                        <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
                             <DisplayRow
                                 icon={IconHome}
                                 label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
