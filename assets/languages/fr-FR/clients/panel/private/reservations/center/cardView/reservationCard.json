@@ -13,6 +13,13 @@
   "depositAmount": "Montant de l'acompte",
   "notes": "Notes",
   "status": "Statut",
+  "reservationStatus": "Statut de la réservation",
+  "statusValues": {
+    "active": "Actif",
+    "expired": "Expirée",
+    "cancelled": "Annulée",
+    "converted": "Convertie"
+  },
   "active": "Actif",
   "inactive": "Inactive",
   "paid": "Payée",

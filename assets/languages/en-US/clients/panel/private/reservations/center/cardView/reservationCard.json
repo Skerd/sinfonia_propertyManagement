@@ -13,6 +13,13 @@
   "depositAmount": "Deposit Amount",
   "notes": "Notes",
   "status": "Status",
+  "reservationStatus": "Reservation Status",
+  "statusValues": {
+    "active": "Active",
+    "expired": "Expired",
+    "cancelled": "Cancelled",
+    "converted": "Converted"
+  },
   "active": "Active",
   "inactive": "Inactive",
   "paid": "Paid",

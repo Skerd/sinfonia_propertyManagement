@@ -13,6 +13,13 @@
   "depositAmount": "Importo del deposito",
   "notes": "Note",
   "status": "Stato",
+  "reservationStatus": "Stato della prenotazione",
+  "statusValues": {
+    "active": "Attiva",
+    "expired": "Scaduta",
+    "cancelled": "Annullata",
+    "converted": "Convertita"
+  },
   "active": "Attiva",
   "inactive": "Inattiva",
   "paid": "Pagata",

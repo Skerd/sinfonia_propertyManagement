@@ -13,6 +13,13 @@
   "depositAmount": "Anzahlungsbetrag",
   "notes": "Notizen",
   "status": "Status",
+  "reservationStatus": "Reservationsstatus",
+  "statusValues": {
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "cancelled": "Storniert",
+    "converted": "Umgewandelt"
+  },
   "active": "Aktiv",
   "inactive": "Inaktiv",
   "paid": "Bezahlt",

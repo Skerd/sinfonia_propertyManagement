@@ -13,6 +13,13 @@
   "depositAmount": "Shuma e depozitës",
   "notes": "Shënime",
   "status": "Statusi",
+  "reservationStatus": "Statusi i rezervimit",
+  "statusValues": {
+    "active": "Aktiv",
+    "expired": "I skaduar",
+    "cancelled": "I anuluar",
+    "converted": "I konvertuar"
+  },
   "active": "Aktiv",
   "inactive": "Joaktiv",
   "paid": "I paguar",
