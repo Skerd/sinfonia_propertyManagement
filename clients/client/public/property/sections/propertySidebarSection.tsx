@@ -1,7 +1,10 @@
 import {useState} from "react";
 import {toast} from "sonner";
-import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
-import {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {
+    MarketingUnitSingle,
+    MarketingUnitStatus,
+    PublicLanguageProps,
+} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {propertyAssets} from "@propertyManagementModule/clients/client/public/property/propertyAssets.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {
@@ -17,6 +20,31 @@ type PropertySidebarSectionProps = PublicLanguageProps & {
 };
 
 const MISSING_VALUE = "—";
+
+const STATUS_LANGUAGE_KEYS: Record<MarketingUnitStatus, string> = {
+    available: "statusAvailable",
+    reserved: "statusReserved",
+    sold: "statusSold",
+};
+
+const STATUS_DOT_CLASS: Record<MarketingUnitStatus, string> = {
+    available: "bg-green-500",
+    reserved: "bg-yellow-500",
+    sold: "bg-red-500",
+};
+
+const STATUS_TEXT_CLASS: Record<MarketingUnitStatus, string> = {
+    available: "text-green-600",
+    reserved: "text-yellow-600",
+    sold: "text-red-600",
+};
+
+function resolveUnitStatus(status: string | undefined): MarketingUnitStatus {
+    if (status === "reserved" || status === "sold") {
+        return status;
+    }
+    return "available";
+}
 
 function formatFloorLabel(unit: MarketingUnitSingle) {
     if (unit.floorLabel) {
@@ -57,6 +85,8 @@ function PropertySidebarSection({resolveLanguageKey, unit, onReserve}: PropertyS
     const orientationLabel = unit.orientation ?? MISSING_VALUE;
     const unitTypeLabel = unit.unitTypeName?.trim() || MISSING_VALUE;
     const specImage = resolveMarketingMediaUrl(unit.floorPlanImage) ?? propertyAssets.specArea;
+    const unitStatus = resolveUnitStatus(unit.status);
+    const canReserve = unitStatus === "available";
 
     const handleDownloadBrochure = async () => {
         if (downloadingBrochure) {
@@ -101,9 +131,9 @@ function PropertySidebarSection({resolveLanguageKey, unit, onReserve}: PropertyS
                     className="absolute right-5 top-5 flex items-center gap-2 rounded-[5px] border border-pronix-border px-4 py-2 md:right-6 md:top-9"
                     data-node-id="515:6144"
                 >
-                    <span className="size-2.5 rounded-full bg-green-500" />
-                    <span className="font-aeonik-light text-base text-pronix-ink not-italic md:text-lg">
-                        {unit.status || resolveLanguageKey("available")}
+                    <span className={cn("size-2.5 rounded-full", STATUS_DOT_CLASS[unitStatus])} />
+                    <span className={cn("font-aeonik-light text-base not-italic md:text-lg", STATUS_TEXT_CLASS[unitStatus])}>
+                        {resolveLanguageKey(STATUS_LANGUAGE_KEYS[unitStatus])}
                     </span>
                 </div>
                 <div className="pt-2" data-node-id="515:6174">
@@ -160,21 +190,23 @@ function PropertySidebarSection({resolveLanguageKey, unit, onReserve}: PropertyS
                     </div>
                     <div className="my-6 h-px w-full bg-pronix-border" />
                     <div className="flex flex-col gap-3">
-                        <button
-                            type="button"
-                            onClick={onReserve}
-                            className={cn(
-                                "flex w-full cursor-pointer items-center justify-center border border-pronix-ink px-6 py-4 md:py-5",
-                                "bg-transparent text-pronix-ink transition-colors duration-200",
-                                "hover:bg-pronix-ink hover:text-white",
-                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
-                            )}
-                            data-node-id="515:6169"
-                        >
-                            <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg">
-                                {resolveLanguageKey("reserveOnline")}
-                            </span>
-                        </button>
+                        {canReserve ? (
+                            <button
+                                type="button"
+                                onClick={onReserve}
+                                className={cn(
+                                    "flex w-full cursor-pointer items-center justify-center border border-pronix-ink px-6 py-4 md:py-5",
+                                    "bg-transparent text-pronix-ink transition-colors duration-200",
+                                    "hover:bg-pronix-ink hover:text-white",
+                                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+                                )}
+                                data-node-id="515:6169"
+                            >
+                                <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg">
+                                    {resolveLanguageKey("reserveOnline")}
+                                </span>
+                            </button>
+                        ) : null}
                         <button
                             type="button"
                             onClick={handleDownloadBrochure}
