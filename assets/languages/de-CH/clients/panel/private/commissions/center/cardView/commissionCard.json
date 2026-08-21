@@ -25,6 +25,10 @@
     }
   },
   "basis": "Provisionsbasis",
+  "basisEnum": {
+    "depositAmount": "Reservationsanzahlung",
+    "finalPrice": "Verkaufsendpreis"
+  },
   "notes": "Notizen",
   "paidAt": "Bezahlt am",
   "voidedAt": "Annulliert am",

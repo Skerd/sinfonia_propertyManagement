@@ -25,6 +25,10 @@
     }
   },
   "basis": "Commission basis",
+  "basisEnum": {
+    "depositAmount": "Reservation deposit",
+    "finalPrice": "Sale final price"
+  },
   "notes": "Notes",
   "paidAt": "Paid at",
   "voidedAt": "Voided at",

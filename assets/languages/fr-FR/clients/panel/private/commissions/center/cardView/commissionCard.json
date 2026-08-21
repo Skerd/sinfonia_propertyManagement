@@ -25,6 +25,10 @@
     }
   },
   "basis": "Base de commission",
+  "basisEnum": {
+    "depositAmount": "Acompte de réservation",
+    "finalPrice": "Prix final de vente"
+  },
   "notes": "Notes",
   "paidAt": "Payée le",
   "voidedAt": "Annulée le",

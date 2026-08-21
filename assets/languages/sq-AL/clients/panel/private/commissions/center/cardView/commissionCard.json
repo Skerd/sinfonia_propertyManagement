@@ -25,6 +25,10 @@
     }
   },
   "basis": "Baza e komisionit",
+  "basisEnum": {
+    "depositAmount": "Depoziti i rezervimit",
+    "finalPrice": "Çmimi përfundimtar i shitjes"
+  },
   "notes": "Shënime",
   "paidAt": "Paguar më",
   "voidedAt": "Anuluar më",

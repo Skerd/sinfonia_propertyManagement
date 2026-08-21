@@ -7,7 +7,8 @@ import CommissionCard from "@propertyManagementModule/clients/panel/private/comm
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
 import CommissionSheetView from "@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 function AllCommissions({resolveLanguageKey}: WithLanguageType) {
@@ -74,7 +75,7 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
             buildEditPath={() => ""}
             quickFilters={quickFilters}
             resolveLanguageKey={resolveLanguageKey}
-            cardViewClassName={GRID_TRANSACTIONAL}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             rowActionMenu={{
                 hideDelete: true,
                 hideRestore: true,
