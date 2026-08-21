@@ -10,7 +10,7 @@ export type OwnershipCardContent = {
     body: string;
     checklist: string[];
     ctaLabel: string;
-    ctaHref?: string;
+    ctaHref: string;
     includedLabel: string;
     nodeId: string;
     imageCrop: OwnershipImageCropKey;
@@ -42,7 +42,7 @@ function OwnershipCta({
     label,
     variant,
 }: {
-    href?: string;
+    href: string;
     label: string;
     variant: "light" | "dark";
 }) {
@@ -58,10 +58,6 @@ function OwnershipCta({
     const labelClassName = "font-aeonik-medium whitespace-nowrap not-italic leading-[17.15px] text-base md:text-lg lg:text-[24px]";
 
     const content = <span className={labelClassName}>{label}</span>;
-
-    if (!href) {
-        return <div className={className}>{content}</div>;
-    }
 
     if (href.startsWith("#")) {
         return (

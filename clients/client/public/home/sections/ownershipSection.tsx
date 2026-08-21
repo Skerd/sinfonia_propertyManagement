@@ -36,6 +36,7 @@ function OwnershipSection({resolveLanguageKey}: OwnershipSectionProps) {
                     t("ownBuyCheck6"),
                 ],
                 ctaLabel: t("ownBuyCta"),
+                ctaHref: "/projects",
             },
             {
                 nodeId: "142:801",
@@ -53,6 +54,7 @@ function OwnershipSection({resolveLanguageKey}: OwnershipSectionProps) {
                     t("ownCoownCheck5"),
                 ],
                 ctaLabel: t("ownCoownCta"),
+                ctaHref: "/projects",
             },
             {
                 nodeId: "142:837",
@@ -70,6 +72,7 @@ function OwnershipSection({resolveLanguageKey}: OwnershipSectionProps) {
                     t("ownTokenCheck5"),
                 ],
                 ctaLabel: t("ownTokenCta"),
+                ctaHref: "/investors#tokenization",
             },
         ],
         [resolveLanguageKey],
