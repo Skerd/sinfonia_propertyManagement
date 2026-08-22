@@ -96,7 +96,7 @@ function RevenueChartInner({
 
   /** Keys mirror the `Bar` dataKeys so the tooltip resolves label and color from here. */
   const chartConfig = {
-    collected: { label: resolveLanguageKey('collected'), color: 'var(--status-sold)' },
+    collected: { label: resolveLanguageKey('collected'), color: 'var(--success)' },
     pendingSales: {
       label: resolveLanguageKey('pendingSales'),
       color: 'color-mix(in oklch, var(--status-sold) 50%, transparent)',
@@ -171,7 +171,7 @@ function RevenueChartInner({
 
       <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(8rem,100%),1fr))] gap-4 border-t border-border pt-4">
         <div className="text-center">
-          <p className="font-display text-2xl font-bold tabular-nums text-status-sold">
+          <p className="font-display text-2xl font-bold tabular-nums text-success">
             {formatChartValue(collectedAmount)}
           </p>
           <p className="text-sm text-muted-foreground">{resolveLanguageKey('collected')}</p>

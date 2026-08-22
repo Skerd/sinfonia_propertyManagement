@@ -30,8 +30,8 @@ type PanelLayout = "list" | "grid";
 
 const STATUS_BADGE: Record<MarketingUnitStatus, {wrap: string; dot: string}> = {
     available: {wrap: "bg-[rgba(47,157,68,0.12)] text-[#2f9d44]", dot: "bg-[#2f9d44]"},
-    reserved: {wrap: "bg-[rgba(217,119,6,0.12)] text-[#d97706]", dot: "bg-[#d97706]"},
-    sold: {wrap: "bg-[rgba(24,24,24,0.08)] text-pronix-ink-muted", dot: "bg-pronix-ink-muted"},
+    reserved: {wrap: "bg-[rgba(234,179,8,0.12)] text-[#ca8a04]", dot: "bg-[#eab308]"},
+    sold: {wrap: "bg-[rgba(220,38,38,0.12)] text-[#dc2626]", dot: "bg-[#dc2626]"},
 };
 
 type OpenProjectFigmaFloorPanelProps = {

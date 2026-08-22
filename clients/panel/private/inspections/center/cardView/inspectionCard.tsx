@@ -36,14 +36,14 @@ import type {ReactNode, RefObject} from "react";
 function inspectionStatusTextClass(status: string): string {
     switch (status) {
         case "completed":
-            return "text-status-sold";
+            return "text-success";
         case "scheduled":
-            return "text-status-available";
+            return "text-info";
         case "in_progress":
         case "rescheduled":
-            return "text-status-reserved";
+            return "text-warning";
         case "cancelled":
-            return "text-status-blocked";
+            return "text-destructive";
         default:
             return "text-muted-foreground";
     }
@@ -51,9 +51,9 @@ function inspectionStatusTextClass(status: string): string {
 
 /** Rating scale is 1–10. */
 function inspectionRatingTextClass(rating: number): string {
-    if (rating >= 8) return "text-status-sold";
-    if (rating >= 5) return "text-status-reserved";
-    return "text-status-blocked";
+    if (rating >= 8) return "text-success";
+    if (rating >= 5) return "text-warning";
+    return "text-destructive";
 }
 
 function InspectionCardFooterBadges({
