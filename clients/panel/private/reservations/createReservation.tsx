@@ -99,7 +99,6 @@ function CreateReservation({
             defaultValues={{
                 unit: unitId ?? "",
                 reservedByCompany: company._id,
-                expirationDate: new Date().toISOString().split("T")[0],
             }}
             loading={loading}
             innerRef={innerRef}
