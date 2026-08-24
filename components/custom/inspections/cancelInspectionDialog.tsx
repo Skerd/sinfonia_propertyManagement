@@ -13,7 +13,11 @@ import {
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import {EditInspectionFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.schema-def.ts";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {
+    EditInspectionFormType,
+    INSPECTION_LONG_TEXT_MAX,
+} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.schema-def.ts";
 
 type CancelInspectionDialogProps = WithLanguageType & WithAxiosType<Inspection, EditInspectionFormType> & {
     open: boolean;
@@ -77,14 +81,17 @@ function CancelInspectionDialog({
                     <label className="text-sm font-medium mb-2 block">
                         {resolveLanguageKey("cancellationReasonLabel")}
                     </label>
-                    <Textarea
-                        placeholder={resolveLanguageKey("cancellationReasonPlaceholder")}
-                        value={cancellationReason}
-                        onChange={(e) => setCancellationReason(e.target.value)}
-                        disabled={loading}
-                        rows={3}
-                        className="resize-none"
-                    />
+                    <FormMaxLengthControl maxLength={INSPECTION_LONG_TEXT_MAX} value={cancellationReason}>
+                        <Textarea
+                            placeholder={resolveLanguageKey("cancellationReasonPlaceholder")}
+                            value={cancellationReason}
+                            onChange={(e) => setCancellationReason(e.target.value.slice(0, INSPECTION_LONG_TEXT_MAX))}
+                            disabled={loading}
+                            rows={3}
+                            maxLength={INSPECTION_LONG_TEXT_MAX}
+                            className="resize-none"
+                        />
+                    </FormMaxLengthControl>
                 </div>
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading} onClick={() => setCancellationReason("")}>
