@@ -25,6 +25,8 @@
     "deletedBy": "Deleted By",
     "description": "Description",
     "edifice": "Edifice",
+    "featuredOnHomepage": "Featured on homepage",
+    "featuredSortOrder": "Featured sort order",
     "floor": "Floor",
     "hasBalcony": "Balcony",
     "hasCityView": "City View",

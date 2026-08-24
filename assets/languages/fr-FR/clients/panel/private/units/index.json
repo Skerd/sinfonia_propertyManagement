@@ -25,6 +25,8 @@
     "deletedBy": "Supprimé par",
     "description": "Description",
     "edifice": "Bâtiment",
+    "featuredOnHomepage": "Mis en avant sur la page d'accueil",
+    "featuredSortOrder": "Ordre de mise en avant",
     "floor": "Étage",
     "hasBalcony": "Balcon",
     "hasCityView": "Vue sur la ville",

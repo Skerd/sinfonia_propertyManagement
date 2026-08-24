@@ -25,6 +25,8 @@
     "deletedBy": "Fshirë nga",
     "description": "Përshkrimi",
     "edifice": "Ndërtesa",
+    "featuredOnHomepage": "I veçuar në faqen kryesore",
+    "featuredSortOrder": "Renditja e veçuar",
     "floor": "Kati",
     "hasBalcony": "Ballkon",
     "hasCityView": "Pamje e qytetit",
