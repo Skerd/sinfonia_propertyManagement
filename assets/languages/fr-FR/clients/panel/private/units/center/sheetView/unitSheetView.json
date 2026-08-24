@@ -28,14 +28,14 @@
   "orientation": "Orientation",
   "constructionStatus": "Statut de construction",
   "unitOrientationEnum": {
-    "N": "Nord",
-    "S": "Sud",
-    "E": "Est",
-    "W": "Ouest",
-    "NE": "Nord-est",
-    "NW": "Nord-ouest",
-    "SE": "Sud-est",
-    "SW": "Sud-ouest"
+    "N": "Nord (N)",
+    "S": "Sud (S)",
+    "E": "Est (E)",
+    "W": "Ouest (W)",
+    "NE": "Nord-Est (NE)",
+    "NW": "Nord-Ouest (NW)",
+    "SE": "Sud-Est (SE)",
+    "SW": "Sud-Ouest (SW)"
   },
   "unitConstructionStatusEnum": {
     "planned": "Planifié",

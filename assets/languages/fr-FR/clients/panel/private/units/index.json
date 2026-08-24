@@ -72,14 +72,14 @@
         "rented_unit": "Loué"
       },
       "orientation": {
-        "N": "N",
-        "S": "S",
-        "E": "E",
-        "W": "O",
-        "NE": "NE",
-        "NW": "NO",
-        "SE": "SE",
-        "SW": "SO"
+        "N": "Nord (N)",
+        "S": "Sud (S)",
+        "E": "Est (E)",
+        "W": "Ouest (W)",
+        "NE": "Nord-Est (NE)",
+        "NW": "Nord-Ouest (NW)",
+        "SE": "Sud-Est (SE)",
+        "SW": "Sud-Ouest (SW)"
       },
       "constructionStatus": {
         "planned": "Planifié",

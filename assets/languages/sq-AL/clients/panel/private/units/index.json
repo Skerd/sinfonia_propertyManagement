@@ -72,14 +72,14 @@
         "rented_unit": "Me Qira"
       },
       "orientation": {
-        "N": "N",
-        "S": "S",
-        "E": "E",
-        "W": "W",
-        "NE": "Ne",
-        "NW": "Nw",
-        "SE": "Se",
-        "SW": "Sw"
+        "N": "Veri (N)",
+        "S": "Jug (S)",
+        "E": "Lindje (E)",
+        "W": "Perëndim (W)",
+        "NE": "Veri-Lindje (NE)",
+        "NW": "Veri-Perëndim (NW)",
+        "SE": "Jug-Lindje (SE)",
+        "SW": "Jug-Perëndim (SW)"
       },
       "constructionStatus": {
         "planned": "Planifikuar",

@@ -28,14 +28,14 @@
   "orientation": "Orientimi",
   "constructionStatus": "Statusi i ndërtimit",
   "unitOrientationEnum": {
-    "N": "Veri",
-    "S": "Jug",
-    "E": "Lindje",
-    "W": "Perëndim",
-    "NE": "Verilindje",
-    "NW": "Veriperëndim",
-    "SE": "Juglindje",
-    "SW": "Jugperëndim"
+    "N": "Veri (N)",
+    "S": "Jug (S)",
+    "E": "Lindje (E)",
+    "W": "Perëndim (W)",
+    "NE": "Veri-Lindje (NE)",
+    "NW": "Veri-Perëndim (NW)",
+    "SE": "Jug-Lindje (SE)",
+    "SW": "Jug-Perëndim (SW)"
   },
   "unitConstructionStatusEnum": {
     "planned": "E planifikuar",
