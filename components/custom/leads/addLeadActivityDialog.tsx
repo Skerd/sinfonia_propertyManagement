@@ -16,8 +16,10 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
 import {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import {LEAD_ACTIVITY_ACTION_VALUES} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/leadActivity.constants.ts";
+import {LEAD_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.schema-def.ts";
 
 type AddLeadActivityPayload = {
     _id: string;
@@ -116,14 +118,17 @@ function AddLeadActivityDialog({
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("notesLabel")}</Label>
-                        <Textarea
-                            value={notes}
-                            onChange={(e) => setNotes(e.target.value)}
-                            placeholder={resolveLanguageKey("notesPlaceholder")}
-                            disabled={loading}
-                            rows={4}
-                            className="resize-none max-h-80"
-                        />
+                        <FormMaxLengthControl maxLength={LEAD_LONG_TEXT_MAX} value={notes}>
+                            <Textarea
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value.slice(0, LEAD_LONG_TEXT_MAX))}
+                                placeholder={resolveLanguageKey("notesPlaceholder")}
+                                disabled={loading}
+                                rows={4}
+                                maxLength={LEAD_LONG_TEXT_MAX}
+                                className="resize-none max-h-80"
+                            />
+                        </FormMaxLengthControl>
                     </div>
                 </div>
                 <DialogFooter>
