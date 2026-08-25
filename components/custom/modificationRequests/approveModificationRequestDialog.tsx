@@ -16,11 +16,17 @@ import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/re
 import {Media} from "armonia/src/modules/core/types";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {
+    MODIFICATION_REQUEST_LINE_ITEM_MAX,
+    MODIFICATION_REQUEST_LONG_TEXT_MAX,
+    MODIFICATION_REQUEST_UNIT_MAX,
+} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 
 type MaterialPlanRow = { item: string; quantity?: number; unit?: string; notes?: string };
 
@@ -225,13 +231,16 @@ function ApproveModificationRequestDialog({
                                     <div className="flex flex-col gap-y-2 max-h-64 overflow-y-auto pr-1">
                                         {materials.map((material, idx) => (
                                             <div key={`material-${idx}`} className="grid grid-cols-1 md:grid-cols-12 gap-2 rounded-md border p-2">
-                                                <input
-                                                    value={material.item}
-                                                    onChange={(e) => updateMaterial(idx, "item", e.target.value)}
-                                                    placeholder="Item"
-                                                    className="h-9 md:col-span-4 rounded-md border bg-background px-3 text-sm"
-                                                    disabled={loading}
-                                                />
+                                                <FormMaxLengthControl className="md:col-span-4" maxLength={MODIFICATION_REQUEST_LINE_ITEM_MAX} value={material.item}>
+                                                    <input
+                                                        value={material.item}
+                                                        onChange={(e) => updateMaterial(idx, "item", e.target.value.slice(0, MODIFICATION_REQUEST_LINE_ITEM_MAX))}
+                                                        placeholder="Item"
+                                                        maxLength={MODIFICATION_REQUEST_LINE_ITEM_MAX}
+                                                        className="h-9 w-full rounded-md border bg-background px-3 text-sm"
+                                                        disabled={loading}
+                                                    />
+                                                </FormMaxLengthControl>
                                                 <input
                                                     type="number"
                                                     value={material.quantity ?? ""}
@@ -240,20 +249,26 @@ function ApproveModificationRequestDialog({
                                                     className="h-9 md:col-span-2 rounded-md border bg-background px-3 text-sm"
                                                     disabled={loading}
                                                 />
-                                                <input
-                                                    value={material.unit ?? ""}
-                                                    onChange={(e) => updateMaterial(idx, "unit", e.target.value || undefined)}
-                                                    placeholder="Unit"
-                                                    className="h-9 md:col-span-2 rounded-md border bg-background px-3 text-sm"
-                                                    disabled={loading}
-                                                />
-                                                <input
-                                                    value={material.notes ?? ""}
-                                                    onChange={(e) => updateMaterial(idx, "notes", e.target.value || undefined)}
-                                                    placeholder="Notes"
-                                                    className="h-9 md:col-span-3 rounded-md border bg-background px-3 text-sm"
-                                                    disabled={loading}
-                                                />
+                                                <FormMaxLengthControl className="md:col-span-2" maxLength={MODIFICATION_REQUEST_UNIT_MAX} value={material.unit ?? ""}>
+                                                    <input
+                                                        value={material.unit ?? ""}
+                                                        onChange={(e) => updateMaterial(idx, "unit", e.target.value.slice(0, MODIFICATION_REQUEST_UNIT_MAX) || undefined)}
+                                                        placeholder="Unit"
+                                                        maxLength={MODIFICATION_REQUEST_UNIT_MAX}
+                                                        className="h-9 w-full rounded-md border bg-background px-3 text-sm"
+                                                        disabled={loading}
+                                                    />
+                                                </FormMaxLengthControl>
+                                                <FormMaxLengthControl className="md:col-span-3" maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={material.notes ?? ""}>
+                                                    <input
+                                                        value={material.notes ?? ""}
+                                                        onChange={(e) => updateMaterial(idx, "notes", e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX) || undefined)}
+                                                        placeholder="Notes"
+                                                        maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
+                                                        className="h-9 w-full rounded-md border bg-background px-3 text-sm"
+                                                        disabled={loading}
+                                                    />
+                                                </FormMaxLengthControl>
                                                 <Button type="button" variant="ghost" size="icon" className="md:col-span-1" onClick={() => removeMaterial(idx)} disabled={loading}>
                                                     <X className="h-4 w-4" />
                                                 </Button>
@@ -298,14 +313,17 @@ function ApproveModificationRequestDialog({
                             <Label htmlFor="notes" className="mb-2 block">
                                 {resolveLanguageKey("notesLabel")}
                             </Label>
-                            <Textarea
-                                id="notes"
-                                value={notes}
-                                onChange={(e) => setNotes(e.target.value)}
-                                placeholder={resolveLanguageKey("notesPlaceholder")}
-                                disabled={loading}
-                                className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
-                            />
+                            <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={notes}>
+                                <Textarea
+                                    id="notes"
+                                    value={notes}
+                                    onChange={(e) => setNotes(e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX))}
+                                    placeholder={resolveLanguageKey("notesPlaceholder")}
+                                    disabled={loading}
+                                    maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
+                                    className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
+                                />
+                            </FormMaxLengthControl>
                         </div>
                         <div>
                             <Label className="mb-2 block">{resolveLanguageKey("mediaLabel")}</Label>

@@ -16,6 +16,7 @@ import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/re
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -28,6 +29,11 @@ import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
 import {isValid} from "date-fns";
 import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
 import {financeModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/fiinanceModificationRequest.form.validator.ts";
+import {
+    MODIFICATION_REQUEST_LINE_ITEM_MAX,
+    MODIFICATION_REQUEST_LONG_TEXT_MAX,
+    MODIFICATION_REQUEST_UNIT_MAX,
+} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 
 type FinanceZodFormValues = z.infer<ReturnType<typeof financeModificationRequestFormSchema>>;
 type FinanceFormValues = Omit<FinanceZodFormValues, "media">;
@@ -268,13 +274,16 @@ function FinanceModificationRequestDialog({
                                             {costBreakdown.map((item, index) => (
                                                 <TableRow key={index} className="hover:bg-transparent">
                                                     <TableCell className="min-w-0 p-1.5 align-middle">
-                                                        <Input
-                                                            placeholder={resolveLanguageKey("form.itemLabel")}
-                                                            value={item.item}
-                                                            onChange={(e) => updateCostBreakdownItem(index, "item", e.target.value)}
-                                                            disabled={loading}
-                                                            className="h-8 min-w-0 px-2 text-xs"
-                                                        />
+                                                        <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_LINE_ITEM_MAX} value={item.item}>
+                                                            <Input
+                                                                placeholder={resolveLanguageKey("form.itemLabel")}
+                                                                value={item.item}
+                                                                onChange={(e) => updateCostBreakdownItem(index, "item", e.target.value.slice(0, MODIFICATION_REQUEST_LINE_ITEM_MAX))}
+                                                                disabled={loading}
+                                                                maxLength={MODIFICATION_REQUEST_LINE_ITEM_MAX}
+                                                                className="h-8 min-w-0 px-2 text-xs"
+                                                            />
+                                                        </FormMaxLengthControl>
                                                     </TableCell>
                                                     <TableCell className="min-w-0 p-1.5 align-middle">
                                                         <Input
@@ -299,13 +308,16 @@ function FinanceModificationRequestDialog({
                                                         />
                                                     </TableCell>
                                                     <TableCell className="min-w-0 p-1.5 align-middle">
-                                                        <Input
-                                                            placeholder="—"
-                                                            value={item.unit ?? ""}
-                                                            onChange={(e) => updateCostBreakdownItem(index, "unit", e.target.value)}
-                                                            disabled={loading}
-                                                            className="h-8 min-w-0 px-2 text-xs"
-                                                        />
+                                                        <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_UNIT_MAX} value={item.unit ?? ""}>
+                                                            <Input
+                                                                placeholder="—"
+                                                                value={item.unit ?? ""}
+                                                                onChange={(e) => updateCostBreakdownItem(index, "unit", e.target.value.slice(0, MODIFICATION_REQUEST_UNIT_MAX))}
+                                                                disabled={loading}
+                                                                maxLength={MODIFICATION_REQUEST_UNIT_MAX}
+                                                                className="h-8 min-w-0 px-2 text-xs"
+                                                            />
+                                                        </FormMaxLengthControl>
                                                     </TableCell>
                                                     <TableCell className="min-w-0 p-1.5 align-middle text-end font-medium tabular-nums text-foreground">
                                                         {formatLineTotal(item)}
@@ -414,15 +426,16 @@ function FinanceModificationRequestDialog({
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>{resolveLanguageKey("form.notesLabel")}</FormLabel>
-                                        <FormControl>
+                                        <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={field.value || ""}>
                                             <Textarea
                                                 placeholder={resolveLanguageKey("form.notesPlaceholder")}
                                                 disabled={loading}
                                                 value={field.value || ""}
-                                                onChange={field.onChange}
+                                                onChange={(e) => field.onChange(e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX))}
+                                                maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
                                                 className="min-h-[100px] max-h-[150px] resize-none overflow-y-auto"
                                             />
-                                        </FormControl>
+                                        </FormMaxLengthControl>
                                         <FormMessage />
                                     </FormItem>
                                 )}

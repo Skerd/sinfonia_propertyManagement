@@ -21,7 +21,7 @@ function CancelModificationRequest({
     useKeyboardShortcuts(shortcut, openDialog);
 
     return (
-        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
+        <DropdownMenuItem onClick={() => { openDialog(); }}>
             <XCircle className="text-destructive" size={16}/>
             <p className="text-destructive">
                 {resolveLanguageKey("title")}

@@ -33,6 +33,7 @@ import SubmitRevisionModificationRequestDialog from "@propertyManagementModule/c
 import FinanceModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/financeModificationRequestDialog.tsx";
 import DeliverModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/deliverModificationRequestDialog.tsx";
 import CancelModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/cancelModificationRequestDialog.tsx";
+import ClientCostApproveModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx";
 
 function modificationRequestEditPath(req: ModificationRequest, unitId: string, unitName?: string) {
     const params = new URLSearchParams();
@@ -161,6 +162,14 @@ function ModificationRequestCard({
                                 onSuccess={handleSuccess}
                             />
                         )}
+                        {action === "clientCostApprove" && (
+                            <ClientCostApproveModificationRequestDialog
+                                open
+                                onClose={() => setAction("")}
+                                request={entity}
+                                onSuccess={handleSuccess}
+                            />
+                        )}
                     </>
                 );
             }}
@@ -196,8 +205,16 @@ function ModificationRequestCard({
                         if (displayRequest.status === "pending_ceo") return "current";
                         return "upcoming";
                     case "finance":
-                        if (displayRequest.status === "finance_completed" || displayRequest.status === "completed") return "completed";
                         if (displayRequest.status === "pending_finance") return "current";
+                        if (
+                            displayRequest.status === "pending_client_approval" ||
+                            displayRequest.status === "finance_completed" ||
+                            displayRequest.status === "pending_delivery" ||
+                            displayRequest.status === "completed" ||
+                            !!displayRequest.financeDetails
+                        ) {
+                            return "completed";
+                        }
                         return "upcoming";
                     case "delivery":
                         if (displayRequest.deliveryApproval?.decision === "approved") return "completed";
@@ -220,19 +237,11 @@ function ModificationRequestCard({
                         return "bg-muted border-border";
                 }
             };
-            const getLineClass = (fromStatus: string, toStatus: string) => {
-                const from = getStageStatus(fromStatus);
-                const to = getStageStatus(toStatus);
-
-                if (from === "completed" && (to === "completed" || to === "current" || to === "rejected")) {
-                    return "bg-success";
-                }
-                if (from === "rejected" || to === "rejected") {
-                    return "bg-destructive";
-                }
-                if (from === "current") {
-                    return "bg-warning";
-                }
+            const getLineClass = (stage: string) => {
+                const status = getStageStatus(stage);
+                if (status === "completed") return "bg-success";
+                if (status === "rejected") return "bg-destructive";
+                if (status === "current") return "bg-warning";
                 return "bg-muted";
             };
 
@@ -419,6 +428,19 @@ function ModificationRequestCard({
 
                                 <HiddenElement>
                                     {
+                                        permissions.notes &&
+                                        <>
+                                            <div className="pt-1 border-t">
+                                                <p className="text-xs font-medium text-muted-foreground mb-1">{resolveLanguageKey("notesLabel")}</p>
+                                                <p className="text-xs text-muted-foreground italic whitespace-pre-wrap max-h-32 overflow-y-auto">
+                                                    {financeDetails.notes && (financeDetails.notes.length > 250 ? financeDetails.notes.slice(0, 250) + "…" : financeDetails.notes)}
+                                                </p>
+                                            </div>
+                                        </>
+                                    }
+                                </HiddenElement>
+                                <HiddenElement>
+                                    {
                                         permissions.costBreakdown &&
                                         <>
                                             <div className="text-xs pt-1 border-t">
@@ -495,19 +517,6 @@ function ModificationRequestCard({
                                 </HiddenElement>
                                 <HiddenElement>
                                     {
-                                        permissions.notes &&
-                                        <>
-                                            <div className="pt-1 border-t">
-                                                <p className="text-xs font-medium text-muted-foreground mb-1">{resolveLanguageKey("notesLabel")}</p>
-                                                <p className="text-xs text-muted-foreground italic whitespace-pre-wrap max-h-32 overflow-y-auto">
-                                                    {financeDetails.notes && (financeDetails.notes.length > 250 ? financeDetails.notes.slice(0, 250) + "…" : financeDetails.notes)}
-                                                </p>
-                                            </div>
-                                        </>
-                                    }
-                                </HiddenElement>
-                                <HiddenElement>
-                                    {
                                         permissions.media &&
                                         <>
                                             <div className="pt-1 border-t">
@@ -530,11 +539,11 @@ function ModificationRequestCard({
                     <>
                         {
                             read?.architectApproval?.keys?.decision ?
-                            <div className={cn("relative flex flex-col cursor-pointer group items-start grow")}>
+                            <div className={cn("relative flex min-w-0 flex-col cursor-pointer group items-start")}>
                                 {
                                     displayRequest.architectApproval?.decision ?
                                     <>
-                                        <div className={cn("h-0.5 w-full absolute top-2", getLineClass("architect", "engineer"))} />
+                                        <div className={cn("h-0.5 w-full absolute top-2", getLineClass("architect"))} />
                                         <TooltipDisplayer
                                             contentClassName={cn("p-0 bg-transparent")}
                                             tooltipRender={() => {
@@ -554,10 +563,10 @@ function ModificationRequestCard({
                                         <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                     </>
                                 }
-                                <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap">{stageLabel}</span>
+                                <span className="mt-1.5 w-full truncate text-center text-sm text-muted-foreground">{stageLabel}</span>
                             </div>
                             :
-                            <div className="relative flex flex-col cursor-pointer group items-start grow">
+                            <div className="relative flex min-w-0 flex-col cursor-pointer group items-start">
                                 <div className={`size-4 rounded-full transition-all duration-300 hover:scale-100 z-1 bg-primary/30 blur-xs`}/>
                                 <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                 <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap opacity-0">.</span>
@@ -572,11 +581,11 @@ function ModificationRequestCard({
                     <>
                         {
                             read?.engineerApproval?.keys?.decision ?
-                                <div className={cn("relative flex flex-col cursor-pointer group items-center grow")}>
+                                <div className={cn("relative flex min-w-0 flex-col cursor-pointer group items-center")}>
                                     {
                                         displayRequest.engineerApproval?.decision ?
                                             <>
-                                                <div className={cn("h-0.5 w-full absolute top-2", getLineClass("engineer", "ceo"))} />
+                                                <div className={cn("h-0.5 w-full absolute top-2", getLineClass("engineer"))} />
                                                 <TooltipDisplayer
                                                     contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                                     tooltipRender={() => {
@@ -596,10 +605,10 @@ function ModificationRequestCard({
                                                 <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                             </>
                                     }
-                                    <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap">{stageLabel}</span>
+                                    <span className="mt-1.5 w-full truncate text-center text-sm text-muted-foreground">{stageLabel}</span>
                                 </div>
                                 :
-                                <div className="relative flex flex-col cursor-pointer group items-start grow">
+                                <div className="relative flex min-w-0 flex-col cursor-pointer group items-start">
                                     <div className={`size-4 rounded-full transition-all duration-300 hover:scale-100 z-1 bg-primary/30 blur-xs`}/>
                                     <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                     <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap opacity-0">.</span>
@@ -614,11 +623,11 @@ function ModificationRequestCard({
                     <>
                         {
                             read?.ceoApproval?.keys?.decision ?
-                                <div className={cn("relative flex flex-col cursor-pointer group items-center grow")}>
+                                <div className={cn("relative flex min-w-0 flex-col cursor-pointer group items-center")}>
                                     {
                                         displayRequest.ceoApproval?.decision ?
                                             <>
-                                                <div className={cn("h-0.5 w-full absolute top-2", getLineClass("ceo", "finance"))} />
+                                                <div className={cn("h-0.5 w-full absolute top-2", getLineClass("ceo"))} />
                                                 <TooltipDisplayer
                                                     contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                                     tooltipRender={() => {
@@ -638,10 +647,10 @@ function ModificationRequestCard({
                                                 <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                             </>
                                     }
-                                    <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap">{stageLabel}</span>
+                                    <span className="mt-1.5 w-full truncate text-center text-sm text-muted-foreground">{stageLabel}</span>
                                 </div>
                                 :
-                                <div className="relative flex flex-col cursor-pointer group items-start grow">
+                                <div className="relative flex min-w-0 flex-col cursor-pointer group items-start">
                                     <div className={`size-4 rounded-full transition-all duration-300 hover:scale-100 z-1 bg-primary/30 blur-xs`}/>
                                     <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                     <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap opacity-0">.</span>
@@ -656,8 +665,8 @@ function ModificationRequestCard({
                     <>
                         {
                             read?.financeDetails ?
-                                <div className={cn("relative flex flex-col cursor-pointer group items-center grow")}>
-                                    <div className={cn("h-0.5 w-full absolute top-2", getLineClass("finance", "delivery"))} />
+                                <div className={cn("relative flex min-w-0 flex-col cursor-pointer group items-center")}>
+                                    <div className={cn("h-0.5 w-full absolute top-2", getLineClass("finance"))} />
                                     <TooltipDisplayer
                                         contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                         tooltipRender={() => {
@@ -670,10 +679,10 @@ function ModificationRequestCard({
                                     >
                                         <div className={`size-4 rounded-full border-2 transition-all duration-300 hover:scale-100 z-1 ${getStageDotClass(status)} `}/>
                                     </TooltipDisplayer>
-                                    <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap">{stageLabel}</span>
+                                    <span className="mt-1.5 w-full truncate text-center text-sm text-muted-foreground">{stageLabel}</span>
                                 </div>
                                 :
-                                <div className="relative flex flex-col cursor-pointer group items-start grow">
+                                <div className="relative flex min-w-0 flex-col cursor-pointer group items-start">
                                     <div className={`size-4 rounded-full transition-all duration-300 hover:scale-100 z-1 bg-primary/30 blur-xs`}/>
                                     <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                     <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap opacity-0">.</span>
@@ -688,11 +697,11 @@ function ModificationRequestCard({
                     <>
                         {
                             read?.deliveryApproval?.keys?.decision ?
-                                <div className={cn("relative flex flex-col cursor-pointer group items-end grow")}>
+                                <div className={cn("relative flex min-w-0 flex-col cursor-pointer group items-end")}>
                                     {
                                         displayRequest.deliveryApproval?.decision ?
                                             <>
-                                                <div className={cn("h-0.5 w-full absolute top-2", getLineClass("delivery", "delivery"))} />
+                                                <div className={cn("h-0.5 w-full absolute top-2", getLineClass("delivery"))} />
                                                 <TooltipDisplayer
                                                     contentClassName={cn("p-0 min-w-fit bg-transparent")}
                                                     tooltipRender={() => {
@@ -712,10 +721,10 @@ function ModificationRequestCard({
                                                 <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                             </>
                                     }
-                                    <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap">{stageLabel}</span>
+                                    <span className="mt-1.5 w-full truncate text-center text-sm text-muted-foreground">{stageLabel}</span>
                                 </div>
                                 :
-                                <div className="relative flex flex-col cursor-pointer group items-start grow">
+                                <div className="relative flex min-w-0 flex-col cursor-pointer group items-start">
                                     <div className={`size-4 rounded-full transition-all duration-300 hover:scale-100 z-1 bg-primary/30 blur-xs`}/>
                                     <div className={cn("h-0.5 w-full absolute top-2 blur-xs bg-primary")} />
                                     <span className="text-sm mt-1.5 text-center text-muted-foreground whitespace-nowrap opacity-0">.</span>
@@ -821,7 +830,7 @@ function ModificationRequestCard({
                                 }}
                             />
                         </EntityCard.Body>
-                        <div className="flex w-full min-w-0 flex-nowrap">
+                        <div className="grid w-full min-w-0 grid-cols-5">
                             {renderArchitectApproval("architect", resolveLanguageKey("architectApproval"))}
                             {renderEngineerApproval("engineer", resolveLanguageKey("engineerApproval"))}
                             {renderCEOApproval("ceo", resolveLanguageKey("ceoApproval"))}

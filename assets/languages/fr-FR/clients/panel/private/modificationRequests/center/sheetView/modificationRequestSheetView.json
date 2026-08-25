@@ -20,6 +20,8 @@
   "ceoApproval": "CEO",
   "finance": "Finances",
   "financeDetails": "Détails financiers",
+  "clientCostApproval": "Approbation des coûts client",
+  "stageDueDate": "Échéance de l'étape",
   "financeCompleted": "Finances terminées",
   "financeNotes": "Notes financières",
   "totalCost": "Coût total",

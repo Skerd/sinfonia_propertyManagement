@@ -20,6 +20,8 @@
   "ceoApproval": "CEO",
   "finance": "Finanzen",
   "financeDetails": "Finanzdetails",
+  "clientCostApproval": "Kundenkostenfreigabe",
+  "stageDueDate": "Phasen-Fälligkeitsdatum",
   "financeCompleted": "Finanzen abgeschlossen",
   "financeNotes": "Finanznotizen",
   "totalCost": "Gesamtkosten",

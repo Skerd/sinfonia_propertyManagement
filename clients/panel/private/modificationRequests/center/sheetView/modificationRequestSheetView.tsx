@@ -16,6 +16,7 @@ import SubmitRevisionModificationRequestDialog from "@propertyManagementModule/c
 import FinanceModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/financeModificationRequestDialog.tsx";
 import DeliverModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/deliverModificationRequestDialog.tsx";
 import CancelModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/cancelModificationRequestDialog.tsx";
+import ClientCostApproveModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx";
 
 export type ModificationRequestSheetViewOwnProps = {
     open: boolean;
@@ -151,6 +152,17 @@ function ModificationRequestSheetView({
             )}
             {action === "cancel" && (
                 <CancelModificationRequestDialog
+                    open
+                    onClose={() => setAction("")}
+                    request={sheetData as ModificationRequest}
+                    onSuccess={(updated?: ModificationRequest) => {
+                        onModified?.(updated);
+                        setAction("");
+                    }}
+                />
+            )}
+            {action === "clientCostApprove" && (
+                <ClientCostApproveModificationRequestDialog
                     open
                     onClose={() => setAction("")}
                     request={sheetData as ModificationRequest}

@@ -17,6 +17,8 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
 import {clientCostApproveModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/clientCostApproveModificationRequest.form.validator.ts";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 
 type ClientCostApproveModificationRequestDialogProps = WithLanguageType &
     //@ts-ignore //TODO check this too !important
@@ -106,14 +108,17 @@ function ClientCostApproveModificationRequestDialog({
                         <Label htmlFor="clientCostNotes" className="mb-2 block">
                             {resolveLanguageKey("notesLabel")}
                         </Label>
-                        <Textarea
-                            id="clientCostNotes"
-                            value={notes}
-                            onChange={(e) => setNotes(e.target.value)}
-                            placeholder={resolveLanguageKey("notesPlaceholder") as string}
-                            disabled={loading}
-                            className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
-                        />
+                        <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={notes}>
+                            <Textarea
+                                id="clientCostNotes"
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX))}
+                                placeholder={resolveLanguageKey("notesPlaceholder") as string}
+                                disabled={loading}
+                                maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
+                                className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
+                            />
+                        </FormMaxLengthControl>
                     </div>
                 </div>
                 <AlertDialogFooter>

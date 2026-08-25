@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useRef, useState} from "react";
 import {DeliverModificationRequestFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/deliverMofidicationRequest.form.type.ts";
-import {LoaderCircle, Package, X} from "lucide-react";
+import {LoaderCircle, Package} from "lucide-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -15,8 +15,9 @@ import {
 import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 import {ApiSelect} from "@coreModule/components/custom/apiSelect";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
 
@@ -39,9 +40,6 @@ function DeliverModificationRequestDialog({
 }: DeliverModificationRequestDialogProps) {
     const [notes, setNotes] = useState("");
     const [selectedInspections, setSelectedInspections] = useState<string[]>([]);
-    const [selectedInspectionLabels, setSelectedInspectionLabels] = useState<Map<string, string>>(new Map());
-    const [inspectionSelectValue, setInspectionSelectValue] = useState<string | undefined>(undefined);
-    const [forceReload, setForceReload] = useState(0);
     const [mediaFiles, setMediaFiles] = useState<File[]>([]);
     const mediaInputRef = useRef<HTMLInputElement>(null);
 
@@ -51,9 +49,6 @@ function DeliverModificationRequestDialog({
             onClose();
             setNotes("");
             setSelectedInspections([]);
-            setSelectedInspectionLabels(new Map());
-            setInspectionSelectValue(undefined);
-            setForceReload(prev => prev + 1);
             setMediaFiles([]);
         }
     }));
@@ -62,8 +57,6 @@ function DeliverModificationRequestDialog({
         if (!open) {
             setNotes("");
             setSelectedInspections([]);
-            setSelectedInspectionLabels(new Map());
-            setInspectionSelectValue(undefined);
             setMediaFiles([]);
         }
     }, [open]);
@@ -81,32 +74,10 @@ function DeliverModificationRequestDialog({
         } as DeliverModificationRequestFormType);
     };
 
-    const handleInspectionSelect = (value: string, label?: string) => {
-        if (!value || selectedInspections.includes(value)) {
-            return;
-        }
-        
-        setSelectedInspections(prev => [...prev, value]);
-        if (label) {
-            setSelectedInspectionLabels(prev => {
-                const newMap = new Map(prev);
-                newMap.set(value, label);
-                return newMap;
-            });
-        }
-        // Reset the select value so it can be used again
-        setInspectionSelectValue(undefined);
-        setForceReload(prev => prev + 1);
+    const handleInspectionSelect = (value: string | string[]) => {
+        setSelectedInspections(Array.isArray(value) ? value : value ? [value] : []);
     };
 
-    const removeInspection = (inspectionId: string) => {
-        setSelectedInspections(prev => prev.filter(id => id !== inspectionId));
-        setSelectedInspectionLabels(prev => {
-            const newMap = new Map(prev);
-            newMap.delete(inspectionId);
-            return newMap;
-        });
-    };
     const handleMediaFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = Array.from(e.target.files || []);
         if (files.length > 0) {
@@ -122,61 +93,62 @@ function DeliverModificationRequestDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={handleOpenChange}>
-                <AlertDialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
+                <AlertDialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
                     <AlertDialogHeader>
                         <AlertDialogTitle>{resolveLanguageKey("deliverConfirmTitle")}</AlertDialogTitle>
                         <AlertDialogDescription>
                             {resolveLanguageKey("deliverConfirmDescription")}
                         </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <div className="flex flex-col py-4 gap-y-4">
+                    <div className="flex min-w-0 flex-col py-4 gap-y-4">
                         <div>
                             <Label htmlFor="notes" className="mb-2">
                                 {resolveLanguageKey("notesLabel")}
                             </Label>
-                            <Textarea
-                                id="notes"
-                                value={notes}
-                                onChange={(e) => setNotes(e.target.value)}
-                                placeholder={resolveLanguageKey("notesPlaceholder")}
-                                disabled={loading}
-                                className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
-                            />
+                            <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={notes}>
+                                <Textarea
+                                    id="notes"
+                                    value={notes}
+                                    onChange={(e) => setNotes(e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX))}
+                                    placeholder={resolveLanguageKey("notesPlaceholder")}
+                                    disabled={loading}
+                                    maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
+                                    className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
+                                />
+                            </FormMaxLengthControl>
                         </div>
-                        <div>
+                        <div className="min-w-0">
                             <Label className="mb-2 block">
                                 {resolveLanguageKey("inspectionsLabel")}
                             </Label>
                             <ApiSelect
                                 apiUrl="/api/realEstate/unit/inspection/select"
-                                method="POST"
+                                multiple
+                                showSelectedChips
                                 postBody={{
-                                    unitId: request.unit?._id,
-                                    limit: 100
+                                    limit: 100,
+                                    ...(request.unit?._id
+                                        ? {
+                                            filters: {
+                                                id: "deliver-inspection-unit",
+                                                operator: "and",
+                                                rules: [{
+                                                    id: "unit",
+                                                    field: "unit",
+                                                    operator: "equals",
+                                                    value: request.unit._id,
+                                                }],
+                                                groups: [],
+                                            },
+                                        }
+                                        : {}),
                                 }}
-                                value={inspectionSelectValue}
+                                value={selectedInspections}
                                 onValueChange={handleInspectionSelect}
                                 placeholder={resolveLanguageKey("selectInspectionsPlaceholder") || "Select inspection..."}
                                 disabled={loading}
                                 pageSize={50}
-                                forceLoad={forceReload}
                             />
-                            {selectedInspections.length > 0 && (
-                                <div className="mt-2 flex flex-wrap gap-2">
-                                    {selectedInspections.map((id) => (
-                                        <Badge key={id} variant="secondary" className="flex items-center gap-1">
-                                            <span>{selectedInspectionLabels.get(id) || id}</span>
-                                            <button
-                                                type="button"
-                                                onClick={() => removeInspection(id)}
-                                                className="ml-1 hover:bg-muted-foreground/20 rounded-full p-0.5"
-                                            >
-                                                <X className="h-3 w-3" />
-                                            </button>
-                                        </Badge>
-                                    ))}
-                                </div>
-                            )}
                         </div>
                         <div>
                             <Label className="mb-2 block">{resolveLanguageKey("mediaLabel")}</Label>

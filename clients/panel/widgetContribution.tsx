@@ -14,6 +14,8 @@ import type {SheetPriceHistoryChartProps} from "@propertyManagementModule/compon
 import PaymentPlanInstallmentsField from "@propertyManagementModule/components/custom/paymentPlan/paymentPlanInstallmentsField.tsx";
 import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
 import FormExpenditureItemsField from "@propertyManagementModule/components/custom/unitCosts/formExpenditureItemsField.tsx";
+import SheetLineItems from "@propertyManagementModule/components/custom/lineItems/sheetLineItems.tsx";
+import {createSheetLineItems} from "@propertyManagementModule/components/custom/lineItems/createSheetLineItems.tsx";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
 import UnitCostCard from "@propertyManagementModule/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx";
 import ModificationRequestCard from "@propertyManagementModule/clients/panel/private/modificationRequests/center/cardView/modificationRequestCard.tsx";
@@ -243,6 +245,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#FormUnitPolygon": FormUnitPolygon,
         "#SheetPriceHistoryChart": SheetPriceHistoryChart,
         "#FormExpenditureItemsField": FormExpenditureItemsField,
+        "#SheetModificationLineItems": SheetLineItems,
         "#PaymentPlanInstallmentsField": PaymentPlanInstallmentsField,
         "#UnitCard": UnitCard,
         "#InspectionCard": InspectionCard,
@@ -353,6 +356,17 @@ const propertyManagementWidgetContribution: WidgetContribution = {
                 paymentPlan: normalized.stub,
                 fetchId: normalized.fetchId,
             });
+        },
+        "#SheetModificationLineItems": ({node, binding, ctx, index, Component}) => {
+            if (!sheetFieldVisible(node, ctx)) return null;
+            return createSheetLineItems(
+                ctx.data,
+                binding,
+                ctx,
+                binding.widgetProps ?? {},
+                Component ?? SheetLineItems,
+                index,
+            );
         },
         "#SheetPriceHistoryChart": ({node, binding, ctx, index, Component}) => {
             const {data} = ctx;

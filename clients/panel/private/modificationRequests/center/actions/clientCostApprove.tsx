@@ -10,7 +10,7 @@ type ClientCostApproveProps = WithLanguageType & {
 
 function ClientCostApprove({onAction, resolveLanguageKey}: ClientCostApproveProps) {
     return (
-        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAction("clientCostApprove"); }}>
+        <DropdownMenuItem onClick={() => { onAction("clientCostApprove"); }}>
             <DollarSign size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>

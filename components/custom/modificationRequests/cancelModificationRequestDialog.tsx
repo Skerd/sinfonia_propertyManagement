@@ -15,6 +15,8 @@ import {
 import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 
 type CancelModificationRequestDialogProps = WithLanguageType & WithAxiosType<any, EditModificationRequestFormType> & {
     open: boolean;
@@ -75,14 +77,17 @@ function CancelModificationRequestDialog({
                     <Label htmlFor="cancellationReason" className="mb-2">
                         {resolveLanguageKey("cancellationReasonLabel")} *
                     </Label>
-                    <Textarea
-                        id="cancellationReason"
-                        value={cancellationReason}
-                        onChange={(e) => setCancellationReason(e.target.value)}
-                        placeholder={resolveLanguageKey("cancellationReasonPlaceholder")}
-                        disabled={loading}
-                        className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
-                    />
+                    <FormMaxLengthControl maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={cancellationReason}>
+                        <Textarea
+                            id="cancellationReason"
+                            value={cancellationReason}
+                            onChange={(e) => setCancellationReason(e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX))}
+                            placeholder={resolveLanguageKey("cancellationReasonPlaceholder")}
+                            disabled={loading}
+                            maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
+                            className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"
+                        />
+                    </FormMaxLengthControl>
                 </div>
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={loading} onClick={() => setCancellationReason("")}>

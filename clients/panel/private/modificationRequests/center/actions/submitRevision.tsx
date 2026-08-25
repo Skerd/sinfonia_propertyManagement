@@ -21,7 +21,7 @@ function SubmitRevision({
     useKeyboardShortcuts(shortcut, openDialog);
 
     return (
-        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
+        <DropdownMenuItem onClick={() => { openDialog(); }}>
             <RotateCcw size={16}/>
             {resolveLanguageKey("submitRevisionTitle")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>

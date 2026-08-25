@@ -21,7 +21,7 @@ function DeliverModificationRequest({
     useKeyboardShortcuts(shortcut, openDialog);
 
     return (
-        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
+        <DropdownMenuItem onClick={() => { openDialog(); }}>
             <Package size={16}/>
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>

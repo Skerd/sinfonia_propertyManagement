@@ -21,7 +21,7 @@ function ApproveModificationRequest({
     useKeyboardShortcuts(shortcut, openDialog);
 
     return (
-        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
+        <DropdownMenuItem onClick={() => { openDialog(); }}>
             <CheckCircle2 size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
