@@ -87,14 +87,17 @@ function SalePayInstallmentDialog({
 
     return (
         <AlertDialog open={open} onOpenChange={onOpenChange}>
-            <AlertDialogContent className="max-w-md" onClick={(e) => e.stopPropagation()}>
-                <AlertDialogHeader>
+            <AlertDialogContent
+                className="flex max-h-[85vh] w-[calc(100%-2rem)] flex-col overflow-hidden data-[size=default]:max-w-xl data-[size=default]:sm:max-w-xl"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <AlertDialogHeader className="shrink-0">
                     <AlertDialogTitle>{resolveLanguageKey("payInstallmentTitle") || "Pay Installment"}</AlertDialogTitle>
                     <AlertDialogDescription>
                         {resolveLanguageKey("payInstallmentDescription") || `Record payment for installment #${installment?.installmentNumber ?? ""}`}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <div className="flex flex-col py-4 gap-y-4">
+                <div className="flex min-h-0 flex-1 flex-col gap-y-4 overflow-y-auto py-4">
                     <div className="flex flex-col gap-y-2">
                         <Label htmlFor="paidAmount">{resolveLanguageKey("paidAmount") || "Paid Amount"} *</Label>
                         <Input
@@ -123,7 +126,7 @@ function SalePayInstallmentDialog({
                             />
                         </FormMaxLengthControl>
                     </div>
-                    <div className="flex flex-col gap-y-2">
+                    <div className="flex min-h-0 flex-col gap-y-2">
                         <Label htmlFor="notes">{resolveLanguageKey("notes") || "Notes"}</Label>
                         <FormMaxLengthControl maxLength={SALE_LONG_TEXT_MAX} value={notes}>
                             <Textarea
@@ -133,12 +136,12 @@ function SalePayInstallmentDialog({
                                 placeholder={resolveLanguageKey("notesPlaceholder") || "Optional"}
                                 disabled={loading}
                                 maxLength={SALE_LONG_TEXT_MAX}
-                                className="min-h-[80px] resize-none"
+                                className="field-sizing-fixed min-h-[120px] max-h-56 overflow-y-auto resize-none"
                             />
                         </FormMaxLengthControl>
                     </div>
                 </div>
-                <AlertDialogFooter>
+                <AlertDialogFooter className="shrink-0">
                     <AlertDialogCancel disabled={loading} onClick={(e) => e.stopPropagation()}>
                         {resolveLanguageKey("cancel") || "Cancel"}
                     </AlertDialogCancel>
