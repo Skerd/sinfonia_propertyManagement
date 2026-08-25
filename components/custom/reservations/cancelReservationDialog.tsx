@@ -13,9 +13,11 @@ import {
     AlertDialogTitle,
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
+import {RESERVATION_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.schema-def.ts";
 import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
 
 type CancelReservationDialogProps = WithLanguageType & WithAxiosType<any, CancelReservationForm> & {
     open: boolean;
@@ -85,14 +87,18 @@ function CancelReservationDialog({
                         <Label htmlFor="cancellationReason" className="mb-2">
                             {resolveLanguageKey("cancellationReasonLabel")} *
                         </Label>
-                        <Textarea
-                            id="cancellationReason"
-                            value={cancellationReason}
-                            onChange={(e) => setCancellationReason(e.target.value)}
-                            placeholder={resolveLanguageKey("cancellationReasonPlaceholder")}
-                            disabled={loading}
-                            className="min-h-[100px]"
-                        />
+                        <FormMaxLengthControl maxLength={RESERVATION_LONG_TEXT_MAX} value={cancellationReason}>
+                            <Textarea
+                                id="cancellationReason"
+                                value={cancellationReason}
+                                onChange={(e) => setCancellationReason(e.target.value.slice(0, RESERVATION_LONG_TEXT_MAX))}
+                                placeholder={resolveLanguageKey("cancellationReasonPlaceholder")}
+                                disabled={loading}
+                                rows={3}
+                                maxLength={RESERVATION_LONG_TEXT_MAX}
+                                className="resize-none min-h-[100px]"
+                            />
+                        </FormMaxLengthControl>
                     </div>
                 )}
                 <AlertDialogFooter>
