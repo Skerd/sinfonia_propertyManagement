@@ -31,7 +31,7 @@ function CancelInspection({
     }
 
     return (
-        <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
+        <DropdownMenuItem onClick={() => { openDialog(); }}>
             <XCircle className="text-warning" size={16}/>
             <p className="text-warning">
                 {resolveLanguageKey("title")}
