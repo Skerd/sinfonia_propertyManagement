@@ -85,6 +85,7 @@
     "installmentNumberLabel": "#",
     "dueDateLabel": "Data e Afatit",
     "dueDateAfterPreviousError": "\"{}\" duhet të jetë pas \"{}\"",
+    "dueDateOutOfPlanRangeError": "\"{}\" duhet të jetë në ose pas \"{}\" dhe në ose para \"{}\"",
     "amountLabel": "Shuma",
     "amountPlaceholder": "Shuma e këstit",
     "principalAmountLabel": "Kryesorja",

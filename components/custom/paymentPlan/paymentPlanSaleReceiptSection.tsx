@@ -722,14 +722,15 @@ export default function PaymentPlanSaleReceiptSection({
                                 />
                                 :
                                 <div className="flex flex-col text gap-y-2 font-semibold">
-                                    {unit?.reservation && (
+                                    {unit.reservation?._id ? (
                                         <ReservationCard
+                                            reservation={unit.reservation as Reservation}
                                             fetchId={unit.reservation._id}
                                             hideActions={true}
                                             extraSmall={true}
                                             onReady={setReservation}
                                         />
-                                    )}
+                                    ) : null}
 
                                     <Card
                                         className={cn(

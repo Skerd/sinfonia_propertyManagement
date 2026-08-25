@@ -10,6 +10,8 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DollarSign, LoaderCircle} from "lucide-react";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {SALE_LONG_TEXT_MAX, SALE_SHORT_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -110,24 +112,30 @@ function SalePayInstallmentDialog({
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <Label htmlFor="transactionId">{resolveLanguageKey("transactionId") || "Transaction ID"}</Label>
-                        <Input
-                            id="transactionId"
-                            value={transactionId}
-                            onChange={(e) => setTransactionId(e.target.value)}
-                            placeholder={resolveLanguageKey("transactionIdPlaceholder") || "Optional"}
-                            disabled={loading}
-                        />
+                        <FormMaxLengthControl maxLength={SALE_SHORT_TEXT_MAX} value={transactionId}>
+                            <Input
+                                id="transactionId"
+                                value={transactionId}
+                                onChange={(e) => setTransactionId(e.target.value.slice(0, SALE_SHORT_TEXT_MAX))}
+                                placeholder={resolveLanguageKey("transactionIdPlaceholder") || "Optional"}
+                                disabled={loading}
+                                maxLength={SALE_SHORT_TEXT_MAX}
+                            />
+                        </FormMaxLengthControl>
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <Label htmlFor="notes">{resolveLanguageKey("notes") || "Notes"}</Label>
-                        <Textarea
-                            id="notes"
-                            value={notes}
-                            onChange={(e) => setNotes(e.target.value)}
-                            placeholder={resolveLanguageKey("notesPlaceholder") || "Optional"}
-                            disabled={loading}
-                            className="min-h-[80px]"
-                        />
+                        <FormMaxLengthControl maxLength={SALE_LONG_TEXT_MAX} value={notes}>
+                            <Textarea
+                                id="notes"
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value.slice(0, SALE_LONG_TEXT_MAX))}
+                                placeholder={resolveLanguageKey("notesPlaceholder") || "Optional"}
+                                disabled={loading}
+                                maxLength={SALE_LONG_TEXT_MAX}
+                                className="min-h-[80px] resize-none"
+                            />
+                        </FormMaxLengthControl>
                     </div>
                 </div>
                 <AlertDialogFooter>

@@ -8,6 +8,8 @@ import { Input } from "@coreModule/components/ui/input.tsx";
 import TitleWithCollapse from "@coreModule/components/custom/titleWithCollapse.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {SALE_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 
 export type PaymentPlanInstallmentsFieldProps = {
     name?: string;
@@ -15,6 +17,12 @@ export type PaymentPlanInstallmentsFieldProps = {
     resolveLanguageKey: WithLanguageType["resolveLanguageKey"];
     loading?: boolean;
 };
+
+function isoDayOrEmpty(value: unknown): string {
+    if (typeof value !== "string") return "";
+    const d = value.trim().split("T")[0];
+    return /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : "";
+}
 
 function utcDayMsFromIso(iso: string): number {
     const p = iso.trim().split("-").map((x) => Number.parseInt(x, 10));
@@ -27,15 +35,16 @@ function isoDateFromUtcMs(ms: number): string {
     return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
 }
 
-/** `n` due dates from `(start, end]`, last exactly `endIso` (UTC calendar days). */
+/** `n` due dates from `[start, end]`, last exactly `endIso` (UTC calendar days). */
 function interpolatedDueDates(startIso: string, endIso: string, n: number): string[] {
     if (n < 1) return [];
     const a = utcDayMsFromIso(startIso);
     const b = utcDayMsFromIso(endIso);
     if (Number.isNaN(a) || Number.isNaN(b) || b <= a) return [];
+    if (n === 1) return [isoDateFromUtcMs(b)];
     const out: string[] = [];
-    for (let i = 1; i <= n; i++) {
-        const ms = i === n ? b : Math.round(a + ((b - a) * i) / n);
+    for (let i = 0; i < n; i++) {
+        const ms = i === n - 1 ? b : Math.round(a + ((b - a) * i) / (n - 1));
         out.push(isoDateFromUtcMs(ms));
     }
     return out;
@@ -116,23 +125,45 @@ export default function PaymentPlanInstallmentsField({
 
     useEffect(() => {
         if (!Array.isArray(installments)) return;
-        for (let i = 1; i < installments.length; i++) {
-            const prevDueDate = installments[i - 1]?.dueDate;
-            const currentDueDate = installments[i]?.dueDate;
+        const startIso = isoDayOrEmpty(startDate);
+        const endIso = isoDayOrEmpty(endDate);
+        const hasPlanWindow = startIso.length > 0 && endIso.length > 0;
+
+        for (let i = 0; i < installments.length; i++) {
+            const currentIso = isoDayOrEmpty(installments[i]?.dueDate);
             const path = `${name}.${i}.dueDate` as const;
 
-            if (typeof prevDueDate !== "string" || typeof currentDueDate !== "string") {
+            if (!currentIso) {
                 form.clearErrors(path);
                 continue;
             }
 
-            if (currentDueDate.length === 0 || prevDueDate.length === 0) {
+            if (hasPlanWindow && (currentIso < startIso || currentIso > endIso)) {
+                const dueDateLabel = String(resolveLanguageKey("form.dueDateLabel"));
+                const startLabel = String(resolveLanguageKey("form.startDateLabel"));
+                const endLabel = String(resolveLanguageKey("form.endDateLabel"));
+                form.setError(path, {
+                    type: "custom",
+                    message: String(resolveLanguageKey("form.dueDateOutOfPlanRangeError"))
+                        .replace("{}", dueDateLabel)
+                        .replace("{}", startLabel)
+                        .replace("{}", endLabel),
+                });
+                continue;
+            }
+
+            if (i === 0) {
                 form.clearErrors(path);
                 continue;
             }
 
-            // `yyyy-MM-dd` compares chronologically as string.
-            if (currentDueDate <= prevDueDate) {
+            const prevIso = isoDayOrEmpty(installments[i - 1]?.dueDate);
+            if (!prevIso) {
+                form.clearErrors(path);
+                continue;
+            }
+
+            if (currentIso <= prevIso) {
                 const dueDateLabel = String(resolveLanguageKey("form.dueDateLabel"));
                 form.setError(path, {
                     type: "custom",
@@ -144,7 +175,7 @@ export default function PaymentPlanInstallmentsField({
                 form.clearErrors(path);
             }
         }
-    }, [installments, form, name, resolveLanguageKey]);
+    }, [installments, startDate, endDate, form, name, resolveLanguageKey]);
 
     return (
         <TitleWithCollapse
@@ -238,6 +269,8 @@ export default function PaymentPlanInstallmentsField({
                                                             {...f}
                                                             value={f.value || ""}
                                                             valueFormat="yyyy-MM-dd"
+                                                            minDate={isoDayOrEmpty(startDate) || undefined}
+                                                            maxDate={isoDayOrEmpty(endDate) || undefined}
                                                         />
                                                     </FormControl>
                                                     <FormMessage />
@@ -278,13 +311,17 @@ export default function PaymentPlanInstallmentsField({
                                                 <FormItem className="sm:col-span-2 lg:col-span-4">
                                                     <FormLabel>{resolveLanguageKey("form.notesLabel")}</FormLabel>
                                                     <FormControl>
-                                                        <Textarea
-                                                            disabled={loading}
-                                                            {...f}
-                                                            value={f.value || ""}
-                                                            className="resize-none max-h-[250px] overflow-y-auto"
-                                                            placeholder={String(resolveLanguageKey("form.notesPlaceholder"))}
-                                                        />
+                                                        <FormMaxLengthControl maxLength={SALE_LONG_TEXT_MAX} value={f.value || ""}>
+                                                            <Textarea
+                                                                disabled={loading}
+                                                                {...f}
+                                                                value={f.value || ""}
+                                                                maxLength={SALE_LONG_TEXT_MAX}
+                                                                onChange={(e) => f.onChange(e.target.value.slice(0, SALE_LONG_TEXT_MAX))}
+                                                                className="resize-none max-h-[250px] overflow-y-auto"
+                                                                placeholder={String(resolveLanguageKey("form.notesPlaceholder"))}
+                                                            />
+                                                        </FormMaxLengthControl>
                                                     </FormControl>
                                                     <FormMessage />
                                                 </FormItem>

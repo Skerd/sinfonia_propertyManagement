@@ -85,6 +85,7 @@
     "installmentNumberLabel": "#",
     "dueDateLabel": "Fälligkeit",
     "dueDateAfterPreviousError": "'{}' muss nach '{}' liegen",
+    "dueDateOutOfPlanRangeError": "'{}' muss am oder nach '{}' und am oder vor '{}' liegen",
     "amountLabel": "Betrag",
     "amountPlaceholder": "Ratenbetrag",
     "principalAmountLabel": "Kapital",

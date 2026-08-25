@@ -85,6 +85,7 @@
     "installmentNumberLabel": "#",
     "dueDateLabel": "Data di scadenza",
     "dueDateAfterPreviousError": "'{}' deve essere dopo '{}'",
+    "dueDateOutOfPlanRangeError": "'{}' deve essere il o dopo '{}' e il o prima di '{}'",
     "amountLabel": "Importo",
     "amountPlaceholder": "Importo rata",
     "principalAmountLabel": "Capitale",

@@ -85,6 +85,7 @@
     "installmentNumberLabel": "#",
     "dueDateLabel": "Due Date",
     "dueDateAfterPreviousError": "'{}' must be after '{}'",
+    "dueDateOutOfPlanRangeError": "'{}' must be on or after '{}' and on or before '{}'",
     "amountLabel": "Amount",
     "amountPlaceholder": "Installment amount",
     "principalAmountLabel": "Principal",

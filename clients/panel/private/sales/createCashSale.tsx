@@ -181,7 +181,6 @@ export function CashSaleReceiptSection({
                     </p>
                 </CardHeader>
                 <CardContent className="border-t px-2 w-full pt-4">
-                    {finalPrice}
                     {loadingUnit ? (
                         <Loader />
                     ) : (
@@ -197,14 +196,15 @@ export function CashSaleReceiptSection({
                                 />
                             ) : (
                                 <div className="flex flex-col text gap-y-2 font-semibold" style={{border: "0px solid red"}}>
-                                    {unit?.reservation && (
+                                    {unit.reservation?._id ? (
                                         <ReservationCard
+                                            reservation={unit.reservation as Reservation}
                                             fetchId={unit.reservation._id}
                                             hideActions={true}
                                             extraSmall={true}
                                             onReady={setReservation}
                                         />
-                                    )}
+                                    ) : null}
 
                                     <Card
                                         className={cn(

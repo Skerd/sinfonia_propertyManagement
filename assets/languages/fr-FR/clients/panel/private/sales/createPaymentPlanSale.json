@@ -85,6 +85,7 @@
     "installmentNumberLabel": "#",
     "dueDateLabel": "Date d'échéance",
     "dueDateAfterPreviousError": "'{}' doit être après '{}'",
+    "dueDateOutOfPlanRangeError": "'{}' doit être le ou après '{}' et le ou avant '{}'",
     "amountLabel": "Montant",
     "amountPlaceholder": "Montant de l'échéance",
     "principalAmountLabel": "Principal",
