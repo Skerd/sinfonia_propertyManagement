@@ -64,5 +64,7 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "resolvedBy": "Resolved by",
+  "resolvedAt": "Resolved at"
 }

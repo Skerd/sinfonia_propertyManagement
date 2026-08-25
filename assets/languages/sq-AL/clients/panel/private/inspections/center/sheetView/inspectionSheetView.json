@@ -64,5 +64,7 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "resolvedBy": "Zgjidhur nga",
+  "resolvedAt": "Zgjidhur më"
 }
