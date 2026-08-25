@@ -29,6 +29,8 @@
     "clientRequired": "Kërkohet klienti",
     "expirationDateLabel": "Data e skadimit",
     "expirationDatePlaceholder": "Zgjidhni datën e skadencës",
+    "reservationDateLabel": "Data e rezervimit",
+    "reservationDatePlaceholder": "Zgjidhni datën e rezervimit",
     "reservationNotesLabel": "Shënime",
     "reservationNotesPlaceholder": "Futni shënimet e rezervimit",
     "depositAmountLabel": "Shuma e depozitës",

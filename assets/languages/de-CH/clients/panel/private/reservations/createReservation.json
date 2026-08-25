@@ -29,6 +29,8 @@
     "clientRequired": "Kunde ist erforderlich",
     "expirationDateLabel": "Ablaufdatum",
     "expirationDatePlaceholder": "Ablaufdatum auswählen",
+    "reservationDateLabel": "Reservationsdatum",
+    "reservationDatePlaceholder": "Reservationsdatum auswählen",
     "reservationNotesLabel": "Notizen",
     "reservationNotesPlaceholder": "Reservationsnotizen eingeben",
     "depositAmountLabel": "Anzahlungsbetrag",

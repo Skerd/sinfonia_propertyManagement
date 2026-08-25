@@ -62,7 +62,8 @@ function CreateReservation({
         formData.append("reservedBy", data.reservedBy);
         formData.append("reservedByCompany", company._id);
         formData.append("client", data.client);
-        if (data.expirationDate) formData.append("expirationDate", data.expirationDate);
+        formData.append("reservationDate", data.reservationDate);
+        formData.append("expirationDate", data.expirationDate);
         if (data.reservationNotes != null) formData.append("reservationNotes", data.reservationNotes);
         if (data.depositAmount != null) formData.append("depositAmount", String(data.depositAmount));
         if (data.depositCurrency) formData.append("depositCurrency", data.depositCurrency);
@@ -95,10 +96,10 @@ function CreateReservation({
             config={viewConfig}
             resolveLanguageKey={resolveLanguageKey}
             formSchema={formSchema}
-            //@ts-expect-error
             defaultValues={{
                 unit: unitId ?? "",
                 reservedByCompany: company._id,
+                // reservationDate: new Date().toISOString().slice(0, 10),
             }}
             loading={loading}
             innerRef={innerRef}

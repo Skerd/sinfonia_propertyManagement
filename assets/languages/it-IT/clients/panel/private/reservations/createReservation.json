@@ -29,6 +29,8 @@
     "clientRequired": "Il cliente è obbligatorio",
     "expirationDateLabel": "Data di scadenza",
     "expirationDatePlaceholder": "Seleziona data di scadenza",
+    "reservationDateLabel": "Data di prenotazione",
+    "reservationDatePlaceholder": "Seleziona data di prenotazione",
     "reservationNotesLabel": "Note",
     "reservationNotesPlaceholder": "Inserisci le note di prenotazione",
     "depositAmountLabel": "Importo del deposito",

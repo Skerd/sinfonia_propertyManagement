@@ -29,6 +29,8 @@
     "clientRequired": "Client is required",
     "expirationDateLabel": "Expiration Date",
     "expirationDatePlaceholder": "Select expiration date",
+    "reservationDateLabel": "Reservation Date",
+    "reservationDatePlaceholder": "Select reservation date",
     "reservationNotesLabel": "Notes",
     "reservationNotesPlaceholder": "Enter reservation notes",
     "depositAmountLabel": "Deposit Amount",

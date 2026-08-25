@@ -288,7 +288,7 @@ function ReservationCard({
                                 label={resolveLanguageKey("reservationDate")}
                                 tooltip={resolveLanguageKey("reservationDate")}
                                 path="reservationDate"
-                                type="dateTime"
+                                type="date"
                                 value={entity.reservationDate}
                             />
                             {!small && (
