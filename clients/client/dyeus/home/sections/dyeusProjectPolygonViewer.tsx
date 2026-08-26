@@ -291,14 +291,8 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
     }, [project, selectedUnitId]);
 
     const unitPanelOpen = Boolean(selectedUnitId);
-    const [frontSheet, setFrontSheet] = useState<"floor" | "unit">("unit");
-    const floorSheetFront = unitPanelOpen && frontSheet === "floor";
     const floorSheetRef = useRef<HTMLAsideElement>(null);
     const unitSheetRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        setFrontSheet("unit");
-    }, [selectedUnitId]);
 
     useEffect(() => {
         const frame = window.requestAnimationFrame(() => {
@@ -442,51 +436,45 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                     </div>
                 </div>
 
-                <aside
-                    ref={floorSheetRef}
+                <div
                     className={cn(
-                        "flex min-h-[16rem] w-full scroll-mt-28 flex-col border-t border-dyeus-border bg-dyeus-white",
-                        "lg:absolute lg:h-auto lg:min-h-0 lg:overflow-hidden lg:border-t-0 lg:origin-top-right lg:transition-[transform,box-shadow,right,top,bottom] lg:duration-500 lg:ease-[cubic-bezier(0.22,1,0.36,1)]",
-                        unitPanelOpen && "max-lg:hidden",
                         unitPanelOpen
-                            ? cn(
-                                  "lg:top-8 lg:bottom-12 lg:w-[34rem] lg:border lg:border-dyeus-border lg:right-[calc(min(56rem,72vw)-28rem)]",
-                                  floorSheetFront
-                                      ? "lg:z-30 lg:-translate-y-2 lg:scale-[1.02] lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]"
-                                      : "lg:z-10 lg:shadow-[8px_16px_40px_rgba(36,28,22,0.16)]",
-                              )
-                            : "lg:z-10 lg:inset-y-0 lg:right-0 lg:w-[34rem] lg:border-l lg:border-dyeus-border",
+                            ? "max-lg:contents lg:absolute lg:inset-y-3 lg:right-2 lg:z-20 lg:flex lg:w-[min(80rem,92%)] lg:gap-3"
+                            : "contents",
                     )}
-                    onMouseEnter={() => {
-                        if (unitPanelOpen) setFrontSheet("floor");
-                    }}
-                    onMouseLeave={() => setFrontSheet("unit")}
-                    onFocusCapture={() => {
-                        if (unitPanelOpen) setFrontSheet("floor");
-                    }}
                 >
-                    {floorSheet}
-                </aside>
-
-                {selectedUnitId ? (
-                    <div
-                        ref={unitSheetRef}
-                        key={selectedUnitId}
+                    <aside
+                        ref={floorSheetRef}
                         className={cn(
-                            "dyeus-sheet-in flex min-h-[24rem] w-full scroll-mt-28 flex-col border-t border-dyeus-border bg-dyeus-cream",
-                            "lg:absolute lg:top-3 lg:bottom-2 lg:right-2 lg:z-20 lg:min-h-0 lg:w-[min(56rem,72vw)] lg:border lg:border-dyeus-border lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]",
+                            "flex min-h-[16rem] w-full scroll-mt-28 flex-col border-t border-dyeus-border bg-dyeus-white",
+                            "lg:h-auto lg:min-h-0 lg:overflow-hidden lg:border-t-0 lg:transition-[width,box-shadow] lg:duration-500 lg:ease-[cubic-bezier(0.22,1,0.36,1)]",
+                            unitPanelOpen && "max-lg:hidden",
+                            unitPanelOpen
+                                ? "lg:h-full lg:w-[min(34rem,46%)] lg:shrink-0 lg:border lg:border-dyeus-border lg:shadow-[8px_16px_40px_rgba(36,28,22,0.16)]"
+                                : "lg:absolute lg:z-10 lg:inset-y-0 lg:right-0 lg:w-[34rem] lg:border-l lg:border-dyeus-border",
                         )}
-                        onMouseEnter={() => setFrontSheet("unit")}
-                        onFocusCapture={() => setFrontSheet("unit")}
                     >
-                        <DyeusUnitPanel
-                            projectId={project._id}
-                            unitId={selectedUnitId}
-                            unitLabel={selectedUnitLabel}
-                            onClose={() => setSelectedUnitId(null)}
-                        />
-                    </div>
-                ) : null}
+                        {floorSheet}
+                    </aside>
+
+                    {selectedUnitId ? (
+                        <div
+                            ref={unitSheetRef}
+                            key={selectedUnitId}
+                            className={cn(
+                                "dyeus-sheet-in flex min-h-[24rem] w-full scroll-mt-28 flex-col border-t border-dyeus-border bg-dyeus-cream",
+                                "lg:h-full lg:min-h-0 lg:min-w-0 lg:flex-1 lg:border lg:border-dyeus-border lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]",
+                            )}
+                        >
+                            <DyeusUnitPanel
+                                projectId={project._id}
+                                unitId={selectedUnitId}
+                                unitLabel={selectedUnitLabel}
+                                onClose={() => setSelectedUnitId(null)}
+                            />
+                        </div>
+                    ) : null}
+                </div>
             </div>
         </div>
     );
