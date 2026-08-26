@@ -14,6 +14,7 @@ export type PropertyListingCardUnit = {
     floorLabel?: string;
     floorId?: string;
     edificeId?: string;
+    edificeName?: string;
     orientation?: string;
     price?: number;
     propertyType?: PropertyTypeId;

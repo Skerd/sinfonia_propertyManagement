@@ -1,4 +1,5 @@
 import {createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
+import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import {
     loadPublicFavorites,
     savePublicFavorites,
@@ -8,6 +9,15 @@ import {
     type PublicFavoritesState,
     type PublicFavoriteUnit,
 } from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesTypes.ts";
+import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+
+function favoriteUnitKey(unit: Pick<PublicFavoriteUnit, "projectId" | "unitId">): string {
+    return `${unit.projectId}:${unit.unitId}`;
+}
+
+function unitNeedsLocationNames(unit: PublicFavoriteUnit): boolean {
+    return !unit.projectName || !unit.edificeName;
+}
 
 type PublicFavoritesContextValue = {
     favorites: PublicFavoritesState;
@@ -30,6 +40,82 @@ function PublicFavoritesProvider({children}: {children: ReactNode}) {
     useEffect(() => {
         savePublicFavorites(favorites);
     }, [favorites]);
+
+    useEffect(() => {
+        if (!panelOpen) {
+            return;
+        }
+
+        const incomplete = favorites.units.filter(unitNeedsLocationNames);
+        if (incomplete.length === 0) {
+            return;
+        }
+
+        let cancelled = false;
+
+        void Promise.all(
+            incomplete.map(async (unit) => {
+                try {
+                    const response = await apiClient.post<{unit?: MarketingUnitSingle}>(
+                        "/api/realEstate/marketingUnit/single",
+                        {projectId: unit.projectId, unitId: unit.unitId},
+                    );
+                    const fetched = response.data?.unit;
+                    if (!fetched) {
+                        return null;
+                    }
+                    return {
+                        projectId: unit.projectId,
+                        unitId: unit.unitId,
+                        projectName: fetched.projectName,
+                        edificeName: fetched.edificeName,
+                    };
+                } catch {
+                    return null;
+                }
+            }),
+        ).then((patches) => {
+            if (cancelled) {
+                return;
+            }
+
+            const byKey = new Map<string, {projectName?: string; edificeName?: string}>();
+            for (const patch of patches) {
+                if (!patch) {
+                    continue;
+                }
+                byKey.set(favoriteUnitKey(patch), {
+                    projectName: patch.projectName,
+                    edificeName: patch.edificeName,
+                });
+            }
+            if (byKey.size === 0) {
+                return;
+            }
+
+            setFavorites((current) => {
+                let changed = false;
+                const units = current.units.map((unit) => {
+                    const patch = byKey.get(favoriteUnitKey(unit));
+                    if (!patch) {
+                        return unit;
+                    }
+                    const projectName = unit.projectName || patch.projectName;
+                    const edificeName = unit.edificeName || patch.edificeName;
+                    if (projectName === unit.projectName && edificeName === unit.edificeName) {
+                        return unit;
+                    }
+                    changed = true;
+                    return {...unit, projectName, edificeName};
+                });
+                return changed ? {...current, units} : current;
+            });
+        });
+
+        return () => {
+            cancelled = true;
+        };
+    }, [panelOpen, favorites.units]);
 
     const totalCount = favorites.projects.length + favorites.units.length;
 

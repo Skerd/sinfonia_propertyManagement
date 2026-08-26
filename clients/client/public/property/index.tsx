@@ -174,6 +174,7 @@ function PropertyPage(props: PropertyPageProps) {
                         <PublicFavoriteHeartButton
                             kind="unit"
                             projectId={unit.projectId || projectId}
+                            projectName={unit.projectName}
                             unit={{
                                 _id: unit._id,
                                 name: unit.name,
@@ -181,6 +182,7 @@ function PropertyPage(props: PropertyPageProps) {
                                 floorLabel: unit.floorLabel,
                                 price: unit.price,
                                 imageUrl: unit.mainImage ?? unit.imageGallery?.[0],
+                                edificeName: unit.edificeName,
                             }}
                             addLabel={String(resolveLanguageKey("favoritesAdd"))}
                             removeLabel={String(resolveLanguageKey("favoritesRemove"))}

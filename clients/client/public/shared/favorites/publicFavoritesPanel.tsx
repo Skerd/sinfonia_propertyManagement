@@ -101,6 +101,13 @@ function ProjectFavoriteRow({
     );
 }
 
+function favoriteUnitTitle(unit: PublicFavoriteUnit): string {
+    return [unit.projectName, unit.edificeName, unit.name]
+        .map((part) => part?.trim())
+        .filter((part): part is string => Boolean(part))
+        .join(" · ");
+}
+
 function UnitFavoriteRow({
     unit,
     addLabel,
@@ -129,14 +136,14 @@ function UnitFavoriteRow({
                         imageUrl: unit.imageUrl,
                         price: unit.price,
                         floorLabel: unit.floorLabel,
+                        edificeName: unit.edificeName,
                     }}
                     addLabel={addLabel}
                     removeLabel={removeLabel}
                 />
             }
         >
-            <p className={metaTitleClassName}>{unit.name}</p>
-            {unit.projectName ? <p className={metaLineClassName}>{unit.projectName}</p> : null}
+            <p className={metaTitleClassName}>{favoriteUnitTitle(unit)}</p>
             {unit.floorLabel ? <p className={metaLineClassName}>{unit.floorLabel}</p> : null}
             {unit.price != null ? <p className={priceClassName}>€{unit.price.toLocaleString()}</p> : null}
         </FavoriteRowShell>

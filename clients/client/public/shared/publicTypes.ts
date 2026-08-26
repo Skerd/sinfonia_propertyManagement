@@ -137,6 +137,8 @@ export type MarketingUnitSingle = {
     _id: string;
     name: string;
     projectId: string;
+    projectName?: string;
+    edificeName?: string;
     status: string;
     unitNumber?: string;
     areaSqm?: number;

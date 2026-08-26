@@ -43,6 +43,7 @@ function parseFavoriteUnit(value: unknown): PublicFavoriteUnit | null {
         unitId: value.unitId,
         name: value.name,
         projectName: typeof value.projectName === "string" ? value.projectName : undefined,
+        edificeName: typeof value.edificeName === "string" ? value.edificeName : undefined,
         imageUrl: typeof value.imageUrl === "string" ? value.imageUrl : undefined,
         price: typeof value.price === "number" ? value.price : undefined,
         floorLabel: typeof value.floorLabel === "string" ? value.floorLabel : undefined,

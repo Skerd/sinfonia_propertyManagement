@@ -13,6 +13,7 @@ export type PublicFavoriteUnit = {
     unitId: string;
     name: string;
     projectName?: string;
+    edificeName?: string;
     imageUrl?: string;
     price?: number;
     floorLabel?: string;

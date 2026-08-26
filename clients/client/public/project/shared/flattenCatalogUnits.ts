@@ -10,6 +10,7 @@ function mapCatalogUnit(
     floorLabel: string,
     floorId: string,
     edificeId: string,
+    edificeName?: string,
 ): PropertyListingCardUnit {
     return {
         _id: unit._id,
@@ -21,6 +22,7 @@ function mapCatalogUnit(
         floorLabel: unit.floorLabel ?? floorLabel,
         floorId: unit.floorId ?? floorId,
         edificeId: unit.edificeId ?? edificeId,
+        edificeName: edificeName || undefined,
         price: unit.price,
         propertyType: unit.propertyType,
         imageUrl: resolveMarketingMediaUrl(unit.mainImage),
@@ -31,7 +33,9 @@ export function flattenCatalogUnits(project: MarketingProjectSingle): PropertyLi
     return (
         project.edifices?.flatMap((edifice) =>
             (edifice.floors ?? []).flatMap((floor) =>
-                (floor.units ?? []).map((unit) => mapCatalogUnit(unit, floor.name, floor._id, edifice._id)),
+                (floor.units ?? []).map((unit) =>
+                    mapCatalogUnit(unit, floor.name, floor._id, edifice._id, edifice.name),
+                ),
             ),
         ) ?? []
     );

@@ -60,6 +60,7 @@ function PublicFavoriteHeartButton(props: PublicFavoriteHeartButtonProps) {
             unitId: props.unit._id,
             name: props.unit.name,
             projectName: props.projectName,
+            edificeName: props.unit.edificeName,
             imageUrl: props.unit.imageUrl,
             price: props.unit.price,
             floorLabel: props.unit.floorLabel,
