@@ -4,9 +4,9 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
+import {ensurePdfjsWorker} from "@coreModule/helpers/pdf/pdfjsWorker.ts";
 
-// Must match the installed pdfjs-dist version (copied into /public).
-pdfjs.GlobalWorkerOptions.workerSrc = `${import.meta.env.BASE_URL}pdf.worker.min.mjs`;
+ensurePdfjsWorker(pdfjs);
 
 const LOAD_TIMEOUT_MS = 12_000;
 
