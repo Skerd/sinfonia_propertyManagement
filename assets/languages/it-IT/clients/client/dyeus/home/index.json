@@ -92,5 +92,14 @@
   "floorsMeta": "{{count}} piani",
   "unitsMeta": "{{count}} unità",
   "noBuildings": "Nessun edificio disponibile.",
-  "noFloors": "Nessun piano disponibile."
+  "noFloors": "Nessun piano disponibile.",
+  "viewAsList": "Vista elenco",
+  "viewAsGrid": "Vista griglia",
+  "areaLabel": "Superficie",
+  "roomsLabel": "Camere",
+  "bathsLabel": "Bagni",
+  "orientationLabel": "Orientamento",
+  "floorLabel": "Piano",
+  "noUnitsOnFloor": "Nessuna residenza corrisponde a questo filtro sul piano selezionato.",
+  "viewerEmptyFloor": "Nessun overlay unità su questo piano."
 }

@@ -18,6 +18,7 @@ type DyeusPropertySidebarSectionProps = {
     unit: MarketingUnitSingle;
     t: DyeusPropertyCopy;
     onReserve: () => void;
+    compact?: boolean;
 };
 
 const STATUS_KEYS: Record<string, string> = {
@@ -48,7 +49,7 @@ function Spec({label, value}: {label: string; value: string}) {
     );
 }
 
-function DyeusPropertySidebarSection({unit, t, onReserve}: DyeusPropertySidebarSectionProps) {
+function DyeusPropertySidebarSection({unit, t, onReserve, compact = false}: DyeusPropertySidebarSectionProps) {
     const [downloadingBrochure, setDownloadingBrochure] = useState(false);
     const priceLabel = formatUnitPrice(unit, t("priceOnRequest"));
     const specImage =
@@ -88,8 +89,8 @@ function DyeusPropertySidebarSection({unit, t, onReserve}: DyeusPropertySidebarS
     };
 
     return (
-        <div className="relative w-full lg:sticky lg:top-6">
-            <div className="relative border border-dyeus-border bg-dyeus-white p-5 md:p-6">
+        <div className={cn("relative w-full", !compact && "lg:sticky lg:top-6")}>
+            <div className={cn("relative border border-dyeus-border bg-dyeus-white", compact ? "p-4" : "p-5 md:p-6")}>
                 <div
                     className={cn(
                         "absolute right-5 top-5 flex items-center gap-2 border px-4 py-2 md:right-6 md:top-8",
@@ -117,7 +118,10 @@ function DyeusPropertySidebarSection({unit, t, onReserve}: DyeusPropertySidebarS
                     <p className="font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-ink-muted">
                         {t("price")}
                     </p>
-                    <p className="mt-3 max-w-[70%] font-dyeus-serif text-4xl font-bold leading-[1.1] text-dyeus-ink sm:text-5xl md:text-[56px]">
+                    <p className={cn(
+                        "mt-3 max-w-[70%] font-dyeus-serif font-bold leading-[1.1] text-dyeus-ink",
+                        compact ? "text-3xl md:text-4xl" : "text-4xl sm:text-5xl md:text-[56px]",
+                    )}>
                         {priceLabel}
                     </p>
                     <div className="my-6 h-px w-full bg-dyeus-border" />

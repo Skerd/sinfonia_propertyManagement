@@ -58,6 +58,8 @@
   "openImage": "Open image {{index}}",
   "playVideo": "Play video {{index}}",
   "close": "Close",
+  "closeUnitPanel": "Close residence panel",
+  "viewFullResidence": "View full residence",
   "send": "Send",
   "defaultMessage": "Enquiry for unit {{name}}"
 }

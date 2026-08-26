@@ -17,6 +17,7 @@ type DyeusPropertyDetailsSectionProps = {
     unit: MarketingUnitSingle;
     t: DyeusPropertyCopy;
     onRequestInfo: () => void;
+    compact?: boolean;
 };
 
 type DetailValueGetter = (unit: MarketingUnitSingle, t: DyeusPropertyCopy) => string;
@@ -62,18 +63,20 @@ const FEATURE_ROWS = [
     {labelKey: "hasElevator", field: "hasElevator"},
 ] as const;
 
-function DetailRow({label, value}: {label: string; value: string}) {
+function DetailRow({label, value, compact}: {label: string; value: string; compact?: boolean}) {
     return (
-        <div className="flex items-center justify-between gap-4 border-b border-dyeus-border px-3 py-3">
-            <span className="font-dyeus-serif text-base text-dyeus-ink md:text-xl lg:text-2xl">{label}</span>
-            <span className="shrink-0 text-right font-dyeus-serif text-base text-dyeus-ink md:text-xl lg:text-2xl">
+        <div className={cn("flex items-center justify-between gap-4 border-b border-dyeus-border", compact ? "px-2 py-2" : "px-3 py-3")}>
+            <span className={cn("font-dyeus-serif text-dyeus-ink", compact ? "text-sm md:text-base" : "text-base md:text-xl lg:text-2xl")}>
+                {label}
+            </span>
+            <span className={cn("shrink-0 text-right font-dyeus-serif text-dyeus-ink", compact ? "text-sm md:text-base" : "text-base md:text-xl lg:text-2xl")}>
                 {value}
             </span>
         </div>
     );
 }
 
-function DyeusPropertyDetailsSection({unit, t, onRequestInfo}: DyeusPropertyDetailsSectionProps) {
+function DyeusPropertyDetailsSection({unit, t, onRequestInfo, compact = false}: DyeusPropertyDetailsSectionProps) {
     const priceHistory = unit.priceHistory ?? [];
     const priceHistoryPlot = buildPropertyPriceHistoryPlot(priceHistory);
     const areaRows = AREA_PRICING_ROWS.filter((row) => {
@@ -85,24 +88,24 @@ function DyeusPropertyDetailsSection({unit, t, onRequestInfo}: DyeusPropertyDeta
     return (
         <div className="relative w-full">
             {unit.description?.trim() ? (
-                <p className="font-dyeus-serif text-base leading-[1.4] text-dyeus-ink-muted md:text-lg lg:text-xl">
+                <p className={cn("font-dyeus-serif leading-[1.4] text-dyeus-ink-muted", compact ? "text-sm md:text-base" : "text-base md:text-lg lg:text-xl")}>
                     {unit.description.trim()}
                 </p>
             ) : null}
 
-            <div className={`w-full ${unit.description?.trim() ? "mt-8" : ""}`}>
-                <h2 className="font-dyeus-serif text-2xl font-bold leading-[1.2] text-dyeus-ink md:text-[32px]">
+            <div className={`w-full ${unit.description?.trim() ? (compact ? "mt-5" : "mt-8") : ""}`}>
+                <h2 className={cn("font-dyeus-serif font-bold leading-[1.2] text-dyeus-ink", compact ? "text-xl" : "text-2xl md:text-[32px]")}>
                     {t("areaAndPricing")}
                 </h2>
                 <div className="mt-3 border-t border-dyeus-border">
                     {areaRows.map((row) => (
-                        <DetailRow key={row.labelKey} label={t(row.labelKey)} value={row.getValue(unit, t)} />
+                        <DetailRow key={row.labelKey} compact={compact} label={t(row.labelKey)} value={row.getValue(unit, t)} />
                     ))}
                 </div>
             </div>
 
-            <div className="mt-8 w-full">
-                <h2 className="font-dyeus-serif text-2xl font-bold leading-[1.2] text-dyeus-ink md:text-[32px]">
+            <div className={cn("w-full", compact ? "mt-5" : "mt-8")}>
+                <h2 className={cn("font-dyeus-serif font-bold leading-[1.2] text-dyeus-ink", compact ? "text-xl" : "text-2xl md:text-[32px]")}>
                     {t("features")}
                 </h2>
                 <div className="mt-3 border-t border-dyeus-border">
@@ -110,7 +113,7 @@ function DyeusPropertyDetailsSection({unit, t, onRequestInfo}: DyeusPropertyDeta
                         const value = unit[row.field];
                         const display =
                             value === true ? t("yes") : value === false ? t("no") : MISSING_VALUE;
-                        return <DetailRow key={row.labelKey} label={t(row.labelKey)} value={display} />;
+                        return <DetailRow key={row.labelKey} compact={compact} label={t(row.labelKey)} value={display} />;
                     })}
                 </div>
             </div>
@@ -140,34 +143,51 @@ function DyeusPropertyDetailsSection({unit, t, onRequestInfo}: DyeusPropertyDeta
                 </div>
             ) : null}
 
-            <div className="relative mt-8 min-h-[100px] w-full overflow-hidden md:min-h-[122px]">
-                <img
-                    alt=""
-                    aria-hidden
-                    className="absolute inset-0 size-full object-cover"
-                    src={dyeusAssets.aboutPool}
-                />
-                <div className="absolute inset-0 bg-dyeus-ink/45" />
-                <div className="relative flex w-full flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center md:px-8">
-                    <p className="font-dyeus-serif text-2xl font-bold leading-[1.2] text-dyeus-cream sm:max-w-md md:text-4xl lg:text-5xl">
-                        {t("notSureTitle")}
-                    </p>
-                    <button
-                        type="button"
-                        onClick={onRequestInfo}
-                        className={cn(
-                            "flex shrink-0 cursor-pointer items-center justify-center border border-dyeus-cream px-6 py-3 md:px-8 md:py-4",
-                            "bg-transparent text-dyeus-cream transition-colors duration-200",
-                            "hover:bg-dyeus-cream hover:text-dyeus-ink",
-                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-cream/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-ink",
-                        )}
-                    >
-                        <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
-                            {t("requestInfo")}
-                        </span>
-                    </button>
+            {compact ? (
+                <button
+                    type="button"
+                    onClick={onRequestInfo}
+                    className={cn(
+                        "mt-5 flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-5 py-3",
+                        "bg-transparent text-dyeus-ink transition-colors duration-200",
+                        "hover:bg-dyeus-ink hover:text-dyeus-cream",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-cream",
+                    )}
+                >
+                    <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em]">
+                        {t("requestInfo")}
+                    </span>
+                </button>
+            ) : (
+                <div className="relative mt-8 min-h-[100px] w-full overflow-hidden md:min-h-[122px]">
+                    <img
+                        alt=""
+                        aria-hidden
+                        className="absolute inset-0 size-full object-cover"
+                        src={dyeusAssets.aboutPool}
+                    />
+                    <div className="absolute inset-0 bg-dyeus-ink/45" />
+                    <div className="relative flex w-full flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center md:px-8">
+                        <p className="font-dyeus-serif text-2xl font-bold leading-[1.2] text-dyeus-cream sm:max-w-md md:text-4xl lg:text-5xl">
+                            {t("notSureTitle")}
+                        </p>
+                        <button
+                            type="button"
+                            onClick={onRequestInfo}
+                            className={cn(
+                                "flex shrink-0 cursor-pointer items-center justify-center border border-dyeus-cream px-6 py-3 md:px-8 md:py-4",
+                                "bg-transparent text-dyeus-cream transition-colors duration-200",
+                                "hover:bg-dyeus-cream hover:text-dyeus-ink",
+                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-cream/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-ink",
+                            )}
+                        >
+                            <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
+                                {t("requestInfo")}
+                            </span>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

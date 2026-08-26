@@ -58,6 +58,8 @@
   "openImage": "Apri immagine {{index}}",
   "playVideo": "Riproduci video {{index}}",
   "close": "Chiudi",
+  "closeUnitPanel": "Chiudi pannello residenza",
+  "viewFullResidence": "Vedi residenza completa",
   "send": "Invia",
   "defaultMessage": "Richiesta per l'unità {{name}}"
 }

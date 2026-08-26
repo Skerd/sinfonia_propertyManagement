@@ -92,5 +92,14 @@
   "floorsMeta": "{{count}} Stockwerke",
   "unitsMeta": "{{count}} Einheiten",
   "noBuildings": "Keine Gebäude verfügbar.",
-  "noFloors": "Keine Stockwerke verfügbar."
+  "noFloors": "Keine Stockwerke verfügbar.",
+  "viewAsList": "Listenansicht",
+  "viewAsGrid": "Rasteransicht",
+  "areaLabel": "Fläche",
+  "roomsLabel": "Zimmer",
+  "bathsLabel": "Bäder",
+  "orientationLabel": "Ausrichtung",
+  "floorLabel": "Etage",
+  "noUnitsOnFloor": "Keine Residenzen entsprechen diesem Filter auf dem gewählten Stockwerk.",
+  "viewerEmptyFloor": "Keine Einheiten-Overlays auf diesem Stockwerk."
 }

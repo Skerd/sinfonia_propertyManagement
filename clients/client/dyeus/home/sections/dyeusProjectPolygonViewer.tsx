@@ -1,11 +1,12 @@
-import {useEffect, useMemo, useRef, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useEffect, useMemo, useState} from "react";
 import {ChevronLeft, Eye, EyeOff} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
+import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 import DyeusPropertiesList from "@propertyManagementModule/clients/client/dyeus/home/sections/dyeusPropertiesList.tsx";
+import DyeusUnitPanel from "@propertyManagementModule/clients/client/dyeus/shared/dyeusUnitPanel.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {
     useDyeusT,
@@ -104,7 +105,6 @@ function ViewerSelectionList({
 }
 
 function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonViewerProps) {
-    const navigate = useNavigate();
     const {t} = useDyeusT(HOME_LANGUAGE_PATH);
     const edifices = project.edifices ?? [];
     const singleEdifice = edifices.length === 1;
@@ -112,15 +112,14 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
     const [imageHoveredId, setImageHoveredId] = useState<string | null>(null);
     const [listHoveredId, setListHoveredId] = useState<string | null>(null);
     const [imageAspect, setImageAspect] = useState(FALLBACK_IMAGE_ASPECT);
-    const [panelMaxHeight, setPanelMaxHeight] = useState<number | undefined>(undefined);
     const [phantomsAlwaysVisible, setPhantomsAlwaysVisible] = useState(true);
-    const imageColRef = useRef<HTMLDivElement>(null);
     // Seed single-edifice selection on first paint — a post-mount effect remounts the
     // canvas (project → edifice) and flickers the image.
     const [selectedEdificeId, setSelectedEdificeId] = useState(
         () => (edifices.length === 1 ? edifices[0]?._id ?? "" : ""),
     );
     const [selectedFloorId, setSelectedFloorId] = useState("");
+    const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
 
     const selectedEdifice = useMemo(
         () => edifices.find((edifice) => edifice._id === selectedEdificeId),
@@ -189,49 +188,31 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
         };
     }, [canvasImageUrl]);
 
-    // Cap the side panel to the image column height so it scrolls instead of stretching the row.
-    useEffect(() => {
-        const el = imageColRef.current;
-        if (!el || typeof ResizeObserver === "undefined") return;
-        const mq = window.matchMedia("(min-width: 1024px)");
-        const update = () => {
-            if (!mq.matches) {
-                setPanelMaxHeight(undefined);
-                return;
-            }
-            const next = Math.round(el.getBoundingClientRect().height);
-            setPanelMaxHeight(next > 0 ? next : undefined);
-        };
-        update();
-        const observer = new ResizeObserver(update);
-        observer.observe(el);
-        mq.addEventListener("change", update);
-        return () => {
-            observer.disconnect();
-            mq.removeEventListener("change", update);
-        };
-    }, [imageAspect, canvasImageUrl]);
-
     const selectEdifice = (edificeId: string) => {
         setSelectedEdificeId(edificeId);
         setSelectedFloorId("");
+        setSelectedUnitId(null);
         setImageHoveredId(null);
         setListHoveredId(null);
     };
 
     const selectFloor = (floorId: string) => {
         setSelectedFloorId(floorId);
+        setSelectedUnitId(null);
         setListHoveredId(null);
     };
 
     const goBack = () => {
         if (level === "floor") {
             setSelectedFloorId("");
+            setSelectedUnitId(null);
+            setListHoveredId(null);
             return;
         }
         if (level === "edifice" && !singleEdifice) {
             setSelectedEdificeId("");
             setSelectedFloorId("");
+            setSelectedUnitId(null);
         }
     };
 
@@ -298,16 +279,65 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
         </div>
     );
 
-    const openUnit = (unitId: string) => {
-        navigate(`/property?projectId=${project._id}&unitId=${unitId}`);
-    };
+    const selectedUnitLabel = useMemo(() => {
+        if (!selectedUnitId) return undefined;
+        return flattenCatalogUnits(project).find((unit) => unit._id === selectedUnitId)?.name;
+    }, [project, selectedUnitId]);
+
+    const unitPanelOpen = Boolean(selectedUnitId);
+    const [frontSheet, setFrontSheet] = useState<"floor" | "unit">("unit");
+    const floorSheetFront = unitPanelOpen && frontSheet === "floor";
+
+    useEffect(() => {
+        setFrontSheet("unit");
+    }, [selectedUnitId]);
+
+    const floorSheet = level === "floor" && selectedFloor ? (
+        <DyeusPropertiesList
+            key={selectedFloor._id}
+            project={project}
+            floorId={selectedFloor._id}
+            edificeId={selectedEdificeId}
+            floors={sortedFloors}
+            onClose={goBack}
+            hoveredUnitId={panelHoveredId}
+            selectedUnitId={selectedUnitId}
+            onUnitHover={setListHoveredId}
+            onUnitSelect={setSelectedUnitId}
+            panelTitle={`${edificeName} / ${floorName}`}
+            className="dyeus-sheet-in h-full min-h-0"
+        />
+    ) : (
+        <>
+            <div className="shrink-0 border-b border-dyeus-border px-4 pb-4 pt-4">
+                <p className="font-dyeus-sans text-[0.7rem] uppercase tracking-[0.18em] text-dyeus-bronze">
+                    {panelEyebrow}
+                </p>
+                <h2 className="mt-1.5 font-dyeus-serif text-[1.75rem] font-light leading-none tracking-[0.04em] text-dyeus-ink">
+                    {panelTitle}
+                </h2>
+                <p className="mt-3 font-dyeus-sans text-xs text-dyeus-ink-muted">
+                    {panelListLabel}
+                </p>
+            </div>
+            <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
+                <ViewerSelectionList
+                    items={level === "edifice" ? floorItems : edificeItems}
+                    selectedId={level === "edifice" ? selectedFloorId : selectedEdificeId}
+                    hoveredId={panelHoveredId}
+                    onSelect={level === "edifice" ? selectFloor : selectEdifice}
+                    onHover={setListHoveredId}
+                    emptyLabel={level === "edifice" ? t("noFloors") : t("noBuildings")}
+                />
+            </div>
+        </>
+    );
 
     return (
         <div className={cn("w-full", className)} data-node-id="287:444">
-            <div className="flex w-full flex-col overflow-hidden border border-dyeus-border bg-dyeus-white lg:flex-row lg:items-start">
+            <div className="relative w-full overflow-hidden border border-dyeus-border bg-dyeus-white lg:overflow-visible">
                 <div
-                    ref={imageColRef}
-                    className="relative w-full min-w-0 max-h-[90svh] flex-1 overflow-hidden bg-dyeus-sand"
+                    className="relative w-full min-w-0 max-h-[90svh] overflow-hidden bg-dyeus-sand"
                     style={{aspectRatio: String(imageAspect)}}
                 >
                     <div className="absolute inset-0 size-full [&_[data-slot=card]]:size-full [&_[data-slot=card]]:max-w-none [&_[data-slot=card]]:rounded-none [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
@@ -332,9 +362,9 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                         />
                     </div>
 
-                    {showBack ? (
-                        <div className="absolute left-3 top-3 z-30 md:left-4 md:top-4">
-                            <div className="flex max-w-[min(100vw-1.5rem,20rem)] items-center gap-0.5 rounded-md bg-dyeus-cream/90 py-1 pl-1 pr-2 shadow-sm backdrop-blur-sm">
+                    <div className="absolute left-3 top-3 z-30 flex items-start gap-2 md:left-4 md:top-4">
+                        {showBack ? (
+                            <div className="flex max-w-[min(100vw-1.5rem,20rem)] items-center gap-0.5 bg-dyeus-cream/90 py-1 pl-1 pr-2 shadow-sm backdrop-blur-sm">
                                 <button
                                     type="button"
                                     onClick={goBack}
@@ -370,11 +400,8 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                     ) : null}
                                 </nav>
                             </div>
-                        </div>
-                    ) : null}
-
-                    {phantomPoints.length > 0 ? (
-                        <div className="absolute right-3 top-3 z-30 md:right-4 md:top-4">
+                        ) : null}
+                        {phantomPoints.length > 0 ? (
                             <button
                                 type="button"
                                 onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
@@ -384,7 +411,7 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                         ? t("hidePolygons")
                                         : t("showPolygons")
                                 }
-                                className="flex size-8 cursor-pointer items-center justify-center rounded-md bg-dyeus-cream/90 text-dyeus-ink/80 shadow-sm backdrop-blur-sm transition hover:bg-dyeus-cream hover:text-dyeus-ink"
+                                className="flex size-8 shrink-0 cursor-pointer items-center justify-center bg-dyeus-cream/90 text-dyeus-ink/80 shadow-sm backdrop-blur-sm transition hover:bg-dyeus-cream hover:text-dyeus-ink"
                             >
                                 {phantomsAlwaysVisible ? (
                                     <Eye className="size-4" strokeWidth={1.75} aria-hidden />
@@ -392,56 +419,52 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                     <EyeOff className="size-4" strokeWidth={1.75} aria-hidden />
                                 )}
                             </button>
-                        </div>
-                    ) : null}
+                        ) : null}
+                    </div>
                 </div>
 
                 <aside
-                    className="flex min-h-[16rem] w-full shrink-0 flex-col border-t border-dyeus-border bg-dyeus-white lg:w-[30rem] lg:overflow-y-auto lg:border-l lg:border-t-0"
-                    style={panelMaxHeight ? {maxHeight: panelMaxHeight} : undefined}
-                >
-                    {level === "floor" && selectedFloor ? (
-                        <DyeusPropertiesList
-                            project={project}
-                            floorId={selectedFloor._id}
-                            edificeId={selectedEdificeId}
-                            floors={sortedFloors}
-                            onClose={goBack}
-                            hoveredUnitId={panelHoveredId}
-                            onUnitHover={setListHoveredId}
-                            onUnitClick={openUnit}
-                            className="h-full min-h-0 shadow-none ring-0"
-                        />
-                    ) : (
-                        <>
-                            <div className="shrink-0 border-b border-dyeus-border px-4 pb-4 pt-4">
-                                <p className="font-dyeus-sans text-[0.7rem] uppercase tracking-[0.18em] text-dyeus-bronze">
-                                    {panelEyebrow}
-                                </p>
-                                <h2 className="mt-1.5 font-dyeus-serif text-[1.75rem] font-light leading-none tracking-[0.04em] text-dyeus-ink">
-                                    {panelTitle}
-                                </h2>
-                                <p className="mt-3 font-dyeus-sans text-xs text-dyeus-ink-muted">
-                                    {panelListLabel}
-                                </p>
-                            </div>
-                            <div className="min-h-0 flex-1 px-2 py-2">
-                                <ViewerSelectionList
-                                    items={level === "edifice" ? floorItems : edificeItems}
-                                    selectedId={
-                                        level === "edifice" ? selectedFloorId : selectedEdificeId
-                                    }
-                                    hoveredId={panelHoveredId}
-                                    onSelect={level === "edifice" ? selectFloor : selectEdifice}
-                                    onHover={setListHoveredId}
-                                    emptyLabel={
-                                        level === "edifice" ? t("noFloors") : t("noBuildings")
-                                    }
-                                />
-                            </div>
-                        </>
+                    className={cn(
+                        "flex min-h-[16rem] w-full flex-col border-t border-dyeus-border bg-dyeus-white",
+                        "lg:absolute lg:h-auto lg:min-h-0 lg:overflow-hidden lg:border-t-0 lg:origin-top-right lg:transition-[transform,box-shadow,right,top,bottom] lg:duration-500 lg:ease-[cubic-bezier(0.22,1,0.36,1)]",
+                        unitPanelOpen
+                            ? cn(
+                                  "lg:top-8 lg:bottom-12 lg:w-[30rem] lg:border lg:border-dyeus-border lg:right-[calc(min(56rem,72vw)-24rem)]",
+                                  floorSheetFront
+                                      ? "lg:z-30 lg:-translate-y-2 lg:scale-[1.02] lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]"
+                                      : "lg:z-10 lg:shadow-[8px_16px_40px_rgba(36,28,22,0.16)]",
+                              )
+                            : "lg:z-10 lg:inset-y-0 lg:right-0 lg:w-[30rem] lg:border-l lg:border-dyeus-border",
                     )}
+                    onMouseEnter={() => {
+                        if (unitPanelOpen) setFrontSheet("floor");
+                    }}
+                    onMouseLeave={() => setFrontSheet("unit")}
+                    onFocusCapture={() => {
+                        if (unitPanelOpen) setFrontSheet("floor");
+                    }}
+                >
+                    {floorSheet}
                 </aside>
+
+                {selectedUnitId ? (
+                    <div
+                        key={selectedUnitId}
+                        className={cn(
+                            "dyeus-sheet-in flex min-h-[24rem] w-full flex-col border-t border-dyeus-border bg-dyeus-cream",
+                            "lg:absolute lg:top-3 lg:bottom-2 lg:right-2 lg:z-20 lg:min-h-0 lg:w-[min(56rem,72vw)] lg:border lg:border-dyeus-border lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]",
+                        )}
+                        onMouseEnter={() => setFrontSheet("unit")}
+                        onFocusCapture={() => setFrontSheet("unit")}
+                    >
+                        <DyeusUnitPanel
+                            projectId={project._id}
+                            unitId={selectedUnitId}
+                            unitLabel={selectedUnitLabel}
+                            onClose={() => setSelectedUnitId(null)}
+                        />
+                    </div>
+                ) : null}
             </div>
         </div>
     );

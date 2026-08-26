@@ -92,5 +92,14 @@
   "floorsMeta": "{{count}} kate",
   "unitsMeta": "{{count}} njësi",
   "noBuildings": "Nuk ka ndërtesa të disponueshme.",
-  "noFloors": "Nuk ka kate të disponueshme."
+  "noFloors": "Nuk ka kate të disponueshme.",
+  "viewAsList": "Pamja listë",
+  "viewAsGrid": "Pamja rrjetë",
+  "areaLabel": "Sipërfaqja",
+  "roomsLabel": "Dhoma",
+  "bathsLabel": "Banjo",
+  "orientationLabel": "Orientimi",
+  "floorLabel": "Kati",
+  "noUnitsOnFloor": "Asnjë residencë nuk përputhet me këtë filtër në katin e zgjedhur.",
+  "viewerEmptyFloor": "Nuk ka overlay të njësive në këtë kat."
 }

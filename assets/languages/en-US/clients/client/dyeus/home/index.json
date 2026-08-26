@@ -92,5 +92,14 @@
   "floorsMeta": "{{count}} floors",
   "unitsMeta": "{{count}} units",
   "noBuildings": "No buildings available.",
-  "noFloors": "No floors available."
+  "noFloors": "No floors available.",
+  "viewAsList": "List view",
+  "viewAsGrid": "Grid view",
+  "areaLabel": "Area",
+  "roomsLabel": "Rooms",
+  "bathsLabel": "Baths",
+  "orientationLabel": "Orientation",
+  "floorLabel": "Floor",
+  "noUnitsOnFloor": "No residences match this filter on the selected floor.",
+  "viewerEmptyFloor": "No unit overlays on this floor."
 }

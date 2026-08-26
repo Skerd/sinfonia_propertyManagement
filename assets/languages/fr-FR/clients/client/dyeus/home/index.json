@@ -92,5 +92,14 @@
   "floorsMeta": "{{count}} étages",
   "unitsMeta": "{{count}} unités",
   "noBuildings": "Aucun bâtiment disponible.",
-  "noFloors": "Aucun étage disponible."
+  "noFloors": "Aucun étage disponible.",
+  "viewAsList": "Vue liste",
+  "viewAsGrid": "Vue grille",
+  "areaLabel": "Surface",
+  "roomsLabel": "Pièces",
+  "bathsLabel": "Salles de bain",
+  "orientationLabel": "Orientation",
+  "floorLabel": "Étage",
+  "noUnitsOnFloor": "Aucune résidence ne correspond à ce filtre sur l'étage sélectionné.",
+  "viewerEmptyFloor": "Aucun overlay d'unité sur cet étage."
 }

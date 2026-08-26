@@ -16,6 +16,7 @@ const TILE =
 type DyeusPropertyGallerySectionProps = {
     unit: MarketingUnitSingle;
     t: DyeusPropertyCopy;
+    compact?: boolean;
 };
 
 function isVideoUrl(url: string) {
@@ -33,7 +34,7 @@ function uniqueUrls(urls: Array<string | undefined>): string[] {
     return result;
 }
 
-function DyeusPropertyGallerySection({unit, t}: DyeusPropertyGallerySectionProps) {
+function DyeusPropertyGallerySection({unit, t, compact = false}: DyeusPropertyGallerySectionProps) {
     const images = useMemo(() => {
         const main = resolveMarketingMediaUrl(unit.mainImage);
         const gallery = (unit.imageGallery ?? []).map((url) => resolveMarketingMediaUrl(url));
@@ -64,8 +65,11 @@ function DyeusPropertyGallerySection({unit, t}: DyeusPropertyGallerySectionProps
         return null;
     }
 
-    const mosaicClassName =
-        images.length === 1
+    const mosaicClassName = compact
+        ? images.length === 1
+            ? "grid aspect-[16/10] w-full grid-cols-1"
+            : "grid aspect-[16/10] w-full grid-cols-2 gap-2"
+        : images.length === 1
             ? "grid aspect-[2/1] w-full grid-cols-1"
             : images.length === 2
               ? "grid aspect-[4/5] w-full grid-cols-1 grid-rows-2 gap-3 sm:gap-4 md:aspect-[2/1] md:grid-cols-2 md:grid-rows-1 md:gap-5"
@@ -77,7 +81,7 @@ function DyeusPropertyGallerySection({unit, t}: DyeusPropertyGallerySectionProps
                 <div className={mosaicClassName}>
                     <button
                         type="button"
-                        className={`${TILE} ${images.length >= 3 ? "md:row-span-2" : ""}`}
+                        className={`${TILE} ${!compact && images.length >= 3 ? "md:row-span-2" : ""}`}
                         onClick={() => openImageAt(0)}
                         aria-label={fillLanguageTemplate(t("openImage"), {index: 1})}
                     >
@@ -93,7 +97,7 @@ function DyeusPropertyGallerySection({unit, t}: DyeusPropertyGallerySectionProps
                             <img alt="" aria-hidden className="size-full object-cover" src={topRight} />
                         </button>
                     ) : null}
-                    {extraCount > 0 && bottomRight ? (
+                    {compact ? null : extraCount > 0 && bottomRight ? (
                         <div className="grid min-h-0 grid-cols-2 gap-3 sm:gap-4 md:gap-5">
                             <button
                                 type="button"
@@ -125,7 +129,7 @@ function DyeusPropertyGallerySection({unit, t}: DyeusPropertyGallerySectionProps
                 </div>
             ) : null}
 
-            {videos.length > 0 ? (
+            {compact ? null : videos.length > 0 ? (
                 <div className={`grid gap-3 sm:grid-cols-2 md:gap-5 ${images.length > 0 ? "mt-3 md:mt-5" : ""}`}>
                     {videos.map((src, index) => (
                         <button

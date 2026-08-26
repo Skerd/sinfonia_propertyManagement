@@ -58,6 +58,8 @@
   "openImage": "Hap imazhin {{index}}",
   "playVideo": "Luaj videon {{index}}",
   "close": "Mbyll",
+  "closeUnitPanel": "Mbyll panelin e residencës",
+  "viewFullResidence": "Shiko residencën e plotë",
   "send": "Dërgo",
   "defaultMessage": "Kërkesë për njësinë {{name}}"
 }
