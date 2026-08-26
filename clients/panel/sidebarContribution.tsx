@@ -120,8 +120,11 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
         navLink(resolveLanguageKey, "menus.realEstate.sales.title", "/realEstate/sales", DollarSign),
         navLink(resolveLanguageKey, "menus.realEstate.contractsHub.title", "/realEstate/contractsHub", FileText),
         navLink(resolveLanguageKey, "menus.realEstate.commissions.title", "/realEstate/commissions", Percent),
-        navLink(resolveLanguageKey, "menus.realEstate.constructionUpdates.title", "/realEstate/constructionUpdates", HardHat),
         navLink(resolveLanguageKey, "menus.realEstate.stories.title", "/realEstate/stories", BookOpen),
+        navCollapsible(resolveLanguageKey, "menus.finance.title", Receipt, [
+            navLink(resolveLanguageKey, "menus.finance.unitCosts.title", "/realEstate/unitCosts", Receipt),
+        ]),
+        navLink(resolveLanguageKey, "menus.realEstate.constructionUpdates.title", "/realEstate/constructionUpdates", HardHat),
         navLink(resolveLanguageKey, "menus.realEstate.snags.title", "/realEstate/snags", ClipboardX),
         navCollapsible(resolveLanguageKey, "menus.realEstate.ownersAndRentals.title", KeyRound, [
             navLink(resolveLanguageKey, "menus.realEstate.rentalsHub.title", "/realEstate/rentalsHub", Home),
@@ -133,9 +136,6 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
             navLink(resolveLanguageKey, "menus.reports.agentReport.title", "/realEstate/agentReport", BarChart2),
             navLink(resolveLanguageKey, "menus.reports.roi.title", "/realEstate/roi", TrendingUp),
             navLink(resolveLanguageKey, "menus.reports.erpExport.title", "/realEstate/erpExport", Download),
-        ]),
-        navCollapsible(resolveLanguageKey, "menus.finance.title", Receipt, [
-            navLink(resolveLanguageKey, "menus.finance.unitCosts.title", "/realEstate/unitCosts", Receipt),
         ]),
     ];
 
