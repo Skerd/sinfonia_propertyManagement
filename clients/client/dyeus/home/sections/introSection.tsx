@@ -44,7 +44,7 @@ function IntroSection() {
                 {pillars.map((pillar, index) => (
                     <div
                         key={pillar.id}
-                        className="relative flex min-h-[280px] flex-col justify-between border-t border-dyeus-border p-5 lg:min-h-[404px] lg:border-t-0 lg:border-l"
+                        className="relative flex min-h-0 flex-col justify-between border-t border-dyeus-border p-5 sm:min-h-[280px] lg:min-h-[404px] lg:border-t-0 lg:border-l"
                         style={index === 0 ? {borderLeftWidth: 0} : undefined}
                     >
                         {index > 0 && (
@@ -57,7 +57,7 @@ function IntroSection() {
                         <p className="font-dyeus-serif text-base leading-[1.2] text-dyeus-ink md:text-xl">
                             {pillar.copy}
                         </p>
-                        <p className="mt-10 font-dyeus-serif text-[clamp(2.5rem,4vw,4rem)] font-extrabold lowercase leading-none text-dyeus-ink">
+                        <p className="mt-5 font-dyeus-serif text-[clamp(2.5rem,4vw,4rem)] font-extrabold lowercase leading-none text-dyeus-ink sm:mt-10">
                             {pillar.label}
                         </p>
                     </div>

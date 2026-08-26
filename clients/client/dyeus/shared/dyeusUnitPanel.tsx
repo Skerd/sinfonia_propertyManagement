@@ -81,7 +81,7 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
 
     return (
         <aside
-            className="flex h-full min-h-0 w-full max-h-full flex-col overflow-hidden bg-dyeus-cream text-dyeus-ink"
+            className="flex h-full min-h-0 w-full max-h-full flex-col overflow-hidden bg-dyeus-cream text-dyeus-ink max-lg:h-auto max-lg:max-h-none max-lg:overflow-visible"
             data-node-id="dyeus-unit-panel"
         >
             <div className="flex shrink-0 items-start justify-between gap-3 border-b border-dyeus-border px-5 py-4 md:px-6">
@@ -107,7 +107,7 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                 </button>
             </div>
 
-            <div className="h-0 min-h-0 flex-1 overflow-y-auto px-5 py-4 md:px-6 md:py-5">
+            <div className="h-0 min-h-0 flex-1 overflow-y-auto px-5 py-4 max-lg:h-auto max-lg:flex-none md:px-6 md:py-5">
                 {loading ? (
                     <div className="flex min-h-[240px] items-center justify-center">
                         <Loader />

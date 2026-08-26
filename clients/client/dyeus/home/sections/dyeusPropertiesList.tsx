@@ -157,6 +157,7 @@ function DyeusPropertiesList({
         <aside
             className={cn(
                 "flex h-full min-h-0 w-full max-h-full flex-col overflow-hidden bg-dyeus-cream text-dyeus-ink",
+                "max-lg:h-auto max-lg:max-h-none max-lg:overflow-visible",
                 className,
             )}
             data-node-id="287:770"
@@ -251,6 +252,7 @@ function DyeusPropertiesList({
                 ref={listScrollerRef}
                 className={cn(
                     "h-0 min-h-0 flex-1 overflow-y-auto px-5 pb-5 md:px-6 md:pb-6",
+                    "max-lg:h-auto max-lg:flex-none max-lg:overflow-visible",
                     layout === "list" ? "mt-4" : "mt-0",
                 )}
             >

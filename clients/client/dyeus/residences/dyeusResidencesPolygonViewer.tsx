@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import {ChevronLeft} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
@@ -22,6 +22,12 @@ import type {
 
 const RESIDENCES_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx";
+
+function scrollSheetIntoView(node: HTMLElement | null) {
+    if (!node || window.matchMedia("(min-width: 1024px)").matches) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    node.scrollIntoView({behavior: reduceMotion ? "auto" : "smooth", block: "start"});
+}
 
 type DyeusResidencesPolygonViewerProps = {
     project: MarketingProjectSingle;
@@ -230,10 +236,23 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
     const unitPanelOpen = Boolean(selectedUnitId);
     const [frontSheet, setFrontSheet] = useState<"floor" | "unit">("unit");
     const floorSheetFront = unitPanelOpen && frontSheet === "floor";
+    const floorSheetRef = useRef<HTMLAsideElement>(null);
+    const unitSheetRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setFrontSheet("unit");
     }, [selectedUnitId]);
+
+    useEffect(() => {
+        const frame = window.requestAnimationFrame(() => {
+            if (selectedUnitId) {
+                scrollSheetIntoView(unitSheetRef.current);
+                return;
+            }
+            if (selectedFloorId) scrollSheetIntoView(floorSheetRef.current);
+        });
+        return () => window.cancelAnimationFrame(frame);
+    }, [selectedFloorId, selectedUnitId]);
     const selectedUnitLabel = useMemo(() => {
         if (!selectedUnitId) return undefined;
         return flattenCatalogUnits(project).find((unit) => unit._id === selectedUnitId)?.name;
@@ -311,17 +330,19 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
                 <div className="h-[60vh] min-h-[480px] max-h-[75vh] min-w-0">{viewerPanel}</div>
 
                 <aside
+                    ref={floorSheetRef}
                     className={cn(
-                        "flex min-h-[16rem] w-full flex-col border-t border-dyeus-border bg-dyeus-white",
+                        "flex min-h-[16rem] w-full scroll-mt-28 flex-col border-t border-dyeus-border bg-dyeus-white",
                         "lg:absolute lg:h-auto lg:min-h-0 lg:overflow-hidden lg:border-t-0 lg:origin-top-right lg:transition-[transform,box-shadow,right,top,bottom] lg:duration-500 lg:ease-[cubic-bezier(0.22,1,0.36,1)]",
+                        unitPanelOpen && "max-lg:hidden",
                         unitPanelOpen
                             ? cn(
-                                  "lg:top-8 lg:bottom-12 lg:w-[30rem] lg:border lg:border-dyeus-border lg:right-[calc(min(56rem,72vw)-24rem)]",
+                                  "lg:top-8 lg:bottom-12 lg:w-[34rem] lg:border lg:border-dyeus-border lg:right-[calc(min(56rem,72vw)-28rem)]",
                                   floorSheetFront
                                       ? "lg:z-30 lg:-translate-y-2 lg:scale-[1.02] lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]"
                                       : "lg:z-10 lg:shadow-[8px_16px_40px_rgba(36,28,22,0.16)]",
                               )
-                            : "lg:z-10 lg:inset-y-0 lg:right-0 lg:w-[30rem] lg:border-l lg:border-dyeus-border",
+                            : "lg:z-10 lg:inset-y-0 lg:right-0 lg:w-[34rem] lg:border-l lg:border-dyeus-border",
                     )}
                     onMouseEnter={() => {
                         if (unitPanelOpen) setFrontSheet("floor");
@@ -365,9 +386,10 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
 
                 {selectedUnitId ? (
                     <div
+                        ref={unitSheetRef}
                         key={selectedUnitId}
                         className={cn(
-                            "dyeus-sheet-in flex min-h-[24rem] w-full flex-col border-t border-dyeus-border bg-dyeus-cream",
+                            "dyeus-sheet-in flex min-h-[24rem] w-full scroll-mt-28 flex-col border-t border-dyeus-border bg-dyeus-cream",
                             "lg:absolute lg:top-3 lg:bottom-2 lg:right-2 lg:z-20 lg:min-h-0 lg:w-[min(56rem,72vw)] lg:border lg:border-dyeus-border lg:shadow-[14px_22px_52px_rgba(36,28,22,0.28)]",
                         )}
                         onMouseEnter={() => setFrontSheet("unit")}
