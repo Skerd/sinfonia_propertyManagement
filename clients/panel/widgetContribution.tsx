@@ -100,6 +100,15 @@ const ConstructorSheetViewLazy = lazy(
             "@propertyManagementModule/clients/panel/private/constructors/center/sheetView/constructorSheetView.tsx"
         ),
 );
+const LeaseSheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx"),
+);
+const RentalPaymentSheetViewLazy = lazy(
+    () =>
+        import(
+            "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"
+        ),
+);
 const CommissionSheetViewLazy = lazy(
     () =>
         import("@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx"),
@@ -274,6 +283,8 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#UnitTypeCategorySheetView": UnitTypeCategorySheetViewLazy,
         "#StoryTypeSheetView": StoryTypeSheetViewLazy,
         "#ConstructorSheetView": ConstructorSheetViewLazy,
+        "#LeaseSheetView": LeaseSheetViewLazy,
+        "#RentalPaymentSheetView": RentalPaymentSheetViewLazy,
         "#CommissionSheetView": CommissionSheetViewLazy,
         "#MilestoneSheetView": MilestoneSheetViewLazy,
         "#ScheduleTaskSheetView": ScheduleTaskSheetViewLazy,
@@ -419,6 +430,8 @@ const propertyManagementWidgetContribution: WidgetContribution = {
             labelFields: ["name", "title"],
         },
         "#ConstructorSheetView": {url: "/api/realEstate/constructor/single", labelFields: ["name"]},
+        "#LeaseSheetView": {url: "/api/realEstate/lease/single", labelFields: ["name"]},
+        "#RentalPaymentSheetView": {url: "/api/realEstate/rentalPayment/single", labelFields: ["name"]},
         "#CommissionSheetView": {url: "/api/realEstate/commission/single", labelFields: ["name", "title"]},
         "#ConstructionUpdateSheetView": {
             url: "/api/realEstate/constructionUpdate/single",

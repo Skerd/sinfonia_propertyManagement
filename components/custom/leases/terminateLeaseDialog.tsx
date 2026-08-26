@@ -15,7 +15,9 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
+import {LEASE_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.schema-def.ts";
 
 type TerminateLeasePayload = {
     _id: string;
@@ -75,13 +77,18 @@ function TerminateLeaseDialog({
                 </DialogHeader>
                 <div className="flex flex-col gap-y-2 py-2">
                     <Label htmlFor="terminationReason">{resolveLanguageKey("reasonLabel")}</Label>
-                    <Textarea
-                        id="terminationReason"
-                        value={reason}
-                        onChange={(e) => setReason(e.target.value)}
-                        placeholder={resolveLanguageKey("reasonPlaceholder")}
-                        disabled={loading}
-                    />
+                    <FormMaxLengthControl maxLength={LEASE_LONG_TEXT_MAX} value={reason}>
+                        <Textarea
+                            id="terminationReason"
+                            value={reason}
+                            onChange={(e) => setReason(e.target.value.slice(0, LEASE_LONG_TEXT_MAX))}
+                            placeholder={resolveLanguageKey("reasonPlaceholder")}
+                            disabled={loading}
+                            rows={3}
+                            maxLength={LEASE_LONG_TEXT_MAX}
+                            className="field-sizing-fixed resize-none min-h-[100px] max-h-[250px] overflow-y-auto"
+                        />
+                    </FormMaxLengthControl>
                 </div>
                 <DialogFooter>
                     <Button type="button" variant="outline" onClick={() => handleOpenChange(false)} disabled={loading}>
