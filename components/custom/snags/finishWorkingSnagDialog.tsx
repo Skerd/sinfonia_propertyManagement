@@ -15,8 +15,10 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
+import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
 import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
 import type {Snag} from "armonia/src/modules/propertyManagement/api/realEstate/private/snag/snag.dto.ts";
+import {SNAG_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/snag/snag.schema-def.ts";
 
 type FinishWorkingSnagDialogProps = WithLanguageType &
     WithAxiosType<Snag, any> & {
@@ -110,15 +112,19 @@ function FinishWorkingSnagDialog({
                 </DialogHeader>
                 <div className="flex flex-col gap-y-4 py-2">
                     <div className="flex flex-col gap-y-2">
-                        <Label>{resolveLanguageKey("notesLabel")}</Label>
-                        <Textarea
-                            value={notes}
-                            onChange={(e) => setNotes(e.target.value)}
-                            placeholder={resolveLanguageKey("notesPlaceholder")}
-                            disabled={loading}
-                            rows={4}
-                            className="resize-none max-h-80"
-                        />
+                        <Label htmlFor="finishSnagNotes">{resolveLanguageKey("notesLabel")}</Label>
+                        <FormMaxLengthControl maxLength={SNAG_LONG_TEXT_MAX} value={notes}>
+                            <Textarea
+                                id="finishSnagNotes"
+                                value={notes}
+                                onChange={(e) => setNotes(e.target.value.slice(0, SNAG_LONG_TEXT_MAX))}
+                                placeholder={resolveLanguageKey("notesPlaceholder")}
+                                disabled={loading}
+                                rows={4}
+                                maxLength={SNAG_LONG_TEXT_MAX}
+                                className="field-sizing-fixed resize-none min-h-[100px] max-h-[250px] overflow-y-auto"
+                            />
+                        </FormMaxLengthControl>
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("photosLabel")}</Label>
