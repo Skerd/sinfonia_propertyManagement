@@ -58,6 +58,7 @@
   "marketingBooklet": "Broshurë Marketingu",
   "featuredOnHomepage": "I veçuar",
   "featuredOnHomepageTooltip": "Shfaqet në karuselin e veçuar të faqes publike",
+  "featuredSortOrder": "Renditja e veçuar",
   "overview": "Vështrim i përgjithshëm",
   "project": "Projekti",
   "reservationCommissionShort": "Rev.",
@@ -71,5 +72,6 @@
   "deletedBy": "Fshirë nga",
   "magazine": "Magazine",
   "magazineTitle": "Magazine title",
-  "magazineDescription": "Magazine description"
+  "magazineDescription": "Magazine description",
+  "magazineFile": "PDF i revistës"
 }

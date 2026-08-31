@@ -58,6 +58,7 @@
   "marketingBooklet": "Marketing Booklet",
   "featuredOnHomepage": "Featured",
   "featuredOnHomepageTooltip": "Shown in the public homepage featured carousel",
+  "featuredSortOrder": "Featured sort order",
   "overview": "Overview",
   "project": "Project",
   "reservationCommissionShort": "Resv.",
@@ -71,5 +72,6 @@
   "deletedBy": "Deleted by",
   "magazine": "Magazine",
   "magazineTitle": "Magazine title",
-  "magazineDescription": "Magazine description"
+  "magazineDescription": "Magazine description",
+  "magazineFile": "Magazine PDF"
 }

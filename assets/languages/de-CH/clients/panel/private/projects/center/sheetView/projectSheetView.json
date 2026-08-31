@@ -58,6 +58,7 @@
   "marketingBooklet": "Marketingbroschüre",
   "featuredOnHomepage": "Hervorgehoben",
   "featuredOnHomepageTooltip": "Wird im Featured-Karussell der öffentlichen Startseite angezeigt",
+  "featuredSortOrder": "Reihenfolge (Startseite)",
   "overview": "Übersicht",
   "project": "Projekt",
   "reservationCommissionShort": "Resv.",
@@ -71,5 +72,6 @@
   "deletedBy": "Gelöscht von",
   "magazine": "Magazin",
   "magazineTitle": "Magazin-Titel",
-  "magazineDescription": "Magazinbeschreibung"
+  "magazineDescription": "Magazinbeschreibung",
+  "magazineFile": "Magazin-PDF"
 }
