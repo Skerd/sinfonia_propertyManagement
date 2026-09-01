@@ -24,8 +24,6 @@
     "nameRequired": "Le nom de l'étage est obligatoire",
     "levelNumberLabel": "Numéro d'étage",
     "levelNumberPlaceholder": "Saisir le numéro d'étage (0 = rez-de-chaussée, 1 = premier, -1 = sous-sol)",
-    "totalUnitsLabel": "Unités totales",
-    "totalUnitsPlaceholder": "Saisir le nombre total d'unités",
     "areaLabel": "Surface (m²)",
     "areaPlaceholder": "Saisir la surface de l'étage",
     "descriptionLabel": "Description",

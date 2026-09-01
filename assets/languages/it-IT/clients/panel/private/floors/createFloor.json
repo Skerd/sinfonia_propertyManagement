@@ -23,8 +23,6 @@
     "nameRequired": "Il nome del piano è obbligatorio",
     "levelNumberLabel": "Numero di piano",
     "levelNumberPlaceholder": "Inserisci il numero di piano (0 = terra, 1 = primo, -1 = interrato)",
-    "totalUnitsLabel": "Unità totali",
-    "totalUnitsPlaceholder": "Inserisci il numero totale di unità",
     "areaLabel": "Superficie (m²)",
     "areaPlaceholder": "Inserisci la superficie del piano",
     "descriptionLabel": "Descrizione",

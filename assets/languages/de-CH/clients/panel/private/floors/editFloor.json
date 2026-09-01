@@ -24,8 +24,6 @@
     "nameRequired": "Geschossname ist erforderlich",
     "levelNumberLabel": "Ebenennummer",
     "levelNumberPlaceholder": "Ebenennummer eingeben (0 = Erdgeschoss, 1 = 1. OG, -1 = Untergeschoss)",
-    "totalUnitsLabel": "Einheiten total",
-    "totalUnitsPlaceholder": "Gesamtzahl der Einheiten eingeben",
     "areaLabel": "Fläche (m²)",
     "areaPlaceholder": "Geschossfläche eingeben",
     "descriptionLabel": "Beschreibung",

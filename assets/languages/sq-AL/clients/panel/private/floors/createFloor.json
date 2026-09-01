@@ -23,8 +23,6 @@
     "nameRequired": "Kërkohet emri i katit",
     "levelNumberLabel": "Numri i nivelit",
     "levelNumberPlaceholder": "Fut numrin e nivelit (0 = tokë, 1 = e para, -1 = bodrum)",
-    "totalUnitsLabel": "Njësitë totale",
-    "totalUnitsPlaceholder": "Shkruani numrin total të njësive",
     "areaLabel": "Sipërfaqja (m²)",
     "areaPlaceholder": "Futni sipërfaqen e dyshemesë",
     "descriptionLabel": "Përshkrimi",
