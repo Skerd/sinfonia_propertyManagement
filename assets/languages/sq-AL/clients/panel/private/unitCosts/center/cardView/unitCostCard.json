@@ -7,6 +7,7 @@
   "verificationStatus": "Verifikimi",
   "paymentStatus": "Pagesa",
   "documentSubtotal": "Nëntotali",
+  "budgetedAmount": "Shuma e buxhetit",
   "unitCostVerification": {
     "pending_verification": "Në pritje të verifikimit",
     "verified": "E verifikuar",

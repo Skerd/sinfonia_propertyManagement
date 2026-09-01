@@ -48,6 +48,12 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
         const filter = buildFinanceCalendarFetchFilter(start, end, {
             vendorContains,
             purchasePersonId,
+            verificationStatus,
+            paymentStatus,
+            unit,
+            project,
+            edifice,
+            floor,
         });
         const collected: UnitCost[] = [];
         let offset = 0;
@@ -61,15 +67,6 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
                     sortOrder: "asc",
                     filter,
                 };
-                if (unit) {
-                    body.unit = unit;
-                } else {
-                    if (project) body.project = project;
-                    if (edifice) body.edifice = edifice;
-                    if (floor) body.floor = floor;
-                }
-                if (verificationStatus) body.verificationStatus = verificationStatus;
-                if (paymentStatus) body.paymentStatus = paymentStatus;
 
                 const { data } = await apiClient.post<TableResponse<UnitCost>>("/api/realEstate/unit/cost", body);
                 serverTotal = data.total;

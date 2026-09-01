@@ -7,6 +7,7 @@
   "verificationStatus": "Verifica",
   "paymentStatus": "Pagamento",
   "documentSubtotal": "Subtotale",
+  "budgetedAmount": "Importo a budget",
   "unitCostVerification": {
     "pending_verification": "Verifica in sospeso",
     "verified": "Verificato",

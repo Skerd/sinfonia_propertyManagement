@@ -143,10 +143,20 @@ function UnitCostCard({
                                     icon={IconCashBanknote}
                                     label={resolveLanguageKey("documentSubtotal")}
                                     tooltip={resolveLanguageKey("documentSubtotal")}
-                                    path="documentSubtotal"
+                                    path="expenditureItems"
                                     type="currency"
                                     value={{amount: entity.documentSubtotal, currency: entity.currency}}
                                 />
+                                {entity.budgetedAmount != null && (
+                                    <DisplayRow
+                                        icon={IconCashBanknote}
+                                        label={resolveLanguageKey("budgetedAmount")}
+                                        tooltip={resolveLanguageKey("budgetedAmount")}
+                                        path="budgetedAmount"
+                                        type="currency"
+                                        value={{amount: entity.budgetedAmount, currency: entity.currency}}
+                                    />
+                                )}
                             </>
                         )}
                     </EntityCard.Body>

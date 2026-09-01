@@ -30,16 +30,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@coreModule/components
 
 const FINANCE_TAB_QUERY = "financeTab";
 
-/** Props merged into `CardAndTableView` POST body — kept in sync so clearing toolbar drops stale IDs. */
-const UNIT_COST_LIST_SYNC_KEYS = [
-    "project",
-    "edifice",
-    "floor",
-    "unit",
-    "verificationStatus",
-    "paymentStatus",
-] as const;
-
 type AllUnitCostsProps = WithLanguageType & {
     unitId?: string;
     unitName?: string;
@@ -117,33 +107,21 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
 
     const createLabelKey = financeTab === "expenses" ? "createUnitCostExpenses" : "createUnitCost";
 
-    const expenseExtraFilters = useMemo(() => {
-        const next: Record<string, unknown> = {};
-        const resolvedUnit = (unitId?.trim() || financeApplied.unit?.trim()) ?? "";
-        if (resolvedUnit) {
-            next.unit = resolvedUnit;
-        } else {
-            const project = financeApplied.project?.trim();
-            if (project) next.project = project;
-            const edifice = financeApplied.edifice?.trim();
-            if (edifice) next.edifice = edifice;
-            const floor = financeApplied.floor?.trim();
-            if (floor) next.floor = floor;
-        }
-        const verification = financeApplied.verificationStatus?.trim();
-        if (verification) next.verificationStatus = verification;
-        const paymentSt = financeApplied.paymentStatus?.trim();
-        if (paymentSt) next.paymentStatus = paymentSt;
-        return next;
-    }, [unitId, financeApplied]);
+    const resolvedUnit = (unitId?.trim() || financeApplied.unit?.trim()) ?? "";
 
     const toolbarDslMerged = useMemo(
         () =>
             buildFinanceToolbarOnlyFilterGroup({
                 vendorContains: financeApplied.vendorContains,
                 purchasePersonId: financeApplied.purchasePersonId,
+                verificationStatus: financeApplied.verificationStatus,
+                paymentStatus: financeApplied.paymentStatus,
+                unit: resolvedUnit,
+                project: financeApplied.project,
+                edifice: financeApplied.edifice,
+                floor: financeApplied.floor,
             }),
-        [financeApplied.vendorContains, financeApplied.purchasePersonId],
+        [resolvedUnit, financeApplied],
     );
 
     const clearFinanceFilters = () => {
@@ -252,8 +230,6 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
                                     },
                                 }}
                                 toolbarFilterDSL={toolbarDslMerged}
-                                extraFilters={expenseExtraFilters}
-                                syncExtraFiltersKeys={UNIT_COST_LIST_SYNC_KEYS}
                                 configurations={{ limit: 20 }}
                                 containersClassName={{
                                     cardViewClassName: cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4, "mt-0.5"),

@@ -6,6 +6,7 @@
   "costCommitment": "Impegno di costo",
   "costPerUnit": "Prezzo / unità",
   "currency": "Valuta",
+  "budgetedAmount": "Importo a budget",
   "documentSubtotal": "Subtotale",
   "edifice": "Edificio",
   "expenditureCategory": {

@@ -7,6 +7,7 @@
   "verificationStatus": "Verifizierung",
   "paymentStatus": "Zahlung",
   "documentSubtotal": "Zwischensumme",
+  "budgetedAmount": "Budgetbetrag",
   "unitCostVerification": {
     "pending_verification": "Verifizierung ausstehend",
     "verified": "Verifiziert",

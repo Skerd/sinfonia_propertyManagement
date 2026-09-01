@@ -50,6 +50,7 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
             purchasePerson: wf.purchasePerson ? data.purchasePerson?._id : undefined,
             purchaseDate: wf.purchaseDate && data.purchaseDate ? new Date(data.purchaseDate).toISOString().split("T")[0] : undefined,
             currency: wf.currency ? data.currency?._id : undefined,
+            budgetedAmount: wf.budgetedAmount ? data.budgetedAmount : undefined,
             verificationStatus: wf.verificationStatus ? data.verificationStatus : undefined,
             paymentStatus: wf.paymentStatus ? data.paymentStatus : undefined,
             paymentDate: wf.paymentDate && data.paymentDate ? new Date(data.paymentDate).toISOString().split("T")[0] : undefined,
@@ -83,6 +84,7 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
         if (wf.purchasePerson && data.purchasePerson) payload.purchasePerson = data.purchasePerson;
         if (wf.purchaseDate && data.purchaseDate) payload.purchaseDate = data.purchaseDate;
         if (wf.currency && data.currency) payload.currency = data.currency;
+        if (wf.budgetedAmount) payload.budgetedAmount = data.budgetedAmount ?? null;
         if (wf.verificationStatus && data.verificationStatus) payload.verificationStatus = data.verificationStatus;
         if (wf.paymentStatus && data.paymentStatus) payload.paymentStatus = data.paymentStatus;
         if (wf.paymentDate !== undefined) payload.paymentDate = data.paymentDate ?? "";
@@ -110,6 +112,7 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
                     media: sm.ids,
                 };
             });
+            payload.expenditureItemMediaRowIndex = expenditureLineUploadIndices;
         }
 
         const inv = splitMediaField(data.invoiceMedia);
@@ -122,7 +125,6 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
             for (const row of data.expenditureItems) {
                 splitMediaField(row.media).files.forEach((file) => formData.append("expenditureItemMedia", file));
             }
-            formData.append("expenditureItemMediaRowIndex", JSON.stringify(expenditureLineUploadIndices));
         }
 
         inv.files.forEach((file) => formData.append("invoiceMedia", file));

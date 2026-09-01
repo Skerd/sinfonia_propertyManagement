@@ -6,6 +6,7 @@
   "costCommitment": "Kostenverpflichtung",
   "costPerUnit": "Preis / Einheit",
   "currency": "Währung",
+  "budgetedAmount": "Budgetbetrag",
   "documentSubtotal": "Zwischensumme",
   "edifice": "Gebäude",
   "expenditureCategory": {

@@ -51,64 +51,60 @@ export default createGenericCreatePage<CreateUnitCostFormData>({
         return unitName ? [unitName] : [];
     },
     mapSubmitPayload: (data) => {
-        const formData = new FormData();
-
-        const unitId = ((data.unit as string) || "").trim();
-        const projectId = (data.project ?? "").trim();
-        const edificeId = (data.edifice ?? "").trim();
-        const floorId = (data.floor ?? "").trim();
-
-        if (isMongoIdString(unitId)) formData.append("unit", unitId);
-        if (isMongoIdString(projectId)) formData.append("project", projectId);
-        if (isMongoIdString(edificeId)) formData.append("edifice", edificeId);
-        if (isMongoIdString(floorId)) formData.append("floor", floorId);
-
-        formData.append("purchasePerson", data.purchasePerson);
-        formData.append("purchaseDate", data.purchaseDate);
-        formData.append("currency", data.currency);
-        if (data.verificationStatus) formData.append("verificationStatus", data.verificationStatus);
-        if (data.paymentStatus) formData.append("paymentStatus", data.paymentStatus);
-        if (data.paymentDate) formData.append("paymentDate", data.paymentDate);
-        if (data.notes != null) formData.append("notes", data.notes);
-        if (data.tag != null && data.tag !== "") formData.append("tag", data.tag);
-        if (data.invoiceNumber != null && data.invoiceNumber !== "") formData.append("invoiceNumber", data.invoiceNumber);
-        if (data.vendorName != null && data.vendorName !== "") formData.append("vendorName", data.vendorName);
-        if (data.relatedModificationRequest) formData.append("relatedModificationRequest", data.relatedModificationRequest);
-        if (data.constructorRef) formData.append("constructorRef", data.constructorRef);
-        if (data.boqItem) formData.append("boqItem", data.boqItem);
-        if (data.costCommitment) formData.append("costCommitment", data.costCommitment);
-
         const lines = Array.isArray(data.expenditureItems) ? data.expenditureItems : [];
         const rowIndices: number[] = [];
-        lines.forEach((row: any, i: number) => {
-            const m = row?.media;
-            if (!Array.isArray(m)) return;
-            for (const item of m) {
+        const formData = new FormData();
+
+        for (const [i, row] of lines.entries()) {
+            const media = Array.isArray(row.media) ? row.media : [];
+            for (const item of media) {
                 if (item instanceof File) {
                     formData.append("expenditureItemMedia", item);
                     rowIndices.push(i);
                 }
             }
-        });
-        formData.append("expenditureItemMediaRowIndex", JSON.stringify(rowIndices));
-        formData.append(
-            "expenditureItems",
-            JSON.stringify(
-                lines.map((row: any) => ({
-                    title: row.title,
-                    category: row.category,
-                    amount: row.amount,
-                    unit: row.unit,
-                    pricePerUnit: row.pricePerUnit,
-                    media: Array.isArray(row.media) ? row.media.filter(isMongoIdString) : [],
-                })),
-            ),
-        );
+        }
 
-        const inv = Array.isArray(data.invoiceMedia)
-            ? data.invoiceMedia.filter((x: any): x is File => x instanceof File)
+        const invoiceFiles = Array.isArray(data.invoiceMedia)
+            ? data.invoiceMedia.filter((x): x is File => x instanceof File)
             : [];
-        inv.forEach((file) => formData.append("invoiceMedia", file));
+        invoiceFiles.forEach((file) => formData.append("invoiceMedia", file));
+
+        const unitId = (data.unit ?? "").trim();
+        const projectId = (data.project ?? "").trim();
+        const edificeId = (data.edifice ?? "").trim();
+        const floorId = (data.floor ?? "").trim();
+
+        formData.append("data", JSON.stringify({
+            ...(isMongoIdString(unitId) ? {unit: unitId} : {}),
+            ...(isMongoIdString(projectId) ? {project: projectId} : {}),
+            ...(isMongoIdString(edificeId) ? {edifice: edificeId} : {}),
+            ...(isMongoIdString(floorId) ? {floor: floorId} : {}),
+            purchasePerson: data.purchasePerson,
+            purchaseDate: data.purchaseDate,
+            currency: data.currency,
+            ...(data.budgetedAmount != null ? {budgetedAmount: data.budgetedAmount} : {}),
+            ...(data.verificationStatus ? {verificationStatus: data.verificationStatus} : {}),
+            ...(data.paymentStatus ? {paymentStatus: data.paymentStatus} : {}),
+            ...(data.paymentDate ? {paymentDate: data.paymentDate} : {}),
+            ...(data.notes != null ? {notes: data.notes} : {}),
+            ...(data.tag ? {tag: data.tag} : {}),
+            ...(data.invoiceNumber ? {invoiceNumber: data.invoiceNumber} : {}),
+            ...(data.vendorName ? {vendorName: data.vendorName} : {}),
+            ...(data.relatedModificationRequest ? {relatedModificationRequest: data.relatedModificationRequest} : {}),
+            ...(data.constructorRef ? {constructorRef: data.constructorRef} : {}),
+            ...(data.boqItem ? {boqItem: data.boqItem} : {}),
+            ...(data.costCommitment ? {costCommitment: data.costCommitment} : {}),
+            expenditureItems: lines.map((row) => ({
+                title: row.title,
+                category: row.category,
+                amount: row.amount,
+                unit: row.unit,
+                pricePerUnit: row.pricePerUnit,
+                media: Array.isArray(row.media) ? row.media.filter(isMongoIdString) : [],
+            })),
+            expenditureItemMediaRowIndex: rowIndices,
+        }));
 
         return formData;
     },

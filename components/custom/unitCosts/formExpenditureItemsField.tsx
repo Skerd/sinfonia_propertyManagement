@@ -11,6 +11,14 @@ import {compose} from "redux";
 import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 
+function LineFieldMessage() {
+    return (
+        <div className="min-h-5">
+            <FormMessage />
+        </div>
+    );
+}
+
 export type FormExpenditureItemsFieldProps = {
     name?: string;
     label?: string;
@@ -50,7 +58,7 @@ function FormExpenditureItemsFieldInner({
                             <Trash2 className="h-4 w-4" />
                         </Button>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 items-start">
                         <FormField
                             control={control}
                             name={`${name}.${index}.title`}
@@ -60,7 +68,7 @@ function FormExpenditureItemsFieldInner({
                                     <FormControl>
                                         <Input {...f} value={f.value ?? ""} />
                                     </FormControl>
-                                    <FormMessage />
+                                    <LineFieldMessage />
                                 </FormItem>
                             )}
                         />
@@ -79,7 +87,7 @@ function FormExpenditureItemsFieldInner({
                                             className="grow w-full"
                                         />
                                     </FormControl>
-                                    <FormMessage />
+                                    <LineFieldMessage />
                                 </FormItem>
                             )}
                         />
@@ -98,7 +106,7 @@ function FormExpenditureItemsFieldInner({
                                             className="grow w-full"
                                         />
                                     </FormControl>
-                                    <FormMessage />
+                                    <LineFieldMessage />
                                 </FormItem>
                             )}
                         />
@@ -118,7 +126,7 @@ function FormExpenditureItemsFieldInner({
                                             onChange={(e) => f.onChange(e.target.value === "" ? "" : Number(e.target.value))}
                                         />
                                     </FormControl>
-                                    <FormMessage />
+                                    <LineFieldMessage />
                                 </FormItem>
                             )}
                         />
@@ -138,7 +146,7 @@ function FormExpenditureItemsFieldInner({
                                             onChange={(e) => f.onChange(e.target.value)}
                                         />
                                     </FormControl>
-                                    <FormMessage />
+                                    <LineFieldMessage />
                                 </FormItem>
                             )}
                         />
