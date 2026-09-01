@@ -3,5 +3,19 @@
   "dialogTitle": "Mark deposit paid",
   "dialogDescription": "Record that the security deposit has been received from the tenant.",
   "cancel": "Cancel",
-  "submit": "Mark deposit paid"
+  "submit": "Mark deposit paid",
+  "axios": {
+    "start": {
+      "title": "Marking deposit as paid",
+      "time": 3000
+    },
+    "success": {
+      "title": "Deposit marked as paid",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark deposit as paid",
+      "time": 3000
+    }
+  }
 }

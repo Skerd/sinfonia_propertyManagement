@@ -3,5 +3,19 @@
   "dialogTitle": "Shëno depozitën si të paguar",
   "dialogDescription": "Regjistro që depozita e sigurisë është marrë nga qiramarrësi.",
   "cancel": "Anulo",
-  "submit": "Shëno depozitën si të paguar"
+  "submit": "Shëno depozitën si të paguar",
+  "axios": {
+    "start": {
+      "title": "Depozita po shënohet si e paguar",
+      "time": 3000
+    },
+    "success": {
+      "title": "Depozita u shënua si e paguar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Depozita nuk mund të shënohej si e paguar",
+      "time": 3000
+    }
+  }
 }

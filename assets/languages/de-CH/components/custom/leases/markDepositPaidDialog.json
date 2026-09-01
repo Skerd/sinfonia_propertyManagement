@@ -3,5 +3,19 @@
   "dialogTitle": "Kaution als bezahlt markieren",
   "dialogDescription": "Erfassen, dass die Kaution vom Mieter eingegangen ist.",
   "cancel": "Abbrechen",
-  "submit": "Kaution als bezahlt markieren"
+  "submit": "Kaution als bezahlt markieren",
+  "axios": {
+    "start": {
+      "title": "Kaution wird als bezahlt markiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Kaution als bezahlt markiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Kaution konnte nicht als bezahlt markiert werden",
+      "time": 3000
+    }
+  }
 }

@@ -3,5 +3,19 @@
   "dialogTitle": "Segna deposito pagato",
   "dialogDescription": "Registra che il deposito cauzionale è stato ricevuto dall’inquilino.",
   "cancel": "Annulla",
-  "submit": "Segna deposito pagato"
+  "submit": "Segna deposito pagato",
+  "axios": {
+    "start": {
+      "title": "Segnatura deposito come pagato",
+      "time": 3000
+    },
+    "success": {
+      "title": "Deposito segnato come pagato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile segnare il deposito come pagato",
+      "time": 3000
+    }
+  }
 }

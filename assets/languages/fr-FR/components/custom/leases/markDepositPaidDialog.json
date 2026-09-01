@@ -3,5 +3,19 @@
   "dialogTitle": "Marquer le dépôt comme payé",
   "dialogDescription": "Enregistrer que le dépôt de garantie a été reçu du locataire.",
   "cancel": "Annuler",
-  "submit": "Marquer le dépôt comme payé"
+  "submit": "Marquer le dépôt comme payé",
+  "axios": {
+    "start": {
+      "title": "Marquage du dépôt comme payé",
+      "time": 3000
+    },
+    "success": {
+      "title": "Dépôt marqué comme payé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de marquer le dépôt comme payé",
+      "time": 3000
+    }
+  }
 }
