@@ -10,7 +10,10 @@ import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import { buildPageTitle } from "@coreModule/helpers/general";
 import CardAndTableView, {type EntityListApi} from "@coreModule/components/custom/cardAndTableView.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {
+    GRID_COLS_MAX_3,
+    GRID_TRANSACTIONAL
+} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import UnitCostCard from "@propertyManagementModule/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx";
 import UnitCostSheetView from "@propertyManagementModule/clients/panel/private/unitCosts/center/sheetView/unitCostSheetView.tsx";
 import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
@@ -232,7 +235,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
                                 toolbarFilterDSL={toolbarDslMerged}
                                 configurations={{ limit: 20 }}
                                 containersClassName={{
-                                    cardViewClassName: cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4, "mt-0.5"),
+                                    cardViewClassName: cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_3, "mt-0.5"),
                                     scrollRootClassName: "flex-full",
                                 }}
                                 renderFunctions={{
