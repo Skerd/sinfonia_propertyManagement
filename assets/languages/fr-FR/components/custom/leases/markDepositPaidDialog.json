@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/markDepositPaidDialog.tsx",
+  "dialogTitle": "Marquer le dépôt comme payé",
+  "dialogDescription": "Enregistrer que le dépôt de garantie a été reçu du locataire.",
+  "cancel": "Annuler",
+  "submit": "Marquer le dépôt comme payé"
+}

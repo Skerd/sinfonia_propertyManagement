@@ -6,9 +6,11 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconCalendar, IconCurrencyDollar, IconLabel, IconUser} from "@tabler/icons-react";
 import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx";
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
+import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
 import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
+import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
@@ -71,6 +73,7 @@ function LeaseCard({
                     <>
                         <ViewLeasePayments lease={entity} />
                         <TerminateLease lease={entity} onAction={setAction} />
+                        <MarkDepositPaid lease={entity} onAction={setAction} />
                         <ReturnDeposit lease={entity} onAction={setAction} />
                     </>
                 ),
@@ -85,6 +88,9 @@ function LeaseCard({
                     <>
                         {action === TERMINATE_LEASE_ACTION && (
                             <TerminateLeaseDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
+                        )}
+                        {action === MARK_DEPOSIT_PAID_ACTION && (
+                            <MarkDepositPaidDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
                         )}
                         {action === RETURN_DEPOSIT_ACTION && (
                             <ReturnDepositDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
@@ -103,6 +109,7 @@ function LeaseCard({
                     >
                         <ViewLeasePayments lease={entity} />
                         <TerminateLease lease={entity} onAction={setAction} />
+                        <MarkDepositPaid lease={entity} onAction={setAction} />
                         <ReturnDeposit lease={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>

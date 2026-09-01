@@ -13,9 +13,11 @@ import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/rea
 import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx";
 import RentalPaymentSheetView from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
+import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
 import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
+import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
@@ -99,6 +101,7 @@ function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
                             <>
                                 <ViewLeasePayments lease={sheet.entity} />
                                 <TerminateLease lease={sheet.entity} onAction={setAction} />
+                                <MarkDepositPaid lease={sheet.entity} onAction={setAction} />
                                 <ReturnDeposit lease={sheet.entity} onAction={setAction} />
                             </>
                         )}
@@ -106,6 +109,17 @@ function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
                     />
                     {action === TERMINATE_LEASE_ACTION && (
                         <TerminateLeaseDialog
+                            open
+                            onClose={() => setAction("")}
+                            lease={sheet.entity}
+                            onSuccess={(updated?: Lease) => {
+                                patchLease(updated);
+                                setAction("");
+                            }}
+                        />
+                    )}
+                    {action === MARK_DEPOSIT_PAID_ACTION && (
+                        <MarkDepositPaidDialog
                             open
                             onClose={() => setAction("")}
                             lease={sheet.entity}

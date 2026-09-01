@@ -7,9 +7,11 @@ import {IconFilePlus} from "@tabler/icons-react";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
+import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
 import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
+import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
 import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
@@ -128,6 +130,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                 <>
                     <ViewLeasePayments lease={lease} />
                     <TerminateLease lease={lease} onAction={bindRowAction} />
+                    <MarkDepositPaid lease={lease} onAction={bindRowAction} />
                     <ReturnDeposit lease={lease} onAction={bindRowAction} />
                 </>
             )}
@@ -138,6 +141,8 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                 };
                 if (action === TERMINATE_LEASE_ACTION)
                     return <TerminateLeaseDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
+                if (action === MARK_DEPOSIT_PAID_ACTION)
+                    return <MarkDepositPaidDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
                 if (action === RETURN_DEPOSIT_ACTION)
                     return <ReturnDepositDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
                 return null;

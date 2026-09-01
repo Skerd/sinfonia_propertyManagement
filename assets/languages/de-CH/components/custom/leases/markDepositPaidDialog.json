@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/markDepositPaidDialog.tsx",
+  "dialogTitle": "Kaution als bezahlt markieren",
+  "dialogDescription": "Erfassen, dass die Kaution vom Mieter eingegangen ist.",
+  "cancel": "Abbrechen",
+  "submit": "Kaution als bezahlt markieren"
+}

@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/markDepositPaidDialog.tsx",
+  "dialogTitle": "Shëno depozitën si të paguar",
+  "dialogDescription": "Regjistro që depozita e sigurisë është marrë nga qiramarrësi.",
+  "cancel": "Anulo",
+  "submit": "Shëno depozitën si të paguar"
+}

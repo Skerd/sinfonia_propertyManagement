@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/markDepositPaidDialog.tsx",
+  "dialogTitle": "Mark deposit paid",
+  "dialogDescription": "Record that the security deposit has been received from the tenant.",
+  "cancel": "Cancel",
+  "submit": "Mark deposit paid"
+}
