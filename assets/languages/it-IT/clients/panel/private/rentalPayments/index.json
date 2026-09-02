@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Pagamenti affitto",
   "description": "Registri dei pagamenti affitto degli inquilini",
-  "createRentalPayment": "Registra pagamento",
+  "createRentalPayment": "Addebito extra",
   "noData": "Nessun pagamento trovato",
   "failTitle": "Impossibile caricare i pagamenti",
   "failDescription": "Si è verificato un errore durante il caricamento dei pagamenti. Riprova.",
@@ -31,10 +31,11 @@
       "status": {
         "pending": "In sospeso",
         "paid": "Pagato",
-        "partial": "Parziale",
         "overdue": "In ritardo",
-        "waived": "Annullato"
+        "waived": "Annullato",
+        "partially_paid": "Parzialmente pagato"
       }
-    }
+    },
+    "remaining": "Residuo"
   }
 }

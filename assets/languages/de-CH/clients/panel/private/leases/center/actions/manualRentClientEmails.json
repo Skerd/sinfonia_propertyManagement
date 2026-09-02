@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx",
+  "cancel": "Abbrechen",
+  "confirmSend": "E-Mail senden",
+  "actionLabels": {
+    "3d": "Erinnerung: 3 Tage vor Fälligkeit",
+    "1d": "Erinnerung: 1 Tag vor Fälligkeit",
+    "0d": "Erinnerung: Fälligkeit (heute)",
+    "overdue": "Überfällige Miete senden"
+  },
+  "confirmTitles": {
+    "3d": "3-Tage-Miet-Erinnerung senden?",
+    "1d": "1-Tag-Miet-Erinnerung senden?",
+    "0d": "Fälligkeits-Erinnerung senden?",
+    "overdue": "Überfällige-Miete-E-Mail senden?"
+  },
+  "confirmDescriptions": {
+    "3d": "Sendet die Standardvorlage «3 Tage vor Fälligkeit». Der Text zeigt den Restbetrag, nicht den Originalbetrag.",
+    "1d": "Sendet die Standardvorlage «1 Tag vor Fälligkeit». Der Text zeigt den Restbetrag.",
+    "0d": "Sendet die Erinnerung «heute fällig». Der Text zeigt den Restbetrag.",
+    "overdue": "Sendet die Mitteilung, dass dieser Monat überfällig ist (nach UTC-Tagesende). Der Text zeigt den Restbetrag."
+  },
+  "axios": {
+    "start": {
+      "title": "E-Mail wird gesendet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-Mail gesendet",
+      "time": 3000
+    },
+    "error": {
+      "title": "E-Mail konnte nicht gesendet werden",
+      "time": 3000
+    }
+  }
+}

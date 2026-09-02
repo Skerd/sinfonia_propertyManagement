@@ -41,7 +41,11 @@
     "terminationDateLabel": "Data e ndërprerjes",
     "terminationReasonLabel": "Arsyeja e ndërprerjes",
     "unitLabel": "Njësia",
-    "unitPlaceholder": "Zgjidhni njësinë"
+    "unitPlaceholder": "Zgjidhni njësinë",
+    "lateFeePercentageLabel": "Përqindja e gjobës së vonesës",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Periudha e tolerancës (ditë)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Loyers",
   "description": "Paiements de loyer des locataires",
-  "createRentalPayment": "Enregistrer le paiement",
+  "createRentalPayment": "Charge extra",
   "noData": "Aucun loyer trouvé",
   "failTitle": "Échec du chargement des loyers",
   "failDescription": "Une erreur est survenue lors du chargement des loyers. Veuillez réessayer.",
@@ -31,10 +31,11 @@
       "status": {
         "pending": "En attente",
         "paid": "Payé",
-        "partial": "Partiel",
         "overdue": "En retard",
-        "waived": "Annulé"
+        "waived": "Annulé",
+        "partially_paid": "Partiellement payé"
       }
-    }
+    },
+    "remaining": "Restant"
   }
 }

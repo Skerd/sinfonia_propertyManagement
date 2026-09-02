@@ -266,6 +266,7 @@ export default function LeasesTableSection({
                                     <TableHead>{rk("columns.startDate")}</TableHead>
                                     <TableHead>{rk("columns.endDate")}</TableHead>
                                     <TableHead>{rk("columns.monthlyRent")}</TableHead>
+                                    <TableHead>{rk("columns.outstanding")}</TableHead>
                                     <TableHead className="text-right">{rk("columns.actions")}</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -285,6 +286,9 @@ export default function LeasesTableSection({
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.endDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">
                                             {fmtMoney(row.monthlyRent, row.currency?.symbol)}
+                                        </TableCell>
+                                        <TableCell className="whitespace-nowrap">
+                                            {fmtMoney(row.outstandingAmount, row.currency?.symbol)}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button

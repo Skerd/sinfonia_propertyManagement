@@ -1,7 +1,31 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
-  "dialogTitle": "Shëno pagesën si të paguar",
-  "dialogDescription": "Regjistro pagesën e plotë prej {amount} për këtë këst qiraje.",
+  "dialogTitle": "Regjistro pagesë qiraje",
+  "dialogDescription": "Regjistro një arkëtim për këtë muaj. Mbetja është detyrimi plus gjoba minus e paguara.",
+  "dueAmount": "Detyrimi",
+  "lateFeeAmount": "Gjobë vonese",
+  "alreadyPaid": "Tashmë e paguar",
+  "remainingAmount": "Mbetja",
+  "paidAmount": "Shuma për t’u regjistruar",
+  "notes": "Shënime",
+  "notesPlaceholder": "Opsionale",
   "cancel": "Anulo",
-  "submit": "Shëno të paguar"
+  "processing": "Duke regjistruar…",
+  "confirmPay": "Regjistro pagesën",
+  "paymentRecorded": "Pagesa u regjistrua",
+  "paymentFailed": "Pagesa nuk u regjistrua",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
 }

@@ -15,5 +15,7 @@
   "noOverduePayments": "Aucun paiement en retard",
   "overdueInstallment": "échéance en retard",
   "overdueInstallments": "échéances en retard",
-  "viewPlansForDetails": "Voir les plans de paiement pour les détails."
+  "viewPlansForDetails": "Voir les plans de paiement pour les détails.",
+  "viewRentalsLabel": "Ouvrir le hub locatif",
+  "rentLabel": "Loyer"
 }

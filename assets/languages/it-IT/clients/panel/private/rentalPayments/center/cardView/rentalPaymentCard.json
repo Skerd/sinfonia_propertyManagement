@@ -12,9 +12,12 @@
         "pending": "In sospeso",
         "paid": "Pagato",
         "overdue": "In ritardo",
-        "waived": "Annullato"
+        "waived": "Annullato",
+        "partially_paid": "Parzialmente pagato"
       }
-    }
+    },
+    "remaining": "Residuo",
+    "lateFeeAmount": "Mora"
   },
   "failedTitle": "Impossibile caricare record",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",

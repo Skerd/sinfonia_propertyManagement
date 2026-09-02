@@ -19,5 +19,10 @@
   "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
   "selectEdifice": "Ein gebäude bis anzeigen KPIs und charts auswählen",
   "viewEntries": "Entries anzeigen",
-  "noData": "Noch keine Dashboard-Daten"
+  "noData": "Noch keine Dashboard-Daten",
+  "rentCollected": "Eingenommene Miete",
+  "rentOutstanding": "Offene Miete",
+  "rentOverdue": "Überfällige Miete",
+  "activeLeases": "Aktive Mietverträge",
+  "viewRentalsHub": "Miet-Hub öffnen"
 }

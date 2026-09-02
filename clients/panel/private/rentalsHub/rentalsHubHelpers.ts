@@ -62,6 +62,7 @@ export function paymentStatusBadgeVariant(
     switch (status) {
         case "paid": return "default";
         case "pending": return "secondary";
+        case "partially_paid": return "secondary";
         case "overdue": return "destructive";
         case "waived": return "outline";
         default: return "outline";

@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Pagesat e Qirasë",
   "description": "Regjistri i pagesave të qirasë",
-  "createRentalPayment": "Regjistro Pagesë",
+  "createRentalPayment": "Shto tarifë shtesë",
   "noData": "Nuk u gjetën pagesa qiraje",
   "failTitle": "Dështoi ngarkimi i pagesave",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të pagesave. Ju lutemi provoni sërish.",
@@ -28,10 +28,11 @@
       "status": {
         "pending": "Në pritje",
         "paid": "Paguar",
-        "partial": "Pjesërisht",
         "overdue": "E vonuar",
-        "waived": "Hequr dorë"
+        "waived": "Hequr dorë",
+        "partially_paid": "Pjesërisht paguar"
       }
-    }
+    },
+    "remaining": "Mbetja"
   }
 }

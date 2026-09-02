@@ -9,7 +9,7 @@ import {StatusChart, unitsByStatusToChartData} from "@propertyManagementModule/c
 import {RevenueChart, dashboardSummaryToRevenueChart} from "@propertyManagementModule/components/custom/dashboard/revenueChart.tsx";
 import {EdificeGallery} from "./EdificeGallery.tsx";
 import {EdificeDetailPanel} from "./EdificeDetailPanel.tsx";
-import {IconCoin, IconStack, IconTrendingUp, IconWallet} from "@tabler/icons-react";
+import {IconCoin, IconStack, IconTrendingUp, IconWallet, IconKey} from "@tabler/icons-react";
 import AllUnits from "@propertyManagementModule/clients/panel/private/units";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -19,6 +19,7 @@ import Header from "@coreModule/components/custom/header.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {PaymentAlerts} from "@propertyManagementModule/components/custom/dashboard/paymentAlerts.tsx";
+import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import DeliveryReadinessCard from "@propertyManagementModule/components/custom/dashboard/deliveryReadinessCard.tsx";
 import {buildDrillDownContextFromPeriod} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
@@ -32,6 +33,7 @@ type RealEstateDashboardProps = WithLanguageType & WithAxiosType<DashboardFormRe
 
 function RealEstateDashboard({
     resolveLanguageKey,
+    languageCode,
     data: dashboardData,
     loading,
     error,
@@ -153,6 +155,44 @@ function RealEstateDashboard({
                             />
                         </div>
 
+                        <div className={GRID_KPI}>
+                            <KpiCard
+                                compact
+                                title={resolveLanguageKey("rentCollected") ?? "Rent collected"}
+                                value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")}
+                                icon={IconWallet as never}
+                                variant="success"
+                                href="/realEstate/rentalsHub"
+                                linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
+                            />
+                            <KpiCard
+                                compact
+                                title={resolveLanguageKey("rentOutstanding") ?? "Rent outstanding"}
+                                value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")}
+                                icon={IconWallet as never}
+                                variant="warning"
+                                href="/realEstate/rentalsHub"
+                                linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
+                            />
+                            <KpiCard
+                                compact
+                                title={resolveLanguageKey("rentOverdue") ?? "Rent overdue"}
+                                value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")}
+                                icon={IconWallet as never}
+                                variant="danger"
+                                href="/realEstate/rentalsHub"
+                                linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
+                            />
+                            <KpiCard
+                                compact
+                                title={resolveLanguageKey("activeLeases") ?? "Active leases"}
+                                value={formatNumber(summary?.rentals?.activeLeases ?? 0)}
+                                icon={IconKey as never}
+                                href="/realEstate/rentalsHub"
+                                linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
+                            />
+                        </div>
+
                         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
                             <StatusChart
                                 data={statusChartData}
@@ -161,7 +201,10 @@ function RealEstateDashboard({
                             <RevenueChart {...revenueChartProps} />
 
                             <PaymentAlerts
-                                overdueCount={dashboardData?.summary?.paymentPlans?.overdueInstallmentsCount ?? 0}
+                                overdueCount={
+                                    (dashboardData?.summary?.paymentPlans?.overdueInstallmentsCount ?? 0)
+                                    + (dashboardData?.summary?.rentals?.overdueCount ?? 0)
+                                }
                                 alerts={dashboardData?.paymentAlerts ?? []}
                                 title={resolveLanguageKey("paymentAlerts")}
                                 viewAllLabel={resolveLanguageKey("viewPaymentPlans")}

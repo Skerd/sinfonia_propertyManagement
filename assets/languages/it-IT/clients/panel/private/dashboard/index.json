@@ -19,5 +19,10 @@
   "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
   "selectEdifice": "Seleziona un edificio per vedere KPI e grafici",
   "viewEntries": "Vedi voci",
-  "noData": "Nessun dato della dashboard ancora"
+  "noData": "Nessun dato della dashboard ancora",
+  "rentCollected": "Affitto incassato",
+  "rentOutstanding": "Affitto residuo",
+  "rentOverdue": "Affitto scaduto",
+  "activeLeases": "Contratti attivi",
+  "viewRentalsHub": "Apri hub locazioni"
 }

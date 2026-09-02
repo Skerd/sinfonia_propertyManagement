@@ -23,7 +23,11 @@
     "addFile": "Shto skedar",
     "filesSelected": "skedarët e zgjedhur",
     "existingFiles": "Skedari aktual",
-    "newFiles": "Skedar i ri"
+    "newFiles": "Skedar i ri",
+    "lateFeePercentageLabel": "Përqindja e gjobës së vonesës",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Periudha e tolerancës (ditë)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "axios": {
     "start": {

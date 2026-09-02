@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx",
+  "cancel": "Annulla",
+  "confirmSend": "Invia email",
+  "actionLabels": {
+    "3d": "Promemoria: 3 giorni prima della scadenza",
+    "1d": "Promemoria: 1 giorno prima della scadenza",
+    "0d": "Promemoria: scadenza (oggi)",
+    "overdue": "Invia avviso affitto scaduto"
+  },
+  "confirmTitles": {
+    "3d": "Inviare il promemoria a 3 giorni?",
+    "1d": "Inviare il promemoria a 1 giorno?",
+    "0d": "Inviare il promemoria del giorno di scadenza?",
+    "overdue": "Inviare l’email di affitto scaduto?"
+  },
+  "confirmDescriptions": {
+    "3d": "Invia il modello standard «3 giorni prima». Il testo mostra il residuo, non l’importo originale.",
+    "1d": "Invia il modello standard «1 giorno prima». Il testo mostra il residuo.",
+    "0d": "Invia il promemoria «scade oggi». Il testo mostra il residuo.",
+    "overdue": "Invia l’avviso che questo mese è scaduto (dopo la fine del giorno UTC). Il testo mostra il residuo."
+  },
+  "axios": {
+    "start": {
+      "title": "Invio e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Email inviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare l’email",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/recordRentPaymentDialog.tsx",
+  "dialogTitle": "Enregistrer un paiement de loyer",
+  "dialogDescription": "Répartir {remaining} sur les mois ouverts, du plus ancien.",
+  "paidAmount": "Montant à enregistrer",
+  "notes": "Notes",
+  "notesPlaceholder": "Facultatif",
+  "leftoverWarning": "Ce montant dépasse tous les restants ouverts. Rien ne sera comptabilisé.",
+  "cancel": "Annuler",
+  "processing": "Enregistrement…",
+  "confirmPay": "Enregistrer le paiement",
+  "paymentRecorded": "Paiement enregistré",
+  "paymentFailed": "Impossible d’enregistrer le paiement",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
+}

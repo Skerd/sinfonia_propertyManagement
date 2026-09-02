@@ -1,7 +1,22 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
-  "dialogTitle": "Mark payment paid",
-  "dialogDescription": "Record full payment of {amount} for this rent installment.",
+  "dialogTitle": "Record rent payment",
+  "dialogDescription": "Record a collection against this month. Remaining is due plus late fee minus already paid.",
+  "dueAmount": "Due",
+  "lateFeeAmount": "Late fee",
+  "alreadyPaid": "Already paid",
+  "remainingAmount": "Remaining",
+  "paidAmount": "Amount to record",
+  "notes": "Notes",
+  "notesPlaceholder": "Optional",
   "cancel": "Cancel",
-  "submit": "Mark paid"
+  "processing": "Recording…",
+  "confirmPay": "Record payment",
+  "paymentRecorded": "Payment recorded",
+  "paymentFailed": "Could not record payment",
+  "axios": {
+    "start": {"title": "Recording payment", "time": 3000},
+    "success": {"title": "Payment recorded", "time": 3000},
+    "error": {"title": "Payment could not be recorded", "time": 3000}
+  }
 }

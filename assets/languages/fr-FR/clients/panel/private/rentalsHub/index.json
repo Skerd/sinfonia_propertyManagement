@@ -35,7 +35,8 @@
       "startDate": "Date de début",
       "endDate": "Date de fin",
       "monthlyRent": "Loyer mensuel",
-      "actions": "Actions"
+      "actions": "Actions",
+      "outstanding": "Restant dû"
     },
     "status": {
       "active": "Actif",
@@ -78,16 +79,43 @@
       "status": "Statut",
       "dueDate": "Échéance",
       "amount": "Montant",
-      "actions": "Actions"
+      "actions": "Actions",
+      "remaining": "Restant"
     },
     "status": {
       "pending": "En attente",
       "paid": "Payé",
       "overdue": "En retard",
-      "waived": "Annulé"
+      "waived": "Annulé",
+      "partially_paid": "Partiellement payé"
     },
     "pagination": {
       "summary": "{from} à {to} sur {total} résultats"
+    }
+  },
+  "tabs": {
+    "leases": "Baux",
+    "payments": "Paiements",
+    "calendar": "Calendrier"
+  },
+  "calendar": {
+    "title": "Calendrier des loyers",
+    "errorTitle": "Impossible de charger le calendrier",
+    "errorDescription": "Réessayez.",
+    "truncatedTitle": "Calendrier tronqué",
+    "truncatedDescription": "Les {max} premières échéances du mois. Les KPI restent à l’échelle de l’entreprise.",
+    "kpiCollected": "Loyer encaissé",
+    "kpiOutstanding": "Loyer restant dû",
+    "kpiOverdue": "Loyer en retard",
+    "detailForDay": "Dû le {date}",
+    "selectDay": "Sélectionnez un jour",
+    "noPaymentsDay": "Aucun loyer ce jour-là.",
+    "badge": {
+      "pending": "En attente",
+      "paid": "Payé",
+      "partially_paid": "Partiellement payé",
+      "overdue": "En retard",
+      "waived": "Annulé"
     }
   }
 }

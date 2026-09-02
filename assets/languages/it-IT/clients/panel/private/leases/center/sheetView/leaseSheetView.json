@@ -30,5 +30,30 @@
   "deletedBy": "Eliminato da",
   "failedTitle": "Impossibile caricare record",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
-  "failedTooltipDescription": "Clicca per ricaricare i dati."
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "lateFeePercentage": "Percentuale mora",
+  "gracePeriodDays": "Periodo di grazia (giorni)",
+  "schedule": {
+    "title": "Piano affitti",
+    "recordPayment": "Registra pagamento",
+    "kpiDue": "Dovuto",
+    "kpiCollected": "Affitto incassato",
+    "kpiRemaining": "Residuo",
+    "kpiOverdue": "Affitto scaduto",
+    "dueDate": "Scadenza",
+    "amount": "Importo",
+    "lateFee": "Mora",
+    "paid": "Pagato",
+    "remaining": "Residuo",
+    "status": "Stato",
+    "actions": "Azioni",
+    "empty": "Nessun mese di affitto su questo contratto.",
+    "statuses": {
+      "pending": "In attesa",
+      "paid": "Pagato",
+      "partially_paid": "Parzialmente pagato",
+      "overdue": "Scaduto",
+      "waived": "Condono"
+    }
+  }
 }

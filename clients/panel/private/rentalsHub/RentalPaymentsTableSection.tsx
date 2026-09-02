@@ -265,6 +265,7 @@ export default function RentalPaymentsTableSection({
                                     <TableHead>{rk("columns.status")}</TableHead>
                                     <TableHead>{rk("columns.dueDate")}</TableHead>
                                     <TableHead>{rk("columns.amount")}</TableHead>
+                                    <TableHead>{rk("columns.remaining")}</TableHead>
                                     <TableHead className="text-right">{rk("columns.actions")}</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -283,6 +284,9 @@ export default function RentalPaymentsTableSection({
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.dueDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">
                                             {fmtMoney(row.amount, row.currency?.symbol)}
+                                        </TableCell>
+                                        <TableCell className="whitespace-nowrap">
+                                            {fmtMoney(row.remaining, row.currency?.symbol)}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button

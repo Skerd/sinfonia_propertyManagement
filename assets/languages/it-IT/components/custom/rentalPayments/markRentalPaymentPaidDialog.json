@@ -1,7 +1,31 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
-  "dialogTitle": "Segna pagamento come pagato",
-  "dialogDescription": "Registra il pagamento completo di {amount} per questa rata di affitto.",
+  "dialogTitle": "Registra pagamento affitto",
+  "dialogDescription": "Registra un incasso su questo mese. Il residuo è dovuto più mora meno già pagato.",
+  "dueAmount": "Dovuto",
+  "lateFeeAmount": "Mora",
+  "alreadyPaid": "Già pagato",
+  "remainingAmount": "Residuo",
+  "paidAmount": "Importo da registrare",
+  "notes": "Note",
+  "notesPlaceholder": "Opzionale",
   "cancel": "Annulla",
-  "submit": "Segna pagato"
+  "processing": "Registrazione…",
+  "confirmPay": "Registra pagamento",
+  "paymentRecorded": "Pagamento registrato",
+  "paymentFailed": "Impossibile registrare il pagamento",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
 }

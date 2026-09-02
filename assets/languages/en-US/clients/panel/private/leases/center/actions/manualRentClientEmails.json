@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx",
+  "cancel": "Cancel",
+  "confirmSend": "Send email",
+  "actionLabels": {
+    "3d": "Remind: 3 days before due date",
+    "1d": "Remind: 1 day before due date",
+    "0d": "Remind: due date (today)",
+    "overdue": "Send overdue rent notice"
+  },
+  "confirmTitles": {
+    "3d": "Send 3-day rent reminder?",
+    "1d": "Send 1-day rent reminder?",
+    "0d": "Send due-day rent reminder?",
+    "overdue": "Send overdue rent email?"
+  },
+  "confirmDescriptions": {
+    "3d": "Sends the standard “3 days before due” rent template for this month. The body shows remaining, not the original amount.",
+    "1d": "Sends the standard “1 day before due” rent template for this month. The body shows remaining.",
+    "0d": "Sends the standard “due today” rent reminder. The body shows remaining.",
+    "overdue": "Sends the notice that this month is overdue (after the due date end in UTC). The body shows remaining."
+  },
+  "axios": {
+    "start": {"title": "Sending email…", "time": 3000},
+    "success": {"title": "Email sent successfully", "time": 3000},
+    "error": {"title": "Email could not be sent", "time": 3000}
+  }
+}

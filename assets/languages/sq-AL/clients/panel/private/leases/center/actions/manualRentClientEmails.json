@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx",
+  "cancel": "Anulo",
+  "confirmSend": "Dërgo email",
+  "actionLabels": {
+    "3d": "Kujtesë: 3 ditë para maturimit",
+    "1d": "Kujtesë: 1 ditë para maturimit",
+    "0d": "Kujtesë: data e maturimit (sot)",
+    "overdue": "Dërgo njoftimin e qirasë së vonuar"
+  },
+  "confirmTitles": {
+    "3d": "Të dërgohet kujtesa 3-ditore?",
+    "1d": "Të dërgohet kujtesa 1-ditore?",
+    "0d": "Të dërgohet kujtesa e ditës së maturimit?",
+    "overdue": "Të dërgohet emaili i qirasë së vonuar?"
+  },
+  "confirmDescriptions": {
+    "3d": "Dërgon shabllonin standard 3 ditë para maturimit. Teksti tregon mbetjen, jo shumën origjinale.",
+    "1d": "Dërgon shabllonin standard 1 ditë para maturimit. Teksti tregon mbetjen.",
+    "0d": "Dërgon kujtesën “maturohet sot”. Teksti tregon mbetjen.",
+    "overdue": "Dërgon njoftimin që ky muaj ka kaluar afatin (pas fundit të ditës UTC). Teksti tregon mbetjen."
+  },
+  "axios": {
+    "start": {
+      "title": "Duke dërguar email…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Email u dërgua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Email nuk u dërgua",
+      "time": 3000
+    }
+  }
+}

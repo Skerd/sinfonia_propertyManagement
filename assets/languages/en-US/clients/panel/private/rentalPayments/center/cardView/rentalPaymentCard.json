@@ -12,9 +12,12 @@
         "pending": "Pending",
         "paid": "Paid",
         "overdue": "Overdue",
-        "waived": "Waived"
+        "waived": "Waived",
+        "partially_paid": "Partially paid"
       }
-    }
+    },
+    "remaining": "Remaining",
+    "lateFeeAmount": "Late fee"
   },
   "failedTitle": "Failed to load record",
   "failedDescription": "Something went wrong while loading this record. Click to retry.",

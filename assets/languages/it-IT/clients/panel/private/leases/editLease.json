@@ -41,7 +41,11 @@
     "terminationDateLabel": "Data risoluzione",
     "terminationReasonLabel": "Motivo risoluzione",
     "unitLabel": "Unità",
-    "unitPlaceholder": "Seleziona unità"
+    "unitPlaceholder": "Seleziona unità",
+    "lateFeePercentageLabel": "Percentuale mora",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Periodo di grazia (giorni)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "formButtons": {
     "cancel": "Annulla",

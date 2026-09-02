@@ -41,7 +41,11 @@
     "terminationDateLabel": "Date de résiliation",
     "terminationReasonLabel": "Motif de résiliation",
     "unitLabel": "Unité",
-    "unitPlaceholder": "Sélectionner une unité"
+    "unitPlaceholder": "Sélectionner une unité",
+    "lateFeePercentageLabel": "Pourcentage de pénalité",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Délai de grâce (jours)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "formButtons": {
     "cancel": "Annuler",

@@ -16,7 +16,8 @@
     "pending": "En attente",
     "paid": "Payé",
     "overdue": "En retard",
-    "waived": "Annulé"
+    "waived": "Annulé",
+    "partially_paid": "Partiellement payé"
   },
   "lifecycle": "Cycle de vie",
   "createdAt": "Créé le",
@@ -26,5 +27,7 @@
   "deletedBy": "Supprimé par",
   "failedTitle": "Impossible de charger record",
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
-  "failedTooltipDescription": "Cliquez pour recharger les données."
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "remaining": "Restant",
+  "lateFeeAmount": "Pénalité de retard"
 }

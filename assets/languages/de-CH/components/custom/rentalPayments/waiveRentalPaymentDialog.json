@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx",
+  "dialogTitle": "Restbetrag erlassen",
+  "dialogDescription": "Erlässt den Restbetrag dieses Monats. Bereits erfasste Zahlungen bleiben.",
+  "notes": "Notizen",
+  "notesPlaceholder": "Optional",
+  "cancel": "Abbrechen",
+  "submit": "Restbetrag erlassen",
+  "axios": {
+    "start": {
+      "title": "Restbetrag wird erlassen…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Restbetrag erlassen",
+      "time": 3000
+    },
+    "error": {
+      "title": "Restbetrag konnte nicht erlassen werden",
+      "time": 3000
+    }
+  }
+}

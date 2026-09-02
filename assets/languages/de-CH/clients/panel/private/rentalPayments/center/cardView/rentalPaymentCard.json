@@ -12,9 +12,12 @@
         "pending": "Ausstehend",
         "paid": "Bezahlt",
         "overdue": "Überfällig",
-        "waived": "Erlassen"
+        "waived": "Erlassen",
+        "partially_paid": "Teilweise bezahlt"
       }
-    }
+    },
+    "remaining": "Restbetrag",
+    "lateFeeAmount": "Verzugsgebühr"
   },
   "failedTitle": "record konnte nicht geladen werden",
   "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",

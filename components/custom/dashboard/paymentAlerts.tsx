@@ -38,8 +38,10 @@ function getAlertStyle(days: number) {
   return { bg: 'bg-primary/10', border: 'border-primary/30', icon: IconBell, iconColor: 'text-primary' };
 }
 
-function alertKind(alert: PaymentAlertItem): "installment" | "reservation" {
-  return alert.kind === "reservation" ? "reservation" : "installment";
+function alertKind(alert: PaymentAlertItem): "installment" | "reservation" | "rent" {
+  if (alert.kind === "reservation") return "reservation";
+  if (alert.kind === "rent") return "rent";
+  return "installment";
 }
 
 function PaymentAlertsInner({
@@ -82,6 +84,13 @@ function PaymentAlertsInner({
             onClick={() => navigate(reservationsHref)}
           >
             {resolveLanguageKey('viewReservationsLabel')}
+          </Button>
+          <Button
+            variant="link"
+            className="w-full py-1.5 h-auto text-primary text-xs"
+            onClick={() => navigate('/realEstate/rentalsHub')}
+          >
+            {resolveLanguageKey('viewRentalsLabel')}
           </Button>
         </div>
       }
@@ -129,6 +138,11 @@ function PaymentAlertsInner({
                           {resolveLanguageKey('reservationLabel')}
                         </p>
                       )}
+                      {kind === "rent" && (
+                        <p className="text-2xs text-muted-foreground mt-0.5">
+                          {resolveLanguageKey('rentLabel')}
+                        </p>
+                      )}
                       <div className="flex items-center justify-between mt-1 gap-1.5">
                         <span className="text-xs text-muted-foreground">
                           {new Date(alert.installment.dueDate).toLocaleDateString(locale)}
@@ -162,8 +176,10 @@ function PaymentAlertsInner({
               className="w-full mt-3 py-1.5 text-primary text-xs font-medium hover:underline"
               onClick={() =>
                 navigate(
-                  alerts!.some((a) => alertKind(a) === 'reservation') &&
-                    !alerts!.some((a) => alertKind(a) === 'installment')
+                  alerts!.every((a) => alertKind(a) === 'rent')
+                    ? '/realEstate/rentalsHub'
+                    : alerts!.some((a) => alertKind(a) === 'reservation') &&
+                        !alerts!.some((a) => alertKind(a) === 'installment')
                     ? reservationsHref
                     : paymentPlansHref
                 )

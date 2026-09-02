@@ -41,7 +41,11 @@
     "terminationDateLabel": "Termination Date",
     "terminationReasonLabel": "Termination Reason",
     "unitLabel": "Unit",
-    "unitPlaceholder": "Select unit"
+    "unitPlaceholder": "Select unit",
+    "lateFeePercentageLabel": "Late fee percentage",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Grace period (days)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "formButtons": {
     "cancel": "Cancel",

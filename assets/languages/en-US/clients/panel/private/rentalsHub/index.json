@@ -35,7 +35,8 @@
       "startDate": "Start date",
       "endDate": "End date",
       "monthlyRent": "Monthly rent",
-      "actions": "Actions"
+      "actions": "Actions",
+      "outstanding": "Outstanding"
     },
     "status": {
       "active": "Active",
@@ -78,16 +79,43 @@
       "status": "Status",
       "dueDate": "Due date",
       "amount": "Amount",
-      "actions": "Actions"
+      "actions": "Actions",
+      "remaining": "Remaining"
     },
     "status": {
       "pending": "Pending",
       "paid": "Paid",
       "overdue": "Overdue",
-      "waived": "Waived"
+      "waived": "Waived",
+      "partially_paid": "Partially paid"
     },
     "pagination": {
       "summary": "{from} to {to} of {total} results"
+    }
+  },
+  "tabs": {
+    "leases": "Leases",
+    "payments": "Payments",
+    "calendar": "Calendar"
+  },
+  "calendar": {
+    "title": "Rent calendar",
+    "errorTitle": "Could not load calendar",
+    "errorDescription": "Try again.",
+    "truncatedTitle": "Calendar truncated",
+    "truncatedDescription": "Showing the first {max} due rows for this month. KPIs remain company-wide.",
+    "kpiCollected": "Rent collected",
+    "kpiOutstanding": "Rent outstanding",
+    "kpiOverdue": "Rent overdue",
+    "detailForDay": "Due on {date}",
+    "selectDay": "Select a day",
+    "noPaymentsDay": "No rent due on this day.",
+    "badge": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "partially_paid": "Partially paid",
+      "overdue": "Overdue",
+      "waived": "Waived"
     }
   }
 }

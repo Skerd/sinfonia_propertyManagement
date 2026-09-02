@@ -1,7 +1,31 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
-  "dialogTitle": "Zahlung als bezahlt markieren",
-  "dialogDescription": "Vollständige Zahlung von {amount} für diese Mietrate erfassen.",
+  "dialogTitle": "Mietzahlung erfassen",
+  "dialogDescription": "Erfasst eine Zahlung für diesen Monat. Restbetrag ist Fälligkeit plus Gebühr minus bereits bezahlt.",
+  "dueAmount": "Fällig",
+  "lateFeeAmount": "Verzugsgebühr",
+  "alreadyPaid": "Bereits bezahlt",
+  "remainingAmount": "Restbetrag",
+  "paidAmount": "Zu erfassender Betrag",
+  "notes": "Notizen",
+  "notesPlaceholder": "Optional",
   "cancel": "Abbrechen",
-  "submit": "Als bezahlt markieren"
+  "processing": "Wird erfasst…",
+  "confirmPay": "Zahlung erfassen",
+  "paymentRecorded": "Zahlung erfasst",
+  "paymentFailed": "Zahlung konnte nicht erfasst werden",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
 }

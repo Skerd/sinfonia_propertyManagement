@@ -38,5 +38,13 @@
   "occupancyRate": "Taux d'occupation",
   "occupancyRateDesc": "Unités vendues / unités totales",
   "followUpInspections": "Inspections de suivi",
-  "followUpInspectionsDesc": "Inspections nécessitant un suivi"
+  "followUpInspectionsDesc": "Inspections nécessitant un suivi",
+  "rentCollected": "Loyer encaissé",
+  "rentCollectedDesc": "Loyer encaissé par devise",
+  "rentOutstanding": "Loyer restant dû",
+  "rentOutstandingDesc": "Restant ouvert par devise",
+  "rentOverdue": "Loyer en retard",
+  "rentOverdueDesc": "Restant en retard par devise",
+  "activeLeases": "Baux actifs",
+  "activeLeasesDesc": "Baux actuellement actifs"
 }

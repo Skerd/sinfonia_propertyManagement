@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx",
+  "dialogTitle": "Waive remaining rent",
+  "dialogDescription": "Forgives the remaining balance on this month. Collected receipts are kept.",
+  "notes": "Notes",
+  "notesPlaceholder": "Optional",
+  "cancel": "Cancel",
+  "submit": "Waive remaining",
+  "axios": {
+    "start": {"title": "Waiving remaining…", "time": 3000},
+    "success": {"title": "Remaining waived", "time": 3000},
+    "error": {"title": "Could not waive remaining", "time": 3000}
+  }
+}

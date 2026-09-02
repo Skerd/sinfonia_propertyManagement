@@ -344,7 +344,7 @@ function DashboardOverview({
           />
         </div>
         <PaymentAlerts
-          overdueCount={summary?.paymentPlans?.overdueInstallmentsCount ?? 0}
+          overdueCount={(summary?.paymentPlans?.overdueInstallmentsCount ?? 0) + (summary?.rentals?.overdueCount ?? 0)}
           alerts={paymentAlerts}
           title={resolveLanguageKey("paymentAlerts")}
           viewAllLabel={resolveLanguageKey("viewPaymentPlans")}

@@ -7,7 +7,9 @@ import {IconReceiptDollar} from "@tabler/icons-react";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
+import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
+import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {buildPageTitle} from "@coreModule/helpers/general";
@@ -44,6 +46,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             enumValues: [
                 {value: "pending", label: resolveLanguageKey("fields.!enums.status.pending") as string},
                 {value: "paid", label: resolveLanguageKey("fields.!enums.status.paid") as string},
+                {value: "partially_paid", label: resolveLanguageKey("fields.!enums.status.partially_paid") as string},
                 {value: "overdue", label: resolveLanguageKey("fields.!enums.status.overdue") as string},
                 {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived") as string},
             ],
@@ -122,7 +125,10 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 />
             )}
             renderActionMenuChildren={(payment, bindRowAction) => (
-                <MarkRentalPaymentPaid payment={payment} onAction={bindRowAction} />
+                <>
+                    <MarkRentalPaymentPaid payment={payment} onAction={bindRowAction} />
+                    <WaiveRentalPayment payment={payment} onAction={bindRowAction} />
+                </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
                 const onSuccess = (updated?: RentalPayment) => {
@@ -132,6 +138,15 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 if (action === MARK_RENTAL_PAYMENT_PAID_ACTION)
                     return (
                         <MarkRentalPaymentPaidDialog
+                            open
+                            onClose={resetAction}
+                            payment={entity}
+                            onSuccess={onSuccess}
+                        />
+                    );
+                if (action === WAIVE_RENTAL_PAYMENT_ACTION)
+                    return (
+                        <WaiveRentalPaymentDialog
                             open
                             onClose={resetAction}
                             payment={entity}

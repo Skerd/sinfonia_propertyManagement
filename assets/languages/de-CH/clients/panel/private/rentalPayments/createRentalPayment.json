@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Mietzahlung erfassen",
-  "description": "Neue Mietzahlung erfassen",
+  "title": "Zusätzliche Mietcharge hinzufügen",
+  "description": "Zusätzliche Charge oder zusätzlichen Monat hinzufügen. Dies erfasst keine Zahlung.",
   "generalInfo": "Zahlungsdetails",
   "form": {
     "leaseLabel": "Mietvertrag",
@@ -19,24 +19,24 @@
   },
   "axios": {
     "start": {
-      "title": "Zahlung wird erfasst",
+      "title": "Charge wird hinzugefügt",
       "time": 3000
     },
     "success": {
-      "title": "Zahlung erfolgreich erfasst!",
+      "title": "Zusätzliche Charge hinzugefügt",
       "time": 3000
     },
     "error": {
-      "title": "Zahlung konnte nicht erfasst werden, bitte erneut versuchen!",
+      "title": "Charge konnte nicht hinzugefügt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Mietzahlung erfassen",
-    "description": "Neue Mietzahlung erfassen"
+    "title": "Zusätzliche Mietcharge hinzufügen",
+    "description": "Zusätzliche Charge oder zusätzlichen Monat hinzufügen. Dies erfasst keine Zahlung."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Zahlung erfassen"
+    "submit": "Charge hinzufügen"
   }
 }

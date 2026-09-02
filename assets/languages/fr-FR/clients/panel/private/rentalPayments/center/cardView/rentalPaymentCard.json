@@ -12,9 +12,12 @@
         "pending": "En attente",
         "paid": "Payé",
         "overdue": "En retard",
-        "waived": "Annulé"
+        "waived": "Annulé",
+        "partially_paid": "Partiellement payé"
       }
-    }
+    },
+    "remaining": "Restant",
+    "lateFeeAmount": "Pénalité de retard"
   },
   "failedTitle": "Impossible de charger record",
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",

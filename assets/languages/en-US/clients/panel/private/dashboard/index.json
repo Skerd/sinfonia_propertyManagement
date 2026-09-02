@@ -19,5 +19,10 @@
   "failDescription": "Could not load dashboard. Click to retry.",
   "selectEdifice": "Select an edifice to view KPIs and charts",
   "viewEntries": "View entries",
-  "noData": "No dashboard data yet"
+  "noData": "No dashboard data yet",
+  "rentCollected": "Rent collected",
+  "rentOutstanding": "Rent outstanding",
+  "rentOverdue": "Rent overdue",
+  "activeLeases": "Active leases",
+  "viewRentalsHub": "View rentals hub"
 }

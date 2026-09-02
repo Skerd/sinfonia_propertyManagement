@@ -19,5 +19,10 @@
   "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
   "selectEdifice": "Sélectionnez un bâtiment pour voir les KPI et les graphiques",
   "viewEntries": "Voir les entrées",
-  "noData": "Aucune donnée du tableau de bord pour le moment"
+  "noData": "Aucune donnée du tableau de bord pour le moment",
+  "rentCollected": "Loyer encaissé",
+  "rentOutstanding": "Loyer restant dû",
+  "rentOverdue": "Loyer en retard",
+  "activeLeases": "Baux actifs",
+  "viewRentalsHub": "Ouvrir le hub locatif"
 }

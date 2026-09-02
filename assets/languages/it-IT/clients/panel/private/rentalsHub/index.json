@@ -35,7 +35,8 @@
       "startDate": "Data inizio",
       "endDate": "Data fine",
       "monthlyRent": "Affitto mensile",
-      "actions": "Azioni"
+      "actions": "Azioni",
+      "outstanding": "Residuo"
     },
     "status": {
       "active": "Attivo",
@@ -78,16 +79,43 @@
       "status": "Stato",
       "dueDate": "Scadenza",
       "amount": "Importo",
-      "actions": "Azioni"
+      "actions": "Azioni",
+      "remaining": "Residuo"
     },
     "status": {
       "pending": "In sospeso",
       "paid": "Pagato",
       "overdue": "In ritardo",
-      "waived": "Annullato"
+      "waived": "Annullato",
+      "partially_paid": "Parzialmente pagato"
     },
     "pagination": {
       "summary": "{from}–{to} di {total} risultati"
+    }
+  },
+  "tabs": {
+    "leases": "Contratti",
+    "payments": "Pagamenti",
+    "calendar": "Calendario"
+  },
+  "calendar": {
+    "title": "Calendario affitti",
+    "errorTitle": "Impossibile caricare il calendario",
+    "errorDescription": "Riprovare.",
+    "truncatedTitle": "Calendario troncato",
+    "truncatedDescription": "Prime {max} scadenze del mese. I KPI restano a livello aziendale.",
+    "kpiCollected": "Affitto incassato",
+    "kpiOutstanding": "Affitto residuo",
+    "kpiOverdue": "Affitto scaduto",
+    "detailForDay": "Scade il {date}",
+    "selectDay": "Seleziona un giorno",
+    "noPaymentsDay": "Nessun affitto in questo giorno.",
+    "badge": {
+      "pending": "In attesa",
+      "paid": "Pagato",
+      "partially_paid": "Parzialmente pagato",
+      "overdue": "Scaduto",
+      "waived": "Condono"
     }
   }
 }

@@ -12,9 +12,12 @@
         "pending": "Në pritje",
         "paid": "E paguar",
         "overdue": "Me vonesë",
-        "waived": "E falur"
+        "waived": "E falur",
+        "partially_paid": "Pjesërisht paguar"
       }
-    }
+    },
+    "remaining": "Mbetja",
+    "lateFeeAmount": "Gjobë vonese"
   },
   "failedTitle": "Dështoi ngarkimi i record",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",

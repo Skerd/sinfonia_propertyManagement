@@ -8,10 +8,12 @@ import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leas
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
 import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
 import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
+import RecordRentPayment, {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
 import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
+import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -95,6 +97,9 @@ function LeaseCard({
                         {action === RETURN_DEPOSIT_ACTION && (
                             <ReturnDepositDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
                         )}
+                        {action === RECORD_RENT_PAYMENT_ACTION && (
+                            <RecordRentPaymentDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
+                        )}
                     </>
                 );
             }}
@@ -108,6 +113,7 @@ function LeaseCard({
                         subtitlePath="unit"
                     >
                         <ViewLeasePayments lease={entity} />
+                        <RecordRentPayment lease={entity} onAction={setAction} />
                         <TerminateLease lease={entity} onAction={setAction} />
                         <MarkDepositPaid lease={entity} onAction={setAction} />
                         <ReturnDeposit lease={entity} onAction={setAction} />

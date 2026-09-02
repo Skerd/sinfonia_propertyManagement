@@ -23,7 +23,11 @@
     "addFile": "Add file",
     "filesSelected": "files selected",
     "existingFiles": "Current file",
-    "newFiles": "New file"
+    "newFiles": "New file",
+    "lateFeePercentageLabel": "Late fee percentage",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Grace period (days)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "axios": {
     "start": {

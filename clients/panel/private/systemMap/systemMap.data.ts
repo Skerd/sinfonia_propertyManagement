@@ -154,11 +154,11 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
             label: "Lease",
             cluster: "leasing",
             module: "propertyManagement",
-            description: "Rental agreement — sets unit to rented; terminate/expire releases unit.",
-            keyFields: ["unit", "tenant", "startDate", "endDate", "monthlyRent", "deposit", "status"],
+            description: "Rental agreement — sets unit to rented; terminate/expire releases unit. Collect via remaining on month rows (partial, FIFO, late fee).",
+            keyFields: ["unit", "tenant", "startDate", "endDate", "monthlyRent", "lateFeePercentage", "gracePeriodDays", "deposit", "status"],
             apiPath: "/api/realEstate/lease",
             panelRoute: "/realEstate/leases",
-            actions: ["terminate", "expire"],
+            actions: ["terminate", "expire", "recordRentPayment", "resyncSchedule", "sendRentReminder"],
             position: {x: 560, y: 520},
         },
         {
@@ -166,8 +166,8 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
             label: "RentalPayment",
             cluster: "leasing",
             module: "propertyManagement",
-            description: "Scheduled rent installment: pending → paid | overdue | waived.",
-            keyFields: ["lease", "unit", "dueDate", "amount", "status"],
+            description: "Scheduled rent month: remaining is derived (amount + late fee − paid). pending → paid | partially_paid | overdue | waived.",
+            keyFields: ["lease", "unit", "dueDate", "amount", "paidAmount", "remaining", "status"],
             apiPath: "/api/realEstate/rentalPayment",
             panelRoute: "/realEstate/rentalPayments",
             actions: ["markPaid", "waive"],
@@ -932,7 +932,7 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
             id: "pm-lease",
             title: "Lease & rent",
             summary:
-                "Available unit → Lease (unit rented) → RentalPayment schedule → mark paid / overdue / waived; terminate releases unit.",
+                "Available unit → Lease (unit rented) → RentalPayment schedule → collect remaining (partial / FIFO / late fee) / waive / overdue; terminate releases unit.",
             module: "propertyManagement",
             steps: [
                 {
@@ -953,14 +953,14 @@ export const PROPERTY_MANAGEMENT_SYSTEM_MAP: SystemMapDataset = {
                     id: "pl-schedule",
                     label: "RentalPayments",
                     description: "Monthly schedule",
-                    detail: "pending rows generated; rental maintenance cron tracks overdue.",
+                    detail: "pending rows generated; remaining is derived; rental maintenance cron tracks overdue and stamps lateFeeAmount once.",
                     position: {x: 600, y: 80},
                 },
                 {
                     id: "pl-collect",
                     label: "Collect / waive",
-                    description: "paid | overdue | waived",
-                    detail: "Operators mark payments; overdue surfaces in rentals hub.",
+                    description: "paid | partially_paid | overdue | waived",
+                    detail: "Operators record remaining via markPaid or lease FIFO; overdue surfaces in rentals hub; reminders use remaining.",
                     position: {x: 880, y: 80},
                 },
                 {

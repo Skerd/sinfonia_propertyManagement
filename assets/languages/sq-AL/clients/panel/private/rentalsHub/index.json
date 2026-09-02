@@ -29,7 +29,8 @@
       "startDate": "Fillimi",
       "endDate": "Mbarimi",
       "monthlyRent": "Qiraja mujore",
-      "actions": "Veprimet"
+      "actions": "Veprimet",
+      "outstanding": "E papaguar"
     },
     "status": {
       "active": "Aktive",
@@ -66,16 +67,43 @@
       "status": "Statusi",
       "dueDate": "Afati",
       "amount": "Shuma",
-      "actions": "Veprimet"
+      "actions": "Veprimet",
+      "remaining": "Mbetja"
     },
     "status": {
       "pending": "Në pritje",
       "paid": "E paguar",
       "overdue": "Me vonesë",
-      "waived": "E hequr"
+      "waived": "E hequr",
+      "partially_paid": "Pjesërisht paguar"
     },
     "pagination": {
       "summary": "{from} deri {to} nga {total} rezultate"
+    }
+  },
+  "tabs": {
+    "leases": "Kontrata",
+    "payments": "Pagesa",
+    "calendar": "Kalendari"
+  },
+  "calendar": {
+    "title": "Kalendari i qirasë",
+    "errorTitle": "Kalendari nuk u ngarkua",
+    "errorDescription": "Provoni sërish.",
+    "truncatedTitle": "Kalendari u kufizua",
+    "truncatedDescription": "Duke shfaqur {max} rreshtat e parë të këtij muaji. KPI-të mbeten për gjithë kompaninë.",
+    "kpiCollected": "Qira e arkëtuar",
+    "kpiOutstanding": "Qira e papaguar",
+    "kpiOverdue": "Qira e vonuar",
+    "detailForDay": "Maturohet më {date}",
+    "selectDay": "Zgjidhni një ditë",
+    "noPaymentsDay": "Nuk ka qira këtë ditë.",
+    "badge": {
+      "pending": "Në pritje",
+      "paid": "Paguar",
+      "partially_paid": "Pjesërisht paguar",
+      "overdue": "E vonuar",
+      "waived": "Falur"
     }
   }
 }

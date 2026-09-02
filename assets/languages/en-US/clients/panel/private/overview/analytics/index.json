@@ -38,5 +38,13 @@
   "occupancyRate": "Occupancy rate",
   "occupancyRateDesc": "Sold units / total units",
   "followUpInspections": "Follow-up inspections",
-  "followUpInspectionsDesc": "Inspections requiring follow-up"
+  "followUpInspectionsDesc": "Inspections requiring follow-up",
+  "rentCollected": "Rent collected",
+  "rentCollectedDesc": "Collected rent by currency",
+  "rentOutstanding": "Rent outstanding",
+  "rentOutstandingDesc": "Open remaining by currency",
+  "rentOverdue": "Rent overdue",
+  "rentOverdueDesc": "Overdue remaining by currency",
+  "activeLeases": "Active leases",
+  "activeLeasesDesc": "Leases currently active"
 }

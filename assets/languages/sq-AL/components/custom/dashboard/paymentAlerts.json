@@ -15,5 +15,7 @@
   "noOverduePayments": "Nuk ka pagesa të vonuara",
   "overdueInstallment": "kësti i vonuar",
   "overdueInstallments": "këstet e vonuara",
-  "viewPlansForDetails": "Shikoni planet e pagesave për detaje."
+  "viewPlansForDetails": "Shikoni planet e pagesave për detaje.",
+  "viewRentalsLabel": "Shiko qendrën e qirave",
+  "rentLabel": "Qira"
 }

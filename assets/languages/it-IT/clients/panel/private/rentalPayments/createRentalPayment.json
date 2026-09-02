@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Registra pagamento affitto",
-  "description": "Registra un nuovo pagamento affitto",
+  "title": "Aggiungi addebito extra",
+  "description": "Aggiunge un addebito o un mese extra. Non registra un incasso.",
   "generalInfo": "Dettagli pagamento",
   "form": {
     "leaseLabel": "Contratto",
@@ -19,24 +19,24 @@
   },
   "axios": {
     "start": {
-      "title": "Registrazione pagamento",
+      "title": "Aggiunta addebito",
       "time": 3000
     },
     "success": {
-      "title": "Pagamento registrato con successo!",
+      "title": "Addebito extra aggiunto",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile registrare il pagamento, riprova!",
+      "title": "Addebito extra non aggiunto",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Registra pagamento affitto",
-    "description": "Registra un nuovo pagamento affitto"
+    "title": "Aggiungi addebito extra",
+    "description": "Aggiunge un addebito o un mese extra. Non registra un incasso."
   },
   "formButtons": {
     "cancel": "Annulla",
-    "submit": "Registra pagamento"
+    "submit": "Aggiungi addebito"
   }
 }

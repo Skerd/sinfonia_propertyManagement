@@ -38,5 +38,13 @@
   "occupancyRate": "Occupancy satz",
   "occupancyRateDesc": "Verkauft units / total units",
   "followUpInspections": "Follow-up inspections",
-  "followUpInspectionsDesc": "Inspections requiring follow-up"
+  "followUpInspectionsDesc": "Inspections requiring follow-up",
+  "rentCollected": "Eingenommene Miete",
+  "rentCollectedDesc": "Eingenommene Miete nach Währung",
+  "rentOutstanding": "Offene Miete",
+  "rentOutstandingDesc": "Offener Restbetrag nach Währung",
+  "rentOverdue": "Überfällige Miete",
+  "rentOverdueDesc": "Überfälliger Restbetrag nach Währung",
+  "activeLeases": "Aktive Mietverträge",
+  "activeLeasesDesc": "Derzeit aktive Mietverträge"
 }

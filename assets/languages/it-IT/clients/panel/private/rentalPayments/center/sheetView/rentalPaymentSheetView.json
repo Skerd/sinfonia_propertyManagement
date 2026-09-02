@@ -16,7 +16,8 @@
     "pending": "In sospeso",
     "paid": "Pagato",
     "overdue": "In ritardo",
-    "waived": "Annullato"
+    "waived": "Annullato",
+    "partially_paid": "Parzialmente pagato"
   },
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",
@@ -26,5 +27,7 @@
   "deletedBy": "Eliminato da",
   "failedTitle": "Impossibile caricare record",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
-  "failedTooltipDescription": "Clicca per ricaricare i dati."
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "remaining": "Residuo",
+  "lateFeeAmount": "Mora"
 }

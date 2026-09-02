@@ -15,5 +15,7 @@
   "noOverduePayments": "No overdue payments",
   "overdueInstallment": "overdue installment",
   "overdueInstallments": "overdue installments",
-  "viewPlansForDetails": "View payment plans for details."
+  "viewPlansForDetails": "View payment plans for details.",
+  "viewRentalsLabel": "View rentals hub",
+  "rentLabel": "Rent"
 }

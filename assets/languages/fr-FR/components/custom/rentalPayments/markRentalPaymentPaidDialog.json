@@ -1,7 +1,31 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
-  "dialogTitle": "Marquer le paiement comme payé",
-  "dialogDescription": "Enregistrer le paiement intégral de {amount} pour cette échéance de loyer.",
+  "dialogTitle": "Enregistrer un paiement de loyer",
+  "dialogDescription": "Enregistre un encaissement pour ce mois. Le restant est le dû plus la pénalité moins déjà payé.",
+  "dueAmount": "Dû",
+  "lateFeeAmount": "Pénalité de retard",
+  "alreadyPaid": "Déjà payé",
+  "remainingAmount": "Restant",
+  "paidAmount": "Montant à enregistrer",
+  "notes": "Notes",
+  "notesPlaceholder": "Facultatif",
   "cancel": "Annuler",
-  "submit": "Marquer payé"
+  "processing": "Enregistrement…",
+  "confirmPay": "Enregistrer le paiement",
+  "paymentRecorded": "Paiement enregistré",
+  "paymentFailed": "Impossible d’enregistrer le paiement",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
 }

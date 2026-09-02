@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx",
+  "dialogTitle": "Annuler le restant",
+  "dialogDescription": "Annule le solde restant de ce mois. Les encaissements déjà enregistrés sont conservés.",
+  "notes": "Notes",
+  "notesPlaceholder": "Facultatif",
+  "cancel": "Annuler",
+  "submit": "Annuler le restant",
+  "axios": {
+    "start": {
+      "title": "Annulation du restant…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Restant annulé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d’annuler le restant",
+      "time": 3000
+    }
+  }
+}

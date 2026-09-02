@@ -30,5 +30,30 @@
   "deletedBy": "Fshirë nga",
   "failedTitle": "Dështoi ngarkimi i record",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
-  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "lateFeePercentage": "Përqindja e gjobës së vonesës",
+  "gracePeriodDays": "Periudha e tolerancës (ditë)",
+  "schedule": {
+    "title": "Orari i qirasë",
+    "recordPayment": "Regjistro pagesë",
+    "kpiDue": "Detyrimi",
+    "kpiCollected": "Qira e arkëtuar",
+    "kpiRemaining": "Mbetja",
+    "kpiOverdue": "Qira e vonuar",
+    "dueDate": "Data",
+    "amount": "Shuma",
+    "lateFee": "Gjobë vonese",
+    "paid": "Paguar",
+    "remaining": "Mbetja",
+    "status": "Statusi",
+    "actions": "Veprime",
+    "empty": "Nuk ka muaj qiraje në këtë kontratë.",
+    "statuses": {
+      "pending": "Në pritje",
+      "paid": "Paguar",
+      "partially_paid": "Pjesërisht paguar",
+      "overdue": "E vonuar",
+      "waived": "Falur"
+    }
+  }
 }

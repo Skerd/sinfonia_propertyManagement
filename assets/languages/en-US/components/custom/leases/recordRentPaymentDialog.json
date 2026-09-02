@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/recordRentPaymentDialog.tsx",
+  "dialogTitle": "Record lease payment",
+  "dialogDescription": "Allocate {remaining} across open months, oldest first.",
+  "paidAmount": "Amount to record",
+  "notes": "Notes",
+  "notesPlaceholder": "Optional",
+  "leftoverWarning": "This amount is larger than all open remaining. Nothing will be posted.",
+  "cancel": "Cancel",
+  "processing": "Recording…",
+  "confirmPay": "Record payment",
+  "paymentRecorded": "Payment recorded",
+  "paymentFailed": "Could not record payment",
+  "axios": {
+    "start": {"title": "Recording payment", "time": 3000},
+    "success": {"title": "Payment recorded", "time": 3000},
+    "error": {"title": "Payment could not be recorded", "time": 3000}
+  }
+}

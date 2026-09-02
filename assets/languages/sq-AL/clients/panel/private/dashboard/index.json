@@ -19,5 +19,10 @@
   "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
   "selectEdifice": "Zgjidhni një ndërtesë për të parë KPI dhe grafikët",
   "viewEntries": "Shiko regjistrimet",
-  "noData": "Ende nuk ka të dhëna të panelit"
+  "noData": "Ende nuk ka të dhëna të panelit",
+  "rentCollected": "Qira e arkëtuar",
+  "rentOutstanding": "Qira e papaguar",
+  "rentOverdue": "Qira e vonuar",
+  "activeLeases": "Kontrata aktive",
+  "viewRentalsHub": "Shiko qendrën e qirave"
 }

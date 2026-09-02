@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/recordRentPaymentDialog.tsx",
+  "dialogTitle": "Registra pagamento affitto",
+  "dialogDescription": "Allocare {remaining} sui mesi aperti, dal più vecchio.",
+  "paidAmount": "Importo da registrare",
+  "notes": "Note",
+  "notesPlaceholder": "Opzionale",
+  "leftoverWarning": "L’importo supera tutti i residui aperti. Non verrà registrato nulla.",
+  "cancel": "Annulla",
+  "processing": "Registrazione…",
+  "confirmPay": "Registra pagamento",
+  "paymentRecorded": "Pagamento registrato",
+  "paymentFailed": "Impossibile registrare il pagamento",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
+}

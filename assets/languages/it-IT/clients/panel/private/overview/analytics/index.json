@@ -38,5 +38,13 @@
   "occupancyRate": "Tasso di occupazione",
   "occupancyRateDesc": "Unità vendute / unità totali",
   "followUpInspections": "Ispezioni di follow-up",
-  "followUpInspectionsDesc": "Ispezioni che richiedono follow-up"
+  "followUpInspectionsDesc": "Ispezioni che richiedono follow-up",
+  "rentCollected": "Affitto incassato",
+  "rentCollectedDesc": "Affitto incassato per valuta",
+  "rentOutstanding": "Affitto residuo",
+  "rentOutstandingDesc": "Residuo aperto per valuta",
+  "rentOverdue": "Affitto scaduto",
+  "rentOverdueDesc": "Residuo scaduto per valuta",
+  "activeLeases": "Contratti attivi",
+  "activeLeasesDesc": "Contratti attualmente attivi"
 }

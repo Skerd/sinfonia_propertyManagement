@@ -15,5 +15,7 @@
   "noOverduePayments": "Keine overdue payments",
   "overdueInstallment": "Overdue rate",
   "overdueInstallments": "Overdue raten",
-  "viewPlansForDetails": "Zahlung plans für details. anzeigen"
+  "viewPlansForDetails": "Zahlung plans für details. anzeigen",
+  "viewRentalsLabel": "Miet-Hub öffnen",
+  "rentLabel": "Miete"
 }

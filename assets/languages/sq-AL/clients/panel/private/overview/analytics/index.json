@@ -38,5 +38,13 @@
   "occupancyRate": "Shkalla e zënies",
   "occupancyRateDesc": "Njësi të shitura / njësi totale",
   "followUpInspections": "Inspektimet vijuese",
-  "followUpInspectionsDesc": "Inspektimet që kërkojnë ndjekje"
+  "followUpInspectionsDesc": "Inspektimet që kërkojnë ndjekje",
+  "rentCollected": "Qira e arkëtuar",
+  "rentCollectedDesc": "Qira e arkëtuar sipas monedhës",
+  "rentOutstanding": "Qira e papaguar",
+  "rentOutstandingDesc": "Mbetja e hapur sipas monedhës",
+  "rentOverdue": "Qira e vonuar",
+  "rentOverdueDesc": "Mbetja e vonuar sipas monedhës",
+  "activeLeases": "Kontrata aktive",
+  "activeLeasesDesc": "Kontrata aktualisht aktive"
 }

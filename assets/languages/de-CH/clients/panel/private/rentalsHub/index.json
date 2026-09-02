@@ -35,7 +35,8 @@
       "startDate": "Startdatum",
       "endDate": "Enddatum",
       "monthlyRent": "Monatsmiete",
-      "actions": "Aktionen"
+      "actions": "Aktionen",
+      "outstanding": "Offen"
     },
     "status": {
       "active": "Aktiv",
@@ -78,16 +79,43 @@
       "status": "Status",
       "dueDate": "Fälligkeit",
       "amount": "Betrag",
-      "actions": "Aktionen"
+      "actions": "Aktionen",
+      "remaining": "Restbetrag"
     },
     "status": {
       "pending": "Ausstehend",
       "paid": "Bezahlt",
       "overdue": "Überfällig",
-      "waived": "Erlassen"
+      "waived": "Erlassen",
+      "partially_paid": "Teilweise bezahlt"
     },
     "pagination": {
       "summary": "{from} bis {to} von {total} Ergebnissen"
+    }
+  },
+  "tabs": {
+    "leases": "Mietverträge",
+    "payments": "Zahlungen",
+    "calendar": "Kalender"
+  },
+  "calendar": {
+    "title": "Mietkalender",
+    "errorTitle": "Kalender konnte nicht geladen werden",
+    "errorDescription": "Bitte erneut versuchen.",
+    "truncatedTitle": "Kalender gekürzt",
+    "truncatedDescription": "Die ersten {max} Fälligkeiten dieses Monats. KPIs bleiben unternehmensweit.",
+    "kpiCollected": "Eingenommene Miete",
+    "kpiOutstanding": "Offene Miete",
+    "kpiOverdue": "Überfällige Miete",
+    "detailForDay": "Fällig am {date}",
+    "selectDay": "Tag wählen",
+    "noPaymentsDay": "Keine Miete an diesem Tag.",
+    "badge": {
+      "pending": "Ausstehend",
+      "paid": "Bezahlt",
+      "partially_paid": "Teilweise bezahlt",
+      "overdue": "Überfällig",
+      "waived": "Erlassen"
     }
   }
 }

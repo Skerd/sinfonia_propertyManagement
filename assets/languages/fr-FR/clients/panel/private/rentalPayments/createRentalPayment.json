@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Enregistrer un loyer",
-  "description": "Enregistrer un nouveau paiement de loyer",
+  "title": "Ajouter une charge extra",
+  "description": "Ajoute une charge ou un mois extra. Ceci n’enregistre pas un encaissement.",
   "generalInfo": "Détails du paiement",
   "form": {
     "leaseLabel": "Bail",
@@ -19,24 +19,24 @@
   },
   "axios": {
     "start": {
-      "title": "Enregistrement du paiement",
+      "title": "Ajout de la charge",
       "time": 3000
     },
     "success": {
-      "title": "Paiement enregistré avec succès !",
+      "title": "Charge extra ajoutée",
       "time": 3000
     },
     "error": {
-      "title": "Le paiement n’a pas pu être enregistré, veuillez réessayer !",
+      "title": "La charge extra n’a pas pu être ajoutée",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Enregistrer un loyer",
-    "description": "Enregistrer un nouveau paiement de loyer"
+    "title": "Ajouter une charge extra",
+    "description": "Ajoute une charge ou un mois extra. Ceci n’enregistre pas un encaissement."
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Enregistrer le paiement"
+    "submit": "Ajouter la charge"
   }
 }

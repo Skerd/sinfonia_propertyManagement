@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leases/recordRentPaymentDialog.tsx",
+  "dialogTitle": "Mietzahlung erfassen",
+  "dialogDescription": "Verteilt {remaining} auf offene Monate, älteste zuerst.",
+  "paidAmount": "Zu erfassender Betrag",
+  "notes": "Notizen",
+  "notesPlaceholder": "Optional",
+  "leftoverWarning": "Dieser Betrag übersteigt alle offenen Restbeträge. Es wird nichts gebucht.",
+  "cancel": "Abbrechen",
+  "processing": "Wird erfasst…",
+  "confirmPay": "Zahlung erfassen",
+  "paymentRecorded": "Zahlung erfasst",
+  "paymentFailed": "Zahlung konnte nicht erfasst werden",
+  "axios": {
+    "start": {
+      "title": "Recording payment",
+      "time": 3000
+    },
+    "success": {
+      "title": "Payment recorded",
+      "time": 3000
+    },
+    "error": {
+      "title": "Payment could not be recorded",
+      "time": 3000
+    }
+  }
+}

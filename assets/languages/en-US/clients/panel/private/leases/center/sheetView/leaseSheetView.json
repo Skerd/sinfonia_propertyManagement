@@ -30,5 +30,30 @@
   "deletedBy": "Deleted by",
   "failedTitle": "Failed to load record",
   "failedDescription": "Something went wrong while loading this record. Click to retry.",
-  "failedTooltipDescription": "Click to retry fetching data."
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "lateFeePercentage": "Late fee percentage",
+  "gracePeriodDays": "Grace period (days)",
+  "schedule": {
+    "title": "Rent schedule",
+    "recordPayment": "Record payment",
+    "kpiDue": "Due",
+    "kpiCollected": "Rent collected",
+    "kpiRemaining": "Remaining",
+    "kpiOverdue": "Rent overdue",
+    "dueDate": "Due date",
+    "amount": "Amount",
+    "lateFee": "Late fee",
+    "paid": "Paid",
+    "remaining": "Remaining",
+    "status": "Status",
+    "actions": "Actions",
+    "empty": "No rent months on this lease.",
+    "statuses": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "partially_paid": "Partially paid",
+      "overdue": "Overdue",
+      "waived": "Waived"
+    }
+  }
 }

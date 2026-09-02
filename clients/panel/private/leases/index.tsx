@@ -9,10 +9,12 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
 import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
 import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
+import RecordRentPayment, {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
 import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
 import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
+import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -129,6 +131,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             renderActionMenuChildren={(lease, bindRowAction) => (
                 <>
                     <ViewLeasePayments lease={lease} />
+                    <RecordRentPayment lease={lease} onAction={bindRowAction} />
                     <TerminateLease lease={lease} onAction={bindRowAction} />
                     <MarkDepositPaid lease={lease} onAction={bindRowAction} />
                     <ReturnDeposit lease={lease} onAction={bindRowAction} />
@@ -145,6 +148,8 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                     return <MarkDepositPaidDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
                 if (action === RETURN_DEPOSIT_ACTION)
                     return <ReturnDepositDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
+                if (action === RECORD_RENT_PAYMENT_ACTION)
+                    return <RecordRentPaymentDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
                 return null;
             }}
         />

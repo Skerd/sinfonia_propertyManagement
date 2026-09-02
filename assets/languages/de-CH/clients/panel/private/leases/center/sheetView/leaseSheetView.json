@@ -30,5 +30,30 @@
   "deletedBy": "Gelöscht von",
   "failedTitle": "record konnte nicht geladen werden",
   "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "lateFeePercentage": "Verzugsgebühr in Prozent",
+  "gracePeriodDays": "Kulanzfrist (Tage)",
+  "schedule": {
+    "title": "Mietplan",
+    "recordPayment": "Zahlung erfassen",
+    "kpiDue": "Fällig",
+    "kpiCollected": "Eingenommene Miete",
+    "kpiRemaining": "Restbetrag",
+    "kpiOverdue": "Überfällige Miete",
+    "dueDate": "Fälligkeit",
+    "amount": "Betrag",
+    "lateFee": "Verzugsgebühr",
+    "paid": "Bezahlt",
+    "remaining": "Restbetrag",
+    "status": "Status",
+    "actions": "Aktionen",
+    "empty": "Keine Mietmonate auf diesem Vertrag.",
+    "statuses": {
+      "pending": "Ausstehend",
+      "paid": "Bezahlt",
+      "partially_paid": "Teilweise bezahlt",
+      "overdue": "Überfällig",
+      "waived": "Erlassen"
+    }
+  }
 }

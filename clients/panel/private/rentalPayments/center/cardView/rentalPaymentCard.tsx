@@ -6,7 +6,9 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconCalendar, IconCurrencyDollar, IconDoor, IconLabel} from "@tabler/icons-react";
 import RentalPaymentSheetView from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
+import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
+import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -67,13 +69,28 @@ function RentalPaymentCard({
                 actionMenuAllowCustomChildren: true,
                 onActionMenuAction: setAction,
                 actionMenuChildren: (
-                    <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
+                    <>
+                        <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
+                        <WaiveRentalPayment payment={entity} onAction={setAction} />
+                    </>
                 ),
             })}
             extraDialogs={({action, setAction, entity, setEntity}) => (
                 <>
                     {action === MARK_RENTAL_PAYMENT_PAID_ACTION && (
                         <MarkRentalPaymentPaidDialog
+                            open
+                            onClose={() => setAction("")}
+                            payment={entity}
+                            onSuccess={(updated?: RentalPayment) => {
+                                if (updated) setEntity({...entity, ...updated});
+                                onActionSuccess?.(updated);
+                                setAction("");
+                            }}
+                        />
+                    )}
+                    {action === WAIVE_RENTAL_PAYMENT_ACTION && (
+                        <WaiveRentalPaymentDialog
                             open
                             onClose={() => setAction("")}
                             payment={entity}
@@ -96,6 +113,7 @@ function RentalPaymentCard({
                         subtitlePath="lease"
                     >
                         <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
+                        <WaiveRentalPayment payment={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <DisplayRow
@@ -114,6 +132,14 @@ function RentalPaymentCard({
                             path="amount"
                             type="currency"
                             value={{amount: entity.amount, currency: entity.currency}}
+                        />
+                        <DisplayRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("fields.remaining")}
+                            tooltip={resolveLanguageKey("fields.remaining")}
+                            path="amount"
+                            type="currency"
+                            value={{amount: entity.remaining, currency: entity.currency}}
                         />
                         <DisplayRow
                             icon={IconDoor}

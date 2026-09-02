@@ -15,5 +15,7 @@
   "noOverduePayments": "Nessun pagamento scaduto",
   "overdueInstallment": "rata scaduta",
   "overdueInstallments": "rate scadute",
-  "viewPlansForDetails": "Vedi i piani di pagamento per i dettagli."
+  "viewPlansForDetails": "Vedi i piani di pagamento per i dettagli.",
+  "viewRentalsLabel": "Apri hub locazioni",
+  "rentLabel": "Affitto"
 }

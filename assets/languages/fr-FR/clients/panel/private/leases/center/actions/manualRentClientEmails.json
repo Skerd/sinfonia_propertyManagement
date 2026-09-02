@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx",
+  "cancel": "Annuler",
+  "confirmSend": "Envoyer l’e-mail",
+  "actionLabels": {
+    "3d": "Rappel : 3 jours avant l’échéance",
+    "1d": "Rappel : 1 jour avant l’échéance",
+    "0d": "Rappel : échéance (aujourd’hui)",
+    "overdue": "Envoyer l’avis de loyer en retard"
+  },
+  "confirmTitles": {
+    "3d": "Envoyer le rappel J-3 ?",
+    "1d": "Envoyer le rappel J-1 ?",
+    "0d": "Envoyer le rappel du jour d’échéance ?",
+    "overdue": "Envoyer l’e-mail de loyer en retard ?"
+  },
+  "confirmDescriptions": {
+    "3d": "Envoie le modèle standard « 3 jours avant ». Le texte affiche le restant, pas le montant d’origine.",
+    "1d": "Envoie le modèle standard « 1 jour avant ». Le texte affiche le restant.",
+    "0d": "Envoie le rappel « dû aujourd’hui ». Le texte affiche le restant.",
+    "overdue": "Envoie l’avis que ce mois est en retard (après la fin de journée UTC). Le texte affiche le restant."
+  },
+  "axios": {
+    "start": {
+      "title": "Envoi de l’e-mail…",
+      "time": 3000
+    },
+    "success": {
+      "title": "E-mail envoyé",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d’envoyer l’e-mail",
+      "time": 3000
+    }
+  }
+}

@@ -23,7 +23,11 @@
     "addFile": "Datei hinzufügen",
     "filesSelected": "Dateien ausgewählt",
     "existingFiles": "Aktuelle Datei",
-    "newFiles": "Neue Datei"
+    "newFiles": "Neue Datei",
+    "lateFeePercentageLabel": "Verzugsgebühr in Prozent",
+    "lateFeePercentagePlaceholder": "0–100",
+    "gracePeriodDaysLabel": "Kulanzfrist (Tage)",
+    "gracePeriodDaysPlaceholder": "0"
   },
   "axios": {
     "start": {

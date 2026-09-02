@@ -18,7 +18,8 @@ function MarkRentalPaymentPaid({onAction, payment, resolveLanguageKey}: MarkRent
     const status = payment?.status ?? "pending";
     const canMark = !!write
         && !payment?.deletedAt
-        && (status === "pending" || status === "overdue");
+        && (status === "pending" || status === "overdue" || status === "partially_paid")
+        && (payment?.remaining ?? 0) > 0;
 
     if (!canMark) return null;
 

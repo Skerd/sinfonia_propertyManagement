@@ -1,4 +1,4 @@
-import { Building2, Wallet, Layers, TrendingUp, FileCheck } from "lucide-react";
+import { Building2, Wallet, Layers, TrendingUp, FileCheck, KeyRound } from "lucide-react";
 import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import { AnalyticsChart, PaymentTypeChart, RevenueByPeriodChart } from "./analytics-chart.tsx";
 import { formatCurrency, formatNumber } from "@coreModule/helpers/general";
@@ -15,6 +15,7 @@ import {
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
+import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 
@@ -24,7 +25,7 @@ type AnalyticsProps = WithLanguageType & {
   viewEntriesLabel: string;
 };
 
-function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEntriesLabel }: AnalyticsProps) {
+function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownContext, viewEntriesLabel }: AnalyticsProps) {
   const summary = dashboardData?.summary;
   const salesByPeriod = dashboardData?.salesByPeriod ?? [];
   const revenueByPeriod = dashboardData?.revenueByPeriod ?? [];
@@ -73,6 +74,13 @@ function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEn
         <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={formatNumber(activePaymentPlans)} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={Wallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={formatNumber(overdueInstallments)} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={Wallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
         <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatCurrency(totalOutstanding)} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={Wallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
+      </div>
+
+      <div className={GRID_KPI}>
+        <KpiCard compact title={resolveLanguageKey("rentCollected")} value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentCollectedDesc")} icon={Wallet} variant="success" href="/realEstate/rentalsHub" linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("rentOutstanding")} value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOutstandingDesc")} icon={Wallet} variant="warning" href="/realEstate/rentalsHub" linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("rentOverdue")} value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOverdueDesc")} icon={Wallet} variant="danger" href="/realEstate/rentalsHub" linkLabel={link} />
+        <KpiCard compact title={resolveLanguageKey("activeLeases")} value={formatNumber(summary?.rentals?.activeLeases ?? 0)} subtitle={resolveLanguageKey("activeLeasesDesc")} icon={KeyRound} href="/realEstate/rentalsHub" linkLabel={link} />
       </div>
 
       <div className={GRID_KPI}>
