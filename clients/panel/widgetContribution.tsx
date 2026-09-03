@@ -12,6 +12,7 @@ import FormUnitPolygon from "@propertyManagementModule/components/custom/units/f
 import SheetPriceHistoryChart from "@propertyManagementModule/components/custom/units/sheetPriceHistoryChart.tsx";
 import type {SheetPriceHistoryChartProps} from "@propertyManagementModule/components/custom/units/sheetPriceHistoryChart.tsx";
 import PaymentPlanInstallmentsField from "@propertyManagementModule/components/custom/paymentPlan/paymentPlanInstallmentsField.tsx";
+import LocalDiscountField from "@propertyManagementModule/components/custom/sale/localDiscountField.tsx";
 import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
 import FormExpenditureItemsField from "@propertyManagementModule/components/custom/unitCosts/formExpenditureItemsField.tsx";
 import SheetLineItems from "@propertyManagementModule/components/custom/lineItems/sheetLineItems.tsx";
@@ -256,6 +257,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#FormExpenditureItemsField": FormExpenditureItemsField,
         "#SheetModificationLineItems": SheetLineItems,
         "#PaymentPlanInstallmentsField": PaymentPlanInstallmentsField,
+        "#LocalDiscountField": LocalDiscountField,
         "#UnitCard": UnitCard,
         "#InspectionCard": InspectionCard,
         "#UnitCostCard": UnitCostCard,
@@ -308,6 +310,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#InspectionChecklistTemplateSheetView": InspectionChecklistTemplateSheetViewLazy,
         "#ConsultantAppointmentSheetView": ConsultantAppointmentSheetViewLazy,
     },
+    compoundFormWidgets: ["#LocalDiscountField"],
     referencesDefaultItemProps: {
         "#InspectionCard": "inspection",
         "#UnitCostCard": "unitCost",

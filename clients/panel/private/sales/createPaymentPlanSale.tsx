@@ -95,6 +95,20 @@ function CreatePaymentPlanSale({
         formData.append("installments", JSON.stringify(data.installments));
         if (data.paymentPlanNotes) formData.append("paymentPlanNotes", data.paymentPlanNotes);
         if (data.buyerCompany) formData.append("buyerCompany", data.buyerCompany);
+        if (typeof data.handoverDate === "string" && data.handoverDate.trim() !== "") {
+            formData.append("handoverDate", data.handoverDate);
+        }
+        if (typeof data.handedOverBy === "string" && data.handedOverBy.trim() !== "") {
+            formData.append("handedOverBy", data.handedOverBy);
+        }
+        if (data.handoverNotes) formData.append("handoverNotes", data.handoverNotes);
+        localFilesFromField(data.handoverCertificate).forEach((file) => formData.append("handoverCertificate", file));
+        if (typeof data.titleTransferDate === "string" && data.titleTransferDate.trim() !== "") {
+            formData.append("titleTransferDate", data.titleTransferDate);
+        }
+        if (data.deedNumber) formData.append("deedNumber", data.deedNumber);
+        if (data.notaryName) formData.append("notaryName", data.notaryName);
+        localFilesFromField(data.titleTransferCertificate).forEach((file) => formData.append("titleTransferCertificate", file));
 
         lastSubmittedUnitId.current = data.unit;
         onFormDataChange(formData);

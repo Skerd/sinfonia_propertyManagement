@@ -52,6 +52,8 @@
     "loadUnitData": "Carica i dati dell'unità per compilare progetto, edificio e piano",
     "localDiscountLabel": "Sconto locale (%)",
     "localDiscountPlaceholder": "Inserisci percentuale di sconto locale (0–100)",
+    "localDiscountAmountLabel": "Importo dello sconto",
+    "localDiscountAmountPlaceholder": "Inserisci l'importo dello sconto",
     "notesLabel": "Note",
     "notesPlaceholder": "Inserisci note di vendita",
     "projectLabel": "Progetto",

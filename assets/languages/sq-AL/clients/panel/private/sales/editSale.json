@@ -52,6 +52,8 @@
     "loadUnitData": "Ngarko të dhënat e njësisë për të mbushur projektin, godinën dhe dyshemenë",
     "localDiscountLabel": "Zbritje lokale (%)",
     "localDiscountPlaceholder": "Fut përqindjen lokale të zbritjes (0–100)",
+    "localDiscountAmountLabel": "Shuma e zbritjes",
+    "localDiscountAmountPlaceholder": "Shkruani shumën e zbritjes",
     "notesLabel": "Shënime",
     "notesPlaceholder": "Fut shënimet e shitjes",
     "projectLabel": "Projekti",

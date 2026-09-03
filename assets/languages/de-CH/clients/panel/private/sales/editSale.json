@@ -52,6 +52,8 @@
     "loadUnitData": "Einheitendaten laden, um Projekt, Gebäude und Geschoss zu befüllen",
     "localDiscountLabel": "Lokaler Rabatt (%)",
     "localDiscountPlaceholder": "Lokalen Rabattprozentsatz eingeben (0–100)",
+    "localDiscountAmountLabel": "Rabattbetrag",
+    "localDiscountAmountPlaceholder": "Rabattbetrag eingeben",
     "notesLabel": "Notizen",
     "notesPlaceholder": "Verkaufsnotizen eingeben",
     "projectLabel": "Projekt",

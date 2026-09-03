@@ -52,6 +52,8 @@
     "loadUnitData": "Charger les données de l'unité pour renseigner projet, bâtiment et étage",
     "localDiscountLabel": "Remise locale (%)",
     "localDiscountPlaceholder": "Saisir le pourcentage de remise locale (0–100)",
+    "localDiscountAmountLabel": "Montant de la remise",
+    "localDiscountAmountPlaceholder": "Saisir le montant de la remise",
     "notesLabel": "Notes",
     "notesPlaceholder": "Saisir les notes de vente",
     "projectLabel": "Projet",
