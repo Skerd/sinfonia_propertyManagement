@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/completeHandoverDialog.tsx",
+  "confirmTitle": "Complete handover",
+  "confirmDescription": "Mark this sale handover as completed?",
+  "cancel": "Cancel",
+  "confirm": "Complete handover",
+  "axios": {
+    "start": {
+      "title": "Completing handover…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Handover completed",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not complete handover",
+      "time": 3000
+    }
+  }
+}

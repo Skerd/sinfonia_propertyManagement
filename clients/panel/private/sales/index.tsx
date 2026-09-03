@@ -15,6 +15,7 @@ import SaleSheetView, {
     saleDeleteRestoreConfirmLabel,
 } from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
+import CompleteHandoverDialog from "@propertyManagementModule/components/custom/sales/completeHandoverDialog.tsx";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
@@ -115,7 +116,7 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             buildDeleteConfirmLabel={(sale, read) => saleDeleteRestoreConfirmLabel(sale, read as {name?: unknown})}
-            renderSheet={({entity: sale, open, onOpenChange, onDelete, onRestore}) => (
+            renderSheet={({entity: sale, open, onOpenChange, onDelete, onRestore, listRef}) => (
                 <SaleSheetView
                     open={open}
                     onOpenChange={(o: boolean) => { if (!o) onOpenChange(); }}
@@ -124,20 +125,42 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
                     unitName={unitName ?? sale.unit?.name ?? (sale.unit?.unitNumber != null ? String(sale.unit.unitNumber) : undefined)}
                     onDelete={onDelete}
                     onRestore={onRestore}
+                    onModifySuccess={(updated?: Sale) => {
+                        if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
+                    }}
                 />
             )}
             cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             rowActionMenu={{allowMenuForCustomChildren: true}}
-            renderCard={(sale, onDelete, onRestore) => (
+            renderCard={(sale, onDelete, onRestore, listRef) => (
                 <SaleCard
                     sale={sale}
                     unitId={unitId ?? sale.unit?._id ?? ""}
                     unitName={unitName ?? sale.unit?.name ?? (sale.unit?.unitNumber != null ? String(sale.unit.unitNumber) : undefined)}
                     onDelete={(row: any, response?: DeletedData) => onDelete(row ?? sale, response)}
                     onRestore={() => onRestore(sale)}
+                    onModifySuccess={(updated?: Sale) => {
+                        if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
+                    }}
                 />
             )}
-            renderActionMenuChildren={(sale) => <SaleRowMenuExtras sale={sale} />}
+            renderActionMenuChildren={(sale, bindRowAction) => (
+                <SaleRowMenuExtras sale={sale} onAction={bindRowAction} />
+            )}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                const onSuccess = (updated?: Sale) => {
+                    if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
+                    resetAction();
+                };
+                return action === "completeHandover" ? (
+                    <CompleteHandoverDialog
+                        open
+                        onClose={resetAction}
+                        sale={entity}
+                        onSuccess={onSuccess}
+                    />
+                ) : null;
+            }}
         />
     );
 }

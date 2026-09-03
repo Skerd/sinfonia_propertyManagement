@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/completeHandoverDialog.tsx",
+  "confirmTitle": "Përfundo dorëzimin",
+  "confirmDescription": "Ta shënoni këtë dorëzim shitjeje si të përfunduar?",
+  "cancel": "Anulo",
+  "confirm": "Përfundo dorëzimin",
+  "axios": {
+    "start": {
+      "title": "Duke përfunduar dorëzimin…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Dorëzimi u përfundua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Dorëzimi nuk u përfundua",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/completeHandoverDialog.tsx",
+  "confirmTitle": "Completa consegna",
+  "confirmDescription": "Contrassegnare questa consegna della vendita come completata?",
+  "cancel": "Annulla",
+  "confirm": "Completa consegna",
+  "axios": {
+    "start": {
+      "title": "Completamento della consegna…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Consegna completata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile completare la consegna",
+      "time": 3000
+    }
+  }
+}

@@ -15,6 +15,7 @@ import {
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import SaleSheetView, {buildSaleEditPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
+import CompleteHandoverDialog from "@propertyManagementModule/components/custom/sales/completeHandoverDialog.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
@@ -104,6 +105,7 @@ type SaleCardProps = WithLanguageType & {
     hideActions?: boolean;
     onDelete?: (sale?: Sale, response?: DeletedData) => void;
     onRestore?: () => void;
+    onModifySuccess?: (updated?: Sale) => void;
     sheetOnly?: boolean;
     small?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<Sale> | null>;
@@ -118,6 +120,7 @@ function SaleCard({
     hideActions = false,
     onDelete,
     onRestore,
+    onModifySuccess,
     sheetOnly = false,
     small,
     innerRef,
@@ -144,13 +147,31 @@ function SaleCard({
             failedDescription={String(resolveLanguageKey("failedDescription"))}
             titlePath="name"
             innerRef={innerRef}
-            sheetProps={() => ({
+            sheetProps={({entity, setEntity}) => ({
                 fetchId,
                 unitId: resolvedUnitId,
                 unitName: resolvedUnitDisplayName,
+                onModifySuccess: (updated?: Sale) => {
+                    if (updated) setEntity({...entity, ...updated});
+                    onModifySuccess?.(updated);
+                },
             })}
+            extraDialogs={({action, setAction, entity, setEntity}) =>
+                action === "completeHandover" ? (
+                    <CompleteHandoverDialog
+                        open
+                        onClose={() => setAction("")}
+                        sale={entity}
+                        onSuccess={(updated) => {
+                            if (updated) setEntity({...entity, ...updated});
+                            onModifySuccess?.(updated);
+                            setAction("");
+                        }}
+                    />
+                ) : null
+            }
         >
-            {({entity}) => {
+            {({entity, setAction}) => {
                 const saleTitle =
                     entity.name?.trim() ||
                     [entity.unit?.name, entity.unit?.unitNumber].filter(Boolean).join(" · ") ||
@@ -174,7 +195,7 @@ function SaleCard({
                                 ) : undefined
                             }
                         >
-                            <SaleRowMenuExtras sale={entity} />
+                            <SaleRowMenuExtras sale={entity} onAction={setAction} />
                         </EntityCard.Header>
                         {hasBadges && (
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />

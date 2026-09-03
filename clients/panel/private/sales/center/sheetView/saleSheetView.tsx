@@ -8,6 +8,7 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import {useEffect, useState} from "react";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
+import CompleteHandoverDialog from "@propertyManagementModule/components/custom/sales/completeHandoverDialog.tsx";
 
 /** List route with optional unit filter (sidebar / units menu parity). */
 export function salesListPath(unitId?: string, unitName?: string): string {
@@ -53,6 +54,7 @@ export type SaleSheetViewOwnProps = {
     /** Same contract as {@link SheetViewRenderer}: delete modal passes {@link DeletedData} only. */
     onDelete?: (response?: DeletedData) => void;
     onRestore?: () => void;
+    onModifySuccess?: (updated?: Sale) => void;
     fetchId?: string;
 };
 
@@ -65,12 +67,18 @@ function SaleSheetView({
     hideActions = false,
     onDelete,
     onRestore,
+    onModifySuccess,
     resolveLanguageKey,
     fetchId,
 }: SaleSheetViewOwnProps & WithLanguageType) {
     const access = useAccess("sales");
     const viewConfig = useViewConfig("sales", "sheet");
     const [sheetData, setSheetData] = useState<Record<string, any>>(saleProp || {_id: fetchId});
+    const [action, setAction] = useState("");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!saleProp) return;
@@ -89,7 +97,16 @@ function SaleSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const handleWorkflowSuccess = (updated?: Sale) => {
+        if (updated) {
+            setSheetData(updated);
+            onModifySuccess?.(updated);
+        }
+        setAction("");
+    };
+
     return (
+        <>
         <SheetViewRenderer
             config={viewConfig}
             url="/api/realEstate/unit/sale/single"
@@ -107,9 +124,18 @@ function SaleSheetView({
             onRestore={onRestore}
             editPath={editPath}
             deleteRestoreConfirmLabel={saleDeleteRestoreConfirmLabel(asSale, access.read)}
-            actionMenuChildren={<SaleRowMenuExtras sale={asSale} />}
+            actionMenuChildren={<SaleRowMenuExtras sale={asSale} onAction={setAction} />}
             actionMenuAllowCustomChildren={true}
         />
+        {action === "completeHandover" && (
+            <CompleteHandoverDialog
+                open
+                onClose={() => setAction("")}
+                sale={asSale}
+                onSuccess={handleWorkflowSuccess}
+            />
+        )}
+        </>
     );
 }
 

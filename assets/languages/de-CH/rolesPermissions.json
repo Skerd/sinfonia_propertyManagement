@@ -1278,6 +1278,7 @@
       "finalPrice": "Endpreis",
       "handedOverBy": "Handed over von",
       "handoverCertificate": "Übergabe certificate",
+      "handoverCompletedAt": "Übergabe abgeschlossen am",
       "handoverDate": "Übergabe datum",
       "handoverNotes": "Übergabe notizen",
       "listedUnitCurrency": "Listen einheit währung",

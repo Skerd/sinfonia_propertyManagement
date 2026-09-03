@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/completeHandoverDialog.tsx",
+  "confirmTitle": "Übergabe abschliessen",
+  "confirmDescription": "Diese Verkaufsübergabe als abgeschlossen markieren?",
+  "cancel": "Abbrechen",
+  "confirm": "Übergabe abschliessen",
+  "axios": {
+    "start": {
+      "title": "Übergabe wird abgeschlossen…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Übergabe abgeschlossen",
+      "time": 3000
+    },
+    "error": {
+      "title": "Übergabe konnte nicht abgeschlossen werden",
+      "time": 3000
+    }
+  }
+}

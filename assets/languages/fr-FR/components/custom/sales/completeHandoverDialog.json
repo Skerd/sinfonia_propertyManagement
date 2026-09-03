@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/completeHandoverDialog.tsx",
+  "confirmTitle": "Terminer la remise",
+  "confirmDescription": "Marquer cette remise de vente comme terminée ?",
+  "cancel": "Annuler",
+  "confirm": "Terminer la remise",
+  "axios": {
+    "start": {
+      "title": "Remise en cours de finalisation…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Remise terminée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de terminer la remise",
+      "time": 3000
+    }
+  }
+}

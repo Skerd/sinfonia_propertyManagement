@@ -1278,6 +1278,7 @@
       "finalPrice": "Çmimi përfundimtar",
       "handedOverBy": "HandedOverBy",
       "handoverCertificate": "HandoverCertificate",
+      "handoverCompletedAt": "HandoverCompletedAt",
       "handoverDate": "HandoverDate",
       "handoverNotes": "HandoverNotes",
       "listedUnitCurrency": "Monedha e listuar e njësisë",

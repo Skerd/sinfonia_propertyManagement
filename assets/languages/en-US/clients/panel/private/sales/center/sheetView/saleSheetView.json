@@ -53,6 +53,8 @@
   "finalPrice": "Final Price",
   "saleDate": "Sale Date",
   "handover": "Handover",
+  "handoverDate": "Handover date",
+  "handoverCompletedAt": "Handover completed",
   "handedOverBy": "Handed over by",
   "handoverNotes": "Handover notes",
   "titleTransfer": "Title transfer",
