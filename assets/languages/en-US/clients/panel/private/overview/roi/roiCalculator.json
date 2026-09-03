@@ -50,5 +50,34 @@
     "unitsByStatusTitle": "Units by status",
     "totalUnits": "Total",
     "otherUnits": "Other"
+  },
+  "help": {
+    "ariaLabel": "About ROI calculator",
+    "title": "About the ROI calculator",
+    "overview": "ROI calculator estimates return on investment for a unit (narrowed by project / edifice / floor) from costs versus sale or rental revenue. It is a calculator on top of existing records, not a stored “ROI document” and not the construction cost-control / budget module.",
+    "sections": [
+      {
+        "title": "How to run it",
+        "items": [
+          "Select project, optionally edifice and floor, then a unit — calculation runs on pick.",
+          "Summary and per-unit breakdown show sale price vs costs vs implied return.",
+          "Export PDF for a snapshot of the current computation."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Costs come from unit costs (and related spend). Revenue from sale price or rental assumptions in the calculator.",
+          "Changing source records and re-selecting the unit recomputes. Nothing is saved as a budget version here.",
+          "Construction budgets, BOQ, and cost commitments live outside this Real Estate menu unless you open those modules separately."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit, unit costs, sale price fields, optional rental figures."
+        ]
+      }
+    ]
   }
 }

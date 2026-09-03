@@ -20,5 +20,50 @@
     "workflows": "Rrjedhat e punës",
     "reports": "Raportet",
     "notifications": "Njoftimet"
+  },
+  "help": {
+    "ariaLabel": "Rreth Vështrimit të përgjithshëm",
+    "title": "Rreth Vështrimit të përgjithshëm",
+    "overview": "Vështrimi i përgjithshëm është dhoma e kontrollit në nivel shoqërie për pasuritë e paluajtshme. Nuk ruan dokumente të veta. Çdo shifër është një përmbledhje e gjallë e projekteve, ndërtesave, njësive, klientëve të mundshëm, rezervimeve, shitjeve, kontratave të qirasë, pagesave të qirasë, defekteve dhe flukseve të lidhura. Përdoreni për të parë nëse portofoli lëviz, pastaj hapni listën që e zotëron vërtet punën.",
+    "sections": [
+      {
+        "title": "Çfarë është kjo faqe",
+        "items": [
+          "Një kabinë vetëm-për-lexim për një shoqëri (ajo ku jeni të kyçur).",
+          "Skedat janë prerje të ndryshme të të njëjtave të dhëna: KPI kryesore, trende, stoku dhe shëndeti i tubacionit.",
+          "Asgjë këtu nuk krijon projekt, njësi, shitje apo kontratë qiraje. Kartat «Shiko hyrjet» hapin listën operuese përkatëse, me të njëjtën logjikë filtrash.",
+          "Nuk është paneli i një ndërtese (drejtimi ditor i një ndërtese) as paneli i grupit (disa shoqëri)."
+        ],
+        "body": "Vështrimi i përgjithshëm = «a është shoqëria e shëndoshë?» Paneli = «çfarë po ndodh sot në këtë ndërtesë?»"
+      },
+      {
+        "title": "Skedat",
+        "items": [
+          "Vështrim i përgjithshëm — përzierje e njësive të lira / të rezervuara / të shitura / me qira, arkëtimi dhe tregues të tjerë të periudhës së zgjedhur.",
+          "Analitika — si lëvizin ato shifra me kohën (shiriti i periudhës lart).",
+          "Projektet / Ndërtesat / Njësitë — numra dhe vlera stoku, pa hapur çdo listë.",
+          "Rrjedhat e punës — shëndeti i tubacionit: klientë të mundshëm, rezervime, inspektime, defekte dhe punë e ngjashme në vazhdim.",
+          "Raporte / Njoftime (kur shfaqen) — shkurtore drejt raporteve dhe njoftimeve në aplikacion, jo lloje dokumentesh të veçanta."
+        ],
+        "body": "Kontrolli i periudhës (7 / 30 / 90 / 12 muaj) ndryshon vetëm KPI-të e kufizuara në kohë. Numërimi i njësive është «tani», jo «në atë dritare», përveçse skeda ta thotë ndryshe."
+      },
+      {
+        "title": "Si prodhohen shifrat",
+        "items": [
+          "E shitur / e rezervuar / me qira vijnë nga statusi i njësisë, të cilin e lëvizin rezervimet, shitjet dhe kontratat e qirasë — nuk shkruhen në këtë faqe.",
+          "Të ardhurat dhe qiratë e arkëtuara vijnë nga faturat e shitjes / planet e pagesave dhe rreshtat e pagesave të qirasë.",
+          "Puna e ngecur (qira e vonuar, rezervime që skadojnë, defekte të hapura) është numërim i atyre dosjeve operuese.",
+          "Rifreskimi ringarkon përmbledhjen. Nuk ka magazinë të veçantë për t'u «rindërtuar»."
+        ]
+      },
+      {
+        "title": "Përdorimi tipik",
+        "items": [
+          "Fillimi i ditës: e shitur kundrejt e lirë kundrejt me qira, qira e vonuar, rezervime që kërkojnë vëmendje.",
+          "Pastaj hapni panelin e një ndërtese, ose kaloni te Njësitë, Rezervimet, Shitjet ose Qendra e qirave për të vepruar.",
+          "Mos u përpiqni të «rregulloni» një KPI këtu — ndryshoni rezervimin, shitjen, kontratën e qirasë ose pagesën nën të."
+        ]
+      }
+    ]
   }
 }

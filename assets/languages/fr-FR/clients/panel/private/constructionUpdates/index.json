@@ -24,5 +24,40 @@
     "title": "Titre",
     "updateDate": "Date de mise à jour",
     "updatedAt": "Mis à jour le"
+  },
+  "help": {
+    "ariaLabel": "À propos de l'avancement des travaux",
+    "title": "À propos de l'avancement des travaux",
+    "overview": "Un avancement de chantier est un post de progrès avec texte et médias, visant un projet ou un bâtiment précis. Pour la communication de chantier (ce qui a été construit cette semaine). Ce n'est pas un récit ni une réserve.",
+    "sections": [
+      {
+        "title": "Ce qu'il contient",
+        "items": [
+          "Texte et médias.",
+          "Projet, bâtiment optionnel.",
+          "Liens optionnels vers un jalon ou une tâche de planning lorsque ces dossiers chantier existent."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer des mises à jour à mesure que le travail avance ; filtrer par projet ou bâtiment.",
+          "Peuvent apparaître sur le site public ou dans les communications clients lorsque le formulaire le marque ainsi."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Ne déplace ni le statut d'unité ni les dates d'achèvement de lui-même.",
+          "L'achèvement réel du bâtiment et le statut de construction de l'unité restent sur ces dossiers — mettez-les à jour là-bas si le bâtiment est vraiment fini."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Projet, bâtiment optionnel. Complémentaire des Récits (marketing) et des Réserves."
+        ]
+      }
+    ]
   }
 }

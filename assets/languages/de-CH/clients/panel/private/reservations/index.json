@@ -74,5 +74,61 @@
   "yes": "Ja",
   "no": "Nein",
   "expired": "Abgelaufen",
-  "converted": "Umgewandelt"
+  "converted": "Umgewandelt",
+  "help": {
+    "ariaLabel": "Über Reservationen",
+    "title": "Über Reservationen",
+    "overview": "Eine Reservation hält eine Einheit für einen Kunden, bis sie abläuft, storniert oder in einen Verkauf umgewandelt wird. Eine aktive Reservation setzt die Einheit auf reserviert. Das ist die Sperre — ein Lead ist das nicht. Anzahlung, Kunden-E-Mails und Provisionen sind Aktionen an diesem Datensatz.",
+    "sections": [
+      {
+        "title": "Was eine Reservation speichert",
+        "items": [
+          "Einheit, reservierender Agent, Firma, Kunde (alles Pflicht).",
+          "Reservationsdatum (nicht in der Zukunft) und Ablaufdatum (Pflicht).",
+          "Optionale Anzahlung und Währung, Zahlungsweg, Referral, Notizen, Quelle.",
+          "Vertragsdateien und weitere Dokumente.",
+          "Bezahlt-Flag für die Anzahlung.",
+          "Aktiv und Status: aktiv, storniert, abgelaufen.",
+          "Stornogrund und -zeitpunkt.",
+          "E-Mail-Stempel (Bestätigung, 3-/1-/0-Tage-Erinnerung, Ablaufmail)."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Bezahlen — Anzahlung als bezahlt; kann eine Reservationsprovision erfassen und den Kunden mailen.",
+          "Zahlung rückgängig — nur wenn die Einheit nicht verkauft ist und die Provision nicht schon ausbezahlt. Offene Provision wird storniert.",
+          "Stornieren — deaktiviert, optional Grund, offene Provision weg, Einheit wieder verfügbar wenn diese Reservation sie noch hielt.",
+          "Reaktivieren — nur wenn inaktiv und die Einheit frei ist. Einheit wieder reserviert, Provision erneut erfasst.",
+          "Manuelle Kunden-E-Mail — Bestätigung, Erinnerungen, Resttage oder Ablauf. Jede Erinnerung nur im passenden Kalenderfenster. Ablaufmail setzt Status abgelaufen und gibt die Einheit frei."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Reservation auf einer verfügbaren Einheit mit echtem Kundenuser.",
+          "Filtern nach Einheit, Kunde, Agent, Status, Daten.",
+          "Sheet für Anzahlung, Dokumente, Bezahlen/Storno/Reaktivieren, E-Mails.",
+          "In einen Verkauf umwandeln unter Verkäufe — der Verkauf kann Reservation und Anzahlung mitführen."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ein Tagesjob kann abgelaufene Reservationen beenden, mailen und die Einheit freigeben.",
+          "Bereits reservierte, verkaufte oder vermietete Einheiten sind nicht reservierbar.",
+          "Provision: erfassen bei Bezahlen/Reaktivieren; Storno oder Zahlungsrücknahme löscht nur ausstehende, nicht bereits bezahlte Provision.",
+          "Contracts Hub listet dieselbe Reservation, dupliziert sie nicht."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheitenstatus verfügbar → reserviert → verfügbar oder → verkauft (über Verkauf).",
+          "Kunde, Agent, optionales Lead.",
+          "Provision (Quelle Reservation). Als Nächstes: Verkauf."
+        ]
+      }
+    ]
+  }
 }

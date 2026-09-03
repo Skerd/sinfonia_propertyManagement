@@ -2,6 +2,41 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
   "title": "Kategoritë e llojeve të njësive",
   "description": "Menaxhoni kategoritë e llojeve të njësive",
+  "help": {
+    "ariaLabel": "Rreth kategorive të llojeve të njësive",
+    "title": "Rreth kategorive të llojeve të njësive",
+    "overview": "Një kategori lloji njësie është një etiketë grupimi për llojet e njësive (p.sh. banim kundrejt tregtisë). Ka vetëm një emër. Njësitë nuk zgjedhin kategori — zgjedhin një lloj njësie, dhe ai lloj i përket një kategorie.",
+    "sections": [
+      {
+        "title": "Çfarë mban kategoria",
+        "items": [
+          "Emri (i detyrueshëm). Nuk ka fusha të tjera."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni, kërkoni dhe ndryshoni kategoritë.",
+          "Fshirja është e butë, por bllokohet përderisa ndonjë lloj njësie e përdor këtë kategori. Ri-caktoni ose hiqni ato lloje së pari."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Krijoni kategoritë para llojeve të njësive që i duhen. Një lloj njësie nuk ruhet pa kategori.",
+          "Riemërtimi përditëson etiketën kudo që shfaqet lloji. Nuk ndryshon njësitë as çmimet."
+        ]
+      },
+      {
+        "title": "Hapi tjetër tipik",
+        "items": [
+          "Krijoni kategoritë e nevojshme.",
+          "Krijoni llojet e njësive nën ato kategori.",
+          "Kur shtoni njësi, zgjidhni një lloj njësie — kategoria vjen me llojin."
+        ]
+      }
+    ]
+  },
   "createUnitTypeCategory": "Krijo kategori",
   "noData": "Nuk u gjet asnjë kategori",
   "failTitle": "Ngarkimi i kategorive dështoi",

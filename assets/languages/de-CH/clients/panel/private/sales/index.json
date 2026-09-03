@@ -101,5 +101,60 @@
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
-  "no": "Nein"
+  "no": "Nein",
+  "help": {
+    "ariaLabel": "Über Verkäufe",
+    "title": "Über Verkäufe",
+    "overview": "Ein Verkauf ist der Kauf der Einheit — bar oder mit Zahlungsplan. Ein abgeschlossener Verkauf markiert die Einheit verkauft. Freigabe, Raten, Übergabe und Eigentumsübertragung sind Felder und Aktionen an diesem Verkauf, keine Extra-Menüs. Contracts Hub listet dieselben Dokumente.",
+    "sections": [
+      {
+        "title": "Was ein Verkauf speichert",
+        "items": [
+          "Einheit, verkaufender Agent, Verkaufswährung, Verkaufsdatum (Pflicht, nicht in der Zukunft).",
+          "Zahlungsart: bar oder Zahlungsplan (je nach Erfassungsflow).",
+          "Endpreis (aus Listenpreis, Rabatt, Reservationsanzahlung, Kursen — keine frei getippte KPI).",
+          "Käufer und optionale Käuferfirma.",
+          "Listenpreis, lokaler Rabatt, Wechselkurs, Notizen, Kaufvertrag, Referenz.",
+          "Optionale Ursprungsreservation inklusive Anzahlungs-Umrechnung.",
+          "Freigabestatus und Prüfnotizen.",
+          "Zahlungsplan bei Raten (Raten, Zins, Anzahlung, Rest).",
+          "Übergabe: Datum, wer, Notizen, Zertifikat.",
+          "Eigentum: Datum, Urkundennummer, Notar, Zertifikat."
+        ]
+      },
+      {
+        "title": "Erfassungsflows",
+        "items": [
+          "Barverkauf — voller Betrag, kein Ratenplan.",
+          "Zahlungsplanverkauf — Anzahlung, Ratenanzahl, Daten, optional Zins; der Plan ist ein eigener Datensatz am Verkauf.",
+          "Beide Flows können von einer aktiven Reservation starten, damit die Anzahlung in den Preis fliesst."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Freigeben / ablehnen — nur solange ausstehend. Ablehnen setzt die Einheit wieder verfügbar.",
+          "Rate / Anzahlung erfassen — Teilzahlungen erlaubt, Belege je Rate.",
+          "Zahlungsplan umstrukturieren — unbezahlten Plan ersetzen, Historie behalten, nur solange aktiv.",
+          "Manuelle Kunden-E-Mail — Verkaufsbestätigung oder Raten-Erinnerungen für eine gewählte Ratennummer.",
+          "Übergabe- und Eigentumsdaten beim Bearbeiten. Wenn die Firma ein abgeschlossenes Handover-Paket verlangt, kann das Übergabedatum blockiert sein."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Eine verkaufte Einheit ist nicht reservierbar oder vermietbar, bis der Verkauf über unterstützte Wege rückgängig ist — nicht per Status-Tippen.",
+          "Dashboard „kassiert“ liest Belege / Zahlungsplan, keine Übersicht-KPI.",
+          "Agentenprovision entsteht meist hier (Quelle Verkauf) oder aus der vorherigen Reservation.",
+          "Restbetrag des Zahlungsplans sinkt mit bezahlten Raten und Anzahlung."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit (verkauft), Käufer, optionale Reservation, Zahlungsplan, Provisionen, Contracts Hub."
+        ]
+      }
+    ]
+  }
 }

@@ -50,5 +50,53 @@
         "critical": "Kritike"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Rreth Listës së defekteve",
+    "title": "Rreth Defekteve",
+    "overview": "Një defekt është një e metë / zë punch-list mbi një njësi. Mbyllja e defekteve është punë cilësie, jo veprim shitjeje. Statusi: i hapur → në punë → i zgjidhur, ose i refuzuar. Caktoni dikë para se të filloni punën.",
+    "sections": [
+      {
+        "title": "Çfarë mban një defekt",
+        "items": [
+          "Njësia (e detyrueshme), titulli (i detyrueshëm), përshkrim opsional, vendndodhja në njësi, zeja.",
+          "Rëndësia: e ulët, e mesme, e lartë, kritike.",
+          "Raportuar nga, caktuar te, data e afatit, zgjidhur më.",
+          "Foto, shënime, shkaku rrënjë, ndikimi në kosto.",
+          "Flamujt: zë garancie, DLP (periudha e përgjegjësisë për defektet).",
+          "Paketë pune ose urdhër ndryshimi opsional kur ndërtimi ndjek ndreqjen."
+        ]
+      },
+      {
+        "title": "Veprimet",
+        "items": [
+          "Cakto — vetëm sa është i hapur ose në punë.",
+          "Fillo punën — vetëm nga i hapur, dhe vetëm nëse dikush është caktuar; vë në punë.",
+          "Përfundo punën — vetëm nga në punë; mund të bashkëngjitë foto/shënime dhe kalon te i zgjidhur.",
+          "I refuzuar është status për zërat që nuk do të ndreqen siç u kërkua — nuk është i njëjtë me i zgjidhur."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni defekte nga një njësi ose nga kjo listë e shoqërisë.",
+          "Filtroni sipas njësisë, rëndësisë, statusit, të caktuarit.",
+          "Defektet e hapura shfaqen te KPI-të e panelit të grupit."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Një defekt nuk ngrin një shitje. Proceset e dorëzimit mund të kërkojnë megjithatë defekte të mbyllura si rregull biznesi.",
+          "Nuk është kërkesë për modifikim (ndryshim i kërkuar nga klienti) as inspektim (vizitë me listë kontrolli)."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Njësia. Paketë pune / urdhër ndryshimi opsional. Inspektimet shpesh i paraprijnë ose i ndjekin defektet."
+        ]
+      }
+    ]
   }
 }

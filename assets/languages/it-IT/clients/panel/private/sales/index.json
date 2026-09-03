@@ -101,5 +101,61 @@
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "Informazioni sulle vendite",
+    "title": "Informazioni sulle vendite",
+    "overview": "Una vendita è l'acquisto dell'unità — in contanti o con piano di pagamento. Completare una vendita marca l'unità venduta. Approvazione, rate, consegna e trasferimento di proprietà sono campi e azioni di questa vendita, non menu separati. Contratti e clienti elenca soltanto gli stessi documenti.",
+    "sections": [
+      {
+        "title": "Cosa contiene una vendita",
+        "items": [
+          "Unità, agente venditore, valuta di vendita, data di vendita (obbligatoria; non nel futuro).",
+          "Tipo di pagamento: contanti o piano di pagamento (secondo il flusso di creazione usato).",
+          "Prezzo finale (calcolato da prezzo di listino, sconti, conversione caparra di prenotazione, tassi di cambio — non trattatelo come un KPI digitato a caso).",
+          "Acquirente (persona) e società acquirente opzionale.",
+          "Prezzo di listino dell'unità / valuta, sconto locale, tasso di cambio vendita, note.",
+          "File del contratto di acquisto e documenti aggiuntivi, riferimento transazione.",
+          "Prenotazione di origine opzionale, più importo/valuta/tasso/importo convertito della caparra quando si converte una trattenuta in vendita.",
+          "Stato di approvazione (in attesa / approvata / rifiutata) e note di revisione.",
+          "Collegamento al piano di pagamento quando il tipo è piano di pagamento (rate, interessi, acconto, saldo residuo).",
+          "Consegna: data, chi ha consegnato, note, file certificato.",
+          "Trasferimento di proprietà: data, numero atto, nome notaio, file certificato."
+        ]
+      },
+      {
+        "title": "Flussi di creazione",
+        "items": [
+          "Vendita in contanti — importo intero, nessun piano rateale.",
+          "Vendita con piano di pagamento — acconto, numero di rate, date, interessi opzionali; il piano è un record proprio collegato alla vendita.",
+          "Entrambi i flussi possono partire da una prenotazione attiva così la caparra entra nel prezzo."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Approva / rifiuta — solo finché l'approvazione è in attesa. Rifiutare rende l'unità disponibile e cancella il puntatore di vendita sull'unità. Approvare mantiene l'unità venduta.",
+          "Paga rata / paga acconto — sul piano di pagamento (pagamenti parziali consentiti; ricevute per rata).",
+          "Ristruttura il piano di pagamento — sostituire il piano non pagato, conservare lo storico delle rate precedenti, solo finché il piano è attivo.",
+          "E-mail cliente manuale — conferma vendita, o reminder di rata (3 giorni / 1 giorno / oggi / giorni rimanenti / scaduta) per un numero di rata scelto.",
+          "Date di consegna e trasferimento di proprietà salvate in modifica. Se la società richiede un pacchetto di consegna completato, la data di consegna può essere bloccata finché quel pacchetto non esiste."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Un'unità venduta non è prenotabile né locabile finché la vendita non è annullata tramite i percorsi di rifiuto / disponibilità supportati — non modificando lo stato dell'unità.",
+          "L'«incassato» della Dashboard legge ricevute / attività del piano di pagamento, non un campo digitato in Panoramica.",
+          "La commissione agente nasce di solito qui (fonte vendita) o dalla prenotazione che l'ha preceduta.",
+          "Il saldo residuo del piano di pagamento scende man mano che rate e acconto sono marcati pagati."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità (venduta), acquirente, prenotazione opzionale, piano di pagamento, commissioni, Contratti e clienti (viste acquisto / promessa di vendita della stessa vendita)."
+        ]
+      }
+    ]
+  }
 }

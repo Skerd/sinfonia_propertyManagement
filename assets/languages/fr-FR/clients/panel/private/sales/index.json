@@ -101,5 +101,61 @@
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
-  "no": "Non"
+  "no": "Non",
+  "help": {
+    "ariaLabel": "À propos des ventes",
+    "title": "À propos des ventes",
+    "overview": "Une vente est l'achat de l'unité — au comptant ou avec plan de paiement. Finaliser une vente marque l'unité vendue. Approbation, échéances, réception et transfert de propriété sont des champs et actions de cette vente, pas des menus séparés. Contrats & clients ne fait que lister les mêmes documents.",
+    "sections": [
+      {
+        "title": "Ce qu'une vente contient",
+        "items": [
+          "Unité, agent vendeur, devise de vente, date de vente (obligatoire ; pas dans le futur).",
+          "Type de paiement : comptant ou plan de paiement (selon le flux de création utilisé).",
+          "Prix final (calculé à partir du prix affiché, remises, conversion d'acompte de réservation, taux de change — ne le traitez pas comme un KPI saisi au hasard).",
+          "Acheteur (personne) et société acheteuse optionnelle.",
+          "Prix affiché de l'unité / devise, remise locale, taux de change de vente, notes.",
+          "Fichier de contrat d'achat et documents supplémentaires, référence de transaction.",
+          "Réservation d'origine optionnelle, plus montant/devise/taux/montant converti de l'acompte lors de la conversion d'une retenue en vente.",
+          "Statut d'approbation (en attente / approuvée / refusée) et notes d'examen.",
+          "Lien vers le plan de paiement lorsque le type est plan de paiement (échéances, intérêts, acompte, solde restant).",
+          "Réception : date, qui a remis, notes, fichier de certificat.",
+          "Transfert de propriété : date, numéro d'acte, nom du notaire, fichier de certificat."
+        ]
+      },
+      {
+        "title": "Flux de création",
+        "items": [
+          "Vente au comptant — montant intégral, pas d'échéancier.",
+          "Vente avec plan de paiement — acompte, nombre d'échéances, dates, intérêts optionnels ; le plan est un dossier propre lié à la vente.",
+          "Les deux flux peuvent partir d'une réservation active pour que l'acompte entre dans le prix."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Approuver / refuser — seulement tant que l'approbation est en attente. Refuser rend l'unité disponible et efface le pointeur de vente sur l'unité. Approuver maintient l'unité vendue.",
+          "Payer une échéance / payer l'acompte — sur le plan de paiement (paiements partiels autorisés ; quittances par échéance).",
+          "Restructurer le plan de paiement — remplacer l'échéancier impayé, conserver l'historique des échéances précédentes, seulement tant que le plan est actif.",
+          "E-mail client manuel — confirmation de vente, ou rappels d'échéance (J-3 / J-1 / aujourd'hui / jours restants / en retard) pour un numéro d'échéance choisi.",
+          "Dates de réception et de transfert de propriété enregistrées à l'édition. Si la société exige un dossier de réception complet, la date de réception peut être bloquée tant que ce dossier n'existe pas."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Une unité vendue n'est ni réservable ni louable tant que la vente n'est pas défaite par les chemins d'annulation / disponibilité pris en charge — pas en éditant le statut d'unité.",
+          "Le « encaissé » du tableau de bord lit les quittances / l'activité du plan de paiement, pas un champ saisi dans la vue d'ensemble.",
+          "La commission agent naît le plus souvent ici (source vente) ou de la réservation qui l'a précédée.",
+          "Le solde restant du plan de paiement diminue à mesure que les échéances et l'acompte sont marqués payés."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité (vendue), acheteur, réservation optionnelle, plan de paiement, commissions, Contrats & clients (vues achat / promesse de vente de la même vente)."
+        ]
+      }
+    ]
+  }
 }

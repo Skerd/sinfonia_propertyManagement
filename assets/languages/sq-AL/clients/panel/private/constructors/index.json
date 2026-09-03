@@ -2,6 +2,47 @@
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
   "title": "Konstruktorët",
   "description": "Menaxhoni të gjithë konstruktorët",
+  "help": {
+    "ariaLabel": "Rreth konstruktorëve",
+    "title": "Rreth konstruktorëve",
+    "overview": "Një konstruktor është një kompani ose profesionist që e lidhni me ndërtesat dhe, në mënyrë opsionale, me kostot e njësisë. Ky drejtori janë kontraktorë, arkitektë, inxhinierë dhe palë të ngjashme — jo llogari përdoruesi dhe jo ndërtesë.",
+    "sections": [
+      {
+        "title": "Çfarë mban konstruktori",
+        "items": [
+          "Emri dhe TVSH (të detyrueshme).",
+          "Email, telefon, përshkrim, faqe interneti dhe logo opsionale.",
+          "Adresa opsionale (rruga, kodi postar, qyteti dhe shteti janë të detyrueshëm për çdo adresë; kantoni/shteti i brendshëm opsional; koordinatat e detyrueshme kur shtoni një adresë).",
+          "Lloji i palës: kontraktor, arkitekt, inxhinier, quantity surveyor (QS), menaxher projekti (PM), gjeometër ose tjetër.",
+          "Zanat (tekst i shkurtër), skadimi i sigurimit, nota e performancës nga 0 në 100."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një konstruktor — emri dhe TVSH janë të detyrueshme.",
+          "Kërkoni dhe filtroni; hapni një rresht për identitetin, adresat dhe notat.",
+          "Fshirja është e butë dhe mund të rikthehet. Fshirja e shkëput këtë konstruktor nga ndërtesat që e listonin. Ndërtesat nuk fshihen."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Krijimi nuk e cakton askund. E zgjidhni më vonë te ndërtesa (listë opsionale) ose te një kosto njësie.",
+          "Disa konstruktorë mund të jenë te një ndërtesë. Një konstruktor te shumë ndërtesa.",
+          "Kostot e njësisë mund t’i referohen opsionalisht një konstruktori si furnizues."
+        ]
+      },
+      {
+        "title": "Hapi tjetër tipik",
+        "items": [
+          "Krijoni firmat dhe profesionistët me të cilët punoni.",
+          "Te çdo ndërtesë, lidhni konstruktorët përkatës.",
+          "Kur regjistroni kostot e njësisë, zgjidhni konstruktorin nëse fatura duhet lidhur me këtë drejtori."
+        ]
+      }
+    ]
+  },
   "createConstructor": "Krijo Konstruktor",
   "noData": "Nuk u gjet asnjë konstruktor",
   "failTitle": "Ngarkimi i konstruktorëve dështoi",

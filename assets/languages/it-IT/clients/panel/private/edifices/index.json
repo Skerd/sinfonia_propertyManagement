@@ -75,5 +75,52 @@
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
   "no": "No",
-  "energyClass": "Classe energetica"
+  "energyClass": "Classe energetica",
+  "help": {
+    "ariaLabel": "Informazioni sugli edifici",
+    "title": "Informazioni sugli edifici",
+    "overview": "Un edificio è il palazzo fisico in un progetto — con indirizzo, investimento, costruttori e media marketing. Piani e unità vivono sotto di esso. Senza almeno un edificio non c'è giacenza vendibile. I KPI della Dashboard sono per edificio.",
+    "sections": [
+      {
+        "title": "Cosa contiene un edificio",
+        "items": [
+          "Nome e progetto padre (entrambi obbligatori). Il progetto non può essere «giacenza vuota» senza palazzi.",
+          "Immagine principale (obbligatoria) più gallerie, video, file extra e brochure marketing opzionali.",
+          "Indirizzo: via, CAP, paese, città, stato/cantone opzionale, coordinate mappa (latitudine / longitudine). È la posizione usata dal sito pubblico e dalle e-mail.",
+          "Valore di investimento e valuta di investimento — quanto è stato messo nel palazzo; Panoramica / Dashboard / ROI lo leggono, non riprezzano le unità da lì.",
+          "Valuta di vendita, prezzo al m² e prezzo veranda al m² opzionali — guide di pricing, non un aggiornamento automatico di ogni prezzo unità.",
+          "Dati dell'edificio: superficie totale, area verde, piani fuori terra / interrati, parcheggi, garage, distanza dal centro.",
+          "Classe energetica, numero permesso di costruire, date inizio lavori / completamento previsto / effettivo.",
+          "Costruttori collegati, servizi commerciali, servizi di quartiere, tipi di immobile.",
+          "Rollup che non digitate: piani totali, unità totali, unità disponibili, superficie totale unità — calcolati dai figli."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Arrivando da un progetto, l'elenco è già filtrato. Dalla barra laterale vedete tutti gli edifici della società.",
+          "Creare un edificio — deve appartenere a un progetto; immagine principale e indirizzo obbligatori.",
+          "Aprire una scheda per modificare il palazzo. Le azioni di riga portano ai piani di quell'edificio.",
+          "L'eliminazione logica è ripristinabile. Piani e unità sono record separati; non si creano automaticamente."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Dashboard: scegliete un edificio e tutti i KPI e l'elenco unità lo seguono.",
+          "Pagine pubbliche dell'edificio e aggiornamenti cantiere possono puntare a un edificio.",
+          "Prezzo al m² e investimento alimentano le viste di portafoglio. Cambiarli non riscrive il prezzo delle unità.",
+          "Un edificio senza piani (o piani senza unità) mostrerà giacenza vuota in Dashboard."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Padre: Progetto. Figli: Piano → Unità.",
+          "Anche referenziato da aggiornamenti cantiere, storie, costi unità, snag, contratti di locazione, prenotazioni e vendite.",
+          "Passo successivo tipico: aggiungere piani (numero livello, superficie, immagine principale), poi unità."
+        ]
+      }
+    ]
+  }
 }

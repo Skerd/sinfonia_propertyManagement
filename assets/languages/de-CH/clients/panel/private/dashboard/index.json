@@ -24,5 +24,50 @@
   "rentOutstanding": "Offene Miete",
   "rentOverdue": "Überfällige Miete",
   "activeLeases": "Aktive Mietverträge",
-  "viewRentalsHub": "Miet-Hub öffnen"
+  "viewRentalsHub": "Miet-Hub öffnen",
+  "help": {
+    "ariaLabel": "Über Dashboard",
+    "title": "Über das Real-Estate-Dashboard",
+    "overview": "Das Dashboard ist das operative Cockpit der Gebäude einer Firma. Sie wählen ein Gebäude; der Rest (KPIs, Statusmix, Umsatzcharts, Einheitenliste, Zahlungshinweise) folgt diesem Gebäude. Hier steuern Sie den Bestand im Alltag. Es legt keine Gebäude, Einheiten oder Deals an — es liest sie.",
+    "sections": [
+      {
+        "title": "Aufbau",
+        "items": [
+          "Gebäudegalerie oben — die Auswahl fokussiert alle KPIs und die Einheitenliste.",
+          "KPI-Zeile: Einheiten total, verkauft, kassiert, Durchschnittspreis/m², plus kassierte / offene / überfällige Miete und aktive Mietverträge, wenn Mietdaten existieren.",
+          "Periode (7 Tage, 30 Tage, 3 Monate, 12 Monate) ändert Einnahmenfenster, nicht den Bestand selbst.",
+          "Charts: Statusmix und Umsatz in der Periode.",
+          "Tabelle/Karten unten sind dieselbe Einheiten-Ressource, auf das Gebäude eingeschränkt.",
+          "Zahlungshinweise führen zu Zahlungsplänen / Reservationen mit Handlungsbedarf."
+        ]
+      },
+      {
+        "title": "Wie die Zahlen entstehen",
+        "items": [
+          "Total / verkauft / reserviert / vermietet sind Zählungen der Einheiten dieses Gebäudes nach Status.",
+          "Kassiert kommt aus Belegen und Zahlungsplan-Aktivität in der Periode.",
+          "Durchschnitt €/m² nutzt Preise und Flächen; es preist nichts um.",
+          "Miet-KPIs summieren Mietzahlungszeilen der Mietverträge dieses Gebäudes.",
+          "Aktive Mietverträge zählen noch laufende Verträge auf diesen Einheiten."
+        ]
+      },
+      {
+        "title": "Was diese Seite nicht tut",
+        "items": [
+          "Sie ändert keinen Einheitenstatus. Reservieren, verkaufen oder vermieten Sie in den Listen.",
+          "Ein anderes Gebäude ändert nicht das Projekt — jedes Gebäude gehört bereits zu einem Projekt.",
+          "Nicht Übersicht (ganze Firma) und nicht Gruppendashboard (mehrere Firmen)."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Gebäude → Stockwerk → Einheit.",
+          "Reservation / Verkauf (verkauft und kassiert).",
+          "Mietvertrag / Mietzahlung (Miet-KPIs).",
+          "„Zahlungspläne anzeigen“ / „Rentals Hub“, wenn Hinweise erscheinen."
+        ]
+      }
+    ]
+  }
 }

@@ -2,6 +2,43 @@
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
   "title": "Story types",
   "description": "Manage story types used in project journals",
+  "help": {
+    "ariaLabel": "About Story types",
+    "title": "About Story types",
+    "overview": "A Story type classifies journal stories (news, milestone, press, and similar). Every story requires one type. This is not a construction-update category and not a snag type.",
+    "sections": [
+      {
+        "title": "What a story type holds",
+        "items": [
+          "Name (required).",
+          "Optional description.",
+          "Optional sort order — select lists and this page order types by sort order, then name. Leave empty to treat as 0.",
+          "Slug is generated from the company name plus the type name. You do not type it."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create, search, and edit story types.",
+          "Delete is a soft delete, but it is blocked while any story still uses this type."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Stories (marketing journal) pick a type from this list. Construction updates have their own page and do not use story types.",
+          "Changing sort order only changes how types appear in pickers. Existing stories keep their type."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create the types your journal needs.",
+          "On Stories, pick a type when you write an article, then publish when copy is ready."
+        ]
+      }
+    ]
+  },
   "createStoryType": "Create story type",
   "noData": "No story types found",
   "failTitle": "Failed to load story types",

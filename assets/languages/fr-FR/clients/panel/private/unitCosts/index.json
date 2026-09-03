@@ -151,5 +151,41 @@
         "disputed": "Contesté"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "À propos des coûts d'unité",
+    "title": "À propos des coûts d'unité",
+    "overview": "Les coûts d'unité sont des achats et factures côté propriétaire imputés à une unité (donc à son projet/bâtiment). La page a une table de dépenses et un calendrier de paiement. Ce n'est pas le loyer locataire (Loyers) ni les factures d'entreprises du module chantier.",
+    "sections": [
+      {
+        "title": "Onglets",
+        "items": [
+          "Dépenses — lignes : fournisseur, montant, statut, période, unité.",
+          "Calendrier de paiement — payé / en attente / en retard par jour pour le mois visible."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Ajouter une dépense sur une unité. Filtrer par unité, projet, fournisseur, statut.",
+          "Ouverte depuis une unité, la liste est déjà limitée.",
+          "Utilisez le calendrier pour voir quand les factures côté propriétaire arrivent à échéance."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Le calculateur ROI lit ces coûts contre le produit de vente ou de location de l'unité choisie.",
+          "L'export ERP peut inclure le jeu coûts d'unité pour la comptabilité.",
+          "Encaisser le loyer d'un locataire se fait dans Loyers / Baux, pas cette liste."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité → Étage → Bâtiment → Projet. Calculateur ROI. Export ERP."
+        ]
+      }
+    ]
   }
 }

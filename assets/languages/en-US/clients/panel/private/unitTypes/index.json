@@ -2,6 +2,45 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx",
   "title": "Unit Types",
   "description": "Manage all unit types",
+  "help": {
+    "ariaLabel": "About Unit Types",
+    "title": "About Unit Types",
+    "overview": "A Unit type is the catalogue type every unit must pick (apartment, office, parking, and so on). Categories organise types. Creating a type does not create units — units pick a type when you add inventory.",
+    "sections": [
+      {
+        "title": "What a unit type holds",
+        "items": [
+          "Name and category (required). Create the category first.",
+          "Optional group (a free-text bucket inside the category), description, and icon token.",
+          "Private flag — a catalogue marker on the type card. It is not occupancy and does not change unit status.",
+          "Slug is generated from the company name plus the type name. You do not type it."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create, search, and edit types.",
+          "Delete is a soft delete, but it is blocked while any unit uses this type or any edifice lists it as a property type."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Every unit has exactly one unit type. Price, areas, and availability live on the unit, not here.",
+          "Edifices can also list property types they offer. That list is independent of which units already exist.",
+          "Renaming a type updates labels. It does not rewrite listed prices on existing units."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create unit type categories if they are missing.",
+          "Create the types you sell or rent.",
+          "When adding units, pick the matching type."
+        ]
+      }
+    ]
+  },
   "createUnitType": "Create Unit Type",
   "noData": "No unit types found",
   "failTitle": "Failed to load unit types",

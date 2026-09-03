@@ -20,5 +20,50 @@
     "workflows": "Flussi di lavoro",
     "reports": "Report",
     "notifications": "Notifiche"
+  },
+  "help": {
+    "ariaLabel": "Informazioni su Panoramica",
+    "title": "Informazioni su Panoramica",
+    "overview": "La Panoramica è la sala di controllo a livello aziendale per l'immobiliare. Non memorizza documenti propri. Ogni cifra è un aggregato in tempo reale di progetti, edifici, unità, lead, prenotazioni, vendite, contratti di locazione, canoni, snag e workflow correlati. Usatela per capire se il portafoglio si muove, poi aprite l'elenco che possiede davvero il lavoro.",
+    "sections": [
+      {
+        "title": "Che cos'è questa pagina",
+        "items": [
+          "Un cockpit in sola lettura per una società (quella in cui siete connessi).",
+          "Le schede sono tagli diversi degli stessi dati: KPI di sintesi, andamenti, giacenza e salute della pipeline.",
+          "Nulla di ciò che fate qui crea un progetto, un'unità, una vendita o un contratto di locazione. Le schede «Visualizza voci» aprono l'elenco operativo corrispondente, con la stessa logica di filtri.",
+          "Non è la Dashboard di un edificio (pilotaggio quotidiano di un palazzo) né la Dashboard di gruppo (più società)."
+        ],
+        "body": "Panoramica = «l'azienda è in salute?» Dashboard = «cosa succede oggi in questo edificio?»"
+      },
+      {
+        "title": "Schede",
+        "items": [
+          "Panoramica — mix di unità disponibili / prenotate / vendute / affittate, incassi e altri indicatori del periodo selezionato.",
+          "Analisi — come quelle cifre si muovono nel tempo (barra periodo in alto).",
+          "Progetti / Edifici / Unità — conteggi e valori di giacenza, senza aprire ogni elenco.",
+          "Flussi di lavoro — salute della pipeline: lead, prenotazioni, ispezioni, snag e lavoro in corso analogo.",
+          "Report / Notifiche (quando visibili) — scorciatoie verso reporting e avvisi in-app, non tipi documentali distinti."
+        ],
+        "body": "Il controllo periodo (7 / 30 / 90 / 12 mesi) modifica solo i KPI delimitati nel tempo. I conteggi di unità sono «adesso», non «in quella finestra», salvo indicazione diversa della scheda."
+      },
+      {
+        "title": "Come si producono i numeri",
+        "items": [
+          "Venduto / prenotato / affittato derivano dallo stato dell'unità, mosso da prenotazioni, vendite e contratti di locazione — non si digita in questa pagina.",
+          "Ricavi e canoni incassati derivano da ricevute di vendita / piani di pagamento e dalle righe di canone.",
+          "Il lavoro bloccato (canoni scaduti, prenotazioni in scadenza, snag aperti) è un conteggio di quei record operativi.",
+          "Aggiornare ricarica l'aggregazione. Non c'è un data warehouse separato da «ricostruire»."
+        ]
+      },
+      {
+        "title": "Uso tipico",
+        "items": [
+          "Inizio giornata: venduto vs disponibile vs affittato, canoni scaduti, prenotazioni da seguire.",
+          "Poi aprite la Dashboard di un edificio, oppure saltate a Unità, Prenotazioni, Vendite o Hub locazioni per agire.",
+          "Non cercate di «sistemare» un KPI qui: cambiate la prenotazione, la vendita, il contratto o il pagamento sottostante."
+        ]
+      }
+    ]
   }
 }

@@ -65,5 +65,43 @@
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "Informazioni sulle commissioni",
+    "title": "Informazioni sulle commissioni",
+    "overview": "Una commissione è la riga di erogazione all'agente nata da una prenotazione o una vendita. È il libro mastro, non il report agenti (vista di performance di periodo). Lo stato avanza in sospeso → in attesa di approvazione → pagata, oppure annullata quando il deal fonte è annullato o un pagamento è stornato.",
+    "sections": [
+      {
+        "title": "Cosa contiene una commissione",
+        "items": [
+          "Tipo fonte: prenotazione o vendita, più il record fonte.",
+          "Agente, importi, valuta, tassi usati al momento della registrazione.",
+          "Stato: in sospeso, in attesa di approvazione, pagata, annullata.",
+          "Prove / note a seconda di come i ruoli espongono i campi."
+        ]
+      },
+      {
+        "title": "Come si crea",
+        "items": [
+          "Pagare o reintegrare una prenotazione registra una commissione di prenotazione.",
+          "Una vendita registra una commissione di vendita secondo i tassi vendita/prenotazione (progetto o override unità).",
+          "Non inventate una commissione senza deal fonte — non resterebbe coerente con Dashboard o report agenti."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Annullare una prenotazione o stornare una caparra non pagata annulla la commissione in sospeso — non una già marcata pagata.",
+          "Stornare un pagamento di prenotazione è bloccato se questa commissione è già pagata.",
+          "Pagare una commissione qui è il passo di erogazione. Il report agenti legge soltanto i deal in un intervallo di date; non marca pagato."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Prenotazione o Vendita, utente agente, Unità. Report agenti. L'export ERP può includere un dataset commissioni."
+        ]
+      }
+    ]
+  }
 }

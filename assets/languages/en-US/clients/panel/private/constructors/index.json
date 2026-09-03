@@ -2,6 +2,47 @@
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
   "title": "Constructors",
   "description": "Manage all constructors",
+  "help": {
+    "ariaLabel": "About Constructors",
+    "title": "About Constructors",
+    "overview": "A Constructor is a company or professional you attach to edifices and, optionally, to unit costs. This directory is contractors, architects, engineers, and similar parties — not a user account and not a building.",
+    "sections": [
+      {
+        "title": "What a constructor holds",
+        "items": [
+          "Name and VAT (required).",
+          "Optional email, phone, description, website, and logo.",
+          "Optional addresses (street, postal code, city, and country are required on each address; state is optional; map coordinates are required when you add an address).",
+          "Party type: contractor, architect, engineer, quantity surveyor (QS), project manager (PM), surveyor, or other.",
+          "Trades (short free text), insurance expiry date, performance score from 0 to 100."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a constructor — name and VAT are required.",
+          "Search and filter the list; open a row to edit identity, addresses, and scores.",
+          "Delete is a soft delete and can be restored. Deleting unlinks this constructor from edifices that listed it. Those buildings are not deleted."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Creating a constructor does not assign it anywhere. You pick it later on an edifice (optional constructors list) or on a unit cost.",
+          "Several constructors can sit on one edifice. One constructor can sit on many edifices.",
+          "Unit costs can point at one constructor as the vendor for that purchase. That link is optional."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create the firms and professionals you work with.",
+          "On each edifice, attach the relevant constructors.",
+          "When booking unit costs, pick the constructor if you want the invoice tied to this directory."
+        ]
+      }
+    ]
+  },
   "createConstructor": "Create Constructor",
   "noData": "No constructors found",
   "failTitle": "Failed to load constructors",

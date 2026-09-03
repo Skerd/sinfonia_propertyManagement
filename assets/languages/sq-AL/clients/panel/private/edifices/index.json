@@ -75,5 +75,52 @@
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",
   "no": "Nr",
-  "energyClass": "Klasa Energetike"
+  "energyClass": "Klasa Energetike",
+  "help": {
+    "ariaLabel": "Rreth Ndërtesave",
+    "title": "Rreth Ndërtesave",
+    "overview": "Një ndërtesë është ndërtimi fizik brenda një projekti — me adresë, investim, ndërtues dhe media marketingu. Katet dhe njësitë jetojnë poshtë saj. Pa të paktën një ndërtesë nuk ka stok të shitshëm. KPI-të e panelit janë të kufizuara te ndërtesa.",
+    "sections": [
+      {
+        "title": "Çfarë mban një ndërtesë",
+        "items": [
+          "Emri dhe projekti prind (të dy të detyrueshëm). Projekti nuk mund të jetë «stok bosh» pa ndërtesa.",
+          "Imazhi kryesor (i detyrueshëm) plus galeri, video, skedarë shtesë dhe broshurë marketingu opsionale.",
+          "Adresa: rruga, kodi postar, shteti, qyteti, kantoni/shteti opsional, koordinatat e hartës (gjerësi / gjatësi). Ky është vendndodhja që përdorin siti publik dhe e-mailet.",
+          "Vlera e investimit dhe valuta e investimit — çfarë u vu në ndërtesë; vështrimi i përgjithshëm / paneli / ROI e lexojnë, nuk i riçmojnë njësitë prej saj.",
+          "Valuta e shitjes, çmimi për m² dhe çmimi i verandës për m² opsionale — udhëzime çmimi, jo përditësim automatik i çdo çmimi njësie.",
+          "Faktet e ndërtesës: sipërfaqja totale, zona e gjelbër, kate mbi/nën tokë, parkingje, garazhe, distanca nga qendra.",
+          "Klasa energjetike, numri i lejes së ndërtimit, datat e fillimit / përfundimit të pritur / të vërtetë.",
+          "Ndërtuesit e lidhur, objektet tregtare, objektet e lagjes, llojet e pronës.",
+          "Përmbledhje që nuk i shkruani: kate gjithsej, njësi gjithsej, njësi të lira, sipërfaqe totale e njësive — llogariten nga fëmijët."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Kur vini nga një projekt, lista është tashmë e filtruar. Nga shiriti anësor shihni çdo ndërtesë të shoqërisë.",
+          "Krijoni një ndërtesë — duhet t'i përkasë një projekti; imazhi kryesor dhe adresa janë të detyrueshme.",
+          "Hapni një kartë për të ndryshuar ndërtesën. Veprimet e rreshtit çojnë te katet e asaj ndërtese.",
+          "Fshirja e butë mund të rikthehet. Katet dhe njësitë janë dosje të veçanta; nuk krijohen automatikisht."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Paneli: zgjidhni një ndërtesë dhe të gjitha KPI-të dhe lista e njësive e ndjekin.",
+          "Faqet publike të ndërtesës dhe përditësimet e ndërtimit mund të synojnë një ndërtesë.",
+          "Çmimi për m² dhe investimi ushqejnë pamjet e portofolit. Ndryshimi i tyre nuk rishkruan çmimin e njësive.",
+          "Një ndërtesë pa kate (ose kate pa njësi) do të tregojë stok bosh në panel."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Prindi: Projekti. Fëmijët: Kat → Njësi.",
+          "Gjithashtu e referuar nga përditësimet e ndërtimit, tregimet, kostot e njësisë, defektet, kontratat e qirasë, rezervimet dhe shitjet.",
+          "Hapi tjetër tipik: shtoni kate (numri i nivelit, sipërfaqja, imazhi kryesor), pastaj njësi."
+        ]
+      }
+    ]
+  }
 }

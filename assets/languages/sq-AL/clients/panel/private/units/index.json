@@ -114,5 +114,59 @@
   "unitType": "Lloji i njësisë",
   "units": "Njësitë",
   "yes": "po",
-  "rented": "Me Qira"
+  "rented": "Me Qira",
+  "help": {
+    "ariaLabel": "Rreth Njësive",
+    "title": "Rreth Njësive",
+    "overview": "Një njësi është hapësira e shitshme ose e dhënë me qira — dosja që ndryshon vërtet statusin tregtar. Pothuajse çdo rrjedhë shitjeje, qiraje, inspektimi dhe kostoje tregon te një njësi. Statusi nuk është fushë e lirë për ta detyruar me dorë: rezervimet, shitjet dhe kontratat e qirasë e lëvizin.",
+    "sections": [
+      {
+        "title": "Çfarë mban një njësi",
+        "items": [
+          "Kati (i detyrueshëm) — kjo nënkupton ndërtesën dhe projektin. Lloji i njësisë (i detyrueshëm) nga Konfigurimet → Llojet e njësive.",
+          "Numri dhe emri i njësisë (të detyrueshëm) — si e identifikojnë agjentët dhe klientët.",
+          "Sipërfaqja, sipërfaqja e përbashkët, sipërfaqja neto (të detyrueshme); sipërfaqe verande opsionale.",
+          "Çmimi dhe valuta (të detyrueshme). Numri i dhomave dhe i banjove (të detyrueshëm).",
+          "Përshkrimi, imazhi kryesor, galeritë, videot, skedarët shtesë, broshura marketingu.",
+          "Flamuj të jashtëm dhe pajisje: ballkon, tarracë, pamje deti / qyteti / liqeni, ashensor.",
+          "Orientimi (V, J, L, P dhe diagonalet) dhe statusi i ndërtimit (planifikuar, në ndërtim, gati, e dorëzuar).",
+          "Komisione shitjeje dhe rezervimi % opsionale — zëvendësojnë paracaktimet e projektit për këtë njësi.",
+          "Njësi të lidhura — kur dy njësi shiten ose shfaqen së bashku.",
+          "Në krye në faqen kryesore + renditja — theksim në sitin publik.",
+          "Poligon opsional në planin e katit."
+        ]
+      },
+      {
+        "title": "Statusi tregtar",
+        "items": [
+          "E lirë — mund të rezervohet, të shitet ose të jepet me qira.",
+          "E rezervuar — një rezervim aktiv e mban. Skadimi ose anulimi e kthen të lirë. Rikthimi i një rezervimi të anuluar vetëm nëse njësia është e lirë (ose e shitur pa rezervim tjetër) sipas rregullave të rikthimit.",
+          "E shitur — një shitje e ka shënuar të shitur. Dorëzimi dhe transferimi i pronësisë vazhdojnë te shitja. Nuk mund të jepni me qira një njësi të shitur.",
+          "Me qira — një kontratë aktive e mban. Ndërprerja (ose skadimi ditor pas datës së mbarimit) e liron drejt të lirës.",
+          "E padisponueshme — e hequr nga tregu pa marrëveshje."
+        ],
+        "body": "Mos e «shkruani me dorë» njësinë si të shitur ose me qira. Krijoni ose përfundoni rezervimin, shitjen ose kontratën përkatëse."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Filtroni sipas projektit, ndërtesës, katit, llojit, statusit, blerësit dhe të ngjashme.",
+          "Krijoni një njësi — kati, lloji, numri, emri, sipërfaqet, çmimi dhe valuta janë të detyrueshme.",
+          "Hapni kartën për median, çmimet dhe flamujt. Veprimet e rreshtit çojnë te rezervime, shitje, inspektime, kontrata qiraje, kosto — sipas të drejtave.",
+          "Gjeneroni broshurën marketing (PDF) nga njësia kur veprimi është i disponueshëm — bashkon fushat marketingu të kësaj njësie.",
+          "Fshirja e butë mund të rikthehet. Marrëveshjet që tashmë tregojnë te njësia mbeten; nuk anulohen automatikisht."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Lart: Projekt → Ndërtesë → Kat → Lloj njësie.",
+          "Marrëveshjet: Klient i mundshëm (interes opsional te njësia), Rezervim, Shitje (+ plan pagesash), Kontratë qiraje + pagesa qiraje.",
+          "Cilësia: Inspektim, kërkesë për modifikim, defekt.",
+          "Paraja: Kostot e njësisë, komisionet (përmes shitjes ose rezervimit).",
+          "Rrugët tipike: e lirë → rezervim → shitje, ose e lirë → kontratë qiraje."
+        ]
+      }
+    ]
+  }
 }

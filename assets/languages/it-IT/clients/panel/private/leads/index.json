@@ -59,5 +59,50 @@
         "other": "Altro"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Informazioni sui lead",
+    "title": "Informazioni sui lead",
+    "overview": "Un lead è una persona nella pipeline commerciale prima che esistano una prenotazione o una vendita. È CRM, non un blocco su un'unità. Lo stato è una fase commerciale che aggiornate lavorando la persona; non cambia la disponibilità. Vincere un lead non crea una prenotazione — la create in Prenotazioni su un'unità disponibile.",
+    "sections": [
+      {
+        "title": "Cosa contiene un lead",
+        "items": [
+          "Nome (obbligatorio), cognome, e-mail, telefono opzionali.",
+          "Stato: nuovo → contattato → qualificato → proposta → negoziazione → vinto o perso.",
+          "Fonte: sito web, referral, social, evento, cold call, walk-in, chat, o altro.",
+          "Interesse: partnership, investimenti, supporto piattaforma, prenotazione, o altro.",
+          "Interesse progetto e unità opzionali — ciò che hanno chiesto, non una trattenuta.",
+          "Budget e valuta opzionali, note, agente assegnato, data di follow-up.",
+          "Registro attività — note con data e ora dall'azione «aggiungi attività» (chi ha fatto cosa)."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare un lead appena qualcuno chiede informazioni. Assegnare un agente e una data di follow-up se lavorate una coda.",
+          "Aprire la scheda per spostare lo stato, aggiungere note e registrare attività.",
+          "Filtrare per stato, fonte, progetto, assegnatario.",
+          "L'eliminazione logica è ripristinabile. Non annulla prenotazioni create in seguito per la stessa persona."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Un lead può puntare a un'unità già prenotata o venduta — è solo «interesse», non un controllo di conflitto.",
+          "Nessuna conversione automatica in prenotazione. Quando sono pronti, create una Prenotazione con un utente cliente su un'unità disponibile.",
+          "Vinto / perso sono esiti di pipeline. Non scrivono lo stato dell'unità.",
+          "Il sito pubblico o la chat possono creare lead (fonte sito / chat) a seconda della configurazione della società."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Progetto e Unità opzionali (solo interesse).",
+          "Documenti commerciali successivi: Prenotazione, poi Vendita; oppure un Contratto di locazione se affittano.",
+          "Il report agenti conta in seguito prenotazioni e vendite, non le fasi del lead."
+        ]
+      }
+    ]
   }
 }

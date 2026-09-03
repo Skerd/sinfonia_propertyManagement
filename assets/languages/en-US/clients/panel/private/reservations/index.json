@@ -74,5 +74,61 @@
   "yes": "Yes",
   "no": "No",
   "expired": "Expired",
-  "converted": "Converted"
+  "converted": "Converted",
+  "help": {
+    "ariaLabel": "About Reservations",
+    "title": "About Reservations",
+    "overview": "A Reservation holds a unit for a client until it expires, is cancelled, or is converted into a sale. Creating an active reservation sets the unit to reserved. This is the lock — a lead is not. Deposit paid, client emails, and commissions are actions on this record.",
+    "sections": [
+      {
+        "title": "What a reservation holds",
+        "items": [
+          "Unit, reserved-by agent, reserved-by company, client (all required).",
+          "Reservation date (not in the future) and expiration date (required).",
+          "Optional deposit amount and deposit currency, payment method, referral code, notes, source.",
+          "Reservation contract files and additional documents.",
+          "Paid flag — whether the deposit is recorded as paid.",
+          "Active flag and status: active, cancelled, expired.",
+          "Cancellation reason and cancelled-at when cancelled.",
+          "Email stamps (confirmation sent, 3-day / 1-day / same-day reminders, expired mail) so you can see what the client already received."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Pay — mark the deposit paid. Records a reservation commission when the rules allow, and can email the client.",
+          "Reverse payment — only if the unit is not already sold and the reservation commission is not already paid. Voids a pending commission.",
+          "Cancel — deactivates the reservation, optionally stores a reason, voids pending commission, and if this reservation still holds the unit, returns the unit to available.",
+          "Reinstate — only if the reservation is inactive and the unit is free to take (available, or sold with no other reservation per the rule). Sets the unit back to reserved and re-records commission.",
+          "Manual client email — confirmation, 3-day / 1-day / today reminders, remaining-days, or expired notice. Each reminder is only allowed in the matching calendar window. Expired mail also sets status expired and frees the unit if it was still reserved by this row."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a reservation on an available unit with a real client user.",
+          "Filter by unit, client, agent, status, dates.",
+          "Open the sheet for deposit, documents, pay/cancel/reinstate, and emails.",
+          "Convert to a sale from Sales (cash or payment-plan) — the sale can keep the reservation and deposit conversion fields."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A daily job can expire reservations past the expiration day, email the client, and free the unit — same outcome as sending the expired mail by hand.",
+          "You cannot reserve a unit that is already reserved, sold, or rented.",
+          "Commissions: a pending reservation commission appears when pay/reinstate records it; cancelling or reversing payment voids pending (not already paid) commission.",
+          "Contracts Hub lists this reservation as a commercial document; it does not duplicate it."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit status available → reserved → available (cancel/expire) or → sold (via Sale).",
+          "Client user, agent, optional Lead that came before.",
+          "Commission (source type reservation). Next: Sale, possibly with this reservation linked."
+        ]
+      }
+    ]
+  }
 }

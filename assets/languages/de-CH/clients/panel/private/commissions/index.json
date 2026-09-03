@@ -65,5 +65,42 @@
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
-  "no": "Nein"
+  "no": "Nein",
+  "help": {
+    "ariaLabel": "Über Provisionen",
+    "title": "Über Provisionen",
+    "overview": "Eine Provision ist die Auszahlungszeile für den Agenten aus Reservation oder Verkauf. Das ist das Journal, nicht der Agentenbericht (Periodenleistung). Status: ausstehend → zur Freigabe → bezahlt, oder storniert wenn der Deal storniert oder eine Zahlung rückgängig gemacht wird.",
+    "sections": [
+      {
+        "title": "Was eine Provision speichert",
+        "items": [
+          "Quelltyp Reservation oder Verkauf plus Quelldatensatz.",
+          "Agent, Beträge, Währung, verwendete Sätze.",
+          "Status: ausstehend, zur Freigabe, bezahlt, storniert."
+        ]
+      },
+      {
+        "title": "Wie sie entsteht",
+        "items": [
+          "Bezahlen oder Reaktivieren einer Reservation erfasst eine Reservationsprovision.",
+          "Ein Verkauf erfasst eine Verkaufsprovision nach Projekt- oder Einheiten-Sätzen.",
+          "Legen Sie keine Provision ohne Quelldeal an — sie bliebe inkonsistent zu Dashboard und Bericht."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Storno einer Reservation oder Rücknahme einer unbezahlten Anzahlung storniert ausstehende, nicht bereits bezahlte Provision.",
+          "Zahlungsrücknahme der Reservation ist blockiert, wenn diese Provision schon bezahlt ist.",
+          "Bezahlen hier ist der Auszahlungsschritt. Der Agentenbericht markiert nichts als bezahlt."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Reservation oder Verkauf, Agent, Einheit. Agentenbericht. ERP-Export kann Provisionen enthalten."
+        ]
+      }
+    ]
+  }
 }

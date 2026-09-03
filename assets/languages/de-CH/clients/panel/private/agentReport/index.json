@@ -36,5 +36,33 @@
     "commissionPaid": "Provision bezahlt",
     "commissionPending": "Provision ausstehend",
     "avgRate": "Durchschn. Satz %"
+  },
+  "help": {
+    "ariaLabel": "Über Agentenbericht",
+    "title": "Über Agentenbericht",
+    "overview": "Der Agentenbericht ist eine Periodenleistung: was jeder Agent reserviert, verkauft und an Provision verdient hat. Reporting, kein Provisionsjournal. Nachträgliche Deal-Änderungen erscheinen beim nächsten Laden.",
+    "sections": [
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Periode oder Von/Bis wählen und anwenden.",
+          "Zeilen je Agent lesen; exportieren wenn nötig."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Zahlen aus Reservationen, Verkäufen und Provisionen im Zeitraum.",
+          "Zahlt niemanden — Auszahlungsstatus in Provisionen.",
+          "Legt keine Reservationen oder Verkäufe an."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Agent, Reservation, Verkauf, Provision."
+        ]
+      }
+    ]
   }
 }

@@ -36,5 +36,33 @@
     "commissionPaid": "Komision i paguar",
     "commissionPending": "Komision në pritje",
     "avgRate": "Norma mesatare %"
+  },
+  "help": {
+    "ariaLabel": "Rreth Raportit të agjentëve",
+    "title": "Rreth Raportit të agjentëve",
+    "overview": "Raporti i agjentëve është një pamje performancë e periudhës: çfarë ka rezervuar, shitur dhe fituar në komisione çdo agjent ndërmjet dy datave. Është raportim, jo libri i komisioneve. Ndryshimi i një marrëveshjeje pas faktit ndryshon ngarkimin e radhës të këtij raporti.",
+    "sections": [
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Zgjidhni një periudhë (ose data nga/deri) dhe zbatoni.",
+          "Lexoni rreshtat sipas agjentit; eksportoni kur ju duhet një skedar."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Shifrat vijnë nga Rezervimet, Shitjet dhe Komisionet në intervalin e datave.",
+          "Nuk i paguan askujt — përdorni Komisionet për të menaxhuar statusin e shpërndarjes (në pritje / i paguar / i anuluar).",
+          "Nuk krijon rezervime as shitje."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Përdoruesi agjent, rezervimi, shitja, komisioni."
+        ]
+      }
+    ]
   }
 }

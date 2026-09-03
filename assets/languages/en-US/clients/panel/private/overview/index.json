@@ -20,5 +20,50 @@
     "workflows": "Workflows",
     "reports": "Reports",
     "notifications": "Notifications"
+  },
+  "help": {
+    "ariaLabel": "About Overview",
+    "title": "About Overview",
+    "overview": "Overview is the company-wide control room for Real Estate. It does not store its own documents. Every number is a live roll-up of Projects, Edifices, Units, Leads, Reservations, Sales, Leases, Rental payments, Snags, and related workflow records. Use it to see whether the portfolio is moving, then jump into the list that actually owns the work.",
+    "sections": [
+      {
+        "title": "What this page is",
+        "items": [
+          "A read-only cockpit for one company (the company you are signed into).",
+          "Tabs are different cuts of the same data: headline KPIs, trends, inventory, and pipeline health.",
+          "Nothing you do here creates a Project, Unit, Sale, or Lease. Cards that say “View entries” open the matching operational list with the same idea of filters.",
+          "It is not the edifice-level Dashboard (that page is for day-to-day steering of one building) and not the Group dashboard (that page rolls up several companies)."
+        ],
+        "body": "Think of Overview as “is the company healthy?” and Dashboard as “what is happening in this building today?”"
+      },
+      {
+        "title": "Tabs",
+        "items": [
+          "Overview — mix of available / reserved / sold / rented units, collection, and other headline figures for the selected period.",
+          "Analytics — how those figures move over time (period toolbar at the top).",
+          "Projects / Edifices / Units — inventory counts and values so you can see where stock sits without opening each list.",
+          "Workflows — pipeline health: leads, reservations, inspections, snags and similar in-flight work.",
+          "Reports / Notifications (when shown) — shortcuts into reporting and in-app alerts, not separate document types."
+        ],
+        "body": "The period control (7 / 30 / 90 / 12 months) only changes time-bounded KPIs. Unit inventory counts are “now”, not “in that window”, unless the tab says otherwise."
+      },
+      {
+        "title": "How the numbers are produced",
+        "items": [
+          "Sold / reserved / rented come from Unit status, which is moved by Reservations, Sales, and Leases — not typed on this page.",
+          "Collected revenue and rent figures come from sale receipts / payment plans and rental payment rows.",
+          "Stuck work (overdue rent, expiring reservations, open snags) is a count of those operational records.",
+          "Refreshing reloads the aggregation. There is no separate warehouse to “rebuild”."
+        ]
+      },
+      {
+        "title": "Typical use",
+        "items": [
+          "Start of day: check sold vs available vs rented, overdue rent, and reservations that need attention.",
+          "Then open Dashboard for a specific edifice, or jump to Units, Reservations, Sales, or Rentals Hub to act.",
+          "Do not try to “fix” a KPI here — change the underlying reservation, sale, lease, or payment."
+        ]
+      }
+    ]
   }
 }

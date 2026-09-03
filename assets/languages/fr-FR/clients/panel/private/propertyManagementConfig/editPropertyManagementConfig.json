@@ -24,6 +24,46 @@
     "title": "Modifier Ventes & réception",
     "description": "Mettez à jour les informations de ce Ventes & réception."
   },
+  "help": {
+    "ariaLabel": "À propos de Ventes & réception",
+    "title": "À propos de Ventes & réception",
+    "overview": "Ce sont des interrupteurs à l’échelle de la société : comment les nouvelles ventes sont approuvées et quand une date de remise peut être enregistrée. Il y a un enregistrement de paramètres par société — pas une liste de ventes. Enregistrer ici ne crée ni vente ni dossier de remise.",
+    "sections": [
+      {
+        "title": "Ce que font les interrupteurs",
+        "items": [
+          "Exiger l’approbation d’un responsable à la création d’une vente — les nouvelles ventes démarrent en attente. L’unité est tout de même marquée vendue immédiatement. Approuver la laisse vendue. Rejeter la remet disponible et retire la vente de l’unité.",
+          "Exiger un dossier de remise terminé avant d’enregistrer la remise — la première fois que vous posez une date de remise sur une vente, cette unité doit déjà avoir un dossier de remise au statut terminé. Modifier plus tard une date de remise déjà posée n’est pas bloqué par cette barrière."
+        ],
+        "body": "Les deux sont désactivés par défaut. Les activer ne réécrit pas les ventes historiques. Cela s’applique à la prochaine vente créée et à la prochaine première date de remise."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "La page ouvre l’unique enregistrement de paramètres de cette société (créé automatiquement s’il manquait).",
+          "Deux interrupteurs. Enregistrer pour appliquer."
+          "Ni création, ni suppression, ni dérogation par projet."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Sans approbation, créer une vente notifie comme créée — pas de file d’attente.",
+          "Avec approbation, le vendeur est informé que l’approbation est en attente ; les responsables tranchent sur la page Ventes.",
+          "Les dossiers de remise se construisent dans le flux unité / ventes. Cette page ne contrôle que le tampon de la date de remise.",
+          "Changer ces options n’annule pas les ventes déjà en attente."
+        ]
+      },
+      {
+        "title": "Enregistrements liés",
+        "items": [
+          "Ventes — approuver ou rejeter, enregistrer remise / transfert de titre.",
+          "Unités — vendue versus disponible après un rejet.",
+          "Dossiers de remise — doivent être terminés sur l’unité avant la première date de remise lorsque le second interrupteur est activé."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Enregistrer"

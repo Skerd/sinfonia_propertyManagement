@@ -65,5 +65,43 @@
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "Po",
-  "no": "Jo"
+  "no": "Jo",
+  "help": {
+    "ariaLabel": "Rreth Komisioneve",
+    "title": "Rreth Komisioneve",
+    "overview": "Një komision është rreshti i pagesës së agjentit i krijuar nga një rezervim ose një shitje. Ky është libri, jo raporti i agjentëve (pamje performancë e periudhës). Statusi lëviz në pritje → në pritje aprovimi → i paguar, ose i anuluar kur marrëveshja burim anulohet ose një pagesë kthehet.",
+    "sections": [
+      {
+        "title": "Çfarë mban një komision",
+        "items": [
+          "Lloji i burimit: rezervim ose shitje, plus dosja burim.",
+          "Agjenti, shumat, valuta, tarifat e përdorura kur u regjistrua.",
+          "Statusi: në pritje, në pritje aprovimi, i paguar, i anuluar.",
+          "Dëshmi / shënime sipas mënyrës se si rolet tuaja i ekspozojnë fushat."
+        ]
+      },
+      {
+        "title": "Si krijohet",
+        "items": [
+          "Pagesa ose rikthimi i një rezervimi regjistron një komision rezervimi.",
+          "Një shitje regjistron një komision shitjeje sipas tarifave të shitjes/rezervimit (projekti ose mbishtesa e njësisë).",
+          "Mos inventoni një komision pa marrëveshje burim — nuk do të qëndronte i përputhur me panelin as me raportin e agjentëve."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Anulimi i një rezervimi ose kthimi i një depozite të papaguar anulon komisionin në pritje — jo një tashmë të shënuar të paguar.",
+          "Kthimi i një pagese rezervimi bllokohet nëse ky komision është tashmë i paguar.",
+          "Pagesa e një komisioni këtu është hapi i shpërndarjes. Raporti i agjentëve lexon vetëm marrëveshjet në një interval datash; nuk shënon të paguar."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Rezervim ose Shitje, përdoruesi agjent, Njësia. Raporti i agjentëve. Eksporti ERP mund të përfshijë një set komisonesh."
+        ]
+      }
+    ]
+  }
 }

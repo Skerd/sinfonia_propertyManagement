@@ -114,5 +114,59 @@
   "unitType": "Unit Type",
   "units": "Units",
   "yes": "Yes",
-  "rented": "Rented"
+  "rented": "Rented",
+  "help": {
+    "ariaLabel": "About Units",
+    "title": "About Units",
+    "overview": "A Unit is the sellable or rentable space — the record that actually changes commercial status. Almost every sales, rental, inspection, and cost flow points at a unit. Status is not a free-text field you should fight by hand: Reservations, Sales, and Leases move it.",
+    "sections": [
+      {
+        "title": "What a unit holds",
+        "items": [
+          "Floor (required) — that implies edifice and project. Unit type (required) from Configurations → Unit types.",
+          "Unit number and name (required) — how agents and clients identify it.",
+          "Area, shared area, net area (required); optional veranda area.",
+          "Price and price currency (required). Number of rooms and bathrooms (required).",
+          "Description, main image, galleries, videos, extra files, marketing booklet.",
+          "Outdoor and amenity flags: balcony, terrace, sea / city / lake view, elevator.",
+          "Orientation (N, S, E, W and diagonals) and construction status (planned, under construction, ready, delivered).",
+          "Optional sale and reservation commission % — override the project defaults for this unit.",
+          "Connected units — when two units are sold or shown together.",
+          "Featured on homepage + sort order — public-site highlighting of this unit.",
+          "Optional polygon on the floor plan."
+        ]
+      },
+      {
+        "title": "Commercial status",
+        "items": [
+          "Available — can be reserved, sold, or leased.",
+          "Reserved — a live reservation holds it. Expire or cancel the reservation to return it to available. Reinstate a cancelled reservation only if the unit is free (or sold with no other reservation) per the reinstate rules.",
+          "Sold — a sale marked it sold. Handover and title-transfer continue on the sale. You cannot lease a sold unit.",
+          "Rented — an active lease holds it. Terminate (or daily job expire past end date) releases it back toward available.",
+          "Unavailable — taken off the market without a deal."
+        ],
+        "body": "Do not try to “type” a unit into sold or rented. Create or complete the matching reservation, sale, or lease."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Filter by project, edifice, floor, unit type, status, buyer, and similar.",
+          "Create a unit — floor, unit type, number, name, areas, price and currency are required.",
+          "Open the card for media, pricing, and flags. Row actions reach reservations, sales, inspections, leases, costs, depending on access.",
+          "Generate marketing booklet (PDF) from the unit when that action is available — it merges this unit’s marketing fields.",
+          "Soft delete can be restored. Deals that already point at the unit remain; they are not auto-cancelled."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Upstream: Project → Edifice → Floor → Unit type.",
+          "Deals: Lead (optional unit interest), Reservation, Sale (+ payment plan), Lease + rental payments.",
+          "Quality: Inspection, modification request, snag.",
+          "Money: Unit costs, commissions (via sale or reservation).",
+          "Typical paths: available → reservation → sale, or available → lease."
+        ]
+      }
+    ]
+  }
 }

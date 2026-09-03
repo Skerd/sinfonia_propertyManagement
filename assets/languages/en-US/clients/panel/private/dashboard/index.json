@@ -24,5 +24,50 @@
   "rentOutstanding": "Rent outstanding",
   "rentOverdue": "Rent overdue",
   "activeLeases": "Active leases",
-  "viewRentalsHub": "View rentals hub"
+  "viewRentalsHub": "View rentals hub",
+  "help": {
+    "ariaLabel": "About Dashboard",
+    "title": "About the Real Estate Dashboard",
+    "overview": "The Dashboard is the operational cockpit for one company’s buildings. You pick an edifice; the rest of the page (KPIs, unit-status mix, revenue charts, units list, payment alerts) follows that building. It is where day-to-day inventory steering happens. It does not create edifices, units, or deals — it reads them.",
+    "sections": [
+      {
+        "title": "Layout",
+        "items": [
+          "Edifice gallery at the top — select a building to focus every KPI and the units list below.",
+          "KPI row: total units, sold, collected, average price per m², plus rent collected / outstanding / overdue and active leases when rental records exist.",
+          "Period control (last 7 days, 30 days, 3 months, 12 months) changes collected/revenue windows, not the unit inventory itself.",
+          "Charts show unit-status mix and revenue over the selected period.",
+          "The units table/cards below are the same Units resource, already scoped to the selected edifice.",
+          "Payment alerts deep-link into payment plans / reservations that need attention."
+        ]
+      },
+      {
+        "title": "How figures are produced",
+        "items": [
+          "Total / sold / reserved / rented are counts of units in that edifice by commercial status.",
+          "Collected comes from sale receipts and payment-plan activity in the period — not from typing a target.",
+          "Average €/m² uses unit prices and areas on those units; it does not reprice anything.",
+          "Rent collected / outstanding / overdue sums rental payment rows on leases for units in this edifice.",
+          "Active leases counts leases that are still active on those units."
+        ]
+      },
+      {
+        "title": "What this page will not do",
+        "items": [
+          "It will not change unit status. Reserve, sell, or lease from those lists.",
+          "Selecting another edifice does not change the project — each edifice already belongs to a project.",
+          "It is not Overview (company-wide) and not Group dashboard (multi-company)."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Edifice → Floor → Unit (inventory).",
+          "Reservation / Sale (sold and collected).",
+          "Lease / Rental payment (rent KPIs).",
+          "Use “View payment plans” / “View rentals hub” when those alerts appear."
+        ]
+      }
+    ]
+  }
 }

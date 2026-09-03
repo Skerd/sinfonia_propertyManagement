@@ -35,5 +35,56 @@
         "terminated": "Ndërprerë"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Rreth Kontratave të qirasë",
+    "title": "Rreth Kontratave të qirasë",
+    "overview": "Një kontratë qiraje është marrëveshja e qirasë mbi një njësi. Aktivizimi e vë njësinë me qira. Rreshtat mujorë të qirasë gjenerohen dhe arkëtohen përmes Pagesave të qirasë (shuma të pjesshme, muaji më i vjetër i pari, penalitet vonese, periudhë hirësie). Ndërprerja ose skadimi e liron njësinë. Nuk mund të jepni me qira një njësi të rezervuar ose të shitur.",
+    "sections": [
+      {
+        "title": "Çfarë mban një kontratë",
+        "items": [
+          "Njësia dhe qiramarrësi (të detyrueshëm).",
+          "Data e fillimit dhe data e mbarimit (mbarimi duhet të jetë pas fillimit).",
+          "Qiraja mujore dhe valuta (të detyrueshme).",
+          "Shuma e depozitës opsionale; depozita e paguar dhe depozita e kthyer menaxhohen me veprime.",
+          "Penaliteti i vonesës % dhe ditët e hirësisë — përdoren kur një muaj kalon i vonuar.",
+          "Media e kontratës (skedar i detyrueshëm), shënime, arsyeja / data e ndërprerjes kur mbyllet.",
+          "Statusi: aktiv, i skaduar, i ndërprerë."
+        ]
+      },
+      {
+        "title": "Veprimet",
+        "items": [
+          "Ndërprit — vetëm sa është aktiv. E vë të ndërprerë, fal muajt ende të hapur dhe liron njësinë nëse kjo kontratë e kishte me qira.",
+          "Shëno depozitën të paguar — një herë. Kthe depozitën — vetëm pasi u shënua e paguar, dhe vetëm një herë.",
+          "Regjistro pagesën e qirasë — shuma zbatohet te muaji i hapur më i vjetër i pari (FIFO). Nuk mund të tejkalojë mbetjen e hapur totale. Vetëm kontrata aktive.",
+          "Rirregullo planin — rindërto rreshtat mujorë nëse datat ose qiraja ndryshuan.",
+          "Dërgo kujtesën e qirasë — e-mail te klienti për një rresht muaji të zgjedhur (llojet e kujtesës), vetëm sa ai rresht është ende i hapur."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një kontratë vetëm mbi një njësi të lirë.",
+          "Hapni fletën për pagesat, depozitën, kujtesat, ndërprerjen.",
+          "Filtroni sipas njësisë, qiramarrësit, statusit, datave."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Një punë ditore i shënon muajt e papaguar të vonuar pas afatit + hirësia (fundi i ditës UTC), vulos penalitetin një herë nga % e kontratës, i skadon kontratat aktive pas datës së mbarimit, fal rreshtat e hapur dhe liron njësitë.",
+          "Mbetja e një muaji = shuma + penaliteti − e paguar. Arkëtimet e pjesshme mbeten pjesërisht të paguara derisa mbetja të bëhet zero.",
+          "Qendra e qirave dhe KPI-të e qirasë të panelit i lexojnë këto të njëjta rreshta."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Njësia e lirë → me qira → e lirë. Pagesat e qirasë (fëmijët). Qendra e qirave. Paneli."
+        ]
+      }
+    ]
   }
 }

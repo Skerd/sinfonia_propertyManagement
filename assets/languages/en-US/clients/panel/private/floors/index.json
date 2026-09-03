@@ -44,5 +44,48 @@
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
   "no": "No",
-  "view": "View"
+  "view": "View",
+  "help": {
+    "ariaLabel": "About Floors",
+    "title": "About Floors",
+    "overview": "A Floor is one level of an edifice. Units sit on a floor. The floor record is the plan layer (name, level number, area, accessibility, shared spaces, media) plus an optional outline on the building plan. It is not a commercial status — units carry available / reserved / sold / rented.",
+    "sections": [
+      {
+        "title": "What a floor holds",
+        "items": [
+          "Name and parent edifice (required).",
+          "Level number — the ordinal of this storey (can be negative for underground).",
+          "Area of the floor plate (required).",
+          "Accessible / emergency exit flags, description, and a list of shared spaces (lobby, corridor names, and similar labels).",
+          "Main image (required) plus optional galleries, videos, extra files, and a marketing booklet.",
+          "Optional polygon coordinates — the outline drawn on the edifice plan so the public or panel plan can highlight this floor.",
+          "Total units on the floor is computed from children; you do not type it."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Opened from an edifice, the list is scoped to that building.",
+          "Create a floor, then add units to it. A floor with zero units is valid but will not show inventory.",
+          "Open a card to edit plan data and media. Row actions reach units on that floor.",
+          "Soft delete can be restored. Units on the floor are not auto-deleted."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Units must pick a floor (and therefore an edifice and project via cascade).",
+          "ROI calculator can narrow by floor when estimating a unit.",
+          "The floor is not reserved or sold as a whole — each unit has its own status."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Parent: Edifice (which has a Project). Children: Units.",
+          "Typical next step: create units with unit type, unit number, areas, rooms, price and currency."
+        ]
+      }
+    ]
+  }
 }

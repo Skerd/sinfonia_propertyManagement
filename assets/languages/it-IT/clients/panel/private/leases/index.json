@@ -38,5 +38,56 @@
         "terminated": "Risolto"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Informazioni sui contratti di locazione",
+    "title": "Informazioni sui contratti di locazione",
+    "overview": "Un contratto di locazione è l'accordo di affitto su un'unità. Attivarlo imposta l'unità su affittata. Le righe mensili di canone si generano e si incassano tramite Pagamenti affitto (importi parziali, mese più vecchio prima, mora, periodo di grazia). Recedere o scadere libera l'unità. Non si può locare un'unità prenotata o venduta.",
+    "sections": [
+      {
+        "title": "Cosa contiene un contratto",
+        "items": [
+          "Unità e conduttore (obbligatori).",
+          "Data inizio e data fine (la fine deve essere dopo l'inizio).",
+          "Canone mensile e valuta (obbligatori).",
+          "Importo deposito opzionale; deposito pagato e deposito restituito sono gestiti da azioni.",
+          "Mora % e giorni di grazia — usati quando un mese va in ritardo.",
+          "Media del contratto (file obbligatorio), note, motivo / data di recesso quando è chiuso.",
+          "Stato: attivo, scaduto, receduto."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Recedi — solo finché attivo. Imposta receduto, condona i mesi ancora aperti e libera l'unità se questo contratto la affittava.",
+          "Marca deposito pagato — una volta. Restituisci deposito — solo dopo che è stato marcato pagato, e una sola volta.",
+          "Registra pagamento canone — l'importo si applica al mese aperto più vecchio prima (FIFO). Non può superare il residuo aperto totale. Solo contratti attivi.",
+          "Risincronizza il piano — ricostruire le righe mensili se date o canone sono cambiati.",
+          "Invia reminder canone — e-mail cliente per una riga mese scelta (tipi di reminder), solo finché quella riga è ancora aperta."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare un contratto solo su un'unità disponibile.",
+          "Aprire la scheda per pagamenti, deposito, reminder, recesso.",
+          "Filtrare per unità, conduttore, stato, date."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Un job giornaliero marca i mesi non pagati scaduti dopo scadenza + grazia (fine giorno UTC), applica la mora una volta dal % del contratto, fa scadere i contratti attivi oltre la data di fine, condona le loro righe aperte e libera le unità.",
+          "Residuo di un mese = importo + mora − pagato. Gli incassi parziali restano parzialmente pagati finché il residuo arriva a zero.",
+          "Hub locazioni e i KPI affitti della Dashboard leggono queste stesse righe."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità disponibile → affittata → disponibile. Pagamenti affitto (figli). Hub locazioni. Dashboard."
+        ]
+      }
+    ]
   }
 }

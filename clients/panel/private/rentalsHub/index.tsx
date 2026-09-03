@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
@@ -78,6 +79,7 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
             <Header
                 title={String(resolveLanguageKey("title"))}
                 description={String(resolveLanguageKey("description"))}
+                help={readPageHelp(resolveLanguageKey)}
             />
 
             <div className="flex-1 overflow-auto p-4">

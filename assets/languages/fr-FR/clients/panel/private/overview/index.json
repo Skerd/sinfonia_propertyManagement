@@ -20,5 +20,50 @@
     "workflows": "Flux de travail",
     "reports": "Rapports",
     "notifications": "Notifications"
+  },
+  "help": {
+    "ariaLabel": "À propos de la vue d'ensemble",
+    "title": "À propos de la vue d'ensemble",
+    "overview": "La vue d'ensemble est la salle de contrôle à l'échelle de la société pour l'immobilier. Elle ne stocke aucun document propre. Chaque chiffre est un agrégat en direct des projets, bâtiments, unités, prospects, réservations, ventes, baux, loyers, réserves et workflows associés. Utilisez-la pour voir si le portefeuille avance, puis ouvrez la liste qui détient réellement le travail.",
+    "sections": [
+      {
+        "title": "Ce qu'est cette page",
+        "items": [
+          "Un cockpit en lecture seule pour une société (celle dans laquelle vous êtes connecté).",
+          "Les onglets sont des coupes différentes des mêmes données : KPI de tête, tendances, stock et santé du pipeline.",
+          "Rien ici ne crée un projet, une unité, une vente ou un bail. Les cartes « Voir les entrées » ouvrent la liste opérationnelle correspondante, avec la même logique de filtres.",
+          "Ce n'est pas le tableau de bord d'un bâtiment (pilotage quotidien d'un édifice) ni le tableau de bord groupe (plusieurs sociétés)."
+        ],
+        "body": "La vue d'ensemble = « la société est-elle en bonne santé ? » Le tableau de bord = « que se passe-t-il aujourd'hui dans ce bâtiment ? »"
+      },
+      {
+        "title": "Onglets",
+        "items": [
+          "Vue d'ensemble — mix d'unités disponibles / réservées / vendues / louées, encaissement et autres indicateurs de la période choisie.",
+          "Analyses — évolution de ces chiffres dans le temps (barre de période en haut).",
+          "Projets / Bâtiments / Unités — volumes et valeurs de stock, sans ouvrir chaque liste.",
+          "Flux de travail — santé du pipeline : prospects, réservations, inspections, réserves et travail en cours similaire.",
+          "Rapports / Notifications (lorsqu'ils sont affichés) — raccourcis vers le reporting et les alertes internes, pas des types de documents distincts."
+        ],
+        "body": "Le sélecteur de période (7 / 30 / 90 / 12 mois) ne change que les KPI bornés dans le temps. Les effectifs d'unités sont « maintenant », pas « dans cette fenêtre », sauf si l'onglet indique le contraire."
+      },
+      {
+        "title": "Comment les chiffres sont produits",
+        "items": [
+          "Vendu / réservé / loué viennent du statut d'unité, que déplacent les réservations, ventes et baux — on ne le saisit pas sur cette page.",
+          "Les recettes et loyers encaissés viennent des quittances de vente / plans de paiement et des lignes de loyer.",
+          "Le travail bloqué (loyer en retard, réservations qui expirent, réserves ouvertes) est un décompte de ces dossiers opérationnels.",
+          "Actualiser recharge l'agrégation. Il n'y a pas d'entrepôt séparé à « reconstruire »."
+        ]
+      },
+      {
+        "title": "Usage typique",
+        "items": [
+          "Début de journée : vendu vs disponible vs loué, loyers en retard, réservations à traiter.",
+          "Puis ouvrez le tableau de bord d'un bâtiment, ou sautez vers Unités, Réservations, Ventes ou le centre des locations pour agir.",
+          "Ne cherchez pas à « corriger » un KPI ici — modifiez la réservation, la vente, le bail ou le paiement sous-jacent."
+        ]
+      }
+    ]
   }
 }

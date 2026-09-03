@@ -10,6 +10,7 @@ import {DashboardFormResponseType} from "armonia/src/modules/propertyManagement/
 import type { DashboardFormType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.type.ts";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -61,6 +62,7 @@ function Dashboard({
             <Header
                 title={resolveLanguageKey("title")}
                 description={resolveLanguageKey("description")}
+                help={readPageHelp(resolveLanguageKey)}
             >
                 <DashboardPeriodToolbar
                     periodKey={periodKey}

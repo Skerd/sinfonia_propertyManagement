@@ -37,5 +37,51 @@
       }
     },
     "remaining": "Restbetrag"
+  },
+  "help": {
+    "ariaLabel": "Über Mietzahlungen",
+    "title": "Über Mietzahlungen",
+    "overview": "Eine Mietzahlung ist ein geplanter Monat eines Vertrags. Rest ist abgeleitet (Betrag + Verzug − bezahlt). Status: ausstehend → bezahlt | teilweise | überfällig, oder erlassen. Hier kassieren Sie; die Miete definieren Sie am Vertrag. Den Plan soll der Vertrag erzeugen, nicht die Hand.",
+    "sections": [
+      {
+        "title": "Was eine Zeile speichert",
+        "items": [
+          "Elternvertrag, Einheit, Fälligkeit, Betrag, bezahlt, Rest, Währung.",
+          "Status: ausstehend, bezahlt, teilweise, überfällig, erlassen.",
+          "Verzugsbetrag (wenn überfällig).",
+          "Zahlungsbelege (jede Teilzahlung mit Datum und Notizen)."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Als bezahlt — Betrag nur auf diesen Monat (Vertrag muss aktiv sein). Voll = bezahlt, Teil = teilweise. Kein Überzahlen. Nicht auf schon bezahlten oder erlassenen Zeilen.",
+          "Erlassen — Rest einer offenen Zeile. Schon Bezahltes nicht erlassen.",
+          "Zahlung am Vertrag (FIFO) kann diese Zeile als Teil eines grösseren Betrags füllen."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Filtern überfällig vs. ausstehend vs. bezahlt.",
+          "Zeile öffnen zum Kassieren oder Erlassen.",
+          "Selten von Hand anlegen — der Vertrag erzeugt den Plan; am Vertrag neu synchronisieren wenn Monate falsch sind."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Überfällig berücksichtigt die Karenz; ein Tagesjob kippt den Status und kann Verzug einmal setzen.",
+          "Dashboard summiert diese Zeilen.",
+          "Kündigen oder Ablauf erlässt noch offene Zeilen."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Elternvertrag. Einheit. Rentals-Hub-Zahlungen."
+        ]
+      }
+    ]
   }
 }

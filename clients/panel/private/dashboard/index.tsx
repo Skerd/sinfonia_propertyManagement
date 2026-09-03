@@ -16,6 +16,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {PaymentAlerts} from "@propertyManagementModule/components/custom/dashboard/paymentAlerts.tsx";
@@ -90,6 +91,7 @@ function RealEstateDashboard({
             <Header
                 title={resolveLanguageKey("title")}
                 description={resolveLanguageKey("description")}
+                help={readPageHelp(resolveLanguageKey)}
             >
                 <DashboardPeriodToolbar
                     periodKey={periodKey}

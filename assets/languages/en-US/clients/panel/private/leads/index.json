@@ -59,5 +59,50 @@
         "other": "Other"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "About Leads",
+    "title": "About Leads",
+    "overview": "A Lead is a person in the commercial pipeline before a reservation or sale exists. It is CRM, not a lock on a unit. Status is a sales-stage label you update as you work the person; it does not change unit availability. Winning a lead does not create a reservation — you create that on Reservations from an available unit.",
+    "sections": [
+      {
+        "title": "What a lead holds",
+        "items": [
+          "First name (required), optional last name, email, phone.",
+          "Status: new → contacted → qualified → proposal → negotiation → won or lost.",
+          "Source: website, referral, social, event, cold call, walk-in, chat, or other.",
+          "Interest: partnerships, investments, platform support, reservation, or other.",
+          "Optional project interest and unit interest — what they asked about, not a hold.",
+          "Optional budget and budget currency, free-text notes, assigned agent, follow-up date.",
+          "Activity log — timestamped notes from the “add activity” action (who did what)."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a lead as soon as someone enquires. Assign an agent and set a follow-up date if you work a queue.",
+          "Open the card to move status, add notes, and log activity.",
+          "Filter by status, source, project, assignee.",
+          "Soft delete can be restored. It does not cancel reservations that were created later for the same person."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A lead can point at a unit that is already reserved or sold — that is only “interest”, not a conflict check.",
+          "There is no automatic conversion from lead to reservation. When they are ready, create a Reservation with a client user on an available unit.",
+          "Won / lost are pipeline outcomes. They do not write Unit status.",
+          "Public website or chat can create leads (source website / chat) depending on how the company is configured."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Optional Project and Unit (interest only).",
+          "Next commercial documents: Reservation, then Sale; or a Lease if they rent instead.",
+          "Agent report later counts reservations and sales, not lead stages."
+        ]
+      }
+    ]
   }
 }

@@ -20,5 +20,50 @@
     "workflows": "Workflows",
     "reports": "Reports",
     "notifications": "Benachrichtigungen"
+  },
+  "help": {
+    "ariaLabel": "Über Übersicht",
+    "title": "Über Übersicht",
+    "overview": "Die Übersicht ist die unternehmensweite Schaltzentrale für Real Estate. Sie speichert keine eigenen Dokumente. Jede Zahl ist eine Live-Aggregation aus Projekten, Gebäuden, Einheiten, Leads, Reservationen, Verkäufen, Mietverträgen, Mietzahlungen, Mängeln und verwandten Workflows. Nutzen Sie sie, um zu sehen, ob das Portfolio läuft — und springen Sie dann in die Liste, die die Arbeit wirklich besitzt.",
+    "sections": [
+      {
+        "title": "Was diese Seite ist",
+        "items": [
+          "Ein Nur-Lese-Cockpit für die Firma, in der Sie angemeldet sind.",
+          "Tabs sind verschiedene Schnitte derselben Daten: Kennzahlen, Trends, Bestand, Pipeline.",
+          "Hier entsteht kein Projekt, keine Einheit, kein Verkauf und kein Mietvertrag. Karten mit „Einträge anzeigen“ öffnen die passende operative Liste.",
+          "Nicht das Gebäude-Dashboard (tägliche Steuerung eines Gebäudes) und nicht das Gruppendashboard (mehrere Firmen)."
+        ],
+        "body": "Übersicht = „ist die Firma gesund?“ Dashboard = „was passiert heute in diesem Gebäude?“"
+      },
+      {
+        "title": "Tabs",
+        "items": [
+          "Übersicht — Mix aus verfügbaren / reservierten / verkauften / vermieteten Einheiten, Inkasso und weitere Kennzahlen der gewählten Periode.",
+          "Analytik — Verlauf über die Periodenleiste oben.",
+          "Projekte / Gebäude / Einheiten — Bestandszahlen, ohne jede Liste zu öffnen.",
+          "Workflows — Pipeline: Leads, Reservationen, Abnahmen, Mängel und ähnliche laufende Arbeit.",
+          "Berichte / Benachrichtigungen (falls sichtbar) — Sprungmarken, keine eigenen Dokumenttypen."
+        ],
+        "body": "Die Periode (7 / 30 / 90 / 12 Monate) ändert nur zeitbezogene KPIs. Bestandszahlen sind „jetzt“, sofern der Tab nichts anderes sagt."
+      },
+      {
+        "title": "Wie die Zahlen entstehen",
+        "items": [
+          "Verkauft / reserviert / vermietet kommen vom Einheitenstatus, den Reservationen, Verkäufe und Mietverträge setzen — nicht diese Seite.",
+          "Einnahmen und Miete kommen aus Verkaufsbelegen / Zahlungsplänen und Mietzahlungszeilen.",
+          "Hängende Arbeit (überfällige Miete, auslaufende Reservationen, offene Mängel) zählt diese operativen Sätze.",
+          "Aktualisieren lädt die Aggregation neu. Es gibt kein separates Warehouse."
+        ]
+      },
+      {
+        "title": "Typische Nutzung",
+        "items": [
+          "Tagesbeginn: verkauft vs. verfügbar vs. vermietet, überfällige Miete, Reservationen mit Handlungsbedarf.",
+          "Dann Dashboard für ein Gebäude oder Einheiten / Reservationen / Verkäufe / Rentals Hub zum Handeln.",
+          "Eine KPI hier „reparieren“ geht nicht — ändern Sie Reservation, Verkauf, Mietvertrag oder Zahlung."
+        ]
+      }
+    ]
   }
 }

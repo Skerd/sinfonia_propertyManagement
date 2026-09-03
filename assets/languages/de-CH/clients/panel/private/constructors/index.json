@@ -2,6 +2,47 @@
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
   "title": "Unternehmer",
   "description": "Alle Unternehmer verwalten",
+  "help": {
+    "ariaLabel": "Über Unternehmer",
+    "title": "Über Unternehmer",
+    "overview": "Ein Unternehmer ist eine Firma oder Fachperson, die Sie Gebäuden und optional Einheitenkosten zuordnen. Dieses Verzeichnis sind Auftragnehmer, Architekten, Ingenieure und ähnliche Parteien — kein Benutzerkonto und kein Gebäude.",
+    "sections": [
+      {
+        "title": "Was der Unternehmer speichert",
+        "items": [
+          "Name und MwSt (Pflicht).",
+          "Optional E-Mail, Telefon, Beschreibung, Website und Logo.",
+          "Optionale Adressen (Strasse, PLZ, Stadt und Land Pflicht je Adresse; Kanton/Staat optional; Koordinaten Pflicht, wenn Sie eine Adresse erfassen).",
+          "Parteityp: Auftragnehmer, Architekt, Ingenieur, Quantity Surveyor (QS), Projektleiter (PM), Vermesser oder andere.",
+          "Gewerke (kurzer Freitext), Versicherungsablauf, Leistungsnote 0 bis 100."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Unternehmer erstellen — Name und MwSt Pflicht.",
+          "Suchen und filtern; Zeile öffnen für Identität, Adressen und Noten.",
+          "Löschen ist Soft-Delete und wiederherstellbar. Löschen entfernt die Verknüpfung von Gebäuden, die diesen Unternehmer listen. Die Gebäude bleiben."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Anlegen weist den Unternehmer nirgends zu. Sie wählen ihn später am Gebäude (optionale Liste) oder an einer Einheitenkostenposition.",
+          "Mehrere Unternehmer können an einem Gebäude hängen. Ein Unternehmer an vielen Gebäuden.",
+          "Einheitenkosten können optional auf einen Unternehmer als Lieferanten zeigen."
+        ]
+      },
+      {
+        "title": "Nächster Schritt",
+        "items": [
+          "Firmen und Fachpersonen anlegen.",
+          "Am Gebäude die zutreffenden Unternehmer zuordnen.",
+          "Bei Einheitenkosten den Unternehmer wählen, wenn die Rechnung an dieses Verzeichnis gebunden sein soll."
+        ]
+      }
+    ]
+  },
   "createConstructor": "Unternehmer erstellen",
   "noData": "Keine Unternehmer gefunden",
   "failTitle": "Unternehmer konnten nicht geladen werden",

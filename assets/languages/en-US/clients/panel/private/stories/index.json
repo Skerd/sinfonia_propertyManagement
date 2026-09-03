@@ -27,5 +27,43 @@
     "unit": "Unit",
     "updatedAt": "Updated At",
     "videoGallery": "Video gallery"
+  },
+  "help": {
+    "ariaLabel": "About Stories",
+    "title": "About Stories",
+    "overview": "A Story is a marketing journal article for a project (optionally an edifice or unit). It is public-site content when published. It is not a construction update (site progress) and not a snag (defect).",
+    "sections": [
+      {
+        "title": "What a story holds",
+        "items": [
+          "Project (required), optional edifice, optional unit.",
+          "Story type (required) — from Configurations → Story types.",
+          "Title, full content, optional excerpt for cards.",
+          "Main image, galleries, videos.",
+          "Published flag, published-at, sort order."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a story, attach media, set story type, then publish when copy is ready.",
+          "Unpublished stories stay in the panel only.",
+          "Filter by project, type, published."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Publishing does not change unit status or construction dates.",
+          "Construction updates are the operational progress posts; keep marketing narrative here."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Project, optional edifice/unit, story type. Public site journal. Complementary: Construction updates."
+        ]
+      }
+    ]
   }
 }

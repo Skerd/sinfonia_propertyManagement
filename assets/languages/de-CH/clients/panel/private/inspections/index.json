@@ -74,5 +74,54 @@
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
-  "no": "Nein"
+  "no": "Nein",
+  "help": {
+    "ariaLabel": "Über Abnahmen",
+    "title": "Über Abnahmen",
+    "overview": "Eine Abnahme (Inspection) ist ein terminierter Besuch an einer Einheit mit Typ, Status, optionaler Checkliste und Feststellungen. Das ist Qualitäts-/Übergabe-Nachweis, keine Reservation und keine Mängelliste (Feststellungen werden oft zu Mängeln). Nur geplante Termine lassen sich mit der eigenen Aktion stornieren.",
+    "sections": [
+      {
+        "title": "Was eine Abnahme speichert",
+        "items": [
+          "Einheit (Pflicht), Inspektor, Termin, optionale Checklisten-Vorlage.",
+          "Typ: Erst, Folge, Final, Routine, Reklamation, vor Verkauf, nach Verkauf.",
+          "Status: geplant → in Arbeit → abgeschlossen, oder storniert / verschoben.",
+          "Feststellungen nach Kategorie mit Notizen, Medien, Schwere, optional erledigt-am.",
+          "Stornogrund und -zeitpunkt."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Geplant stornieren — nur im Status geplant.",
+          "Besuch abschliessen durch Feststellungen und Status abgeschlossen.",
+          "Verschieben setzt den Status auf verschoben und ein neues Datum — das ist kein neues Dokument, ausser Sie legen eines an."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Abnahme an einer Einheit anlegen. Filtern nach Einheit, Typ, Status, Datum.",
+          "Sheet für Feststellungen und Medien.",
+          "Firmenweite Liste in der Sidebar; von einer Einheit aus oft eingeschränkt."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Eine Abnahme ändert nie den kommerziellen Einheitenstatus.",
+          "Kein Mangel: offene Defekte mit Gewerk und Zuständigkeit gehören zu Mängel.",
+          "Kein Änderungsantrag: Kundenwünsche laufen dort durch Architekt / Ingenieur / CEO / Finanzen / Lieferung.",
+          "Übergabe-Checklisten in der Konfiguration können als Vorlagen dienen."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit (damit Stockwerk / Gebäude / Projekt).",
+          "Optionale Checkliste. Danach: Mängel, Änderungsanträge, Verkaufsübergabe."
+        ]
+      }
+    ]
+  }
 }

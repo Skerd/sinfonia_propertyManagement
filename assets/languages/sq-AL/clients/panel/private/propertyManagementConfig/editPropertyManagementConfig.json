@@ -24,6 +24,46 @@
     "title": "Ndrysho Shitjet & Dorëzimi",
     "description": "Përditëso të dhënat e këtij Shitjet & Dorëzimi."
   },
+  "help": {
+    "ariaLabel": "Rreth Shitjeve & Dorëzimit",
+    "title": "Rreth Shitjeve & Dorëzimit",
+    "overview": "Këto janë çelësa në nivel kompanie: si miratohen shitjet e reja dhe kur mund të regjistrohet data e dorëzimit. Ka një dosje cilësimesh për kompani — jo listë shitjesh. Ruajtja këtu nuk krijon shitje as paketë dorëzimi.",
+    "sections": [
+      {
+        "title": "Çfarë bëjnë çelësat",
+        "items": [
+          "Kërko miratim menaxheri kur krijohet një shitje — shitjet e reja nisin në pritje. Njësia shënohet prapë e shitur menjëherë. Miratimi e lë të shitur. Refuzimi e kthen të disponueshme dhe e heq shitjen nga njësia.",
+          "Kërko paketë dorëzimi të përfunduar para regjistrimit të dorëzimit — herën e parë që vendosni datën e dorëzimit te shitja, ajo njësi duhet të ketë tashmë një paketë dorëzimi të përfunduar. Ndryshimi i mëvonshëm i një date dorëzimi ekzistuese nuk bllokohet nga kjo portë."
+        ],
+        "body": "Të dyja janë fikur si parazgjedhje. Ndezja nuk rishkruan shitjet historike. Vlen për shitjen tjetër që krijoni dhe për datën e parë tjetër të dorëzimit."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Faqja hap dosjen e vetme të cilësimeve të kësaj kompanie (krijohet automatikisht nëse mungonte).",
+          "Dy çelësa. Ruani për t’i aplikuar."
+          "Nuk ka krijim, fshirje as përjashtim sipas projekti."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Pa miratim, krijimi i shitjes njofton si e krijuar — nuk ka radhë pritjeje.",
+          "Me miratim, shitësi njoftohet që miratimi është në pritje; menaxherët vendosin te faqja Shitjet.",
+          "Paketat e dorëzimit mblidhen te rrjedha njësi / shitje. Kjo faqe rregullon vetëm vulosjen e datës së dorëzimit.",
+          "Ndryshimi i këtyre flamujve nuk i anulon shitjet që janë tashmë në pritje."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Shitjet — miratoni ose refuzoni, regjistroni dorëzimin / transferimin e titullit.",
+          "Njësitë — e shitur kundrejt e disponueshme pas refuzimit.",
+          "Paketat e dorëzimit — duhet të jenë të përfunduara te njësia para datës së parë të dorëzimit kur çelësi i dytë është ndezur."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Ruaj"

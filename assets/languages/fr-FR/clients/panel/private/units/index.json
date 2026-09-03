@@ -114,5 +114,59 @@
   "unitType": "Type d'unité",
   "units": "Unités",
   "yes": "Oui",
-  "rented": "Loué"
+  "rented": "Loué",
+  "help": {
+    "ariaLabel": "À propos des unités",
+    "title": "À propos des unités",
+    "overview": "Une unité est l'espace vendable ou louable — le dossier qui change réellement le statut commercial. Presque tous les flux de vente, location, inspection et coûts pointent vers une unité. Le statut n'est pas un champ libre à forcer à la main : les réservations, ventes et baux le déplacent.",
+    "sections": [
+      {
+        "title": "Ce qu'une unité contient",
+        "items": [
+          "Étage (obligatoire) — cela implique bâtiment et projet. Type d'unité (obligatoire) depuis Configurations → Types d'unités.",
+          "Numéro et nom d'unité (obligatoires) — comment agents et clients l'identifient.",
+          "Surface, surface partagée, surface nette (obligatoires) ; surface de véranda optionnelle.",
+          "Prix et devise (obligatoires). Nombre de pièces et de salles de bain (obligatoires).",
+          "Description, image principale, galeries, vidéos, fichiers supplémentaires, brochure marketing.",
+          "Indicateurs extérieurs et équipements : balcon, terrasse, vue mer / ville / lac, ascenseur.",
+          "Orientation (N, S, E, O et diagonales) et statut de construction (planifié, en construction, prêt, livré).",
+          "Commissions de vente et de réservation % optionnelles — remplacent les défauts du projet pour cette unité.",
+          "Unités liées — lorsque deux unités sont vendues ou présentées ensemble.",
+          "Mise en avant sur la page d'accueil + ordre de tri — mise en évidence sur le site public.",
+          "Polygone optionnel sur le plan d'étage."
+        ]
+      },
+      {
+        "title": "Statut commercial",
+        "items": [
+          "Disponible — peut être réservée, vendue ou louée.",
+          "Réservée — une réservation active la retient. Expirer ou annuler la réservation la rend disponible. Réactiver une réservation annulée seulement si l'unité est libre (ou vendue sans autre réservation) selon les règles de réactivation.",
+          "Vendue — une vente l'a marquée vendue. Réception et transfert de propriété continuent sur la vente. On ne peut pas louer une unité vendue.",
+          "Louée — un bail actif la retient. Résilier (ou expiration quotidienne après la date de fin) la libère vers disponible.",
+          "Indisponible — retirée du marché sans deal."
+        ],
+        "body": "Ne saisissez pas une unité « à la main » en vendue ou louée. Créez ou terminez la réservation, la vente ou le bail correspondant."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Filtrer par projet, bâtiment, étage, type, statut, acheteur et similaires.",
+          "Créer une unité — étage, type, numéro, nom, surfaces, prix et devise obligatoires.",
+          "Ouvrir la carte pour médias, tarifs et indicateurs. Les actions de ligne mènent à réservations, ventes, inspections, baux, coûts — selon les droits.",
+          "Générer la brochure marketing (PDF) depuis l'unité lorsque l'action est disponible — elle fusionne les champs marketing de cette unité.",
+          "La suppression logique est restaurable. Les deals qui pointent déjà vers l'unité restent ; ils ne sont pas annulés automatiquement."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "En amont : Projet → Bâtiment → Étage → Type d'unité.",
+          "Deals : Prospect (intérêt unité optionnel), Réservation, Vente (+ plan de paiement), Bail + loyers.",
+          "Qualité : Inspection, demande de modification, réserve.",
+          "Argent : Coûts d'unité, commissions (via vente ou réservation).",
+          "Parcours typiques : disponible → réservation → vente, ou disponible → bail."
+        ]
+      }
+    ]
+  }
 }

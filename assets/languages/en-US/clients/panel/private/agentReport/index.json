@@ -36,5 +36,33 @@
     "commissionPaid": "Commission Paid",
     "commissionPending": "Commission Pending",
     "avgRate": "Avg. Rate %"
+  },
+  "help": {
+    "ariaLabel": "About Agent report",
+    "title": "About Agent report",
+    "overview": "Agent report is a period performance view: what each agent reserved, sold, and earned in commissions between two dates. It is reporting, not the commission ledger. Changing a deal after the fact changes the next refresh of this report.",
+    "sections": [
+      {
+        "title": "On this page",
+        "items": [
+          "Pick a period (or from/to dates) and apply.",
+          "Read per-agent rows; export when you need a file."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Figures come from Reservations, Sales, and Commissions in the date range.",
+          "It does not pay anyone — use Commissions to manage payout status (pending / paid / voided).",
+          "It does not create reservations or sales."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Agent user, reservation, sale, commission."
+        ]
+      }
+    ]
   }
 }

@@ -1,6 +1,7 @@
 import { compose } from "redux";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import { useMemo, useRef, useState, useEffect } from "react";
 import { Button } from "@coreModule/components/ui/button.tsx";
@@ -138,6 +139,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
             <Header
                 title={buildPageTitle(resolveLanguageKey("title"), [unitName])}
                 description={unitId ? resolveLanguageKey("descriptionWithContext") : resolveLanguageKey("description")}
+                help={readPageHelp(resolveLanguageKey)}
             >
                 <div className="flex gap-2">
                     <HiddenElement hideAll={true}>

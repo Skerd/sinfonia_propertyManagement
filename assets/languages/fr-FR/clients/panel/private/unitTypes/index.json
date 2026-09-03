@@ -2,6 +2,45 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx",
   "title": "Types d’unités",
   "description": "Gérer tous les types d’unités",
+  "help": {
+    "ariaLabel": "À propos des types d’unités",
+    "title": "À propos des types d’unités",
+    "overview": "Un type d’unité est le type catalogue que chaque unité doit choisir (appartement, bureau, parking, etc.). Les catégories organisent les types. Créer un type ne crée pas d’unités — les unités choisissent un type lorsque vous ajoutez le stock.",
+    "sections": [
+      {
+        "title": "Ce que le type d’unité contient",
+        "items": [
+          "Nom et catégorie (obligatoires). Créez d’abord la catégorie.",
+          "Groupe optionnel (libellé libre dans la catégorie), description et icône.",
+          "Indicateur privé — marqueur de catalogue sur la carte du type. Ce n’est pas l’occupation et cela ne change pas le statut de l’unité.",
+          "Le slug est généré à partir du nom de la société et du nom du type. Vous ne le saisissez pas."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer, rechercher et modifier les types.",
+          "La suppression est logique, mais bloquée tant qu’une unité utilise ce type ou qu’un bâtiment le liste comme type de bien."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Chaque unité a exactement un type. Prix, surfaces et disponibilité vivent sur l’unité, pas ici.",
+          "Les bâtiments peuvent aussi lister les types de biens qu’ils proposent, indépendamment des unités déjà créées.",
+          "Renommer met à jour les libellés. Cela ne réécrit pas les prix affichés des unités existantes."
+        ]
+      },
+      {
+        "title": "Étape suivante typique",
+        "items": [
+          "Créer les catégories de types d’unités si elles manquent.",
+          "Créer les types que vous vendez ou louez.",
+          "À l’ajout d’unités, choisir le type correspondant."
+        ]
+      }
+    ]
+  },
   "createUnitType": "Créer un type d’unité",
   "noData": "Aucun type d’unité trouvé",
   "failTitle": "Échec du chargement des types d’unités",

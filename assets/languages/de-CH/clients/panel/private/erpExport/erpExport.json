@@ -40,5 +40,45 @@
     "progressClaims": "Fortschrittsrechnungen",
     "permits": "Bewilligungen",
     "rows": "{count} Zeilen"
+  },
+  "help": {
+    "ariaLabel": "Über ERP-Export",
+    "title": "Über ERP-Export",
+    "overview": "Der ERP-Export erzeugt Dateien für Buchhaltungssysteme. Datensätze wählen, optional Projekt, Zeitraum. Kein Direct-Posting nach SAP/Abacus — JSON-Vorschau oder CSV-Download zum Einlesen dort.",
+    "sections": [
+      {
+        "title": "Datensätze",
+        "items": [
+          "Verkäufe — abgeschlossene Verkäufe im Zeitraum.",
+          "Provisionen — Auszahlungszeilen.",
+          "Zahlungsplanraten — Plan/Belege.",
+          "Mietzahlungen — Monatszeilen.",
+          "Einheitenkosten — eigentümerseitiger Aufwand.",
+          "BOQ, Kostenbindungen, Nachträge/Forderungen, Bewilligungen — Baudaten, falls vorhanden."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Mindestens einen Datensatz, optional Projekt, Von/Bis, dann JSON-Vorschau oder CSV.",
+          "Leeres Ergebnis = keine Quellzeilen — Zeitraum erweitern oder Projektfilter weg.",
+          "Vorschautabellen = CSV-Spalten."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Nur Lesen. Gleicher Filter erzeugt eine neue Datei aus aktuellen Daten.",
+          "Markiert keine Rechnungen als exportiert und ändert keinen Zahlungsstatus.",
+          "Einheitenkosten sind Eigentümerspesen; Mietzahlungen sind Mietermonate — in der Buchhaltung nicht mischen, ausser der Treuhänder sagt es."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Was Sie ankreuzten: Verkäufe, Provisionen, Pläne, Miete, Kosten, optionale Bau-Collections."
+        ]
+      }
+    ]
   }
 }

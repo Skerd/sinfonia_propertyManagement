@@ -24,5 +24,50 @@
   "rentOutstanding": "Affitto residuo",
   "rentOverdue": "Affitto scaduto",
   "activeLeases": "Contratti attivi",
-  "viewRentalsHub": "Apri hub locazioni"
+  "viewRentalsHub": "Apri hub locazioni",
+  "help": {
+    "ariaLabel": "Informazioni sulla Dashboard",
+    "title": "Informazioni sulla Dashboard immobiliare",
+    "overview": "La Dashboard è il cockpit operativo degli edifici di una società. Scegliete un edificio; il resto della pagina (KPI, mix di stati, grafici ricavi, elenco unità, avvisi di pagamento) segue quel palazzo. È dove si governa la giacenza nel quotidiano. Non crea edifici, unità o affari — li legge.",
+    "sections": [
+      {
+        "title": "Disposizione",
+        "items": [
+          "Galleria edifici in alto — la selezione focalizza ogni KPI e l'elenco unità.",
+          "Riga KPI: unità totali, vendute, incassate, prezzo medio al m², più canone incassato / dovuto / scaduto e contratti attivi quando esistono dati locativi.",
+          "Il periodo (7 giorni, 30 giorni, 3 mesi, 12 mesi) cambia le finestre di incasso, non la giacenza di unità.",
+          "I grafici mostrano il mix di stati e i ricavi nel periodo.",
+          "Tabella/schede unità in basso sono la stessa risorsa Unità, già limitata all'edificio scelto.",
+          "Gli avvisi di pagamento collegano a piani di pagamento / prenotazioni da seguire."
+        ]
+      },
+      {
+        "title": "Come si producono le figure",
+        "items": [
+          "Totale / vendute / prenotate / affittate sono conteggi delle unità di quell'edificio per stato commerciale.",
+          "Incassato deriva da ricevute di vendita e attività del piano di pagamento nel periodo — non da un obiettivo digitato.",
+          "La media €/m² usa prezzi e superfici di quelle unità; non riprezza nulla.",
+          "Canone incassato / dovuto / scaduto somma le righe di canone dei contratti sulle unità di questo edificio.",
+          "Contratti attivi conta i contratti ancora attivi su quelle unità."
+        ]
+      },
+      {
+        "title": "Cosa questa pagina non fa",
+        "items": [
+          "Non cambia lo stato dell'unità. Prenotate, vendete o affittate dagli elenchi dedicati.",
+          "Selezionare un altro edificio non cambia il progetto — ogni edificio appartiene già a un progetto.",
+          "Non è la Panoramica (intera società) né la Dashboard di gruppo (più società)."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Edificio → Piano → Unità (giacenza).",
+          "Prenotazione / Vendita (venduto e incassato).",
+          "Contratto di locazione / Canone (KPI affitti).",
+          "Usate «Visualizza piani di pagamento» / «Visualizza Hub locazioni» quando compaiono quegli avvisi."
+        ]
+      }
+    ]
+  }
 }

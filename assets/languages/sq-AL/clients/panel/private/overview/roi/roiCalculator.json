@@ -50,5 +50,34 @@
     "unitsByStatusTitle": "Njësitë sipas statusit",
     "totalUnits": "Totali",
     "otherUnits": "Të tjera"
+  },
+  "help": {
+    "ariaLabel": "Rreth Llogaritësit ROI",
+    "title": "Rreth Llogaritësit ROI",
+    "overview": "Llogaritësi ROI vlerëson kthimin e investimit të një njësie (të ngushtuar sipas projektit / ndërtesës / katit) nga kostot kundrejt të ardhurave të shitjes ose qirasë. Është llogaritës mbi dosje ekzistuese, jo dokument ROI i ruajtur as moduli i kontrollit të kostove / buxhetit të ndërtimit.",
+    "sections": [
+      {
+        "title": "Si ta ekzekutoni",
+        "items": [
+          "Zgjidhni projektin, opsionalisht ndërtesën dhe katin, pastaj një njësi — llogaritja niset me zgjedhjen.",
+          "Përmbledhja dhe ndarja sipas njësisë tregojnë çmimin e shitjes kundrejt kostove kundrejt kthimit të nënkuptuar.",
+          "Eksport PDF për një pamje të llogaritjes aktuale."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Kostot vijnë nga kostot e njësisë (dhe shpenzimet e lidhura). Të ardhurat nga çmimi i shitjes ose supozimet e qirasë në llogaritës.",
+          "Ndryshimi i dosjeve burim dhe rizgjedhja e njësisë rillogarit. Asgjë nuk ruhet si version buxheti këtu.",
+          "Buxhetet e ndërtimit, BOQ dhe angazhimet e kostos jetojnë jashtë kësaj menuje pasurish, përveçse t'i hapni ato module veçmas."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Njësia, kostot e njësisë, fushat e çmimit të shitjes, shifra qiraje opsionale."
+        ]
+      }
+    ]
   }
 }

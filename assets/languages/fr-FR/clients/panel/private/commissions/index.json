@@ -65,5 +65,43 @@
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
-  "no": "Non"
+  "no": "Non",
+  "help": {
+    "ariaLabel": "À propos des commissions",
+    "title": "À propos des commissions",
+    "overview": "Une commission est la ligne de versement agent née d'une réservation ou d'une vente. C'est le journal, pas le rapport agents (vue de performance sur une période). Le statut avance en attente → en attente d'approbation → payée, ou annulée lorsque le deal source est annulé ou qu'un paiement est reversé.",
+    "sections": [
+      {
+        "title": "Ce qu'une commission contient",
+        "items": [
+          "Type de source : réservation ou vente, plus le dossier source.",
+          "Agent, montants, devise, taux utilisés lors de l'enregistrement.",
+          "Statut : en attente, en attente d'approbation, payée, annulée.",
+          "Preuves / notes selon la façon dont vos rôles exposent les champs."
+        ]
+      },
+      {
+        "title": "Comment elle naît",
+        "items": [
+          "Payer ou réactiver une réservation enregistre une commission de réservation.",
+          "Une vente enregistre une commission de vente selon les taux de vente/réservation (projet ou surcharge d'unité).",
+          "N'inventez pas une commission sans deal source — elle ne resterait pas cohérente avec le tableau de bord ni le rapport agents."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Annuler une réservation ou revenir sur un acompte impayé annule la commission en attente — pas une déjà marquée payée.",
+          "Revenir sur un paiement de réservation est bloqué si cette commission est déjà payée.",
+          "Payer une commission ici est l'étape de versement. Le rapport agents ne fait que lire les deals d'une plage de dates ; il ne marque pas payé."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Réservation ou Vente, utilisateur agent, Unité. Rapport agents. L'export ERP peut inclure un jeu commissions."
+        ]
+      }
+    ]
+  }
 }

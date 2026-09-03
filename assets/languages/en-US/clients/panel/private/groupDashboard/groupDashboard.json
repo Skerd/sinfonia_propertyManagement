@@ -18,5 +18,34 @@
   "noBranchesTitle": "No branch companies found",
   "noBranchesDescription": "Create child companies by setting their parent company to this organisation to compare KPIs across branches.",
   "failTitle": "Could not load group dashboard",
-  "failDescription": "Something went wrong while fetching group KPIs. Try again."
+  "failDescription": "Something went wrong while fetching group KPIs. Try again.",
+  "help": {
+    "ariaLabel": "About Group dashboard",
+    "title": "About Group dashboard",
+    "overview": "Group dashboard aggregates KPIs across branch companies that share a parent organisation. Headquarters sees the group total plus a per-branch table. A branch sees itself and siblings. This is a read-model, not a place to edit units.",
+    "sections": [
+      {
+        "title": "KPIs",
+        "items": [
+          "Total / available / sold / rented units.",
+          "Revenue, commissions, active leases, open snags."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Computed at a timestamp shown in the header — refresh reloads the aggregation.",
+          "Child companies must have their parent company set to this organisation or they will not appear.",
+          "Each branch’s operational work still happens in that company’s own Real Estate menus after you switch company.",
+          "It is not Overview (one company) and not Dashboard (one edifice)."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Rolls up Units, Sales, Commissions, Leases, Snags per company."
+        ]
+      }
+    ]
+  }
 }

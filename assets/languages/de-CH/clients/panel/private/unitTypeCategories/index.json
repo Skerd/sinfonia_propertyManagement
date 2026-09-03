@@ -2,6 +2,41 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
   "title": "Einheitstyp-Kategorien",
   "description": "Einheitstyp-Kategorien verwalten",
+  "help": {
+    "ariaLabel": "Über Einheitstyp-Kategorien",
+    "title": "Über Einheitstyp-Kategorien",
+    "overview": "Eine Einheitstyp-Kategorie ist eine Gruppierung für Einheitstypen (z. B. Wohnen gegenüber Gewerbe). Sie hat nur einen Namen. Einheiten wählen keine Kategorie direkt — sie wählen einen Einheitstyp, und der Typ gehört zur Kategorie.",
+    "sections": [
+      {
+        "title": "Was die Kategorie speichert",
+        "items": [
+          "Name (Pflicht). Keine weiteren Felder."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Kategorien erstellen, suchen und bearbeiten.",
+          "Löschen ist Soft-Delete, wird aber blockiert, solange ein Einheitstyp diese Kategorie nutzt. Zuerst jene Typen umhängen oder entfernen."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Kategorien anlegen, bevor die Einheitstypen sie brauchen. Ein Einheitstyp lässt sich ohne Kategorie nicht speichern.",
+          "Umbenennen ändert die Bezeichnung überall, wo der Typ erscheint. Einheiten und Preise bleiben unverändert."
+        ]
+      },
+      {
+        "title": "Nächster Schritt",
+        "items": [
+          "Benötigte Kategorien anlegen.",
+          "Einheitstypen unter diesen Kategorien anlegen.",
+          "Beim Anlegen von Einheiten einen Einheitstyp wählen — die Kategorie kommt mit dem Typ."
+        ]
+      }
+    ]
+  },
   "createUnitTypeCategory": "Kategorie erstellen",
   "noData": "Keine Einheitstyp-Kategorien gefunden",
   "failTitle": "Einheitstyp-Kategorien konnten nicht geladen werden",

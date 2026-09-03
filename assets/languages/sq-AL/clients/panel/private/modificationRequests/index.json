@@ -152,5 +152,55 @@
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",
-  "no": "Nr"
+  "no": "Nr",
+  "help": {
+    "ariaLabel": "Rreth Kërkesave për modifikim",
+    "title": "Rreth Kërkesave për modifikim",
+    "overview": "Një kërkesë për modifikim është një ndryshim i kërkuar nga klienti mbi një njësi (planimetri, përfundime, shtesa) që duhet të kalojë një zinxhir aprovimi me faza. Nuk është defekt as urdhër ndryshimi mbi një kontratë ndërtimi, edhe pse një VO i mëvonshëm mund të ekzistojë te moduli i ndërtimit. Statusi është rrjedha e punës; nuk i kapërceni fazat duke ndryshuar statusin si tekst të lirë.",
+    "sections": [
+      {
+        "title": "Çfarë mban",
+        "items": [
+          "Njësia, përshkrimi i ndryshimit, media, dhe statusi aktual i rrjedhës.",
+          "Aprovime me faza: arkitekti, inxhinieri, CEO — secila me vendim, shënime, shqyrtues, vulë kohe, media opsionale.",
+          "Plani i materialeve (artikuj, sasi, çmime) kur kushtohet ndryshimi.",
+          "Hapat e aprovimit financiar / kostoja e klientit dhe konfirmimi i dorëzimit."
+        ]
+      },
+      {
+        "title": "Rrjedha e punës (veprimet)",
+        "items": [
+          "Aprovo te arkitekti — nëse po, shkon drejt inxhinierit; nëse jo, kthehet te rishikimi i arkitektit.",
+          "Aprovo te inxhinieri, pastaj CEO — çdo fazë kontrollon që keni të drejtë shkrimi mbi atë bllok aprovimi.",
+          "Dërgo rishikimin — klienti ose agjenti dërgon një propozim të përditësuar pas një refuzimi.",
+          "Financo kërkesën — ana e kostos pas aprovimeve teknike.",
+          "Aprovimi i kostos së klientit — blerësi pranon ndryshimin e çmuar.",
+          "Dorëzo — shëno ndryshimin fizik si të bërë."
+        ],
+        "body": "Çdo veprim është i ligjshëm vetëm në statusin përkatës. API-ja e refuzon fazën e gabuar në vend që ta kapërcejë në heshtje."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një kërkesë nga një njësi ose nga kjo listë e shoqërisë.",
+          "Hapni fletën për të parë zinxhirin, materialet dhe veprimet e disponueshme për rolin tuaj.",
+          "Filtroni sipas statusit dhe njësisë."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Nuk e rezervon as e shet njësinë.",
+          "Nuk zëvendëson Defektet (të metat e gjetura në inspektim).",
+          "Njoftimet mund të nisen te njerëzit e zinxhirit ndërsa vendimet regjistrohen."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Njësia. Inspektim opsional që motivoi ndryshimin. Artefakte ndërtimi të mëvonshme (paketë pune / VO) nëse përdoren."
+        ]
+      }
+    ]
+  }
 }

@@ -74,5 +74,61 @@
   "yes": "Sì",
   "no": "No",
   "expired": "Scaduta",
-  "converted": "Convertita"
+  "converted": "Convertita",
+  "help": {
+    "ariaLabel": "Informazioni sulle prenotazioni",
+    "title": "Informazioni sulle prenotazioni",
+    "overview": "Una prenotazione trattiene un'unità per un cliente fino a scadenza, annullamento o conversione in vendita. Creare una prenotazione attiva imposta l'unità su prenotata. Questo è il blocco — un lead non lo è. Caparra pagata, e-mail cliente e commissioni sono azioni su questo record.",
+    "sections": [
+      {
+        "title": "Cosa contiene una prenotazione",
+        "items": [
+          "Unità, agente prenotante, società prenotante, cliente (tutti obbligatori).",
+          "Data prenotazione (non nel futuro) e data di scadenza (obbligatoria).",
+          "Importo e valuta caparra opzionali, metodo di pagamento, codice referral, note, fonte.",
+          "File del contratto di prenotazione e documenti aggiuntivi.",
+          "Flag pagato — se la caparra è registrata come pagata.",
+          "Flag attivo e stato: attiva, annullata, scaduta.",
+          "Motivo di annullamento e data/ora quando è annullata.",
+          "Timbri e-mail (conferma inviata, reminder a 3 giorni / 1 giorno / stesso giorno, mail di scadenza) per vedere cosa il cliente ha già ricevuto."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Paga — marca la caparra pagata. Registra una commissione di prenotazione quando le regole lo consentono, e può e-mailare il cliente.",
+          "Storna pagamento — solo se l'unità non è già venduta e la commissione di prenotazione non è già pagata. Annulla una commissione in sospeso.",
+          "Annulla — disattiva la prenotazione, memorizza opzionalmente un motivo, annulla la commissione in sospeso, e se questa prenotazione tiene ancora l'unità, la rende disponibile.",
+          "Reintegra — solo se la prenotazione è inattiva e l'unità è libera (disponibile, o venduta senza altra prenotazione secondo la regola). Rimette l'unità su prenotata e ri-registra la commissione.",
+          "E-mail cliente manuale — conferma, reminder a 3 giorni / 1 giorno / oggi, giorni rimanenti, o avviso di scadenza. Ogni reminder è consentito solo nella finestra di calendario corrispondente. La mail di scadenza imposta anche lo stato su scaduta e libera l'unità se questa riga la teneva ancora."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare una prenotazione su un'unità disponibile con un utente cliente reale.",
+          "Filtrare per unità, cliente, agente, stato, date.",
+          "Aprire la scheda per caparra, documenti, paga/annulla/reintegra ed e-mail.",
+          "Convertire in vendita da Vendite (contanti o piano di pagamento) — la vendita può conservare la prenotazione e i campi di conversione della caparra."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Un job giornaliero può far scadere le prenotazioni oltre il giorno di scadenza, e-mailare il cliente e liberare l'unità — stesso esito dell'invio a mano della mail di scadenza.",
+          "Non si può prenotare un'unità già prenotata, venduta o affittata.",
+          "Commissioni: una commissione di prenotazione in sospeso compare quando paga/reintegra la registra; annullare o stornare il pagamento annulla la commissione in sospeso (non già pagata).",
+          "Contratti e clienti elenca questa prenotazione come documento commerciale; non la duplica."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Stato unità disponibile → prenotata → disponibile (annulla/scade) oppure → venduta (via Vendita).",
+          "Utente cliente, agente, lead opzionale precedente.",
+          "Commissione (fonte prenotazione). Seguito: Vendita, eventualmente collegata a questa prenotazione."
+        ]
+      }
+    ]
+  }
 }

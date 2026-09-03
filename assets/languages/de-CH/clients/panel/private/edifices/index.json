@@ -75,5 +75,52 @@
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
   "no": "Nein",
-  "energyClass": "Energieklasse"
+  "energyClass": "Energieklasse",
+  "help": {
+    "ariaLabel": "Über Gebäude",
+    "title": "Über Gebäude",
+    "overview": "Ein Gebäude (Edifice) ist der physische Bau in einem Projekt — mit Adresse, Investition, Bauunternehmen und Marketingmedien. Stockwerke und Einheiten leben darunter. Ohne mindestens ein Gebäude gibt es keinen verkaufbaren Bestand. Dashboard-KPIs sind gebäudebezogen.",
+    "sections": [
+      {
+        "title": "Was ein Gebäude speichert",
+        "items": [
+          "Name und übergeordnetes Projekt (beide Pflicht).",
+          "Hauptbild (Pflicht) plus optionale Galerien, Videos, Dateien, Broschüre.",
+          "Adresse: Strasse, PLZ, Land, Stadt, optional Kanton/Staat, Koordinaten.",
+          "Investitionswert und -währung — Überblick/Dashboard/ROI lesen das; Einheitspreise werden nicht automatisch umgeschrieben.",
+          "Optionale Verkaufswährung, Preis/m², Veranda-Preis/m² — Leitplanken, kein Massen-Update der Einheiten.",
+          "Fakten: Fläche, Grünfläche, Geschosse über/unter Terrain, Parkplätze, Garagen, Distanz zum Zentrum.",
+          "Energieklasse, Baubewilligungsnummer, Baustart / erwartete / tatsächliche Fertigstellung.",
+          "Bauunternehmen, kommerzielle und Quartier-Einrichtungen, Immobilientypen.",
+          "Rollups, die Sie nicht tippen: Stockwerke, Einheiten, verfügbare Einheiten, Einheitenfläche."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Vom Projekt kommend ist die Liste bereits gefiltert. Von der Sidebar sehen Sie alle Gebäude der Firma.",
+          "Gebäude anlegen — Projekt, Hauptbild und Adresse Pflicht.",
+          "Karte öffnen zum Bearbeiten. Zeilenaktionen führen zu Stockwerken.",
+          "Soft-Delete ist wiederherstellbar. Stockwerke/Einheiten entstehen nicht automatisch."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Dashboard: ein Gebäude wählen, alle KPIs und die Einheitenliste folgen.",
+          "Öffentliche Gebäudeseiten und Baufortschritt können ein Gebäude adressieren.",
+          "Preis/m² und Investition füttern Portfolio-Sichten, nicht unit.price.",
+          "Ohne Stockwerke (oder ohne Einheiten) bleibt das Dashboard leer."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Eltern: Projekt. Kinder: Stockwerk → Einheit.",
+          "Auch: Baufortschritt, Stories, Einheitenkosten, Mängel, Miete, Reservationen, Verkäufe.",
+          "Nächster Schritt: Stockwerke (Ebene, Fläche, Hauptbild), dann Einheiten."
+        ]
+      }
+    ]
+  }
 }

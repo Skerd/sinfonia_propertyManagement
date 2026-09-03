@@ -44,5 +44,48 @@
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",
   "no": "Nr",
-  "view": "Shiko"
+  "view": "Shiko",
+  "help": {
+    "ariaLabel": "Rreth Kateve",
+    "title": "Rreth Kateve",
+    "overview": "Një kat është një nivel i një ndërtese. Njësitë rrinë mbi një kat. Dosja është shtresa e planit (emri, numri i nivelit, sipërfaqja, aksesueshmëria, hapësirat e përbashkëta, media) plus një kontur opsional në planin e ndërtesës. Nuk është status tregtar — njësitë mbajnë e lirë / e rezervuar / e shitur / me qira.",
+    "sections": [
+      {
+        "title": "Çfarë mban një kat",
+        "items": [
+          "Emri dhe ndërtesa prind (të detyrueshme).",
+          "Numri i nivelit — rendorja e këtij kati (mund të jetë negativ për nëntokën).",
+          "Sipërfaqja e pllakës së katit (e detyrueshme).",
+          "Flamujt i aksesueshëm / dalje emergjence, përshkrimi, dhe një listë hapësirash të përbashkëta (holi, emra korridoresh dhe etiketime të ngjashme).",
+          "Imazhi kryesor (i detyrueshëm) plus galeri, video, skedarë shtesë dhe broshurë marketingu opsionale.",
+          "Koordinata poligoni opsionale — konturi i vizatuar në planin e ndërtesës që plani publik ose i panelit ta theksojë këtë kat.",
+          "Numri i njësive në kat llogaritet nga fëmijët; nuk e shkruani."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Hapur nga një ndërtesë, lista kufizohet te ajo ndërtesë.",
+          "Krijoni një kat, pastaj shtoni njësi. Një kat me zero njësi është i vlefshëm por nuk do të tregojë stok.",
+          "Hapni një kartë për të ndryshuar të dhënat e planit dhe median. Veprimet e rreshtit çojnë te njësitë e atij kati.",
+          "Fshirja e butë mund të rikthehet. Njësitë e katit nuk fshihen automatikisht."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Njësitë duhet të zgjedhin një kat (dhe kështu një ndërtesë dhe projekt në zinxhir).",
+          "Llogaritësi ROI mund të ngushtohet sipas katit kur vlerëson një njësi.",
+          "Kati nuk rezervohet as shitet si i tërë — çdo njësi ka statusin e vet."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Prindi: Ndërtesa (që ka një Projekt). Fëmijët: Njësitë.",
+          "Hapi tjetër tipik: krijoni njësi me lloj, numër, sipërfaqe, dhoma, çmim dhe valutë."
+        ]
+      }
+    ]
+  }
 }

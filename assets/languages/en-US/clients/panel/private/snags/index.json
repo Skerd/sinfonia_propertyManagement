@@ -50,5 +50,53 @@
         "critical": "Critical"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "About Snagging list",
+    "title": "About Snags",
+    "overview": "A Snag is a defect / punch-list item on a unit. Closing snags is quality-gate work, not a sale action. Status is open → in progress → resolved, or rejected. Assign someone before starting work.",
+    "sections": [
+      {
+        "title": "What a snag holds",
+        "items": [
+          "Unit (required), title (required), optional description, location on the unit, trade.",
+          "Severity: low, medium, high, critical.",
+          "Reported by, assigned to, due date, resolved-at.",
+          "Photos, notes, root cause, cost impact.",
+          "Flags: warranty item, DLP (defects liability period).",
+          "Optional work package or variation order when construction is tracking the fix."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Assign — only while open or in progress.",
+          "Start working — only from open, and only if someone is assigned; sets in progress.",
+          "Finish working — only from in progress; can attach photos/notes and moves to resolved.",
+          "Rejected is a status for items that will not be fixed as requested — not the same as resolved."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create snags from a unit or from this company-wide list.",
+          "Filter by unit, severity, status, assignee.",
+          "Open snags appear on Group dashboard KPIs."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A snag does not freeze a sale. Handover processes may still require snags closed as a business rule.",
+          "Not a modification request (a change the client asked for) and not an inspection (a checklist visit)."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit. Optional work package / variation order. Inspections often precede or follow snags."
+        ]
+      }
+    ]
   }
 }

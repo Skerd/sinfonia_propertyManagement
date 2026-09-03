@@ -75,5 +75,52 @@
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
   "no": "Non",
-  "energyClass": "Classe énergétique"
+  "energyClass": "Classe énergétique",
+  "help": {
+    "ariaLabel": "À propos des bâtiments",
+    "title": "À propos des bâtiments",
+    "overview": "Un bâtiment (édifice) est la construction physique dans un projet — avec adresse, investissement, constructeurs et médias marketing. Étages et unités vivent en dessous. Sans au moins un bâtiment, il n'y a pas de stock vendable. Les KPI du tableau de bord sont à l'échelle du bâtiment.",
+    "sections": [
+      {
+        "title": "Ce qu'un bâtiment contient",
+        "items": [
+          "Nom et projet parent (tous deux obligatoires). Le projet ne peut pas être un « stock vide » sans bâtiments.",
+          "Image principale (obligatoire) plus galeries, vidéos, fichiers supplémentaires et brochure marketing optionnels.",
+          "Adresse : rue, code postal, pays, ville, canton/État optionnel, coordonnées carte (latitude / longitude). C'est l'emplacement utilisé par le site public et les e-mails.",
+          "Valeur d'investissement et devise d'investissement — ce qui a été mis dans le bâtiment ; vue d'ensemble / tableau de bord / ROI le lisent, ils ne repricent pas les unités à partir de là.",
+          "Devise de vente, prix au m² et prix véranda au m² optionnels — garde-fous de tarification, pas une mise à jour automatique de chaque prix d'unité.",
+          "Faits du bâtiment : surface totale, espaces verts, étages hors sol / sous-sol, parkings, garages, distance au centre-ville.",
+          "Classe énergétique, numéro de permis de construire, dates de début / achèvement prévu / achèvement réel.",
+          "Constructeurs rattachés, équipements commerciaux, équipements de quartier, types de biens.",
+          "Agrégats que vous ne saisissez pas : total étages, total unités, unités disponibles, surface totale des unités — calculés depuis les enfants."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Arrivé depuis un projet, la liste est déjà filtrée. Depuis la barre latérale, vous voyez tous les bâtiments de la société.",
+          "Créer un bâtiment — il doit appartenir à un projet ; image principale et adresse obligatoires.",
+          "Ouvrir une carte pour modifier le bâtiment. Les actions de ligne mènent aux étages de cet édifice.",
+          "La suppression logique est restaurable. Étages et unités sont des dossiers séparés ; ils ne sont pas créés automatiquement."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Tableau de bord : vous choisissez un bâtiment et tous les KPI et la liste d'unités le suivent.",
+          "Les pages publiques de bâtiment et les avancements de chantier peuvent viser un édifice.",
+          "Prix au m² et investissement alimentent les vues portefeuille. Les modifier ne réécrit pas le prix des unités.",
+          "Un bâtiment sans étages (ou des étages sans unités) affichera un stock vide au tableau de bord."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Parent : Projet. Enfants : Étage → Unité.",
+          "Aussi référencé par avancements de chantier, récits, coûts d'unité, réserves, baux, réservations et ventes.",
+          "Étape suivante typique : ajouter des étages (numéro de niveau, surface, image principale), puis des unités."
+        ]
+      }
+    ]
+  }
 }

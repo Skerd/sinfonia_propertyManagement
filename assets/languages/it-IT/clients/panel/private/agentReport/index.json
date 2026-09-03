@@ -36,5 +36,33 @@
     "commissionPaid": "Commissione pagata",
     "commissionPending": "Commissione in sospeso",
     "avgRate": "Tasso medio %"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sul report agenti",
+    "title": "Informazioni sul report agenti",
+    "overview": "Il report agenti è una vista di performance di periodo: ciò che ogni agente ha prenotato, venduto e guadagnato in commissioni tra due date. È reporting, non il libro mastro delle commissioni. Modificare un deal dopo i fatti cambia il prossimo caricamento di questo report.",
+    "sections": [
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Scegliere un periodo (o date da/a) e applicare.",
+          "Leggere le righe per agente; esportare quando serve un file."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Le cifre derivano da Prenotazioni, Vendite e Commissioni nell'intervallo di date.",
+          "Non paga nessuno — usate Commissioni per gestire lo stato di erogazione (in sospeso / pagata / annullata).",
+          "Non crea prenotazioni né vendite."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Utente agente, prenotazione, vendita, commissione."
+        ]
+      }
+    ]
   }
 }

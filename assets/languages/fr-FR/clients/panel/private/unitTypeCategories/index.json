@@ -2,6 +2,41 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
   "title": "Catégories de types d’unités",
   "description": "Gérer les catégories de types d’unités",
+  "help": {
+    "ariaLabel": "À propos des catégories de types d’unités",
+    "title": "À propos des catégories de types d’unités",
+    "overview": "Une catégorie de type d’unité est une étiquette de regroupement pour les types d’unités (par exemple résidentiel contre commercial). Elle n’a qu’un nom. Les unités ne choisissent pas une catégorie — elles choisissent un type d’unité, et ce type appartient à une catégorie.",
+    "sections": [
+      {
+        "title": "Ce que la catégorie contient",
+        "items": [
+          "Nom (obligatoire). Aucun autre champ."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer, rechercher et modifier les catégories.",
+          "La suppression est logique, mais bloquée tant qu’un type d’unité utilise encore cette catégorie. Réaffectez ou retirez d’abord ces types."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Créez les catégories avant les types d’unités qui en ont besoin. Un type d’unité ne peut pas être enregistré sans catégorie.",
+          "Renommer met à jour le libellé partout où le type s’affiche. Cela ne change ni les unités ni les prix."
+        ]
+      },
+      {
+        "title": "Étape suivante typique",
+        "items": [
+          "Créer les catégories nécessaires.",
+          "Créer les types d’unités sous ces catégories.",
+          "À la création d’unités, choisir un type — la catégorie suit le type."
+        ]
+      }
+    ]
+  },
   "createUnitTypeCategory": "Créer une catégorie",
   "noData": "Aucune catégorie de type d’unité trouvée",
   "failTitle": "Échec du chargement des catégories de types d’unités",

@@ -6,6 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {BranchKpi, GroupDashboardResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/groupDashboard/groupDashboard.response.type.ts";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
@@ -82,7 +83,7 @@ function GroupDashboard({
 
     return (
         <div className="flex-full gap-4">
-            <Header title={pageTitle} description={description}>
+            <Header title={pageTitle} description={description} help={readPageHelp(resolveLanguageKey)}>
                 <p className="text-muted-foreground text-xs whitespace-nowrap">
                     {resolveLanguageKey("computedAt")} {new Date(data.computedAt).toLocaleString()}
                 </p>

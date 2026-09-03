@@ -50,5 +50,53 @@
         "critical": "Kritisch"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Über Mängelliste",
+    "title": "Über Mängel",
+    "overview": "Ein Mangel ist ein Defekt / Punch-List-Eintrag an einer Einheit. Schliessen ist Qualitätsarbeit, keine Verkaufsaktion. Status: offen → in Arbeit → behoben, oder abgelehnt. Vor Arbeitsbeginn jemanden zuweisen.",
+    "sections": [
+      {
+        "title": "Was ein Mangel speichert",
+        "items": [
+          "Einheit (Pflicht), Titel (Pflicht), optionale Beschreibung, Lage, Gewerk.",
+          "Schwere: niedrig, mittel, hoch, kritisch.",
+          "Gemeldet von, zugewiesen an, Fälligkeit, behoben-am.",
+          "Fotos, Notizen, Ursache, Kostenwirkung.",
+          "Flags: Garantie, DLP.",
+          "Optionales Arbeitspaket oder Nachtrag, wenn der Bau die Behebung führt."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Zuweisen — nur offen oder in Arbeit.",
+          "Arbeit starten — nur von offen und nur mit Zuweisung; setzt in Arbeit.",
+          "Arbeit beenden — nur von in Arbeit; Fotos/Notizen möglich, setzt behoben.",
+          "Abgelehnt = wird so nicht behoben — nicht dasselbe wie behoben."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Mängel von einer Einheit oder dieser Liste anlegen.",
+          "Filtern nach Einheit, Schwere, Status, Zuständigkeit.",
+          "Offene Mängel erscheinen in den Gruppendashboard-KPIs."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ein Mangel friert keinen Verkauf ein. Übergabeprozesse können geschlossene Mängel trotzdem verlangen.",
+          "Kein Änderungsantrag und keine Abnahme."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit. Optionales Arbeitspaket / VO. Abnahmen oft davor oder danach."
+        ]
+      }
+    ]
   }
 }

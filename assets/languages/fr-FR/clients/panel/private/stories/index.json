@@ -27,5 +27,43 @@
     "unit": "Unité",
     "updatedAt": "Mis à jour le",
     "videoGallery": "Galerie vidéo"
+  },
+  "help": {
+    "ariaLabel": "À propos des récits",
+    "title": "À propos des récits",
+    "overview": "Un récit est un article de journal marketing pour un projet (optionnellement un bâtiment ou une unité). Publié, il apparaît sur le site public. Ce n'est pas un avancement de chantier ni une réserve.",
+    "sections": [
+      {
+        "title": "Ce qu'un récit contient",
+        "items": [
+          "Projet (obligatoire), bâtiment optionnel, unité optionnelle.",
+          "Type de récit (obligatoire) — depuis Configurations → Types d'histoires.",
+          "Titre, contenu intégral, extrait optionnel pour les cartes.",
+          "Image principale, galeries, vidéos.",
+          "Indicateur publié, date de publication, ordre de tri."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un récit, joindre les médias, définir le type, puis publier lorsque le texte est prêt.",
+          "Les récits non publiés restent dans le panel seulement.",
+          "Filtrer par projet, type, publié."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Publier ne change ni le statut d'unité ni les dates de construction.",
+          "Les avancements de chantier sont les posts opérationnels de progrès ; gardez le récit marketing ici."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Projet, bâtiment/unité optionnels, type de récit. Journal du site public. Complémentaire : Avancement des travaux."
+        ]
+      }
+    ]
   }
 }

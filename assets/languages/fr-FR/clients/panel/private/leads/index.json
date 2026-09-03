@@ -59,5 +59,50 @@
         "other": "Autre"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "À propos des prospects",
+    "title": "À propos des prospects",
+    "overview": "Un prospect est une personne dans le pipeline commercial avant qu'une réservation ou une vente n'existe. C'est du CRM, pas un verrou sur une unité. Le statut est une étape commerciale que vous mettez à jour en travaillant la personne ; il ne change pas la disponibilité. Gagner un prospect ne crée pas de réservation — vous la créez sous Réservations sur une unité disponible.",
+    "sections": [
+      {
+        "title": "Ce qu'un prospect contient",
+        "items": [
+          "Prénom (obligatoire), nom, e-mail, téléphone optionnels.",
+          "Statut : nouveau → contacté → qualifié → proposition → négociation → gagné ou perdu.",
+          "Source : site web, recommandation, réseaux, événement, prospection à froid, visite, chat, ou autre.",
+          "Intérêt : partenariats, investissements, support plateforme, réservation, ou autre.",
+          "Intérêt projet et unité optionnels — ce qu'ils ont demandé, pas une retenue.",
+          "Budget et devise optionnels, notes, agent assigné, date de suivi.",
+          "Journal d'activité — notes horodatées via l'action « ajouter une activité » (qui a fait quoi)."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un prospect dès qu'une personne s'informe. Assigner un agent et une date de suivi si vous travaillez une file.",
+          "Ouvrir la carte pour changer le statut, ajouter des notes et consigner l'activité.",
+          "Filtrer par statut, source, projet, responsable.",
+          "La suppression logique est restaurable. Elle n'annule pas les réservations créées plus tard pour la même personne."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Un prospect peut pointer vers une unité déjà réservée ou vendue — ce n'est que de l'« intérêt », pas un contrôle de conflit.",
+          "Aucune conversion automatique en réservation. Quand ils sont prêts, créez une Réservation avec un utilisateur client sur une unité disponible.",
+          "Gagné / perdu sont des issues de pipeline. Ils n'écrivent pas le statut d'unité.",
+          "Le site public ou le chat peuvent créer des prospects (source site / chat) selon la configuration de la société."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Projet et Unité optionnels (intérêt seulement).",
+          "Documents commerciaux suivants : Réservation, puis Vente ; ou un Bail s'ils louent.",
+          "Le rapport agents compte ensuite réservations et ventes, pas les étapes de prospect."
+        ]
+      }
+    ]
   }
 }

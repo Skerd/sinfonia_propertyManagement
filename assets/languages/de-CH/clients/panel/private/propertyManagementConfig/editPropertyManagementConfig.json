@@ -24,6 +24,46 @@
     "title": "Verkauf & Übergabe bearbeiten",
     "description": "Angaben für diesen Verkauf & Übergabe aktualisieren."
   },
+  "help": {
+    "ariaLabel": "Über Verkauf & Übergabe",
+    "title": "Über Verkauf & Übergabe",
+    "overview": "Das sind unternehmensweite Schalter: wie neue Verkäufe freigegeben werden und wann ein Übergabedatum erfasst werden darf. Es gibt einen Einstellungsdatensatz pro Firma — keine Verkaufsliste. Speichern erzeugt weder einen Verkauf noch ein Übergabepaket.",
+    "sections": [
+      {
+        "title": "Was die Schalter tun",
+        "items": [
+          "Managerfreigabe beim Erstellen eines Verkaufs — neue Verkäufe starten als ausstehend. Die Einheit wird trotzdem sofort als verkauft markiert. Freigabe behält verkauft. Ablehnung setzt die Einheit auf verfügbar und löst den Verkauf von der Einheit.",
+          "Abgeschlossenes Übergabepaket vor dem Erfassen der Übergabe — beim ersten Setzen eines Übergabedatums am Verkauf muss für diese Einheit bereits ein abgeschlossenes Übergabepaket existieren. Späteres Ändern eines bestehenden Übergabedatums wird durch dieses Tor nicht blockiert."
+        ],
+        "body": "Beide standardmässig aus. Einschalten schreibt historische Verkäufe nicht um. Es gilt für den nächsten Verkauf und das nächste erste Übergabedatum."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Die Seite öffnet den einen Einstellungsdatensatz dieser Firma (wird angelegt, falls fehlend).",
+          "Zwei Schalter. Speichern übernimmt."
+          "Kein Anlegen, Löschen oder projektbezogener Override."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ohne Freigabe wird ein neuer Verkauf als erstellt gemeldet — keine Warteschlange.",
+          "Mit Freigabe wird der Verkäufer über ausstehende Freigabe informiert; Manager entscheiden auf der Verkaufsseite.",
+          "Übergabepakete entstehen im Einheiten-/Verkaufsfluss. Diese Seite steuert nur das Setzen des Übergabedatums.",
+          "Flaggen ändern bricht bereits ausstehende Verkäufe nicht ab."
+        ]
+      },
+      {
+        "title": "Zugehörige Datensätze",
+        "items": [
+          "Verkäufe — freigeben oder ablehnen, Übergabe / Eigentumsübertragung erfassen.",
+          "Einheiten — verkauft gegenüber verfügbar nach Ablehnung.",
+          "Übergabepakete — müssen auf der Einheit abgeschlossen sein, bevor das erste Übergabedatum gesetzt wird, wenn der zweite Schalter an ist."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Speichern"

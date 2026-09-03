@@ -155,5 +155,55 @@
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
-  "no": "Nein"
+  "no": "Nein",
+  "help": {
+    "ariaLabel": "Über Änderungsanträge",
+    "title": "Über Änderungsanträge",
+    "overview": "Ein Änderungsantrag ist eine vom Kunden gewünschte Änderung an einer Einheit, die eine gestufte Freigabe braucht. Kein Mangel und kein Nachtragsauftrag am Bauvertrag, auch wenn später ein VO existieren kann. Der Status ist der Workflow; Stufen lassen sich nicht per Freitext überspringen.",
+    "sections": [
+      {
+        "title": "Was er speichert",
+        "items": [
+          "Einheit, Beschreibung, Medien, aktueller Workflow-Status.",
+          "Freigaben: Architekt, Ingenieur, CEO — je mit Entscheid, Notizen, Prüfer, Zeit, optional Medien.",
+          "Materialplan (Positionen, Mengen, Preise) beim Kalkulieren.",
+          "Finanz- / Kundenkosten-Freigabe und Lieferbestätigung."
+        ]
+      },
+      {
+        "title": "Workflow (Aktionen)",
+        "items": [
+          "Architekt freigeben — bei Ja weiter zum Ingenieur; bei Nein zurück zur Architekten-Revision.",
+          "Ingenieur, dann CEO — jede Stufe prüft Schreibrecht auf diesem Freigabeblock.",
+          "Revision einreichen — nach Ablehnung.",
+          "Finanzieren — Kostenseite nach technischer Freigabe.",
+          "Kundenkosten freigeben — Käufer akzeptiert den Preis.",
+          "Liefern — physische Änderung erledigt."
+        ],
+        "body": "Jede Aktion ist nur im passenden Status legal. Die API lehnt die falsche Stufe ab."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Antrag von einer Einheit oder dieser Liste anlegen.",
+          "Sheet für Kette, Materialien und Aktionen Ihrer Rolle.",
+          "Filtern nach Status und Einheit."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Reserviert oder verkauft die Einheit nicht.",
+          "Ersetzt keine Mängel (bei der Abnahme gefundene Defekte).",
+          "Benachrichtigungen können entlang der Kette ausgelöst werden."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit. Optionale Abnahme. Später Bauartefakte (Arbeitspaket / VO), falls genutzt."
+        ]
+      }
+    ]
+  }
 }

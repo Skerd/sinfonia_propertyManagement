@@ -24,5 +24,40 @@
     "title": "Titolo",
     "updateDate": "Data aggiornamento",
     "updatedAt": "Aggiornato il"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sugli aggiornamenti cantiere",
+    "title": "Informazioni sugli aggiornamenti cantiere",
+    "overview": "Un aggiornamento cantiere è un post di avanzamento con testo e media, rivolto a un progetto o a un edificio specifico. Per la comunicazione di cantiere (cosa è stato costruito questa settimana). Non è una storia né uno snag.",
+    "sections": [
+      {
+        "title": "Cosa contiene",
+        "items": [
+          "Testo e media.",
+          "Progetto, edificio opzionale.",
+          "Collegamenti opzionali a un milestone o a un'attività di programma quando quei record di cantiere esistono."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare aggiornamenti man mano che il lavoro avanza; filtrare per progetto o edificio.",
+          "Possono comparire sul sito pubblico o nelle comunicazioni cliente quando il modulo li marca così."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Non sposta da solo lo stato dell'unità né le date di completamento.",
+          "Il completamento effettivo dell'edificio e lo stato costruttivo dell'unità restano su quei record — aggiornateli lì se il palazzo è davvero finito."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Progetto, edificio opzionale. Complementare a Storie (marketing) e Snag."
+        ]
+      }
+    ]
   }
 }

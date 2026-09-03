@@ -2,6 +2,43 @@
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
   "title": "Tipi di storia",
   "description": "Gestisci i tipi di storia del diario di progetto",
+  "help": {
+    "ariaLabel": "Informazioni sui tipi di storia",
+    "title": "Informazioni sui tipi di storia",
+    "overview": "Un tipo di storia classifica gli articoli del diario (notizie, traguardo, stampa e simili). Ogni storia richiede un tipo. Non è una categoria di aggiornamenti di cantiere né un tipo di difetto.",
+    "sections": [
+      {
+        "title": "Cosa contiene un tipo di storia",
+        "items": [
+          "Nome (obbligatorio).",
+          "Descrizione opzionale.",
+          "Ordine di ordinamento opzionale — gli elenchi di selezione e questa pagina ordinano per ordine, poi per nome. Vuoto vale 0.",
+          "Lo slug è generato dal nome dell’azienda più il nome del tipo. Non lo digitate."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare, cercare e modificare i tipi di storia.",
+          "L’eliminazione è logica, ma è bloccata finché una storia usa ancora questo tipo."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Le storie (diario marketing) scelgono un tipo da questo elenco. Gli aggiornamenti di costruzione hanno una pagina propria e non usano i tipi di storia.",
+          "Cambiare l’ordine cambia solo come i tipi appaiono nei selettori. Le storie esistenti tengono il loro tipo."
+        ]
+      },
+      {
+        "title": "Passo successivo tipico",
+        "items": [
+          "Creare i tipi di cui il diario ha bisogno.",
+          "In Storie, scegliere un tipo quando scrivete, poi pubblicare quando il testo è pronto."
+        ]
+      }
+    ]
+  },
   "createStoryType": "Crea tipo di storia",
   "noData": "Nessun tipo di storia trovato",
   "failTitle": "Impossibile caricare i tipi di storia",

@@ -114,5 +114,41 @@
     "floorPlaceholder": "Alle Geschosse",
     "unitLabel": "Einheit",
     "unitPlaceholder": "Alle Einheiten"
+  },
+  "help": {
+    "ariaLabel": "Über Verträge & Kunden",
+    "title": "Über Verträge & Kunden",
+    "overview": "Contracts Hub ist das firmenweite Register kommerzieller Dokumente, die schon existieren: Reservationen, Verkäufe und zugehörige Kundendateien. Es legt keinen neuen Vertragstyp an. Eine Zeile öffnet das Reservations- oder Verkaufs-Sheet. Suchen Sie hier über Kunden und Status, ohne zwischen zwei Listen zu springen.",
+    "sections": [
+      {
+        "title": "Was Sie sehen",
+        "items": [
+          "Zeilen aus Reservationen und Verkäufen (Kunde, Einheit, Projekt, Daten, Beträge, Status).",
+          "Filter für Projekt, Kunde, Status, Daten — nur für dieses Register.",
+          "Dieselben Dokumente wie unter Reservationen oder Verkäufe, zusammen dargestellt."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Anlegen, bezahlen, stornieren, freigeben, übergeben — das bleibt auf Reservationen und Verkäufen.",
+          "Nichts wird dupliziert. Verschwindet eine Reservation dort, verschwindet sie hier.",
+          "Abgelaufene und aktive Reservationen können je nach Filter erscheinen."
+        ]
+      },
+      {
+        "title": "Wann nutzen",
+        "items": [
+          "„Welche Verträge hat dieser Kunde?“ — hier suchen.",
+          "Zum Handeln (Anzahlung, Freigabe) Zeile öffnen oder die Fachliste nutzen."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Reservation, Verkauf, Einheit, Kundenuser. Keine Mietverträge — das ist Rentals Hub / Mietverträge."
+        ]
+      }
+    ]
   }
 }

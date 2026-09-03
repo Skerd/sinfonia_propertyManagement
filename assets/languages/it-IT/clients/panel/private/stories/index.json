@@ -27,5 +27,43 @@
     "unit": "Unità",
     "updatedAt": "Aggiornato il",
     "videoGallery": "Galleria video"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sulle storie",
+    "title": "Informazioni sulle storie",
+    "overview": "Una storia è un articolo di giornale marketing per un progetto (opzionalmente un edificio o un'unità). Pubblicata, compare sul sito pubblico. Non è un aggiornamento cantiere né uno snag.",
+    "sections": [
+      {
+        "title": "Cosa contiene una storia",
+        "items": [
+          "Progetto (obbligatorio), edificio opzionale, unità opzionale.",
+          "Tipo di storia (obbligatorio) — da Configurazioni → Tipi di storia.",
+          "Titolo, contenuto completo, estratto opzionale per le schede.",
+          "Immagine principale, gallerie, video.",
+          "Flag pubblicato, data di pubblicazione, ordine di ordinamento."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare una storia, allegare i media, impostare il tipo, poi pubblicare quando il testo è pronto.",
+          "Le storie non pubblicate restano solo nel pannello.",
+          "Filtrare per progetto, tipo, pubblicato."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Pubblicare non cambia lo stato dell'unità né le date di costruzione.",
+          "Gli aggiornamenti cantiere sono i post operativi di avanzamento; tenete la narrazione marketing qui."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Progetto, edificio/unità opzionali, tipo di storia. Giornale del sito pubblico. Complementare: Aggiornamenti cantiere."
+        ]
+      }
+    ]
   }
 }

@@ -117,5 +117,41 @@
       "overdue": "Überfällig",
       "waived": "Erlassen"
     }
+  },
+  "help": {
+    "ariaLabel": "Über Rentals Hub",
+    "title": "Über Rentals Hub",
+    "overview": "Rentals Hub ist das firmenweite Register von Mietverträgen und Mietzahlungen. Dieselben Quellsätze wie Mietverträge und Mietzahlungen, zusammen dargestellt. Kein neuer Dokumenttyp.",
+    "sections": [
+      {
+        "title": "Tabs",
+        "items": [
+          "Mietverträge — Referenz, Mieter, Einheit, Daten, Monatsmiete, ausstehend.",
+          "Zahlungen — Fälligkeit, Betrag, bezahlt, Rest, Status (ausstehend, bezahlt, teilweise, überfällig, erlassen)."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Eine Zeile öffnet das Miet- oder Zahlungs-Sheet. Anlegen und Lebenszyklus bleiben auf den Fachseiten.",
+          "Filter gelten nur für dieses Register.",
+          "Kündigen eines Vertrags aktualisiert hier, weil es dieselbe Zeile ist."
+        ]
+      },
+      {
+        "title": "Wann nutzen",
+        "items": [
+          "Inkasso am Morgen: Zahlungen auf überfällig filtern.",
+          "„Was schuldet dieser Mieter?“ — Verträge suchen, dann Zahlungen.",
+          "Die Mietvertragsseite für Kündigen, Depot, Plan neu synchronisieren."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Mietvertrag und Mietzahlung. Einheit vermietet solange der Vertrag aktiv ist. Dashboard-Miet-KPIs."
+        ]
+      }
+    ]
   }
 }

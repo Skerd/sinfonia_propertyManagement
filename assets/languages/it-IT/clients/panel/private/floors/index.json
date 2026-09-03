@@ -44,5 +44,48 @@
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
   "no": "No",
-  "view": "Visualizza"
+  "view": "Visualizza",
+  "help": {
+    "ariaLabel": "Informazioni sui piani",
+    "title": "Informazioni sui piani",
+    "overview": "Un piano è un livello di un edificio. Le unità stanno su un piano. Il record è lo strato di planimetria (nome, numero di livello, superficie, accessibilità, spazi comuni, media) più un contorno opzionale sul piano dell'edificio. Non è uno stato commerciale — le unità portano disponibile / prenotata / venduta / affittata.",
+    "sections": [
+      {
+        "title": "Cosa contiene un piano",
+        "items": [
+          "Nome ed edificio padre (obbligatori).",
+          "Numero di livello — l'ordinale di questo piano (può essere negativo per i sotterranei).",
+          "Superficie della soletta (obbligatoria).",
+          "Flag accessibile / uscita di emergenza, descrizione e un elenco di spazi comuni (atrio, nomi corridoi e etichette simili).",
+          "Immagine principale (obbligatoria) più gallerie, video, file extra e brochure marketing opzionali.",
+          "Coordinate poligono opzionali — il contorno disegnato sulla planimetria dell'edificio così il piano pubblico o di pannello può evidenziarlo.",
+          "Il totale unità sul piano è calcolato dai figli; non lo digitate."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Aperto da un edificio, l'elenco è limitato a quel palazzo.",
+          "Creare un piano, poi aggiungervi unità. Un piano con zero unità è valido ma non mostrerà giacenza.",
+          "Aprire una scheda per modificare dati di planimetria e media. Le azioni di riga portano alle unità di quel piano.",
+          "L'eliminazione logica è ripristinabile. Le unità del piano non si eliminano automaticamente."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Le unità devono scegliere un piano (e quindi un edificio e un progetto in cascata).",
+          "Il calcolatore ROI può restringere per piano quando stima un'unità.",
+          "Il piano non si prenota né si vende per intero — ogni unità ha il proprio stato."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Padre: Edificio (che ha un Progetto). Figli: Unità.",
+          "Passo successivo tipico: creare unità con tipo, numero, superfici, stanze, prezzo e valuta."
+        ]
+      }
+    ]
+  }
 }

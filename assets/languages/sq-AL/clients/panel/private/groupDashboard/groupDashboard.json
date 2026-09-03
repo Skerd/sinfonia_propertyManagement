@@ -18,5 +18,34 @@
   "noBranchesTitle": "Nuk u gjetën degë",
   "noBranchesDescription": "Krijoni kompani të fëmijë duke vendosur kompaninë prind të kësaj organizate për të krahasuar KPI-të midis degëve.",
   "failTitle": "Paneli i grupit nuk u ngarkua",
-  "failDescription": "Diçka shkoi keq gjatë marrjes së KPI-ve të grupit. Provoni përsëri."
+  "failDescription": "Diçka shkoi keq gjatë marrjes së KPI-ve të grupit. Provoni përsëri.",
+  "help": {
+    "ariaLabel": "Rreth Panelit të grupit",
+    "title": "Rreth Panelit të grupit",
+    "overview": "Paneli i grupit agregon KPI-të ndër shoqëritë degë që ndajnë një organizatë mëmë. Selia sheh totalin e grupit plus një tabelë për degë. Një degë sheh veten dhe motrat. Është model leximi, jo vend për të ndryshuar njësi.",
+    "sections": [
+      {
+        "title": "KPI",
+        "items": [
+          "Njësi gjithsej / të lira / të shitura / me qira.",
+          "Të ardhurat, komisionet, kontratat aktive, defektet e hapura."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Llogaritet në një vulë kohe të shfaqur në kokë — rifreskimi ringarkon përmbledhjen.",
+          "Shoqëritë bijë duhet ta kenë këtë organizatë si shoqëri mëmë, përndryshe nuk shfaqen.",
+          "Puna operuese e çdo dege ndodh ende te menutë e pasurive të asaj shoqërie pasi ndërroni shoqërinë.",
+          "Nuk është vështrimi i përgjithshëm (një shoqëri) as paneli (një ndërtesë)."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Agregon Njësitë, Shitjet, Komisionet, Kontratat e qirasë, Defektet sipas shoqërisë."
+        ]
+      }
+    ]
+  }
 }

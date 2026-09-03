@@ -74,5 +74,54 @@
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "Informazioni sulle ispezioni",
+    "title": "Informazioni sulle ispezioni",
+    "overview": "Un'ispezione è una visita programmata a un'unità con tipo, stato, checklist opzionale e rilievi. È evidenza di qualità / consegna, non una prenotazione né una lista snag (anche se i rilievi diventano spesso snag). Annullare un'ispezione programmata è un'azione dedicata; non si può annullare una già completata.",
+    "sections": [
+      {
+        "title": "Cosa contiene un'ispezione",
+        "items": [
+          "Unità (obbligatoria), ispettore, data/ora programmata, modello di checklist opzionale.",
+          "Tipo: iniziale, di follow-up, finale, di routine, reclamo, pre-vendita, post-vendita.",
+          "Stato: programmata → in corso → completata, oppure annullata / riprogrammata.",
+          "Rilievi raggruppati per categoria (strutturale, elettrica e altre) con note, media, gravità (bassa / media / alta / critica) e data di risoluzione opzionale.",
+          "Motivo di annullamento e data/ora quando annullate una visita programmata."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Annulla programmata — solo mentre lo stato è programmata; memorizza un motivo e un timestamp.",
+          "Completare la visita registrando i rilievi e passando lo stato a completata (via modifica / scheda, a seconda dei diritti).",
+          "Riprogrammare impostando lo stato su riprogrammata e una nuova data — non è un nuovo documento di ispezione, salvo che ne creiate uno."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare un'ispezione su un'unità. Filtrare per unità, tipo, stato, data.",
+          "Aprire la scheda per lavorare rilievi e media.",
+          "Elenco aziendale dalla barra laterale; da un'unità, l'elenco può essere limitato."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Un'ispezione non cambia mai lo stato commerciale dell'unità.",
+          "Non è uno snag: i difetti aperti che richiedono un mestiere e un assegnatario appartengono a Snag.",
+          "Non è una richiesta di modifica: i cambiamenti chiesti dal cliente passano da architetto / ingegnere / CEO / finanza / consegna lì.",
+          "Le checklist di consegna in Configurazioni possono essere riusate come modelli sulle ispezioni."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità (quindi piano / edificio / progetto).",
+          "Modello di checklist opzionale. Seguito: Snag, Richieste di modifica, Consegna vendita."
+        ]
+      }
+    ]
+  }
 }

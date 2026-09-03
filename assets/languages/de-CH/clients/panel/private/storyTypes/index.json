@@ -2,6 +2,43 @@
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
   "title": "Story-Typen",
   "description": "Story-Typen für Projektjournale verwalten",
+  "help": {
+    "ariaLabel": "Über Story-Typen",
+    "title": "Über Story-Typen",
+    "overview": "Ein Story-Typ klassifiziert Journal-Stories (News, Meilenstein, Presse u. Ä.). Jede Story braucht einen Typ. Das ist keine Kategorie für Baufortschritt und kein Mängeltyp.",
+    "sections": [
+      {
+        "title": "Was der Story-Typ speichert",
+        "items": [
+          "Name (Pflicht).",
+          "Optionale Beschreibung.",
+          "Optionale Sortierreihenfolge — Auswahllisten und diese Seite sortieren nach Reihenfolge, dann Name. Leer lassen gilt als 0.",
+          "Slug entsteht aus Firmenname plus Typname. Sie tippen ihn nicht."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Story-Typen erstellen, suchen und bearbeiten.",
+          "Löschen ist Soft-Delete, wird aber blockiert, solange eine Story diesen Typ nutzt."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Stories (Marketing-Journal) wählen einen Typ aus dieser Liste. Baufortschritt hat eine eigene Seite und nutzt keine Story-Typen.",
+          "Die Reihenfolge ändert nur, wie Typen in Auswahlen erscheinen. Bestehende Stories behalten ihren Typ."
+        ]
+      },
+      {
+        "title": "Nächster Schritt",
+        "items": [
+          "Typen anlegen, die das Journal braucht.",
+          "Unter Stories beim Schreiben einen Typ wählen, dann veröffentlichen, wenn der Text steht."
+        ]
+      }
+    ]
+  },
   "createStoryType": "Story-Typ erstellen",
   "noData": "Keine Story-Typen gefunden",
   "failTitle": "Story-Typen konnten nicht geladen werden",

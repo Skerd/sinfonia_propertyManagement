@@ -114,5 +114,59 @@
   "unitType": "Tipo di unità",
   "units": "Unità",
   "yes": "Sì",
-  "rented": "Affittato"
+  "rented": "Affittato",
+  "help": {
+    "ariaLabel": "Informazioni sulle unità",
+    "title": "Informazioni sulle unità",
+    "overview": "Un'unità è lo spazio vendibile o affittabile — il record che cambia davvero lo stato commerciale. Quasi ogni flusso di vendita, locazione, ispezione e costi punta a un'unità. Lo stato non è un campo libero da forzare a mano: prenotazioni, vendite e contratti di locazione lo muovono.",
+    "sections": [
+      {
+        "title": "Cosa contiene un'unità",
+        "items": [
+          "Piano (obbligatorio) — implica edificio e progetto. Tipo unità (obbligatorio) da Configurazioni → Tipi di unità.",
+          "Numero e nome unità (obbligatori) — come agenti e clienti la identificano.",
+          "Superficie, superficie condivisa, superficie netta (obbligatorie); superficie veranda opzionale.",
+          "Prezzo e valuta (obbligatori). Numero di stanze e bagni (obbligatori).",
+          "Descrizione, immagine principale, gallerie, video, file extra, brochure marketing.",
+          "Flag esterni e amenity: balcone, terrazza, vista mare / città / lago, ascensore.",
+          "Orientamento (N, S, E, O e diagonali) e stato costruttivo (pianificato, in costruzione, pronto, consegnato).",
+          "Provvigioni vendita e prenotazione % opzionali — sostituiscono i default del progetto per questa unità.",
+          "Unità collegate — quando due unità si vendono o si mostrano insieme.",
+          "In evidenza in homepage + ordine — evidenziazione sul sito pubblico.",
+          "Poligono opzionale sulla planimetria del piano."
+        ]
+      },
+      {
+        "title": "Stato commerciale",
+        "items": [
+          "Disponibile — può essere prenotata, venduta o locata.",
+          "Prenotata — una prenotazione attiva la trattiene. Scadenza o annullamento la rende disponibile. Reintegrare una prenotazione annullata solo se l'unità è libera (o venduta senza altra prenotazione) secondo le regole di reintegro.",
+          "Venduta — una vendita l'ha marcata venduta. Consegna e trasferimento di proprietà continuano sulla vendita. Non si può locare un'unità venduta.",
+          "Affittata — un contratto attivo la trattiene. Recedere (o scadenza giornaliera oltre la data di fine) la rilascia verso disponibile.",
+          "Non disponibile — tolta dal mercato senza un deal."
+        ],
+        "body": "Non digitate un'unità «a mano» su venduta o affittata. Create o completate la prenotazione, vendita o contratto corrispondente."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Filtrare per progetto, edificio, piano, tipo, stato, acquirente e simili.",
+          "Creare un'unità — piano, tipo, numero, nome, superfici, prezzo e valuta obbligatori.",
+          "Aprire la scheda per media, prezzi e flag. Le azioni di riga raggiungono prenotazioni, vendite, ispezioni, contratti, costi — a seconda dei diritti.",
+          "Generare la brochure marketing (PDF) dall'unità quando l'azione è disponibile — unisce i campi marketing di questa unità.",
+          "L'eliminazione logica è ripristinabile. I deal che già puntano all'unità restano; non si annullano automaticamente."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "A monte: Progetto → Edificio → Piano → Tipo unità.",
+          "Deal: Lead (interesse unità opzionale), Prenotazione, Vendita (+ piano di pagamento), Contratto di locazione + canoni.",
+          "Qualità: Ispezione, richiesta di modifica, snag.",
+          "Denaro: Costi unità, commissioni (via vendita o prenotazione).",
+          "Percorsi tipici: disponibile → prenotazione → vendita, oppure disponibile → contratto di locazione."
+        ]
+      }
+    ]
+  }
 }

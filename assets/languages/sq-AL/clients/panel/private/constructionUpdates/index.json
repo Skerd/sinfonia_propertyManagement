@@ -24,5 +24,40 @@
     "title": "Titulli",
     "updateDate": "Data e përditësimit",
     "updatedAt": "Përditësuar në"
+  },
+  "help": {
+    "ariaLabel": "Rreth Përditësimeve të ndërtimit",
+    "title": "Rreth Përditësimeve të ndërtimit",
+    "overview": "Një përditësim ndërtimi është një postim ecurie me tekst dhe media, drejtuar një projekti ose një ndërtese të caktuar. Për komunikimin e sheshit (çfarë u ndërtua këtë javë). Nuk është tregim as defekt.",
+    "sections": [
+      {
+        "title": "Çfarë mban",
+        "items": [
+          "Teksti dhe media.",
+          "Projekti, ndërtesë opsionale.",
+          "Lidhje opsionale te një moment kyç ose detyrë plani kur ato dosje ndërtimi ekzistojnë."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni përditësime ndërsa puna përparon; filtroni sipas projektit ose ndërtesës.",
+          "Mund të shfaqen në sitin publik ose në komunikimet me klientin kur formulari i shënon kështu."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Nuk lëviz vetë statusin e njësisë as datat e përfundimit.",
+          "Përfundimi i vërtetë i ndërtesës dhe statusi i ndërtimit i njësisë mbeten te ato dosje — përditësojini atje nëse ndërtesa është vërtet e mbaruar."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Projekti, ndërtesë opsionale. Plotësuese e Tregimeve (marketing) dhe Defekteve."
+        ]
+      }
+    ]
   }
 }

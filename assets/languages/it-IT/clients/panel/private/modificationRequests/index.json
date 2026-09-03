@@ -155,5 +155,55 @@
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "Informazioni sulle richieste di modifica",
+    "title": "Informazioni sulle richieste di modifica",
+    "overview": "Una richiesta di modifica è un cambiamento chiesto dal cliente su un'unità (layout, finiture, extra) che deve superare una catena di approvazione a stadi. Non è uno snag (difetto) né un ordine di variante su un contratto di costruzione, anche se un VO successivo può esistere nel modulo cantiere. Lo stato è il workflow; non si saltano gli stadi modificando lo stato come testo libero.",
+    "sections": [
+      {
+        "title": "Cosa contiene",
+        "items": [
+          "Unità, descrizione del cambiamento, media e lo stato attuale del workflow.",
+          "Approvazioni a stadi: architetto, ingegnere, CEO — ciascuna con decisione, note, revisore, timestamp, media opzionali.",
+          "Piano materiali (voci, quantità, prezzi) quando si costa il cambiamento.",
+          "Passi di approvazione finanziaria / costo cliente e conferma di consegna."
+        ]
+      },
+      {
+        "title": "Workflow (azioni)",
+        "items": [
+          "Approvare dall'architetto — se sì, avanza verso l'ingegnere; se no, torna alla revisione architetto.",
+          "Approvare dall'ingegnere, poi dal CEO — ogni stadio verifica che abbiate il diritto di scrittura su quel blocco di approvazione.",
+          "Inviare revisione — il cliente o l'agente manda una proposta aggiornata dopo un rifiuto.",
+          "Finanziare la richiesta — lato costo dopo le approvazioni tecniche.",
+          "Approvazione costo cliente — l'acquirente accetta il cambiamento prezzato.",
+          "Consegnare — marcare il cambiamento fisico come fatto."
+        ],
+        "body": "Ogni azione è legale solo nello stato corrispondente. L'API rifiuta lo stadio sbagliato invece di saltare in silenzio."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare una richiesta da un'unità o da questo elenco aziendale.",
+          "Aprire la scheda per vedere la catena, i materiali e le azioni disponibili per il vostro ruolo.",
+          "Filtrare per stato e unità."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Non prenota né vende l'unità.",
+          "Non sostituisce gli Snag (difetti trovati in ispezione).",
+          "Le notifiche possono partire alle persone della catena man mano che si registrano le decisioni."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità. Ispezione opzionale che ha motivato il cambiamento. Artefatti cantiere successivi (pacchetto di lavoro / VO) se usati."
+        ]
+      }
+    ]
+  }
 }

@@ -74,5 +74,54 @@
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
-  "no": "Non"
+  "no": "Non",
+  "help": {
+    "ariaLabel": "À propos des inspections",
+    "title": "À propos des inspections",
+    "overview": "Une inspection est une visite planifiée d'une unité avec un type, un statut, une checklist optionnelle et des constats. C'est une preuve qualité / réception, pas une réservation ni une liste de réserves (même si les constats deviennent souvent des réserves). Annuler une inspection planifiée est une action dédiée ; on ne peut pas annuler une inspection déjà terminée.",
+    "sections": [
+      {
+        "title": "Ce qu'une inspection contient",
+        "items": [
+          "Unité (obligatoire), inspecteur, date/heure prévue, modèle de checklist optionnel.",
+          "Type : initiale, de suivi, finale, de routine, réclamation, avant-vente, après-vente.",
+          "Statut : planifiée → en cours → terminée, ou annulée / reportée.",
+          "Constats groupés par catégorie (structure, électricité, et autres) avec notes, médias, gravité (faible / moyenne / élevée / critique), et date de résolution optionnelle.",
+          "Motif d'annulation et horodatage lorsque vous annulez une visite planifiée."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Annuler la visite planifiée — seulement tant que le statut est planifiée ; enregistre un motif et un horodatage.",
+          "Terminer la visite en enregistrant les constats et en passant le statut à terminée (via édition / fiche, selon les droits).",
+          "Reporter en passant le statut à reportée et une nouvelle date — ce n'est pas un nouveau document d'inspection, sauf si vous en créez un."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer une inspection sur une unité. Filtrer par unité, type, statut, date.",
+          "Ouvrir la fiche pour travailler constats et médias.",
+          "Liste société depuis la barre latérale ; depuis une unité, la liste peut être limitée."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Une inspection ne change jamais le statut commercial de l'unité.",
+          "Ce n'est pas une réserve : les défauts ouverts qui demandent un corps de métier et un responsable appartiennent aux Réserves.",
+          "Ce n'est pas une demande de modification : les changements demandés par le client passent par architecte / ingénieur / CEO / finances / livraison là-bas.",
+          "Les checklists de réception dans Configurations peuvent servir de modèles d'inspection."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité (donc étage / bâtiment / projet).",
+          "Modèle de checklist optionnel. Suite : Réserves, Demandes de modification, Réception de vente."
+        ]
+      }
+    ]
+  }
 }

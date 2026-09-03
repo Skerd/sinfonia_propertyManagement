@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {ContractRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.contract.dto.ts";
@@ -83,6 +84,7 @@ function ContractsHubPage({resolveLanguageKey}: WithLanguageType) {
             <Header
                 title={String(resolveLanguageKey("title"))}
                 description={String(resolveLanguageKey("description"))}
+                help={readPageHelp(resolveLanguageKey)}
             />
 
             <div className="flex-1 overflow-auto p-4 gap-y-10">

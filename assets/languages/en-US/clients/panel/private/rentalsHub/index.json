@@ -117,5 +117,41 @@
       "overdue": "Overdue",
       "waived": "Waived"
     }
+  },
+  "help": {
+    "ariaLabel": "About Rentals Hub",
+    "title": "About Rentals Hub",
+    "overview": "Rentals Hub is the company-wide registry of leases and rent payments. Same source records as Leases and Rental payments, presented together so operations can search tenants, outstanding, and overdue without bouncing between two lists. It does not create a new document type.",
+    "sections": [
+      {
+        "title": "Tabs",
+        "items": [
+          "Leases — reference, tenant, unit, dates, monthly rent, outstanding.",
+          "Payments — due date, amount, paid, remaining, status (pending, paid, partial, overdue, waived)."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Opening a row uses the lease or payment sheet. Create/edit and lifecycle actions still happen on Leases / Rental payments.",
+          "Filters (project, edifice, floor, unit, status, dates) apply to this registry only.",
+          "If you terminate a lease, it updates here because this is the same row."
+        ]
+      },
+      {
+        "title": "When to use it",
+        "items": [
+          "Morning collection: filter payments to overdue, work the list.",
+          "“What does this tenant owe?” — search leases, then the payments tab.",
+          "Use the dedicated Leases page when you need terminate, deposit, or resync schedule."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Lease and Rental payment. Unit status rented while a lease is active. Dashboard rent KPIs."
+        ]
+      }
+    ]
   }
 }

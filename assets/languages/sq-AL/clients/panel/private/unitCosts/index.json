@@ -145,5 +145,41 @@
         "disputed": "Në Kontest"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Rreth Kostove të njësisë",
+    "title": "Rreth Kostove të njësisë",
+    "overview": "Kostot e njësisë janë blerje dhe fatura anës pronarit të ngarkuara te një njësi (dhe kështu te projekti/ndërtesa e saj). Faqja ka një tabelë shpenzimesh dhe një kalendar pagesash. Nuk është qiraja e qiramarrësit (Pagesat e qirasë) as faturat e kontraktorëve nga moduli i ndërtimit.",
+    "sections": [
+      {
+        "title": "Skedat",
+        "items": [
+          "Shpenzimet — rreshta: furnizuesi, shuma, statusi, periudha, njësia.",
+          "Kalendari i pagesave — e paguar / në pritje / e vonuar sipas ditës për muajin e dukshëm."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Shtoni një shpenzim mbi një njësi. Filtroni sipas njësisë, projektit, furnizuesit, statusit.",
+          "Hapur nga një njësi, lista është tashmë e kufizuar.",
+          "Përdorni kalendarin për të parë kur bien faturat anës pronarit."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Llogaritësi ROI i lexon këto kosto kundrejt të ardhurave të shitjes ose qirasë të njësisë së zgjedhur.",
+          "Eksporti ERP mund të përfshijë setin e kostove të njësisë për kontabilitetin.",
+          "Arkëtimi i qirasë së qiramarrësit është Pagesat e qirasë / Kontratat e qirasë, jo kjo listë."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Njësi → Kat → Ndërtesë → Projekt. Llogaritësi ROI. Eksporti ERP."
+        ]
+      }
+    ]
   }
 }

@@ -117,5 +117,41 @@
       "overdue": "En retard",
       "waived": "Annulé"
     }
+  },
+  "help": {
+    "ariaLabel": "À propos du centre des locations",
+    "title": "À propos du centre des locations",
+    "overview": "Le centre des locations est le registre société des baux et des loyers. Mêmes dossiers source que Baux et Loyers, présentés ensemble pour chercher locataires, dus et retards sans basculer entre deux listes. Il ne crée pas un nouveau type de document.",
+    "sections": [
+      {
+        "title": "Onglets",
+        "items": [
+          "Baux — référence, locataire, unité, dates, loyer mensuel, dû.",
+          "Paiements — échéance, montant, payé, reste, statut (en attente, payé, partiel, en retard, remis)."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Ouvrir une ligne utilise la fiche bail ou paiement. Création/édition et cycle de vie restent sur Baux / Loyers.",
+          "Les filtres (projet, bâtiment, étage, unité, statut, dates) s'appliquent à ce registre seulement.",
+          "Si vous résiliez un bail, il se met à jour ici parce que c'est la même ligne."
+        ]
+      },
+      {
+        "title": "Quand l'utiliser",
+        "items": [
+          "Encaissement du matin : filtrer les paiements en retard, travailler la liste.",
+          "« Que doit ce locataire ? » — chercher les baux, puis l'onglet paiements.",
+          "Utilisez la page Baux dédiée pour résilier, dépôt ou resynchroniser le planning."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Bail et Loyer. Statut d'unité louée tant qu'un bail est actif. KPI locatifs du tableau de bord."
+        ]
+      }
+    ]
   }
 }

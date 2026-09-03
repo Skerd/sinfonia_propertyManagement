@@ -155,5 +155,55 @@
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "About Modification requests",
+    "title": "About Modification requests",
+    "overview": "A Modification request is a client-asked change to a unit (layout, finishes, extras) that must pass a staged approval chain. It is not a snag (defect) and not a variation order on a construction contract, though a later VO can exist in the construction module. Status is the workflow; you do not skip stages by editing status as free text.",
+    "sections": [
+      {
+        "title": "What it holds",
+        "items": [
+          "Unit, description of the change, media, and the current workflow status.",
+          "Staged approvals: architect, engineer, CEO — each with decision, notes, reviewer, timestamp, optional media.",
+          "Materials plan (items, quantities, prices) when costing the change.",
+          "Finance / client cost-approval steps and delivery confirmation."
+        ]
+      },
+      {
+        "title": "Workflow (actions)",
+        "items": [
+          "Approve at architect — if approved, moves toward engineer; if rejected, back to architect revision.",
+          "Approve at engineer, then CEO — each stage checks that you have write access to that approval block.",
+          "Submit revision — client or agent sends an updated proposal after a rejection.",
+          "Finance the request — cost side after technical approvals.",
+          "Client cost approve — buyer accepts the priced change.",
+          "Deliver — mark the physical change done."
+        ],
+        "body": "Each action is only legal in the matching status. The API rejects the wrong stage rather than silently skipping."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a request from a unit or from this company-wide list.",
+          "Open the sheet to see the chain, materials, and available actions for your role.",
+          "Filter by status and unit."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "It does not reserve or sell the unit.",
+          "It does not replace Snags (defects found on inspection).",
+          "Notifications can fire to the people in the chain as decisions are recorded."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit. Optional inspection that motivated the change. Later construction artefacts (work package / VO) if used."
+        ]
+      }
+    ]
+  }
 }

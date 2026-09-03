@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
@@ -167,7 +168,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
 
     return (
         <div className="flex flex-col h-full overflow-hidden">
-            <Header title={rk("title")} description={rk("description")} />
+            <Header title={rk("title")} description={rk("description")} help={readPageHelp(resolveLanguageKey)} />
 
             <div className="flex flex-col shrink-0 border-b px-4 py-3 gap-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 items-end">

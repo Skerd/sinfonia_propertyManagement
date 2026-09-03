@@ -50,5 +50,34 @@
     "unitsByStatusTitle": "Unités par statut",
     "totalUnits": "Total",
     "otherUnits": "Autres"
+  },
+  "help": {
+    "ariaLabel": "À propos du calculateur ROI",
+    "title": "À propos du calculateur ROI",
+    "overview": "Le calculateur ROI estime le rendement d'une unité (restreinte par projet / bâtiment / étage) à partir des coûts versus le produit de vente ou de location. C'est un calculateur sur des dossiers existants, pas un document ROI stocké ni le module chantier de contrôle des coûts / budget.",
+    "sections": [
+      {
+        "title": "Comment l'exécuter",
+        "items": [
+          "Sélectionner le projet, éventuellement le bâtiment et l'étage, puis une unité — le calcul s'exécute à la sélection.",
+          "Le résumé et la ventilation par unité montrent prix de vente vs coûts vs rendement implicite.",
+          "Export PDF pour un instantané du calcul actuel."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Les coûts viennent des coûts d'unité (et dépenses liées). Le produit vient du prix de vente ou des hypothèses locatives du calculateur.",
+          "Modifier les dossiers source et resélectionner l'unité recalcule. Rien n'est enregistré comme version de budget ici.",
+          "Budgets de construction, BOQ et engagements de coût vivent hors de ce menu immobilier, sauf si vous ouvrez ces modules séparément."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité, coûts d'unité, champs de prix de vente, chiffres locatifs optionnels."
+        ]
+      }
+    ]
   }
 }

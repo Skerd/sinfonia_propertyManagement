@@ -114,5 +114,41 @@
     "floorPlaceholder": "All floors",
     "unitLabel": "Unit",
     "unitPlaceholder": "All units"
+  },
+  "help": {
+    "ariaLabel": "About Contracts & clients",
+    "title": "About Contracts & clients",
+    "overview": "Contracts Hub is a company-wide registry of commercial documents that already exist: reservations, sales, and related client files. It does not create a new contract type. Opening a row opens the reservation or sale sheet. Use this page to search across clients and statuses without bouncing between two lists.",
+    "sections": [
+      {
+        "title": "What you see",
+        "items": [
+          "Rows drawn from Reservations and Sales (and their client, unit, project, dates, amounts, status).",
+          "Filters for project, client, status, dates — applied to this registry only.",
+          "The same documents you would find under Reservations or Sales, presented together."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Create, pay, cancel, approve, handover — those actions still live on Reservations and Sales.",
+          "Nothing is duplicated in the database. If a reservation disappears from Reservations, it disappears here.",
+          "Expired and active reservations can both appear, depending on the hub’s status filter."
+        ]
+      },
+      {
+        "title": "When to use it",
+        "items": [
+          "Ops asks “what contracts does this client have?” — search here.",
+          "When you need to act (collect a deposit, approve a sale), open the row and use the underlying sheet, or go to the dedicated list."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Reservation, Sale, Unit, client user. Not leases — those are Rentals Hub / Leases."
+        ]
+      }
+    ]
   }
 }

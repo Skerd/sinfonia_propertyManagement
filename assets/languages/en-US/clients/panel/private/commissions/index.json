@@ -65,5 +65,43 @@
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "About Commissions",
+    "title": "About Commissions",
+    "overview": "A Commission is the agent payout row created from a reservation or a sale. This is the ledger, not the Agent report (which is a period performance view). Status moves pending → pending approval → paid, or voided when the source deal is cancelled or a payment is reversed.",
+    "sections": [
+      {
+        "title": "What a commission holds",
+        "items": [
+          "Source type: reservation or sale, plus the source record.",
+          "Agent, amounts, currency, rates that were used when it was recorded.",
+          "Status: pending, pending approval, paid, voided.",
+          "Evidence / notes depending on how your roles expose the fields."
+        ]
+      },
+      {
+        "title": "How it is created",
+        "items": [
+          "Paying or reinstating a reservation records a reservation commission.",
+          "A sale records a sale commission according to the sale/reservation rates (project or unit override).",
+          "You should not invent a commission with no source deal — it would not stay consistent with Dashboard or Agent report."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Cancelling a reservation or reversing an unpaid reservation deposit voids pending commission — not one already marked paid.",
+          "Reversing a reservation payment is blocked if this commission is already paid.",
+          "Paying a commission here is the payout step. Agent report still only reads deals in a date range; it does not mark paid."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Reservation or Sale, agent user, Unit. Agent report. ERP export can include a commissions dataset."
+        ]
+      }
+    ]
+  }
 }

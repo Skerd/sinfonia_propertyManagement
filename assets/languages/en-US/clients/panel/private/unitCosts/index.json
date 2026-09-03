@@ -151,5 +151,41 @@
         "disputed": "Disputed"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "About Unit costs",
+    "title": "About Unit costs",
+    "overview": "Unit costs are owner-side purchases and invoices booked against a unit (and thus its project/edifice). This page has an expenses table and a payment calendar. It is not tenant rent (Rental payments) and not contractor invoices from the construction module.",
+    "sections": [
+      {
+        "title": "Tabs",
+        "items": [
+          "Expenses — line items: supplier, amount, status, period, unit.",
+          "Payment calendar — paid / pending / overdue by day for the visible month."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Add an expense against a unit. Filter by unit, project, supplier, status.",
+          "When opened from a unit, the list is already scoped.",
+          "Use the calendar to see when owner-side bills fall due."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "ROI calculator reads these costs against sale or rental revenue for the selected unit.",
+          "ERP export can include the unit-costs dataset for accounting.",
+          "Paying rent for a tenant is Rental payments / Leases, not this list."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit → Floor → Edifice → Project. ROI calculator. ERP export."
+        ]
+      }
+    ]
   }
 }

@@ -16,6 +16,7 @@ import Loader from "@coreModule/components/custom/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 import Header from "@coreModule/components/custom/header";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import RoiSummaryCharts from "./roiSummaryCharts.tsx";
 import {downloadRoiReportPdf, type RoiReportPdfLabels} from "./roiReportPdf.ts";
@@ -210,6 +211,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
             <Header
                 title={rk("roiCalculator.title")}
                 description={rk("roiCalculator.description")}
+                help={readPageHelp(resolveLanguageKey)}
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -117,5 +117,41 @@
       "overdue": "Scaduto",
       "waived": "Condono"
     }
+  },
+  "help": {
+    "ariaLabel": "Informazioni su Hub locazioni",
+    "title": "Informazioni su Hub locazioni",
+    "overview": "Hub locazioni è il registro aziendale di contratti di locazione e canoni. Stessi record fonte di Contratti di locazione e Pagamenti affitto, presentati insieme così le operations cercano conduttori, dovuti e scaduti senza saltare tra due elenchi. Non crea un nuovo tipo di documento.",
+    "sections": [
+      {
+        "title": "Schede",
+        "items": [
+          "Contratti di locazione — riferimento, conduttore, unità, date, canone mensile, dovuto.",
+          "Pagamenti — scadenza, importo, pagato, residuo, stato (in attesa, pagato, parziale, scaduto, condonato)."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Aprire una riga usa la scheda contratto o pagamento. Creazione/modifica e ciclo di vita restano su Contratti di locazione / Pagamenti affitto.",
+          "I filtri (progetto, edificio, piano, unità, stato, date) si applicano solo a questo registro.",
+          "Se recedete un contratto, si aggiorna qui perché è la stessa riga."
+        ]
+      },
+      {
+        "title": "Quando usarlo",
+        "items": [
+          "Incasso del mattino: filtrare i pagamenti scaduti, lavorare l'elenco.",
+          "«Quanto deve questo conduttore?» — cercare i contratti, poi la scheda pagamenti.",
+          "Usate la pagina Contratti di locazione dedicata per recedere, deposito o risincronizzare il piano."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Contratto di locazione e Canone. Stato unità affittata finché un contratto è attivo. KPI affitti della Dashboard."
+        ]
+      }
+    ]
   }
 }

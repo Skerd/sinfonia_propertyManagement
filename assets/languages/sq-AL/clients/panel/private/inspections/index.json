@@ -71,5 +71,54 @@
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",
-  "no": "Nr"
+  "no": "Nr",
+  "help": {
+    "ariaLabel": "Rreth Inspektimeve",
+    "title": "Rreth Inspektimeve",
+    "overview": "Një inspektim është një vizitë e planifikuar te një njësi me lloj, status, listë kontrolli opsionale dhe gjetje. Është dëshmi cilësie / dorëzimi, jo rezervim as listë defektesh (edhe pse gjetjet shpesh bëhen defekte). Anulimi i një inspektimi të planifikuar është veprim i veçantë; nuk mund të anuloni një të përfunduar tashmë.",
+    "sections": [
+      {
+        "title": "Çfarë mban një inspektim",
+        "items": [
+          "Njësia (e detyrueshme), inspektori, data/ora e planifikuar, shablloni i listës së kontrollit opsional.",
+          "Lloji: fillestar, ndjekje, përfundimtar, rutinë, ankesë, para-shitje, pas-shitje.",
+          "Statusi: i planifikuar → në punë → i përfunduar, ose i anuluar / i riprogramuar.",
+          "Gjetjet të grupuara sipas kategorisë (strukturore, elektrike dhe të tjera) me shënime, media, rëndësi (e ulët / e mesme / e lartë / kritike) dhe datë zgjidhjeje opsionale.",
+          "Arsyeja e anulimit dhe koha kur anuloni një vizitë të planifikuar."
+        ]
+      },
+      {
+        "title": "Veprimet",
+        "items": [
+          "Anulo të planifikuarën — vetëm sa statusi është i planifikuar; ruan arsye dhe vulë kohe.",
+          "Përfundoni vizitën duke regjistruar gjetjet dhe duke kaluar statusin në të përfunduar (përmes ndryshimit / fletës, sipas të drejtave).",
+          "Riprogramoni duke vënë statusin në të riprogramuar dhe një datë të re — kjo nuk është dokument i ri inspektimi, përveçse të krijoni një."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një inspektim mbi një njësi. Filtroni sipas njësisë, llojit, statusit, datës.",
+          "Hapni fletën për të punuar gjetjet dhe median.",
+          "Lista e shoqërisë nga shiriti anësor; nga një njësi, lista mund të kufizohet."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Një inspektim nuk ndryshon kurrë statusin tregtar të njësisë.",
+          "Nuk është defekt: të metat e hapura që kërkojnë zeje dhe të caktuar i përkasin Defekteve.",
+          "Nuk është kërkesë për modifikim: ndryshimet e kërkuara nga klienti kalojnë nga arkitekti / inxhinieri / CEO / financat / dorëzimi atje.",
+          "Listat e kontrollit të dorëzimit në Konfigurime mund të ripërdoren si shabllone te inspektimet."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Njësia (dhe kështu kati / ndërtesa / projekti).",
+          "Shabllon liste kontrolli opsional. Më pas: Defektet, Kërkesat për modifikim, Dorëzimi i shitjes."
+        ]
+      }
+    ]
+  }
 }

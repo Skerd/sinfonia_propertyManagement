@@ -18,5 +18,34 @@
   "noBranchesTitle": "Nessuna filiale trovata",
   "noBranchesDescription": "Crea aziende figlie impostando questa organizzazione come azienda madre per confrontare i KPI tra le filiali.",
   "failTitle": "Impossibile caricare la dashboard di gruppo",
-  "failDescription": "Si è verificato un errore durante il recupero dei KPI di gruppo. Riprova."
+  "failDescription": "Si è verificato un errore durante il recupero dei KPI di gruppo. Riprova.",
+  "help": {
+    "ariaLabel": "Informazioni sulla Dashboard di gruppo",
+    "title": "Informazioni sulla Dashboard di gruppo",
+    "overview": "La Dashboard di gruppo aggrega i KPI delle società filiali che condividono un'organizzazione madre. La sede vede il totale di gruppo più una tabella per filiale. Una filiale vede sé stessa e le sorelle. È un modello in lettura, non un luogo per modificare unità.",
+    "sections": [
+      {
+        "title": "KPI",
+        "items": [
+          "Unità totali / disponibili / vendute / affittate.",
+          "Ricavi, commissioni, contratti attivi, snag aperti."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Calcolato a un timestamp mostrato nell'intestazione — aggiornare ricarica l'aggregazione.",
+          "Le società figlie devono avere questa organizzazione come società madre, altrimenti non compariranno.",
+          "Il lavoro operativo di ogni filiale avviene ancora nei menu immobiliare di quella società dopo il cambio società.",
+          "Non è la Panoramica (una società) né la Dashboard (un edificio)."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Aggrega Unità, Vendite, Commissioni, Contratti di locazione, Snag per società."
+        ]
+      }
+    ]
+  }
 }

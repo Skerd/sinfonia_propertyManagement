@@ -2,6 +2,45 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx",
   "title": "Llojet e njësive",
   "description": "Menaxhoni të gjitha llojet e njësive",
+  "help": {
+    "ariaLabel": "Rreth llojeve të njësive",
+    "title": "Rreth llojeve të njësive",
+    "overview": "Një lloj njësie është tipi i katalogut që çdo njësi duhet të zgjedhë (apartament, zyrë, parking etj.). Kategoritë i organizojnë llojet. Krijimi i një lloji nuk krijon njësi — njësitë e zgjedhin llojin kur shtoni stokun.",
+    "sections": [
+      {
+        "title": "Çfarë mban lloji i njësisë",
+        "items": [
+          "Emri dhe kategoria (të detyrueshme). Krijoni kategorinë së pari.",
+          "Grup opsional (etiketë e lirë brenda kategorisë), përshkrim dhe ikonë.",
+          "Flamuri privat — shënues katalogu te karta e llojit. Nuk është okupim dhe nuk ndryshon statusin e njësisë.",
+          "Slug-u gjenerohet nga emri i kompanisë plus emri i llojit. Nuk e shkruani ju."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni, kërkoni dhe ndryshoni llojet.",
+          "Fshirja është e butë, por bllokohet përderisa ndonjë njësi e përdor këtë lloj ose ndonjë ndërtesë e liston si lloj prone."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Çdo njësi ka saktësisht një lloj njësie. Çmimi, sipërfaqet dhe disponueshmëria jetojnë te njësia, jo këtu.",
+          "Ndërtesat mund të listojnë edhe llojet e pronës që ofrojnë, pavarësisht njësive ekzistuese.",
+          "Riemërtimi përditëson etiketat. Nuk rishkruan çmimet e listuara të njësive ekzistuese."
+        ]
+      },
+      {
+        "title": "Hapi tjetër tipik",
+        "items": [
+          "Krijoni kategoritë e llojeve të njësive nëse mungojnë.",
+          "Krijoni llojet që shisni ose jepni me qira.",
+          "Kur shtoni njësi, zgjidhni llojin përkatës."
+        ]
+      }
+    ]
+  },
   "createUnitType": "Krijo llojin e njësisë",
   "noData": "Nuk u gjet asnjë lloj njësie",
   "failTitle": "Ngarkimi i llojeve të njësive dështoi",

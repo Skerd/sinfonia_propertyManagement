@@ -27,5 +27,43 @@
     "unit": "Einheit",
     "updatedAt": "Aktualisiert am",
     "videoGallery": "Videogalerie"
+  },
+  "help": {
+    "ariaLabel": "Über Stories",
+    "title": "Über Stories",
+    "overview": "Eine Story ist ein Marketing-Journalbeitrag zu einem Projekt (optional Gebäude oder Einheit). Veröffentlicht erscheint sie auf der Public Site. Kein Baufortschritt und kein Mangel.",
+    "sections": [
+      {
+        "title": "Was eine Story speichert",
+        "items": [
+          "Projekt (Pflicht), optional Gebäude, optional Einheit.",
+          "Story-Typ (Pflicht) aus der Konfiguration.",
+          "Titel, Inhalt, optionaler Teaser.",
+          "Hauptbild, Galerien, Videos.",
+          "Veröffentlicht-Flag, Veröffentlichungsdatum, Sortierung."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Story anlegen, Medien, Typ, dann veröffentlichen.",
+          "Unveröffentlichte Stories bleiben im Panel.",
+          "Filtern nach Projekt, Typ, veröffentlicht."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Veröffentlichen ändert weder Einheitenstatus noch Fertigstellungsdaten.",
+          "Baufortschritt ist die operative Baustellenmeldung; die Marketing-Erzählung bleibt hier."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Projekt, optional Gebäude/Einheit, Story-Typ. Public-Site-Journal. Ergänzend: Baufortschritt."
+        ]
+      }
+    ]
   }
 }

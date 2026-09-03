@@ -50,5 +50,34 @@
     "unitsByStatusTitle": "Einheiten nach Status",
     "totalUnits": "Total",
     "otherUnits": "Andere"
+  },
+  "help": {
+    "ariaLabel": "Über ROI-Rechner",
+    "title": "Über den ROI-Rechner",
+    "overview": "Der ROI-Rechner schätzt die Rendite einer Einheit (eingrenzbar nach Projekt / Gebäude / Stockwerk) aus Kosten versus Verkaufs- oder Mieterrtrag. Ein Rechner auf bestehenden Sätzen, kein gespeichertes ROI-Dokument und kein Bau-Kostencontrolling.",
+    "sections": [
+      {
+        "title": "So rechnen Sie",
+        "items": [
+          "Projekt, optional Gebäude und Stockwerk, dann Einheit — die Rechnung läuft bei der Auswahl.",
+          "Zusammenfassung und Aufschlüsselung: Verkaufspreis vs. Kosten vs. implizite Rendite.",
+          "PDF-Export als Momentaufnahme."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Kosten aus Einheitenkosten. Ertrag aus Verkaufspreis oder Mietannahmen im Rechner.",
+          "Quellen ändern und Einheit neu wählen rechnet neu. Keine Budgetversion wird gespeichert.",
+          "Baubudgets, BOQ und Kostenbindungen liegen ausserhalb dieses Real-Estate-Menüs."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit, Einheitenkosten, Verkaufspreisfelder, optionale Mietwerte."
+        ]
+      }
+    ]
   }
 }

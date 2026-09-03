@@ -18,5 +18,34 @@
   "noBranchesTitle": "Keine Filialunternehmen gefunden",
   "noBranchesDescription": "Erstellen Sie Tochterunternehmen, indem Sie diese Organisation als Mutterfirma setzen, um Kennzahlen über Filialen zu vergleichen.",
   "failTitle": "Gruppen-Dashboard konnte nicht geladen werden",
-  "failDescription": "Beim Abrufen der Gruppenkennzahlen ist ein Fehler aufgetreten. Bitte erneut versuchen."
+  "failDescription": "Beim Abrufen der Gruppenkennzahlen ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+  "help": {
+    "ariaLabel": "Über Gruppendashboard",
+    "title": "Über Gruppendashboard",
+    "overview": "Das Gruppendashboard aggregiert KPIs über Filialfirmen mit gemeinsamer Mutter. Die Zentrale sieht Totale plus Filialtabelle. Eine Filiale sieht sich und Geschwister. Ein Lesemodell, kein Ort zum Bearbeiten von Einheiten.",
+    "sections": [
+      {
+        "title": "KPIs",
+        "items": [
+          "Einheiten total / verfügbar / verkauft / vermietet.",
+          "Umsatz, Provisionen, aktive Mietverträge, offene Mängel."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Berechnet zum Zeitstempel im Header — Aktualisieren lädt neu.",
+          "Tochterfirmen müssen diese Organisation als Mutter haben, sonst fehlen sie.",
+          "Operative Arbeit bleibt in den Real-Estate-Menüs der jeweiligen Firma nach Firmenwechsel.",
+          "Nicht Übersicht (eine Firma) und nicht Dashboard (ein Gebäude)."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Rollt Einheiten, Verkäufe, Provisionen, Mietverträge, Mängel je Firma auf."
+        ]
+      }
+    ]
+  }
 }

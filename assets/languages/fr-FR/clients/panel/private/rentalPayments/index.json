@@ -37,5 +37,51 @@
       }
     },
     "remaining": "Restant"
+  },
+  "help": {
+    "ariaLabel": "À propos des loyers",
+    "title": "À propos des loyers",
+    "overview": "Un loyer est un mois planifié d'un bail. Le reste est dérivé (montant + pénalité − payé). Le statut avance en attente → payé | partiellement payé | en retard, ou remis. Vous encaissez ici ; vous ne redéfinissez pas le loyer du bail ici. Laissez le bail générer le planning plutôt que de créer les mois à la main.",
+    "sections": [
+      {
+        "title": "Ce qu'une ligne contient",
+        "items": [
+          "Bail parent, unité, échéance, montant, montant payé, reste, devise.",
+          "Statut : en attente, payé, partiellement payé, en retard, remis.",
+          "Montant de pénalité (appliqué lorsque le mois passe en retard).",
+          "Quittances (chaque tranche d'encaissement avec date et notes)."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Marquer payé — enregistrer un montant contre ce mois seulement (le bail parent doit être actif). Paiement intégral = payé ; partiel = partiellement payé. Impossible de surpayer le reste. Impossible d'encaisser sur des lignes déjà payées ou remises.",
+          "Remettre — pardonner le reste d'une ligne ouverte. Impossible de remettre ce qui est déjà payé.",
+          "Enregistrer un paiement sur le bail (FIFO) peut remplir cette ligne comme partie d'un montant plus large — même calcul de reste."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Filtrer en retard vs en attente vs payé.",
+          "Ouvrir une ligne pour encaisser ou remettre.",
+          "Créer rarement à la main — les baux génèrent le planning ; resynchronisez sur le bail si les mois sont faux."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Le retard tient compte du délai de grâce du bail ; un job quotidien bascule le statut et peut appliquer la pénalité une fois.",
+          "Le tableau de bord « loyer encaissé / dû / en retard » additionne ces lignes.",
+          "Résilier ou expirer un bail remet les lignes encore ouvertes."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Bail parent. Unité. Onglet paiements du centre des locations."
+        ]
+      }
+    ]
   }
 }

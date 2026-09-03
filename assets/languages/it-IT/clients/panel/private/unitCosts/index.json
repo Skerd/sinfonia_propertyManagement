@@ -151,5 +151,41 @@
         "disputed": "Contestato"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Informazioni sui costi unità",
+    "title": "Informazioni sui costi unità",
+    "overview": "I costi unità sono acquisti e fatture lato proprietario imputati a un'unità (e quindi al suo progetto/edificio). La pagina ha una tabella spese e un calendario pagamenti. Non è il canone del conduttore (Pagamenti affitto) né le fatture appaltatori del modulo cantiere.",
+    "sections": [
+      {
+        "title": "Schede",
+        "items": [
+          "Spese — voci: fornitore, importo, stato, periodo, unità.",
+          "Calendario pagamenti — pagato / in attesa / scaduto per giorno nel mese visibile."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Aggiungere una spesa su un'unità. Filtrare per unità, progetto, fornitore, stato.",
+          "Aperta da un'unità, l'elenco è già limitato.",
+          "Usate il calendario per vedere quando scadono le fatture lato proprietario."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Il calcolatore ROI legge questi costi contro il ricavo di vendita o locazione dell'unità selezionata.",
+          "L'export ERP può includere il dataset costi unità per la contabilità.",
+          "Incassare il canone di un conduttore è Pagamenti affitto / Contratti di locazione, non questo elenco."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità → Piano → Edificio → Progetto. Calcolatore ROI. Export ERP."
+        ]
+      }
+    ]
   }
 }

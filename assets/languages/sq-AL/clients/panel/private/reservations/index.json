@@ -71,5 +71,61 @@
   "yes": "po",
   "no": "Nr",
   "expired": "Skaduar",
-  "converted": "Konvertuar"
+  "converted": "Konvertuar",
+  "help": {
+    "ariaLabel": "Rreth Rezervimeve",
+    "title": "Rreth Rezervimeve",
+    "overview": "Një rezervim mban një njësi për një klient derisa të skadojë, të anulohet ose të kthehet në shitje. Krijimi i një rezervimi aktiv e vë njësinë të rezervuar. Ky është bllokimi — një klient i mundshëm nuk është. Depozita e paguar, e-mailet e klientit dhe komisionet janë veprime mbi këtë dosje.",
+    "sections": [
+      {
+        "title": "Çfarë mban një rezervim",
+        "items": [
+          "Njësia, agjenti rezervues, shoqëria rezervuese, klienti (të gjitha të detyrueshme).",
+          "Data e rezervimit (jo në të ardhmen) dhe data e skadimit (e detyrueshme).",
+          "Shuma dhe valuta e depozitës opsionale, mënyra e pagesës, kodi i referimit, shënime, burimi.",
+          "Skedarët e kontratës së rezervimit dhe dokumente shtesë.",
+          "Flamuri i paguar — nëse depozita është regjistruar si e paguar.",
+          "Flamuri aktiv dhe statusi: aktiv, i anuluar, i skaduar.",
+          "Arsyeja e anulimit dhe koha kur anulohet.",
+          "Vulat e e-mailit (konfirmimi i dërguar, kujtesa 3-ditë / 1-ditë / e së njëjtës ditë, e-maili i skadimit) që të shihni çfarë ka marrë tashmë klienti."
+        ]
+      },
+      {
+        "title": "Veprimet",
+        "items": [
+          "Paguaj — shëno depozitën të paguar. Regjistron një komision rezervimi kur rregullat e lejojnë, dhe mund t'i dërgojë e-mail klientit.",
+          "Kthe pagesën — vetëm nëse njësia nuk është tashmë e shitur dhe komisioni i rezervimit nuk është tashmë i paguar. Anulon një komision në pritje.",
+          "Anulo — çaktivizon rezervimin, ruan opsionalisht një arsye, anulon komisionin në pritje, dhe nëse ky rezervim e mban ende njësinë, e kthen të lirë.",
+          "Rikthe — vetëm nëse rezervimi është joaktiv dhe njësia është e lirë (e lirë, ose e shitur pa rezervim tjetër sipas rregullit). E vë njësinë sërish të rezervuar dhe riregjistron komisionin.",
+          "E-mail manual te klienti — konfirmim, kujtesa 3-ditë / 1-ditë / sot, ditët e mbetura, ose njoftim skadimi. Çdo kujtesë lejohet vetëm në dritaren përkatëse të kalendarit. E-maili i skadimit vë edhe statusin të skaduar dhe liron njësinë nëse ky rresht e mbante ende."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një rezervim mbi një njësi të lirë me një përdorues klient të vërtetë.",
+          "Filtroni sipas njësisë, klientit, agjentit, statusit, datave.",
+          "Hapni fletën për depozitën, dokumentet, paguaj/anulo/rikthe, dhe e-mailet.",
+          "Ktheni në shitje nga Shitjet (para në dorë ose plan pagesash) — shitja mund të mbajë rezervimin dhe fushat e kthimit të depozitës."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Një punë ditore mund t'i skadojë rezervimet pas ditës së skadimit, t'i dërgojë e-mail klientit dhe ta lirojë njësinë — i njëjti rezultat si dërgimi i e-mailit të skadimit me dorë.",
+          "Nuk mund të rezervoni një njësi tashmë të rezervuar, të shitur ose me qira.",
+          "Komisionet: një komision rezervimi në pritje shfaqet kur paguaj/rikthe e regjistron; anulimi ose kthimi i pagesës anulon komisionin në pritje (jo tashmë të paguar).",
+          "Kontratat & klientët e liston këtë rezervim si dokument tregtar; nuk e dyfishon."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Statusi i njësisë e lirë → e rezervuar → e lirë (anulo/skado) ose → e shitur (përmes Shitjes).",
+          "Përdoruesi klient, agjenti, klienti i mundshëm opsional që erdhi para.",
+          "Komisioni (burimi rezervim). Më pas: Shitje, ndoshta e lidhur me këtë rezervim."
+        ]
+      }
+    ]
+  }
 }

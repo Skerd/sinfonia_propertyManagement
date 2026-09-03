@@ -40,5 +40,45 @@
     "progressClaims": "Progress Claims",
     "permits": "Permits",
     "rows": "{count} rows"
+  },
+  "help": {
+    "ariaLabel": "About ERP export",
+    "title": "About ERP export",
+    "overview": "ERP export builds downloadable datasets for accounting systems. Choose one or more datasets, optional project, and a date range. This page does not post to SAP or Abacus — it produces JSON (preview) or CSV (download) those systems can ingest.",
+    "sections": [
+      {
+        "title": "Datasets you can include",
+        "items": [
+          "Sales — closed commercial sales in range.",
+          "Commissions — agent payout rows.",
+          "Payment plan installments — installment schedule/receipts.",
+          "Rental payments — month rows (tenant rent).",
+          "Unit costs — owner-side spend on units.",
+          "BOQ items, cost commitments, progress claims, permits — construction/finance records when that module data exists for the company."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Select datasets (at least one), optional project filter, date from/to, then Preview JSON or Export CSV.",
+          "Empty result means no source rows in range — widen dates or drop the project filter.",
+          "Preview tables are the same columns the CSV will contain."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Read-only extract. Re-running with the same filters produces a new file from current data.",
+          "It will not mark invoices exported or change payment status.",
+          "Unit costs here are owner expenses; rental payments are tenant months — do not mix them in the receiving ERP as the same account unless your accountant says so."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Whatever you ticked: sales, commissions, payment plans, rental payments, unit costs, and optional construction collections."
+        ]
+      }
+    ]
   }
 }

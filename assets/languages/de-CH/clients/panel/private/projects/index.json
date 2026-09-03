@@ -23,6 +23,68 @@
     "updatedAt": "Aktualisiert am",
     "videoGallery": "Videos"
   },
+  "help": {
+    "ariaLabel": "Über Projekte",
+    "title": "Über Projekte",
+    "overview": "Ein Projekt ist der oberste Behälter einer Entwicklung. Jedes Gebäude, Stockwerk, jede Einheit, jeder Lead, jede Reservation, jeder Verkauf, Mietvertrag, jede Story, Einheitenkosten und Bauakte hängt daran. Ein Projekt erzeugen erzeugt noch keine Gebäude. Der Projektdatensatz selbst ist Identität, Marketing und Provisionsvorgaben — nicht das physische Gebäude.",
+    "sections": [
+      {
+        "title": "Was das Projekt speichert",
+        "items": [
+          "Name (Pflicht) — Bezeichnung in Panel, Public Site und E-Mails.",
+          "Beschreibung — langer Text für Listen und die öffentliche Projektseite.",
+          "Hauptbild (Pflicht) — Karten, Public Site, Galerien. Ohne Bild kein Anlegen.",
+          "Bildgalerie, Videogalerie, weitere Mediendateien — optionales Marketingset.",
+          "Marketingbroschüre (PDF).",
+          "Magazin-Titel, -beschreibung, -PDF — redaktioneller Block.",
+          "Social Links (Name, URL, optionales Logo) — bis 20.",
+          "Hervorhebung auf der Startseite plus Reihenfolge (kleinere Zahl zuerst).",
+          "Verkaufs- und Reservationsprovision % — Startwerte für spätere Deals. Ein Deal kann eigene Sätze tragen."
+        ],
+        "body": "Kein Statusautomat auf dem Projekt. Status lebt auf Gebäude, Einheit, Reservation, Verkauf und Mietvertrag."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Projekt erstellen — Hauptbild und Name Pflicht.",
+          "Suchen, filtern, Karten- vs. Tabellenansicht.",
+          "Karte öffnen für Marketing, Medien, Hervorhebung, Provision.",
+          "Zeilenmenü: Gebäude dieses Projekts.",
+          "Löschen ist Soft-Delete und wiederherstellbar. Kinder entstehen oder verschwinden nicht automatisch."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ein Projekt darf null Gebäude haben. Bestand beginnt mit Gebäuden, dann Stockwerken, dann Einheiten.",
+          "Die Public Site liest diese Marketingfelder. Fehlende Medien erscheinen einfach nicht.",
+          "Provisionsvorgaben später ändern schreibt historische Deals nicht um.",
+          "Dashboard- und Übersicht-KPIs „pro Projekt“ aggregieren Einheiten und Deals darunter."
+        ]
+      },
+      {
+        "title": "Was daran hängt",
+        "items": [
+          "Physisch: Projekt → Gebäude → Stockwerk → Einheit.",
+          "Verkauf: Leads, Abnahmen, Änderungsanträge, Reservationen, Verkäufe, Provisionen.",
+          "Contracts Hub ist ein Register dieser Dokumente — kein neuer Typ.",
+          "Miete: Verträge und Mietzahlungen (auch Rentals Hub).",
+          "Inhalt: Stories (Marketing) und Baufortschritt.",
+          "Kosten: Einheitenkosten. Qualität: Mängel."
+        ],
+        "body": "Diese Sätze entstehen auf ihren Seiten und verweisen nur auf das Projekt. Löschen kaskadiert nicht."
+      },
+      {
+        "title": "Nächster Schritt",
+        "items": [
+          "Projekt mit klarem Namen und Hauptbild anlegen.",
+          "Gebäude hinzufügen (Projekt, Adresse, Investition, Hauptbild).",
+          "Stockwerke, dann Einheiten (Typ, Nummer, Flächen, Preis).",
+          "Dann Marketing (Hervorhebung, Stories) oder Vertrieb (Leads → Reservation/Verkauf) bzw. Miete."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "title": "Projekte"
 }

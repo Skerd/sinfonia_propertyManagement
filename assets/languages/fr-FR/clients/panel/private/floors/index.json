@@ -44,5 +44,48 @@
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
   "no": "Non",
-  "view": "Voir"
+  "view": "Voir",
+  "help": {
+    "ariaLabel": "À propos des étages",
+    "title": "À propos des étages",
+    "overview": "Un étage est un niveau d'un bâtiment. Les unités se situent sur un étage. Le dossier est la couche de plan (nom, numéro de niveau, surface, accessibilité, espaces communs, médias) plus un contour optionnel sur le plan du bâtiment. Ce n'est pas un statut commercial — les unités portent disponible / réservé / vendu / loué.",
+    "sections": [
+      {
+        "title": "Ce qu'un étage contient",
+        "items": [
+          "Nom et bâtiment parent (obligatoires).",
+          "Numéro de niveau — l'ordinal de ce niveau (peut être négatif pour le sous-sol).",
+          "Surface de la dalle (obligatoire).",
+          "Indicateurs accessible / issue de secours, description, et une liste d'espaces communs (hall, noms de couloirs et libellés similaires).",
+          "Image principale (obligatoire) plus galeries, vidéos, fichiers supplémentaires et brochure marketing optionnels.",
+          "Coordonnées de polygone optionnelles — le contour dessiné sur le plan du bâtiment pour que le plan public ou du panel mette cet étage en évidence.",
+          "Le nombre d'unités sur l'étage est calculé depuis les enfants ; vous ne le saisissez pas."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Ouvert depuis un bâtiment, la liste est limitée à cet édifice.",
+          "Créer un étage, puis y ajouter des unités. Un étage à zéro unité est valide mais n'affichera pas de stock.",
+          "Ouvrir une carte pour modifier les données de plan et les médias. Les actions de ligne mènent aux unités de cet étage.",
+          "La suppression logique est restaurable. Les unités de l'étage ne sont pas supprimées automatiquement."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Les unités doivent choisir un étage (et donc un bâtiment et un projet par cascade).",
+          "Le calculateur ROI peut restreindre par étage lors de l'estimation d'une unité.",
+          "L'étage n'est pas réservé ni vendu dans son ensemble — chaque unité a son propre statut."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Parent : Bâtiment (qui a un Projet). Enfants : Unités.",
+          "Étape suivante typique : créer des unités avec type, numéro, surfaces, pièces, prix et devise."
+        ]
+      }
+    ]
+  }
 }

@@ -2,6 +2,41 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
   "title": "Unit Type Categories",
   "description": "Manage unit type categories",
+  "help": {
+    "ariaLabel": "About Unit Type Categories",
+    "title": "About Unit Type Categories",
+    "overview": "A Unit type category is a grouping label for unit types (for example residential versus commercial). It has only a name. Units do not pick a category themselves — they pick a unit type, and that type belongs to a category.",
+    "sections": [
+      {
+        "title": "What a category holds",
+        "items": [
+          "Name (required). There are no other fields."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create, search, and edit categories.",
+          "Delete is a soft delete, but it is blocked while any unit type still uses this category. Reassign or remove those types first."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Create categories before the unit types that need them. A unit type cannot be saved without a category.",
+          "Renaming a category updates the label everywhere that type is shown. It does not change units or prices."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create the categories you need.",
+          "Create unit types under those categories.",
+          "When you add units, pick a unit type — the category comes along with the type."
+        ]
+      }
+    ]
+  },
   "createUnitTypeCategory": "Create Category",
   "noData": "No unit type categories found",
   "failTitle": "Failed to load unit type categories",

@@ -24,5 +24,40 @@
     "title": "Bezeichnung",
     "updateDate": "Aktualisierungsdatum",
     "updatedAt": "Aktualisiert am"
+  },
+  "help": {
+    "ariaLabel": "Über Baufortschritt",
+    "title": "Über Baufortschritt",
+    "overview": "Ein Baufortschritt ist ein Fortschrittspost mit Text und Medien zu einem Projekt oder Gebäude. Für Baustellenkommunikation (was diese Woche gebaut wurde). Keine Story und kein Mangel.",
+    "sections": [
+      {
+        "title": "Was er speichert",
+        "items": [
+          "Text und Medien.",
+          "Projekt, optionales Gebäude.",
+          "Optionale Links zu Meilenstein oder Terminplanaufgabe, wenn vorhanden."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Updates anlegen, nach Projekt/Gebäude filtern.",
+          "Können auf der Public Site oder in Kundenkommunikation erscheinen, wenn das Formular das so setzt."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ändert weder Einheitenstatus noch Fertigstellungsdaten von selbst.",
+          "Tatsächliche Fertigstellung des Gebäudes und Baustatus der Einheit bleiben auf jenen Datensätzen."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Projekt, optionales Gebäude. Ergänzend Stories (Marketing) und Mängel."
+        ]
+      }
+    ]
   }
 }

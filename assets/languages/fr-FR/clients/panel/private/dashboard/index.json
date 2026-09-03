@@ -24,5 +24,50 @@
   "rentOutstanding": "Loyer restant dû",
   "rentOverdue": "Loyer en retard",
   "activeLeases": "Baux actifs",
-  "viewRentalsHub": "Ouvrir le hub locatif"
+  "viewRentalsHub": "Ouvrir le hub locatif",
+  "help": {
+    "ariaLabel": "À propos du tableau de bord",
+    "title": "À propos du tableau de bord immobilier",
+    "overview": "Le tableau de bord est le cockpit opérationnel des bâtiments d'une société. Vous choisissez un bâtiment ; le reste de la page (KPI, mix de statuts, graphiques de recettes, liste d'unités, alertes de paiement) suit ce bâtiment. C'est là que se pilote le stock au quotidien. Il ne crée ni bâtiments, ni unités, ni deals — il les lit.",
+    "sections": [
+      {
+        "title": "Disposition",
+        "items": [
+          "Galerie de bâtiments en haut — la sélection focalise tous les KPI et la liste d'unités.",
+          "Ligne de KPI : unités totales, vendues, encaissées, prix moyen au m², plus loyer encaissé / dû / en retard et baux actifs lorsque des données locatives existent.",
+          "La période (7 jours, 30 jours, 3 mois, 12 mois) change les fenêtres d'encaissement, pas le stock d'unités lui-même.",
+          "Les graphiques montrent le mix de statuts et le chiffre d'affaires de la période.",
+          "Le tableau / les cartes d'unités en bas sont la même ressource Unités, déjà limitée au bâtiment choisi.",
+          "Les alertes de paiement mènent aux plans de paiement / réservations à traiter."
+        ]
+      },
+      {
+        "title": "Comment les chiffres sont produits",
+        "items": [
+          "Total / vendu / réservé / loué sont des décomptes des unités de ce bâtiment selon le statut commercial.",
+          "Encaissé vient des quittances de vente et de l'activité du plan de paiement dans la période — pas d'un objectif saisi.",
+          "La moyenne €/m² utilise les prix et surfaces de ces unités ; elle ne reprice rien.",
+          "Loyer encaissé / dû / en retard additionne les lignes de loyer des baux des unités de ce bâtiment.",
+          "Baux actifs compte les contrats encore actifs sur ces unités."
+        ]
+      },
+      {
+        "title": "Ce que cette page ne fait pas",
+        "items": [
+          "Elle ne change pas le statut d'une unité. Réservez, vendez ou louez depuis ces listes.",
+          "Choisir un autre bâtiment ne change pas le projet — chaque bâtiment appartient déjà à un projet.",
+          "Ce n'est pas la vue d'ensemble (toute la société) ni le tableau de bord groupe (plusieurs sociétés)."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Bâtiment → Étage → Unité (stock).",
+          "Réservation / Vente (vendu et encaissé).",
+          "Bail / Loyer (KPI locatifs).",
+          "Utilisez « Voir les plans de paiement » / « Voir le centre des locations » lorsque ces alertes apparaissent."
+        ]
+      }
+    ]
+  }
 }

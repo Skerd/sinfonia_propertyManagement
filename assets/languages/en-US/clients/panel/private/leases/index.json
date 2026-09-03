@@ -38,5 +38,56 @@
         "terminated": "Terminated"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "About Leases",
+    "title": "About Leases",
+    "overview": "A Lease is the rental agreement on a unit. Activating it sets the unit to rented. Monthly rent rows are generated and collected through Rental payments (partial amounts, oldest month first, late fee, grace period). Terminate or expire releases the unit. You cannot lease a reserved or sold unit.",
+    "sections": [
+      {
+        "title": "What a lease holds",
+        "items": [
+          "Unit and tenant (required).",
+          "Start date and end date (end must be after start).",
+          "Monthly rent and rent currency (required).",
+          "Optional deposit amount; deposit paid and deposit returned-at are action-managed.",
+          "Late fee % and grace period days — used when a month goes overdue.",
+          "Contract media (required file), notes, termination reason / date when ended.",
+          "Status: active, expired, terminated."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Terminate — only while active. Sets terminated, waives still-open rent rows, and releases the unit if it was rented by this lease.",
+          "Mark deposit paid — once. Return deposit — only after it was marked paid, and only once.",
+          "Record rent payment — amount is applied oldest open month first (FIFO). Cannot exceed total open remaining. Active leases only.",
+          "Resync schedule — rebuild month rows if dates or rent changed.",
+          "Send rent reminder — client email for a chosen month row (reminder kinds), only while that row is still open."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a lease only on a unit that is available.",
+          "Open the sheet for payments, deposit, reminders, terminate.",
+          "Filter by unit, tenant, status, dates."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A daily job marks unpaid months overdue after due date + grace (UTC end of day), stamps late fee once from the lease %, expires active leases past end date, waives their open rows, and releases units.",
+          "Remaining on a month = amount + late fee − paid. Partial collections stay partially paid until remaining hits zero.",
+          "Rentals Hub and Dashboard rent KPIs read these same rows."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit available → rented → available. Rental payments (children). Rentals Hub. Dashboard."
+        ]
+      }
+    ]
   }
 }

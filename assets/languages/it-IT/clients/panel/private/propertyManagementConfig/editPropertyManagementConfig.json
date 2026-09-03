@@ -24,6 +24,46 @@
     "title": "Modifica Vendite & consegna",
     "description": "Aggiorna i dati di questo Vendite & consegna."
   },
+  "help": {
+    "ariaLabel": "Informazioni su Vendite & consegna",
+    "title": "Informazioni su Vendite & consegna",
+    "overview": "Questi sono interruttori a livello aziendale: come si approvano le nuove vendite e quando si può registrare una data di consegna. C’è un solo record di impostazioni per azienda — non un elenco di vendite. Salvare qui non crea una vendita né un pacchetto di consegna.",
+    "sections": [
+      {
+        "title": "Cosa fanno gli interruttori",
+        "items": [
+          "Richiedere l’approvazione del responsabile alla creazione di una vendita — le nuove vendite partono in attesa. L’unità resta comunque marcata venduta subito. Approvare la lascia venduta. Rifiutare la riporta disponibile e toglie la vendita dall’unità.",
+          "Richiedere un pacchetto di consegna completato prima di registrare la consegna — la prima volta che impostate una data di consegna sulla vendita, quell’unità deve già avere un pacchetto di consegna completato. Modificare in seguito una data di consegna già impostata non è bloccato da questo vincolo."
+        ],
+        "body": "Entrambi sono disattivati di default. Attivarli non riscrive le vendite storiche. Si applicano alla prossima vendita creata e alla prossima prima data di consegna."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "La pagina apre l’unico record di impostazioni di questa azienda (creato automaticamente se mancava).",
+          "Due interruttori. Salvare per applicare."
+          "Né creazione, né eliminazione, né override per progetto."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Senza approvazione, creare una vendita notifica come creata — nessuna coda.",
+          "Con approvazione, il venditore è avvisato che l’approvazione è in attesa; i responsabili decidono nella pagina Vendite.",
+          "I pacchetti di consegna si compilano nel flusso unità / vendite. Questa pagina regola solo l’apposizione della data di consegna.",
+          "Cambiare questi flag non annulla le vendite già in attesa."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Vendite — approvare o rifiutare, registrare consegna / trasferimento di titolo.",
+          "Unità — venduta rispetto a disponibile dopo un rifiuto.",
+          "Pacchetti di consegna — devono essere completati sull’unità prima della prima data di consegna quando il secondo interruttore è attivo."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Annulla",
     "submit": "Salva"

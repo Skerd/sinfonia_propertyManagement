@@ -23,6 +23,68 @@
     "updatedAt": "Mis à jour le",
     "videoGallery": "Vidéos"
   },
+  "help": {
+    "ariaLabel": "À propos des projets",
+    "title": "À propos des projets",
+    "overview": "Un projet est le conteneur de premier niveau d'une opération. Chaque bâtiment, étage, unité, prospect, réservation, vente, bail, récit, coût d'unité et dossier de chantier s'y rattache. Créer un projet ne crée pas de bâtiments — vous les ajoutez ensuite. Le dossier projet lui-même est identité, marketing et barèmes commerciaux, pas le bâtiment physique.",
+    "sections": [
+      {
+        "title": "Ce que le projet contient",
+        "items": [
+          "Nom (obligatoire) — libellé dans le panel, le site public et les e-mails.",
+          "Description — texte long pour les listes et la page publique du projet.",
+          "Image principale (obligatoire) — cartes, site public, galeries. Sans elle, impossible de créer le projet.",
+          "Galerie d'images, galerie vidéo, fichiers médias supplémentaires — ensemble visuel optionnel pour le marketing.",
+          "Brochure marketing (PDF) — que les opérateurs et le site public peuvent proposer.",
+          "Titre, description et PDF magazine — bloc éditorial lorsque vous publiez une page de type magazine.",
+          "Liens sociaux (nom, URL, logo optionnel) — jusqu'à 20 liens affichés avec le projet.",
+          "Mise en avant sur la page d'accueil + ordre de tri — quels projets apparaissent dans la rangée d'accueil publique et dans quel ordre (plus petit d'abord).",
+          "Commission de vente % et commission de réservation % — taux de départ hérités par les deals ultérieurs. Un deal peut encore porter ses propres chiffres."
+        ],
+        "body": "Il n'y a pas de machine à statuts sur le projet lui-même. Livraison et statut commercial vivent sur les bâtiments, unités, réservations, ventes et baux."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un projet — image principale et nom obligatoires.",
+          "Rechercher et filtrer la liste ; basculer vue cartes / vue tableau.",
+          "Ouvrir une carte pour modifier marketing, médias, mise en avant et barèmes de commission.",
+          "Menu de ligne : ouvrir les bâtiments déjà limités à ce projet.",
+          "La suppression est logique. Le projet peut être restauré. Les enfants (bâtiments, unités, deals) ne sont ni créés ni détruits automatiquement à la suppression ou à la restauration."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Un projet peut exister sans aucun bâtiment. Le stock commence quand vous ajoutez des bâtiments, puis des étages, puis des unités.",
+          "Les pages du site public (galerie, rangée mise en avant, magazine, fiche projet) lisent ces champs marketing. Médias manquants ou non publiés : simplement absents.",
+          "Les taux de commission du projet ne sont que des défauts. Les modifier plus tard ne réécrit pas les ventes ou réservations historiques.",
+          "Les KPI du tableau de bord et de la vue d'ensemble « par projet » agrègent les unités et deals en dessous, ce ne sont pas des champs stockés ici."
+        ]
+      },
+      {
+        "title": "Ce qui s'y rattache",
+        "items": [
+          "Arbre physique : Projet → Bâtiment → Étage → Unité.",
+          "Pipeline commercial : prospects (intérêt projet optionnel), inspections, demandes de modification, réservations, ventes, commissions.",
+          "Contrats & clients est un registre de ces documents commerciaux — il ne crée pas un nouveau type.",
+          "Locations : baux et loyers (aussi via le centre des locations).",
+          "Contenu : récits (journal marketing) et avancements de chantier.",
+          "Coûts : coûts d'unité imputés aux unités de ce projet. Qualité : réserves sur ces unités."
+        ],
+        "body": "Ces dossiers se créent sur leurs propres pages et ne font que référencer le projet. Supprimer un projet ne les cascade pas."
+      },
+      {
+        "title": "Étape suivante typique",
+        "items": [
+          "Créer le projet avec un nom clair et une image principale.",
+          "Ajouter des bâtiments (chacun a besoin du projet, de l'adresse, de la valeur d'investissement, de l'image principale).",
+          "Ajouter des étages sur chaque bâtiment, puis des unités sur chaque étage (type, numéro, surfaces, prix).",
+          "Ensuite publier le marketing (mise en avant, récits) ou démarrer le commercial (prospects → réservations / ventes, ou baux)."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "title": "Projets"
 }

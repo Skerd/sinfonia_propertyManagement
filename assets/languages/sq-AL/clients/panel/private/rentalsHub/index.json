@@ -105,5 +105,41 @@
       "overdue": "E vonuar",
       "waived": "Falur"
     }
+  },
+  "help": {
+    "ariaLabel": "Rreth Qendrës së qirave",
+    "title": "Rreth Qendrës së qirave",
+    "overview": "Qendra e qirave është regjistri i shoqërisë i kontratave të qirasë dhe pagesave të qirasë. Të njëjtat dosje burim si Kontratat e qirasë dhe Pagesat e qirasë, të paraqitura së bashku që operacionet të kërkojnë qiramarrës, të papaguara dhe të vonuara pa kërcyer ndërmjet dy listave. Nuk krijon një lloj të ri dokumenti.",
+    "sections": [
+      {
+        "title": "Skedat",
+        "items": [
+          "Kontratat e qirasë — referenca, qiramarrësi, njësia, datat, qiraja mujore, e papaguar.",
+          "Pagesat — data e afatit, shuma, e paguar, mbetja, statusi (në pritje, e paguar, e pjesshme, e vonuar, e falur)."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Hapja e një rreshti përdor fletën e kontratës ose të pagesës. Krijimi/ndryshimi dhe cikli i jetës mbeten te Kontratat e qirasë / Pagesat e qirasë.",
+          "Filtrat (projekti, ndërtesa, kati, njësia, statusi, datat) zbatohen vetëm te ky regjistër.",
+          "Nëse e ndërprisni një kontratë, përditësohet këtu sepse është i njëjti rresht."
+        ]
+      },
+      {
+        "title": "Kur ta përdorni",
+        "items": [
+          "Arkëtimi i mëngjesit: filtroni pagesat e vonuara, punoni listën.",
+          "«Sa i detyrohet ky qiramarrës?» — kërkoni kontratat, pastaj skedën e pagesave.",
+          "Përdorni faqen e dedikuar Kontratat e qirasë kur ju duhet ndërprerje, depozitë ose rirregullim i planit."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Kontrata e qirasë dhe Pagesa e qirasë. Statusi i njësisë me qira sa kontrata është aktive. KPI-të e qirasë të panelit."
+        ]
+      }
+    ]
   }
 }

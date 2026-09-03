@@ -40,5 +40,45 @@
     "progressClaims": "Situations de travaux",
     "permits": "Permis",
     "rows": "{count} lignes"
+  },
+  "help": {
+    "ariaLabel": "À propos de l'export ERP",
+    "title": "À propos de l'export ERP",
+    "overview": "L'export ERP construit des jeux téléchargeables pour les systèmes comptables. Choisissez un ou plusieurs jeux, un projet optionnel et une plage de dates. Cette page ne poste pas vers SAP ni Abacus — elle produit du JSON (aperçu) ou du CSV (téléchargement) que ces systèmes peuvent ingérer.",
+    "sections": [
+      {
+        "title": "Jeux que vous pouvez inclure",
+        "items": [
+          "Ventes — ventes commerciales clôturées dans la plage.",
+          "Commissions — lignes de versement agent.",
+          "Échéances de plan de paiement — planning/quittances.",
+          "Loyers — lignes mensuelles (loyer locataire).",
+          "Coûts d'unité — dépenses côté propriétaire sur les unités.",
+          "Postes BOQ, engagements de coût, situations de travaux, permis — dossiers chantier/finance lorsque ces données de module existent pour la société."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Sélectionner des jeux (au moins un), filtre projet optionnel, dates de / à, puis Aperçu JSON ou Export CSV.",
+          "Résultat vide = aucune ligne source dans la plage — élargissez les dates ou retirez le filtre projet.",
+          "Les tableaux d'aperçu sont les mêmes colonnes que le CSV contiendra."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Extraction en lecture seule. Relancer avec les mêmes filtres produit un nouveau fichier à partir des données actuelles.",
+          "Il ne marque pas les factures comme exportées et ne change pas le statut de paiement.",
+          "Les coûts d'unité ici sont des dépenses propriétaire ; les loyers sont des mois locataire — ne les mélangez pas dans l'ERP destinataire comme le même compte, sauf si votre expert-comptable le dit."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Ce que vous avez coché : ventes, commissions, plans de paiement, loyers, coûts d'unité, et collections chantier optionnelles."
+        ]
+      }
+    ]
   }
 }

@@ -2,6 +2,47 @@
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
   "title": "Constructeurs",
   "description": "Gérer tous les constructeurs",
+  "help": {
+    "ariaLabel": "À propos des constructeurs",
+    "title": "À propos des constructeurs",
+    "overview": "Un constructeur est une société ou un professionnel que vous rattachez aux bâtiments et, éventuellement, aux coûts d’unité. Cet annuaire recense entrepreneurs, architectes, ingénieurs et parties similaires — ce n’est ni un compte utilisateur ni un bâtiment.",
+    "sections": [
+      {
+        "title": "Ce que le constructeur contient",
+        "items": [
+          "Nom et TVA (obligatoires).",
+          "E-mail, téléphone, description, site web et logo optionnels.",
+          "Adresses optionnelles (rue, code postal, ville et pays obligatoires par adresse ; État/canton optionnel ; coordonnées obligatoires si vous ajoutez une adresse).",
+          "Type de partie : entrepreneur, architecte, ingénieur, métreur (QS), chef de projet (PM), géomètre ou autre.",
+          "Métiers (texte court), date d’échéance d’assurance, note de performance de 0 à 100."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un constructeur — nom et TVA obligatoires.",
+          "Rechercher et filtrer ; ouvrir une ligne pour modifier identité, adresses et notes.",
+          "La suppression est logique et restaurable. Elle détache ce constructeur des bâtiments qui le listaient. Les bâtiments ne sont pas supprimés."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Créer un constructeur ne l’assigne nulle part. Vous le choisissez plus tard sur un bâtiment (liste optionnelle) ou sur un coût d’unité.",
+          "Plusieurs constructeurs peuvent figurer sur un bâtiment. Un constructeur peut figurer sur plusieurs bâtiments.",
+          "Un coût d’unité peut pointer optionnellement vers un constructeur comme fournisseur."
+        ]
+      },
+      {
+        "title": "Étape suivante typique",
+        "items": [
+          "Créer les sociétés et professionnels avec lesquels vous travaillez.",
+          "Sur chaque bâtiment, rattacher les constructeurs concernés.",
+          "Lors de la saisie des coûts d’unité, choisir le constructeur si la facture doit être liée à cet annuaire."
+        ]
+      }
+    ]
+  },
   "createConstructor": "Créer un constructeur",
   "noData": "Aucun constructeur trouvé",
   "failTitle": "Échec du chargement des constructeurs",

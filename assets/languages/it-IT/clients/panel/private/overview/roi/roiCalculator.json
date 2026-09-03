@@ -50,5 +50,34 @@
     "unitsByStatusTitle": "Unità per stato",
     "totalUnits": "Totale",
     "otherUnits": "Altre"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sul calcolatore ROI",
+    "title": "Informazioni sul calcolatore ROI",
+    "overview": "Il calcolatore ROI stima il rendimento di un'unità (ristretta per progetto / edificio / piano) dai costi versus il ricavo di vendita o locazione. È un calcolatore su record esistenti, non un documento ROI memorizzato né il modulo cantiere di controllo costi / budget.",
+    "sections": [
+      {
+        "title": "Come eseguirlo",
+        "items": [
+          "Selezionare progetto, opzionalmente edificio e piano, poi un'unità — il calcolo parte alla scelta.",
+          "Sintesi e dettaglio per unità mostrano prezzo di vendita vs costi vs rendimento implicito.",
+          "Export PDF per uno snapshot del calcolo corrente."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "I costi derivano dai costi unità (e spesa correlata). Il ricavo dal prezzo di vendita o dalle ipotesi locative nel calcolatore.",
+          "Cambiare i record fonte e riselezionare l'unità ricalcola. Qui non si salva alcuna versione di budget.",
+          "Budget di costruzione, BOQ e impegni di costo vivono fuori da questo menu immobiliare, salvo che apriate quei moduli separatamente."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità, costi unità, campi prezzo di vendita, figure locative opzionali."
+        ]
+      }
+    ]
   }
 }

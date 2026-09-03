@@ -24,6 +24,46 @@
     "title": "Edit Sales & handover",
     "description": "Update the details for this Sales & handover."
   },
+  "help": {
+    "ariaLabel": "About Sales & handover",
+    "title": "About Sales & handover",
+    "overview": "These are company-wide switches for how new sales are approved and when a handover date may be recorded. There is one settings record per company — not a list of sales. Saving here does not create a sale or a handover package.",
+    "sections": [
+      {
+        "title": "What the switches do",
+        "items": [
+          "Require manager approval when creating a sale — new sales start pending approval. The unit is still marked sold immediately. Approving keeps it sold. Rejecting returns the unit to available and clears the sale on the unit.",
+          "Require a completed handover package before recording handover — the first time you set a handover date on a sale, that unit must already have a completed handover package. Changing an existing handover date later is not blocked by this gate."
+        ],
+        "body": "Both default off. Turning a switch on does not rewrite historical sales. It applies to the next sale you create and to the next first handover date you stamp."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "The page opens this company’s single settings record (created automatically if it did not exist).",
+          "Two switches. Save to apply."
+          "There is no create, delete, or per-project override here."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "With approval off, creating a sale notifies as created — there is no pending queue.",
+          "With approval on, the seller is notified that approval is pending; managers decide on the Sales page.",
+          "Handover packages are assembled on the unit / sales flow. This page only gates stamping the handover date.",
+          "Changing these flags does not cancel sales that are already pending."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Sales — approve or reject, and record handover / title transfer.",
+          "Units — sold versus available after a reject.",
+          "Handover packages — must be completed on the unit before the first handover date when the second switch is on."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Cancel",
     "submit": "Save"

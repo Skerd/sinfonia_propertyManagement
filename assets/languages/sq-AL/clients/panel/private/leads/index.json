@@ -59,5 +59,50 @@
         "other": "Tjetër"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Rreth Klientëve të mundshëm",
+    "title": "Rreth Klientëve të mundshëm",
+    "overview": "Një klient i mundshëm është një person në tubacionin tregtar para se të ekzistojë rezervim ose shitje. Është CRM, jo një bllokim mbi një njësi. Statusi është një fazë shitjeje që e përditësoni duke punuar personin; nuk ndryshon disponueshmërinë. Fitimi i një klienti të mundshëm nuk krijon rezervim — e krijoni te Rezervimet mbi një njësi të lirë.",
+    "sections": [
+      {
+        "title": "Çfarë mban një klient i mundshëm",
+        "items": [
+          "Emri (i detyrueshëm), mbiemri, e-maili, telefoni opsionalë.",
+          "Statusi: i ri → i kontaktuar → i kualifikuar → ofertë → negociatë → i fituar ose i humbur.",
+          "Burimi: sit, rekomandim, rrjete sociale, event, telefonatë e ftohtë, vizitë, bisedë, ose tjetër.",
+          "Interesi: partneritete, investime, mbështetje platforme, rezervim, ose tjetër.",
+          "Interes opsional te projekti dhe njësia — çfarë kërkuan, jo një mbajtje.",
+          "Buxheti dhe valuta opsionale, shënime, agjenti i caktuar, data e ndjekjes.",
+          "Ditari i aktivitetit — shënime me kohë nga veprimi «shto aktivitet» (kush bëri çfarë)."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një klient të mundshëm sapo dikush pyet. Caktoni agjent dhe datë ndjekjeje nëse punoni një radhë.",
+          "Hapni kartën për të lëvizur statusin, shtuar shënime dhe regjistruar aktivitet.",
+          "Filtroni sipas statusit, burimit, projektit, të caktuarit.",
+          "Fshirja e butë mund të rikthehet. Nuk anulon rezervimet e krijuara më vonë për të njëjtin person."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Një klient i mundshëm mund të tregojë te një njësi tashmë e rezervuar ose e shitur — është vetëm «interes», jo kontroll konflikti.",
+          "Nuk ka kthim automatik në rezervim. Kur janë gati, krijoni një Rezervim me një përdorues klient mbi një njësi të lirë.",
+          "I fituar / i humbur janë përfundime tubacioni. Nuk shkruajnë statusin e njësisë.",
+          "Siti publik ose biseda mund të krijojnë klientë të mundshëm (burimi sit / bisedë) sipas konfigurimit të shoqërisë."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Projekt dhe Njësi opsionale (vetëm interes).",
+          "Dokumentet tregtare të radhës: Rezervim, pastaj Shitje; ose një Kontratë qiraje nëse marrin me qira.",
+          "Raporti i agjentëve numëron më vonë rezervime dhe shitje, jo fazat e klientit të mundshëm."
+        ]
+      }
+    ]
   }
 }

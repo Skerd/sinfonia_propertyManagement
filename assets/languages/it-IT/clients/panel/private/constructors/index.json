@@ -2,6 +2,47 @@
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
   "title": "Costruttori",
   "description": "Gestisci tutti i costruttori",
+  "help": {
+    "ariaLabel": "Informazioni sui costruttori",
+    "title": "Informazioni sui costruttori",
+    "overview": "Un costruttore è un’azienda o un professionista che associate agli edifici e, opzionalmente, ai costi unità. Questa anagrafica è imprenditori, architetti, ingegneri e parti simili — non un account utente e non un edificio.",
+    "sections": [
+      {
+        "title": "Cosa contiene un costruttore",
+        "items": [
+          "Nome e IVA (obbligatori).",
+          "Email, telefono, descrizione, sito e logo opzionali.",
+          "Indirizzi opzionali (via, CAP, città e Paese obbligatori per ogni indirizzo; stato/cantone opzionale; coordinate obbligatorie quando aggiungete un indirizzo).",
+          "Tipo di parte: appaltatore, architetto, ingegnere, quantity surveyor (QS), project manager (PM), geometra o altro.",
+          "Mestieri (testo breve), scadenza assicurazione, punteggio di prestazione da 0 a 100."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare un costruttore — nome e IVA obbligatori.",
+          "Cercare e filtrare; aprire una riga per modificare identità, indirizzi e punteggi.",
+          "L’eliminazione è logica e ripristinabile. Eliminare scollega questo costruttore dagli edifici che lo elencavano. Gli edifici non vengono eliminati."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Creare un costruttore non lo assegna da nessuna parte. Lo scegliete dopo su un edificio (elenco opzionale) o su un costo unità.",
+          "Più costruttori possono stare su un edificio. Un costruttore su molti edifici.",
+          "I costi unità possono puntare opzionalmente a un costruttore come fornitore."
+        ]
+      },
+      {
+        "title": "Passo successivo tipico",
+        "items": [
+          "Creare le ditte e i professionisti con cui lavorate.",
+          "Su ciascun edificio, associare i costruttori pertinenti.",
+          "Quando registrate i costi unità, scegliere il costruttore se la fattura deve essere legata a questa anagrafica."
+        ]
+      }
+    ]
+  },
   "createConstructor": "Crea costruttore",
   "noData": "Nessun costruttore trovato",
   "failTitle": "Impossibile caricare i costruttori",

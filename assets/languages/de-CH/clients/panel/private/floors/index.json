@@ -44,5 +44,48 @@
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
   "no": "Nein",
-  "view": "Anzeigen"
+  "view": "Anzeigen",
+  "help": {
+    "ariaLabel": "Über Stockwerke",
+    "title": "Über Stockwerke",
+    "overview": "Ein Stockwerk ist eine Ebene eines Gebäudes. Einheiten sitzen auf einem Stockwerk. Der Datensatz ist die Plan-Schicht (Name, Ebene, Fläche, Zugänglichkeit, Gemeinschaftsflächen, Medien) plus optionale Umrisslinie. Kein kommerzieller Status — den tragen die Einheiten.",
+    "sections": [
+      {
+        "title": "Was ein Stockwerk speichert",
+        "items": [
+          "Name und Gebäude (Pflicht).",
+          "Ebenennummer — auch negativ für Untergeschoss.",
+          "Fläche der Geschossplatte (Pflicht).",
+          "Zugänglich / Notausgang, Beschreibung, Gemeinschaftsflächen-Liste.",
+          "Hauptbild (Pflicht) plus optionale Galerien, Videos, Dateien, Broschüre.",
+          "Optionale Polygonkoordinaten auf dem Gebäudeplan.",
+          "Anzahl Einheiten wird aus Kindern berechnet."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Vom Gebäude kommend ist die Liste eingeschränkt.",
+          "Stockwerk anlegen, dann Einheiten. Null Einheiten sind gültig, zeigen aber keinen Bestand.",
+          "Karte für Plandaten. Zeilenaktionen führen zu Einheiten.",
+          "Soft-Delete wiederherstellbar. Einheiten werden nicht automatisch gelöscht."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Einheiten müssen ein Stockwerk wählen (und damit Gebäude und Projekt).",
+          "Der ROI-Rechner kann nach Stockwerk eingrenzen.",
+          "Das Stockwerk wird nicht als Ganzes reserviert oder verkauft."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Eltern: Gebäude (mit Projekt). Kinder: Einheiten.",
+          "Nächster Schritt: Einheiten mit Typ, Nummer, Flächen, Zimmern, Preis und Währung."
+        ]
+      }
+    ]
+  }
 }

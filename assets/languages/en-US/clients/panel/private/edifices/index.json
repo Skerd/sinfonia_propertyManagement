@@ -75,5 +75,52 @@
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
   "no": "No",
-  "energyClass": "Energy Class"
+  "energyClass": "Energy Class",
+  "help": {
+    "ariaLabel": "About Edifices",
+    "title": "About Edifices",
+    "overview": "An Edifice is a building inside a project — the physical asset with an address, investment value, constructors, and marketing media. Floors and units live under the edifice. You cannot have sellable inventory without at least one edifice. Dashboard KPIs are edifice-scoped: this is the grain the cockpit uses.",
+    "sections": [
+      {
+        "title": "What an edifice holds",
+        "items": [
+          "Name and parent project (both required). The project cannot be “empty inventory” without buildings.",
+          "Main image (required) plus optional galleries, videos, extra files, and a marketing booklet.",
+          "Address: street, postal code, country, city, optional state, and map coordinates (latitude / longitude). This is the location the public site and emails use.",
+          "Investment value and investment currency — what was put into the building; Overview / Dashboard / ROI read this, they do not reprice units from it.",
+          "Optional sale currency, price per m², and veranda price per m² — guidance for pricing, not an automatic update of every unit price.",
+          "Building facts: total area, green area, floors above/under ground, parking, garages, distance from city centre.",
+          "Energy class, building permit number, construction start / expected / actual completion dates.",
+          "Constructors attached to the building, commercial facilities, neighborhood facilities, property types.",
+          "Rollups you do not type: total floors, total units, available units, total unit area — computed from children."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "When you arrived from a project, the list is already scoped to that project. From the sidebar you see every edifice in the company.",
+          "Create an edifice — it must belong to a project; main image and address are required.",
+          "Open a card to edit the building. Row actions reach floors for that edifice.",
+          "Soft delete can be restored. Floors and units are separate records; they are not auto-created."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Dashboard: you pick an edifice and all KPIs and the units list follow it.",
+          "Public building pages and construction updates can target an edifice.",
+          "Price per m² and investment feed portfolio views. Changing them does not rewrite unit.price.",
+          "An edifice with no floors (or floors with no units) will show empty inventory on Dashboard."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Parent: Project. Children: Floor → Unit.",
+          "Also referenced by construction updates, stories, unit costs, snags, leases, reservations, and sales.",
+          "Typical next step: add floors (level number, area, main image), then units."
+        ]
+      }
+    ]
+  }
 }

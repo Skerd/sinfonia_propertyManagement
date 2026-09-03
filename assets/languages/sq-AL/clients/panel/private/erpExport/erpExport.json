@@ -40,5 +40,45 @@
     "progressClaims": "Kërkesat e progresit",
     "permits": "Lejet",
     "rows": "{count} rreshta"
+  },
+  "help": {
+    "ariaLabel": "Rreth Eksportit ERP",
+    "title": "Rreth Eksportit ERP",
+    "overview": "Eksporti ERP ndërton sete të shkarkueshme për sistemet e kontabilitetit. Zgjidhni një ose më shumë sete, projekt opsional dhe interval datash. Kjo faqe nuk poston te SAP ose Abacus — prodhon JSON (parapamje) ose CSV (shkarkim) që ato sisteme mund t'i thithin.",
+    "sections": [
+      {
+        "title": "Setet që mund të përfshini",
+        "items": [
+          "Shitjet — shitje tregtare të mbyllura në interval.",
+          "Komisionet — rreshta pagese agjenti.",
+          "Këstet e planit të pagesave — plani/faturat.",
+          "Pagesat e qirasë — rreshta mujorë (qiraja e qiramarrësit).",
+          "Kostot e njësisë — shpenzime anës pronarit mbi njësitë.",
+          "Zërat BOQ, angazhimet e kostos, kërkesat e progresit, lejet — dosje ndërtimi/financiare kur ato të dhëna moduli ekzistojnë për shoqërinë."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Zgjidhni sete (të paktën një), filtër projekti opsional, data nga/deri, pastaj Parapamje JSON ose Eksporto CSV.",
+          "Rezultat bosh = asnjë rresht burim në interval — zgjeroni datat ose hiqni filtrin e projektit.",
+          "Tabelat e parapamjes janë të njëjtat kolona që do të përmbajë CSV-ja."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Nxjerrje vetëm-për-lexim. Riekzekutimi me të njëjtat filtra prodhon një skedar të ri nga të dhënat aktuale.",
+          "Nuk i shënon faturat si të eksportuara dhe nuk ndryshon statusin e pagesës.",
+          "Kostot e njësisë këtu janë shpenzime pronari; pagesat e qirasë janë muaj qiramarrësi — mos i përzieni në ERP-në pritëse si të njëjtin llogari, përveçse ta thotë kontabilisti."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Çfarë shënuat: shitjet, komisionet, planet e pagesave, pagesat e qirasë, kostot e njësisë, dhe koleksione ndërtimi opsionale."
+        ]
+      }
+    ]
   }
 }

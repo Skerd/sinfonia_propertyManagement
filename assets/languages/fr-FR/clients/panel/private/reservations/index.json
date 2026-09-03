@@ -74,5 +74,61 @@
   "yes": "Oui",
   "no": "Non",
   "expired": "Expirée",
-  "converted": "Convertie"
+  "converted": "Convertie",
+  "help": {
+    "ariaLabel": "À propos des réservations",
+    "title": "À propos des réservations",
+    "overview": "Une réservation retient une unité pour un client jusqu'à expiration, annulation ou conversion en vente. Créer une réservation active met l'unité en réservée. C'est le verrou — un prospect ne l'est pas. Acompte payé, e-mails client et commissions sont des actions sur ce dossier.",
+    "sections": [
+      {
+        "title": "Ce qu'une réservation contient",
+        "items": [
+          "Unité, agent réservant, société réservante, client (tous obligatoires).",
+          "Date de réservation (pas dans le futur) et date d'expiration (obligatoire).",
+          "Montant et devise d'acompte optionnels, moyen de paiement, code de parrainage, notes, source.",
+          "Fichiers de contrat de réservation et documents supplémentaires.",
+          "Indicateur payé — si l'acompte est enregistré comme payé.",
+          "Indicateur actif et statut : active, annulée, expirée.",
+          "Motif d'annulation et horodatage lorsqu'elle est annulée.",
+          "Tampons e-mail (confirmation envoyée, rappels J-3 / J-1 / jour J, mail d'expiration) pour voir ce que le client a déjà reçu."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Payer — marquer l'acompte payé. Enregistre une commission de réservation lorsque les règles le permettent, et peut e-mailer le client.",
+          "Annuler le paiement — seulement si l'unité n'est pas déjà vendue et que la commission de réservation n'est pas déjà payée. Annule une commission en attente.",
+          "Annuler — désactive la réservation, enregistre éventuellement un motif, annule la commission en attente, et si cette réservation tient encore l'unité, la rend disponible.",
+          "Réactiver — seulement si la réservation est inactive et que l'unité est libre (disponible, ou vendue sans autre réservation selon la règle). Remet l'unité en réservée et réenregistre la commission.",
+          "E-mail client manuel — confirmation, rappels J-3 / J-1 / aujourd'hui, jours restants, ou avis d'expiration. Chaque rappel n'est autorisé que dans la fenêtre calendaire correspondante. Le mail d'expiration met aussi le statut à expirée et libère l'unité si cette ligne la tenait encore."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer une réservation sur une unité disponible avec un utilisateur client réel.",
+          "Filtrer par unité, client, agent, statut, dates.",
+          "Ouvrir la fiche pour acompte, documents, payer/annuler/réactiver, et e-mails.",
+          "Convertir en vente depuis Ventes (comptant ou plan de paiement) — la vente peut conserver la réservation et les champs de conversion d'acompte."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Un job quotidien peut expirer les réservations passées le jour d'expiration, e-mailer le client et libérer l'unité — même résultat que d'envoyer le mail d'expiration à la main.",
+          "On ne peut pas réserver une unité déjà réservée, vendue ou louée.",
+          "Commissions : une commission de réservation en attente apparaît quand payer/réactiver l'enregistre ; annuler ou revenir sur le paiement annule la commission en attente (pas déjà payée).",
+          "Contrats & clients liste cette réservation comme document commercial ; il ne la duplique pas."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Statut d'unité disponible → réservée → disponible (annulation/expiration) ou → vendue (via Vente).",
+          "Utilisateur client, agent, prospect optionnel qui a précédé.",
+          "Commission (source réservation). Suite : Vente, éventuellement liée à cette réservation."
+        ]
+      }
+    ]
+  }
 }

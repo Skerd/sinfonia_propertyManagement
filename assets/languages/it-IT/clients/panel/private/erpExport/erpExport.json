@@ -40,5 +40,45 @@
     "progressClaims": "Stati di avanzamento",
     "permits": "Permessi",
     "rows": "{count} righe"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sull'esportazione ERP",
+    "title": "Informazioni sull'esportazione ERP",
+    "overview": "L'esportazione ERP costruisce dataset scaricabili per i sistemi contabili. Scegliete uno o più dataset, un progetto opzionale e un intervallo di date. Questa pagina non posta a SAP o Abacus — produce JSON (anteprima) o CSV (download) che quei sistemi possono ingerire.",
+    "sections": [
+      {
+        "title": "Dataset che potete includere",
+        "items": [
+          "Vendite — vendite commerciali chiuse nell'intervallo.",
+          "Commissioni — righe di erogazione agente.",
+          "Rate piano di pagamento — piano/ricevute.",
+          "Pagamenti affitto — righe mensili (canone conduttore).",
+          "Costi unità — spesa lato proprietario sulle unità.",
+          "Voci BOQ, impegni di costo, stati di avanzamento, permessi — record cantiere/finanza quando quei dati di modulo esistono per la società."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Selezionare dataset (almeno uno), filtro progetto opzionale, date da/a, poi Anteprima JSON o Esporta CSV.",
+          "Risultato vuoto = nessuna riga fonte nell'intervallo — allargate le date o togliete il filtro progetto.",
+          "Le tabelle di anteprima sono le stesse colonne che conterrà il CSV."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Estratto in sola lettura. Rieseguire con gli stessi filtri produce un nuovo file dai dati attuali.",
+          "Non marca le fatture come esportate e non cambia lo stato di pagamento.",
+          "I costi unità qui sono spese proprietario; i pagamenti affitto sono mesi del conduttore — non mescolateli nell'ERP ricevente come lo stesso conto, salvo che il commercialista lo dica."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Ciò che avete spuntato: vendite, commissioni, piani di pagamento, canoni, costi unità e collezioni cantiere opzionali."
+        ]
+      }
+    ]
   }
 }

@@ -114,5 +114,41 @@
     "floorPlaceholder": "Të gjithë katet",
     "unitLabel": "Njësia",
     "unitPlaceholder": "Të gjitha njësitë"
+  },
+  "help": {
+    "ariaLabel": "Rreth Kontratave & Klientëve",
+    "title": "Rreth Kontratave & Klientëve",
+    "overview": "Kontratat & klientët është regjistri i shoqërisë i dokumenteve tregtare që ekzistojnë tashmë: rezervime, shitje dhe dosje klienti të lidhura. Nuk krijon një lloj të ri kontrate. Hapja e një rreshti hap fletën e rezervimit ose të shitjes. Përdoreni këtë faqe për të kërkuar ndër klientë dhe statuse pa kërcyer ndërmjet dy listave.",
+    "sections": [
+      {
+        "title": "Çfarë shihni",
+        "items": [
+          "Rreshta të nxjerrë nga Rezervimet dhe Shitjet (klienti, njësia, projekti, datat, shumat, statusi).",
+          "Filtrat për projekt, klient, status, data — të zbatuar vetëm te ky regjistër.",
+          "Të njëjtat dokumente që do të gjenit te Rezervimet ose Shitjet, të paraqitura së bashku."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Krijimi, pagesa, anulimi, aprovimi, dorëzimi — ato veprime mbeten te Rezervimet dhe Shitjet.",
+          "Asgjë nuk dyfishohet në bazën e të dhënave. Nëse një rezervim zhduket nga Rezervimet, zhduket këtu.",
+          "Rezervimet e skaduara dhe aktive mund të shfaqen të dyja, sipas filtrit të statusit të qendrës."
+        ]
+      },
+      {
+        "title": "Kur ta përdorni",
+        "items": [
+          "Operacionet pyesin «cilat kontrata ka ky klient?» — kërkoni këtu.",
+          "Kur duhet të veproni (të arkëtoni një depozitë, të aprovoni një shitje), hapni rreshtin dhe përdorni fletën nën të, ose shkoni te lista e dedikuar."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Rezervim, Shitje, Njësi, përdoruesi klient. Jo kontratat e qirasë — ato janë Qendra e qirave / Kontratat e qirasë."
+        ]
+      }
+    ]
   }
 }

@@ -23,6 +23,68 @@
     "updatedAt": "Përditësuar në",
     "videoGallery": "Videot"
   },
+  "help": {
+    "ariaLabel": "Rreth Projekteve",
+    "title": "Rreth Projekteve",
+    "overview": "Një projekt është enë e nivelit të parë e një zhvillimi. Çdo ndërtesë, kat, njësi, klient i mundshëm, rezervim, shitje, kontratë qiraje, tregim, kosto njësie dhe dosje ndërtimi varet prej tij. Krijimi i një projekti nuk krijon ndërtesa — i shtoni më pas. Dosja e projektit është identitet, marketing dhe paracaktimet tregtare, jo ndërtesa fizike.",
+    "sections": [
+      {
+        "title": "Çfarë mban projekti",
+        "items": [
+          "Emri (i detyrueshëm) — si etikohet zhvillimi në panel, sitin publik dhe e-mailet.",
+          "Përshkrimi — tekst i gjatë për listat dhe faqen publike të projektit.",
+          "Imazhi kryesor (i detyrueshëm) — karta, siti publik, galeritë. Pa të nuk krijohet projekti.",
+          "Galeria e imazheve, galeria e videove, skedarë media shtesë — grup vizual opsional për marketing.",
+          "Broshura marketing (PDF) — që operatorët dhe siti publik mund ta ofrojnë.",
+          "Titulli, përshkrimi dhe PDF-ja e revistës — bllok editorial kur botoni një faqe në stil reviste.",
+          "Lidhje sociale (emër, URL, logo opsionale) — deri në 20 lidhje të shfaqura me projektin.",
+          "Në krye në faqen kryesore + renditja — cilat projekte shfaqen në rreshtin publik dhe në çfarë rendi (numri më i vogël i pari).",
+          "Komisioni i shitjes % dhe komisioni i rezervimit % — tarifa fillestare që i trashëgojnë marrëveshjet e mëvonshme. Një marrëveshje mund të mbajë ende shifrat e veta."
+        ],
+        "body": "Nuk ka makinë statusesh te vetë projekti. Dorëzimi dhe statusi tregtar jetojnë te ndërtesat, njësitë, rezervimet, shitjet dhe kontratat e qirasë."
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një projekt — imazhi kryesor dhe emri janë të detyrueshëm.",
+          "Kërkoni dhe filtroni listën; kaloni nga pamja e kartave te tabela.",
+          "Hapni një kartë për të ndryshuar marketingun, median, shfaqjen në krye dhe paracaktimet e komisionit.",
+          "Menuja e rreshtit: hapni ndërtesat tashmë të kufizuara te ai projekt.",
+          "Fshirja është e butë. Projekti mund të rikthehet. Fëmijët (ndërtesa, njësi, marrëveshje) nuk krijohen as shkatërrohen automatikisht kur fshini ose riktheni."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Një projekt mund të ekzistojë me zero ndërtesa. Stoku fillon kur shtoni ndërtesa, pastaj kate, pastaj njësi.",
+          "Faqet e sitit publik (galeria, rreshti në krye, revista, detaji i projektit) i lexojnë këto fusha marketingu. Media e munguar ose e papublikuar thjesht nuk shfaqet.",
+          "Tarifat e komisionit te projekti janë vetëm paracaktim. Ndryshimi i tyre më vonë nuk rishkruan shitjet ose rezervimet historike.",
+          "KPI-të e panelit dhe të vështrimit të përgjithshëm «sipas projektit» agregojnë njësitë dhe marrëveshjet poshtë tij, nuk janë fusha të ruajtura këtu."
+        ]
+      },
+      {
+        "title": "Çfarë varet nga projekti",
+        "items": [
+          "Pema fizike: Projekt → Ndërtesë → Kat → Njësi.",
+          "Tubacioni i shitjes: klientë të mundshëm (interes opsional te projekti), inspektime, kërkesa për modifikim, rezervime, shitje, komisione.",
+          "Kontratat & klientët është një regjistër i atyre dokumenteve tregtare — nuk krijon një lloj të ri.",
+          "Qiratë: kontrata qiraje dhe pagesa qiraje (edhe përmes Qendrës së qirave).",
+          "Përmbajtja: tregime (ditar marketingu) dhe përditësime ndërtimi.",
+          "Kostot: kostot e njësisë të ngarkuara te njësitë e këtij projekti. Cilësia: defektet mbi ato njësi."
+        ],
+        "body": "Ato dosje krijohen në faqet e veta dhe vetëm i referohen projektit. Fshirja e një projekti nuk i fshin në zinxhir."
+      },
+      {
+        "title": "Hapi tjetër tipik",
+        "items": [
+          "Krijoni projektin me emër të qartë dhe imazh kryesor.",
+          "Shtoni ndërtesa (secila kërkon projektin, adresën, vlerën e investimit, imazhin kryesor).",
+          "Shtoni kate në çdo ndërtesë, pastaj njësi në çdo kat (lloji, numri, sipërfaqet, çmimi).",
+          "Pastaj botoni marketingun (në krye, tregime) ose filloni punën tregtare (klientë të mundshëm → rezervime / shitje, ose kontrata qiraje)."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "title": "Projektet"
 }

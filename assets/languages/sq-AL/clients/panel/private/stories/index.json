@@ -27,5 +27,43 @@
     "unit": "Unit",
     "updatedAt": "Updated At",
     "videoGallery": "Video gallery"
+  },
+  "help": {
+    "ariaLabel": "Rreth Tregimeve",
+    "title": "Rreth Tregimeve",
+    "overview": "Një tregim është një artikull ditari marketingu për një projekt (opsionalisht një ndërtesë ose njësi). I botuar, shfaqet në sitin publik. Nuk është përditësim ndërtimi as defekt.",
+    "sections": [
+      {
+        "title": "Çfarë mban një tregim",
+        "items": [
+          "Projekti (i detyrueshëm), ndërtesë opsionale, njësi opsionale.",
+          "Lloji i tregimit (i detyrueshëm) — nga Konfigurimet → Llojet e historive.",
+          "Titulli, përmbajtja e plotë, fragment opsional për kartat.",
+          "Imazhi kryesor, galeritë, videot.",
+          "Flamuri i botuar, data e botimit, renditja."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një tregim, bashkëngjitni median, vendosni llojin, pastaj botoni kur teksti është gati.",
+          "Tregimet e papublikuara mbeten vetëm në panel.",
+          "Filtroni sipas projektit, llojit, të botuarit."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Botimi nuk ndryshon statusin e njësisë as datat e ndërtimit.",
+          "Përditësimet e ndërtimit janë postimet operuese të ecurisë; mbajeni tregimin marketing këtu."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Projekti, ndërtesë/njësi opsionale, lloji i tregimit. Ditari i sitit publik. Plotësuese: Përditësimet e ndërtimit."
+        ]
+      }
+    ]
   }
 }

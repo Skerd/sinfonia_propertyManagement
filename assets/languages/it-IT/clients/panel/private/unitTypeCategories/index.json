@@ -2,6 +2,41 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
   "title": "Categorie tipi unità",
   "description": "Gestisci le categorie dei tipi di unità",
+  "help": {
+    "ariaLabel": "Informazioni sulle categorie tipi unità",
+    "title": "Informazioni sulle categorie tipi unità",
+    "overview": "Una categoria di tipo unità è un’etichetta di raggruppamento per i tipi di unità (ad esempio residenziale rispetto a commerciale). Ha solo un nome. Le unità non scelgono una categoria — scelgono un tipo di unità, e quel tipo appartiene a una categoria.",
+    "sections": [
+      {
+        "title": "Cosa contiene una categoria",
+        "items": [
+          "Nome (obbligatorio). Nessun altro campo."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare, cercare e modificare le categorie.",
+          "L’eliminazione è logica, ma è bloccata finché un tipo di unità usa ancora questa categoria. Riassegnate o rimuovete prima quei tipi."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Create le categorie prima dei tipi di unità che ne hanno bisogno. Un tipo di unità non si salva senza categoria.",
+          "Rinominare aggiorna l’etichetta ovunque il tipo sia mostrato. Non cambia unità o prezzi."
+        ]
+      },
+      {
+        "title": "Passo successivo tipico",
+        "items": [
+          "Creare le categorie necessarie.",
+          "Creare i tipi di unità sotto quelle categorie.",
+          "Quando aggiungete unità, scegliere un tipo — la categoria arriva con il tipo."
+        ]
+      }
+    ]
+  },
   "createUnitTypeCategory": "Crea categoria",
   "noData": "Nessuna categoria di tipo unità trovata",
   "failTitle": "Impossibile caricare le categorie dei tipi di unità",

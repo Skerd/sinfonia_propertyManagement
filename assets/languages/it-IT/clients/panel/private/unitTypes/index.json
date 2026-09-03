@@ -2,6 +2,45 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx",
   "title": "Tipi di unità",
   "description": "Gestisci tutti i tipi di unità",
+  "help": {
+    "ariaLabel": "Informazioni sui tipi di unità",
+    "title": "Informazioni sui tipi di unità",
+    "overview": "Un tipo di unità è il tipo di catalogo che ogni unità deve scegliere (appartamento, ufficio, parcheggio, ecc.). Le categorie organizzano i tipi. Creare un tipo non crea unità — le unità scelgono un tipo quando aggiungete l’inventario.",
+    "sections": [
+      {
+        "title": "Cosa contiene un tipo di unità",
+        "items": [
+          "Nome e categoria (obbligatori). Create prima la categoria.",
+          "Gruppo opzionale (etichetta libera nella categoria), descrizione e icona.",
+          "Flag privato — marcatore di catalogo sulla scheda del tipo. Non è l’occupazione e non cambia lo stato dell’unità.",
+          "Lo slug è generato dal nome dell’azienda più il nome del tipo. Non lo digitate."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare, cercare e modificare i tipi.",
+          "L’eliminazione è logica, ma è bloccata finché un’unità usa questo tipo o un edificio lo elenca come tipo di immobile."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Ogni unità ha esattamente un tipo. Prezzo, superfici e disponibilità vivono sull’unità, non qui.",
+          "Gli edifici possono anche elencare i tipi di immobile che offrono, indipendentemente dalle unità già esistenti.",
+          "Rinominare aggiorna le etichette. Non riscrive i prezzi in listino delle unità esistenti."
+        ]
+      },
+      {
+        "title": "Passo successivo tipico",
+        "items": [
+          "Creare le categorie tipi unità se mancano.",
+          "Creare i tipi che vendete o affittate.",
+          "Quando aggiungete unità, scegliere il tipo corrispondente."
+        ]
+      }
+    ]
+  },
   "createUnitType": "Crea tipo di unità",
   "noData": "Nessun tipo di unità trovato",
   "failTitle": "Impossibile caricare i tipi di unità",

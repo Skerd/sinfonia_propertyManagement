@@ -37,5 +37,51 @@
       }
     },
     "remaining": "Residuo"
+  },
+  "help": {
+    "ariaLabel": "Informazioni sui pagamenti affitto",
+    "title": "Informazioni sui pagamenti affitto",
+    "overview": "Un pagamento affitto è un mese programmato di un contratto. Il residuo è derivato (importo + mora − pagato). Lo stato avanza in attesa → pagato | parzialmente pagato | scaduto, oppure condonato. Incassate qui; non ridefinite il canone del contratto qui. Preferite che il contratto generi il piano piuttosto che creare i mesi a mano.",
+    "sections": [
+      {
+        "title": "Cosa contiene una riga",
+        "items": [
+          "Contratto padre, unità, scadenza, importo, importo pagato, residuo, valuta.",
+          "Stato: in attesa, pagato, parzialmente pagato, scaduto, condonato.",
+          "Importo mora (applicato quando il mese diventa scaduto).",
+          "Ricevute (ogni fetta di incasso con data e note)."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Marca pagato — registrare un importo contro questo mese soltanto (il contratto padre deve essere attivo). Pagamento intero = pagato; parziale = parzialmente pagato. Non si può eccedere il residuo. Non si può incassare su righe già pagate o condonate.",
+          "Condona — perdonare il residuo di una riga aperta. Non si può condonare ciò che è già pagato.",
+          "Registrare un pagamento sul contratto (FIFO) può riempire questa riga come parte di un importo più ampio — stessa matematica del residuo."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Filtrare scaduto vs in attesa vs pagato.",
+          "Aprire una riga per incassare o condonare.",
+          "Creare raramente a mano — i contratti generano il piano; risincronizzate sul contratto se i mesi sono sbagliati."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Lo scaduto considera il periodo di grazia del contratto; un job giornaliero capovolge lo stato e può applicare la mora una volta.",
+          "La Dashboard «canone incassato / dovuto / scaduto» somma queste righe.",
+          "Recedere o far scadere un contratto condona le righe ancora aperte."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Contratto padre. Unità. Scheda pagamenti di Hub locazioni."
+        ]
+      }
+    ]
   }
 }

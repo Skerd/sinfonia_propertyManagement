@@ -151,5 +151,41 @@
         "disputed": "Bestritten"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Über Einheitenkosten",
+    "title": "Über Einheitenkosten",
+    "overview": "Einheitenkosten sind eigentümerseitige Einkäufe und Rechnungen an einer Einheit (und damit Projekt/Gebäude). Die Seite hat eine Spesenliste und einen Zahlungskalender. Das ist nicht Mietermiete und nicht Unternehmerrechnung aus dem Baumodul.",
+    "sections": [
+      {
+        "title": "Tabs",
+        "items": [
+          "Spesen — Positionen: Lieferant, Betrag, Status, Periode, Einheit.",
+          "Zahlungskalender — bezahlt / ausstehend / überfällig je Tag im sichtbaren Monat."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Spese an einer Einheit erfassen. Filtern nach Einheit, Projekt, Lieferant, Status.",
+          "Von einer Einheit aus ist die Liste bereits eingeschränkt.",
+          "Kalender zeigt, wann Eigentümerrechnungen fällig sind."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Der ROI-Rechner liest diese Kosten gegen Verkaufs- oder Mieterrtrag der Einheit.",
+          "ERP-Export kann den Datensatz Einheitenkosten enthalten.",
+          "Miete kassieren ist Mietzahlungen / Mietverträge, nicht diese Liste."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit → Stockwerk → Gebäude → Projekt. ROI-Rechner. ERP-Export."
+        ]
+      }
+    ]
   }
 }

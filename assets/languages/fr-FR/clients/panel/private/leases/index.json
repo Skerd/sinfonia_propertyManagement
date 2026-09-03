@@ -38,5 +38,56 @@
         "terminated": "Résilié"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "À propos des baux",
+    "title": "À propos des baux",
+    "overview": "Un bail est le contrat de location d'une unité. L'activer met l'unité en louée. Les lignes mensuelles de loyer sont générées et encaissées via Loyers (montants partiels, plus ancien mois d'abord, pénalité de retard, délai de grâce). Résilier ou expirer libère l'unité. On ne peut pas louer une unité réservée ou vendue.",
+    "sections": [
+      {
+        "title": "Ce qu'un bail contient",
+        "items": [
+          "Unité et locataire (obligatoires).",
+          "Date de début et date de fin (la fin doit être après le début).",
+          "Loyer mensuel et devise (obligatoires).",
+          "Montant de dépôt optionnel ; dépôt payé et dépôt restitué sont gérés par actions.",
+          "Pénalité de retard % et jours de grâce — utilisés lorsqu'un mois passe en retard.",
+          "Média de contrat (fichier obligatoire), notes, motif / date de résiliation lorsqu'il est terminé.",
+          "Statut : actif, expiré, résilié."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Résilier — seulement tant qu'actif. Passe à résilié, remet les mois encore ouverts, et libère l'unité si ce bail la louait.",
+          "Marquer le dépôt payé — une fois. Restituer le dépôt — seulement après qu'il a été marqué payé, et une seule fois.",
+          "Enregistrer un paiement de loyer — le montant s'applique au plus ancien mois ouvert d'abord (FIFO). Ne peut pas dépasser le reste ouvert total. Baux actifs seulement.",
+          "Resynchroniser le planning — reconstruire les lignes mensuelles si les dates ou le loyer ont changé.",
+          "Envoyer un rappel de loyer — e-mail client pour une ligne de mois choisie (types de rappel), seulement tant que cette ligne est encore ouverte."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un bail seulement sur une unité disponible.",
+          "Ouvrir la fiche pour paiements, dépôt, rappels, résiliation.",
+          "Filtrer par unité, locataire, statut, dates."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Un job quotidien marque les mois impayés en retard après échéance + grâce (fin de jour UTC), applique la pénalité une fois depuis le % du bail, expire les baux actifs passés la date de fin, remet leurs lignes ouvertes et libère les unités.",
+          "Reste d'un mois = montant + pénalité − payé. Les encaissements partiels restent partiellement payés jusqu'à ce que le reste atteigne zéro.",
+          "Le centre des locations et les KPI locatifs du tableau de bord lisent ces mêmes lignes."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité disponible → louée → disponible. Loyers (enfants). Centre des locations. Tableau de bord."
+        ]
+      }
+    ]
   }
 }

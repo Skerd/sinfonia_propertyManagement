@@ -114,5 +114,41 @@
     "floorPlaceholder": "Tous les étages",
     "unitLabel": "Unité",
     "unitPlaceholder": "Toutes les unités"
+  },
+  "help": {
+    "ariaLabel": "À propos de Contrats & clients",
+    "title": "À propos de Contrats & clients",
+    "overview": "Contrats & clients est le registre société des documents commerciaux déjà existants : réservations, ventes et dossiers clients associés. Il ne crée pas un nouveau type de contrat. Ouvrir une ligne ouvre la fiche réservation ou vente. Utilisez cette page pour chercher parmi clients et statuts sans basculer entre deux listes.",
+    "sections": [
+      {
+        "title": "Ce que vous voyez",
+        "items": [
+          "Lignes tirées des Réservations et des Ventes (client, unité, projet, dates, montants, statut).",
+          "Filtres projet, client, statut, dates — appliqués à ce registre seulement.",
+          "Les mêmes documents que sous Réservations ou Ventes, présentés ensemble."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Créer, payer, annuler, approuver, réceptionner — ces actions restent sur Réservations et Ventes.",
+          "Rien n'est dupliqué en base. Si une réservation disparaît des Réservations, elle disparaît ici.",
+          "Réservations expirées et actives peuvent toutes deux apparaître, selon le filtre de statut du hub."
+        ]
+      },
+      {
+        "title": "Quand l'utiliser",
+        "items": [
+          "Les opérations demandent « quels contrats a ce client ? » — cherchez ici.",
+          "Pour agir (encaisser un acompte, approuver une vente), ouvrez la ligne et utilisez la fiche sous-jacente, ou allez à la liste dédiée."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Réservation, Vente, Unité, utilisateur client. Pas les baux — ceux-ci sont Centre des locations / Baux."
+        ]
+      }
+    ]
   }
 }

@@ -114,5 +114,57 @@
   "unitType": "Einheitstyp",
   "units": "Einheiten",
   "yes": "Ja",
-  "rented": "Vermietet"
+  "rented": "Vermietet",
+  "help": {
+    "ariaLabel": "Über Einheiten",
+    "title": "Über Einheiten",
+    "overview": "Eine Einheit ist der verkauf- oder vermietbare Raum — der Datensatz, der den kommerziellen Status wirklich ändert. Fast jeder Verkaufs-, Miet-, Abnahme- und Kostenfluss zeigt auf eine Einheit. Status ist kein Freitext: Reservationen, Verkäufe und Mietverträge bewegen ihn.",
+    "sections": [
+      {
+        "title": "Was eine Einheit speichert",
+        "items": [
+          "Stockwerk (Pflicht) — impliziert Gebäude und Projekt. Einheitentyp (Pflicht) aus Konfiguration.",
+          "Einheitennummer und Name (Pflicht).",
+          "Fläche, Anteil Fläche, Nettofläche (Pflicht); optionale Verandafläche.",
+          "Preis und Währung (Pflicht). Zimmer und Bäder (Pflicht).",
+          "Beschreibung, Hauptbild, Galerien, Videos, Dateien, Broschüre.",
+          "Flags: Balkon, Terrasse, Meer-/Stadt-/Seeblick, Lift.",
+          "Ausrichtung und Baustatus (geplant, im Bau, bereit, übergeben).",
+          "Optionale Provisions-% — überschreiben die Projektvorgaben.",
+          "Verbundene Einheiten, Hervorhebung auf der Startseite, optionales Polygon auf dem Plan."
+        ]
+      },
+      {
+        "title": "Kommerzieller Status",
+        "items": [
+          "Verfügbar — reservierbar, verkäuflich oder vermietbar.",
+          "Reserviert — eine aktive Reservation hält sie. Ablauf/Storno gibt sie frei.",
+          "Verkauft — ein Verkauf hat sie markiert. Übergabe und Eigentumsübertragung laufen am Verkauf.",
+          "Vermietet — ein aktiver Mietvertrag hält sie. Kündigung oder Ablauf gibt sie frei.",
+          "Nicht verfügbar — vom Markt genommen ohne Deal."
+        ],
+        "body": "Tippen Sie eine Einheit nicht „von Hand“ auf verkauft oder vermietet. Legen Sie Reservation, Verkauf oder Mietvertrag an."
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Filtern nach Projekt, Gebäude, Stockwerk, Typ, Status, Käufer.",
+          "Einheit anlegen — Stockwerk, Typ, Nummer, Name, Flächen, Preis/Währung Pflicht.",
+          "Karte für Medien und Preise. Zeilenaktionen: Reservationen, Verkäufe, Abnahmen, Miete, Kosten — je nach Recht.",
+          "Marketingbroschüre (PDF) erzeugen, wenn die Aktion verfügbar ist.",
+          "Soft-Delete wiederherstellbar. Bestehende Deals werden nicht automatisch storniert."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Aufwärts: Projekt → Gebäude → Stockwerk → Einheitentyp.",
+          "Deals: Lead, Reservation, Verkauf (+ Zahlungsplan), Mietvertrag + Mietzahlungen.",
+          "Qualität: Abnahme, Änderungsantrag, Mangel.",
+          "Geld: Einheitenkosten, Provisionen.",
+          "Typische Pfade: verfügbar → Reservation → Verkauf, oder verfügbar → Miete."
+        ]
+      }
+    ]
+  }
 }

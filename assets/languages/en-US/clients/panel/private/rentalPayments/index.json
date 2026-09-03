@@ -37,5 +37,51 @@
       }
     },
     "remaining": "Remaining"
+  },
+  "help": {
+    "ariaLabel": "About Rental payments",
+    "title": "About Rental payments",
+    "overview": "A Rental payment is one scheduled month on a lease. Remaining is derived (amount + late fee − paid). Status moves pending → paid | partially paid | overdue, or waived. You collect here; you do not redefine the lease rent here. Prefer letting the lease generate the schedule rather than creating months by hand.",
+    "sections": [
+      {
+        "title": "What a row holds",
+        "items": [
+          "Parent lease, unit, due date, amount, paid amount, remaining, currency.",
+          "Status: pending, paid, partially paid, overdue, waived.",
+          "Late fee amount (stamped when the month becomes overdue).",
+          "Payment receipts (each slice of a collection with date and notes)."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Mark paid — record an amount against this month only (parent lease must be active). Full pay sets paid; partial sets partially paid. Cannot overpay remaining. Cannot collect on already paid or waived rows.",
+          "Waive — forgive remaining on an open row. Cannot waive what is already paid.",
+          "Recording a payment on the lease (FIFO) may fill this row as part of a larger amount — same remaining math."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Filter overdue vs pending vs paid.",
+          "Open a row to collect or waive.",
+          "Create rarely by hand — leases generate the schedule; resync on the lease if months are wrong."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Overdue considers grace period from the lease; a daily job flips the status and can apply late fee once.",
+          "Dashboard “rent collected / outstanding / overdue” sums these rows.",
+          "Terminating or expiring a lease waives still-open rows."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Parent lease. Unit. Rentals Hub payments tab."
+        ]
+      }
+    ]
   }
 }

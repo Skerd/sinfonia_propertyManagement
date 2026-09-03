@@ -23,6 +23,68 @@
     "updatedAt": "Updated At",
     "videoGallery": "Videos"
   },
+  "help": {
+    "ariaLabel": "About Projects",
+    "title": "About Projects",
+    "overview": "A Project is the top-level container for a development. Every edifice, floor, unit, lead, reservation, sale, lease, story, budget-related unit cost, and construction record hangs off a project. Creating a project does not create buildings — you add those next. The project record itself is identity, marketing, and commercial defaults, not the physical building.",
+    "sections": [
+      {
+        "title": "What a project holds",
+        "items": [
+          "Name (required) — how the development is labelled in the panel, public site, and emails.",
+          "Description — long copy for listings and the public project page.",
+          "Main image (required) — used on cards, the public site, and galleries. Without it you cannot create the project.",
+          "Image gallery, video gallery, extra media files — optional visual set for marketing.",
+          "Marketing booklet (PDF) — brochure operators and the public site can offer.",
+          "Magazine title, magazine description, magazine PDF — editorial block when you publish a magazine-style page.",
+          "Social links (name, URL, optional logo) — up to 20 links shown with the project.",
+          "Featured on homepage + featured sort order — which projects appear in the public homepage row and in which order (lower sort comes first).",
+          "Sale commission % and reservation commission % — starting rates inherited by later sales and reservations. A deal can still carry its own figures."
+        ],
+        "body": "There is no status machine on Project itself. Delivery and commercial status live on edifices, units, reservations, sales, and leases."
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a project — main image is required; name is required.",
+          "Search and filter the list; switch card view vs table view.",
+          "Open a card to edit marketing, media, featured flags, and commission defaults.",
+          "Row menu: open edifices already scoped to that project.",
+          "Delete is a soft delete. The project can be restored. Children (edifices, units, deals) are not created or destroyed automatically when you delete or restore."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A project can exist with zero edifices. Inventory starts when you add buildings, then floors, then units.",
+          "Public-site pages (gallery, featured row, magazine, project detail) read these marketing fields. Unpublished or missing media simply does not show.",
+          "Commission rates on the project are defaults only. Changing them later does not rewrite historical sales or reservations.",
+          "Dashboard and Overview KPIs that mention “project” are aggregations of units and deals under that project, not fields stored here."
+        ]
+      },
+      {
+        "title": "What hangs off a project",
+        "items": [
+          "Physical tree: Project → Edifice → Floor → Unit.",
+          "Sales pipeline: leads (optional project interest), inspections, modification requests, reservations, sales, commissions.",
+          "Contracts Hub is a registry of those commercial documents — it does not create a new document type.",
+          "Rentals: leases and rental payments (also via Rentals Hub).",
+          "Content: stories (marketing journal) and construction updates (site progress).",
+          "Costs: unit costs booked against units of this project. Quality: snags on those units."
+        ],
+        "body": "Those records are created on their own pages and only reference the project. Deleting a project does not cascade-delete them."
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create the project with a clear name and main image.",
+          "Add edifices (each needs the project, address, investment value, main image).",
+          "Add floors on each edifice, then units on each floor (unit type, number, areas, price).",
+          "Then either publish marketing (featured, stories) or start commercial work (leads → reservations / sales, or leases)."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Search or add filters...",
   "title": "Projects"
 }

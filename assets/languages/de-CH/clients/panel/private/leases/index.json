@@ -38,5 +38,56 @@
         "terminated": "Beendet"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Über Mietverträge",
+    "title": "Über Mietverträge",
+    "overview": "Ein Mietvertrag ist die Vermietung einer Einheit. Aktiv setzen vermietet die Einheit. Monatszeilen entstehen und werden über Mietzahlungen kassiert (Teilbeträge, ältester Monat zuerst, Verzugszins, Karenz). Kündigen oder Ablauf gibt die Einheit frei. Reservierte oder verkaufte Einheiten sind nicht vermietbar.",
+    "sections": [
+      {
+        "title": "Was ein Vertrag speichert",
+        "items": [
+          "Einheit und Mieter (Pflicht).",
+          "Start und Ende (Ende nach Start).",
+          "Monatsmiete und Währung (Pflicht).",
+          "Optionales Depot; Depot bezahlt / zurückgegeben über Aktionen.",
+          "Verzugs-% und Karenztage — wenn ein Monat überfällig wird.",
+          "Vertragsdatei (Pflicht), Notizen, Kündigungsgrund/-datum.",
+          "Status: aktiv, abgelaufen, gekündigt."
+        ]
+      },
+      {
+        "title": "Aktionen",
+        "items": [
+          "Kündigen — nur aktiv. Setzt gekündigt, erlässt offene Monate, gibt die Einheit frei.",
+          "Depot als bezahlt — einmal. Depot zurück — nur danach, einmal.",
+          "Miete erfassen — Betrag auf die ältesten offenen Monate (FIFO). Nicht über das offene Total. Nur aktive Verträge.",
+          "Plan neu synchronisieren — Monate neu aufbauen nach Datums-/Mietänderung.",
+          "Miet-Erinnerung — Kunden-E-Mail zu einer noch offenen Monatszeile."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Vertrag nur auf einer verfügbaren Einheit anlegen.",
+          "Sheet für Zahlungen, Depot, Erinnerungen, Kündigen.",
+          "Filtern nach Einheit, Mieter, Status, Daten."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ein Tagesjob markiert unbezahlte Monate nach Fälligkeit + Karenz (UTC-Tagesende) überfällig, setzt Verzug einmal aus dem %, lässt Verträge nach Endedatum ablaufen, erlässt offene Zeilen und gibt Einheiten frei.",
+          "Rest eines Monats = Betrag + Verzug − bezahlt. Teilzahlungen bleiben teilweise bis Rest null.",
+          "Rentals Hub und Dashboard lesen dieselben Zeilen."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Einheit verfügbar → vermietet → verfügbar. Mietzahlungen. Rentals Hub. Dashboard."
+        ]
+      }
+    ]
   }
 }

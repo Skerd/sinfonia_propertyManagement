@@ -59,5 +59,50 @@
         "other": "Sonstiges"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Über Leads",
+    "title": "Über Leads",
+    "overview": "Ein Lead ist eine Person in der Pipeline, bevor Reservation oder Verkauf existieren. Das ist CRM, keine Sperre auf eine Einheit. Status ist eine Vertriebsstufe; er ändert die Verfügbarkeit nicht. Ein gewonnenes Lead erzeugt keine Reservation — die legen Sie unter Reservationen auf einer verfügbaren Einheit an.",
+    "sections": [
+      {
+        "title": "Was ein Lead speichert",
+        "items": [
+          "Vorname (Pflicht), optional Nachname, E-Mail, Telefon.",
+          "Status: neu → kontaktiert → qualifiziert → Angebot → Verhandlung → gewonnen oder verloren.",
+          "Quelle: Website, Empfehlung, Social, Event, Kaltakquise, Walk-in, Chat, sonstige.",
+          "Interesse: Partnerschaften, Investments, Plattform, Reservation, sonstige.",
+          "Optionales Projekt- und Einheiteninteresse — keine Reservierung.",
+          "Optionales Budget, Notizen, zuständige Person, Follow-up-Datum.",
+          "Aktivitätsprotokoll über die Aktion „Aktivität hinzufügen“."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Lead anlegen, sobald jemand anfragt. Zuweisen und Follow-up setzen.",
+          "Karte öffnen für Status, Notizen, Aktivitäten.",
+          "Filtern nach Status, Quelle, Projekt, Zuständigkeit.",
+          "Soft-Delete wiederherstellbar. Spätere Reservationen derselben Person bleiben."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Ein Lead darf auf eine schon reservierte oder verkaufte Einheit zeigen — nur Interesse.",
+          "Keine automatische Umwandlung in eine Reservation.",
+          "Gewonnen/verloren schreibt den Einheitenstatus nicht.",
+          "Website oder Chat können Leads erzeugen, je nach Konfiguration."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Optionales Projekt und Einheit (nur Interesse).",
+          "Als Nächstes: Reservation, dann Verkauf; oder Mietvertrag.",
+          "Der Agentenbericht zählt später Reservationen und Verkäufe, nicht Lead-Stufen."
+        ]
+      }
+    ]
   }
 }

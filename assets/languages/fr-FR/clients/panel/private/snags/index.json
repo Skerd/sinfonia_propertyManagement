@@ -50,5 +50,53 @@
         "critical": "Critique"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "À propos de la liste des réserves",
+    "title": "À propos des réserves",
+    "overview": "Une réserve est un défaut / poste de punch-list sur une unité. Clôturer les réserves est un travail de qualité, pas une action de vente. Statut : ouverte → en cours → résolue, ou rejetée. Assignez quelqu'un avant de commencer le travail.",
+    "sections": [
+      {
+        "title": "Ce qu'une réserve contient",
+        "items": [
+          "Unité (obligatoire), titre (obligatoire), description optionnelle, emplacement sur l'unité, corps de métier.",
+          "Gravité : faible, moyenne, élevée, critique.",
+          "Signalé par, assigné à, date d'échéance, résolu le.",
+          "Photos, notes, cause racine, impact coût.",
+          "Indicateurs : article de garantie, DLP (période de responsabilité des défauts).",
+          "Lot de travaux ou avenant optionnel lorsque le chantier suit la correction."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Assigner — seulement tant qu'ouverte ou en cours.",
+          "Commencer le travail — seulement depuis ouverte, et seulement si quelqu'un est assigné ; passe en cours.",
+          "Terminer le travail — seulement depuis en cours ; peut joindre photos/notes et passe à résolue.",
+          "Rejetée est un statut pour les postes qui ne seront pas corrigés comme demandé — ce n'est pas la même chose que résolue."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer des réserves depuis une unité ou depuis cette liste société.",
+          "Filtrer par unité, gravité, statut, responsable.",
+          "Les réserves ouvertes apparaissent dans les KPI du tableau de bord groupe."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Une réserve ne gèle pas une vente. Les processus de réception peuvent toutefois exiger des réserves clôturées comme règle métier.",
+          "Ce n'est pas une demande de modification (changement demandé par le client) ni une inspection (visite avec checklist)."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité. Lot de travaux / avenant optionnel. Les inspections précèdent ou suivent souvent les réserves."
+        ]
+      }
+    ]
   }
 }

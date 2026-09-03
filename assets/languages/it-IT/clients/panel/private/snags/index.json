@@ -50,5 +50,53 @@
         "critical": "Critica"
       }
     }
+  },
+  "help": {
+    "ariaLabel": "Informazioni sulla lista snagging",
+    "title": "Informazioni sugli snag",
+    "overview": "Uno snag è un difetto / voce di punch-list su un'unità. Chiudere gli snag è lavoro di qualità, non un'azione di vendita. Stato: aperto → in corso → risolto, oppure rifiutato. Assegnate qualcuno prima di iniziare il lavoro.",
+    "sections": [
+      {
+        "title": "Cosa contiene uno snag",
+        "items": [
+          "Unità (obbligatoria), titolo (obbligatorio), descrizione opzionale, posizione sull'unità, mestiere.",
+          "Gravità: bassa, media, alta, critica.",
+          "Segnalato da, assegnato a, data di scadenza, risolto il.",
+          "Foto, note, causa radice, impatto costo.",
+          "Flag: voce in garanzia, DLP (periodo di responsabilità per i difetti).",
+          "Pacchetto di lavoro o ordine di variante opzionale quando il cantiere segue la correzione."
+        ]
+      },
+      {
+        "title": "Azioni",
+        "items": [
+          "Assegna — solo mentre aperto o in corso.",
+          "Inizia il lavoro — solo da aperto, e solo se qualcuno è assegnato; passa in corso.",
+          "Termina il lavoro — solo da in corso; può allegare foto/note e passa a risolto.",
+          "Rifiutato è uno stato per le voci che non saranno corrette come richiesto — non è lo stesso di risolto."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare snag da un'unità o da questo elenco aziendale.",
+          "Filtrare per unità, gravità, stato, assegnatario.",
+          "Gli snag aperti compaiono nei KPI della Dashboard di gruppo."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Uno snag non congela una vendita. I processi di consegna possono comunque richiedere snag chiusi come regola di business.",
+          "Non è una richiesta di modifica (un cambiamento chiesto dal cliente) né un'ispezione (una visita con checklist)."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Unità. Pacchetto di lavoro / VO opzionale. Le ispezioni spesso precedono o seguono gli snag."
+        ]
+      }
+    ]
   }
 }

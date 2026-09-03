@@ -74,5 +74,54 @@
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "About Inspections",
+    "title": "About Inspections",
+    "overview": "An Inspection is a scheduled visit to a unit with a type, status, optional checklist, and findings. It is quality / handover evidence, not a reservation and not a snag list (though findings often become snags). Cancelling a scheduled inspection is a dedicated action; you cannot cancel one that is already completed.",
+    "sections": [
+      {
+        "title": "What an inspection holds",
+        "items": [
+          "Unit (required), inspector, scheduled date/time, optional checklist template.",
+          "Type: initial, follow-up, final, routine, complaint, pre-sale, post-sale.",
+          "Status: scheduled → in progress → completed, or cancelled / rescheduled.",
+          "Findings grouped by category (structural, electrical, and others) with notes, media, severity (low / medium / high / critical), and optional resolved-at.",
+          "Cancellation reason and cancelled-at when you cancel a scheduled visit."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Cancel scheduled — only while status is scheduled; stores a reason and timestamp.",
+          "Complete the visit by recording findings and moving status to completed (via edit / sheet, depending on access).",
+          "Reschedule by setting status to rescheduled and a new date — this is not a new inspection document unless you create one."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create an inspection against a unit. Filter by unit, type, status, date.",
+          "Open the sheet to work findings and media.",
+          "Company-wide list from the sidebar; from a unit, the list can be scoped."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "An inspection never changes unit commercial status.",
+          "It is not a snag: open defects that need a trade and an assignee belong on Snags.",
+          "It is not a modification request: client-asked changes go through architect / engineer / CEO / finance / delivery there.",
+          "Handover checklists in Configurations can be reused as templates on inspections."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit (and thus floor / edifice / project).",
+          "Optional checklist template. Follow-on: Snags, Modification requests, Sale handover."
+        ]
+      }
+    ]
+  }
 }

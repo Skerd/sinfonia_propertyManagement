@@ -18,5 +18,34 @@
   "noBranchesTitle": "Aucune filiale trouvée",
   "noBranchesDescription": "Créez des sociétés filles en définissant cette organisation comme société mère pour comparer les indicateurs entre filiales.",
   "failTitle": "Impossible de charger le tableau de bord du groupe",
-  "failDescription": "Une erreur est survenue lors de la récupération des indicateurs du groupe. Veuillez réessayer."
+  "failDescription": "Une erreur est survenue lors de la récupération des indicateurs du groupe. Veuillez réessayer.",
+  "help": {
+    "ariaLabel": "À propos du tableau de bord groupe",
+    "title": "À propos du tableau de bord groupe",
+    "overview": "Le tableau de bord groupe agrège les KPI des filiales qui partagent une organisation mère. Le siège voit le total du groupe plus un tableau par filiale. Une filiale se voit elle-même et ses sœurs. C'est un modèle en lecture, pas un lieu pour éditer des unités.",
+    "sections": [
+      {
+        "title": "KPI",
+        "items": [
+          "Unités totales / disponibles / vendues / louées.",
+          "Chiffre d'affaires, commissions, baux actifs, réserves ouvertes."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Calculé à un horodatage affiché dans l'en-tête — actualiser recharge l'agrégation.",
+          "Les sociétés filles doivent avoir cette organisation comme société mère, sinon elles n'apparaissent pas.",
+          "Le travail opérationnel de chaque filiale se fait toujours dans les menus immobilier de cette société après changement de société.",
+          "Ce n'est pas la vue d'ensemble (une société) ni le tableau de bord (un bâtiment)."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Agrège Unités, Ventes, Commissions, Baux, Réserves par société."
+        ]
+      }
+    ]
+  }
 }

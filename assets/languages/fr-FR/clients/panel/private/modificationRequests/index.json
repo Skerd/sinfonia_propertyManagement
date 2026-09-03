@@ -155,5 +155,55 @@
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
-  "no": "Non"
+  "no": "Non",
+  "help": {
+    "ariaLabel": "À propos des demandes de modification",
+    "title": "À propos des demandes de modification",
+    "overview": "Une demande de modification est un changement demandé par le client sur une unité (agencement, finitions, extras) qui doit passer une chaîne d'approbation par étapes. Ce n'est pas une réserve (défaut) ni un avenant sur un contrat de construction, même si un VO ultérieur peut exister dans le module chantier. Le statut est le workflow ; on ne saute pas les étapes en éditant le statut en texte libre.",
+    "sections": [
+      {
+        "title": "Ce qu'elle contient",
+        "items": [
+          "Unité, description du changement, médias, et le statut actuel du workflow.",
+          "Approbations par étapes : architecte, ingénieur, CEO — chacune avec décision, notes, examinateur, horodatage, médias optionnels.",
+          "Plan matériaux (articles, quantités, prix) lors du chiffrage du changement.",
+          "Étapes d'approbation financière / coût client et confirmation de livraison."
+        ]
+      },
+      {
+        "title": "Workflow (actions)",
+        "items": [
+          "Approuver chez l'architecte — si oui, avance vers l'ingénieur ; si non, retour à la révision architecte.",
+          "Approuver chez l'ingénieur, puis le CEO — chaque étape vérifie que vous avez le droit d'écriture sur ce bloc d'approbation.",
+          "Soumettre une révision — le client ou l'agent envoie une proposition mise à jour après un refus.",
+          "Financer la demande — volet coût après les approbations techniques.",
+          "Approbation du coût client — l'acheteur accepte le changement chiffré.",
+          "Livrer — marquer le changement physique comme fait."
+        ],
+        "body": "Chaque action n'est légale que dans le statut correspondant. L'API refuse le mauvais étage plutôt que de sauter en silence."
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer une demande depuis une unité ou depuis cette liste société.",
+          "Ouvrir la fiche pour voir la chaîne, les matériaux et les actions disponibles pour votre rôle.",
+          "Filtrer par statut et unité."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Elle ne réserve ni ne vend l'unité.",
+          "Elle ne remplace pas les Réserves (défauts constatés à l'inspection).",
+          "Des notifications peuvent partir aux personnes de la chaîne à mesure que les décisions sont enregistrées."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Unité. Inspection optionnelle qui a motivé le changement. Artefacts chantier ultérieurs (lot de travaux / avenant) si utilisés."
+        ]
+      }
+    ]
+  }
 }

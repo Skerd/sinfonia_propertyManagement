@@ -36,5 +36,33 @@
     "commissionPaid": "Commission payée",
     "commissionPending": "Commission en attente",
     "avgRate": "Taux moyen %"
+  },
+  "help": {
+    "ariaLabel": "À propos du rapport agents",
+    "title": "À propos du rapport agents",
+    "overview": "Le rapport agents est une vue de performance sur une période : ce que chaque agent a réservé, vendu et gagné en commissions entre deux dates. C'est du reporting, pas le journal des commissions. Modifier un deal après coup change le prochain chargement de ce rapport.",
+    "sections": [
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Choisir une période (ou des dates de / à) et appliquer.",
+          "Lire les lignes par agent ; exporter lorsque vous avez besoin d'un fichier."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Les chiffres viennent des Réservations, Ventes et Commissions dans la plage de dates.",
+          "Il ne paie personne — utilisez Commissions pour gérer le statut de versement (en attente / payée / annulée).",
+          "Il ne crée ni réservations ni ventes."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Utilisateur agent, réservation, vente, commission."
+        ]
+      }
+    ]
   }
 }

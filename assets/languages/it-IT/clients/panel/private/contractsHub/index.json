@@ -114,5 +114,41 @@
     "floorPlaceholder": "Tutti i piani",
     "unitLabel": "Unità",
     "unitPlaceholder": "Tutte le unità"
+  },
+  "help": {
+    "ariaLabel": "Informazioni su Contratti e clienti",
+    "title": "Informazioni su Contratti e clienti",
+    "overview": "Contratti e clienti è il registro aziendale dei documenti commerciali già esistenti: prenotazioni, vendite e fascicoli cliente correlati. Non crea un nuovo tipo di contratto. Aprire una riga apre la scheda prenotazione o vendita. Usate questa pagina per cercare tra clienti e stati senza saltare tra due elenchi.",
+    "sections": [
+      {
+        "title": "Cosa vedete",
+        "items": [
+          "Righe tratte da Prenotazioni e Vendite (cliente, unità, progetto, date, importi, stato).",
+          "Filtri progetto, cliente, stato, date — applicati solo a questo registro.",
+          "Gli stessi documenti che trovereste sotto Prenotazioni o Vendite, presentati insieme."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Creare, pagare, annullare, approvare, consegnare — quelle azioni restano su Prenotazioni e Vendite.",
+          "Nulla è duplicato nel database. Se una prenotazione sparisce da Prenotazioni, sparisce qui.",
+          "Prenotazioni scadute e attive possono entrambe comparire, a seconda del filtro di stato dell'hub."
+        ]
+      },
+      {
+        "title": "Quando usarlo",
+        "items": [
+          "Le operations chiedono «quali contratti ha questo cliente?» — cercate qui.",
+          "Per agire (incassare una caparra, approvare una vendita), aprite la riga e usate la scheda sottostante, oppure andate all'elenco dedicato."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Prenotazione, Vendita, Unità, utente cliente. Non i contratti di locazione — quelli sono Hub locazioni / Contratti di locazione."
+        ]
+      }
+    ]
   }
 }

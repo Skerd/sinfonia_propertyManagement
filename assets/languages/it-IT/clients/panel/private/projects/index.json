@@ -23,6 +23,68 @@
     "updatedAt": "Aggiornato il",
     "videoGallery": "Video"
   },
+  "help": {
+    "ariaLabel": "Informazioni sui progetti",
+    "title": "Informazioni sui progetti",
+    "overview": "Un progetto è il contenitore di primo livello di uno sviluppo. Ogni edificio, piano, unità, lead, prenotazione, vendita, contratto di locazione, storia, costo unità e pratica di cantiere vi è appeso. Creare un progetto non crea edifici — li aggiungete dopo. Il record progetto è identità, marketing e default commerciali, non l'edificio fisico.",
+    "sections": [
+      {
+        "title": "Cosa contiene un progetto",
+        "items": [
+          "Nome (obbligatorio) — come lo sviluppo è etichettato in pannello, sito pubblico ed e-mail.",
+          "Descrizione — testo lungo per gli elenchi e la pagina pubblica del progetto.",
+          "Immagine principale (obbligatoria) — schede, sito pubblico, gallerie. Senza di essa non si crea il progetto.",
+          "Galleria immagini, galleria video, file media extra — set visivo opzionale per il marketing.",
+          "Brochure marketing (PDF) — che operatori e sito pubblico possono offrire.",
+          "Titolo, descrizione e PDF magazine — blocco editoriale quando pubblicate una pagina in stile magazine.",
+          "Link social (nome, URL, logo opzionale) — fino a 20 link mostrati con il progetto.",
+          "In evidenza in homepage + ordine di ordinamento — quali progetti compaiono nella riga homepage pubblica e in quale ordine (numero più basso prima).",
+          "Provvigione vendita % e provvigione prenotazione % — tassi di partenza ereditati dai deal successivi. Un deal può comunque portare i propri importi."
+        ],
+        "body": "Non c'è una macchina di stato sul progetto stesso. Consegna e stato commerciale vivono su edifici, unità, prenotazioni, vendite e contratti di locazione."
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare un progetto — immagine principale e nome obbligatori.",
+          "Cercare e filtrare l'elenco; passare da vista schede a tabella.",
+          "Aprire una scheda per modificare marketing, media, evidenza e default di provvigione.",
+          "Menu riga: aprire gli edifici già limitati a quel progetto.",
+          "L'eliminazione è logica. Il progetto può essere ripristinato. I figli (edifici, unità, deal) non si creano né si distruggono automaticamente alla cancellazione o al ripristino."
+        ]
+      },
+      {
+        "title": "Comportamento",
+        "items": [
+          "Un progetto può esistere con zero edifici. La giacenza inizia quando aggiungete edifici, poi piani, poi unità.",
+          "Le pagine del sito pubblico (galleria, riga in evidenza, magazine, dettaglio progetto) leggono questi campi marketing. Media mancanti o non pubblicati semplicemente non si vedono.",
+          "I tassi di provvigione sul progetto sono solo default. Cambiarli in seguito non riscrive vendite o prenotazioni storiche.",
+          "I KPI di Dashboard e Panoramica «per progetto» aggregano unità e deal sottostanti, non sono campi memorizzati qui."
+        ]
+      },
+      {
+        "title": "Cosa dipende dal progetto",
+        "items": [
+          "Albero fisico: Progetto → Edificio → Piano → Unità.",
+          "Pipeline commerciale: lead (interesse progetto opzionale), ispezioni, richieste di modifica, prenotazioni, vendite, commissioni.",
+          "Contratti e clienti è un registro di quei documenti commerciali — non crea un nuovo tipo.",
+          "Locazioni: contratti e canoni (anche tramite Hub locazioni).",
+          "Contenuti: storie (giornale marketing) e aggiornamenti cantiere.",
+          "Costi: costi unità imputati alle unità di questo progetto. Qualità: snag su quelle unità."
+        ],
+        "body": "Quei record si creano nelle rispettive pagine e solo referenziano il progetto. Eliminare un progetto non li cancella a cascata."
+      },
+      {
+        "title": "Passo successivo tipico",
+        "items": [
+          "Creare il progetto con un nome chiaro e l'immagine principale.",
+          "Aggiungere edifici (ognuno richiede progetto, indirizzo, valore di investimento, immagine principale).",
+          "Aggiungere piani su ogni edificio, poi unità su ogni piano (tipo, numero, superfici, prezzo).",
+          "Poi pubblicare il marketing (evidenza, storie) oppure avviare il commerciale (lead → prenotazioni / vendite, o contratti di locazione)."
+        ]
+      }
+    ]
+  },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "title": "Progetti"
 }

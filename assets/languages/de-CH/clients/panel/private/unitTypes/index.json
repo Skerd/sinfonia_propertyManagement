@@ -2,6 +2,45 @@
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx",
   "title": "Einheitstypen",
   "description": "Alle Einheitstypen verwalten",
+  "help": {
+    "ariaLabel": "Über Einheitstypen",
+    "title": "Über Einheitstypen",
+    "overview": "Ein Einheitstyp ist der Katalogtyp, den jede Einheit wählen muss (Wohnung, Büro, Parkplatz usw.). Kategorien ordnen Typen. Einen Typ anlegen erzeugt keine Einheiten — Einheiten wählen den Typ beim Anlegen des Bestands.",
+    "sections": [
+      {
+        "title": "Was der Einheitstyp speichert",
+        "items": [
+          "Name und Kategorie (Pflicht). Kategorie zuerst anlegen.",
+          "Optionale Gruppe (Freitext innerhalb der Kategorie), Beschreibung und Icon.",
+          "Privat-Flag — Markierung auf der Typkarte. Kein Belegungsstatus, ändert den Einheitenstatus nicht.",
+          "Slug entsteht aus Firmenname plus Typname. Sie tippen ihn nicht."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Typen erstellen, suchen und bearbeiten.",
+          "Löschen ist Soft-Delete, wird aber blockiert, solange eine Einheit den Typ nutzt oder ein Gebäude ihn als Immobilientyp listet."
+        ]
+      },
+      {
+        "title": "So verhält es sich",
+        "items": [
+          "Jede Einheit hat genau einen Einheitstyp. Preis, Flächen und Verfügbarkeit leben auf der Einheit, nicht hier.",
+          "Gebäude können anbieten, welche Immobilientypen sie führen. Unabhängig davon, welche Einheiten schon existieren.",
+          "Umbenennen ändert Bezeichnungen. Listenpreise bestehender Einheiten werden nicht umgeschrieben."
+        ]
+      },
+      {
+        "title": "Nächster Schritt",
+        "items": [
+          "Einheitstyp-Kategorien anlegen, falls fehlend.",
+          "Typen anlegen, die Sie verkaufen oder vermieten.",
+          "Beim Anlegen von Einheiten den passenden Typ wählen."
+        ]
+      }
+    ]
+  },
   "createUnitType": "Einheitstyp erstellen",
   "noData": "Keine Einheitstypen gefunden",
   "failTitle": "Einheitstypen konnten nicht geladen werden",

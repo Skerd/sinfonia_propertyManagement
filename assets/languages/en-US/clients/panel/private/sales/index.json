@@ -101,5 +101,61 @@
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "help": {
+    "ariaLabel": "About Sales",
+    "title": "About Sales",
+    "overview": "A Sale is the unit purchase. It is either cash or a payment-plan sale. Completing a sale marks the unit sold. Approval, payment-plan installments, handover, and title-transfer are fields and actions on this sale — not separate menus. Contracts Hub only lists the same documents.",
+    "sections": [
+      {
+        "title": "What a sale holds",
+        "items": [
+          "Unit, sold-by agent, sale currency, sale date (required; not in the future).",
+          "Payment type: cash or payment_plan (set by which create flow you used).",
+          "Final price (computed from listed price, discounts, reservation deposit conversion, exchange rates — do not treat it as a random typed KPI).",
+          "Buyer (person) and optional buyer company.",
+          "Listed unit price / currency, local discount, sale exchange rate, notes.",
+          "Purchase contract file and additional documents, transaction reference.",
+          "Optional originating reservation, plus reservation deposit amount/currency/exchange/converted amount when converting a hold into a sale.",
+          "Approval status (pending / approved / rejected) and the review notes.",
+          "Payment plan link when payment type is payment_plan (installments, interest, down payment, remaining balance).",
+          "Handover: date, who handed over, notes, certificate file.",
+          "Title transfer: date, deed number, notary name, certificate file."
+        ]
+      },
+      {
+        "title": "Create flows",
+        "items": [
+          "Create cash sale — full amount, no installment schedule.",
+          "Create payment-plan sale — down payment, installment count, dates, optional interest; the plan is stored as its own record linked to the sale.",
+          "Either flow can start from an active reservation so the deposit converts into the price."
+        ]
+      },
+      {
+        "title": "Actions",
+        "items": [
+          "Approve / reject — only while pending approval. Rejecting returns the unit to available and clears the sale pointer on the unit. Approving keeps the unit sold.",
+          "Pay installment / pay down payment — on the payment plan (partial payments allowed; receipts stored per installment).",
+          "Restructure payment plan — replace the unpaid schedule, keep history of the previous installments, only while the plan is active.",
+          "Manual client email — sale confirmation, or installment reminders (3-day / 1-day / today / remaining days / overdue) for a chosen installment number.",
+          "Handover and title-transfer dates are saved on edit. If the company requires a completed handover package, setting a handover date can be blocked until that package exists."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A sold unit cannot be reserved or leased until the sale is undone through supported reject/availability paths — not by editing unit status.",
+          "Dashboard “collected” reads receipts / payment-plan activity, not a field you type on Overview.",
+          "Agent commission usually originates here (source type sale) or from the reservation that preceded it.",
+          "Payment-plan remaining balance updates as installments and down payment are marked paid."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Unit (sold), buyer, optional reservation, payment plan, commissions, Contracts Hub (purchase / sale-promise views of the same sale)."
+        ]
+      }
+    ]
+  }
 }

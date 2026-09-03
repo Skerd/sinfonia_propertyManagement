@@ -6,6 +6,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
+import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -145,7 +146,7 @@ function AgentReportPage({
 
     return (
         <div className="flex flex-col h-full overflow-hidden">
-            <Header title={rk("title")} description={rk("title")}/>
+            <Header title={rk("title")} description={rk("title")} help={readPageHelp(resolveLanguageKey)}/>
 
             <div className="shrink-0 border-b px-4 py-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 items-end">

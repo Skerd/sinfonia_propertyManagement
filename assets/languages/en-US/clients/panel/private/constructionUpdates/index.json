@@ -24,5 +24,40 @@
     "title": "Title",
     "updateDate": "Update Date",
     "updatedAt": "Updated At"
+  },
+  "help": {
+    "ariaLabel": "About Construction updates",
+    "title": "About Construction updates",
+    "overview": "A Construction update is a progress post with body and media, aimed at a project or a specific edifice. Use it for site communication (what was built this week). It is not a Story (marketing journal) and not a snag (defect).",
+    "sections": [
+      {
+        "title": "What it holds",
+        "items": [
+          "Body text and media.",
+          "Project, optional edifice.",
+          "Optional links to a milestone or schedule task when those construction records exist."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create updates as work progresses; filter by project or edifice.",
+          "These can surface on the public site or client communications when the form marks them that way."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Does not move unit status or completion dates by itself.",
+          "Edifice actual completion and unit construction status remain on those records — update them there if the building is actually finished."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Project, optional edifice. Complementary to Stories (marketing) and Snags (defects)."
+        ]
+      }
+    ]
   }
 }

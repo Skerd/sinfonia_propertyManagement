@@ -2,6 +2,43 @@
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
   "title": "Llojet e historive",
   "description": "Menaxho llojet e historive të ditarit të projektit",
+  "help": {
+    "ariaLabel": "Rreth llojeve të historive",
+    "title": "Rreth llojeve të historive",
+    "overview": "Një lloj historie klasifikon tregimet e ditarit (lajm, moment, shtyp etj.). Çdo tregim kërkon një lloj. Nuk është kategori e përditësimeve të ndërtimit as lloj defekti.",
+    "sections": [
+      {
+        "title": "Çfarë mban lloji i historisë",
+        "items": [
+          "Emri (i detyrueshëm).",
+          "Përshkrim opsional.",
+          "Renditje opsionale — listat e zgjedhjes dhe kjo faqe i renditin sipas renditjes, pastaj emrit. Bosh vlen 0.",
+          "Slug-u gjenerohet nga emri i kompanisë plus emri i llojit. Nuk e shkruani ju."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni, kërkoni dhe ndryshoni llojet e historive.",
+          "Fshirja është e butë, por bllokohet përderisa ndonjë tregim e përdor këtë lloj."
+        ]
+      },
+      {
+        "title": "Sjellja",
+        "items": [
+          "Tregimet (ditari i marketingut) zgjedhin një lloj nga kjo listë. Përditësimet e ndërtimit kanë faqen e tyre dhe nuk përdorin lloje historish.",
+          "Ndryshimi i renditjes ndryshon vetëm se si shfaqen llojet te zgjedhësit. Tregimet ekzistuese e mbajnë llojin."
+        ]
+      },
+      {
+        "title": "Hapi tjetër tipik",
+        "items": [
+          "Krijoni llojet që i duhen ditarit.",
+          "Te Tregimet, zgjidhni një lloj kur shkruani, pastaj botoni kur teksti është gati."
+        ]
+      }
+    ]
+  },
   "createStoryType": "Krijo lloj historie",
   "noData": "Nuk u gjetën lloje historish",
   "failTitle": "Ngarkimi i llojeve të historive dështoi",
