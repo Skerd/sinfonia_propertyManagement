@@ -323,9 +323,10 @@ export default function PaymentPlanSaleReceiptSection({
 
     useEffect(() => {
         const s = String(saleDate || "").trim();
-        if (s) {
-            form.setValue("startDate", s, { shouldDirty: false, shouldValidate: true });
-        }
+        if (!s) return;
+        const current = String(form.getValues("startDate") || "").trim();
+        if (current === s) return;
+        form.setValue("startDate", s, { shouldDirty: false, shouldValidate: true });
     }, [saleDate, form]);
 
     useEffect(() => {
