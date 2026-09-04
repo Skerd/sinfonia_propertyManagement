@@ -41,7 +41,7 @@
         "title": "Auf dieser Seite",
         "items": [
           "Die Seite öffnet den einen Einstellungsdatensatz dieser Firma (wird angelegt, falls fehlend).",
-          "Zwei Schalter. Speichern übernimmt."
+          "Zwei Schalter. Speichern übernimmt.",
           "Kein Anlegen, Löschen oder projektbezogener Override."
         ]
       },

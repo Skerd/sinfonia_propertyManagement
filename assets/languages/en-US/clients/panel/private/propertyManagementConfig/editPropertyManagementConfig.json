@@ -41,7 +41,7 @@
         "title": "On this page",
         "items": [
           "The page opens this company’s single settings record (created automatically if it did not exist).",
-          "Two switches. Save to apply."
+          "Two switches. Save to apply.",
           "There is no create, delete, or per-project override here."
         ]
       },

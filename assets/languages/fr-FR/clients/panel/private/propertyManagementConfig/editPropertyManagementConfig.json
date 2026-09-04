@@ -41,7 +41,7 @@
         "title": "Sur cette page",
         "items": [
           "La page ouvre l’unique enregistrement de paramètres de cette société (créé automatiquement s’il manquait).",
-          "Deux interrupteurs. Enregistrer pour appliquer."
+          "Deux interrupteurs. Enregistrer pour appliquer.",
           "Ni création, ni suppression, ni dérogation par projet."
         ]
       },
