@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/startDueDiligenceLandParcelDialog.tsx",
+  "dialogTitle": "Due Diligence starten",
+  "dialogDescription": "Due-Diligence-Status und optionale Notizen erfassen und dieses Grundstück in Due Diligence setzen.",
+  "dueDiligenceStatusLabel": "Due-Diligence-Status",
+  "dueDiligenceStatusPlaceholder": "Due-Diligence-Status",
+  "dueDiligenceNotesLabel": "Due-Diligence-Notizen",
+  "dueDiligenceNotesPlaceholder": "Optionale Due-Diligence-Notizen",
+  "mediaLabel": "Dateien",
+  "addFiles": "Dateien hinzufügen",
+  "filesSelected": "Dateien ausgewählt",
+  "cancel": "Abbrechen",
+  "submit": "Due Diligence starten",
+  "restartDialogTitle": "Due Diligence erneut starten",
+  "restartDialogDescription": "Due-Diligence-Status und optionale Notizen aktualisieren und dieses Grundstück wieder in Due Diligence setzen.",
+  "restartSubmit": "Due Diligence erneut starten",
+  "axios": {
+    "start": {
+      "title": "Due Diligence wird gestartet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due Diligence gestartet",
+      "time": 3000
+    },
+    "error": {
+      "title": "Due Diligence konnte nicht gestartet werden",
+      "time": 3000
+    }
+  }
+}

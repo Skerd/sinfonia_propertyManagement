@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/disposeLandParcelDialog.tsx",
+  "dialogTitle": "Dismetti particella",
+  "dialogDescription": "Segna questa particella come dismessa. Disponibile da Acquisito, o da Due diligence fallita per ritirarsi senza acquisire. Le note opzionali vengono salvate come note di dismissione.",
+  "notesLabel": "Note di dismissione",
+  "notesPlaceholder": "Note di dismissione (opzionale)",
+  "cancel": "Annulla",
+  "submit": "Dismetti"
+}

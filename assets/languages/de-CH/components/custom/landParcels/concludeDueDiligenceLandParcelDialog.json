@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/concludeDueDiligenceLandParcelDialog.tsx",
+  "dialogTitle": "Due Diligence abschliessen",
+  "dialogDescription": "Genehmigen, um das Grundstück zu erwerben, oder ablehnen, um die Due Diligence als fehlgeschlagen zu markieren.",
+  "outcomeLabel": "Entscheidung",
+  "outcomePlaceholder": "Entscheidung wählen",
+  "outcomes": {
+    "approved": "Genehmigt",
+    "declined": "Abgelehnt"
+  },
+  "cadastralReferenceLabel": "Katasterreferenz",
+  "cadastralReferencePlaceholder": "Katasterreferenz",
+  "acquisitionNotesLabel": "Erwerbsnotizen",
+  "acquisitionNotesPlaceholder": "Optionale Erwerbsnotizen",
+  "dueDiligenceStatusLabel": "Ablehnungsgrund",
+  "dueDiligenceStatusPlaceholder": "Warum die Due Diligence fehlgeschlagen ist",
+  "dueDiligenceNotesLabel": "Due-Diligence-Notizen",
+  "dueDiligenceNotesPlaceholder": "Optionale Notizen zur Ablehnung",
+  "mediaLabel": "Dateien",
+  "addFiles": "Dateien hinzufügen",
+  "filesSelected": "Dateien ausgewählt",
+  "cancel": "Abbrechen",
+  "submit": "Due Diligence abschliessen",
+  "axios": {
+    "start": {
+      "title": "Due Diligence wird abgeschlossen…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due Diligence abgeschlossen",
+      "time": 3000
+    },
+    "error": {
+      "title": "Due Diligence konnte nicht abgeschlossen werden",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/addDueDiligenceStepLandParcelDialog.tsx",
+  "dialogTitle": "Add due-diligence step",
+  "dialogDescription": "Record another named step on this land parcel. Status stays under due diligence.",
+  "titleLabel": "Step title",
+  "titlePlaceholder": "Step title",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional notes for this step",
+  "mediaLabel": "Files",
+  "addFiles": "Add files",
+  "filesSelected": "files selected",
+  "cancel": "Cancel",
+  "submit": "Add step",
+  "axios": {
+    "start": {
+      "title": "Adding due-diligence step…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due-diligence step added",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not add due-diligence step",
+      "time": 3000
+    }
+  }
+}

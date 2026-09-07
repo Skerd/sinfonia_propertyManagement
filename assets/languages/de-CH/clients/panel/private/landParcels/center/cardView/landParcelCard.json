@@ -6,12 +6,14 @@
   "status": {
     "prospect": "Prospect",
     "under_dd": "Unter DD",
+    "dd_failed": "DD fehlgeschlagen",
     "acquired": "Acquired",
     "disposed": "Disposed"
   },
   "statuses": {
     "prospect": "Prospect",
     "under_dd": "Unter DD",
+    "dd_failed": "DD fehlgeschlagen",
     "acquired": "Acquired",
     "disposed": "Disposed"
   }

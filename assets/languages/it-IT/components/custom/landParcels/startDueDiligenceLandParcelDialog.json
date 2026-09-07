@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/startDueDiligenceLandParcelDialog.tsx",
+  "dialogTitle": "Avvia due diligence",
+  "dialogDescription": "Registra lo stato di due diligence e note opzionali, poi passa questa particella in due diligence.",
+  "dueDiligenceStatusLabel": "Stato due diligence",
+  "dueDiligenceStatusPlaceholder": "Stato due diligence",
+  "dueDiligenceNotesLabel": "Note di due diligence",
+  "dueDiligenceNotesPlaceholder": "Note di due diligence (opzionale)",
+  "mediaLabel": "File",
+  "addFiles": "Aggiungi file",
+  "filesSelected": "file selezionati",
+  "cancel": "Annulla",
+  "submit": "Avvia due diligence",
+  "restartDialogTitle": "Riavvia due diligence",
+  "restartDialogDescription": "Aggiorna lo stato di due diligence e le note opzionali, poi riporta questa particella in due diligence.",
+  "restartSubmit": "Riavvia due diligence",
+  "axios": {
+    "start": {
+      "title": "Avvio della due diligence…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due diligence avviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile avviare la due diligence",
+      "time": 3000
+    }
+  }
+}

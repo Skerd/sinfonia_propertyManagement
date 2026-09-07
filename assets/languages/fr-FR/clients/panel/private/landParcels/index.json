@@ -2,6 +2,73 @@
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
   "title": "Parcelles",
   "description": "Parcelles cadastrales et terrains à développer",
+  "help": {
+    "ariaLabel": "À propos des parcelles",
+    "title": "À propos des parcelles",
+    "overview": "Une parcelle est un lot cadastral ou un terrain à développer rattaché à un projet. Ce n’est ni une unité, ni un étage, ni un édifice — c’est le terrain que vous étudiez, achetez ou cédez. À la création, le statut est Prospect. Le statut et les données d’étape ne changent jamais depuis le formulaire de création ou d’édition ; seules les actions de la ligne, de la carte et du volet font avancer le cycle de vie.",
+    "sections": [
+      {
+        "title": "Ce que contient une parcelle",
+        "body": "La création enregistre l’identité et les données d’urbanisme. Les données d’étape sont saisies plus tard dans les dialogues d’action.",
+        "items": [
+          "Projet (obligatoire) — chaque parcelle appartient à un développement. Depuis un projet, la liste est déjà filtrée et la création peut être préremplie.",
+          "Titre (obligatoire) — libellé dans la liste, le volet et les menus.",
+          "Édifice (optionnel) — rattacher la parcelle à un bâtiment du même projet lorsque le terrain est lié à cet actif.",
+          "Surface (m²), zonage, coût d’acquisition et devise — données commerciales et d’urbanisme optionnelles.",
+          "Description et pièces jointes — texte et fichiers. Enregistrer une édition ne change pas le statut.",
+          "Notes opérationnelles — disponibles à l’édition seulement. Ce ne sont pas les notes de due diligence, d’acquisition ou de cession."
+        ]
+      },
+      {
+        "title": "Cycle de vie (statut)",
+        "body": "Le statut est une machine : Prospect → Under DD → Acquired → Disposed, avec une branche Under DD → DD échouée. On ne peut pas sauter vers Acquired. Les actions n’apparaissent que si le statut courant les autorise.",
+        "items": [
+          "Prospect (défaut à la création) — terrain candidat. La seule action est Démarrer la due diligence.",
+          "Démarrer la due diligence — depuis Prospect, ou Relancer depuis DD échouée. Exige un titre de première étape et des notes et fichiers optionnels. Passe à Under DD et ajoute la première entrée du journal.",
+          "Under DD — revue en cours. Ajouter autant d’étapes nommées que nécessaire, puis Conclure la due diligence.",
+          "Ajouter une étape — uniquement depuis Under DD. Exige un titre et des notes et fichiers optionnels. Le statut reste Under DD.",
+          "Conclure la due diligence — uniquement depuis Under DD. Un dialogue : Approuvé (cadastre obligatoire → Acquired) ou Refusé (motif obligatoire, notes et fichiers optionnels → DD échouée).",
+          "DD échouée — la revue n’a pas passé. Relancer la due diligence ou Céder sans acquérir.",
+          "Acquired — vous détenez le terrain. La seule action est Céder.",
+          "Dispose — depuis Acquired, ou depuis DD échouée. Accepte des notes de cession optionnelles. Passe à Disposed.",
+          "Disposed est terminal. Il n’y a pas d’action pour rouvrir la parcelle."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Ajouter une parcelle — projet et titre obligatoires. Les nouvelles parcelles commencent en Prospect. La référence cadastrale et les champs de due diligence ne sont pas sur le formulaire de création.",
+          "Rechercher et filtrer ; vue cartes ou tableau.",
+          "Ouvrir une carte ou une ligne pour modifier identité, coût, zonage, notes opérationnelles et fichiers. L’édition ne change jamais le statut ni les champs d’étape.",
+          "Utiliser les menus ⋮ pour Démarrer / Relancer, Ajouter une étape, Conclure et Céder — seuls moyens de faire avancer le statut ou d’ajouter des étapes.",
+          "Depuis un projet, la liste est déjà limitée à ce projet.",
+          "La suppression est un soft delete restaurable. Elle ne change pas le statut et ne cascade ni au projet ni à l’édifice."
+        ]
+      },
+      {
+        "title": "Comportement",
+        "items": [
+          "Une parcelle peut exister sans édifice. L’édifice est un lien, pas un arbre parent comme Étage → Unité.",
+          "La due diligence n’est pas sautable. Conclure est masqué tant que la parcelle n’est pas Under DD, et après un refus jusqu’à relance.",
+          "Les étapes de due diligence forment un journal (titre + notes + fichiers). Démarrer et Ajouter une étape ajoutent des entrées.",
+          "Chaque action stocke ses notes dans son propre champ. Elles ne sont pas ajoutées aux notes opérationnelles.",
+          "La référence cadastrale n’est définie que lors d’une conclusion Approuvé.",
+          "Les bâtiments et unités vendables se créent sur leurs pages (Projets → Édifices → Étages → Unités). Cette page ne crée pas d’inventaire."
+        ]
+      },
+      {
+        "title": "Étape suivante",
+        "items": [
+          "Créer la parcelle avec le projet et un titre clair.",
+          "Depuis Prospect, Démarrer la due diligence (statut obligatoire, notes optionnelles).",
+          "Depuis Under DD, ajouter des étapes puis Conclure en Approuvé (cadastre obligatoire) ou Refusé (motif obligatoire).",
+          "Continuer à Éditer pour surface, zonage, coût, fichiers et notes opérationnelles.",
+          "Lorsque le terrain n’est plus détenu, Céder depuis Acquired.",
+          "Ajouter bâtiments et unités sous le projet — pas ici."
+        ]
+      }
+    ]
+  },
   "createLandParcel": "Ajouter une parcelle",
   "noData": "Aucun enregistrement",
   "failTitle": "Échec du chargement",
@@ -17,7 +84,10 @@
     "deletedAt": "Supprimé",
     "deletedBy": "Supprimé par",
     "description": "Description",
-    "dueDiligenceStatus": "Due Diligence Status",
+    "dueDiligenceStatus": "Statut de due diligence",
+    "dueDiligenceNotes": "Notes de due diligence",
+    "acquisitionNotes": "Notes d'acquisition",
+    "disposeNotes": "Notes de cession",
     "media": "Médias",
     "name": "Référence",
     "notes": "Notes",
@@ -30,6 +100,7 @@
       "status": {
         "prospect": "Prospect",
         "under_dd": "Under DD",
+        "dd_failed": "DD échouée",
         "acquired": "Acquired",
         "disposed": "Disposed"
       }

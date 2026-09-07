@@ -2,6 +2,74 @@
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
   "title": "Land parcels",
   "description": "Cadastral parcels and development land",
+  "help": {
+    "ariaLabel": "About Land parcels",
+    "title": "About Land parcels",
+    "overview": "A land parcel is a cadastral plot or development land that belongs to a project. It is not a unit, floor, or edifice — it is the land you are considering, buying, or disposing of. Creating a parcel starts it as Prospect. Lifecycle status and due-diligence steps move only via row, card, and sheet actions.",
+    "sections": [
+      {
+        "title": "What a land parcel holds",
+        "body": "Create stores identity and planning facts. Stage data is recorded later in the action dialogs.",
+        "items": [
+          "Project (required) — every parcel belongs to a development. Opening this page from a project already scopes the list and can prefill create.",
+          "Title (required) — how the parcel is labelled in the list, sheet, and menus.",
+          "Edifice (optional) — attach the parcel to a building in the same project when the land is tied to that asset.",
+          "Area (m²), zoning, acquisition cost, and currency — optional commercial and planning facts.",
+          "Description and attachments — narrative and files. Saving an edit does not change status.",
+          "Operational notes — available on edit only. They are not due-diligence, acquisition, or dispose notes."
+        ]
+      },
+      {
+        "title": "Lifecycle (status)",
+        "body": "Status is a machine: Prospect → Under DD → Acquired → Disposed, with a decline branch Under DD → DD failed. You cannot skip into Acquired. Actions appear only when the current status allows them, on the table row menu, the card ⋮ / right-click menu, and the sheet ⋮ menu.",
+        "items": [
+          "Prospect (default on create) — candidate land. The only available action is Start due diligence.",
+          "Start due diligence — from Prospect, or Restart from DD failed. Requires a first step title and accepts optional notes and files. Sets status to Under DD and appends the first log entry.",
+          "Under DD — review in progress. Add as many named due-diligence steps as you need, then Conclude due diligence.",
+          "Add due-diligence step — only from Under DD. Requires a step title and accepts optional notes and files. Status stays Under DD. The sheet shows the full log.",
+          "Conclude due diligence — only from Under DD. One dialog: Approved (cadastral required, optional acquisition notes → Acquired) or Declined (reason required, optional notes and files → DD failed).",
+          "DD failed — diligence did not pass. Restart due diligence to return to Under DD, or Dispose to walk away without acquiring.",
+          "Acquired — you own the land. The only available action is Dispose.",
+          "Dispose — from Acquired, or from DD failed (walk away). Accepts optional dispose notes. Sets status to Disposed.",
+          "Disposed is terminal. There is no action to reopen the parcel."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Add a land parcel — project and title are required. New parcels start as Prospect. Cadastral reference and due-diligence fields are not on create.",
+          "Search and filter; switch card view vs table view.",
+          "Open a card or row to edit identity, cost, zoning, operational notes, and files. Edit never changes lifecycle status, cadastral reference, due-diligence steps, or acquisition/dispose notes.",
+          "Use the ⋮ menus for Start / Restart due diligence, Add due-diligence step, Conclude due diligence, and Dispose — those are the only ways to move status or append steps.",
+          "When you arrived from a project, the list is already scoped to that project.",
+          "Delete is a soft delete and can be restored. It does not change status and does not cascade to the project or edifice."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "A parcel can exist without an edifice. Edifice is a link, not a parent tree like Floor → Unit.",
+          "Due diligence cannot be skipped. Conclude is hidden until the parcel is Under DD, and stays hidden after a decline until diligence is restarted.",
+          "Due-diligence steps are a running log (title + notes + files). Start and Add step append entries. The latest title is shown on the card and sheet overview.",
+          "Each action stores its notes on its own field (step notes, acquisition notes, dispose notes). They are not appended to operational notes.",
+          "Cadastral reference is set only when concluding as Approved.",
+          "Buildings and sellable units are created on their own pages (Projects → Edifices → Floors → Units). This page does not create inventory."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create the parcel with the project and a clear title.",
+          "From Prospect, Start due diligence (status required, notes optional).",
+          "From Under DD, add extra steps as needed, then Conclude as Approved (cadastral required) or Declined (reason required).",
+          "After a decline, Restart due diligence or Dispose without acquiring.",
+          "Keep using Edit for area, zoning, cost, files, and operational notes.",
+          "When owned land is no longer held, Dispose from Acquired.",
+          "Add buildings and units under the project — not here."
+        ]
+      }
+    ]
+  },
   "createLandParcel": "Add land parcel",
   "noData": "No land parcels found",
   "failTitle": "Failed to load land parcels",
@@ -18,6 +86,9 @@
     "deletedBy": "Deleted By",
     "description": "Description",
     "dueDiligenceStatus": "Due Diligence Status",
+    "dueDiligenceNotes": "Due Diligence Notes",
+    "acquisitionNotes": "Acquisition Notes",
+    "disposeNotes": "Dispose Notes",
     "media": "Media",
     "name": "Reference",
     "notes": "Notes",
@@ -30,6 +101,7 @@
       "status": {
         "prospect": "Prospect",
         "under_dd": "Under DD",
+        "dd_failed": "DD failed",
         "acquired": "Acquired",
         "disposed": "Disposed"
       }

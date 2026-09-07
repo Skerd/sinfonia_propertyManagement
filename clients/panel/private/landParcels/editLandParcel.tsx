@@ -12,6 +12,7 @@ export default createGenericEditPage<LandParcel, EditLandParcelFormType>({
     mapEntityData: (data) => ({
         ...data,
         project: (data as any).project?._id ?? (data as any).project,
+        edifice: (data as any).edifice?._id ?? (data as any).edifice,
         currency: (data as any).currency?._id ?? (data as any).currency,
         media: (data as any).media?.map((m: any) => m._id ?? m) ?? [],
     } as any),

@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/startDueDiligenceLandParcelDialog.tsx",
+  "dialogTitle": "Lancer la due diligence",
+  "dialogDescription": "Enregistrer le statut de due diligence et des notes optionnelles, puis passer cette parcelle en due diligence.",
+  "dueDiligenceStatusLabel": "Statut de due diligence",
+  "dueDiligenceStatusPlaceholder": "Statut de due diligence",
+  "dueDiligenceNotesLabel": "Notes de due diligence",
+  "dueDiligenceNotesPlaceholder": "Notes de due diligence (optionnel)",
+  "mediaLabel": "Fichiers",
+  "addFiles": "Ajouter des fichiers",
+  "filesSelected": "fichiers sélectionnés",
+  "cancel": "Annuler",
+  "submit": "Lancer la due diligence",
+  "restartDialogTitle": "Relancer la due diligence",
+  "restartDialogDescription": "Mettre à jour le statut de due diligence et les notes optionnelles, puis ramener cette parcelle en due diligence.",
+  "restartSubmit": "Relancer la due diligence",
+  "axios": {
+    "start": {
+      "title": "Démarrage de la due diligence…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due diligence lancée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de lancer la due diligence",
+      "time": 3000
+    }
+  }
+}

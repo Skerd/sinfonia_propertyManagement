@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/startDueDiligenceLandParcelDialog.tsx",
+  "dialogTitle": "Start due diligence",
+  "dialogDescription": "Record the due-diligence status and optional notes, then move this land parcel to under due diligence.",
+  "dueDiligenceStatusLabel": "Due diligence status",
+  "dueDiligenceStatusPlaceholder": "Due diligence status",
+  "dueDiligenceNotesLabel": "Due diligence notes",
+  "dueDiligenceNotesPlaceholder": "Optional due-diligence notes",
+  "mediaLabel": "Files",
+  "addFiles": "Add files",
+  "filesSelected": "files selected",
+  "cancel": "Cancel",
+  "submit": "Start due diligence",
+  "restartDialogTitle": "Restart due diligence",
+  "restartDialogDescription": "Update the due-diligence status and optional notes, then move this land parcel back to under due diligence.",
+  "restartSubmit": "Restart due diligence",
+  "axios": {
+    "start": {
+      "title": "Starting due diligence…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due diligence started",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not start due diligence",
+      "time": 3000
+    }
+  }
+}

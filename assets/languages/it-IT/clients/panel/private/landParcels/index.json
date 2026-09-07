@@ -2,6 +2,73 @@
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
   "title": "Particelle",
   "description": "Particelle catastali e terreni di sviluppo",
+  "help": {
+    "ariaLabel": "Informazioni sulle particelle",
+    "title": "Informazioni sulle particelle",
+    "overview": "Una particella è un lotto catastale o un terreno di sviluppo che appartiene a un progetto. Non è un’unità, un piano o un edificio — è il terreno che state valutando, acquistando o alienando. Alla creazione lo stato è Prospect. Lo stato e i dati di fase non cambiano mai dal modulo di creazione o modifica; solo le azioni di riga, scheda e foglio fanno avanzare il ciclo di vita.",
+    "sections": [
+      {
+        "title": "Cosa contiene una particella",
+        "body": "La creazione memorizza identità e dati urbanistici. I dati di fase si registrano dopo, nei dialoghi di azione.",
+        "items": [
+          "Progetto (obbligatorio) — ogni particella appartiene a uno sviluppo. Aprendo questa pagina da un progetto l’elenco è già filtrato e la creazione può essere precompilata.",
+          "Titolo (obbligatorio) — etichetta in elenco, foglio e menu.",
+          "Edificio (facoltativo) — collegare la particella a un edificio dello stesso progetto quando il terreno è legato a quell’asset.",
+          "Superficie (m²), zonizzazione, costo di acquisizione e valuta — dati commerciali e urbanistici facoltativi.",
+          "Descrizione e allegati — testo e file. Salvare una modifica non cambia lo stato.",
+          "Note operative — disponibili solo in modifica. Non sono note di due diligence, acquisizione o dismissione."
+        ]
+      },
+      {
+        "title": "Ciclo di vita (stato)",
+        "body": "Lo stato è una macchina: Prospect → Under DD → Acquired → Disposed, con ramo Under DD → DD fallita. Non si può saltare ad Acquired. Le azioni compaiono solo se lo stato corrente le consente.",
+        "items": [
+          "Prospect (predefinito in creazione) — terreno candidato. L’unica azione è Avvia due diligence.",
+          "Avvia due diligence — da Prospect, o Riavvia da DD fallita. Richiede il titolo del primo passaggio e note e file facoltativi. Imposta Under DD e aggiunge la prima voce del registro.",
+          "Under DD — verifica in corso. Aggiungere quanti passaggi nominati servono, poi Concludi due diligence.",
+          "Aggiungi passaggio — solo da Under DD. Richiede un titolo e note e file facoltativi. Lo stato resta Under DD.",
+          "Concludi due diligence — solo da Under DD. Un dialogo: Approvato (catasto obbligatorio → Acquired) o Rifiutato (motivo obbligatorio, note e file facoltativi → DD fallita).",
+          "DD fallita — la verifica non è passata. Riavvia due diligence o Alienare senza acquisire.",
+          "Acquired — possedete il terreno. L’unica azione è Alienare.",
+          "Dispose — da Acquired o da DD fallita. Accetta note di dismissione facoltative. Imposta Disposed.",
+          "Disposed è terminale. Non c’è un’azione per riaprire la particella."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Aggiungi una particella — progetto e titolo obbligatori. Le nuove particelle partono come Prospect. Riferimento catastale e campi di due diligence non sono nel modulo di creazione.",
+          "Cerca e filtra; vista schede o tabella.",
+          "Apri una scheda o una riga per modificare identità, costo, zonizzazione, note operative e file. La modifica non cambia mai lo stato né i campi di fase.",
+          "Usa i menu ⋮ per Avvia / Riavvia, Aggiungi passaggio, Concludi e Alienare — unici modi per muovere lo stato o aggiungere passaggi.",
+          "Se arrivate da un progetto, l’elenco è già limitato a quel progetto.",
+          "L’eliminazione è un soft delete ripristinabile. Non cambia lo stato e non si propaga a progetto o edificio."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Una particella può esistere senza edificio. L’edificio è un collegamento, non un albero padre come Piano → Unità.",
+          "La due diligence non è saltabile. Concludi è nascosto finché la particella non è Under DD, e dopo un rifiuto fino al riavvio.",
+          "I passaggi di due diligence sono un registro (titolo + note + file). Avvia e Aggiungi passaggio aggiungono voci.",
+          "Ogni azione memorizza le proprie note in un campo dedicato. Non vengono aggiunte alle note operative.",
+          "Il riferimento catastale si imposta solo concludendo come Approvato.",
+          "Edifici e unità vendibili si creano sulle rispettive pagine (Progetti → Edifici → Piani → Unità). Questa pagina non crea inventario."
+        ]
+      },
+      {
+        "title": "Passo successivo",
+        "items": [
+          "Create la particella con il progetto e un titolo chiaro.",
+          "Da Prospect, Avvia due diligence (stato obbligatorio, note facoltative).",
+          "Da Under DD, aggiungete passaggi poi Concludi come Approvato (catasto obbligatorio) o Rifiutato (motivo obbligatorio).",
+          "Continuate a Modificare per superficie, zonizzazione, costo, file e note operative.",
+          "Quando il terreno non è più detenuto, Alienare da Acquired.",
+          "Aggiungete edifici e unità sotto il progetto — non qui."
+        ]
+      }
+    ]
+  },
   "createLandParcel": "Aggiungi particella",
   "noData": "Nessun record trovato",
   "failTitle": "Caricamento non riuscito",
@@ -17,7 +84,10 @@
     "deletedAt": "Eliminato",
     "deletedBy": "Eliminato da",
     "description": "Descrizione",
-    "dueDiligenceStatus": "Due Diligence Status",
+    "dueDiligenceStatus": "Stato due diligence",
+    "dueDiligenceNotes": "Note di due diligence",
+    "acquisitionNotes": "Note di acquisizione",
+    "disposeNotes": "Note di dismissione",
     "media": "Media",
     "name": "Riferimento",
     "notes": "Note",
@@ -30,6 +100,7 @@
       "status": {
         "prospect": "Prospect",
         "under_dd": "Under DD",
+        "dd_failed": "DD fallita",
         "acquired": "Acquired",
         "disposed": "Disposed"
       }

@@ -10,6 +10,14 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import StartDueDiligence, {START_DUE_DILIGENCE_LAND_PARCEL_ACTION} from "@propertyManagementModule/clients/panel/private/landParcels/center/actions/startDueDiligence.tsx";
+import AddDueDiligenceStep, {ADD_DUE_DILIGENCE_STEP_LAND_PARCEL_ACTION} from "@propertyManagementModule/clients/panel/private/landParcels/center/actions/addDueDiligenceStep.tsx";
+import ConcludeDueDiligence, {CONCLUDE_DUE_DILIGENCE_LAND_PARCEL_ACTION} from "@propertyManagementModule/clients/panel/private/landParcels/center/actions/concludeDueDiligence.tsx";
+import DisposeLandParcel, {DISPOSE_LAND_PARCEL_ACTION} from "@propertyManagementModule/clients/panel/private/landParcels/center/actions/dispose.tsx";
+import StartDueDiligenceLandParcelDialog from "@propertyManagementModule/components/custom/landParcels/startDueDiligenceLandParcelDialog.tsx";
+import AddDueDiligenceStepLandParcelDialog from "@propertyManagementModule/components/custom/landParcels/addDueDiligenceStepLandParcelDialog.tsx";
+import ConcludeDueDiligenceLandParcelDialog from "@propertyManagementModule/components/custom/landParcels/concludeDueDiligenceLandParcelDialog.tsx";
+import DisposeLandParcelDialog from "@propertyManagementModule/components/custom/landParcels/disposeLandParcelDialog.tsx";
 
 function landParcelEditPath(entity: LandParcel) {
     const params = new URLSearchParams();
@@ -24,6 +32,7 @@ type LandParcelCardProps = WithLanguageType & {
     hideActions?: boolean;
     onDelete?: (deleted?: LandParcel, response?: DeletedData) => void;
     onRestore?: () => void;
+    onActionSuccess?: (updated?: LandParcel) => void;
     sheetOnly?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<LandParcel> | null>;
 };
@@ -35,6 +44,7 @@ function LandParcelCard({
     hideActions = false,
     onDelete,
     onRestore,
+    onActionSuccess,
     sheetOnly = false,
     innerRef,
 }: LandParcelCardProps) {
@@ -57,9 +67,32 @@ function LandParcelCard({
             failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
-            sheetProps={() => ({fetchId})}
+            sheetProps={() => ({fetchId, onActionSuccess})}
+            extraDialogs={({action, setAction, entity: row, setEntity}) => {
+                const handleSuccess = (updated?: LandParcel) => {
+                    if (updated) setEntity({...row, ...updated});
+                    onActionSuccess?.(updated);
+                    setAction("");
+                };
+                return (
+                    <>
+                        {action === START_DUE_DILIGENCE_LAND_PARCEL_ACTION && (
+                            <StartDueDiligenceLandParcelDialog open onClose={() => setAction("")} landParcel={row} onSuccess={handleSuccess} />
+                        )}
+                        {action === ADD_DUE_DILIGENCE_STEP_LAND_PARCEL_ACTION && (
+                            <AddDueDiligenceStepLandParcelDialog open onClose={() => setAction("")} landParcel={row} onSuccess={handleSuccess} />
+                        )}
+                        {action === CONCLUDE_DUE_DILIGENCE_LAND_PARCEL_ACTION && (
+                            <ConcludeDueDiligenceLandParcelDialog open onClose={() => setAction("")} landParcel={row} onSuccess={handleSuccess} />
+                        )}
+                        {action === DISPOSE_LAND_PARCEL_ACTION && (
+                            <DisposeLandParcelDialog open onClose={() => setAction("")} landParcel={row} onSuccess={handleSuccess} />
+                        )}
+                    </>
+                );
+            }}
         >
-            {({entity: row}) => (
+            {({entity: row, setAction}) => (
                 <EntityCard.Header
                     titlePath="title"
                     title={row.title}
@@ -68,7 +101,12 @@ function LandParcelCard({
                     badges={row.status ? (
                         <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
                     ) : null}
-                />
+                >
+                    <StartDueDiligence landParcel={row} onAction={setAction} />
+                    <AddDueDiligenceStep landParcel={row} onAction={setAction} />
+                    <ConcludeDueDiligence landParcel={row} onAction={setAction} />
+                    <DisposeLandParcel landParcel={row} onAction={setAction} />
+                </EntityCard.Header>
             )}
         </EntityCard>
     );

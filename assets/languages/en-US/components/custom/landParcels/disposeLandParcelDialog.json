@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/disposeLandParcelDialog.tsx",
+  "dialogTitle": "Dispose land parcel",
+  "dialogDescription": "Mark this land parcel as disposed. Available from Acquired, or from DD failed to walk away without acquiring. Optional notes are stored as dispose notes.",
+  "notesLabel": "Dispose notes",
+  "notesPlaceholder": "Optional dispose notes",
+  "cancel": "Cancel",
+  "submit": "Dispose"
+}

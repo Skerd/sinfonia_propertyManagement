@@ -1,0 +1,9 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/disposeLandParcelDialog.tsx",
+  "dialogTitle": "Grundstück veräussern",
+  "dialogDescription": "Dieses Grundstück als veräussert markieren. Möglich ab Erworben, oder ab Due Diligence fehlgeschlagen, um ohne Erwerb abzubrechen. Optionale Notizen werden als Veräusserungsnotizen gespeichert.",
+  "notesLabel": "Veräusserungsnotizen",
+  "notesPlaceholder": "Optionale Veräusserungsnotizen",
+  "cancel": "Abbrechen",
+  "submit": "Veräussern"
+}

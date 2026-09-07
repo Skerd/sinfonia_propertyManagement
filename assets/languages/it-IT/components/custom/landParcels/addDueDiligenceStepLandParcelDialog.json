@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/addDueDiligenceStepLandParcelDialog.tsx",
+  "dialogTitle": "Aggiungi passaggio due diligence",
+  "dialogDescription": "Registra un altro passaggio nominato su questa particella. Lo stato resta in due diligence.",
+  "titleLabel": "Titolo del passaggio",
+  "titlePlaceholder": "Titolo del passaggio",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Note opzionali per questo passaggio",
+  "mediaLabel": "File",
+  "addFiles": "Aggiungi file",
+  "filesSelected": "file selezionati",
+  "cancel": "Annulla",
+  "submit": "Aggiungi passaggio",
+  "axios": {
+    "start": {
+      "title": "Aggiunta del passaggio di due diligence…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Passaggio di due diligence aggiunto",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiungere il passaggio di due diligence",
+      "time": 3000
+    }
+  }
+}
