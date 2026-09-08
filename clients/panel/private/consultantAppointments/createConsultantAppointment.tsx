@@ -14,7 +14,10 @@ export default createGenericCreatePage<CreateConsultantAppointmentFormType>({
         role: "architect" as const,
         media: [],
     } as any),
-    buildFormExtras: () => ({enableLocalFileMultipart: true}),
+    buildFormExtras: (params) => ({
+        prefilledProjectId: !!params.get("projectId"),
+        enableLocalFileMultipart: true,
+    }),
     mapSubmitPayload: (data) => {
         const formData = new FormData();
         const fields: Record<string, any> = {...data};

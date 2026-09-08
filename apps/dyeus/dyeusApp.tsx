@@ -10,7 +10,6 @@ import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import {getLocalStorageValue, setLocalStorageValue} from "@coreModule/helpers/context/localStorage/localStorageProvider.ts";
 import {generateUUID} from "@coreModule/helpers/general";
 import DyeusLayout from "@propertyManagementModule/clients/client/dyeus/shared/dyeusLayout.tsx";
-import {sinfoniaRouterBasename} from "@coreModule/helpers/sinfoniaRouterBasename";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/home/index.tsx"));
 const AboutPage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/about/index.tsx"));
@@ -44,8 +43,8 @@ function DyeusApp() {
 
     return (
         <Provider store={store}>
-            <LanguageProvider storageKey="vite-ui-language">
-                <BrowserRouter basename={sinfoniaRouterBasename()}>
+            <LanguageProvider>
+                <BrowserRouter>
                     <Suspense fallback={<Loader />}>
                         <Routes>
                             <Route element={<DyeusLayout />}>

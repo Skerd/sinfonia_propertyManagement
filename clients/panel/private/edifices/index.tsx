@@ -15,7 +15,7 @@ import FloorsOverlay from "@propertyManagementModule/components/custom/edifices/
 import GenerateFloorsUnitsDialog from "@propertyManagementModule/components/custom/edifices/generateFloorsUnitsDialog.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 export function buildEdificeEditPath(edifice: Edifice){

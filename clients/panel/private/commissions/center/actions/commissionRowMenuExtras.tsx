@@ -1,4 +1,4 @@
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import MarkPaidCommission from "@propertyManagementModule/clients/panel/private/commissions/center/actions/markPaid.tsx";
 import MarkPendingCommission from "@propertyManagementModule/clients/panel/private/commissions/center/actions/markPending.tsx";

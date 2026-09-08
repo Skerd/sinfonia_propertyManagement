@@ -14,7 +14,7 @@ import {
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import {RESERVATION_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.schema-def.ts";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";

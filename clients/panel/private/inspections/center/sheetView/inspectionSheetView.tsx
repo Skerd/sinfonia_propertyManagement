@@ -4,7 +4,7 @@ import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLan
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import CancelInspection from "@propertyManagementModule/clients/panel/private/inspections/center/actions/cancel.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
-import { useAccess } from "@coreModule/helpers/hocs/withAccess.tsx";
+import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import { Inspection } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";

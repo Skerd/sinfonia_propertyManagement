@@ -2,6 +2,73 @@
   "path": "src/modules/propertyManagement/clients/panel/private/landParcels/index.tsx",
   "title": "Parcelat",
   "description": "Parcelat kadastrale dhe toka e zhvillimit",
+  "help": {
+    "ariaLabel": "Rreth parcelave",
+    "title": "Rreth parcelave",
+    "overview": "Një parcelë është një sipërfaqe kadastrale ose tokë zhvillimi që i përket një projekti. Nuk është njësi, kat apo ndërtesë — është toka që po vlerësoni, blini ose alienoni. Në krijim statusi fillon si Prospekt. Statusi dhe të dhënat e fazës nuk ndryshojnë kurrë nga formulari i krijimit ose i redaktimit; vetëm veprimet e rreshtit, kartës dhe fletës e lëvizin ciklin e jetës.",
+    "sections": [
+      {
+        "title": "Çfarë ruan parcela",
+        "body": "Krijimi ruan identitetin dhe të dhënat urbanistike. Të dhënat e fazës regjistrohen më vonë në dialogët e veprimit.",
+        "items": [
+          "Projekti (i detyrueshëm) — çdo parcelë i përket një zhvillimi. Nga një projekt lista është tashmë e filtruar dhe krijimi mund të jetë i para-plotësuar.",
+          "Titulli (i detyrueshëm) — si etiketohet parcela në listë, fletë dhe menu.",
+          "Ndërtesa (opsionale) — lidhni parcelën me një ndërtesë të të njëjtit projekt kur toka lidhet me atë aset.",
+          "Sipërfaqja (m²), zonimi, kostoja e blerjes dhe monedha — të dhëna tregtare dhe planifikimi opsionale.",
+          "Përshkrimi dhe bashkëngjitjet — tekst dhe skedarë. Ruajtja e një redaktimi nuk e ndryshon statusin.",
+          "Shënime operative — vetëm në redaktim. Nuk janë shënime due diligence, blerjeje ose heqjeje."
+        ]
+      },
+      {
+        "title": "Cikli i jetës (statusi)",
+        "body": "Statusi është një makinë: Prospekt → Në Due Diligence → Blerë → Alienuar, me degë Në Due Diligence → DD e dështuar. Nuk mund të kalohet te Blerë. Veprimet shfaqen vetëm kur statusi aktual i lejon.",
+        "items": [
+          "Prospekt (parazgjedhja në krijim) — tokë kandidat. Veprimi i vetëm është Fillo due diligence.",
+          "Fillo due diligence — nga Prospekt, ose Rinis nga DD e dështuar. Kërkon titullin e hapit të parë dhe shënime e skedarë opsionalë. Vendos Në Due Diligence dhe shton hyrjen e parë të regjistrit.",
+          "Në Due Diligence — shqyrtimi në vazhdim. Shtoni sa hapa me emër të doni, pastaj Përfundo due diligence.",
+          "Shto hap — vetëm nga Në Due Diligence. Kërkon një titull dhe shënime e skedarë opsionalë. Statusi mbetet Në Due Diligence.",
+          "Përfundo due diligence — vetëm nga Në Due Diligence. Një dialog: E miratuar (kadastra e detyrueshme → Blerë) ose E refuzuar (arsye e detyrueshme, shënime e skedarë opsionalë → DD e dështuar).",
+          "DD e dështuar — shqyrtimi nuk kaloi. Rinis due diligence ose Alieno pa blerë.",
+          "Blerë — e zotëroni tokën. Veprimi i vetëm është Alieno.",
+          "Alieno — nga Blerë ose nga DD e dështuar. Pranon shënime opsionale heqjeje. Vendos Alienuar.",
+          "Alienuar është status përfundimtar. Nuk ka veprim për ta rihapur parcelën."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Shto një parcelë — projekti dhe titulli janë të detyrueshëm. Parcelat e reja nisin si Prospekt. Referenca kadastrale dhe fushat e due diligence nuk janë në formularin e krijimit.",
+          "Kërko dhe filtro; pamje kartash ose tabelë.",
+          "Hap një kartë ose rresht për të redaktuar identitetin, koston, zonimin, shënimet operative dhe skedarët. Redaktimi nuk e ndryshon kurrë statusin as fushat e fazës.",
+          "Përdor menutë ⋮ për Fillo / Rinis, Shto hap, Përfundo dhe Alieno — mënyrat e vetme për të lëvizur statusin ose për të shtuar hapa.",
+          "Kur vini nga një projekt, lista është tashmë e kufizuar te ai projekt.",
+          "Fshirja është soft delete dhe mund të rikthehet. Nuk e ndryshon statusin dhe nuk kaskadon te projekti ose ndërtesa."
+        ]
+      },
+      {
+        "title": "Si sille",
+        "items": [
+          "Një parcelë mund të ekzistojë pa ndërtesë. Ndërtesa është një lidhje, jo një pemë prind si Kati → Njësia.",
+          "Due diligence nuk mund të anashkalohet. Përfundo fshihet derisa parcela të jetë Në Due Diligence, dhe pas një refuzimi deri në rinisje.",
+          "Hapat e due diligence janë një regjistër (titull + shënime + skedarë). Fillo dhe Shto hap shtojnë hyrje.",
+          "Çdo veprim ruan shënimet e veta në fushën e vet. Ato nuk shtohen te shënimet operative.",
+          "Referenca kadastrale vendoset vetëm kur përfundoni si E miratuar.",
+          "Ndërtesat dhe njësitë e shitshme krijohen në faqet e tyre (Projektet → Ndërtesat → Katet → Njësitë). Kjo faqe nuk krijon inventar."
+        ]
+      },
+      {
+        "title": "Hapi tjetër",
+        "items": [
+          "Krijoni parcelën me projektin dhe një titull të qartë.",
+          "Nga Prospekt, Fillo due diligence (statusi i detyrueshëm, shënime opsionale).",
+          "Nga Në Due Diligence, shtoni hapa pastaj Përfundo si E miratuar (kadastra e detyrueshme) ose E refuzuar (arsye e detyrueshme).",
+          "Vazhdoni të Redaktoni për sipërfaqen, zonimin, koston, skedarët dhe shënimet operative.",
+          "Kur toka nuk mbahet më, Alieno nga Blerë.",
+          "Shtoni ndërtesa dhe njësi nën projekt — jo këtu."
+        ]
+      }
+    ]
+  },
   "createLandParcel": "Shto parcelë",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
@@ -18,6 +85,9 @@
     "deletedBy": "Fshirë nga",
     "description": "Përshkrimi",
     "dueDiligenceStatus": "Statusi i Due Diligence",
+    "dueDiligenceNotes": "Shënime due diligence",
+    "acquisitionNotes": "Shënime blerjeje",
+    "disposeNotes": "Shënime heqjeje",
     "media": "Media",
     "name": "Reference",
     "notes": "Shënime",
@@ -30,6 +100,7 @@
       "status": {
         "prospect": "Prospekt",
         "under_dd": "Në Due Diligence",
+        "dd_failed": "DD e dështuar",
         "acquired": "Blerë",
         "disposed": "Alienuar"
       }

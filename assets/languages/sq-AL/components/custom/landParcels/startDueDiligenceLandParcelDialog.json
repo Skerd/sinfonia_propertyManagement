@@ -1,0 +1,31 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/landParcels/startDueDiligenceLandParcelDialog.tsx",
+  "dialogTitle": "Fillo due diligence",
+  "dialogDescription": "Regjistroni statusin e due diligence dhe shënime opsionale, pastaj kalojeni këtë parcelë në due diligence.",
+  "dueDiligenceStatusLabel": "Statusi i due diligence",
+  "dueDiligenceStatusPlaceholder": "Statusi i due diligence",
+  "dueDiligenceNotesLabel": "Shënime due diligence",
+  "dueDiligenceNotesPlaceholder": "Shënime due diligence (opsionale)",
+  "mediaLabel": "Skedarë",
+  "addFiles": "Shto skedarë",
+  "filesSelected": "skedarë të zgjedhur",
+  "cancel": "Anulo",
+  "submit": "Fillo due diligence",
+  "restartDialogTitle": "Rinis due diligence",
+  "restartDialogDescription": "Përditësoni statusin e due diligence dhe shënimet opsionale, pastaj kthejeni këtë parcelë në due diligence.",
+  "restartSubmit": "Rinis due diligence",
+  "axios": {
+    "start": {
+      "title": "Duke filluar due diligence…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Due diligence filloi",
+      "time": 3000
+    },
+    "error": {
+      "title": "Due diligence nuk mund të niste",
+      "time": 3000
+    }
+  }
+}

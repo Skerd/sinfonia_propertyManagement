@@ -12,6 +12,11 @@
   "scope": "Ambito",
   "currency": "Valuta",
   "feeAmount": "Importo onorario",
+  "feeModel": "Modello di onorario",
+  "basisKind": "Base di calcolo",
+  "adjustmentFactor": "Fattore di adeguamento",
+  "hourlyRate": "Tariffa oraria",
+  "cappedAmount": "Importo massimo",
   "startDate": "Data inizio",
   "endDate": "Data fine",
   "deliverables": "Deliverable",
@@ -21,6 +26,26 @@
     "active": "Attivo",
     "completed": "Completato",
     "terminated": "Terminato"
+  },
+  "roles": {
+    "architect": "Architetto",
+    "engineer": "Ingegnere",
+    "qs": "QS",
+    "pm": "PM",
+    "surveyor": "Geometra",
+    "other": "Altro"
+  },
+  "feeModels": {
+    "sia_102": "SIA 102",
+    "sia_103": "SIA 103",
+    "sia_108": "SIA 108",
+    "lump_sum": "Forfait",
+    "time_based": "A tempo"
+  },
+  "basisKinds": {
+    "construction_cost": "Costo di costruzione",
+    "fixed": "Fisso",
+    "hourly": "Orario"
   },
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",

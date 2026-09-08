@@ -6,12 +6,14 @@
   "status": {
     "prospect": "Prospekt",
     "under_dd": "Në Due Diligence",
+    "dd_failed": "DD e dështuar",
     "acquired": "Blerë",
     "disposed": "Alienuar"
   },
   "statuses": {
     "prospect": "Prospekt",
     "under_dd": "Në Due Diligence",
+    "dd_failed": "DD e dështuar",
     "acquired": "Blerë",
     "disposed": "Alienuar"
   }

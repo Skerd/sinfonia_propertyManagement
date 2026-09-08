@@ -13,6 +13,9 @@ export default createGenericCreatePage<CreateDesignStageFormType>({
         title: "",
         stageType: "concept" as const,
     } as any),
+    buildFormExtras: (params) => ({
+        prefilledProjectId: !!params.get("projectId"),
+    }),
     successPath: "/realEstate/designStages",
     submitIcon: <IconPlus />,
 });

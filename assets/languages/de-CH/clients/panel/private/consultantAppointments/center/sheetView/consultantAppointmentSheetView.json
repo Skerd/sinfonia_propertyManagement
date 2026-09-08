@@ -12,6 +12,11 @@
   "scope": "Umfang",
   "currency": "Währung",
   "feeAmount": "Honorarbetrag",
+  "feeModel": "Honorarmodell",
+  "basisKind": "Bemessungsgrundlage",
+  "adjustmentFactor": "Anpassungsfaktor",
+  "hourlyRate": "Stundensatz",
+  "cappedAmount": "Deckelbetrag",
   "startDate": "Startdatum",
   "endDate": "Enddatum",
   "deliverables": "Lieferobjekte",
@@ -21,6 +26,26 @@
     "active": "Aktiv",
     "completed": "Abgeschlossen",
     "terminated": "Beendet"
+  },
+  "roles": {
+    "architect": "Architekt",
+    "engineer": "Ingenieur",
+    "qs": "QS",
+    "pm": "PL",
+    "surveyor": "Geometer",
+    "other": "Andere"
+  },
+  "feeModels": {
+    "sia_102": "SIA 102",
+    "sia_103": "SIA 103",
+    "sia_108": "SIA 108",
+    "lump_sum": "Pauschal",
+    "time_based": "Zeitbasiert"
+  },
+  "basisKinds": {
+    "construction_cost": "Baukosten",
+    "fixed": "Fest",
+    "hourly": "Stündlich"
   },
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",

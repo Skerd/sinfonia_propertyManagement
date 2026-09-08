@@ -18,6 +18,15 @@
     "completed": "Përfunduar",
     "blocked": "Bllokuar"
   },
+  "stageTypes": {
+    "concept": "Koncept",
+    "schematic": "Skematik",
+    "design_development": "Zhvillimi i projektimit",
+    "construction_documents": "Dokumentet e ndërtimit",
+    "tender": "Tenderi",
+    "construction": "Ndërtim",
+    "as_built": "As-Built"
+  },
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",
   "updatedAt": "Përditësuar më",

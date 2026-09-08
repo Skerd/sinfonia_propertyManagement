@@ -12,6 +12,11 @@
   "scope": "Périmètre",
   "currency": "Devise",
   "feeAmount": "Montant des honoraires",
+  "feeModel": "Modèle d'honoraires",
+  "basisKind": "Base de calcul",
+  "adjustmentFactor": "Facteur d'ajustement",
+  "hourlyRate": "Taux horaire",
+  "cappedAmount": "Montant plafonné",
   "startDate": "Date de début",
   "endDate": "Date de fin",
   "deliverables": "Livrables",
@@ -21,6 +26,26 @@
     "active": "Actif",
     "completed": "Terminé",
     "terminated": "Résilié"
+  },
+  "roles": {
+    "architect": "Architecte",
+    "engineer": "Ingénieur",
+    "qs": "QS",
+    "pm": "PM",
+    "surveyor": "Géomètre",
+    "other": "Autre"
+  },
+  "feeModels": {
+    "sia_102": "SIA 102",
+    "sia_103": "SIA 103",
+    "sia_108": "SIA 108",
+    "lump_sum": "Forfait",
+    "time_based": "Au temps"
+  },
+  "basisKinds": {
+    "construction_cost": "Coût de construction",
+    "fixed": "Fixe",
+    "hourly": "Horaire"
   },
   "lifecycle": "Cycle de vie",
   "createdAt": "Créé le",

@@ -18,6 +18,15 @@
     "completed": "Abgeschlossen",
     "blocked": "Blocked"
   },
+  "stageTypes": {
+    "concept": "Concept",
+    "schematic": "Schematic",
+    "design_development": "Planung Development",
+    "construction_documents": "Bau Dokumente",
+    "tender": "Ausschreibung",
+    "construction": "Bau",
+    "as_built": "As-Built"
+  },
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",
   "updatedAt": "Aktualisiert am",

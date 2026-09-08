@@ -18,7 +18,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle
 } from "@coreModule/components/ui/alert-dialog.tsx";
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 
 type MarkPendingCommissionProps = WithLanguageType &
     WithAxiosType<Commission, SingleForm> & {

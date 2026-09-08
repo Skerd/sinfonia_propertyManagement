@@ -1,4 +1,4 @@
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
 import ApproveModificationRequest from "@propertyManagementModule/clients/panel/private/modificationRequests/center/actions/approve.tsx";
 import FinanceModificationRequest from "@propertyManagementModule/clients/panel/private/modificationRequests/center/actions/finance.tsx";

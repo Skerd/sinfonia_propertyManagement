@@ -43,7 +43,15 @@
     "hourlyRateLabel": "Taux horaire",
     "hourlyRatePlaceholder": "Hourly rate",
     "cappedAmountLabel": "Montant plafonné",
-    "cappedAmountPlaceholder": "Cap"
+    "cappedAmountPlaceholder": "Cap",
+    "feeModel_sia_102": "SIA 102",
+    "feeModel_sia_103": "SIA 103",
+    "feeModel_sia_108": "SIA 108",
+    "feeModel_lump_sum": "Forfait",
+    "feeModel_time_based": "Au temps",
+    "basisKind_construction_cost": "Coût de construction",
+    "basisKind_fixed": "Fixe",
+    "basisKind_hourly": "Horaire"
   },
   "axios": {
     "start": {

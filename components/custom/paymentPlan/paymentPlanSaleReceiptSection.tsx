@@ -3,7 +3,7 @@ import {UseFormReturn, useWatch} from "react-hook-form";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 import { Unit, Unit as UnitData } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import { useAccess } from "@coreModule/helpers/hocs/withAccess.tsx";
+import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import { ErrorView } from "@coreModule/components/custom/errorView.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";

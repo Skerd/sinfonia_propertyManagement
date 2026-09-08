@@ -43,7 +43,15 @@
     "hourlyRateLabel": "Tariffa oraria",
     "hourlyRatePlaceholder": "Hourly rate",
     "cappedAmountLabel": "Importo massimo",
-    "cappedAmountPlaceholder": "Cap"
+    "cappedAmountPlaceholder": "Cap",
+    "feeModel_sia_102": "SIA 102",
+    "feeModel_sia_103": "SIA 103",
+    "feeModel_sia_108": "SIA 108",
+    "feeModel_lump_sum": "Forfait",
+    "feeModel_time_based": "A tempo",
+    "basisKind_construction_cost": "Costo di costruzione",
+    "basisKind_fixed": "Fisso",
+    "basisKind_hourly": "Orario"
   },
   "axios": {
     "start": {

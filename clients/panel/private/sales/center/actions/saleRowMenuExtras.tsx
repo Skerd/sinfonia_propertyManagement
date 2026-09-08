@@ -1,4 +1,4 @@
-import {useAccess} from "@coreModule/helpers/hocs/withAccess.tsx";
+import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import ManualSaleClientEmails from "@propertyManagementModule/clients/panel/private/sales/center/actions/manualSaleClientEmails.tsx";
 import CompleteHandover from "@propertyManagementModule/clients/panel/private/sales/center/actions/completeHandover.tsx";

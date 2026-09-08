@@ -6,7 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import { useMemo, useRef, useState, useEffect } from "react";
 import { Button } from "@coreModule/components/ui/button.tsx";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useAccess } from "@coreModule/helpers/hocs/withAccess.tsx";
+import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import { buildPageTitle } from "@coreModule/helpers/general";
 import CardAndTableView, {type EntityListApi} from "@coreModule/components/custom/cardAndTableView.tsx";

@@ -12,7 +12,6 @@ import {generateUUID} from "@coreModule/helpers/general";
 import PublicLayout from "@propertyManagementModule/clients/client/public/shared/publicLayout.tsx";
 import PublicHomeIntroSplash from "@propertyManagementModule/clients/client/public/home/sections/publicHomeIntroSplash.tsx";
 import {PublicIntroProvider} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
-import {sinfoniaRouterBasename} from "@coreModule/helpers/sinfoniaRouterBasename";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/public/home/index.tsx"));
 const ProjectsPage = lazy(() => import("@propertyManagementModule/clients/client/public/projects/index.tsx"));
@@ -47,8 +46,8 @@ function PublicApp() {
 
     return (
         <Provider store={store}>
-            <LanguageProvider storageKey="vite-ui-language">
-                <BrowserRouter basename={sinfoniaRouterBasename()}>
+            <LanguageProvider>
+                <BrowserRouter>
                     <PublicIntroProvider>
                         <PublicHomeIntroSplash />
                         <Suspense fallback={<Loader />}>
