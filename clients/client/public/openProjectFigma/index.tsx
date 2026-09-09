@@ -223,8 +223,8 @@ function OpenProjectFigma3dPage({
                         className={cn(
                             selectedFloor
                                 ? unitPanelOpen
-                                    ? "lg:max-w-[calc(100%-min(calc(100vw-6.5rem),calc(30rem+1rem+50vw))-1rem)]"
-                                    : "lg:max-w-[calc(100%-31rem)]"
+                                    ? "lg:max-w-[calc(100%-min(calc(100vw-6.5rem),calc(40rem+1rem+50vw))-1rem)]"
+                                    : "lg:max-w-[calc(100%-41rem)]"
                                 : undefined,
                         )}
                     >
@@ -259,8 +259,8 @@ function OpenProjectFigma3dPage({
                             "lg:inset-x-auto lg:right-[52px] lg:top-[14rem] lg:bottom-32 lg:h-auto lg:max-h-none lg:translate-y-0",
                             "transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                             unitPanelOpen
-                                ? "lg:w-[min(calc(100vw-6.5rem),calc(30rem+1rem+50vw))]"
-                                : "lg:w-[30rem]",
+                                ? "lg:w-[min(calc(100vw-6.5rem),calc(40rem+1rem+50vw))]"
+                                : "lg:w-[40rem]",
                         )}
                     >
                         <div
@@ -273,7 +273,7 @@ function OpenProjectFigma3dPage({
                                 className={cn(
                                     "min-h-0 min-w-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                                     unitPanelOpen
-                                        ? "hidden h-full lg:flex lg:w-[30rem] lg:shrink-0 lg:flex-col"
+                                        ? "hidden h-full lg:flex lg:w-[40rem] lg:shrink-0 lg:flex-col"
                                         : "flex h-full w-full flex-col",
                                 )}
                             >
@@ -383,6 +383,7 @@ function OpenProjectFigmaPage(props: PageProps) {
                                     <OpenProjectFigmaGalleryStage
                                         project={project}
                                         selectedEdificeId={selectedEdificeId}
+                                        selectedEdifice={selectedEdifice}
                                         onSelectEdifice={onSelectEdifice}
                                     />
                                 ) : (

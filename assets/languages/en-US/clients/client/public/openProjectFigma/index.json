@@ -1,6 +1,9 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/openProjectFigma/index.tsx",
   "missingProjectId": "Select a project from the gallery.",
+  "loadingProjectData": "Loading project data",
+  "loadError": "Could not load project data.",
+  "clickHereToRetry": "Click here to retry.",
   "notFound": "Project not found.",
   "backToProjects": "All projects",
   "backTo3d": "Go back to 3D Render",

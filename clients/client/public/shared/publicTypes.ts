@@ -74,6 +74,8 @@ export type MarketingEdificeListItem = {
     _id: string;
     name: string;
     mainImage?: string;
+    imageGallery?: string[];
+    videoGallery?: string[];
     location?: string;
     street?: string;
     city?: string;
@@ -150,6 +152,7 @@ export type MarketingUnitSingle = {
     mainImage?: string;
     imageGallery?: string[];
     videoGallery?: string[];
+    marketingBooklet?: string;
     description?: string;
     grossAreaSqm?: number;
     netAreaSqm?: number;

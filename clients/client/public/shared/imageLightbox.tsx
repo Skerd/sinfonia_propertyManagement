@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {createPortal} from "react-dom";
 import {ChevronLeft, ChevronRight, X} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
@@ -14,10 +15,18 @@ function isVideoUrl(url: string) {
 
 function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) {
     const [index, setIndex] = useState(() => Math.min(initialIndex, Math.max(0, images.length - 1)));
+    const [host, setHost] = useState<HTMLElement | null>(null);
     const current = images[index];
     const currentIsVideo = current ? isVideoUrl(current) : false;
 
     useEffect(() => {
+        setHost(document.body);
+    }, []);
+
+    useEffect(() => {
+        if (!host) {
+            return;
+        }
         const onKey = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
                 onClose();
@@ -31,19 +40,20 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
             }
         };
         window.addEventListener("keydown", onKey);
-        document.body.style.overflow = "hidden";
+        const previousOverflow = host.style.overflow;
+        host.style.overflow = "hidden";
         return () => {
             window.removeEventListener("keydown", onKey);
-            document.body.style.overflow = "";
+            host.style.overflow = previousOverflow;
         };
-    }, [images.length, onClose]);
+    }, [host, images.length, onClose]);
 
-    if (!current) {
+    if (!host || !current) {
         return null;
     }
 
-    return (
-        <div className="fixed inset-0 z-[100] flex flex-col bg-black/92" onClick={onClose}>
+    return createPortal(
+        <div className="fixed inset-0 z-[300] flex flex-col bg-black/92" onClick={onClose}>
             <button
                 type="button"
                 onClick={onClose}
@@ -124,7 +134,8 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
                     </div>
                 </div>
             ) : null}
-        </div>
+        </div>,
+        host,
     );
 }
 

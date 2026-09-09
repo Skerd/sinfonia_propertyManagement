@@ -386,7 +386,7 @@ function CreateCashSale({
         if (data.reservationExchangeRate) formData.append("reservationExchangeRate", String(data.reservationExchangeRate));
         if (data.saleExchangeRate) formData.append("saleExchangeRate", String(data.saleExchangeRate));
         const purchaseFiles = localFilesFromField(data.purchaseContract);
-        formData.append("purchaseContract", purchaseFiles[0]);
+        if (purchaseFiles[0]) formData.append("purchaseContract", purchaseFiles[0]);
         localFilesFromField(data.additionalDocuments).forEach((file) =>
             formData.append("additionalDocuments", file),
         );

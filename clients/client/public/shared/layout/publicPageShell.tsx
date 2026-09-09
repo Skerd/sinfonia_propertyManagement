@@ -10,6 +10,7 @@ function PublicPageShell({nodeId, nodeName, children}: PublicPageShellProps) {
     return (
         <div
             className="public-page-shell relative min-h-screen min-w-0 w-full max-w-full cursor-default overflow-x-clip bg-white"
+            // style={{border: "2px solid red"}}
             data-node-id={nodeId}
             data-name={nodeName}
         >

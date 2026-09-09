@@ -201,7 +201,17 @@ function OpenProjectFigmaFloorPanel({
             </div>
 
             {layout === "list" ? (
-                            <div className="relative mx-5 shrink-0 overflow-hidden rounded-[5px] bg-[rgba(24,24,24,0.04)] md:mx-6 [&_[data-slot=card]]:pointer-events-auto">
+                            <div
+                                className={cn(
+                                    "relative mx-5 shrink-0 overflow-hidden rounded-[5px] bg-[rgba(24,24,24,0.04)] md:mx-6 [&_[data-slot=card]]:pointer-events-auto",
+                                    "[&_[data-slot=card]]:hide-scrollbar [&_[data-slot=card]]:[-ms-overflow-style:none] [&_[data-slot=card]]:[scrollbar-width:none] [&_[data-slot=card]]:[&::-webkit-scrollbar]:hidden",
+                                    "[&_[data-polygon-zoom-bar]]:hidden lg:[&_[data-polygon-zoom-bar]]:flex lg:[&_[data-polygon-zoom-bar]]:pointer-events-none lg:[&_[data-polygon-zoom-bar]]:opacity-0 lg:[&_[data-polygon-zoom-bar]]:transition-opacity lg:hover:[&_[data-polygon-zoom-bar]]:pointer-events-auto lg:hover:[&_[data-polygon-zoom-bar]]:opacity-100",
+                                    "[&_[data-polygon-zoom-controls]]:gap-1 [&_[data-polygon-zoom-controls]]:rounded-md [&_[data-polygon-zoom-controls]]:border-pronix-ink [&_[data-polygon-zoom-controls]]:bg-pronix-ink [&_[data-polygon-zoom-controls]]:p-0.5 [&_[data-polygon-zoom-controls]]:shadow-[0_4px_16px_rgba(0,0,0,0.45)]",
+                                    "[&_[data-polygon-zoom-controls]_button]:size-6 [&_[data-polygon-zoom-controls]_button]:rounded-md [&_[data-polygon-zoom-controls]_button]:border-transparent [&_[data-polygon-zoom-controls]_button]:bg-pronix-ink [&_[data-polygon-zoom-controls]_button]:text-white [&_[data-polygon-zoom-controls]_button]:opacity-100 [&_[data-polygon-zoom-controls]_button]:hover:bg-[#2a2a2a] [&_[data-polygon-zoom-controls]_button]:disabled:opacity-100 [&_[data-polygon-zoom-controls]_button]:disabled:text-[#8a8a8a]",
+                                    "[&_[data-polygon-zoom-controls]_svg]:size-3",
+                                    "[&_[data-polygon-zoom-controls]_p]:min-w-7 [&_[data-polygon-zoom-controls]_p]:rounded-sm [&_[data-polygon-zoom-controls]_p]:bg-pronix-ink [&_[data-polygon-zoom-controls]_p]:px-1 [&_[data-polygon-zoom-controls]_p]:py-0.5 [&_[data-polygon-zoom-controls]_p]:text-[11px] [&_[data-polygon-zoom-controls]_p]:leading-none [&_[data-polygon-zoom-controls]_p]:text-white",
+                                )}
+                            >
                                 <div className="relative aspect-[470/272] w-full [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
                                     {floorPlanImage && unitPolygons.length > 0 ? (
                                         <div className="absolute inset-0">
@@ -211,7 +221,6 @@ function OpenProjectFigmaFloorPanel({
                                                 dashboard
                                                 borderless
                                                 disabled
-                                                hideControls
                                                 objectFit="contain"
                                                 phantomsAlwaysVisible
                                                 imageUrl={floorPlanImage}

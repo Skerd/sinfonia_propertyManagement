@@ -1,6 +1,9 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/openProjectFigma/index.tsx",
   "missingProjectId": "Zgjidhni një projekt nga galeria.",
+  "loadingProjectData": "Po ngarkohen të dhënat e projektit",
+  "loadError": "Nuk mund të ngarkoheshin të dhënat e projektit.",
+  "clickHereToRetry": "Kliko këtu për të provuar sërish.",
   "notFound": "Projekti nuk u gjet.",
   "backToProjects": "Të gjitha projektet",
   "backTo3d": "Kthehu te renderimi 3D",

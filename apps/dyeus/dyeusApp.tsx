@@ -7,9 +7,8 @@ import ErrorBoundary from "@coreModule/components/custom/errorBoundary.tsx";
 import {lazy, Suspense} from "react";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
-import {getLocalStorageValue, setLocalStorageValue} from "@coreModule/helpers/context/localStorage/localStorageProvider.ts";
-import {generateUUID} from "@coreModule/helpers/general";
 import DyeusLayout from "@propertyManagementModule/clients/client/dyeus/shared/dyeusLayout.tsx";
+import {ensuredDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/home/index.tsx"));
 const AboutPage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/about/index.tsx"));
@@ -36,10 +35,8 @@ function ToasterContainer() {
 }
 
 function DyeusApp() {
-    const deviceId = getLocalStorageValue("deviceId");
-    if (!deviceId) {
-        setLocalStorageValue("deviceId", generateUUID());
-    }
+
+    ensuredDeviceId();
 
     return (
         <Provider store={store}>

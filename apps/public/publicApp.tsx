@@ -7,11 +7,10 @@ import ErrorBoundary from "@coreModule/components/custom/errorBoundary.tsx";
 import {lazy, Suspense} from "react";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
-import {getLocalStorageValue, setLocalStorageValue} from "@coreModule/helpers/context/localStorage/localStorageProvider.ts";
-import {generateUUID} from "@coreModule/helpers/general";
 import PublicLayout from "@propertyManagementModule/clients/client/public/shared/publicLayout.tsx";
 import PublicHomeIntroSplash from "@propertyManagementModule/clients/client/public/home/sections/publicHomeIntroSplash.tsx";
 import {PublicIntroProvider} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
+import {ensuredDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/public/home/index.tsx"));
 const ProjectsPage = lazy(() => import("@propertyManagementModule/clients/client/public/projects/index.tsx"));
@@ -39,10 +38,8 @@ function ToasterContainer() {
 }
 
 function PublicApp() {
-    const deviceId = getLocalStorageValue("deviceId");
-    if (!deviceId) {
-        setLocalStorageValue("deviceId", generateUUID());
-    }
+
+    ensuredDeviceId();
 
     return (
         <Provider store={store}>
