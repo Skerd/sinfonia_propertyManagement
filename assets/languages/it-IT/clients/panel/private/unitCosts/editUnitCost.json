@@ -38,12 +38,8 @@
   "form": {
     "addFile": "Aggiungi file",
     "amountLabel": "Quantità",
-    "boqItemLabel": "Voce computo",
-    "boqItemPlaceholder": "Seleziona voce computo",
     "constructorLabel": "Costruttore",
     "constructorPlaceholder": "Seleziona costruttore",
-    "costCommitmentLabel": "Impegno di costo",
-    "costCommitmentPlaceholder": "Seleziona impegno di costo",
     "currencyLabel": "Valuta",
     "currencyPlaceholder": "Seleziona valuta",
     "budgetedAmountLabel": "Importo a budget",

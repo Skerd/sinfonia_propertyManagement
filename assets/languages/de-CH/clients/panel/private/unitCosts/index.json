@@ -69,11 +69,9 @@
   },
   "fields": {
     "NOTE": "Notiz",
-    "boqItem": "LV-Position",
     "budgetCurrency": "Budgetwährung",
     "budgetedAmount": "Budgetbetrag",
     "constructorRef": "Unternehmer",
-    "costCommitment": "Kostenverpflichtung",
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",
     "currency": "Währung",

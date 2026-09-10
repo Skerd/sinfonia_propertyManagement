@@ -37,8 +37,6 @@ export default createGenericCreatePage<CreateUnitCostFormData>({
         vendorName: undefined,
         relatedModificationRequest: undefined,
         constructorRef: undefined,
-        boqItem: undefined,
-        costCommitment: undefined,
         expenditureItems: [],
         invoiceMedia: undefined,
     }),
@@ -93,8 +91,6 @@ export default createGenericCreatePage<CreateUnitCostFormData>({
             ...(data.vendorName ? {vendorName: data.vendorName} : {}),
             ...(data.relatedModificationRequest ? {relatedModificationRequest: data.relatedModificationRequest} : {}),
             ...(data.constructorRef ? {constructorRef: data.constructorRef} : {}),
-            ...(data.boqItem ? {boqItem: data.boqItem} : {}),
-            ...(data.costCommitment ? {costCommitment: data.costCommitment} : {}),
             expenditureItems: lines.map((row) => ({
                 title: row.title,
                 category: row.category,

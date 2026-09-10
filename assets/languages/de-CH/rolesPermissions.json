@@ -1546,9 +1546,7 @@
       "updatedAt": "Aktualisiert am",
       "vendorName": "Lieferant name",
       "verificationStatus": "Verifizierung status",
-      "boqItem": "LV-Position",
-      "constructorRef": "Unternehmer ref",
-      "costCommitment": "Kostenverpflichtung"
+      "constructorRef": "Unternehmer ref"
     },
     "Units": {
       "area": "Fläche",

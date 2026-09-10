@@ -69,11 +69,9 @@
   },
   "fields": {
     "NOTE": "Nota",
-    "boqItem": "Voce computo",
     "budgetCurrency": "Valuta budget",
     "budgetedAmount": "Importo a budget",
     "constructorRef": "Costruttore",
-    "costCommitment": "Impegno di costo",
     "createdAt": "Creato il",
     "createdBy": "Creato da",
     "currency": "Valuta",

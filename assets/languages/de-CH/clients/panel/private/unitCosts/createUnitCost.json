@@ -38,12 +38,8 @@
   "form": {
     "addFile": "Datei hinzufügen",
     "amountLabel": "Menge",
-    "boqItemLabel": "LV-Position",
-    "boqItemPlaceholder": "LV-Position auswählen",
     "constructorLabel": "Unternehmer",
     "constructorPlaceholder": "Unternehmer auswählen",
-    "costCommitmentLabel": "Kostenverpflichtung",
-    "costCommitmentPlaceholder": "Kostenverpflichtung auswählen",
     "currencyLabel": "Währung",
     "currencyPlaceholder": "Währung auswählen",
     "budgetedAmountLabel": "Budgetbetrag",

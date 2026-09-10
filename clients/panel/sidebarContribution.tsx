@@ -162,71 +162,71 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
 function buildPropertyManagementNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGroup {
     const re = (key: string) => `menus.realEstate.${key}.title`;
     const items: NavItem[] = [
-        navLink(resolveLanguageKey, re("cockpit"), "/realEstate/cockpit", Gauge),
-        navLink(resolveLanguageKey, re("systemMap"), "/realEstate/systemmap", Network),
-        navLink(resolveLanguageKey, re("workflow"), "/realEstate/workflow", Workflow),
-        navCollapsible(resolveLanguageKey, re("development"), Landmark, [
-            navLink(resolveLanguageKey, re("landParcels"), "/realEstate/landParcels", MapPin),
-            navLink(resolveLanguageKey, re("feasibilityStudies"), "/realEstate/feasibilityStudies", Scale),
-            navLink(resolveLanguageKey, re("permits"), "/realEstate/permits", FileCheck),
-            navLink(resolveLanguageKey, re("projectDocuments"), "/realEstate/projectDocuments", FileStack),
-            navLink(resolveLanguageKey, re("designStages"), "/realEstate/designStages", PenTool),
-            navLink(resolveLanguageKey, re("consultantAppointments"), "/realEstate/consultantAppointments", UserPlus),
-        ]),
+        // navLink(resolveLanguageKey, re("cockpit"), "/realEstate/cockpit", Gauge),
+        // navLink(resolveLanguageKey, re("systemMap"), "/realEstate/systemmap", Network),
+        // navLink(resolveLanguageKey, re("workflow"), "/realEstate/workflow", Workflow),
+        // navCollapsible(resolveLanguageKey, re("development"), Landmark, [
+        //     navLink(resolveLanguageKey, re("landParcels"), "/realEstate/landParcels", MapPin),
+        //     navLink(resolveLanguageKey, re("feasibilityStudies"), "/realEstate/feasibilityStudies", Scale),
+        //     navLink(resolveLanguageKey, re("permits"), "/realEstate/permits", FileCheck),
+        //     navLink(resolveLanguageKey, re("projectDocuments"), "/realEstate/projectDocuments", FileStack),
+        //     navLink(resolveLanguageKey, re("designStages"), "/realEstate/designStages", PenTool),
+        //     navLink(resolveLanguageKey, re("consultantAppointments"), "/realEstate/consultantAppointments", UserPlus),
+        // ]),
         navCollapsible(resolveLanguageKey, re("delivery"), Truck, [
             navLink(resolveLanguageKey, re("milestones"), "/realEstate/milestones", Flag),
             navLink(resolveLanguageKey, re("scheduleTasks"), "/realEstate/scheduleTasks", ListTodo),
             navLink(resolveLanguageKey, re("workPackages"), "/realEstate/workPackages", Package),
             navLink(resolveLanguageKey, re("constructionContracts"), "/realEstate/constructionContracts", FileSignature),
-            navLink(resolveLanguageKey, re("progressClaims"), "/realEstate/progressClaims", DollarSign),
-            navLink(resolveLanguageKey, re("rfis"), "/realEstate/rfis", MessageSquare),
-            navLink(resolveLanguageKey, re("submittals"), "/realEstate/submittals", Send),
+        //     navLink(resolveLanguageKey, re("progressClaims"), "/realEstate/progressClaims", DollarSign),
+        //     navLink(resolveLanguageKey, re("rfis"), "/realEstate/rfis", MessageSquare),
+        //     navLink(resolveLanguageKey, re("submittals"), "/realEstate/submittals", Send),
             navLink(resolveLanguageKey, re("variationOrders"), "/realEstate/variationOrders", GitBranch),
             navLink(resolveLanguageKey, re("handoverPackages"), "/realEstate/handoverPackages", PackageCheck),
-            navLink(resolveLanguageKey, re("commissioningRecords"), "/realEstate/commissioningRecords", Plug),
+        //     navLink(resolveLanguageKey, re("commissioningRecords"), "/realEstate/commissioningRecords", Plug),
         ]),
         navCollapsible(resolveLanguageKey, re("cost"), Calculator, [
             navLink(resolveLanguageKey, re("costClassifications"), "/realEstate/costClassifications", Layers),
             navLink(resolveLanguageKey, re("budgets"), "/realEstate/budgets", Banknote),
             navLink(resolveLanguageKey, re("boqItems"), "/realEstate/boqItems", List),
-            navLink(resolveLanguageKey, re("estimateComparison"), "/realEstate/estimateComparison", GitCompare),
+        //     navLink(resolveLanguageKey, re("estimateComparison"), "/realEstate/estimateComparison", GitCompare),
             navLink(resolveLanguageKey, re("costCommitments"), "/realEstate/costCommitments", Handshake),
-            navLink(resolveLanguageKey, re("costControl"), "/realEstate/costControl", Calculator),
+        //     navLink(resolveLanguageKey, re("costControl"), "/realEstate/costControl", Calculator),
         ]),
-        navCollapsible(resolveLanguageKey, re("tendering"), Gavel, [
-            navLink(resolveLanguageKey, re("specifications"), "/realEstate/specifications", FileText),
-            navLink(resolveLanguageKey, re("specificationItems"), "/realEstate/specificationItems", Rows3),
-            navLink(resolveLanguageKey, re("tenders"), "/realEstate/tenders", FileSearch),
-            navLink(resolveLanguageKey, re("tenderInvitations"), "/realEstate/tenderInvitations", Mail),
-            navLink(resolveLanguageKey, re("bids"), "/realEstate/bids", Handshake),
-            navLink(resolveLanguageKey, re("bidLines"), "/realEstate/bidLines", List),
-            navLink(resolveLanguageKey, re("bidComparison"), "/realEstate/bidComparison", GitCompare),
-        ]),
-        navCollapsible(resolveLanguageKey, re("financeApproval"), BadgeCheck, [
-            navLink(resolveLanguageKey, re("approvalWorkflows"), "/realEstate/approvalWorkflows", Workflow),
-            navLink(resolveLanguageKey, re("approvalRequests"), "/realEstate/approvalRequests", Inbox),
-            navLink(resolveLanguageKey, re("contractorInvoices"), "/realEstate/contractorInvoices", Receipt),
-            navLink(resolveLanguageKey, re("incomingInvoices"), "/realEstate/incomingInvoices", Inbox),
-            navLink(resolveLanguageKey, re("liquidityPlans"), "/realEstate/liquidityPlans", Wallet),
-            navLink(resolveLanguageKey, re("liquidityLines"), "/realEstate/liquidityLines", Rows3),
-            navLink(resolveLanguageKey, re("feeCalculations"), "/realEstate/feeCalculations", Percent),
-        ]),
+        // navCollapsible(resolveLanguageKey, re("tendering"), Gavel, [
+        //     navLink(resolveLanguageKey, re("specifications"), "/realEstate/specifications", FileText),
+        //     navLink(resolveLanguageKey, re("specificationItems"), "/realEstate/specificationItems", Rows3),
+        //     navLink(resolveLanguageKey, re("tenders"), "/realEstate/tenders", FileSearch),
+        //     navLink(resolveLanguageKey, re("tenderInvitations"), "/realEstate/tenderInvitations", Mail),
+        //     navLink(resolveLanguageKey, re("bids"), "/realEstate/bids", Handshake),
+        //     navLink(resolveLanguageKey, re("bidLines"), "/realEstate/bidLines", List),
+        //     navLink(resolveLanguageKey, re("bidComparison"), "/realEstate/bidComparison", GitCompare),
+        // ]),
+        // navCollapsible(resolveLanguageKey, re("financeApproval"), BadgeCheck, [
+        //     navLink(resolveLanguageKey, re("approvalWorkflows"), "/realEstate/approvalWorkflows", Workflow),
+        //     navLink(resolveLanguageKey, re("approvalRequests"), "/realEstate/approvalRequests", Inbox),
+        //     navLink(resolveLanguageKey, re("contractorInvoices"), "/realEstate/contractorInvoices", Receipt),
+        //     navLink(resolveLanguageKey, re("incomingInvoices"), "/realEstate/incomingInvoices", Inbox),
+        //     navLink(resolveLanguageKey, re("liquidityPlans"), "/realEstate/liquidityPlans", Wallet),
+        //     navLink(resolveLanguageKey, re("liquidityLines"), "/realEstate/liquidityLines", Rows3),
+        //     navLink(resolveLanguageKey, re("feeCalculations"), "/realEstate/feeCalculations", Percent),
+        // ]),
         navCollapsible(resolveLanguageKey, re("qualityHse"), ShieldAlert, [
             navLink(resolveLanguageKey, re("inspectionChecklistTemplates"), "/realEstate/inspectionChecklistTemplates", ClipboardCheck),
-            navLink(resolveLanguageKey, re("siteDiaries"), "/realEstate/siteDiaries", CalendarClock),
-            navLink(resolveLanguageKey, re("safetyIncidents"), "/realEstate/safetyIncidents", AlertTriangle),
-            navLink(resolveLanguageKey, re("warranties"), "/realEstate/warranties", ShieldCheck),
+        //     navLink(resolveLanguageKey, re("siteDiaries"), "/realEstate/siteDiaries", CalendarClock),
+        //     navLink(resolveLanguageKey, re("safetyIncidents"), "/realEstate/safetyIncidents", AlertTriangle),
+        //     navLink(resolveLanguageKey, re("warranties"), "/realEstate/warranties", ShieldCheck),
         ]),
-        navCollapsible(resolveLanguageKey, re("facilityMgmt"), Warehouse, [
-            navLink(resolveLanguageKey, re("assets"), "/realEstate/assets", Boxes),
-            navLink(resolveLanguageKey, re("maintenancePlans"), "/realEstate/maintenancePlans", Wrench),
-            navLink(resolveLanguageKey, re("maintenanceWorkOrders"), "/realEstate/maintenanceWorkOrders", ClipboardList),
-            navLink(resolveLanguageKey, re("planMarkups"), "/realEstate/planMarkups", MapPinned),
-        ]),
-        navCollapsible(resolveLanguageKey, re("bimIntegrations"), Ruler, [
-            navLink(resolveLanguageKey, re("bimModels"), "/realEstate/bimModels", Boxes),
-            navLink(resolveLanguageKey, re("bimQuantities"), "/realEstate/bimQuantities", Ruler),
-        ]),
+        // navCollapsible(resolveLanguageKey, re("facilityMgmt"), Warehouse, [
+        //     navLink(resolveLanguageKey, re("assets"), "/realEstate/assets", Boxes),
+        //     navLink(resolveLanguageKey, re("maintenancePlans"), "/realEstate/maintenancePlans", Wrench),
+        //     navLink(resolveLanguageKey, re("maintenanceWorkOrders"), "/realEstate/maintenanceWorkOrders", ClipboardList),
+        //     navLink(resolveLanguageKey, re("planMarkups"), "/realEstate/planMarkups", MapPinned),
+        // ]),
+        // navCollapsible(resolveLanguageKey, re("bimIntegrations"), Ruler, [
+        //     navLink(resolveLanguageKey, re("bimModels"), "/realEstate/bimModels", Boxes),
+        //     navLink(resolveLanguageKey, re("bimQuantities"), "/realEstate/bimQuantities", Ruler),
+        // ]),
     ];
 
     return {
@@ -242,7 +242,19 @@ const propertyManagementSidebarContribution: SidebarContribution = {
     getNavGroups(resolveLanguageKey: ResolveLanguageKey): NavGroup[] {
         return [
             buildRealEstateNavGroup(resolveLanguageKey),
-            // buildPropertyManagementNavGroup(resolveLanguageKey),
+            buildPropertyManagementNavGroup(resolveLanguageKey),
+
+            // WorkPackage
+            // VariationOrder
+            // ConstructionContract
+            // BoqItem
+            // CostCommitment
+            // Budget
+            // CostClassification
+            // Milestone
+            // ScheduleTask
+            // InspectionChecklistTemplate
+            // HandoverPackage
         ];
     },
 };

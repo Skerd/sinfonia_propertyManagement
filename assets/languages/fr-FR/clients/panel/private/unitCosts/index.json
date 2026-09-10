@@ -69,11 +69,9 @@
   },
   "fields": {
     "NOTE": "Note",
-    "boqItem": "Poste DQE",
     "budgetCurrency": "Devise du budget",
     "budgetedAmount": "Montant budgété",
     "constructorRef": "Constructeur",
-    "costCommitment": "Engagement de coût",
     "createdAt": "Créé le",
     "createdBy": "Créé par",
     "currency": "Devise",

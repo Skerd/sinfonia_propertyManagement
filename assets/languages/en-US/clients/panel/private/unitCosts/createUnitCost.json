@@ -38,12 +38,8 @@
   "form": {
     "addFile": "Add file",
     "amountLabel": "Quantity",
-    "boqItemLabel": "BOQ item",
-    "boqItemPlaceholder": "Select BOQ item",
     "constructorLabel": "Constructor",
     "constructorPlaceholder": "Select constructor",
-    "costCommitmentLabel": "Cost commitment",
-    "costCommitmentPlaceholder": "Select cost commitment",
     "currencyLabel": "Currency",
     "currencyPlaceholder": "Select currency",
     "budgetedAmountLabel": "Budgeted amount",

@@ -60,8 +60,6 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
             vendorName: wf.vendorName ? data.vendorName : undefined,
             relatedModificationRequest: wf.relatedModificationRequest ? data.relatedModificationRequest?._id : undefined,
             constructorRef: wf.constructorRef ? (data.constructorRef as any)?._id : undefined,
-            boqItem: wf.boqItem ? (data.boqItem as any)?._id : undefined,
-            costCommitment: wf.costCommitment ? (data.costCommitment as any)?._id : undefined,
             invoiceMedia: wf.invoiceMedia ? invoiceIds : undefined,
             expenditureItems: wf.expenditureItems ? expenditureItems : undefined,
         };
@@ -96,8 +94,6 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
             payload.relatedModificationRequest = data.relatedModificationRequest ?? "";
         }
         if (wf.constructorRef !== undefined) payload.constructorRef = data.constructorRef ?? "";
-        if (wf.boqItem !== undefined) payload.boqItem = data.boqItem ?? "";
-        if (wf.costCommitment !== undefined) payload.costCommitment = data.costCommitment ?? "";
 
         if (wf.expenditureItems && Array.isArray(data.expenditureItems)) {
             payload.expenditureItems = data.expenditureItems.map((row, lineIndex) => {

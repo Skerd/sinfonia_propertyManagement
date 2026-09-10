@@ -69,11 +69,9 @@
   },
   "fields": {
     "NOTE": "Note",
-    "boqItem": "BOQ Item",
     "budgetCurrency": "Budget Currency",
     "budgetedAmount": "Budgeted Amount",
     "constructorRef": "Constructor",
-    "costCommitment": "Cost Commitment",
     "createdAt": "Created At",
     "createdBy": "Created By",
     "currency": "Currency",

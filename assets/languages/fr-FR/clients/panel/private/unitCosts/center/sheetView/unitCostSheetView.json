@@ -1,9 +1,7 @@
 {
-  "boqItem": "Poste DQE",
   "category": "Catégorie",
   "constructor": "Constructeur",
   "cost": "Montant",
-  "costCommitment": "Engagement de coût",
   "costPerUnit": "Prix / unité",
   "currency": "Devise",
   "budgetedAmount": "Montant budgété",

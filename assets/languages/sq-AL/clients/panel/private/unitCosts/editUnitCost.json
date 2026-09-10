@@ -38,12 +38,8 @@
   "form": {
     "addFile": "Shto skedar",
     "amountLabel": "Sasia",
-    "boqItemLabel": "Artikulli i BOQ-së",
-    "boqItemPlaceholder": "Zgjidh artikullin e BOQ-së",
     "constructorLabel": "Konstruktori",
     "constructorPlaceholder": "Zgjidh konstruktorin",
-    "costCommitmentLabel": "Angazhimi i kostos",
-    "costCommitmentPlaceholder": "Zgjidh angazhimin e kostos",
     "currencyLabel": "Monedha",
     "currencyPlaceholder": "Zgjidh monedhën",
     "budgetedAmountLabel": "Shuma e buxhetit",

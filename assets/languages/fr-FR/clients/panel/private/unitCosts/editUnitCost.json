@@ -38,12 +38,8 @@
   "form": {
     "addFile": "Ajouter un fichier",
     "amountLabel": "Quantité",
-    "boqItemLabel": "Poste DQE",
-    "boqItemPlaceholder": "Sélectionner un poste DQE",
     "constructorLabel": "Constructeur",
     "constructorPlaceholder": "Sélectionner un constructeur",
-    "costCommitmentLabel": "Engagement de coût",
-    "costCommitmentPlaceholder": "Sélectionner un engagement de coût",
     "currencyLabel": "Devise",
     "currencyPlaceholder": "Sélectionner une devise",
     "budgetedAmountLabel": "Montant budgété",

@@ -63,11 +63,9 @@
   },
   "fields": {
     "NOTE": "Note",
-    "boqItem": "BOQ Item",
     "budgetCurrency": "Budget Currency",
     "budgetedAmount": "Budgeted Amount",
     "constructorRef": "Ndërtuesi",
-    "costCommitment": "Angazhimi i Kostos",
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "currency": "Monedha",

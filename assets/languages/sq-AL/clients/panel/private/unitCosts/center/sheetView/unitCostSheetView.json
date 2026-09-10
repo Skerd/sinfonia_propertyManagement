@@ -1,9 +1,7 @@
 {
-  "boqItem": "Artikulli i BOQ-së",
   "category": "Kategoria",
   "constructor": "Konstruktori",
   "cost": "Shuma",
-  "costCommitment": "Angazhimi i kostos",
   "costPerUnit": "Çmimi / njësi",
   "currency": "Monedha",
   "budgetedAmount": "Shuma e buxhetit",

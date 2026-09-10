@@ -1,9 +1,7 @@
 {
-  "boqItem": "Voce computo",
   "category": "Categoria",
   "constructor": "Costruttore",
   "cost": "Importo",
-  "costCommitment": "Impegno di costo",
   "costPerUnit": "Prezzo / unità",
   "currency": "Valuta",
   "budgetedAmount": "Importo a budget",

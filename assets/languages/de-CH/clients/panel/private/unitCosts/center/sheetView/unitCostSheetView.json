@@ -1,9 +1,7 @@
 {
-  "boqItem": "LV-Position",
   "category": "Kategorie",
   "constructor": "Unternehmer",
   "cost": "Betrag",
-  "costCommitment": "Kostenverpflichtung",
   "costPerUnit": "Preis / Einheit",
   "currency": "Währung",
   "budgetedAmount": "Budgetbetrag",

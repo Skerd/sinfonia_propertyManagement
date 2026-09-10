@@ -1546,9 +1546,7 @@
       "updatedAt": "Aggiornato il",
       "vendorName": "Vendor name",
       "verificationStatus": "Verification status",
-      "boqItem": "BOQ item",
-      "constructorRef": "Constructor ref",
-      "costCommitment": "Cost commitment"
+      "constructorRef": "Constructor ref"
     },
     "Units": {
       "area": "Area",
