@@ -1,12 +1,6 @@
 {
   "realEstate": {
     "title": "Pasuri të paluajtshme",
-    "systemMap": {
-      "title": "Harta e sistemit"
-    },
-    "workflow": {
-      "title": "Rrjedha e punës"
-    },
     "overview": {
       "title": "Vështrim i përgjithshëm"
     },
@@ -82,179 +76,14 @@
     "rentalPayments": {
       "title": "Pagesat e Qirasë"
     },
-    "constructionUpdates": {
-      "title": "Përditësimet e Ndërtimit"
-    },
     "stories": {
       "title": "Stories"
-    },
-    "snags": {
-      "title": "Lista e Defekteve"
-    },
-    "development": {
-      "title": "Zhvillimi"
-    },
-    "projectDocuments": {
-      "title": "Dokumentet e Projektit"
-    },
-    "permits": {
-      "title": "Lejet"
-    },
-    "delivery": {
-      "title": "Dorëzimi"
-    },
-    "cost": {
-      "title": "Kontrolli i Kostove"
-    },
-    "qualityHse": {
-      "title": "Cilësia & HSE"
-    },
-    "milestones": {
-      "title": "Pikat Kyçe"
-    },
-    "scheduleTasks": {
-      "title": "Detyrat e Programit"
-    },
-    "costClassifications": {
-      "title": "Klasifikimet e Kostos"
-    },
-    "budgets": {
-      "title": "Buxhetet"
-    },
-    "boqItems": {
-      "title": "BOQ"
-    },
-    "estimateComparison": {
-      "title": "Krahasimi i Vlerësimeve"
-    },
-    "tendering": {
-      "title": "Tenderimi"
-    },
-    "specifications": {
-      "title": "Specifikimet (LV)"
-    },
-    "specificationItems": {
-      "title": "Pozicionet e LV-së"
-    },
-    "tenders": {
-      "title": "Tenderët"
-    },
-    "tenderInvitations": {
-      "title": "Ftesat për Tender"
-    },
-    "bids": {
-      "title": "Ofertat"
-    },
-    "bidLines": {
-      "title": "Rreshtat e Ofertës"
-    },
-    "costCommitments": {
-      "title": "Angazhimet / PO"
-    },
-    "workPackages": {
-      "title": "Paketat e Punës"
-    },
-    "constructionContracts": {
-      "title": "Kontratat e Ndërtimit"
-    },
-    "progressClaims": {
-      "title": "Kërkesat e Progresit"
-    },
-    "rfis": {
-      "title": "RFI"
-    },
-    "submittals": {
-      "title": "Submittals"
-    },
-    "variationOrders": {
-      "title": "Urdhrat e Ndryshimit"
-    },
-    "landParcels": {
-      "title": "Parcelat"
-    },
-    "feasibilityStudies": {
-      "title": "Studimet e Fizibilitetit"
-    },
-    "siteDiaries": {
-      "title": "Ditari i Sheshit"
-    },
-    "safetyIncidents": {
-      "title": "Incidentet e Sigurisë"
-    },
-    "warranties": {
-      "title": "Garancitë / DLP"
     },
     "handoverPackages": {
       "title": "Paketat e Dorëzimit"
     },
-    "commissioningRecords": {
-      "title": "Komisionimi"
-    },
-    "designStages": {
-      "title": "Fazat e Projektimit"
-    },
     "inspectionChecklistTemplates": {
       "title": "Listat e Kontrollit"
-    },
-    "consultantAppointments": {
-      "title": "Emërimet e Konsulentëve"
-    },
-    "bidComparison": {
-      "title": "Krahasimi i Ofertave"
-    },
-    "financeApproval": {
-      "title": "Financa & Miratimi"
-    },
-    "approvalWorkflows": {
-      "title": "Rrjedhat e Miratimit"
-    },
-    "approvalRequests": {
-      "title": "Kërkesat për Miratim"
-    },
-    "contractorInvoices": {
-      "title": "Faturat e Kontraktorëve"
-    },
-    "incomingInvoices": {
-      "title": "Kutia AP"
-    },
-    "costControl": {
-      "title": "Kontrolli i Kostove"
-    },
-    "liquidityPlans": {
-      "title": "Planet e Likuiditetit"
-    },
-    "liquidityLines": {
-      "title": "Rreshtat e Likuiditetit"
-    },
-    "feeCalculations": {
-      "title": "Llogaritjet e Tarifave"
-    },
-    "planMarkups": {
-      "title": "Shënimet e Planit"
-    },
-    "cockpit": {
-      "title": "Kabina"
-    },
-    "facilityMgmt": {
-      "title": "Menaxhimi i Objektit"
-    },
-    "assets": {
-      "title": "Asetet"
-    },
-    "maintenancePlans": {
-      "title": "Planet e Mirëmbajtjes"
-    },
-    "maintenanceWorkOrders": {
-      "title": "Urdhrat e Punës"
-    },
-    "bimIntegrations": {
-      "title": "BIM & Integrime"
-    },
-    "bimModels": {
-      "title": "Modelet BIM"
-    },
-    "bimQuantities": {
-      "title": "Sasitë BIM"
     },
     "agentReport": {
       "title": "Raporti i Agjentit"

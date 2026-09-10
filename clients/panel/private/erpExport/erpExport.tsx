@@ -28,8 +28,11 @@ import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessCo
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import Loader from "@coreModule/components/custom/loader.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
+import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
 
 const DEFAULT_DATASETS: ErpExportDataset[] = ["sales"];
+const PM_ERP_DATASETS: ErpExportDataset[] = ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts"];
+const PD_ERP_DATASETS: ErpExportDataset[] = ["boqItems", "costCommitments", "progressClaims", "permits"];
 
 function countRows(result: ErpExportResponse | null, dataset: ErpExportDataset): number {
     if (!result) return 0;
@@ -97,10 +100,12 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
 
     const datasetOptions = useMemo(
         () =>
-            ERP_EXPORT_DATASET_VALUES.map((value) => ({
-                value,
-                label: rk(`dataset.${value}`),
-            })),
+            ERP_EXPORT_DATASET_VALUES
+                .filter((value) => !PD_ERP_DATASETS.includes(value) || isModuleEnabled("propertyDevelopment"))
+                .map((value) => ({
+                    value,
+                    label: rk(`dataset.${value}`),
+                })),
         [resolveLanguageKey],
     );
 
@@ -121,16 +126,24 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const [result, setResult] = useState<ErpExportResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
     const accessHydrated = useAccessHydrated();
+    const salesAccess = useAccess("sales");
+    const commissionsAccess = useAccess("commissions");
+    const paymentPlansAccess = useAccess("paymentplans");
+    const rentalPaymentsAccess = useAccess("rentalpayments");
+    const unitCostsAccess = useAccess("unitcosts");
+    const boqItemsAccess = useAccess("boqitems");
+    const costCommitmentsAccess = useAccess("costcommitments");
+    const progressClaimsAccess = useAccess("progressclaims");
+    const permitsAccess = useAccess("permits");
     const canRead = hasAnyAccessRead([
-        useAccess("sales"),
-        useAccess("commissions"),
-        useAccess("paymentplans"),
-        useAccess("rentalpayments"),
-        useAccess("unitcosts"),
-        useAccess("boqitems"),
-        useAccess("costcommitments"),
-        useAccess("progressclaims"),
-        useAccess("permits"),
+        salesAccess,
+        commissionsAccess,
+        paymentPlansAccess,
+        rentalPaymentsAccess,
+        unitCostsAccess,
+        ...(isModuleEnabled("propertyDevelopment")
+            ? [boqItemsAccess, costCommitmentsAccess, progressClaimsAccess, permitsAccess]
+            : []),
     ]);
 
     const selectedDatasetSet = useMemo(() => new Set(datasets), [datasets]);
@@ -157,14 +170,31 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         if (dateTo) body.dateTo = dateTo;
         if (projectId) body.projectId = projectId;
 
+        const pmDatasets = datasets.filter((d) => PM_ERP_DATASETS.includes(d));
+        const pdDatasets = isModuleEnabled("propertyDevelopment")
+            ? datasets.filter((d) => PD_ERP_DATASETS.includes(d))
+            : [];
+
         try {
             if (format === "csv") {
-                const res = await apiClient.post("/api/realEstate/erpExport", body, {responseType: "blob"});
-                const contentType = String(res.headers["content-type"] ?? "");
-                if (contentType.includes("application/json")) {
-                    throw new Error(await parseBlobError(res.data as Blob));
+                const blobs: Blob[] = [];
+                if (pmDatasets.length > 0) {
+                    const res = await apiClient.post("/api/realEstate/erpExport", {...body, datasets: pmDatasets}, {responseType: "blob"});
+                    const contentType = String(res.headers["content-type"] ?? "");
+                    if (contentType.includes("application/json")) {
+                        throw new Error(await parseBlobError(res.data as Blob));
+                    }
+                    blobs.push(new Blob([res.data], {type: "text/csv"}));
                 }
-                const url = URL.createObjectURL(new Blob([res.data], {type: "text/csv"}));
+                if (pdDatasets.length > 0) {
+                    const res = await apiClient.post("/api/propertyDevelopment/erpExport", {...body, datasets: pdDatasets}, {responseType: "blob"});
+                    const contentType = String(res.headers["content-type"] ?? "");
+                    if (contentType.includes("application/json")) {
+                        throw new Error(await parseBlobError(res.data as Blob));
+                    }
+                    blobs.push(new Blob([res.data], {type: "text/csv"}));
+                }
+                const url = URL.createObjectURL(new Blob(blobs, {type: "text/csv"}));
                 const a = document.createElement("a");
                 a.href = url;
                 a.download = `erp-export-${Date.now()}.csv`;
@@ -172,8 +202,16 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
                 URL.revokeObjectURL(url);
                 setResult(null);
             } else {
-                const res = await apiClient.post<ErpExportResponse>("/api/realEstate/erpExport", body);
-                setResult(res.data);
+                const parts: ErpExportResponse[] = [];
+                if (pmDatasets.length > 0) {
+                    const res = await apiClient.post<ErpExportResponse>("/api/realEstate/erpExport", {...body, datasets: pmDatasets});
+                    parts.push(res.data);
+                }
+                if (pdDatasets.length > 0) {
+                    const res = await apiClient.post<ErpExportResponse>("/api/propertyDevelopment/erpExport", {...body, datasets: pdDatasets});
+                    parts.push(res.data);
+                }
+                setResult(Object.assign({exportedAt: new Date().toISOString()}, ...parts));
             }
         } catch (e: unknown) {
             const err = e as {response?: {data?: {message?: string}}; message?: string};

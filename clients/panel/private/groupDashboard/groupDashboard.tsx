@@ -1,6 +1,6 @@
 import {compose} from "redux";
 import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -31,6 +31,8 @@ import {
 import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
+import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
 
 type GroupDashboardProps = WithLanguageType & WithAxiosType<GroupDashboardResponse, Record<string, never>>;
 
@@ -59,18 +61,35 @@ function GroupDashboard({
     onFilterChange,
 }: GroupDashboardProps) {
     const accessHydrated = useAccessHydrated();
+    const snagsAccess = useAccess("snags");
     const canRead = hasAnyAccessRead([
         useAccess("units"),
         useAccess("sales"),
         useAccess("commissions"),
         useAccess("leases"),
-        useAccess("snags"),
     ]);
+    const [openSnagsByCompany, setOpenSnagsByCompany] = useState<Record<string, number>>({});
 
     useEffect(() => {
         if (accessHydrated === false || !canRead) return;
         onFilterChange({});
     }, [accessHydrated, canRead]);
+
+    useEffect(() => {
+        if (accessHydrated === false || !canRead || !isModuleEnabled("propertyDevelopment")) return;
+        if (!hasAnyAccessRead([snagsAccess])) return;
+        let cancelled = false;
+        apiClient.post<{openSnagsByCompany: Record<string, number>}>("/api/propertyDevelopment/groupDashboard", {})
+            .then((res) => {
+                if (!cancelled) setOpenSnagsByCompany(res.data.openSnagsByCompany ?? {});
+            })
+            .catch(() => {
+                if (!cancelled) setOpenSnagsByCompany({});
+            });
+        return () => {
+            cancelled = true;
+        };
+    }, [accessHydrated, canRead, snagsAccess]);
 
     if (accessHydrated === false) return <Loader/>;
     if (!canRead) return <Forbidden />;
@@ -88,7 +107,16 @@ function GroupDashboard({
 
     if (!data) return null;
 
-    const hasMultipleBranches = data.branches.length > 1;
+    const branches = data.branches.map((branch) => ({
+        ...branch,
+        openSnags: openSnagsByCompany[branch.companyId] ?? 0,
+    }));
+    const totals = {
+        ...data.totals,
+        openSnags: branches.reduce((sum, branch) => sum + branch.openSnags, 0),
+    };
+
+    const hasMultipleBranches = branches.length > 1;
     const pageTitle = data.groupName
         ? `${data.groupName} — ${resolveLanguageKey("title")}`
         : resolveLanguageKey("title");
@@ -113,7 +141,7 @@ function GroupDashboard({
                         <KpiCard
                             key={col.key}
                             title={resolveLanguageKey(col.labelKey)}
-                            value={fmt(data.totals[col.key])}
+                            value={fmt(totals[col.key])}
                             icon={col.icon}
                             variant={col.variant}
                             compact
@@ -139,7 +167,7 @@ function GroupDashboard({
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {data.branches.map(branch => (
+                            {branches.map(branch => (
                                 <TableRow key={branch.companyId}>
                                     <TableCell className="font-medium whitespace-nowrap">
                                         {branch.companyName}

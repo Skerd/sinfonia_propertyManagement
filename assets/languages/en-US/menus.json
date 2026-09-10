@@ -1,12 +1,6 @@
 {
   "realEstate": {
     "title": "Real Estate",
-    "systemMap": {
-      "title": "System map"
-    },
-    "workflow": {
-      "title": "Workflow"
-    },
     "overview": {
       "title": "Overview"
     },
@@ -82,179 +76,14 @@
     "rentalPayments": {
       "title": "Rental payments"
     },
-    "constructionUpdates": {
-      "title": "Construction updates"
-    },
     "stories": {
       "title": "Stories"
-    },
-    "snags": {
-      "title": "Snagging list"
-    },
-    "development": {
-      "title": "Development"
-    },
-    "projectDocuments": {
-      "title": "Project documents"
-    },
-    "permits": {
-      "title": "Permits"
-    },
-    "delivery": {
-      "title": "Delivery"
-    },
-    "cost": {
-      "title": "Cost control"
-    },
-    "qualityHse": {
-      "title": "Quality & HSE"
-    },
-    "milestones": {
-      "title": "Milestones"
-    },
-    "scheduleTasks": {
-      "title": "Schedule tasks"
-    },
-    "costClassifications": {
-      "title": "Cost classifications"
-    },
-    "budgets": {
-      "title": "Budgets"
-    },
-    "boqItems": {
-      "title": "BOQ items"
-    },
-    "estimateComparison": {
-      "title": "Estimate comparison"
-    },
-    "tendering": {
-      "title": "Tendering"
-    },
-    "specifications": {
-      "title": "Specifications (LV)"
-    },
-    "specificationItems": {
-      "title": "LV positions"
-    },
-    "tenders": {
-      "title": "Tenders"
-    },
-    "tenderInvitations": {
-      "title": "Tender invitations"
-    },
-    "bids": {
-      "title": "Bids"
-    },
-    "bidLines": {
-      "title": "Bid lines"
-    },
-    "costCommitments": {
-      "title": "Commitments / POs"
-    },
-    "workPackages": {
-      "title": "Work packages"
-    },
-    "constructionContracts": {
-      "title": "Construction contracts"
-    },
-    "progressClaims": {
-      "title": "Progress claims"
-    },
-    "rfis": {
-      "title": "RFIs"
-    },
-    "submittals": {
-      "title": "Submittals"
-    },
-    "variationOrders": {
-      "title": "Variation orders"
-    },
-    "landParcels": {
-      "title": "Land parcels"
-    },
-    "feasibilityStudies": {
-      "title": "Feasibility studies"
-    },
-    "siteDiaries": {
-      "title": "Site diaries"
-    },
-    "safetyIncidents": {
-      "title": "Safety incidents"
-    },
-    "warranties": {
-      "title": "Warranties / DLP"
     },
     "handoverPackages": {
       "title": "Handover packages"
     },
-    "commissioningRecords": {
-      "title": "Commissioning"
-    },
-    "designStages": {
-      "title": "Design stages"
-    },
     "inspectionChecklistTemplates": {
       "title": "Inspection checklists"
-    },
-    "consultantAppointments": {
-      "title": "Consultant appointments"
-    },
-    "bidComparison": {
-      "title": "Bid comparison"
-    },
-    "financeApproval": {
-      "title": "Finance & approval"
-    },
-    "approvalWorkflows": {
-      "title": "Approval workflows"
-    },
-    "approvalRequests": {
-      "title": "Approval requests"
-    },
-    "contractorInvoices": {
-      "title": "Contractor invoices"
-    },
-    "incomingInvoices": {
-      "title": "AP inbox"
-    },
-    "costControl": {
-      "title": "Cost control"
-    },
-    "liquidityPlans": {
-      "title": "Liquidity plans"
-    },
-    "liquidityLines": {
-      "title": "Liquidity lines"
-    },
-    "feeCalculations": {
-      "title": "Fee calculations"
-    },
-    "planMarkups": {
-      "title": "Plan markups"
-    },
-    "cockpit": {
-      "title": "Cockpit"
-    },
-    "facilityMgmt": {
-      "title": "Facility management"
-    },
-    "assets": {
-      "title": "Assets"
-    },
-    "maintenancePlans": {
-      "title": "Maintenance plans"
-    },
-    "maintenanceWorkOrders": {
-      "title": "Work orders"
-    },
-    "bimIntegrations": {
-      "title": "BIM & integrations"
-    },
-    "bimModels": {
-      "title": "BIM models"
-    },
-    "bimQuantities": {
-      "title": "BIM quantities"
     },
     "agentReport": {
       "title": "Agent report"

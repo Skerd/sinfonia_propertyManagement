@@ -1,9 +1,0 @@
-{
-  "path": "src/modules/propertyManagement/components/custom/landParcels/disposeLandParcelDialog.tsx",
-  "dialogTitle": "Hiq parcelën nga përdorimi",
-  "dialogDescription": "Shëno këtë parcelë si të hequr nga përdorimi. E mundshme nga E blerë, ose nga Due diligence e dështuar për t'u tërhequr pa blerë. Shënimet opsionale ruhen si shënime heqjeje.",
-  "notesLabel": "Shënime heqjeje",
-  "notesPlaceholder": "Shënime heqjeje (opsionale)",
-  "cancel": "Anulo",
-  "submit": "Hiq nga përdorimi"
-}

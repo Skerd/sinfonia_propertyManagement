@@ -1,9 +1,0 @@
-{
-  "path": "src/modules/propertyManagement/components/custom/milestones/markDelayedMilestoneDialog.tsx",
-  "dialogTitle": "Mark milestone delayed",
-  "dialogDescription": "Flag this milestone as delayed. You can add a reason.",
-  "notesLabel": "Notes",
-  "notesPlaceholder": "Optional reason for the delay",
-  "cancel": "Annuler",
-  "submit": "Mark delayed"
-}

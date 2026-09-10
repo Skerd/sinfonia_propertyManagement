@@ -1,9 +1,0 @@
-{
-  "path": "src/modules/propertyManagement/components/custom/landParcels/disposeLandParcelDialog.tsx",
-  "dialogTitle": "Céder la parcelle",
-  "dialogDescription": "Marquer cette parcelle comme cédée. Disponible depuis Acquis, ou depuis Échec de la due diligence pour abandonner sans acquérir. Les notes optionnelles sont enregistrées comme notes de cession.",
-  "notesLabel": "Notes de cession",
-  "notesPlaceholder": "Notes de cession (optionnel)",
-  "cancel": "Annuler",
-  "submit": "Céder"
-}

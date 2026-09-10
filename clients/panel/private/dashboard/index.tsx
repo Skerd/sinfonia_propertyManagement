@@ -32,6 +32,7 @@ import {DashboardWidgetEmpty} from "@propertyManagementModule/components/custom/
 import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
+import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
 
 type RealEstateDashboardProps = WithLanguageType & WithAxiosType<DashboardFormResponseType, DashboardFormType>;
 
@@ -61,7 +62,7 @@ function RealEstateDashboard({
         useAccess("rentalpayments"),
         useAccess("leases"),
     ]);
-    const canReadDeliveryReadiness = hasAnyAccessRead([
+    const canReadDeliveryReadiness = isModuleEnabled("propertyDevelopment") && hasAnyAccessRead([
         useAccess("permits"),
         useAccess("projectdocuments"),
         useAccess("designstages"),

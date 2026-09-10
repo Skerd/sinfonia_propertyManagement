@@ -1,9 +1,0 @@
-{
-  "path": "src/modules/propertyManagement/components/custom/snags/assignSnagDialog.tsx",
-  "dialogTitle": "Mangel zuweisen",
-  "dialogDescription": "Wählen Sie eine Person, der dieser Mangel zugewiesen werden soll.",
-  "assignedToLabel": "Zuständig",
-  "assignedToPlaceholder": "Person auswählen",
-  "cancel": "Abbrechen",
-  "submit": "Zuweisen"
-}

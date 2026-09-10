@@ -10,7 +10,7 @@ import {
 } from "@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx";
 import type {
     DeliveryReadinessFormResponseType,
-} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/deliveryReadiness.form.response.type.ts";
+} from "armonia/src/modules/propertyDevelopment/api/propertyDevelopment/private/dashboard/deliveryReadiness.form.response.type.ts";
 import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
@@ -91,7 +91,7 @@ function DeliveryReadinessCardInner({
 export default compose(
     withLanguage("src/modules/propertyManagement/components/custom/dashboard/deliveryReadinessCard.tsx"),
     withAxios<DeliveryReadinessFormResponseType, {projectId?: string; edificeId?: string}>(
-        {method: "post", url: "/api/realEstate/dashboard/deliveryReadiness", data: {}},
+        {method: "post", url: "/api/propertyDevelopment/deliveryReadiness", data: {}},
         true,
     ),
     withDebug(true, true, "units"),
