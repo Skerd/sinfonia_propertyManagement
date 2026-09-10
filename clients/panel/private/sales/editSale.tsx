@@ -12,16 +12,6 @@ export default createGenericEditPage<Sale, EditSaleFormType>({
         ...data,
         notes: data.notes ?? "",
         transactionReference: data.transactionReference ?? "",
-        localDiscount: data.localDiscount ?? 0,
     }),
-    buildFormExtras: (_entityId, _params, entity) => {
-        if (!entity) return {allowLocalDiscountEdit: false};
-        return {
-            allowLocalDiscountEdit: entity.paymentType !== "payment_plan",
-            listedUnitPrice: entity.listedUnitPrice,
-            listedUnitCurrencySymbol: entity.listedUnitCurrency?.symbol,
-            unit: entity.unit,
-        };
-    },
     buildExtraTitles: (params) => [params.get("unitName")].filter((x): x is string => !!x),
 });

@@ -22,12 +22,6 @@ import SalePayDownPaymentAction from "@propertyManagementModule/clients/panel/pr
 import SalePayDownPaymentDialog from "@propertyManagementModule/components/custom/sale/salePayDownPaymentDialog.tsx";
 import SalePayInstallmentDialog from "@propertyManagementModule/components/custom/sale/salePayInstallmentDialog.tsx";
 
-export function buildPaymentPlanEditPath(paymentPlan: PaymentPlan): string {
-    const params = new URLSearchParams();
-    params.set("paymentPlanId", paymentPlan._id);
-    return `/realEstate/paymentPlans/edit?${params.toString()}`;
-}
-
 type PaymentPlanSheetViewOwnProps = {
     open: boolean;
     onOpenChange: (open: boolean) => void;
@@ -105,8 +99,6 @@ function PaymentPlanSheetView({
     const entityId = paymentPlanProp?._id ?? fetchId;
     const paymentPlan = sheetData as PaymentPlan;
 
-    const editPath = paymentPlan._id ? buildPaymentPlanEditPath(paymentPlan) : "";
-
     if (!viewConfig) return null;
     if (!entityId) return null;
 
@@ -127,7 +119,8 @@ function PaymentPlanSheetView({
                 hideActions={hideActions}
                 onDelete={onDelete}
                 onRestore={onRestore}
-                editPath={editPath}
+                editPath=""
+                hideEdit
                 deleteRestoreConfirmLabel={paymentPlan.name}
                 actionMenuChildren={
                     !!access.read?.downPaymentPaid && !paymentPlan.downPaymentPaid ? (
