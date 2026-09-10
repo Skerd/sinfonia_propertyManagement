@@ -24,6 +24,10 @@ import {getErpExportColumnLabel} from "armonia/src/modules/propertyManagement/ap
 import type {ErpExportDataset, ErpExportFormat, ErpExportResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.response.type.ts";
 import type {ErpExportFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.form.type.ts";
 import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import Loader from "@coreModule/components/custom/loader.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 const DEFAULT_DATASETS: ErpExportDataset[] = ["sales"];
 
@@ -116,6 +120,18 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<ErpExportResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("sales"),
+        useAccess("commissions"),
+        useAccess("paymentplans"),
+        useAccess("rentalpayments"),
+        useAccess("unitcosts"),
+        useAccess("boqitems"),
+        useAccess("costcommitments"),
+        useAccess("progressclaims"),
+        useAccess("permits"),
+    ]);
 
     const selectedDatasetSet = useMemo(() => new Set(datasets), [datasets]);
 
@@ -124,6 +140,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         : 0;
 
     async function handleExport() {
+        if (!canRead) return;
         if (datasets.length === 0) {
             setError(rk("datasetsRequired"));
             return;
@@ -165,6 +182,9 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
             setLoading(false);
         }
     }
+
+    if (accessHydrated === false) return <Loader />;
+    if (!canRead) return <Forbidden />;
 
     return (
         <div className="flex flex-col h-full overflow-hidden">

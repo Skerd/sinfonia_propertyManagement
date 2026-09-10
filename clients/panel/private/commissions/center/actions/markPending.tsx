@@ -1,105 +1,33 @@
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {compose} from "redux";
-import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {useImperativeHandle, useState} from "react";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
-import type {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {LoaderCircle, Undo2} from "lucide-react";
-import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle
-} from "@coreModule/components/ui/alert-dialog.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {Undo2} from "lucide-react";
 
-type MarkPendingCommissionProps = WithLanguageType &
-    WithAxiosType<Commission, SingleForm> & {
-        commission: Commission;
-        onSuccess?: (updated?: Commission) => void;
-    };
+export const MARK_PENDING_COMMISSION_ACTION = "markPending";
 
-function MarkPendingCommission({
-    commission,
-    resolveLanguageKey,
-    innerRef,
-    onFilterChange,
-    onSuccess = () => {},
-    loading
-}: MarkPendingCommissionProps) {
-    const [open, setOpen] = useState(false);
+type MarkPendingCommissionProps = WithLanguageType & {
+    onAction: (action: string) => void;
+};
 
-    useImperativeHandle(innerRef, () => ({
-        success: (body: Commission) => {
-            onSuccess?.(body);
-            setOpen(false);
-        }
-    }));
-
-    const {write} = useAccess("commissions");
-    const canStatus = Boolean(write && (write as Record<string, unknown>)["status"]);
-
-    if (!canStatus) {
-        return <></>;
-    }
-
-    const handleMarkPending = () => {
-        onFilterChange({
-            _id: commission._id
-        });
-    };
+function MarkPendingCommission({onAction, resolveLanguageKey}: MarkPendingCommissionProps) {
     const shortcut = "5";
-    const openDialog = () => setOpen(true);
+    const openDialog = () => onAction(MARK_PENDING_COMMISSION_ACTION);
     useKeyboardShortcuts(shortcut, openDialog);
 
     return (
-        <>
-            <DropdownMenuItem
-                onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    openDialog();
-                }}
-            >
-                <Undo2 size={16} />
-                {resolveLanguageKey("title")}
-                <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <AlertDialog open={open} onOpenChange={setOpen}>
-                <AlertDialogContent>
-                    <AlertDialogHeader>
-                        <AlertDialogTitle>{resolveLanguageKey("pendingConfirmTitle")}</AlertDialogTitle>
-                        <AlertDialogDescription>{resolveLanguageKey("pendingConfirmDescription")}</AlertDialogDescription>
-                    </AlertDialogHeader>
-                    <AlertDialogFooter>
-                        <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
-                        <AlertDialogAction onClick={handleMarkPending} disabled={loading}>
-                            {loading ? <LoaderCircle className="animate-spin" /> : <Undo2 />}
-                            <p>{resolveLanguageKey("confirmPending")}</p>
-                        </AlertDialogAction>
-                    </AlertDialogFooter>
-                </AlertDialogContent>
-            </AlertDialog>
-        </>
+        <DropdownMenuItem
+            onClick={() => {openDialog();}}
+        >
+            <Undo2 size={16} />
+            {resolveLanguageKey("title")}
+            <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
+        </DropdownMenuItem>
     );
 }
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPending.tsx"),
-    withAxios(
-        {
-            method: "patch",
-            url: "/api/realEstate/commission/markPending",
-            data: {}
-        },
-        true
-    ),
-    withDebug(true, true, "commissions")
+    withDebug(true, true, "commissions"),
 )(MarkPendingCommission);

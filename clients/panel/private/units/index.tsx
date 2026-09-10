@@ -13,6 +13,8 @@ import UnitCard from "@propertyManagementModule/clients/panel/private/units/cent
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
+import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {
@@ -260,12 +262,35 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                     onRestore={() => onRestore(unit)}
                 />
             )}
-            renderActionMenuChildren={(unit) => (
-                <UnitDomainMenuItems
-                    unitId={unit._id}
-                    unitName={unit.name || unit.unitNumber || unit._id}
-                />
+            renderActionMenuChildren={(unit, bindRowAction) => (
+                <UnitDomainMenuItems unit={unit} onAction={bindRowAction} />
             )}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => {
+                const onSuccess = (updated?: Partial<Unit>) => {
+                    if (updated) listRef.current?.updateRow?.(entity._id, updated);
+                    resetAction();
+                };
+                return (
+                    <>
+                        {action === "markUnavailable" && (
+                            <MarkUnavailableUnitDialog
+                                open
+                                onClose={resetAction}
+                                unit={entity}
+                                onSuccess={onSuccess}
+                            />
+                        )}
+                        {action === "markAvailable" && (
+                            <MarkAvailableUnitDialog
+                                open
+                                onClose={resetAction}
+                                unit={entity}
+                                onSuccess={onSuccess}
+                            />
+                        )}
+                    </>
+                );
+            }}
         />
     );
 }

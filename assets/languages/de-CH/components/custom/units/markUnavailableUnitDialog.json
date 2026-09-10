@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markUnavailableUnitDialog.tsx",
+  "confirmTitle": "Einheit als nicht verfügbar markieren",
+  "confirmDescription": "Die Einheit wird ohne Reservation, Verkauf oder Miete vom Markt genommen. Bitte erläutern Sie, warum sie nicht verfügbar ist.",
+  "unavailableNotesLabel": "Hinweis zur Nichtverfügbarkeit",
+  "unavailableNotesPlaceholder": "Geben Sie an, warum diese Einheit nicht verfügbar ist…",
+  "cancel": "Abbrechen",
+  "confirm": "Als nicht verfügbar markieren",
+  "axios": {
+    "start": {
+      "title": "Einheit wird als nicht verfügbar markiert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Einheit als nicht verfügbar markiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Einheit konnte nicht als nicht verfügbar markiert werden",
+      "time": 3000
+    }
+  }
+}

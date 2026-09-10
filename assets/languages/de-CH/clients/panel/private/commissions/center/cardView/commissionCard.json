@@ -15,6 +15,7 @@
       "status": {
         "pending": "Ausstehend",
         "pending_approval": "Freigabe ausstehend",
+        "approved": "Freigegeben",
         "paid": "Bezahlt",
         "voided": "Annulliert"
       },

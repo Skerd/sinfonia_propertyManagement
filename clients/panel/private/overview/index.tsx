@@ -19,6 +19,10 @@ import {
     buildDashboardFilter,
     DashboardPeriodToolbar,
 } from "@propertyManagementModule/components/custom/dashboard/DashboardPeriodToolbar.tsx";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import Loader from "@coreModule/components/custom/loader.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type DashboardProps = WithLanguageType & WithAxiosType<DashboardFormResponseType, DashboardFormType>
 
@@ -33,13 +37,30 @@ function Dashboard({
     const ref = useRef<HTMLDivElement>(null);
     const [periodKey, setPeriodKey] = useState<string>('last12months');
     const [activeTab, setActiveTab] = useState<string>('overview');
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("sales"),
+        useAccess("units"),
+        useAccess("projects"),
+        useAccess("edifices"),
+        useAccess("floors"),
+        useAccess("reservations"),
+        useAccess("paymentplans"),
+        useAccess("inspections"),
+        useAccess("modificationrequests"),
+        useAccess("unitcosts"),
+        useAccess("rentalpayments"),
+        useAccess("leases"),
+    ]);
 
     useEffect(() => {
+        if (accessHydrated === false || !canRead) return;
         onFilterChange(buildDashboardFilter(periodKey));
-    }, []);
+    }, [accessHydrated, canRead]);
 
     const handlePeriodChange = (value: string) => {
         setPeriodKey(value);
+        if (!canRead) return;
         onFilterChange(buildDashboardFilter(value));
     };
 
@@ -56,6 +77,9 @@ function Dashboard({
 
     const viewEntriesLabel = resolveLanguageKey("viewEntries") as string;
     const tabDrillDownProps = { drillDownContext, viewEntriesLabel };
+
+    if (accessHydrated === false) return <Loader />;
+    if (!canRead) return <Forbidden />;
 
     return (
         <>

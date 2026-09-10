@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markAvailableUnitDialog.tsx",
+  "confirmTitle": "Mark unit as available",
+  "confirmDescription": "This puts the unit back on the market and clears the unavailable notes. Continue?",
+  "cancel": "Cancel",
+  "confirm": "Mark as available",
+  "axios": {
+    "start": {
+      "title": "Marking unit available…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unit marked available",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark unit available",
+      "time": 3000
+    }
+  }
+}

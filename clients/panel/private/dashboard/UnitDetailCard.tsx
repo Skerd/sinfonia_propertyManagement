@@ -18,6 +18,8 @@ import {
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {UnitStatusBadge} from "@propertyManagementModule/components/custom/cards/UnitStatusBadge.tsx";
 import {EntityCardActionMenu} from "@propertyManagementModule/components/custom/cards/EntityCardActionMenu.tsx";
+import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
+import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 
 function formatCurrency(value: number): string {
     return new Intl.NumberFormat("de-DE", {
@@ -43,7 +45,7 @@ export interface UnitDetailCardProps extends WithLanguageType {
 
 function UnitDetailCardInner({
     resolveLanguageKey,
-    unit,
+    unit: unitProp,
     onUnitDeleted,
     onUnitRestored,
     menuOpened,
@@ -51,6 +53,11 @@ function UnitDetailCardInner({
 }: UnitDetailCardProps) {
     const {read} = useAccess("units");
     const [menuAction, setMenuAction] = useState<string>(menuOpened ?? "");
+    const [unit, setUnit] = useState(unitProp);
+
+    useEffect(() => {
+        setUnit(unitProp);
+    }, [unitProp]);
 
     const unitNumber = unit.unitNumber ?? unit.name ?? unit._id;
     const floorName = unit.floor?.name ?? "—";
@@ -68,7 +75,7 @@ function UnitDetailCardInner({
 
     useEffect(() => {
         setMenuAction(menuOpened ?? "");
-    }, [unit, clicked]);
+    }, [unitProp, clicked, menuOpened]);
 
     const editPath = buildUnitEditPath(unit);
     const deleteLabel = unitDeleteConfirmLabel(read as Record<string, unknown> | undefined, unit);
@@ -123,6 +130,13 @@ function UnitDetailCardInner({
                                     </HiddenElement>
                                 </p>
                             )}
+                            {unit.unavailableNotes ? (
+                                <p className="text-sm text-muted-foreground mt-1">
+                                    <HiddenElement randomLength={12}>
+                                        {read?.unavailableNotes ? unit.unavailableNotes : null}
+                                    </HiddenElement>
+                                </p>
+                            ) : null}
                         </div>
                         <EntityCardActionMenu variant="inline">
                             <ActionMenu
@@ -133,7 +147,7 @@ function UnitDetailCardInner({
                                 hideView={false}
                                 allowMenuForCustomChildren={true}
                             >
-                                <UnitDomainMenuItems unitId={unit._id} unitName={unit.name || unit.unitNumber || unit._id} />
+                                <UnitDomainMenuItems unit={unit} onAction={setMenuAction} />
                             </ActionMenu>
                         </EntityCardActionMenu>
                     </div>
@@ -192,6 +206,7 @@ function UnitDetailCardInner({
                             unit={unit}
                             onDelete={() => onUnitDeleted?.()}
                             onRestore={() => onUnitRestored?.()}
+                            onSheetRowPatched={(row) => setUnit({...unit, ...row} as Unit)}
                         />
                     )}
                     {menuAction === "delete" && (
@@ -220,6 +235,28 @@ function UnitDetailCardInner({
                             }}
                             onCancel={() => setMenuAction("")}
                             url={`/api/realEstate/unit/restore`}
+                        />
+                    )}
+                    {menuAction === "markUnavailable" && (
+                        <MarkUnavailableUnitDialog
+                            open
+                            onClose={() => setMenuAction("")}
+                            unit={unit}
+                            onSuccess={(updated) => {
+                                if (updated) setUnit({...unit, ...updated});
+                                setMenuAction("");
+                            }}
+                        />
+                    )}
+                    {menuAction === "markAvailable" && (
+                        <MarkAvailableUnitDialog
+                            open
+                            onClose={() => setMenuAction("")}
+                            unit={unit}
+                            onSuccess={(updated) => {
+                                if (updated) setUnit({...unit, ...updated});
+                                setMenuAction("");
+                            }}
                         />
                     )}
                 </>

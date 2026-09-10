@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/setCommissionSplitsDialog.tsx",
+  "dialogTitle": "Imposta suddivisioni commissione",
+  "dialogDescription": "Suddividi questa commissione tra gli agenti. Gli importi non devono superare il totale. Salvare senza righe cancella le suddivisioni.",
+  "totalLabel": "Commissione",
+  "allocatedLabel": "Assegnato",
+  "remainingLabel": "Rimanente",
+  "exceedsTotal": "Gli importi superano il totale della commissione.",
+  "agentLabel": "Agente",
+  "agentPlaceholder": "Seleziona un agente",
+  "labelLabel": "Etichetta",
+  "labelPlaceholder": "Etichetta facoltativa",
+  "rateLabel": "Aliquota %",
+  "amountLabel": "Importo",
+  "addSplit": "Aggiungi suddivisione",
+  "cancel": "Annulla",
+  "submit": "Salva suddivisioni",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento commissione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Suddivisioni aggiornate",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la commissione",
+      "time": 3000
+    }
+  }
+}

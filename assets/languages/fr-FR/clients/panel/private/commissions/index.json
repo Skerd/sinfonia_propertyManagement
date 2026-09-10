@@ -34,15 +34,20 @@
     "name": "Référence",
     "notes": "Notes",
     "paidAt": "Payée le",
-    "paymentReceiptMediaId": "ID média du reçu de paiement",
+    "paymentReceiptMediaId": "Reçu de paiement",
     "paymentReference": "Référence de paiement",
     "ratePercent": "Taux %",
-    "recordedByActionUser": "Enregistrée par l'utilisateur d'action",
+    "recordedByActionUser": "Enregistrée par",
     "reservation": "Réservation",
     "sale": "Vente",
     "sourceId": "ID source",
     "sourceType": "Type de source",
-    "splits": "Répartitions",
+    "splits": {
+      "agent": "Agent de répartition",
+      "label": "Libellé de répartition",
+      "ratePercent": "Taux de répartition %",
+      "amount": "Montant de répartition"
+    },
     "status": "Statut",
     "updatedAt": "Mise à jour le",
     "voidedAt": "Annulée le",
@@ -50,6 +55,7 @@
     "edifice": "Bâtiment",
     "floor": "Étage",
     "unit": "Unité",
+    "company": "Société",
     "!enums": {
       "sourceType": {
         "sale": "Vente",
@@ -58,8 +64,13 @@
       "status": {
         "pending": "En attente",
         "pending_approval": "En attente d'approbation",
+        "approved": "Approuvée",
         "paid": "Payée",
         "voided": "Annulée"
+      },
+      "basis": {
+        "depositAmount": "Acompte de réservation",
+        "finalPrice": "Prix final de vente"
       }
     }
   },
@@ -69,14 +80,14 @@
   "help": {
     "ariaLabel": "À propos des commissions",
     "title": "À propos des commissions",
-    "overview": "Une commission est la ligne de versement agent née d'une réservation ou d'une vente. C'est le journal, pas le rapport agents (vue de performance sur une période). Le statut avance en attente → en attente d'approbation → payée, ou annulée lorsque le deal source est annulé ou qu'un paiement est reversé.",
+    "overview": "Une commission est la ligne de versement agent née d'une réservation ou d'une vente. C'est le journal, pas le rapport agents (vue de performance sur une période). Le statut avance en attente → en attente d'approbation → approuvée → payée, ou annulée lorsque le deal source est annulé ou qu'un paiement est reversé.",
     "sections": [
       {
         "title": "Ce qu'une commission contient",
         "items": [
           "Type de source : réservation ou vente, plus le dossier source.",
           "Agent, montants, devise, taux utilisés lors de l'enregistrement.",
-          "Statut : en attente, en attente d'approbation, payée, annulée.",
+          "Statut : en attente, en attente d'approbation, approuvée, payée, annulée.",
           "Preuves / notes selon la façon dont vos rôles exposent les champs."
         ]
       },

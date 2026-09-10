@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/markPaidCommissionDialog.tsx",
+  "dialogTitle": "Shëno komisionin si të paguar",
+  "dialogDescription": "Vendos komisionin si të paguar. Referenca dhe faturë janë opsionale.",
+  "paymentReferenceLabel": "Referenca e pagesës",
+  "paymentReferencePlaceholder": "Referencë bankare ose fature (opsionale)",
+  "receiptLabel": "Fatura e pagesës",
+  "addReceipt": "Shto faturë",
+  "cancel": "Anulo",
+  "confirmPaid": "Shëno të paguar",
+  "axios": {
+    "start": {
+      "title": "Po përditësohet komisioni",
+      "time": 3000
+    },
+    "success": {
+      "title": "Komisioni u shënua si i paguar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Komisioni nuk mund të përditësohej",
+      "time": 3000
+    }
+  }
+}

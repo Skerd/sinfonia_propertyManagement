@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/approveCommissionPaymentDialog.tsx",
+  "dialogTitle": "Approva o rifiuta il pagamento",
+  "approveDescription": "L'approvazione autorizza l'erogazione. Non si può richiedere di nuovo l'approvazione; il passo successivo è segnarla come pagata.",
+  "rejectDescription": "Il rifiuto annulla la commissione, registra l'ora e notifica l'agente.",
+  "decisionLabel": "Decisione",
+  "decisionPlaceholder": "Scegli una decisione",
+  "decisionApproved": "Approva",
+  "decisionRejected": "Rifiuta e annulla",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Note facoltative",
+  "cancel": "Annulla",
+  "submitApprove": "Approva",
+  "submitReject": "Rifiuta e annulla",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento commissione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commissione aggiornata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la commissione",
+      "time": 3000
+    }
+  }
+}

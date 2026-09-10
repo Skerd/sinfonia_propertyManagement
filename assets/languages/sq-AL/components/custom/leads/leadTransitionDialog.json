@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/leadTransitionDialog.tsx",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënim opsional për këtë ndryshim statusi",
+  "cancel": "Anulo",
+  "titles": {
+    "markContacted": "Shëno i kontaktuar",
+    "qualify": "Kualifiko lead-in",
+    "markProposal": "Shëno propozimin",
+    "markNegotiation": "Shëno negociatën",
+    "reopen": "Rihap lead-in"
+  },
+  "descriptions": {
+    "markContacted": "Regjistro që është bërë kontakt. Lead-i duhet të ketë tashmë email ose telefon.",
+    "qualify": "Kualifiko këtë lead. Një email ose numër telefoni duhet të jetë tashmë i vendosur.",
+    "markProposal": "Regjistro që u dërgua një propozim. Lead-i duhet të jetë tashmë i kualifikuar.",
+    "markNegotiation": "Kalojeni këtë lead në negociatë. Duhet të ketë tashmë një propozim.",
+    "reopen": "Rihap këtë lead të humbur dhe ktheje te i kontaktuar. Arsyeja e humbjes hiqet nga lead-i dhe ruhet në regjistrin e aktivitetit."
+  },
+  "submit": {
+    "markContacted": "Shëno i kontaktuar",
+    "qualify": "Kualifiko",
+    "markProposal": "Shëno propozimin",
+    "markNegotiation": "Shëno negociatën",
+    "reopen": "Rihap"
+  },
+  "axios": {
+    "start": {
+      "title": "Lead-i po përditësohet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead-i u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lead-i nuk mund të përditësohej",
+      "time": 3000
+    },
+    "markContacted": {
+      "title": "Lead-i u shënua i kontaktuar",
+      "time": 3000
+    },
+    "qualify": {
+      "title": "Lead-i u kualifikua",
+      "time": 3000
+    },
+    "markProposal": {
+      "title": "Propozimi u regjistrua",
+      "time": 3000
+    },
+    "markNegotiation": {
+      "title": "Lead-i u kalua në negociatë",
+      "time": 3000
+    },
+    "reopen": {
+      "title": "Lead-i u rihap",
+      "time": 3000
+    }
+  }
+}

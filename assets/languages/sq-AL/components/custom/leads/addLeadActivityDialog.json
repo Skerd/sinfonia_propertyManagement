@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
   "dialogTitle": "Shto aktivitet",
-  "dialogDescription": "Regjistroni një aktivitet CRM për këtë lead.",
+  "dialogDescription": "Regjistroni një kontakt. Kjo nuk e ndryshon statusin e lead-it.",
   "actionLabel": "Lloji i aktivitetit",
   "actionPlaceholder": "Zgjidhni llojin e aktivitetit",
   "notesLabel": "Shënime",
@@ -13,8 +13,21 @@
     "emailed": "Email",
     "meeting": "Takim",
     "site_visit": "Vizitë në vend",
-    "proposal_sent": "Propozim i dërguar",
     "follow_up": "Ndjekje",
     "note": "Shënim"
+  },
+  "axios": {
+    "start": {
+      "title": "Aktiviteti po shtohet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Aktiviteti u shtua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Aktiviteti nuk mund të shtohej",
+      "time": 3000
+    }
   }
 }

@@ -31,6 +31,7 @@
   "active": "Active",
   "available": "Available",
   "notAvailable": "Not Available",
+  "unavailableNotes": "Unavailable notes",
   "reserved": "Reserved",
   "sold": "Sold",
   "leased": "Leased",

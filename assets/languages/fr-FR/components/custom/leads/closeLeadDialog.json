@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/closeLeadDialog.tsx",
+  "dialogTitle": "Marquer gagné ou perdu",
+  "dialogDescription": "Choisissez si ce prospect a été gagné ou perdu. Gagné ne crée pas de réservation.",
+  "outcomeLabel": "Résultat",
+  "outcomePlaceholder": "Sélectionnez gagné ou perdu",
+  "outcomes": {
+    "won": "Gagné",
+    "lost": "Perdu"
+  },
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Note facultative pour ce résultat",
+  "lostReasonLabel": "Motif de perte",
+  "lostReasonPlaceholder": "Pourquoi ce prospect a-t-il été perdu ?",
+  "cancel": "Annuler",
+  "submit": "Enregistrer le résultat",
+  "submitWon": "Marquer gagné",
+  "submitLost": "Marquer perdu",
+  "axios": {
+    "start": {
+      "title": "Enregistrement du résultat…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prospect marqué comme perdu",
+      "time": 3000
+    },
+    "won": {
+      "title": "Prospect marqué comme gagné",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de clôturer ce prospect",
+      "time": 3000
+    }
+  }
+}

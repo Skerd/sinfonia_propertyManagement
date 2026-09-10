@@ -21,6 +21,7 @@
   "assignedTo": "Zugewiesen an",
   "followUpDate": "Nachfassungsdatum",
   "convertedAt": "Umgewandelt am",
+  "lostReason": "Verlustgrund",
   "notes": "Notizen",
   "activityLog": "Aktivitätsprotokoll",
   "toggleReferenceListView": "Ansicht umschalten",
@@ -61,7 +62,14 @@
     "follow_up": "Nachfassung",
     "note": "Notiz",
     "status_update": "Statusaktualisierung",
-    "created": "Erstellt"
+    "created": "Erstellt",
+    "marked_contacted": "Als kontaktiert markiert",
+    "qualified": "Qualifiziert",
+    "marked_proposal": "Angebot erfasst",
+    "marked_negotiation": "In Verhandlung verschoben",
+    "marked_won": "Als gewonnen markiert",
+    "marked_lost": "Als verloren markiert",
+    "reopened": "Wiedereröffnet"
   },
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",

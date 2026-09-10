@@ -31,6 +31,7 @@
   "active": "Aktiv",
   "available": "Verfügbar",
   "notAvailable": "Nicht verfügbar",
+  "unavailableNotes": "Hinweis zur Nichtverfügbarkeit",
   "reserved": "Reserviert",
   "sold": "Verkauft",
   "leased": "Vermietet",

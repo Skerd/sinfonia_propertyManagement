@@ -52,6 +52,7 @@
   "price": "Çmimi",
   "availability": "Disponueshmëria",
   "status": "Statusi",
+  "unavailableNotes": "Shënime për padisponueshmërinë",
   "unitStatusEnum": {
     "available_unit": "Në dispozicion",
     "unavailable_unit": "Nuk disponohet",

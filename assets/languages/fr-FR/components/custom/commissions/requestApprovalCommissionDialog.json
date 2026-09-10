@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/requestApprovalCommissionDialog.tsx",
+  "confirmTitle": "Demander l'approbation ?",
+  "confirmDescription": "La commission passe en attente d'approbation. Elle n'est pas marquée comme payée.",
+  "cancel": "Annuler",
+  "confirm": "Demander l'approbation",
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Approbation demandée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la commission",
+      "time": 3000
+    }
+  }
+}

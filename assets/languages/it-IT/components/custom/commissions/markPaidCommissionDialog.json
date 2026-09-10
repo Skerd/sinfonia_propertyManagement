@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/markPaidCommissionDialog.tsx",
+  "dialogTitle": "Segna la commissione come pagata",
+  "dialogDescription": "Imposta la commissione come pagata. Riferimento e ricevuta sono facoltativi.",
+  "paymentReferenceLabel": "Riferimento di pagamento",
+  "paymentReferencePlaceholder": "Riferimento bancario o della ricevuta (facoltativo)",
+  "receiptLabel": "Ricevuta di pagamento",
+  "addReceipt": "Aggiungi ricevuta",
+  "cancel": "Annulla",
+  "confirmPaid": "Segna come pagata",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento commissione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commissione segnata come pagata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la commissione",
+      "time": 3000
+    }
+  }
+}

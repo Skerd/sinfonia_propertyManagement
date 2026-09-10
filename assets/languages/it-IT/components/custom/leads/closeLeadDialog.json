@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/closeLeadDialog.tsx",
+  "dialogTitle": "Segna come vinto o perso",
+  "dialogDescription": "Scegli se questo lead è stato vinto o perso. Vinto non crea una prenotazione.",
+  "outcomeLabel": "Esito",
+  "outcomePlaceholder": "Seleziona vinto o perso",
+  "outcomes": {
+    "won": "Vinto",
+    "lost": "Perso"
+  },
+  "notesLabel": "Note",
+  "notesPlaceholder": "Nota facoltativa per questo esito",
+  "lostReasonLabel": "Motivo della perdita",
+  "lostReasonPlaceholder": "Perché questo lead è stato perso?",
+  "cancel": "Annulla",
+  "submit": "Salva esito",
+  "submitWon": "Segna come vinto",
+  "submitLost": "Segna come perso",
+  "axios": {
+    "start": {
+      "title": "Salvataggio esito…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead segnato come perso",
+      "time": 3000
+    },
+    "won": {
+      "title": "Lead segnato come vinto",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile chiudere questo lead",
+      "time": 3000
+    }
+  }
+}

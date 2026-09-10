@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markUnavailableUnitDialog.tsx",
+  "confirmTitle": "Mark unit as unavailable",
+  "confirmDescription": "This takes the unit off the market without a reservation, sale, or lease. Please explain why it is unavailable.",
+  "unavailableNotesLabel": "Unavailable notes",
+  "unavailableNotesPlaceholder": "Enter why this unit is unavailable…",
+  "cancel": "Cancel",
+  "confirm": "Mark as unavailable",
+  "axios": {
+    "start": {
+      "title": "Marking unit unavailable…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unit marked unavailable",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not mark unit unavailable",
+      "time": 3000
+    }
+  }
+}

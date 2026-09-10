@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/setCommissionSplitsDialog.tsx",
+  "dialogTitle": "Cakto ndarjet e komisionit",
+  "dialogDescription": "Ndaje këtë komision te agjentët. Shumat nuk duhet të kalojnë totalin. Ruajtja pa rreshta i fshin ndarjet.",
+  "totalLabel": "Komisioni",
+  "allocatedLabel": "I ndarë",
+  "remainingLabel": "I mbetur",
+  "exceedsTotal": "Shumat e ndarjes e kalojnë totalin e komisionit.",
+  "agentLabel": "Agjenti",
+  "agentPlaceholder": "Zgjidh një agjent",
+  "labelLabel": "Etiketa",
+  "labelPlaceholder": "Etiketë opsionale",
+  "rateLabel": "Norma %",
+  "amountLabel": "Shuma",
+  "addSplit": "Shto ndarje",
+  "cancel": "Anulo",
+  "submit": "Ruaj ndarjet",
+  "axios": {
+    "start": {
+      "title": "Po përditësohet komisioni",
+      "time": 3000
+    },
+    "success": {
+      "title": "Ndarjet u përditësuan",
+      "time": 3000
+    },
+    "error": {
+      "title": "Komisioni nuk mund të përditësohej",
+      "time": 3000
+    }
+  }
+}

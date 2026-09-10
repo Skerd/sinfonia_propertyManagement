@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/requestApprovalCommissionDialog.tsx",
+  "confirmTitle": "Request approval?",
+  "confirmDescription": "This sends the commission to pending approval. It is not marked paid.",
+  "cancel": "Cancel",
+  "confirm": "Request approval",
+  "axios": {
+    "start": {
+      "title": "Updating commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Approval requested",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update commission",
+      "time": 3000
+    }
+  }
+}

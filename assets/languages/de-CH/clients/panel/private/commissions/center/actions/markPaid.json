@@ -1,22 +1,4 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPaid.tsx",
-  "title": "Als bezahlt markieren",
-  "paidConfirmTitle": "Provision als bezahlt markieren?",
-  "paidConfirmDescription": "Dadurch wird der Provisionsstatus auf bezahlt gesetzt und der Zahlungszeitpunkt erfasst.",
-  "cancel": "Abbrechen",
-  "confirmPaid": "Als bezahlt markieren",
-  "axios": {
-    "start": {
-      "title": "Provision wird aktualisiert",
-      "time": 3000
-    },
-    "success": {
-      "title": "Provision als bezahlt markiert",
-      "time": 3000
-    },
-    "error": {
-      "title": "Provision konnte nicht aktualisiert werden",
-      "time": 3000
-    }
-  }
+  "title": "Als bezahlt markieren"
 }

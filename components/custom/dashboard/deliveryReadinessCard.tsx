@@ -11,6 +11,8 @@ import {
 import type {
     DeliveryReadinessFormResponseType,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/deliveryReadiness.form.response.type.ts";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type DeliveryReadinessCardProps = WithLanguageType &
     WithAxiosType<DeliveryReadinessFormResponseType, {projectId?: string; edificeId?: string}> & {
@@ -32,10 +34,23 @@ function DeliveryReadinessCardInner({
     projectId,
     edificeId,
 }: DeliveryReadinessCardProps) {
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("permits"),
+        useAccess("projectdocuments"),
+        useAccess("designstages"),
+        useAccess("milestones"),
+        useAccess("snags"),
+        useAccess("handoverpackages"),
+    ]);
+
     useEffect(() => {
+        if (accessHydrated === false || !canRead) return;
         onFilterChange({projectId, edificeId});
         // onFilterChange identity changes every withAxios render — do not add to deps.
-    }, [projectId, edificeId]);
+    }, [projectId, edificeId, accessHydrated, canRead]);
+
+    if (accessHydrated === false || !canRead) return null;
 
     const activeDomains = data?.domains?.filter((d) => d.percent != null) ?? [];
 

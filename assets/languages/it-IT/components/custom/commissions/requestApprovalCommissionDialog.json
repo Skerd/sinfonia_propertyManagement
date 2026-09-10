@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/requestApprovalCommissionDialog.tsx",
+  "confirmTitle": "Richiedere l'approvazione?",
+  "confirmDescription": "La commissione passa in attesa di approvazione. Non viene segnata come pagata.",
+  "cancel": "Annulla",
+  "confirm": "Richiedi approvazione",
+  "axios": {
+    "start": {
+      "title": "Aggiornamento commissione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Approvazione richiesta",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare la commissione",
+      "time": 3000
+    }
+  }
+}

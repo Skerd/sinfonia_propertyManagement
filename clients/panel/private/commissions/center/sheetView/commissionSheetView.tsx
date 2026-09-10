@@ -5,6 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
+import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionWorkflowDialogs.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -35,9 +36,14 @@ function CommissionSheetView({
     fetchId,
 }: CommissionSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, any>>(commissionProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("commissions");
     const viewConfig = useViewConfig("commissions", "sheet");
     const read = access.read as Record<string, unknown> | undefined;
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!commissionProp) return;
@@ -53,7 +59,7 @@ function CommissionSheetView({
     const statusBadge = (status: string) => {
         const s = (status || "").toLowerCase();
         const className =
-            s === "paid"
+            s === "paid" || s === "approved"
                 ? "bg-success/10 text-success border-success/30"
                 : s === "voided"
                   ? "bg-destructive/10 text-destructive border-destructive/30"
@@ -88,7 +94,16 @@ function CommissionSheetView({
         </>
     );
 
+    const handleWorkflowSuccess = (updated?: Commission) => {
+        if (updated) {
+            setSheetData(updated);
+            onModifySuccess?.(updated);
+        }
+        setAction("");
+    };
+
     return (
+        <>
         <SheetViewRenderer
             config={viewConfig}
             url="/api/realEstate/commission/single"
@@ -111,9 +126,16 @@ function CommissionSheetView({
             deleteRestoreConfirmLabel={read?.agent != null ? commissionConfirmLabel(asCommission) : undefined}
             actionMenuAllowCustomChildren={true}
             actionMenuChildren={
-                <CommissionRowMenuExtras commission={asCommission} onModify={(updated) => onModifySuccess?.(updated)} />
+                <CommissionRowMenuExtras commission={asCommission} onAction={setAction} />
             }
         />
+        <CommissionWorkflowDialogs
+            action={action}
+            commission={asCommission}
+            onClose={() => setAction("")}
+            onSuccess={handleWorkflowSuccess}
+        />
+        </>
     );
 }
 

@@ -15,6 +15,7 @@
       "status": {
         "pending": "Pending",
         "pending_approval": "Pending approval",
+        "approved": "Approved",
         "paid": "Paid",
         "voided": "Voided"
       },

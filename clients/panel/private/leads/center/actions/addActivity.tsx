@@ -21,7 +21,7 @@ function AddLeadActivity({onAction, lead, resolveLanguageKey}: AddLeadActivityPr
     }
 
     return (
-        <DropdownMenuItem onClick={(e) => {onAction(ADD_LEAD_ACTIVITY_ACTION);}}>
+        <DropdownMenuItem onClick={() => { onAction(ADD_LEAD_ACTIVITY_ACTION); }}>
             <History className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>

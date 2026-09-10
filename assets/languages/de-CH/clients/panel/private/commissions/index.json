@@ -34,15 +34,20 @@
     "name": "Referenz",
     "notes": "Notizen",
     "paidAt": "Bezahlt am",
-    "paymentReceiptMediaId": "Medien-ID des Zahlungsbelegs",
+    "paymentReceiptMediaId": "Zahlungsbeleg",
     "paymentReference": "Zahlungsreferenz",
     "ratePercent": "Satz %",
-    "recordedByActionUser": "Erfasst durch Aktionsbenutzer",
+    "recordedByActionUser": "Erfasst von",
     "reservation": "Reservation",
     "sale": "Verkauf",
     "sourceId": "Quellen-ID",
     "sourceType": "Quellentyp",
-    "splits": "Aufteilungen",
+    "splits": {
+      "agent": "Split-Makler",
+      "label": "Split-Bezeichnung",
+      "ratePercent": "Split-Satz %",
+      "amount": "Split-Betrag"
+    },
     "status": "Status",
     "updatedAt": "Aktualisiert am",
     "voidedAt": "Annulliert am",
@@ -50,6 +55,7 @@
     "edifice": "Gebäude",
     "floor": "Geschoss",
     "unit": "Einheit",
+    "company": "Unternehmen",
     "!enums": {
       "sourceType": {
         "sale": "Verkauf",
@@ -58,8 +64,13 @@
       "status": {
         "pending": "Ausstehend",
         "pending_approval": "Freigabe ausstehend",
+        "approved": "Freigegeben",
         "paid": "Bezahlt",
         "voided": "Annulliert"
+      },
+      "basis": {
+        "depositAmount": "Reservationsanzahlung",
+        "finalPrice": "Verkaufsendpreis"
       }
     }
   },
@@ -69,14 +80,14 @@
   "help": {
     "ariaLabel": "Über Provisionen",
     "title": "Über Provisionen",
-    "overview": "Eine Provision ist die Auszahlungszeile für den Agenten aus Reservation oder Verkauf. Das ist das Journal, nicht der Agentenbericht (Periodenleistung). Status: ausstehend → zur Freigabe → bezahlt, oder storniert wenn der Deal storniert oder eine Zahlung rückgängig gemacht wird.",
+    "overview": "Eine Provision ist die Auszahlungszeile für den Agenten aus Reservation oder Verkauf. Das ist das Journal, nicht der Agentenbericht (Periodenleistung). Status: ausstehend → zur Freigabe → freigegeben → bezahlt, oder storniert wenn der Deal storniert oder eine Zahlung rückgängig gemacht wird.",
     "sections": [
       {
         "title": "Was eine Provision speichert",
         "items": [
           "Quelltyp Reservation oder Verkauf plus Quelldatensatz.",
           "Agent, Beträge, Währung, verwendete Sätze.",
-          "Status: ausstehend, zur Freigabe, bezahlt, storniert."
+          "Status: ausstehend, zur Freigabe, freigegeben, bezahlt, storniert."
         ]
       },
       {

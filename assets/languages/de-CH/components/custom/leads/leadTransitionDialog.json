@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/leadTransitionDialog.tsx",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optionale Notiz zu dieser Statusänderung",
+  "cancel": "Abbrechen",
+  "titles": {
+    "markContacted": "Als kontaktiert markieren",
+    "qualify": "Lead qualifizieren",
+    "markProposal": "Angebot markieren",
+    "markNegotiation": "Verhandlung markieren",
+    "reopen": "Lead wiedereröffnen"
+  },
+  "descriptions": {
+    "markContacted": "Erfassen Sie, dass Kontakt aufgenommen wurde. Der Lead braucht bereits E-Mail oder Telefon.",
+    "qualify": "Qualifizieren Sie diesen Lead. Eine E-Mail oder Telefonnummer muss bereits gesetzt sein.",
+    "markProposal": "Erfassen Sie, dass ein Angebot gesendet wurde. Der Lead muss bereits qualifiziert sein.",
+    "markNegotiation": "Verschieben Sie diesen Lead in die Verhandlung. Ein Angebot muss bereits erfasst sein.",
+    "reopen": "Öffnen Sie diesen verlorenen Lead erneut und setzen Sie ihn auf kontaktiert. Der Verlustgrund wird vom Lead entfernt und im Aktivitätsprotokoll behalten."
+  },
+  "submit": {
+    "markContacted": "Als kontaktiert markieren",
+    "qualify": "Qualifizieren",
+    "markProposal": "Angebot markieren",
+    "markNegotiation": "Verhandlung markieren",
+    "reopen": "Wiedereröffnen"
+  },
+  "axios": {
+    "start": {
+      "title": "Lead wird aktualisiert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lead konnte nicht aktualisiert werden",
+      "time": 3000
+    },
+    "markContacted": {
+      "title": "Lead als kontaktiert markiert",
+      "time": 3000
+    },
+    "qualify": {
+      "title": "Lead qualifiziert",
+      "time": 3000
+    },
+    "markProposal": {
+      "title": "Angebot erfasst",
+      "time": 3000
+    },
+    "markNegotiation": {
+      "title": "Lead in Verhandlung verschoben",
+      "time": 3000
+    },
+    "reopen": {
+      "title": "Lead wiedereröffnet",
+      "time": 3000
+    }
+  }
+}

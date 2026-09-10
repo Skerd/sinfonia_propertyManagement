@@ -29,6 +29,9 @@ import {
     DashboardPeriodToolbar,
 } from "@propertyManagementModule/components/custom/dashboard/DashboardPeriodToolbar.tsx";
 import {DashboardWidgetEmpty} from "@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type RealEstateDashboardProps = WithLanguageType & WithAxiosType<DashboardFormResponseType, DashboardFormType>;
 
@@ -43,13 +46,38 @@ function RealEstateDashboard({
     const [periodKey, setPeriodKey] = useState<string>("last12months");
     // Filter, not a hard gate: null means portfolio aggregate.
     const [selectedEdifice, setSelectedEdifice] = useState<Edifice | null>(null);
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("sales"),
+        useAccess("units"),
+        useAccess("projects"),
+        useAccess("edifices"),
+        useAccess("floors"),
+        useAccess("reservations"),
+        useAccess("paymentplans"),
+        useAccess("inspections"),
+        useAccess("modificationrequests"),
+        useAccess("unitcosts"),
+        useAccess("rentalpayments"),
+        useAccess("leases"),
+    ]);
+    const canReadDeliveryReadiness = hasAnyAccessRead([
+        useAccess("permits"),
+        useAccess("projectdocuments"),
+        useAccess("designstages"),
+        useAccess("milestones"),
+        useAccess("snags"),
+        useAccess("handoverpackages"),
+    ]);
 
     useEffect(() => {
+        if (accessHydrated === false || !canRead) return;
         onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}));
-    }, [selectedEdifice, periodKey]);
+    }, [selectedEdifice, periodKey, accessHydrated, canRead]);
 
     const handlePeriodChange = (value: string) => {
         setPeriodKey(value);
+        if (!canRead) return;
         onFilterChange(buildDashboardFilter(value, {edificeId: selectedEdifice?._id}));
     };
 
@@ -75,6 +103,8 @@ function RealEstateDashboard({
     const viewEntriesLabel = resolveLanguageKey("viewEntries") as string;
     const hasData = !!dashboardData?.summary;
 
+    if (accessHydrated === false) return <Loader/>;
+    if (!canRead) return <Forbidden />;
     if (loading && !dashboardData) return <Loader/>;
     if (error) {
         return (
@@ -217,7 +247,9 @@ function RealEstateDashboard({
                         {selectedEdifice && (
                             <>
                                 <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-                                    <DeliveryReadinessCard edificeId={selectedEdifice._id} />
+                                    {canReadDeliveryReadiness && (
+                                        <DeliveryReadinessCard edificeId={selectedEdifice._id} />
+                                    )}
                                 </div>
 
                                 <EdificeDetailPanel

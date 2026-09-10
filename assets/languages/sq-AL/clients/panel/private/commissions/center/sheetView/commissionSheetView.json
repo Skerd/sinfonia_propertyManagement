@@ -18,12 +18,17 @@
       "status": {
         "pending": "Në pritje",
         "pending_approval": "Në pritje të aprovimit",
+        "approved": "I aprovuar",
         "paid": "I paguar",
         "voided": "I anuluar"
       },
       "sourceType": {
         "sale": "Shitje",
         "reservation": "Rezervimi"
+      },
+      "basis": {
+        "depositAmount": "Depoziti i rezervimit",
+        "finalPrice": "Çmimi përfundimtar i shitjes"
       }
     }
   },
@@ -41,6 +46,16 @@
   "currency": "Monedha",
   "paidAt": "Paguar më",
   "voidedAt": "Anuluar më",
+  "recordedByActionUser": "Regjistruar nga",
+  "paymentReference": "Referenca e pagesës",
+  "paymentReceiptMediaId": "Fatura e pagesës",
+  "splits": "Ndarjet",
+  "splitAgent": "Agjenti i ndarjes",
+  "splitLabel": "Etiketa e ndarjes",
+  "unit": "Njësia",
+  "compactView": "Kompakte",
+  "cardsView": "Kartat",
+  "toggleReferenceListView": "Ndrysho pamjen",
   "modelType": "Komisioni",
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",

@@ -1,22 +1,4 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPaid.tsx",
-  "title": "Shëno të paguar",
-  "paidConfirmTitle": "Të shënohet komisioni si i paguar?",
-  "paidConfirmDescription": "Kjo vendos statusin e komisionit në të paguar dhe regjistron kohën e pagesës.",
-  "cancel": "Anulo",
-  "confirmPaid": "Shëno të paguar",
-  "axios": {
-    "start": {
-      "title": "Po përditësohet komisioni",
-      "time": 3000
-    },
-    "success": {
-      "title": "Komisioni u shënua si i paguar",
-      "time": 3000
-    },
-    "error": {
-      "title": "Komisioni nuk mund të përditësohej",
-      "time": 3000
-    }
-  }
+  "title": "Shëno të paguar"
 }

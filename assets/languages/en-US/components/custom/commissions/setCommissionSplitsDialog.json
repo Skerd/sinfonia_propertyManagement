@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/setCommissionSplitsDialog.tsx",
+  "dialogTitle": "Set commission splits",
+  "dialogDescription": "Split this commission across agents. The split amounts must not exceed the commission total. Saving with no rows clears splits.",
+  "totalLabel": "Commission",
+  "allocatedLabel": "Allocated",
+  "remainingLabel": "Remaining",
+  "exceedsTotal": "Split amounts exceed the commission total.",
+  "agentLabel": "Agent",
+  "agentPlaceholder": "Select an agent",
+  "labelLabel": "Label",
+  "labelPlaceholder": "Optional label",
+  "rateLabel": "Rate %",
+  "amountLabel": "Amount",
+  "addSplit": "Add split",
+  "cancel": "Cancel",
+  "submit": "Save splits",
+  "axios": {
+    "start": {
+      "title": "Updating commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Splits updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update commission",
+      "time": 3000
+    }
+  }
+}

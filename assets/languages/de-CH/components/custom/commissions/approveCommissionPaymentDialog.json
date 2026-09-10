@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/approveCommissionPaymentDialog.tsx",
+  "dialogTitle": "Zahlung genehmigen oder ablehnen",
+  "approveDescription": "Die Genehmigung gibt die Provision zur Auszahlung frei. Sie kann nicht erneut zur Freigabe gesendet werden; der nächste Schritt ist «Als bezahlt markieren».",
+  "rejectDescription": "Eine Ablehnung storniert die Provision, erfasst den Zeitpunkt und benachrichtigt den Agenten.",
+  "decisionLabel": "Entscheidung",
+  "decisionPlaceholder": "Entscheidung wählen",
+  "decisionApproved": "Genehmigen",
+  "decisionRejected": "Ablehnen und stornieren",
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optionale Notizen",
+  "cancel": "Abbrechen",
+  "submitApprove": "Genehmigen",
+  "submitReject": "Ablehnen und stornieren",
+  "axios": {
+    "start": {
+      "title": "Provision wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Provision aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Provision konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  }
+}

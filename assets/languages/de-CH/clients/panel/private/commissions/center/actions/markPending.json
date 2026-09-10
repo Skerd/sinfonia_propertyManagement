@@ -1,22 +1,4 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/commissions/center/actions/markPending.tsx",
-  "title": "Als ausstehend markieren",
-  "pendingConfirmTitle": "Auf ausstehend zurücksetzen?",
-  "pendingConfirmDescription": "Dadurch wird der bezahlte Status gelöscht und die Provision wieder auf ausstehend gesetzt.",
-  "cancel": "Abbrechen",
-  "confirmPending": "Als ausstehend markieren",
-  "axios": {
-    "start": {
-      "title": "Provision wird aktualisiert",
-      "time": 3000
-    },
-    "success": {
-      "title": "Provision auf ausstehend gesetzt",
-      "time": 3000
-    },
-    "error": {
-      "title": "Provision konnte nicht aktualisiert werden",
-      "time": 3000
-    }
-  }
+  "title": "Als ausstehend markieren"
 }

@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/markPaidCommissionDialog.tsx",
+  "dialogTitle": "Provision als bezahlt markieren",
+  "dialogDescription": "Setzt die Provision auf bezahlt. Zahlungsreferenz und Beleg sind optional.",
+  "paymentReferenceLabel": "Zahlungsreferenz",
+  "paymentReferencePlaceholder": "Optionale Bank- oder Belegreferenz",
+  "receiptLabel": "Zahlungsbeleg",
+  "addReceipt": "Beleg hinzufügen",
+  "cancel": "Abbrechen",
+  "confirmPaid": "Als bezahlt markieren",
+  "axios": {
+    "start": {
+      "title": "Provision wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Provision als bezahlt markiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Provision konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  }
+}

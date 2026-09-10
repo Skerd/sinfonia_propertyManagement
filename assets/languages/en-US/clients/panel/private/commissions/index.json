@@ -34,15 +34,20 @@
     "name": "Reference",
     "notes": "Notes",
     "paidAt": "Paid At",
-    "paymentReceiptMediaId": "Payment Receipt Media ID",
+    "paymentReceiptMediaId": "Payment Receipt",
     "paymentReference": "Payment Reference",
     "ratePercent": "Rate %",
-    "recordedByActionUser": "Recorded By Action User",
+    "recordedByActionUser": "Recorded By",
     "reservation": "Reservation",
     "sale": "Sale",
     "sourceId": "Source ID",
     "sourceType": "Source Type",
-    "splits": "Splits",
+    "splits": {
+      "agent": "Split Agent",
+      "label": "Split Label",
+      "ratePercent": "Split Rate %",
+      "amount": "Split Amount"
+    },
     "status": "Status",
     "updatedAt": "Updated At",
     "voidedAt": "Voided At",
@@ -50,6 +55,7 @@
     "edifice": "Edifice",
     "floor": "Floor",
     "unit": "Unit",
+    "company": "Company",
     "!enums": {
       "sourceType": {
         "sale": "Sale",
@@ -58,8 +64,13 @@
       "status": {
         "pending": "Pending",
         "pending_approval": "Pending approval",
+        "approved": "Approved",
         "paid": "Paid",
         "voided": "Voided"
+      },
+      "basis": {
+        "depositAmount": "Reservation deposit",
+        "finalPrice": "Sale final price"
       }
     }
   },
@@ -69,14 +80,14 @@
   "help": {
     "ariaLabel": "About Commissions",
     "title": "About Commissions",
-    "overview": "A Commission is the agent payout row created from a reservation or a sale. This is the ledger, not the Agent report (which is a period performance view). Status moves pending → pending approval → paid, or voided when the source deal is cancelled or a payment is reversed.",
+    "overview": "A Commission is the agent payout row created from a reservation or a sale. This is the ledger, not the Agent report (which is a period performance view). Status moves pending → pending approval → approved → paid, or voided when the source deal is cancelled or a payment is reversed.",
     "sections": [
       {
         "title": "What a commission holds",
         "items": [
           "Source type: reservation or sale, plus the source record.",
           "Agent, amounts, currency, rates that were used when it was recorded.",
-          "Status: pending, pending approval, paid, voided.",
+          "Status: pending, pending approval, approved, paid, voided.",
           "Evidence / notes depending on how your roles expose the fields."
         ]
       },

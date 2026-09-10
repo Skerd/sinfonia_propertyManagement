@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markUnavailableUnitDialog.tsx",
+  "confirmTitle": "Marquer l'unité comme indisponible",
+  "confirmDescription": "L'unité est retirée du marché sans réservation, vente ni bail. Veuillez indiquer pourquoi elle est indisponible.",
+  "unavailableNotesLabel": "Notes d'indisponibilité",
+  "unavailableNotesPlaceholder": "Indiquez pourquoi cette unité est indisponible…",
+  "cancel": "Annuler",
+  "confirm": "Marquer comme indisponible",
+  "axios": {
+    "start": {
+      "title": "Marquage de l'unité comme indisponible…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unité marquée indisponible",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de marquer l'unité comme indisponible",
+      "time": 3000
+    }
+  }
+}

@@ -18,12 +18,17 @@
       "status": {
         "pending": "Ausstehend",
         "pending_approval": "Freigabe ausstehend",
+        "approved": "Freigegeben",
         "paid": "Bezahlt",
         "voided": "Annulliert"
       },
       "sourceType": {
         "sale": "Verkauf",
         "reservation": "Reservation"
+      },
+      "basis": {
+        "depositAmount": "Reservationsanzahlung",
+        "finalPrice": "Verkaufsendpreis"
       }
     }
   },
@@ -41,6 +46,16 @@
   "currency": "Währung",
   "paidAt": "Bezahlt am",
   "voidedAt": "Annulliert am",
+  "recordedByActionUser": "Erfasst von",
+  "paymentReference": "Zahlungsreferenz",
+  "paymentReceiptMediaId": "Zahlungsbeleg",
+  "splits": "Aufteilungen",
+  "splitAgent": "Split-Makler",
+  "splitLabel": "Split-Bezeichnung",
+  "unit": "Einheit",
+  "compactView": "Kompakt",
+  "cardsView": "Karten",
+  "toggleReferenceListView": "Ansicht umschalten",
   "modelType": "Provision",
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",

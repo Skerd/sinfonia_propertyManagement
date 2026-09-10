@@ -20,6 +20,9 @@ import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {AgentReportResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/agentReport/agentReport.response.type.ts";
 import type {AgentReportFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/agentReport/agentReport.form.type.ts";
 import {downloadAgentReportPdf, type AgentReportPdfLabels} from "./agentReportPdf.ts";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 const PERIOD_OPTIONS: {value: string; fromDaysAgo: number; langKey: string}[] = [
     {value: "last30",       fromDaysAgo: 30,  langKey: "period.last30"},
@@ -75,13 +78,20 @@ function AgentReportPage({
 
     const onFilterChangeRef = useRef(onFilterChange);
     onFilterChangeRef.current = onFilterChange;
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("sales"),
+        useAccess("reservations"),
+        useAccess("commissions"),
+    ]);
 
     const agentIdsKey = agentIds.join(",");
 
     useEffect(() => {
+        if (accessHydrated === false || !canRead) return;
         if (!dateFrom || !dateTo) return;
         onFilterChangeRef.current(buildFilter(dateFrom, dateTo, agentIds));
-    }, [dateFrom, dateTo, agentIdsKey, agentIds]);
+    }, [dateFrom, dateTo, agentIdsKey, agentIds, accessHydrated, canRead]);
 
     const refetch = useCallback(() => {
         if (!dateFrom || !dateTo) return;
@@ -143,6 +153,9 @@ function AgentReportPage({
     }
 
     const canApply = !!dateFrom && !!dateTo;
+
+    if (accessHydrated === false) return <Loader />;
+    if (!canRead) return <Forbidden />;
 
     return (
         <div className="flex flex-col h-full overflow-hidden">

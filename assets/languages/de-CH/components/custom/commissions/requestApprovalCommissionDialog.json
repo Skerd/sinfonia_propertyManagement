@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/requestApprovalCommissionDialog.tsx",
+  "confirmTitle": "Freigabe anfordern?",
+  "confirmDescription": "Die Provision wird zur Freigabe gesendet. Sie wird nicht als bezahlt markiert.",
+  "cancel": "Abbrechen",
+  "confirm": "Freigabe anfordern",
+  "axios": {
+    "start": {
+      "title": "Provision wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Freigabe angefordert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Provision konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/setCommissionSplitsDialog.tsx",
+  "dialogTitle": "Provisionsaufteilungen festlegen",
+  "dialogDescription": "Teilen Sie diese Provision auf Agenten auf. Die Teilbeträge dürfen die Provisionssumme nicht überschreiten. Speichern ohne Zeilen entfernt die Aufteilungen.",
+  "totalLabel": "Provision",
+  "allocatedLabel": "Zugewiesen",
+  "remainingLabel": "Verbleibend",
+  "exceedsTotal": "Die Teilbeträge überschreiten die Provisionssumme.",
+  "agentLabel": "Agent",
+  "agentPlaceholder": "Agent wählen",
+  "labelLabel": "Bezeichnung",
+  "labelPlaceholder": "Optionale Bezeichnung",
+  "rateLabel": "Satz %",
+  "amountLabel": "Betrag",
+  "addSplit": "Aufteilung hinzufügen",
+  "cancel": "Abbrechen",
+  "submit": "Aufteilungen speichern",
+  "axios": {
+    "start": {
+      "title": "Provision wird aktualisiert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Aufteilungen aktualisiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Provision konnte nicht aktualisiert werden",
+      "time": 3000
+    }
+  }
+}

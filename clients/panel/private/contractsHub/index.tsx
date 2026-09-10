@@ -15,6 +15,10 @@ import SaleSheetView from "@propertyManagementModule/clients/panel/private/sales
 import ReservationSheetView from "@propertyManagementModule/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx";
 import ContractsTableSection from "./ContractsTableSection.tsx";
 import ClientsTableSection from "./ClientsTableSection.tsx";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import Loader from "@coreModule/components/custom/loader.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type SheetState =
     | {type: "sale"; entity: Sale; unitId: string; unitName?: string}
@@ -24,6 +28,8 @@ type SheetState =
 function ContractsHubPage({resolveLanguageKey}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
     const [sheet, setSheet] = useState<SheetState>(null);
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([useAccess("sales"), useAccess("reservations")]);
 
     const openContractRow = useCallback(async (row: ContractRegistryRow) => {
         if (row.sourceType === "sale") {
@@ -78,6 +84,9 @@ function ContractsHubPage({resolveLanguageKey}: WithLanguageType) {
             unitName: row.unit?.name,
         });
     }, []);
+
+    if (accessHydrated === false) return <Loader />;
+    if (!canRead) return <Forbidden />;
 
     return (
         <div className="flex flex-col h-full overflow-hidden">

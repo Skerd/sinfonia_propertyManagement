@@ -52,6 +52,7 @@
   "price": "Price",
   "availability": "Availability",
   "status": "Status",
+  "unavailableNotes": "Unavailable notes",
   "unitStatusEnum": {
     "available_unit": "Available",
     "unavailable_unit": "Not Available",

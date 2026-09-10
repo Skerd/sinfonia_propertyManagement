@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
   "dialogTitle": "Ajouter une activité",
-  "dialogDescription": "Enregistrer une activité CRM pour ce prospect.",
+  "dialogDescription": "Enregistrez un contact. Cela ne change pas le statut du prospect.",
   "actionLabel": "Type d'activité",
   "actionPlaceholder": "Sélectionner le type d'activité",
   "notesLabel": "Notes",
@@ -13,8 +13,21 @@
     "emailed": "E-mail envoyé",
     "meeting": "Réunion",
     "site_visit": "Visite sur site",
-    "proposal_sent": "Proposition envoyée",
     "follow_up": "Suivi",
     "note": "Note"
+  },
+  "axios": {
+    "start": {
+      "title": "Ajout de l'activité…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Activité ajoutée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d'ajouter l'activité",
+      "time": 3000
+    }
   }
 }

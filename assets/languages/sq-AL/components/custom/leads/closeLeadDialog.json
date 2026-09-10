@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/closeLeadDialog.tsx",
+  "dialogTitle": "Shëno i fituar ose i humbur",
+  "dialogDescription": "Zgjidh nëse ky lead u fitua ose u humb. Fitimi nuk krijon rezervim.",
+  "outcomeLabel": "Rezultati",
+  "outcomePlaceholder": "Zgjidh i fituar ose i humbur",
+  "outcomes": {
+    "won": "I fituar",
+    "lost": "I humbur"
+  },
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënim opsional për këtë rezultat",
+  "lostReasonLabel": "Arsyeja e humbjes",
+  "lostReasonPlaceholder": "Pse u humb ky lead?",
+  "cancel": "Anulo",
+  "submit": "Ruaj rezultatin",
+  "submitWon": "Shëno i fituar",
+  "submitLost": "Shëno i humbur",
+  "axios": {
+    "start": {
+      "title": "Rezultati po ruhet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead-i u shënua i humbur",
+      "time": 3000
+    },
+    "won": {
+      "title": "Lead-i u shënua i fituar",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lead-i nuk mund të mbyllej",
+      "time": 3000
+    }
+  }
+}

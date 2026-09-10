@@ -21,6 +21,7 @@
   "assignedTo": "Assegnato a",
   "followUpDate": "Data di follow-up",
   "convertedAt": "Convertito il",
+  "lostReason": "Motivo della perdita",
   "notes": "Note",
   "activityLog": "Registro attività",
   "toggleReferenceListView": "Cambia visualizzazione",
@@ -61,7 +62,14 @@
     "follow_up": "Follow-up",
     "note": "Nota",
     "status_update": "Aggiornamento stato",
-    "created": "Creato"
+    "created": "Creato",
+    "marked_contacted": "Segnato come contattato",
+    "qualified": "Qualificato",
+    "marked_proposal": "Proposta registrata",
+    "marked_negotiation": "Spostato in negoziazione",
+    "marked_won": "Segnato come vinto",
+    "marked_lost": "Segnato come perso",
+    "reopened": "Riaperto"
   },
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",

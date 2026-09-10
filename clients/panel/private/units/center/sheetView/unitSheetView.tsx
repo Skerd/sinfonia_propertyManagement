@@ -9,6 +9,8 @@ import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/priva
 import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
+import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
+import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 
 export type UnitSheetViewOwnProps = {
     open: boolean;
@@ -36,6 +38,11 @@ function UnitSheetView({
     const access = useAccess("units");
     const viewConfig = useViewConfig("units", "sheet");
     const [sheetData, setSheetData] = useState<Record<string, unknown>>(unitProp || {_id: fetchId});
+    const [action, setAction] = useState("");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!unitProp) return;
@@ -44,13 +51,21 @@ function UnitSheetView({
 
     const asUnit = sheetData as Unit;
     const entityId = unitProp?._id ?? fetchId;
-    const domainUnitName = asUnit.name || asUnit.unitNumber || asUnit._id;
     const deleteLabel = unitDeleteConfirmLabel(access.read as Record<string, unknown> | undefined, asUnit);
+
+    const handleWorkflowSuccess = (updated?: Partial<Unit>) => {
+        if (updated) {
+            setSheetData((prev) => ({...prev, ...updated}));
+            onSheetRowPatched?.(updated);
+        }
+        setAction("");
+    };
 
     if (!viewConfig) return null;
     if (!entityId) return null;
 
     return (
+        <>
         <SheetViewRenderer
             config={viewConfig}
             data={sheetData}
@@ -72,9 +87,26 @@ function UnitSheetView({
             }}
             actionMenuAllowCustomChildren={true}
             actionMenuChildren={
-                <UnitDomainMenuItems unitId={asUnit._id} unitName={domainUnitName} />
+                <UnitDomainMenuItems unit={asUnit} onAction={setAction} />
             }
         />
+        {action === "markUnavailable" && (
+            <MarkUnavailableUnitDialog
+                open
+                onClose={() => setAction("")}
+                unit={asUnit}
+                onSuccess={handleWorkflowSuccess}
+            />
+        )}
+        {action === "markAvailable" && (
+            <MarkAvailableUnitDialog
+                open
+                onClose={() => setAction("")}
+                unit={asUnit}
+                onSuccess={handleWorkflowSuccess}
+            />
+        )}
+        </>
     );
 }
 

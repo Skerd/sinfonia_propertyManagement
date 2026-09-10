@@ -15,6 +15,7 @@
       "status": {
         "pending": "Në pritje",
         "pending_approval": "Në pritje të aprovimit",
+        "approved": "I aprovuar",
         "paid": "I paguar",
         "voided": "I anuluar"
       },

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markUnavailableUnitDialog.tsx",
+  "confirmTitle": "Shëno njësinë si të padisponueshme",
+  "confirmDescription": "Njësia hiqet nga tregu pa rezervim, shitje ose qira. Ju lutemi shpjegoni pse nuk është e disponueshme.",
+  "unavailableNotesLabel": "Shënime për padisponueshmërinë",
+  "unavailableNotesPlaceholder": "Shkruani pse kjo njësi nuk është e disponueshme…",
+  "cancel": "Anulo",
+  "confirm": "Shëno si të padisponueshme",
+  "axios": {
+    "start": {
+      "title": "Po shënohet njësia si e padisponueshme…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Njësia u shënua si e padisponueshme",
+      "time": 3000
+    },
+    "error": {
+      "title": "Njësia nuk mund të shënohej si e padisponueshme",
+      "time": 3000
+    }
+  }
+}

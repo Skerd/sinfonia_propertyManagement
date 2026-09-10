@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markAvailableUnitDialog.tsx",
+  "confirmTitle": "Shëno njësinë si të disponueshme",
+  "confirmDescription": "Njësia kthehet në treg dhe shënimet e padisponueshmërisë fshihen. Të vazhdohet?",
+  "cancel": "Anulo",
+  "confirm": "Shëno si të disponueshme",
+  "axios": {
+    "start": {
+      "title": "Po shënohet njësia si e disponueshme…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Njësia u shënua si e disponueshme",
+      "time": 3000
+    },
+    "error": {
+      "title": "Njësia nuk mund të shënohej si e disponueshme",
+      "time": 3000
+    }
+  }
+}

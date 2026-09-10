@@ -15,6 +15,7 @@
       "status": {
         "pending": "In attesa",
         "pending_approval": "In attesa di approvazione",
+        "approved": "Approvata",
         "paid": "Pagata",
         "voided": "Annullata"
       },

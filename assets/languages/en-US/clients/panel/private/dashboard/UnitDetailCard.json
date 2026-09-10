@@ -13,5 +13,6 @@
   "statusReserved": "Reserved",
   "statusSold": "Sold",
   "statusUnavailable": "Unavailable",
+  "unavailableNotes": "Unavailable notes",
   "statusUnknown": "Unknown"
 }

@@ -1,0 +1,23 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markUnavailableUnitDialog.tsx",
+  "confirmTitle": "Segna l'unità come non disponibile",
+  "confirmDescription": "L'unità viene tolta dal mercato senza prenotazione, vendita o locazione. Indica perché non è disponibile.",
+  "unavailableNotesLabel": "Note di indisponibilità",
+  "unavailableNotesPlaceholder": "Inserisci il motivo per cui questa unità non è disponibile…",
+  "cancel": "Annulla",
+  "confirm": "Segna come non disponibile",
+  "axios": {
+    "start": {
+      "title": "Contrassegnazione unità come non disponibile…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unità segnata come non disponibile",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile segnare l'unità come non disponibile",
+      "time": 3000
+    }
+  }
+}

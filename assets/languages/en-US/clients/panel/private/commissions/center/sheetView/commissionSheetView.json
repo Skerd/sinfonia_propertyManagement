@@ -18,12 +18,17 @@
       "status": {
         "pending": "Pending",
         "pending_approval": "Pending approval",
+        "approved": "Approved",
         "paid": "Paid",
         "voided": "Voided"
       },
       "sourceType": {
         "sale": "Sale",
         "reservation": "Reservation"
+      },
+      "basis": {
+        "depositAmount": "Reservation deposit",
+        "finalPrice": "Sale final price"
       }
     }
   },
@@ -41,6 +46,16 @@
   "currency": "Currency",
   "paidAt": "Paid at",
   "voidedAt": "Voided at",
+  "recordedByActionUser": "Recorded by",
+  "paymentReference": "Payment reference",
+  "paymentReceiptMediaId": "Payment receipt",
+  "splits": "Splits",
+  "splitAgent": "Split agent",
+  "splitLabel": "Split label",
+  "unit": "Unit",
+  "compactView": "Compact",
+  "cardsView": "Cards",
+  "toggleReferenceListView": "Toggle view",
   "modelType": "Commission",
   "lifecycle": "Lifecycle",
   "createdAt": "Created at",

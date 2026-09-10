@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/setCommissionSplitsDialog.tsx",
+  "dialogTitle": "Définir les répartitions",
+  "dialogDescription": "Répartissez cette commission entre agents. Les montants ne doivent pas dépasser le total. Enregistrer sans lignes efface les répartitions.",
+  "totalLabel": "Commission",
+  "allocatedLabel": "Alloué",
+  "remainingLabel": "Restant",
+  "exceedsTotal": "Les montants dépassent le total de la commission.",
+  "agentLabel": "Agent",
+  "agentPlaceholder": "Sélectionner un agent",
+  "labelLabel": "Libellé",
+  "labelPlaceholder": "Libellé facultatif",
+  "rateLabel": "Taux %",
+  "amountLabel": "Montant",
+  "addSplit": "Ajouter une répartition",
+  "cancel": "Annuler",
+  "submit": "Enregistrer",
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Répartitions mises à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la commission",
+      "time": 3000
+    }
+  }
+}

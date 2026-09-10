@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/approveCommissionPaymentDialog.tsx",
+  "dialogTitle": "Approuver ou refuser le paiement",
+  "approveDescription": "L'approbation autorise le versement. La commission ne peut plus être renvoyée en approbation ; l'étape suivante est de la marquer payée.",
+  "rejectDescription": "Le refus annule la commission, enregistre l'heure et notifie l'agent.",
+  "decisionLabel": "Décision",
+  "decisionPlaceholder": "Choisir une décision",
+  "decisionApproved": "Approuver",
+  "decisionRejected": "Refuser et annuler",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Notes facultatives",
+  "cancel": "Annuler",
+  "submitApprove": "Approuver",
+  "submitReject": "Refuser et annuler",
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission mise à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la commission",
+      "time": 3000
+    }
+  }
+}

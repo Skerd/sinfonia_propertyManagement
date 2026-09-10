@@ -18,12 +18,17 @@
       "status": {
         "pending": "In attesa",
         "pending_approval": "In attesa di approvazione",
+        "approved": "Approvata",
         "paid": "Pagata",
         "voided": "Annullata"
       },
       "sourceType": {
         "sale": "Vendita",
         "reservation": "Prenotazione"
+      },
+      "basis": {
+        "depositAmount": "Deposito di prenotazione",
+        "finalPrice": "Prezzo finale di vendita"
       }
     }
   },
@@ -41,6 +46,16 @@
   "currency": "Valuta",
   "paidAt": "Pagata il",
   "voidedAt": "Annullata il",
+  "recordedByActionUser": "Registrata da",
+  "paymentReference": "Riferimento di pagamento",
+  "paymentReceiptMediaId": "Ricevuta di pagamento",
+  "splits": "Suddivisioni",
+  "splitAgent": "Agente della suddivisione",
+  "splitLabel": "Etichetta suddivisione",
+  "unit": "Unità",
+  "compactView": "Compatta",
+  "cardsView": "Schede",
+  "toggleReferenceListView": "Cambia vista",
   "modelType": "Commissione",
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creata il",

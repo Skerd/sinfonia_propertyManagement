@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/approveCommissionPaymentDialog.tsx",
+  "dialogTitle": "Approve or reject payment",
+  "approveDescription": "Approving clears this commission for payout. It cannot be sent for approval again; the next step is mark paid.",
+  "rejectDescription": "Rejecting voids this commission, records the void time, and notifies the agent.",
+  "decisionLabel": "Decision",
+  "decisionPlaceholder": "Choose a decision",
+  "decisionApproved": "Approve",
+  "decisionRejected": "Reject and void",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional notes",
+  "cancel": "Cancel",
+  "submitApprove": "Approve",
+  "submitReject": "Reject and void",
+  "axios": {
+    "start": {
+      "title": "Updating commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update commission",
+      "time": 3000
+    }
+  }
+}

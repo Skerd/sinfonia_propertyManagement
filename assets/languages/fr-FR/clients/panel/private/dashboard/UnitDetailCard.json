@@ -13,5 +13,6 @@
   "statusReserved": "Réservé",
   "statusSold": "Vendu",
   "statusUnavailable": "Indisponible",
+  "unavailableNotes": "Notes d'indisponibilité",
   "statusUnknown": "Inconnu"
 }

@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markAvailableUnitDialog.tsx",
+  "confirmTitle": "Segna l'unità come disponibile",
+  "confirmDescription": "L'unità torna sul mercato e le note di indisponibilità vengono cancellate. Continuare?",
+  "cancel": "Annulla",
+  "confirm": "Segna come disponibile",
+  "axios": {
+    "start": {
+      "title": "Contrassegnazione unità come disponibile…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Unità segnata come disponibile",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile segnare l'unità come disponibile",
+      "time": 3000
+    }
+  }
+}

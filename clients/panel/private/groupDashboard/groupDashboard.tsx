@@ -28,6 +28,9 @@ import {
     ShoppingBag,
     Wallet,
 } from "lucide-react";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type GroupDashboardProps = WithLanguageType & WithAxiosType<GroupDashboardResponse, Record<string, never>>;
 
@@ -55,10 +58,22 @@ function GroupDashboard({
     error,
     onFilterChange,
 }: GroupDashboardProps) {
-    useEffect(() => {
-        onFilterChange({});
-    }, []);
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("units"),
+        useAccess("sales"),
+        useAccess("commissions"),
+        useAccess("leases"),
+        useAccess("snags"),
+    ]);
 
+    useEffect(() => {
+        if (accessHydrated === false || !canRead) return;
+        onFilterChange({});
+    }, [accessHydrated, canRead]);
+
+    if (accessHydrated === false) return <Loader/>;
+    if (!canRead) return <Forbidden />;
     if (loading && !data) return <Loader/>;
 
     if (error) {

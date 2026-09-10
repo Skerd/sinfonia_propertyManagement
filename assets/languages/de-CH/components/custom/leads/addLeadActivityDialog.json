@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
   "dialogTitle": "Aktivität hinzufügen",
-  "dialogDescription": "CRM-Aktivität für diesen Lead erfassen.",
+  "dialogDescription": "Erfassen Sie einen Kontaktpunkt. Der Lead-Status ändert sich dabei nicht.",
   "actionLabel": "Aktivitätstyp",
   "actionPlaceholder": "Aktivitätstyp auswählen",
   "notesLabel": "Notizen",
@@ -13,8 +13,21 @@
     "emailed": "E-Mail gesendet",
     "meeting": "Besprechung",
     "site_visit": "Besichtigung",
-    "proposal_sent": "Angebot gesendet",
     "follow_up": "Nachfassung",
     "note": "Notiz"
+  },
+  "axios": {
+    "start": {
+      "title": "Aktivität wird hinzugefügt…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Aktivität hinzugefügt",
+      "time": 3000
+    },
+    "error": {
+      "title": "Aktivität konnte nicht hinzugefügt werden",
+      "time": 3000
+    }
   }
 }

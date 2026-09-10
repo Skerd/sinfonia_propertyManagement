@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/units/markAvailableUnitDialog.tsx",
+  "confirmTitle": "Einheit als verfügbar markieren",
+  "confirmDescription": "Die Einheit kommt wieder auf den Markt und der Hinweis zur Nichtverfügbarkeit wird gelöscht. Fortfahren?",
+  "cancel": "Abbrechen",
+  "confirm": "Als verfügbar markieren",
+  "axios": {
+    "start": {
+      "title": "Einheit wird als verfügbar markiert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Einheit als verfügbar markiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Einheit konnte nicht als verfügbar markiert werden",
+      "time": 3000
+    }
+  }
+}

@@ -34,15 +34,20 @@
     "name": "Referenca",
     "notes": "Shënime",
     "paidAt": "Paguar më",
-    "paymentReceiptMediaId": "ID e medias së faturës së pagesës",
+    "paymentReceiptMediaId": "Fatura e pagesës",
     "paymentReference": "Referenca e pagesës",
     "ratePercent": "Norma %",
-    "recordedByActionUser": "Regjistruar nga përdoruesi i veprimit",
+    "recordedByActionUser": "Regjistruar nga",
     "reservation": "Rezervimi",
     "sale": "Shitje",
     "sourceId": "ID e burimit",
     "sourceType": "Lloji i burimit",
-    "splits": "Ndarjet",
+    "splits": {
+      "agent": "Agjenti i ndarjes",
+      "label": "Etiketa e ndarjes",
+      "ratePercent": "Norma e ndarjes %",
+      "amount": "Shuma e ndarjes"
+    },
     "status": "Statusi",
     "updatedAt": "Përditësuar më",
     "voidedAt": "Anuluar më",
@@ -50,6 +55,7 @@
     "edifice": "Ndërtesa",
     "floor": "Kati",
     "unit": "Njësia",
+    "company": "Kompania",
     "!enums": {
       "sourceType": {
         "sale": "Shitje",
@@ -58,8 +64,13 @@
       "status": {
         "pending": "Në pritje",
         "pending_approval": "Në pritje të aprovimit",
+        "approved": "I aprovuar",
         "paid": "I paguar",
         "voided": "I anuluar"
+      },
+      "basis": {
+        "depositAmount": "Depoziti i rezervimit",
+        "finalPrice": "Çmimi përfundimtar i shitjes"
       }
     }
   },
@@ -69,14 +80,14 @@
   "help": {
     "ariaLabel": "Rreth Komisioneve",
     "title": "Rreth Komisioneve",
-    "overview": "Një komision është rreshti i pagesës së agjentit i krijuar nga një rezervim ose një shitje. Ky është libri, jo raporti i agjentëve (pamje performancë e periudhës). Statusi lëviz në pritje → në pritje aprovimi → i paguar, ose i anuluar kur marrëveshja burim anulohet ose një pagesë kthehet.",
+    "overview": "Një komision është rreshti i pagesës së agjentit i krijuar nga një rezervim ose një shitje. Ky është libri, jo raporti i agjentëve (pamje performancë e periudhës). Statusi lëviz në pritje → në pritje aprovimi → i aprovuar → i paguar, ose i anuluar kur marrëveshja burim anulohet ose një pagesë kthehet.",
     "sections": [
       {
         "title": "Çfarë mban një komision",
         "items": [
           "Lloji i burimit: rezervim ose shitje, plus dosja burim.",
           "Agjenti, shumat, valuta, tarifat e përdorura kur u regjistrua.",
-          "Statusi: në pritje, në pritje aprovimi, i paguar, i anuluar.",
+          "Statusi: në pritje, në pritje aprovimi, i aprovuar, i paguar, i anuluar.",
           "Dëshmi / shënime sipas mënyrës se si rolet tuaja i ekspozojnë fushat."
         ]
       },

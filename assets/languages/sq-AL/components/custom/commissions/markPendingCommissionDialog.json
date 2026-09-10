@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/markPendingCommissionDialog.tsx",
+  "pendingConfirmTitle": "Të rikthehet në pritje?",
+  "pendingConfirmDescription": "Kjo pastron statusin e paguar dhe e kthen komisionin në pritje.",
+  "cancel": "Anulo",
+  "confirmPending": "Shëno në pritje",
+  "axios": {
+    "start": {
+      "title": "Po përditësohet komisioni",
+      "time": 3000
+    },
+    "success": {
+      "title": "Komisioni u vendos në pritje",
+      "time": 3000
+    },
+    "error": {
+      "title": "Komisioni nuk mund të përditësohej",
+      "time": 3000
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/leadTransitionDialog.tsx",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Note facultative pour ce changement de statut",
+  "cancel": "Annuler",
+  "titles": {
+    "markContacted": "Marquer contacté",
+    "qualify": "Qualifier le prospect",
+    "markProposal": "Marquer proposition",
+    "markNegotiation": "Marquer négociation",
+    "reopen": "Rouvrir le prospect"
+  },
+  "descriptions": {
+    "markContacted": "Enregistrez que le contact a été établi. Le prospect doit déjà avoir un e-mail ou un téléphone.",
+    "qualify": "Qualifiez ce prospect. Un e-mail ou un numéro de téléphone doit déjà être défini.",
+    "markProposal": "Enregistrez qu'une proposition a été envoyée. Le prospect doit déjà être qualifié.",
+    "markNegotiation": "Passez ce prospect en négociation. Une proposition doit déjà être enregistrée.",
+    "reopen": "Rouvrez ce prospect perdu et replacez-le en contacté. Le motif de perte est retiré du prospect et conservé dans le journal d'activité."
+  },
+  "submit": {
+    "markContacted": "Marquer contacté",
+    "qualify": "Qualifier",
+    "markProposal": "Marquer proposition",
+    "markNegotiation": "Marquer négociation",
+    "reopen": "Rouvrir"
+  },
+  "axios": {
+    "start": {
+      "title": "Mise à jour du prospect…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Prospect mis à jour",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour ce prospect",
+      "time": 3000
+    },
+    "markContacted": {
+      "title": "Prospect marqué comme contacté",
+      "time": 3000
+    },
+    "qualify": {
+      "title": "Prospect qualifié",
+      "time": 3000
+    },
+    "markProposal": {
+      "title": "Proposition enregistrée",
+      "time": 3000
+    },
+    "markNegotiation": {
+      "title": "Prospect passé en négociation",
+      "time": 3000
+    },
+    "reopen": {
+      "title": "Prospect rouvert",
+      "time": 3000
+    }
+  }
+}

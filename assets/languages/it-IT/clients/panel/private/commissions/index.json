@@ -34,15 +34,20 @@
     "name": "Riferimento",
     "notes": "Note",
     "paidAt": "Pagata il",
-    "paymentReceiptMediaId": "ID media ricevuta di pagamento",
+    "paymentReceiptMediaId": "Ricevuta di pagamento",
     "paymentReference": "Riferimento di pagamento",
     "ratePercent": "Aliquota %",
-    "recordedByActionUser": "Registrata dall'utente azione",
+    "recordedByActionUser": "Registrata da",
     "reservation": "Prenotazione",
     "sale": "Vendita",
     "sourceId": "ID origine",
     "sourceType": "Tipo di origine",
-    "splits": "Suddivisioni",
+    "splits": {
+      "agent": "Agente della suddivisione",
+      "label": "Etichetta suddivisione",
+      "ratePercent": "Aliquota suddivisione %",
+      "amount": "Importo suddivisione"
+    },
     "status": "Stato",
     "updatedAt": "Aggiornata il",
     "voidedAt": "Annullata il",
@@ -50,6 +55,7 @@
     "edifice": "Edificio",
     "floor": "Piano",
     "unit": "Unità",
+    "company": "Azienda",
     "!enums": {
       "sourceType": {
         "sale": "Vendita",
@@ -58,8 +64,13 @@
       "status": {
         "pending": "In attesa",
         "pending_approval": "In attesa di approvazione",
+        "approved": "Approvata",
         "paid": "Pagata",
         "voided": "Annullata"
+      },
+      "basis": {
+        "depositAmount": "Deposito di prenotazione",
+        "finalPrice": "Prezzo finale di vendita"
       }
     }
   },
@@ -69,14 +80,14 @@
   "help": {
     "ariaLabel": "Informazioni sulle commissioni",
     "title": "Informazioni sulle commissioni",
-    "overview": "Una commissione è la riga di erogazione all'agente nata da una prenotazione o una vendita. È il libro mastro, non il report agenti (vista di performance di periodo). Lo stato avanza in sospeso → in attesa di approvazione → pagata, oppure annullata quando il deal fonte è annullato o un pagamento è stornato.",
+    "overview": "Una commissione è la riga di erogazione all'agente nata da una prenotazione o una vendita. È il libro mastro, non il report agenti (vista di performance di periodo). Lo stato avanza in sospeso → in attesa di approvazione → approvata → pagata, oppure annullata quando il deal fonte è annullato o un pagamento è stornato.",
     "sections": [
       {
         "title": "Cosa contiene una commissione",
         "items": [
           "Tipo fonte: prenotazione o vendita, più il record fonte.",
           "Agente, importi, valuta, tassi usati al momento della registrazione.",
-          "Stato: in sospeso, in attesa di approvazione, pagata, annullata.",
+          "Stato: in sospeso, in attesa di approvazione, approvata, pagata, annullata.",
           "Prove / note a seconda di come i ruoli espongono i campi."
         ]
       },

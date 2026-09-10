@@ -28,6 +28,10 @@ import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custo
 import LeasesTableSection from "./LeasesTableSection.tsx";
 import RentalPaymentsTableSection from "./RentalPaymentsTableSection.tsx";
 import RentalsCalendarTab from "./rentalsCalendarTab.tsx";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import Loader from "@coreModule/components/custom/loader.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type SheetState =
     | {type: "lease"; entity: Lease}
@@ -38,6 +42,8 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
     const [sheet, setSheet] = useState<SheetState>(null);
     const [action, setAction] = useState("");
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([useAccess("leases"), useAccess("rentalpayments")]);
 
     const closeSheet = useCallback(() => {
         setSheet(null);
@@ -73,6 +79,9 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                 : prev,
         );
     }, []);
+
+    if (accessHydrated === false) return <Loader />;
+    if (!canRead) return <Forbidden />;
 
     return (
         <div className="flex flex-col h-full overflow-hidden">

@@ -7,6 +7,8 @@ import {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/privat
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import LeadRowMenuExtras from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadRowMenuExtras.tsx";
+import LeadWorkflowDialogs from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadWorkflowDialogs.tsx";
 
 export type LeadSheetViewOwnProps = {
     open: boolean;
@@ -15,6 +17,8 @@ export type LeadSheetViewOwnProps = {
     hideActions?: boolean;
     onDelete?: (response?: DeletedData) => void;
     onRestore?: () => void;
+    onModifySuccess?: (updated?: Lead) => void;
+    onSheetRowPatched?: (row: Record<string, unknown>) => void;
     fetchId?: string;
 };
 
@@ -34,12 +38,19 @@ function LeadSheetView({
     hideActions = false,
     onDelete = () => {},
     onRestore = () => {},
+    onModifySuccess,
+    onSheetRowPatched,
     fetchId,
 }: LeadSheetViewOwnProps & WithLanguageType) {
 
     const [sheetData, setSheetData] = useState<Record<string, any>>(leadProp || {_id: fetchId});
+    const [action, setAction] = useState("");
     const access = useAccess("leads");
     const viewConfig = useViewConfig("leads", "sheet");
+
+    useEffect(() => {
+        if (!open) setAction("");
+    }, [open]);
 
     useEffect(() => {
         if (!leadProp) return;
@@ -47,11 +58,22 @@ function LeadSheetView({
     }, [leadProp]);
 
     const entityId = leadProp?._id ?? fetchId;
+    const asLead = sheetData as Lead;
 
     if (!viewConfig) return null;
     if (!entityId) return null;
 
+    const handleWorkflowSuccess = (updated?: Lead) => {
+        if (updated) {
+            setSheetData(updated);
+            onModifySuccess?.(updated);
+            onSheetRowPatched?.(updated);
+        }
+        setAction("");
+    };
+
     return (
+        <>
         <SheetViewRenderer
             config={viewConfig}
             url="/api/realEstate/lead/single"
@@ -65,8 +87,26 @@ function LeadSheetView({
             hideActions={hideActions}
             onDelete={onDelete}
             onRestore={onRestore}
-            editPath={leadEditPath(sheetData as Lead)}
+            editPath={leadEditPath(asLead)}
+            actionMenuAllowCustomChildren={true}
+            onSheetRowPatched={(row) => {
+                setSheetData(row);
+                onSheetRowPatched?.(row);
+            }}
+            actionMenuChildren={
+                <LeadRowMenuExtras
+                    lead={asLead}
+                    onAction={setAction}
+                />
+            }
         />
+        <LeadWorkflowDialogs
+            action={action}
+            lead={asLead}
+            onClose={() => setAction("")}
+            onSuccess={handleWorkflowSuccess}
+        />
+        </>
     );
 }
 

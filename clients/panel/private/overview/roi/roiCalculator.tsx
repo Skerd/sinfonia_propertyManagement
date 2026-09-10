@@ -20,6 +20,9 @@ import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import RoiSummaryCharts from "./roiSummaryCharts.tsx";
 import {downloadRoiReportPdf, type RoiReportPdfLabels} from "./roiReportPdf.ts";
+import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
+import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type RoiFilters = {
     projectId: string;
@@ -73,6 +76,13 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
     const [result,     setResult]     = useState<RoiResponse | null>(null);
     const [error,      setError]      = useState<string | null>(null);
     const [exporting,  setExporting]  = useState(false);
+    const accessHydrated = useAccessHydrated();
+    const canRead = hasAnyAccessRead([
+        useAccess("units"),
+        useAccess("unitcosts"),
+        useAccess("sales"),
+        useAccess("leases"),
+    ]);
 
     const filters: RoiFilters = useMemo(
         () => ({projectId, edificeIds, floorIds, unitIds}),
@@ -100,7 +110,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
     );
 
     const calcRoi = useCallback(async (next: RoiFilters) => {
-        if (!hasRoiScope(next)) return;
+        if (!canRead || !hasRoiScope(next)) return;
         setLoading(true);
         setError(null);
         setResult(null);
@@ -117,7 +127,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
         } finally {
             setLoading(false);
         }
-    }, [rk]);
+    }, [rk, canRead]);
 
     function handleProjectChange(id: string) {
         const next: RoiFilters = {projectId: id, edificeIds: [], floorIds: [], unitIds: []};
@@ -194,6 +204,9 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
         },
         noResults: rk("noResults"),
     }), [resolveLanguageKey]);
+
+    if (accessHydrated === false) return <Loader />;
+    if (!canRead) return <Forbidden />;
 
     async function handleExportPdf() {
         if (!result) return;

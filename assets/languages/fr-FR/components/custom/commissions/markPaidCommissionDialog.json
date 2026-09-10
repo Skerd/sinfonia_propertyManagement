@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/markPaidCommissionDialog.tsx",
+  "dialogTitle": "Marquer la commission comme payée",
+  "dialogDescription": "Passe la commission en payée. La référence et le reçu sont facultatifs.",
+  "paymentReferenceLabel": "Référence de paiement",
+  "paymentReferencePlaceholder": "Référence bancaire ou de reçu facultative",
+  "receiptLabel": "Reçu de paiement",
+  "addReceipt": "Ajouter un reçu",
+  "cancel": "Annuler",
+  "confirmPaid": "Marquer comme payée",
+  "axios": {
+    "start": {
+      "title": "Mise à jour de la commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission marquée comme payée",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible de mettre à jour la commission",
+      "time": 3000
+    }
+  }
+}

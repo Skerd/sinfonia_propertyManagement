@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/requestApprovalCommissionDialog.tsx",
+  "confirmTitle": "Të kërkohet miratim?",
+  "confirmDescription": "Komisioni kalon në pritje të miratimit. Nuk shënohet si i paguar.",
+  "cancel": "Anulo",
+  "confirm": "Kërko miratim",
+  "axios": {
+    "start": {
+      "title": "Po përditësohet komisioni",
+      "time": 3000
+    },
+    "success": {
+      "title": "Miratimi u kërkua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Komisioni nuk mund të përditësohej",
+      "time": 3000
+    }
+  }
+}

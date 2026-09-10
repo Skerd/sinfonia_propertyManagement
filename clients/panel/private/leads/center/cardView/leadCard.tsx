@@ -5,8 +5,8 @@ import {IconBuilding, IconCalendar, IconCurrencyDollar, IconDoor, IconPhone, Ico
 import {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import LeadSheetView from "@propertyManagementModule/clients/panel/private/leads/center/sheetView/leadSheetView.tsx";
-import AddLeadActivity, {ADD_LEAD_ACTIVITY_ACTION} from "@propertyManagementModule/clients/panel/private/leads/center/actions/addActivity.tsx";
-import AddLeadActivityDialog from "@propertyManagementModule/components/custom/leads/addLeadActivityDialog.tsx";
+import LeadRowMenuExtras from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadRowMenuExtras.tsx";
+import LeadWorkflowDialogs from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadWorkflowDialogs.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
@@ -134,7 +134,7 @@ type LeadCardProps = WithLanguageType & {
     hideActions?: boolean;
     onDelete?: (deletedLead?: Lead, response?: DeletedData) => void;
     onRestore?: () => void;
-    onActivitySuccess?: (updated?: Lead) => void;
+    onWorkflowSuccess?: (updated?: Lead) => void;
     sheetOnly?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<Lead> | null>;
 };
@@ -146,7 +146,7 @@ function LeadCard({
     hideActions = false,
     onDelete,
     onRestore,
-    onActivitySuccess,
+    onWorkflowSuccess,
     sheetOnly = false,
     innerRef,
 }: LeadCardProps) {
@@ -169,21 +169,24 @@ function LeadCard({
             failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="firstName"
             innerRef={innerRef}
-            sheetProps={() => ({fetchId})}
-            extraDialogs={({action, setAction, entity}) => (
-                <>
-                    {action === ADD_LEAD_ACTIVITY_ACTION && (
-                        <AddLeadActivityDialog
-                            open
-                            onClose={() => setAction("")}
-                            lead={entity}
-                            onSuccess={(updated?: Lead) => {
-                                onActivitySuccess?.(updated);
-                                setAction("");
-                            }}
-                        />
-                    )}
-                </>
+            sheetProps={({entity, setEntity}) => ({
+                fetchId,
+                onModifySuccess: (updated?: Lead) => {
+                    if (updated) setEntity(updated);
+                    onWorkflowSuccess?.(updated);
+                },
+            })}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
+                <LeadWorkflowDialogs
+                    action={action}
+                    lead={entity}
+                    onClose={() => setAction("")}
+                    onSuccess={(updated?: Lead) => {
+                        if (updated) setEntity(updated);
+                        onWorkflowSuccess?.(updated);
+                        setAction("");
+                    }}
+                />
             )}
         >
             {({entity, setAction}) => {
@@ -204,7 +207,7 @@ function LeadCard({
                                 ) : undefined
                             }
                         >
-                            <AddLeadActivity lead={entity} onAction={setAction} />
+                            <LeadRowMenuExtras lead={entity} onAction={setAction} />
                         </EntityCard.Header>
                         {hasBadges && (
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />

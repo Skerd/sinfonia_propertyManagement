@@ -10,8 +10,8 @@ import {IconUserPlus} from "@tabler/icons-react";
 import type {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import LeadCard from "@propertyManagementModule/clients/panel/private/leads/center/cardView/leadCard.tsx";
-import AddLeadActivity, {ADD_LEAD_ACTIVITY_ACTION} from "@propertyManagementModule/clients/panel/private/leads/center/actions/addActivity.tsx";
-import AddLeadActivityDialog from "@propertyManagementModule/components/custom/leads/addLeadActivityDialog.tsx";
+import LeadRowMenuExtras from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadRowMenuExtras.tsx";
+import LeadWorkflowDialogs from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadWorkflowDialogs.tsx";
 
 function buildLeadEditPath(lead: Lead) {
     const params = new URLSearchParams();
@@ -61,6 +61,7 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
                 {value: "event",     label: resolveLanguageKey("fields.!enums.source.event")     as string},
                 {value: "cold_call", label: resolveLanguageKey("fields.!enums.source.cold_call") as string},
                 {value: "walk_in",   label: resolveLanguageKey("fields.!enums.source.walk_in")   as string},
+                {value: "chat",      label: resolveLanguageKey("fields.!enums.source.chat")      as string},
                 {value: "other",     label: resolveLanguageKey("fields.!enums.source.other")     as string},
             ],
         },
@@ -94,28 +95,25 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
             cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderActionMenuChildren={(lead, bindRowAction) => (
-                <AddLeadActivity lead={lead} onAction={bindRowAction} />
+                <LeadRowMenuExtras lead={lead} onAction={bindRowAction} />
             )}
-            renderFloatingModals={({action, entity, resetAction, listRef}) => {
-                if (action !== ADD_LEAD_ACTIVITY_ACTION) return null;
-                return (
-                    <AddLeadActivityDialog
-                        open
-                        onClose={resetAction}
-                        lead={entity}
-                        onSuccess={(updated?: Lead) => {
-                            if (updated) listRef.current?.updateRow?.(updated._id, updated);
-                            resetAction();
-                        }}
-                    />
-                );
-            }}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => (
+                <LeadWorkflowDialogs
+                    action={action}
+                    lead={entity}
+                    onClose={resetAction}
+                    onSuccess={(updated?: Lead) => {
+                        if (updated) listRef.current?.updateRow?.(updated._id, updated);
+                        resetAction();
+                    }}
+                />
+            )}
             renderCard={(lead, onDelete, onRestore, listRef) => (
                 <LeadCard
                     lead={lead}
                     onDelete={(row: Lead | undefined, response?: DeletedData) => onDelete(row, response)}
                     onRestore={() => onRestore(lead)}
-                    onActivitySuccess={(updated?: Lead) =>
+                    onWorkflowSuccess={(updated?: Lead) =>
                         updated && listRef.current?.updateRow?.(updated._id, updated)
                     }
                 />

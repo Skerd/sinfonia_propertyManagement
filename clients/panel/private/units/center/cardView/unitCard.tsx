@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
 import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
-import {IconBath, IconDoor, IconGrid4x4, IconListDetails, IconStack, IconTag} from "@tabler/icons-react";
+import {IconAlignLeft, IconBath, IconDoor, IconGrid4x4, IconListDetails, IconStack, IconTag} from "@tabler/icons-react";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {UnitStatusBadge, resolveUnitStatusKey} from "@propertyManagementModule/components/custom/cards/UnitStatusBadge.tsx";
@@ -12,6 +12,8 @@ import {buildUnitEditPath} from "@propertyManagementModule/clients/panel/private
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
+import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -57,8 +59,24 @@ function UnitCard({
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity, setEntity}) => {
+                const handleModify = (updated?: Partial<Unit>) => {
+                    if (updated) setEntity({...entity, ...updated});
+                    setAction("");
+                };
+                return (
+                    <>
+                        {action === "markUnavailable" && (
+                            <MarkUnavailableUnitDialog open onClose={() => setAction("")} unit={entity} onSuccess={handleModify} />
+                        )}
+                        {action === "markAvailable" && (
+                            <MarkAvailableUnitDialog open onClose={() => setAction("")} unit={entity} onSuccess={handleModify} />
+                        )}
+                    </>
+                );
+            }}
         >
-            {({entity}) => {
+            {({entity, setAction}) => {
                 const unitStatus =
                     entity.status ??
                     (entity.isAvailable != null
@@ -91,10 +109,7 @@ function UnitCard({
                                 ) : undefined
                             }
                         >
-                            <UnitDomainMenuItems
-                                unitId={entity._id}
-                                unitName={entity.name || entity.unitNumber || entity._id}
-                            />
+                            <UnitDomainMenuItems unit={entity} onAction={setAction} />
                         </EntityCard.Header>
                         <EntityCard.Body>
                             {!small && (
@@ -147,6 +162,15 @@ function UnitCard({
                                 type="currency"
                                 value={{amount: entity.price, currency: entity.priceCurrency}}
                             />
+                            {entity.unavailableNotes ? (
+                                <DisplayRow
+                                    icon={IconAlignLeft}
+                                    label={resolveLanguageKey("unavailableNotes")}
+                                    tooltip={resolveLanguageKey("unavailableNotes")}
+                                    path="unavailableNotes"
+                                    value={entity.unavailableNotes}
+                                />
+                            ) : null}
                             <DisplayRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("features.balcony")}

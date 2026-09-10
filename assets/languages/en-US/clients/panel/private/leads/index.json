@@ -69,19 +69,19 @@
         "title": "What a lead holds",
         "items": [
           "First name (required), optional last name, email, phone.",
-          "Status: new → contacted → qualified → proposal → negotiation → won or lost.",
+          "Status moves only through actions (contacted, qualify, proposal, negotiation, won, lost, reopen) — not the edit form.",
           "Source: website, referral, social, event, cold call, walk-in, chat, or other.",
           "Interest: partnerships, investments, platform support, reservation, or other.",
           "Optional project interest and unit interest — what they asked about, not a hold.",
           "Optional budget and budget currency, free-text notes, assigned agent, follow-up date.",
-          "Activity log — timestamped notes from the “add activity” action (who did what)."
+          "Activity log — each status change and manual note, with who did it and when. Reopening a lost lead clears the lost reason on the record and keeps it in the log."
         ]
       },
       {
         "title": "On this page",
         "items": [
           "Create a lead as soon as someone enquires. Assign an agent and set a follow-up date if you work a queue.",
-          "Open the card to move status, add notes, and log activity.",
+          "Use the row or sheet menu to advance status, mark won or lost, and log activity.",
           "Filter by status, source, project, assignee.",
           "Soft delete can be restored. It does not cancel reservations that were created later for the same person."
         ]

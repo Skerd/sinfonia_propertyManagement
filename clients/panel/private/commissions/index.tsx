@@ -5,6 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import CommissionCard from "@propertyManagementModule/clients/panel/private/commissions/center/cardView/commissionCard.tsx";
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
+import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionWorkflowDialogs.tsx";
 import CommissionSheetView from "@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx";
 import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
@@ -51,6 +52,7 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
             enumValues: [
                 {value: "pending",            label: resolveLanguageKey("fields.!enums.status.pending")  as string},
                 {value: "pending_approval",   label: resolveLanguageKey("fields.!enums.status.pending_approval") as string},
+                {value: "approved",           label: resolveLanguageKey("fields.!enums.status.approved") as string},
                 {value: "paid",               label: resolveLanguageKey("fields.!enums.status.paid")     as string},
                 {value: "voided",             label: resolveLanguageKey("fields.!enums.status.voided")   as string},
             ],
@@ -62,6 +64,15 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
             enumValues: [
                 {value: "sale",        label: resolveLanguageKey("fields.!enums.sourceType.sale")        as string},
                 {value: "reservation", label: resolveLanguageKey("fields.!enums.sourceType.reservation") as string},
+            ],
+        },
+        {
+            field: "basis",
+            label: resolveLanguageKey("fields.basis") as string,
+            type: COLUMN_TYPE.ENUM,
+            enumValues: [
+                {value: "depositAmount", label: resolveLanguageKey("fields.!enums.basis.depositAmount") as string},
+                {value: "finalPrice",    label: resolveLanguageKey("fields.!enums.basis.finalPrice")   as string},
             ],
         },
     ], [resolveLanguageKey]);
@@ -90,10 +101,18 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
                     }
                 />
             )}
-            renderActionMenuChildren={(commission, _bind, helpers) => (
-                <CommissionRowMenuExtras
-                    commission={commission}
-                    onModify={(updated?: Commission) => updated && helpers.replaceRow(updated)}
+            renderActionMenuChildren={(commission, bindRowAction) => (
+                <CommissionRowMenuExtras commission={commission} onAction={bindRowAction} />
+            )}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => (
+                <CommissionWorkflowDialogs
+                    action={action}
+                    commission={entity}
+                    onClose={resetAction}
+                    onSuccess={(updated?: Commission) => {
+                        if (updated) listRef.current?.updateRow?.(updated._id, updated);
+                        resetAction();
+                    }}
                 />
             )}
             renderSheet={({entity, open, onOpenChange, listRef}) => (

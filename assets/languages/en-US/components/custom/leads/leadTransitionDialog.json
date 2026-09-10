@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/leadTransitionDialog.tsx",
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional note for this status change",
+  "cancel": "Cancel",
+  "titles": {
+    "markContacted": "Mark contacted",
+    "qualify": "Qualify lead",
+    "markProposal": "Mark proposal",
+    "markNegotiation": "Mark negotiation",
+    "reopen": "Reopen lead"
+  },
+  "descriptions": {
+    "markContacted": "Record that you have made contact. The lead must already have an email or phone number.",
+    "qualify": "Qualify this lead. An email or phone number must already be set.",
+    "markProposal": "Record that a proposal was sent. The lead must already be qualified.",
+    "markNegotiation": "Move this lead into negotiation. A proposal must already be recorded.",
+    "reopen": "Reopen this lost lead and move it back to contacted. The lost reason is cleared from the lead and kept in the activity log."
+  },
+  "submit": {
+    "markContacted": "Mark contacted",
+    "qualify": "Qualify",
+    "markProposal": "Mark proposal",
+    "markNegotiation": "Mark negotiation",
+    "reopen": "Reopen"
+  },
+  "axios": {
+    "start": {
+      "title": "Updating lead…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update this lead",
+      "time": 3000
+    },
+    "markContacted": {
+      "title": "Lead marked as contacted",
+      "time": 3000
+    },
+    "qualify": {
+      "title": "Lead qualified",
+      "time": 3000
+    },
+    "markProposal": {
+      "title": "Proposal recorded",
+      "time": 3000
+    },
+    "markNegotiation": {
+      "title": "Lead moved to negotiation",
+      "time": 3000
+    },
+    "reopen": {
+      "title": "Lead reopened",
+      "time": 3000
+    }
+  }
+}

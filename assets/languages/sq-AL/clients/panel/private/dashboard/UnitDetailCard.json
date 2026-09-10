@@ -13,5 +13,6 @@
   "statusReserved": "E Rezervuar",
   "statusSold": "E Shitur",
   "statusUnavailable": "E Bllokuar",
+  "unavailableNotes": "Shënime për padisponueshmërinë",
   "statusUnknown": "E panjohur"
 }

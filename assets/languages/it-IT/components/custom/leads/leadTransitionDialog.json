@@ -1,0 +1,61 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/leadTransitionDialog.tsx",
+  "notesLabel": "Note",
+  "notesPlaceholder": "Nota facoltativa per questo cambio di stato",
+  "cancel": "Annulla",
+  "titles": {
+    "markContacted": "Segna come contattato",
+    "qualify": "Qualifica lead",
+    "markProposal": "Segna proposta",
+    "markNegotiation": "Segna negoziazione",
+    "reopen": "Riapri lead"
+  },
+  "descriptions": {
+    "markContacted": "Registra che il contatto è stato stabilito. Il lead deve già avere email o telefono.",
+    "qualify": "Qualifica questo lead. Un'email o un numero di telefono deve già essere impostato.",
+    "markProposal": "Registra che è stata inviata una proposta. Il lead deve già essere qualificato.",
+    "markNegotiation": "Sposta questo lead in negoziazione. Deve già esserci una proposta.",
+    "reopen": "Riapri questo lead perso e riportalo a contattato. Il motivo della perdita viene rimosso dal lead e conservato nel registro attività."
+  },
+  "submit": {
+    "markContacted": "Segna come contattato",
+    "qualify": "Qualifica",
+    "markProposal": "Segna proposta",
+    "markNegotiation": "Segna negoziazione",
+    "reopen": "Riapri"
+  },
+  "axios": {
+    "start": {
+      "title": "Aggiornamento lead…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead aggiornato",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile aggiornare questo lead",
+      "time": 3000
+    },
+    "markContacted": {
+      "title": "Lead segnato come contattato",
+      "time": 3000
+    },
+    "qualify": {
+      "title": "Lead qualificato",
+      "time": 3000
+    },
+    "markProposal": {
+      "title": "Proposta registrata",
+      "time": 3000
+    },
+    "markNegotiation": {
+      "title": "Lead spostato in negoziazione",
+      "time": 3000
+    },
+    "reopen": {
+      "title": "Lead riaperto",
+      "time": 3000
+    }
+  }
+}

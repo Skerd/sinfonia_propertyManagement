@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/closeLeadDialog.tsx",
+  "dialogTitle": "Als gewonnen oder verloren markieren",
+  "dialogDescription": "Wählen Sie, ob dieser Lead gewonnen oder verloren wurde. Gewonnen erstellt keine Reservation.",
+  "outcomeLabel": "Ergebnis",
+  "outcomePlaceholder": "Gewonnen oder verloren wählen",
+  "outcomes": {
+    "won": "Gewonnen",
+    "lost": "Verloren"
+  },
+  "notesLabel": "Notizen",
+  "notesPlaceholder": "Optionale Notiz zu diesem Ergebnis",
+  "lostReasonLabel": "Verlustgrund",
+  "lostReasonPlaceholder": "Warum wurde dieser Lead verloren?",
+  "cancel": "Abbrechen",
+  "submit": "Ergebnis speichern",
+  "submitWon": "Als gewonnen markieren",
+  "submitLost": "Als verloren markieren",
+  "axios": {
+    "start": {
+      "title": "Ergebnis wird gespeichert…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead als verloren markiert",
+      "time": 3000
+    },
+    "won": {
+      "title": "Lead als gewonnen markiert",
+      "time": 3000
+    },
+    "error": {
+      "title": "Lead konnte nicht abgeschlossen werden",
+      "time": 3000
+    }
+  }
+}

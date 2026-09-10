@@ -21,6 +21,7 @@
   "assignedTo": "Assigned To",
   "followUpDate": "Follow-up Date",
   "convertedAt": "Converted At",
+  "lostReason": "Lost reason",
   "notes": "Notes",
   "activityLog": "Activity Log",
   "toggleReferenceListView": "Toggle view",
@@ -61,7 +62,14 @@
     "follow_up": "Follow-up",
     "note": "Note",
     "status_update": "Status update",
-    "created": "Created"
+    "created": "Created",
+    "marked_contacted": "Marked as contacted",
+    "qualified": "Qualified",
+    "marked_proposal": "Proposal recorded",
+    "marked_negotiation": "Moved to negotiation",
+    "marked_won": "Marked as won",
+    "marked_lost": "Marked as lost",
+    "reopened": "Reopened"
   },
   "lifecycle": "Lifecycle",
   "createdAt": "Created at",

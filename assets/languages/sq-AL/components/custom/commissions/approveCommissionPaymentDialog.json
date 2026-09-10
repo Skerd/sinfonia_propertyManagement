@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/approveCommissionPaymentDialog.tsx",
+  "dialogTitle": "Mirato ose refuzo pagesën",
+  "approveDescription": "Miratimi e lë komisionin gati për pagesë. Nuk mund të kërkohet sërish aprovim; hapi tjetër është ta shënoni të paguar.",
+  "rejectDescription": "Refuzimi e anulon komisionin, regjistron kohën dhe njofton agjentin.",
+  "decisionLabel": "Vendimi",
+  "decisionPlaceholder": "Zgjidh një vendim",
+  "decisionApproved": "Mirato",
+  "decisionRejected": "Refuzo dhe anulo",
+  "notesLabel": "Shënime",
+  "notesPlaceholder": "Shënime opsionale",
+  "cancel": "Anulo",
+  "submitApprove": "Mirato",
+  "submitReject": "Refuzo dhe anulo",
+  "axios": {
+    "start": {
+      "title": "Po përditësohet komisioni",
+      "time": 3000
+    },
+    "success": {
+      "title": "Komisioni u përditësua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Komisioni nuk mund të përditësohej",
+      "time": 3000
+    }
+  }
+}

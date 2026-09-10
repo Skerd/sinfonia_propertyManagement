@@ -60,6 +60,7 @@
     "saleCommissionRatePercent": "Sale Commission",
     "sharedArea": "Shared Area",
     "status": "Status",
+    "unavailableNotes": "Unavailable notes",
     "unitNumber": "Number",
     "unitType": "Type",
     "updatedAt": "Updated At",
@@ -143,7 +144,7 @@
           "Reserved — a live reservation holds it. Expire or cancel the reservation to return it to available. Reinstate a cancelled reservation only if the unit is free (or sold with no other reservation) per the reinstate rules.",
           "Sold — a sale marked it sold. Handover and title-transfer continue on the sale. You cannot lease a sold unit.",
           "Rented — an active lease holds it. Terminate (or daily job expire past end date) releases it back toward available.",
-          "Unavailable — taken off the market without a deal."
+          "Unavailable — taken off the market without a deal. Use Mark as unavailable and record why; the notes show on the unit sheet."
         ],
         "body": "Do not try to “type” a unit into sold or rented. Create or complete the matching reservation, sale, or lease."
       },
@@ -153,6 +154,7 @@
           "Filter by project, edifice, floor, unit type, status, buyer, and similar.",
           "Create a unit — floor, unit type, number, name, areas, price and currency are required.",
           "Open the card for media, pricing, and flags. Row actions reach reservations, sales, inspections, leases, costs, depending on access.",
+          "Mark as unavailable (with notes) takes an available unit off the market; Mark as available returns it. Notes show on the unit sheet.",
           "Generate marketing booklet (PDF) from the unit when that action is available — it merges this unit’s marketing fields.",
           "Soft delete can be restored. Deals that already point at the unit remain; they are not auto-cancelled."
         ]

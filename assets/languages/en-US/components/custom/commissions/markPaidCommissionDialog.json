@@ -1,0 +1,25 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/commissions/markPaidCommissionDialog.tsx",
+  "dialogTitle": "Mark commission paid",
+  "dialogDescription": "Sets the commission to paid. Payment reference and receipt are optional.",
+  "paymentReferenceLabel": "Payment reference",
+  "paymentReferencePlaceholder": "Optional bank or receipt reference",
+  "receiptLabel": "Payment receipt",
+  "addReceipt": "Add receipt",
+  "cancel": "Cancel",
+  "confirmPaid": "Mark paid",
+  "axios": {
+    "start": {
+      "title": "Updating commission",
+      "time": 3000
+    },
+    "success": {
+      "title": "Commission marked paid",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not update commission",
+      "time": 3000
+    }
+  }
+}

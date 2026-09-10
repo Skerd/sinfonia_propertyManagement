@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/leads/closeLeadDialog.tsx",
+  "dialogTitle": "Mark won or lost",
+  "dialogDescription": "Choose whether this lead was won or lost. Winning does not create a reservation.",
+  "outcomeLabel": "Outcome",
+  "outcomePlaceholder": "Select won or lost",
+  "outcomes": {
+    "won": "Won",
+    "lost": "Lost"
+  },
+  "notesLabel": "Notes",
+  "notesPlaceholder": "Optional note for this outcome",
+  "lostReasonLabel": "Lost reason",
+  "lostReasonPlaceholder": "Why was this lead lost?",
+  "cancel": "Cancel",
+  "submit": "Save outcome",
+  "submitWon": "Mark won",
+  "submitLost": "Mark lost",
+  "axios": {
+    "start": {
+      "title": "Saving outcome…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Lead marked as lost",
+      "time": 3000
+    },
+    "won": {
+      "title": "Lead marked as won",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not close this lead",
+      "time": 3000
+    }
+  }
+}

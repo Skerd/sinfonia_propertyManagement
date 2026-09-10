@@ -21,6 +21,7 @@
   "assignedTo": "Caktuar tek",
   "followUpDate": "Data e ndjekjes",
   "convertedAt": "Konvertuar në",
+  "lostReason": "Arsyeja e humbjes",
   "notes": "Shënime",
   "activityLog": "Regjistri i aktivitetit",
   "toggleReferenceListView": "Ndrysho pamjen",
@@ -61,7 +62,14 @@
     "follow_up": "Ndjekje",
     "note": "Shënim",
     "status_update": "Përditësim statusi",
-    "created": "Krijuar"
+    "created": "Krijuar",
+    "marked_contacted": "Shënuar si i kontaktuar",
+    "qualified": "I kualifikuar",
+    "marked_proposal": "Propozimi u regjistrua",
+    "marked_negotiation": "Kaloi në negociatë",
+    "marked_won": "Shënuar si i fituar",
+    "marked_lost": "Shënuar si i humbur",
+    "reopened": "Rihapur"
   },
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",

@@ -4,6 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {Avatar, AvatarFallback} from "@coreModule/components/ui/avatar.tsx";
 import {IconCurrencyDollar, IconHome, IconUser} from "@tabler/icons-react";
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
+import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionWorkflowDialogs.tsx";
 import CommissionSheetView, {commissionConfirmLabel} from "@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
@@ -26,6 +27,8 @@ import type {ReactNode, RefObject} from "react";
 function commissionStatusBadgeClass(status: string): string {
     switch (status) {
         case "paid":
+            return STATUS_BADGE_SUCCESS;
+        case "approved":
             return STATUS_BADGE_SUCCESS;
         case "pending":
             return STATUS_BADGE_WARNING;
@@ -142,8 +145,20 @@ function CommissionCard({
                     onModifySuccess?.(updated);
                 },
             })}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
+                <CommissionWorkflowDialogs
+                    action={action}
+                    commission={entity}
+                    onClose={() => setAction("")}
+                    onSuccess={(updated?: Commission) => {
+                        if (updated) setEntity({...entity, ...updated});
+                        onModifySuccess?.(updated);
+                        setAction("");
+                    }}
+                />
+            )}
         >
-            {({entity, setEntity}) => {
+            {({entity, setAction}) => {
                 const hasBadges = Boolean(entity.status || entity.sourceType || entity.basis);
                 return (
                     <>
@@ -168,13 +183,7 @@ function CommissionCard({
                                 ) : undefined
                             }
                         >
-                            <CommissionRowMenuExtras
-                                commission={entity}
-                                onModify={(updated?: Commission) => {
-                                    if (updated) setEntity({...entity, ...updated});
-                                    onModifySuccess?.(updated);
-                                }}
-                            />
+                            <CommissionRowMenuExtras commission={entity} onAction={setAction} />
                         </EntityCard.Header>
                         {hasBadges && (
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />
