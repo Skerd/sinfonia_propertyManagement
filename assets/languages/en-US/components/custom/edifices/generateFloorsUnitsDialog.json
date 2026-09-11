@@ -9,6 +9,7 @@
   "processing": "Processing...",
   "noFileSelected": "Please select a PDF file",
   "invalidFileType": "Please select a valid PDF file",
+  "oldPdfLabel": "Old PDF layout (crop the center plan, exclude header and footer)",
   "axios": {
     "start": {
       "title": "Generating floors and units from brochure",

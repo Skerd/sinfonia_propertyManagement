@@ -9,6 +9,7 @@
   "processing": "Verarbeitung...",
   "noFileSelected": "Bitte eine PDF-Datei auswählen",
   "invalidFileType": "Bitte eine gültige PDF-Datei auswählen",
+  "oldPdfLabel": "Altes PDF-Layout (zentralen Plan zuschneiden, Kopf- und Fusszeile ausschliessen)",
   "axios": {
     "start": {
       "title": "Geschosse und Einheiten werden aus der Broschüre generiert",

@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState, type ReactNode} from "react";
 import {compose} from "redux";
 import {Link, Navigate, useParams, useSearchParams} from "react-router-dom";
-import {ChevronLeft} from "lucide-react";
+import {ChevronLeft, Eye, EyeOff} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -154,6 +154,11 @@ function OpenProjectFigma3dPage({
     const placeholderImage = resolveProjectFallbackImage(project);
     const [hoveredUnitId, setHoveredUnitId] = useState<string | null>(null);
     const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
+    const [phantomsAlwaysVisible, setPhantomsAlwaysVisible] = useState(false);
+    const hasFloorPolygons = useMemo(
+        () => (project.edifices ?? []).some((edifice) => (edifice.floorsCoordinates ?? []).length > 0),
+        [project.edifices],
+    );
     const unitPanelOpen = Boolean(selectedUnitId);
     const selectedUnitLabel = useMemo(() => {
         if (!selectedUnitId) {
@@ -195,7 +200,11 @@ function OpenProjectFigma3dPage({
             />
 
             <div className="absolute inset-0">
-                <OpenProjectFigma3dStage project={project} resolveLanguageKey={resolveLanguageKey} />
+                <OpenProjectFigma3dStage
+                    project={project}
+                    resolveLanguageKey={resolveLanguageKey}
+                    phantomsAlwaysVisible={phantomsAlwaysVisible}
+                />
             </div>
 
             <div className="pointer-events-none absolute inset-0 z-10">
@@ -247,8 +256,27 @@ function OpenProjectFigma3dPage({
                     </div>
                 </div>
 
-                <div className="pointer-events-auto absolute bottom-10 left-4 z-30 sm:left-6 lg:left-[52px]">
+                <div className="pointer-events-auto absolute bottom-10 left-4 z-30 flex items-center gap-4 sm:left-6 lg:left-[52px]">
                     <OpenProjectFigmaActions projectId={project._id} active="3d" tone="onDark" />
+                    {hasFloorPolygons ? (
+                        <button
+                            type="button"
+                            onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
+                            aria-pressed={phantomsAlwaysVisible}
+                            aria-label={
+                                phantomsAlwaysVisible
+                                    ? String(resolveLanguageKey("hidePolygons"))
+                                    : String(resolveLanguageKey("showPolygons"))
+                            }
+                            className="flex size-16 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(255,255,255,0.2)] text-white backdrop-blur-[7px] transition hover:bg-[rgba(255,255,255,0.32)]"
+                        >
+                            {phantomsAlwaysVisible ? (
+                                <Eye className="size-8" strokeWidth={1.5} aria-hidden />
+                            ) : (
+                                <EyeOff className="size-8" strokeWidth={1.5} aria-hidden />
+                            )}
+                        </button>
+                    ) : null}
                 </div>
 
                 {selectedFloor ? (

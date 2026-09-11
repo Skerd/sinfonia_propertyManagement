@@ -9,6 +9,7 @@
   "processing": "Elaborazione...",
   "noFileSelected": "Seleziona un file PDF",
   "invalidFileType": "Seleziona un file PDF valido",
+  "oldPdfLabel": "Layout PDF precedente (ritaglia il piano centrale, escludi intestazione e piè di pagina)",
   "axios": {
     "start": {
       "title": "Generazione piani e unità dalla brochure",

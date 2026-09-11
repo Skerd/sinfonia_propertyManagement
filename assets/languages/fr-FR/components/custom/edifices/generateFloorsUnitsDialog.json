@@ -9,6 +9,7 @@
   "processing": "Traitement...",
   "noFileSelected": "Veuillez sélectionner un fichier PDF",
   "invalidFileType": "Veuillez sélectionner un fichier PDF valide",
+  "oldPdfLabel": "Ancien format PDF (recadrer le plan central, exclure en-tête et pied de page)",
   "axios": {
     "start": {
       "title": "Génération des étages et unités depuis la brochure",

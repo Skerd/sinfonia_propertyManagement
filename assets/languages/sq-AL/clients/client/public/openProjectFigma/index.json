@@ -39,6 +39,8 @@
   "viewerEmptyProject": "Nuk ka overlay për ndërtesat.",
   "viewerEmptyEdifice": "Nuk ka overlay për katet.",
   "viewerEmptyFloor": "Nuk ka overlay për njësitë.",
+  "showPolygons": "Shfaq konturet",
+  "hidePolygons": "Fshih konturet",
   "back": "Kthehu",
   "sidebarContext": "Duke eksploruar",
   "sidebarProject": "Pasqyra e projektit",

@@ -39,6 +39,8 @@
   "viewerEmptyProject": "Keine Gebäude-Overlays.",
   "viewerEmptyEdifice": "Keine Stockwerk-Overlays.",
   "viewerEmptyFloor": "Keine Einheiten-Overlays.",
+  "showPolygons": "Umrisse anzeigen",
+  "hidePolygons": "Umrisse ausblenden",
   "back": "Zurück",
   "sidebarContext": "Erkunden",
   "sidebarProject": "Projektübersicht",

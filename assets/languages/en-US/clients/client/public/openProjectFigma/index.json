@@ -39,6 +39,8 @@
   "viewerEmptyProject": "No building overlays configured yet.",
   "viewerEmptyEdifice": "No floor overlays on this building.",
   "viewerEmptyFloor": "No unit overlays on this floor.",
+  "showPolygons": "Show outlines",
+  "hidePolygons": "Hide outlines",
   "back": "Back",
   "sidebarContext": "Exploring",
   "sidebarProject": "Project overview",

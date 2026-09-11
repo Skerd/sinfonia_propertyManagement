@@ -39,6 +39,8 @@
   "viewerEmptyProject": "Nessun overlay edifici.",
   "viewerEmptyEdifice": "Nessun overlay piani.",
   "viewerEmptyFloor": "Nessun overlay unità.",
+  "showPolygons": "Mostra i contorni",
+  "hidePolygons": "Nascondi i contorni",
   "back": "Indietro",
   "sidebarContext": "Esplorazione",
   "sidebarProject": "Panoramica progetto",

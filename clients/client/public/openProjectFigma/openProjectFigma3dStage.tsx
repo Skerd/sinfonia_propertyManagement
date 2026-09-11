@@ -12,6 +12,7 @@ import type {
 type OpenProjectFigma3dStageProps = {
     project: MarketingProjectSingle;
     resolveLanguageKey: (key: string) => string;
+    phantomsAlwaysVisible: boolean;
 };
 
 function resolveImageUrl(url: string | undefined, project: MarketingProjectSingle): string {
@@ -25,7 +26,11 @@ function findEdificeForFloor(
     return edifices.find((edifice) => edifice.floors?.some((floor) => floor._id === floorId));
 }
 
-function OpenProjectFigma3dStage({project, resolveLanguageKey}: OpenProjectFigma3dStageProps) {
+function OpenProjectFigma3dStage({
+    project,
+    resolveLanguageKey,
+    phantomsAlwaysVisible,
+}: OpenProjectFigma3dStageProps) {
     const [searchParams, setSearchParams] = useSearchParams();
     const [hoveredId, setHoveredId] = useState<string | null>(null);
 
@@ -85,6 +90,7 @@ function OpenProjectFigma3dStage({project, resolveLanguageKey}: OpenProjectFigma
                 borderless
                 disabled
                 hideControls
+                phantomsAlwaysVisible={phantomsAlwaysVisible}
                 imageUrl={imageUrl}
                 phantomPoints={floorPolygons}
                 phantomHoverContent={renderHover}

@@ -39,6 +39,8 @@
   "viewerEmptyProject": "Aucun overlay de bâtiment.",
   "viewerEmptyEdifice": "Aucun overlay d'étage.",
   "viewerEmptyFloor": "Aucun overlay d'unité.",
+  "showPolygons": "Afficher les contours",
+  "hidePolygons": "Masquer les contours",
   "back": "Retour",
   "sidebarContext": "Exploration",
   "sidebarProject": "Aperçu du projet",

@@ -9,6 +9,7 @@
   "processing": "Po përpunohet...",
   "noFileSelected": "Ju lutemi zgjidhni një skedar PDF",
   "invalidFileType": "Ju lutemi zgjidhni një skedar të vlefshëm PDF",
+  "oldPdfLabel": "PDF i vjetër (prerja e planit në qendër, pa header dhe footer)",
   "axios": {
     "start": {
       "title": "Gjenerimi i dyshemeve dhe njësive nga broshura",
