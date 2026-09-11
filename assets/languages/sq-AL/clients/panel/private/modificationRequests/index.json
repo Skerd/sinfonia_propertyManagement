@@ -18,20 +18,28 @@
   "view": "Shiko",
   "fields": {
     "architectApproval": {
-      "decision": "Vendimi",
-      "user": "Shqyrtuar nga",
-      "notes": "Shënime",
-      "reviewedAt": "Shqyrtuar në"
+      "decision": "Vendimi i arkitektit",
+      "user": "Shqyrtuesi arkitekt",
+      "notes": "Shënimet e arkitektit",
+      "reviewedAt": "Shqyrtuar nga arkitekti më",
+      "media": "Media e arkitektit"
     },
     "cancellationReason": "Arsyeja e anulimit",
     "cancelledAt": "Anuluar në",
     "ceoApproval": {
-      "decision": "Vendimi",
-      "user": "Shqyrtuar nga",
-      "notes": "Shënime",
-      "reviewedAt": "Shqyrtuar në"
+      "decision": "Vendimi i CEO",
+      "user": "Shqyrtuesi CEO",
+      "notes": "Shënimet e CEO",
+      "reviewedAt": "Shqyrtuar nga CEO më",
+      "media": "Media e CEO"
     },
-    "clientCostApproval": "Client Cost Approval",
+    "clientCostApproval": {
+      "decision": "Vendimi i kostos së klientit",
+      "user": "Shqyrtuesi i kostos së klientit",
+      "notes": "Shënimet e kostos së klientit",
+      "reviewedAt": "Kostoja e klientit u shqyrtua më",
+      "media": "Media e kostos së klientit"
+    },
     "clientNotifiedAt": "Klienti njoftohet në",
     "completedAt": "Përfunduar në",
     "constructionType": "Lloji i ndërtimit",
@@ -40,27 +48,26 @@
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
     "deliveryApproval": {
-      "decision": "Vendimi",
-      "user": "Shqyrtuar nga",
-      "notes": "Shënime",
-      "reviewedAt": "Shqyrtuar në"
+      "decision": "Vendimi i dorëzimit",
+      "user": "Shqyrtuesi i dorëzimit",
+      "notes": "Shënimet e dorëzimit",
+      "reviewedAt": "Dorëzimi u shqyrtua më",
+      "media": "Media e dorëzimit",
+      "inspections": "Inspektimet e dorëzimit"
     },
     "description": "Përshkrimi",
     "engineerApproval": {
-      "decision": "Vendimi",
-      "user": "Shqyrtuar nga",
-      "notes": "Shënime",
-      "reviewedAt": "Shqyrtuar në"
+      "decision": "Vendimi i inxhinierit",
+      "user": "Shqyrtuesi inxhinier",
+      "notes": "Shënimet e inxhinierit",
+      "reviewedAt": "Shqyrtuar nga inxhinieri më",
+      "media": "Media e inxhinierit",
+      "materialsPlan": "Plani i materialeve"
     },
     "financeDetails": {
       "totalCost": "Kostoja totale",
       "currency": "Monedha",
-      "costBreakdown": {
-        "item": "Artikulli",
-        "cost": "Kostoja",
-        "quantity": "Sasia",
-        "unit": "Njësia"
-      },
+      "costBreakdown": "Ndarja e kostove",
       "media": "Media",
       "notes": "Shënime",
       "estimatedCompletionDate": "Data e parashikuar e përfundimit"
@@ -72,10 +79,13 @@
     "notificationSent": "Njoftimi u dërgua",
     "requestedBy": "Kërkuar nga",
     "specifications": "Specifikimet",
-    "stageDueDate": "Stage Due Date",
+    "stageDueDate": "Afati i fazës",
     "status": "Statusi",
     "submittedAt": "Dorëzuar në",
     "title": "Titulli",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "floor": "Kati",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
     "!enums": {
@@ -145,14 +155,14 @@
         }
       },
       "source": {
-        "engineer_material": "Engineer Material",
+        "engineer_material": "Material inxhinieri",
         "manual": "Manual"
       }
     }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "yes": "po",
-  "no": "Nr",
+  "yes": "Po",
+  "no": "Jo",
   "help": {
     "ariaLabel": "Rreth Kërkesave për modifikim",
     "title": "Rreth Kërkesave për modifikim",

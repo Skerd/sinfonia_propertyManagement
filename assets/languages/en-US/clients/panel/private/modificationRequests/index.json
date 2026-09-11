@@ -18,20 +18,28 @@
   "view": "View",
   "fields": {
     "architectApproval": {
-      "decision": "Decision",
-      "user": "Reviewed By",
-      "notes": "Notes",
-      "reviewedAt": "Reviewed At"
+      "decision": "Architect Decision",
+      "user": "Architect Reviewer",
+      "notes": "Architect Notes",
+      "reviewedAt": "Architect Reviewed At",
+      "media": "Architect Media"
     },
     "cancellationReason": "Cancellation Reason",
     "cancelledAt": "Cancelled At",
     "ceoApproval": {
-      "decision": "Decision",
-      "user": "Reviewed By",
-      "notes": "Notes",
-      "reviewedAt": "Reviewed At"
+      "decision": "CEO Decision",
+      "user": "CEO Reviewer",
+      "notes": "CEO Notes",
+      "reviewedAt": "CEO Reviewed At",
+      "media": "CEO Media"
     },
-    "clientCostApproval": "Client Cost Approval",
+    "clientCostApproval": {
+      "decision": "Client Cost Decision",
+      "user": "Client Cost Reviewer",
+      "notes": "Client Cost Notes",
+      "reviewedAt": "Client Cost Reviewed At",
+      "media": "Client Cost Media"
+    },
     "clientNotifiedAt": "Client Notified At",
     "completedAt": "Completed At",
     "constructionType": "Construction Type",
@@ -40,27 +48,26 @@
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
     "deliveryApproval": {
-      "decision": "Decision",
-      "user": "Reviewed By",
-      "notes": "Notes",
-      "reviewedAt": "Reviewed At"
+      "decision": "Delivery Decision",
+      "user": "Delivery Reviewer",
+      "notes": "Delivery Notes",
+      "reviewedAt": "Delivery Reviewed At",
+      "media": "Delivery Media",
+      "inspections": "Delivery Inspections"
     },
     "description": "Description",
     "engineerApproval": {
-      "decision": "Decision",
-      "user": "Reviewed By",
-      "notes": "Notes",
-      "reviewedAt": "Reviewed At"
+      "decision": "Engineer Decision",
+      "user": "Engineer Reviewer",
+      "notes": "Engineer Notes",
+      "reviewedAt": "Engineer Reviewed At",
+      "media": "Engineer Media",
+      "materialsPlan": "Materials Plan"
     },
     "financeDetails": {
       "totalCost": "Total Cost",
       "currency": "Currency",
-      "costBreakdown": {
-        "item": "Item",
-        "cost": "Cost",
-        "quantity": "Quantity",
-        "unit": "Unit"
-      },
+      "costBreakdown": "Cost Breakdown",
       "media": "Media",
       "notes": "Notes",
       "estimatedCompletionDate": "Estimated Completion Date"

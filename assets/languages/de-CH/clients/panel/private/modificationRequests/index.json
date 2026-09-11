@@ -18,20 +18,28 @@
   "view": "Anzeigen",
   "fields": {
     "architectApproval": {
-      "decision": "Entscheid",
-      "user": "Geprüft von",
-      "notes": "Notizen",
-      "reviewedAt": "Geprüft am"
+      "decision": "Architekt-Entscheid",
+      "user": "Architekt-Prüfer",
+      "notes": "Architekt-Notizen",
+      "reviewedAt": "Architekt geprüft am",
+      "media": "Architekt-Medien"
     },
     "cancellationReason": "Annullierungsgrund",
     "cancelledAt": "Annulliert am",
     "ceoApproval": {
-      "decision": "Entscheid",
-      "user": "Geprüft von",
-      "notes": "Notizen",
-      "reviewedAt": "Geprüft am"
+      "decision": "CEO-Entscheid",
+      "user": "CEO-Prüfer",
+      "notes": "CEO-Notizen",
+      "reviewedAt": "CEO geprüft am",
+      "media": "CEO-Medien"
     },
-    "clientCostApproval": "Kundenkostenfreigabe",
+    "clientCostApproval": {
+      "decision": "Kundenkosten-Entscheid",
+      "user": "Kundenkosten-Prüfer",
+      "notes": "Kundenkosten-Notizen",
+      "reviewedAt": "Kundenkosten geprüft am",
+      "media": "Kundenkosten-Medien"
+    },
     "clientNotifiedAt": "Kunde benachrichtigt am",
     "completedAt": "Abgeschlossen am",
     "constructionType": "Bautyp",
@@ -40,27 +48,26 @@
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von",
     "deliveryApproval": {
-      "decision": "Entscheid",
-      "user": "Geprüft von",
-      "notes": "Notizen",
-      "reviewedAt": "Geprüft am"
+      "decision": "Liefer-Entscheid",
+      "user": "Liefer-Prüfer",
+      "notes": "Liefer-Notizen",
+      "reviewedAt": "Lieferung geprüft am",
+      "media": "Liefer-Medien",
+      "inspections": "Liefer-Abnahmen"
     },
     "description": "Beschreibung",
     "engineerApproval": {
-      "decision": "Entscheid",
-      "user": "Geprüft von",
-      "notes": "Notizen",
-      "reviewedAt": "Geprüft am"
+      "decision": "Ingenieur-Entscheid",
+      "user": "Ingenieur-Prüfer",
+      "notes": "Ingenieur-Notizen",
+      "reviewedAt": "Ingenieur geprüft am",
+      "media": "Ingenieur-Medien",
+      "materialsPlan": "Materialplan"
     },
     "financeDetails": {
       "totalCost": "Gesamtkosten",
       "currency": "Währung",
-      "costBreakdown": {
-        "item": "Position",
-        "cost": "Kosten",
-        "quantity": "Menge",
-        "unit": "Einheit"
-      },
+      "costBreakdown": "Kostenaufstellung",
       "media": "Medien",
       "notes": "Notizen",
       "estimatedCompletionDate": "Voraussichtliches Fertigstellungsdatum"

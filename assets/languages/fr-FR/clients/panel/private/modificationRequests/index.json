@@ -18,20 +18,28 @@
   "view": "Voir",
   "fields": {
     "architectApproval": {
-      "decision": "Décision",
-      "user": "Examiné par",
-      "notes": "Notes",
-      "reviewedAt": "Examiné le"
+      "decision": "Décision architecte",
+      "user": "Examinateur architecte",
+      "notes": "Notes architecte",
+      "reviewedAt": "Examiné par l'architecte le",
+      "media": "Médias architecte"
     },
     "cancellationReason": "Motif d'annulation",
     "cancelledAt": "Annulé le",
     "ceoApproval": {
-      "decision": "Décision",
-      "user": "Examiné par",
-      "notes": "Notes",
-      "reviewedAt": "Examiné le"
+      "decision": "Décision CEO",
+      "user": "Examinateur CEO",
+      "notes": "Notes CEO",
+      "reviewedAt": "Examiné par le CEO le",
+      "media": "Médias CEO"
     },
-    "clientCostApproval": "Approbation des coûts client",
+    "clientCostApproval": {
+      "decision": "Décision coût client",
+      "user": "Examinateur coût client",
+      "notes": "Notes coût client",
+      "reviewedAt": "Coût client examiné le",
+      "media": "Médias coût client"
+    },
     "clientNotifiedAt": "Client notifié le",
     "completedAt": "Terminé le",
     "constructionType": "Type de construction",
@@ -40,27 +48,26 @@
     "deletedAt": "Supprimé",
     "deletedBy": "Supprimé par",
     "deliveryApproval": {
-      "decision": "Décision",
-      "user": "Examiné par",
-      "notes": "Notes",
-      "reviewedAt": "Examiné le"
+      "decision": "Décision livraison",
+      "user": "Examinateur livraison",
+      "notes": "Notes livraison",
+      "reviewedAt": "Livraison examinée le",
+      "media": "Médias livraison",
+      "inspections": "Inspections de livraison"
     },
     "description": "Description",
     "engineerApproval": {
-      "decision": "Décision",
-      "user": "Examiné par",
-      "notes": "Notes",
-      "reviewedAt": "Examiné le"
+      "decision": "Décision ingénieur",
+      "user": "Examinateur ingénieur",
+      "notes": "Notes ingénieur",
+      "reviewedAt": "Examiné par l'ingénieur le",
+      "media": "Médias ingénieur",
+      "materialsPlan": "Plan matériaux"
     },
     "financeDetails": {
       "totalCost": "Coût total",
       "currency": "Devise",
-      "costBreakdown": {
-        "item": "Poste",
-        "cost": "Coût",
-        "quantity": "Quantité",
-        "unit": "Unité"
-      },
+      "costBreakdown": "Répartition des coûts",
       "media": "Médias",
       "notes": "Notes",
       "estimatedCompletionDate": "Date d'achèvement estimée"

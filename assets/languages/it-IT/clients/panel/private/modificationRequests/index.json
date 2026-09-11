@@ -18,20 +18,28 @@
   "view": "Visualizza",
   "fields": {
     "architectApproval": {
-      "decision": "Decisione",
-      "user": "Revisionato da",
-      "notes": "Note",
-      "reviewedAt": "Revisionato il"
+      "decision": "Decisione architetto",
+      "user": "Revisore architetto",
+      "notes": "Note architetto",
+      "reviewedAt": "Revisionato dall'architetto il",
+      "media": "Media architetto"
     },
     "cancellationReason": "Motivo di annullamento",
     "cancelledAt": "Annullato il",
     "ceoApproval": {
-      "decision": "Decisione",
-      "user": "Revisionato da",
-      "notes": "Note",
-      "reviewedAt": "Revisionato il"
+      "decision": "Decisione CEO",
+      "user": "Revisore CEO",
+      "notes": "Note CEO",
+      "reviewedAt": "Revisionato dal CEO il",
+      "media": "Media CEO"
     },
-    "clientCostApproval": "Approvazione costi cliente",
+    "clientCostApproval": {
+      "decision": "Decisione costo cliente",
+      "user": "Revisore costo cliente",
+      "notes": "Note costo cliente",
+      "reviewedAt": "Costo cliente revisionato il",
+      "media": "Media costo cliente"
+    },
     "clientNotifiedAt": "Cliente notificato il",
     "completedAt": "Completato il",
     "constructionType": "Tipo di costruzione",
@@ -40,27 +48,26 @@
     "deletedAt": "Eliminato",
     "deletedBy": "Eliminato da",
     "deliveryApproval": {
-      "decision": "Decisione",
-      "user": "Revisionato da",
-      "notes": "Note",
-      "reviewedAt": "Revisionato il"
+      "decision": "Decisione consegna",
+      "user": "Revisore consegna",
+      "notes": "Note consegna",
+      "reviewedAt": "Consegna revisionata il",
+      "media": "Media consegna",
+      "inspections": "Ispezioni di consegna"
     },
     "description": "Descrizione",
     "engineerApproval": {
-      "decision": "Decisione",
-      "user": "Revisionato da",
-      "notes": "Note",
-      "reviewedAt": "Revisionato il"
+      "decision": "Decisione ingegnere",
+      "user": "Revisore ingegnere",
+      "notes": "Note ingegnere",
+      "reviewedAt": "Revisionato dall'ingegnere il",
+      "media": "Media ingegnere",
+      "materialsPlan": "Piano materiali"
     },
     "financeDetails": {
       "totalCost": "Costo totale",
       "currency": "Valuta",
-      "costBreakdown": {
-        "item": "Voce",
-        "cost": "Costo",
-        "quantity": "Quantità",
-        "unit": "Unità"
-      },
+      "costBreakdown": "Ripartizione costi",
       "media": "Media",
       "notes": "Note",
       "estimatedCompletionDate": "Data di completamento stimata"
