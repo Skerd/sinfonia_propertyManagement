@@ -80,6 +80,11 @@
     "documentSubtotal": "Zwischensumme",
     "edifice": "Gebäude",
     "expenditureItems": "Positionen",
+    "expenditureItems.amount": "Positionsmenge",
+    "expenditureItems.category": "Positionskategorie",
+    "expenditureItems.pricePerUnit": "Preis pro Einheit",
+    "expenditureItems.title": "Positionsbezeichnung",
+    "expenditureItems.unit": "Masseinheit",
     "floor": "Geschoss",
     "invoiceNumber": "Rechnungsnr.",
     "name": "Referenz",
@@ -96,6 +101,7 @@
     "vendorName": "Lieferant",
     "verificationStatus": "Verifizierung",
     "!enums": {
+      "expenditureItems": {
       "category": {
         "materials_general": "Materialien allgemein",
         "finishes_flooring": "Bodenbeläge",
@@ -135,6 +141,7 @@
         "linear_m": "lm",
         "hour": "h",
         "day": "d"
+      }
       },
       "verificationStatus": {
         "pending_verification": "Verifizierung ausstehend",

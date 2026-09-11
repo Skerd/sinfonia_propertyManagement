@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/updateInspectionChecklistDialog.tsx",
+  "title": "Aggiorna checklist",
+  "description": "Spunta le voci del modello selezionato. Le voci già completate e rimosse restano conservate.",
+  "retained": "Conservata",
+  "cancel": "Annulla",
+  "confirm": "Salva checklist",
+  "importance": {
+    "low": "Bassa",
+    "medium": "Media",
+    "high": "Alta"
+  },
+  "axios": {
+    "start": { "title": "Aggiornamento della checklist…", "time": 3000 },
+    "success": { "title": "Checklist aggiornata", "time": 3000 },
+    "error": { "title": "Impossibile aggiornare la checklist", "time": 3000 }
+  }
+}

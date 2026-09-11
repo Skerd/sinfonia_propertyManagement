@@ -80,6 +80,11 @@
     "documentSubtotal": "Sous-total",
     "edifice": "Édifice",
     "expenditureItems": "Lignes de dépense",
+    "expenditureItems.amount": "Quantité de ligne",
+    "expenditureItems.category": "Catégorie de ligne",
+    "expenditureItems.pricePerUnit": "Prix unitaire",
+    "expenditureItems.title": "Libellé de ligne",
+    "expenditureItems.unit": "Unité de mesure",
     "floor": "Étage",
     "invoiceNumber": "N° de facture",
     "name": "Référence",
@@ -96,6 +101,7 @@
     "vendorName": "Fournisseur",
     "verificationStatus": "Vérification",
     "!enums": {
+      "expenditureItems": {
       "category": {
         "materials_general": "Matériaux généraux",
         "finishes_flooring": "Revêtements de sol",
@@ -135,6 +141,7 @@
         "linear_m": "lm",
         "hour": "h",
         "day": "d"
+      }
       },
       "verificationStatus": {
         "pending_verification": "Vérification en attente",

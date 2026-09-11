@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/updateInspectionChecklistDialog.tsx",
+  "title": "Update checklist",
+  "description": "Tick checklist items from the selected template. Removed items that were already done stay as retained.",
+  "retained": "Retained",
+  "cancel": "Cancel",
+  "confirm": "Save checklist",
+  "importance": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "axios": {
+    "start": { "title": "Updating checklist…", "time": 3000 },
+    "success": { "title": "Checklist updated", "time": 3000 },
+    "error": { "title": "Could not update checklist", "time": 3000 }
+  }
+}

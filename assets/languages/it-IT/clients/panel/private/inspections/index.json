@@ -17,7 +17,7 @@
   "fields": {
     "cancellationReason": "Motivo di annullamento",
     "cancelledAt": "Annullato il",
-    "checklistResponsesJson": "Risposte checklist (JSON)",
+    "checklistItems": "Voci della checklist",
     "checklistTemplate": "Modello checklist",
     "clientSignatureMediaId": "ID media firma cliente",
     "clientSignedAt": "Firmato il",
@@ -78,32 +78,53 @@
   "help": {
     "ariaLabel": "Informazioni sulle ispezioni",
     "title": "Informazioni sulle ispezioni",
-    "overview": "Un'ispezione è una visita programmata a un'unità con tipo, stato, checklist opzionale e rilievi. È evidenza di qualità / consegna, non una prenotazione né una lista snag (anche se i rilievi diventano spesso snag). Annullare un'ispezione programmata è un'azione dedicata; non si può annullare una già completata.",
+    "overview": "Un'ispezione è una visita programmata a un'unità: tipo, stato, ispettore, date, rilievi, media e una checklist strutturata opzionale. È evidenza di qualità / consegna. Non è una prenotazione, né una lista snag (i rilievi diventano spesso snag dopo), né un pacchetto di consegna vendita.",
     "sections": [
       {
         "title": "Cosa contiene un'ispezione",
         "items": [
-          "Unità (obbligatoria), ispettore, data/ora programmata, modello di checklist opzionale.",
+          "Unità (obbligatoria). La card mostra anche piano, ispettore, data ispezione e prossima data.",
           "Tipo: iniziale, di follow-up, finale, di routine, reclamo, pre-vendita, post-vendita.",
           "Stato: programmata → in corso → completata, oppure annullata / riprogrammata.",
-          "Rilievi raggruppati per categoria (strutturale, elettrica e altre) con note, media, gravità (bassa / media / alta / critica) e data di risoluzione opzionale.",
+          "Modello di checklist opzionale e le righe copiate su questa ispezione (nome, importanza, completato).",
+          "Rilievi per categoria (strutturale, elettrica, idraulica, HVAC, sicurezza, estetica, altro) con note, media, gravità e data di risoluzione opzionale.",
           "Motivo di annullamento e data/ora quando annullate una visita programmata."
+        ]
+      },
+      {
+        "title": "Checklist strutturata",
+        "body": "Le voci sono righe strutturate, non un JSON. Il modello definisce gli item; le spunte e il completamento vivono sull'ispezione.",
+        "items": [
+          "Collegate un modello aziendale da Locazione → Configurazioni → Checklist di ispezione.",
+          "Le ispezioni aperte si sincronizzano in diretta: nuovi item, rinomine, sparizione degli item incompleti rimossi.",
+          "Una spunta già data resta come riga trattenuta se poi togliete l'item dal modello.",
+          "Cambiare modello rimescola la nuova lista e conserva le righe completate che non corrispondono più.",
+          "Sulla scheda, il link della card Modello checklist apre la scheda del modello.",
+          "I modelli archiviati spariscono dal selettore; un'ispezione che già lo usa continua a sincronizzare finché resta aperta."
         ]
       },
       {
         "title": "Azioni",
         "items": [
-          "Annulla programmata — solo mentre lo stato è programmata; memorizza un motivo e un timestamp.",
-          "Completare la visita registrando i rilievi e passando lo stato a completata (via modifica / scheda, a seconda dei diritti).",
-          "Riprogrammare impostando lo stato su riprogrammata e una nuova data — non è un nuovo documento di ispezione, salvo che ne creiate uno."
+          "Annulla programmata — solo mentre lo stato è programmata; memorizza un motivo e un timestamp. Non si può annullare un'ispezione già completata.",
+          "Aggiorna checklist — spuntare o togliere le voci attive dal menu riga, card o scheda finché l'ispezione è aperta.",
+          "Completare — lo stato completata è bloccato finché ogni voce attiva (non trattenuta) non è spuntata. Senza checklist non c'è questo vincolo.",
+          "Riprogrammare impostando lo stato su riprogrammata e una nuova data — non è un nuovo documento, salvo che ne creiate uno."
+        ]
+      },
+      {
+        "title": "Blocco dopo la chiusura",
+        "items": [
+          "Le ispezioni completate o annullate smettono di sincronizzare e rifiutano ulteriori spunte.",
+          "Lo snapshot su quell'ispezione è la prova di ciò che era spuntato alla chiusura."
         ]
       },
       {
         "title": "In questa pagina",
         "items": [
-          "Creare un'ispezione su un'unità. Filtrare per unità, tipo, stato, data.",
-          "Aprire la scheda per lavorare rilievi e media.",
-          "Elenco aziendale dalla barra laterale; da un'unità, l'elenco può essere limitato."
+          "Creare un'ispezione su un'unità. Filtrare per progetto, edificio, piano, unità, tipo, stato e follow-up richiesto.",
+          "Le card mostrano unità, ispettore, data ispezione e prossima data. Aprite la scheda per rilievi, media e checklist.",
+          "Elenco aziendale da Immobiliare → Ispezioni; da un'unità, l'elenco può essere limitato a quell'unità."
         ]
       },
       {
@@ -112,14 +133,15 @@
           "Un'ispezione non cambia mai lo stato commerciale dell'unità.",
           "Non è uno snag: i difetti aperti che richiedono un mestiere e un assegnatario appartengono a Snag.",
           "Non è una richiesta di modifica: i cambiamenti chiesti dal cliente passano da architetto / ingegnere / CEO / finanza / consegna lì.",
-          "Le checklist di consegna in Configurazioni possono essere riusate come modelli sulle ispezioni."
+          "Non è un pacchetto di consegna: le checklist vendita si impilano per progetto / edificio / piano / unità e si spuntano sulla vendita."
         ]
       },
       {
         "title": "Record correlati",
         "items": [
           "Unità (quindi piano / edificio / progetto).",
-          "Modello di checklist opzionale. Seguito: Snag, Richieste di modifica, Consegna vendita."
+          "Checklist di ispezione (Locazione → Configurazioni) — i modelli riutilizzabili da collegare qui.",
+          "Seguito: Snag, Richieste di modifica, Consegna vendita."
         ]
       }
     ]

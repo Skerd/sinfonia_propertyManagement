@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/updateInspectionChecklistDialog.tsx",
+  "title": "Checkliste aktualisieren",
+  "description": "Haken Sie Punkte der ausgewählten Vorlage an. Bereits erledigte, entfernte Punkte bleiben erhalten.",
+  "retained": "Behalten",
+  "cancel": "Abbrechen",
+  "confirm": "Checkliste speichern",
+  "importance": {
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch"
+  },
+  "axios": {
+    "start": { "title": "Checkliste wird aktualisiert…", "time": 3000 },
+    "success": { "title": "Checkliste aktualisiert", "time": 3000 },
+    "error": { "title": "Checkliste konnte nicht aktualisiert werden", "time": 3000 }
+  }
+}

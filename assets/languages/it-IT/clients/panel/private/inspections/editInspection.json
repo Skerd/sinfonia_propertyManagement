@@ -80,9 +80,7 @@
     "statusCancelled": "Annullata",
     "statusRescheduled": "Ripianificata",
     "checklistTemplateLabel": "Modello checklist",
-    "checklistTemplatePlaceholder": "Seleziona modello checklist",
-    "checklistResponsesJsonLabel": "Risposte checklist",
-    "checklistResponsesJsonPlaceholder": "Risposte checklist (JSON)"
+    "checklistTemplatePlaceholder": "Seleziona modello checklist"
   },
   "checklist": "Checklist",
   "clientSignature": "Firma cliente",

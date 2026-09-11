@@ -41,7 +41,7 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
             hideActions={hideActions}
             onDelete={onDelete}
             onRestore={onRestore}
-            editPath={`/realEstate/inspectionChecklistTemplates/edit?${params.toString()}`}
+            editPath={`/tenancy/systemSettings/inspectionChecklistTemplates/edit?${params.toString()}`}
         />
     );
 }

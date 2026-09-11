@@ -126,6 +126,13 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
                 if (action === "edit" && id) return <EditHandoverPackage entityId={id} entityName={name} />;
                 return <AllHandoverPackages />;
             }
+            if (resource === "inspectionChecklistTemplates") {
+                const id = searchParams.get("inspectionChecklistTemplateId") || undefined;
+                const name = safeDecode(searchParams.get("inspectionChecklistTemplateName")) || undefined;
+                if (action === "create") return <CreateInspectionChecklistTemplate />;
+                if (action === "edit" && id) return <EditInspectionChecklistTemplate entityId={id} entityName={name} />;
+                return <AllInspectionChecklistTemplates />;
+            }
             return undefined;
         }
 

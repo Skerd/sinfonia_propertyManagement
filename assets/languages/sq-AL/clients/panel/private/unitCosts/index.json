@@ -74,6 +74,11 @@
     "documentSubtotal": "Nëntotali",
     "edifice": "Ndërtesa",
     "expenditureItems": "Rreshtat",
+    "expenditureItems.amount": "Sasia e rreshtit",
+    "expenditureItems.category": "Kategoria e rreshtit",
+    "expenditureItems.pricePerUnit": "Çmimi për njësi",
+    "expenditureItems.title": "Titulli i rreshtit",
+    "expenditureItems.unit": "Njësia matëse",
     "floor": "Kati",
     "invoiceNumber": "Nr. Faturës",
     "name": "Referenca",
@@ -90,6 +95,7 @@
     "vendorName": "Furnizuesi",
     "verificationStatus": "Verifikimi",
     "!enums": {
+      "expenditureItems": {
       "category": {
         "materials_general": "Materials General",
         "finishes_flooring": "Finishes Flooring",
@@ -129,6 +135,7 @@
         "linear_m": "lm",
         "hour": "h",
         "day": "d"
+      }
       },
       "verificationStatus": {
         "pending_verification": "Pending Verification",

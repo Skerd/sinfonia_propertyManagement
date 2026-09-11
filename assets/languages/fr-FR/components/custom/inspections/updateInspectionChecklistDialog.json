@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/updateInspectionChecklistDialog.tsx",
+  "title": "Mettre à jour la checklist",
+  "description": "Cochez les éléments du modèle sélectionné. Les éléments déjà faits et retirés restent conservés.",
+  "retained": "Conservé",
+  "cancel": "Annuler",
+  "confirm": "Enregistrer la checklist",
+  "importance": {
+    "low": "Faible",
+    "medium": "Moyenne",
+    "high": "Élevée"
+  },
+  "axios": {
+    "start": { "title": "Mise à jour de la checklist…", "time": 3000 },
+    "success": { "title": "Checklist mise à jour", "time": 3000 },
+    "error": { "title": "Impossible de mettre à jour la checklist", "time": 3000 }
+  }
+}

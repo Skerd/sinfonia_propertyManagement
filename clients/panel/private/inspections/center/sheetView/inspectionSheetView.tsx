@@ -2,8 +2,10 @@ import { compose } from "redux";
 import { useEffect, useState } from "react";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import CancelInspection from "@propertyManagementModule/clients/panel/private/inspections/center/actions/cancel.tsx";
+import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
+import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
+import {canUpdateInspectionChecklist} from "@propertyManagementModule/components/custom/inspections/inspectionChecklistVisibility.ts";
 import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
@@ -22,6 +24,7 @@ export type InspectionSheetViewOwnProps = {
     onDelete?: (response?: DeleteResponse) => void;
     onRestore?: () => void;
     onCancelSuccess?: (updatedInspection?: Inspection) => void;
+    onChecklistSuccess?: (updatedInspection?: Inspection) => void;
     isRestored?: boolean;
     fetchId?: string;
 };
@@ -37,6 +40,7 @@ function InspectionSheetView({
     onDelete,
     onRestore,
     onCancelSuccess,
+    onChecklistSuccess,
     fetchId,
 }: InspectionSheetViewOwnProps & WithLanguageType) {
 
@@ -66,7 +70,8 @@ function InspectionSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
-    const status = (asInspection as { status?: string }).status;
+    const showChecklist = canUpdateInspectionChecklist(asInspection);
+    const showCustomMenu = asInspection.status === "scheduled" || showChecklist;
 
     return (
         <>
@@ -87,11 +92,11 @@ function InspectionSheetView({
             onRestore={onRestore}
             editPath={editPath}
             deleteRestoreConfirmLabel={deleteRestoreConfirmLabel}
-            actionMenuAllowCustomChildren={status === "scheduled"}
+            actionMenuAllowCustomChildren={showCustomMenu}
             referenceCardUnitContext={{ unitId: resolvedUnitId, unitName: resolvedUnitName }}
             actionMenuChildren={
-                status === "scheduled" ? (
-                    <CancelInspection onAction={(a: string) => setAction(a)} />
+                showCustomMenu ? (
+                    <InspectionRowMenuExtras inspection={asInspection} onAction={setAction} />
                 ) : null
             }
         />
@@ -103,6 +108,18 @@ function InspectionSheetView({
                 onSuccess={(data?: Inspection) => {
                     if (data) setSheetData(data);
                     onCancelSuccess?.(data);
+                    setAction("");
+                }}
+            />
+        )}
+        {action === "updateInspectionChecklist" && (
+            <UpdateInspectionChecklistDialog
+                open={action === "updateInspectionChecklist"}
+                onClose={() => setAction("")}
+                inspection={asInspection}
+                onSuccess={(data?: Inspection) => {
+                    if (data) setSheetData(data);
+                    onChecklistSuccess?.(data);
                     setAction("");
                 }}
             />

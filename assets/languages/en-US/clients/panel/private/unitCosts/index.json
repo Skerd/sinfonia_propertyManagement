@@ -80,6 +80,11 @@
     "documentSubtotal": "Subtotal",
     "edifice": "Edifice",
     "expenditureItems": "Line items",
+    "expenditureItems.amount": "Line quantity",
+    "expenditureItems.category": "Line category",
+    "expenditureItems.pricePerUnit": "Price per unit",
+    "expenditureItems.title": "Line title",
+    "expenditureItems.unit": "Measure",
     "floor": "Floor",
     "invoiceNumber": "Invoice No.",
     "name": "Reference",
@@ -96,6 +101,7 @@
     "vendorName": "Vendor",
     "verificationStatus": "Verification",
     "!enums": {
+      "expenditureItems": {
       "category": {
         "materials_general": "Materials General",
         "finishes_flooring": "Finishes Flooring",
@@ -135,6 +141,7 @@
         "linear_m": "lm",
         "hour": "h",
         "day": "d"
+      }
       },
       "verificationStatus": {
         "pending_verification": "Pending Verification",

@@ -80,6 +80,11 @@
     "documentSubtotal": "Subtotale",
     "edifice": "Edificio",
     "expenditureItems": "Righe di spesa",
+    "expenditureItems.amount": "Quantità riga",
+    "expenditureItems.category": "Categoria riga",
+    "expenditureItems.pricePerUnit": "Prezzo unitario",
+    "expenditureItems.title": "Titolo riga",
+    "expenditureItems.unit": "Unità di misura",
     "floor": "Piano",
     "invoiceNumber": "N. fattura",
     "name": "Riferimento",
@@ -96,6 +101,7 @@
     "vendorName": "Fornitore",
     "verificationStatus": "Verifica",
     "!enums": {
+      "expenditureItems": {
       "category": {
         "materials_general": "Materiali generali",
         "finishes_flooring": "Pavimentazioni",
@@ -135,6 +141,7 @@
         "linear_m": "lm",
         "hour": "h",
         "day": "d"
+      }
       },
       "verificationStatus": {
         "pending_verification": "Verifica in sospeso",

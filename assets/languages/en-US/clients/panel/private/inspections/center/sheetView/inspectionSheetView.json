@@ -39,7 +39,21 @@
   "alerts": "Alerts",
   "checklist": "Checklist",
   "checklistTemplate": "Checklist Template",
-  "checklistResponsesJson": "Checklist Responses",
+  "checklistItems": "Checklist items",
+  "itemName": "Item",
+  "itemDescription": "Description",
+  "itemInstructions": "Instructions",
+  "importance": "Importance",
+  "completed": "Completed",
+  "importanceLevels": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "completedState": {
+    "true": "Completed",
+    "false": "Pending"
+  },
   "types": {
     "initial": "Initial",
     "follow_up": "Follow-up",

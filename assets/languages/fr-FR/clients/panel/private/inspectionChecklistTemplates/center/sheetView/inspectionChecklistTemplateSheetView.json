@@ -9,7 +9,19 @@
   "trade": "Trade",
   "stage": "Stage",
   "description": "Description",
-  "itemsJson": "Checklist Items",
+  "checklist": "Checklist",
+  "itemName": "Élément",
+  "itemDescription": "Description",
+  "itemInstructions": "Instructions",
+  "importance": "Importance",
+  "importanceLevels": {
+    "low": "Faible",
+    "medium": "Moyenne",
+    "high": "Élevée"
+  },
+  "compactView": "Compact",
+  "cardsView": "Cartes",
+  "toggleReferenceListView": "Changer la disposition de la checklist",
   "notes": "Notes",
   "statuses": {
     "active": "Actif",

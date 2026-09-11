@@ -17,7 +17,7 @@
   "fields": {
     "cancellationReason": "Annullierungsgrund",
     "cancelledAt": "Annulliert am",
-    "checklistResponsesJson": "Checklisten-Antworten (JSON)",
+    "checklistItems": "Checklistenpunkte",
     "checklistTemplate": "Checklisten-Vorlage",
     "clientSignatureMediaId": "Kundenunterschrift Medien-ID",
     "clientSignedAt": "Unterzeichnet am",
@@ -78,32 +78,53 @@
   "help": {
     "ariaLabel": "Über Abnahmen",
     "title": "Über Abnahmen",
-    "overview": "Eine Abnahme (Inspection) ist ein terminierter Besuch an einer Einheit mit Typ, Status, optionaler Checkliste und Feststellungen. Das ist Qualitäts-/Übergabe-Nachweis, keine Reservation und keine Mängelliste (Feststellungen werden oft zu Mängeln). Nur geplante Termine lassen sich mit der eigenen Aktion stornieren.",
+    "overview": "Eine Abnahme ist ein terminierter Besuch an einer Einheit: Typ, Status, Inspektor, Daten, Feststellungen, Medien und eine optionale strukturierte Checkliste. Das ist Qualitäts-/Übergabe-Nachweis. Keine Reservation, keine Mängelliste (Feststellungen werden oft später zu Mängeln) und kein Verkaufs-Übergabepaket.",
     "sections": [
       {
         "title": "Was eine Abnahme speichert",
         "items": [
-          "Einheit (Pflicht), Inspektor, Termin, optionale Checklisten-Vorlage.",
+          "Einheit (Pflicht). Die Karte zeigt auch Stockwerk, Inspektor, Abnahmedatum und nächstes Datum.",
           "Typ: Erst, Folge, Final, Routine, Reklamation, vor Verkauf, nach Verkauf.",
           "Status: geplant → in Arbeit → abgeschlossen, oder storniert / verschoben.",
-          "Feststellungen nach Kategorie mit Notizen, Medien, Schwere, optional erledigt-am.",
-          "Stornogrund und -zeitpunkt."
+          "Optionale Checklisten-Vorlage plus die übernommenen Punkte auf dieser Abnahme (Name, Wichtigkeit, erledigt).",
+          "Feststellungen nach Kategorie (Struktur, Elektrik, Sanitär, HLK, Sicherheit, Optik, übrige) mit Notizen, Medien, Schwere und optional erledigt-am.",
+          "Stornogrund und -zeitpunkt, wenn Sie einen geplanten Termin stornieren."
+        ]
+      },
+      {
+        "title": "Strukturierte Checkliste",
+        "body": "Punkte sind strukturierte Zeilen, kein JSON. Die Vorlage definiert die Punkte; Haken und Abschluss leben auf der Abnahme.",
+        "items": [
+          "Vorlage unter Mandant → Konfigurationen → Abnahme-Checklisten wählen.",
+          "Offene Abnahmen synchronisieren live: neue Punkte erscheinen, umbenannte werden aktualisiert, entfernte unerledigte fallen weg.",
+          "Ein bereits gesetzter Haken bleibt als beibehaltene Zeile, wenn Sie den Punkt später aus der Vorlage entfernen.",
+          "Vorlagenwechsel führt die neue Liste zusammen und behält erledigte Zeilen, die nicht mehr passen.",
+          "Auf dem Sheet öffnet der Link auf der Karte «Checklisten-Vorlage» das Vorlagen-Sheet.",
+          "Archivierte Vorlagen verschwinden aus der Auswahl; eine Abnahme, die sie bereits nutzt, synchronisiert weiter, solange sie offen ist."
         ]
       },
       {
         "title": "Aktionen",
         "items": [
-          "Geplant stornieren — nur im Status geplant.",
-          "Besuch abschliessen durch Feststellungen und Status abgeschlossen.",
+          "Geplant stornieren — nur im Status geplant; speichert Grund und Zeitpunkt. Eine abgeschlossene Abnahme lässt sich nicht stornieren.",
+          "Checkliste aktualisieren — offene Punkte im Menü von Zeile, Karte oder Sheet abhaken, solange die Abnahme offen ist.",
+          "Abschliessen — Status abgeschlossen ist gesperrt, bis jeder lebende (nicht beibehaltene) Punkt gehakt ist. Ohne Checkliste gibt es diese Sperre nicht.",
           "Verschieben setzt den Status auf verschoben und ein neues Datum — das ist kein neues Dokument, ausser Sie legen eines an."
+        ]
+      },
+      {
+        "title": "Einfrieren nach Abschluss",
+        "items": [
+          "Abgeschlossene und stornierte Abnahmen synchronisieren nicht mehr und lehnen weitere Haken ab.",
+          "Der Stand auf dieser Abnahme ist der Nachweis, was beim Abschluss gehakt war."
         ]
       },
       {
         "title": "Auf dieser Seite",
         "items": [
-          "Abnahme an einer Einheit anlegen. Filtern nach Einheit, Typ, Status, Datum.",
-          "Sheet für Feststellungen und Medien.",
-          "Firmenweite Liste in der Sidebar; von einer Einheit aus oft eingeschränkt."
+          "Abnahme an einer Einheit anlegen. Filtern nach Projekt, Gebäude, Stockwerk, Einheit, Typ, Status und Folgebesuch.",
+          "Karten zeigen Einheit, Inspektor, Abnahmedatum und nächstes Datum. Sheet für Feststellungen, Medien und Checkliste.",
+          "Firmenweite Liste unter Immobilien → Abnahmen; von einer Einheit aus oft auf diese Einheit beschränkt."
         ]
       },
       {
@@ -112,14 +133,15 @@
           "Eine Abnahme ändert nie den kommerziellen Einheitenstatus.",
           "Kein Mangel: offene Defekte mit Gewerk und Zuständigkeit gehören zu Mängel.",
           "Kein Änderungsantrag: Kundenwünsche laufen dort durch Architekt / Ingenieur / CEO / Finanzen / Lieferung.",
-          "Übergabe-Checklisten in der Konfiguration können als Vorlagen dienen."
+          "Kein Übergabepaket: Verkaufs-Checklisten stapeln sich nach Projekt / Gebäude / Stockwerk / Einheit und werden am Verkauf gehakt."
         ]
       },
       {
         "title": "Verwandte Datensätze",
         "items": [
           "Einheit (damit Stockwerk / Gebäude / Projekt).",
-          "Optionale Checkliste. Danach: Mängel, Änderungsanträge, Verkaufsübergabe."
+          "Abnahme-Checklisten (Mandant → Konfigurationen) — die Vorlagen, die Sie hier anhängen.",
+          "Danach: Mängel, Änderungsanträge, Verkaufsübergabe."
         ]
       }
     ]

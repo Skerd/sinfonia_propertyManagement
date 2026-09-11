@@ -79,9 +79,7 @@
     "resolvedByLabel": "Erledigt von",
     "resolvedByPlaceholder": "Erledigende Person auswählen",
     "checklistTemplateLabel": "Checklisten-Vorlage",
-    "checklistTemplatePlaceholder": "Checklisten-Vorlage auswählen",
-    "checklistResponsesJsonLabel": "Checklisten-Antworten",
-    "checklistResponsesJsonPlaceholder": "Checklisten-Antworten (JSON)"
+    "checklistTemplatePlaceholder": "Checklisten-Vorlage auswählen"
   },
   "checklist": "Checkliste",
   "clientSignature": "Kundenunterschrift",

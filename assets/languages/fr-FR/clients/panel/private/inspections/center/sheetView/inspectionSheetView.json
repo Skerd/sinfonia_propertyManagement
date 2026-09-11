@@ -39,7 +39,21 @@
   "alerts": "Alertes",
   "checklist": "Checklist",
   "checklistTemplate": "Modèle de checklist",
-  "checklistResponsesJson": "Réponses de checklist",
+  "checklistItems": "Éléments de la checklist",
+  "itemName": "Élément",
+  "itemDescription": "Description",
+  "itemInstructions": "Instructions",
+  "importance": "Importance",
+  "completed": "Terminé",
+  "importanceLevels": {
+    "low": "Faible",
+    "medium": "Moyenne",
+    "high": "Élevée"
+  },
+  "completedState": {
+    "true": "Terminé",
+    "false": "En attente"
+  },
   "types": {
     "initial": "Initiale",
     "follow_up": "Suivi",

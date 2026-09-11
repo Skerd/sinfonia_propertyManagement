@@ -1,0 +1,18 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/updateInspectionChecklistDialog.tsx",
+  "title": "Përditëso listën e kontrollit",
+  "description": "Shënoni zërat e modelit të zgjedhur. Zërat e përfunduar që hiqen mbeten të ruajtur.",
+  "retained": "I ruajtur",
+  "cancel": "Anulo",
+  "confirm": "Ruaj listën",
+  "importance": {
+    "low": "E ulët",
+    "medium": "E mesme",
+    "high": "E lartë"
+  },
+  "axios": {
+    "start": { "title": "Duke përditësuar listën…", "time": 3000 },
+    "success": { "title": "Lista u përditësua", "time": 3000 },
+    "error": { "title": "Lista nuk u përditësua", "time": 3000 }
+  }
+}

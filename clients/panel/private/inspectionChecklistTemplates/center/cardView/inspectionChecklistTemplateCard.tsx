@@ -15,7 +15,7 @@ function inspectionChecklistTemplateEditPath(entity: InspectionChecklistTemplate
     const params = new URLSearchParams();
     params.set("inspectionChecklistTemplateId", entity._id);
     if (entity.name) params.set("inspectionChecklistTemplateName", entity.name);
-    return `/realEstate/inspectionChecklistTemplates/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/inspectionChecklistTemplates/edit?${params.toString()}`;
 }
 
 type InspectionChecklistTemplateCardProps = WithLanguageType & {

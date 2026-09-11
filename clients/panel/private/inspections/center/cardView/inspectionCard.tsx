@@ -2,8 +2,9 @@ import {compose} from "redux";
 import withLanguage, {type ResolveLanguageKey, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import InspectionSheetView from "@propertyManagementModule/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx";
-import CancelInspection from "@propertyManagementModule/clients/panel/private/inspections/center/actions/cancel.tsx";
+import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
+import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import {
@@ -103,6 +104,7 @@ type InspectionCardProps = WithLanguageType & {
     onDelete?: (deletedInspection?: Inspection, response?: DeletedData) => void;
     onRestore?: () => void;
     onCancelSuccess?: (updatedInspection?: Inspection) => void;
+    onChecklistSuccess?: (updatedInspection?: Inspection) => void;
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
     sheetOnly?: boolean;
@@ -120,6 +122,7 @@ function InspectionCard({
     onDelete,
     onRestore,
     onCancelSuccess,
+    onChecklistSuccess,
     open,
     onOpenChange,
     sheetOnly = false,
@@ -153,6 +156,7 @@ function InspectionCard({
                     unitId,
                     unitName,
                     onCancelSuccess,
+                    onChecklistSuccess,
                 })}
                 extraDialogs={({action, setAction, entity}) => (
                     <>
@@ -167,6 +171,17 @@ function InspectionCard({
                                 }}
                             />
                         )}
+                        {action === "updateInspectionChecklist" && (
+                            <UpdateInspectionChecklistDialog
+                                open
+                                onClose={() => setAction("")}
+                                inspection={entity}
+                                onSuccess={(data?: Inspection) => {
+                                    onChecklistSuccess?.(data);
+                                    setAction("");
+                                }}
+                            />
+                        )}
                     </>
                 )}
             >
@@ -177,7 +192,7 @@ function InspectionCard({
                     return (
                         <>
                             <EntityCard.Header titlePath="name" title={entity.name}>
-                                {status === "scheduled" ? <CancelInspection onAction={setAction} /> : null}
+                                <InspectionRowMenuExtras inspection={entity} onAction={setAction} />
                             </EntityCard.Header>
                             <EntityCard.Body className="grid min-w-0 grid-cols-1 sm:grid-cols-3 [&_[data-slot=item]]:w-full [&_[data-slot=restricted-fields]]:col-span-full">
                                 <DisplayRow
@@ -306,6 +321,7 @@ function InspectionCard({
                     onDelete={onDelete}
                     onRestore={onRestore}
                     onCancelSuccess={onCancelSuccess}
+                    onChecklistSuccess={onChecklistSuccess}
                 />
             )}
         </>

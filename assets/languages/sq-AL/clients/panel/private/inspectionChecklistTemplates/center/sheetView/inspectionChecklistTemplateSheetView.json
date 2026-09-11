@@ -9,7 +9,19 @@
   "trade": "Zanati",
   "stage": "Faza",
   "description": "Përshkrimi",
-  "itemsJson": "Artikujt e listës kontrolluese",
+  "checklist": "Lista e kontrollit",
+  "itemName": "Zëri",
+  "itemDescription": "Përshkrimi",
+  "itemInstructions": "Udhëzimet",
+  "importance": "Rëndësia",
+  "importanceLevels": {
+    "low": "E ulët",
+    "medium": "E mesme",
+    "high": "E lartë"
+  },
+  "compactView": "Kompakte",
+  "cardsView": "Karta",
+  "toggleReferenceListView": "Ndrysho paraqitjen e listës",
   "notes": "Shënime",
   "statuses": {
     "active": "Aktiv",

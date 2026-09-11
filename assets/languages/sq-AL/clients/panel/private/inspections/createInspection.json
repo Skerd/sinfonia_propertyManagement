@@ -79,9 +79,7 @@
     "cancellationReasonLabel": "Arsyeja e anulimit",
     "cancellationReasonPlaceholder": "Shkruani arsyen e anulimit të këtij inspektimi…",
     "checklistTemplateLabel": "Modeli i listës kontrolluese",
-    "checklistTemplatePlaceholder": "Zgjidhni modelin e listës kontrolluese",
-    "checklistResponsesJsonLabel": "Përgjigjet e listës kontrolluese",
-    "checklistResponsesJsonPlaceholder": "Përgjigjet e listës kontrolluese (JSON)"
+    "checklistTemplatePlaceholder": "Zgjidhni modelin e listës kontrolluese"
   },
   "checklist": "Lista kontrolluese",
   "clientSignature": "Nënshkrimi i Klientit",

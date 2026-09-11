@@ -9,8 +9,9 @@ import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/com
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
 import InspectionSheetView from "@propertyManagementModule/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx";
-import CancelInspection from "@propertyManagementModule/clients/panel/private/inspections/center/actions/cancel.tsx";
+import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
+import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconTextPlus} from "@tabler/icons-react";
@@ -143,26 +144,42 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
                     onCancelSuccess={(updated?: Inspection) =>
                         updated && listRef.current?.updateRow?.(updated._id, updated)
                     }
+                    onChecklistSuccess={(updated?: Inspection) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
                 />
             )}
-            renderActionMenuChildren={(inspection, bindRowAction) =>
-                (inspection as {status?: string}).status === "scheduled" ? (
-                    <CancelInspection onAction={bindRowAction} />
-                ) : null
-            }
+            renderActionMenuChildren={(inspection, bindRowAction) => (
+                <InspectionRowMenuExtras inspection={inspection} onAction={bindRowAction} />
+            )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {
-                if (action !== "cancelInspection") return null;
-                return (
-                    <CancelInspectionDialog
-                        open={true}
-                        onClose={resetAction}
-                        inspection={entity}
-                        onSuccess={(updated?: Inspection) => {
-                            if (updated) listRef.current?.updateRow?.(updated._id, updated);
-                            resetAction();
-                        }}
-                    />
-                );
+                if (action === "cancelInspection") {
+                    return (
+                        <CancelInspectionDialog
+                            open={true}
+                            onClose={resetAction}
+                            inspection={entity}
+                            onSuccess={(updated?: Inspection) => {
+                                if (updated) listRef.current?.updateRow?.(updated._id, updated);
+                                resetAction();
+                            }}
+                        />
+                    );
+                }
+                if (action === "updateInspectionChecklist") {
+                    return (
+                        <UpdateInspectionChecklistDialog
+                            open={true}
+                            onClose={resetAction}
+                            inspection={entity}
+                            onSuccess={(updated?: Inspection) => {
+                                if (updated) listRef.current?.updateRow?.(updated._id, updated);
+                                resetAction();
+                            }}
+                        />
+                    );
+                }
+                return null;
             }}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
                 <InspectionSheetView
@@ -174,6 +191,9 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
                     onDelete={(response?: DeletedData) => onDelete(response)}
                     onRestore={() => onRestore()}
                     onCancelSuccess={(updated?: Inspection) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
+                    onChecklistSuccess={(updated?: Inspection) =>
                         updated && listRef.current?.updateRow?.(updated._id, updated)
                     }
                 />

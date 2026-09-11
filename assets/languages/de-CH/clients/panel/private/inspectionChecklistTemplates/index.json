@@ -2,6 +2,78 @@
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
   "title": "Abnahme-Checklisten",
   "description": "Wiederverwendbare Vorlagen für Abnahme und Übergabe",
+  "help": {
+    "ariaLabel": "Über Abnahme-Checklisten",
+    "title": "Über Abnahme-Checklisten",
+    "overview": "Eine Abnahme-Checkliste ist eine firmenweite, wiederverwendbare Vorlage: eine benannte Liste mit Name, optionaler Beschreibung und Anleitung sowie Wichtigkeit. Das ist Konfiguration. Haken, beibehaltene Zeilen und die Abschluss-Sperre leben auf jeder offenen Abnahme — nie auf dieser Vorlage.",
+    "sections": [
+      {
+        "title": "Was eine Vorlage speichert",
+        "items": [
+          "Bezeichnung (Pflicht). Optional Beschreibung, Notizen, Gewerk und Phase.",
+          "Mindestens ein Punkt: Name (Pflicht), optional Beschreibung und Anleitung, Wichtigkeit (niedrig / mittel / hoch).",
+          "Status: aktiv oder archiviert. Punkte haben hier kein Erledigt-Flag.",
+          "Firmenweit — nicht an Projekt, Gebäude, Stockwerk oder Einheit gebunden (im Gegensatz zu Übergabepaketen)."
+        ]
+      },
+      {
+        "title": "So nutzen Abnahmen sie",
+        "body": "Hängen Sie eine Vorlage an eine Abnahme. Die Abnahme kopiert die Punkte und speichert die Haken.",
+        "items": [
+          "Solange die Abnahme offen ist (geplant, in Arbeit oder verschoben), synchronisiert sie live: neue Punkte erscheinen, umbenannte werden aktualisiert, unerledigte entfernte fallen weg.",
+          "Ein gesetzter Haken bleibt, wenn Sie den Punkt später aus der Vorlage entfernen — die Abnahme behält die Zeile. Eine beibehaltene Zeile lässt sich nicht abwählen.",
+          "Vorlagenwechsel führt die neue Liste zusammen und behält erledigte Zeilen, die nicht mehr passen.",
+          "Abgeschlossene und stornierte Abnahmen frieren ein: spätere Änderungen hier ändern sie nicht mehr."
+        ]
+      },
+      {
+        "title": "Abschluss-Sperre",
+        "items": [
+          "Eine Abnahme mit lebender Checkliste kann erst abgeschlossen werden, wenn jeder nicht beibehaltene Punkt gehakt ist.",
+          "Beibehaltene Zeilen blockieren den Abschluss nie.",
+          "Ohne Vorlage und ohne Restpunkte gibt es keine Checklisten-Sperre."
+        ]
+      },
+      {
+        "title": "Aktiv und archiviert",
+        "items": [
+          "Nur aktive Vorlagen erscheinen in der Abnahme-Auswahl.",
+          "Archivieren blendet die Vorlage für neue Wahlen aus. Offene Abnahmen, die sie bereits nutzen, synchronisieren weiter, bis sie abgeschlossen oder storniert sind.",
+          "Löschen ist weich und wiederherstellbar. Offene Abnahmen behalten die Zeilen, die sie schon haben."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Vorlage anlegen, die Punkte erfassen, die jede passende Abnahme durchgehen soll, dann speichern.",
+          "Suchen und filtern; Karte öffnen. Bezeichnung, Notizen und Punkte bearbeiten — bestehende Identitäten behalten, damit offene Abnahmen eine Umbenennung als Update behandeln, nicht als Löschen-und-Neu.",
+          "Diese Liste steht unter Mandant → Konfigurationen, direkt nach Übergabepakete."
+        ]
+      },
+      {
+        "title": "Kein Übergabepaket",
+        "items": [
+          "Übergabepakete sind scoped (Projekt / Gebäude / Stockwerk / Einheit) und stapeln sich additiv am Verkauf.",
+          "Abnahme-Checklisten sind eine einzelne Firmenvorlage, die Sie an einen Abnahmebesuch hängen.",
+          "Abnahmepunkte auf der Abnahme haken (Checkliste aktualisieren). Übergabepunkte auf dem Verkauf haken (Übergabe aktualisieren)."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Abnahmen — Vorlage anhängen, Punkte haken, erst abschliessen wenn die lebende Liste fertig ist.",
+          "Übergabepakete — die Verkaufs-Checkliste, daneben in den Konfigurationen."
+        ]
+      },
+      {
+        "title": "Typischer nächster Schritt",
+        "items": [
+          "Aktive Vorlage mit den Punkten anlegen, die eine Routine- oder Übergabe-Abnahme bestätigen soll.",
+          "Bei einer neuen Abnahme diese Vorlage wählen. Während des Besuchs haken. Erst abschliessen, wenn jeder lebende Punkt erledigt ist."
+        ]
+      }
+    ]
+  },
   "createInspectionChecklistTemplate": "Checkliste hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
@@ -13,7 +85,7 @@
     "deletedAt": "Gelöscht",
     "deletedBy": "Gelöscht von",
     "description": "Beschreibung",
-    "itemsJson": "Positionen Json",
+    "items": "Punkte",
     "name": "Referenz",
     "notes": "Notizen",
     "project": "Projekt",

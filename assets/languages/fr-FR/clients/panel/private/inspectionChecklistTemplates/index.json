@@ -2,6 +2,78 @@
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
   "title": "Listes de contrôle",
   "description": "Modèles réutilisables de listes de contrôle",
+  "help": {
+    "ariaLabel": "À propos des listes de contrôle",
+    "title": "À propos des listes de contrôle",
+    "overview": "Une liste de contrôle d'inspection est un modèle réutilisable à l'échelle de la société : une liste titrée d'éléments avec nom, description et consignes optionnelles, et importance. C'est de la configuration. Les cases, les lignes retenues et le verrou de clôture vivent sur chaque inspection ouverte — jamais sur ce modèle.",
+    "sections": [
+      {
+        "title": "Ce qu'un modèle contient",
+        "items": [
+          "Titre (obligatoire). Description, notes, métier et étape optionnels.",
+          "Au moins un élément : nom (obligatoire), description et consignes optionnelles, importance (faible / moyenne / élevée).",
+          "Statut : actif ou archivé. Les éléments n'ont pas de case « fait » ici.",
+          "À l'échelle de la société — pas lié à un projet, bâtiment, étage ou unité (contrairement aux paquets de remise)."
+        ]
+      },
+      {
+        "title": "Comment les inspections l'utilisent",
+        "body": "Attachez un modèle à une inspection. L'inspection copie les éléments et stocke les cases.",
+        "items": [
+          "Tant que l'inspection est ouverte (planifiée, en cours ou reportée), elle se synchronise en direct : ajouts, renommages, disparition des items incomplets retirés.",
+          "Une case déjà cochée est conservée si vous retirez ensuite l'item du modèle — l'inspection retient la ligne. On ne peut pas décocher une ligne retenue.",
+          "Changer de modèle fusionne la nouvelle liste et conserve les lignes terminées qui ne correspondent plus.",
+          "Les inspections terminées ou annulées gèlent : les modifications ultérieures ici ne les changent plus."
+        ]
+      },
+      {
+        "title": "Verrou de clôture",
+        "items": [
+          "Une inspection avec checklist active ne peut pas passer à terminée tant que chaque item non retenu n'est pas coché.",
+          "Les lignes retenues ne bloquent jamais la clôture.",
+          "Sans modèle et sans items restants, il n'y a pas de verrou checklist."
+        ]
+      },
+      {
+        "title": "Actif et archivé",
+        "items": [
+          "Seuls les modèles actifs apparaissent dans le sélecteur d'inspection.",
+          "Archiver masque le modèle pour les nouveaux choix. Les inspections ouvertes qui l'utilisent déjà continuent de se synchroniser jusqu'à clôture ou annulation.",
+          "La suppression est douce et restaurable. Les inspections ouvertes gardent les lignes qu'elles ont déjà."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un modèle, ajouter les items que chaque inspection concernée doit parcourir, puis enregistrer.",
+          "Rechercher et filtrer ; ouvrir une carte. Modifier titre, notes et items — conserver les identités existantes pour qu'un renommage soit une mise à jour, pas une suppression-puis-ajout.",
+          "Cette liste est sous Location → Configurations, juste après Paquets de remise."
+        ]
+      },
+      {
+        "title": "Pas un paquet de remise",
+        "items": [
+          "Les paquets de remise ont une portée (projet / bâtiment / étage / unité) et s'empilent sur une vente.",
+          "Les listes de contrôle d'inspection sont un seul modèle société à attacher à une visite.",
+          "Cochez les items d'inspection sur l'inspection (Mettre à jour la checklist). Cochez les items de remise sur la vente (Mettre à jour la remise)."
+        ]
+      },
+      {
+        "title": "Dossiers liés",
+        "items": [
+          "Inspections — attacher le modèle, cocher, clôturer seulement quand la liste active est faite.",
+          "Paquets de remise — la checklist côté vente, à côté de cet item dans Configurations."
+        ]
+      },
+      {
+        "title": "Prochaine étape typique",
+        "items": [
+          "Ajouter un modèle actif avec les items qu'une inspection de routine ou de remise doit confirmer.",
+          "Sur une nouvelle inspection, choisir ce modèle. Cocher pendant la visite. Clôturer seulement quand chaque item actif est fait."
+        ]
+      }
+    ]
+  },
   "createInspectionChecklistTemplate": "Ajouter une liste",
   "noData": "Aucun enregistrement",
   "failTitle": "Échec du chargement",
@@ -13,7 +85,7 @@
     "deletedAt": "Supprimé",
     "deletedBy": "Supprimé par",
     "description": "Description",
-    "itemsJson": "Items Json",
+    "items": "Éléments",
     "name": "Référence",
     "notes": "Notes",
     "project": "Projet",

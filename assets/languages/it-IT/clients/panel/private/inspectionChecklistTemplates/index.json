@@ -2,6 +2,78 @@
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
   "title": "Checklist di ispezione",
   "description": "Modelli riutilizzabili di checklist di consegna",
+  "help": {
+    "ariaLabel": "Informazioni sulle checklist di ispezione",
+    "title": "Informazioni sulle checklist di ispezione",
+    "overview": "Una checklist di ispezione è un modello riutilizzabile a livello azienda: un elenco intitolato di voci con nome, descrizione e istruzioni opzionali, e importanza. È configurazione. Le spunte, le righe trattenute e il vincolo di completamento vivono su ogni ispezione aperta — mai su questo modello.",
+    "sections": [
+      {
+        "title": "Cosa contiene un modello",
+        "items": [
+          "Titolo (obbligatorio). Descrizione, note, mestiere e fase opzionali.",
+          "Almeno una voce: nome (obbligatorio), descrizione e istruzioni opzionali, importanza (bassa / media / alta).",
+          "Stato: attivo o archiviato. Le voci non hanno qui un flag completato.",
+          "A livello azienda — non legato a progetto, edificio, piano o unità (a differenza dei pacchetti di consegna)."
+        ]
+      },
+      {
+        "title": "Come la usano le ispezioni",
+        "body": "Collegate un modello a un'ispezione. L'ispezione copia le voci e memorizza le spunte.",
+        "items": [
+          "Finché l'ispezione è aperta (programmata, in corso o riprogrammata), si sincronizza in diretta: nuovi item, rinomine, sparizione degli item incompleti rimossi.",
+          "Una spunta già data resta se poi togliete l'item dal modello — l'ispezione trattiene la riga. Non si può togliere la spunta a una riga trattenuta.",
+          "Cambiare modello rimescola la nuova lista e conserva le righe completate che non corrispondono più.",
+          "Le ispezioni completate o annullate si congelano: le modifiche successive qui non le cambiano."
+        ]
+      },
+      {
+        "title": "Vincolo di completamento",
+        "items": [
+          "Un'ispezione con checklist attiva non può diventare completata finché ogni voce non trattenuta non è spuntata.",
+          "Le righe trattenute non bloccano mai il completamento.",
+          "Senza modello e senza voci residue non c'è vincolo checklist."
+        ]
+      },
+      {
+        "title": "Attivo e archiviato",
+        "items": [
+          "Solo i modelli attivi compaiono nel selettore dell'ispezione.",
+          "Archiviare nasconde il modello alle nuove scelte. Le ispezioni aperte che già lo usano continuano a sincronizzare fino a completamento o annullamento.",
+          "L'eliminazione è soft e ripristinabile. Le ispezioni aperte tengono le righe che hanno già."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Creare un modello, aggiungere le voci che ogni ispezione corrispondente deve percorrere, poi salvare.",
+          "Cercare e filtrare; aprire una card. Modificare titolo, note e voci — conservare le identità esistenti così una rinomina è un aggiornamento, non un elimina-e-aggiungi.",
+          "Questo elenco è sotto Locazione → Configurazioni, subito dopo Pacchetti di consegna."
+        ]
+      },
+      {
+        "title": "Non è un pacchetto di consegna",
+        "items": [
+          "I pacchetti di consegna hanno uno scope (progetto / edificio / piano / unità) e si impilano su una vendita.",
+          "Le checklist di ispezione sono un unico modello aziendale da collegare a una visita.",
+          "Spuntate le voci di ispezione sull'ispezione (Aggiorna checklist). Spuntate le voci di consegna sulla vendita (Aggiorna consegna)."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Ispezioni — collegare il modello, spuntare, completare solo quando l'elenco attivo è finito.",
+          "Pacchetti di consegna — la checklist lato vendita, accanto a questa voce in Configurazioni."
+        ]
+      },
+      {
+        "title": "Prossimo passo tipico",
+        "items": [
+          "Aggiungere un modello attivo con le voci che un'ispezione di routine o di consegna deve confermare.",
+          "Su una nuova ispezione, scegliere quel modello. Spuntare durante la visita. Completare solo quando ogni voce attiva è fatta."
+        ]
+      }
+    ]
+  },
   "createInspectionChecklistTemplate": "Aggiungi checklist",
   "noData": "Nessun record trovato",
   "failTitle": "Caricamento non riuscito",
@@ -13,7 +85,7 @@
     "deletedAt": "Eliminato",
     "deletedBy": "Eliminato da",
     "description": "Descrizione",
-    "itemsJson": "Items Json",
+    "items": "Voci",
     "name": "Riferimento",
     "notes": "Note",
     "project": "Progetto",

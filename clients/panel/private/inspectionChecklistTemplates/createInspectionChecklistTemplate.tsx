@@ -11,6 +11,6 @@ export default createGenericCreatePage<CreateInspectionChecklistTemplateFormType
     defaultValues: () => ({
         title: "",
     } as any),
-    successPath: "/realEstate/inspectionChecklistTemplates",
+    successPath: "/tenancy/systemSettings/inspectionChecklistTemplates",
     submitIcon: <IconPlus />,
 });

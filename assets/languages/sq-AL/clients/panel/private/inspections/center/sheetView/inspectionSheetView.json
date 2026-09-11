@@ -39,7 +39,21 @@
   "alerts": "Alarmet",
   "checklist": "Lista kontrolluese",
   "checklistTemplate": "Modeli i listës kontrolluese",
-  "checklistResponsesJson": "Përgjigjet e listës kontrolluese",
+  "checklistItems": "Zërat e listës",
+  "itemName": "Zëri",
+  "itemDescription": "Përshkrimi",
+  "itemInstructions": "Udhëzimet",
+  "importance": "Rëndësia",
+  "completed": "Përfunduar",
+  "importanceLevels": {
+    "low": "E ulët",
+    "medium": "E mesme",
+    "high": "E lartë"
+  },
+  "completedState": {
+    "true": "Përfunduar",
+    "false": "Në pritje"
+  },
   "types": {
     "initial": "Fillestare",
     "follow_up": "Përcjellja",

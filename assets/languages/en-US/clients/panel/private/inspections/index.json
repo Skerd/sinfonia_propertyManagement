@@ -17,7 +17,7 @@
   "fields": {
     "cancellationReason": "Cancellation Reason",
     "cancelledAt": "Cancelled At",
-    "checklistResponsesJson": "Checklist Responses Json",
+    "checklistItems": "Checklist items",
     "checklistTemplate": "Checklist Template",
     "clientSignatureMediaId": "Client Signature Media ID",
     "clientSignedAt": "Signed At",
@@ -78,32 +78,53 @@
   "help": {
     "ariaLabel": "About Inspections",
     "title": "About Inspections",
-    "overview": "An Inspection is a scheduled visit to a unit with a type, status, optional checklist, and findings. It is quality / handover evidence, not a reservation and not a snag list (though findings often become snags). Cancelling a scheduled inspection is a dedicated action; you cannot cancel one that is already completed.",
+    "overview": "An inspection is a scheduled visit to a unit: type, status, inspector, dates, findings, media, and an optional structured checklist. It is quality / handover evidence. It is not a reservation, not a snag list (findings often become snags later), and not a sale handover package.",
     "sections": [
       {
         "title": "What an inspection holds",
         "items": [
-          "Unit (required), inspector, scheduled date/time, optional checklist template.",
+          "Unit (required). The card also shows floor, inspector, inspection date, and next inspection date.",
           "Type: initial, follow-up, final, routine, complaint, pre-sale, post-sale.",
           "Status: scheduled → in progress → completed, or cancelled / rescheduled.",
-          "Findings grouped by category (structural, electrical, and others) with notes, media, severity (low / medium / high / critical), and optional resolved-at.",
+          "Optional checklist template plus the live item rows copied onto this inspection (name, importance, completed).",
+          "Findings by category (structural, electrical, plumbing, HVAC, safety, cosmetic, other) with notes, media, severity, and optional resolved-at.",
           "Cancellation reason and cancelled-at when you cancel a scheduled visit."
+        ]
+      },
+      {
+        "title": "Structured checklist",
+        "body": "Checklist items are structured rows, not a JSON blob. The template defines the items; ticks and completion live on the inspection.",
+        "items": [
+          "Attach a company template from Tenancy → Configurations → Inspection checklists.",
+          "Open inspections live-sync when that template’s items change: new items appear, renamed items update, removed incomplete items drop.",
+          "If you already ticked an item and it is later removed from the template, the inspection keeps that row as retained so the tick is not lost.",
+          "Switching template re-merges from the new list and keeps completed rows that no longer match.",
+          "On the sheet, the Checklist Template card has a reference link that opens the template sheet.",
+          "Archived templates disappear from the picker; an inspection that already uses one keeps syncing from it while still open."
         ]
       },
       {
         "title": "Actions",
         "items": [
-          "Cancel scheduled — only while status is scheduled; stores a reason and timestamp.",
-          "Complete the visit by recording findings and moving status to completed (via edit / sheet, depending on access).",
-          "Reschedule by setting status to rescheduled and a new date — this is not a new inspection document unless you create one."
+          "Cancel scheduled — only while status is scheduled; stores a reason and timestamp. You cannot cancel a completed inspection.",
+          "Update checklist — tick or untick live items from the row, card, or sheet menu while the inspection is open.",
+          "Complete — status cannot become completed until every live (non-retained) checklist item is ticked. Inspections with no checklist have no such gate.",
+          "Reschedule by setting status to rescheduled and a new date — that is not a new inspection document unless you create one."
+        ]
+      },
+      {
+        "title": "Freeze after close",
+        "items": [
+          "Completed and cancelled inspections stop syncing from the template and reject further checklist toggles.",
+          "The snapshot on that inspection is the record of what was checked at close."
         ]
       },
       {
         "title": "On this page",
         "items": [
-          "Create an inspection against a unit. Filter by unit, type, status, date.",
-          "Open the sheet to work findings and media.",
-          "Company-wide list from the sidebar; from a unit, the list can be scoped."
+          "Create an inspection against a unit. Filter by project, edifice, floor, unit, type, status, and follow-up required.",
+          "Cards show unit, inspector, inspection date, and next inspection date. Open the sheet for findings, media, and the checklist.",
+          "Company-wide list from Real Estate → Inspections; from a unit, the list can be scoped to that unit."
         ]
       },
       {
@@ -112,14 +133,15 @@
           "An inspection never changes unit commercial status.",
           "It is not a snag: open defects that need a trade and an assignee belong on Snags.",
           "It is not a modification request: client-asked changes go through architect / engineer / CEO / finance / delivery there.",
-          "Handover checklists in Configurations can be reused as templates on inspections."
+          "It is not a handover package: sale handover checklists stack by project / edifice / floor / unit and tick on the sale."
         ]
       },
       {
         "title": "Related records",
         "items": [
           "Unit (and thus floor / edifice / project).",
-          "Optional checklist template. Follow-on: Snags, Modification requests, Sale handover."
+          "Inspection checklists (Tenancy → Configurations) — the reusable templates you attach here.",
+          "Follow-on: Snags, Modification requests, Sale handover."
         ]
       }
     ]

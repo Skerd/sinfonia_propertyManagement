@@ -2,6 +2,78 @@
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
   "title": "Listat e kontrollit",
   "description": "Shabllone të ripërdorshme për inspektim dhe dorëzim",
+  "help": {
+    "ariaLabel": "Rreth listave të kontrollit",
+    "title": "Rreth listave të kontrollit",
+    "overview": "Një listë kontrolli inspektimi është një shabllon i ripërdorshëm në nivel shoqërie: një listë me titull e zërave me emër, përshkrim dhe udhëzime opsionale, dhe rëndësi. Është konfigurim. Shenjat, rreshtat e mbajtur dhe porta e përfundimit jetojnë te çdo inspektim i hapur — kurrë te ky shabllon.",
+    "sections": [
+      {
+        "title": "Çfarë mban një shabllon",
+        "items": [
+          "Titulli (i detyrueshëm). Përshkrim, shënime, zeje dhe fazë opsionale.",
+          "Të paktën një zë: emër (i detyrueshëm), përshkrim dhe udhëzime opsionale, rëndësi (e ulët / e mesme / e lartë).",
+          "Statusi: aktiv ose i arkivuar. Zërat nuk kanë këtu flamur të përfunduar.",
+          "Në nivel shoqërie — jo i lidhur me projekt, ndërtesë, kat ose njësi (ndryshe nga paketat e dorëzimit)."
+        ]
+      },
+      {
+        "title": "Si e përdorin inspektimet",
+        "body": "Lidhni një shabllon te një inspektim. Inspektimi kopjon zërat dhe ruan shenjat.",
+        "items": [
+          "Sa inspektimi është i hapur (i planifikuar, në punë ose i riprogramuar), sinkronizohet live: zëra të rinj, riemërtime, zhdukje e zërave të papërfunduar të hequr.",
+          "Një shenjë e vënë tashmë ruhet nëse e hiqni zërin më vonë nga shablloni — inspektimi mban rreshtin. Nuk mund të hiqni shenjën e një rreshti të mbajtur.",
+          "Ndryshimi i shabllonit ribashkon listën e re dhe mban rreshtat e përfunduar që nuk përputhen më.",
+          "Inspektimet e përfunduara ose të anuluara ngrihen: ndryshimet e mëvonshme këtu nuk i ndryshojnë."
+        ]
+      },
+      {
+        "title": "Porta e përfundimit",
+        "items": [
+          "Një inspektim me listë kontrolli aktive nuk mund të shënohet i përfunduar derisa çdo zë jo i mbajtur të jetë shënuar.",
+          "Rreshtat e mbajtur nuk e bllokojnë kurrë përfundimin.",
+          "Pa shabllon dhe pa zëra të mbetur nuk ka portë liste kontrolli."
+        ]
+      },
+      {
+        "title": "Aktiv dhe i arkivuar",
+        "items": [
+          "Vetëm shabllonet aktive shfaqen te zgjedhësi i inspektimit.",
+          "Arkivimi e fsheh shabllonin nga zgjedhjet e reja. Inspektimet e hapura që e përdorin tashmë vazhdojnë sinkronizimin derisa të përfundojnë ose të anulohen.",
+          "Fshirja është e butë dhe e rikthyeshme. Inspektimet e hapura mbajnë rreshtat që kanë tashmë."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijoni një shabllon, shtoni zërat që çdo inspektim përkatës duhet të kalojë, pastaj ruani.",
+          "Kërkoni dhe filtroni; hapni një kartë. Ndryshoni titullin, shënimet dhe zërat — mbani identitetet ekzistuese që një riemërtim të jetë përditësim, jo fshirje-dhe-shtim.",
+          "Kjo listë është te Qiraja → Konfigurime, menjëherë pas Paketat e dorëzimit."
+        ]
+      },
+      {
+        "title": "Nuk është paketë dorëzimi",
+        "items": [
+          "Paketat e dorëzimit kanë fushë (projekt / ndërtesë / kat / njësi) dhe shtresohen te një shitje.",
+          "Listat e kontrollit të inspektimit janë një shabllon i vetëm shoqërie që e lidhni te një vizitë.",
+          "Shënoni zërat e inspektimit te inspektimi (Përditëso listën e kontrollit). Shënoni zërat e dorëzimit te shitja (Përditëso dorëzimin)."
+        ]
+      },
+      {
+        "title": "Dosjet e lidhura",
+        "items": [
+          "Inspektimet — lidhni shabllonin, shënoni, përfundoni vetëm kur lista aktive është gati.",
+          "Paketat e dorëzimit — lista e kontrollit anë shitjeje, pranë këtij zëri në Konfigurime."
+        ]
+      },
+      {
+        "title": "Hapi tipik i radhës",
+        "items": [
+          "Shtoni një shabllon aktiv me zërat që një inspektim rutine ose dorëzimi duhet të konfirmojë.",
+          "Te një inspektim i ri, zgjidhni atë shabllon. Shënoni gjatë vizitës. Përfundoni vetëm kur çdo zë aktiv është gati."
+        ]
+      }
+    ]
+  },
   "createInspectionChecklistTemplate": "Shto listë kontrolli",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",
@@ -13,7 +85,7 @@
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
     "description": "Përshkrimi",
-    "itemsJson": "Items Json",
+    "items": "Zërat",
     "name": "Reference",
     "notes": "Shënime",
     "project": "Project",

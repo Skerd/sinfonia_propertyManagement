@@ -17,7 +17,7 @@ function buildEditPath(row: InspectionChecklistTemplate) {
     const params = new URLSearchParams();
     params.set("inspectionChecklistTemplateId", row._id);
     if (row.name) params.set("inspectionChecklistTemplateName", row.name);
-    return `/realEstate/inspectionChecklistTemplates/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/inspectionChecklistTemplates/edit?${params.toString()}`;
 }
 
 function AllInspectionChecklistTemplates({resolveLanguageKey, projectId}: Props) {
@@ -27,7 +27,7 @@ function AllInspectionChecklistTemplates({resolveLanguageKey, projectId}: Props)
             collectionName="inspectionchecklisttemplates"
             accessModel="inspectionchecklisttemplates"
             tableConfigKey="inspectionchecklisttemplates"
-            createPath="/realEstate/inspectionChecklistTemplates/create"
+            createPath="/tenancy/systemSettings/inspectionChecklistTemplates/create"
             createIcon={<IconPlus className="h-4 w-4" />}
             createLanguageKey="createInspectionChecklistTemplate"
             buildEditPath={buildEditPath}

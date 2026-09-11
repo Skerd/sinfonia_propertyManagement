@@ -17,7 +17,7 @@
   "fields": {
     "cancellationReason": "Motif d'annulation",
     "cancelledAt": "Annulé le",
-    "checklistResponsesJson": "Réponses de checklist (JSON)",
+    "checklistItems": "Éléments de la checklist",
     "checklistTemplate": "Modèle de checklist",
     "clientSignatureMediaId": "ID média signature client",
     "clientSignedAt": "Signé le",
@@ -78,32 +78,53 @@
   "help": {
     "ariaLabel": "À propos des inspections",
     "title": "À propos des inspections",
-    "overview": "Une inspection est une visite planifiée d'une unité avec un type, un statut, une checklist optionnelle et des constats. C'est une preuve qualité / réception, pas une réservation ni une liste de réserves (même si les constats deviennent souvent des réserves). Annuler une inspection planifiée est une action dédiée ; on ne peut pas annuler une inspection déjà terminée.",
+    "overview": "Une inspection est une visite planifiée d'une unité : type, statut, inspecteur, dates, constats, médias et une checklist structurée optionnelle. C'est une preuve qualité / réception. Ce n'est pas une réservation, ni une liste de réserves (les constats deviennent souvent des réserves plus tard), ni un paquet de remise de vente.",
     "sections": [
       {
         "title": "Ce qu'une inspection contient",
         "items": [
-          "Unité (obligatoire), inspecteur, date/heure prévue, modèle de checklist optionnel.",
+          "Unité (obligatoire). La carte affiche aussi l'étage, l'inspecteur, la date d'inspection et la prochaine date.",
           "Type : initiale, de suivi, finale, de routine, réclamation, avant-vente, après-vente.",
           "Statut : planifiée → en cours → terminée, ou annulée / reportée.",
-          "Constats groupés par catégorie (structure, électricité, et autres) avec notes, médias, gravité (faible / moyenne / élevée / critique), et date de résolution optionnelle.",
+          "Modèle de checklist optionnel et les lignes d'éléments copiées sur cette inspection (nom, importance, fait).",
+          "Constats par catégorie (structure, électricité, plomberie, CVC, sécurité, cosmétique, autre) avec notes, médias, gravité et date de résolution optionnelle.",
           "Motif d'annulation et horodatage lorsque vous annulez une visite planifiée."
+        ]
+      },
+      {
+        "title": "Checklist structurée",
+        "body": "Les éléments sont des lignes structurées, pas un JSON. Le modèle définit les items ; les cases et l'achèvement vivent sur l'inspection.",
+        "items": [
+          "Attacher un modèle société depuis Location → Configurations → Listes de contrôle.",
+          "Les inspections ouvertes se synchronisent en direct : nouveaux items, renommages, suppression des items incomplets retirés.",
+          "Une case déjà cochée est conservée (ligne retenue) si vous retirez ensuite l'item du modèle.",
+          "Changer de modèle fusionne la nouvelle liste et conserve les lignes terminées qui ne correspondent plus.",
+          "Sur la fiche, le lien de la carte Modèle de checklist ouvre la fiche du modèle.",
+          "Les modèles archivés disparaissent du sélecteur ; une inspection qui en utilise déjà un continue de se synchroniser tant qu'elle est ouverte."
         ]
       },
       {
         "title": "Actions",
         "items": [
-          "Annuler la visite planifiée — seulement tant que le statut est planifiée ; enregistre un motif et un horodatage.",
-          "Terminer la visite en enregistrant les constats et en passant le statut à terminée (via édition / fiche, selon les droits).",
-          "Reporter en passant le statut à reportée et une nouvelle date — ce n'est pas un nouveau document d'inspection, sauf si vous en créez un."
+          "Annuler la visite planifiée — seulement tant que le statut est planifiée ; enregistre un motif et un horodatage. Impossible d'annuler une inspection déjà terminée.",
+          "Mettre à jour la checklist — cocher ou décocher les items actifs depuis le menu ligne, carte ou fiche tant que l'inspection est ouverte.",
+          "Terminer — le statut terminée est bloqué tant que chaque item actif (non retenu) n'est pas coché. Sans checklist, pas de ce verrou.",
+          "Reporter en passant le statut à reportée et une nouvelle date — ce n'est pas un nouveau document, sauf si vous en créez un."
+        ]
+      },
+      {
+        "title": "Gel après clôture",
+        "items": [
+          "Les inspections terminées ou annulées cessent de se synchroniser et refusent tout nouvel basculement de case.",
+          "L'instantané sur cette inspection est la preuve de ce qui était coché à la clôture."
         ]
       },
       {
         "title": "Sur cette page",
         "items": [
-          "Créer une inspection sur une unité. Filtrer par unité, type, statut, date.",
-          "Ouvrir la fiche pour travailler constats et médias.",
-          "Liste société depuis la barre latérale ; depuis une unité, la liste peut être limitée."
+          "Créer une inspection sur une unité. Filtrer par projet, bâtiment, étage, unité, type, statut et suivi requis.",
+          "Les cartes montrent unité, inspecteur, date d'inspection et prochaine date. Ouvrir la fiche pour constats, médias et checklist.",
+          "Liste société depuis Immobilier → Inspections ; depuis une unité, la liste peut être limitée à cette unité."
         ]
       },
       {
@@ -112,14 +133,15 @@
           "Une inspection ne change jamais le statut commercial de l'unité.",
           "Ce n'est pas une réserve : les défauts ouverts qui demandent un corps de métier et un responsable appartiennent aux Réserves.",
           "Ce n'est pas une demande de modification : les changements demandés par le client passent par architecte / ingénieur / CEO / finances / livraison là-bas.",
-          "Les checklists de réception dans Configurations peuvent servir de modèles d'inspection."
+          "Ce n'est pas un paquet de remise : les checklists de vente s'empilent par projet / bâtiment / étage / unité et se cochent sur la vente."
         ]
       },
       {
         "title": "Dossiers liés",
         "items": [
           "Unité (donc étage / bâtiment / projet).",
-          "Modèle de checklist optionnel. Suite : Réserves, Demandes de modification, Réception de vente."
+          "Listes de contrôle (Location → Configurations) — les modèles réutilisables à attacher ici.",
+          "Suite : Réserves, Demandes de modification, Réception de vente."
         ]
       }
     ]

@@ -80,9 +80,7 @@
     "statusCancelled": "Cancelled",
     "statusRescheduled": "Rescheduled",
     "checklistTemplateLabel": "Checklist Template",
-    "checklistTemplatePlaceholder": "Select checklist template",
-    "checklistResponsesJsonLabel": "Checklist Responses",
-    "checklistResponsesJsonPlaceholder": "Checklist responses (JSON)"
+    "checklistTemplatePlaceholder": "Select checklist template"
   },
   "checklist": "Checklist",
   "clientSignature": "Client Signature",

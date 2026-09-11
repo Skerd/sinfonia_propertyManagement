@@ -2,6 +2,78 @@
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
   "title": "Inspection checklists",
   "description": "Reusable inspection and handover checklist templates",
+  "help": {
+    "ariaLabel": "About Inspection checklists",
+    "title": "About Inspection checklists",
+    "overview": "An inspection checklist is a company-wide reusable template: a titled list of items with name, optional description and instructions, and importance. It is configuration. Ticks, retained rows, and the complete-gate live on each open inspection — never on this template.",
+    "sections": [
+      {
+        "title": "What a template holds",
+        "items": [
+          "Title (required). Optional description, notes, trade, and stage.",
+          "At least one item: name (required), optional description and instructions, importance (low / medium / high).",
+          "Status: active or archived. Items have no completed flag here.",
+          "Company-wide — not scoped to a project, edifice, floor, or unit (unlike handover packages)."
+        ]
+      },
+      {
+        "title": "How inspections use it",
+        "body": "Attach one template on an inspection. The inspection copies the items and stores the ticks.",
+        "items": [
+          "While the inspection is open (scheduled, in progress, or rescheduled), it live-syncs from this template: added items appear, renamed items update, incomplete removed items drop.",
+          "A completed tick is kept if you later remove that item from the template — the inspection retains the row so history is not lost. You cannot untick a retained row.",
+          "Switching the template on an open inspection re-merges from the new list and keeps completed rows that no longer match.",
+          "Completed and cancelled inspections freeze: later edits here do not change them, and their ticks cannot be toggled."
+        ]
+      },
+      {
+        "title": "Complete gate",
+        "items": [
+          "An inspection with a live checklist cannot be marked completed until every non-retained item is ticked.",
+          "Retained rows never block completion.",
+          "An inspection with no template and no leftover items has no checklist gate."
+        ]
+      },
+      {
+        "title": "Active and archived",
+        "items": [
+          "Only active templates appear in the inspection picker.",
+          "Archiving hides the template from new selections. Open inspections that already use it keep syncing from it until they complete or cancel.",
+          "Soft-delete can be restored. Deleting a template that is still attached to open inspections leaves those inspections with the rows they already have."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a template, add the items every matching inspection should walk through, then save.",
+          "Search and filter; open a card to inspect items. Edit title, notes, and items — keep existing item identities so open inspections treat a rename as an update, not a delete-and-add.",
+          "This list lives under Tenancy → Configurations, next to Handover packages."
+        ]
+      },
+      {
+        "title": "Not a handover package",
+        "items": [
+          "Handover packages are scoped (project / edifice / floor / unit) and assemble additively on a sale.",
+          "Inspection checklists are a single company template you attach to an inspection visit.",
+          "Tick inspection items from the inspection (Update checklist). Tick handover items from the sale (Update handover)."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Inspections — attach the template, tick items, complete only when the live list is done.",
+          "Handover packages — the sale-side stacked checklist, next to this item in Configurations."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Add an active template with the items a routine or handover inspection should confirm.",
+          "On a new inspection, pick that template. Tick items during the visit. Complete only after every live item is done."
+        ]
+      }
+    ]
+  },
   "createInspectionChecklistTemplate": "Add checklist",
   "noData": "No inspection checklists found",
   "failTitle": "Failed to load inspection checklists",
@@ -13,7 +85,7 @@
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
     "description": "Description",
-    "itemsJson": "Items Json",
+    "items": "Items",
     "name": "Reference",
     "notes": "Notes",
     "project": "Project",

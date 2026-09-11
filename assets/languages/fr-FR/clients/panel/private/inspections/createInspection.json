@@ -79,9 +79,7 @@
     "resolvedByLabel": "Résolu par",
     "resolvedByPlaceholder": "Sélectionner le résolveur",
     "checklistTemplateLabel": "Modèle de checklist",
-    "checklistTemplatePlaceholder": "Sélectionner un modèle de checklist",
-    "checklistResponsesJsonLabel": "Réponses de checklist",
-    "checklistResponsesJsonPlaceholder": "Réponses de checklist (JSON)"
+    "checklistTemplatePlaceholder": "Sélectionner un modèle de checklist"
   },
   "checklist": "Checklist",
   "clientSignature": "Signature client",
