@@ -13,6 +13,8 @@ import {
 } from "@coreModule/components/ui/dialog.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
+import {Checkbox} from "@coreModule/components/ui/checkbox.tsx";
+import {Label} from "@coreModule/components/ui/label.tsx";
 import {AlertTriangle, LoaderCircle, Upload, FileText} from "lucide-react";
 import {toast} from "sonner";
 import {
@@ -38,11 +40,13 @@ function GenerateFloorsUnitsDialog({
     loading
 }: GenerateFloorsUnitsDialogProps) {
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+    const [oldPdf, setOldPdf] = useState(false);
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
             onClose();
             setSelectedFiles([]);
+            setOldPdf(false);
         },
     }));
 
@@ -50,6 +54,7 @@ function GenerateFloorsUnitsDialog({
     useEffect(() => {
         if (!open) {
             setSelectedFiles([]);
+            setOldPdf(false);
         }
     }, [open]);
 
@@ -79,6 +84,7 @@ function GenerateFloorsUnitsDialog({
         const formData = new FormData();
         formData.append('file', selectedFiles[0]);
         formData.append('_id', edificeId);
+        formData.append('oldPdf', String(oldPdf));
         // Call the axios handler
         onFormDataChange(formData);
     };
@@ -107,7 +113,7 @@ function GenerateFloorsUnitsDialog({
                     </DialogDescription>
                 </DialogHeader>
                 
-                <div className="flex flex-col gap-y-4 ">
+                <div className="flex flex-col gap-y-4 min-w-0">
                     <Alert>
                         <AlertTriangle className="h-4 w-4" />
                         <AlertDescription>
@@ -115,11 +121,11 @@ function GenerateFloorsUnitsDialog({
                         </AlertDescription>
                     </Alert>
 
-                    <div className="flex flex-col gap-y-2">
+                    <div className="flex flex-col gap-y-2 min-w-0">
                         <p className="text-sm font-medium">
                             {resolveLanguageKey("fileLabel")}
                         </p>
-                        <div>
+                        <div className="min-w-0">
                             <FileUploader
                                 value={selectedFiles}
                                 onValueChange={handleFileChange}
@@ -128,10 +134,10 @@ function GenerateFloorsUnitsDialog({
                                         "application/pdf": [".pdf"]
                                     },
                                     maxFiles: 1,
-                                    maxSize: 50 * 1024 * 1024, // 50MB
+                                    maxSize: 200 * 1024 * 1024, // 200MB
                                     multiple: false
                                 }}
-                                className="w-full"
+                                className="w-full min-w-0"
                             >
                                 <FileUploaderContent>
                                     <FileInput className="border-2 border-dashed p-6 rounded-lg">
@@ -144,26 +150,38 @@ function GenerateFloorsUnitsDialog({
                                                 or drag and drop
                                             </div>
                                             <div className="text-xs text-muted-foreground">
-                                                PDF file (max 50MB)
+                                                PDF file (max 200MB)
                                             </div>
                                         </div>
                                     </FileInput>
                                     {selectedFiles.length > 0 && (
                                         <FileUploaderItem index={0}>
-                                            <div className="flex items-center gap-2 w-full">
-                                                <FileText className="h-4 w-4" />
-                                                <span className="truncate flex-1">
-                                                {selectedFile?.name}
-                                            </span>
-                                                <span className="text-xs text-muted-foreground">
-                                                ({(selectedFile ? (selectedFile.size / 1024 / 1024).toFixed(2) : 0)} MB)
-                                            </span>
+                                            <div className="flex items-center gap-2 w-full min-w-0">
+                                                <FileText className="h-4 w-4 shrink-0" />
+                                                <span className="truncate min-w-0 flex-1" title={selectedFile?.name}>
+                                                    {selectedFile?.name}
+                                                </span>
+                                                <span className="text-xs text-muted-foreground shrink-0">
+                                                    ({(selectedFile ? (selectedFile.size / 1024 / 1024).toFixed(2) : 0)} MB)
+                                                </span>
                                             </div>
                                         </FileUploaderItem>
                                     )}
                                 </FileUploaderContent>
                             </FileUploader>
                         </div>
+                    </div>
+
+                    <div className="flex items-start gap-x-2">
+                        <Checkbox
+                            id="generate-floors-old-pdf"
+                            checked={oldPdf}
+                            disabled={loading}
+                            onCheckedChange={(value) => setOldPdf(!!value)}
+                        />
+                        <Label htmlFor="generate-floors-old-pdf" className="text-sm font-normal cursor-pointer leading-5">
+                            {resolveLanguageKey("oldPdfLabel")}
+                        </Label>
                     </div>
                 </div>
 
