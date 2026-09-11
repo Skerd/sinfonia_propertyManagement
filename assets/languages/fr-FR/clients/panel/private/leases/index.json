@@ -7,6 +7,8 @@
   "failTitle": "Échec du chargement des baux",
   "failDescription": "Une erreur est survenue lors du chargement des baux. Veuillez réessayer.",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "yes": "Oui",
+  "no": "Non",
   "fields": {
     "contractMedia": "Document du contrat",
     "createdAt": "Créé le",
@@ -19,6 +21,8 @@
     "edifice": "Édifice",
     "endDate": "Date de fin",
     "floor": "Étage",
+    "gracePeriodDays": "Délai de grâce (jours)",
+    "lateFeePercentage": "Pénalité de retard %",
     "monthlyRent": "Loyer mensuel",
     "name": "Référence",
     "notes": "Notes",

@@ -7,6 +7,8 @@
   "failTitle": "Impossibile caricare i contratti",
   "failDescription": "Si è verificato un errore durante il caricamento dei contratti. Riprova.",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "yes": "Sì",
+  "no": "No",
   "fields": {
     "contractMedia": "Documento contratto",
     "createdAt": "Creato il",
@@ -19,6 +21,8 @@
     "edifice": "Edificio",
     "endDate": "Data fine",
     "floor": "Piano",
+    "gracePeriodDays": "Periodo di grazia (giorni)",
+    "lateFeePercentage": "Mora %",
     "monthlyRent": "Affitto mensile",
     "name": "Riferimento",
     "notes": "Note",

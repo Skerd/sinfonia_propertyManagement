@@ -44,7 +44,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
     );
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => {
-        const statusAndTenant: QuickFilterDef[] = [
+        const statusTenantAndDates: QuickFilterDef[] = [
             {
                 field: "tenant",
                 label: resolveLanguageKey("fields.tenant") as string,
@@ -52,6 +52,27 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                 apiUrl: "/api/company/users/select",
                 postBodyKeys: ["administration"],
                 asExtraParam: true,
+            },
+            {
+                field: "rentCurrency",
+                label: resolveLanguageKey("fields.rentCurrency") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/finance/currency/select",
+            },
+            {
+                field: "startDate",
+                label: resolveLanguageKey("fields.startDate") as string,
+                type: COLUMN_TYPE.DATE,
+            },
+            {
+                field: "endDate",
+                label: resolveLanguageKey("fields.endDate") as string,
+                type: COLUMN_TYPE.DATE,
+            },
+            {
+                field: "depositPaid",
+                label: resolveLanguageKey("fields.depositPaid") as string,
+                type: COLUMN_TYPE.BOOLEAN,
             },
             {
                 field: "status",
@@ -65,7 +86,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                 ],
             },
         ];
-        if (unitId) return statusAndTenant;
+        if (unitId) return statusTenantAndDates;
         return [
             {
                 field: "project",
@@ -97,7 +118,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                 apiUrl: "/api/realEstate/unit/select",
                 dependsOn: ["floor", "edifice", "project"],
             },
-            ...statusAndTenant,
+            ...statusTenantAndDates,
         ];
     }, [resolveLanguageKey, unitId]);
 

@@ -7,6 +7,8 @@
   "failTitle": "Mietverträge konnten nicht geladen werden",
   "failDescription": "Beim Laden der Mietverträge ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "yes": "Ja",
+  "no": "Nein",
   "fields": {
     "contractMedia": "Vertragsdokument",
     "createdAt": "Erstellt am",
@@ -19,6 +21,8 @@
     "edifice": "Gebäude",
     "endDate": "Enddatum",
     "floor": "Geschoss",
+    "gracePeriodDays": "Kulanzfrist (Tage)",
+    "lateFeePercentage": "Verzugsgebühr %",
     "monthlyRent": "Monatsmiete",
     "name": "Referenz",
     "notes": "Notizen",

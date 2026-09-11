@@ -7,6 +7,8 @@
   "failTitle": "Failed to load leases",
   "failDescription": "An error occurred while loading leases. Please try again.",
   "searchPlaceholder": "Search or add filters...",
+  "yes": "Yes",
+  "no": "No",
   "fields": {
     "contractMedia": "Contract Media",
     "createdAt": "Created At",
@@ -19,6 +21,8 @@
     "edifice": "Edifice",
     "endDate": "End Date",
     "floor": "Floor",
+    "gracePeriodDays": "Grace Period (Days)",
+    "lateFeePercentage": "Late Fee %",
     "monthlyRent": "Monthly Rent",
     "name": "Reference",
     "notes": "Notes",
