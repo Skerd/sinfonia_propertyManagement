@@ -1,7 +1,14 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
   "title": "Mettre à jour la remise",
-  "description": "Cochez ou décochez les éléments. Le statut est calculé à partir des éléments terminés.",
+  "description": "Cochez les éléments hérités. Les éléments déjà faits et retirés restent conservés.",
+  "sourceScopes": {
+    "project": "Projet",
+    "edifice": "Édifice",
+    "floor": "Étage",
+    "unit": "Unité",
+    "retained": "Conservé"
+  },
   "cancel": "Annuler",
   "confirm": "Enregistrer la remise",
   "importance": {

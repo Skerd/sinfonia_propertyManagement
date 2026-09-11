@@ -166,10 +166,6 @@ function SaleCard({
                         onModifySuccess?.(updated);
                         setAction("");
                     }}
-                    onPackageSuccess={(updated) => {
-                        if (!updated) return;
-                        setEntity({...entity, handoverPackage: updated});
-                    }}
                 />
             )}
         >

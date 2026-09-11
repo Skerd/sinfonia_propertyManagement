@@ -1,7 +1,14 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
   "title": "Übergabe aktualisieren",
-  "description": "Haken Sie Checklistenpunkte an oder entfernen Sie sie. Der Status ergibt sich aus den erledigten Punkten.",
+  "description": "Haken Sie geerbte Checklistenpunkte an. Bereits erledigte, entfernte Punkte bleiben erhalten.",
+  "sourceScopes": {
+    "project": "Projekt",
+    "edifice": "Gebäude",
+    "floor": "Stockwerk",
+    "unit": "Einheit",
+    "retained": "Behalten"
+  },
   "cancel": "Abbrechen",
   "confirm": "Übergabe speichern",
   "importance": {

@@ -56,6 +56,46 @@
     "title": "Ajouter un dossier",
     "description": "Saisissez les informations pour créer un dossier de réception."
   },
+  "help": {
+    "ariaLabel": "À propos de l’ajout d’un dossier de réception",
+    "title": "À propos de l’ajout d’un dossier de réception",
+    "overview": "Vous créez une configuration de checklist, pas le travail à cocher sur une vente. Choisissez la portée la plus étroite. Les ventes ouvertes des unités sous cette portée reprendront ces points à la prochaine synchronisation.",
+    "sections": [
+      {
+        "title": "Choisir la portée",
+        "items": [
+          "Le projet est obligatoire.",
+          "Laissez édifice, étage et unité vides pour une liste projet que chaque unité du projet hérite.",
+          "Renseignez l’édifice (étage et unité vides) pour des extras au niveau bâtiment.",
+          "Renseignez l’étage (unité vide) pour des extras d’étage. Renseignez l’unité pour des points propres à cette unité.",
+          "Les ancêtres sont remplis automatiquement depuis la feuille. Après enregistrement, la portée ne peut plus être changée — créez un autre dossier à une autre portée."
+        ]
+      },
+      {
+        "title": "Unicité",
+        "items": [
+          "Un seul dossier par projet, par édifice, par étage et par unité.",
+          "Un second dossier à la même portée est refusé. Modifiez l’existant."
+        ]
+      },
+      {
+        "title": "Points de checklist",
+        "items": [
+          "Chaque point exige un nom. Description, instructions et importance (faible / moyenne / élevée) sont optionnelles.",
+          "Les points ne se cochent pas ici. L’achèvement s’enregistre sur la vente.",
+          "Le même nom à deux portées (par exemple projet et unité) devient deux lignes sur la vente, chacune étiquetée par sa portée."
+        ]
+      },
+      {
+        "title": "Après enregistrement",
+        "items": [
+          "Les ventes ouvertes dont l’unité est sous cette portée se synchronisent et reçoivent les nouveaux points (non cochés).",
+          "Les ventes qui ont déjà une date de transfert de titre restent gelées et ignorent cette nouvelle config.",
+          "Cochez la liste assemblée sur Ventes → Mettre à jour la réception."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Enregistrer"

@@ -1,5 +1,4 @@
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
-import type {HandoverPackage} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/handoverPackage.dto.ts";
 import UpdateHandoverDialog from "@propertyManagementModule/components/custom/sales/updateHandoverDialog.tsx";
 import RecordTitleTransferDialog from "@propertyManagementModule/components/custom/sales/recordTitleTransferDialog.tsx";
 
@@ -8,7 +7,6 @@ type SaleHandoverDialogsProps = {
     sale: Sale;
     onClose: () => void;
     onSaleSuccess?: (updated?: Sale) => void;
-    onPackageSuccess?: (updated?: HandoverPackage) => void;
 };
 
 export default function SaleHandoverDialogs({
@@ -16,18 +14,14 @@ export default function SaleHandoverDialogs({
     sale,
     onClose,
     onSaleSuccess,
-    onPackageSuccess,
 }: SaleHandoverDialogsProps) {
-    if (action === "updateHandover" && sale.handoverPackage) {
+    if (action === "updateHandover") {
         return (
             <UpdateHandoverDialog
                 open
                 onClose={onClose}
-                handoverPackage={sale.handoverPackage}
-                onSuccess={(updated) => {
-                    if (updated) onPackageSuccess?.(updated);
-                    onSaleSuccess?.({...sale, handoverPackage: updated ?? sale.handoverPackage});
-                }}
+                sale={sale}
+                onSuccess={onSaleSuccess}
             />
         );
     }

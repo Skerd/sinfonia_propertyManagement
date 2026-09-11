@@ -1,7 +1,14 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
   "title": "Update handover",
-  "description": "Tick or untick checklist items. Status updates from what is completed.",
+  "description": "Tick inherited checklist items. Removed items that were already done stay as retained.",
+  "sourceScopes": {
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
+    "unit": "Unit",
+    "retained": "Retained"
+  },
   "cancel": "Cancel",
   "confirm": "Save handover",
   "importance": {

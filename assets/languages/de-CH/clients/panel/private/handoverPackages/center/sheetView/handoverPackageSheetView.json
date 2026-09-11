@@ -6,6 +6,13 @@
   "name": "Referenz",
   "title": "Bezeichnung",
   "status": "Status",
+  "scope": "Geltungsbereich",
+  "scopes": {
+    "project": "Projekt",
+    "edifice": "Gebäude",
+    "floor": "Stockwerk",
+    "unit": "Einheit"
+  },
   "project": "Projekt",
   "edifice": "Gebäude",
   "floor": "Stockwerk",

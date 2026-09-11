@@ -56,6 +56,42 @@
     "title": "Übergabepaket bearbeiten",
     "description": "Angaben für diesen Übergabepaket aktualisieren."
   },
+  "help": {
+    "ariaLabel": "Über das Bearbeiten eines Übergabepakets",
+    "title": "Über das Bearbeiten eines Übergabepakets",
+    "overview": "Sie bearbeiten eine Checklisten-Konfiguration. Projekt, Gebäude, Etage und Einheit sind gesperrt. Änderungen an Punkten aktualisieren offene Verkäufe; Verkäufe mit bereits gesetztem Eigentumsübertragungsdatum bleiben eingefroren.",
+    "sections": [
+      {
+        "title": "Was Sie ändern können",
+        "items": [
+          "Titel, Beschreibung, Notizen, Anhänge und die Checklistenpunkte (Name, Beschreibung, Anweisungen, Wichtigkeit).",
+          "Geltungsbereichsfelder bleiben schreibgeschützt. Für dieselbe Idee auf einer anderen Ebene legen Sie dort ein eigenes Paket an."
+        ]
+      },
+      {
+        "title": "Punkte hinzufügen oder entfernen",
+        "items": [
+          "Neue Punkte erscheinen auf offenen Verkäufen als ungehakte Zeilen, gekennzeichnet mit dem Geltungsbereich dieses Pakets.",
+          "Einen unerledigten Punkt entfernen — er fällt von offenen Verkäufen weg.",
+          "Einen erledigten Punkt entfernen — der Verkauf behält ihn als beibehalten. Beibehaltene Zeilen können nicht abgewählt werden und blockieren die Eigentumsübertragung nie.",
+          "Denselben Namen in diesem Geltungsbereich wieder hinzufügen hängt eine beibehaltene Zeile mit Haken wieder an."
+        ]
+      },
+      {
+        "title": "Eingefrorene Verkäufe",
+        "items": [
+          "Sobald ein Verkauf ein Eigentumsübertragungsdatum hat, ändert sich sein Checklisten-Schnappschuss nicht mehr, wenn Sie diese Konfiguration bearbeiten.",
+          "Spätere Änderungen betreffen nur noch offene Verkäufe."
+        ]
+      },
+      {
+        "title": "Wo abgehakt wird",
+        "items": [
+          "Verkäufe → Übergabe aktualisieren. Diese Seite erfasst keinen Abschluss."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Speichern"

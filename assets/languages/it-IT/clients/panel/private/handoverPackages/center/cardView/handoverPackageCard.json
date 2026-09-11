@@ -3,6 +3,12 @@
   "failedTitle": "Impossibile caricare pacchetto di consegna",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "scopes": {
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "unit": "Unità"
+  },
   "status": {
     "draft": "Bozza",
     "in_progress": "In Progress",

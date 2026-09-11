@@ -1,7 +1,14 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
   "title": "Përditëso dorëzimin",
-  "description": "Shënoni ose hiqni shenjën e zërave. Statusi llogaritet nga zërat e përfunduar.",
+  "description": "Shënoni zërat e trashëguar. Zërat e përfunduar që hiqen mbeten të ruajtur.",
+  "sourceScopes": {
+    "project": "Projekt",
+    "edifice": "Ndërtesë",
+    "floor": "Kat",
+    "unit": "Njësi",
+    "retained": "I ruajtur"
+  },
   "cancel": "Anulo",
   "confirm": "Ruaj dorëzimin",
   "importance": {

@@ -1,7 +1,83 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Pacchetti di consegna",
-  "description": "Documentazione as-built per proprietari e gestori",
+  "description": "Configurazioni checklist ereditate da progetto, edificio, piano e unità",
+  "help": {
+    "ariaLabel": "Informazioni sui pacchetti di consegna",
+    "title": "Informazioni sui pacchetti di consegna",
+    "overview": "Un pacchetto di consegna è una configurazione di checklist riutilizzabile per un ambito: progetto, edificio, piano o unità. Non è l’elenco da spuntare sulla vendita. Le vendite aperte assemblano la checklist effettiva concatenando le config antenate; spunte, date di completamento e chi ha completato ogni voce vivono sulla vendita.",
+    "sections": [
+      {
+        "title": "Cosa contiene un pacchetto",
+        "items": [
+          "Progetto (obbligatorio). Edificio, piano e unità opzionali — il campo più stretto che imposti è l’ambito.",
+          "Titolo, descrizione, note e allegati opzionali.",
+          "Voci della checklist: nome (obbligatorio), descrizione e istruzioni opzionali, importanza (bassa / media / alta).",
+          "Ambito calcolato: progetto, edificio, piano o unità. I pacchetti non hanno stato qui e le voci non hanno flag « completato » sulla config."
+        ]
+      },
+      {
+        "title": "Un pacchetto per ambito",
+        "items": [
+          "Al massimo un pacchetto per un dato progetto, uno per edificio, uno per piano e uno per unità.",
+          "Un secondo pacchetto nello stesso ambito viene rifiutato.",
+          "In creazione, gli antenati mancanti si compilano dalla foglia (un pacchetto unità memorizza anche piano, edificio e progetto).",
+          "Progetto, edificio, piano e unità non si possono cambiare dopo la creazione. Modifica invece voci, titolo, note e media."
+        ]
+      },
+      {
+        "title": "Ereditarietà",
+        "body": "L’elenco effettivo di un’unità è additivo: voci di progetto, poi edificio, poi piano, poi unità. I livelli mancanti si saltano. Lo stesso nome a due livelli resta due righe, ciascuna etichettata con l’ambito (Progetto / Edificio / Piano / Unità).",
+        "items": [
+          "Un pacchetto progetto contribuisce a ogni unità di quel progetto. I pacchetti edificio, piano e unità si impilano sopra se esistono.",
+          "Non copi le voci a mano. Le vendite aperte si sincronizzano dalle config attualmente applicabili all’unità."
+        ]
+      },
+      {
+        "title": "In questa pagina",
+        "items": [
+          "Crea un pacchetto — scegli l’ambito lasciando vuoti i livelli inferiori (solo progetto) oppure compilando edificio, piano o unità.",
+          "Cerca e filtra; apri una scheda per ispezionare voci e allegati.",
+          "Modifica voci, titolo, note e media. I campi ambito sono in sola lettura.",
+          "L’eliminazione è un soft delete, ripristinabile. Rimuovere un pacchetto aggiorna le vendite aperte: le voci incomplete cadono; quelle completate restano sulla vendita come trattenute."
+        ]
+      },
+      {
+        "title": "Le spunte vivono sulla vendita",
+        "items": [
+          "Spunta le voci dalla vendita (Aggiorna consegna), non da questa config.",
+          "Le vendite aperte si risincronizzano quando aggiungi o rimuovi voci qui. Le vendite che hanno già una data di trasferimento del titolo sono congelate — le modifiche successive alla config non le cambiano.",
+          "Se completi una voce e poi la rimuovi dalla config, la vendita la tiene come trattenuta. Non puoi togliere la spunta a una riga trattenuta.",
+          "Se rimuovi una voce ancora incompleta, scompare dalle vendite aperte.",
+          "Riaggiungere lo stesso nome nello stesso ambito riallaccia una riga trattenuta e conserva la spunta."
+        ]
+      },
+      {
+        "title": "Trasferimento del titolo",
+        "items": [
+          "Se Vendite e consegna richiede un pacchetto di consegna completato, la registrazione del trasferimento del titolo è bloccata finché ogni voce non trattenuta di quella vendita non è spuntata e almeno una config si applica all’unità.",
+          "Le righe trattenute non bloccano mai il trasferimento del titolo.",
+          "Con l’interruttore spento, questa checklist non vincola il trasferimento del titolo."
+        ]
+      },
+      {
+        "title": "Record correlati",
+        "items": [
+          "Vendite — l’elenco da spuntare, Aggiorna consegna e trasferimento del titolo.",
+          "Vendite e consegna (Tenancy → Configurazioni → Real Estate) — l’interruttore aziendale che vincola il trasferimento del titolo.",
+          "Unità, piani, edifici e progetti — gli ambiti a cui colleghi i pacchetti."
+        ]
+      },
+      {
+        "title": "Prossimo passo",
+        "items": [
+          "Crea un pacchetto di progetto con le voci che ogni unità deve completare.",
+          "Aggiungi pacchetti di edificio, piano o unità solo per gli extra da impilare.",
+          "Su ogni vendita aperta, spunta la checklist assemblata. Registra il trasferimento del titolo quando il vincolo lo consente."
+        ]
+      }
+    ]
+  },
   "createHandoverPackage": "Aggiungi pacchetto",
   "noData": "Nessun record trovato",
   "failTitle": "Caricamento non riuscito",

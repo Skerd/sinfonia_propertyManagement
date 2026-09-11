@@ -1,7 +1,14 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
   "title": "Aggiorna consegna",
-  "description": "Spunta o togli la spunta alle voci. Lo stato deriva da ciò che è completato.",
+  "description": "Spunta le voci ereditate. Le voci già completate e rimosse restano conservate.",
+  "sourceScopes": {
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "unit": "Unità",
+    "retained": "Conservata"
+  },
   "cancel": "Annulla",
   "confirm": "Salva consegna",
   "importance": {

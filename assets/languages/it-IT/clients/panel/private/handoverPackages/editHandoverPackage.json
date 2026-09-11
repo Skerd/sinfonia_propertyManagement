@@ -56,6 +56,42 @@
     "title": "Modifica pacchetto di consegna",
     "description": "Aggiorna i dati di questo pacchetto di consegna."
   },
+  "help": {
+    "ariaLabel": "Informazioni sulla modifica di un pacchetto di consegna",
+    "title": "Informazioni sulla modifica di un pacchetto di consegna",
+    "overview": "Stai modificando una configurazione di checklist. Progetto, edificio, piano e unità sono bloccati. Cambiare le voci aggiorna le vendite aperte; le vendite che hanno già una data di trasferimento del titolo restano congelate.",
+    "sections": [
+      {
+        "title": "Cosa puoi cambiare",
+        "items": [
+          "Titolo, descrizione, note, allegati e le voci della checklist (nome, descrizione, istruzioni, importanza).",
+          "I campi ambito restano in sola lettura. Per le stesse idee a un altro livello, crea un pacchetto distinto lì."
+        ]
+      },
+      {
+        "title": "Aggiungere o rimuovere voci",
+        "items": [
+          "Le nuove voci compaiono sulle vendite aperte come righe non spuntate, etichettate con l’ambito di questo pacchetto.",
+          "Rimuovi una voce incompleta e cade dalle vendite aperte.",
+          "Rimuovi una voce completata e la vendita la tiene come trattenuta. Le righe trattenute non si possono despuntare e non bloccano mai il trasferimento del titolo.",
+          "Riaggiungi lo stesso nome in questo stesso ambito e una riga trattenuta si riallaccia conservando la spunta."
+        ]
+      },
+      {
+        "title": "Vendite congelate",
+        "items": [
+          "Quando una vendita ha una data di trasferimento del titolo, lo snapshot della checklist non cambia se modifichi questa config.",
+          "Le modifiche successive riguardano solo le vendite ancora aperte."
+        ]
+      },
+      {
+        "title": "Dove si spunta",
+        "items": [
+          "Vendite → Aggiorna consegna. Questa pagina non registra il completamento."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Annulla",
     "submit": "Salva"

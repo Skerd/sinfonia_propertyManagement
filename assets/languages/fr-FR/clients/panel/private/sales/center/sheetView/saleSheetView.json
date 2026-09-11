@@ -57,6 +57,30 @@
   "saleDate": "Date de vente",
   "handover": "Remise des clés",
   "handoverPackage": "Dossier de remise",
+  "handoverChecklist": "Checklist de remise",
+  "handoverConfigs": "Configurations de remise",
+  "itemName": "Élément",
+  "itemDescription": "Description",
+  "itemInstructions": "Instructions",
+  "importance": "Importance",
+  "completed": "Terminé",
+  "sourceScope": "Portée",
+  "sourceScopes": {
+    "project": "Projet",
+    "edifice": "Édifice",
+    "floor": "Étage",
+    "unit": "Unité",
+    "retained": "Conservé"
+  },
+  "importanceLevels": {
+    "low": "Faible",
+    "medium": "Moyenne",
+    "high": "Haute"
+  },
+  "completedState": {
+    "true": "Terminé",
+    "false": "En attente"
+  },
   "handoverDate": "Date de remise",
   "handoverCompletedAt": "Remise terminée",
   "handedOverBy": "Remis par",

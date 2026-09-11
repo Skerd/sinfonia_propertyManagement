@@ -6,6 +6,13 @@
   "name": "Référence",
   "title": "Titre",
   "status": "Statut",
+  "scope": "Portée",
+  "scopes": {
+    "project": "Projet",
+    "edifice": "Édifice",
+    "floor": "Étage",
+    "unit": "Unité"
+  },
   "project": "Projet",
   "edifice": "Bâtiment",
   "floor": "Étage",

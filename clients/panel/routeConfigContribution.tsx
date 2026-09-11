@@ -119,6 +119,13 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
             if (resource === "propertyManagementConfig") {
                 return <PropertyManagementConfigGate />;
             }
+            if (resource === "handoverPackages") {
+                const id = searchParams.get("handoverPackageId") || undefined;
+                const name = safeDecode(searchParams.get("handoverPackageName")) || undefined;
+                if (action === "create") return <CreateHandoverPackage />;
+                if (action === "edit" && id) return <EditHandoverPackage entityId={id} entityName={name} />;
+                return <AllHandoverPackages />;
+            }
             return undefined;
         }
 

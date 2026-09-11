@@ -54,7 +54,47 @@
   },
   "formHeader": {
     "title": "Add handover package",
-    "description": "Enter the details to create a new handover package."
+    "description": "Leave edifice, floor, or unit empty to apply this checklist at that scope. Units inherit ancestor items."
+  },
+  "help": {
+    "ariaLabel": "About adding a handover package",
+    "title": "About adding a handover package",
+    "overview": "You are creating a checklist configuration, not ticking work on a sale. Choose the narrowest scope this list should apply at. Open sales for units under that scope will pick up these items on the next sync.",
+    "sections": [
+      {
+        "title": "How to pick the scope",
+        "items": [
+          "Project is required.",
+          "Leave edifice, floor, and unit empty for a project-wide list that every unit in the project inherits.",
+          "Fill edifice (and leave floor and unit empty) for building-level extras.",
+          "Fill floor (and leave unit empty) for floor-level extras. Fill unit for items that apply only to that unit.",
+          "Ancestors are filled automatically from the leaf. After save, scope cannot be changed — create a new package at a different scope instead."
+        ]
+      },
+      {
+        "title": "Uniqueness",
+        "items": [
+          "There can be only one package per project, per edifice, per floor, and per unit.",
+          "A second package at the same scope is rejected. Edit the existing one instead."
+        ]
+      },
+      {
+        "title": "Checklist items",
+        "items": [
+          "Each item needs a name. Description, instructions, and importance (low / medium / high) are optional.",
+          "Items are not ticked here. Completion is recorded on the sale.",
+          "The same name at two scopes (for example project and unit) becomes two rows on the sale, each labeled with its scope."
+        ]
+      },
+      {
+        "title": "What happens after save",
+        "items": [
+          "Open sales whose unit sits under this scope re-sync and gain the new items (unchecked).",
+          "Sales that already have a title-transfer date stay frozen and ignore this new config.",
+          "Tick the assembled list on Sales → Update handover."
+        ]
+      }
+    ]
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -1,7 +1,83 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Paketat e dorëzimit",
-  "description": "Paketat e dorëzimit as-built për pronarë dhe operatorë",
+  "description": "Konfigurime checklist të trashëguara nga projekti, ndërtesa, kati dhe njësia",
+  "help": {
+    "ariaLabel": "Rreth paketave të dorëzimit",
+    "title": "Rreth paketave të dorëzimit",
+    "overview": "Një paketë dorëzimi është një konfigurim checklist i ripërdorshëm për një fushëveprim: projekt, ndërtesë, kat ose njësi. Nuk është lista që shënohet te shitja. Shitjet e hapura ndërtojnë checklist-in efektiv duke bashkuar konfigurimet paraardhëse; shenjat, datat e përfundimit dhe kush e ka përfunduar çdo zë jetojnë te shitja.",
+    "sections": [
+      {
+        "title": "Çfarë ruan paketa",
+        "items": [
+          "Projekti (i detyrueshëm). Ndërtesa, kati dhe njësia janë opsionale — fusha më e ngushtë që vendos është fushëveprimi.",
+          "Titulli, përshkrimi opsional, shënimet dhe bashkëngjitjet.",
+          "Zërat e checklist-it: emri (i detyrueshëm), përshkrim dhe udhëzime opsionale, rëndësia (e ulët / mesatare / e lartë).",
+          "Fushëveprimi i llogaritur: projekt, ndërtesë, kat ose njësi. Paketat nuk kanë status këtu dhe zërat nuk kanë flamur « i përfunduar » te konfigurimi."
+        ]
+      },
+      {
+        "title": "Një paketë për fushëveprim",
+        "items": [
+          "Më së shumti një paketë për një projekt, një për ndërtesë, një për kat dhe një për njësi.",
+          "Një paketë e dytë në të njëjtin fushëveprim refuzohet.",
+          "Në krijim, paraardhësit që mungojnë plotësohen nga gjetheja (një paketë njësie ruan edhe katin, ndërtesën dhe projektin).",
+          "Projekti, ndërtesa, kati dhe njësia nuk ndryshohen pas krijimit. Ndrysho zërat, titullin, shënimet dhe median."
+        ]
+      },
+      {
+        "title": "Trashëgimia",
+        "body": "Lista efektive e njësisë është shtuese: zërat e projektit, pastaj ndërtesa, pastaj kati, pastaj njësia. Nivelet që mungojnë anashkalohen. I njëjti emër në dy nivele mbetet dy rreshta, secili me etiketën e fushëveprimit (Projekt / Ndërtesë / Kat / Njësi).",
+        "items": [
+          "Një paketë projekti kontribuon te çdo njësi e atij projekti. Paketat e ndërtesës, katit dhe njësisë shtohen sipër kur ekzistojnë.",
+          "Nuk i kopjon zërat me dorë. Shitjet e hapura sinkronizohen nga konfigurimet që zbatohen aktualisht te njësia."
+        ]
+      },
+      {
+        "title": "Në këtë faqe",
+        "items": [
+          "Krijo një paketë — zgjidh fushëveprimin duke lënë bosh nivelet e poshtme (vetëm projekt), ose duke plotësuar ndërtesën, katin ose njësinë.",
+          "Kërko dhe filtro; hap një kartë për të parë zërat dhe bashkëngjitjet.",
+          "Ndrysho zërat, titullin, shënimet dhe median. Fushat e fushëveprimit janë vetëm për lexim.",
+          "Fshirja është soft-delete dhe mund të rikthehet. Heqja e një pakete përditëson shitjet e hapura: zërat e papërfunduar bien; të përfunduarit mbeten te shitja si të mbajtur."
+        ]
+      },
+      {
+        "title": "Shenjat jetojnë te shitja",
+        "items": [
+          "Shëno zërat nga shitja (Përditëso dorëzimin), jo nga ky konfigurim.",
+          "Shitjet e hapura ri-sinkronizohen kur shton ose heq zëra këtu. Shitjet që tashmë kanë datë transferimi titulli janë të ngrira — ndryshimet e mëvonshme të konfigurimit nuk i prekin.",
+          "Nëse e përfundon një zë dhe pastaj e heq nga konfigurimi, shitja e mban rreshtin si të mbajtur. Nuk mund ta heqësh shenjën nga një rresht i mbajtur.",
+          "Nëse heq një zë ende të papërfunduar, ai zhduket nga shitjet e hapura.",
+          "Shtimi sërish i të njëjtit emër në të njëjtin fushëveprim ri-lidh rreshtin e mbajtur dhe ruan shenjën."
+        ]
+      },
+      {
+        "title": "Transferimi i titullit",
+        "items": [
+          "Nëse Shitjet & dorëzimi kërkon paketë dorëzimi të përfunduar, regjistrimi i transferimit të titullit bllokohet derisa çdo zë jo i mbajtur i asaj shitjeje të jetë shënuar dhe të paktën një konfigurim të zbatohet te njësia.",
+          "Rreshtat e mbajtur nuk e bllokojnë kurrë transferimin e titullit.",
+          "Me çelësin fikur, kjo checklist nuk e kushtëzon transferimin e titullit."
+        ]
+      },
+      {
+        "title": "Të dhëna të lidhura",
+        "items": [
+          "Shitjet — lista për t’u shënuar, Përditëso dorëzimin dhe transferimi i titullit.",
+          "Shitjet & dorëzimi (Tenancy → Konfigurime → Real Estate) — çelësi i kompanisë që kushtëzon transferimin e titullit.",
+          "Njësitë, katet, ndërtesat dhe projektet — fushëveprimet ku lidh paketat."
+        ]
+      },
+      {
+        "title": "Hapi tjetër",
+        "items": [
+          "Krijo një paketë projekti me zërat që çdo njësi duhet t’i përfundojë.",
+          "Shto paketa ndërtese, kati ose njësie vetëm për shtesat që duhet të vendosen sipër.",
+          "Te çdo shitje e hapur, shëno checklist-in e bashkuar. Regjistro transferimin e titullit kur porta e lejon."
+        ]
+      }
+    ]
+  },
   "createHandoverPackage": "Shto paketë dorëzimi",
   "noData": "Nuk u gjetën të dhëna",
   "failTitle": "Ngarkimi dështoi",

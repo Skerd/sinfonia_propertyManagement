@@ -1,7 +1,83 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Übergabepakete",
-  "description": "Übergabedokumentation für Eigentümer und Betreiber",
+  "description": "Checklisten-Konfigurationen, vererbt von Projekt, Gebäude, Etage und Einheit",
+  "help": {
+    "ariaLabel": "Über Übergabepakete",
+    "title": "Über Übergabepakete",
+    "overview": "Ein Übergabepaket ist eine wiederverwendbare Checklisten-Konfiguration für einen Geltungsbereich: Projekt, Gebäude, Etage oder Einheit. Es ist nicht die abhakbare Liste auf dem Verkauf. Offene Verkäufe setzen die wirksame Checkliste aus den Vorfahren zusammen; Häkchen, Abschlussdatum und wer den Punkt erledigt hat, stehen auf dem Verkauf.",
+    "sections": [
+      {
+        "title": "Was das Paket speichert",
+        "items": [
+          "Projekt (Pflicht). Optional Gebäude, Etage und Einheit — das engste gesetzte Feld ist der Geltungsbereich.",
+          "Titel, optionale Beschreibung, Notizen und Anhänge.",
+          "Checklistenpunkte: Name (Pflicht), optionale Beschreibung und Anweisungen, Wichtigkeit (niedrig / mittel / hoch).",
+          "Berechneter Geltungsbereich: Projekt, Gebäude, Etage oder Einheit. Pakete haben hier keinen Status, und Punkte haben auf der Konfiguration kein Abgehakt-Flag."
+        ]
+      },
+      {
+        "title": "Ein Paket pro Geltungsbereich",
+        "items": [
+          "Höchstens ein Paket je Projekt, je Gebäude, je Etage und je Einheit.",
+          "Ein zweites Paket im gleichen Geltungsbereich wird abgelehnt.",
+          "Beim Anlegen werden fehlende Vorfahren vom Blatt ergänzt (ein Einheitenpaket speichert auch Etage, Gebäude und Projekt).",
+          "Projekt, Gebäude, Etage und Einheit lassen sich nach dem Anlegen nicht mehr ändern. Bearbeiten Sie stattdessen Punkte, Titel, Notizen und Medien."
+        ]
+      },
+      {
+        "title": "Vererbung",
+        "body": "Die wirksame Liste einer Einheit ist additiv: zuerst Projektpunkte, dann Gebäude, dann Etage, dann Einheit. Fehlende Ebenen werden übersprungen. Derselbe Name auf zwei Ebenen bleibt zwei Zeilen, jeweils mit Geltungsbereich (Projekt / Gebäude / Etage / Einheit).",
+        "items": [
+          "Ein Projektpaket gilt für jede Einheit in diesem Projekt. Gebäude-, Etagen- und Einheitenpakete stapeln sich darüber, wenn sie existieren.",
+          "Sie kopieren Punkte nicht von Hand nach unten. Offene Verkäufe synchronisieren aus den aktuell geltenden Konfigurationen der Einheit."
+        ]
+      },
+      {
+        "title": "Auf dieser Seite",
+        "items": [
+          "Paket anlegen — Geltungsbereich wählen, indem Sie untere Ebenen leer lassen (nur Projekt) oder Gebäude, Etage bzw. Einheit füllen.",
+          "Suchen und filtern; Karte öffnen für Punkte und Anhänge.",
+          "Punkte, Titel, Notizen und Medien bearbeiten. Geltungsbereichsfelder sind schreibgeschützt.",
+          "Löschen ist Soft-Delete und wiederherstellbar. Entfernen eines Pakets aktualisiert offene Verkäufe: unerledigte Punkte fallen weg; erledigte bleiben auf dem Verkauf als beibehalten."
+        ]
+      },
+      {
+        "title": "Abhaken geschieht auf dem Verkauf",
+        "items": [
+          "Punkte auf dem Verkauf abhaken (Übergabe aktualisieren), nicht in dieser Konfiguration.",
+          "Offene Verkäufe synchronisieren, wenn Sie hier Punkte hinzufügen oder entfernen. Verkäufe mit bereits gesetztem Eigentumsübertragungsdatum sind eingefroren — spätere Konfigurationsänderungen erreichen sie nicht.",
+          "Haken Sie einen Punkt ab und entfernen ihn danach aus der Konfiguration, behält der Verkauf die Zeile als beibehalten. Eine beibehaltene Zeile kann nicht wieder abgewählt werden.",
+          "Entfernen Sie einen noch unerledigten Punkt, verschwindet er von offenen Verkäufen.",
+          "Denselben Namen im selben Geltungsbereich erneut hinzufügen hängt eine beibehaltene Zeile wieder an und behält den Haken."
+        ]
+      },
+      {
+        "title": "Eigentumsübertragung",
+        "items": [
+          "Wenn Verkauf & Übergabe ein abgeschlossenes Übergabepaket verlangt, ist die Eigentumsübertragung blockiert, bis jeder nicht beibehaltene Punkt auf diesem Verkauf abgehakt ist und mindestens eine Konfiguration für die Einheit gilt.",
+          "Beibehaltene Zeilen blockieren die Eigentumsübertragung nie.",
+          "Ist der Schalter aus, gilt diese Checkliste nicht als Tor für die Eigentumsübertragung."
+        ]
+      },
+      {
+        "title": "Verwandte Datensätze",
+        "items": [
+          "Verkäufe — die abhakbare Liste, Übergabe aktualisieren und Eigentumsübertragung.",
+          "Verkauf & Übergabe (Tenancy → Konfigurationen → Real Estate) — der Firmenschalter, der die Eigentumsübertragung steuert.",
+          "Einheiten, Etagen, Gebäude und Projekte — die Geltungsbereiche, an die Sie Pakete hängen."
+        ]
+      },
+      {
+        "title": "Nächster Schritt",
+        "items": [
+          "Ein Projektpaket mit den Punkten anlegen, die jede Einheit erledigen muss.",
+          "Gebäude-, Etagen- oder Einheitenpakete nur für Extra-Punkte, die sich darüber stapeln sollen.",
+          "Auf jedem offenen Verkauf die zusammengesetzte Checkliste abhaken. Eigentumsübertragung erfassen, sobald das Tor es erlaubt."
+        ]
+      }
+    ]
+  },
   "createHandoverPackage": "Übergabepaket hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",

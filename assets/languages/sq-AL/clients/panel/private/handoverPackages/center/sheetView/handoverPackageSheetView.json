@@ -6,6 +6,13 @@
   "name": "Referenca",
   "title": "Titulli",
   "status": "Statusi",
+  "scope": "Fushëveprimi",
+  "scopes": {
+    "project": "Projekt",
+    "edifice": "Ndërtesë",
+    "floor": "Kat",
+    "unit": "Njësi"
+  },
   "project": "Projekti",
   "edifice": "Ndërtesa",
   "floor": "Kati",

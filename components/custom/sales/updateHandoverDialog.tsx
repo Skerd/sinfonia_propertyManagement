@@ -13,13 +13,14 @@ import {
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Switch} from "@coreModule/components/ui/switch.tsx";
-import type {HandoverPackage, HandoverPackageItem} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/handoverPackage.dto.ts";
+import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
+import type {SaleHandoverChecklistItem} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/handoverPackage.dto.ts";
 
-type UpdateHandoverDialogProps = WithLanguageType & WithAxiosType<HandoverPackage, {_id: string; items: {_id: string; completed: boolean}[]}> & {
+type UpdateHandoverDialogProps = WithLanguageType & WithAxiosType<Sale, {_id: string; items: {_id: string; completed: boolean}[]}> & {
     open: boolean;
     onClose: () => void;
-    handoverPackage: HandoverPackage;
-    onSuccess?: (updated?: HandoverPackage) => void;
+    sale: Sale;
+    onSuccess?: (updated?: Sale) => void;
 };
 
 function importanceVariant(importance?: string) {
@@ -29,7 +30,7 @@ function importanceVariant(importance?: string) {
 }
 
 function UpdateHandoverDialog({
-    handoverPackage,
+    sale,
     open,
     onClose,
     resolveLanguageKey,
@@ -42,18 +43,18 @@ function UpdateHandoverDialog({
 
     useEffect(() => {
         if (open) {
-            setTicks((handoverPackage.items ?? []).map((item) => !!item.completed));
+            setTicks((sale.handoverChecklistItems ?? []).map((item) => !!item.completed));
         }
-    }, [open, handoverPackage]);
+    }, [open, sale]);
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: HandoverPackage) => {
+        success: (data: Sale) => {
             onSuccess?.(data);
             onClose();
         },
     }));
 
-    const items = handoverPackage.items ?? [];
+    const items = sale.handoverChecklistItems ?? [];
 
     const handleOpenChange = (next: boolean) => {
         if (!next && !loading) onClose();
@@ -72,7 +73,7 @@ function UpdateHandoverDialog({
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <div className="flex min-h-0 flex-1 flex-col gap-y-3 overflow-y-auto py-2">
-                    {items.map((item: HandoverPackageItem, index) => (
+                    {items.map((item: SaleHandoverChecklistItem, index) => (
                         <div
                             key={item._id ?? `${item.name}-${index}`}
                             className="flex items-start justify-between gap-4 rounded-lg border border-border/60 p-3"
@@ -80,6 +81,9 @@ function UpdateHandoverDialog({
                             <div className="min-w-0 space-y-1">
                                 <div className="flex flex-wrap items-center gap-2">
                                     <p className="text-sm font-medium">{item.name}</p>
+                                    <Badge variant="outline">
+                                        {String(resolveLanguageKey(`sourceScopes.${item.sourceScope}`) || item.sourceScope)}
+                                    </Badge>
                                     {item.importance ? (
                                         <Badge variant={importanceVariant(item.importance)}>
                                             {String(resolveLanguageKey(`importance.${item.importance}`) || item.importance)}
@@ -95,7 +99,7 @@ function UpdateHandoverDialog({
                             </div>
                             <Switch
                                 checked={ticks[index] ?? false}
-                                disabled={loading}
+                                disabled={loading || !!item.retained}
                                 onCheckedChange={(checked) => {
                                     setTicks((prev) => prev.map((value, i) => (i === index ? checked : value)));
                                 }}
@@ -112,7 +116,7 @@ function UpdateHandoverDialog({
                             e.preventDefault();
                             e.stopPropagation();
                             onFilterChange({
-                                _id: handoverPackage._id,
+                                _id: sale._id,
                                 items: items.flatMap((item, index) =>
                                     item._id
                                         ? [{_id: item._id, completed: ticks[index] ?? !!item.completed}]

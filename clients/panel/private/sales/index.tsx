@@ -158,10 +158,6 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
                         sale={entity}
                         onClose={resetAction}
                         onSaleSuccess={onSuccess}
-                        onPackageSuccess={(updated) => {
-                            if (!updated || !entity._id) return;
-                            listRef.current?.updateRow?.(entity._id, {...entity, handoverPackage: updated});
-                        }}
                     />
                 );
             }}

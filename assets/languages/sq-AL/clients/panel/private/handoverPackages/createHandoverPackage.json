@@ -56,6 +56,46 @@
     "title": "Shto paketë dorëzimi",
     "description": "Plotëso të dhënat për të krijuar paketë dorëzimi."
   },
+  "help": {
+    "ariaLabel": "Rreth shtimit të një pakete dorëzimi",
+    "title": "Rreth shtimit të një pakete dorëzimi",
+    "overview": "Po krijon një konfigurim checklist, jo punën që shënohet te shitja. Zgjidh fushëveprimin më të ngushtë. Shitjet e hapura të njësive nën atë fushëveprim i marrin këta zëra në sinkronizimin tjetër.",
+    "sections": [
+      {
+        "title": "Si të zgjedhësh fushëveprimin",
+        "items": [
+          "Projekti është i detyrueshëm.",
+          "Lë bosh ndërtesën, katin dhe njësinë për një listë projekti që e trashëgon çdo njësi e projektit.",
+          "Plotëso ndërtesën (kati dhe njësia bosh) për shtesa në nivel ndërtese.",
+          "Plotëso katin (njësia bosh) për shtesa kati. Plotëso njësinë për zëra vetëm të asaj njësie.",
+          "Paraardhësit plotësohen automatikisht nga gjetheja. Pas ruajtjes fushëveprimi nuk ndryshohet — krijo një paketë të re në një fushëveprim tjetër."
+        ]
+      },
+      {
+        "title": "Uniciteti",
+        "items": [
+          "Vetëm një paketë për projekt, për ndërtesë, për kat dhe për njësi.",
+          "Një paketë e dytë në të njëjtin fushëveprim refuzohet. Ndrysho atë ekzistuese."
+        ]
+      },
+      {
+        "title": "Zërat e checklist-it",
+        "items": [
+          "Çdo zë kërkon emër. Përshkrimi, udhëzimet dhe rëndësia (e ulët / mesatare / e lartë) janë opsionale.",
+          "Zërat nuk shënohen këtu. Përfundimi regjistrohet te shitja.",
+          "I njëjti emër në dy fushëveprime (p.sh. projekt dhe njësi) bëhet dy rreshta te shitja, secili me etiketën e fushëveprimit."
+        ]
+      },
+      {
+        "title": "Pas ruajtjes",
+        "items": [
+          "Shitjet e hapura që njësia e tyre është nën këtë fushëveprim sinkronizohen dhe fitojnë zërat e rinj (pa shenjë).",
+          "Shitjet që tashmë kanë datë transferimi titulli mbeten të ngrira dhe e injorojnë këtë konfigurim të ri.",
+          "Shëno listën e bashkuar te Shitjet → Përditëso dorëzimin."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Ruaj"

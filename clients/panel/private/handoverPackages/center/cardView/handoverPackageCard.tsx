@@ -10,15 +10,12 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
-import UpdateHandover from "@propertyManagementModule/clients/panel/private/sales/center/actions/updateHandover.tsx";
-import UpdateHandoverDialog from "@propertyManagementModule/components/custom/sales/updateHandoverDialog.tsx";
-import {canUpdateHandoverPackage} from "@propertyManagementModule/components/custom/sale/saleHandoverVisibility.ts";
 
 function handoverPackageEditPath(entity: HandoverPackage) {
     const params = new URLSearchParams();
     params.set("handoverPackageId", entity._id);
     if (entity.name) params.set("handoverPackageName", entity.name);
-    return `/realEstate/handoverPackages/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/handoverPackages/edit?${params.toString()}`;
 }
 
 type HandoverPackageCardProps = WithLanguageType & {
@@ -60,34 +57,20 @@ function HandoverPackageCard({
             failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
-            hideEdit={(row) => !!row.titleTransferred}
             sheetProps={() => ({fetchId})}
-            extraDialogs={({action, setAction, entity: row, setEntity}) =>
-                action === "updateHandover" ? (
-                    <UpdateHandoverDialog
-                        open
-                        onClose={() => setAction("")}
-                        handoverPackage={row}
-                        onSuccess={(updated) => {
-                            if (updated) setEntity(updated);
-                            setAction("");
-                        }}
-                    />
-                ) : null
-            }
         >
-            {({entity: row, setAction}) => (
+            {({entity: row}) => (
                 <EntityCard.Header
                     titlePath="title"
                     title={row.title}
                     subtitle={row.name}
                     subtitlePath="name"
-                    badges={row.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
+                    badges={row.scope ? (
+                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
+                            {String(resolveLanguageKey(`scopes.${row.scope}`, true) || row.scope)}
+                        </Badge>
                     ) : null}
-                >
-                    {canUpdateHandoverPackage(row) ? <UpdateHandover onAction={setAction} /> : null}
-                </EntityCard.Header>
+                />
             )}
         </EntityCard>
     );

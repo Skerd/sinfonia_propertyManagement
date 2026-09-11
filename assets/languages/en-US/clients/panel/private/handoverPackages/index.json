@@ -1,7 +1,83 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Handover packages",
-  "description": "As-built handover packs for owners and operators",
+  "description": "Checklist configs inherited from project, edifice, floor, and unit",
+  "help": {
+    "ariaLabel": "About Handover packages",
+    "title": "About Handover packages",
+    "overview": "A handover package is a reusable checklist configuration for one scope: a project, an edifice, a floor, or a unit. It is not the ticking list on a sale. Open sales assemble an effective checklist by concatenating ancestor configs; ticks, completion dates, and who completed each item live on the sale.",
+    "sections": [
+      {
+        "title": "What a package holds",
+        "items": [
+          "Project (required). Optionally edifice, floor, and unit — the narrowest field you set is the scope.",
+          "Title, optional description, notes, and attachments.",
+          "Checklist items: name (required), optional description and instructions, importance (low / medium / high).",
+          "Computed scope: project, edifice, floor, or unit. Packages have no status here, and items have no completed flag on the config."
+        ]
+      },
+      {
+        "title": "One package per scope",
+        "items": [
+          "At most one package for a given project, one for a given edifice, one for a given floor, and one for a given unit.",
+          "Creating a second package at the same scope is rejected.",
+          "On create, missing ancestors are filled from the leaf (a unit package also stores its floor, edifice, and project).",
+          "Project, edifice, floor, and unit cannot be changed after create. Edit the items, title, notes, and media instead."
+        ]
+      },
+      {
+        "title": "Inheritance",
+        "body": "The effective list for a unit is additive: project items, then edifice, then floor, then unit. Missing levels are skipped. The same item name at two levels stays two rows, each labeled with its scope (Project / Edifice / Floor / Unit).",
+        "items": [
+          "A project package contributes to every unit in that project. Edifice, floor, and unit packages stack on top when they exist.",
+          "You do not copy items down by hand. Open sales sync from whatever configs currently apply to the unit."
+        ]
+      },
+      {
+        "title": "On this page",
+        "items": [
+          "Create a package — pick the scope by leaving lower levels empty (project only), or by filling edifice, floor, or unit.",
+          "Search and filter; open a card to inspect items and attachments.",
+          "Edit items, title, notes, and media. Scope fields are read-only.",
+          "Delete is a soft delete and can be restored. Removing a package updates open sales: incomplete items drop; completed items stay on the sale as retained."
+        ]
+      },
+      {
+        "title": "Ticking lives on the sale",
+        "items": [
+          "Tick items from the sale (Update handover), not from this config.",
+          "Open sales re-sync when you add or remove items here. Sales that already have a title-transfer date are frozen — later config edits do not change them.",
+          "If you complete an item, then remove it from the config, the sale keeps that row as retained. You cannot untick a retained row.",
+          "If you remove an item that was still incomplete, it disappears from open sales.",
+          "Re-adding the same item name at the same scope re-attaches a retained row and keeps the tick."
+        ]
+      },
+      {
+        "title": "Title transfer",
+        "items": [
+          "If Sales & handover requires a completed handover package, recording title transfer is blocked until every non-retained item on that sale is ticked, and at least one config applies to the unit.",
+          "Retained rows never block title transfer.",
+          "With that switch off, title transfer is not gated by this checklist."
+        ]
+      },
+      {
+        "title": "Related records",
+        "items": [
+          "Sales — the ticking list, Update handover, and title transfer.",
+          "Sales & handover (Tenancy → Configurations → Real Estate) — the company switch that gates title transfer.",
+          "Units, floors, edifices, and projects — the scopes you attach packages to."
+        ]
+      },
+      {
+        "title": "Typical next step",
+        "items": [
+          "Create a project-level package with the items every unit must complete.",
+          "Add edifice, floor, or unit packages only for extras that should stack on top.",
+          "On each open sale, tick the assembled checklist. Record title transfer when the gate allows it."
+        ]
+      }
+    ]
+  },
   "createHandoverPackage": "Add handover package",
   "noData": "No handover packages found",
   "failTitle": "Failed to load handover packages",
@@ -21,6 +97,8 @@
     "notes": "Notes",
     "omManualsComplete": "O&M Manuals Complete",
     "project": "Project",
+    "floor": "Floor",
+    "scope": "Scope",
     "status": "Status",
     "title": "Title",
     "trainingComplete": "Training Complete",

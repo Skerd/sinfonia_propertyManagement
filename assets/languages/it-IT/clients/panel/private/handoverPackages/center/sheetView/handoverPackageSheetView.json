@@ -6,6 +6,13 @@
   "name": "Riferimento",
   "title": "Titolo",
   "status": "Stato",
+  "scope": "Ambito",
+  "scopes": {
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "unit": "Unità"
+  },
   "project": "Progetto",
   "edifice": "Edificio",
   "floor": "Piano",

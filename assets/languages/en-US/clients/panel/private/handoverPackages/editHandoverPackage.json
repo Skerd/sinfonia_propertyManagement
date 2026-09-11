@@ -56,6 +56,42 @@
     "title": "Edit handover package",
     "description": "Update the details for this handover package."
   },
+  "help": {
+    "ariaLabel": "About editing a handover package",
+    "title": "About editing a handover package",
+    "overview": "You are editing a checklist configuration. Project, edifice, floor, and unit are locked. Changing items here updates open sales; sales that already have a title-transfer date stay frozen.",
+    "sections": [
+      {
+        "title": "What you can change",
+        "items": [
+          "Title, description, notes, attachments, and the checklist items (name, description, instructions, importance).",
+          "Scope fields stay read-only. To apply the same ideas at another level, create a separate package there."
+        ]
+      },
+      {
+        "title": "Adding or removing items",
+        "items": [
+          "New items appear on open sales as unchecked rows, labeled with this package’s scope.",
+          "Remove an incomplete item and it drops from open sales.",
+          "Remove a completed item and the sale keeps it as retained. Retained rows cannot be unticked and never block title transfer.",
+          "Add the same name back at this same scope and a retained row re-attaches with its tick kept."
+        ]
+      },
+      {
+        "title": "Frozen sales",
+        "items": [
+          "Once a sale has a title-transfer date, its checklist snapshot does not change when you edit this config.",
+          "Later edits only affect sales that are still open."
+        ]
+      },
+      {
+        "title": "Where ticking happens",
+        "items": [
+          "Use Sales → Update handover. This page does not record completion."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Cancel",
     "submit": "Save"

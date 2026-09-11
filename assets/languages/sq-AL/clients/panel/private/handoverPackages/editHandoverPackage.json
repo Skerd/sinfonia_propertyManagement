@@ -56,6 +56,42 @@
     "title": "Ndrysho paketë dorëzimi",
     "description": "Përditëso të dhënat e këtij paketë dorëzimi."
   },
+  "help": {
+    "ariaLabel": "Rreth ndryshimit të një pakete dorëzimi",
+    "title": "Rreth ndryshimit të një pakete dorëzimi",
+    "overview": "Po ndryshon një konfigurim checklist. Projekti, ndërtesa, kati dhe njësia janë të kyçura. Ndryshimi i zërave përditëson shitjet e hapura; shitjet që tashmë kanë datë transferimi titulli mbeten të ngrira.",
+    "sections": [
+      {
+        "title": "Çfarë mund të ndryshosh",
+        "items": [
+          "Titullin, përshkrimin, shënimet, bashkëngjitjet dhe zërat e checklist-it (emër, përshkrim, udhëzime, rëndësi).",
+          "Fushat e fushëveprimit mbeten vetëm për lexim. Për të njëjtat ide në një nivel tjetër, krijo një paketë të veçantë atje."
+        ]
+      },
+      {
+        "title": "Shtimi ose heqja e zërave",
+        "items": [
+          "Zërat e rinj shfaqen te shitjet e hapura si rreshta pa shenjë, me etiketën e fushëveprimit të kësaj pakete.",
+          "Heq një zë të papërfunduar dhe ai bie nga shitjet e hapura.",
+          "Heq një zë të përfunduar dhe shitja e mban si të mbajtur. Rreshtat e mbajtur nuk mund të hiqen nga shenja dhe nuk e bllokojnë kurrë transferimin e titullit.",
+          "Shto sërish të njëjtin emër në këtë fushëveprim dhe rreshti i mbajtur ri-lidhet duke ruajtur shenjën."
+        ]
+      },
+      {
+        "title": "Shitjet e ngrira",
+        "items": [
+          "Sapo një shitje ka datë transferimi titulli, pamja e checklist-it nuk ndryshon kur e ndryshon këtë konfigurim.",
+          "Ndryshimet e mëvonshme prekin vetëm shitjet që janë ende të hapura."
+        ]
+      },
+      {
+        "title": "Ku shënohet",
+        "items": [
+          "Shitjet → Përditëso dorëzimin. Kjo faqe nuk regjistron përfundimin."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Ruaj"

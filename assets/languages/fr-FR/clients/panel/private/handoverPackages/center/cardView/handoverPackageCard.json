@@ -3,6 +3,12 @@
   "failedTitle": "Impossible de charger dossier de réception",
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "scopes": {
+    "project": "Projet",
+    "edifice": "Édifice",
+    "floor": "Étage",
+    "unit": "Unité"
+  },
   "status": {
     "draft": "Brouillon",
     "in_progress": "In Progress",

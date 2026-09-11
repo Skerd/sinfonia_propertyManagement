@@ -3,6 +3,12 @@
   "failedTitle": "Dështoi ngarkimi i paketë dorëzimi",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "scopes": {
+    "project": "Projekt",
+    "edifice": "Ndërtesë",
+    "floor": "Kat",
+    "unit": "Njësi"
+  },
   "status": {
     "draft": "Draft",
     "in_progress": "Në Progres",

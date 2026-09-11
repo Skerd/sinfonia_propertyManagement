@@ -6,6 +6,13 @@
   "name": "Reference",
   "title": "Title",
   "status": "Status",
+  "scope": "Scope",
+  "scopes": {
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
+    "unit": "Unit"
+  },
   "project": "Project",
   "edifice": "Edifice",
   "floor": "Floor",

@@ -27,6 +27,6 @@ export default createGenericCreatePage<CreateHandoverPackageFormType>({
         }
         return formData;
     },
-    successPath: "/realEstate/handoverPackages",
+    successPath: "/tenancy/systemSettings/handoverPackages",
     submitIcon: <IconPlus />,
 });

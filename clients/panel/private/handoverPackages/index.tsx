@@ -17,7 +17,7 @@ function buildEditPath(row: HandoverPackage) {
     const params = new URLSearchParams();
     params.set("handoverPackageId", row._id);
     if (row.name) params.set("handoverPackageName", row.name);
-    return `/realEstate/handoverPackages/edit?${params.toString()}`;
+    return `/tenancy/systemSettings/handoverPackages/edit?${params.toString()}`;
 }
 
 function AllHandoverPackages({resolveLanguageKey, projectId}: Props) {
@@ -27,7 +27,7 @@ function AllHandoverPackages({resolveLanguageKey, projectId}: Props) {
             collectionName="handoverpackages"
             accessModel="handoverpackages"
             tableConfigKey="handoverpackages"
-            createPath="/realEstate/handoverPackages/create"
+            createPath="/tenancy/systemSettings/handoverPackages/create"
             createIcon={<IconPlus className="h-4 w-4" />}
             createLanguageKey="createHandoverPackage"
             buildEditPath={buildEditPath}

@@ -1,7 +1,83 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Dossiers de réception",
-  "description": "Dossiers de réception as-built pour propriétaires et exploitants",
+  "description": "Configurations de checklist héritées du projet, de l’édifice, de l’étage et de l’unité",
+  "help": {
+    "ariaLabel": "À propos des dossiers de réception",
+    "title": "À propos des dossiers de réception",
+    "overview": "Un dossier de réception est une configuration de checklist réutilisable pour une portée : projet, édifice, étage ou unité. Ce n’est pas la liste à cocher sur la vente. Les ventes ouvertes assemblent la checklist effective en concaténant les configs ancêtres ; les coches, dates de fin et l’auteur de chaque point vivent sur la vente.",
+    "sections": [
+      {
+        "title": "Ce que contient un dossier",
+        "items": [
+          "Projet (obligatoire). Édifice, étage et unité optionnels — le champ le plus étroit que vous renseignez est la portée.",
+          "Titre, description, notes et pièces jointes optionnelles.",
+          "Points de checklist : nom (obligatoire), description et instructions optionnelles, importance (faible / moyenne / élevée).",
+          "Portée calculée : projet, édifice, étage ou unité. Les dossiers n’ont pas de statut ici, et les points n’ont pas de flag « terminé » sur la config."
+        ]
+      },
+      {
+        "title": "Un dossier par portée",
+        "items": [
+          "Au plus un dossier pour un projet donné, un pour un édifice, un pour un étage et un pour une unité.",
+          "Un second dossier à la même portée est refusé.",
+          "À la création, les ancêtres manquants sont remplis depuis la feuille (un dossier d’unité stocke aussi étage, édifice et projet).",
+          "Projet, édifice, étage et unité ne peuvent plus être changés après création. Modifiez plutôt les points, le titre, les notes et les médias."
+        ]
+      },
+      {
+        "title": "Héritage",
+        "body": "La liste effective d’une unité est additive : points projet, puis édifice, puis étage, puis unité. Les niveaux absents sont ignorés. Le même nom à deux niveaux reste deux lignes, chacune étiquetée par sa portée (Projet / Édifice / Étage / Unité).",
+        "items": [
+          "Un dossier projet contribue à chaque unité de ce projet. Les dossiers édifice, étage et unité s’empilent par-dessus s’ils existent.",
+          "Vous ne copiez pas les points à la main. Les ventes ouvertes se synchronisent depuis les configs actuellement applicables à l’unité."
+        ]
+      },
+      {
+        "title": "Sur cette page",
+        "items": [
+          "Créer un dossier — choisissez la portée en laissant les niveaux inférieurs vides (projet seul), ou en renseignant édifice, étage ou unité.",
+          "Rechercher et filtrer ; ouvrir une carte pour inspecter points et pièces jointes.",
+          "Modifier points, titre, notes et médias. Les champs de portée sont en lecture seule.",
+          "La suppression est un soft delete, restaurable. Retirer un dossier met à jour les ventes ouvertes : les points incomplets disparaissent ; les points terminés restent sur la vente comme retenus."
+        ]
+      },
+      {
+        "title": "Les coches vivent sur la vente",
+        "items": [
+          "Cochez les points depuis la vente (Mettre à jour la réception), pas depuis cette config.",
+          "Les ventes ouvertes se resynchronisent quand vous ajoutez ou retirez des points ici. Les ventes qui ont déjà une date de transfert de titre sont gelées — les éditions ultérieures de config ne les changent pas.",
+          "Si vous terminez un point puis le retirez de la config, la vente conserve la ligne comme retenue. Vous ne pouvez pas décocher une ligne retenue.",
+          "Si vous retirez un point encore incomplet, il disparaît des ventes ouvertes.",
+          "Réajouter le même nom à la même portée rattache une ligne retenue et conserve la coche."
+        ]
+      },
+      {
+        "title": "Transfert de titre",
+        "items": [
+          "Si Ventes & réception exige un dossier de réception terminé, l’enregistrement du transfert de titre est bloqué tant que chaque point non retenu de cette vente n’est pas coché, et qu’au moins une config s’applique à l’unité.",
+          "Les lignes retenues ne bloquent jamais le transfert de titre.",
+          "Interrupteur éteint : cette checklist ne conditionne pas le transfert de titre."
+        ]
+      },
+      {
+        "title": "Enregistrements liés",
+        "items": [
+          "Ventes — la liste à cocher, Mettre à jour la réception, et le transfert de titre.",
+          "Ventes & réception (Tenancy → Configurations → Real Estate) — l’interrupteur société qui conditionne le transfert de titre.",
+          "Unités, étages, édifices et projets — les portées auxquelles vous rattachez les dossiers."
+        ]
+      },
+      {
+        "title": "Prochaine étape",
+        "items": [
+          "Créer un dossier projet avec les points que chaque unité doit terminer.",
+          "Ajouter des dossiers édifice, étage ou unité uniquement pour les extras à empiler.",
+          "Sur chaque vente ouverte, cocher la checklist assemblée. Enregistrer le transfert de titre lorsque le contrôle l’autorise."
+        ]
+      }
+    ]
+  },
   "createHandoverPackage": "Ajouter un dossier",
   "noData": "Aucun enregistrement",
   "failTitle": "Échec du chargement",

@@ -56,6 +56,42 @@
     "title": "Modifier dossier de réception",
     "description": "Mettez à jour les informations de ce dossier de réception."
   },
+  "help": {
+    "ariaLabel": "À propos de la modification d’un dossier de réception",
+    "title": "À propos de la modification d’un dossier de réception",
+    "overview": "Vous modifiez une configuration de checklist. Projet, édifice, étage et unité sont verrouillés. Changer les points met à jour les ventes ouvertes ; les ventes qui ont déjà une date de transfert de titre restent gelées.",
+    "sections": [
+      {
+        "title": "Ce que vous pouvez changer",
+        "items": [
+          "Titre, description, notes, pièces jointes et les points de checklist (nom, description, instructions, importance).",
+          "Les champs de portée restent en lecture seule. Pour les mêmes idées à un autre niveau, créez un dossier distinct là-bas."
+        ]
+      },
+      {
+        "title": "Ajouter ou retirer des points",
+        "items": [
+          "Les nouveaux points apparaissent sur les ventes ouvertes comme lignes non cochées, étiquetées avec la portée de ce dossier.",
+          "Retirer un point incomplet le fait disparaître des ventes ouvertes.",
+          "Retirer un point terminé : la vente le conserve comme retenu. Les lignes retenues ne se décochent pas et ne bloquent jamais le transfert de titre.",
+          "Réajouter le même nom à cette même portée rattache une ligne retenue en conservant la coche."
+        ]
+      },
+      {
+        "title": "Ventes gelées",
+        "items": [
+          "Dès qu’une vente a une date de transfert de titre, son instantané de checklist ne change plus quand vous éditez cette config.",
+          "Les éditions suivantes n’affectent que les ventes encore ouvertes."
+        ]
+      },
+      {
+        "title": "Où cocher",
+        "items": [
+          "Ventes → Mettre à jour la réception. Cette page n’enregistre pas l’achèvement."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Enregistrer"

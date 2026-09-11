@@ -3,6 +3,12 @@
   "failedTitle": "Failed to load handover package",
   "failedDescription": "Something went wrong while loading this handover package. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
+  "scopes": {
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
+    "unit": "Unit"
+  },
   "status": {
     "draft": "Draft",
     "in_progress": "In Progress",

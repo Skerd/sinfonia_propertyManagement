@@ -57,6 +57,30 @@
   "saleDate": "Data di vendita",
   "handover": "Consegna",
   "handoverPackage": "Pacchetto di consegna",
+  "handoverChecklist": "Checklist di consegna",
+  "handoverConfigs": "Configurazioni di consegna",
+  "itemName": "Voce",
+  "itemDescription": "Descrizione",
+  "itemInstructions": "Istruzioni",
+  "importance": "Importanza",
+  "completed": "Completata",
+  "sourceScope": "Ambito",
+  "sourceScopes": {
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "floor": "Piano",
+    "unit": "Unità",
+    "retained": "Conservata"
+  },
+  "importanceLevels": {
+    "low": "Bassa",
+    "medium": "Media",
+    "high": "Alta"
+  },
+  "completedState": {
+    "true": "Completata",
+    "false": "In attesa"
+  },
   "handoverDate": "Data di consegna",
   "handoverCompletedAt": "Consegna completata",
   "handedOverBy": "Consegnato da",

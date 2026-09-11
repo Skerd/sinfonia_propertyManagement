@@ -18,7 +18,6 @@ import {
     BookOpen,
     Download,
     Network,
-    PackageCheck,
     ClipboardCheck,
     type LucideIcon,
 } from "lucide-react";
@@ -91,7 +90,6 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
         navLink(resolveLanguageKey, "menus.realEstate.leads.title", "/realEstate/leads", UserSearch),
         navLink(resolveLanguageKey, "menus.realEstate.inspections.title", "/realEstate/inspections", ClipboardList),
         navLink(resolveLanguageKey, "menus.realEstate.inspectionChecklistTemplates.title", "/realEstate/inspectionChecklistTemplates", ClipboardCheck),
-        navLink(resolveLanguageKey, "menus.realEstate.handoverPackages.title", "/realEstate/handoverPackages", PackageCheck),
         navLink(resolveLanguageKey, "menus.realEstate.modificationRequests.title", "/realEstate/modificationRequests", Wrench),
         navLink(resolveLanguageKey, "menus.realEstate.reservations.title", "/realEstate/reservations", ClipboardList),
         navLink(resolveLanguageKey, "menus.realEstate.sales.title", "/realEstate/sales", DollarSign),

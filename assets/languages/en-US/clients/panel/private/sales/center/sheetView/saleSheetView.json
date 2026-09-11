@@ -57,6 +57,30 @@
   "saleDate": "Sale Date",
   "handover": "Handover",
   "handoverPackage": "Handover package",
+  "handoverChecklist": "Handover checklist",
+  "handoverConfigs": "Handover configs",
+  "itemName": "Item",
+  "itemDescription": "Description",
+  "itemInstructions": "Instructions",
+  "importance": "Importance",
+  "completed": "Completed",
+  "sourceScope": "Scope",
+  "sourceScopes": {
+    "project": "Project",
+    "edifice": "Edifice",
+    "floor": "Floor",
+    "unit": "Unit",
+    "retained": "Retained"
+  },
+  "importanceLevels": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "completedState": {
+    "true": "Completed",
+    "false": "Pending"
+  },
   "handoverDate": "Handover date",
   "handoverCompletedAt": "Handover completed",
   "handedOverBy": "Handed over by",

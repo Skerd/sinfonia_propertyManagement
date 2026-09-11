@@ -132,10 +132,6 @@ function SaleSheetView({
             sale={asSale}
             onClose={() => setAction("")}
             onSaleSuccess={handleWorkflowSuccess}
-            onPackageSuccess={(updated) => {
-                if (!updated) return;
-                setSheetData({...asSale, handoverPackage: updated});
-            }}
         />
         </>
     );

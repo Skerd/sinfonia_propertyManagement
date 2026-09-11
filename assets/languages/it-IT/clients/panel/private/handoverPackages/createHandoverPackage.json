@@ -56,6 +56,46 @@
     "title": "Aggiungi pacchetto",
     "description": "Inserisci i dati per creare un pacchetto di consegna."
   },
+  "help": {
+    "ariaLabel": "Informazioni sull’aggiunta di un pacchetto di consegna",
+    "title": "Informazioni sull’aggiunta di un pacchetto di consegna",
+    "overview": "Stai creando una configurazione di checklist, non il lavoro da spuntare su una vendita. Scegli l’ambito più stretto. Le vendite aperte delle unità sotto quell’ambito riceveranno queste voci alla prossima sincronizzazione.",
+    "sections": [
+      {
+        "title": "Come scegliere l’ambito",
+        "items": [
+          "Il progetto è obbligatorio.",
+          "Lascia vuoti edificio, piano e unità per un elenco di progetto che ogni unità del progetto eredita.",
+          "Compila l’edificio (piano e unità vuoti) per extra a livello edificio.",
+          "Compila il piano (unità vuota) per extra di piano. Compila l’unità per voci solo di quell’unità.",
+          "Gli antenati si compilano automaticamente dalla foglia. Dopo il salvataggio l’ambito non si può cambiare — crea un nuovo pacchetto in un altro ambito."
+        ]
+      },
+      {
+        "title": "Unicità",
+        "items": [
+          "Un solo pacchetto per progetto, per edificio, per piano e per unità.",
+          "Un secondo pacchetto nello stesso ambito viene rifiutato. Modifica quello esistente."
+        ]
+      },
+      {
+        "title": "Voci della checklist",
+        "items": [
+          "Ogni voce richiede un nome. Descrizione, istruzioni e importanza (bassa / media / alta) sono opzionali.",
+          "Le voci non si spuntano qui. Il completamento si registra sulla vendita.",
+          "Lo stesso nome in due ambiti (ad esempio progetto e unità) diventa due righe sulla vendita, ciascuna etichettata con l’ambito."
+        ]
+      },
+      {
+        "title": "Dopo il salvataggio",
+        "items": [
+          "Le vendite aperte la cui unità è sotto questo ambito si sincronizzano e ricevono le nuove voci (non spuntate).",
+          "Le vendite che hanno già una data di trasferimento del titolo restano congelate e ignorano questa nuova config.",
+          "Spunta l’elenco assemblato su Vendite → Aggiorna consegna."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Annulla",
     "submit": "Salva"

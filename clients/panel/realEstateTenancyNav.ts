@@ -1,4 +1,4 @@
-import {BookMarked, Hammer, Layers, Settings2, Tag, TowerControl} from "lucide-react";
+import {BookMarked, Hammer, Layers, PackageCheck, Settings2, Tag, TowerControl} from "lucide-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/panel/sidebarNav.types.ts";
 
@@ -17,6 +17,14 @@ export function buildRealEstateTenancySettingsSubCollapsible(
                 title: resolveLanguageKey("menus.realEstate.salesAndHandover.title"),
                 url: "/tenancy/systemSettings/propertyManagementConfig",
                 icon: Settings2,
+                permissions: [],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.realEstate.handoverPackages.title"),
+                url: "/tenancy/systemSettings/handoverPackages",
+                icon: PackageCheck,
                 permissions: [],
                 usersPermissions: [],
                 atLeastOnePermission: true,

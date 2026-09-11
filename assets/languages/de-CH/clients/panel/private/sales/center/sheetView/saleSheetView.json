@@ -57,6 +57,30 @@
   "saleDate": "Verkaufsdatum",
   "handover": "Übergabe",
   "handoverPackage": "Übergabepaket",
+  "handoverChecklist": "Übergabe-Checkliste",
+  "handoverConfigs": "Übergabe-Konfigurationen",
+  "itemName": "Punkt",
+  "itemDescription": "Beschreibung",
+  "itemInstructions": "Anweisungen",
+  "importance": "Wichtigkeit",
+  "completed": "Erledigt",
+  "sourceScope": "Geltungsbereich",
+  "sourceScopes": {
+    "project": "Projekt",
+    "edifice": "Gebäude",
+    "floor": "Stockwerk",
+    "unit": "Einheit",
+    "retained": "Behalten"
+  },
+  "importanceLevels": {
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch"
+  },
+  "completedState": {
+    "true": "Erledigt",
+    "false": "Offen"
+  },
   "handoverDate": "Übergabedatum",
   "handoverCompletedAt": "Übergabe abgeschlossen",
   "handedOverBy": "Übergeben von",

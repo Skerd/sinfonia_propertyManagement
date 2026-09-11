@@ -56,6 +56,46 @@
     "title": "Übergabepaket hinzufügen",
     "description": "Angaben für Übergabepaket erfassen."
   },
+  "help": {
+    "ariaLabel": "Über das Anlegen eines Übergabepakets",
+    "title": "Über das Anlegen eines Übergabepakets",
+    "overview": "Sie legen eine Checklisten-Konfiguration an, nicht die abhakbare Arbeit auf einem Verkauf. Wählen Sie den engsten Geltungsbereich. Offene Verkäufe von Einheiten unter diesem Bereich übernehmen die Punkte bei der nächsten Synchronisation.",
+    "sections": [
+      {
+        "title": "Geltungsbereich wählen",
+        "items": [
+          "Projekt ist Pflicht.",
+          "Gebäude, Etage und Einheit leer lassen für eine projektweite Liste, die jede Einheit im Projekt erbt.",
+          "Gebäude füllen (Etage und Einheit leer) für extras auf Gebäudeebene.",
+          "Etage füllen (Einheit leer) für extras auf Etage. Einheit füllen für Punkte nur dieser Einheit.",
+          "Vorfahren werden automatisch vom Blatt ergänzt. Nach dem Speichern lässt sich der Geltungsbereich nicht ändern — legen Sie stattdessen ein neues Paket in einem anderen Bereich an."
+        ]
+      },
+      {
+        "title": "Eindeutigkeit",
+        "items": [
+          "Nur ein Paket je Projekt, je Gebäude, je Etage und je Einheit.",
+          "Ein zweites Paket im gleichen Geltungsbereich wird abgelehnt. Bearbeiten Sie das vorhandene."
+        ]
+      },
+      {
+        "title": "Checklistenpunkte",
+        "items": [
+          "Jeder Punkt braucht einen Namen. Beschreibung, Anweisungen und Wichtigkeit (niedrig / mittel / hoch) sind optional.",
+          "Punkte werden hier nicht abgehakt. Der Abschluss wird auf dem Verkauf erfasst.",
+          "Derselbe Name in zwei Geltungsbereichen (z. B. Projekt und Einheit) wird auf dem Verkauf zu zwei Zeilen, jeweils mit Geltungsbereich."
+        ]
+      },
+      {
+        "title": "Nach dem Speichern",
+        "items": [
+          "Offene Verkäufe, deren Einheit unter diesem Geltungsbereich liegt, synchronisieren und erhalten die neuen Punkte (ohne Haken).",
+          "Verkäufe mit bereits gesetztem Eigentumsübertragungsdatum bleiben eingefroren und ignorieren diese neue Konfiguration.",
+          "Die zusammengesetzte Liste auf Verkäufe → Übergabe aktualisieren abhaken."
+        ]
+      }
+    ]
+  },
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Speichern"
