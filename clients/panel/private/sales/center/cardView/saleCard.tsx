@@ -15,7 +15,7 @@ import {
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import SaleSheetView, {buildSaleEditPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
-import CompleteHandoverDialog from "@propertyManagementModule/components/custom/sales/completeHandoverDialog.tsx";
+import SaleHandoverDialogs from "@propertyManagementModule/components/custom/sales/saleHandoverDialogs.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
 import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
 import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
@@ -156,20 +156,22 @@ function SaleCard({
                     onModifySuccess?.(updated);
                 },
             })}
-            extraDialogs={({action, setAction, entity, setEntity}) =>
-                action === "completeHandover" ? (
-                    <CompleteHandoverDialog
-                        open
-                        onClose={() => setAction("")}
-                        sale={entity}
-                        onSuccess={(updated) => {
-                            if (updated) setEntity({...entity, ...updated});
-                            onModifySuccess?.(updated);
-                            setAction("");
-                        }}
-                    />
-                ) : null
-            }
+            extraDialogs={({action, setAction, entity, setEntity}) => (
+                <SaleHandoverDialogs
+                    action={action}
+                    sale={entity}
+                    onClose={() => setAction("")}
+                    onSaleSuccess={(updated) => {
+                        if (updated) setEntity({...entity, ...updated});
+                        onModifySuccess?.(updated);
+                        setAction("");
+                    }}
+                    onPackageSuccess={(updated) => {
+                        if (!updated) return;
+                        setEntity({...entity, handoverPackage: updated});
+                    }}
+                />
+            )}
         >
             {({entity, setAction}) => {
                 const saleTitle =

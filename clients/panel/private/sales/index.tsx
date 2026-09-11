@@ -15,7 +15,7 @@ import SaleSheetView, {
     saleDeleteRestoreConfirmLabel,
 } from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
-import CompleteHandoverDialog from "@propertyManagementModule/components/custom/sales/completeHandoverDialog.tsx";
+import SaleHandoverDialogs from "@propertyManagementModule/components/custom/sales/saleHandoverDialogs.tsx";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
@@ -152,14 +152,18 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
                     if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
                     resetAction();
                 };
-                return action === "completeHandover" ? (
-                    <CompleteHandoverDialog
-                        open
-                        onClose={resetAction}
+                return (
+                    <SaleHandoverDialogs
+                        action={action}
                         sale={entity}
-                        onSuccess={onSuccess}
+                        onClose={resetAction}
+                        onSaleSuccess={onSuccess}
+                        onPackageSuccess={(updated) => {
+                            if (!updated || !entity._id) return;
+                            listRef.current?.updateRow?.(entity._id, {...entity, handoverPackage: updated});
+                        }}
                     />
-                ) : null;
+                );
             }}
         />
     );

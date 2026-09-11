@@ -9,7 +9,9 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DollarSign, LoaderCircle} from "lucide-react";
 import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import MultiLocalFilePicker from "@coreModule/components/custom/files/multiLocalFilePicker.tsx";
 import {LEASE_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.schema-def.ts";
+import {RENTAL_PAYMENT_RECEIPT_MEDIA_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.schema-def.ts";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -49,13 +51,14 @@ function RecordRentPaymentDialog({
     onClose,
     resolveLanguageKey,
     innerRef,
-    onFilterChange,
+    onFormDataChange,
     data,
     onSuccess = () => {},
     loading,
 }: RecordRentPaymentDialogProps) {
     const [paidAmount, setPaidAmount] = useState("");
     const [notes, setNotes] = useState("");
+    const [mediaFiles, setMediaFiles] = useState<File[]>([]);
     const [fetched, setFetched] = useState<RentalPayment[] | null>(null);
     const waitingForSuccessRef = useRef(false);
     const previousDataRef = useRef<Lease | null>(null);
@@ -64,6 +67,7 @@ function RecordRentPaymentDialog({
         if (!open) return;
         setPaidAmount("");
         setNotes("");
+        setMediaFiles([]);
         if (paymentsProp) {
             setFetched(null);
             return;
@@ -206,6 +210,19 @@ function RecordRentPaymentDialog({
                             />
                         </FormMaxLengthControl>
                     </div>
+                    <div className="flex flex-col gap-y-2">
+                        <Label>{resolveLanguageKey("mediaLabel")}</Label>
+                        <MultiLocalFilePicker
+                            files={mediaFiles}
+                            onFilesChange={setMediaFiles}
+                            resolveLanguageKey={resolveLanguageKey}
+                            disabled={loading}
+                            maxFiles={RENTAL_PAYMENT_RECEIPT_MEDIA_MAX}
+                            accept="application/pdf,image/*"
+                            addFileKey="addFiles"
+                            filesSelectedKey="filesSelected"
+                        />
+                    </div>
                 </div>
                 <AlertDialogFooter className="shrink-0">
                     <AlertDialogCancel disabled={loading} onClick={(e) => e.stopPropagation()}>
@@ -216,11 +233,19 @@ function RecordRentPaymentDialog({
                             e.stopPropagation();
                             e.preventDefault();
                             if (!canSubmit) return;
-                            onFilterChange({
+                            const payload: RecordRentPaymentPayload = {
                                 _id: lease._id,
                                 paidAmount: Number(paidAmount),
                                 notes: notes || undefined,
-                            });
+                            };
+                            if (mediaFiles.length === 0) {
+                                onFormDataChange(payload);
+                                return;
+                            }
+                            const formData = new FormData();
+                            formData.append("data", JSON.stringify(payload));
+                            mediaFiles.forEach((file) => formData.append("files", file));
+                            onFormDataChange(formData);
                         }}
                         disabled={loading || !canSubmit}
                     >

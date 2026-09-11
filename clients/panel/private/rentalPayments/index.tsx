@@ -8,12 +8,17 @@ import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/rea
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
 import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
+import ManualRentClientEmails from "@propertyManagementModule/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
 import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {
+    GRID_COLS_MAX_4,
+    GRID_TRANSACTIONAL
+} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {buildPageTitle} from "@coreModule/helpers/general";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
+import {cn} from "@coreModule/components/lib/utils.ts";
 
 interface AllRentalPaymentsProps extends WithLanguageType {
     leaseId?: string;
@@ -24,9 +29,7 @@ function buildRentalPaymentEditPath(payment: RentalPayment) {
     const params = new URLSearchParams();
     params.set("rentalPaymentId", payment._id);
     if (payment.name) params.set("rentalPaymentName", payment.name);
-    if ((payment.lease as any)?._id) {
-        params.set("leaseId", (payment.lease as any)._id);
-    }
+    if (payment.lease?._id) params.set("leaseId", payment.lease._id);
     return `/realEstate/rentalPayments/edit?${params.toString()}`;
 }
 
@@ -51,7 +54,26 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived") as string},
             ],
         };
-        if (leaseId) return [statusFilter];
+        const moneyAndDateFilters: QuickFilterDef[] = [
+            {
+                field: "currency",
+                label: resolveLanguageKey("fields.currency") as string,
+                type: COLUMN_TYPE.OBJECT_ID,
+                apiUrl: "/api/finance/currency/select",
+            },
+            {
+                field: "dueDate",
+                label: resolveLanguageKey("fields.dueDate") as string,
+                type: COLUMN_TYPE.DATE,
+            },
+            {
+                field: "paidDate",
+                label: resolveLanguageKey("fields.paidDate") as string,
+                type: COLUMN_TYPE.DATE,
+            },
+            statusFilter,
+        ];
+        if (leaseId) return moneyAndDateFilters;
         return [
             {
                 field: "project",
@@ -90,7 +112,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 apiUrl: "/api/realEstate/lease/select",
                 asExtraParam: true,
             },
-            statusFilter,
+            ...moneyAndDateFilters,
         ];
     }, [resolveLanguageKey, leaseId]);
 
@@ -109,7 +131,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             buildEditPath={buildRentalPaymentEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             headerTitle={headerTitle}
@@ -128,6 +150,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 <>
                     <MarkRentalPaymentPaid payment={payment} onAction={bindRowAction} />
                     <WaiveRentalPayment payment={payment} onAction={bindRowAction} />
+                    <ManualRentClientEmails payment={payment} />
                 </>
             )}
             renderFloatingModals={({action, entity, resetAction, listRef}) => {

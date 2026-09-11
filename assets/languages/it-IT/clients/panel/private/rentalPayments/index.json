@@ -17,13 +17,21 @@
     "dueDate": "Data di scadenza",
     "edifice": "Edificio",
     "floor": "Piano",
+    "lateFeeAmount": "Mora",
     "lease": "Contratto",
     "name": "Riferimento",
     "notes": "Note",
     "paidAmount": "Importo pagato",
     "paidDate": "Data pagamento",
+    "paymentReceipts": "Ricevute",
+    "paymentReceipts.media": "Allegati ricevute",
     "project": "Progetto",
     "receiptMedia": "Ricevuta",
+    "remaining": "Residuo",
+    "rentOverdueNoticeEmailAt": "Email mora",
+    "rentReminderEmailAt0d": "Promemoria affitto (giorno stesso)",
+    "rentReminderEmailAt1d": "Promemoria affitto (1 giorno)",
+    "rentReminderEmailAt3d": "Promemoria affitto (3 giorni)",
     "status": "Stato",
     "unit": "Unità",
     "updatedAt": "Aggiornato il",
@@ -35,8 +43,7 @@
         "waived": "Annullato",
         "partially_paid": "Parzialmente pagato"
       }
-    },
-    "remaining": "Residuo"
+    }
   },
   "help": {
     "ariaLabel": "Informazioni sui pagamenti affitto",
@@ -49,7 +56,7 @@
           "Contratto padre, unità, scadenza, importo, importo pagato, residuo, valuta.",
           "Stato: in attesa, pagato, parzialmente pagato, scaduto, condonato.",
           "Importo mora (applicato quando il mese diventa scaduto).",
-          "Ricevute (ogni fetta di incasso con data e note)."
+          "Ricevute (ogni fetta di incasso con data, note e fino a cinque allegati)."
         ]
       },
       {

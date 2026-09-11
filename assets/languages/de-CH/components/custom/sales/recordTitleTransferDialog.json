@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/recordTitleTransferDialog.tsx",
+  "title": "Eigentumsübertragung erfassen",
+  "description": "Erfassen Sie das Urkundendatum und die Details. Dies kann später nicht mehr geändert werden.",
+  "titleTransferDate": "Datum der Eigentumsübertragung",
+  "deedNumber": "Urkundennummer",
+  "notaryName": "Notar",
+  "titleTransferCertificate": "Eigentumsübertragungszertifikat",
+  "cancel": "Abbrechen",
+  "confirm": "Eigentumsübertragung erfassen",
+  "axios": {
+    "start": { "title": "Eigentumsübertragung wird erfasst…", "time": 3000 },
+    "success": { "title": "Eigentumsübertragung erfasst", "time": 3000 },
+    "error": { "title": "Eigentumsübertragung konnte nicht erfasst werden", "time": 3000 }
+  }
+}

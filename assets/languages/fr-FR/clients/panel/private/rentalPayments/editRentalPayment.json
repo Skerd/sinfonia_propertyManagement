@@ -23,6 +23,7 @@
     "currencyLabel": "Devise",
     "dueDateLabel": "Date d’échéance",
     "addFile": "Ajouter un fichier",
+    "filesSelected": "fichiers sélectionnés",
     "existingFiles": "Fichier actuel",
     "leaseLabel": "Bail",
     "leasePlaceholder": "Sélectionner un bail",

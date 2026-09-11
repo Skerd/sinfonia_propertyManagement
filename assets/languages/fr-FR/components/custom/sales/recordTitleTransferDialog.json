@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/recordTitleTransferDialog.tsx",
+  "title": "Enregistrer le transfert de titre",
+  "description": "Enregistrez la date de l’acte et les détails. Cela ne pourra plus être modifié.",
+  "titleTransferDate": "Date de transfert de titre",
+  "deedNumber": "Numéro d’acte",
+  "notaryName": "Notaire",
+  "titleTransferCertificate": "Certificat de transfert de titre",
+  "cancel": "Annuler",
+  "confirm": "Enregistrer le transfert",
+  "axios": {
+    "start": { "title": "Enregistrement du transfert de titre…", "time": 3000 },
+    "success": { "title": "Transfert de titre enregistré", "time": 3000 },
+    "error": { "title": "Impossible d’enregistrer le transfert de titre", "time": 3000 }
+  }
+}

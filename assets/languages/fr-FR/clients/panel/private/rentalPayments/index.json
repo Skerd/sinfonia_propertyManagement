@@ -17,13 +17,21 @@
     "dueDate": "Date d’échéance",
     "edifice": "Édifice",
     "floor": "Étage",
+    "lateFeeAmount": "Pénalité de retard",
     "lease": "Bail",
     "name": "Référence",
     "notes": "Notes",
     "paidAmount": "Montant payé",
     "paidDate": "Date de paiement",
+    "paymentReceipts": "Quittances",
+    "paymentReceipts.media": "Pièces jointes des quittances",
     "project": "Projet",
     "receiptMedia": "Reçu",
+    "remaining": "Restant",
+    "rentOverdueNoticeEmailAt": "E-mail de retard",
+    "rentReminderEmailAt0d": "Rappel de loyer (le jour)",
+    "rentReminderEmailAt1d": "Rappel de loyer (1 jour)",
+    "rentReminderEmailAt3d": "Rappel de loyer (3 jours)",
     "status": "Statut",
     "unit": "Unité",
     "updatedAt": "Mis à jour le",
@@ -35,8 +43,7 @@
         "waived": "Annulé",
         "partially_paid": "Partiellement payé"
       }
-    },
-    "remaining": "Restant"
+    }
   },
   "help": {
     "ariaLabel": "À propos des loyers",
@@ -49,7 +56,7 @@
           "Bail parent, unité, échéance, montant, montant payé, reste, devise.",
           "Statut : en attente, payé, partiellement payé, en retard, remis.",
           "Montant de pénalité (appliqué lorsque le mois passe en retard).",
-          "Quittances (chaque tranche d'encaissement avec date et notes)."
+          "Quittances (chaque tranche d'encaissement avec date, notes et jusqu’à cinq pièces jointes)."
         ]
       },
       {

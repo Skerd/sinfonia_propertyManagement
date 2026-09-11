@@ -12,7 +12,7 @@
   },
   "descriptions": {
     "markContacted": "Enregistrez que le contact a été établi. Le prospect doit déjà avoir un e-mail ou un téléphone.",
-    "qualify": "Qualifiez ce prospect. Un e-mail ou un numéro de téléphone doit déjà être défini.",
+    "qualify": "Qualifiez ce prospect. Un e-mail ou un téléphone, un intérêt et un projet ou une unité doivent déjà être définis.",
     "markProposal": "Enregistrez qu'une proposition a été envoyée. Le prospect doit déjà être qualifié.",
     "markNegotiation": "Passez ce prospect en négociation. Une proposition doit déjà être enregistrée.",
     "reopen": "Rouvrez ce prospect perdu et replacez-le en contacté. Le motif de perte est retiré du prospect et conservé dans le journal d'activité."

@@ -56,6 +56,7 @@
   "finalPrice": "Prezzo finale",
   "saleDate": "Data di vendita",
   "handover": "Consegna",
+  "handoverPackage": "Pacchetto di consegna",
   "handoverDate": "Data di consegna",
   "handoverCompletedAt": "Consegna completata",
   "handedOverBy": "Consegnato da",

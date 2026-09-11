@@ -12,7 +12,7 @@
   },
   "descriptions": {
     "markContacted": "Record that you have made contact. The lead must already have an email or phone number.",
-    "qualify": "Qualify this lead. An email or phone number must already be set.",
+    "qualify": "Qualify this lead. An email or phone, an interest, and a project or unit must already be set.",
     "markProposal": "Record that a proposal was sent. The lead must already be qualified.",
     "markNegotiation": "Move this lead into negotiation. A proposal must already be recorded.",
     "reopen": "Reopen this lost lead and move it back to contacted. The lost reason is cleared from the lead and kept in the activity log."

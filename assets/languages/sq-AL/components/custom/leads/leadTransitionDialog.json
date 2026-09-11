@@ -12,7 +12,7 @@
   },
   "descriptions": {
     "markContacted": "Regjistro që është bërë kontakt. Lead-i duhet të ketë tashmë email ose telefon.",
-    "qualify": "Kualifiko këtë lead. Një email ose numër telefoni duhet të jetë tashmë i vendosur.",
+    "qualify": "Kualifiko këtë lead. Email ose telefon, një interes dhe një projekt ose njësi duhet të jenë tashmë të vendosura.",
     "markProposal": "Regjistro që u dërgua një propozim. Lead-i duhet të jetë tashmë i kualifikuar.",
     "markNegotiation": "Kalojeni këtë lead në negociatë. Duhet të ketë tashmë një propozim.",
     "reopen": "Rihap këtë lead të humbur dhe ktheje te i kontaktuar. Arsyeja e humbjes hiqet nga lead-i dhe ruhet në regjistrin e aktivitetit."

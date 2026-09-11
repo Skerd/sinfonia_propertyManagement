@@ -9,7 +9,11 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DollarSign, LoaderCircle} from "lucide-react";
 import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
-import {RENTAL_PAYMENT_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.schema-def.ts";
+import MultiLocalFilePicker from "@coreModule/components/custom/files/multiLocalFilePicker.tsx";
+import {
+    RENTAL_PAYMENT_LONG_TEXT_MAX,
+    RENTAL_PAYMENT_RECEIPT_MEDIA_MAX,
+} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.schema-def.ts";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -48,7 +52,7 @@ function MarkRentalPaymentPaidDialog({
     onClose,
     resolveLanguageKey,
     innerRef,
-    onFilterChange,
+    onFormDataChange,
     data,
     onSuccess = () => {},
     loading,
@@ -57,6 +61,7 @@ function MarkRentalPaymentPaidDialog({
     const defaultAmount = remaining > 0 ? remaining.toString() : "";
     const [paidAmount, setPaidAmount] = useState(defaultAmount);
     const [notes, setNotes] = useState("");
+    const [mediaFiles, setMediaFiles] = useState<File[]>([]);
     const waitingForSuccessRef = useRef(false);
     const previousDataRef = useRef<RentalPayment | null>(null);
 
@@ -64,6 +69,7 @@ function MarkRentalPaymentPaidDialog({
         if (open) {
             setPaidAmount(defaultAmount);
             setNotes("");
+            setMediaFiles([]);
         }
     }, [open, defaultAmount]);
 
@@ -89,6 +95,23 @@ function MarkRentalPaymentPaidDialog({
 
     const symbol = payment.currency?.symbol;
     const canSubmit = !!paidAmount && Number(paidAmount) > 0;
+
+    const submit = () => {
+        if (!canSubmit) return;
+        const payload: MarkPaidPayload = {
+            _id: payment._id,
+            paidAmount: Number(paidAmount),
+            notes: notes || undefined,
+        };
+        if (mediaFiles.length === 0) {
+            onFormDataChange(payload);
+            return;
+        }
+        const formData = new FormData();
+        formData.append("data", JSON.stringify(payload));
+        mediaFiles.forEach((file) => formData.append("files", file));
+        onFormDataChange(formData);
+    };
 
     return (
         <AlertDialog
@@ -147,6 +170,19 @@ function MarkRentalPaymentPaidDialog({
                             />
                         </FormMaxLengthControl>
                     </div>
+                    <div className="flex flex-col gap-y-2">
+                        <Label>{resolveLanguageKey("mediaLabel")}</Label>
+                        <MultiLocalFilePicker
+                            files={mediaFiles}
+                            onFilesChange={setMediaFiles}
+                            resolveLanguageKey={resolveLanguageKey}
+                            disabled={loading}
+                            maxFiles={RENTAL_PAYMENT_RECEIPT_MEDIA_MAX}
+                            accept="application/pdf,image/*"
+                            addFileKey="addFiles"
+                            filesSelectedKey="filesSelected"
+                        />
+                    </div>
                 </div>
                 <AlertDialogFooter className="shrink-0">
                     <AlertDialogCancel disabled={loading} onClick={(e) => e.stopPropagation()}>
@@ -156,12 +192,7 @@ function MarkRentalPaymentPaidDialog({
                         onClick={(e) => {
                             e.stopPropagation();
                             e.preventDefault();
-                            if (!canSubmit) return;
-                            onFilterChange({
-                                _id: payment._id,
-                                paidAmount: Number(paidAmount),
-                                notes: notes || undefined,
-                            });
+                            submit();
                         }}
                         disabled={loading || !canSubmit}
                     >

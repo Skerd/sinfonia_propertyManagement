@@ -7,6 +7,7 @@ import {IconCalendar, IconCurrencyDollar, IconDoor, IconLabel} from "@tabler/ico
 import RentalPaymentSheetView from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
 import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
+import ManualRentClientEmails from "@propertyManagementModule/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
 import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
@@ -72,6 +73,7 @@ function RentalPaymentCard({
                     <>
                         <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
                         <WaiveRentalPayment payment={entity} onAction={setAction} />
+                        <ManualRentClientEmails payment={entity} />
                     </>
                 ),
             })}
@@ -114,6 +116,7 @@ function RentalPaymentCard({
                     >
                         <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
                         <WaiveRentalPayment payment={entity} onAction={setAction} />
+                        <ManualRentClientEmails payment={entity} />
                     </EntityCard.Header>
                     <EntityCard.Body>
                         <DisplayRow
@@ -140,6 +143,14 @@ function RentalPaymentCard({
                             path="amount"
                             type="currency"
                             value={{amount: entity.remaining, currency: entity.currency}}
+                        />
+                        <DisplayRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("fields.lateFeeAmount")}
+                            tooltip={resolveLanguageKey("fields.lateFeeAmount")}
+                            path="lateFeeAmount"
+                            type="currency"
+                            value={{amount: entity.lateFeeAmount, currency: entity.currency}}
                         />
                         <DisplayRow
                             icon={IconDoor}

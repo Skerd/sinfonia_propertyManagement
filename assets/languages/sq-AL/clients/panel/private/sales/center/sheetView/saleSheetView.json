@@ -56,6 +56,7 @@
   "finalPrice": "Çmimi përfundimtar",
   "saleDate": "Data e shitjes",
   "handover": "Dorëzimi",
+  "handoverPackage": "Paketa e dorëzimit",
   "handoverDate": "Data e dorëzimit",
   "handoverCompletedAt": "Dorëzimi i përfunduar",
   "handedOverBy": "Dorëzuar nga",

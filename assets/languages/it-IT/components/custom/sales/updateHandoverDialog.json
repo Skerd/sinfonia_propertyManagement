@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
+  "title": "Aggiorna consegna",
+  "description": "Spunta o togli la spunta alle voci. Lo stato deriva da ciò che è completato.",
+  "cancel": "Annulla",
+  "confirm": "Salva consegna",
+  "importance": {
+    "low": "Bassa",
+    "medium": "Media",
+    "high": "Alta"
+  },
+  "axios": {
+    "start": { "title": "Aggiornamento della consegna…", "time": 3000 },
+    "success": { "title": "Consegna aggiornata", "time": 3000 },
+    "error": { "title": "Impossibile aggiornare la consegna", "time": 3000 }
+  }
+}

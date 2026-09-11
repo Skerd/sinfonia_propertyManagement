@@ -17,13 +17,21 @@
     "dueDate": "Due Date",
     "edifice": "Edifice",
     "floor": "Floor",
+    "lateFeeAmount": "Late Fee",
     "lease": "Lease",
     "name": "Reference",
     "notes": "Notes",
     "paidAmount": "Paid Amount",
     "paidDate": "Paid Date",
+    "paymentReceipts": "Payment receipts",
+    "paymentReceipts.media": "Receipt attachments",
     "project": "Project",
     "receiptMedia": "Receipt Media",
+    "remaining": "Remaining",
+    "rentOverdueNoticeEmailAt": "Overdue Notice Email",
+    "rentReminderEmailAt0d": "Rent Reminder Email (Day Of)",
+    "rentReminderEmailAt1d": "Rent Reminder Email (1 Day)",
+    "rentReminderEmailAt3d": "Rent Reminder Email (3 Days)",
     "status": "Status",
     "unit": "Unit",
     "updatedAt": "Updated At",
@@ -35,8 +43,7 @@
         "waived": "Waived",
         "partially_paid": "Partially paid"
       }
-    },
-    "remaining": "Remaining"
+    }
   },
   "help": {
     "ariaLabel": "About Rental payments",
@@ -49,7 +56,7 @@
           "Parent lease, unit, due date, amount, paid amount, remaining, currency.",
           "Status: pending, paid, partially paid, overdue, waived.",
           "Late fee amount (stamped when the month becomes overdue).",
-          "Payment receipts (each slice of a collection with date and notes)."
+          "Payment receipts (each slice of a collection with date, notes, and up to five attachments)."
         ]
       },
       {

@@ -23,6 +23,7 @@
     "currencyLabel": "Währung",
     "dueDateLabel": "Fälligkeit",
     "addFile": "Datei hinzufügen",
+    "filesSelected": "Dateien ausgewählt",
     "existingFiles": "Aktuelle Datei",
     "leaseLabel": "Mietvertrag",
     "leasePlaceholder": "Mietvertrag auswählen",

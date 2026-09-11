@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
+  "title": "Übergabe aktualisieren",
+  "description": "Haken Sie Checklistenpunkte an oder entfernen Sie sie. Der Status ergibt sich aus den erledigten Punkten.",
+  "cancel": "Abbrechen",
+  "confirm": "Übergabe speichern",
+  "importance": {
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch"
+  },
+  "axios": {
+    "start": { "title": "Übergabe wird aktualisiert…", "time": 3000 },
+    "success": { "title": "Übergabe aktualisiert", "time": 3000 },
+    "error": { "title": "Übergabe konnte nicht aktualisiert werden", "time": 3000 }
+  }
+}

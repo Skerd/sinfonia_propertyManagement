@@ -6,18 +6,21 @@
     "3d": "Promemoria: 3 giorni prima della scadenza",
     "1d": "Promemoria: 1 giorno prima della scadenza",
     "0d": "Promemoria: scadenza (oggi)",
+    "remaining_days": "Promemoria: giorni rimanenti alla scadenza",
     "overdue": "Invia avviso affitto scaduto"
   },
   "confirmTitles": {
     "3d": "Inviare il promemoria a 3 giorni?",
     "1d": "Inviare il promemoria a 1 giorno?",
     "0d": "Inviare il promemoria del giorno di scadenza?",
+    "remaining_days": "Inviare il promemoria dei giorni rimanenti?",
     "overdue": "Inviare l’email di affitto scaduto?"
   },
   "confirmDescriptions": {
     "3d": "Invia il modello standard «3 giorni prima». Il testo mostra il residuo, non l’importo originale.",
     "1d": "Invia il modello standard «1 giorno prima». Il testo mostra il residuo.",
     "0d": "Invia il promemoria «scade oggi». Il testo mostra il residuo.",
+    "remaining_days": "Invia un'e-mail che indica quanti giorni di calendario interi restano (UTC) fino alla data di scadenza. Il testo mostra il residuo.",
     "overdue": "Invia l’avviso che questo mese è scaduto (dopo la fine del giorno UTC). Il testo mostra il residuo."
   },
   "axios": {

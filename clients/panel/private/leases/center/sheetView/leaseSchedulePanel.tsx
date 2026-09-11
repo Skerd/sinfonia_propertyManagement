@@ -247,7 +247,7 @@ export default function LeaseSchedulePanel({
                                                             }}
                                                         />
                                                         {showEmails ? (
-                                                            <ManualRentClientEmails leaseId={lease._id} payment={row} />
+                                                            <ManualRentClientEmails payment={row} />
                                                         ) : null}
                                                     </DropdownMenuContent>
                                                 </DropdownMenu>

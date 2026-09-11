@@ -8,11 +8,26 @@
   "status": "Stato",
   "project": "Progetto",
   "edifice": "Edificio",
+  "floor": "Piano",
   "unit": "Unità",
-  "omManualsComplete": "O&M Manuals Complete",
-  "asBuiltComplete": "As-Built Complete",
-  "keysTransferred": "Keys Transferred",
-  "trainingComplete": "Training Complete",
+  "checklist": "Checklist",
+  "itemName": "Voce",
+  "itemDescription": "Descrizione",
+  "itemInstructions": "Istruzioni",
+  "importance": "Importanza",
+  "completed": "Completata",
+  "importanceLevels": {
+    "low": "Bassa",
+    "medium": "Media",
+    "high": "Alta"
+  },
+  "completedState": {
+    "true": "Completata",
+    "false": "In attesa"
+  },
+  "compactView": "Compatto",
+  "cardsView": "Schede",
+  "toggleReferenceListView": "Cambia layout della checklist",
   "description": "Descrizione",
   "notes": "Note",
   "statuses": {

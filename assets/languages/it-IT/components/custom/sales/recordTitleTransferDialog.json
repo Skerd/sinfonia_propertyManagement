@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/recordTitleTransferDialog.tsx",
+  "title": "Registra trasferimento del titolo",
+  "description": "Registra la data dell’atto e i dettagli. Non potrà essere modificato in seguito.",
+  "titleTransferDate": "Data di trasferimento del titolo",
+  "deedNumber": "Numero atto",
+  "notaryName": "Notaio",
+  "titleTransferCertificate": "Certificato di trasferimento del titolo",
+  "cancel": "Annulla",
+  "confirm": "Registra trasferimento",
+  "axios": {
+    "start": { "title": "Registrazione del trasferimento del titolo…", "time": 3000 },
+    "success": { "title": "Trasferimento del titolo registrato", "time": 3000 },
+    "error": { "title": "Impossibile registrare il trasferimento del titolo", "time": 3000 }
+  }
+}

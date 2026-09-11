@@ -8,7 +8,7 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import {useEffect, useState} from "react";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
-import CompleteHandoverDialog from "@propertyManagementModule/components/custom/sales/completeHandoverDialog.tsx";
+import SaleHandoverDialogs from "@propertyManagementModule/components/custom/sales/saleHandoverDialogs.tsx";
 
 /** List route with optional unit filter (sidebar / units menu parity). */
 export function salesListPath(unitId?: string, unitName?: string): string {
@@ -127,14 +127,16 @@ function SaleSheetView({
             actionMenuChildren={<SaleRowMenuExtras sale={asSale} onAction={setAction} />}
             actionMenuAllowCustomChildren={true}
         />
-        {action === "completeHandover" && (
-            <CompleteHandoverDialog
-                open
-                onClose={() => setAction("")}
-                sale={asSale}
-                onSuccess={handleWorkflowSuccess}
-            />
-        )}
+        <SaleHandoverDialogs
+            action={action}
+            sale={asSale}
+            onClose={() => setAction("")}
+            onSaleSuccess={handleWorkflowSuccess}
+            onPackageSuccess={(updated) => {
+                if (!updated) return;
+                setSheetData({...asSale, handoverPackage: updated});
+            }}
+        />
         </>
     );
 }

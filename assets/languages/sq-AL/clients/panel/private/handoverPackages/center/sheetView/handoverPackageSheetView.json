@@ -8,11 +8,26 @@
   "status": "Statusi",
   "project": "Projekti",
   "edifice": "Ndërtesa",
+  "floor": "Kati",
   "unit": "Njësia",
-  "omManualsComplete": "Manualet O&M të plotësuara",
-  "asBuiltComplete": "As-Built i plotësuar",
-  "keysTransferred": "Çelësat e dorëzuar",
-  "trainingComplete": "Trajnimi i përfunduar",
+  "checklist": "Lista e kontrollit",
+  "itemName": "Zëri",
+  "itemDescription": "Përshkrimi",
+  "itemInstructions": "Udhëzimet",
+  "importance": "Rëndësia",
+  "completed": "Përfunduar",
+  "importanceLevels": {
+    "low": "E ulët",
+    "medium": "Mesatare",
+    "high": "E lartë"
+  },
+  "completedState": {
+    "true": "Përfunduar",
+    "false": "Në pritje"
+  },
+  "compactView": "Kompakt",
+  "cardsView": "Karta",
+  "toggleReferenceListView": "Ndërro paraqitjen e listës së kontrollit",
   "description": "Përshkrimi",
   "notes": "Shënime",
   "statuses": {

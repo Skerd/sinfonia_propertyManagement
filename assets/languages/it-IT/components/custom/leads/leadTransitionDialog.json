@@ -12,7 +12,7 @@
   },
   "descriptions": {
     "markContacted": "Registra che il contatto è stato stabilito. Il lead deve già avere email o telefono.",
-    "qualify": "Qualifica questo lead. Un'email o un numero di telefono deve già essere impostato.",
+    "qualify": "Qualifica questo lead. Un'email o un telefono, un interesse e un progetto o un'unità devono già essere impostati.",
     "markProposal": "Registra che è stata inviata una proposta. Il lead deve già essere qualificato.",
     "markNegotiation": "Sposta questo lead in negoziazione. Deve già esserci una proposta.",
     "reopen": "Riapri questo lead perso e riportalo a contattato. Il motivo della perdita viene rimosso dal lead e conservato nel registro attività."

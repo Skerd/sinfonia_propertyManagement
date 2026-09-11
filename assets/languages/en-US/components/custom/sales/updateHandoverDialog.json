@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
+  "title": "Update handover",
+  "description": "Tick or untick checklist items. Status updates from what is completed.",
+  "cancel": "Cancel",
+  "confirm": "Save handover",
+  "importance": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "axios": {
+    "start": { "title": "Updating handover…", "time": 3000 },
+    "success": { "title": "Handover updated", "time": 3000 },
+    "error": { "title": "Could not update handover", "time": 3000 }
+  }
+}

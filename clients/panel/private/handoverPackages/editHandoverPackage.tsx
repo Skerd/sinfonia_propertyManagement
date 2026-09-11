@@ -11,11 +11,18 @@ export default createGenericEditPage<HandoverPackage, EditHandoverPackageFormTyp
     schema: editHandoverPackageFormSchema,
     mapEntityData: (data) => ({
         ...data,
-        project: (data as any).project?._id ?? (data as any).project,
-        edifice: (data as any).edifice?._id ?? (data as any).edifice,
-        unit: (data as any).unit?._id ?? (data as any).unit,
-        media: (data as any).media?.map((m: any) => m._id ?? m) ?? [],
-    } as any),
+        project: data.project?._id ?? "",
+        edifice: data.edifice?._id,
+        floor: data.floor?._id,
+        unit: data.unit?._id ?? "",
+        media: data.media?.map((m) => m._id ?? m) ?? [],
+        items: (data.items ?? []).map((item) => ({
+            name: item.name,
+            description: item.description,
+            instructions: item.instructions,
+            importance: item.importance,
+        })),
+    }),
     buildFormExtras: (_entityId, _params, entity) => ({
         enableLocalFileMultipart: true,
         editMediaExistingList: (entity as any)?.media ?? [],

@@ -24,6 +24,7 @@ import EdificeCard from "@propertyManagementModule/clients/panel/private/edifice
 import SaleCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/saleCard.tsx";
 import PaymentPlanCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
+import HandoverPackageCard from "@propertyManagementModule/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx";
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import type {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
@@ -140,6 +141,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#SaleCard": SaleCard,
         "#ReservationCard": ReservationCard,
         "#PaymentPlanCard": PaymentPlanCard,
+        "#HandoverPackageCard": HandoverPackageCard,
         "#ProjectSheetView": ProjectSheetViewLazy,
         "#StorySheetView": StorySheetViewLazy,
         "#EdificeSheetView": EdificeSheetViewLazy,
@@ -170,6 +172,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#SaleCard": "sale",
         "#ReservationCard": "reservation",
         "#PaymentPlanCard": "paymentPlan",
+        "#HandoverPackageCard": "entity",
         "#UnitCard": "unit",
     },
     sheetFieldRenderers: {

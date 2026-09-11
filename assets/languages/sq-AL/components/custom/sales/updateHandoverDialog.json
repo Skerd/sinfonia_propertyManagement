@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
+  "title": "Përditëso dorëzimin",
+  "description": "Shënoni ose hiqni shenjën e zërave. Statusi llogaritet nga zërat e përfunduar.",
+  "cancel": "Anulo",
+  "confirm": "Ruaj dorëzimin",
+  "importance": {
+    "low": "E ulët",
+    "medium": "E mesme",
+    "high": "E lartë"
+  },
+  "axios": {
+    "start": { "title": "Duke përditësuar dorëzimin…", "time": 3000 },
+    "success": { "title": "Dorëzimi u përditësua", "time": 3000 },
+    "error": { "title": "Dorëzimi nuk u përditësua", "time": 3000 }
+  }
+}

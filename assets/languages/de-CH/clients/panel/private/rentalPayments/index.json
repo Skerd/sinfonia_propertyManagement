@@ -17,13 +17,21 @@
     "dueDate": "Fälligkeit",
     "edifice": "Gebäude",
     "floor": "Geschoss",
+    "lateFeeAmount": "Verzugsgebühr",
     "lease": "Mietvertrag",
     "name": "Referenz",
     "notes": "Notizen",
     "paidAmount": "Bezahlter Betrag",
     "paidDate": "Zahlungsdatum",
+    "paymentReceipts": "Zahlungsbelege",
+    "paymentReceipts.media": "Beleganhänge",
     "project": "Projekt",
     "receiptMedia": "Quittung",
+    "remaining": "Restbetrag",
+    "rentOverdueNoticeEmailAt": "Mahnung E-Mail",
+    "rentReminderEmailAt0d": "Miet-Erinnerung (am Tag)",
+    "rentReminderEmailAt1d": "Miet-Erinnerung (1 Tag)",
+    "rentReminderEmailAt3d": "Miet-Erinnerung (3 Tage)",
     "status": "Status",
     "unit": "Einheit",
     "updatedAt": "Aktualisiert am",
@@ -35,8 +43,7 @@
         "waived": "Erlassen",
         "partially_paid": "Teilweise bezahlt"
       }
-    },
-    "remaining": "Restbetrag"
+    }
   },
   "help": {
     "ariaLabel": "Über Mietzahlungen",
@@ -49,7 +56,7 @@
           "Elternvertrag, Einheit, Fälligkeit, Betrag, bezahlt, Rest, Währung.",
           "Status: ausstehend, bezahlt, teilweise, überfällig, erlassen.",
           "Verzugsbetrag (wenn überfällig).",
-          "Zahlungsbelege (jede Teilzahlung mit Datum und Notizen)."
+          "Zahlungsbelege (jede Teilzahlung mit Datum, Notizen und bis zu fünf Anhängen)."
         ]
       },
       {

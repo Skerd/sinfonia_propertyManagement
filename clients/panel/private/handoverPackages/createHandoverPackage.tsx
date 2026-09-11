@@ -10,9 +10,11 @@ export default createGenericCreatePage<CreateHandoverPackageFormType>({
     schema: createHandoverPackageFormSchema,
     defaultValues: (params) => ({
         project: params.get("projectId") ?? "",
+        unit: "",
         title: "",
         media: [],
-    } as any),
+        items: [{name: "", description: "", instructions: "", importance: "medium"}],
+    }),
     buildFormExtras: () => ({enableLocalFileMultipart: true}),
     mapSubmitPayload: (data) => {
         const formData = new FormData();

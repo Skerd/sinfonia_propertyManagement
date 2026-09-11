@@ -15,12 +15,23 @@
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
     "dueDate": "Data e pagesës",
+    "edifice": "Ndërtesa",
+    "floor": "Kati",
+    "lateFeeAmount": "Penaliteti",
     "lease": "Kontrata",
     "name": "Referenca",
     "notes": "Shënime",
     "paidAmount": "Shuma paguar",
-    "paidDate": "Paid Date",
-    "receiptMedia": "Receipt Media",
+    "paidDate": "Data e pagesës",
+    "paymentReceipts": "Faturat e pagesës",
+    "paymentReceipts.media": "Bashkëngjitjet e faturave",
+    "project": "Projekti",
+    "receiptMedia": "Fatura",
+    "remaining": "Mbetja",
+    "rentOverdueNoticeEmailAt": "Email për vonesë",
+    "rentReminderEmailAt0d": "Kujtesë qiraje (po atë ditë)",
+    "rentReminderEmailAt1d": "Kujtesë qiraje (1 ditë)",
+    "rentReminderEmailAt3d": "Kujtesë qiraje (3 ditë)",
     "status": "Statusi",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
@@ -32,8 +43,7 @@
         "waived": "Hequr dorë",
         "partially_paid": "Pjesërisht paguar"
       }
-    },
-    "remaining": "Mbetja"
+    }
   },
   "help": {
     "ariaLabel": "Rreth Pagesave të qirasë",
@@ -46,7 +56,7 @@
           "Kontrata prind, njësia, data e afatit, shuma, shuma e paguar, mbetja, valuta.",
           "Statusi: në pritje, e paguar, pjesërisht e paguar, e vonuar, e falur.",
           "Shuma e penalitetit (vuloset kur muaji bëhet i vonuar).",
-          "Faturat e pagesës (çdo copë arkëtimi me datë dhe shënime)."
+          "Faturat e pagesës (çdo copë arkëtimi me datë, shënime dhe deri në pesë bashkëngjitje)."
         ]
       },
       {

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/recordTitleTransferDialog.tsx",
+  "title": "Regjistro transferimin e titullit",
+  "description": "Regjistroni datën e aktit dhe detajet. Nuk mund të ndryshohet më vonë.",
+  "titleTransferDate": "Data e transferimit të titullit",
+  "deedNumber": "Numri i aktit",
+  "notaryName": "Noteri",
+  "titleTransferCertificate": "Certifikata e transferimit të titullit",
+  "cancel": "Anulo",
+  "confirm": "Regjistro transferimin",
+  "axios": {
+    "start": { "title": "Duke regjistruar transferimin e titullit…", "time": 3000 },
+    "success": { "title": "Transferimi i titullit u regjistrua", "time": 3000 },
+    "error": { "title": "Transferimi i titullit nuk u regjistrua", "time": 3000 }
+  }
+}

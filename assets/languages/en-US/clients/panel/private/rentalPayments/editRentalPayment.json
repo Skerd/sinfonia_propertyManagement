@@ -23,6 +23,7 @@
     "currencyLabel": "Currency",
     "dueDateLabel": "Due Date",
     "addFile": "Add file",
+    "filesSelected": "files selected",
     "existingFiles": "Current file",
     "leaseLabel": "Lease",
     "leasePlaceholder": "Select lease",

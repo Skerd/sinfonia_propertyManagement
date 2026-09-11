@@ -56,6 +56,7 @@
   "finalPrice": "Prix final",
   "saleDate": "Date de vente",
   "handover": "Remise des clés",
+  "handoverPackage": "Dossier de remise",
   "handoverDate": "Date de remise",
   "handoverCompletedAt": "Remise terminée",
   "handedOverBy": "Remis par",

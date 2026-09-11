@@ -21,13 +21,11 @@ import type {RentReminderKind} from "armonia/src/modules/propertyManagement/api/
 
 type SendRentReminderForm = {
     _id: string;
-    rentalPaymentId: string;
     kind: RentReminderKind;
 };
 
 type ManualRentClientEmailsProps = WithLanguageType &
     WithAxiosType<{ok: true}, SendRentReminderForm> & {
-        leaseId: string;
         payment: RentalPayment;
     };
 
@@ -52,6 +50,7 @@ export function rentEmailVisibility(payment: RentalPayment): Record<RentReminder
         "3d": false,
         "1d": false,
         "0d": false,
+        remaining_days: false,
         overdue: false,
     };
     if (!payment.dueDate || !OPEN_STATUSES.has(payment.status ?? "") || (payment.remaining ?? 0) <= 0) {
@@ -63,11 +62,12 @@ export function rentEmailVisibility(payment: RentalPayment): Record<RentReminder
         "3d": diff >= 3,
         "1d": diff >= 1,
         "0d": diff === 0 && !past,
+        remaining_days: !past && diff >= 0,
         overdue: past,
     };
 }
 
-export const RENT_MANUAL_EMAIL_KIND_ORDER: RentReminderKind[] = ["3d", "1d", "0d", "overdue"];
+export const RENT_MANUAL_EMAIL_KIND_ORDER: RentReminderKind[] = ["3d", "1d", "0d", "remaining_days", "overdue"];
 
 export function rentHasVisibleManualEmailActions(payment: RentalPayment): boolean {
     const v = rentEmailVisibility(payment);
@@ -75,7 +75,6 @@ export function rentHasVisibleManualEmailActions(payment: RentalPayment): boolea
 }
 
 function ManualRentClientEmails({
-    leaseId,
     payment,
     resolveLanguageKey,
     innerRef,
@@ -98,7 +97,7 @@ function ManualRentClientEmails({
         },
     }));
 
-    if (!canReadTenant) {
+    if (!canReadTenant || payment.deletedAt) {
         return null;
     }
 
@@ -158,8 +157,7 @@ function ManualRentClientEmails({
                             onClick={() => {
                                 if (!pending) return;
                                 onFilterChange({
-                                    _id: leaseId,
-                                    rentalPaymentId: payment._id,
+                                    _id: payment._id,
                                     kind: pending,
                                 });
                             }}
@@ -180,10 +178,10 @@ export default compose(
     withAxios(
         {
             method: "POST",
-            url: "/api/realEstate/lease/sendRentReminder",
+            url: "/api/realEstate/rentalPayment/sendRentReminder",
             data: {},
         },
         true,
     ),
-    withDebug(true, true, "leases"),
+    withDebug(true, true, ["rentalpayments", "leases"]),
 )(ManualRentClientEmails);

@@ -1,0 +1,16 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/recordTitleTransferDialog.tsx",
+  "title": "Record title transfer",
+  "description": "Record the deed date and details. This cannot be changed later.",
+  "titleTransferDate": "Title transfer date",
+  "deedNumber": "Deed number",
+  "notaryName": "Notary",
+  "titleTransferCertificate": "Title transfer certificate",
+  "cancel": "Cancel",
+  "confirm": "Record title transfer",
+  "axios": {
+    "start": { "title": "Recording title transfer…", "time": 3000 },
+    "success": { "title": "Title transfer recorded", "time": 3000 },
+    "error": { "title": "Could not record title transfer", "time": 3000 }
+  }
+}

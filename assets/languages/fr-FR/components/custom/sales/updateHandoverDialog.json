@@ -1,0 +1,17 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/sales/updateHandoverDialog.tsx",
+  "title": "Mettre à jour la remise",
+  "description": "Cochez ou décochez les éléments. Le statut est calculé à partir des éléments terminés.",
+  "cancel": "Annuler",
+  "confirm": "Enregistrer la remise",
+  "importance": {
+    "low": "Faible",
+    "medium": "Moyenne",
+    "high": "Élevée"
+  },
+  "axios": {
+    "start": { "title": "Mise à jour de la remise…", "time": 3000 },
+    "success": { "title": "Remise mise à jour", "time": 3000 },
+    "error": { "title": "Impossible de mettre à jour la remise", "time": 3000 }
+  }
+}

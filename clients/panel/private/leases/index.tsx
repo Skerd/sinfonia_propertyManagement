@@ -16,9 +16,13 @@ import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/l
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
 import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
-import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import {
+    GRID_COLS_MAX_4,
+    GRID_TRANSACTIONAL
+} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {buildPageTitle} from "@coreModule/helpers/general";
+import {cn} from "@coreModule/components/lib/utils.ts";
 
 interface AllLeasesProps extends WithLanguageType {
     unitId?: string;
@@ -112,7 +116,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             buildEditPath={buildLeaseEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx"
-            cardViewClassName={GRID_TRANSACTIONAL}
+            cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             extraFilters={extraFilters}
             extraParams={{administration: false}}
             quickFilters={quickFilters}

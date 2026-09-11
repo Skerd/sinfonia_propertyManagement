@@ -12,7 +12,7 @@
   },
   "descriptions": {
     "markContacted": "Erfassen Sie, dass Kontakt aufgenommen wurde. Der Lead braucht bereits E-Mail oder Telefon.",
-    "qualify": "Qualifizieren Sie diesen Lead. Eine E-Mail oder Telefonnummer muss bereits gesetzt sein.",
+    "qualify": "Qualifizieren Sie diesen Lead. E-Mail oder Telefon, ein Interesse und ein Projekt oder eine Einheit müssen bereits gesetzt sein.",
     "markProposal": "Erfassen Sie, dass ein Angebot gesendet wurde. Der Lead muss bereits qualifiziert sein.",
     "markNegotiation": "Verschieben Sie diesen Lead in die Verhandlung. Ein Angebot muss bereits erfasst sein.",
     "reopen": "Öffnen Sie diesen verlorenen Lead erneut und setzen Sie ihn auf kontaktiert. Der Verlustgrund wird vom Lead entfernt und im Aktivitätsprotokoll behalten."

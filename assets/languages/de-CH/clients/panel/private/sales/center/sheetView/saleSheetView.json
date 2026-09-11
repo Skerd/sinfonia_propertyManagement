@@ -56,6 +56,7 @@
   "finalPrice": "Endpreis",
   "saleDate": "Verkaufsdatum",
   "handover": "Übergabe",
+  "handoverPackage": "Übergabepaket",
   "handoverDate": "Übergabedatum",
   "handoverCompletedAt": "Übergabe abgeschlossen",
   "handedOverBy": "Übergeben von",
