@@ -54,7 +54,11 @@
       "inherit": "Inherit from parent",
       "hide": "Hide price (on request)",
       "show": "Show price"
-    }
+    },
+    "pricePerMeterSquaredLabel": "Price per m²",
+    "pricePerMeterSquaredPlaceholder": "Empty = use the edifice rate",
+    "verandaPricePerMeterSquaredLabel": "Veranda price per m²",
+    "verandaPricePerMeterSquaredPlaceholder": "Empty = use the edifice rate"
   },
   "axios": {
     "start": {
@@ -77,5 +81,6 @@
   "formButtons": {
     "cancel": "Cancel",
     "submit": "Update Floor"
-  }
+  },
+  "pricing": "Pricing"
 }

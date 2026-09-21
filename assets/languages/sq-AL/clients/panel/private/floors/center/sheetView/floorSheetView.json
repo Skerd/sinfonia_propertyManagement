@@ -86,5 +86,9 @@
     "hidden_floor": "Çmimi me kërkesë (vendosur te kati)",
     "shown_unit": "Çmimi shfaqet (vendosur te njësia)",
     "hidden_unit": "Çmimi me kërkesë (vendosur te njësia)"
-  }
+  },
+  "pricePerMeterSquared": "Çmimi për m²",
+  "pricePerMeterSquaredTooltip": "Tarifa që zbatohet për njësitë e këtij kati: tarifa e katit nëse është vendosur, përndryshe ajo e ndërtesës. Njësitë me çmim të ndryshuar manualisht nuk preken.",
+  "verandaPricePerMeterSquared": "Çmimi për m² verande",
+  "verandaPricePerMeterSquaredTooltip": "Tarifa e verandës që zbatohet për njësitë e këtij kati: tarifa e katit nëse është vendosur, përndryshe ajo e ndërtesës. Njësitë me çmim të ndryshuar manualisht nuk preken."
 }

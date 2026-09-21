@@ -54,7 +54,11 @@
       "inherit": "Von übergeordneter Ebene übernehmen",
       "hide": "Preis ausblenden (auf Anfrage)",
       "show": "Preis anzeigen"
-    }
+    },
+    "pricePerMeterSquaredLabel": "Preis pro m²",
+    "pricePerMeterSquaredPlaceholder": "Leer = Satz des Gebäudes verwenden",
+    "verandaPricePerMeterSquaredLabel": "Verandapreis pro m²",
+    "verandaPricePerMeterSquaredPlaceholder": "Leer = Satz des Gebäudes verwenden"
   },
   "axios": {
     "start": {
@@ -77,5 +81,6 @@
   "formButtons": {
     "cancel": "Abbrechen",
     "submit": "Geschoss aktualisieren"
-  }
+  },
+  "pricing": "Preise"
 }

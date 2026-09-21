@@ -53,7 +53,11 @@
       "inherit": "Eredita dal livello superiore",
       "hide": "Nascondi prezzo (su richiesta)",
       "show": "Mostra prezzo"
-    }
+    },
+    "pricePerMeterSquaredLabel": "Prezzo al m²",
+    "pricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio",
+    "verandaPricePerMeterSquaredLabel": "Prezzo al m² veranda",
+    "verandaPricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio"
   },
   "axios": {
     "start": {
@@ -76,5 +80,6 @@
   "formButtons": {
     "cancel": "Annulla",
     "submit": "Crea piano"
-  }
+  },
+  "pricing": "Prezzi"
 }

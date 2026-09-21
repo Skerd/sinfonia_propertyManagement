@@ -86,5 +86,9 @@
     "hidden_floor": "Preis auf Anfrage (festgelegt auf Etage)",
     "shown_unit": "Preis sichtbar (festgelegt auf Einheit)",
     "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
-  }
+  },
+  "pricePerMeterSquared": "Preis pro m²",
+  "pricePerMeterSquaredTooltip": "Satz für die Einheiten dieses Stockwerks: der eigene Satz des Stockwerks, falls gesetzt, sonst der Satz des Gebäudes. Einheiten mit manuell bearbeitetem Preis bleiben unverändert.",
+  "verandaPricePerMeterSquared": "Verandapreis pro m²",
+  "verandaPricePerMeterSquaredTooltip": "Verandasatz für die Einheiten dieses Stockwerks: der eigene Satz des Stockwerks, falls gesetzt, sonst der Satz des Gebäudes. Einheiten mit manuell bearbeitetem Preis bleiben unverändert."
 }

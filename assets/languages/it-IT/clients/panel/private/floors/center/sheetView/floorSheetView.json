@@ -86,5 +86,9 @@
     "hidden_floor": "Prezzo su richiesta (impostato su piano)",
     "shown_unit": "Prezzo visibile (impostato su unità)",
     "hidden_unit": "Prezzo su richiesta (impostato su unità)"
-  }
+  },
+  "pricePerMeterSquared": "Prezzo al m²",
+  "pricePerMeterSquaredTooltip": "Tariffa applicata alle unità di questo piano: la tariffa del piano se impostata, altrimenti quella dell'edificio. Le unità con prezzo modificato manualmente non vengono toccate.",
+  "verandaPricePerMeterSquared": "Prezzo al m² veranda",
+  "verandaPricePerMeterSquaredTooltip": "Tariffa veranda applicata alle unità di questo piano: la tariffa del piano se impostata, altrimenti quella dell'edificio. Le unità con prezzo modificato manualmente non vengono toccate."
 }

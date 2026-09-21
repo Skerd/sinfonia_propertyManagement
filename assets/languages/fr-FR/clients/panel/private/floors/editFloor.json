@@ -54,7 +54,11 @@
       "inherit": "Hériter du niveau supérieur",
       "hide": "Masquer le prix (sur demande)",
       "show": "Afficher le prix"
-    }
+    },
+    "pricePerMeterSquaredLabel": "Prix par m²",
+    "pricePerMeterSquaredPlaceholder": "Vide = tarif de l'édifice",
+    "verandaPricePerMeterSquaredLabel": "Prix par m² de véranda",
+    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif de l'édifice"
   },
   "axios": {
     "start": {
@@ -77,5 +81,6 @@
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Mettre à jour l'étage"
-  }
+  },
+  "pricing": "Tarification"
 }

@@ -86,5 +86,9 @@
     "hidden_floor": "Price on request (set on floor)",
     "shown_unit": "Price shown (set on unit)",
     "hidden_unit": "Price on request (set on unit)"
-  }
+  },
+  "pricePerMeterSquared": "Price per m²",
+  "pricePerMeterSquaredTooltip": "Rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected.",
+  "verandaPricePerMeterSquared": "Veranda price per m²",
+  "verandaPricePerMeterSquaredTooltip": "Veranda rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected."
 }

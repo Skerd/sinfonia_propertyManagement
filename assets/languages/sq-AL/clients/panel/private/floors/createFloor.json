@@ -53,7 +53,11 @@
       "inherit": "Trashëgo nga niveli sipër",
       "hide": "Fshih çmimin (me kërkesë)",
       "show": "Shfaq çmimin"
-    }
+    },
+    "pricePerMeterSquaredLabel": "Çmimi për m²",
+    "pricePerMeterSquaredPlaceholder": "Bosh = përdor tarifën e ndërtesës",
+    "verandaPricePerMeterSquaredLabel": "Çmimi për m² verande",
+    "verandaPricePerMeterSquaredPlaceholder": "Bosh = përdor tarifën e ndërtesës"
   },
   "axios": {
     "start": {
@@ -76,5 +80,6 @@
   "formButtons": {
     "cancel": "Anulo",
     "submit": "Krijo dysheme"
-  }
+  },
+  "pricing": "Çmimet"
 }
