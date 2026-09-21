@@ -1188,6 +1188,8 @@
       "createdBy": "Created By",
       "deletedAt": "Deleted At",
       "deletedBy": "Deleted By",
+      "notifyOnReservations": "Njofto për rezervimet",
+      "notifyOnSales": "Njofto për shitjet",
       "propertymanagementconfigs": "Property Management Configs",
       "requiresHandoverPackageForHandover": "Requires Handover Package For Handover",
       "requiresSaleApproval": "Requires Sale Approval",

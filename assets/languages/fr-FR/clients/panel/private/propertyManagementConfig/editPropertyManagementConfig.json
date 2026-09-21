@@ -1,8 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
   "title": "Modifier Ventes & réception",
+  "notifications": "Notifications",
   "generalInfo": "Contrôles du flux de travail",
   "form": {
+    "notifyOnSalesLabel": "Notifier lors des ventes",
+    "notifyOnReservationsLabel": "Notifier lors des réservations",
+    "selectUser": "Sélectionner un utilisateur",
+    "removeUser": "Retirer l’utilisateur",
     "requiresSaleApprovalLabel": "Exiger l’approbation d’un responsable lors de la création d’une vente",
     "requiresHandoverPackageForHandoverLabel": "Exiger un dossier de remise terminé avant d’enregistrer la remise"
   },
@@ -38,10 +43,18 @@
         "body": "Les deux sont désactivés par défaut. Les activer ne réécrit pas les ventes historiques. Cela s’applique à la prochaine vente créée et à la prochaine première date de remise."
       },
       {
+        "title": "Notifications",
+        "items": [
+          "Notifier lors des ventes — chaque utilisateur de la liste reçoit une notification dans l’application et un e-mail à chaque nouvelle vente. Si l’approbation d’un responsable est requise, l’alerte indique que la vente est en attente d’approbation.",
+          "Notifier lors des réservations — chaque utilisateur de la liste reçoit une notification dans l’application et un e-mail à chaque nouvelle réservation."
+        ],
+        "body": "Les deux listes sont vides par défaut. Les utilisateurs désactivés ou qui n’appartiennent plus à l’entreprise sont ignorés. L’acheteur ou le client reçoit toujours sa propre confirmation."
+      },
+      {
         "title": "Sur cette page",
         "items": [
           "La page ouvre l’unique enregistrement de paramètres de cette société (créé automatiquement s’il manquait).",
-          "Deux interrupteurs. Enregistrer pour appliquer.",
+          "Deux listes de destinataires et deux interrupteurs. Enregistrez pour appliquer.",
           "Ni création, ni suppression, ni dérogation par projet."
         ]
       },

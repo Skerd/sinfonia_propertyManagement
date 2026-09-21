@@ -1,8 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
   "title": "Ndrysho Shitjet & Dorëzimi",
+  "notifications": "Njoftimet",
   "generalInfo": "Portat e rrjedhës së punës",
   "form": {
+    "notifyOnSalesLabel": "Njofto për shitjet",
+    "notifyOnReservationsLabel": "Njofto për rezervimet",
+    "selectUser": "Zgjidh një përdorues",
+    "removeUser": "Hiq përdoruesin",
     "requiresSaleApprovalLabel": "Kërko miratim të menaxherit kur krijohet një shitje",
     "requiresHandoverPackageForHandoverLabel": "Kërko paketë dorëzimi të përfunduar para regjistrimit të dorëzimit"
   },
@@ -38,10 +43,18 @@
         "body": "Të dyja janë fikur si parazgjedhje. Ndezja nuk rishkruan shitjet historike. Vlen për shitjen tjetër që krijoni dhe për datën e parë tjetër të dorëzimit."
       },
       {
+        "title": "Njoftimet",
+        "items": [
+          "Njofto për shitjet — çdo përdorues i listës merr një njoftim në aplikacion dhe një email sa herë krijohet një shitje e re. Kur kërkohet miratimi i menaxherit, njoftimi tregon se shitja pret miratim.",
+          "Njofto për rezervimet — çdo përdorues i listës merr një njoftim në aplikacion dhe një email sa herë krijohet një rezervim i ri."
+        ],
+        "body": "Të dyja listat janë bosh si parazgjedhje. Përdoruesit e çaktivizuar ose që nuk i përkasin më kompanisë anashkalohen. Blerësi ose klienti vazhdon të marrë konfirmimin e vet si më parë."
+      },
+      {
         "title": "Në këtë faqe",
         "items": [
           "Faqja hap dosjen e vetme të cilësimeve të kësaj kompanie (krijohet automatikisht nëse mungonte).",
-          "Dy çelësa. Ruani për t’i aplikuar.",
+          "Dy lista marrësish dhe dy çelësa. Ruaj për t’i zbatuar.",
           "Nuk ka krijim, fshirje as përjashtim sipas projekti."
         ]
       },

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/resendSaleStaffNotifications.tsx",
+  "actionLabel": "Ridërgo njoftimet",
+  "confirmTitle": "Të ridërgohen njoftimet e shitjes?",
+  "confirmDescription": "Ridërgon njoftimin në aplikacion dhe emailin për të gjithë përdoruesit në listën «Njofto për shitjet» te cilësimet Shitjet dhe dorëzimi.",
+  "cancel": "Anulo",
+  "confirmSend": "Dërgo",
+  "axios": {
+    "start": {
+      "title": "Po dërgohen njoftimet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Njoftimet u dërguan",
+      "time": 3000
+    },
+    "error": {
+      "title": "Njoftimet nuk mund të dërgoheshin",
+      "time": 3000
+    }
+  }
+}

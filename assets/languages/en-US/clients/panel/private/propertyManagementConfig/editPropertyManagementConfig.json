@@ -1,8 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
   "title": "Edit Sales & handover",
+  "notifications": "Notifications",
   "generalInfo": "Workflow gates",
   "form": {
+    "notifyOnSalesLabel": "Notify on sales",
+    "notifyOnReservationsLabel": "Notify on reservations",
+    "selectUser": "Select a user",
+    "removeUser": "Remove user",
     "requiresSaleApprovalLabel": "Require manager approval when creating a sale",
     "requiresHandoverPackageForHandoverLabel": "Require a completed handover package before recording handover"
   },
@@ -38,10 +43,18 @@
         "body": "Both default off. Turning a switch on does not rewrite historical sales. It applies to the next sale you create and to the next first handover date you stamp."
       },
       {
+        "title": "Notifications",
+        "items": [
+          "Notify on sales — each user listed gets an in-app notification and an email whenever a new sale is created. When manager approval is required, the alert says the sale is pending approval.",
+          "Notify on reservations — each user listed gets an in-app notification and an email whenever a new reservation is created."
+        ],
+        "body": "Both lists are empty by default. Deactivated users and users who no longer belong to the company are skipped. The buyer or client still receives their own confirmation as before."
+      },
+      {
         "title": "On this page",
         "items": [
           "The page opens this company’s single settings record (created automatically if it did not exist).",
-          "Two switches. Save to apply.",
+          "Two recipient lists and two switches. Save to apply.",
           "There is no create, delete, or per-project override here."
         ]
       },

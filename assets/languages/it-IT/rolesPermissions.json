@@ -1188,6 +1188,8 @@
       "createdBy": "Creato da",
       "deletedAt": "Eliminato il",
       "deletedBy": "Eliminato da",
+      "notifyOnReservations": "Notifica sulle prenotazioni",
+      "notifyOnSales": "Notifica sulle vendite",
       "propertymanagementconfigs": "Property management configs",
       "requiresHandoverPackageForHandover": "Requires handover package for handover",
       "requiresSaleApproval": "Requires sale approval",

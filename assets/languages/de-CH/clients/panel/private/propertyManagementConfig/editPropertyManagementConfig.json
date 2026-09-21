@@ -1,8 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
   "title": "Verkauf & Übergabe bearbeiten",
+  "notifications": "Benachrichtigungen",
   "generalInfo": "Workflow-Steuerungen",
   "form": {
+    "notifyOnSalesLabel": "Bei Verkäufen benachrichtigen",
+    "notifyOnReservationsLabel": "Bei Reservationen benachrichtigen",
+    "selectUser": "Benutzer auswählen",
+    "removeUser": "Benutzer entfernen",
     "requiresSaleApprovalLabel": "Managerfreigabe beim Erstellen eines Verkaufs verlangen",
     "requiresHandoverPackageForHandoverLabel": "Abgeschlossenes Übergabepaket vor dem Erfassen der Übergabe verlangen"
   },
@@ -38,10 +43,18 @@
         "body": "Beide standardmässig aus. Einschalten schreibt historische Verkäufe nicht um. Es gilt für den nächsten Verkauf und das nächste erste Übergabedatum."
       },
       {
+        "title": "Benachrichtigungen",
+        "items": [
+          "Bei Verkäufen benachrichtigen — alle hier aufgeführten Benutzer erhalten bei jedem neuen Verkauf eine In-App-Benachrichtigung und eine E-Mail. Ist eine Genehmigung durch die Leitung erforderlich, weist die Meldung darauf hin, dass der Verkauf auf Genehmigung wartet.",
+          "Bei Reservationen benachrichtigen — alle hier aufgeführten Benutzer erhalten bei jeder neuen Reservation eine In-App-Benachrichtigung und eine E-Mail."
+        ],
+        "body": "Beide Listen sind standardmässig leer. Deaktivierte Benutzer und Benutzer, die nicht mehr zur Firma gehören, werden übersprungen. Käufer bzw. Kunde erhalten ihre eigene Bestätigung wie bisher."
+      },
+      {
         "title": "Auf dieser Seite",
         "items": [
           "Die Seite öffnet den einen Einstellungsdatensatz dieser Firma (wird angelegt, falls fehlend).",
-          "Zwei Schalter. Speichern übernimmt.",
+          "Zwei Empfängerlisten und zwei Schalter. Zum Übernehmen speichern.",
           "Kein Anlegen, Löschen oder projektbezogener Override."
         ]
       },

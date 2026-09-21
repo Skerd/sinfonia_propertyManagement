@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/resendReservationStaffNotifications.tsx",
+  "actionLabel": "Resend notifications",
+  "confirmTitle": "Resend the reservation notifications?",
+  "confirmDescription": "Sends the in-app notification and email again to everyone on the “Notify on reservations” list in Sales & handover settings.",
+  "cancel": "Cancel",
+  "confirmSend": "Send",
+  "axios": {
+    "start": {
+      "title": "Sending notifications…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Notifications sent",
+      "time": 3000
+    },
+    "error": {
+      "title": "Notifications could not be sent",
+      "time": 3000
+    }
+  }
+}

@@ -1,8 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
   "title": "Modifica Vendite & consegna",
+  "notifications": "Notifiche",
   "generalInfo": "Controlli del flusso di lavoro",
   "form": {
+    "notifyOnSalesLabel": "Notifica sulle vendite",
+    "notifyOnReservationsLabel": "Notifica sulle prenotazioni",
+    "selectUser": "Seleziona un utente",
+    "removeUser": "Rimuovi utente",
     "requiresSaleApprovalLabel": "Richiedi l’approvazione del responsabile alla creazione di una vendita",
     "requiresHandoverPackageForHandoverLabel": "Richiedi un pacchetto di consegna completato prima di registrare la consegna"
   },
@@ -38,10 +43,18 @@
         "body": "Entrambi sono disattivati di default. Attivarli non riscrive le vendite storiche. Si applicano alla prossima vendita creata e alla prossima prima data di consegna."
       },
       {
+        "title": "Notifiche",
+        "items": [
+          "Notifica sulle vendite — ogni utente dell’elenco riceve una notifica in-app e un’e-mail a ogni nuova vendita. Se è richiesta l’approvazione di un responsabile, l’avviso indica che la vendita è in attesa di approvazione.",
+          "Notifica sulle prenotazioni — ogni utente dell’elenco riceve una notifica in-app e un’e-mail a ogni nuova prenotazione."
+        ],
+        "body": "Entrambi gli elenchi sono vuoti per impostazione predefinita. Gli utenti disattivati o che non appartengono più all’azienda vengono ignorati. L’acquirente o il cliente continua a ricevere la propria conferma."
+      },
+      {
         "title": "In questa pagina",
         "items": [
           "La pagina apre l’unico record di impostazioni di questa azienda (creato automaticamente se mancava).",
-          "Due interruttori. Salvare per applicare.",
+          "Due elenchi di destinatari e due interruttori. Salva per applicare.",
           "Né creazione, né eliminazione, né override per progetto."
         ]
       },

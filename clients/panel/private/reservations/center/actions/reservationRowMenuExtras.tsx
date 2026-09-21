@@ -5,6 +5,7 @@ import ReinstateReservation from "@propertyManagementModule/clients/panel/privat
 import PaidInFullReservation from "@propertyManagementModule/clients/panel/private/reservations/center/actions/paidInFull.tsx";
 import ReverseReservationPayment from "@propertyManagementModule/clients/panel/private/reservations/center/actions/reversePayment.tsx";
 import ManualReservationClientEmails from "@propertyManagementModule/clients/panel/private/reservations/center/actions/manualReservationClientEmails.tsx";
+import ResendReservationStaffNotifications from "@propertyManagementModule/clients/panel/private/reservations/center/actions/resendReservationStaffNotifications.tsx";
 
 type ReservationRowMenuExtrasProps = {
     reservation: Reservation;
@@ -36,6 +37,9 @@ export default function ReservationRowMenuExtras({reservation, onAction}: Reserv
             )}
             {canToggleActive && !isModelDeleted && !isCancelled && !paid && (
                 <ManualReservationClientEmails reservation={reservation} onAction={onAction} />
+            )}
+            {canToggleActive && !isModelDeleted && !isCancelled && (
+                <ResendReservationStaffNotifications reservation={reservation} />
             )}
         </>
     );

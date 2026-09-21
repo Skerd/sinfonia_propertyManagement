@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/resendReservationStaffNotifications.tsx",
+  "actionLabel": "Benachrichtigungen erneut senden",
+  "confirmTitle": "Reservations-Benachrichtigungen erneut senden?",
+  "confirmDescription": "Sendet die In-App-Benachrichtigung und die E-Mail erneut an alle Benutzer der Liste «Bei Reservationen benachrichtigen» in den Einstellungen Verkauf & Übergabe.",
+  "cancel": "Abbrechen",
+  "confirmSend": "Senden",
+  "axios": {
+    "start": {
+      "title": "Benachrichtigungen werden gesendet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Benachrichtigungen gesendet",
+      "time": 3000
+    },
+    "error": {
+      "title": "Benachrichtigungen konnten nicht gesendet werden",
+      "time": 3000
+    }
+  }
+}
