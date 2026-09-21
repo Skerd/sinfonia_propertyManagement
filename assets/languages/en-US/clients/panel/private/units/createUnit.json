@@ -24,7 +24,6 @@
     "nameLabel": "Unit Name",
     "namePlaceholder": "Enter unit name",
     "nameRequired": "Unit name is required",
-    "showPriceOnRequestLabel": "Show price on request",
     "unitNumberLabel": "Unit Number",
     "unitNumberPlaceholder": "Enter unit number",
     "unitNumberRequired": "Unit number is required",
@@ -97,7 +96,14 @@
     "reservationCommissionRatePlaceholder": "Enter reservation commission rate",
     "featuredOnHomepageLabel": "Featured on homepage",
     "featuredSortOrderLabel": "Featured sort order",
-    "featuredSortOrderPlaceholder": "0 = first"
+    "featuredSortOrderPlaceholder": "0 = first",
+    "priceVisibilityLabel": "Public price visibility",
+    "priceVisibilityPlaceholder": "Choose visibility",
+    "priceVisibilityOptions": {
+      "inherit": "Inherit from parent",
+      "hide": "Hide price (on request)",
+      "show": "Show price"
+    }
   },
   "axios": {
     "start": {

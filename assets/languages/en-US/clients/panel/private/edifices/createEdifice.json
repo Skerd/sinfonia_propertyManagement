@@ -34,7 +34,6 @@
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
     "countryRequired": "Country is required",
-    "showPriceOnRequestLabel": "Show price on request",
     "stateLabel": "State",
     "statePlaceholder": "Select state",
     "streetLabel": "Street",
@@ -102,7 +101,14 @@
     "uploadNewVideosHint": "Upload new videos to add to the gallery",
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "polygonCoordinatesLabel": "Building outline"
+    "polygonCoordinatesLabel": "Building outline",
+    "priceVisibilityLabel": "Public price visibility",
+    "priceVisibilityPlaceholder": "Choose visibility",
+    "priceVisibilityOptions": {
+      "inherit": "Inherit from parent",
+      "hide": "Hide price (on request)",
+      "show": "Show price"
+    }
   },
   "axios": {
     "start": {

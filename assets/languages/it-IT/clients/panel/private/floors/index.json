@@ -37,10 +37,17 @@
     "polygonCoordinates": "Coordinate del poligono",
     "project": "Progetto",
     "sharedSpaces": "Spazi comuni",
-    "showPriceOnRequest": "Prezzo su richiesta",
     "totalUnits": "Unità totali",
     "updatedAt": "Aggiornato il",
-    "videoGallery": "Video"
+    "videoGallery": "Video",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Eredita dal livello superiore",
+        "hide": "Nascondi prezzo (su richiesta)",
+        "show": "Mostra prezzo"
+      }
+    },
+    "priceVisibility": "Prezzo pubblico"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",

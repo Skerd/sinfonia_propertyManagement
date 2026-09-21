@@ -24,7 +24,6 @@
     "nameLabel": "Nom de l'unité",
     "namePlaceholder": "Saisir le nom de l'unité",
     "nameRequired": "Le nom de l'unité est obligatoire",
-    "showPriceOnRequestLabel": "Afficher « Prix sur demande »",
     "unitNumberLabel": "Numéro d'unité",
     "unitNumberPlaceholder": "Saisir le numéro d'unité",
     "unitNumberRequired": "Le numéro d'unité est obligatoire",
@@ -97,7 +96,14 @@
     "reservationCommissionRatePlaceholder": "Saisir le taux de commission de réservation",
     "featuredOnHomepageLabel": "Mis en avant sur la page d'accueil",
     "featuredSortOrderLabel": "Ordre d'affichage (mise en avant)",
-    "featuredSortOrderPlaceholder": "0 = premier"
+    "featuredSortOrderPlaceholder": "0 = premier",
+    "priceVisibilityLabel": "Visibilité du prix",
+    "priceVisibilityPlaceholder": "Choisir la visibilité",
+    "priceVisibilityOptions": {
+      "inherit": "Hériter du niveau supérieur",
+      "hide": "Masquer le prix (sur demande)",
+      "show": "Afficher le prix"
+    }
   },
   "axios": {
     "start": {

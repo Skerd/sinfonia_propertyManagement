@@ -9,8 +9,6 @@
   "reservationCommission": "Komisioni i rezervimit",
   "reservationCommissionTooltip": "komisioni i rezervimit (%)",
   "none": "Asnjë",
-  "showPriceOnRequest": "Çmimi me kërkesë",
-  "showPriceOnRequestTooltip": "Fsheh çmimet në faqen publike, që vizitorët të bëjnë kërkesë. Vlen për të gjitha ndërtesat, katet dhe njësitë e këtij projekti.",
   "statistics": {
     "edifices": "Ndërtesat",
     "edificesTooltip": "Ndërtesat totale",
@@ -75,5 +73,25 @@
   "magazine": "Magazine",
   "magazineTitle": "Magazine title",
   "magazineDescription": "Magazine description",
-  "magazineFile": "PDF i revistës"
+  "magazineFile": "PDF i revistës",
+  "priceVisibility": "Çmimi publik",
+  "priceVisibilityTooltip": "Fsheh ose shfaq çmimet në faqen publike për të gjithë projektin. Ndërtesat, katet dhe njësitë mund ta mbishkruajnë.",
+  "priceVisibilityEnum": {
+    "inherit": "Parazgjedhje (çmimi shfaqet)",
+    "hide": "Fshih çmimin (me kërkesë)",
+    "show": "Shfaq çmimin"
+  },
+  "effectivePriceVisibility": "Në faqe",
+  "effectivePriceVisibilityTooltip": "Rezultati nga zgjedhja e këtij regjistri dhe e niveleve sipër. Vlen niveli më i afërt i vendosur «Fshih» ose «Shfaq».",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Çmimi shfaqet",
+    "shown_project": "Çmimi shfaqet (vendosur te projekti)",
+    "hidden_project": "Çmimi me kërkesë (vendosur te projekti)",
+    "shown_edifice": "Çmimi shfaqet (vendosur te ndërtesa)",
+    "hidden_edifice": "Çmimi me kërkesë (vendosur te ndërtesa)",
+    "shown_floor": "Çmimi shfaqet (vendosur te kati)",
+    "hidden_floor": "Çmimi me kërkesë (vendosur te kati)",
+    "shown_unit": "Çmimi shfaqet (vendosur te njësia)",
+    "hidden_unit": "Çmimi me kërkesë (vendosur te njësia)"
+  }
 }

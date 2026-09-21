@@ -59,7 +59,6 @@
     "sale": "Vente",
     "saleCommissionRatePercent": "Commission de vente",
     "sharedArea": "Surface commune",
-    "showPriceOnRequest": "Prix sur demande",
     "status": "Statut",
     "unavailableNotes": "Notes d'indisponibilité",
     "unitNumber": "Numéro",
@@ -90,8 +89,14 @@
         "under_construction": "En construction",
         "ready": "Prêt",
         "delivered": "Livré"
+      },
+      "priceVisibility": {
+        "inherit": "Hériter du niveau supérieur",
+        "hide": "Masquer le prix (sur demande)",
+        "show": "Afficher le prix"
       }
-    }
+    },
+    "priceVisibility": "Prix public"
   },
   "floor": "Étage",
   "floors": "Étages",

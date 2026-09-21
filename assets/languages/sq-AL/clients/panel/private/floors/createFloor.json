@@ -37,7 +37,6 @@
     "mainImageLabel": "Imazhi kryesor",
     "mainImageRequired": "Kërkohet imazhi kryesor",
     "imageGalleryLabel": "Galeria e Imazheve",
-    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "videoGalleryLabel": "Video Galeria",
     "mediaFilesLabel": "Dokumente & Skedarë",
     "marketingBookletLabel": "Broshurë Marketingu",
@@ -47,7 +46,14 @@
     "edificePlaceholder": "Zgjidhni ndërtesën",
     "projectLabel": "Projekti",
     "projectPlaceholder": "Zgjidhni projektin",
-    "edificeRequired": "Kërkohet ndërtim"
+    "edificeRequired": "Kërkohet ndërtim",
+    "priceVisibilityLabel": "Dukshmëria e çmimit",
+    "priceVisibilityPlaceholder": "Zgjidh dukshmërinë",
+    "priceVisibilityOptions": {
+      "inherit": "Trashëgo nga niveli sipër",
+      "hide": "Fshih çmimin (me kërkesë)",
+      "show": "Shfaq çmimin"
+    }
   },
   "axios": {
     "start": {

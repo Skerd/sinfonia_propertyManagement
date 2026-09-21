@@ -55,7 +55,6 @@
     "project": "Progetto",
     "propertyTypes": "Tipologie immobiliari",
     "saleCurrency": "Valuta di vendita",
-    "showPriceOnRequest": "Prezzo su richiesta",
     "totalArea": "Superficie",
     "updatedAt": "Aggiornato il",
     "verandaPricePerMeterSquared": "Prezzo veranda / m²",
@@ -70,8 +69,14 @@
         "E": "E",
         "F": "F",
         "G": "G"
+      },
+      "priceVisibility": {
+        "inherit": "Eredita dal livello superiore",
+        "hide": "Nascondi prezzo (su richiesta)",
+        "show": "Mostra prezzo"
       }
-    }
+    },
+    "priceVisibility": "Prezzo pubblico"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",

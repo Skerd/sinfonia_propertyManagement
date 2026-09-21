@@ -59,7 +59,6 @@
     "sale": "Verkauf",
     "saleCommissionRatePercent": "Verkaufsprovision",
     "sharedArea": "Gemeinschaftsfläche",
-    "showPriceOnRequest": "Preis auf Anfrage",
     "status": "Status",
     "unavailableNotes": "Hinweis zur Nichtverfügbarkeit",
     "unitNumber": "Nummer",
@@ -90,8 +89,14 @@
         "under_construction": "Im Bau",
         "ready": "Bereit",
         "delivered": "Übergeben"
+      },
+      "priceVisibility": {
+        "inherit": "Von übergeordneter Ebene übernehmen",
+        "hide": "Preis ausblenden (auf Anfrage)",
+        "show": "Preis anzeigen"
       }
-    }
+    },
+    "priceVisibility": "Öffentlicher Preis"
   },
   "floor": "Geschoss",
   "floors": "Geschosse",

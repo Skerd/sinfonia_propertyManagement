@@ -37,10 +37,17 @@
     "polygonCoordinates": "Polygon Coordinates",
     "project": "Project",
     "sharedSpaces": "Shared Spaces",
-    "showPriceOnRequest": "Price on request",
     "totalUnits": "Total Units",
     "updatedAt": "Updated At",
-    "videoGallery": "Videos"
+    "videoGallery": "Videos",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Inherit from parent",
+        "hide": "Hide price (on request)",
+        "show": "Show price"
+      }
+    },
+    "priceVisibility": "Public price"
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",

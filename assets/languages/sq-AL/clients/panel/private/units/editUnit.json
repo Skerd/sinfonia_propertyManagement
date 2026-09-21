@@ -28,7 +28,6 @@
     "nameLabel": "Emri i njësisë",
     "namePlaceholder": "Fut emrin e njësisë",
     "nameRequired": "Kërkohet emri i njësisë",
-    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "unitNumberLabel": "Numri i njësisë",
     "unitNumberPlaceholder": "Futni numrin e njësisë",
     "unitNumberRequired": "Kërkohet numri i njësisë",
@@ -104,7 +103,14 @@
     "reservationCommissionRatePlaceholder": "0–100, opsionale",
     "featuredOnHomepageLabel": "I veçuar në faqen kryesore",
     "featuredSortOrderLabel": "Renditja e veçuar",
-    "featuredSortOrderPlaceholder": "0 = i pari"
+    "featuredSortOrderPlaceholder": "0 = i pari",
+    "priceVisibilityLabel": "Dukshmëria e çmimit",
+    "priceVisibilityPlaceholder": "Zgjidh dukshmërinë",
+    "priceVisibilityOptions": {
+      "inherit": "Trashëgo nga niveli sipër",
+      "hide": "Fshih çmimin (me kërkesë)",
+      "show": "Shfaq çmimin"
+    }
   },
   "axios": {
     "start": {

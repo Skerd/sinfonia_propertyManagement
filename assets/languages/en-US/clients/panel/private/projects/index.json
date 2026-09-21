@@ -20,9 +20,16 @@
     "name": "Name",
     "reservationCommissionRatePercent": "Reservation Commission",
     "saleCommissionRatePercent": "Sale Commission",
-    "showPriceOnRequest": "Price on request",
     "updatedAt": "Updated At",
-    "videoGallery": "Videos"
+    "videoGallery": "Videos",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Default (price shown)",
+        "hide": "Hide price (on request)",
+        "show": "Show price"
+      }
+    },
+    "priceVisibility": "Public price"
   },
   "help": {
     "ariaLabel": "About Projects",

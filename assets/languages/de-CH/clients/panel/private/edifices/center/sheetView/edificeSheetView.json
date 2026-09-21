@@ -7,8 +7,6 @@
   "overview": "Übersicht",
   "buildingDetails": "Gebäudedetails",
   "constructionTimeline": "Bau & Compliance",
-  "showPriceOnRequest": "Preis auf Anfrage",
-  "showPriceOnRequestTooltip": "Blendet die Preise auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt für alle Etagen und Einheiten dieses Gebäudes.",
   "statisticsTitle": "Statistik",
   "gallery": "Galerie",
   "mediaFiles": "Dokumente & Dateien",
@@ -92,5 +90,25 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "priceVisibility": "Öffentlicher Preis",
+  "priceVisibilityTooltip": "Preise dieses Gebäudes (inkl. Preis pro m²) aus- oder einblenden. „Übernehmen“ folgt dem Projekt; Etagen und Einheiten können dies übersteuern.",
+  "priceVisibilityEnum": {
+    "inherit": "Von übergeordneter Ebene übernehmen",
+    "hide": "Preis ausblenden (auf Anfrage)",
+    "show": "Preis anzeigen"
+  },
+  "effectivePriceVisibility": "Auf der Website",
+  "effectivePriceVisibilityTooltip": "Ergebnis aus der Auswahl dieses Eintrags und seiner übergeordneten Ebenen. Die nächste Ebene mit „Ausblenden“ oder „Anzeigen“ gilt.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Preis sichtbar",
+    "shown_project": "Preis sichtbar (festgelegt auf Projekt)",
+    "hidden_project": "Preis auf Anfrage (festgelegt auf Projekt)",
+    "shown_edifice": "Preis sichtbar (festgelegt auf Gebäude)",
+    "hidden_edifice": "Preis auf Anfrage (festgelegt auf Gebäude)",
+    "shown_floor": "Preis sichtbar (festgelegt auf Etage)",
+    "hidden_floor": "Preis auf Anfrage (festgelegt auf Etage)",
+    "shown_unit": "Preis sichtbar (festgelegt auf Einheit)",
+    "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
+  }
 }

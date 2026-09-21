@@ -9,8 +9,6 @@
   "reservationCommission": "Commissione di prenotazione",
   "reservationCommissionTooltip": "Commissione di prenotazione (%)",
   "none": "Nessuno",
-  "showPriceOnRequest": "Prezzo su richiesta",
-  "showPriceOnRequestTooltip": "Nasconde i prezzi sul sito pubblico, così i visitatori devono richiederli. Vale per tutti gli edifici, piani e unità di questo progetto.",
   "statistics": {
     "edifices": "Edifici",
     "edificesTooltip": "Totale edifici",
@@ -75,5 +73,25 @@
   "magazine": "Rivista",
   "magazineTitle": "Titolo della rivista",
   "magazineDescription": "Descrizione della rivista",
-  "magazineFile": "PDF della rivista"
+  "magazineFile": "PDF della rivista",
+  "priceVisibility": "Prezzo pubblico",
+  "priceVisibilityTooltip": "Nasconde o mostra i prezzi sul sito pubblico per l'intero progetto. Edifici, piani e unità possono sovrascriverlo.",
+  "priceVisibilityEnum": {
+    "inherit": "Predefinito (prezzo visibile)",
+    "hide": "Nascondi prezzo (su richiesta)",
+    "show": "Mostra prezzo"
+  },
+  "effectivePriceVisibility": "Sul sito",
+  "effectivePriceVisibilityTooltip": "Risultato della scelta di questo elemento e dei suoi livelli superiori. Vale il livello più vicino impostato su «Nascondi» o «Mostra».",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Prezzo visibile",
+    "shown_project": "Prezzo visibile (impostato su progetto)",
+    "hidden_project": "Prezzo su richiesta (impostato su progetto)",
+    "shown_edifice": "Prezzo visibile (impostato su edificio)",
+    "hidden_edifice": "Prezzo su richiesta (impostato su edificio)",
+    "shown_floor": "Prezzo visibile (impostato su piano)",
+    "hidden_floor": "Prezzo su richiesta (impostato su piano)",
+    "shown_unit": "Prezzo visibile (impostato su unità)",
+    "hidden_unit": "Prezzo su richiesta (impostato su unità)"
+  }
 }

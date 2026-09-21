@@ -34,7 +34,6 @@
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
     "countryRequired": "Land ist erforderlich",
-    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "stateLabel": "Kanton",
     "statePlaceholder": "Kanton auswählen",
     "streetLabel": "Strasse",
@@ -102,7 +101,14 @@
     "uploadNewVideosHint": "Neue Videos hochladen, um sie der Galerie hinzuzufügen",
     "projectLabel": "Projekt",
     "projectPlaceholder": "Projekt auswählen",
-    "polygonCoordinatesLabel": "Gebäudeumriss"
+    "polygonCoordinatesLabel": "Gebäudeumriss",
+    "priceVisibilityLabel": "Sichtbarkeit des Preises",
+    "priceVisibilityPlaceholder": "Sichtbarkeit wählen",
+    "priceVisibilityOptions": {
+      "inherit": "Von übergeordneter Ebene übernehmen",
+      "hide": "Preis ausblenden (auf Anfrage)",
+      "show": "Preis anzeigen"
+    }
   },
   "axios": {
     "start": {

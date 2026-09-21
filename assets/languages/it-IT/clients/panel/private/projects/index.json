@@ -20,9 +20,16 @@
     "name": "Nome",
     "reservationCommissionRatePercent": "Commissione di prenotazione",
     "saleCommissionRatePercent": "Commissione di vendita",
-    "showPriceOnRequest": "Prezzo su richiesta",
     "updatedAt": "Aggiornato il",
-    "videoGallery": "Video"
+    "videoGallery": "Video",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Predefinito (prezzo visibile)",
+        "hide": "Nascondi prezzo (su richiesta)",
+        "show": "Mostra prezzo"
+      }
+    },
+    "priceVisibility": "Prezzo pubblico"
   },
   "help": {
     "ariaLabel": "Informazioni sui progetti",

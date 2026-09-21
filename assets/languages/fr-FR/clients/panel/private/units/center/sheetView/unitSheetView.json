@@ -5,8 +5,6 @@
   "failedTooltipDescription": "Cliquez pour réessayer de récupérer les données.",
   "and": "et",
   "name": "Nom",
-  "showPriceOnRequest": "Prix sur demande",
-  "showPriceOnRequestTooltip": "Masque le prix de cette unité sur le site public : les visiteurs doivent faire une demande. S'applique aussi automatiquement si l'étage, le bâtiment ou le projet l'a activé.",
   "unit": "Unité",
   "statisticsTitle": "Statistiques",
   "overview": "Aperçu",
@@ -125,5 +123,25 @@
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
   "featuredOnHomepage": "Mis en avant",
-  "featuredOnHomepageTooltip": "Affiché dans la section des résidences mises en avant sur la page d'accueil publique"
+  "featuredOnHomepageTooltip": "Affiché dans la section des résidences mises en avant sur la page d'accueil publique",
+  "priceVisibility": "Prix public",
+  "priceVisibilityTooltip": "Masquer ou afficher le prix de cette unité. « Hériter » suit le niveau le plus proche ayant un choix : étage, bâtiment ou projet.",
+  "priceVisibilityEnum": {
+    "inherit": "Hériter du niveau supérieur",
+    "hide": "Masquer le prix (sur demande)",
+    "show": "Afficher le prix"
+  },
+  "effectivePriceVisibility": "Sur le site",
+  "effectivePriceVisibilityTooltip": "Résultat du choix de cet élément et de ses niveaux supérieurs. Le niveau le plus proche avec « Masquer » ou « Afficher » l'emporte.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Prix affiché",
+    "shown_project": "Prix affiché (défini sur le projet)",
+    "hidden_project": "Prix sur demande (défini sur le projet)",
+    "shown_edifice": "Prix affiché (défini sur le bâtiment)",
+    "hidden_edifice": "Prix sur demande (défini sur le bâtiment)",
+    "shown_floor": "Prix affiché (défini sur l'étage)",
+    "hidden_floor": "Prix sur demande (défini sur l'étage)",
+    "shown_unit": "Prix affiché (défini sur l'unité)",
+    "hidden_unit": "Prix sur demande (défini sur l'unité)"
+  }
 }

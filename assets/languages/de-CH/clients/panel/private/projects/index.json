@@ -20,9 +20,16 @@
     "name": "Name",
     "reservationCommissionRatePercent": "Reservation Provision",
     "saleCommissionRatePercent": "Verkauf Provision",
-    "showPriceOnRequest": "Preis auf Anfrage",
     "updatedAt": "Aktualisiert am",
-    "videoGallery": "Videos"
+    "videoGallery": "Videos",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Standard (Preis sichtbar)",
+        "hide": "Preis ausblenden (auf Anfrage)",
+        "show": "Preis anzeigen"
+      }
+    },
+    "priceVisibility": "Öffentlicher Preis"
   },
   "help": {
     "ariaLabel": "Über Projekte",

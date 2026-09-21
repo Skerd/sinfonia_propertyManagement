@@ -28,7 +28,6 @@
     "reservationCommissionRatePlaceholder": "0–100, optional",
     "saleCommissionRateLabel": "Verkaufsprovision (%)",
     "saleCommissionRatePlaceholder": "0–100, optional",
-    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "uploadNewImageHint": "Neues Bild hochladen, um das aktuelle zu ersetzen",
     "uploadNewImagesHint": "Neue Bilder hochladen, um sie der Galerie hinzuzufügen",
     "uploadNewVideosHint": "Neue Videos hochladen, um sie der Galerie hinzuzufügen",
@@ -52,7 +51,14 @@
     "magazineTitleLabel": "Magazin-Titel",
     "magazineTitlePlaceholder": "Magazin-Titel eingeben",
     "magazineDescriptionLabel": "Magazinbeschreibung",
-    "magazineDescriptionPlaceholder": "Magazinbeschreibung eingeben"
+    "magazineDescriptionPlaceholder": "Magazinbeschreibung eingeben",
+    "priceVisibilityLabel": "Sichtbarkeit des Preises",
+    "priceVisibilityPlaceholder": "Sichtbarkeit wählen",
+    "priceVisibilityOptions": {
+      "inherit": "Standard (Preis sichtbar)",
+      "hide": "Preis ausblenden (auf Anfrage)",
+      "show": "Preis anzeigen"
+    }
   },
   "generalInfo": "Allgemeine Informationen",
   "homepageFeatured": "Startseite hervorgehoben",

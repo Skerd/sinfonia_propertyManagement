@@ -37,10 +37,17 @@
     "polygonCoordinates": "Coordonnées du polygone",
     "project": "Projet",
     "sharedSpaces": "Espaces communs",
-    "showPriceOnRequest": "Prix sur demande",
     "totalUnits": "Unités totales",
     "updatedAt": "Mis à jour le",
-    "videoGallery": "Vidéos"
+    "videoGallery": "Vidéos",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Hériter du niveau supérieur",
+        "hide": "Masquer le prix (sur demande)",
+        "show": "Afficher le prix"
+      }
+    },
+    "priceVisibility": "Prix public"
   },
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",

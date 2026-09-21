@@ -20,9 +20,16 @@
     "name": "Emri",
     "reservationCommissionRatePercent": "Komisioni i Rezervimeve",
     "saleCommissionRatePercent": "Komisioni i shitjes",
-    "showPriceOnRequest": "Çmimi me kërkesë",
     "updatedAt": "Përditësuar në",
-    "videoGallery": "Videot"
+    "videoGallery": "Videot",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Parazgjedhje (çmimi shfaqet)",
+        "hide": "Fshih çmimin (me kërkesë)",
+        "show": "Shfaq çmimin"
+      }
+    },
+    "priceVisibility": "Çmimi publik"
   },
   "help": {
     "ariaLabel": "Rreth Projekteve",

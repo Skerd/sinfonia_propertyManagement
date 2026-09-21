@@ -9,8 +9,6 @@
   "reservationCommission": "Reservation commission",
   "reservationCommissionTooltip": "Reservation commission (%)",
   "none": "None",
-  "showPriceOnRequest": "Price on request",
-  "showPriceOnRequestTooltip": "Hides prices on the public website so visitors must enquire. Applies to every edifice, floor and unit in this project.",
   "statistics": {
     "edifices": "Edifices",
     "edificesTooltip": "Total Edifices",
@@ -75,5 +73,25 @@
   "magazine": "Magazine",
   "magazineTitle": "Magazine title",
   "magazineDescription": "Magazine description",
-  "magazineFile": "Magazine PDF"
+  "magazineFile": "Magazine PDF",
+  "priceVisibility": "Public price",
+  "priceVisibilityTooltip": "Hide or show unit prices on the public website for this whole project. Edifices, floors and units can override it.",
+  "priceVisibilityEnum": {
+    "inherit": "Default (price shown)",
+    "hide": "Hide price (on request)",
+    "show": "Show price"
+  },
+  "effectivePriceVisibility": "On the website",
+  "effectivePriceVisibilityTooltip": "Result of this record's choice and its parents'. The closest level set to Hide or Show wins.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Price shown",
+    "shown_project": "Price shown (set on project)",
+    "hidden_project": "Price on request (set on project)",
+    "shown_edifice": "Price shown (set on edifice)",
+    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_floor": "Price shown (set on floor)",
+    "hidden_floor": "Price on request (set on floor)",
+    "shown_unit": "Price shown (set on unit)",
+    "hidden_unit": "Price on request (set on unit)"
+  }
 }

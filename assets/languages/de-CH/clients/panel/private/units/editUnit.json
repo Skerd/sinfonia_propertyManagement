@@ -28,7 +28,6 @@
     "nameLabel": "Name der Einheit",
     "namePlaceholder": "Namen der Einheit eingeben",
     "nameRequired": "Name der Einheit ist erforderlich",
-    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "unitNumberLabel": "Einheitennummer",
     "unitNumberPlaceholder": "Einheitennummer eingeben",
     "unitNumberRequired": "Einheitennummer ist erforderlich",
@@ -104,7 +103,14 @@
     "reservationCommissionRatePlaceholder": "0–100, optional",
     "featuredOnHomepageLabel": "Auf Startseite hervorheben",
     "featuredSortOrderLabel": "Reihenfolge (Startseite)",
-    "featuredSortOrderPlaceholder": "0 = zuerst"
+    "featuredSortOrderPlaceholder": "0 = zuerst",
+    "priceVisibilityLabel": "Sichtbarkeit des Preises",
+    "priceVisibilityPlaceholder": "Sichtbarkeit wählen",
+    "priceVisibilityOptions": {
+      "inherit": "Von übergeordneter Ebene übernehmen",
+      "hide": "Preis ausblenden (auf Anfrage)",
+      "show": "Preis anzeigen"
+    }
   },
   "axios": {
     "start": {

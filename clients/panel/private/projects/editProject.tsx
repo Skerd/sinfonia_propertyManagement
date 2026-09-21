@@ -29,6 +29,6 @@ export default createGenericEditPage<Project, EditProjectFormType>({
         reservationCommissionRatePercent: data.reservationCommissionRatePercent,
         featuredOnHomepage: data.featuredOnHomepage,
         featuredSortOrder: data.featuredSortOrder,
-        showPriceOnRequest: data.showPriceOnRequest,
+        priceVisibility: data.priceVisibility ?? "inherit",
     })
 });

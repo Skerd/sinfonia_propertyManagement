@@ -28,7 +28,6 @@
     "reservationCommissionRatePlaceholder": "0–100, opsionale",
     "saleCommissionRateLabel": "Komisioni i shitjes (%)",
     "saleCommissionRatePlaceholder": "0–100, opsionale",
-    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "uploadNewImageHint": "Ngarko një imazh të ri për të zëvendësuar atë aktual",
     "uploadNewImagesHint": "Ngarko imazhe të reja për t'i shtuar në galeri",
     "uploadNewVideosHint": "Ngarko video të reja për t'i shtuar në galeri",
@@ -52,7 +51,14 @@
     "magazineTitleLabel": "Magazine title",
     "magazineTitlePlaceholder": "Enter magazine title",
     "magazineDescriptionLabel": "Magazine description",
-    "magazineDescriptionPlaceholder": "Enter magazine description"
+    "magazineDescriptionPlaceholder": "Enter magazine description",
+    "priceVisibilityLabel": "Dukshmëria e çmimit",
+    "priceVisibilityPlaceholder": "Zgjidh dukshmërinë",
+    "priceVisibilityOptions": {
+      "inherit": "Parazgjedhje (çmimi shfaqet)",
+      "hide": "Fshih çmimin (me kërkesë)",
+      "show": "Shfaq çmimin"
+    }
   },
   "generalInfo": "Informacione të Përgjithshme",
   "homepageFeatured": "I veçuar në faqen kryesore",

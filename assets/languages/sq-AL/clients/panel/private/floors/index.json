@@ -37,10 +37,17 @@
     "polygonCoordinates": "Koordinatat e shumëkëndëshit",
     "project": "Projekti",
     "sharedSpaces": "Hapësirat e përbashkëta",
-    "showPriceOnRequest": "Çmimi me kërkesë",
     "totalUnits": "Njësitë totale",
     "updatedAt": "Përditësuar në",
-    "videoGallery": "Videot"
+    "videoGallery": "Videot",
+    "!enums": {
+      "priceVisibility": {
+        "inherit": "Trashëgo nga niveli sipër",
+        "hide": "Fshih çmimin (me kërkesë)",
+        "show": "Shfaq çmimin"
+      }
+    },
+    "priceVisibility": "Çmimi publik"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "po",

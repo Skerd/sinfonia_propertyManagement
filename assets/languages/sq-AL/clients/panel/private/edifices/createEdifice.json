@@ -34,7 +34,6 @@
     "countryLabel": "Vendi",
     "countryPlaceholder": "Zgjidh shtetin",
     "countryRequired": "Kërkohet shteti",
-    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "stateLabel": "Shtetit",
     "statePlaceholder": "Zgjidhni gjendjen",
     "streetLabel": "Rruga",
@@ -102,7 +101,14 @@
     "uploadNewVideosHint": "Ngarko video të reja për t'i shtuar në galeri",
     "projectLabel": "Projekti",
     "projectPlaceholder": "Zgjidhni projektin",
-    "polygonCoordinatesLabel": "Skicë e ndërtesës"
+    "polygonCoordinatesLabel": "Skicë e ndërtesës",
+    "priceVisibilityLabel": "Dukshmëria e çmimit",
+    "priceVisibilityPlaceholder": "Zgjidh dukshmërinë",
+    "priceVisibilityOptions": {
+      "inherit": "Trashëgo nga niveli sipër",
+      "hide": "Fshih çmimin (me kërkesë)",
+      "show": "Shfaq çmimin"
+    }
   },
   "axios": {
     "start": {

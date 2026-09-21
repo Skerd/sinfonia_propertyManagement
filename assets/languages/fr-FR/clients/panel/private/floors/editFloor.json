@@ -38,7 +38,6 @@
     "mainImageLabel": "Image principale",
     "mainImageRequired": "L'image principale est obligatoire",
     "imageGalleryLabel": "Galerie d'images",
-    "showPriceOnRequestLabel": "Afficher « Prix sur demande »",
     "videoGalleryLabel": "Galerie vidéo",
     "mediaFilesLabel": "Documents et fichiers",
     "marketingBookletLabel": "Brochure marketing",
@@ -48,7 +47,14 @@
     "edificePlaceholder": "Sélectionner un bâtiment",
     "projectLabel": "Projet",
     "projectPlaceholder": "Sélectionner un projet",
-    "edificeRequired": "Le bâtiment est obligatoire"
+    "edificeRequired": "Le bâtiment est obligatoire",
+    "priceVisibilityLabel": "Visibilité du prix",
+    "priceVisibilityPlaceholder": "Choisir la visibilité",
+    "priceVisibilityOptions": {
+      "inherit": "Hériter du niveau supérieur",
+      "hide": "Masquer le prix (sur demande)",
+      "show": "Afficher le prix"
+    }
   },
   "axios": {
     "start": {

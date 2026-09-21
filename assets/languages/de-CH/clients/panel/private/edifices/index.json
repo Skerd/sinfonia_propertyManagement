@@ -55,7 +55,6 @@
     "project": "Projekt",
     "propertyTypes": "Objektarten",
     "saleCurrency": "Verkaufswährung",
-    "showPriceOnRequest": "Preis auf Anfrage",
     "totalArea": "Fläche",
     "updatedAt": "Aktualisiert am",
     "verandaPricePerMeterSquared": "Veranda-Preis / m²",
@@ -70,8 +69,14 @@
         "E": "E",
         "F": "F",
         "G": "G"
+      },
+      "priceVisibility": {
+        "inherit": "Von übergeordneter Ebene übernehmen",
+        "hide": "Preis ausblenden (auf Anfrage)",
+        "show": "Preis anzeigen"
       }
-    }
+    },
+    "priceVisibility": "Öffentlicher Preis"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",

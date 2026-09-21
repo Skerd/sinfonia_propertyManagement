@@ -5,8 +5,6 @@
   "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
   "and": "dhe",
   "name": "Emri",
-  "showPriceOnRequest": "Çmimi me kërkesë",
-  "showPriceOnRequestTooltip": "Fsheh çmimin e kësaj njësie në faqen publike, që vizitorët të bëjnë kërkesë. Vlen automatikisht edhe kur kati, ndërtesa ose projekti e kanë aktivizuar.",
   "unit": "Njësia",
   "statisticsTitle": "Statistikat",
   "overview": "Vështrim i përgjithshëm",
@@ -125,5 +123,25 @@
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
   "featuredOnHomepage": "I veçuar",
-  "featuredOnHomepageTooltip": "Shfaqet te seksioni i banesave të veçuara në faqen publike"
+  "featuredOnHomepageTooltip": "Shfaqet te seksioni i banesave të veçuara në faqen publike",
+  "priceVisibility": "Çmimi publik",
+  "priceVisibilityTooltip": "Fsheh ose shfaq çmimin e kësaj njësie. «Trashëgo» ndjek nivelin më të afërt me një zgjedhje: katin, ndërtesën ose projektin.",
+  "priceVisibilityEnum": {
+    "inherit": "Trashëgo nga niveli sipër",
+    "hide": "Fshih çmimin (me kërkesë)",
+    "show": "Shfaq çmimin"
+  },
+  "effectivePriceVisibility": "Në faqe",
+  "effectivePriceVisibilityTooltip": "Rezultati nga zgjedhja e këtij regjistri dhe e niveleve sipër. Vlen niveli më i afërt i vendosur «Fshih» ose «Shfaq».",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Çmimi shfaqet",
+    "shown_project": "Çmimi shfaqet (vendosur te projekti)",
+    "hidden_project": "Çmimi me kërkesë (vendosur te projekti)",
+    "shown_edifice": "Çmimi shfaqet (vendosur te ndërtesa)",
+    "hidden_edifice": "Çmimi me kërkesë (vendosur te ndërtesa)",
+    "shown_floor": "Çmimi shfaqet (vendosur te kati)",
+    "hidden_floor": "Çmimi me kërkesë (vendosur te kati)",
+    "shown_unit": "Çmimi shfaqet (vendosur te njësia)",
+    "hidden_unit": "Çmimi me kërkesë (vendosur te njësia)"
+  }
 }

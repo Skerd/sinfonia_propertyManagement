@@ -38,7 +38,6 @@
     "mainImageLabel": "Main Image",
     "mainImageRequired": "Main image is required",
     "imageGalleryLabel": "Image Gallery",
-    "showPriceOnRequestLabel": "Show price on request",
     "videoGalleryLabel": "Video Gallery",
     "mediaFilesLabel": "Documents & Files",
     "marketingBookletLabel": "Marketing Booklet",
@@ -48,7 +47,14 @@
     "edificePlaceholder": "Select edifice",
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "edificeRequired": "Edifice is required"
+    "edificeRequired": "Edifice is required",
+    "priceVisibilityLabel": "Public price visibility",
+    "priceVisibilityPlaceholder": "Choose visibility",
+    "priceVisibilityOptions": {
+      "inherit": "Inherit from parent",
+      "hide": "Hide price (on request)",
+      "show": "Show price"
+    }
   },
   "axios": {
     "start": {

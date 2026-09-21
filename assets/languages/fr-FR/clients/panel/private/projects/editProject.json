@@ -35,7 +35,6 @@
     "reservationCommissionRatePlaceholder": "0–100, facultatif",
     "saleCommissionRateLabel": "Commission de vente (%)",
     "saleCommissionRatePlaceholder": "0–100, facultatif",
-    "showPriceOnRequestLabel": "Afficher « Prix sur demande »",
     "uploadNewImageHint": "Téléverser une nouvelle image pour remplacer l'actuelle",
     "uploadNewImagesHint": "Téléverser de nouvelles images pour les ajouter à la galerie",
     "uploadNewVideosHint": "Téléverser de nouvelles vidéos pour les ajouter à la galerie",
@@ -59,7 +58,14 @@
     "magazineTitleLabel": "Titre du magazine",
     "magazineTitlePlaceholder": "Saisir le titre du magazine",
     "magazineDescriptionLabel": "Description du magazine",
-    "magazineDescriptionPlaceholder": "Saisir la description du magazine"
+    "magazineDescriptionPlaceholder": "Saisir la description du magazine",
+    "priceVisibilityLabel": "Visibilité du prix",
+    "priceVisibilityPlaceholder": "Choisir la visibilité",
+    "priceVisibilityOptions": {
+      "inherit": "Par défaut (prix affiché)",
+      "hide": "Masquer le prix (sur demande)",
+      "show": "Afficher le prix"
+    }
   },
   "generalInfo": "Informations générales",
   "homepageFeatured": "Mise en avant page d'accueil",

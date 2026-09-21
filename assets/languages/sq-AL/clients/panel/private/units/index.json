@@ -59,7 +59,6 @@
     "sale": "Shitje",
     "saleCommissionRatePercent": "Komisioni i shitjes",
     "sharedArea": "Zonë e përbashkët",
-    "showPriceOnRequest": "Çmimi me kërkesë",
     "status": "Statusi",
     "unavailableNotes": "Shënime për padisponueshmërinë",
     "unitNumber": "Numri",
@@ -90,8 +89,14 @@
         "under_construction": "Under Construction",
         "ready": "Gati",
         "delivered": "Delivered"
+      },
+      "priceVisibility": {
+        "inherit": "Trashëgo nga niveli sipër",
+        "hide": "Fshih çmimin (me kërkesë)",
+        "show": "Shfaq çmimin"
       }
-    }
+    },
+    "priceVisibility": "Çmimi publik"
   },
   "floor": "Kati",
   "floors": "Dyshemetë",

@@ -59,7 +59,6 @@
     "sale": "Sale",
     "saleCommissionRatePercent": "Sale Commission",
     "sharedArea": "Shared Area",
-    "showPriceOnRequest": "Price on request",
     "status": "Status",
     "unavailableNotes": "Unavailable notes",
     "unitNumber": "Number",
@@ -90,8 +89,14 @@
         "under_construction": "Under Construction",
         "ready": "Ready",
         "delivered": "Delivered"
+      },
+      "priceVisibility": {
+        "inherit": "Inherit from parent",
+        "hide": "Hide price (on request)",
+        "show": "Show price"
       }
-    }
+    },
+    "priceVisibility": "Public price"
   },
   "floor": "Floor",
   "floors": "Floors",

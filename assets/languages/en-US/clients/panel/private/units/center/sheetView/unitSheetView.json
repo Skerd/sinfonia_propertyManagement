@@ -5,8 +5,6 @@
   "failedTooltipDescription": "Click to retry fetching data.",
   "and": "and",
   "name": "Name",
-  "showPriceOnRequest": "Price on request",
-  "showPriceOnRequestTooltip": "Hides this unit's price on the public website so visitors must enquire. Also applies automatically when its floor, edifice or project has it enabled.",
   "unit": "Unit",
   "statisticsTitle": "Statistics",
   "overview": "Overview",
@@ -125,5 +123,25 @@
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
   "featuredOnHomepage": "Featured",
-  "featuredOnHomepageTooltip": "Shown in the public homepage featured residences section"
+  "featuredOnHomepageTooltip": "Shown in the public homepage featured residences section",
+  "priceVisibility": "Public price",
+  "priceVisibilityTooltip": "Hide or show this unit's price. Inherit follows the closest level with a choice: floor, edifice or project.",
+  "priceVisibilityEnum": {
+    "inherit": "Inherit from parent",
+    "hide": "Hide price (on request)",
+    "show": "Show price"
+  },
+  "effectivePriceVisibility": "On the website",
+  "effectivePriceVisibilityTooltip": "Result of this record's choice and its parents'. The closest level set to Hide or Show wins.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Price shown",
+    "shown_project": "Price shown (set on project)",
+    "hidden_project": "Price on request (set on project)",
+    "shown_edifice": "Price shown (set on edifice)",
+    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_floor": "Price shown (set on floor)",
+    "hidden_floor": "Price on request (set on floor)",
+    "shown_unit": "Price shown (set on unit)",
+    "hidden_unit": "Price on request (set on unit)"
+  }
 }

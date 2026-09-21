@@ -9,8 +9,6 @@
   "reservationCommission": "Reservation provision",
   "reservationCommissionTooltip": "Reservation provision (%)",
   "none": "Keine",
-  "showPriceOnRequest": "Preis auf Anfrage",
-  "showPriceOnRequestTooltip": "Blendet die Preise auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt für alle Gebäude, Etagen und Einheiten dieses Projekts.",
   "statistics": {
     "edifices": "Gebäude",
     "edificesTooltip": "Total Edifices",
@@ -75,5 +73,25 @@
   "magazine": "Magazin",
   "magazineTitle": "Magazin-Titel",
   "magazineDescription": "Magazinbeschreibung",
-  "magazineFile": "Magazin-PDF"
+  "magazineFile": "Magazin-PDF",
+  "priceVisibility": "Öffentlicher Preis",
+  "priceVisibilityTooltip": "Preise auf der öffentlichen Website für das ganze Projekt aus- oder einblenden. Gebäude, Etagen und Einheiten können dies übersteuern.",
+  "priceVisibilityEnum": {
+    "inherit": "Standard (Preis sichtbar)",
+    "hide": "Preis ausblenden (auf Anfrage)",
+    "show": "Preis anzeigen"
+  },
+  "effectivePriceVisibility": "Auf der Website",
+  "effectivePriceVisibilityTooltip": "Ergebnis aus der Auswahl dieses Eintrags und seiner übergeordneten Ebenen. Die nächste Ebene mit „Ausblenden“ oder „Anzeigen“ gilt.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Preis sichtbar",
+    "shown_project": "Preis sichtbar (festgelegt auf Projekt)",
+    "hidden_project": "Preis auf Anfrage (festgelegt auf Projekt)",
+    "shown_edifice": "Preis sichtbar (festgelegt auf Gebäude)",
+    "hidden_edifice": "Preis auf Anfrage (festgelegt auf Gebäude)",
+    "shown_floor": "Preis sichtbar (festgelegt auf Etage)",
+    "hidden_floor": "Preis auf Anfrage (festgelegt auf Etage)",
+    "shown_unit": "Preis sichtbar (festgelegt auf Einheit)",
+    "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
+  }
 }

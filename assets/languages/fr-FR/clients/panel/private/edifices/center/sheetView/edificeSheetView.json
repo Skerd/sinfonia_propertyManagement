@@ -7,8 +7,6 @@
   "overview": "Aperçu",
   "buildingDetails": "Détails du bâtiment",
   "constructionTimeline": "Construction et conformité",
-  "showPriceOnRequest": "Prix sur demande",
-  "showPriceOnRequestTooltip": "Masque les prix sur le site public : les visiteurs doivent faire une demande. S'applique à tous les étages et unités de ce bâtiment.",
   "statisticsTitle": "Statistiques",
   "gallery": "Galerie",
   "mediaFiles": "Documents et fichiers",
@@ -92,5 +90,25 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
-  "deletedBy": "Supprimé par"
+  "deletedBy": "Supprimé par",
+  "priceVisibility": "Prix public",
+  "priceVisibilityTooltip": "Masquer ou afficher les prix de ce bâtiment (prix au m² inclus). « Hériter » suit le projet ; étages et unités peuvent le remplacer.",
+  "priceVisibilityEnum": {
+    "inherit": "Hériter du niveau supérieur",
+    "hide": "Masquer le prix (sur demande)",
+    "show": "Afficher le prix"
+  },
+  "effectivePriceVisibility": "Sur le site",
+  "effectivePriceVisibilityTooltip": "Résultat du choix de cet élément et de ses niveaux supérieurs. Le niveau le plus proche avec « Masquer » ou « Afficher » l'emporte.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Prix affiché",
+    "shown_project": "Prix affiché (défini sur le projet)",
+    "hidden_project": "Prix sur demande (défini sur le projet)",
+    "shown_edifice": "Prix affiché (défini sur le bâtiment)",
+    "hidden_edifice": "Prix sur demande (défini sur le bâtiment)",
+    "shown_floor": "Prix affiché (défini sur l'étage)",
+    "hidden_floor": "Prix sur demande (défini sur l'étage)",
+    "shown_unit": "Prix affiché (défini sur l'unité)",
+    "hidden_unit": "Prix sur demande (défini sur l'unité)"
+  }
 }

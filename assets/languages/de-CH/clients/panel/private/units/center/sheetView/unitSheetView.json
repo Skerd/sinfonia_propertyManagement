@@ -5,8 +5,6 @@
   "failedTooltipDescription": "Klicken, um die Daten erneut abzurufen.",
   "and": "und",
   "name": "Name",
-  "showPriceOnRequest": "Preis auf Anfrage",
-  "showPriceOnRequestTooltip": "Blendet den Preis dieser Einheit auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt auch automatisch, wenn Etage, Gebäude oder Projekt dies aktiviert haben.",
   "unit": "Einheit",
   "statisticsTitle": "Statistik",
   "overview": "Übersicht",
@@ -125,5 +123,25 @@
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
   "featuredOnHomepage": "Hervorgehoben",
-  "featuredOnHomepageTooltip": "Wird im Hervorgehoben-Bereich der öffentlichen Startseite angezeigt"
+  "featuredOnHomepageTooltip": "Wird im Hervorgehoben-Bereich der öffentlichen Startseite angezeigt",
+  "priceVisibility": "Öffentlicher Preis",
+  "priceVisibilityTooltip": "Preis dieser Einheit aus- oder einblenden. „Übernehmen“ folgt der nächsten Ebene mit einer Auswahl: Etage, Gebäude oder Projekt.",
+  "priceVisibilityEnum": {
+    "inherit": "Von übergeordneter Ebene übernehmen",
+    "hide": "Preis ausblenden (auf Anfrage)",
+    "show": "Preis anzeigen"
+  },
+  "effectivePriceVisibility": "Auf der Website",
+  "effectivePriceVisibilityTooltip": "Ergebnis aus der Auswahl dieses Eintrags und seiner übergeordneten Ebenen. Die nächste Ebene mit „Ausblenden“ oder „Anzeigen“ gilt.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Preis sichtbar",
+    "shown_project": "Preis sichtbar (festgelegt auf Projekt)",
+    "hidden_project": "Preis auf Anfrage (festgelegt auf Projekt)",
+    "shown_edifice": "Preis sichtbar (festgelegt auf Gebäude)",
+    "hidden_edifice": "Preis auf Anfrage (festgelegt auf Gebäude)",
+    "shown_floor": "Preis sichtbar (festgelegt auf Etage)",
+    "hidden_floor": "Preis auf Anfrage (festgelegt auf Etage)",
+    "shown_unit": "Preis sichtbar (festgelegt auf Einheit)",
+    "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
+  }
 }

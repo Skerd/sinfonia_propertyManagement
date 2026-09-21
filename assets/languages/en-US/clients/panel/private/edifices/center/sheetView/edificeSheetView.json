@@ -7,8 +7,6 @@
   "overview": "Overview",
   "buildingDetails": "Building details",
   "constructionTimeline": "Construction & compliance",
-  "showPriceOnRequest": "Price on request",
-  "showPriceOnRequestTooltip": "Hides prices on the public website so visitors must enquire. Applies to every floor and unit in this edifice.",
   "statisticsTitle": "Statistics",
   "gallery": "Gallery",
   "mediaFiles": "Documents & Files",
@@ -92,5 +90,25 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "priceVisibility": "Public price",
+  "priceVisibilityTooltip": "Hide or show prices for this edifice (including its price per m²). Inherit follows the project; floors and units can override it.",
+  "priceVisibilityEnum": {
+    "inherit": "Inherit from parent",
+    "hide": "Hide price (on request)",
+    "show": "Show price"
+  },
+  "effectivePriceVisibility": "On the website",
+  "effectivePriceVisibilityTooltip": "Result of this record's choice and its parents'. The closest level set to Hide or Show wins.",
+  "effectivePriceVisibilityEnum": {
+    "shown_default": "Price shown",
+    "shown_project": "Price shown (set on project)",
+    "hidden_project": "Price on request (set on project)",
+    "shown_edifice": "Price shown (set on edifice)",
+    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_floor": "Price shown (set on floor)",
+    "hidden_floor": "Price on request (set on floor)",
+    "shown_unit": "Price shown (set on unit)",
+    "hidden_unit": "Price on request (set on unit)"
+  }
 }
