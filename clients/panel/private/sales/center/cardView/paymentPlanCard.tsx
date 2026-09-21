@@ -7,8 +7,8 @@ import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realE
 import PaymentPlanSheetView from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx";
 import SalePayDownPaymentAction from "@propertyManagementModule/clients/panel/private/sales/center/actions/salePayDownPaymentAction.tsx";
 import SalePayDownPaymentDialog from "@propertyManagementModule/components/custom/sale/salePayDownPaymentDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -88,7 +88,7 @@ function PaymentPlanCard({
                         ) : null}
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconWallet}
                             label={resolveLanguageKey("status")}
                             tooltip={resolveLanguageKey("status")}
@@ -97,15 +97,15 @@ function PaymentPlanCard({
                             languageKeyCategory="paymentPlanStatusState"
                             value={entity.status}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconWallet}
                             label={resolveLanguageKey("remainingBalance")}
                             tooltip={resolveLanguageKey("remainingBalance")}
                             path="remainingBalance"
                             type="currency"
-                            value={{amount: entity.remainingBalance, currency: entity.currency}}
+                            value={{amount: entity.remainingBalance, currency: entity.saleCurrency}}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconListNumbers}
                             label={resolveLanguageKey("numberOfInstallments")}
                             tooltip={resolveLanguageKey("numberOfInstallments")}
@@ -114,7 +114,7 @@ function PaymentPlanCard({
                             value={entity.numberOfInstallments}
                         />
                         {!small && (
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCalendarClock}
                                 label={resolveLanguageKey("endDate")}
                                 tooltip={resolveLanguageKey("endDate")}

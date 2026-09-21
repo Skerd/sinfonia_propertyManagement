@@ -7,22 +7,26 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@coreModule/components/ui/select.tsx";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {AgentReportResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/agentReport/agentReport.response.type.ts";
 import type {AgentReportFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/agentReport/agentReport.form.type.ts";
 import {downloadAgentReportPdf, type AgentReportPdfLabels} from "./agentReportPdf.ts";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const PERIOD_OPTIONS: {value: string; fromDaysAgo: number; langKey: string}[] = [
     {value: "last30",       fromDaysAgo: 30,  langKey: "period.last30"},
@@ -217,7 +221,7 @@ function AgentReportPage({
                 <div className="flex items-center justify-end gap-3 mt-3 min-h-9">
                     {period && (
                         <span className="text-xs text-muted-foreground mr-auto">
-                            {new Date(period.from).toLocaleDateString()} – {new Date(period.to).toLocaleDateString()}
+                            {formatDate(period.from, {format: DATE_FORMATS.date})} – {formatDate(period.to, {format: DATE_FORMATS.date})}
                         </span>
                     )}
                     {data && entries.length > 0 && (
@@ -275,7 +279,7 @@ function AgentReportPage({
                         </TableHeader>
                         <TableBody>
                             {entries.map(entry => {
-                                const agentName = [entry.agent.name, entry.agent.surname].filter(Boolean).join(" ") || entry.agent._id;
+                                const agentName = getName(entry.agent) || entry.agent._id;
                                 return (
                                     <TableRow key={entry.agent._id}>
                                         <TableCell className="font-medium">{agentName}</TableCell>
@@ -295,10 +299,10 @@ function AgentReportPage({
                                             }
                                         </TableCell>
                                         <TableCell className="text-right text-sm tabular-nums">
-                                            {entry.totalCommissionsPaid > 0 ? entry.totalCommissionsPaid.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "—"}
+                                            {entry.totalCommissionsPaid > 0 ? formatNumber(entry.totalCommissionsPaid, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "—"}
                                         </TableCell>
                                         <TableCell className="text-right text-sm tabular-nums">
-                                            {entry.totalCommissionsPending > 0 ? entry.totalCommissionsPending.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "—"}
+                                            {entry.totalCommissionsPending > 0 ? formatNumber(entry.totalCommissionsPending, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "—"}
                                         </TableCell>
                                         <TableCell className="text-right text-sm">
                                             {entry.averageCommissionRate > 0 ? `${entry.averageCommissionRate}%` : "—"}

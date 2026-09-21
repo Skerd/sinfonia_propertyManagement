@@ -3,9 +3,10 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useMemo} from "react";
-import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
+import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -46,14 +47,14 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
             asExtraParam: true,
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
@@ -61,7 +62,7 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "floor",
-            label: resolveLanguageKey("fields.floor") as string,
+            label: resolveLanguageKey("fields.floor"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/floor/select",
             dependsOn: ["edifice", "project"],
@@ -69,55 +70,55 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "unit",
-            label: resolveLanguageKey("fields.unit") as string,
+            label: resolveLanguageKey("fields.unit"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
             dependsOn: ["floor", "edifice", "project"],
         },
         {
             field: "status",
-            label: resolveLanguageKey("fields.status") as string,
+            label: resolveLanguageKey("fields.status"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "pending_architect",          label: resolveLanguageKey("fields.!enums.status.pending_architect")          as string},
-                {value: "pending_engineer",           label: resolveLanguageKey("fields.!enums.status.pending_engineer")           as string},
-                {value: "pending_ceo",                label: resolveLanguageKey("fields.!enums.status.pending_ceo")                as string},
-                {value: "pending_architect_revision", label: resolveLanguageKey("fields.!enums.status.pending_architect_revision") as string},
-                {value: "pending_engineer_revision",  label: resolveLanguageKey("fields.!enums.status.pending_engineer_revision")  as string},
-                {value: "pending_finance",            label: resolveLanguageKey("fields.!enums.status.pending_finance")            as string},
-                {value: "pending_client_approval",    label: resolveLanguageKey("fields.!enums.status.pending_client_approval")    as string},
-                {value: "finance_completed",          label: resolveLanguageKey("fields.!enums.status.finance_completed")          as string},
-                {value: "pending_delivery",           label: resolveLanguageKey("fields.!enums.status.pending_delivery")           as string},
-                {value: "completed",                  label: resolveLanguageKey("fields.!enums.status.completed")                  as string},
-                {value: "cancelled",                  label: resolveLanguageKey("fields.!enums.status.cancelled")                  as string},
+                {value: "pending_architect",          label: resolveLanguageKey("fields.!enums.status.pending_architect")},
+                {value: "pending_engineer",           label: resolveLanguageKey("fields.!enums.status.pending_engineer")},
+                {value: "pending_ceo",                label: resolveLanguageKey("fields.!enums.status.pending_ceo")},
+                {value: "pending_architect_revision", label: resolveLanguageKey("fields.!enums.status.pending_architect_revision")},
+                {value: "pending_engineer_revision",  label: resolveLanguageKey("fields.!enums.status.pending_engineer_revision")},
+                {value: "pending_finance",            label: resolveLanguageKey("fields.!enums.status.pending_finance")},
+                {value: "pending_client_approval",    label: resolveLanguageKey("fields.!enums.status.pending_client_approval")},
+                {value: "finance_completed",          label: resolveLanguageKey("fields.!enums.status.finance_completed")},
+                {value: "pending_delivery",           label: resolveLanguageKey("fields.!enums.status.pending_delivery")},
+                {value: "completed",                  label: resolveLanguageKey("fields.!enums.status.completed")},
+                {value: "cancelled",                  label: resolveLanguageKey("fields.!enums.status.cancelled")},
             ],
         },
         {
             field: "constructionType",
-            label: resolveLanguageKey("fields.constructionType") as string,
+            label: resolveLanguageKey("fields.constructionType"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "materials",      label: resolveLanguageKey("fields.!enums.constructionType.materials")      as string},
-                {value: "room_division",  label: resolveLanguageKey("fields.!enums.constructionType.room_division")  as string},
-                {value: "flooring",       label: resolveLanguageKey("fields.!enums.constructionType.flooring")       as string},
-                {value: "utilities",      label: resolveLanguageKey("fields.!enums.constructionType.utilities")      as string},
-                {value: "structural",     label: resolveLanguageKey("fields.!enums.constructionType.structural")     as string},
-                {value: "electrical",     label: resolveLanguageKey("fields.!enums.constructionType.electrical")     as string},
-                {value: "plumbing",       label: resolveLanguageKey("fields.!enums.constructionType.plumbing")       as string},
-                {value: "hvac",           label: resolveLanguageKey("fields.!enums.constructionType.hvac")           as string},
-                {value: "cosmetic",       label: resolveLanguageKey("fields.!enums.constructionType.cosmetic")       as string},
-                {value: "other",          label: resolveLanguageKey("fields.!enums.constructionType.other")          as string},
+                {value: "materials",      label: resolveLanguageKey("fields.!enums.constructionType.materials")},
+                {value: "room_division",  label: resolveLanguageKey("fields.!enums.constructionType.room_division")},
+                {value: "flooring",       label: resolveLanguageKey("fields.!enums.constructionType.flooring")},
+                {value: "utilities",      label: resolveLanguageKey("fields.!enums.constructionType.utilities")},
+                {value: "structural",     label: resolveLanguageKey("fields.!enums.constructionType.structural")},
+                {value: "electrical",     label: resolveLanguageKey("fields.!enums.constructionType.electrical")},
+                {value: "plumbing",       label: resolveLanguageKey("fields.!enums.constructionType.plumbing")},
+                {value: "hvac",           label: resolveLanguageKey("fields.!enums.constructionType.hvac")},
+                {value: "cosmetic",       label: resolveLanguageKey("fields.!enums.constructionType.cosmetic")},
+                {value: "other",          label: resolveLanguageKey("fields.!enums.constructionType.other")},
             ],
         },
     ], [resolveLanguageKey]);
 
     const headerTitle = useMemo(
-        () => buildPageTitle(resolveLanguageKey("title") as string, [unitName]),
+        () => buildPageTitle(resolveLanguageKey("title"), [unitName]),
         [resolveLanguageKey, unitName],
     );
 
     const headerDescription = useMemo(
-        () => resolveLanguageKey(unitId ? "descriptionWithContext" : "description") as string,
+        () => resolveLanguageKey(unitId ? "descriptionWithContext" : "description"),
         [resolveLanguageKey, unitId],
     );
 

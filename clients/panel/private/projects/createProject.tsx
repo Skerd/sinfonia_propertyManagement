@@ -1,5 +1,5 @@
 import {IconFolderPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createProjectFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/createProject.form.validator.ts";
 import {CreateProjectFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.schema-def.ts";
 

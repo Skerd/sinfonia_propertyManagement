@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
+import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -12,8 +12,8 @@ import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/ce
 import ViewUnitsOverlay from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx";
 import UnitsOverlay from "@propertyManagementModule/components/custom/floors/unitsOverlay.tsx";
 import {buildFloorEditPath} from "@propertyManagementModule/clients/panel/private/floors";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -71,9 +71,10 @@ function FloorCard({
                 </>
             )}
         >
-            {({entity, setAction}) => (
+            {({entity, read, setAction}) => (
                 <>
-                    <GalleryCarousel
+                    <AccessGatedGalleryCarousel
+                        read={read}
                         mainImage={entity.mainImage}
                         imageGallery={entity.imageGallery || []}
                         videoGallery={entity.videoGallery || []}
@@ -92,7 +93,7 @@ function FloorCard({
                         <ViewUnitsOverlay onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconDoor}
                             label={resolveLanguageKey("data.units")}
                             tooltip={resolveLanguageKey("data.units")}
@@ -100,7 +101,7 @@ function FloorCard({
                             type="number"
                             value={entity.totalUnits}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconGrid4x4}
                             label={resolveLanguageKey("data.area")}
                             tooltip={resolveLanguageKey("data.area")}
@@ -108,7 +109,7 @@ function FloorCard({
                             type="area"
                             value={entity.area}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconWheelchair}
                             label={resolveLanguageKey("data.isAccessible")}
                             tooltip={resolveLanguageKey("data.isAccessible")}
@@ -116,7 +117,7 @@ function FloorCard({
                             type="boolean"
                             value={entity.isAccessible}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconFireExtinguisher}
                             label={resolveLanguageKey("data.hasEmergencyExit")}
                             tooltip={resolveLanguageKey("data.hasEmergencyExit")}

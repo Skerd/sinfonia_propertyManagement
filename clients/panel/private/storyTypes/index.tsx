@@ -5,7 +5,7 @@ import {IconStack2} from "@tabler/icons-react";
 import {StoryType} from "armonia/src/modules/propertyManagement/api/realEstate/private/storyType/storyType.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import StoryTypeCard from "@propertyManagementModule/clients/panel/private/storyTypes/center/cardView/storyTypeCard.tsx";
-import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 
 function storyTypeEditPath(storyType: StoryType) {

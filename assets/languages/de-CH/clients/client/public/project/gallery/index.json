@@ -52,6 +52,7 @@
   "filterAvailable": "Verfügbar",
   "filterSold": "Verkauft",
   "filterReserved": "Reserviert",
+  "filterUnavailable": "Nicht verfügbar",
   "filterAll": "Alle",
   "noUnitsOnFloor": "Keine Einheiten entsprechen diesem Filter auf dem gewählten Stockwerk.",
   "areaLabel": "Fläche",

@@ -6,7 +6,7 @@ import {
     useCarousel,
 } from "@coreModule/components/ui/carousel.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {
     resolveProjectFallbackImage,
     resolveProjectGalleryImages,
@@ -118,7 +118,7 @@ function GalleryStageBody({
                                     phantomsAlwaysVisible
                                     imageUrl={overlayImage}
                                     phantomPoints={polygons}
-                                    onFloorClick={(item) => onSelectEdifice?.(item._id)}
+                                    onFloorClick={(item: {_id: string}) => onSelectEdifice?.(item._id)}
                                     stayHovered={selectedEdificeId}
                                     externalHoveredId={selectedEdificeId ?? ""}
                                     initialPoints={[]}

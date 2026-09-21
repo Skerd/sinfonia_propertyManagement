@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {ChevronLeft} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {useProjectViewerState} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerState.ts";
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
@@ -234,7 +234,7 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
     const floorName = formatFloorLabel(t, selectedFloor);
     const stayHovered = !atProjectLevel ? selectedFloorId || undefined : undefined;
     const unitPanelOpen = Boolean(selectedUnitId);
-    const floorSheetRef = useRef<HTMLAsideElement>(null);
+    const floorSheetRef = useRef<HTMLElement>(null);
     const unitSheetRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

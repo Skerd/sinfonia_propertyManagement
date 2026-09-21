@@ -16,9 +16,9 @@ import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import SaleSheetView, {buildSaleEditPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
 import SaleHandoverDialogs from "@propertyManagementModule/components/custom/sales/saleHandoverDialogs.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -27,7 +27,7 @@ import {
     STATUS_BADGE_INFO,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
-} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
 
@@ -199,14 +199,14 @@ function SaleCard({
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />
                         )}
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconHome}
                                 label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 path="unit"
                                 value={entity.unit?.name ?? entity.unit?.unitNumber}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconUser}
                                 label={resolveLanguageKey("soldBy")}
                                 tooltip={resolveLanguageKey("soldBy")}
@@ -214,7 +214,7 @@ function SaleCard({
                                 type="user"
                                 value={entity.soldBy}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconUser}
                                 label={resolveLanguageKey("buyer")}
                                 tooltip={resolveLanguageKey("buyer")}
@@ -224,7 +224,7 @@ function SaleCard({
                             />
                             {!small && (
                                 <>
-                                    <DisplayRow
+                                    <EntityCardRow
                                         icon={IconCalendarClock}
                                         label={resolveLanguageKey("saleDate")}
                                         tooltip={resolveLanguageKey("saleDate")}
@@ -232,7 +232,7 @@ function SaleCard({
                                         type="date"
                                         value={entity.saleDate}
                                     />
-                                    <DisplayRow
+                                    <EntityCardRow
                                         icon={IconCurrencyDollar}
                                         label={resolveLanguageKey("finalPrice")}
                                         tooltip={resolveLanguageKey("finalPrice")}
@@ -240,7 +240,7 @@ function SaleCard({
                                         type="currency"
                                         value={{amount: entity.finalPrice, currency: entity.saleCurrency}}
                                     />
-                                    <DisplayRow
+                                    <EntityCardRow
                                         icon={IconPackage}
                                         label={resolveLanguageKey("handoverDate")}
                                         tooltip={resolveLanguageKey("handoverDate")}

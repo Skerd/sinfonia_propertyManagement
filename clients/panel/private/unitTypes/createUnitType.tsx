@@ -1,5 +1,5 @@
 import {IconHomePlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createUnitTypeFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/createUnitType.form.validator.ts";
 import type {CreateUnitTypeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/unitType.schema-def.ts";
 

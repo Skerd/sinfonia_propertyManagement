@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
-import {formatNumber} from "@coreModule/helpers/general";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {
+  GRID_KPI,
+  DASHBOARD_TAB_STACK,
+  DASHBOARD_TAB_INTRO,
+  DASHBOARD_ENTITY_GRID,
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import { useNavigate } from "react-router-dom";
 import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import type { Project } from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
 import {ActionException} from "armonia/src/modules/core/types";
 import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import { DashboardProjectCard } from "@propertyManagementModule/components/custom/dashboard/projectCard.tsx";
+import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import { IconBuilding, IconStack, IconTrendingUp } from "@tabler/icons-react";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
@@ -76,34 +82,46 @@ function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
   const link = viewEntriesLabel;
 
   return (
-    <div className="flex flex-col gap-y-3">
-      <div>
-        <h2 className="text-sm font-semibold mb-1">{resolveLanguageKey("title")}</h2>
-        <p className="text-muted-foreground text-xs">{resolveLanguageKey("description")}</p>
+    <div className={DASHBOARD_TAB_STACK}>
+      <div className={DASHBOARD_TAB_INTRO}>
+        <h2 className="text-sm font-semibold">{resolveLanguageKey("title")}</h2>
+        <p className="text-xs text-muted-foreground">{resolveLanguageKey("description")}</p>
       </div>
 
-      <div className={GRID_KPI}>
-        <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuilding as never} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuilding as never} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack as never} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack as never} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-      </div>
+      <DashboardKpiSection
+        title={resolveLanguageKey("structureSection")}
+        description={resolveLanguageKey("structureSectionDesc")}
+      >
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuilding} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuilding} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+        </div>
+      </DashboardKpiSection>
 
-      <div className={GRID_KPI}>
-        <KpiCard compact title={resolveLanguageKey("unitsSold")} value={formatNumber(unitsSold)} subtitle={resolveLanguageKey("unitsSoldDesc")} icon={IconTrendingUp as never} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("avgUnitsPerProject")} value={avgUnitsPerProject} subtitle={resolveLanguageKey("avgUnitsPerProjectDesc")} icon={IconStack as never} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={IconBuilding as never} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-      </div>
+      <DashboardKpiSection
+        title={resolveLanguageKey("performanceSection")}
+        description={resolveLanguageKey("performanceSectionDesc")}
+      >
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("unitsSold")} value={formatNumber(unitsSold)} subtitle={resolveLanguageKey("unitsSoldDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("avgUnitsPerProject")} value={avgUnitsPerProject} subtitle={resolveLanguageKey("avgUnitsPerProjectDesc")} icon={IconStack} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={IconBuilding} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+        </div>
+      </DashboardKpiSection>
 
-      <div>
-        <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("projectCards")}</h3>
+      <DashboardKpiSection
+        title={resolveLanguageKey("projectCards")}
+        description={resolveLanguageKey("projectCardsDesc")}
+      >
         {
           projectsLoading ?
           <Loader />
           : projectsError ?
-          <p className="text-muted-foreground text-xs">{resolveLanguageKey("failDescription")}</p>
+          <p className="text-xs text-muted-foreground">{resolveLanguageKey("failDescription")}</p>
           :
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={DASHBOARD_ENTITY_GRID}>
             {
               projects.map((project) => {
                 return (
@@ -125,7 +143,7 @@ function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
             }
           </div>
         }
-      </div>
+      </DashboardKpiSection>
     </div>
   );
 }

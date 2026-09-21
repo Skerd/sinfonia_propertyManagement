@@ -5,7 +5,7 @@ import {FIGMA_DEVELOPERS_DEMO} from "@propertyManagementModule/clients/client/pu
 
 const {imageWidth, imageHeight} = FIGMA_DEVELOPERS_DEMO;
 
-function DevelopersDemoSection({resolveLanguageKey}: PublicLanguageProps) {
+function DevelopersDemoSection(languageProps: PublicLanguageProps) {
     return (
         <div
             className="relative flex w-full flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-10 xl:gap-14"
@@ -30,7 +30,7 @@ function DevelopersDemoSection({resolveLanguageKey}: PublicLanguageProps) {
             </div>
 
             <div className="w-full shrink-0 lg:w-[min(100%,26rem)] xl:w-[28rem]">
-                <DevelopersDataStripSection resolveLanguageKey={resolveLanguageKey} />
+                <DevelopersDataStripSection {...languageProps} />
             </div>
         </div>
     );

@@ -6,10 +6,10 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import { useMemo, useRef, useState, useEffect } from "react";
 import { Button } from "@coreModule/components/ui/button.tsx";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import { buildPageTitle } from "@coreModule/helpers/general";
-import CardAndTableView, {type EntityListApi} from "@coreModule/components/custom/cardAndTableView.tsx";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
+import CardAndTableView, {type EntityListApi} from "@coreModule/components/entityPage/list/cardAndTableView.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {
     GRID_COLS_MAX_3,
@@ -17,9 +17,9 @@ import {
 } from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import UnitCostCard from "@propertyManagementModule/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx";
 import UnitCostSheetView from "@propertyManagementModule/clients/panel/private/unitCosts/center/sheetView/unitCostSheetView.tsx";
-import ActionMenu from "@coreModule/components/custom/actions/menu/actionMenu.tsx";
-import DeleteAction from "@coreModule/components/custom/actions/deleteAction.tsx";
-import RestoreAction from "@coreModule/components/custom/actions/restoreAction.tsx";
+import ActionMenu from "@coreModule/components/viewEngine/widgets/actions/menu/actionMenu.tsx";
+import DeleteAction from "@coreModule/components/viewEngine/widgets/actions/deleteAction.tsx";
+import RestoreAction from "@coreModule/components/viewEngine/widgets/actions/restoreAction.tsx";
 import { buildUnitCostEditPath } from "@propertyManagementModule/clients/panel/private/unitCosts/unitCostEditPath.ts";
 import PaymentCalendarTab from "@propertyManagementModule/clients/panel/private/unitCosts/paymentCalendarTab.tsx";
 import FinanceUnitCostFilterBar, {

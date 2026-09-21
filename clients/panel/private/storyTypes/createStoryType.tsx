@@ -1,5 +1,5 @@
 import {IconStack2} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createStoryTypeFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/storyType/createStoryType.form.validator.ts";
 import type {CreateStoryTypeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/storyType/storyType.schema-def.ts";
 

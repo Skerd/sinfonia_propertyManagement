@@ -29,5 +29,12 @@
   "totalUnitCostDocuments": "Dokumente kostoje",
   "totalUnitCostDocumentsShortDesc": "Dokumentet e regjistruara në panel",
   "unitStatusBreakdown": "Statusi i njësisë",
-  "unitsList": "Lista e njësive"
+  "unitsList": "Lista e njësive",
+  "statusSection": "Statusi i njësive",
+  "statusSectionDesc": "Numërimet sipas disponueshmërisë dhe qirasë.",
+  "portfolioSection": "Shëndeti i portofolit",
+  "portfolioSectionDesc": "Banimi, vlera e inventarit dhe rezervimet.",
+  "costsSection": "Kostot e njësive",
+  "costsSectionDesc": "Totalet e verifikuara të prokurimit në fushëveprim.",
+  "unitsListDesc": "Shfleto dhe hap njësitë individuale."
 }

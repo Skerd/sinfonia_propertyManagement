@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {LayoutGrid} from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 
 type ViewFloorsOverlayProps = WithLanguageType & {
@@ -18,11 +18,7 @@ function ViewFloorsOverlay({
 
     const actionKey = "viewFloorsOverlay";
     const shortcut = "3";
-    useKeyboardShortcuts(shortcut, () => {
-        if (!!readFloors) {
-            onAction(actionKey);
-        }
-    });
+    useKeyboardShortcuts(shortcut, () => onAction(actionKey), {enabled: !!readFloors});
 
     if (!readFloors) return null;
 

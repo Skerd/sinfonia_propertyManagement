@@ -3,8 +3,10 @@
  */
 
 import {jsPDF} from "jspdf";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {formatDate} from "@coreModule/helpers/general";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
 import type {AgentReportEntry, AgentReportResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/agentReport/agentReport.response.type.ts";
 
@@ -114,11 +116,11 @@ function ensureY(doc: jsPDF, y: number, needMm: number): number {
 
 function fmtMoney(n: number): string {
     if (!Number.isFinite(n) || n === 0) return "—";
-    return n.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    return formatNumber(n, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
 function agentName(entry: AgentReportEntry): string {
-    const name = [entry.agent.name, entry.agent.surname].filter(Boolean).join(" ").trim();
+    const name = getName(entry.agent);
     return name || entry.agent._id;
 }
 

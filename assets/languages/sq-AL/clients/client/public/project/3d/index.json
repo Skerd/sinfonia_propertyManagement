@@ -46,6 +46,7 @@
   "filterAvailable": "E disponueshme",
   "filterSold": "E shitur",
   "filterReserved": "E rezervuar",
+  "filterUnavailable": "Nuk disponohet",
   "filterAll": "Të gjitha",
   "noUnitsOnFloor": "Asnjë njësi nuk përputhet me këtë filtër në katin e zgjedhur.",
   "areaLabel": "Sipërfaqja",

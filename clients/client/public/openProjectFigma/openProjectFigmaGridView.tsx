@@ -17,7 +17,7 @@ import {openProjectFigmaPath} from "@propertyManagementModule/clients/client/pub
 import type {MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
-const STATUS_FILTERS = ["available", "sold", "reserved", "all"] as const;
+const STATUS_FILTERS = ["available", "sold", "reserved", "unavailable", "all"] as const;
 
 type OpenProjectFigmaGridViewProps = {
     project: MarketingProjectSingle;
@@ -84,7 +84,9 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                                   ? "filterSold"
                                   : filter === "reserved"
                                     ? "filterReserved"
-                                    : "filterAll",
+                                    : filter === "unavailable"
+                                      ? "filterUnavailable"
+                                      : "filterAll",
                         )}
                     </button>
                 ))}
@@ -103,6 +105,7 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                                 availableLabel={String(resolveLanguageKey("filterAvailable"))}
                                 soldLabel={String(resolveLanguageKey("filterSold"))}
                                 reservedLabel={String(resolveLanguageKey("filterReserved"))}
+                                unavailableLabel={String(resolveLanguageKey("filterUnavailable"))}
                                 areaLabel={String(resolveLanguageKey("areaLabel"))}
                                 roomsLabel={String(resolveLanguageKey("roomsLabel"))}
                                 floorLabel={String(resolveLanguageKey("floorLabel"))}

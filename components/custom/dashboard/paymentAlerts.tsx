@@ -16,6 +16,7 @@ import {
   kpiPaymentAlertPlans,
   kpiPaymentAlertReservations,
 } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
+import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
 
 export interface PaymentAlertsProps extends WithLanguageType {
   overdueCount: number;
@@ -24,10 +25,6 @@ export interface PaymentAlertsProps extends WithLanguageType {
   viewAllLabel?: string;
   /** Optional scope (edifice) for filtered footer drill-downs. */
   drillDownContext?: KpiDrillDownContext;
-}
-
-function formatCurrency(value: number): string {
-  return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(value);
 }
 
 function getAlertStyle(days: number) {
@@ -67,8 +64,13 @@ function PaymentAlertsInner({
   return (
     <DashboardWidgetCard
       title={effectiveTitle}
-      glass
-      contentClassName="pt-0"
+      action={
+        overdueInList > 0 || overdueCount > 0 ? (
+          <Badge variant="outline" className="border-destructive/30 bg-destructive/10 text-destructive text-xs">
+            {hasList ? overdueInList : overdueCount} {resolveLanguageKey('overdueBadge')}
+          </Badge>
+        ) : undefined
+      }
       footer={
         <div className="flex w-full flex-col gap-0.5">
           <Button
@@ -95,14 +97,6 @@ function PaymentAlertsInner({
         </div>
       }
     >
-      <div className="flex items-center justify-end mb-3 -mt-1">
-        {(overdueInList > 0 || overdueCount > 0) && (
-          <Badge variant="outline" className="border-destructive/30 bg-destructive/10 text-destructive text-xs">
-            {hasList ? overdueInList : overdueCount} {resolveLanguageKey('overdueBadge')}
-          </Badge>
-        )}
-      </div>
-
       {hasList ? (
         <>
           <div className="flex flex-col gap-1.5 max-h-80 overflow-y-auto pr-0.5">
@@ -130,7 +124,7 @@ function PaymentAlertsInner({
                           {unitLabel}
                         </span>
                         <span className="text-sm font-semibold text-foreground shrink-0 tabular-nums">
-                          {formatCurrency(alert.installment.amount)}
+                          {formatCurrency(alert.installment.amount, "EUR", {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                         </span>
                       </div>
                       {kind === "reservation" && (

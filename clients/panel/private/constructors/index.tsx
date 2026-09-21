@@ -5,7 +5,7 @@ import {IconBackhoe} from "@tabler/icons-react";
 import {Constructor} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ConstructorCard from "@propertyManagementModule/clients/panel/private/constructors/center/cardView/constructorCard.tsx";
-import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 
 function constructorEditPath(c: Constructor) {

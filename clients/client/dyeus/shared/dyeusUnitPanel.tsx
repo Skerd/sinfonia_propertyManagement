@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {ArrowUpRight, X} from "lucide-react";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
 import DyeusPropertyGallerySection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertyGallerySection.tsx";
 import DyeusPropertyDetailsSection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertyDetailsSection.tsx";

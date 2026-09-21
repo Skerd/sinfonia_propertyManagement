@@ -8,8 +8,8 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DollarSign, LoaderCircle} from "lucide-react";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
-import MultiLocalFilePicker from "@coreModule/components/custom/files/multiLocalFilePicker.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
+import MultiLocalFilePicker from "@coreModule/components/viewEngine/widgets/media/multiLocalFilePicker.tsx";
 import {LEASE_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.schema-def.ts";
 import {RENTAL_PAYMENT_RECEIPT_MEDIA_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.schema-def.ts";
 import {
@@ -25,7 +25,8 @@ import {
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {TableForm, TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
@@ -162,7 +163,7 @@ function RecordRentPaymentDialog({
                     <AlertDialogDescription>
                         {resolveLanguageKey("dialogDescription").replace(
                             "{remaining}",
-                            openRemaining.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})
+                            formatNumber(openRemaining, {minimumFractionDigits: 2, maximumFractionDigits: 2})
                                 + (symbol ? ` ${symbol}` : ""),
                         )}
                     </AlertDialogDescription>
@@ -186,7 +187,7 @@ function RecordRentPaymentDialog({
                                 <li key={row.dueDate} className="flex justify-between gap-2 py-0.5 tabular-nums">
                                     <span>{row.dueDate}</span>
                                     <span>
-                                        {row.slice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                                        {formatNumber(row.slice, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                                         {symbol ? ` ${symbol}` : ""}
                                     </span>
                                 </li>

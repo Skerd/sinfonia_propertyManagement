@@ -4,11 +4,13 @@
   "dialogDescription": "Carica una brochure PDF per generare automaticamente piani e unità per questo edificio.",
   "warningMessage": "Questa azione può richiedere fino a 1 minuto. Non chiudere questa finestra fino al completamento!",
   "fileLabel": "Brochure PDF",
+  "addFile": "Aggiungi PDF",
   "cancel": "Annulla",
   "generate": "Genera",
   "processing": "Elaborazione...",
   "noFileSelected": "Seleziona un file PDF",
   "invalidFileType": "Seleziona un file PDF valido",
+  "fileTooLarge": "Il PDF è troppo grande. Dimensione massima: 200MB",
   "oldPdfLabel": "Layout PDF precedente (ritaglia il piano centrale, escludi intestazione e piè di pagina)",
   "axios": {
     "start": {

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusProjectId.ts";
 

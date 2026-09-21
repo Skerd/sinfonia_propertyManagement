@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconReceiptDollar} from "@tabler/icons-react";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -16,7 +16,7 @@ import {
     GRID_COLS_MAX_4,
     GRID_TRANSACTIONAL
 } from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import {buildPageTitle} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
@@ -43,32 +43,32 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
     const quickFilters = useMemo<QuickFilterDef[]>(() => {
         const statusFilter: QuickFilterDef = {
             field: "status",
-            label: resolveLanguageKey("fields.status") as string,
+            label: resolveLanguageKey("fields.status"),
             type: COLUMN_TYPE.ENUM,
             asExtraParam: true,
             enumValues: [
-                {value: "pending", label: resolveLanguageKey("fields.!enums.status.pending") as string},
-                {value: "paid", label: resolveLanguageKey("fields.!enums.status.paid") as string},
-                {value: "partially_paid", label: resolveLanguageKey("fields.!enums.status.partially_paid") as string},
-                {value: "overdue", label: resolveLanguageKey("fields.!enums.status.overdue") as string},
-                {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived") as string},
+                {value: "pending", label: resolveLanguageKey("fields.!enums.status.pending")},
+                {value: "paid", label: resolveLanguageKey("fields.!enums.status.paid")},
+                {value: "partially_paid", label: resolveLanguageKey("fields.!enums.status.partially_paid")},
+                {value: "overdue", label: resolveLanguageKey("fields.!enums.status.overdue")},
+                {value: "waived", label: resolveLanguageKey("fields.!enums.status.waived")},
             ],
         };
         const moneyAndDateFilters: QuickFilterDef[] = [
             {
                 field: "currency",
-                label: resolveLanguageKey("fields.currency") as string,
+                label: resolveLanguageKey("fields.currency"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/finance/currency/select",
             },
             {
                 field: "dueDate",
-                label: resolveLanguageKey("fields.dueDate") as string,
+                label: resolveLanguageKey("fields.dueDate"),
                 type: COLUMN_TYPE.DATE,
             },
             {
                 field: "paidDate",
-                label: resolveLanguageKey("fields.paidDate") as string,
+                label: resolveLanguageKey("fields.paidDate"),
                 type: COLUMN_TYPE.DATE,
             },
             statusFilter,
@@ -77,14 +77,14 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
         return [
             {
                 field: "project",
-                label: resolveLanguageKey("fields.project") as string,
+                label: resolveLanguageKey("fields.project"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/project/select",
                 asExtraParam: true,
             },
             {
                 field: "edifice",
-                label: resolveLanguageKey("fields.edifice") as string,
+                label: resolveLanguageKey("fields.edifice"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/edifice/select",
                 dependsOn: "project",
@@ -92,7 +92,7 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             },
             {
                 field: "floor",
-                label: resolveLanguageKey("fields.floor") as string,
+                label: resolveLanguageKey("fields.floor"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/floor/select",
                 dependsOn: ["edifice", "project"],
@@ -100,14 +100,14 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             },
             {
                 field: "unit",
-                label: resolveLanguageKey("fields.unit") as string,
+                label: resolveLanguageKey("fields.unit"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/unit/select",
                 dependsOn: ["floor", "edifice", "project"],
             },
             {
                 field: "lease",
-                label: resolveLanguageKey("fields.lease") as string,
+                label: resolveLanguageKey("fields.lease"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/lease/select",
                 asExtraParam: true,

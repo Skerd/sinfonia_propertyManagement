@@ -93,10 +93,7 @@ const MENU_SOCIAL_LINKS = [
 
 /** Loads figmaMenu locale JSON for the active language (works inside portals). */
 function useFigmaMenuT() {
-    const {currentLanguage} = useSelectedLanguage(
-        FIGMA_MENU_LANGUAGE_PATH.replaceAll("/", "_"),
-        FIGMA_MENU_LANGUAGE_PATH,
-    );
+    const {currentLanguage} = useSelectedLanguage(FIGMA_MENU_LANGUAGE_PATH);
 
     return useCallback(
         (key: string) => {

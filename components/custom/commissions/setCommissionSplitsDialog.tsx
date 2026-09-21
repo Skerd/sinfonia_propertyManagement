@@ -15,10 +15,11 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import type {CommissionSplitFormRow, SetCommissionSplitsForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/setCommissionSplits.form.type.ts";
 import {COMMISSION_SPLIT_LABEL_MAX, COMMISSION_SPLITS_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.schema-def.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type SetCommissionSplitsDialogProps = WithLanguageType &
     WithAxiosType<Commission, SetCommissionSplitsForm> & {
@@ -108,19 +109,19 @@ function SetCommissionSplitsDialog({
                     <p className="text-sm text-muted-foreground">
                         {resolveLanguageKey("totalLabel")}{" "}
                         <span className="tabular-nums text-foreground">
-                            {totalAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                            {formatNumber(totalAmount, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                             {symbol ? ` ${symbol}` : ""}
                         </span>
                         {" · "}
                         {resolveLanguageKey("allocatedLabel")}{" "}
                         <span className="tabular-nums text-foreground">
-                            {splitsTotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                            {formatNumber(splitsTotal, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                             {symbol ? ` ${symbol}` : ""}
                         </span>
                         {" · "}
                         {resolveLanguageKey("remainingLabel")}{" "}
                         <span className="tabular-nums text-foreground">
-                            {remaining.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                            {formatNumber(remaining, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                             {symbol ? ` ${symbol}` : ""}
                         </span>
                     </p>

@@ -46,6 +46,7 @@
   "filterAvailable": "Disponibile",
   "filterSold": "Venduto",
   "filterReserved": "Prenotato",
+  "filterUnavailable": "Non disponibile",
   "filterAll": "Tutti",
   "noUnitsOnFloor": "Nessuna unità corrisponde a questo filtro sul piano selezionato.",
   "areaLabel": "Superficie",

@@ -1,25 +1,23 @@
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {generateUUID} from "@coreModule/helpers/general";
+import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+
+const DAY_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "2-digit", year: "numeric"};
 
 export function fmtDate(iso: string | undefined, timezone?: string): string {
-    if (!iso) return "—";
-    return new Date(iso).toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        timeZone: timezone,
-    });
+    return formatDate(iso, {timeZone: timezone, format: DAY_FORMAT}) || "—";
 }
 
 export function fmtMoney(amount: number | undefined, symbol?: string): string {
-    if (amount == null || Number.isNaN(amount)) return "—";
-    return `${symbol ?? ""} ${amount.toLocaleString("en-US", {minimumFractionDigits: 0, maximumFractionDigits: 2})}`.trim();
+    const formatted = formatNumber(amount, {maximumFractionDigits: 2});
+    return formatted ? `${symbol ?? ""} ${formatted}`.trim() : "—";
 }
 
 export function personName(parts: {name?: string; surname?: string} | undefined): string {
-    if (!parts) return "—";
-    return [parts.name, parts.surname].filter(Boolean).join(" ") || "—";
+    return getName(parts) || "—";
 }
 
 export function unitLabel(unit: {name?: string; unitNumber?: string | number} | undefined): string {

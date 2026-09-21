@@ -20,5 +20,9 @@
   "unavailable": "Nicht verfügbar",
   "avgUnitsPerEdifice": "Avg. units per gebäude",
   "avgUnitsPerEdificeDesc": "Total units ÷ edifices",
-  "edificeCards": "Gebäude"
+  "edificeCards": "Gebäude",
+  "structureSection": "Struktur",
+  "structureSectionDesc": "Gebäude, Etagen und Einheitsdichte.",
+  "unitsByStatusDesc": "Einheitenanzahl nach Verfügbarkeit.",
+  "edificeCardsDesc": "Gebäude öffnen, um zu den Einheiten zu gelangen."
 }

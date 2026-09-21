@@ -52,5 +52,9 @@
   "noRecentSales": "Aucune vente récente.",
   "unitLabel": "Unité",
   "failTitle": "Erreur",
-  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer."
+  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "primaryKpisDesc": "Chiffre d'affaires, réservations et ventes pour la période.",
+  "financialKpisDesc": "Prix, valeur du stock et mix de paiement.",
+  "unitCostsKpisDesc": "Achats vérifiés et documents de coûts dans le périmètre.",
+  "operationsKpisDesc": "Inspections, modifications et pipeline de réservations."
 }

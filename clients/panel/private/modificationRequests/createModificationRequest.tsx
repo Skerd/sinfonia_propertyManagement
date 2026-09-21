@@ -1,6 +1,6 @@
 import {IconAdjustmentsPlus} from "@tabler/icons-react";
 import {z} from "zod";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/createModificationRequest.form.validator.ts";
 
 type CreateModificationRequestFormSurface = z.infer<ReturnType<typeof createModificationRequestFormSchema>>;

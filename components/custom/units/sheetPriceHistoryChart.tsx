@@ -14,6 +14,8 @@ import {
     ChartTooltip,
     type ChartConfig,
 } from "@coreModule/components/ui/chart.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 export type SheetPriceHistoryEntry = {
     price: number;
@@ -50,7 +52,7 @@ function currencyLabel(entry: SheetPriceHistoryEntry): string {
 }
 
 function formatPrice(value: number, prefix: string): string {
-    const formatted = Number(value).toLocaleString(undefined, {
+    const formatted = formatNumber(Number(value), {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
     });
@@ -64,9 +66,7 @@ function parseChangedAt(value?: string): Date | null {
 }
 
 function changedByLabel(changedBy?: {name?: string; surname?: string}): string | undefined {
-    if (!changedBy) return undefined;
-    const parts = [changedBy.name, changedBy.surname].filter((p) => typeof p === "string" && p.trim().length > 0);
-    return parts.length > 0 ? parts.join(" ") : undefined;
+    return getName(changedBy) || undefined;
 }
 
 function PriceHistoryTooltip({

@@ -16,7 +16,7 @@ import {
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 
 type MarkUnavailableUnitDialogProps = WithLanguageType & WithAxiosType<MarkUnavailableResponse, MarkUnavailableForm> & {
     open: boolean;

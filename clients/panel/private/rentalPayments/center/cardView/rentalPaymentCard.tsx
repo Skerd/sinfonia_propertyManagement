@@ -10,8 +10,8 @@ import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManageme
 import ManualRentClientEmails from "@propertyManagementModule/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx";
 import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
 import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -119,7 +119,7 @@ function RentalPaymentCard({
                         <ManualRentClientEmails payment={entity} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconLabel}
                             label={resolveLanguageKey("statusLabel")}
                             tooltip={resolveLanguageKey("statusLabel")}
@@ -128,7 +128,7 @@ function RentalPaymentCard({
                             languageKeyCategory="fields.!enums.status"
                             value={entity.status}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("fields.amount")}
                             tooltip={resolveLanguageKey("fields.amount")}
@@ -136,7 +136,7 @@ function RentalPaymentCard({
                             type="currency"
                             value={{amount: entity.amount, currency: entity.currency}}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("fields.remaining")}
                             tooltip={resolveLanguageKey("fields.remaining")}
@@ -144,7 +144,7 @@ function RentalPaymentCard({
                             type="currency"
                             value={{amount: entity.remaining, currency: entity.currency}}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("fields.lateFeeAmount")}
                             tooltip={resolveLanguageKey("fields.lateFeeAmount")}
@@ -152,14 +152,14 @@ function RentalPaymentCard({
                             type="currency"
                             value={{amount: entity.lateFeeAmount, currency: entity.currency}}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconDoor}
                             label={resolveLanguageKey("fields.unit")}
                             tooltip={resolveLanguageKey("fields.unit")}
                             path="unit"
                             value={entity.unit?.name || entity.unit?.unitNumber}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.dueDate")}
                             tooltip={resolveLanguageKey("fields.dueDate")}
@@ -167,7 +167,7 @@ function RentalPaymentCard({
                             type="date"
                             value={entity.dueDate}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.paidDate")}
                             tooltip={resolveLanguageKey("fields.paidDate")}

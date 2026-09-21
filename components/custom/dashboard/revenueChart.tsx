@@ -14,8 +14,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@coreModule/components/ui/chart.tsx";
-import { chartTooltipValueFormatter } from "@coreModule/components/custom/chartTooltipFormatter.tsx";
-import { formatCurrency } from "@coreModule/helpers/general";
+import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
 import { DashboardWidgetCard } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
 
 /** Data props for the revenue chart (from API/summary). */
@@ -133,7 +132,7 @@ function RevenueChartInner({
   ];
 
   return (
-    <DashboardWidgetCard title={resolveLanguageKey('title')} contentClassName="pt-0">
+    <DashboardWidgetCard title={resolveLanguageKey('title')}>
       <ChartContainer config={chartConfig} className="aspect-auto h-72 w-full">
         <BarChart data={data} layout="vertical" barCategoryGap="20%">
           <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" horizontal={false} />
@@ -153,9 +152,7 @@ function RevenueChartInner({
           <ChartTooltip
             cursor={{ fill: 'var(--muted)', fillOpacity: 0.75 }}
             content={
-              <ChartTooltipContent
-                formatter={chartTooltipValueFormatter(chartConfig, formatChartValue)}
-              />
+              <ChartTooltipContent valueFormatter={formatChartValue} />
             }
           />
           <Bar dataKey="collected" stackId="a" fill="var(--color-collected)" radius={[0, 4, 4, 0]} />

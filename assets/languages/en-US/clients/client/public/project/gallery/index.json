@@ -52,6 +52,7 @@
   "filterAvailable": "Available",
   "filterSold": "Sold",
   "filterReserved": "Reserved",
+  "filterUnavailable": "Unavailable",
   "filterAll": "All",
   "noUnitsOnFloor": "No units match this filter on the selected floor.",
   "areaLabel": "Area",

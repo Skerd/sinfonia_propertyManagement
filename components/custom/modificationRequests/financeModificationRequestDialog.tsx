@@ -16,24 +16,25 @@ import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/re
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {z} from "zod";
-import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 import {isValid} from "date-fns";
-import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
+import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
 import {financeModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/fiinanceModificationRequest.form.validator.ts";
 import {
     MODIFICATION_REQUEST_LINE_ITEM_MAX,
     MODIFICATION_REQUEST_LONG_TEXT_MAX,
     MODIFICATION_REQUEST_UNIT_MAX,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type FinanceZodFormValues = z.infer<ReturnType<typeof financeModificationRequestFormSchema>>;
 type FinanceFormValues = Omit<FinanceZodFormValues, "media">;
@@ -55,7 +56,7 @@ function formatLineTotal(item: Pick<CostBreakdownItem, "cost" | "quantity">): st
     const cost = item.cost != null && !Number.isNaN(Number(item.cost)) ? Number(item.cost) : NaN;
     if (Number.isNaN(cost)) return "—";
     const qty = costItemQuantity(item);
-    return (cost * qty).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    return formatNumber(cost * qty, {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
 function FinanceModificationRequestDialog({
@@ -342,7 +343,7 @@ function FinanceModificationRequestDialog({
 
                                 <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
                                     <span className="text-sm text-muted-foreground">
-                                        {resolveLanguageKey("form.breakdownTotal")}: {breakdownSum.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                                        {resolveLanguageKey("form.breakdownTotal")}: {formatNumber(breakdownSum, { minimumFractionDigits: 2 })}
                                     </span>
                                     {
                                         hasMismatch && (
@@ -351,7 +352,7 @@ function FinanceModificationRequestDialog({
                                             difference > 0 ? "text-warning" : "text-destructive"
                                         )}>
                                             <AlertTriangle size={16} />
-                                            {resolveLanguageKey("form.difference")}: {difference > 0 ? "+" : ""}{difference.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                                            {resolveLanguageKey("form.difference")}: {difference > 0 ? "+" : ""}{formatNumber(difference, { minimumFractionDigits: 2 })}
                                         </span>
                                     )}
                                 </div>

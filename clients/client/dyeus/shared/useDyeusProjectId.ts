@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 type CatalogResponse = {

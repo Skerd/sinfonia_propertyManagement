@@ -1,5 +1,5 @@
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
-import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/formObjectIdChips.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
+import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/inputs/objectIdChipsInput.tsx";
 import {editEdificeFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/editEdifice.form.validator.ts";
 import type {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import type {EditEdificeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.schema-def.ts";

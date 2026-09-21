@@ -7,7 +7,9 @@ import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 
 function windowBadge(w: UnitAvailabilityWindow) {
     if (w.type === "sold")     return <Badge variant="destructive">Sold</Badge>;
@@ -28,9 +30,10 @@ function statusBadge(status: string) {
     }
 }
 
+const CALENDAR_DATE_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "short", year: "numeric"};
+
 function fmtDate(iso: string | undefined) {
-    if (!iso) return "—";
-    return new Date(iso).toLocaleDateString("en-GB", {day: "2-digit", month: "short", year: "numeric"});
+    return formatDate(iso, {format: CALENDAR_DATE_FORMAT}) || "—";
 }
 
 function UnitAvailabilityCalendar({}: WithLanguageType) {
@@ -54,8 +57,8 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
                 dateTo,
             });
             setData(res.data?.data ?? null);
-        } catch (e: any) {
-            setError(e?.response?.data?.message ?? "Failed to load availability data");
+        } catch (e) {
+            setError(handleError(e, {context: "AvailabilityCalendar"})?.displayMessage ?? "Failed to load availability data");
         } finally {
             setLoading(false);
         }

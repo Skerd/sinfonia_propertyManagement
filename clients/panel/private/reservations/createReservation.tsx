@@ -9,7 +9,7 @@ import {CreateReservationFormType} from "armonia/src/modules/propertyManagement/
 import {useSelector} from "react-redux";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {IconSquarePlus2} from "@tabler/icons-react";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";

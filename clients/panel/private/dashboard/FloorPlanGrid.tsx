@@ -3,11 +3,12 @@ import {useNavigate} from "react-router-dom";
 import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import {ArrowLeftRight, ArrowRightLeft} from "lucide-react";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 
 const STATUS_CLASS: Record<string, string> = {
@@ -114,7 +115,7 @@ export function FloorPlanGrid({
                 }
             })
             .catch((error) => {
-                console.error("Error loading edifice:", error);
+                handleError(error, {context: "FloorPlanGrid"});
                 setShowOverlay("blocks");
             })
             .finally(() => setLoadingEdifice(false));

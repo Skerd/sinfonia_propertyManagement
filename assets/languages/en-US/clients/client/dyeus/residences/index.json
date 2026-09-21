@@ -26,6 +26,7 @@
   "sortNameAsc": "Name",
   "statusAvailable": "Available",
   "statusSold": "Sold",
+  "statusUnavailable": "Unavailable",
   "statusReserved": "Reserved",
   "statusAll": "All",
   "emptyUnits": "No units match this filter.",

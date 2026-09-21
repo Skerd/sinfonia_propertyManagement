@@ -1,6 +1,6 @@
 import {IconBackhoe} from "@tabler/icons-react";
 import {z} from "zod";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createConstructorFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/createConstructor.form.validator.ts";
 import type {CreateConstructorFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.schema-def.ts";
 

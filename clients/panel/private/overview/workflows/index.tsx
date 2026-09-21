@@ -1,14 +1,19 @@
 import { compose } from "redux";
-import {formatNumber} from "@coreModule/helpers/general";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {
+  GRID_KPI,
+  DASHBOARD_TAB_STACK,
+  DASHBOARD_TAB_INTRO,
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import { ActionException } from "armonia/src/modules/core/types";
 import { Badge } from "@coreModule/components/ui/badge.tsx";
 import { IconAlertCircle, IconFileCheck, IconFileText } from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
+import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 
@@ -21,7 +26,15 @@ type WorkflowsTabProps = WithLanguageType & {
   viewEntriesLabel: string;
 };
 
-function WorkflowsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh, drillDownContext, viewEntriesLabel }: WorkflowsTabProps) {
+function WorkflowsTab({
+  resolveLanguageKey,
+  dashboardData,
+  loading,
+  error,
+  onRefresh,
+  drillDownContext,
+  viewEntriesLabel,
+}: WorkflowsTabProps) {
   if (loading) return <Loader />;
   if (error) {
     return (
@@ -44,56 +57,65 @@ function WorkflowsTab({ resolveLanguageKey, dashboardData, loading, error, onRef
   const ctx = drillDownContext;
   const link = viewEntriesLabel;
 
+  const inspectionStatusLabel = (status: string) =>
+    resolveLanguageKey(`inspectionStatus.${status}`, true) ?? status;
+  const modificationRequestStatusLabel = (status: string) =>
+    resolveLanguageKey(`modificationRequestStatus.${status}`, true) ?? status;
+
   return (
-    <div className="flex flex-col gap-3">
-      <div>
-        <h2 className="text-sm font-semibold mb-1">{resolveLanguageKey("title")}</h2>
-        <p className="text-muted-foreground text-xs">{resolveLanguageKey("description")}</p>
+    <div className={DASHBOARD_TAB_STACK}>
+      <div className={DASHBOARD_TAB_INTRO}>
+        <h2 className="text-sm font-semibold">{resolveLanguageKey("title")}</h2>
+        <p className="text-xs text-muted-foreground">{resolveLanguageKey("description")}</p>
       </div>
 
-      <div>
-        <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("inspectionsSection")}</h3>
+      <DashboardKpiSection
+        title={resolveLanguageKey("inspectionsSection")}
+        description={resolveLanguageKey("inspectionsSectionDesc")}
+      >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalInspections")} value={formatNumber(totalInspections)} subtitle={resolveLanguageKey("totalInspectionsDesc")} icon={IconFileCheck as never} href={kpi.kpiTotalInspections(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("followUpRequired")} value={formatNumber(followUpRequiredCount)} subtitle={resolveLanguageKey("followUpRequiredDesc")} icon={IconAlertCircle as never} variant="warning" href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalInspections")} value={formatNumber(totalInspections)} subtitle={resolveLanguageKey("totalInspectionsDesc")} icon={IconFileCheck} href={kpi.kpiTotalInspections(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("followUpRequired")} value={formatNumber(followUpRequiredCount)} subtitle={resolveLanguageKey("followUpRequiredDesc")} icon={IconAlertCircle} variant="warning" href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
         </div>
-        {Object.keys(inspectionsByStatus).length > 0 && (
-          <div className="mt-3">
-            <p className="text-muted-foreground text-2xs font-medium mb-1.5">
+        {Object.keys(inspectionsByStatus).length > 0 ? (
+          <div className="flex flex-col gap-1.5">
+            <p className="text-2xs font-medium text-muted-foreground">
               {resolveLanguageKey("inspectionsByStatus")}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {Object.entries(inspectionsByStatus).map(([status, count]) => (
                 <Badge key={status} variant="outline" className="text-2xs font-medium">
-                  {status}: {count}
+                  {inspectionStatusLabel(status)}: {count}
                 </Badge>
               ))}
             </div>
           </div>
-        )}
-      </div>
+        ) : null}
+      </DashboardKpiSection>
 
-      <div>
-        <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("modificationRequestsSection")}</h3>
+      <DashboardKpiSection
+        title={resolveLanguageKey("modificationRequestsSection")}
+        description={resolveLanguageKey("modificationRequestsSectionDesc")}
+      >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalModificationRequests")} value={formatNumber(totalModificationRequests)} subtitle={resolveLanguageKey("totalModificationRequestsDesc")} icon={IconFileText as never} href={kpi.kpiTotalModificationRequests(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("openModificationRequests")} value={formatNumber(openModificationRequests)} subtitle={resolveLanguageKey("openModificationRequestsDesc")} icon={IconFileText as never} variant="warning" href={kpi.kpiOpenModificationRequests(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalModificationRequests")} value={formatNumber(totalModificationRequests)} subtitle={resolveLanguageKey("totalModificationRequestsDesc")} icon={IconFileText} href={kpi.kpiTotalModificationRequests(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("openModificationRequests")} value={formatNumber(openModificationRequests)} subtitle={resolveLanguageKey("openModificationRequestsDesc")} icon={IconFileText} variant="warning" href={kpi.kpiOpenModificationRequests(ctx)} linkLabel={link} />
         </div>
-        {Object.keys(modificationRequestsByStatus).length > 0 && (
-          <div className="mt-3">
-            <p className="text-muted-foreground text-2xs font-medium mb-1.5">
+        {Object.keys(modificationRequestsByStatus).length > 0 ? (
+          <div className="flex flex-col gap-1.5">
+            <p className="text-2xs font-medium text-muted-foreground">
               {resolveLanguageKey("modificationRequestsByStatus")}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {Object.entries(modificationRequestsByStatus).map(([status, count]) => (
                 <Badge key={status} variant="outline" className="text-2xs font-medium">
-                  {status}: {count}
+                  {modificationRequestStatusLabel(status)}: {count}
                 </Badge>
               ))}
             </div>
           </div>
-        )}
-      </div>
+        ) : null}
+      </DashboardKpiSection>
     </div>
   );
 }

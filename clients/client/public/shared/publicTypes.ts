@@ -44,7 +44,7 @@ export type MarketingProject = {
     socialLinks?: {name: string; link: string; logo?: string}[];
 };
 
-export type MarketingUnitStatus = "available" | "reserved" | "sold";
+export type MarketingUnitStatus = "available" | "reserved" | "sold" | "unavailable";
 
 export type MarketingUnitListItem = {
     _id: string;

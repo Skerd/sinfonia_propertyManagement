@@ -46,6 +46,7 @@
   "filterAvailable": "Disponible",
   "filterSold": "Vendu",
   "filterReserved": "Réservé",
+  "filterUnavailable": "Indisponible",
   "filterAll": "Tous",
   "noUnitsOnFloor": "Aucune unité ne correspond à ce filtre à l'étage sélectionné.",
   "areaLabel": "Surface",

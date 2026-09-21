@@ -46,5 +46,11 @@
   "rentOverdue": "Überfällige Miete",
   "rentOverdueDesc": "Überfälliger Restbetrag nach Währung",
   "activeLeases": "Aktive Mietverträge",
-  "activeLeasesDesc": "Derzeit aktive Mietverträge"
+  "activeLeasesDesc": "Derzeit aktive Mietverträge",
+  "paymentPlansSection": "Zahlungspläne",
+  "paymentPlansSectionDesc": "Einheiten, aktive Pläne und offene Salden.",
+  "rentalsSection": "Vermietungen",
+  "rentalsSectionDesc": "Eingezogene, offene und überfällige Miete.",
+  "portfolioSection": "Portfolio",
+  "portfolioSectionDesc": "Struktur, Belegung und Follow-up."
 }

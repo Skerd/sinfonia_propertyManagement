@@ -19,5 +19,10 @@
   "avgFloorsPerEdifice": "Avg. floors per edifice",
   "avgFloorsPerEdificeDesc": "Total floors ÷ edifices",
   "projectCards": "Projects",
-  "createProject": "Create project"
+  "createProject": "Create project",
+  "structureSection": "Structure",
+  "structureSectionDesc": "Projects, edifices, floors and units.",
+  "performanceSection": "Performance",
+  "performanceSectionDesc": "Sales pace and averages across the portfolio.",
+  "projectCardsDesc": "Open a project to drill into its edifices."
 }

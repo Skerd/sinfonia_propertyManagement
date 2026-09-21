@@ -1,6 +1,6 @@
 import {useEffect, useState, useMemo} from "react";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {compose} from "redux";
 import type {DashboardFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import type {DashboardFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.type.ts";
@@ -13,8 +13,8 @@ import {IconCoin, IconStack, IconTrendingUp, IconWallet, IconKey} from "@tabler/
 import AllUnits from "@propertyManagementModule/clients/panel/private/units";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
@@ -29,7 +29,8 @@ import {
     DashboardPeriodToolbar,
 } from "@propertyManagementModule/components/custom/dashboard/DashboardPeriodToolbar.tsx";
 import {DashboardWidgetEmpty} from "@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
@@ -101,7 +102,7 @@ function RealEstateDashboard({
         return buildDrillDownContextFromPeriod(f.from ?? "", f.to ?? "", selectedEdifice);
     }, [periodKey, selectedEdifice]);
 
-    const viewEntriesLabel = resolveLanguageKey("viewEntries") as string;
+    const viewEntriesLabel = resolveLanguageKey("viewEntries");
     const hasData = !!dashboardData?.summary;
 
     if (accessHydrated === false) return <Loader/>;
@@ -128,12 +129,12 @@ function RealEstateDashboard({
                     periodKey={periodKey}
                     onPeriodChange={handlePeriodChange}
                     onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}))}
-                    periodLabel={resolveLanguageKey("period") as string}
-                    periodLast7Days={resolveLanguageKey("periodLast7Days") as string}
-                    periodLast30Days={resolveLanguageKey("periodLast30Days") as string}
-                    periodLast3Months={resolveLanguageKey("periodLast3Months") as string}
-                    periodLast12Months={resolveLanguageKey("periodLast12Months") as string}
-                    refreshLabel={resolveLanguageKey("refresh") as string}
+                    periodLabel={resolveLanguageKey("period")}
+                    periodLast7Days={resolveLanguageKey("periodLast7Days")}
+                    periodLast30Days={resolveLanguageKey("periodLast30Days")}
+                    periodLast3Months={resolveLanguageKey("periodLast3Months")}
+                    periodLast12Months={resolveLanguageKey("periodLast12Months")}
+                    refreshLabel={resolveLanguageKey("refresh")}
                 />
             </Header>
 
@@ -156,7 +157,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("totalUnits") ?? "Total Units"}
                                 value={formatNumber(totalUnits)}
-                                icon={IconStack as never}
+                                icon={IconStack}
                                 href={kpi.kpiUnitsTotal(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
                             />
@@ -164,7 +165,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("unitsSold") ?? "Sold"}
                                 value={formatNumber(unitsSold)}
-                                icon={IconTrendingUp as never}
+                                icon={IconTrendingUp}
                                 variant="success"
                                 href={kpi.kpiUnitsSold(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
@@ -173,7 +174,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("collected") ?? "Collected"}
                                 value={formatCurrency(collectedAmount)}
-                                icon={IconWallet as never}
+                                icon={IconWallet}
                                 variant="primary"
                                 href={kpi.kpiCollected(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
@@ -182,7 +183,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("avgPricePerSqm") ?? "Avg €/m²"}
                                 value={formatCurrency(avgPricePerSqm)}
-                                icon={IconCoin as never}
+                                icon={IconCoin}
                                 href={kpi.kpiAvgPricePerSqm(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
                             />
@@ -193,7 +194,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("rentCollected") ?? "Rent collected"}
                                 value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")}
-                                icon={IconWallet as never}
+                                icon={IconWallet}
                                 variant="success"
                                 href="/realEstate/rentalsHub"
                                 linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
@@ -202,7 +203,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("rentOutstanding") ?? "Rent outstanding"}
                                 value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")}
-                                icon={IconWallet as never}
+                                icon={IconWallet}
                                 variant="warning"
                                 href="/realEstate/rentalsHub"
                                 linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
@@ -211,7 +212,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("rentOverdue") ?? "Rent overdue"}
                                 value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")}
-                                icon={IconWallet as never}
+                                icon={IconWallet}
                                 variant="danger"
                                 href="/realEstate/rentalsHub"
                                 linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
@@ -220,7 +221,7 @@ function RealEstateDashboard({
                                 compact
                                 title={resolveLanguageKey("activeLeases") ?? "Active leases"}
                                 value={formatNumber(summary?.rentals?.activeLeases ?? 0)}
-                                icon={IconKey as never}
+                                icon={IconKey}
                                 href="/realEstate/rentalsHub"
                                 linkLabel={String(resolveLanguageKey("viewRentalsHub") ?? viewEntriesLabel)}
                             />
@@ -265,11 +266,14 @@ function RealEstateDashboard({
                     </>
                 )}
 
-                <div className="mt-8 flex min-h-dvh flex-col">
-                    <div className="flex min-h-0 flex-1 flex-col">
-                        <AllUnits showHeader={false} edificeId={selectedEdifice?._id}/>
+                {
+                    !!selectedEdifice?._id &&
+                    <div className="mt-8 flex min-h-dvh flex-col">
+                        <div className="flex min-h-0 flex-1 flex-col">
+                            <AllUnits showHeader={false} edificeId={selectedEdifice?._id}/>
+                        </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
     );

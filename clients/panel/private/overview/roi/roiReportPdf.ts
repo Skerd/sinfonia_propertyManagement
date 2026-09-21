@@ -3,8 +3,9 @@
  */
 
 import {jsPDF} from "jspdf";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {formatDate} from "@coreModule/helpers/general";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
 import type {RoiProjectSummary, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 
@@ -142,13 +143,13 @@ function ensureY(doc: jsPDF, y: number, needMm: number): number {
 
 function fmtMoney(n?: number | null, symbol?: string): string {
     if (n === undefined || n === null || !Number.isFinite(n)) return "—";
-    const base = n.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    const base = formatNumber(n, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     return symbol ? `${base} ${symbol}` : base;
 }
 
 function fmtPct(n?: number | null): string {
     if (n === undefined || n === null || !Number.isFinite(n)) return "—";
-    return `${n.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
+    return `${formatNumber(n, {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
 }
 
 function statusLabel(status: string): string {

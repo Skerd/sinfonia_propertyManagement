@@ -5,4 +5,4 @@
  * Re-exported rather than renamed at ~60 call sites in one commit; prefer the
  * core path in new code.
  */
-export * from "@coreModule/components/custom/cards/entityCard.constants.ts";
+export * from "@coreModule/components/entityPage/list/entityCard.constants.ts";

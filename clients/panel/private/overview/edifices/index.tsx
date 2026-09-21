@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
-import {formatNumber} from "@coreModule/helpers/general";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {
+  GRID_KPI,
+  DASHBOARD_TAB_STACK,
+  DASHBOARD_TAB_INTRO,
+  DASHBOARD_ENTITY_GRID,
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import { useNavigate } from "react-router-dom";
 import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import type { Edifice } from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import { ActionException } from "armonia/src/modules/core/types";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import { DashboardEdificeCard } from "@propertyManagementModule/components/custom/dashboard/edificeCard.tsx";
+import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import { Building2, Layers, Package, CalendarClock, TrendingUp, Ban, KeyRound } from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
@@ -79,22 +85,29 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
   const link = viewEntriesLabel;
 
   return (
-    <div className="flex flex-col gap-y-3">
-      <div>
-        <h2 className="text-sm font-semibold mb-1">{resolveLanguageKey("title")}</h2>
-        <p className="text-muted-foreground text-xs">{resolveLanguageKey("description")}</p>
+    <div className={DASHBOARD_TAB_STACK}>
+      <div className={DASHBOARD_TAB_INTRO}>
+        <h2 className="text-sm font-semibold">{resolveLanguageKey("title")}</h2>
+        <p className="text-xs text-muted-foreground">{resolveLanguageKey("description")}</p>
       </div>
 
-      <div className={GRID_KPI}>
-        <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={Building2} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("avgUnitsPerEdifice")} value={avgUnitsPerEdifice} subtitle={resolveLanguageKey("avgUnitsPerEdificeDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-      </div>
+      <DashboardKpiSection
+        title={resolveLanguageKey("structureSection")}
+        description={resolveLanguageKey("structureSectionDesc")}
+      >
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={Building2} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("avgUnitsPerEdifice")} value={avgUnitsPerEdifice} subtitle={resolveLanguageKey("avgUnitsPerEdificeDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+        </div>
+      </DashboardKpiSection>
 
-      <div>
-        <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("unitsByStatus")}</h3>
+      <DashboardKpiSection
+        title={resolveLanguageKey("unitsByStatus")}
+        description={resolveLanguageKey("unitsByStatusDesc")}
+      >
         <div className={GRID_KPI}>
           <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} icon={Package} href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} icon={CalendarClock} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
@@ -102,16 +115,18 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
           <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} icon={Ban} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
         </div>
-      </div>
+      </DashboardKpiSection>
 
-      <div>
-        <h3 className="text-xs font-medium mb-2">{resolveLanguageKey("edificeCards")}</h3>
+      <DashboardKpiSection
+        title={resolveLanguageKey("edificeCards")}
+        description={resolveLanguageKey("edificeCardsDesc")}
+      >
         {edificesLoading ? (
           <Loader />
         ) : edificesError ? (
-          <p className="text-muted-foreground text-xs">{resolveLanguageKey("failDescription")}</p>
+          <p className="text-xs text-muted-foreground">{resolveLanguageKey("failDescription")}</p>
         ) : (
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={DASHBOARD_ENTITY_GRID}>
             {edifices.map((edifice) => (
               <DashboardEdificeCard
                 key={edifice._id}
@@ -128,7 +143,7 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
             ))}
           </div>
         )}
-      </div>
+      </DashboardKpiSection>
     </div>
   );
 }

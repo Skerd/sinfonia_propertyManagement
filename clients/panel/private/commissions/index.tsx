@@ -7,7 +7,7 @@ import CommissionCard from "@propertyManagementModule/clients/panel/private/comm
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
 import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionWorkflowDialogs.tsx";
 import CommissionSheetView from "@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -16,14 +16,14 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
             asExtraParam: true,
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
@@ -31,7 +31,7 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "floor",
-            label: resolveLanguageKey("fields.floor") as string,
+            label: resolveLanguageKey("fields.floor"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/floor/select",
             dependsOn: ["edifice", "project"],
@@ -39,7 +39,7 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "unit",
-            label: resolveLanguageKey("fields.unit") as string,
+            label: resolveLanguageKey("fields.unit"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
             dependsOn: ["floor", "edifice", "project"],
@@ -47,32 +47,32 @@ function AllCommissions({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "status",
-            label: resolveLanguageKey("statusLabel") as string,
+            label: resolveLanguageKey("statusLabel"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "pending",            label: resolveLanguageKey("fields.!enums.status.pending")  as string},
-                {value: "pending_approval",   label: resolveLanguageKey("fields.!enums.status.pending_approval") as string},
-                {value: "approved",           label: resolveLanguageKey("fields.!enums.status.approved") as string},
-                {value: "paid",               label: resolveLanguageKey("fields.!enums.status.paid")     as string},
-                {value: "voided",             label: resolveLanguageKey("fields.!enums.status.voided")   as string},
+                {value: "pending",            label: resolveLanguageKey("fields.!enums.status.pending")},
+                {value: "pending_approval",   label: resolveLanguageKey("fields.!enums.status.pending_approval")},
+                {value: "approved",           label: resolveLanguageKey("fields.!enums.status.approved")},
+                {value: "paid",               label: resolveLanguageKey("fields.!enums.status.paid")},
+                {value: "voided",             label: resolveLanguageKey("fields.!enums.status.voided")},
             ],
         },
         {
             field: "sourceType",
-            label: resolveLanguageKey("fields.sourceType") as string,
+            label: resolveLanguageKey("fields.sourceType"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "sale",        label: resolveLanguageKey("fields.!enums.sourceType.sale")        as string},
-                {value: "reservation", label: resolveLanguageKey("fields.!enums.sourceType.reservation") as string},
+                {value: "sale",        label: resolveLanguageKey("fields.!enums.sourceType.sale")},
+                {value: "reservation", label: resolveLanguageKey("fields.!enums.sourceType.reservation")},
             ],
         },
         {
             field: "basis",
-            label: resolveLanguageKey("fields.basis") as string,
+            label: resolveLanguageKey("fields.basis"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "depositAmount", label: resolveLanguageKey("fields.!enums.basis.depositAmount") as string},
-                {value: "finalPrice",    label: resolveLanguageKey("fields.!enums.basis.finalPrice")   as string},
+                {value: "depositAmount", label: resolveLanguageKey("fields.!enums.basis.depositAmount")},
+                {value: "finalPrice",    label: resolveLanguageKey("fields.!enums.basis.finalPrice")},
             ],
         },
     ], [resolveLanguageKey]);

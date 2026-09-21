@@ -8,8 +8,8 @@ import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import UnitCostSheetView from "@propertyManagementModule/clients/panel/private/unitCosts/center/sheetView/unitCostSheetView.tsx";
 import {buildUnitCostEditPath} from "@propertyManagementModule/clients/panel/private/unitCosts/unitCostEditPath.ts";
 import UnitCostInvoicePdfActionMenuItem from "@propertyManagementModule/components/custom/unitCosts/unitCostInvoicePdfActionMenuItem.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -89,7 +89,7 @@ function UnitCostCard({
                         <UnitCostInvoicePdfActionMenuItem entity={entity as Record<string, unknown>} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconTag}
                             label={resolveLanguageKey("verificationStatus")}
                             tooltip={resolveLanguageKey("verificationStatus")}
@@ -98,7 +98,7 @@ function UnitCostCard({
                             languageKeyCategory="unitCostVerification"
                             value={entity.verificationStatus || "pending_verification"}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCashBanknote}
                             label={resolveLanguageKey("paymentStatus")}
                             tooltip={resolveLanguageKey("paymentStatus")}
@@ -109,7 +109,7 @@ function UnitCostCard({
                         />
                         {!small && (
                             <>
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconCalendar}
                                     label={resolveLanguageKey("purchaseDate")}
                                     tooltip={resolveLanguageKey("purchaseDate")}
@@ -117,7 +117,7 @@ function UnitCostCard({
                                     type="date"
                                     value={entity.purchaseDate}
                                 />
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconUser}
                                     label={resolveLanguageKey("purchasePerson")}
                                     tooltip={resolveLanguageKey("purchasePerson")}
@@ -125,21 +125,21 @@ function UnitCostCard({
                                     type="user"
                                     value={entity.purchasePerson}
                                 />
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconBuilding}
                                     label={resolveLanguageKey("vendorName")}
                                     tooltip={resolveLanguageKey("vendorName")}
                                     path="vendorName"
                                     value={entity.vendorName}
                                 />
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconTool}
                                     label={resolveLanguageKey("relatedModificationRequest")}
                                     tooltip={resolveLanguageKey("relatedModificationRequest")}
                                     path="relatedModificationRequest.name"
                                     value={entity.relatedModificationRequest?.name}
                                 />
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconCashBanknote}
                                     label={resolveLanguageKey("documentSubtotal")}
                                     tooltip={resolveLanguageKey("documentSubtotal")}
@@ -148,7 +148,7 @@ function UnitCostCard({
                                     value={{amount: entity.documentSubtotal, currency: entity.currency}}
                                 />
                                 {entity.budgetedAmount != null && (
-                                    <DisplayRow
+                                    <EntityCardRow
                                         icon={IconCashBanknote}
                                         label={resolveLanguageKey("budgetedAmount")}
                                         tooltip={resolveLanguageKey("budgetedAmount")}

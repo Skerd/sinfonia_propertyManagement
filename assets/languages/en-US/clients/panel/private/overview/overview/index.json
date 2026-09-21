@@ -52,5 +52,9 @@
   "noRecentSales": "No recent sales.",
   "unitLabel": "Unit",
   "failTitle": "Error",
-  "failDescription": "Could not load dashboard. Click to retry."
+  "failDescription": "Could not load dashboard. Click to retry.",
+  "primaryKpisDesc": "Revenue, reservations and sales for the selected period.",
+  "financialKpisDesc": "Pricing, inventory value and payment mix.",
+  "unitCostsKpisDesc": "Verified procurement and cost documents in scope.",
+  "operationsKpisDesc": "Inspections, modifications and reservation pipeline."
 }

@@ -46,5 +46,11 @@
   "rentOverdue": "Loyer en retard",
   "rentOverdueDesc": "Restant en retard par devise",
   "activeLeases": "Baux actifs",
-  "activeLeasesDesc": "Baux actuellement actifs"
+  "activeLeasesDesc": "Baux actuellement actifs",
+  "paymentPlansSection": "Plans de paiement",
+  "paymentPlansSectionDesc": "Unités, plans actifs et soldes restants.",
+  "rentalsSection": "Locations",
+  "rentalsSectionDesc": "Loyers encaissés, restants et en retard.",
+  "portfolioSection": "Portefeuille",
+  "portfolioSectionDesc": "Structure, occupation et suivi."
 }

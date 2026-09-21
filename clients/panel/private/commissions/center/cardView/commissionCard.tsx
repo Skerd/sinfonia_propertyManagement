@@ -7,9 +7,9 @@ import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/pri
 import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionWorkflowDialogs.tsx";
 import CommissionSheetView, {commissionConfirmLabel} from "@propertyManagementModule/clients/panel/private/commissions/center/sheetView/commissionSheetView.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -20,7 +20,7 @@ import {
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
-} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
 
@@ -189,7 +189,7 @@ function CommissionCard({
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />
                         )}
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCurrencyDollar}
                                 label={resolveLanguageKey("amount")}
                                 tooltip={resolveLanguageKey("amount")}
@@ -197,7 +197,7 @@ function CommissionCard({
                                 type="currency"
                                 value={{amount: entity.amount, currency: entity.currency}}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconHome}
                                 label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
@@ -206,7 +206,7 @@ function CommissionCard({
                                 value={entity.unit?.name ?? entity.unit?.unitNumber}
                             />
                             <div className="col-span-2">
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconCurrencyDollar}
                                     label={resolveLanguageKey(
                                         entity.sourceType === "reservation"

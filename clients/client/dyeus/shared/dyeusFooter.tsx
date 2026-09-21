@@ -7,7 +7,7 @@ import {
     useDyeusT,
     type DyeusTranslate,
 } from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const FOOTER_LANGUAGE_PATH =

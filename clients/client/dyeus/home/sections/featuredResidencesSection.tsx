@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {
     useDyeusT,
@@ -26,6 +26,7 @@ const STATUS_KEYS: Record<MarketingUnitStatus, string> = {
     available: "statusAvailable",
     reserved: "statusReserved",
     sold: "statusSold",
+    unavailable: "statusUnavailable",
 };
 
 const BEDROOM_KEYS: Record<number, string> = {

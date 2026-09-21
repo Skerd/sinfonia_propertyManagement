@@ -1,4 +1,4 @@
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import AddLeadActivity from "@propertyManagementModule/clients/panel/private/leads/center/actions/addActivity.tsx";
 import MarkContactedLead from "@propertyManagementModule/clients/panel/private/leads/center/actions/markContacted.tsx";

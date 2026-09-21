@@ -29,5 +29,12 @@
   "totalUnitCostDocuments": "Documenti costi",
   "totalUnitCostDocumentsShortDesc": "Documenti costi registrati nell'ambito della dashboard",
   "unitStatusBreakdown": "Stato unità",
-  "unitsList": "Elenco unità"
+  "unitsList": "Elenco unità",
+  "statusSection": "Stato unità",
+  "statusSectionDesc": "Conteggi per disponibilità e stato di affitto.",
+  "portfolioSection": "Salute del portafoglio",
+  "portfolioSectionDesc": "Occupazione, valore inventario e prenotazioni.",
+  "costsSection": "Costi unità",
+  "costsSectionDesc": "Totali di approvvigionamento verificati in ambito.",
+  "unitsListDesc": "Sfoglia e apri le singole unità."
 }

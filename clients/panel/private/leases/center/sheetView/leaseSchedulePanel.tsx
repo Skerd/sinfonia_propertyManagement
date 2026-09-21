@@ -2,13 +2,13 @@ import {useCallback, useEffect, useMemo, useState} from "react";
 import {format} from "date-fns";
 import {MoreHorizontal} from "lucide-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@coreModule/components/ui/dropdown-menu.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {TableForm, TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
@@ -21,6 +21,7 @@ import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/cu
 import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
@@ -35,7 +36,7 @@ type LeaseSchedulePanelProps = {
 
 function money(value: number | undefined, symbol?: string): string {
     if (value == null) return "—";
-    const n = value.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    const n = formatNumber(value, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     return symbol ? `${n} ${symbol}` : n;
 }
 
@@ -234,14 +235,14 @@ export default function LeaseSchedulePanel({
                                                     <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>
                                                         <MarkRentalPaymentPaid
                                                             payment={row}
-                                                            onAction={(next) => {
+                                                            onAction={(next: string) => {
                                                                 setSelected(row);
                                                                 setAction(next);
                                                             }}
                                                         />
                                                         <WaiveRentalPayment
                                                             payment={row}
-                                                            onAction={(next) => {
+                                                            onAction={(next: string) => {
                                                                 setSelected(row);
                                                                 setAction(next);
                                                             }}

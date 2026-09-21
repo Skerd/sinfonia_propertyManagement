@@ -67,7 +67,7 @@ import CreateInspectionChecklistTemplate from "@propertyManagementModule/clients
 import EditInspectionChecklistTemplate from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx";
 import ErpExport from "@propertyManagementModule/clients/panel/private/erpExport/erpExport.tsx";
 import GroupDashboard from "@propertyManagementModule/clients/panel/private/groupDashboard/groupDashboard.tsx";
-import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/clients/panel/moduleContributions/routeConfigContribution.types.ts";
+import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/helpers/types/routeConfigContribution.types.ts";
 
 function safeDecode(value: string | null): string | undefined {
     if (value == null || value === "") return undefined;
@@ -155,14 +155,6 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
         const saleId = searchParams.get("saleId") || undefined;
         const unitCostId = searchParams.get("unitCostId") || undefined;
         const unitCostName = safeDecode(searchParams.get("unitCostName")) || undefined;
-        const snagId = searchParams.get("snagId") || undefined;
-        const snagName = safeDecode(searchParams.get("snagName")) || undefined;
-        const projectDocumentId = searchParams.get("projectDocumentId") || undefined;
-        const projectDocumentName = safeDecode(searchParams.get("projectDocumentName")) || undefined;
-        const permitId = searchParams.get("permitId") || undefined;
-        const permitName = safeDecode(searchParams.get("permitName")) || undefined;
-        const constructionUpdateId = searchParams.get("constructionUpdateId") || undefined;
-        const constructionUpdateName = safeDecode(searchParams.get("constructionUpdateName")) || undefined;
         const storyId = searchParams.get("storyId") || undefined;
         const storyName = safeDecode(searchParams.get("storyName")) || undefined;
         const leadId = searchParams.get("leadId") || undefined;

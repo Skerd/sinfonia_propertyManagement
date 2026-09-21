@@ -8,7 +8,7 @@ import {Calendar, CalendarDayButton} from "@coreModule/components/ui/calendar.ts
 import {Card, CardContent, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import {ScrollArea} from "@coreModule/components/ui/scroll-area.tsx";
 import {Skeleton} from "@coreModule/components/ui/skeleton.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {RentalPaymentRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.payment.dto.ts";
 import type {RentalsCalendarFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.form.type.ts";

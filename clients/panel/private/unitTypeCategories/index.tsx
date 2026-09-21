@@ -5,7 +5,7 @@ import {IconTag} from "@tabler/icons-react";
 import {UnitTypeCategory} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitTypeCategory/unitTypeCategory.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import UnitTypeCategoryCard from "@propertyManagementModule/clients/panel/private/unitTypeCategories/center/cardView/unitTypeCategoryCard.tsx";
-import EntityListPage from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 
 function unitTypeCategoryEditPath(category: UnitTypeCategory) {

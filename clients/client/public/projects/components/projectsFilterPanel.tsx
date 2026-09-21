@@ -141,7 +141,7 @@ function ProjectsFilterPanel({
                             type="button"
                             onClick={onClose}
                             className="flex size-9 items-center justify-center rounded-[5px] border border-pronix-border transition duration-200 hover:border-pronix-ink hover:bg-pronix-ink/5 hover:shadow-sm"
-                            aria-label={resolveLanguageKey("filterClose") as string}
+                            aria-label={resolveLanguageKey("filterClose")}
                             data-node-id="268:395"
                         >
                             <img alt="" aria-hidden className="size-6" src={projectsAssets.filterClose} />
@@ -260,7 +260,7 @@ function ProjectsFilterPanel({
                                     inputMode="decimal"
                                     value={draft.areaSqm}
                                     onChange={(event) => patchDraft({areaSqm: event.target.value})}
-                                    placeholder={resolveLanguageKey("filterAreaPlaceholder") as string}
+                                    placeholder={resolveLanguageKey("filterAreaPlaceholder")}
                                     className="min-w-0 flex-1 border-0 bg-transparent font-aeonik-light text-base text-pronix-ink not-italic outline-none md:text-lg"
                                 />
                                 <img

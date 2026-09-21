@@ -4,11 +4,13 @@
   "dialogDescription": "Ngarko një broshurë PDF për të gjeneruar automatikisht kate dhe njësi për këtë ndërtesë.",
   "warningMessage": "Ky veprim mund të zgjasë deri në 1 minutë për t'u përfunduar, ju lutemi mos e mbyllni këtë dritare derisa të përfundoni!",
   "fileLabel": "Broshura PDF",
+  "addFile": "Shto PDF",
   "cancel": "Anulo",
   "generate": "Gjeneroni",
   "processing": "Po përpunohet...",
   "noFileSelected": "Ju lutemi zgjidhni një skedar PDF",
   "invalidFileType": "Ju lutemi zgjidhni një skedar të vlefshëm PDF",
+  "fileTooLarge": "PDF është shumë i madh. Madhësia maksimale është 200MB",
   "oldPdfLabel": "PDF i vjetër (prerja e planit në qendër, pa header dhe footer)",
   "axios": {
     "start": {

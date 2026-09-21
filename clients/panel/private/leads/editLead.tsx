@@ -1,5 +1,5 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editLeadFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/editLead.form.validator.ts";
 import type {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import type {EditLeadFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.schema-def.ts";

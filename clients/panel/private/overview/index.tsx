@@ -19,9 +19,10 @@ import {
     buildDashboardFilter,
     DashboardPeriodToolbar,
 } from "@propertyManagementModule/components/custom/dashboard/DashboardPeriodToolbar.tsx";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type DashboardProps = WithLanguageType & WithAxiosType<DashboardFormResponseType, DashboardFormType>
@@ -75,7 +76,7 @@ function Dashboard({
         return { from: f.from, to: f.to };
     }, [periodKey]);
 
-    const viewEntriesLabel = resolveLanguageKey("viewEntries") as string;
+    const viewEntriesLabel = resolveLanguageKey("viewEntries");
     const tabDrillDownProps = { drillDownContext, viewEntriesLabel };
 
     if (accessHydrated === false) return <Loader />;
@@ -92,18 +93,18 @@ function Dashboard({
                     periodKey={periodKey}
                     onPeriodChange={handlePeriodChange}
                     onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
-                    periodLabel={resolveLanguageKey("period") as string}
-                    periodLast7Days={resolveLanguageKey("periodLast7Days") as string}
-                    periodLast30Days={resolveLanguageKey("periodLast30Days") as string}
-                    periodLast3Months={resolveLanguageKey("periodLast3Months") as string}
-                    periodLast12Months={resolveLanguageKey("periodLast12Months") as string}
-                    refreshLabel={resolveLanguageKey("refresh") as string}
+                    periodLabel={resolveLanguageKey("period")}
+                    periodLast7Days={resolveLanguageKey("periodLast7Days")}
+                    periodLast30Days={resolveLanguageKey("periodLast30Days")}
+                    periodLast3Months={resolveLanguageKey("periodLast3Months")}
+                    periodLast12Months={resolveLanguageKey("periodLast12Months")}
+                    refreshLabel={resolveLanguageKey("refresh")}
                 />
             </Header>
 
-            <Tabs value={activeTab} onValueChange={setActiveTab} orientation='horizontal' className='flex flex-col gap-4 flex-full'>
-                <div className="flex-full">
-                    <div className="max-w-full overflow-x-auto min-h-10">
+            <Tabs value={activeTab} onValueChange={setActiveTab} orientation='horizontal' className='mt-4 flex flex-col gap-4 flex-full'>
+                <div className="flex flex-col gap-4 flex-full">
+                    <div className="max-w-full overflow-x-auto min-h-10 shrink-0">
                         <TabsList>
                             <TabsTrigger className="hover:cursor-pointer" value='overview'>{resolveLanguageKey("tabs.overview")}</TabsTrigger>
                             <TabsTrigger className="hover:cursor-pointer" value='analytics'>{resolveLanguageKey("tabs.analytics")}</TabsTrigger>
@@ -113,8 +114,8 @@ function Dashboard({
                             <TabsTrigger className="hover:cursor-pointer" value='workflows'>{resolveLanguageKey("tabs.workflows")}</TabsTrigger>
                         </TabsList>
                     </div>
-                    <div className="flex-full pe-1" ref={ref}>
-                        <TabsContent value='overview' className="">
+                    <div className="flex-full" ref={ref}>
+                        <TabsContent value='overview'>
                             <DashboardOverview
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -123,10 +124,10 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='analytics' className='flex flex-col gap-y-4'>
+                        <TabsContent value='analytics'>
                             <Analytics dashboardData={dashboardData} {...tabDrillDownProps} />
                         </TabsContent>
-                        <TabsContent value='projects' className='flex flex-col gap-y-4'>
+                        <TabsContent value='projects'>
                             <ProjectsTab
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -135,7 +136,7 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='edifices' className='flex flex-col gap-y-4'>
+                        <TabsContent value='edifices'>
                             <EdificesTab
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -144,7 +145,7 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='units' className='flex flex-col gap-y-4'>
+                        <TabsContent value='units'>
                             <UnitsTab
                                 dashboardData={dashboardData}
                                 loading={loading}
@@ -153,7 +154,7 @@ function Dashboard({
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
-                        <TabsContent value='workflows' className='flex flex-col gap-y-4'>
+                        <TabsContent value='workflows'>
                             <WorkflowsTab
                                 dashboardData={dashboardData}
                                 loading={loading}

@@ -20,5 +20,9 @@
   "unavailable": "I padisponueshëm",
   "avgUnitsPerEdifice": "Mesatar njësi për ndërtesë",
   "avgUnitsPerEdificeDesc": "Totali i njësive ÷ ndërtesa",
-  "edificeCards": "Ndërtesat"
+  "edificeCards": "Ndërtesat",
+  "structureSection": "Struktura",
+  "structureSectionDesc": "Ndërtesat, dyshemetë dhe dendësia e njësive.",
+  "unitsByStatusDesc": "Numri i njësive sipas disponueshmërisë.",
+  "edificeCardsDesc": "Hap një ndërtesë për të shkuar te njësitë."
 }

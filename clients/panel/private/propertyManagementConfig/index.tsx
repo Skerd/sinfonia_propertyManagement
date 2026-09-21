@@ -2,9 +2,9 @@ import {compose} from "redux";
 import {useEffect, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import SimpleError from "@coreModule/components/custom/errorViewWrapper.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import SimpleError from "@coreModule/components/custom/errors/errorViewWrapper.tsx";
 import type {PropertyManagementConfig} from "armonia/src/modules/propertyManagement/api/realEstate/private/propertyManagementConfig/propertyManagementConfig.dto.ts";
 import EditPropertyManagementConfig from "@propertyManagementModule/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx";
 

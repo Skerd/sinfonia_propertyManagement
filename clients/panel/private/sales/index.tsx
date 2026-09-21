@@ -4,8 +4,9 @@ import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconCash} from "@tabler/icons-react";
-import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
+import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -27,7 +28,7 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
     const edificeName = searchParams.get("edificeName") || undefined;
 
     const headerTitle = useMemo(
-        () => buildPageTitle(resolveLanguageKey("title") as string, [edificeName, unitName]),
+        () => buildPageTitle(resolveLanguageKey("title"), [edificeName, unitName]),
         [resolveLanguageKey, edificeName, unitName],
     );
 
@@ -44,14 +45,14 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
             asExtraParam: true,
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
@@ -59,7 +60,7 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "floor",
-            label: resolveLanguageKey("fields.floor") as string,
+            label: resolveLanguageKey("fields.floor"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/floor/select",
             dependsOn: ["edifice", "project"],
@@ -67,28 +68,28 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "unit",
-            label: resolveLanguageKey("fields.unit") as string,
+            label: resolveLanguageKey("fields.unit"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
             dependsOn: ["floor", "edifice", "project"],
         },
         {
             field: "paymentType",
-            label: resolveLanguageKey("paymentType") as string,
+            label: resolveLanguageKey("paymentType"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "cash",         label: resolveLanguageKey("fields.!enums.paymentType.cash")         as string},
-                {value: "payment_plan", label: resolveLanguageKey("fields.!enums.paymentType.payment_plan") as string},
+                {value: "cash",         label: resolveLanguageKey("fields.!enums.paymentType.cash")},
+                {value: "payment_plan", label: resolveLanguageKey("fields.!enums.paymentType.payment_plan")},
             ],
         },
         {
             field: "approvalStatus",
-            label: resolveLanguageKey("fields.approvalStatus") as string,
+            label: resolveLanguageKey("fields.approvalStatus"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "pending_approval", label: resolveLanguageKey("fields.!enums.approvalStatus.pending_approval") as string},
-                {value: "approved",         label: resolveLanguageKey("fields.!enums.approvalStatus.approved")         as string},
-                {value: "rejected",         label: resolveLanguageKey("fields.!enums.approvalStatus.rejected")         as string},
+                {value: "pending_approval", label: resolveLanguageKey("fields.!enums.approvalStatus.pending_approval")},
+                {value: "approved",         label: resolveLanguageKey("fields.!enums.approvalStatus.approved")},
+                {value: "rejected",         label: resolveLanguageKey("fields.!enums.approvalStatus.rejected")},
             ],
         },
     ], [resolveLanguageKey]);

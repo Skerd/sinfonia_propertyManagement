@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import type { Unit } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@coreModule/components/ui/form.tsx";
 import { Input } from "@coreModule/components/ui/input.tsx";
 import { Label } from "@coreModule/components/ui/label.tsx";

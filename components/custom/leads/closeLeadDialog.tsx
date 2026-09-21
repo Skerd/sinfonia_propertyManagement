@@ -15,8 +15,8 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {SimpleSelect} from "@coreModule/components/viewEngine/widgets/inputs/simpleSelect.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 import {
     LEAD_CLOSE_OUTCOMES,

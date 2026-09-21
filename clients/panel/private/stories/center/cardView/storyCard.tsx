@@ -7,8 +7,8 @@ import {IconBuilding, IconCalendar, IconLabel, IconStack2} from "@tabler/icons-r
 import {DoorOpen} from "lucide-react";
 import StorySheetView from "@propertyManagementModule/clients/panel/private/stories/center/sheetView/storySheetView.tsx";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -74,35 +74,35 @@ function StoryCard({
                         }
                     />
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconLabel}
                             label={resolveLanguageKey("fields.name")}
                             tooltip={resolveLanguageKey("fields.name")}
                             path="name"
                             value={entity.name}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconBuilding}
                             label={resolveLanguageKey("fields.project")}
                             tooltip={resolveLanguageKey("fields.project")}
                             path="project.name"
                             value={entity.project?.name}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconStack2}
                             label={resolveLanguageKey("fields.edifice")}
                             tooltip={resolveLanguageKey("fields.edifice")}
                             path="edifice.name"
                             value={entity.edifice?.name}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={DoorOpen}
                             label={resolveLanguageKey("fields.unit")}
                             tooltip={resolveLanguageKey("fields.unit")}
                             path="unit"
                             value={entity.unit?.name ?? entity.unit?.unitNumber}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.publishedAt")}
                             tooltip={resolveLanguageKey("fields.publishedAt")}
@@ -110,7 +110,7 @@ function StoryCard({
                             type="date"
                             value={entity.publishedAt}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconLabel}
                             label={resolveLanguageKey("fields.published")}
                             tooltip={resolveLanguageKey("fields.published")}

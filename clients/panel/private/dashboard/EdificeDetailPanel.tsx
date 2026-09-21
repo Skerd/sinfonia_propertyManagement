@@ -4,16 +4,16 @@ import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts
 import type {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import {FloorPlanGrid} from "./FloorPlanGrid.tsx";
-import {UnitDetailCard} from "./UnitDetailCard.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {
     Card,
     CardContent,
     CardHeader,
     CardTitle,
 } from "@coreModule/components/ui/card.tsx";
+import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
 
 export interface EdificeDetailPanelProps extends WithLanguageType {
     edificeId: string;
@@ -31,7 +31,6 @@ function EdificeDetailPanelInner({
 }: EdificeDetailPanelProps) {
     const [floors, setFloors] = useState<Floor[]>([]);
     const [units, setUnits] = useState<Unit[]>([]);
-    const [clicked, setClicked] = useState(0);
     const [selectedUnit, setSelectedUnit] = useState<Unit | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -86,7 +85,7 @@ function EdificeDetailPanelInner({
                                             projectName={projectName}
                                             edificeId={edificeId}
                                             edificeName={edificeName}
-                                            onUnitClick={(unit) => {setSelectedUnit(unit); setClicked(Date.now())}}
+                                            onUnitClick={(unit) => {setSelectedUnit(unit);}}
                                             floorPlanTitle={resolveLanguageKey("floorPlan")}
                                         />
                                     </CardContent>
@@ -95,15 +94,9 @@ function EdificeDetailPanelInner({
                             {
                                 selectedUnit &&
                                 <section className="shrink-0">
-                                    <UnitDetailCard
+                                    <UnitCard
                                         unit={selectedUnit}
-                                        projectId={projectId}
-                                        projectName={projectName}
-                                        edificeId={edificeId}
-                                        edificeName={edificeName}
-                                        onUnitDeleted={() => setSelectedUnit(null)}
-                                        menuOpened={"view"}
-                                        clicked={clicked}
+                                        // fetchId={selectedUnit?._id}
                                     />
                                 </section>
                             }

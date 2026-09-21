@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 import {createCashSaleFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/createSale.form.validator.ts";
 import {CreateCashSaleFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/createSale.form.type.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {salesListPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
@@ -17,15 +17,16 @@ import {z} from "zod";
 import {IconSquarePlus2} from "@tabler/icons-react";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {Card, CardContent, CardFooter, CardHeader} from "@coreModule/components/ui/card.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
 import {AlertCircleIcon} from "lucide-react";
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 export type CashSaleReceiptSectionProps = {
     /** Create and edit cash-sale forms share the watched field names (`unit`, rates, discount, `finalPrice`). */
@@ -215,7 +216,7 @@ export function CashSaleReceiptSection({
                                             <div className="flex justify-between">
                                                 <p className="tracking-wide">{resolveLanguageKey("form.unitPriceLabel")}:</p>
                                                 <p className="font-semibold text-success">
-                                                    {unit?.price?.toLocaleString()} {unit?.priceCurrency?.name}
+                                                    {formatNumber(unit?.price)} {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
                                             {!!reservation && (
@@ -249,7 +250,7 @@ export function CashSaleReceiptSection({
                                                 </p>
                                                 <p className="font-semibold text-destructive">
                                                     -
-                                                    {((Number(localDiscount || 0) / 100) * (unit.price || 0)).toLocaleString()}{" "}
+                                                    {formatNumber((Number(localDiscount || 0) / 100) * (unit.price || 0))}{" "}
                                                     {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
@@ -302,7 +303,7 @@ export function CashSaleReceiptSection({
                                                         </p>
                                                         :
                                                         <>
-                                                            {(finalPrice || 0).toLocaleString()}{" "}
+                                                            {formatNumber(finalPrice || 0)}{" "}
                                                             {currency?.name || currency?.symbol}
                                                         </>
                                                     }

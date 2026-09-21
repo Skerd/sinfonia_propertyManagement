@@ -13,11 +13,11 @@ import {
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {SALE_SHORT_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 
-type RecordTitleTransferDialogProps = WithLanguageType & WithAxiosType<Sale, FormData> & {
+type RecordTitleTransferDialogProps = WithLanguageType & WithAxiosType<Sale> & {
     open: boolean;
     onClose: () => void;
     sale: Sale;

@@ -6,7 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {LeaseRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.lease.dto.ts";
 import type {RentalPaymentRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.payment.dto.ts";
@@ -28,9 +28,10 @@ import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custo
 import LeasesTableSection from "./LeasesTableSection.tsx";
 import RentalPaymentsTableSection from "./RentalPaymentsTableSection.tsx";
 import RentalsCalendarTab from "./rentalsCalendarTab.tsx";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type SheetState =
@@ -144,7 +145,7 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <ReturnDeposit lease={sheet.entity} onAction={setAction} />
                             </>
                         )}
-                        onSheetRowPatched={(row) => patchLease(row as Lease)}
+                        onSheetRowPatched={(row: Partial<Lease>) => patchLease(row as Lease)}
                     />
                     {action === TERMINATE_LEASE_ACTION && (
                         <TerminateLeaseDialog
@@ -196,7 +197,7 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                                 <WaiveRentalPayment payment={sheet.entity} onAction={setAction} />
                             </>
                         )}
-                        onSheetRowPatched={(row) => patchPayment(row as RentalPayment)}
+                        onSheetRowPatched={(row: Partial<RentalPayment>) => patchPayment(row as RentalPayment)}
                     />
                     {action === MARK_RENTAL_PAYMENT_PAID_ACTION && (
                         <MarkRentalPaymentPaidDialog

@@ -1,5 +1,5 @@
 import {IconBuildingPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createEdificeFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/createEdifice.form.validator.ts";
 import type {CreateEdificeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.schema-def.ts";
 

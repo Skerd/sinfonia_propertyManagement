@@ -3,11 +3,11 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {UnitType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/unitType.dto.ts";
 import {IconFolder, IconLock, IconStack2} from "@tabler/icons-react";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import UnitTypeSheetView from "@propertyManagementModule/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -68,21 +68,21 @@ function UnitTypeCard({
                         }
                     />
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconStack2}
                             label={resolveLanguageKey("category")}
                             tooltip={resolveLanguageKey("category")}
                             path="category.name"
                             value={entity.category?.name}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconFolder}
                             label={resolveLanguageKey("group")}
                             tooltip={resolveLanguageKey("group")}
                             path="group"
                             value={entity.group}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconLock}
                             label={resolveLanguageKey("isPrivate")}
                             tooltip={resolveLanguageKey("isPrivate")}

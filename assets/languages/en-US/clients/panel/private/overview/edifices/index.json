@@ -20,5 +20,9 @@
   "unavailable": "Unavailable",
   "avgUnitsPerEdifice": "Avg. units per edifice",
   "avgUnitsPerEdificeDesc": "Total units ÷ edifices",
-  "edificeCards": "Edifices"
+  "edificeCards": "Edifices",
+  "structureSection": "Structure",
+  "structureSectionDesc": "Buildings, floors and unit density.",
+  "unitsByStatusDesc": "Unit counts by availability status.",
+  "edificeCardsDesc": "Open an edifice to drill into its units."
 }

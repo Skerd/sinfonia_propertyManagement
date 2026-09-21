@@ -27,6 +27,7 @@
   "filterAvailable": "Të lira",
   "filterSold": "Të shitura",
   "filterReserved": "Të rezervuara",
+  "filterUnavailable": "Nuk disponohet",
   "filterAll": "Të gjitha",
   "noUnits": "Nuk ka njësi për këtë filtër.",
   "areaLabel": "Sipërfaqja",

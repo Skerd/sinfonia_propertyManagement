@@ -3,8 +3,10 @@
  */
 
 import { jsPDF } from "jspdf";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type { BasicCompanyInfoFormResponseType } from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 export type ExpenditureCostTemplateColumns = {
     item: string;
@@ -134,7 +136,7 @@ function emptyRow(): ExpenditureTemplateRow {
 
 function formatMoney(n: number): string {
     if (!Number.isFinite(n)) return "";
-    return n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return formatNumber(n, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function strEntity(v: unknown): string {
@@ -146,7 +148,7 @@ function formatEntityDate(v: unknown): string {
     if (v == null || v === "") return "";
     if (typeof v === "string") {
         const d = new Date(v);
-        if (!Number.isNaN(d.getTime())) return d.toLocaleDateString();
+        if (!Number.isNaN(d.getTime())) return formatDate(d, {format: DATE_FORMATS.date});
         return v;
     }
     return String(v);

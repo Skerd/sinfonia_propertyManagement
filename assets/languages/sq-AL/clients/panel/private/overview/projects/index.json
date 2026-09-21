@@ -19,5 +19,10 @@
   "avgFloorsPerEdifice": "Mesatar kate për ndërtesë",
   "avgFloorsPerEdificeDesc": "Kate totale ÷ ndërtesa",
   "projectCards": "Projektet",
-  "createProject": "Krijo projekt"
+  "createProject": "Krijo projekt",
+  "structureSection": "Struktura",
+  "structureSectionDesc": "Projekte, ndërtesa, dysheme dhe njësi.",
+  "performanceSection": "Performanca",
+  "performanceSectionDesc": "Ritmi i shitjeve dhe mesataret e portofolit.",
+  "projectCardsDesc": "Hap një projekt për të shkuar te ndërtesat."
 }

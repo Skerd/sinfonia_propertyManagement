@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useEffect, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import CommissionRowMenuExtras from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionRowMenuExtras.tsx";
 import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/private/commissions/center/actions/commissionWorkflowDialogs.tsx";
@@ -10,6 +10,7 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 export type CommissionSheetViewOwnProps = {
     open: boolean;
@@ -23,7 +24,7 @@ export type CommissionSheetViewOwnProps = {
 
 export function commissionConfirmLabel(c: Commission) {
     const a = c.agent;
-    return [a?.name, a?.surname].filter(Boolean).join(" ").trim() || undefined;
+    return getName(a) || undefined;
 }
 
 function CommissionSheetView({
@@ -68,13 +69,13 @@ function CommissionSheetView({
                     : "bg-warning/10 text-warning border-warning/30";
         return (
             <Badge variant="outline" className={cn("text-xs font-medium", className)}>
-                {resolveLanguageKey(`fields.!enums.status.${s}`) as string}
+                {resolveLanguageKey(`fields.!enums.status.${s}`)}
             </Badge>
         );
     };
 
     const st = (asCommission.sourceType || "").toLowerCase();
-    const sourceLabel = resolveLanguageKey(`fields.!enums.sourceType.${st}`) as string;
+    const sourceLabel = resolveLanguageKey(`fields.!enums.sourceType.${st}`);
 
     const agentTitle = commissionConfirmLabel(asCommission) ?? "—";
 

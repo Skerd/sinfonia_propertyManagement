@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {LayoutGrid} from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 
 type ViewEdificesOverlayProps = WithLanguageType & {
@@ -18,11 +18,7 @@ function ViewEdificesOverlay({
 
     const actionKey = "viewEdificesOverlay";
     const shortcut = "2";
-    useKeyboardShortcuts(shortcut, () => {
-        if (!!readEdifices) {
-            onAction(actionKey);
-        }
-    });
+    useKeyboardShortcuts(shortcut, () => onAction(actionKey), {enabled: !!readEdifices});
 
     if (!readEdifices) return null;
 

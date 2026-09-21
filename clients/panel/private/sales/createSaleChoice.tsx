@@ -5,7 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useNavigate} from "react-router-dom";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {IconCash, IconCreditCard} from "@tabler/icons-react";
 

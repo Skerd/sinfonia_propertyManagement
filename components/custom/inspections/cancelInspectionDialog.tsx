@@ -13,7 +13,7 @@ import {
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {
     EditInspectionFormType,
     INSPECTION_LONG_TEXT_MAX,

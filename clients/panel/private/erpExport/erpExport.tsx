@@ -7,9 +7,10 @@ import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
-import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
+import {SimpleSelect} from "@coreModule/components/viewEngine/widgets/inputs/simpleSelect.tsx";
 import {
     Table,
     TableBody,
@@ -23,12 +24,15 @@ import {ERP_EXPORT_DATASET_VALUES} from "armonia/src/modules/propertyManagement/
 import {getErpExportColumnLabel} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.columnLabels.ts";
 import type {ErpExportDataset, ErpExportFormat, ErpExportResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.response.type.ts";
 import type {ErpExportFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.form.type.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const DEFAULT_DATASETS: ErpExportDataset[] = ["sales"];
 const PM_ERP_DATASETS: ErpExportDataset[] = ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts"];
@@ -214,8 +218,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
                 setResult(Object.assign({exportedAt: new Date().toISOString()}, ...parts));
             }
         } catch (e: unknown) {
-            const err = e as {response?: {data?: {message?: string}}; message?: string};
-            setError(err?.response?.data?.message ?? err?.message ?? rk("exportFailed"));
+            setError(handleError(e, {context: "ErpExport"})?.displayMessage ?? rk("exportFailed"));
         } finally {
             setLoading(false);
         }
@@ -301,8 +304,8 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
                     {result && (
                         <span className="text-xs text-muted-foreground">
                             {rk("rowsExported", {
-                                count: totalRows.toLocaleString(),
-                                date: new Date(result.exportedAt).toLocaleString(),
+                                count: formatNumber(totalRows),
+                                date: formatDate(result.exportedAt, {format: DATE_FORMATS.dateTime}),
                             })}
                         </span>
                     )}

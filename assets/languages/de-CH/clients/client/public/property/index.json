@@ -10,6 +10,7 @@
   "statusAvailable": "Verfügbar",
   "statusReserved": "Reserviert",
   "statusSold": "Verkauft",
+  "statusUnavailable": "Nicht verfügbar",
   "price": "Preis",
   "priceOnRequest": "Auf Anfrage",
   "area": "Fläche",

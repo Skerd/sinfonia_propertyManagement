@@ -15,10 +15,11 @@ import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/re
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
+import {SimpleSelect} from "@coreModule/components/viewEngine/widgets/inputs/simpleSelect.tsx";
 import {clientCostApproveModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/clientCostApproveModificationRequest.form.validator.ts";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type ClientCostApproveModificationRequestDialogProps = WithLanguageType &
     //@ts-ignore //TODO check this too !important
@@ -87,7 +88,7 @@ function ClientCostApproveModificationRequestDialog({
                         <div className="rounded-md border p-3 bg-muted/40">
                             <p className="text-xs text-muted-foreground mb-1">{resolveLanguageKey("totalCostLabel")}</p>
                             <p className="text-lg font-semibold">
-                                {currencySymbol} {Number(totalCost).toLocaleString(undefined, {minimumFractionDigits: 2})}
+                                {currencySymbol} {formatNumber(Number(totalCost), {minimumFractionDigits: 2})}
                             </p>
                         </div>
                     )}
@@ -95,12 +96,12 @@ function ClientCostApproveModificationRequestDialog({
                         <Label className="mb-2 block">{resolveLanguageKey("decisionLabel")}</Label>
                         <SimpleSelect
                             options={[
-                                {value: "approved", label: resolveLanguageKey("approve") as string},
-                                {value: "rejected", label: resolveLanguageKey("reject") as string},
+                                {value: "approved", label: resolveLanguageKey("approve")},
+                                {value: "rejected", label: resolveLanguageKey("reject")},
                             ]}
                             value={decision}
                             onValueChange={(v: string) => setDecision(v as "approved" | "rejected")}
-                            placeholder={resolveLanguageKey("decisionPlaceholder") as string}
+                            placeholder={resolveLanguageKey("decisionPlaceholder")}
                             disabled={loading}
                         />
                     </div>
@@ -113,7 +114,7 @@ function ClientCostApproveModificationRequestDialog({
                                 id="clientCostNotes"
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX))}
-                                placeholder={resolveLanguageKey("notesPlaceholder") as string}
+                                placeholder={resolveLanguageKey("notesPlaceholder")}
                                 disabled={loading}
                                 maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX}
                                 className="min-h-[100px] max-h-[150px] overflow-y-auto resize-none"

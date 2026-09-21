@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {createPortal} from "react-dom";
 import {X} from "lucide-react";
-import PdfDialogViewer from "@coreModule/helpers/pdf/PdfDialogViewer.tsx";
+import PdfDialogViewer from "@coreModule/components/custom/pdf/PdfDialogViewer.tsx";
 
 type PdfLightboxProps = {
     src: string;

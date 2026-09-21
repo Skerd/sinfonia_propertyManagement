@@ -5,7 +5,8 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from '@coreModule/components/ui/chart.tsx';
-import { formatCurrency, formatDate, formatNumber } from '@coreModule/helpers/general';
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const MONTH_AXIS_FORMAT: Intl.DateTimeFormatOptions = {month: 'short', year: 'numeric'};
 

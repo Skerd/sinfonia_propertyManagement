@@ -1,5 +1,5 @@
 import {useMemo} from "react";
-import {formatNumber} from "@coreModule/helpers/general";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {
     Bar,
     BarChart,

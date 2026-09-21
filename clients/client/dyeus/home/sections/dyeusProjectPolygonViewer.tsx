@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {ChevronLeft, Eye, EyeOff} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
@@ -291,7 +291,7 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
     }, [project, selectedUnitId]);
 
     const unitPanelOpen = Boolean(selectedUnitId);
-    const floorSheetRef = useRef<HTMLAsideElement>(null);
+    const floorSheetRef = useRef<HTMLElement>(null);
     const unitSheetRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

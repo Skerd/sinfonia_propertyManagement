@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconFilePlus} from "@tabler/icons-react";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -21,7 +21,7 @@ import {
     GRID_TRANSACTIONAL
 } from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
-import {buildPageTitle} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 
 interface AllLeasesProps extends WithLanguageType {
@@ -47,7 +47,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
         const statusTenantAndDates: QuickFilterDef[] = [
             {
                 field: "tenant",
-                label: resolveLanguageKey("fields.tenant") as string,
+                label: resolveLanguageKey("fields.tenant"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/company/users/select",
                 postBodyKeys: ["administration"],
@@ -55,34 +55,34 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             },
             {
                 field: "rentCurrency",
-                label: resolveLanguageKey("fields.rentCurrency") as string,
+                label: resolveLanguageKey("fields.rentCurrency"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/finance/currency/select",
             },
             {
                 field: "startDate",
-                label: resolveLanguageKey("fields.startDate") as string,
+                label: resolveLanguageKey("fields.startDate"),
                 type: COLUMN_TYPE.DATE,
             },
             {
                 field: "endDate",
-                label: resolveLanguageKey("fields.endDate") as string,
+                label: resolveLanguageKey("fields.endDate"),
                 type: COLUMN_TYPE.DATE,
             },
             {
                 field: "depositPaid",
-                label: resolveLanguageKey("fields.depositPaid") as string,
+                label: resolveLanguageKey("fields.depositPaid"),
                 type: COLUMN_TYPE.BOOLEAN,
             },
             {
                 field: "status",
-                label: resolveLanguageKey("fields.status") as string,
+                label: resolveLanguageKey("fields.status"),
                 type: COLUMN_TYPE.ENUM,
                 asExtraParam: true,
                 enumValues: [
-                    {value: "active", label: resolveLanguageKey("fields.!enums.status.active") as string},
-                    {value: "expired", label: resolveLanguageKey("fields.!enums.status.expired") as string},
-                    {value: "terminated", label: resolveLanguageKey("fields.!enums.status.terminated") as string},
+                    {value: "active", label: resolveLanguageKey("fields.!enums.status.active")},
+                    {value: "expired", label: resolveLanguageKey("fields.!enums.status.expired")},
+                    {value: "terminated", label: resolveLanguageKey("fields.!enums.status.terminated")},
                 ],
             },
         ];
@@ -90,14 +90,14 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
         return [
             {
                 field: "project",
-                label: resolveLanguageKey("fields.project") as string,
+                label: resolveLanguageKey("fields.project"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/project/select",
                 asExtraParam: true,
             },
             {
                 field: "edifice",
-                label: resolveLanguageKey("fields.edifice") as string,
+                label: resolveLanguageKey("fields.edifice"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/edifice/select",
                 dependsOn: "project",
@@ -105,7 +105,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             },
             {
                 field: "floor",
-                label: resolveLanguageKey("fields.floor") as string,
+                label: resolveLanguageKey("fields.floor"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/floor/select",
                 dependsOn: ["edifice", "project"],
@@ -113,7 +113,7 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
             },
             {
                 field: "unit",
-                label: resolveLanguageKey("fields.unit") as string,
+                label: resolveLanguageKey("fields.unit"),
                 type: COLUMN_TYPE.OBJECT_ID,
                 apiUrl: "/api/realEstate/unit/select",
                 dependsOn: ["floor", "edifice", "project"],

@@ -1,5 +1,5 @@
 import {IconPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createInspectionChecklistTemplateFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/inspectionChecklistTemplate/createInspectionChecklistTemplate.form.validator.ts";
 import type {CreateInspectionChecklistTemplateFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/inspectionChecklistTemplate/inspectionChecklistTemplate.schema-def.ts";
 

@@ -4,11 +4,13 @@
   "dialogDescription": "Téléversez une brochure PDF pour générer automatiquement les étages et unités de ce bâtiment.",
   "warningMessage": "Cette action peut prendre jusqu'à 1 minute. Ne fermez pas cette fenêtre avant la fin !",
   "fileLabel": "Brochure PDF",
+  "addFile": "Ajouter un PDF",
   "cancel": "Annuler",
   "generate": "Générer",
   "processing": "Traitement...",
   "noFileSelected": "Veuillez sélectionner un fichier PDF",
   "invalidFileType": "Veuillez sélectionner un fichier PDF valide",
+  "fileTooLarge": "Le PDF est trop volumineux. Taille max. : 200 Mo",
   "oldPdfLabel": "Ancien format PDF (recadrer le plan central, exclure en-tête et pied de page)",
   "axios": {
     "start": {

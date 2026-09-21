@@ -24,8 +24,8 @@ import {
     IconFolder,
     IconLayoutDashboard,
 } from "@tabler/icons-react";
-import type {SidebarContribution} from "@coreModule/clients/panel/moduleContributions/sidebarContribution.types.ts";
-import type {NavCollapsible, NavGroup, NavItem, NavLink} from "@coreModule/helpers/panel/sidebarNav.types.ts";
+import type {SidebarContribution} from "@coreModule/helpers/types/sidebarContribution.types.ts";
+import type {NavCollapsible, NavGroup, NavItem, NavLink} from "@coreModule/helpers/types/sidebarNav.types.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {
     AGENT_REPORT_ACCESS_MODELS,
@@ -82,25 +82,25 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
     const items: NavItem[] = [
         navLink(resolveLanguageKey, "menus.realEstate.overview.title", "/realEstate/overview", IconLayoutDashboard, OVERVIEW_DASHBOARD_ACCESS_MODELS),
         navLink(resolveLanguageKey, "menus.realEstate.dashboard.title", "/realEstate/dashboard", TowerControl, OVERVIEW_DASHBOARD_ACCESS_MODELS),
-        navLink(resolveLanguageKey, "menus.realEstate.projects.title", "/realEstate/projects", IconFolder),
-        navLink(resolveLanguageKey, "menus.realEstate.edifices.title", "/realEstate/edifices", Building),
-        navLink(resolveLanguageKey, "menus.realEstate.floors.title", "/realEstate/floors", Layers),
-        navLink(resolveLanguageKey, "menus.realEstate.units.title", "/realEstate/units", DoorOpen),
-        navLink(resolveLanguageKey, "menus.realEstate.leads.title", "/realEstate/leads", UserSearch),
-        navLink(resolveLanguageKey, "menus.realEstate.inspections.title", "/realEstate/inspections", ClipboardList),
-        navLink(resolveLanguageKey, "menus.realEstate.modificationRequests.title", "/realEstate/modificationRequests", Wrench),
-        navLink(resolveLanguageKey, "menus.realEstate.reservations.title", "/realEstate/reservations", ClipboardList),
-        navLink(resolveLanguageKey, "menus.realEstate.sales.title", "/realEstate/sales", DollarSign),
+        navLink(resolveLanguageKey, "menus.realEstate.projects.title", "/realEstate/projects", IconFolder, ["projects"]),
+        navLink(resolveLanguageKey, "menus.realEstate.edifices.title", "/realEstate/edifices", Building, ["edifices"]),
+        navLink(resolveLanguageKey, "menus.realEstate.floors.title", "/realEstate/floors", Layers, ["floors"]),
+        navLink(resolveLanguageKey, "menus.realEstate.units.title", "/realEstate/units", DoorOpen, ["units"]),
+        navLink(resolveLanguageKey, "menus.realEstate.leads.title", "/realEstate/leads", UserSearch, ["leads"]),
+        navLink(resolveLanguageKey, "menus.realEstate.inspections.title", "/realEstate/inspections", ClipboardList, ["inspections"]),
+        navLink(resolveLanguageKey, "menus.realEstate.modificationRequests.title", "/realEstate/modificationRequests", Wrench, ["modificationRequests"]),
+        navLink(resolveLanguageKey, "menus.realEstate.reservations.title", "/realEstate/reservations", ClipboardList, ["reservations"]),
+        navLink(resolveLanguageKey, "menus.realEstate.sales.title", "/realEstate/sales", DollarSign, ["sales"]),
         navLink(resolveLanguageKey, "menus.realEstate.contractsHub.title", "/realEstate/contractsHub", FileText, CONTRACTS_HUB_ACCESS_MODELS),
-        navLink(resolveLanguageKey, "menus.realEstate.commissions.title", "/realEstate/commissions", Percent),
-        navLink(resolveLanguageKey, "menus.realEstate.stories.title", "/realEstate/stories", BookOpen),
+        navLink(resolveLanguageKey, "menus.realEstate.commissions.title", "/realEstate/commissions", Percent, ["commissions"]),
+        navLink(resolveLanguageKey, "menus.realEstate.stories.title", "/realEstate/stories", BookOpen, ["stories"]),
         navCollapsible(resolveLanguageKey, "menus.finance.title", Receipt, [
-            navLink(resolveLanguageKey, "menus.finance.unitCosts.title", "/realEstate/unitCosts", Receipt),
+            navLink(resolveLanguageKey, "menus.finance.unitCosts.title", "/realEstate/unitCosts", Receipt, ["unitCosts"]),
         ]),
         navCollapsible(resolveLanguageKey, "menus.realEstate.ownersAndRentals.title", KeyRound, [
             navLink(resolveLanguageKey, "menus.realEstate.rentalsHub.title", "/realEstate/rentalsHub", Home, RENTALS_HUB_ACCESS_MODELS),
-            navLink(resolveLanguageKey, "menus.realEstate.leases.title", "/realEstate/leases", FileText),
-            navLink(resolveLanguageKey, "menus.realEstate.rentalPayments.title", "/realEstate/rentalPayments", Banknote),
+            navLink(resolveLanguageKey, "menus.realEstate.leases.title", "/realEstate/leases", FileText, ["leases"]),
+            navLink(resolveLanguageKey, "menus.realEstate.rentalPayments.title", "/realEstate/rentalPayments", Banknote, ["rentalpayments"]),
         ]),
         navCollapsible(resolveLanguageKey, "menus.reports.title", BarChart2, [
             navLink(resolveLanguageKey, "menus.reports.groupDashboard.title", "/realEstate/groupDashboard", Network, GROUP_DASHBOARD_ACCESS_MODELS),

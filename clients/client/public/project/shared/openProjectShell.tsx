@@ -5,7 +5,7 @@ import {ChevronLeft} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import PublicPageShell from "@propertyManagementModule/clients/client/public/shared/layout/publicPageShell.tsx";
 import PublicSection from "@propertyManagementModule/clients/client/public/shared/layout/publicSection.tsx";
 import PageHeaderSection from "@propertyManagementModule/clients/client/public/shared/sections/pageHeaderSection.tsx";
@@ -22,6 +22,7 @@ export type OpenProjectContentProps = WithLanguageType & {
 function toContentProps(props: WithLanguageType, project: MarketingProjectSingle): OpenProjectContentProps {
     return {
         resolveLanguageKey: props.resolveLanguageKey,
+        resolveLanguageValue: props.resolveLanguageValue,
         currentLanguage: props.currentLanguage,
         languageCode: props.languageCode,
         project,
@@ -37,6 +38,7 @@ type OpenProjectShellProps = WithLanguageType &
 
 function OpenProjectShellInner({
     resolveLanguageKey,
+    resolveLanguageValue,
     currentLanguage,
     languageCode,
     data,
@@ -98,7 +100,7 @@ function OpenProjectShellInner({
                     </PublicSection>
                     <PublicSection>
                         <div className="flex min-h-[calc(100vh-200px)] flex-col gap-4 md:gap-6">
-                            {renderContent(toContentProps({resolveLanguageKey, currentLanguage, languageCode}, project))}
+                            {renderContent(toContentProps({resolveLanguageKey, resolveLanguageValue, currentLanguage, languageCode}, project))}
                         </div>
                     </PublicSection>
                 </>

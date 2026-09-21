@@ -5,7 +5,7 @@ import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLan
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import { useNavigate } from "react-router-dom";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {salesListPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";

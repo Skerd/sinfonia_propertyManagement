@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import axios from "axios";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import type { Floor } from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import SimpleError from "@coreModule/components/custom/errorViewWrapper.tsx";
-import PolygonSelector, { type PolygonPoint } from "@coreModule/components/custom/polygonSelector.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import SimpleError from "@coreModule/components/custom/errors/errorViewWrapper.tsx";
+import PolygonSelector, { type PolygonPoint } from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import type { ResolveLanguageKey } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
 import {TriangleAlert} from "lucide-react";

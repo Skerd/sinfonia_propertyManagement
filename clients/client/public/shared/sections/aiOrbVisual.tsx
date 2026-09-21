@@ -13,7 +13,7 @@ type AiOrbVisualProps = {
     style?: CSSProperties;
 };
 
-type OrbTokens = typeof FIGMA_HERO_ORB;
+type OrbTokens = typeof FIGMA_HERO_ORB | typeof FIGMA_PLATFORM_ORB;
 
 function FluidOrbCanvas({
     tokens,

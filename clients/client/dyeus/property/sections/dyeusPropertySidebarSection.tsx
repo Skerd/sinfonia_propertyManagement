@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {toast} from "sonner";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
@@ -25,6 +25,7 @@ const STATUS_KEYS: Record<string, string> = {
     available: "statusAvailable",
     reserved: "statusReserved",
     sold: "statusSold",
+    unavailable: "statusUnavailable",
 };
 
 function downloadBlob(blob: Blob, filename: string) {
@@ -135,20 +136,22 @@ function DyeusPropertySidebarSection({unit, t, onReserve, compact = false}: Dyeu
                     </div>
                     <div className="my-6 h-px w-full bg-dyeus-border" />
                     <div className="flex flex-col gap-3">
-                        <button
-                            type="button"
-                            onClick={onReserve}
-                            className={cn(
-                                "flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
-                                "bg-transparent text-dyeus-ink transition-colors duration-200",
-                                "hover:bg-dyeus-ink hover:text-dyeus-cream",
-                                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-white",
-                            )}
-                        >
-                            <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
-                                {t("reserveOnline")}
-                            </span>
-                        </button>
+                        {unit.status === "available" ? (
+                            <button
+                                type="button"
+                                onClick={onReserve}
+                                className={cn(
+                                    "flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
+                                    "bg-transparent text-dyeus-ink transition-colors duration-200",
+                                    "hover:bg-dyeus-ink hover:text-dyeus-cream",
+                                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-white",
+                                )}
+                            >
+                                <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
+                                    {t("reserveOnline")}
+                                </span>
+                            </button>
+                        ) : null}
                         <button
                             type="button"
                             onClick={handleDownloadBrochure}

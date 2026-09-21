@@ -4,11 +4,13 @@
   "dialogDescription": "Upload a PDF brochure to automatically generate floors and units for this edifice.",
   "warningMessage": "This action can take up to 1 minute to complete, please do not close this window until completed!",
   "fileLabel": "PDF Brochure",
+  "addFile": "Add PDF",
   "cancel": "Cancel",
   "generate": "Generate",
   "processing": "Processing...",
   "noFileSelected": "Please select a PDF file",
   "invalidFileType": "Please select a valid PDF file",
+  "fileTooLarge": "PDF is too large. Max size is 200MB",
   "oldPdfLabel": "Old PDF layout (crop the center plan, exclude header and footer)",
   "axios": {
     "start": {

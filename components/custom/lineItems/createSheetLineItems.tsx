@@ -5,6 +5,7 @@ import {resolvePath} from "@coreModule/components/viewEngine/viewRendererHelpers
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import type {Media} from "armonia/src/modules/core/types";
 import type {SheetLineItem} from "./sheetLineItems.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type LineItemsVariant = "materialsPlan" | "costBreakdown" | "expenditureItems";
 
@@ -93,7 +94,7 @@ export function createSheetLineItems(
     });
 
     const formatLineItemMoney = (n: number) =>
-        Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        formatNumber(Number(n), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
     let footerTotalLabel: string | undefined;
     let footerTotalFormatted: string | undefined;

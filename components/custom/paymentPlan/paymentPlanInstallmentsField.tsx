@@ -7,8 +7,8 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@coreM
 import { Input } from "@coreModule/components/ui/input.tsx";
 import TitleWithCollapse from "@coreModule/components/custom/titleWithCollapse.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import {DateInput} from "@coreModule/components/custom/dateInput.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {SALE_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 
 export type PaymentPlanInstallmentsFieldProps = {

@@ -7,6 +7,7 @@ import {
     ProjectUnitsSortKey,
 } from "@propertyManagementModule/clients/client/public/project/shared/projectUnitsFilterTypes.ts";
 import {PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {PROJECT_UNIT_STATUS_FILTERS} from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
 
 type OpenProjectGridToolbarSectionProps = OpenProjectContentProps & {
     apartmentCount: number;
@@ -17,8 +18,6 @@ type OpenProjectGridToolbarSectionProps = OpenProjectContentProps & {
     filtersActive: boolean;
     onOpenFilters: () => void;
 };
-
-const STATUS_FILTERS = ["available", "sold", "reserved", "all"] as const;
 
 const sortSelectClassName =
     "min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent font-aeonik-light text-lg text-pronix-ink not-italic outline-none md:text-2xl";
@@ -64,7 +63,7 @@ function OpenProjectGridToolbarSection({
                             value={sortKey}
                             onChange={(event) => onSortChange(event.target.value as ProjectUnitsSortKey)}
                             className={sortSelectClassName}
-                            aria-label={resolveLanguageKey("sortBy") as string}
+                            aria-label={resolveLanguageKey("sortBy")}
                         >
                             {PROJECT_UNITS_SORT_KEYS.map((key) => (
                                 <option key={key} value={key}>
@@ -80,7 +79,7 @@ function OpenProjectGridToolbarSection({
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between" data-node-id="495:657">
                 <div className="flex flex-wrap items-center gap-3 md:gap-8" data-node-id="495:658">
-                    {STATUS_FILTERS.map((filter) => (
+                    {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
                         <button
                             key={filter}
                             type="button"

@@ -8,10 +8,11 @@ type BuildingStackSectionProps = {
     onUnitSelect: (unitId: string) => void;
 };
 
-const statusColors = {
+const statusColors: Record<string, string> = {
     available: "bg-success",
     reserved: "bg-warning/20",
     sold: "bg-destructive/20",
+    unavailable: "bg-muted-foreground/40",
 };
 
 function BuildingStackSection({project, onUnitSelect}: BuildingStackSectionProps) {

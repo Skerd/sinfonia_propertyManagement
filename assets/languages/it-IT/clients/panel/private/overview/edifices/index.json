@@ -20,5 +20,9 @@
   "unavailable": "Non disponibile",
   "avgUnitsPerEdifice": "Media unità per edificio",
   "avgUnitsPerEdificeDesc": "Unità totali ÷ edifici",
-  "edificeCards": "Edifici"
+  "edificeCards": "Edifici",
+  "structureSection": "Struttura",
+  "structureSectionDesc": "Edifici, piani e densità delle unità.",
+  "unitsByStatusDesc": "Conteggio unità per stato di disponibilità.",
+  "edificeCardsDesc": "Apri un edificio per accedere alle unità."
 }

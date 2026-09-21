@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import FigmaProjectCard from "@propertyManagementModule/clients/client/public/projects/center/figmaProjectCard.tsx";
 import ProjectsFilterPanel from "@propertyManagementModule/clients/client/public/projects/components/projectsFilterPanel.tsx";
 import PublicFavoritesBasketButton from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesBasketButton.tsx";

@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {LayoutGrid, List, X} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 import {
     PROJECT_UNIT_STATUS_FILTERS,
@@ -42,6 +42,7 @@ const FILTER_KEYS: Record<ProjectUnitStatusFilter, string> = {
     available: "filterAvailable",
     sold: "filterSold",
     reserved: "filterReserved",
+    unavailable: "filterUnavailable",
     all: "filterAll",
 };
 
@@ -49,12 +50,14 @@ const UNIT_STATUS_POLYGON_COLORS: Record<MarketingUnitStatus, {fill: string; str
     available: {fill: "rgba(31, 190, 106, 0.5)", stroke: "rgba(31, 190, 106, 0.9)"},
     reserved: {fill: "rgba(234, 179, 8, 0.5)", stroke: "rgba(234, 179, 8, 0.9)"},
     sold: {fill: "rgba(220, 38, 38, 0.5)", stroke: "rgba(220, 38, 38, 0.9)"},
+    unavailable: {fill: "rgba(107, 114, 128, 0.45)", stroke: "rgba(107, 114, 128, 0.9)"},
 };
 
 const STATUS_BADGE: Record<MarketingUnitStatus, {wrap: string; dot: string}> = {
     available: {wrap: "bg-[rgba(18,183,106,0.12)] text-[#12b76a]", dot: "bg-[#12b76a]"},
     reserved: {wrap: "bg-amber-700/10 text-amber-800", dot: "bg-amber-700"},
     sold: {wrap: "bg-dyeus-ink/10 text-dyeus-ink-muted", dot: "bg-dyeus-ink/50"},
+    unavailable: {wrap: "bg-dyeus-ink/5 text-dyeus-ink-muted", dot: "bg-dyeus-ink/35"},
 };
 
 const UNIT_GRID =
@@ -229,7 +232,7 @@ function DyeusPropertiesList({
                                     phantomsAlwaysVisible
                                     imageUrl={floorPlanImage}
                                     phantomPoints={unitPolygons}
-                                    onFloorClick={(item) => selectUnit(resolveUnitIdFromPolygon(units, item))}
+                                    onFloorClick={(item: Pick<MarketingPolygonItem, "_id" | "name">) => selectUnit(resolveUnitIdFromPolygon(units, item))}
                                     stayHovered={selectedUnitId || hoveredUnitId || undefined}
                                     externalHoveredId={hoveredUnitId || selectedUnitId || ""}
                                     onPhantomHoverChange={onUnitHover}

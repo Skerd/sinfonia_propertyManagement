@@ -1,6 +1,6 @@
 import {useMemo, useState} from "react";
 import {useSearchParams} from "react-router-dom";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {resolveProjectFallbackImage} from "@propertyManagementModule/clients/client/public/project/shared/resolveProjectFallbackImage.ts";
 import type {
@@ -94,7 +94,7 @@ function OpenProjectFigma3dStage({
                 imageUrl={imageUrl}
                 phantomPoints={floorPolygons}
                 phantomHoverContent={renderHover}
-                onFloorClick={(item) => setFloorSelection(item._id)}
+                onFloorClick={(item: {_id: string}) => setFloorSelection(item._id)}
                 stayHovered={selectedFloorId || undefined}
                 externalHoveredId={hoveredId ?? ""}
                 onPhantomHoverChange={setHoveredId}

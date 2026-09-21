@@ -1,5 +1,5 @@
 import {IconUserPlus} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createLeadFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/createLead.form.validator.ts";
 import type {CreateLeadFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.schema-def.ts";
 

@@ -4,16 +4,17 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconStackPush} from "@tabler/icons-react";
-import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
+import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import FloorCard from "@propertyManagementModule/clients/panel/private/floors/center/cardView/floorCard.tsx";
 import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnits.tsx";
 import ViewUnitsOverlay from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx";
 import UnitsOverlay from "@propertyManagementModule/components/custom/floors/unitsOverlay.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 export function buildFloorEditPath(floor: Floor) {
@@ -38,31 +39,31 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
         },
         {
             field: "levelNumber",
-            label: resolveLanguageKey("fields.levelNumber") as string,
+            label: resolveLanguageKey("fields.levelNumber"),
             type: COLUMN_TYPE.NUMBER,
             placeholder: "#",
         },
         {
             field: "isAccessible",
-            label: resolveLanguageKey("fields.isAccessible") as string,
+            label: resolveLanguageKey("fields.isAccessible"),
             type: COLUMN_TYPE.BOOLEAN,
         },
         {
             field: "hasEmergencyExit",
-            label: resolveLanguageKey("fields.hasEmergencyExit") as string,
+            label: resolveLanguageKey("fields.hasEmergencyExit"),
             type: COLUMN_TYPE.BOOLEAN,
         },
     ], [resolveLanguageKey]);
@@ -78,8 +79,8 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createFloor"
             buildEditPath={buildFloorEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            headerTitle={buildPageTitle(resolveLanguageKey("title") as string, [projectName, edificeName])}
-            headerDescription={resolveLanguageKey("description") as string}
+            headerTitle={buildPageTitle(resolveLanguageKey("title"), [projectName, edificeName])}
+            headerDescription={resolveLanguageKey("description")}
             extraFilters={{edifice: edificeId ?? undefined}}
             quickFilters={quickFilters}
             configurations={{limit: 20}}

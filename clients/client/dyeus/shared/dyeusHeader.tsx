@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import DyeusMenu from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMenu.tsx";
@@ -7,6 +7,7 @@ import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/u
 import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
+import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
 
 type DyeusHeaderProps = {
     variant?: "hero" | "solid";
@@ -31,23 +32,7 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
     const dispatch = useDispatch();
     const languageCode = useSelector((state: RootState) => state.language.languageCode);
 
-    useEffect(() => {
-        if (!langOpen) return;
-        const onPointerDown = (event: MouseEvent) => {
-            if (!langRef.current?.contains(event.target as Node)) {
-                setLangOpen(false);
-            }
-        };
-        const onKey = (event: KeyboardEvent) => {
-            if (event.key === "Escape") setLangOpen(false);
-        };
-        window.addEventListener("mousedown", onPointerDown);
-        window.addEventListener("keydown", onKey);
-        return () => {
-            window.removeEventListener("mousedown", onPointerDown);
-            window.removeEventListener("keydown", onKey);
-        };
-    }, [langOpen]);
+    useOutsideClick(langRef, () => setLangOpen(false), {enabled: langOpen, escape: true});
 
     return (
         <>

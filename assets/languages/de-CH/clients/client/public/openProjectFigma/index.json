@@ -27,6 +27,7 @@
   "filterAvailable": "Verfügbar",
   "filterSold": "Verkauft",
   "filterReserved": "Reserviert",
+  "filterUnavailable": "Nicht verfügbar",
   "filterAll": "Alle",
   "noUnits": "Keine Einheiten für diesen Filter.",
   "areaLabel": "Fläche",

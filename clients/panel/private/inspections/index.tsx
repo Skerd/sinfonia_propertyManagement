@@ -3,8 +3,9 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useMemo} from "react";
-import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
+import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
@@ -42,14 +43,14 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
             asExtraParam: true,
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
@@ -57,7 +58,7 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "floor",
-            label: resolveLanguageKey("fields.floor") as string,
+            label: resolveLanguageKey("fields.floor"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/floor/select",
             dependsOn: ["edifice", "project"],
@@ -65,51 +66,51 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
         },
         {
             field: "unit",
-            label: resolveLanguageKey("fields.unit") as string,
+            label: resolveLanguageKey("fields.unit"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
             dependsOn: ["floor", "edifice", "project"],
         },
         {
             field: "status",
-            label: resolveLanguageKey("fields.status") as string,
+            label: resolveLanguageKey("fields.status"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "scheduled",   label: resolveLanguageKey("fields.!enums.status.scheduled")   as string},
-                {value: "in_progress", label: resolveLanguageKey("fields.!enums.status.in_progress") as string},
-                {value: "completed",   label: resolveLanguageKey("fields.!enums.status.completed")   as string},
-                {value: "cancelled",   label: resolveLanguageKey("fields.!enums.status.cancelled")   as string},
-                {value: "rescheduled", label: resolveLanguageKey("fields.!enums.status.rescheduled") as string},
+                {value: "scheduled",   label: resolveLanguageKey("fields.!enums.status.scheduled")},
+                {value: "in_progress", label: resolveLanguageKey("fields.!enums.status.in_progress")},
+                {value: "completed",   label: resolveLanguageKey("fields.!enums.status.completed")},
+                {value: "cancelled",   label: resolveLanguageKey("fields.!enums.status.cancelled")},
+                {value: "rescheduled", label: resolveLanguageKey("fields.!enums.status.rescheduled")},
             ],
         },
         {
             field: "type",
-            label: resolveLanguageKey("fields.type") as string,
+            label: resolveLanguageKey("fields.type"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "initial",    label: resolveLanguageKey("fields.!enums.type.initial")    as string},
-                {value: "follow_up",  label: resolveLanguageKey("fields.!enums.type.follow_up")  as string},
-                {value: "final",      label: resolveLanguageKey("fields.!enums.type.final")      as string},
-                {value: "routine",    label: resolveLanguageKey("fields.!enums.type.routine")    as string},
-                {value: "complaint",  label: resolveLanguageKey("fields.!enums.type.complaint")  as string},
-                {value: "pre_sale",   label: resolveLanguageKey("fields.!enums.type.pre_sale")   as string},
-                {value: "post_sale",  label: resolveLanguageKey("fields.!enums.type.post_sale")  as string},
+                {value: "initial",    label: resolveLanguageKey("fields.!enums.type.initial")},
+                {value: "follow_up",  label: resolveLanguageKey("fields.!enums.type.follow_up")},
+                {value: "final",      label: resolveLanguageKey("fields.!enums.type.final")},
+                {value: "routine",    label: resolveLanguageKey("fields.!enums.type.routine")},
+                {value: "complaint",  label: resolveLanguageKey("fields.!enums.type.complaint")},
+                {value: "pre_sale",   label: resolveLanguageKey("fields.!enums.type.pre_sale")},
+                {value: "post_sale",  label: resolveLanguageKey("fields.!enums.type.post_sale")},
             ],
         },
         {
             field: "followUpRequired",
-            label: resolveLanguageKey("fields.followUpRequired") as string,
+            label: resolveLanguageKey("fields.followUpRequired"),
             type: COLUMN_TYPE.BOOLEAN,
         },
     ], [resolveLanguageKey]);
 
     const headerTitle = useMemo(
-        () => buildPageTitle(resolveLanguageKey("title") as string, [projectName, edificeName, floorName, unitName]),
+        () => buildPageTitle(resolveLanguageKey("title"), [projectName, edificeName, floorName, unitName]),
         [resolveLanguageKey, unitName],
     );
 
     const headerDescription = useMemo(
-        () => resolveLanguageKey(unitId ? "descriptionWithContext" : "description") as string,
+        () => resolveLanguageKey(unitId ? "descriptionWithContext" : "description"),
         [resolveLanguageKey, unitId],
     );
 

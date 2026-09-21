@@ -44,7 +44,7 @@ function DyeusPropertyGallerySection({unit, t, compact = false}: DyeusPropertyGa
     const videos = useMemo(() => {
         const galleryVideos = (unit.imageGallery ?? [])
             .map((url) => resolveMarketingMediaUrl(url))
-            .filter((url): url is string => Boolean(url) && isVideoUrl(url));
+            .filter((url): url is string => !!url && isVideoUrl(url));
         const videoGallery = (unit.videoGallery ?? []).map((url) => resolveMarketingMediaUrl(url));
         return uniqueUrls([...videoGallery, ...galleryVideos]);
     }, [unit.imageGallery, unit.videoGallery]);

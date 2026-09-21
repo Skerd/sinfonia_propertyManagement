@@ -1,5 +1,5 @@
 import {IconStackPush} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createFloorFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/createFloor.form.validator.ts";
 import type {CreateFloorFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.schema-def.ts";
 

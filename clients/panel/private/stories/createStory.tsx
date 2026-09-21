@@ -1,5 +1,5 @@
 import {BookOpen} from "lucide-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createStoryFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/createStory.form.validator.ts";
 import type {CreateStoryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.schema-def.ts";
 

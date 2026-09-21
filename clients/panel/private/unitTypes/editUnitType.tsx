@@ -1,4 +1,4 @@
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editUnitTypeFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/editUnitType.form.validator.ts";
 import type {UnitType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/unitType.dto.ts";
 import type {EditUnitTypeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/unitType.schema-def.ts";

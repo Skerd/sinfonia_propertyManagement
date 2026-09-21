@@ -19,5 +19,10 @@
   "avgFloorsPerEdifice": "Moy. étages par bâtiment",
   "avgFloorsPerEdificeDesc": "Total étages ÷ bâtiments",
   "projectCards": "Projets",
-  "createProject": "Créer un projet"
+  "createProject": "Créer un projet",
+  "structureSection": "Structure",
+  "structureSectionDesc": "Projets, bâtiments, étages et unités.",
+  "performanceSection": "Performance",
+  "performanceSectionDesc": "Rythme des ventes et moyennes du portefeuille.",
+  "projectCardsDesc": "Ouvrez un projet pour accéder à ses bâtiments."
 }

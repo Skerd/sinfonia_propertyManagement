@@ -3,10 +3,10 @@ import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {BookOpen} from "lucide-react";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import {buildPageTitle} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import type {Story} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -36,14 +36,14 @@ function AllStories({resolveLanguageKey, projectId, projectName}: AllStoriesProp
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
             asExtraParam: true,
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
@@ -51,7 +51,7 @@ function AllStories({resolveLanguageKey, projectId, projectName}: AllStoriesProp
         },
         {
             field: "unit",
-            label: resolveLanguageKey("fields.unit") as string,
+            label: resolveLanguageKey("fields.unit"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
             dependsOn: ["edifice", "project"],

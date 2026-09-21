@@ -3,14 +3,14 @@ import {Provider} from "react-redux";
 import {store} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {LanguageProvider} from "@coreModule/helpers/context/providers/language-provider.tsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import ErrorBoundary from "@coreModule/components/custom/errorBoundary.tsx";
+import ErrorBoundary from "@coreModule/components/custom/errors/errorBoundary.tsx";
 import {lazy, Suspense} from "react";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import PublicLayout from "@propertyManagementModule/clients/client/public/shared/publicLayout.tsx";
 import PublicHomeIntroSplash from "@propertyManagementModule/clients/client/public/home/sections/publicHomeIntroSplash.tsx";
 import {PublicIntroProvider} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
-import {ensuredDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/public/home/index.tsx"));
 const ProjectsPage = lazy(() => import("@propertyManagementModule/clients/client/public/projects/index.tsx"));
@@ -39,7 +39,7 @@ function ToasterContainer() {
 
 function PublicApp() {
 
-    ensuredDeviceId();
+    ensureDeviceId();
 
     return (
         <Provider store={store}>

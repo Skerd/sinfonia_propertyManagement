@@ -7,15 +7,18 @@ import {
 import type { Project } from 'armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts';
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import TruncatedValue from "@coreModule/components/viewEngine/widgets/display/truncatedValue.tsx";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityStatusBreakdown} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
 import {unitsByStatusToEntityStats} from "@propertyManagementModule/components/custom/cards/entityStatus.types.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 
 export interface ProjectStats {
   sold: number;
   reserved: number;
   available: number;
   blocked: number;
+  leased: number;
   totalUnits: number;
   totalValue: number;
   collectedAmount: number;
@@ -33,6 +36,7 @@ export function getProjectStatsFromStatistics(project: Project): ProjectStats {
     reserved: breakdown.reserved,
     available: breakdown.available,
     blocked: breakdown.blocked,
+    leased: breakdown.leased,
     totalUnits,
     totalValue,
     collectedAmount: 0,
@@ -65,14 +69,14 @@ function DashboardProjectCardInner({
   const edificesCount = project.statistics?.totalEdifices ?? 0;
 
   return (
-    <EntityCardShell selectable isSelected={isSelected} onClick={onClick} className="group">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+    <EntityCardShell isSelected={isSelected} onClick={onClick} className="group p-5 gap-4">
+      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-      <div className="flex items-start justify-between mb-4 relative z-10">
-        <div className="flex items-center gap-3">
+      <div className="mb-4 flex min-w-0 items-start justify-between relative z-10">
+        <div className="flex min-w-0 flex-1 items-start gap-3">
           <div
             className={cn(
-              'p-2.5 rounded-xl transition-colors duration-300',
+              'shrink-0 p-2.5 rounded-xl transition-colors duration-300',
               isSelected
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-primary/20 text-primary group-hover:bg-primary/30'
@@ -80,14 +84,26 @@ function DashboardProjectCardInner({
           >
             <IconBuilding size={20} />
           </div>
-          <div>
-            <h3 className="font-display font-semibold text-base leading-tight">{project.name}</h3>
-            {(locationLabel != null && locationLabel !== '') && (
-              <div className="flex items-center gap-1 text-muted-foreground text-xs mt-0.5">
-                <IconMapPin size={12} />
-                <span>{locationLabel}</span>
+          <div className="min-w-0 flex-1">
+            <TruncatedValue
+              as="h3"
+              text={project.name}
+              className="block w-full font-display text-base font-semibold leading-tight"
+            >
+              {project.name}
+            </TruncatedValue>
+            {locationLabel != null && locationLabel !== '' ? (
+              <div className="mt-0.5 flex min-w-0 items-center gap-1 text-xs text-muted-foreground">
+                <IconMapPin size={12} className="shrink-0" />
+                <TruncatedValue
+                  as="span"
+                  text={locationLabel}
+                  className="block min-w-0 flex-1 text-xs text-muted-foreground"
+                >
+                  {locationLabel}
+                </TruncatedValue>
               </div>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
@@ -108,7 +124,7 @@ function DashboardProjectCardInner({
             {createdAt != null && (
               <div className="flex items-center gap-1.5">
                 <IconCalendar size={12} />
-                <span>{new Date(createdAt).toLocaleDateString()}</span>
+                <span>{formatDate(createdAt, {format: DATE_FORMATS.date})}</span>
               </div>
             )}
           </div>

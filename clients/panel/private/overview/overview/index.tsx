@@ -1,6 +1,6 @@
 import { compose } from "redux";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {GRID_KPI, DASHBOARD_TAB_STACK, DASHBOARD_CHART_GRID} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {
   IconCash,
   IconCircleCheck,
@@ -28,9 +28,10 @@ import {
   unitsByStatusToChartData,
 } from "@propertyManagementModule/components/custom/dashboard/StatusChart.tsx";
 import { PaymentAlerts } from "@propertyManagementModule/components/custom/dashboard/paymentAlerts.tsx";
+import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
@@ -110,17 +111,19 @@ function DashboardOverview({
   const link = viewEntriesLabel;
 
   return (
-    <div className="flex flex-col gap-3 flex-full">
+    <div className={DASHBOARD_TAB_STACK}>
       {/* Primary KPIs */}
-      <div>
-        <h2 className="sr-only">{resolveLanguageKey("primaryKpis")}</h2>
+      <DashboardKpiSection
+        title={resolveLanguageKey("primaryKpis")}
+        description={resolveLanguageKey("primaryKpisDesc")}
+      >
         <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("totalRevenue")}
             value={formatCurrency(totalRevenue)}
             subtitle={revenueSubtitle}
-            icon={IconCoin as never}
+            icon={IconCoin}
             variant="primary"
             href={kpi.kpiTotalRevenue(ctx)}
             linkLabel={link}
@@ -138,7 +141,7 @@ function DashboardOverview({
             title={resolveLanguageKey("activeReservations")}
             value={formatNumber(activeReservations)}
             subtitle={resolveLanguageKey("activeReservationsDesc")}
-            icon={IconUsers as never}
+            icon={IconUsers}
             variant="warning"
             href={kpi.kpiActiveReservations(ctx)}
             linkLabel={link}
@@ -148,7 +151,7 @@ function DashboardOverview({
             title={resolveLanguageKey("sales")}
             value={formatNumber(totalSales)}
             subtitle={resolveLanguageKey("totalSalesDesc")}
-            icon={IconCreditCard as never}
+            icon={IconCreditCard}
             variant="success"
             href={kpi.kpiTotalSales(ctx)}
             linkLabel={link}
@@ -166,24 +169,26 @@ function DashboardOverview({
             title={resolveLanguageKey("unitsSold")}
             value={formatNumber(unitsSold)}
             subtitle={resolveLanguageKey("unitsSoldDesc")}
-            icon={IconTrendingUp as never}
+            icon={IconTrendingUp}
             variant="success"
             href={kpi.kpiUnitsSold(ctx)}
             linkLabel={link}
           />
         </div>
-      </div>
+      </DashboardKpiSection>
 
        {/*Financial KPIs*/}
-      <div>
-        <h2 className="sr-only">{resolveLanguageKey("financialKpis")}</h2>
+      <DashboardKpiSection
+        title={resolveLanguageKey("financialKpis")}
+        description={resolveLanguageKey("financialKpisDesc")}
+      >
         <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("averageSalePrice")}
             value={formatCurrency(averageSalePrice)}
             subtitle={resolveLanguageKey("averageSalePriceDesc")}
-            icon={IconCoin as never}
+            icon={IconCoin}
             variant="default"
             href={kpi.kpiAverageSalePrice(ctx)}
             linkLabel={link}
@@ -193,7 +198,7 @@ function DashboardOverview({
             title={resolveLanguageKey("inventoryValue")}
             value={formatCurrency(inventoryValue)}
             subtitle={resolveLanguageKey("inventoryValueDesc")}
-            icon={IconPackage as never}
+            icon={IconPackage}
             variant="default"
             href={kpi.kpiInventoryValue(ctx)}
             linkLabel={link}
@@ -203,7 +208,7 @@ function DashboardOverview({
             title={resolveLanguageKey("cashSales")}
             value={formatNumber(cashSales)}
             subtitle={resolveLanguageKey("cashSalesDesc")}
-            icon={IconCash as never}
+            icon={IconCash}
             variant="default"
             href={kpi.kpiCashSales(ctx)}
             linkLabel={link}
@@ -213,7 +218,7 @@ function DashboardOverview({
             title={resolveLanguageKey("paymentPlanSales")}
             value={formatNumber(paymentPlanSales)}
             subtitle={resolveLanguageKey("paymentPlanSalesDesc")}
-            icon={IconReceipt as never}
+            icon={IconReceipt}
             variant="default"
             href={kpi.kpiPaymentPlanSales(ctx)}
             linkLabel={link}
@@ -223,24 +228,26 @@ function DashboardOverview({
             title={resolveLanguageKey("occupancyRatePercent")}
             value={`${occupancyRatePercent.toFixed(1)}%`}
             subtitle={resolveLanguageKey("occupancyRatePercentDesc")}
-            icon={IconPercentage as never}
+            icon={IconPercentage}
             variant="default"
             href={kpi.kpiOccupancyRate(ctx)}
             linkLabel={link}
           />
         </div>
-      </div>
+      </DashboardKpiSection>
 
       {/* Unit-cost KPIs (verified / procurement pipeline) */}
-      <div>
-        <h2 className="sr-only">{resolveLanguageKey("unitCostsKpis")}</h2>
+      <DashboardKpiSection
+        title={resolveLanguageKey("unitCostsKpis")}
+        description={resolveLanguageKey("unitCostsKpisDesc")}
+      >
         <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("verifiedPaidCosts")}
             value={formatCurrency(verifiedPaidCostsSum)}
             subtitle={resolveLanguageKey("verifiedPaidCostsDesc")}
-            icon={IconReceipt as never}
+            icon={IconReceipt}
             variant="default"
             href={kpi.kpiVerifiedPaidCosts(ctx)}
             linkLabel={link}
@@ -250,7 +257,7 @@ function DashboardOverview({
             title={resolveLanguageKey("verifiedOutstandingCosts")}
             value={formatCurrency(verifiedOutstandingCostsSum)}
             subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")}
-            icon={IconReceipt as never}
+            icon={IconReceipt}
             variant="warning"
             href={kpi.kpiVerifiedOutstandingCosts(ctx)}
             linkLabel={link}
@@ -260,7 +267,7 @@ function DashboardOverview({
             title={resolveLanguageKey("pendingVerificationCosts")}
             value={formatCurrency(pendingVerificationCostsSum)}
             subtitle={resolveLanguageKey("pendingVerificationCostsDesc")}
-            icon={IconFileText as never}
+            icon={IconFileText}
             variant="default"
             href={kpi.kpiPendingVerificationCosts(ctx)}
             linkLabel={link}
@@ -270,24 +277,27 @@ function DashboardOverview({
             title={resolveLanguageKey("totalUnitCostDocuments")}
             value={formatNumber(unitCostDocsCount)}
             subtitle={resolveLanguageKey("totalUnitCostDocumentsDesc")}
-            icon={IconPackage as never}
+            icon={IconPackage}
             variant="default"
             href={kpi.kpiTotalUnitCostDocuments(ctx)}
             linkLabel={link}
           />
         </div>
-      </div>
+      </DashboardKpiSection>
 
        {/*Operations KPIs*/}
-      <div className="hidden sm:block">
-        <h2 className="sr-only">{resolveLanguageKey("operationsKpis")}</h2>
+      <DashboardKpiSection
+        className="hidden sm:flex"
+        title={resolveLanguageKey("operationsKpis")}
+        description={resolveLanguageKey("operationsKpisDesc")}
+      >
         <div className={GRID_KPI}>
           <KpiCard
             compact
             title={resolveLanguageKey("totalInspections")}
             value={formatNumber(totalInspections)}
             subtitle={resolveLanguageKey("totalInspectionsDesc")}
-            icon={IconFileCheck as never}
+            icon={IconFileCheck}
             variant="default"
             href={kpi.kpiTotalInspections(ctx)}
             linkLabel={link}
@@ -297,7 +307,7 @@ function DashboardOverview({
             title={resolveLanguageKey("openModificationRequests")}
             value={formatNumber(openModificationRequests)}
             subtitle={resolveLanguageKey("openModificationRequestsDesc")}
-            icon={IconFileText as never}
+            icon={IconFileText}
             variant="default"
             href={kpi.kpiOpenModificationRequests(ctx)}
             linkLabel={link}
@@ -307,7 +317,7 @@ function DashboardOverview({
             title={resolveLanguageKey("expiringReservationsCount")}
             value={formatNumber(expiringReservationsCount)}
             subtitle={resolveLanguageKey("expiringReservationsCountDesc")}
-            icon={IconClock as never}
+            icon={IconClock}
             variant="warning"
             href={kpi.kpiExpiringReservations(ctx)}
             linkLabel={link}
@@ -317,7 +327,7 @@ function DashboardOverview({
             title={resolveLanguageKey("totalReservationDeposits")}
             value={formatCurrency(totalReservationDeposits)}
             subtitle={resolveLanguageKey("totalReservationDepositsDesc")}
-            icon={IconWallet as never}
+            icon={IconWallet}
             variant="default"
             href={kpi.kpiReservationDeposits(ctx)}
             linkLabel={link}
@@ -327,16 +337,16 @@ function DashboardOverview({
             title={resolveLanguageKey("paymentPlansCompleted")}
             value={formatNumber(paymentPlansCompleted)}
             subtitle={resolveLanguageKey("paymentPlansCompletedDesc")}
-            icon={IconCircleCheck as never}
+            icon={IconCircleCheck}
             variant="success"
             href={kpi.kpiPaymentPlansCompleted(ctx)}
             linkLabel={link}
           />
         </div>
-      </div>
+      </DashboardKpiSection>
 
       {/* Charts row */}
-      <div className="grid grid-cols-1 gap-2 lg:grid-cols-3">
+      <div className={DASHBOARD_CHART_GRID}>
         <div className="lg:col-span-2">
           <StatusChart
             data={statusChartData}
@@ -353,7 +363,7 @@ function DashboardOverview({
       </div>
 
       {/* Revenue chart + Recent sales */}
-      <div className="grid grid-cols-1 gap-2 lg:grid-cols-7">
+      <div className="grid min-w-0 grid-cols-1 gap-3 lg:grid-cols-7">
         <Card className="col-span-1 py-3 lg:col-span-4">
           <CardHeader className="px-3 pb-1.5 pt-0">
             <CardTitle className="text-sm font-semibold">{resolveLanguageKey("overview")}</CardTitle>

@@ -15,5 +15,27 @@
   "totalModificationRequestsDesc": "Toutes les demandes de modification",
   "openModificationRequests": "Demandes ouvertes",
   "openModificationRequestsDesc": "Non terminées, refusées ou annulées",
-  "modificationRequestsByStatus": "Par statut"
+  "modificationRequestsByStatus": "Par statut",
+  "inspectionsSectionDesc": "Volume et charge de suivi.",
+  "modificationRequestsSectionDesc": "Demandes de modification ouvertes et totales.",
+  "inspectionStatus": {
+    "scheduled": "Planifiée",
+    "in_progress": "En cours",
+    "completed": "Terminée",
+    "cancelled": "Annulée",
+    "rescheduled": "Replanifiée"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "En attente architecte",
+    "pending_engineer": "En attente ingénieur",
+    "pending_ceo": "En attente CEO",
+    "pending_architect_revision": "En attente révision architecte",
+    "pending_engineer_revision": "En attente révision ingénieur",
+    "pending_finance": "En attente finances",
+    "pending_client_approval": "En attente approbation client",
+    "finance_completed": "Finances terminées",
+    "pending_delivery": "En attente livraison",
+    "completed": "Terminé",
+    "cancelled": "Annulé"
+  }
 }

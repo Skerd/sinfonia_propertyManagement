@@ -46,5 +46,11 @@
   "rentOverdue": "Rent overdue",
   "rentOverdueDesc": "Overdue remaining by currency",
   "activeLeases": "Active leases",
-  "activeLeasesDesc": "Leases currently active"
+  "activeLeasesDesc": "Leases currently active",
+  "paymentPlansSection": "Payment plans",
+  "paymentPlansSectionDesc": "Units, active plans and outstanding balances.",
+  "rentalsSection": "Rentals",
+  "rentalsSectionDesc": "Collected, outstanding and overdue rent.",
+  "portfolioSection": "Portfolio",
+  "portfolioSectionDesc": "Structure, occupancy and follow-up work."
 }

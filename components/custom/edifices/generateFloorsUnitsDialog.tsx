@@ -1,4 +1,4 @@
-import {useState, useEffect, useImperativeHandle} from "react";
+import {useState, useEffect, useImperativeHandle, useRef} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -15,14 +15,11 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 import {Checkbox} from "@coreModule/components/ui/checkbox.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import {AlertTriangle, LoaderCircle, Upload, FileText} from "lucide-react";
+import {AlertTriangle, LoaderCircle, Upload} from "lucide-react";
 import {toast} from "sonner";
-import {
-    FileInput,
-    FileUploader,
-    FileUploaderContent,
-    FileUploaderItem
-} from "@coreModule/components/custom/files/fileUpload.tsx";
+import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
+
+const MAX_PDF_BYTES = 200 * 1024 * 1024;
 
 type GenerateFloorsUnitsDialogProps = WithLanguageType & WithAxiosType<any, any> & {
     open: boolean;
@@ -39,69 +36,64 @@ function GenerateFloorsUnitsDialog({
     onFormDataChange,
     loading
 }: GenerateFloorsUnitsDialogProps) {
-    const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+    const [selectedFile, setSelectedFile] = useState<File | undefined>(undefined);
     const [oldPdf, setOldPdf] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(innerRef, () => ({
         success: () => {
             onClose();
-            setSelectedFiles([]);
+            setSelectedFile(undefined);
             setOldPdf(false);
         },
     }));
 
-    // Reset files when dialog closes
     useEffect(() => {
         if (!open) {
-            setSelectedFiles([]);
+            setSelectedFile(undefined);
             setOldPdf(false);
         }
     }, [open]);
 
-    const handleFileChange = (files: File[] | null) => {
-        if (!files) {
-            setSelectedFiles([]);
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (e.target) e.target.value = "";
+        if (!file) return;
+
+        if (file.type !== "application/pdf") {
+            toast.error(resolveLanguageKey("invalidFileType"));
             return;
         }
-
-        // Validate PDF files
-        const pdfFiles = files.filter(file => {
-            if (file.type !== 'application/pdf') {
-                toast.error(resolveLanguageKey("invalidFileType"));
-                return false;
-            }
-            return true;
-        });
-
-        setSelectedFiles(pdfFiles);
+        if (file.size > MAX_PDF_BYTES) {
+            toast.error(resolveLanguageKey("fileTooLarge"));
+            return;
+        }
+        setSelectedFile(file);
     };
 
     const handleGenerate = () => {
-        if (selectedFiles.length === 0) {
+        if (!selectedFile) {
             toast.error(resolveLanguageKey("noFileSelected"));
             return;
         }
         const formData = new FormData();
-        formData.append('file', selectedFiles[0]);
-        formData.append('_id', edificeId);
-        formData.append('oldPdf', String(oldPdf));
-        // Call the axios handler
+        formData.append("file", selectedFile);
+        formData.append("_id", edificeId);
+        formData.append("oldPdf", String(oldPdf));
         onFormDataChange(formData);
     };
 
     const handleClose = () => {
         if (loading) {
-            return; // Prevent closing during processing
+            return;
         }
         onClose();
     };
 
-    const selectedFile = selectedFiles.length > 0 ? selectedFiles[0] : null;
-
     return (
         <Dialog open={open} onOpenChange={(isOpen) => {if (!isOpen && !loading) {handleClose();}}}>
-            <DialogContent 
-                className="sm:max-w-md" 
+            <DialogContent
+                className="sm:max-w-md"
                 showCloseButton={!loading}
                 onInteractOutside={(e) => {if (loading) {e.preventDefault();}}}
                 onEscapeKeyDown={(e) => {if (loading) {e.preventDefault();}}}
@@ -112,7 +104,7 @@ function GenerateFloorsUnitsDialog({
                         {resolveLanguageKey("dialogDescription")}
                     </DialogDescription>
                 </DialogHeader>
-                
+
                 <div className="flex flex-col gap-y-4 min-w-0">
                     <Alert>
                         <AlertTriangle className="h-4 w-4" />
@@ -122,54 +114,38 @@ function GenerateFloorsUnitsDialog({
                     </Alert>
 
                     <div className="flex flex-col gap-y-2 min-w-0">
-                        <p className="text-sm font-medium">
-                            {resolveLanguageKey("fileLabel")}
-                        </p>
-                        <div className="min-w-0">
-                            <FileUploader
-                                value={selectedFiles}
-                                onValueChange={handleFileChange}
-                                dropzoneOptions={{
-                                    accept: {
-                                        "application/pdf": [".pdf"]
-                                    },
-                                    maxFiles: 1,
-                                    maxSize: 200 * 1024 * 1024, // 200MB
-                                    multiple: false
+                        <Label>{resolveLanguageKey("fileLabel")}</Label>
+                        <input
+                            ref={fileInputRef}
+                            type="file"
+                            className="hidden"
+                            accept="application/pdf,.pdf"
+                            onChange={handleFileChange}
+                            disabled={loading}
+                        />
+                        <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            onClick={() => fileInputRef.current?.click()}
+                            disabled={loading}
+                        >
+                            {resolveLanguageKey("addFile")}
+                        </Button>
+                        {selectedFile && (
+                            <SingleFile
+                                file={{
+                                    id: "temp-generate-floors-pdf",
+                                    file: selectedFile,
+                                    path: URL.createObjectURL(selectedFile),
+                                    body: undefined,
                                 }}
-                                className="w-full min-w-0"
-                            >
-                                <FileUploaderContent>
-                                    <FileInput className="border-2 border-dashed p-6 rounded-lg">
-                                        <div className="flex flex-col items-center justify-center gap-2 text-center">
-                                            <FileText className="h-8 w-8 text-muted-foreground" />
-                                            <div className="text-sm">
-                                            <span className="font-medium text-primary">
-                                                Click to upload
-                                            </span>{" "}
-                                                or drag and drop
-                                            </div>
-                                            <div className="text-xs text-muted-foreground">
-                                                PDF file (max 200MB)
-                                            </div>
-                                        </div>
-                                    </FileInput>
-                                    {selectedFiles.length > 0 && (
-                                        <FileUploaderItem index={0}>
-                                            <div className="flex items-center gap-2 w-full min-w-0">
-                                                <FileText className="h-4 w-4 shrink-0" />
-                                                <span className="truncate min-w-0 flex-1" title={selectedFile?.name}>
-                                                    {selectedFile?.name}
-                                                </span>
-                                                <span className="text-xs text-muted-foreground shrink-0">
-                                                    ({(selectedFile ? (selectedFile.size / 1024 / 1024).toFixed(2) : 0)} MB)
-                                                </span>
-                                            </div>
-                                        </FileUploaderItem>
-                                    )}
-                                </FileUploaderContent>
-                            </FileUploader>
-                        </div>
+                                canDownload={true}
+                                canRemove={!loading}
+                                isBig={false}
+                                onRemove={() => setSelectedFile(undefined)}
+                            />
+                        )}
                     </div>
 
                     <div className="flex items-start gap-x-2">

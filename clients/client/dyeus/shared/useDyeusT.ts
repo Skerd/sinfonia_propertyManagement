@@ -7,10 +7,7 @@ import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/pub
  * Supports nested keys (`a.b.c`) and `{{var}}` template substitution.
  */
 export function useDyeusT(componentFilePath: string) {
-    const {currentLanguage} = useSelectedLanguage(
-        componentFilePath.replaceAll("/", "_"),
-        componentFilePath,
-    );
+    const {currentLanguage} = useSelectedLanguage(componentFilePath);
 
     const resolve = useCallback(
         (key: string): unknown => {

@@ -5,8 +5,8 @@ import {StoryType} from "armonia/src/modules/propertyManagement/api/realEstate/p
 import {IconListNumbers} from "@tabler/icons-react";
 import StoryTypeSheetView from "@propertyManagementModule/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -64,7 +64,7 @@ function StoryTypeCard({
                         title={entity.name}
                     />
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconListNumbers}
                             label={resolveLanguageKey("sortOrder")}
                             tooltip={resolveLanguageKey("sortOrder")}

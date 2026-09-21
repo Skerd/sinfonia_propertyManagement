@@ -19,5 +19,10 @@
   "avgFloorsPerEdifice": "Avg. floors per gebäude",
   "avgFloorsPerEdificeDesc": "Total floors ÷ edifices",
   "projectCards": "Projekte",
-  "createProject": "Projekt erstellen"
+  "createProject": "Projekt erstellen",
+  "structureSection": "Struktur",
+  "structureSectionDesc": "Projekte, Gebäude, Etagen und Einheiten.",
+  "performanceSection": "Leistung",
+  "performanceSectionDesc": "Verkaufstempo und Durchschnitte im Portfolio.",
+  "projectCardsDesc": "Projekt öffnen, um zu den Gebäuden zu gelangen."
 }

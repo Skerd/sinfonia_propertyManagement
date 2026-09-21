@@ -3,6 +3,7 @@ import {
     downloadExpenditureCostTemplatePdf,
     type ExpenditureTemplateRow,
 } from "@propertyManagementModule/components/custom/unitCosts/expenditureCostTemplatePdf.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 /**
  * Builds the expense PDF from react-hook-form values (create/edit unit cost).
@@ -105,7 +106,7 @@ export async function downloadUnitCostExpenditurePdfFromFormValues(
         if (Number.isFinite(qn) && Number.isFinite(pn)) {
             const lineAmount = qn * pn;
             runningSum += lineAmount;
-            lineTotal = lineAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            lineTotal = formatNumber(lineAmount, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         return { title, category, quantity: qty, unit, unitPrice: priceStr, lineTotal };
     });
@@ -121,7 +122,7 @@ export async function downloadUnitCostExpenditurePdfFromFormValues(
         rows,
         grandTotal:
             runningSum > 0
-                ? runningSum.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                ? formatNumber(runningSum, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
                 : "",
         fileName,
     });

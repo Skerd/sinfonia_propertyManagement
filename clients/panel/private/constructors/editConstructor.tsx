@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editConstructorFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/editConstructor.form.validator.ts";
 import type {Constructor} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.dto.ts";
 import type {EditConstructorFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.schema-def.ts";

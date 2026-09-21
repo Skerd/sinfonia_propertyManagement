@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {useEffect, useState} from "react";
@@ -21,6 +21,7 @@ import ManualInstallmentClientEmails, {
 import SalePayDownPaymentAction from "@propertyManagementModule/clients/panel/private/sales/center/actions/salePayDownPaymentAction.tsx";
 import SalePayDownPaymentDialog from "@propertyManagementModule/components/custom/sale/salePayDownPaymentDialog.tsx";
 import SalePayInstallmentDialog from "@propertyManagementModule/components/custom/sale/salePayInstallmentDialog.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type PaymentPlanSheetViewOwnProps = {
     open: boolean;
@@ -34,8 +35,7 @@ type PaymentPlanSheetViewOwnProps = {
 };
 
 function formatMoney(value: number | undefined): string {
-    if (value == null) return "-";
-    return value.toLocaleString("en-US", {minimumFractionDigits: 0, maximumFractionDigits: 2});
+    return formatNumber(value, {maximumFractionDigits: 2}) || "-";
 }
 
 function getInstallmentStatusStyles(status?: string): {bg: string; text: string; border: string} {

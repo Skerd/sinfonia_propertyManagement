@@ -11,7 +11,8 @@ import {
 import type {
     DeliveryReadinessFormResponseType,
 } from "armonia/src/modules/propertyDevelopment/api/propertyDevelopment/private/dashboard/deliveryReadiness.form.response.type.ts";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
 type DeliveryReadinessCardProps = WithLanguageType &
@@ -55,9 +56,9 @@ function DeliveryReadinessCardInner({
     const activeDomains = data?.domains?.filter((d) => d.percent != null) ?? [];
 
     return (
-        <DashboardWidgetCard title={resolveLanguageKey("title") as string}>
+        <DashboardWidgetCard title={resolveLanguageKey("title")}>
             {loading && !data ? null : activeDomains.length === 0 ? (
-                <DashboardWidgetEmpty message={resolveLanguageKey("empty") as string} />
+                <DashboardWidgetEmpty message={resolveLanguageKey("empty")} />
             ) : (
                 <div className="flex flex-col gap-3">
                     {data?.overallScore != null && (

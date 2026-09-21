@@ -1,9 +1,10 @@
 import type { ResolveLanguageKey } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import ExpandableText from "@coreModule/components/custom/expandableText.tsx";
-import TruncatedValue from "@coreModule/components/custom/displayValue/truncatedValue.tsx";
+import ExpandableText from "@coreModule/components/viewEngine/widgets/display/expandableText.tsx";
+import TruncatedValue from "@coreModule/components/viewEngine/widgets/display/truncatedValue.tsx";
 import { cn } from "@coreModule/components/lib/utils.ts";
 import type { Media } from "armonia/src/modules/core/types";
-import SheetMediaFilesStrip from "@coreModule/components/viewEngine/sheetMediaFilesStrip.tsx";
+import SheetMediaFilesStrip from "@coreModule/components/viewEngine/sheet/widgets/sheetMediaFilesStrip.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 export type SheetLineItem = {
     item?: string;
@@ -34,7 +35,7 @@ export type SheetLineItemsProps = {
 };
 
 function formatCost(n: number): string {
-    return Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return formatNumber(Number(n), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 const cardClass =

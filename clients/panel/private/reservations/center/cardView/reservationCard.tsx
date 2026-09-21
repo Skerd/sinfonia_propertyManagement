@@ -14,9 +14,9 @@ import ManualReservationClientEmailDialog, {
     parseManualClientEmailAction,
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
 import ReservationSheetView from "@propertyManagementModule/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -27,7 +27,7 @@ import {
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
-} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {useEffect, type ReactNode, type RefObject} from "react";
 
@@ -260,14 +260,14 @@ function ReservationCard({
                     )}
                     {!extraSmall && (
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconHome}
                                 label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 path="unit"
                                 value={entity.unit?.name ?? entity.unit?.unitNumber}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconUser}
                                 label={resolveLanguageKey("client")}
                                 tooltip={resolveLanguageKey("client")}
@@ -275,7 +275,7 @@ function ReservationCard({
                                 type="user"
                                 value={entity.client}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconUser}
                                 label={resolveLanguageKey("reservedBy")}
                                 tooltip={resolveLanguageKey("reservedBy")}
@@ -283,7 +283,7 @@ function ReservationCard({
                                 type="user"
                                 value={entity.reservedBy}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCalendarClock}
                                 label={resolveLanguageKey("reservationDate")}
                                 tooltip={resolveLanguageKey("reservationDate")}
@@ -292,7 +292,7 @@ function ReservationCard({
                                 value={entity.reservationDate}
                             />
                             {!small && (
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconCurrencyDollar}
                                     label={resolveLanguageKey("depositAmount")}
                                     tooltip={resolveLanguageKey("depositAmount")}

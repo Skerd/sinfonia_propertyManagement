@@ -3,7 +3,7 @@ import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import ModificationRequestRowMenuExtras, {
     modificationRequestShouldHideEdit,
 } from "@propertyManagementModule/clients/panel/private/modificationRequests/center/actions/modificationRequestRowMenuExtras.tsx";
@@ -23,9 +23,9 @@ import {
 import {cn} from "@coreModule/components/lib/utils.ts";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import {MdiIcon} from "@coreModule/components/custom/mdiIcons/mdiIcon.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import {CARD_INFO_ROWS_TWO_COL_CLASS} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {CARD_INFO_ROWS_TWO_COL_CLASS} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 import ApproveModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/approveModificationRequestDialog.tsx";
@@ -34,6 +34,7 @@ import FinanceModificationRequestDialog from "@propertyManagementModule/componen
 import DeliverModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/deliverModificationRequestDialog.tsx";
 import CancelModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/cancelModificationRequestDialog.tsx";
 import ClientCostApproveModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 function modificationRequestEditPath(req: ModificationRequest, unitId: string, unitName?: string) {
     const params = new URLSearchParams();
@@ -278,7 +279,7 @@ function ModificationRequestCard({
                                     <>
                                         {
                                             !!approval.user &&
-                                            <DisplayRow
+                                            <EntityCardRow
                                                 label={resolveLanguageKey("reviewedBy")}
                                                 show={!!permissions.user}
                                                 type="user"
@@ -295,7 +296,7 @@ function ModificationRequestCard({
                                     <>
                                         {
                                             !!approval.reviewedAt &&
-                                            <DisplayRow
+                                            <EntityCardRow
                                                 label={resolveLanguageKey("reviewedAt")}
                                                 show={!!permissions.reviewedAt}
                                                 type="dateTime"
@@ -407,7 +408,7 @@ function ModificationRequestCard({
                         {
                             !!financeDetails &&
                             <CardContent className="flex flex-col gap-y-2">
-                                <DisplayRow
+                                <EntityCardRow
                                     label={resolveLanguageKey("totalCost")}
                                     show={!!permissions.totalCost}
                                     type="currency"
@@ -417,8 +418,8 @@ function ModificationRequestCard({
                                     {(formatted) => (
                                         <div className="text-success font-semibold">{formatted}</div>
                                     )}
-                                </DisplayRow>
-                                <DisplayRow
+                                </EntityCardRow>
+                                <EntityCardRow
                                     label={resolveLanguageKey("estimatedCompletionDate")}
                                     show={!!permissions.estimatedCompletionDate}
                                     type="dateTime"
@@ -464,7 +465,7 @@ function ModificationRequestCard({
                                                                                     !!cPermissions.quantity && !!cPermissions.cost &&
                                                                                     <>
                                                                                         <p className="text-success">
-                                                                                            {formatFinanceCurrency(financeDetails)}{((item.cost ?? 0) * (item.quantity ?? 0)).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                                                                            {formatFinanceCurrency(financeDetails)}{formatNumber((item.cost ?? 0) * (item.quantity ?? 0), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                                                                         </p>
                                                                                     </>
                                                                                 }
@@ -500,7 +501,7 @@ function ModificationRequestCard({
                                                                                     {
                                                                                         cPermissions.cost &&
                                                                                         <>
-                                                                                            <p>{formatFinanceCurrency(financeDetails)}{item.cost?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                                                                                            <p>{formatFinanceCurrency(financeDetails)}{formatNumber(item.cost, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                                                                                         </>
                                                                                     }
                                                                                 </HiddenElement>
@@ -757,7 +758,7 @@ function ModificationRequestCard({
                             />
                         </EntityCard.Header>
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconHome}
                                 iconReplacement={
                                     unitMdi ? (
@@ -774,7 +775,7 @@ function ModificationRequestCard({
                                 path="unit"
                                 value={displayRequest.unit?.name ?? displayRequest.unit?.unitNumber}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconTag}
                                 label={resolveLanguageKey("constructionType")}
                                 tooltip={resolveLanguageKey("constructionType")}
@@ -783,7 +784,7 @@ function ModificationRequestCard({
                                 languageKeyCategory="constructionTypes"
                                 value={displayRequest.constructionType}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconTag}
                                 label={resolveLanguageKey("status")}
                                 tooltip={resolveLanguageKey("status")}
@@ -793,7 +794,7 @@ function ModificationRequestCard({
                                 value={displayRequest.status}
                             />
                             {!small && (
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconCalendar}
                                     label={resolveLanguageKey("submittedAt")}
                                     tooltip={resolveLanguageKey("submittedAt")}
@@ -802,7 +803,7 @@ function ModificationRequestCard({
                                     value={displayRequest.submittedAt}
                                 />
                             )}
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCalendar}
                                 label={resolveLanguageKey("stageDueDate")}
                                 tooltip={resolveLanguageKey("stageDueDate")}
@@ -810,7 +811,7 @@ function ModificationRequestCard({
                                 type="date"
                                 value={displayRequest.stageDueDate}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconUser}
                                 label={resolveLanguageKey("requestedBy")}
                                 tooltip={resolveLanguageKey("requestedBy")}
@@ -818,7 +819,7 @@ function ModificationRequestCard({
                                 type="user"
                                 value={displayRequest.requestedBy}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCashBanknote}
                                 label={resolveLanguageKey("totalCost")}
                                 tooltip={resolveLanguageKey("totalCost")}

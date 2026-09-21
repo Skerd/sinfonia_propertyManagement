@@ -8,6 +8,7 @@
   "statusAvailable": "Disponibile",
   "statusReserved": "Prenotato",
   "statusSold": "Venduto",
+  "statusUnavailable": "Non disponibile",
   "unitNumber": "Numero unità",
   "unitType": "Tipo di unità",
   "propertyType": "Tipo di immobile",

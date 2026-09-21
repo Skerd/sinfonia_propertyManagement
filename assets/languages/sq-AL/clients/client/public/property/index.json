@@ -10,6 +10,7 @@
   "statusAvailable": "E disponueshme",
   "statusReserved": "E rezervuar",
   "statusSold": "E shitur",
+  "statusUnavailable": "Nuk disponohet",
   "price": "Çmimi",
   "priceOnRequest": "Sipas kërkesës",
   "area": "Sipërfaqja",

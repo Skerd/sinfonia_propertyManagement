@@ -117,6 +117,7 @@ function OpenProjectGridCardsSection({
                                                 availableLabel={resolveLanguageKey("filterAvailable")}
                                                 soldLabel={resolveLanguageKey("filterSold")}
                                                 reservedLabel={resolveLanguageKey("filterReserved")}
+                                                unavailableLabel={resolveLanguageKey("filterUnavailable")}
                                                 areaLabel={resolveLanguageKey("areaLabel")}
                                                 roomsLabel={resolveLanguageKey("roomsLabel")}
                                                 floorLabel={resolveLanguageKey("floorLabel")}

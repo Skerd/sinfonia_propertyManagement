@@ -8,6 +8,7 @@
   "statusAvailable": "E disponueshme",
   "statusReserved": "E rezervuar",
   "statusSold": "E shitur",
+  "statusUnavailable": "Nuk disponohet",
   "unitNumber": "Numri i njësisë",
   "unitType": "Lloji i njësisë",
   "propertyType": "Lloji i pronës",

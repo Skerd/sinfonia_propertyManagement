@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {LayoutGrid, List, X} from "lucide-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import PolygonSelector from "@coreModule/components/custom/polygonSelector.tsx";
+import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import {
@@ -23,6 +23,7 @@ const UNIT_STATUS_POLYGON_COLORS: Record<MarketingUnitStatus, {fill: string; str
     available: {fill: "rgba(31, 190, 106, 0.5)", stroke: "rgba(31, 190, 106, 0.9)"},
     reserved: {fill: "rgba(234, 179, 8, 0.5)", stroke: "rgba(234, 179, 8, 0.9)"},
     sold: {fill: "rgba(220, 38, 38, 0.5)", stroke: "rgba(220, 38, 38, 0.9)"},
+    unavailable: {fill: "rgba(107, 114, 128, 0.45)", stroke: "rgba(107, 114, 128, 0.9)"},
 };
 
 type StatusColoredPolygon = MarketingPolygonItem & {fill: string; stroke: string};
@@ -32,6 +33,7 @@ const STATUS_BADGE: Record<MarketingUnitStatus, {wrap: string; dot: string}> = {
     available: {wrap: "bg-[rgba(47,157,68,0.12)] text-[#2f9d44]", dot: "bg-[#2f9d44]"},
     reserved: {wrap: "bg-[rgba(234,179,8,0.12)] text-[#ca8a04]", dot: "bg-[#eab308]"},
     sold: {wrap: "bg-[rgba(220,38,38,0.12)] text-[#dc2626]", dot: "bg-[#dc2626]"},
+    unavailable: {wrap: "bg-[rgba(107,114,128,0.12)] text-[#6b7280]", dot: "bg-[#6b7280]"},
 };
 
 type OpenProjectFigmaFloorPanelProps = {
@@ -225,7 +227,7 @@ function OpenProjectFigmaFloorPanel({
                                                 phantomsAlwaysVisible
                                                 imageUrl={floorPlanImage}
                                                 phantomPoints={unitPolygons}
-                                                onFloorClick={(item) =>
+                                                onFloorClick={(item: Pick<MarketingPolygonItem, "_id" | "name">) =>
                                                     selectUnit(resolveUnitIdFromPolygon(units, item))
                                                 }
                                                 stayHovered={selectedUnitId || hoveredUnitId || undefined}

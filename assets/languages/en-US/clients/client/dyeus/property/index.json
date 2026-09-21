@@ -8,6 +8,7 @@
   "statusAvailable": "Available",
   "statusReserved": "Reserved",
   "statusSold": "Sold",
+  "statusUnavailable": "Unavailable",
   "unitNumber": "Unit number",
   "unitType": "Unit type",
   "propertyType": "Property type",

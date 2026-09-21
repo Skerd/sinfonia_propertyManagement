@@ -9,6 +9,7 @@ import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/u
 import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
+import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
 
 type DyeusMenuProps = {
     open: boolean;
@@ -85,16 +86,8 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
         };
     }, [open, onClose, langOpen]);
 
-    useEffect(() => {
-        if (!langOpen) return;
-        const onPointerDown = (event: MouseEvent) => {
-            if (!langRef.current?.contains(event.target as Node)) {
-                setLangOpen(false);
-            }
-        };
-        window.addEventListener("mousedown", onPointerDown);
-        return () => window.removeEventListener("mousedown", onPointerDown);
-    }, [langOpen]);
+    /* Escape is handled above: it closes the language list first, then the menu. */
+    useOutsideClick(langRef, () => setLangOpen(false), {enabled: langOpen});
 
     if (!open) return null;
 
@@ -135,10 +128,7 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
 
                     <nav className="flex flex-1 flex-col justify-center gap-5 md:gap-6">
                         {dyeusMenuLinks.map((link) => {
-                            const active =
-                                link.path === "/"
-                                    ? pathname === "/"
-                                    : pathname === link.path || pathname.startsWith(`${link.path}/`);
+                            const active = pathname === link.path || pathname.startsWith(`${link.path}/`);
                             return (
                                 <Link
                                     key={link.path}

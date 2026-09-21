@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -26,55 +26,55 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "projectInterest",
-            label: resolveLanguageKey("fields.projectInterest") as string,
+            label: resolveLanguageKey("fields.projectInterest"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
         },
         {
             field: "unitInterest",
-            label: resolveLanguageKey("fields.unitInterest") as string,
+            label: resolveLanguageKey("fields.unitInterest"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
         },
         {
             field: "status",
-            label: resolveLanguageKey("fields.status") as string,
+            label: resolveLanguageKey("fields.status"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "new",         label: resolveLanguageKey("fields.!enums.status.new")         as string},
-                {value: "contacted",   label: resolveLanguageKey("fields.!enums.status.contacted")   as string},
-                {value: "qualified",   label: resolveLanguageKey("fields.!enums.status.qualified")   as string},
-                {value: "proposal",    label: resolveLanguageKey("fields.!enums.status.proposal")    as string},
-                {value: "negotiation", label: resolveLanguageKey("fields.!enums.status.negotiation") as string},
-                {value: "won",         label: resolveLanguageKey("fields.!enums.status.won")         as string},
-                {value: "lost",        label: resolveLanguageKey("fields.!enums.status.lost")        as string},
+                {value: "new",         label: resolveLanguageKey("fields.!enums.status.new")},
+                {value: "contacted",   label: resolveLanguageKey("fields.!enums.status.contacted")},
+                {value: "qualified",   label: resolveLanguageKey("fields.!enums.status.qualified")},
+                {value: "proposal",    label: resolveLanguageKey("fields.!enums.status.proposal")},
+                {value: "negotiation", label: resolveLanguageKey("fields.!enums.status.negotiation")},
+                {value: "won",         label: resolveLanguageKey("fields.!enums.status.won")},
+                {value: "lost",        label: resolveLanguageKey("fields.!enums.status.lost")},
             ],
         },
         {
             field: "source",
-            label: resolveLanguageKey("fields.source") as string,
+            label: resolveLanguageKey("fields.source"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "website",   label: resolveLanguageKey("fields.!enums.source.website")   as string},
-                {value: "referral",  label: resolveLanguageKey("fields.!enums.source.referral")  as string},
-                {value: "social",    label: resolveLanguageKey("fields.!enums.source.social")    as string},
-                {value: "event",     label: resolveLanguageKey("fields.!enums.source.event")     as string},
-                {value: "cold_call", label: resolveLanguageKey("fields.!enums.source.cold_call") as string},
-                {value: "walk_in",   label: resolveLanguageKey("fields.!enums.source.walk_in")   as string},
-                {value: "chat",      label: resolveLanguageKey("fields.!enums.source.chat")      as string},
-                {value: "other",     label: resolveLanguageKey("fields.!enums.source.other")     as string},
+                {value: "website",   label: resolveLanguageKey("fields.!enums.source.website")},
+                {value: "referral",  label: resolveLanguageKey("fields.!enums.source.referral")},
+                {value: "social",    label: resolveLanguageKey("fields.!enums.source.social")},
+                {value: "event",     label: resolveLanguageKey("fields.!enums.source.event")},
+                {value: "cold_call", label: resolveLanguageKey("fields.!enums.source.cold_call")},
+                {value: "walk_in",   label: resolveLanguageKey("fields.!enums.source.walk_in")},
+                {value: "chat",      label: resolveLanguageKey("fields.!enums.source.chat")},
+                {value: "other",     label: resolveLanguageKey("fields.!enums.source.other")},
             ],
         },
         {
             field: "interest",
-            label: resolveLanguageKey("fields.interest") as string,
+            label: resolveLanguageKey("fields.interest"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "partnerships",     label: resolveLanguageKey("fields.!enums.interest.partnerships")     as string},
-                {value: "investments",      label: resolveLanguageKey("fields.!enums.interest.investments")      as string},
-                {value: "platform_support", label: resolveLanguageKey("fields.!enums.interest.platform_support") as string},
-                {value: "reservation",      label: resolveLanguageKey("fields.!enums.interest.reservation")      as string},
-                {value: "other",            label: resolveLanguageKey("fields.!enums.interest.other")            as string},
+                {value: "partnerships",     label: resolveLanguageKey("fields.!enums.interest.partnerships")},
+                {value: "investments",      label: resolveLanguageKey("fields.!enums.interest.investments")},
+                {value: "platform_support", label: resolveLanguageKey("fields.!enums.interest.platform_support")},
+                {value: "reservation",      label: resolveLanguageKey("fields.!enums.interest.reservation")},
+                {value: "other",            label: resolveLanguageKey("fields.!enums.interest.other")},
             ],
         },
     ], [resolveLanguageKey]);

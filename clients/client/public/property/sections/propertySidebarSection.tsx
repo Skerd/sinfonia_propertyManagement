@@ -14,7 +14,7 @@ import {
     PUBLIC_TITLE_COMPACT,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 
 type PropertySidebarSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
@@ -29,22 +29,25 @@ const STATUS_LANGUAGE_KEYS: Record<MarketingUnitStatus, string> = {
     available: "statusAvailable",
     reserved: "statusReserved",
     sold: "statusSold",
+    unavailable: "statusUnavailable",
 };
 
 const STATUS_DOT_CLASS: Record<MarketingUnitStatus, string> = {
     available: "bg-green-500",
     reserved: "bg-yellow-500",
     sold: "bg-red-500",
+    unavailable: "bg-gray-500",
 };
 
 const STATUS_TEXT_CLASS: Record<MarketingUnitStatus, string> = {
     available: "text-green-600",
     reserved: "text-yellow-600",
     sold: "text-red-600",
+    unavailable: "text-gray-600",
 };
 
 function resolveUnitStatus(status: string | undefined): MarketingUnitStatus {
-    if (status === "reserved" || status === "sold") {
+    if (status === "reserved" || status === "sold" || status === "unavailable") {
         return status;
     }
     return "available";

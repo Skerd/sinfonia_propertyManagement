@@ -46,5 +46,11 @@
   "rentOverdue": "Qira e vonuar",
   "rentOverdueDesc": "Mbetja e vonuar sipas monedhës",
   "activeLeases": "Kontrata aktive",
-  "activeLeasesDesc": "Kontrata aktualisht aktive"
+  "activeLeasesDesc": "Kontrata aktualisht aktive",
+  "paymentPlansSection": "Planet e pagesës",
+  "paymentPlansSectionDesc": "Njësitë, planet aktive dhe bilancet e papaguara.",
+  "rentalsSection": "Qiratë",
+  "rentalsSectionDesc": "Qira e mbledhur, e papaguar dhe e vonuar.",
+  "portfolioSection": "Portofoli",
+  "portfolioSectionDesc": "Struktura, banimi dhe puna e ndjekjes."
 }

@@ -4,7 +4,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
-import {ensurePdfjsWorker} from "@coreModule/helpers/pdf/pdfjsWorker.ts";
+import {ensurePdfjsWorker} from "@coreModule/helpers/general/pdfjsWorker.ts";
 
 ensurePdfjsWorker(pdfjs);
 

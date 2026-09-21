@@ -40,7 +40,7 @@ function OpenProjectFigmaFinanceChart({
     const firstPrice = plot?.points[0]?.price;
     const lastPrice = plot?.points[plot.points.length - 1]?.price;
     const changeLabel =
-        firstPrice != null && lastPrice != null && plot.points.length > 1
+        plot && firstPrice != null && lastPrice != null && plot.points.length > 1
             ? formatChangePercent(firstPrice, lastPrice)
             : null;
     const changePositive = changeLabel != null && !changeLabel.startsWith("-");

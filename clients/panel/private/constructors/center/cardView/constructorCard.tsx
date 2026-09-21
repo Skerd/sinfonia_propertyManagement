@@ -5,9 +5,9 @@ import {IconBuildingCommunity, IconMail, IconPhone} from "@tabler/icons-react";
 import {Constructor} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.dto.ts";
 import ConstructorSheetView from "@propertyManagementModule/clients/panel/private/constructors/center/sheetView/constructorSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -67,7 +67,7 @@ function ConstructorCard({
                             icon={<DisplayValue path="logo" type="avatar" value={entity.logo} />}
                         />
                         <EntityCard.Body>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconBuildingCommunity}
                                 label={resolveLanguageKey("edifices")}
                                 tooltip={resolveLanguageKey("edifices")}
@@ -76,7 +76,7 @@ function ConstructorCard({
                                 show={true}
                                 value={entity.edifices?.length ?? 0}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconPhone}
                                 label={resolveLanguageKey("phoneNumber")}
                                 tooltip={resolveLanguageKey("phoneNumber")}
@@ -84,7 +84,7 @@ function ConstructorCard({
                                 type="phoneNumber"
                                 value={entity.phoneNumber}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconMail}
                                 label={resolveLanguageKey("email")}
                                 tooltip={resolveLanguageKey("email")}

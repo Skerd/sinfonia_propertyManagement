@@ -4,18 +4,19 @@ import {useEffect, useMemo, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconFrustumPlus} from "@tabler/icons-react";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
-import {buildPageTitle, buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
+import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import {UnitStatus} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.constants.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
 import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
-import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {
     readExtraParamLabelsFromUrl,
@@ -41,7 +42,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
     const floorName   = searchParams.get("floorName")   || undefined;
 
     const headerTitle = useMemo(
-        () => buildPageTitle(resolveLanguageKey("title") as string, [projectName, edificeName, floorName]),
+        () => buildPageTitle(resolveLanguageKey("title"), [projectName, edificeName, floorName]),
         [resolveLanguageKey, projectName, edificeName, floorName],
     );
 
@@ -131,7 +132,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
         <div className="flex items-center gap-4 flex-wrap pb-1">
             <div className="flex items-center gap-1">
                 <span className="text-xs text-muted-foreground shrink-0">
-                    {resolveLanguageKey("reservedBy") as string}
+                    {resolveLanguageKey("reservedBy")}
                 </span>
                 <div className={`relative flex items-center${reservedBy ? " ring-1 ring-primary/30 rounded-md" : ""}`}>
                     <ApiSelect
@@ -145,7 +146,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                                 typeof label === "string" ? label : undefined,
                             )
                         }
-                        placeholder={resolveLanguageKey("reservedByPlaceholder") as string}
+                        placeholder={resolveLanguageKey("reservedByPlaceholder")}
                         className="h-8 text-sm min-w-[160px] max-w-[220px]"
                         pageSize={50}
                     />
@@ -153,7 +154,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
             </div>
             <div className="flex items-center gap-1">
                 <span className="text-xs text-muted-foreground shrink-0">
-                    {resolveLanguageKey("boughtFrom") as string}
+                    {resolveLanguageKey("boughtFrom")}
                 </span>
                 <div className={`relative flex items-center${boughtFrom ? " ring-1 ring-primary/30 rounded-md" : ""}`}>
                     <ApiSelect
@@ -167,7 +168,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
                                 typeof label === "string" ? label : undefined,
                             )
                         }
-                        placeholder={resolveLanguageKey("boughtFromPlaceholder") as string}
+                        placeholder={resolveLanguageKey("boughtFromPlaceholder")}
                         className="h-8 text-sm min-w-[160px] max-w-[220px]"
                         pageSize={50}
                     />
@@ -179,57 +180,57 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
         },
         {
             field: "floor",
-            label: resolveLanguageKey("fields.floor") as string,
+            label: resolveLanguageKey("fields.floor"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/floor/select",
             dependsOn: ["edifice", "project"],
         },
         {
             field: "status",
-            label: resolveLanguageKey("status") as string,
+            label: resolveLanguageKey("status"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: UnitStatus.AVAILABLE,   label: resolveLanguageKey("available")  as string},
-                {value: UnitStatus.RESERVED,    label: resolveLanguageKey("reserved")   as string},
-                {value: UnitStatus.SOLD,        label: resolveLanguageKey("sold")       as string},
-                {value: UnitStatus.RENTED,      label: resolveLanguageKey("rented") as string},
-                {value: UnitStatus.UNAVAILABLE, label: resolveLanguageKey("notAvailable") as string},
+                {value: UnitStatus.AVAILABLE,   label: resolveLanguageKey("available")},
+                {value: UnitStatus.RESERVED,    label: resolveLanguageKey("reserved")},
+                {value: UnitStatus.SOLD,        label: resolveLanguageKey("sold")},
+                {value: UnitStatus.RENTED,      label: resolveLanguageKey("rented")},
+                {value: UnitStatus.UNAVAILABLE, label: resolveLanguageKey("notAvailable")},
             ],
         },
         {
             field: "unitType",
-            label: resolveLanguageKey("unitType") as string,
+            label: resolveLanguageKey("unitType"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unitType/select",
         },
         {
             field: "numberOfRooms",
-            label: resolveLanguageKey("fields.numberOfRooms") as string,
+            label: resolveLanguageKey("fields.numberOfRooms"),
             type: COLUMN_TYPE.NUMBER,
             placeholder: "#",
         },
         {
             field: "numberOfBathrooms",
-            label: resolveLanguageKey("fields.numberOfBathrooms") as string,
+            label: resolveLanguageKey("fields.numberOfBathrooms"),
             type: COLUMN_TYPE.NUMBER,
             placeholder: "#",
         },
         {
             field: "isAvailable",
-            label: resolveLanguageKey("available") as string,
+            label: resolveLanguageKey("available"),
             type: COLUMN_TYPE.BOOLEAN,
         },
     ], [resolveLanguageKey]);

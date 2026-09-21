@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {useEffect, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -7,8 +7,8 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {BranchKpi, GroupDashboardResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/groupDashboard/groupDashboard.response.type.ts";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {
     Table,
@@ -28,11 +28,14 @@ import {
     ShoppingBag,
     Wallet,
 } from "lucide-react";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type GroupDashboardProps = WithLanguageType & WithAxiosType<GroupDashboardResponse, Record<string, never>>;
 
@@ -50,7 +53,7 @@ const KPI_CONFIG: {key: KpiKey; labelKey: string; icon: typeof Layers; variant?:
 ];
 
 function fmt(n: number): string {
-    return n.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
+    return formatNumber(n, {minimumFractionDigits: 0, maximumFractionDigits: 2});
 }
 
 function GroupDashboard({
@@ -128,7 +131,7 @@ function GroupDashboard({
         <div className="flex-full gap-4">
             <Header title={pageTitle} description={description} help={readPageHelp(resolveLanguageKey)}>
                 <p className="text-muted-foreground text-xs whitespace-nowrap">
-                    {resolveLanguageKey("computedAt")} {new Date(data.computedAt).toLocaleString()}
+                    {resolveLanguageKey("computedAt")} {formatDate(data.computedAt, {format: DATE_FORMATS.dateTime})}
                 </p>
             </Header>
 

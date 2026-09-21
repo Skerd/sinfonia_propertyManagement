@@ -9,9 +9,9 @@ import ProjectCard from "@propertyManagementModule/clients/panel/private/project
 import ViewEdifices from "@propertyManagementModule/clients/panel/private/projects/center/actions/viewEdifices.tsx";
 import ViewEdificesOverlay from "@propertyManagementModule/clients/panel/private/projects/center/actions/viewEdificesOverlay.tsx";
 import EdificesOverlay from "@propertyManagementModule/components/custom/projects/edificesOverlay.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_HIERARCHY} from "@coreModule/components/custom/cards/entityCard.constants.ts";
-import {useAccess} from "@coreModule/helpers/context/accessContext.tsx";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
 function AllProjects({resolveLanguageKey}: WithLanguageType) {
@@ -20,7 +20,7 @@ function AllProjects({resolveLanguageKey}: WithLanguageType) {
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "name",
-            label: resolveLanguageKey("fields.name") as string,
+            label: resolveLanguageKey("fields.name"),
             type: COLUMN_TYPE.STRING,
         },
     ], [resolveLanguageKey]);

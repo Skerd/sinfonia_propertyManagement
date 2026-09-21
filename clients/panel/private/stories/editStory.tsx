@@ -1,5 +1,5 @@
 import {Save} from "lucide-react";
-import {createGenericEditPage} from "@coreModule/components/entityPage/createGenericEditPage.tsx";
+import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editStoryFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/editStory.form.validator.ts";
 import type {Story} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.dto.ts";
 import type {EditStoryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.schema-def.ts";

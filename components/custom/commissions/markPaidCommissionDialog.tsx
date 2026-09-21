@@ -15,8 +15,8 @@ import {
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
-import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
+import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
 import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.dto.ts";
 import type {MarkCommissionPaidForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/markCommissionPaid.form.type.ts";
 import {COMMISSION_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.schema-def.ts";

@@ -15,5 +15,27 @@
   "totalModificationRequestsDesc": "All modification requests",
   "openModificationRequests": "Open requests",
   "openModificationRequestsDesc": "Not completed, rejected or cancelled",
-  "modificationRequestsByStatus": "By status"
+  "modificationRequestsByStatus": "By status",
+  "inspectionsSectionDesc": "Volume and follow-up load.",
+  "modificationRequestsSectionDesc": "Open and total modification requests.",
+  "inspectionStatus": {
+    "scheduled": "Scheduled",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "rescheduled": "Rescheduled"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "Pending Architect",
+    "pending_engineer": "Pending Engineer",
+    "pending_ceo": "Pending CEO",
+    "pending_architect_revision": "Pending Architect Revision",
+    "pending_engineer_revision": "Pending Engineer Revision",
+    "pending_finance": "Pending Finance",
+    "pending_client_approval": "Pending Client Approval",
+    "finance_completed": "Finance Completed",
+    "pending_delivery": "Pending Delivery",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
 }

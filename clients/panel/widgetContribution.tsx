@@ -1,9 +1,10 @@
 import {createElement, lazy, type ComponentType} from "react";
-import type {WidgetContribution} from "@coreModule/clients/panel/moduleContributions/widgetContribution.types.ts";
+import type {WidgetContribution} from "@coreModule/helpers/types/widgetContribution.types.ts";
 import {
     hasAccessPath,
     normalizeObjectIdRef,
     resolvePath,
+    sheetFieldVisible,
 } from "@coreModule/components/viewEngine/viewRendererHelpers.ts";
 import ValueNotSet from "@coreModule/components/custom/valueNotSet.tsx";
 import FormFloorPolygon from "@propertyManagementModule/components/custom/floors/formFloorPolygon.tsx";
@@ -17,6 +18,10 @@ import UnitCard from "@propertyManagementModule/clients/panel/private/units/cent
 import FormExpenditureItemsField from "@propertyManagementModule/components/custom/unitCosts/formExpenditureItemsField.tsx";
 import SheetLineItems from "@propertyManagementModule/components/custom/lineItems/sheetLineItems.tsx";
 import {createSheetLineItems} from "@propertyManagementModule/components/custom/lineItems/createSheetLineItems.tsx";
+import {
+    propertyManagementFormWidgetRenderers,
+    propertyManagementFormWriteAccessKeys,
+} from "@propertyManagementModule/clients/panel/formWidgetRenderers.tsx";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
 import UnitCostCard from "@propertyManagementModule/clients/panel/private/unitCosts/center/cardView/unitCostCard.tsx";
 import ModificationRequestCard from "@propertyManagementModule/clients/panel/private/modificationRequests/center/cardView/modificationRequestCard.tsx";
@@ -114,13 +119,6 @@ const InspectionChecklistTemplateSheetViewLazy = lazy(
         ),
 );
 
-function sheetFieldVisible(
-    node: {permissions?: {read?: string}},
-    ctx: {access?: Record<string, any>},
-): boolean {
-    return !(node.permissions?.read && !hasAccessPath(ctx.access, node.permissions.read));
-}
-
 const propertyManagementWidgetContribution: WidgetContribution = {
     id: "propertyManagement",
     order: 20,
@@ -164,6 +162,8 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#InspectionChecklistTemplateSheetView": InspectionChecklistTemplateSheetViewLazy,
     },
     compoundFormWidgets: ["#LocalDiscountField"],
+    compoundFormWidgetRenderers: propertyManagementFormWidgetRenderers,
+    formWriteAccessKeys: propertyManagementFormWriteAccessKeys,
     referencesDefaultItemProps: {
         "#InspectionCard": "inspection",
         "#UnitCostCard": "unitCost",

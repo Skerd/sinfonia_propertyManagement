@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
+import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
 import {IconAlignLeft, IconBath, IconDoor, IconGrid4x4, IconListDetails, IconStack, IconTag} from "@tabler/icons-react";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
@@ -10,8 +10,8 @@ import {UnitStatusBadge, resolveUnitStatusKey} from "@propertyManagementModule/c
 import UnitSheetView from "@propertyManagementModule/clients/panel/private/units/center/sheetView/unitSheetView.tsx";
 import {buildUnitEditPath} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
 import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -76,7 +76,7 @@ function UnitCard({
                 );
             }}
         >
-            {({entity, setAction}) => {
+            {({entity, read, setAction}) => {
                 const unitStatus =
                     entity.status ??
                     (entity.isAvailable != null
@@ -87,7 +87,8 @@ function UnitCard({
                 const showStatusBadge = resolveUnitStatusKey(entity.status, entity.isAvailable) != null;
                 return (
                     <>
-                        <GalleryCarousel
+                        <AccessGatedGalleryCarousel
+                            read={read}
                             mainImage={entity.mainImage}
                             imageGallery={entity.imageGallery || []}
                             videoGallery={entity.videoGallery || []}
@@ -114,14 +115,14 @@ function UnitCard({
                         <EntityCard.Body>
                             {!small && (
                                 <>
-                                    <DisplayRow
+                                    <EntityCardRow
                                         icon={IconStack}
                                         label={resolveLanguageKey("floor")}
                                         tooltip={resolveLanguageKey("floor")}
                                         path="floor.name"
                                         value={entity.floor?.name}
                                     />
-                                    <DisplayRow
+                                    <EntityCardRow
                                         icon={IconListDetails}
                                         label={resolveLanguageKey("data.unitType")}
                                         tooltip={resolveLanguageKey("data.unitType")}
@@ -130,7 +131,7 @@ function UnitCard({
                                     />
                                 </>
                             )}
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconGrid4x4}
                                 label={resolveLanguageKey("data.area")}
                                 tooltip={resolveLanguageKey("data.area")}
@@ -138,7 +139,7 @@ function UnitCard({
                                 type="area"
                                 value={entity.area}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("data.rooms")}
                                 tooltip={resolveLanguageKey("data.rooms")}
@@ -146,7 +147,7 @@ function UnitCard({
                                 type="number"
                                 value={entity.numberOfRooms}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconBath}
                                 label={resolveLanguageKey("data.numberOfBathrooms")}
                                 tooltip={resolveLanguageKey("data.numberOfBathrooms")}
@@ -154,7 +155,7 @@ function UnitCard({
                                 type="number"
                                 value={entity.numberOfBathrooms}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconTag}
                                 label={resolveLanguageKey("data.price")}
                                 tooltip={resolveLanguageKey("data.price")}
@@ -163,7 +164,7 @@ function UnitCard({
                                 value={{amount: entity.price, currency: entity.priceCurrency}}
                             />
                             {entity.unavailableNotes ? (
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconAlignLeft}
                                     label={resolveLanguageKey("unavailableNotes")}
                                     tooltip={resolveLanguageKey("unavailableNotes")}
@@ -171,7 +172,7 @@ function UnitCard({
                                     value={entity.unavailableNotes}
                                 />
                             ) : null}
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("features.balcony")}
                                 tooltip={resolveLanguageKey("features.balcony")}
@@ -179,7 +180,7 @@ function UnitCard({
                                 type="boolean"
                                 value={entity.hasBalcony}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("features.terrace")}
                                 tooltip={resolveLanguageKey("features.terrace")}
@@ -187,7 +188,7 @@ function UnitCard({
                                 type="boolean"
                                 value={entity.hasTerrace}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconListDetails}
                                 label={resolveLanguageKey("constructionStatusLabel")}
                                 tooltip={resolveLanguageKey("constructionStatusLabel")}

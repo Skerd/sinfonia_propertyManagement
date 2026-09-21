@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import type { TableResponse } from "armonia/src/modules/core/types/shared.types.ts";
 import type { UnitCost } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.dto.ts";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import { buildFinanceCalendarFetchFilter } from "@propertyManagementModule/helpers/components/unitCosts/financeFilterDsl.ts";
 
 const PAGE_LIMIT = 200;

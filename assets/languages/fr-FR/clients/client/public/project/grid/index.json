@@ -39,6 +39,7 @@
   "filterAvailable": "Disponible",
   "filterSold": "Vendu",
   "filterReserved": "Réservé",
+  "filterUnavailable": "Indisponible",
   "filterAll": "Tous",
   "areaLabel": "Surface",
   "roomsLabel": "Pièces",

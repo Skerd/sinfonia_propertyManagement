@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconSquarePlus2} from "@tabler/icons-react";
-import {buildPageTitle} from "@coreModule/helpers/general";
+import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
@@ -16,8 +16,8 @@ import ReverseReservationPaymentDialog from "@propertyManagementModule/component
 import ManualReservationClientEmailDialog, {
     parseManualClientEmailAction,
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/EntityListPage.tsx";
-import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 
@@ -43,7 +43,7 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
     const edificeName = decodeSearchParam(searchParams.get("edificeName"));
 
     const headerTitle = useMemo(
-        () => buildPageTitle(resolveLanguageKey("title") as string, [edificeName, unitName]),
+        () => buildPageTitle(resolveLanguageKey("title"), [edificeName, unitName]),
         [resolveLanguageKey, edificeName, unitName],
     );
 
@@ -69,14 +69,14 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
         {
             field: "project",
-            label: resolveLanguageKey("fields.project") as string,
+            label: resolveLanguageKey("fields.project"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/project/select",
             asExtraParam: true,
         },
         {
             field: "edifice",
-            label: resolveLanguageKey("fields.edifice") as string,
+            label: resolveLanguageKey("fields.edifice"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/edifice/select",
             dependsOn: "project",
@@ -84,7 +84,7 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
         },
         {
             field: "floor",
-            label: resolveLanguageKey("fields.floor") as string,
+            label: resolveLanguageKey("fields.floor"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/floor/select",
             dependsOn: ["edifice", "project"],
@@ -92,30 +92,30 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
         },
         {
             field: "unit",
-            label: resolveLanguageKey("fields.unit") as string,
+            label: resolveLanguageKey("fields.unit"),
             type: COLUMN_TYPE.OBJECT_ID,
             apiUrl: "/api/realEstate/unit/select",
             dependsOn: ["floor", "edifice", "project"],
         },
         {
             field: "status",
-            label: resolveLanguageKey("status") as string,
+            label: resolveLanguageKey("status"),
             type: COLUMN_TYPE.ENUM,
             enumValues: [
-                {value: "active",    label: resolveLanguageKey("active")    as string},
-                {value: "expired",   label: resolveLanguageKey("expired")   as string},
-                {value: "cancelled", label: resolveLanguageKey("cancelled") as string},
-                {value: "converted", label: resolveLanguageKey("converted") as string},
+                {value: "active",    label: resolveLanguageKey("active")},
+                {value: "expired",   label: resolveLanguageKey("expired")},
+                {value: "cancelled", label: resolveLanguageKey("cancelled")},
+                {value: "converted", label: resolveLanguageKey("converted")},
             ],
         },
         {
             field: "isActive",
-            label: resolveLanguageKey("fields.isActive") as string,
+            label: resolveLanguageKey("fields.isActive"),
             type: COLUMN_TYPE.BOOLEAN,
         },
         {
             field: "paid",
-            label: resolveLanguageKey("fields.paid") as string,
+            label: resolveLanguageKey("fields.paid"),
             type: COLUMN_TYPE.BOOLEAN,
         },
     ], [resolveLanguageKey]);

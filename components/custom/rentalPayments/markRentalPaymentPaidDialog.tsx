@@ -8,8 +8,8 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DollarSign, LoaderCircle} from "lucide-react";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
-import MultiLocalFilePicker from "@coreModule/components/custom/files/multiLocalFilePicker.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
+import MultiLocalFilePicker from "@coreModule/components/viewEngine/widgets/media/multiLocalFilePicker.tsx";
 import {
     RENTAL_PAYMENT_LONG_TEXT_MAX,
     RENTAL_PAYMENT_RECEIPT_MEDIA_MAX,
@@ -25,6 +25,7 @@ import {
     AlertDialogTitle,
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type MarkPaidPayload = {
     _id: string;
@@ -42,7 +43,7 @@ type MarkRentalPaymentPaidDialogProps = WithLanguageType &
 
 function moneyLabel(amount: number | undefined, symbol?: string): string {
     if (amount == null) return "—";
-    const n = amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    const n = formatNumber(amount, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     return symbol ? `${n} ${symbol}` : n;
 }
 

@@ -5,7 +5,7 @@ import {ChevronLeft, Eye, EyeOff} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import PublicPageShell from "@propertyManagementModule/clients/client/public/shared/layout/publicPageShell.tsx";
 import PublicSection from "@propertyManagementModule/clients/client/public/shared/layout/publicSection.tsx";
 import PageHeaderSection from "@propertyManagementModule/clients/client/public/shared/sections/pageHeaderSection.tsx";
@@ -322,7 +322,7 @@ function OpenProjectFigma3dPage({
                                 />
                             </div>
                             {selectedUnitId ? (
-                                <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col animate-in fade-in slide-in-from-right-4 duration-500 lg:basis-[50vw] lg:max-w-[50vw]">
+                                <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col animate-in fade-in slide-in-from-right-4 animation-duration-500 lg:basis-[50vw] lg:max-w-[50vw]">
                                     <OpenProjectFigmaUnitPanel
                                         projectId={project._id}
                                         unitId={selectedUnitId}

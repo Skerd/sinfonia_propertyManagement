@@ -52,5 +52,9 @@
   "noRecentSales": "Keine recent sales.",
   "unitLabel": "Einheit",
   "failTitle": "Fehler",
-  "failDescription": "Konnte nicht laden dashboard. Click bis retry."
+  "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
+  "primaryKpisDesc": "Umsatz, Reservationen und Verkäufe für den gewählten Zeitraum.",
+  "financialKpisDesc": "Preise, Inventarwert und Zahlungsarten.",
+  "unitCostsKpisDesc": "Verifizierte Beschaffung und Kostendokumente im Scope.",
+  "operationsKpisDesc": "Inspektionen, Änderungsanfragen und Reservationspipeline."
 }

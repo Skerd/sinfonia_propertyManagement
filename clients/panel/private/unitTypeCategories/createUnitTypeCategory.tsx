@@ -1,5 +1,5 @@
 import {IconTag} from "@tabler/icons-react";
-import {createGenericCreatePage} from "@coreModule/components/entityPage/createGenericCreatePage.tsx";
+import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createUnitTypeCategoryFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitTypeCategory/createUnitTypeCategory.form.validator.ts";
 import type {CreateUnitTypeCategoryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitTypeCategory/unitTypeCategory.schema-def.ts";
 

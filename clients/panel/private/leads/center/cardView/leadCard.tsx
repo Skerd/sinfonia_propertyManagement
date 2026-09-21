@@ -7,9 +7,9 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import LeadSheetView from "@propertyManagementModule/clients/panel/private/leads/center/sheetView/leadSheetView.tsx";
 import LeadRowMenuExtras from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadRowMenuExtras.tsx";
 import LeadWorkflowDialogs from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadWorkflowDialogs.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -20,7 +20,7 @@ import {
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
-} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
 
@@ -169,7 +169,7 @@ function LeadCard({
             failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="firstName"
             innerRef={innerRef}
-            sheetProps={({entity, setEntity}) => ({
+            sheetProps={({setEntity}) => ({
                 fetchId,
                 onModifySuccess: (updated?: Lead) => {
                     if (updated) setEntity(updated);
@@ -213,7 +213,7 @@ function LeadCard({
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />
                         )}
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconPhone}
                                 label={resolveLanguageKey("phone")}
                                 tooltip={resolveLanguageKey("phone")}
@@ -221,7 +221,7 @@ function LeadCard({
                                 type="phoneNumber"
                                 value={entity.phone}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCurrencyDollar}
                                 label={resolveLanguageKey("budget")}
                                 tooltip={resolveLanguageKey("budget")}
@@ -229,7 +229,7 @@ function LeadCard({
                                 type="currency"
                                 value={{amount: entity.budget, currency: entity.budgetCurrency}}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconUser}
                                 label={resolveLanguageKey("assignedTo")}
                                 tooltip={resolveLanguageKey("assignedTo")}
@@ -237,7 +237,7 @@ function LeadCard({
                                 type="user"
                                 value={entity.assignedTo}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCalendar}
                                 label={resolveLanguageKey("followUpDate")}
                                 tooltip={resolveLanguageKey("followUpDate")}

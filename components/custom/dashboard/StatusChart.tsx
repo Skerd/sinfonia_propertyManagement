@@ -64,10 +64,9 @@ export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = '
   return (
     <DashboardWidgetCard
       title={title}
-      contentClassName="pt-0"
       footer={
-        <p className="text-center text-muted-foreground text-xs py-2">
-          {totalLabel}: <span className="text-foreground font-semibold">{total}</span>
+        <p className="w-full py-2 text-center text-xs text-muted-foreground">
+          {totalLabel}: <span className="font-semibold text-foreground">{total}</span>
         </p>
       }
     >

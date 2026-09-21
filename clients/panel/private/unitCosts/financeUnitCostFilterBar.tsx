@@ -1,6 +1,6 @@
 import type { ResolveLanguageKey } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import { ApiSelect } from "@coreModule/components/custom/apiSelect";
-import { SimpleSelect } from "@coreModule/components/custom/simpleSelect";
+import { ApiSelect } from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
+import { SimpleSelect } from "@coreModule/components/viewEngine/widgets/inputs/simpleSelect.tsx";
 import { Button } from "@coreModule/components/ui/button.tsx";
 import { Card, CardContent } from "@coreModule/components/ui/card.tsx";
 import { Input } from "@coreModule/components/ui/input.tsx";

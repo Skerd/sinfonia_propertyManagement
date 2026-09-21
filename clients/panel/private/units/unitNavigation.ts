@@ -1,4 +1,4 @@
-import {buildUrlWithExistingParams} from "@coreModule/helpers/general";
+import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
 import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 
 export function buildUnitEditPath(unit: Unit): string {

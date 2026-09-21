@@ -14,8 +14,8 @@ import TerminateLeaseDialog from "@propertyManagementModule/components/custom/le
 import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
 import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
 import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -119,7 +119,7 @@ function LeaseCard({
                         <ReturnDeposit lease={entity} onAction={setAction} />
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconLabel}
                             label={resolveLanguageKey("statusLabel")}
                             tooltip={resolveLanguageKey("statusLabel")}
@@ -128,7 +128,7 @@ function LeaseCard({
                             languageKeyCategory="fields.!enums.status"
                             value={entity.status}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconUser}
                             label={resolveLanguageKey("fields.tenant")}
                             tooltip={resolveLanguageKey("fields.tenant")}
@@ -136,7 +136,7 @@ function LeaseCard({
                             type="user"
                             value={entity.tenant}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCurrencyDollar}
                             label={resolveLanguageKey("fields.monthlyRent")}
                             tooltip={resolveLanguageKey("fields.monthlyRent")}
@@ -144,7 +144,7 @@ function LeaseCard({
                             type="currency"
                             value={{amount: entity.monthlyRent, currency: entity.rentCurrency}}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.startDate")}
                             tooltip={resolveLanguageKey("fields.startDate")}
@@ -152,7 +152,7 @@ function LeaseCard({
                             type="date"
                             value={entity.startDate}
                         />
-                        <DisplayRow
+                        <EntityCardRow
                             icon={IconCalendar}
                             label={resolveLanguageKey("fields.endDate")}
                             tooltip={resolveLanguageKey("fields.endDate")}

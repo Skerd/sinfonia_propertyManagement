@@ -20,5 +20,9 @@
   "unavailable": "Indisponible",
   "avgUnitsPerEdifice": "Moy. unités par bâtiment",
   "avgUnitsPerEdificeDesc": "Total unités ÷ bâtiments",
-  "edificeCards": "Bâtiments"
+  "edificeCards": "Bâtiments",
+  "structureSection": "Structure",
+  "structureSectionDesc": "Bâtiments, étages et densité d'unités.",
+  "unitsByStatusDesc": "Nombre d'unités par statut de disponibilité.",
+  "edificeCardsDesc": "Ouvrez un bâtiment pour accéder à ses unités."
 }

@@ -1,5 +1,5 @@
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {generateUUID} from "@coreModule/helpers/general";
+import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
 import type {
     ClientRegistryStatus,
@@ -7,42 +7,31 @@ import type {
     ContractRegistryStatus,
     ContractRegistryType,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.constants";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+
+const DAY_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "2-digit", year: "numeric"};
 
 export function fmtDate(iso: string | undefined, timezone?: string): string {
-    if (!iso) return "—";
-    return new Date(iso).toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        timeZone: timezone,
-    });
+    return formatDate(iso, {timeZone: timezone, format: DAY_FORMAT}) || "—";
 }
 
 export function fmtDateTime(iso: string | undefined, timezone?: string): string {
-    if (!iso) return "—";
-    return new Date(iso).toLocaleString("en-GB", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        timeZone: timezone,
-    });
+    return formatDate(iso, {timeZone: timezone, format: {...DAY_FORMAT, hour: "2-digit", minute: "2-digit"}}) || "—";
 }
 
 export function fmtMoney(amount: number | undefined, symbol = "€"): string {
-    if (amount == null || Number.isNaN(amount)) return "—";
-    return `${symbol} ${amount.toLocaleString("en-US", {minimumFractionDigits: 0, maximumFractionDigits: 2})}`.trim();
+    const formatted = formatNumber(amount, {maximumFractionDigits: 2});
+    return formatted ? `${symbol} ${formatted}`.trim() : "—";
 }
 
 export function fmtSurface(value: number | undefined): string {
-    if (value == null || Number.isNaN(value)) return "—";
-    return value.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    return formatNumber(value, {minimumFractionDigits: 2, maximumFractionDigits: 2}) || "—";
 }
 
 export function personName(parts: {name?: string; surname?: string} | undefined): string {
-    if (!parts) return "—";
-    return [parts.name, parts.surname].filter(Boolean).join(" ") || "—";
+    return getName(parts) || "—";
 }
 
 export function unitLabel(unit: {name?: string; unitNumber?: string} | undefined): string {

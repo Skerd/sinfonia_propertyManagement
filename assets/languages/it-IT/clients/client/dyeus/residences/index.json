@@ -26,6 +26,7 @@
   "sortNameAsc": "Nome",
   "statusAvailable": "Disponibile",
   "statusSold": "Venduta",
+  "statusUnavailable": "Non disponibile",
   "statusReserved": "Riservata",
   "statusAll": "Tutte",
   "emptyUnits": "Nessuna unità corrisponde a questo filtro.",

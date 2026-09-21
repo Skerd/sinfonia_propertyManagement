@@ -4,11 +4,13 @@
   "dialogDescription": "Laden Sie eine PDF-Broschüre hoch, um Geschosse und Einheiten für dieses Gebäude automatisch zu generieren.",
   "warningMessage": "Dieser Vorgang kann bis zu 1 Minute dauern. Schliessen Sie dieses Fenster erst nach Abschluss!",
   "fileLabel": "PDF-Broschüre",
+  "addFile": "PDF hinzufügen",
   "cancel": "Abbrechen",
   "generate": "Generieren",
   "processing": "Verarbeitung...",
   "noFileSelected": "Bitte eine PDF-Datei auswählen",
   "invalidFileType": "Bitte eine gültige PDF-Datei auswählen",
+  "fileTooLarge": "PDF ist zu gross. Maximale Grösse ist 200MB",
   "oldPdfLabel": "Altes PDF-Layout (zentralen Plan zuschneiden, Kopf- und Fusszeile ausschliessen)",
   "axios": {
     "start": {

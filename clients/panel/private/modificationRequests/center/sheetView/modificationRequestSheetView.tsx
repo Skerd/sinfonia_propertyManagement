@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import {useEffect, useState} from "react";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import ModificationRequestRowMenuExtras, {

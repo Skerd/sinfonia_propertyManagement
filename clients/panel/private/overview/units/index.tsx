@@ -1,16 +1,21 @@
 import { compose } from "redux";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general";
-import {GRID_KPI} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {
+  GRID_KPI,
+  DASHBOARD_TAB_STACK,
+  DASHBOARD_TAB_INTRO,
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import { ActionException } from "armonia/src/modules/core/types";
 import {
   StatusChart,
   unitsByStatusToChartData,
 } from "@propertyManagementModule/components/custom/dashboard/StatusChart.tsx";
+import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import { Layers, TrendingUp, Wallet, Users, Receipt, KeyRound } from "lucide-react";
 import AllUnits from "@propertyManagementModule/clients/panel/private/units";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
@@ -62,41 +67,56 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
   const link = viewEntriesLabel;
 
   return (
-    <div className="flex flex-col gap-y-3">
-      <div>
-        <h2 className="text-sm font-semibold mb-1">{resolveLanguageKey("title")}</h2>
-        <p className="text-muted-foreground text-xs">{resolveLanguageKey("description")}</p>
+    <div className={DASHBOARD_TAB_STACK}>
+      <div className={DASHBOARD_TAB_INTRO}>
+        <h2 className="text-sm font-semibold">{resolveLanguageKey("title")}</h2>
+        <p className="text-xs text-muted-foreground">{resolveLanguageKey("description")}</p>
       </div>
 
       <StatusChart data={statusChartData} title={resolveLanguageKey("unitStatusBreakdown")} />
 
-      <div className={GRID_KPI}>
-        <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} subtitle={resolveLanguageKey("availableDesc")} icon={Layers} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} subtitle={resolveLanguageKey("reservedDesc")} icon={Users} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} subtitle={resolveLanguageKey("soldDesc")} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} subtitle={resolveLanguageKey("leasedDesc")} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
-      </div>
-
-      <div className={GRID_KPI}>
-        <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} subtitle={resolveLanguageKey("unavailableDesc")} icon={Layers} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={TrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("inventoryValue")} value={formatCurrency(inventoryValue)} subtitle={resolveLanguageKey("inventoryValueDesc")} icon={Wallet} href={kpi.kpiInventoryValue(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("activeReservations")} value={formatNumber(activeReservations)} subtitle={resolveLanguageKey("activeReservationsDesc")} icon={Users} href={kpi.kpiActiveReservations(ctx)} linkLabel={link} />
-      </div>
-
-      <div className={GRID_KPI}>
-        <KpiCard compact title={resolveLanguageKey("verifiedPaidCosts")} value={formatCurrency(verifiedPaidCostsSum)} subtitle={resolveLanguageKey("verifiedPaidCostsDesc")} icon={Receipt} href={kpi.kpiVerifiedPaidCosts(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("verifiedOutstandingCosts")} value={formatCurrency(verifiedOutstandingCostsSum)} subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")} icon={Receipt} variant="warning" href={kpi.kpiVerifiedOutstandingCosts(ctx)} linkLabel={link} />
-        <KpiCard compact title={resolveLanguageKey("totalUnitCostDocuments")} value={formatNumber(unitCostDocsCount)} subtitle={resolveLanguageKey("totalUnitCostDocumentsShortDesc")} icon={Receipt} href={kpi.kpiTotalUnitCostDocuments(ctx)} linkLabel={link} />
-      </div>
-
-      <div className="min-h-dvh flex flex-col" style={{marginTop: "30px"}}>
-        <h3 className="text-xs font-medium mb-2 shrink-0">{resolveLanguageKey("unitsList")}</h3>
-        <div className="min-h-0 flex-1 flex flex-col">
-          <AllUnits showHeader={false}/>
+      <DashboardKpiSection
+        title={resolveLanguageKey("statusSection")}
+        description={resolveLanguageKey("statusSectionDesc")}
+      >
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} subtitle={resolveLanguageKey("availableDesc")} icon={Layers} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} subtitle={resolveLanguageKey("reservedDesc")} icon={Users} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} subtitle={resolveLanguageKey("soldDesc")} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} subtitle={resolveLanguageKey("leasedDesc")} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
         </div>
-      </div>
+      </DashboardKpiSection>
+
+      <DashboardKpiSection
+        title={resolveLanguageKey("portfolioSection")}
+        description={resolveLanguageKey("portfolioSectionDesc")}
+      >
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} subtitle={resolveLanguageKey("unavailableDesc")} icon={Layers} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={TrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("inventoryValue")} value={formatCurrency(inventoryValue)} subtitle={resolveLanguageKey("inventoryValueDesc")} icon={Wallet} href={kpi.kpiInventoryValue(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("activeReservations")} value={formatNumber(activeReservations)} subtitle={resolveLanguageKey("activeReservationsDesc")} icon={Users} href={kpi.kpiActiveReservations(ctx)} linkLabel={link} />
+        </div>
+      </DashboardKpiSection>
+
+      <DashboardKpiSection
+        title={resolveLanguageKey("costsSection")}
+        description={resolveLanguageKey("costsSectionDesc")}
+      >
+        <div className={GRID_KPI}>
+          <KpiCard compact title={resolveLanguageKey("verifiedPaidCosts")} value={formatCurrency(verifiedPaidCostsSum)} subtitle={resolveLanguageKey("verifiedPaidCostsDesc")} icon={Receipt} href={kpi.kpiVerifiedPaidCosts(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("verifiedOutstandingCosts")} value={formatCurrency(verifiedOutstandingCostsSum)} subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")} icon={Receipt} variant="warning" href={kpi.kpiVerifiedOutstandingCosts(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnitCostDocuments")} value={formatNumber(unitCostDocsCount)} subtitle={resolveLanguageKey("totalUnitCostDocumentsShortDesc")} icon={Receipt} href={kpi.kpiTotalUnitCostDocuments(ctx)} linkLabel={link} />
+        </div>
+      </DashboardKpiSection>
+
+      <DashboardKpiSection
+        title={resolveLanguageKey("unitsList")}
+        description={resolveLanguageKey("unitsListDesc")}
+      >
+        <AllUnits showHeader={false}/>
+      </DashboardKpiSection>
     </div>
   );
 }

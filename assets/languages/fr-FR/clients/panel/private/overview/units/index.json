@@ -29,5 +29,12 @@
   "totalUnitCostDocuments": "Documents de coûts",
   "totalUnitCostDocumentsShortDesc": "Documents de coûts enregistrés dans le périmètre du tableau de bord",
   "unitStatusBreakdown": "Statut des unités",
-  "unitsList": "Liste des unités"
+  "unitsList": "Liste des unités",
+  "statusSection": "Statut des unités",
+  "statusSectionDesc": "Comptes par disponibilité et statut de location.",
+  "portfolioSection": "Santé du portefeuille",
+  "portfolioSectionDesc": "Occupation, valeur du stock et réservations.",
+  "costsSection": "Coûts des unités",
+  "costsSectionDesc": "Totaux d'achat vérifiés dans le périmètre.",
+  "unitsListDesc": "Parcourir et ouvrir les unités."
 }

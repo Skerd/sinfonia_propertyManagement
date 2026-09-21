@@ -166,7 +166,7 @@ function ProjectsPriceRangeFilter({
                             onPointerDown={() => setMinThumbOnTop(true)}
                             onInput={(event) => handleMinChange(Number(event.currentTarget.value))}
                             onChange={(event) => handleMinChange(Number(event.target.value))}
-                            aria-label={resolveLanguageKey("filterPriceMin") as string}
+                            aria-label={resolveLanguageKey("filterPriceMin")}
                             aria-valuemin={bounds.min}
                             aria-valuemax={bounds.max}
                             aria-valuenow={priceMin}
@@ -183,7 +183,7 @@ function ProjectsPriceRangeFilter({
                             onPointerDown={() => setMinThumbOnTop(false)}
                             onInput={(event) => handleMaxChange(Number(event.currentTarget.value))}
                             onChange={(event) => handleMaxChange(Number(event.target.value))}
-                            aria-label={resolveLanguageKey("filterPriceMax") as string}
+                            aria-label={resolveLanguageKey("filterPriceMax")}
                             aria-valuemin={bounds.min}
                             aria-valuemax={bounds.max}
                             aria-valuenow={priceMax}

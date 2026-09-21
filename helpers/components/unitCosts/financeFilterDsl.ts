@@ -1,5 +1,5 @@
 import type { FilterGroup, FilterRule } from "armonia/src/modules/core/database/filter";
-import { generateUUID } from "@coreModule/helpers/general";
+import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import { isFilterGroupEmpty, mergeAndFilterDSL } from "@coreModule/helpers/filter/mergeFilterDsl.ts";
 
 export { isFilterGroupEmpty, mergeAndFilterDSL };

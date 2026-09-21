@@ -7,6 +7,7 @@
   "filterAvailable": "Avaliable",
   "filterSold": "Sold",
   "filterReserved": "Reserved",
+  "filterUnavailable": "Unavailable",
   "filterAll": "All",
   "areaLabel": "Area",
   "roomsLabel": "Rooms",

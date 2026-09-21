@@ -27,6 +27,7 @@
   "filterAvailable": "Disponibles",
   "filterSold": "Vendus",
   "filterReserved": "Réservés",
+  "filterUnavailable": "Indisponible",
   "filterAll": "Tous",
   "noUnits": "Aucune unité pour ce filtre.",
   "areaLabel": "Surface",

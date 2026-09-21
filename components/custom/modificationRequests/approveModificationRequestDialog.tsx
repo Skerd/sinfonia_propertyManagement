@@ -16,11 +16,11 @@ import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/re
 import {Media} from "armonia/src/modules/core/types";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {SimpleSelect} from "@coreModule/components/custom/simpleSelect";
+import {SimpleSelect} from "@coreModule/components/viewEngine/widgets/inputs/simpleSelect.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
+import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {
     MODIFICATION_REQUEST_LINE_ITEM_MAX,

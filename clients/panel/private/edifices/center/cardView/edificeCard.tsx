@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {GalleryCarousel} from "@coreModule/components/custom/images/galleryCarousel.tsx";
+import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {
@@ -19,8 +19,8 @@ import GenerateFloorsUnits from "@propertyManagementModule/clients/panel/private
 import FloorsOverlay from "@propertyManagementModule/components/custom/edifices/floorsOverlay.tsx";
 import GenerateFloorsUnitsDialog from "@propertyManagementModule/components/custom/edifices/generateFloorsUnitsDialog.tsx";
 import {buildEdificeEditPath} from "@propertyManagementModule/clients/panel/private/edifices";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -99,7 +99,7 @@ function EdificeCard({
                 </>
             )}
         >
-            {({entity, setAction}) => {
+            {({entity, read, setAction}) => {
                 const address = entity.address;
                 const addressString = [
                     address?.city?.name,
@@ -112,7 +112,8 @@ function EdificeCard({
                     .join(", ");
                 return (
                     <>
-                        <GalleryCarousel
+                        <AccessGatedGalleryCarousel
+                            read={read}
                             mainImage={entity.mainImage}
                             imageGallery={entity.imageGallery || []}
                             videoGallery={entity.videoGallery || []}
@@ -131,7 +132,7 @@ function EdificeCard({
                             <GenerateFloorsUnits onAction={setAction} />
                         </EntityCard.Header>
                         <EntityCard.Body>
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconGrid4x4}
                                 label={resolveLanguageKey("data.totalArea")}
                                 tooltip={resolveLanguageKey("data.totalArea")}
@@ -139,7 +140,7 @@ function EdificeCard({
                                 type="area"
                                 value={entity.totalArea}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconTrees}
                                 label={resolveLanguageKey("data.greenArea")}
                                 tooltip={resolveLanguageKey("data.greenArea")}
@@ -147,7 +148,7 @@ function EdificeCard({
                                 type="area"
                                 value={entity.greenArea}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconCashBanknote}
                                 label={resolveLanguageKey("data.investmentValue")}
                                 tooltip={resolveLanguageKey("data.investmentValueTooltip")}
@@ -155,7 +156,7 @@ function EdificeCard({
                                 type="currency"
                                 value={{amount: entity.investmentValue, currency: entity.investmentCurrency}}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconStack}
                                 label={resolveLanguageKey("statistics.floors")}
                                 tooltip={resolveLanguageKey("statistics.floorsTooltip")}
@@ -164,7 +165,7 @@ function EdificeCard({
                                 type="number"
                                 value={entity.statistics?.totalFloors}
                             />
-                            <DisplayRow
+                            <EntityCardRow
                                 icon={IconDoor}
                                 label={resolveLanguageKey("statistics.units")}
                                 tooltip={resolveLanguageKey("statistics.unitsTooltip")}

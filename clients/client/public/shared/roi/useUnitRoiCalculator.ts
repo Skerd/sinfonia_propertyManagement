@@ -26,9 +26,9 @@ type UseUnitRoiCalculatorArgs = {
 
 export function useUnitRoiCalculator({unitPrice, unitArea}: UseUnitRoiCalculatorArgs) {
     const [rentalType, setRentalType] = useState<RentalType>(UNIT_ROI_DEFAULTS.rentalType);
-    const [occupancyRate, setOccupancyRate] = useState(UNIT_ROI_DEFAULTS.occupancyRate);
-    const [holdingPeriod, setHoldingPeriod] = useState(UNIT_ROI_DEFAULTS.holdingPeriod);
-    const [annualAppreciation, setAnnualAppreciation] = useState(UNIT_ROI_DEFAULTS.annualAppreciation);
+    const [occupancyRate, setOccupancyRate] = useState<number>(UNIT_ROI_DEFAULTS.occupancyRate);
+    const [holdingPeriod, setHoldingPeriod] = useState<number>(UNIT_ROI_DEFAULTS.holdingPeriod);
+    const [annualAppreciation, setAnnualAppreciation] = useState<number>(UNIT_ROI_DEFAULTS.annualAppreciation);
 
     const estimatedRent = useMemo(
         () => estimateMonthlyRent({unitPrice, unitArea, rentalType}),

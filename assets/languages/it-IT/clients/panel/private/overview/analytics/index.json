@@ -46,5 +46,11 @@
   "rentOverdue": "Affitto scaduto",
   "rentOverdueDesc": "Residuo scaduto per valuta",
   "activeLeases": "Contratti attivi",
-  "activeLeasesDesc": "Contratti attualmente attivi"
+  "activeLeasesDesc": "Contratti attualmente attivi",
+  "paymentPlansSection": "Piani di pagamento",
+  "paymentPlansSectionDesc": "Unità, piani attivi e saldi residui.",
+  "rentalsSection": "Affitti",
+  "rentalsSectionDesc": "Affitti riscossi, residui e scaduti.",
+  "portfolioSection": "Portafoglio",
+  "portfolioSectionDesc": "Struttura, occupazione e follow-up."
 }

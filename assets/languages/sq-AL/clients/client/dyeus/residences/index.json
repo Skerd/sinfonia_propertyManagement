@@ -26,6 +26,7 @@
   "sortNameAsc": "Emri",
   "statusAvailable": "E disponueshme",
   "statusSold": "E shitur",
+  "statusUnavailable": "Nuk disponohet",
   "statusReserved": "E rezervuar",
   "statusAll": "Të gjitha",
   "emptyUnits": "Asnjë njësi nuk përputhet me këtë filtër.",

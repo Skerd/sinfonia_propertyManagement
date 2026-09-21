@@ -29,5 +29,12 @@
   "totalUnitCostDocuments": "Cost documents",
   "totalUnitCostDocumentsShortDesc": "Registered cost docs in dashboard scope",
   "unitStatusBreakdown": "Unit status",
-  "unitsList": "Units list"
+  "unitsList": "Units list",
+  "statusSection": "Unit status",
+  "statusSectionDesc": "Counts by availability and lease status.",
+  "portfolioSection": "Portfolio health",
+  "portfolioSectionDesc": "Occupancy, inventory value and reservations.",
+  "costsSection": "Unit costs",
+  "costsSectionDesc": "Verified procurement totals in scope.",
+  "unitsListDesc": "Browse and open individual units."
 }

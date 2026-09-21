@@ -20,9 +20,9 @@ import {
     IconUser,
 } from "@tabler/icons-react";
 import {buildInspectionEditPath} from "@propertyManagementModule/clients/panel/private/inspections";
-import DisplayRow from "@coreModule/components/custom/displayValue/displayRow.tsx";
-import DisplayValue from "@coreModule/components/custom/displayValue/displayValue.tsx";
-import EntityCard from "@coreModule/components/custom/systemCards/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -30,7 +30,7 @@ import {
     CARD_INFO_ROWS_TWO_COL_CLASS,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_WARNING,
-} from "@coreModule/components/custom/cards/entityCard.constants.ts";
+} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
 
@@ -195,7 +195,7 @@ function InspectionCard({
                                 <InspectionRowMenuExtras inspection={entity} onAction={setAction} />
                             </EntityCard.Header>
                             <EntityCard.Body className="grid min-w-0 grid-cols-1 sm:grid-cols-3 [&_[data-slot=item]]:w-full [&_[data-slot=restricted-fields]]:col-span-full">
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconTag}
                                     label={resolveLanguageKey("type")}
                                     tooltip={resolveLanguageKey("type")}
@@ -204,7 +204,7 @@ function InspectionCard({
                                     languageKeyCategory="types"
                                     value={entity.type}
                                 />
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconTag}
                                     label={resolveLanguageKey("status")}
                                     tooltip={resolveLanguageKey("status")}
@@ -218,8 +218,8 @@ function InspectionCard({
                                             {formatted}
                                         </span>
                                     )}
-                                </DisplayRow>
-                                <DisplayRow
+                                </EntityCardRow>
+                                <EntityCardRow
                                     icon={IconStar}
                                     label={resolveLanguageKey("rating")}
                                     tooltip={resolveLanguageKey("rating")}
@@ -236,18 +236,18 @@ function InspectionCard({
                                             formatted
                                         )
                                     }
-                                </DisplayRow>
+                                </EntityCardRow>
                             </EntityCard.Body>
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />
                             <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconHome}
                                     label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                     tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                                     path="unit"
                                     value={entity.unit?.name ?? entity.unit?.unitNumber}
                                 />
-                                <DisplayRow
+                                <EntityCardRow
                                     icon={IconUser}
                                     label={resolveLanguageKey("inspectedBy")}
                                     tooltip={resolveLanguageKey("inspectedBy")}
@@ -257,7 +257,7 @@ function InspectionCard({
                                 />
                                 {!small && (
                                     <>
-                                        <DisplayRow
+                                        <EntityCardRow
                                             icon={IconCalendar}
                                             label={resolveLanguageKey("inspectionDate")}
                                             tooltip={resolveLanguageKey("inspectionDate")}
@@ -265,7 +265,7 @@ function InspectionCard({
                                             type="date"
                                             value={entity.inspectionDate}
                                         />
-                                        <DisplayRow
+                                        <EntityCardRow
                                             icon={IconCalendarClock}
                                             label={resolveLanguageKey("nextInspectionDate")}
                                             tooltip={resolveLanguageKey("nextInspectionDate")}
@@ -280,14 +280,14 @@ function InspectionCard({
                                 <>
                                     <Separator className="-mx-(--density-pad) w-auto self-stretch" />
                                     <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                                        <DisplayRow
+                                        <EntityCardRow
                                             icon={IconArrowForward}
                                             label={resolveLanguageKey("followUpInspection")}
                                             tooltip={resolveLanguageKey("followUpInspection")}
                                             path="followUpInspection"
                                             value={entity.followUpInspection?.name}
                                         />
-                                        <DisplayRow
+                                        <EntityCardRow
                                             icon={IconArrowBack}
                                             label={resolveLanguageKey("followedUpByInspection")}
                                             tooltip={resolveLanguageKey("followedUpByInspection")}

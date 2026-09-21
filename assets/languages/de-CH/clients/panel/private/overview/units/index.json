@@ -29,5 +29,12 @@
   "totalUnitCostDocuments": "Kostendokumente",
   "totalUnitCostDocumentsShortDesc": "Registrierte Kostendokumente im Dashboard-Umfang",
   "unitStatusBreakdown": "Einheitenstatus",
-  "unitsList": "Einheitenliste"
+  "unitsList": "Einheitenliste",
+  "statusSection": "Einheitenstatus",
+  "statusSectionDesc": "Anzahlen nach Verfügbarkeit und Mietstatus.",
+  "portfolioSection": "Portfolio-Gesundheit",
+  "portfolioSectionDesc": "Belegung, Inventarwert und Reservationen.",
+  "costsSection": "Einheitskosten",
+  "costsSectionDesc": "Verifizierte Beschaffungssummen im Scope.",
+  "unitsListDesc": "Einheiten durchsuchen und öffnen."
 }

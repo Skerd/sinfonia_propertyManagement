@@ -10,6 +10,7 @@
   "statusAvailable": "Available",
   "statusReserved": "Reserved",
   "statusSold": "Sold",
+  "statusUnavailable": "Unavailable",
   "price": "Price",
   "priceOnRequest": "On request",
   "area": "Area",

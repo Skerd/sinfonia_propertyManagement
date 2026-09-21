@@ -27,6 +27,7 @@ type PropertyListingCardProps = {
     availableLabel: string;
     soldLabel: string;
     reservedLabel: string;
+    unavailableLabel?: string;
     areaLabel: string;
     roomsLabel: string;
     floorLabel: string;
@@ -41,10 +42,17 @@ type PropertyListingCardProps = {
     onHoverChange?: (unitId: string | null) => void;
 };
 
-function statusLabel(status: string, availableLabel: string, soldLabel: string, reservedLabel: string) {
+function statusLabel(
+    status: string,
+    availableLabel: string,
+    soldLabel: string,
+    reservedLabel: string,
+    unavailableLabel?: string,
+) {
     if (status === "available") return availableLabel;
     if (status === "sold") return soldLabel;
     if (status === "reserved") return reservedLabel;
+    if (status === "unavailable") return unavailableLabel ?? status;
     return status;
 }
 
@@ -60,6 +68,9 @@ function statusOverlayClassName(status: string): string {
     if (status === "sold") {
         return `${base} bg-[rgba(24,24,24,0.45)]`;
     }
+    if (status === "unavailable") {
+        return `${base} bg-[rgba(107,114,128,0.55)]`;
+    }
     return `${base} bg-[rgba(24,24,24,0.45)]`;
 }
 
@@ -69,9 +80,9 @@ function PropertyListingCard({
     availableLabel,
     soldLabel,
     reservedLabel,
+    unavailableLabel,
     areaLabel,
     roomsLabel,
-    floorLabel,
     bathsLabel,
     orientationLabel,
     favoriteAddLabel,
@@ -83,7 +94,7 @@ function PropertyListingCard({
     onHoverChange,
 }: PropertyListingCardProps) {
     const image = unit.imageUrl ?? projectsAssets.cardPlaceholder;
-    const statusText = statusLabel(unit.status, availableLabel, soldLabel, reservedLabel);
+    const statusText = statusLabel(unit.status, availableLabel, soldLabel, reservedLabel, unavailableLabel);
     const priceText = unit.price != null ? `€${unit.price.toLocaleString()}` : "—";
     const areaText = unit.areaSqm != null ? `${unit.areaSqm} m²` : "—";
     const roomsText = unit.bedrooms != null ? String(unit.bedrooms) : "—";

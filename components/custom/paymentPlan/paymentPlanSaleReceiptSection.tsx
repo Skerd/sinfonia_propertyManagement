@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import {UseFormReturn, useWatch} from "react-hook-form";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import { Unit, Unit as UnitData } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
-import { useAccess } from "@coreModule/helpers/context/accessContext.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import { ErrorView } from "@coreModule/components/custom/errorView.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import { ErrorView } from "@coreModule/components/custom/errors/errorView.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import { Reservation } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import { cn } from "@coreModule/components/lib/utils.ts";
@@ -14,6 +14,7 @@ import { Alert, AlertDescription, AlertTitle } from "@coreModule/components/ui/a
 import { Card, CardContent, CardFooter, CardHeader } from "@coreModule/components/ui/card.tsx";
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const PRINCIPAL_ZERO_EPS = 0.02;
 
@@ -541,11 +542,11 @@ export default function PaymentPlanSaleReceiptSection({
                                 :
                                 isFinancedNegative ?
                                 <span className="text-destructive">
-                                    {financedAmount.toLocaleString()} {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
+                                    {formatNumber(financedAmount)} {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                 </span>
                                 :
                                 <>
-                                    {financedAmount.toLocaleString()} {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
+                                    {formatNumber(financedAmount)} {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                 </>
                             }
                         </span>
@@ -565,7 +566,7 @@ export default function PaymentPlanSaleReceiptSection({
                             <div className="flex justify-between text-sm">
                                 <span className="text-muted-foreground">{resolveLanguageKey("contractInterestLabel")}</span>
                                 <span className="font-semibold">
-                                    {amortMeta.totalContractInterest.toLocaleString()}{" "}
+                                    {formatNumber(amortMeta.totalContractInterest)}{" "}
                                     {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                     <span className="text-muted-foreground font-normal text-xs ml-1">
                                         ({amortMeta.planDays} {resolveLanguageKey("planDaysSuffix")})
@@ -575,10 +576,10 @@ export default function PaymentPlanSaleReceiptSection({
                             <div className="flex justify-between text-sm border-t pt-2">
                                 <span className="text-muted-foreground">{resolveLanguageKey("totalObligationLabel")}</span>
                                 <span className="font-semibold">
-                                    {roundMoney(
+                                    {formatNumber(roundMoney(
                                         roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0)) +
                                             amortMeta.totalContractInterest,
-                                    ).toLocaleString()}{" "}
+                                    ))}{" "}
                                     {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                 </span>
                             </div>
@@ -610,7 +611,7 @@ export default function PaymentPlanSaleReceiptSection({
                             <AlertDescription className="text-warning/90">
                                 {resolveLanguageKey("principalResidualWarningDescription")}{" "}
                                 <span className="font-semibold tabular-nums">
-                                    {principalResidualCheck.residual.toLocaleString()}{" "}
+                                    {formatNumber(principalResidualCheck.residual)}{" "}
                                     {currency?.symbol ||
                                         currency?.name ||
                                         unit?.priceCurrency?.symbol ||
@@ -650,9 +651,9 @@ export default function PaymentPlanSaleReceiptSection({
                                             const openingBal = scheduleOpeningAfter?.openingByForm[i];
                                             const closingBal = scheduleOpeningAfter?.afterByForm[i];
                                             const openingStr =
-                                                openingBal != null ? openingBal.toLocaleString() : "—";
+                                                openingBal != null ? formatNumber(openingBal) : "—";
                                             const closingStr =
-                                                closingBal != null ? closingBal.toLocaleString() : "—";
+                                                closingBal != null ? formatNumber(closingBal) : "—";
                                             return (
                                                 <tr
                                                     key={`sch-${i}-${installmentNumber}-${dueDate}`}
@@ -667,7 +668,7 @@ export default function PaymentPlanSaleReceiptSection({
                                                     </td>
                                                     <td className="p-2 text-right">
                                                         {Number.isFinite(amount) && amount > 0
-                                                            ? amount.toLocaleString()
+                                                            ? formatNumber(amount)
                                                             : "—"}
                                                     </td>
                                                     <td className="p-2 text-right text-muted-foreground tabular-nums">
@@ -675,12 +676,12 @@ export default function PaymentPlanSaleReceiptSection({
                                                     </td>
                                                     <td className="p-2 text-right text-muted-foreground">
                                                         {principalAmt != null
-                                                            ? principalAmt.toLocaleString()
+                                                            ? formatNumber(principalAmt)
                                                             : "—"}
                                                     </td>
                                                     <td className="p-2 text-right text-muted-foreground">
                                                         {interestAmt != null
-                                                            ? interestAmt.toLocaleString()
+                                                            ? formatNumber(interestAmt)
                                                             : "—"}
                                                     </td>
                                                     <td className="p-2 text-right text-muted-foreground tabular-nums">
@@ -742,7 +743,7 @@ export default function PaymentPlanSaleReceiptSection({
                                             <div className="flex justify-between">
                                                 <p className="tracking-wide">{resolveLanguageKey("form.unitPriceLabel")}:</p>
                                                 <p className="font-semibold text-success">
-                                                    {unit?.price?.toLocaleString()} {unit?.priceCurrency?.name}
+                                                    {formatNumber(unit?.price)} {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
                                             {
@@ -778,7 +779,7 @@ export default function PaymentPlanSaleReceiptSection({
                                                 </p>
                                                 <p className="font-semibold text-destructive">
                                                     -
-                                                    {((Number(localDiscount || 0) / 100) * (unit.price || 0)).toLocaleString()}{" "}
+                                                    {formatNumber((Number(localDiscount || 0) / 100) * (unit.price || 0))}{" "}
                                                     {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
@@ -834,7 +835,7 @@ export default function PaymentPlanSaleReceiptSection({
                                                         </p>
                                                         :
                                                         <>
-                                                            {(finalPrice || 0).toLocaleString()}{" "}
+                                                            {formatNumber(finalPrice || 0)}{" "}
                                                             {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                                         </>
                                                     }

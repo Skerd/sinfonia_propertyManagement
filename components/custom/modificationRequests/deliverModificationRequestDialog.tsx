@@ -15,11 +15,11 @@ import {
 import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import SingleFile from "@coreModule/components/custom/files/singleFile.tsx";
+import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
 
 type DeliverModificationRequestDialogProps = WithLanguageType & WithAxiosType<any, DeliverModificationRequestFormType> & {
     open: boolean;

@@ -10,7 +10,7 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {DollarSign, LoaderCircle} from "lucide-react";
-import FormMaxLengthControl from "@coreModule/components/custom/formMaxLengthControl.tsx";
+import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {SALE_LONG_TEXT_MAX, SALE_SHORT_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 import {
     AlertDialog,
@@ -23,6 +23,7 @@ import {
     AlertDialogTitle,
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type SalePayInstallmentDialogProps = WithLanguageType & WithAxiosType<PaymentPlanData, PayInstallmentFormType> & {
     open: boolean;
@@ -110,7 +111,7 @@ function SalePayInstallmentDialog({
                             disabled={loading}
                         />
                         <p className="text-xs text-muted-foreground">
-                            {resolveLanguageKey("remainingAmount") || "Remaining"}: {Math.max(0, remainingAmount).toLocaleString()}
+                            {resolveLanguageKey("remainingAmount") || "Remaining"}: {formatNumber(Math.max(0, remainingAmount))}
                         </p>
                     </div>
                     <div className="flex flex-col gap-y-2">

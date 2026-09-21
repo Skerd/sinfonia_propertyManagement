@@ -7,20 +7,24 @@ import {Download} from "lucide-react";
 import type {RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {RoiRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.request.type.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
-import apiClient from "@coreModule/helpers/axiosClients/apiClient.ts";
-import {formatDate, generateUUID} from "@coreModule/helpers/general";
+import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
-import {ApiSelect} from "@coreModule/components/custom/apiSelect";
+import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import Loader from "@coreModule/components/custom/loader.tsx";
-import {ErrorView} from "@coreModule/components/custom/errorView.tsx";
+import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
-import Header from "@coreModule/components/custom/header";
+import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import RoiSummaryCharts from "./roiSummaryCharts.tsx";
 import {downloadRoiReportPdf, type RoiReportPdfLabels} from "./roiReportPdf.ts";
-import {useAccess, useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
+import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 
@@ -56,8 +60,7 @@ function selectBodyWithFilters(entries: { field: string; value: string | string[
 }
 
 function fmt(n?: number, decimals = 2): string {
-    if (n === undefined || n === null) return "—";
-    return n.toLocaleString("en-US", {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+    return formatNumber(n, {minimumFractionDigits: decimals, maximumFractionDigits: decimals}) || "—";
 }
 
 function hasRoiScope(filters: RoiFilters): boolean {
@@ -122,8 +125,8 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
             if (next.unitIds.length > 0)    body.unitIds    = next.unitIds;
             const res = await apiClient.post("/api/realEstate/roi", body);
             setResult(res.data);
-        } catch (e: any) {
-            setError(e?.response?.data?.message ?? rk("error"));
+        } catch (e) {
+            setError(handleError(e, {context: "RoiCalculator"})?.displayMessage ?? rk("error"));
         } finally {
             setLoading(false);
         }

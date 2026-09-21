@@ -19,5 +19,10 @@
   "avgFloorsPerEdifice": "Media piani per edificio",
   "avgFloorsPerEdificeDesc": "Piani totali ÷ edifici",
   "projectCards": "Progetti",
-  "createProject": "Crea progetto"
+  "createProject": "Crea progetto",
+  "structureSection": "Struttura",
+  "structureSectionDesc": "Progetti, edifici, piani e unità.",
+  "performanceSection": "Prestazioni",
+  "performanceSectionDesc": "Ritmo di vendita e medie del portafoglio.",
+  "projectCardsDesc": "Apri un progetto per accedere agli edifici."
 }

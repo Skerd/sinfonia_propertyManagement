@@ -5,7 +5,7 @@ import PdfLightbox from "@propertyManagementModule/clients/client/public/shared/
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
-import PdfFirstPageThumb from "@coreModule/helpers/pdf/PdfFirstPageThumb.tsx";
+import PdfFirstPageThumb from "@coreModule/components/custom/pdf/PdfFirstPageThumb.tsx";
 
 const TILE =
     "min-h-0 cursor-pointer overflow-hidden rounded-[5px] border border-pronix-border transition-colors hover:border-pronix-ink";

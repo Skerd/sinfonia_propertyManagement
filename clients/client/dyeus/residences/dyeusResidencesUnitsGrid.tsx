@@ -35,6 +35,7 @@ const STATUS_KEY: Record<MarketingUnitStatus | "all", string> = {
     available: "statusAvailable",
     sold: "statusSold",
     reserved: "statusReserved",
+    unavailable: "statusUnavailable",
     all: "statusAll",
 };
 
@@ -102,7 +103,8 @@ function DyeusUnitCard({
                         status === "available" && "bg-dyeus-available/90",
                         status === "reserved" && "bg-amber-700/85",
                         status === "sold" && "bg-dyeus-ink/80",
-                        !["available", "reserved", "sold"].includes(status) && "bg-dyeus-ink/80",
+                        status === "unavailable" && "bg-dyeus-ink/55",
+                        !["available", "reserved", "sold", "unavailable"].includes(status) && "bg-dyeus-ink/80",
                     )}
                 >
                     {statusLabel}
