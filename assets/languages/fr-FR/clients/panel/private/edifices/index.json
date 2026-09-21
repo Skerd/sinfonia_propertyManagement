@@ -55,6 +55,7 @@
     "project": "Projet",
     "propertyTypes": "Types de biens",
     "saleCurrency": "Devise de vente",
+    "showPriceOnRequest": "Prix sur demande",
     "totalArea": "Surface",
     "updatedAt": "Mis à jour le",
     "verandaPricePerMeterSquared": "Prix véranda / m²",

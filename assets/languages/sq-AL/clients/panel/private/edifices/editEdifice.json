@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Edit Edifice",
   "description": "Përditëso informacionin e ndërtesës",
   "editTitle": "Edit Edifice",
@@ -38,6 +39,7 @@
     "countryLabel": "Vendi",
     "countryPlaceholder": "Zgjidh shtetin",
     "countryRequired": "Kërkohet shteti",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "stateLabel": "Shtetit",
     "statePlaceholder": "Zgjidhni gjendjen",
     "streetLabel": "Rruga",

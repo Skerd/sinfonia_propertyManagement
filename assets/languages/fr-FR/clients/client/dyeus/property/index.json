@@ -46,6 +46,8 @@
   "no": "Non",
   "areaAndPricing": "Surface et tarification",
   "reserveOnline": "Réserver en ligne",
+  "makeEnquiry": "Faire une demande",
+  "priceEnquiryMessage": "Bonjour, je souhaiterais connaître le prix de {{unit}}.",
   "downloadBrochure": "Télécharger la brochure",
   "downloadingBrochure": "Téléchargement…",
   "brochureError": "La brochure n'est pas disponible pour cette résidence.",

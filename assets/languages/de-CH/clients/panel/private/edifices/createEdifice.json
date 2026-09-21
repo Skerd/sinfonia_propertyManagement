@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Gebäude erstellen",
   "description": "Ein neues Gebäude für dieses Projekt erstellen",
   "descriptionWithoutProject": "Ein neues Gebäude erstellen",
@@ -33,6 +34,7 @@
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
     "countryRequired": "Land ist erforderlich",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "stateLabel": "Kanton",
     "statePlaceholder": "Kanton auswählen",
     "streetLabel": "Strasse",

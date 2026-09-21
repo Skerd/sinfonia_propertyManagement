@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Click to retry fetching data.",
   "and": "and",
   "name": "Name",
+  "showPriceOnRequest": "Price on request",
+  "showPriceOnRequestTooltip": "Hides this unit's price on the public website so visitors must enquire. Also applies automatically when its floor, edifice or project has it enabled.",
   "unit": "Unit",
   "statisticsTitle": "Statistics",
   "overview": "Overview",

@@ -81,5 +81,6 @@
   "saleCurrencyLabel": "Verkaufswährung",
   "energyClassLabel": "Energieklasse",
   "constructionStartLabel": "Baubeginn",
-  "completionLabel": "Voraussichtliche Fertigstellung"
+  "completionLabel": "Voraussichtliche Fertigstellung",
+  "priceOnRequest": "Auf Anfrage"
 }

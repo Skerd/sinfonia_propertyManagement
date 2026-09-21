@@ -35,6 +35,8 @@
   "floor": "Étage",
   "baths": "Salles de bain",
   "reserveOnline": "Réserver en ligne",
+  "makeEnquiry": "Faire une demande",
+  "priceEnquiryMessage": "Bonjour, je souhaiterais connaître le prix de {{unit}}.",
   "areaAndPricing": "Surface et tarification",
   "averagePricePerSquareMeter": "Prix moyen au m²",
   "features": "Caractéristiques",

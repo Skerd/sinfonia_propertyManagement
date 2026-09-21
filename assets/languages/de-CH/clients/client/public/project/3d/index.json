@@ -53,5 +53,6 @@
   "roomsLabel": "Zimmer",
   "floorLabel": "Stockwerk",
   "bathsLabel": "Badezimmer",
-  "orientationLabel": "Ausrichtung"
+  "orientationLabel": "Ausrichtung",
+  "priceOnRequest": "Auf Anfrage"
 }

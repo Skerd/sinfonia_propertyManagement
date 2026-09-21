@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "publicVisibility": "Public website",
   "title": "Create Floor",
   "description": "Create a new floor for this edifice",
   "descriptionWithoutEdifice": "Create a new floor",
@@ -36,6 +37,7 @@
     "mainImageLabel": "Main Image",
     "mainImageRequired": "Main image is required",
     "imageGalleryLabel": "Image Gallery",
+    "showPriceOnRequestLabel": "Show price on request",
     "videoGalleryLabel": "Video Gallery",
     "mediaFilesLabel": "Documents & Files",
     "marketingBookletLabel": "Marketing Booklet",

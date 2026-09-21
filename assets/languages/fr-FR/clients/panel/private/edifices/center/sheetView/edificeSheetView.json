@@ -7,6 +7,8 @@
   "overview": "Aperçu",
   "buildingDetails": "Détails du bâtiment",
   "constructionTimeline": "Construction et conformité",
+  "showPriceOnRequest": "Prix sur demande",
+  "showPriceOnRequestTooltip": "Masque les prix sur le site public : les visiteurs doivent faire une demande. S'applique à tous les étages et unités de ce bâtiment.",
   "statisticsTitle": "Statistiques",
   "gallery": "Galerie",
   "mediaFiles": "Documents et fichiers",

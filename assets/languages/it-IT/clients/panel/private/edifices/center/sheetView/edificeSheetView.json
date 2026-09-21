@@ -7,6 +7,8 @@
   "overview": "Panoramica",
   "buildingDetails": "Dettagli edificio",
   "constructionTimeline": "Costruzione e conformità",
+  "showPriceOnRequest": "Prezzo su richiesta",
+  "showPriceOnRequestTooltip": "Nasconde i prezzi sul sito pubblico, così i visitatori devono richiederli. Vale per tutti i piani e le unità di questo edificio.",
   "statisticsTitle": "Statistiche",
   "gallery": "Galleria",
   "mediaFiles": "Documenti e file",

@@ -88,6 +88,7 @@ function OpenProject3dFloorPropertiesSection({
                                 floorLabel={resolveLanguageKey("floorLabel")}
                                 bathsLabel={resolveLanguageKey("bathsLabel")}
                                 orientationLabel={resolveLanguageKey("orientationLabel")}
+                                priceOnRequestLabel={resolveLanguageKey("priceOnRequest")}
                             />
                         </div>
                     ))

@@ -81,5 +81,6 @@
   "saleCurrencyLabel": "Sale currency",
   "energyClassLabel": "Energy class",
   "constructionStartLabel": "Construction start",
-  "completionLabel": "Expected completion"
+  "completionLabel": "Expected completion",
+  "priceOnRequest": "On request"
 }

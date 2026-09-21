@@ -9,9 +9,12 @@ import DyeusPropertyDetailsSection from "@propertyManagementModule/clients/clien
 import DyeusPropertySidebarSection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertySidebarSection.tsx";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import {
-    fillLanguageTemplate,
-    type MarketingUnitSingle,
-} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+    DYEUS_CONTACT_LOCKED_INTEREST,
+    DYEUS_CONTACT_TITLE_KEY,
+    dyeusContactDefaultMessage,
+    type DyeusContactMode as ContactMode,
+} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusContactMode.ts";
+import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const PROPERTY_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx";
@@ -24,7 +27,6 @@ type DyeusUnitPanelProps = {
 };
 
 type MarketingUnitResponse = {unit: MarketingUnitSingle};
-type ContactMode = "requestInfo" | "reserve";
 
 function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelProps) {
     const {t} = useDyeusT(PROPERTY_LANGUAGE_PATH);
@@ -122,6 +124,7 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                             unit={unit}
                             t={t}
                             onReserve={() => openContactForm("reserve")}
+                            onEnquire={() => openContactForm("enquiry")}
                         />
                         <DyeusPropertyDetailsSection
                             compact
@@ -151,7 +154,7 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                                     id="dyeus-unit-panel-contact-title"
                                     className="font-dyeus-serif text-3xl"
                                 >
-                                    {t(contactMode === "reserve" ? "reserveOnline" : "requestInfo")}
+                                    {t(DYEUS_CONTACT_TITLE_KEY[contactMode])}
                                 </h3>
                                 <p className="mt-1 font-dyeus-sans text-sm text-dyeus-ink-muted">
                                     {t("formUnitLabel")}: {unit.name}
@@ -168,10 +171,10 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                         <DyeusMarketingContactForm
                             key={`${contactMode}:${projectId}:${unitId}`}
                             className="mt-6"
-                            lockInterestToReservation={contactMode === "reserve"}
+                            lockedInterest={DYEUS_CONTACT_LOCKED_INTEREST[contactMode]}
                             projectInterest={projectId}
                             unitInterest={unitId}
-                            defaultMessage={fillLanguageTemplate(t("defaultMessage"), {name: unit.name})}
+                            defaultMessage={dyeusContactDefaultMessage(t, contactMode, unit.name)}
                             submitLabel={t("send")}
                         />
                     </div>

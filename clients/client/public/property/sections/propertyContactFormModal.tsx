@@ -4,14 +4,24 @@ import {compose} from "redux";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {fillLanguageTemplate, PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
 
-export type PropertyContactFormMode = "requestInfo" | "reserve";
+/** `enquiry` = "Make enquiry" on a price-on-request unit (creates a price_enquiry lead). */
+export type PropertyContactFormMode = "requestInfo" | "reserve" | "enquiry";
+
+/** Language key of the button that opened the form (also used as its title) → form mode. */
+export const CONTACT_MODE_BY_TITLE = {
+    requestInfo: "requestInfo",
+    reserveOnline: "reserve",
+    makeEnquiry: "enquiry",
+} as const satisfies Record<string, PropertyContactFormMode>;
+
+export type PropertyContactFormTitleKey = keyof typeof CONTACT_MODE_BY_TITLE;
 
 type PropertyContactFormModalProps = PublicLanguageProps & {
     open: boolean;
@@ -26,8 +36,11 @@ type PropertyContactFormModalProps = PublicLanguageProps & {
 type ContactFieldKey = keyof MarketingContactFormType;
 type ContactFieldErrors = Partial<Record<ContactFieldKey, string>>;
 
-/** Reserve Online always submits reservation interest (field hidden). */
-const UNIT_RESERVE_INTEREST = "reservation" as const;
+/** Reserve Online / Make enquiry always submit a fixed interest (field hidden). */
+const LOCKED_INTEREST: Partial<Record<PropertyContactFormMode, NonNullable<MarketingContactFormType["interest"]>>> = {
+    reserve: "reservation",
+    enquiry: "price_enquiry",
+};
 
 const INTEREST_OPTIONS = [
     {value: "investments", labelKey: "interestInvestment"},
@@ -91,13 +104,17 @@ function PropertyContactFormInner({
     mode,
     onClose,
 }: FormInnerProps) {
-    const lockInterestToReservation = mode === "reserve";
+    const lockedInterest = LOCKED_INTEREST[mode];
+    // A price enquiry arrives prefilled so the visitor can send it as is.
+    const initialMessage = mode === "enquiry"
+        ? fillLanguageTemplate(String(resolveLanguageKey("priceEnquiryMessage")), {unit: unitName})
+        : "";
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [interest, setInterest] = useState("");
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState(initialMessage);
     const [fieldErrors, setFieldErrors] = useState<ContactFieldErrors>({});
     const [submitted, setSubmitted] = useState(false);
 
@@ -108,7 +125,7 @@ function PropertyContactFormInner({
             setEmail("");
             setPhone("");
             setInterest("");
-            setMessage("");
+            setMessage(initialMessage);
             setFieldErrors({});
             setSubmitted(true);
         },
@@ -129,9 +146,7 @@ function PropertyContactFormInner({
     const handleSend = () => {
         if (loading) return;
         setSubmitted(false);
-        const resolvedInterest = lockInterestToReservation
-            ? UNIT_RESERVE_INTEREST
-            : interest || undefined;
+        const resolvedInterest = lockedInterest ?? (interest || undefined);
         const values: MarketingContactFormType = {
             name: name.trim(),
             surname: surname.trim(),
@@ -229,7 +244,7 @@ function PropertyContactFormInner({
                     />
                     <FieldError message={fieldErrors.phone} />
                 </div>
-                {!lockInterestToReservation ? (
+                {!lockedInterest ? (
                     <div className="w-full min-w-0">
                         <select
                             name="interest"

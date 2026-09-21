@@ -28,6 +28,7 @@
     "reservationCommissionRatePlaceholder": "0–100, optional",
     "saleCommissionRateLabel": "Sale commission (%)",
     "saleCommissionRatePlaceholder": "0–100, optional",
+    "showPriceOnRequestLabel": "Show price on request",
     "uploadNewImageHint": "Upload a new image to replace the current one",
     "uploadNewImagesHint": "Upload new images to add to the gallery",
     "uploadNewVideosHint": "Upload new videos to add to the gallery",
@@ -57,6 +58,7 @@
   "homepageFeatured": "Homepage featured",
   "media": "Media",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "publicVisibility": "Public website",
   "title": "Create Project",
   "uploadError": "Failed to upload media files",
   "formHeader": {

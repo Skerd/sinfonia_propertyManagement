@@ -28,6 +28,7 @@
     "reservationCommissionRatePlaceholder": "0–100, facultatif",
     "saleCommissionRateLabel": "Commission de vente (%)",
     "saleCommissionRatePlaceholder": "0–100, facultatif",
+    "showPriceOnRequestLabel": "Afficher « Prix sur demande »",
     "uploadNewImageHint": "Téléverser une nouvelle image pour remplacer l'actuelle",
     "uploadNewImagesHint": "Téléverser de nouvelles images pour les ajouter à la galerie",
     "uploadNewVideosHint": "Téléverser de nouvelles vidéos pour les ajouter à la galerie",
@@ -57,6 +58,7 @@
   "homepageFeatured": "Mise en avant page d'accueil",
   "media": "Médias",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "publicVisibility": "Site public",
   "title": "Créer un projet",
   "uploadError": "Échec du téléversement des fichiers média",
   "formHeader": {

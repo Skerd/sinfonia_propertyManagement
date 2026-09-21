@@ -111,6 +111,7 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                                 floorLabel={String(resolveLanguageKey("floorLabel"))}
                                 bathsLabel={String(resolveLanguageKey("bathsLabel"))}
                                 orientationLabel={String(resolveLanguageKey("orientationLabel"))}
+                                priceOnRequestLabel={String(resolveLanguageKey("priceOnRequest"))}
                                 favoriteAddLabel={String(resolveLanguageKey("favoritesAdd"))}
                                 favoriteRemoveLabel={String(resolveLanguageKey("favoritesRemove"))}
                             />

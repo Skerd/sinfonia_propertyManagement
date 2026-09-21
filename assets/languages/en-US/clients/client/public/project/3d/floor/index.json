@@ -19,5 +19,6 @@
   "viewerEmptyProject": "No building overlays configured yet. Browse units in grid view.",
   "viewerEmptyEdifice": "No floor overlays on this building. Browse units in grid view.",
   "viewerEmptyFloor": "No unit overlays on this floor. Browse units in grid view.",
-  "viewGrid": "View grid"
+  "viewGrid": "View grid",
+  "priceOnRequest": "On request"
 }

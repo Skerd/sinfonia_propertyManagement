@@ -17,6 +17,7 @@ export type PropertyListingCardUnit = {
     edificeName?: string;
     orientation?: string;
     price?: number;
+    priceOnRequest?: boolean;
     propertyType?: PropertyTypeId;
     imageUrl?: string;
 };
@@ -33,6 +34,8 @@ type PropertyListingCardProps = {
     floorLabel: string;
     bathsLabel: string;
     orientationLabel: string;
+    /** Shown instead of the price for "price on request" units. */
+    priceOnRequestLabel?: string;
     favoriteAddLabel?: string;
     favoriteRemoveLabel?: string;
     projectName?: string;
@@ -85,6 +88,7 @@ function PropertyListingCard({
     roomsLabel,
     bathsLabel,
     orientationLabel,
+    priceOnRequestLabel,
     favoriteAddLabel,
     favoriteRemoveLabel,
     projectName,
@@ -95,7 +99,9 @@ function PropertyListingCard({
 }: PropertyListingCardProps) {
     const image = unit.imageUrl ?? projectsAssets.cardPlaceholder;
     const statusText = statusLabel(unit.status, availableLabel, soldLabel, reservedLabel, unavailableLabel);
-    const priceText = unit.price != null ? `€${unit.price.toLocaleString()}` : "—";
+    const priceText = unit.price != null
+        ? `€${unit.price.toLocaleString()}`
+        : unit.priceOnRequest && priceOnRequestLabel ? priceOnRequestLabel : "—";
     const areaText = unit.areaSqm != null ? `${unit.areaSqm} m²` : "—";
     const roomsText = unit.bedrooms != null ? String(unit.bedrooms) : "—";
     const bathsText = unit.bathrooms != null ? String(unit.bathrooms) : "—";

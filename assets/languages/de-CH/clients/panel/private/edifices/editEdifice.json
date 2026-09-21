@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Gebäude bearbeiten",
   "description": "Gebäudeinformationen aktualisieren",
   "editTitle": "Gebäude bearbeiten",
@@ -38,6 +39,7 @@
     "countryLabel": "Land",
     "countryPlaceholder": "Land auswählen",
     "countryRequired": "Land ist erforderlich",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "stateLabel": "Kanton",
     "statePlaceholder": "Kanton auswählen",
     "streetLabel": "Strasse",

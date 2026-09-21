@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "publicVisibility": "Site public",
   "title": "Créer un étage",
   "description": "Créer un nouvel étage pour ce bâtiment",
   "descriptionWithoutEdifice": "Créer un nouvel étage",
@@ -36,6 +37,7 @@
     "mainImageLabel": "Image principale",
     "mainImageRequired": "L'image principale est obligatoire",
     "imageGalleryLabel": "Galerie d'images",
+    "showPriceOnRequestLabel": "Afficher « Prix sur demande »",
     "videoGalleryLabel": "Galerie vidéo",
     "mediaFilesLabel": "Documents et fichiers",
     "marketingBookletLabel": "Brochure marketing",

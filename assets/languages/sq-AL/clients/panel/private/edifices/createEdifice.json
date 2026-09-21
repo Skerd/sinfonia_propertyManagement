@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Krijo një ndërtesë",
   "description": "Krijo një ndërtesë të re për këtë projekt",
   "descriptionWithoutProject": "Krijo një ndërtesë të re",
@@ -33,6 +34,7 @@
     "countryLabel": "Vendi",
     "countryPlaceholder": "Zgjidh shtetin",
     "countryRequired": "Kërkohet shteti",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "stateLabel": "Shtetit",
     "statePlaceholder": "Zgjidhni gjendjen",
     "streetLabel": "Rruga",

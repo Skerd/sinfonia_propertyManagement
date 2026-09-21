@@ -20,6 +20,7 @@
     "name": "Name",
     "reservationCommissionRatePercent": "Reservation Commission",
     "saleCommissionRatePercent": "Sale Commission",
+    "showPriceOnRequest": "Price on request",
     "updatedAt": "Updated At",
     "videoGallery": "Videos"
   },

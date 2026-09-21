@@ -13,7 +13,11 @@ import FooterSection from "@propertyManagementModule/clients/client/public/home/
 import PropertyGallerySection from "@propertyManagementModule/clients/client/public/property/sections/propertyGallerySection.tsx";
 import PropertyDetailsSection from "@propertyManagementModule/clients/client/public/property/sections/propertyDetailsSection.tsx";
 import PropertySidebarSection from "@propertyManagementModule/clients/client/public/property/sections/propertySidebarSection.tsx";
-import PropertyContactFormModal from "@propertyManagementModule/clients/client/public/property/sections/propertyContactFormModal.tsx";
+import PropertyContactFormModal, {
+    CONTACT_MODE_BY_TITLE,
+    type PropertyContactFormMode,
+    type PropertyContactFormTitleKey,
+} from "@propertyManagementModule/clients/client/public/property/sections/propertyContactFormModal.tsx";
 import PublicFavoriteHeartButton from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartButton.tsx";
 import {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {PUBLIC_GALLERY_PAGE_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
@@ -32,7 +36,7 @@ function PropertyPage(props: PropertyPageProps) {
     const requestedKeyRef = useRef("");
     const [contactOpen, setContactOpen] = useState(false);
     const [contactTitle, setContactTitle] = useState<string | undefined>(undefined);
-    const [contactMode, setContactMode] = useState<"requestInfo" | "reserve">("requestInfo");
+    const [contactMode, setContactMode] = useState<PropertyContactFormMode>("requestInfo");
 
     const hasRequiredParams = Boolean(projectId && unitId);
     const isWaitingForFetch = hasRequiredParams && !unit && !error;
@@ -61,8 +65,8 @@ function PropertyPage(props: PropertyPageProps) {
         navigate(projectId ? `/project?projectId=${projectId}` : "/projects");
     };
 
-    const openContactForm = (titleKey: "requestInfo" | "reserveOnline") => {
-        setContactMode(titleKey === "reserveOnline" ? "reserve" : "requestInfo");
+    const openContactForm = (titleKey: PropertyContactFormTitleKey) => {
+        setContactMode(CONTACT_MODE_BY_TITLE[titleKey]);
         setContactTitle(resolveLanguageKey(titleKey));
         setContactOpen(true);
     };
@@ -132,6 +136,7 @@ function PropertyPage(props: PropertyPageProps) {
                                 {...props}
                                 unit={unit}
                                 onReserve={() => openContactForm("reserveOnline")}
+                                onEnquire={() => openContactForm("makeEnquiry")}
                             />
                         </div>
                     </div>

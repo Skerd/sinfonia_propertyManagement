@@ -18,6 +18,8 @@ type DyeusPropertySidebarSectionProps = {
     unit: MarketingUnitSingle;
     t: DyeusPropertyCopy;
     onReserve: () => void;
+    /** Replaces "Reserve online" on price-on-request units: opens a price enquiry. */
+    onEnquire: () => void;
     compact?: boolean;
 };
 
@@ -50,8 +52,9 @@ function Spec({label, value}: {label: string; value: string}) {
     );
 }
 
-function DyeusPropertySidebarSection({unit, t, onReserve, compact = false}: DyeusPropertySidebarSectionProps) {
+function DyeusPropertySidebarSection({unit, t, onReserve, onEnquire, compact = false}: DyeusPropertySidebarSectionProps) {
     const [downloadingBrochure, setDownloadingBrochure] = useState(false);
+    const priceOnRequest = unit.priceOnRequest === true;
     const priceLabel = formatUnitPrice(unit, t("priceOnRequest"));
     const specImage =
         resolveMarketingMediaUrl(unit.floorPlanImage) ?? dyeusAssets.aboutPlan;
@@ -139,7 +142,7 @@ function DyeusPropertySidebarSection({unit, t, onReserve, compact = false}: Dyeu
                         {unit.status === "available" ? (
                             <button
                                 type="button"
-                                onClick={onReserve}
+                                onClick={priceOnRequest ? onEnquire : onReserve}
                                 className={cn(
                                     "flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
                                     "bg-transparent text-dyeus-ink transition-colors duration-200",
@@ -148,7 +151,7 @@ function DyeusPropertySidebarSection({unit, t, onReserve, compact = false}: Dyeu
                                 )}
                             >
                                 <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
-                                    {t("reserveOnline")}
+                                    {t(priceOnRequest ? "makeEnquiry" : "reserveOnline")}
                                 </span>
                             </button>
                         ) : null}

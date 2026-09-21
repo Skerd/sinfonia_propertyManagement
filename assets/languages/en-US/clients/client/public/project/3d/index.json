@@ -53,5 +53,6 @@
   "roomsLabel": "Rooms",
   "floorLabel": "Floor",
   "bathsLabel": "Baths",
-  "orientationLabel": "Orientation"
+  "orientationLabel": "Orientation",
+  "priceOnRequest": "On request"
 }

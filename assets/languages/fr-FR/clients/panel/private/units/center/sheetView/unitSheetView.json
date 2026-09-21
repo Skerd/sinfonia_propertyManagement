@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Cliquez pour réessayer de récupérer les données.",
   "and": "et",
   "name": "Nom",
+  "showPriceOnRequest": "Prix sur demande",
+  "showPriceOnRequestTooltip": "Masque le prix de cette unité sur le site public : les visiteurs doivent faire une demande. S'applique aussi automatiquement si l'étage, le bâtiment ou le projet l'a activé.",
   "unit": "Unité",
   "statisticsTitle": "Statistiques",
   "overview": "Aperçu",

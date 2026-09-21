@@ -9,6 +9,8 @@
   "reservationCommission": "Reservation commission",
   "reservationCommissionTooltip": "Reservation commission (%)",
   "none": "None",
+  "showPriceOnRequest": "Price on request",
+  "showPriceOnRequestTooltip": "Hides prices on the public website so visitors must enquire. Applies to every edifice, floor and unit in this project.",
   "statistics": {
     "edifices": "Edifices",
     "edificesTooltip": "Total Edifices",

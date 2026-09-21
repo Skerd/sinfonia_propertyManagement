@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Geschoss bearbeiten",
   "description": "Geschossinformationen aktualisieren",
   "editTitle": "Geschoss bearbeiten",
@@ -37,6 +38,7 @@
     "mainImageLabel": "Hauptbild",
     "mainImageRequired": "Hauptbild ist erforderlich",
     "imageGalleryLabel": "Bildgalerie",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "videoGalleryLabel": "Videogalerie",
     "mediaFilesLabel": "Dokumente & Dateien",
     "marketingBookletLabel": "Marketingbroschüre",

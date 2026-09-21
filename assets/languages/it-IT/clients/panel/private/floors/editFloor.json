@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
+  "publicVisibility": "Sito pubblico",
   "title": "Modifica piano",
   "description": "Aggiorna le informazioni del piano",
   "editTitle": "Modifica piano",
@@ -37,6 +38,7 @@
     "mainImageLabel": "Immagine principale",
     "mainImageRequired": "L'immagine principale è obbligatoria",
     "imageGalleryLabel": "Galleria immagini",
+    "showPriceOnRequestLabel": "Mostra prezzo su richiesta",
     "videoGalleryLabel": "Galleria video",
     "mediaFilesLabel": "Documenti e file",
     "marketingBookletLabel": "Brochure marketing",

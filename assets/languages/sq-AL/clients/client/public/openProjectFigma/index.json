@@ -81,5 +81,6 @@
   "saleCurrencyLabel": "Monedha e shitjes",
   "energyClassLabel": "Klasa energjetike",
   "constructionStartLabel": "Fillimi i ndërtimit",
-  "completionLabel": "Përfundimi i pritur"
+  "completionLabel": "Përfundimi i pritur",
+  "priceOnRequest": "Sipas kërkesës"
 }

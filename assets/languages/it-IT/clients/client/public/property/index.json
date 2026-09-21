@@ -35,6 +35,8 @@
   "floor": "Piano",
   "baths": "Bagni",
   "reserveOnline": "Prenota online",
+  "makeEnquiry": "Invia richiesta",
+  "priceEnquiryMessage": "Buongiorno, vorrei conoscere il prezzo di {{unit}}.",
   "areaAndPricing": "Superficie e prezzi",
   "averagePricePerSquareMeter": "Prezzo medio di listino al m²",
   "features": "Caratteristiche",

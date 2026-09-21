@@ -28,6 +28,7 @@
     "reservationCommissionRatePlaceholder": "0–100, opsionale",
     "saleCommissionRateLabel": "Komisioni i shitjes (%)",
     "saleCommissionRatePlaceholder": "0–100, opsionale",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "uploadNewImageHint": "Ngarko një imazh të ri për të zëvendësuar atë aktual",
     "uploadNewImagesHint": "Ngarko imazhe të reja për t'i shtuar në galeri",
     "uploadNewVideosHint": "Ngarko video të reja për t'i shtuar në galeri",
@@ -57,6 +58,7 @@
   "homepageFeatured": "I veçuar në faqen kryesore",
   "media": "Media",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Krijo projekt",
   "uploadError": "Ngarkimi i skedarëve të medias dështoi",
   "formHeader": {

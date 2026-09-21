@@ -46,6 +46,8 @@
   "no": "Jo",
   "areaAndPricing": "Sipërfaqja dhe çmimi",
   "reserveOnline": "Rezervo online",
+  "makeEnquiry": "Bëj kërkesë",
+  "priceEnquiryMessage": "Përshëndetje, do të doja të dija çmimin e {{unit}}.",
   "downloadBrochure": "Shkarko broshurën",
   "downloadingBrochure": "Duke shkarkuar…",
   "brochureError": "Broshura nuk është e disponueshme për këtë residencë.",

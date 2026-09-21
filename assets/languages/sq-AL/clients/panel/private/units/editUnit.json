@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/editUnit.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Redakto njësinë",
   "description": "Përditëso informacionin e njësisë",
   "editTitle": "Redakto njësinë",
@@ -27,6 +28,7 @@
     "nameLabel": "Emri i njësisë",
     "namePlaceholder": "Fut emrin e njësisë",
     "nameRequired": "Kërkohet emri i njësisë",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "unitNumberLabel": "Numri i njësisë",
     "unitNumberPlaceholder": "Futni numrin e njësisë",
     "unitNumberRequired": "Kërkohet numri i njësisë",

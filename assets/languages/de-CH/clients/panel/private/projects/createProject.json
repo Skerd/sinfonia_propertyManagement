@@ -28,6 +28,7 @@
     "reservationCommissionRatePlaceholder": "0–100, optional",
     "saleCommissionRateLabel": "Verkaufsprovision (%)",
     "saleCommissionRatePlaceholder": "0–100, optional",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "uploadNewImageHint": "Neues Bild hochladen, um das aktuelle zu ersetzen",
     "uploadNewImagesHint": "Neue Bilder hochladen, um sie der Galerie hinzuzufügen",
     "uploadNewVideosHint": "Neue Videos hochladen, um sie der Galerie hinzuzufügen",
@@ -57,6 +58,7 @@
   "homepageFeatured": "Startseite hervorgehoben",
   "media": "Medien",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Projekt erstellen",
   "uploadError": "Hochladen der Mediendateien fehlgeschlagen",
   "formHeader": {

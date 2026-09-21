@@ -9,6 +9,8 @@
   "reservationCommission": "Commissione di prenotazione",
   "reservationCommissionTooltip": "Commissione di prenotazione (%)",
   "none": "Nessuno",
+  "showPriceOnRequest": "Prezzo su richiesta",
+  "showPriceOnRequestTooltip": "Nasconde i prezzi sul sito pubblico, così i visitatori devono richiederli. Vale per tutti gli edifici, piani e unità di questo progetto.",
   "statistics": {
     "edifices": "Edifici",
     "edificesTooltip": "Totale edifici",

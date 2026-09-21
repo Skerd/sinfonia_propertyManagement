@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "publicVisibility": "Sito pubblico",
   "title": "Crea piano",
   "description": "Crea un nuovo piano per questo edificio",
   "descriptionWithoutEdifice": "Crea un nuovo piano",
@@ -36,6 +37,7 @@
     "mainImageLabel": "Immagine principale",
     "mainImageRequired": "L'immagine principale è obbligatoria",
     "imageGalleryLabel": "Galleria immagini",
+    "showPriceOnRequestLabel": "Mostra prezzo su richiesta",
     "videoGalleryLabel": "Galleria video",
     "mediaFilesLabel": "Documenti e file",
     "marketingBookletLabel": "Brochure marketing",

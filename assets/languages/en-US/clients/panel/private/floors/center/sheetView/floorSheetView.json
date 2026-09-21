@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Click to retry fetching data.",
   "floor": "Floor",
   "name": "Name",
+  "showPriceOnRequest": "Price on request",
+  "showPriceOnRequestTooltip": "Hides prices on the public website so visitors must enquire. Applies to every unit on this floor.",
   "yes": "Yes",
   "no": "No",
   "overview": "Overview",

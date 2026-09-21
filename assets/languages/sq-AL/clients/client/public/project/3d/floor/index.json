@@ -19,5 +19,6 @@
   "viewerEmptyProject": "Ende nuk ka konfiguruar mbivendosje ndërtesash. Shfletoni njësitë në pamjen me rrjetë.",
   "viewerEmptyEdifice": "Nuk ka mbivendosje katesh në këtë ndërtesë. Shfletoni njësitë në pamjen me rrjetë.",
   "viewerEmptyFloor": "Nuk ka mbivendosje njësish në këtë kat. Shfletoni njësitë në pamjen me rrjetë.",
-  "viewGrid": "Shiko rrjetën"
+  "viewGrid": "Shiko rrjetën",
+  "priceOnRequest": "Sipas kërkesës"
 }

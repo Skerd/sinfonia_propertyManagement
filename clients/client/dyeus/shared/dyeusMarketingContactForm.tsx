@@ -58,8 +58,10 @@ function FieldError({message}: {message?: string}) {
 }
 
 export type DyeusMarketingContactFormProps = {
-    /** When set, locks interest to reservation and hides the select (unit enquiry). */
+    /** When set, locks interest to reservation and hides the select (unit enquiry). Alias of `lockedInterest="reservation"`. */
     lockInterestToReservation?: boolean;
+    /** Locks the interest to this value and hides the select (e.g. `price_enquiry` for "Make enquiry"). */
+    lockedInterest?: "reservation" | "price_enquiry";
     projectInterest?: string;
     unitInterest?: string;
     defaultEmail?: string;
@@ -77,6 +79,7 @@ function DyeusMarketingContactFormInner({
     innerRef,
     error,
     lockInterestToReservation = false,
+    lockedInterest: lockedInterestProp,
     projectInterest,
     unitInterest,
     defaultEmail = "",
@@ -87,11 +90,12 @@ function DyeusMarketingContactFormInner({
     const {t} = useDyeusT(FORM_LANGUAGE_PATH);
     const {projectId: dyeusProjectId, loading: resolvingProject} = useDyeusProjectId();
     const effectiveProjectInterest = (projectInterest || dyeusProjectId).trim();
+    const lockedInterest = lockedInterestProp ?? (lockInterestToReservation ? "reservation" : undefined);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState(defaultEmail);
     const [phone, setPhone] = useState("");
-    const [interest, setInterest] = useState(lockInterestToReservation ? "reservation" : "");
+    const [interest, setInterest] = useState<string>(lockedInterest ?? "");
     const [message, setMessage] = useState(defaultMessage);
     const [fieldErrors, setFieldErrors] = useState<ContactFieldErrors>({});
     const [submitted, setSubmitted] = useState(false);
@@ -105,7 +109,7 @@ function DyeusMarketingContactFormInner({
             setSurname("");
             setEmail(defaultEmail);
             setPhone("");
-            setInterest(lockInterestToReservation ? "reservation" : "");
+            setInterest(lockedInterest ?? "");
             setMessage(defaultMessage);
             setFieldErrors({});
             setProjectError(null);
@@ -135,9 +139,7 @@ function DyeusMarketingContactFormInner({
             return;
         }
 
-        const resolvedInterest = lockInterestToReservation
-            ? "reservation"
-            : interest || undefined;
+        const resolvedInterest = lockedInterest ?? (interest || undefined);
         const values: MarketingContactFormType = {
             name: name.trim(),
             surname: surname.trim(),
@@ -242,7 +244,7 @@ function DyeusMarketingContactFormInner({
                 <FieldError message={fieldErrors.phone} />
             </label>
 
-            {!lockInterestToReservation ? (
+            {!lockedInterest ? (
                 <label className="flex flex-col gap-2">
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
                         {t("interest")}

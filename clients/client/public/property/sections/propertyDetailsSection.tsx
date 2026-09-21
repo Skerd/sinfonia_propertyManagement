@@ -253,6 +253,8 @@ function PropertyDetailsSection({
 
     const secondary = (
         <>
+            {/* ROI needs a price; for "price on request" units only the enquiry CTA below is shown. */}
+            {unit.price != null ? (
             <div
                 className={cn(
                     "relative grid w-full grid-cols-1 overflow-hidden rounded-[5px] border border-pronix-border",
@@ -337,6 +339,7 @@ function PropertyDetailsSection({
                     dataNodeId="520:6255"
                 />
             </div>
+            ) : null}
 
             <div
                 className={cn(

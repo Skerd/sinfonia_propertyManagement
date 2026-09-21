@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
+  "publicVisibility": "Sito pubblico",
   "title": "Crea edificio",
   "description": "Crea un nuovo edificio per questo progetto",
   "descriptionWithoutProject": "Crea un nuovo edificio",
@@ -33,6 +34,7 @@
     "countryLabel": "Paese",
     "countryPlaceholder": "Seleziona il paese",
     "countryRequired": "Il paese è obbligatorio",
+    "showPriceOnRequestLabel": "Mostra prezzo su richiesta",
     "stateLabel": "Cantone / Stato",
     "statePlaceholder": "Seleziona il cantone",
     "streetLabel": "Via",

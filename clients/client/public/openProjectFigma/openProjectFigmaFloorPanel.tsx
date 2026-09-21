@@ -76,6 +76,11 @@ function OpenProjectFigmaFloorPanel({
     const listHeaderRef = useRef<HTMLDivElement>(null);
     const rowRefs = useRef(new Map<string, HTMLElement>());
 
+    const formatUnitPrice = (unit: {price?: number; priceOnRequest?: boolean}) =>
+        unit.price != null
+            ? `€${unit.price.toLocaleString()}`
+            : unit.priceOnRequest ? String(resolveLanguageKey("priceOnRequest")) : "—";
+
     const selectedFloor = useMemo(() => {
         for (const edifice of project.edifices ?? []) {
             const floor = edifice.floors?.find((item) => item._id === floorId);
@@ -378,7 +383,7 @@ function OpenProjectFigmaFloorPanel({
                                                 </div>
                                                 <div className="mt-auto pt-2">
                                                     <p className="rounded-[5px] border border-pronix-border py-2 text-center font-aeonik-medium text-base text-pronix-ink">
-                                                        {unit.price != null ? `€${unit.price.toLocaleString()}` : "—"}
+                                                        {formatUnitPrice(unit)}
                                                     </p>
                                                 </div>
                                             </div>
@@ -422,7 +427,7 @@ function OpenProjectFigmaFloorPanel({
                                             <span>{unit.bedrooms ?? "—"}</span>
                                             <span>{unit.bathrooms ?? "—"}</span>
                                             <span>
-                                                {unit.price != null ? `€${unit.price.toLocaleString()}` : "—"}
+                                                {formatUnitPrice(unit)}
                                             </span>
                                         </button>
                                     </li>

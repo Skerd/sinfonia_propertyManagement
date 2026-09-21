@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
   "floor": "Kati",
   "name": "Emri",
+  "showPriceOnRequest": "Çmimi me kërkesë",
+  "showPriceOnRequestTooltip": "Fsheh çmimet në faqen publike, që vizitorët të bëjnë kërkesë. Vlen për të gjitha njësitë e këtij kati.",
   "yes": "Po",
   "no": "Jo",
   "overview": "Vështrim i përgjithshëm",

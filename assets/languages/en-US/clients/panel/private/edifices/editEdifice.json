@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
+  "publicVisibility": "Public website",
   "title": "Edit Edifice",
   "description": "Update edifice information",
   "editTitle": "Edit Edifice",
@@ -38,6 +39,7 @@
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
     "countryRequired": "Country is required",
+    "showPriceOnRequestLabel": "Show price on request",
     "stateLabel": "State",
     "statePlaceholder": "Select state",
     "streetLabel": "Street",

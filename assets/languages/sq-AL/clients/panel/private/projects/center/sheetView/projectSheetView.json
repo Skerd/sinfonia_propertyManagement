@@ -9,6 +9,8 @@
   "reservationCommission": "Komisioni i rezervimit",
   "reservationCommissionTooltip": "komisioni i rezervimit (%)",
   "none": "Asnjë",
+  "showPriceOnRequest": "Çmimi me kërkesë",
+  "showPriceOnRequestTooltip": "Fsheh çmimet në faqen publike, që vizitorët të bëjnë kërkesë. Vlen për të gjitha ndërtesat, katet dhe njësitë e këtij projekti.",
   "statistics": {
     "edifices": "Ndërtesat",
     "edificesTooltip": "Ndërtesat totale",

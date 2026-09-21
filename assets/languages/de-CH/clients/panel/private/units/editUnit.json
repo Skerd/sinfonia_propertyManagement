@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/editUnit.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Einheit bearbeiten",
   "description": "Informationen der Einheit aktualisieren",
   "editTitle": "Einheit bearbeiten",
@@ -27,6 +28,7 @@
     "nameLabel": "Name der Einheit",
     "namePlaceholder": "Namen der Einheit eingeben",
     "nameRequired": "Name der Einheit ist erforderlich",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "unitNumberLabel": "Einheitennummer",
     "unitNumberPlaceholder": "Einheitennummer eingeben",
     "unitNumberRequired": "Einheitennummer ist erforderlich",

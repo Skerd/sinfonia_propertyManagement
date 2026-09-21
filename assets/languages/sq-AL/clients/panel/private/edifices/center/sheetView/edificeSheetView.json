@@ -7,6 +7,8 @@
   "overview": "Vështrim i përgjithshëm",
   "buildingDetails": "Detajet e ndërtesës",
   "constructionTimeline": "Ndërtimi dhe përputhshmëria",
+  "showPriceOnRequest": "Çmimi me kërkesë",
+  "showPriceOnRequestTooltip": "Fsheh çmimet në faqen publike, që vizitorët të bëjnë kërkesë. Vlen për të gjitha katet dhe njësitë e kësaj ndërtese.",
   "statisticsTitle": "Statistikat",
   "gallery": "Galeria",
   "mediaFiles": "Dokumente & Skedarë",

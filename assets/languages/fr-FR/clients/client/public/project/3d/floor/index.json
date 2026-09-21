@@ -19,5 +19,6 @@
   "viewerEmptyProject": "Aucun calque de bâtiment configuré pour le moment. Parcourez les unités en vue grille.",
   "viewerEmptyEdifice": "Aucun calque d'étage sur ce bâtiment. Parcourez les unités en vue grille.",
   "viewerEmptyFloor": "Aucun calque d'unité à cet étage. Parcourez les unités en vue grille.",
-  "viewGrid": "Voir la grille"
+  "viewGrid": "Voir la grille",
+  "priceOnRequest": "Sur demande"
 }

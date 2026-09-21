@@ -123,6 +123,7 @@ function OpenProjectGridCardsSection({
                                                 floorLabel={resolveLanguageKey("floorLabel")}
                                                 bathsLabel={resolveLanguageKey("bathsLabel")}
                                                 orientationLabel={resolveLanguageKey("orientationLabel")}
+                                                priceOnRequestLabel={resolveLanguageKey("priceOnRequest")}
                                                 favoriteAddLabel={String(resolveLanguageKey("favoritesAdd"))}
                                                 favoriteRemoveLabel={String(resolveLanguageKey("favoritesRemove"))}
                                                 projectName={project.name}

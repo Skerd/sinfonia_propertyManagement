@@ -19,5 +19,6 @@
   "viewerEmptyProject": "Nessuna sovrapposizione edificio configurata. Esplora le unità nella vista a griglia.",
   "viewerEmptyEdifice": "Nessuna sovrapposizione piano su questo edificio. Esplora le unità nella vista a griglia.",
   "viewerEmptyFloor": "Nessuna sovrapposizione unità su questo piano. Esplora le unità nella vista a griglia.",
-  "viewGrid": "Vista griglia"
+  "viewGrid": "Vista griglia",
+  "priceOnRequest": "Su richiesta"
 }

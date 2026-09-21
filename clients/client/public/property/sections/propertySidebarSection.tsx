@@ -19,6 +19,8 @@ import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 type PropertySidebarSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
     onReserve: () => void;
+    /** Replaces "Reserve online" on price-on-request units: opens a price enquiry. */
+    onEnquire: () => void;
     sticky?: boolean;
     compact?: boolean;
 };
@@ -86,6 +88,7 @@ function PropertySidebarSection({
     resolveLanguageKey,
     unit,
     onReserve,
+    onEnquire,
     sticky = true,
     compact = false,
 }: PropertySidebarSectionProps) {
@@ -100,6 +103,7 @@ function PropertySidebarSection({
     const specImage = resolveMarketingMediaUrl(unit.floorPlanImage) ?? propertyAssets.specArea;
     const unitStatus = resolveUnitStatus(unit.status);
     const canReserve = unitStatus === "available";
+    const priceOnRequest = unit.priceOnRequest === true;
     const subtitleClass = compact ? PUBLIC_SUBTITLE_COMPACT : PUBLIC_SUBTITLE;
     const titleClass = compact ? PUBLIC_TITLE_COMPACT : PUBLIC_TITLE;
     const labelClass = compact
@@ -216,7 +220,7 @@ function PropertySidebarSection({
                         {canReserve ? (
                             <button
                                 type="button"
-                                onClick={onReserve}
+                                onClick={priceOnRequest ? onEnquire : onReserve}
                                 className={cn(
                                     "flex w-full cursor-pointer items-center justify-center border border-pronix-ink",
                                     compact ? "px-4 py-3" : "px-6 py-4 md:py-5",
@@ -227,7 +231,7 @@ function PropertySidebarSection({
                                 data-node-id="515:6169"
                             >
                                 <span className={buttonTextClass}>
-                                    {resolveLanguageKey("reserveOnline")}
+                                    {resolveLanguageKey(priceOnRequest ? "makeEnquiry" : "reserveOnline")}
                                 </span>
                             </button>
                         ) : null}

@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Krijo njësi",
   "description": "Krijo një njësi të re për këtë kat",
   "descriptionWithoutContext": "Krijo një njësi të re",
@@ -23,6 +24,7 @@
     "nameLabel": "Emri i njësisë",
     "namePlaceholder": "Fut emrin e njësisë",
     "nameRequired": "Kërkohet emri i njësisë",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "unitNumberLabel": "Numri i njësisë",
     "unitNumberPlaceholder": "Futni numrin e njësisë",
     "unitNumberRequired": "Kërkohet numri i njësisë",

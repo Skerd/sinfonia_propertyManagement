@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Klicken zum erneuten Laden der Daten.",
   "floor": "Geschoss",
   "name": "Name",
+  "showPriceOnRequest": "Preis auf Anfrage",
+  "showPriceOnRequestTooltip": "Blendet die Preise auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt für alle Einheiten dieser Etage.",
   "yes": "Ja",
   "no": "Nein",
   "overview": "Übersicht",

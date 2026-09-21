@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Clicca per riprovare a recuperare i dati.",
   "and": "e",
   "name": "Nome",
+  "showPriceOnRequest": "Prezzo su richiesta",
+  "showPriceOnRequestTooltip": "Nasconde il prezzo di questa unità sul sito pubblico, così i visitatori devono richiederlo. Si applica anche automaticamente se il piano, l'edificio o il progetto lo hanno attivato.",
   "unit": "Unità",
   "statisticsTitle": "Statistiche",
   "overview": "Panoramica",

@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/editUnit.tsx",
+  "publicVisibility": "Public website",
   "title": "Edit Unit",
   "description": "Update unit information",
   "editTitle": "Edit Unit",
@@ -27,6 +28,7 @@
     "nameLabel": "Unit Name",
     "namePlaceholder": "Enter unit name",
     "nameRequired": "Unit name is required",
+    "showPriceOnRequestLabel": "Show price on request",
     "unitNumberLabel": "Unit Number",
     "unitNumberPlaceholder": "Enter unit number",
     "unitNumberRequired": "Unit number is required",

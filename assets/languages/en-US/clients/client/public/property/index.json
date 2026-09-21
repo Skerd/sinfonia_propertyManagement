@@ -35,6 +35,8 @@
   "floor": "Floor",
   "baths": "Baths",
   "reserveOnline": "Reserve Online",
+  "makeEnquiry": "Make enquiry",
+  "priceEnquiryMessage": "Hello, I would like to know the price of {{unit}}.",
   "downloadBrochure": "Download brochure",
   "downloadingBrochure": "Downloading…",
   "brochureError": "Brochure is not available for this unit.",

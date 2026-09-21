@@ -7,6 +7,8 @@
   "overview": "Übersicht",
   "buildingDetails": "Gebäudedetails",
   "constructionTimeline": "Bau & Compliance",
+  "showPriceOnRequest": "Preis auf Anfrage",
+  "showPriceOnRequestTooltip": "Blendet die Preise auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt für alle Etagen und Einheiten dieses Gebäudes.",
   "statisticsTitle": "Statistik",
   "gallery": "Galerie",
   "mediaFiles": "Dokumente & Dateien",

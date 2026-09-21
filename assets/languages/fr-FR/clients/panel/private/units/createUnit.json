@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
+  "publicVisibility": "Site public",
   "title": "Créer une unité",
   "description": "Créer une nouvelle unité pour cet étage",
   "descriptionWithoutContext": "Créer une nouvelle unité",
@@ -23,6 +24,7 @@
     "nameLabel": "Nom de l'unité",
     "namePlaceholder": "Saisir le nom de l'unité",
     "nameRequired": "Le nom de l'unité est obligatoire",
+    "showPriceOnRequestLabel": "Afficher « Prix sur demande »",
     "unitNumberLabel": "Numéro d'unité",
     "unitNumberPlaceholder": "Saisir le numéro d'unité",
     "unitNumberRequired": "Le numéro d'unité est obligatoire",

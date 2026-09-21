@@ -9,6 +9,8 @@
   "reservationCommission": "Reservation provision",
   "reservationCommissionTooltip": "Reservation provision (%)",
   "none": "Keine",
+  "showPriceOnRequest": "Preis auf Anfrage",
+  "showPriceOnRequestTooltip": "Blendet die Preise auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt für alle Gebäude, Etagen und Einheiten dieses Projekts.",
   "statistics": {
     "edifices": "Gebäude",
     "edificesTooltip": "Total Edifices",

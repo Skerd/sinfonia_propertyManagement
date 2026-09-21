@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Klikoni për të provuar përsëri marrjen e të dhënave.",
   "and": "dhe",
   "name": "Emri",
+  "showPriceOnRequest": "Çmimi me kërkesë",
+  "showPriceOnRequestTooltip": "Fsheh çmimin e kësaj njësie në faqen publike, që vizitorët të bëjnë kërkesë. Vlen automatikisht edhe kur kati, ndërtesa ose projekti e kanë aktivizuar.",
   "unit": "Njësia",
   "statisticsTitle": "Statistikat",
   "overview": "Vështrim i përgjithshëm",

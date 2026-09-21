@@ -55,6 +55,7 @@
     "project": "Project",
     "propertyTypes": "Property Types",
     "saleCurrency": "Sale Currency",
+    "showPriceOnRequest": "Price on request",
     "totalArea": "Area",
     "updatedAt": "Updated At",
     "verandaPricePerMeterSquared": "Veranda Price / m²",

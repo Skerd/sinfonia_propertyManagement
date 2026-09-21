@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Klicken, um die Daten erneut abzurufen.",
   "and": "und",
   "name": "Name",
+  "showPriceOnRequest": "Preis auf Anfrage",
+  "showPriceOnRequestTooltip": "Blendet den Preis dieser Einheit auf der öffentlichen Website aus, sodass Besucher anfragen müssen. Gilt auch automatisch, wenn Etage, Gebäude oder Projekt dies aktiviert haben.",
   "unit": "Einheit",
   "statisticsTitle": "Statistik",
   "overview": "Übersicht",

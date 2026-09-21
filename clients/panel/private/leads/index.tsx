@@ -74,6 +74,7 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
                 {value: "investments",      label: resolveLanguageKey("fields.!enums.interest.investments")},
                 {value: "platform_support", label: resolveLanguageKey("fields.!enums.interest.platform_support")},
                 {value: "reservation",      label: resolveLanguageKey("fields.!enums.interest.reservation")},
+                {value: "price_enquiry",    label: resolveLanguageKey("fields.!enums.interest.price_enquiry")},
                 {value: "other",            label: resolveLanguageKey("fields.!enums.interest.other")},
             ],
         },

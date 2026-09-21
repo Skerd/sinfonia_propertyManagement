@@ -81,5 +81,6 @@
   "saleCurrencyLabel": "Devise de vente",
   "energyClassLabel": "Classe énergétique",
   "constructionStartLabel": "Début des travaux",
-  "completionLabel": "Achèvement prévu"
+  "completionLabel": "Achèvement prévu",
+  "priceOnRequest": "Sur demande"
 }

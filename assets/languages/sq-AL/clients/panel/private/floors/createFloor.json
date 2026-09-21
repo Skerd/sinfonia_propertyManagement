@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Krijo dysheme",
   "description": "Krijo një kat të ri për këtë ndërtesë",
   "descriptionWithoutEdifice": "Krijo një dysheme të re",
@@ -36,6 +37,7 @@
     "mainImageLabel": "Imazhi kryesor",
     "mainImageRequired": "Kërkohet imazhi kryesor",
     "imageGalleryLabel": "Galeria e Imazheve",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "videoGalleryLabel": "Video Galeria",
     "mediaFilesLabel": "Dokumente & Skedarë",
     "marketingBookletLabel": "Broshurë Marketingu",

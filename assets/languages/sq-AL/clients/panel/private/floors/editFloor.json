@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
+  "publicVisibility": "Faqja publike",
   "title": "Redakto katin",
   "description": "Përditëso informacionin e katit",
   "editTitle": "Redakto katin",
@@ -37,6 +38,7 @@
     "mainImageLabel": "Imazhi kryesor",
     "mainImageRequired": "Kërkohet imazhi kryesor",
     "imageGalleryLabel": "Galeria e Imazheve",
+    "showPriceOnRequestLabel": "Shfaq çmimin me kërkesë",
     "videoGalleryLabel": "Video Galeria",
     "mediaFilesLabel": "Dokumente & Skedarë",
     "marketingBookletLabel": "Broshurë Marketingu",

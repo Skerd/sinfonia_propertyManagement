@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Einheit erstellen",
   "description": "Eine neue Einheit für dieses Geschoss erstellen",
   "descriptionWithoutContext": "Eine neue Einheit erstellen",
@@ -23,6 +24,7 @@
     "nameLabel": "Name der Einheit",
     "namePlaceholder": "Namen der Einheit eingeben",
     "nameRequired": "Name der Einheit ist erforderlich",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "unitNumberLabel": "Einheitennummer",
     "unitNumberPlaceholder": "Einheitennummer eingeben",
     "unitNumberRequired": "Einheitennummer ist erforderlich",

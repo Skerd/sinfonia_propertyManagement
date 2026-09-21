@@ -53,5 +53,6 @@
   "roomsLabel": "Locali",
   "floorLabel": "Piano",
   "bathsLabel": "Bagni",
-  "orientationLabel": "Orientamento"
+  "orientationLabel": "Orientamento",
+  "priceOnRequest": "Su richiesta"
 }

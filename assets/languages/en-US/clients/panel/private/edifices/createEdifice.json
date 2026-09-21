@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
+  "publicVisibility": "Public website",
   "title": "Create Edifice",
   "description": "Create a new edifice for this project",
   "descriptionWithoutProject": "Create a new edifice",
@@ -33,6 +34,7 @@
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
     "countryRequired": "Country is required",
+    "showPriceOnRequestLabel": "Show price on request",
     "stateLabel": "State",
     "statePlaceholder": "Select state",
     "streetLabel": "Street",

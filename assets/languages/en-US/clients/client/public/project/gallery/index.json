@@ -102,5 +102,6 @@
   "favoritesClose": "Close favorites",
   "favoritesEmpty": "You have not saved any projects or units yet.",
   "favoritesProjects": "Projects",
-  "favoritesUnits": "Units"
+  "favoritesUnits": "Units",
+  "priceOnRequest": "On request"
 }

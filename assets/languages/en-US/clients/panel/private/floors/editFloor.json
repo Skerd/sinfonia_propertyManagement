@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
+  "publicVisibility": "Public website",
   "title": "Edit Floor",
   "description": "Update floor information",
   "editTitle": "Edit Floor",
@@ -37,6 +38,7 @@
     "mainImageLabel": "Main Image",
     "mainImageRequired": "Main image is required",
     "imageGalleryLabel": "Image Gallery",
+    "showPriceOnRequestLabel": "Show price on request",
     "videoGalleryLabel": "Video Gallery",
     "mediaFilesLabel": "Documents & Files",
     "marketingBookletLabel": "Marketing Booklet",

@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
+  "publicVisibility": "Public website",
   "title": "Create Unit",
   "description": "Create a new unit for this floor",
   "descriptionWithoutContext": "Create a new unit",
@@ -23,6 +24,7 @@
     "nameLabel": "Unit Name",
     "namePlaceholder": "Enter unit name",
     "nameRequired": "Unit name is required",
+    "showPriceOnRequestLabel": "Show price on request",
     "unitNumberLabel": "Unit Number",
     "unitNumberPlaceholder": "Enter unit number",
     "unitNumberRequired": "Unit number is required",

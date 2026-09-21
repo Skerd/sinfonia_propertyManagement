@@ -24,6 +24,7 @@ function mapCatalogUnit(
         edificeId: unit.edificeId ?? edificeId,
         edificeName: edificeName || undefined,
         price: unit.price,
+        priceOnRequest: unit.priceOnRequest,
         propertyType: unit.propertyType,
         imageUrl: resolveMarketingMediaUrl(unit.mainImage),
     };

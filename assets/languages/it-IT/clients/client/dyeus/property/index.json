@@ -46,6 +46,8 @@
   "no": "No",
   "areaAndPricing": "Superficie e prezzi",
   "reserveOnline": "Prenota online",
+  "makeEnquiry": "Invia richiesta",
+  "priceEnquiryMessage": "Buongiorno, vorrei conoscere il prezzo di {{unit}}.",
   "downloadBrochure": "Scarica la brochure",
   "downloadingBrochure": "Download in corso…",
   "brochureError": "La brochure non è disponibile per questa residenza.",

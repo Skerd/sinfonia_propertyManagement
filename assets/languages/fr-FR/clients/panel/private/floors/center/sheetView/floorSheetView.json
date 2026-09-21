@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Cliquez pour réessayer le chargement des données.",
   "floor": "Étage",
   "name": "Nom",
+  "showPriceOnRequest": "Prix sur demande",
+  "showPriceOnRequestTooltip": "Masque les prix sur le site public : les visiteurs doivent faire une demande. S'applique à toutes les unités de cet étage.",
   "yes": "Oui",
   "no": "Non",
   "overview": "Aperçu",

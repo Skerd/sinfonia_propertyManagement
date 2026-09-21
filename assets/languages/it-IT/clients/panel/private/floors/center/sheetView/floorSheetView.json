@@ -5,6 +5,8 @@
   "failedTooltipDescription": "Clicca per riprovare il caricamento dei dati.",
   "floor": "Piano",
   "name": "Nome",
+  "showPriceOnRequest": "Prezzo su richiesta",
+  "showPriceOnRequestTooltip": "Nasconde i prezzi sul sito pubblico, così i visitatori devono richiederli. Vale per tutte le unità di questo piano.",
   "yes": "Sì",
   "no": "No",
   "overview": "Panoramica",

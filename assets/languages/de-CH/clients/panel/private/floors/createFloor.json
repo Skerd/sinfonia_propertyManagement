@@ -1,5 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
+  "publicVisibility": "Öffentliche Website",
   "title": "Geschoss erstellen",
   "description": "Neues Geschoss für dieses Gebäude erstellen",
   "descriptionWithoutEdifice": "Neues Geschoss erstellen",
@@ -36,6 +37,7 @@
     "mainImageLabel": "Hauptbild",
     "mainImageRequired": "Hauptbild ist erforderlich",
     "imageGalleryLabel": "Bildgalerie",
+    "showPriceOnRequestLabel": "Preis auf Anfrage anzeigen",
     "videoGalleryLabel": "Videogalerie",
     "mediaFilesLabel": "Dokumente & Dateien",
     "marketingBookletLabel": "Marketingbroschüre",

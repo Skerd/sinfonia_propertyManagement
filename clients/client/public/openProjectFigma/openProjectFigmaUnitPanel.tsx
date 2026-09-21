@@ -8,7 +8,11 @@ import PublicFavoriteHeartButton from "@propertyManagementModule/clients/client/
 import PropertyGallerySection from "@propertyManagementModule/clients/client/public/property/sections/propertyGallerySection.tsx";
 import PropertyDetailsSection from "@propertyManagementModule/clients/client/public/property/sections/propertyDetailsSection.tsx";
 import PropertySidebarSection from "@propertyManagementModule/clients/client/public/property/sections/propertySidebarSection.tsx";
-import PropertyContactFormModal from "@propertyManagementModule/clients/client/public/property/sections/propertyContactFormModal.tsx";
+import PropertyContactFormModal, {
+    CONTACT_MODE_BY_TITLE,
+    type PropertyContactFormMode,
+    type PropertyContactFormTitleKey,
+} from "@propertyManagementModule/clients/client/public/property/sections/propertyContactFormModal.tsx";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/property/index.tsx";
@@ -36,7 +40,7 @@ function OpenProjectFigmaUnitPanel({
     const [error, setError] = useState(false);
     const [contactOpen, setContactOpen] = useState(false);
     const [contactTitle, setContactTitle] = useState<string | undefined>(undefined);
-    const [contactMode, setContactMode] = useState<"requestInfo" | "reserve">("requestInfo");
+    const [contactMode, setContactMode] = useState<PropertyContactFormMode>("requestInfo");
 
     useEffect(() => {
         let cancelled = false;
@@ -73,8 +77,8 @@ function OpenProjectFigmaUnitPanel({
         };
     }, [projectId, unitId]);
 
-    const openContactForm = (titleKey: "requestInfo" | "reserveOnline") => {
-        setContactMode(titleKey === "reserveOnline" ? "reserve" : "requestInfo");
+    const openContactForm = (titleKey: PropertyContactFormTitleKey) => {
+        setContactMode(CONTACT_MODE_BY_TITLE[titleKey]);
         setContactTitle(String(resolveLanguageKey(titleKey)));
         setContactOpen(true);
     };
@@ -149,6 +153,7 @@ function OpenProjectFigmaUnitPanel({
                                     sticky
                                     compact
                                     onReserve={() => openContactForm("reserveOnline")}
+                                    onEnquire={() => openContactForm("makeEnquiry")}
                                 />
                             </div>
                         </div>

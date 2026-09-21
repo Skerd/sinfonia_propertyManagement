@@ -7,6 +7,8 @@
   "overview": "Overview",
   "buildingDetails": "Building details",
   "constructionTimeline": "Construction & compliance",
+  "showPriceOnRequest": "Price on request",
+  "showPriceOnRequestTooltip": "Hides prices on the public website so visitors must enquire. Applies to every floor and unit in this edifice.",
   "statisticsTitle": "Statistics",
   "gallery": "Gallery",
   "mediaFiles": "Documents & Files",

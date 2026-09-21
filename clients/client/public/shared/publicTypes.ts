@@ -54,6 +54,8 @@ export type MarketingUnitListItem = {
     bedrooms?: number;
     bathrooms?: number;
     price?: number;
+    /** Price hidden by "show price on request" (unit or any parent) — show the on-request label. */
+    priceOnRequest?: boolean;
     mainImage?: string;
     propertyType?: PropertyTypeId;
     floorLabel?: string;
@@ -147,6 +149,7 @@ export type MarketingUnitSingle = {
     bedrooms?: number;
     bathrooms?: number;
     price?: number;
+    priceOnRequest?: boolean;
     sharePrice?: number;
     projectedYield?: number;
     mainImage?: string;

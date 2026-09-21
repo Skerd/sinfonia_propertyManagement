@@ -19,5 +19,6 @@
   "viewerEmptyProject": "Noch keine Gebäude-Overlays konfiguriert. Einheiten in der Rasteransicht durchsuchen.",
   "viewerEmptyEdifice": "Keine Stockwerk-Overlays in diesem Gebäude. Einheiten in der Rasteransicht durchsuchen.",
   "viewerEmptyFloor": "Keine Einheits-Overlays auf diesem Stockwerk. Einheiten in der Rasteransicht durchsuchen.",
-  "viewGrid": "Rasteransicht"
+  "viewGrid": "Rasteransicht",
+  "priceOnRequest": "Auf Anfrage"
 }

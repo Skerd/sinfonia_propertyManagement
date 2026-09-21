@@ -53,5 +53,6 @@
   "roomsLabel": "Pièces",
   "floorLabel": "Étage",
   "bathsLabel": "Salles de bain",
-  "orientationLabel": "Orientation"
+  "orientationLabel": "Orientation",
+  "priceOnRequest": "Sur demande"
 }
