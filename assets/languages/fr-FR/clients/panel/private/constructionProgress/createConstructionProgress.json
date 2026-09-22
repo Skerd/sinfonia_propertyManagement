@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/createConstructionProgress.tsx",
+  "title": "Ajouter un rapport",
+  "description": "Enregistrer la phase actuelle du chantier et le % de travaux",
+  "generalInfo": "Détails de l’avancement",
+  "form": {
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Sélectionner un projet",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Sélectionner un bâtiment (optionnel)",
+    "phaseLabel": "Phase",
+    "phasePlaceholder": "Sélectionner une phase",
+    "phase": {
+      "planning_permits": "Études & permis",
+      "site_preparation": "Préparation du terrain",
+      "foundations": "Fondations",
+      "structure": "Gros œuvre",
+      "envelope": "Murs, toiture & façade",
+      "mep": "Installations techniques",
+      "interior_finishes": "Finitions intérieures",
+      "exterior_works": "Aménagements extérieurs",
+      "completed": "Terminé"
+    },
+    "progressPercentLabel": "Travaux réalisés (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Date",
+    "updateDatePlaceholder": "Sélectionner une date",
+    "expectedCompletionDateLabel": "Achèvement prévu",
+    "expectedCompletionDatePlaceholder": "Sélectionner une date",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "ex. Gros œuvre terminé jusqu’au 5e étage",
+    "descriptionLabel": "Message aux clients",
+    "descriptionPlaceholder": "Qu’est-ce qui a changé sur le chantier ? Ce texte est envoyé aux clients.",
+    "photosLabel": "Photos du chantier",
+    "addFile": "Ajouter une photo",
+    "filesSelected": "photos sélectionnées",
+    "existingFiles": "Photos existantes",
+    "newFiles": "Ajouter de nouvelles photos",
+    "notifyClientsLabel": "Notifier les clients (application + e-mail avec photos) lorsque ce rapport fait progresser l’avancement"
+  },
+  "axios": {
+    "start": {
+      "title": "Enregistrement du rapport",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rapport d’avancement enregistré !",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d’enregistrer le rapport, veuillez réessayer !",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ajouter un rapport",
+    "description": "Enregistrer la phase actuelle du chantier et le % de travaux"
+  },
+  "formButtons": {
+    "cancel": "Annuler",
+    "submit": "Enregistrer le rapport"
+  }
+}

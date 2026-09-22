@@ -64,7 +64,8 @@
     "Unittypes": "Einheitstypen",
     "Variationorders": "Variationorders",
     "Warranties": "Garantien",
-    "Workpackages": "Workpackages"
+    "Workpackages": "Workpackages",
+    "Constructionprogresses": "Baufortschritt"
   },
   "permissions": {
     "Approvalrequests": {
@@ -1726,6 +1727,27 @@
       "trade": "Gewerk",
       "updatedAt": "Aktualisiert am",
       "workpackages": "Workpackages"
+    },
+    "Constructionprogresses": {
+      "constructionprogresses": "Baufortschritt",
+      "createdAt": "Erstellt am",
+      "createdBy": "Erstellt von",
+      "deletedAt": "Gelöscht am",
+      "deletedBy": "Gelöscht von",
+      "updatedAt": "Aktualisiert am",
+      "name": "Referenz",
+      "project": "Projekt",
+      "edifice": "Gebäude",
+      "phase": "Bauphase",
+      "progressPercent": "Abgeschlossene Arbeiten (%)",
+      "updateDate": "Datum",
+      "title": "Titel",
+      "description": "Nachricht an die Kunden",
+      "expectedCompletionDate": "Voraussichtliche Fertigstellung",
+      "photos": "Baustellenfotos",
+      "notifyClients": "Kunden benachrichtigen",
+      "clientsNotifiedAt": "Kunden benachrichtigt am",
+      "clientsNotifiedCount": "Benachrichtigte Kunden"
     }
   }
 }

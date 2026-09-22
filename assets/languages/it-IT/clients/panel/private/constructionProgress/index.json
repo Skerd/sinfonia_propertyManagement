@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
+  "title": "Avanzamento lavori",
+  "description": "Monitora la fase di costruzione e la % dei lavori per progetto o edificio. I clienti vengono avvisati con le foto del cantiere quando i lavori avanzano.",
+  "createConstructionProgress": "Aggiungi rapporto",
+  "viewTimeline": "Cronologia del cantiere",
+  "noData": "Ancora nessun rapporto di avanzamento",
+  "failTitle": "Impossibile caricare l’avanzamento lavori",
+  "failDescription": "Si è verificato un errore durante il caricamento. Riprova.",
+  "searchPlaceholder": "Cerca o aggiungi filtri...",
+  "fields": {
+    "createdAt": "Creato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da",
+    "description": "Messaggio ai clienti",
+    "edifice": "Edificio",
+    "name": "Riferimento",
+    "photos": "Foto del cantiere",
+    "progressPercent": "Lavori completati (%)",
+    "project": "Progetto",
+    "title": "Titolo",
+    "updateDate": "Data",
+    "updatedAt": "Aggiornato il",
+    "phase": "Fase",
+    "expectedCompletionDate": "Completamento previsto",
+    "clientsNotifiedAt": "Clienti avvisati il",
+    "clientsNotifiedCount": "Clienti avvisati",
+    "notifyClients": "Avvisa i clienti",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Progettazione e permessi",
+        "site_preparation": "Preparazione del cantiere",
+        "foundations": "Fondazioni",
+        "structure": "Struttura",
+        "envelope": "Murature, tetto e facciata",
+        "mep": "Impianti",
+        "interior_finishes": "Finiture interne",
+        "exterior_works": "Opere esterne",
+        "completed": "Completato"
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "Avanzamento lavori",
+    "title": "Avanzamento lavori",
+    "overview": "Un rapporto di avanzamento registra in quale fase si trova un progetto (o un edificio) e quale % dei lavori è completata, con foto del cantiere. Quando un rapporto fa avanzare i lavori, ogni cliente con un’unità in quel progetto o edificio — acquirenti e prenotazioni attive — riceve una notifica in-app e un’e-mail con le foto.",
+    "sections": [
+      {
+        "title": "Contenuto",
+        "items": [
+          "Il progetto e, facoltativamente, un edificio.",
+          "Fase dei lavori, % completata, data e completamento previsto.",
+          "Un titolo, un messaggio ai clienti e fino a 20 foto del cantiere."
+        ]
+      },
+      {
+        "title": "Notifiche ai clienti",
+        "items": [
+          "Inviate automaticamente quando il rapporto fa avanzare la fase o la % rispetto al rapporto precedente e «Avvisa i clienti» è attivo.",
+          "Senza edificio vengono avvisati tutti i clienti del progetto; con un edificio solo i suoi clienti.",
+          "Usa «Invia di nuovo le notifiche» per reinviare un rapporto in qualsiasi momento."
+        ]
+      },
+      {
+        "title": "Dove appare",
+        "items": [
+          "L’ultima fase e la % compaiono nelle schede del progetto e dell’edificio.",
+          "Modifiche ed eliminazioni aggiornano questi valori ma non avvisano i clienti."
+        ]
+      }
+    ]
+  }
+}

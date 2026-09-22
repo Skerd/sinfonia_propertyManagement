@@ -65,6 +65,7 @@
     "dueDateLabel": "Fälligkeitsdatum",
     "dateFromLabel": "Von",
     "dateToLabel": "Bis",
+    "clearFilters": "Filter zurücksetzen",
     "noResults": "Keine Mietzahlungen gefunden.",
     "errorTitle": "Mietzahlungen konnten nicht geladen werden",
     "errorDescription": "Erneut versuchen oder Filter anpassen.",

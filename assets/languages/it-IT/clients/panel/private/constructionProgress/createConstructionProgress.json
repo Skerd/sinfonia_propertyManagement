@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/createConstructionProgress.tsx",
+  "title": "Aggiungi rapporto",
+  "description": "Registra la fase attuale e la % dei lavori",
+  "generalInfo": "Dettagli dell’avanzamento",
+  "form": {
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Seleziona progetto",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Seleziona edificio (facoltativo)",
+    "phaseLabel": "Fase",
+    "phasePlaceholder": "Seleziona fase",
+    "phase": {
+      "planning_permits": "Progettazione e permessi",
+      "site_preparation": "Preparazione del cantiere",
+      "foundations": "Fondazioni",
+      "structure": "Struttura",
+      "envelope": "Murature, tetto e facciata",
+      "mep": "Impianti",
+      "interior_finishes": "Finiture interne",
+      "exterior_works": "Opere esterne",
+      "completed": "Completato"
+    },
+    "progressPercentLabel": "Lavori completati (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Data",
+    "updateDatePlaceholder": "Seleziona data",
+    "expectedCompletionDateLabel": "Completamento previsto",
+    "expectedCompletionDatePlaceholder": "Seleziona data",
+    "titleLabel": "Titolo",
+    "titlePlaceholder": "es. Struttura completata fino al 5° piano",
+    "descriptionLabel": "Messaggio ai clienti",
+    "descriptionPlaceholder": "Cosa è cambiato in cantiere? Questo testo viene inviato ai clienti.",
+    "photosLabel": "Foto del cantiere",
+    "addFile": "Aggiungi foto",
+    "filesSelected": "foto selezionate",
+    "existingFiles": "Foto esistenti",
+    "newFiles": "Aggiungi nuove foto",
+    "notifyClientsLabel": "Avvisa i clienti (in-app + e-mail con foto) quando questo rapporto fa avanzare i lavori"
+  },
+  "axios": {
+    "start": {
+      "title": "Salvataggio del rapporto",
+      "time": 3000
+    },
+    "success": {
+      "title": "Rapporto di avanzamento salvato!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile salvare il rapporto, riprova!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Aggiungi rapporto",
+    "description": "Registra la fase attuale e la % dei lavori"
+  },
+  "formButtons": {
+    "cancel": "Annulla",
+    "submit": "Salva rapporto"
+  }
+}

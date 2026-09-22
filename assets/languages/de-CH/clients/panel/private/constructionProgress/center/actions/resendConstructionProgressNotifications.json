@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/actions/resendConstructionProgressNotifications.tsx",
+  "actionLabel": "Benachrichtigungen erneut senden",
+  "confirmTitle": "Fortschrittsbenachrichtigungen erneut senden?",
+  "confirmDescription": "Sendet die In-App-Benachrichtigung und die E-Mail mit Baustellenfotos erneut an alle Kunden mit einer Einheit in diesem Projekt oder Gebäude (Käufer und aktive Reservationen).",
+  "lastNotified": "Zuletzt gesendet am {date} an {count} Kunden.",
+  "neverNotified": "Für diesen Bericht wurden noch keine Kunden benachrichtigt.",
+  "cancel": "Abbrechen",
+  "confirmSend": "Senden",
+  "axios": {
+    "start": {
+      "title": "Benachrichtigungen werden gesendet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Benachrichtigungen gesendet",
+      "time": 3000
+    },
+    "error": {
+      "title": "Benachrichtigungen konnten nicht gesendet werden",
+      "time": 3000
+    }
+  }
+}

@@ -64,7 +64,8 @@
     "Unittypes": "Llojet e njësive",
     "Variationorders": "Variationorders",
     "Warranties": "Warranties",
-    "Workpackages": "Workpackages"
+    "Workpackages": "Workpackages",
+    "Constructionprogresses": "Ecuria e punimeve"
   },
   "permissions": {
     "Approvalrequests": {
@@ -1726,6 +1727,27 @@
       "trade": "Trade",
       "updatedAt": "Updated At",
       "workpackages": "Workpackages"
+    },
+    "Constructionprogresses": {
+      "constructionprogresses": "Ecuria e punimeve",
+      "createdAt": "Krijuar më",
+      "createdBy": "Krijuar nga",
+      "deletedAt": "Fshirë më",
+      "deletedBy": "Fshirë nga",
+      "updatedAt": "Përditësuar më",
+      "name": "Referenca",
+      "project": "Projekti",
+      "edifice": "Ndërtesa",
+      "phase": "Faza",
+      "progressPercent": "Punime të kryera (%)",
+      "updateDate": "Data",
+      "title": "Titulli",
+      "description": "Mesazh për klientët",
+      "expectedCompletionDate": "Përfundimi i pritshëm",
+      "photos": "Foto nga kantieri",
+      "notifyClients": "Njofto klientët",
+      "clientsNotifiedAt": "Klientët u njoftuan më",
+      "clientsNotifiedCount": "Klientë të njoftuar"
     }
   }
 }

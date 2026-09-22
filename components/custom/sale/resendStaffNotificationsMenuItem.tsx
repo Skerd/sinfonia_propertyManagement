@@ -19,6 +19,8 @@ type ResendStaffNotificationsMenuItemProps = {
     loading?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<unknown> | null>;
     onConfirm: () => void;
+    /** Optional extra line under the description (e.g. when recipients were last notified). */
+    detail?: string;
 };
 
 /**
@@ -31,6 +33,7 @@ export default function ResendStaffNotificationsMenuItem({
     loading,
     innerRef,
     onConfirm,
+    detail,
 }: ResendStaffNotificationsMenuItemProps) {
     const [open, setOpen] = useState(false);
 
@@ -57,6 +60,7 @@ export default function ResendStaffNotificationsMenuItem({
                     <AlertDialogHeader>
                         <AlertDialogTitle>{resolveLanguageKey("confirmTitle")}</AlertDialogTitle>
                         <AlertDialogDescription>{resolveLanguageKey("confirmDescription")}</AlertDialogDescription>
+                        {detail ? <p className="text-xs text-muted-foreground">{detail}</p> : null}
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                         <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>

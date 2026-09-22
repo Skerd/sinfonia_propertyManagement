@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/timeline/constructionProgressTimelineSection.tsx",
+  "title": "Chronologie du chantier",
+  "description": "Rapports classés par date. Survolez un point pour les détails, cliquez pour ouvrir le rapport.",
+  "emptyTitle": "Aucun rapport",
+  "emptyDescription": "Ajoutez un rapport d’avancement pour démarrer la chronologie.",
+  "failTitle": "Impossible de charger la chronologie",
+  "failDescription": "Une erreur s’est produite lors du chargement des rapports. Cliquez pour réessayer.",
+  "noPhoto": "Aucune photo",
+  "hint": "Survoler pour l’aperçu · cliquer pour les détails",
+  "updatesCount": "rapports",
+  "loading": "Chargement…",
+  "phase": {
+    "planning_permits": "Études & permis",
+    "site_preparation": "Préparation du terrain",
+    "foundations": "Fondations",
+    "structure": "Gros œuvre",
+    "envelope": "Murs, toiture & façade",
+    "mep": "Installations techniques",
+    "interior_finishes": "Finitions intérieures",
+    "exterior_works": "Aménagements extérieurs",
+    "completed": "Terminé"
+  }
+}

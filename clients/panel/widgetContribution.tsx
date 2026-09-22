@@ -37,6 +37,9 @@ import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realE
 const ProjectSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/projects/center/sheetView/projectSheetView.tsx"),
 );
+const ConstructionProgressSheetViewLazy = lazy(
+    () => import("@propertyManagementModule/clients/panel/private/constructionProgress/center/sheetView/constructionProgressSheetView.tsx"),
+);
 const StorySheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/stories/center/sheetView/storySheetView.tsx"),
 );
@@ -142,6 +145,7 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#HandoverPackageCard": HandoverPackageCard,
         "#ProjectSheetView": ProjectSheetViewLazy,
         "#StorySheetView": StorySheetViewLazy,
+        "#ConstructionProgressSheetView": ConstructionProgressSheetViewLazy,
         "#EdificeSheetView": EdificeSheetViewLazy,
         "#FloorSheetView": FloorSheetViewLazy,
         "#UnitSheetView": UnitSheetViewLazy,
@@ -292,6 +296,10 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#CommissionSheetView": {url: "/api/realEstate/commission/single", labelFields: ["name", "title"]},
         "#StorySheetView": {
             url: "/api/realEstate/story/single",
+            labelFields: ["title", "name"],
+        },
+        "#ConstructionProgressSheetView": {
+            url: "/api/realEstate/constructionProgress/single",
             labelFields: ["title", "name"],
         },
         "#HandoverPackageSheetView": {url: "/api/realEstate/handoverPackage/single", labelFields: ["title", "name"]},

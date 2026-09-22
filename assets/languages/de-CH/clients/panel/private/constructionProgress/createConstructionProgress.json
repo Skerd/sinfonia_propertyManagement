@@ -1,0 +1,63 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/createConstructionProgress.tsx",
+  "title": "Fortschrittsbericht erfassen",
+  "description": "Aktuelle Bauphase und Fortschritt der Arbeiten erfassen",
+  "generalInfo": "Angaben zum Fortschritt",
+  "form": {
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Projekt wählen",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Gebäude wählen (optional)",
+    "phaseLabel": "Bauphase",
+    "phasePlaceholder": "Bauphase wählen",
+    "phase": {
+      "planning_permits": "Planung & Bewilligungen",
+      "site_preparation": "Baustellenvorbereitung",
+      "foundations": "Fundamente",
+      "structure": "Rohbau",
+      "envelope": "Mauerwerk, Dach & Fassade",
+      "mep": "Haustechnik",
+      "interior_finishes": "Innenausbau",
+      "exterior_works": "Umgebungsarbeiten",
+      "completed": "Fertiggestellt"
+    },
+    "progressPercentLabel": "Abgeschlossene Arbeiten (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Datum",
+    "updateDatePlaceholder": "Datum wählen",
+    "expectedCompletionDateLabel": "Voraussichtliche Fertigstellung",
+    "expectedCompletionDatePlaceholder": "Datum wählen",
+    "titleLabel": "Titel",
+    "titlePlaceholder": "z. B. Rohbau bis zum 5. Obergeschoss abgeschlossen",
+    "descriptionLabel": "Nachricht an die Kunden",
+    "descriptionPlaceholder": "Was hat sich auf der Baustelle getan? Dieser Text wird an die Kunden gesendet.",
+    "photosLabel": "Baustellenfotos",
+    "addFile": "Foto hinzufügen",
+    "filesSelected": "Fotos ausgewählt",
+    "existingFiles": "Vorhandene Fotos",
+    "newFiles": "Neue Fotos hinzufügen",
+    "notifyClientsLabel": "Kunden benachrichtigen (In-App + E-Mail mit Fotos), wenn dieser Bericht den Fortschritt erhöht"
+  },
+  "axios": {
+    "start": {
+      "title": "Bericht wird gespeichert",
+      "time": 3000
+    },
+    "success": {
+      "title": "Fortschrittsbericht gespeichert!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Der Bericht konnte nicht gespeichert werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Fortschrittsbericht erfassen",
+    "description": "Aktuelle Bauphase und Fortschritt der Arbeiten erfassen"
+  },
+  "formButtons": {
+    "cancel": "Abbrechen",
+    "submit": "Bericht speichern"
+  }
+}

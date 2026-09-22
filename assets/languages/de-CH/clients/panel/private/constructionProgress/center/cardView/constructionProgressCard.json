@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/cardView/constructionProgressCard.tsx",
+  "noPhotos": "Keine Fotos",
+  "fields": {
+    "name": "Referenz",
+    "phase": "Bauphase",
+    "progressPercent": "Abgeschlossene Arbeiten (%)",
+    "updateDate": "Datum",
+    "project": "Projekt",
+    "edifice": "Gebäude",
+    "clientsNotifiedAt": "Kunden benachrichtigt am",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Planung & Bewilligungen",
+        "site_preparation": "Baustellenvorbereitung",
+        "foundations": "Fundamente",
+        "structure": "Rohbau",
+        "envelope": "Mauerwerk, Dach & Fassade",
+        "mep": "Haustechnik",
+        "interior_finishes": "Innenausbau",
+        "exterior_works": "Umgebungsarbeiten",
+        "completed": "Fertiggestellt"
+      }
+    }
+  },
+  "failedTitle": "Eintrag konnte nicht geladen werden",
+  "failedDescription": "Beim Laden dieses Eintrags ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "failedTooltipDescription": "Klicken Sie, um die Daten erneut zu laden."
+}

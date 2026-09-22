@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
+  "title": "Construction progress",
+  "description": "Track the construction phase and % of works per project or building. Clients are notified with site photos when progress advances.",
+  "createConstructionProgress": "Add progress report",
+  "viewTimeline": "Construction timeline",
+  "noData": "No construction progress reports yet",
+  "failTitle": "Failed to load construction progress",
+  "failDescription": "An error occurred while loading construction progress. Please try again.",
+  "searchPlaceholder": "Search or add filters...",
+  "fields": {
+    "createdAt": "Created at",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by",
+    "description": "Message to clients",
+    "edifice": "Building",
+    "name": "Reference",
+    "photos": "Site photos",
+    "progressPercent": "Works completed (%)",
+    "project": "Project",
+    "title": "Title",
+    "updateDate": "Update date",
+    "updatedAt": "Updated at",
+    "phase": "Phase",
+    "expectedCompletionDate": "Expected completion",
+    "clientsNotifiedAt": "Clients notified on",
+    "clientsNotifiedCount": "Clients notified",
+    "notifyClients": "Notify clients",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Planning & permits",
+        "site_preparation": "Site preparation",
+        "foundations": "Foundations",
+        "structure": "Structure",
+        "envelope": "Walls, roof & facade",
+        "mep": "Installations (MEP)",
+        "interior_finishes": "Interior finishes",
+        "exterior_works": "Exterior works",
+        "completed": "Completed"
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "Construction progress",
+    "title": "Construction progress",
+    "overview": "A construction progress report records which phase a project (or one building) is in and what % of the works is done, with site photos. When a report moves progress forward, every client holding a unit in that project or building — buyers and active reservations — gets an in-app notification and an email with the photos.",
+    "sections": [
+      {
+        "title": "What it holds",
+        "items": [
+          "Project and, optionally, one building.",
+          "Construction phase, % of works completed, update date and expected completion.",
+          "A title, a message to clients and up to 20 site photos."
+        ]
+      },
+      {
+        "title": "Client notifications",
+        "items": [
+          "Sent automatically when the report advances the phase or the % compared to the previous report, and \"Notify clients\" is on.",
+          "A report without a building notifies all clients of the project; with a building, only that building's clients.",
+          "Use \"Resend notifications\" on a report to send it again at any time."
+        ]
+      },
+      {
+        "title": "Where it shows",
+        "items": [
+          "The latest phase and % appear on the project and building sheets.",
+          "Edits and deletions update those values but do not notify clients."
+        ]
+      }
+    ]
+  }
+}

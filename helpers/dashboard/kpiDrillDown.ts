@@ -12,6 +12,7 @@ import {
     buildFilterGroup,
     buildFilterRule,
     buildListDrillDownUrl,
+    type FilterRefLabels,
 } from "@coreModule/helpers/filter/filterUrl.ts";
 
 export type KpiDrillDownContext = {
@@ -137,6 +138,103 @@ export const kpiPaymentAlertReservations = (ctx: KpiDrillDownContext = {}) => {
         buildFilterRule("paid", "equals", false),
         buildFilterRule("expirationDate", "lessThanOrEqual", toISODate(end)),
     ]);
+};
+
+function unitQueryParams(
+    ctx: KpiDrillDownContext,
+    unit?: { _id?: string; unitNumber?: string; name?: string },
+): Record<string, string | undefined> {
+    const unitLabel =
+        unit?.unitNumber != null
+            ? String(unit.unitNumber)
+            : unit?.name;
+    return {
+        ...contextQueryParams(ctx),
+        unitId: unit?._id || undefined,
+        unitName: unitLabel,
+    };
+}
+
+function clientDisplayName(client?: { name?: string; surname?: string }): string | undefined {
+    const label = [client?.name, client?.surname].filter(Boolean).join(" ").trim();
+    return label || undefined;
+}
+
+/** Single payment-alert card → sales list scoped to that unit / buyer + payment plans. */
+export const kpiPaymentAlertInstallmentItem = (
+    ctx: KpiDrillDownContext,
+    alert: {
+        unit: { _id: string; unitNumber?: string; name?: string };
+        client?: { _id: string; name?: string; surname?: string };
+    },
+) => {
+    const rules = [buildFilterRule("paymentType", "equals", SALE_PAYMENT_PLAN)];
+    const filterLabels: FilterRefLabels = {};
+    if (alert.client?._id) {
+        rules.push(buildFilterRule("buyer", "equals", alert.client._id));
+        const label = clientDisplayName(alert.client);
+        if (label) filterLabels.buyer = {[alert.client._id]: label};
+    }
+    return buildListDrillDownUrl("/realEstate/sales", {
+        filter: buildFilterGroup(rules),
+        filterLabels: Object.keys(filterLabels).length ? filterLabels : undefined,
+        queryParams: unitQueryParams(ctx, alert.unit),
+    });
+};
+
+/** Single payment-alert card → reservations list scoped to that unit / client. */
+export const kpiPaymentAlertReservationItem = (
+    ctx: KpiDrillDownContext,
+    alert: {
+        unit: { _id: string; unitNumber?: string; name?: string };
+        client?: { _id: string; name?: string; surname?: string };
+    },
+) => {
+    const end = new Date();
+    end.setDate(end.getDate() + 30);
+    const rules = [
+        buildFilterRule("isActive", "equals", true),
+        buildFilterRule("paid", "equals", false),
+        buildFilterRule("expirationDate", "lessThanOrEqual", toISODate(end)),
+    ];
+    const filterLabels: FilterRefLabels = {};
+    if (alert.client?._id) {
+        rules.push(buildFilterRule("client", "equals", alert.client._id));
+        const label = clientDisplayName(alert.client);
+        if (label) filterLabels.client = {[alert.client._id]: label};
+    }
+    return buildListDrillDownUrl("/realEstate/reservations", {
+        filter: buildFilterGroup(rules),
+        filterLabels: Object.keys(filterLabels).length ? filterLabels : undefined,
+        queryParams: unitQueryParams(ctx, alert.unit),
+    });
+};
+
+/** Single payment-alert card → rentals hub payments tab scoped to that payment (and unit). */
+export const kpiPaymentAlertRentItem = (
+    _ctx: KpiDrillDownContext,
+    alert: {
+        unit: { _id: string; unitNumber?: string; name?: string };
+        client?: { _id: string; name?: string; surname?: string };
+        rentalPaymentId?: string;
+    },
+) => {
+    const params = new URLSearchParams();
+    params.set("tab", "payments");
+    if (alert.rentalPaymentId) params.set("payment", alert.rentalPaymentId);
+    if (alert.unit._id) {
+        params.set("unit", alert.unit._id);
+        const unitLabel =
+            alert.unit.unitNumber != null
+                ? String(alert.unit.unitNumber)
+                : alert.unit.name;
+        if (unitLabel) params.set("unitName", unitLabel);
+    } else if (!alert.rentalPaymentId) {
+        const search = clientDisplayName(alert.client);
+        if (search) params.set("search", search);
+    }
+    const qs = params.toString();
+    return qs ? `/realEstate/rentalsHub?${qs}` : "/realEstate/rentalsHub";
 };
 
 // ── Payment plans (best-effort → sales with payment_plan) ────────────────────

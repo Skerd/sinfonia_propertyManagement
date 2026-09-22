@@ -65,6 +65,7 @@
     "dueDateLabel": "Date d’échéance",
     "dateFromLabel": "Du",
     "dateToLabel": "Au",
+    "clearFilters": "Effacer les filtres",
     "noResults": "Aucun loyer trouvé.",
     "errorTitle": "Impossible de charger les loyers",
     "errorDescription": "Réessayez ou ajustez vos filtres.",

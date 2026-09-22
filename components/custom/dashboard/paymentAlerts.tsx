@@ -13,10 +13,14 @@ import {Badge} from "@coreModule/components/ui/badge.tsx";
 import { DashboardWidgetCard, DashboardWidgetEmpty } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
 import type { KpiDrillDownContext } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
 import {
+  kpiPaymentAlertInstallmentItem,
   kpiPaymentAlertPlans,
+  kpiPaymentAlertRentItem,
+  kpiPaymentAlertReservationItem,
   kpiPaymentAlertReservations,
 } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
 import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 export interface PaymentAlertsProps extends WithLanguageType {
   overdueCount: number;
@@ -39,6 +43,13 @@ function alertKind(alert: PaymentAlertItem): "installment" | "reservation" | "re
   if (alert.kind === "reservation") return "reservation";
   if (alert.kind === "rent") return "rent";
   return "installment";
+}
+
+function alertHref(alert: PaymentAlertItem, ctx: KpiDrillDownContext): string {
+  const kind = alertKind(alert);
+  if (kind === "reservation") return kpiPaymentAlertReservationItem(ctx, alert);
+  if (kind === "rent") return kpiPaymentAlertRentItem(ctx, alert);
+  return kpiPaymentAlertInstallmentItem(ctx, alert);
 }
 
 function PaymentAlertsInner({
@@ -90,7 +101,7 @@ function PaymentAlertsInner({
           <Button
             variant="link"
             className="w-full py-1.5 h-auto text-primary text-xs"
-            onClick={() => navigate('/realEstate/rentalsHub')}
+            onClick={() => navigate('/realEstate/rentalsHub?tab=payments')}
           >
             {resolveLanguageKey('viewRentalsLabel')}
           </Button>
@@ -105,14 +116,18 @@ function PaymentAlertsInner({
               const IconComponent = style.icon;
               const unitLabel = alert.unit.unitNumber ?? alert.unit.name ?? alert.unit._id;
               const kind = alertKind(alert);
+              const clientLabel = getName(alert.client);
+              const href = alertHref(alert, drillDownContext);
               return (
-                <div
-                  key={`${kind}-${alert.reservationId ?? alert.unit._id}-${index}`}
+                <button
+                  type="button"
+                  key={`${kind}-${alert.reservationId ?? alert.rentalPaymentId ?? alert.saleId ?? alert.unit._id}-${index}`}
                   className={cn(
-                    'px-2.5 py-2 rounded-md border transition-colors hover:border-opacity-80',
+                    'w-full text-left px-2.5 py-2 rounded-md border transition-colors hover:border-opacity-80 cursor-pointer',
                     style.bg,
                     style.border
                   )}
+                  onClick={() => navigate(href)}
                 >
                   <div className="flex items-start gap-2">
                     <div className={cn('p-1 rounded shrink-0', style.iconColor)}>
@@ -127,6 +142,11 @@ function PaymentAlertsInner({
                           {formatCurrency(alert.installment.amount, "EUR", {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                         </span>
                       </div>
+                      {clientLabel ? (
+                        <p className="text-xs font-medium text-foreground truncate mt-0.5">
+                          {clientLabel}
+                        </p>
+                      ) : null}
                       {kind === "reservation" && (
                         <p className="text-2xs text-muted-foreground mt-0.5">
                           {resolveLanguageKey('reservationLabel')}
@@ -160,7 +180,7 @@ function PaymentAlertsInner({
                       </div>
                     </div>
                   </div>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -171,7 +191,7 @@ function PaymentAlertsInner({
               onClick={() =>
                 navigate(
                   alerts!.every((a) => alertKind(a) === 'rent')
-                    ? '/realEstate/rentalsHub'
+                    ? '/realEstate/rentalsHub?tab=payments'
                     : alerts!.some((a) => alertKind(a) === 'reservation') &&
                         !alerts!.some((a) => alertKind(a) === 'installment')
                     ? reservationsHref

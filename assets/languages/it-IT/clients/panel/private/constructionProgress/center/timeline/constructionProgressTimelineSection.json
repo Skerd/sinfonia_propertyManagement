@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/timeline/constructionProgressTimelineSection.tsx",
+  "title": "Cronologia del cantiere",
+  "description": "Rapporti ordinati per data. Passa sopra un punto per i dettagli, clicca per aprire il rapporto.",
+  "emptyTitle": "Ancora nessun rapporto",
+  "emptyDescription": "Aggiungi un rapporto di avanzamento per avviare la cronologia.",
+  "failTitle": "Impossibile caricare la cronologia",
+  "failDescription": "Si è verificato un errore durante il caricamento dei rapporti. Clicca per riprovare.",
+  "noPhoto": "Nessuna foto",
+  "hint": "Passa sopra per l’anteprima · clicca per i dettagli",
+  "updatesCount": "rapporti",
+  "loading": "Caricamento…",
+  "phase": {
+    "planning_permits": "Progettazione e permessi",
+    "site_preparation": "Preparazione del cantiere",
+    "foundations": "Fondazioni",
+    "structure": "Struttura",
+    "envelope": "Murature, tetto e facciata",
+    "mep": "Impianti",
+    "interior_finishes": "Finiture interne",
+    "exterior_works": "Opere esterne",
+    "completed": "Completato"
+  }
+}

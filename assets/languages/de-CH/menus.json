@@ -99,6 +99,9 @@
     },
     "erpExport": {
       "title": "ERP-Export"
+    },
+    "constructionProgress": {
+      "title": "Baufortschritt"
     }
   },
   "reports": {

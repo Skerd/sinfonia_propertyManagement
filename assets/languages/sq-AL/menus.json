@@ -99,6 +99,9 @@
     },
     "erpExport": {
       "title": "Eksporti ERP"
+    },
+    "constructionProgress": {
+      "title": "Ecuria e punimeve"
     }
   },
   "reports": {

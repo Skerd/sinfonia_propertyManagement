@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/timeline/constructionProgressTimelineSection.tsx",
+  "title": "Kronologjia e kantierit",
+  "description": "Raportet sipas datës. Kaloni mbi një pikë për detaje, klikoni për të hapur raportin.",
+  "emptyTitle": "Ende nuk ka raporte",
+  "emptyDescription": "Shtoni një raport ecurie për të nisur kronologjinë.",
+  "failTitle": "Kronologjia nuk u ngarkua",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të raporteve. Klikoni për të provuar përsëri.",
+  "noPhoto": "Pa foto",
+  "hint": "Kaloni sipër për pamje paraprake · klikoni për detaje",
+  "updatesCount": "raporte",
+  "loading": "Po ngarkohet…",
+  "phase": {
+    "planning_permits": "Projektimi & lejet",
+    "site_preparation": "Përgatitja e terrenit",
+    "foundations": "Themelet",
+    "structure": "Karkasi (struktura)",
+    "envelope": "Muraturat, çatia & fasada",
+    "mep": "Instalimet",
+    "interior_finishes": "Përfundimet e brendshme",
+    "exterior_works": "Punimet e jashtme",
+    "completed": "Përfunduar"
+  }
+}

@@ -1,6 +1,7 @@
 import {compose} from "redux";
-import {useCallback, useState} from "react";
+import {useCallback, useMemo, useState} from "react";
 import {useSelector} from "react-redux";
+import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
@@ -39,12 +40,56 @@ type SheetState =
     | {type: "rentalPayment"; entity: RentalPayment}
     | null;
 
+type RentalsHubTab = "leases" | "payments" | "calendar";
+
+function parseRentalsHubTab(value: string | null): RentalsHubTab {
+    if (value === "payments" || value === "calendar") return value;
+    return "leases";
+}
+
 function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
+    const [searchParams, setSearchParams] = useSearchParams();
     const [sheet, setSheet] = useState<SheetState>(null);
     const [action, setAction] = useState("");
     const accessHydrated = useAccessHydrated();
     const canRead = hasAnyAccessRead([useAccess("leases"), useAccess("rentalpayments")]);
+    const tab = useMemo(() => parseRentalsHubTab(searchParams.get("tab")), [searchParams]);
+    const initialPaymentUnit = searchParams.get("unit") ?? "";
+    const initialPaymentUnitName = searchParams.get("unitName") ?? "";
+    const initialPaymentSearch = searchParams.get("search") ?? "";
+    const initialPaymentId = searchParams.get("payment") ?? "";
+
+    const setTab = useCallback(
+        (next: string) => {
+            const parsed = parseRentalsHubTab(next);
+            setSearchParams(
+                (prev) => {
+                    const params = new URLSearchParams(prev);
+                    if (parsed === "leases") params.delete("tab");
+                    else params.set("tab", parsed);
+                    return params;
+                },
+                {replace: true},
+            );
+        },
+        [setSearchParams],
+    );
+
+    /** Drop payment-alert drill-down query params so filters can be cleared without leaving the page. */
+    const clearPaymentDrillDownParams = useCallback(() => {
+        setSearchParams(
+            (prev) => {
+                const params = new URLSearchParams(prev);
+                params.delete("payment");
+                params.delete("unit");
+                params.delete("unitName");
+                params.delete("search");
+                return params;
+            },
+            {replace: true},
+        );
+    }, [setSearchParams]);
 
     const closeSheet = useCallback(() => {
         setSheet(null);
@@ -93,7 +138,7 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
             />
 
             <div className="flex-1 overflow-auto p-4">
-                <Tabs defaultValue="leases" className="flex flex-col gap-4">
+                <Tabs value={tab} onValueChange={setTab} className="flex flex-col gap-4">
                     <TabsList variant="line" className="h-auto w-fit gap-0 border-b bg-transparent p-0">
                         <TabsTrigger className="cursor-pointer flex-none shrink-0 px-3 py-2" value="leases">
                             {String(resolveLanguageKey("tabs.leases"))}
@@ -117,6 +162,11 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                             resolveLanguageKey={resolveLanguageKey}
                             timezone={timezone}
                             onViewRow={(row) => void openPaymentRow(row)}
+                            initialPaymentId={initialPaymentId}
+                            initialUnit={initialPaymentUnit}
+                            initialUnitName={initialPaymentUnitName}
+                            initialSearch={initialPaymentSearch}
+                            onClearDrillDown={clearPaymentDrillDownParams}
                         />
                     </TabsContent>
                     <TabsContent value="calendar">

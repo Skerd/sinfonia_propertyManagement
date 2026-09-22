@@ -57,6 +57,9 @@ import EditModificationRequest from "@propertyManagementModule/clients/panel/pri
 import Dashboard from "@propertyManagementModule/clients/panel/private/overview";
 import RoiCalculator from "@propertyManagementModule/clients/panel/private/overview/roi/roiCalculator.tsx";
 import AllStories from "@propertyManagementModule/clients/panel/private/stories";
+import AllConstructionProgress from "@propertyManagementModule/clients/panel/private/constructionProgress";
+import CreateConstructionProgress from "@propertyManagementModule/clients/panel/private/constructionProgress/createConstructionProgress.tsx";
+import EditConstructionProgress from "@propertyManagementModule/clients/panel/private/constructionProgress/editConstructionProgress.tsx";
 import CreateStory from "@propertyManagementModule/clients/panel/private/stories/createStory.tsx";
 import EditStory from "@propertyManagementModule/clients/panel/private/stories/editStory.tsx";
 import AllHandoverPackages from "@propertyManagementModule/clients/panel/private/handoverPackages";
@@ -157,6 +160,8 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
         const unitCostName = safeDecode(searchParams.get("unitCostName")) || undefined;
         const storyId = searchParams.get("storyId") || undefined;
         const storyName = safeDecode(searchParams.get("storyName")) || undefined;
+        const constructionProgressId = searchParams.get("constructionProgressId") || undefined;
+        const constructionProgressName = safeDecode(searchParams.get("constructionProgressName")) || undefined;
         const leadId = searchParams.get("leadId") || undefined;
         const leadName = safeDecode(searchParams.get("leadName")) || undefined;
         const leaseId = searchParams.get("leaseId") || undefined;
@@ -188,6 +193,21 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
         
 
         
+
+        if (subview === "constructionProgress") {
+            if (action === "create") return <CreateConstructionProgress />;
+            if (action === "edit" && constructionProgressId) {
+                return <EditConstructionProgress entityId={constructionProgressId} entityName={constructionProgressName} />;
+            }
+            return (
+                <AllConstructionProgress
+                    projectId={projectId}
+                    projectName={projectName}
+                    edificeId={edificeId}
+                    edificeName={edificeName}
+                />
+            );
+        }
 
         if (subview === "stories") {
             if (action === "create") return <CreateStory />;

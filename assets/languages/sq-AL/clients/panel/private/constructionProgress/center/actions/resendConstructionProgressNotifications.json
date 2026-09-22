@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/actions/resendConstructionProgressNotifications.tsx",
+  "actionLabel": "Ridërgo njoftimet",
+  "confirmTitle": "Të ridërgohen njoftimet e ecurisë?",
+  "confirmDescription": "Ridërgon njoftimin në aplikacion dhe emailin me foto nga kantieri për çdo klient që ka një njësi në këtë projekt ose ndërtesë (blerës dhe rezervime aktive).",
+  "lastNotified": "Dërguar së fundi më {date} te {count} klient(ë).",
+  "neverNotified": "Ende nuk është njoftuar asnjë klient për këtë raport.",
+  "cancel": "Anulo",
+  "confirmSend": "Dërgo",
+  "axios": {
+    "start": {
+      "title": "Po dërgohen njoftimet…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Njoftimet u dërguan",
+      "time": 3000
+    },
+    "error": {
+      "title": "Njoftimet nuk mund të dërgoheshin",
+      "time": 3000
+    }
+  }
+}

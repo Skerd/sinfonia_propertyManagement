@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/timeline/constructionProgressTimelineSection.tsx",
+  "title": "Bauzeitachse",
+  "description": "Fortschrittsberichte nach Datum. Fahren Sie über einen Punkt für Details, klicken Sie, um den Bericht zu öffnen.",
+  "emptyTitle": "Noch keine Berichte",
+  "emptyDescription": "Erfassen Sie einen Fortschrittsbericht, um die Zeitachse zu starten.",
+  "failTitle": "Zeitachse konnte nicht geladen werden",
+  "failDescription": "Beim Laden der Berichte ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
+  "noPhoto": "Kein Foto",
+  "hint": "Darüberfahren für Vorschau · Klicken für Details",
+  "updatesCount": "Berichte",
+  "loading": "Wird geladen…",
+  "phase": {
+    "planning_permits": "Planung & Bewilligungen",
+    "site_preparation": "Baustellenvorbereitung",
+    "foundations": "Fundamente",
+    "structure": "Rohbau",
+    "envelope": "Mauerwerk, Dach & Fassade",
+    "mep": "Haustechnik",
+    "interior_finishes": "Innenausbau",
+    "exterior_works": "Umgebungsarbeiten",
+    "completed": "Fertiggestellt"
+  }
+}

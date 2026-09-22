@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/cardView/constructionProgressCard.tsx",
+  "noPhotos": "No photos",
+  "fields": {
+    "name": "Reference",
+    "phase": "Phase",
+    "progressPercent": "Works completed (%)",
+    "updateDate": "Update date",
+    "project": "Project",
+    "edifice": "Building",
+    "clientsNotifiedAt": "Clients notified on",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Planning & permits",
+        "site_preparation": "Site preparation",
+        "foundations": "Foundations",
+        "structure": "Structure",
+        "envelope": "Walls, roof & facade",
+        "mep": "Installations (MEP)",
+        "interior_finishes": "Interior finishes",
+        "exterior_works": "Exterior works",
+        "completed": "Completed"
+      }
+    }
+  },
+  "failedTitle": "Failed to load record",
+  "failedDescription": "Something went wrong while loading this record. Click to retry.",
+  "failedTooltipDescription": "Click to retry fetching data."
+}

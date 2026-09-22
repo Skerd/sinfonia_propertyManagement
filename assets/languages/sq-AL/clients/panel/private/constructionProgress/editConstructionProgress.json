@@ -1,0 +1,67 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/editConstructionProgress.tsx",
+  "title": "Ndrysho raportin e ecurisë",
+  "editTitle": "Ndrysho raportin e ecurisë",
+  "editDescription": "Ndrysho raportin e ecurisë së punimeve",
+  "errorTitle": "Raporti nuk u ngarkua",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të raportit. Ju lutemi provoni përsëri.",
+  "generalInfo": "Detajet e ecurisë",
+  "form": {
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën (opsionale)",
+    "phaseLabel": "Faza",
+    "phasePlaceholder": "Zgjidhni fazën",
+    "phase": {
+      "planning_permits": "Projektimi & lejet",
+      "site_preparation": "Përgatitja e terrenit",
+      "foundations": "Themelet",
+      "structure": "Karkasi (struktura)",
+      "envelope": "Muraturat, çatia & fasada",
+      "mep": "Instalimet",
+      "interior_finishes": "Përfundimet e brendshme",
+      "exterior_works": "Punimet e jashtme",
+      "completed": "Përfunduar"
+    },
+    "progressPercentLabel": "Punime të kryera (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Data",
+    "updateDatePlaceholder": "Zgjidhni datën",
+    "expectedCompletionDateLabel": "Përfundimi i pritshëm",
+    "expectedCompletionDatePlaceholder": "Zgjidhni datën",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "p.sh. Karkasi u përfundua deri në katin e 5-të",
+    "descriptionLabel": "Mesazh për klientët",
+    "descriptionPlaceholder": "Çfarë ndryshoi në kantier? Ky tekst u dërgohet klientëve.",
+    "photosLabel": "Foto nga kantieri",
+    "addFile": "Shto foto",
+    "filesSelected": "foto të zgjedhura",
+    "existingFiles": "Fotot ekzistuese",
+    "newFiles": "Shto foto të reja",
+    "notifyClientsLabel": "Njofto klientët (në aplikacion + email me foto) kur ky raport avancon punimet",
+    "_idLabel": "ID e regjistrimit"
+  },
+  "axios": {
+    "start": {
+      "title": "Po përditësohet regjistrimi",
+      "time": 3000
+    },
+    "success": {
+      "title": "Raporti i ecurisë u ruajt!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Raporti nuk u ruajt, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Ndrysho raportin e ecurisë",
+    "description": "Ndrysho raportin e ecurisë së punimeve"
+  },
+  "formButtons": {
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
+  }
+}

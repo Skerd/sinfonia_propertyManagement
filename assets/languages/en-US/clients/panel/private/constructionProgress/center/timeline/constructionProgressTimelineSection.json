@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/timeline/constructionProgressTimelineSection.tsx",
+  "title": "Construction timeline",
+  "description": "Progress reports ordered by date. Hover a point for details, click to open the full report.",
+  "emptyTitle": "No reports yet",
+  "emptyDescription": "Add a progress report to start the timeline.",
+  "failTitle": "Could not load timeline",
+  "failDescription": "Something went wrong while loading reports. Click to retry.",
+  "noPhoto": "No photo",
+  "hint": "Hover for preview · click to open details",
+  "updatesCount": "reports",
+  "loading": "Loading…",
+  "phase": {
+    "planning_permits": "Planning & permits",
+    "site_preparation": "Site preparation",
+    "foundations": "Foundations",
+    "structure": "Structure",
+    "envelope": "Walls, roof & facade",
+    "mep": "Installations (MEP)",
+    "interior_finishes": "Interior finishes",
+    "exterior_works": "Exterior works",
+    "completed": "Completed"
+  }
+}

@@ -18,6 +18,7 @@ import {
     BookOpen,
     Download,
     Network,
+    HardHat,
     type LucideIcon,
 } from "lucide-react";
 import {
@@ -86,6 +87,7 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
         navLink(resolveLanguageKey, "menus.realEstate.edifices.title", "/realEstate/edifices", Building, ["edifices"]),
         navLink(resolveLanguageKey, "menus.realEstate.floors.title", "/realEstate/floors", Layers, ["floors"]),
         navLink(resolveLanguageKey, "menus.realEstate.units.title", "/realEstate/units", DoorOpen, ["units"]),
+        navLink(resolveLanguageKey, "menus.realEstate.constructionProgress.title", "/realEstate/constructionProgress", HardHat, ["constructionprogresses"]),
         navLink(resolveLanguageKey, "menus.realEstate.leads.title", "/realEstate/leads", UserSearch, ["leads"]),
         navLink(resolveLanguageKey, "menus.realEstate.inspections.title", "/realEstate/inspections", ClipboardList, ["inspections"]),
         navLink(resolveLanguageKey, "menus.realEstate.modificationRequests.title", "/realEstate/modificationRequests", Wrench, ["modificationRequests"]),

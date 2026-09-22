@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/cardView/constructionProgressCard.tsx",
+  "noPhotos": "Aucune photo",
+  "fields": {
+    "name": "Référence",
+    "phase": "Phase",
+    "progressPercent": "Travaux réalisés (%)",
+    "updateDate": "Date",
+    "project": "Projet",
+    "edifice": "Bâtiment",
+    "clientsNotifiedAt": "Clients notifiés le",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Études & permis",
+        "site_preparation": "Préparation du terrain",
+        "foundations": "Fondations",
+        "structure": "Gros œuvre",
+        "envelope": "Murs, toiture & façade",
+        "mep": "Installations techniques",
+        "interior_finishes": "Finitions intérieures",
+        "exterior_works": "Aménagements extérieurs",
+        "completed": "Terminé"
+      }
+    }
+  },
+  "failedTitle": "Impossible de charger l’enregistrement",
+  "failedDescription": "Une erreur s’est produite lors du chargement. Cliquez pour réessayer.",
+  "failedTooltipDescription": "Cliquez pour recharger les données."
+}

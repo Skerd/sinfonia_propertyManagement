@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/cardView/constructionProgressCard.tsx",
+  "noPhotos": "Nessuna foto",
+  "fields": {
+    "name": "Riferimento",
+    "phase": "Fase",
+    "progressPercent": "Lavori completati (%)",
+    "updateDate": "Data",
+    "project": "Progetto",
+    "edifice": "Edificio",
+    "clientsNotifiedAt": "Clienti avvisati il",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Progettazione e permessi",
+        "site_preparation": "Preparazione del cantiere",
+        "foundations": "Fondazioni",
+        "structure": "Struttura",
+        "envelope": "Murature, tetto e facciata",
+        "mep": "Impianti",
+        "interior_finishes": "Finiture interne",
+        "exterior_works": "Opere esterne",
+        "completed": "Completato"
+      }
+    }
+  },
+  "failedTitle": "Impossibile caricare il record",
+  "failedDescription": "Si è verificato un errore durante il caricamento. Clicca per riprovare.",
+  "failedTooltipDescription": "Clicca per ricaricare i dati."
+}

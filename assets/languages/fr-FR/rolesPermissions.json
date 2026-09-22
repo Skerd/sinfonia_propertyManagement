@@ -64,7 +64,8 @@
     "Unittypes": "Unit types",
     "Variationorders": "Variationorders",
     "Warranties": "Warranties",
-    "Workpackages": "Workpackages"
+    "Workpackages": "Workpackages",
+    "Constructionprogresses": "Avancement des travaux"
   },
   "permissions": {
     "Approvalrequests": {
@@ -1726,6 +1727,27 @@
       "trade": "Trade",
       "updatedAt": "Mis à jour le",
       "workpackages": "Workpackages"
+    },
+    "Constructionprogresses": {
+      "constructionprogresses": "Avancement des travaux",
+      "createdAt": "Créé le",
+      "createdBy": "Créé par",
+      "deletedAt": "Supprimé le",
+      "deletedBy": "Supprimé par",
+      "updatedAt": "Mis à jour le",
+      "name": "Référence",
+      "project": "Projet",
+      "edifice": "Bâtiment",
+      "phase": "Phase",
+      "progressPercent": "Travaux réalisés (%)",
+      "updateDate": "Date",
+      "title": "Titre",
+      "description": "Message aux clients",
+      "expectedCompletionDate": "Achèvement prévu",
+      "photos": "Photos du chantier",
+      "notifyClients": "Notifier les clients",
+      "clientsNotifiedAt": "Clients notifiés le",
+      "clientsNotifiedCount": "Clients notifiés"
     }
   }
 }

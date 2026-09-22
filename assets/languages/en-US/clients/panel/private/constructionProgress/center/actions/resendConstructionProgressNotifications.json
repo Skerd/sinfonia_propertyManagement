@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/actions/resendConstructionProgressNotifications.tsx",
+  "actionLabel": "Resend notifications",
+  "confirmTitle": "Resend the progress notifications?",
+  "confirmDescription": "Sends the in-app notification and the email with site photos again to every client holding a unit in this project or building (buyers and active reservations).",
+  "lastNotified": "Last sent {date} to {count} client(s).",
+  "neverNotified": "Clients have not been notified for this report yet.",
+  "cancel": "Cancel",
+  "confirmSend": "Send",
+  "axios": {
+    "start": {
+      "title": "Sending notifications…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Notifications sent",
+      "time": 3000
+    },
+    "error": {
+      "title": "Notifications could not be sent",
+      "time": 3000
+    }
+  }
+}

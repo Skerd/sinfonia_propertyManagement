@@ -65,6 +65,7 @@
     "dueDateLabel": "Due date",
     "dateFromLabel": "From",
     "dateToLabel": "To",
+    "clearFilters": "Clear filters",
     "noResults": "No rent payments found.",
     "errorTitle": "Could not load rent payments",
     "errorDescription": "Try again or adjust your filters.",

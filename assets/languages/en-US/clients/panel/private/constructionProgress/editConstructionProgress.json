@@ -1,0 +1,67 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/editConstructionProgress.tsx",
+  "title": "Edit progress report",
+  "editTitle": "Edit progress report",
+  "editDescription": "Edit construction progress report",
+  "errorTitle": "Failed to load progress report",
+  "errorDescription": "An error occurred while loading the report. Please try again.",
+  "generalInfo": "Progress details",
+  "form": {
+    "projectLabel": "Project",
+    "projectPlaceholder": "Select project",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building (optional)",
+    "phaseLabel": "Phase",
+    "phasePlaceholder": "Select phase",
+    "phase": {
+      "planning_permits": "Planning & permits",
+      "site_preparation": "Site preparation",
+      "foundations": "Foundations",
+      "structure": "Structure",
+      "envelope": "Walls, roof & facade",
+      "mep": "Installations (MEP)",
+      "interior_finishes": "Interior finishes",
+      "exterior_works": "Exterior works",
+      "completed": "Completed"
+    },
+    "progressPercentLabel": "Works completed (%)",
+    "progressPercentPlaceholder": "0–100",
+    "updateDateLabel": "Update date",
+    "updateDatePlaceholder": "Select date",
+    "expectedCompletionDateLabel": "Expected completion",
+    "expectedCompletionDatePlaceholder": "Select date",
+    "titleLabel": "Title",
+    "titlePlaceholder": "e.g. Structure completed up to the 5th floor",
+    "descriptionLabel": "Message to clients",
+    "descriptionPlaceholder": "What changed on site? This text is sent to clients.",
+    "photosLabel": "Site photos",
+    "addFile": "Add photo",
+    "filesSelected": "photos selected",
+    "existingFiles": "Existing photos",
+    "newFiles": "Add new photos",
+    "notifyClientsLabel": "Notify clients (in-app + email with photos) when this report advances progress",
+    "_idLabel": "Record ID"
+  },
+  "axios": {
+    "start": {
+      "title": "Updating record",
+      "time": 3000
+    },
+    "success": {
+      "title": "Progress report saved!",
+      "time": 3000
+    },
+    "error": {
+      "title": "Could not save the report, please try again!",
+      "time": 3000
+    }
+  },
+  "formHeader": {
+    "title": "Edit progress report",
+    "description": "Edit construction progress report"
+  },
+  "formButtons": {
+    "cancel": "Cancel",
+    "submit": "Save changes"
+  }
+}

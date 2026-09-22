@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
+  "title": "Avancement des travaux",
+  "description": "Suivez la phase du chantier et le % de travaux réalisés par projet ou bâtiment. Les clients sont notifiés avec des photos du chantier lorsque l’avancement progresse.",
+  "createConstructionProgress": "Ajouter un rapport",
+  "viewTimeline": "Chronologie du chantier",
+  "noData": "Aucun rapport d’avancement pour le moment",
+  "failTitle": "Impossible de charger l’avancement des travaux",
+  "failDescription": "Une erreur s’est produite lors du chargement. Veuillez réessayer.",
+  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+  "fields": {
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par",
+    "description": "Message aux clients",
+    "edifice": "Bâtiment",
+    "name": "Référence",
+    "photos": "Photos du chantier",
+    "progressPercent": "Travaux réalisés (%)",
+    "project": "Projet",
+    "title": "Titre",
+    "updateDate": "Date",
+    "updatedAt": "Mis à jour le",
+    "phase": "Phase",
+    "expectedCompletionDate": "Achèvement prévu",
+    "clientsNotifiedAt": "Clients notifiés le",
+    "clientsNotifiedCount": "Clients notifiés",
+    "notifyClients": "Notifier les clients",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Études & permis",
+        "site_preparation": "Préparation du terrain",
+        "foundations": "Fondations",
+        "structure": "Gros œuvre",
+        "envelope": "Murs, toiture & façade",
+        "mep": "Installations techniques",
+        "interior_finishes": "Finitions intérieures",
+        "exterior_works": "Aménagements extérieurs",
+        "completed": "Terminé"
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "Avancement des travaux",
+    "title": "Avancement des travaux",
+    "overview": "Un rapport d’avancement indique la phase d’un projet (ou d’un bâtiment) et le pourcentage de travaux réalisés, avec des photos du chantier. Lorsqu’un rapport fait progresser l’avancement, chaque client détenant un lot dans ce projet ou bâtiment — acheteurs et réservations actives — reçoit une notification dans l’application et un e-mail avec les photos.",
+    "sections": [
+      {
+        "title": "Contenu",
+        "items": [
+          "Le projet et, en option, un bâtiment.",
+          "La phase du chantier, le % de travaux réalisés, la date et l’achèvement prévu.",
+          "Un titre, un message aux clients et jusqu’à 20 photos du chantier."
+        ]
+      },
+      {
+        "title": "Notifications aux clients",
+        "items": [
+          "Envoyées automatiquement lorsque le rapport fait progresser la phase ou le % par rapport au rapport précédent et que « Notifier les clients » est activé.",
+          "Sans bâtiment, tous les clients du projet sont notifiés ; avec un bâtiment, seulement ses clients.",
+          "Utilisez « Renvoyer les notifications » pour renvoyer un rapport à tout moment."
+        ]
+      },
+      {
+        "title": "Affichage",
+        "items": [
+          "La dernière phase et le % apparaissent sur les fiches du projet et du bâtiment.",
+          "Les modifications et suppressions mettent ces valeurs à jour sans notifier les clients."
+        ]
+      }
+    ]
+  }
+}

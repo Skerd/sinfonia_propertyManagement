@@ -34,21 +34,40 @@ type RentalPaymentsTableSectionProps = {
     resolveLanguageKey: ResolveLanguageKey;
     timezone?: string;
     onViewRow: (row: RentalPaymentRegistryRow) => void;
+    /** Seeded from rentals hub URL (`?payment=` / `?unit=` / `?unitName=` / `?search=`) for payment-alert drill-downs. */
+    initialPaymentId?: string;
+    initialUnit?: string;
+    initialUnitName?: string;
+    initialSearch?: string;
+    /** Strip drill-down query params from the URL so filters stay clear after reset. */
+    onClearDrillDown?: () => void;
 };
 
 export default function RentalPaymentsTableSection({
     resolveLanguageKey,
     timezone,
     onViewRow,
+    initialPaymentId = "",
+    initialUnit = "",
+    initialUnitName = "",
+    initialSearch = "",
+    onClearDrillDown,
 }: RentalPaymentsTableSectionProps) {
     const rk = (key: string) => String(resolveLanguageKey(`rentalPayments.${key}`));
 
-    const [searchInput, setSearchInput] = useState("");
-    const [debouncedSearch, setDebouncedSearch] = useState("");
+    const [searchInput, setSearchInput] = useState(initialSearch);
+    const [debouncedSearch, setDebouncedSearch] = useState(initialSearch);
     const [project, setProject] = useState("");
     const [edifice, setEdifice] = useState("");
     const [floor, setFloor] = useState("");
-    const [unit, setUnit] = useState("");
+    const [unit, setUnit] = useState(initialUnit);
+    const [unitOptions, setUnitOptions] = useState(
+        () =>
+            initialUnit && initialUnitName
+                ? [{value: initialUnit, label: initialUnitName}]
+                : [],
+    );
+    const [paymentId, setPaymentId] = useState(initialPaymentId);
     const [status, setStatus] = useState("");
     const [dueDateFrom, setDueDateFrom] = useState("");
     const [dueDateTo, setDueDateTo] = useState("");
@@ -57,6 +76,54 @@ export default function RentalPaymentsTableSection({
     const [data, setData] = useState<RentalPaymentsListResponseType | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<HttpError | null>(null);
+
+    const hasActiveFilters = Boolean(
+        paymentId
+        || unit
+        || project
+        || edifice
+        || floor
+        || status
+        || dueDateFrom
+        || dueDateTo
+        || searchInput.trim(),
+    );
+
+    /** Unlock the single-payment alert scope without wiping the user's other filters. */
+    const releasePaymentLock = useCallback(() => {
+        if (paymentId) setPaymentId("");
+    }, [paymentId]);
+
+    const clearAllFilters = useCallback(() => {
+        setSearchInput("");
+        setDebouncedSearch("");
+        setProject("");
+        setEdifice("");
+        setFloor("");
+        setUnit("");
+        setUnitOptions([]);
+        setPaymentId("");
+        setStatus("");
+        setDueDateFrom("");
+        setDueDateTo("");
+        setPage(1);
+        onClearDrillDown?.();
+    }, [onClearDrillDown]);
+
+    // Apply new payment-alert drill-down links. Skip empty URL clears (Clear filters already reset local state).
+    useEffect(() => {
+        if (!initialPaymentId && !initialUnit && !initialSearch) return;
+        setPaymentId(initialPaymentId);
+        setUnit(initialUnit);
+        setUnitOptions(
+            initialUnit && initialUnitName
+                ? [{value: initialUnit, label: initialUnitName}]
+                : [],
+        );
+        setSearchInput(initialSearch);
+        setDebouncedSearch(initialSearch);
+        setPage(1);
+    }, [initialPaymentId, initialUnit, initialUnitName, initialSearch]);
 
     const edificeSelectBody = useMemo(
         () => selectBodyWithFilters([{field: "project", value: project}]),
@@ -87,6 +154,7 @@ export default function RentalPaymentsTableSection({
         if (edifice) body.edifice = edifice;
         if (floor) body.floor = floor;
         if (unit) body.unit = unit;
+        if (paymentId) body.payment = paymentId;
         if (status) body.status = status as RentalPaymentsListFormType["status"];
         if (dueDateFrom) body.dueDateFrom = dueDateFrom;
         if (dueDateTo) body.dueDateTo = dueDateTo;
@@ -103,7 +171,7 @@ export default function RentalPaymentsTableSection({
         } finally {
             setLoading(false);
         }
-    }, [page, project, edifice, floor, unit, debouncedSearch, dueDateFrom, dueDateTo, status]);
+    }, [page, project, edifice, floor, unit, paymentId, debouncedSearch, dueDateFrom, dueDateTo, status]);
 
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(searchInput), 300);
@@ -116,7 +184,7 @@ export default function RentalPaymentsTableSection({
 
     useEffect(() => {
         setPage(1);
-    }, [debouncedSearch, project, edifice, floor, unit, status, dueDateFrom, dueDateTo]);
+    }, [debouncedSearch, project, edifice, floor, unit, paymentId, status, dueDateFrom, dueDateTo]);
 
     const rows = data?.data ?? [];
     const total = data?.total ?? 0;
@@ -132,13 +200,29 @@ export default function RentalPaymentsTableSection({
             <div className="rounded-lg border overflow-hidden">
                 <RentalsHubFilterToolbar>
                     <div className="flex flex-col gap-y-3">
-                        <div className="flex flex-col gap-1.5">
-                            <Label className="text-xs font-medium text-muted-foreground">{rk("searchLabel")}</Label>
-                            <Input
-                                value={searchInput}
-                                onChange={(e) => setSearchInput(e.target.value)}
-                                placeholder={rk("searchPlaceholder")}
-                            />
+                        <div className="flex items-end gap-3">
+                            <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                                <Label className="text-xs font-medium text-muted-foreground">{rk("searchLabel")}</Label>
+                                <Input
+                                    value={searchInput}
+                                    onChange={(e) => {
+                                        releasePaymentLock();
+                                        setSearchInput(e.target.value);
+                                    }}
+                                    placeholder={rk("searchPlaceholder")}
+                                />
+                            </div>
+                            {hasActiveFilters ? (
+                                <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="sm"
+                                    className="shrink-0"
+                                    onClick={clearAllFilters}
+                                >
+                                    {rk("clearFilters")}
+                                </Button>
+                            ) : null}
                         </div>
                         <div className="flex flex-wrap items-end gap-3">
                             <RentalsHubFilterField label={rk("projectLabel")}>
@@ -147,10 +231,13 @@ export default function RentalPaymentsTableSection({
                                     placeholder={rk("projectPlaceholder")}
                                     value={project}
                                     onValueChange={(v: string | string[]) => {
+                                        releasePaymentLock();
                                         setProject(typeof v === "string" ? v : "");
                                         setEdifice("");
                                         setFloor("");
                                         setUnit("");
+                                        setUnitOptions([]);
+                                        onClearDrillDown?.();
                                     }}
                                     className="h-9 w-full"
                                     resolveLanguageKey={resolveLanguageKey}
@@ -164,9 +251,12 @@ export default function RentalPaymentsTableSection({
                                     placeholder={rk("edificePlaceholder")}
                                     value={edifice}
                                     onValueChange={(v: string | string[]) => {
+                                        releasePaymentLock();
                                         setEdifice(typeof v === "string" ? v : "");
                                         setFloor("");
                                         setUnit("");
+                                        setUnitOptions([]);
+                                        onClearDrillDown?.();
                                     }}
                                     disabled={!project}
                                     className="h-9 w-full"
@@ -181,8 +271,11 @@ export default function RentalPaymentsTableSection({
                                     placeholder={rk("floorPlaceholder")}
                                     value={floor}
                                     onValueChange={(v: string | string[]) => {
+                                        releasePaymentLock();
                                         setFloor(typeof v === "string" ? v : "");
                                         setUnit("");
+                                        setUnitOptions([]);
+                                        onClearDrillDown?.();
                                     }}
                                     disabled={!edifice && !project}
                                     className="h-9 w-full"
@@ -191,19 +284,34 @@ export default function RentalPaymentsTableSection({
                             </RentalsHubFilterField>
                             <RentalsHubFilterField label={rk("unitLabel")}>
                                 <ApiSelect
-                                    key={`unit-${floor || edifice || project || "none"}`}
+                                    key={`unit-${floor || edifice || project || unit || "none"}`}
                                     apiUrl="/api/realEstate/unit/select"
                                     postBody={unitSelectBody}
                                     placeholder={rk("unitPlaceholder")}
                                     value={unit}
-                                    onValueChange={(v: string | string[]) => setUnit(typeof v === "string" ? v : "")}
-                                    disabled={!project && !edifice && !floor}
+                                    onValueChange={(v: string | string[]) => {
+                                        releasePaymentLock();
+                                        const next = typeof v === "string" ? v : "";
+                                        setUnit(next);
+                                        if (!next) {
+                                            setUnitOptions([]);
+                                            onClearDrillDown?.();
+                                        }
+                                    }}
+                                    disabled={!project && !edifice && !floor && !unit}
+                                    defaultOptions={unitOptions}
                                     className="h-9 w-full"
                                     resolveLanguageKey={resolveLanguageKey}
                                 />
                             </RentalsHubFilterField>
                             <RentalsHubFilterField label={rk("statusLabel")}>
-                                <Select value={status || "__all__"} onValueChange={(v) => setStatus(v === "__all__" ? "" : v)}>
+                                <Select
+                                    value={status || "__all__"}
+                                    onValueChange={(v) => {
+                                        releasePaymentLock();
+                                        setStatus(v === "__all__" ? "" : v);
+                                    }}
+                                >
                                     <SelectTrigger>
                                         <SelectValue placeholder={rk("statusPlaceholder")} />
                                     </SelectTrigger>
@@ -220,14 +328,20 @@ export default function RentalPaymentsTableSection({
                                     <DateInput
                                         valueFormat="yyyy-MM-dd"
                                         value={dueDateFrom}
-                                        onChange={setDueDateFrom}
+                                        onChange={(v) => {
+                                            releasePaymentLock();
+                                            setDueDateFrom(v);
+                                        }}
                                         className="h-9"
                                         placeholder={rk("dateFromLabel")}
                                     />
                                     <DateInput
                                         valueFormat="yyyy-MM-dd"
                                         value={dueDateTo}
-                                        onChange={setDueDateTo}
+                                        onChange={(v) => {
+                                            releasePaymentLock();
+                                            setDueDateTo(v);
+                                        }}
                                         className="h-9"
                                         placeholder={rk("dateToLabel")}
                                     />

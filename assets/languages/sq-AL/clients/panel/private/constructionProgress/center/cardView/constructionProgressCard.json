@@ -1,0 +1,29 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/cardView/constructionProgressCard.tsx",
+  "noPhotos": "Pa foto",
+  "fields": {
+    "name": "Referenca",
+    "phase": "Faza",
+    "progressPercent": "Punime të kryera (%)",
+    "updateDate": "Data",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "clientsNotifiedAt": "Klientët u njoftuan më",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Projektimi & lejet",
+        "site_preparation": "Përgatitja e terrenit",
+        "foundations": "Themelet",
+        "structure": "Karkasi (struktura)",
+        "envelope": "Muraturat, çatia & fasada",
+        "mep": "Instalimet",
+        "interior_finishes": "Përfundimet e brendshme",
+        "exterior_works": "Punimet e jashtme",
+        "completed": "Përfunduar"
+      }
+    }
+  },
+  "failedTitle": "Regjistrimi nuk u ngarkua",
+  "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Klikoni për të provuar përsëri.",
+  "failedTooltipDescription": "Klikoni për të ringarkuar të dhënat."
+}

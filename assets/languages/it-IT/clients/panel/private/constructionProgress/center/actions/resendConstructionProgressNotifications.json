@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/actions/resendConstructionProgressNotifications.tsx",
+  "actionLabel": "Invia di nuovo le notifiche",
+  "confirmTitle": "Inviare di nuovo le notifiche di avanzamento?",
+  "confirmDescription": "Invia di nuovo la notifica in-app e l’e-mail con le foto del cantiere a ogni cliente con un’unità in questo progetto o edificio (acquirenti e prenotazioni attive).",
+  "lastNotified": "Ultimo invio il {date} a {count} cliente/i.",
+  "neverNotified": "Nessun cliente è stato ancora avvisato per questo rapporto.",
+  "cancel": "Annulla",
+  "confirmSend": "Invia",
+  "axios": {
+    "start": {
+      "title": "Invio delle notifiche…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Notifiche inviate",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile inviare le notifiche",
+      "time": 3000
+    }
+  }
+}

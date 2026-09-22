@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
+  "title": "Ecuria e punimeve",
+  "description": "Ndiqni fazën e ndërtimit dhe % e punimeve për çdo projekt ose ndërtesë. Klientët njoftohen me foto nga kantieri kur punimet avancojnë.",
+  "createConstructionProgress": "Shto raport ecurie",
+  "viewTimeline": "Kronologjia e kantierit",
+  "noData": "Ende nuk ka raporte ecurie",
+  "failTitle": "Ecuria e punimeve nuk u ngarkua",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni përsëri.",
+  "searchPlaceholder": "Kërkoni ose shtoni filtra...",
+  "fields": {
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga",
+    "description": "Mesazh për klientët",
+    "edifice": "Ndërtesa",
+    "name": "Referenca",
+    "photos": "Foto nga kantieri",
+    "progressPercent": "Punime të kryera (%)",
+    "project": "Projekti",
+    "title": "Titulli",
+    "updateDate": "Data",
+    "updatedAt": "Përditësuar më",
+    "phase": "Faza",
+    "expectedCompletionDate": "Përfundimi i pritshëm",
+    "clientsNotifiedAt": "Klientët u njoftuan më",
+    "clientsNotifiedCount": "Klientë të njoftuar",
+    "notifyClients": "Njofto klientët",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Projektimi & lejet",
+        "site_preparation": "Përgatitja e terrenit",
+        "foundations": "Themelet",
+        "structure": "Karkasi (struktura)",
+        "envelope": "Muraturat, çatia & fasada",
+        "mep": "Instalimet",
+        "interior_finishes": "Përfundimet e brendshme",
+        "exterior_works": "Punimet e jashtme",
+        "completed": "Përfunduar"
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "Ecuria e punimeve",
+    "title": "Ecuria e punimeve",
+    "overview": "Raporti i ecurisë regjistron në cilën fazë ndodhet një projekt (ose një ndërtesë) dhe sa % e punimeve janë kryer, me foto nga kantieri. Kur një raport avancon punimet, çdo klient që ka një njësi në atë projekt ose ndërtesë — blerës dhe rezervime aktive — merr një njoftim në aplikacion dhe një email me fotot.",
+    "sections": [
+      {
+        "title": "Çfarë përmban",
+        "items": [
+          "Projektin dhe, sipas dëshirës, një ndërtesë.",
+          "Fazën e ndërtimit, % e punimeve të kryera, datën dhe përfundimin e pritshëm.",
+          "Një titull, një mesazh për klientët dhe deri në 20 foto nga kantieri."
+        ]
+      },
+      {
+        "title": "Njoftimet për klientët",
+        "items": [
+          "Dërgohen automatikisht kur raporti avancon fazën ose % krahasuar me raportin e mëparshëm dhe «Njofto klientët» është aktiv.",
+          "Pa ndërtesë njoftohen të gjithë klientët e projektit; me ndërtesë vetëm klientët e saj.",
+          "Përdorni «Ridërgo njoftimet» për ta dërguar sërish një raport në çdo kohë."
+        ]
+      },
+      {
+        "title": "Ku shfaqet",
+        "items": [
+          "Faza dhe % e fundit shfaqen në kartelat e projektit dhe të ndërtesës.",
+          "Ndryshimet dhe fshirjet përditësojnë këto vlera, por nuk njoftojnë klientët."
+        ]
+      }
+    ]
+  }
+}

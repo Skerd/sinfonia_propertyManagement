@@ -1,0 +1,74 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
+  "title": "Baufortschritt",
+  "description": "Erfassen Sie Bauphase und Fortschritt (%) pro Projekt oder Gebäude. Kunden werden bei Fortschritt mit Baustellenfotos benachrichtigt.",
+  "createConstructionProgress": "Fortschrittsbericht erfassen",
+  "viewTimeline": "Bauzeitachse",
+  "noData": "Noch keine Baufortschrittsberichte",
+  "failTitle": "Baufortschritt konnte nicht geladen werden",
+  "failDescription": "Beim Laden des Baufortschritts ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+  "fields": {
+    "createdAt": "Erstellt am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "description": "Nachricht an die Kunden",
+    "edifice": "Gebäude",
+    "name": "Referenz",
+    "photos": "Baustellenfotos",
+    "progressPercent": "Abgeschlossene Arbeiten (%)",
+    "project": "Projekt",
+    "title": "Titel",
+    "updateDate": "Datum",
+    "updatedAt": "Aktualisiert am",
+    "phase": "Bauphase",
+    "expectedCompletionDate": "Voraussichtliche Fertigstellung",
+    "clientsNotifiedAt": "Kunden benachrichtigt am",
+    "clientsNotifiedCount": "Benachrichtigte Kunden",
+    "notifyClients": "Kunden benachrichtigen",
+    "!enums": {
+      "phase": {
+        "planning_permits": "Planung & Bewilligungen",
+        "site_preparation": "Baustellenvorbereitung",
+        "foundations": "Fundamente",
+        "structure": "Rohbau",
+        "envelope": "Mauerwerk, Dach & Fassade",
+        "mep": "Haustechnik",
+        "interior_finishes": "Innenausbau",
+        "exterior_works": "Umgebungsarbeiten",
+        "completed": "Fertiggestellt"
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "Baufortschritt",
+    "title": "Baufortschritt",
+    "overview": "Ein Baufortschrittsbericht hält fest, in welcher Phase sich ein Projekt (oder ein Gebäude) befindet und wie viel Prozent der Arbeiten erledigt sind, inklusive Baustellenfotos. Wenn ein Bericht den Fortschritt erhöht, erhalten alle Kunden mit einer Einheit in diesem Projekt oder Gebäude – Käufer und aktive Reservationen – eine In-App-Benachrichtigung und eine E-Mail mit den Fotos.",
+    "sections": [
+      {
+        "title": "Inhalt",
+        "items": [
+          "Projekt und optional ein Gebäude.",
+          "Bauphase, abgeschlossene Arbeiten in %, Datum und voraussichtliche Fertigstellung.",
+          "Ein Titel, eine Nachricht an die Kunden und bis zu 20 Baustellenfotos."
+        ]
+      },
+      {
+        "title": "Kundenbenachrichtigungen",
+        "items": [
+          "Werden automatisch versendet, wenn der Bericht Phase oder Prozentsatz gegenüber dem vorherigen Bericht erhöht und «Kunden benachrichtigen» aktiv ist.",
+          "Ohne Gebäude werden alle Kunden des Projekts benachrichtigt, mit Gebäude nur dessen Kunden.",
+          "Mit «Benachrichtigungen erneut senden» können Sie einen Bericht jederzeit erneut versenden."
+        ]
+      },
+      {
+        "title": "Anzeige",
+        "items": [
+          "Die aktuelle Phase und der Prozentsatz erscheinen auf den Projekt- und Gebäudeansichten.",
+          "Bearbeiten und Löschen aktualisiert diese Werte, benachrichtigt aber keine Kunden."
+        ]
+      }
+    ]
+  }
+}

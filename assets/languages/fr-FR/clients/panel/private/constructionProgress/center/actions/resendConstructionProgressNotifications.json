@@ -1,0 +1,24 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/center/actions/resendConstructionProgressNotifications.tsx",
+  "actionLabel": "Renvoyer les notifications",
+  "confirmTitle": "Renvoyer les notifications d’avancement ?",
+  "confirmDescription": "Renvoie la notification dans l’application et l’e-mail avec les photos du chantier à chaque client détenant un lot dans ce projet ou bâtiment (acheteurs et réservations actives).",
+  "lastNotified": "Dernier envoi le {date} à {count} client(s).",
+  "neverNotified": "Aucun client n’a encore été notifié pour ce rapport.",
+  "cancel": "Annuler",
+  "confirmSend": "Envoyer",
+  "axios": {
+    "start": {
+      "title": "Envoi des notifications…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Notifications envoyées",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossible d’envoyer les notifications",
+      "time": 3000
+    }
+  }
+}
