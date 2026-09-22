@@ -1,0 +1,147 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
+  "title": "Paiements",
+  "description": "Toutes les échéances et tous les acomptes des plans de paiement, par date, sur tous les projets.",
+  "tabs": {
+    "list": "Liste",
+    "calendar": "Calendrier"
+  },
+  "status": {
+    "pending": "En attente",
+    "partially_paid": "Partiellement payé",
+    "overdue": "En retard",
+    "paid": "Payé",
+    "cancelled": "Annulé"
+  },
+  "kind": {
+    "installment": "Échéance",
+    "installmentNumbered": "Échéance {number}",
+    "down_payment": "Acompte"
+  },
+  "kpis": {
+    "overdue": "En retard",
+    "dueNext7Days": "À payer sous 7 jours",
+    "dueNext30Days": "À payer sous 30 jours",
+    "collectedThisMonth": "Encaissé ce mois-ci"
+  },
+  "filters": {
+    "searchLabel": "Rechercher",
+    "searchPlaceholder": "Client, unité, projet, code de vente…",
+    "clearFilters": "Effacer les filtres",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Tous les projets",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Tous les bâtiments",
+    "floorLabel": "Étage",
+    "floorPlaceholder": "Tous les étages",
+    "unitLabel": "Unité",
+    "unitPlaceholder": "Toutes les unités",
+    "statusLabel": "Statut",
+    "statusPlaceholder": "Tous les statuts",
+    "kindLabel": "Type",
+    "kindPlaceholder": "Tous les types",
+    "dateFieldLabel": "Date",
+    "dateFieldDue": "Date d'échéance",
+    "dateFieldPaid": "Date de paiement",
+    "dateRangeLabel": "Période",
+    "dateFromLabel": "Du",
+    "dateToLabel": "Au",
+    "presetsLabel": "Filtres rapides",
+    "presets": {
+      "overdue": "En retard",
+      "next7": "7 prochains jours",
+      "next30": "30 prochains jours",
+      "thisMonth": "Ce mois-ci"
+    }
+  },
+  "periods": {
+    "groupByLabel": "Grouper par",
+    "groupBy": {
+      "none": "Aucun",
+      "day": "Jour",
+      "week": "Semaine",
+      "month": "Mois"
+    },
+    "noPeriods": "Rien à totaliser pour ces filtres.",
+    "columns": {
+      "period": "Période",
+      "count": "Paiements",
+      "expected": "Attendu",
+      "paid": "Payé",
+      "outstanding": "Restant dû"
+    }
+  },
+  "list": {
+    "columns": {
+      "dueDate": "Date",
+      "unit": "Unité",
+      "code": "Code",
+      "project": "Projet",
+      "client": "Client",
+      "type": "Type",
+      "status": "Statut",
+      "amount": "Montant",
+      "paid": "Payé",
+      "remaining": "Restant",
+      "actions": "Actions"
+    },
+    "paidOn": "Payé le {date}",
+    "daysOverdue": "{days} jours de retard",
+    "totalsLabel": "Totaux pour ces filtres",
+    "totalsExpected": "Attendu",
+    "totalsPaid": "Payé",
+    "totalsOutstanding": "Restant dû",
+    "noResults": "Aucun paiement trouvé.",
+    "errorTitle": "Impossible de charger les paiements",
+    "errorDescription": "Réessayez ou ajustez vos filtres.",
+    "viewAction": "Ouvrir le plan de paiement",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "truncatedTitle": "Totaux partiels",
+    "truncatedDescription": "Trop de plans de paiement à parcourir en une fois. Affinez les filtres pour des totaux exacts.",
+    "pagination": {
+      "summary": "{from}–{to} sur {total}"
+    }
+  },
+  "calendar": {
+    "title": "Calendrier des paiements",
+    "monthTotal": "Ce mois-ci : {total}",
+    "dayTotal": "Ce jour : {total}",
+    "detailForDay": "Paiements du {date}",
+    "selectDay": "Choisissez un jour",
+    "noPaymentsDay": "Aucun paiement ce jour-là.",
+    "errorTitle": "Impossible de charger le calendrier",
+    "errorDescription": "Réessayez ou ajustez vos filtres.",
+    "truncatedTitle": "Mois partiel",
+    "truncatedDescription": "Seuls les {max} premiers paiements de ce mois sont affichés."
+  },
+  "help": {
+    "ariaLabel": "À propos des Paiements",
+    "title": "À propos des Paiements",
+    "overview": "Paiements liste, par date, chaque échéance et chaque acompte des ventes avec plan de paiement : vous voyez ce qui est en retard et ce qui arrive sans ouvrir chaque vente. Ce sont les mêmes enregistrements que l'onglet Plan de paiement d'une vente ; cette page ne fait que les rassembler.",
+    "sections": [
+      {
+        "title": "Ce que vous y trouvez",
+        "items": [
+          "Les tuiles répondent à « combien reste-t-il à encaisser » : en retard, sous 7 jours, sous 30 jours, encaissé ce mois-ci.",
+          "Groupez par jour, semaine ou mois ; cliquez sur une période pour y restreindre la liste.",
+          "Le calendrier marque chaque jour d'un point par statut et totalise le jour choisi."
+        ]
+      },
+      {
+        "title": "Fonctionnement",
+        "items": [
+          "Le statut vient des dates : un paiement est en retard le lendemain de son échéance, quel que soit le dernier traitement de nuit.",
+          "Les totaux sont tenus par devise et ne sont jamais convertis.",
+          "Ouvrir une ligne ouvre son plan de paiement, où vous enregistrez le paiement comme d'habitude."
+        ]
+      },
+      {
+        "title": "Quand passer par la vente",
+        "items": [
+          "Aperçu → Vente avec plan de paiement conserve le plan complet : échéancier, restructuration, reçus et e-mails."
+        ]
+      }
+    ]
+  }
+}

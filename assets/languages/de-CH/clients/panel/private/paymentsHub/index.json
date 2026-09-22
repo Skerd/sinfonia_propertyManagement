@@ -1,0 +1,147 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
+  "title": "Zahlungen",
+  "description": "Alle Raten und Anzahlungen aus Zahlungsplänen, nach Datum, über alle Projekte.",
+  "tabs": {
+    "list": "Liste",
+    "calendar": "Kalender"
+  },
+  "status": {
+    "pending": "Offen",
+    "partially_paid": "Teilweise bezahlt",
+    "overdue": "Überfällig",
+    "paid": "Bezahlt",
+    "cancelled": "Storniert"
+  },
+  "kind": {
+    "installment": "Rate",
+    "installmentNumbered": "Rate {number}",
+    "down_payment": "Anzahlung"
+  },
+  "kpis": {
+    "overdue": "Überfällig",
+    "dueNext7Days": "Fällig in 7 Tagen",
+    "dueNext30Days": "Fällig in 30 Tagen",
+    "collectedThisMonth": "Diesen Monat eingegangen"
+  },
+  "filters": {
+    "searchLabel": "Suche",
+    "searchPlaceholder": "Nach Kunde, Einheit, Projekt, Verkaufscode suchen…",
+    "clearFilters": "Filter zurücksetzen",
+    "projectLabel": "Projekt",
+    "projectPlaceholder": "Alle Projekte",
+    "edificeLabel": "Gebäude",
+    "edificePlaceholder": "Alle Gebäude",
+    "floorLabel": "Stockwerk",
+    "floorPlaceholder": "Alle Stockwerke",
+    "unitLabel": "Einheit",
+    "unitPlaceholder": "Alle Einheiten",
+    "statusLabel": "Status",
+    "statusPlaceholder": "Alle Status",
+    "kindLabel": "Art",
+    "kindPlaceholder": "Alle Arten",
+    "dateFieldLabel": "Datum",
+    "dateFieldDue": "Fälligkeitsdatum",
+    "dateFieldPaid": "Zahlungsdatum",
+    "dateRangeLabel": "Zeitraum",
+    "dateFromLabel": "Von",
+    "dateToLabel": "Bis",
+    "presetsLabel": "Schnellfilter",
+    "presets": {
+      "overdue": "Überfällig",
+      "next7": "Nächste 7 Tage",
+      "next30": "Nächste 30 Tage",
+      "thisMonth": "Dieser Monat"
+    }
+  },
+  "periods": {
+    "groupByLabel": "Gruppieren nach",
+    "groupBy": {
+      "none": "Keine",
+      "day": "Tag",
+      "week": "Woche",
+      "month": "Monat"
+    },
+    "noPeriods": "Für diese Filter gibt es nichts zu summieren.",
+    "columns": {
+      "period": "Zeitraum",
+      "count": "Zahlungen",
+      "expected": "Erwartet",
+      "paid": "Bezahlt",
+      "outstanding": "Ausstehend"
+    }
+  },
+  "list": {
+    "columns": {
+      "dueDate": "Datum",
+      "unit": "Einheit",
+      "code": "Code",
+      "project": "Projekt",
+      "client": "Kunde",
+      "type": "Art",
+      "status": "Status",
+      "amount": "Betrag",
+      "paid": "Bezahlt",
+      "remaining": "Offen",
+      "actions": "Aktionen"
+    },
+    "paidOn": "Bezahlt am {date}",
+    "daysOverdue": "{days} Tage überfällig",
+    "totalsLabel": "Summen für diese Filter",
+    "totalsExpected": "Erwartet",
+    "totalsPaid": "Bezahlt",
+    "totalsOutstanding": "Ausstehend",
+    "noResults": "Keine Zahlungen gefunden.",
+    "errorTitle": "Zahlungen konnten nicht geladen werden",
+    "errorDescription": "Versuchen Sie es erneut oder passen Sie die Filter an.",
+    "viewAction": "Zahlungsplan öffnen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "truncatedTitle": "Teilweise Summen",
+    "truncatedDescription": "Zu viele Zahlungspläne für einen Durchlauf. Grenzen Sie die Filter für genaue Summen ein.",
+    "pagination": {
+      "summary": "{from}–{to} von {total}"
+    }
+  },
+  "calendar": {
+    "title": "Zahlungskalender",
+    "monthTotal": "Dieser Monat: {total}",
+    "dayTotal": "Dieser Tag: {total}",
+    "detailForDay": "Zahlungen am {date}",
+    "selectDay": "Tag wählen",
+    "noPaymentsDay": "An diesem Tag keine Zahlungen.",
+    "errorTitle": "Kalender konnte nicht geladen werden",
+    "errorDescription": "Versuchen Sie es erneut oder passen Sie die Filter an.",
+    "truncatedTitle": "Unvollständiger Monat",
+    "truncatedDescription": "Es werden nur die ersten {max} Zahlungen dieses Monats angezeigt."
+  },
+  "help": {
+    "ariaLabel": "Über Zahlungen",
+    "title": "Über Zahlungen",
+    "overview": "Zahlungen listet jede Rate und Anzahlung aller Verkäufe mit Zahlungsplan nach Datum auf. So sehen Sie, was überfällig ist und was ansteht, ohne jeden Verkauf einzeln zu öffnen. Es sind dieselben Datensätze wie im Reiter Zahlungsplan eines Verkaufs; diese Seite sammelt sie nur.",
+    "sections": [
+      {
+        "title": "Was die Seite zeigt",
+        "items": [
+          "Die Kacheln beantworten „wie viel steht aus“: überfällig, fällig in 7 Tagen, fällig in 30 Tagen, diesen Monat eingegangen.",
+          "Gruppieren Sie nach Tag, Woche oder Monat; ein Klick auf einen Zeitraum grenzt die Liste darauf ein.",
+          "Der Kalender markiert jeden Tag mit einem Punkt pro Status und summiert den gewählten Tag."
+        ]
+      },
+      {
+        "title": "Verhalten",
+        "items": [
+          "Der Status ergibt sich aus den Daten: Eine Zahlung ist am Tag nach der Fälligkeit überfällig, unabhängig vom nächtlichen Lauf.",
+          "Summen werden pro Währung geführt und nie umgerechnet.",
+          "Eine Zeile öffnet ihren Zahlungsplan, wo Sie die Zahlung wie gewohnt erfassen."
+        ]
+      },
+      {
+        "title": "Wann der Verkauf besser passt",
+        "items": [
+          "Übersicht → Verkauf mit Zahlungsplan enthält weiterhin den ganzen Plan: Zeitplan, Umschuldung, Belege und E-Mails."
+        ]
+      }
+    ]
+  }
+}

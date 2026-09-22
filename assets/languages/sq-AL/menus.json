@@ -124,6 +124,9 @@
   },
   "finance": {
     "title": "Financat",
+    "paymentsHub": {
+      "title": "Pagesat"
+    },
     "unitCosts": {
       "title": "Kostot e njësisë"
     }

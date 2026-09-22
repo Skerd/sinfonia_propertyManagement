@@ -124,6 +124,9 @@
   },
   "finance": {
     "title": "Finance",
+    "paymentsHub": {
+      "title": "Payments"
+    },
     "unitCosts": {
       "title": "Unit costs"
     }

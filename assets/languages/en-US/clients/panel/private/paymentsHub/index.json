@@ -1,0 +1,147 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
+  "title": "Payments",
+  "description": "Every payment-plan installment and down payment, by date, across all projects.",
+  "tabs": {
+    "list": "List",
+    "calendar": "Calendar"
+  },
+  "status": {
+    "pending": "Pending",
+    "partially_paid": "Partially paid",
+    "overdue": "Overdue",
+    "paid": "Paid",
+    "cancelled": "Cancelled"
+  },
+  "kind": {
+    "installment": "Installment",
+    "installmentNumbered": "Installment {number}",
+    "down_payment": "Down payment"
+  },
+  "kpis": {
+    "overdue": "Overdue",
+    "dueNext7Days": "Due in 7 days",
+    "dueNext30Days": "Due in 30 days",
+    "collectedThisMonth": "Collected this month"
+  },
+  "filters": {
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search by client, unit, project, sale code…",
+    "clearFilters": "Clear filters",
+    "projectLabel": "Project",
+    "projectPlaceholder": "All projects",
+    "edificeLabel": "Edifice",
+    "edificePlaceholder": "All edifices",
+    "floorLabel": "Floor",
+    "floorPlaceholder": "All floors",
+    "unitLabel": "Unit",
+    "unitPlaceholder": "All units",
+    "statusLabel": "Status",
+    "statusPlaceholder": "All statuses",
+    "kindLabel": "Type",
+    "kindPlaceholder": "All types",
+    "dateFieldLabel": "Date",
+    "dateFieldDue": "Due date",
+    "dateFieldPaid": "Payment date",
+    "dateRangeLabel": "Date range",
+    "dateFromLabel": "From",
+    "dateToLabel": "To",
+    "presetsLabel": "Quick filters",
+    "presets": {
+      "overdue": "Overdue",
+      "next7": "Next 7 days",
+      "next30": "Next 30 days",
+      "thisMonth": "This month"
+    }
+  },
+  "periods": {
+    "groupByLabel": "Group by",
+    "groupBy": {
+      "none": "None",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month"
+    },
+    "noPeriods": "Nothing to total for these filters.",
+    "columns": {
+      "period": "Period",
+      "count": "Payments",
+      "expected": "Expected",
+      "paid": "Paid",
+      "outstanding": "Outstanding"
+    }
+  },
+  "list": {
+    "columns": {
+      "dueDate": "Date",
+      "unit": "Unit",
+      "code": "Code",
+      "project": "Project",
+      "client": "Client",
+      "type": "Type",
+      "status": "Status",
+      "amount": "Amount",
+      "paid": "Paid",
+      "remaining": "Remaining",
+      "actions": "Actions"
+    },
+    "paidOn": "Paid {date}",
+    "daysOverdue": "{days} days late",
+    "totalsLabel": "Totals for these filters",
+    "totalsExpected": "Expected",
+    "totalsPaid": "Paid",
+    "totalsOutstanding": "Outstanding",
+    "noResults": "No payments found.",
+    "errorTitle": "Could not load payments",
+    "errorDescription": "Try again or adjust your filters.",
+    "viewAction": "Open payment plan",
+    "previous": "Previous",
+    "next": "Next",
+    "truncatedTitle": "Partial totals",
+    "truncatedDescription": "Too many payment plans to scan at once. Narrow the filters for exact totals.",
+    "pagination": {
+      "summary": "Showing {from}–{to} of {total}"
+    }
+  },
+  "calendar": {
+    "title": "Payments calendar",
+    "monthTotal": "This month: {total}",
+    "dayTotal": "This day: {total}",
+    "detailForDay": "Payments on {date}",
+    "selectDay": "Pick a day",
+    "noPaymentsDay": "No payments on this day.",
+    "errorTitle": "Could not load the calendar",
+    "errorDescription": "Try again or adjust your filters.",
+    "truncatedTitle": "Partial month",
+    "truncatedDescription": "Only the first {max} payments of this month are shown."
+  },
+  "help": {
+    "ariaLabel": "About Payments",
+    "title": "About Payments",
+    "overview": "Payments lists every installment and down payment of every payment-plan sale, by date, so you can see what is late and what is coming without opening each sale. The rows are the same records as the Payment Plan tab of a sale; this page only gathers them.",
+    "sections": [
+      {
+        "title": "What you get",
+        "items": [
+          "The tiles answer “how much is waiting”: overdue, due in 7 days, due in 30 days, collected this month.",
+          "Group by day, week or month to total the coming period; click a period to narrow the list to it.",
+          "The calendar marks each day with a dot per status and totals the day you pick."
+        ]
+      },
+      {
+        "title": "How it behaves",
+        "items": [
+          "Status comes from the dates, so a payment is overdue the day after it was due, whatever the last nightly run recorded.",
+          "Totals are kept per currency and are never converted.",
+          "Opening a row opens its payment plan, where you record the payment as usual."
+        ]
+      },
+      {
+        "title": "When to use the sale instead",
+        "items": [
+          "Overview → Payment plan sale still holds the full plan: schedule, restructuring, receipts and emails."
+        ]
+      }
+    ]
+  }
+}

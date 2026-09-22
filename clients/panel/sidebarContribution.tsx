@@ -19,6 +19,7 @@ import {
     Download,
     Network,
     HardHat,
+    CalendarClock,
     type LucideIcon,
 } from "lucide-react";
 import {
@@ -35,6 +36,7 @@ import {
     PROPERTY_DEVELOPMENT_ERP_EXPORT_ACCESS_MODELS,
     GROUP_DASHBOARD_ACCESS_MODELS,
     OVERVIEW_DASHBOARD_ACCESS_MODELS,
+    PAYMENTS_HUB_ACCESS_MODELS,
     RENTALS_HUB_ACCESS_MODELS,
     ROI_ACCESS_MODELS,
 } from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
@@ -97,6 +99,7 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
         navLink(resolveLanguageKey, "menus.realEstate.commissions.title", "/realEstate/commissions", Percent, ["commissions"]),
         navLink(resolveLanguageKey, "menus.realEstate.stories.title", "/realEstate/stories", BookOpen, ["stories"]),
         navCollapsible(resolveLanguageKey, "menus.finance.title", Receipt, [
+            navLink(resolveLanguageKey, "menus.finance.paymentsHub.title", "/realEstate/paymentsHub", CalendarClock, PAYMENTS_HUB_ACCESS_MODELS),
             navLink(resolveLanguageKey, "menus.finance.unitCosts.title", "/realEstate/unitCosts", Receipt, ["unitCosts"]),
         ]),
         navCollapsible(resolveLanguageKey, "menus.realEstate.ownersAndRentals.title", KeyRound, [

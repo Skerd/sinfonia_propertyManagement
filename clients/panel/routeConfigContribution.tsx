@@ -46,6 +46,7 @@ import AllLeads from "@propertyManagementModule/clients/panel/private/leads";
 import CreateLead from "@propertyManagementModule/clients/panel/private/leads/createLead.tsx";
 import EditLead from "@propertyManagementModule/clients/panel/private/leads/editLead.tsx";
 import RentalsHub from "@propertyManagementModule/clients/panel/private/rentalsHub";
+import PaymentsHub from "@propertyManagementModule/clients/panel/private/paymentsHub";
 import AllLeases from "@propertyManagementModule/clients/panel/private/leases";
 import CreateLease from "@propertyManagementModule/clients/panel/private/leases/createLease.tsx";
 import EditLease from "@propertyManagementModule/clients/panel/private/leases/editLease.tsx";
@@ -295,6 +296,10 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
             if (action === "create") return <CreateLead />;
             if (action === "edit" && leadId) return <EditLead entityId={leadId} entityName={leadName} />;
             return <AllLeads />;
+        }
+
+        if (subview === "paymentsHub") {
+            return <PaymentsHub />;
         }
 
         if (subview === "rentalsHub" || subview === "ownerPortal") {

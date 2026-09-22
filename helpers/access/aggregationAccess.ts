@@ -32,6 +32,7 @@ export const DELIVERY_READINESS_ACCESS_MODELS = [
 ] as const;
 
 export const CONTRACTS_HUB_ACCESS_MODELS = ["sales", "reservations"] as const;
+export const PAYMENTS_HUB_ACCESS_MODELS = ["paymentplans", "sales"] as const;
 export const RENTALS_HUB_ACCESS_MODELS = ["leases", "rentalpayments"] as const;
 export const GROUP_DASHBOARD_ACCESS_MODELS = ["units", "sales", "commissions", "leases"] as const;
 export const AGENT_REPORT_ACCESS_MODELS = ["sales", "reservations", "commissions"] as const;

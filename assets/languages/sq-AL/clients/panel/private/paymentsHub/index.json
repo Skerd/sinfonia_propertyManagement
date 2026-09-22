@@ -1,0 +1,147 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
+  "title": "Pagesat",
+  "description": "Të gjitha këstet dhe parapagesat e planeve të pagesës, sipas datave, për të gjitha projektet.",
+  "tabs": {
+    "list": "Lista",
+    "calendar": "Kalendari"
+  },
+  "status": {
+    "pending": "Në pritje",
+    "partially_paid": "Paguar pjesërisht",
+    "overdue": "E vonuar",
+    "paid": "E paguar",
+    "cancelled": "E anuluar"
+  },
+  "kind": {
+    "installment": "Këst",
+    "installmentNumbered": "Kësti {number}",
+    "down_payment": "Parapagim"
+  },
+  "kpis": {
+    "overdue": "Të vonuara",
+    "dueNext7Days": "Për 7 ditët në vijim",
+    "dueNext30Days": "Për 30 ditët në vijim",
+    "collectedThisMonth": "Arkëtuar këtë muaj"
+  },
+  "filters": {
+    "searchLabel": "Kërko",
+    "searchPlaceholder": "Kërko sipas klientit, njësisë, projektit, kodit të shitjes…",
+    "clearFilters": "Pastro filtrat",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Të gjitha projektet",
+    "edificeLabel": "Ndertësa",
+    "edificePlaceholder": "Të gjitha ndertësat",
+    "floorLabel": "Kati",
+    "floorPlaceholder": "Të gjitha katet",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Të gjitha njësitë",
+    "statusLabel": "Statusi",
+    "statusPlaceholder": "Të gjitha statuset",
+    "kindLabel": "Lloji",
+    "kindPlaceholder": "Të gjitha llojet",
+    "dateFieldLabel": "Data",
+    "dateFieldDue": "Data e pagesës",
+    "dateFieldPaid": "Data e kryerjes",
+    "dateRangeLabel": "Periudha",
+    "dateFromLabel": "Nga",
+    "dateToLabel": "Deri",
+    "presetsLabel": "Filtra të shpejtë",
+    "presets": {
+      "overdue": "Të vonuara",
+      "next7": "7 ditët në vijim",
+      "next30": "30 ditët në vijim",
+      "thisMonth": "Këtë muaj"
+    }
+  },
+  "periods": {
+    "groupByLabel": "Grupo sipas",
+    "groupBy": {
+      "none": "Asnjë",
+      "day": "Ditës",
+      "week": "Javës",
+      "month": "Muajit"
+    },
+    "noPeriods": "Asgjë për të mbledhur me këta filtra.",
+    "columns": {
+      "period": "Periudha",
+      "count": "Pagesa",
+      "expected": "E pritur",
+      "paid": "E paguar",
+      "outstanding": "Mbetur"
+    }
+  },
+  "list": {
+    "columns": {
+      "dueDate": "Data",
+      "unit": "Njësia",
+      "code": "Kodi",
+      "project": "Projekti",
+      "client": "Klienti",
+      "type": "Lloji",
+      "status": "Statusi",
+      "amount": "Vlera",
+      "paid": "E paguar",
+      "remaining": "Mbetur",
+      "actions": "Veprime"
+    },
+    "paidOn": "Paguar më {date}",
+    "daysOverdue": "{days} ditë vonesë",
+    "totalsLabel": "Totalet për këta filtra",
+    "totalsExpected": "E pritur",
+    "totalsPaid": "E paguar",
+    "totalsOutstanding": "Mbetur",
+    "noResults": "Nuk u gjet asnjë pagesë.",
+    "errorTitle": "Pagesat nuk u ngarkuan",
+    "errorDescription": "Provoni përsëri ose ndryshoni filtrat.",
+    "viewAction": "Hap planin e pagesës",
+    "previous": "Më parë",
+    "next": "Më pas",
+    "truncatedTitle": "Totale të pjesshme",
+    "truncatedDescription": "Ka shumë plane pagese për të lexuar njëherësh. Ngushtoni filtrat për totale të sakta.",
+    "pagination": {
+      "summary": "{from}–{to} nga {total}"
+    }
+  },
+  "calendar": {
+    "title": "Kalendari i pagesave",
+    "monthTotal": "Këtë muaj: {total}",
+    "dayTotal": "Këtë ditë: {total}",
+    "detailForDay": "Pagesat më {date}",
+    "selectDay": "Zgjidhni një ditë",
+    "noPaymentsDay": "Asnjë pagesë në këtë ditë.",
+    "errorTitle": "Kalendari nuk u ngarkua",
+    "errorDescription": "Provoni përsëri ose ndryshoni filtrat.",
+    "truncatedTitle": "Muaj i pjesshëm",
+    "truncatedDescription": "Shfaqen vetëm {max} pagesat e para të këtij muaji."
+  },
+  "help": {
+    "ariaLabel": "Rreth Pagesave",
+    "title": "Rreth Pagesave",
+    "overview": "Pagesat rendit sipas datave çdo këst dhe çdo parapagim të shitjeve me plan pagese, kështu shihni çfarë është vonuar dhe çfarë vjen, pa hapur çdo shitje. Janë të njëjtat të dhëna si te skeda Plani i pagesës i një shitjeje; kjo faqe vetëm i mbledh.",
+    "sections": [
+      {
+        "title": "Çfarë ofron",
+        "items": [
+          "Kutitë i përgjigjen pyetjes “sa pagesa janë në pritje”: të vonuara, për 7 ditë, për 30 ditë, arkëtuar këtë muaj.",
+          "Grupo sipas ditës, javës ose muajit; klikoni një periudhë për ta ngushtuar listën në të.",
+          "Kalendari shënon çdo ditë me një pikë për status dhe mbledh totalin e ditës së zgjedhur."
+        ]
+      },
+      {
+        "title": "Si funksionon",
+        "items": [
+          "Statusi del nga datat: një pagesë është e vonuar ditën pas afatit, pavarësisht përpunimit të natës.",
+          "Totalet mbahen sipas monedhës dhe nuk konvertohen kurrë.",
+          "Hapja e një rreshti hap planin e pagesës, ku e regjistroni pagesën si zakonisht."
+        ]
+      },
+      {
+        "title": "Kur të përdoret shitja",
+        "items": [
+          "Përmbledhje → Shitje me plan pagese ruan planin e plotë: grafikun, ristrukturimin, faturat dhe emailet."
+        ]
+      }
+    ]
+  }
+}

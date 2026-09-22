@@ -2,7 +2,8 @@
  * KPI drill-down URL builders — filters aligned with dashboard.ts aggregation logic.
  *
  * Limitations (by design):
- * - Payment-plan KPIs link to sales with paymentType=payment_plan (no dedicated list).
+ * - Plan-level KPIs link to sales with paymentType=payment_plan; payment-level ones
+ *   (overdue, outstanding, alerts) link to the payments hub.
  * - Occupancy / average KPIs link to the underlying population, not the computed ratio.
  */
 
@@ -237,22 +238,24 @@ export const kpiPaymentAlertRentItem = (
     return qs ? `/realEstate/rentalsHub?${qs}` : "/realEstate/rentalsHub";
 };
 
-// ── Payment plans (best-effort → sales with payment_plan) ────────────────────
+// ── Payment plans ────────────────────────────────────────────────────────────
 
+/** Plan-level KPIs stay on sales: they count plans, not individual payments. */
 export const kpiActivePaymentPlans = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
-export const kpiOverdueInstallments = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
-export const kpiTotalOutstanding = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
 export const kpiPaymentPlansCompleted = (ctx: KpiDrillDownContext) => kpiPaymentPlanSales(ctx);
 
+/** Payment-level KPIs go to the payments hub, which lists installments by date. */
+export const kpiOverdueInstallments = (_ctx: KpiDrillDownContext) =>
+    buildListDrillDownUrl("/realEstate/paymentsHub", {queryParams: {status: "overdue"}});
+export const kpiTotalOutstanding = (_ctx: KpiDrillDownContext) =>
+    buildListDrillDownUrl("/realEstate/paymentsHub", {});
+
 /**
- * Payment-alerts widget → sales with payment plans.
- * Omits dashboard saleDate period (alerts are due-date based, not sale-date based).
+ * Payment-alerts widget → the payments hub, ordered by due date, so the alerts
+ * land next to the rest of the schedule.
  */
-export const kpiPaymentAlertPlans = (ctx: KpiDrillDownContext = {}) =>
-    buildListDrillDownUrl("/realEstate/sales", {
-        filter: buildFilterGroup([buildFilterRule("paymentType", "equals", SALE_PAYMENT_PLAN)]),
-        queryParams: contextQueryParams(ctx),
-    });
+export const kpiPaymentAlertPlans = (_ctx: KpiDrillDownContext = {}) =>
+    buildListDrillDownUrl("/realEstate/paymentsHub", {});
 
 // ── Unit costs ───────────────────────────────────────────────────────────────
 

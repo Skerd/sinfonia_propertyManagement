@@ -1,0 +1,147 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
+  "title": "Pagamenti",
+  "description": "Tutte le rate e gli acconti dei piani di pagamento, per data, su tutti i progetti.",
+  "tabs": {
+    "list": "Elenco",
+    "calendar": "Calendario"
+  },
+  "status": {
+    "pending": "In attesa",
+    "partially_paid": "Parzialmente pagato",
+    "overdue": "Scaduto",
+    "paid": "Pagato",
+    "cancelled": "Annullato"
+  },
+  "kind": {
+    "installment": "Rata",
+    "installmentNumbered": "Rata {number}",
+    "down_payment": "Acconto"
+  },
+  "kpis": {
+    "overdue": "Scaduti",
+    "dueNext7Days": "In scadenza tra 7 giorni",
+    "dueNext30Days": "In scadenza tra 30 giorni",
+    "collectedThisMonth": "Incassato questo mese"
+  },
+  "filters": {
+    "searchLabel": "Cerca",
+    "searchPlaceholder": "Cerca per cliente, unità, progetto, codice vendita…",
+    "clearFilters": "Azzera filtri",
+    "projectLabel": "Progetto",
+    "projectPlaceholder": "Tutti i progetti",
+    "edificeLabel": "Edificio",
+    "edificePlaceholder": "Tutti gli edifici",
+    "floorLabel": "Piano",
+    "floorPlaceholder": "Tutti i piani",
+    "unitLabel": "Unità",
+    "unitPlaceholder": "Tutte le unità",
+    "statusLabel": "Stato",
+    "statusPlaceholder": "Tutti gli stati",
+    "kindLabel": "Tipo",
+    "kindPlaceholder": "Tutti i tipi",
+    "dateFieldLabel": "Data",
+    "dateFieldDue": "Data di scadenza",
+    "dateFieldPaid": "Data di pagamento",
+    "dateRangeLabel": "Periodo",
+    "dateFromLabel": "Dal",
+    "dateToLabel": "Al",
+    "presetsLabel": "Filtri rapidi",
+    "presets": {
+      "overdue": "Scaduti",
+      "next7": "Prossimi 7 giorni",
+      "next30": "Prossimi 30 giorni",
+      "thisMonth": "Questo mese"
+    }
+  },
+  "periods": {
+    "groupByLabel": "Raggruppa per",
+    "groupBy": {
+      "none": "Nessuno",
+      "day": "Giorno",
+      "week": "Settimana",
+      "month": "Mese"
+    },
+    "noPeriods": "Niente da totalizzare con questi filtri.",
+    "columns": {
+      "period": "Periodo",
+      "count": "Pagamenti",
+      "expected": "Previsto",
+      "paid": "Pagato",
+      "outstanding": "Residuo"
+    }
+  },
+  "list": {
+    "columns": {
+      "dueDate": "Data",
+      "unit": "Unità",
+      "code": "Codice",
+      "project": "Progetto",
+      "client": "Cliente",
+      "type": "Tipo",
+      "status": "Stato",
+      "amount": "Importo",
+      "paid": "Pagato",
+      "remaining": "Residuo",
+      "actions": "Azioni"
+    },
+    "paidOn": "Pagato il {date}",
+    "daysOverdue": "{days} giorni di ritardo",
+    "totalsLabel": "Totali per questi filtri",
+    "totalsExpected": "Previsto",
+    "totalsPaid": "Pagato",
+    "totalsOutstanding": "Residuo",
+    "noResults": "Nessun pagamento trovato.",
+    "errorTitle": "Impossibile caricare i pagamenti",
+    "errorDescription": "Riprova o modifica i filtri.",
+    "viewAction": "Apri piano di pagamento",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "truncatedTitle": "Totali parziali",
+    "truncatedDescription": "Troppi piani di pagamento da analizzare in una volta. Restringi i filtri per totali esatti.",
+    "pagination": {
+      "summary": "{from}–{to} di {total}"
+    }
+  },
+  "calendar": {
+    "title": "Calendario pagamenti",
+    "monthTotal": "Questo mese: {total}",
+    "dayTotal": "Questo giorno: {total}",
+    "detailForDay": "Pagamenti del {date}",
+    "selectDay": "Scegli un giorno",
+    "noPaymentsDay": "Nessun pagamento in questo giorno.",
+    "errorTitle": "Impossibile caricare il calendario",
+    "errorDescription": "Riprova o modifica i filtri.",
+    "truncatedTitle": "Mese parziale",
+    "truncatedDescription": "Vengono mostrati solo i primi {max} pagamenti di questo mese."
+  },
+  "help": {
+    "ariaLabel": "Informazioni su Pagamenti",
+    "title": "Informazioni su Pagamenti",
+    "overview": "Pagamenti elenca per data ogni rata e ogni acconto delle vendite con piano di pagamento, così vedi cosa è in ritardo e cosa sta per arrivare senza aprire ogni vendita. Sono gli stessi record della scheda Piano di pagamento di una vendita: questa pagina li raccoglie soltanto.",
+    "sections": [
+      {
+        "title": "Cosa offre",
+        "items": [
+          "I riquadri rispondono a “quanto resta da incassare”: scaduti, in scadenza tra 7 giorni, tra 30 giorni, incassato questo mese.",
+          "Raggruppa per giorno, settimana o mese; clicca su un periodo per restringere l'elenco a quel periodo.",
+          "Il calendario segna ogni giorno con un punto per stato e totalizza il giorno scelto."
+        ]
+      },
+      {
+        "title": "Come si comporta",
+        "items": [
+          "Lo stato deriva dalle date: un pagamento è scaduto il giorno dopo la scadenza, a prescindere dall'ultima elaborazione notturna.",
+          "I totali restano per valuta e non vengono mai convertiti.",
+          "Aprendo una riga si apre il suo piano di pagamento, dove registri il pagamento come sempre."
+        ]
+      },
+      {
+        "title": "Quando usare la vendita",
+        "items": [
+          "Panoramica → Vendita con piano di pagamento contiene ancora il piano completo: scadenzario, ristrutturazione, ricevute ed e-mail."
+        ]
+      }
+    ]
+  }
+}
