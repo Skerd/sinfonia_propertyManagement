@@ -80,22 +80,22 @@ export function buildRealEstateTenancySettingsSubCollapsible(
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },
-            {
-                title: resolveLanguageKey("menus.realEstate.adCampaigns.title"),
-                url: "/tenancy/systemSettings/adCampaigns",
-                icon: Megaphone,
-                permissions: ["adCampaigns"],
-                usersPermissions: [],
-                atLeastOnePermission: true,
-            },
-            {
-                title: resolveLanguageKey("menus.realEstate.adCampaignTemplates.title"),
-                url: "/tenancy/systemSettings/adCampaignTemplates",
-                icon: MailPlus,
-                permissions: ["adCampaignTemplates"],
-                usersPermissions: [],
-                atLeastOnePermission: true,
-            },
+            // {
+            //     title: resolveLanguageKey("menus.realEstate.adCampaigns.title"),
+            //     url: "/tenancy/systemSettings/adCampaigns",
+            //     icon: Megaphone,
+            //     permissions: ["adCampaigns"],
+            //     usersPermissions: [],
+            //     atLeastOnePermission: true,
+            // },
+            // {
+            //     title: resolveLanguageKey("menus.realEstate.adCampaignTemplates.title"),
+            //     url: "/tenancy/systemSettings/adCampaignTemplates",
+            //     icon: MailPlus,
+            //     permissions: ["adCampaignTemplates"],
+            //     usersPermissions: [],
+            //     atLeastOnePermission: true,
+            // },
         ],
     };
 }
