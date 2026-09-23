@@ -6,9 +6,17 @@ import type {AdCampaignTemplate} from "armonia/src/modules/propertyManagement/ap
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconLanguage, IconMail, IconBroadcast} from "@tabler/icons-react";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import {
+    STATUS_BADGE_NEUTRAL,
+    STATUS_BADGE_SUCCESS,
+} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx";
+import AdCampaignTemplateRowMenuExtras from "@propertyManagementModule/clients/panel/private/adCampaignTemplates/center/actions/adCampaignTemplateRowMenuExtras.tsx";
+import AdCampaignTemplateWorkflowDialogs from "@propertyManagementModule/clients/panel/private/adCampaignTemplates/center/actions/adCampaignTemplateWorkflowDialogs.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 
 function adCampaignTemplateEditPath(entity: AdCampaignTemplate) {
@@ -24,6 +32,7 @@ type AdCampaignTemplateCardProps = WithLanguageType & {
     hideActions?: boolean;
     onDelete?: (deleted?: AdCampaignTemplate, response?: DeletedData) => void;
     onRestore?: () => void;
+    onWorkflowSuccess?: (updated?: AdCampaignTemplate) => void;
     sheetOnly?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<AdCampaignTemplate> | null>;
 };
@@ -35,6 +44,7 @@ function AdCampaignTemplateCard({
     hideActions = false,
     onDelete,
     onRestore,
+    onWorkflowSuccess,
     sheetOnly = false,
     innerRef,
 }: AdCampaignTemplateCardProps) {
@@ -58,8 +68,20 @@ function AdCampaignTemplateCard({
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
+            extraDialogs={({action, setAction, entity: dialogEntity, setEntity}) => (
+                <AdCampaignTemplateWorkflowDialogs
+                    action={action}
+                    template={dialogEntity}
+                    onClose={() => setAction("")}
+                    onSuccess={(updated?: AdCampaignTemplate) => {
+                        if (updated) setEntity(updated);
+                        onWorkflowSuccess?.(updated);
+                        setAction("");
+                    }}
+                />
+            )}
         >
-            {({entity: row}) => (
+            {({entity: row, setAction}) => (
                 <>
                     <EntityCard.Header
                         titlePath="name"
@@ -67,15 +89,27 @@ function AdCampaignTemplateCard({
                         subtitle={row.subject}
                         subtitlePath="subject"
                         badges={
-                            <>
-                                {row.active === false ? (
-                                    <Badge variant="outline" className="text-xs">
-                                        {resolveLanguageKey("fields.inactive")}
-                                    </Badge>
-                                ) : null}
-                            </>
+                            /* Always shown, both ways round: a card with no badge
+                               reads as "no state" rather than "active", and the
+                               menu offers the opposite action, so the two have to
+                               agree on what this template currently is. */
+                            <DisplayValue path="active" value={row.active}>
+                                {() => {
+                                    const isActive = row.active !== false;
+                                    return (
+                                        <Badge
+                                            variant="outline"
+                                            className={cn("text-xs", isActive ? STATUS_BADGE_SUCCESS : STATUS_BADGE_NEUTRAL)}
+                                        >
+                                            {String(resolveLanguageKey(isActive ? "fields.active" : "fields.inactive"))}
+                                        </Badge>
+                                    );
+                                }}
+                            </DisplayValue>
                         }
-                    />
+                    >
+                        <AdCampaignTemplateRowMenuExtras template={row} onAction={setAction} />
+                    </EntityCard.Header>
                     <EntityCard.Body>
                         <EntityCardRow
                             icon={IconBroadcast}

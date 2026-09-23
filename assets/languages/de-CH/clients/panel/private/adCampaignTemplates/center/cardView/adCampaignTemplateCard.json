@@ -9,6 +9,7 @@
         "campaignType": "Typ",
         "locale": "Sprache",
         "previewText": "Vorschautext",
+        "active": "Aktiv",
         "inactive": "Inaktiv",
         "!enums": {
             "campaignType": {

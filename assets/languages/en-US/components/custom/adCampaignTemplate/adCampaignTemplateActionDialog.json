@@ -1,0 +1,30 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaignTemplate/adCampaignTemplateActionDialog.tsx",
+    "titles": {
+        "activate": "Activate template",
+        "deactivate": "Deactivate template"
+    },
+    "descriptions": {
+        "activate": "The template becomes available to campaigns again. Nothing that was already sent changes.",
+        "deactivate": "Campaigns can no longer render this template, and any campaign still sending will fail on it. The template itself is kept and can be reactivated at any time."
+    },
+    "submit": {
+        "activate": "Activate",
+        "deactivate": "Deactivate"
+    },
+    "cancel": "Cancel",
+    "axios": {
+        "start": {
+            "title": "Saving...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Saved",
+            "time": 3000
+        },
+        "error": {
+            "title": "Error",
+            "time": 3000
+        }
+    }
+}

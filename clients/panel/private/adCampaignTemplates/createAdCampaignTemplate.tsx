@@ -8,17 +8,6 @@ export default createGenericCreatePage<CreateAdCampaignTemplateFormType>({
     model: "adcampaigntemplates",
     apiUrl: "/api/realEstate/adCampaignTemplate",
     schema: createAdCampaignTemplateFormSchema,
-    defaultValues: () => ({
-        name: "",
-        subject: "",
-        previewText: "",
-        bodyHtml: "",
-        // The editor's live preview needs both before it can render anything,
-        // so the form opens on a type and locale rather than two empty selects.
-        campaignType: "offer",
-        locale: "en-US",
-        active: true,
-    } as any),
     successPath: "/tenancy/systemSettings/adCampaignTemplates",
     submitIcon: <IconPlus />,
 });

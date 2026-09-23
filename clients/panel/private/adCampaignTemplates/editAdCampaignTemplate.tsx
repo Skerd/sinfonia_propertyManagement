@@ -9,9 +9,5 @@ export default createGenericEditPage<AdCampaignTemplate, EditAdCampaignTemplateF
     model: "adcampaigntemplates",
     apiUrl: "/api/realEstate/adCampaignTemplate",
     schema: editAdCampaignTemplateFormSchema,
-    mapEntityData: (data) => ({
-        ...data,
-        active: data.active !== false,
-    } as any),
     submitIcon: <Save />,
 });

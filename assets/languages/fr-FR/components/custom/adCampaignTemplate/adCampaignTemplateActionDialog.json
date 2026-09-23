@@ -1,0 +1,30 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaignTemplate/adCampaignTemplateActionDialog.tsx",
+    "titles": {
+        "activate": "Activer le modèle",
+        "deactivate": "Désactiver le modèle"
+    },
+    "descriptions": {
+        "activate": "Le modèle redevient disponible pour les campagnes. Rien de ce qui a déjà été envoyé ne change.",
+        "deactivate": "Les campagnes ne peuvent plus rendre ce modèle, et toute campagne en cours d'envoi échouera dessus. Le modèle est conservé et peut être réactivé à tout moment."
+    },
+    "submit": {
+        "activate": "Activer",
+        "deactivate": "Désactiver"
+    },
+    "cancel": "Annuler",
+    "axios": {
+        "start": {
+            "title": "Enregistrement...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Enregistré",
+            "time": 3000
+        },
+        "error": {
+            "title": "Erreur",
+            "time": 3000
+        }
+    }
+}

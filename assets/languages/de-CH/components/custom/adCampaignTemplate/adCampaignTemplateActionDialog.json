@@ -1,0 +1,30 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaignTemplate/adCampaignTemplateActionDialog.tsx",
+    "titles": {
+        "activate": "Vorlage aktivieren",
+        "deactivate": "Vorlage deaktivieren"
+    },
+    "descriptions": {
+        "activate": "Die Vorlage steht Kampagnen wieder zur Verfügung. Bereits versandte Nachrichten bleiben unverändert.",
+        "deactivate": "Kampagnen können diese Vorlage nicht mehr rendern, und laufende Kampagnen schlagen damit fehl. Die Vorlage bleibt erhalten und kann jederzeit wieder aktiviert werden."
+    },
+    "submit": {
+        "activate": "Aktivieren",
+        "deactivate": "Deaktivieren"
+    },
+    "cancel": "Abbrechen",
+    "axios": {
+        "start": {
+            "title": "Wird gespeichert...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Gespeichert",
+            "time": 3000
+        },
+        "error": {
+            "title": "Fehler",
+            "time": 3000
+        }
+    }
+}

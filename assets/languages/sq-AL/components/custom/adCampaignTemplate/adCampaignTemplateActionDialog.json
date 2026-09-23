@@ -1,0 +1,30 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaignTemplate/adCampaignTemplateActionDialog.tsx",
+    "titles": {
+        "activate": "Aktivizo shabllonin",
+        "deactivate": "Çaktivizo shabllonin"
+    },
+    "descriptions": {
+        "activate": "Shablloni bëhet përsëri i disponueshëm për fushatat. Asgjë e dërguar më parë nuk ndryshon.",
+        "deactivate": "Fushatat nuk mund të përdorin më këtë shabllon dhe çdo fushatë që është ende në dërgim do të dështojë me të. Shablloni ruhet dhe mund të riaktivizohet në çdo moment."
+    },
+    "submit": {
+        "activate": "Aktivizo",
+        "deactivate": "Çaktivizo"
+    },
+    "cancel": "Anulo",
+    "axios": {
+        "start": {
+            "title": "Po ruhet...",
+            "time": 3000
+        },
+        "success": {
+            "title": "U ruajt",
+            "time": 3000
+        },
+        "error": {
+            "title": "Gabim",
+            "time": 3000
+        }
+    }
+}

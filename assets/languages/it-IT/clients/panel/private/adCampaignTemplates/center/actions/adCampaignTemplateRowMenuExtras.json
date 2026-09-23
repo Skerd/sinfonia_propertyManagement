@@ -1,0 +1,5 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/actions/adCampaignTemplateRowMenuExtras.tsx",
+    "activate": "Attiva",
+    "deactivate": "Disattiva"
+}
