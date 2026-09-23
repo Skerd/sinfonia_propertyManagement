@@ -1,0 +1,38 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
+    "title": "Modèles de campagne",
+    "description": "Modèles d'e-mail réutilisables, un par type de campagne et par langue",
+    "createAdCampaignTemplate": "Nouveau modèle",
+    "noData": "Aucun modèle trouvé",
+    "failTitle": "Échec du chargement des modèles",
+    "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+    "fields": {
+        "name": "Titre",
+        "campaignType": "Type",
+        "locale": "Langue",
+        "subject": "Objet",
+        "previewText": "Texte d'aperçu",
+        "isDefault": "Par défaut",
+        "active": "Statut",
+        "createdAt": "Créé le",
+        "createdBy": "Créé par",
+        "updatedAt": "Mis à jour le",
+        "deletedAt": "Supprimé le",
+        "deletedBy": "Supprimé par",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Changement de prix",
+                "offer": "Offre",
+                "new_project": "Nouveau projet"
+            },
+            "locale": {
+                "en-US": "Anglais (US)",
+                "de-CH": "Allemand (CH)",
+                "fr-FR": "Français (FR)",
+                "it-IT": "Italien (IT)",
+                "sq-AL": "Albanais (AL)"
+            }
+        }
+    }
+}

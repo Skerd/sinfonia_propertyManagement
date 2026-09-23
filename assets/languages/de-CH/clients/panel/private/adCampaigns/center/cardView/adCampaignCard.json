@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/cardView/adCampaignCard.tsx",
+    "failedTitle": "Kampagnen konnten nicht geladen werden",
+    "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "failedTooltipDescription": "Zum erneuten Laden klicken.",
+    "fields": {
+        "campaignType": "Typ",
+        "template": "Vorlage",
+        "scheduledAt": "Geplant für",
+        "progress": "Gesendet / total",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Preisänderung",
+                "offer": "Angebot",
+                "new_project": "Neues Projekt"
+            },
+            "status": {
+                "draft": "Entwurf",
+                "materializing": "Empfänger werden ermittelt",
+                "scheduled": "Geplant",
+                "sending": "Wird gesendet",
+                "paused": "Pausiert",
+                "completed": "Abgeschlossen",
+                "cancelled": "Abgebrochen",
+                "failed": "Fehlgeschlagen"
+            }
+        }
+    }
+}

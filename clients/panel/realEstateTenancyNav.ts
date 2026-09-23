@@ -1,4 +1,15 @@
-import {BookMarked, ClipboardCheck, Hammer, Layers, PackageCheck, Settings2, Tag, TowerControl} from "lucide-react";
+import {
+    BookMarked,
+    ClipboardCheck,
+    Hammer,
+    Layers,
+    MailPlus,
+    Megaphone,
+    PackageCheck,
+    Settings2,
+    Tag,
+    TowerControl,
+} from "lucide-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
 
@@ -66,6 +77,22 @@ export function buildRealEstateTenancySettingsSubCollapsible(
                 url: "/tenancy/systemSettings/storyTypes",
                 icon: BookMarked,
                 permissions: ["storyTypes"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.realEstate.adCampaigns.title"),
+                url: "/tenancy/systemSettings/adCampaigns",
+                icon: Megaphone,
+                permissions: ["adCampaigns"],
+                usersPermissions: [],
+                atLeastOnePermission: true,
+            },
+            {
+                title: resolveLanguageKey("menus.realEstate.adCampaignTemplates.title"),
+                url: "/tenancy/systemSettings/adCampaignTemplates",
+                icon: MailPlus,
+                permissions: ["adCampaignTemplates"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
             },

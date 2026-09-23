@@ -1,0 +1,55 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/createAdCampaignTemplate.tsx",
+    "title": "Nuovo modello",
+    "generalInfo": "Dettagli",
+    "content": "Contenuto",
+    "form": {
+        "nameLabel": "Titolo",
+        "namePlaceholder": "Titolo",
+        "campaignTypeLabel": "Tipo",
+        "campaignTypePlaceholder": "Tipo",
+        "campaignType": {
+            "price_change": "Variazione di prezzo",
+            "offer": "Offerta",
+            "new_project": "Nuovo progetto"
+        },
+        "localeLabel": "Lingua",
+        "localePlaceholder": "Lingua",
+        "locale": {
+            "en-US": "Inglese (US)",
+            "de-CH": "Tedesco (CH)",
+            "fr-FR": "Francese (FR)",
+            "it-IT": "Italiano (IT)",
+            "sq-AL": "Albanese (AL)"
+        },
+        "isDefaultLabel": "Predefinito",
+        "activeLabel": "Stato",
+        "subjectLabel": "Oggetto",
+        "subjectPlaceholder": "Oggetto",
+        "previewTextLabel": "Testo di anteprima",
+        "previewTextPlaceholder": "Testo di anteprima",
+        "bodyHtmlLabel": "Corpo dell'e-mail"
+    },
+    "axios": {
+        "start": {
+            "title": "Salvataggio...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Salvato",
+            "time": 3000
+        },
+        "error": {
+            "title": "Errore",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Nuovo modello",
+        "description": "Scrivi l'e-mail una volta; le campagne di questo tipo e lingua la riutilizzano."
+    },
+    "formButtons": {
+        "cancel": "Annulla",
+        "submit": "Salva"
+    }
+}

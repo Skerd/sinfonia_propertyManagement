@@ -1,0 +1,50 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
+    "title": "Campagnes publicitaires",
+    "description": "Informer clients et prospects des changements de prix, offres et nouveaux projets",
+    "createAdCampaign": "Nouvelle campagne",
+    "noData": "Aucune campagne trouvée",
+    "failTitle": "Échec du chargement des campagnes",
+    "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+    "fields": {
+        "name": "Référence",
+        "title": "Titre",
+        "campaignType": "Type",
+        "status": "Statut",
+        "template": "Modèle",
+        "scheduledAt": "Planifiée pour",
+        "startedAt": "Démarrée",
+        "completedAt": "Terminée",
+        "progress": "Envoyés / total",
+        "audienceMode": "Envoyer à",
+        "batchSize": "Taille du lot",
+        "lastError": "Dernière erreur",
+        "createdAt": "Créé le",
+        "createdBy": "Créé par",
+        "updatedAt": "Mis à jour le",
+        "deletedAt": "Supprimé le",
+        "deletedBy": "Supprimé par",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Changement de prix",
+                "offer": "Offre",
+                "new_project": "Nouveau projet"
+            },
+            "status": {
+                "draft": "Brouillon",
+                "materializing": "Constitution de l'audience",
+                "scheduled": "Planifiée",
+                "sending": "Envoi en cours",
+                "paused": "En pause",
+                "completed": "Terminée",
+                "cancelled": "Annulée",
+                "failed": "Échec"
+            },
+            "audienceMode": {
+                "selected": "Destinataires sélectionnés",
+                "all": "Tout le monde"
+            }
+        }
+    }
+}

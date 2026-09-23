@@ -1,0 +1,44 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
+    "titles": {
+        "sendNow": "Send campaign",
+        "pause": "Pause campaign",
+        "resume": "Resume campaign",
+        "cancel": "Cancel campaign"
+    },
+    "descriptions": {
+        "sendNow": "Emails go out in batches starting on the next dispatch run. This cannot be undone once messages leave.",
+        "pause": "Sending stops between batches. Recipients already emailed are unaffected.",
+        "resume": "Sending continues from where it stopped. Nobody is emailed twice.",
+        "cancel": "The campaign stops for good and no further emails are sent. Messages already delivered stay delivered."
+    },
+    "submit": {
+        "sendNow": "Send now",
+        "pause": "Pause",
+        "resume": "Resume",
+        "cancel": "Cancel campaign"
+    },
+    "audience": {
+        "resolving": "Resolving the audience…",
+        "failed": "The audience could not be resolved.",
+        "willReceive": "Will receive this email",
+        "suppressed": "Opted out, will be skipped",
+        "total": "Total resolved",
+        "empty": "Nobody would receive this campaign. Check the audience before sending."
+    },
+    "cancel": "Cancel",
+    "axios": {
+        "start": {
+            "title": "Saving...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Saved",
+            "time": 3000
+        },
+        "error": {
+            "title": "Error",
+            "time": 3000
+        }
+    }
+}

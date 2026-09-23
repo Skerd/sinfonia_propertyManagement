@@ -1,0 +1,39 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx",
+    "adCampaignTemplate": "Vorlage",
+    "overview": "Übersicht",
+    "body": "E-Mail-Text",
+    "name": "Titel",
+    "campaignType": "Typ",
+    "locale": "Sprache",
+    "subject": "Betreff",
+    "previewText": "Vorschautext",
+    "isDefault": "Standard",
+    "active": "Status",
+    "bodyHtml": "E-Mail-Text",
+    "campaignTypeEnum": {
+        "price_change": "Preisänderung",
+        "offer": "Angebot",
+        "new_project": "Neues Projekt"
+    },
+    "localeEnum": {
+        "en-US": "Englisch (US)",
+        "de-CH": "Deutsch (CH)",
+        "fr-FR": "Französisch (FR)",
+        "it-IT": "Italienisch (IT)",
+        "sq-AL": "Albanisch (AL)"
+    },
+    "activeState": {
+        "true": "Ja",
+        "false": "Nein"
+    },
+    "lifecycle": "Lebenszyklus",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "failedTitle": "Vorlagen konnten nicht geladen werden",
+    "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "failedTooltipDescription": "Zum erneuten Laden klicken."
+}

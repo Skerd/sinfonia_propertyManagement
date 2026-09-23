@@ -1,0 +1,55 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/editAdCampaignTemplate.tsx",
+    "title": "Vorlage — Speichern",
+    "generalInfo": "Details",
+    "content": "Inhalt",
+    "form": {
+        "nameLabel": "Titel",
+        "namePlaceholder": "Titel",
+        "campaignTypeLabel": "Typ",
+        "campaignTypePlaceholder": "Typ",
+        "campaignType": {
+            "price_change": "Preisänderung",
+            "offer": "Angebot",
+            "new_project": "Neues Projekt"
+        },
+        "localeLabel": "Sprache",
+        "localePlaceholder": "Sprache",
+        "locale": {
+            "en-US": "Englisch (US)",
+            "de-CH": "Deutsch (CH)",
+            "fr-FR": "Französisch (FR)",
+            "it-IT": "Italienisch (IT)",
+            "sq-AL": "Albanisch (AL)"
+        },
+        "isDefaultLabel": "Standard",
+        "activeLabel": "Status",
+        "subjectLabel": "Betreff",
+        "subjectPlaceholder": "Betreff",
+        "previewTextLabel": "Vorschautext",
+        "previewTextPlaceholder": "Vorschautext",
+        "bodyHtmlLabel": "E-Mail-Text"
+    },
+    "axios": {
+        "start": {
+            "title": "Wird gespeichert...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Gespeichert",
+            "time": 3000
+        },
+        "error": {
+            "title": "Fehler",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Vorlage — Speichern",
+        "description": "Diese Vorlage ändern. Bereits versendete Kampagnen bleiben unberührt."
+    },
+    "formButtons": {
+        "cancel": "Abbrechen",
+        "submit": "Speichern"
+    }
+}

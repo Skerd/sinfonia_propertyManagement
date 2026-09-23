@@ -1,0 +1,32 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/cardView/adCampaignRecipientCard.tsx",
+    "failedTitle": "Ngarkimi i marrësve dështoi",
+    "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "failedTooltipDescription": "Kliko për të riprovuar.",
+    "fields": {
+        "audienceKind": "Lloji",
+        "skipReason": "Arsyeja",
+        "attempts": "Përpjekje",
+        "sentAt": "Dërguar më",
+        "!enums": {
+            "status": {
+                "pending": "Në pritje",
+                "queued": "Në radhë",
+                "sent": "Dërguar",
+                "failed": "Dështoi",
+                "skipped": "Anashkaluar",
+                "suppressed": "Çregjistruar"
+            },
+            "skipReason": {
+                "opted_out": "Çregjistruar",
+                "no_email": "Pa adresë e-mail",
+                "inactive": "Joaktiv",
+                "duplicate": "Dublikatë"
+            },
+            "audienceKind": {
+                "user": "Klient",
+                "lead": "Lead"
+            }
+        }
+    }
+}

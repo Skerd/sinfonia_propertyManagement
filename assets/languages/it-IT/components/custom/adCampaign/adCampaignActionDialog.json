@@ -1,0 +1,44 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
+    "titles": {
+        "sendNow": "Invia campagna",
+        "pause": "Metti in pausa la campagna",
+        "resume": "Riprendi la campagna",
+        "cancel": "Annulla campagna"
+    },
+    "descriptions": {
+        "sendNow": "Le e-mail partono a lotti dalla prossima esecuzione di invio. Una volta partite non si torna indietro.",
+        "pause": "L'invio si ferma tra un lotto e l'altro. I destinatari già contattati non sono interessati.",
+        "resume": "L'invio riprende da dove si era fermato. Nessuno viene contattato due volte.",
+        "cancel": "La campagna si ferma definitivamente e non vengono inviate altre e-mail. I messaggi già consegnati restano consegnati."
+    },
+    "submit": {
+        "sendNow": "Invia ora",
+        "pause": "Pausa",
+        "resume": "Riprendi",
+        "cancel": "Annulla campagna"
+    },
+    "audience": {
+        "resolving": "Risoluzione dei destinatari…",
+        "failed": "Impossibile risolvere i destinatari.",
+        "willReceive": "Riceveranno questa e-mail",
+        "suppressed": "Disiscritti, verranno saltati",
+        "total": "Totale risolto",
+        "empty": "Nessuno riceverebbe questa campagna. Controlla i destinatari prima di inviare."
+    },
+    "cancel": "Annulla",
+    "axios": {
+        "start": {
+            "title": "Salvataggio...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Salvato",
+            "time": 3000
+        },
+        "error": {
+            "title": "Errore",
+            "time": 3000
+        }
+    }
+}

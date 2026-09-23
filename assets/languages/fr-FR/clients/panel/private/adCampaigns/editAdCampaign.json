@@ -1,0 +1,71 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/editAdCampaign.tsx",
+    "title": "Campagne — Enregistrer",
+    "generalInfo": "Détails",
+    "audience": "Audience",
+    "scope": "Périmètre",
+    "contentOverrides": "Contenu personnalisé",
+    "delivery": "Livraison",
+    "form": {
+        "titleLabel": "Titre",
+        "titlePlaceholder": "Titre",
+        "campaignTypeLabel": "Type",
+        "campaignTypePlaceholder": "Type",
+        "campaignType": {
+            "price_change": "Changement de prix",
+            "offer": "Offre",
+            "new_project": "Nouveau projet"
+        },
+        "templateLabel": "Modèle",
+        "templatePlaceholder": "Modèle",
+        "scheduledAtLabel": "Planifiée pour",
+        "scheduledAtPlaceholder": "Planifiée pour",
+        "audienceModeLabel": "Envoyer à",
+        "audienceModePlaceholder": "Envoyer à",
+        "audienceMode": {
+            "selected": "Destinataires sélectionnés",
+            "all": "Tout le monde"
+        },
+        "recipientsLabel": "Destinataires",
+        "selectRecipients": "Destinataires",
+        "leadRecipientsLabel": "Prospects",
+        "selectLeadRecipients": "Prospects",
+        "projectsLabel": "Projets",
+        "selectProjects": "Projets",
+        "unitsLabel": "Lots",
+        "selectUnits": "Lots",
+        "removeItem": "Annuler",
+        "includeClientUsersLabel": "Inclure les comptes clients",
+        "includeLeadsLabel": "Inclure les prospects",
+        "subjectOverrideLabel": "Objet",
+        "subjectOverridePlaceholder": "Objet",
+        "bodyHtmlOverrideLabel": "Corps de l'e-mail",
+        "batchSizeLabel": "Taille du lot",
+        "fromNameLabel": "Nom de l'expéditeur",
+        "fromNamePlaceholder": "Nom de l'expéditeur",
+        "replyToLabel": "Répondre à",
+        "replyToPlaceholder": "Répondre à"
+    },
+    "axios": {
+        "start": {
+            "title": "Enregistrement...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Enregistré",
+            "time": 3000
+        },
+        "error": {
+            "title": "Erreur",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Campagne — Enregistrer",
+        "description": "Modifier cette campagne. Le contenu et l'audience sont verrouillés dès que l'envoi commence."
+    },
+    "formButtons": {
+        "cancel": "Annuler",
+        "submit": "Enregistrer"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/editAdCampaignTemplate.tsx",
+    "title": "Model — Ruaj",
+    "generalInfo": "Detajet",
+    "content": "Përmbajtja",
+    "form": {
+        "nameLabel": "Titulli",
+        "namePlaceholder": "Titulli",
+        "campaignTypeLabel": "Lloji",
+        "campaignTypePlaceholder": "Lloji",
+        "campaignType": {
+            "price_change": "Ndryshim çmimi",
+            "offer": "Ofertë",
+            "new_project": "Projekt i ri"
+        },
+        "localeLabel": "Gjuha",
+        "localePlaceholder": "Gjuha",
+        "locale": {
+            "en-US": "Anglisht (US)",
+            "de-CH": "Gjermanisht (CH)",
+            "fr-FR": "Frëngjisht (FR)",
+            "it-IT": "Italisht (IT)",
+            "sq-AL": "Shqip (AL)"
+        },
+        "isDefaultLabel": "I parazgjedhur",
+        "activeLabel": "Statusi",
+        "subjectLabel": "Subjekti",
+        "subjectPlaceholder": "Subjekti",
+        "previewTextLabel": "Teksti i pamjes paraprake",
+        "previewTextPlaceholder": "Teksti i pamjes paraprake",
+        "bodyHtmlLabel": "Trupi i e-mail-it"
+    },
+    "axios": {
+        "start": {
+            "title": "Po ruhet...",
+            "time": 3000
+        },
+        "success": {
+            "title": "U ruajt",
+            "time": 3000
+        },
+        "error": {
+            "title": "Gabim",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Model — Ruaj",
+        "description": "Ndryshoni këtë model. Fushatat e dërguara tashmë nuk preken."
+    },
+    "formButtons": {
+        "cancel": "Anulo",
+        "submit": "Ruaj"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "hidePreview": "Hide preview",
+    "showPreview": "Show preview",
+    "palette": "Insert a placeholder",
+    "bodyPlaceholder": "Write the email body as HTML. Use the buttons above to insert ready-made blocks.",
+    "inheritHint": "Leave empty to use the selected template's body unchanged.",
+    "snippets": {
+        "paragraph": "Paragraph",
+        "heading": "Heading",
+        "button": "Button",
+        "row": "Table row",
+        "list": "List",
+        "divider": "Divider",
+        "image": "Image"
+    },
+    "tokens": {
+        "firstName": "Recipient's first name",
+        "lastName": "Recipient's last name",
+        "fullName": "Recipient's full name",
+        "email": "Recipient's email address",
+        "companyName": "Your company's name",
+        "campaignTitle": "This campaign's title",
+        "projectName": "The related project",
+        "projectNames": "All related projects, comma separated",
+        "unitList": "The recipient's units, comma separated",
+        "unitNumber": "A single unit number",
+        "oldPrice": "Price before the change",
+        "newPrice": "Price after the change",
+        "priceChangePercent": "Percentage change",
+        "offerTitle": "The offer's title",
+        "offerEndsAt": "When the offer ends",
+        "ctaUrl": "Link for the call-to-action button",
+        "unsubscribeUrl": "One-click opt-out link",
+        "preferencesUrl": "Link to the preferences page",
+        "year": "The current year"
+    }
+}

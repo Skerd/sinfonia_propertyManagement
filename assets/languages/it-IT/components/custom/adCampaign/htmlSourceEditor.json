@@ -1,0 +1,37 @@
+{
+    "hidePreview": "Nascondi anteprima",
+    "showPreview": "Mostra anteprima",
+    "palette": "Inserisci un segnaposto",
+    "bodyPlaceholder": "Scrivi il corpo dell'e-mail in HTML. I pulsanti qui sopra inseriscono blocchi pronti.",
+    "inheritHint": "Lascia vuoto per usare invariato il corpo del modello selezionato.",
+    "snippets": {
+        "paragraph": "Paragrafo",
+        "heading": "Titolo",
+        "button": "Pulsante",
+        "row": "Riga di tabella",
+        "list": "Elenco",
+        "divider": "Separatore",
+        "image": "Immagine"
+    },
+    "tokens": {
+        "firstName": "Nome del destinatario",
+        "lastName": "Cognome del destinatario",
+        "fullName": "Nome completo del destinatario",
+        "email": "Indirizzo e-mail del destinatario",
+        "companyName": "Nome della tua azienda",
+        "campaignTitle": "Titolo di questa campagna",
+        "projectName": "Il progetto collegato",
+        "projectNames": "Tutti i progetti collegati, separati da virgola",
+        "unitList": "Le unità del destinatario, separate da virgola",
+        "unitNumber": "Un singolo numero di unità",
+        "oldPrice": "Prezzo prima della variazione",
+        "newPrice": "Prezzo dopo la variazione",
+        "priceChangePercent": "Variazione percentuale",
+        "offerTitle": "Titolo dell'offerta",
+        "offerEndsAt": "Scadenza dell'offerta",
+        "ctaUrl": "Link del pulsante di azione",
+        "unsubscribeUrl": "Link di disiscrizione con un clic",
+        "preferencesUrl": "Link alla pagina delle preferenze",
+        "year": "L'anno corrente"
+    }
+}

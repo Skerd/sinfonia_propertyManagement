@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/cardView/adCampaignTemplateCard.tsx",
+    "failedTitle": "Échec du chargement des modèles",
+    "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "failedTooltipDescription": "Cliquez pour réessayer.",
+    "yes": "Oui",
+    "no": "Non",
+    "fields": {
+        "campaignType": "Type",
+        "locale": "Langue",
+        "previewText": "Texte d'aperçu",
+        "isDefault": "Par défaut",
+        "inactive": "Inactif",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Changement de prix",
+                "offer": "Offre",
+                "new_project": "Nouveau projet"
+            },
+            "locale": {
+                "en-US": "Anglais (US)",
+                "de-CH": "Allemand (CH)",
+                "fr-FR": "Français (FR)",
+                "it-IT": "Italien (IT)",
+                "sq-AL": "Albanais (AL)"
+            }
+        }
+    }
+}

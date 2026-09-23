@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx",
+    "adCampaignRecipient": "Empfänger",
+    "overview": "Übersicht",
+    "delivery": "Zustellung",
+    "email": "E-Mail-Adresse",
+    "fullName": "Name",
+    "audienceKind": "Art",
+    "campaignType": "Typ",
+    "languageCode": "Sprache",
+    "campaign": "Kampagne",
+    "status": "Status",
+    "skipReason": "Grund",
+    "attempts": "Versuche",
+    "sentAt": "Gesendet am",
+    "unsubscribedAt": "Abgemeldet am",
+    "messageId": "Nachrichten-ID",
+    "lastError": "Letzter Fehler",
+    "audienceKindEnum": {
+        "user": "Kunde",
+        "lead": "Lead"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Preisänderung",
+        "offer": "Angebot",
+        "new_project": "Neues Projekt"
+    },
+    "recipientStatusEnum": {
+        "pending": "Ausstehend",
+        "queued": "In Warteschlange",
+        "sent": "Gesendet",
+        "failed": "Fehlgeschlagen",
+        "skipped": "Übersprungen",
+        "suppressed": "Abgemeldet"
+    },
+    "skipReasonEnum": {
+        "opted_out": "Abgemeldet",
+        "no_email": "Keine E-Mail-Adresse",
+        "inactive": "Inaktiv",
+        "duplicate": "Duplikat"
+    },
+    "lifecycle": "Lebenszyklus",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "failedTitle": "Empfänger konnten nicht geladen werden",
+    "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "failedTooltipDescription": "Zum erneuten Laden klicken."
+}

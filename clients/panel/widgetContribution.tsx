@@ -17,6 +17,8 @@ import LocalDiscountField from "@propertyManagementModule/components/custom/sale
 import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
 import FormExpenditureItemsField from "@propertyManagementModule/components/custom/unitCosts/formExpenditureItemsField.tsx";
 import SheetLineItems from "@propertyManagementModule/components/custom/lineItems/sheetLineItems.tsx";
+import HtmlSourceEditor from "@propertyManagementModule/components/custom/adCampaign/htmlSourceEditor.tsx";
+import EmailHtmlPreview from "@propertyManagementModule/components/custom/adCampaign/emailHtmlPreview.tsx";
 import {createSheetLineItems} from "@propertyManagementModule/components/custom/lineItems/createSheetLineItems.tsx";
 import {
     propertyManagementFormWidgetRenderers,
@@ -134,6 +136,8 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#SheetModificationLineItems": SheetLineItems,
         "#PaymentPlanInstallmentsField": PaymentPlanInstallmentsField,
         "#LocalDiscountField": LocalDiscountField,
+        "#HtmlSourceEditor": HtmlSourceEditor,
+        "#EmailHtmlPreview": EmailHtmlPreview,
         "#UnitCard": UnitCard,
         "#InspectionCard": InspectionCard,
         "#UnitCostCard": UnitCostCard,
@@ -180,6 +184,32 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#UnitCard": "unit",
     },
     sheetFieldRenderers: {
+        /**
+         * Read-only render of a stored campaign body, through the same
+         * server-side renderer and the same empty-sandbox iframe the editor
+         * previews into. The markup is never injected into the panel's own DOM.
+         */
+        "#EmailHtmlPreview": ({node, binding, ctx, index, Component}) => {
+            const {data} = ctx;
+            const wp = binding.widgetProps ?? {};
+            if (!sheetFieldVisible(node, ctx) || !data) return null;
+            if (ctx.access && !hasAccessPath(ctx.access, binding.name)) return null;
+            const bodyHtml = resolvePath(data, binding.name);
+            if (typeof bodyHtml !== "string" || bodyHtml === "") return createElement(ValueNotSet, {key: index});
+            const Preview = Component ?? EmailHtmlPreview;
+            return createElement(Preview as ComponentType<any>, {
+                key: index,
+                bodyHtml,
+                apiUrl: typeof wp.apiUrl === "string" ? wp.apiUrl : "/api/realEstate/adCampaignTemplate/preview",
+                subject: typeof data.subject === "string" ? data.subject : undefined,
+                previewText: typeof data.previewText === "string" ? data.previewText : undefined,
+                campaignType: typeof data.campaignType === "string" ? data.campaignType : undefined,
+                locale: typeof data.locale === "string" ? data.locale : "en-US",
+                height: typeof wp.height === "number" ? wp.height : undefined,
+                // Nothing is being typed, so there is no reason to wait.
+                debounceMs: 0,
+            });
+        },
         "#UnitSaleCard": ({node, binding, ctx, index}) => {
             const {data} = ctx;
             const wp = binding.widgetProps ?? {};

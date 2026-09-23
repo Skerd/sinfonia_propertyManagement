@@ -102,6 +102,12 @@
     },
     "constructionProgress": {
       "title": "Construction progress"
+    },
+    "adCampaigns": {
+      "title": "Ad campaigns"
+    },
+    "adCampaignTemplates": {
+      "title": "Campaign templates"
     }
   },
   "reports": {

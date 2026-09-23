@@ -1,0 +1,32 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/cardView/adCampaignRecipientCard.tsx",
+    "failedTitle": "Failed to load recipients",
+    "failedDescription": "An error occurred while loading. Please try again.",
+    "failedTooltipDescription": "Click to retry fetching data.",
+    "fields": {
+        "audienceKind": "Kind",
+        "skipReason": "Reason",
+        "attempts": "Attempts",
+        "sentAt": "Sent at",
+        "!enums": {
+            "status": {
+                "pending": "Pending",
+                "queued": "Queued",
+                "sent": "Sent",
+                "failed": "Failed",
+                "skipped": "Skipped",
+                "suppressed": "Opted out"
+            },
+            "skipReason": {
+                "opted_out": "Opted out",
+                "no_email": "No email address",
+                "inactive": "Inactive",
+                "duplicate": "Duplicate"
+            },
+            "audienceKind": {
+                "user": "Client",
+                "lead": "Lead"
+            }
+        }
+    }
+}

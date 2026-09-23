@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/accountSettings/marketingPreferences.tsx",
+  "title": "Email immobiliari",
+  "description": "Email di marketing sugli immobili. Disattivarle non influisce sulle email relative al tuo acquisto, alla tua prenotazione o al tuo contratto di locazione.",
+  "loading": "Caricamento delle tue preferenze…",
+  "loadFailed": "Non è stato possibile caricare le tue preferenze.",
+  "saved": "Preferenze salvate",
+  "saveFailed": "Non è stato possibile salvare le tue preferenze.",
+  "unsubscribeAll": "Disattiva tutto",
+  "transactionalNote": "Continuerai a ricevere le email essenziali relative al tuo acquisto, alla tua prenotazione o al tuo contratto di locazione.",
+  "toggles": {
+    "priceChange": "Variazioni di prezzo",
+    "priceChangeDescription": "Quando cambia il prezzo di un'unità che segui.",
+    "offers": "Offerte",
+    "offersDescription": "Offerte e promozioni a tempo limitato.",
+    "newProjects": "Nuovi progetti",
+    "newProjectsDescription": "Nuovi sviluppi non appena vengono annunciati."
+  }
+}

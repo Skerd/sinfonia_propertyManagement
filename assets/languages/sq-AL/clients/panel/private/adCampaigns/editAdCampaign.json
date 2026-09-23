@@ -1,0 +1,71 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/editAdCampaign.tsx",
+    "title": "Fushatë — Ruaj",
+    "generalInfo": "Detajet",
+    "audience": "Audienca",
+    "scope": "Fusha",
+    "contentOverrides": "Përmbajtje e personalizuar",
+    "delivery": "Dërgesa",
+    "form": {
+        "titleLabel": "Titulli",
+        "titlePlaceholder": "Titulli",
+        "campaignTypeLabel": "Lloji",
+        "campaignTypePlaceholder": "Lloji",
+        "campaignType": {
+            "price_change": "Ndryshim çmimi",
+            "offer": "Ofertë",
+            "new_project": "Projekt i ri"
+        },
+        "templateLabel": "Model",
+        "templatePlaceholder": "Model",
+        "scheduledAtLabel": "Planifikuar për",
+        "scheduledAtPlaceholder": "Planifikuar për",
+        "audienceModeLabel": "Dërgo te",
+        "audienceModePlaceholder": "Dërgo te",
+        "audienceMode": {
+            "selected": "Marrës të zgjedhur",
+            "all": "Të gjithë"
+        },
+        "recipientsLabel": "Marrësit",
+        "selectRecipients": "Marrësit",
+        "leadRecipientsLabel": "Lead-et",
+        "selectLeadRecipients": "Lead-et",
+        "projectsLabel": "Projektet",
+        "selectProjects": "Projektet",
+        "unitsLabel": "Njësitë",
+        "selectUnits": "Njësitë",
+        "removeItem": "Anulo",
+        "includeClientUsersLabel": "Përfshi llogaritë e klientëve",
+        "includeLeadsLabel": "Përfshi lead-et",
+        "subjectOverrideLabel": "Subjekti",
+        "subjectOverridePlaceholder": "Subjekti",
+        "bodyHtmlOverrideLabel": "Trupi i e-mail-it",
+        "batchSizeLabel": "Madhësia e grupit",
+        "fromNameLabel": "Emri i dërguesit",
+        "fromNamePlaceholder": "Emri i dërguesit",
+        "replyToLabel": "Përgjigju te",
+        "replyToPlaceholder": "Përgjigju te"
+    },
+    "axios": {
+        "start": {
+            "title": "Po ruhet...",
+            "time": 3000
+        },
+        "success": {
+            "title": "U ruajt",
+            "time": 3000
+        },
+        "error": {
+            "title": "Gabim",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Fushatë — Ruaj",
+        "description": "Ndryshoni këtë fushatë. Përmbajtja dhe audienca bllokohen sapo nis dërgimi."
+    },
+    "formButtons": {
+        "cancel": "Anulo",
+        "submit": "Ruaj"
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx",
+    "adCampaignRecipient": "Destinataire",
+    "overview": "Aperçu",
+    "delivery": "Livraison",
+    "email": "Adresse e-mail",
+    "fullName": "Nom",
+    "audienceKind": "Type",
+    "campaignType": "Type",
+    "languageCode": "Langue",
+    "campaign": "Campagne",
+    "status": "Statut",
+    "skipReason": "Motif",
+    "attempts": "Tentatives",
+    "sentAt": "Envoyé le",
+    "unsubscribedAt": "Désinscrit le",
+    "messageId": "Id du message",
+    "lastError": "Dernière erreur",
+    "audienceKindEnum": {
+        "user": "Client",
+        "lead": "Prospect"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Changement de prix",
+        "offer": "Offre",
+        "new_project": "Nouveau projet"
+    },
+    "recipientStatusEnum": {
+        "pending": "En attente",
+        "queued": "En file",
+        "sent": "Envoyé",
+        "failed": "Échec",
+        "skipped": "Ignoré",
+        "suppressed": "Désinscrit"
+    },
+    "skipReasonEnum": {
+        "opted_out": "Désinscrit",
+        "no_email": "Pas d'adresse e-mail",
+        "inactive": "Inactif",
+        "duplicate": "Doublon"
+    },
+    "lifecycle": "Cycle de vie",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par",
+    "failedTitle": "Échec du chargement des destinataires",
+    "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "failedTooltipDescription": "Cliquez pour réessayer."
+}

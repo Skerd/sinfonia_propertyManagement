@@ -1,0 +1,46 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
+    "adCampaign": "Campagne",
+    "overview": "Aperçu",
+    "results": "Résultats",
+    "name": "Référence",
+    "title": "Titre",
+    "campaignType": "Type",
+    "status": "Statut",
+    "template": "Modèle",
+    "scheduledAt": "Planifiée pour",
+    "startedAt": "Démarrée",
+    "completedAt": "Terminée",
+    "lastError": "Dernière erreur",
+    "stats": {
+        "total": "Destinataires",
+        "sent": "Envoyé",
+        "pending": "En attente",
+        "failed": "Échec",
+        "skipped": "Ignoré"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Changement de prix",
+        "offer": "Offre",
+        "new_project": "Nouveau projet"
+    },
+    "statusEnum": {
+        "draft": "Brouillon",
+        "materializing": "Constitution de l'audience",
+        "scheduled": "Planifiée",
+        "sending": "Envoi en cours",
+        "paused": "En pause",
+        "completed": "Terminée",
+        "cancelled": "Annulée",
+        "failed": "Échec"
+    },
+    "lifecycle": "Cycle de vie",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par",
+    "failedTitle": "Échec du chargement des campagnes",
+    "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "failedTooltipDescription": "Cliquez pour réessayer."
+}

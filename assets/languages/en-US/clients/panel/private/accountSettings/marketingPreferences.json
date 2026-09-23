@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/accountSettings/marketingPreferences.tsx",
+  "title": "Real estate emails",
+  "description": "Marketing emails about properties. Turning these off does not affect emails about your own purchase, reservation or lease.",
+  "loading": "Loading your preferences…",
+  "loadFailed": "Your preferences could not be loaded.",
+  "saved": "Preferences saved",
+  "saveFailed": "Your preferences could not be saved.",
+  "unsubscribeAll": "Turn all off",
+  "transactionalNote": "You will still receive essential emails about your purchase, reservation or lease.",
+  "toggles": {
+    "priceChange": "Price changes",
+    "priceChangeDescription": "When the price of a unit you follow changes.",
+    "offers": "Offers",
+    "offersDescription": "Limited-period offers and promotions.",
+    "newProjects": "New projects",
+    "newProjectsDescription": "New developments as they are announced."
+  }
+}

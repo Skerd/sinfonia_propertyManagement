@@ -1,0 +1,44 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
+    "titles": {
+        "sendNow": "Dërgo fushatën",
+        "pause": "Pauzo fushatën",
+        "resume": "Vazhdo fushatën",
+        "cancel": "Anulo fushatën"
+    },
+    "descriptions": {
+        "sendNow": "E-mail-et dalin në grupe duke filluar nga ekzekutimi i ardhshëm. Pasi të nisen, nuk kthehen mbrapsht.",
+        "pause": "Dërgimi ndalon mes grupeve. Marrësit e kontaktuar tashmë nuk preken.",
+        "resume": "Dërgimi vazhdon aty ku ndaloi. Askush nuk kontaktohet dy herë.",
+        "cancel": "Fushata ndalon përfundimisht dhe nuk dërgohen e-mail-e të tjera. Mesazhet e dorëzuara mbeten të dorëzuara."
+    },
+    "submit": {
+        "sendNow": "Dërgo tani",
+        "pause": "Pauzo",
+        "resume": "Vazhdo",
+        "cancel": "Anulo fushatën"
+    },
+    "audience": {
+        "resolving": "Po përcaktohet audienca…",
+        "failed": "Audienca nuk u përcaktua dot.",
+        "willReceive": "Do ta marrin këtë e-mail",
+        "suppressed": "Të çregjistruar, do të anashkalohen",
+        "total": "Gjithsej të përcaktuar",
+        "empty": "Askush nuk do ta merrte këtë fushatë. Kontrolloni audiencën para se të dërgoni."
+    },
+    "cancel": "Anulo",
+    "axios": {
+        "start": {
+            "title": "Po ruhet...",
+            "time": 3000
+        },
+        "success": {
+            "title": "U ruajt",
+            "time": 3000
+        },
+        "error": {
+            "title": "Gabim",
+            "time": 3000
+        }
+    }
+}

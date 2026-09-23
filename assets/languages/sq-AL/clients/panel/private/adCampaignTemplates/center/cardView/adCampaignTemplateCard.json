@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/cardView/adCampaignTemplateCard.tsx",
+    "failedTitle": "Ngarkimi i modeleve dështoi",
+    "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "failedTooltipDescription": "Kliko për të riprovuar.",
+    "yes": "Po",
+    "no": "Jo",
+    "fields": {
+        "campaignType": "Lloji",
+        "locale": "Gjuha",
+        "previewText": "Teksti i pamjes paraprake",
+        "isDefault": "I parazgjedhur",
+        "inactive": "Joaktiv",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Ndryshim çmimi",
+                "offer": "Ofertë",
+                "new_project": "Projekt i ri"
+            },
+            "locale": {
+                "en-US": "Anglisht (US)",
+                "de-CH": "Gjermanisht (CH)",
+                "fr-FR": "Frëngjisht (FR)",
+                "it-IT": "Italisht (IT)",
+                "sq-AL": "Shqip (AL)"
+            }
+        }
+    }
+}

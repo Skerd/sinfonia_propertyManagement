@@ -1,0 +1,37 @@
+{
+    "hidePreview": "Vorschau ausblenden",
+    "showPreview": "Vorschau anzeigen",
+    "palette": "Platzhalter einfügen",
+    "bodyPlaceholder": "Schreiben Sie den E-Mail-Text als HTML. Mit den Schaltflächen oben fügen Sie fertige Blöcke ein.",
+    "inheritHint": "Leer lassen, um den Text der gewählten Vorlage unverändert zu verwenden.",
+    "snippets": {
+        "paragraph": "Absatz",
+        "heading": "Überschrift",
+        "button": "Schaltfläche",
+        "row": "Tabellenzeile",
+        "list": "Liste",
+        "divider": "Trennlinie",
+        "image": "Bild"
+    },
+    "tokens": {
+        "firstName": "Vorname der Empfängerin/des Empfängers",
+        "lastName": "Nachname der Empfängerin/des Empfängers",
+        "fullName": "Vollständiger Name",
+        "email": "E-Mail-Adresse",
+        "companyName": "Name Ihres Unternehmens",
+        "campaignTitle": "Titel dieser Kampagne",
+        "projectName": "Das zugehörige Projekt",
+        "projectNames": "Alle zugehörigen Projekte, durch Komma getrennt",
+        "unitList": "Einheiten der Empfängerin/des Empfängers, durch Komma getrennt",
+        "unitNumber": "Eine einzelne Einheitsnummer",
+        "oldPrice": "Preis vor der Änderung",
+        "newPrice": "Preis nach der Änderung",
+        "priceChangePercent": "Prozentuale Änderung",
+        "offerTitle": "Titel des Angebots",
+        "offerEndsAt": "Ende des Angebots",
+        "ctaUrl": "Link für die Aktionsschaltfläche",
+        "unsubscribeUrl": "Abmeldelink mit einem Klick",
+        "preferencesUrl": "Link zur Einstellungsseite",
+        "year": "Das laufende Jahr"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/accountSettings/marketingPreferences.tsx",
+  "title": "Emailet e pasurive të paluajtshme",
+  "description": "Email marketingu për pronat. Çaktivizimi i tyre nuk ndikon në emailet për blerjen, rezervimin ose qiranë tuaj.",
+  "loading": "Po ngarkohen preferencat tuaja…",
+  "loadFailed": "Preferencat tuaja nuk mund të ngarkoheshin.",
+  "saved": "Preferencat u ruajtën",
+  "saveFailed": "Preferencat tuaja nuk mund të ruheshin.",
+  "unsubscribeAll": "Çaktivizo të gjitha",
+  "transactionalNote": "Do të vazhdoni të merrni emailet thelbësore për blerjen, rezervimin ose qiranë tuaj.",
+  "toggles": {
+    "priceChange": "Ndryshime çmimi",
+    "priceChangeDescription": "Kur ndryshon çmimi i një njësie që ndiqni.",
+    "offers": "Oferta",
+    "offersDescription": "Oferta dhe promocione me kohë të kufizuar.",
+    "newProjects": "Projekte të reja",
+    "newProjectsDescription": "Zhvillime të reja sapo të njoftohen."
+  }
+}

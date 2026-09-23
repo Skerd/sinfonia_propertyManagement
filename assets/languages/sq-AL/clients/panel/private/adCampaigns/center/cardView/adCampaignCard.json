@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/cardView/adCampaignCard.tsx",
+    "failedTitle": "Ngarkimi i fushatave dështoi",
+    "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "failedTooltipDescription": "Kliko për të riprovuar.",
+    "fields": {
+        "campaignType": "Lloji",
+        "template": "Model",
+        "scheduledAt": "Planifikuar për",
+        "progress": "Dërguar / gjithsej",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Ndryshim çmimi",
+                "offer": "Ofertë",
+                "new_project": "Projekt i ri"
+            },
+            "status": {
+                "draft": "Draft",
+                "materializing": "Po ndërtohet audienca",
+                "scheduled": "E planifikuar",
+                "sending": "Po dërgohet",
+                "paused": "E pauzuar",
+                "completed": "E përfunduar",
+                "cancelled": "E anuluar",
+                "failed": "Dështoi"
+            }
+        }
+    }
+}

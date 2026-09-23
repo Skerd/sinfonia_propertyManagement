@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx",
+    "adCampaignRecipient": "Marrës",
+    "overview": "Përmbledhje",
+    "delivery": "Dërgesa",
+    "email": "Adresa e e-mail-it",
+    "fullName": "Emri",
+    "audienceKind": "Lloji",
+    "campaignType": "Lloji",
+    "languageCode": "Gjuha",
+    "campaign": "Fushatë",
+    "status": "Statusi",
+    "skipReason": "Arsyeja",
+    "attempts": "Përpjekje",
+    "sentAt": "Dërguar më",
+    "unsubscribedAt": "Çregjistruar më",
+    "messageId": "Id e mesazhit",
+    "lastError": "Gabimi i fundit",
+    "audienceKindEnum": {
+        "user": "Klient",
+        "lead": "Lead"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Ndryshim çmimi",
+        "offer": "Ofertë",
+        "new_project": "Projekt i ri"
+    },
+    "recipientStatusEnum": {
+        "pending": "Në pritje",
+        "queued": "Në radhë",
+        "sent": "Dërguar",
+        "failed": "Dështoi",
+        "skipped": "Anashkaluar",
+        "suppressed": "Çregjistruar"
+    },
+    "skipReasonEnum": {
+        "opted_out": "Çregjistruar",
+        "no_email": "Pa adresë e-mail",
+        "inactive": "Joaktiv",
+        "duplicate": "Dublikatë"
+    },
+    "lifecycle": "Cikli i jetës",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga",
+    "failedTitle": "Ngarkimi i marrësve dështoi",
+    "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "failedTooltipDescription": "Kliko për të riprovuar."
+}

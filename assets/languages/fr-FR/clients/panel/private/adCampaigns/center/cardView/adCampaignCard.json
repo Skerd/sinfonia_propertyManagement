@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/cardView/adCampaignCard.tsx",
+    "failedTitle": "Échec du chargement des campagnes",
+    "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "failedTooltipDescription": "Cliquez pour réessayer.",
+    "fields": {
+        "campaignType": "Type",
+        "template": "Modèle",
+        "scheduledAt": "Planifiée pour",
+        "progress": "Envoyés / total",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Changement de prix",
+                "offer": "Offre",
+                "new_project": "Nouveau projet"
+            },
+            "status": {
+                "draft": "Brouillon",
+                "materializing": "Constitution de l'audience",
+                "scheduled": "Planifiée",
+                "sending": "Envoi en cours",
+                "paused": "En pause",
+                "completed": "Terminée",
+                "cancelled": "Annulée",
+                "failed": "Échec"
+            }
+        }
+    }
+}

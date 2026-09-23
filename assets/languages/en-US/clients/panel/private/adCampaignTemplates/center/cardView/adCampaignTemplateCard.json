@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/cardView/adCampaignTemplateCard.tsx",
+    "failedTitle": "Failed to load templates",
+    "failedDescription": "An error occurred while loading. Please try again.",
+    "failedTooltipDescription": "Click to retry fetching data.",
+    "yes": "Yes",
+    "no": "No",
+    "fields": {
+        "campaignType": "Type",
+        "locale": "Language",
+        "previewText": "Preview text",
+        "isDefault": "Default",
+        "inactive": "Inactive",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Price change",
+                "offer": "Offer",
+                "new_project": "New project"
+            },
+            "locale": {
+                "en-US": "English (US)",
+                "de-CH": "German (CH)",
+                "fr-FR": "French (FR)",
+                "it-IT": "Italian (IT)",
+                "sq-AL": "Albanian (AL)"
+            }
+        }
+    }
+}

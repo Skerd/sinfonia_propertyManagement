@@ -1,0 +1,32 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/cardView/adCampaignRecipientCard.tsx",
+    "failedTitle": "Empfänger konnten nicht geladen werden",
+    "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "failedTooltipDescription": "Zum erneuten Laden klicken.",
+    "fields": {
+        "audienceKind": "Art",
+        "skipReason": "Grund",
+        "attempts": "Versuche",
+        "sentAt": "Gesendet am",
+        "!enums": {
+            "status": {
+                "pending": "Ausstehend",
+                "queued": "In Warteschlange",
+                "sent": "Gesendet",
+                "failed": "Fehlgeschlagen",
+                "skipped": "Übersprungen",
+                "suppressed": "Abgemeldet"
+            },
+            "skipReason": {
+                "opted_out": "Abgemeldet",
+                "no_email": "Keine E-Mail-Adresse",
+                "inactive": "Inaktiv",
+                "duplicate": "Duplikat"
+            },
+            "audienceKind": {
+                "user": "Kunde",
+                "lead": "Lead"
+            }
+        }
+    }
+}

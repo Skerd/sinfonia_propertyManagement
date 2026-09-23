@@ -1,0 +1,71 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/editAdCampaign.tsx",
+    "title": "Campagna — Salva",
+    "generalInfo": "Dettagli",
+    "audience": "Destinatari",
+    "scope": "Ambito",
+    "contentOverrides": "Contenuto personalizzato",
+    "delivery": "Consegna",
+    "form": {
+        "titleLabel": "Titolo",
+        "titlePlaceholder": "Titolo",
+        "campaignTypeLabel": "Tipo",
+        "campaignTypePlaceholder": "Tipo",
+        "campaignType": {
+            "price_change": "Variazione di prezzo",
+            "offer": "Offerta",
+            "new_project": "Nuovo progetto"
+        },
+        "templateLabel": "Modello",
+        "templatePlaceholder": "Modello",
+        "scheduledAtLabel": "Programmata per",
+        "scheduledAtPlaceholder": "Programmata per",
+        "audienceModeLabel": "Invia a",
+        "audienceModePlaceholder": "Invia a",
+        "audienceMode": {
+            "selected": "Destinatari selezionati",
+            "all": "Tutti"
+        },
+        "recipientsLabel": "Destinatari",
+        "selectRecipients": "Destinatari",
+        "leadRecipientsLabel": "Lead",
+        "selectLeadRecipients": "Lead",
+        "projectsLabel": "Progetti",
+        "selectProjects": "Progetti",
+        "unitsLabel": "Unità",
+        "selectUnits": "Unità",
+        "removeItem": "Annulla",
+        "includeClientUsersLabel": "Includi account cliente",
+        "includeLeadsLabel": "Includi lead",
+        "subjectOverrideLabel": "Oggetto",
+        "subjectOverridePlaceholder": "Oggetto",
+        "bodyHtmlOverrideLabel": "Corpo dell'e-mail",
+        "batchSizeLabel": "Dimensione lotto",
+        "fromNameLabel": "Nome mittente",
+        "fromNamePlaceholder": "Nome mittente",
+        "replyToLabel": "Rispondi a",
+        "replyToPlaceholder": "Rispondi a"
+    },
+    "axios": {
+        "start": {
+            "title": "Salvataggio...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Salvato",
+            "time": 3000
+        },
+        "error": {
+            "title": "Errore",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Campagna — Salva",
+        "description": "Modifica questa campagna. Contenuto e destinatari si bloccano quando l'invio inizia."
+    },
+    "formButtons": {
+        "cancel": "Annulla",
+        "submit": "Salva"
+    }
+}

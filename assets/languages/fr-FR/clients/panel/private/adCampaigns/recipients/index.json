@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/index.tsx",
+    "title": "Destinataires de la campagne",
+    "description": "Résultats de livraison par destinataire pour cette campagne",
+    "noData": "Aucun destinataire trouvé",
+    "failTitle": "Échec du chargement des destinataires",
+    "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "searchPlaceholder": "Rechercher ou ajouter des filtres...",
+    "fields": {
+        "email": "Adresse e-mail",
+        "fullName": "Nom",
+        "status": "Statut",
+        "skipReason": "Motif",
+        "audienceKind": "Type",
+        "campaignType": "Type",
+        "attempts": "Tentatives",
+        "sentAt": "Envoyé le",
+        "messageId": "Id du message",
+        "languageCode": "Langue",
+        "unsubscribedAt": "Désinscrit le",
+        "lastError": "Dernière erreur",
+        "campaign": "Campagne",
+        "createdAt": "Créé le",
+        "updatedAt": "Mis à jour le",
+        "!enums": {
+            "status": {
+                "pending": "En attente",
+                "queued": "En file",
+                "sent": "Envoyé",
+                "failed": "Échec",
+                "skipped": "Ignoré",
+                "suppressed": "Désinscrit"
+            },
+            "skipReason": {
+                "opted_out": "Désinscrit",
+                "no_email": "Pas d'adresse e-mail",
+                "inactive": "Inactif",
+                "duplicate": "Doublon"
+            },
+            "audienceKind": {
+                "user": "Client",
+                "lead": "Prospect"
+            },
+            "campaignType": {
+                "price_change": "Changement de prix",
+                "offer": "Offre",
+                "new_project": "Nouveau projet"
+            }
+        }
+    }
+}

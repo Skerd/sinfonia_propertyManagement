@@ -1,0 +1,50 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
+    "title": "Werbekampagnen",
+    "description": "Kundinnen und Leads über Preisänderungen, Angebote und neue Projekte informieren",
+    "createAdCampaign": "Neue Kampagne",
+    "noData": "Keine Kampagnen gefunden",
+    "failTitle": "Kampagnen konnten nicht geladen werden",
+    "failDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+    "fields": {
+        "name": "Referenz",
+        "title": "Titel",
+        "campaignType": "Typ",
+        "status": "Status",
+        "template": "Vorlage",
+        "scheduledAt": "Geplant für",
+        "startedAt": "Gestartet",
+        "completedAt": "Abgeschlossen",
+        "progress": "Gesendet / total",
+        "audienceMode": "Senden an",
+        "batchSize": "Stapelgrösse",
+        "lastError": "Letzter Fehler",
+        "createdAt": "Erstellt am",
+        "createdBy": "Erstellt von",
+        "updatedAt": "Aktualisiert am",
+        "deletedAt": "Gelöscht am",
+        "deletedBy": "Gelöscht von",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Preisänderung",
+                "offer": "Angebot",
+                "new_project": "Neues Projekt"
+            },
+            "status": {
+                "draft": "Entwurf",
+                "materializing": "Empfänger werden ermittelt",
+                "scheduled": "Geplant",
+                "sending": "Wird gesendet",
+                "paused": "Pausiert",
+                "completed": "Abgeschlossen",
+                "cancelled": "Abgebrochen",
+                "failed": "Fehlgeschlagen"
+            },
+            "audienceMode": {
+                "selected": "Ausgewählte Empfänger",
+                "all": "Alle"
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
+    "titles": {
+        "sendNow": "Envoyer la campagne",
+        "pause": "Mettre la campagne en pause",
+        "resume": "Reprendre la campagne",
+        "cancel": "Annuler la campagne"
+    },
+    "descriptions": {
+        "sendNow": "Les e-mails partent par lots dès la prochaine exécution d'envoi. Impossible de revenir en arrière une fois partis.",
+        "pause": "L'envoi s'arrête entre deux lots. Les destinataires déjà contactés ne sont pas affectés.",
+        "resume": "L'envoi reprend là où il s'était arrêté. Personne n'est contacté deux fois.",
+        "cancel": "La campagne s'arrête définitivement et aucun autre e-mail n'est envoyé. Les messages déjà livrés le restent."
+    },
+    "submit": {
+        "sendNow": "Envoyer maintenant",
+        "pause": "Mettre en pause",
+        "resume": "Reprendre",
+        "cancel": "Annuler la campagne"
+    },
+    "audience": {
+        "resolving": "Détermination de l'audience…",
+        "failed": "L'audience n'a pas pu être déterminée.",
+        "willReceive": "Recevront cet e-mail",
+        "suppressed": "Désinscrits, seront ignorés",
+        "total": "Total déterminé",
+        "empty": "Personne ne recevrait cette campagne. Vérifiez l'audience avant d'envoyer."
+    },
+    "cancel": "Annuler",
+    "axios": {
+        "start": {
+            "title": "Enregistrement...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Enregistré",
+            "time": 3000
+        },
+        "error": {
+            "title": "Erreur",
+            "time": 3000
+        }
+    }
+}

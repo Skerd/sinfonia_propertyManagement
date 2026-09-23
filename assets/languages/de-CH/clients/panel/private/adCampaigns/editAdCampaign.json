@@ -1,0 +1,71 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/editAdCampaign.tsx",
+    "title": "Kampagne — Speichern",
+    "generalInfo": "Details",
+    "audience": "Empfängerkreis",
+    "scope": "Bereich",
+    "contentOverrides": "Inhaltsüberschreibungen",
+    "delivery": "Zustellung",
+    "form": {
+        "titleLabel": "Titel",
+        "titlePlaceholder": "Titel",
+        "campaignTypeLabel": "Typ",
+        "campaignTypePlaceholder": "Typ",
+        "campaignType": {
+            "price_change": "Preisänderung",
+            "offer": "Angebot",
+            "new_project": "Neues Projekt"
+        },
+        "templateLabel": "Vorlage",
+        "templatePlaceholder": "Vorlage",
+        "scheduledAtLabel": "Geplant für",
+        "scheduledAtPlaceholder": "Geplant für",
+        "audienceModeLabel": "Senden an",
+        "audienceModePlaceholder": "Senden an",
+        "audienceMode": {
+            "selected": "Ausgewählte Empfänger",
+            "all": "Alle"
+        },
+        "recipientsLabel": "Empfänger",
+        "selectRecipients": "Empfänger",
+        "leadRecipientsLabel": "Leads",
+        "selectLeadRecipients": "Leads",
+        "projectsLabel": "Projekte",
+        "selectProjects": "Projekte",
+        "unitsLabel": "Einheiten",
+        "selectUnits": "Einheiten",
+        "removeItem": "Abbrechen",
+        "includeClientUsersLabel": "Kundenkonten einschliessen",
+        "includeLeadsLabel": "Leads einschliessen",
+        "subjectOverrideLabel": "Betreff",
+        "subjectOverridePlaceholder": "Betreff",
+        "bodyHtmlOverrideLabel": "E-Mail-Text",
+        "batchSizeLabel": "Stapelgrösse",
+        "fromNameLabel": "Absendername",
+        "fromNamePlaceholder": "Absendername",
+        "replyToLabel": "Antwort an",
+        "replyToPlaceholder": "Antwort an"
+    },
+    "axios": {
+        "start": {
+            "title": "Wird gespeichert...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Gespeichert",
+            "time": 3000
+        },
+        "error": {
+            "title": "Fehler",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Kampagne — Speichern",
+        "description": "Diese Kampagne ändern. Inhalt und Empfängerkreis sind gesperrt, sobald der Versand läuft."
+    },
+    "formButtons": {
+        "cancel": "Abbrechen",
+        "submit": "Speichern"
+    }
+}

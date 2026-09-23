@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/cardView/adCampaignTemplateCard.tsx",
+    "failedTitle": "Vorlagen konnten nicht geladen werden",
+    "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "failedTooltipDescription": "Zum erneuten Laden klicken.",
+    "yes": "Ja",
+    "no": "Nein",
+    "fields": {
+        "campaignType": "Typ",
+        "locale": "Sprache",
+        "previewText": "Vorschautext",
+        "isDefault": "Standard",
+        "inactive": "Inaktiv",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Preisänderung",
+                "offer": "Angebot",
+                "new_project": "Neues Projekt"
+            },
+            "locale": {
+                "en-US": "Englisch (US)",
+                "de-CH": "Deutsch (CH)",
+                "fr-FR": "Französisch (FR)",
+                "it-IT": "Italienisch (IT)",
+                "sq-AL": "Albanisch (AL)"
+            }
+        }
+    }
+}

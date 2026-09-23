@@ -1,0 +1,10 @@
+{
+    "previewSubject": "Betreff",
+    "previewNoSubject": "Noch kein Betreff",
+    "previewUpdating": "Wird aktualisiert…",
+    "previewDesktop": "Desktop-Breite",
+    "previewMobile": "Mobile Breite",
+    "previewUnresolved": "Kein Beispielwert für:",
+    "previewFailed": "Die Vorschau konnte nicht erstellt werden.",
+    "previewFrameTitle": "E-Mail-Vorschau"
+}

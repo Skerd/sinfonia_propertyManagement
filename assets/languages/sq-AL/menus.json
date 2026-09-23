@@ -102,6 +102,12 @@
     },
     "constructionProgress": {
       "title": "Ecuria e punimeve"
+    },
+    "adCampaigns": {
+      "title": "Fushata reklamuese"
+    },
+    "adCampaignTemplates": {
+      "title": "Modelet e fushatave"
     }
   },
   "reports": {

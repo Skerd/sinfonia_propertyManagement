@@ -69,6 +69,13 @@ import EditHandoverPackage from "@propertyManagementModule/clients/panel/private
 import AllInspectionChecklistTemplates from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates";
 import CreateInspectionChecklistTemplate from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx";
 import EditInspectionChecklistTemplate from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx";
+import AllAdCampaigns from "@propertyManagementModule/clients/panel/private/adCampaigns";
+import CreateAdCampaign from "@propertyManagementModule/clients/panel/private/adCampaigns/createAdCampaign.tsx";
+import EditAdCampaign from "@propertyManagementModule/clients/panel/private/adCampaigns/editAdCampaign.tsx";
+import AdCampaignRecipients from "@propertyManagementModule/clients/panel/private/adCampaigns/recipients";
+import AllAdCampaignTemplates from "@propertyManagementModule/clients/panel/private/adCampaignTemplates";
+import CreateAdCampaignTemplate from "@propertyManagementModule/clients/panel/private/adCampaignTemplates/createAdCampaignTemplate.tsx";
+import EditAdCampaignTemplate from "@propertyManagementModule/clients/panel/private/adCampaignTemplates/editAdCampaignTemplate.tsx";
 import ErpExport from "@propertyManagementModule/clients/panel/private/erpExport/erpExport.tsx";
 import GroupDashboard from "@propertyManagementModule/clients/panel/private/groupDashboard/groupDashboard.tsx";
 import type {RouteConfigArgs, RouteConfigContribution} from "@coreModule/helpers/types/routeConfigContribution.types.ts";
@@ -136,6 +143,22 @@ const propertyManagementRouteConfigContribution: RouteConfigContribution = {
                 if (action === "create") return <CreateInspectionChecklistTemplate />;
                 if (action === "edit" && id) return <EditInspectionChecklistTemplate entityId={id} entityName={name} />;
                 return <AllInspectionChecklistTemplates />;
+            }
+            if (resource === "adCampaigns") {
+                const id = searchParams.get("adCampaignId") || undefined;
+                const name = safeDecode(searchParams.get("adCampaignName")) || undefined;
+                if (action === "create") return <CreateAdCampaign />;
+                if (action === "edit" && id) return <EditAdCampaign entityId={id} entityName={name} />;
+                // Always campaign-scoped; without an id there is nothing to show.
+                if (action === "recipients") return <AdCampaignRecipients campaignId={id} campaignName={name} />;
+                return <AllAdCampaigns />;
+            }
+            if (resource === "adCampaignTemplates") {
+                const id = searchParams.get("adCampaignTemplateId") || undefined;
+                const name = safeDecode(searchParams.get("adCampaignTemplateName")) || undefined;
+                if (action === "create") return <CreateAdCampaignTemplate />;
+                if (action === "edit" && id) return <EditAdCampaignTemplate entityId={id} entityName={name} />;
+                return <AllAdCampaignTemplates />;
             }
             return undefined;
         }

@@ -1,0 +1,29 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/cardView/adCampaignCard.tsx",
+    "failedTitle": "Failed to load campaigns",
+    "failedDescription": "An error occurred while loading. Please try again.",
+    "failedTooltipDescription": "Click to retry fetching data.",
+    "fields": {
+        "campaignType": "Type",
+        "template": "Template",
+        "scheduledAt": "Scheduled for",
+        "progress": "Sent / total",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Price change",
+                "offer": "Offer",
+                "new_project": "New project"
+            },
+            "status": {
+                "draft": "Draft",
+                "materializing": "Building audience",
+                "scheduled": "Scheduled",
+                "sending": "Sending",
+                "paused": "Paused",
+                "completed": "Completed",
+                "cancelled": "Cancelled",
+                "failed": "Failed"
+            }
+        }
+    }
+}

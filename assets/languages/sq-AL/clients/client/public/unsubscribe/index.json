@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unsubscribe/index.tsx",
+  "doneTitle": "U çregjistruat",
+  "manageTitle": "Preferencat tuaja të emailit",
+  "doneIntro": {
+    "price_change": "Nuk do të merrni më email për ndryshimet e çmimeve nga {companyName}.",
+    "offer": "Nuk do të merrni më email për ofertat nga {companyName}.",
+    "new_project": "Nuk do të merrni më email për projektet e reja nga {companyName}.",
+    "all": "Nuk do të merrni më email marketingu nga {companyName}."
+  },
+  "manageIntro": "Zgjidhni cilat email dëshironi të merrni nga {companyName}.",
+  "togglesTitle": "Preferencat e emailit",
+  "toggles": {
+    "priceChange": "Ndryshime çmimi",
+    "priceChangeDescription": "Kur ndryshon çmimi i një njësie që ndiqni.",
+    "offers": "Oferta",
+    "offersDescription": "Oferta dhe promocione me kohë të kufizuar.",
+    "newProjects": "Projekte të reja",
+    "newProjectsDescription": "Zhvillime të reja sapo të njoftohen."
+  },
+  "unsubscribeAll": "Çregjistrohu nga të gjitha",
+  "saved": "U ruajt",
+  "allOffNote": "Jeni çregjistruar nga të gjitha emailet e marketingut. Rindizni një çelës për t'i marrë përsëri.",
+  "transactionalNote": "Do të vazhdoni të merrni emailet thelbësore për blerjen, rezervimin ose qiranë tuaj. Këto nuk janë marketing dhe nuk mund të çaktivizohen këtu.",
+  "errors": {
+    "title": "Diçka shkoi keq",
+    "invalidToken": "Kjo lidhje nuk është më e vlefshme. Mund të ketë skaduar ose të jetë përdorur tashmë. Ju lutemi përdorni lidhjen nga një email më i ri ose kontaktoni agjentin tuaj.",
+    "missingTokenTitle": "Asgjë për të shfaqur",
+    "missingToken": "Kjo faqe kërkon lidhjen nga emaili juaj. Ju lutemi hapeni nga emaili që keni marrë.",
+    "saveFailed": "Preferencat tuaja nuk mund të ruheshin. Ju lutemi provoni përsëri."
+  }
+}

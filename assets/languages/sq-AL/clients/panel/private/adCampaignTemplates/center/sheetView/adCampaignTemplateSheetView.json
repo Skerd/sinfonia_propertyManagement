@@ -1,0 +1,39 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx",
+    "adCampaignTemplate": "Model",
+    "overview": "Përmbledhje",
+    "body": "Trupi i e-mail-it",
+    "name": "Titulli",
+    "campaignType": "Lloji",
+    "locale": "Gjuha",
+    "subject": "Subjekti",
+    "previewText": "Teksti i pamjes paraprake",
+    "isDefault": "I parazgjedhur",
+    "active": "Statusi",
+    "bodyHtml": "Trupi i e-mail-it",
+    "campaignTypeEnum": {
+        "price_change": "Ndryshim çmimi",
+        "offer": "Ofertë",
+        "new_project": "Projekt i ri"
+    },
+    "localeEnum": {
+        "en-US": "Anglisht (US)",
+        "de-CH": "Gjermanisht (CH)",
+        "fr-FR": "Frëngjisht (FR)",
+        "it-IT": "Italisht (IT)",
+        "sq-AL": "Shqip (AL)"
+    },
+    "activeState": {
+        "true": "Po",
+        "false": "Jo"
+    },
+    "lifecycle": "Cikli i jetës",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga",
+    "failedTitle": "Ngarkimi i modeleve dështoi",
+    "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "failedTooltipDescription": "Kliko për të riprovuar."
+}

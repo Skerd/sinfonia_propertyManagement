@@ -1,0 +1,50 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
+    "title": "Fushata reklamuese",
+    "description": "Njofto klientët dhe lead-et për ndryshime çmimi, oferta dhe projekte të reja",
+    "createAdCampaign": "Fushatë e re",
+    "noData": "Nuk u gjetën fushata",
+    "failTitle": "Ngarkimi i fushatave dështoi",
+    "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "searchPlaceholder": "Kërko ose shto filtra...",
+    "fields": {
+        "name": "Referenca",
+        "title": "Titulli",
+        "campaignType": "Lloji",
+        "status": "Statusi",
+        "template": "Model",
+        "scheduledAt": "Planifikuar për",
+        "startedAt": "Filloi",
+        "completedAt": "Përfundoi",
+        "progress": "Dërguar / gjithsej",
+        "audienceMode": "Dërgo te",
+        "batchSize": "Madhësia e grupit",
+        "lastError": "Gabimi i fundit",
+        "createdAt": "Krijuar më",
+        "createdBy": "Krijuar nga",
+        "updatedAt": "Përditësuar më",
+        "deletedAt": "Fshirë më",
+        "deletedBy": "Fshirë nga",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Ndryshim çmimi",
+                "offer": "Ofertë",
+                "new_project": "Projekt i ri"
+            },
+            "status": {
+                "draft": "Draft",
+                "materializing": "Po ndërtohet audienca",
+                "scheduled": "E planifikuar",
+                "sending": "Po dërgohet",
+                "paused": "E pauzuar",
+                "completed": "E përfunduar",
+                "cancelled": "E anuluar",
+                "failed": "Dështoi"
+            },
+            "audienceMode": {
+                "selected": "Marrës të zgjedhur",
+                "all": "Të gjithë"
+            }
+        }
+    }
+}

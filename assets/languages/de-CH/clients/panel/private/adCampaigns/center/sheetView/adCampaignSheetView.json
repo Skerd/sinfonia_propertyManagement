@@ -1,0 +1,46 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
+    "adCampaign": "Kampagne",
+    "overview": "Übersicht",
+    "results": "Ergebnisse",
+    "name": "Referenz",
+    "title": "Titel",
+    "campaignType": "Typ",
+    "status": "Status",
+    "template": "Vorlage",
+    "scheduledAt": "Geplant für",
+    "startedAt": "Gestartet",
+    "completedAt": "Abgeschlossen",
+    "lastError": "Letzter Fehler",
+    "stats": {
+        "total": "Empfänger",
+        "sent": "Gesendet",
+        "pending": "Ausstehend",
+        "failed": "Fehlgeschlagen",
+        "skipped": "Übersprungen"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Preisänderung",
+        "offer": "Angebot",
+        "new_project": "Neues Projekt"
+    },
+    "statusEnum": {
+        "draft": "Entwurf",
+        "materializing": "Empfänger werden ermittelt",
+        "scheduled": "Geplant",
+        "sending": "Wird gesendet",
+        "paused": "Pausiert",
+        "completed": "Abgeschlossen",
+        "cancelled": "Abgebrochen",
+        "failed": "Fehlgeschlagen"
+    },
+    "lifecycle": "Lebenszyklus",
+    "createdAt": "Erstellt am",
+    "updatedAt": "Aktualisiert am",
+    "createdBy": "Erstellt von",
+    "deletedAt": "Gelöscht am",
+    "deletedBy": "Gelöscht von",
+    "failedTitle": "Kampagnen konnten nicht geladen werden",
+    "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "failedTooltipDescription": "Zum erneuten Laden klicken."
+}

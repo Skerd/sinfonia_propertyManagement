@@ -1,0 +1,38 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
+    "title": "Campaign templates",
+    "description": "Reusable email templates, one per campaign type and language",
+    "createAdCampaignTemplate": "New template",
+    "noData": "No templates found",
+    "failTitle": "Failed to load templates",
+    "failDescription": "An error occurred while loading. Please try again.",
+    "searchPlaceholder": "Search or add filters...",
+    "fields": {
+        "name": "Title",
+        "campaignType": "Type",
+        "locale": "Language",
+        "subject": "Subject",
+        "previewText": "Preview text",
+        "isDefault": "Default",
+        "active": "Status",
+        "createdAt": "Created at",
+        "createdBy": "Created by",
+        "updatedAt": "Updated at",
+        "deletedAt": "Deleted at",
+        "deletedBy": "Deleted by",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Price change",
+                "offer": "Offer",
+                "new_project": "New project"
+            },
+            "locale": {
+                "en-US": "English (US)",
+                "de-CH": "German (CH)",
+                "fr-FR": "French (FR)",
+                "it-IT": "Italian (IT)",
+                "sq-AL": "Albanian (AL)"
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/editAdCampaignTemplate.tsx",
+    "title": "Template — Save",
+    "generalInfo": "Details",
+    "content": "Content",
+    "form": {
+        "nameLabel": "Title",
+        "namePlaceholder": "Title",
+        "campaignTypeLabel": "Type",
+        "campaignTypePlaceholder": "Type",
+        "campaignType": {
+            "price_change": "Price change",
+            "offer": "Offer",
+            "new_project": "New project"
+        },
+        "localeLabel": "Language",
+        "localePlaceholder": "Language",
+        "locale": {
+            "en-US": "English (US)",
+            "de-CH": "German (CH)",
+            "fr-FR": "French (FR)",
+            "it-IT": "Italian (IT)",
+            "sq-AL": "Albanian (AL)"
+        },
+        "isDefaultLabel": "Default",
+        "activeLabel": "Status",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Subject",
+        "previewTextLabel": "Preview text",
+        "previewTextPlaceholder": "Preview text",
+        "bodyHtmlLabel": "Email body"
+    },
+    "axios": {
+        "start": {
+            "title": "Saving...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Saved",
+            "time": 3000
+        },
+        "error": {
+            "title": "Error",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Template — Save",
+        "description": "Change this template. Campaigns already sent are unaffected."
+    },
+    "formButtons": {
+        "cancel": "Cancel",
+        "submit": "Save"
+    }
+}

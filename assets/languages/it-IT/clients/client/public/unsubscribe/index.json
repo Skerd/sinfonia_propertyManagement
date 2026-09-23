@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unsubscribe/index.tsx",
+  "doneTitle": "Iscrizione annullata",
+  "manageTitle": "Le tue preferenze email",
+  "doneIntro": {
+    "price_change": "Non riceverai più email sulle variazioni di prezzo da {companyName}.",
+    "offer": "Non riceverai più email sulle offerte da {companyName}.",
+    "new_project": "Non riceverai più email sui nuovi progetti da {companyName}.",
+    "all": "Non riceverai più email di marketing da {companyName}."
+  },
+  "manageIntro": "Scegli quali email desideri ricevere da {companyName}.",
+  "togglesTitle": "Preferenze email",
+  "toggles": {
+    "priceChange": "Variazioni di prezzo",
+    "priceChangeDescription": "Quando cambia il prezzo di un'unità che segui.",
+    "offers": "Offerte",
+    "offersDescription": "Offerte e promozioni a tempo limitato.",
+    "newProjects": "Nuovi progetti",
+    "newProjectsDescription": "Nuovi sviluppi non appena vengono annunciati."
+  },
+  "unsubscribeAll": "Annulla tutte le iscrizioni",
+  "saved": "Salvato",
+  "allOffNote": "Hai annullato l'iscrizione a tutte le email di marketing. Riattiva un interruttore per ricominciare a riceverle.",
+  "transactionalNote": "Continuerai a ricevere le email essenziali relative al tuo acquisto, alla tua prenotazione o al tuo contratto di locazione. Non sono email di marketing e non possono essere disattivate qui.",
+  "errors": {
+    "title": "Qualcosa è andato storto",
+    "invalidToken": "Questo link non è più valido. Potrebbe essere scaduto o essere già stato utilizzato. Usa il link di un'email più recente o contatta il tuo consulente.",
+    "missingTokenTitle": "Niente da mostrare",
+    "missingToken": "Questa pagina richiede il link della tua email. Aprila dall'email che hai ricevuto.",
+    "saveFailed": "Non è stato possibile salvare le tue preferenze. Riprova."
+  }
+}

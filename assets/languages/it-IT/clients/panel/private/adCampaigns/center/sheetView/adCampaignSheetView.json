@@ -1,0 +1,46 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
+    "adCampaign": "Campagna",
+    "overview": "Panoramica",
+    "results": "Risultati",
+    "name": "Riferimento",
+    "title": "Titolo",
+    "campaignType": "Tipo",
+    "status": "Stato",
+    "template": "Modello",
+    "scheduledAt": "Programmata per",
+    "startedAt": "Avviata",
+    "completedAt": "Completata",
+    "lastError": "Ultimo errore",
+    "stats": {
+        "total": "Destinatari",
+        "sent": "Inviato",
+        "pending": "In attesa",
+        "failed": "Non riuscito",
+        "skipped": "Saltato"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Variazione di prezzo",
+        "offer": "Offerta",
+        "new_project": "Nuovo progetto"
+    },
+    "statusEnum": {
+        "draft": "Bozza",
+        "materializing": "Creazione destinatari",
+        "scheduled": "Programmata",
+        "sending": "Invio in corso",
+        "paused": "In pausa",
+        "completed": "Completata",
+        "cancelled": "Annullata",
+        "failed": "Non riuscita"
+    },
+    "lifecycle": "Ciclo di vita",
+    "createdAt": "Creato il",
+    "updatedAt": "Aggiornato il",
+    "createdBy": "Creato da",
+    "deletedAt": "Eliminato il",
+    "deletedBy": "Eliminato da",
+    "failedTitle": "Impossibile caricare le campagne",
+    "failedDescription": "Si è verificato un errore durante il caricamento. Riprova.",
+    "failedTooltipDescription": "Clicca per riprovare."
+}

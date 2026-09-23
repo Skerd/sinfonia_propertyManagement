@@ -1,0 +1,71 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/editAdCampaign.tsx",
+    "title": "Campaign — Save",
+    "generalInfo": "Details",
+    "audience": "Audience",
+    "scope": "Scope",
+    "contentOverrides": "Content overrides",
+    "delivery": "Delivery",
+    "form": {
+        "titleLabel": "Title",
+        "titlePlaceholder": "Title",
+        "campaignTypeLabel": "Type",
+        "campaignTypePlaceholder": "Type",
+        "campaignType": {
+            "price_change": "Price change",
+            "offer": "Offer",
+            "new_project": "New project"
+        },
+        "templateLabel": "Template",
+        "templatePlaceholder": "Template",
+        "scheduledAtLabel": "Scheduled for",
+        "scheduledAtPlaceholder": "Scheduled for",
+        "audienceModeLabel": "Send to",
+        "audienceModePlaceholder": "Send to",
+        "audienceMode": {
+            "selected": "Selected recipients",
+            "all": "Everyone"
+        },
+        "recipientsLabel": "Recipients",
+        "selectRecipients": "Recipients",
+        "leadRecipientsLabel": "Leads",
+        "selectLeadRecipients": "Leads",
+        "projectsLabel": "Projects",
+        "selectProjects": "Projects",
+        "unitsLabel": "Units",
+        "selectUnits": "Units",
+        "removeItem": "Cancel",
+        "includeClientUsersLabel": "Include client users",
+        "includeLeadsLabel": "Include leads",
+        "subjectOverrideLabel": "Subject",
+        "subjectOverridePlaceholder": "Subject",
+        "bodyHtmlOverrideLabel": "Email body",
+        "batchSizeLabel": "Batch size",
+        "fromNameLabel": "From name",
+        "fromNamePlaceholder": "From name",
+        "replyToLabel": "Reply-to",
+        "replyToPlaceholder": "Reply-to"
+    },
+    "axios": {
+        "start": {
+            "title": "Saving...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Saved",
+            "time": 3000
+        },
+        "error": {
+            "title": "Error",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Campaign — Save",
+        "description": "Change this campaign. Content and audience are locked once it starts sending."
+    },
+    "formButtons": {
+        "cancel": "Cancel",
+        "submit": "Save"
+    }
+}

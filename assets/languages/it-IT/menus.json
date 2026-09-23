@@ -102,6 +102,12 @@
     },
     "constructionProgress": {
       "title": "Avanzamento lavori"
+    },
+    "adCampaigns": {
+      "title": "Campagne pubblicitarie"
+    },
+    "adCampaignTemplates": {
+      "title": "Modelli di campagna"
     }
   },
   "reports": {

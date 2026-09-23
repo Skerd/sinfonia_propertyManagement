@@ -1,0 +1,32 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/cardView/adCampaignRecipientCard.tsx",
+    "failedTitle": "Échec du chargement des destinataires",
+    "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "failedTooltipDescription": "Cliquez pour réessayer.",
+    "fields": {
+        "audienceKind": "Type",
+        "skipReason": "Motif",
+        "attempts": "Tentatives",
+        "sentAt": "Envoyé le",
+        "!enums": {
+            "status": {
+                "pending": "En attente",
+                "queued": "En file",
+                "sent": "Envoyé",
+                "failed": "Échec",
+                "skipped": "Ignoré",
+                "suppressed": "Désinscrit"
+            },
+            "skipReason": {
+                "opted_out": "Désinscrit",
+                "no_email": "Pas d'adresse e-mail",
+                "inactive": "Inactif",
+                "duplicate": "Doublon"
+            },
+            "audienceKind": {
+                "user": "Client",
+                "lead": "Prospect"
+            }
+        }
+    }
+}

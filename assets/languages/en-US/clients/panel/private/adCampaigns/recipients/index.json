@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/index.tsx",
+    "title": "Campaign recipients",
+    "description": "Per-recipient delivery results for this campaign",
+    "noData": "No recipients found",
+    "failTitle": "Failed to load recipients",
+    "failDescription": "An error occurred while loading. Please try again.",
+    "searchPlaceholder": "Search or add filters...",
+    "fields": {
+        "email": "Email address",
+        "fullName": "Name",
+        "status": "Status",
+        "skipReason": "Reason",
+        "audienceKind": "Kind",
+        "campaignType": "Type",
+        "attempts": "Attempts",
+        "sentAt": "Sent at",
+        "messageId": "Message id",
+        "languageCode": "Language",
+        "unsubscribedAt": "Unsubscribed at",
+        "lastError": "Last error",
+        "campaign": "Campaign",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at",
+        "!enums": {
+            "status": {
+                "pending": "Pending",
+                "queued": "Queued",
+                "sent": "Sent",
+                "failed": "Failed",
+                "skipped": "Skipped",
+                "suppressed": "Opted out"
+            },
+            "skipReason": {
+                "opted_out": "Opted out",
+                "no_email": "No email address",
+                "inactive": "Inactive",
+                "duplicate": "Duplicate"
+            },
+            "audienceKind": {
+                "user": "Client",
+                "lead": "Lead"
+            },
+            "campaignType": {
+                "price_change": "Price change",
+                "offer": "Offer",
+                "new_project": "New project"
+            }
+        }
+    }
+}

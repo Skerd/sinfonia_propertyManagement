@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/index.tsx",
+    "title": "Marrësit e fushatës",
+    "description": "Rezultatet e dërgesës për çdo marrës të kësaj fushate",
+    "noData": "Nuk u gjetën marrës",
+    "failTitle": "Ngarkimi i marrësve dështoi",
+    "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "searchPlaceholder": "Kërko ose shto filtra...",
+    "fields": {
+        "email": "Adresa e e-mail-it",
+        "fullName": "Emri",
+        "status": "Statusi",
+        "skipReason": "Arsyeja",
+        "audienceKind": "Lloji",
+        "campaignType": "Lloji",
+        "attempts": "Përpjekje",
+        "sentAt": "Dërguar më",
+        "messageId": "Id e mesazhit",
+        "languageCode": "Gjuha",
+        "unsubscribedAt": "Çregjistruar më",
+        "lastError": "Gabimi i fundit",
+        "campaign": "Fushatë",
+        "createdAt": "Krijuar më",
+        "updatedAt": "Përditësuar më",
+        "!enums": {
+            "status": {
+                "pending": "Në pritje",
+                "queued": "Në radhë",
+                "sent": "Dërguar",
+                "failed": "Dështoi",
+                "skipped": "Anashkaluar",
+                "suppressed": "Çregjistruar"
+            },
+            "skipReason": {
+                "opted_out": "Çregjistruar",
+                "no_email": "Pa adresë e-mail",
+                "inactive": "Joaktiv",
+                "duplicate": "Dublikatë"
+            },
+            "audienceKind": {
+                "user": "Klient",
+                "lead": "Lead"
+            },
+            "campaignType": {
+                "price_change": "Ndryshim çmimi",
+                "offer": "Ofertë",
+                "new_project": "Projekt i ri"
+            }
+        }
+    }
+}

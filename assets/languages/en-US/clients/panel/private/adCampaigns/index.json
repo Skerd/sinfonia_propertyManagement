@@ -1,0 +1,50 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
+    "title": "Ad campaigns",
+    "description": "Email clients and leads about price changes, offers and new projects",
+    "createAdCampaign": "New campaign",
+    "noData": "No campaigns found",
+    "failTitle": "Failed to load campaigns",
+    "failDescription": "An error occurred while loading. Please try again.",
+    "searchPlaceholder": "Search or add filters...",
+    "fields": {
+        "name": "Reference",
+        "title": "Title",
+        "campaignType": "Type",
+        "status": "Status",
+        "template": "Template",
+        "scheduledAt": "Scheduled for",
+        "startedAt": "Started",
+        "completedAt": "Completed",
+        "progress": "Sent / total",
+        "audienceMode": "Send to",
+        "batchSize": "Batch size",
+        "lastError": "Last error",
+        "createdAt": "Created at",
+        "createdBy": "Created by",
+        "updatedAt": "Updated at",
+        "deletedAt": "Deleted at",
+        "deletedBy": "Deleted by",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Price change",
+                "offer": "Offer",
+                "new_project": "New project"
+            },
+            "status": {
+                "draft": "Draft",
+                "materializing": "Building audience",
+                "scheduled": "Scheduled",
+                "sending": "Sending",
+                "paused": "Paused",
+                "completed": "Completed",
+                "cancelled": "Cancelled",
+                "failed": "Failed"
+            },
+            "audienceMode": {
+                "selected": "Selected recipients",
+                "all": "Everyone"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "previewSubject": "Objet",
+    "previewNoSubject": "Pas encore d'objet",
+    "previewUpdating": "Mise à jour…",
+    "previewDesktop": "Largeur bureau",
+    "previewMobile": "Largeur mobile",
+    "previewUnresolved": "Aucune valeur d'exemple pour :",
+    "previewFailed": "L'aperçu n'a pas pu être généré.",
+    "previewFrameTitle": "Aperçu de l'e-mail"
+}

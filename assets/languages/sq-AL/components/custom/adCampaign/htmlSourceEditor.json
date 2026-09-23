@@ -1,0 +1,37 @@
+{
+    "hidePreview": "Fshih pamjen paraprake",
+    "showPreview": "Shfaq pamjen paraprake",
+    "palette": "Fut një vendmbajtës",
+    "bodyPlaceholder": "Shkruani trupin e e-mail-it si HTML. Butonat më sipër fusin blloqe të gatshme.",
+    "inheritHint": "Lëreni bosh për të përdorur të pandryshuar trupin e modelit të zgjedhur.",
+    "snippets": {
+        "paragraph": "Paragraf",
+        "heading": "Titull",
+        "button": "Buton",
+        "row": "Rresht tabele",
+        "list": "Listë",
+        "divider": "Ndarës",
+        "image": "Imazh"
+    },
+    "tokens": {
+        "firstName": "Emri i marrësit",
+        "lastName": "Mbiemri i marrësit",
+        "fullName": "Emri i plotë i marrësit",
+        "email": "Adresa e e-mail-it të marrësit",
+        "companyName": "Emri i kompanisë suaj",
+        "campaignTitle": "Titulli i kësaj fushate",
+        "projectName": "Projekti përkatës",
+        "projectNames": "Të gjitha projektet përkatëse, ndarë me presje",
+        "unitList": "Njësitë e marrësit, ndarë me presje",
+        "unitNumber": "Një numër i vetëm njësie",
+        "oldPrice": "Çmimi para ndryshimit",
+        "newPrice": "Çmimi pas ndryshimit",
+        "priceChangePercent": "Ndryshimi në përqindje",
+        "offerTitle": "Titulli i ofertës",
+        "offerEndsAt": "Kur mbaron oferta",
+        "ctaUrl": "Lidhja e butonit të veprimit",
+        "unsubscribeUrl": "Lidhje çregjistrimi me një klik",
+        "preferencesUrl": "Lidhje te faqja e preferencave",
+        "year": "Viti aktual"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
+    "title": "Modelet e fushatave",
+    "description": "Modele e-mail të ripërdorshme, një për çdo lloj fushate dhe gjuhë",
+    "createAdCampaignTemplate": "Model i ri",
+    "noData": "Nuk u gjetën modele",
+    "failTitle": "Ngarkimi i modeleve dështoi",
+    "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "searchPlaceholder": "Kërko ose shto filtra...",
+    "fields": {
+        "name": "Titulli",
+        "campaignType": "Lloji",
+        "locale": "Gjuha",
+        "subject": "Subjekti",
+        "previewText": "Teksti i pamjes paraprake",
+        "isDefault": "I parazgjedhur",
+        "active": "Statusi",
+        "createdAt": "Krijuar më",
+        "createdBy": "Krijuar nga",
+        "updatedAt": "Përditësuar më",
+        "deletedAt": "Fshirë më",
+        "deletedBy": "Fshirë nga",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Ndryshim çmimi",
+                "offer": "Ofertë",
+                "new_project": "Projekt i ri"
+            },
+            "locale": {
+                "en-US": "Anglisht (US)",
+                "de-CH": "Gjermanisht (CH)",
+                "fr-FR": "Frëngjisht (FR)",
+                "it-IT": "Italisht (IT)",
+                "sq-AL": "Shqip (AL)"
+            }
+        }
+    }
+}

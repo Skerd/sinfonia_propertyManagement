@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unsubscribe/index.tsx",
+  "doneTitle": "Vous êtes désabonné",
+  "manageTitle": "Vos préférences d'e-mail",
+  "doneIntro": {
+    "price_change": "Vous ne recevrez plus d'e-mails concernant les changements de prix de {companyName}.",
+    "offer": "Vous ne recevrez plus d'e-mails concernant les offres de {companyName}.",
+    "new_project": "Vous ne recevrez plus d'e-mails concernant les nouveaux projets de {companyName}.",
+    "all": "Vous ne recevrez plus d'e-mails marketing de {companyName}."
+  },
+  "manageIntro": "Choisissez les e-mails que vous souhaitez recevoir de {companyName}.",
+  "togglesTitle": "Préférences d'e-mail",
+  "toggles": {
+    "priceChange": "Changements de prix",
+    "priceChangeDescription": "Lorsque le prix d'un lot que vous suivez change.",
+    "offers": "Offres",
+    "offersDescription": "Offres et promotions à durée limitée.",
+    "newProjects": "Nouveaux projets",
+    "newProjectsDescription": "Les nouveaux développements dès leur annonce."
+  },
+  "unsubscribeAll": "Se désabonner de tout",
+  "saved": "Enregistré",
+  "allOffNote": "Vous êtes désabonné de tous les e-mails marketing. Réactivez un commutateur pour les recevoir à nouveau.",
+  "transactionalNote": "Vous continuerez à recevoir les e-mails essentiels concernant votre achat, votre réservation ou votre bail. Ce ne sont pas des e-mails marketing et ils ne peuvent pas être désactivés ici.",
+  "errors": {
+    "title": "Une erreur s'est produite",
+    "invalidToken": "Ce lien n'est plus valide. Il a peut-être expiré ou déjà été utilisé. Veuillez utiliser le lien d'un e-mail plus récent ou contacter votre conseiller.",
+    "missingTokenTitle": "Rien à afficher",
+    "missingToken": "Cette page nécessite le lien de votre e-mail. Veuillez l'ouvrir depuis l'e-mail que vous avez reçu.",
+    "saveFailed": "Vos préférences n'ont pas pu être enregistrées. Veuillez réessayer."
+  }
+}

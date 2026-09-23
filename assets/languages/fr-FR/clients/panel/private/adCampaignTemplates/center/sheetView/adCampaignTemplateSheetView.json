@@ -1,0 +1,39 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx",
+    "adCampaignTemplate": "Modèle",
+    "overview": "Aperçu",
+    "body": "Corps de l'e-mail",
+    "name": "Titre",
+    "campaignType": "Type",
+    "locale": "Langue",
+    "subject": "Objet",
+    "previewText": "Texte d'aperçu",
+    "isDefault": "Par défaut",
+    "active": "Statut",
+    "bodyHtml": "Corps de l'e-mail",
+    "campaignTypeEnum": {
+        "price_change": "Changement de prix",
+        "offer": "Offre",
+        "new_project": "Nouveau projet"
+    },
+    "localeEnum": {
+        "en-US": "Anglais (US)",
+        "de-CH": "Allemand (CH)",
+        "fr-FR": "Français (FR)",
+        "it-IT": "Italien (IT)",
+        "sq-AL": "Albanais (AL)"
+    },
+    "activeState": {
+        "true": "Oui",
+        "false": "Non"
+    },
+    "lifecycle": "Cycle de vie",
+    "createdAt": "Créé le",
+    "updatedAt": "Mis à jour le",
+    "createdBy": "Créé par",
+    "deletedAt": "Supprimé le",
+    "deletedBy": "Supprimé par",
+    "failedTitle": "Échec du chargement des modèles",
+    "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
+    "failedTooltipDescription": "Cliquez pour réessayer."
+}

@@ -23,6 +23,7 @@ const TermsPage = lazy(() => import("@propertyManagementModule/clients/client/pu
 const PropertyPage = lazy(() => import("@propertyManagementModule/clients/client/public/property/index.tsx"));
 const ProjectPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/gallery/index.tsx"));
 const OpenProjectFigmaPage = lazy(() => import("@propertyManagementModule/clients/client/public/openProjectFigma/index.tsx"));
+const UnsubscribePage = lazy(() => import("@propertyManagementModule/clients/client/public/unsubscribe/index.tsx"));
 
 function ToasterContainer() {
     const isMobile = useIsMobile();
@@ -62,6 +63,7 @@ function PublicApp() {
                                     <Route path="project" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
                                     <Route path="open-project" element={<ErrorBoundary><OpenProjectFigmaPage /></ErrorBoundary>} />
                                     <Route path="open-project/:view" element={<ErrorBoundary><OpenProjectFigmaPage /></ErrorBoundary>} />
+                                    <Route path="unsubscribe" element={<ErrorBoundary><UnsubscribePage /></ErrorBoundary>} />
                                 </Route>
                             </Routes>
                         </Suspense>

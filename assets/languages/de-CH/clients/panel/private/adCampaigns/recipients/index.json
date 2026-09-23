@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/index.tsx",
+    "title": "Kampagnenempfänger",
+    "description": "Zustellergebnisse pro Empfänger für diese Kampagne",
+    "noData": "Keine Empfänger gefunden",
+    "failTitle": "Empfänger konnten nicht geladen werden",
+    "failDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+    "searchPlaceholder": "Suchen oder Filter hinzufügen...",
+    "fields": {
+        "email": "E-Mail-Adresse",
+        "fullName": "Name",
+        "status": "Status",
+        "skipReason": "Grund",
+        "audienceKind": "Art",
+        "campaignType": "Typ",
+        "attempts": "Versuche",
+        "sentAt": "Gesendet am",
+        "messageId": "Nachrichten-ID",
+        "languageCode": "Sprache",
+        "unsubscribedAt": "Abgemeldet am",
+        "lastError": "Letzter Fehler",
+        "campaign": "Kampagne",
+        "createdAt": "Erstellt am",
+        "updatedAt": "Aktualisiert am",
+        "!enums": {
+            "status": {
+                "pending": "Ausstehend",
+                "queued": "In Warteschlange",
+                "sent": "Gesendet",
+                "failed": "Fehlgeschlagen",
+                "skipped": "Übersprungen",
+                "suppressed": "Abgemeldet"
+            },
+            "skipReason": {
+                "opted_out": "Abgemeldet",
+                "no_email": "Keine E-Mail-Adresse",
+                "inactive": "Inaktiv",
+                "duplicate": "Duplikat"
+            },
+            "audienceKind": {
+                "user": "Kunde",
+                "lead": "Lead"
+            },
+            "campaignType": {
+                "price_change": "Preisänderung",
+                "offer": "Angebot",
+                "new_project": "Neues Projekt"
+            }
+        }
+    }
+}

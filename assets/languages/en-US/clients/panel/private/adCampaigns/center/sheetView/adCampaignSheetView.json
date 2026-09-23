@@ -1,0 +1,46 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
+    "adCampaign": "Campaign",
+    "overview": "Overview",
+    "results": "Results",
+    "name": "Reference",
+    "title": "Title",
+    "campaignType": "Type",
+    "status": "Status",
+    "template": "Template",
+    "scheduledAt": "Scheduled for",
+    "startedAt": "Started",
+    "completedAt": "Completed",
+    "lastError": "Last error",
+    "stats": {
+        "total": "Recipients",
+        "sent": "Sent",
+        "pending": "Pending",
+        "failed": "Failed",
+        "skipped": "Skipped"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Price change",
+        "offer": "Offer",
+        "new_project": "New project"
+    },
+    "statusEnum": {
+        "draft": "Draft",
+        "materializing": "Building audience",
+        "scheduled": "Scheduled",
+        "sending": "Sending",
+        "paused": "Paused",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "failed": "Failed"
+    },
+    "lifecycle": "Lifecycle",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by",
+    "failedTitle": "Failed to load campaigns",
+    "failedDescription": "An error occurred while loading. Please try again.",
+    "failedTooltipDescription": "Click to retry fetching data."
+}

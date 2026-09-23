@@ -1,0 +1,46 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
+    "adCampaign": "Fushatë",
+    "overview": "Përmbledhje",
+    "results": "Rezultatet",
+    "name": "Referenca",
+    "title": "Titulli",
+    "campaignType": "Lloji",
+    "status": "Statusi",
+    "template": "Model",
+    "scheduledAt": "Planifikuar për",
+    "startedAt": "Filloi",
+    "completedAt": "Përfundoi",
+    "lastError": "Gabimi i fundit",
+    "stats": {
+        "total": "Marrësit",
+        "sent": "Dërguar",
+        "pending": "Në pritje",
+        "failed": "Dështoi",
+        "skipped": "Anashkaluar"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Ndryshim çmimi",
+        "offer": "Ofertë",
+        "new_project": "Projekt i ri"
+    },
+    "statusEnum": {
+        "draft": "Draft",
+        "materializing": "Po ndërtohet audienca",
+        "scheduled": "E planifikuar",
+        "sending": "Po dërgohet",
+        "paused": "E pauzuar",
+        "completed": "E përfunduar",
+        "cancelled": "E anuluar",
+        "failed": "Dështoi"
+    },
+    "lifecycle": "Cikli i jetës",
+    "createdAt": "Krijuar më",
+    "updatedAt": "Përditësuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë më",
+    "deletedBy": "Fshirë nga",
+    "failedTitle": "Ngarkimi i fushatave dështoi",
+    "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
+    "failedTooltipDescription": "Kliko për të riprovuar."
+}

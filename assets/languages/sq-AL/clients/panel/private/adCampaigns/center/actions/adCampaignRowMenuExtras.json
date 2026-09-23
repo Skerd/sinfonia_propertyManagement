@@ -1,0 +1,9 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx",
+    "viewRecipients": "Shiko marrësit",
+    "sendNow": "Dërgo tani",
+    "resend": "Vazhdo dërgimin",
+    "pause": "Pauzo",
+    "resume": "Vazhdo",
+    "cancelCampaign": "Anulo fushatën"
+}

@@ -1,0 +1,37 @@
+{
+    "hidePreview": "Masquer l'aperçu",
+    "showPreview": "Afficher l'aperçu",
+    "palette": "Insérer un espace réservé",
+    "bodyPlaceholder": "Rédigez le corps de l'e-mail en HTML. Les boutons ci-dessus insèrent des blocs prêts à l'emploi.",
+    "inheritHint": "Laissez vide pour utiliser tel quel le corps du modèle sélectionné.",
+    "snippets": {
+        "paragraph": "Paragraphe",
+        "heading": "Titre",
+        "button": "Bouton",
+        "row": "Ligne de tableau",
+        "list": "Liste",
+        "divider": "Séparateur",
+        "image": "Image"
+    },
+    "tokens": {
+        "firstName": "Prénom du destinataire",
+        "lastName": "Nom du destinataire",
+        "fullName": "Nom complet du destinataire",
+        "email": "Adresse e-mail du destinataire",
+        "companyName": "Nom de votre société",
+        "campaignTitle": "Titre de cette campagne",
+        "projectName": "Le projet concerné",
+        "projectNames": "Tous les projets concernés, séparés par des virgules",
+        "unitList": "Les lots du destinataire, séparés par des virgules",
+        "unitNumber": "Un numéro de lot",
+        "oldPrice": "Prix avant le changement",
+        "newPrice": "Prix après le changement",
+        "priceChangePercent": "Variation en pourcentage",
+        "offerTitle": "Titre de l'offre",
+        "offerEndsAt": "Fin de l'offre",
+        "ctaUrl": "Lien du bouton d'action",
+        "unsubscribeUrl": "Lien de désinscription en un clic",
+        "preferencesUrl": "Lien vers la page des préférences",
+        "year": "L'année en cours"
+    }
+}

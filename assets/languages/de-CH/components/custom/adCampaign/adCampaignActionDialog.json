@@ -1,0 +1,44 @@
+{
+    "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
+    "titles": {
+        "sendNow": "Kampagne senden",
+        "pause": "Kampagne pausieren",
+        "resume": "Kampagne fortsetzen",
+        "cancel": "Kampagne abbrechen"
+    },
+    "descriptions": {
+        "sendNow": "Die E-Mails gehen ab dem nächsten Versandlauf stapelweise raus. Einmal versendet, lässt sich das nicht rückgängig machen.",
+        "pause": "Der Versand stoppt zwischen zwei Stapeln. Bereits angeschriebene Empfänger sind nicht betroffen.",
+        "resume": "Der Versand läuft dort weiter, wo er gestoppt wurde. Niemand erhält die E-Mail zweimal.",
+        "cancel": "Die Kampagne wird endgültig gestoppt, es werden keine weiteren E-Mails versendet. Bereits zugestellte Nachrichten bleiben zugestellt."
+    },
+    "submit": {
+        "sendNow": "Jetzt senden",
+        "pause": "Pausieren",
+        "resume": "Fortsetzen",
+        "cancel": "Kampagne abbrechen"
+    },
+    "audience": {
+        "resolving": "Empfängerkreis wird ermittelt…",
+        "failed": "Der Empfängerkreis konnte nicht ermittelt werden.",
+        "willReceive": "Erhalten diese E-Mail",
+        "suppressed": "Abgemeldet, werden übersprungen",
+        "total": "Total ermittelt",
+        "empty": "Niemand würde diese Kampagne erhalten. Prüfen Sie den Empfängerkreis vor dem Senden."
+    },
+    "cancel": "Abbrechen",
+    "axios": {
+        "start": {
+            "title": "Wird gespeichert...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Gespeichert",
+            "time": 3000
+        },
+        "error": {
+            "title": "Fehler",
+            "time": 3000
+        }
+    }
+}

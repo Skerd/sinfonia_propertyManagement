@@ -1,0 +1,32 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/unsubscribe/index.tsx",
+  "doneTitle": "You're unsubscribed",
+  "manageTitle": "Your email preferences",
+  "doneIntro": {
+    "price_change": "You will no longer receive emails about price changes from {companyName}.",
+    "offer": "You will no longer receive emails about offers from {companyName}.",
+    "new_project": "You will no longer receive emails about new projects from {companyName}.",
+    "all": "You will no longer receive marketing emails from {companyName}."
+  },
+  "manageIntro": "Choose which emails you'd like to receive from {companyName}.",
+  "togglesTitle": "Email preferences",
+  "toggles": {
+    "priceChange": "Price changes",
+    "priceChangeDescription": "When the price of a unit you follow changes.",
+    "offers": "Offers",
+    "offersDescription": "Limited-period offers and promotions.",
+    "newProjects": "New projects",
+    "newProjectsDescription": "New developments as they are announced."
+  },
+  "unsubscribeAll": "Unsubscribe from all",
+  "saved": "Saved",
+  "allOffNote": "You are unsubscribed from all marketing emails. Turn any switch back on to start receiving them again.",
+  "transactionalNote": "You will still receive essential emails about your purchase, reservation or lease. These are not marketing and cannot be turned off here.",
+  "errors": {
+    "title": "Something went wrong",
+    "invalidToken": "This link is no longer valid. It may have expired, or it may already have been used. Please use the link in a more recent email, or contact your agent.",
+    "missingTokenTitle": "Nothing to show",
+    "missingToken": "This page needs the link from your email. Please open it from the email you received.",
+    "saveFailed": "Your preferences could not be saved. Please try again."
+  }
+}

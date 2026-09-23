@@ -1,0 +1,10 @@
+{
+    "previewSubject": "Subject",
+    "previewNoSubject": "No subject yet",
+    "previewUpdating": "Updating…",
+    "previewDesktop": "Desktop width",
+    "previewMobile": "Mobile width",
+    "previewUnresolved": "No sample value for:",
+    "previewFailed": "The preview could not be rendered.",
+    "previewFrameTitle": "Email preview"
+}

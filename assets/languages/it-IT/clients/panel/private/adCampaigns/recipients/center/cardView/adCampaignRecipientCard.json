@@ -1,0 +1,32 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/cardView/adCampaignRecipientCard.tsx",
+    "failedTitle": "Impossibile caricare i destinatari",
+    "failedDescription": "Si è verificato un errore durante il caricamento. Riprova.",
+    "failedTooltipDescription": "Clicca per riprovare.",
+    "fields": {
+        "audienceKind": "Tipo",
+        "skipReason": "Motivo",
+        "attempts": "Tentativi",
+        "sentAt": "Inviato il",
+        "!enums": {
+            "status": {
+                "pending": "In attesa",
+                "queued": "In coda",
+                "sent": "Inviato",
+                "failed": "Non riuscito",
+                "skipped": "Saltato",
+                "suppressed": "Disiscritto"
+            },
+            "skipReason": {
+                "opted_out": "Disiscritto",
+                "no_email": "Nessun indirizzo e-mail",
+                "inactive": "Inattivo",
+                "duplicate": "Duplicato"
+            },
+            "audienceKind": {
+                "user": "Cliente",
+                "lead": "Lead"
+            }
+        }
+    }
+}

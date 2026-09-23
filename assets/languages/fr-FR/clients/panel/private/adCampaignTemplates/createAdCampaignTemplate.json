@@ -1,0 +1,55 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/createAdCampaignTemplate.tsx",
+    "title": "Nouveau modèle",
+    "generalInfo": "Détails",
+    "content": "Contenu",
+    "form": {
+        "nameLabel": "Titre",
+        "namePlaceholder": "Titre",
+        "campaignTypeLabel": "Type",
+        "campaignTypePlaceholder": "Type",
+        "campaignType": {
+            "price_change": "Changement de prix",
+            "offer": "Offre",
+            "new_project": "Nouveau projet"
+        },
+        "localeLabel": "Langue",
+        "localePlaceholder": "Langue",
+        "locale": {
+            "en-US": "Anglais (US)",
+            "de-CH": "Allemand (CH)",
+            "fr-FR": "Français (FR)",
+            "it-IT": "Italien (IT)",
+            "sq-AL": "Albanais (AL)"
+        },
+        "isDefaultLabel": "Par défaut",
+        "activeLabel": "Statut",
+        "subjectLabel": "Objet",
+        "subjectPlaceholder": "Objet",
+        "previewTextLabel": "Texte d'aperçu",
+        "previewTextPlaceholder": "Texte d'aperçu",
+        "bodyHtmlLabel": "Corps de l'e-mail"
+    },
+    "axios": {
+        "start": {
+            "title": "Enregistrement...",
+            "time": 3000
+        },
+        "success": {
+            "title": "Enregistré",
+            "time": 3000
+        },
+        "error": {
+            "title": "Erreur",
+            "time": 3000
+        }
+    },
+    "formHeader": {
+        "title": "Nouveau modèle",
+        "description": "Rédigez l'e-mail une fois ; les campagnes de ce type et de cette langue le réutilisent."
+    },
+    "formButtons": {
+        "cancel": "Annuler",
+        "submit": "Enregistrer"
+    }
+}

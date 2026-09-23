@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/accountSettings/marketingPreferences.tsx",
+  "title": "Immobilien-E-Mails",
+  "description": "Marketing-E-Mails zu Immobilien. Das Deaktivieren betrifft nicht E-Mails zu Ihrem eigenen Kauf, Ihrer Reservierung oder Ihrem Mietvertrag.",
+  "loading": "Ihre Einstellungen werden geladen…",
+  "loadFailed": "Ihre Einstellungen konnten nicht geladen werden.",
+  "saved": "Einstellungen gespeichert",
+  "saveFailed": "Ihre Einstellungen konnten nicht gespeichert werden.",
+  "unsubscribeAll": "Alle deaktivieren",
+  "transactionalNote": "Wichtige E-Mails zu Ihrem Kauf, Ihrer Reservierung oder Ihrem Mietvertrag erhalten Sie weiterhin.",
+  "toggles": {
+    "priceChange": "Preisänderungen",
+    "priceChangeDescription": "Wenn sich der Preis einer Einheit ändert, die Sie verfolgen.",
+    "offers": "Angebote",
+    "offersDescription": "Zeitlich begrenzte Angebote und Aktionen.",
+    "newProjects": "Neue Projekte",
+    "newProjectsDescription": "Neue Entwicklungen, sobald sie angekündigt werden."
+  }
+}

@@ -1,0 +1,50 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
+    "title": "Campagne pubblicitarie",
+    "description": "Informa clienti e lead su variazioni di prezzo, offerte e nuovi progetti",
+    "createAdCampaign": "Nuova campagna",
+    "noData": "Nessuna campagna trovata",
+    "failTitle": "Impossibile caricare le campagne",
+    "failDescription": "Si è verificato un errore durante il caricamento. Riprova.",
+    "searchPlaceholder": "Cerca o aggiungi filtri...",
+    "fields": {
+        "name": "Riferimento",
+        "title": "Titolo",
+        "campaignType": "Tipo",
+        "status": "Stato",
+        "template": "Modello",
+        "scheduledAt": "Programmata per",
+        "startedAt": "Avviata",
+        "completedAt": "Completata",
+        "progress": "Inviati / totale",
+        "audienceMode": "Invia a",
+        "batchSize": "Dimensione lotto",
+        "lastError": "Ultimo errore",
+        "createdAt": "Creato il",
+        "createdBy": "Creato da",
+        "updatedAt": "Aggiornato il",
+        "deletedAt": "Eliminato il",
+        "deletedBy": "Eliminato da",
+        "!enums": {
+            "campaignType": {
+                "price_change": "Variazione di prezzo",
+                "offer": "Offerta",
+                "new_project": "Nuovo progetto"
+            },
+            "status": {
+                "draft": "Bozza",
+                "materializing": "Creazione destinatari",
+                "scheduled": "Programmata",
+                "sending": "Invio in corso",
+                "paused": "In pausa",
+                "completed": "Completata",
+                "cancelled": "Annullata",
+                "failed": "Non riuscita"
+            },
+            "audienceMode": {
+                "selected": "Destinatari selezionati",
+                "all": "Tutti"
+            }
+        }
+    }
+}

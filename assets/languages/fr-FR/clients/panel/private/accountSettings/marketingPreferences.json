@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/panel/private/accountSettings/marketingPreferences.tsx",
+  "title": "E-mails immobiliers",
+  "description": "E-mails marketing concernant les biens. Les désactiver n'affecte pas les e-mails relatifs à votre propre achat, réservation ou bail.",
+  "loading": "Chargement de vos préférences…",
+  "loadFailed": "Vos préférences n'ont pas pu être chargées.",
+  "saved": "Préférences enregistrées",
+  "saveFailed": "Vos préférences n'ont pas pu être enregistrées.",
+  "unsubscribeAll": "Tout désactiver",
+  "transactionalNote": "Vous continuerez à recevoir les e-mails essentiels concernant votre achat, votre réservation ou votre bail.",
+  "toggles": {
+    "priceChange": "Changements de prix",
+    "priceChangeDescription": "Lorsque le prix d'un lot que vous suivez change.",
+    "offers": "Offres",
+    "offersDescription": "Offres et promotions à durée limitée.",
+    "newProjects": "Nouveaux projets",
+    "newProjectsDescription": "Les nouveaux développements dès leur annonce."
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx",
+    "adCampaignRecipient": "Recipient",
+    "overview": "Overview",
+    "delivery": "Delivery",
+    "email": "Email address",
+    "fullName": "Name",
+    "audienceKind": "Kind",
+    "campaignType": "Type",
+    "languageCode": "Language",
+    "campaign": "Campaign",
+    "status": "Status",
+    "skipReason": "Reason",
+    "attempts": "Attempts",
+    "sentAt": "Sent at",
+    "unsubscribedAt": "Unsubscribed at",
+    "messageId": "Message id",
+    "lastError": "Last error",
+    "audienceKindEnum": {
+        "user": "Client",
+        "lead": "Lead"
+    },
+    "campaignTypeEnum": {
+        "price_change": "Price change",
+        "offer": "Offer",
+        "new_project": "New project"
+    },
+    "recipientStatusEnum": {
+        "pending": "Pending",
+        "queued": "Queued",
+        "sent": "Sent",
+        "failed": "Failed",
+        "skipped": "Skipped",
+        "suppressed": "Opted out"
+    },
+    "skipReasonEnum": {
+        "opted_out": "Opted out",
+        "no_email": "No email address",
+        "inactive": "Inactive",
+        "duplicate": "Duplicate"
+    },
+    "lifecycle": "Lifecycle",
+    "createdAt": "Created at",
+    "updatedAt": "Updated at",
+    "createdBy": "Created by",
+    "deletedAt": "Deleted at",
+    "deletedBy": "Deleted by",
+    "failedTitle": "Failed to load recipients",
+    "failedDescription": "An error occurred while loading. Please try again.",
+    "failedTooltipDescription": "Click to retry fetching data."
+}

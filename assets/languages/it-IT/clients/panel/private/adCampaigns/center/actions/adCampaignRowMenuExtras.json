@@ -1,0 +1,9 @@
+{
+    "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx",
+    "viewRecipients": "Vedi destinatari",
+    "sendNow": "Invia ora",
+    "resend": "Riprendi invio",
+    "pause": "Pausa",
+    "resume": "Riprendi",
+    "cancelCampaign": "Annulla campagna"
+}

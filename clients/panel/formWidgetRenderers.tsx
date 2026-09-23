@@ -77,6 +77,22 @@ const unitCard: CompoundFormWidgetRenderer = ({Widget, binding, extra}) => {
     );
 };
 
+/**
+ * HTML body editor. Owns its own `FormField`, reads sibling fields by name for
+ * the preview, and translates its own chrome — so only the resolved label and
+ * the form's loading state come from here.
+ */
+const htmlSourceEditor: CompoundFormWidgetRenderer = ({Widget, binding, resolveLanguageKey, extra}) => (
+    <Widget
+        name={binding.name}
+        label={labelOf(binding.label, resolveLanguageKey)}
+        required={binding.required}
+        disabled={binding.disabled}
+        loading={extra?.loading ?? false}
+        {...binding.widgetProps}
+    />
+);
+
 export const propertyManagementFormWidgetRenderers: Record<string, CompoundFormWidgetRenderer> = {
     "#FormFloorPolygon": polygonEditor,
     "#FormEdificePolygon": polygonEditor,
@@ -84,6 +100,7 @@ export const propertyManagementFormWidgetRenderers: Record<string, CompoundFormW
     "#FormExpenditureItemsField": expenditureItems,
     "#PaymentPlanInstallmentsField": paymentPlanInstallments,
     "#UnitCard": unitCard,
+    "#HtmlSourceEditor": htmlSourceEditor,
 };
 
 /** Edit-form write keys for widgets whose field name is not a schema path. */
