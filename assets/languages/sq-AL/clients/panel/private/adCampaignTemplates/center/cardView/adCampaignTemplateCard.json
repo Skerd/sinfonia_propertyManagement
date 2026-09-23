@@ -9,7 +9,6 @@
         "campaignType": "Lloji",
         "locale": "Gjuha",
         "previewText": "Teksti i pamjes paraprake",
-        "isDefault": "I parazgjedhur",
         "inactive": "Joaktiv",
         "!enums": {
             "campaignType": {

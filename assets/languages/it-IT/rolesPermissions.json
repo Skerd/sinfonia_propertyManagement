@@ -1796,7 +1796,6 @@
       "subject": "Oggetto",
       "previewText": "Testo di anteprima",
       "bodyHtml": "Corpo dell'email",
-      "isDefault": "Modello predefinito",
       "active": "Attivo"
     },
     "Adcampaignrecipients": {

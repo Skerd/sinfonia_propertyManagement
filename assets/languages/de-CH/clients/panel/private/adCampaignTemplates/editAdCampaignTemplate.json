@@ -22,7 +22,6 @@
             "it-IT": "Italienisch (IT)",
             "sq-AL": "Albanisch (AL)"
         },
-        "isDefaultLabel": "Standard",
         "activeLabel": "Status",
         "subjectLabel": "Betreff",
         "subjectPlaceholder": "Betreff",

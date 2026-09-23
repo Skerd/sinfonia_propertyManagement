@@ -13,7 +13,6 @@
         "locale": "Language",
         "subject": "Subject",
         "previewText": "Preview text",
-        "isDefault": "Default",
         "active": "Status",
         "createdAt": "Created at",
         "createdBy": "Created by",

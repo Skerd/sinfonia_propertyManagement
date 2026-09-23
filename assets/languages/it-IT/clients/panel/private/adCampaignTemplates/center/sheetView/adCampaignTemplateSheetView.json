@@ -8,7 +8,6 @@
     "locale": "Lingua",
     "subject": "Oggetto",
     "previewText": "Testo di anteprima",
-    "isDefault": "Predefinito",
     "active": "Stato",
     "bodyHtml": "Corpo dell'e-mail",
     "campaignTypeEnum": {

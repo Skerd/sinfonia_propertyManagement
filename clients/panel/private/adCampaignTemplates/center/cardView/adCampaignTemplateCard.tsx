@@ -4,12 +4,10 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {AdCampaignTemplate} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaignTemplate/adCampaignTemplate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconLanguage, IconMail, IconBroadcast, IconStar} from "@tabler/icons-react";
+import {IconLanguage, IconMail, IconBroadcast} from "@tabler/icons-react";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
-import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import Sheet from "@propertyManagementModule/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 
@@ -70,11 +68,6 @@ function AdCampaignTemplateCard({
                         subtitlePath="subject"
                         badges={
                             <>
-                                {row.isDefault ? (
-                                    <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
-                                        {resolveLanguageKey("fields.isDefault")}
-                                    </Badge>
-                                ) : null}
                                 {row.active === false ? (
                                     <Badge variant="outline" className="text-xs">
                                         {resolveLanguageKey("fields.inactive")}
@@ -104,13 +97,6 @@ function AdCampaignTemplateCard({
                             tooltip={resolveLanguageKey("fields.previewText")}
                             path="previewText"
                             value={row.previewText}
-                        />
-                        <EntityCardRow
-                            icon={IconStar}
-                            label={resolveLanguageKey("fields.isDefault")}
-                            tooltip={resolveLanguageKey("fields.isDefault")}
-                            path="isDefault"
-                            value={String(resolveLanguageKey(row.isDefault ? "yes" : "no"))}
                         />
                     </EntityCard.Body>
                 </>

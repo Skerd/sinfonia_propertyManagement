@@ -1796,7 +1796,6 @@
       "subject": "Betreff",
       "previewText": "Vorschautext",
       "bodyHtml": "E-Mail-Inhalt",
-      "isDefault": "Standardvorlage",
       "active": "Aktiv"
     },
     "Adcampaignrecipients": {

@@ -1796,7 +1796,6 @@
       "subject": "Objet",
       "previewText": "Texte d'aperçu",
       "bodyHtml": "Corps de l'e-mail",
-      "isDefault": "Modèle par défaut",
       "active": "Actif"
     },
     "Adcampaignrecipients": {

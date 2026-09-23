@@ -17,7 +17,6 @@ export default createGenericCreatePage<CreateAdCampaignTemplateFormType>({
         // so the form opens on a type and locale rather than two empty selects.
         campaignType: "offer",
         locale: "en-US",
-        isDefault: false,
         active: true,
     } as any),
     successPath: "/tenancy/systemSettings/adCampaignTemplates",

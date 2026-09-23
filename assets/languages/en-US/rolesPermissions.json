@@ -1796,7 +1796,6 @@
       "subject": "Subject",
       "previewText": "Preview text",
       "bodyHtml": "Email body",
-      "isDefault": "Default template",
       "active": "Active"
     },
     "Adcampaignrecipients": {

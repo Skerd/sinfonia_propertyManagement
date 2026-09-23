@@ -8,7 +8,6 @@
     "locale": "Langue",
     "subject": "Objet",
     "previewText": "Texte d'aperçu",
-    "isDefault": "Par défaut",
     "active": "Statut",
     "bodyHtml": "Corps de l'e-mail",
     "campaignTypeEnum": {

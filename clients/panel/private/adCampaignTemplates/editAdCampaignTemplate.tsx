@@ -11,7 +11,6 @@ export default createGenericEditPage<AdCampaignTemplate, EditAdCampaignTemplateF
     schema: editAdCampaignTemplateFormSchema,
     mapEntityData: (data) => ({
         ...data,
-        isDefault: !!data.isDefault,
         active: data.active !== false,
     } as any),
     submitIcon: <Save />,
