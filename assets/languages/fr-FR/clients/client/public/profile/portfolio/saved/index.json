@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/saved/index.tsx",
+  "emptyTitle": "Aucun bien enregistré",
+  "emptyHint": "Touchez le cœur sur un projet ou une unité pour l'ajouter.",
+  "browseCta": "Parcourir les projets",
+  "projectsHeading": "Projets",
+  "unitsHeading": "Unités",
+  "favoritesAdd": "Enregistrer",
+  "favoritesRemove": "Retirer",
+  "fromPrice": "À partir de"
+}

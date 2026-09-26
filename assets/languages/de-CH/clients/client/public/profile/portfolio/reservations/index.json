@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/reservations/index.tsx",
+  "emptyTitle": "Noch keine Reservationen",
+  "emptyHint": "Reserviere eine Unit auf einer Projektseite, um sie hier zu sehen.",
+  "browseCta": "Projekte entdecken",
+  "untitled": "Reservation",
+  "reservedOn": "Reserviert",
+  "expiresOn": "Läuft ab",
+  "deposit": "Anzahlung",
+  "status_active": "Aktiv",
+  "status_expired": "Abgelaufen",
+  "status_cancelled": "Storniert",
+  "status_converted": "Umgewandelt",
+  "axios": {
+    "start": { "title": "Reservationen werden geladen…", "time": 2000 },
+    "success": { "title": "Reservationen geladen", "time": 1500 },
+    "error": { "title": "Reservationen konnten nicht geladen werden", "time": 3000 }
+  }
+}

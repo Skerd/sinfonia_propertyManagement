@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/saved/index.tsx",
+  "emptyTitle": "Keine gespeicherten Immobilien",
+  "emptyHint": "Tippe auf das Herz bei einem Projekt oder einer Unit, um sie zu merken.",
+  "browseCta": "Projekte entdecken",
+  "projectsHeading": "Projekte",
+  "unitsHeading": "Units",
+  "favoritesAdd": "Speichern",
+  "favoritesRemove": "Entfernen",
+  "fromPrice": "Ab"
+}

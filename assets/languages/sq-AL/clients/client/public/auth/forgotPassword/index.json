@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Fjalëkalim i harruar",
+  "subtitle": "Vendos emailin dhe do të dërgojmë një link rivendosjeje.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email"
+  },
+  "submit": "Dërgo linkun",
+  "submitting": "Please wait…",
+  "formError": "Could not send the reset link. Please try again.",
+  "successMessage": "Nëse ekziston një llogari për këtë email, linku është në rrugë.",
+  "goToLogin": "Kthehu te hyrja",
+  "axios": {
+    "start": {
+      "title": "Sending reset link…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Check your email",
+      "time": 3000
+    },
+    "error": {
+      "title": "Request failed",
+      "time": 3000
+    }
+  }
+}

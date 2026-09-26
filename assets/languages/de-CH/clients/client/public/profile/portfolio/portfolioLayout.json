@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/portfolioLayout.tsx",
+  "pageTitle": "Mein Portfolio",
+  "pageSubtitle": "Deine Immobilien, Reservationen und Merkliste",
+  "tabsLabel": "Portfolio-Bereiche",
+  "tabOverview": "Übersicht",
+  "tabProperties": "Immobilien",
+  "tabReservations": "Reservationen",
+  "tabSaved": "Gespeicherte"
+}

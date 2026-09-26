@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/signup/index.tsx",
+  "title": "Registrieren",
+  "subtitle": "Erstelle dein Pronix-Kundenkonto.",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Name",
+    "surnameLabel": "Surname",
+    "surnamePlaceholder": "Surname",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password"
+  },
+  "submit": "Konto erstellen",
+  "submitting": "Please wait…",
+  "formError": "Could not create your account. Please try again.",
+  "successMessage": "Konto erstellt. Prüfe deine E-Mail für den Aktivierungslink, dann anmelden.",
+  "goToLogin": "Zur Anmeldung",
+  "haveAccount": "Bereits ein Konto?",
+  "loginLink": "Anmelden",
+  "axios": {
+    "start": {
+      "title": "Creating account…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Account created — check your email",
+      "time": 4000
+    },
+    "error": {
+      "title": "Sign up failed",
+      "time": 3000
+    }
+  }
+}

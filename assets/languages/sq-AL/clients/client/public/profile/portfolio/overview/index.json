@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/overview/index.tsx",
+  "kpiPortfolioValue": "Vlera totale e portofolit",
+  "kpiTotalArea": "Sipërfaqja totale",
+  "kpiActiveReservations": "Rezervime aktive",
+  "constructionTitle": "Progresi i ndërtimit",
+  "constructionEmpty": "Ende nuk ka prona.",
+  "phase_planning_permits": "Planifikim dhe leje",
+  "phase_site_preparation": "Përgatitja e kantierit",
+  "phase_foundations": "Themelet",
+  "phase_structure": "Struktura",
+  "phase_envelope": "Mbështjellësi",
+  "phase_mep": "Instalimet",
+  "phase_interior_finishes": "Përfundimet e brendshme",
+  "phase_exterior_works": "Punimet e jashtme",
+  "phase_completed": "Përfunduar",
+  "axios": {
+    "start": { "title": "Po ngarkohet portofoli…", "time": 2000 },
+    "success": { "title": "Portofoli u ngarkua", "time": 1500 },
+    "error": { "title": "Nuk u ngarkua portofoli", "time": 3000 }
+  }
+}

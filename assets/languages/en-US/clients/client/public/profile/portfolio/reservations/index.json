@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/reservations/index.tsx",
+  "emptyTitle": "No reservations yet",
+  "emptyHint": "Reserve a unit from a project page to see it here.",
+  "browseCta": "Browse projects",
+  "untitled": "Reservation",
+  "reservedOn": "Reserved",
+  "expiresOn": "Expires",
+  "deposit": "Deposit",
+  "status_active": "Active",
+  "status_expired": "Expired",
+  "status_cancelled": "Cancelled",
+  "status_converted": "Converted",
+  "axios": {
+    "start": { "title": "Loading reservations…", "time": 2000 },
+    "success": { "title": "Reservations loaded", "time": 1500 },
+    "error": { "title": "Could not load reservations", "time": 3000 }
+  }
+}

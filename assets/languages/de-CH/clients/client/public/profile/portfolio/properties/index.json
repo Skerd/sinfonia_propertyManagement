@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/properties/index.tsx",
+  "emptyTitle": "Noch keine Immobilien",
+  "emptyHint": "Gekaufte Units erscheinen hier.",
+  "browseCta": "Projekte entdecken",
+  "axios": {
+    "start": { "title": "Immobilien werden geladen…", "time": 2000 },
+    "success": { "title": "Immobilien geladen", "time": 1500 },
+    "error": { "title": "Immobilien konnten nicht geladen werden", "time": 3000 }
+  }
+}

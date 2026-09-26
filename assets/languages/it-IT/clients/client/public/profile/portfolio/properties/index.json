@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/properties/index.tsx",
+  "emptyTitle": "Nessuna proprietà",
+  "emptyHint": "Quando acquisti un'unità, apparirà qui.",
+  "browseCta": "Esplora i progetti",
+  "axios": {
+    "start": { "title": "Caricamento proprietà…", "time": 2000 },
+    "success": { "title": "Proprietà caricate", "time": 1500 },
+    "error": { "title": "Impossibile caricare le proprietà", "time": 3000 }
+  }
+}

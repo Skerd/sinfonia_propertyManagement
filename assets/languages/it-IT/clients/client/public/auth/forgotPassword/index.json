@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Password dimenticata",
+  "subtitle": "Inserisci la tua email e ti invieremo un link di reset.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email"
+  },
+  "submit": "Invia link",
+  "submitting": "Please wait…",
+  "formError": "Could not send the reset link. Please try again.",
+  "successMessage": "Se esiste un account per questa email, riceverai un link di reset.",
+  "goToLogin": "Torna all'accesso",
+  "axios": {
+    "start": {
+      "title": "Sending reset link…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Check your email",
+      "time": 3000
+    },
+    "error": {
+      "title": "Request failed",
+      "time": 3000
+    }
+  }
+}

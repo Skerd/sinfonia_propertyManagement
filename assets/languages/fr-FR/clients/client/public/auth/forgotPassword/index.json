@@ -1,0 +1,28 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/forgotPassword/index.tsx",
+  "title": "Mot de passe oublié",
+  "subtitle": "Entrez votre e-mail — nous enverrons un lien de réinitialisation.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email"
+  },
+  "submit": "Envoyer le lien",
+  "submitting": "Please wait…",
+  "formError": "Could not send the reset link. Please try again.",
+  "successMessage": "Si un compte existe pour cet e-mail, un lien est en route.",
+  "goToLogin": "Retour à la connexion",
+  "axios": {
+    "start": {
+      "title": "Sending reset link…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Check your email",
+      "time": 3000
+    },
+    "error": {
+      "title": "Request failed",
+      "time": 3000
+    }
+  }
+}

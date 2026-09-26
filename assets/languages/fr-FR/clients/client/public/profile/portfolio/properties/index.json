@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/properties/index.tsx",
+  "emptyTitle": "Aucun bien",
+  "emptyHint": "Lorsque vous achetez une unité, elle apparaîtra ici.",
+  "browseCta": "Parcourir les projets",
+  "axios": {
+    "start": { "title": "Chargement des biens…", "time": 2000 },
+    "success": { "title": "Biens chargés", "time": 1500 },
+    "error": { "title": "Impossible de charger les biens", "time": 3000 }
+  }
+}

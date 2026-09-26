@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Rivendos fjalëkalimin",
+  "subtitle": "Zgjidh një fjalëkalim të ri.",
+  "verifyingSubtitle": "Checking your reset link…",
+  "verifyErrorSubtitle": "This reset link is invalid or expired.",
+  "successSubtitle": "Your password has been updated.",
+  "verifyingMessage": "Please wait…",
+  "verifyErrorMessage": "Kërko një link të ri rivendosjeje.",
+  "requestAgain": "Fjalëkalim i harruar",
+  "form": {
+    "passwordLabel": "New password",
+    "passwordPlaceholder": "New password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "resetPasswordCodeLabel": "Reset code"
+  },
+  "submit": "Ruaj fjalëkalimin",
+  "submitting": "Please wait…",
+  "formError": "Could not update your password. Please try again.",
+  "successMessage": "Tani mund të hysh me fjalëkalimin e ri.",
+  "goToLogin": "Shko te hyrja",
+  "axios": {
+    "start": {
+      "title": "Saving password…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Password updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Update failed",
+      "time": 3000
+    }
+  }
+}

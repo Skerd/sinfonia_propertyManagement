@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/overview/index.tsx",
+  "kpiPortfolioValue": "Valeur totale du portefeuille",
+  "kpiTotalArea": "Surface totale",
+  "kpiActiveReservations": "Réservations actives",
+  "constructionTitle": "Avancement des travaux",
+  "constructionEmpty": "Aucun bien pour le moment.",
+  "phase_planning_permits": "Conception et permis",
+  "phase_site_preparation": "Préparation du site",
+  "phase_foundations": "Fondations",
+  "phase_structure": "Structure",
+  "phase_envelope": "Enveloppe",
+  "phase_mep": "CVC / électricité",
+  "phase_interior_finishes": "Finitions intérieures",
+  "phase_exterior_works": "Travaux extérieurs",
+  "phase_completed": "Terminé",
+  "axios": {
+    "start": { "title": "Chargement du portefeuille…", "time": 2000 },
+    "success": { "title": "Portefeuille chargé", "time": 1500 },
+    "error": { "title": "Impossible de charger le portefeuille", "time": 3000 }
+  }
+}

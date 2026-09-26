@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/login/index.tsx",
+  "title": "Connexion",
+  "subtitle": "Entrez votre e-mail et mot de passe pour accéder à votre profil Pronix.",
+  "mfaTitle": "Authentification à deux facteurs",
+  "mfaSubtitle": "Entrez le code de votre application d'authentification.",
+  "form": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "mfaCodeLabel": "Authentication code",
+    "mfaCodePlaceholder": "6-digit code"
+  },
+  "submit": "Se connecter",
+  "verify": "Vérifier",
+  "submitting": "Veuillez patienter…",
+  "formError": "Connexion impossible. Vérifiez vos informations.",
+  "forgotPassword": "Mot de passe oublié ?",
+  "noAccount": "Pas encore de compte ?",
+  "signUpLink": "S'inscrire",
+  "backToLogin": "Retour à la connexion",
+  "axios": {
+    "start": {
+      "title": "Signing in…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Signed in",
+      "time": 2000
+    },
+    "error": {
+      "title": "Sign in failed",
+      "time": 3000
+    }
+  }
+}

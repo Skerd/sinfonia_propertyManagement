@@ -1,0 +1,38 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/signup/index.tsx",
+  "title": "Inscription",
+  "subtitle": "Créez votre compte client Pronix.",
+  "form": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Name",
+    "surnameLabel": "Surname",
+    "surnamePlaceholder": "Surname",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password"
+  },
+  "submit": "Créer un compte",
+  "submitting": "Please wait…",
+  "formError": "Could not create your account. Please try again.",
+  "successMessage": "Compte créé. Vérifiez votre e-mail pour le lien d'activation, puis connectez-vous.",
+  "goToLogin": "Aller à la connexion",
+  "haveAccount": "Vous avez déjà un compte ?",
+  "loginLink": "Se connecter",
+  "axios": {
+    "start": {
+      "title": "Creating account…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Account created — check your email",
+      "time": 4000
+    },
+    "error": {
+      "title": "Sign up failed",
+      "time": 3000
+    }
+  }
+}

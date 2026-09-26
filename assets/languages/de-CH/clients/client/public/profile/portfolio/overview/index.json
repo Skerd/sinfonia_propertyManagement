@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/overview/index.tsx",
+  "kpiPortfolioValue": "Gesamter Portfoliowert",
+  "kpiTotalArea": "Gesamtfläche",
+  "kpiActiveReservations": "Aktive Reservationen",
+  "constructionTitle": "Baufortschritt",
+  "constructionEmpty": "Noch keine Immobilien.",
+  "phase_planning_permits": "Planung & Bewilligungen",
+  "phase_site_preparation": "Bauvorbereitung",
+  "phase_foundations": "Fundamente",
+  "phase_structure": "Rohbau",
+  "phase_envelope": "Gebäudehülle",
+  "phase_mep": "Haustechnik",
+  "phase_interior_finishes": "Innenausbau",
+  "phase_exterior_works": "Aussenanlagen",
+  "phase_completed": "Abgeschlossen",
+  "axios": {
+    "start": { "title": "Portfolio wird geladen…", "time": 2000 },
+    "success": { "title": "Portfolio geladen", "time": 1500 },
+    "error": { "title": "Portfolio konnte nicht geladen werden", "time": 3000 }
+  }
+}

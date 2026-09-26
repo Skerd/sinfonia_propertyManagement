@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/overview/index.tsx",
+  "welcomeBack": "Mirë se u ktheve, {name}",
+  "welcomeSubtitle": "Një përmbledhje e aktivitetit tënd me Pronix",
+  "fallbackName": "ti",
+  "kpiPropertiesOwned": "Prona në pronësi",
+  "kpiActiveReservations": "Rezervime aktive",
+  "kpiSavedProperties": "Prona të ruajtura",
+  "kpiSavedEdifices": "Ndërtesa të ruajtura",
+  "kpiSavedUnits": "Njësi të ruajtura",
+  "kpiNewNotifications": "Njoftime të reja",
+  "portfolioTitle": "Vlera e portofolit",
+  "viewPortfolio": "Shiko portofolin →",
+  "portfolioEmpty": "Nuk zotëron ende asnjë njësi. Eksploro portofolin dhe rezervo pronën e parë.",
+  "nextPaymentTitle": "Pagesa e radhës",
+  "nextPaymentEmpty": "Nuk ka pagesë të planifikuar.",
+  "downPayment": "Parapagim",
+  "installment": "Kësti {number}",
+  "notificationsTitle": "Njoftimet e fundit",
+  "notificationsEmpty": "Nuk ka njoftime ende.",
+  "axios": {
+    "start": {
+      "title": "Loading overview…",
+      "time": 2000
+    },
+    "success": {
+      "title": "Overview loaded",
+      "time": 1500
+    },
+    "error": {
+      "title": "Could not load overview",
+      "time": 3000
+    }
+  }
+}

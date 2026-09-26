@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/reservations/index.tsx",
+  "emptyTitle": "Nessuna prenotazione",
+  "emptyHint": "Prenota un'unità dalla pagina di un progetto per vederla qui.",
+  "browseCta": "Esplora i progetti",
+  "untitled": "Prenotazione",
+  "reservedOn": "Prenotata",
+  "expiresOn": "Scade",
+  "deposit": "Deposito",
+  "status_active": "Attiva",
+  "status_expired": "Scaduta",
+  "status_cancelled": "Annullata",
+  "status_converted": "Convertita",
+  "axios": {
+    "start": { "title": "Caricamento prenotazioni…", "time": 2000 },
+    "success": { "title": "Prenotazioni caricate", "time": 1500 },
+    "error": { "title": "Impossibile caricare le prenotazioni", "time": 3000 }
+  }
+}

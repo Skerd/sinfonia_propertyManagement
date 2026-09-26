@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/saved/index.tsx",
+  "emptyTitle": "Nessuna proprietà salvata",
+  "emptyHint": "Tocca il cuore su un progetto o un'unità per salvarla.",
+  "browseCta": "Esplora i progetti",
+  "projectsHeading": "Progetti",
+  "unitsHeading": "Unità",
+  "favoritesAdd": "Salva",
+  "favoritesRemove": "Rimuovi",
+  "fromPrice": "Da"
+}

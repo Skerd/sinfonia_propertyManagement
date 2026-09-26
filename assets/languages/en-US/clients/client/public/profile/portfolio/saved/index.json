@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/saved/index.tsx",
+  "emptyTitle": "No saved properties",
+  "emptyHint": "Tap the heart on a project or unit to shortlist it.",
+  "browseCta": "Browse projects",
+  "projectsHeading": "Projects",
+  "unitsHeading": "Units",
+  "favoritesAdd": "Save",
+  "favoritesRemove": "Remove",
+  "fromPrice": "From"
+}

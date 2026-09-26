@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/reservations/index.tsx",
+  "emptyTitle": "Ende nuk ka rezervime",
+  "emptyHint": "Rezervoni një njësi nga faqja e projektit për ta parë këtu.",
+  "browseCta": "Shfleto projektet",
+  "untitled": "Rezervim",
+  "reservedOn": "Rezervuar",
+  "expiresOn": "Skadon",
+  "deposit": "Depozitë",
+  "status_active": "Aktive",
+  "status_expired": "Skaduar",
+  "status_cancelled": "Anuluar",
+  "status_converted": "Konvertuar",
+  "axios": {
+    "start": { "title": "Po ngarkohen rezervimet…", "time": 2000 },
+    "success": { "title": "Rezervimet u ngarkuan", "time": 1500 },
+    "error": { "title": "Nuk u ngarkuan rezervimet", "time": 3000 }
+  }
+}

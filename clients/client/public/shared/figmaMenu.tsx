@@ -12,6 +12,7 @@ import {figmaAssets} from "@propertyManagementModule/clients/client/public/share
 import {figmaImageCropStyle, FIGMA_IMAGE_CROPS} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
 import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 import {figmaMenuLinks} from "@propertyManagementModule/clients/client/public/shared/figmaRouteMap.ts";
+import {usePublicAuth} from "@propertyManagementModule/clients/client/public/shared/publicAuthContext.tsx";
 import type {MarketingCompanyResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 
@@ -263,6 +264,7 @@ function MenuChromeRow({className}: {className?: string}) {
 
 function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: () => void}) {
     const t = useFigmaMenuT();
+    const {isAuthenticated, signOutPublic} = usePublicAuth();
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
@@ -318,6 +320,32 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                                 {t(FIGMA_MENU_LINK_KEYS[link.path] ?? link.path)}
                             </Link>
                         ))}
+                        {isAuthenticated ? (
+                            <>
+                                <Link to="/profile" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                                    {t("profile")}
+                                </Link>
+                                <button
+                                    type="button"
+                                    className={`${MENU_NAV_LINK_CLASS} text-left`}
+                                    onClick={() => {
+                                        onClose();
+                                        signOutPublic();
+                                    }}
+                                >
+                                    {t("logOut")}
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link to="/login" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                                    {t("logIn")}
+                                </Link>
+                                <Link to="/signup" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                                    {t("signUp")}
+                                </Link>
+                            </>
+                        )}
                     </nav>
 
                     <div className="mt-8 h-px w-full bg-white/40" aria-hidden />

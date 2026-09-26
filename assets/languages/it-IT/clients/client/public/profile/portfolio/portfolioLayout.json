@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/portfolioLayout.tsx",
+  "pageTitle": "Il mio portafoglio",
+  "pageSubtitle": "Le tue proprietà, prenotazioni e preferiti",
+  "tabsLabel": "Sezioni portafoglio",
+  "tabOverview": "Panoramica",
+  "tabProperties": "Proprietà",
+  "tabReservations": "Prenotazioni",
+  "tabSaved": "Salvate"
+}

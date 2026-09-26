@@ -1,0 +1,37 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
+  "title": "Passwort zurücksetzen",
+  "subtitle": "Neues Passwort wählen.",
+  "verifyingSubtitle": "Checking your reset link…",
+  "verifyErrorSubtitle": "This reset link is invalid or expired.",
+  "successSubtitle": "Your password has been updated.",
+  "verifyingMessage": "Please wait…",
+  "verifyErrorMessage": "Neuen Reset-Link anfordern.",
+  "requestAgain": "Passwort vergessen",
+  "form": {
+    "passwordLabel": "New password",
+    "passwordPlaceholder": "New password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm password",
+    "resetPasswordCodeLabel": "Reset code"
+  },
+  "submit": "Passwort speichern",
+  "submitting": "Please wait…",
+  "formError": "Could not update your password. Please try again.",
+  "successMessage": "Du kannst dich mit dem neuen Passwort anmelden.",
+  "goToLogin": "Zur Anmeldung",
+  "axios": {
+    "start": {
+      "title": "Saving password…",
+      "time": 3000
+    },
+    "success": {
+      "title": "Password updated",
+      "time": 3000
+    },
+    "error": {
+      "title": "Update failed",
+      "time": 3000
+    }
+  }
+}

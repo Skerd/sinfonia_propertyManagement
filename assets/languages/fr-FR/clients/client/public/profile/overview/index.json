@@ -1,0 +1,35 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/overview/index.tsx",
+  "welcomeBack": "Bon retour, {name}",
+  "welcomeSubtitle": "Un résumé de votre activité avec Pronix",
+  "fallbackName": "vous",
+  "kpiPropertiesOwned": "Biens possédés",
+  "kpiActiveReservations": "Réservations actives",
+  "kpiSavedProperties": "Biens enregistrés",
+  "kpiSavedEdifices": "Édifices enregistrés",
+  "kpiSavedUnits": "Unités enregistrées",
+  "kpiNewNotifications": "Nouvelles notifications",
+  "portfolioTitle": "Valeur du portefeuille",
+  "viewPortfolio": "Voir le portefeuille →",
+  "portfolioEmpty": "Vous ne possédez encore aucune unité. Explorez le portefeuille et réservez votre premier bien.",
+  "nextPaymentTitle": "Prochain paiement",
+  "nextPaymentEmpty": "Aucun paiement prévu.",
+  "downPayment": "Acompte",
+  "installment": "Échéance {number}",
+  "notificationsTitle": "Dernières notifications",
+  "notificationsEmpty": "Aucune notification pour le moment.",
+  "axios": {
+    "start": {
+      "title": "Loading overview…",
+      "time": 2000
+    },
+    "success": {
+      "title": "Overview loaded",
+      "time": 1500
+    },
+    "error": {
+      "title": "Could not load overview",
+      "time": 3000
+    }
+  }
+}

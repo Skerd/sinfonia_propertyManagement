@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/saved/index.tsx",
+  "emptyTitle": "Nuk ka prona të ruajtura",
+  "emptyHint": "Prek zemrën te një projekt ose njësi për ta ruajtur.",
+  "browseCta": "Shfleto projektet",
+  "projectsHeading": "Projektet",
+  "unitsHeading": "Njësitë",
+  "favoritesAdd": "Ruaj",
+  "favoritesRemove": "Hiq",
+  "fromPrice": "Nga"
+}

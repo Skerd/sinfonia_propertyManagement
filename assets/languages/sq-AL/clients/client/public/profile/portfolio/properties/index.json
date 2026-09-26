@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/properties/index.tsx",
+  "emptyTitle": "Ende nuk ka prona",
+  "emptyHint": "Kur blini një njësi, ajo do të shfaqet këtu.",
+  "browseCta": "Shfleto projektet",
+  "axios": {
+    "start": { "title": "Po ngarkohen pronat…", "time": 2000 },
+    "success": { "title": "Pronat u ngarkuan", "time": 1500 },
+    "error": { "title": "Nuk u ngarkuan pronat", "time": 3000 }
+  }
+}

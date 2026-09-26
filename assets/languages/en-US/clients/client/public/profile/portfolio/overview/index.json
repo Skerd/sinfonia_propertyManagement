@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/overview/index.tsx",
+  "kpiPortfolioValue": "Total portfolio value",
+  "kpiTotalArea": "Total area",
+  "kpiActiveReservations": "Active reservations",
+  "constructionTitle": "Construction progress",
+  "constructionEmpty": "No properties yet.",
+  "phase_planning_permits": "Planning & permits",
+  "phase_site_preparation": "Site preparation",
+  "phase_foundations": "Foundations",
+  "phase_structure": "Structure",
+  "phase_envelope": "Envelope",
+  "phase_mep": "MEP",
+  "phase_interior_finishes": "Interior finishes",
+  "phase_exterior_works": "Exterior works",
+  "phase_completed": "Completed",
+  "axios": {
+    "start": { "title": "Loading portfolio…", "time": 2000 },
+    "success": { "title": "Portfolio loaded", "time": 1500 },
+    "error": { "title": "Could not load portfolio", "time": 3000 }
+  }
+}

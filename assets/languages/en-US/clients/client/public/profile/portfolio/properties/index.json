@@ -1,0 +1,11 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/profile/portfolio/properties/index.tsx",
+  "emptyTitle": "No properties yet",
+  "emptyHint": "When you purchase a unit, it will appear here.",
+  "browseCta": "Browse projects",
+  "axios": {
+    "start": { "title": "Loading properties…", "time": 2000 },
+    "success": { "title": "Properties loaded", "time": 1500 },
+    "error": { "title": "Could not load properties", "time": 3000 }
+  }
+}
