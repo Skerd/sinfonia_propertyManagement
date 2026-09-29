@@ -4,7 +4,7 @@ import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/with
 import {useAiChat, type AiChatMessage} from "@propertyManagementModule/clients/client/public/shared/aiChat/aiChatContext.tsx";
 import {
     fetchPublicCurrencies,
-    type PublicCurrencyItem,
+    type CurrencySimple,
 } from "@propertyManagementModule/clients/client/public/shared/aiChat/publicChatClient.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
@@ -230,7 +230,7 @@ function IdentifyFormInner({
     const [budget, setBudget] = useState("");
     const [budgetCurrency, setBudgetCurrency] = useState("");
     const [notes, setNotes] = useState("");
-    const [currencies, setCurrencies] = useState<PublicCurrencyItem[]>([]);
+    const [currencies, setCurrencies] = useState<CurrencySimple[]>([]);
     const [isSaving, setIsSaving] = useState(false);
     const [fieldErrors, setFieldErrors] = useState<IdentifyFieldErrors>({});
     const [outcome, setOutcome] = useState<IdentifyOutcome | null>(null);

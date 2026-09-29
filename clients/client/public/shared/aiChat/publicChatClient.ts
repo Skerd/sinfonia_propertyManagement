@@ -36,8 +36,8 @@ import type {
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/publicChatIdentify/publicChatIdentify.form.response.type";
 import type {
     PublicCurrenciesResponseType,
-    PublicCurrencyItem,
 } from "armonia/src/modules/core/api/finance/public/currencies/publicCurrencies.response.type";
+import type {CurrencySimple} from "armonia/src/modules/core/dto/currency.dto";
 
 const BASE_PATH = "/api/public/chat";
 /** Lead capture lives in propertyManagement — core does not own `Lead`. */
@@ -47,7 +47,7 @@ const TOKEN_STORAGE_KEY = "arpeggio.publicChat.token";
 const DEVICE_ID_STORAGE_KEY = "arpeggio.publicChat.deviceId";
 const VISITOR_TOKEN_HEADER = "x-visitor-token";
 
-export type {PublicCurrencyItem};
+export type {CurrencySimple};
 
 const publicChatClient = axios.create();
 
@@ -224,7 +224,7 @@ export async function identify(params: {
 /** Company currencies for the public identify / lead form budget select. */
 export async function fetchPublicCurrencies(
     languageCode?: string,
-): Promise<PublicCurrencyItem[]> {
+): Promise<CurrencySimple[]> {
     const {data} = await publicChatClient.get<PublicCurrenciesResponseType>(
         CURRENCIES_PATH,
         {headers: authHeaders(languageCode)},
