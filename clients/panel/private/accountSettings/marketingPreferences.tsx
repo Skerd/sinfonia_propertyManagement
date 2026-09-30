@@ -27,11 +27,11 @@ const TOGGLES = [
  * Notifications tab.
  *
  * Contributed into a core page through `accountSettingsContribution`, so core
- * stays unaware of propertyManagement. Backed by `/marketingPreference/me`,
- * which derives the subject from the session — never from the request body —
- * and returns all-true defaults when the person has never changed anything.
+ * stays unaware of propertyManagement. Backed by `/marketingPreference/me`.
+ * `specificUserId` is sent as the `specificUser` header, the same way name and
+ * timezone updates impersonate. A missing row comes back as all-true defaults.
  */
-export default function MarketingPreferencesSection() {
+export default function MarketingPreferencesSection({specificUserId}: {specificUserId?: string}) {
     const {resolveLanguageKey} = useDynamicLanguage(LANGUAGE_PATH);
 
     const [prefs, setPrefs] = useState<Preferences | null>(null);
@@ -39,37 +39,38 @@ export default function MarketingPreferencesSection() {
     const [busy, setBusy] = useState(false);
 
     useEffect(() => {
+        const requestConfig = specificUserId ? {headers: {specificUser: specificUserId}} : undefined;
         (async () => {
             try {
-                const {data} = await apiClient.post<Preferences>(`${API}/me`, {});
+                const {data} = await apiClient.post<Preferences>(`${API}/me`, {}, requestConfig);
                 setPrefs(data);
             }
             catch {
                 setError(resolveLanguageKey("loadFailed"));
             }
         })();
-        // Runs once; `resolveLanguageKey` is stable until the dictionary loads.
-    }, [resolveLanguageKey]);
+    }, [resolveLanguageKey, specificUserId]);
 
     const save = useCallback(async (patch: Record<string, boolean>) => {
+        const requestConfig = specificUserId ? {headers: {specificUser: specificUserId}} : undefined;
         setBusy(true);
         // Optimistic: a switch that visibly lags feels broken. Rolled back below
         // if the write fails.
         setPrefs(prev => (prev ? {...prev, ...patch} : prev));
         try {
-            const {data} = await apiClient.post<Preferences>(`${API}/updateMe`, patch);
+            const {data} = await apiClient.post<Preferences>(`${API}/updateMe`, patch, requestConfig);
             setPrefs(data);
             toast.success(resolveLanguageKey("saved"));
         }
         catch {
-            const {data} = await apiClient.post<Preferences>(`${API}/me`, {}).catch(() => ({data: null as any}));
+            const {data} = await apiClient.post<Preferences>(`${API}/me`, {}, requestConfig).catch(() => ({data: null}));
             if (data) setPrefs(data);
             toast.error(resolveLanguageKey("saveFailed"));
         }
         finally {
             setBusy(false);
         }
-    }, [resolveLanguageKey]);
+    }, [resolveLanguageKey, specificUserId]);
 
     if (error) {
         return <p className="text-sm text-muted-foreground">{error}</p>;
