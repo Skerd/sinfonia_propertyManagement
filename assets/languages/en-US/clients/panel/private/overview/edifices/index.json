@@ -3,7 +3,7 @@
   "title": "Edifices",
   "description": "Buildings, floors and unit distribution.",
   "failTitle": "Failed to load",
-  "failDescription": "Could not load dashboard. Click to retry.",
+  "failDescription": "Could not load portfolio. Click to retry.",
   "totalEdifices": "Total edifices",
   "totalEdificesDesc": "Number of buildings",
   "totalFloors": "Floors",

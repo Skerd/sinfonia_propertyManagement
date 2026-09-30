@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/overview/analytics/index.tsx",
   "title": "Ventes et portefeuille",
   "description": "Ventes par mois et indicateurs du portefeuille",
-  "loadOverviewFirst": "Chargez d'abord le tableau de bord depuis l'onglet Vue d'ensemble.",
+  "loadOverviewFirst": "Ouvrez d'abord Synthèse pour que ces graphiques aient des chiffres.",
   "totalUnits": "Total des unités",
   "totalUnitsDesc": "Toutes les unités du portefeuille",
   "availableUnits": "Unités disponibles",

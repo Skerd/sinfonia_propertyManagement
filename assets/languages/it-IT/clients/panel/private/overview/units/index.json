@@ -3,7 +3,7 @@
   "title": "Unità",
   "description": "Conteggio unità per stato, occupazione e valore inventario.",
   "failTitle": "Caricamento non riuscito",
-  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "failDescription": "Impossibile caricare il portafoglio. Clicca per riprovare.",
   "totalUnits": "Unità totali",
   "totalUnitsDesc": "Tutte le unità in portafoglio",
   "available": "Disponibile",

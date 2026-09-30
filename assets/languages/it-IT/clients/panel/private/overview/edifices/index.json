@@ -3,7 +3,7 @@
   "title": "Edifici",
   "description": "Edifici, piani e distribuzione delle unità.",
   "failTitle": "Caricamento non riuscito",
-  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "failDescription": "Impossibile caricare il portafoglio. Clicca per riprovare.",
   "totalEdifices": "Totale edifici",
   "totalEdificesDesc": "Numero di edifici",
   "totalFloors": "Piani",

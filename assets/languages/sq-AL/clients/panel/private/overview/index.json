@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/overview/index.tsx",
-  "title": "Vështrim i përgjithshëm",
-  "description": "Statistikat e sistemit",
+  "title": "Portofoli",
+  "description": "Shitje, qira, stok dhe punë të hapura për të gjithë kompaninë.",
   "download": "Shkarkoni",
   "refresh": "Rifresko",
   "period": "Periudha",
@@ -11,7 +11,7 @@
   "periodLast12Months": "12 muajt e fundit",
   "viewEntries": "Shiko regjistrimet",
   "tabs": {
-    "overview": "Vështrim i përgjithshëm",
+    "overview": "Përmbledhje",
     "analytics": "Analiza",
     "projects": "Projektet",
     "edifices": "Ndërtesat",
@@ -22,9 +22,9 @@
     "notifications": "Njoftimet"
   },
   "help": {
-    "ariaLabel": "Rreth Vështrimit të përgjithshëm",
-    "title": "Rreth Vështrimit të përgjithshëm",
-    "overview": "Vështrimi i përgjithshëm është dhoma e kontrollit në nivel shoqërie për pasuritë e paluajtshme. Nuk ruan dokumente të veta. Çdo shifër është një përmbledhje e gjallë e projekteve, ndërtesave, njësive, klientëve të mundshëm, rezervimeve, shitjeve, kontratave të qirasë, pagesave të qirasë, defekteve dhe flukseve të lidhura. Përdoreni për të parë nëse portofoli lëviz, pastaj hapni listën që e zotëron vërtet punën.",
+    "ariaLabel": "Rreth portofolit",
+    "title": "Rreth portofolit",
+    "overview": "Totalet vetëm për lexim të shoqërisë ku jeni të kyçur. Çdo skedë është një prerje tjetër e të njëjtave shifra. Kartat hapin listën që i zotëron regjistrimet.",
     "sections": [
       {
         "title": "Çfarë është kjo faqe",
@@ -32,14 +32,14 @@
           "Një kabinë vetëm-për-lexim për një shoqëri (ajo ku jeni të kyçur).",
           "Skedat janë prerje të ndryshme të të njëjtave të dhëna: KPI kryesore, trende, stoku dhe shëndeti i tubacionit.",
           "Asgjë këtu nuk krijon projekt, njësi, shitje apo kontratë qiraje. Kartat «Shiko hyrjet» hapin listën operuese përkatëse, me të njëjtën logjikë filtrash.",
-          "Nuk është paneli i një ndërtese (drejtimi ditor i një ndërtese) as paneli i grupit (disa shoqëri)."
+          "Paneli tregon të njëjtat shifra për një ndërtesë. Paneli i grupit mbledh disa shoqëri."
         ],
-        "body": "Vështrimi i përgjithshëm = «a është shoqëria e shëndoshë?» Paneli = «çfarë po ndodh sot në këtë ndërtesë?»"
+        "body": "Portofoli përgjigjet «a është shoqëria e shëndoshë?» Paneli përgjigjet «çfarë po ndodh në këtë ndërtesë?»"
       },
       {
         "title": "Skedat",
         "items": [
-          "Vështrim i përgjithshëm — përzierje e njësive të lira / të rezervuara / të shitura / me qira, arkëtimi dhe tregues të tjerë të periudhës së zgjedhur.",
+          "Përmbledhje — përzierje e njësive të lira / të rezervuara / të shitura / me qira, arkëtimi dhe tregues të tjerë të periudhës së zgjedhur.",
           "Analitika — si lëvizin ato shifra me kohën (shiriti i periudhës lart).",
           "Projektet / Ndërtesat / Njësitë — numra dhe vlera stoku, pa hapur çdo listë.",
           "Rrjedhat e punës — shëndeti i tubacionit: klientë të mundshëm, rezervime, inspektime, defekte dhe punë e ngjashme në vazhdim.",
@@ -60,7 +60,7 @@
         "title": "Përdorimi tipik",
         "items": [
           "Fillimi i ditës: e shitur kundrejt e lirë kundrejt me qira, qira e vonuar, rezervime që kërkojnë vëmendje.",
-          "Pastaj hapni panelin e një ndërtese, ose kaloni te Njësitë, Rezervimet, Shitjet ose Qendra e qirave për të vepruar.",
+          "Pastaj hapni panelin për një ndërtesë, ose kaloni te Njësitë, Rezervimet, Shitjet ose Qendra e qirave për të vepruar.",
           "Mos u përpiqni të «rregulloni» një KPI këtu — ndryshoni rezervimin, shitjen, kontratën e qirasë ose pagesën nën të."
         ]
       }

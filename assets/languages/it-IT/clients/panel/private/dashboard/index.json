@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
-  "title": "Dashboard immobiliare",
-  "description": "Panoramica del portafoglio con edifici, KPI e grafici finanziari",
+  "title": "Dashboard",
+  "description": "Cifre di un edificio. Selezionate un edificio per concentrare unità, incassi e avvisi.",
   "period": "Periodo",
   "paymentAlerts": "Avvisi di pagamento",
   "viewPaymentPlans": "Vedi piani di pagamento",
@@ -17,9 +17,9 @@
   "unitStatusBreakdown": "Stato unità",
   "failTitle": "Errore",
   "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
-  "selectEdifice": "Seleziona un edificio per vedere KPI e grafici",
+  "companyScope": "Intera azienda. Selezionate un edificio per restringere queste cifre.",
   "viewEntries": "Vedi voci",
-  "noData": "Nessun dato della dashboard ancora",
+  "noData": "Nessuna cifra per questo ambito",
   "rentCollected": "Affitto incassato",
   "rentOutstanding": "Affitto residuo",
   "rentOverdue": "Affitto scaduto",
@@ -27,8 +27,8 @@
   "viewRentalsHub": "Apri hub locazioni",
   "help": {
     "ariaLabel": "Informazioni sulla Dashboard",
-    "title": "Informazioni sulla Dashboard immobiliare",
-    "overview": "La Dashboard è il cockpit operativo degli edifici di una società. Scegliete un edificio; il resto della pagina (KPI, mix di stati, grafici ricavi, elenco unità, avvisi di pagamento) segue quel palazzo. È dove si governa la giacenza nel quotidiano. Non crea edifici, unità o affari — li legge.",
+    "title": "Informazioni sulla Dashboard",
+    "overview": "Vista operativa di un edificio. La galleria sceglie l'edificio; unità, incassi, affitti e avvisi seguono quella scelta. Senza edificio selezionato, le cifre sono dell'intera azienda.",
     "sections": [
       {
         "title": "Disposizione",
@@ -56,7 +56,7 @@
         "items": [
           "Non cambia lo stato dell'unità. Prenotate, vendete o affittate dagli elenchi dedicati.",
           "Selezionare un altro edificio non cambia il progetto — ogni edificio appartiene già a un progetto.",
-          "Non è la Panoramica (intera società) né la Dashboard di gruppo (più società)."
+          "Portafoglio è il taglio di queste cifre per tutta l'azienda. La dashboard di gruppo somma più società."
         ]
       },
       {

@@ -3,7 +3,7 @@
   "title": "Einheiten",
   "description": "Einheitenanzahl nach Status, Belegung und Inventarwert.",
   "failTitle": "Laden fehlgeschlagen",
-  "failDescription": "Dashboard konnte nicht geladen werden. Klicken zum erneuten Versuch.",
+  "failDescription": "Portfolio konnte nicht geladen werden. Klicken zum erneuten Versuch.",
   "totalUnits": "Einheiten total",
   "totalUnitsDesc": "Alle Einheiten im Portfolio",
   "available": "Verfügbar",

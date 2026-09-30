@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
-  "title": "Real Estate Dashboard",
-  "description": "Portfolio übersicht mit edifices, KPIs, und financial charts",
+  "title": "Dashboard",
+  "description": "Zahlen für ein Gebäude. Wählen Sie ein Gebäude, um Einheiten, Einnahmen und Hinweise zu fokussieren.",
   "period": "Periode",
   "paymentAlerts": "Zahlung alerts",
   "viewPaymentPlans": "Zahlung plans anzeigen",
@@ -16,10 +16,10 @@
   "avgPricePerSqm": "Avg €/m²",
   "unitStatusBreakdown": "Einheit status",
   "failTitle": "Fehler",
-  "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
-  "selectEdifice": "Ein gebäude bis anzeigen KPIs und charts auswählen",
+  "failDescription": "Dashboard konnte nicht geladen werden. Klicken zum erneuten Versuch.",
+  "companyScope": "Ganze Firma. Wählen Sie ein Gebäude, um die Zahlen einzugrenzen.",
   "viewEntries": "Entries anzeigen",
-  "noData": "Noch keine Dashboard-Daten",
+  "noData": "Noch keine Zahlen für diesen Umfang",
   "rentCollected": "Eingenommene Miete",
   "rentOutstanding": "Offene Miete",
   "rentOverdue": "Überfällige Miete",
@@ -27,8 +27,8 @@
   "viewRentalsHub": "Miet-Hub öffnen",
   "help": {
     "ariaLabel": "Über Dashboard",
-    "title": "Über das Real-Estate-Dashboard",
-    "overview": "Das Dashboard ist das operative Cockpit der Gebäude einer Firma. Sie wählen ein Gebäude; der Rest (KPIs, Statusmix, Umsatzcharts, Einheitenliste, Zahlungshinweise) folgt diesem Gebäude. Hier steuern Sie den Bestand im Alltag. Es legt keine Gebäude, Einheiten oder Deals an — es liest sie.",
+    "title": "Über Dashboard",
+    "overview": "Operative Ansicht eines Gebäudes. Die Galerie wählt das Gebäude; Einheiten, Einnahmen, Miete und Hinweise folgen dieser Wahl. Ohne Auswahl gelten die Zahlen für die ganze Firma.",
     "sections": [
       {
         "title": "Aufbau",
@@ -56,7 +56,7 @@
         "items": [
           "Sie ändert keinen Einheitenstatus. Reservieren, verkaufen oder vermieten Sie in den Listen.",
           "Ein anderes Gebäude ändert nicht das Projekt — jedes Gebäude gehört bereits zu einem Projekt.",
-          "Nicht Übersicht (ganze Firma) und nicht Gruppendashboard (mehrere Firmen)."
+          "Portfolio ist der firmenweite Schnitt dieser Zahlen. Das Gruppendashboard fasst mehrere Firmen zusammen."
         ]
       },
       {

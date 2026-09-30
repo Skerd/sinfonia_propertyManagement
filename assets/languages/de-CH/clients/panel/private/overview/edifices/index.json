@@ -3,7 +3,7 @@
   "title": "Gebäude",
   "description": "Buildings, floors und einheit distribution.",
   "failTitle": "Laden fehlgeschlagen",
-  "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
+  "failDescription": "Portfolio konnte nicht geladen werden. Klicken zum erneuten Versuch.",
   "totalEdifices": "Total edifices",
   "totalEdificesDesc": "Nummer von buildings",
   "totalFloors": "Geschosse",

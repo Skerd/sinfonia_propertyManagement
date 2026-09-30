@@ -146,6 +146,12 @@ function RealEstateDashboard({
                     }
                 />
 
+                {!selectedEdifice ? (
+                    <p className="text-xs text-muted-foreground">
+                        {resolveLanguageKey("companyScope")}
+                    </p>
+                ) : null}
+
                 {!hasData ? (
                     <DashboardWidgetEmpty
                         message={String(resolveLanguageKey("noData") || "No dashboard data yet")}

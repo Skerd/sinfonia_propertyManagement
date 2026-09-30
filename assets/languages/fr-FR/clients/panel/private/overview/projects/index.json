@@ -3,7 +3,7 @@
   "title": "Projets",
   "description": "Structure du portefeuille : projets, bâtiments, étages et unités.",
   "failTitle": "Échec du chargement",
-  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "failDescription": "Impossible de charger le portefeuille. Cliquez pour réessayer.",
   "totalProjects": "Total des projets",
   "totalProjectsDesc": "Nombre de projets",
   "totalEdifices": "Bâtiments",

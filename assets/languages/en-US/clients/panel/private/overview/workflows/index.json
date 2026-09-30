@@ -3,7 +3,7 @@
   "title": "Workflows",
   "description": "Inspections and modification requests overview.",
   "failTitle": "Failed to load",
-  "failDescription": "Could not load dashboard. Click to retry.",
+  "failDescription": "Could not load portfolio. Click to retry.",
   "inspectionsSection": "Inspections",
   "totalInspections": "Total inspections",
   "totalInspectionsDesc": "All inspections",

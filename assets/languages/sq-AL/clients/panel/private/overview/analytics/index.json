@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/overview/analytics/index.tsx",
   "title": "Shitje dhe portofol",
   "description": "Shitjet sipas muajve dhe matjet e portofolit",
-  "loadOverviewFirst": "Ngarkoni fillimisht pultin nga skeda \"Përmbledhje\".",
+  "loadOverviewFirst": "Hapni fillimisht Përmbledhjen që këto grafikë të kenë shifra.",
   "totalUnits": "Njësitë totale",
   "totalUnitsDesc": "Të gjitha njësitë në portofol",
   "availableUnits": "Njësitë e disponueshme",

@@ -3,7 +3,7 @@
   "title": "Flussi di lavoro",
   "description": "Panoramica di ispezioni e richieste di modifica.",
   "failTitle": "Caricamento non riuscito",
-  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "failDescription": "Impossibile caricare il portafoglio. Clicca per riprovare.",
   "inspectionsSection": "Ispezioni",
   "totalInspections": "Ispezioni totali",
   "totalInspectionsDesc": "Tutte le ispezioni",

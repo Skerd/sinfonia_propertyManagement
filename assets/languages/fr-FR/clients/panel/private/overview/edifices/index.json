@@ -3,7 +3,7 @@
   "title": "Bâtiments",
   "description": "Bâtiments, étages et répartition des unités.",
   "failTitle": "Échec du chargement",
-  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "failDescription": "Impossible de charger le portefeuille. Cliquez pour réessayer.",
   "totalEdifices": "Total des bâtiments",
   "totalEdificesDesc": "Nombre de bâtiments",
   "totalFloors": "Étages",

@@ -3,7 +3,7 @@
   "title": "Njësitë",
   "description": "Njësia numërohet sipas statusit, banimit dhe vlerës së inventarit.",
   "failTitle": "Ngarkimi dështoi",
-  "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
+  "failDescription": "Portofoli nuk u ngarkua. Kliko për të riprovuar.",
   "totalUnits": "Njësitë totale",
   "totalUnitsDesc": "Të gjitha njësitë në portofol",
   "available": "Në dispozicion",

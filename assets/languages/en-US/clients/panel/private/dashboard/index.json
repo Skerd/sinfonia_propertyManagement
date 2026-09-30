@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
-  "title": "Real Estate Dashboard",
-  "description": "Portfolio overview with edifices, KPIs, and financial charts",
+  "title": "Dashboard",
+  "description": "Figures for one edifice. Select a building to focus units, collections, and alerts.",
   "period": "Period",
   "paymentAlerts": "Payment alerts",
   "viewPaymentPlans": "View payment plans",
@@ -17,9 +17,9 @@
   "unitStatusBreakdown": "Unit status",
   "failTitle": "Error",
   "failDescription": "Could not load dashboard. Click to retry.",
-  "selectEdifice": "Select an edifice to view KPIs and charts",
+  "companyScope": "Showing the whole company. Select an edifice to narrow these figures.",
   "viewEntries": "View entries",
-  "noData": "No dashboard data yet",
+  "noData": "No figures for this scope yet",
   "rentCollected": "Rent collected",
   "rentOutstanding": "Rent outstanding",
   "rentOverdue": "Rent overdue",
@@ -27,8 +27,8 @@
   "viewRentalsHub": "View rentals hub",
   "help": {
     "ariaLabel": "About Dashboard",
-    "title": "About the Real Estate Dashboard",
-    "overview": "The Dashboard is the operational cockpit for one company’s buildings. You pick an edifice; the rest of the page (KPIs, unit-status mix, revenue charts, units list, payment alerts) follows that building. It is where day-to-day inventory steering happens. It does not create edifices, units, or deals — it reads them.",
+    "title": "About Dashboard",
+    "overview": "Operational view of one edifice. The gallery chooses the building; units, collections, rent, and alerts follow that choice. With no edifice selected, the figures are the whole company.",
     "sections": [
       {
         "title": "Layout",
@@ -56,7 +56,7 @@
         "items": [
           "It will not change unit status. Reserve, sell, or lease from those lists.",
           "Selecting another edifice does not change the project — each edifice already belongs to a project.",
-          "It is not Overview (company-wide) and not Group dashboard (multi-company)."
+          "Portfolio is the company-wide cut of these figures. Group dashboard rolls up several companies."
         ]
       },
       {

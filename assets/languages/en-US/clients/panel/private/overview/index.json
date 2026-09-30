@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/overview/index.tsx",
-  "title": "Overview",
-  "description": "System statistics",
+  "title": "Portfolio",
+  "description": "Company-wide sales, rent, stock, and open work.",
   "download": "Download",
   "refresh": "Refresh",
   "period": "Period",
@@ -11,7 +11,7 @@
   "periodLast12Months": "Last 12 months",
   "viewEntries": "View entries",
   "tabs": {
-    "overview": "Overview",
+    "overview": "Summary",
     "analytics": "Analytics",
     "projects": "Projects",
     "edifices": "Edifices",
@@ -22,9 +22,9 @@
     "notifications": "Notifications"
   },
   "help": {
-    "ariaLabel": "About Overview",
-    "title": "About Overview",
-    "overview": "Overview is the company-wide control room for Real Estate. It does not store its own documents. Every number is a live roll-up of Projects, Edifices, Units, Leads, Reservations, Sales, Leases, Rental payments, Snags, and related workflow records. Use it to see whether the portfolio is moving, then jump into the list that actually owns the work.",
+    "ariaLabel": "About Portfolio",
+    "title": "About Portfolio",
+    "overview": "Read-only totals for the company you are signed into. Each tab is another cut of the same figures. Cards open the list that owns the records.",
     "sections": [
       {
         "title": "What this page is",
@@ -32,14 +32,14 @@
           "A read-only cockpit for one company (the company you are signed into).",
           "Tabs are different cuts of the same data: headline KPIs, trends, inventory, and pipeline health.",
           "Nothing you do here creates a Project, Unit, Sale, or Lease. Cards that say “View entries” open the matching operational list with the same idea of filters.",
-          "It is not the edifice-level Dashboard (that page is for day-to-day steering of one building) and not the Group dashboard (that page rolls up several companies)."
+          "Dashboard is the same figures for one edifice. Group dashboard rolls up several companies."
         ],
-        "body": "Think of Overview as “is the company healthy?” and Dashboard as “what is happening in this building today?”"
+        "body": "Portfolio answers “is the company healthy?” Dashboard answers “what is happening in this edifice?”"
       },
       {
         "title": "Tabs",
         "items": [
-          "Overview — mix of available / reserved / sold / rented units, collection, and other headline figures for the selected period.",
+          "Summary — mix of available / reserved / sold / rented units, collection, and other headline figures for the selected period.",
           "Analytics — how those figures move over time (period toolbar at the top).",
           "Projects / Edifices / Units — inventory counts and values so you can see where stock sits without opening each list.",
           "Workflows — pipeline health: leads, reservations, inspections, snags and similar in-flight work.",

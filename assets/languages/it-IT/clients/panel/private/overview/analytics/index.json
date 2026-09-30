@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/overview/analytics/index.tsx",
   "title": "Vendite e portafoglio",
   "description": "Vendite per mese e metriche del portafoglio",
-  "loadOverviewFirst": "Carica prima la dashboard dalla scheda Panoramica.",
+  "loadOverviewFirst": "Apri prima Riepilogo così questi grafici hanno delle cifre.",
   "totalUnits": "Unità totali",
   "totalUnitsDesc": "Tutte le unità nel portafoglio",
   "availableUnits": "Unità disponibili",

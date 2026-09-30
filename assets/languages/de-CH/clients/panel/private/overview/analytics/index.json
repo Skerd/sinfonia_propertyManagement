@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/overview/analytics/index.tsx",
   "title": "Sales & portfolio",
   "description": "Sales von monat und portfolio metrics",
-  "loadOverviewFirst": "Laden die dashboard von die Übersicht tab vor.",
+  "loadOverviewFirst": "Öffnen Sie zuerst Zusammenfassung, damit diese Charts Zahlen haben.",
   "totalUnits": "Einheiten total",
   "totalUnitsDesc": "Alle units in portfolio",
   "availableUnits": "Verfügbare Einheiten",

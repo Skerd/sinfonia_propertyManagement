@@ -3,7 +3,7 @@
   "title": "Workflows",
   "description": "Inspections und änderung requests übersicht.",
   "failTitle": "Laden fehlgeschlagen",
-  "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
+  "failDescription": "Portfolio konnte nicht geladen werden. Klicken zum erneuten Versuch.",
   "inspectionsSection": "Abnahmen",
   "totalInspections": "Total inspections",
   "totalInspectionsDesc": "Alle inspections",

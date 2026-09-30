@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
-  "title": "Paneli i pasurive të paluajtshme",
-  "description": "Pasqyrë e portofolit me ndërtesa, KPI dhe grafikët financiarë",
+  "title": "Paneli",
+  "description": "Shifra për një ndërtesë. Zgjidhni një ndërtesë për të fokusuar njësitë, arkëtimet dhe sinjalizimet.",
   "period": "Periudha",
   "paymentAlerts": "Sinjalizimet e pagesave",
   "viewPaymentPlans": "Shikoni planet e pagesave",
@@ -17,9 +17,9 @@
   "unitStatusBreakdown": "Statusi i njësisë",
   "failTitle": "Gabim",
   "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
-  "selectEdifice": "Zgjidhni një ndërtesë për të parë KPI dhe grafikët",
+  "companyScope": "E gjithë kompania. Zgjidhni një ndërtesë për t'i ngushtuar këto shifra.",
   "viewEntries": "Shiko regjistrimet",
-  "noData": "Ende nuk ka të dhëna të panelit",
+  "noData": "Ende nuk ka shifra për këtë shtrirje",
   "rentCollected": "Qira e arkëtuar",
   "rentOutstanding": "Qira e papaguar",
   "rentOverdue": "Qira e vonuar",
@@ -27,8 +27,8 @@
   "viewRentalsHub": "Shiko qendrën e qirave",
   "help": {
     "ariaLabel": "Rreth Panelit",
-    "title": "Rreth Panelit të pasurive të paluajtshme",
-    "overview": "Paneli është kabina operuese e ndërtesave të një shoqërie. Zgjidhni një ndërtesë; pjesa tjetër e faqes (KPI, përzierja e statuseve, grafikët e të ardhurave, lista e njësive, njoftimet e pagesave) ndjek atë ndërtesë. Këtu drejtohet stoku në jetën e përditshme. Nuk krijon ndërtesa, njësi apo marrëveshje — i lexon.",
+    "title": "Rreth Panelit",
+    "overview": "Pamje operative e një ndërtese. Galeria zgjedh ndërtesën; njësitë, arkëtimet, qiraja dhe sinjalizimet ndjekin atë zgjedhje. Pa ndërtesë të zgjedhur, shifrat janë të gjithë kompanisë.",
     "sections": [
       {
         "title": "Paraqitja",
@@ -56,7 +56,7 @@
         "items": [
           "Nuk ndryshon statusin e njësisë. Rezervoni, shitni ose jepni me qira nga ato lista.",
           "Zgjedhja e një ndërtese tjetër nuk ndryshon projektin — çdo ndërtesë i përket tashmë një projekti.",
-          "Nuk është vështrimi i përgjithshëm (e gjithë shoqëria) as paneli i grupit (disa shoqëri)."
+          "Portofoli është prerja e këtyre shifrave për të gjithë shoqërinë. Paneli i grupit mbledh disa shoqëri."
         ]
       },
       {

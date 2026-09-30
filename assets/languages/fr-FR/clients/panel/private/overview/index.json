@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/overview/index.tsx",
-  "title": "Vue d'ensemble",
-  "description": "Statistiques système",
+  "title": "Portefeuille",
+  "description": "Ventes, loyers, stock et travaux en cours de toute la société.",
   "download": "Télécharger",
   "refresh": "Actualiser",
   "period": "Période",
@@ -11,7 +11,7 @@
   "periodLast12Months": "12 derniers mois",
   "viewEntries": "Voir les entrées",
   "tabs": {
-    "overview": "Vue d'ensemble",
+    "overview": "Synthèse",
     "analytics": "Analyses",
     "projects": "Projets",
     "edifices": "Bâtiments",
@@ -22,9 +22,9 @@
     "notifications": "Notifications"
   },
   "help": {
-    "ariaLabel": "À propos de la vue d'ensemble",
-    "title": "À propos de la vue d'ensemble",
-    "overview": "La vue d'ensemble est la salle de contrôle à l'échelle de la société pour l'immobilier. Elle ne stocke aucun document propre. Chaque chiffre est un agrégat en direct des projets, bâtiments, unités, prospects, réservations, ventes, baux, loyers, réserves et workflows associés. Utilisez-la pour voir si le portefeuille avance, puis ouvrez la liste qui détient réellement le travail.",
+    "ariaLabel": "À propos du portefeuille",
+    "title": "À propos du portefeuille",
+    "overview": "Totaux en lecture seule de la société dans laquelle vous êtes connecté. Chaque onglet est une autre coupe des mêmes chiffres. Les cartes ouvrent la liste qui détient les enregistrements.",
     "sections": [
       {
         "title": "Ce qu'est cette page",
@@ -32,14 +32,14 @@
           "Un cockpit en lecture seule pour une société (celle dans laquelle vous êtes connecté).",
           "Les onglets sont des coupes différentes des mêmes données : KPI de tête, tendances, stock et santé du pipeline.",
           "Rien ici ne crée un projet, une unité, une vente ou un bail. Les cartes « Voir les entrées » ouvrent la liste opérationnelle correspondante, avec la même logique de filtres.",
-          "Ce n'est pas le tableau de bord d'un bâtiment (pilotage quotidien d'un édifice) ni le tableau de bord groupe (plusieurs sociétés)."
+          "Le tableau de bord reprend les mêmes chiffres pour un édifice. Le tableau de bord groupe cumule plusieurs sociétés."
         ],
-        "body": "La vue d'ensemble = « la société est-elle en bonne santé ? » Le tableau de bord = « que se passe-t-il aujourd'hui dans ce bâtiment ? »"
+        "body": "Portefeuille répond à « la société est-elle en bonne santé ? » Le tableau de bord répond à « que se passe-t-il dans cet édifice ? »"
       },
       {
         "title": "Onglets",
         "items": [
-          "Vue d'ensemble — mix d'unités disponibles / réservées / vendues / louées, encaissement et autres indicateurs de la période choisie.",
+          "Synthèse — mix d'unités disponibles / réservées / vendues / louées, encaissement et autres indicateurs de la période choisie.",
           "Analyses — évolution de ces chiffres dans le temps (barre de période en haut).",
           "Projets / Bâtiments / Unités — volumes et valeurs de stock, sans ouvrir chaque liste.",
           "Flux de travail — santé du pipeline : prospects, réservations, inspections, réserves et travail en cours similaire.",
@@ -60,7 +60,7 @@
         "title": "Usage typique",
         "items": [
           "Début de journée : vendu vs disponible vs loué, loyers en retard, réservations à traiter.",
-          "Puis ouvrez le tableau de bord d'un bâtiment, ou sautez vers Unités, Réservations, Ventes ou le centre des locations pour agir.",
+          "Puis ouvrez le tableau de bord pour un édifice, ou sautez vers Unités, Réservations, Ventes ou le centre des locations pour agir.",
           "Ne cherchez pas à « corriger » un KPI ici — modifiez la réservation, la vente, le bail ou le paiement sous-jacent."
         ]
       }

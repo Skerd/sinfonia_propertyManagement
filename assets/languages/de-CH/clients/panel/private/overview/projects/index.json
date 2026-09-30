@@ -3,7 +3,7 @@
   "title": "Projekte",
   "description": "Portfolio structure: projects, edifices, floors und units.",
   "failTitle": "Laden fehlgeschlagen",
-  "failDescription": "Konnte nicht laden dashboard. Click bis retry.",
+  "failDescription": "Portfolio konnte nicht geladen werden. Klicken zum erneuten Versuch.",
   "totalProjects": "Total projects",
   "totalProjectsDesc": "Nummer von projects",
   "totalEdifices": "Gebäude",

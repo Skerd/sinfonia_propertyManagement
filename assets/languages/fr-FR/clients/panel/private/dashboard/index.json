@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
-  "title": "Tableau de bord immobilier",
-  "description": "Vue d'ensemble du portefeuille avec bâtiments, KPI et graphiques financiers",
+  "title": "Tableau de bord",
+  "description": "Chiffres d'un édifice. Sélectionnez un bâtiment pour cibler les unités, les encaissements et les alertes.",
   "period": "Période",
   "paymentAlerts": "Alertes de paiement",
   "viewPaymentPlans": "Voir les plans de paiement",
@@ -17,9 +17,9 @@
   "unitStatusBreakdown": "Statut des unités",
   "failTitle": "Erreur",
   "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
-  "selectEdifice": "Sélectionnez un bâtiment pour voir les KPI et les graphiques",
+  "companyScope": "Société entière. Sélectionnez un édifice pour restreindre ces chiffres.",
   "viewEntries": "Voir les entrées",
-  "noData": "Aucune donnée du tableau de bord pour le moment",
+  "noData": "Aucun chiffre pour ce périmètre pour le moment",
   "rentCollected": "Loyer encaissé",
   "rentOutstanding": "Loyer restant dû",
   "rentOverdue": "Loyer en retard",
@@ -27,8 +27,8 @@
   "viewRentalsHub": "Ouvrir le hub locatif",
   "help": {
     "ariaLabel": "À propos du tableau de bord",
-    "title": "À propos du tableau de bord immobilier",
-    "overview": "Le tableau de bord est le cockpit opérationnel des bâtiments d'une société. Vous choisissez un bâtiment ; le reste de la page (KPI, mix de statuts, graphiques de recettes, liste d'unités, alertes de paiement) suit ce bâtiment. C'est là que se pilote le stock au quotidien. Il ne crée ni bâtiments, ni unités, ni deals — il les lit.",
+    "title": "À propos du tableau de bord",
+    "overview": "Vue opérationnelle d'un édifice. La galerie choisit le bâtiment ; unités, encaissements, loyers et alertes suivent ce choix. Sans édifice sélectionné, les chiffres couvrent toute la société.",
     "sections": [
       {
         "title": "Disposition",
@@ -56,7 +56,7 @@
         "items": [
           "Elle ne change pas le statut d'une unité. Réservez, vendez ou louez depuis ces listes.",
           "Choisir un autre bâtiment ne change pas le projet — chaque bâtiment appartient déjà à un projet.",
-          "Ce n'est pas la vue d'ensemble (toute la société) ni le tableau de bord groupe (plusieurs sociétés)."
+          "Portefeuille est la coupe de ces chiffres pour toute la société. Le tableau de bord groupe cumule plusieurs sociétés."
         ]
       },
       {

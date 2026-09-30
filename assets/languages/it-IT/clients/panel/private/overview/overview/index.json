@@ -52,7 +52,7 @@
   "noRecentSales": "Nessuna vendita recente.",
   "unitLabel": "Unità",
   "failTitle": "Errore",
-  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "failDescription": "Impossibile caricare il portafoglio. Clicca per riprovare.",
   "primaryKpisDesc": "Ricavi, prenotazioni e vendite per il periodo selezionato.",
   "financialKpisDesc": "Prezzi, valore inventario e mix di pagamento.",
   "unitCostsKpisDesc": "Approvvigionamenti verificati e documenti di costo in ambito.",

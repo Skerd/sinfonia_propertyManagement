@@ -3,7 +3,7 @@
   "title": "Flux de travail",
   "description": "Vue d'ensemble des inspections et des demandes de modification.",
   "failTitle": "Échec du chargement",
-  "failDescription": "Impossible de charger le tableau de bord. Cliquez pour réessayer.",
+  "failDescription": "Impossible de charger le portefeuille. Cliquez pour réessayer.",
   "inspectionsSection": "Inspections",
   "totalInspections": "Total des inspections",
   "totalInspectionsDesc": "Toutes les inspections",

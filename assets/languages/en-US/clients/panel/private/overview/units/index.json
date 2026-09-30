@@ -3,7 +3,7 @@
   "title": "Units",
   "description": "Unit counts by status, occupancy and inventory value.",
   "failTitle": "Failed to load",
-  "failDescription": "Could not load dashboard. Click to retry.",
+  "failDescription": "Could not load portfolio. Click to retry.",
   "totalUnits": "Total units",
   "totalUnitsDesc": "All units in portfolio",
   "available": "Available",

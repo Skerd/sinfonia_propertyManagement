@@ -3,7 +3,7 @@
   "title": "Progetti",
   "description": "Struttura del portafoglio: progetti, edifici, piani e unità.",
   "failTitle": "Caricamento non riuscito",
-  "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
+  "failDescription": "Impossibile caricare il portafoglio. Clicca per riprovare.",
   "totalProjects": "Progetti totali",
   "totalProjectsDesc": "Numero di progetti",
   "totalEdifices": "Edifici",
