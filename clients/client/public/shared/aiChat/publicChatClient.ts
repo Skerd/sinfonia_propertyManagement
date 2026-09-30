@@ -138,15 +138,24 @@ export type StartSessionInput = {
 /**
  * Open or resume a conversation. Sends any stored token so the server can
  * resume; the server mints a fresh one when it cannot, which we then persist.
+ *
+ * `projectId` / `unitId` are propertyManagement page context. Core stores them
+ * as opaque keys on `context` (`project`, `unit`).
  */
 export async function startSession(
     input: StartSessionInput = {},
 ): Promise<StartPublicChatSessionFormResponseType> {
-    const {languageCode, ...context} = input;
+    const {languageCode, entryUrl, referrer, projectId, unitId} = input;
+    const context = {
+        ...(projectId ? {project: projectId} : {}),
+        ...(unitId ? {unit: unitId} : {}),
+    };
     const {data} = await publicChatClient.post<StartPublicChatSessionFormResponseType>(
         `${BASE_PATH}/session`,
         {
-            ...context,
+            entryUrl,
+            referrer,
+            ...(Object.keys(context).length > 0 ? {context} : {}),
             visitorToken: getVisitorToken() ?? undefined,
         },
         {headers: authHeaders(languageCode)},

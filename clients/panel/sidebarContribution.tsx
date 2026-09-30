@@ -41,6 +41,9 @@ import {
     ROI_ACCESS_MODELS,
 } from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import {registerPropertyManagementRefSelects} from "armonia/src/modules/propertyManagement/database/filter/refSelect.ts";
+
+registerPropertyManagementRefSelects();
 
 type NavIcon = LucideIcon | typeof IconFolder | typeof IconLayoutDashboard;
 
