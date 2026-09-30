@@ -336,16 +336,15 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
                                     {t("logOut")}
                                 </button>
                             </>
-                        ) : (
-                            <>
-                                <Link to="/login" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
-                                    {t("logIn")}
-                                </Link>
-                                <Link to="/signup" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
-                                    {t("signUp")}
-                                </Link>
-                            </>
-                        )}
+                        ) : null}
+                        {/*
+                        <Link to="/login" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                            {t("logIn")}
+                        </Link>
+                        <Link to="/signup" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                            {t("signUp")}
+                        </Link>
+                        */}
                     </nav>
 
                     <div className="mt-8 h-px w-full bg-white/40" aria-hidden />
