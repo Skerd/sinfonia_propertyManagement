@@ -66,5 +66,19 @@
     "cosmetic": "Kosmetik",
     "other": "Andere"
   },
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "downloadFinancePdf": "Finanz-PDF herunterladen",
+  "pdf": {
+    "docTitle": "Kostenaufschlüsselung Finanzen",
+    "currency": "Währung",
+    "category": "Quelle",
+    "lineTotal": "Zeilensumme",
+    "tableTotal": "Total",
+    "preparedBy": "Erstellt von",
+    "signature": "Unterschrift",
+    "source": {
+      "engineer_material": "Ingenieurmaterial",
+      "manual": "Manuell"
+    }
+  }
 }

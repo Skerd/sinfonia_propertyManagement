@@ -7,6 +7,7 @@ import CancelModificationRequest from "@propertyManagementModule/clients/panel/p
 import SubmitRevision from "@propertyManagementModule/clients/panel/private/modificationRequests/center/actions/submitRevision.tsx";
 import ClientCostApprove from "@propertyManagementModule/clients/panel/private/modificationRequests/center/actions/clientCostApprove.tsx";
 import {DropdownMenuSeparator} from "@coreModule/components/ui/dropdown-menu.tsx";
+import DownloadFinancePdfMenuItem from "@propertyManagementModule/components/custom/modificationRequests/downloadFinancePdfMenuItem.tsx";
 
 type ModificationRequestRowMenuExtrasProps = {
     request: ModificationRequest;
@@ -135,6 +136,12 @@ export default function ModificationRequestRowMenuExtras({
 
     return (
         <>
+            {request.financeDetails ? (
+                <>
+                    <DownloadFinancePdfMenuItem request={request} />
+                    {(hasItemsBeforeCancel || showCancel) && <DropdownMenuSeparator />}
+                </>
+            ) : null}
             {showApprove && (
                 <>
                     {/*{showEdit && <DropdownMenuSeparator />}*/}

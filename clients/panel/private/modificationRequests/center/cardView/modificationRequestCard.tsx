@@ -1,5 +1,6 @@
 import {compose} from "redux";
 import {Card, CardContent} from "@coreModule/components/ui/card.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
@@ -16,6 +17,7 @@ import ModificationRequestSheetView from "@propertyManagementModule/clients/pane
 import {
     IconCalendar,
     IconCashBanknote,
+    IconDownload,
     IconHome,
     IconTag,
     IconUser,
@@ -35,6 +37,7 @@ import DeliverModificationRequestDialog from "@propertyManagementModule/componen
 import CancelModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/cancelModificationRequestDialog.tsx";
 import ClientCostApproveModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {downloadModificationRequestFinancePdf} from "@propertyManagementModule/components/custom/modificationRequests/modificationRequestFinancePdf.ts";
 
 function modificationRequestEditPath(req: ModificationRequest, unitId: string, unitName?: string) {
     const params = new URLSearchParams();
@@ -182,6 +185,13 @@ function ModificationRequestCard({
 
             const formatFinanceCurrency = (fd: typeof displayRequest.financeDetails) =>
                 String(fd?.currency?.symbol || fd?.currency?.abbreviation || fd?.currency?.name || "—");
+
+            const downloadFinancePdf = (event: {stopPropagation: () => void; preventDefault: () => void}) => {
+                event.stopPropagation();
+                event.preventDefault();
+                if (!displayRequest.financeDetails) return;
+                void downloadModificationRequestFinancePdf(displayRequest, (key) => String(resolveLanguageKey(key)));
+            };
 
             const getApprovalDecisionColor = (decision: string) => {
                 if (decision === "approved") return "bg-success/20 text-success border-success/30";
@@ -526,6 +536,16 @@ function ModificationRequestCard({
                                         </>
                                     }
                                 </HiddenElement>
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    size="sm"
+                                    className="mt-1 w-full"
+                                    onClick={downloadFinancePdf}
+                                >
+                                    <IconDownload />
+                                    {resolveLanguageKey("downloadFinancePdf")}
+                                </Button>
 
                             </CardContent>
                         }
@@ -680,7 +700,21 @@ function ModificationRequestCard({
                                     >
                                         <div className={`size-4 rounded-full border-2 transition-all duration-300 hover:scale-100 z-1 ${getStageDotClass(status)} `}/>
                                     </TooltipDisplayer>
-                                    <span className="mt-1.5 w-full truncate text-center text-sm text-muted-foreground">{stageLabel}</span>
+                                    <span className="mt-1.5 flex w-full min-w-0 items-center justify-center gap-0.5 text-sm text-muted-foreground">
+                                        <span className="truncate">{stageLabel}</span>
+                                        {displayRequest.financeDetails ? (
+                                            <Button
+                                                type="button"
+                                                variant="ghost"
+                                                size="icon-xs"
+                                                className="size-5 shrink-0"
+                                                aria-label={String(resolveLanguageKey("downloadFinancePdf"))}
+                                                onClick={downloadFinancePdf}
+                                            >
+                                                <IconDownload />
+                                            </Button>
+                                        ) : null}
+                                    </span>
                                 </div>
                                 :
                                 <div className="relative flex min-w-0 flex-col cursor-pointer group items-start">

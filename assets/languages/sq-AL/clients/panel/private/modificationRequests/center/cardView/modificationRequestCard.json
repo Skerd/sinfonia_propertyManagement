@@ -66,5 +66,19 @@
     "cosmetic": "Kozmetike",
     "other": "Të tjera"
   },
-  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "downloadFinancePdf": "Shkarko PDF-në e financës",
+  "pdf": {
+    "docTitle": "Ndarja e kostove të financës",
+    "currency": "Monedha",
+    "category": "Burimi",
+    "lineTotal": "Totali i rreshtit",
+    "tableTotal": "Totali",
+    "preparedBy": "Përgatitur nga",
+    "signature": "Nënshkrimi",
+    "source": {
+      "engineer_material": "Materialet e inxhinierit",
+      "manual": "Manual"
+    }
+  }
 }

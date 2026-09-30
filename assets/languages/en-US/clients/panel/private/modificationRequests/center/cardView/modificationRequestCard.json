@@ -66,5 +66,19 @@
     "cosmetic": "Cosmetic",
     "other": "Other"
   },
-  "failedTooltipDescription": "Click to retry fetching data."
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "downloadFinancePdf": "Download finance PDF",
+  "pdf": {
+    "docTitle": "Finance cost breakdown",
+    "currency": "Currency",
+    "category": "Source",
+    "lineTotal": "Line total",
+    "tableTotal": "Total",
+    "preparedBy": "Prepared by",
+    "signature": "Signature",
+    "source": {
+      "engineer_material": "Engineer materials",
+      "manual": "Manual"
+    }
+  }
 }

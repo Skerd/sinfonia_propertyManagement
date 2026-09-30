@@ -66,5 +66,19 @@
     "cosmetic": "Esthétique",
     "other": "Autre"
   },
-  "failedTooltipDescription": "Cliquez pour recharger les données."
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "downloadFinancePdf": "Télécharger le PDF finance",
+  "pdf": {
+    "docTitle": "Détail des coûts finance",
+    "currency": "Devise",
+    "category": "Source",
+    "lineTotal": "Total ligne",
+    "tableTotal": "Total",
+    "preparedBy": "Préparé par",
+    "signature": "Signature",
+    "source": {
+      "engineer_material": "Matériaux ingénieur",
+      "manual": "Manuel"
+    }
+  }
 }
