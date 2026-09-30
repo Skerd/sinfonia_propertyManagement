@@ -33,7 +33,7 @@ function statusBadge(status: string) {
 const CALENDAR_DATE_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "short", year: "numeric"};
 
 function fmtDate(iso: string | undefined) {
-    return formatDate(iso, {format: CALENDAR_DATE_FORMAT}) || "—";
+    return formatDate(iso, {timeZone: "UTC", format: CALENDAR_DATE_FORMAT}) || "—";
 }
 
 function UnitAvailabilityCalendar({}: WithLanguageType) {

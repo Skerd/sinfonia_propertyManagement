@@ -13,8 +13,8 @@ import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const DAY_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "2-digit", year: "numeric"};
 
-export function fmtDate(iso: string | undefined, timezone?: string): string {
-    return formatDate(iso, {timeZone: timezone, format: DAY_FORMAT}) || "—";
+export function fmtDate(iso: string | undefined, _timezone?: string): string {
+    return formatDate(iso, {timeZone: "UTC", format: DAY_FORMAT}) || "—";
 }
 
 export function fmtDateTime(iso: string | undefined, timezone?: string): string {
