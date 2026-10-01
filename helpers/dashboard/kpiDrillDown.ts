@@ -59,9 +59,14 @@ function unitsUrl(ctx: KpiDrillDownContext, status?: UnitStatus | UnitStatus[]):
                 ? buildFilterGroup([buildFilterRule("status", "equals", values[0])])
                 : buildFilterGroup([buildFilterRule("status", "in", values)]);
     }
+    const queryParams = contextQueryParams(ctx);
+    if (ctx.edificeId) {
+        queryParams.qf_edifice = ctx.edificeId;
+        if (ctx.edificeName) queryParams.qf_edifice_label = ctx.edificeName;
+    }
     return buildListDrillDownUrl("/realEstate/units", {
         filter,
-        queryParams: contextQueryParams(ctx),
+        queryParams,
     });
 }
 

@@ -4,8 +4,9 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconBuildingPlus} from "@tabler/icons-react";
-import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
+import {pendingScopeFilterId, type ScopeQuickFilter} from "@coreModule/helpers/filter/filterUrl.ts";
+import {usePromoteScopeToQuickFilters} from "@coreModule/helpers/filter/usePromoteScopeToQuickFilters.ts";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import EdificeCard from "@propertyManagementModule/clients/panel/private/edifices/center/cardView/edificeCard.tsx";
@@ -18,6 +19,10 @@ import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entity
 import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
+
+const EDIFICE_LIST_SCOPES: readonly ScopeQuickFilter[] = [
+    {field: "project", idParam: "projectId", nameParam: "projectName"},
+];
 
 export function buildEdificeEditPath(edifice: Edifice){
     return buildUrlWithExistingParams(
@@ -33,8 +38,10 @@ export function buildEdificeEditPath(edifice: Edifice){
 function AllEdifices({resolveLanguageKey}: WithLanguageType) {
 
     const [searchParams] = useSearchParams();
-    const projectId = searchParams.get("projectId") || undefined;
-    const projectName = searchParams.get("projectName");
+    usePromoteScopeToQuickFilters(EDIFICE_LIST_SCOPES);
+    const projectId = searchParams.get("qf_project") || searchParams.get("projectId") || undefined;
+    const projectName = searchParams.get("qf_project_label") || searchParams.get("projectName");
+    const pendingProjectId = pendingScopeFilterId(searchParams, "project", "projectId");
     const {read: readFloors} = useAccess("floors");
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
@@ -70,8 +77,7 @@ function AllEdifices({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createEdifice"
             buildEditPath={buildEdificeEditPath}
             resolveLanguageKey={listResolveLanguageKey}
-            headerTitle={buildPageTitle(resolveLanguageKey("title"), [projectName ?? ""])}
-            extraFilters={{project: projectId ?? undefined}}
+            extraFilters={pendingProjectId ? {project: pendingProjectId} : undefined}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx"
             cardViewClassName={GRID_HIERARCHY}

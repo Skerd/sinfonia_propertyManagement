@@ -7,7 +7,7 @@ import {Home} from "lucide-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheet/widgets/sheetMenuNavigateDismiss.tsx";
-import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
+import {buildListNavigationUrl, quickFilterScopeEntries} from "@coreModule/helpers/filter/filterUrl.ts";
 import type {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 
 type ViewUnitsProps = WithLanguageType & {
@@ -23,13 +23,21 @@ function ViewUnits({floor, resolveLanguageKey}: ViewUnitsProps) {
     const viewUnits = () => {
         if (!read) return;
         dismissSheetIfHosted?.();
+        const project = floor.project ?? floor.edifice?.project;
         navigate(buildListNavigationUrl({
             path: "/realEstate/units",
             from: window.location.search,
-            policy: "carry",
+            policy: "scoped",
             scope: {
+                projectId: project?._id,
+                projectName: project?.name,
+                edificeId: floor.edifice?._id,
+                edificeName: floor.edifice?.name,
                 floorId: floor._id ?? "",
                 floorName: floor.name,
+                ...quickFilterScopeEntries("project", project?._id, project?.name),
+                ...quickFilterScopeEntries("edifice", floor.edifice?._id, floor.edifice?.name),
+                ...quickFilterScopeEntries("floor", floor._id, floor.name),
             },
         }));
     };

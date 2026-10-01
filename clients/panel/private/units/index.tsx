@@ -5,8 +5,9 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconFrustumPlus} from "@tabler/icons-react";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
-import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
+import {pendingScopeFilterId, type ScopeQuickFilter} from "@coreModule/helpers/filter/filterUrl.ts";
+import {usePromoteScopeToQuickFilters} from "@coreModule/helpers/filter/usePromoteScopeToQuickFilters.ts";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import {UnitStatus} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.constants.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -31,29 +32,32 @@ type AllUnitsProps = WithLanguageType & {
 
 const UNIT_EXTRA_PARAM_KEYS = ["reservedBy", "boughtFrom"] as const;
 
+const UNIT_LIST_SCOPES: readonly ScopeQuickFilter[] = [
+    {field: "project", idParam: "projectId", nameParam: "projectName"},
+    {field: "edifice", idParam: "edificeId", nameParam: "edificeName"},
+    {field: "floor", idParam: "floorId", nameParam: "floorName"},
+];
+
 function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = true}: AllUnitsProps) {
     const [searchParams, setSearchParams] = useSearchParams();
+    const isListRoute = showHeader && !propEdificeId;
+    usePromoteScopeToQuickFilters(UNIT_LIST_SCOPES, isListRoute);
 
-    const projectId   = searchParams.get("projectId")   || undefined;
-    const projectName = searchParams.get("projectName") || undefined;
-    const edificeId   = propEdificeId ?? searchParams.get("edificeId") ?? undefined;
-    const edificeName = searchParams.get("edificeName") || undefined;
-    const floorId     = searchParams.get("floorId")     || undefined;
-    const floorName   = searchParams.get("floorName")   || undefined;
+    const extraFilters = useMemo(() => {
+        if (propEdificeId) return {edifice: propEdificeId};
+        if (!isListRoute) return undefined;
+        const project = pendingScopeFilterId(searchParams, "project", "projectId");
+        const edifice = pendingScopeFilterId(searchParams, "edifice", "edificeId");
+        const floor = pendingScopeFilterId(searchParams, "floor", "floorId");
+        if (!project && !edifice && !floor) return undefined;
+        return {
+            ...(project ? {project} : {}),
+            ...(edifice ? {edifice} : {}),
+            ...(floor ? {floor} : {}),
+        };
+    }, [propEdificeId, isListRoute, searchParams]);
 
-    const headerTitle = useMemo(
-        () => buildPageTitle(resolveLanguageKey("title"), [projectName, edificeName, floorName]),
-        [resolveLanguageKey, projectName, edificeName, floorName],
-    );
-
-    const extraFilters = useMemo(
-        () => ({
-            ...(projectId  && {project: projectId}),
-            ...(edificeId  && {edifice: edificeId}),
-            ...(floorId    && {floor: floorId}),
-        }),
-        [projectId, edificeId, floorId],
-    );
+    const floorScoped = isListRoute && Boolean(searchParams.get("qf_floor") || searchParams.get("floorId"));
 
     // reservedBy / boughtFrom target users on the Reservation / Sale documents, which
     // the DSL filter engine can't reach, so they travel as plain list params (resolved
@@ -248,7 +252,7 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
             buildEditPath={buildUnitEditPath}
             buildDeleteConfirmLabel={(unit, read) => unitDeleteConfirmLabel(read, unit)}
             resolveLanguageKey={resolveLanguageKey}
-            headerTitle={headerTitle}
+            headerDescription={resolveLanguageKey(floorScoped ? "description" : "descriptionWithoutContext")}
             extraFilters={extraFilters}
             extraParams={extraParams}
             aboveToolbar={userFilterBar}

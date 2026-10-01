@@ -134,7 +134,11 @@ function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
                           setSelectedProjectId(project._id);
                           const params = new URLSearchParams();
                           params.set("projectId", project._id);
-                          if (project.name) params.set("projectName", project.name);
+                          params.set("qf_project", project._id);
+                          if (project.name) {
+                              params.set("projectName", project.name);
+                              params.set("qf_project_label", project.name);
+                          }
                           navigate(`/realEstate/edifices?${params.toString()}`);
                         }}
                     />

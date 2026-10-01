@@ -8,7 +8,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {Project} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheet/widgets/sheetMenuNavigateDismiss.tsx";
-import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
+import {buildListNavigationUrl, quickFilterScopeEntries} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type ViewEdificesProps = WithLanguageType & {
     project: Project
@@ -27,7 +27,7 @@ function ViewEdifices({
     const viewEdifices = () => {
         if (!read) return;
         dismissSheetIfHosted?.();
-        // Scoped entry: project scope only — do not carry units/projects list filters.
+        // Fresh list scoped to this project. The quick filter shows it; create still reads projectId.
         navigate(buildListNavigationUrl({
             path: "/realEstate/edifices",
             from: window.location.search,
@@ -35,6 +35,7 @@ function ViewEdifices({
             scope: {
                 projectId: project._id ?? "",
                 projectName: project.name,
+                ...quickFilterScopeEntries("project", project._id, project.name),
             },
         }));
     };

@@ -136,7 +136,19 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
                   setSelectedEdificeId(edifice._id);
                   const params = new URLSearchParams();
                   params.set("edificeId", edifice._id);
-                  if (edifice.name) params.set("edificeName", edifice.name);
+                  params.set("qf_edifice", edifice._id);
+                  if (edifice.name) {
+                      params.set("edificeName", edifice.name);
+                      params.set("qf_edifice_label", edifice.name);
+                  }
+                  if (edifice.project?._id) {
+                      params.set("projectId", edifice.project._id);
+                      params.set("qf_project", edifice.project._id);
+                      if (edifice.project.name) {
+                          params.set("projectName", edifice.project.name);
+                          params.set("qf_project_label", edifice.project.name);
+                      }
+                  }
                   navigate(`/realEstate/units?${params.toString()}`);
                 }}
               />

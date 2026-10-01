@@ -8,7 +8,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheet/widgets/sheetMenuNavigateDismiss.tsx";
-import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
+import {buildListNavigationUrl, quickFilterScopeEntries} from "@coreModule/helpers/filter/filterUrl.ts";
 
 type ViewFloorsProps = WithLanguageType & { edifice: Edifice; }
 
@@ -25,13 +25,19 @@ function ViewFloors({
     const viewFloors = () => {
         if (!read) return;
         dismissSheetIfHosted?.();
+        const projectId = edifice.project?._id;
+        const projectName = edifice.project?.name;
         navigate(buildListNavigationUrl({
             path: "/realEstate/floors",
             from: window.location.search,
-            policy: "carry",
+            policy: "scoped",
             scope: {
+                projectId,
+                projectName,
                 edificeId: edifice._id ?? "",
                 edificeName: edifice.name,
+                ...quickFilterScopeEntries("project", projectId, projectName),
+                ...quickFilterScopeEntries("edifice", edifice._id, edifice.name),
             },
         }));
     }

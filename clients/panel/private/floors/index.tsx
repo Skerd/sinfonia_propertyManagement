@@ -4,8 +4,9 @@ import {useSearchParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconStackPush} from "@tabler/icons-react";
-import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
+import {pendingScopeFilterId, type ScopeQuickFilter} from "@coreModule/helpers/filter/filterUrl.ts";
+import {usePromoteScopeToQuickFilters} from "@coreModule/helpers/filter/usePromoteScopeToQuickFilters.ts";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import FloorCard from "@propertyManagementModule/clients/panel/private/floors/center/cardView/floorCard.tsx";
@@ -16,6 +17,11 @@ import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entity
 import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
+
+const FLOOR_LIST_SCOPES: readonly ScopeQuickFilter[] = [
+    {field: "project", idParam: "projectId", nameParam: "projectName"},
+    {field: "edifice", idParam: "edificeId", nameParam: "edificeName"},
+];
 
 export function buildFloorEditPath(floor: Floor) {
     return buildUrlWithExistingParams(
@@ -30,10 +36,10 @@ export function buildFloorEditPath(floor: Floor) {
 
 function AllFloors({resolveLanguageKey}: WithLanguageType) {
     const [searchParams] = useSearchParams();
-    // const projectId = searchParams.get("projectId") || undefined;
-    const projectName = searchParams.get("projectName") || undefined;
-    const edificeId = searchParams.get("edificeId") || undefined;
-    const edificeName = searchParams.get("edificeName") || undefined;
+    usePromoteScopeToQuickFilters(FLOOR_LIST_SCOPES);
+    const pendingProjectId = pendingScopeFilterId(searchParams, "project", "projectId");
+    const pendingEdificeId = pendingScopeFilterId(searchParams, "edifice", "edificeId");
+    const edificeScoped = Boolean(searchParams.get("qf_edifice") || searchParams.get("edificeId"));
     const {read: readUnits} = useAccess("units");
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
@@ -79,9 +85,15 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
             createLanguageKey="createFloor"
             buildEditPath={buildFloorEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            headerTitle={buildPageTitle(resolveLanguageKey("title"), [projectName, edificeName])}
-            headerDescription={resolveLanguageKey("description")}
-            extraFilters={{edifice: edificeId ?? undefined}}
+            headerDescription={resolveLanguageKey(edificeScoped ? "description" : "descriptionWithoutEdifice")}
+            extraFilters={
+                pendingProjectId || pendingEdificeId
+                    ? {
+                        ...(pendingProjectId ? {project: pendingProjectId} : {}),
+                        ...(pendingEdificeId ? {edifice: pendingEdificeId} : {}),
+                    }
+                    : undefined
+            }
             quickFilters={quickFilters}
             configurations={{limit: 20}}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/floors/center/sheetView/floorSheetView.tsx"
