@@ -194,17 +194,22 @@ const propertyManagementWidgetContribution: WidgetContribution = {
             const wp = binding.widgetProps ?? {};
             if (!sheetFieldVisible(node, ctx) || !data) return null;
             if (ctx.access && !hasAccessPath(ctx.access, binding.name)) return null;
-            const bodyHtml = resolvePath(data, binding.name);
-            if (typeof bodyHtml !== "string" || bodyHtml === "") return createElement(ValueNotSet, {key: index});
+            const override = resolvePath(data, binding.name);
+            const bodyHtml = typeof override === "string" ? override : "";
+            if (!bodyHtml && typeof data._id !== "string") return createElement(ValueNotSet, {key: index});
             const Preview = Component ?? EmailHtmlPreview;
+            const subject =
+                (typeof data.subjectOverride === "string" && data.subjectOverride)
+                || (typeof data.subject === "string" ? data.subject : undefined);
             return createElement(Preview as ComponentType<any>, {
                 key: index,
                 bodyHtml,
                 apiUrl: typeof wp.apiUrl === "string" ? wp.apiUrl : "/api/realEstate/adCampaignTemplate/preview",
-                subject: typeof data.subject === "string" ? data.subject : undefined,
+                subject,
                 previewText: typeof data.previewText === "string" ? data.previewText : undefined,
                 campaignType: typeof data.campaignType === "string" ? data.campaignType : undefined,
                 locale: typeof data.locale === "string" ? data.locale : "en-US",
+                campaignId: typeof data._id === "string" ? data._id : undefined,
                 height: typeof wp.height === "number" ? wp.height : undefined,
                 // Nothing is being typed, so there is no reason to wait.
                 debounceMs: 0,

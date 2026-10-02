@@ -24,6 +24,7 @@ export const figmaPublicRoutes: FigmaPublicRoute[] = [
     {path: "/contact", label: "Contact", nodeId: "305:228", frameName: "Contact us", height: 1117},
     {path: "/privacy", label: "Privacy Policy", nodeId: "legal:privacy", frameName: "Privacy Policy", height: 2000},
     {path: "/terms", label: "Terms of Conditions", nodeId: "legal:terms", frameName: "Terms of Conditions", height: 2000},
+    {path: "/blog", label: "Blog", nodeId: "core:blog", frameName: "Blog", height: 2000},
 ];
 
 export const figmaMenuLinks = [
@@ -31,5 +32,6 @@ export const figmaMenuLinks = [
     {path: "/about", label: "About Pronix"},
     {path: "/investors", label: "For Investors"},
     {path: "/developers", label: "For Developers"},
+    {path: "/blog", label: "Blog"},
     {path: "/contact", label: "Contact"},
 ] as const;

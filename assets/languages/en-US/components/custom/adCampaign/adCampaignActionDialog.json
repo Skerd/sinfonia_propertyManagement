@@ -2,18 +2,21 @@
     "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
     "titles": {
         "sendNow": "Send campaign",
+        "testSend": "Send a test",
         "pause": "Pause campaign",
         "resume": "Resume campaign",
         "cancel": "Cancel campaign"
     },
     "descriptions": {
         "sendNow": "Emails go out in batches starting on the next dispatch run. This cannot be undone once messages leave.",
+        "testSend": "One email with this campaign's live content is sent to your account address. Recipients are not mailed.",
         "pause": "Sending stops between batches. Recipients already emailed are unaffected.",
         "resume": "Sending continues from where it stopped. Nobody is emailed twice.",
         "cancel": "The campaign stops for good and no further emails are sent. Messages already delivered stay delivered."
     },
     "submit": {
         "sendNow": "Send now",
+        "testSend": "Send test",
         "pause": "Pause",
         "resume": "Resume",
         "cancel": "Cancel campaign"
@@ -27,13 +30,16 @@
         "empty": "Nobody would receive this campaign. Check the audience before sending."
     },
     "cancel": "Cancel",
+    "toasts": {
+        "sendNow": "Campaign queued",
+        "testSend": "Test email sent",
+        "pause": "Campaign paused",
+        "resume": "Campaign resumed",
+        "cancel": "Campaign cancelled"
+    },
     "axios": {
         "start": {
-            "title": "Saving...",
-            "time": 3000
-        },
-        "success": {
-            "title": "Saved",
+            "title": "Working...",
             "time": 3000
         },
         "error": {

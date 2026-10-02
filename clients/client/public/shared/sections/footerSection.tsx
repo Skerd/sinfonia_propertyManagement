@@ -618,6 +618,7 @@ function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSe
                                 links={[
                                     {label: String(resolveLanguageKey("linkProperties")), to: "/projects"},
                                     {label: String(resolveLanguageKey("linkAbout")), to: "/about"},
+                                    {label: String(resolveLanguageKey("linkBlog")), to: "/blog"},
                                     {label: String(resolveLanguageKey("linkHowItWorks"))},
                                     {label: String(resolveLanguageKey("linkDevelopers")), to: "/developers"},
                                 ]}

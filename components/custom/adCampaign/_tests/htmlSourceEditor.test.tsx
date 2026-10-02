@@ -26,10 +26,30 @@ function renderEditor(props: Record<string, unknown> = {}, values: Record<string
             <HtmlSourceEditor name="bodyHtml" label="Email body" placeholders={["firstName", "projectName"]} {...props} />
         </FormHost>,
     );
-    return screen.getByRole("textbox") as HTMLTextAreaElement;
+    const el = screen.getByRole("textbox");
+    if (!(el instanceof HTMLTextAreaElement)) throw new Error("expected the HTML textarea");
+    return el;
 }
 
 describe("HtmlSourceEditor", () => {
+    it("indents a single-line body instead of leaving it as one long string", () => {
+        const textarea = renderEditor({}, {
+            bodyHtml: `<p>Hi</p><table><tr><td>A</td><td>B</td></tr></table>`,
+        });
+
+        expect(textarea.value).toBe(
+            [
+                "<p>Hi</p>",
+                "<table>",
+                "  <tr>",
+                "    <td>A</td>",
+                "    <td>B</td>",
+                "  </tr>",
+                "</table>",
+            ].join("\n"),
+        );
+    });
+
     it("inserts a token at the caret rather than appending it", async () => {
         const textarea = renderEditor({}, {bodyHtml: "<p>Dear , welcome.</p>"});
 
@@ -71,11 +91,18 @@ describe("HtmlSourceEditor", () => {
         fireEvent.click(screen.getByRole("button", {name: "{firstName}"}));
 
         await waitFor(() => expect(textarea).toHaveValue("AB{firstName}"));
-        expect((textarea.value as string).length).toBeLessThanOrEqual(14);
+        expect(textarea.value.length).toBeLessThanOrEqual(14);
     });
 
     it("hides the palette and snippets while the form is loading", () => {
         renderEditor({loading: true});
         expect(screen.queryByRole("button", {name: "{firstName}"})).not.toBeInTheDocument();
+        expect(screen.queryByRole("button", {name: "t:visualMode"})).not.toBeInTheDocument();
+    });
+
+    it("keeps the preview on the row under the editor", () => {
+        const textarea = renderEditor({previewApiUrl: "/api/realEstate/adCampaignTemplate/preview"});
+        expect(textarea.closest("[class*='lg:grid-cols-2']")).toBeNull();
+        expect(screen.getByTitle("t:previewFrameTitle")).toBeInTheDocument();
     });
 });

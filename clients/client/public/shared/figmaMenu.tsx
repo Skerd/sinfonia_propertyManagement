@@ -32,6 +32,7 @@ const FIGMA_MENU_LINK_KEYS: Record<string, string> = {
     "/about": "navAbout",
     "/investors": "navInvestors",
     "/developers": "navDevelopers",
+    "/blog": "navBlog",
     "/contact": "navContact",
 };
 

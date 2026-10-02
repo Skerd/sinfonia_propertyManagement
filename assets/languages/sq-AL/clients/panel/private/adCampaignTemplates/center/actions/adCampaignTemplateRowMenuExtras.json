@@ -1,5 +1,6 @@
 {
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/actions/adCampaignTemplateRowMenuExtras.tsx",
+    "useTemplate": "Përdor modelin",
     "activate": "Aktivizo",
     "deactivate": "Çaktivizo"
 }

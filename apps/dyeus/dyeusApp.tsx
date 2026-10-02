@@ -9,6 +9,7 @@ import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import DyeusLayout from "@propertyManagementModule/clients/client/dyeus/shared/dyeusLayout.tsx";
 import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import {TooltipProvider} from "@coreModule/components/animate-ui/components/animate/tooltip.tsx";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/home/index.tsx"));
 const AboutPage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/about/index.tsx"));
@@ -41,24 +42,26 @@ function DyeusApp() {
     return (
         <Provider store={store}>
             <LanguageProvider>
-                <BrowserRouter>
-                    <Suspense fallback={<Loader />}>
-                        <Routes>
-                            <Route element={<DyeusLayout />}>
-                                <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
-                                <Route path="about" element={<ErrorBoundary><AboutPage /></ErrorBoundary>} />
-                                <Route path="residences" element={<ErrorBoundary><ResidencesPage /></ErrorBoundary>} />
-                                <Route path="gallery" element={<ErrorBoundary><GalleryPage /></ErrorBoundary>} />
-                                <Route path="journal" element={<ErrorBoundary><JournalPage /></ErrorBoundary>} />
-                                <Route path="journal/story" element={<ErrorBoundary><JournalStoryPage /></ErrorBoundary>} />
-                                <Route path="contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
-                                <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
-                                <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
-                                <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
-                            </Route>
-                        </Routes>
-                    </Suspense>
-                </BrowserRouter>
+                <TooltipProvider>
+                    <BrowserRouter>
+                        <Suspense fallback={<Loader />}>
+                            <Routes>
+                                <Route element={<DyeusLayout />}>
+                                    <Route index element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
+                                    <Route path="about" element={<ErrorBoundary><AboutPage /></ErrorBoundary>} />
+                                    <Route path="residences" element={<ErrorBoundary><ResidencesPage /></ErrorBoundary>} />
+                                    <Route path="gallery" element={<ErrorBoundary><GalleryPage /></ErrorBoundary>} />
+                                    <Route path="journal" element={<ErrorBoundary><JournalPage /></ErrorBoundary>} />
+                                    <Route path="journal/story" element={<ErrorBoundary><JournalStoryPage /></ErrorBoundary>} />
+                                    <Route path="contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
+                                    <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
+                                    <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
+                                    <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
+                                </Route>
+                            </Routes>
+                        </Suspense>
+                    </BrowserRouter>
+                </TooltipProvider>
             </LanguageProvider>
             <ToasterContainer />
         </Provider>

@@ -2,18 +2,21 @@
     "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
     "titles": {
         "sendNow": "Invia campagna",
+        "testSend": "Invia un test",
         "pause": "Metti in pausa la campagna",
         "resume": "Riprendi la campagna",
         "cancel": "Annulla campagna"
     },
     "descriptions": {
         "sendNow": "Le e-mail partono a lotti dalla prossima esecuzione di invio. Una volta partite non si torna indietro.",
+        "testSend": "Una e-mail con il contenuto attuale di questa campagna viene inviata all'indirizzo del tuo account. I destinatari non vengono contattati.",
         "pause": "L'invio si ferma tra un lotto e l'altro. I destinatari già contattati non sono interessati.",
         "resume": "L'invio riprende da dove si era fermato. Nessuno viene contattato due volte.",
         "cancel": "La campagna si ferma definitivamente e non vengono inviate altre e-mail. I messaggi già consegnati restano consegnati."
     },
     "submit": {
         "sendNow": "Invia ora",
+        "testSend": "Invia test",
         "pause": "Pausa",
         "resume": "Riprendi",
         "cancel": "Annulla campagna"
@@ -27,13 +30,16 @@
         "empty": "Nessuno riceverebbe questa campagna. Controlla i destinatari prima di inviare."
     },
     "cancel": "Annulla",
+    "toasts": {
+        "sendNow": "Campagna in coda",
+        "testSend": "E-mail di test inviata",
+        "pause": "Campagna in pausa",
+        "resume": "Campagna ripresa",
+        "cancel": "Campagna annullata"
+    },
     "axios": {
         "start": {
-            "title": "Salvataggio...",
-            "time": 3000
-        },
-        "success": {
-            "title": "Salvato",
+            "title": "Elaborazione...",
             "time": 3000
         },
         "error": {

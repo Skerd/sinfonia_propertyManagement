@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/blog/article.tsx",
+  "backToBlog": "Kthehu te blogu",
+  "missingParam": "Lidhja e këtij artikulli mungon.",
+  "notFound": "Ky artikull nuk është i disponueshëm.",
+  "loadError": "Artikulli nuk u ngarkua. Ju lutemi provoni përsëri."
+}

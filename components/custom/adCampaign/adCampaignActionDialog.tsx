@@ -1,5 +1,6 @@
 import {useEffect, useImperativeHandle, useState} from "react";
 import {compose} from "redux";
+import {toast} from "sonner";
 import {LoaderCircle, TriangleAlert} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -17,7 +18,7 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import type {AdCampaign} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.dto.ts";
 
 /** Campaign actions that take a plain confirm. */
-export type AdCampaignActionMethod = "sendNow" | "pause" | "resume" | "cancel";
+export type AdCampaignActionMethod = "sendNow" | "pause" | "resume" | "cancel" | "testSend";
 
 type AudienceCounts = {total: number; pending: number; suppressed: number};
 
@@ -59,6 +60,7 @@ function AdCampaignActionDialog({
 
     useImperativeHandle(innerRef, () => ({
         success: (data?: AdCampaign) => {
+            toast.success(String(resolveLanguageKey(`toasts.${methodName}`)));
             onClose();
             onSuccess?.(data);
         },
@@ -180,6 +182,7 @@ function composeActionDialog(methodName: AdCampaignActionMethod) {
 }
 
 export const SendAdCampaignNowDialog = composeActionDialog("sendNow");
+export const TestSendAdCampaignDialog = composeActionDialog("testSend");
 export const PauseAdCampaignDialog = composeActionDialog("pause");
 export const ResumeAdCampaignDialog = composeActionDialog("resume");
 export const CancelAdCampaignDialog = composeActionDialog("cancel");

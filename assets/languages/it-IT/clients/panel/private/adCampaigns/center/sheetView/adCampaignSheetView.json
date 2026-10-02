@@ -2,6 +2,8 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
     "adCampaign": "Campagna",
     "overview": "Panoramica",
+    "content": "Contenuto",
+    "audience": "Destinatari",
     "results": "Risultati",
     "name": "Riferimento",
     "title": "Titolo",
@@ -11,6 +13,18 @@
     "scheduledAt": "Programmata per",
     "startedAt": "Avviata",
     "completedAt": "Completata",
+    "contentUnit": "Unità",
+    "contentProject": "Progetto",
+    "offerTitle": "Titolo dell'offerta",
+    "offerEndsAt": "Fine dell'offerta",
+    "ctaUrl": "URL di chiamata all'azione",
+    "fromName": "Nome mittente",
+    "replyTo": "Rispondi a",
+    "subjectOverride": "Oggetto",
+    "bodyHtmlOverride": "Corpo dell'e-mail",
+    "audienceMode": "Invia a",
+    "includeClientUsers": "Includi account cliente",
+    "includeLeads": "Includi lead",
     "lastError": "Ultimo errore",
     "stats": {
         "total": "Destinatari",
@@ -23,6 +37,10 @@
         "price_change": "Variazione di prezzo",
         "offer": "Offerta",
         "new_project": "Nuovo progetto"
+    },
+    "audienceModeEnum": {
+        "selected": "Destinatari selezionati",
+        "all": "Tutti"
     },
     "statusEnum": {
         "draft": "Bozza",

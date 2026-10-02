@@ -1,0 +1,7 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/blog/article.tsx",
+  "backToBlog": "Retour au blog",
+  "missingParam": "Le lien de cet article est incomplet.",
+  "notFound": "Cet article n'est pas disponible.",
+  "loadError": "L'article n'a pas pu être chargé. Veuillez réessayer."
+}

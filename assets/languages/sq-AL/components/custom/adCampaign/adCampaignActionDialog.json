@@ -2,18 +2,21 @@
     "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
     "titles": {
         "sendNow": "Dërgo fushatën",
+        "testSend": "Dërgo një test",
         "pause": "Pauzo fushatën",
         "resume": "Vazhdo fushatën",
         "cancel": "Anulo fushatën"
     },
     "descriptions": {
         "sendNow": "E-mail-et dalin në grupe duke filluar nga ekzekutimi i ardhshëm. Pasi të nisen, nuk kthehen mbrapsht.",
+        "testSend": "Një e-mail me përmbajtjen aktuale të kësaj fushate dërgohet në adresën e llogarisë suaj. Marrësit nuk kontaktohen.",
         "pause": "Dërgimi ndalon mes grupeve. Marrësit e kontaktuar tashmë nuk preken.",
         "resume": "Dërgimi vazhdon aty ku ndaloi. Askush nuk kontaktohet dy herë.",
         "cancel": "Fushata ndalon përfundimisht dhe nuk dërgohen e-mail-e të tjera. Mesazhet e dorëzuara mbeten të dorëzuara."
     },
     "submit": {
         "sendNow": "Dërgo tani",
+        "testSend": "Dërgo testin",
         "pause": "Pauzo",
         "resume": "Vazhdo",
         "cancel": "Anulo fushatën"
@@ -27,13 +30,16 @@
         "empty": "Askush nuk do ta merrte këtë fushatë. Kontrolloni audiencën para se të dërgoni."
     },
     "cancel": "Anulo",
+    "toasts": {
+        "sendNow": "Fushata u vu në radhë",
+        "testSend": "E-mail-i i testit u dërgua",
+        "pause": "Fushata u pauzua",
+        "resume": "Fushata u vazhdua",
+        "cancel": "Fushata u anulua"
+    },
     "axios": {
         "start": {
-            "title": "Po ruhet...",
-            "time": 3000
-        },
-        "success": {
-            "title": "U ruajt",
+            "title": "Po përpunohet...",
             "time": 3000
         },
         "error": {

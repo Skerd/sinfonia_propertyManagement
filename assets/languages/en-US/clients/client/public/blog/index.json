@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/blog/index.tsx",
+  "eyebrow": "Journal",
+  "title": "Blog",
+  "lead": "News and stories from the company.",
+  "filterBy": "Filter",
+  "allCategories": "All",
+  "empty": "No posts published yet.",
+  "loadError": "The blog could not be loaded. Please try again."
+}

@@ -45,7 +45,9 @@ export default createGenericEditPage<AdCampaign, EditAdCampaignFormType>({
         leadRecipients: data.leadRecipients?.map((l) => l._id) ?? [],
         projects: data.projects?.map((p) => p._id) ?? [],
         units: data.units?.map((u) => u._id) ?? [],
-    } as any),
+        contentUnit: data.contentUnit?._id,
+        contentProject: data.contentProject?._id,
+    }),
     buildFormExtras: (_entityId, _params, entity) => {
         // Switching to a different campaign must not inherit the previous
         // one's chip labels, which would mislabel ids the new one also holds.

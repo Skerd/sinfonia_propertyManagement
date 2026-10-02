@@ -4,12 +4,14 @@ import {
     PauseAdCampaignDialog,
     ResumeAdCampaignDialog,
     SendAdCampaignNowDialog,
+    TestSendAdCampaignDialog,
 } from "@propertyManagementModule/components/custom/adCampaign/adCampaignActionDialog.tsx";
 import {
     CANCEL_AD_CAMPAIGN_ACTION,
     PAUSE_AD_CAMPAIGN_ACTION,
     RESUME_AD_CAMPAIGN_ACTION,
     SEND_AD_CAMPAIGN_ACTION,
+    TEST_SEND_AD_CAMPAIGN_ACTION,
 } from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx";
 
 type AdCampaignWorkflowDialogsProps = {
@@ -28,6 +30,9 @@ export default function AdCampaignWorkflowDialogs({
     if (!campaign || !action) return null;
     if (action === SEND_AD_CAMPAIGN_ACTION) {
         return <SendAdCampaignNowDialog open onClose={onClose} campaign={campaign} onSuccess={onSuccess} />;
+    }
+    if (action === TEST_SEND_AD_CAMPAIGN_ACTION) {
+        return <TestSendAdCampaignDialog open onClose={onClose} campaign={campaign} onSuccess={onSuccess} />;
     }
     if (action === PAUSE_AD_CAMPAIGN_ACTION) {
         return <PauseAdCampaignDialog open onClose={onClose} campaign={campaign} onSuccess={onSuccess} />;

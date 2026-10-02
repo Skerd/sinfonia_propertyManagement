@@ -2,6 +2,8 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
     "adCampaign": "Campaign",
     "overview": "Overview",
+    "content": "Content",
+    "audience": "Audience",
     "results": "Results",
     "name": "Reference",
     "title": "Title",
@@ -11,6 +13,18 @@
     "scheduledAt": "Scheduled for",
     "startedAt": "Started",
     "completedAt": "Completed",
+    "contentUnit": "Unit",
+    "contentProject": "Project",
+    "offerTitle": "Offer title",
+    "offerEndsAt": "Offer ends",
+    "ctaUrl": "Call-to-action URL",
+    "fromName": "From name",
+    "replyTo": "Reply-to",
+    "subjectOverride": "Subject",
+    "bodyHtmlOverride": "Email body",
+    "audienceMode": "Send to",
+    "includeClientUsers": "Include client users",
+    "includeLeads": "Include leads",
     "lastError": "Last error",
     "stats": {
         "total": "Recipients",
@@ -23,6 +37,10 @@
         "price_change": "Price change",
         "offer": "Offer",
         "new_project": "New project"
+    },
+    "audienceModeEnum": {
+        "selected": "Selected recipients",
+        "all": "Everyone"
     },
     "statusEnum": {
         "draft": "Draft",

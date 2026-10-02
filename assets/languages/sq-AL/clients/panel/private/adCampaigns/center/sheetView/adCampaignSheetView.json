@@ -2,6 +2,8 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx",
     "adCampaign": "Fushatë",
     "overview": "Përmbledhje",
+    "content": "Përmbajtja",
+    "audience": "Audienca",
     "results": "Rezultatet",
     "name": "Referenca",
     "title": "Titulli",
@@ -11,6 +13,18 @@
     "scheduledAt": "Planifikuar për",
     "startedAt": "Filloi",
     "completedAt": "Përfundoi",
+    "contentUnit": "Njësia",
+    "contentProject": "Projekti",
+    "offerTitle": "Titulli i ofertës",
+    "offerEndsAt": "Oferta mbaron",
+    "ctaUrl": "URL e thirrjes për veprim",
+    "fromName": "Emri i dërguesit",
+    "replyTo": "Përgjigju te",
+    "subjectOverride": "Subjekti",
+    "bodyHtmlOverride": "Trupi i e-mail-it",
+    "audienceMode": "Dërgo te",
+    "includeClientUsers": "Përfshi llogaritë e klientëve",
+    "includeLeads": "Përfshi lead-et",
     "lastError": "Gabimi i fundit",
     "stats": {
         "total": "Marrësit",
@@ -23,6 +37,10 @@
         "price_change": "Ndryshim çmimi",
         "offer": "Ofertë",
         "new_project": "Projekt i ri"
+    },
+    "audienceModeEnum": {
+        "selected": "Marrës të zgjedhur",
+        "all": "Të gjithë"
     },
     "statusEnum": {
         "draft": "Draft",

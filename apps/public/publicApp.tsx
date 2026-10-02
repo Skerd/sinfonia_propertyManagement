@@ -13,6 +13,7 @@ import {PublicIntroProvider} from "@propertyManagementModule/clients/client/publ
 import {PublicAuthProvider} from "@propertyManagementModule/clients/client/public/shared/publicAuthContext.tsx";
 import PublicAuthGuard from "@propertyManagementModule/clients/client/public/shared/publicAuthGuard.tsx";
 import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
+import {TooltipProvider} from "@coreModule/components/animate-ui/components/animate/tooltip.tsx";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/public/home/index.tsx"));
 const ProjectsPage = lazy(() => import("@propertyManagementModule/clients/client/public/projects/index.tsx"));
@@ -22,6 +23,8 @@ const DevelopersPage = lazy(() => import("@propertyManagementModule/clients/clie
 const ContactPage = lazy(() => import("@propertyManagementModule/clients/client/public/contact/index.tsx"));
 const PrivacyPage = lazy(() => import("@propertyManagementModule/clients/client/public/privacy/index.tsx"));
 const TermsPage = lazy(() => import("@propertyManagementModule/clients/client/public/terms/index.tsx"));
+const BlogPage = lazy(() => import("@propertyManagementModule/clients/client/public/blog/index.tsx"));
+const BlogArticlePage = lazy(() => import("@propertyManagementModule/clients/client/public/blog/article.tsx"));
 const PropertyPage = lazy(() => import("@propertyManagementModule/clients/client/public/property/index.tsx"));
 const ProjectPage = lazy(() => import("@propertyManagementModule/clients/client/public/project/gallery/index.tsx"));
 const OpenProjectFigmaPage = lazy(() => import("@propertyManagementModule/clients/client/public/openProjectFigma/index.tsx"));
@@ -59,6 +62,7 @@ function PublicApp() {
     return (
         <Provider store={store}>
             <LanguageProvider>
+                <TooltipProvider>
                 <BrowserRouter>
                     <PublicAuthProvider>
                         <PublicIntroProvider>
@@ -74,6 +78,8 @@ function PublicApp() {
                                         <Route path="contact" element={<ErrorBoundary><ContactPage /></ErrorBoundary>} />
                                         <Route path="privacy" element={<ErrorBoundary><PrivacyPage /></ErrorBoundary>} />
                                         <Route path="terms" element={<ErrorBoundary><TermsPage /></ErrorBoundary>} />
+                                        <Route path="blog" element={<ErrorBoundary><BlogPage /></ErrorBoundary>} />
+                                        <Route path="blog/:slug" element={<ErrorBoundary><BlogArticlePage /></ErrorBoundary>} />
                                         <Route path="property" element={<ErrorBoundary><PropertyPage /></ErrorBoundary>} />
                                         <Route path="project" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
                                         <Route path="open-project" element={<ErrorBoundary><OpenProjectFigmaPage /></ErrorBoundary>} />
@@ -101,6 +107,7 @@ function PublicApp() {
                         </PublicIntroProvider>
                     </PublicAuthProvider>
                 </BrowserRouter>
+                </TooltipProvider>
             </LanguageProvider>
             <ToasterContainer />
         </Provider>

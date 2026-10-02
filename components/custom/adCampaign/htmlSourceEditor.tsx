@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState, type MouseEvent} from "react";
 import {compose} from "redux";
 import {useFormContext} from "react-hook-form";
 import {Code2, Eye, EyeOff} from "lucide-react";
@@ -49,6 +49,130 @@ const SNIPPETS: {id: string; html: string}[] = [
     },
 ];
 
+/** Elements that break onto their own line. Inline tags stay with their text. */
+const BLOCK_TAGS = new Set([
+    "table", "thead", "tbody", "tfoot", "tr", "td", "th",
+    "ul", "ol", "li", "div", "p", "blockquote", "center",
+    "h1", "h2", "h3", "h4", "h5", "h6",
+]);
+
+const VOID_TAGS = new Set([
+    "area", "base", "br", "col", "embed", "hr", "img", "input",
+    "link", "meta", "param", "source", "track", "wbr",
+]);
+
+type HtmlNode =
+    | {kind: "text"; text: string}
+    | {kind: "el"; name: string; raw: string; children: HtmlNode[]; self: boolean};
+
+function tagName(raw: string): string {
+    return /^<\/?\s*([^\s/>]+)/.exec(raw)?.[1]?.toLowerCase() ?? "";
+}
+
+function parseHtml(html: string): HtmlNode[] {
+    const root: HtmlNode[] = [];
+    const stack: HtmlNode[][] = [root];
+    const re = /<[^>]+>/g;
+    let last = 0;
+    let match: RegExpExecArray | null;
+    while ((match = re.exec(html))) {
+        const parent = stack[stack.length - 1];
+        if (!parent) break;
+        if (match.index > last) {
+            parent.push({kind: "text", text: html.slice(last, match.index)});
+        }
+        const raw = match[0];
+        const name = tagName(raw);
+        if (raw.startsWith("</")) {
+            if (stack.length > 1) stack.pop();
+        } else {
+            const self = raw.endsWith("/>") || VOID_TAGS.has(name);
+            const el: HtmlNode = {kind: "el", name, raw, children: [], self};
+            parent.push(el);
+            if (!self) stack.push(el.children);
+        }
+        last = match.index + raw.length;
+    }
+    const tail = stack[stack.length - 1];
+    if (tail && last < html.length) tail.push({kind: "text", text: html.slice(last)});
+    return root;
+}
+
+function hasBlock(nodes: HtmlNode[]): boolean {
+    return nodes.some((node) => node.kind === "el" && (BLOCK_TAGS.has(node.name) || hasBlock(node.children)));
+}
+
+function inlineHtml(nodes: HtmlNode[]): string {
+    return nodes.map((node) => {
+        if (node.kind === "text") return node.text;
+        if (node.self) return node.raw;
+        return `${node.raw}${inlineHtml(node.children)}</${node.name}>`;
+    }).join("");
+}
+
+function blockHtml(nodes: HtmlNode[], depth: number): string {
+    const pad = "  ".repeat(depth);
+    const lines: string[] = [];
+    for (const node of nodes) {
+        if (node.kind === "text") {
+            if (node.text.trim()) lines.push(pad + node.text.trim());
+            continue;
+        }
+        if (node.self) {
+            lines.push(pad + node.raw);
+            continue;
+        }
+        if (!hasBlock(node.children)) {
+            lines.push(pad + node.raw + inlineHtml(node.children) + `</${node.name}>`);
+            continue;
+        }
+        lines.push(pad + node.raw);
+        const inner = blockHtml(node.children, depth + 1);
+        if (inner) lines.push(inner);
+        lines.push(pad + `</${node.name}>`);
+    }
+    return lines.join("\n");
+}
+
+/**
+ * Break a single-line email body onto indented lines.
+ *
+ * Only whitespace between tags is rearranged. If the rewrite would not
+ * round-trip (a `>` inside an attribute, a comment, a mismatched tag), the
+ * original string is kept.
+ */
+function indentHtml(html: string): string {
+    const compact = html.replace(/>\s+</g, "><").trim();
+    if (!compact) return "";
+    const tree = parseHtml(compact);
+    const pretty = hasBlock(tree) ? blockHtml(tree, 0) : inlineHtml(tree);
+    const flatten = (source: string) => source.replace(/>\s+</g, "><").trim().toLowerCase();
+    return flatten(pretty) === flatten(compact) ? pretty : html.trim();
+}
+
+/** A stored one-liner is shown indented. Once the author has line breaks, leave them. */
+function editorHtml(html: string): string {
+    if (!html || html.includes("\n")) return html;
+    return indentHtml(html);
+}
+
+/**
+ * Indent `block`, then continue its extra lines at the indent of the line
+ * the caret is on, so an inserted table lines up with the surrounding markup.
+ */
+function indentedAtCaret(block: string, doc: string, caret: number): string {
+    const pretty = indentHtml(block);
+    const lineStart = doc.lastIndexOf("\n", Math.max(0, caret - 1)) + 1;
+    const indent = /^ */.exec(doc.slice(lineStart, caret))?.[0] ?? "";
+    if (!indent || !pretty.includes("\n")) return pretty;
+    return pretty.split("\n").map((line, index) => index === 0 ? line : indent + line).join("\n");
+}
+
+/** A toolbar mousedown would blur the textarea and drop the caret. */
+function keepCaret(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+}
+
 type HtmlSourceEditorProps = WithLanguageType & {
     name: string;
     /** Already resolved by the form renderer against the page's dictionary. */
@@ -73,15 +197,12 @@ type HtmlSourceEditorProps = WithLanguageType & {
 };
 
 /**
- * HTML source editor for campaign email bodies: a monospace textarea, a
+ * HTML source editor for campaign email bodies: an indented textarea, a
  * click-to-insert token palette, an email-safe snippet toolbar and the live
- * server-rendered preview.
+ * server-rendered preview on the row below.
  *
- * Deliberately not a WYSIWYG. The deliverable is *email* HTML — nested tables
- * and inline styles — and the editors that would fit in this bundle emit
- * semantic web markup and quietly rewrite table layouts. The token is the
- * contract, so this can be swapped for a real code editor later without
- * touching a single `.views.ts`.
+ * The preview is the rendered email. This field stays the markup, broken onto
+ * indented lines instead of one long string.
  */
 function HtmlSourceEditor({
     name,
@@ -108,10 +229,13 @@ function HtmlSourceEditor({
     const [showPreview, setShowPreview] = useState(true);
 
     const value = String(form.watch(name) ?? "");
+    const shown = editorHtml(value);
     const campaignType = campaignTypeField ? (form.watch(campaignTypeField) as string | undefined) : undefined;
     const locale = localeField ? (form.watch(localeField) as string | undefined) : undefined;
     const subject = subjectField ? (form.watch(subjectField) as string | undefined) : undefined;
     const previewText = previewTextField ? (form.watch(previewTextField) as string | undefined) : undefined;
+    const campaignIdRaw = form.watch("_id");
+    const campaignId = typeof campaignIdRaw === "string" && campaignIdRaw ? campaignIdRaw : undefined;
 
     /**
      * Splice `text` in at the caret, then put the caret after it.
@@ -124,20 +248,24 @@ function HtmlSourceEditor({
      * textarea still holds the *old* text until React commits the new value;
      * setting the selection before that would position it in the wrong string,
      * and the commit would then reset it anyway.
+     *
+     * The splice reads the textarea, which may be the indented view of a
+     * stored one-liner. Writing that view back is what keeps the line breaks.
      */
     const insertAtCaret = useCallback(
         (text: string) => {
             const el = textareaRef.current;
-            const current = String(form.getValues(name) ?? "");
+            const current = el?.value ?? shown;
             const start = el?.selectionStart ?? current.length;
             const end = el?.selectionEnd ?? current.length;
-            let next = current.slice(0, start) + text + current.slice(end);
+            const block = indentedAtCaret(text, current, start);
+            let next = current.slice(0, start) + block + current.slice(end);
             if (maxLength != null && next.length > maxLength) next = next.slice(0, maxLength);
 
-            pendingCaretRef.current = Math.min(start + text.length, next.length);
+            pendingCaretRef.current = Math.min(start + block.length, next.length);
             form.setValue(name, next, {shouldValidate: true, shouldDirty: true});
         },
-        [form, name, maxLength],
+        [form, name, maxLength, shown],
     );
 
     useEffect(() => {
@@ -150,7 +278,7 @@ function HtmlSourceEditor({
     }, [value]);
 
     const readOnly = loading || disabled;
-    const overLimit = maxLength != null && value.length > maxLength;
+    const overLimit = maxLength != null && shown.length > maxLength;
 
     return (
         <FormField
@@ -181,7 +309,7 @@ function HtmlSourceEditor({
                         <p className="text-xs text-muted-foreground">{resolveLanguageKey("inheritHint")}</p>
                     ) : null}
 
-                    {SNIPPETS.length > 0 && !readOnly ? (
+                    {!readOnly ? (
                         <div className="flex flex-wrap items-center gap-1">
                             <Code2 className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
                             {SNIPPETS.map((snippet) => (
@@ -191,6 +319,7 @@ function HtmlSourceEditor({
                                     size="sm"
                                     variant="outline"
                                     className="h-7 px-2 text-xs"
+                                    onMouseDown={keepCaret}
                                     onClick={() => insertAtCaret(snippet.html)}
                                 >
                                     {resolveLanguageKey(`snippets.${snippet.id}`)}
@@ -202,7 +331,7 @@ function HtmlSourceEditor({
                     <FormControl>
                         <Textarea
                             {...field}
-                            value={value}
+                            value={shown}
                             ref={(el) => {
                                 field.ref(el);
                                 textareaRef.current = el;
@@ -229,6 +358,7 @@ function HtmlSourceEditor({
                                     <TooltipDisplayer key={token} tooltip={String(resolveLanguageKey(`tokens.${token}`))}>
                                         <button
                                             type="button"
+                                            onMouseDown={keepCaret}
                                             onClick={() => insertAtCaret(`{${token}}`)}
                                             className={cn(
                                                 "inline-flex h-5 shrink-0 cursor-pointer items-center rounded-4xl border border-transparent",
@@ -245,7 +375,7 @@ function HtmlSourceEditor({
                         ) : <span />}
                         {maxLength != null ? (
                             <span className={cn("shrink-0 text-xs tabular-nums", overLimit ? "text-destructive" : "text-muted-foreground")}>
-                                {`${value.length} / ${maxLength}`}
+                                {`${shown.length} / ${maxLength}`}
                             </span>
                         ) : null}
                     </div>
@@ -255,11 +385,12 @@ function HtmlSourceEditor({
                     {previewApiUrl && showPreview ? (
                         <EmailHtmlPreview
                             apiUrl={previewApiUrl}
-                            bodyHtml={value}
+                            bodyHtml={shown}
                             subject={subject}
                             previewText={previewText}
                             campaignType={campaignType}
                             locale={locale || defaultLocale}
+                            campaignId={campaignId}
                             className="mt-2"
                         />
                     ) : null}

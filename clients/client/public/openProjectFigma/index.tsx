@@ -146,9 +146,17 @@ function OpenProjectFigma3dPage({
     const [searchParams, setSearchParams] = useSearchParams();
     const selectedFloorId = searchParams.get("floorId") ?? "";
     const requestedEdificeId = searchParams.get("edificeId") ?? "";
+    const requestedUnitId = searchParams.get("unitId") ?? "";
+    const catalogUnits = useMemo(() => flattenCatalogUnits(project), [project]);
+    const requestedUnit = requestedUnitId
+        ? catalogUnits.find((unit) => unit._id === requestedUnitId)
+        : undefined;
     const selectedEdifice = selectedFloorId
         ? findEdificeForFloor(project, selectedFloorId)
         : project.edifices?.find((edifice) => edifice._id === requestedEdificeId)
+            ?? (requestedUnit?.edificeId
+                ? project.edifices?.find((edifice) => edifice._id === requestedUnit.edificeId)
+                : undefined)
             ?? (project.edifices?.length === 1 ? project.edifices[0] : undefined);
     const selectedFloor = selectedEdifice?.floors?.find((floor) => floor._id === selectedFloorId);
     const placeholderImage = resolveProjectFallbackImage(project);
@@ -164,19 +172,34 @@ function OpenProjectFigma3dPage({
         if (!selectedUnitId) {
             return undefined;
         }
-        return flattenCatalogUnits(project).find((unit) => unit._id === selectedUnitId)?.name;
-    }, [project, selectedUnitId]);
+        return catalogUnits.find((unit) => unit._id === selectedUnitId)?.name;
+    }, [catalogUnits, selectedUnitId]);
 
     useEffect(() => {
-        setSelectedUnitId(null);
+        if (!requestedUnit?.floorId) return;
+        if (searchParams.get("floorId") === requestedUnit.floorId) return;
+        const params = new URLSearchParams(searchParams);
+        params.set("projectId", project._id);
+        params.set("floorId", requestedUnit.floorId);
+        if (requestedUnit.edificeId) params.set("edificeId", requestedUnit.edificeId);
+        setSearchParams(params, {replace: true});
+    }, [project._id, requestedUnit, searchParams, setSearchParams]);
+
+    useEffect(() => {
         setHoveredUnitId(null);
-    }, [selectedFloorId]);
+        if (requestedUnit && (!selectedFloorId || requestedUnit.floorId === selectedFloorId)) {
+            setSelectedUnitId(requestedUnit._id);
+            return;
+        }
+        setSelectedUnitId(null);
+    }, [selectedFloorId, requestedUnit]);
 
     const clearFloor = () => {
         const params = new URLSearchParams(searchParams);
         params.set("projectId", project._id);
         params.delete("edificeId");
         params.delete("floorId");
+        params.delete("unitId");
         setSelectedUnitId(null);
         setHoveredUnitId(null);
         setSearchParams(params);

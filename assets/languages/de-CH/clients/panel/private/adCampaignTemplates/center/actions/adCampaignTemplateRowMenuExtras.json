@@ -1,5 +1,6 @@
 {
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/actions/adCampaignTemplateRowMenuExtras.tsx",
+    "useTemplate": "Vorlage verwenden",
     "activate": "Aktivieren",
     "deactivate": "Deaktivieren"
 }

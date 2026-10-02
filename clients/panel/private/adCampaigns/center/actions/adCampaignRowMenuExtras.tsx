@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {Ban, Pause, Play, Send, Users} from "lucide-react";
+import {Ban, FlaskConical, Pause, Play, Send, Users} from "lucide-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useNavigate} from "react-router-dom";
@@ -8,6 +8,7 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {AdCampaign} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.dto.ts";
 
 export const SEND_AD_CAMPAIGN_ACTION = "sendAdCampaignNow";
+export const TEST_SEND_AD_CAMPAIGN_ACTION = "testSendAdCampaign";
 export const PAUSE_AD_CAMPAIGN_ACTION = "pauseAdCampaign";
 export const RESUME_AD_CAMPAIGN_ACTION = "resumeAdCampaign";
 export const CANCEL_AD_CAMPAIGN_ACTION = "cancelAdCampaign";
@@ -55,6 +56,13 @@ function AdCampaignRowMenuExtras({campaign, onAction, resolveLanguageKey}: AdCam
                 <DropdownMenuItem onClick={() => onAction(SEND_AD_CAMPAIGN_ACTION)}>
                     <Send className="h-4 w-4 text-primary" />
                     <span>{resolveLanguageKey(status === "paused" ? "resend" : "sendNow")}</span>
+                </DropdownMenuItem>
+            ) : null}
+
+            {canSend && status !== "cancelled" ? (
+                <DropdownMenuItem onClick={() => onAction(TEST_SEND_AD_CAMPAIGN_ACTION)}>
+                    <FlaskConical className="h-4 w-4" />
+                    <span>{resolveLanguageKey("testSend")}</span>
                 </DropdownMenuItem>
             ) : null}
 

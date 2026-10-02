@@ -2,18 +2,21 @@
     "path": "src/modules/propertyManagement/components/custom/adCampaign/adCampaignActionDialog.tsx",
     "titles": {
         "sendNow": "Envoyer la campagne",
+        "testSend": "Envoyer un test",
         "pause": "Mettre la campagne en pause",
         "resume": "Reprendre la campagne",
         "cancel": "Annuler la campagne"
     },
     "descriptions": {
         "sendNow": "Les e-mails partent par lots dès la prochaine exécution d'envoi. Impossible de revenir en arrière une fois partis.",
+        "testSend": "Un e-mail avec le contenu actuel de cette campagne est envoyé à l'adresse de votre compte. Les destinataires ne sont pas contactés.",
         "pause": "L'envoi s'arrête entre deux lots. Les destinataires déjà contactés ne sont pas affectés.",
         "resume": "L'envoi reprend là où il s'était arrêté. Personne n'est contacté deux fois.",
         "cancel": "La campagne s'arrête définitivement et aucun autre e-mail n'est envoyé. Les messages déjà livrés le restent."
     },
     "submit": {
         "sendNow": "Envoyer maintenant",
+        "testSend": "Envoyer le test",
         "pause": "Mettre en pause",
         "resume": "Reprendre",
         "cancel": "Annuler la campagne"
@@ -27,13 +30,16 @@
         "empty": "Personne ne recevrait cette campagne. Vérifiez l'audience avant d'envoyer."
     },
     "cancel": "Annuler",
+    "toasts": {
+        "sendNow": "Campagne mise en file",
+        "testSend": "E-mail de test envoyé",
+        "pause": "Campagne en pause",
+        "resume": "Campagne reprise",
+        "cancel": "Campagne annulée"
+    },
     "axios": {
         "start": {
-            "title": "Enregistrement...",
-            "time": 3000
-        },
-        "success": {
-            "title": "Enregistré",
+            "title": "Traitement...",
             "time": 3000
         },
         "error": {

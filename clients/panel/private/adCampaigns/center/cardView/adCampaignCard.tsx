@@ -21,6 +21,7 @@ import {
 import AdCampaignSheetView from "@propertyManagementModule/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx";
 import AdCampaignRowMenuExtras from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx";
 import AdCampaignWorkflowDialogs from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignWorkflowDialogs.tsx";
+import AdCampaignProgressPoll from "@propertyManagementModule/clients/panel/private/adCampaigns/center/adCampaignProgressPoll.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 
 const STATUS_BADGE: Record<AdCampaignStatus, string> = {
@@ -82,7 +83,10 @@ function AdCampaignCard({
             failedDescription={String(resolveLanguageKey("failedDescription") || "")}
             titlePath="title"
             innerRef={innerRef}
-            sheetProps={() => ({fetchId})}
+            sheetProps={({setEntity}) => ({
+                fetchId,
+                onSheetRowPatched: (row: Record<string, unknown>) => setEntity(row as AdCampaign),
+            })}
             extraDialogs={({action, setAction, entity, setEntity}) => (
                 <AdCampaignWorkflowDialogs
                     action={action}
@@ -96,10 +100,15 @@ function AdCampaignCard({
                 />
             )}
         >
-            {({entity, setAction}) => {
+            {({entity, setAction, setEntity}) => {
                 const stats = entity.stats;
                 return (
                     <>
+                        <AdCampaignProgressPoll
+                            entityId={entity._id}
+                            status={entity.status}
+                            onPatched={setEntity}
+                        />
                         <EntityCard.Header
                             titlePath="title"
                             title={

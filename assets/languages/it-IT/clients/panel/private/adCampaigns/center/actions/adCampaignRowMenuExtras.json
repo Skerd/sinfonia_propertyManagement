@@ -2,6 +2,7 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx",
     "viewRecipients": "Vedi destinatari",
     "sendNow": "Invia ora",
+    "testSend": "Invia un test",
     "resend": "Riprendi invio",
     "pause": "Pausa",
     "resume": "Riprendi",
