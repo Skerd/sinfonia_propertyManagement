@@ -43,13 +43,17 @@ export function PublicAuthProvider({children}: {children: ReactNode}) {
         navigate("/login");
     }, [dispatch, navigate]);
 
+    // The public site has no expiry dialog: end the session and send the visitor to log in once.
+    // Signing out clears the flag, so later navigations are not redirected again.
     useEffect(() => {
-        if (sessionExpired) {
-            setIsHydrating(false);
-            navigate("/login");
-            return;
-        }
+        if (!sessionExpired) return;
+        dispatch(signOut());
+        navigate("/login");
+    }, [dispatch, navigate, sessionExpired]);
 
+    // Depends on the token only: `navigate` changes on every pathname change, and
+    // re-validating then would flash guarded pages back to a loader.
+    useEffect(() => {
         if (!token) {
             setIsHydrating(false);
             return;
@@ -75,7 +79,7 @@ export function PublicAuthProvider({children}: {children: ReactNode}) {
         return () => {
             abortController.abort();
         };
-    }, [dispatch, navigate, sessionExpired, token]);
+    }, [dispatch, token]);
 
     const value = useMemo(
         () => ({
