@@ -1,5 +1,6 @@
 import {Navigate, useLocation} from "react-router-dom";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {safeNextPath} from "@coreModule/helpers/publicAuth/safeNextPath.ts";
 import {usePublicAuth} from "@propertyManagementModule/clients/client/public/shared/publicAuthContext.tsx";
 
 /** Sends already-authenticated users away from login/signup. */
@@ -12,9 +13,7 @@ function PublicGuestOnly({children}: {children: React.ReactNode}) {
     }
 
     if (isAuthenticated) {
-        const params = new URLSearchParams(location.search);
-        const next = params.get("next");
-        return <Navigate to={next && next.startsWith("/") ? next : "/profile"} replace />;
+        return <Navigate to={safeNextPath(location.search, "/profile")} replace />;
     }
 
     return children;

@@ -1,13 +1,11 @@
-import {useImperativeHandle, useState} from "react";
 import {compose} from "redux";
 import {Link, useLocation, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {logIn} from "@coreModule/helpers/redux/slices/authSlice.ts";
 import {LoginFormType} from "armonia/src/modules/core/api/user/public/login/login.form.type.ts";
-import {loginFormSchema} from "armonia/src/modules/core/api/user/public/login/login.form.validator.ts";
+import {safeNextPath} from "@coreModule/helpers/publicAuth/safeNextPath.ts";
+import {usePublicLoginForm} from "@coreModule/helpers/publicAuth/usePublicLoginForm.ts";
 import {
     LoginFormResponseType,
     MFAEnabledLoginFormResponseType,
@@ -27,8 +25,6 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/auth/login/index.tsx";
 
-type FieldErrors = Partial<Record<"username" | "password" | "mfaCode", string>>;
-
 type LoginPageProps = WithLanguageType &
     WithAxiosType<LoginFormResponseType & MFAEnabledLoginFormResponseType, LoginFormType>;
 
@@ -40,73 +36,23 @@ function LoginPageInner({
     innerRef,
     error,
 }: LoginPageProps) {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [mfaCode, setMfaCode] = useState("");
-    const [needsMfa, setNeedsMfa] = useState(false);
-    const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-
-    useImperativeHandle(innerRef, () => ({
-        success: (data) => {
-            if (data.mfaActivated) {
-                setNeedsMfa(true);
-                return;
-            }
-            if (data.token && data.refreshToken) {
-                dispatch(logIn({token: data.token, refreshToken: data.refreshToken}));
-                const next = new URLSearchParams(location.search).get("next");
-                navigate(next && next.startsWith("/") ? next : "/profile");
-            }
-        },
-        error: () => {
-            setNeedsMfa(false);
-            setMfaCode("");
-        },
-    }));
-
-    const clearFieldError = (key: keyof FieldErrors) => {
-        setFieldErrors((prev) => {
-            if (!prev[key]) return prev;
-            const next = {...prev};
-            delete next[key];
-            return next;
-        });
-    };
-
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        if (loading) return;
-
-        const body: LoginFormType = {
-            username: username.trim(),
-            password,
-            ...(needsMfa ? {mfaCode: mfaCode.trim() || undefined} : {}),
-        };
-
-        const parsed = loginFormSchema(languageCode, {
-            emailLabel: resolveLanguageKey("form.emailLabel"),
-            passwordLabel: resolveLanguageKey("form.passwordLabel"),
-            mfaCodeLabel: resolveLanguageKey("form.mfaCodeLabel"),
-        }).safeParse(body);
-
-        if (!parsed.success) {
-            const nextErrors: FieldErrors = {};
-            for (const issue of parsed.error.issues) {
-                const key = issue.path[0];
-                if (key === "username" || key === "password" || key === "mfaCode") {
-                    nextErrors[key] = issue.message;
-                }
-            }
-            setFieldErrors(nextErrors);
-            return;
-        }
-
-        setFieldErrors({});
-        onFilterChange(parsed.data);
-    };
+    const {
+        username, setUsername,
+        password, setPassword,
+        mfaCode, setMfaCode,
+        needsMfa, cancelMfa,
+        fieldErrors, clearFieldError,
+        handleSubmit,
+    } = usePublicLoginForm({
+        resolveLanguageKey,
+        languageCode,
+        onFilterChange,
+        innerRef,
+        busy: loading,
+        onLoggedIn: () => navigate(safeNextPath(location.search, "/profile")),
+    });
 
     return (
         <PublicGuestOnly>
@@ -209,10 +155,7 @@ function LoginPageInner({
                         <button
                             type="button"
                             className={`${AUTH_LINK_CLASS} text-left`}
-                            onClick={() => {
-                                setNeedsMfa(false);
-                                setMfaCode("");
-                            }}
+                            onClick={cancelMfa}
                         >
                             {resolveLanguageKey("backToLogin")}
                         </button>
