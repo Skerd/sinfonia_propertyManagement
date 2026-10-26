@@ -1229,6 +1229,7 @@
       "notifyOnSales": "Notifier lors des ventes",
       "propertymanagementconfigs": "Property management configs",
       "requiresHandoverPackageForHandover": "Requires handover package for handover",
+      "listedOnPortal": "Listé sur le portail",
       "requiresSaleApproval": "Requires sale approval",
       "updatedAt": "Mis à jour le"
     },

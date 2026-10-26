@@ -1229,6 +1229,7 @@
       "notifyOnSales": "Bei Verkäufen benachrichtigen",
       "propertymanagementconfigs": "Property management configs",
       "requiresHandoverPackageForHandover": "Requires übergabe paket für übergabe",
+      "listedOnPortal": "Im Portal gelistet",
       "requiresSaleApproval": "Requires verkauf freigabe",
       "updatedAt": "Aktualisiert am"
     },

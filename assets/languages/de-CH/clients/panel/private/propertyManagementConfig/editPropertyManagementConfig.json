@@ -9,7 +9,8 @@
     "selectUser": "Benutzer auswählen",
     "removeUser": "Benutzer entfernen",
     "requiresSaleApprovalLabel": "Managerfreigabe beim Erstellen eines Verkaufs verlangen",
-    "requiresHandoverPackageForHandoverLabel": "Abgeschlossenes Übergabepaket vor dem Erfassen der Übergabe verlangen"
+    "requiresHandoverPackageForHandoverLabel": "Abgeschlossenes Übergabepaket vor dem Erfassen der Übergabe verlangen",
+    "listedOnPortalLabel": "Im Portal anzeigen"
   },
   "axios": {
     "start": {

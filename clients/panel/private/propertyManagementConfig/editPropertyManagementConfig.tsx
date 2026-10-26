@@ -28,6 +28,7 @@ export default createGenericEditPage<PropertyManagementConfig, EditPropertyManag
         ...data,
         requiresSaleApproval: !!data.requiresSaleApproval,
         requiresHandoverPackageForHandover: !!data.requiresHandoverPackageForHandover,
+        listedOnPortal: !!data.listedOnPortal,
         notifyOnSales: data.notifyOnSales?.map((u) => u._id) ?? [],
         notifyOnReservations: data.notifyOnReservations?.map((u) => u._id) ?? [],
     }),

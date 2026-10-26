@@ -9,7 +9,8 @@
     "selectUser": "Sélectionner un utilisateur",
     "removeUser": "Retirer l’utilisateur",
     "requiresSaleApprovalLabel": "Exiger l’approbation d’un responsable lors de la création d’une vente",
-    "requiresHandoverPackageForHandoverLabel": "Exiger un dossier de remise terminé avant d’enregistrer la remise"
+    "requiresHandoverPackageForHandoverLabel": "Exiger un dossier de remise terminé avant d’enregistrer la remise",
+    "listedOnPortalLabel": "Afficher sur le portail"
   },
   "axios": {
     "start": {

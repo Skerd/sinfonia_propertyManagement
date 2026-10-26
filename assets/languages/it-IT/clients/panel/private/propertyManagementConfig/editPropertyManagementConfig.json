@@ -9,7 +9,8 @@
     "selectUser": "Seleziona un utente",
     "removeUser": "Rimuovi utente",
     "requiresSaleApprovalLabel": "Richiedi l’approvazione del responsabile alla creazione di una vendita",
-    "requiresHandoverPackageForHandoverLabel": "Richiedi un pacchetto di consegna completato prima di registrare la consegna"
+    "requiresHandoverPackageForHandoverLabel": "Richiedi un pacchetto di consegna completato prima di registrare la consegna",
+    "listedOnPortalLabel": "Mostra sul portale"
   },
   "axios": {
     "start": {

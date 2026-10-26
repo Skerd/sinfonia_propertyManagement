@@ -1,0 +1,114 @@
+/* Design tokens and utilities of this site, shared with the portal (which renders its pages). */
+
+@theme {
+    --color-pronix-ink: #181818;
+    --color-pronix-ink-muted: rgba(24, 24, 24, 0.8);
+    --color-pronix-ink-faded: rgba(24, 24, 24, 0.3);
+    --color-pronix-blue: #0247fe;
+    --color-pronix-cream: #f5ede4;
+    --color-pronix-border: rgba(24, 24, 24, 0.2);
+    --color-pronix-white-border: rgba(255, 255, 255, 0.4);
+    --font-aeonik: "DM Sans", system-ui, sans-serif;
+    --font-kamerik: "Space Grotesk", system-ui, sans-serif;
+}
+
+@layer utilities {
+    .font-aeonik-medium {
+        font-family: var(--font-aeonik);
+        font-weight: 500;
+    }
+
+    .font-aeonik-bold {
+        font-family: var(--font-aeonik);
+        font-weight: 700;
+    }
+
+    .font-aeonik-light {
+        font-family: var(--font-aeonik);
+        font-weight: 300;
+    }
+
+    .font-kamerik-bold {
+        font-family: var(--font-kamerik);
+        font-weight: 700;
+    }
+
+    .font-kamerik-book {
+        font-family: var(--font-kamerik);
+        font-weight: 400;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Public chat identify form: payment-style success / failure mark */
+@keyframes public-chat-outcome-scale {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes public-chat-outcome-stroke {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes public-chat-outcome-fade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.public-chat-outcome-mark {
+    animation: public-chat-outcome-scale 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.public-chat-outcome-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: public-chat-outcome-stroke 0.55s cubic-bezier(0.65, 0, 0.45, 1) 0.12s forwards;
+}
+
+.public-chat-outcome-path {
+    stroke-dasharray: 52;
+    stroke-dashoffset: 52;
+    animation: public-chat-outcome-stroke 0.35s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+}
+
+.public-chat-outcome-copy {
+    animation: public-chat-outcome-fade 0.35s ease-out 0.55s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .public-chat-outcome-mark,
+    .public-chat-outcome-circle,
+    .public-chat-outcome-path,
+    .public-chat-outcome-copy {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        stroke-dashoffset: 0;
+    }
+}

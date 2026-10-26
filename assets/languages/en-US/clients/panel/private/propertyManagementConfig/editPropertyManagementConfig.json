@@ -9,7 +9,8 @@
     "selectUser": "Select a user",
     "removeUser": "Remove user",
     "requiresSaleApprovalLabel": "Require manager approval when creating a sale",
-    "requiresHandoverPackageForHandoverLabel": "Require a completed handover package before recording handover"
+    "requiresHandoverPackageForHandoverLabel": "Require a completed handover package before recording handover",
+    "listedOnPortalLabel": "List on the portal"
   },
   "axios": {
     "start": {

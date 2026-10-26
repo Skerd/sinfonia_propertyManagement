@@ -9,7 +9,8 @@
     "selectUser": "Zgjidh një përdorues",
     "removeUser": "Hiq përdoruesin",
     "requiresSaleApprovalLabel": "Kërko miratim të menaxherit kur krijohet një shitje",
-    "requiresHandoverPackageForHandoverLabel": "Kërko paketë dorëzimi të përfunduar para regjistrimit të dorëzimit"
+    "requiresHandoverPackageForHandoverLabel": "Kërko paketë dorëzimi të përfunduar para regjistrimit të dorëzimit",
+    "listedOnPortalLabel": "Shfaq në portal"
   },
   "axios": {
     "start": {
