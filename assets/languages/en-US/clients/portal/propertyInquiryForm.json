@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
+  "titleProject": "Ask about this development",
+  "titleUnit": "Ask about this unit",
+  "subtitle": "The developer answers you directly.",
+  "fields": {
+    "name": "First name",
+    "surname": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "viewingDate": "Preferred viewing date"
+  },
+  "viewingLine": "Requested viewing date: {date}",
+  "messagePlaceholder": "When can I visit? What is the payment plan?",
+  "send": "Send inquiry",
+  "sent": "Thank you. The developer will be in touch soon.",
+  "failed": "The inquiry could not be sent. Try again."
+}

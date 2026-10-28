@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyUnit.tsx",
+  "priceOnRequest": "Price on request",
+  "facts": {
+    "units": "Units",
+    "available": "Available",
+    "bedrooms": "Bedrooms",
+    "area": "Area",
+    "bathrooms": "Bathrooms",
+    "floor": "Floor"
+  },
+  "backToProject": "Back to the development",
+  "floorPlan": "Floor plan",
+  "featuresTitle": "Features",
+  "description": "About this unit",
+  "status": {
+    "available": "Available",
+    "reserved": "Reserved",
+    "sold": "Sold",
+    "unavailable": "Unavailable"
+  },
+  "features": {
+    "hasBalcony": "Balcony",
+    "hasTerrace": "Terrace",
+    "hasSeaView": "Sea view",
+    "hasCityView": "City view",
+    "hasLakeView": "Lake view",
+    "hasElevator": "Elevator"
+  }
+}

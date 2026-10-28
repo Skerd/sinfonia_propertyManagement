@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyCatalogFilters.tsx",
+  "any": "Çdo",
+  "propertyType": "Lloji",
+  "propertyTypes": {
+    "apartment": "Apartament",
+    "studio": "Garsonierë",
+    "penthouse": "Penthouse",
+    "commercial": "Tregtar",
+    "villa": "Vilë"
+  },
+  "bedrooms": "Dhoma gjumi",
+  "areaSqmMin": "Sipërfaqja min. (m²)"
+}

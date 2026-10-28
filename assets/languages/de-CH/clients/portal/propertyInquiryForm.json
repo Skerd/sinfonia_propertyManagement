@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
+  "titleProject": "Anfrage zu diesem Projekt",
+  "titleUnit": "Anfrage zu dieser Einheit",
+  "subtitle": "Der Bauträger antwortet Ihnen direkt.",
+  "fields": {
+    "name": "Vorname",
+    "surname": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Nachricht",
+    "viewingDate": "Gewünschtes Besichtigungsdatum"
+  },
+  "viewingLine": "Gewünschtes Besichtigungsdatum: {date}",
+  "messagePlaceholder": "Wann kann ich besichtigen? Wie ist der Zahlungsplan?",
+  "send": "Anfrage senden",
+  "sent": "Danke. Der Bauträger meldet sich bald.",
+  "failed": "Die Anfrage konnte nicht gesendet werden. Bitte erneut versuchen."
+}

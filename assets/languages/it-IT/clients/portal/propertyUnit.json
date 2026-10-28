@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyUnit.tsx",
+  "priceOnRequest": "Prezzo su richiesta",
+  "facts": {
+    "units": "Unità",
+    "available": "Disponibili",
+    "bedrooms": "Camere",
+    "area": "Superficie",
+    "bathrooms": "Bagni",
+    "floor": "Piano"
+  },
+  "backToProject": "Torna al progetto",
+  "floorPlan": "Planimetria",
+  "featuresTitle": "Caratteristiche",
+  "description": "Su questa unità",
+  "status": {
+    "available": "Disponibile",
+    "reserved": "Riservato",
+    "sold": "Venduto",
+    "unavailable": "Non disponibile"
+  },
+  "features": {
+    "hasBalcony": "Balcone",
+    "hasTerrace": "Terrazza",
+    "hasSeaView": "Vista mare",
+    "hasCityView": "Vista città",
+    "hasLakeView": "Vista lago",
+    "hasElevator": "Ascensore"
+  }
+}

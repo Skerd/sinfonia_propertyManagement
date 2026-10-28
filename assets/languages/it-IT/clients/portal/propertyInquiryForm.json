@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
+  "titleProject": "Chiedi informazioni sul progetto",
+  "titleUnit": "Chiedi informazioni su questa unità",
+  "subtitle": "Il costruttore ti risponde direttamente.",
+  "fields": {
+    "name": "Nome",
+    "surname": "Cognome",
+    "email": "Email",
+    "phone": "Telefono",
+    "message": "Messaggio",
+    "viewingDate": "Data di visita preferita"
+  },
+  "viewingLine": "Data di visita richiesta: {date}",
+  "messagePlaceholder": "Quando posso visitarlo? Qual è il piano di pagamento?",
+  "send": "Invia richiesta",
+  "sent": "Grazie. Il costruttore ti contatterà presto.",
+  "failed": "Impossibile inviare la richiesta. Riprova."
+}

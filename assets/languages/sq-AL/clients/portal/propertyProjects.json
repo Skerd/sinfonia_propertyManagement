@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyProjects.tsx",
+  "title": "Projektet",
+  "none": "Ende asnjë projekt i publikuar.",
+  "available": "{count} të lira"
+}

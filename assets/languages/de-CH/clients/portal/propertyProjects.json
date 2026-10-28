@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyProjects.tsx",
+  "title": "Projekte",
+  "none": "Noch kein Projekt veröffentlicht.",
+  "available": "{count} verfügbar"
+}

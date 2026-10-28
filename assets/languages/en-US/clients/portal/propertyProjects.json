@@ -1,0 +1,6 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyProjects.tsx",
+  "title": "Developments",
+  "none": "No development is listed yet.",
+  "available": "{count} available"
+}

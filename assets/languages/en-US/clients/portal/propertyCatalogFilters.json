@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyCatalogFilters.tsx",
+  "any": "Any",
+  "propertyType": "Type",
+  "propertyTypes": {
+    "apartment": "Apartment",
+    "studio": "Studio",
+    "penthouse": "Penthouse",
+    "commercial": "Commercial",
+    "villa": "Villa"
+  },
+  "bedrooms": "Bedrooms",
+  "areaSqmMin": "Min area (m²)"
+}

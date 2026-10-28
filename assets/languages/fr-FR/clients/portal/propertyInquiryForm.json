@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
+  "titleProject": "Se renseigner sur ce programme",
+  "titleUnit": "Se renseigner sur ce lot",
+  "subtitle": "Le promoteur vous répond directement.",
+  "fields": {
+    "name": "Prénom",
+    "surname": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "message": "Message",
+    "viewingDate": "Date de visite souhaitée"
+  },
+  "viewingLine": "Date de visite demandée : {date}",
+  "messagePlaceholder": "Quand puis-je visiter ? Quel est l'échéancier ?",
+  "send": "Envoyer",
+  "sent": "Merci. Le promoteur vous contactera bientôt.",
+  "failed": "La demande n'a pas pu être envoyée. Réessayez."
+}

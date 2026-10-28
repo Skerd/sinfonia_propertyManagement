@@ -1,0 +1,19 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
+  "titleProject": "Pyet për këtë projekt",
+  "titleUnit": "Pyet për këtë njësi",
+  "subtitle": "Ndërtuesi ju përgjigjet drejtpërdrejt.",
+  "fields": {
+    "name": "Emri",
+    "surname": "Mbiemri",
+    "email": "Email",
+    "phone": "Telefoni",
+    "message": "Mesazhi",
+    "viewingDate": "Data e preferuar e vizitës"
+  },
+  "viewingLine": "Data e vizitës e kërkuar: {date}",
+  "messagePlaceholder": "Kur mund ta vizitoj? Si është plani i pagesës?",
+  "send": "Dërgo kërkesën",
+  "sent": "Faleminderit. Ndërtuesi do t'ju kontaktojë së shpejti.",
+  "failed": "Kërkesa nuk u dërgua. Provo përsëri."
+}

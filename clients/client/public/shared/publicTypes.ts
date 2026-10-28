@@ -18,6 +18,8 @@ export type MarketingPolygonItem = {
     _id: string;
     name: string;
     polygonCoordinates: MarketingPolygonCoordinate[];
+    /** Set on unit polygons. The floor plan colors the shape from this. */
+    status?: "available" | "reserved" | "sold" | "unavailable";
 };
 
 export type MarketingProject = {

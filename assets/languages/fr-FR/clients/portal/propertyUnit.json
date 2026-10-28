@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyUnit.tsx",
+  "priceOnRequest": "Prix sur demande",
+  "facts": {
+    "units": "Lots",
+    "available": "Disponibles",
+    "bedrooms": "Chambres",
+    "area": "Surface",
+    "bathrooms": "Salles de bain",
+    "floor": "Étage"
+  },
+  "backToProject": "Retour au programme",
+  "floorPlan": "Plan",
+  "featuresTitle": "Caractéristiques",
+  "description": "À propos de ce lot",
+  "status": {
+    "available": "Disponible",
+    "reserved": "Réservé",
+    "sold": "Vendu",
+    "unavailable": "Indisponible"
+  },
+  "features": {
+    "hasBalcony": "Balcon",
+    "hasTerrace": "Terrasse",
+    "hasSeaView": "Vue mer",
+    "hasCityView": "Vue ville",
+    "hasLakeView": "Vue lac",
+    "hasElevator": "Ascenseur"
+  }
+}

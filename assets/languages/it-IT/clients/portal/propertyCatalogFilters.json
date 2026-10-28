@@ -1,0 +1,14 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyCatalogFilters.tsx",
+  "any": "Qualsiasi",
+  "propertyType": "Tipologia",
+  "propertyTypes": {
+    "apartment": "Appartamento",
+    "studio": "Monolocale",
+    "penthouse": "Attico",
+    "commercial": "Commerciale",
+    "villa": "Villa"
+  },
+  "bedrooms": "Camere",
+  "areaSqmMin": "Superficie min. (m²)"
+}

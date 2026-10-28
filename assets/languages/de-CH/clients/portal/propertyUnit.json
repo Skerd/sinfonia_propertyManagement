@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyUnit.tsx",
+  "priceOnRequest": "Preis auf Anfrage",
+  "facts": {
+    "units": "Einheiten",
+    "available": "Verfügbar",
+    "bedrooms": "Schlafzimmer",
+    "area": "Fläche",
+    "bathrooms": "Badezimmer",
+    "floor": "Etage"
+  },
+  "backToProject": "Zurück zum Projekt",
+  "floorPlan": "Grundriss",
+  "featuresTitle": "Ausstattung",
+  "description": "Über diese Einheit",
+  "status": {
+    "available": "Verfügbar",
+    "reserved": "Reserviert",
+    "sold": "Verkauft",
+    "unavailable": "Nicht verfügbar"
+  },
+  "features": {
+    "hasBalcony": "Balkon",
+    "hasTerrace": "Terrasse",
+    "hasSeaView": "Meerblick",
+    "hasCityView": "Stadtblick",
+    "hasLakeView": "Seeblick",
+    "hasElevator": "Lift"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "path": "src/modules/propertyManagement/clients/portal/propertyUnit.tsx",
+  "priceOnRequest": "Çmimi me kërkesë",
+  "facts": {
+    "units": "Njësi",
+    "available": "Të lira",
+    "bedrooms": "Dhoma gjumi",
+    "area": "Sipërfaqja",
+    "bathrooms": "Banjo",
+    "floor": "Kati"
+  },
+  "backToProject": "Kthehu te projekti",
+  "floorPlan": "Planimetria",
+  "featuresTitle": "Veçoritë",
+  "description": "Rreth kësaj njësie",
+  "status": {
+    "available": "E lirë",
+    "reserved": "E rezervuar",
+    "sold": "E shitur",
+    "unavailable": "E padisponueshme"
+  },
+  "features": {
+    "hasBalcony": "Ballkon",
+    "hasTerrace": "Tarracë",
+    "hasSeaView": "Pamje nga deti",
+    "hasCityView": "Pamje nga qyteti",
+    "hasLakeView": "Pamje nga liqeni",
+    "hasElevator": "Ashensor"
+  }
+}
