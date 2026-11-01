@@ -58,8 +58,8 @@ function UnitCostCard({
             sheetEntityProp="unitCost"
             deleteUrl="/api/realEstate/unit/cost"
             restoreUrl="/api/realEstate/unit/cost/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             shellClassName={small ? "text-sm" : undefined}

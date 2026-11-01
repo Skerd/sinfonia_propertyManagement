@@ -52,8 +52,8 @@ function FloorCard({
             sheetEntityProp="floor"
             deleteUrl="/api/realEstate/floor"
             restoreUrl="/api/realEstate/floor/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

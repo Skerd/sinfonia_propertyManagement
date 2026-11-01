@@ -63,8 +63,8 @@ function LeaseCard({
             sheetEntityProp="lease"
             deleteUrl="/api/realEstate/lease"
             restoreUrl="/api/realEstate/lease/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setAction}) => ({

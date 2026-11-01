@@ -53,8 +53,8 @@ function ConstructorCard({
             sheetEntityProp="constructor"
             deleteUrl="/api/realEstate/constructor"
             restoreUrl="/api/realEstate/constructor/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
         >

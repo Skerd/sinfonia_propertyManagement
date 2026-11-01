@@ -53,8 +53,8 @@ function InspectionChecklistTemplateCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/inspectionChecklistTemplate"
             restoreUrl="/api/realEstate/inspectionChecklistTemplate/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

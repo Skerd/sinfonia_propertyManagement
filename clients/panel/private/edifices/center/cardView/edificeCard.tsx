@@ -63,8 +63,8 @@ function EdificeCard({
             sheetEntityProp="edifice"
             deleteUrl="/api/realEstate/edifice"
             restoreUrl="/api/realEstate/edifice/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

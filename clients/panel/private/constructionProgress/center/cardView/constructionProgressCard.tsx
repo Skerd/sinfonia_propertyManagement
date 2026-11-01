@@ -56,8 +56,8 @@ function ConstructionProgressCard({
             sheetEntityProp="constructionProgress"
             deleteUrl="/api/realEstate/constructionProgress"
             restoreUrl="/api/realEstate/constructionProgress/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

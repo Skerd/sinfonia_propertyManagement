@@ -143,8 +143,8 @@ function SaleCard({
             sheetEntityProp="sale"
             deleteUrl="/api/realEstate/unit/sale"
             restoreUrl="/api/realEstate/unit/sale/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

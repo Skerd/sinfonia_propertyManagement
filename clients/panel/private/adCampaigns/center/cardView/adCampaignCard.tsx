@@ -79,8 +79,8 @@ function AdCampaignCard({
             sheetEntityProp="campaign"
             deleteUrl="/api/realEstate/adCampaign"
             restoreUrl="/api/realEstate/adCampaign/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={({setEntity}) => ({

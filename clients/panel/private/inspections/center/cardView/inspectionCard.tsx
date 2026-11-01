@@ -147,8 +147,8 @@ function InspectionCard({
                 sheetEntityProp="inspection"
                 deleteUrl="/api/realEstate/unit/inspection"
                 restoreUrl="/api/realEstate/unit/inspection/restore"
-                failedTitle={String(resolveLanguageKey("failedTitle"))}
-                failedDescription={String(resolveLanguageKey("failedDescription"))}
+                failedTitle={resolveLanguageKey("failedTitle")}
+                failedDescription={resolveLanguageKey("failedDescription")}
                 titlePath="name"
                 innerRef={innerRef}
                 sheetProps={() => ({

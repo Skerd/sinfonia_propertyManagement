@@ -181,8 +181,8 @@ function ReservationCard({
             sheetEntityProp="reservation"
             deleteUrl="/api/realEstate/unit/reservation"
             restoreUrl="/api/realEstate/unit/reservation/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

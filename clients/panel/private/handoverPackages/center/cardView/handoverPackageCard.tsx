@@ -53,8 +53,8 @@ function HandoverPackageCard({
             sheetEntityProp="entity"
             deleteUrl="/api/realEstate/handoverPackage"
             restoreUrl="/api/realEstate/handoverPackage/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="title"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

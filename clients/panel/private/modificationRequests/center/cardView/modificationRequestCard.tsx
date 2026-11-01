@@ -102,8 +102,8 @@ function ModificationRequestCard({
             sheetEntityProp="request"
             deleteUrl="/api/realEstate/unit/modificationRequest"
             restoreUrl="/api/realEstate/unit/modificationRequest/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle"))}
-            failedDescription={String(resolveLanguageKey("failedDescription"))}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

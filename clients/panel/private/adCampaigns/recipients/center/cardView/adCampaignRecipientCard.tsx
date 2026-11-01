@@ -67,8 +67,8 @@ function AdCampaignRecipientCard({
             sheetOnly={sheetOnly}
             Sheet={Sheet}
             sheetEntityProp="entity"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="email"
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}

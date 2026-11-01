@@ -52,8 +52,8 @@ function StoryTypeCard({
             sheetEntityProp="storyType"
             deleteUrl="/api/realEstate/storyType"
             restoreUrl="/api/realEstate/storyType/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
         >

@@ -134,8 +134,8 @@ function CommissionCard({
             sheetEntityProp="commission"
             deleteUrl=""
             restoreUrl=""
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="agent.name"
             innerRef={innerRef}
             sheetProps={({entity, setEntity}) => ({

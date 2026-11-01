@@ -50,8 +50,8 @@ function UnitTypeCategoryCard({
             sheetEntityProp="unitTypeCategory"
             deleteUrl="/api/realEstate/unitTypeCategory"
             restoreUrl="/api/realEstate/unitTypeCategory/restore"
-            failedTitle={String(resolveLanguageKey("failedTitle") || "")}
-            failedDescription={String(resolveLanguageKey("failedDescription") || "")}
+            failedTitle={resolveLanguageKey("failedTitle")}
+            failedDescription={resolveLanguageKey("failedDescription")}
             titlePath="name"
             innerRef={innerRef}
         >
