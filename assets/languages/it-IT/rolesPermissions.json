@@ -307,7 +307,12 @@
       "status": "Stato",
       "updatedAt": "Aggiornato il",
       "voidedAt": "Voided at",
-      "commissions": "Commissions"
+      "commissions": "Commissions",
+      "approvePayment": "Approva pagamento",
+      "markPaid": "Segna come pagata",
+      "markPending": "Segna come in sospeso",
+      "requestApproval": "Richiedi approvazione",
+      "setSplits": "Imposta la ripartizione delle provvigioni"
     },
     "Constructioncontracts": {
       "approvedVariationsTotal": "Approved variations total",
@@ -551,7 +556,8 @@
       "videoGallery": "Video gallery",
       "pricePerMeterSquared": "Price per meter squared",
       "saleCurrency": "Sale currency",
-      "verandaPricePerMeterSquared": "Veranda price per meter squared"
+      "verandaPricePerMeterSquared": "Veranda price per meter squared",
+      "generateFloorsUnits": "Genera piani e unità"
     },
     "Feasibilitystudies": {
       "assumptions": "Assumptions",
@@ -654,7 +660,8 @@
       "title": "Titolo",
       "trainingComplete": "Training complete",
       "unit": "Unità",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "updateHandoverItems": "Aggiorna gli elementi di consegna"
     },
     "Incominginvoices": {
       "bkpAccountCode": "Bkp account code",
@@ -702,7 +709,8 @@
       "status": "Stato",
       "title": "Titolo",
       "trade": "Trade",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "archive": "Archivia modello"
     },
     "Inspections": {
       "cancellationReason": "Cancellation reason",
@@ -785,7 +793,9 @@
       "checklistItems_retained": "Voce checklist conservata",
       "checklistItems_sourceItemId": "Origine voce checklist",
       "checklistItems_sourceTemplateId": "Modello voce checklist",
-      "checklistTemplate": "Checklist template"
+      "checklistTemplate": "Checklist template",
+      "cancelScheduled": "Annulla l'ispezione programmata",
+      "updateChecklistItems": "Aggiorna gli elementi della checklist"
     },
     "Landparcels": {
       "acquisitionCost": "Acquisition cost",
@@ -837,7 +847,14 @@
       "source": "Source",
       "status": "Stato",
       "unitInterest": "Unit interest",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "addActivity": "Aggiungi attività",
+      "closeLead": "Chiudi il lead",
+      "markContacted": "Segna come contattato",
+      "markNegotiation": "Passa a trattativa",
+      "markProposal": "Passa a proposta",
+      "qualify": "Qualifica il lead",
+      "reopen": "Riapri il lead"
     },
     "Leases": {
       "contractMedia": "Contract media",
@@ -862,7 +879,13 @@
       "terminationDate": "Termination date",
       "terminationReason": "Termination reason",
       "unit": "Unità",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "markDepositPaid": "Segna il deposito come pagato",
+      "recordRentPayment": "Registra un pagamento dell'affitto",
+      "resyncSchedule": "Ricalcola il piano degli affitti",
+      "returnDeposit": "Restituisci il deposito",
+      "sendRentReminder": "Invia promemoria dell'affitto",
+      "terminate": "Termina il contratto"
     },
     "Liquiditylines": {
       "actualAmount": "Actual amount",
@@ -1032,7 +1055,12 @@
       "submittedAt": "Submitted at",
       "title": "Titolo",
       "unit": "Unità",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "approve": "Approva la richiesta",
+      "clientCostApprove": "Registra l'approvazione dei costi del cliente",
+      "deliver": "Segna come consegnata",
+      "finance": "Aggiungi i dati finanziari",
+      "submitRevision": "Invia una revisione"
     },
     "Paymentplans": {
       "createdAt": "Creato il",
@@ -1231,7 +1259,8 @@
       "requiresHandoverPackageForHandover": "Requires handover package for handover",
       "listedOnPortal": "Elencato sul portale",
       "requiresSaleApproval": "Requires sale approval",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "ensure": "Inizializza la configurazione"
     },
     "Rentalpayments": {
       "amount": "Importo",
@@ -1261,7 +1290,10 @@
       "rentalpayments": "Pagamenti affitto",
       "status": "Stato",
       "unit": "Unità",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "markPaid": "Segna come pagato",
+      "sendRentReminder": "Invia promemoria dell'affitto",
+      "waive": "Condona il pagamento"
     },
     "Reservations": {
       "additionalDocuments": "Additional documents",
@@ -1296,7 +1328,13 @@
       "source": "Source",
       "status": "Stato",
       "unit": "Unità",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "cancel": "Annulla la prenotazione",
+      "manualClientEmail": "Invia un'email al cliente",
+      "pay": "Registra il pagamento",
+      "reinstate": "Ripristina la prenotazione",
+      "resendStaffNotifications": "Reinvia le notifiche al personale",
+      "reversePayment": "Storna il pagamento"
     },
     "Rfis": {
       "answer": "Answer",
@@ -1399,7 +1437,14 @@
       "titleTransferDate": "Title transfer date",
       "transactionReference": "Transaction reference",
       "unit": "Unità",
-      "updatedAt": "Aggiornato il"
+      "updatedAt": "Aggiornato il",
+      "approveSale": "Approva la vendita",
+      "manualClientEmail": "Invia un'email al cliente",
+      "payDownPayment": "Registra l'acconto",
+      "payInstallment": "Registra una rata",
+      "recordTitleTransfer": "Registra il trasferimento di proprietà",
+      "resendStaffNotifications": "Reinvia le notifiche al personale",
+      "restructurePaymentPlan": "Ristruttura il piano di pagamento"
     },
     "Scheduletasks": {
       "actualEnd": "Actual end",
@@ -1730,7 +1775,10 @@
       "units": "Units",
       "updatedAt": "Aggiornato il",
       "videoGallery": "Video gallery",
-      "verandaArea": "Veranda area"
+      "verandaArea": "Veranda area",
+      "generateMarketingBooklet": "Genera la brochure commerciale",
+      "markAvailable": "Segna come disponibile",
+      "markUnavailable": "Segna come non disponibile"
     },
     "Unittypecategories": {
       "createdAt": "Creato il",
@@ -1839,7 +1887,8 @@
       "photos": "Foto del cantiere",
       "notifyClients": "Avvisa i clienti",
       "clientsNotifiedAt": "Clienti avvisati il",
-      "clientsNotifiedCount": "Clienti avvisati"
+      "clientsNotifiedCount": "Clienti avvisati",
+      "resendClientNotifications": "Reinvia le notifiche ai clienti"
     },
     "Adcampaigns": {
       "adcampaigns": "Campagne pubblicitarie",
@@ -1880,7 +1929,13 @@
       "fromName": "Nome mittente",
       "replyTo": "Indirizzo di risposta",
       "stats": "Risultati",
-      "lastError": "Ultimo errore"
+      "lastError": "Ultimo errore",
+      "cancel": "Annulla campagna",
+      "pause": "Metti in pausa la campagna",
+      "previewAudience": "Anteprima del pubblico",
+      "resume": "Riprendi campagna",
+      "sendNow": "Invia ora",
+      "testSend": "Invia email di prova"
     },
     "Adcampaigntemplates": {
       "adcampaigntemplates": "Modelli di campagna",
@@ -1896,7 +1951,10 @@
       "subject": "Oggetto",
       "previewText": "Testo di anteprima",
       "bodyHtml": "Corpo dell'email",
-      "active": "Attivo"
+      "active": "Attivo",
+      "activate": "Attiva modello",
+      "deactivate": "Disattiva modello",
+      "preview": "Anteprima modello"
     },
     "Adcampaignrecipients": {
       "adcampaignrecipients": "Destinatari campagna",
@@ -1940,7 +1998,9 @@
       "allowNewProjects": "Consenti email su nuovi progetti",
       "unsubscribedAllAt": "Disiscritto da tutto il",
       "source": "Origine",
-      "lastChangedAt": "Ultima modifica il"
+      "lastChangedAt": "Ultima modifica il",
+      "me": "Visualizza le proprie preferenze",
+      "updateMe": "Aggiorna le proprie preferenze"
     }
   }
 }

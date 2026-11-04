@@ -307,7 +307,12 @@
       "status": "Statusi",
       "updatedAt": "UpdatedAt",
       "voidedAt": "E zbrazur në",
-      "commissions": "Komisionet"
+      "commissions": "Komisionet",
+      "approvePayment": "Mirato pagesën",
+      "markPaid": "Shëno si të paguar",
+      "markPending": "Shëno si në pritje",
+      "requestApproval": "Kërko miratim",
+      "setSplits": "Cakto ndarjen e komisionit"
     },
     "Constructioncontracts": {
       "approvedVariationsTotal": "Approved Variations Total",
@@ -551,7 +556,8 @@
       "videoGallery": "Video Galeria",
       "pricePerMeterSquared": "Price Per Meter Squared",
       "saleCurrency": "Sale Currency",
-      "verandaPricePerMeterSquared": "Veranda Price Per Meter Squared"
+      "verandaPricePerMeterSquared": "Veranda Price Per Meter Squared",
+      "generateFloorsUnits": "Gjenero katet dhe njësitë"
     },
     "Feasibilitystudies": {
       "assumptions": "Assumptions",
@@ -654,7 +660,8 @@
       "title": "Title",
       "trainingComplete": "Training Complete",
       "unit": "Unit",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "updateHandoverItems": "Përditëso elementet e dorëzimit"
     },
     "Incominginvoices": {
       "bkpAccountCode": "Bkp Account Code",
@@ -702,7 +709,8 @@
       "status": "Status",
       "title": "Title",
       "trade": "Trade",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "archive": "Arkivo shabllonin"
     },
     "Inspections": {
       "cancellationReason": "Arsyeja e anulimit",
@@ -785,7 +793,9 @@
       "checklistItems_retained": "Zëri i listës i ruajtur",
       "checklistItems_sourceItemId": "Burimi i zërit të listës",
       "checklistItems_sourceTemplateId": "Modeli i zërit të listës",
-      "checklistTemplate": "Checklist Template"
+      "checklistTemplate": "Checklist Template",
+      "cancelScheduled": "Anulo inspektimin e planifikuar",
+      "updateChecklistItems": "Përditëso pikat e listës së kontrollit"
     },
     "Landparcels": {
       "acquisitionCost": "Acquisition Cost",
@@ -837,7 +847,14 @@
       "source": "Source",
       "status": "Status",
       "unitInterest": "UnitInterest",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "addActivity": "Shto aktivitet",
+      "closeLead": "Mbyll kontaktin",
+      "markContacted": "Shëno si të kontaktuar",
+      "markNegotiation": "Kalo në negociim",
+      "markProposal": "Kalo në ofertë",
+      "qualify": "Kualifiko kontaktin",
+      "reopen": "Rihap kontaktin"
     },
     "Leases": {
       "contractMedia": "Contract Media",
@@ -862,7 +879,13 @@
       "terminationDate": "Termination Date",
       "terminationReason": "Termination Reason",
       "unit": "Unit",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "markDepositPaid": "Shëno depozitën si të paguar",
+      "recordRentPayment": "Regjistro pagesën e qirasë",
+      "resyncSchedule": "Rindërto kalendarin e qirasë",
+      "returnDeposit": "Kthe depozitën",
+      "sendRentReminder": "Dërgo kujtesë për qiranë",
+      "terminate": "Ndërprit kontratën e qirasë"
     },
     "Liquiditylines": {
       "actualAmount": "Actual Amount",
@@ -1032,7 +1055,12 @@
       "submittedAt": "Dorëzuar në",
       "title": "Titulli",
       "unit": "Njësia",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "approve": "Mirato kërkesën",
+      "clientCostApprove": "Regjistro miratimin e kostos nga klienti",
+      "deliver": "Shëno si të dorëzuar",
+      "finance": "Shto të dhënat financiare",
+      "submitRevision": "Dërgo rishikimin"
     },
     "Paymentplans": {
       "createdAt": "CreatedAt",
@@ -1231,7 +1259,8 @@
       "requiresHandoverPackageForHandover": "Requires Handover Package For Handover",
       "listedOnPortal": "Listuar në portal",
       "requiresSaleApproval": "Requires Sale Approval",
-      "updatedAt": "Updated At"
+      "updatedAt": "Updated At",
+      "ensure": "Krijo konfigurimin"
     },
     "Rentalpayments": {
       "amount": "Shuma",
@@ -1261,7 +1290,10 @@
       "rentalpayments": "Pagesat e qirasë",
       "status": "Statusi",
       "unit": "Njësia",
-      "updatedAt": "Përditësuar më"
+      "updatedAt": "Përditësuar më",
+      "markPaid": "Shëno si të paguar",
+      "sendRentReminder": "Dërgo kujtesë për qiranë",
+      "waive": "Fal pagesën"
     },
     "Reservations": {
       "additionalDocuments": "Dokumentet Shtesë",
@@ -1296,7 +1328,13 @@
       "source": "Source",
       "status": "Status",
       "unit": "Njësia",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "cancel": "Anulo rezervimin",
+      "manualClientEmail": "Dërgo email klientit",
+      "pay": "Regjistro pagesën",
+      "reinstate": "Rikthe rezervimin",
+      "resendStaffNotifications": "Ridërgo njoftimet për stafin",
+      "reversePayment": "Anulo pagesën"
     },
     "Rfis": {
       "answer": "Answer",
@@ -1399,7 +1437,14 @@
       "titleTransferDate": "TitleTransferDate",
       "transactionReference": "Referenca e transaksionit",
       "unit": "Njësia",
-      "updatedAt": "UpdatedAt"
+      "updatedAt": "UpdatedAt",
+      "approveSale": "Mirato shitjen",
+      "manualClientEmail": "Dërgo email klientit",
+      "payDownPayment": "Regjistro paradhënien",
+      "payInstallment": "Regjistro këstin",
+      "recordTitleTransfer": "Regjistro kalimin e pronësisë",
+      "resendStaffNotifications": "Ridërgo njoftimet për stafin",
+      "restructurePaymentPlan": "Ristrukturo planin e pagesave"
     },
     "Scheduletasks": {
       "actualEnd": "Actual End",
@@ -1730,7 +1775,10 @@
       "units": "Njësitë",
       "updatedAt": "UpdatedAt",
       "videoGallery": "Video Galeria",
-      "verandaArea": "Veranda Area"
+      "verandaArea": "Veranda Area",
+      "generateMarketingBooklet": "Gjenero broshurën e marketingut",
+      "markAvailable": "Shëno si të disponueshme",
+      "markUnavailable": "Shëno si të padisponueshme"
     },
     "Unittypecategories": {
       "createdAt": "CreatedAt",
@@ -1839,7 +1887,8 @@
       "photos": "Foto nga kantieri",
       "notifyClients": "Njofto klientët",
       "clientsNotifiedAt": "Klientët u njoftuan më",
-      "clientsNotifiedCount": "Klientë të njoftuar"
+      "clientsNotifiedCount": "Klientë të njoftuar",
+      "resendClientNotifications": "Ridërgo njoftimet për klientët"
     },
     "Adcampaigns": {
       "adcampaigns": "Fushata reklamuese",
@@ -1880,7 +1929,13 @@
       "fromName": "Emri i dërguesit",
       "replyTo": "Adresa e përgjigjes",
       "stats": "Rezultatet",
-      "lastError": "Gabimi i fundit"
+      "lastError": "Gabimi i fundit",
+      "cancel": "Anulo fushatën",
+      "pause": "Pezullo fushatën",
+      "previewAudience": "Shiko audiencën",
+      "resume": "Rifillo fushatën",
+      "sendNow": "Dërgo tani",
+      "testSend": "Dërgo email provë"
     },
     "Adcampaigntemplates": {
       "adcampaigntemplates": "Shabllone fushate",
@@ -1896,7 +1951,10 @@
       "subject": "Subjekti",
       "previewText": "Teksti i parapamjes",
       "bodyHtml": "Përmbajtja e emailit",
-      "active": "Aktiv"
+      "active": "Aktiv",
+      "activate": "Aktivizo shabllonin",
+      "deactivate": "Çaktivizo shabllonin",
+      "preview": "Shiko shabllonin"
     },
     "Adcampaignrecipients": {
       "adcampaignrecipients": "Marrësit e fushatës",
@@ -1940,7 +1998,9 @@
       "allowNewProjects": "Lejo emailet për projekte të reja",
       "unsubscribedAllAt": "Çregjistruar nga të gjitha më",
       "source": "Burimi",
-      "lastChangedAt": "Ndryshuar së fundi më"
+      "lastChangedAt": "Ndryshuar së fundi më",
+      "me": "Shiko preferencat e veta",
+      "updateMe": "Përditëso preferencat e veta"
     }
   }
 }
