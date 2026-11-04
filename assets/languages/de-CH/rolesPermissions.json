@@ -1998,9 +1998,7 @@
       "allowNewProjects": "E-Mails zu neuen Projekten erlauben",
       "unsubscribedAllAt": "Von allen abgemeldet am",
       "source": "Quelle",
-      "lastChangedAt": "Zuletzt geändert am",
-      "me": "Eigene Einstellungen ansehen",
-      "updateMe": "Eigene Einstellungen ändern"
+      "lastChangedAt": "Zuletzt geändert am"
     }
   }
 }

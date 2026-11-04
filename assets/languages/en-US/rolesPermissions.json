@@ -1998,9 +1998,7 @@
       "allowNewProjects": "Allow new project emails",
       "unsubscribedAllAt": "Unsubscribed from all at",
       "source": "Source",
-      "lastChangedAt": "Last changed at",
-      "me": "View own preferences",
-      "updateMe": "Update own preferences"
+      "lastChangedAt": "Last changed at"
     }
   }
 }

@@ -1998,9 +1998,7 @@
       "allowNewProjects": "Consenti email su nuovi progetti",
       "unsubscribedAllAt": "Disiscritto da tutto il",
       "source": "Origine",
-      "lastChangedAt": "Ultima modifica il",
-      "me": "Visualizza le proprie preferenze",
-      "updateMe": "Aggiorna le proprie preferenze"
+      "lastChangedAt": "Ultima modifica il"
     }
   }
 }
