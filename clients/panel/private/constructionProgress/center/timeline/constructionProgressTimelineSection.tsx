@@ -41,7 +41,7 @@ const QUICK_FILTER_FIELDS = ["project", "edifice", "phase"] as const;
 
 const UPDATE_DATE_FORMAT: Intl.DateTimeFormatOptions = {year: "numeric", month: "short", day: "numeric"};
 
-function formatUpdateDate(value?: string): string {
+function formatUpdateDate(value?: Date | string): string {
     return formatDate(value, {format: UPDATE_DATE_FORMAT});
 }
 

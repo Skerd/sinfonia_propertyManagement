@@ -54,7 +54,7 @@ function ContractsHubPage({resolveLanguageKey}: WithLanguageType) {
             type: "reservation",
             entity: reservation,
             unitId: row.unit?._id ?? reservation.unit?._id ?? "",
-            unitName: row.unit?.name ?? reservation.unit?.name,
+            unitName: row.unit?.name ?? (reservation.unit && "name" in reservation.unit ? reservation.unit.name : undefined),
         });
     }, []);
 

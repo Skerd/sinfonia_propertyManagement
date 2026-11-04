@@ -191,7 +191,7 @@ export default function PropertyPolygonExplorer({project, unitTo, resolveLanguag
                 objectFit="contain"
                 imageUrl={image}
                 phantomPoints={polygons}
-                phantomHoverContent={(item) => (
+                phantomHoverContent={(item: {name: string}) => (
                     <div className="rounded-lg bg-popover px-3 py-1.5 text-sm font-medium text-popover-foreground shadow-md">
                         {item.name}
                     </div>

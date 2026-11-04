@@ -229,6 +229,8 @@ function ReservationCard({
             {({entity, setAction}) => {
                 const hasNotes = Boolean(entity.reservationNotes?.trim());
                 const hasBadges = Boolean(entity.status || entity.expirationDate || hasNotes);
+                // Without read access on the unit the API sends only its id.
+                const readableUnit = entity.unit && "name" in entity.unit ? entity.unit : undefined;
                 return (
                 <>
                     <ReservationReady entity={entity} onReady={onReady} />
@@ -262,10 +264,10 @@ function ReservationCard({
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
                             <EntityCardRow
                                 icon={IconHome}
-                                label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
-                                tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
+                                label={readableUnit?.unitType?.name ?? resolveLanguageKey("unit")}
+                                tooltip={readableUnit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 path="unit"
-                                value={entity.unit?.name ?? entity.unit?.unitNumber}
+                                value={readableUnit?.name ?? readableUnit?.unitNumber}
                             />
                             <EntityCardRow
                                 icon={IconUser}
