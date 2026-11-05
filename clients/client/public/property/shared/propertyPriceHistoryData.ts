@@ -1,4 +1,5 @@
-import {format, isValid, parseISO, subMonths} from "date-fns";
+import dayjs from "dayjs";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import type {MarketingUnitPriceHistoryEntry} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 export const PRICE_HISTORY_CHART_VIEWBOX = {width: 963, height: 605} as const;
@@ -68,8 +69,8 @@ export function buildPriceHistorySmoothPath(points: PropertyPriceHistoryChartPoi
 
 function parseChangedAt(value?: string): Date | null {
     if (!value) return null;
-    const date = parseISO(value);
-    return isValid(date) ? date : null;
+    const date = dayjs(value);
+    return date.isValid() ? date.toDate() : null;
 }
 
 function currencyPrefix(entry?: MarketingUnitPriceHistoryEntry): string {
@@ -139,7 +140,7 @@ export function buildPropertyPriceHistoryPlot(entries: MarketingUnitPriceHistory
     }
 
     const first = sorted[0];
-    const pastDate = first.date ? subMonths(first.date, 6) : null;
+    const pastDate = first.date ? dayjs(first.date).subtract(6, "month").toDate() : null;
     const series = [
         {
             ...first,
@@ -165,7 +166,7 @@ export function buildPropertyPriceHistoryPlot(entries: MarketingUnitPriceHistory
 
     const points: PropertyPriceHistoryPoint[] = series.map((entry, index) => {
         const label = entry.date
-            ? format(entry.date, sameMonth ? "dd MMM" : "MMM yyyy")
+            ? formatDate(entry.date, {format: sameMonth ? {day: "2-digit", month: "short"} : {month: "short", year: "numeric"}})
             : entry.changedAt ?? `Point ${index + 1}`;
         const normalized = (entry.price - plotMin) / plotRange;
         return {

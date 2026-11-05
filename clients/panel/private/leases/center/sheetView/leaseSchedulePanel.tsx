@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {format} from "date-fns";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {MoreHorizontal} from "lucide-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
@@ -213,7 +213,7 @@ export default function LeaseSchedulePanel({
                                 return (
                                     <TableRow key={row._id}>
                                         <TableCell className="whitespace-nowrap">
-                                            {row.dueDate ? format(new Date(row.dueDate), "dd MMM yyyy") : "—"}
+                                            {row.dueDate ? formatDate(row.dueDate, {timeZone: "UTC", format: DATE_FORMATS.mediumDate}) : "—"}
                                         </TableCell>
                                         <TableCell className="tabular-nums">{money(row.amount, symbol)}</TableCell>
                                         <TableCell className="tabular-nums">{money(row.lateFeeAmount ?? 0, symbol)}</TableCell>

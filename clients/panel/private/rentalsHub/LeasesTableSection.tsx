@@ -218,14 +218,14 @@ export default function LeasesTableSection({
                             <RentalsHubFilterField label={rk("startDateLabel")} className="min-w-[15rem] flex-[1.4]">
                                 <div className="flex gap-2">
                                     <DateInput
-                                        valueFormat="yyyy-MM-dd"
+                                        valueFormat="YYYY-MM-DD"
                                         value={startDateFrom}
                                         onChange={setStartDateFrom}
                                         className="h-9"
                                         placeholder={rk("dateFromLabel")}
                                     />
                                     <DateInput
-                                        valueFormat="yyyy-MM-dd"
+                                        valueFormat="YYYY-MM-DD"
                                         value={startDateTo}
                                         onChange={setStartDateTo}
                                         className="h-9"

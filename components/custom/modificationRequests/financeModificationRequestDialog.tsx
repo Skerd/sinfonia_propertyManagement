@@ -26,7 +26,6 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@co
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {z} from "zod";
 import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
-import {isValid} from "date-fns";
 import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
 import {financeModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/fiinanceModificationRequest.form.validator.ts";
 import {
@@ -457,12 +456,12 @@ function FinanceModificationRequestDialog({
                                                     field.value
                                                         ? (() => {
                                                             const d = new Date(field.value);
-                                                            return isValid(d) ? d : undefined;
+                                                            return Number.isNaN(d.getTime()) ? undefined : d;
                                                         })()
                                                         : undefined
                                                 }
                                                 onChange={(d) => {
-                                                    field.onChange(d && isValid(d) ? d.toISOString() : undefined);
+                                                    field.onChange(d && !Number.isNaN(d.getTime()) ? d.toISOString() : undefined);
                                                 }}
                                             />
                                         </FormControl>

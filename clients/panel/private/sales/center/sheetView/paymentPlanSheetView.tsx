@@ -7,7 +7,7 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import {useEffect, useState} from "react";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
-import {format} from "date-fns";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import SalePayInstallmentAction from "@propertyManagementModule/clients/panel/private/sales/center/actions/salePayInstallmentAction.tsx";
@@ -171,7 +171,7 @@ function PaymentPlanSheetView({
                                                         #{installment.installmentNumber}
                                                     </TableCell>
                                                     <TableCell>
-                                                        {installment.dueDate ? format(new Date(installment.dueDate), "PP") : "-"}
+                                                        {installment.dueDate ? formatDate(installment.dueDate, {timeZone: "UTC", format: DATE_FORMATS.mediumDate}) : "-"}
                                                     </TableCell>
                                                     <TableCell>{formatMoney(dueAmount)}</TableCell>
                                                     <TableCell>{formatMoney(paidAmount)}</TableCell>

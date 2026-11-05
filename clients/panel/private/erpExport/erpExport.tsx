@@ -249,7 +249,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
                     <div className="flex flex-col gap-1.5">
                         <Label className="text-xs">{rk("dateFromLabel")}</Label>
                         <DateInput
-                            valueFormat="yyyy-MM-dd"
+                            valueFormat="YYYY-MM-DD"
                             value={dateFrom}
                             onChange={setDateFrom}
                             className="w-full h-9"
@@ -259,7 +259,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
                     <div className="flex flex-col gap-1.5">
                         <Label className="text-xs">{rk("dateToLabel")}</Label>
                         <DateInput
-                            valueFormat="yyyy-MM-dd"
+                            valueFormat="YYYY-MM-DD"
                             value={dateTo}
                             onChange={setDateTo}
                             className="w-full h-9"

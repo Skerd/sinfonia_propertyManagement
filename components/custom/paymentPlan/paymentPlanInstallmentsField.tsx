@@ -268,7 +268,7 @@ export default function PaymentPlanInstallmentsField({
                                                             }
                                                             {...f}
                                                             value={f.value || ""}
-                                                            valueFormat="yyyy-MM-dd"
+                                                            valueFormat="YYYY-MM-DD"
                                                             minDate={isoDayOrEmpty(startDate) || undefined}
                                                             maxDate={isoDayOrEmpty(endDate) || undefined}
                                                         />

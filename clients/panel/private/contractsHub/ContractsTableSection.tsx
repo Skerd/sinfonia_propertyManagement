@@ -251,14 +251,14 @@ export default function ContractsTableSection({
                             <ContractsHubFilterField label={rk("signatureDateLabel")} className="min-w-[15rem] flex-[1.4] sm:max-w-[18rem]">
                                 <div className="grid grid-cols-2 gap-2">
                                     <DateInput
-                                        valueFormat="yyyy-MM-dd"
+                                        valueFormat="YYYY-MM-DD"
                                         value={signatureDateFrom}
                                         onChange={setSignatureDateFrom}
                                         className="h-9"
                                         placeholder={rk("signatureDateFromLabel")}
                                     />
                                     <DateInput
-                                        valueFormat="yyyy-MM-dd"
+                                        valueFormat="YYYY-MM-DD"
                                         value={signatureDateTo}
                                         onChange={setSignatureDateTo}
                                         className="h-9"

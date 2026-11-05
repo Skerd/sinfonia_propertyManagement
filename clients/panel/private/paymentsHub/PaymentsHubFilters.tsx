@@ -214,14 +214,14 @@ export default function PaymentsHubFilters({
                     <FilterField label={rk("dateRangeLabel")} className="min-w-[15rem] flex-[1.4]">
                         <div className="flex gap-2">
                             <DateInput
-                                valueFormat="yyyy-MM-dd"
+                                valueFormat="YYYY-MM-DD"
                                 value={scope.dateFrom}
                                 onChange={(v) => onScopeChange({dateFrom: v})}
                                 className="h-9"
                                 placeholder={rk("dateFromLabel")}
                             />
                             <DateInput
-                                valueFormat="yyyy-MM-dd"
+                                valueFormat="YYYY-MM-DD"
                                 value={scope.dateTo}
                                 onChange={(v) => onScopeChange({dateTo: v})}
                                 className="h-9"

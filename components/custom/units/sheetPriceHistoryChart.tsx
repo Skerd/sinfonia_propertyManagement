@@ -1,5 +1,6 @@
 import {useMemo} from "react";
-import {format, isValid, parseISO} from "date-fns";
+import dayjs from "dayjs";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {
     CartesianGrid,
     Line,
@@ -61,8 +62,8 @@ function formatPrice(value: number, prefix: string): string {
 
 function parseChangedAt(value?: string): Date | null {
     if (!value) return null;
-    const d = parseISO(value);
-    return isValid(d) ? d : null;
+    const d = dayjs(value);
+    return d.isValid() ? d.toDate() : null;
 }
 
 function changedByLabel(changedBy?: {name?: string; surname?: string}): string | undefined {
@@ -171,7 +172,7 @@ export default function SheetPriceHistoryChart({
             const prefix = currencyLabel(entry);
             const changedAt = entry.changedAt;
             const date = parseChangedAt(changedAt);
-            const label = date ? format(date, "dd MMM yyyy") : changedAt ?? "—";
+            const label = date ? formatDate(date, {format: DATE_FORMATS.mediumDate}) : changedAt ?? "—";
             const point: ChartPoint = {
                 key: `${prefix}-${changedAt ?? entry.price}`,
                 label,

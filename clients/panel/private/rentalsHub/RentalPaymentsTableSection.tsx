@@ -326,7 +326,7 @@ export default function RentalPaymentsTableSection({
                             <RentalsHubFilterField label={rk("dueDateLabel")} className="min-w-[15rem] flex-[1.4]">
                                 <div className="flex gap-2">
                                     <DateInput
-                                        valueFormat="yyyy-MM-dd"
+                                        valueFormat="YYYY-MM-DD"
                                         value={dueDateFrom}
                                         onChange={(v) => {
                                             releasePaymentLock();
@@ -336,7 +336,7 @@ export default function RentalPaymentsTableSection({
                                         placeholder={rk("dateFromLabel")}
                                     />
                                     <DateInput
-                                        valueFormat="yyyy-MM-dd"
+                                        valueFormat="YYYY-MM-DD"
                                         value={dueDateTo}
                                         onChange={(v) => {
                                             releasePaymentLock();
