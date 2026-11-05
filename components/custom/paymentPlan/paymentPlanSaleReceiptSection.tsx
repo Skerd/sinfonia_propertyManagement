@@ -15,11 +15,14 @@ import { Card, CardContent, CardFooter, CardHeader } from "@coreModule/component
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {roundToCurrency} from "armonia/src/modules/core/helpers/money.ts";
+import {allocatePlanInterest} from "armonia/src/modules/propertyManagement/helpers/paymentPlanInterest.ts";
 
 const PRINCIPAL_ZERO_EPS = 0.02;
 
+/** Rounds once to cents (D35); empty form fields (NaN) count as 0. */
 function roundMoney(value: number): number {
-    return Number((Number.isFinite(value) ? value : 0).toFixed(2));
+    return Number.isFinite(value) ? roundToCurrency(value) : 0;
 }
 
 type AmortizationRowOutput = {
@@ -38,14 +41,6 @@ type AmortizationResult =
     | { ok: true; installments: AmortizationRowOutput[]; totalContractInterest: number; planDays: number }
     | { ok: false; code: "invalid_input" | "installment_too_small" | "principal_residual" | "overpayment" };
 
-type RowWithFormIdx = {
-    installmentNumber: number;
-    dueDate: string;
-    amount: number;
-    notes?: string;
-    __formIdx: number;
-};
-
 function dayUtcMs(isoDate: string): number {
     const parts = isoDate.trim().split("-").map((x) => Number.parseInt(x, 10));
     if (parts.length !== 3 || parts.some((n) => Number.isNaN(n))) return Number.NaN;
@@ -53,13 +48,7 @@ function dayUtcMs(isoDate: string): number {
     return Date.UTC(y, m - 1, d);
 }
 
-function daysBetweenUtc(fromIso: string, toIso: string): number {
-    const from = dayUtcMs(fromIso);
-    const to = dayUtcMs(toIso);
-    if (Number.isNaN(from) || Number.isNaN(to)) return Number.NaN;
-    return Math.round((to - from) / 86400000);
-}
-
+/** The server's split (armonia `allocatePlanInterest`), laid back out in the form's row order. */
 function computeSimpleAmortization(params: {
     financedPrincipal: number;
     annualRatePercent: number;
@@ -70,117 +59,18 @@ function computeSimpleAmortization(params: {
     gracePeriodDays?: number;
     lateFeePercentage?: number;
 }): AmortizationResult {
-    const principal = roundMoney(params.financedPrincipal);
-    if (!Number.isFinite(principal) || principal < 0) return { ok: false, code: "invalid_input" };
-    if (!params.planStartDate?.trim() || !params.planEndDate?.trim() || params.rows.length === 0) {
-        return { ok: false, code: "invalid_input" };
-    }
-
-    const planStart = params.planStartDate.trim();
-    const planEnd = params.planEndDate.trim();
-    const planDays = daysBetweenUtc(planStart, planEnd);
-    if (Number.isNaN(planDays) || planDays <= 0) return { ok: false, code: "invalid_input" };
-
-    const rowsWithIdx: RowWithFormIdx[] = params.rows.map((r, idx) => ({
-        installmentNumber: r.installmentNumber,
-        dueDate: r.dueDate,
-        amount: r.amount,
-        notes: r.notes,
-        __formIdx: idx,
-    }));
-
-    const sortedRows = [...rowsWithIdx].sort((a, b) => {
-        const da = dayUtcMs(a.dueDate);
-        const db = dayUtcMs(b.dueDate);
-        if (da !== db) return da - db;
-        return a.installmentNumber - b.installmentNumber;
-    });
-
-    for (const row of sortedRows) {
-        if (Number.isNaN(dayUtcMs(row.dueDate))) return { ok: false, code: "invalid_input" };
-        if (roundMoney(Number(row.amount) || 0) <= 0) return { ok: false, code: "invalid_input" };
-    }
-
-    const planEndMs = dayUtcMs(planEnd);
-    const planStartMs = dayUtcMs(planStart);
-    if (Number.isNaN(planEndMs) || Number.isNaN(planStartMs)) return { ok: false, code: "invalid_input" };
-
-    let prevDueMs = Number.NEGATIVE_INFINITY;
-    const segmentDays: number[] = [];
-    for (let i = 0; i < sortedRows.length; i++) {
-        const due = sortedRows[i].dueDate.trim();
-        const dueMs = dayUtcMs(due);
-        if (Number.isNaN(dueMs) || dueMs < planStartMs || dueMs > planEndMs) return { ok: false, code: "invalid_input" };
-        if (dueMs <= prevDueMs) return { ok: false, code: "invalid_input" };
-        prevDueMs = dueMs;
-        const prevIso = i === 0 ? planStart : sortedRows[i - 1].dueDate.trim();
-        const d = daysBetweenUtc(prevIso, due);
-        if (Number.isNaN(d) || d < 0) return { ok: false, code: "invalid_input" };
-        segmentDays.push(d);
-    }
-
-    const lastDue = sortedRows[sortedRows.length - 1].dueDate.trim();
-    const spanDays = daysBetweenUtc(planStart, lastDue);
-    if (Number.isNaN(spanDays) || spanDays !== planDays) return { ok: false, code: "invalid_input" };
-
-    const rate = (Number(params.annualRatePercent) || 0) / 100;
-    const totalContractInterest = rate <= 0 || principal <= 0 ? 0 : roundMoney(principal * rate * (planDays / 365));
-
-    const n = sortedRows.length;
-    const allocatedInterest: number[] = [];
-    let interestSum = 0;
-    for (let i = 0; i < n - 1; i++) {
-        const part =
-            planDays <= 0 ? 0 : roundMoney((totalContractInterest * segmentDays[i]) / planDays);
-        allocatedInterest.push(part);
-        interestSum += part;
-    }
-    allocatedInterest.push(roundMoney(totalContractInterest - interestSum));
-
-    let remaining = principal;
-    const outSorted: AmortizationRowOutput[] = [];
-
-    for (let i = 0; i < sortedRows.length; i++) {
-        const row = sortedRows[i];
-        const amount = roundMoney(Number(row.amount) || 0);
-        const interestAccrued = allocatedInterest[i] ?? 0;
-        const rawPrincipal = roundMoney(amount - interestAccrued);
-        if (rawPrincipal < -0.005) return { ok: false, code: "installment_too_small" };
-
-        let principalAmount: number;
-        if (rawPrincipal > remaining + 0.005) {
-            principalAmount = roundMoney(Math.max(0, remaining));
-        } else {
-            principalAmount = rawPrincipal;
-        }
-        principalAmount = Math.max(0, Math.min(principalAmount, roundMoney(remaining)));
-        const interestAmount = roundMoney(amount - principalAmount);
-
-        remaining = roundMoney(remaining - principalAmount);
-        if (remaining < -0.02) {
-            return { ok: false, code: "overpayment" };
-        }
-        remaining = Math.max(0, remaining);
-
-        outSorted.push({
-            installmentNumber: row.installmentNumber,
-            dueDate: row.dueDate,
-            amount,
-            notes: row.notes,
-            principalAmount,
-            interestAmount: Math.max(0, interestAmount),
+    const result = allocatePlanInterest(params);
+    if (!result.ok) return { ok: false, code: result.code === "installment_too_small" ? "installment_too_small" : "invalid_input" };
+    const installmentsInFormOrder: AmortizationRowOutput[] = new Array(params.rows.length);
+    for (const { index, ...row } of result.installments) {
+        installmentsInFormOrder[index] = {
+            ...row,
             interestRate: params.interestRatePerInstallment,
             gracePeriodDays: params.gracePeriodDays,
             lateFeePercentage: params.lateFeePercentage,
-        });
+        };
     }
-
-    const installmentsInFormOrder: AmortizationRowOutput[] = new Array(params.rows.length);
-    for (let j = 0; j < outSorted.length; j++) {
-        installmentsInFormOrder[sortedRows[j].__formIdx] = outSorted[j];
-    }
-
-    return { ok: true, installments: installmentsInFormOrder, totalContractInterest, planDays };
+    return { ok: true, installments: installmentsInFormOrder, totalContractInterest: result.totalContractInterest, planDays: result.planDays };
 }
 
 function sortedFormIndicesByDueDate(

@@ -6,6 +6,7 @@ import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@coreModule/components/ui/form.tsx";
 import { Input } from "@coreModule/components/ui/input.tsx";
 import { Label } from "@coreModule/components/ui/label.tsx";
+import {percentOfMoney} from "armonia/src/modules/core/helpers/money.ts";
 
 export type LocalDiscountFieldProps = {
     name?: string;
@@ -20,6 +21,7 @@ export type LocalDiscountFieldProps = {
     formExtras?: Record<string, unknown>;
 };
 
+/** A percentage, not money: plain rounding. */
 function round2(n: number) {
     return Math.round(n * 100) / 100;
 }
@@ -42,8 +44,9 @@ function percentFromAmount(amount: number, price: number) {
     return round2(Math.min(100, Math.max(0, (amount / price) * 100)));
 }
 
+/** The discount amount, rounded once to cents (D35). */
 function amountFromPercent(percent: number, price: number) {
-    return round2((price * percent) / 100);
+    return Number.isFinite(percent) && Number.isFinite(price) ? percentOfMoney(price, percent) : 0;
 }
 
 function extrasListedPrice(formExtras: Record<string, unknown> | undefined): number {
