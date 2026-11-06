@@ -13,7 +13,7 @@ import FloorCard from "@propertyManagementModule/clients/panel/private/floors/ce
 import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnits.tsx";
 import ViewUnitsOverlay from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnitsOverlay.tsx";
 import UnitsOverlay from "@propertyManagementModule/components/custom/floors/unitsOverlay.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -80,12 +80,18 @@ function AllFloors({resolveLanguageKey}: WithLanguageType) {
             collectionName="floors"
             accessModel="floors"
             tableConfigKey="floors"
-            createPath={buildUrlWithExistingParams(window.location.href, "/realEstate/floors/create")}
-            createIcon={<IconStackPush />}
-            createLanguageKey="createFloor"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} description={resolveLanguageKey(edificeScoped ? "description" : "descriptionWithoutEdifice")}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={buildUrlWithExistingParams(window.location.href, "/realEstate/floors/create")}
+                        icon={<IconStackPush />}
+                        labelKey="createFloor"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildFloorEditPath}
             resolveLanguageKey={resolveLanguageKey}
-            headerDescription={resolveLanguageKey(edificeScoped ? "description" : "descriptionWithoutEdifice")}
             extraFilters={
                 pendingProjectId || pendingEdificeId
                     ? {

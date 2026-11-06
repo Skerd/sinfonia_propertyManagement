@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -86,9 +86,16 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
             collectionName="leads"
             accessModel="leads"
             tableConfigKey="leads"
-            createPath="/realEstate/leads/create"
-            createIcon={<IconUserPlus className="h-4 w-4" />}
-            createLanguageKey="createLead"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/realEstate/leads/create"
+                        icon={<IconUserPlus className="h-4 w-4" />}
+                        labelKey="createLead"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildLeadEditPath}
             resolveLanguageKey={resolveLanguageKey}
             quickFilters={quickFilters}

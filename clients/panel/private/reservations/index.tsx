@@ -16,7 +16,7 @@ import ReverseReservationPaymentDialog from "@propertyManagementModule/component
 import ManualReservationClientEmailDialog, {
     parseManualClientEmailAction,
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -127,13 +127,18 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
             accessModel="reservations"
             tableConfigKey="reservations"
             extraParams={extraParams}
-            createPath={createPath}
-            createIcon={<IconSquarePlus2 className="h-4 w-4" />}
-            createLanguageKey="createReservation"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} title={headerTitle} description={headerDescription}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={createPath}
+                        icon={<IconSquarePlus2 className="h-4 w-4" />}
+                        labelKey="createReservation"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={() => ""}
             resolveLanguageKey={resolveLanguageKey}
-            headerTitle={headerTitle}
-            headerDescription={headerDescription}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx"

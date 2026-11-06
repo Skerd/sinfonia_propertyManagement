@@ -5,7 +5,7 @@ import {IconTag} from "@tabler/icons-react";
 import {UnitTypeCategory} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitTypeCategory/unitTypeCategory.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import UnitTypeCategoryCard from "@propertyManagementModule/clients/panel/private/unitTypeCategories/center/cardView/unitTypeCategoryCard.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 
 function unitTypeCategoryEditPath(category: UnitTypeCategory) {
@@ -22,9 +22,16 @@ function AllUnitTypeCategories({resolveLanguageKey}: WithLanguageType) {
             collectionName="unittypecategories"
             accessModel="unitTypeCategories"
             tableConfigKey="unittypecategories"
-            createPath="/tenancy/systemSettings/unitTypeCategories/create"
-            createIcon={<IconTag />}
-            createLanguageKey="createUnitTypeCategory"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/unitTypeCategories/create"
+                        icon={<IconTag />}
+                        labelKey="createUnitTypeCategory"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={unitTypeCategoryEditPath}
             resolveLanguageKey={resolveLanguageKey}
             cardViewClassName={GRID_TRANSACTIONAL}

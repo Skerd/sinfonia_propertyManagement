@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {IconPlus} from "@tabler/icons-react";
 import type {InspectionChecklistTemplate} from "armonia/src/modules/propertyManagement/api/realEstate/private/inspectionChecklistTemplate/inspectionChecklistTemplate.dto.ts";
@@ -27,9 +27,16 @@ function AllInspectionChecklistTemplates({resolveLanguageKey, projectId}: Props)
             collectionName="inspectionchecklisttemplates"
             accessModel="inspectionchecklisttemplates"
             tableConfigKey="inspectionchecklisttemplates"
-            createPath="/tenancy/systemSettings/inspectionChecklistTemplates/create"
-            createIcon={<IconPlus className="h-4 w-4" />}
-            createLanguageKey="createInspectionChecklistTemplate"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/inspectionChecklistTemplates/create"
+                        icon={<IconPlus className="h-4 w-4" />}
+                        labelKey="createInspectionChecklistTemplate"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx"

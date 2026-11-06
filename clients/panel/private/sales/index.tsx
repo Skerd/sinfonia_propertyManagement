@@ -6,7 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconCash} from "@tabler/icons-react";
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -101,9 +101,16 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
             accessModel="sales"
             tableConfigKey="sales"
             extraParams={extraParams}
-            createPath={createPath}
-            createIcon={<IconCash className="h-4 w-4" />}
-            createLanguageKey="createSale"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} title={headerTitle} description={headerDescription}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={createPath}
+                        icon={<IconCash className="h-4 w-4" />}
+                        labelKey="createSale"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={(sale) =>
                 buildSaleEditPath(
                     sale,
@@ -112,8 +119,6 @@ function AllSales({resolveLanguageKey}: WithLanguageType) {
                 )
             }
             resolveLanguageKey={resolveLanguageKey}
-            headerTitle={headerTitle}
-            headerDescription={headerDescription}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             buildDeleteConfirmLabel={(sale, read) => saleDeleteRestoreConfirmLabel(sale, read as {name?: unknown})}

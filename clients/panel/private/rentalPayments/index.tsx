@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {IconReceiptDollar} from "@tabler/icons-react";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -122,19 +122,25 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             collectionName="rentalpayments"
             accessModel="rentalpayments"
             tableConfigKey="rentalpayments"
-            createPath={leaseId
-                ? `/realEstate/rentalPayments/create?leaseId=${leaseId}${leaseName ? `&leaseName=${encodeURIComponent(leaseName)}` : ""}`
-                : "/realEstate/rentalPayments/create"
-            }
-            createIcon={<IconReceiptDollar className="h-4 w-4" />}
-            createLanguageKey="createRentalPayment"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} title={headerTitle}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={leaseId
+                            ? `/realEstate/rentalPayments/create?leaseId=${leaseId}${leaseName ? `&leaseName=${encodeURIComponent(leaseName)}` : ""}`
+                            : "/realEstate/rentalPayments/create"
+                        }
+                        icon={<IconReceiptDollar className="h-4 w-4" />}
+                        labelKey="createRentalPayment"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildRentalPaymentEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx"
             cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
-            headerTitle={headerTitle}
             rowActionMenu={{allowMenuForCustomChildren: true}}
             renderCard={(payment, onDelete, onRestore, listRef) => (
                 <RentalPaymentCard

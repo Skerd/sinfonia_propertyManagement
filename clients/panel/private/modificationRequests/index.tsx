@@ -6,7 +6,7 @@ import {useMemo} from "react";
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -128,11 +128,16 @@ function AllModificationRequests({resolveLanguageKey}: WithLanguageType) {
             collectionName="modificationrequests"
             accessModel="modificationRequests"
             tableConfigKey="modificationrequests"
-            createPath={createPath}
-            createIcon={<IconAdjustmentsPlus className="h-4 w-4" />}
-            createLanguageKey="createModificationRequest"
-            headerTitle={headerTitle}
-            headerDescription={headerDescription}
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} title={headerTitle} description={headerDescription}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={createPath}
+                        icon={<IconAdjustmentsPlus className="h-4 w-4" />}
+                        labelKey="createModificationRequest"
+                    />
+                </EntityListHeader>
+            )}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             buildEditPath={buildModificationRequestEditPath}

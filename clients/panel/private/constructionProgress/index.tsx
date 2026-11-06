@@ -3,7 +3,7 @@ import {useMemo, useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconBackhoe} from "@tabler/icons-react";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
@@ -87,16 +87,22 @@ function AllConstructionProgress({resolveLanguageKey, projectId, projectName, ed
                 collectionName="constructionprogresses"
                 accessModel="constructionprogresses"
                 tableConfigKey="constructionprogresses"
-                createPath={buildCreatePath({projectId, projectName, edificeId})}
-                createIcon={<IconBackhoe className="h-4 w-4" />}
-                createLanguageKey="createConstructionProgress"
+                header={(ctx) => (
+                    <EntityListHeader ctx={ctx} title={headerTitle}>
+                        <EntityListCreateButton
+                            ctx={ctx}
+                            path={buildCreatePath({projectId, projectName, edificeId})}
+                            icon={<IconBackhoe className="h-4 w-4" />}
+                            labelKey="createConstructionProgress"
+                        />
+                    </EntityListHeader>
+                )}
                 buildEditPath={buildEditPath}
                 resolveLanguageKey={resolveLanguageKey}
                 sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/constructionProgress/center/sheetView/constructionProgressSheetView.tsx"
                 cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
                 extraFilters={extraFilters}
                 quickFilters={quickFilters}
-                headerTitle={headerTitle}
                 aboveToolbar={(
                     <ConstructionProgressTimelineSection
                         projectId={projectId}

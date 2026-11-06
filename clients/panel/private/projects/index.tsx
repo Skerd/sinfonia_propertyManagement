@@ -9,7 +9,7 @@ import ProjectCard from "@propertyManagementModule/clients/panel/private/project
 import ViewEdifices from "@propertyManagementModule/clients/panel/private/projects/center/actions/viewEdifices.tsx";
 import ViewEdificesOverlay from "@propertyManagementModule/clients/panel/private/projects/center/actions/viewEdificesOverlay.tsx";
 import EdificesOverlay from "@propertyManagementModule/components/custom/projects/edificesOverlay.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -31,9 +31,16 @@ function AllProjects({resolveLanguageKey}: WithLanguageType) {
             collectionName="projects"
             accessModel="projects"
             tableConfigKey="projects"
-            createPath="/realEstate/projects/create"
-            createIcon={<IconFolderPlus />}
-            createLanguageKey="createProject"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/realEstate/projects/create"
+                        icon={<IconFolderPlus />}
+                        labelKey="createProject"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={(project: Project) => {
                 const params = new URLSearchParams();
                 params.set("projectId", project._id ?? "");

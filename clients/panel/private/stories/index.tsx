@@ -3,7 +3,7 @@ import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {BookOpen} from "lucide-react";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
@@ -65,20 +65,26 @@ function AllStories({resolveLanguageKey, projectId, projectName}: AllStoriesProp
             collectionName="stories"
             accessModel="stories"
             tableConfigKey="stories"
-            createPath={
-                projectId
-                    ? `/realEstate/stories/create?projectId=${projectId}${projectName ? `&projectName=${encodeURIComponent(projectName)}` : ""}`
-                    : "/realEstate/stories/create"
-            }
-            createIcon={<BookOpen className="h-4 w-4" />}
-            createLanguageKey="createStory"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} title={headerTitle}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={
+                            projectId
+                                ? `/realEstate/stories/create?projectId=${projectId}${projectName ? `&projectName=${encodeURIComponent(projectName)}` : ""}`
+                                : "/realEstate/stories/create"
+                        }
+                        icon={<BookOpen className="h-4 w-4" />}
+                        labelKey="createStory"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/stories/center/sheetView/storySheetView.tsx"
             cardViewClassName={cn(GRID_TRANSACTIONAL, GRID_COLS_MAX_4)}
             extraParams={extraParams}
             quickFilters={quickFilters}
-            headerTitle={headerTitle}
             renderCard={(story, onDelete, onRestore) => (
                 <StoryCard
                     story={story}

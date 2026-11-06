@@ -3,7 +3,7 @@ import {useMemo} from "react";
 import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {
     AD_CAMPAIGN_STATUS_VALUES,
@@ -51,9 +51,16 @@ function AllAdCampaigns({resolveLanguageKey}: WithLanguageType) {
             collectionName="adcampaigns"
             accessModel="adcampaigns"
             tableConfigKey="adcampaigns"
-            createPath="/tenancy/systemSettings/adCampaigns/create"
-            createIcon={<IconPlus className="h-4 w-4" />}
-            createLanguageKey="createAdCampaign"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/adCampaigns/create"
+                        icon={<IconPlus className="h-4 w-4" />}
+                        labelKey="createAdCampaign"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildEditPath}
             quickFilters={quickFilters}
             resolveLanguageKey={resolveLanguageKey}

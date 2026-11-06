@@ -5,7 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useMemo} from "react";
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
@@ -120,11 +120,11 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
             collectionName="inspections"
             accessModel="inspections"
             tableConfigKey="inspections"
-            createPath={createPath}
-            createIcon={<IconTextPlus />}
-            createLanguageKey="createInspection"
-            headerTitle={headerTitle}
-            headerDescription={headerDescription}
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx} title={headerTitle} description={headerDescription}>
+                    <EntityListCreateButton ctx={ctx} path={createPath} icon={<IconTextPlus />} labelKey="createInspection" />
+                </EntityListHeader>
+            )}
             extraFilters={extraFilters}
             quickFilters={quickFilters}
             // syncExtraFiltersKeys={["unitId"]}

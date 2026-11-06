@@ -14,7 +14,7 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import {buildUnitEditPath, unitDeleteConfirmLabel} from "@propertyManagementModule/clients/panel/private/units/unitNavigation.ts";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
 import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
@@ -245,14 +245,22 @@ function AllUnits({resolveLanguageKey, edificeId: propEdificeId, showHeader = tr
             collectionName="units"
             accessModel="units"
             tableConfigKey="units"
-            createPath={buildUrlWithExistingParams(window.location.href, "/realEstate/units/create")}
-            createIcon={<IconFrustumPlus />}
-            createLanguageKey="createUnit"
-            hideHeader={!showHeader}
+            header={showHeader && ((ctx) => (
+                <EntityListHeader
+                    ctx={ctx}
+                    description={resolveLanguageKey(floorScoped ? "description" : "descriptionWithoutContext")}
+                >
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={buildUrlWithExistingParams(window.location.href, "/realEstate/units/create")}
+                        icon={<IconFrustumPlus />}
+                        labelKey="createUnit"
+                    />
+                </EntityListHeader>
+            ))}
             buildEditPath={buildUnitEditPath}
             buildDeleteConfirmLabel={(unit, read) => unitDeleteConfirmLabel(read, unit)}
             resolveLanguageKey={resolveLanguageKey}
-            headerDescription={resolveLanguageKey(floorScoped ? "description" : "descriptionWithoutContext")}
             extraFilters={extraFilters}
             extraParams={extraParams}
             aboveToolbar={userFilterBar}

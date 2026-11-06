@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {IconPlus} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import type {AdCampaignTemplate} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaignTemplate/adCampaignTemplate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -22,9 +22,16 @@ function AllAdCampaignTemplates({resolveLanguageKey}: WithLanguageType) {
             collectionName="adcampaigntemplates"
             accessModel="adcampaigntemplates"
             tableConfigKey="adcampaigntemplates"
-            createPath="/tenancy/systemSettings/adCampaignTemplates/create"
-            createIcon={<IconPlus className="h-4 w-4" />}
-            createLanguageKey="createAdCampaignTemplate"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path="/tenancy/systemSettings/adCampaignTemplates/create"
+                        icon={<IconPlus className="h-4 w-4" />}
+                        labelKey="createAdCampaignTemplate"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildEditPath}
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx"

@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {
@@ -56,7 +56,7 @@ function AdCampaignRecipients({resolveLanguageKey, campaignId, campaignName}: Pr
             accessModel="adcampaignrecipients"
             tableConfigKey="adcampaignrecipients"
             buildEditPath={() => ""}
-            headerTitle={buildPageTitle(resolveLanguageKey("title"), [campaignName])}
+            header={(ctx) => <EntityListHeader ctx={ctx} title={buildPageTitle(resolveLanguageKey("title"), [campaignName])} />}
             quickFilters={quickFilters}
             extraFilters={campaignId ? {campaign: campaignId} : undefined}
             resolveLanguageKey={resolveLanguageKey}

@@ -15,7 +15,7 @@ import ViewFloorsOverlay from "@propertyManagementModule/clients/panel/private/e
 import GenerateFloorsUnits from "@propertyManagementModule/clients/panel/private/edifices/center/actions/generateFloorsUnits.tsx";
 import FloorsOverlay from "@propertyManagementModule/components/custom/edifices/floorsOverlay.tsx";
 import GenerateFloorsUnitsDialog from "@propertyManagementModule/components/custom/edifices/generateFloorsUnitsDialog.tsx";
-import EntityListPage, {type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
+import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_HIERARCHY} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
@@ -72,9 +72,16 @@ function AllEdifices({resolveLanguageKey}: WithLanguageType) {
             collectionName="edifices"
             accessModel="edifices"
             tableConfigKey="edifices"
-            createPath={buildUrlWithExistingParams(window.location.href, "/realEstate/edifices/create")}
-            createIcon={<IconBuildingPlus />}
-            createLanguageKey="createEdifice"
+            header={(ctx) => (
+                <EntityListHeader ctx={ctx}>
+                    <EntityListCreateButton
+                        ctx={ctx}
+                        path={buildUrlWithExistingParams(window.location.href, "/realEstate/edifices/create")}
+                        icon={<IconBuildingPlus />}
+                        labelKey="createEdifice"
+                    />
+                </EntityListHeader>
+            )}
             buildEditPath={buildEdificeEditPath}
             resolveLanguageKey={listResolveLanguageKey}
             extraFilters={pendingProjectId ? {project: pendingProjectId} : undefined}
