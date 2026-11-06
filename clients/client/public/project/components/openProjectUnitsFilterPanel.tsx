@@ -1,5 +1,4 @@
-import {useEffect} from "react";
-import {createPortal} from "react-dom";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import ProjectsPriceRangeFilter from "@propertyManagementModule/clients/client/public/projects/components/projectsPriceRangeFilter.tsx";
 import {
@@ -17,7 +16,6 @@ import {
     PUBLIC_CONTENT_FRAME,
     PUBLIC_HEADING,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 
 type OpenProjectUnitsFilterPanelProps = {
     open: boolean;
@@ -53,22 +51,6 @@ function OpenProjectUnitsFilterPanel({
     onReset,
     resolveLanguageKey,
 }: OpenProjectUnitsFilterPanelProps) {
-    useEffect(() => {
-        if (!open) {
-            return;
-        }
-        const onKey = (event: KeyboardEvent) => {
-            if (event.key === "Escape") {
-                onClose();
-            }
-        };
-        const unlockScroll = lockPublicBodyScroll();
-        window.addEventListener("keydown", onKey);
-        return () => {
-            unlockScroll();
-            window.removeEventListener("keydown", onKey);
-        };
-    }, [open, onClose]);
 
     if (!open) {
         return null;
@@ -82,17 +64,13 @@ function OpenProjectUnitsFilterPanel({
         patchDraft({propertyType: draft.propertyType === type ? null : type});
     }
 
-    return createPortal(
-        <div
-            className="fixed inset-0 z-[150] flex flex-col sm:items-center sm:justify-center sm:bg-black/40 sm:p-4"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="project-units-filter-title"
-            onClick={onClose}
-        >
-            <div
+    // Radix: focus trap and return, Escape, scroll lock; a click on the backdrop closes (D23).
+    return (
+        <Dialog open onOpenChange={(next) => !next && onClose()}>
+            <DialogFrame
+                title={String(resolveLanguageKey("filtersTitle"))}
+                overlayClassName="fixed inset-0 z-[150] flex flex-col sm:items-center sm:justify-center sm:bg-black/40 sm:p-4"
                 className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-white sm:max-h-[90vh] sm:w-full sm:max-w-5xl sm:flex-none sm:rounded-[5px] sm:shadow-lg"
-                onClick={(event) => event.stopPropagation()}
                 data-node-id="495:665"
             >
                 <div className={`${PUBLIC_CONTENT_FRAME} flex flex-col gap-5 py-5 md:gap-6 md:py-6`}>
@@ -225,9 +203,8 @@ function OpenProjectUnitsFilterPanel({
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>,
-        document.body,
+        </DialogFrame>
+    </Dialog>
     );
 }
 

@@ -546,7 +546,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
                     style={{transform: "translate3d(0,0,0)"}}
                 >
                     {loopedSlides.map((slide) => (
-                        <article
+                        <div
                             key={slide.key}
                             role="link"
                             tabIndex={0}
@@ -564,7 +564,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
                                 }
                             }}
                         >
-                            {/* pointer-events-none: hover/click always hit the article, not children or overlaps */}
+                            {/* pointer-events-none: hover/click always hit the card, not children or overlaps */}
                             <div className="pointer-events-none overflow-hidden rounded-[5px] border border-pronix-border bg-white">
                                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-pronix-cream">
                                     <img
@@ -595,7 +595,7 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
                                     />
                                 </div>
                             </div>
-                        </article>
+                        </div>
                     ))}
                 </div>
             </div>

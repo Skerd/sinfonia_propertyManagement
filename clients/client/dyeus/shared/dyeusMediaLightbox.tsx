@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {createPortal} from "react-dom";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {ChevronLeft, ChevronRight, X} from "lucide-react";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 
@@ -29,19 +29,7 @@ function DyeusMediaLightbox({
     );
 
     useEffect(() => {
-        const previous = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
-        return () => {
-            document.body.style.overflow = previous;
-        };
-    }, []);
-
-    useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
-            if (e.key === "Escape") {
-                onClose();
-                return;
-            }
             if (items.length < 2) return;
             if (e.key === "ArrowLeft") {
                 setIndex((current) => (current - 1 + items.length) % items.length);
@@ -52,86 +40,87 @@ function DyeusMediaLightbox({
         };
         window.addEventListener("keydown", onKey);
         return () => window.removeEventListener("keydown", onKey);
-    }, [items.length, onClose]);
+    }, [items.length]);
 
     if (items.length === 0) return null;
 
     const src = items[index] ?? items[0];
     const showNav = items.length > 1;
 
-    return createPortal(
-        <div
-            role="dialog"
-            aria-modal="true"
-            aria-label={kind === "image" ? t("imageViewer") : t("videoPlayer")}
-            className="fixed inset-0 z-[300] flex items-center justify-center bg-dyeus-ink/92 p-4 md:p-10"
-            onClick={onClose}
-        >
-            <button
-                type="button"
-                onClick={onClose}
-                className="absolute right-4 top-4 z-10 flex size-10 cursor-pointer items-center justify-center text-dyeus-cream transition hover:text-dyeus-bronze md:right-6 md:top-6"
-                aria-label={t("close")}
+    // Radix: focus trap and return, Escape, scroll lock (D23). The viewer is the dialog, so its buttons stay
+    // reachable; a click on the dark area around the media closes it.
+    return (
+        <Dialog open onOpenChange={(next) => !next && onClose()}>
+            <DialogFrame
+                title={String(kind === "image" ? t("imageViewer") : t("videoPlayer"))}
+                overlayClassName="fixed inset-0 z-[300]"
+                className="fixed inset-0 z-[300] flex items-center justify-center bg-dyeus-ink/92 p-4 md:p-10"
+                onClick={(event) => {
+                    if (event.target === event.currentTarget) onClose();
+                }}
             >
-                <X className="size-6" strokeWidth={1.5} />
-            </button>
+                <button
+                    type="button"
+                    onClick={onClose}
+                    className="absolute right-4 top-4 z-10 flex size-10 cursor-pointer items-center justify-center text-dyeus-cream transition hover:text-dyeus-bronze md:right-6 md:top-6"
+                    aria-label={t("close")}
+                >
+                    <X className="size-6" strokeWidth={1.5} />
+                </button>
 
-            {showNav ? (
-                <>
-                    <button
-                        type="button"
-                        className="absolute left-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:left-4 md:size-12"
-                        aria-label={t("previous")}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setIndex((current) => (current - 1 + items.length) % items.length);
-                        }}
-                    >
-                        <ChevronLeft className="size-8" strokeWidth={1.5} />
-                    </button>
-                    <button
-                        type="button"
-                        className="absolute right-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:right-4 md:size-12"
-                        aria-label={t("next")}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setIndex((current) => (current + 1) % items.length);
-                        }}
-                    >
-                        <ChevronRight className="size-8" strokeWidth={1.5} />
-                    </button>
-                </>
-            ) : null}
+                {showNav ? (
+                    <>
+                        <button
+                            type="button"
+                            className="absolute left-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:left-4 md:size-12"
+                            aria-label={t("previous")}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIndex((current) => (current - 1 + items.length) % items.length);
+                            }}
+                        >
+                            <ChevronLeft className="size-8" strokeWidth={1.5} />
+                        </button>
+                        <button
+                            type="button"
+                            className="absolute right-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:right-4 md:size-12"
+                            aria-label={t("next")}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIndex((current) => (current + 1) % items.length);
+                            }}
+                        >
+                            <ChevronRight className="size-8" strokeWidth={1.5} />
+                        </button>
+                    </>
+                ) : null}
 
-            <div
-                className="relative flex max-h-full max-w-full items-center justify-center"
-                onClick={(e) => e.stopPropagation()}
-            >
-                {kind === "image" ? (
-                    <img
-                        src={src}
-                        alt=""
-                        className="max-h-[min(90vh,920px)] max-w-[min(100vw-2rem,1280px)] object-contain"
-                    />
-                ) : (
-                    <video
-                        key={src}
-                        src={src}
-                        controls
-                        autoPlay
-                        playsInline
-                        className="max-h-[min(90vh,920px)] w-full max-w-[min(100vw-2rem,1280px)] bg-dyeus-ink"
-                    />
-                )}
-            </div>
+                <div className="relative flex max-h-full max-w-full items-center justify-center">
+                    {kind === "image" ? (
+                        <img
+                            src={src}
+                            alt=""
+                            className="max-h-[min(90vh,920px)] max-w-[min(100vw-2rem,1280px)] object-contain"
+                        />
+                    ) : (
+                        <video
+                            key={src}
+                            src={src}
+                            controls
+                            autoPlay
+                            playsInline
+                            className="max-h-[min(90vh,920px)] w-full max-w-[min(100vw-2rem,1280px)] bg-dyeus-ink"
+                        />
+                    )}
+                </div>
 
-            {showNav ? (
-                <p className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 font-dyeus-sans text-xs tracking-[0.18em] text-dyeus-cream/70">
-                    {t("counter", {current: index + 1, total: items.length})}
-                </p>
-            ) : null}
-        </div>,
-        document.body,
+                {showNav ? (
+                    <p className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 font-dyeus-sans text-xs tracking-[0.18em] text-dyeus-cream/70">
+                        {t("counter", {current: index + 1, total: items.length})}
+                    </p>
+                ) : null}
+            </DialogFrame>
+        </Dialog>
     );
 }
 

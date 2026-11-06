@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useRef, useState, type MouseEvent} from "react";
 import {createPortal} from "react-dom";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import FigmaMenu, {shouldIgnoreHeroNavigate, usePublicMenuOpen} from "@propertyManagementModule/clients/client/public/shared/figmaMenu.tsx";
 import {usePublicIsMobile} from "@propertyManagementModule/clients/client/public/shared/hooks/usePublicIsMobile.ts";
@@ -123,10 +123,18 @@ function HeroSection({resolveLanguageKey}: HeroSectionProps) {
                 className={`relative min-h-[100svh] min-w-0 w-full overflow-hidden ${showCustomCursor ? "cursor-none" : ""}`}
                 data-node-id="18:67"
                 data-name="Hero"
+                // A click anywhere is a mouse shortcut; keyboard and screen-reader users get the link below (D23).
+                role="presentation"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleClick}
             >
+                <Link
+                    to="/projects"
+                    className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:left-4 focus-visible:top-24 focus-visible:z-30 focus-visible:rounded-[5px] focus-visible:bg-white focus-visible:px-4 focus-visible:py-2 focus-visible:text-black"
+                >
+                    {cursorLabel}
+                </Link>
                 <video
                     autoPlay
                     loop

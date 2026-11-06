@@ -1,5 +1,5 @@
-import {useEffect, type ReactNode} from "react";
-import {createPortal} from "react-dom";
+import {type ReactNode} from "react";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
 import {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
@@ -16,7 +16,6 @@ import {
     PUBLIC_SUBTITLE,
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 
 type PublicFavoritesPanelProps = {
@@ -153,23 +152,6 @@ function UnitFavoriteRow({
 function PublicFavoritesPanel({resolveLanguageKey}: PublicFavoritesPanelProps) {
     const {favorites, panelOpen, closePanel, totalCount} = usePublicFavorites();
 
-    useEffect(() => {
-        if (!panelOpen) {
-            return;
-        }
-        const onKey = (event: KeyboardEvent) => {
-            if (event.key === "Escape") {
-                closePanel();
-            }
-        };
-        const unlockScroll = lockPublicBodyScroll();
-        window.addEventListener("keydown", onKey);
-        return () => {
-            unlockScroll();
-            window.removeEventListener("keydown", onKey);
-        };
-    }, [panelOpen, closePanel]);
-
     if (!panelOpen) {
         return null;
     }
@@ -180,17 +162,13 @@ function PublicFavoritesPanel({resolveLanguageKey}: PublicFavoritesPanelProps) {
     const projectCount = favorites.projects.length;
     const unitCount = favorites.units.length;
 
-    return createPortal(
-        <div
-            className="fixed inset-0 z-[150] flex flex-col sm:items-center sm:justify-center sm:bg-black/40 sm:p-4"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="public-favorites-title"
-            onClick={closePanel}
-        >
-            <div
+    // Radix: focus trap and return, Escape, scroll lock; a click on the backdrop closes (D23).
+    return (
+        <Dialog open onOpenChange={(next) => !next && closePanel()}>
+            <DialogFrame
+                title={String(resolveLanguageKey("favoritesTitle"))}
+                overlayClassName="fixed inset-0 z-[150] flex flex-col sm:items-center sm:justify-center sm:bg-black/40 sm:p-4"
                 className="flex min-h-0 flex-1 flex-col overflow-hidden bg-white sm:max-h-[90vh] sm:w-full sm:max-w-5xl sm:flex-none sm:rounded-[5px] sm:shadow-lg"
-                onClick={(event) => event.stopPropagation()}
             >
                 <div className={`${PUBLIC_CONTENT_FRAME} flex shrink-0 items-center justify-between border-b border-pronix-border py-6 md:py-8`}>
                     <div className="min-w-0">
@@ -285,9 +263,8 @@ function PublicFavoritesPanel({resolveLanguageKey}: PublicFavoritesPanelProps) {
                         </div>
                     )}
                 </div>
-            </div>
-        </div>,
-        document.body,
+        </DialogFrame>
+    </Dialog>
     );
 }
 

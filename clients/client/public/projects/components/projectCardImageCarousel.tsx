@@ -88,7 +88,8 @@ function ProjectCardImageCarousel({images, alt}: ProjectCardImageCarouselProps) 
     return (
         <div
             className="relative aspect-[515/449] min-h-[12.5rem] w-full overflow-hidden rounded-[2px]"
-            onClick={handleCarouselClick}
+            // Capture phase: a drag must not open the card the carousel sits in.
+            onClickCapture={handleCarouselClick}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}

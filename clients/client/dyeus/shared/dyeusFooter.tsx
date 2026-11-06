@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
@@ -275,17 +276,11 @@ function DyeusFooter() {
             </div>
 
             {contactOpen ? (
-                <div
-                    className="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4"
-                    role="presentation"
-                    onClick={() => setContactOpen(false)}
-                >
-                    <div
-                        role="dialog"
-                        aria-modal="true"
-                        aria-labelledby="dyeus-footer-contact-title"
+                <Dialog open onOpenChange={(next) => { if (!next) setContactOpen(false); }}>
+                    <DialogFrame
+                        title={String(t("contactTitle"))}
+                        overlayClassName="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4"
                         className="w-full max-w-xl overflow-visible bg-dyeus-cream p-6 shadow-lg md:p-8"
-                        onClick={(event) => event.stopPropagation()}
                     >
                         <div className="flex items-start justify-between gap-4">
                             <div>
@@ -308,8 +303,8 @@ function DyeusFooter() {
                             </button>
                         </div>
                         <DyeusMarketingContactForm className="mt-6" />
-                    </div>
-                </div>
+                    </DialogFrame>
+                </Dialog>
             ) : null}
         </footer>
     );

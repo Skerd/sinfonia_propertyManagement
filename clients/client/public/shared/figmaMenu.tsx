@@ -1,5 +1,5 @@
-import {useCallback, useEffect, useRef, useState, type ReactElement} from "react";
-import {createPortal} from "react-dom";
+import {useCallback, useEffect, useRef, useState, type ReactElement, type ReactNode} from "react";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
 import {useDispatch, useSelector} from "react-redux";
@@ -10,7 +10,6 @@ import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts"
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {figmaImageCropStyle, FIGMA_IMAGE_CROPS} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
-import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 import {figmaMenuLinks} from "@propertyManagementModule/clients/client/public/shared/figmaRouteMap.ts";
 import {usePublicAuth} from "@propertyManagementModule/clients/client/public/shared/publicAuthContext.tsx";
 import type {MarketingCompanyResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
@@ -263,7 +262,8 @@ function MenuChromeRow({className}: {className?: string}) {
     );
 }
 
-function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: () => void}) {
+/** The open menu (D23: Radix focus trap and return, Escape, scroll lock). `controls` is the toggle that closes it. */
+function MenuOverlay({anchorRect, onClose, controls}: {anchorRect: AnchorRect; onClose: () => void; controls: ReactNode}) {
     const t = useFigmaMenuT();
     const {isAuthenticated, signOutPublic} = usePublicAuth();
     const [visible, setVisible] = useState(false);
@@ -276,83 +276,81 @@ function MenuOverlay({anchorRect, onClose}: {anchorRect: AnchorRect; onClose: ()
     const panelPosition = getPanelPosition(anchorRect);
 
     return (
-        <div
-            className="fixed inset-0 z-[200] cursor-default"
-            role="dialog"
-            aria-modal="true"
-            aria-label={t("navMenu")}
-            onPointerDown={(event) => event.preventDefault()}
-            onClick={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                onClose();
-            }}
-            onWheel={(event) => event.preventDefault()}
-        >
-            <div
-                className="absolute inset-0 bg-black/50 transition-opacity duration-200 ease-out"
-                style={{opacity: visible ? 1 : 0}}
-            />
-            <div
-                className="pointer-events-auto fixed overflow-hidden rounded-[5px] backdrop-blur-[17px] transition-opacity duration-200 ease-out"
-                data-node-id="41:150"
-                data-name="Menu"
-                data-figma-menu-panel
-                style={{
-                    top: panelPosition.top,
-                    left: panelPosition.left,
-                    width: panelPosition.panelWidth,
-                    maxHeight: panelPosition.maxHeight,
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    background: "rgba(2, 71, 254, 0.6)",
-                    opacity: visible ? 1 : 0
+        <Dialog open onOpenChange={(next) => !next && onClose()}>
+            <DialogFrame
+                title={String(t("navMenu"))}
+                overlayClassName="fixed inset-0 z-[200]"
+                className="fixed inset-0 z-[200] cursor-default"
+                onClick={(event) => {
+                    // Anywhere but the panel and the toggle closes the menu.
+                    if (!(event.target as Element).closest("[data-figma-menu-panel], [data-figma-menu-controls]")) onClose();
                 }}
-                onClick={(e) => e.stopPropagation()}
             >
-                <div className="flex flex-col pb-10 pl-11 pr-14 pt-18">
-                    <nav className="flex flex-col gap-8">
-                        {figmaMenuLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                onClick={onClose}
-                                className={MENU_NAV_LINK_CLASS}
-                            >
-                                {t(FIGMA_MENU_LINK_KEYS[link.path] ?? link.path)}
-                            </Link>
-                        ))}
-                        {isAuthenticated ? (
-                            <>
-                                <Link to="/profile" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
-                                    {t("profile")}
-                                </Link>
-                                <button
-                                    type="button"
-                                    className={`${MENU_NAV_LINK_CLASS} text-left`}
-                                    onClick={() => {
-                                        onClose();
-                                        signOutPublic();
-                                    }}
+                <div
+                    className="absolute inset-0 bg-black/50 transition-opacity duration-200 ease-out"
+                    style={{opacity: visible ? 1 : 0}}
+                />
+                <div
+                    className="pointer-events-auto fixed overflow-hidden rounded-[5px] backdrop-blur-[17px] transition-opacity duration-200 ease-out"
+                    data-node-id="41:150"
+                    data-name="Menu"
+                    data-figma-menu-panel
+                    style={{
+                        top: panelPosition.top,
+                        left: panelPosition.left,
+                        width: panelPosition.panelWidth,
+                        maxHeight: panelPosition.maxHeight,
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        background: "rgba(2, 71, 254, 0.6)",
+                        opacity: visible ? 1 : 0
+                    }}
+                >
+                    <div className="flex flex-col pb-10 pl-11 pr-14 pt-18">
+                        <nav className="flex flex-col gap-8">
+                            {figmaMenuLinks.map((link) => (
+                                <Link
+                                    key={link.path}
+                                    to={link.path}
+                                    onClick={onClose}
+                                    className={MENU_NAV_LINK_CLASS}
                                 >
-                                    {t("logOut")}
-                                </button>
-                            </>
-                        ) : null}
-                        {/*
-                        <Link to="/login" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
-                            {t("logIn")}
-                        </Link>
-                        <Link to="/signup" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
-                            {t("signUp")}
-                        </Link>
-                        */}
-                    </nav>
+                                    {t(FIGMA_MENU_LINK_KEYS[link.path] ?? link.path)}
+                                </Link>
+                            ))}
+                            {isAuthenticated ? (
+                                <>
+                                    <Link to="/profile" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                                        {t("profile")}
+                                    </Link>
+                                    <button
+                                        type="button"
+                                        className={`${MENU_NAV_LINK_CLASS} text-left`}
+                                        onClick={() => {
+                                            onClose();
+                                            signOutPublic();
+                                        }}
+                                    >
+                                        {t("logOut")}
+                                    </button>
+                                </>
+                            ) : null}
+                            {/*
+                            <Link to="/login" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                                {t("logIn")}
+                            </Link>
+                            <Link to="/signup" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
+                                {t("signUp")}
+                            </Link>
+                            */}
+                        </nav>
 
-                    <div className="mt-8 h-px w-full bg-white/40" aria-hidden />
-                    <MenuChromeRow className="mt-6 flex items-center justify-between gap-4" />
+                        <div className="mt-8 h-px w-full bg-white/40" aria-hidden />
+                        <MenuChromeRow className="mt-6 flex items-center justify-between gap-4" />
+                    </div>
                 </div>
-            </div>
-        </div>
+                {controls}
+            </DialogFrame>
+        </Dialog>
     );
 }
 
@@ -399,18 +397,7 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
         if (!open) {
             return;
         }
-        const unlock = lockPublicBodyScroll();
-        const preventScroll = (event: Event) => {
-            event.preventDefault();
-        };
-        window.addEventListener("wheel", preventScroll, {passive: false});
-        window.addEventListener("touchmove", preventScroll, {passive: false});
-        return () => {
-            setPublicMenuOpen(false);
-            unlock();
-            window.removeEventListener("wheel", preventScroll);
-            window.removeEventListener("touchmove", preventScroll);
-        };
+        return () => setPublicMenuOpen(false);
     }, [open]);
 
     const menuControls = (
@@ -449,7 +436,11 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
                     {menuControls}
                 </div>
             </div>
-            {open && controlsRect && createPortal(
+            {open && anchorRect ? (
+                <MenuOverlay
+                    anchorRect={anchorRect}
+                    onClose={handleClose}
+                    controls={controlsRect ? (
                 <div
                     className="fixed z-[210] flex items-center gap-3"
                     data-figma-menu-controls
@@ -461,8 +452,6 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
                     }}
                     onMouseEnter={() => setControlsHovered(true)}
                     onMouseLeave={() => setControlsHovered(false)}
-                    onClick={(event) => event.stopPropagation()}
-                    onPointerDown={(event) => event.stopPropagation()}
                 >
                     <MenuMoonIcon variant={variant} hovered={controlsHovered} />
                     <button
@@ -474,10 +463,10 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
                     >
                         <MenuGridIcon variant={variant} hovered={controlsHovered} />
                     </button>
-                </div>,
-                document.body,
-            )}
-            {open && anchorRect && createPortal(<MenuOverlay anchorRect={anchorRect} onClose={handleClose} />, document.body)}
+                </div>
+                    ) : null}
+                />
+            ) : null}
         </>
     );
 }

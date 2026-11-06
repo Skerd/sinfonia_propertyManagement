@@ -1,12 +1,11 @@
-import React, {useEffect, useImperativeHandle, useState} from "react";
-import {createPortal} from "react-dom";
+import React, {useImperativeHandle, useState} from "react";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {compose} from "redux";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {fillLanguageTemplate, PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
-import {lockPublicBodyScroll} from "@propertyManagementModule/clients/client/public/shared/lockPublicBodyScroll.ts";
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
@@ -361,33 +360,17 @@ function PropertyContactFormModal({
     currentLanguage,
     languageCode,
 }: PropertyContactFormModalProps) {
-    useEffect(() => {
-        if (!open) return;
-        return lockPublicBodyScroll();
-    }, [open]);
 
-    useEffect(() => {
-        if (!open) return;
-        const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "Escape") onClose();
-        };
-        window.addEventListener("keydown", onKeyDown);
-        return () => window.removeEventListener("keydown", onKeyDown);
-    }, [open, onClose]);
 
     if (!open) return null;
 
-    return createPortal(
-        <div
-            className="fixed inset-0 z-[150] flex flex-col sm:items-center sm:justify-center sm:bg-black/40 sm:p-4"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="property-contact-form-title"
-            onClick={onClose}
-        >
-            <div
+    // Radix: focus trap and return, Escape, scroll lock; a click on the backdrop closes (D23).
+    return (
+        <Dialog open onOpenChange={(next) => !next && onClose()}>
+            <DialogFrame
+                title={String(title ?? resolveLanguageKey("formTitle"))}
+                overlayClassName="fixed inset-0 z-[150] flex flex-col sm:items-center sm:justify-center sm:bg-black/40 sm:p-4"
                 className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-white sm:max-h-[90vh] sm:w-full sm:max-w-xl sm:flex-none sm:rounded-[5px] sm:shadow-lg"
-                onClick={(event) => event.stopPropagation()}
             >
                 <div className="flex flex-col gap-2 px-5 py-5 md:px-6 md:py-6">
                     <div className="flex items-center justify-between gap-4 border-b border-pronix-border pb-3">
@@ -415,9 +398,8 @@ function PropertyContactFormModal({
                         onClose={onClose}
                     />
                 </div>
-            </div>
-        </div>,
-        document.body,
+        </DialogFrame>
+    </Dialog>
     );
 }
 

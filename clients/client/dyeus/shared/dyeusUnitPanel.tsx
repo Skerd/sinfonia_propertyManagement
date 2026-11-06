@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
 import {ArrowUpRight, X} from "lucide-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
@@ -65,15 +66,6 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
         };
     }, [projectId, unitId]);
 
-    useEffect(() => {
-        if (!contactOpen) return;
-        const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "Escape") setContactOpen(false);
-        };
-        window.addEventListener("keydown", onKeyDown);
-        return () => window.removeEventListener("keydown", onKeyDown);
-    }, [contactOpen]);
-
     const openContactForm = (mode: ContactMode) => {
         setContactMode(mode);
         setContactOpen(true);
@@ -137,16 +129,11 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
             </div>
 
             {contactOpen && unit ? (
-                <div
-                    className="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="dyeus-unit-panel-contact-title"
-                    onClick={() => setContactOpen(false)}
-                >
-                    <div
+                <Dialog open onOpenChange={(next) => { if (!next) setContactOpen(false); }}>
+                    <DialogFrame
+                        title={String(t(DYEUS_CONTACT_TITLE_KEY[contactMode]))}
+                        overlayClassName="fixed inset-0 z-[180] flex items-center justify-center bg-dyeus-ink/40 p-4"
                         className="w-full max-w-md bg-dyeus-cream p-6 shadow-lg md:p-8"
-                        onClick={(event) => event.stopPropagation()}
                     >
                         <div className="flex items-start justify-between gap-4">
                             <div>
@@ -177,8 +164,8 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                             defaultMessage={dyeusContactDefaultMessage(t, contactMode, unit.name)}
                             submitLabel={t("send")}
                         />
-                    </div>
-                </div>
+                    </DialogFrame>
+                </Dialog>
             ) : null}
         </aside>
     );
