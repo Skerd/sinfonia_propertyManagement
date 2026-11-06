@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from "react";
-import { Plus, X } from "lucide-react";
+import {IconPlus, IconX} from "@tabler/icons-react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import { Button } from "@coreModule/components/ui/button.tsx";
@@ -199,7 +199,7 @@ export default function PaymentPlanInstallmentsField({
                                 append({ installmentNumber: fields.length + 1 });
                             }}
                         >
-                            <Plus className="h-4 w-4 mr-1" />
+                            <IconPlus className="h-4 w-4 mr-1" />
                             {resolveLanguageKey("form.addInstallment")}
                         </Button>
                     </div>
@@ -224,7 +224,7 @@ export default function PaymentPlanInstallmentsField({
                                             onClick={() => remove(index)}
                                             className="h-8 w-8 text-muted-foreground hover:text-destructive"
                                         >
-                                            <X className="h-4 w-4" />
+                                            <IconX className="h-4 w-4" />
                                         </Button>
                                     )}
                                 </div>

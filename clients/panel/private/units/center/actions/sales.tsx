@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {useNavigate} from "react-router-dom";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {DollarSign} from "lucide-react";
+import {IconCurrencyDollar} from "@tabler/icons-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheet/widgets/sheetMenuNavigateDismiss.tsx";
@@ -24,9 +24,6 @@ function Sales({
     const {read} = useAccess("units");
     const navigate = useNavigate();
 
-    if( !read ){
-        return <></>
-    }
     const shortcut = "s";
     const viewSales = () => {
         dismissSheetIfHosted?.();
@@ -40,11 +37,15 @@ function Sales({
             },
         }));
     }
-    useKeyboardShortcuts(shortcut, viewSales);
+    useKeyboardShortcuts(shortcut, viewSales, {enabled: read});
+
+    if (!read) {
+        return null;
+    }
 
     return (
         <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); viewSales()}}>
-            <DollarSign size={16}/>
+            <IconCurrencyDollar size={16}/>
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

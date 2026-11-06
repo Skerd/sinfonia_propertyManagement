@@ -2,7 +2,7 @@ import {useEffect, useRef, useState} from "react";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {compose} from "redux";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {ChevronLeft} from "lucide-react";
+import {IconChevronLeft} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -21,6 +21,7 @@ import {
     type DyeusContactMode as ContactMode,
 } from "@propertyManagementModule/clients/client/dyeus/shared/dyeusContactMode.ts";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type MarketingUnitResponse = {unit: MarketingUnitSingle};
 type PropertyPageProps = WithLanguageType &
@@ -127,14 +128,15 @@ function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}
                 <DyeusHeader variant="solid" />
                 <div className="mx-auto max-w-[1728px] px-6 pb-20 pt-28 md:px-[60px] md:pt-36">
                     <div className="mb-8 flex min-w-0 items-center gap-2 sm:gap-3 md:mb-10 md:gap-4">
-                        <button
+                        <Button
                             type="button"
-                            onClick={handleBack}
+                            variant="bare"
                             className="-ml-2 flex shrink-0 items-center justify-center p-1 text-dyeus-ink transition hover:text-dyeus-bronze sm:-ml-2.5 md:-ml-3"
                             aria-label={t("back")}
+                            onClick={handleBack}
                         >
-                            <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
-                        </button>
+                            <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                        </Button>
                         {unit?.name ? (
                             <h1 className="min-w-0 flex-1 font-dyeus-serif text-4xl font-bold leading-[1.1] text-dyeus-ink sm:text-5xl md:text-6xl lg:text-7xl">
                                 {unit.name}
@@ -164,13 +166,14 @@ function PropertyPage({data, loading, error, onFilterChange, resolveLanguageKey}
                                     {t("formUnitLabel")}: {unit.name}
                                 </p>
                             </div>
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => setContactOpen(false)}
+                                variant="bare"
                                 className="cursor-pointer font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
+                                onClick={() => setContactOpen(false)}
                             >
                                 {t("close")}
-                            </button>
+                            </Button>
                         </div>
                         <DyeusMarketingContactForm
                             key={`${contactMode}:${projectId}:${unitId}`}

@@ -1,6 +1,8 @@
-import {useEffect, useRef} from "react";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {useEffect, useRef, useState} from "react";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {AdCampaign} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.dto.ts";
+
+const CAMPAIGN_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/adCampaign/single"};
 
 type AdCampaignProgressPollProps = {
     entityId?: string;
@@ -24,17 +26,16 @@ export default function AdCampaignProgressPoll({
     const onPatchedRef = useRef(onPatched);
     onPatchedRef.current = onPatched;
 
+    // One refresh every 4 s while the campaign is in flight.
+    const [tick, setTick] = useState(0);
+    const polling = enabled && !!entityId && (status === "sending" || status === "scheduled");
     useEffect(() => {
-        if (!enabled || !entityId) return;
-        if (status !== "sending" && status !== "scheduled") return;
-        const tick = () => {
-            apiClient
-                .post<AdCampaign>("/api/realEstate/adCampaign/single", {_id: entityId})
-                .then(({data}) => onPatchedRef.current(data))
-                .catch(() => undefined);
-        };
-        const timer = setInterval(tick, 4000);
+        if (!polling) return;
+        const timer = setInterval(() => setTick((count) => count + 1), 4000);
         return () => clearInterval(timer);
-    }, [enabled, entityId, status]);
+    }, [polling, entityId]);
+    useHttpRequest<AdCampaign>(CAMPAIGN_REQUEST, {_id: entityId}, polling ? tick : 0, true, {
+        success: (data) => onPatchedRef.current(data),
+    });
     return null;
 }

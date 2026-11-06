@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle} from "react";
-import {LoaderCircle} from "lucide-react";
+import {IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -80,7 +80,7 @@ function ManualReservationClientEmailDialog({
                         }}
                         disabled={loading}
                     >
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : null}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : null}
                         {resolveLanguageKey("confirmSend")}
                     </AlertDialogAction>
                 </AlertDialogFooter>

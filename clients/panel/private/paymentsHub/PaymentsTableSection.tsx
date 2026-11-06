@@ -1,5 +1,5 @@
-import {useCallback, useEffect, useState} from "react";
-import {AlertTriangle, Eye} from "lucide-react";
+import {useCallback, useMemo, useEffect, useState} from "react";
+import {IconAlertTriangle, IconEye} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
@@ -7,8 +7,7 @@ import {Badge} from "@coreModule/components/ui/badge.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {PaymentsHubRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.dto.ts";
 import type {PaymentsListFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.form.type.ts";
 import type {
@@ -50,6 +49,8 @@ type PaymentsTableSectionProps = {
     refreshToken: number;
 };
 
+const LIST_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/paymentsHub/payments/list"};
+
 export default function PaymentsTableSection({
     resolveLanguageKey,
     locale,
@@ -66,13 +67,8 @@ export default function PaymentsTableSection({
     const rk = (key: string) => String(resolveLanguageKey(`list.${key}`));
 
     const [page, setPage] = useState(1);
-    const [data, setData] = useState<PaymentsListResponseType | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<HttpError | null>(null);
 
-    const fetchData = useCallback(async () => {
-        setLoading(true);
-        setError(null);
+    const listBody = useMemo(() => {
         const body: PaymentsListFormType = {
             ...scopeToBody(scope),
             page,
@@ -82,24 +78,19 @@ export default function PaymentsTableSection({
         };
         if (scope.dateFrom) body.dateFrom = scope.dateFrom;
         if (scope.dateTo) body.dateTo = scope.dateTo;
-
-        try {
-            const res = await apiClient.post<PaymentsListResponseType>(
-                "/api/realEstate/paymentsHub/payments/list",
-                body,
-            );
-            setData(res.data);
-        } catch (err) {
-            setError(err as HttpError);
-            setData(null);
-        } finally {
-            setLoading(false);
-        }
+        return body;
     }, [scope, page]);
+    // One list request per filter/page change and per retry.
+    const [fetchCount, setFetchCount] = useState(0);
+    const fetchData = useCallback(() => setFetchCount((count) => count + 1), []);
+    const request = useHttpRequest<PaymentsListResponseType>(LIST_REQUEST, listBody, fetchCount);
+    const data = request.error ? null : request.data;
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error;
 
     useEffect(() => {
-        void fetchData();
-    }, [fetchData, refreshToken]);
+        fetchData();
+    }, [listBody, refreshToken, fetchData]);
 
     useEffect(() => {
         setPage(1);
@@ -113,7 +104,7 @@ export default function PaymentsTableSection({
         <section className="flex flex-col gap-y-4">
             {data?.truncated && (
                 <Alert>
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{rk("truncatedTitle")}</AlertTitle>
                     <AlertDescription>{rk("truncatedDescription")}</AlertDescription>
                 </Alert>
@@ -137,7 +128,7 @@ export default function PaymentsTableSection({
                         <ErrorView
                             title={rk("errorTitle")}
                             description={rk("errorDescription")}
-                            onClick={() => void fetchData()}
+                            onClick={fetchData}
                             resolveLanguageKey={resolveLanguageKey}
                         />
                     </div>
@@ -208,7 +199,7 @@ export default function PaymentsTableSection({
                                                 aria-label={rk("viewAction")}
                                                 onClick={() => onViewRow(row)}
                                             >
-                                                <Eye className="h-4 w-4" />
+                                                <IconEye className="h-4 w-4" />
                                             </Button>
                                         </TableCell>
                                     </TableRow>

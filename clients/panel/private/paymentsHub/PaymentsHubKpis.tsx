@@ -1,4 +1,4 @@
-import {AlertTriangle, CalendarClock, CalendarRange, CheckCircle2} from "lucide-react";
+import {IconAlertTriangle, IconCalendarEvent, IconCalendarTime, IconCircleCheck} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Card, CardContent, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import {Skeleton} from "@coreModule/components/ui/skeleton.tsx";
@@ -40,25 +40,25 @@ export default function PaymentsHubKpis({
         {
             key: "overdue",
             title: rk("overdue"),
-            icon: <AlertTriangle className="size-4 text-destructive" />,
+            icon: <IconAlertTriangle className="size-4 text-destructive" />,
             value: summary?.kpis.overdueAmount,
         },
         {
             key: "next7",
             title: rk("dueNext7Days"),
-            icon: <CalendarClock className="size-4 text-warning" />,
+            icon: <IconCalendarTime className="size-4 text-warning" />,
             value: summary?.kpis.dueNext7DaysAmount,
         },
         {
             key: "next30",
             title: rk("dueNext30Days"),
-            icon: <CalendarRange className="size-4 text-muted-foreground" />,
+            icon: <IconCalendarEvent className="size-4 text-muted-foreground" />,
             value: summary?.kpis.dueNext30DaysAmount,
         },
         {
             key: "collected",
             title: rk("collectedThisMonth"),
-            icon: <CheckCircle2 className="size-4 text-success" />,
+            icon: <IconCircleCheck className="size-4 text-success" />,
             value: summary?.kpis.collectedThisMonthAmount,
         },
     ];

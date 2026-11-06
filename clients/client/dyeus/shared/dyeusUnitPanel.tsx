@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
-import {ArrowUpRight, X} from "lucide-react";
+import {IconArrowUpRight, IconX} from "@tabler/icons-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import DyeusMarketingContactForm from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
 import DyeusPropertyGallerySection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertyGallerySection.tsx";
 import DyeusPropertyDetailsSection from "@propertyManagementModule/clients/client/dyeus/property/sections/dyeusPropertyDetailsSection.tsx";
@@ -16,6 +16,7 @@ import {
     type DyeusContactMode as ContactMode,
 } from "@propertyManagementModule/clients/client/dyeus/shared/dyeusContactMode.ts";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const PROPERTY_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/property/index.tsx";
@@ -27,44 +28,23 @@ type DyeusUnitPanelProps = {
     onClose: () => void;
 };
 
-type MarketingUnitResponse = {unit: MarketingUnitSingle};
+type MarketingUnitResponse = {unit?: MarketingUnitSingle};
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/single"};
 
 function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelProps) {
     const {t} = useDyeusT(PROPERTY_LANGUAGE_PATH);
-    const [unit, setUnit] = useState<MarketingUnitSingle | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
     const [contactOpen, setContactOpen] = useState(false);
     const [contactMode, setContactMode] = useState<ContactMode>("requestInfo");
-
+    // One request per unit; the previous unit is hidden while the next one loads.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        setError(false);
-        setUnit(null);
-
-        apiClient
-            .post<MarketingUnitResponse>("/api/realEstate/marketingUnit/single", {projectId, unitId})
-            .then((response) => {
-                if (cancelled) return;
-                const nextUnit = response.data?.unit;
-                if (!nextUnit) {
-                    setError(true);
-                    return;
-                }
-                setUnit(nextUnit);
-            })
-            .catch(() => {
-                if (!cancelled) setError(true);
-            })
-            .finally(() => {
-                if (!cancelled) setLoading(false);
-            });
-
-        return () => {
-            cancelled = true;
-        };
+        setFetchCount((count) => count + 1);
     }, [projectId, unitId]);
+    const request = useHttpRequest<MarketingUnitResponse>(UNIT_REQUEST, {projectId, unitId}, fetchCount);
+    const loading = fetchCount === 0 || request.loading;
+    const unit: MarketingUnitSingle | null = loading ? null : request.data?.unit ?? null;
+    const error = !loading && !unit;
 
     const openContactForm = (mode: ContactMode) => {
         setContactMode(mode);
@@ -88,17 +68,18 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                         className="mt-2 inline-flex items-center gap-1 font-dyeus-sans text-xs uppercase tracking-[0.16em] text-dyeus-bronze transition hover:text-dyeus-ink"
                     >
                         {t("viewFullResidence")}
-                        <ArrowUpRight className="size-3.5" strokeWidth={1.75} aria-hidden />
+                        <IconArrowUpRight className="size-3.5" strokeWidth={1.75} aria-hidden />
                     </Link>
                 </div>
-                <button
+                <Button
                     type="button"
-                    onClick={onClose}
+                    variant="bare"
                     className="-mr-1 -mt-0.5 flex size-9 shrink-0 cursor-pointer items-center justify-center text-dyeus-ink transition hover:text-dyeus-bronze"
                     aria-label={t("closeUnitPanel")}
+                    onClick={onClose}
                 >
-                    <X className="size-4" strokeWidth={1.5} aria-hidden />
-                </button>
+                    <IconX className="size-4" strokeWidth={1.5} aria-hidden />
+                </Button>
             </div>
 
             <div className="h-0 min-h-0 flex-1 overflow-y-auto px-5 py-4 max-lg:h-auto max-lg:flex-none md:px-6 md:py-5">
@@ -147,13 +128,14 @@ function DyeusUnitPanel({projectId, unitId, unitLabel, onClose}: DyeusUnitPanelP
                                     {t("formUnitLabel")}: {unit.name}
                                 </p>
                             </div>
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => setContactOpen(false)}
+                                variant="bare"
                                 className="cursor-pointer font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
+                                onClick={() => setContactOpen(false)}
                             >
                                 {t("close")}
-                            </button>
+                            </Button>
                         </div>
                         <DyeusMarketingContactForm
                             key={`${contactMode}:${projectId}:${unitId}`}

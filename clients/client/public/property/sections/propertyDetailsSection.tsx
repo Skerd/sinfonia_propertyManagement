@@ -15,6 +15,7 @@ import {useUnitRoiCalculator} from "@propertyManagementModule/clients/client/pub
 import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {buildPropertyPriceHistoryPlot} from "@propertyManagementModule/clients/client/public/property/shared/propertyPriceHistoryData.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type PropertyDetailsSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
@@ -366,17 +367,17 @@ function PropertyDetailsSection({
                     >
                         {resolveLanguageKey("notSureTitle")}
                     </p>
-                    <button
+                    <Button
                         type="button"
-                        onClick={onRequestInfo}
-                        className={cn(
-                            "flex shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white",
+                        variant="bare"
+                        className={cn("flex shrink-0 cursor-pointer items-center justify-center rounded-[5px] border border-white",
                             compact ? "px-4 py-2.5 md:px-5 md:py-3" : "px-6 py-3 md:px-8 md:py-4",
                             "bg-transparent text-white transition-colors duration-200",
                             "hover:bg-white hover:text-pronix-blue",
                             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue",
                         )}
                         data-node-id="522:6339"
+                        onClick={onRequestInfo}
                     >
                         <span
                             className={cn(
@@ -386,7 +387,7 @@ function PropertyDetailsSection({
                         >
                             {resolveLanguageKey("requestInfo")}
                         </span>
-                    </button>
+                    </Button>
                 </div>
             </div>
         </>

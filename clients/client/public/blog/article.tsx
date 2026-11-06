@@ -125,11 +125,13 @@ function BlogArticlePageInner({
     );
 }
 
-export default compose(
+const BlogArticlePage: ComponentType = compose(
     withAxios<PublicBlogSingleFormResponseType, ArticleFilter>(
         {method: "post", url: "/api/auxiliary/public/blog/single", data: {}},
         true,
     ),
     withLanguage("src/modules/propertyManagement/clients/client/public/blog/article.tsx"),
     withDebug(true, true),
-)(BlogArticlePageInner) as unknown as ComponentType;
+)(BlogArticlePageInner);
+
+export default BlogArticlePage;

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle, useMemo} from "react";
-import {LoaderCircle, RotateCcw} from "lucide-react";
+import {IconLoader2, IconRotate} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -18,7 +18,7 @@ import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/re
 import {SubmitRevisionModificationRequestForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/submitRevisionModificationRequest.form.type.ts";
 
 type SubmitRevisionModificationRequestDialogProps = WithLanguageType &
-    WithAxiosType<any, SubmitRevisionModificationRequestForm> & {
+    WithAxiosType<ModificationRequest, SubmitRevisionModificationRequestForm> & {
         open: boolean;
         onClose: () => void;
         request: ModificationRequest;
@@ -42,8 +42,8 @@ function SubmitRevisionModificationRequestDialog({
     }, [request.status]);
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: SubmitRevisionModificationRequestForm) => {
-            onSuccess?.(data as unknown as ModificationRequest);
+        success: (data: ModificationRequest) => {
+            onSuccess?.(data);
             onClose();
         },
     }));
@@ -76,7 +76,7 @@ function SubmitRevisionModificationRequestDialog({
                             onFilterChange({_id: request._id, targetStage});
                         }}
                     >
-                        {loading ? <LoaderCircle className="animate-spin"/> : <RotateCcw size={16}/>}
+                        {loading ? <IconLoader2 className="animate-spin"/> : <IconRotate size={16}/>}
                         {resolveLanguageKey("submitRevisionConfirmButton")}
                     </AlertDialogAction>
                 </AlertDialogFooter>

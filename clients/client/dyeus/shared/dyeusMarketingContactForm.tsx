@@ -10,6 +10,9 @@ import {
 } from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 const FORM_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusMarketingContactForm.tsx";
@@ -164,7 +167,7 @@ function DyeusMarketingContactFormInner({
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
                         {t("firstName")}
                     </span>
-                    <input
+                    <Input bare
                         type="text"
                         name="name"
                         autoComplete="given-name"
@@ -184,7 +187,7 @@ function DyeusMarketingContactFormInner({
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
                         {t("surname")}
                     </span>
-                    <input
+                    <Input bare
                         type="text"
                         name="surname"
                         autoComplete="family-name"
@@ -206,7 +209,7 @@ function DyeusMarketingContactFormInner({
                 <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
                     {t("email")}
                 </span>
-                <input
+                <Input bare
                     type="email"
                     name="email"
                     autoComplete="email"
@@ -227,7 +230,7 @@ function DyeusMarketingContactFormInner({
                 <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
                     {t("phone")}
                 </span>
-                <input
+                <Input bare
                     type="tel"
                     name="phone"
                     autoComplete="tel"
@@ -249,7 +252,7 @@ function DyeusMarketingContactFormInner({
                     <span className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-faded">
                         {t("interest")}
                     </span>
-                    <select
+                    <NativeSelect bare
                         name="interest"
                         value={interest}
                         disabled={loading}
@@ -259,8 +262,7 @@ function DyeusMarketingContactFormInner({
                         }}
                         className={cn(
                             fieldInputClass,
-                            interest ? "text-dyeus-ink" : "text-dyeus-ink-faded",
-                        )}
+                            interest ? "text-dyeus-ink" : "text-dyeus-ink-faded")}
                     >
                         <option value="" disabled>
                             {t("selectInterest")}
@@ -270,7 +272,7 @@ function DyeusMarketingContactFormInner({
                                 {t(option.labelKey)}
                             </option>
                         ))}
-                    </select>
+                    </NativeSelect>
                 </label>
             ) : null}
 
@@ -297,14 +299,15 @@ function DyeusMarketingContactFormInner({
                 <FieldError message={fieldErrors.message} />
             </label>
 
-            <button
+            <Button
                 type="button"
+                variant="bare"
+                className="mt-2 cursor-pointer bg-dyeus-ink px-6 py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream transition hover:bg-dyeus-bronze-deep disabled:cursor-not-allowed disabled:opacity-60"
                 disabled={loading || resolvingProject}
                 onClick={handleSend}
-                className="mt-2 cursor-pointer bg-dyeus-ink px-6 py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream transition hover:bg-dyeus-bronze-deep disabled:cursor-not-allowed disabled:opacity-60"
             >
                 {loading ? t("sending") : resolvingProject ? t("loading") : resolvedSubmitLabel}
-            </button>
+            </Button>
 
             {submitted ? (
                 <p role="status" className="font-dyeus-sans text-sm text-dyeus-ink">
@@ -331,6 +334,6 @@ const DyeusMarketingContactForm = compose(
         true,
     ),
     withDebug(true, true),
-)(DyeusMarketingContactFormInner) as unknown as React.ComponentType<DyeusMarketingContactFormProps>;
+)(DyeusMarketingContactFormInner) as React.ComponentType<Omit<FormInnerProps, keyof WithAxiosType>>;
 
 export default DyeusMarketingContactForm;

@@ -5,6 +5,8 @@ import {PUBLIC_CARD_TITLE} from "@propertyManagementModule/clients/client/public
 import type {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
 import type {CSSProperties} from "react";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const {orbWidthRatio, orbRemCap, descriptionRemCap} = FIGMA_PLATFORM_SECTION;
 const ORB_SLOT = `min(${orbWidthRatio * 100}%, ${orbRemCap}rem)`;
@@ -56,15 +58,16 @@ type PlatformOrbButtonProps = {
 
 function PlatformOrbButton({onClick, className, ariaLabel}: PlatformOrbButtonProps) {
     return (
-        <button
+        <Button
             type="button"
-            onClick={onClick}
+            variant="bare"
             aria-label={ariaLabel}
             data-node-id="150:1469"
-            className={`aspect-square w-[min(72vw,100%)] max-w-full shrink-0 cursor-pointer border-0 bg-transparent p-0 md:w-[min(100cqw,100cqh)] ${className ?? ""}`}
+            className={cn(`aspect-square w-[min(72vw,100%)] max-w-full shrink-0 cursor-pointer border-0 bg-transparent p-0 md:w-[min(100cqw,100cqh)] ${className ?? ""}`)}
+            onClick={onClick}
         >
             <AiOrbVisual variant="platform" className="size-full" />
-        </button>
+        </Button>
     );
 }
 

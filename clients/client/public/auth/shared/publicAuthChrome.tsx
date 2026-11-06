@@ -13,8 +13,9 @@ export const AUTH_FIELD_SHELL_CLASS = "flex w-full min-w-0 items-center border-b
 
 export const AUTH_FIELD_SHELL_ERROR_CLASS = "border-red-500";
 
+/** Rendered through the core `Button`; `h-auto`, `whitespace-normal` and `bg-clip-border` undo its panel sizing. */
 export const AUTH_SUBMIT_CLASS =
-    "flex w-full min-w-0 cursor-pointer items-center justify-center rounded-[5px] border border-transparent bg-pronix-blue px-6 py-3 font-aeonik-medium text-base text-white not-italic leading-[17.15px] tracking-normal transition-opacity duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:text-lg lg:text-[24px]";
+    "h-auto whitespace-normal bg-clip-border flex w-full min-w-0 cursor-pointer items-center justify-center rounded-[5px] border border-transparent bg-pronix-blue px-6 py-3 font-aeonik-medium text-base text-white not-italic leading-[17.15px] tracking-normal transition-opacity duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 md:text-lg lg:text-[24px]";
 
 export const AUTH_LINK_CLASS =
     "font-aeonik-medium text-pronix-blue transition-opacity hover:opacity-70";

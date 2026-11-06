@@ -2,11 +2,13 @@ import { useEffect, useId, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import type { Unit } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@coreModule/components/ui/form.tsx";
 import { Input } from "@coreModule/components/ui/input.tsx";
 import { Label } from "@coreModule/components/ui/label.tsx";
 import {percentOfMoney} from "armonia/src/modules/core/helpers/money.ts";
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
 
 export type LocalDiscountFieldProps = {
     name?: string;
@@ -81,6 +83,8 @@ export default function LocalDiscountField({
     const unitId = formUnitId(form.watch("unit")) ?? formUnitId(formExtras?.unit);
 
     const [unit, setUnit] = useState<Unit | null>(null);
+    // The unit's listed price, loaded once per unit when the form extras do not carry it.
+    const [unitCount, setUnitCount] = useState(0);
     const [amountText, setAmountText] = useState("");
     const lastEdited = useRef<"amount" | "percent" | null>(null);
     const amountInputId = useId();
@@ -92,6 +96,11 @@ export default function LocalDiscountField({
     const currencySymbol = extrasCurrencySymbol(formExtras) ?? unit?.priceCurrency?.symbol;
     const amountLabel = resolveLanguageKey("form.localDiscountAmountLabel");
     const amountPlaceholder = resolveLanguageKey("form.localDiscountAmountPlaceholder");
+
+    useHttpRequest<Unit>(UNIT_REQUEST, {_id: unitId}, unitCount, true, {
+        success: (data) => setUnit(data),
+        error: () => setUnit(null),
+    });
 
     useEffect(() => {
         if (!unitId) {
@@ -107,18 +116,7 @@ export default function LocalDiscountField({
             lastEdited.current = null;
             setAmountText("");
         }
-        let cancelled = false;
-        apiClient
-            .post<Unit>("/api/realEstate/unit/single", { _id: unitId })
-            .then((res) => {
-                if (!cancelled) setUnit(res.data);
-            })
-            .catch(() => {
-                if (!cancelled) setUnit(null);
-            });
-        return () => {
-            cancelled = true;
-        };
+        setUnitCount((count) => count + 1);
     }, [unitId]);
 
     useEffect(() => {

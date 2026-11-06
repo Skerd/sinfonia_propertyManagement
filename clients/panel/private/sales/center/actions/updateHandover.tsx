@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {ClipboardCheck} from "lucide-react";
+import {IconClipboardCheck} from "@tabler/icons-react";
 
 type UpdateHandoverProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -18,7 +18,7 @@ function UpdateHandover({onAction, resolveLanguageKey}: UpdateHandoverProps) {
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <ClipboardCheck size={16} />
+            <IconClipboardCheck size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

@@ -5,7 +5,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {ContractRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.contract.dto.ts";
 import type {ClientRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.client.dto.ts";
@@ -26,65 +26,67 @@ type SheetState =
     | {type: "reservation"; entity: Reservation; unitId: string; unitName?: string}
     | null;
 
+type OpenTarget = {id: string; unitId?: string; unitName?: string; unitFromEntity: boolean};
+
+const SALE_SINGLE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/sale/single"};
+const RESERVATION_SINGLE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/reservation/single"};
+
 function ContractsHubPage({resolveLanguageKey}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
     const [sheet, setSheet] = useState<SheetState>(null);
     const accessHydrated = useAccessHydrated();
     const canRead = hasAnyAccessRead([useAccess("sales"), useAccess("reservations")]);
 
-    const openContractRow = useCallback(async (row: ContractRegistryRow) => {
-        if (row.sourceType === "sale") {
-            const res = await apiClient.post<Sale>("/api/realEstate/unit/sale/single", {_id: row.sourceId});
-            const sale = res.data;
-            setSheet({
-                type: "sale",
-                entity: sale,
-                unitId: row.unit?._id ?? sale.unit?._id ?? "",
-                unitName: row.unit?.name ?? sale.unit?.name,
-            });
-            return;
-        }
-
-        const res = await apiClient.post<Reservation>(
-            "/api/realEstate/unit/reservation/single",
-            {_id: row.sourceId},
-        );
-        const reservation = res.data;
-        setSheet({
+    // A row opens its sale or reservation sheet once the full record has loaded.
+    const [saleTarget, setSaleTarget] = useState<OpenTarget | null>(null);
+    const [saleCount, setSaleCount] = useState(0);
+    useHttpRequest<Sale>(SALE_SINGLE_REQUEST, {_id: saleTarget?.id}, saleCount, true, {
+        success: (sale) => setSheet({
+            type: "sale",
+            entity: sale,
+            unitId: saleTarget?.unitId ?? sale.unit?._id ?? "",
+            unitName: saleTarget?.unitName ?? (saleTarget?.unitFromEntity ? sale.unit?.name : undefined),
+        }),
+    });
+    const [reservationTarget, setReservationTarget] = useState<OpenTarget | null>(null);
+    const [reservationCount, setReservationCount] = useState(0);
+    useHttpRequest<Reservation>(RESERVATION_SINGLE_REQUEST, {_id: reservationTarget?.id}, reservationCount, true, {
+        success: (reservation) => setSheet({
             type: "reservation",
             entity: reservation,
-            unitId: row.unit?._id ?? reservation.unit?._id ?? "",
-            unitName: row.unit?.name ?? (reservation.unit && "name" in reservation.unit ? reservation.unit.name : undefined),
-        });
+            unitId: reservationTarget?.unitId ?? reservation.unit?._id ?? "",
+            unitName: reservationTarget?.unitName ?? (reservationTarget?.unitFromEntity && reservation.unit && "name" in reservation.unit ? reservation.unit.name : undefined),
+        }),
+    });
+
+    const openTarget = useCallback((sourceType: "sale" | "reservation", target: OpenTarget) => {
+        if (sourceType === "sale") {
+            setSaleTarget(target);
+            setSaleCount((count) => count + 1);
+            return;
+        }
+        setReservationTarget(target);
+        setReservationCount((count) => count + 1);
     }, []);
 
-    const openClientRow = useCallback(async (row: ClientRegistryRow) => {
+    const openContractRow = useCallback((row: ContractRegistryRow) => {
+        openTarget(row.sourceType === "sale" ? "sale" : "reservation", {
+            id: row.sourceId,
+            unitId: row.unit?._id,
+            unitName: row.unit?.name,
+            unitFromEntity: true,
+        });
+    }, [openTarget]);
+
+    const openClientRow = useCallback((row: ClientRegistryRow) => {
         if (!row.sourceId || !row.sourceType) return;
-
-        if (row.sourceType === "sale") {
-            const res = await apiClient.post<Sale>("/api/realEstate/unit/sale/single", {_id: row.sourceId});
-            const sale = res.data;
-            setSheet({
-                type: "sale",
-                entity: sale,
-                unitId: row.unitId,
-                unitName: row.unit?.name,
-            });
-            return;
-        }
-
-        const res = await apiClient.post<Reservation>(
-            "/api/realEstate/unit/reservation/single",
-            {_id: row.sourceId},
-        );
-        const reservation = res.data;
-        setSheet({
-            type: "reservation",
-            entity: reservation,
+        openTarget(row.sourceType === "sale" ? "sale" : "reservation", {
+            id: row.sourceId,
             unitId: row.unitId,
             unitName: row.unit?.name,
+            unitFromEntity: false,
         });
-    }, []);
+    }, [openTarget]);
 
     if (accessHydrated === false) return <Loader />;
     if (!canRead) return <Forbidden />;

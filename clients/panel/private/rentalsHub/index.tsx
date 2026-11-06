@@ -7,7 +7,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {LeaseRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.lease.dto.ts";
 import type {RentalPaymentRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.payment.dto.ts";
@@ -39,6 +39,9 @@ type SheetState =
     | {type: "lease"; entity: Lease}
     | {type: "rentalPayment"; entity: RentalPayment}
     | null;
+
+const LEASE_SINGLE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/lease/single"};
+const RENTAL_PAYMENT_SINGLE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalPayment/single"};
 
 type RentalsHubTab = "leases" | "payments" | "calendar";
 
@@ -96,16 +99,32 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         setAction("");
     }, []);
 
-    const openLeaseRow = useCallback(async (row: LeaseRegistryRow) => {
-        const res = await apiClient.post<Lease>("/api/realEstate/lease/single", {_id: row._id});
-        setAction("");
-        setSheet({type: "lease", entity: res.data});
+    // A row opens its sheet once the full record has loaded.
+    const [leaseId, setLeaseId] = useState("");
+    const [leaseCount, setLeaseCount] = useState(0);
+    useHttpRequest<Lease>(LEASE_SINGLE_REQUEST, {_id: leaseId}, leaseCount, true, {
+        success: (lease) => {
+            setAction("");
+            setSheet({type: "lease", entity: lease});
+        },
+    });
+    const [paymentId, setPaymentId] = useState("");
+    const [paymentCount, setPaymentCount] = useState(0);
+    useHttpRequest<RentalPayment>(RENTAL_PAYMENT_SINGLE_REQUEST, {_id: paymentId}, paymentCount, true, {
+        success: (payment) => {
+            setAction("");
+            setSheet({type: "rentalPayment", entity: payment});
+        },
+    });
+
+    const openLeaseRow = useCallback((row: LeaseRegistryRow) => {
+        setLeaseId(row._id);
+        setLeaseCount((count) => count + 1);
     }, []);
 
-    const openPaymentRow = useCallback(async (row: RentalPaymentRegistryRow) => {
-        const res = await apiClient.post<RentalPayment>("/api/realEstate/rentalPayment/single", {_id: row._id});
-        setAction("");
-        setSheet({type: "rentalPayment", entity: res.data});
+    const openPaymentRow = useCallback((row: RentalPaymentRegistryRow) => {
+        setPaymentId(row._id);
+        setPaymentCount((count) => count + 1);
     }, []);
 
     const patchLease = useCallback((updated?: Lease) => {

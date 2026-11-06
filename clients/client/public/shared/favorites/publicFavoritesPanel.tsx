@@ -17,6 +17,7 @@ import {
     PUBLIC_TITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type PublicFavoritesPanelProps = {
     resolveLanguageKey: ResolveLanguageKey;
@@ -184,14 +185,15 @@ function PublicFavoritesPanel({resolveLanguageKey}: PublicFavoritesPanelProps) {
                             </p>
                         ) : null}
                     </div>
-                    <button
+                    <Button
                         type="button"
-                        onClick={closePanel}
+                        variant="bare"
                         className="flex size-11 shrink-0 items-center justify-center rounded-[5px] border border-pronix-border transition hover:border-pronix-ink"
                         aria-label={String(resolveLanguageKey("favoritesClose"))}
+                        onClick={closePanel}
                     >
                         <img alt="" aria-hidden className="size-8 md:size-9" src={projectsAssets.filterClose} />
-                    </button>
+                    </Button>
                 </div>
 
                 <div className={`${PUBLIC_CONTENT_FRAME} min-h-0 flex-1 overflow-y-auto py-8 md:py-10`}>

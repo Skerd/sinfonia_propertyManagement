@@ -1,6 +1,6 @@
 import {useEffect, useMemo, useState} from "react";
 import type {ComponentProps} from "react";
-import {AlertTriangle, CalendarIcon} from "lucide-react";
+import {IconAlertTriangle, IconCalendar} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -8,16 +8,17 @@ import {Calendar, CalendarDayButton} from "@coreModule/components/ui/calendar.ts
 import {Card, CardContent, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import {ScrollArea} from "@coreModule/components/ui/scroll-area.tsx";
 import {Skeleton} from "@coreModule/components/ui/skeleton.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {PaymentsHubRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.dto.ts";
 import type {PaymentsCalendarFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.form.type.ts";
 import type {PaymentsCalendarResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.response.type.ts";
 import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {fmtMoney, unitLabel} from "@propertyManagementModule/clients/panel/private/rentalsHub/rentalsHubHelpers.ts";
 import {clientLabel, kindLabel, paymentsStatusBadgeVariant, type PaymentsHubScope, scopeToBody} from "./paymentsHubHelpers.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const CALENDAR_MAX_ROWS = 5000;
+const CALENDAR_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/paymentsHub/payments/calendar"};
 
 type DayDots = {paid: boolean; partial: boolean; overdue: boolean; pending: boolean};
 
@@ -89,36 +90,20 @@ export default function PaymentsCalendarTab({
     const rk = (key: string) => String(resolveLanguageKey(`calendar.${key}`));
     const [calendarMonth, setCalendarMonth] = useState(() => new Date());
     const [selectedDay, setSelectedDay] = useState<Date | undefined>(() => new Date());
-    const [data, setData] = useState<PaymentsCalendarResponseType | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<HttpError | null>(null);
 
     const month = monthKey(calendarMonth);
     const scopeBody = useMemo(() => scopeToBody(scope), [scope]);
 
+    const calendarBody = useMemo<PaymentsCalendarFormType>(() => ({...scopeBody, month}), [month, scopeBody]);
+    // One request per month/scope change and per refresh.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        setError(null);
-        const body: PaymentsCalendarFormType = {...scopeBody, month};
-        void apiClient
-            .post<PaymentsCalendarResponseType>("/api/realEstate/paymentsHub/payments/calendar", body)
-            .then((res) => {
-                if (!cancelled) setData(res.data);
-            })
-            .catch((err) => {
-                if (!cancelled) {
-                    setError(err as HttpError);
-                    setData(null);
-                }
-            })
-            .finally(() => {
-                if (!cancelled) setLoading(false);
-            });
-        return () => {
-            cancelled = true;
-        };
-    }, [month, scopeBody, refreshToken]);
+        setFetchCount((count) => count + 1);
+    }, [calendarBody, refreshToken]);
+    const request = useHttpRequest<PaymentsCalendarResponseType>(CALENDAR_REQUEST, calendarBody, fetchCount);
+    const data = request.error ? null : request.data;
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error;
 
     const rows = data?.payments ?? [];
     const dayDots = useMemo(() => buildDayDots(rows), [rows]);
@@ -155,14 +140,14 @@ export default function PaymentsCalendarTab({
         <div className="flex flex-col gap-4">
             {error != null && (
                 <Alert variant="destructive">
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{rk("errorTitle")}</AlertTitle>
                     <AlertDescription>{rk("errorDescription")}</AlertDescription>
                 </Alert>
             )}
             {data?.truncated && (
                 <Alert>
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{rk("truncatedTitle")}</AlertTitle>
                     <AlertDescription>
                         {rk("truncatedDescription").replace("{max}", String(CALENDAR_MAX_ROWS))}
@@ -174,7 +159,7 @@ export default function PaymentsCalendarTab({
                 <Card className="w-fit min-w-0 max-w-full">
                     <CardHeader className="pb-2">
                         <CardTitle className="flex items-center gap-2 text-base">
-                            <CalendarIcon className="size-4" />
+                            <IconCalendar className="size-4" />
                             {rk("title")}
                         </CardTitle>
                         <p className="text-xs text-muted-foreground">
@@ -234,7 +219,12 @@ export default function PaymentsCalendarTab({
                                 <ul className="flex flex-col gap-2">
                                     {dayRows.map((row) => (
                                         <li key={row._id}>
-                                            <button type="button" className="w-full text-left" onClick={() => onViewRow(row)}>
+                                            <Button
+                                                type="button"
+                                                variant="bare"
+                                                className="w-full text-left"
+                                                onClick={() => onViewRow(row)}
+                                            >
                                                 <Card>
                                                     <CardContent className="flex flex-wrap items-start justify-between gap-2 p-4">
                                                         <div className="flex min-w-0 flex-col gap-y-1">
@@ -257,7 +247,7 @@ export default function PaymentsCalendarTab({
                                                         </div>
                                                     </CardContent>
                                                 </Card>
-                                            </button>
+                                            </Button>
                                         </li>
                                     ))}
                                 </ul>

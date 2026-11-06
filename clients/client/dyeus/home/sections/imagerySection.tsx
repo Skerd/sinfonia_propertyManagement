@@ -65,12 +65,12 @@ function ImagerySectionInner({data, loading, onFilterChange, error}: ImagerySect
     );
 }
 
-const ImagerySection = compose(
+const ImagerySection: ComponentType = compose(
     withAxios<MarketingProjectSingleResponse, {projectId: string}>(
         {method: "post", url: "/api/realEstate/marketingProjectCatalog/single", data: {}},
         true,
     ),
     withDebug(true, true),
-)(ImagerySectionInner) as unknown as ComponentType;
+)(ImagerySectionInner);
 
 export default ImagerySection;

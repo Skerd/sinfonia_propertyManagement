@@ -1,5 +1,4 @@
 import {IconBackhoe} from "@tabler/icons-react";
-import {z} from "zod";
 import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createConstructorFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/createConstructor.form.validator.ts";
 import type {CreateConstructorFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.schema-def.ts";
@@ -10,7 +9,8 @@ export default createGenericCreatePage<CreateConstructorFormSurface>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
     model: "constructors",
     apiUrl: "/api/realEstate/constructor",
-    schema: (languageCode, form) => createConstructorFormSchema(languageCode, form).extend({logo: z.instanceof(File).optional()}),
+    // The SchemaDef's `logo` (mediaId) is a File on the client form.
+    schema: createConstructorFormSchema,
     defaultValues: {
         name: "",
         vat: "",

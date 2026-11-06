@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Banknote} from "lucide-react";
+import {IconCash} from "@tabler/icons-react";
 import {useNavigate} from "react-router-dom";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import {buildListNavigationUrl} from "@coreModule/helpers/filter/filterUrl.ts";
@@ -31,7 +31,7 @@ function ViewLeasePayments({lease, resolveLanguageKey}: ViewLeasePaymentsProps) 
                 )
             }
         >
-            <Banknote className="text-primary" size={16} />
+            <IconCash className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

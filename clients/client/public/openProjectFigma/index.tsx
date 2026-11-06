@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useState, type ReactNode} from "react";
 import {compose} from "redux";
 import {Link, Navigate, useParams, useSearchParams} from "react-router-dom";
-import {ChevronLeft, Eye, EyeOff} from "lucide-react";
+import {IconChevronLeft, IconEye, IconEyeOff} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -27,6 +27,7 @@ import OpenProjectFigmaFinanceChart from "@propertyManagementModule/clients/clie
 import OpenProjectFigmaGridView from "@propertyManagementModule/clients/client/public/openProjectFigma/openProjectFigmaGridView.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type MarketingProjectSingleResponse = {project: MarketingProjectSingle};
 
@@ -80,7 +81,7 @@ function SplitChrome({
                         className="-ml-2 flex shrink-0 items-center justify-center rounded-[5px] p-1 text-pronix-ink transition hover:bg-[rgba(24,24,24,0.04)] sm:-ml-2.5 md:-ml-3"
                         aria-label={String(resolveLanguageKey("backToProjects"))}
                     >
-                        <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                        <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
                     </Link>
                     <h1 className="min-w-0 flex-1 wrap-break-word font-aeonik-medium text-4xl leading-[1.2] text-pronix-ink not-italic sm:text-5xl lg:text-[83px]">
                         {project.name}
@@ -244,7 +245,7 @@ function OpenProjectFigma3dPage({
                             className="pointer-events-auto -ml-2 flex shrink-0 items-center justify-center rounded-[5px] p-1 text-white transition hover:bg-white/10 sm:-ml-2.5 md:-ml-3"
                             aria-label={String(resolveLanguageKey("backToProjects"))}
                         >
-                            <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                            <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
                         </Link>
                         <h1 className="min-w-0 flex-1 truncate whitespace-nowrap font-aeonik-medium text-4xl leading-[1.2] tracking-normal not-italic sm:text-5xl lg:text-[83.1px]">
                             {project.name}
@@ -282,9 +283,9 @@ function OpenProjectFigma3dPage({
                 <div className="pointer-events-auto absolute bottom-10 left-4 z-30 flex items-center gap-4 sm:left-6 lg:left-[52px]">
                     <OpenProjectFigmaActions projectId={project._id} active="3d" tone="onDark" />
                     {hasFloorPolygons ? (
-                        <button
+                        <Button
                             type="button"
-                            onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
+                            variant="bare"
                             aria-pressed={phantomsAlwaysVisible}
                             aria-label={
                                 phantomsAlwaysVisible
@@ -292,13 +293,14 @@ function OpenProjectFigma3dPage({
                                     : String(resolveLanguageKey("showPolygons"))
                             }
                             className="flex size-16 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(255,255,255,0.2)] text-white backdrop-blur-[7px] transition hover:bg-[rgba(255,255,255,0.32)]"
+                            onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
                         >
                             {phantomsAlwaysVisible ? (
-                                <Eye className="size-8" strokeWidth={1.5} aria-hidden />
+                                <IconEye className="size-8" strokeWidth={1.5} aria-hidden />
                             ) : (
-                                <EyeOff className="size-8" strokeWidth={1.5} aria-hidden />
+                                <IconEyeOff className="size-8" strokeWidth={1.5} aria-hidden />
                             )}
-                        </button>
+                        </Button>
                     ) : null}
                 </div>
 

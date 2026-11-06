@@ -7,7 +7,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/ui/tabs.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {PaymentsHubRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.dto.ts";
 import type {PaymentsSummaryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.form.type.ts";
@@ -30,6 +30,8 @@ import {EMPTY_PAYMENTS_SCOPE, type PaymentsHubScope, scopeToBody} from "./paymen
 
 type PaymentsHubTab = "list" | "calendar";
 
+const SUMMARY_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/paymentsHub/payments/summary"};
+
 function parsePaymentsHubTab(value: string | null): PaymentsHubTab {
     return value === "calendar" ? "calendar" : "list";
 }
@@ -49,8 +51,6 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     }));
     const [searchInput, setSearchInput] = useState("");
     const [groupBy, setGroupBy] = useState<PaymentsHubGroupBy | "none">("none");
-    const [summary, setSummary] = useState<PaymentsSummaryResponseType | null>(null);
-    const [summaryLoading, setSummaryLoading] = useState(true);
     const [openPlanId, setOpenPlanId] = useState<string | null>(null);
     // Bumped when the payment-plan sheet closes: a payment may have been recorded there.
     const [refreshToken, setRefreshToken] = useState(0);
@@ -102,9 +102,7 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const scopeBody = useMemo(() => scopeToBody(scope), [scope]);
     const summaryGroupBy: PaymentsHubGroupBy = groupBy === "none" ? "month" : groupBy;
 
-    useEffect(() => {
-        let cancelled = false;
-        setSummaryLoading(true);
+    const summaryBody = useMemo(() => {
         const body: PaymentsSummaryFormType = {
             ...scopeBody,
             groupBy: summaryGroupBy,
@@ -112,22 +110,16 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         };
         if (scope.dateFrom) body.dateFrom = scope.dateFrom;
         if (scope.dateTo) body.dateTo = scope.dateTo;
-
-        void apiClient
-            .post<PaymentsSummaryResponseType>("/api/realEstate/paymentsHub/payments/summary", body)
-            .then((res) => {
-                if (!cancelled) setSummary(res.data);
-            })
-            .catch(() => {
-                if (!cancelled) setSummary(null);
-            })
-            .finally(() => {
-                if (!cancelled) setSummaryLoading(false);
-            });
-        return () => {
-            cancelled = true;
-        };
-    }, [scopeBody, summaryGroupBy, scope.dateField, scope.dateFrom, scope.dateTo, refreshToken]);
+        return body;
+    }, [scopeBody, summaryGroupBy, scope.dateField, scope.dateFrom, scope.dateTo]);
+    // One summary request per scope change and per refresh.
+    const [summaryCount, setSummaryCount] = useState(0);
+    useEffect(() => {
+        setSummaryCount((count) => count + 1);
+    }, [summaryBody, refreshToken]);
+    const summaryRequest = useHttpRequest<PaymentsSummaryResponseType>(SUMMARY_REQUEST, summaryBody, summaryCount);
+    const summary = summaryRequest.error ? null : summaryRequest.data;
+    const summaryLoading = summaryCount === 0 || summaryRequest.loading;
 
     const openRow = useCallback((row: PaymentsHubRow) => {
         setOpenPlanId(row.planId);

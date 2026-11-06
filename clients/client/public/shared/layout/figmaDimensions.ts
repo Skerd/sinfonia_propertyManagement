@@ -378,7 +378,7 @@ export const FIGMA_DEVELOPERS_FEATURE_CARD = {
         dataPrimary: {
             leftRatio: 267.64453125 / DEVELOPERS_FEATURE_ARTBOARD_W,
             topRatio: 39 / DEVELOPERS_FEATURE_ARTBOARD_H,
-            widthRatio: 247.69155883789062 / DEVELOPERS_FEATURE_ARTBOARD_W,
+            widthRatio: 247.6915588378906 / DEVELOPERS_FEATURE_ARTBOARD_W,
             heightRatio: 436.4661865234375 / DEVELOPERS_FEATURE_ARTBOARD_H,
         },
         dataSecondary: {
@@ -396,7 +396,7 @@ export const FIGMA_DEVELOPERS_FEATURE_CARD = {
         constructionUi: {
             leftRatio: 62 / DEVELOPERS_FEATURE_ARTBOARD_W,
             topRatio: 128.1689453125 / DEVELOPERS_FEATURE_ARTBOARD_H,
-            widthRatio: 541.8919067382812 / DEVELOPERS_FEATURE_ARTBOARD_W,
+            widthRatio: 541.891906738281 / DEVELOPERS_FEATURE_ARTBOARD_W,
             heightRatio: 277.1090087890625 / DEVELOPERS_FEATURE_ARTBOARD_H,
         },
         constructionPerson: {

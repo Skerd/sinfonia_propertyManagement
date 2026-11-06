@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
 import {EditModificationRequestFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
-import {LoaderCircle, XCircle} from "lucide-react";
+import {IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -18,7 +18,7 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 
-type CancelModificationRequestDialogProps = WithLanguageType & WithAxiosType<any, EditModificationRequestFormType> & {
+type CancelModificationRequestDialogProps = WithLanguageType & WithAxiosType<ModificationRequest, EditModificationRequestFormType> & {
     open: boolean;
     onClose: () => void;
     request: ModificationRequest;
@@ -39,8 +39,8 @@ function CancelModificationRequestDialog({
     const [cancellationReason, setCancellationReason] = useState("");
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: EditModificationRequestFormType) => {
-            onSuccess?.(data as unknown as ModificationRequest);
+        success: (data: ModificationRequest) => {
+            onSuccess?.(data);
             setCancellationReason("");
             onClose();
         },
@@ -102,7 +102,7 @@ function CancelModificationRequestDialog({
                         disabled={loading || !cancellationReason.trim()}
                         className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <XCircle />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconCircleX />}
                         <p>{resolveLanguageKey("confirmCancel")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

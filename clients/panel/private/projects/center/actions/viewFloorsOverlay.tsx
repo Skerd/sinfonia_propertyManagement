@@ -1,7 +1,7 @@
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {compose} from "redux";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {LayoutGrid} from "lucide-react";
+import {IconLayoutGrid} from "@tabler/icons-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
@@ -24,7 +24,7 @@ function ViewFloorsOverlay({
 
     return (
         <DropdownMenuItem onClick={() => { onAction(actionKey); }}>
-            <LayoutGrid size={16} />
+            <IconLayoutGrid size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

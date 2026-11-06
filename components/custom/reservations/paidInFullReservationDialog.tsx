@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle} from "react";
 import {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {LoaderCircle, CheckCircle2} from "lucide-react";
+import {IconCircleCheck, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -63,7 +63,7 @@ function PaidInFullReservationDialog({
                         }}
                         disabled={loading}
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <CheckCircle2 />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconCircleCheck />}
                         <p>{resolveLanguageKey("confirmPaid")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

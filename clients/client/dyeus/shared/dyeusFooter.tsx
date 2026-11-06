@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
@@ -8,8 +8,9 @@ import {
     useDyeusT,
     type DyeusTranslate,
 } from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const FOOTER_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusFooter.tsx";
@@ -32,6 +33,8 @@ const footerLinkClassName =
 type CatalogResponse = {
     projects?: MarketingProject[];
 };
+
+const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectsCatalog"};
 
 type AvailabilityStats = {
     soldUnitCount: number;
@@ -93,59 +96,17 @@ function DyeusFooter() {
     const {t} = useDyeusT(FOOTER_LANGUAGE_PATH);
     const [contactOpen, setContactOpen] = useState(false);
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
-    const [availability, setAvailability] = useState<AvailabilityStats | null>(null);
-    const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
-
-    useEffect(() => {
-        if (!projectId) {
-            setAvailability(null);
-            setSocialLinks([]);
-            return;
-        }
-
-        let cancelled = false;
-        (async () => {
-            try {
-                const res = await apiClient.post<CatalogResponse>(
-                    "/api/realEstate/marketingProjectsCatalog",
-                    {},
-                );
-                if (cancelled) return;
-                const project = (res.data.projects ?? []).find((item) => item._id === projectId);
-                if (!project) {
-                    setAvailability(null);
-                    setSocialLinks([]);
-                    return;
-                }
-                if (project.unitCount == null) {
-                    setAvailability(null);
-                } else {
-                    setAvailability({
-                        unitCount: project.unitCount,
-                        soldUnitCount: project.soldUnitCount ?? 0,
-                    });
-                }
-                setSocialLinks(
-                    (project.socialLinks ?? []).filter(
-                        (item): item is SocialLink =>
-                            typeof item?.name === "string" &&
-                            item.name.trim().length > 0 &&
-                            typeof item?.link === "string" &&
-                            item.link.trim().length > 0,
-                    ),
-                );
-            } catch {
-                if (!cancelled) {
-                    setAvailability(null);
-                    setSocialLinks([]);
-                }
-            }
-        })();
-
-        return () => {
-            cancelled = true;
-        };
-    }, [projectId]);
+    const {data: catalog} = useHttpRequest<CatalogResponse>(CATALOG_REQUEST, {}, projectId ? 1 : 0);
+    const project = projectId ? (catalog?.projects ?? []).find((item) => item._id === projectId) : undefined;
+    const availability: AvailabilityStats | null =
+        project?.unitCount == null ? null : {unitCount: project.unitCount, soldUnitCount: project.soldUnitCount ?? 0};
+    const socialLinks: SocialLink[] = (project?.socialLinks ?? []).filter(
+        (item): item is SocialLink =>
+            typeof item?.name === "string" &&
+            item.name.trim().length > 0 &&
+            typeof item?.link === "string" &&
+            item.link.trim().length > 0,
+    );
 
     const availabilityLabel =
         resolvingProject && !availability
@@ -233,14 +194,15 @@ function DyeusFooter() {
                         <p className="font-dyeus-serif text-2xl font-extrabold uppercase text-dyeus-bronze">
                             {t("contactUs")}
                         </p>
-                        <button
+                        <Button
                             type="button"
-                            onClick={() => setContactOpen(true)}
+                            variant="bare"
                             className="flex w-full cursor-pointer items-center justify-between gap-2.5 border-b border-dyeus-ink p-3 font-dyeus-serif text-xl leading-[1.2] text-dyeus-ink transition-colors duration-300 hover:text-dyeus-bronze"
+                            onClick={() => setContactOpen(true)}
                         >
                             <span>{t("getInTouch")}</span>
                             <img src={dyeusAssets.iconArrowRight} alt="" className="size-6" />
-                        </button>
+                        </Button>
                     </div>
                 </div>
 
@@ -258,10 +220,11 @@ function DyeusFooter() {
                     <p className="font-dyeus-serif text-xl text-dyeus-ink md:min-w-[420px]">
                         {t("copyright")}
                     </p>
-                    <button
+                    <Button
                         type="button"
-                        onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}
+                        variant="bare"
                         className="group flex items-center gap-3 font-dyeus-serif text-xl text-dyeus-ink transition-colors duration-300 hover:text-dyeus-bronze md:absolute md:left-1/2 md:-translate-x-1/2"
+                        onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}
                     >
                         <img
                             src={dyeusAssets.iconBackTop}
@@ -271,7 +234,7 @@ function DyeusFooter() {
                         <span className="underline decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-300 group-hover:decoration-dyeus-bronze cursor-pointer">
                             {t("backToTop")}
                         </span>
-                    </button>
+                    </Button>
                 </div>
             </div>
 
@@ -294,13 +257,14 @@ function DyeusFooter() {
                                     {t("contactTitle")}
                                 </h2>
                             </div>
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => setContactOpen(false)}
+                                variant="bare"
                                 className="font-dyeus-sans text-xs uppercase tracking-[0.18em] text-dyeus-ink-muted transition hover:text-dyeus-ink"
+                                onClick={() => setContactOpen(false)}
                             >
                                 {t("close")}
-                            </button>
+                            </Button>
                         </div>
                         <DyeusMarketingContactForm className="mt-6" />
                     </DialogFrame>

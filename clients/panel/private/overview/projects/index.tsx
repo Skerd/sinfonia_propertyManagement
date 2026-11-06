@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {
   GRID_KPI,
@@ -12,7 +12,7 @@ import type { DashboardFormResponseType } from "armonia/src/modules/propertyMana
 import type { Project } from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
 import {ActionException} from "armonia/src/modules/core/types";
 import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import { DashboardProjectCard } from "@propertyManagementModule/components/custom/dashboard/projectCard.tsx";
 import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import { IconBuilding, IconStack, IconTrendingUp } from "@tabler/icons-react";
@@ -22,6 +22,8 @@ import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
+
+const PROJECTS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/project"};
 
 type ProjectsTabProps = WithLanguageType & {
   dashboardData: DashboardFormResponseType | null | undefined;
@@ -34,29 +36,11 @@ type ProjectsTabProps = WithLanguageType & {
 
 function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh, drillDownContext, viewEntriesLabel }: ProjectsTabProps) {
   const navigate = useNavigate();
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [projectsLoading, setProjectsLoading] = useState(true);
-  const [projectsError, setProjectsError] = useState<ActionException | null>(null);
+  const projectsRequest = useHttpRequest<TableResponse<Project>>(PROJECTS_REQUEST, {offset: 0, limit: 1000}, 1);
+  const projects = useMemo(() => projectsRequest.data?.data ?? [], [projectsRequest.data]);
+  const projectsLoading = projectsRequest.loading;
+  const projectsError = projectsRequest.error;
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    setProjectsLoading(true);
-    setProjectsError(null);
-    apiClient.post<TableResponse<Project>>("/api/realEstate/project", { offset: 0, limit: 1000 })
-      .then((res) => {
-        if (!cancelled && res.data?.data) setProjects(res.data.data);
-      })
-      .catch((err) => {
-        if (!cancelled) setProjectsError(err?.response?.data ?? { message: "Failed to load projects" });
-      })
-      .finally(() => {
-        if (!cancelled) setProjectsLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   if (loading) return <Loader />;
   if (error) {

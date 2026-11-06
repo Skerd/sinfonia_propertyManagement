@@ -18,6 +18,8 @@ import {
 } from "@propertyManagementModule/clients/client/public/auth/shared/publicAuthChrome.tsx";
 import PublicGuestOnly from "@propertyManagementModule/clients/client/public/auth/shared/publicGuestOnly.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/auth/signup/index.tsx";
 
@@ -62,7 +64,7 @@ function SignUpPageInner({
                         <div className="grid w-full min-w-0 grid-cols-2 gap-4 sm:gap-8">
                             <div className="min-w-0">
                                 <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.name && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                    <input
+                                    <Input bare
                                         type="text"
                                         name="name"
                                         autoComplete="given-name"
@@ -80,7 +82,7 @@ function SignUpPageInner({
                             </div>
                             <div className="min-w-0">
                                 <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.surname && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                    <input
+                                    <Input bare
                                         type="text"
                                         name="surname"
                                         autoComplete="family-name"
@@ -99,7 +101,7 @@ function SignUpPageInner({
                         </div>
                         <div className="w-full min-w-0">
                             <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.email && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                <input
+                                <Input bare
                                     type="email"
                                     name="email"
                                     autoComplete="email"
@@ -117,7 +119,7 @@ function SignUpPageInner({
                         </div>
                         <div className="w-full min-w-0">
                             <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.password && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                <input
+                                <Input bare
                                     type="password"
                                     name="password"
                                     autoComplete="new-password"
@@ -135,7 +137,7 @@ function SignUpPageInner({
                         </div>
                         <div className="w-full min-w-0">
                             <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.confirmPassword && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                <input
+                                <Input bare
                                     type="password"
                                     name="confirmPassword"
                                     autoComplete="new-password"
@@ -152,9 +154,9 @@ function SignUpPageInner({
                             <AuthFieldError message={fieldErrors.confirmPassword} />
                         </div>
 
-                        <button type="submit" disabled={loading} className={AUTH_SUBMIT_CLASS}>
+                        <Button type="submit" disabled={loading} className={AUTH_SUBMIT_CLASS}>
                             {loading ? resolveLanguageKey("submitting") : resolveLanguageKey("submit")}
-                        </button>
+                        </Button>
 
                         {error && Object.keys(fieldErrors).length === 0 ? (
                             <AuthStatusMessage tone="error">{resolveLanguageKey("formError")}</AuthStatusMessage>

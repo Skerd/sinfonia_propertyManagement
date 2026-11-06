@@ -8,6 +8,7 @@ import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts"
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type DyeusHeaderProps = {
     variant?: "hero" | "solid";
@@ -40,13 +41,14 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                 className={`absolute inset-x-0 top-0 z-50 ${isHero ? "text-dyeus-cream" : "text-dyeus-ink"}`}
             >
                 <div className="relative mx-auto flex h-[100px] max-w-[1728px] items-center justify-between px-6 md:h-[157px] md:px-[60px]">
-                    <button
+                    <Button
                         type="button"
-                        onClick={() => setMenuOpen(true)}
+                        variant="bare"
                         className="group relative z-10 flex h-[18px] w-[56px] cursor-pointer items-center"
                         aria-label={t("openMenu")}
                         aria-haspopup="dialog"
                         aria-expanded={menuOpen}
+                        onClick={() => setMenuOpen(true)}
                     >
                         <img
                             src={dyeusAssets.iconMenu}
@@ -55,7 +57,7 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                                 isHero ? "" : "brightness-0"
                             }`}
                         />
-                    </button>
+                    </Button>
 
                     <Link
                         to="/"
@@ -74,8 +76,9 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                     </Link>
 
                     <div ref={langRef} className="relative z-10">
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
                             className="relative size-8 cursor-pointer"
                             aria-label={t("language")}
                             aria-haspopup="listbox"
@@ -87,7 +90,7 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                                 alt=""
                                 className={`size-8 object-contain ${isHero ? "" : "brightness-0"}`}
                             />
-                        </button>
+                        </Button>
                         {langOpen ? (
                             <div
                                 role="listbox"
@@ -99,21 +102,22 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                                 {MENU_LANGUAGES.map((language) => {
                                     const active = language.languageCode === languageCode;
                                     return (
-                                        <button
-                                            key={language.languageCode}
+                                        <Button
                                             type="button"
-                                            role="option"
+                                            variant="bare"
+                                            key={language.languageCode}
                                             aria-selected={active}
+                                            className={`block w-full cursor-pointer px-3 py-2 text-left font-dyeus-serif text-sm tracking-[0.08em] transition-colors hover:text-dyeus-bronze ${
+                                                active ? "font-bold text-dyeus-bronze" : "text-dyeus-ink"
+                                            }`}
                                             onClick={() => {
                                                 dispatch(changeLanguage(language.languageCode));
                                                 setLangOpen(false);
                                             }}
-                                            className={`block w-full cursor-pointer px-3 py-2 text-left font-dyeus-serif text-sm tracking-[0.08em] transition-colors hover:text-dyeus-bronze ${
-                                                active ? "font-bold text-dyeus-bronze" : "text-dyeus-ink"
-                                            }`}
+                                            role="option"
                                         >
                                             {language.shortCode}
-                                        </button>
+                                        </Button>
                                     );
                                 })}
                             </div>

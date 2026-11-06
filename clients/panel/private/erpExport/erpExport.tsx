@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {useMemo, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {useSelector} from "react-redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -24,7 +24,7 @@ import {ERP_EXPORT_DATASET_VALUES} from "armonia/src/modules/propertyManagement/
 import {getErpExportColumnLabel} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.columnLabels.ts";
 import type {ErpExportDataset, ErpExportFormat, ErpExportResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.response.type.ts";
 import type {ErpExportFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.form.type.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
@@ -89,6 +89,17 @@ async function parseBlobError(blob: Blob): Promise<string> {
     }
 }
 
+type ExportRun = {
+    count: number;
+    format: ErpExportFormat;
+    body: ErpExportFormType;
+    pm: ErpExportDataset[];
+    pd: ErpExportDataset[];
+};
+
+/** Answers of one run, tagged with its count so a late answer from an older run is ignored. */
+type ExportParts = {count: number; pm?: Blob | ErpExportResponse; pd?: Blob | ErpExportResponse; failure?: unknown; done?: boolean};
+
 function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const languageCode = useSelector((state: RootState) => state.language.languageCode);
 
@@ -126,9 +137,58 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const [dateFrom, setDateFrom] = useState("");
     const [dateTo, setDateTo] = useState("");
     const [projectId, setProjectId] = useState("");
-    const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<ErpExportResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
+
+    // One export run: propertyManagement's datasets and, when enabled, propertyDevelopment's, as two
+    // requests whose answers are combined once both have settled.
+    const [exportRun, setExportRun] = useState<ExportRun>({count: 0, format: "json", body: {datasets: [], format: "json"}, pm: [], pd: []});
+    const [parts, setParts] = useState<ExportParts>({count: 0});
+    const responseType = exportRun.format === "csv" ? "blob" : undefined;
+    const pmRequest = useMemo<HttpRequest>(() => ({method: "post", url: "/api/realEstate/erpExport", responseType}), [responseType]);
+    const pdRequest = useMemo<HttpRequest>(() => ({method: "post", url: "/api/propertyDevelopment/erpExport", responseType}), [responseType]);
+    const pmPart = useHttpRequest<Blob | ErpExportResponse>(pmRequest, {...exportRun.body, datasets: exportRun.pm}, exportRun.pm.length ? exportRun.count : 0, true, {
+        success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, pm: data} : current)),
+        error: (e) => setParts((current) => (current.count === exportRun.count ? {...current, failure: e} : current)),
+    });
+    const pdPart = useHttpRequest<Blob | ErpExportResponse>(pdRequest, {...exportRun.body, datasets: exportRun.pd}, exportRun.pd.length ? exportRun.count : 0, true, {
+        success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, pd: data} : current)),
+        error: (e) => setParts((current) => (current.count === exportRun.count ? {...current, failure: e} : current)),
+    });
+    const settled = parts.count === exportRun.count && exportRun.count > 0 && (
+        parts.failure !== undefined
+        || ((!exportRun.pm.length || parts.pm !== undefined) && (!exportRun.pd.length || parts.pd !== undefined))
+    );
+    const loading = pmPart.loading || pdPart.loading || (exportRun.count > 0 && !parts.done);
+
+    useEffect(() => {
+        if (!settled || parts.done) return;
+        setParts((current) => ({...current, done: true}));
+        if (parts.failure !== undefined) {
+            setError(handleError(parts.failure, {context: "ErpExport"})?.displayMessage ?? rk("exportFailed"));
+            return;
+        }
+        const answers = [parts.pm, parts.pd].filter((part): part is Blob | ErpExportResponse => part !== undefined);
+        if (exportRun.format !== "csv") {
+            setResult(Object.assign({exportedAt: new Date().toISOString()}, ...answers.filter((part): part is ErpExportResponse => !(part instanceof Blob))));
+            return;
+        }
+        void (async () => {
+            const blobs = answers.filter((part): part is Blob => part instanceof Blob);
+            // A JSON body inside a 2xx blob response is the server's error, not CSV.
+            const jsonError = blobs.find((blob) => blob.type.includes("application/json"));
+            if (jsonError) {
+                setError(await parseBlobError(jsonError));
+                return;
+            }
+            const url = URL.createObjectURL(new Blob(blobs.map((blob) => new Blob([blob], {type: "text/csv"})), {type: "text/csv"}));
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `erp-export-${Date.now()}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        })();
+    }, [settled, parts, exportRun]);
     const accessHydrated = useAccessHydrated();
     const salesAccess = useAccess("sales");
     const commissionsAccess = useAccess("commissions");
@@ -156,14 +216,13 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         ? datasets.reduce((sum, ds) => sum + countRows(result, ds), 0)
         : 0;
 
-    async function handleExport() {
+    function handleExport() {
         if (!canRead) return;
         if (datasets.length === 0) {
             setError(rk("datasetsRequired"));
             return;
         }
 
-        setLoading(true);
         setError(null);
 
         const body: ErpExportFormType = {
@@ -179,49 +238,9 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
             ? datasets.filter((d) => PD_ERP_DATASETS.includes(d))
             : [];
 
-        try {
-            if (format === "csv") {
-                const blobs: Blob[] = [];
-                if (pmDatasets.length > 0) {
-                    const res = await apiClient.post("/api/realEstate/erpExport", {...body, datasets: pmDatasets}, {responseType: "blob"});
-                    const contentType = String(res.headers["content-type"] ?? "");
-                    if (contentType.includes("application/json")) {
-                        throw new Error(await parseBlobError(res.data as Blob));
-                    }
-                    blobs.push(new Blob([res.data], {type: "text/csv"}));
-                }
-                if (pdDatasets.length > 0) {
-                    const res = await apiClient.post("/api/propertyDevelopment/erpExport", {...body, datasets: pdDatasets}, {responseType: "blob"});
-                    const contentType = String(res.headers["content-type"] ?? "");
-                    if (contentType.includes("application/json")) {
-                        throw new Error(await parseBlobError(res.data as Blob));
-                    }
-                    blobs.push(new Blob([res.data], {type: "text/csv"}));
-                }
-                const url = URL.createObjectURL(new Blob(blobs, {type: "text/csv"}));
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `erp-export-${Date.now()}.csv`;
-                a.click();
-                URL.revokeObjectURL(url);
-                setResult(null);
-            } else {
-                const parts: ErpExportResponse[] = [];
-                if (pmDatasets.length > 0) {
-                    const res = await apiClient.post<ErpExportResponse>("/api/realEstate/erpExport", {...body, datasets: pmDatasets});
-                    parts.push(res.data);
-                }
-                if (pdDatasets.length > 0) {
-                    const res = await apiClient.post<ErpExportResponse>("/api/propertyDevelopment/erpExport", {...body, datasets: pdDatasets});
-                    parts.push(res.data);
-                }
-                setResult(Object.assign({exportedAt: new Date().toISOString()}, ...parts));
-            }
-        } catch (e: unknown) {
-            setError(handleError(e, {context: "ErpExport"})?.displayMessage ?? rk("exportFailed"));
-        } finally {
-            setLoading(false);
-        }
+        setResult(null);
+        setParts({count: exportRun.count + 1});
+        setExportRun({count: exportRun.count + 1, format, body, pm: pmDatasets, pd: pdDatasets});
     }
 
     if (accessHydrated === false) return <Loader />;

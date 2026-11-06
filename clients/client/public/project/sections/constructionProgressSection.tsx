@@ -8,7 +8,7 @@ import type {
     MarketingConstructionProgressFormResponseType,
     MarketingMilestone,
     MarketingConstructionUpdate,
-} from "armonia/src/modules/propertyDevelopment/api/propertyDevelopment/public/marketingConstructionProgress/marketingConstructionProgress.form.response.type";
+} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingConstructionProgress/marketingConstructionProgress.form.response.type";
 
 type ConstructionProgressSectionProps = WithLanguageType &
     WithAxiosType<MarketingConstructionProgressFormResponseType, {projectId: string}> & {
@@ -163,11 +163,13 @@ function ConstructionProgressSectionInner({
     );
 }
 
-export default compose(
+const ConstructionProgressSection: React.ComponentType<{projectId: string}> = compose(
     withLanguage("src/modules/propertyManagement/clients/client/public/project/sections/constructionProgressSection.tsx"),
     withAxios<MarketingConstructionProgressFormResponseType, {projectId: string}>(
         {method: "post", url: "/api/propertyDevelopment/marketingConstructionProgress/single", data: {}},
         true,
     ),
     withDebug(true, true),
-)(ConstructionProgressSectionInner) as unknown as React.ComponentType<{projectId: string}>;
+)(ConstructionProgressSectionInner);
+
+export default ConstructionProgressSection;

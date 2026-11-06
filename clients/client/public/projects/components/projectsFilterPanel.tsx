@@ -13,10 +13,11 @@ import {
     ProjectsPriceBounds,
     PropertyTypeId,
 } from "@propertyManagementModule/clients/client/public/projects/shared/projectsFilterTypes.ts";
-import {
-    PUBLIC_CONTENT_FRAME,
-    PUBLIC_HEADING,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {PUBLIC_CONTENT_FRAME, PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 type ProjectsFilterPanelProps = {
     open: boolean;
@@ -59,9 +60,9 @@ function FilterSelectRow({label, value, onChange, children, dataNodeId}: FilterS
         <label className="flex min-w-0 flex-col gap-2" data-node-id={dataNodeId}>
             <span className={filterLabelClassName}>{label}</span>
             <div className={filterFieldShellClassName}>
-                <select value={value} onChange={(event) => onChange(event.target.value)} className={selectInnerClassName}>
+                <NativeSelect bare value={value} onChange={(event) => onChange(event.target.value)} className={selectInnerClassName}>
                     {children}
-                </select>
+                </NativeSelect>
                 <img
                     alt=""
                     aria-hidden
@@ -115,15 +116,16 @@ function ProjectsFilterPanel({
                         <h2 id="projects-filter-title" className={PUBLIC_HEADING} data-node-id="268:392">
                             {resolveLanguageKey("filtersTitle")}
                         </h2>
-                        <button
+                        <Button
                             type="button"
-                            onClick={onClose}
+                            variant="bare"
                             className="flex size-9 items-center justify-center rounded-[5px] border border-pronix-border transition duration-200 hover:border-pronix-ink hover:bg-pronix-ink/5 hover:shadow-sm"
                             aria-label={resolveLanguageKey("filterClose")}
                             data-node-id="268:395"
+                            onClick={onClose}
                         >
                             <img alt="" aria-hidden className="size-6" src={projectsAssets.filterClose} />
-                        </button>
+                        </Button>
                     </div>
 
                     <div className="flex flex-col gap-5 md:gap-6" data-node-id="268:529">
@@ -172,13 +174,14 @@ function ProjectsFilterPanel({
                                             : projectsAssets.propertyTypeBuilding;
 
                                     return (
-                                        <button
-                                            key={type}
+                                        <Button
                                             type="button"
-                                            onClick={() => togglePropertyType(type)}
+                                            variant="bare"
+                                            key={type}
                                             className={`flex flex-col gap-1.5 rounded-[5px] border p-2 text-left transition duration-200 ${
                                                 active ? filterChipActiveClassName : filterChipIdleClassName
                                             }`}
+                                            onClick={() => togglePropertyType(type)}
                                         >
                                             <div className="relative size-8 shrink-0 overflow-hidden">
                                                 <div className="absolute inset-[18.89%_20%_18.89%_17.78%]">
@@ -193,7 +196,7 @@ function ProjectsFilterPanel({
                                             <span className="font-aeonik-light text-sm not-italic md:text-base">
                                                 {resolveLanguageKey(`propertyType${type.charAt(0).toUpperCase()}${type.slice(1)}`)}
                                             </span>
-                                        </button>
+                                        </Button>
                                     );
                                 })}
                             </div>
@@ -213,16 +216,17 @@ function ProjectsFilterPanel({
                                               ? "filterBedroom6Plus"
                                               : `filterBedroom${bedroom}`;
                                     return (
-                                        <button
-                                            key={bedroom}
+                                        <Button
                                             type="button"
-                                            onClick={() => patchDraft({bedrooms: bedroom})}
-                                            className={`min-w-12 rounded-[5px] px-3 py-2 font-aeonik-light text-sm not-italic transition duration-200 md:min-w-14 md:text-base ${
+                                            variant="bare"
+                                            key={bedroom}
+                                            className={cn(`min-w-12 rounded-[5px] px-3 py-2 font-aeonik-light text-sm not-italic transition duration-200 md:min-w-14 md:text-base ${
                                                 active ? filterChipActiveClassName : filterChipIdleClassName
-                                            }`}
+                                            }`)}
+                                            onClick={() => patchDraft({bedrooms: bedroom})}
                                         >
                                             {resolveLanguageKey(labelKey)}
-                                        </button>
+                                        </Button>
                                     );
                                 })}
                             </div>
@@ -233,7 +237,7 @@ function ProjectsFilterPanel({
                                 {resolveLanguageKey("filterArea")}
                             </span>
                             <div className={filterFieldShellClassName}>
-                                <input
+                                <Input bare
                                     type="text"
                                     inputMode="decimal"
                                     value={draft.areaSqm}
@@ -261,22 +265,24 @@ function ProjectsFilterPanel({
                         />
 
                         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2" data-node-id="268:2905">
-                            <button
+                            <Button
                                 type="button"
-                                onClick={onReset}
+                                variant="bare"
                                 className="cursor-pointer rounded-[5px] border border-pronix-blue px-4 py-2.5 font-aeonik-medium text-base text-pronix-blue not-italic transition duration-200 hover:bg-pronix-blue/5 hover:shadow-sm md:text-lg"
                                 data-node-id="268:2906"
+                                onClick={onReset}
                             >
                                 {resolveLanguageKey("filterReset")}
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 type="button"
-                                onClick={onApply}
+                                variant="bare"
                                 className="cursor-pointer rounded-[5px] bg-pronix-blue px-4 py-2.5 font-aeonik-medium text-base text-white not-italic transition duration-200 hover:opacity-90 hover:shadow-md md:text-lg"
                                 data-node-id="268:2908"
+                                onClick={onApply}
                             >
                                 {resolveLanguageKey("filterApply")}
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>

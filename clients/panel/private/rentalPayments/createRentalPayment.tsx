@@ -34,7 +34,7 @@ export default createGenericCreatePage<CreateRentalPaymentFormType>({
         const fields: Record<string, unknown> = {...data};
         delete fields.receiptMedia;
         formData.append("data", JSON.stringify(fields));
-        localFilesFromField((data as any).receiptMedia).forEach((file) => formData.append("files", file));
+        localFilesFromField(data.receiptMedia).forEach((file) => formData.append("files", file));
         return formData;
     },
     successPath: "/realEstate/rentalPayments",

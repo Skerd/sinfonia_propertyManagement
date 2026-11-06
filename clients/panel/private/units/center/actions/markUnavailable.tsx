@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Ban} from "lucide-react";
+import {IconBan} from "@tabler/icons-react";
 
 type MarkUnavailableProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -18,7 +18,7 @@ function MarkUnavailable({onAction, resolveLanguageKey}: MarkUnavailableProps) {
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <Ban className="text-destructive" size={16}/>
+            <IconBan className="text-destructive" size={16}/>
             <p className="text-destructive">
                 {resolveLanguageKey("title")}
             </p>

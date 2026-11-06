@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Wallet} from "lucide-react";
+import {IconWallet} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 
@@ -24,7 +24,7 @@ function ReturnDeposit({onAction, lease, resolveLanguageKey}: ReturnDepositProps
 
     return (
         <DropdownMenuItem onClick={() => {onAction(RETURN_DEPOSIT_ACTION);}}>
-            <Wallet className="text-primary" size={16} />
+            <IconWallet className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {ClipboardCheck, LoaderCircle} from "lucide-react";
+import {IconClipboardCheck, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -126,7 +126,7 @@ function UpdateHandoverDialog({
                         }}
                         disabled={loading || items.length === 0}
                     >
-                        {loading ? <LoaderCircle className="animate-spin" /> : <ClipboardCheck />}
+                        {loading ? <IconLoader2 className="animate-spin" /> : <IconClipboardCheck />}
                         <p>{resolveLanguageKey("confirm")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

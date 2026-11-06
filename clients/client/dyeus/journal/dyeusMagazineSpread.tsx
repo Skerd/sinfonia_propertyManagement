@@ -1,4 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
+import {fetchMediaBytes} from "@coreModule/helpers/media/fetchMediaBytes.ts";
 import * as pdfjs from "pdfjs-dist";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
@@ -62,9 +63,7 @@ export default function DyeusMagazineSpread({fileUrl, className}: DyeusMagazineS
 
         (async () => {
             try {
-                const response = await fetch(resolvedUrl);
-                if (!response.ok) throw new Error(`media_${response.status}`);
-                const data = new Uint8Array(await response.arrayBuffer());
+                const data = await fetchMediaBytes(resolvedUrl);
                 if (cancelled) return;
 
                 const pdf = await pdfjs.getDocument({data}).promise;

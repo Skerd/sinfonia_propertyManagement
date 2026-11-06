@@ -1,6 +1,6 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import {toast} from "sonner";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {useDynamicLanguage} from "@coreModule/helpers/hooks/useDynamicLanguage.ts";
 import {Switch} from "@coreModule/components/ui/switch.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -36,41 +36,51 @@ export default function MarketingPreferencesSection({specificUserId}: {specificU
 
     const [prefs, setPrefs] = useState<Preferences | null>(null);
     const [error, setError] = useState<string | null>(null);
-    const [busy, setBusy] = useState(false);
+    const prefsRef = useRef(prefs);
+    prefsRef.current = prefs;
 
+    // `specificUser` impersonates the same way name and timezone updates do.
+    const meRequest = useMemo<HttpRequest>(
+        () => ({method: "post", url: `${API}/me`, extraHeader: specificUserId ? {specificUser: specificUserId} : undefined}),
+        [specificUserId],
+    );
+    const updateRequest = useMemo<HttpRequest>(
+        () => ({method: "post", url: `${API}/updateMe`, extraHeader: specificUserId ? {specificUser: specificUserId} : undefined}),
+        [specificUserId],
+    );
+
+    const [loadCount, setLoadCount] = useState(0);
     useEffect(() => {
-        const requestConfig = specificUserId ? {headers: {specificUser: specificUserId}} : undefined;
-        (async () => {
-            try {
-                const {data} = await apiClient.post<Preferences>(`${API}/me`, {}, requestConfig);
-                setPrefs(data);
-            }
-            catch {
-                setError(resolveLanguageKey("loadFailed"));
-            }
-        })();
-    }, [resolveLanguageKey, specificUserId]);
+        setLoadCount((count) => count + 1);
+    }, [specificUserId]);
+    useHttpRequest<Preferences>(meRequest, {}, loadCount, true, {
+        success: (data) => setPrefs(data),
+        // A failed reload after a failed save keeps the switches; only the first load shows the error.
+        error: () => {
+            if (!prefsRef.current) setError(resolveLanguageKey("loadFailed"));
+        },
+    });
 
-    const save = useCallback(async (patch: Record<string, boolean>) => {
-        const requestConfig = specificUserId ? {headers: {specificUser: specificUserId}} : undefined;
-        setBusy(true);
-        // Optimistic: a switch that visibly lags feels broken. Rolled back below
-        // if the write fails.
-        setPrefs(prev => (prev ? {...prev, ...patch} : prev));
-        try {
-            const {data} = await apiClient.post<Preferences>(`${API}/updateMe`, patch, requestConfig);
+    const [patch, setPatch] = useState<Record<string, boolean>>({});
+    const [saveCount, setSaveCount] = useState(0);
+    const {loading: busy} = useHttpRequest<Preferences>(updateRequest, patch, saveCount, true, {
+        success: (data) => {
             setPrefs(data);
             toast.success(resolveLanguageKey("saved"));
-        }
-        catch {
-            const {data} = await apiClient.post<Preferences>(`${API}/me`, {}, requestConfig).catch(() => ({data: null}));
-            if (data) setPrefs(data);
+        },
+        error: () => {
+            // Roll the optimistic switch back to what the server has.
+            setLoadCount((count) => count + 1);
             toast.error(resolveLanguageKey("saveFailed"));
-        }
-        finally {
-            setBusy(false);
-        }
-    }, [resolveLanguageKey, specificUserId]);
+        },
+    });
+
+    const save = (next: Record<string, boolean>) => {
+        // Optimistic: a switch that visibly lags feels broken.
+        setPrefs(prev => (prev ? {...prev, ...next} : prev));
+        setPatch(next);
+        setSaveCount((count) => count + 1);
+    };
 
     if (error) {
         return <p className="text-sm text-muted-foreground">{error}</p>;

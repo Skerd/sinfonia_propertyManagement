@@ -1,6 +1,6 @@
 import {useImperativeHandle} from "react";
 import {compose} from "redux";
-import {LoaderCircle} from "lucide-react";
+import {IconLoader2} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -80,7 +80,7 @@ function AdCampaignTemplateActionDialog({
                         onClick={() => onFilterChange({_id: template._id})}
                         disabled={loading}
                     >
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : null}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : null}
                         {resolveLanguageKey(`submit.${methodName}`)}
                     </Button>
                 </DialogFooter>

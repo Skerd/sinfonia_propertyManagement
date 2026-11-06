@@ -1,7 +1,7 @@
 import {useEffect, type ReactNode} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
-import {ChevronLeft} from "lucide-react";
+import {IconChevronLeft} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -91,7 +91,7 @@ function OpenProjectShellInner({
                                 className="-ml-2 flex shrink-0 items-center justify-center rounded-[5px] p-1 text-pronix-ink transition hover:bg-[rgba(24,24,24,0.04)] sm:-ml-2.5 md:-ml-3"
                                 aria-label={String(resolveLanguageKey("backToProjects"))}
                             >
-                                <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                                <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
                             </Link>
                             <h1 className={`min-w-0 flex-1 wrap-break-word ${PUBLIC_GALLERY_PAGE_TITLE}`}>
                                 {project.name}

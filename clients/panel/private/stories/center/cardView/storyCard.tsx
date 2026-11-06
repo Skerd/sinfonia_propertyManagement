@@ -3,8 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Story} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconBuilding, IconCalendar, IconLabel, IconStack2} from "@tabler/icons-react";
-import {DoorOpen} from "lucide-react";
+import {IconBuilding, IconCalendar, IconLabel, IconStack2, IconDoorEnter} from "@tabler/icons-react";
 import StorySheetView from "@propertyManagementModule/clients/panel/private/stories/center/sheetView/storySheetView.tsx";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -96,7 +95,7 @@ function StoryCard({
                             value={entity.edifice?.name}
                         />
                         <EntityCardRow
-                            icon={DoorOpen}
+                            icon={IconDoorEnter}
                             label={resolveLanguageKey("fields.unit")}
                             tooltip={resolveLanguageKey("fields.unit")}
                             path="unit"

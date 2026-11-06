@@ -1,7 +1,7 @@
-import {createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
+import {createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {getToken} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {
@@ -11,6 +11,8 @@ import {
     updateUserData,
 } from "@coreModule/helpers/redux/slices/authSlice.ts";
 import {ValidateTokenFormResponseType} from "armonia/src/modules/core/api/user/public/validateToken/validateToken.form.response.type.ts";
+
+const VALIDATE_TOKEN_REQUEST: HttpRequest = {method: "get", url: "/api/user/validateToken"};
 
 type PublicAuthContextValue = {
     isAuthenticated: boolean;
@@ -27,7 +29,7 @@ function isAuthenticatedUser(user: AuthUser): boolean {
 
 /**
  * Thin public-site session: validates an existing token on boot and reacts to
- * apiClient session expiry. Does not use the panel AuthenticationProvider
+ * the API client's session expiry. Does not use the panel AuthenticationProvider
  * (that redirects to /authenticate/login).
  */
 export function PublicAuthProvider({children}: {children: ReactNode}) {
@@ -53,33 +55,31 @@ export function PublicAuthProvider({children}: {children: ReactNode}) {
 
     // Depends on the token only: `navigate` changes on every pathname change, and
     // re-validating then would flash guarded pages back to a loader.
+    const [validateCount, setValidateCount] = useState(0);
+    const tokenRef = useRef(token);
+    tokenRef.current = token;
     useEffect(() => {
         if (!token) {
             setIsHydrating(false);
             return;
         }
-
-        const abortController = new AbortController();
         setIsHydrating(true);
-
-        apiClient
-            .get<ValidateTokenFormResponseType>("/api/user/validateToken", {signal: abortController.signal})
-            .then(({data}) => {
-                if (abortController.signal.aborted) return;
-                dispatch(updateUserData(data));
-                dispatch(updateToken(token));
-                setIsHydrating(false);
-            })
-            .catch(() => {
-                if (abortController.signal.aborted) return;
-                dispatch(signOut());
-                setIsHydrating(false);
-            });
-
-        return () => {
-            abortController.abort();
-        };
-    }, [dispatch, token]);
+        setValidateCount((count) => count + 1);
+    }, [token]);
+    useHttpRequest<ValidateTokenFormResponseType>(VALIDATE_TOKEN_REQUEST, {}, validateCount, true, {
+        success: (data) => {
+            // A token that changed or was cleared since is not the one this answer validated.
+            if (!token || tokenRef.current !== token) return;
+            dispatch(updateUserData(data));
+            dispatch(updateToken(token));
+            setIsHydrating(false);
+        },
+        error: () => {
+            if (tokenRef.current !== token) return;
+            dispatch(signOut());
+            setIsHydrating(false);
+        },
+    });
 
     const value = useMemo(
         () => ({

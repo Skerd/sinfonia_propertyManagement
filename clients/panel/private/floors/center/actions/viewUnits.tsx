@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {useNavigate} from "react-router-dom";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Home} from "lucide-react";
+import {IconHome} from "@tabler/icons-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useDismissSheetBeforeMenuNavigate} from "@coreModule/components/viewEngine/sheet/widgets/sheetMenuNavigateDismiss.tsx";
@@ -47,7 +47,7 @@ function ViewUnits({floor, resolveLanguageKey}: ViewUnitsProps) {
 
     return (
         <DropdownMenuItem onClick={(e) => {e.preventDefault(); e.stopPropagation(); viewUnits();}}>
-            <Home size={16}/>
+            <IconHome size={16}/>
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

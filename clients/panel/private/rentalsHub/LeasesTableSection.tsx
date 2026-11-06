@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {Eye} from "lucide-react";
+import {IconEye} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
@@ -11,8 +11,7 @@ import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {LeaseRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.lease.dto.ts";
 import type {LeasesListFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.form.type.ts";
 import type {LeasesListResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.response.type.ts";
@@ -36,6 +35,8 @@ type LeasesTableSectionProps = {
     onViewRow: (row: LeaseRegistryRow) => void;
 };
 
+const LIST_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalsHub/leases/list"};
+
 export default function LeasesTableSection({
     resolveLanguageKey,
     timezone,
@@ -54,9 +55,6 @@ export default function LeasesTableSection({
     const [startDateTo, setStartDateTo] = useState("");
     const [page, setPage] = useState(1);
 
-    const [data, setData] = useState<LeasesListResponseType | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<HttpError | null>(null);
 
     const edificeSelectBody = useMemo(
         () => selectBodyWithFilters([{field: "project", value: project}]),
@@ -78,9 +76,7 @@ export default function LeasesTableSection({
         [floor, edifice, project],
     );
 
-    const fetchData = useCallback(async () => {
-        setLoading(true);
-        setError(null);
+    const listBody = useMemo(() => {
         const body: LeasesListFormType = {page, limit: PAGE_SIZE};
         if (debouncedSearch.trim()) body.search = debouncedSearch.trim();
         if (project) body.project = project;
@@ -90,20 +86,15 @@ export default function LeasesTableSection({
         if (status) body.status = status as LeasesListFormType["status"];
         if (startDateFrom) body.startDateFrom = startDateFrom;
         if (startDateTo) body.startDateTo = startDateTo;
-
-        try {
-            const res = await apiClient.post<LeasesListResponseType>(
-                "/api/realEstate/rentalsHub/leases/list",
-                body,
-            );
-            setData(res.data);
-        } catch (err) {
-            setError(err as HttpError);
-            setData(null);
-        } finally {
-            setLoading(false);
-        }
+        return body;
     }, [page, project, edifice, floor, unit, debouncedSearch, startDateFrom, startDateTo, status]);
+    // One list request per filter/page change and per retry.
+    const [fetchCount, setFetchCount] = useState(0);
+    const fetchData = useCallback(() => setFetchCount((count) => count + 1), []);
+    const request = useHttpRequest<LeasesListResponseType>(LIST_REQUEST, listBody, fetchCount);
+    const data = request.error ? null : request.data;
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error;
 
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(searchInput), 300);
@@ -111,8 +102,8 @@ export default function LeasesTableSection({
     }, [searchInput]);
 
     useEffect(() => {
-        void fetchData();
-    }, [fetchData]);
+        fetchData();
+    }, [listBody, fetchData]);
 
     useEffect(() => {
         setPage(1);
@@ -245,7 +236,7 @@ export default function LeasesTableSection({
                         <ErrorView
                             title={rk("errorTitle")}
                             description={rk("errorDescription")}
-                            onClick={() => void fetchData()}
+                            onClick={fetchData}
                             resolveLanguageKey={resolveLanguageKey}
                         />
                     </div>
@@ -298,7 +289,7 @@ export default function LeasesTableSection({
                                                 aria-label={rk("viewAction")}
                                                 onClick={() => onViewRow(row)}
                                             >
-                                                <Eye className="h-4 w-4" />
+                                                <IconEye className="h-4 w-4" />
                                             </Button>
                                         </TableCell>
                                     </TableRow>

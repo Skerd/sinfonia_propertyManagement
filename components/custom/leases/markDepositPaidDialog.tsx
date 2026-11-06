@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle} from "react";
-import {CircleCheck, LoaderCircle} from "lucide-react";
+import {IconCircleCheck, IconLoader2} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -63,7 +63,7 @@ function MarkDepositPaidDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" onClick={() => onFilterChange({_id: lease._id})} disabled={loading}>
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : <CircleCheck className="h-4 w-4" />}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconCircleCheck className="h-4 w-4" />}
                         {resolveLanguageKey("submit")}
                     </Button>
                 </DialogFooter>

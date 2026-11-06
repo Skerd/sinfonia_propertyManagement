@@ -1,5 +1,4 @@
-import type {LucideIcon} from "lucide-react";
-import {Building2, Car, Home, Layers, Leaf, Maximize, Warehouse, Zap} from "lucide-react";
+import {IconBolt, IconBuildingSkyscraper, IconBuildingWarehouse, IconCar, IconHome, IconLeaf, IconMaximize, IconStack2, type TablerIcon} from "@tabler/icons-react";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
 import type {
@@ -8,7 +7,7 @@ import type {
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingProjectCatalog/marketingProjectCatalogSingle.form.response.type.ts";
 
 type Translate = (key: string) => string;
-export type SelectionFact = {icon: LucideIcon; label: string; value: string};
+export type SelectionFact = {icon: TablerIcon; label: string; value: string};
 export type SelectionSpec = {label: string; value: string};
 
 export function floorLabel(floor: MarketingFloorCatalogListItem, resolveLanguageKey: Translate) {
@@ -49,24 +48,24 @@ function presentSpecs(rows: (SelectionSpec | false | "" | 0 | undefined | null)[
 
 export function edificeFacts(edifice: MarketingEdificeCatalogListItem, resolveLanguageKey: Translate): SelectionFact[] {
     return present([
-        edifice.floorCount != null && {icon: Layers, label: resolveLanguageKey("facts.floors"), value: String(edifice.floorCount)},
-        edifice.unitCount != null && {icon: Building2, label: resolveLanguageKey("facts.units"), value: String(edifice.unitCount)},
-        edifice.availableUnitCount != null && {icon: Home, label: resolveLanguageKey("facts.available"), value: String(edifice.availableUnitCount)},
-        edifice.totalAreaSqm ? {icon: Maximize, label: resolveLanguageKey("facts.area"), value: `${formatNumber(edifice.totalAreaSqm)} m²`} : undefined,
-        edifice.parkingSpaces ? {icon: Car, label: resolveLanguageKey("facts.parking"), value: String(edifice.parkingSpaces)} : undefined,
-        edifice.energyClass && {icon: Zap, label: resolveLanguageKey("facts.energy"), value: edifice.energyClass},
-        edifice.greenAreaSqm ? {icon: Leaf, label: resolveLanguageKey("facts.green"), value: `${formatNumber(edifice.greenAreaSqm)} m²`} : undefined,
-        edifice.garages ? {icon: Warehouse, label: resolveLanguageKey("facts.garages"), value: String(edifice.garages)} : undefined,
+        edifice.floorCount != null && {icon: IconStack2, label: resolveLanguageKey("facts.floors"), value: String(edifice.floorCount)},
+        edifice.unitCount != null && {icon: IconBuildingSkyscraper, label: resolveLanguageKey("facts.units"), value: String(edifice.unitCount)},
+        edifice.availableUnitCount != null && {icon: IconHome, label: resolveLanguageKey("facts.available"), value: String(edifice.availableUnitCount)},
+        edifice.totalAreaSqm ? {icon: IconMaximize, label: resolveLanguageKey("facts.area"), value: `${formatNumber(edifice.totalAreaSqm)} m²`} : undefined,
+        edifice.parkingSpaces ? {icon: IconCar, label: resolveLanguageKey("facts.parking"), value: String(edifice.parkingSpaces)} : undefined,
+        edifice.energyClass && {icon: IconBolt, label: resolveLanguageKey("facts.energy"), value: edifice.energyClass},
+        edifice.greenAreaSqm ? {icon: IconLeaf, label: resolveLanguageKey("facts.green"), value: `${formatNumber(edifice.greenAreaSqm)} m²`} : undefined,
+        edifice.garages ? {icon: IconBuildingWarehouse, label: resolveLanguageKey("facts.garages"), value: String(edifice.garages)} : undefined,
     ]);
 }
 
 export function floorFacts(floor: MarketingFloorCatalogListItem, resolveLanguageKey: Translate): SelectionFact[] {
     const counts = floorUnitCounts(floor);
     return present([
-        floor.areaSqm ? {icon: Maximize, label: resolveLanguageKey("facts.area"), value: `${formatNumber(floor.areaSqm)} m²`} : undefined,
-        counts.unitCount > 0 && {icon: Building2, label: resolveLanguageKey("facts.units"), value: String(counts.unitCount)},
-        counts.unitCount > 0 && {icon: Home, label: resolveLanguageKey("facts.available"), value: String(counts.availableUnitCount)},
-        counts.soldUnitCount > 0 && {icon: Layers, label: resolveLanguageKey("facts.sold"), value: String(counts.soldUnitCount)},
+        floor.areaSqm ? {icon: IconMaximize, label: resolveLanguageKey("facts.area"), value: `${formatNumber(floor.areaSqm)} m²`} : undefined,
+        counts.unitCount > 0 && {icon: IconBuildingSkyscraper, label: resolveLanguageKey("facts.units"), value: String(counts.unitCount)},
+        counts.unitCount > 0 && {icon: IconHome, label: resolveLanguageKey("facts.available"), value: String(counts.availableUnitCount)},
+        counts.soldUnitCount > 0 && {icon: IconStack2, label: resolveLanguageKey("facts.sold"), value: String(counts.soldUnitCount)},
     ]);
 }
 

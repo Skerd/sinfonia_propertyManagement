@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
-import axios from "axios";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type { Floor } from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import SimpleError from "@coreModule/components/custom/errors/errorViewWrapper.tsx";
 import PolygonSelector, { type PolygonPoint } from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import type { ResolveLanguageKey } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
-import {TriangleAlert} from "lucide-react";
+import {IconAlertTriangle} from "@tabler/icons-react";
+
+const FLOOR_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/floor/single"};
 
 const EMPTY_POLYGON: PolygonPoint[] = [];
 
@@ -44,8 +45,8 @@ export default function FormUnitPolygon({
     noImageKey = "floorNoMainImage",
 }: FormUnitPolygonProps) {
     const form = useFormContext();
-    const floorId = useWatch({ control: form.control, name: floorField as any }) as string | undefined;
-    const watchedPolygon = useWatch({ control: form.control, name: polygonField as any }) as PolygonPoint[] | undefined;
+    const floorId = useWatch({ control: form.control, name: floorField }) as string | undefined;
+    const watchedPolygon = useWatch({ control: form.control, name: polygonField }) as PolygonPoint[] | undefined;
     const unitId = (formExtras as { unitId?: string } | undefined)?.unitId;
 
     const polygonSig =
@@ -62,6 +63,35 @@ export default function FormUnitPolygon({
     const [floorError, setFloorError] = useState(false);
     const lastLoadedFloorIdRef = useRef<string | undefined>(undefined);
 
+    // One request per floorId; a response for a floorId that has changed since is dropped.
+    const [floorCount, setFloorCount] = useState(0);
+    const floorIdRef = useRef(floorId);
+    floorIdRef.current = floorId;
+    useHttpRequest<Floor>(FLOOR_REQUEST, {_id: floorId}, floorCount, true, {
+        success: (data) => {
+            if (floorIdRef.current !== floorId) return;
+            setFloorData(data);
+            lastLoadedFloorIdRef.current = floorId;
+            const pid = data?.project && typeof data.project === "object" ? (data.project as { _id?: string })._id : undefined;
+            const eid = data?.edifice && typeof data.edifice === "object" ? (data.edifice as { _id?: string })._id : undefined;
+            if (pid) {
+                form.setValue(projectField, String(pid), { shouldValidate: false, shouldDirty: false });
+            }
+            if (eid) {
+                form.setValue(edificeField, String(eid), { shouldValidate: false, shouldDirty: false });
+            }
+            setFloorError(false);
+            setLoadingFloor(false);
+        },
+        error: () => {
+            if (floorIdRef.current !== floorId) return;
+            setFloorError(true);
+            setFloorData(null);
+            lastLoadedFloorIdRef.current = undefined;
+            setLoadingFloor(false);
+        },
+    });
+
     useEffect(() => {
         if (!floorId) {
             setFloorData(null);
@@ -71,7 +101,6 @@ export default function FormUnitPolygon({
             return;
         }
 
-        const ac = new AbortController();
         setFloorError(false);
 
         const switchingFloor =
@@ -85,33 +114,7 @@ export default function FormUnitPolygon({
             setLoadingFloor(true);
         }
 
-        apiClient
-            .post<Floor>(`/api/realEstate/floor/single`, { _id: floorId }, { signal: ac.signal })
-            .then((res) => {
-                const data = res.data;
-                setFloorData(data);
-                lastLoadedFloorIdRef.current = floorId;
-                const pid = data?.project && typeof data.project === "object" ? (data.project as { _id?: string })._id : undefined;
-                const eid = data?.edifice && typeof data.edifice === "object" ? (data.edifice as { _id?: string })._id : undefined;
-                if (pid) {
-                    form.setValue(projectField as any, String(pid), { shouldValidate: false, shouldDirty: false });
-                }
-                if (eid) {
-                    form.setValue(edificeField as any, String(eid), { shouldValidate: false, shouldDirty: false });
-                }
-                setFloorError(false);
-            })
-            .catch((err: unknown) => {
-                if (axios.isCancel(err)) return;
-                setFloorError(true);
-                setFloorData(null);
-                lastLoadedFloorIdRef.current = undefined;
-            })
-            .finally(() => {
-                if (!ac.signal.aborted) setLoadingFloor(false);
-            });
-
-        return () => ac.abort();
+        setFloorCount((count) => count + 1);
         // eslint-disable-next-line react-hooks/exhaustive-deps -- RHF setters stable
     }, [floorId, projectField, edificeField]);
 
@@ -119,8 +122,8 @@ export default function FormUnitPolygon({
     useEffect(() => {
         const prev = prevFloorIdRef.current;
         if (prev !== undefined && prev !== floorId) {
-            form.setValue(polygonField as any, [] as any, { shouldValidate: false });
-            form.setValue(closedField as any, false, { shouldValidate: false });
+            form.setValue(polygonField, [], { shouldValidate: false });
+            form.setValue(closedField, false, { shouldValidate: false });
         }
         prevFloorIdRef.current = floorId;
     }, [floorId, form, polygonField, closedField]);
@@ -128,7 +131,7 @@ export default function FormUnitPolygon({
     if (!floorId ){
         return (
             <Alert>
-                <TriangleAlert className="h-4 w-4"/>
+                <IconAlertTriangle className="h-4 w-4"/>
                 <AlertTitle>{resolveLanguageKey("noFloorSelectedTitle")}</AlertTitle>
                 <AlertDescription>{resolveLanguageKey("noFloorSelectedDescription")}</AlertDescription>
             </Alert>
@@ -171,10 +174,10 @@ export default function FormUnitPolygon({
                 phantomPoints={phantomPoints}
                 initialPoints={initialPointsStable}
                 onPointsChange={(pts: PolygonPoint[]) => {
-                    form.setValue(polygonField as any, pts as any, { shouldValidate: true, shouldDirty: true });
+                    form.setValue(polygonField, pts, { shouldValidate: true, shouldDirty: true });
                 }}
                 onClosedChange={(closed: boolean) => {
-                    form.setValue(closedField as any, closed, { shouldValidate: true, shouldDirty: true });
+                    form.setValue(closedField, closed, { shouldValidate: true, shouldDirty: true });
                 }}
                 disabled={loading}
                 key={String(floorData._id) + String(imageId)}

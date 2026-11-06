@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {Eye} from "lucide-react";
+import {IconEye} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
@@ -10,8 +10,7 @@ import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {ClientRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.client.dto.ts";
 import type {ClientsListFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.form.type.ts";
 import type {ClientsListResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.response.type.ts";
@@ -36,6 +35,8 @@ type ClientsTableSectionProps = {
     onViewRow: (row: ClientRegistryRow) => void;
 };
 
+const LIST_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/contractsHub/clients/list"};
+
 export default function ClientsTableSection({
     resolveLanguageKey,
     timezone,
@@ -55,9 +56,6 @@ export default function ClientsTableSection({
     const [valueMax, setValueMax] = useState("");
     const [page, setPage] = useState(1);
 
-    const [data, setData] = useState<ClientsListResponseType | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<HttpError | null>(null);
 
     const edificeSelectBody = useMemo(
         () => selectBodyWithFilters([{field: "project", value: project}]),
@@ -79,9 +77,7 @@ export default function ClientsTableSection({
         [floor, edifice, project],
     );
 
-    const fetchData = useCallback(async () => {
-        setLoading(true);
-        setError(null);
+    const listBody = useMemo(() => {
         const body: ClientsListFormType = {page, limit: PAGE_SIZE};
         if (debouncedSearch.trim()) body.search = debouncedSearch.trim();
         if (project) body.project = project;
@@ -92,20 +88,15 @@ export default function ClientsTableSection({
         if (status) body.status = status as ClientsListFormType["status"];
         if (valueMin.trim()) body.valueMin = Number(valueMin);
         if (valueMax.trim()) body.valueMax = Number(valueMax);
-
-        try {
-            const res = await apiClient.post<ClientsListResponseType>(
-                "/api/realEstate/contractsHub/clients/list",
-                body,
-            );
-            setData(res.data);
-        } catch (err) {
-            setError(err as HttpError);
-            setData(null);
-        } finally {
-            setLoading(false);
-        }
+        return body;
     }, [page, project, edifice, floor, unit, debouncedSearch, status, unitTypeId, valueMax, valueMin]);
+    // One list request per filter/page change and per retry.
+    const [fetchCount, setFetchCount] = useState(0);
+    const fetchData = useCallback(() => setFetchCount((count) => count + 1), []);
+    const request = useHttpRequest<ClientsListResponseType>(LIST_REQUEST, listBody, fetchCount);
+    const data = request.error ? null : request.data;
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error;
 
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(searchInput), 300);
@@ -113,8 +104,8 @@ export default function ClientsTableSection({
     }, [searchInput]);
 
     useEffect(() => {
-        void fetchData();
-    }, [fetchData]);
+        fetchData();
+    }, [listBody, fetchData]);
 
     useEffect(() => {
         setPage(1);
@@ -271,7 +262,7 @@ export default function ClientsTableSection({
                             title={rk("errorTitle")}
                             description={rk("errorDescription")}
                             tooltipDescription={rk("errorTooltip")}
-                            onClick={() => void fetchData()}
+                            onClick={fetchData}
                             resolveLanguageKey={resolveLanguageKey}
                         />
                     </div>
@@ -342,7 +333,7 @@ export default function ClientsTableSection({
                                                 aria-label={rk("viewAction")}
                                                 onClick={() => onViewRow(row)}
                                             >
-                                                <Eye className="h-4 w-4" />
+                                                <IconEye className="h-4 w-4" />
                                             </Button>
                                         </TableCell>
                                     </TableRow>

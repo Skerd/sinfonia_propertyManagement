@@ -5,7 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useRef} from "react";
 import type {PaymentPlan as PaymentPlanData} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
 import {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {LoaderCircle, Wallet} from "lucide-react";
+import {IconLoader2, IconWallet} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -80,12 +80,12 @@ function SalePayDownPaymentDialog({
                     >
                         {loading ? (
                             <>
-                                <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+                                <IconLoader2 className="mr-2 h-4 w-4 animate-spin" />
                                 {resolveLanguageKey("processing")}
                             </>
                         ) : (
                             <>
-                                <Wallet className="mr-2 h-4 w-4" />
+                                <IconWallet className="mr-2 h-4 w-4" />
                                 {resolveLanguageKey("confirmPayDownPayment")}
                             </>
                         )}

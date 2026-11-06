@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useRef, useState, type MouseEvent} from "react";
 import {compose} from "redux";
 import {useFormContext} from "react-hook-form";
-import {Code2, Eye, EyeOff} from "lucide-react";
+import {IconCode, IconEye, IconEyeOff} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
@@ -169,7 +169,7 @@ function indentedAtCaret(block: string, doc: string, caret: number): string {
 }
 
 /** A toolbar mousedown would blur the textarea and drop the caret. */
-function keepCaret(event: MouseEvent<HTMLButtonElement>) {
+function keepCaret(event: MouseEvent<HTMLElement>) {
     event.preventDefault();
 }
 
@@ -299,7 +299,7 @@ function HtmlSourceEditor({
                                 onClick={() => setShowPreview((open) => !open)}
                                 aria-expanded={showPreview}
                             >
-                                {showPreview ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                                {showPreview ? <IconEyeOff className="h-4 w-4" /> : <IconEye className="h-4 w-4" />}
                                 {resolveLanguageKey(showPreview ? "hidePreview" : "showPreview")}
                             </Button>
                         ) : null}
@@ -311,7 +311,7 @@ function HtmlSourceEditor({
 
                     {!readOnly ? (
                         <div className="flex flex-wrap items-center gap-1">
-                            <Code2 className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                            <IconCode className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
                             {SNIPPETS.map((snippet) => (
                                 <Button
                                     key={snippet.id}
@@ -352,12 +352,13 @@ function HtmlSourceEditor({
                             // A group of buttons, not a list: each chip does something
                             // when clicked. `Badge asChild` inside a tooltip trigger
                             // nests two Radix Slots and the label does not survive,
-                            // so this is a plain button wearing the badge's classes.
+                            // so this is a Button wearing the badge's classes.
                             <div role="group" aria-label={String(resolveLanguageKey("palette"))} className="flex flex-wrap gap-1">
                                 {placeholders.map((token) => (
                                     <TooltipDisplayer key={token} tooltip={String(resolveLanguageKey(`tokens.${token}`))}>
-                                        <button
+                                        <Button
                                             type="button"
+                                            variant="secondary"
                                             onMouseDown={keepCaret}
                                             onClick={() => insertAtCaret(`{${token}}`)}
                                             className={cn(
@@ -368,7 +369,7 @@ function HtmlSourceEditor({
                                             )}
                                         >
                                             {`{${token}}`}
-                                        </button>
+                                        </Button>
                                     </TooltipDisplayer>
                                 ))}
                             </div>

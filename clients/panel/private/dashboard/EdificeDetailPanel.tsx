@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {compose} from "redux";
 import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import type {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
@@ -6,7 +6,7 @@ import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/p
 import {FloorPlanGrid} from "./FloorPlanGrid.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {
     Card,
     CardContent,
@@ -14,6 +14,9 @@ import {
     CardTitle,
 } from "@coreModule/components/ui/card.tsx";
 import UnitCard from "@propertyManagementModule/clients/panel/private/units/center/cardView/unitCard.tsx";
+
+const FLOORS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/floor"};
+const UNITS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit"};
 
 export interface EdificeDetailPanelProps extends WithLanguageType {
     edificeId: string;
@@ -29,38 +32,19 @@ function EdificeDetailPanelInner({
     projectId,
     projectName,
 }: EdificeDetailPanelProps) {
-    const [floors, setFloors] = useState<Floor[]>([]);
-    const [units, setUnits] = useState<Unit[]>([]);
     const [selectedUnit, setSelectedUnit] = useState<Unit | null>(null);
-    const [loading, setLoading] = useState(true);
-
+    // Floors and units load once per building.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
         setSelectedUnit(null);
-        Promise.all([
-            apiClient.post<TableResponse<Floor>>("/api/realEstate/floor", {edificeId, limit: 100, offset: 0}),
-            apiClient.post<TableResponse<Unit>>("/api/realEstate/unit", {edificeId, limit: 2000, offset: 0}),
-        ])
-            .then(([floorRes, unitRes]) => {
-                if (!cancelled) {
-                    setFloors(floorRes.data?.data ?? []);
-                    setUnits(unitRes.data?.data ?? []);
-                }
-            })
-            .catch(() => {
-                if (!cancelled) {
-                    setFloors([]);
-                    setUnits([]);
-                }
-            })
-            .finally(() => {
-                if (!cancelled) setLoading(false);
-            });
-        return () => {
-            cancelled = true;
-        };
+        setFetchCount((count) => count + 1);
     }, [edificeId]);
+    const floorsRequest = useHttpRequest<TableResponse<Floor>>(FLOORS_REQUEST, {edificeId, limit: 100, offset: 0}, fetchCount);
+    const unitsRequest = useHttpRequest<TableResponse<Unit>>(UNITS_REQUEST, {edificeId, limit: 2000, offset: 0}, fetchCount);
+    const loading = fetchCount === 0 || floorsRequest.loading || unitsRequest.loading;
+    const failed = floorsRequest.error != null || unitsRequest.error != null;
+    const floors = useMemo(() => (failed ? [] : floorsRequest.data?.data ?? []), [failed, floorsRequest.data]);
+    const units = useMemo(() => (failed ? [] : unitsRequest.data?.data ?? []), [failed, unitsRequest.data]);
 
     return (
         <Card>

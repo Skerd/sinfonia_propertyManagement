@@ -6,6 +6,7 @@ import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import PdfFirstPageThumb from "@coreModule/components/custom/pdf/PdfFirstPageThumb.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const TILE =
     "min-h-0 cursor-pointer overflow-hidden rounded-[5px] border border-pronix-border transition-colors hover:border-pronix-ink";
@@ -48,9 +49,15 @@ function GallerySlot({
     onOpen: () => void;
 }) {
     return (
-        <button type="button" className={cn(TILE, className)} onClick={onOpen} data-node-id={nodeId}>
+        <Button
+            type="button"
+            variant="bare"
+            className={cn(TILE, className)}
+            data-node-id={nodeId}
+            onClick={onOpen}
+        >
             <img alt={alt ?? ""} aria-hidden={!alt} className="size-full object-cover" src={src} />
-        </button>
+        </Button>
     );
 }
 
@@ -113,14 +120,15 @@ function PropertyGallerySection({unit, compact = false}: PropertyGallerySectionP
     const renderTile = (tile: GalleryTile, index: number, className?: string, nodeId?: string, alt?: string) => {
         if (tile.kind === "pdf") {
             return (
-                <button
+                <Button
                     type="button"
+                    variant="bare"
                     className={cn(TILE, "h-full min-h-0 w-full", className)}
-                    onClick={() => openAt(index)}
                     data-node-id={nodeId}
+                    onClick={() => openAt(index)}
                 >
                     <PdfFirstPageThumb src={tile.src} fit="contain" className="size-full bg-white" />
-                </button>
+                </Button>
             );
         }
         return (
@@ -148,14 +156,15 @@ function PropertyGallerySection({unit, compact = false}: PropertyGallerySectionP
                 {extraCount > 0 && bottomRight ? (
                     <div className={cn("grid min-h-0 grid-cols-2", extraGridGap)} data-node-id="515:6187">
                         {renderTile(bottomRight, 2)}
-                        <button
+                        <Button
                             type="button"
-                            className={extraOverlayClass}
-                            onClick={() => openAt(3)}
+                            variant="bare"
+                            className={cn(extraOverlayClass)}
                             aria-label={`+${extraCount}`}
+                            onClick={() => openAt(3)}
                         >
                             +{extraCount}
-                        </button>
+                        </Button>
                     </div>
                 ) : bottomRight ? (
                     renderTile(bottomRight, 2, undefined, "515:6187")

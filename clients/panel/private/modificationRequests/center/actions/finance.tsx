@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {DollarSign} from "lucide-react";
+import {IconCurrencyDollar} from "@tabler/icons-react";
 
 type FinanceModificationRequestProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -22,7 +22,7 @@ function FinanceModificationRequest({
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <DollarSign size={16}/>
+            <IconCurrencyDollar size={16}/>
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

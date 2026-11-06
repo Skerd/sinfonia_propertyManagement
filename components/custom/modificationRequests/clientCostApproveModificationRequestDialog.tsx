@@ -3,7 +3,8 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {LoaderCircle, CheckCircle2, XCircle} from "lucide-react";
+import {z} from "zod";
+import {IconCircleCheck, IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -21,9 +22,10 @@ import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inpu
 import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
+type ClientCostApproveFormValues = z.infer<ReturnType<typeof clientCostApproveModificationRequestFormSchema>>;
+
 type ClientCostApproveModificationRequestDialogProps = WithLanguageType &
-    //@ts-ignore //TODO check this too !important
-    WithAxiosType<any, ReturnType<typeof clientCostApproveModificationRequestFormSchema>["_type"]> & {
+    WithAxiosType<ModificationRequest, ClientCostApproveFormValues> & {
         open: boolean;
         onClose: () => void;
         request: ModificationRequest;
@@ -67,12 +69,12 @@ function ClientCostApproveModificationRequestDialog({
             _id: request._id,
             decision,
             notes: notes.trim() || undefined,
-        } as any);
+        });
     };
 
-    const financeDetails = (request as any).financeDetails;
+    const financeDetails = request.financeDetails;
     const totalCost = financeDetails?.totalCost;
-    const currencySymbol = financeDetails?.currency?.symbol ?? financeDetails?.currency?.code ?? "";
+    const currencySymbol = financeDetails?.currency?.symbol ?? financeDetails?.currency?.abbreviation ?? "";
 
     return (
         <AlertDialog open={open} onOpenChange={handleOpenChange}>
@@ -134,7 +136,7 @@ function ClientCostApproveModificationRequestDialog({
                             "text-destructive-foreground hover:bg-destructive/90": decision === "rejected",
                         })}
                     >
-                        {loading ? <LoaderCircle className="animate-spin" /> : decision === "approved" ? <CheckCircle2 /> : <XCircle />}
+                        {loading ? <IconLoader2 className="animate-spin" /> : decision === "approved" ? <IconCircleCheck /> : <IconCircleX />}
                         <p>{resolveLanguageKey("confirmButton")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

@@ -31,7 +31,7 @@ export function normalizeFindingsFromApi(
                 return {notes: item, media: []};
             }
             if (item && typeof item === "object") {
-                const o = item as {notes?: string; text?: string; media?: unknown[]; resolvedAt?: unknown; resolvedBy?: unknown};
+                const o = item as {notes?: string; text?: string; media?: unknown[]; resolvedAt?: unknown; resolvedBy?: string | {_id?: string}};
                 const notes = String(o.notes ?? o.text ?? "");
                 const mediaIds = Array.isArray(o.media)
                     ? o.media
@@ -42,9 +42,7 @@ export function normalizeFindingsFromApi(
                     ? new Date(String(o.resolvedAt)).toISOString().split("T")[0]
                     : undefined;
                 const resolvedBy = o.resolvedBy
-                    ? (typeof o.resolvedBy === "object"
-                        ? (o.resolvedBy as any)._id?.toString()
-                        : String(o.resolvedBy))
+                    ? (typeof o.resolvedBy === "object" ? o.resolvedBy._id : String(o.resolvedBy))
                     : undefined;
                 return {notes, media: mediaIds, resolvedAt, resolvedBy};
             }

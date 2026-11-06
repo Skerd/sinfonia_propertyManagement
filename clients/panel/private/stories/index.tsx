@@ -2,7 +2,7 @@ import {compose} from "redux";
 import {useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {BookOpen} from "lucide-react";
+import {IconBook} from "@tabler/icons-react";
 import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {GRID_COLS_MAX_4, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
@@ -74,7 +74,7 @@ function AllStories({resolveLanguageKey, projectId, projectName}: AllStoriesProp
                                 ? `/realEstate/stories/create?projectId=${projectId}${projectName ? `&projectName=${encodeURIComponent(projectName)}` : ""}`
                                 : "/realEstate/stories/create"
                         }
-                        icon={<BookOpen className="h-4 w-4" />}
+                        icon={<IconBook className="h-4 w-4" />}
                         labelKey="createStory"
                     />
                 </EntityListHeader>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {
   GRID_KPI,
@@ -11,10 +11,10 @@ import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import type { Edifice } from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import { ActionException } from "armonia/src/modules/core/types";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import { DashboardEdificeCard } from "@propertyManagementModule/components/custom/dashboard/edificeCard.tsx";
 import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
-import { Building2, Layers, Package, CalendarClock, TrendingUp, Ban, KeyRound } from "lucide-react";
+import {IconBan, IconBuildingSkyscraper, IconCalendarTime, IconKey, IconPackage, IconStack2, IconTrendingUp} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
@@ -22,6 +22,8 @@ import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
+
+const EDIFICES_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/edifice"};
 
 type EdificesTabProps = WithLanguageType & {
   dashboardData: DashboardFormResponseType | null | undefined;
@@ -34,30 +36,11 @@ type EdificesTabProps = WithLanguageType & {
 
 function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh, drillDownContext, viewEntriesLabel }: EdificesTabProps) {
   const navigate = useNavigate();
-  const [edifices, setEdifices] = useState<Edifice[]>([]);
-  const [edificesLoading, setEdificesLoading] = useState(true);
-  const [edificesError, setEdificesError] = useState<ActionException | null>(null);
+  const edificesRequest = useHttpRequest<TableResponse<Edifice>>(EDIFICES_REQUEST, {offset: 0, limit: 1000}, 1);
+  const edifices = useMemo(() => edificesRequest.data?.data ?? [], [edificesRequest.data]);
+  const edificesLoading = edificesRequest.loading;
+  const edificesError = edificesRequest.error;
   const [selectedEdificeId, setSelectedEdificeId] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    setEdificesLoading(true);
-    setEdificesError(null);
-    apiClient
-      .post<TableResponse<Edifice>>("/api/realEstate/edifice", { offset: 0, limit: 1000 })
-      .then((res) => {
-        if (!cancelled && res.data?.data) setEdifices(res.data.data);
-      })
-      .catch((err) => {
-        if (!cancelled) setEdificesError(err?.response?.data ?? { message: "Failed to load edifices" });
-      })
-      .finally(() => {
-        if (!cancelled) setEdificesLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
   if (loading) return <Loader />;
   if (error) {
     return (
@@ -96,11 +79,11 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
         description={resolveLanguageKey("structureSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={Building2} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("avgUnitsPerEdifice")} value={avgUnitsPerEdifice} subtitle={resolveLanguageKey("avgUnitsPerEdificeDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuildingSkyscraper} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack2} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={IconBuildingSkyscraper} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("avgUnitsPerEdifice")} value={avgUnitsPerEdifice} subtitle={resolveLanguageKey("avgUnitsPerEdificeDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -109,11 +92,11 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
         description={resolveLanguageKey("unitsByStatusDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} icon={Package} href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} icon={CalendarClock} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} icon={Ban} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} icon={IconPackage} href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} icon={IconCalendarTime} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} icon={IconKey} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} icon={IconBan} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 

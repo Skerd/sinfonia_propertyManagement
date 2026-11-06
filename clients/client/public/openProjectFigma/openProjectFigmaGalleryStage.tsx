@@ -16,6 +16,7 @@ import type {
     MarketingEdificeListItem,
     MarketingProjectSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type GallerySlide =
     | {kind: "polygon"; key: "polygon"}
@@ -154,15 +155,16 @@ function GalleryStageBody({
                 <div className="pointer-events-none absolute inset-x-0 bottom-6 z-30 flex justify-center">
                     <div className="pointer-events-auto flex gap-2 rounded-full bg-black/35 px-3 py-2">
                         {slides.map((slide, index) => (
-                            <button
-                                key={slide.key}
+                            <Button
                                 type="button"
+                                variant="bare"
+                                key={slide.key}
                                 aria-label={`Slide ${index + 1}`}
                                 aria-current={index === activeIndex ? "true" : undefined}
-                                onClick={() => api?.scrollTo(index)}
-                                className={`h-2 rounded-full transition ${
+                                className={cn(`h-2 rounded-full transition ${
                                     index === activeIndex ? "w-8 bg-white" : "w-2 bg-white/50"
-                                }`}
+                                }`)}
+                                onClick={() => api?.scrollTo(index)}
                             />
                         ))}
                     </div>

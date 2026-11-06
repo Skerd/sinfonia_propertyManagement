@@ -1,6 +1,7 @@
 import type {MarketingEdificeListItem, MarketingFloorListItem, MarketingPolygonItem} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {ProjectViewerLevel} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerState.ts";
 import {parseFloorLevel} from "@propertyManagementModule/clients/client/public/project/shared/parseFloorLevel.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type ProjectViewerSidebarProps = {
     level: ProjectViewerLevel;
@@ -103,9 +104,9 @@ function ProjectViewerSidebar({
                             const hovered = item.id === hoveredId;
                             return (
                                 <li key={item.id}>
-                                    <button
+                                    <Button
                                         type="button"
-                                        onClick={() => onSelect(item.id)}
+                                        variant="bare"
                                         onMouseEnter={() => onHoverId?.(item.id)}
                                         onMouseLeave={() => onHoverId?.(null)}
                                         onFocus={() => onHoverId?.(item.id)}
@@ -117,6 +118,7 @@ function ProjectViewerSidebar({
                                                   ? "bg-[rgba(2,71,254,0.08)] text-pronix-ink"
                                                   : "text-pronix-ink hover:bg-[rgba(24,24,24,0.04)]"
                                         }`}
+                                        onClick={() => onSelect(item.id)}
                                     >
                                         <span className="font-aeonik-medium text-base md:text-lg">{item.label}</span>
                                         {item.meta && (
@@ -128,7 +130,7 @@ function ProjectViewerSidebar({
                                                 {item.meta}
                                             </span>
                                         )}
-                                    </button>
+                                    </Button>
                                 </li>
                             );
                         })}

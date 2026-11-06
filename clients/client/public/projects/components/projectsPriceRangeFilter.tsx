@@ -5,6 +5,7 @@ import {projectsAssets} from "@propertyManagementModule/clients/client/public/pr
 import {computePriceHistogram} from "@propertyManagementModule/clients/client/public/projects/shared/computePriceHistogram.ts";
 import {roiThumbCenterCss} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
 import "./projectsFilterRange.css";
+import {Input} from "@coreModule/components/ui/input.tsx";
 
 const filterLabelClassName =
     "cursor-default font-aeonik-light text-pronix-ink not-italic leading-[1.4] text-base md:text-lg";
@@ -156,7 +157,7 @@ function ProjectsPriceRangeFilter({
                         }}
                     />
                     <div className="projects-filter-dual-range">
-                        <input
+                        <Input bare
                             type="range"
                             min={bounds.min}
                             max={bounds.max}
@@ -170,10 +171,10 @@ function ProjectsPriceRangeFilter({
                             aria-valuemin={bounds.min}
                             aria-valuemax={bounds.max}
                             aria-valuenow={priceMin}
-                            className={`projects-filter-range projects-filter-range-min absolute inset-0 ${minThumbOnTop ? "z-[5]" : "z-[3]"}`}
+                            className={`projects-filter-range projects-filter-range-min absolute inset-0 ${minThumbOnTop ? "z-[5]" : "z-[3]"} disabled:cursor-auto disabled:opacity-100`}
                             style={rangeThumbStyle}
                         />
-                        <input
+                        <Input bare
                             type="range"
                             min={bounds.min}
                             max={bounds.max}
@@ -187,7 +188,7 @@ function ProjectsPriceRangeFilter({
                             aria-valuemin={bounds.min}
                             aria-valuemax={bounds.max}
                             aria-valuenow={priceMax}
-                            className={`projects-filter-range projects-filter-range-max absolute inset-0 ${minThumbOnTop ? "z-[4]" : "z-[5]"}`}
+                            className={`projects-filter-range projects-filter-range-max absolute inset-0 ${minThumbOnTop ? "z-[4]" : "z-[5]"} disabled:cursor-auto disabled:opacity-100`}
                             style={rangeThumbStyle}
                         />
                     </div>
@@ -197,7 +198,7 @@ function ProjectsPriceRangeFilter({
             <div className="flex items-start justify-between gap-3" data-node-id="268:612">
                 <label className={priceInputShellClassName}>
                     <span className="sr-only">{resolveLanguageKey("filterPriceMin")}</span>
-                    <input
+                    <Input bare
                         type="text"
                         inputMode="numeric"
                         value={minDraft ?? formatPrice(priceMin)}
@@ -205,12 +206,12 @@ function ProjectsPriceRangeFilter({
                         onFocus={() => setMinDraft(String(roundPrice(priceMin)))}
                         onBlur={() => setMinDraft(null)}
                         onChange={(event) => handleMinInput(event.target.value)}
-                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-base tabular-nums text-pronix-ink not-italic outline-none md:text-lg"
+                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-base tabular-nums text-pronix-ink not-italic outline-none md:text-lg disabled:cursor-auto disabled:opacity-100"
                     />
                 </label>
                 <label className={priceInputShellClassName}>
                     <span className="sr-only">{resolveLanguageKey("filterPriceMax")}</span>
-                    <input
+                    <Input bare
                         type="text"
                         inputMode="numeric"
                         value={maxDraft ?? formatPrice(priceMax)}
@@ -218,7 +219,7 @@ function ProjectsPriceRangeFilter({
                         onFocus={() => setMaxDraft(String(roundPrice(priceMax)))}
                         onBlur={() => setMaxDraft(null)}
                         onChange={(event) => handleMaxInput(event.target.value)}
-                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-base tabular-nums text-pronix-blue not-italic outline-none md:text-lg"
+                        className="w-full border-0 bg-transparent text-center font-aeonik-light text-base tabular-nums text-pronix-blue not-italic outline-none md:text-lg disabled:cursor-auto disabled:opacity-100"
                     />
                 </label>
             </div>

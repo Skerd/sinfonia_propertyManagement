@@ -1,6 +1,6 @@
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useState} from "react";
 import {useSearchParams} from "react-router-dom";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {useDynamicLanguage} from "@coreModule/helpers/hooks/useDynamicLanguage.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -9,6 +9,8 @@ import {Separator} from "@coreModule/components/ui/separator.tsx";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/unsubscribe/index.tsx";
 const API = "/api/realEstate/adCampaignUnsubscribe";
+const OPEN_REQUEST: HttpRequest = {method: "post", url: API};
+const SAVE_REQUEST: HttpRequest = {method: "patch", url: `${API}/preferences`};
 
 type Preferences = {
     email: string;
@@ -52,56 +54,30 @@ function UnsubscribePage() {
     const token = searchParams.get("token") ?? "";
     const manageOnly = searchParams.get("manage") === "1";
 
-    const [state, setState] = useState<UnsubscribeResponse | null>(null);
-    const [error, setError] = useState<string | null>(null);
-    const [busy, setBusy] = useState(false);
-    const [saved, setSaved] = useState(false);
-
-    // React 18 StrictMode mounts effects twice in development; without this the
-    // opt-out would fire twice. It is idempotent, but the duplicate request is
-    // noise in the logs and in the rate limiter.
-    const ranRef = useRef(false);
-
-    useEffect(() => {
-        if (!token || ranRef.current) return;
-        ranRef.current = true;
-
-        (async () => {
-            setBusy(true);
-            try {
-                const {data} = await apiClient.post<UnsubscribeResponse>(
-                    manageOnly ? `${API}/preferences` : API,
-                    {token},
-                );
-                setState(data);
-            }
-            catch {
-                setError(resolveLanguageKey("errors.invalidToken"));
-            }
-            finally {
-                setBusy(false);
-            }
-        })();
-    }, [token, manageOnly, resolveLanguageKey]);
-
-    const save = useCallback(
-        async (patch: Record<string, boolean>) => {
-            setBusy(true);
-            setSaved(false);
-            try {
-                const {data} = await apiClient.patch<UnsubscribeResponse>(`${API}/preferences`, {token, ...patch});
-                setState(data);
-                setSaved(true);
-            }
-            catch {
-                setError(resolveLanguageKey("errors.saveFailed"));
-            }
-            finally {
-                setBusy(false);
-            }
-        },
-        [token, resolveLanguageKey],
+    // The opt-out (or, with ?manage=1, the read) is one POST once the page has its token.
+    const opened = useHttpRequest<UnsubscribeResponse>(
+        OPEN_REQUEST,
+        {token},
+        token ? 1 : 0,
+        true,
+        {},
+        {url: manageOnly ? `${API}/preferences` : API},
     );
+    const [savePatch, setSavePatch] = useState<Record<string, boolean>>({});
+    const [saveCount, setSaveCount] = useState(0);
+    const saving = useHttpRequest<UnsubscribeResponse>(SAVE_REQUEST, {token, ...savePatch}, saveCount);
+
+    const state = saving.data ?? opened.data;
+    const busy = opened.loading || saving.loading;
+    const saved = saveCount > 0 && !saving.loading && !saving.error && saving.data != null;
+    const error = opened.error
+        ? resolveLanguageKey("errors.invalidToken")
+        : saving.error ? resolveLanguageKey("errors.saveFailed") : null;
+
+    const save = (patch: Record<string, boolean>) => {
+        setSavePatch(patch);
+        setSaveCount((count) => count + 1);
+    };
 
     if (!token) {
         return <Shell title={resolveLanguageKey("errors.missingTokenTitle")} body={resolveLanguageKey("errors.missingToken")} />;

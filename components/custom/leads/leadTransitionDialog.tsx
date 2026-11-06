@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {LoaderCircle} from "lucide-react";
+import {IconLoader2} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -115,7 +115,7 @@ function LeadTransitionDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" onClick={handleSubmit} disabled={loading}>
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : null}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : null}
                         {resolveLanguageKey(`submit.${methodName}`)}
                     </Button>
                 </DialogFooter>

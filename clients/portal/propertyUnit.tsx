@@ -1,10 +1,9 @@
 import {compose} from "redux";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import type {LucideIcon} from "lucide-react";
-import {Bath, BedDouble, Layers, Maximize} from "lucide-react";
+import {IconBath, IconBed, IconMaximize, IconStack2, type TablerIcon} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -19,22 +18,22 @@ import type {
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingUnit/marketingUnitSingle.form.response.type.ts";
 import PropertyInquiryForm from "./propertyInquiryForm.tsx";
 
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/single"};
+
 const FEATURES = ["hasBalcony", "hasTerrace", "hasSeaView", "hasCityView", "hasLakeView", "hasElevator"] as const;
 
 /** One unit of a development: its photos, facts and price, and an inquiry about it. */
 function PropertyUnit({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {projectId = "", unitId = ""} = useParams();
-    const [unit, setUnit] = useState<MarketingUnitSingleItem | null | undefined>(undefined);
-
+    // One request per unit.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setUnit(undefined);
-        apiClient.post<MarketingUnitSingleFormResponseType>("/api/realEstate/marketingUnit/single", {projectId, unitId})
-            .then((res) => { if (!cancelled) setUnit(res.data.unit); })
-            .catch(() => { if (!cancelled) setUnit(null); });
-        return () => { cancelled = true; };
+        setFetchCount((count) => count + 1);
     }, [projectId, unitId]);
+    const request = useHttpRequest<MarketingUnitSingleFormResponseType>(UNIT_REQUEST, {projectId, unitId}, fetchCount);
+    const unit: MarketingUnitSingleItem | null | undefined =
+        fetchCount === 0 || request.loading ? undefined : request.error ? null : request.data?.unit ?? null;
 
     if (unit === undefined) return <Loader />;
     if (!unit) return <PortalNotFound />;
@@ -43,11 +42,11 @@ function PropertyUnit({resolveLanguageKey}: WithLanguageType) {
         ? resolveLanguageKey("priceOnRequest")
         : currency ? formatCurrency(unit.price, currency) : formatNumber(unit.price);
     const facts = [
-        unit.areaSqm != null && {icon: Maximize, label: resolveLanguageKey("facts.area"), value: `${unit.areaSqm} m²`},
-        unit.bedrooms != null && {icon: BedDouble, label: resolveLanguageKey("facts.bedrooms"), value: String(unit.bedrooms)},
-        unit.bathrooms != null && {icon: Bath, label: resolveLanguageKey("facts.bathrooms"), value: String(unit.bathrooms)},
-        unit.floorLabel && {icon: Layers, label: resolveLanguageKey("facts.floor"), value: unit.floorLabel},
-    ].filter((fact): fact is {icon: LucideIcon; label: string; value: string} => Boolean(fact));
+        unit.areaSqm != null && {icon: IconMaximize, label: resolveLanguageKey("facts.area"), value: `${unit.areaSqm} m²`},
+        unit.bedrooms != null && {icon: IconBed, label: resolveLanguageKey("facts.bedrooms"), value: String(unit.bedrooms)},
+        unit.bathrooms != null && {icon: IconBath, label: resolveLanguageKey("facts.bathrooms"), value: String(unit.bathrooms)},
+        unit.floorLabel && {icon: IconStack2, label: resolveLanguageKey("facts.floor"), value: unit.floorLabel},
+    ].filter((fact): fact is {icon: TablerIcon; label: string; value: string} => Boolean(fact));
     const images = [unit.mainImage, ...(unit.imageGallery ?? [])].filter((image): image is string => Boolean(image));
     const tone = unit.status === "available" ? "success"
         : unit.status === "reserved" ? "warning"

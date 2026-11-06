@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {CircleDot, CircleOff, Megaphone} from "lucide-react";
+import {IconCircleDot, IconCircleOff, IconSpeakerphone} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useNavigate} from "react-router-dom";
@@ -50,19 +50,19 @@ function AdCampaignTemplateRowMenuExtras({
                         navigate(`/tenancy/systemSettings/adCampaigns/create?${useParams.toString()}`);
                     }}
                 >
-                    <Megaphone className="h-4 w-4" />
+                    <IconSpeakerphone className="h-4 w-4" />
                     <span>{resolveLanguageKey("useTemplate")}</span>
                 </DropdownMenuItem>
             ) : null}
             {canManage && isActive ? (
                 <DropdownMenuItem onClick={() => onAction(DEACTIVATE_AD_CAMPAIGN_TEMPLATE_ACTION)}>
-                    <CircleOff className="h-4 w-4" />
+                    <IconCircleOff className="h-4 w-4" />
                     <span>{resolveLanguageKey("deactivate")}</span>
                 </DropdownMenuItem>
             ) : null}
             {canManage && !isActive ? (
                 <DropdownMenuItem onClick={() => onAction(ACTIVATE_AD_CAMPAIGN_TEMPLATE_ACTION)}>
-                    <CircleDot className="h-4 w-4 text-primary" />
+                    <IconCircleDot className="h-4 w-4 text-primary" />
                     <span>{resolveLanguageKey("activate")}</span>
                 </DropdownMenuItem>
             ) : null}

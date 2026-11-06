@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {FileSignature, LoaderCircle} from "lucide-react";
+import {IconLoader2, IconSignature} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -138,7 +138,7 @@ function RecordTitleTransferDialog({
                         }}
                         disabled={loading || !canSubmit}
                     >
-                        {loading ? <LoaderCircle className="animate-spin" /> : <FileSignature />}
+                        {loading ? <IconLoader2 className="animate-spin" /> : <IconSignature />}
                         <p>{resolveLanguageKey("confirm")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

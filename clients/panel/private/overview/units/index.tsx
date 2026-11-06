@@ -12,7 +12,7 @@ import {
   unitsByStatusToChartData,
 } from "@propertyManagementModule/components/custom/dashboard/StatusChart.tsx";
 import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
-import { Layers, TrendingUp, Wallet, Users, Receipt, KeyRound } from "lucide-react";
+import {IconKey, IconReceipt, IconStack2, IconTrendingUp, IconUsers, IconWallet} from "@tabler/icons-react";
 import AllUnits from "@propertyManagementModule/clients/panel/private/units";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
@@ -80,11 +80,11 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
         description={resolveLanguageKey("statusSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} subtitle={resolveLanguageKey("availableDesc")} icon={Layers} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} subtitle={resolveLanguageKey("reservedDesc")} icon={Users} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} subtitle={resolveLanguageKey("soldDesc")} icon={TrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} subtitle={resolveLanguageKey("leasedDesc")} icon={KeyRound} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} subtitle={resolveLanguageKey("availableDesc")} icon={IconStack2} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} subtitle={resolveLanguageKey("reservedDesc")} icon={IconUsers} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} subtitle={resolveLanguageKey("soldDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} subtitle={resolveLanguageKey("leasedDesc")} icon={IconKey} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -93,10 +93,10 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
         description={resolveLanguageKey("portfolioSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} subtitle={resolveLanguageKey("unavailableDesc")} icon={Layers} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={TrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("inventoryValue")} value={formatCurrency(inventoryValue)} subtitle={resolveLanguageKey("inventoryValueDesc")} icon={Wallet} href={kpi.kpiInventoryValue(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("activeReservations")} value={formatNumber(activeReservations)} subtitle={resolveLanguageKey("activeReservationsDesc")} icon={Users} href={kpi.kpiActiveReservations(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} subtitle={resolveLanguageKey("unavailableDesc")} icon={IconStack2} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("inventoryValue")} value={formatCurrency(inventoryValue)} subtitle={resolveLanguageKey("inventoryValueDesc")} icon={IconWallet} href={kpi.kpiInventoryValue(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("activeReservations")} value={formatNumber(activeReservations)} subtitle={resolveLanguageKey("activeReservationsDesc")} icon={IconUsers} href={kpi.kpiActiveReservations(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -105,9 +105,9 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
         description={resolveLanguageKey("costsSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("verifiedPaidCosts")} value={formatCurrency(verifiedPaidCostsSum)} subtitle={resolveLanguageKey("verifiedPaidCostsDesc")} icon={Receipt} href={kpi.kpiVerifiedPaidCosts(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("verifiedOutstandingCosts")} value={formatCurrency(verifiedOutstandingCostsSum)} subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")} icon={Receipt} variant="warning" href={kpi.kpiVerifiedOutstandingCosts(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalUnitCostDocuments")} value={formatNumber(unitCostDocsCount)} subtitle={resolveLanguageKey("totalUnitCostDocumentsShortDesc")} icon={Receipt} href={kpi.kpiTotalUnitCostDocuments(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("verifiedPaidCosts")} value={formatCurrency(verifiedPaidCostsSum)} subtitle={resolveLanguageKey("verifiedPaidCostsDesc")} icon={IconReceipt} href={kpi.kpiVerifiedPaidCosts(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("verifiedOutstandingCosts")} value={formatCurrency(verifiedOutstandingCostsSum)} subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")} icon={IconReceipt} variant="warning" href={kpi.kpiVerifiedOutstandingCosts(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnitCostDocuments")} value={formatNumber(unitCostDocsCount)} subtitle={resolveLanguageKey("totalUnitCostDocumentsShortDesc")} icon={IconReceipt} href={kpi.kpiTotalUnitCostDocuments(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 

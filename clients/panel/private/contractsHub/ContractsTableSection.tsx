@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {Eye} from "lucide-react";
+import {IconEye} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
@@ -11,8 +11,7 @@ import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {ContractRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.contract.dto.ts";
 import type {ContractsListFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.form.type.ts";
 import type {ContractsListResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.response.type.ts";
@@ -41,6 +40,8 @@ type ContractsTableSectionProps = {
     onViewRow: (row: ContractRegistryRow) => void;
 };
 
+const LIST_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/contractsHub/contracts/list"};
+
 export default function ContractsTableSection({
     resolveLanguageKey,
     timezone,
@@ -60,9 +61,6 @@ export default function ContractsTableSection({
     const [signatureDateTo, setSignatureDateTo] = useState("");
     const [page, setPage] = useState(1);
 
-    const [data, setData] = useState<ContractsListResponseType | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<HttpError | null>(null);
 
     const edificeSelectBody = useMemo(
         () => selectBodyWithFilters([{field: "project", value: project}]),
@@ -84,9 +82,7 @@ export default function ContractsTableSection({
         [floor, edifice, project],
     );
 
-    const fetchData = useCallback(async () => {
-        setLoading(true);
-        setError(null);
+    const listBody = useMemo(() => {
         const body: ContractsListFormType = {page, limit: PAGE_SIZE};
         if (debouncedSearch.trim()) body.search = debouncedSearch.trim();
         if (project) body.project = project;
@@ -97,20 +93,15 @@ export default function ContractsTableSection({
         if (status) body.status = status as ContractsListFormType["status"];
         if (signatureDateFrom) body.signatureDateFrom = signatureDateFrom;
         if (signatureDateTo) body.signatureDateTo = signatureDateTo;
-
-        try {
-            const res = await apiClient.post<ContractsListResponseType>(
-                "/api/realEstate/contractsHub/contracts/list",
-                body,
-            );
-            setData(res.data);
-        } catch (err) {
-            setError(err as HttpError);
-            setData(null);
-        } finally {
-            setLoading(false);
-        }
+        return body;
     }, [contractType, page, project, edifice, floor, unit, debouncedSearch, signatureDateFrom, signatureDateTo, status]);
+    // One list request per filter/page change and per retry.
+    const [fetchCount, setFetchCount] = useState(0);
+    const fetchData = useCallback(() => setFetchCount((count) => count + 1), []);
+    const request = useHttpRequest<ContractsListResponseType>(LIST_REQUEST, listBody, fetchCount);
+    const data = request.error ? null : request.data;
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error;
 
     useEffect(() => {
         const timer = setTimeout(() => setDebouncedSearch(searchInput), 300);
@@ -118,8 +109,8 @@ export default function ContractsTableSection({
     }, [searchInput]);
 
     useEffect(() => {
-        void fetchData();
-    }, [fetchData]);
+        fetchData();
+    }, [listBody, fetchData]);
 
     useEffect(() => {
         setPage(1);
@@ -278,7 +269,7 @@ export default function ContractsTableSection({
                             title={rk("errorTitle")}
                             description={rk("errorDescription")}
                             tooltipDescription={rk("errorTooltip")}
-                            onClick={() => void fetchData()}
+                            onClick={fetchData}
                             resolveLanguageKey={resolveLanguageKey}
                         />
                     </div>
@@ -337,7 +328,7 @@ export default function ContractsTableSection({
                                                 aria-label={rk("viewAction")}
                                                 onClick={() => onViewRow(row)}
                                             >
-                                                <Eye className="h-4 w-4" />
+                                                <IconEye className="h-4 w-4" />
                                             </Button>
                                         </TableCell>
                                     </TableRow>

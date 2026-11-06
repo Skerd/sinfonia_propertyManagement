@@ -9,7 +9,7 @@ import {PaymentPlan as PaymentPlanData} from "armonia/src/modules/propertyManage
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import {DollarSign, LoaderCircle} from "lucide-react";
+import {IconCurrencyDollar, IconLoader2} from "@tabler/icons-react";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {SALE_LONG_TEXT_MAX, SALE_SHORT_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 import {
@@ -163,12 +163,12 @@ function SalePayInstallmentDialog({
                     >
                         {loading ? (
                             <>
-                                <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+                                <IconLoader2 className="mr-2 h-4 w-4 animate-spin" />
                                 {resolveLanguageKey("processing") || "Processing..."}
                             </>
                         ) : (
                             <>
-                                <DollarSign className="mr-2 h-4 w-4" />
+                                <IconCurrencyDollar className="mr-2 h-4 w-4" />
                                 {resolveLanguageKey("confirmPay") || "Confirm Payment"}
                             </>
                         )}

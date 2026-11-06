@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
-import {ChevronLeft, ChevronRight, X} from "lucide-react";
+import {IconChevronLeft, IconChevronRight, IconX} from "@tabler/icons-react";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type DyeusMediaLightboxProps = {
     images?: string[];
@@ -59,19 +60,21 @@ function DyeusMediaLightbox({
                     if (event.target === event.currentTarget) onClose();
                 }}
             >
-                <button
+                <Button
                     type="button"
-                    onClick={onClose}
+                    variant="bare"
                     className="absolute right-4 top-4 z-10 flex size-10 cursor-pointer items-center justify-center text-dyeus-cream transition hover:text-dyeus-bronze md:right-6 md:top-6"
                     aria-label={t("close")}
+                    onClick={onClose}
                 >
-                    <X className="size-6" strokeWidth={1.5} />
-                </button>
+                    <IconX className="size-6" strokeWidth={1.5} />
+                </Button>
 
                 {showNav ? (
                     <>
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
                             className="absolute left-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:left-4 md:size-12"
                             aria-label={t("previous")}
                             onClick={(e) => {
@@ -79,10 +82,11 @@ function DyeusMediaLightbox({
                                 setIndex((current) => (current - 1 + items.length) % items.length);
                             }}
                         >
-                            <ChevronLeft className="size-8" strokeWidth={1.5} />
-                        </button>
-                        <button
+                            <IconChevronLeft className="size-8" strokeWidth={1.5} />
+                        </Button>
+                        <Button
                             type="button"
+                            variant="bare"
                             className="absolute right-2 top-1/2 z-10 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center text-dyeus-cream/80 transition hover:text-dyeus-cream md:right-4 md:size-12"
                             aria-label={t("next")}
                             onClick={(e) => {
@@ -90,8 +94,8 @@ function DyeusMediaLightbox({
                                 setIndex((current) => (current + 1) % items.length);
                             }}
                         >
-                            <ChevronRight className="size-8" strokeWidth={1.5} />
-                        </button>
+                            <IconChevronRight className="size-8" strokeWidth={1.5} />
+                        </Button>
                     </>
                 ) : null}
 

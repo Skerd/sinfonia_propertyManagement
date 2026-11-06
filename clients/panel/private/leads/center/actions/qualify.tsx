@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {BadgeCheck} from "lucide-react";
+import {IconRosetteDiscountCheck} from "@tabler/icons-react";
 
 export const QUALIFY_LEAD_ACTION = "qualify";
 
@@ -13,7 +13,7 @@ type QualifyLeadProps = WithLanguageType & {
 function QualifyLead({onAction, resolveLanguageKey}: QualifyLeadProps) {
     return (
         <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAction(QUALIFY_LEAD_ACTION); }}>
-            <BadgeCheck className="text-primary" size={16} />
+            <IconRosetteDiscountCheck className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

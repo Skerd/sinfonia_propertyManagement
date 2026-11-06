@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {DollarSign} from "lucide-react";
+import {IconCurrencyDollar} from "@tabler/icons-react";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
 
 type SalePayInstallmentActionProps = WithLanguageType & {
@@ -30,7 +30,7 @@ function SalePayInstallmentAction({
                 onAction("payInstallment");
             }}
         >
-            <DollarSign className="h-4 w-4 mr-2" />
+            <IconCurrencyDollar className="h-4 w-4 mr-2" />
             {resolveLanguageKey("payInstallment")}
         </DropdownMenuItem>
     );

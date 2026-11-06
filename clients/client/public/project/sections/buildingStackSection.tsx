@@ -2,6 +2,7 @@ import {useState} from "react";
 import {MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {PUBLIC_BODY, PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type BuildingStackSectionProps = {
     project: MarketingProjectSingle;
@@ -24,14 +25,15 @@ function BuildingStackSection({project, onUnitSelect}: BuildingStackSectionProps
             <div className="flex flex-col gap-y-4">
                 {project.edifices?.map((edifice) => (
                     <div key={edifice._id} className="overflow-hidden rounded-sm border border-pronix-border">
-                        <button
+                        <Button
                             type="button"
-                            onClick={() => setExpandedEdifice(expandedEdifice === edifice._id ? null : edifice._id)}
+                            variant="bare"
                             className="flex w-full items-center justify-between bg-muted px-6 py-4 text-left"
+                            onClick={() => setExpandedEdifice(expandedEdifice === edifice._id ? null : edifice._id)}
                         >
                             <span className={`${PUBLIC_BODY} font-aeonik-medium text-pronix-ink`}>{edifice.name}</span>
                             <span className="font-aeonik-light text-pronix-ink-muted">{edifice.floors?.length ?? 0} floors</span>
-                        </button>
+                        </Button>
                         {expandedEdifice === edifice._id && (
                             <div className="divide-y divide-pronix-border">
                                 {edifice.floors?.map((floor) => (
@@ -39,15 +41,16 @@ function BuildingStackSection({project, onUnitSelect}: BuildingStackSectionProps
                                         <p className="mb-3 font-aeonik-medium text-base text-pronix-ink">{floor.name}</p>
                                         <div className="flex flex-wrap gap-2">
                                             {floor.units?.map((unit) => (
-                                                <button
-                                                    key={unit._id}
+                                                <Button
                                                     type="button"
-                                                    onClick={() => onUnitSelect(unit._id)}
+                                                    variant="bare"
+                                                    key={unit._id}
                                                     className="group flex items-center gap-2 rounded-xs border border-pronix-border px-3 py-2 transition hover:border-pronix-blue"
+                                                    onClick={() => onUnitSelect(unit._id)}
                                                 >
                                                     <span className={cn("size-2 rounded-full", statusColors[unit.status])} />
                                                     <span className="font-aeonik-light text-sm text-pronix-ink group-hover:text-pronix-blue">{unit.name}</span>
-                                                </button>
+                                                </Button>
                                             ))}
                                         </div>
                                     </div>

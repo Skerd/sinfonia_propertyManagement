@@ -119,15 +119,15 @@ function PaymentAlertsInner({
               const clientLabel = getName(alert.client);
               const href = alertHref(alert, drillDownContext);
               return (
-                <button
-                  type="button"
-                  key={`${kind}-${alert.reservationId ?? alert.rentalPaymentId ?? alert.saleId ?? alert.unit._id}-${index}`}
-                  className={cn(
-                    'w-full text-left px-2.5 py-2 rounded-md border transition-colors hover:border-opacity-80 cursor-pointer',
+                <Button
+                    type="button"
+                    variant="bare"
+                    key={`${kind}-${alert.reservationId ?? alert.rentalPaymentId ?? alert.saleId ?? alert.unit._id}-${index}`}
+                    className={cn('w-full text-left px-2.5 py-2 rounded-md border transition-colors hover:border-opacity-80 cursor-pointer',
                     style.bg,
                     style.border
                   )}
-                  onClick={() => navigate(href)}
+                    onClick={() => navigate(href)}
                 >
                   <div className="flex items-start gap-2">
                     <div className={cn('p-1 rounded shrink-0', style.iconColor)}>
@@ -180,15 +180,16 @@ function PaymentAlertsInner({
                       </div>
                     </div>
                   </div>
-                </button>
+                </Button>
               );
             })}
           </div>
           {alerts!.length > 10 && (
-            <button
-              type="button"
-              className="w-full mt-3 py-1.5 text-primary text-xs font-medium hover:underline"
-              onClick={() =>
+            <Button
+                type="button"
+                variant="bare"
+                className="w-full mt-3 py-1.5 text-primary text-xs font-medium hover:underline"
+                onClick={() =>
                 navigate(
                   alerts!.every((a) => alertKind(a) === 'rent')
                     ? '/realEstate/rentalsHub?tab=payments'
@@ -200,7 +201,7 @@ function PaymentAlertsInner({
               }
             >
               {resolveLanguageKey('viewAllCount')} ({alerts!.length})
-            </button>
+            </Button>
           )}
         </>
       ) : hasEmptyList || overdueCount === 0 ? (

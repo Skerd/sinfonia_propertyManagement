@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle, useMemo, useState} from "react";
 import {DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {LoaderCircle, Mail} from "lucide-react";
+import {IconLoader2, IconMail} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -150,7 +150,7 @@ function ManualInstallmentClientEmails({
                             openDialog(action);
                         }}
                     >
-                        <Mail className="h-4 w-4" />
+                        <IconMail className="h-4 w-4" />
                         <span>{resolveLanguageKey(`actionLabels.${action}`)}</span>
                         <DropdownMenuShortcut className="opacity-0 w-0 p-0 m-0 border-0" aria-hidden />
                     </DropdownMenuItem>
@@ -184,7 +184,7 @@ function ManualInstallmentClientEmails({
                             {resolveLanguageKey("cancel")}
                         </AlertDialogCancel>
                         <AlertDialogAction onClick={handleConfirm} disabled={loading || !pending}>
-                            {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : null}
+                            {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : null}
                             {resolveLanguageKey("confirmSend")}
                         </AlertDialogAction>
                     </AlertDialogFooter>

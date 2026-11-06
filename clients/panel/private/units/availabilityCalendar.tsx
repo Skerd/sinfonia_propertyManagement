@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {useState, useCallback} from "react";
+import {useState} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {UnitAvailabilityResponse, UnitAvailabilityWindow} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unitAvailability.response.type.ts";
@@ -7,9 +7,12 @@ import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {Table} from "@coreModule/components/ui/table/table.tsx";
+
+const AVAILABILITY_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/availability"};
 
 function windowBadge(w: UnitAvailabilityWindow) {
     if (w.type === "sold")     return <Badge variant="destructive">Sold</Badge>;
@@ -36,33 +39,28 @@ function fmtDate(iso: string | undefined) {
     return formatDate(iso, {timeZone: "UTC", format: CALENDAR_DATE_FORMAT}) || "—";
 }
 
-function UnitAvailabilityCalendar({}: WithLanguageType) {
+function UnitAvailabilityCalendar(_props: WithLanguageType) {
     const defaultFrom = new Date(Date.now() - 30  * 24 * 3600 * 1000).toISOString().split("T")[0];
     const defaultTo   = new Date(Date.now() + 180 * 24 * 3600 * 1000).toISOString().split("T")[0];
 
     const [projectId, setProjectId] = useState("");
     const [dateFrom,  setDateFrom]  = useState(defaultFrom);
     const [dateTo,    setDateTo]    = useState(defaultTo);
-    const [loading,   setLoading]   = useState(false);
-    const [data,      setData]      = useState<UnitAvailabilityResponse | null>(null);
-    const [error,     setError]     = useState<string | null>(null);
+    // Loads on the Load button with the filters as they are at that moment.
+    const [query, setQuery] = useState<Record<string, string>>({});
+    const [loadCount, setLoadCount] = useState(0);
+    const [error, setError] = useState<string | null>(null);
+    const request = useHttpRequest<{data?: UnitAvailabilityResponse}>(AVAILABILITY_REQUEST, query, loadCount, true, {
+        start: () => setError(null),
+        error: (e) => setError(handleError(e, {context: "AvailabilityCalendar"})?.displayMessage ?? "Failed to load availability data"),
+    });
+    const loading = request.loading;
+    const data = request.error ? null : request.data?.data ?? null;
 
-    const load = useCallback(async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const res = await apiClient.post("/api/realEstate/unit/availability", {
-                ...(projectId ? {projectId} : {}),
-                dateFrom,
-                dateTo,
-            });
-            setData(res.data?.data ?? null);
-        } catch (e) {
-            setError(handleError(e, {context: "AvailabilityCalendar"})?.displayMessage ?? "Failed to load availability data");
-        } finally {
-            setLoading(false);
-        }
-    }, [projectId, dateFrom, dateTo]);
+    const load = () => {
+        setQuery({...(projectId ? {projectId} : {}), dateFrom, dateTo});
+        setLoadCount((count) => count + 1);
+    };
 
     return (
         <div className="flex flex-col p-6 gap-y-6 max-w-5xl mx-auto">
@@ -131,7 +129,7 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
                             {entry.windows.length === 0 ? (
                                 <p className="px-4 py-3 text-xs text-muted-foreground">No bookings in this period.</p>
                             ) : (
-                                <table className="w-full text-xs">
+                                <Table bare className="w-full text-xs">
                                     <thead>
                                         <tr className="border-b bg-muted/20">
                                             <th className="px-4 py-2 text-left font-medium">Type</th>
@@ -150,7 +148,7 @@ function UnitAvailabilityCalendar({}: WithLanguageType) {
                                             </tr>
                                         ))}
                                     </tbody>
-                                </table>
+                                </Table>
                             )}
                         </div>
                     ))}

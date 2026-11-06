@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent} from "react";
 import {useNavigate} from "react-router-dom";
 import {compose} from "redux";
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import {IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
 import {useReducedMotion} from "motion/react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -18,6 +18,8 @@ import {
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {MarketingFeaturedProjectsResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const CARD_GAP_PX = 12;
 /** Three identical strips — wrap is always invisible because clones match. */
@@ -512,22 +514,24 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
                             / {String(slideCount).padStart(2, "0")}
                         </span>
                     </span>
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         aria-label={t("prevAria")}
                         className="flex size-12 items-center justify-center rounded-[5px] border border-pronix-border text-pronix-ink transition duration-300 hover:border-pronix-blue hover:bg-pronix-blue hover:text-white"
                         onClick={() => scrollByCard(-1)}
                     >
-                        <ChevronLeft className="size-5" aria-hidden />
-                    </button>
-                    <button
+                        <IconChevronLeft className="size-5" aria-hidden />
+                    </Button>
+                    <Button
                         type="button"
+                        variant="bare"
                         aria-label={t("nextAria")}
                         className="flex size-12 items-center justify-center rounded-[5px] border border-pronix-border text-pronix-ink transition duration-300 hover:border-pronix-blue hover:bg-pronix-blue hover:text-white"
                         onClick={() => scrollByCard(1)}
                     >
-                        <ChevronRight className="size-5" aria-hidden />
-                    </button>
+                        <IconChevronRight className="size-5" aria-hidden />
+                    </Button>
                 </div>
             </FadeIn>
 
@@ -609,18 +613,19 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
                 </div>
                 <div className="flex shrink-0 gap-1.5" role="tablist" aria-label={t("slidesAria")}>
                     {slides.map((slide, index) => (
-                        <button
-                            key={slide.projectId}
+                        <Button
                             type="button"
-                            role="tab"
+                            variant="bare"
+                            key={slide.projectId}
                             aria-label={fillLanguageTemplate(t("goToAria"), {title: slide.title})}
                             aria-selected={index === activeIndex}
-                            className={`h-1.5 rounded-sm transition-all duration-300 ${
+                            className={cn(`h-1.5 rounded-sm transition-all duration-300 ${
                                 index === activeIndex
                                     ? "w-7 bg-pronix-blue"
                                     : "w-1.5 bg-pronix-border hover:bg-pronix-ink-faded"
-                            }`}
+                            }`)}
                             onClick={() => scrollToIndex(index)}
+                            role="tab"
                         />
                     ))}
                 </div>
@@ -629,11 +634,13 @@ function FeaturedPropertiesSectionInner({data, loading, onFilterChange, resolveL
     );
 }
 
-export default compose(
+const FeaturedPropertiesSection: React.ComponentType = compose(
     withLanguage("src/modules/propertyManagement/clients/client/public/home/sections/featuredPropertiesSection.tsx"),
     withAxios<MarketingFeaturedProjectsResponse>(
         {method: "post", url: "/api/realEstate/marketingFeaturedProjects", data: {}},
         true,
     ),
     withDebug(true, true),
-)(FeaturedPropertiesSectionInner) as unknown as React.ComponentType;
+)(FeaturedPropertiesSectionInner);
+
+export default FeaturedPropertiesSection;

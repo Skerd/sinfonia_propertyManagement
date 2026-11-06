@@ -1,6 +1,8 @@
 import {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {usePublicFavorites} from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesContext.tsx";
 import PublicFavoriteHeartIcon from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartIcon.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const heartButtonClassName =
     "relative flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[rgba(24,24,24,0.1)] bg-white transition duration-200 hover:border-pronix-ink hover:shadow-sm active:scale-95";
@@ -14,11 +16,12 @@ function PublicFavoritesBasketButton({resolveLanguageKey}: PublicFavoritesBasket
     const displayCount = totalCount > 99 ? "99+" : String(totalCount);
 
     return (
-        <button
+        <Button
             type="button"
-            className={heartButtonClassName}
-            onClick={openPanel}
+            variant="bare"
+            className={cn(heartButtonClassName)}
             aria-label={String(resolveLanguageKey("favoritesBasket"))}
+            onClick={openPanel}
         >
             <PublicFavoriteHeartIcon active={false} />
             {totalCount > 0 ? (
@@ -26,7 +29,7 @@ function PublicFavoritesBasketButton({resolveLanguageKey}: PublicFavoritesBasket
                     {displayCount}
                 </span>
             ) : null}
-        </button>
+        </Button>
     );
 }
 

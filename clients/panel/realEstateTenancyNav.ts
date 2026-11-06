@@ -1,15 +1,4 @@
-import {
-    BookMarked,
-    ClipboardCheck,
-    Hammer,
-    Layers,
-    MailPlus,
-    Megaphone,
-    PackageCheck,
-    Settings2,
-    Tag,
-    TowerControl,
-} from "lucide-react";
+import {IconAdjustmentsHorizontal, IconBookmarks, IconBuildingBroadcastTower, IconClipboardCheck, IconHammer, IconMailPlus, IconPackageExport, IconSpeakerphone, IconStack2, IconTag} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {NavSubCollapsible} from "@coreModule/helpers/types/sidebarNav.types.ts";
 
@@ -19,7 +8,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
 ): NavSubCollapsible {
     return {
         title: resolveLanguageKey("menus.realEstate.title"),
-        icon: TowerControl,
+        icon: IconBuildingBroadcastTower,
         permissions: [],
         usersPermissions: [],
         atLeastOnePermission: true,
@@ -27,7 +16,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.salesAndHandover.title"),
                 url: "/tenancy/systemSettings/propertyManagementConfig",
-                icon: Settings2,
+                icon: IconAdjustmentsHorizontal,
                 permissions: [],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -35,7 +24,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.handoverPackages.title"),
                 url: "/tenancy/systemSettings/handoverPackages",
-                icon: PackageCheck,
+                icon: IconPackageExport,
                 permissions: ["handoverpackages"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -43,7 +32,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.inspectionChecklistTemplates.title"),
                 url: "/tenancy/systemSettings/inspectionChecklistTemplates",
-                icon: ClipboardCheck,
+                icon: IconClipboardCheck,
                 permissions: ["inspectionchecklisttemplates"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -51,7 +40,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.constructors.title"),
                 url: "/tenancy/systemSettings/constructors",
-                icon: Hammer,
+                icon: IconHammer,
                 permissions: ["constructors"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -59,7 +48,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.unitTypeCategories.title"),
                 url: "/tenancy/systemSettings/unitTypeCategories",
-                icon: Layers,
+                icon: IconStack2,
                 permissions: ["unitTypeCategories"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -67,7 +56,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.unitTypes.title"),
                 url: "/tenancy/systemSettings/unitTypes",
-                icon: Tag,
+                icon: IconTag,
                 permissions: ["unitTypes"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -75,7 +64,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.storyTypes.title"),
                 url: "/tenancy/systemSettings/storyTypes",
-                icon: BookMarked,
+                icon: IconBookmarks,
                 permissions: ["storyTypes"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -83,7 +72,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.adCampaigns.title"),
                 url: "/tenancy/systemSettings/adCampaigns",
-                icon: Megaphone,
+                icon: IconSpeakerphone,
                 permissions: ["adCampaigns"],
                 usersPermissions: [],
                 atLeastOnePermission: true,
@@ -91,7 +80,7 @@ export function buildRealEstateTenancySettingsSubCollapsible(
             {
                 title: resolveLanguageKey("menus.realEstate.adCampaignTemplates.title"),
                 url: "/tenancy/systemSettings/adCampaignTemplates",
-                icon: MailPlus,
+                icon: IconMailPlus,
                 permissions: ["adCampaignTemplates"],
                 usersPermissions: [],
                 atLeastOnePermission: true,

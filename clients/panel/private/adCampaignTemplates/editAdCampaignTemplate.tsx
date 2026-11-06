@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editAdCampaignTemplateFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaignTemplate/editAdCampaignTemplate.form.validator.ts";
 import type {AdCampaignTemplate} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaignTemplate/adCampaignTemplate.dto.ts";
@@ -9,5 +9,5 @@ export default createGenericEditPage<AdCampaignTemplate, EditAdCampaignTemplateF
     model: "adcampaigntemplates",
     apiUrl: "/api/realEstate/adCampaignTemplate",
     schema: editAdCampaignTemplateFormSchema,
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

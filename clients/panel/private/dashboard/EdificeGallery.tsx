@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import { compose } from "redux";
 import { DashboardEdificeCard } from "@propertyManagementModule/components/custom/dashboard/edificeCard.tsx";
 import type { Edifice } from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {IconChevronLeft, IconChevronRight} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -11,6 +11,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
 
 const CARDS_PER_PAGE = 6;
+const EDIFICES_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/edifice"};
 const CARD_MIN_WIDTH = 280;
 
 export interface EdificeGalleryProps extends WithLanguageType {
@@ -25,45 +26,32 @@ function EdificeGalleryInner({
   onSelectEdifice,
   onEdificesLoaded,
 }: EdificeGalleryProps) {
-  const [edifices, setEdifices] = useState<Edifice[]>([]);
-  const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // One request per page.
+  const [fetchCount, setFetchCount] = useState(0);
+  useEffect(() => {
+    setFetchCount((count) => count + 1);
+  }, [page]);
+  const request = useHttpRequest<TableResponse<Edifice>>(
+    EDIFICES_REQUEST,
+    { offset: page * CARDS_PER_PAGE, limit: CARDS_PER_PAGE },
+    fetchCount,
+    true,
+    {
+      success: (response) => {
+        if (page === 0 && response.data.length > 0) onEdificesLoaded?.(response.data);
+      },
+    },
+  );
+  const edifices = useMemo(() => (request.error ? [] : request.data?.data ?? []), [request.error, request.data]);
+  const total = request.data?.total ?? edifices.length;
+  const loading = fetchCount === 0 || request.loading;
 
   const totalPages = Math.ceil(total / CARDS_PER_PAGE) || 1;
   const canGoPrev = page > 0;
   const canGoNext = page < totalPages - 1;
-
-  useEffect(() => {
-    let cancelled = false;
-    setLoading(true);
-    const offset = page * CARDS_PER_PAGE;
-    apiClient
-      .post<TableResponse<Edifice>>(
-        "/api/realEstate/edifice",
-        { offset, limit: CARDS_PER_PAGE }
-      )
-      .then((res) => {
-        if (!cancelled && res.data?.data) {
-          const data = res.data.data;
-          setEdifices(data);
-          setTotal(res.data.total ?? data.length);
-          if (page === 0 && data.length > 0) {
-            onEdificesLoaded?.(data);
-          }
-        }
-      })
-      .catch(() => {
-        if (!cancelled) setEdifices([]);
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [page]);
 
   const goPrev = () => {
     if (canGoPrev) setPage((p) => p - 1);
@@ -98,7 +86,7 @@ function EdificeGalleryInner({
             }}
             disabled={!canGoPrev}
           >
-            <ChevronLeft className="h-4 w-4" />
+            <IconChevronLeft className="h-4 w-4" />
           </Button>
           <span className="text-xs text-muted-foreground min-w-16 text-center">
             {page + 1} / {totalPages}
@@ -113,7 +101,7 @@ function EdificeGalleryInner({
             }}
             disabled={!canGoNext}
           >
-            <ChevronRight className="h-4 w-4" />
+            <IconChevronRight className="h-4 w-4" />
           </Button>
         </div>
       </div>

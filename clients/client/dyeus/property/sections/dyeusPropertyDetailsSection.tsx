@@ -12,6 +12,7 @@ import {
     formatUnitPrice,
     type DyeusPropertyCopy,
 } from "@propertyManagementModule/clients/client/dyeus/property/dyeusPropertyFormat.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type DyeusPropertyDetailsSectionProps = {
     unit: MarketingUnitSingle;
@@ -144,20 +145,20 @@ function DyeusPropertyDetailsSection({unit, t, onRequestInfo, compact = false}: 
             ) : null}
 
             {compact ? (
-                <button
+                <Button
                     type="button"
-                    onClick={onRequestInfo}
-                    className={cn(
-                        "mt-5 flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-5 py-3",
+                    variant="bare"
+                    className={cn("mt-5 flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-5 py-3",
                         "bg-transparent text-dyeus-ink transition-colors duration-200",
                         "hover:bg-dyeus-ink hover:text-dyeus-cream",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-cream",
                     )}
+                    onClick={onRequestInfo}
                 >
                     <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em]">
                         {t("requestInfo")}
                     </span>
-                </button>
+                </Button>
             ) : (
                 <div className="relative mt-8 min-h-[100px] w-full overflow-hidden md:min-h-[122px]">
                     <img
@@ -171,20 +172,20 @@ function DyeusPropertyDetailsSection({unit, t, onRequestInfo, compact = false}: 
                         <p className="font-dyeus-serif text-2xl font-bold leading-[1.2] text-dyeus-cream sm:max-w-md md:text-4xl lg:text-5xl">
                             {t("notSureTitle")}
                         </p>
-                        <button
+                        <Button
                             type="button"
-                            onClick={onRequestInfo}
-                            className={cn(
-                                "flex shrink-0 cursor-pointer items-center justify-center border border-dyeus-cream px-6 py-3 md:px-8 md:py-4",
+                            variant="bare"
+                            className={cn("flex shrink-0 cursor-pointer items-center justify-center border border-dyeus-cream px-6 py-3 md:px-8 md:py-4",
                                 "bg-transparent text-dyeus-cream transition-colors duration-200",
                                 "hover:bg-dyeus-cream hover:text-dyeus-ink",
                                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-cream/70 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-ink",
                             )}
+                            onClick={onRequestInfo}
                         >
                             <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
                                 {t("requestInfo")}
                             </span>
-                        </button>
+                        </Button>
                     </div>
                 </div>
             )}

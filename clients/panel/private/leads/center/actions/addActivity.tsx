@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {History} from "lucide-react";
+import {IconHistory} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Lead} from "armonia/src/modules/propertyManagement/api/realEstate/private/lead/lead.dto.ts";
 
@@ -22,7 +22,7 @@ function AddLeadActivity({onAction, lead, resolveLanguageKey}: AddLeadActivityPr
 
     return (
         <DropdownMenuItem onClick={() => { onAction(ADD_LEAD_ACTIVITY_ACTION); }}>
-            <History className="text-primary" size={16} />
+            <IconHistory className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

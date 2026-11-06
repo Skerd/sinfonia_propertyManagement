@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle, useState} from "react";
-import {Ban, LoaderCircle} from "lucide-react";
+import {IconBan, IconLoader2} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -95,7 +95,7 @@ function TerminateLeaseDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" variant="destructive" onClick={handleSubmit} disabled={loading}>
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : <Ban className="h-4 w-4" />}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconBan className="h-4 w-4" />}
                         {resolveLanguageKey("submit")}
                     </Button>
                 </DialogFooter>

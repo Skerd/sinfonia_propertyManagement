@@ -5,7 +5,7 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {SimpleSelect} from "@coreModule/components/viewEngine/widgets/inputs/simpleSelect.tsx";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {EXPENDITURE_CATEGORY_VALUES, MAX_MEDIA_FILES_PER_EXPENDITURE_LINE, MEASURE_UNIT_VALUES} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.constants.ts";
-import {Trash2, Plus} from "lucide-react";
+import {IconPlus, IconTrash} from "@tabler/icons-react";
 import FormMultiLocalFileField from "@coreModule/components/viewEngine/widgets/media/formMultiLocalFileField.tsx";
 import {compose} from "redux";
 import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -55,7 +55,7 @@ function FormExpenditureItemsFieldInner({
                             {resolveLanguageKey("expenditureLine")} #{index + 1}
                         </span>
                         <Button type="button" variant="ghost" size="icon" className="h-8 w-8" onClick={() => remove(index)}>
-                            <Trash2 className="h-4 w-4" />
+                            <IconTrash className="h-4 w-4" />
                         </Button>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 items-start">
@@ -186,7 +186,7 @@ function FormExpenditureItemsFieldInner({
                     })
                 }
             >
-                <Plus className="h-4 w-4 mr-1" />
+                <IconPlus className="h-4 w-4 mr-1" />
                 {resolveLanguageKey("addExpenditureLine")}
             </Button>
         </div>

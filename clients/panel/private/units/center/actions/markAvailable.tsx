@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CircleCheck} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 
 type MarkAvailableProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -18,7 +18,7 @@ function MarkAvailable({onAction, resolveLanguageKey}: MarkAvailableProps) {
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <CircleCheck size={16}/>
+            <IconCircleCheck size={16}/>
             <p>{resolveLanguageKey("title")}</p>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

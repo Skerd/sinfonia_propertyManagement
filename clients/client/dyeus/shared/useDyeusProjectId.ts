@@ -1,11 +1,12 @@
-import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
 type CatalogResponse = {
     projects?: MarketingProject[];
 };
+
+const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectsCatalog"};
 
 function resolveFromEnv(): string {
     const fromEnv = import.meta.env.VITE_DYEUS_PROJECT_ID;
@@ -21,42 +22,10 @@ function pickDyeusProject(projects: MarketingProject[]): MarketingProject | unde
 export function useDyeusProjectId(): {projectId: string; loading: boolean} {
     const [searchParams] = useSearchParams();
     const fromQuery = searchParams.get("projectId")?.trim() ?? "";
-    const [resolvedId, setResolvedId] = useState(fromQuery || resolveFromEnv());
-    const [loading, setLoading] = useState(!fromQuery && !resolveFromEnv());
+    const fixedId = fromQuery || resolveFromEnv();
+    // The catalog is only read when neither the URL nor the env names the project; a failed read leaves it empty.
+    const {data, loading} = useHttpRequest<CatalogResponse>(CATALOG_REQUEST, {}, fixedId ? 0 : 1);
 
-    useEffect(() => {
-        if (fromQuery) {
-            setResolvedId(fromQuery);
-            setLoading(false);
-            return;
-        }
-
-        const envId = resolveFromEnv();
-        if (envId) {
-            setResolvedId(envId);
-            setLoading(false);
-            return;
-        }
-
-        let cancelled = false;
-        setLoading(true);
-        (async () => {
-            try {
-                const res = await apiClient.post<CatalogResponse>("/api/realEstate/marketingProjectsCatalog", {});
-                if (cancelled) return;
-                const project = pickDyeusProject(res.data.projects ?? []);
-                setResolvedId(project?._id ?? "");
-            } catch {
-                if (!cancelled) setResolvedId("");
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-
-        return () => {
-            cancelled = true;
-        };
-    }, [fromQuery]);
-
-    return {projectId: resolvedId, loading};
+    if (fixedId) return {projectId: fixedId, loading: false};
+    return {projectId: pickDyeusProject(data?.projects ?? [])?._id ?? "", loading};
 }

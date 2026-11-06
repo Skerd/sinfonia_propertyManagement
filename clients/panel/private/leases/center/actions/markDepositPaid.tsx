@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CircleCheck} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 
@@ -23,7 +23,7 @@ function MarkDepositPaid({onAction, lease, resolveLanguageKey}: MarkDepositPaidP
 
     return (
         <DropdownMenuItem onClick={() => {onAction(MARK_DEPOSIT_PAID_ACTION);}}>
-            <CircleCheck className="text-primary" size={16} />
+            <IconCircleCheck className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

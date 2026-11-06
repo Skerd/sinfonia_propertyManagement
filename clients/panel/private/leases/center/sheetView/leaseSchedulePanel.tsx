@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {MoreHorizontal} from "lucide-react";
+import {IconDots} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -8,7 +8,7 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@coreModule/components/ui/dropdown-menu.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {TableForm, TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
@@ -23,6 +23,7 @@ import RecordRentPaymentDialog from "@propertyManagementModule/components/custom
 import {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
+const LEASE_PAYMENTS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalPayment"};
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
 type LeaseSchedulePanelProps = {
@@ -80,7 +81,6 @@ export default function LeaseSchedulePanel({
             : {};
     const canReadTenant = leaseRead.tenant !== undefined;
 
-    const [payments, setPayments] = useState<RentalPayment[]>([]);
     const [localNonce, setLocalNonce] = useState(0);
     const [selected, setSelected] = useState<RentalPayment | null>(null);
     const [action, setAction] = useState("");
@@ -90,24 +90,17 @@ export default function LeaseSchedulePanel({
         onScheduleChanged?.();
     }, [onScheduleChanged]);
 
+    // The lease's schedule, reloaded after every change made here or by the sheet.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        if (!lease._id) return;
-        let cancelled = false;
-        void apiClient
-            .post<TableResponse<RentalPayment>>("/api/realEstate/rentalPayment", {
-                offset: 0,
-                limit: 600,
-                lease: lease._id,
-                sortBy: "dueDate",
-                sortOrder: "asc",
-            } satisfies TableForm & {lease: string})
-            .then((res) => {
-                if (!cancelled) setPayments(res.data.data);
-            });
-        return () => {
-            cancelled = true;
-        };
+        if (lease._id) setFetchCount((count) => count + 1);
     }, [lease._id, refreshNonce, localNonce]);
+    const paymentsBody = useMemo(
+        () => ({offset: 0, limit: 600, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
+        [lease._id],
+    );
+    const paymentsRequest = useHttpRequest<TableResponse<RentalPayment>>(LEASE_PAYMENTS_REQUEST, paymentsBody, fetchCount);
+    const payments = useMemo(() => paymentsRequest.data?.data ?? [], [paymentsRequest.data]);
 
     useEffect(() => {
         if (requestedAction === RECORD_RENT_PAYMENT_ACTION) {
@@ -174,9 +167,10 @@ export default function LeaseSchedulePanel({
                         const styles = statusStyles(row.status);
                         const canPay = OPEN_STATUSES.has(row.status ?? "") && (row.remaining ?? 0) > 0;
                         return (
-                            <button
-                                key={row._id}
+                            <Button
                                 type="button"
+                                variant="bare"
+                                key={row._id}
                                 title={`${row.dueDate} · ${resolveStatusLabel(resolveLanguageKey, row.status)}`}
                                 className={cn("size-5 rounded-sm border border-border/40", styles.cell, canPay && "cursor-pointer")}
                                 onClick={() => {
@@ -229,7 +223,7 @@ export default function LeaseSchedulePanel({
                                                 <DropdownMenu>
                                                     <DropdownMenuTrigger asChild>
                                                         <Button type="button" variant="ghost" size="icon">
-                                                            <MoreHorizontal className="h-4 w-4" />
+                                                            <IconDots className="h-4 w-4" />
                                                         </Button>
                                                     </DropdownMenuTrigger>
                                                     <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>

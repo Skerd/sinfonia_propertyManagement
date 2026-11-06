@@ -1,5 +1,5 @@
 import {useImperativeHandle, useState, type RefObject} from "react";
-import {BellRing, LoaderCircle} from "lucide-react";
+import {IconBellRinging, IconLoader2} from "@tabler/icons-react";
 import {DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {
     AlertDialog,
@@ -51,7 +51,7 @@ export default function ResendStaffNotificationsMenuItem({
                     setOpen(true);
                 }}
             >
-                <BellRing className="h-4 w-4" />
+                <IconBellRinging className="h-4 w-4" />
                 <span>{resolveLanguageKey("actionLabel")}</span>
                 <DropdownMenuShortcut className="opacity-0 w-0 p-0 m-0 border-0" aria-hidden />
             </DropdownMenuItem>
@@ -65,7 +65,7 @@ export default function ResendStaffNotificationsMenuItem({
                     <AlertDialogFooter>
                         <AlertDialogCancel disabled={loading}>{resolveLanguageKey("cancel")}</AlertDialogCancel>
                         <AlertDialogAction onClick={onConfirm} disabled={loading}>
-                            {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : null}
+                            {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : null}
                             {resolveLanguageKey("confirmSend")}
                         </AlertDialogAction>
                     </AlertDialogFooter>

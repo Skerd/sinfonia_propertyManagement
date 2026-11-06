@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {compose} from "redux";
 import {useSelector} from "react-redux";
-import {Download} from "lucide-react";
+import {IconDownload} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -27,6 +27,10 @@ import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggrega
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
+
+const COMPANY_INFO_REQUEST: HttpRequest = {method: "get", url: "/api/company/basicInfo"};
 
 const PERIOD_OPTIONS: {value: string; fromDaysAgo: number; langKey: string}[] = [
     {value: "last30",       fromDaysAgo: 30,  langKey: "period.last30"},
@@ -79,6 +83,8 @@ function AgentReportPage({
     const [dateTo, setDateTo] = useState(INITIAL_DATES.dateTo);
     const [agentIds, setAgentIds] = useState<string[]>([]);
     const [exporting, setExporting] = useState(false);
+    // The PDF letterhead (company name and logo).
+    const {data: company} = useHttpRequest<BasicCompanyInfoFormResponseType>(COMPANY_INFO_REQUEST, {}, 1);
 
     const onFilterChangeRef = useRef(onFilterChange);
     onFilterChangeRef.current = onFilterChange;
@@ -150,7 +156,7 @@ function AgentReportPage({
         if (!data) return;
         setExporting(true);
         try {
-            await downloadAgentReportPdf(data, pdfLabels, {timezone});
+            await downloadAgentReportPdf(data, pdfLabels, {timezone, company});
         } finally {
             setExporting(false);
         }
@@ -232,7 +238,7 @@ function AgentReportPage({
                             disabled={exporting || loading}
                             onClick={() => void handleExportPdf()}
                         >
-                            <Download className="h-4 w-4 mr-2" />
+                            <IconDownload className="h-4 w-4 mr-2" />
                             {exporting ? rk("exportPdfLoading") : rk("exportPdf")}
                         </Button>
                     )}

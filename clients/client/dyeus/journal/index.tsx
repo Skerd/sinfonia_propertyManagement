@@ -1,7 +1,7 @@
 import {type ComponentType, useEffect, useMemo, useState} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
-import {ArrowUpRight} from "lucide-react";
+import {IconArrowUpRight} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -14,6 +14,7 @@ import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import type {MarketingStoriesResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import DyeusMagazineSpread from "@propertyManagementModule/clients/client/dyeus/journal/dyeusMagazineSpread.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type JournalFilter = {
     projectId: string;
@@ -72,34 +73,34 @@ function JournalPageInner({
                             <span className="font-dyeus-sans text-sm text-dyeus-ink-muted md:text-base">
                                 {t("filterBy")}
                             </span>
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => setSelectedStoryTypeId("")}
-                                className={cn(
-                                    "rounded-[5px] px-6 py-3 font-dyeus-sans text-base transition-colors md:text-lg",
+                                variant="bare"
+                                className={cn("rounded-[5px] px-6 py-3 font-dyeus-sans text-base transition-colors md:text-lg",
                                     !selectedStoryTypeId
                                         ? "bg-dyeus-bronze text-white"
                                         : "text-dyeus-ink hover:text-dyeus-bronze",
                                 )}
+                                onClick={() => setSelectedStoryTypeId("")}
                             >
                                 {t("filterAll")}
-                            </button>
+                            </Button>
                             {storyTypes.map((type) => {
                                 const active = selectedStoryTypeId === type._id;
                                 return (
-                                    <button
-                                        key={type._id}
+                                    <Button
                                         type="button"
-                                        onClick={() => setSelectedStoryTypeId(type._id)}
-                                        className={cn(
-                                            "rounded-[5px] px-6 py-3 font-dyeus-sans text-base transition-colors md:text-lg",
+                                        variant="bare"
+                                        key={type._id}
+                                        className={cn("rounded-[5px] px-6 py-3 font-dyeus-sans text-base transition-colors md:text-lg",
                                             active
                                                 ? "bg-dyeus-bronze text-white"
                                                 : "text-dyeus-ink hover:text-dyeus-bronze",
                                         )}
+                                        onClick={() => setSelectedStoryTypeId(type._id)}
                                     >
                                         {type.name}
-                                    </button>
+                                    </Button>
                                 );
                             })}
                         </div>
@@ -143,7 +144,7 @@ function JournalPageInner({
                                                         {story.title}
                                                     </h2>
                                                 </div>
-                                                <ArrowUpRight className="size-8 shrink-0 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                                <IconArrowUpRight className="size-8 shrink-0 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                             </div>
                                         </article>
                                     </Link>
@@ -193,11 +194,13 @@ function JournalPageInner({
     );
 }
 
-export default compose(
+const JournalPage: ComponentType = compose(
     withAxios<MarketingStoriesResponse, JournalFilter>(
         {method: "post", url: "/api/realEstate/marketingStories", data: {}},
         false,
     ),
     withLanguage("src/modules/propertyManagement/clients/client/dyeus/journal/index.tsx"),
     withDebug(true, true),
-)(JournalPageInner) as unknown as ComponentType;
+)(JournalPageInner);
+
+export default JournalPage;

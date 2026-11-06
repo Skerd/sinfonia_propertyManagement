@@ -2,6 +2,7 @@ import {createGenericEditPage} from "@coreModule/components/entityPage/pages/cre
 import {editUnitCostFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/editUnitCost.form.validator.ts";
 import type {UnitCost} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.dto.ts";
 import type {EditUnitCostFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.schema-def.ts";
+import {calendarDay, refId} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 type EditUnitCostFormData = Omit<EditUnitCostFormType, "invoiceMedia" | "expenditureItems"> & {
     invoiceMedia?: (string | File)[];
@@ -48,18 +49,18 @@ export default createGenericEditPage<UnitCost, EditUnitCostFormData>({
         return {
             _id: data._id,
             purchasePerson: wf.purchasePerson ? data.purchasePerson?._id : undefined,
-            purchaseDate: wf.purchaseDate && data.purchaseDate ? new Date(data.purchaseDate).toISOString().split("T")[0] : undefined,
+            purchaseDate: wf.purchaseDate ? calendarDay(data.purchaseDate) : undefined,
             currency: wf.currency ? data.currency?._id : undefined,
             budgetedAmount: wf.budgetedAmount ? data.budgetedAmount : undefined,
             verificationStatus: wf.verificationStatus ? data.verificationStatus : undefined,
             paymentStatus: wf.paymentStatus ? data.paymentStatus : undefined,
-            paymentDate: wf.paymentDate && data.paymentDate ? new Date(data.paymentDate).toISOString().split("T")[0] : undefined,
+            paymentDate: wf.paymentDate ? calendarDay(data.paymentDate) : undefined,
             notes: wf.notes ? data.notes : undefined,
             tag: wf.tag ? data.tag : undefined,
             invoiceNumber: wf.invoiceNumber ? data.invoiceNumber : undefined,
             vendorName: wf.vendorName ? data.vendorName : undefined,
             relatedModificationRequest: wf.relatedModificationRequest ? data.relatedModificationRequest?._id : undefined,
-            constructorRef: wf.constructorRef ? (data.constructorRef as any)?._id : undefined,
+            constructorRef: wf.constructorRef ? refId(data.constructorRef) : undefined,
             invoiceMedia: wf.invoiceMedia ? invoiceIds : undefined,
             expenditureItems: wf.expenditureItems ? expenditureItems : undefined,
         };

@@ -1,6 +1,8 @@
 import {useState} from "react";
 import {MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import ImageLightbox from "@propertyManagementModule/clients/client/public/shared/imageLightbox.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type HeroGallerySectionProps = {
     project: MarketingProjectSingle;
@@ -16,20 +18,26 @@ function HeroGallerySection({project}: HeroGallerySectionProps) {
     return (
         <>
             <section className="relative h-[min(70vh,640px)] overflow-hidden">
-                <button type="button" onClick={() => setLightboxOpen(true)} className="size-full cursor-zoom-in">
+                <Button
+                    type="button"
+                    variant="bare"
+                    className="size-full cursor-zoom-in"
+                    onClick={() => setLightboxOpen(true)}
+                >
                     <img alt={project.name} className="size-full object-cover" src={images[activeIndex]} />
-                </button>
+                </Button>
                 {images.length > 1 && (
                     <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
                         {images.map((img, index) => (
-                            <button
-                                key={img}
+                            <Button
                                 type="button"
+                                variant="bare"
+                                key={img}
+                                className={cn(`size-16 overflow-hidden rounded-xs border-2 ${index === activeIndex ? "border-overlay-foreground" : "border-transparent opacity-70"}`)}
                                 onClick={() => setActiveIndex(index)}
-                                className={`size-16 overflow-hidden rounded-xs border-2 ${index === activeIndex ? "border-overlay-foreground" : "border-transparent opacity-70"}`}
                             >
                                 <img alt="" className="size-full object-cover" src={img} />
-                            </button>
+                            </Button>
                         ))}
                     </div>
                 )}

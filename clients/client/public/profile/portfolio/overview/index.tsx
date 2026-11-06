@@ -1,6 +1,6 @@
 import {useEffect, useRef} from "react";
 import {compose} from "redux";
-import {Building2, CalendarDays, Ruler} from "lucide-react";
+import {IconBuildingSkyscraper, IconCalendarMonth, IconRuler} from "@tabler/icons-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -62,21 +62,21 @@ function PortfolioOverviewInner({
     const kpiItems = [
         {
             key: "value",
-            icon: Building2,
+            icon: IconBuildingSkyscraper,
             value: loading && !portfolio ? "—" : portfolioLabel,
             label: resolveLanguageKey("kpiPortfolioValue"),
             large: true,
         },
         {
             key: "area",
-            icon: Ruler,
+            icon: IconRuler,
             value: loading && !portfolio ? "—" : formatArea(portfolio?.totalAreaSqm ?? 0, languageCode),
             label: resolveLanguageKey("kpiTotalArea"),
             large: false,
         },
         {
             key: "reservations",
-            icon: CalendarDays,
+            icon: IconCalendarMonth,
             value: loading && !portfolio ? "—" : String(portfolio?.activeReservations ?? 0),
             label: resolveLanguageKey("kpiActiveReservations"),
             large: false,

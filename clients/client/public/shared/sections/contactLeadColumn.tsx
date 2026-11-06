@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from "react";
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {contactAssets} from "@propertyManagementModule/clients/client/public/contact/contactAssets.ts";
 import MarketingContactForm from "@propertyManagementModule/clients/client/public/shared/sections/marketingContactForm.tsx";
@@ -172,10 +172,6 @@ const ContactLeadColumn = compose(
     ),
     withDebug(true, true),
     withLanguage("src/modules/propertyManagement/clients/client/public/contact/index.tsx"),
-)(ContactLeadColumnInner) as unknown as React.ComponentType<{
-    defaultInterest?: string;
-    showScene?: boolean;
-    titleAs?: "h1" | "h2";
-}>;
+)(ContactLeadColumnInner) as React.ComponentType<Omit<ContactLeadColumnProps, keyof WithAxiosType | keyof WithLanguageType>>;
 
 export default ContactLeadColumn;

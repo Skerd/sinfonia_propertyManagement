@@ -7,7 +7,7 @@ import {toast} from "sonner";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import {DollarSign, LoaderCircle} from "lucide-react";
+import {IconCurrencyDollar, IconLoader2} from "@tabler/icons-react";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import MultiLocalFilePicker from "@coreModule/components/viewEngine/widgets/media/multiLocalFilePicker.tsx";
 import {LEASE_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.schema-def.ts";
@@ -25,9 +25,10 @@ import {
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {TableForm, TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
+const LEASE_PAYMENTS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalPayment"};
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
 type RecordRentPaymentPayload = {
@@ -60,38 +61,24 @@ function RecordRentPaymentDialog({
     const [paidAmount, setPaidAmount] = useState("");
     const [notes, setNotes] = useState("");
     const [mediaFiles, setMediaFiles] = useState<File[]>([]);
-    const [fetched, setFetched] = useState<RentalPayment[] | null>(null);
     const waitingForSuccessRef = useRef(false);
     const previousDataRef = useRef<Lease | null>(null);
 
+    // Without a schedule from the caller, the lease's payments load each time the dialog opens.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
         if (!open) return;
         setPaidAmount("");
         setNotes("");
         setMediaFiles([]);
-        if (paymentsProp) {
-            setFetched(null);
-            return;
-        }
-        let cancelled = false;
-        void apiClient
-            .post<TableResponse<RentalPayment>>("/api/realEstate/rentalPayment", {
-                offset: 0,
-                limit: 600,
-                lease: lease._id,
-                sortBy: "dueDate",
-                sortOrder: "asc",
-            } satisfies TableForm & {lease: string})
-            .then((res) => {
-                if (!cancelled) setFetched(res.data.data);
-            })
-            .catch(() => {
-                if (!cancelled) setFetched([]);
-            });
-        return () => {
-            cancelled = true;
-        };
+        if (!paymentsProp) setFetchCount((count) => count + 1);
     }, [open, lease._id, paymentsProp]);
+    const paymentsBody = useMemo(
+        () => ({offset: 0, limit: 600, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
+        [lease._id],
+    );
+    const paymentsRequest = useHttpRequest<TableResponse<RentalPayment>>(LEASE_PAYMENTS_REQUEST, paymentsBody, fetchCount);
+    const fetched: RentalPayment[] | null = paymentsProp || paymentsRequest.loading ? null : paymentsRequest.error ? [] : paymentsRequest.data?.data ?? null;
 
     const openMonths = useMemo(() => {
         const rows = paymentsProp ?? fetched ?? [];
@@ -252,12 +239,12 @@ function RecordRentPaymentDialog({
                     >
                         {loading ? (
                             <>
-                                <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+                                <IconLoader2 className="mr-2 h-4 w-4 animate-spin" />
                                 {resolveLanguageKey("processing")}
                             </>
                         ) : (
                             <>
-                                <DollarSign className="mr-2 h-4 w-4" />
+                                <IconCurrencyDollar className="mr-2 h-4 w-4" />
                                 {resolveLanguageKey("confirmPay")}
                             </>
                         )}

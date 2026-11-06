@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {FileText} from "lucide-react";
+import {IconFileText} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 
 type GenerateFloorsUnitsProps = WithLanguageType & {
@@ -30,7 +30,7 @@ function GenerateFloorsUnits({
 
     return (
         <DropdownMenuItem onClick={() => { openDialog()}}>
-            <FileText size={16}/>
+            <IconFileText size={16}/>
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

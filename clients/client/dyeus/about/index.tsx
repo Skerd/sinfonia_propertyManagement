@@ -1,7 +1,7 @@
 import {type ComponentType, useEffect, useMemo} from "react";
 import {compose} from "redux";
 import {Link} from "react-router-dom";
-import {ArrowUpRight} from "lucide-react";
+import {IconArrowUpRight} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType, type ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -310,7 +310,7 @@ function AboutPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                                             {story.title}
                                                         </h3>
                                                     </div>
-                                                    <ArrowUpRight className="size-8 shrink-0 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                                    <IconArrowUpRight className="size-8 shrink-0 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                                 </div>
                                             </article>
                                         </Link>
@@ -326,11 +326,13 @@ function AboutPageInner({data, loading, error, onFilterChange, resolveLanguageKe
     );
 }
 
-export default compose(
+const AboutPage: ComponentType = compose(
     withAxios<MarketingStoriesResponse, AboutStoriesFilter>(
         {method: "post", url: "/api/realEstate/marketingStories", data: {}},
         false,
     ),
     withLanguage("src/modules/propertyManagement/clients/client/dyeus/about/index.tsx"),
     withDebug(true, true),
-)(AboutPageInner) as unknown as ComponentType;
+)(AboutPageInner);
+
+export default AboutPage;

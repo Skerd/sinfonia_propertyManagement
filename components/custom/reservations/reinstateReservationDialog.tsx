@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle} from "react";
 import {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {LoaderCircle, RotateCcw} from "lucide-react";
+import {IconLoader2, IconRotate} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -63,7 +63,7 @@ function ReinstateReservationDialog({
                         }}
                         disabled={loading}
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <RotateCcw />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconRotate />}
                         <p>{resolveLanguageKey("confirmReinstate")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

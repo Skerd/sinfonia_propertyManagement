@@ -18,6 +18,8 @@ import {
 } from "@propertyManagementModule/clients/client/public/auth/shared/publicAuthChrome.tsx";
 import PublicGuestOnly from "@propertyManagementModule/clients/client/public/auth/shared/publicGuestOnly.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/auth/forgotPassword/index.tsx";
 
@@ -54,7 +56,7 @@ function ForgotPasswordPageInner({
                     <form className="flex flex-col gap-6 md:gap-8" onSubmit={handleSubmit} noValidate>
                         <div className="w-full min-w-0">
                             <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldError && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                <input
+                                <Input bare
                                     type="email"
                                     name="email"
                                     autoComplete="email"
@@ -67,9 +69,9 @@ function ForgotPasswordPageInner({
                             </div>
                             <AuthFieldError message={fieldError} />
                         </div>
-                        <button type="submit" disabled={loading} className={AUTH_SUBMIT_CLASS}>
+                        <Button type="submit" disabled={loading} className={AUTH_SUBMIT_CLASS}>
                             {loading ? resolveLanguageKey("submitting") : resolveLanguageKey("submit")}
-                        </button>
+                        </Button>
                         {error && !fieldError ? (
                             <AuthStatusMessage tone="error">{resolveLanguageKey("formError")}</AuthStatusMessage>
                         ) : null}

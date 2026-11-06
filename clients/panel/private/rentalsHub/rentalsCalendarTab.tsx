@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useState} from "react";
-import {AlertTriangle, CalendarIcon, CheckCircle2, Clock} from "lucide-react";
+import {IconAlertTriangle, IconCalendar, IconCircleCheck, IconClock} from "@tabler/icons-react";
 import type {ComponentProps} from "react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
@@ -8,15 +8,16 @@ import {Calendar, CalendarDayButton} from "@coreModule/components/ui/calendar.ts
 import {Card, CardContent, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import {ScrollArea} from "@coreModule/components/ui/scroll-area.tsx";
 import {Skeleton} from "@coreModule/components/ui/skeleton.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
-import type {HttpError} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {RentalPaymentRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.payment.dto.ts";
 import type {RentalsCalendarFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.form.type.ts";
 import type {RentalsCalendarResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.response.type.ts";
 import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {fmtMoney, personName, unitLabel} from "./rentalsHubHelpers.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const CALENDAR_MAX_ROWS = 5000;
+const CALENDAR_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalsHub/rentalPayments/calendar"};
 
 type DayDots = {paid: boolean; partial: boolean; overdue: boolean; pending: boolean};
 
@@ -70,35 +71,19 @@ export default function RentalsCalendarTab({
     const locale = languageCode || "en-US";
     const [calendarMonth, setCalendarMonth] = useState(() => new Date());
     const [selectedDay, setSelectedDay] = useState<Date | undefined>(() => new Date());
-    const [data, setData] = useState<RentalsCalendarResponseType | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<HttpError | null>(null);
 
     const month = monthKey(calendarMonth);
 
+    const calendarBody = useMemo<RentalsCalendarFormType>(() => ({month}), [month]);
+    // One request per month/scope change.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        setError(null);
-        const body: RentalsCalendarFormType = {month};
-        void apiClient
-            .post<RentalsCalendarResponseType>("/api/realEstate/rentalsHub/rentalPayments/calendar", body)
-            .then((res) => {
-                if (!cancelled) setData(res.data);
-            })
-            .catch((err) => {
-                if (!cancelled) {
-                    setError(err as HttpError);
-                    setData(null);
-                }
-            })
-            .finally(() => {
-                if (!cancelled) setLoading(false);
-            });
-        return () => {
-            cancelled = true;
-        };
-    }, [month]);
+        setFetchCount((count) => count + 1);
+    }, [calendarBody]);
+    const request = useHttpRequest<RentalsCalendarResponseType>(CALENDAR_REQUEST, calendarBody, fetchCount);
+    const data = request.error ? null : request.data;
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error;
 
     const rows = data?.payments ?? [];
     const dayDots = useMemo(() => buildDayDots(rows), [rows]);
@@ -134,14 +119,14 @@ export default function RentalsCalendarTab({
         <div className="flex flex-col gap-4">
             {error != null && (
                 <Alert variant="destructive">
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{rk("errorTitle")}</AlertTitle>
                     <AlertDescription>{rk("errorDescription")}</AlertDescription>
                 </Alert>
             )}
             {data?.truncated && (
                 <Alert>
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{rk("truncatedTitle")}</AlertTitle>
                     <AlertDescription>
                         {rk("truncatedDescription").replace("{max}", String(CALENDAR_MAX_ROWS))}
@@ -161,7 +146,7 @@ export default function RentalsCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{rk("kpiCollected")}</CardTitle>
-                                <CheckCircle2 className="size-4 text-success" />
+                                <IconCircleCheck className="size-4 text-success" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">
@@ -172,7 +157,7 @@ export default function RentalsCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{rk("kpiOutstanding")}</CardTitle>
-                                <Clock className="size-4 text-warning" />
+                                <IconClock className="size-4 text-warning" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">
@@ -183,7 +168,7 @@ export default function RentalsCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{rk("kpiOverdue")}</CardTitle>
-                                <AlertTriangle className="size-4 text-destructive" />
+                                <IconAlertTriangle className="size-4 text-destructive" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">
@@ -199,7 +184,7 @@ export default function RentalsCalendarTab({
                 <Card className="w-fit min-w-0 max-w-full">
                     <CardHeader className="pb-2">
                         <CardTitle className="flex items-center gap-2 text-base">
-                            <CalendarIcon className="size-4" />
+                            <IconCalendar className="size-4" />
                             {rk("title")}
                         </CardTitle>
                     </CardHeader>
@@ -253,8 +238,9 @@ export default function RentalsCalendarTab({
                                 <ul className="flex flex-col gap-2">
                                     {dayRows.map((row) => (
                                         <li key={row._id}>
-                                            <button
+                                            <Button
                                                 type="button"
+                                                variant="bare"
                                                 className="w-full text-left"
                                                 onClick={() => onViewRow(row)}
                                             >
@@ -278,7 +264,7 @@ export default function RentalsCalendarTab({
                                                         </div>
                                                     </CardContent>
                                                 </Card>
-                                            </button>
+                                            </Button>
                                         </li>
                                     ))}
                                 </ul>

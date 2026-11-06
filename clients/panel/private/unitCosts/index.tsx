@@ -27,7 +27,7 @@ import FinanceUnitCostFilterBar, {
 } from "@propertyManagementModule/clients/panel/private/unitCosts/financeUnitCostFilterBar.tsx";
 import { buildFinanceToolbarOnlyFilterGroup } from "@propertyManagementModule/helpers/components/unitCosts/financeFilterDsl.ts";
 import type { UnitCost } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.dto.ts";
-import type { DeletedData, TableForm, TableResponse } from "armonia/src/modules/core/types/shared.types.ts";
+import type { DeletedData, TableResponse } from "armonia/src/modules/core/types/shared.types.ts";
 import { IconTextPlus } from "@tabler/icons-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@coreModule/components/ui/tabs.tsx";
 import { Card, CardContent, CardHeader, CardTitle } from "@coreModule/components/ui/card.tsx";
@@ -86,7 +86,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
                 deletedAt: response.deletedAt,
                 deletedBy: response.deletedBy,
             } as Partial<UnitCost>);
-            if (!!sheetCost) {
+            if (sheetCost) {
                 setSheetCost({
                     ...sheetCost,
                     deletedAt: response.deletedAt,
@@ -100,7 +100,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
 
     const handleRestore = (cost: UnitCost) => {
         listRef.current?.updateRow?.(cost._id, { deletedAt: undefined, deletedBy: undefined } as Partial<UnitCost>);
-        if (!!sheetCost) {
+        if (sheetCost) {
             setSheetCost({
                 ...sheetCost,
                 deletedAt: undefined,
@@ -223,7 +223,7 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
 
                     <HiddenElement hideAll={true}>
                         {read && (
-                            <CardAndTableView<TableResponse<UnitCost>, TableForm>
+                            <CardAndTableView<TableResponse<UnitCost>>
                                 url="/api/realEstate/unit/cost"
                                 listRef={listRef}
                                 tableConfigKey="unitcosts"

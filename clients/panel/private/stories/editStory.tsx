@@ -1,8 +1,9 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editStoryFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/editStory.form.validator.ts";
 import type {Story} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.dto.ts";
 import type {EditStoryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.schema-def.ts";
+import {refId, refIds} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 export default createGenericEditPage<Story, EditStoryFormType>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/stories/editStory.tsx",
@@ -18,9 +19,9 @@ export default createGenericEditPage<Story, EditStoryFormType>({
         publishedAt: data.publishedAt
             ? new Date(data.publishedAt).toISOString().split("T")[0]
             : undefined,
-        mainImage: (data.mainImage as any)?._id ?? data.mainImage,
-        imageGallery: data.imageGallery?.map((m: any) => m._id ?? m) ?? [],
-        videoGallery: data.videoGallery?.map((m: any) => m._id ?? m) ?? [],
+        mainImage: refId(data.mainImage),
+        imageGallery: refIds(data.imageGallery),
+        videoGallery: refIds(data.videoGallery),
     }),
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

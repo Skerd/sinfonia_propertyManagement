@@ -1,9 +1,8 @@
 import {compose} from "redux";
-import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import {MapPin} from "lucide-react";
+import {IconMapPin} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Empty, EmptyHeader, EmptyTitle} from "@coreModule/components/ui/empty.tsx";
@@ -13,18 +12,13 @@ import type {
     MarketingProjectsCatalogFormResponseType,
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingProjectsCatalog/marketingProjectsCatalog.form.response.type.ts";
 
+const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectsCatalog"};
+
 /** The company's developments, each opening its project page. */
 function PropertyProjects({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
-    const [projects, setProjects] = useState<MarketingProjectCatalogListItem[] | null>(null);
-
-    useEffect(() => {
-        let cancelled = false;
-        apiClient.post<MarketingProjectsCatalogFormResponseType>("/api/realEstate/marketingProjectsCatalog", {})
-            .then((res) => { if (!cancelled) setProjects(res.data.projects); })
-            .catch(() => { if (!cancelled) setProjects([]); });
-        return () => { cancelled = true; };
-    }, []);
+    const request = useHttpRequest<MarketingProjectsCatalogFormResponseType>(CATALOG_REQUEST, {}, 1);
+    const projects: MarketingProjectCatalogListItem[] | null = request.loading ? null : request.data?.projects ?? [];
 
     if (projects === null) return <Loader />;
 
@@ -53,7 +47,7 @@ function PropertyProjects({resolveLanguageKey}: WithLanguageType) {
                                 <div className="flex flex-col gap-0.5">
                                     <p className="font-display text-lg font-semibold">{project.name}</p>
                                     {project.city || project.location ? (
-                                        <p className="flex items-center gap-1.5 text-sm text-muted-foreground"><MapPin className="size-3.5" aria-hidden />{project.city ?? project.location}</p>
+                                        <p className="flex items-center gap-1.5 text-sm text-muted-foreground"><IconMapPin className="size-3.5" aria-hidden />{project.city ?? project.location}</p>
                                     ) : null}
                                 </div>
                             </Link>

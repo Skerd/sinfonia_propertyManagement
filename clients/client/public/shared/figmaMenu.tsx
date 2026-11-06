@@ -1,9 +1,9 @@
-import {useCallback, useEffect, useRef, useState, type ReactElement, type ReactNode} from "react";
+import {useCallback, useEffect, useRef, useState, type ComponentType, type ReactNode} from "react";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
 import {useDispatch, useSelector} from "react-redux";
-import {Facebook, Instagram, Linkedin} from "lucide-react";
+import {IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin} from "@tabler/icons-react";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import useSelectedLanguage from "@coreModule/helpers/hooks/useSelectedLanguage.ts";
 import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
@@ -14,6 +14,8 @@ import {figmaMenuLinks} from "@propertyManagementModule/clients/client/public/sh
 import {usePublicAuth} from "@propertyManagementModule/clients/client/public/shared/publicAuthContext.tsx";
 import type {MarketingCompanyResponse} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type SupportedMenuLanguage = {
     languageCode: string;
@@ -87,9 +89,9 @@ const MENU_NAV_LINK_CLASS =
     "cursor-pointer font-aeonik-medium text-[32px] font-medium leading-none text-white not-italic transition-colors duration-200 hover:text-white/30";
 
 const MENU_SOCIAL_LINKS = [
-    {id: "instagram" as const, labelKey: "socialInstagram", Icon: Instagram},
-    {id: "facebook" as const, labelKey: "socialFacebook", Icon: Facebook},
-    {id: "linkedin" as const, labelKey: "socialLinkedin", Icon: Linkedin},
+    {id: "instagram" as const, labelKey: "socialInstagram", Icon: IconBrandInstagram},
+    {id: "facebook" as const, labelKey: "socialFacebook", Icon: IconBrandFacebook},
+    {id: "linkedin" as const, labelKey: "socialLinkedin", Icon: IconBrandLinkedin},
 ];
 
 /** Loads figmaMenu locale JSON for the active language (works inside portals). */
@@ -186,17 +188,18 @@ function MenuLanguageButtons({className}: {className?: string}) {
                         {index > 0 && (
                             <span className="mx-2.5 h-3.5 w-px shrink-0 bg-white/40" aria-hidden />
                         )}
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
                             aria-pressed={isActive}
                             aria-label={language.name}
-                            onClick={() => dispatch(changeLanguage(language.languageCode))}
-                            className={`cursor-pointer text-base text-white not-italic transition-opacity duration-200 hover:opacity-70 ${
+                            className={cn(`cursor-pointer text-base text-white not-italic transition-opacity duration-200 hover:opacity-70 ${
                                 isActive ? "font-aeonik-medium" : "font-aeonik-light opacity-70"
-                            }`}
+                            }`)}
+                            onClick={() => dispatch(changeLanguage(language.languageCode))}
                         >
                             {language.shortCode}
-                        </button>
+                        </Button>
                     </span>
                 );
             })}
@@ -246,12 +249,12 @@ function MenuSocialLinksInner({data, onFilterChange}: WithAxiosType<MarketingCom
     );
 }
 
-const MenuSocialLinks = compose(
+const MenuSocialLinks: ComponentType = compose(
     withAxios<MarketingCompanyResponse>(
         {method: "post", url: "/api/realEstate/marketingCompany", data: {}},
         true,
     ),
-)(MenuSocialLinksInner) as unknown as () => ReactElement | null;
+)(MenuSocialLinksInner);
 
 function MenuChromeRow({className}: {className?: string}) {
     return (
@@ -322,16 +325,17 @@ function MenuOverlay({anchorRect, onClose, controls}: {anchorRect: AnchorRect; o
                                     <Link to="/profile" onClick={onClose} className={MENU_NAV_LINK_CLASS}>
                                         {t("profile")}
                                     </Link>
-                                    <button
+                                    <Button
                                         type="button"
-                                        className={`${MENU_NAV_LINK_CLASS} text-left`}
+                                        variant="bare"
+                                        className={cn(`${MENU_NAV_LINK_CLASS} text-left`)}
                                         onClick={() => {
                                             onClose();
                                             signOutPublic();
                                         }}
                                     >
                                         {t("logOut")}
-                                    </button>
+                                    </Button>
                                 </>
                             ) : null}
                             {/*
@@ -408,16 +412,17 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
             onMouseLeave={() => setControlsHovered(false)}
         >
             <MenuMoonIcon variant={variant} hovered={controlsHovered} />
-            <button
-                ref={gridTriggerRef}
+            <Button
                 type="button"
+                variant="bare"
+                ref={gridTriggerRef}
                 className="cursor-pointer"
                 aria-label={open ? t("closeMenu") : t("openMenu")}
                 aria-expanded={open}
                 onClick={handleOpen}
             >
                 <MenuGridIcon variant={variant} hovered={controlsHovered} />
-            </button>
+            </Button>
         </div>
     );
 
@@ -454,15 +459,16 @@ function FigmaMenu({variant = "hero", className}: FigmaMenuProps) {
                     onMouseLeave={() => setControlsHovered(false)}
                 >
                     <MenuMoonIcon variant={variant} hovered={controlsHovered} />
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         className="cursor-pointer"
                         aria-label={t("closeMenu")}
                         aria-expanded
                         onClick={handleClose}
                     >
                         <MenuGridIcon variant={variant} hovered={controlsHovered} />
-                    </button>
+                    </Button>
                 </div>
                     ) : null}
                 />

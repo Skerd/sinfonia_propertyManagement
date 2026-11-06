@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import {ChevronLeft} from "lucide-react";
+import {IconChevronLeft} from "@tabler/icons-react";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {resolveProjectFallbackImage} from "@propertyManagementModule/clients/client/public/project/shared/resolveProjectFallbackImage.ts";
@@ -14,6 +14,7 @@ import type {
     MarketingProjectSingle,
     MarketingPolygonItem,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type ProjectPolygonViewerProps = {
     project: MarketingProjectSingle;
@@ -170,26 +171,28 @@ function ProjectPolygonViewer({
         <div className={`flex w-full flex-col gap-4 ${className}`}>
             {canGoBack && (
                 <div className="-ml-2 flex min-w-0 max-w-full items-center gap-1 sm:-ml-2.5 sm:gap-1.5 md:-ml-3">
-                    <button
+                    <Button
                         type="button"
-                        onClick={goBack}
+                        variant="bare"
                         className="flex shrink-0 items-center justify-center rounded-[5px] p-1 text-pronix-ink transition hover:bg-[rgba(24,24,24,0.04)]"
                         aria-label={String(resolveLanguageKey("back"))}
+                        onClick={goBack}
                     >
-                        <ChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
-                    </button>
+                        <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                    </Button>
                     <nav
                         aria-label={String(resolveLanguageKey("back"))}
                         className="flex min-w-0 items-center gap-1.5 sm:gap-2"
                     >
                         {level === "floor" ? (
-                            <button
+                            <Button
                                 type="button"
-                                onClick={goBack}
+                                variant="bare"
                                 className="min-w-0 truncate rounded-[5px] px-1 py-0.5 font-aeonik-medium text-2xl leading-none text-pronix-ink transition hover:bg-[rgba(24,24,24,0.04)] sm:text-3xl md:text-4xl"
+                                onClick={goBack}
                             >
                                 {edificeName}
-                            </button>
+                            </Button>
                         ) : (
                             <span className="min-w-0 truncate px-1 py-0.5 font-aeonik-medium text-2xl leading-none text-pronix-ink sm:text-3xl md:text-4xl">
                                 {edificeName}

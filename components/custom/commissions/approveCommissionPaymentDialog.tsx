@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {LoaderCircle, Scale} from "lucide-react";
+import {IconLoader2, IconScale} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -126,7 +126,7 @@ function ApproveCommissionPaymentDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" onClick={handleSubmit} disabled={loading}>
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : <Scale className="h-4 w-4" />}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconScale className="h-4 w-4" />}
                         {decision === "rejected" ? resolveLanguageKey("submitReject") : resolveLanguageKey("submitApprove")}
                     </Button>
                 </DialogFooter>

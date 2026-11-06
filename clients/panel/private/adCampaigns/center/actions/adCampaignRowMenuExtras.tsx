@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {Ban, FlaskConical, Pause, Play, Send, Users} from "lucide-react";
+import {IconBan, IconFlask, IconPlayerPause, IconPlayerPlay, IconSend, IconUsers} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useNavigate} from "react-router-dom";
@@ -48,34 +48,34 @@ function AdCampaignRowMenuExtras({campaign, onAction, resolveLanguageKey}: AdCam
                     navigate(`/tenancy/systemSettings/adCampaigns/recipients?${recipientsParams.toString()}`);
                 }}
             >
-                <Users className="h-4 w-4" />
+                <IconUsers className="h-4 w-4" />
                 <span>{resolveLanguageKey("viewRecipients")}</span>
             </DropdownMenuItem>
 
             {canSend && SENDABLE.has(status) ? (
                 <DropdownMenuItem onClick={() => onAction(SEND_AD_CAMPAIGN_ACTION)}>
-                    <Send className="h-4 w-4 text-primary" />
+                    <IconSend className="h-4 w-4 text-primary" />
                     <span>{resolveLanguageKey(status === "paused" ? "resend" : "sendNow")}</span>
                 </DropdownMenuItem>
             ) : null}
 
             {canSend && status !== "cancelled" ? (
                 <DropdownMenuItem onClick={() => onAction(TEST_SEND_AD_CAMPAIGN_ACTION)}>
-                    <FlaskConical className="h-4 w-4" />
+                    <IconFlask className="h-4 w-4" />
                     <span>{resolveLanguageKey("testSend")}</span>
                 </DropdownMenuItem>
             ) : null}
 
             {canManage && (status === "sending" || status === "scheduled") ? (
                 <DropdownMenuItem onClick={() => onAction(PAUSE_AD_CAMPAIGN_ACTION)}>
-                    <Pause className="h-4 w-4" />
+                    <IconPlayerPause className="h-4 w-4" />
                     <span>{resolveLanguageKey("pause")}</span>
                 </DropdownMenuItem>
             ) : null}
 
             {canSend && status === "paused" ? (
                 <DropdownMenuItem onClick={() => onAction(RESUME_AD_CAMPAIGN_ACTION)}>
-                    <Play className="h-4 w-4" />
+                    <IconPlayerPlay className="h-4 w-4" />
                     <span>{resolveLanguageKey("resume")}</span>
                 </DropdownMenuItem>
             ) : null}
@@ -85,7 +85,7 @@ function AdCampaignRowMenuExtras({campaign, onAction, resolveLanguageKey}: AdCam
                     variant="destructive"
                     onClick={() => onAction(CANCEL_AD_CAMPAIGN_ACTION)}
                 >
-                    <Ban className="h-4 w-4" />
+                    <IconBan className="h-4 w-4" />
                     <span>{resolveLanguageKey("cancelCampaign")}</span>
                 </DropdownMenuItem>
             ) : null}

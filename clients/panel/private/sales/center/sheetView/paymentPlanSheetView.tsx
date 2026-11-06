@@ -14,7 +14,7 @@ import SalePayInstallmentAction from "@propertyManagementModule/clients/panel/pr
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {MoreHorizontal} from "lucide-react";
+import {IconDots} from "@tabler/icons-react";
 import ManualInstallmentClientEmails, {
     installmentHasVisibleManualEmailActions,
 } from "@propertyManagementModule/clients/panel/private/sales/center/actions/manualInstallmentClientEmails.tsx";
@@ -202,7 +202,7 @@ function PaymentPlanSheetView({
                                                                 <DropdownMenu>
                                                                     <DropdownMenuTrigger asChild>
                                                                         <Button variant="ghost" size="icon-sm" className="size-8">
-                                                                            <MoreHorizontal className="size-4" />
+                                                                            <IconDots className="size-4" />
                                                                         </Button>
                                                                     </DropdownMenuTrigger>
                                                                     <DropdownMenuContent align="end" className="w-fit">

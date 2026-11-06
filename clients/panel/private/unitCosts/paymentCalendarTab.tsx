@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import type { FinanceToolbarValues } from "@propertyManagementModule/clients/panel/private/unitCosts/financeUnitCostFilterBar.tsx";
 import { compose } from "redux";
-import { AlertTriangle, CalendarIcon, CheckCircle2, Clock } from "lucide-react";
+import {IconAlertTriangle, IconCalendar, IconCircleCheck, IconClock} from "@tabler/icons-react";
 import type { ComponentProps } from "react";
 import type { UnitCost } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.dto.ts";
 import { Alert, AlertDescription, AlertTitle } from "@coreModule/components/ui/alert.tsx";
@@ -149,14 +149,14 @@ function PaymentCalendarTab({
         <div className="flex flex-col gap-4">
             {error != null && (
                 <Alert variant="destructive">
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{str("calendar.errorTitle")}</AlertTitle>
                     <AlertDescription>{str("calendar.errorDescription")}</AlertDescription>
                 </Alert>
             )}
             {truncated && (
                 <Alert>
-                    <AlertTriangle className="size-4" />
+                    <IconAlertTriangle className="size-4" />
                     <AlertTitle>{str("calendar.truncatedTitle")}</AlertTitle>
                     <AlertDescription>
                         {str("calendar.truncatedDescription").replace("{max}", String(FINANCE_CALENDAR_MAX_ROWS))}
@@ -176,7 +176,7 @@ function PaymentCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiPaid")}</CardTitle>
-                                <CheckCircle2 className="size-4 text-success" />
+                                <IconCircleCheck className="size-4 text-success" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">{kpis.paidLine}</p>
@@ -185,7 +185,7 @@ function PaymentCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiPending")}</CardTitle>
-                                <Clock className="size-4 text-warning" />
+                                <IconClock className="size-4 text-warning" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">{kpis.pendingLine}</p>
@@ -194,7 +194,7 @@ function PaymentCalendarTab({
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">{str("calendar.kpiOverdue")}</CardTitle>
-                                <AlertTriangle className="size-4 text-destructive" />
+                                <IconAlertTriangle className="size-4 text-destructive" />
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">{kpis.overdueLine}</p>
@@ -208,7 +208,7 @@ function PaymentCalendarTab({
                 <Card className="w-fit min-w-0 max-w-full">
                     <CardHeader className="pb-2">
                         <CardTitle className="flex items-center gap-2 text-base">
-                            <CalendarIcon className="size-4" />
+                            <IconCalendar className="size-4" />
                             {str("calendar.financialCalendarTitle")}
                         </CardTitle>
                     </CardHeader>

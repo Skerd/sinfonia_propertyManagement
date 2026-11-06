@@ -3,6 +3,7 @@ import HomepageAiChatPanel from "@propertyManagementModule/clients/client/public
 import {PUBLIC_LAYER_CHAT} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {publicIntroChromeStyle, usePublicIntroChrome} from "@propertyManagementModule/clients/client/public/shared/publicIntroContext.tsx";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const PANEL_GAP = 12;
 
@@ -22,8 +23,9 @@ function PublicAiChat() {
         >
             {isOpen && <HomepageAiChatPanel />}
             {!isOpen && (
-                <button
+                <Button
                     type="button"
+                    variant="bare"
                     /* Wrapped: `open` takes an optional context object, and React
                        would otherwise pass the MouseEvent into it. */
                     onClick={() => open()}
@@ -39,7 +41,7 @@ function PublicAiChat() {
                         hideGlow
                         style={publicIntroChromeStyle(chromeRevealed)}
                     />
-                </button>
+                </Button>
             )}
         </div>
     );

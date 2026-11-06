@@ -8,6 +8,9 @@ import {
 } from "@propertyManagementModule/clients/client/public/project/shared/projectUnitsFilterTypes.ts";
 import {PUBLIC_TITLE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {PROJECT_UNIT_STATUS_FILTERS} from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 type OpenProjectGridToolbarSectionProps = OpenProjectContentProps & {
     apartmentCount: number;
@@ -59,7 +62,7 @@ function OpenProjectGridToolbarSection({
                         data-node-id="495:653"
                     >
                         <span className="sr-only">{resolveLanguageKey("sortBy")}</span>
-                        <select
+                        <NativeSelect bare
                             value={sortKey}
                             onChange={(event) => onSortChange(event.target.value as ProjectUnitsSortKey)}
                             className={sortSelectClassName}
@@ -70,7 +73,7 @@ function OpenProjectGridToolbarSection({
                                     {resolveLanguageKey(`sort${key.charAt(0).toUpperCase()}${key.slice(1)}`)}
                                 </option>
                             ))}
-                        </select>
+                        </NativeSelect>
                         <span aria-hidden className="pointer-events-none text-pronix-ink-muted">
                             ▼
                         </span>
@@ -80,25 +83,27 @@ function OpenProjectGridToolbarSection({
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between" data-node-id="495:657">
                 <div className="flex flex-wrap items-center gap-3 md:gap-8" data-node-id="495:658">
                     {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
-                        <button
-                            key={filter}
+                        <Button
                             type="button"
-                            onClick={() => onFilterChange(filter)}
-                            className={`font-aeonik-light text-base not-italic transition md:text-2xl ${
+                            variant="bare"
+                            key={filter}
+                            className={cn(`font-aeonik-light text-base not-italic transition md:text-2xl ${
                                 activeFilter === filter ? "rounded-[5px] bg-pronix-blue px-4 py-2 text-white md:px-6" : "text-pronix-ink"
-                            }`}
+                            }`)}
+                            onClick={() => onFilterChange(filter)}
                         >
                             {resolveLanguageKey(`filter${filter.charAt(0).toUpperCase()}${filter.slice(1)}`)}
-                        </button>
+                        </Button>
                     ))}
                 </div>
                 <div className="flex shrink-0 items-center gap-4">
                     <PublicFavoritesBasketButton resolveLanguageKey={resolveLanguageKey} />
-                    <button
+                    <Button
                         type="button"
-                        onClick={onOpenFilters}
+                        variant="bare"
                         className="flex shrink-0 cursor-pointer items-center gap-4 rounded-[5px] border border-pronix-border px-4 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.28)] hover:bg-pronix-ink/[0.02] sm:px-6 sm:py-2.5"
                         data-node-id="495:665"
+                        onClick={onOpenFilters}
                     >
                         <img alt="" aria-hidden className="size-9 shrink-0" src={projectsAssets.filterIcon} />
                         <span className="font-aeonik-light text-xl text-pronix-ink not-italic md:text-2xl lg:text-3xl">
@@ -107,7 +112,7 @@ function OpenProjectGridToolbarSection({
                         {filtersActive ? (
                             <span className="size-2 shrink-0 rounded-full bg-pronix-blue" aria-hidden />
                         ) : null}
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

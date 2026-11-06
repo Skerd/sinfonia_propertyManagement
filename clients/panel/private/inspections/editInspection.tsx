@@ -3,6 +3,7 @@ import {editInspectionFormSchema} from "armonia/src/modules/propertyManagement/a
 import type {EditInspectionFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.schema-def.ts";
 import type {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import {normalizeFindingsFromApi} from "@propertyManagementModule/helpers/general/inspectionFindingsForm.ts";
+import {refId, calendarDay} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 type EditInspectionFormData = Omit<EditInspectionFormType, "clientSignatureMediaId"> & {
     clientSignatureMediaId?: File;
@@ -16,14 +17,14 @@ export default createGenericEditPage<Inspection, EditInspectionFormData>({
 
     mapEntityData: (data) => ({
         ...data,
-        unit: (data.unit as any)?._id,
-        inspectedBy: (data.inspectedBy as any)?._id,
-        inspectionDate: data.inspectionDate ? new Date(data.inspectionDate).toISOString().split("T")[0] : undefined,
-        scheduledDate: data.scheduledDate ? new Date(data.scheduledDate).toISOString().split("T")[0] : undefined,
-        nextInspectionDate: data.nextInspectionDate ? new Date(data.nextInspectionDate).toISOString().split("T")[0] : undefined,
-        clientSignedAt: data.clientSignedAt ? new Date(data.clientSignedAt).toISOString().split("T")[0] : undefined,
-        followUpInspection: (data.followUpInspection as any)?._id,
-        checklistTemplate: (data.checklistTemplate as any)?._id ?? data.checklistTemplate,
+        unit: refId(data.unit),
+        inspectedBy: refId(data.inspectedBy),
+        inspectionDate: calendarDay(data.inspectionDate),
+        scheduledDate: calendarDay(data.scheduledDate),
+        nextInspectionDate: calendarDay(data.nextInspectionDate),
+        clientSignedAt: calendarDay(data.clientSignedAt),
+        followUpInspection: refId(data.followUpInspection),
+        checklistTemplate: refId(data.checklistTemplate),
         findings: normalizeFindingsFromApi(data.findings as Record<string, unknown>),
         media: Array.isArray(data.media) ? data.media.map((m: any) => m._id || m).filter(Boolean) : [],
         clientSignatureMediaId: undefined,
@@ -33,8 +34,8 @@ export default createGenericEditPage<Inspection, EditInspectionFormData>({
         hideProjectToUnitCascade: true,
         hideInspectionEditOnlyBlocks: false,
         inspectionId: entityId || "",
-        defaultUnitId: params.get("unitId") || (entity as any)?.unit?._id || "",
-        editMediaExistingList: (entity as any)?.media ?? [],
+        defaultUnitId: params.get("unitId") || entity?.unit?._id || "",
+        editMediaExistingList: entity?.media ?? [],
         enableLocalFileMultipart: false,
     }),
 

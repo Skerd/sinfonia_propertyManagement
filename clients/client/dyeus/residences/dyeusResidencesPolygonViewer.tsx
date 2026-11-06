@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import {ChevronLeft} from "lucide-react";
+import {IconChevronLeft} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
@@ -19,6 +19,7 @@ import type {
     MarketingPolygonItem,
     MarketingProjectSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const RESIDENCES_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx";
@@ -124,9 +125,9 @@ function DyeusViewerSidebar({
                             const hovered = item.id === hoveredId;
                             return (
                                 <li key={item.id}>
-                                    <button
+                                    <Button
                                         type="button"
-                                        onClick={() => onSelect(item.id)}
+                                        variant="bare"
                                         onMouseEnter={() => onHoverId?.(item.id)}
                                         onMouseLeave={() => onHoverId?.(null)}
                                         onFocus={() => onHoverId?.(item.id)}
@@ -139,6 +140,7 @@ function DyeusViewerSidebar({
                                                   ? "bg-dyeus-sand text-dyeus-ink"
                                                   : "text-dyeus-ink hover:bg-dyeus-sand/70",
                                         )}
+                                        onClick={() => onSelect(item.id)}
                                     >
                                         <span className="font-dyeus-serif text-lg">{item.label}</span>
                                         {item.meta ? (
@@ -151,7 +153,7 @@ function DyeusViewerSidebar({
                                                 {item.meta}
                                             </span>
                                         ) : null}
-                                    </button>
+                                    </Button>
                                 </li>
                             );
                         })}
@@ -284,23 +286,25 @@ function DyeusResidencesPolygonViewer({project, className}: DyeusResidencesPolyg
         <div className={cn("flex w-full flex-col gap-4", className)}>
             {canGoBack ? (
                 <div className="flex min-w-0 max-w-full items-center gap-1">
-                    <button
+                    <Button
                         type="button"
-                        onClick={goBack}
+                        variant="bare"
                         className="flex shrink-0 items-center justify-center p-1 text-dyeus-ink transition hover:bg-dyeus-sand"
                         aria-label={t("goBack")}
+                        onClick={goBack}
                     >
-                        <ChevronLeft className="size-8 md:size-10" strokeWidth={1.5} aria-hidden />
-                    </button>
+                        <IconChevronLeft className="size-8 md:size-10" strokeWidth={1.5} aria-hidden />
+                    </Button>
                     <nav aria-label={t("viewerLocationAria")} className="flex min-w-0 items-center gap-2">
                         {level === "floor" ? (
-                            <button
+                            <Button
                                 type="button"
-                                onClick={goBack}
+                                variant="bare"
                                 className="min-w-0 truncate px-1 py-0.5 font-dyeus-serif text-2xl text-dyeus-ink/55 transition hover:text-dyeus-ink md:text-4xl"
+                                onClick={goBack}
                             >
                                 {edificeName}
-                            </button>
+                            </Button>
                         ) : (
                             <span className="min-w-0 truncate px-1 py-0.5 font-dyeus-serif text-2xl text-dyeus-ink md:text-4xl">
                                 {edificeName}

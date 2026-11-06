@@ -8,7 +8,7 @@ const STATS = [
 ] as const;
 
 function splitStat(text: string): {value: string; label: string} {
-    const match = text.match(/^([+\-]?\d+(?:\s*%)?)\s+(.+)$/);
+    const match = text.match(/^([+-]?\d+(?:\s*%)?)\s+(.+)$/);
     if (!match) {
         return {value: text, label: ""};
     }

@@ -3,7 +3,7 @@
  */
 
 import { jsPDF } from "jspdf";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {fetchMediaBytes} from "@coreModule/helpers/media/fetchMediaBytes.ts";
 import type { BasicCompanyInfoFormResponseType } from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
@@ -99,17 +99,16 @@ function loadImageDimensions(base64: string, format: "PNG" | "JPEG"): Promise<{ 
 
 type Branding = { companyName: string; logoBase64: string | null; logoFormat: "PNG" | "JPEG" };
 
-async function loadCompanyBranding(): Promise<Branding | null> {
+/** Letterhead from the company record the caller loaded (`/api/company/basicInfo`). */
+async function loadCompanyBranding(company: BasicCompanyInfoFormResponseType | null | undefined): Promise<Branding | null> {
     try {
-        const res = await apiClient.get<BasicCompanyInfoFormResponseType>("/api/company/basicInfo");
-        const c = res.data;
+        const c = company;
         if (!c || typeof c.name !== "string") return null;
         let logoBase64: string | null = null;
         let logoFormat: "PNG" | "JPEG" = "JPEG";
         if (c.logo && typeof c.logo === "string" && c.logo.length > 0) {
             try {
-                const imgRes = await apiClient.get<ArrayBuffer>(`/api/auxiliary/media/${c.logo}`, { responseType: "arraybuffer" });
-                const bytes = new Uint8Array(imgRes.data);
+                const bytes = await fetchMediaBytes(`/api/auxiliary/media/${c.logo}`);
                 logoFormat = detectImageFormat(bytes);
                 logoBase64 = uint8ToBase64(bytes);
             } catch {
@@ -372,8 +371,13 @@ function totalWithCurrency(grandTotal: string, metaRows: { label: string; value:
     return "—";
 }
 
-async function buildExpenditurePdf(input: ExpenditureCostTemplateInput, rows: ExpenditureTemplateRow[], grandTotal: string): Promise<jsPDF> {
-    const branding = await loadCompanyBranding();
+async function buildExpenditurePdf(
+    input: ExpenditureCostTemplateInput,
+    rows: ExpenditureTemplateRow[],
+    grandTotal: string,
+    company: BasicCompanyInfoFormResponseType | null | undefined,
+): Promise<jsPDF> {
+    const branding = await loadCompanyBranding(company);
     const doc = new jsPDF({ unit: "mm", format: "a4" });
 
     let y = await drawHeader(doc, input.docTitle, branding);
@@ -389,7 +393,7 @@ async function buildExpenditurePdf(input: ExpenditureCostTemplateInput, rows: Ex
 
 export async function downloadExpenditureCostTemplatePdf(
     input: ExpenditureCostTemplateInput,
-    options?: { rows?: ExpenditureTemplateRow[]; emptyRowCount?: number; grandTotal?: string; fileName?: string },
+    options?: { rows?: ExpenditureTemplateRow[]; emptyRowCount?: number; grandTotal?: string; fileName?: string; company?: BasicCompanyInfoFormResponseType | null },
 ): Promise<void> {
     const emptyCount = options?.emptyRowCount ?? 14;
     const rawRows = options?.rows;
@@ -422,7 +426,7 @@ export async function downloadExpenditureCostTemplatePdf(
         if (any) grandTotal = formatMoney(sum);
     }
 
-    const doc = await buildExpenditurePdf(input, rows, grandTotal);
+    const doc = await buildExpenditurePdf(input, rows, grandTotal, options?.company);
     const safeBase = (options?.fileName ?? "unit-cost-expenditure-template").replace(/[^a-zA-Z0-9._-]+/g, "-");
     doc.save(`${safeBase}.pdf`);
 }
@@ -433,7 +437,7 @@ export async function downloadExpenditureCostTemplatePdf(
 export async function downloadExpenditureReportFromUnitCostDataPdf(
     entity: Record<string, unknown>,
     t: (key: string) => string,
-    options?: { fileName?: string },
+    options?: { fileName?: string; company?: BasicCompanyInfoFormResponseType | null },
 ): Promise<void> {
     const pay = entity.paymentStatus;
     const payLabel = typeof pay === "string" && pay ? t(`unitCostPayment.${pay}`) : "";
@@ -532,5 +536,5 @@ export async function downloadExpenditureReportFromUnitCostDataPdf(
         else base = "unit-cost-report";
     }
 
-    await downloadExpenditureCostTemplatePdf(input, { rows, grandTotal, emptyRowCount: 4, fileName: base });
+    await downloadExpenditureCostTemplatePdf(input, { rows, grandTotal, emptyRowCount: 4, fileName: base, company: options?.company });
 }

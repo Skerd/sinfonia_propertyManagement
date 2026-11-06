@@ -23,6 +23,8 @@ import type {
     MarketingUnitStatus,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {PropertyListingCardUnit} from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 const RESIDENCES_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx";
@@ -202,7 +204,7 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
                     </p>
                     <label className="flex w-full max-w-xs cursor-pointer items-center justify-between gap-4 border border-dyeus-border bg-dyeus-white px-4 py-2 sm:w-auto">
                         <span className="sr-only">{t("sortBy")}</span>
-                        <select
+                        <NativeSelect bare
                             value={sortKey}
                             onChange={(event) => setSortKey(event.target.value as ProjectUnitsSortKey)}
                             className="min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent font-dyeus-sans text-base text-dyeus-ink outline-none"
@@ -213,7 +215,7 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
                                     {t(SORT_KEY[key])}
                                 </option>
                             ))}
-                        </select>
+                        </NativeSelect>
                         <span aria-hidden className="pointer-events-none text-dyeus-ink-muted">
                             ▼
                         </span>
@@ -223,19 +225,19 @@ function DyeusResidencesUnitsGrid({project}: DyeusResidencesUnitsGridProps) {
 
             <div className="flex flex-wrap items-center gap-2 md:gap-3">
                 {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
-                    <button
-                        key={filter}
+                    <Button
                         type="button"
-                        onClick={() => setActiveFilter(filter)}
-                        className={cn(
-                            "px-4 py-2 font-dyeus-sans text-sm uppercase tracking-[0.14em] transition",
+                        variant="bare"
+                        key={filter}
+                        className={cn("px-4 py-2 font-dyeus-sans text-sm uppercase tracking-[0.14em] transition",
                             activeFilter === filter
                                 ? "bg-dyeus-ink text-dyeus-cream"
                                 : "border border-dyeus-border text-dyeus-ink-muted hover:text-dyeus-ink",
                         )}
+                        onClick={() => setActiveFilter(filter)}
                     >
                         {t(STATUS_KEY[filter])}
-                    </button>
+                    </Button>
                 ))}
             </div>
 

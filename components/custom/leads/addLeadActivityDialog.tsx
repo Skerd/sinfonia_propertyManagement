@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {History, LoaderCircle} from "lucide-react";
+import {IconHistory, IconLoader2} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -136,7 +136,7 @@ function AddLeadActivityDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" onClick={handleSubmit} disabled={loading || !action}>
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : <History className="h-4 w-4" />}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconHistory className="h-4 w-4" />}
                         {resolveLanguageKey("submit")}
                     </Button>
                 </DialogFooter>

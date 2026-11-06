@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useMemo} from "react";
 import {DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Mail} from "lucide-react";
+import {IconMail} from "@tabler/icons-react";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {ManualReservationClientEmailForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/manualReservationClientEmail.form.type.ts";
 import {MANUAL_CLIENT_EMAIL_ACTION_PREFIX} from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
@@ -97,7 +97,7 @@ function ManualReservationClientEmails({
                             onAction(`${MANUAL_CLIENT_EMAIL_ACTION_PREFIX}${action}`);
                         }}
                     >
-                        <Mail className="h-4 w-4" />
+                        <IconMail className="h-4 w-4" />
                         <span>{resolveLanguageKey(`actionLabels.${action}`)}</span>
                         <DropdownMenuShortcut className="opacity-0 w-0 p-0 m-0 border-0" aria-hidden />
                     </DropdownMenuItem>

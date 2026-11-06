@@ -14,7 +14,7 @@ import MarketingContactForm from "@propertyManagementModule/clients/client/publi
 const {bg1WidthRatio, bg2WidthRatio, minHeightRatio} = FIGMA_DEVELOPERS_CATALOG;
 
 /** Contact-form copy/keys — separate from developers page language. */
-const DevelopersCatalogContactForm = compose(
+const DevelopersCatalogContactForm: ComponentType = compose(
     withLanguage("src/modules/propertyManagement/clients/client/public/contact/index.tsx"),
 )(function DevelopersCatalogContactFormInner({
     resolveLanguageKey,
@@ -31,7 +31,7 @@ const DevelopersCatalogContactForm = compose(
             variant="onDark"
         />
     );
-}) as unknown as ComponentType;
+});
 
 function DevelopersCatalogSection({resolveLanguageKey}: PublicLanguageProps) {
     return (

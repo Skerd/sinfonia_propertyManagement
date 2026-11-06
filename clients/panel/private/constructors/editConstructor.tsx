@@ -1,8 +1,8 @@
-import {z} from "zod";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editConstructorFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/editConstructor.form.validator.ts";
 import type {Constructor} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.dto.ts";
 import type {EditConstructorFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.schema-def.ts";
+import {refId} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 type EditConstructorFormSurface = Omit<EditConstructorFormType, "logo"> & {logo?: File | string};
 
@@ -10,15 +10,16 @@ export default createGenericEditPage<Constructor, EditConstructorFormSurface>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
     model: "constructors",
     apiUrl: "/api/realEstate/constructor",
-    schema: (languageCode, form, writeFields, readFields) => editConstructorFormSchema(languageCode, form, writeFields, readFields).extend({logo: z.union([z.instanceof(File), z.string()]).optional()}),
+    // The SchemaDef's `logo` (mediaId) is a File or the kept media id on the client form.
+    schema: editConstructorFormSchema,
     mapEntityData: (data) => ({
         ...data,
         addresses: data.addresses?.map((addr) => ({
             street: addr.street,
             postalCode: addr.postalCode,
-            city: (addr.city as any)?._id,
-            state: (addr.state as any)?._id,
-            country: (addr.country as any)?._id,
+            city: refId(addr.city),
+            state: refId(addr.state),
+            country: refId(addr.country),
             latitude: addr.latitude ?? 41.3275,
             longitude: addr.longitude ?? 19.8189,
         })),

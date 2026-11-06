@@ -1,4 +1,4 @@
-import React, {useImperativeHandle, useState} from "react";
+import {type ComponentType, useImperativeHandle, useState} from "react";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
 import {compose} from "redux";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -9,6 +9,9 @@ import {PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/sh
 import {projectsAssets} from "@propertyManagementModule/clients/client/public/projects/projectsAssets.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 /** `enquiry` = "Make enquiry" on a price-on-request unit (creates a price_enquiry lead). */
 export type PropertyContactFormMode = "requestInfo" | "reserve" | "enquiry";
@@ -171,7 +174,7 @@ function PropertyContactFormInner({
             <div className="mt-6 flex flex-col gap-5 md:mt-8 md:gap-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
                     <div className="min-w-0 flex-1">
-                        <input
+                        <Input bare
                             type="text"
                             name="name"
                             autoComplete="given-name"
@@ -189,7 +192,7 @@ function PropertyContactFormInner({
                         <FieldError message={fieldErrors.name} />
                     </div>
                     <div className="min-w-0 flex-1">
-                        <input
+                        <Input bare
                             type="text"
                             name="surname"
                             autoComplete="family-name"
@@ -208,7 +211,7 @@ function PropertyContactFormInner({
                     </div>
                 </div>
                 <div className="w-full min-w-0">
-                    <input
+                    <Input bare
                         type="email"
                         name="email"
                         autoComplete="email"
@@ -226,7 +229,7 @@ function PropertyContactFormInner({
                     <FieldError message={fieldErrors.email} />
                 </div>
                 <div className="w-full min-w-0">
-                    <input
+                    <Input bare
                         type="tel"
                         name="phone"
                         autoComplete="tel"
@@ -245,7 +248,7 @@ function PropertyContactFormInner({
                 </div>
                 {!lockedInterest ? (
                     <div className="w-full min-w-0">
-                        <select
+                        <NativeSelect bare
                             name="interest"
                             value={interest}
                             disabled={loading}
@@ -256,8 +259,7 @@ function PropertyContactFormInner({
                             className={cn(
                                 fieldClass,
                                 "border-pronix-border",
-                                interest ? "text-pronix-ink" : "text-pronix-ink-muted",
-                            )}
+                                interest ? "text-pronix-ink" : "text-pronix-ink-muted")}
                         >
                             <option value="" disabled>
                                 {resolveLanguageKey("interestPlaceholder")}
@@ -267,7 +269,7 @@ function PropertyContactFormInner({
                                     {resolveLanguageKey(option.labelKey)}
                                 </option>
                             ))}
-                        </select>
+                        </NativeSelect>
                     </div>
                 ) : null}
                 <div className="w-full min-w-0">
@@ -292,22 +294,22 @@ function PropertyContactFormInner({
                 </div>
             </div>
             <div className="mt-6 flex w-full min-w-0 flex-col gap-3">
-                <button
+                <Button
                     type="button"
-                    disabled={loading}
-                    onClick={handleSend}
-                    className={cn(
-                        "flex w-full cursor-pointer items-center justify-center border border-pronix-ink px-6 py-4",
+                    variant="bare"
+                    className={cn("flex w-full cursor-pointer items-center justify-center border border-pronix-ink px-6 py-4",
                         "bg-transparent text-pronix-ink transition-colors duration-200",
                         "hover:bg-pronix-ink hover:text-white",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                         "disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-pronix-ink",
                     )}
+                    disabled={loading}
+                    onClick={handleSend}
                 >
                     <span className="font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg">
                         {loading ? resolveLanguageKey("sending") : resolveLanguageKey("send")}
                     </span>
-                </button>
+                </Button>
                 {submitted ? (
                     <p role="status" className="font-aeonik-medium text-base leading-[1.3] text-pronix-ink">
                         {resolveLanguageKey("formSuccess")}
@@ -319,13 +321,14 @@ function PropertyContactFormInner({
                     </p>
                 ) : null}
                 {submitted ? (
-                    <button
+                    <Button
                         type="button"
-                        onClick={onClose}
+                        variant="bare"
                         className="font-aeonik-medium text-base text-pronix-blue transition hover:underline md:text-lg"
+                        onClick={onClose}
                     >
                         {resolveLanguageKey("formClose")}
-                    </button>
+                    </Button>
                 ) : null}
             </div>
         </>
@@ -338,15 +341,7 @@ const PropertyContactForm = compose(
         true,
     ),
     withDebug(true, true),
-)(PropertyContactFormInner) as unknown as React.ComponentType<
-    PublicLanguageProps & {
-        projectId: string;
-        unitId: string;
-        unitName: string;
-        mode: PropertyContactFormMode;
-        onClose: () => void;
-    }
->;
+)(PropertyContactFormInner) as ComponentType<Omit<FormInnerProps, keyof WithAxiosType>>;
 
 function PropertyContactFormModal({
     open,
@@ -377,14 +372,15 @@ function PropertyContactFormModal({
                         <h2 id="property-contact-form-title" className={PUBLIC_HEADING}>
                             {title ?? resolveLanguageKey("formTitle")}
                         </h2>
-                        <button
+                        <Button
                             type="button"
-                            onClick={onClose}
+                            variant="bare"
                             className="flex size-9 shrink-0 items-center justify-center rounded-[5px] border border-pronix-border transition duration-200 hover:border-pronix-ink hover:bg-pronix-ink/5"
                             aria-label={resolveLanguageKey("formClose")}
+                            onClick={onClose}
                         >
                             <img alt="" aria-hidden className="size-6" src={projectsAssets.filterClose} />
-                        </button>
+                        </Button>
                     </div>
                     <PropertyContactForm
                         key={`${mode}:${projectId}:${unitId}`}

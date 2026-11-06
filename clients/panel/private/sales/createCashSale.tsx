@@ -14,19 +14,21 @@ import {salesListPath} from "@propertyManagementModule/clients/panel/private/sal
 import type {Resolver, UseFormReturn} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {z} from "zod";
-import {IconSquarePlus2} from "@tabler/icons-react";
+import {IconSquarePlus2, IconAlertCircle} from "@tabler/icons-react";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {Card, CardContent, CardFooter, CardHeader} from "@coreModule/components/ui/card.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
-import {AlertCircleIcon} from "lucide-react";
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
+const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
 
 export type CashSaleReceiptSectionProps = {
     /** Create and edit cash-sale forms share the watched field names (`unit`, rates, discount, `finalPrice`). */
@@ -70,46 +72,48 @@ export function CashSaleReceiptSection({
 
     const reservationDeduction = parseFloat(reservationExchangeRate?.toString() ?? "0") * (reservation?.depositAmount ?? 0);
 
-    const finalConversionRate = !!currency ? saleCurrency !== unit?.priceCurrency?._id?.toString() ? parseFloat(saleExchangeRate?.toString() ?? "0") || 0 : 1 : 1;
+    const finalConversionRate = currency ? saleCurrency !== unit?.priceCurrency?._id?.toString() ? parseFloat(saleExchangeRate?.toString() ?? "0") || 0 : 1 : 1;
     const finalPrice = ((unit?.price || 0) - (reservationDeduction || 0) - (Number(localDiscount || 0) / 100) * (unit?.price || 0)) * finalConversionRate;
 
+    // Loads again when it changes or on retry.
+    const [unitCount, setUnitCount] = useState(0);
     useEffect(() => {
-        if (!unitId) {
-            return;
-        }
-        setLoadingUnit(true);
-        setUnitError(false);
-        apiClient
-            .post<Unit>("/api/realEstate/unit/single", {_id: unitId})
-            .then((res) => {
-                setUnit(res.data);
-                setUnitError(false);
-                setLoadingUnit(false);
-            })
-            .catch(() => {
-                setUnitError(true);
-                setLoadingUnit(false);
-            });
+        if (unitId) setUnitCount((count) => count + 1);
     }, [unitId, forceReload]);
+    useHttpRequest<Unit>(UNIT_REQUEST, {_id: unitId}, unitCount, true, {
+        start: () => {
+            setLoadingUnit(true);
+            setUnitError(false);
+        },
+        success: (data) => {
+            setUnit(data);
+            setLoadingUnit(false);
+        },
+        error: () => {
+            setUnitError(true);
+            setLoadingUnit(false);
+        },
+    });
 
+    // Loads again when it changes or on retry.
+    const [currencyCount, setCurrencyCount] = useState(0);
     useEffect(() => {
-        if (!saleCurrency) {
-            return;
-        }
-        setLoadingCurrency(true);
-        setCurrencyError(false);
-        apiClient
-            .post<Currency>("/api/finance/currency/single", {_id: saleCurrency})
-            .then((res) => {
-                setCurrency(res.data);
-                setCurrencyError(false);
-                setLoadingCurrency(false);
-            })
-            .catch(() => {
-                setCurrencyError(true);
-                setLoadingCurrency(false);
-            });
+        if (saleCurrency) setCurrencyCount((count) => count + 1);
     }, [saleCurrency, forceReloadCurrency]);
+    useHttpRequest<Currency>(CURRENCY_REQUEST, {_id: saleCurrency}, currencyCount, true, {
+        start: () => {
+            setLoadingCurrency(true);
+            setCurrencyError(false);
+        },
+        success: (data) => {
+            setCurrency(data);
+            setLoadingCurrency(false);
+        },
+        error: () => {
+            setCurrencyError(true);
+            setLoadingCurrency(false);
+        },
+    });
 
     useEffect(() => {
         if (!!reservation && !!unit) {
@@ -154,10 +158,10 @@ export function CashSaleReceiptSection({
         }
 
         const values = [];
-        if (!!u?.unitNumber) {
+        if (u?.unitNumber) {
             values.push(u?.unitNumber);
         }
-        if (!!u?.name) {
+        if (u?.name) {
             values.push(u?.name);
         }
         if (!!u?.unitType && !!u?.unitType?.name) {
@@ -281,7 +285,7 @@ export function CashSaleReceiptSection({
                                 <>
                                     {unit?.reservation && !reservation?.paid ? (
                                         <Alert variant="destructive" className="w-full">
-                                            <AlertCircleIcon />
+                                            <IconAlertCircle />
                                             <AlertTitle>{resolveLanguageKey("cannotProceed")}</AlertTitle>
                                             <AlertDescription>{resolveLanguageKey("linkedReservationBlocksSale")}</AlertDescription>
                                         </Alert>
@@ -337,7 +341,7 @@ type CreateCashSaleFormValues = z.infer<ReturnType<typeof createCashSaleFormSche
 function createCashSaleResolver(
     schema: ReturnType<typeof createCashSaleFormSchema>,
 ): Resolver<CreateCashSaleFormValues> {
-    return zodResolver(schema) as unknown as Resolver<CreateCashSaleFormValues>;
+    return zodResolver(schema) as Resolver<CreateCashSaleFormValues>;
 }
 
 type CreateCashSaleProps = WithLanguageType & WithAxiosType<any, CreateCashSaleFormType> & {

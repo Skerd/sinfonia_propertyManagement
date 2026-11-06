@@ -4,6 +4,9 @@ import {editUnitFormSchema} from "armonia/src/modules/propertyManagement/api/rea
 import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type {EditUnitFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.schema-def.ts";
 
+/** The edit form also holds the project and edifice cascade selects that narrow the floor picker. */
+type EditUnitForm = EditUnitFormType & {project?: string; edifice?: string};
+
 const connectedUnitsLabelsState = {
     loadedId: null as string | null,
     labels: {current: {} as Record<string, string>},
@@ -35,7 +38,7 @@ function syncConnectedUnitsLabels(entity: Unit) {
     }
 }
 
-export default createGenericEditPage<Unit, EditUnitFormType>({
+export default createGenericEditPage<Unit, EditUnitForm>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/units/editUnit.tsx",
     model: "units",
     apiUrl: "/api/realEstate/unit",
@@ -65,8 +68,8 @@ export default createGenericEditPage<Unit, EditUnitFormType>({
     },
     buildExtraTitles: (params, entityName) => [params.get("projectName"), params.get("edificeName"), params.get("floorName"), entityName].filter((x): x is string => !!x),
     beforeSubmit: (data, {writeFields, params}) => {
-        const finalEdificeId = (data as any).edifice || params.get("edificeId") || undefined;
-        const finalFloorId = (data as any).floor || params.get("floorId") || undefined;
+        const finalEdificeId = data.edifice || params.get("edificeId") || undefined;
+        const finalFloorId = data.floor || params.get("floorId") || undefined;
         if (writeFields.edifice && !finalEdificeId) return "form.edificeRequired";
         if (writeFields.floor && !finalFloorId) return "form.floorRequired";
         return null;

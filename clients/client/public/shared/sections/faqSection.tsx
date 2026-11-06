@@ -2,6 +2,7 @@ import {useState} from "react";
 import {
     PUBLIC_CONTAINER,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 export type FaqItem = {
     qKey: string;
@@ -52,15 +53,16 @@ function FaqSection({
 
                     return (
                         <div key={item.qKey} className="overflow-hidden rounded-[5px]">
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => toggleItem(index)}
+                                variant="bare"
                                 aria-expanded={isOpen}
                                 className={`flex w-full cursor-pointer items-center justify-between gap-4 p-4 text-left transition duration-200 md:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/30 focus-visible:ring-offset-2 ${
                                     isOpen
                                         ? "bg-pronix-blue hover:bg-pronix-blue/90"
                                         : "border border-pronix-border bg-white hover:border-[rgba(24,24,24,0.35)] hover:bg-pronix-ink/[0.03] hover:shadow-sm"
                                 }`}
+                                onClick={() => toggleItem(index)}
                             >
                                 <p
                                     className={`font-aeonik-medium text-[20px] not-italic md:text-xl lg:text-2xl leading-[1.2] tracking-normal ${
@@ -75,7 +77,7 @@ function FaqSection({
                                     className="size-6 shrink-0"
                                     src={isOpen ? plusIconSrc.open : plusIconSrc.closed}
                                 />
-                            </button>
+                            </Button>
                             {isOpen && item.aKey && (
                                 <div className="border border-t-0 border-pronix-border bg-white p-4 md:p-6">
                                     <p className="font-aeonik-light text-[18px] leading-[1.2] tracking-normal text-pronix-ink not-italic md:text-xl lg:text-2xl">

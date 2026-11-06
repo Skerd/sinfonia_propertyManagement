@@ -1,6 +1,6 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import {ChevronLeft, Maximize2} from "lucide-react";
+import {IconArrowsMaximize, IconChevronLeft} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {Dialog, DialogContent, DialogTitle} from "@coreModule/components/ui/dialog.tsx";
@@ -19,6 +19,7 @@ import type {
     MarketingUnitCatalogListItem,
     MarketingUnitCatalogStatus,
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingProjectCatalog/marketingProjectCatalogSingle.form.response.type.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type ExplorerLevel = "project" | "edifice" | "floor";
 
@@ -214,20 +215,27 @@ export default function PropertyPolygonExplorer({project, unitTo, resolveLanguag
         <div className={cn("overflow-hidden bg-card", large ? "flex h-full min-h-0 flex-col" : "rounded-3xl border")}>
             {canGoBack ? (
                 <div className={cn("flex items-center gap-1 border-b px-3 py-2.5", large && "pr-12")}>
-                    <button
+                    <Button
                         type="button"
+                        variant="ghost"
+                        size="icon"
                         onClick={goBack}
                         className="flex size-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                         aria-label={resolveLanguageKey("explorer.back")}
                     >
-                        <ChevronLeft className="size-5" aria-hidden />
-                    </button>
+                        <IconChevronLeft className="size-5" aria-hidden />
+                    </Button>
                     <nav className="flex min-w-0 items-center gap-1.5 text-sm font-medium" aria-label={resolveLanguageKey("explorer.back")}>
                         {edifice?.name ? (
                             level === "floor" ? (
-                                <button type="button" onClick={goBack} className="truncate rounded-md px-1 py-0.5 hover:bg-muted">
+                                <Button
+                                    type="button"
+                                    variant="bare"
+                                    className="truncate rounded-md px-1 py-0.5 hover:bg-muted"
+                                    onClick={goBack}
+                                >
                                     {edifice.name}
-                                </button>
+                                </Button>
                             ) : (
                                 <span className="truncate px-1 py-0.5">{edifice.name}</span>
                             )
@@ -255,14 +263,16 @@ export default function PropertyPolygonExplorer({project, unitTo, resolveLanguag
                     <div className={cn("relative min-h-0 overflow-hidden bg-muted", large ? "min-h-[24rem] lg:h-full" : "aspect-[4/3] lg:aspect-auto lg:min-h-[28rem]")}>
                         <div className="absolute inset-0">{plan(large)}</div>
                         {!large ? (
-                            <button
+                            <Button
                                 type="button"
+                                variant="ghost"
+                                size="icon"
                                 onClick={() => setMagnified(true)}
                                 className="absolute top-3 right-3 z-10 flex size-9 items-center justify-center rounded-full bg-background/90 text-foreground shadow-md ring-1 ring-border backdrop-blur-sm transition-colors hover:bg-background"
                                 aria-label={resolveLanguageKey("explorer.magnify")}
                             >
-                                <Maximize2 className="size-4" aria-hidden />
-                            </button>
+                                <IconArrowsMaximize className="size-4" aria-hidden />
+                            </Button>
                         ) : null}
                     </div>
                 ) : null}
@@ -327,15 +337,16 @@ export default function PropertyPolygonExplorer({project, unitTo, resolveLanguag
                                                         {row}
                                                     </Link>
                                                 ) : (
-                                                    <button
+                                                    <Button
                                                         type="button"
-                                                        className={className}
+                                                        variant="bare"
+                                                        className={cn(className)}
                                                         aria-pressed={active}
-                                                        onClick={() => choose(pick.id)}
                                                         {...hoverProps(pick.id)}
+                                                        onClick={() => choose(pick.id)}
                                                     >
                                                         {row}
-                                                    </button>
+                                                    </Button>
                                                 )}
                                             </li>
                                         );

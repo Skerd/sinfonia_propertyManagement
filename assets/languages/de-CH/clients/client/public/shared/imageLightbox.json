@@ -1,0 +1,8 @@
+{
+  "path": "src/modules/propertyManagement/clients/client/public/shared/imageLightbox.tsx",
+  "title": "Galerie",
+  "close": "Schliessen",
+  "previous": "Zurück",
+  "next": "Weiter",
+  "media": "Medium {{index}}"
+}

@@ -1,6 +1,6 @@
 import {compose} from "redux";
 import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -18,38 +18,31 @@ import {
     TableHeader,
     TableRow,
 } from "@coreModule/components/ui/table/table.tsx";
-import {
-    Building2,
-    CircleDollarSign,
-    ClipboardList,
-    Home,
-    KeyRound,
-    Layers,
-    ShoppingBag,
-    Wallet,
-} from "lucide-react";
+import {IconBuildingSkyscraper, IconClipboardList, IconCoin, IconHome, IconKey, IconShoppingBag, IconStack2, IconWallet} from "@tabler/icons-react";
 import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
 import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type GroupDashboardProps = WithLanguageType & WithAxiosType<GroupDashboardResponse, Record<string, never>>;
 
+const SNAGS_REQUEST: HttpRequest = {method: "post", url: "/api/propertyDevelopment/groupDashboard"};
+
 type KpiKey = keyof Omit<BranchKpi, "companyId" | "companyName">;
 
-const KPI_CONFIG: {key: KpiKey; labelKey: string; icon: typeof Layers; variant?: "default" | "primary" | "success" | "warning" | "danger"}[] = [
-    {key: "totalUnits", labelKey: "kpiTotalUnits", icon: Layers, variant: "primary"},
-    {key: "availableUnits", labelKey: "kpiAvailableUnits", icon: Home, variant: "success"},
-    {key: "soldUnits", labelKey: "kpiSoldUnits", icon: ShoppingBag},
-    {key: "rentedUnits", labelKey: "kpiRentedUnits", icon: KeyRound},
-    {key: "totalRevenue", labelKey: "kpiRevenue", icon: CircleDollarSign, variant: "primary"},
-    {key: "totalCommissions", labelKey: "kpiCommissions", icon: Wallet},
-    {key: "activeLeases", labelKey: "kpiActiveLeases", icon: Building2},
-    {key: "openSnags", labelKey: "kpiOpenSnags", icon: ClipboardList, variant: "warning"},
+const KPI_CONFIG: {key: KpiKey; labelKey: string; icon: typeof IconStack2; variant?: "default" | "primary" | "success" | "warning" | "danger"}[] = [
+    {key: "totalUnits", labelKey: "kpiTotalUnits", icon: IconStack2, variant: "primary"},
+    {key: "availableUnits", labelKey: "kpiAvailableUnits", icon: IconHome, variant: "success"},
+    {key: "soldUnits", labelKey: "kpiSoldUnits", icon: IconShoppingBag},
+    {key: "rentedUnits", labelKey: "kpiRentedUnits", icon: IconKey},
+    {key: "totalRevenue", labelKey: "kpiRevenue", icon: IconCoin, variant: "primary"},
+    {key: "totalCommissions", labelKey: "kpiCommissions", icon: IconWallet},
+    {key: "activeLeases", labelKey: "kpiActiveLeases", icon: IconBuildingSkyscraper},
+    {key: "openSnags", labelKey: "kpiOpenSnags", icon: IconClipboardList, variant: "warning"},
 ];
 
 function fmt(n: number): string {
@@ -71,28 +64,16 @@ function GroupDashboard({
         useAccess("commissions"),
         useAccess("leases"),
     ]);
-    const [openSnagsByCompany, setOpenSnagsByCompany] = useState<Record<string, number>>({});
 
     useEffect(() => {
         if (accessHydrated === false || !canRead) return;
         onFilterChange({});
     }, [accessHydrated, canRead]);
 
-    useEffect(() => {
-        if (accessHydrated === false || !canRead || !isModuleEnabled("propertyDevelopment")) return;
-        if (!hasAnyAccessRead([snagsAccess])) return;
-        let cancelled = false;
-        apiClient.post<{openSnagsByCompany: Record<string, number>}>("/api/propertyDevelopment/groupDashboard", {})
-            .then((res) => {
-                if (!cancelled) setOpenSnagsByCompany(res.data.openSnagsByCompany ?? {});
-            })
-            .catch(() => {
-                if (!cancelled) setOpenSnagsByCompany({});
-            });
-        return () => {
-            cancelled = true;
-        };
-    }, [accessHydrated, canRead, snagsAccess]);
+    // Open snags per branch come from propertyDevelopment's endpoint, only when that module and the grant are there.
+    const readSnags = accessHydrated !== false && canRead && isModuleEnabled("propertyDevelopment") && hasAnyAccessRead([snagsAccess]);
+    const snagsRequest = useHttpRequest<{openSnagsByCompany?: Record<string, number>}>(SNAGS_REQUEST, {}, readSnags ? 1 : 0);
+    const openSnagsByCompany = (!snagsRequest.error && snagsRequest.data?.openSnagsByCompany) || {};
 
     if (accessHydrated === false) return <Loader/>;
     if (!canRead) return <Forbidden />;

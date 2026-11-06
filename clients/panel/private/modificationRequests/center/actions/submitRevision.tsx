@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {RotateCcw} from "lucide-react";
+import {IconRotate} from "@tabler/icons-react";
 
 type SubmitRevisionProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -22,7 +22,7 @@ function SubmitRevision({
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <RotateCcw size={16}/>
+            <IconRotate size={16}/>
             {resolveLanguageKey("submitRevisionTitle")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

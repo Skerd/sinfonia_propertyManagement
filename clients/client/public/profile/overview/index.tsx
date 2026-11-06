@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef} from "react";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
-import {Building2, CalendarDays, Heart, Bell} from "lucide-react";
+import {IconBell, IconBuildingSkyscraper, IconCalendarMonth, IconHeart} from "@tabler/icons-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -77,37 +77,37 @@ function OverviewPageInner({
     const kpiItems = [
         {
             key: "owned",
-            icon: Building2,
+            icon: IconBuildingSkyscraper,
             value: overview?.propertiesOwned ?? 0,
             label: resolveLanguageKey("kpiPropertiesOwned"),
         },
         {
             key: "reservations",
-            icon: CalendarDays,
+            icon: IconCalendarMonth,
             value: overview?.activeReservations ?? 0,
             label: resolveLanguageKey("kpiActiveReservations"),
         },
         {
             key: "savedProperties",
-            icon: Heart,
+            icon: IconHeart,
             value: savedProperties,
             label: resolveLanguageKey("kpiSavedProperties"),
         },
         {
             key: "savedEdifices",
-            icon: Heart,
+            icon: IconHeart,
             value: savedEdifices,
             label: resolveLanguageKey("kpiSavedEdifices"),
         },
         {
             key: "savedUnits",
-            icon: Heart,
+            icon: IconHeart,
             value: savedUnits,
             label: resolveLanguageKey("kpiSavedUnits"),
         },
         {
             key: "notifications",
-            icon: Bell,
+            icon: IconBell,
             value: overview?.unreadNotifications ?? 0,
             label: resolveLanguageKey("kpiNewNotifications"),
         },

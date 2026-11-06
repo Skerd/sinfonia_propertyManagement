@@ -1,4 +1,4 @@
-import { Building2, Wallet, Layers, TrendingUp, FileCheck, KeyRound } from "lucide-react";
+import {IconBuildingSkyscraper, IconFileCheck, IconKey, IconStack2, IconTrendingUp, IconWallet} from "@tabler/icons-react";
 import {
   GRID_KPI,
   DASHBOARD_TAB_STACK,
@@ -84,10 +84,10 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
         description={resolveLanguageKey("paymentPlansSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={Layers} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={formatNumber(activePaymentPlans)} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={Wallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={formatNumber(overdueInstallments)} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={Wallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatCurrency(totalOutstanding)} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={Wallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={formatNumber(activePaymentPlans)} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={IconWallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={formatNumber(overdueInstallments)} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={IconWallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatCurrency(totalOutstanding)} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={IconWallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -96,10 +96,10 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
         description={resolveLanguageKey("rentalsSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("rentCollected")} value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentCollectedDesc")} icon={Wallet} variant="success" href="/realEstate/rentalsHub" linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("rentOutstanding")} value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOutstandingDesc")} icon={Wallet} variant="warning" href="/realEstate/rentalsHub" linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("rentOverdue")} value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOverdueDesc")} icon={Wallet} variant="danger" href="/realEstate/rentalsHub" linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("activeLeases")} value={formatNumber(summary?.rentals?.activeLeases ?? 0)} subtitle={resolveLanguageKey("activeLeasesDesc")} icon={KeyRound} href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("rentCollected")} value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentCollectedDesc")} icon={IconWallet} variant="success" href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("rentOutstanding")} value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOutstandingDesc")} icon={IconWallet} variant="warning" href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("rentOverdue")} value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOverdueDesc")} icon={IconWallet} variant="danger" href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("activeLeases")} value={formatNumber(summary?.rentals?.activeLeases ?? 0)} subtitle={resolveLanguageKey("activeLeasesDesc")} icon={IconKey} href="/realEstate/rentalsHub" linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -108,11 +108,11 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
         description={resolveLanguageKey("portfolioSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={Building2} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={Building2} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={Layers} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={TrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("followUpInspections")} value={formatNumber(followUpInspections)} subtitle={resolveLanguageKey("followUpInspectionsDesc")} icon={FileCheck} href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuildingSkyscraper} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuildingSkyscraper} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack2} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("followUpInspections")} value={formatNumber(followUpInspections)} subtitle={resolveLanguageKey("followUpInspectionsDesc")} icon={IconFileCheck} href={kpi.kpiFollowUpInspections(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 

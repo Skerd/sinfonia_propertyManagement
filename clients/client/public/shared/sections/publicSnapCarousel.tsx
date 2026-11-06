@@ -1,4 +1,6 @@
 import {Children, useEffect, useRef, useState, type ReactNode} from "react";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type PublicSnapCarouselProps = {
     children: ReactNode;
@@ -72,18 +74,18 @@ export function PublicSnapCarousel({
                 {items.map((child, index) => {
                     const isActive = index === activeIndex;
                     return (
-                        <button
-                            key={(child as {key?: string | null}).key ?? index}
+                        <Button
                             type="button"
-                            role="tab"
+                            variant="bare"
+                            key={(child as {key?: string | null}).key ?? index}
                             aria-selected={isActive}
                             aria-label={`${index + 1}`}
-                            onClick={() => scrollToIndex(index)}
-                            className={
-                                isActive
+                            className={cn(isActive
                                     ? `h-2.5 w-8 shrink-0 rounded-full ${activeDotClassName}`
                                     : `size-2.5 shrink-0 rounded-full ${inactiveDotClassName}`
-                            }
+                            )}
+                            onClick={() => scrollToIndex(index)}
+                            role="tab"
                         />
                     );
                 })}

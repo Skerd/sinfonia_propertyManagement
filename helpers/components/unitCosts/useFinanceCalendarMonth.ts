@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
-import type { TableResponse } from "armonia/src/modules/core/types/shared.types.ts";
+import { useEffect, useMemo, useState } from "react";
 import type { UnitCost } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.dto.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useAllPages from "@coreModule/helpers/hooks/useAllPages.ts";
+import type { HttpRequest } from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import { buildFinanceCalendarFetchFilter } from "@propertyManagementModule/helpers/components/unitCosts/financeFilterDsl.ts";
 
 const PAGE_LIMIT = 200;
+const UNIT_COSTS_REQUEST: HttpRequest = { method: "post", url: "/api/realEstate/unit/cost" };
 /** Hard cap to avoid unbounded memory; UI shows a warning when results are truncated. */
 export const FINANCE_CALENDAR_MAX_ROWS = 5000;
 
@@ -34,16 +35,7 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
     const mo = month.getMonth();
     const { project, edifice, floor, unit, verificationStatus, paymentStatus, vendorContains, purchasePersonId } = options;
 
-    const [rows, setRows] = useState<UnitCost[]>([]);
-    const [total, setTotal] = useState<number>(0);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<unknown>(null);
-    const [truncated, setTruncated] = useState(false);
-
-    const load = useCallback(async () => {
-        setLoading(true);
-        setError(null);
-        setTruncated(false);
+    const requestData = useMemo(() => {
         const { start, end } = monthRangeYmd(new Date(y, mo, 1));
         const filter = buildFinanceCalendarFetchFilter(start, end, {
             vendorContains,
@@ -55,46 +47,19 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
             edifice,
             floor,
         });
-        const collected: UnitCost[] = [];
-        let offset = 0;
-        let serverTotal = 0;
-        try {
-            while (offset < FINANCE_CALENDAR_MAX_ROWS) {
-                const body: Record<string, unknown> = {
-                    offset,
-                    limit: PAGE_LIMIT,
-                    sortBy: "paymentDate",
-                    sortOrder: "asc",
-                    filter,
-                };
-
-                const { data } = await apiClient.post<TableResponse<UnitCost>>("/api/realEstate/unit/cost", body);
-                serverTotal = data.total;
-                collected.push(...data.data);
-                offset += data.data.length;
-                if (
-                    data.data.length < PAGE_LIMIT ||
-                    collected.length >= serverTotal ||
-                    collected.length >= FINANCE_CALENDAR_MAX_ROWS
-                ) {
-                    break;
-                }
-            }
-            setTotal(serverTotal);
-            setRows(collected);
-            setTruncated(serverTotal > collected.length && collected.length >= FINANCE_CALENDAR_MAX_ROWS);
-        } catch (e) {
-            setError(e);
-            setRows([]);
-            setTotal(0);
-        } finally {
-            setLoading(false);
-        }
+        return { sortBy: "paymentDate", sortOrder: "asc", filter };
     }, [y, mo, project, edifice, floor, unit, verificationStatus, paymentStatus, vendorContains, purchasePersonId]);
 
+    // One load of every page per month/filter change.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        load();
-    }, [load]);
+        setFetchCount((count) => count + 1);
+    }, [requestData]);
+    const { rows, total, loading: pagesLoading, error, truncated } = useAllPages<UnitCost>(UNIT_COSTS_REQUEST, requestData, fetchCount, {
+        pageSize: PAGE_LIMIT,
+        maxRows: FINANCE_CALENDAR_MAX_ROWS,
+    });
+    const loading = fetchCount === 0 || pagesLoading;
 
     return { rows, total, loading, error, truncated };
 }

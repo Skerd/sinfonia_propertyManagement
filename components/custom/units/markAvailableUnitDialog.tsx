@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle} from "react";
 import type {ActionMessage, SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {LoaderCircle, CircleCheck} from "lucide-react";
+import {IconCircleCheck, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -68,7 +68,7 @@ function MarkAvailableUnitDialog({
                         }}
                         disabled={loading}
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <CircleCheck />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconCircleCheck />}
                         <p>{resolveLanguageKey("confirm")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

@@ -12,7 +12,7 @@ export default createGenericCreatePage<CreateFloorFormType>({
     defaultValues: (params) => ({
         project: quickOrScopeParam(params, "project", "projectId") || undefined,
         edifice: quickOrScopeParam(params, "edifice", "edificeId"),
-    }) as unknown as CreateFloorFormType,
+    }),
     buildFormExtras: (params) => ({
         hasRouteProjectId: !!quickOrScopeParam(params, "project", "projectId"),
         hasRouteEdificeId: !!quickOrScopeParam(params, "edifice", "edificeId"),

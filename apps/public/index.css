@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "./theme.css";
 
+/* The shadcn tokens core components/ui (ui/sonner) reads; the Toaster is pinned to its light theme (TD-F21). */
+:root {
+    --radius: 5px;
+    --popover: #ffffff;
+    --popover-foreground: #181818;
+    --border: rgba(24, 24, 24, 0.2);
+}
+
 @layer base {
     body {
         @apply bg-white text-[#181818] antialiased;

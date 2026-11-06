@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {compose} from "redux";
-import {X} from "lucide-react";
+import {IconX} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import PublicFavoriteHeartButton from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartButton.tsx";
 import PropertyGallerySection from "@propertyManagementModule/clients/client/public/property/sections/propertyGallerySection.tsx";
 import PropertyDetailsSection from "@propertyManagementModule/clients/client/public/property/sections/propertyDetailsSection.tsx";
@@ -14,6 +14,7 @@ import PropertyContactFormModal, {
     type PropertyContactFormTitleKey,
 } from "@propertyManagementModule/clients/client/public/property/sections/propertyContactFormModal.tsx";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/property/index.tsx";
 
@@ -26,6 +27,8 @@ type OpenProjectFigmaUnitPanelProps = WithLanguageType & {
 
 type MarketingUnitResponse = {unit: MarketingUnitSingle};
 
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/single"};
+
 function OpenProjectFigmaUnitPanel({
     projectId,
     unitId,
@@ -35,47 +38,19 @@ function OpenProjectFigmaUnitPanel({
     currentLanguage,
     languageCode,
 }: OpenProjectFigmaUnitPanelProps) {
-    const [unit, setUnit] = useState<MarketingUnitSingle | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
     const [contactOpen, setContactOpen] = useState(false);
     const [contactTitle, setContactTitle] = useState<string | undefined>(undefined);
     const [contactMode, setContactMode] = useState<PropertyContactFormMode>("requestInfo");
 
+    // One request per unit; the previous unit is hidden while the next one loads.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setLoading(true);
-        setError(false);
-        setUnit(null);
-
-        apiClient
-            .post<MarketingUnitResponse>("/api/realEstate/marketingUnit/single", {projectId, unitId})
-            .then((response) => {
-                if (cancelled) {
-                    return;
-                }
-                const nextUnit = response.data?.unit;
-                if (!nextUnit) {
-                    setError(true);
-                    return;
-                }
-                setUnit(nextUnit);
-            })
-            .catch(() => {
-                if (!cancelled) {
-                    setError(true);
-                }
-            })
-            .finally(() => {
-                if (!cancelled) {
-                    setLoading(false);
-                }
-            });
-
-        return () => {
-            cancelled = true;
-        };
+        setFetchCount((count) => count + 1);
     }, [projectId, unitId]);
+    const request = useHttpRequest<MarketingUnitResponse>(UNIT_REQUEST, {projectId, unitId}, fetchCount);
+    const loading = fetchCount === 0 || request.loading;
+    const unit: MarketingUnitSingle | null = loading ? null : request.data?.unit ?? null;
+    const error = !loading && !unit;
 
     const openContactForm = (titleKey: PropertyContactFormTitleKey) => {
         setContactMode(CONTACT_MODE_BY_TITLE[titleKey]);
@@ -111,14 +86,15 @@ function OpenProjectFigmaUnitPanel({
                             removeLabel={String(resolveLanguageKey("favoritesRemove"))}
                         />
                     ) : null}
-                    <button
+                    <Button
                         type="button"
-                        onClick={onClose}
+                        variant="bare"
                         className="-mr-1 -mt-0.5 flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-[5px] text-pronix-ink transition hover:bg-[rgba(24,24,24,0.06)]"
                         aria-label={String(resolveLanguageKey("back"))}
+                        onClick={onClose}
                     >
-                        <X className="size-5" strokeWidth={1.75} aria-hidden />
-                    </button>
+                        <IconX className="size-5" strokeWidth={1.75} aria-hidden />
+                    </Button>
                 </div>
             </div>
 

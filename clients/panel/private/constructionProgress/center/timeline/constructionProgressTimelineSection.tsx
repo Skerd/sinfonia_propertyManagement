@@ -5,7 +5,7 @@ import withLanguage, {type ResolveLanguageKey, type WithLanguageType} from "@cor
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {readQuickFiltersFromUrl} from "@coreModule/helpers/hooks/useListUrlState.ts";
 import {buildFilterGroup, buildFilterRule} from "@coreModule/helpers/filter/filterUrl.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import SimpleError from "@coreModule/components/custom/errors/errorViewWrapper.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -24,9 +24,9 @@ import {
 } from "@coreModule/components/ui/tooltip.tsx";
 import type {ConstructionProgress} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructionProgress/constructionProgress.dto.ts";
 import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconRoute} from "@tabler/icons-react";
-import {Building, CalendarDays, ChevronRight, FolderOpen} from "lucide-react";
+import {IconRoute, IconBuilding, IconCalendarMonth, IconChevronRight, IconFolderOpen} from "@tabler/icons-react";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type ConstructionProgressTimelineSectionProps = WithLanguageType & {
     /** Route-scoped project (e.g. navigated from a project page). Overridden by quick filter. */
@@ -81,18 +81,18 @@ function TimelinePreview({
                 </p>
                 <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1">
-                        <CalendarDays className="h-3 w-3 shrink-0" />
+                        <IconCalendarMonth className="h-3 w-3 shrink-0" />
                         {formatUpdateDate(update.updateDate)}
                     </span>
                     {update.project?.name && (
                         <span className="inline-flex items-center gap-1">
-                            <FolderOpen className="h-3 w-3 shrink-0" />
+                            <IconFolderOpen className="h-3 w-3 shrink-0" />
                             <span className="line-clamp-1">{update.project.name}</span>
                         </span>
                     )}
                     {update.edifice?.name && (
                         <span className="inline-flex items-center gap-1">
-                            <Building className="h-3 w-3 shrink-0" />
+                            <IconBuilding className="h-3 w-3 shrink-0" />
                             <span className="line-clamp-1">{update.edifice.name}</span>
                         </span>
                     )}
@@ -105,6 +105,8 @@ function TimelinePreview({
     );
 }
 
+const TIMELINE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/constructionProgress"};
+
 function ConstructionProgressTimelineSection({
     projectId,
     edificeId,
@@ -113,9 +115,6 @@ function ConstructionProgressTimelineSection({
 }: ConstructionProgressTimelineSectionProps) {
     const [searchParams] = useSearchParams();
     const [open, setOpen] = useState(false);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const [updates, setUpdates] = useState<ConstructionProgress[]>([]);
 
     const {filterProject, filterEdifice, filterPhase} = useMemo(() => {
         const fromUrl = readQuickFiltersFromUrl(searchParams, [...QUICK_FILTER_FIELDS]);
@@ -126,43 +125,37 @@ function ConstructionProgressTimelineSection({
         };
     }, [searchParams, projectId, edificeId]);
 
-    const fetchTimeline = useCallback(async () => {
-        setLoading(true);
-        setError(false);
-        try {
-            const body: Record<string, unknown> = {
-                limit: 250,
-                offset: 0,
-                sortBy: "updateDate",
-                sortOrder: "asc",
-            };
-            // Same filter DSL the list sends: project / building / phase are plain schema fields.
-            const rules = [
-                filterProject ? buildFilterRule("project", "equals", filterProject) : null,
-                filterEdifice ? buildFilterRule("edifice", "equals", filterEdifice) : null,
-                filterPhase ? buildFilterRule("phase", "equals", filterPhase) : null,
-            ].filter((rule): rule is NonNullable<typeof rule> => rule !== null);
-            if (rules.length) body.filter = buildFilterGroup(rules);
-
-            const res = await apiClient.post<TableResponse<ConstructionProgress>>(
-                "/api/realEstate/constructionProgress",
-                body,
-            );
-            const rows = [...(res.data?.data ?? [])].sort(
-                (a, b) => new Date(a.updateDate).getTime() - new Date(b.updateDate).getTime(),
-            );
-            setUpdates(rows);
-        } catch {
-            setError(true);
-            setUpdates([]);
-        } finally {
-            setLoading(false);
-        }
+    const timelineBody = useMemo(() => {
+        const body: Record<string, unknown> = {
+            limit: 250,
+            offset: 0,
+            sortBy: "updateDate",
+            sortOrder: "asc",
+        };
+        // Same filter DSL the list sends: project / building / phase are plain schema fields.
+        const rules = [
+            filterProject ? buildFilterRule("project", "equals", filterProject) : null,
+            filterEdifice ? buildFilterRule("edifice", "equals", filterEdifice) : null,
+            filterPhase ? buildFilterRule("phase", "equals", filterPhase) : null,
+        ].filter((rule): rule is NonNullable<typeof rule> => rule !== null);
+        if (rules.length) body.filter = buildFilterGroup(rules);
+        return body;
     }, [filterProject, filterEdifice, filterPhase]);
-
+    // One request per filter change and per retry.
+    const [fetchCount, setFetchCount] = useState(0);
+    const fetchTimeline = useCallback(() => setFetchCount((count) => count + 1), []);
     useEffect(() => {
-        void fetchTimeline();
-    }, [fetchTimeline]);
+        fetchTimeline();
+    }, [timelineBody, fetchTimeline]);
+    const request = useHttpRequest<TableResponse<ConstructionProgress>>(TIMELINE_REQUEST, timelineBody, fetchCount);
+    const loading = fetchCount === 0 || request.loading;
+    const error = request.error != null;
+    const updates = useMemo(
+        () => (request.error ? [] : [...(request.data?.data ?? [])].sort(
+            (a, b) => new Date(a.updateDate).getTime() - new Date(b.updateDate).getTime(),
+        )),
+        [request.data, request.error],
+    );
 
     const dateRangeLabel = useMemo(() => {
         if (updates.length === 0) return "";
@@ -183,7 +176,7 @@ function ConstructionProgressTimelineSection({
                         "transition-colors hover:bg-muted/40 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     )}
                 >
-                    <ChevronRight
+                    <IconChevronRight
                         className={cn(
                             "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
                             "group-data-[state=open]/timeline:rotate-90",
@@ -236,7 +229,7 @@ function ConstructionProgressTimelineSection({
                             <SimpleError
                                 title={String(resolveLanguageKey("failTitle"))}
                                 description={String(resolveLanguageKey("failDescription"))}
-                                onClick={() => void fetchTimeline()}
+                                onClick={fetchTimeline}
                             />
                         )}
 
@@ -279,18 +272,18 @@ function ConstructionProgressTimelineSection({
 
                                                     <Tooltip side="top" sideOffset={10}>
                                                         <TooltipTrigger asChild>
-                                                            <button
+                                                            <Button
                                                                 type="button"
-                                                                className={cn(
-                                                                    "relative z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 bg-card text-xs font-bold shadow-sm outline-none",
+                                                                variant="bare"
+                                                                className={cn("relative z-10 flex h-11 w-11 items-center justify-center rounded-full border-2 bg-card text-xs font-bold shadow-sm outline-none",
                                                                     "transition-transform hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-ring",
                                                                     progressTone(update.progressPercent ?? 0),
                                                                 )}
-                                                                onClick={() => onSelectUpdate?.(update)}
                                                                 aria-label={update.title}
+                                                                onClick={() => onSelectUpdate?.(update)}
                                                             >
                                                                 {update.progressPercent}%
-                                                            </button>
+                                                            </Button>
                                                         </TooltipTrigger>
                                                         <TooltipContent
                                                             className="w-auto max-w-none border bg-card p-0 text-card-foreground shadow-xl [&>svg]:hidden"

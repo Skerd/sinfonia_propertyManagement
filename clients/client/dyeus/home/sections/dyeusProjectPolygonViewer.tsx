@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import {ChevronLeft, Eye, EyeOff} from "lucide-react";
+import {IconChevronLeft, IconEye, IconEyeOff} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
@@ -18,6 +18,7 @@ import type {
     MarketingPolygonItem,
     MarketingProjectSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const HOME_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
@@ -75,9 +76,9 @@ function ViewerSelectionList({
                 const hovered = item.id === hoveredId;
                 return (
                     <li key={item.id}>
-                        <button
+                        <Button
                             type="button"
-                            onClick={() => onSelect(item.id)}
+                            variant="bare"
                             onMouseEnter={() => onHover(item.id)}
                             onMouseLeave={() => onHover(null)}
                             onFocus={() => onHover(item.id)}
@@ -90,6 +91,7 @@ function ViewerSelectionList({
                                       ? "bg-dyeus-sand text-dyeus-ink"
                                       : "text-dyeus-ink hover:bg-dyeus-sand/70",
                             )}
+                            onClick={() => onSelect(item.id)}
                         >
                             <span className="font-dyeus-serif text-[1.05rem]">{item.label}</span>
                             {item.meta ? (
@@ -102,7 +104,7 @@ function ViewerSelectionList({
                                     {item.meta}
                                 </span>
                             ) : null}
-                        </button>
+                        </Button>
                     </li>
                 );
             })}
@@ -378,26 +380,28 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                     <div className="absolute left-3 top-3 z-30 flex items-start gap-2 md:left-4 md:top-4">
                         {showBack ? (
                             <div className="flex max-w-[min(100vw-1.5rem,20rem)] items-center gap-0.5 bg-dyeus-cream/90 py-1 pl-1 pr-2 shadow-sm backdrop-blur-sm">
-                                <button
+                                <Button
                                     type="button"
-                                    onClick={goBack}
+                                    variant="bare"
                                     className="flex size-7 shrink-0 cursor-pointer items-center justify-center rounded text-dyeus-ink/80 transition hover:bg-dyeus-sand/80 hover:text-dyeus-ink"
                                     aria-label={t("goBack")}
+                                    onClick={goBack}
                                 >
-                                    <ChevronLeft className="size-4" strokeWidth={1.75} aria-hidden />
-                                </button>
+                                    <IconChevronLeft className="size-4" strokeWidth={1.75} aria-hidden />
+                                </Button>
                                 <nav
                                     aria-label={t("viewerLocationAria")}
                                     className="flex min-w-0 items-center gap-1.5 font-dyeus-serif text-sm leading-none text-dyeus-ink md:text-[0.9375rem]"
                                 >
                                     {level === "floor" ? (
-                                        <button
+                                        <Button
                                             type="button"
-                                            onClick={goBack}
+                                            variant="bare"
                                             className="min-w-0 truncate cursor-pointer text-dyeus-ink/55 transition hover:text-dyeus-ink"
+                                            onClick={goBack}
                                         >
                                             {edificeName}
-                                        </button>
+                                        </Button>
                                     ) : (
                                         <span className="min-w-0 truncate">{edificeName}</span>
                                     )}
@@ -415,9 +419,9 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                             </div>
                         ) : null}
                         {phantomPoints.length > 0 ? (
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
+                                variant="bare"
                                 aria-pressed={phantomsAlwaysVisible}
                                 aria-label={
                                     phantomsAlwaysVisible
@@ -425,13 +429,14 @@ function DyeusProjectPolygonViewer({project, className}: DyeusProjectPolygonView
                                         : t("showPolygons")
                                 }
                                 className="flex size-8 shrink-0 cursor-pointer items-center justify-center bg-dyeus-cream/90 text-dyeus-ink/80 shadow-sm backdrop-blur-sm transition hover:bg-dyeus-cream hover:text-dyeus-ink"
+                                onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
                             >
                                 {phantomsAlwaysVisible ? (
-                                    <Eye className="size-4" strokeWidth={1.75} aria-hidden />
+                                    <IconEye className="size-4" strokeWidth={1.75} aria-hidden />
                                 ) : (
-                                    <EyeOff className="size-4" strokeWidth={1.75} aria-hidden />
+                                    <IconEyeOff className="size-4" strokeWidth={1.75} aria-hidden />
                                 )}
-                            </button>
+                            </Button>
                         ) : null}
                     </div>
                 </div>

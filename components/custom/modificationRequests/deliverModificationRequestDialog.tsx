@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useRef, useState} from "react";
 import {DeliverModificationRequestFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/deliverMofidicationRequest.form.type.ts";
-import {LoaderCircle, Package} from "lucide-react";
+import {IconLoader2, IconPackage} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -20,8 +20,9 @@ import {MODIFICATION_REQUEST_LONG_TEXT_MAX} from "armonia/src/modules/propertyMa
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
+import {Input} from "@coreModule/components/ui/input.tsx";
 
-type DeliverModificationRequestDialogProps = WithLanguageType & WithAxiosType<any, DeliverModificationRequestFormType> & {
+type DeliverModificationRequestDialogProps = WithLanguageType & WithAxiosType<ModificationRequest, DeliverModificationRequestFormType> & {
     open: boolean;
     onClose: () => void;
     request: ModificationRequest;
@@ -44,8 +45,8 @@ function DeliverModificationRequestDialog({
     const mediaInputRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: DeliverModificationRequestFormType) => {
-            onSuccess?.(data as unknown as ModificationRequest);
+        success: (data: ModificationRequest) => {
+            onSuccess?.(data);
             onClose();
             setNotes("");
             setSelectedInspections([]);
@@ -70,8 +71,8 @@ function DeliverModificationRequestDialog({
             _id: request._id,
             notes: notes.trim() || undefined,
             inspections: selectedInspections.length > 0 ? selectedInspections : undefined,
-            media: mediaFiles.length > 0 ? mediaFiles as unknown as string[] : undefined,
-        } as DeliverModificationRequestFormType);
+            media: mediaFiles.length > 0 ? mediaFiles : undefined,
+        });
     };
 
     const handleInspectionSelect = (value: string | string[]) => {
@@ -152,7 +153,7 @@ function DeliverModificationRequestDialog({
                         </div>
                         <div>
                             <Label className="mb-2 block">{resolveLanguageKey("mediaLabel")}</Label>
-                            <input
+                            <Input
                                 ref={mediaInputRef}
                                 type="file"
                                 className="hidden"
@@ -206,7 +207,7 @@ function DeliverModificationRequestDialog({
                             disabled={loading}
                             className="hover:text-success-foreground hover:bg-success"
                         >
-                            {(loading) ? <LoaderCircle className="animate-spin"/> : <Package />}
+                            {(loading) ? <IconLoader2 className="animate-spin"/> : <IconPackage />}
                             <p>{resolveLanguageKey("confirmButton")}</p>
                         </AlertDialogAction>
                     </AlertDialogFooter>

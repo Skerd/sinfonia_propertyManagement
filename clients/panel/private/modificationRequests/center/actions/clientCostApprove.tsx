@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {DollarSign} from "lucide-react";
+import {IconCurrencyDollar} from "@tabler/icons-react";
 
 type ClientCostApproveProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -11,7 +11,7 @@ type ClientCostApproveProps = WithLanguageType & {
 function ClientCostApprove({onAction, resolveLanguageKey}: ClientCostApproveProps) {
     return (
         <DropdownMenuItem onClick={() => { onAction("clientCostApprove"); }}>
-            <DollarSign size={16} />
+            <IconCurrencyDollar size={16} />
             {resolveLanguageKey("title")}
         </DropdownMenuItem>
     );

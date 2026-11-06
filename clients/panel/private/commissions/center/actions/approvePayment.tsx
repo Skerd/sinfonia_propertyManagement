@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Scale} from "lucide-react";
+import {IconScale} from "@tabler/icons-react";
 
 export const APPROVE_PAYMENT_COMMISSION_ACTION = "approvePayment";
 
@@ -20,7 +20,7 @@ function ApprovePaymentCommission({onAction, resolveLanguageKey}: ApprovePayment
         <DropdownMenuItem
             onClick={() => { openDialog();}}
         >
-            <Scale size={16} />
+            <IconScale size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

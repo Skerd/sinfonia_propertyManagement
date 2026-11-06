@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {XCircle} from "lucide-react";
+import {IconCircleX} from "@tabler/icons-react";
 
 type CancelModificationRequestProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -22,7 +22,7 @@ function CancelModificationRequest({
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <XCircle className="text-destructive" size={16}/>
+            <IconCircleX className="text-destructive" size={16}/>
             <p className="text-destructive">
                 {resolveLanguageKey("title")}
             </p>

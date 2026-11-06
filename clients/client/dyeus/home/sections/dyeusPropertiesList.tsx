@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import {LayoutGrid, List, X} from "lucide-react";
+import {IconLayoutGrid, IconList, IconX} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
@@ -17,6 +17,7 @@ import type {
     MarketingUnitStatus,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {PropertyListingCardUnit} from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const HOME_LANGUAGE_PATH =
     "src/modules/propertyManagement/clients/client/dyeus/home/index.tsx";
@@ -170,14 +171,15 @@ function DyeusPropertiesList({
                     {panelTitle || t("residencesTitle")}
                 </h2>
                 {onClose ? (
-                    <button
+                    <Button
                         type="button"
-                        onClick={onClose}
+                        variant="bare"
                         className="cursor-pointer pt-1 text-dyeus-ink transition hover:text-dyeus-bronze"
                         aria-label={t("closeResidencesPanel")}
+                        onClick={onClose}
                     >
-                        <X className="size-3.5" strokeWidth={1.5} />
-                    </button>
+                        <IconX className="size-3.5" strokeWidth={1.5} />
+                    </Button>
                 ) : null}
             </div>
 
@@ -186,34 +188,35 @@ function DyeusPropertiesList({
                     {PROJECT_UNIT_STATUS_FILTERS.map((filter) => {
                         const active = activeFilter === filter;
                         return (
-                            <button
-                                key={filter}
+                            <Button
                                 type="button"
-                                onClick={() => setActiveFilter(filter)}
-                                className={cn(
-                                    "cursor-pointer rounded-[4px] border px-3 py-1.5 font-dyeus-sans text-sm transition",
+                                variant="bare"
+                                key={filter}
+                                className={cn("cursor-pointer rounded-[4px] border px-3 py-1.5 font-dyeus-sans text-sm transition",
                                     active
                                         ? "border-dyeus-bronze bg-dyeus-bronze text-dyeus-cream"
                                         : "border-dyeus-border bg-transparent text-dyeus-ink hover:border-dyeus-bronze hover:text-dyeus-bronze",
                                 )}
+                                onClick={() => setActiveFilter(filter)}
                             >
                                 {t(FILTER_KEYS[filter])}
-                            </button>
+                            </Button>
                         );
                     })}
                 </div>
-                <button
+                <Button
                     type="button"
-                    onClick={() => setLayout(layout === "list" ? "grid" : "list")}
+                    variant="bare"
                     className="flex size-9 shrink-0 cursor-pointer items-center justify-center border border-dyeus-border text-dyeus-ink transition hover:border-dyeus-bronze hover:text-dyeus-bronze"
                     aria-label={t(layout === "list" ? "viewAsGrid" : "viewAsList")}
+                    onClick={() => setLayout(layout === "list" ? "grid" : "list")}
                 >
                     {layout === "list" ? (
-                        <LayoutGrid className="size-4" strokeWidth={1.75} aria-hidden />
+                        <IconLayoutGrid className="size-4" strokeWidth={1.75} aria-hidden />
                     ) : (
-                        <List className="size-4" strokeWidth={1.75} aria-hidden />
+                        <IconList className="size-4" strokeWidth={1.75} aria-hidden />
                     )}
-                </button>
+                </Button>
             </div>
 
             {layout === "list" ? (
@@ -288,9 +291,9 @@ function DyeusPropertiesList({
                             );
                             return (
                                 <li key={unit._id} ref={bindRowRef(unit._id)}>
-                                    <button
+                                    <Button
                                         type="button"
-                                        onClick={() => selectUnit(unit._id)}
+                                        variant="bare"
                                         className={cn(
                                             "flex min-h-[9.5rem] w-full overflow-hidden border bg-dyeus-white text-left transition",
                                             highlighted
@@ -301,6 +304,7 @@ function DyeusPropertiesList({
                                         onMouseLeave={() => onUnitHover?.(null)}
                                         onFocus={() => onUnitHover?.(unit._id)}
                                         onBlur={() => onUnitHover?.(null)}
+                                        onClick={() => selectUnit(unit._id)}
                                     >
                                         <div className="relative w-[42%] shrink-0 py-2.5 pl-2.5">
                                             <div className="relative h-full min-h-0 overflow-hidden bg-dyeus-sand">
@@ -375,7 +379,7 @@ function DyeusPropertiesList({
                                                 </p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </Button>
                                 </li>
                             );
                         })}
@@ -386,11 +390,10 @@ function DyeusPropertiesList({
                             const highlighted = highlightUnitId === unit._id;
                             return (
                                 <li key={unit._id} ref={bindRowRef(unit._id)}>
-                                    <button
+                                    <Button
                                         type="button"
-                                        onClick={() => selectUnit(unit._id)}
-                                        className={cn(
-                                            UNIT_GRID,
+                                        variant="bare"
+                                        className={cn(UNIT_GRID,
                                             "w-full cursor-pointer py-2.5 text-left font-dyeus-sans text-sm transition",
                                             highlighted
                                                 ? "bg-dyeus-bronze/10 text-dyeus-bronze"
@@ -400,6 +403,7 @@ function DyeusPropertiesList({
                                         onMouseLeave={() => onUnitHover?.(null)}
                                         onFocus={() => onUnitHover?.(unit._id)}
                                         onBlur={() => onUnitHover?.(null)}
+                                        onClick={() => selectUnit(unit._id)}
                                     >
                                         <span>{unit.name}</span>
                                         <span>{unit.areaSqm != null ? `${unit.areaSqm} m²` : "—"}</span>
@@ -408,7 +412,7 @@ function DyeusPropertiesList({
                                         <span>
                                             {unit.price != null ? `€${unit.price.toLocaleString()}` : "—"}
                                         </span>
-                                    </button>
+                                    </Button>
                                 </li>
                             );
                         })}

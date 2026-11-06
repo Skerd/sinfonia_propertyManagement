@@ -20,6 +20,7 @@ import {
     PUBLIC_BODY,
     PUBLIC_SUBTITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const DRAG_THRESHOLD_PX = 10;
 const MOBILE_DESCRIPTION_COLLAPSE_CHARS = 180;
@@ -76,7 +77,7 @@ function OpenProjectGallerySection({project, resolveLanguageKey}: OpenProjectCon
         pointerStartX.current = null;
     };
 
-    const handleSlideClick = (event: MouseEvent<HTMLButtonElement>, index: number) => {
+    const handleSlideClick = (event: MouseEvent<HTMLElement>, index: number) => {
         if (didDragRef.current) {
             event.preventDefault();
             didDragRef.current = false;
@@ -140,8 +141,9 @@ function OpenProjectGallerySection({project, resolveLanguageKey}: OpenProjectCon
                     <CarouselContent className="-ml-0 h-full">
                         {displayImages.map((image, index) => (
                             <CarouselItem key={`${image}-${index}`} className="h-full basis-full pl-0">
-                                <button
+                                <Button
                                     type="button"
+                                    variant="bare"
                                     className="flex size-full cursor-zoom-in items-center justify-center"
                                     onClick={(event) => handleSlideClick(event, index)}
                                 >
@@ -151,7 +153,7 @@ function OpenProjectGallerySection({project, resolveLanguageKey}: OpenProjectCon
                                         src={image}
                                         draggable={false}
                                     />
-                                </button>
+                                </Button>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
@@ -160,10 +162,10 @@ function OpenProjectGallerySection({project, resolveLanguageKey}: OpenProjectCon
             {displayImages.length > 1 && (
                 <div className="mt-4 flex items-center justify-center gap-3" data-node-id="472:1230">
                     {displayImages.map((_, index) => (
-                        <button
-                            key={index}
+                        <Button
                             type="button"
-                            onClick={() => scrollTo(index)}
+                            variant="bare"
+                            key={index}
                             className="rounded-full transition"
                             style={{
                                 width: index === activeIndex ? 58.5 : 24,
@@ -171,6 +173,7 @@ function OpenProjectGallerySection({project, resolveLanguageKey}: OpenProjectCon
                                 background: index === activeIndex ? "#0247fe" : "rgba(24, 24, 24, 0.2)",
                             }}
                             aria-label={`Slide ${index + 1}`}
+                            onClick={() => scrollTo(index)}
                         />
                     ))}
                 </div>
@@ -205,14 +208,15 @@ function OpenProjectGallerySection({project, resolveLanguageKey}: OpenProjectCon
                             {project.description}
                         </p>
                         {project.description.trim().length > MOBILE_DESCRIPTION_COLLAPSE_CHARS && (
-                            <button
+                            <Button
                                 type="button"
+                                variant="bare"
                                 className="mt-2 font-aeonik-medium text-base text-pronix-blue hover:underline md:hidden"
-                                onClick={() => setDescriptionExpanded((open) => !open)}
                                 aria-expanded={descriptionExpanded}
+                                onClick={() => setDescriptionExpanded((open) => !open)}
                             >
                                 {resolveLanguageKey(descriptionExpanded ? "readLess" : "readMore")}
-                            </button>
+                            </Button>
                         )}
                     </div>
                 ) : null}

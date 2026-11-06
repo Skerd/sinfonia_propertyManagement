@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {Download} from "lucide-react";
+import {IconDownload} from "@tabler/icons-react";
 import withLanguage, {type WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
@@ -22,7 +22,7 @@ function DownloadFinancePdfMenuItem({request, resolveLanguageKey}: DownloadFinan
                 void downloadModificationRequestFinancePdf(request, (key) => String(resolveLanguageKey(key)));
             }}
         >
-            <Download size={16} />
+            <IconDownload size={16} />
             {String(resolveLanguageKey("downloadFinancePdf"))}
         </DropdownMenuItem>
     );

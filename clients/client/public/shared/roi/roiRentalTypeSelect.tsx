@@ -1,5 +1,6 @@
 import type {RentalType} from "@propertyManagementModule/clients/client/public/shared/roi/calculateRoi.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type RoiRentalTypeSelectProps = {
     value: RentalType;
@@ -31,28 +32,28 @@ function RoiRentalTypeSelect({
                 {label}
             </p>
             <div className={cn("flex rounded-[5px] border border-pronix-border p-1", compact ? "mt-1.5" : "mt-2")}>
-                <button
+                <Button
                     type="button"
-                    onClick={() => onChange("long-term")}
-                    className={cn(
-                        "flex-1 rounded-[3px] font-aeonik-light text-pronix-ink not-italic transition",
+                    variant="bare"
+                    className={cn("flex-1 rounded-[3px] font-aeonik-light text-pronix-ink not-italic transition",
                         compact ? "px-2 py-1.5 text-sm" : "px-3 py-2 text-base md:text-xl",
                         value === "long-term" ? "bg-pronix-blue text-white" : "hover:bg-pronix-ink/5",
                     )}
+                    onClick={() => onChange("long-term")}
                 >
                     {longTermLabel}
-                </button>
-                <button
+                </Button>
+                <Button
                     type="button"
-                    onClick={() => onChange("short-term")}
-                    className={cn(
-                        "flex-1 rounded-[3px] font-aeonik-light text-pronix-ink not-italic transition",
+                    variant="bare"
+                    className={cn("flex-1 rounded-[3px] font-aeonik-light text-pronix-ink not-italic transition",
                         compact ? "px-2 py-1.5 text-sm" : "px-3 py-2 text-base md:text-xl",
                         value === "short-term" ? "bg-pronix-blue text-white" : "hover:bg-pronix-ink/5",
                     )}
+                    onClick={() => onChange("short-term")}
                 >
                     {shortTermLabel}
-                </button>
+                </Button>
             </div>
         </div>
     );

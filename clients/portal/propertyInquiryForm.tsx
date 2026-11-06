@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import {useId, useState, type FormEvent} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Field, FieldLabel} from "@coreModule/components/ui/field.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
@@ -9,6 +9,8 @@ import FormField from "@coreModule/clients/portal/shared/formField.tsx";
 import FormStatus from "@coreModule/clients/portal/shared/formStatus.tsx";
 import {usePortalSession} from "@coreModule/clients/portal/shared/portalSession.tsx";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator.ts";
+
+const CONTACT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingContact"};
 
 type PropertyInquiryFormProps = WithLanguageType & {
     projectId: string;
@@ -38,6 +40,13 @@ function PropertyInquiryForm({projectId, unitId, resolveLanguageKey}: PropertyIn
     const [viewingDate, setViewingDate] = useState("");
     const [state, setState] = useState<"idle" | "sending" | "sent" | "failed">("idle");
 
+    const [payload, setPayload] = useState<MarketingContactFormType | null>(null);
+    const [sendCount, setSendCount] = useState(0);
+    useHttpRequest(CONTACT_REQUEST, payload ?? {}, sendCount, true, {
+        success: () => setState("sent"),
+        error: () => setState("failed"),
+    });
+
     const submit = (event: FormEvent) => {
         event.preventDefault();
         const message = viewingDate
@@ -51,9 +60,8 @@ function PropertyInquiryForm({projectId, unitId, resolveLanguageKey}: PropertyIn
             unitInterest: unitId,
         };
         setState("sending");
-        apiClient.post("/api/realEstate/marketingContact", body)
-            .then(() => setState("sent"))
-            .catch(() => setState("failed"));
+        setPayload(body);
+        setSendCount((count) => count + 1);
     };
 
     return (

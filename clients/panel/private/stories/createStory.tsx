@@ -1,4 +1,4 @@
-import {BookOpen} from "lucide-react";
+import {IconBook} from "@tabler/icons-react";
 import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
 import {createStoryFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/createStory.form.validator.ts";
 import type {CreateStoryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.schema-def.ts";
@@ -28,5 +28,5 @@ export default createGenericCreatePage<CreateStoryFormType>({
         return projectName ? [projectName] : [];
     },
     successPath: "/realEstate/stories",
-    submitIcon: <BookOpen />,
+    submitIcon: <IconBook />,
 });

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CheckCircle2} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 
 type PaidInFullReservationProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -18,7 +18,7 @@ function PaidInFullReservation({onAction, resolveLanguageKey}: PaidInFullReserva
 
     return (
         <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
-            <CheckCircle2 size={16}/>
+            <IconCircleCheck size={16}/>
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

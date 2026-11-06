@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
 import {CancelReservationForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/cancelReservation.form.type.ts";
-import {LoaderCircle, XCircle} from "lucide-react";
+import {IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -114,7 +114,7 @@ function CancelReservationDialog({
                         disabled={loading || (canWriteCancellationReason && !cancellationReason.trim())}
                         className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <XCircle />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconCircleX />}
                         <p>{resolveLanguageKey("confirmCancel")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

@@ -1,5 +1,5 @@
 import React, {useEffect, useImperativeHandle, useRef, useState, type CSSProperties} from "react";
-import {ChevronRight} from "lucide-react";
+import {IconChevronRight} from "@tabler/icons-react";
 import {Link} from "react-router-dom";
 import {compose} from "redux";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -8,15 +8,12 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {FIGMA_FOOTER_SECTION, FIGMA_IMAGE_CROPS, figmaImageCropStyle} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
-import {
-    PUBLIC_CONTENT_FRAME,
-    PUBLIC_GRID_FOOTER_LINKS,
-    PUBLIC_GRID_FOOTER_MAIN,
-    PUBLIC_SECTION_BASE,
-} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {PUBLIC_CONTENT_FRAME, PUBLIC_GRID_FOOTER_LINKS, PUBLIC_GRID_FOOTER_MAIN, PUBLIC_SECTION_BASE} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import type {MarketingCompanyResponse, PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const {
     headlineAspect,
@@ -76,12 +73,13 @@ function FooterLinkColumn({
             style={{gap: linkItemGap}}
             data-node-id={nodeId}
         >
-            <button
+            <Button
                 type="button"
+                variant="bare"
                 aria-expanded={open}
                 aria-controls={panelId}
-                onClick={() => setOpen((current) => !current)}
                 className="flex w-full min-w-0 cursor-pointer items-center justify-between gap-4 bg-transparent p-0 text-left lg:pointer-events-none lg:cursor-default"
+                onClick={() => setOpen((current) => !current)}
             >
                 <span
                     className="font-aeonik-medium min-w-0 text-2xl leading-none tracking-normal text-white lg:[font-size:var(--footer-col-title-fs)]"
@@ -89,7 +87,7 @@ function FooterLinkColumn({
                 >
                     {title}
                 </span>
-                <ChevronRight
+                <IconChevronRight
                     aria-hidden
                     className={cn(
                         "size-6 shrink-0 text-white transition-transform duration-200 lg:hidden",
@@ -97,7 +95,7 @@ function FooterLinkColumn({
                     )}
                     strokeWidth={1.5}
                 />
-            </button>
+            </Button>
             <div
                 id={panelId}
                 className={cn("flex w-full min-w-0 flex-col items-start", open ? "flex" : "hidden lg:flex")}
@@ -271,7 +269,7 @@ function FooterNumberField({
             <label className="sr-only" htmlFor="footer-number">
                 {placeholder}
             </label>
-            <input
+            <Input bare
                 id="footer-number"
                 type="tel"
                 name="phone"
@@ -281,7 +279,7 @@ function FooterNumberField({
                 disabled={disabled}
                 onChange={(e) => onChange(e.target.value)}
                 aria-invalid={hasError || undefined}
-                className={fieldInputClass}
+                className={cn(fieldInputClass, "disabled:cursor-auto disabled:opacity-100")}
                 style={fieldFontSizeVar}
             />
         </div>
@@ -369,7 +367,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                     fieldErrors.name ? "border-red-300" : "border-white/50",
                                 )}
                             >
-                                <input
+                                <Input bare
                                     type="text"
                                     name="name"
                                     autoComplete="given-name"
@@ -382,7 +380,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                         clearFieldError("name");
                                         setName(e.target.value);
                                     }}
-                                    className={fieldInputClass}
+                                    className={cn(fieldInputClass, "disabled:cursor-auto disabled:opacity-100")}
                                     style={fieldFontSizeVar}
                                 />
                             </div>
@@ -396,7 +394,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                     fieldErrors.surname ? "border-red-300" : "border-white/50",
                                 )}
                             >
-                                <input
+                                <Input bare
                                     type="text"
                                     name="surname"
                                     autoComplete="family-name"
@@ -409,7 +407,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                         clearFieldError("surname");
                                         setSurname(e.target.value);
                                     }}
-                                    className={fieldInputClass}
+                                    className={cn(fieldInputClass, "disabled:cursor-auto disabled:opacity-100")}
                                     style={fieldFontSizeVar}
                                 />
                             </div>
@@ -424,7 +422,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                 fieldErrors.email ? "border-red-300" : "border-white/50",
                             )}
                         >
-                            <input
+                            <Input bare
                                 type="email"
                                 name="email"
                                 autoComplete="email"
@@ -437,7 +435,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                                     clearFieldError("email");
                                     setEmail(e.target.value);
                                 }}
-                                className={fieldInputClass}
+                                className={cn(fieldInputClass, "disabled:cursor-auto disabled:opacity-100")}
                                 style={fieldFontSizeVar}
                             />
                         </div>
@@ -486,18 +484,18 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                 </div>
             </div>
             <div className="flex w-full min-w-0 flex-col items-stretch gap-3">
-                <button
+                <Button
                     type="button"
-                    disabled={loading}
-                    onClick={handleSend}
-                    className={cn(
-                        "flex w-full min-w-0 cursor-pointer items-center justify-center border border-white px-6 py-4 lg:px-[min(2.91cqw,48px)] lg:py-[min(0.97cqw,16px)]",
+                    variant="bare"
+                    className={cn("flex w-full min-w-0 cursor-pointer items-center justify-center border border-white px-6 py-4 lg:px-[min(2.91cqw,48px)] lg:py-[min(0.97cqw,16px)]",
                         "bg-transparent text-white transition-colors duration-200",
                         "hover:bg-white hover:text-pronix-blue",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue",
                         "disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-white",
                     )}
                     data-node-id="357:2473"
+                    disabled={loading}
+                    onClick={handleSend}
                 >
                     <span
                         className="font-aeonik-medium whitespace-nowrap text-[20px] not-italic leading-[17.15px] tracking-normal lg:[font-size:var(--footer-send-fs)]"
@@ -505,7 +503,7 @@ function FooterContactFormInner({resolveLanguageKey, onPost, loading, innerRef, 
                     >
                         {loading ? String(resolveLanguageKey("sending")) : String(resolveLanguageKey("send"))}
                     </span>
-                </button>
+                </Button>
                 {submitted ? (
                     <p
                         role="status"
@@ -535,7 +533,7 @@ const FooterContactForm = compose(
         true,
     ),
     withDebug(true, true),
-)(FooterContactFormInner) as unknown as React.ComponentType<Pick<PublicLanguageProps, "resolveLanguageKey">>;
+)(FooterContactFormInner) as React.ComponentType<Omit<FooterContactFormProps, keyof WithAxiosType>>;
 
 function buildSocialLinks(data: MarketingCompanyResponse | null | undefined): FooterNavLink[] {
     if (!data) {
@@ -653,11 +651,13 @@ function FooterSectionInner({data, onFilterChange, resolveLanguageKey}: FooterSe
     );
 }
 
-export default compose(
+const FooterSection: React.ComponentType = compose(
     withAxios<MarketingCompanyResponse>(
         {method: "post", url: "/api/realEstate/marketingCompany", data: {}},
         true,
     ),
     withDebug(true, true),
     withLanguage("src/modules/propertyManagement/clients/client/public/shared/sections/footerSection.tsx"),
-)(FooterSectionInner) as unknown as React.ComponentType;
+)(FooterSectionInner);
+
+export default FooterSection;

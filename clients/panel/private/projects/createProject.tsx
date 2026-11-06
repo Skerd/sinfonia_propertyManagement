@@ -11,5 +11,5 @@ export default createGenericCreatePage<CreateProjectFormType>({
     submitIcon: <IconFolderPlus />,
     defaultValues: {
         socialLinks: [],
-    } as unknown as CreateProjectFormType,
+    },
 });

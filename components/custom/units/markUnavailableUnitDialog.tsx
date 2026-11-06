@@ -6,7 +6,7 @@ import {useEffect, useImperativeHandle, useState} from "react";
 import type {MarkUnavailableForm, MarkUnavailableResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/markUnavailable.form.type.ts";
 import {UNIT_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.schema-def.ts";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
-import {LoaderCircle, Ban} from "lucide-react";
+import {IconBan, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -106,7 +106,7 @@ function MarkUnavailableUnitDialog({
                         disabled={loading || !unavailableNotes.trim()}
                         className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <Ban />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconBan />}
                         <p>{resolveLanguageKey("confirm")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

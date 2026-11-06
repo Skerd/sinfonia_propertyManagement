@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {RotateCcw} from "lucide-react";
+import {IconRotate} from "@tabler/icons-react";
 
 type ReinstateReservationProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -18,7 +18,7 @@ function ReinstateReservation({onAction, resolveLanguageKey}: ReinstateReservati
 
     return (
         <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); openDialog(); }}>
-            <RotateCcw size={16}/>
+            <IconRotate size={16}/>
             <p>{resolveLanguageKey("title")}</p>
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

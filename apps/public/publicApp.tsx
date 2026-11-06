@@ -1,4 +1,4 @@
-import {Toaster} from "sonner";
+import {Toaster} from "@coreModule/components/ui/sonner.tsx";
 import {Provider} from "react-redux";
 import {store} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {LanguageProvider} from "@coreModule/helpers/context/providers/language-provider.tsx";
@@ -12,6 +12,7 @@ function ToasterContainer() {
     const isMobile = useIsMobile();
     return (
         <Toaster
+            theme="light"
             closeButton
             richColors
             position={isMobile ? "top-right" : "bottom-right"}

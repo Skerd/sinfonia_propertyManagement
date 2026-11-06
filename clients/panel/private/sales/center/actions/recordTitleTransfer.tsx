@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {FileSignature} from "lucide-react";
+import {IconSignature} from "@tabler/icons-react";
 
 type RecordTitleTransferProps = WithLanguageType & {
     onAction: (action: string) => void;
@@ -18,7 +18,7 @@ function RecordTitleTransfer({onAction, resolveLanguageKey}: RecordTitleTransfer
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <FileSignature size={16} />
+            <IconSignature size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

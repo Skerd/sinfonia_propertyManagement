@@ -1,10 +1,9 @@
 import {compose} from "redux";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import type {LucideIcon} from "lucide-react";
-import {BedDouble, Building2, Home, MapPin, Maximize} from "lucide-react";
+import {IconBed, IconBuildingSkyscraper, IconHome, IconMapPin, IconMaximize, type TablerIcon} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -32,6 +31,8 @@ import {
     selectionPrice,
 } from "./propertySelectionInfo.ts";
 
+
+const PROJECT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectCatalog/single"};
 function Badges({items}: {items: readonly string[]}) {
     return (
         <div className="flex flex-wrap gap-2">
@@ -44,20 +45,18 @@ function Badges({items}: {items: readonly string[]}) {
 function PropertyProject({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
     const {projectId = ""} = useParams();
-    const [project, setProject] = useState<MarketingProjectCatalogSingleItem | null | undefined>(undefined);
     const [edifice, setEdifice] = useState<MarketingEdificeCatalogListItem>();
     const [floor, setFloor] = useState<MarketingFloorCatalogListItem>();
-
+    // One request per project; the picked building and floor reset with it.
+    const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
-        let cancelled = false;
-        setProject(undefined);
         setEdifice(undefined);
         setFloor(undefined);
-        apiClient.post<MarketingProjectCatalogSingleFormResponseType>("/api/realEstate/marketingProjectCatalog/single", {projectId})
-            .then((res) => { if (!cancelled) setProject(res.data.project); })
-            .catch(() => { if (!cancelled) setProject(null); });
-        return () => { cancelled = true; };
+        setFetchCount((count) => count + 1);
     }, [projectId]);
+    const request = useHttpRequest<MarketingProjectCatalogSingleFormResponseType>(PROJECT_REQUEST, {projectId}, fetchCount);
+    const project: MarketingProjectCatalogSingleItem | null | undefined =
+        fetchCount === 0 || request.loading ? undefined : request.error ? null : request.data?.project ?? null;
 
     if (project === undefined) return <Loader />;
     if (!project) return <PortalNotFound />;
@@ -70,11 +69,11 @@ function PropertyProject({resolveLanguageKey}: WithLanguageType) {
     const numbers = min == null ? null : range ? `${formatNumber(min)}–${formatNumber(max)}` : formatNumber(min);
     const projectPrice = numbers == null ? resolveLanguageKey("priceOnRequest") : saleCurrency ? `${numbers} ${saleCurrency}` : numbers;
     const projectFacts = [
-        project.unitCount != null && {icon: Building2, label: resolveLanguageKey("facts.units"), value: String(project.unitCount)},
-        project.availableUnitCount != null && {icon: Home, label: resolveLanguageKey("facts.available"), value: String(project.availableUnitCount)},
-        project.bedroomRange && {icon: BedDouble, label: resolveLanguageKey("facts.bedrooms"), value: `${project.bedroomRange.min}–${project.bedroomRange.max}`},
-        project.areaSqmRange && {icon: Maximize, label: resolveLanguageKey("facts.area"), value: `${project.areaSqmRange.min}–${project.areaSqmRange.max} m²`},
-    ].filter((fact): fact is {icon: LucideIcon; label: string; value: string} => Boolean(fact));
+        project.unitCount != null && {icon: IconBuildingSkyscraper, label: resolveLanguageKey("facts.units"), value: String(project.unitCount)},
+        project.availableUnitCount != null && {icon: IconHome, label: resolveLanguageKey("facts.available"), value: String(project.availableUnitCount)},
+        project.bedroomRange && {icon: IconBed, label: resolveLanguageKey("facts.bedrooms"), value: `${project.bedroomRange.min}–${project.bedroomRange.max}`},
+        project.areaSqmRange && {icon: IconMaximize, label: resolveLanguageKey("facts.area"), value: `${project.areaSqmRange.min}–${project.areaSqmRange.max} m²`},
+    ].filter((fact): fact is {icon: TablerIcon; label: string; value: string} => Boolean(fact));
     const images = [project.mainImage, ...(project.imageGallery ?? [])].filter((image): image is string => Boolean(image));
     const pickedPrice = selectionPrice(edifice, floor, resolveLanguageKey);
     const heading = floor && edifice
@@ -171,7 +170,7 @@ function PropertyProject({resolveLanguageKey}: WithLanguageType) {
         >
             <PortalProviderCard kind="project" />
             <DetailHeading eyebrow={heading.eyebrow} title={heading.title}>
-                {heading.place ? <p className="flex items-center gap-1.5 text-muted-foreground"><MapPin className="size-4" aria-hidden />{heading.place}</p> : null}
+                {heading.place ? <p className="flex items-center gap-1.5 text-muted-foreground"><IconMapPin className="size-4" aria-hidden />{heading.place}</p> : null}
                 {heading.price ? <DetailPrice amount={heading.price.amount} note={heading.price.note} /> : null}
             </DetailHeading>
             {heading.facts.length ? <DetailFacts facts={heading.facts} /> : null}

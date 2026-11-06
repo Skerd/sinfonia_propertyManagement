@@ -1,8 +1,9 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editHandoverPackageFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/editHandoverPackage.form.validator.ts";
 import type {HandoverPackage} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/handoverPackage.dto.ts";
 import type {EditHandoverPackageFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/handoverPackage.schema-def.ts";
+import {mediaEditPayload} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 export default createGenericEditPage<HandoverPackage, EditHandoverPackageFormType>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
@@ -25,24 +26,8 @@ export default createGenericEditPage<HandoverPackage, EditHandoverPackageFormTyp
     }),
     buildFormExtras: (_entityId, _params, entity) => ({
         enableLocalFileMultipart: true,
-        editMediaExistingList: (entity as any)?.media ?? [],
+        editMediaExistingList: entity?.media ?? [],
     }),
-    mapSubmitPayload: (data, {writeFields}) => {
-        const formData = new FormData();
-        const fields: Record<string, any> = {_id: (data as any)._id};
-        for (const [key, val] of Object.entries(data)) {
-            if (key === "media") continue;
-            if ((writeFields as any)[key] !== undefined) fields[key] = val;
-        }
-        if ((writeFields as any).media !== undefined) {
-            fields.media = ((data as any).media as any[])
-                ?.filter((p): p is string => typeof p === "string" && p.trim() !== "") ?? [];
-        }
-        formData.append("data", JSON.stringify(fields));
-        if ((writeFields as any).media && Array.isArray((data as any).media)) {
-            ((data as any).media as any[]).filter((f): f is File => f instanceof File).forEach(f => formData.append("files", f));
-        }
-        return formData;
-    },
-    submitIcon: <Save />,
+    mapSubmitPayload: (data, {writeFields}) => mediaEditPayload(data, writeFields, "media"),
+    submitIcon: <IconDeviceFloppy />,
 });

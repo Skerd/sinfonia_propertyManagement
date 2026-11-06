@@ -10,6 +10,7 @@ import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts"
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type DyeusMenuProps = {
     open: boolean;
@@ -105,17 +106,18 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
                 <div className="flex h-full w-full flex-col md:flex-row">
                     {/* Cream panel */}
                     <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-dyeus-cream px-6 py-6 md:w-[58%] md:flex-none md:px-12 md:py-10 lg:px-16">
-                        <button
+                        <Button
                             type="button"
-                            onClick={onClose}
+                            variant="bare"
                             className="absolute left-6 top-6 z-20 flex size-10 cursor-pointer items-center justify-center text-dyeus-ink transition-opacity hover:opacity-60 md:left-12 md:top-10 lg:left-16"
                             aria-label={t("close")}
+                            onClick={onClose}
                         >
                             <span aria-hidden className="relative block size-5">
                                 <span className="absolute left-1/2 top-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-dyeus-ink" />
                                 <span className="absolute left-1/2 top-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-dyeus-ink" />
                             </span>
-                        </button>
+                        </Button>
 
                         <nav className="flex flex-1 flex-col justify-center gap-5 md:gap-6">
                             {dyeusMenuLinks.map((link) => {
@@ -186,8 +188,9 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
                             ref={langRef}
                             className="absolute right-8 top-8 z-10 md:right-12 md:top-10"
                         >
-                            <button
+                            <Button
                                 type="button"
+                                variant="bare"
                                 className="relative size-8 cursor-pointer"
                                 aria-label={t("language")}
                                 aria-haspopup="listbox"
@@ -199,7 +202,7 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
                                     alt=""
                                     className="size-8 object-contain"
                                 />
-                            </button>
+                            </Button>
                             {langOpen ? (
                                 <div
                                     role="listbox"
@@ -209,23 +212,24 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
                                     {MENU_LANGUAGES.map((language) => {
                                         const active = language.languageCode === languageCode;
                                         return (
-                                            <button
-                                                key={language.languageCode}
+                                            <Button
                                                 type="button"
-                                                role="option"
+                                                variant="bare"
+                                                key={language.languageCode}
                                                 aria-selected={active}
-                                                onClick={() => {
-                                                    dispatch(changeLanguage(language.languageCode));
-                                                    setLangOpen(false);
-                                                }}
                                                 className={`block w-full cursor-pointer px-3 py-2 text-left font-dyeus-serif text-sm tracking-[0.08em] transition-colors hover:text-dyeus-bronze ${
                                                     active
                                                         ? "font-bold text-dyeus-bronze"
                                                         : "text-dyeus-ink"
                                                 }`}
+                                                onClick={() => {
+                                                    dispatch(changeLanguage(language.languageCode));
+                                                    setLangOpen(false);
+                                                }}
+                                                role="option"
                                             >
                                                 {language.shortCode}
-                                            </button>
+                                            </Button>
                                         );
                                     })}
                                 </div>

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {LoaderCircle, Plus, Users, X} from "lucide-react";
+import {IconLoader2, IconPlus, IconUsers, IconX} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -139,7 +139,7 @@ function SetCommissionSplitsDialog({
                                     onClick={() => setRows((prev) => prev.filter((_, i) => i !== index))}
                                     disabled={loading}
                                 >
-                                    <X className="h-4 w-4" />
+                                    <IconX className="h-4 w-4" />
                                 </Button>
                             </div>
                             <ApiSelect
@@ -198,7 +198,7 @@ function SetCommissionSplitsDialog({
                         onClick={() => setRows((prev) => [...prev, emptyRow()])}
                         disabled={loading || rows.length >= COMMISSION_SPLITS_MAX}
                     >
-                        <Plus className="h-4 w-4" />
+                        <IconPlus className="h-4 w-4" />
                         {resolveLanguageKey("addSplit")}
                     </Button>
                 </div>
@@ -207,7 +207,7 @@ function SetCommissionSplitsDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" onClick={handleSubmit} disabled={loading || exceedsTotal || missingAgent}>
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : <Users className="h-4 w-4" />}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconUsers className="h-4 w-4" />}
                         {resolveLanguageKey("submit")}
                     </Button>
                 </DialogFooter>

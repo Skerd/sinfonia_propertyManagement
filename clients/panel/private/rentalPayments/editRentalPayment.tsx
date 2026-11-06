@@ -1,8 +1,9 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {editRentalPaymentFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/editRentalPayment.form.validator.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {EditRentalPaymentFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.schema-def.ts";
+import {refId} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 function localFilesFromField(value: unknown): File[] {
     if (value instanceof File) return [value];
@@ -18,9 +19,9 @@ export default createGenericEditPage<RentalPayment, EditRentalPaymentFormType>({
     schema:         editRentalPaymentFormSchema,
     mapEntityData: (data) => ({
         ...data,
-        lease:        (data.lease as any)?._id        ?? data.lease,
-        currency:     (data.currency as any)?._id     ?? data.currency,
-        receiptMedia: (data.receiptMedia as any)?._id ?? data.receiptMedia,
+        lease:        refId(data.lease),
+        currency:     refId(data.currency),
+        receiptMedia: refId(data.receiptMedia),
     }),
     buildFormExtras: (_entityId, _params, entity) => ({
         enableLocalFileMultipart: true,
@@ -31,13 +32,13 @@ export default createGenericEditPage<RentalPayment, EditRentalPaymentFormType>({
         const fields: Record<string, unknown> = {_id: data._id};
         for (const [key, val] of Object.entries(data)) {
             if (key === "receiptMedia" || key === "_id") continue;
-            if ((writeFields as any)[key] !== undefined) fields[key] = val;
+            if (writeFields[key] !== undefined) fields[key] = val;
         }
         formData.append("data", JSON.stringify(fields));
-        if ((writeFields as any).receiptMedia) {
-            localFilesFromField((data as any).receiptMedia).forEach((file) => formData.append("files", file));
+        if (writeFields.receiptMedia) {
+            localFilesFromField(data.receiptMedia).forEach((file) => formData.append("files", file));
         }
         return formData;
     },
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

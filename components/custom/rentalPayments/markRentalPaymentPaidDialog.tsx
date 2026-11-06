@@ -7,7 +7,7 @@ import {toast} from "sonner";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
-import {DollarSign, LoaderCircle} from "lucide-react";
+import {IconCurrencyDollar, IconLoader2} from "@tabler/icons-react";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import MultiLocalFilePicker from "@coreModule/components/viewEngine/widgets/media/multiLocalFilePicker.tsx";
 import {
@@ -199,12 +199,12 @@ function MarkRentalPaymentPaidDialog({
                     >
                         {loading ? (
                             <>
-                                <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+                                <IconLoader2 className="mr-2 h-4 w-4 animate-spin" />
                                 {resolveLanguageKey("processing")}
                             </>
                         ) : (
                             <>
-                                <DollarSign className="mr-2 h-4 w-4" />
+                                <IconCurrencyDollar className="mr-2 h-4 w-4" />
                                 {resolveLanguageKey("confirmPay")}
                             </>
                         )}

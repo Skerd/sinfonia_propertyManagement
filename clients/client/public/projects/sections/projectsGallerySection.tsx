@@ -22,6 +22,7 @@ import {
     PUBLIC_SECTION_BASE,
     PUBLIC_SUBTITLE,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type ProjectsGallerySectionProps = WithLanguageType & WithAxiosType<MarketingProjectsCatalogResponse>;
 
@@ -88,11 +89,12 @@ function ProjectsGallerySection(props: ProjectsGallerySectionProps) {
                 </h1>
                 <div className="flex shrink-0 items-center gap-4">
                     <PublicFavoritesBasketButton resolveLanguageKey={resolveLanguageKey} />
-                    <button
+                    <Button
                         type="button"
-                        onClick={openFilterPanel}
+                        variant="bare"
                         className="flex shrink-0 cursor-pointer items-center gap-4 rounded-[5px] border border-pronix-border px-4 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.28)] hover:bg-pronix-ink/[0.02] sm:px-6 sm:py-2.5"
                         data-node-id="268:380"
+                        onClick={openFilterPanel}
                     >
                     <img
                         alt=""
@@ -107,7 +109,7 @@ function ProjectsGallerySection(props: ProjectsGallerySectionProps) {
                     {filtersActive ? (
                         <span className="size-2 shrink-0 rounded-full bg-pronix-blue" aria-hidden />
                     ) : null}
-                    </button>
+                    </Button>
                 </div>
             </div>
 

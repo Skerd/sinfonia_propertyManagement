@@ -18,6 +18,9 @@ import {
 } from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
 import {useProjectViewerParams} from "@propertyManagementModule/clients/client/public/project/shared/useProjectViewerParams.ts";
 import {PUBLIC_HEADING} from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 const sortSelectClassName =
     "min-w-0 flex-1 cursor-pointer appearance-none border-0 bg-transparent font-aeonik-light text-lg text-pronix-ink not-italic outline-none md:text-2xl";
@@ -86,7 +89,7 @@ function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
                     </p>
                     <label className="flex w-full max-w-xs cursor-pointer items-center justify-between gap-4 rounded-[5px] border border-pronix-border px-4 py-2 sm:w-auto md:px-6">
                         <span className="sr-only">{resolveLanguageKey("sortBy")}</span>
-                        <select
+                        <NativeSelect bare
                             value={sortKey}
                             onChange={(event) => setSortKey(event.target.value as ProjectUnitsSortKey)}
                             className={sortSelectClassName}
@@ -97,7 +100,7 @@ function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
                                     {resolveLanguageKey(`sort${key.charAt(0).toUpperCase()}${key.slice(1)}`)}
                                 </option>
                             ))}
-                        </select>
+                        </NativeSelect>
                         <span aria-hidden className="pointer-events-none text-pronix-ink-muted">
                             ▼
                         </span>
@@ -108,26 +111,28 @@ function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap items-center gap-3 md:gap-8">
                     {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
-                        <button
-                            key={filter}
+                        <Button
                             type="button"
-                            onClick={() => setActiveFilter(filter)}
-                            className={`font-aeonik-light text-base not-italic transition md:text-2xl ${
+                            variant="bare"
+                            key={filter}
+                            className={cn(`font-aeonik-light text-base not-italic transition md:text-2xl ${
                                 activeFilter === filter
                                     ? "rounded-[5px] bg-pronix-blue px-4 py-2 text-white md:px-6"
                                     : "text-pronix-ink"
-                            }`}
+                            }`)}
+                            onClick={() => setActiveFilter(filter)}
                         >
                             {resolveLanguageKey(`filter${filter.charAt(0).toUpperCase()}${filter.slice(1)}`)}
-                        </button>
+                        </Button>
                     ))}
                 </div>
                 <div className="flex shrink-0 items-center gap-4">
                     <PublicFavoritesBasketButton resolveLanguageKey={resolveLanguageKey} />
-                    <button
+                    <Button
                         type="button"
-                        onClick={openFilterPanel}
+                        variant="bare"
                         className="flex shrink-0 cursor-pointer items-center gap-4 rounded-[5px] border border-pronix-border px-4 py-2 transition duration-200 hover:border-[rgba(24,24,24,0.28)] hover:bg-pronix-ink/[0.02] sm:px-6 sm:py-2.5"
+                        onClick={openFilterPanel}
                     >
                         <img alt="" aria-hidden className="size-9 shrink-0" src={projectsAssets.filterIcon} />
                         <span className="font-aeonik-light text-xl text-pronix-ink not-italic md:text-2xl lg:text-3xl">
@@ -136,7 +141,7 @@ function OpenProjectEmbeddedGridSection(props: OpenProjectContentProps) {
                         {filtersActive ? (
                             <span className="size-2 shrink-0 rounded-full bg-pronix-blue" aria-hidden />
                         ) : null}
-                    </button>
+                    </Button>
                 </div>
             </div>
 

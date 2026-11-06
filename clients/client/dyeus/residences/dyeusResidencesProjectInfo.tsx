@@ -17,6 +17,7 @@ import {resolveProjectGalleryImages} from "@propertyManagementModule/clients/cli
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
 import type {MarketingProjectSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const DRAG_THRESHOLD_PX = 10;
 const MOBILE_DESCRIPTION_COLLAPSE_CHARS = 180;
@@ -75,7 +76,7 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
         pointerStartX.current = null;
     };
 
-    const handleSlideClick = (event: MouseEvent<HTMLButtonElement>, index: number) => {
+    const handleSlideClick = (event: MouseEvent<HTMLElement>, index: number) => {
         if (didDragRef.current) {
             event.preventDefault();
             didDragRef.current = false;
@@ -121,8 +122,9 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                     <CarouselContent className="-ml-0 h-full">
                         {displayImages.map((image, index) => (
                             <CarouselItem key={`${image}-${index}`} className="h-full basis-full pl-0">
-                                <button
+                                <Button
                                     type="button"
+                                    variant="bare"
                                     className="flex size-full cursor-zoom-in items-center justify-center"
                                     onClick={(event) => handleSlideClick(event, index)}
                                 >
@@ -132,7 +134,7 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                                         src={image || dyeusAssets.villaFeature}
                                         draggable={false}
                                     />
-                                </button>
+                                </Button>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
@@ -141,10 +143,10 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
             {displayImages.length > 1 && (
                 <div className="mt-4 flex items-center justify-center gap-3">
                     {displayImages.map((_, index) => (
-                        <button
-                            key={index}
+                        <Button
                             type="button"
-                            onClick={() => scrollTo(index)}
+                            variant="bare"
+                            key={index}
                             className="rounded-full transition"
                             style={{
                                 width: index === activeIndex ? 48 : 20,
@@ -152,6 +154,7 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                                 background: index === activeIndex ? "#8B6B4A" : "rgba(36, 28, 22, 0.2)",
                             }}
                             aria-label={t("slide", {index: index + 1})}
+                            onClick={() => scrollTo(index)}
                         />
                     ))}
                 </div>
@@ -186,14 +189,15 @@ function DyeusResidencesProjectInfo({project}: DyeusResidencesProjectInfoProps) 
                             {project.description}
                         </p>
                         {project.description.trim().length > MOBILE_DESCRIPTION_COLLAPSE_CHARS && (
-                            <button
+                            <Button
                                 type="button"
+                                variant="bare"
                                 className="mt-2 font-dyeus-sans text-sm text-dyeus-bronze underline underline-offset-4 md:hidden"
-                                onClick={() => setDescriptionExpanded((open) => !open)}
                                 aria-expanded={descriptionExpanded}
+                                onClick={() => setDescriptionExpanded((open) => !open)}
                             >
                                 {descriptionExpanded ? t("readLess") : t("readMore")}
-                            </button>
+                            </Button>
                         )}
                     </div>
                 ) : null}

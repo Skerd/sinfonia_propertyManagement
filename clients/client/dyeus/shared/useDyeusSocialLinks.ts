@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {useMemo} from "react";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {MarketingProject} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {useDyeusProjectId} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusProjectId.ts";
 
@@ -12,6 +12,8 @@ export type DyeusSocialLink = {
 type CatalogResponse = {
     projects?: MarketingProject[];
 };
+
+const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectsCatalog"};
 
 export function normalizeDyeusSocialLinks(
     items: MarketingProject["socialLinks"] | undefined,
@@ -28,38 +30,13 @@ export function normalizeDyeusSocialLinks(
 /** Loads configured social/follow links for the active Dyeus project. */
 export function useDyeusSocialLinks(): {socialLinks: DyeusSocialLink[]; loading: boolean} {
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
-    const [socialLinks, setSocialLinks] = useState<DyeusSocialLink[]>([]);
-    const [loading, setLoading] = useState(true);
+    const {data, loading} = useHttpRequest<CatalogResponse>(CATALOG_REQUEST, {}, projectId ? 1 : 0);
 
-    useEffect(() => {
-        if (!projectId) {
-            setSocialLinks([]);
-            setLoading(resolvingProject);
-            return;
-        }
+    const socialLinks = useMemo(() => {
+        if (!projectId) return [];
+        const project = (data?.projects ?? []).find((item) => item._id === projectId);
+        return normalizeDyeusSocialLinks(project?.socialLinks);
+    }, [data, projectId]);
 
-        let cancelled = false;
-        setLoading(true);
-        (async () => {
-            try {
-                const res = await apiClient.post<CatalogResponse>(
-                    "/api/realEstate/marketingProjectsCatalog",
-                    {},
-                );
-                if (cancelled) return;
-                const project = (res.data.projects ?? []).find((item) => item._id === projectId);
-                setSocialLinks(normalizeDyeusSocialLinks(project?.socialLinks));
-            } catch {
-                if (!cancelled) setSocialLinks([]);
-            } finally {
-                if (!cancelled) setLoading(false);
-            }
-        })();
-
-        return () => {
-            cancelled = true;
-        };
-    }, [projectId, resolvingProject]);
-
-    return {socialLinks, loading: resolvingProject || loading};
+    return {socialLinks, loading: resolvingProject || (projectId ? loading : false)};
 }

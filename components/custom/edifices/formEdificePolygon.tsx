@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
-import axios from "axios";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import SimpleError from "@coreModule/components/custom/errors/errorViewWrapper.tsx";
 import PolygonSelector, { type PolygonPoint } from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import type { ResolveLanguageKey } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import { TriangleAlert } from "lucide-react";
+import {IconAlertTriangle} from "@tabler/icons-react";
 import { Alert, AlertDescription, AlertTitle } from "@coreModule/components/ui/alert.tsx";
 import type { Project } from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
+
+const PROJECT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/project/single"};
 
 const EMPTY_POLYGON: PolygonPoint[] = [];
 
@@ -40,8 +41,8 @@ export default function FormEdificePolygon({
     noImageKey = "projectNoMainImage",
 }: FormEdificePolygonProps) {
     const form = useFormContext();
-    const projectId = useWatch({ control: form.control, name: projectField as any }) as string | undefined;
-    const watchedPolygon = useWatch({ control: form.control, name: polygonField as any }) as PolygonPoint[] | undefined;
+    const projectId = useWatch({ control: form.control, name: projectField }) as string | undefined;
+    const watchedPolygon = useWatch({ control: form.control, name: polygonField }) as PolygonPoint[] | undefined;
     const edificeId = (formExtras as { edificeId?: string } | undefined)?.edificeId;
 
     const polygonSig =
@@ -58,6 +59,27 @@ export default function FormEdificePolygon({
     const [projectError, setProjectError] = useState(false);
     const lastLoadedProjectIdRef = useRef<string | undefined>(undefined);
 
+    // One request per projectId; a response for a projectId that has changed since is dropped.
+    const [projectCount, setProjectCount] = useState(0);
+    const projectIdRef = useRef(projectId);
+    projectIdRef.current = projectId;
+    useHttpRequest<Project>(PROJECT_REQUEST, {_id: projectId}, projectCount, true, {
+        success: (data) => {
+            if (projectIdRef.current !== projectId) return;
+            setProjectData(data);
+            lastLoadedProjectIdRef.current = projectId;
+            setProjectError(false);
+            setLoadingProject(false);
+        },
+        error: () => {
+            if (projectIdRef.current !== projectId) return;
+            setProjectError(true);
+            setProjectData(null);
+            lastLoadedProjectIdRef.current = undefined;
+            setLoadingProject(false);
+        },
+    });
+
     useEffect(() => {
         if (!projectId) {
             setProjectData(null);
@@ -67,7 +89,6 @@ export default function FormEdificePolygon({
             return;
         }
 
-        const ac = new AbortController();
         setProjectError(false);
 
         const switchingProject =
@@ -81,24 +102,7 @@ export default function FormEdificePolygon({
             setLoadingProject(true);
         }
 
-        apiClient
-            .post<Project>(`/api/realEstate/project/single`, { _id: projectId }, { signal: ac.signal })
-            .then((res) => {
-                setProjectData(res.data);
-                lastLoadedProjectIdRef.current = projectId;
-                setProjectError(false);
-            })
-            .catch((err: unknown) => {
-                if (axios.isCancel(err)) return;
-                setProjectError(true);
-                setProjectData(null);
-                lastLoadedProjectIdRef.current = undefined;
-            })
-            .finally(() => {
-                if (!ac.signal.aborted) setLoadingProject(false);
-            });
-
-        return () => ac.abort();
+        setProjectCount((count) => count + 1);
         // eslint-disable-next-line react-hooks/exhaustive-deps -- stable form methods
     }, [projectId, projectField]);
 
@@ -106,7 +110,7 @@ export default function FormEdificePolygon({
     useEffect(() => {
         const prev = prevProjectIdRef.current;
         if (prev !== undefined && prev !== projectId) {
-            form.setValue(polygonField as any, [] as any, { shouldValidate: false });
+            form.setValue(polygonField, [], { shouldValidate: false });
         }
         prevProjectIdRef.current = projectId;
     }, [projectId, form, polygonField]);
@@ -114,7 +118,7 @@ export default function FormEdificePolygon({
     if (!projectId) {
         return (
             <Alert>
-                <TriangleAlert className="h-4 w-4" />
+                <IconAlertTriangle className="h-4 w-4" />
                 <AlertTitle>{resolveLanguageKey("noProjectSelectedTitle")}</AlertTitle>
                 <AlertDescription>{resolveLanguageKey("noProjectSelectedDescription")}</AlertDescription>
             </Alert>
@@ -157,7 +161,7 @@ export default function FormEdificePolygon({
                 phantomPoints={phantomPoints}
                 initialPoints={initialPointsStable}
                 onPointsChange={(pts: PolygonPoint[]) => {
-                    form.setValue(polygonField as any, pts as any, { shouldValidate: true, shouldDirty: true });
+                    form.setValue(polygonField, pts, { shouldValidate: true, shouldDirty: true });
                 }}
                 disabled={loading}
                 key={String(projectData._id) + String(imageId)}

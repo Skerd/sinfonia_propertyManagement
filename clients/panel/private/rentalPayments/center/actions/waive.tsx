@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Ban} from "lucide-react";
+import {IconBan} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 
@@ -27,7 +27,7 @@ function WaiveRentalPayment({onAction, payment, resolveLanguageKey}: WaiveRental
 
     return (
         <DropdownMenuItem onClick={() => {onAction(WAIVE_RENTAL_PAYMENT_ACTION);}}>
-            <Ban className="text-primary" size={16} />
+            <IconBan className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

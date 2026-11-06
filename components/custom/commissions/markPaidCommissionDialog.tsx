@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useRef, useState} from "react";
-import {CheckCircle2, LoaderCircle} from "lucide-react";
+import {IconCircleCheck, IconLoader2} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -111,7 +111,7 @@ function MarkPaidCommissionDialog({
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <Label>{resolveLanguageKey("receiptLabel")}</Label>
-                        <input
+                        <Input
                             ref={mediaInputRef}
                             type="file"
                             className="hidden"
@@ -153,7 +153,7 @@ function MarkPaidCommissionDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button type="button" onClick={handleSubmit} disabled={busy}>
-                        {busy ? <LoaderCircle className="animate-spin h-4 w-4" /> : <CheckCircle2 className="h-4 w-4" />}
+                        {busy ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconCircleCheck className="h-4 w-4" />}
                         {resolveLanguageKey("confirmPaid")}
                     </Button>
                 </DialogFooter>

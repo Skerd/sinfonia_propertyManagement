@@ -381,15 +381,10 @@ function ModificationRequestCard({
                                 <>
                                     <HiddenElement>
                                         {
-                                            (permissions.inspections  || true )&&
-                                            <>
-                                                {
-                                                    (((displayRequest?.deliveryApproval as any)?.inspections?.length) || 0) > 0 &&
-                                                    <div className="pt-1 border-t">
-                                                        <p className="text-xs font-medium text-muted-foreground mb-1">{(displayRequest?.deliveryApproval as any)?.inspections?.length} {resolveLanguageKey(((displayRequest?.deliveryApproval as any)?.inspections?.length) === 1 ? "inspection" : "inspections")} {resolveLanguageKey("linked")}</p>
-                                                    </div>
-                                                }
-                                            </>
+                                            (displayRequest.deliveryApproval.inspections?.length ?? 0) > 0 &&
+                                            <div className="pt-1 border-t">
+                                                <p className="text-xs font-medium text-muted-foreground mb-1">{displayRequest.deliveryApproval.inspections?.length} {resolveLanguageKey(displayRequest.deliveryApproval.inspections?.length === 1 ? "inspection" : "inspections")} {resolveLanguageKey("linked")}</p>
+                                            </div>
                                         }
                                     </HiddenElement>
                                 </>
@@ -405,7 +400,7 @@ function ModificationRequestCard({
                         <div className="flex items-center gap-2 px-4 pt-4 pb-2">
                             <p className="text-sm font-semibold">{stageLabel}</p>
                             {
-                                !!financeDetails ?
+                                financeDetails ?
                                 <p className={`text-xs px-2 py-0.5 rounded-md border ${getApprovalDecisionColor("approved")}`}>
                                     {resolveLanguageKey("completed")}
                                 </p>

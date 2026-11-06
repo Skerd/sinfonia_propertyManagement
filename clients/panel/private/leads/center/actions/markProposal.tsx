@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {FileText} from "lucide-react";
+import {IconFileText} from "@tabler/icons-react";
 
 export const MARK_PROPOSAL_LEAD_ACTION = "markProposal";
 
@@ -13,7 +13,7 @@ type MarkProposalLeadProps = WithLanguageType & {
 function MarkProposalLead({onAction, resolveLanguageKey}: MarkProposalLeadProps) {
     return (
         <DropdownMenuItem onClick={() => { onAction(MARK_PROPOSAL_LEAD_ACTION); }}>
-            <FileText className="text-primary" size={16} />
+            <IconFileText className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

@@ -21,6 +21,7 @@ import {
 import type {
     PublicBlogFormResponseType,
 } from "armonia/src/modules/core/api/auxiliary/public/blog/blog.form.response.type.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type BlogFilter = {
     categorySlug?: string;
@@ -74,32 +75,32 @@ function BlogPageInner({
                 {categories.length > 0 ? (
                     <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-3">
                         <span className={`${PUBLIC_BODY}`}>{t("filterBy")}</span>
-                        <button
+                        <Button
                             type="button"
-                            onClick={() => setCategorySlug("")}
-                            className={cn(
-                                "rounded-[5px] border px-4 py-2 font-aeonik-medium text-sm transition-colors",
+                            variant="bare"
+                            className={cn("rounded-[5px] border px-4 py-2 font-aeonik-medium text-sm transition-colors",
                                 !categorySlug
                                     ? "border-pronix-ink bg-pronix-ink text-white"
                                     : "border-pronix-border text-pronix-ink hover:border-pronix-ink",
                             )}
+                            onClick={() => setCategorySlug("")}
                         >
                             {t("allCategories")}
-                        </button>
+                        </Button>
                         {categories.map((category) => (
-                            <button
-                                key={category._id}
+                            <Button
                                 type="button"
-                                onClick={() => setCategorySlug(category.slug)}
-                                className={cn(
-                                    "rounded-[5px] border px-4 py-2 font-aeonik-medium text-sm transition-colors",
+                                variant="bare"
+                                key={category._id}
+                                className={cn("rounded-[5px] border px-4 py-2 font-aeonik-medium text-sm transition-colors",
                                     categorySlug === category.slug
                                         ? "border-pronix-ink bg-pronix-ink text-white"
                                         : "border-pronix-border text-pronix-ink hover:border-pronix-ink",
                                 )}
+                                onClick={() => setCategorySlug(category.slug)}
                             >
                                 {category.name}
-                            </button>
+                            </Button>
                         ))}
                     </div>
                 ) : null}
@@ -161,11 +162,13 @@ function BlogPageInner({
     );
 }
 
-export default compose(
+const BlogPage: ComponentType = compose(
     withAxios<PublicBlogFormResponseType, BlogFilter>(
         {method: "post", url: "/api/auxiliary/public/blog", data: {}},
         false,
     ),
     withLanguage("src/modules/propertyManagement/clients/client/public/blog/index.tsx"),
     withDebug(true, true),
-)(BlogPageInner) as unknown as ComponentType;
+)(BlogPageInner);
+
+export default BlogPage;

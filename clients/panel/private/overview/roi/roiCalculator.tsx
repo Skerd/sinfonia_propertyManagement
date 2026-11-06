@@ -3,11 +3,12 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useCallback, useMemo, useState} from "react";
 import {useSelector} from "react-redux";
-import {Download} from "lucide-react";
+import {IconDownload} from "@tabler/icons-react";
 import type {RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {RoiRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.request.type.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
@@ -27,6 +28,7 @@ import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
+import {Table} from "@coreModule/components/ui/table/table.tsx";
 
 type RoiFilters = {
     projectId: string;
@@ -67,6 +69,9 @@ function hasRoiScope(filters: RoiFilters): boolean {
     return !!filters.projectId || filters.unitIds.length > 0;
 }
 
+const ROI_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/roi"};
+const COMPANY_INFO_REQUEST: HttpRequest = {method: "get", url: "/api/company/basicInfo"};
+
 function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
     const rk = (key: string) => String(resolveLanguageKey(key));
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
@@ -75,10 +80,11 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
     const [edificeIds, setEdificeIds] = useState<string[]>([]);
     const [floorIds,   setFloorIds]   = useState<string[]>([]);
     const [unitIds,    setUnitIds]    = useState<string[]>([]);
-    const [loading,    setLoading]    = useState(false);
     const [result,     setResult]     = useState<RoiResponse | null>(null);
     const [error,      setError]      = useState<string | null>(null);
     const [exporting,  setExporting]  = useState(false);
+    // The PDF letterhead (company name and logo).
+    const {data: company} = useHttpRequest<BasicCompanyInfoFormResponseType>(COMPANY_INFO_REQUEST, {}, 1);
     const accessHydrated = useAccessHydrated();
     const canRead = hasAnyAccessRead([
         useAccess("units"),
@@ -112,25 +118,26 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
         [floorIds, edificeIds, projectId],
     );
 
-    const calcRoi = useCallback(async (next: RoiFilters) => {
+    // One ROI request per calculation; the result and error are kept until the next one starts.
+    const [roiBody, setRoiBody] = useState<RoiRequest>({});
+    const [roiCount, setRoiCount] = useState(0);
+    const {loading} = useHttpRequest<RoiResponse>(ROI_REQUEST, roiBody, roiCount, true, {
+        success: (data) => setResult(data),
+        error: (e) => setError(handleError(e, {context: "RoiCalculator"})?.displayMessage ?? rk("error")),
+    });
+
+    const calcRoi = useCallback((next: RoiFilters) => {
         if (!canRead || !hasRoiScope(next)) return;
-        setLoading(true);
         setError(null);
         setResult(null);
-        try {
-            const body: RoiRequest = {};
-            if (next.projectId) body.projectId = next.projectId;
-            if (next.edificeIds.length > 0) body.edificeIds = next.edificeIds;
-            if (next.floorIds.length > 0)   body.floorIds   = next.floorIds;
-            if (next.unitIds.length > 0)    body.unitIds    = next.unitIds;
-            const res = await apiClient.post("/api/realEstate/roi", body);
-            setResult(res.data);
-        } catch (e) {
-            setError(handleError(e, {context: "RoiCalculator"})?.displayMessage ?? rk("error"));
-        } finally {
-            setLoading(false);
-        }
-    }, [rk, canRead]);
+        const body: RoiRequest = {};
+        if (next.projectId) body.projectId = next.projectId;
+        if (next.edificeIds.length > 0) body.edificeIds = next.edificeIds;
+        if (next.floorIds.length > 0)   body.floorIds   = next.floorIds;
+        if (next.unitIds.length > 0)    body.unitIds    = next.unitIds;
+        setRoiBody(body);
+        setRoiCount((count) => count + 1);
+    }, [canRead]);
 
     function handleProjectChange(id: string) {
         const next: RoiFilters = {projectId: id, edificeIds: [], floorIds: [], unitIds: []};
@@ -215,7 +222,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
         if (!result) return;
         setExporting(true);
         try {
-            await downloadRoiReportPdf(result, pdfLabels, {timezone});
+            await downloadRoiReportPdf(result, pdfLabels, {timezone, company});
         } finally {
             setExporting(false);
         }
@@ -328,7 +335,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                             disabled={exporting}
                                             onClick={() => void handleExportPdf()}
                                         >
-                                            <Download className="h-4 w-4 mr-2" />
+                                            <IconDownload className="h-4 w-4 mr-2" />
                                             {exporting ? rk("exportPdfLoading") : rk("exportPdf")}
                                         </Button>
                                     </div>
@@ -384,7 +391,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                     }
 
                                     <div className="border rounded-lg overflow-hidden">
-                                        <table className="w-full text-sm">
+                                        <Table bare className="w-full text-sm">
                                             <thead className="bg-muted">
                                             <tr>
                                                 <th className="text-left px-4 py-2">{rk("columns.unit")}</th>
@@ -430,7 +437,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                 </tr>
                                             ))}
                                             </tbody>
-                                        </table>
+                                        </Table>
                                         {result.units.length === 0 && (
                                             <p className="text-center py-8 text-muted-foreground text-sm">{rk("noResults")}</p>
                                         )}

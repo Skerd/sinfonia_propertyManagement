@@ -10,7 +10,7 @@ export default createGenericCreatePage<CreateInspectionChecklistTemplateFormType
     schema: createInspectionChecklistTemplateFormSchema,
     defaultValues: () => ({
         title: "",
-    } as any),
+    }),
     successPath: "/tenancy/systemSettings/inspectionChecklistTemplates",
     submitIcon: <IconPlus />,
 });

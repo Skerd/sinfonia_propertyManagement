@@ -3,7 +3,7 @@ import { compose } from "redux";
 import { useNavigate } from "react-router-dom";
 import { useKeyboardShortcuts } from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import { DropdownMenuItem, DropdownMenuShortcut } from "@coreModule/components/ui/dropdown-menu.tsx";
-import { Receipt } from "lucide-react";
+import {IconReceipt} from "@tabler/icons-react";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import { useDismissSheetBeforeMenuNavigate } from "@coreModule/components/viewEngine/sheet/widgets/sheetMenuNavigateDismiss.tsx";
@@ -20,10 +20,6 @@ function UnitCostsAction({ unitId, unitName, resolveLanguageKey }: UnitCostsActi
     const { read: readCosts } = useAccess("unitCosts");
     const navigate = useNavigate();
 
-    if (!readUnits || !readCosts) {
-        return null;
-    }
-
     const shortcut = "c";
     const openUnitCosts = () => {
         dismissSheetIfHosted?.();
@@ -37,7 +33,12 @@ function UnitCostsAction({ unitId, unitName, resolveLanguageKey }: UnitCostsActi
             },
         }));
     };
-    useKeyboardShortcuts(shortcut, openUnitCosts);
+    const canOpen = readUnits && readCosts;
+    useKeyboardShortcuts(shortcut, openUnitCosts, {enabled: canOpen});
+
+    if (!canOpen) {
+        return null;
+    }
 
     return (
         <DropdownMenuItem
@@ -47,7 +48,7 @@ function UnitCostsAction({ unitId, unitName, resolveLanguageKey }: UnitCostsActi
                 openUnitCosts();
             }}
         >
-            <Receipt size={16} />
+            <IconReceipt size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

@@ -71,6 +71,14 @@
     --font-dyeus-sans: "Britanica", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* The shadcn tokens core components/ui (ui/sonner) reads; the Toaster is pinned to its light theme (TD-F21). */
+:root {
+    --radius: 4px;
+    --popover: #f2eee6;
+    --popover-foreground: #181818;
+    --border: rgba(24, 24, 24, 0.2);
+}
+
 @layer base {
     body {
         @apply bg-dyeus-cream text-dyeus-ink antialiased;

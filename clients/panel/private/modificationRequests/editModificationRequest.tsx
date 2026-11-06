@@ -2,7 +2,7 @@ import {createGenericEditPage} from "@coreModule/components/entityPage/pages/cre
 import {editModificationRequestFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/editModificationRequest.form.validator.ts";
 import type {ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
 import type {EditModificationRequestFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {refId} from "@propertyManagementModule/helpers/forms/editPageMapping.ts";
 
 export default createGenericEditPage<ModificationRequest, EditModificationRequestFormType>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/modificationRequests/editModificationRequest.tsx",
@@ -10,11 +10,6 @@ export default createGenericEditPage<ModificationRequest, EditModificationReques
     accessModel: "modificationRequests",
     apiUrl: "/api/realEstate/unit/modificationRequest",
     schema: editModificationRequestFormSchema,
-
-    fetchEntity: (entityId) =>
-        apiClient
-            .post<ModificationRequest>("/api/realEstate/unit/modificationRequest/single", {_id: entityId})
-            .then((r) => r.data),
 
     buildInitialValues: (data, writeFields) => {
         const wf = writeFields as Record<string, any>;
@@ -73,10 +68,7 @@ export default createGenericEditPage<ModificationRequest, EditModificationReques
                                       ? data.financeDetails.totalCost
                                       : Number(data.financeDetails.totalCost) || 0
                                   : undefined,
-                          currency:
-                              (data.financeDetails.currency as any)?._id ??
-                              data.financeDetails.currency ??
-                              undefined,
+                          currency: refId(data.financeDetails.currency),
                           notes: data.financeDetails.notes,
                           estimatedCompletionDate: data.financeDetails.estimatedCompletionDate
                               ? typeof data.financeDetails.estimatedCompletionDate === "string"
@@ -99,7 +91,7 @@ export default createGenericEditPage<ModificationRequest, EditModificationReques
     buildExtraTitles: (params, entityName) => [params.get("unitName") || "", entityName || ""],
 
     beforeSubmit: (data) => {
-        if ((data as any).status === "completed") return "deliveredMessage";
+        if (data.status === "completed") return "deliveredMessage";
         return null;
     },
 });

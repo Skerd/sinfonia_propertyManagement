@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useMemo, useState} from "react";
-import {LoaderCircle, Scale} from "lucide-react";
+import {IconLoader2, IconScale} from "@tabler/icons-react";
 import {
     Dialog,
     DialogContent,
@@ -170,7 +170,7 @@ function CloseLeadDialog({
                         onClick={handleSubmit}
                         disabled={submitDisabled}
                     >
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : <Scale className="h-4 w-4" />}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : <IconScale className="h-4 w-4" />}
                         {resolveLanguageKey(outcome === "lost" ? "submitLost" : outcome === "won" ? "submitWon" : "submit")}
                     </Button>
                 </DialogFooter>

@@ -32,7 +32,7 @@ type CreatePaymentPlanSaleFormValues = Omit<CreatePaymentPlanSaleFormType, "inst
 function createPaymentPlanSaleResolver(
     schema: ReturnType<typeof createPaymentPlanSaleFormSchema>,
 ): Resolver<CreatePaymentPlanSaleFormValues> {
-    return zodResolver(schema as any) as unknown as Resolver<CreatePaymentPlanSaleFormValues>;
+    return zodResolver(schema) as Resolver<CreatePaymentPlanSaleFormValues>;
 }
 
 type CreatePaymentPlanSaleProps = WithLanguageType & WithAxiosType<unknown, CreatePaymentPlanSaleFormValues> & {
@@ -111,7 +111,7 @@ function CreatePaymentPlanSale({
         <FormViewRenderer<CreatePaymentPlanSaleFormValues>
             config={viewConfig}
             resolveLanguageKey={resolveLanguageKey}
-            formSchema={formSchema as any}
+            formSchema={formSchema}
             defaultValues={{
                 unit: unitId || "",
                 numberOfInstallments: 1,
@@ -128,7 +128,7 @@ function CreatePaymentPlanSale({
                 ],
                 reservationExchangeRate: 1,
                 saleExchangeRate: 1
-            } as any}
+            }}
             loading={loading}
             innerRef={innerRef}
             onSubmit={onSubmit}

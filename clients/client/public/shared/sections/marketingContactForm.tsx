@@ -6,6 +6,9 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {PublicLanguageProps} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {MarketingContactFormType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.validator";
 import type {MarketingContactFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingContact/marketingContact.form.response.type";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 type ContactFieldKey = keyof MarketingContactFormType;
 type ContactFieldErrors = Partial<Record<ContactFieldKey, string>>;
@@ -154,7 +157,7 @@ function MarketingContactFormInner({
                 <div className="grid w-full min-w-0 grid-cols-2 gap-4 sm:gap-8">
                     <div className="min-w-0">
                         <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.name))}>
-                            <input
+                            <Input bare
                                 type="text"
                                 name="name"
                                 autoComplete="given-name"
@@ -174,7 +177,7 @@ function MarketingContactFormInner({
                     </div>
                     <div className="min-w-0">
                         <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.surname))}>
-                            <input
+                            <Input bare
                                 type="text"
                                 name="surname"
                                 autoComplete="family-name"
@@ -195,7 +198,7 @@ function MarketingContactFormInner({
                 </div>
                 <div className="w-full min-w-0">
                     <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.email))}>
-                        <input
+                        <Input bare
                             type="email"
                             name="email"
                             autoComplete="email"
@@ -215,7 +218,7 @@ function MarketingContactFormInner({
                 </div>
                 <div className="w-full min-w-0">
                     <div className={cn(fieldShellClass, fieldShellErrorClass(!!fieldErrors.phone))}>
-                        <input
+                        <Input bare
                             type="tel"
                             name="phone"
                             autoComplete="tel"
@@ -236,7 +239,7 @@ function MarketingContactFormInner({
                 {!hideInterest ? (
                     <div className="w-full min-w-0">
                         <div className={cn(fieldShellClass, onDark ? "border-white/50" : "border-pronix-ink/30")}>
-                            <select
+                            <NativeSelect bare
                                 name="interest"
                                 value={interest}
                                 disabled={loading}
@@ -253,8 +256,7 @@ function MarketingContactFormInner({
                                             : "text-pronix-ink"
                                         : onDark
                                           ? "text-white/50"
-                                          : "text-pronix-ink/50",
-                                )}
+                                          : "text-pronix-ink/50")}
                             >
                                 <option value="" disabled>
                                     {resolveLanguageKey("interestPlaceholder")}
@@ -264,7 +266,7 @@ function MarketingContactFormInner({
                                         {resolveLanguageKey(option.labelKey)}
                                     </option>
                                 ))}
-                            </select>
+                            </NativeSelect>
                         </div>
                     </div>
                 ) : null}
@@ -294,20 +296,20 @@ function MarketingContactFormInner({
                 </div>
             </div>
             <div className="mt-8 flex w-full min-w-0 flex-col gap-3">
-                <button
+                <Button
                     type="button"
-                    disabled={loading}
-                    onClick={handleSend}
-                    className={cn(
-                        "flex w-full min-w-0 cursor-pointer items-center justify-center border px-6 py-4 font-aeonik-medium text-[20px] not-italic leading-[17.15px] tracking-normal transition-colors duration-200 md:text-lg lg:text-[24px]",
+                    variant="bare"
+                    className={cn("flex w-full min-w-0 cursor-pointer items-center justify-center border px-6 py-4 font-aeonik-medium text-[20px] not-italic leading-[17.15px] tracking-normal transition-colors duration-200 md:text-lg lg:text-[24px]",
                         "disabled:cursor-not-allowed disabled:opacity-50",
                         onDark
                             ? "border-white bg-transparent text-white hover:bg-white hover:text-pronix-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pronix-blue disabled:hover:bg-transparent disabled:hover:text-white"
                             : "rounded-[5px] border-transparent bg-pronix-blue py-3 text-base text-white hover:opacity-90 md:text-lg",
                     )}
+                    disabled={loading}
+                    onClick={handleSend}
                 >
                     {loading ? resolveLanguageKey("sending") : resolveLanguageKey("send")}
-                </button>
+                </Button>
                 {submitted ? (
                     <p
                         role="status"
@@ -341,6 +343,6 @@ const MarketingContactForm = compose(
         true,
     ),
     withDebug(true, true),
-)(MarketingContactFormInner) as unknown as React.ComponentType<MarketingContactFormProps>;
+)(MarketingContactFormInner) as React.ComponentType<Omit<MarketingContactFormInnerProps, keyof WithAxiosType>>;
 
 export default MarketingContactForm;

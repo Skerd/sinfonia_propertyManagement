@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Wallet} from "lucide-react";
+import {IconWallet} from "@tabler/icons-react";
 
 type SalePayDownPaymentActionProps = WithLanguageType & {
     isPaid?: boolean;
@@ -27,7 +27,7 @@ function SalePayDownPaymentAction({
                 onAction("payDownPayment");
             }}
         >
-            <Wallet className="h-4 w-4 mr-2" />
+            <IconWallet className="h-4 w-4 mr-2" />
             {resolveLanguageKey("payDownPayment")}
         </DropdownMenuItem>
     );

@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useRef, useState} from "react";
 import {ApproveModificationRequestForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/approveModificationRequest.form.type.ts";
-import {LoaderCircle, CheckCircle2, XCircle, Building2, Ruler, BriefcaseBusiness, Plus, X} from "lucide-react";
+import {IconBriefcase, IconBuildingSkyscraper, IconCircleCheck, IconCircleX, IconLoader2, IconPlus, IconRuler, IconX} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -12,7 +12,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle
 } from "@coreModule/components/ui/alert-dialog.tsx";
-import {ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
+import type {ApprovalStage, ModificationRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.dto.ts";
 import {Media} from "armonia/src/modules/core/types";
 import {Textarea} from "@coreModule/components/ui/textarea.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
@@ -27,12 +27,15 @@ import {
     MODIFICATION_REQUEST_LONG_TEXT_MAX,
     MODIFICATION_REQUEST_UNIT_MAX,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/modificationRequest.schema-def.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
 
 type MaterialPlanRow = { item: string; quantity?: number; unit?: string; notes?: string };
 
-function mapMaterialsFromPlan(plan: unknown): MaterialPlanRow[] {
-    if (!Array.isArray(plan)) return [];
-    return plan.map((m: any) => ({
+type RejectReasonCode = NonNullable<ApproveModificationRequestForm["rejectReasonCode"]>;
+const REJECT_REASON_CODES: readonly RejectReasonCode[] = ["design", "technical", "budget", "other"];
+
+function mapMaterialsFromPlan(plan: ApprovalStage["materialsPlan"]): MaterialPlanRow[] {
+    return (plan ?? []).map((m) => ({
         item: m.item || "",
         quantity: m.quantity,
         unit: m.unit,
@@ -52,7 +55,7 @@ function mediaIdsFromStageApproval(approval: {media?: Media[]} | undefined): str
     return list.map((m) => m._id).filter(Boolean);
 }
 
-type ApproveModificationRequestDialogProps = WithLanguageType & WithAxiosType<any, ApproveModificationRequestForm> & {
+type ApproveModificationRequestDialogProps = WithLanguageType & WithAxiosType<ModificationRequest, ApproveModificationRequestForm> & {
     open: boolean;
     onClose: () => void;
     request: ModificationRequest;
@@ -71,11 +74,11 @@ function ApproveModificationRequestDialog({
 }: ApproveModificationRequestDialogProps) {
     const [decision, setDecision] = useState<"approved" | "rejected">("approved");
     const [notes, setNotes] = useState("");
-    const [rejectReasonCode, setRejectReasonCode] = useState<"design" | "technical" | "budget" | "other" | undefined>(undefined);
+    const [rejectReasonCode, setRejectReasonCode] = useState<RejectReasonCode | undefined>(undefined);
     const [mediaFiles, setMediaFiles] = useState<File[]>([]);
     const [retainedMediaIds, setRetainedMediaIds] = useState<string[]>([]);
     const [materials, setMaterials] = useState<MaterialPlanRow[]>(() =>
-        mapMaterialsFromPlan((request.engineerApproval as any)?.materialsPlan),
+        mapMaterialsFromPlan(request.engineerApproval?.materialsPlan),
     );
     const mediaInputRef = useRef<HTMLInputElement>(null);
 
@@ -105,7 +108,7 @@ function ApproveModificationRequestDialog({
         setMediaFiles([]);
         setRetainedMediaIds(mediaIdsFromStageApproval(approval));
         if (currentStage === "engineer") {
-            setMaterials(mapMaterialsFromPlan((approval as any)?.materialsPlan));
+            setMaterials(mapMaterialsFromPlan(approval?.materialsPlan));
         } else {
             setMaterials([]);
         }
@@ -118,7 +121,7 @@ function ApproveModificationRequestDialog({
         request.architectApproval?.notes,
         request.engineerApproval?.decision,
         request.engineerApproval?.notes,
-        (request.engineerApproval as any)?.materialsPlan,
+        request.engineerApproval?.materialsPlan,
         request.ceoApproval?.decision,
         request.ceoApproval?.notes,
         request.architectApproval?.media,
@@ -127,8 +130,8 @@ function ApproveModificationRequestDialog({
     ]);
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: ApproveModificationRequestForm) => {
-            onSuccess?.(data as unknown as ModificationRequest);
+        success: (data: ModificationRequest) => {
+            onSuccess?.(data);
             onClose();
             setDecision("approved");
             setNotes("");
@@ -148,7 +151,7 @@ function ApproveModificationRequestDialog({
             decision,
             notes: notes.trim() || undefined,
             rejectReasonCode: decision === "rejected" ? rejectReasonCode : undefined,
-            media: mergedMedia.length > 0 ? mergedMedia as unknown as string[] : undefined,
+            media: mergedMedia.length > 0 ? mergedMedia : undefined,
             materialsPlan: currentStage === "engineer"
                 ? materials
                     .filter((m) => m.item?.trim())
@@ -187,7 +190,7 @@ function ApproveModificationRequestDialog({
             default: return currentStage;
         }
     };
-    const stageIcon = currentStage === "architect" ? Building2 : currentStage === "engineer" ? Ruler : BriefcaseBusiness;
+    const stageIcon = currentStage === "architect" ? IconBuildingSkyscraper : currentStage === "engineer" ? IconRuler : IconBriefcase;
     const StageIcon = stageIcon;
 
     const stageApprovalForMedia = currentStage ? getStageApproval(request, currentStage) : undefined;
@@ -221,7 +224,7 @@ function ApproveModificationRequestDialog({
                                 <p className="text-sm font-medium mb-2">{resolveLanguageKey("materialsPlanLabel")}</p>
                                 <div className="mb-2">
                                     <Button type="button" onClick={addMaterial} disabled={loading} size="sm" variant="outline">
-                                        <Plus className="h-4 w-4" />
+                                        <IconPlus className="h-4 w-4" />
                                         <span className="ml-2">{resolveLanguageKey("materialsPlanAddPlaceholder")}</span>
                                     </Button>
                                 </div>
@@ -232,7 +235,7 @@ function ApproveModificationRequestDialog({
                                         {materials.map((material, idx) => (
                                             <div key={`material-${idx}`} className="grid grid-cols-1 md:grid-cols-12 gap-2 rounded-md border p-2">
                                                 <FormMaxLengthControl className="md:col-span-4" maxLength={MODIFICATION_REQUEST_LINE_ITEM_MAX} value={material.item}>
-                                                    <input
+                                                    <Input
                                                         value={material.item}
                                                         onChange={(e) => updateMaterial(idx, "item", e.target.value.slice(0, MODIFICATION_REQUEST_LINE_ITEM_MAX))}
                                                         placeholder="Item"
@@ -241,7 +244,7 @@ function ApproveModificationRequestDialog({
                                                         disabled={loading}
                                                     />
                                                 </FormMaxLengthControl>
-                                                <input
+                                                <Input
                                                     type="number"
                                                     value={material.quantity ?? ""}
                                                     onChange={(e) => updateMaterial(idx, "quantity", e.target.value ? Number(e.target.value) : undefined)}
@@ -250,7 +253,7 @@ function ApproveModificationRequestDialog({
                                                     disabled={loading}
                                                 />
                                                 <FormMaxLengthControl className="md:col-span-2" maxLength={MODIFICATION_REQUEST_UNIT_MAX} value={material.unit ?? ""}>
-                                                    <input
+                                                    <Input
                                                         value={material.unit ?? ""}
                                                         onChange={(e) => updateMaterial(idx, "unit", e.target.value.slice(0, MODIFICATION_REQUEST_UNIT_MAX) || undefined)}
                                                         placeholder="Unit"
@@ -260,7 +263,7 @@ function ApproveModificationRequestDialog({
                                                     />
                                                 </FormMaxLengthControl>
                                                 <FormMaxLengthControl className="md:col-span-3" maxLength={MODIFICATION_REQUEST_LONG_TEXT_MAX} value={material.notes ?? ""}>
-                                                    <input
+                                                    <Input
                                                         value={material.notes ?? ""}
                                                         onChange={(e) => updateMaterial(idx, "notes", e.target.value.slice(0, MODIFICATION_REQUEST_LONG_TEXT_MAX) || undefined)}
                                                         placeholder="Notes"
@@ -270,7 +273,7 @@ function ApproveModificationRequestDialog({
                                                     />
                                                 </FormMaxLengthControl>
                                                 <Button type="button" variant="ghost" size="icon" className="md:col-span-1" onClick={() => removeMaterial(idx)} disabled={loading}>
-                                                    <X className="h-4 w-4" />
+                                                    <IconX className="h-4 w-4" />
                                                 </Button>
                                             </div>
                                         ))}
@@ -303,7 +306,7 @@ function ApproveModificationRequestDialog({
                                         {value: "other", label: resolveLanguageKey("rejectReasonOther")},
                                     ]}
                                     value={rejectReasonCode}
-                                    onValueChange={(value: string) => setRejectReasonCode(value as any)}
+                                    onValueChange={(value: string) => setRejectReasonCode(REJECT_REASON_CODES.find((code) => code === value))}
                                     placeholder={resolveLanguageKey("rejectReasonPlaceholder")}
                                     disabled={loading}
                                 />
@@ -327,7 +330,7 @@ function ApproveModificationRequestDialog({
                         </div>
                         <div>
                             <Label className="mb-2 block">{resolveLanguageKey("mediaLabel")}</Label>
-                            <input
+                            <Input
                                 ref={mediaInputRef}
                                 type="file"
                                 className="hidden"
@@ -384,7 +387,7 @@ function ApproveModificationRequestDialog({
                             setMediaFiles([]);
                             setRetainedMediaIds(mediaIdsFromStageApproval(approval));
                             if (currentStage === "engineer") {
-                                setMaterials(mapMaterialsFromPlan((approval as any)?.materialsPlan));
+                                setMaterials(mapMaterialsFromPlan(approval?.materialsPlan));
                             } else {
                                 setMaterials([]);
                             }
@@ -396,7 +399,7 @@ function ApproveModificationRequestDialog({
                             disabled={loading}
                             className={cn({"hover:bg-success hover:text-success-foreground": decision === "approved", "text-destructive-foreground hover:bg-destructive/90": decision === "rejected"})}
                         >
-                            {(loading) ? <LoaderCircle className="animate-spin"/> : (decision === "approved" ? <CheckCircle2 /> : <XCircle />)}
+                            {(loading) ? <IconLoader2 className="animate-spin"/> : (decision === "approved" ? <IconCircleCheck /> : <IconCircleX />)}
                             <p>{resolveLanguageKey("confirmButton")}</p>
                         </AlertDialogAction>
                     </AlertDialogFooter>

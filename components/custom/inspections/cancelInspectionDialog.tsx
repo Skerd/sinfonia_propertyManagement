@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useEffect, useImperativeHandle, useState} from "react";
-import {LoaderCircle, XCircle} from "lucide-react";
+import {IconCircleX, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogAction, AlertDialogCancel,
     AlertDialogContent,
@@ -101,7 +101,7 @@ function CancelInspectionDialog({
                         onClick={(e) => {e.preventDefault(); e.stopPropagation(); handleCancelInspection()}}
                         disabled={loading}
                     >
-                        {(loading) ? <LoaderCircle className="animate-spin"/> : <XCircle />}
+                        {(loading) ? <IconLoader2 className="animate-spin"/> : <IconCircleX />}
                         <p>{resolveLanguageKey("confirmCancel")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

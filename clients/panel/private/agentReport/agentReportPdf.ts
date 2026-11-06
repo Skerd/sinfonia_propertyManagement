@@ -3,7 +3,7 @@
  */
 
 import {jsPDF} from "jspdf";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {fetchMediaBytes} from "@coreModule/helpers/media/fetchMediaBytes.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
@@ -83,17 +83,16 @@ function loadImageDimensions(base64: string, format: "PNG" | "JPEG"): Promise<{w
     });
 }
 
-async function loadCompanyBranding(): Promise<Branding | null> {
+/** Letterhead from the company record the caller loaded (`/api/company/basicInfo`). */
+async function loadCompanyBranding(company: BasicCompanyInfoFormResponseType | null | undefined): Promise<Branding | null> {
     try {
-        const res = await apiClient.get<BasicCompanyInfoFormResponseType>("/api/company/basicInfo");
-        const c = res.data;
+        const c = company;
         if (!c || typeof c.name !== "string") return null;
         let logoBase64: string | null = null;
         let logoFormat: "PNG" | "JPEG" = "JPEG";
         if (c.logo && typeof c.logo === "string" && c.logo.length > 0) {
             try {
-                const imgRes = await apiClient.get<ArrayBuffer>(`/api/auxiliary/media/${c.logo}`, {responseType: "arraybuffer"});
-                const bytes = new Uint8Array(imgRes.data);
+                const bytes = await fetchMediaBytes(`/api/auxiliary/media/${c.logo}`);
                 logoFormat = detectImageFormat(bytes);
                 logoBase64 = uint8ToBase64(bytes);
             } catch {
@@ -262,8 +261,9 @@ async function buildAgentReportPdf(
     result: AgentReportResponseType,
     labels: AgentReportPdfLabels,
     timezone?: string,
+    company?: BasicCompanyInfoFormResponseType | null,
 ): Promise<jsPDF> {
-    const branding = await loadCompanyBranding();
+    const branding = await loadCompanyBranding(company);
     const doc = new jsPDF({unit: "mm", format: "a4", orientation: "landscape"});
 
     let y = await drawHeader(doc, labels.title, branding);
@@ -292,9 +292,9 @@ async function buildAgentReportPdf(
 export async function downloadAgentReportPdf(
     result: AgentReportResponseType,
     labels: AgentReportPdfLabels,
-    options?: {timezone?: string; fileName?: string},
+    options?: {timezone?: string; fileName?: string; company?: BasicCompanyInfoFormResponseType | null},
 ): Promise<void> {
-    const doc = await buildAgentReportPdf(result, labels, options?.timezone);
+    const doc = await buildAgentReportPdf(result, labels, options?.timezone, options?.company);
     const safeBase = (options?.fileName ?? "agent-performance-report").replace(/[^a-zA-Z0-9._-]+/g, "-");
     doc.save(`${safeBase}.pdf`);
 }

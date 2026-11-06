@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {UseFormReturn, useWatch} from "react-hook-form";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import { Unit, Unit as UnitData } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
@@ -9,7 +9,7 @@ import { ErrorView } from "@coreModule/components/custom/errors/errorView.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import { Reservation } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import { cn } from "@coreModule/components/lib/utils.ts";
-import { AlertCircleIcon, AlertTriangle } from "lucide-react";
+import {IconAlertCircle, IconAlertTriangle} from "@tabler/icons-react";
 import { Alert, AlertDescription, AlertTitle } from "@coreModule/components/ui/alert.tsx";
 import { Card, CardContent, CardFooter, CardHeader } from "@coreModule/components/ui/card.tsx";
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -17,6 +17,10 @@ import {Currency} from "armonia/src/modules/core/api/finance/private/currency/cu
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {roundToCurrency} from "armonia/src/modules/core/helpers/money.ts";
 import {allocatePlanInterest} from "armonia/src/modules/propertyManagement/helpers/paymentPlanInterest.ts";
+import {Table} from "@coreModule/components/ui/table/table.tsx";
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
+const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
 
 const PRINCIPAL_ZERO_EPS = 0.02;
 
@@ -132,7 +136,7 @@ export default function PaymentPlanSaleReceiptSection({
     const saleExchangeRate = form.watch("saleExchangeRate");
 
     const reservationDeduction = parseFloat(reservationExchangeRate?.toString() ?? "0") * (reservation?.depositAmount ?? 0);
-    const finalConversionRate = !!currency ? saleCurrency !== unit?.priceCurrency?._id?.toString() ? parseFloat(saleExchangeRate?.toString() ?? "0") || 0 : 1 : 1;
+    const finalConversionRate = currency ? saleCurrency !== unit?.priceCurrency?._id?.toString() ? parseFloat(saleExchangeRate?.toString() ?? "0") || 0 : 1 : 1;
     const finalPrice = ((unit?.price || 0) - (reservationDeduction || 0) - (Number(localDiscount || 0) / 100) * (unit?.price || 0)) * finalConversionRate;
 
     const downPayment = form.watch("downPayment");
@@ -152,39 +156,45 @@ export default function PaymentPlanSaleReceiptSection({
 
     const installmentsWatch = useWatch({control: form.control, name: "installments"});
 
+    // Loads again when it changes or on retry.
+    const [unitCount, setUnitCount] = useState(0);
     useEffect(() => {
-        if (!unitId) return;
-        setLoadingUnit(true);
-        setUnitError(false);
-        apiClient
-            .post<Unit>("/api/realEstate/unit/single", { _id: unitId })
-            .then((res) => {
-                setUnit(res.data);
-                setUnitError(false);
-                setLoadingUnit(false);
-            })
-            .catch(() => {
-                setUnitError(true);
-                setLoadingUnit(false);
-            });
+        if (unitId) setUnitCount((count) => count + 1);
     }, [unitId, forceReload]);
+    useHttpRequest<Unit>(UNIT_REQUEST, {_id: unitId}, unitCount, true, {
+        start: () => {
+            setLoadingUnit(true);
+            setUnitError(false);
+        },
+        success: (data) => {
+            setUnit(data);
+            setLoadingUnit(false);
+        },
+        error: () => {
+            setUnitError(true);
+            setLoadingUnit(false);
+        },
+    });
 
+    // Loads again when it changes or on retry.
+    const [currencyCount, setCurrencyCount] = useState(0);
     useEffect(() => {
-        if (!saleCurrency) return;
-        setLoadingCurrency(true);
-        setCurrencyError(false);
-        apiClient
-            .post<Currency>("/api/finance/currency/single", { _id: saleCurrency })
-            .then((res) => {
-                setCurrency(res.data);
-                setCurrencyError(false);
-                setLoadingCurrency(false);
-            })
-            .catch(() => {
-                setCurrencyError(true);
-                setLoadingCurrency(false);
-            });
+        if (saleCurrency) setCurrencyCount((count) => count + 1);
     }, [saleCurrency, forceReloadCurrency]);
+    useHttpRequest<Currency>(CURRENCY_REQUEST, {_id: saleCurrency}, currencyCount, true, {
+        start: () => {
+            setLoadingCurrency(true);
+            setCurrencyError(false);
+        },
+        success: (data) => {
+            setCurrency(data);
+            setLoadingCurrency(false);
+        },
+        error: () => {
+            setCurrencyError(true);
+            setLoadingCurrency(false);
+        },
+    });
 
     useEffect(() => {
         if (!!reservation && !!unit) {
@@ -392,10 +402,10 @@ export default function PaymentPlanSaleReceiptSection({
         }
 
         const values = [];
-        if (!!u?.unitNumber) {
+        if (u?.unitNumber) {
             values.push(u?.unitNumber);
         }
-        if (!!u?.name) {
+        if (u?.name) {
             values.push(u?.name);
         }
         if (!!u?.unitType && !!u?.unitType?.name) {
@@ -444,7 +454,7 @@ export default function PaymentPlanSaleReceiptSection({
                     {
                         isFinancedNegative &&
                         <Alert variant="destructive">
-                            <AlertCircleIcon />
+                            <IconAlertCircle />
                             <AlertTitle>{resolveLanguageKey("cannotProceed")}</AlertTitle>
                             <AlertDescription>{resolveLanguageKey("form.financeNegativeError")}</AlertDescription>
                         </Alert>
@@ -478,7 +488,7 @@ export default function PaymentPlanSaleReceiptSection({
                     {
                         amortErrorCode ? (
                             <Alert variant="destructive">
-                                <AlertCircleIcon />
+                                <IconAlertCircle />
                                 <AlertTitle>{resolveLanguageKey("amortizationErrorTitle")}</AlertTitle>
                                 <AlertDescription>
                                     {resolveLanguageKey(`amortizationError.${amortErrorCode}`)}
@@ -494,7 +504,7 @@ export default function PaymentPlanSaleReceiptSection({
                                 "dark:border-warning/40 dark:bg-warning/30",
                             )}
                         >
-                            <AlertTriangle className="h-4 w-4 text-warning" />
+                            <IconAlertTriangle className="h-4 w-4 text-warning" />
                             <AlertTitle className="text-warning">
                                 {resolveLanguageKey("principalResidualWarningTitle")}
                             </AlertTitle>
@@ -516,7 +526,7 @@ export default function PaymentPlanSaleReceiptSection({
                     {
                         formScheduleRows.length > 0 ? (
                             <div className="overflow-x-auto rounded-md border">
-                                <table className="w-full text-sm">
+                                <Table bare className="w-full text-sm">
                                     <thead className="bg-muted/50">
                                         <tr>
                                             <th className="p-2 text-left font-medium">{resolveLanguageKey("scheduleColNumber")}</th>
@@ -581,7 +591,7 @@ export default function PaymentPlanSaleReceiptSection({
                                             );
                                         })}
                                     </tbody>
-                                </table>
+                                </Table>
                             </div>
                         ) : (
                             <p className="text-sm text-muted-foreground">{resolveLanguageKey("scheduleEmptyHint")}</p>
@@ -703,7 +713,7 @@ export default function PaymentPlanSaleReceiptSection({
                                     {
                                         unit?.reservation && !reservation?.paid ?
                                         <Alert variant="destructive" className="w-full">
-                                            <AlertCircleIcon />
+                                            <IconAlertCircle />
                                             <AlertTitle>{resolveLanguageKey("cannotProceed")}</AlertTitle>
                                             <AlertDescription>{resolveLanguageKey("linkedReservationBlocksSale")}</AlertDescription>
                                         </Alert>

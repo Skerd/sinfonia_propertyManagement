@@ -1,4 +1,4 @@
-import {useEffect, useState, useMemo} from "react";
+import {Suspense, useEffect, useState, useMemo} from "react";
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {compose} from "redux";
@@ -21,7 +21,7 @@ import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {PaymentAlerts} from "@propertyManagementModule/components/custom/dashboard/paymentAlerts.tsx";
 import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
-import DeliveryReadinessCard from "@propertyManagementModule/components/custom/dashboard/deliveryReadinessCard.tsx";
+import {resolveWidget} from "@coreModule/components/viewEngine/widgetRegistry.ts";
 import {buildDrillDownContextFromPeriod} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import {
@@ -63,14 +63,18 @@ function RealEstateDashboard({
         useAccess("rentalpayments"),
         useAccess("leases"),
     ]);
-    const canReadDeliveryReadiness = isModuleEnabled("propertyDevelopment") && hasAnyAccessRead([
+    // Hooks run on every render; only the module check decides.
+    const deliveryReadinessAccess = [
         useAccess("permits"),
         useAccess("projectdocuments"),
         useAccess("designstages"),
         useAccess("milestones"),
         useAccess("snags"),
         useAccess("handoverpackages"),
-    ]);
+    ];
+    // propertyDevelopment contributes the card through the widget registry (CORE-02: PM never imports PD).
+    const DeliveryReadinessCard = resolveWidget("#DeliveryReadinessCard");
+    const canReadDeliveryReadiness = isModuleEnabled("propertyDevelopment") && hasAnyAccessRead(deliveryReadinessAccess);
 
     useEffect(() => {
         if (accessHydrated === false || !canRead) return;
@@ -255,8 +259,10 @@ function RealEstateDashboard({
                         {selectedEdifice && (
                             <>
                                 <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-                                    {canReadDeliveryReadiness && (
-                                        <DeliveryReadinessCard edificeId={selectedEdifice._id} />
+                                    {canReadDeliveryReadiness && DeliveryReadinessCard && (
+                                        <Suspense fallback={null}>
+                                            <DeliveryReadinessCard edificeId={selectedEdifice._id} />
+                                        </Suspense>
                                     )}
                                 </div>
 

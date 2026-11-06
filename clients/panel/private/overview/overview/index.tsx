@@ -71,8 +71,7 @@ function DashboardOverview({
   const summary: DashboardSummary | undefined = dashboardData?.summary;
   const revenueByPeriod = dashboardData?.revenueByPeriod ?? [];
   const recentSales = dashboardData?.recentSales ?? [];
-  const raw = dashboardData as unknown as { paymentAlerts?: unknown[] } | null;
-  const paymentAlerts = raw?.paymentAlerts && Array.isArray(raw.paymentAlerts) ? raw.paymentAlerts : undefined;
+  const paymentAlerts = dashboardData?.paymentAlerts;
 
   const totalRevenue = summary?.totalRevenue?.reduce((acc, r) => acc + r.value, 0) ?? 0;
   const activeReservations = summary?.activeReservations ?? 0;

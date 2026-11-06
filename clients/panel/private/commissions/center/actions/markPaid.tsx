@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {CheckCircle2} from "lucide-react";
+import {IconCircleCheck} from "@tabler/icons-react";
 
 export const MARK_PAID_COMMISSION_ACTION = "markPaid";
 
@@ -20,7 +20,7 @@ function MarkPaidCommission({onAction, resolveLanguageKey}: MarkPaidCommissionPr
         <DropdownMenuItem
             onClick={() => { openDialog();}}
         >
-            <CheckCircle2 size={16} />
+            <IconCircleCheck size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

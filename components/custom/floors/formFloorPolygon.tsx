@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
-import axios from "axios";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import SimpleError from "@coreModule/components/custom/errors/errorViewWrapper.tsx";
 import PolygonSelector, { type PolygonPoint } from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import type { ResolveLanguageKey } from "@coreModule/helpers/hocs/withLanguage.tsx";
-import {TriangleAlert} from "lucide-react";
+import {IconAlertTriangle} from "@tabler/icons-react";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import type {Project} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
+
+const EDIFICE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/edifice/single"};
+const PROJECT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/project/single"};
 
 const EMPTY_POLYGON: PolygonPoint[] = [];
 
@@ -41,8 +43,8 @@ export default function FormFloorPolygon({
     noImageKey = "projectNoMainImage",
 }: FormFloorPolygonProps) {
     const form = useFormContext();
-    const edificeId = useWatch({ control: form.control, name: "edifice" as any }) as string | undefined;
-    const watchedPolygon = useWatch({ control: form.control, name: polygonField as any }) as PolygonPoint[] | undefined;
+    const edificeId = useWatch({ control: form.control, name: "edifice" }) as string | undefined;
+    const watchedPolygon = useWatch({ control: form.control, name: polygonField }) as PolygonPoint[] | undefined;
     const floorId = (formExtras as { floorId?: string } | undefined)?.floorId;
 
     const polygonSig =
@@ -63,6 +65,57 @@ export default function FormFloorPolygon({
     const lastLoadedEdificeIdRef = useRef<string | undefined>(undefined);
     const lastLoadedProjectIdRef = useRef<string | undefined>(undefined);
 
+    // The building loads once per edificeId, then its project (for the main image) when that differs.
+    // Responses for an id that has changed since are dropped.
+    const [edificeCount, setEdificeCount] = useState(0);
+    const edificeIdRef = useRef(edificeId);
+    edificeIdRef.current = edificeId;
+    useHttpRequest<Edifice>(EDIFICE_REQUEST, {_id: edificeId}, edificeCount, true, {
+        success: (data) => {
+            if (edificeIdRef.current !== edificeId) return;
+            setEdificeData(data);
+            lastLoadedEdificeIdRef.current = edificeId;
+            const pid = data?.project && typeof data.project === "object"
+                ? (data.project as { _id?: string })._id
+                : undefined;
+            if (pid) {
+                form.setValue(projectField, String(pid), { shouldValidate: false, shouldDirty: false });
+                if (lastLoadedProjectIdRef.current !== pid) {
+                    setLoadingProject(true);
+                    setProjectTarget(String(pid));
+                    setProjectCount((count) => count + 1);
+                }
+            }
+            setEdificeError(false);
+            setLoadingEdifice(false);
+        },
+        error: () => {
+            if (edificeIdRef.current !== edificeId) return;
+            setEdificeError(true);
+            setEdificeData(null);
+            setProjectData(null);
+            lastLoadedEdificeIdRef.current = undefined;
+            lastLoadedProjectIdRef.current = undefined;
+            setLoadingEdifice(false);
+        },
+    });
+    const [projectTarget, setProjectTarget] = useState("");
+    const [projectCount, setProjectCount] = useState(0);
+    useHttpRequest<Project>(PROJECT_REQUEST, {_id: projectTarget}, projectCount, true, {
+        success: (data) => {
+            setProjectData(data);
+            lastLoadedProjectIdRef.current = projectTarget;
+            setProjectError(false);
+            setLoadingProject(false);
+        },
+        error: () => {
+            setProjectError(true);
+            setProjectData(null);
+            lastLoadedProjectIdRef.current = undefined;
+            setLoadingProject(false);
+        },
+    });
+
     useEffect(() => {
         if (!edificeId) {
             setEdificeData(null);
@@ -75,7 +128,6 @@ export default function FormFloorPolygon({
             return;
         }
 
-        const ac = new AbortController();
         setEdificeError(false);
 
         const switchingBuilding = lastLoadedEdificeIdRef.current !== undefined && lastLoadedEdificeIdRef.current !== edificeId;
@@ -89,50 +141,7 @@ export default function FormFloorPolygon({
             setLoadingEdifice(true);
         }
 
-        apiClient
-            .post<Edifice>(`/api/realEstate/edifice/single`, { _id: edificeId }, { signal: ac.signal })
-            .then(async (res) => {
-                const data = res.data;
-                setEdificeData(data);
-                lastLoadedEdificeIdRef.current = edificeId;
-                const pid = data?.project && typeof data.project === "object"
-                    ? (data.project as { _id?: string })._id
-                    : undefined;
-                if (pid) {
-                    form.setValue(projectField as any, String(pid), { shouldValidate: false, shouldDirty: false });
-                    // Now fetch project for its main image
-                    if (lastLoadedProjectIdRef.current !== pid) {
-                        setLoadingProject(true);
-                        try {
-                            const projRes = await apiClient.post<Project>(`/api/realEstate/project/single`, { _id: pid }, { signal: ac.signal });
-                            setProjectData(projRes.data);
-                            lastLoadedProjectIdRef.current = pid;
-                            setProjectError(false);
-                        } catch (projErr: unknown) {
-                            if (axios.isCancel(projErr)) return;
-                            setProjectError(true);
-                            setProjectData(null);
-                            lastLoadedProjectIdRef.current = undefined;
-                        } finally {
-                            setLoadingProject(false);
-                        }
-                    }
-                }
-                setEdificeError(false);
-            })
-            .catch((err: unknown) => {
-                if (axios.isCancel(err)) return;
-                setEdificeError(true);
-                setEdificeData(null);
-                setProjectData(null);
-                lastLoadedEdificeIdRef.current = undefined;
-                lastLoadedProjectIdRef.current = undefined;
-            })
-            .finally(() => {
-                if (!ac.signal.aborted) setLoadingEdifice(false);
-            });
-
-        return () => ac.abort();
+        setEdificeCount((count) => count + 1);
         // eslint-disable-next-line react-hooks/exhaustive-deps -- form methods stable
     }, [edificeId, projectField]);
 
@@ -140,8 +149,8 @@ export default function FormFloorPolygon({
     useEffect(() => {
         const prev = prevEdificeIdRef.current;
         if (prev !== undefined && prev !== edificeId) {
-            form.setValue(polygonField as any, [] as any, { shouldValidate: false });
-            form.setValue(closedField as any, false, { shouldValidate: false });
+            form.setValue(polygonField, [], { shouldValidate: false });
+            form.setValue(closedField, false, { shouldValidate: false });
         }
         prevEdificeIdRef.current = edificeId;
     }, [edificeId, form, polygonField, closedField]);
@@ -149,7 +158,7 @@ export default function FormFloorPolygon({
     if (!edificeId) {
         return (
             <Alert>
-                <TriangleAlert className="h-4 w-4"/>
+                <IconAlertTriangle className="h-4 w-4"/>
                 <AlertTitle>{resolveLanguageKey("noEdificeSelectedTitle")}</AlertTitle>
                 <AlertDescription>{resolveLanguageKey("noEdificeSelectedDescription")}</AlertDescription>
             </Alert>
@@ -198,10 +207,10 @@ export default function FormFloorPolygon({
                 phantomPoints={phantomPoints}
                 initialPoints={initialPointsStable}
                 onPointsChange={(pts: PolygonPoint[]) => {
-                    form.setValue(polygonField as any, pts as any, { shouldValidate: true, shouldDirty: true });
+                    form.setValue(polygonField, pts, { shouldValidate: true, shouldDirty: true });
                 }}
                 onClosedChange={(closed: boolean) => {
-                    form.setValue(closedField as any, closed, { shouldValidate: true, shouldDirty: true });
+                    form.setValue(closedField, closed, { shouldValidate: true, shouldDirty: true });
                 }}
                 disabled={loading}
                 key={String(edificeData._id) + String(imageId)}

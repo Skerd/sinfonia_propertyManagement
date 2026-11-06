@@ -13,6 +13,8 @@ import {
     CarouselItem,
     type CarouselApi,
 } from "@coreModule/components/ui/carousel.tsx";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const DRAG_THRESHOLD_PX = 10;
 
@@ -126,14 +128,15 @@ function ProjectCardImageCarousel({images, alt}: ProjectCardImageCarouselProps) 
                     data-node-id="277:227"
                 >
                     {images.map((image, index) => (
-                        <button
-                            key={`dot-${image}-${index}`}
+                        <Button
                             type="button"
+                            variant="bare"
+                            key={`dot-${image}-${index}`}
                             aria-label={`Show image ${index + 1} of ${images.length}`}
                             aria-current={index === activeIndex ? "true" : undefined}
-                            className={`pointer-events-auto shrink-0 rounded-full transition ${
+                            className={cn(`pointer-events-auto shrink-0 rounded-full transition ${
                                 index === activeIndex ? "h-3 w-8 bg-white" : "size-3 bg-white/50"
-                            }`}
+                            }`)}
                             onClick={(event) => {
                                 stopCardNavigation(event);
                                 scrollTo(index);

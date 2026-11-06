@@ -2,7 +2,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {DropdownMenuItem} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Phone} from "lucide-react";
+import {IconPhone} from "@tabler/icons-react";
 
 export const MARK_CONTACTED_LEAD_ACTION = "markContacted";
 
@@ -13,7 +13,7 @@ type MarkContactedLeadProps = WithLanguageType & {
 function MarkContactedLead({onAction, resolveLanguageKey}: MarkContactedLeadProps) {
     return (
         <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); onAction(MARK_CONTACTED_LEAD_ACTION); }}>
-            <Phone className="text-primary" size={16} />
+            <IconPhone className="text-primary" size={16} />
             <p>{resolveLanguageKey("title")}</p>
         </DropdownMenuItem>
     );

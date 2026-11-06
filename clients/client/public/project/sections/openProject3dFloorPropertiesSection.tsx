@@ -7,6 +7,8 @@ import {
     PROJECT_UNIT_STATUS_FILTERS,
     useProjectUnitStatusFilter,
 } from "@propertyManagementModule/clients/client/public/project/shared/useProjectUnitStatusFilter.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type OpenProject3dFloorPropertiesSectionProps = Pick<OpenProjectContentProps, "project" | "resolveLanguageKey"> & {
     hoveredUnitId?: string | null;
@@ -49,18 +51,19 @@ function OpenProject3dFloorPropertiesSection({
                 </h2>
                 <div className="mt-3 flex flex-wrap gap-2 md:gap-3" data-node-id="543:644">
                     {PROJECT_UNIT_STATUS_FILTERS.map((filter) => (
-                        <button
-                            key={filter}
+                        <Button
                             type="button"
-                            onClick={() => setActiveFilter(filter)}
-                            className={`rounded-[5px] px-3 py-1.5 font-aeonik-light text-base not-italic transition md:text-xl ${
+                            variant="bare"
+                            key={filter}
+                            className={cn(`rounded-[5px] px-3 py-1.5 font-aeonik-light text-base not-italic transition md:text-xl ${
                                 activeFilter === filter
                                     ? "bg-pronix-blue text-white"
                                     : "bg-[rgba(24,24,24,0.05)] text-pronix-ink"
-                            }`}
+                            }`)}
+                            onClick={() => setActiveFilter(filter)}
                         >
                             {resolveLanguageKey(`filter${filter.charAt(0).toUpperCase()}${filter.slice(1)}`)}
-                        </button>
+                        </Button>
                     ))}
                 </div>
             </div>

@@ -2,14 +2,17 @@ import {useEffect, useMemo, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
-import {ArrowLeftRight, ArrowRightLeft} from "lucide-react";
+import {IconArrowsLeftRight, IconArrowsRightLeft} from "@tabler/icons-react";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
+
+const EDIFICE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/edifice/single"};
+const FLOOR_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/floor/single"};
 
 const STATUS_CLASS: Record<string, string> = {
     sold_unit: "bg-status-sold/20 border-status-sold text-status-sold",
@@ -64,14 +67,13 @@ export function FloorPlanGrid({
         return map;
     }, [units]);
 
-    const [loadingFloorData, setLoadingFloorData] = useState(false);
     const [errorFloorData, setErrorFloorData] = useState<boolean>(false);
     const [floorData, setFloorData] = useState<any>(null);
 
     const [selectedFloorId, setSelectedFloorId] = useState<string | null>(null);
 
     const sortedFloors = useMemo(() => {
-        return [...floors].filter((floor) => {if( !!selectedFloorId ){ return floor._id === selectedFloorId } return true} ).sort((a, b) => parseFloorLevel(b.levelNumber) - parseFloorLevel(a.levelNumber));
+        return [...floors].filter((floor) => {if (selectedFloorId){ return floor._id === selectedFloorId } return true} ).sort((a, b) => parseFloorLevel(b.levelNumber) - parseFloorLevel(a.levelNumber));
     }, [floors, selectedFloorId]);
 
     const handleUnitClick = (unit: Unit) => {
@@ -90,7 +92,6 @@ export function FloorPlanGrid({
     };
 
     const [edificeData, setEdificeData] = useState<Edifice | null>(null);
-    const [loadingEdifice, setLoadingEdifice] = useState(false);
 
     useEffect(() => {
         setEdificeData(null);
@@ -99,27 +100,23 @@ export function FloorPlanGrid({
         setErrorFloorData(false);
     }, [edificeId]);
 
+    // The building's plan image loads the first time the image view opens for it.
+    const needsEdifice = showOverlay === "image" && !!edificeId && !edificeData;
+    const [edificeCount, setEdificeCount] = useState(0);
     useEffect(() => {
-        if (showOverlay !== "image" || !edificeId || !!edificeData) return;
-        setLoadingEdifice(true);
-        const postBody = {_id: edificeId};
-
-        apiClient.post<Edifice>(`/api/realEstate/edifice/single`, postBody)
-            .then((res) => {
-                const data = res.data;
-                if( !data ){
-                    setShowOverlay("blocks");
-                }
-                else{
-                    setEdificeData(data);
-                }
-            })
-            .catch((error) => {
-                handleError(error, {context: "FloorPlanGrid"});
-                setShowOverlay("blocks");
-            })
-            .finally(() => setLoadingEdifice(false));
-    }, [showOverlay, edificeId, edificeData]);
+        if (needsEdifice) setEdificeCount((count) => count + 1);
+    }, [needsEdifice, edificeId]);
+    const edificeRequest = useHttpRequest<Edifice | null>(EDIFICE_REQUEST, {_id: edificeId}, edificeCount, true, {
+        success: (data) => {
+            if (!data) setShowOverlay("blocks");
+            else setEdificeData(data);
+        },
+        error: (error) => {
+            handleError(error, {context: "FloorPlanGrid"});
+            setShowOverlay("blocks");
+        },
+    });
+    const loadingEdifice = edificeRequest.loading;
 
     useEffect(() => {
         if( showOverlay === "blocks" ){
@@ -130,38 +127,28 @@ export function FloorPlanGrid({
         }
     }, [showOverlay]);
 
+    // One request per picked floor.
+    const [floorCount, setFloorCount] = useState(0);
     useEffect(() => {
-
-        if( !selectedFloorId ){
-            return;
-        }
-
-        setLoadingFloorData(true);
+        if (!selectedFloorId) return;
         setErrorFloorData(false);
-
-        apiClient.post("/api/realEstate/floor/single", {_id: selectedFloorId})
-            .then((res) => {
-                const data = res.data;
-                if( !data ){
-                    setErrorFloorData(true);
-                }
-                else{
-                    setFloorData(data);
-                }
-                setLoadingFloorData(false);
-            })
-            .catch(() => {
-                setLoadingFloorData(false);
-                setErrorFloorData(true);
-            })
-    }, [selectedFloorId])
+        setFloorCount((count) => count + 1);
+    }, [selectedFloorId]);
+    const floorRequest = useHttpRequest<Floor | null>(FLOOR_REQUEST, {_id: selectedFloorId}, floorCount, true, {
+        success: (data) => {
+            if (!data) setErrorFloorData(true);
+            else setFloorData(data);
+        },
+        error: () => setErrorFloorData(true),
+    });
+    const loadingFloorData = floorRequest.loading;
 
     return (
         <div className="flex flex-col gap-y-2">
 
             <div className="flex items-center gap-x-2">
                 <Button size="sm" variant="outline" onClick={() => setShowOverlay(showOverlay === "blocks" ? "image" : "blocks")}>
-                    {showOverlay === "blocks" ? <ArrowLeftRight /> : <ArrowRightLeft />}
+                    {showOverlay === "blocks" ? <IconArrowsLeftRight /> : <IconArrowsRightLeft />}
                 </Button>
                 <h4 className="font-medium">{floorPlanTitle}</h4>
             </div>
@@ -188,21 +175,21 @@ export function FloorPlanGrid({
                                                     const area = unit.netArea ?? unit.area ?? (footprint > 0 ? footprint : undefined) ?? "—";
                                                     const areaStr = typeof area === "number" ? `${area} m²` : String(area);
                                                     return (
-                                                        <button
-                                                            key={unit._id}
+                                                        <Button
                                                             type="button"
-                                                            onClick={() => handleUnitClick(unit)}
-                                                            className={cn(
-                                                                "rounded-lg border p-2 text-left text-xs transition-all hover:scale-[1.02]",
+                                                            variant="bare"
+                                                            key={unit._id}
+                                                            className={cn("rounded-lg border p-2 text-left text-xs transition-all hover:scale-[1.02]",
                                                                 STATUS_CLASS[status] ?? "bg-muted/20 border-muted text-foreground"
                                                             )}
+                                                            onClick={() => handleUnitClick(unit)}
                                                         >
                                                             <div
                                                                 className="font-medium truncate">{unit.unitNumber ?? unit.name ?? unit._id}</div>
                                                             <div className="text-muted-foreground truncate">
                                                                 {typology} {areaStr}
                                                             </div>
-                                                        </button>
+                                                        </Button>
                                                     );
                                                 })}
                                         </div>
@@ -269,21 +256,21 @@ export function FloorPlanGrid({
                                                                                     const area = unit.netArea ?? unit.area ?? (footprint > 0 ? footprint : undefined) ?? "—";
                                                                                     const areaStr = typeof area === "number" ? `${area} m²` : String(area);
                                                                                     return (
-                                                                                        <button
-                                                                                            key={unit._id}
+                                                                                        <Button
                                                                                             type="button"
-                                                                                            onClick={() => handleUnitClick(unit)}
-                                                                                            className={cn(
-                                                                                                "rounded-lg border p-2 text-left text-xs transition-all hover:scale-[1.02]",
+                                                                                            variant="bare"
+                                                                                            key={unit._id}
+                                                                                            className={cn("rounded-lg border p-2 text-left text-xs transition-all hover:scale-[1.02]",
                                                                                                 STATUS_CLASS[status] ?? "bg-muted/20 border-muted text-foreground"
                                                                                             )}
+                                                                                            onClick={() => handleUnitClick(unit)}
                                                                                         >
                                                                                             <div
                                                                                                 className="font-medium truncate">{unit.unitNumber ?? unit.name ?? unit._id}</div>
                                                                                             <div className="text-muted-foreground truncate">
                                                                                                 {typology} {areaStr}
                                                                                             </div>
-                                                                                        </button>
+                                                                                        </Button>
                                                                                     );
                                                                                 })}
                                                                         </div>

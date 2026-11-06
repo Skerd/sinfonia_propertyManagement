@@ -1,9 +1,13 @@
 import {useEffect, useState} from "react";
+import {compose} from "redux";
 import {Dialog, DialogFrame} from "@coreModule/components/ui/dialog.tsx";
-import {ChevronLeft, ChevronRight, X} from "lucide-react";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {IconChevronLeft, IconChevronRight, IconX} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import {fillLanguageTemplate} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 
-type ImageLightboxProps = {
+type ImageLightboxProps = WithLanguageType & {
     images: string[];
     initialIndex?: number;
     onClose: () => void;
@@ -13,7 +17,7 @@ function isVideoUrl(url: string) {
     return /\.(mp4|webm|ogg|mov)(\?|$)/i.test(url);
 }
 
-function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) {
+function ImageLightbox({images, initialIndex = 0, onClose, resolveLanguageKey}: ImageLightboxProps) {
     const [index, setIndex] = useState(() => Math.min(initialIndex, Math.max(0, images.length - 1)));
     const current = images[index];
     const currentIsVideo = current ? isVideoUrl(current) : false;
@@ -40,32 +44,36 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
     return (
         <Dialog open onOpenChange={(next) => !next && onClose()}>
             <DialogFrame
-                title="Gallery"
+                title={resolveLanguageKey("title")}
                 overlayClassName="fixed inset-0 z-[300]"
                 className="fixed inset-0 z-[300] flex flex-col bg-black/92"
                 onClick={(event) => {
                     if (event.target === event.currentTarget) onClose();
                 }}
             >
-                <button
+                <Button
                     type="button"
+                    variant="ghost"
+                    size="icon"
                     onClick={onClose}
-                    className="absolute right-4 top-4 z-10 flex size-10 cursor-pointer items-center justify-center rounded-[5px] text-white transition hover:bg-white/10"
-                    aria-label="Close"
+                    className="absolute right-4 top-4 z-10 flex size-10 cursor-pointer items-center justify-center rounded-[5px] text-white transition hover:bg-white/10 hover:text-white"
+                    aria-label={resolveLanguageKey("close")}
                 >
-                    <X className="size-6" strokeWidth={1.5} />
-                </button>
+                    <IconX className="size-6" strokeWidth={1.5} />
+                </Button>
 
                 <div className="relative flex min-h-0 flex-1 items-center justify-center px-14 py-10">
                     {images.length > 1 ? (
-                        <button
+                        <Button
                             type="button"
-                            className="absolute left-3 flex size-10 cursor-pointer items-center justify-center rounded-[5px] text-white transition hover:bg-white/10"
+                            variant="ghost"
+                            size="icon"
+                            className="absolute left-3 flex size-10 cursor-pointer items-center justify-center rounded-[5px] text-white transition hover:bg-white/10 hover:text-white"
                             onClick={() => setIndex((prev) => (prev - 1 + images.length) % images.length)}
-                            aria-label="Previous"
+                            aria-label={resolveLanguageKey("previous")}
                         >
-                            <ChevronLeft className="size-7" strokeWidth={1.5} />
-                        </button>
+                            <IconChevronLeft className="size-7" strokeWidth={1.5} />
+                        </Button>
                     ) : null}
                     {currentIsVideo ? (
                         <video
@@ -79,14 +87,16 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
                         <img alt="" className="max-h-full max-w-full object-contain" src={current} />
                     )}
                     {images.length > 1 ? (
-                        <button
+                        <Button
                             type="button"
-                            className="absolute right-3 flex size-10 cursor-pointer items-center justify-center rounded-[5px] text-white transition hover:bg-white/10"
+                            variant="ghost"
+                            size="icon"
+                            className="absolute right-3 flex size-10 cursor-pointer items-center justify-center rounded-[5px] text-white transition hover:bg-white/10 hover:text-white"
                             onClick={() => setIndex((prev) => (prev + 1) % images.length)}
-                            aria-label="Next"
+                            aria-label={resolveLanguageKey("next")}
                         >
-                            <ChevronRight className="size-7" strokeWidth={1.5} />
-                        </button>
+                            <IconChevronRight className="size-7" strokeWidth={1.5} />
+                        </Button>
                     ) : null}
                 </div>
 
@@ -97,17 +107,18 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
                                 const selected = itemIndex === index;
                                 const video = isVideoUrl(url);
                                 return (
-                                    <button
+                                    <Button
                                         key={`${url}-${itemIndex}`}
                                         type="button"
+                                        variant="ghost"
                                         onClick={() => setIndex(itemIndex)}
                                         className={cn(
-                                            "relative h-16 w-24 shrink-0 cursor-pointer overflow-hidden rounded-[5px] border transition",
+                                            "relative block h-16 w-24 shrink-0 cursor-pointer overflow-hidden rounded-[5px] border p-0 transition",
                                             selected
                                                 ? "border-white"
                                                 : "border-white/25 hover:border-white/70",
                                         )}
-                                        aria-label={`Media ${itemIndex + 1}`}
+                                        aria-label={fillLanguageTemplate(resolveLanguageKey("media"), {index: itemIndex + 1})}
                                         aria-current={selected}
                                     >
                                         {video ? (
@@ -115,7 +126,7 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
                                         ) : (
                                             <img alt="" className="size-full object-cover" src={url} />
                                         )}
-                                    </button>
+                                    </Button>
                                 );
                             })}
                         </div>
@@ -126,4 +137,6 @@ function ImageLightbox({images, initialIndex = 0, onClose}: ImageLightboxProps) 
     );
 }
 
-export default ImageLightbox;
+export default compose(
+    withLanguage("src/modules/propertyManagement/clients/client/public/shared/imageLightbox.tsx"),
+)(ImageLightbox);

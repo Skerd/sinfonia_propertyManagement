@@ -1,5 +1,5 @@
 import {useMemo, useState} from "react";
-import {Play} from "lucide-react";
+import {IconPlayerPlay} from "@tabler/icons-react";
 import DyeusMediaLightbox from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMediaLightbox.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {
@@ -7,6 +7,8 @@ import {
     type MarketingUnitSingle,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {DyeusPropertyCopy} from "@propertyManagementModule/clients/client/dyeus/property/dyeusPropertyFormat.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const VIDEO_EXT_RE = /\.(mp4|webm|ogg|mov|m4v)(\?|#|$)/i;
 
@@ -79,52 +81,57 @@ function DyeusPropertyGallerySection({unit, t, compact = false}: DyeusPropertyGa
         <>
             {images.length > 0 ? (
                 <div className={mosaicClassName}>
-                    <button
+                    <Button
                         type="button"
-                        className={`${TILE} ${!compact && images.length >= 3 ? "md:row-span-2" : ""}`}
-                        onClick={() => openImageAt(0)}
+                        variant="bare"
+                        className={cn(`${TILE} ${!compact && images.length >= 3 ? "md:row-span-2" : ""}`)}
                         aria-label={fillLanguageTemplate(t("openImage"), {index: 1})}
+                        onClick={() => openImageAt(0)}
                     >
                         <img alt={unit.name} className="size-full object-cover" src={mainImage} />
-                    </button>
+                    </Button>
                     {topRight ? (
-                        <button
+                        <Button
                             type="button"
-                            className={TILE}
-                            onClick={() => openImageAt(1)}
+                            variant="bare"
+                            className={cn(TILE)}
                             aria-label={fillLanguageTemplate(t("openImage"), {index: 2})}
+                            onClick={() => openImageAt(1)}
                         >
                             <img alt="" aria-hidden className="size-full object-cover" src={topRight} />
-                        </button>
+                        </Button>
                     ) : null}
                     {compact ? null : extraCount > 0 && bottomRight ? (
                         <div className="grid min-h-0 grid-cols-2 gap-3 sm:gap-4 md:gap-5">
-                            <button
+                            <Button
                                 type="button"
-                                className={TILE}
-                                onClick={() => openImageAt(2)}
+                                variant="bare"
+                                className={cn(TILE)}
                                 aria-label={fillLanguageTemplate(t("openImage"), {index: 3})}
+                                onClick={() => openImageAt(2)}
                             >
                                 <img alt="" aria-hidden className="size-full object-cover" src={bottomRight} />
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 type="button"
-                                className={`${TILE} flex items-center justify-center bg-dyeus-white font-dyeus-serif text-2xl font-bold leading-none text-dyeus-ink md:text-3xl lg:text-4xl`}
-                                onClick={() => openImageAt(3)}
+                                variant="bare"
+                                className={cn(`${TILE} flex items-center justify-center bg-dyeus-white font-dyeus-serif text-2xl font-bold leading-none text-dyeus-ink md:text-3xl lg:text-4xl`)}
                                 aria-label={fillLanguageTemplate(t("morePhotos"), {count: extraCount})}
+                                onClick={() => openImageAt(3)}
                             >
                                 +{extraCount}
-                            </button>
+                            </Button>
                         </div>
                     ) : bottomRight ? (
-                        <button
+                        <Button
                             type="button"
-                            className={TILE}
-                            onClick={() => openImageAt(2)}
+                            variant="bare"
+                            className={cn(TILE)}
                             aria-label={fillLanguageTemplate(t("openImage"), {index: 3})}
+                            onClick={() => openImageAt(2)}
                         >
                             <img alt="" aria-hidden className="size-full object-cover" src={bottomRight} />
-                        </button>
+                        </Button>
                     ) : null}
                 </div>
             ) : null}
@@ -132,12 +139,13 @@ function DyeusPropertyGallerySection({unit, t, compact = false}: DyeusPropertyGa
             {compact ? null : videos.length > 0 ? (
                 <div className={`grid gap-3 sm:grid-cols-2 md:gap-5 ${images.length > 0 ? "mt-3 md:mt-5" : ""}`}>
                     {videos.map((src, index) => (
-                        <button
-                            key={`${src}-${index}`}
+                        <Button
                             type="button"
-                            onClick={() => setLightbox({kind: "video", index})}
-                            className={`group relative aspect-video ${TILE}`}
+                            variant="bare"
+                            key={`${src}-${index}`}
+                            className={cn(`group relative aspect-video ${TILE}`)}
                             aria-label={fillLanguageTemplate(t("playVideo"), {index: index + 1})}
+                            onClick={() => setLightbox({kind: "video", index})}
                         >
                             <video
                                 src={src}
@@ -148,10 +156,10 @@ function DyeusPropertyGallerySection({unit, t, compact = false}: DyeusPropertyGa
                             />
                             <span className="absolute inset-0 flex items-center justify-center bg-dyeus-ink/25 transition group-hover:bg-dyeus-ink/40">
                                 <span className="flex size-12 items-center justify-center rounded-full bg-dyeus-cream/95 text-dyeus-ink shadow-sm">
-                                    <Play className="ml-0.5 size-5 fill-current" strokeWidth={1.25} />
+                                    <IconPlayerPlay className="ml-0.5 size-5 fill-current" strokeWidth={1.25} />
                                 </span>
                             </span>
-                        </button>
+                        </Button>
                     ))}
                 </div>
             ) : null}

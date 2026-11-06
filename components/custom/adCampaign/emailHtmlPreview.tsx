@@ -1,8 +1,7 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {compose} from "redux";
-import {Monitor, Smartphone, TriangleAlert} from "lucide-react";
-import axios from "axios";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import {IconAlertTriangle, IconDeviceDesktop, IconDeviceMobile} from "@tabler/icons-react";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {
     AdCampaignTemplatePreviewResponse,
@@ -59,10 +58,15 @@ function EmailHtmlPreview({
 }: EmailHtmlPreviewProps) {
     const [result, setResult] = useState<AdCampaignTemplatePreviewResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
-    const [pending, setPending] = useState(false);
     const [width, setWidth] = useState<PreviewWidth>("desktop");
-    const abortRef = useRef<AbortController | null>(null);
 
+    const previewRequest = useMemo<HttpRequest>(() => ({method: "post", url: apiUrl}), [apiUrl]);
+    const previewBody = useMemo(
+        () => ({bodyHtml, subject, previewText, campaignType, locale, campaignId}),
+        [bodyHtml, subject, previewText, campaignType, locale, campaignId],
+    );
+    // One render per pause in typing; a newer request aborts an older, slower one.
+    const [previewCount, setPreviewCount] = useState(0);
     useEffect(() => {
         if (!campaignType || !locale) {
             // The server needs both to pick locale strings and sample values;
@@ -70,37 +74,16 @@ function EmailHtmlPreview({
             setResult(null);
             return;
         }
-
-        const timer = setTimeout(() => {
-            // An earlier, slower render must not land on top of a newer one.
-            abortRef.current?.abort();
-            const controller = new AbortController();
-            abortRef.current = controller;
-
-            setPending(true);
-            apiClient
-                .post<AdCampaignTemplatePreviewResponse>(
-                    apiUrl,
-                    {bodyHtml, subject, previewText, campaignType, locale, campaignId},
-                    {signal: controller.signal},
-                )
-                .then(({data}) => {
-                    setResult(data);
-                    setError(null);
-                })
-                .catch((err) => {
-                    if (axios.isCancel(err)) return;
-                    setError(String(resolveLanguageKey("previewFailed")));
-                })
-                .finally(() => {
-                    if (!controller.signal.aborted) setPending(false);
-                });
-        }, debounceMs);
-
+        const timer = setTimeout(() => setPreviewCount((count) => count + 1), debounceMs);
         return () => clearTimeout(timer);
-    }, [apiUrl, bodyHtml, subject, previewText, campaignType, locale, campaignId, debounceMs, resolveLanguageKey]);
-
-    useEffect(() => () => abortRef.current?.abort(), []);
+    }, [previewRequest, previewBody, campaignType, locale, debounceMs]);
+    const {loading: pending} = useHttpRequest<AdCampaignTemplatePreviewResponse>(previewRequest, previewBody, previewCount, true, {
+        success: (data) => {
+            setResult(data);
+            setError(null);
+        },
+        error: () => setError(String(resolveLanguageKey("previewFailed"))),
+    });
 
     const unresolved = result?.unresolvedPlaceholders ?? [];
 
@@ -125,7 +108,7 @@ function EmailHtmlPreview({
                         aria-pressed={width === "desktop"}
                         onClick={() => setWidth("desktop")}
                     >
-                        <Monitor className="h-4 w-4" />
+                        <IconDeviceDesktop className="h-4 w-4" />
                     </Button>
                     <Button
                         type="button"
@@ -135,14 +118,14 @@ function EmailHtmlPreview({
                         aria-pressed={width === "mobile"}
                         onClick={() => setWidth("mobile")}
                     >
-                        <Smartphone className="h-4 w-4" />
+                        <IconDeviceMobile className="h-4 w-4" />
                     </Button>
                 </div>
             </div>
 
             {unresolved.length > 0 ? (
                 <div className="flex flex-wrap items-center gap-2 rounded-md border border-amber-500/40 bg-amber-500/10 p-2">
-                    <TriangleAlert className="h-4 w-4 shrink-0 text-amber-600" />
+                    <IconAlertTriangle className="h-4 w-4 shrink-0 text-amber-600" />
                     <span className="text-xs text-muted-foreground">{resolveLanguageKey("previewUnresolved")}</span>
                     {unresolved.map((token) => (
                         <Badge key={token} variant="secondary" className="font-mono text-[11px]">

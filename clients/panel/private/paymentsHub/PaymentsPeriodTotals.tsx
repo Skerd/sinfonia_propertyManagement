@@ -78,8 +78,9 @@ export default function PaymentsPeriodTotals({
                                     {periods.map((period) => (
                                         <TableRow key={period.periodStart}>
                                             <TableCell>
-                                                <button
+                                                <Button
                                                     type="button"
+                                                    variant="bare"
                                                     className="cursor-pointer font-medium underline-offset-4 hover:underline"
                                                     onClick={() => onSelectPeriod(period)}
                                                 >
@@ -89,7 +90,7 @@ export default function PaymentsPeriodTotals({
                                                         groupBy,
                                                         locale,
                                                     )}
-                                                </button>
+                                                </Button>
                                             </TableCell>
                                             <TableCell className="text-right tabular-nums">{period.count}</TableCell>
                                             <TableCell className="text-right tabular-nums">

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {toast} from "sonner";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
@@ -13,6 +13,7 @@ import {
     formatUnitPrice,
     type DyeusPropertyCopy,
 } from "@propertyManagementModule/clients/client/dyeus/property/dyeusPropertyFormat.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type DyeusPropertySidebarSectionProps = {
     unit: MarketingUnitSingle;
@@ -52,8 +53,26 @@ function Spec({label, value}: {label: string; value: string}) {
     );
 }
 
+const BROCHURE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/brochure", responseType: "blob"};
+
 function DyeusPropertySidebarSection({unit, t, onReserve, onEnquire, compact = false}: DyeusPropertySidebarSectionProps) {
-    const [downloadingBrochure, setDownloadingBrochure] = useState(false);
+    // The brochure is a blob; a JSON or text body is the server's error, not a PDF.
+    const [brochureCount, setBrochureCount] = useState(0);
+    const saveBrochure = async (data: Blob) => {
+        const blob = data instanceof Blob ? data : new Blob([data], {type: "application/pdf"});
+        const header = await blob.slice(0, 5).text();
+        if (blob.type.includes("application/json") || blob.type.includes("text/") || header.trimStart().startsWith("{")) {
+            toast.error(t("brochureError"));
+            return;
+        }
+        const unitLabel = unit.unitNumber || unit.name || unit._id;
+        downloadBlob(blob, `marketing-booklet-${unitLabel}.pdf`);
+    };
+    const brochure = useHttpRequest<Blob>(BROCHURE_REQUEST, {projectId: unit.projectId, unitId: unit._id}, brochureCount, true, {
+        success: (data) => void saveBrochure(data),
+        error: () => toast.error(t("brochureError")),
+    });
+    const downloadingBrochure = brochure.loading;
     const priceOnRequest = unit.priceOnRequest === true;
     const priceLabel = formatUnitPrice(unit, t("priceOnRequest"));
     const specImage =
@@ -61,35 +80,8 @@ function DyeusPropertySidebarSection({unit, t, onReserve, onEnquire, compact = f
     const statusKey = STATUS_KEYS[unit.status] ?? "statusAvailable";
     const statusLabel = t(statusKey);
 
-    const handleDownloadBrochure = async () => {
-        if (downloadingBrochure) return;
-        setDownloadingBrochure(true);
-        try {
-            const response = await apiClient.post(
-                "/api/realEstate/marketingUnit/brochure",
-                {projectId: unit.projectId, unitId: unit._id},
-                {responseType: "blob"},
-            );
-            const blob =
-                response.data instanceof Blob
-                    ? response.data
-                    : new Blob([response.data], {type: "application/pdf"});
-
-            if (blob.type.includes("application/json") || blob.type.includes("text/")) {
-                throw new Error("brochure_unavailable");
-            }
-            const header = await blob.slice(0, 5).text();
-            if (header.trimStart().startsWith("{")) {
-                throw new Error("brochure_unavailable");
-            }
-
-            const unitLabel = unit.unitNumber || unit.name || unit._id;
-            downloadBlob(blob, `marketing-booklet-${unitLabel}.pdf`);
-        } catch {
-            toast.error(t("brochureError"));
-        } finally {
-            setDownloadingBrochure(false);
-        }
+    const handleDownloadBrochure = () => {
+        if (!downloadingBrochure) setBrochureCount((count) => count + 1);
     };
 
     return (
@@ -140,37 +132,37 @@ function DyeusPropertySidebarSection({unit, t, onReserve, onEnquire, compact = f
                     <div className="my-6 h-px w-full bg-dyeus-border" />
                     <div className="flex flex-col gap-3">
                         {unit.status === "available" ? (
-                            <button
+                            <Button
                                 type="button"
-                                onClick={priceOnRequest ? onEnquire : onReserve}
-                                className={cn(
-                                    "flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
+                                variant="bare"
+                                className={cn("flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
                                     "bg-transparent text-dyeus-ink transition-colors duration-200",
                                     "hover:bg-dyeus-ink hover:text-dyeus-cream",
                                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-white",
                                 )}
+                                onClick={priceOnRequest ? onEnquire : onReserve}
                             >
                                 <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
                                     {t(priceOnRequest ? "makeEnquiry" : "reserveOnline")}
                                 </span>
-                            </button>
+                            </Button>
                         ) : null}
-                        <button
+                        <Button
                             type="button"
-                            onClick={handleDownloadBrochure}
-                            disabled={downloadingBrochure}
-                            className={cn(
-                                "flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
+                            variant="bare"
+                            className={cn("flex w-full cursor-pointer items-center justify-center border border-dyeus-ink px-6 py-4 md:py-5",
                                 "bg-transparent text-dyeus-ink transition-colors duration-200",
                                 "hover:bg-dyeus-ink hover:text-dyeus-cream",
                                 "disabled:cursor-wait disabled:opacity-70",
                                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dyeus-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dyeus-white",
                             )}
+                            disabled={downloadingBrochure}
+                            onClick={handleDownloadBrochure}
                         >
                             <span className="whitespace-nowrap font-dyeus-sans text-xs uppercase tracking-[0.2em] md:text-sm">
                                 {downloadingBrochure ? t("downloadingBrochure") : t("downloadBrochure")}
                             </span>
-                        </button>
+                        </Button>
                     </div>
                 </div>
 

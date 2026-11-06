@@ -9,6 +9,9 @@ import {
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import AiOrbVisual from "@propertyManagementModule/clients/client/public/shared/sections/aiOrbVisual.tsx";
 import {PUBLIC_CHAT_MAX_MESSAGE_LENGTH} from "armonia/src/modules/core/api/user/public/publicChat/sendPublicChatMessage/sendPublicChatMessage.form.validator";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import {NativeSelect} from "@coreModule/components/ui/native-select.tsx";
 
 function WindowChromeButton({
     ariaLabel,
@@ -20,14 +23,15 @@ function WindowChromeButton({
     children: ReactNode;
 }) {
     return (
-        <button
+        <Button
             type="button"
-            onClick={onClick}
+            variant="bare"
             aria-label={ariaLabel}
             className="relative flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-white/10"
+            onClick={onClick}
         >
             {children}
-        </button>
+        </Button>
     );
 }
 
@@ -195,13 +199,14 @@ function IdentifyOutcomeFeedback({
                         {String(resolveLanguageKey(isSuccess ? "formSuccessBody" : "formFailureBody"))}
                     </p>
                 </div>
-                <button
+                <Button
                     type="button"
-                    onClick={onContinue}
+                    variant="bare"
                     className="cursor-pointer rounded-lg bg-white px-4 py-2 font-aeonik-medium text-sm text-[#0247fe]"
+                    onClick={onContinue}
                 >
                     {String(resolveLanguageKey("continueToChat"))}
-                </button>
+                </Button>
             </div>
         </div>
     );
@@ -216,14 +221,16 @@ function IdentifyOutcomeFeedback({
  * After submit, the form swaps for a success / failure mark until the visitor
  * continues back to chat.
  */
+type IdentifyFormProps = Pick<WithLanguageType, "resolveLanguageKey"> & {
+    onSubmit: (details: IdentifyFormValues) => Promise<boolean>;
+    onDismiss: () => void;
+};
+
 function IdentifyFormInner({
     onSubmit,
     onDismiss,
     resolveLanguageKey,
-}: {
-    onSubmit: (details: IdentifyFormValues) => Promise<boolean>;
-    onDismiss: () => void;
-} & Pick<WithLanguageType, "resolveLanguageKey">) {
+}: IdentifyFormProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -317,8 +324,8 @@ function IdentifyFormInner({
                     {String(resolveLanguageKey("formIntro"))}
                 </p>
                 <div className="min-w-0">
-                    <input
-                        className={cn(fieldClass, fieldErrors.name ? "border-red-300" : "border-white/40")}
+                    <Input bare
+                        className={cn(fieldClass, fieldErrors.name ? "border-red-300" : "border-white/40", "disabled:cursor-auto disabled:opacity-100")}
                         name="name"
                         placeholder={String(resolveLanguageKey("namePlaceholder"))}
                         value={name}
@@ -333,8 +340,8 @@ function IdentifyFormInner({
                     <IdentifyFieldError message={fieldErrors.name} />
                 </div>
                 <div className="min-w-0">
-                    <input
-                        className={cn(fieldClass, fieldErrors.email ? "border-red-300" : "border-white/40")}
+                    <Input bare
+                        className={cn(fieldClass, fieldErrors.email ? "border-red-300" : "border-white/40", "disabled:cursor-auto disabled:opacity-100")}
                         name="email"
                         placeholder={String(resolveLanguageKey("emailPlaceholder"))}
                         type="email"
@@ -350,8 +357,8 @@ function IdentifyFormInner({
                     <IdentifyFieldError message={fieldErrors.email} />
                 </div>
                 <div className="min-w-0">
-                    <input
-                        className={cn(fieldClass, fieldErrors.phone ? "border-red-300" : "border-white/40")}
+                    <Input bare
+                        className={cn(fieldClass, fieldErrors.phone ? "border-red-300" : "border-white/40", "disabled:cursor-auto disabled:opacity-100")}
                         name="phone"
                         placeholder={String(resolveLanguageKey("numberPlaceholder"))}
                         type="tel"
@@ -368,8 +375,8 @@ function IdentifyFormInner({
                 </div>
                 <div className="flex min-w-0 gap-2">
                     <div className="min-w-0 flex-[1.4]">
-                        <input
-                            className={cn(fieldClass, fieldErrors.budget ? "border-red-300" : "border-white/40")}
+                        <Input bare
+                            className={cn(fieldClass, fieldErrors.budget ? "border-red-300" : "border-white/40", "disabled:cursor-auto disabled:opacity-100")}
                             name="budget"
                             placeholder={String(resolveLanguageKey("budgetPlaceholder"))}
                             type="number"
@@ -387,7 +394,7 @@ function IdentifyFormInner({
                         <IdentifyFieldError message={fieldErrors.budget} />
                     </div>
                     <div className="min-w-0 flex-1">
-                        <select
+                        <NativeSelect bare
                             className={cn(fieldClass, "border-white/40 disabled:opacity-60")}
                             name="budgetCurrency"
                             value={budgetCurrency}
@@ -407,7 +414,7 @@ function IdentifyFormInner({
                                         : currency.abbreviation || currency.name}
                                 </option>
                             ))}
-                        </select>
+                        </NativeSelect>
                     </div>
                 </div>
                 <div className="min-w-0">
@@ -426,33 +433,32 @@ function IdentifyFormInner({
                 </div>
             </div>
             <div className="flex shrink-0 items-center gap-3 border-t border-white/10 px-3.5 py-3">
-                <button
+                <Button
                     type="button"
-                    onClick={handleSubmit}
-                    disabled={isSaving}
+                    variant="bare"
                     className="cursor-pointer rounded-lg bg-white px-3 py-1.5 font-aeonik-medium text-xs text-[#0247fe] disabled:cursor-not-allowed disabled:opacity-50"
+                    disabled={isSaving}
+                    onClick={handleSubmit}
                 >
                     {isSaving ? String(resolveLanguageKey("sending")) : String(resolveLanguageKey("send"))}
-                </button>
-                <button
+                </Button>
+                <Button
                     type="button"
-                    onClick={onDismiss}
-                    disabled={isSaving}
+                    variant="bare"
                     className="cursor-pointer font-aeonik-light text-xs text-white/80 underline underline-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    disabled={isSaving}
+                    onClick={onDismiss}
                 >
                     {String(resolveLanguageKey("dismiss"))}
-                </button>
+                </Button>
             </div>
         </div>
     );
 }
 
-const IdentifyForm = withLanguage(
+const IdentifyForm: ComponentType<Omit<IdentifyFormProps, keyof WithLanguageType>> = withLanguage(
     "src/modules/propertyManagement/clients/client/public/shared/aiChat/homepageAiChatPanel.tsx",
-)(IdentifyFormInner) as unknown as ComponentType<{
-    onSubmit: (details: IdentifyFormValues) => Promise<boolean>;
-    onDismiss: () => void;
-}>;
+)(IdentifyFormInner);
 
 function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
     const {
@@ -621,44 +627,47 @@ function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
                 {(canRequestHuman || showLeaveDetailsButton) ? (
                     <div className="mb-2 flex shrink-0 flex-wrap items-center justify-center gap-x-4 gap-y-1">
                         {showLeaveDetailsButton ? (
-                            <button
+                            <Button
                                 type="button"
+                                variant="bare"
+                                className="cursor-pointer font-aeonik-light text-xs text-white/75 underline underline-offset-2 transition-colors hover:text-white"
                                 onClick={() => {
                                     setIdentifyDismissed(false);
                                     setIdentifyForcedOpen(true);
                                 }}
-                                className="cursor-pointer font-aeonik-light text-xs text-white/75 underline underline-offset-2 transition-colors hover:text-white"
                             >
                                 {String(resolveLanguageKey("leaveDetails"))}
-                            </button>
+                            </Button>
                         ) : null}
                         {canRequestHuman ? (
-                            <button
+                            <Button
                                 type="button"
-                                onClick={() => requestHuman()}
+                                variant="bare"
                                 className="cursor-pointer font-aeonik-light text-xs text-white/75 underline underline-offset-2 transition-colors hover:text-white"
+                                onClick={() => requestHuman()}
                             >
                                 {String(resolveLanguageKey("talkToPerson"))}
-                            </button>
+                            </Button>
                         ) : null}
                     </div>
                 ) : null}
 
                 {isClosed ? (
                     <div className="relative shrink-0">
-                        <button
+                        <Button
                             type="button"
+                            variant="bare"
+                            className="w-full cursor-pointer rounded-xl bg-white px-3 py-2.5 font-aeonik-medium text-sm text-[#0247fe] disabled:cursor-not-allowed disabled:opacity-50"
+                            disabled={isConnecting}
                             onClick={() => {
                                 setIdentifyDismissed(false);
                                 setIdentifyForcedOpen(false);
                                 setDraft("");
                                 startNewChat();
                             }}
-                            disabled={isConnecting}
-                            className="w-full cursor-pointer rounded-xl bg-white px-3 py-2.5 font-aeonik-medium text-sm text-[#0247fe] disabled:cursor-not-allowed disabled:opacity-50"
                         >
                             {isConnecting ? "Starting…" : "Start a new chat"}
-                        </button>
+                        </Button>
                     </div>
                 ) : showIdentifyForm ? null : (
                     <div className="relative shrink-0" data-node-id="49:1342">
@@ -666,7 +675,7 @@ function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
                             className="relative flex items-center gap-2 rounded-xl border border-white/70 bg-white/5 px-3 py-2.5"
                             data-node-id="49:1343"
                         >
-                            <input
+                            <Input bare
                                 type="text"
                                 value={draft}
                                 onChange={(event) => setDraft(event.target.value)}
@@ -680,15 +689,16 @@ function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
                                 }
                                 className="min-w-0 flex-1 bg-transparent font-aeonik-light text-[15px] leading-6 text-white outline-none placeholder:text-white/55 disabled:cursor-not-allowed disabled:opacity-60"
                             />
-                            <button
+                            <Button
                                 type="button"
-                                onClick={handleSend}
-                                disabled={!draft.trim() || !canSend}
+                                variant="bare"
                                 className="relative flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
                                 aria-label="Send"
+                                disabled={!draft.trim() || !canSend}
+                                onClick={handleSend}
                             >
                                 <img alt="" aria-hidden className="block size-[17px] max-w-none" src={figmaAssets.aiOrbSendIcon} />
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 )}
@@ -697,8 +707,8 @@ function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
     );
 }
 
-const HomepageAiChatPanel = withLanguage(
+const HomepageAiChatPanel: ComponentType = withLanguage(
     "src/modules/propertyManagement/clients/client/public/shared/aiChat/homepageAiChatPanel.tsx",
-)(HomepageAiChatPanelInner) as unknown as ComponentType;
+)(HomepageAiChatPanelInner);
 
 export default HomepageAiChatPanel;

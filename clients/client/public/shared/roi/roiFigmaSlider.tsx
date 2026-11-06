@@ -1,6 +1,7 @@
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {usePublicIsMobile} from "@propertyManagementModule/clients/client/public/shared/hooks/usePublicIsMobile.ts";
 import {roiThumbCenterCss} from "@propertyManagementModule/clients/client/public/shared/roi/formatRoiValue.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
 
 const HOME_THUMB_PX = 41;
 const HOME_THUMB_MOBILE_PX = 22;
@@ -94,7 +95,7 @@ function RoiFigmaSlider({
                     className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-pronix-blue"
                     style={{height: trackHeightPx, width: thumbCenter}}
                 />
-                <input
+                <Input bare
                     type="range"
                     min={min}
                     max={max}

@@ -196,12 +196,12 @@ function FeaturedResidencesSectionInner({data, loading, error}: FeaturedResidenc
     );
 }
 
-const FeaturedResidencesSection = compose(
+const FeaturedResidencesSection: ComponentType = compose(
     withAxios<MarketingFeaturedUnitsResponse>(
         {method: "post", url: "/api/realEstate/marketingFeaturedUnits", data: {}},
         false,
     ),
     withDebug(true, true),
-)(FeaturedResidencesSectionInner) as unknown as ComponentType;
+)(FeaturedResidencesSectionInner);
 
 export default FeaturedResidencesSection;

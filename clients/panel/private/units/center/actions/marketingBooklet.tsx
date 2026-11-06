@@ -5,7 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {BookOpen, Loader2} from "lucide-react";
+import {IconBook, IconLoader2} from "@tabler/icons-react";
 
 type MarketingBookletPost = {unitId: string};
 
@@ -37,7 +37,7 @@ function MarketingBooklet({unitId, unitName, resolveLanguageKey, innerRef, onFil
             onClick={(e) => {e.preventDefault(); e.stopPropagation(); if (!loading) onFilterChange({unitId});}}
             disabled={loading}
         >
-            {loading ? <Loader2 size={16} className="animate-spin"/> : <BookOpen size={16}/>}
+            {loading ? <IconLoader2 size={16} className="animate-spin"/> : <IconBook size={16}/>}
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘b</DropdownMenuShortcut>
         </DropdownMenuItem>

@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Undo2} from "lucide-react";
+import {IconArrowBackUp} from "@tabler/icons-react";
 
 export const MARK_PENDING_COMMISSION_ACTION = "markPending";
 
@@ -20,7 +20,7 @@ function MarkPendingCommission({onAction, resolveLanguageKey}: MarkPendingCommis
         <DropdownMenuItem
             onClick={() => {openDialog();}}
         >
-            <Undo2 size={16} />
+            <IconArrowBackUp size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

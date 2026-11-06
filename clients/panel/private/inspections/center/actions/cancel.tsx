@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {XCircle} from "lucide-react";
+import {IconCircleX} from "@tabler/icons-react";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 
 type CancelInspectionProps = WithLanguageType & {
@@ -32,7 +32,7 @@ function CancelInspection({
 
     return (
         <DropdownMenuItem onClick={() => { openDialog(); }}>
-            <XCircle className="text-warning" size={16}/>
+            <IconCircleX className="text-warning" size={16}/>
             <p className="text-warning">
                 {resolveLanguageKey("title")}
             </p>

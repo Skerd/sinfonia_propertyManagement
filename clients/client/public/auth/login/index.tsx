@@ -22,6 +22,8 @@ import {
 } from "@propertyManagementModule/clients/client/public/auth/shared/publicAuthChrome.tsx";
 import PublicGuestOnly from "@propertyManagementModule/clients/client/public/auth/shared/publicGuestOnly.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {Input} from "@coreModule/components/ui/input.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/auth/login/index.tsx";
 
@@ -67,7 +69,7 @@ function LoginPageInner({
                         <>
                             <div className="w-full min-w-0">
                                 <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.username && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                    <input
+                                    <Input bare
                                         type="email"
                                         name="username"
                                         autoComplete="email"
@@ -86,7 +88,7 @@ function LoginPageInner({
                             </div>
                             <div className="w-full min-w-0">
                                 <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.password && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                    <input
+                                    <Input bare
                                         type="password"
                                         name="password"
                                         autoComplete="current-password"
@@ -107,7 +109,7 @@ function LoginPageInner({
                     ) : (
                         <div className="w-full min-w-0">
                             <div className={cn(AUTH_FIELD_SHELL_CLASS, fieldErrors.mfaCode && AUTH_FIELD_SHELL_ERROR_CLASS)}>
-                                <input
+                                <Input bare
                                     type="text"
                                     name="mfaCode"
                                     inputMode="numeric"
@@ -127,13 +129,13 @@ function LoginPageInner({
                         </div>
                     )}
 
-                    <button type="submit" disabled={loading} className={AUTH_SUBMIT_CLASS}>
+                    <Button type="submit" disabled={loading} className={AUTH_SUBMIT_CLASS}>
                         {loading
                             ? resolveLanguageKey("submitting")
                             : needsMfa
                               ? resolveLanguageKey("verify")
                               : resolveLanguageKey("submit")}
-                    </button>
+                    </Button>
 
                     {error && Object.keys(fieldErrors).length === 0 ? (
                         <AuthStatusMessage tone="error">{resolveLanguageKey("formError")}</AuthStatusMessage>
@@ -152,13 +154,14 @@ function LoginPageInner({
                             </p>
                         </div>
                     ) : (
-                        <button
+                        <Button
                             type="button"
-                            className={`${AUTH_LINK_CLASS} text-left`}
+                            variant="bare"
+                            className={cn(`${AUTH_LINK_CLASS} text-left`)}
                             onClick={cancelMfa}
                         >
                             {resolveLanguageKey("backToLogin")}
-                        </button>
+                        </Button>
                     )}
                 </form>
             </PublicAuthPageShell>

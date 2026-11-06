@@ -1,8 +1,9 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
-import {ChevronDown} from "lucide-react";
+import {IconChevronDown} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {ownershipImageCropStyle, type OwnershipImageCropKey} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 export type OwnershipCardContent = {
     image: string;
@@ -109,8 +110,9 @@ function OwnershipInteractiveCard({card, checkCircle, variant}: OwnershipInterac
                     </p>
                 </div>
                 <div className="flex w-full min-w-0 flex-col items-start gap-2">
-                    <button
+                    <Button
                         type="button"
+                        variant="bare"
                         className={`flex w-full min-w-0 items-center justify-between gap-3 text-left md:pointer-events-none ${textColor}`}
                         aria-expanded={includedOpen}
                         onClick={() => setIncludedOpen((open) => !open)}
@@ -118,14 +120,14 @@ function OwnershipInteractiveCard({card, checkCircle, variant}: OwnershipInterac
                         <span className="min-w-0 font-aeonik-medium text-base not-italic leading-[1.2] sm:text-lg">
                             {card.includedLabel}
                         </span>
-                        <ChevronDown
+                        <IconChevronDown
                             className={cn(
                                 "size-5 shrink-0 md:hidden transition-transform duration-200",
                                 includedOpen ? "rotate-180" : "rotate-0",
                             )}
                             aria-hidden
                         />
-                    </button>
+                    </Button>
                     <div className={cn("flex w-full min-w-0 flex-col items-start gap-3", !includedOpen && "max-md:hidden")}>
                         {card.checklist.map((item) => (
                             <CheckItem key={item} label={item} checkCircle={checkCircle} variant={variant} />

@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle, useState, useRef, useEffect} from "react";
 import {FinanceModificationRequestFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/modificationRequest/financeModificationRequest.form.type.ts";
-import {LoaderCircle, DollarSign, Plus, X, AlertTriangle} from "lucide-react";
+import {IconAlertTriangle, IconCurrencyDollar, IconLoader2, IconPlus, IconX} from "@tabler/icons-react";
 import {
     AlertDialog, AlertDialogCancel,
     AlertDialogContent,
@@ -18,7 +18,7 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import {useForm} from "react-hook-form";
+import {useForm, type Resolver} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
@@ -37,9 +37,9 @@ import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type FinanceZodFormValues = z.infer<ReturnType<typeof financeModificationRequestFormSchema>>;
 type FinanceFormValues = Omit<FinanceZodFormValues, "media">;
-type CostBreakdownItem = (NonNullable<FinanceFormValues["costBreakdown"]>[number]) & {source?: "engineer_material" | "manual"};
+type CostBreakdownItem = NonNullable<FinanceFormValues["costBreakdown"]>[number];
 
-type FinanceModificationRequestDialogProps = WithLanguageType & WithAxiosType<any, FinanceModificationRequestFormType> & {
+type FinanceModificationRequestDialogProps = WithLanguageType & WithAxiosType<ModificationRequest, FinanceModificationRequestFormType> & {
     open: boolean;
     onClose: () => void;
     request: ModificationRequest;
@@ -75,7 +75,7 @@ function FinanceModificationRequestDialog({
 
     const formSchema = financeModificationRequestFormSchema(languageCode, resolveLanguageKey("form"));
     const form = useForm<FinanceFormValues>({
-        resolver: zodResolver(formSchema),
+        resolver: zodResolver(formSchema) as Resolver<FinanceFormValues>,
         defaultValues: {
             _id: request._id,
             costBreakdown: [],
@@ -84,7 +84,7 @@ function FinanceModificationRequestDialog({
     });
 
     useEffect(() => {
-        const seeded = (request.engineerApproval?.materialsPlan || []).map((item: any) => ({
+        const seeded = (request.engineerApproval?.materialsPlan || []).map((item) => ({
             item: item.item || "",
             cost: 0,
             quantity: item.quantity,
@@ -97,8 +97,8 @@ function FinanceModificationRequestDialog({
     }, [request._id, request.engineerApproval?.materialsPlan]);
 
     useImperativeHandle(innerRef, () => ({
-        success: (data: FinanceModificationRequestFormType) => {
-            onSuccess?.(data as unknown as ModificationRequest);
+        success: (data: ModificationRequest) => {
+            onSuccess?.(data);
             onClose();
             form.reset();
             setCostBreakdown([]);
@@ -136,8 +136,8 @@ function FinanceModificationRequestDialog({
                     : undefined,
                 notes: data.notes || undefined,
                 estimatedCompletionDate: data.estimatedCompletionDate || undefined,
-                media: mediaFiles.length > 0 ? mediaFiles as unknown as string[] : undefined,
-            } as FinanceModificationRequestFormType);
+                media: mediaFiles.length > 0 ? mediaFiles : undefined,
+            });
         })();
     };
 
@@ -331,7 +331,7 @@ function FinanceModificationRequestDialog({
                                                             disabled={loading}
                                                             className="h-8 w-8 shrink-0 text-muted-foreground hover:text-destructive"
                                                         >
-                                                            <X size={16} />
+                                                            <IconX size={16} />
                                                         </Button>
                                                     </TableCell>
                                                 </TableRow>
@@ -350,7 +350,7 @@ function FinanceModificationRequestDialog({
                                             "flex items-center gap-1.5 text-sm font-medium",
                                             difference > 0 ? "text-warning" : "text-destructive"
                                         )}>
-                                            <AlertTriangle size={16} />
+                                            <IconAlertTriangle size={16} />
                                             {resolveLanguageKey("form.difference")}: {difference > 0 ? "+" : ""}{formatNumber(difference, { minimumFractionDigits: 2 })}
                                         </span>
                                     )}
@@ -364,14 +364,14 @@ function FinanceModificationRequestDialog({
                                     className="mt-2"
                                     size="sm"
                                 >
-                                    <Plus size={16} className="mr-2" />
+                                    <IconPlus size={16} className="mr-2" />
                                     {resolveLanguageKey("form.addLineItem")}
                                 </Button>
                             </div>
 
                             <div>
                                 <Label className="mb-2 block">{resolveLanguageKey("form.mediaLabel")}</Label>
-                                <input
+                                <Input
                                     ref={mediaInputRef}
                                     type="file"
                                     className="hidden"
@@ -389,7 +389,7 @@ function FinanceModificationRequestDialog({
                                             onClick={() => mediaInputRef.current?.click()}
                                             disabled={loading || mediaFiles.length >= 20}
                                         >
-                                            <Plus size={16} className="mr-2" />
+                                            <IconPlus size={16} className="mr-2" />
                                             {resolveLanguageKey("form.addFile")}
                                         </Button>
                                         {mediaFiles.length > 0 && (
@@ -490,7 +490,7 @@ function FinanceModificationRequestDialog({
                             disabled={loading || hasMismatch}
                             className="bg-success text-success-foreground hover:bg-success"
                         >
-                            {loading ? <LoaderCircle className="animate-spin" size={16} /> : <DollarSign size={16} className="" />}
+                            {loading ? <IconLoader2 className="animate-spin" size={16} /> : <IconCurrencyDollar size={16} className="" />}
                             {resolveLanguageKey("confirmButton")}
                         </Button>
                     </AlertDialogFooter>

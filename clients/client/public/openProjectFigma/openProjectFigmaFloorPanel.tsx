@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import {LayoutGrid, List, X} from "lucide-react";
+import {IconLayoutGrid, IconList, IconX} from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
@@ -16,6 +16,7 @@ import type {
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import type {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {PropertyListingCardUnit} from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const UNIT_GRID = "grid grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.7fr))_minmax(0,1.1fr)] gap-x-3";
 
@@ -161,14 +162,15 @@ function OpenProjectFigmaFloorPanel({
                     {panelTitle || resolveLanguageKey("residencesTitle")}
                 </h2>
                 {onClose ? (
-                    <button
+                    <Button
                         type="button"
-                        onClick={onClose}
+                        variant="bare"
                         className="-mr-1 -mt-1 flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-[5px] text-pronix-ink transition hover:bg-[rgba(24,24,24,0.06)]"
                         aria-label={String(resolveLanguageKey("closeResidencesPanel"))}
+                        onClick={onClose}
                     >
-                        <X className="size-5" strokeWidth={1.75} aria-hidden />
-                    </button>
+                        <IconX className="size-5" strokeWidth={1.75} aria-hidden />
+                    </Button>
                 ) : null}
             </div>
 
@@ -177,34 +179,35 @@ function OpenProjectFigmaFloorPanel({
                 {PROJECT_UNIT_STATUS_FILTERS.map((filter) => {
                     const active = activeFilter === filter;
                     return (
-                        <button
-                            key={filter}
+                        <Button
                             type="button"
-                            onClick={() => setActiveFilter(filter)}
-                            className={cn(
-                                "cursor-pointer rounded-[5px] px-3 py-1.5 font-aeonik-light text-sm transition md:text-base",
+                            variant="bare"
+                            key={filter}
+                            className={cn("cursor-pointer rounded-[5px] px-3 py-1.5 font-aeonik-light text-sm transition md:text-base",
                                 active
                                     ? "bg-pronix-blue text-white"
                                     : "bg-[rgba(24,24,24,0.05)] text-pronix-ink hover:bg-[rgba(24,24,24,0.08)]",
                             )}
+                            onClick={() => setActiveFilter(filter)}
                         >
                             {resolveLanguageKey(`filter${filter.charAt(0).toUpperCase()}${filter.slice(1)}`)}
-                        </button>
+                        </Button>
                     );
                 })}
                 </div>
-                <button
+                <Button
                     type="button"
-                    onClick={() => setLayout(layout === "list" ? "grid" : "list")}
+                    variant="bare"
                     className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(24,24,24,0.05)] text-pronix-ink transition hover:bg-[rgba(24,24,24,0.08)]"
                     aria-label={String(resolveLanguageKey(layout === "list" ? "viewAsGrid" : "viewAsList"))}
+                    onClick={() => setLayout(layout === "list" ? "grid" : "list")}
                 >
                     {layout === "list" ? (
-                        <LayoutGrid className="size-4" strokeWidth={1.75} aria-hidden />
+                        <IconLayoutGrid className="size-4" strokeWidth={1.75} aria-hidden />
                     ) : (
-                        <List className="size-4" strokeWidth={1.75} aria-hidden />
+                        <IconList className="size-4" strokeWidth={1.75} aria-hidden />
                     )}
-                </button>
+                </Button>
             </div>
 
             {layout === "list" ? (
@@ -300,9 +303,9 @@ function OpenProjectFigmaFloorPanel({
                                             }
                                         }}
                                     >
-                                        <button
+                                        <Button
                                             type="button"
-                                            onClick={() => selectUnit(unit._id)}
+                                            variant="bare"
                                             className={cn(
                                                 "flex min-h-[9.5rem] w-full overflow-hidden rounded-[5px] border bg-white text-left transition",
                                                 highlighted
@@ -313,6 +316,7 @@ function OpenProjectFigmaFloorPanel({
                                             onMouseLeave={() => onUnitHover?.(null)}
                                             onFocus={() => onUnitHover?.(unit._id)}
                                             onBlur={() => onUnitHover?.(null)}
+                                            onClick={() => selectUnit(unit._id)}
                                         >
                                             <div className="relative w-[42%] shrink-0 py-2.5 pl-2.5">
                                                 <div className="relative h-full min-h-0 overflow-hidden">
@@ -387,7 +391,7 @@ function OpenProjectFigmaFloorPanel({
                                                     </p>
                                                 </div>
                                             </div>
-                                        </button>
+                                        </Button>
                                     </li>
                                 );
                             })}
@@ -407,11 +411,10 @@ function OpenProjectFigmaFloorPanel({
                                             }
                                         }}
                                     >
-                                        <button
+                                        <Button
                                             type="button"
-                                            onClick={() => selectUnit(unit._id)}
-                                            className={cn(
-                                                UNIT_GRID,
+                                            variant="bare"
+                                            className={cn(UNIT_GRID,
                                                 "w-full cursor-pointer py-2.5 text-left font-aeonik-light text-sm transition",
                                                 highlighted
                                                     ? "bg-pronix-blue/10 text-pronix-blue"
@@ -421,6 +424,7 @@ function OpenProjectFigmaFloorPanel({
                                             onMouseLeave={() => onUnitHover?.(null)}
                                             onFocus={() => onUnitHover?.(unit._id)}
                                             onBlur={() => onUnitHover?.(null)}
+                                            onClick={() => selectUnit(unit._id)}
                                         >
                                             <span>{unit.name}</span>
                                             <span>{unit.areaSqm != null ? `${unit.areaSqm} m²` : "—"}</span>
@@ -429,7 +433,7 @@ function OpenProjectFigmaFloorPanel({
                                             <span>
                                                 {formatUnitPrice(unit)}
                                             </span>
-                                        </button>
+                                        </Button>
                                     </li>
                                 );
                             })}

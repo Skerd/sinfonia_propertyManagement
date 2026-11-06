@@ -10,7 +10,7 @@ import {
 } from "react";
 import {compose} from "redux";
 import {Link, useSearchParams} from "react-router-dom";
-import {Play} from "lucide-react";
+import {IconPlayerPlay} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -30,6 +30,7 @@ import {
     fillLanguageTemplate,
     type MarketingStorySingleResponse,
 } from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type StoryPageProps = WithAxiosType<MarketingStorySingleResponse, {storyId: string}> & WithLanguageType;
 
@@ -140,7 +141,7 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
         pointerStartX.current = null;
     };
 
-    const handleSlideClick = (event: MouseEvent<HTMLButtonElement>, index: number) => {
+    const handleSlideClick = (event: MouseEvent<HTMLElement>, index: number) => {
         if (didDragRef.current) {
             event.preventDefault();
             didDragRef.current = false;
@@ -233,13 +234,14 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                             <CarouselContent className="-ml-0 h-full">
                                                 {images.map((src, index) => (
                                                     <CarouselItem key={`${src}-${index}`} className="h-full basis-full pl-0">
-                                                        <button
+                                                        <Button
                                                             type="button"
+                                                            variant="bare"
                                                             className="size-full cursor-zoom-in"
-                                                            onClick={(event) => handleSlideClick(event, index)}
                                                             aria-label={fillLanguageTemplate(t("openImage"), {
                                                                 index: index + 1,
                                                             })}
+                                                            onClick={(event) => handleSlideClick(event, index)}
                                                         >
                                                             <img
                                                                 src={src}
@@ -247,7 +249,7 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                                                 className="pointer-events-none size-full select-none object-cover [-webkit-user-drag:none]"
                                                                 draggable={false}
                                                             />
-                                                        </button>
+                                                        </Button>
                                                     </CarouselItem>
                                                 ))}
                                             </CarouselContent>
@@ -257,10 +259,10 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                     {images.length > 1 ? (
                                         <div className="mt-4 flex items-center justify-center gap-3">
                                             {images.map((_, index) => (
-                                                <button
-                                                    key={index}
+                                                <Button
                                                     type="button"
-                                                    onClick={() => scrollTo(index)}
+                                                    variant="bare"
+                                                    key={index}
                                                     className="rounded-full transition"
                                                     style={{
                                                         width: index === activeIndex ? 48 : 20,
@@ -273,6 +275,7 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                                     aria-label={fillLanguageTemplate(t("slide"), {
                                                         index: index + 1,
                                                     })}
+                                                    onClick={() => scrollTo(index)}
                                                 />
                                             ))}
                                         </div>
@@ -293,14 +296,15 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                     </p>
                                     <div className="grid gap-4 sm:grid-cols-2">
                                         {videos.map((src, index) => (
-                                            <button
-                                                key={src}
+                                            <Button
                                                 type="button"
-                                                onClick={() => setLightbox({kind: "video", index})}
+                                                variant="bare"
+                                                key={src}
                                                 className="group relative aspect-video cursor-pointer overflow-hidden bg-dyeus-sand"
                                                 aria-label={fillLanguageTemplate(t("playVideo"), {
                                                     index: index + 1,
                                                 })}
+                                                onClick={() => setLightbox({kind: "video", index})}
                                             >
                                                 <video
                                                     src={src}
@@ -311,10 +315,10 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
                                                 />
                                                 <span className="absolute inset-0 flex items-center justify-center bg-dyeus-ink/25 transition group-hover:bg-dyeus-ink/40">
                                                     <span className="flex size-14 items-center justify-center rounded-full bg-dyeus-cream/95 text-dyeus-ink shadow-sm">
-                                                        <Play className="ml-0.5 size-6 fill-current" strokeWidth={1.25} />
+                                                        <IconPlayerPlay className="ml-0.5 size-6 fill-current" strokeWidth={1.25} />
                                                     </span>
                                                 </span>
-                                            </button>
+                                            </Button>
                                         ))}
                                     </div>
                                 </section>
@@ -338,11 +342,13 @@ function StoryPageInner({data, loading, error, onFilterChange, resolveLanguageKe
     );
 }
 
-export default compose(
+const StoryPage: ComponentType = compose(
     withAxios<MarketingStorySingleResponse, {storyId: string}>(
         {method: "post", url: "/api/realEstate/marketingStories/single", data: {}},
         true,
     ),
     withLanguage("src/modules/propertyManagement/clients/client/dyeus/journal/story.tsx"),
     withDebug(true, true),
-)(StoryPageInner) as unknown as ComponentType;
+)(StoryPageInner);
+
+export default StoryPage;

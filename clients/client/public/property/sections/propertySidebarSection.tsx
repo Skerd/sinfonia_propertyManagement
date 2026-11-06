@@ -14,7 +14,8 @@ import {
     PUBLIC_TITLE_COMPACT,
 } from "@propertyManagementModule/clients/client/public/shared/layout/publicLayoutTokens.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 type PropertySidebarSectionProps = PublicLanguageProps & {
     unit: MarketingUnitSingle;
@@ -84,6 +85,8 @@ function downloadBlob(blob: Blob, filename: string) {
     URL.revokeObjectURL(url);
 }
 
+const BROCHURE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/brochure", responseType: "blob"};
+
 function PropertySidebarSection({
     resolveLanguageKey,
     unit,
@@ -92,7 +95,23 @@ function PropertySidebarSection({
     sticky = true,
     compact = false,
 }: PropertySidebarSectionProps) {
-    const [downloadingBrochure, setDownloadingBrochure] = useState(false);
+    // The brochure is a blob; a JSON or text body is the server's error, not a PDF.
+    const [brochureCount, setBrochureCount] = useState(0);
+    const saveBrochure = async (data: Blob) => {
+        const blob = data instanceof Blob ? data : new Blob([data], {type: "application/pdf"});
+        const header = await blob.slice(0, 5).text();
+        if (blob.type.includes("application/json") || blob.type.includes("text/") || header.trimStart().startsWith("{")) {
+            toast.error(resolveLanguageKey("brochureError"));
+            return;
+        }
+        const unitLabel = unit.unitNumber || unit.name || unit._id;
+        downloadBlob(blob, `marketing-booklet-${unitLabel}.pdf`);
+    };
+    const brochure = useHttpRequest<Blob>(BROCHURE_REQUEST, {projectId: unit.projectId, unitId: unit._id}, brochureCount, true, {
+        success: (data) => void saveBrochure(data),
+        error: () => toast.error(resolveLanguageKey("brochureError")),
+    });
+    const downloadingBrochure = brochure.loading;
     const priceLabel = formatUnitPrice(unit, resolveLanguageKey("priceOnRequest"));
     const areaLabel = unit.grossAreaSqm != null ? `${unit.grossAreaSqm} m²` : MISSING_VALUE;
     const roomsLabel = unit.bedrooms != null ? String(unit.bedrooms) : MISSING_VALUE;
@@ -113,37 +132,8 @@ function PropertySidebarSection({
         ? "font-aeonik-light whitespace-nowrap not-italic text-sm leading-[17.15px]"
         : "font-aeonik-medium whitespace-nowrap not-italic text-base leading-[17.15px] md:text-lg";
 
-    const handleDownloadBrochure = async () => {
-        if (downloadingBrochure) {
-            return;
-        }
-        setDownloadingBrochure(true);
-        try {
-            const response = await apiClient.post(
-                "/api/realEstate/marketingUnit/brochure",
-                {projectId: unit.projectId, unitId: unit._id},
-                {responseType: "blob"},
-            );
-            const blob = response.data instanceof Blob
-                ? response.data
-                : new Blob([response.data], {type: "application/pdf"});
-
-            // Axios + responseType:blob turns JSON errors into Blob too — detect that.
-            if (blob.type.includes("application/json") || blob.type.includes("text/")) {
-                throw new Error("brochure_unavailable");
-            }
-            const header = await blob.slice(0, 5).text();
-            if (header.trimStart().startsWith("{")) {
-                throw new Error("brochure_unavailable");
-            }
-
-            const unitLabel = unit.unitNumber || unit.name || unit._id;
-            downloadBlob(blob, `marketing-booklet-${unitLabel}.pdf`);
-        } catch {
-            toast.error(resolveLanguageKey("brochureError"));
-        } finally {
-            setDownloadingBrochure(false);
-        }
+    const handleDownloadBrochure = () => {
+        if (!downloadingBrochure) setBrochureCount((count) => count + 1);
     };
 
     return (
@@ -218,29 +208,27 @@ function PropertySidebarSection({
                     <div className={cn("h-px w-full bg-pronix-border", compact ? "my-4" : "my-6")} />
                     <div className="flex flex-col gap-3">
                         {canReserve ? (
-                            <button
+                            <Button
                                 type="button"
-                                onClick={priceOnRequest ? onEnquire : onReserve}
-                                className={cn(
-                                    "flex w-full cursor-pointer items-center justify-center border border-pronix-ink",
+                                variant="bare"
+                                className={cn("flex w-full cursor-pointer items-center justify-center border border-pronix-ink",
                                     compact ? "px-4 py-3" : "px-6 py-4 md:py-5",
                                     "bg-transparent text-pronix-ink transition-colors duration-200",
                                     "hover:bg-pronix-ink hover:text-white",
                                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                                 )}
                                 data-node-id="515:6169"
+                                onClick={priceOnRequest ? onEnquire : onReserve}
                             >
                                 <span className={buttonTextClass}>
                                     {resolveLanguageKey(priceOnRequest ? "makeEnquiry" : "reserveOnline")}
                                 </span>
-                            </button>
+                            </Button>
                         ) : null}
-                        <button
+                        <Button
                             type="button"
-                            onClick={handleDownloadBrochure}
-                            disabled={downloadingBrochure}
-                            className={cn(
-                                "flex w-full cursor-pointer items-center justify-center border border-pronix-ink",
+                            variant="bare"
+                            className={cn("flex w-full cursor-pointer items-center justify-center border border-pronix-ink",
                                 compact ? "px-4 py-3" : "px-6 py-4 md:py-5",
                                 "bg-transparent text-pronix-ink transition-colors duration-200",
                                 "hover:bg-pronix-ink hover:text-white",
@@ -248,13 +236,15 @@ function PropertySidebarSection({
                                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pronix-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                             )}
                             data-node-id="515:6170"
+                            disabled={downloadingBrochure}
+                            onClick={handleDownloadBrochure}
                         >
                             <span className={buttonTextClass}>
                                 {downloadingBrochure
                                     ? resolveLanguageKey("downloadingBrochure")
                                     : resolveLanguageKey("downloadBrochure")}
                             </span>
-                        </button>
+                        </Button>
                     </div>
                 </div>
                 <div

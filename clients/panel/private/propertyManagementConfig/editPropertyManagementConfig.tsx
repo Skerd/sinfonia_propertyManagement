@@ -1,4 +1,4 @@
-import {Save} from "lucide-react";
+import {IconDeviceFloppy} from "@tabler/icons-react";
 import {createGenericEditPage} from "@coreModule/components/entityPage/pages/createGenericEditPage.tsx";
 import {FORM_EXTRAS_OBJECT_ID_CHIP_LABEL_REFS} from "@coreModule/components/custom/inputs/objectIdChipsInput.tsx";
 import {editPropertyManagementConfigFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/propertyManagementConfig/editPropertyManagementConfig.form.validator.ts";
@@ -51,5 +51,5 @@ export default createGenericEditPage<PropertyManagementConfig, EditPropertyManag
             },
         };
     },
-    submitIcon: <Save />,
+    submitIcon: <IconDeviceFloppy />,
 });

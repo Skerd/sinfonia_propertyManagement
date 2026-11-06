@@ -1,5 +1,5 @@
 import {createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode} from "react";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {
     loadPublicFavorites,
     savePublicFavorites,
@@ -10,6 +10,8 @@ import {
     type PublicFavoriteUnit,
 } from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesTypes.ts";
 import type {MarketingUnitSingle} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/single"};
 
 function favoriteUnitKey(unit: Pick<PublicFavoriteUnit, "projectId" | "unitId">): string {
     return `${unit.projectId}:${unit.unitId}`;
@@ -41,81 +43,47 @@ function PublicFavoritesProvider({children}: {children: ReactNode}) {
         savePublicFavorites(favorites);
     }, [favorites]);
 
+    // While the panel is open, favourites saved without project/building names are filled in one
+    // at a time; a unit is tried once per session, so one that cannot be resolved does not loop.
+    const [attempted, setAttempted] = useState<ReadonlySet<string>>(() => new Set());
+    const backfillTarget = panelOpen
+        ? favorites.units.find((unit) => unitNeedsLocationNames(unit) && !attempted.has(favoriteUnitKey(unit)))
+        : undefined;
+    const backfillKey = backfillTarget ? favoriteUnitKey(backfillTarget) : "";
+    const [backfillCount, setBackfillCount] = useState(0);
     useEffect(() => {
-        if (!panelOpen) {
-            return;
-        }
-
-        const incomplete = favorites.units.filter(unitNeedsLocationNames);
-        if (incomplete.length === 0) {
-            return;
-        }
-
-        let cancelled = false;
-
-        void Promise.all(
-            incomplete.map(async (unit) => {
-                try {
-                    const response = await apiClient.post<{unit?: MarketingUnitSingle}>(
-                        "/api/realEstate/marketingUnit/single",
-                        {projectId: unit.projectId, unitId: unit.unitId},
-                    );
-                    const fetched = response.data?.unit;
-                    if (!fetched) {
-                        return null;
-                    }
-                    return {
-                        projectId: unit.projectId,
-                        unitId: unit.unitId,
-                        projectName: fetched.projectName,
-                        edificeName: fetched.edificeName,
-                    };
-                } catch {
-                    return null;
-                }
-            }),
-        ).then((patches) => {
-            if (cancelled) {
-                return;
-            }
-
-            const byKey = new Map<string, {projectName?: string; edificeName?: string}>();
-            for (const patch of patches) {
-                if (!patch) {
-                    continue;
-                }
-                byKey.set(favoriteUnitKey(patch), {
-                    projectName: patch.projectName,
-                    edificeName: patch.edificeName,
+        if (backfillKey) setBackfillCount((count) => count + 1);
+    }, [backfillKey]);
+    const markAttempted = (key: string) => setAttempted((current) => new Set(current).add(key));
+    useHttpRequest<{unit?: MarketingUnitSingle}>(
+        UNIT_REQUEST,
+        {projectId: backfillTarget?.projectId, unitId: backfillTarget?.unitId},
+        backfillCount,
+        true,
+        {
+            success: (data) => {
+                if (!backfillTarget) return;
+                markAttempted(backfillKey);
+                const fetched = data?.unit;
+                if (!fetched) return;
+                setFavorites((current) => {
+                    let changed = false;
+                    const units = current.units.map((unit) => {
+                        if (favoriteUnitKey(unit) !== backfillKey) return unit;
+                        const projectName = unit.projectName || fetched.projectName;
+                        const edificeName = unit.edificeName || fetched.edificeName;
+                        if (projectName === unit.projectName && edificeName === unit.edificeName) return unit;
+                        changed = true;
+                        return {...unit, projectName, edificeName};
+                    });
+                    return changed ? {...current, units} : current;
                 });
-            }
-            if (byKey.size === 0) {
-                return;
-            }
-
-            setFavorites((current) => {
-                let changed = false;
-                const units = current.units.map((unit) => {
-                    const patch = byKey.get(favoriteUnitKey(unit));
-                    if (!patch) {
-                        return unit;
-                    }
-                    const projectName = unit.projectName || patch.projectName;
-                    const edificeName = unit.edificeName || patch.edificeName;
-                    if (projectName === unit.projectName && edificeName === unit.edificeName) {
-                        return unit;
-                    }
-                    changed = true;
-                    return {...unit, projectName, edificeName};
-                });
-                return changed ? {...current, units} : current;
-            });
-        });
-
-        return () => {
-            cancelled = true;
-        };
-    }, [panelOpen, favorites.units]);
+            },
+            error: () => {
+                if (backfillKey) markAttempted(backfillKey);
+            },
+        },
+    );
 
     const totalCount = favorites.projects.length + favorites.units.length;
 

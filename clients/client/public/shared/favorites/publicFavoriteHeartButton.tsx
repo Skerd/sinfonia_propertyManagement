@@ -5,6 +5,8 @@ import {resolveProjectCardImages} from "@propertyManagementModule/clients/client
 import {usePublicFavorites} from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesContext.tsx";
 import PublicFavoriteHeartIcon from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoriteHeartIcon.tsx";
 import type {PublicFavoriteProject} from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesTypes.ts";
+import {cn} from "@coreModule/components/lib/utils.ts";
+import {Button} from "@coreModule/components/ui/button.tsx";
 
 const heartButtonClassName =
     "pointer-events-auto relative z-10 flex size-9 shrink-0 items-center justify-center rounded-full border border-[rgba(24,24,24,0.1)] bg-white";
@@ -68,16 +70,17 @@ function PublicFavoriteHeartButton(props: PublicFavoriteHeartButtonProps) {
     }
 
     return (
-        <button
+        <Button
             type="button"
-            className={heartButtonClassName}
+            variant="bare"
+            className={cn(heartButtonClassName)}
             data-node-id={props.nodeId}
             aria-pressed={active}
             aria-label={active ? props.removeLabel : props.addLabel}
             onClick={handleClick}
         >
             <PublicFavoriteHeartIcon active={active} />
-        </button>
+        </Button>
     );
 }
 

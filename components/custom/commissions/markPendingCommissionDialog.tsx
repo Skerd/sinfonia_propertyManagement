@@ -4,7 +4,7 @@ import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useImperativeHandle} from "react";
 import {SingleForm} from "armonia/src/modules/core/types/shared.types.ts";
-import {LoaderCircle, Undo2} from "lucide-react";
+import {IconArrowBackUp, IconLoader2} from "@tabler/icons-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -66,7 +66,7 @@ function MarkPendingCommissionDialog({
                         }}
                         disabled={loading}
                     >
-                        {loading ? <LoaderCircle className="animate-spin" /> : <Undo2 />}
+                        {loading ? <IconLoader2 className="animate-spin" /> : <IconArrowBackUp />}
                         <p>{resolveLanguageKey("confirmPending")}</p>
                     </AlertDialogAction>
                 </AlertDialogFooter>

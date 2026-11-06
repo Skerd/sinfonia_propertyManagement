@@ -1,11 +1,11 @@
 import {useEffect, useImperativeHandle, useState} from "react";
 import {compose} from "redux";
 import {toast} from "sonner";
-import {LoaderCircle, TriangleAlert} from "lucide-react";
+import {IconAlertTriangle, IconLoader2} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import apiClient from "@coreModule/helpers/apiClient/apiClient.ts";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {
     Dialog,
     DialogContent,
@@ -21,6 +21,8 @@ import type {AdCampaign} from "armonia/src/modules/propertyManagement/api/realEs
 export type AdCampaignActionMethod = "sendNow" | "pause" | "resume" | "cancel" | "testSend";
 
 type AudienceCounts = {total: number; pending: number; suppressed: number};
+
+const AUDIENCE_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/adCampaign/previewAudience"};
 
 type AdCampaignActionDialogOwnProps = {
     open: boolean;
@@ -56,7 +58,6 @@ function AdCampaignActionDialog({
 }: AdCampaignActionDialogProps) {
     const [audience, setAudience] = useState<AudienceCounts | null>(null);
     const [audienceError, setAudienceError] = useState(false);
-    const [resolving, setResolving] = useState(false);
 
     useImperativeHandle(innerRef, () => ({
         success: (data?: AdCampaign) => {
@@ -66,18 +67,18 @@ function AdCampaignActionDialog({
         },
     }));
 
+    // Before "send now", count who the campaign would reach.
+    const [audienceCount, setAudienceCount] = useState(0);
     useEffect(() => {
         if (!open || methodName !== "sendNow" || !campaign?._id) return;
-        let cancelled = false;
-        setResolving(true);
         setAudienceError(false);
-        apiClient
-            .post<AudienceCounts>("/api/realEstate/adCampaign/previewAudience", {_id: campaign._id})
-            .then(({data}) => { if (!cancelled) setAudience(data); })
-            .catch(() => { if (!cancelled) setAudienceError(true); })
-            .finally(() => { if (!cancelled) setResolving(false); });
-        return () => { cancelled = true; };
+        setAudienceCount((count) => count + 1);
     }, [open, methodName, campaign?._id]);
+    const audienceRequest = useHttpRequest<AudienceCounts>(AUDIENCE_REQUEST, {_id: campaign?._id}, audienceCount, true, {
+        success: (data) => setAudience(data),
+        error: () => setAudienceError(true),
+    });
+    const resolving = audienceRequest.loading;
 
     useEffect(() => {
         if (!open) {
@@ -111,12 +112,12 @@ function AdCampaignActionDialog({
                     <div className="flex flex-col gap-2 rounded-md border p-3 text-sm">
                         {resolving ? (
                             <span className="flex items-center gap-2 text-muted-foreground">
-                                <LoaderCircle className="h-4 w-4 animate-spin" />
+                                <IconLoader2 className="h-4 w-4 animate-spin" />
                                 {resolveLanguageKey("audience.resolving")}
                             </span>
                         ) : audienceError ? (
                             <span className="flex items-center gap-2 text-destructive">
-                                <TriangleAlert className="h-4 w-4" />
+                                <IconAlertTriangle className="h-4 w-4" />
                                 {resolveLanguageKey("audience.failed")}
                             </span>
                         ) : audience ? (
@@ -151,7 +152,7 @@ function AdCampaignActionDialog({
                         onClick={() => onFilterChange({_id: campaign._id})}
                         disabled={loading || blocked}
                     >
-                        {loading ? <LoaderCircle className="animate-spin h-4 w-4" /> : null}
+                        {loading ? <IconLoader2 className="animate-spin h-4 w-4" /> : null}
                         {resolveLanguageKey(`submit.${methodName}`)}
                     </Button>
                 </DialogFooter>

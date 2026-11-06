@@ -3,7 +3,7 @@ import {compose} from "redux";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useKeyboardShortcuts} from "@coreModule/helpers/hooks/useKeyboardShortcut.ts";
 import {DropdownMenuItem, DropdownMenuShortcut} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {Send} from "lucide-react";
+import {IconSend} from "@tabler/icons-react";
 
 export const REQUEST_APPROVAL_COMMISSION_ACTION = "requestApproval";
 
@@ -20,7 +20,7 @@ function RequestApprovalCommission({onAction, resolveLanguageKey}: RequestApprov
         <DropdownMenuItem
             onClick={() => { openDialog();}}
         >
-            <Send size={16} />
+            <IconSend size={16} />
             {resolveLanguageKey("title")}
             <DropdownMenuShortcut>⌘{shortcut}</DropdownMenuShortcut>
         </DropdownMenuItem>

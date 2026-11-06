@@ -15,9 +15,10 @@ import {Button} from "@coreModule/components/ui/button.tsx";
 import {Alert, AlertDescription} from "@coreModule/components/ui/alert.tsx";
 import {Checkbox} from "@coreModule/components/ui/checkbox.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
-import {AlertTriangle, LoaderCircle, Upload} from "lucide-react";
+import {IconAlertTriangle, IconLoader2, IconUpload} from "@tabler/icons-react";
 import {toast} from "sonner";
 import SingleFile from "@coreModule/components/viewEngine/widgets/media/singleFile.tsx";
+import {Input} from "@coreModule/components/ui/input.tsx";
 
 const MAX_PDF_BYTES = 200 * 1024 * 1024;
 
@@ -107,7 +108,7 @@ function GenerateFloorsUnitsDialog({
 
                 <div className="flex flex-col gap-y-4 min-w-0">
                     <Alert>
-                        <AlertTriangle className="h-4 w-4" />
+                        <IconAlertTriangle className="h-4 w-4" />
                         <AlertDescription>
                             {resolveLanguageKey("warningMessage")}
                         </AlertDescription>
@@ -115,7 +116,7 @@ function GenerateFloorsUnitsDialog({
 
                     <div className="flex flex-col gap-y-2 min-w-0">
                         <Label>{resolveLanguageKey("fileLabel")}</Label>
-                        <input
+                        <Input
                             ref={fileInputRef}
                             type="file"
                             className="hidden"
@@ -166,7 +167,7 @@ function GenerateFloorsUnitsDialog({
                         {resolveLanguageKey("cancel")}
                     </Button>
                     <Button onClick={handleGenerate} disabled={loading || !selectedFile}>
-                        {(loading) ? <LoaderCircle className="animate-spin" /> : <Upload />}
+                        {(loading) ? <IconLoader2 className="animate-spin" /> : <IconUpload />}
                         {resolveLanguageKey( loading ? "processing" : "generate" )}
                     </Button>
                 </DialogFooter>
