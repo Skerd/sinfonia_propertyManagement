@@ -182,7 +182,7 @@ export default function PaymentPlanInstallmentsField({
             title={label}
             inBetween={
                 structuredPlan ? undefined : (
-                    <div
+                    <div role="presentation"
                         onClick={(e) => {
                             e.stopPropagation();
                             e.preventDefault();

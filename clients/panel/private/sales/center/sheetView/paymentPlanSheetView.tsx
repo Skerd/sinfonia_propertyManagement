@@ -195,7 +195,7 @@ function PaymentPlanSheetView({
                                                     </TableCell>
                                                     <TableCell className="text-right">
                                                         {!paid && showRowActionsMenu && (
-                                                            <div
+                                                            <div role="presentation"
                                                                 className="inline-flex justify-end"
                                                                 onClick={(e) => e.stopPropagation()}
                                                             >
