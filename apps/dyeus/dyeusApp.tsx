@@ -9,7 +9,7 @@ import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import DyeusLayout from "@propertyManagementModule/clients/client/dyeus/shared/dyeusLayout.tsx";
 import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
-import {TooltipProvider} from "@coreModule/components/animate-ui/components/animate/tooltip.tsx";
+import {TooltipProvider} from "@coreModule/components/ui/tooltip.tsx";
 
 const HomePage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/home/index.tsx"));
 const AboutPage = lazy(() => import("@propertyManagementModule/clients/client/dyeus/about/index.tsx"));

@@ -248,7 +248,7 @@ function ConstructionProgressTimelineSection({
                         )}
 
                         {!loading && !error && updates.length > 0 && (
-                            <TooltipProvider delayDuration={200}>
+                            <TooltipProvider openDelay={200}>
                                 <div className="overflow-x-auto pb-1">
                                     <div
                                         className="relative flex w-full items-start pt-1"
@@ -277,7 +277,7 @@ function ConstructionProgressTimelineSection({
                                                         />
                                                     )}
 
-                                                    <Tooltip>
+                                                    <Tooltip side="top" sideOffset={10}>
                                                         <TooltipTrigger asChild>
                                                             <button
                                                                 type="button"
@@ -293,8 +293,6 @@ function ConstructionProgressTimelineSection({
                                                             </button>
                                                         </TooltipTrigger>
                                                         <TooltipContent
-                                                            side="top"
-                                                            sideOffset={10}
                                                             className="w-auto max-w-none border bg-card p-0 text-card-foreground shadow-xl [&>svg]:hidden"
                                                         >
                                                             <TimelinePreview

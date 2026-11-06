@@ -6,7 +6,7 @@ import {BrowserRouter} from "react-router-dom";
 import PublicSiteRoutes from "@propertyManagementModule/clients/client/public/shared/publicSiteRoutes.tsx";
 import {useIsMobile} from "@coreModule/helpers/hooks/useMobile.tsx";
 import {ensureDeviceId} from "@coreModule/helpers/context/localStorage/authenticationStorage.ts";
-import {TooltipProvider} from "@coreModule/components/animate-ui/components/animate/tooltip.tsx";
+import {TooltipProvider} from "@coreModule/components/ui/tooltip.tsx";
 
 function ToasterContainer() {
     const isMobile = useIsMobile();
