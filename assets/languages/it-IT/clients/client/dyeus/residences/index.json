@@ -3,6 +3,8 @@
   "eyebrow": "Residenze",
   "fallbackTitle": "Dyeus Residence",
   "noProject": "Nessun progetto Dyeus è ancora disponibile per questa origine aziendale. Imposta VITE_DYEUS_PROJECT_ID oppure assicurati che esista un progetto marketing chiamato Dyeus.",
+  "loadError": "Impossibile caricare questo progetto.",
+  "retry": "Riprova",
   "readMore": "Leggi di più",
   "readLess": "Leggi meno",
   "floorsStat": "{{count}} piani",

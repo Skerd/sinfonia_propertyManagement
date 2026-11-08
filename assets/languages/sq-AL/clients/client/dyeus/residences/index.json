@@ -3,6 +3,8 @@
   "eyebrow": "Residenca",
   "fallbackTitle": "Dyeus Residence",
   "noProject": "Ende nuk ka projekt Dyeus të disponueshëm për këtë origjinë kompanie. Vendosni VITE_DYEUS_PROJECT_ID ose sigurohuni që ekziston një projekt marketing me emrin Dyeus.",
+  "loadError": "Nuk mund të ngarkohet ky projekt.",
+  "retry": "Provo përsëri",
   "readMore": "Lexo më shumë",
   "readLess": "Lexo më pak",
   "floorsStat": "{{count}} kate",

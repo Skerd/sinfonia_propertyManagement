@@ -4,6 +4,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
 import DyeusPageShell from "@propertyManagementModule/clients/client/dyeus/shared/dyeusPageShell.tsx";
 import DyeusHeader from "@propertyManagementModule/clients/client/dyeus/shared/dyeusHeader.tsx";
 import DyeusFooter from "@propertyManagementModule/clients/client/dyeus/shared/dyeusFooter.tsx";
@@ -18,7 +19,7 @@ type MarketingProjectSingleResponse = {project: MarketingProjectSingle};
 type ResidencesPageProps = WithLanguageType &
     WithAxiosType<MarketingProjectSingleResponse, {projectId: string}>;
 
-function ResidencesPage({data, loading, onFilterChange, resolveLanguageKey}: ResidencesPageProps) {
+function ResidencesPage({data, loading, error, onFilterChange, justForceRefresh, resolveLanguageKey}: ResidencesPageProps) {
     const t = (key: string) => String(resolveLanguageKey(key));
     const {projectId, loading: resolvingProject} = useDyeusProjectId();
 
@@ -54,6 +55,23 @@ function ResidencesPage({data, loading, onFilterChange, resolveLanguageKey}: Res
                             {t("noProject")}
                         </p>
                     )}
+
+                    {projectId && error && !loading && !project ? (
+                        <div className="mt-12 flex flex-col items-start gap-4" role="alert">
+                            <p className="font-dyeus-serif text-lg text-dyeus-ink-muted md:text-2xl">{t("loadError")}</p>
+                            {error.message ? (
+                                <p className="font-dyeus-sans text-sm text-dyeus-ink-muted">{error.message}</p>
+                            ) : null}
+                            <Button
+                                type="button"
+                                variant="bare"
+                                className="cursor-pointer bg-dyeus-ink px-6 py-3 font-dyeus-sans text-xs uppercase tracking-[0.2em] text-dyeus-cream transition hover:bg-dyeus-bronze-deep"
+                                onClick={justForceRefresh}
+                            >
+                                {t("retry")}
+                            </Button>
+                        </div>
+                    ) : null}
 
                     {project ? (
                         <div className="mt-8 flex flex-col gap-10 md:mt-10 md:gap-16">
