@@ -71,6 +71,7 @@
     "name": "Nome",
     "partyType": "Tipo di parte",
     "performanceScore": "Punteggio prestazioni",
+    "preferredLanguage": "Lingua preferita",
     "phoneNumber": "Numero di telefono",
     "trades": "Mestieri",
     "updatedAt": "Aggiornato il",
@@ -85,6 +86,13 @@
         "pm": "Project manager",
         "surveyor": "Geometra",
         "other": "Altro"
+      },
+      "preferredLanguage": {
+        "it-IT": "Italiano",
+        "en-US": "Inglese",
+        "de-CH": "Tedesco",
+        "fr-FR": "Francese",
+        "sq-AL": "Albanese"
       }
     }
   },

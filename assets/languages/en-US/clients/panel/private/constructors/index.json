@@ -71,6 +71,7 @@
     "name": "Name",
     "partyType": "Party Type",
     "performanceScore": "Performance Score",
+    "preferredLanguage": "Preferred language",
     "phoneNumber": "Phone Number",
     "trades": "Trades",
     "updatedAt": "Updated At",
@@ -85,6 +86,13 @@
         "pm": "Pm",
         "surveyor": "Surveyor",
         "other": "Other"
+      },
+      "preferredLanguage": {
+        "it-IT": "Italian",
+        "en-US": "English",
+        "de-CH": "German",
+        "fr-FR": "French",
+        "sq-AL": "Albanian"
       }
     }
   },

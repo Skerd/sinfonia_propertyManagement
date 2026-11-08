@@ -20,6 +20,7 @@
   "trades": "Zejet",
   "insuranceExpiry": "Skadimi i sigurimit",
   "performanceScore": "Rezultati i performancës",
+  "preferredLanguage": "Gjuha e preferuar",
   "edifices": "Ndërtesat",
   "address": "Adresa",
   "howToReach": "Si të arrini tek ne",
@@ -41,6 +42,13 @@
     "pm": "Menaxher projekti",
     "surveyor": "Gjeodet",
     "other": "Tjetër"
+  },
+  "languageValues": {
+    "it-IT": "Italisht",
+    "en-US": "Anglisht",
+    "de-CH": "Gjermanisht",
+    "fr-FR": "Frëngjisht",
+    "sq-AL": "Shqip"
   },
   "lifecycle": "Cikli i jetës",
   "createdAt": "Krijuar më",

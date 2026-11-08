@@ -71,6 +71,7 @@
     "name": "Nom",
     "partyType": "Type de partie",
     "performanceScore": "Score de performance",
+    "preferredLanguage": "Langue préférée",
     "phoneNumber": "Numéro de téléphone",
     "trades": "Métiers",
     "updatedAt": "Mis à jour le",
@@ -85,6 +86,13 @@
         "pm": "Chef de projet",
         "surveyor": "Géomètre",
         "other": "Autre"
+      },
+      "preferredLanguage": {
+        "it-IT": "Italien",
+        "en-US": "Anglais",
+        "de-CH": "Allemand",
+        "fr-FR": "Français",
+        "sq-AL": "Albanais"
       }
     }
   },

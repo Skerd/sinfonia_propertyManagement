@@ -20,6 +20,7 @@
   "trades": "Gewerke",
   "insuranceExpiry": "Versicherungsablauf",
   "performanceScore": "Leistungskennzahl",
+  "preferredLanguage": "Bevorzugte Sprache",
   "edifices": "Gebäude",
   "address": "Adresse",
   "howToReach": "Kontaktdaten",
@@ -41,6 +42,13 @@
     "pm": "Projektleiter",
     "surveyor": "Geometer",
     "other": "Andere"
+  },
+  "languageValues": {
+    "it-IT": "Italienisch",
+    "en-US": "Englisch",
+    "de-CH": "Deutsch",
+    "fr-FR": "Französisch",
+    "sq-AL": "Albanisch"
   },
   "lifecycle": "Lebenszyklus",
   "createdAt": "Erstellt am",

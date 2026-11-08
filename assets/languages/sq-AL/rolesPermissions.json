@@ -383,6 +383,7 @@
       "insuranceExpiry": "Insurance Expiry",
       "partyType": "Party Type",
       "performanceScore": "Performance Score",
+      "preferredLanguage": "Gjuha e preferuar",
       "trades": "Trades"
     },
     "Consultantappointments": {

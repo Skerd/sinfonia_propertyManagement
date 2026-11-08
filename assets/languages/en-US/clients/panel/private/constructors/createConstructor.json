@@ -60,7 +60,16 @@
     "insuranceExpiryLabel": "Insurance Expiry",
     "insuranceExpiryPlaceholder": "Select insurance expiry date",
     "performanceScoreLabel": "Performance Score",
-    "performanceScorePlaceholder": "Enter performance score"
+    "performanceScorePlaceholder": "Enter performance score",
+    "preferredLanguageLabel": "Language for emails",
+    "preferredLanguagePlaceholder": "Select a language",
+    "language": {
+      "it-IT": "Italian",
+      "en-US": "English",
+      "de-CH": "German",
+      "fr-FR": "French",
+      "sq-AL": "Albanian"
+    }
   },
   "axios": {
     "start": {

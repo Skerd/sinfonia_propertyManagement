@@ -60,7 +60,16 @@
     "insuranceExpiryLabel": "Skadimi i sigurimit",
     "insuranceExpiryPlaceholder": "Zgjidhni datën e skadimit të sigurimit",
     "performanceScoreLabel": "Rezultati i performancës",
-    "performanceScorePlaceholder": "Fut rezultatin e performancës"
+    "performanceScorePlaceholder": "Fut rezultatin e performancës",
+    "preferredLanguageLabel": "Gjuha për emailet",
+    "preferredLanguagePlaceholder": "Zgjidhni gjuhën",
+    "language": {
+      "it-IT": "Italisht",
+      "en-US": "Anglisht",
+      "de-CH": "Gjermanisht",
+      "fr-FR": "Frëngjisht",
+      "sq-AL": "Shqip"
+    }
   },
   "axios": {
     "start": {

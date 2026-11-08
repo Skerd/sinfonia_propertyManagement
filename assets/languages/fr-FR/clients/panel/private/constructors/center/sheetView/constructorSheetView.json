@@ -20,6 +20,7 @@
   "trades": "Métiers",
   "insuranceExpiry": "Expiration de l’assurance",
   "performanceScore": "Score de performance",
+  "preferredLanguage": "Langue préférée",
   "edifices": "Édifices",
   "address": "Adresse",
   "howToReach": "Coordonnées",
@@ -41,6 +42,13 @@
     "pm": "Chef de projet",
     "surveyor": "Géomètre",
     "other": "Autre"
+  },
+  "languageValues": {
+    "it-IT": "Italien",
+    "en-US": "Anglais",
+    "de-CH": "Allemand",
+    "fr-FR": "Français",
+    "sq-AL": "Albanais"
   },
   "lifecycle": "Cycle de vie",
   "createdAt": "Créé le",

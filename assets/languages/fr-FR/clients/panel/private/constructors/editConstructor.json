@@ -56,6 +56,15 @@
     "insuranceExpiryPlaceholder": "Sélectionner la date d’expiration de l’assurance",
     "performanceScoreLabel": "Score de performance",
     "performanceScorePlaceholder": "Saisir le score de performance",
+    "preferredLanguageLabel": "Langue des e-mails",
+    "preferredLanguagePlaceholder": "Choisir une langue",
+    "language": {
+      "it-IT": "Italien",
+      "en-US": "Anglais",
+      "de-CH": "Allemand",
+      "fr-FR": "Français",
+      "sq-AL": "Albanais"
+    },
     "phoneNumberLabel": "Numéro de téléphone",
     "phoneNumberPlaceholder": "Saisir le numéro de téléphone",
     "phoneNumberRequired": "Le numéro de téléphone est obligatoire",

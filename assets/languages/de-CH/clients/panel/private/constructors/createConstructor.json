@@ -60,7 +60,16 @@
     "insuranceExpiryLabel": "Versicherungsablauf",
     "insuranceExpiryPlaceholder": "Versicherungsablaufdatum auswählen",
     "performanceScoreLabel": "Leistungskennzahl",
-    "performanceScorePlaceholder": "Leistungskennzahl eingeben"
+    "performanceScorePlaceholder": "Leistungskennzahl eingeben",
+    "preferredLanguageLabel": "Sprache für E-Mails",
+    "preferredLanguagePlaceholder": "Sprache wählen",
+    "language": {
+      "it-IT": "Italienisch",
+      "en-US": "Englisch",
+      "de-CH": "Deutsch",
+      "fr-FR": "Französisch",
+      "sq-AL": "Albanisch"
+    }
   },
   "axios": {
     "start": {

@@ -60,7 +60,16 @@
     "insuranceExpiryLabel": "Scadenza assicurazione",
     "insuranceExpiryPlaceholder": "Seleziona la data di scadenza dell’assicurazione",
     "performanceScoreLabel": "Punteggio prestazioni",
-    "performanceScorePlaceholder": "Inserisci il punteggio prestazioni"
+    "performanceScorePlaceholder": "Inserisci il punteggio prestazioni",
+    "preferredLanguageLabel": "Lingua per le e-mail",
+    "preferredLanguagePlaceholder": "Seleziona una lingua",
+    "language": {
+      "it-IT": "Italiano",
+      "en-US": "Inglese",
+      "de-CH": "Tedesco",
+      "fr-FR": "Francese",
+      "sq-AL": "Albanese"
+    }
   },
   "axios": {
     "start": {

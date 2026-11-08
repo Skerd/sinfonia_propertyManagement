@@ -71,6 +71,7 @@
     "name": "Name",
     "partyType": "Parteityp",
     "performanceScore": "Leistungskennzahl",
+    "preferredLanguage": "Bevorzugte Sprache",
     "phoneNumber": "Telefonnummer",
     "trades": "Gewerke",
     "updatedAt": "Aktualisiert am",
@@ -85,6 +86,13 @@
         "pm": "Projektleiter",
         "surveyor": "Geometer",
         "other": "Andere"
+      },
+      "preferredLanguage": {
+        "it-IT": "Italienisch",
+        "en-US": "Englisch",
+        "de-CH": "Deutsch",
+        "fr-FR": "Französisch",
+        "sq-AL": "Albanisch"
       }
     }
   },

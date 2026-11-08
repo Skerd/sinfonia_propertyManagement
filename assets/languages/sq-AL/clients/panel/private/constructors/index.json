@@ -71,6 +71,7 @@
     "name": "Emri",
     "partyType": "Party Type",
     "performanceScore": "Performance Score",
+    "preferredLanguage": "Gjuha e preferuar",
     "phoneNumber": "Numri i telefonit",
     "trades": "Zejet",
     "updatedAt": "Përditësuar më",
@@ -85,6 +86,13 @@
         "pm": "Pm",
         "surveyor": "Surveyor",
         "other": "Tjetër"
+      },
+      "preferredLanguage": {
+        "it-IT": "Italisht",
+        "en-US": "Anglisht",
+        "de-CH": "Gjermanisht",
+        "fr-FR": "Frëngjisht",
+        "sq-AL": "Shqip"
       }
     }
   },

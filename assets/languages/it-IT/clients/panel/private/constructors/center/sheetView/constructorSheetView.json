@@ -20,6 +20,7 @@
   "trades": "Mestieri",
   "insuranceExpiry": "Scadenza assicurazione",
   "performanceScore": "Punteggio prestazioni",
+  "preferredLanguage": "Lingua preferita",
   "edifices": "Edifici",
   "address": "Indirizzo",
   "howToReach": "Come raggiungerci",
@@ -41,6 +42,13 @@
     "pm": "Project manager",
     "surveyor": "Geometra",
     "other": "Altro"
+  },
+  "languageValues": {
+    "it-IT": "Italiano",
+    "en-US": "Inglese",
+    "de-CH": "Tedesco",
+    "fr-FR": "Francese",
+    "sq-AL": "Albanese"
   },
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",

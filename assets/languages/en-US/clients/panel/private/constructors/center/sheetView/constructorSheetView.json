@@ -20,6 +20,7 @@
   "trades": "Trades",
   "insuranceExpiry": "Insurance Expiry",
   "performanceScore": "Performance Score",
+  "preferredLanguage": "Preferred language",
   "edifices": "Edifices",
   "address": "Address",
   "howToReach": "How to reach us",
@@ -41,6 +42,13 @@
     "pm": "Project Manager",
     "surveyor": "Surveyor",
     "other": "Other"
+  },
+  "languageValues": {
+    "it-IT": "Italian",
+    "en-US": "English",
+    "de-CH": "German",
+    "fr-FR": "French",
+    "sq-AL": "Albanian"
   },
   "lifecycle": "Lifecycle",
   "createdAt": "Created at",

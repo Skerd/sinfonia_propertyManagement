@@ -40,6 +40,7 @@ export default createGenericEditPage<Constructor, EditConstructorFormSurface>({
             trades: writeFields.trades ? data.trades : undefined,
             insuranceExpiry: writeFields.insuranceExpiry ? data.insuranceExpiry : undefined,
             performanceScore: writeFields.performanceScore ? data.performanceScore : undefined,
+            preferredLanguage: writeFields.preferredLanguage ? data.preferredLanguage : undefined,
             addresses: writeFields.addresses ? data.addresses : undefined,
         };
         const formData = new FormData();
