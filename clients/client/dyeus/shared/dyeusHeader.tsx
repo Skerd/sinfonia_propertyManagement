@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import DyeusMenu from "@propertyManagementModule/clients/client/dyeus/shared/dyeusMenu.tsx";
 import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusAssets.ts";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
-import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
+import {pickLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
@@ -111,7 +111,7 @@ function DyeusHeader({variant = "solid"}: DyeusHeaderProps) {
                                                 active ? "font-bold text-dyeus-bronze" : "text-dyeus-ink"
                                             }`}
                                             onClick={() => {
-                                                dispatch(changeLanguage(language.languageCode));
+                                                dispatch(pickLanguage(language.languageCode));
                                                 setLangOpen(false);
                                             }}
                                             role="option"

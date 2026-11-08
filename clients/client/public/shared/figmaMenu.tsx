@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin} from "@tabler/icons-react";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import useSelectedLanguage from "@coreModule/helpers/hooks/useSelectedLanguage.ts";
-import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
+import {pickLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import {figmaAssets} from "@propertyManagementModule/clients/client/public/shared/figmaAssets.ts";
 import {figmaImageCropStyle, FIGMA_IMAGE_CROPS} from "@propertyManagementModule/clients/client/public/shared/layout/figmaDimensions.ts";
@@ -196,7 +196,7 @@ function MenuLanguageButtons({className}: {className?: string}) {
                             className={cn(`cursor-pointer text-base text-white not-italic transition-opacity duration-200 hover:opacity-70 ${
                                 isActive ? "font-aeonik-medium" : "font-aeonik-light opacity-70"
                             }`)}
-                            onClick={() => dispatch(changeLanguage(language.languageCode))}
+                            onClick={() => dispatch(pickLanguage(language.languageCode))}
                         >
                             {language.shortCode}
                         </Button>

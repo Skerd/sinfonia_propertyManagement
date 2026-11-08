@@ -6,7 +6,7 @@ import {dyeusAssets} from "@propertyManagementModule/clients/client/dyeus/shared
 import {dyeusMenuLinks} from "@propertyManagementModule/clients/client/dyeus/shared/dyeusRouteMap.ts";
 import {useDyeusSocialLinks} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusSocialLinks.ts";
 import {useDyeusT} from "@propertyManagementModule/clients/client/dyeus/shared/useDyeusT.ts";
-import {changeLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
+import {pickLanguage} from "@coreModule/helpers/redux/slices/languageSlice.ts";
 import {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import mainConfig from "@coreModule/assets/languages/mainConfig.json";
 import {useOutsideClick} from "@coreModule/helpers/hooks/useOutsideClick.ts";
@@ -223,7 +223,7 @@ function DyeusMenu({open, onClose}: DyeusMenuProps) {
                                                         : "text-dyeus-ink"
                                                 }`}
                                                 onClick={() => {
-                                                    dispatch(changeLanguage(language.languageCode));
+                                                    dispatch(pickLanguage(language.languageCode));
                                                     setLangOpen(false);
                                                 }}
                                                 role="option"
