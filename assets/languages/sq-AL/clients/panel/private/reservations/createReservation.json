@@ -1,10 +1,10 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/reservations/createReservation.tsx",
-  "title": "Krijo Rezervim",
+  "title": "Krijo rezervim",
   "description": "Krijo një rezervim të ri për këtë njësi",
   "errorTitle": "Njësia nuk mund të ngarkohet",
   "errorDescription": "Ju lutemi provoni përsëri.",
-  "sectionTitle": "Informacioni i Rezervimit",
+  "sectionTitle": "Informacioni i rezervimit",
   "unitLocationTitle": "Vendndodhja e njësisë",
   "generalInfo": "Detajet e rezervimit",
   "documentsSectionTitle": "Dokumentet",
@@ -14,28 +14,28 @@
     "edificeLabel": "Ndërtesa",
     "edificePlaceholder": "Zgjidhni ndërtesën",
     "floorLabel": "Kati",
-    "floorPlaceholder": "Zgjidhni dyshemenë",
+    "floorPlaceholder": "Zgjidhni katin",
     "unitLabel": "Njësia",
     "unitPlaceholder": "Zgjidhni njësinë",
     "unitRequired": "Kërkohet njësia",
     "reservedByLabel": "Rezervuar nga",
     "reservedByPlaceholder": "Zgjidhni përdorues",
-    "reservedByRequired": "Kërkohet përdorues",
+    "reservedByRequired": "Kërkohet përdoruesi",
     "reservedByCompanyLabel": "Kompania",
     "reservedByCompanyPlaceholder": "Zgjidhni kompaninë",
-    "reservedByCompanyRequired": "Kërkohet kompani",
+    "reservedByCompanyRequired": "Kërkohet kompania",
     "clientLabel": "Klienti",
     "clientPlaceholder": "Zgjidhni klientin",
     "clientRequired": "Kërkohet klienti",
     "expirationDateLabel": "Data e skadimit",
-    "expirationDatePlaceholder": "Zgjidhni datën e skadencës",
+    "expirationDatePlaceholder": "Zgjidhni datën e skadimit",
     "reservationDateLabel": "Data e rezervimit",
     "reservationDatePlaceholder": "Zgjidhni datën e rezervimit",
     "reservationNotesLabel": "Shënime",
     "reservationNotesPlaceholder": "Futni shënimet e rezervimit",
     "depositAmountLabel": "Shuma e depozitës",
     "depositAmountPlaceholder": "Shkruani shumën e depozitës",
-    "depositCurrencyLabel": "Valuta e depozitës",
+    "depositCurrencyLabel": "Monedha e depozitës",
     "depositCurrencyPlaceholder": "Zgjidhni monedhën",
     "sourceLabel": "Burimi",
     "sourcePlaceholder": "Zgjidhni burimin",
@@ -52,7 +52,7 @@
     "paymentMethodLabel": "Mënyra e pagesës",
     "paymentMethodPlaceholder": "Shkruani mënyrën e pagesës",
     "reservationContractLabel": "Kontrata e rezervimit",
-    "uploadReservationContract": "Kontrata e ngarkimit",
+    "uploadReservationContract": "Ngarko kontratën",
     "additionalDocumentsLabel": "Dokumente shtesë",
     "uploadAdditionalDocuments": "Ngarko dokumente",
     "filesSelected": "Skedarët e zgjedhur"
@@ -72,11 +72,11 @@
     }
   },
   "formHeader": {
-    "title": "Krijo Rezervim",
+    "title": "Krijo rezervim",
     "description": "Krijo një rezervim të ri për këtë njësi"
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo Rezervim"
+    "submit": "Krijo rezervim"
   }
 }

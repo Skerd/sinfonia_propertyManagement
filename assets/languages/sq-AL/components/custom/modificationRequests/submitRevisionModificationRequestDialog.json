@@ -1,9 +1,9 @@
 {
   "path": "src/modules/propertyManagement/components/custom/modificationRequests/submitRevisionModificationRequestDialog.tsx",
-  "submitRevisionTitle": "Paraqisni një rishikim",
-  "submitRevisionConfirmTitle": "Paraqisni një rishikim",
-  "submitRevisionConfirmDescription": "Dërgoje këtë kërkesë përsëri në radhën e shqyrtimit {stage}.",
-  "submitRevisionConfirmButton": "Paraqisni",
+  "submitRevisionTitle": "Dërgo rishikimin",
+  "submitRevisionConfirmTitle": "Dërgo rishikimin",
+  "submitRevisionConfirmDescription": "Dërgojeni këtë kërkesë përsëri në radhën e shqyrtimit {stage}.",
+  "submitRevisionConfirmButton": "Dërgo",
   "architectStage": "Arkitekt",
   "engineerStage": "Inxhinier",
   "cancel": "Anulo",

@@ -3,7 +3,7 @@
     "adCampaignRecipient": "Marrës",
     "overview": "Përmbledhje",
     "delivery": "Dërgesa",
-    "email": "Adresa e e-mail-it",
+    "email": "Adresa e emailit",
     "fullName": "Emri",
     "audienceKind": "Lloji",
     "campaignType": "Lloji",
@@ -14,7 +14,7 @@
     "attempts": "Përpjekje",
     "sentAt": "Dërguar më",
     "unsubscribedAt": "Çregjistruar më",
-    "messageId": "Id e mesazhit",
+    "messageId": "ID e mesazhit",
     "lastError": "Gabimi i fundit",
     "audienceKindEnum": {
         "user": "Klient",
@@ -35,7 +35,7 @@
     },
     "skipReasonEnum": {
         "opted_out": "Çregjistruar",
-        "no_email": "Pa adresë e-mail",
+        "no_email": "Pa adresë email",
         "inactive": "Joaktiv",
         "duplicate": "Dublikatë"
     },

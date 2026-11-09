@@ -16,10 +16,10 @@
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të njësive. Ju lutemi provoni përsëri.",
   "failTitle": "Ngarkimi i njësive dështoi",
   "fields": {
-    "area": "Zona",
+    "area": "Sipërfaqja",
     "connectedUnits": "Njësitë e lidhura",
     "constructionStatus": "Statusi i ndërtimit",
-    "createdAt": "Krijuar në",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
@@ -31,18 +31,18 @@
     "hasBalcony": "Ballkon",
     "hasCityView": "Pamje e qytetit",
     "hasElevator": "Ashensor",
-    "hasLakeView": "Pamje e Liqenit",
+    "hasLakeView": "Pamje e liqenit",
     "hasSeaView": "Pamje nga deti",
     "hasTerrace": "Tarracë",
     "imageGallery": "Galeria",
     "inspections": "Inspektimet",
     "isAvailable": "Në dispozicion",
     "mainImage": "Imazhi",
-    "marketingBooklet": "Broshura Marketing",
-    "mediaFiles": "Skedarët Media",
+    "marketingBooklet": "Broshura e marketingut",
+    "mediaFiles": "Skedarët media",
     "modificationRequests": "Kërkesat për modifikim",
     "name": "Emri",
-    "netArea": "Sipërfaqja Neto",
+    "netArea": "Sipërfaqja neto",
     "numberOfBathrooms": "Banjat",
     "numberOfRooms": "Dhomat",
     "orientation": "Orientimi",
@@ -58,12 +58,12 @@
     "reservationCommissionRatePercent": "Komisioni i Rezervimeve",
     "sale": "Shitje",
     "saleCommissionRatePercent": "Komisioni i shitjes",
-    "sharedArea": "Zonë e përbashkët",
+    "sharedArea": "Sipërfaqja e përbashkët",
     "status": "Statusi",
     "unavailableNotes": "Shënime për padisponueshmërinë",
     "unitNumber": "Numri",
     "unitType": "Lloji",
-    "updatedAt": "Përditësuar në",
+    "updatedAt": "Përditësuar më",
     "verandaArea": "Sipërfaqja e verandës",
     "videoGallery": "Videot",
     "!enums": {
@@ -72,7 +72,7 @@
         "reserved_unit": "Njësi e rezervuar",
         "sold_unit": "Njësia e shitur",
         "unavailable_unit": "Njësia e padisponueshme",
-        "rented_unit": "Me Qira"
+        "rented_unit": "Me qira"
       },
       "orientation": {
         "N": "Veri (N)",
@@ -99,9 +99,9 @@
     "priceVisibility": "Çmimi publik"
   },
   "floor": "Kati",
-  "floors": "Dyshemetë",
+  "floors": "Katet",
   "name": "Emri",
-  "no": "Nr",
+  "no": "Jo",
   "noData": "Nuk u gjet asnjë njësi",
   "notAvailable": "Nuk disponohet",
   "path": "src/modules/propertyManagement/clients/panel/private/units/index.tsx",
@@ -120,8 +120,8 @@
   "unitNumber": "Numri i njësisë",
   "unitType": "Lloji i njësisë",
   "units": "Njësitë",
-  "yes": "po",
-  "rented": "Me Qira",
+  "yes": "Po",
+  "rented": "Me qira",
   "help": {
     "ariaLabel": "Rreth Njësive",
     "title": "Rreth Njësive",
@@ -133,13 +133,13 @@
           "Kati (i detyrueshëm) — kjo nënkupton ndërtesën dhe projektin. Lloji i njësisë (i detyrueshëm) nga Konfigurimet → Llojet e njësive.",
           "Numri dhe emri i njësisë (të detyrueshëm) — si e identifikojnë agjentët dhe klientët.",
           "Sipërfaqja, sipërfaqja e përbashkët, sipërfaqja neto (të detyrueshme); sipërfaqe verande opsionale.",
-          "Çmimi dhe valuta (të detyrueshme). Numri i dhomave dhe i banjove (të detyrueshëm).",
+          "Çmimi dhe monedha (të detyrueshme). Numri i dhomave dhe i banjove (të detyrueshëm).",
           "Përshkrimi, imazhi kryesor, galeritë, videot, skedarët shtesë, broshura marketingu.",
-          "Flamuj të jashtëm dhe pajisje: ballkon, tarracë, pamje deti / qyteti / liqeni, ashensor.",
+          "Treguesit e jashtëm dhe të komoditeteve: ballkon, tarracë, pamje deti / qyteti / liqeni, ashensor.",
           "Orientimi (V, J, L, P dhe diagonalet) dhe statusi i ndërtimit (planifikuar, në ndërtim, gati, e dorëzuar).",
           "Komisione shitjeje dhe rezervimi % opsionale — zëvendësojnë paracaktimet e projektit për këtë njësi.",
           "Njësi të lidhura — kur dy njësi shiten ose shfaqen së bashku.",
-          "Në krye në faqen kryesore + renditja — theksim në sitin publik.",
+          "I veçuar në faqen kryesore + renditja — theksimi i kësaj njësie në sitin publik.",
           "Poligon opsional në planin e katit."
         ]
       },
@@ -150,7 +150,7 @@
           "E rezervuar — një rezervim aktiv e mban. Skadimi ose anulimi e kthen të lirë. Rikthimi i një rezervimi të anuluar vetëm nëse njësia është e lirë (ose e shitur pa rezervim tjetër) sipas rregullave të rikthimit.",
           "E shitur — një shitje e ka shënuar të shitur. Dorëzimi dhe transferimi i pronësisë vazhdojnë te shitja. Nuk mund të jepni me qira një njësi të shitur.",
           "Me qira — një kontratë aktive e mban. Ndërprerja (ose skadimi ditor pas datës së mbarimit) e liron drejt të lirës.",
-          "E padisponueshme — e hequr nga tregu pa marrëveshje."
+          "E padisponueshme — e hequr nga tregu pa marrëveshje. Përdorni «Shëno si të padisponueshme» dhe regjistroni arsyen; shënimet shfaqen në fletën e njësisë."
         ],
         "body": "Mos e «shkruani me dorë» njësinë si të shitur ose me qira. Krijoni ose përfundoni rezervimin, shitjen ose kontratën përkatëse."
       },
@@ -158,9 +158,10 @@
         "title": "Në këtë faqe",
         "items": [
           "Filtroni sipas projektit, ndërtesës, katit, llojit, statusit, blerësit dhe të ngjashme.",
-          "Krijoni një njësi — kati, lloji, numri, emri, sipërfaqet, çmimi dhe valuta janë të detyrueshme.",
-          "Hapni kartën për median, çmimet dhe flamujt. Veprimet e rreshtit çojnë te rezervime, shitje, inspektime, kontrata qiraje, kosto — sipas të drejtave.",
-          "Gjeneroni broshurën marketing (PDF) nga njësia kur veprimi është i disponueshëm — bashkon fushat marketingu të kësaj njësie.",
+          "Krijoni një njësi — kati, lloji, numri, emri, sipërfaqet, çmimi dhe monedha janë të detyrueshme.",
+          "Hapni kartën për median, çmimet dhe treguesit. Veprimet e rreshtit çojnë te rezervime, shitje, inspektime, kontrata qiraje, kosto — sipas të drejtave.",
+          "«Shëno si të padisponueshme» (me shënime) e heq nga tregu një njësi të lirë; «Shëno si të disponueshme» e kthen. Shënimet shfaqen në fletën e njësisë.",
+          "Gjeneroni broshurën e marketingut (PDF) nga njësia kur veprimi është i disponueshëm — bashkon fushat e marketingut të kësaj njësie.",
           "Fshirja e butë mund të rikthehet. Marrëveshjet që tashmë tregojnë te njësia mbeten; nuk anulohen automatikisht."
         ]
       },

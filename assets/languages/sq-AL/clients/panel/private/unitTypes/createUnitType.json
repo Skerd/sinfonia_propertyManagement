@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/createUnitType.tsx",
-  "title": "Krijo llojin e njësisë",
+  "title": "Krijo lloj njësie",
   "description": "Krijo një lloj të ri njësie",
-  "generalInfo": "Informacione të Përgjithshme",
+  "generalInfo": "Informacione të përgjithshme",
   "form": {
     "nameLabel": "Emri",
     "namePlaceholder": "Futni emrin e llojit të njësisë",
@@ -14,8 +14,8 @@
     "groupPlaceholder": "Zgjidhni grupin",
     "groupRequired": "Kërkohet grupi",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Fut slug (p.sh., apartament)",
-    "slugRequired": "Slug është i nevojshëm",
+    "slugPlaceholder": "Fut slug-un (p.sh., apartment)",
+    "slugRequired": "Slug-u është i detyrueshëm",
     "descriptionLabel": "Përshkrimi",
     "descriptionPlaceholder": "Fut përshkrimin",
     "iconLabel": "Ikona",
@@ -37,11 +37,11 @@
     }
   },
   "formHeader": {
-    "title": "Krijo llojin e njësisë",
+    "title": "Krijo lloj njësie",
     "description": "Krijo një lloj të ri njësie"
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo llojin e njësisë"
+    "submit": "Krijo lloj njësie"
   }
 }

@@ -78,7 +78,7 @@
   "help": {
     "ariaLabel": "À propos des inspections",
     "title": "À propos des inspections",
-    "overview": "Une inspection est une visite planifiée d'une unité : type, statut, inspecteur, dates, constats, médias et une checklist structurée optionnelle. C'est une preuve qualité / réception. Ce n'est pas une réservation, ni une liste de réserves (les constats deviennent souvent des réserves plus tard), ni un paquet de remise de vente.",
+    "overview": "Une inspection est une visite planifiée d'une unité : type, statut, inspecteur, dates, constats, médias et une checklist structurée optionnelle. C'est une preuve qualité / réception. Ce n'est pas une réservation, ni une liste de réserves (les constats deviennent souvent des réserves plus tard), ni un dossier de réception de vente.",
     "sections": [
       {
         "title": "Ce qu'une inspection contient",
@@ -93,11 +93,11 @@
       },
       {
         "title": "Checklist structurée",
-        "body": "Les éléments sont des lignes structurées, pas un JSON. Le modèle définit les items ; les cases et l'achèvement vivent sur l'inspection.",
+        "body": "Les éléments sont des lignes structurées, pas un JSON. Le modèle définit les éléments ; les cases et l'achèvement vivent sur l'inspection.",
         "items": [
-          "Attacher un modèle société depuis Location → Configurations → Listes de contrôle.",
-          "Les inspections ouvertes se synchronisent en direct : nouveaux items, renommages, suppression des items incomplets retirés.",
-          "Une case déjà cochée est conservée (ligne retenue) si vous retirez ensuite l'item du modèle.",
+          "Attacher un modèle société depuis Gestion des mandants → Configurations → Listes de contrôle.",
+          "Les inspections ouvertes se synchronisent en direct : nouveaux éléments, renommages, suppression des éléments incomplets retirés.",
+          "Une case déjà cochée est conservée (ligne retenue) si vous retirez ensuite l'élément du modèle.",
           "Changer de modèle fusionne la nouvelle liste et conserve les lignes terminées qui ne correspondent plus.",
           "Sur la fiche, le lien de la carte Modèle de checklist ouvre la fiche du modèle.",
           "Les modèles archivés disparaissent du sélecteur ; une inspection qui en utilise déjà un continue de se synchroniser tant qu'elle est ouverte."
@@ -107,15 +107,15 @@
         "title": "Actions",
         "items": [
           "Annuler la visite planifiée — seulement tant que le statut est planifiée ; enregistre un motif et un horodatage. Impossible d'annuler une inspection déjà terminée.",
-          "Mettre à jour la checklist — cocher ou décocher les items actifs depuis le menu ligne, carte ou fiche tant que l'inspection est ouverte.",
-          "Terminer — le statut terminée est bloqué tant que chaque item actif (non retenu) n'est pas coché. Sans checklist, pas de ce verrou.",
+          "Mettre à jour la checklist — cocher ou décocher les éléments actifs depuis le menu ligne, carte ou fiche tant que l'inspection est ouverte.",
+          "Terminer — le statut terminée est bloqué tant que chaque élément actif (non retenu) n'est pas coché. Sans checklist, pas de ce verrou.",
           "Reporter en passant le statut à reportée et une nouvelle date — ce n'est pas un nouveau document, sauf si vous en créez un."
         ]
       },
       {
         "title": "Gel après clôture",
         "items": [
-          "Les inspections terminées ou annulées cessent de se synchroniser et refusent tout nouvel basculement de case.",
+          "Les inspections terminées ou annulées cessent de se synchroniser avec le modèle et refusent toute nouvelle modification de case.",
           "L'instantané sur cette inspection est la preuve de ce qui était coché à la clôture."
         ]
       },
@@ -133,15 +133,15 @@
           "Une inspection ne change jamais le statut commercial de l'unité.",
           "Ce n'est pas une réserve : les défauts ouverts qui demandent un corps de métier et un responsable appartiennent aux Réserves.",
           "Ce n'est pas une demande de modification : les changements demandés par le client passent par architecte / ingénieur / CEO / finances / livraison là-bas.",
-          "Ce n'est pas un paquet de remise : les checklists de vente s'empilent par projet / bâtiment / étage / unité et se cochent sur la vente."
+          "Ce n'est pas un dossier de remise : les checklists de vente s'empilent par projet / bâtiment / étage / unité et se cochent sur la vente."
         ]
       },
       {
         "title": "Dossiers liés",
         "items": [
           "Unité (donc étage / bâtiment / projet).",
-          "Listes de contrôle (Location → Configurations) — les modèles réutilisables à attacher ici.",
-          "Suite : Réserves, Demandes de modification, Réception de vente."
+          "Listes de contrôle (Gestion des mandants → Configurations) — les modèles réutilisables à attacher ici.",
+          "Suite : Réserves, Demandes de modification, Remise de vente."
         ]
       }
     ]

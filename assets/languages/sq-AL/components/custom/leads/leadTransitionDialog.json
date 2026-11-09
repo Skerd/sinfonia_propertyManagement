@@ -4,45 +4,45 @@
   "notesPlaceholder": "Shënim opsional për këtë ndryshim statusi",
   "cancel": "Anulo",
   "titles": {
-    "markContacted": "Shëno i kontaktuar",
-    "qualify": "Kualifiko lead-in",
+    "markContacted": "Shëno të kontaktuar",
+    "qualify": "Kualifiko klientin e mundshëm",
     "markProposal": "Shëno propozimin",
-    "markNegotiation": "Shëno negociatën",
-    "reopen": "Rihap lead-in"
+    "markNegotiation": "Kalo në negociatë",
+    "reopen": "Rihap klientin e mundshëm"
   },
   "descriptions": {
-    "markContacted": "Regjistro që është bërë kontakt. Lead-i duhet të ketë tashmë email ose telefon.",
-    "qualify": "Kualifiko këtë lead. Email ose telefon, një interes dhe një projekt ose njësi duhet të jenë tashmë të vendosura.",
-    "markProposal": "Regjistro që u dërgua një propozim. Lead-i duhet të jetë tashmë i kualifikuar.",
-    "markNegotiation": "Kalojeni këtë lead në negociatë. Duhet të ketë tashmë një propozim.",
-    "reopen": "Rihap këtë lead të humbur dhe ktheje te i kontaktuar. Arsyeja e humbjes hiqet nga lead-i dhe ruhet në regjistrin e aktivitetit."
+    "markContacted": "Regjistroni që është bërë kontakt. Klienti i mundshëm duhet të ketë tashmë email ose telefon.",
+    "qualify": "Kualifikoni këtë klient të mundshëm. Emaili ose telefoni, një interes dhe një projekt ose njësi duhet të jenë tashmë të vendosura.",
+    "markProposal": "Regjistroni që u dërgua një propozim. Klienti i mundshëm duhet të jetë tashmë i kualifikuar.",
+    "markNegotiation": "Kalojeni këtë klient të mundshëm në negociatë. Duhet të jetë regjistruar tashmë një propozim.",
+    "reopen": "Rihapni këtë klient të mundshëm të humbur dhe kthejeni te i kontaktuar. Arsyeja e humbjes hiqet nga klienti i mundshëm dhe ruhet në regjistrin e aktivitetit."
   },
   "submit": {
-    "markContacted": "Shëno i kontaktuar",
+    "markContacted": "Shëno të kontaktuar",
     "qualify": "Kualifiko",
     "markProposal": "Shëno propozimin",
-    "markNegotiation": "Shëno negociatën",
+    "markNegotiation": "Kalo në negociatë",
     "reopen": "Rihap"
   },
   "axios": {
     "start": {
-      "title": "Lead-i po përditësohet…",
+      "title": "Klienti i mundshëm po përditësohet…",
       "time": 3000
     },
     "success": {
-      "title": "Lead-i u përditësua",
+      "title": "Klienti i mundshëm u përditësua",
       "time": 3000
     },
     "error": {
-      "title": "Lead-i nuk mund të përditësohej",
+      "title": "Klienti i mundshëm nuk mund të përditësohej",
       "time": 3000
     },
     "markContacted": {
-      "title": "Lead-i u shënua i kontaktuar",
+      "title": "Klienti i mundshëm u shënua i kontaktuar",
       "time": 3000
     },
     "qualify": {
-      "title": "Lead-i u kualifikua",
+      "title": "Klienti i mundshëm u kualifikua",
       "time": 3000
     },
     "markProposal": {
@@ -50,11 +50,11 @@
       "time": 3000
     },
     "markNegotiation": {
-      "title": "Lead-i u kalua në negociatë",
+      "title": "Klienti i mundshëm kaloi në negociatë",
       "time": 3000
     },
     "reopen": {
-      "title": "Lead-i u rihap",
+      "title": "Klienti i mundshëm u rihap",
       "time": 3000
     }
   }

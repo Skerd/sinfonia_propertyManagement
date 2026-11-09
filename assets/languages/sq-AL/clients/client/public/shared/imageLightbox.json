@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/client/public/shared/imageLightbox.tsx",
   "title": "Galeria",
   "close": "Mbyll",
-  "previous": "Para",
-  "next": "Pas",
+  "previous": "Prapa",
+  "next": "Përpara",
   "media": "Media {{index}}"
 }

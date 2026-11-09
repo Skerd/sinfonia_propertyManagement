@@ -20,7 +20,7 @@
     "progressPercent": "Travaux réalisés (%)",
     "project": "Projet",
     "title": "Titre",
-    "updateDate": "Date",
+    "updateDate": "Date de mise à jour",
     "updatedAt": "Mis à jour le",
     "phase": "Phase",
     "expectedCompletionDate": "Achèvement prévu",
@@ -44,7 +44,7 @@
   "help": {
     "ariaLabel": "Avancement des travaux",
     "title": "Avancement des travaux",
-    "overview": "Un rapport d’avancement indique la phase d’un projet (ou d’un bâtiment) et le pourcentage de travaux réalisés, avec des photos du chantier. Lorsqu’un rapport fait progresser l’avancement, chaque client détenant un lot dans ce projet ou bâtiment — acheteurs et réservations actives — reçoit une notification dans l’application et un e-mail avec les photos.",
+    "overview": "Un rapport d’avancement indique la phase d’un projet (ou d’un bâtiment) et le pourcentage de travaux réalisés, avec des photos du chantier. Lorsqu’un rapport fait progresser l’avancement, chaque client détenant une unité dans ce projet ou bâtiment — acheteurs et réservations actives — reçoit une notification dans l’application et un e-mail avec les photos.",
     "sections": [
       {
         "title": "Contenu",

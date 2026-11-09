@@ -78,11 +78,11 @@
         "N": "Nord (N)",
         "S": "Sud (S)",
         "E": "Est (E)",
-        "W": "Ouest (W)",
+        "W": "Ouest (O)",
         "NE": "Nord-Est (NE)",
-        "NW": "Nord-Ouest (NW)",
+        "NW": "Nord-Ouest (NO)",
         "SE": "Sud-Est (SE)",
-        "SW": "Sud-Ouest (SW)"
+        "SW": "Sud-Ouest (SO)"
       },
       "constructionStatus": {
         "planned": "Planifié",
@@ -148,9 +148,9 @@
         "items": [
           "Disponible — peut être réservée, vendue ou louée.",
           "Réservée — une réservation active la retient. Expirer ou annuler la réservation la rend disponible. Réactiver une réservation annulée seulement si l'unité est libre (ou vendue sans autre réservation) selon les règles de réactivation.",
-          "Vendue — une vente l'a marquée vendue. Réception et transfert de propriété continuent sur la vente. On ne peut pas louer une unité vendue.",
+          "Vendue — une vente l'a marquée vendue. Remise et transfert de propriété continuent sur la vente. On ne peut pas louer une unité vendue.",
           "Louée — un bail actif la retient. Résilier (ou expiration quotidienne après la date de fin) la libère vers disponible.",
-          "Indisponible — retirée du marché sans deal."
+          "Indisponible — retirée du marché sans transaction. Utilisez « Marquer comme indisponible » et indiquez pourquoi ; les notes s'affichent sur la fiche de l'unité."
         ],
         "body": "Ne saisissez pas une unité « à la main » en vendue ou louée. Créez ou terminez la réservation, la vente ou le bail correspondant."
       },
@@ -160,15 +160,16 @@
           "Filtrer par projet, bâtiment, étage, type, statut, acheteur et similaires.",
           "Créer une unité — étage, type, numéro, nom, surfaces, prix et devise obligatoires.",
           "Ouvrir la carte pour médias, tarifs et indicateurs. Les actions de ligne mènent à réservations, ventes, inspections, baux, coûts — selon les droits.",
+          "« Marquer comme indisponible » (avec notes) retire une unité disponible du marché ; « Marquer comme disponible » l'y remet. Les notes s'affichent sur la fiche de l'unité.",
           "Générer la brochure marketing (PDF) depuis l'unité lorsque l'action est disponible — elle fusionne les champs marketing de cette unité.",
-          "La suppression logique est restaurable. Les deals qui pointent déjà vers l'unité restent ; ils ne sont pas annulés automatiquement."
+          "La suppression logique est restaurable. Les transactions qui pointent déjà vers l'unité restent ; elles ne sont pas annulées automatiquement."
         ]
       },
       {
         "title": "Dossiers liés",
         "items": [
           "En amont : Projet → Bâtiment → Étage → Type d'unité.",
-          "Deals : Prospect (intérêt unité optionnel), Réservation, Vente (+ plan de paiement), Bail + loyers.",
+          "Transactions : Prospect (intérêt unité optionnel), Réservation, Vente (+ plan de paiement), Bail + loyers.",
           "Qualité : Inspection, demande de modification, réserve.",
           "Argent : Coûts d'unité, commissions (via vente ou réservation).",
           "Parcours typiques : disponible → réservation → vente, ou disponible → bail."

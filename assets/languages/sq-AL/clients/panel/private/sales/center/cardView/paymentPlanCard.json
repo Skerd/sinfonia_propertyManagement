@@ -6,13 +6,13 @@
   "paymentPlanStatusState": {
     "active": "Aktiv",
     "completed": "E përfunduar",
-    "defaulted": "E parazgjedhur",
+    "defaulted": "Në mospagim",
     "cancelled": "Anuluar"
   },
   "totalAmount": "Shuma totale",
   "remainingBalance": "Bilanci i mbetur",
   "numberOfInstallments": "Numri i kësteve",
-  "endDate": "Data e Fundit",
+  "endDate": "Data e përfundimit",
   "path": "src/modules/propertyManagement/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

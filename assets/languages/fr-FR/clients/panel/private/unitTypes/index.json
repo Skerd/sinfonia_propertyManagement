@@ -13,7 +13,7 @@
           "Nom et catégorie (obligatoires). Créez d’abord la catégorie.",
           "Groupe optionnel (libellé libre dans la catégorie), description et icône.",
           "Indicateur privé — marqueur de catalogue sur la carte du type. Ce n’est pas l’occupation et cela ne change pas le statut de l’unité.",
-          "Le slug est généré à partir du nom de la société et du nom du type. Vous ne le saisissez pas."
+          "L'identifiant est généré à partir du nom de la société et du nom du type. Vous ne le saisissez pas."
         ]
       },
       {

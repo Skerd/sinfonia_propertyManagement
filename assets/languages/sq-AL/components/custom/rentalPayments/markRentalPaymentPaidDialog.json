@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx",
   "dialogTitle": "Regjistro pagesë qiraje",
-  "dialogDescription": "Regjistro një arkëtim për këtë muaj. Mbetja është detyrimi plus gjoba minus e paguara.",
+  "dialogDescription": "Regjistroni një arkëtim për këtë muaj. Mbetja është detyrimi plus gjoba e vonesës minus shuma e paguar.",
   "dueAmount": "Detyrimi",
   "lateFeeAmount": "Gjobë vonese",
   "alreadyPaid": "Tashmë e paguar",

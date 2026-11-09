@@ -80,7 +80,7 @@
   "help": {
     "ariaLabel": "Informazioni sulle commissioni",
     "title": "Informazioni sulle commissioni",
-    "overview": "Una commissione è la riga di erogazione all'agente nata da una prenotazione o una vendita. È il libro mastro, non il report agenti (vista di performance di periodo). Lo stato avanza in sospeso → in attesa di approvazione → approvata → pagata, oppure annullata quando il deal fonte è annullato o un pagamento è stornato.",
+    "overview": "Una commissione è la riga di erogazione all'agente generata da una prenotazione o una vendita. È il libro mastro, non il report agenti (vista delle performance di periodo). Lo stato avanza in sospeso → in attesa di approvazione → approvata → pagata, oppure annullata quando l'operazione d'origine viene annullata o un pagamento viene stornato.",
     "sections": [
       {
         "title": "Cosa contiene una commissione",
@@ -94,17 +94,17 @@
       {
         "title": "Come si crea",
         "items": [
-          "Pagare o reintegrare una prenotazione registra una commissione di prenotazione.",
-          "Una vendita registra una commissione di vendita secondo i tassi vendita/prenotazione (progetto o override unità).",
-          "Non inventate una commissione senza deal fonte — non resterebbe coerente con Dashboard o report agenti."
+          "Pagare o ripristinare una prenotazione registra una commissione di prenotazione.",
+          "Una vendita registra una commissione di vendita secondo le aliquote di vendita/prenotazione (del progetto o specifiche dell'unità).",
+          "Non inventate una commissione senza un'operazione d'origine — non resterebbe coerente con Dashboard o report agenti."
         ]
       },
       {
         "title": "Comportamento",
         "items": [
-          "Annullare una prenotazione o stornare una caparra non pagata annulla la commissione in sospeso — non una già marcata pagata.",
+          "Annullare una prenotazione o stornare un deposito di prenotazione non pagato annulla la commissione in sospeso — non una già segnata come pagata.",
           "Stornare un pagamento di prenotazione è bloccato se questa commissione è già pagata.",
-          "Pagare una commissione qui è il passo di erogazione. Il report agenti legge soltanto i deal in un intervallo di date; non marca pagato."
+          "Pagare una commissione qui è il passo di erogazione. Il report agenti legge soltanto le operazioni in un intervallo di date; non segna nulla come pagato."
         ]
       },
       {

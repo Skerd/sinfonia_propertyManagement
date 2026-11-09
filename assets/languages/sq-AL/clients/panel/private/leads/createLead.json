@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/leads/createLead.tsx",
   "title": "Krijo klient të mundshëm",
   "description": "Regjistro një klient të mundshëm të ri në CRM",
-  "generalInfo": "Informacione të Përgjithshme",
+  "generalInfo": "Informacione të përgjithshme",
   "interestInfo": "Interesi i pronës",
   "form": {
     "firstNameLabel": "Emri",
@@ -36,7 +36,7 @@
     "budgetCurrencyPlaceholder": "Zgjidhni monedhën",
     "notesLabel": "Shënime",
     "notesPlaceholder": "Fut shënime",
-    "assignedToLabel": "Caktuar tek",
+    "assignedToLabel": "Caktuar te",
     "assignedToPlaceholder": "Zgjidhni përdoruesin",
     "followUpDateLabel": "Data e ndjekjes",
     "followUpDatePlaceholder": "Zgjidhni datën",
@@ -44,7 +44,7 @@
     "statusContacted": "Kontaktuar",
     "statusQualified": "I kualifikuar",
     "statusProposal": "Propozim",
-    "statusNegotiation": "Negocim",
+    "statusNegotiation": "Negociatë",
     "statusWon": "Fituar",
     "statusLost": "Humbur",
     "sourceWebsite": "Faqe interneti",
@@ -76,6 +76,6 @@
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo klient"
+    "submit": "Krijo klient të mundshëm"
   }
 }

@@ -20,7 +20,7 @@
     "progressPercent": "Lavori completati (%)",
     "project": "Progetto",
     "title": "Titolo",
-    "updateDate": "Data",
+    "updateDate": "Data aggiornamento",
     "updatedAt": "Aggiornato il",
     "phase": "Fase",
     "expectedCompletionDate": "Completamento previsto",
@@ -50,7 +50,7 @@
         "title": "Contenuto",
         "items": [
           "Il progetto e, facoltativamente, un edificio.",
-          "Fase dei lavori, % completata, data e completamento previsto.",
+          "Fase dei lavori, % dei lavori completati, data di aggiornamento e completamento previsto.",
           "Un titolo, un messaggio ai clienti e fino a 20 foto del cantiere."
         ]
       },

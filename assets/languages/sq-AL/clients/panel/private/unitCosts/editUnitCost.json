@@ -3,7 +3,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Nuk u përditësua kosto e njësisë"
+      "title": "Kostoja e njësisë nuk u përditësua"
     },
     "start": {
       "time": 3000,
@@ -11,7 +11,7 @@
     },
     "success": {
       "time": 3000,
-      "title": "Kosto e njësisë u përditësua"
+      "title": "Kostoja e njësisë u përditësua"
     }
   },
   "category": "Kategoria",
@@ -24,8 +24,8 @@
     "electrical_lighting": "Elektrike / ndriçim",
     "finishes_flooring": "Dysheme",
     "finishes_paint_wallcovering": "Bojë / mbulesë muri",
-    "fixtures_hardware": "Pajisje / metalike",
-    "hvac": "NGJL",
+    "fixtures_hardware": "Instalime / aksesorë",
+    "hvac": "Ngrohje, ventilim dhe kondicionim",
     "materials_general": "Materiale të përgjithshme",
     "permits_fees_taxes": "Leje, tarifa, taksa",
     "plumbing_sanitary": "Ujësjellës / sanitarike",
@@ -54,7 +54,7 @@
     "floorPlaceholder": "Zgjidh katin",
     "idLabel": "ID",
     "invoiceMediaLabel": "Dokumentet e faturës",
-    "invoiceNumberLabel": "Fatura / referenca #",
+    "invoiceNumberLabel": "Nr. fature / reference",
     "newFilesLabel": "Shto skedarë",
     "notesLabel": "Shënime",
     "paymentDateLabel": "Data e pagesës",
@@ -64,7 +64,7 @@
     "projectLabel": "Projekti",
     "projectPlaceholder": "Zgjidh projektin",
     "purchaseDateLabel": "Data e blerjes",
-    "purchasePersonLabel": "Blerësi",
+    "purchasePersonLabel": "Blerë nga",
     "purchasePersonPlaceholder": "Zgjidh përdoruesin",
     "relatedModificationRequestLabel": "Modifikimi i lidhur",
     "tagLabel": "Etiketa",
@@ -74,7 +74,7 @@
     "unitCostPaymentPartiallyPaid": "Pjesërisht e paguar",
     "unitCostPaymentUnpaid": "E papaguar",
     "unitCostPaymentWaived": "E falur",
-    "unitCostVerificationNeedsRevision": "Kërkon rivlerësim",
+    "unitCostVerificationNeedsRevision": "Kërkon rishikim",
     "unitCostVerificationPending": "Në pritje të verifikimit",
     "unitCostVerificationRejected": "E refuzuar",
     "unitCostVerificationVerified": "E verifikuar",
@@ -99,11 +99,11 @@
     "cm": "Centimetër (cm)",
     "day": "Ditë (d)",
     "g": "Gram (g)",
-    "gal": "Gallon (gal SHBA)",
+    "gal": "Galon (gal SHBA)",
     "hour": "Orë (h)",
     "kg": "Kilogram (kg)",
     "l": "Litër (L)",
-    "lb": "Font (lb)",
+    "lb": "Paund (lb)",
     "linear_m": "Metër linear (lm)",
     "m": "Metër (m)",
     "m2": "Metër katror (m²)",

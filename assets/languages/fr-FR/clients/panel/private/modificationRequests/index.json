@@ -166,19 +166,19 @@
   "help": {
     "ariaLabel": "À propos des demandes de modification",
     "title": "À propos des demandes de modification",
-    "overview": "Une demande de modification est un changement demandé par le client sur une unité (agencement, finitions, extras) qui doit passer une chaîne d'approbation par étapes. Ce n'est pas une réserve (défaut) ni un avenant sur un contrat de construction, même si un VO ultérieur peut exister dans le module chantier. Le statut est le workflow ; on ne saute pas les étapes en éditant le statut en texte libre.",
+    "overview": "Une demande de modification est un changement demandé par le client sur une unité (agencement, finitions, extras) qui doit passer une chaîne d'approbation par étapes. Ce n'est pas une réserve (défaut) ni un ordre de modification sur un contrat de construction, même si un ordre de modification ultérieur peut exister dans le module chantier. Le statut est le flux de travail ; on ne saute pas les étapes en éditant le statut en texte libre.",
     "sections": [
       {
         "title": "Ce qu'elle contient",
         "items": [
-          "Unité, description du changement, médias, et le statut actuel du workflow.",
+          "Unité, description du changement, médias, et le statut actuel du flux de travail.",
           "Approbations par étapes : architecte, ingénieur, CEO — chacune avec décision, notes, examinateur, horodatage, médias optionnels.",
           "Plan matériaux (articles, quantités, prix) lors du chiffrage du changement.",
           "Étapes d'approbation financière / coût client et confirmation de livraison."
         ]
       },
       {
-        "title": "Workflow (actions)",
+        "title": "Flux de travail (actions)",
         "items": [
           "Approuver chez l'architecte — si oui, avance vers l'ingénieur ; si non, retour à la révision architecte.",
           "Approuver chez l'ingénieur, puis le CEO — chaque étape vérifie que vous avez le droit d'écriture sur ce bloc d'approbation.",
@@ -187,7 +187,7 @@
           "Approbation du coût client — l'acheteur accepte le changement chiffré.",
           "Livrer — marquer le changement physique comme fait."
         ],
-        "body": "Chaque action n'est légale que dans le statut correspondant. L'API refuse le mauvais étage plutôt que de sauter en silence."
+        "body": "Chaque action n'est autorisée que dans le statut correspondant. L'API refuse la mauvaise étape plutôt que de la sauter en silence."
       },
       {
         "title": "Sur cette page",
@@ -208,7 +208,7 @@
       {
         "title": "Dossiers liés",
         "items": [
-          "Unité. Inspection optionnelle qui a motivé le changement. Artefacts chantier ultérieurs (lot de travaux / avenant) si utilisés."
+          "Unité. Inspection optionnelle qui a motivé le changement. Éléments de chantier ultérieurs (lot de travaux / ordre de modification) si utilisés."
         ]
       }
     ]

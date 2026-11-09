@@ -10,7 +10,7 @@
     "passwordLabel": "Password",
     "passwordPlaceholder": "Password",
     "mfaCodeLabel": "Codice di autenticazione",
-    "mfaCodePlaceholder": "6-digit code"
+    "mfaCodePlaceholder": "Codice a 6 cifre"
   },
   "submit": "Accedi",
   "verify": "Verifica",

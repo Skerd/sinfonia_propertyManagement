@@ -2,15 +2,15 @@
   "path": "src/modules/propertyManagement/components/custom/dashboard/projectCard.tsx",
   "sold": "Shitur",
   "reserved": "Rezervuar",
-  "reservedShort": "Rezervoni.",
+  "reservedShort": "Rez.",
   "available": "Në dispozicion",
-  "availableShort": "Falas",
+  "availableShort": "Të lira",
   "blocked": "E bllokuar",
-  "blockedShort": "Blloko.",
+  "blockedShort": "Bllok.",
   "leased": "Me qira",
-  "leasedShort": "Qira",
+  "leasedShort": "Kontrata e qirasë",
   "value": "Vlera",
   "collected": "Të mbledhura",
-  "edifice": "godinë",
-  "edifices": "godinat"
+  "edifice": "ndërtesë",
+  "edifices": "ndërtesa"
 }

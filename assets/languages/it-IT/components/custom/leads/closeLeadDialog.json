@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leads/closeLeadDialog.tsx",
   "dialogTitle": "Segna come vinto o perso",
-  "dialogDescription": "Scegli se questo lead è stato vinto o perso. Vinto non crea una prenotazione.",
+  "dialogDescription": "Scegli se questo lead è stato vinto o perso. Segnarlo come vinto non crea una prenotazione.",
   "outcomeLabel": "Esito",
   "outcomePlaceholder": "Seleziona vinto o perso",
   "outcomes": {

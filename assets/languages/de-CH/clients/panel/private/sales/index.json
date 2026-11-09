@@ -111,15 +111,16 @@
         "title": "Was ein Verkauf speichert",
         "items": [
           "Einheit, verkaufender Agent, Verkaufswährung, Verkaufsdatum (Pflicht, nicht in der Zukunft).",
-          "Zahlungsart: bar oder Zahlungsplan (je nach Erfassungsflow).",
-          "Endpreis (aus Listenpreis, Rabatt, Reservationsanzahlung, Kursen — keine frei getippte KPI).",
-          "Käufer und optionale Käuferfirma.",
-          "Listenpreis, lokaler Rabatt, Wechselkurs, Notizen, Kaufvertrag, Referenz.",
-          "Optionale Ursprungsreservation inklusive Anzahlungs-Umrechnung.",
-          "Freigabestatus und Prüfnotizen.",
-          "Zahlungsplan bei Raten (Raten, Zins, Anzahlung, Rest).",
-          "Übergabe: Datum, wer, Notizen, Zertifikat.",
-          "Eigentum: Datum, Urkundennummer, Notar, Zertifikat."
+          "Zahlungsart: bar oder Zahlungsplan (je nachdem, welchen Erfassungsablauf Sie verwendet haben).",
+          "Endpreis (berechnet aus Listenpreis, Rabatten, Umrechnung der Reservationsanzahlung und Wechselkursen — kein frei eingegebener Wert).",
+          "Käufer (Person) und optionale Käuferfirma.",
+          "Listenpreis der Einheit / Währung, lokaler Rabatt, Verkaufswechselkurs, Notizen.",
+          "Kaufvertrag und weitere Dokumente, Transaktionsreferenz.",
+          "Optionale Ursprungsreservation sowie Betrag/Währung/Kurs/umgerechneter Betrag der Reservationsanzahlung, wenn eine Reservation in einen Verkauf umgewandelt wird.",
+          "Freigabestatus (ausstehend / freigegeben / abgelehnt) und die Prüfnotizen.",
+          "Verknüpfter Zahlungsplan bei Zahlungsart Zahlungsplan (Raten, Zins, Anzahlung, Restbetrag).",
+          "Übergabe: Datum, wer übergeben hat, Notizen, Übergabeprotokoll.",
+          "Eigentumsübertragung: Datum, Urkundennummer, Name des Notars, Urkunde."
         ]
       },
       {

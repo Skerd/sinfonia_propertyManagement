@@ -6,7 +6,7 @@
   "name": "Riferimento",
   "title": "Titolo",
   "status": "Stato",
-  "trade": "Mestiere",
+  "trade": "Categoria di lavori",
   "stage": "Fase",
   "description": "Descrizione",
   "checklist": "Checklist",
@@ -33,7 +33,7 @@
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
-  "failedTitle": "Impossibile caricare checklist di ispezione",
+  "failedTitle": "Impossibile caricare la checklist di ispezione",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

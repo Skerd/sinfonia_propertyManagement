@@ -14,7 +14,7 @@
       "title": "Ndërtesat"
     },
     "floors": {
-      "title": "Dyshemetë"
+      "title": "Katet"
     },
     "units": {
       "title": "Njësitë"
@@ -35,10 +35,10 @@
       "title": "Shitjet"
     },
     "contractsHub": {
-      "title": "Kontratat & Klientët"
+      "title": "Kontratat & klientët"
     },
     "paymentPlans": {
-      "title": "Planet e Pagesave"
+      "title": "Planet e pagesave"
     },
     "constructors": {
       "title": "Konstruktorët"
@@ -53,49 +53,49 @@
       "title": "Llojet e njësive"
     },
     "storyTypes": {
-      "title": "Llojet e historive"
+      "title": "Llojet e tregimeve"
     },
     "commissions": {
       "title": "Komisionet"
     },
     "leads": {
-      "title": "Drejtimet"
+      "title": "Klientët e mundshëm"
     },
     "unitAvailability": {
-      "title": "Kalendari i Disponueshmërisë"
+      "title": "Kalendari i disponueshmërisë"
     },
     "ownersAndRentals": {
-      "title": "Pronarë & Qira"
+      "title": "Pronarë & qira"
     },
     "rentalsHub": {
-      "title": "Qendra e Qirave"
+      "title": "Qendra e qirave"
     },
     "leases": {
-      "title": "Kontratat e Qirasë"
+      "title": "Kontratat e qirasë"
     },
     "rentalPayments": {
-      "title": "Pagesat e Qirasë"
+      "title": "Pagesat e qirasë"
     },
     "stories": {
       "title": "Tregimet"
     },
     "handoverPackages": {
-      "title": "Paketat e Dorëzimit"
+      "title": "Paketat e dorëzimit"
     },
     "inspectionChecklistTemplates": {
-      "title": "Listat e Kontrollit"
+      "title": "Listat e kontrollit"
     },
     "agentReport": {
-      "title": "Raporti i Agjentit"
+      "title": "Raporti i agjentëve"
     },
     "ownerPortal": {
-      "title": "Qendra e Qirave"
+      "title": "Qendra e qirave"
     },
     "roi": {
       "title": "Llogaritësi ROI"
     },
     "groupDashboard": {
-      "title": "Paneli i Grupit"
+      "title": "Paneli i grupit"
     },
     "erpExport": {
       "title": "Eksporti ERP"
@@ -113,10 +113,10 @@
   "reports": {
     "title": "Raportet",
     "groupDashboard": {
-      "title": "Paneli i Grupit"
+      "title": "Paneli i grupit"
     },
     "agentReport": {
-      "title": "Raporti i Agjentit"
+      "title": "Raporti i agjentëve"
     },
     "roi": {
       "title": "Llogaritësi ROI"
@@ -149,7 +149,7 @@
         "title": "Llojet e njësive"
       },
       "storyTypes": {
-        "title": "Llojet e historive"
+        "title": "Llojet e tregimeve"
       },
       "propertyManagement": {
         "title": "Pasuri të paluajtshme"

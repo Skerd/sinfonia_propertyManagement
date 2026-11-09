@@ -56,12 +56,12 @@
     "!enums": {
       "type": {
         "initial": "Initial",
-        "follow_up": "Follow Up",
+        "follow_up": "Follow-Up",
         "final": "Final",
         "routine": "Routine",
         "complaint": "Complaint",
-        "pre_sale": "Pre Sale",
-        "post_sale": "Post Sale"
+        "pre_sale": "Pre-Sale",
+        "post_sale": "Post-Sale"
       },
       "status": {
         "scheduled": "Scheduled",

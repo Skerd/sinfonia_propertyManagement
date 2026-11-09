@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx",
-  "dialogTitle": "Falo mbetjen e qirasë",
+  "dialogTitle": "Fal qiranë e mbetur",
   "dialogDescription": "Falon shumën e mbetur të këtij muaji. Arkëtimet e bëra mbeten.",
   "notes": "Shënime",
   "notesPlaceholder": "Opsionale",
   "cancel": "Anulo",
-  "submit": "Falo mbetjen",
+  "submit": "Fal shumën e mbetur",
   "axios": {
     "start": {
       "title": "Duke falur mbetjen…",

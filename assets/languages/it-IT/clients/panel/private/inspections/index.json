@@ -78,7 +78,7 @@
   "help": {
     "ariaLabel": "Informazioni sulle ispezioni",
     "title": "Informazioni sulle ispezioni",
-    "overview": "Un'ispezione è una visita programmata a un'unità: tipo, stato, ispettore, date, rilievi, media e una checklist strutturata opzionale. È evidenza di qualità / consegna. Non è una prenotazione, né una lista snag (i rilievi diventano spesso snag dopo), né un pacchetto di consegna vendita.",
+    "overview": "Un'ispezione è una visita programmata a un'unità: tipo, stato, ispettore, date, riscontri, media e una checklist strutturata opzionale. È un'evidenza di qualità / consegna. Non è una prenotazione, né un elenco di difetti (i riscontri diventano spesso difetti in seguito), né un pacchetto di consegna della vendita.",
     "sections": [
       {
         "title": "Cosa contiene un'ispezione",
@@ -87,18 +87,18 @@
           "Tipo: iniziale, di follow-up, finale, di routine, reclamo, pre-vendita, post-vendita.",
           "Stato: programmata → in corso → completata, oppure annullata / riprogrammata.",
           "Modello di checklist opzionale e le righe copiate su questa ispezione (nome, importanza, completato).",
-          "Rilievi per categoria (strutturale, elettrica, idraulica, HVAC, sicurezza, estetica, altro) con note, media, gravità e data di risoluzione opzionale.",
+          "Riscontri per categoria (strutturale, elettrica, idraulica, HVAC, sicurezza, estetica, altro) con note, media, gravità e data di risoluzione opzionale.",
           "Motivo di annullamento e data/ora quando annullate una visita programmata."
         ]
       },
       {
         "title": "Checklist strutturata",
-        "body": "Le voci sono righe strutturate, non un JSON. Il modello definisce gli item; le spunte e il completamento vivono sull'ispezione.",
+        "body": "Le voci della checklist sono righe strutturate, non un blob JSON. Il modello definisce le voci; le spunte e il completamento vivono sull'ispezione.",
         "items": [
-          "Collegate un modello aziendale da Locazione → Configurazioni → Checklist di ispezione.",
-          "Le ispezioni aperte si sincronizzano in diretta: nuovi item, rinomine, sparizione degli item incompleti rimossi.",
-          "Una spunta già data resta come riga trattenuta se poi togliete l'item dal modello.",
-          "Cambiare modello rimescola la nuova lista e conserva le righe completate che non corrispondono più.",
+          "Collegate un modello aziendale da Gestione mandanti → Configurazioni → Checklist di ispezione.",
+          "Le ispezioni aperte si sincronizzano in tempo reale quando cambiano le voci del modello: le nuove voci compaiono, quelle rinominate si aggiornano, quelle incomplete rimosse scompaiono.",
+          "Se avete già spuntato una voce e poi la togliete dal modello, l'ispezione conserva la riga come trattenuta così la spunta non va persa.",
+          "Cambiare modello riunisce le voci dal nuovo elenco e conserva le righe completate che non corrispondono più.",
           "Sulla scheda, il link della card Modello checklist apre la scheda del modello.",
           "I modelli archiviati spariscono dal selettore; un'ispezione che già lo usa continua a sincronizzare finché resta aperta."
         ]
@@ -123,7 +123,7 @@
         "title": "In questa pagina",
         "items": [
           "Creare un'ispezione su un'unità. Filtrare per progetto, edificio, piano, unità, tipo, stato e follow-up richiesto.",
-          "Le card mostrano unità, ispettore, data ispezione e prossima data. Aprite la scheda per rilievi, media e checklist.",
+          "Le card mostrano unità, ispettore, data ispezione e prossima data. Aprite la scheda per riscontri, media e checklist.",
           "Elenco aziendale da Immobiliare → Ispezioni; da un'unità, l'elenco può essere limitato a quell'unità."
         ]
       },
@@ -131,7 +131,7 @@
         "title": "Comportamento",
         "items": [
           "Un'ispezione non cambia mai lo stato commerciale dell'unità.",
-          "Non è uno snag: i difetti aperti che richiedono un mestiere e un assegnatario appartengono a Snag.",
+          "Non è un difetto: i difetti aperti che richiedono una categoria di lavori e un assegnatario vanno in Difetti.",
           "Non è una richiesta di modifica: i cambiamenti chiesti dal cliente passano da architetto / ingegnere / CEO / finanza / consegna lì.",
           "Non è un pacchetto di consegna: le checklist vendita si impilano per progetto / edificio / piano / unità e si spuntano sulla vendita."
         ]
@@ -140,8 +140,8 @@
         "title": "Record correlati",
         "items": [
           "Unità (quindi piano / edificio / progetto).",
-          "Checklist di ispezione (Locazione → Configurazioni) — i modelli riutilizzabili da collegare qui.",
-          "Seguito: Snag, Richieste di modifica, Consegna vendita."
+          "Checklist di ispezione (Gestione mandanti → Configurazioni) — i modelli riutilizzabili da collegare qui.",
+          "Seguito: Difetti, Richieste di modifica, Consegna vendita."
         ]
       }
     ]

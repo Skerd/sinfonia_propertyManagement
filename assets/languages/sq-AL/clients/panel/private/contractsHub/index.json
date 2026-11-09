@@ -8,11 +8,11 @@
     "searchLabel": "Kërko",
     "searchPlaceholder": "Kërko sipas emrit të klientit, njësisë, numrit të kontratës…",
     "projectLabel": "Projekti",
-    "projectPlaceholder": "Të gjithë projektet",
+    "projectPlaceholder": "Të gjitha projektet",
     "contractTypeLabel": "Lloji i kontratës",
-    "contractTypePlaceholder": "Të gjithë llojet",
+    "contractTypePlaceholder": "Të gjitha llojet",
     "statusLabel": "Statusi",
-    "statusPlaceholder": "Të gjithë statuset",
+    "statusPlaceholder": "Të gjitha statuset",
     "signatureDateLabel": "Data e nënshkrimit",
     "signatureDateFromLabel": "Nga",
     "signatureDateToLabel": "Deri",
@@ -59,7 +59,7 @@
     "edificeLabel": "Ndërtesa",
     "edificePlaceholder": "Të gjitha ndërtesat",
     "floorLabel": "Kati",
-    "floorPlaceholder": "Të gjithë katet",
+    "floorPlaceholder": "Të gjitha katet",
     "unitLabel": "Njësia",
     "unitPlaceholder": "Të gjitha njësitë"
   },
@@ -69,14 +69,14 @@
     "searchLabel": "Kërko",
     "searchPlaceholder": "Kërko sipas emrit ose mbiemrit…",
     "projectLabel": "Projekti",
-    "projectPlaceholder": "Të gjithë projektet",
+    "projectPlaceholder": "Të gjitha projektet",
     "typologyLabel": "Tipologjia",
     "typologyPlaceholder": "Të gjitha tipologjitë",
     "statusLabel": "Statusi",
-    "statusPlaceholder": "Të gjithë statuset",
+    "statusPlaceholder": "Të gjitha statuset",
     "valueRangeLabel": "Diapazoni i vlerës (EUR)",
     "valueMinPlaceholder": "Min.",
-    "valueMaxPlaceholder": "Maks",
+    "valueMaxPlaceholder": "Maks.",
     "noResults": "Nuk u gjetën klientë.",
     "errorTitle": "Klientët nuk u ngarkuan",
     "errorDescription": "Provo përsëri ose ndrysho filtrat.",
@@ -111,7 +111,7 @@
     "edificeLabel": "Ndërtesa",
     "edificePlaceholder": "Të gjitha ndërtesat",
     "floorLabel": "Kati",
-    "floorPlaceholder": "Të gjithë katet",
+    "floorPlaceholder": "Të gjitha katet",
     "unitLabel": "Njësia",
     "unitPlaceholder": "Të gjitha njësitë"
   },
@@ -131,7 +131,7 @@
       {
         "title": "Sjellja",
         "items": [
-          "Krijimi, pagesa, anulimi, aprovimi, dorëzimi — ato veprime mbeten te Rezervimet dhe Shitjet.",
+          "Krijimi, pagesa, anulimi, miratimi, dorëzimi — ato veprime mbeten te Rezervimet dhe Shitjet.",
           "Asgjë nuk dyfishohet në bazën e të dhënave. Nëse një rezervim zhduket nga Rezervimet, zhduket këtu.",
           "Rezervimet e skaduara dhe aktive mund të shfaqen të dyja, sipas filtrit të statusit të qendrës."
         ]
@@ -140,7 +140,7 @@
         "title": "Kur ta përdorni",
         "items": [
           "Operacionet pyesin «cilat kontrata ka ky klient?» — kërkoni këtu.",
-          "Kur duhet të veproni (të arkëtoni një depozitë, të aprovoni një shitje), hapni rreshtin dhe përdorni fletën nën të, ose shkoni te lista e dedikuar."
+          "Kur duhet të veproni (të arkëtoni një depozitë, të miratoni një shitje), hapni rreshtin dhe përdorni fletën nën të, ose shkoni te lista e dedikuar."
         ]
       },
       {

@@ -54,7 +54,7 @@
   },
   "formHeader": {
     "title": "Aggiungi pacchetto",
-    "description": "Inserisci i dati per creare un pacchetto di consegna."
+    "description": "Lascia vuoti edificio, piano o unità per applicare questa checklist a quell'ambito. Le unità ereditano le voci dei livelli superiori."
   },
   "help": {
     "ariaLabel": "Informazioni sull’aggiunta di un pacchetto di consegna",
@@ -68,7 +68,7 @@
           "Lascia vuoti edificio, piano e unità per un elenco di progetto che ogni unità del progetto eredita.",
           "Compila l’edificio (piano e unità vuoti) per extra a livello edificio.",
           "Compila il piano (unità vuota) per extra di piano. Compila l’unità per voci solo di quell’unità.",
-          "Gli antenati si compilano automaticamente dalla foglia. Dopo il salvataggio l’ambito non si può cambiare — crea un nuovo pacchetto in un altro ambito."
+          "I livelli superiori si compilano automaticamente a partire dal livello scelto. Dopo il salvataggio l’ambito non si può cambiare — crea un nuovo pacchetto in un altro ambito."
         ]
       },
       {

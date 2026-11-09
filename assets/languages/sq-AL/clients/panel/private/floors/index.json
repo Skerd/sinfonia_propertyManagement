@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/index.tsx",
-  "title": "Dyshemetë",
-  "description": "Menaxho dyshemetë për këtë ndërtesë",
+  "title": "Katet",
+  "description": "Menaxho katet për këtë ndërtesë",
   "descriptionWithoutEdifice": "Menaxhoni të gjitha katet",
-  "createFloor": "Krijo dysheme",
-  "noData": "Nuk u gjetën dysheme",
-  "failTitle": "Ngarkimi i dyshemeve dështoi",
-  "failDescription": "Ndodhi një gabim gjatë ngarkimit të dyshemeve. Ju lutemi provoni përsëri.",
+  "createFloor": "Krijo kat",
+  "noData": "Nuk u gjetën kate",
+  "failTitle": "Ngarkimi i kateve dështoi",
+  "failDescription": "Ndodhi një gabim gjatë ngarkimit të kateve. Ju lutemi provoni përsëri.",
   "name": "Emri",
   "levelNumber": "Numri i nivelit",
   "project": "Projekti",
@@ -19,8 +19,8 @@
   "status": "Statusi",
   "active": "Aktiv",
   "fields": {
-    "area": "Zona",
-    "createdAt": "Krijuar në",
+    "area": "Sipërfaqja",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
@@ -28,17 +28,17 @@
     "edifice": "Ndërtesa",
     "hasEmergencyExit": "Dalje emergjente",
     "imageGallery": "Galeria",
-    "isAccessible": "E aksesueshme",
+    "isAccessible": "I aksesueshëm",
     "levelNumber": "Numri i nivelit",
     "mainImage": "Imazhi",
-    "marketingBooklet": "Broshura Marketing",
-    "mediaFiles": "Skedarët Media",
+    "marketingBooklet": "Broshura e marketingut",
+    "mediaFiles": "Skedarët media",
     "name": "Emri",
     "polygonCoordinates": "Koordinatat e shumëkëndëshit",
     "project": "Projekti",
     "sharedSpaces": "Hapësirat e përbashkëta",
     "totalUnits": "Njësitë totale",
-    "updatedAt": "Përditësuar në",
+    "updatedAt": "Përditësuar më",
     "videoGallery": "Videot",
     "!enums": {
       "priceVisibility": {
@@ -50,8 +50,8 @@
     "priceVisibility": "Çmimi publik"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "yes": "po",
-  "no": "Nr",
+  "yes": "Po",
+  "no": "Jo",
   "view": "Shiko",
   "help": {
     "ariaLabel": "Rreth Kateve",
@@ -62,9 +62,9 @@
         "title": "Çfarë mban një kat",
         "items": [
           "Emri dhe ndërtesa prind (të detyrueshme).",
-          "Numri i nivelit — rendorja e këtij kati (mund të jetë negativ për nëntokën).",
+          "Numri i nivelit — numri rendor i këtij kati (mund të jetë negativ për nëntokën).",
           "Sipërfaqja e pllakës së katit (e detyrueshme).",
-          "Flamujt i aksesueshëm / dalje emergjence, përshkrimi, dhe një listë hapësirash të përbashkëta (holi, emra korridoresh dhe etiketime të ngjashme).",
+          "Treguesit i aksesueshëm / dalje emergjence, përshkrimi, dhe një listë hapësirash të përbashkëta (holi, emra korridoresh dhe etiketa të ngjashme).",
           "Imazhi kryesor (i detyrueshëm) plus galeri, video, skedarë shtesë dhe broshurë marketingu opsionale.",
           "Koordinata poligoni opsionale — konturi i vizatuar në planin e ndërtesës që plani publik ose i panelit ta theksojë këtë kat.",
           "Numri i njësive në kat llogaritet nga fëmijët; nuk e shkruani."
@@ -91,7 +91,7 @@
         "title": "Dosjet e lidhura",
         "items": [
           "Prindi: Ndërtesa (që ka një Projekt). Fëmijët: Njësitë.",
-          "Hapi tjetër tipik: krijoni njësi me lloj, numër, sipërfaqe, dhoma, çmim dhe valutë."
+          "Hapi tjetër tipik: krijoni njësi me lloj, numër, sipërfaqe, dhoma, çmim dhe monedhë."
         ]
       }
     ]

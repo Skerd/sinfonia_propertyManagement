@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
   "title": "Rivendos fjalëkalimin",
-  "subtitle": "Zgjidh një fjalëkalim të ri.",
+  "subtitle": "Zgjidhni një fjalëkalim të ri për llogarinë tuaj.",
   "verifyingSubtitle": "Po kontrollohet lidhja e rivendosjes…",
   "verifyErrorSubtitle": "Kjo lidhje rivendosjeje është e pavlefshme ose ka skaduar.",
   "successSubtitle": "Fjalëkalimi juaj u përditësua.",
   "verifyingMessage": "Ju lutemi prisni…",
-  "verifyErrorMessage": "Kërko një link të ri rivendosjeje.",
+  "verifyErrorMessage": "Kërkoni një lidhje të re për rivendosjen e fjalëkalimit.",
   "requestAgain": "Fjalëkalim i harruar",
   "form": {
     "passwordLabel": "Fjalëkalimi i ri",
@@ -18,7 +18,7 @@
   "submit": "Ruaj fjalëkalimin",
   "submitting": "Ju lutemi prisni…",
   "formError": "Fjalëkalimi juaj nuk u përditësua. Ju lutemi provoni përsëri.",
-  "successMessage": "Tani mund të hysh me fjalëkalimin e ri.",
+  "successMessage": "Tani mund të hyni me fjalëkalimin e ri.",
   "goToLogin": "Shko te hyrja",
   "axios": {
     "start": {

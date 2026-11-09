@@ -17,7 +17,7 @@
   "email": "Email",
   "website": "Sito web",
   "partyType": "Tipo di parte",
-  "trades": "Mestieri",
+  "trades": "Categorie di lavori",
   "insuranceExpiry": "Scadenza assicurazione",
   "performanceScore": "Punteggio prestazioni",
   "preferredLanguage": "Lingua preferita",
@@ -35,7 +35,7 @@
     "logoLabel": "Logo"
   },
   "partyTypes": {
-    "contractor": "Appaltatore",
+    "contractor": "Impresa",
     "architect": "Architetto",
     "engineer": "Ingegnere",
     "qs": "Computista",

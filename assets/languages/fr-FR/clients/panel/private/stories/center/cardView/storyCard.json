@@ -7,7 +7,7 @@
     "published": "Statut",
     "publishedAt": "Date de publication",
     "project": "Projet",
-    "edifice": "Édifice",
+    "edifice": "Bâtiment",
     "unit": "Unité"
   },
   "failedTitle": "Impossible de charger cet enregistrement",

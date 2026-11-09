@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/index.tsx",
   "title": "Checklist di ispezione",
-  "description": "Modelli riutilizzabili di checklist di consegna",
+  "description": "Modelli riutilizzabili di checklist di ispezione e consegna",
   "help": {
     "ariaLabel": "Informazioni sulle checklist di ispezione",
     "title": "Informazioni sulle checklist di ispezione",
@@ -10,7 +10,7 @@
       {
         "title": "Cosa contiene un modello",
         "items": [
-          "Titolo (obbligatorio). Descrizione, note, mestiere e fase opzionali.",
+          "Titolo (obbligatorio). Descrizione, note, categoria di lavori e fase opzionali.",
           "Almeno una voce: nome (obbligatorio), descrizione e istruzioni opzionali, importanza (bassa / media / alta).",
           "Stato: attivo o archiviato. Le voci non hanno qui un flag completato.",
           "A livello azienda — non legato a progetto, edificio, piano o unità (a differenza dei pacchetti di consegna)."
@@ -20,10 +20,10 @@
         "title": "Come la usano le ispezioni",
         "body": "Collegate un modello a un'ispezione. L'ispezione copia le voci e memorizza le spunte.",
         "items": [
-          "Finché l'ispezione è aperta (programmata, in corso o riprogrammata), si sincronizza in diretta: nuovi item, rinomine, sparizione degli item incompleti rimossi.",
-          "Una spunta già data resta se poi togliete l'item dal modello — l'ispezione trattiene la riga. Non si può togliere la spunta a una riga trattenuta.",
-          "Cambiare modello rimescola la nuova lista e conserva le righe completate che non corrispondono più.",
-          "Le ispezioni completate o annullate si congelano: le modifiche successive qui non le cambiano."
+          "Finché l'ispezione è aperta (programmata, in corso o riprogrammata), si sincronizza in tempo reale con questo modello: le voci aggiunte compaiono, quelle rinominate si aggiornano, quelle incomplete rimosse scompaiono.",
+          "Una spunta già data resta se poi togliete la voce dal modello — l'ispezione conserva la riga così lo storico non va perso. Non si può togliere la spunta a una riga trattenuta.",
+          "Cambiare modello su un'ispezione aperta riunisce le voci dal nuovo elenco e conserva le righe completate che non corrispondono più.",
+          "Le ispezioni completate o annullate si congelano: le modifiche successive qui non le cambiano e le loro spunte non si possono modificare."
         ]
       },
       {
@@ -39,21 +39,21 @@
         "items": [
           "Solo i modelli attivi compaiono nel selettore dell'ispezione.",
           "Archiviare nasconde il modello alle nuove scelte. Le ispezioni aperte che già lo usano continuano a sincronizzare fino a completamento o annullamento.",
-          "L'eliminazione è soft e ripristinabile. Le ispezioni aperte tengono le righe che hanno già."
+          "L'eliminazione logica è ripristinabile. Eliminare un modello ancora collegato a ispezioni aperte lascia a quelle ispezioni le righe che hanno già."
         ]
       },
       {
         "title": "In questa pagina",
         "items": [
           "Creare un modello, aggiungere le voci che ogni ispezione corrispondente deve percorrere, poi salvare.",
-          "Cercare e filtrare; aprire una card. Modificare titolo, note e voci — conservare le identità esistenti così una rinomina è un aggiornamento, non un elimina-e-aggiungi.",
-          "Questo elenco è sotto Locazione → Configurazioni, subito dopo Pacchetti di consegna."
+          "Cercare e filtrare; aprire una scheda per vedere le voci. Modificare titolo, note e voci — conservare le identità delle voci esistenti, così le ispezioni aperte trattano una rinomina come un aggiornamento, non come eliminazione e aggiunta.",
+          "Questo elenco è sotto Gestione mandanti → Configurazioni, subito dopo Pacchetti di consegna."
         ]
       },
       {
         "title": "Non è un pacchetto di consegna",
         "items": [
-          "I pacchetti di consegna hanno uno scope (progetto / edificio / piano / unità) e si impilano su una vendita.",
+          "I pacchetti di consegna hanno un ambito (progetto / edificio / piano / unità) e si sommano su una vendita.",
           "Le checklist di ispezione sono un unico modello aziendale da collegare a una visita.",
           "Spuntate le voci di ispezione sull'ispezione (Aggiorna checklist). Spuntate le voci di consegna sulla vendita (Aggiorna consegna)."
         ]
@@ -75,8 +75,8 @@
     ]
   },
   "createInspectionChecklistTemplate": "Aggiungi checklist",
-  "noData": "Nessun record trovato",
-  "failTitle": "Caricamento non riuscito",
+  "noData": "Nessuna checklist di ispezione trovata",
+  "failTitle": "Impossibile caricare le checklist di ispezione",
   "failDescription": "Si è verificato un errore. Riprova.",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
@@ -92,7 +92,7 @@
     "stage": "Fase",
     "status": "Stato",
     "title": "Titolo",
-    "trade": "Mestiere",
+    "trade": "Categoria di lavori",
     "updatedAt": "Aggiornato il",
     "!enums": {
       "status": {

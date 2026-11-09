@@ -6,7 +6,7 @@
   "description": "Përshkrimi",
   "sortOrder": "Renditja",
   "deleted": "Fshirë",
-  "failedTitle": "Dështoi ngarkimi i Llojet e historive",
+  "failedTitle": "Dështoi ngarkimi i llojeve të tregimeve",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

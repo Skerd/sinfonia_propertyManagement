@@ -10,7 +10,7 @@
   "transactionalNote": "Vous continuerez à recevoir les e-mails essentiels concernant votre achat, votre réservation ou votre bail.",
   "toggles": {
     "priceChange": "Changements de prix",
-    "priceChangeDescription": "Lorsque le prix d'un lot que vous suivez change.",
+    "priceChangeDescription": "Lorsque le prix d'une unité que vous suivez change.",
     "offers": "Offres",
     "offersDescription": "Offres et promotions à durée limitée.",
     "newProjects": "Nouveaux projets",

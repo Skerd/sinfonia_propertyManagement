@@ -2,7 +2,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Il progetto non può essere aggiornato, riprova!"
+      "title": "Impossibile aggiornare il progetto, riprova!"
     },
     "start": {
       "time": 3000,

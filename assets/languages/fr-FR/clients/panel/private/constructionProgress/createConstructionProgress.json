@@ -23,7 +23,7 @@
     },
     "progressPercentLabel": "Travaux réalisés (%)",
     "progressPercentPlaceholder": "0–100",
-    "updateDateLabel": "Date",
+    "updateDateLabel": "Date de mise à jour",
     "updateDatePlaceholder": "Sélectionner une date",
     "expectedCompletionDateLabel": "Achèvement prévu",
     "expectedCompletionDatePlaceholder": "Sélectionner une date",

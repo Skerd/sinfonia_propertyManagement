@@ -4,9 +4,9 @@
   "fields": {
     "amount": "Shuma",
     "unit": "Njësia",
-    "lease": "Qiraja",
+    "lease": "Kontrata",
     "dueDate": "Afati",
-    "paidDate": "Data e Pagesës",
+    "paidDate": "Data e pagesës",
     "!enums": {
       "status": {
         "pending": "Në pritje",

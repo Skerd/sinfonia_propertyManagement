@@ -68,10 +68,10 @@
     "videoGallery": "Videos",
     "!enums": {
       "status": {
-        "available_unit": "Available Unit",
-        "reserved_unit": "Reserved Unit",
-        "sold_unit": "Sold Unit",
-        "unavailable_unit": "Unavailable Unit",
+        "available_unit": "Available",
+        "reserved_unit": "Reserved",
+        "sold_unit": "Sold",
+        "unavailable_unit": "Not Available",
         "rented_unit": "Rented"
       },
       "orientation": {

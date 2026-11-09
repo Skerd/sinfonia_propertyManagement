@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
-  "failedTitle": "Impossibile caricare Tipi di storia",
+  "failedTitle": "Impossibile caricare i tipi di storia",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "failedTooltipDescription": "Clicca per ricaricare i dati.",
   "name": "Nome",

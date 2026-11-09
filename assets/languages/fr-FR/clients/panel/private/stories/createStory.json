@@ -1,19 +1,19 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/stories/createStory.tsx",
   "title": "Ajouter un récit",
-  "description": "Créer un récit journal pour un projet, un édifice ou une unité",
+  "description": "Créer un récit journal pour un projet, un bâtiment ou une unité",
   "generalInfo": "Détails du récit",
   "form": {
     "projectLabel": "Projet",
     "projectPlaceholder": "Sélectionner un projet",
-    "edificeLabel": "Édifice",
-    "edificePlaceholder": "Sélectionner un édifice (facultatif)",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Sélectionner un bâtiment (facultatif)",
     "unitLabel": "Unité",
     "unitPlaceholder": "Sélectionner une unité (facultatif)",
     "titleLabel": "Titre",
     "titlePlaceholder": "Saisir le titre du récit",
     "excerptLabel": "Extrait",
-    "excerptPlaceholder": "Court teaser affiché sur la carte du journal",
+    "excerptPlaceholder": "Courte accroche affichée sur la carte du journal",
     "contentLabel": "Contenu",
     "contentPlaceholder": "Rédiger le contenu complet du récit",
     "mainImageLabel": "Image principale",
@@ -44,7 +44,7 @@
   },
   "formHeader": {
     "title": "Ajouter un récit",
-    "description": "Créer un récit journal pour un projet, un édifice ou une unité"
+    "description": "Créer un récit journal pour un projet, un bâtiment ou une unité"
   },
   "formButtons": {
     "cancel": "Annuler",

@@ -64,25 +64,25 @@
   "help": {
     "ariaLabel": "Informazioni sui lead",
     "title": "Informazioni sui lead",
-    "overview": "Un lead è una persona nella pipeline commerciale prima che esistano una prenotazione o una vendita. È CRM, non un blocco su un'unità. Lo stato è una fase commerciale che aggiornate lavorando la persona; non cambia la disponibilità. Vincere un lead non crea una prenotazione — la create in Prenotazioni su un'unità disponibile.",
+    "overview": "Un lead è una persona nella pipeline commerciale prima che esistano una prenotazione o una vendita. È CRM, non un blocco su un'unità. Lo stato è un'etichetta di fase commerciale che aggiornate man mano che seguite la persona; non cambia la disponibilità dell'unità. Vincere un lead non crea una prenotazione — la create in Prenotazioni a partire da un'unità disponibile.",
     "sections": [
       {
         "title": "Cosa contiene un lead",
         "items": [
           "Nome (obbligatorio), cognome, e-mail, telefono opzionali.",
-          "Stato: nuovo → contattato → qualificato → proposta → negoziazione → vinto o perso.",
-          "Fonte: sito web, referral, social, evento, cold call, walk-in, chat, o altro.",
+          "Lo stato cambia solo tramite le azioni (contattato, qualifica, proposta, negoziazione, vinto, perso, riapri) — non dal modulo di modifica.",
+          "Fonte: sito web, segnalazione, social, evento, cold call, visita spontanea, chat o altro.",
           "Interesse: partnership, investimenti, supporto piattaforma, prenotazione, o altro.",
-          "Interesse progetto e unità opzionali — ciò che hanno chiesto, non una trattenuta.",
+          "Interesse progetto e unità opzionali — ciò che hanno chiesto, non un blocco.",
           "Budget e valuta opzionali, note, agente assegnato, data di follow-up.",
-          "Registro attività — note con data e ora dall'azione «aggiungi attività» (chi ha fatto cosa)."
+          "Registro attività — ogni cambio di stato e nota manuale, con chi l'ha fatto e quando. Riaprire un lead perso cancella il motivo della perdita dal record e lo conserva nel registro."
         ]
       },
       {
         "title": "In questa pagina",
         "items": [
-          "Creare un lead appena qualcuno chiede informazioni. Assegnare un agente e una data di follow-up se lavorate una coda.",
-          "Aprire la scheda per spostare lo stato, aggiungere note e registrare attività.",
+          "Creare un lead appena qualcuno chiede informazioni. Assegnare un agente e una data di follow-up se gestite una coda.",
+          "Usare il menu della riga o della scheda per avanzare lo stato, segnare vinto o perso e registrare attività.",
           "Filtrare per stato, fonte, progetto, assegnatario.",
           "L'eliminazione logica è ripristinabile. Non annulla prenotazioni create in seguito per la stessa persona."
         ]

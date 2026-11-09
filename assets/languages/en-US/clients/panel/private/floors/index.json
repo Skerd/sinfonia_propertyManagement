@@ -62,7 +62,7 @@
         "title": "What a floor holds",
         "items": [
           "Name and parent edifice (required).",
-          "Level number — the ordinal of this storey (can be negative for underground).",
+          "Level number — the ordinal of this story (can be negative for underground).",
           "Area of the floor plate (required).",
           "Accessible / emergency exit flags, description, and a list of shared spaces (lobby, corridor names, and similar labels).",
           "Main image (required) plus optional galleries, videos, extra files, and a marketing booklet.",

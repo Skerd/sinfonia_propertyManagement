@@ -19,7 +19,7 @@
     "Constructionupdates": "Aggiornamenti dei lavori",
     "Constructors": "Costruttori",
     "Consultantappointments": "Incarichi di consulenza",
-    "Contractorinvoices": "Fatture appaltatori",
+    "Contractorinvoices": "Fatture d'impresa",
     "Costclassifications": "Classificazioni dei costi",
     "Costcommitments": "Impegni di costo",
     "Dashboardcaches": "Cache della dashboard",
@@ -228,7 +228,7 @@
       "project": "Progetto",
       "status": "Stato",
       "title": "Titolo",
-      "trade": "Mestiere",
+      "trade": "Categoria di lavori",
       "unitOfMeasure": "Unità di misura",
       "updatedAt": "Aggiornato il",
       "wbsCode": "Codice WBS"
@@ -311,7 +311,7 @@
       "markPaid": "Segna come pagata",
       "markPending": "Segna come in sospeso",
       "requestApproval": "Richiedi approvazione",
-      "setSplits": "Imposta la ripartizione delle provvigioni"
+      "setSplits": "Imposta le suddivisioni della commissione"
     },
     "Constructioncontracts": {
       "approvedVariationsTotal": "Totale varianti approvate",
@@ -384,7 +384,7 @@
       "partyType": "Tipo di soggetto",
       "performanceScore": "Punteggio di prestazione",
       "preferredLanguage": "Lingua preferita",
-      "trades": "Mestieri"
+      "trades": "Categorie di lavori"
     },
     "Consultantappointments": {
       "adjustmentFactor": "Fattore di adeguamento",
@@ -417,7 +417,7 @@
       "bkpAccountCode": "Codice conto BKP",
       "constructionContract": "Contratto di costruzione",
       "constructorRef": "Rif. costruttore",
-      "contractorinvoices": "Fatture appaltatori",
+      "contractorinvoices": "Fatture d'impresa",
       "costCommitment": "Impegno di costo",
       "createdAt": "Creato il",
       "createdBy": "Creato da",
@@ -443,7 +443,7 @@
     },
     "Costclassifications": {
       "active": "Attivo",
-      "code": "Code",
+      "code": "Codice",
       "costclassifications": "Classificazioni dei costi",
       "createdAt": "Creato il",
       "createdBy": "Creato da",
@@ -667,7 +667,7 @@
       "bkpAccountCode": "Codice conto BKP",
       "createdAt": "Creato il",
       "createdBy": "Creato da",
-      "createdContractorInvoice": "Fattura appaltatore creata",
+      "createdContractorInvoice": "Fattura d'impresa creata",
       "currency": "Valuta",
       "deletedAt": "Eliminato il",
       "deletedBy": "Eliminato da",
@@ -708,7 +708,7 @@
       "stage": "Fase",
       "status": "Stato",
       "title": "Titolo",
-      "trade": "Mestiere",
+      "trade": "Categoria di lavori",
       "updatedAt": "Aggiornato il",
       "archive": "Archivia modello"
     },
@@ -1277,10 +1277,10 @@
       "paidAmount": "Importo pagato",
       "paidDate": "Data pagamento",
       "paymentReceipts": "Ricevute",
-      "paymentReceipts_amount": "Ricevute importo",
-      "paymentReceipts_notes": "Ricevute note",
-      "paymentReceipts_paidDate": "Ricevute data",
-      "paymentReceipts_media": "Ricevute allegati",
+      "paymentReceipts_amount": "Ricevute: importo",
+      "paymentReceipts_notes": "Ricevute: note",
+      "paymentReceipts_paidDate": "Ricevute: data di pagamento",
+      "paymentReceipts_media": "Ricevute: allegati",
       "receiptMedia": "Ricevuta",
       "remaining": "Residuo",
       "rentOverdueNoticeEmailAt": "Email mora",
@@ -1407,8 +1407,8 @@
       "handoverCompletedAt": "Consegna completata il",
       "handoverDate": "Data di consegna",
       "handoverNotes": "Note di consegna",
-      "listedUnitCurrency": "Valuta del prezzo listato",
-      "listedUnitPrice": "Prezzo listato dell'unità",
+      "listedUnitCurrency": "Valuta del prezzo di listino",
+      "listedUnitPrice": "Prezzo di listino dell'unità",
       "localDiscount": "Sconto locale",
       "name": "Nome",
       "notaryName": "Notaio",
@@ -1518,7 +1518,7 @@
       "isDlp": "In periodo di garanzia (DLP)",
       "isWarranty": "In garanzia",
       "rootCause": "Causa principale",
-      "trade": "Mestiere",
+      "trade": "Categoria di lavori",
       "variationOrder": "Ordine di variante",
       "workPackage": "Pacchetto di lavoro"
     },
@@ -1653,7 +1653,7 @@
       "submissionDeadline": "Termine di presentazione",
       "tenders": "Gare",
       "title": "Titolo",
-      "trades": "Mestieri",
+      "trades": "Categorie di lavori",
       "updatedAt": "Aggiornato il"
     },
     "Unitcosts": {
@@ -1773,7 +1773,7 @@
       "deletedBy": "Eliminato da",
       "description": "Descrizione",
       "group": "Gruppo",
-      "icon": "Icon",
+      "icon": "Icona",
       "isPrivate": "Privato",
       "name": "Nome",
       "slug": "Slug",
@@ -1840,7 +1840,7 @@
       "project": "Progetto",
       "status": "Stato",
       "title": "Titolo",
-      "trade": "Mestiere",
+      "trade": "Categoria di lavori",
       "updatedAt": "Aggiornato il",
       "workpackages": "Pacchetti di lavoro"
     },
@@ -1856,7 +1856,7 @@
       "edifice": "Edificio",
       "phase": "Fase",
       "progressPercent": "Lavori completati (%)",
-      "updateDate": "Data",
+      "updateDate": "Data aggiornamento",
       "title": "Titolo",
       "description": "Messaggio ai clienti",
       "expectedCompletionDate": "Completamento previsto",
@@ -1908,7 +1908,7 @@
       "lastError": "Ultimo errore",
       "cancel": "Annulla campagna",
       "pause": "Metti in pausa la campagna",
-      "previewAudience": "Anteprima del pubblico",
+      "previewAudience": "Anteprima destinatari",
       "resume": "Riprendi campagna",
       "sendNow": "Invia ora",
       "testSend": "Invia email di prova"

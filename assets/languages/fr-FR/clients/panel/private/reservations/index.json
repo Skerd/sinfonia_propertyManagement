@@ -115,7 +115,7 @@
       {
         "title": "Comportement",
         "items": [
-          "Un job quotidien peut expirer les réservations passées le jour d'expiration, e-mailer le client et libérer l'unité — même résultat que d'envoyer le mail d'expiration à la main.",
+          "Une tâche quotidienne peut expirer les réservations passées le jour d'expiration, e-mailer le client et libérer l'unité — même résultat que d'envoyer le mail d'expiration à la main.",
           "On ne peut pas réserver une unité déjà réservée, vendue ou louée.",
           "Commissions : une commission de réservation en attente apparaît quand payer/réactiver l'enregistre ; annuler ou revenir sur le paiement annule la commission en attente (pas déjà payée).",
           "Contrats & clients liste cette réservation comme document commercial ; il ne la duplique pas."

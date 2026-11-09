@@ -3,41 +3,41 @@
   "title": "Inspektimet",
   "description": "Menaxhoni inspektimet e njësisë",
   "descriptionWithContext": "Menaxhoni inspektimet për këtë njësi",
-  "createInspection": "Krijo Inspektimin",
+  "createInspection": "Krijo inspektim",
   "noData": "Nuk u gjetën inspektime",
   "failTitle": "Ngarkimi i inspektimeve dështoi",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të inspektimeve. Ju lutemi provoni përsëri.",
   "status": "Statusi",
   "deleted": "Fshirë",
   "type": "Lloji",
-  "inspectionDate": "Data e Inspektimit",
+  "inspectionDate": "Data e inspektimit",
   "inspectedBy": "Inspektuar nga",
   "rating": "Vlerësimi",
   "view": "Shiko",
   "fields": {
     "cancellationReason": "Arsyeja e anulimit",
-    "cancelledAt": "Anuluar në",
+    "cancelledAt": "Anuluar më",
     "checklistItems": "Zërat e listës",
-    "checklistTemplate": "Shablloni i listës së kontrollit",
+    "checklistTemplate": "Modeli i listës së kontrollit",
     "clientSignatureMediaId": "ID e medias së nënshkrimit të klientit",
     "clientSignedAt": "Nënshkruar më",
-    "completedAt": "Përfunduar në",
-    "createdAt": "Krijuar në",
+    "completedAt": "Përfunduar më",
+    "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
     "findings": {
-      "structuralIssues": "Çështjet Strukturore",
-      "electricalIssues": "Çështjet Elektrike",
+      "structuralIssues": "Çështjet strukturore",
+      "electricalIssues": "Çështjet elektrike",
       "plumbingIssues": "Çështjet hidraulike",
       "hvacIssues": "Çështjet e HVAC",
       "safetyConcerns": "Shqetësimet e sigurisë",
-      "cosmeticIssues": "Çështje Kozmetike",
+      "cosmeticIssues": "Çështje kozmetike",
       "otherObservations": "Vëzhgime të tjera"
     },
-    "followUpInspection": "Vazhdimi i Inspektimit",
-    "followUpRequired": "Kërkohet ndjekja",
-    "followedUpByInspection": "E ndjekur nga inspektimi",
+    "followUpInspection": "Inspektimi vijues",
+    "followUpRequired": "Kërkohet përcjellje",
+    "followedUpByInspection": "I ndjekur nga inspektimi",
     "inspectedBy": "Inspektor",
     "inspectionDate": "Data",
     "media": "Media",
@@ -49,15 +49,15 @@
     "status": "Statusi",
     "type": "Lloji",
     "unit": "Njësia",
-    "updatedAt": "Përditësuar në",
+    "updatedAt": "Përditësuar më",
     "!enums": {
       "type": {
-        "initial": "Fillestare",
-        "follow_up": "Për ndjekje",
+        "initial": "Fillestar",
+        "follow_up": "Përcjellje",
         "final": "Përfundimtar",
         "routine": "Rutinë",
         "complaint": "Ankesa",
-        "pre_sale": "Para Shitje",
+        "pre_sale": "Para shitjes",
         "post_sale": "Pas shitjes"
       },
       "status": {
@@ -70,8 +70,8 @@
     }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "yes": "po",
-  "no": "Nr",
+  "yes": "Po",
+  "no": "Jo",
   "help": {
     "ariaLabel": "Rreth Inspektimeve",
     "title": "Rreth Inspektimeve",
@@ -81,23 +81,23 @@
         "title": "Çfarë mban një inspektim",
         "items": [
           "Njësia (e detyrueshme). Karta tregon edhe katin, inspektorin, datën e inspektimit dhe datën e ardhshme.",
-          "Lloji: fillestar, ndjekje, përfundimtar, rutinë, ankesë, para-shitje, pas-shitje.",
-          "Statusi: i planifikuar → në punë → i përfunduar, ose i anuluar / i riprogramuar.",
-          "Shabllon liste kontrolli opsional plus rreshtat e kopjuar në këtë inspektim (emër, rëndësi, i përfunduar).",
+          "Lloji: fillestar, përcjellje, përfundimtar, rutinë, ankesë, para shitjes, pas shitjes.",
+          "Statusi: i planifikuar → në punë → i përfunduar, ose i anuluar / i riplanifikuar.",
+          "Model liste kontrolli opsional plus rreshtat e kopjuar në këtë inspektim (emër, rëndësi, i përfunduar).",
           "Gjetjet sipas kategorisë (strukturore, elektrike, hidraulike, HVAC, siguri, kozmetike, tjetër) me shënime, media, rëndësi dhe datë zgjidhjeje opsionale.",
           "Arsyeja e anulimit dhe koha kur anuloni një vizitë të planifikuar."
         ]
       },
       {
         "title": "Lista e strukturuar e kontrollit",
-        "body": "Zërat janë rreshta të strukturuar, jo JSON. Shablloni përcakton zërat; shenjat dhe përfundimi jetojnë te inspektimi.",
+        "body": "Zërat janë rreshta të strukturuar, jo JSON. Modeli përcakton zërat; shenjat dhe përfundimi jetojnë te inspektimi.",
         "items": [
-          "Lidhni një shabllon shoqërie nga Qiraja → Konfigurime → Listat e kontrollit.",
-          "Inspektimet e hapura sinkronizohen live: zëra të rinj, riemërtime, zhdukje e zërave të papërfunduar të hequr.",
-          "Një shenjë e vënë tashmë ruhet si rresht i mbajtur nëse e hiqni zërin më vonë nga shablloni.",
-          "Ndryshimi i shabllonit ribashkon listën e re dhe mban rreshtat e përfunduar që nuk përputhen më.",
-          "Në fletë, lidhja e kartës Modeli i listës kontrolluese hap fletën e shabllonit.",
-          "Shabllonet e arkivuara zhduken nga zgjedhësi; një inspektim që e përdor tashmë vazhdon sinkronizimin sa është i hapur."
+          "Lidhni një model shoqërie nga Administrimi i kompanive → Konfigurimet → Listat e kontrollit.",
+          "Inspektimet e hapura sinkronizohen në kohë reale kur ndryshojnë zërat e modelit: zërat e rinj shfaqen, riemërtimet përditësohen, zërat e papërfunduar të hequr bien.",
+          "Një shenjë e vënë tashmë ruhet si rresht i mbajtur nëse e hiqni zërin më vonë nga modeli.",
+          "Ndryshimi i modelit ribashkon listën e re dhe mban rreshtat e përfunduar që nuk përputhen më.",
+          "Në fletë, lidhja e kartës Modeli i listës së kontrollit hap fletën e modelit.",
+          "Modelet e arkivuara zhduken nga zgjedhësi; një inspektim që e përdor tashmë vazhdon sinkronizimin sa është i hapur."
         ]
       },
       {
@@ -106,7 +106,7 @@
           "Anulo të planifikuarën — vetëm sa statusi është i planifikuar; ruan arsye dhe vulë kohe. Nuk mund të anuloni një inspektim të përfunduar.",
           "Përditëso listën e kontrollit — shënoni ose hiqni zërat aktivë nga menyja e rreshtit, kartës ose fletës sa inspektimi është i hapur.",
           "Përfundo — statusi i përfunduar bllokohet derisa çdo zë aktiv (jo i mbajtur) të jetë shënuar. Pa listë kontrolli nuk ka këtë portë.",
-          "Riprogramoni duke vënë statusin në të riprogramuar dhe një datë të re — kjo nuk është dokument i ri, përveçse të krijoni një."
+          "Riplanifikoni duke vënë statusin në të riplanifikuar dhe një datë të re — kjo nuk është dokument i ri, përveçse kur krijoni një."
         ]
       },
       {
@@ -119,7 +119,7 @@
       {
         "title": "Në këtë faqe",
         "items": [
-          "Krijoni një inspektim mbi një njësi. Filtroni sipas projektit, ndërtesës, katit, njësisë, llojit, statusit dhe ndjekjes së kërkuar.",
+          "Krijoni një inspektim mbi një njësi. Filtroni sipas projektit, ndërtesës, katit, njësisë, llojit, statusit dhe përcjelljes së kërkuar.",
           "Kartat tregojnë njësinë, inspektorin, datën e inspektimit dhe datën e ardhshme. Hapni fletën për gjetje, media dhe listën e kontrollit.",
           "Lista e shoqërisë nga Pasuritë e paluajtshme → Inspektimet; nga një njësi, lista mund të kufizohet te ajo njësi."
         ]
@@ -128,7 +128,7 @@
         "title": "Sjellja",
         "items": [
           "Një inspektim nuk ndryshon kurrë statusin tregtar të njësisë.",
-          "Nuk është defekt: të metat e hapura që kërkojnë zeje dhe të caktuar i përkasin Defekteve.",
+          "Nuk është defekt: të metat e hapura që kërkojnë një zeje dhe një përgjegjës i përkasin Defekteve.",
           "Nuk është kërkesë për modifikim: ndryshimet e kërkuara nga klienti kalojnë nga arkitekti / inxhinieri / CEO / financat / dorëzimi atje.",
           "Nuk është paketë dorëzimi: listat e kontrollit të shitjes shtresohen sipas projektit / ndërtesës / katit / njësisë dhe shënohen te shitja."
         ]
@@ -137,7 +137,7 @@
         "title": "Dosjet e lidhura",
         "items": [
           "Njësia (dhe kështu kati / ndërtesa / projekti).",
-          "Listat e kontrollit (Qiraja → Konfigurime) — shabllonet e ripërdorshme që lidhni këtu.",
+          "Listat e kontrollit (Administrimi i kompanive → Konfigurimet) — modelet e ripërdorshme që lidhni këtu.",
           "Më pas: Defektet, Kërkesat për modifikim, Dorëzimi i shitjes."
         ]
       }

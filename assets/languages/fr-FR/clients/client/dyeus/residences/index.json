@@ -11,7 +11,7 @@
   "unitsStat": "{{count}} unités",
   "buildingsStat": "{{count}} bâtiments",
   "availableStat": "{{count}} disponibles",
-  "fromPrice": "À partir de €{{price}}",
+  "fromPrice": "À partir de {{price}} €",
   "yieldSuffix": " · {{percent}} % de rendement",
   "amenitiesLabel": "Équipements",
   "slide": "Diapositive {{index}}",

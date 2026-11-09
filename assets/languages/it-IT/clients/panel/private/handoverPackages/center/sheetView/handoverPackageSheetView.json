@@ -49,7 +49,7 @@
   "createdBy": "Creato da",
   "deletedAt": "Eliminato il",
   "deletedBy": "Eliminato da",
-  "failedTitle": "Impossibile caricare pacchetto di consegna",
+  "failedTitle": "Impossibile caricare il pacchetto di consegna",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "failedTooltipDescription": "Clicca per ricaricare i dati."
 }

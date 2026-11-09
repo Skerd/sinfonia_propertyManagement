@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/floors/unitsOverlay.tsx",
-  "title": "Mbivendosja e shumëkëndëshave njësi",
-  "description": "Të gjithë poligonet e njësive shfaqen në imazhin kryesor të dyshemesë.",
+  "title": "Mbivendosja e poligoneve të njësive",
+  "description": "Të gjithë poligonet e njësive shfaqen në imazhin kryesor të katit.",
   "noMainImage": "Kati nuk ka imazh kryesor.",
   "noUnitSelected": "Asnjë njësi e zgjedhur."
 }

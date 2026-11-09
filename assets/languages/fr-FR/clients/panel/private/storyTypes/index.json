@@ -1,47 +1,47 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
-  "title": "Types d'histoires",
-  "description": "Gérer les types d'histoires du journal de projet",
+  "title": "Types de récits",
+  "description": "Gérer les types de récits du journal de projet",
   "help": {
-    "ariaLabel": "À propos des types d'histoires",
-    "title": "À propos des types d'histoires",
-    "overview": "Un type d'histoire classifie les articles du journal (actualité, jalon, presse, etc.). Chaque histoire exige un type. Ce n’est ni une catégorie de suivi de chantier ni un type de défaut.",
+    "ariaLabel": "À propos des types de récits",
+    "title": "À propos des types de récits",
+    "overview": "Un type de récit classe les récits du journal (actualité, jalon, presse, etc.). Chaque récit exige un type. Ce n’est ni une catégorie de suivi de chantier ni un type de défaut.",
     "sections": [
       {
-        "title": "Ce que le type d'histoire contient",
+        "title": "Ce que le type de récit contient",
         "items": [
           "Nom (obligatoire).",
           "Description optionnelle.",
           "Ordre de tri optionnel — les listes de sélection et cette page trient par ordre, puis par nom. Vide équivaut à 0.",
-          "Le slug est généré à partir du nom de la société et du nom du type. Vous ne le saisissez pas."
+          "L'identifiant est généré à partir du nom de la société et du nom du type. Vous ne le saisissez pas."
         ]
       },
       {
         "title": "Sur cette page",
         "items": [
-          "Créer, rechercher et modifier les types d'histoires.",
-          "La suppression est logique, mais bloquée tant qu’une histoire utilise encore ce type."
+          "Créer, rechercher et modifier les types de récits.",
+          "La suppression est logique, mais bloquée tant qu’un récit utilise encore ce type."
         ]
       },
       {
         "title": "Comportement",
         "items": [
-          "Les histoires (journal marketing) choisissent un type dans cette liste. Les mises à jour de construction ont leur propre page et n’utilisent pas les types d'histoires.",
-          "Changer l’ordre ne change que l’affichage dans les sélecteurs. Les histoires existantes gardent leur type."
+          "Les récits (journal marketing) choisissent un type dans cette liste. Les avancements de chantier ont leur propre page et n’utilisent pas les types de récits.",
+          "Changer l’ordre ne change que l’affichage dans les sélecteurs. Les récits existants gardent leur type."
         ]
       },
       {
         "title": "Étape suivante typique",
         "items": [
           "Créer les types dont le journal a besoin.",
-          "Dans Histoires, choisir un type en rédigeant, puis publier lorsque le texte est prêt."
+          "Dans Récits, choisir un type en rédigeant, puis publier lorsque le texte est prêt."
         ]
       }
     ]
   },
   "createStoryType": "Créer un type",
-  "noData": "Aucun type d'histoire",
-  "failTitle": "Impossible de charger les types d'histoires",
+  "noData": "Aucun type de récit trouvé",
+  "failTitle": "Impossible de charger les types de récits",
   "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
   "fields": {
     "company": "Entreprise",

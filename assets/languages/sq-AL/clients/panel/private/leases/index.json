@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/leases/index.tsx",
-  "title": "Kontratat e Qirasë",
+  "title": "Kontratat e qirasë",
   "description": "Marrëveshjet e qirasë",
-  "createLease": "Kontratë e Re",
+  "createLease": "Kontratë e re",
   "noData": "Nuk u gjetën kontrata qiraje",
   "failTitle": "Dështoi ngarkimi i kontratave",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të kontratave. Ju lutemi provoni sërish.",
@@ -16,7 +16,7 @@
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
     "depositAmount": "Depozita",
-    "depositPaid": "Depozita paguar",
+    "depositPaid": "Depozita e paguar",
     "depositReturnedAt": "Depozita u kthye më",
     "edifice": "Ndërtesa",
     "endDate": "Data e mbarimit",
@@ -46,16 +46,16 @@
   "help": {
     "ariaLabel": "Rreth Kontratave të qirasë",
     "title": "Rreth Kontratave të qirasë",
-    "overview": "Një kontratë qiraje është marrëveshja e qirasë mbi një njësi. Aktivizimi e vë njësinë me qira. Rreshtat mujorë të qirasë gjenerohen dhe arkëtohen përmes Pagesave të qirasë (shuma të pjesshme, muaji më i vjetër i pari, penalitet vonese, periudhë hirësie). Ndërprerja ose skadimi e liron njësinë. Nuk mund të jepni me qira një njësi të rezervuar ose të shitur.",
+    "overview": "Një kontratë qiraje është marrëveshja e qirasë mbi një njësi. Aktivizimi e vë njësinë me qira. Rreshtat mujorë të qirasë gjenerohen dhe arkëtohen përmes Pagesave të qirasë (shuma të pjesshme, muaji më i vjetër i pari, gjobë vonese, periudhë tolerance). Ndërprerja ose skadimi e liron njësinë. Nuk mund të jepni me qira një njësi të rezervuar ose të shitur.",
     "sections": [
       {
         "title": "Çfarë mban një kontratë",
         "items": [
           "Njësia dhe qiramarrësi (të detyrueshëm).",
           "Data e fillimit dhe data e mbarimit (mbarimi duhet të jetë pas fillimit).",
-          "Qiraja mujore dhe valuta (të detyrueshme).",
+          "Qiraja mujore dhe monedha (të detyrueshme).",
           "Shuma e depozitës opsionale; depozita e paguar dhe depozita e kthyer menaxhohen me veprime.",
-          "Penaliteti i vonesës % dhe ditët e hirësisë — përdoren kur një muaj kalon i vonuar.",
+          "Gjoba e vonesës % dhe ditët e tolerancës — përdoren kur një muaj kalon i vonuar.",
           "Media e kontratës (skedar i detyrueshëm), shënime, arsyeja / data e ndërprerjes kur mbyllet.",
           "Statusi: aktiv, i skaduar, i ndërprerë."
         ]
@@ -67,7 +67,7 @@
           "Shëno depozitën të paguar — një herë. Kthe depozitën — vetëm pasi u shënua e paguar, dhe vetëm një herë.",
           "Regjistro pagesën e qirasë — shuma zbatohet te muaji i hapur më i vjetër i pari (FIFO). Nuk mund të tejkalojë mbetjen e hapur totale. Vetëm kontrata aktive.",
           "Rirregullo planin — rindërto rreshtat mujorë nëse datat ose qiraja ndryshuan.",
-          "Dërgo kujtesën e qirasë — e-mail te klienti për një rresht muaji të zgjedhur (llojet e kujtesës), vetëm sa ai rresht është ende i hapur."
+          "Dërgo kujtesën e qirasë — email te klienti për një rresht muaji të zgjedhur (llojet e kujtesës), vetëm sa ai rresht është ende i hapur."
         ]
       },
       {
@@ -81,8 +81,8 @@
       {
         "title": "Sjellja",
         "items": [
-          "Një punë ditore i shënon muajt e papaguar të vonuar pas afatit + hirësia (fundi i ditës UTC), vulos penalitetin një herë nga % e kontratës, i skadon kontratat aktive pas datës së mbarimit, fal rreshtat e hapur dhe liron njësitë.",
-          "Mbetja e një muaji = shuma + penaliteti − e paguar. Arkëtimet e pjesshme mbeten pjesërisht të paguara derisa mbetja të bëhet zero.",
+          "Një punë ditore i shënon muajt e papaguar të vonuar pas afatit + periudhës së tolerancës (fundi i ditës UTC), vendos gjobën e vonesës një herë sipas % së kontratës, i skadon kontratat aktive pas datës së mbarimit, fal rreshtat e tyre të hapur dhe liron njësitë.",
+          "Mbetja e një muaji = shuma + gjoba e vonesës − e paguar. Arkëtimet e pjesshme mbeten pjesërisht të paguara derisa mbetja të bëhet zero.",
           "Qendra e qirave dhe KPI-të e qirasë të panelit i lexojnë këto të njëjta rreshta."
         ]
       },

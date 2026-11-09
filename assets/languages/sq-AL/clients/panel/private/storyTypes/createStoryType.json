@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
-  "title": "Krijo lloj historie",
+  "title": "Krijo lloj tregimi",
   "description": "Krijoni një lloj të ri tregimi",
   "generalInfo": "Informacion i përgjithshëm",
   "form": {
@@ -30,8 +30,8 @@
     }
   },
   "formHeader": {
-    "title": "Krijo lloj historie",
-    "description": "Plotëso të dhënat për të krijuar Llojet e historive."
+    "title": "Krijo lloj tregimi",
+    "description": "Plotësoni të dhënat për të krijuar një lloj tregimi."
   },
   "formButtons": {
     "cancel": "Anulo",

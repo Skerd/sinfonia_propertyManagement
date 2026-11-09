@@ -35,10 +35,10 @@
     "submit": "Save Changes"
   },
   "formHeader": {
-    "description": "Update the details for this Story types.",
-    "title": "Edit Story types"
+    "description": "Update the details for this story type.",
+    "title": "Edit story type"
   },
   "generalInfo": "General Information",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
-  "title": "Edit Story types"
+  "title": "Edit story type"
 }

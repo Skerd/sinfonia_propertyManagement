@@ -130,15 +130,17 @@
       {
         "title": "Was eine Einheit speichert",
         "items": [
-          "Stockwerk (Pflicht) — impliziert Gebäude und Projekt. Einheitentyp (Pflicht) aus Konfiguration.",
-          "Einheitennummer und Name (Pflicht).",
-          "Fläche, Anteil Fläche, Nettofläche (Pflicht); optionale Verandafläche.",
-          "Preis und Währung (Pflicht). Zimmer und Bäder (Pflicht).",
-          "Beschreibung, Hauptbild, Galerien, Videos, Dateien, Broschüre.",
-          "Flags: Balkon, Terrasse, Meer-/Stadt-/Seeblick, Lift.",
-          "Ausrichtung und Baustatus (geplant, im Bau, bereit, übergeben).",
-          "Optionale Provisions-% — überschreiben die Projektvorgaben.",
-          "Verbundene Einheiten, Hervorhebung auf der Startseite, optionales Polygon auf dem Plan."
+          "Stockwerk (Pflicht) — daraus ergeben sich Gebäude und Projekt. Einheitentyp (Pflicht) aus Konfiguration → Einheitentypen.",
+          "Einheitennummer und Name (Pflicht) — so erkennen Agenten und Kunden die Einheit.",
+          "Fläche, Anteil Gemeinschaftsfläche, Nettofläche (Pflicht); optionale Verandafläche.",
+          "Preis und Preiswährung (Pflicht). Anzahl Zimmer und Bäder (Pflicht).",
+          "Beschreibung, Hauptbild, Galerien, Videos, weitere Dateien, Marketingbroschüre.",
+          "Aussen- und Ausstattungsmerkmale: Balkon, Terrasse, Meer-/Stadt-/Seeblick, Lift.",
+          "Ausrichtung (N, S, O, W und Zwischenrichtungen) und Baustatus (geplant, im Bau, bereit, übergeben).",
+          "Optionale Verkaufs- und Reservationsprovision in % — überschreibt die Projektvorgaben für diese Einheit.",
+          "Verbundene Einheiten — wenn zwei Einheiten zusammen verkauft oder gezeigt werden.",
+          "Auf der Startseite hervorgehoben + Sortierreihenfolge — Hervorhebung dieser Einheit auf der öffentlichen Website.",
+          "Optionales Polygon auf dem Grundriss."
         ]
       },
       {
@@ -155,11 +157,12 @@
       {
         "title": "Auf dieser Seite",
         "items": [
-          "Filtern nach Projekt, Gebäude, Stockwerk, Typ, Status, Käufer.",
-          "Einheit anlegen — Stockwerk, Typ, Nummer, Name, Flächen, Preis/Währung Pflicht.",
-          "Karte für Medien und Preise. Zeilenaktionen: Reservationen, Verkäufe, Abnahmen, Miete, Kosten — je nach Recht.",
-          "Marketingbroschüre (PDF) erzeugen, wenn die Aktion verfügbar ist.",
-          "Soft-Delete wiederherstellbar. Bestehende Deals werden nicht automatisch storniert."
+          "Filtern nach Projekt, Gebäude, Stockwerk, Einheitentyp, Status, Käufer und Ähnlichem.",
+          "Einheit anlegen — Stockwerk, Einheitentyp, Nummer, Name, Flächen, Preis und Währung sind Pflicht.",
+          "Karte öffnen für Medien, Preise und Merkmale. Über die Zeilenaktionen erreichen Sie Reservationen, Verkäufe, Abnahmen, Mietverträge und Kosten — je nach Berechtigung.",
+          "«Als nicht verfügbar markieren» (mit Notizen) nimmt eine verfügbare Einheit vom Markt; «Als verfügbar markieren» gibt sie wieder frei. Die Notizen erscheinen in der Detailansicht der Einheit.",
+          "Marketingbroschüre (PDF) aus der Einheit erzeugen, wenn diese Aktion verfügbar ist — sie übernimmt die Marketingfelder dieser Einheit.",
+          "Gelöschte Einheiten lassen sich wiederherstellen. Bestehende Geschäfte, die auf die Einheit verweisen, bleiben bestehen und werden nicht automatisch storniert."
         ]
       },
       {

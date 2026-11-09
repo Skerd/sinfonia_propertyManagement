@@ -67,7 +67,7 @@
   "sourceScope": "Portée",
   "sourceScopes": {
     "project": "Projet",
-    "edifice": "Édifice",
+    "edifice": "Bâtiment",
     "floor": "Étage",
     "unit": "Unité",
     "retained": "Conservé"

@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/client/dyeus/shared/dyeusFooter.tsx",
   "limitedAvailability": "Disponueshmëri e kufizuar",
   "limitedAvailabilityCount": "Disponueshmëri e kufizuar. {{sold}} nga {{total}} rezidenca të shitura",
-  "secureResidence": "Siguro rezidencën tënde",
+  "secureResidence": "Siguroni rezidencën tuaj",
   "explore": "Eksploro",
   "residences": "Rezidenca",
   "followUs": "Na ndiqni",
@@ -21,6 +21,6 @@
   "copyright": "© Të gjitha të drejtat e rezervuara Dyeus Residences",
   "backToTop": "Kthehu lart",
   "contactEyebrow": "Kontakt",
-  "contactTitle": "Fillo bisedën",
+  "contactTitle": "Filloni bisedën",
   "close": "Mbyll"
 }

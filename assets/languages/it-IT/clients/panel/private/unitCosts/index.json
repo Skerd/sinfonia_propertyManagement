@@ -12,7 +12,7 @@
   },
   "expenses": {
     "summaryTotal": "Totale spese (filtrate)",
-    "summarySuppliers": "Fornitori unici",
+    "summarySuppliers": "Fornitori distinti",
     "summaryPeriod": "Periodo",
     "placeholder": "—",
     "periodRange": "— → —"
@@ -63,7 +63,7 @@
       "unpaid": "Non pagato",
       "partially_paid": "Parzialmente pagato",
       "paid": "Pagato",
-      "waived": "Annullato",
+      "waived": "Condonato",
       "disputed": "Contestato"
     }
   },
@@ -153,7 +153,7 @@
         "unpaid": "Non pagato",
         "partially_paid": "Parzialmente pagato",
         "paid": "Pagato",
-        "waived": "Annullato",
+        "waived": "Condonato",
         "disputed": "Contestato"
       }
     }
@@ -161,7 +161,7 @@
   "help": {
     "ariaLabel": "Informazioni sui costi unità",
     "title": "Informazioni sui costi unità",
-    "overview": "I costi unità sono acquisti e fatture lato proprietario imputati a un'unità (e quindi al suo progetto/edificio). La pagina ha una tabella spese e un calendario pagamenti. Non è il canone del conduttore (Pagamenti affitto) né le fatture appaltatori del modulo cantiere.",
+    "overview": "I costi unità sono acquisti e fatture lato proprietario imputati a un'unità (e quindi al suo progetto/edificio). La pagina ha una tabella spese e un calendario pagamenti. Non è il canone dell'inquilino (Pagamenti affitto) né le fatture delle imprese del modulo cantiere.",
     "sections": [
       {
         "title": "Schede",
@@ -174,16 +174,16 @@
         "title": "In questa pagina",
         "items": [
           "Aggiungere una spesa su un'unità. Filtrare per unità, progetto, fornitore, stato.",
-          "Aperta da un'unità, l'elenco è già limitato.",
+          "Aperto da un'unità, l'elenco è già limitato.",
           "Usate il calendario per vedere quando scadono le fatture lato proprietario."
         ]
       },
       {
         "title": "Comportamento",
         "items": [
-          "Il calcolatore ROI legge questi costi contro il ricavo di vendita o locazione dell'unità selezionata.",
+          "Il calcolatore ROI confronta questi costi con il ricavo di vendita o locazione dell'unità selezionata.",
           "L'export ERP può includere il dataset costi unità per la contabilità.",
-          "Incassare il canone di un conduttore è Pagamenti affitto / Contratti di locazione, non questo elenco."
+          "Incassare il canone di un inquilino è Pagamenti affitto / Contratti di locazione, non questo elenco."
         ]
       },
       {

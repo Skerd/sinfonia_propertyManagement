@@ -35,10 +35,10 @@
     "submit": "Salva modifiche"
   },
   "formHeader": {
-    "description": "Aggiorna i dati di questo Tipi di storia.",
-    "title": "Modifica Tipi di storia"
+    "description": "Aggiorna i dati di questo tipo di storia.",
+    "title": "Modifica tipo di storia"
   },
   "generalInfo": "Informazioni generali",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
-  "title": "Modifica Tipi di storia"
+  "title": "Modifica tipo di storia"
 }

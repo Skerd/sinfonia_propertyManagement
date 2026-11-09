@@ -28,7 +28,7 @@
   },
   "formHeader": {
     "title": "Edit Sales & handover",
-    "description": "Update the details for this Sales & handover."
+    "description": "Update the sales and handover settings."
   },
   "help": {
     "ariaLabel": "About Sales & handover",

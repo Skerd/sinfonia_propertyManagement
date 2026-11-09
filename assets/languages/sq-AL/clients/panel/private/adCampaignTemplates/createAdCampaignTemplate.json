@@ -22,11 +22,11 @@
             "it-IT": "Italisht (IT)",
             "sq-AL": "Shqip (AL)"
         },
-        "subjectLabel": "Subjekti",
-        "subjectPlaceholder": "Subjekti",
+        "subjectLabel": "Tema",
+        "subjectPlaceholder": "Tema",
         "previewTextLabel": "Teksti i pamjes paraprake",
         "previewTextPlaceholder": "Teksti i pamjes paraprake",
-        "bodyHtmlLabel": "Trupi i e-mail-it"
+        "bodyHtmlLabel": "Trupi i emailit"
     },
     "axios": {
         "start": {
@@ -44,7 +44,7 @@
     },
     "formHeader": {
         "title": "Model i ri",
-        "description": "Shkruani e-mail-in një herë; fushatat e këtij lloji dhe kësaj gjuhe e ripërdorin."
+        "description": "Shkruani emailin një herë; fushatat e këtij lloji dhe kësaj gjuhe e ripërdorin."
     },
     "formButtons": {
         "cancel": "Anulo",

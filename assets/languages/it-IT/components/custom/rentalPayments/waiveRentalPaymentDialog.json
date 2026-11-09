@@ -1,14 +1,14 @@
 {
   "path": "src/modules/propertyManagement/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx",
   "dialogTitle": "Condona il residuo",
-  "dialogDescription": "Condonà il saldo residuo di questo mese. Gli incassi già registrati restano.",
+  "dialogDescription": "Condona il saldo residuo di questo mese. Gli incassi già registrati restano.",
   "notes": "Note",
   "notesPlaceholder": "Opzionale",
   "cancel": "Annulla",
   "submit": "Condona residuo",
   "axios": {
     "start": {
-      "title": "Condonando il residuo…",
+      "title": "Condono del residuo…",
       "time": 3000
     },
     "success": {

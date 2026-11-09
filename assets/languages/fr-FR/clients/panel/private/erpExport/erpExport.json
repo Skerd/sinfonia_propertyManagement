@@ -44,7 +44,7 @@
   "help": {
     "ariaLabel": "À propos de l'export ERP",
     "title": "À propos de l'export ERP",
-    "overview": "L'export ERP construit des jeux téléchargeables pour les systèmes comptables. Choisissez un ou plusieurs jeux, un projet optionnel et une plage de dates. Cette page ne poste pas vers SAP ni Abacus — elle produit du JSON (aperçu) ou du CSV (téléchargement) que ces systèmes peuvent ingérer.",
+    "overview": "L'export ERP construit des jeux téléchargeables pour les systèmes comptables. Choisissez un ou plusieurs jeux, un projet optionnel et une plage de dates. Cette page n'envoie rien vers SAP ni Abacus — elle produit du JSON (aperçu) ou du CSV (téléchargement) que ces systèmes peuvent ingérer.",
     "sections": [
       {
         "title": "Jeux que vous pouvez inclure",

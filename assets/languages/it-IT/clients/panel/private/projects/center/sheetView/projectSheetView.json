@@ -17,7 +17,7 @@
     "units": "Unità",
     "unitsTooltip": "Totale unità",
     "area": "Superficie dell'edificio",
-    "areaTooltip": "Somma delle impronte degli edifici (superficie totale), non delle superfici delle unità",
+    "areaTooltip": "Somma dell'ingombro a terra degli edifici (superficie totale), non delle superfici delle unità",
     "investment": "Investito",
     "investmentTooltip": "Valore totale dell'investimento",
     "availableUnits": "Unità disponibili",

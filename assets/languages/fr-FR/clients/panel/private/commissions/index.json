@@ -80,7 +80,7 @@
   "help": {
     "ariaLabel": "À propos des commissions",
     "title": "À propos des commissions",
-    "overview": "Une commission est la ligne de versement agent née d'une réservation ou d'une vente. C'est le journal, pas le rapport agents (vue de performance sur une période). Le statut avance en attente → en attente d'approbation → approuvée → payée, ou annulée lorsque le deal source est annulé ou qu'un paiement est reversé.",
+    "overview": "Une commission est la ligne de versement agent née d'une réservation ou d'une vente. C'est le journal, pas le rapport agents (vue de performance sur une période). Le statut avance en attente → en attente d'approbation → approuvée → payée, ou annulée lorsque la transaction source est annulée ou qu'un paiement est contrepassé.",
     "sections": [
       {
         "title": "Ce qu'une commission contient",
@@ -96,7 +96,7 @@
         "items": [
           "Payer ou réactiver une réservation enregistre une commission de réservation.",
           "Une vente enregistre une commission de vente selon les taux de vente/réservation (projet ou surcharge d'unité).",
-          "N'inventez pas une commission sans deal source — elle ne resterait pas cohérente avec le tableau de bord ni le rapport agents."
+          "N'inventez pas une commission sans transaction source — elle ne resterait pas cohérente avec le tableau de bord ni le rapport agents."
         ]
       },
       {
@@ -104,7 +104,7 @@
         "items": [
           "Annuler une réservation ou revenir sur un acompte impayé annule la commission en attente — pas une déjà marquée payée.",
           "Revenir sur un paiement de réservation est bloqué si cette commission est déjà payée.",
-          "Payer une commission ici est l'étape de versement. Le rapport agents ne fait que lire les deals d'une plage de dates ; il ne marque pas payé."
+          "Payer une commission ici est l'étape de versement. Le rapport agents ne fait que lire les transactions d'une plage de dates ; il ne marque pas payé."
         ]
       },
       {

@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "Informazioni sui pacchetti di consegna",
     "title": "Informazioni sui pacchetti di consegna",
-    "overview": "Un pacchetto di consegna è una configurazione di checklist riutilizzabile per un ambito: progetto, edificio, piano o unità. Non è l’elenco da spuntare sulla vendita. Le vendite aperte assemblano la checklist effettiva concatenando le config antenate; spunte, date di completamento e chi ha completato ogni voce vivono sulla vendita.",
+    "overview": "Un pacchetto di consegna è una configurazione di checklist riutilizzabile per un ambito: progetto, edificio, piano o unità. Non è l’elenco da spuntare sulla vendita. Le vendite aperte assemblano la checklist effettiva concatenando le configurazioni dei livelli superiori; spunte, date di completamento e chi ha completato ogni voce vivono sulla vendita.",
     "sections": [
       {
         "title": "Cosa contiene un pacchetto",
@@ -21,7 +21,7 @@
         "items": [
           "Al massimo un pacchetto per un dato progetto, uno per edificio, uno per piano e uno per unità.",
           "Un secondo pacchetto nello stesso ambito viene rifiutato.",
-          "In creazione, gli antenati mancanti si compilano dalla foglia (un pacchetto unità memorizza anche piano, edificio e progetto).",
+          "In creazione, i livelli superiori mancanti si compilano a partire dal livello scelto (un pacchetto unità memorizza anche piano, edificio e progetto).",
           "Progetto, edificio, piano e unità non si possono cambiare dopo la creazione. Modifica invece voci, titolo, note e media."
         ]
       },
@@ -39,7 +39,7 @@
           "Crea un pacchetto — scegli l’ambito lasciando vuoti i livelli inferiori (solo progetto) oppure compilando edificio, piano o unità.",
           "Cerca e filtra; apri una scheda per ispezionare voci e allegati.",
           "Modifica voci, titolo, note e media. I campi ambito sono in sola lettura.",
-          "L’eliminazione è un soft delete, ripristinabile. Rimuovere un pacchetto aggiorna le vendite aperte: le voci incomplete cadono; quelle completate restano sulla vendita come trattenute."
+          "L’eliminazione è logica e ripristinabile. Rimuovere un pacchetto aggiorna le vendite aperte: le voci incomplete vengono rimosse; quelle completate restano sulla vendita come trattenute."
         ]
       },
       {
@@ -64,7 +64,7 @@
         "title": "Record correlati",
         "items": [
           "Vendite — l’elenco da spuntare, Aggiorna consegna e trasferimento del titolo.",
-          "Vendite e consegna (Tenancy → Configurazioni → Real Estate) — l’interruttore aziendale che vincola il trasferimento del titolo.",
+          "Vendite e consegna (Gestione mandanti → Configurazioni → Immobiliare) — l’interruttore aziendale che vincola il trasferimento del titolo.",
           "Unità, piani, edifici e progetti — gli ambiti a cui colleghi i pacchetti."
         ]
       },
@@ -79,8 +79,8 @@
     ]
   },
   "createHandoverPackage": "Aggiungi pacchetto",
-  "noData": "Nessun record trovato",
-  "failTitle": "Caricamento non riuscito",
+  "noData": "Nessun pacchetto di consegna trovato",
+  "failTitle": "Impossibile caricare i pacchetti di consegna",
   "failDescription": "Si è verificato un errore. Riprova.",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {

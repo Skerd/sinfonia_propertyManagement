@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/editHandoverPackage.tsx",
-  "title": "Modifier dossier de réception",
+  "title": "Modifier le dossier de remise",
   "generalInfo": "Détails",
   "form": {
     "projectLabel": "Projet",
@@ -53,13 +53,13 @@
     }
   },
   "formHeader": {
-    "title": "Modifier dossier de réception",
-    "description": "Mettez à jour les informations de ce dossier de réception."
+    "title": "Modifier le dossier de remise",
+    "description": "Mettez à jour les informations de ce dossier de remise."
   },
   "help": {
-    "ariaLabel": "À propos de la modification d’un dossier de réception",
-    "title": "À propos de la modification d’un dossier de réception",
-    "overview": "Vous modifiez une configuration de checklist. Projet, édifice, étage et unité sont verrouillés. Changer les points met à jour les ventes ouvertes ; les ventes qui ont déjà une date de transfert de titre restent gelées.",
+    "ariaLabel": "À propos de la modification d’un dossier de remise",
+    "title": "À propos de la modification d’un dossier de remise",
+    "overview": "Vous modifiez une configuration de checklist. Projet, bâtiment, étage et unité sont verrouillés. Changer les points met à jour les ventes ouvertes ; les ventes qui ont déjà une date de transfert de titre restent gelées.",
     "sections": [
       {
         "title": "Ce que vous pouvez changer",
@@ -87,7 +87,7 @@
       {
         "title": "Où cocher",
         "items": [
-          "Ventes → Mettre à jour la réception. Cette page n’enregistre pas l’achèvement."
+          "Ventes → Mettre à jour la remise. Cette page n’enregistre pas l’achèvement."
         ]
       }
     ]

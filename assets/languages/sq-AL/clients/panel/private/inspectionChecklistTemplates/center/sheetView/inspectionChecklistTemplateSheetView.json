@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
-  "inspectionChecklistTemplate": "Modeli i listës së inspektimit",
+  "inspectionChecklistTemplate": "Modeli i listës së kontrollit të inspektimit",
   "overview": "Përmbledhje",
   "media": "Bashkëngjitje",
   "name": "Referenca",
   "title": "Titulli",
   "status": "Statusi",
-  "trade": "Zanati",
+  "trade": "Zeja",
   "stage": "Faza",
   "description": "Përshkrimi",
   "checklist": "Lista e kontrollit",
@@ -33,7 +33,7 @@
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
   "deletedBy": "Fshirë nga",
-  "failedTitle": "Dështoi ngarkimi i listë kontrolli inspektimi",
+  "failedTitle": "Dështoi ngarkimi i listës së kontrollit të inspektimit",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

@@ -6,7 +6,7 @@
   "submit": "Segna deposito pagato",
   "axios": {
     "start": {
-      "title": "Segnatura deposito come pagato",
+      "title": "Registrazione del deposito come pagato",
       "time": 3000
     },
     "success": {

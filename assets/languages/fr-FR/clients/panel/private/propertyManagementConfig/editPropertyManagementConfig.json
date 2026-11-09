@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Modifier Ventes & réception",
+  "title": "Modifier Ventes & remise",
   "notifications": "Notifications",
   "generalInfo": "Contrôles du flux de travail",
   "form": {
@@ -27,12 +27,12 @@
     }
   },
   "formHeader": {
-    "title": "Modifier Ventes & réception",
-    "description": "Mettez à jour les informations de ce Ventes & réception."
+    "title": "Modifier Ventes & remise",
+    "description": "Mettez à jour ces paramètres Ventes & remise."
   },
   "help": {
-    "ariaLabel": "À propos de Ventes & réception",
-    "title": "À propos de Ventes & réception",
+    "ariaLabel": "À propos de Ventes & remise",
+    "title": "À propos de Ventes & remise",
     "overview": "Ce sont des interrupteurs à l’échelle de la société : comment les nouvelles ventes sont approuvées et quand une date de remise peut être enregistrée. Il y a un enregistrement de paramètres par société — pas une liste de ventes. Enregistrer ici ne crée ni vente ni dossier de remise.",
     "sections": [
       {
@@ -64,7 +64,7 @@
         "items": [
           "Sans approbation, créer une vente notifie comme créée — pas de file d’attente.",
           "Avec approbation, le vendeur est informé que l’approbation est en attente ; les responsables tranchent sur la page Ventes.",
-          "Les dossiers de remise se construisent dans le flux unité / ventes. Cette page ne contrôle que le tampon de la date de remise.",
+          "Les dossiers de remise se construisent dans le flux unité / ventes. Cette page ne contrôle que l'enregistrement de la date de remise.",
           "Changer ces options n’annule pas les ventes déjà en attente."
         ]
       },

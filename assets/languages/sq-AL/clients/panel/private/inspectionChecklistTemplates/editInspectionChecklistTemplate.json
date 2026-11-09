@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
-  "title": "Ndrysho listë kontrolli inspektimi",
+  "title": "Ndrysho listën e kontrollit të inspektimit",
   "generalInfo": "Detajet",
   "form": {
     "titleLabel": "Titulli",
     "titlePlaceholder": "Titulli",
-    "tradeLabel": "Zanati",
-    "tradePlaceholder": "Zanati",
+    "tradeLabel": "Zeja",
+    "tradePlaceholder": "Zeja",
     "stageLabel": "Faza",
     "stagePlaceholder": "Faza",
     "descriptionLabel": "Përshkrimi",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho listë kontrolli inspektimi",
-    "description": "Përditëso të dhënat e këtij listë kontrolli inspektimi."
+    "title": "Ndrysho listën e kontrollit të inspektimit",
+    "description": "Përditësoni të dhënat e kësaj liste kontrolli inspektimi."
   },
   "formButtons": {
     "cancel": "Anulo",

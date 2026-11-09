@@ -45,7 +45,7 @@
   "form": {
     "downPaymentPaidLabel": "Down payment paid",
     "downPaymentPaidPlaceholder": "Toggle if down payment is paid or not",
-    "downPaymentDateLabel": "Down payment payed at",
+    "downPaymentDateLabel": "Down payment paid on",
     "downPaymentDatePlaceholder": "Down payment payment date",
     "discountApplied": "Discount applied",
     "purchaseContractRequired": "Purchase contract is required",

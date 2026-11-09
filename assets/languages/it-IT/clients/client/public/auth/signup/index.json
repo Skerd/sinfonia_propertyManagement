@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/signup/index.tsx",
   "title": "Registrati",
-  "subtitle": "Crea il tuo account cliente Pronix.",
+  "subtitle": "Crea il tuo account cliente Pronix per seguire prenotazioni e portafoglio.",
   "form": {
     "nameLabel": "Nome",
     "namePlaceholder": "Nome",

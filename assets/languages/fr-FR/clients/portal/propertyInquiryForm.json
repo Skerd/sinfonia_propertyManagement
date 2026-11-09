@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
   "titleProject": "Se renseigner sur ce programme",
-  "titleUnit": "Se renseigner sur ce lot",
+  "titleUnit": "Se renseigner sur cette unité",
   "subtitle": "Le promoteur vous répond directement.",
   "fields": {
     "name": "Prénom",

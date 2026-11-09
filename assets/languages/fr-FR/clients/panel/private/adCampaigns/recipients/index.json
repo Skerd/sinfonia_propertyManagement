@@ -1,7 +1,7 @@
 {
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/index.tsx",
     "title": "Destinataires de la campagne",
-    "description": "Résultats de livraison par destinataire pour cette campagne",
+    "description": "Résultats d'envoi par destinataire pour cette campagne",
     "noData": "Aucun destinataire trouvé",
     "failTitle": "Échec du chargement des destinataires",
     "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",

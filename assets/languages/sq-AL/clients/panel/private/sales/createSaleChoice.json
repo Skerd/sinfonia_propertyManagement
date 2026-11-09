@@ -4,8 +4,8 @@
   "description": "Zgjidhni se si dëshironi të krijoni shitjen.",
   "cashSale": "Shitje me para në dorë",
   "cashSaleDescription": "Pagesë e plotë një herë me kontratë dhe dokumente.",
-  "paymentPlanSale": "Shitja e planit të pagesës",
-  "paymentPlanSaleDescription": "Shitet me paradhënie dhe këste.",
-  "createCashSale": "Krijoni shitje në para",
-  "createPaymentPlanSale": "Krijo shitje të planit të pagesës"
+  "paymentPlanSale": "Shitje me plan pagese",
+  "paymentPlanSaleDescription": "Shitje me parapagim dhe këste.",
+  "createCashSale": "Krijo shitje me para në dorë",
+  "createPaymentPlanSale": "Krijo shitje me plan pagese"
 }

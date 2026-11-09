@@ -56,9 +56,9 @@
       "show": "Afficher le prix"
     },
     "pricePerMeterSquaredLabel": "Prix par m²",
-    "pricePerMeterSquaredPlaceholder": "Vide = tarif de l'édifice",
+    "pricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment",
     "verandaPricePerMeterSquaredLabel": "Prix par m² de véranda",
-    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif de l'édifice"
+    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment"
   },
   "axios": {
     "start": {

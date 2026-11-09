@@ -2,7 +2,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Il progetto non può essere creato, riprova!"
+      "title": "Impossibile creare il progetto, riprova!"
     },
     "start": {
       "time": 3000,

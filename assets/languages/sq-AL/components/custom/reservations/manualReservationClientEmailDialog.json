@@ -3,7 +3,7 @@
   "cancel": "Anulo",
   "confirmSend": "Dërgo email",
   "confirmTitles": {
-    "send_confirmation": "Të ridërgohet email i konfirmimit?",
+    "send_confirmation": "Të ridërgohet emaili i konfirmimit?",
     "remind_3d": "Të dërgohet rikujtesa “3 ditë përpara”?",
     "remind_1d": "Të dërgohet rikujtesa “1 ditë përpara”?",
     "remind_today": "Të dërgohet rikujtesa e ditës së skadimit?",
@@ -12,9 +12,9 @@
   },
   "confirmDescriptions": {
     "send_confirmation": "Dërgon të njëjtin mesazh konfirmimi si në krijim (te emaili i klientit).",
-    "remind_3d": "Përdor shabllonin standard “3 ditë para përfundimit”.",
-    "remind_1d": "Përdor shabllonin standard “1 ditë para përfundimit”.",
-    "remind_today": "Përdor shabllonin standard “përfundon sot”.",
+    "remind_3d": "Dërgon modelin standard të rikujtesës “3 ditë para përfundimit”.",
+    "remind_1d": "Dërgon modelin standard të rikujtesës “1 ditë para përfundimit”.",
+    "remind_today": "Dërgon modelin standard të rikujtesës “përfundon sot”.",
     "remind_remaining_days": "Dërgon email me ditët e mbetura kalendarike (UTC) deri në datën e përfundimit.",
     "send_expired": "Dërgon njoftimin që periudha e rezervimit ka përfunduar (pas datës së skadimit në UTC)."
   },

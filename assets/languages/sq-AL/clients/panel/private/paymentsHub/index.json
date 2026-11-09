@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
   "title": "Pagesat",
-  "description": "Të gjitha këstet dhe parapagesat e planeve të pagesës, sipas datave, për të gjitha projektet.",
+  "description": "Të gjitha këstet dhe parapagimet e planeve të pagesës, sipas datave, për të gjitha projektet.",
   "tabs": {
     "list": "Lista",
     "calendar": "Kalendari"
@@ -20,8 +20,8 @@
   },
   "kpis": {
     "overdue": "Të vonuara",
-    "dueNext7Days": "Për 7 ditët në vijim",
-    "dueNext30Days": "Për 30 ditët në vijim",
+    "dueNext7Days": "Me afat brenda 7 ditëve",
+    "dueNext30Days": "Me afat brenda 30 ditëve",
     "collectedThisMonth": "Arkëtuar këtë muaj"
   },
   "filters": {
@@ -30,8 +30,8 @@
     "clearFilters": "Pastro filtrat",
     "projectLabel": "Projekti",
     "projectPlaceholder": "Të gjitha projektet",
-    "edificeLabel": "Ndertësa",
-    "edificePlaceholder": "Të gjitha ndertësat",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Të gjitha ndërtesat",
     "floorLabel": "Kati",
     "floorPlaceholder": "Të gjitha katet",
     "unitLabel": "Njësia",
@@ -41,8 +41,8 @@
     "kindLabel": "Lloji",
     "kindPlaceholder": "Të gjitha llojet",
     "dateFieldLabel": "Data",
-    "dateFieldDue": "Data e pagesës",
-    "dateFieldPaid": "Data e kryerjes",
+    "dateFieldDue": "Data e afatit",
+    "dateFieldPaid": "Data e pagesës",
     "dateRangeLabel": "Periudha",
     "dateFromLabel": "Nga",
     "dateToLabel": "Deri",
@@ -139,7 +139,7 @@
       {
         "title": "Kur të përdoret shitja",
         "items": [
-          "Përmbledhje → Shitje me plan pagese ruan planin e plotë: grafikun, ristrukturimin, faturat dhe emailet."
+          "Përmbledhje → Shitje me plan pagese ruan planin e plotë: grafikun, ristrukturimin, dëftesat dhe emailet."
         ]
       }
     ]

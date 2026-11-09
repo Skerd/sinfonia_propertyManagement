@@ -95,7 +95,7 @@
           "Address: street, postal code, country, city, optional state, and map coordinates (latitude / longitude). This is the location the public site and emails use.",
           "Investment value and investment currency — what was put into the building; Overview / Dashboard / ROI read this, they do not reprice units from it.",
           "Optional sale currency, price per m², and veranda price per m² — guidance for pricing, not an automatic update of every unit price.",
-          "Building facts: total area, green area, floors above/under ground, parking, garages, distance from city centre.",
+          "Building facts: total area, green area, floors above/under ground, parking, garages, distance from city center.",
           "Energy class, building permit number, construction start / expected / actual completion dates.",
           "Constructors attached to the building, commercial facilities, neighborhood facilities, property types.",
           "Rollups you do not type: total floors, total units, available units, total unit area — computed from children."

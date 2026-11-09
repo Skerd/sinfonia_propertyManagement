@@ -166,14 +166,14 @@
   "help": {
     "ariaLabel": "Informazioni sulle richieste di modifica",
     "title": "Informazioni sulle richieste di modifica",
-    "overview": "Una richiesta di modifica è un cambiamento chiesto dal cliente su un'unità (layout, finiture, extra) che deve superare una catena di approvazione a stadi. Non è uno snag (difetto) né un ordine di variante su un contratto di costruzione, anche se un VO successivo può esistere nel modulo cantiere. Lo stato è il workflow; non si saltano gli stadi modificando lo stato come testo libero.",
+    "overview": "Una richiesta di modifica è un cambiamento chiesto dal cliente su un'unità (layout, finiture, extra) che deve superare una catena di approvazione a fasi. Non è un difetto né un ordine di variante su un contratto di costruzione, anche se in seguito può esistere un ordine di variante nel modulo cantiere. Lo stato rappresenta il flusso di lavoro; non si saltano le fasi modificando lo stato come testo libero.",
     "sections": [
       {
         "title": "Cosa contiene",
         "items": [
           "Unità, descrizione del cambiamento, media e lo stato attuale del workflow.",
-          "Approvazioni a stadi: architetto, ingegnere, CEO — ciascuna con decisione, note, revisore, timestamp, media opzionali.",
-          "Piano materiali (voci, quantità, prezzi) quando si costa il cambiamento.",
+          "Approvazioni a fasi: architetto, ingegnere, CEO — ciascuna con decisione, note, revisore, timestamp, media opzionali.",
+          "Piano materiali (voci, quantità, prezzi) quando si calcola il costo del cambiamento.",
           "Passi di approvazione finanziaria / costo cliente e conferma di consegna."
         ]
       },
@@ -181,13 +181,13 @@
         "title": "Workflow (azioni)",
         "items": [
           "Approvare dall'architetto — se sì, avanza verso l'ingegnere; se no, torna alla revisione architetto.",
-          "Approvare dall'ingegnere, poi dal CEO — ogni stadio verifica che abbiate il diritto di scrittura su quel blocco di approvazione.",
+          "Approvare dall'ingegnere, poi dal CEO — ogni fase verifica che abbiate il diritto di scrittura su quel blocco di approvazione.",
           "Inviare revisione — il cliente o l'agente manda una proposta aggiornata dopo un rifiuto.",
-          "Finanziare la richiesta — lato costo dopo le approvazioni tecniche.",
+          "Fase finanziaria — definizione dei costi dopo le approvazioni tecniche.",
           "Approvazione costo cliente — l'acquirente accetta il cambiamento prezzato.",
-          "Consegnare — marcare il cambiamento fisico come fatto."
+          "Consegnare — segnare il cambiamento fisico come eseguito."
         ],
-        "body": "Ogni azione è legale solo nello stato corrispondente. L'API rifiuta lo stadio sbagliato invece di saltare in silenzio."
+        "body": "Ogni azione è consentita solo nello stato corrispondente. L'API rifiuta la fase sbagliata invece di saltarla in silenzio."
       },
       {
         "title": "In questa pagina",
@@ -201,14 +201,14 @@
         "title": "Comportamento",
         "items": [
           "Non prenota né vende l'unità.",
-          "Non sostituisce gli Snag (difetti trovati in ispezione).",
+          "Non sostituisce i Difetti (difetti trovati in ispezione).",
           "Le notifiche possono partire alle persone della catena man mano che si registrano le decisioni."
         ]
       },
       {
         "title": "Record correlati",
         "items": [
-          "Unità. Ispezione opzionale che ha motivato il cambiamento. Artefatti cantiere successivi (pacchetto di lavoro / VO) se usati."
+          "Unità. Ispezione opzionale che ha motivato il cambiamento. Documenti di cantiere successivi (pacchetto di lavoro / ordine di variante) se usati."
         ]
       }
     ]

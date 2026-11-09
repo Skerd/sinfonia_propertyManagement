@@ -103,18 +103,18 @@
     "!enums": {
       "expenditureItems": {
       "category": {
-        "materials_general": "Materials General",
-        "finishes_flooring": "Finishes Flooring",
-        "finishes_paint_wallcovering": "Finishes Paint Wallcovering",
-        "plumbing_sanitary": "Plumbing Sanitary",
-        "electrical_lighting": "Electrical Lighting",
+        "materials_general": "General Materials",
+        "finishes_flooring": "Flooring",
+        "finishes_paint_wallcovering": "Paint / Wall Covering",
+        "plumbing_sanitary": "Plumbing / Sanitary",
+        "electrical_lighting": "Electrical / Lighting",
         "hvac": "HVAC",
-        "fixtures_hardware": "Fixtures Hardware",
+        "fixtures_hardware": "Fixtures / Hardware",
         "appliances": "Appliances",
-        "windows_doors": "Windows Doors",
-        "structural_masonry": "Structural Masonry",
+        "windows_doors": "Windows / Doors",
+        "structural_masonry": "Structural / Masonry",
         "professional_services": "Professional Services",
-        "permits_fees_taxes": "Permits Fees Taxes"
+        "permits_fees_taxes": "Permits, Fees, Taxes"
       },
       "unit": {
         "piece": "ea",

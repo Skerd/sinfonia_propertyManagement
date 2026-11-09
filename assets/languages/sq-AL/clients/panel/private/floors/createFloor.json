@@ -1,17 +1,17 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
   "publicVisibility": "Faqja publike",
-  "title": "Krijo dysheme",
+  "title": "Krijo kat",
   "description": "Krijo një kat të ri për këtë ndërtesë",
-  "descriptionWithoutEdifice": "Krijo një dysheme të re",
-  "generalInfo": "Informacione të Përgjithshme",
+  "descriptionWithoutEdifice": "Krijo një kat të ri",
+  "generalInfo": "Informacione të përgjithshme",
   "features": "Veçoritë",
   "sharedSpaces": "Hapësirat e përbashkëta",
   "floorLocation": "Vendndodhja e katit në imazhin e projektit",
   "uploadError": "Ngarkimi i skedarëve të medias dështoi",
   "errorTitle": "Gabim",
   "errorLoadingEdifice": "Gabim gjatë ngarkimit të të dhënave të ndërtesës",
-  "selectFloorLocation": "Klikoni në imazhin e projektit për të zgjedhur vendndodhjen e dyshemesë. Klikoni pranë pikës së parë për të mbyllur poligonin.",
+  "selectFloorLocation": "Klikoni në imazhin e projektit për të zgjedhur vendndodhjen e katit. Klikoni pranë pikës së parë për të mbyllur poligonin.",
   "edificeNoMainImage": "Ndërtesa nuk ka një imazh kryesor. Ju lutemi, së pari shtoni një imazh kryesor në ndërtesë.",
   "projectNoMainImage": "Projekti nuk ka imazh kryesor. Ju lutemi shtoni fillimisht një imazh kryesor në projekt.",
   "errorLoadingProject": "Gabim gjatë ngarkimit të të dhënave të projektit",
@@ -23,30 +23,30 @@
     "namePlaceholder": "Fut emrin e katit",
     "nameRequired": "Kërkohet emri i katit",
     "levelNumberLabel": "Numri i nivelit",
-    "levelNumberPlaceholder": "Fut numrin e nivelit (0 = tokë, 1 = e para, -1 = bodrum)",
+    "levelNumberPlaceholder": "Fut numrin e nivelit (0 = përdhe, 1 = i pari, -1 = bodrum)",
     "areaLabel": "Sipërfaqja (m²)",
-    "areaPlaceholder": "Futni sipërfaqen e dyshemesë",
+    "areaPlaceholder": "Futni sipërfaqen e katit",
     "descriptionLabel": "Përshkrimi",
     "descriptionPlaceholder": "Fut përshkrimin e katit",
-    "isAccessibleLabel": "E aksesueshme",
+    "isAccessibleLabel": "I aksesueshëm",
     "isAccessibleDescription": "Ky kat është i aksesueshëm për personat me aftësi të kufizuara",
     "hasEmergencyExitLabel": "Dalje emergjente",
     "hasEmergencyExitDescription": "Ky kat ka dalje emergjence",
     "sharedSpacesLabel": "Hapësirat e përbashkëta",
-    "sharedSpacesPlaceholder": "Shto hapësirë ​​të përbashkët",
+    "sharedSpacesPlaceholder": "Shto hapësirë të përbashkët",
     "mainImageLabel": "Imazhi kryesor",
     "mainImageRequired": "Kërkohet imazhi kryesor",
-    "imageGalleryLabel": "Galeria e Imazheve",
-    "videoGalleryLabel": "Video Galeria",
-    "mediaFilesLabel": "Dokumente & Skedarë",
-    "marketingBookletLabel": "Broshurë Marketingu",
+    "imageGalleryLabel": "Galeria e imazheve",
+    "videoGalleryLabel": "Galeria e videove",
+    "mediaFilesLabel": "Dokumente & skedarë",
+    "marketingBookletLabel": "Broshurë marketingu",
     "uploadNewImageHint": "Klikoni për të ngarkuar imazhin",
     "polygonMustBeClosed": "Ju lutemi mbyllni poligonin duke klikuar pikën e parë përpara se ta dërgoni.",
     "edificeLabel": "Ndërtesa",
     "edificePlaceholder": "Zgjidhni ndërtesën",
     "projectLabel": "Projekti",
     "projectPlaceholder": "Zgjidhni projektin",
-    "edificeRequired": "Kërkohet ndërtim",
+    "edificeRequired": "Kërkohet ndërtesa",
     "priceVisibilityLabel": "Dukshmëria e çmimit",
     "priceVisibilityPlaceholder": "Zgjidh dukshmërinë",
     "priceVisibilityOptions": {
@@ -61,7 +61,7 @@
   },
   "axios": {
     "start": {
-      "title": "Krijimi i dyshemesë",
+      "title": "Krijimi i katit",
       "time": 3000
     },
     "success": {
@@ -74,12 +74,12 @@
     }
   },
   "formHeader": {
-    "title": "Krijo dysheme",
+    "title": "Krijo kat",
     "description": "Krijo një kat të ri"
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Krijo dysheme"
+    "submit": "Krijo kat"
   },
   "pricing": "Çmimet"
 }

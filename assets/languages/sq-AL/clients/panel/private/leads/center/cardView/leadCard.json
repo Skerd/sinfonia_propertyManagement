@@ -5,7 +5,7 @@
   "projectInterest": "Projekti",
   "unitInterest": "Njësia",
   "budget": "Buxheti",
-  "assignedTo": "Caktuar tek",
+  "assignedTo": "Caktuar te",
   "followUpDate": "Ndjekja",
   "statusLabel": "Statusi",
   "sourceLabel": "Burimi",
@@ -15,7 +15,7 @@
     "contacted": "Kontaktuar",
     "qualified": "I kualifikuar",
     "proposal": "Propozim",
-    "negotiation": "Negocim",
+    "negotiation": "Negociatë",
     "won": "Fituar",
     "lost": "Humbur"
   },

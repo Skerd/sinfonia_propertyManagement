@@ -1,14 +1,14 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/index.tsx",
-  "title": "Llojet e historive",
-  "description": "Menaxho llojet e historive të ditarit të projektit",
+  "title": "Llojet e tregimeve",
+  "description": "Menaxho llojet e tregimeve të ditarit të projektit",
   "help": {
-    "ariaLabel": "Rreth llojeve të historive",
-    "title": "Rreth llojeve të historive",
-    "overview": "Një lloj historie klasifikon tregimet e ditarit (lajm, moment, shtyp etj.). Çdo tregim kërkon një lloj. Nuk është kategori e përditësimeve të ndërtimit as lloj defekti.",
+    "ariaLabel": "Rreth llojeve të tregimeve",
+    "title": "Rreth llojeve të tregimeve",
+    "overview": "Një lloj tregimi klasifikon tregimet e ditarit (lajm, moment historik, shtyp etj.). Çdo tregim kërkon një lloj. Nuk është kategori e përditësimeve të ndërtimit as lloj defekti.",
     "sections": [
       {
-        "title": "Çfarë mban lloji i historisë",
+        "title": "Çfarë mban lloji i tregimit",
         "items": [
           "Emri (i detyrueshëm).",
           "Përshkrim opsional.",
@@ -19,14 +19,14 @@
       {
         "title": "Në këtë faqe",
         "items": [
-          "Krijoni, kërkoni dhe ndryshoni llojet e historive.",
+          "Krijoni, kërkoni dhe ndryshoni llojet e tregimeve.",
           "Fshirja është e butë, por bllokohet përderisa ndonjë tregim e përdor këtë lloj."
         ]
       },
       {
         "title": "Sjellja",
         "items": [
-          "Tregimet (ditari i marketingut) zgjedhin një lloj nga kjo listë. Përditësimet e ndërtimit kanë faqen e tyre dhe nuk përdorin lloje historish.",
+          "Tregimet (ditari i marketingut) zgjedhin një lloj nga kjo listë. Përditësimet e ndërtimit kanë faqen e tyre dhe nuk përdorin lloje tregimesh.",
           "Ndryshimi i renditjes ndryshon vetëm se si shfaqen llojet te zgjedhësit. Tregimet ekzistuese e mbajnë llojin."
         ]
       },
@@ -39,9 +39,9 @@
       }
     ]
   },
-  "createStoryType": "Krijo lloj historie",
-  "noData": "Nuk u gjetën lloje historish",
-  "failTitle": "Ngarkimi i llojeve të historive dështoi",
+  "createStoryType": "Krijo lloj tregimi",
+  "noData": "Nuk u gjetën lloje tregimesh",
+  "failTitle": "Ngarkimi i llojeve të tregimeve dështoi",
   "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
   "fields": {
     "company": "Kompania",

@@ -14,36 +14,36 @@
     }
   },
   "editDescription": "Përditëso detajet e pagesës së qirasë",
-  "editTitle": "Ndrysho Pagesën",
+  "editTitle": "Ndrysho pagesën e qirasë",
   "errorDescription": "Ndodhi një gabim gjatë ngarkimit të pagesës. Ju lutemi provoni sërish.",
   "errorTitle": "Dështoi ngarkimi i pagesës",
   "form": {
-    "_idLabel": "ID e rekordit",
+    "_idLabel": "ID e regjistrimit",
     "amountLabel": "Shuma",
     "currencyLabel": "Monedha",
-    "dueDateLabel": "Data e pagesës",
+    "dueDateLabel": "Afati",
     "addFile": "Shto skedar",
     "filesSelected": "skedarë të zgjedhur",
     "existingFiles": "Skedari aktual",
     "leaseLabel": "Kontrata",
-    "leasePlaceholder": "Zgjidhni qiranë",
+    "leasePlaceholder": "Zgjidhni kontratën",
     "newFiles": "Skedar i ri",
     "notesLabel": "Shënime",
-    "paidAmountLabel": "Shuma paguar",
+    "paidAmountLabel": "Shuma e paguar",
     "paidDateLabel": "Data e pagesës",
-    "receiptMediaLabel": "Faturë / Dëshmi pagese",
+    "receiptMediaLabel": "Dëftesa e pagesës",
     "statusLabel": "Statusi",
     "unitLabel": "Njësia"
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Ruaj Ndryshimet"
+    "submit": "Ruaj ndryshimet"
   },
   "formHeader": {
     "description": "Përditëso detajet e pagesës së qirasë",
-    "title": "Ndrysho Pagesën"
+    "title": "Ndrysho pagesën e qirasë"
   },
-  "generalInfo": "Detajet e Pagesës",
+  "generalInfo": "Detajet e pagesës",
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
-  "title": "Ndrysho Pagesën"
+  "title": "Ndrysho pagesën e qirasë"
 }

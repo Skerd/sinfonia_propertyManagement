@@ -8,7 +8,7 @@
     },
     "start": {
       "time": 3000,
-      "title": "Po përditëson konstruktorin"
+      "title": "Po përditësohet konstruktori"
     },
     "success": {
       "time": 3000,
@@ -25,7 +25,7 @@
     "cityPlaceholder": "Qyteti",
     "companyLabel": "Kompania",
     "companyPlaceholder": "Zgjidhni kompaninë",
-    "companyRequired": "Kërkohet kompani",
+    "companyRequired": "Kërkohet kompania",
     "countryLabel": "Vendi",
     "countryPlaceholder": "Vendi",
     "descriptionLabel": "Përshkrimi",
@@ -70,27 +70,27 @@
     "phoneNumberRequired": "Kërkohet numri i telefonit",
     "postalCodeLabel": "Kodi postar",
     "postalCodePlaceholder": "Kodi postar",
-    "stateLabel": "Shtetit",
-    "statePlaceholder": "Shtetit",
+    "stateLabel": "Rajoni",
+    "statePlaceholder": "Rajoni",
     "streetLabel": "Rruga",
     "streetPlaceholder": "Rruga",
     "uploadNewLogoHint": "Ngarko një logo të re për të zëvendësuar atë aktuale",
     "vatLabel": "TVSH",
     "vatPlaceholder": "Fut numrin e TVSH-së",
-    "vatRequired": "Kërkohet TVSH",
-    "websiteInvalid": "URL e pavlefshme uebsajti",
+    "vatRequired": "Kërkohet numri i TVSH-së",
+    "websiteInvalid": "URL e pavlefshme e faqes së internetit",
     "websiteLabel": "Faqja e internetit",
     "websitePlaceholder": "Fut URL-në e faqes në internet"
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Ruaj Ndryshimet"
+    "submit": "Ruaj ndryshimet"
   },
   "formHeader": {
     "description": "Redaktoni informacionin e konstruktorit",
     "title": "Ndrysho Konstruktor"
   },
-  "generalInfo": "Informacione të Përgjithshme",
+  "generalInfo": "Informacione të përgjithshme",
   "howToReach": "Si të arrini tek ne",
   "logo": "Logo",
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",

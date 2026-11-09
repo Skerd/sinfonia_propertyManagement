@@ -9,8 +9,8 @@
     "searchPlaceholder": "Rechercher par locataire, unité, référence de bail…",
     "projectLabel": "Projet",
     "projectPlaceholder": "Tous les projets",
-    "edificeLabel": "Édifice",
-    "edificePlaceholder": "Tous les édifices",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Tous les bâtiments",
     "floorLabel": "Étage",
     "floorPlaceholder": "Tous les étages",
     "unitLabel": "Unité",
@@ -54,8 +54,8 @@
     "searchPlaceholder": "Rechercher par locataire, bail, unité, statut…",
     "projectLabel": "Projet",
     "projectPlaceholder": "Tous les projets",
-    "edificeLabel": "Édifice",
-    "edificePlaceholder": "Tous les édifices",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Tous les bâtiments",
     "floorLabel": "Étage",
     "floorPlaceholder": "Tous les étages",
     "unitLabel": "Unité",
@@ -128,7 +128,7 @@
         "title": "Onglets",
         "items": [
           "Baux — référence, locataire, unité, dates, loyer mensuel, dû.",
-          "Paiements — échéance, montant, payé, reste, statut (en attente, payé, partiel, en retard, remis)."
+          "Paiements — échéance, montant, payé, reste, statut (en attente, payé, partiel, en retard, annulé)."
         ]
       },
       {

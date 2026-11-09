@@ -5,7 +5,7 @@
   "help": {
     "ariaLabel": "Informazioni sui costruttori",
     "title": "Informazioni sui costruttori",
-    "overview": "Un costruttore è un’azienda o un professionista che associate agli edifici e, opzionalmente, ai costi unità. Questa anagrafica è imprenditori, architetti, ingegneri e parti simili — non un account utente e non un edificio.",
+    "overview": "Un costruttore è un’azienda o un professionista che associate agli edifici e, opzionalmente, ai costi unità. Questa anagrafica comprende imprese, architetti, ingegneri e figure simili — non un account utente né un edificio.",
     "sections": [
       {
         "title": "Cosa contiene un costruttore",
@@ -13,8 +13,8 @@
           "Nome e IVA (obbligatori).",
           "Email, telefono, descrizione, sito e logo opzionali.",
           "Indirizzi opzionali (via, CAP, città e Paese obbligatori per ogni indirizzo; stato/cantone opzionale; coordinate obbligatorie quando aggiungete un indirizzo).",
-          "Tipo di parte: appaltatore, architetto, ingegnere, quantity surveyor (QS), project manager (PM), geometra o altro.",
-          "Mestieri (testo breve), scadenza assicurazione, punteggio di prestazione da 0 a 100."
+          "Tipo di parte: impresa, architetto, ingegnere, computista (QS), project manager (PM), geometra o altro.",
+          "Categorie di lavori (testo breve), scadenza assicurazione, punteggio di prestazione da 0 a 100."
         ]
       },
       {
@@ -29,7 +29,7 @@
         "title": "Come si comporta",
         "items": [
           "Creare un costruttore non lo assegna da nessuna parte. Lo scegliete dopo su un edificio (elenco opzionale) o su un costo unità.",
-          "Più costruttori possono stare su un edificio. Un costruttore su molti edifici.",
+          "Più costruttori possono stare su un edificio. Un costruttore può stare su molti edifici.",
           "I costi unità possono puntare opzionalmente a un costruttore come fornitore."
         ]
       },
@@ -73,13 +73,13 @@
     "performanceScore": "Punteggio prestazioni",
     "preferredLanguage": "Lingua preferita",
     "phoneNumber": "Numero di telefono",
-    "trades": "Mestieri",
+    "trades": "Categorie di lavori",
     "updatedAt": "Aggiornato il",
     "vat": "IVA",
     "website": "Sito web",
     "!enums": {
       "partyType": {
-        "contractor": "Appaltatore",
+        "contractor": "Impresa",
         "architect": "Architetto",
         "engineer": "Ingegnere",
         "qs": "Computista",

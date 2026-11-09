@@ -46,7 +46,7 @@
         "referral": "Recommandation",
         "social": "Réseaux sociaux",
         "event": "Événement",
-        "cold_call": "Appel à froid",
+        "cold_call": "Prospection téléphonique",
         "walk_in": "Visite spontanée",
         "chat": "Chat du site",
         "other": "Autre"
@@ -70,19 +70,19 @@
         "title": "Ce qu'un prospect contient",
         "items": [
           "Prénom (obligatoire), nom, e-mail, téléphone optionnels.",
-          "Statut : nouveau → contacté → qualifié → proposition → négociation → gagné ou perdu.",
-          "Source : site web, recommandation, réseaux, événement, prospection à froid, visite, chat, ou autre.",
+          "Le statut n'évolue que via des actions (contacté, qualifier, proposition, négociation, gagné, perdu, rouvrir) — pas via le formulaire de modification.",
+          "Source : site web, recommandation, réseaux sociaux, événement, prospection téléphonique, visite spontanée, chat ou autre.",
           "Intérêt : partenariats, investissements, support plateforme, réservation, ou autre.",
-          "Intérêt projet et unité optionnels — ce qu'ils ont demandé, pas une retenue.",
+          "Intérêt projet et unité optionnels — ce qu'ils ont demandé, pas un blocage.",
           "Budget et devise optionnels, notes, agent assigné, date de suivi.",
-          "Journal d'activité — notes horodatées via l'action « ajouter une activité » (qui a fait quoi)."
+          "Journal d'activité — chaque changement de statut et note manuelle, avec l'auteur et la date. Rouvrir un prospect perdu efface le motif de perte de la fiche et le conserve dans le journal."
         ]
       },
       {
         "title": "Sur cette page",
         "items": [
           "Créer un prospect dès qu'une personne s'informe. Assigner un agent et une date de suivi si vous travaillez une file.",
-          "Ouvrir la carte pour changer le statut, ajouter des notes et consigner l'activité.",
+          "Utilisez le menu de ligne ou de fiche pour faire avancer le statut, marquer gagné ou perdu et consigner l'activité.",
           "Filtrer par statut, source, projet, responsable.",
           "La suppression logique est restaurable. Elle n'annule pas les réservations créées plus tard pour la même personne."
         ]

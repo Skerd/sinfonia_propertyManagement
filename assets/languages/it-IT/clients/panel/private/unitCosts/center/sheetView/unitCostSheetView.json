@@ -96,7 +96,7 @@
     "paid": "Pagato",
     "partially_paid": "Parzialmente pagato",
     "unpaid": "Non pagato",
-    "waived": "Annullato"
+    "waived": "Condonato"
   },
   "unitCostVerification": {
     "needs_revision": "Revisione necessaria",

@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/leases/createLease.tsx",
-  "title": "Krijo Kontratë Qiraje",
+  "title": "Krijo kontratë qiraje",
   "description": "Regjistro një marrëveshje të re qiraje",
-  "generalInfo": "Detajet e Kontratës",
+  "generalInfo": "Detajet e kontratës",
   "form": {
     "unitLabel": "Njësia",
     "unitPlaceholder": "Zgjidh njësinë",
@@ -44,7 +44,7 @@
     }
   },
   "formHeader": {
-    "title": "Krijo Kontratë Qiraje",
+    "title": "Krijo kontratë qiraje",
     "description": "Regjistro një marrëveshje të re qiraje"
   },
   "formButtons": {

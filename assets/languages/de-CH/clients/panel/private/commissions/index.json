@@ -85,9 +85,10 @@
       {
         "title": "Was eine Provision speichert",
         "items": [
-          "Quelltyp Reservation oder Verkauf plus Quelldatensatz.",
-          "Agent, Beträge, Währung, verwendete Sätze.",
-          "Status: ausstehend, zur Freigabe, freigegeben, bezahlt, storniert."
+          "Quelltyp: Reservation oder Verkauf, dazu der Quelldatensatz.",
+          "Agent, Beträge, Währung und die bei der Erfassung verwendeten Sätze.",
+          "Status: ausstehend, zur Freigabe, freigegeben, bezahlt, storniert.",
+          "Belege / Notizen, je nachdem, welche Felder Ihre Rollen freigeben."
         ]
       },
       {

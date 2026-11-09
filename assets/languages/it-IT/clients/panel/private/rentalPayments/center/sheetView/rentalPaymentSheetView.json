@@ -24,7 +24,7 @@
     "pending": "In sospeso",
     "paid": "Pagato",
     "overdue": "In ritardo",
-    "waived": "Annullato",
+    "waived": "Condonato",
     "partially_paid": "Parzialmente pagato"
   },
   "lifecycle": "Ciclo di vita",

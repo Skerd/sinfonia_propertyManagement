@@ -28,13 +28,13 @@
         "title": "KPI",
         "items": [
           "Unità totali / disponibili / vendute / affittate.",
-          "Ricavi, commissioni, contratti attivi, snag aperti."
+          "Ricavi, commissioni, contratti attivi, difetti aperti."
         ]
       },
       {
         "title": "Comportamento",
         "items": [
-          "Calcolato a un timestamp mostrato nell'intestazione — aggiornare ricarica l'aggregazione.",
+          "Calcolato all'istante mostrato nell'intestazione — l'aggiornamento ricarica l'aggregazione.",
           "Le società figlie devono avere questa organizzazione come società madre, altrimenti non compariranno.",
           "Il lavoro operativo di ogni filiale avviene ancora nei menu immobiliare di quella società dopo il cambio società.",
           "Non è la Panoramica (una società) né la Dashboard (un edificio)."
@@ -43,7 +43,7 @@
       {
         "title": "Record correlati",
         "items": [
-          "Aggrega Unità, Vendite, Commissioni, Contratti di locazione, Snag per società."
+          "Aggrega Unità, Vendite, Commissioni, Contratti di locazione, Difetti per società."
         ]
       }
     ]

@@ -1,10 +1,10 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
-  "failedTitle": "Impossible de charger Types d'histoires",
+  "failedTitle": "Impossible de charger les types de récits",
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour recharger les données.",
   "name": "Nom",
-  "storyType": "Type d’histoire",
+  "storyType": "Type de récit",
   "overview": "Aperçu",
   "description": "Description",
   "slug": "Identifiant",

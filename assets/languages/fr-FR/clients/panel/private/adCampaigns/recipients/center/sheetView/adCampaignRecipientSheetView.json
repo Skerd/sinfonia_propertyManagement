@@ -2,7 +2,7 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx",
     "adCampaignRecipient": "Destinataire",
     "overview": "Aperçu",
-    "delivery": "Livraison",
+    "delivery": "Envoi",
     "email": "Adresse e-mail",
     "fullName": "Nom",
     "audienceKind": "Type",

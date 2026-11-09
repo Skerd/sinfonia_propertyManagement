@@ -53,7 +53,7 @@
       "title": "Types d'unités"
     },
     "storyTypes": {
-      "title": "Types d'histoires"
+      "title": "Types de récits"
     },
     "commissions": {
       "title": "Commissions"
@@ -77,7 +77,7 @@
       "title": "Paiements de loyer"
     },
     "stories": {
-      "title": "Histoires"
+      "title": "Récits"
     },
     "handoverPackages": {
       "title": "Dossiers de remise"
@@ -149,7 +149,7 @@
         "title": "Types d'unités"
       },
       "storyTypes": {
-        "title": "Types d'histoires"
+        "title": "Types de récits"
       },
       "propertyManagement": {
         "title": "Immobilier"

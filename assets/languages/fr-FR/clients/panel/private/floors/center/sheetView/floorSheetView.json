@@ -88,7 +88,7 @@
     "hidden_unit": "Prix sur demande (défini sur l'unité)"
   },
   "pricePerMeterSquared": "Prix par m²",
-  "pricePerMeterSquaredTooltip": "Tarif appliqué aux unités de cet étage : le tarif propre à l'étage s'il est défini, sinon celui de l'édifice. Les unités dont le prix a été modifié manuellement ne sont pas affectées.",
+  "pricePerMeterSquaredTooltip": "Tarif appliqué aux unités de cet étage : le tarif propre à l'étage s'il est défini, sinon celui du bâtiment. Les unités dont le prix a été modifié manuellement ne sont pas affectées.",
   "verandaPricePerMeterSquared": "Prix par m² de véranda",
-  "verandaPricePerMeterSquaredTooltip": "Tarif véranda appliqué aux unités de cet étage : le tarif propre à l'étage s'il est défini, sinon celui de l'édifice. Les unités dont le prix a été modifié manuellement ne sont pas affectées."
+  "verandaPricePerMeterSquaredTooltip": "Tarif véranda appliqué aux unités de cet étage : le tarif propre à l'étage s'il est défini, sinon celui du bâtiment. Les unités dont le prix a été modifié manuellement ne sont pas affectées."
 }

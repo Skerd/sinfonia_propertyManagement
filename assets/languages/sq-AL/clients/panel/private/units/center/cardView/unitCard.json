@@ -7,8 +7,8 @@
     "name": "Emri",
     "unitType": "Lloji i njësisë",
     "unitNumber": "Numri i njësisë",
-    "area": "Zona",
-    "sharedArea": "Zonë e përbashkët",
+    "area": "Sipërfaqja",
+    "sharedArea": "Sipërfaqja e përbashkët",
     "description": "Përshkrimi",
     "rooms": "Dhomat",
     "numberOfBathrooms": "Banjat",
@@ -23,10 +23,10 @@
     "seaView": "Pamje nga deti",
     "cityView": "Pamje e qytetit",
     "elevator": "Ashensor",
-    "lakeView": "Pamje e Liqenit"
+    "lakeView": "Pamje e liqenit"
   },
   "edit": "Redakto",
-  "delete": "Fshije",
+  "delete": "Fshi",
   "deleted": "Fshirë",
   "active": "Aktiv",
   "available": "Në dispozicion",

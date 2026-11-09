@@ -4,13 +4,13 @@
   "generalInfo": "Detajet",
   "form": {
     "projectLabel": "Projekti",
-    "projectPlaceholder": "Zgjidh projekti",
+    "projectPlaceholder": "Zgjidh projektin",
     "edificeLabel": "Ndërtesa",
-    "edificePlaceholder": "Zgjidh ndërtesa",
+    "edificePlaceholder": "Zgjidh ndërtesën",
     "floorLabel": "Kati",
-    "floorPlaceholder": "Zgjidh kati",
+    "floorPlaceholder": "Zgjidh katin",
     "unitLabel": "Njësia",
-    "unitPlaceholder": "Zgjidh njësia",
+    "unitPlaceholder": "Zgjidh njësinë",
     "titleLabel": "Titulli",
     "titlePlaceholder": "Titulli",
     "itemsSectionTitle": "Zërat e listës",
@@ -54,32 +54,32 @@
   },
   "formHeader": {
     "title": "Shto paketë dorëzimi",
-    "description": "Plotëso të dhënat për të krijuar paketë dorëzimi."
+    "description": "Lëreni bosh ndërtesën, katin ose njësinë për ta zbatuar këtë listë kontrolli në atë nivel. Njësitë trashëgojnë zërat e niveleve sipër."
   },
   "help": {
     "ariaLabel": "Rreth shtimit të një pakete dorëzimi",
     "title": "Rreth shtimit të një pakete dorëzimi",
-    "overview": "Po krijon një konfigurim checklist, jo punën që shënohet te shitja. Zgjidh fushëveprimin më të ngushtë. Shitjet e hapura të njësive nën atë fushëveprim i marrin këta zëra në sinkronizimin tjetër.",
+    "overview": "Po krijoni një konfigurim liste kontrolli, jo po shënoni punë te një shitje. Zgjidhni fushëveprimin më të ngushtë ku duhet të zbatohet kjo listë. Shitjet e hapura të njësive nën atë fushëveprim i marrin këta zëra në sinkronizimin e radhës.",
     "sections": [
       {
-        "title": "Si të zgjedhësh fushëveprimin",
+        "title": "Si të zgjidhni fushëveprimin",
         "items": [
           "Projekti është i detyrueshëm.",
-          "Lë bosh ndërtesën, katin dhe njësinë për një listë projekti që e trashëgon çdo njësi e projektit.",
-          "Plotëso ndërtesën (kati dhe njësia bosh) për shtesa në nivel ndërtese.",
-          "Plotëso katin (njësia bosh) për shtesa kati. Plotëso njësinë për zëra vetëm të asaj njësie.",
-          "Paraardhësit plotësohen automatikisht nga gjetheja. Pas ruajtjes fushëveprimi nuk ndryshohet — krijo një paketë të re në një fushëveprim tjetër."
+          "Lëreni bosh ndërtesën, katin dhe njësinë për një listë në nivel projekti që e trashëgon çdo njësi e projektit.",
+          "Plotësoni ndërtesën (dhe lëreni bosh katin dhe njësinë) për shtesa në nivel ndërtese.",
+          "Plotësoni katin (dhe lëreni bosh njësinë) për shtesa në nivel kati. Plotësoni njësinë për zëra që vlejnë vetëm për atë njësi.",
+          "Nivelet sipër plotësohen automatikisht nga niveli më i ulët. Pas ruajtjes fushëveprimi nuk mund të ndryshohet — krijoni një paketë të re në një fushëveprim tjetër."
         ]
       },
       {
         "title": "Uniciteti",
         "items": [
           "Vetëm një paketë për projekt, për ndërtesë, për kat dhe për njësi.",
-          "Një paketë e dytë në të njëjtin fushëveprim refuzohet. Ndrysho atë ekzistuese."
+          "Një paketë e dytë në të njëjtin fushëveprim refuzohet. Ndryshoni paketën ekzistuese."
         ]
       },
       {
-        "title": "Zërat e checklist-it",
+        "title": "Zërat e listës së kontrollit",
         "items": [
           "Çdo zë kërkon emër. Përshkrimi, udhëzimet dhe rëndësia (e ulët / mesatare / e lartë) janë opsionale.",
           "Zërat nuk shënohen këtu. Përfundimi regjistrohet te shitja.",
@@ -91,7 +91,7 @@
         "items": [
           "Shitjet e hapura që njësia e tyre është nën këtë fushëveprim sinkronizohen dhe fitojnë zërat e rinj (pa shenjë).",
           "Shitjet që tashmë kanë datë transferimi titulli mbeten të ngrira dhe e injorojnë këtë konfigurim të ri.",
-          "Shëno listën e bashkuar te Shitjet → Përditëso dorëzimin."
+          "Shënoni listën e bashkuar te Shitjet → Përditëso dorëzimin."
         ]
       }
     ]

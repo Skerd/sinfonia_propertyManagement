@@ -3,10 +3,10 @@
   "cancel": "Anulo",
   "confirmSend": "Dërgo email",
   "actionLabels": {
-    "send_sale_confirmation": "Ridërgo email konfirmimi i shitjes"
+    "send_sale_confirmation": "Ridërgo emailin e konfirmimit të shitjes"
   },
   "confirmTitles": {
-    "send_sale_confirmation": "Të ridërgohet email i konfirmimit të shitjes?"
+    "send_sale_confirmation": "Të ridërgohet emaili i konfirmimit të shitjes?"
   },
   "confirmDescriptions": {
     "send_sale_confirmation": "Dërgon të njëjtin mesazh konfirmimi si në krijim të shitjes (te emaili i blerësit), përfshirë kontratën e blerjes kur është e disponueshme."

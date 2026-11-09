@@ -35,10 +35,10 @@
     "submit": "Ruaj ndryshimet"
   },
   "formHeader": {
-    "description": "Përditëso të dhënat e këtij Llojet e historive.",
-    "title": "Ndrysho Llojet e historive"
+    "description": "Përditësoni të dhënat e këtij lloji tregimi.",
+    "title": "Ndrysho llojin e tregimit"
   },
   "generalInfo": "Informacion i përgjithshëm",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
-  "title": "Ndrysho Llojet e historive"
+  "title": "Ndrysho llojin e tregimit"
 }

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/portal/propertyInquiryForm.tsx",
-  "titleProject": "Pyet për këtë projekt",
-  "titleUnit": "Pyet për këtë njësi",
+  "titleProject": "Pyetni për këtë projekt",
+  "titleUnit": "Pyetni për këtë njësi",
   "subtitle": "Ndërtuesi ju përgjigjet drejtpërdrejt.",
   "fields": {
     "name": "Emri",
@@ -15,5 +15,5 @@
   "messagePlaceholder": "Kur mund ta vizitoj? Si është plani i pagesës?",
   "send": "Dërgo kërkesën",
   "sent": "Faleminderit. Ndërtuesi do t'ju kontaktojë së shpejti.",
-  "failed": "Kërkesa nuk u dërgua. Provo përsëri."
+  "failed": "Kërkesa nuk u dërgua. Provoni përsëri."
 }

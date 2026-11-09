@@ -11,7 +11,7 @@
   },
   "statistics": {
     "area": "Superficie dell'edificio",
-    "areaTooltip": "Somma delle impronte degli edifici (superficie totale), non delle superfici delle unità",
+    "areaTooltip": "Somma dell'ingombro a terra degli edifici (superficie totale), non delle superfici delle unità",
     "edifices": "Edifici",
     "edificesTooltip": "Totale edifici",
     "floors": "Piani",

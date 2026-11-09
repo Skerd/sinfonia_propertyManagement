@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
-  "title": "Modifier liste de contrôle",
+  "title": "Modifier la liste de contrôle",
   "generalInfo": "Détails",
   "form": {
     "titleLabel": "Titre",
@@ -44,8 +44,8 @@
     }
   },
   "formHeader": {
-    "title": "Modifier liste de contrôle",
-    "description": "Mettez à jour les informations de ce liste de contrôle."
+    "title": "Modifier la liste de contrôle",
+    "description": "Mettez à jour les informations de cette liste de contrôle."
   },
   "formButtons": {
     "cancel": "Annuler",

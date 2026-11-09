@@ -3,25 +3,25 @@
   "cancel": "Anulo",
   "confirmSend": "Dërgo email",
   "actionLabels": {
-    "3d": "Kujtesë: 3 ditë para maturimit",
-    "1d": "Kujtesë: 1 ditë para maturimit",
-    "0d": "Kujtesë: data e maturimit (sot)",
-    "remaining_days": "Kujtesë: ditët deri në maturim",
+    "3d": "Kujtesë: 3 ditë para afatit",
+    "1d": "Kujtesë: 1 ditë para afatit",
+    "0d": "Kujtesë: dita e afatit (sot)",
+    "remaining_days": "Kujtesë: ditët deri në afat",
     "overdue": "Dërgo njoftimin e qirasë së vonuar"
   },
   "confirmTitles": {
     "3d": "Të dërgohet kujtesa 3-ditore?",
     "1d": "Të dërgohet kujtesa 1-ditore?",
-    "0d": "Të dërgohet kujtesa e ditës së maturimit?",
+    "0d": "Të dërgohet kujtesa e qirasë në ditën e afatit?",
     "remaining_days": "Të dërgohet kujtesa me ditët deri në afat?",
     "overdue": "Të dërgohet emaili i qirasë së vonuar?"
   },
   "confirmDescriptions": {
-    "3d": "Dërgon shabllonin standard 3 ditë para maturimit. Teksti tregon mbetjen, jo shumën origjinale.",
-    "1d": "Dërgon shabllonin standard 1 ditë para maturimit. Teksti tregon mbetjen.",
-    "0d": "Dërgon kujtesën “maturohet sot”. Teksti tregon mbetjen.",
-    "remaining_days": "Dërgon email me ditët e mbetura kalendarike (UTC) deri në datën e maturimit. Teksti tregon mbetjen.",
-    "overdue": "Dërgon njoftimin që ky muaj ka kaluar afatin (pas fundit të ditës UTC). Teksti tregon mbetjen."
+    "3d": "Dërgon modelin standard të qirasë «3 ditë para afatit» për këtë muaj. Teksti tregon shumën e mbetur, jo shumën fillestare.",
+    "1d": "Dërgon modelin standard të qirasë «1 ditë para afatit» për këtë muaj. Teksti tregon shumën e mbetur.",
+    "0d": "Dërgon kujtesën standarde «afati sot». Teksti tregon shumën e mbetur.",
+    "remaining_days": "Dërgon një email që tregon sa ditë të plota kalendarike mbeten (UTC) deri në afatin e kësaj qiraje. Teksti tregon shumën e mbetur.",
+    "overdue": "Dërgon njoftimin se pagesa e këtij muaji është e vonuar (pas fundit të ditës së afatit në UTC). Teksti tregon shumën e mbetur."
   },
   "axios": {
     "start": {
@@ -29,11 +29,11 @@
       "time": 3000
     },
     "success": {
-      "title": "Email u dërgua",
+      "title": "Emaili u dërgua me sukses",
       "time": 3000
     },
     "error": {
-      "title": "Email nuk u dërgua",
+      "title": "Emaili nuk mund të dërgohej",
       "time": 3000
     }
   }

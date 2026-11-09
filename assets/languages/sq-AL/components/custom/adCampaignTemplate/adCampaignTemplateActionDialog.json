@@ -1,12 +1,12 @@
 {
     "path": "src/modules/propertyManagement/components/custom/adCampaignTemplate/adCampaignTemplateActionDialog.tsx",
     "titles": {
-        "activate": "Aktivizo shabllonin",
-        "deactivate": "Çaktivizo shabllonin"
+        "activate": "Aktivizo modelin",
+        "deactivate": "Çaktivizo modelin"
     },
     "descriptions": {
-        "activate": "Shablloni bëhet përsëri i disponueshëm për fushatat. Asgjë e dërguar më parë nuk ndryshon.",
-        "deactivate": "Fushatat nuk mund të përdorin më këtë shabllon dhe çdo fushatë që është ende në dërgim do të dështojë me të. Shablloni ruhet dhe mund të riaktivizohet në çdo moment."
+        "activate": "Modeli bëhet përsëri i disponueshëm për fushatat. Asgjë e dërguar më parë nuk ndryshon.",
+        "deactivate": "Fushatat nuk mund ta përdorin më këtë model dhe çdo fushatë që është ende në dërgim do të dështojë me të. Modeli ruhet dhe mund të riaktivizohet në çdo moment."
     },
     "submit": {
         "activate": "Aktivizo",

@@ -75,7 +75,7 @@
     "collectedAmount": "Incassato",
     "collectedAmountTooltip": "Contanti e pagamenti ricevuti per valuta",
     "notCollectedAmount": "Obblighi in sospeso",
-    "notCollectedAmountTooltip": "Depositi di prenotazione non pagati più saldo del piano di pagamento non pagato, per valuta",
+    "notCollectedAmountTooltip": "Depositi di prenotazione non pagati più saldo del piano di pagamento non pagato (acconto e rate), per valuta",
     "verifiedPaidUnitCosts": "Costi verificati e pagati",
     "verifiedPaidUnitCostsTooltip": "Aggregato dalle unità: costi di acquisto verificati e pagati, per valuta",
     "verifiedOutstandingUnitCosts": "Verificati — pagamento in sospeso",

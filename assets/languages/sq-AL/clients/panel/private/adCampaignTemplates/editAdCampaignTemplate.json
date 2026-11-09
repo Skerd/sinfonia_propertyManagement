@@ -22,11 +22,11 @@
             "it-IT": "Italisht (IT)",
             "sq-AL": "Shqip (AL)"
         },
-        "subjectLabel": "Subjekti",
-        "subjectPlaceholder": "Subjekti",
+        "subjectLabel": "Tema",
+        "subjectPlaceholder": "Tema",
         "previewTextLabel": "Teksti i pamjes paraprake",
         "previewTextPlaceholder": "Teksti i pamjes paraprake",
-        "bodyHtmlLabel": "Trupi i e-mail-it"
+        "bodyHtmlLabel": "Trupi i emailit"
     },
     "axios": {
         "start": {

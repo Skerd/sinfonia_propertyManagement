@@ -19,7 +19,7 @@
             },
             "skipReason": {
                 "opted_out": "Çregjistruar",
-                "no_email": "Pa adresë e-mail",
+                "no_email": "Pa adresë email",
                 "inactive": "Joaktiv",
                 "duplicate": "Dublikatë"
             },

@@ -12,10 +12,10 @@
   "backToProject": "Torna al progetto",
   "floorPlan": "Planimetria",
   "featuresTitle": "Caratteristiche",
-  "description": "Su questa unità",
+  "description": "Informazioni sull'unità",
   "status": {
     "available": "Disponibile",
-    "reserved": "Riservato",
+    "reserved": "Prenotato",
     "sold": "Venduto",
     "unavailable": "Non disponibile"
   },

@@ -6,7 +6,7 @@
   "verifyErrorSubtitle": "Questo link di reimpostazione non è valido o è scaduto.",
   "successSubtitle": "La tua password è stata aggiornata.",
   "verifyingMessage": "Attendere…",
-  "verifyErrorMessage": "Richiedi un nuovo link di reset.",
+  "verifyErrorMessage": "Richiedi un nuovo link di reimpostazione della password.",
   "requestAgain": "Password dimenticata",
   "form": {
     "passwordLabel": "Nuova password",

@@ -56,8 +56,8 @@
       "next": "Suivant"
     },
     "viewAction": "Voir",
-    "edificeLabel": "Édifice",
-    "edificePlaceholder": "Tous les édifices",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Tous les bâtiments",
     "floorLabel": "Étage",
     "floorPlaceholder": "Tous les étages",
     "unitLabel": "Unité",
@@ -108,8 +108,8 @@
       "next": "Suivant"
     },
     "viewAction": "Voir",
-    "edificeLabel": "Édifice",
-    "edificePlaceholder": "Tous les édifices",
+    "edificeLabel": "Bâtiment",
+    "edificePlaceholder": "Tous les bâtiments",
     "floorLabel": "Étage",
     "floorPlaceholder": "Tous les étages",
     "unitLabel": "Unité",
@@ -131,7 +131,7 @@
       {
         "title": "Comportement",
         "items": [
-          "Créer, payer, annuler, approuver, réceptionner — ces actions restent sur Réservations et Ventes.",
+          "Créer, payer, annuler, approuver, enregistrer la remise — ces actions restent sur Réservations et Ventes.",
           "Rien n'est dupliqué en base. Si une réservation disparaît des Réservations, elle disparaît ici.",
           "Réservations expirées et actives peuvent toutes deux apparaître, selon le filtre de statut du hub."
         ]

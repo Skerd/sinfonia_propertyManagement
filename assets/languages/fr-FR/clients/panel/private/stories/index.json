@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/stories/index.tsx",
   "title": "Récits",
-  "description": "Récits journal pour projets, édifices et unités",
+  "description": "Récits journal pour projets, bâtiments et unités",
   "createStory": "Ajouter un récit",
   "noData": "Aucun récit trouvé",
   "failTitle": "Échec du chargement des récits",
@@ -13,7 +13,7 @@
     "deletedAt": "Supprimé",
     "deletedBy": "Supprimé par",
     "content": "Contenu",
-    "edifice": "Édifice",
+    "edifice": "Bâtiment",
     "excerpt": "Extrait",
     "imageGallery": "Galerie d’images",
     "mainImage": "Image principale",
@@ -37,7 +37,7 @@
         "title": "Ce qu'un récit contient",
         "items": [
           "Projet (obligatoire), bâtiment optionnel, unité optionnelle.",
-          "Type de récit (obligatoire) — depuis Configurations → Types d'histoires.",
+          "Type de récit (obligatoire) — depuis Configurations → Types de récits.",
           "Titre, contenu intégral, extrait optionnel pour les cartes.",
           "Image principale, galeries, vidéos.",
           "Indicateur publié, date de publication, ordre de tri."
@@ -55,7 +55,7 @@
         "title": "Comportement",
         "items": [
           "Publier ne change ni le statut d'unité ni les dates de construction.",
-          "Les avancements de chantier sont les posts opérationnels de progrès ; gardez le récit marketing ici."
+          "Les avancements de chantier sont les publications opérationnelles ; gardez ici le récit marketing."
         ]
       },
       {

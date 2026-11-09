@@ -5,8 +5,8 @@
   "form": {
     "titleLabel": "Titolo",
     "titlePlaceholder": "Titolo",
-    "tradeLabel": "Mestiere",
-    "tradePlaceholder": "Mestiere",
+    "tradeLabel": "Categoria di lavori",
+    "tradePlaceholder": "Categoria di lavori",
     "stageLabel": "Fase",
     "stagePlaceholder": "Fase",
     "descriptionLabel": "Descrizione",
@@ -45,7 +45,7 @@
   },
   "formHeader": {
     "title": "Modifica checklist di ispezione",
-    "description": "Aggiorna i dati di questo checklist di ispezione."
+    "description": "Aggiorna i dati di questa checklist di ispezione."
   },
   "formButtons": {
     "cancel": "Annulla",

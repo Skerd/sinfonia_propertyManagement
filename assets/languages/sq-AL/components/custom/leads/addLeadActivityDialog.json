@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leads/addLeadActivityDialog.tsx",
   "dialogTitle": "Shto aktivitet",
-  "dialogDescription": "Regjistroni një kontakt. Kjo nuk e ndryshon statusin e lead-it.",
+  "dialogDescription": "Regjistroni një kontakt. Kjo nuk e ndryshon statusin e klientit të mundshëm.",
   "actionLabel": "Lloji i aktivitetit",
   "actionPlaceholder": "Zgjidhni llojin e aktivitetit",
   "notesLabel": "Shënime",
@@ -10,7 +10,7 @@
   "submit": "Shto aktivitet",
   "activityActions": {
     "called": "Telefonatë",
-    "emailed": "Email",
+    "emailed": "Email i dërguar",
     "meeting": "Takim",
     "site_visit": "Vizitë në vend",
     "follow_up": "Ndjekje",

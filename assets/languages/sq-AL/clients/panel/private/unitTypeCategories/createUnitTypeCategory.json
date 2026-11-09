@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx",
   "title": "Krijo kategori të llojit të njësisë",
-  "description": "Krijo një kategori të re",
+  "description": "Krijo një kategori të re lloji njësie",
   "generalInfo": "Informacion i përgjithshëm",
   "form": {
     "nameLabel": "Emri",
@@ -24,7 +24,7 @@
   },
   "formHeader": {
     "title": "Krijo kategori të llojit të njësisë",
-    "description": "Krijo një kategori të re"
+    "description": "Krijo një kategori të re lloji njësie"
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -41,7 +41,7 @@
     "followUpInspectionLabel": "Inspection de suivi",
     "followUpInspectionPlaceholder": "Sélectionner l'inspection de suivi",
     "followedUpByInspectionLabel": "Fait suite à l'inspection",
-    "followedUpByInspectionPlaceholder": "Sélectionner l'inspection dont celle-ci fait suite",
+    "followedUpByInspectionPlaceholder": "Sélectionner l'inspection à laquelle celle-ci fait suite",
     "mediaLabel": "Fichiers média",
     "addFile": "Ajouter un fichier",
     "filesSelected": "fichiers sélectionnés",
@@ -77,7 +77,7 @@
     "resolvedAtLabel": "Résolu le",
     "resolvedAtPlaceholder": "Sélectionner la date de résolution",
     "resolvedByLabel": "Résolu par",
-    "resolvedByPlaceholder": "Sélectionner le résolveur",
+    "resolvedByPlaceholder": "Sélectionner qui a résolu",
     "checklistTemplateLabel": "Modèle de checklist",
     "checklistTemplatePlaceholder": "Sélectionner un modèle de checklist"
   },

@@ -82,8 +82,8 @@
         "contractor": "Contractor",
         "architect": "Architect",
         "engineer": "Engineer",
-        "qs": "Qs",
-        "pm": "Pm",
+        "qs": "Quantity Surveyor",
+        "pm": "Project Manager",
         "surveyor": "Surveyor",
         "other": "Other"
       },

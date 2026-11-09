@@ -1,7 +1,7 @@
 {
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
     "title": "Modelet e fushatave",
-    "description": "Modele e-mail të ripërdorshme, një për çdo lloj fushate dhe gjuhë",
+    "description": "Modele email të ripërdorshme, një për çdo lloj fushate dhe gjuhë",
     "createAdCampaignTemplate": "Model i ri",
     "noData": "Nuk u gjetën modele",
     "failTitle": "Ngarkimi i modeleve dështoi",
@@ -11,7 +11,7 @@
         "name": "Titulli",
         "campaignType": "Lloji",
         "locale": "Gjuha",
-        "subject": "Subjekti",
+        "subject": "Tema",
         "previewText": "Teksti i pamjes paraprake",
         "active": "Statusi",
         "createdAt": "Krijuar më",

@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/actions/resendReservationStaffNotifications.tsx",
   "actionLabel": "Renvoyer les notifications",
   "confirmTitle": "Renvoyer les notifications de réservation ?",
-  "confirmDescription": "Renvoie la notification dans l’application et l’e-mail à toutes les personnes de la liste « Notifier lors des réservations » dans les paramètres Ventes et remise.",
+  "confirmDescription": "Renvoie la notification dans l’application et l’e-mail à toutes les personnes de la liste « Notifier lors des réservations » dans les paramètres Ventes & remise.",
   "cancel": "Annuler",
   "confirmSend": "Envoyer",
   "axios": {

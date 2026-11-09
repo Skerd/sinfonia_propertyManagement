@@ -34,7 +34,7 @@
     "name": "Referenca",
     "notes": "Shënime",
     "paidAt": "Paguar më",
-    "paymentReceiptMediaId": "Fatura e pagesës",
+    "paymentReceiptMediaId": "Dëftesa e pagesës",
     "paymentReference": "Referenca e pagesës",
     "ratePercent": "Norma %",
     "recordedByActionUser": "Regjistruar nga",
@@ -63,8 +63,8 @@
       },
       "status": {
         "pending": "Në pritje",
-        "pending_approval": "Në pritje të aprovimit",
-        "approved": "I aprovuar",
+        "pending_approval": "Në pritje të miratimit",
+        "approved": "I miratuar",
         "paid": "I paguar",
         "voided": "I anuluar"
       },
@@ -80,14 +80,14 @@
   "help": {
     "ariaLabel": "Rreth Komisioneve",
     "title": "Rreth Komisioneve",
-    "overview": "Një komision është rreshti i pagesës së agjentit i krijuar nga një rezervim ose një shitje. Ky është libri, jo raporti i agjentëve (pamje performancë e periudhës). Statusi lëviz në pritje → në pritje aprovimi → i aprovuar → i paguar, ose i anuluar kur marrëveshja burim anulohet ose një pagesë kthehet.",
+    "overview": "Një komision është rreshti i pagesës së agjentit i krijuar nga një rezervim ose një shitje. Ky është libri i komisioneve, jo raporti i agjentëve (që është një pamje e performancës për një periudhë). Statusi lëviz në pritje → në pritje miratimi → i miratuar → i paguar, ose i anuluar kur marrëveshja burim anulohet ose një pagesë kthehet.",
     "sections": [
       {
         "title": "Çfarë mban një komision",
         "items": [
           "Lloji i burimit: rezervim ose shitje, plus dosja burim.",
-          "Agjenti, shumat, valuta, tarifat e përdorura kur u regjistrua.",
-          "Statusi: në pritje, në pritje aprovimi, i aprovuar, i paguar, i anuluar.",
+          "Agjenti, shumat, monedha, tarifat e përdorura kur u regjistrua.",
+          "Statusi: në pritje, në pritje miratimi, i miratuar, i paguar, i anuluar.",
           "Dëshmi / shënime sipas mënyrës se si rolet tuaja i ekspozojnë fushat."
         ]
       },
@@ -104,13 +104,13 @@
         "items": [
           "Anulimi i një rezervimi ose kthimi i një depozite të papaguar anulon komisionin në pritje — jo një tashmë të shënuar të paguar.",
           "Kthimi i një pagese rezervimi bllokohet nëse ky komision është tashmë i paguar.",
-          "Pagesa e një komisioni këtu është hapi i shpërndarjes. Raporti i agjentëve lexon vetëm marrëveshjet në një interval datash; nuk shënon të paguar."
+          "Pagesa e një komisioni këtu është hapi i pagesës. Raporti i agjentëve lexon vetëm marrëveshjet në një interval datash; nuk shënon të paguar."
         ]
       },
       {
         "title": "Dosjet e lidhura",
         "items": [
-          "Rezervim ose Shitje, përdoruesi agjent, Njësia. Raporti i agjentëve. Eksporti ERP mund të përfshijë një set komisonesh."
+          "Rezervim ose Shitje, përdoruesi agjent, Njësia. Raporti i agjentëve. Eksporti ERP mund të përfshijë një set komisionesh."
         ]
       }
     ]

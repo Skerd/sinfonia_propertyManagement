@@ -2,11 +2,11 @@
   "path": "src/modules/propertyManagement/clients/panel/private/leases/center/cardView/leaseCard.tsx",
   "statusLabel": "Statusi",
   "fields": {
-    "tenant": "Qiraxhiu",
+    "tenant": "Qiramarrësi",
     "unit": "Njësia",
-    "monthlyRent": "Qiraja Mujore",
-    "startDate": "Data e Fillimit",
-    "endDate": "Data e Përfundimit",
+    "monthlyRent": "Qiraja mujore",
+    "startDate": "Data e fillimit",
+    "endDate": "Data e përfundimit",
     "!enums": {
       "status": {
         "active": "Aktive",

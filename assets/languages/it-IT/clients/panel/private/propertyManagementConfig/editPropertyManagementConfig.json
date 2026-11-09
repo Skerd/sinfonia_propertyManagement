@@ -28,7 +28,7 @@
   },
   "formHeader": {
     "title": "Modifica Vendite & consegna",
-    "description": "Aggiorna i dati di questo Vendite & consegna."
+    "description": "Aggiorna le impostazioni Vendite & consegna."
   },
   "help": {
     "ariaLabel": "Informazioni su Vendite & consegna",
@@ -38,7 +38,7 @@
       {
         "title": "Cosa fanno gli interruttori",
         "items": [
-          "Richiedere l’approvazione del responsabile alla creazione di una vendita — le nuove vendite partono in attesa. L’unità resta comunque marcata venduta subito. Approvare la lascia venduta. Rifiutare la riporta disponibile e toglie la vendita dall’unità.",
+          "Richiedere l’approvazione del responsabile alla creazione di una vendita — le nuove vendite partono in attesa. L’unità resta comunque segnata come venduta subito. Approvare la lascia venduta. Rifiutare la riporta disponibile e toglie la vendita dall’unità.",
           "Richiedere un pacchetto di consegna completato prima di registrare la consegna — la prima volta che impostate una data di consegna sulla vendita, quell’unità deve già avere un pacchetto di consegna completato. Modificare in seguito una data di consegna già impostata non è bloccato da questo vincolo."
         ],
         "body": "Entrambi sono disattivati di default. Attivarli non riscrive le vendite storiche. Si applicano alla prossima vendita creata e alla prossima prima data di consegna."
@@ -56,7 +56,7 @@
         "items": [
           "La pagina apre l’unico record di impostazioni di questa azienda (creato automaticamente se mancava).",
           "Due elenchi di destinatari e due interruttori. Salva per applicare.",
-          "Né creazione, né eliminazione, né override per progetto."
+          "Qui non si crea, non si elimina e non c’è alcuna impostazione specifica per progetto."
         ]
       },
       {

@@ -120,7 +120,7 @@
       "time": 3000
     },
     "error": {
-      "title": "L'edificio non può essere creato, riprova!",
+      "title": "Impossibile creare l'edificio, riprova!",
       "time": 3000
     }
   },

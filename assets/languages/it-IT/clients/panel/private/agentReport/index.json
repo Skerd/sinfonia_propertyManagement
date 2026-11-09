@@ -40,7 +40,7 @@
   "help": {
     "ariaLabel": "Informazioni sul report agenti",
     "title": "Informazioni sul report agenti",
-    "overview": "Il report agenti è una vista di performance di periodo: ciò che ogni agente ha prenotato, venduto e guadagnato in commissioni tra due date. È reporting, non il libro mastro delle commissioni. Modificare un deal dopo i fatti cambia il prossimo caricamento di questo report.",
+    "overview": "Il report agenti è una vista delle performance di periodo: ciò che ogni agente ha prenotato, venduto e guadagnato in commissioni tra due date. È reportistica, non il libro mastro delle commissioni. Modificare un'operazione a posteriori cambia il successivo aggiornamento di questo report.",
     "sections": [
       {
         "title": "In questa pagina",

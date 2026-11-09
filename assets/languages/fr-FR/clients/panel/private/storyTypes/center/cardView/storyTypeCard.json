@@ -6,7 +6,7 @@
   "description": "Description",
   "sortOrder": "Ordre de tri",
   "deleted": "Supprimé",
-  "failedTitle": "Impossible de charger Types d'histoires",
+  "failedTitle": "Impossible de charger les types de récits",
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour recharger les données."
 }

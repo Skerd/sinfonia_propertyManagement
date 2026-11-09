@@ -26,9 +26,9 @@
     "selectDay": "Zgjidh një ditë",
     "noPaymentsDay": "Nuk ka pagesa për këtë datë.",
     "errorTitle": "Kalendari nuk u ngarkua",
-    "errorDescription": "Provoni përsëri ose kaloni në skedin e shpenzimeve.",
-    "truncatedTitle": "Rezultat i kufizuar",
-    "truncatedDescription": "U ngarkuan vetëm {max} rreshtat e parë për këtë muaj. Ngushtoni filtrat ose përdorni tryezën e shpenzimeve për të gjithë të dhënat.",
+    "errorDescription": "Provoni përsëri ose kaloni te skeda e shpenzimeve.",
+    "truncatedTitle": "Rezultate të kufizuara",
+    "truncatedDescription": "U ngarkuan vetëm {max} rreshtat e parë për këtë muaj. Ngushtoni filtrat ose përdorni tabelën e shpenzimeve për të gjitha të dhënat.",
     "badge": {
       "paid": "Paguar",
       "pending": "Në pritje",
@@ -37,28 +37,28 @@
   },
   "financeFilters": {
     "any": "Të gjitha",
-    "apply": "Apliko",
+    "apply": "Zbato",
     "clear": "Pastro",
     "unit": "Njësia",
-    "unitPlaceholder": "Të gjitha njëësitë",
+    "unitPlaceholder": "Të gjitha njësitë",
     "verificationLabel": "Verifikimi",
     "paymentLabel": "Statusi i pagesës",
     "vendorLabel": "Furnitori",
     "vendorPlaceholder": "Kërko furnitor…",
-    "purchaserLabel": "Personi",
+    "purchaserLabel": "Blerësi",
     "purchaserPlaceholder": "Të gjithë personat",
     "verification": {
       "pending_verification": "Në pritje verifikimi",
-      "verified": "I verifikuar",
-      "rejected": "I refuzuar",
+      "verified": "E verifikuar",
+      "rejected": "E refuzuar",
       "needs_revision": "Duhet të rishikohet"
     },
     "payment": {
-      "unpaid": "I papaguar",
-      "partially_paid": "I paguar pjesërisht",
+      "unpaid": "E papaguar",
+      "partially_paid": "E paguar pjesërisht",
       "paid": "I paguar",
-      "waived": "Anuluar",
-      "disputed": "Diskutues"
+      "waived": "E falur",
+      "disputed": "Në mosmarrëveshje"
     }
   },
   "fields": {
@@ -92,7 +92,7 @@
     "tag": "Etiketa",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
-    "vendorName": "Furnizuesi",
+    "vendorName": "Furnitori",
     "verificationStatus": "Verifikimi",
     "!enums": {
       "expenditureItems": {
@@ -148,28 +148,28 @@
         "partially_paid": "Pjesërisht e paguar",
         "paid": "Paguar",
         "waived": "E falur",
-        "disputed": "Në Kontest"
+        "disputed": "Në mosmarrëveshje"
       }
     }
   },
   "help": {
-    "ariaLabel": "Rreth Kostove të njësisë",
-    "title": "Rreth Kostove të njësisë",
-    "overview": "Kostot e njësisë janë blerje dhe fatura anës pronarit të ngarkuara te një njësi (dhe kështu te projekti/ndërtesa e saj). Faqja ka një tabelë shpenzimesh dhe një kalendar pagesash. Nuk është qiraja e qiramarrësit (Pagesat e qirasë) as faturat e kontraktorëve nga moduli i ndërtimit.",
+    "ariaLabel": "Rreth kostove të njësisë",
+    "title": "Rreth kostove të njësisë",
+    "overview": "Kostot e njësisë janë blerje dhe fatura nga ana e pronarit të regjistruara te një njësi (dhe kështu te projekti/ndërtesa e saj). Faqja ka një tabelë shpenzimesh dhe një kalendar pagesash. Nuk është qiraja e qiramarrësit (Pagesat e qirasë) as faturat e kontraktorëve nga moduli i ndërtimit.",
     "sections": [
       {
         "title": "Skedat",
         "items": [
-          "Shpenzimet — rreshta: furnizuesi, shuma, statusi, periudha, njësia.",
+          "Shpenzimet — rreshta: furnitori, shuma, statusi, periudha, njësia.",
           "Kalendari i pagesave — e paguar / në pritje / e vonuar sipas ditës për muajin e dukshëm."
         ]
       },
       {
         "title": "Në këtë faqe",
         "items": [
-          "Shtoni një shpenzim mbi një njësi. Filtroni sipas njësisë, projektit, furnizuesit, statusit.",
+          "Shtoni një shpenzim mbi një njësi. Filtroni sipas njësisë, projektit, furnitorit, statusit.",
           "Hapur nga një njësi, lista është tashmë e kufizuar.",
-          "Përdorni kalendarin për të parë kur bien faturat anës pronarit."
+          "Përdorni kalendarin për të parë kur skadojnë faturat nga ana e pronarit."
         ]
       },
       {

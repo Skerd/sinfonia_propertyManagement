@@ -14,7 +14,7 @@
     "attempts": "Tentativi",
     "sentAt": "Inviato il",
     "unsubscribedAt": "Disiscritto il",
-    "messageId": "Id messaggio",
+    "messageId": "ID messaggio",
     "lastError": "Ultimo errore",
     "audienceKindEnum": {
         "user": "Cliente",

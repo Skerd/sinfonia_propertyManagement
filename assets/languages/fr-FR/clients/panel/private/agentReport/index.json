@@ -40,7 +40,7 @@
   "help": {
     "ariaLabel": "À propos du rapport agents",
     "title": "À propos du rapport agents",
-    "overview": "Le rapport agents est une vue de performance sur une période : ce que chaque agent a réservé, vendu et gagné en commissions entre deux dates. C'est du reporting, pas le journal des commissions. Modifier un deal après coup change le prochain chargement de ce rapport.",
+    "overview": "Le rapport agents est une vue de performance sur une période : ce que chaque agent a réservé, vendu et gagné en commissions entre deux dates. C'est du reporting, pas le journal des commissions. Modifier une transaction après coup change le prochain chargement de ce rapport.",
     "sections": [
       {
         "title": "Sur cette page",

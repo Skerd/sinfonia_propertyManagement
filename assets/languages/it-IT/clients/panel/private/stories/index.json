@@ -31,7 +31,7 @@
   "help": {
     "ariaLabel": "Informazioni sulle storie",
     "title": "Informazioni sulle storie",
-    "overview": "Una storia è un articolo di giornale marketing per un progetto (opzionalmente un edificio o un'unità). Pubblicata, compare sul sito pubblico. Non è un aggiornamento cantiere né uno snag.",
+    "overview": "Una storia è un articolo di marketing del journal per un progetto (opzionalmente un edificio o un'unità). Pubblicata, compare sul sito pubblico. Non è un aggiornamento di cantiere (avanzamento lavori) né un difetto.",
     "sections": [
       {
         "title": "Cosa contiene una storia",
@@ -40,7 +40,7 @@
           "Tipo di storia (obbligatorio) — da Configurazioni → Tipi di storia.",
           "Titolo, contenuto completo, estratto opzionale per le schede.",
           "Immagine principale, gallerie, video.",
-          "Flag pubblicato, data di pubblicazione, ordine di ordinamento."
+          "Flag pubblicato, data di pubblicazione, ordine di visualizzazione."
         ]
       },
       {
@@ -61,7 +61,7 @@
       {
         "title": "Record correlati",
         "items": [
-          "Progetto, edificio/unità opzionali, tipo di storia. Giornale del sito pubblico. Complementare: Aggiornamenti cantiere."
+          "Progetto, edificio/unità opzionali, tipo di storia. Journal del sito pubblico. Complementare: Aggiornamenti cantiere."
         ]
       }
     ]

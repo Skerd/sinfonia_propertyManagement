@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/sales/center/actions/resendSaleStaffNotifications.tsx",
   "actionLabel": "Renvoyer les notifications",
   "confirmTitle": "Renvoyer les notifications de vente ?",
-  "confirmDescription": "Renvoie la notification dans l’application et l’e-mail à toutes les personnes de la liste « Notifier lors des ventes » dans les paramètres Ventes et remise.",
+  "confirmDescription": "Renvoie la notification dans l’application et l’e-mail à toutes les personnes de la liste « Notifier lors des ventes » dans les paramètres Ventes & remise.",
   "cancel": "Annuler",
   "confirmSend": "Envoyer",
   "axios": {

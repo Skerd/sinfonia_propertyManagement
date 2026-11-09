@@ -37,15 +37,15 @@
           "Rreshti i KPI: njësi gjithsej, të shitura, të arkëtuara, çmimi mesatar për m², plus qira e arkëtuar / e papaguar / e vonuar dhe kontrata aktive kur ekzistojnë të dhëna qiraje.",
           "Periudha (7 ditë, 30 ditë, 3 muaj, 12 muaj) ndryshon dritaret e arkëtimit, jo stokun e njësive.",
           "Grafikët tregojnë përzierjen e statuseve dhe të ardhurat në periudhë.",
-          "Tabela/kartat e njësive poshtë janë e njëjta burim Njësi, tashmë e kufizuar te ndërtesa e zgjedhur.",
-          "Njoftimet e pagesave të çojnë te planet e pagesave / rezervimet që kërkojnë vëmendje."
+          "Tabela/kartat e njësive poshtë janë i njëjti burim Njësi, tashmë i kufizuar te ndërtesa e zgjedhur.",
+          "Sinjalizimet e pagesave të çojnë te planet e pagesave / rezervimet që kërkojnë vëmendje."
         ]
       },
       {
         "title": "Si prodhohen shifrat",
         "items": [
           "Gjithsej / e shitur / e rezervuar / me qira janë numërime të njësive të asaj ndërtese sipas statusit tregtar.",
-          "E arkëtuar vjen nga faturat e shitjes dhe aktiviteti i planit të pagesave në periudhë — jo nga një objektiv i shkruar.",
+          "E arkëtuar vjen nga arkëtimet e shitjeve dhe aktiviteti i planit të pagesave në periudhë — jo nga një objektiv i shkruar.",
           "Mesatarja €/m² përdor çmimet dhe sipërfaqet e atyre njësive; nuk i riçmon.",
           "Qira e arkëtuar / e papaguar / e vonuar mbledh rreshtat e pagesave të qirasë të kontratave të njësive të kësaj ndërtese.",
           "Kontratat aktive numërojnë kontratat që janë ende aktive mbi ato njësi."
@@ -65,7 +65,7 @@
           "Ndërtesë → Kat → Njësi (stoku).",
           "Rezervim / Shitje (e shitur dhe e arkëtuar).",
           "Kontratë qiraje / Pagesë qiraje (KPI të qirasë).",
-          "Përdorni «Shiko planet e pagesave» / «Shiko qendrën e qirave» kur shfaqen ato njoftime."
+          "Përdorni «Shiko planet e pagesave» / «Shiko qendrën e qirave» kur shfaqen ato sinjalizime."
         ]
       }
     ]

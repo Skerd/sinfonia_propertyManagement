@@ -2,7 +2,7 @@
     "hidePreview": "Fshih pamjen paraprake",
     "showPreview": "Shfaq pamjen paraprake",
     "palette": "Fut një vendmbajtës",
-    "bodyPlaceholder": "Shkruani trupin e e-mail-it si HTML. Butonat më sipër fusin blloqe të gatshme.",
+    "bodyPlaceholder": "Shkruani trupin e emailit si HTML. Butonat më sipër fusin blloqe të gatshme.",
     "inheritHint": "Lëreni bosh për të përdorur të pandryshuar trupin e modelit të zgjedhur.",
     "snippets": {
         "paragraph": "Paragraf",
@@ -17,7 +17,7 @@
         "firstName": "Emri i marrësit",
         "lastName": "Mbiemri i marrësit",
         "fullName": "Emri i plotë i marrësit",
-        "email": "Adresa e e-mail-it të marrësit",
+        "email": "Adresa e emailit të marrësit",
         "companyName": "Emri i kompanisë suaj",
         "campaignTitle": "Titulli i kësaj fushate",
         "projectName": "Projekti përkatës",

@@ -12,7 +12,7 @@
         "items": [
           "Emri dhe kategoria (të detyrueshme). Krijoni kategorinë së pari.",
           "Grup opsional (etiketë e lirë brenda kategorisë), përshkrim dhe ikonë.",
-          "Flamuri privat — shënues katalogu te karta e llojit. Nuk është okupim dhe nuk ndryshon statusin e njësisë.",
+          "Treguesi privat — shënues katalogu te karta e llojit. Nuk është zënie dhe nuk ndryshon statusin e njësisë.",
           "Slug-u gjenerohet nga emri i kompanisë plus emri i llojit. Nuk e shkruani ju."
         ]
       },
@@ -41,7 +41,7 @@
       }
     ]
   },
-  "createUnitType": "Krijo llojin e njësisë",
+  "createUnitType": "Krijo lloj njësie",
   "noData": "Nuk u gjet asnjë lloj njësie",
   "failTitle": "Ngarkimi i llojeve të njësive dështoi",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të llojeve të njësive. Ju lutemi provoni përsëri.",
@@ -54,10 +54,10 @@
   "category": "Kategoria",
   "group": "Grupi",
   "isPrivate": "Privat",
-  "yes": "po",
-  "no": "Nr",
+  "yes": "Po",
+  "no": "Jo",
   "private": "Privat",
-  "public": "Publike",
+  "public": "Publik",
   "fields": {
     "category": "Kategoria",
     "company": "Kompania",
@@ -68,7 +68,7 @@
     "description": "Përshkrimi",
     "group": "Grupi",
     "icon": "Ikona",
-    "isPrivate": "Është Privat",
+    "isPrivate": "Është privat",
     "name": "Emri",
     "slug": "Slug",
     "updatedAt": "Përditësuar më"

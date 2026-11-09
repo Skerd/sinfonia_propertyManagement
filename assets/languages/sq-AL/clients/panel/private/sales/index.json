@@ -4,8 +4,8 @@
   "description": "Menaxhoni shitjet e njësive",
   "descriptionWithContext": "Menaxhoni shitjet për këtë njësi",
   "createSale": "Krijo shitje",
-  "createCashSale": "Krijoni shitje në para",
-  "createPaymentPlanSale": "Krijo shitje të planit të pagesës",
+  "createCashSale": "Krijo shitje me para në dorë",
+  "createPaymentPlanSale": "Krijo shitje me plan pagese",
   "view": "Shiko",
   "noData": "Nuk u gjet asnjë shitje",
   "failTitle": "Ngarkimi i shitjeve dështoi",
@@ -18,11 +18,11 @@
   "paymentPlanStatus": "Statusi i planit të pagesës",
   "saleDate": "Data e shitjes",
   "finalPrice": "Çmimi përfundimtar",
-  "soldBy": "Shitur Nga",
+  "soldBy": "Shitur nga",
   "buyer": "Blerësi",
   "fields": {
-    "additionalDocuments": "Dokumentet Shtesë",
-    "approvalStatus": "Statusi i aprovimit",
+    "additionalDocuments": "Dokumentet shtesë",
+    "approvalStatus": "Statusi i miratimit",
     "buyer": "Blerësi",
     "buyerCompany": "Kompania blerëse",
     "cashSale": {
@@ -42,14 +42,14 @@
     "handoverDate": "Data e dorëzimit",
     "handoverNotes": "Shënimet e dorëzimit",
     "listedUnitCurrency": "Monedha e çmimit të listuar",
-    "listedUnitPrice": "Çmimi për njësi i listuar",
+    "listedUnitPrice": "Çmimi i listuar për njësi",
     "localDiscount": "Zbritje lokale %",
     "name": "Emri",
     "notaryName": "Emri i noterit",
     "notes": "Shënime",
     "paymentPlan": "Plani i pagesës",
     "paymentType": "Pagesa",
-    "purchaseContract": "Kontrata e Blerjes",
+    "purchaseContract": "Kontrata e blerjes",
     "reservation": "Rezervimi",
     "reservationConvertedAmount": "Shuma e konvertuar e rezervimit",
     "reservationDepositAmount": "Depozita e Rezervimit",
@@ -57,15 +57,15 @@
     "reservationExchangeRate": "Kursi i këmbimit të rezervimit",
     "saleApproval": {
       "decision": "Vendimi",
-      "user": "Rishikuar nga",
+      "user": "Shqyrtuar nga",
       "notes": "Shënime",
-      "reviewedAt": "Rishikuar më",
+      "reviewedAt": "Shqyrtuar më",
       "media": "Media"
     },
     "saleCurrency": "Monedha e shitjes",
     "saleDate": "Data e shitjes",
     "saleExchangeRate": "Kursi i këmbimit të shitjes",
-    "soldBy": "Shitur Nga",
+    "soldBy": "Shitur nga",
     "titleTransferCertificate": "Certifikata e transferimit të titullit",
     "titleTransferDate": "Data e transferimit të titullit",
     "transactionReference": "Referenca e transaksionit",
@@ -80,45 +80,45 @@
         "payment_plan": "Plani i pagesës"
       },
       "approvalStatus": {
-        "pending_approval": "Në pritje të aprovimit",
-        "approved": "Aprovuar",
+        "pending_approval": "Në pritje të miratimit",
+        "approved": "Miratuar",
         "rejected": "Refuzuar"
       },
       "saleApproval": {
         "decision": {
-          "approved": "Aprovuar",
+          "approved": "Miratuar",
           "rejected": "Refuzuar",
           "pending": "Në pritje"
         }
       },
       "decision": {
-        "approved": "Aprovuar",
+        "approved": "Miratuar",
         "rejected": "Refuzuar",
         "pending": "Në pritje"
       }
     },
-    "saleConfirmationEmailSentAt": "Email-i i konfirmimit të shitjes u dërgua më"
+    "saleConfirmationEmailSentAt": "Emaili i konfirmimit të shitjes u dërgua më"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "yes": "po",
-  "no": "Nr",
+  "yes": "Po",
+  "no": "Jo",
   "help": {
     "ariaLabel": "Rreth Shitjeve",
     "title": "Rreth Shitjeve",
-    "overview": "Një shitje është blerja e njësisë — me para në dorë ose me plan pagesash. Përfundimi i një shitjeje e shënon njësinë të shitur. Aprovimi, këstet, dorëzimi dhe transferimi i pronësisë janë fusha dhe veprime të kësaj shitjeje, jo menu të veçanta. Kontratat & klientët vetëm i liston të njëjtat dokumente.",
+    "overview": "Një shitje është blerja e njësisë — me para në dorë ose me plan pagese. Përfundimi i një shitjeje e shënon njësinë të shitur. Miratimi, këstet, dorëzimi dhe transferimi i pronësisë janë fusha dhe veprime të kësaj shitjeje, jo menu të veçanta. Kontratat & klientët vetëm i liston të njëjtat dokumente.",
     "sections": [
       {
         "title": "Çfarë mban një shitje",
         "items": [
-          "Njësia, agjenti shitës, valuta e shitjes, data e shitjes (e detyrueshme; jo në të ardhmen).",
+          "Njësia, agjenti shitës, monedha e shitjes, data e shitjes (e detyrueshme; jo në të ardhmen).",
           "Lloji i pagesës: para në dorë ose plan pagesash (sipas rrjedhës së krijimit që përdorët).",
           "Çmimi përfundimtar (llogaritur nga çmimi i listës, zbritjet, kthimi i depozitës së rezervimit, kurset — mos e trajtoni si KPI të shkruar rastësisht).",
           "Blerësi (personi) dhe shoqëria blerëse opsionale.",
-          "Çmimi i listës i njësisë / valuta, zbritja lokale, kursi i këmbimit i shitjes, shënime.",
+          "Çmimi i listës i njësisë / monedha, zbritja lokale, kursi i këmbimit i shitjes, shënime.",
           "Skedari i kontratës së blerjes dhe dokumente shtesë, referenca e transaksionit.",
-          "Rezervimi origjinues opsional, plus shuma/valuta/kursi/shuma e kthyer e depozitës kur ktheni një mbajtje në shitje.",
-          "Statusi i aprovimit (në pritje / i aprovuar / i refuzuar) dhe shënimet e shqyrtimit.",
-          "Lidhja e planit të pagesave kur lloji është plan pagesash (këste, interes, paradhënie, mbetja).",
+          "Rezervimi origjinues opsional, plus shuma/monedha/kursi/shuma e kthyer e depozitës kur ktheni një mbajtje në shitje.",
+          "Statusi i miratimit (në pritje / i miratuar / i refuzuar) dhe shënimet e shqyrtimit.",
+          "Lidhja e planit të pagesave kur lloji është plan pagesash (këste, interes, parapagim, mbetja).",
           "Dorëzimi: data, kush dorëzoi, shënime, skedari i certifikatës.",
           "Transferimi i pronësisë: data, numri i aktit, emri i noterit, skedari i certifikatës."
         ]
@@ -126,18 +126,18 @@
       {
         "title": "Rrjedhat e krijimit",
         "items": [
-          "Shitje me para në dorë — shuma e plotë, pa orar këstesh.",
-          "Shitje me plan pagesash — paradhënie, numri i kësteve, datat, interes opsional; plani ruhet si dosje e vetë lidhur me shitjen.",
+          "Shitje me para në dorë — shuma e plotë, pa plan këstesh.",
+          "Shitje me plan pagesash — parapagim, numri i kësteve, datat, interes opsional; plani ruhet si dosje më vete e lidhur me shitjen.",
           "Të dy rrjedhat mund të nisin nga një rezervim aktiv që depozita të hyjë në çmim."
         ]
       },
       {
         "title": "Veprimet",
         "items": [
-          "Aprovo / refuzo — vetëm sa aprovimi është në pritje. Refuzimi e kthen njësinë të lirë dhe fshin treguesin e shitjes te njësia. Aprovimi e mban njësinë të shitur.",
-          "Paguaj këstin / paguaj paradhënien — te plani i pagesave (pagesa të pjesshme të lejuara; faturat për çdo këst).",
-          "Ristrukturo planin e pagesave — zëvendëso orarin e papaguar, mbaj historikun e kësteve të mëparshme, vetëm sa plani është aktiv.",
-          "E-mail manual te klienti — konfirmim shitjeje, ose kujtesa kësti (3-ditë / 1-ditë / sot / ditët e mbetura / i vonuar) për një numër kësti të zgjedhur.",
+          "Mirato / refuzo — vetëm sa miratimi është në pritje. Refuzimi e kthen njësinë të lirë dhe fshin treguesin e shitjes te njësia. Miratimi e mban njësinë të shitur.",
+          "Paguaj këstin / paguaj parapagimin — te plani i pagesave (pagesat e pjesshme lejohen; dëftesat ruhen për çdo këst).",
+          "Ristrukturo planin e pagesave — zëvendëso planin e papaguar, mbaj historikun e kësteve të mëparshme, vetëm sa plani është aktiv.",
+          "Email manual te klienti — konfirmim shitjeje, ose kujtesa kësti (3-ditë / 1-ditë / sot / ditët e mbetura / i vonuar) për një numër kësti të zgjedhur.",
           "Datat e dorëzimit dhe të transferimit të pronësisë ruhen në ndryshim. Nëse shoqëria kërkon një paketë dorëzimi të përfunduar, data e dorëzimit mund të bllokohet derisa ajo paketë të ekzistojë."
         ]
       },
@@ -145,9 +145,9 @@
         "title": "Sjellja",
         "items": [
           "Një njësi e shitur nuk rezervohet as jepet me qira derisa shitja të zhbëhet përmes rrugëve të mbështetura të refuzimit / disponueshmërisë — jo duke ndryshuar statusin e njësisë.",
-          "«E arkëtuara» e panelit lexon faturat / aktivitetin e planit të pagesave, jo një fushë të shkruar te vështrimi i përgjithshëm.",
+          "«E arkëtuara» e panelit lexon arkëtimet / aktivitetin e planit të pagesave, jo një fushë të shkruar te vështrimi i përgjithshëm.",
           "Komisioni i agjentit zakonisht lind këtu (burimi shitje) ose nga rezervimi që e parapriu.",
-          "Mbetja e planit të pagesave ulet ndërsa këstet dhe paradhënia shënohen të paguara."
+          "Mbetja e planit të pagesave ulet ndërsa këstet dhe parapagimi shënohen të paguara."
         ]
       },
       {

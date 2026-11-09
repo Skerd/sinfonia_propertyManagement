@@ -73,7 +73,7 @@
       {
         "title": "Sur cette page",
         "items": [
-          "Ouvert depuis un bâtiment, la liste est limitée à cet édifice.",
+          "Ouvert depuis un bâtiment, la liste est limitée à ce bâtiment.",
           "Créer un étage, puis y ajouter des unités. Un étage à zéro unité est valide mais n'affichera pas de stock.",
           "Ouvrir une carte pour modifier les données de plan et les médias. Les actions de ligne mènent aux unités de cet étage.",
           "La suppression logique est restaurable. Les unités de l'étage ne sont pas supprimées automatiquement."

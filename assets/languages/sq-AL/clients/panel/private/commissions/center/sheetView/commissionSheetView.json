@@ -17,8 +17,8 @@
     "!enums": {
       "status": {
         "pending": "Në pritje",
-        "pending_approval": "Në pritje të aprovimit",
-        "approved": "I aprovuar",
+        "pending_approval": "Në pritje të miratimit",
+        "approved": "I miratuar",
         "paid": "I paguar",
         "voided": "I anuluar"
       },
@@ -48,7 +48,7 @@
   "voidedAt": "Anuluar më",
   "recordedByActionUser": "Regjistruar nga",
   "paymentReference": "Referenca e pagesës",
-  "paymentReceiptMediaId": "Fatura e pagesës",
+  "paymentReceiptMediaId": "Dëftesa e pagesës",
   "splits": "Ndarjet",
   "splitAgent": "Agjenti i ndarjes",
   "splitLabel": "Etiketa e ndarjes",

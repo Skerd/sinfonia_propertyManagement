@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
   "title": "Créer un type",
-  "description": "Créer un nouveau type d’histoire",
+  "description": "Créer un nouveau type de récit",
   "generalInfo": "Informations générales",
   "form": {
     "nameLabel": "Nom",
-    "namePlaceholder": "Saisir le nom du type d’histoire",
+    "namePlaceholder": "Saisir le nom du type de récit",
     "nameRequired": "Le nom est obligatoire",
     "slugLabel": "Identifiant",
     "slugPlaceholder": "Saisir l’identifiant (ex. : residential)",
@@ -17,24 +17,24 @@
   },
   "axios": {
     "start": {
-      "title": "Création du type d’histoire",
+      "title": "Création du type de récit",
       "time": 3000
     },
     "success": {
-      "title": "Type d’histoire créé avec succès !",
+      "title": "Type de récit créé avec succès !",
       "time": 3000
     },
     "error": {
-      "title": "Le type d’histoire n’a pas pu être créé, veuillez réessayer !",
+      "title": "Le type de récit n’a pas pu être créé, veuillez réessayer !",
       "time": 3000
     }
   },
   "formHeader": {
     "title": "Créer un type",
-    "description": "Saisissez les informations pour créer un Types d'histoires."
+    "description": "Saisissez les informations pour créer un type de récit."
   },
   "formButtons": {
     "cancel": "Annuler",
-    "submit": "Créer un type d’histoire"
+    "submit": "Créer un type de récit"
   }
 }

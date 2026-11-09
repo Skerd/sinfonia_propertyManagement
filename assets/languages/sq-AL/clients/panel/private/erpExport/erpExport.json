@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/erpExport/erpExport.tsx",
   "title": "Eksporti ERP / Kontabilitet",
-  "description": "Eksporto të dhënat financiare në JSON ose CSV për importim në sistemin tuaj ERP.",
+  "description": "Eksporto të dhënat financiare në JSON ose CSV për importim në sistemin tuaj të kontabilitetit ose ERP.",
   "datasetsLabel": "Grupet e të dhënave",
   "datasetsPlaceholder": "Zgjidh grupet për eksport",
   "dateFromLabel": "Data nga",
@@ -26,7 +26,7 @@
     "unitCosts": "Kostot e njësive",
     "boqItems": "Zërat e BOQ",
     "costCommitments": "Angazhimet e kostos",
-    "progressClaims": "Kërkesat e progresit",
+    "progressClaims": "Situacionet e punimeve",
     "permits": "Lejet"
   },
   "preview": {
@@ -37,24 +37,24 @@
     "unitCosts": "Kostot e njësive",
     "boqItems": "Zërat e BOQ",
     "costCommitments": "Angazhimet e kostos",
-    "progressClaims": "Kërkesat e progresit",
+    "progressClaims": "Situacionet e punimeve",
     "permits": "Lejet",
     "rows": "{count} rreshta"
   },
   "help": {
     "ariaLabel": "Rreth Eksportit ERP",
     "title": "Rreth Eksportit ERP",
-    "overview": "Eksporti ERP ndërton sete të shkarkueshme për sistemet e kontabilitetit. Zgjidhni një ose më shumë sete, projekt opsional dhe interval datash. Kjo faqe nuk poston te SAP ose Abacus — prodhon JSON (parapamje) ose CSV (shkarkim) që ato sisteme mund t'i thithin.",
+    "overview": "Eksporti ERP ndërton sete të shkarkueshme për sistemet e kontabilitetit. Zgjidhni një ose më shumë sete, projekt opsional dhe interval datash. Kjo faqe nuk poston te SAP ose Abacus — prodhon JSON (parapamje) ose CSV (shkarkim) që ato sisteme mund t'i importojnë.",
     "sections": [
       {
         "title": "Setet që mund të përfshini",
         "items": [
           "Shitjet — shitje tregtare të mbyllura në interval.",
           "Komisionet — rreshta pagese agjenti.",
-          "Këstet e planit të pagesave — plani/faturat.",
+          "Këstet e planit të pagesave — plani/dëftesat.",
           "Pagesat e qirasë — rreshta mujorë (qiraja e qiramarrësit).",
-          "Kostot e njësisë — shpenzime anës pronarit mbi njësitë.",
-          "Zërat BOQ, angazhimet e kostos, kërkesat e progresit, lejet — dosje ndërtimi/financiare kur ato të dhëna moduli ekzistojnë për shoqërinë."
+          "Kostot e njësisë — shpenzime nga ana e pronarit mbi njësitë.",
+          "Zërat BOQ, angazhimet e kostos, situacionet e punimeve, lejet — dosje ndërtimi/financiare kur ato të dhëna moduli ekzistojnë për shoqërinë."
         ]
       },
       {
@@ -70,7 +70,7 @@
         "items": [
           "Nxjerrje vetëm-për-lexim. Riekzekutimi me të njëjtat filtra prodhon një skedar të ri nga të dhënat aktuale.",
           "Nuk i shënon faturat si të eksportuara dhe nuk ndryshon statusin e pagesës.",
-          "Kostot e njësisë këtu janë shpenzime pronari; pagesat e qirasë janë muaj qiramarrësi — mos i përzieni në ERP-në pritëse si të njëjtin llogari, përveçse ta thotë kontabilisti."
+          "Kostot e njësisë këtu janë shpenzime pronari; pagesat e qirasë janë muaj qiramarrësi — mos i përzieni në ERP-në pritëse si të njëjtën llogari, përveçse kur e thotë kontabilisti."
         ]
       },
       {

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx",
-  "failedTitle": "Dështoi ngarkimi i Llojet e historive",
+  "failedTitle": "Dështoi ngarkimi i llojeve të tregimeve",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
   "name": "Emri",

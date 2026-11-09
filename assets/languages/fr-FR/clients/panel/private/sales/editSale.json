@@ -72,7 +72,7 @@
     "saleDateLabel": "Date de vente",
     "saleDatePlaceholder": "Sélectionner la date de vente",
     "saleDateRequired": "La date de vente est obligatoire",
-    "saleExchangeRateHelper": "Multipliez le prix affiché de l'unité (dans sa devise de liste) par ce taux pour l'exprimer dans la devise de vente sélectionnée.",
+    "saleExchangeRateHelper": "Multipliez le prix affiché de l'unité (dans sa devise) par ce taux pour l'exprimer dans la devise de vente sélectionnée.",
     "saleExchangeRateLabel": "Taux de change unité → devise de vente",
     "saleExchangeRatePlaceholder": "Saisir le taux de change unité → devise de vente",
     "soldByLabel": "Vendu par",

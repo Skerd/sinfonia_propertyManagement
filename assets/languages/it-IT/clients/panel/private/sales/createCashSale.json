@@ -17,7 +17,7 @@
   "cannotProceed": "Impossibile procedere con la vendita!",
   "pleaseSetUnitToSaleCurrencyExchangeRate": "Imposta il tasso di cambio unità → valuta di vendita",
   "pleaseSetReservationToUnitCurrencyExchangeRate": "Imposta il tasso di cambio prenotazione → valuta dell'unità",
-  "linkedReservationBlocksSale": "La prenotazione dell'unità non è ancora pagata. Segnala come pagata o annullala prima di creare la vendita.",
+  "linkedReservationBlocksSale": "La prenotazione dell'unità non è ancora pagata. Contrassegnala come pagata o annullala prima di creare la vendita.",
   "form": {
     "projectLabel": "Progetto",
     "projectPlaceholder": "Seleziona progetto",

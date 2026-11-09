@@ -72,8 +72,8 @@
         "title": "Aggiungere o rimuovere voci",
         "items": [
           "Le nuove voci compaiono sulle vendite aperte come righe non spuntate, etichettate con l’ambito di questo pacchetto.",
-          "Rimuovi una voce incompleta e cade dalle vendite aperte.",
-          "Rimuovi una voce completata e la vendita la tiene come trattenuta. Le righe trattenute non si possono despuntare e non bloccano mai il trasferimento del titolo.",
+          "Rimuovi una voce incompleta e viene rimossa dalle vendite aperte.",
+          "Rimuovi una voce completata e la vendita la tiene come trattenuta. Le righe trattenute non si possono deselezionare e non bloccano mai il trasferimento del titolo.",
           "Riaggiungi lo stesso nome in questo stesso ambito e una riga trattenuta si riallaccia conservando la spunta."
         ]
       },

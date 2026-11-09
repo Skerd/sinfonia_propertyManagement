@@ -4,6 +4,6 @@
   "videoPlayer": "Luajtësi i videos",
   "close": "Mbyll",
   "previous": "Prapa",
-  "next": "Para",
+  "next": "Përpara",
   "counter": "{{current}} / {{total}}"
 }

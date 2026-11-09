@@ -34,7 +34,7 @@
   "specs": {
     "floorsAbove": "Above ground",
     "floorsBelow": "Below ground",
-    "distance": "Distance from centre",
+    "distance": "Distance from center",
     "construction": "Construction start",
     "completion": "Expected completion",
     "pricePerSqm": "Price per m²",

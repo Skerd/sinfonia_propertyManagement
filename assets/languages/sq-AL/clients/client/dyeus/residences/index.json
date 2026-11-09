@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx",
-  "eyebrow": "Residenca",
+  "eyebrow": "Rezidenca",
   "fallbackTitle": "Dyeus Residence",
   "noProject": "Ende nuk ka projekt Dyeus të disponueshëm për këtë origjinë kompanie. Vendosni VITE_DYEUS_PROJECT_ID ose sigurohuni që ekziston një projekt marketing me emrin Dyeus.",
   "loadError": "Nuk mund të ngarkohet ky projekt.",
@@ -32,7 +32,7 @@
   "statusReserved": "E rezervuar",
   "statusAll": "Të gjitha",
   "emptyUnits": "Asnjë njësi nuk përputhet me këtë filtër.",
-  "residenceFallback": "Residencë",
+  "residenceFallback": "Rezidencë",
   "basement": "Bodrum",
   "groundFloor": "Kati përdhe",
   "ground": "Përdhe",
@@ -51,8 +51,8 @@
   "interactiveUnavailable": "Pasqyra interaktive nuk është ende e disponueshme për këtë nivel.",
   "goBack": "Kthehu mbrapa",
   "viewerLocationAria": "Vendndodhja e shikuesit",
-  "residencesPanelTitle": "Residenca",
-  "closeResidencesPanel": "Mbyll panelin e residencave",
+  "residencesPanelTitle": "Rezidenca",
+  "closeResidencesPanel": "Mbyll panelin e rezidencave",
   "floorPlan": "Plani i katit",
   "colName": "Emri",
   "colArea": "Sipërfaqja",
@@ -60,5 +60,5 @@
   "colBaths": "Banjo",
   "colFloor": "Kati",
   "colPrice": "Çmimi",
-  "emptyFilter": "Asnjë residencë nuk përputhet me këtë filtër."
+  "emptyFilter": "Asnjë rezidencë nuk përputhet me këtë filtër."
 }

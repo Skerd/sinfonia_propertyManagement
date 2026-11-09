@@ -31,7 +31,7 @@
   },
   "formHeader": {
     "title": "Create story type",
-    "description": "Enter the details to create a new Story types."
+    "description": "Enter the details to create a new story type."
   },
   "formButtons": {
     "cancel": "Cancel",

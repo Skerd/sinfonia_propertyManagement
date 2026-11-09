@@ -53,7 +53,7 @@
   "measureUnit": {
     "piece": "Piece (ea)",
     "pair": "Pair (pr)",
-    "set": "Set (set)",
+    "set": "Set",
     "box": "Box (bx)",
     "pack": "Pack (pk)",
     "pallet": "Pallet (pal)",

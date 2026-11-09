@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/forgotPassword/index.tsx",
   "title": "Password dimenticata",
-  "subtitle": "Inserisci la tua email e ti invieremo un link di reset.",
+  "subtitle": "Inserisci la tua email e ti invieremo un link di reimpostazione.",
   "form": {
     "emailLabel": "Email",
     "emailPlaceholder": "Email"
@@ -9,7 +9,7 @@
   "submit": "Invia link",
   "submitting": "Attendere…",
   "formError": "Impossibile inviare il link di reimpostazione. Riprova.",
-  "successMessage": "Se esiste un account per questa email, riceverai un link di reset.",
+  "successMessage": "Se esiste un account per questa email, riceverai un link di reimpostazione.",
   "goToLogin": "Torna all'accesso",
   "axios": {
     "start": {

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx",
-  "lease": "Qira",
+  "lease": "Kontrata e qirasë",
   "overview": "Përmbledhje",
   "name": "Emri",
   "status": "Statusi",
@@ -10,7 +10,7 @@
     "terminated": "E ndërprerë"
   },
   "unit": "Njësia",
-  "tenant": "Qiraxhiu",
+  "tenant": "Qiramarrësi",
   "startDate": "Data e fillimit",
   "endDate": "Data e mbarimit",
   "monthlyRent": "Qiraja mujore",
@@ -34,13 +34,13 @@
   "lateFeePercentage": "Përqindja e gjobës së vonesës",
   "gracePeriodDays": "Periudha e tolerancës (ditë)",
   "schedule": {
-    "title": "Orari i qirasë",
+    "title": "Kalendari i qirasë",
     "recordPayment": "Regjistro pagesë",
     "kpiDue": "Detyrimi",
     "kpiCollected": "Qira e arkëtuar",
     "kpiRemaining": "Mbetja",
     "kpiOverdue": "Qira e vonuar",
-    "dueDate": "Data",
+    "dueDate": "Data e afatit",
     "amount": "Shuma",
     "lateFee": "Gjobë vonese",
     "paid": "Paguar",

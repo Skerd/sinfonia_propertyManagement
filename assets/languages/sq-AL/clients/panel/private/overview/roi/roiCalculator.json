@@ -32,7 +32,7 @@
   "projectSummary": {
     "totalUnits": "Njësi gjithsej",
     "sold": "Shitur",
-    "available": "Disponibël",
+    "available": "Të disponueshme",
     "rented": "Me qira",
     "totalRevenue": "Të ardhura totale",
     "totalCosts": "Kosto totale",
@@ -61,7 +61,7 @@
         "items": [
           "Zgjidhni projektin, opsionalisht ndërtesën dhe katin, pastaj një njësi — llogaritja niset me zgjedhjen.",
           "Përmbledhja dhe ndarja sipas njësisë tregojnë çmimin e shitjes kundrejt kostove kundrejt kthimit të nënkuptuar.",
-          "Eksport PDF për një pamje të llogaritjes aktuale."
+          "Eksportoni PDF për një pamje të llogaritjes aktuale."
         ]
       },
       {

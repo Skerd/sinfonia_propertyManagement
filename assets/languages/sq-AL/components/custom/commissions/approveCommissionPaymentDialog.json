@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/commissions/approveCommissionPaymentDialog.tsx",
   "dialogTitle": "Mirato ose refuzo pagesën",
-  "approveDescription": "Miratimi e lë komisionin gati për pagesë. Nuk mund të kërkohet sërish aprovim; hapi tjetër është ta shënoni të paguar.",
+  "approveDescription": "Miratimi e lë komisionin gati për pagesë. Nuk mund të kërkohet sërish miratim; hapi tjetër është ta shënoni të paguar.",
   "rejectDescription": "Refuzimi e anulon komisionin, regjistron kohën dhe njofton agjentin.",
   "decisionLabel": "Vendimi",
   "decisionPlaceholder": "Zgjidh një vendim",

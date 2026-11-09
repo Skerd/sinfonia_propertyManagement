@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
-  "title": "Pagesat e Qirasë",
+  "title": "Pagesat e qirasë",
   "description": "Regjistri i pagesave të qirasë",
   "createRentalPayment": "Shto tarifë shtesë",
   "noData": "Nuk u gjetën pagesa qiraje",
@@ -14,19 +14,19 @@
     "currency": "Monedha",
     "deletedAt": "Fshirë",
     "deletedBy": "Fshirë nga",
-    "dueDate": "Data e pagesës",
+    "dueDate": "Afati",
     "edifice": "Ndërtesa",
     "floor": "Kati",
-    "lateFeeAmount": "Penaliteti",
+    "lateFeeAmount": "Gjoba e vonesës",
     "lease": "Kontrata",
     "name": "Referenca",
     "notes": "Shënime",
-    "paidAmount": "Shuma paguar",
+    "paidAmount": "Shuma e paguar",
     "paidDate": "Data e pagesës",
-    "paymentReceipts": "Faturat e pagesës",
-    "paymentReceipts.media": "Bashkëngjitjet e faturave",
+    "paymentReceipts": "Dëftesat e pagesës",
+    "paymentReceipts.media": "Bashkëngjitjet e dëftesave",
     "project": "Projekti",
-    "receiptMedia": "Fatura",
+    "receiptMedia": "Dëftesa",
     "remaining": "Mbetja",
     "rentOverdueNoticeEmailAt": "Email për vonesë",
     "rentReminderEmailAt0d": "Kujtesë qiraje (po atë ditë)",
@@ -40,7 +40,7 @@
         "pending": "Në pritje",
         "paid": "Paguar",
         "overdue": "E vonuar",
-        "waived": "Hequr dorë",
+        "waived": "E falur",
         "partially_paid": "Pjesërisht paguar"
       }
     }
@@ -48,22 +48,22 @@
   "help": {
     "ariaLabel": "Rreth Pagesave të qirasë",
     "title": "Rreth Pagesave të qirasë",
-    "overview": "Një pagesë qiraje është një muaj i planifikuar i një kontrate. Mbetja nxirret (shuma + penaliteti − e paguar). Statusi lëviz në pritje → e paguar | pjesërisht e paguar | e vonuar, ose e falur. Arkëtoni këtu; nuk e ricipërcaktoni qiranë e kontratës këtu. Lëreni kontratën të gjenerojë planin në vend që t'i krijoni muajt me dorë.",
+    "overview": "Një pagesë qiraje është një muaj i planifikuar i një kontrate. Shuma e mbetur llogaritet (shuma + gjoba e vonesës − e paguar). Statusi lëviz në pritje → e paguar | pjesërisht e paguar | e vonuar, ose e falur. Arkëtoni këtu; nuk e ripërcaktoni qiranë e kontratës këtu. Lëreni kontratën të gjenerojë planin në vend që t'i krijoni muajt me dorë.",
     "sections": [
       {
         "title": "Çfarë mban një rresht",
         "items": [
-          "Kontrata prind, njësia, data e afatit, shuma, shuma e paguar, mbetja, valuta.",
+          "Kontrata prind, njësia, data e afatit, shuma, shuma e paguar, mbetja, monedha.",
           "Statusi: në pritje, e paguar, pjesërisht e paguar, e vonuar, e falur.",
-          "Shuma e penalitetit (vuloset kur muaji bëhet i vonuar).",
-          "Faturat e pagesës (çdo copë arkëtimi me datë, shënime dhe deri në pesë bashkëngjitje)."
+          "Shuma e gjobës së vonesës (vendoset kur muaji bëhet i vonuar).",
+          "Dëftesat e pagesës (çdo pjesë arkëtimi me datë, shënime dhe deri në pesë bashkëngjitje)."
         ]
       },
       {
         "title": "Veprimet",
         "items": [
           "Shëno të paguar — regjistro një shumë vetëm kundër këtij muaji (kontrata prind duhet të jetë aktive). Pagesa e plotë = e paguar; e pjesshme = pjesërisht e paguar. Nuk mund të mbipaguani mbetjen. Nuk mund të arkëtoni te rreshta tashmë të paguar ose të falur.",
-          "Falo — fal mbetjen e një rreshti të hapur. Nuk mund të falni atë që është tashmë e paguar.",
+          "Fal — fal mbetjen e një rreshti të hapur. Nuk mund të falni atë që është tashmë e paguar.",
           "Regjistrimi i një pagese te kontrata (FIFO) mund ta mbushë këtë rresht si pjesë e një shume më të madhe — e njëjta matematikë mbetjeje."
         ]
       },
@@ -78,7 +78,7 @@
       {
         "title": "Sjellja",
         "items": [
-          "Vonesa merr parasysh hirësinë e kontratës; një punë ditore e kthen statusin dhe mund të zbatojë penalitetin një herë.",
+          "Vonesa merr parasysh periudhën e tolerancës së kontratës; një punë ditore e ndryshon statusin dhe mund të zbatojë gjobën e vonesës një herë.",
           "Paneli «qira e arkëtuar / e papaguar / e vonuar» i mbledh këto rreshta.",
           "Ndërprerja ose skadimi i një kontrate fal rreshtat ende të hapur."
         ]

@@ -3,8 +3,8 @@
   "priceOnRequest": "Prezzo su richiesta",
   "fromPrice": "da",
   "perSqm": "/m²",
-  "description": "Su questo progetto",
-  "descriptionFloor": "Su questo piano",
+  "description": "Informazioni sul progetto",
+  "descriptionFloor": "Informazioni sul piano",
   "amenities": "Servizi",
   "facilities": "Nell'edificio",
   "neighborhood": "Intorno all'edificio",
@@ -58,7 +58,7 @@
   },
   "status": {
     "available": "Disponibile",
-    "reserved": "Riservato",
+    "reserved": "Prenotato",
     "sold": "Venduto",
     "unavailable": "Non disponibile"
   }

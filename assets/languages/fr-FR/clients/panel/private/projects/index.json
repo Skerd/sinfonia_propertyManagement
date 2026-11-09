@@ -47,7 +47,7 @@
           "Titre, description et PDF magazine — bloc éditorial lorsque vous publiez une page de type magazine.",
           "Liens sociaux (nom, URL, logo optionnel) — jusqu'à 20 liens affichés avec le projet.",
           "Mise en avant sur la page d'accueil + ordre de tri — quels projets apparaissent dans la rangée d'accueil publique et dans quel ordre (plus petit d'abord).",
-          "Commission de vente % et commission de réservation % — taux de départ hérités par les deals ultérieurs. Un deal peut encore porter ses propres chiffres."
+          "Commission de vente % et commission de réservation % — taux de départ hérités par les ventes et réservations ultérieures. Une transaction peut encore porter ses propres chiffres."
         ],
         "body": "Il n'y a pas de machine à statuts sur le projet lui-même. Livraison et statut commercial vivent sur les bâtiments, unités, réservations, ventes et baux."
       },
@@ -58,7 +58,7 @@
           "Rechercher et filtrer la liste ; basculer vue cartes / vue tableau.",
           "Ouvrir une carte pour modifier marketing, médias, mise en avant et barèmes de commission.",
           "Menu de ligne : ouvrir les bâtiments déjà limités à ce projet.",
-          "La suppression est logique. Le projet peut être restauré. Les enfants (bâtiments, unités, deals) ne sont ni créés ni détruits automatiquement à la suppression ou à la restauration."
+          "La suppression est logique. Le projet peut être restauré. Les enfants (bâtiments, unités, transactions) ne sont ni créés ni détruits automatiquement à la suppression ou à la restauration."
         ]
       },
       {
@@ -67,7 +67,7 @@
           "Un projet peut exister sans aucun bâtiment. Le stock commence quand vous ajoutez des bâtiments, puis des étages, puis des unités.",
           "Les pages du site public (galerie, rangée mise en avant, magazine, fiche projet) lisent ces champs marketing. Médias manquants ou non publiés : simplement absents.",
           "Les taux de commission du projet ne sont que des défauts. Les modifier plus tard ne réécrit pas les ventes ou réservations historiques.",
-          "Les KPI du tableau de bord et de la vue d'ensemble « par projet » agrègent les unités et deals en dessous, ce ne sont pas des champs stockés ici."
+          "Les KPI du tableau de bord et de la vue d'ensemble « par projet » agrègent les unités et transactions en dessous, ce ne sont pas des champs stockés ici."
         ]
       },
       {
@@ -80,7 +80,7 @@
           "Contenu : récits (journal marketing) et avancements de chantier.",
           "Coûts : coûts d'unité imputés aux unités de ce projet. Qualité : réserves sur ces unités."
         ],
-        "body": "Ces dossiers se créent sur leurs propres pages et ne font que référencer le projet. Supprimer un projet ne les cascade pas."
+        "body": "Ces dossiers se créent sur leurs propres pages et ne font que référencer le projet. Supprimer un projet ne les supprime pas en cascade."
       },
       {
         "title": "Étape suivante typique",

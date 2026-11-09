@@ -6,7 +6,7 @@
   "confirm": "Segna come disponibile",
   "axios": {
     "start": {
-      "title": "Contrassegnazione unità come disponibile…",
+      "title": "Impostazione dell'unità come disponibile…",
       "time": 3000
     },
     "success": {

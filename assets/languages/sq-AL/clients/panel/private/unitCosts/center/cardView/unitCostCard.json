@@ -3,7 +3,7 @@
   "failedTitle": "Ngarkimi i kostos së njësisë dështoi",
   "failedDescription": "Diçka shkoi keq. Klikoni për të provuar përsëri.",
   "purchaseDate": "Data e blerjes",
-  "purchasePerson": "Blerësi",
+  "purchasePerson": "Blerë nga",
   "verificationStatus": "Verifikimi",
   "paymentStatus": "Pagesa",
   "documentSubtotal": "Nëntotali",
@@ -12,7 +12,7 @@
     "pending_verification": "Në pritje të verifikimit",
     "verified": "E verifikuar",
     "rejected": "E refuzuar",
-    "needs_revision": "Kërkon rivlerësim"
+    "needs_revision": "Kërkon rishikim"
   },
   "unitCostPayment": {
     "unpaid": "E papaguar",
@@ -21,9 +21,9 @@
     "waived": "E falur",
     "disputed": "Në mosmarrëveshje"
   },
-  "invoiceNumber": "Nr. Faturës",
-  "vendorName": "Ofruesi",
+  "invoiceNumber": "Nr. i faturës",
+  "vendorName": "Furnitori",
   "tag": "Etiketa",
-  "relatedModificationRequest": "Kërkesë Modifikimi",
+  "relatedModificationRequest": "Kërkesë për modifikim",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

@@ -5,8 +5,8 @@
   "form": {
     "titleLabel": "Titulli",
     "titlePlaceholder": "Titulli",
-    "tradeLabel": "Zanati",
-    "tradePlaceholder": "Zanati",
+    "tradeLabel": "Zeja",
+    "tradePlaceholder": "Zeja",
     "stageLabel": "Faza",
     "stagePlaceholder": "Faza",
     "descriptionLabel": "Përshkrimi",
@@ -45,7 +45,7 @@
   },
   "formHeader": {
     "title": "Shto listë kontrolli",
-    "description": "Plotëso të dhënat për të krijuar listë kontrolli inspektimi."
+    "description": "Plotësoni të dhënat për të krijuar një listë kontrolli inspektimi."
   },
   "formButtons": {
     "cancel": "Anulo",

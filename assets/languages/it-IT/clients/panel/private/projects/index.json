@@ -34,7 +34,7 @@
   "help": {
     "ariaLabel": "Informazioni sui progetti",
     "title": "Informazioni sui progetti",
-    "overview": "Un progetto è il contenitore di primo livello di uno sviluppo. Ogni edificio, piano, unità, lead, prenotazione, vendita, contratto di locazione, storia, costo unità e pratica di cantiere vi è appeso. Creare un progetto non crea edifici — li aggiungete dopo. Il record progetto è identità, marketing e default commerciali, non l'edificio fisico.",
+    "overview": "Un progetto è il contenitore di primo livello di uno sviluppo. Ogni edificio, piano, unità, lead, prenotazione, vendita, contratto di locazione, storia, costo unità e pratica di cantiere fa capo a un progetto. Creare un progetto non crea edifici — li aggiungete dopo. Il record del progetto contiene identità, marketing e impostazioni commerciali predefinite, non l'edificio fisico.",
     "sections": [
       {
         "title": "Cosa contiene un progetto",
@@ -46,28 +46,28 @@
           "Brochure marketing (PDF) — che operatori e sito pubblico possono offrire.",
           "Titolo, descrizione e PDF magazine — blocco editoriale quando pubblicate una pagina in stile magazine.",
           "Link social (nome, URL, logo opzionale) — fino a 20 link mostrati con il progetto.",
-          "In evidenza in homepage + ordine di ordinamento — quali progetti compaiono nella riga homepage pubblica e in quale ordine (numero più basso prima).",
-          "Provvigione vendita % e provvigione prenotazione % — tassi di partenza ereditati dai deal successivi. Un deal può comunque portare i propri importi."
+          "In evidenza in homepage + ordine in evidenza — quali progetti compaiono nella riga homepage pubblica e in quale ordine (numero più basso prima).",
+          "Commissione vendita % e commissione prenotazione % — aliquote di partenza ereditate da vendite e prenotazioni successive. Ogni operazione può comunque avere valori propri."
         ],
-        "body": "Non c'è una macchina di stato sul progetto stesso. Consegna e stato commerciale vivono su edifici, unità, prenotazioni, vendite e contratti di locazione."
+        "body": "Il progetto non ha un ciclo di stati proprio. Consegna e stato commerciale vivono su edifici, unità, prenotazioni, vendite e contratti di locazione."
       },
       {
         "title": "In questa pagina",
         "items": [
           "Creare un progetto — immagine principale e nome obbligatori.",
           "Cercare e filtrare l'elenco; passare da vista schede a tabella.",
-          "Aprire una scheda per modificare marketing, media, evidenza e default di provvigione.",
+          "Aprire una scheda per modificare marketing, media, evidenza e commissioni predefinite.",
           "Menu riga: aprire gli edifici già limitati a quel progetto.",
-          "L'eliminazione è logica. Il progetto può essere ripristinato. I figli (edifici, unità, deal) non si creano né si distruggono automaticamente alla cancellazione o al ripristino."
+          "L'eliminazione è logica. Il progetto può essere ripristinato. I figli (edifici, unità, operazioni) non si creano né si distruggono automaticamente alla cancellazione o al ripristino."
         ]
       },
       {
         "title": "Comportamento",
         "items": [
-          "Un progetto può esistere con zero edifici. La giacenza inizia quando aggiungete edifici, poi piani, poi unità.",
+          "Un progetto può esistere con zero edifici. L'inventario inizia quando aggiungete edifici, poi piani, poi unità.",
           "Le pagine del sito pubblico (galleria, riga in evidenza, magazine, dettaglio progetto) leggono questi campi marketing. Media mancanti o non pubblicati semplicemente non si vedono.",
-          "I tassi di provvigione sul progetto sono solo default. Cambiarli in seguito non riscrive vendite o prenotazioni storiche.",
-          "I KPI di Dashboard e Panoramica «per progetto» aggregano unità e deal sottostanti, non sono campi memorizzati qui."
+          "Le aliquote di commissione del progetto sono solo valori predefiniti. Cambiarle in seguito non riscrive vendite o prenotazioni storiche.",
+          "I KPI di Dashboard e Panoramica «per progetto» aggregano unità e operazioni sottostanti, non sono campi memorizzati qui."
         ]
       },
       {
@@ -77,8 +77,8 @@
           "Pipeline commerciale: lead (interesse progetto opzionale), ispezioni, richieste di modifica, prenotazioni, vendite, commissioni.",
           "Contratti e clienti è un registro di quei documenti commerciali — non crea un nuovo tipo.",
           "Locazioni: contratti e canoni (anche tramite Hub locazioni).",
-          "Contenuti: storie (giornale marketing) e aggiornamenti cantiere.",
-          "Costi: costi unità imputati alle unità di questo progetto. Qualità: snag su quelle unità."
+          "Contenuti: storie (journal di marketing) e aggiornamenti cantiere.",
+          "Costi: costi unità imputati alle unità di questo progetto. Qualità: difetti su quelle unità."
         ],
         "body": "Quei record si creano nelle rispettive pagine e solo referenziano il progetto. Eliminare un progetto non li cancella a cascata."
       },

@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/portal/propertyUnit.tsx",
   "priceOnRequest": "Prix sur demande",
   "facts": {
-    "units": "Lots",
+    "units": "Unités",
     "available": "Disponibles",
     "bedrooms": "Chambres",
     "area": "Surface",
@@ -12,7 +12,7 @@
   "backToProject": "Retour au programme",
   "floorPlan": "Plan",
   "featuresTitle": "Caractéristiques",
-  "description": "À propos de ce lot",
+  "description": "À propos de cette unité",
   "status": {
     "available": "Disponible",
     "reserved": "Réservé",

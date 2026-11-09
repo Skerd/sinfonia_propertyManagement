@@ -6,7 +6,7 @@
     },
     "start": {
       "time": 3000,
-      "title": "Po përditëson llojin e njësisë"
+      "title": "Po përditësohet lloji i njësisë"
     },
     "success": {
       "time": 3000,
@@ -34,18 +34,18 @@
     "namePlaceholder": "Futni emrin e llojit të njësisë",
     "nameRequired": "Kërkohet emri",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Fut slug (p.sh., apartament)",
-    "slugRequired": "Slug është i nevojshëm"
+    "slugPlaceholder": "Fut slug-un (p.sh., apartment)",
+    "slugRequired": "Slug-u është i detyrueshëm"
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Ruaj Ndryshimet"
+    "submit": "Ruaj ndryshimet"
   },
   "formHeader": {
     "description": "Redaktoni informacionin e llojit të njësisë",
     "title": "Redakto llojin e njësisë"
   },
-  "generalInfo": "Informacione të Përgjithshme",
+  "generalInfo": "Informacione të përgjithshme",
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/editUnitType.tsx",
   "title": "Titulli"
 }

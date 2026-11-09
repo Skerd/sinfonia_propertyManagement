@@ -2,27 +2,27 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Le type d’histoire n’a pas pu être mis à jour, veuillez réessayer !"
+      "title": "Le type de récit n’a pas pu être mis à jour, veuillez réessayer !"
     },
     "start": {
       "time": 3000,
-      "title": "Mise à jour du type d’histoire"
+      "title": "Mise à jour du type de récit"
     },
     "success": {
       "time": 3000,
-      "title": "Type d’histoire mis à jour avec succès !"
+      "title": "Type de récit mis à jour avec succès !"
     }
   },
-  "editDescription": "Modifier les informations du type d’histoire",
-  "editTitle": "Modifier le type d’histoire",
-  "errorDescription": "Une erreur est survenue lors du chargement du type d’histoire. Veuillez réessayer.",
-  "errorTitle": "Échec du chargement du type d’histoire",
+  "editDescription": "Modifier les informations du type de récit",
+  "editTitle": "Modifier le type de récit",
+  "errorDescription": "Une erreur est survenue lors du chargement du type de récit. Veuillez réessayer.",
+  "errorTitle": "Échec du chargement du type de récit",
   "form": {
     "_idLabel": "Identifiant",
     "descriptionLabel": "Description",
     "descriptionPlaceholder": "Saisir une description",
     "nameLabel": "Nom",
-    "namePlaceholder": "Saisir le nom du type d’histoire",
+    "namePlaceholder": "Saisir le nom du type de récit",
     "nameRequired": "Le nom est obligatoire",
     "slugLabel": "Identifiant",
     "slugPlaceholder": "Saisir l’identifiant (ex. : residential)",
@@ -35,10 +35,10 @@
     "submit": "Enregistrer les modifications"
   },
   "formHeader": {
-    "description": "Mettez à jour les informations de ce Types d'histoires.",
-    "title": "Modifier Types d'histoires"
+    "description": "Mettez à jour les informations de ce type de récit.",
+    "title": "Modifier le type de récit"
   },
   "generalInfo": "Informations générales",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
-  "title": "Modifier Types d'histoires"
+  "title": "Modifier le type de récit"
 }

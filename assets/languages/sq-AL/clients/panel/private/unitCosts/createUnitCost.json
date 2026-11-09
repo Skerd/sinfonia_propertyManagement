@@ -3,7 +3,7 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Nuk u ruajt kosto e njësisë"
+      "title": "Kostoja e njësisë nuk u ruajt"
     },
     "start": {
       "time": 3000,
@@ -11,12 +11,12 @@
     },
     "success": {
       "time": 3000,
-      "title": "Kosto e njësisë u ruajt"
+      "title": "Kostoja e njësisë u ruajt"
     }
   },
   "category": "Kategoria",
   "description": "Regjistro një blerje ose faturë për këtë njësi",
-  "descriptionNoUnit": "Regjistro një blerje ose faturë njësi",
+  "descriptionNoUnit": "Regjistro një blerje ose faturë për një njësi",
   "errorDescription": "Klikoni këtu për të provuar përsëri",
   "errorTitle": "Ngarkimi i njësisë dështoi",
   "expenditureCategory": {
@@ -24,8 +24,8 @@
     "electrical_lighting": "Elektrike / ndriçim",
     "finishes_flooring": "Dysheme",
     "finishes_paint_wallcovering": "Bojë / mbulesë muri",
-    "fixtures_hardware": "Pajisje / metalike",
-    "hvac": "NGJL",
+    "fixtures_hardware": "Instalime / aksesorë",
+    "hvac": "Ngrohje, ventilim dhe kondicionim",
     "materials_general": "Materiale të përgjithshme",
     "permits_fees_taxes": "Leje, tarifa, taksa",
     "plumbing_sanitary": "Ujësjellës / sanitarike",
@@ -54,7 +54,7 @@
     "floorPlaceholder": "Zgjidh katin",
     "idLabel": "Etiketa e ID-së",
     "invoiceMediaLabel": "Dokumentet e faturës",
-    "invoiceNumberLabel": "Fatura / referenca #",
+    "invoiceNumberLabel": "Nr. fature / reference",
     "newFilesLabel": "Shto skedarë",
     "notesLabel": "Shënime",
     "paymentDateLabel": "Data e pagesës",
@@ -64,7 +64,7 @@
     "projectLabel": "Projekti",
     "projectPlaceholder": "Zgjidh projektin",
     "purchaseDateLabel": "Data e blerjes",
-    "purchasePersonLabel": "Blerësi",
+    "purchasePersonLabel": "Blerë nga",
     "purchasePersonPlaceholder": "Zgjidh përdoruesin",
     "relatedModificationRequestLabel": "Modifikimi i lidhur",
     "scopeRequired": "Zgjidhni të paktën projektin, ndërtesën, katin ose njësinë",
@@ -75,7 +75,7 @@
     "unitCostPaymentPartiallyPaid": "Pjesërisht e paguar",
     "unitCostPaymentUnpaid": "E papaguar",
     "unitCostPaymentWaived": "E falur",
-    "unitCostVerificationNeedsRevision": "Kërkon rivlerësim",
+    "unitCostVerificationNeedsRevision": "Kërkon rishikim",
     "unitCostVerificationPending": "Në pritje të verifikimit",
     "unitCostVerificationRejected": "E refuzuar",
     "unitCostVerificationVerified": "E verifikuar",
@@ -91,7 +91,7 @@
   },
   "formHeader": {
     "description": "Regjistro një blerje ose faturë",
-    "title": "Krijo kosto njësi"
+    "title": "Krijo kosto njësie"
   },
   "generalInfo": "Detajet e blerjes",
   "lineDescription": "Përshkrimi",
@@ -101,11 +101,11 @@
     "cm": "Centimetër (cm)",
     "day": "Ditë (d)",
     "g": "Gram (g)",
-    "gal": "Gallon (gal SHBA)",
+    "gal": "Galon (gal SHBA)",
     "hour": "Orë (h)",
     "kg": "Kilogram (kg)",
     "l": "Litër (L)",
-    "lb": "Font (lb)",
+    "lb": "Paund (lb)",
     "linear_m": "Metër linear (lm)",
     "m": "Metër (m)",
     "m2": "Metër katror (m²)",
@@ -128,5 +128,5 @@
   "quantity": "Sasia",
   "selectCategory": "Zgjidh kategorinë",
   "selectUnit": "Zgjidh njësinë",
-  "title": "Krijo kosto njësi"
+  "title": "Krijo kosto njësie"
 }

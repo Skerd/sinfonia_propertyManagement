@@ -1,15 +1,15 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/forgotPassword/index.tsx",
   "title": "Fjalëkalim i harruar",
-  "subtitle": "Vendos emailin dhe do të dërgojmë një link rivendosjeje.",
+  "subtitle": "Vendosni emailin tuaj dhe do t'ju dërgojmë një lidhje rivendosjeje.",
   "form": {
     "emailLabel": "Emaili",
     "emailPlaceholder": "Emaili"
   },
-  "submit": "Dërgo linkun",
+  "submit": "Dërgo lidhjen e rivendosjes",
   "submitting": "Ju lutemi prisni…",
   "formError": "Lidhja e rivendosjes nuk u dërgua. Ju lutemi provoni përsëri.",
-  "successMessage": "Nëse ekziston një llogari për këtë email, linku është në rrugë.",
+  "successMessage": "Nëse ekziston një llogari për këtë email, lidhja e rivendosjes është në rrugë.",
   "goToLogin": "Kthehu te hyrja",
   "axios": {
     "start": {

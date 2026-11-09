@@ -32,9 +32,9 @@
           "Un cockpit en lecture seule pour une société (celle dans laquelle vous êtes connecté).",
           "Les onglets sont des coupes différentes des mêmes données : KPI de tête, tendances, stock et santé du pipeline.",
           "Rien ici ne crée un projet, une unité, une vente ou un bail. Les cartes « Voir les entrées » ouvrent la liste opérationnelle correspondante, avec la même logique de filtres.",
-          "Le tableau de bord reprend les mêmes chiffres pour un édifice. Le tableau de bord groupe cumule plusieurs sociétés."
+          "Le tableau de bord reprend les mêmes chiffres pour un bâtiment. Le tableau de bord groupe cumule plusieurs sociétés."
         ],
-        "body": "Portefeuille répond à « la société est-elle en bonne santé ? » Le tableau de bord répond à « que se passe-t-il dans cet édifice ? »"
+        "body": "Portefeuille répond à « la société est-elle en bonne santé ? » Le tableau de bord répond à « que se passe-t-il dans ce bâtiment ? »"
       },
       {
         "title": "Onglets",
@@ -60,7 +60,7 @@
         "title": "Usage typique",
         "items": [
           "Début de journée : vendu vs disponible vs loué, loyers en retard, réservations à traiter.",
-          "Puis ouvrez le tableau de bord pour un édifice, ou sautez vers Unités, Réservations, Ventes ou le centre des locations pour agir.",
+          "Puis ouvrez le tableau de bord pour un bâtiment, ou sautez vers Unités, Réservations, Ventes ou le centre des locations pour agir.",
           "Ne cherchez pas à « corriger » un KPI ici — modifiez la réservation, la vente, le bail ou le paiement sous-jacent."
         ]
       }

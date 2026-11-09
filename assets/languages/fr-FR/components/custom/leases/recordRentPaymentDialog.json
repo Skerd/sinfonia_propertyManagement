@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/leases/recordRentPaymentDialog.tsx",
   "dialogTitle": "Enregistrer un paiement de loyer",
-  "dialogDescription": "Répartir {remaining} sur les mois ouverts, du plus ancien.",
+  "dialogDescription": "Répartir {remaining} sur les mois ouverts, en commençant par le plus ancien.",
   "paidAmount": "Montant à enregistrer",
   "notes": "Notes",
   "notesPlaceholder": "Facultatif",

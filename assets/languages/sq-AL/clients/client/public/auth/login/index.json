@@ -1,21 +1,21 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/login/index.tsx",
   "title": "Hyr",
-  "subtitle": "Vendos emailin dhe fjalëkalimin për të hyrë në profilin Pronix.",
+  "subtitle": "Vendosni emailin dhe fjalëkalimin për të hyrë në profilin tuaj Pronix.",
   "mfaTitle": "Autentifikim me dy faktorë",
-  "mfaSubtitle": "Vendos kodin nga aplikacioni autentifikues.",
+  "mfaSubtitle": "Vendosni kodin nga aplikacioni i vërtetimit.",
   "form": {
     "emailLabel": "Emaili",
     "emailPlaceholder": "Emaili",
     "passwordLabel": "Fjalëkalimi",
     "passwordPlaceholder": "Fjalëkalimi",
     "mfaCodeLabel": "Kodi i vërtetimit",
-    "mfaCodePlaceholder": "6-digit code"
+    "mfaCodePlaceholder": "Kod me 6 shifra"
   },
   "submit": "Hyr",
   "verify": "Verifiko",
   "submitting": "Ju lutem prisni…",
-  "formError": "Hyrja dështoi. Kontrolloni të dhënat.",
+  "formError": "Hyrja dështoi. Kontrolloni të dhënat dhe provoni përsëri.",
   "forgotPassword": "Keni harruar fjalëkalimin?",
   "noAccount": "Nuk keni llogari?",
   "signUpLink": "Regjistrohu",

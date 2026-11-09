@@ -19,7 +19,7 @@
   "occupancyRate": "Tasso di occupazione",
   "occupancyRateDesc": "Vendute ÷ unità totali",
   "inventoryValue": "Valore inventario",
-  "inventoryValueDesc": "Valore di listino (disponibile + prenotato)",
+  "inventoryValueDesc": "Valore di listino (disponibili + prenotate)",
   "activeReservations": "Prenotazioni attive",
   "activeReservationsDesc": "Prenotazioni attualmente attive",
   "verifiedPaidCosts": "Costi verificati pagati",

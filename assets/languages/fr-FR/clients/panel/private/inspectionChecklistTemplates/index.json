@@ -13,25 +13,25 @@
           "Titre (obligatoire). Description, notes, métier et étape optionnels.",
           "Au moins un élément : nom (obligatoire), description et consignes optionnelles, importance (faible / moyenne / élevée).",
           "Statut : actif ou archivé. Les éléments n'ont pas de case « fait » ici.",
-          "À l'échelle de la société — pas lié à un projet, bâtiment, étage ou unité (contrairement aux paquets de remise)."
+          "À l'échelle de la société — pas lié à un projet, bâtiment, étage ou unité (contrairement aux dossiers de remise)."
         ]
       },
       {
         "title": "Comment les inspections l'utilisent",
         "body": "Attachez un modèle à une inspection. L'inspection copie les éléments et stocke les cases.",
         "items": [
-          "Tant que l'inspection est ouverte (planifiée, en cours ou reportée), elle se synchronise en direct : ajouts, renommages, disparition des items incomplets retirés.",
-          "Une case déjà cochée est conservée si vous retirez ensuite l'item du modèle — l'inspection retient la ligne. On ne peut pas décocher une ligne retenue.",
+          "Tant que l'inspection est ouverte (planifiée, en cours ou reportée), elle se synchronise en direct : ajouts, renommages, disparition des éléments incomplets retirés.",
+          "Une case déjà cochée est conservée si vous retirez ensuite l'élément du modèle — l'inspection retient la ligne. On ne peut pas décocher une ligne retenue.",
           "Changer de modèle fusionne la nouvelle liste et conserve les lignes terminées qui ne correspondent plus.",
-          "Les inspections terminées ou annulées gèlent : les modifications ultérieures ici ne les changent plus."
+          "Les inspections terminées ou annulées sont gelées : les modifications ultérieures ici ne les changent plus, et leurs cases ne peuvent plus être cochées ou décochées."
         ]
       },
       {
         "title": "Verrou de clôture",
         "items": [
-          "Une inspection avec checklist active ne peut pas passer à terminée tant que chaque item non retenu n'est pas coché.",
+          "Une inspection avec checklist active ne peut pas passer à terminée tant que chaque élément non retenu n'est pas coché.",
           "Les lignes retenues ne bloquent jamais la clôture.",
-          "Sans modèle et sans items restants, il n'y a pas de verrou checklist."
+          "Sans modèle et sans éléments restants, il n'y a pas de verrou checklist."
         ]
       },
       {
@@ -39,43 +39,43 @@
         "items": [
           "Seuls les modèles actifs apparaissent dans le sélecteur d'inspection.",
           "Archiver masque le modèle pour les nouveaux choix. Les inspections ouvertes qui l'utilisent déjà continuent de se synchroniser jusqu'à clôture ou annulation.",
-          "La suppression est douce et restaurable. Les inspections ouvertes gardent les lignes qu'elles ont déjà."
+          "La suppression logique est restaurable. Supprimer un modèle encore rattaché à des inspections ouvertes laisse à celles-ci les lignes qu'elles ont déjà."
         ]
       },
       {
         "title": "Sur cette page",
         "items": [
-          "Créer un modèle, ajouter les items que chaque inspection concernée doit parcourir, puis enregistrer.",
-          "Rechercher et filtrer ; ouvrir une carte. Modifier titre, notes et items — conserver les identités existantes pour qu'un renommage soit une mise à jour, pas une suppression-puis-ajout.",
-          "Cette liste est sous Location → Configurations, juste après Paquets de remise."
+          "Créer un modèle, ajouter les éléments que chaque inspection concernée doit parcourir, puis enregistrer.",
+          "Rechercher et filtrer ; ouvrir une carte. Modifier titre, notes et éléments — conserver les identités existantes pour qu'un renommage soit une mise à jour, pas une suppression-puis-ajout.",
+          "Cette liste se trouve sous Gestion des mandants → Configurations, à côté de Dossiers de remise."
         ]
       },
       {
-        "title": "Pas un paquet de remise",
+        "title": "Pas un dossier de remise",
         "items": [
-          "Les paquets de remise ont une portée (projet / bâtiment / étage / unité) et s'empilent sur une vente.",
+          "Les dossiers de remise ont une portée (projet / bâtiment / étage / unité) et s'empilent sur une vente.",
           "Les listes de contrôle d'inspection sont un seul modèle société à attacher à une visite.",
-          "Cochez les items d'inspection sur l'inspection (Mettre à jour la checklist). Cochez les items de remise sur la vente (Mettre à jour la remise)."
+          "Cochez les éléments d'inspection sur l'inspection (Mettre à jour la checklist). Cochez les éléments de remise sur la vente (Mettre à jour la remise)."
         ]
       },
       {
         "title": "Dossiers liés",
         "items": [
           "Inspections — attacher le modèle, cocher, clôturer seulement quand la liste active est faite.",
-          "Paquets de remise — la checklist côté vente, à côté de cet item dans Configurations."
+          "Dossiers de remise — la checklist côté vente, à côté de cet élément dans Configurations."
         ]
       },
       {
         "title": "Prochaine étape typique",
         "items": [
-          "Ajouter un modèle actif avec les items qu'une inspection de routine ou de remise doit confirmer.",
-          "Sur une nouvelle inspection, choisir ce modèle. Cocher pendant la visite. Clôturer seulement quand chaque item actif est fait."
+          "Ajouter un modèle actif avec les éléments qu'une inspection de routine ou de remise doit confirmer.",
+          "Sur une nouvelle inspection, choisir ce modèle. Cocher pendant la visite. Clôturer seulement quand chaque élément actif est fait."
         ]
       }
     ]
   },
   "createInspectionChecklistTemplate": "Ajouter une liste",
-  "noData": "Aucun enregistrement",
+  "noData": "Aucune liste de contrôle trouvée",
   "failTitle": "Échec du chargement",
   "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",

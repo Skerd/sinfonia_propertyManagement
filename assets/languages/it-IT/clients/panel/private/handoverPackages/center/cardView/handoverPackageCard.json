@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx",
-  "failedTitle": "Impossibile caricare pacchetto di consegna",
+  "failedTitle": "Impossibile caricare il pacchetto di consegna",
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "failedTooltipDescription": "Clicca per ricaricare i dati.",
   "scopes": {

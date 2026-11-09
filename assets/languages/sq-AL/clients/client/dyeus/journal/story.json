@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/client/dyeus/journal/story.tsx",
-  "backToJournal": "← Journal",
+  "backToJournal": "← Ditari",
   "missingParam": "Mungon parametri i historisë.",
   "loadError": "Nuk mund të ngarkohet kjo histori.",
   "notFound": "Historia nuk u gjet.",

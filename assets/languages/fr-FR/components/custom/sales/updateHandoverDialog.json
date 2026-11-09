@@ -4,7 +4,7 @@
   "description": "Cochez les éléments hérités. Les éléments déjà faits et retirés restent conservés.",
   "sourceScopes": {
     "project": "Projet",
-    "edifice": "Édifice",
+    "edifice": "Bâtiment",
     "floor": "Étage",
     "unit": "Unité",
     "retained": "Conservé"

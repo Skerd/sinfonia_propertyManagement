@@ -14,8 +14,8 @@
     "!enums": {
       "status": {
         "pending": "Në pritje",
-        "pending_approval": "Në pritje të aprovimit",
-        "approved": "I aprovuar",
+        "pending_approval": "Në pritje të miratimit",
+        "approved": "I miratuar",
         "paid": "I paguar",
         "voided": "I anuluar"
       },

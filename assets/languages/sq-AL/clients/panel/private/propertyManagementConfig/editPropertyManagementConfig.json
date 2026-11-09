@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/propertyManagementConfig/editPropertyManagementConfig.tsx",
-  "title": "Ndrysho Shitjet & Dorëzimi",
+  "title": "Ndrysho Shitjet & dorëzimin",
   "notifications": "Njoftimet",
-  "generalInfo": "Portat e rrjedhës së punës",
+  "generalInfo": "Kontrollet e rrjedhës së punës",
   "form": {
     "notifyOnSalesLabel": "Njofto për shitjet",
     "notifyOnReservationsLabel": "Njofto për rezervimet",
@@ -27,8 +27,8 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho Shitjet & Dorëzimi",
-    "description": "Përditëso të dhënat e këtij Shitjet & Dorëzimi."
+    "title": "Ndrysho Shitjet & dorëzimin",
+    "description": "Përditësoni të dhënat e cilësimeve Shitjet & dorëzimi."
   },
   "help": {
     "ariaLabel": "Rreth Shitjeve & Dorëzimit",
@@ -55,7 +55,7 @@
         "title": "Në këtë faqe",
         "items": [
           "Faqja hap dosjen e vetme të cilësimeve të kësaj kompanie (krijohet automatikisht nëse mungonte).",
-          "Dy lista marrësish dhe dy çelësa. Ruaj për t’i zbatuar.",
+          "Dy lista marrësish dhe dy çelësa. Ruani për t’i zbatuar.",
           "Nuk ka krijim, fshirje as përjashtim sipas projekti."
         ]
       },
@@ -65,7 +65,7 @@
           "Pa miratim, krijimi i shitjes njofton si e krijuar — nuk ka radhë pritjeje.",
           "Me miratim, shitësi njoftohet që miratimi është në pritje; menaxherët vendosin te faqja Shitjet.",
           "Paketat e dorëzimit mblidhen te rrjedha njësi / shitje. Kjo faqe rregullon vetëm vulosjen e datës së dorëzimit.",
-          "Ndryshimi i këtyre flamujve nuk i anulon shitjet që janë tashmë në pritje."
+          "Ndryshimi i këtyre çelësave nuk i anulon shitjet që janë tashmë në pritje."
         ]
       },
       {

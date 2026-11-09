@@ -7,7 +7,7 @@
     "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
     "searchPlaceholder": "Kërko ose shto filtra...",
     "fields": {
-        "email": "Adresa e e-mail-it",
+        "email": "Adresa e emailit",
         "fullName": "Emri",
         "status": "Statusi",
         "skipReason": "Arsyeja",
@@ -15,7 +15,7 @@
         "campaignType": "Lloji",
         "attempts": "Përpjekje",
         "sentAt": "Dërguar më",
-        "messageId": "Id e mesazhit",
+        "messageId": "ID e mesazhit",
         "languageCode": "Gjuha",
         "unsubscribedAt": "Çregjistruar më",
         "lastError": "Gabimi i fundit",
@@ -33,7 +33,7 @@
             },
             "skipReason": {
                 "opted_out": "Çregjistruar",
-                "no_email": "Pa adresë e-mail",
+                "no_email": "Pa adresë email",
                 "inactive": "Joaktiv",
                 "duplicate": "Dublikatë"
             },

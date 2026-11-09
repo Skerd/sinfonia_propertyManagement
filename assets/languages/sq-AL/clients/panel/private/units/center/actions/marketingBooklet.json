@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/center/actions/marketingBooklet.tsx",
-  "title": "Broshurë Marketingu",
+  "title": "Broshurë marketingu",
   "axios": {
     "start": {
       "title": "Duke gjeneruar broshurën e marketingut…",

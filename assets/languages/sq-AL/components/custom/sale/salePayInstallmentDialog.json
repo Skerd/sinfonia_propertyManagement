@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/components/custom/sale/salePayInstallmentDialog.tsx",
-  "payInstallmentTitle": "Paguaj me këste",
+  "payInstallmentTitle": "Paguaj këstin",
   "payInstallmentDescription": "Regjistro pagesën për këtë këst",
   "paidAmount": "Shuma e paguar",
   "remainingAmount": "E mbetur",

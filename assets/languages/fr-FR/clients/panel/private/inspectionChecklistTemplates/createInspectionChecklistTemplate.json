@@ -45,7 +45,7 @@
   },
   "formHeader": {
     "title": "Ajouter une liste",
-    "description": "Saisissez les informations pour créer un liste de contrôle."
+    "description": "Saisissez les informations pour créer une liste de contrôle."
   },
   "formButtons": {
     "cancel": "Annuler",

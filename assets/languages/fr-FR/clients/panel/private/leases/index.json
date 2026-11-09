@@ -18,7 +18,7 @@
     "depositAmount": "Dépôt de garantie",
     "depositPaid": "Dépôt payé",
     "depositReturnedAt": "Dépôt restitué le",
-    "edifice": "Édifice",
+    "edifice": "Bâtiment",
     "endDate": "Date de fin",
     "floor": "Étage",
     "gracePeriodDays": "Délai de grâce (jours)",
@@ -63,7 +63,7 @@
       {
         "title": "Actions",
         "items": [
-          "Résilier — seulement tant qu'actif. Passe à résilié, remet les mois encore ouverts, et libère l'unité si ce bail la louait.",
+          "Résilier — seulement tant qu'actif. Passe à résilié, annule les mois encore ouverts, et libère l'unité si ce bail la louait.",
           "Marquer le dépôt payé — une fois. Restituer le dépôt — seulement après qu'il a été marqué payé, et une seule fois.",
           "Enregistrer un paiement de loyer — le montant s'applique au plus ancien mois ouvert d'abord (FIFO). Ne peut pas dépasser le reste ouvert total. Baux actifs seulement.",
           "Resynchroniser le planning — reconstruire les lignes mensuelles si les dates ou le loyer ont changé.",
@@ -81,7 +81,7 @@
       {
         "title": "Comportement",
         "items": [
-          "Un job quotidien marque les mois impayés en retard après échéance + grâce (fin de jour UTC), applique la pénalité une fois depuis le % du bail, expire les baux actifs passés la date de fin, remet leurs lignes ouvertes et libère les unités.",
+          "Une tâche quotidienne marque les mois impayés en retard après échéance + grâce (fin de jour UTC), applique la pénalité une fois depuis le % du bail, fait expirer les baux actifs dont la date de fin est passée, annule leurs lignes ouvertes et libère les unités.",
           "Reste d'un mois = montant + pénalité − payé. Les encaissements partiels restent partiellement payés jusqu'à ce que le reste atteigne zéro.",
           "Le centre des locations et les KPI locatifs du tableau de bord lisent ces mêmes lignes."
         ]

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/signup/index.tsx",
   "title": "Regjistrohu",
-  "subtitle": "Krijo llogarinë tënde të klientit Pronix.",
+  "subtitle": "Krijoni llogarinë tuaj të klientit Pronix për të ndjekur rezervimet dhe portofolin.",
   "form": {
     "nameLabel": "Emri",
     "namePlaceholder": "Emri",
@@ -17,7 +17,7 @@
   "submit": "Krijo llogari",
   "submitting": "Ju lutemi prisni…",
   "formError": "Llogaria juaj nuk u krijua. Ju lutemi provoni përsëri.",
-  "successMessage": "Llogaria u krijua. Kontrollo emailin për linkun e aktivizimit, pastaj hy.",
+  "successMessage": "Llogaria juaj është gati. Kontrolloni emailin për lidhjen e aktivizimit, pastaj hyni.",
   "goToLogin": "Shko te hyrja",
   "haveAccount": "Keni tashmë llogari?",
   "loginLink": "Hyr",

@@ -19,7 +19,7 @@
   "projectMissing": "Nuk mund të gjendet projekti. Rifreskoni dhe provoni përsëri.",
   "errorFirstName": "Emri është i detyrueshëm.",
   "errorSurname": "Mbiemri është i detyrueshëm.",
-  "errorEmailRequired": "Email-i është i detyrueshëm.",
+  "errorEmailRequired": "Emaili është i detyrueshëm.",
   "errorEmailInvalid": "Vendosni një email të vlefshëm.",
   "errorPhone": "Telefoni është i detyrueshëm.",
   "errorMessage": "Mesazhi është i detyrueshëm."

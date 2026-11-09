@@ -72,7 +72,7 @@
     "saleDateLabel": "Data di vendita",
     "saleDatePlaceholder": "Seleziona data di vendita",
     "saleDateRequired": "La data di vendita è obbligatoria",
-    "saleExchangeRateHelper": "Moltiplica il prezzo listato dell'unità (nella sua valuta di listino) per questo tasso per esprimerlo nella valuta di vendita selezionata.",
+    "saleExchangeRateHelper": "Moltiplica il prezzo di listino dell'unità (nella sua valuta di listino) per questo tasso per esprimerlo nella valuta di vendita selezionata.",
     "saleExchangeRateLabel": "Tasso di cambio unità → valuta di vendita",
     "saleExchangeRatePlaceholder": "Inserisci tasso di cambio unità → valuta di vendita",
     "soldByLabel": "Venduto da",
@@ -95,7 +95,7 @@
     "description": "Aggiorna i dettagli della vendita",
     "title": "Modifica vendita"
   },
-  "linkedReservationBlocksSale": "La prenotazione dell'unità non è ancora pagata. Segnala come pagata o annullala prima di salvare.",
+  "linkedReservationBlocksSale": "La prenotazione dell'unità non è ancora pagata. Contrassegnala come pagata o annullala prima di salvare.",
   "path": "src/modules/propertyManagement/clients/panel/private/sales/editSale.tsx",
   "pleaseSetReservationToUnitCurrencyExchangeRate": "Imposta il tasso di cambio prenotazione → valuta dell'unità",
   "pleaseSetUnitToSaleCurrencyExchangeRate": "Imposta il tasso di cambio unità → valuta di vendita",

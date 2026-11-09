@@ -1,12 +1,12 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
   "title": "Qendra e Qirave",
-  "description": "Të gjitha qiratë dhe pagesat e qirasë në një vend. Kërko, filtro dhe hap detajet.",
+  "description": "Të gjitha kontratat e qirasë dhe pagesat e qirasë në një vend. Kërkoni, filtroni dhe hapni detajet.",
   "leases": {
-    "title": "Qiratë",
-    "description": "Regjistri i qirave për kompaninë.",
+    "title": "Kontratat e qirasë",
+    "description": "Regjistri i kontratave të qirasë për kompaninë.",
     "searchLabel": "Kërko",
-    "searchPlaceholder": "Kërko sipas qiramarrësit, njësisë, referencës…",
+    "searchPlaceholder": "Kërko sipas qiramarrësit, njësisë, referencës së kontratës…",
     "projectLabel": "Projekti",
     "projectPlaceholder": "Të gjitha projektet",
     "statusLabel": "Statusi",
@@ -14,12 +14,12 @@
     "startDateLabel": "Data e fillimit",
     "dateFromLabel": "Nga",
     "dateToLabel": "Deri",
-    "noResults": "Nuk u gjetën qira.",
-    "errorTitle": "Nuk u ngarkuan qiratë",
+    "noResults": "Nuk u gjetën kontrata qiraje.",
+    "errorTitle": "Kontratat e qirasë nuk u ngarkuan",
     "errorDescription": "Provoni sërish ose ndryshoni filtrat.",
     "viewAction": "Shiko",
     "previous": "Prapa",
-    "next": "Para",
+    "next": "Përpara",
     "columns": {
       "reference": "Referenca",
       "tenant": "Qiramarrësi",
@@ -35,7 +35,7 @@
     "status": {
       "active": "Aktive",
       "expired": "Skaduar",
-      "terminated": "E përfunduar"
+      "terminated": "E ndërprerë"
     },
     "pagination": {
       "summary": "{from} deri {to} nga {total} rezultate"
@@ -45,7 +45,7 @@
     "title": "Pagesat e qirasë",
     "description": "Regjistri i pagesave të qirasë për kompaninë.",
     "searchLabel": "Kërko",
-    "searchPlaceholder": "Kërko sipas qiramarrësit, qirasë, njësisë…",
+    "searchPlaceholder": "Kërko sipas qiramarrësit, kontratës, njësisë, statusit…",
     "projectLabel": "Projekti",
     "projectPlaceholder": "Të gjitha projektet",
     "statusLabel": "Statusi",
@@ -59,10 +59,10 @@
     "errorDescription": "Provoni sërish ose ndryshoni filtrat.",
     "viewAction": "Shiko",
     "previous": "Prapa",
-    "next": "Para",
+    "next": "Përpara",
     "columns": {
       "reference": "Referenca",
-      "lease": "Qiraja",
+      "lease": "Kontrata",
       "tenant": "Qiramarrësi",
       "unit": "Njësia",
       "status": "Statusi",
@@ -75,7 +75,7 @@
       "pending": "Në pritje",
       "paid": "E paguar",
       "overdue": "Me vonesë",
-      "waived": "E hequr",
+      "waived": "E falur",
       "partially_paid": "Pjesërisht paguar"
     },
     "pagination": {
@@ -83,7 +83,7 @@
     }
   },
   "tabs": {
-    "leases": "Kontrata",
+    "leases": "Kontratat",
     "payments": "Pagesa",
     "calendar": "Kalendari"
   },
@@ -96,9 +96,9 @@
     "kpiCollected": "Qira e arkëtuar",
     "kpiOutstanding": "Qira e papaguar",
     "kpiOverdue": "Qira e vonuar",
-    "detailForDay": "Maturohet më {date}",
+    "detailForDay": "Me afat më {date}",
     "selectDay": "Zgjidhni një ditë",
-    "noPaymentsDay": "Nuk ka qira këtë ditë.",
+    "noPaymentsDay": "Nuk ka qira me afat në këtë ditë.",
     "badge": {
       "pending": "Në pritje",
       "paid": "Paguar",

@@ -6,7 +6,7 @@
   "heroDescription": "Une collection privée de résidences, villas et suites entre la mer Ionienne et les montagnes du sud de l'Albanie.",
   "introLead": "DYEUS est une rare opportunité de posséder un fragment de Méditerranée — là où l'un des derniers littoraux préservés d'Europe demeure dans sa beauté naturelle.",
   "pillarSeaLabel": "mer",
-  "pillarSeaCopy": "Perchée au-dessus de l'Ionienne, là où l'eau rencontre les montagnes du Sud.",
+  "pillarSeaCopy": "Perchée au-dessus de la mer Ionienne, là où l'eau rencontre les montagnes du Sud.",
   "pillarLightLabel": "lumière",
   "pillarLightCopy": "La lumière méditerranéenne qui donne son nom à DYEUS — dans chaque pièce et sur chaque terrasse.",
   "pillarPrivacyLabel": "intimité",
@@ -103,5 +103,5 @@
   "orientationLabel": "Orientation",
   "floorLabel": "Étage",
   "noUnitsOnFloor": "Aucune résidence ne correspond à ce filtre sur l'étage sélectionné.",
-  "viewerEmptyFloor": "Aucun overlay d'unité sur cet étage."
+  "viewerEmptyFloor": "Aucun calque d'unité sur cet étage."
 }

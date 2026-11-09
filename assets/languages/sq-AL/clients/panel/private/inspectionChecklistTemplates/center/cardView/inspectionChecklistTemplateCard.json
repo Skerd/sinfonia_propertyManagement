@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx",
-  "failedTitle": "Dështoi ngarkimi i listë kontrolli inspektimi",
+  "failedTitle": "Dështoi ngarkimi i listës së kontrollit të inspektimit",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
   "status": {

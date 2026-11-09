@@ -1,7 +1,7 @@
 {
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
     "title": "Fushata reklamuese",
-    "description": "Njofto klientët dhe lead-et për ndryshime çmimi, oferta dhe projekte të reja",
+    "description": "Dërgoni email klientëve dhe klientëve të mundshëm për ndryshime çmimi, oferta dhe projekte të reja",
     "createAdCampaign": "Fushatë e re",
     "noData": "Nuk u gjetën fushata",
     "failTitle": "Ngarkimi i fushatave dështoi",

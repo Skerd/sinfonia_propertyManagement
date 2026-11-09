@@ -40,7 +40,7 @@
         "pending": "In sospeso",
         "paid": "Pagato",
         "overdue": "In ritardo",
-        "waived": "Annullato",
+        "waived": "Condonato",
         "partially_paid": "Parzialmente pagato"
       }
     }
@@ -56,14 +56,14 @@
           "Contratto padre, unità, scadenza, importo, importo pagato, residuo, valuta.",
           "Stato: in attesa, pagato, parzialmente pagato, scaduto, condonato.",
           "Importo mora (applicato quando il mese diventa scaduto).",
-          "Ricevute (ogni fetta di incasso con data, note e fino a cinque allegati)."
+          "Ricevute (ogni parte di un incasso con data, note e fino a cinque allegati)."
         ]
       },
       {
         "title": "Azioni",
         "items": [
-          "Marca pagato — registrare un importo contro questo mese soltanto (il contratto padre deve essere attivo). Pagamento intero = pagato; parziale = parzialmente pagato. Non si può eccedere il residuo. Non si può incassare su righe già pagate o condonate.",
-          "Condona — perdonare il residuo di una riga aperta. Non si può condonare ciò che è già pagato.",
+          "Segna pagato — registrare un importo solo su questo mese (il contratto padre deve essere attivo). Pagamento intero = pagato; parziale = parzialmente pagato. Non si può eccedere il residuo. Non si può incassare su righe già pagate o condonate.",
+          "Condona — abbuonare il residuo di una riga aperta. Non si può condonare ciò che è già pagato.",
           "Registrare un pagamento sul contratto (FIFO) può riempire questa riga come parte di un importo più ampio — stessa matematica del residuo."
         ]
       },
@@ -78,9 +78,9 @@
       {
         "title": "Comportamento",
         "items": [
-          "Lo scaduto considera il periodo di grazia del contratto; un job giornaliero capovolge lo stato e può applicare la mora una volta.",
+          "Lo scaduto considera il periodo di grazia del contratto; un job giornaliero aggiorna lo stato e può applicare la mora una volta.",
           "La Dashboard «canone incassato / dovuto / scaduto» somma queste righe.",
-          "Recedere o far scadere un contratto condona le righe ancora aperte."
+          "Risolvere o far scadere un contratto condona le righe ancora aperte."
         ]
       },
       {

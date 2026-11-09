@@ -15,7 +15,7 @@
         "campaignType": "Tipo",
         "attempts": "Tentativi",
         "sentAt": "Inviato il",
-        "messageId": "Id messaggio",
+        "messageId": "ID messaggio",
         "languageCode": "Lingua",
         "unsubscribedAt": "Disiscritto il",
         "lastError": "Ultimo errore",

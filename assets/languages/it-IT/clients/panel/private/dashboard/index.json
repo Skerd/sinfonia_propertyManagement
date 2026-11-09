@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
   "title": "Dashboard",
-  "description": "Cifre di un edificio. Selezionate un edificio per concentrare unità, incassi e avvisi.",
+  "description": "Dati di un edificio. Selezionate un edificio per filtrare unità, incassi e avvisi.",
   "period": "Periodo",
   "paymentAlerts": "Avvisi di pagamento",
   "viewPaymentPlans": "Vedi piani di pagamento",
@@ -34,19 +34,19 @@
         "title": "Disposizione",
         "items": [
           "Galleria edifici in alto — la selezione focalizza ogni KPI e l'elenco unità.",
-          "Riga KPI: unità totali, vendute, incassate, prezzo medio al m², più canone incassato / dovuto / scaduto e contratti attivi quando esistono dati locativi.",
-          "Il periodo (7 giorni, 30 giorni, 3 mesi, 12 mesi) cambia le finestre di incasso, non la giacenza di unità.",
+          "Riga KPI: unità totali, vendute, incassato, prezzo medio al m², più canone incassato / residuo / scaduto e contratti attivi quando esistono dati di locazione.",
+          "Il periodo (7 giorni, 30 giorni, 3 mesi, 12 mesi) cambia le finestre di incasso, non l'inventario delle unità.",
           "I grafici mostrano il mix di stati e i ricavi nel periodo.",
           "Tabella/schede unità in basso sono la stessa risorsa Unità, già limitata all'edificio scelto.",
           "Gli avvisi di pagamento collegano a piani di pagamento / prenotazioni da seguire."
         ]
       },
       {
-        "title": "Come si producono le figure",
+        "title": "Come si producono le cifre",
         "items": [
           "Totale / vendute / prenotate / affittate sono conteggi delle unità di quell'edificio per stato commerciale.",
           "Incassato deriva da ricevute di vendita e attività del piano di pagamento nel periodo — non da un obiettivo digitato.",
-          "La media €/m² usa prezzi e superfici di quelle unità; non riprezza nulla.",
+          "La media €/m² usa prezzi e superfici di quelle unità; non ricalcola alcun prezzo.",
           "Canone incassato / dovuto / scaduto somma le righe di canone dei contratti sulle unità di questo edificio.",
           "Contratti attivi conta i contratti ancora attivi su quelle unità."
         ]
@@ -62,10 +62,10 @@
       {
         "title": "Record correlati",
         "items": [
-          "Edificio → Piano → Unità (giacenza).",
+          "Edificio → Piano → Unità (inventario).",
           "Prenotazione / Vendita (venduto e incassato).",
           "Contratto di locazione / Canone (KPI affitti).",
-          "Usate «Visualizza piani di pagamento» / «Visualizza Hub locazioni» quando compaiono quegli avvisi."
+          "Usate «Vedi piani di pagamento» / «Apri hub locazioni» quando compaiono quegli avvisi."
         ]
       }
     ]

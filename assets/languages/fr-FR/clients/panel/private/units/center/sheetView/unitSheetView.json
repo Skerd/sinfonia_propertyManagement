@@ -31,11 +31,11 @@
     "N": "Nord (N)",
     "S": "Sud (S)",
     "E": "Est (E)",
-    "W": "Ouest (W)",
+    "W": "Ouest (O)",
     "NE": "Nord-Est (NE)",
-    "NW": "Nord-Ouest (NW)",
+    "NW": "Nord-Ouest (NO)",
     "SE": "Sud-Est (SE)",
-    "SW": "Sud-Ouest (SW)"
+    "SW": "Sud-Ouest (SO)"
   },
   "unitConstructionStatusEnum": {
     "planned": "Planifié",

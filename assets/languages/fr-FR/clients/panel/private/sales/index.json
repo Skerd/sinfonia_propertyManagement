@@ -37,7 +37,7 @@
     "deletedAt": "Supprimée",
     "deletedBy": "Supprimée par",
     "finalPrice": "Prix final",
-    "handedOverBy": "Remise par",
+    "handedOverBy": "Remis par",
     "handoverCertificate": "Certificat de remise",
     "handoverDate": "Date de remise",
     "handoverNotes": "Notes de remise",
@@ -105,7 +105,7 @@
   "help": {
     "ariaLabel": "À propos des ventes",
     "title": "À propos des ventes",
-    "overview": "Une vente est l'achat de l'unité — au comptant ou avec plan de paiement. Finaliser une vente marque l'unité vendue. Approbation, échéances, réception et transfert de propriété sont des champs et actions de cette vente, pas des menus séparés. Contrats & clients ne fait que lister les mêmes documents.",
+    "overview": "Une vente est l'achat de l'unité — au comptant ou avec plan de paiement. Finaliser une vente marque l'unité vendue. Approbation, échéances, remise et transfert de propriété sont des champs et actions de cette vente, pas des menus séparés. Contrats & clients ne fait que lister les mêmes documents.",
     "sections": [
       {
         "title": "Ce qu'une vente contient",
@@ -116,10 +116,10 @@
           "Acheteur (personne) et société acheteuse optionnelle.",
           "Prix affiché de l'unité / devise, remise locale, taux de change de vente, notes.",
           "Fichier de contrat d'achat et documents supplémentaires, référence de transaction.",
-          "Réservation d'origine optionnelle, plus montant/devise/taux/montant converti de l'acompte lors de la conversion d'une retenue en vente.",
+          "Réservation d'origine optionnelle, plus montant/devise/taux/montant converti de l'acompte lors de la conversion d'une réservation en vente.",
           "Statut d'approbation (en attente / approuvée / refusée) et notes d'examen.",
           "Lien vers le plan de paiement lorsque le type est plan de paiement (échéances, intérêts, acompte, solde restant).",
-          "Réception : date, qui a remis, notes, fichier de certificat.",
+          "Remise : date, qui a remis, notes, fichier de certificat.",
           "Transfert de propriété : date, numéro d'acte, nom du notaire, fichier de certificat."
         ]
       },
@@ -138,7 +138,7 @@
           "Payer une échéance / payer l'acompte — sur le plan de paiement (paiements partiels autorisés ; quittances par échéance).",
           "Restructurer le plan de paiement — remplacer l'échéancier impayé, conserver l'historique des échéances précédentes, seulement tant que le plan est actif.",
           "E-mail client manuel — confirmation de vente, ou rappels d'échéance (J-3 / J-1 / aujourd'hui / jours restants / en retard) pour un numéro d'échéance choisi.",
-          "Dates de réception et de transfert de propriété enregistrées à l'édition. Si la société exige un dossier de réception complet, la date de réception peut être bloquée tant que ce dossier n'existe pas."
+          "Dates de remise et de transfert de propriété enregistrées à l'édition. Si la société exige un dossier de remise complet, la date de remise peut être bloquée tant que ce dossier n'existe pas."
         ]
       },
       {

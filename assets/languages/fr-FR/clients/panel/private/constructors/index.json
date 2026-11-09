@@ -12,8 +12,8 @@
         "items": [
           "Nom et TVA (obligatoires).",
           "E-mail, téléphone, description, site web et logo optionnels.",
-          "Adresses optionnelles (rue, code postal, ville et pays obligatoires par adresse ; État/canton optionnel ; coordonnées obligatoires si vous ajoutez une adresse).",
-          "Type de partie : entrepreneur, architecte, ingénieur, métreur (QS), chef de projet (PM), géomètre ou autre.",
+          "Adresses optionnelles (rue, code postal, ville et pays obligatoires par adresse ; région optionnelle ; coordonnées obligatoires si vous ajoutez une adresse).",
+          "Type d'intervenant : entrepreneur, architecte, ingénieur, métreur (QS), chef de projet (PM), géomètre ou autre.",
           "Métiers (texte court), date d’échéance d’assurance, note de performance de 0 à 100."
         ]
       },
@@ -56,7 +56,7 @@
   "vat": "TVA",
   "phoneNumber": "Numéro de téléphone",
   "website": "Site web",
-  "edifices": "Édifices",
+  "edifices": "Bâtiments",
   "fields": {
     "addresses": "Adresses",
     "company": "Entreprise",
@@ -69,7 +69,7 @@
     "insuranceExpiry": "Expiration de l’assurance",
     "logo": "Logo",
     "name": "Nom",
-    "partyType": "Type de partie",
+    "partyType": "Type d'intervenant",
     "performanceScore": "Score de performance",
     "preferredLanguage": "Langue préférée",
     "phoneNumber": "Numéro de téléphone",

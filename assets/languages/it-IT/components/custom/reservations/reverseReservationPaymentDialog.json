@@ -1,20 +1,20 @@
 {
   "path": "src/modules/propertyManagement/components/custom/reservations/reverseReservationPaymentDialog.tsx",
-  "reverseConfirmTitle": "Annulla pagamento",
+  "reverseConfirmTitle": "Storna pagamento",
   "reverseConfirmDescription": "Questo contrassegnerà la prenotazione come non pagata per intero e annullerà eventuali commissioni in sospeso correlate. Continuare?",
   "cancel": "Annulla",
-  "confirmReverse": "Annulla pagamento",
+  "confirmReverse": "Storna pagamento",
   "axios": {
     "start": {
-      "title": "Annullamento pagamento…",
+      "title": "Storno del pagamento…",
       "time": 3000
     },
     "success": {
-      "title": "Pagamento annullato",
+      "title": "Pagamento stornato",
       "time": 3000
     },
     "error": {
-      "title": "Impossibile annullare il pagamento",
+      "title": "Impossibile stornare il pagamento",
       "time": 3000
     }
   }

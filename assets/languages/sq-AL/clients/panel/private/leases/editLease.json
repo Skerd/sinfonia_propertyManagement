@@ -14,11 +14,11 @@
     }
   },
   "editDescription": "Përditëso detajet e kontratës së qirasë",
-  "editTitle": "Ndrysho Kontratën",
+  "editTitle": "Ndrysho kontratën",
   "errorDescription": "Ndodhi një gabim gjatë ngarkimit të kontratës. Ju lutemi provoni sërish.",
   "errorTitle": "Dështoi ngarkimi i kontratës",
   "form": {
-    "_idLabel": "ID e rekordit",
+    "_idLabel": "ID e regjistrimit",
     "contractMediaLabel": "Dokumenti i kontratës",
     "depositAmountLabel": "Shuma e depozitës",
     "depositAmountPlaceholder": "Shuma e depozitës",
@@ -49,13 +49,13 @@
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Ruaj Ndryshimet"
+    "submit": "Ruaj ndryshimet"
   },
   "formHeader": {
     "description": "Përditëso detajet e kontratës së qirasë",
-    "title": "Ndrysho Kontratën"
+    "title": "Ndrysho kontratën"
   },
-  "generalInfo": "Detajet e Kontratës",
+  "generalInfo": "Detajet e kontratës",
   "path": "src/modules/propertyManagement/clients/panel/private/leases/editLease.tsx",
-  "title": "Ndrysho Kontratën"
+  "title": "Ndrysho kontratën"
 }

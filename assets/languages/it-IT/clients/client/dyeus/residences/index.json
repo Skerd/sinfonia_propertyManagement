@@ -35,7 +35,7 @@
   "residenceFallback": "Residenza",
   "basement": "Seminterrato",
   "groundFloor": "Piano terra",
-  "ground": "Terra",
+  "ground": "Piano terra",
   "floorN": "Piano {{level}}",
   "floorFallback": "Piano",
   "bedMeta": "{{count}} cam.",

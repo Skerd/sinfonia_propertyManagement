@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/components/custom/modificationRequests/clientCostApproveModificationRequestDialog.tsx",
-  "title": "Miratimi i Kostos nga Klienti",
+  "title": "Miratimi i kostos nga klienti",
   "description": "Shqyrtoni detajet financiare dhe miratoni ose refuzoni koston e propozuar për këtë kërkesë modifikimi.",
-  "totalCostLabel": "Kostoja Totale e Propozuar",
+  "totalCostLabel": "Kostoja totale e propozuar",
   "decisionLabel": "Vendimi",
   "decisionPlaceholder": "Zgjidhni vendimin...",
   "approve": "Mirato",
@@ -10,7 +10,7 @@
   "notesLabel": "Shënime",
   "notesPlaceholder": "Shënime opsionale për vendimin tuaj...",
   "cancel": "Anulo",
-  "confirmButton": "Konfirmo Vendimin",
+  "confirmButton": "Konfirmo vendimin",
   "axios": {
     "start": {
       "title": "Duke dërguar vendimin…",

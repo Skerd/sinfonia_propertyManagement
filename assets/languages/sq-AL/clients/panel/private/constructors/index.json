@@ -12,9 +12,9 @@
         "items": [
           "Emri dhe TVSH (të detyrueshme).",
           "Email, telefon, përshkrim, faqe interneti dhe logo opsionale.",
-          "Adresa opsionale (rruga, kodi postar, qyteti dhe shteti janë të detyrueshëm për çdo adresë; kantoni/shteti i brendshëm opsional; koordinatat e detyrueshme kur shtoni një adresë).",
-          "Lloji i palës: kontraktor, arkitekt, inxhinier, quantity surveyor (QS), menaxher projekti (PM), gjeometër ose tjetër.",
-          "Zanat (tekst i shkurtër), skadimi i sigurimit, nota e performancës nga 0 në 100."
+          "Adresa opsionale (rruga, kodi postar, qyteti dhe shteti janë të detyrueshëm për çdo adresë; rajoni është opsional; koordinatat e hartës janë të detyrueshme kur shtoni një adresë).",
+          "Lloji i palës: kontraktor, arkitekt, inxhinier, vlerësues sasior (QS), menaxher projekti (PM), gjeodet ose tjetër.",
+          "Zejet (tekst i shkurtër), skadimi i sigurimit, nota e performancës nga 0 në 100."
         ]
       },
       {
@@ -30,7 +30,7 @@
         "items": [
           "Krijimi nuk e cakton askund. E zgjidhni më vonë te ndërtesa (listë opsionale) ose te një kosto njësie.",
           "Disa konstruktorë mund të jenë te një ndërtesë. Një konstruktor te shumë ndërtesa.",
-          "Kostot e njësisë mund t’i referohen opsionalisht një konstruktori si furnizues."
+          "Kostot e njësisë mund t’i referohen opsionalisht një konstruktori si furnitor."
         ]
       },
       {
@@ -97,6 +97,6 @@
     }
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
-  "yes": "po",
-  "no": "Nr"
+  "yes": "Po",
+  "no": "Jo"
 }

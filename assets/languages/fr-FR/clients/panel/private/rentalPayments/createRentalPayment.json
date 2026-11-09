@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Ajouter une charge extra",
-  "description": "Ajoute une charge ou un mois extra. Ceci n’enregistre pas un encaissement.",
+  "title": "Ajouter une charge de loyer supplémentaire",
+  "description": "Ajoute une charge ou un mois supplémentaire. Ceci n’enregistre pas un encaissement.",
   "generalInfo": "Détails du paiement",
   "form": {
     "leaseLabel": "Bail",
@@ -24,17 +24,17 @@
       "time": 3000
     },
     "success": {
-      "title": "Charge extra ajoutée",
+      "title": "Charge supplémentaire ajoutée",
       "time": 3000
     },
     "error": {
-      "title": "La charge extra n’a pas pu être ajoutée",
+      "title": "La charge supplémentaire n’a pas pu être ajoutée",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Ajouter une charge extra",
-    "description": "Ajoute une charge ou un mois extra. Ceci n’enregistre pas un encaissement."
+    "title": "Ajouter une charge de loyer supplémentaire",
+    "description": "Ajoute une charge ou un mois supplémentaire. Ceci n’enregistre pas un encaissement."
   },
   "formButtons": {
     "cancel": "Annuler",

@@ -17,9 +17,9 @@
     "installment_send_overdue": "Të dërgohet emaili i vonesës së këstit?"
   },
   "confirmDescriptions": {
-    "installment_remind_3d": "Dërgon shabllonin standard “3 ditë para afatit” për këtë këst.",
-    "installment_remind_1d": "Dërgon shabllonin standard “1 ditë para afatit” për këtë këst.",
-    "installment_remind_today": "Dërgon rikujtesën standard “afati sot” për këtë këst.",
+    "installment_remind_3d": "Dërgon modelin standard “3 ditë para afatit” për këtë këst.",
+    "installment_remind_1d": "Dërgon modelin standard “1 ditë para afatit” për këtë këst.",
+    "installment_remind_today": "Dërgon rikujtesën standarde “afati sot” për këtë këst.",
     "installment_remind_remaining_days": "Dërgon email me ditët e mbetura kalendarike (UTC) deri në datën e afatit të këtij kësti.",
     "installment_send_overdue": "Dërgon njoftimin që ky këst është me vonesë (pas fundit të ditës së afatit në UTC)."
   },
