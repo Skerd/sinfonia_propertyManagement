@@ -20,15 +20,15 @@
   "notificationsEmpty": "Aucune notification pour le moment.",
   "axios": {
     "start": {
-      "title": "Loading overview…",
+      "title": "Chargement de l'aperçu…",
       "time": 2000
     },
     "success": {
-      "title": "Overview loaded",
+      "title": "Aperçu chargé",
       "time": 1500
     },
     "error": {
-      "title": "Could not load overview",
+      "title": "Impossible de charger l'aperçu",
       "time": 3000
     }
   }

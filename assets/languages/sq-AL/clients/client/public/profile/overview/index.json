@@ -20,15 +20,15 @@
   "notificationsEmpty": "Nuk ka njoftime ende.",
   "axios": {
     "start": {
-      "title": "Loading overview…",
+      "title": "Po ngarkohet përmbledhja…",
       "time": 2000
     },
     "success": {
-      "title": "Overview loaded",
+      "title": "Përmbledhja u ngarkua",
       "time": 1500
     },
     "error": {
-      "title": "Could not load overview",
+      "title": "Përmbledhja nuk u ngarkua",
       "time": 3000
     }
   }

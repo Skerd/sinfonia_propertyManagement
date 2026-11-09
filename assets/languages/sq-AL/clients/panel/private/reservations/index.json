@@ -20,7 +20,7 @@
   "depositAmount": "Shuma e depozitës",
   "view": "Shiko",
   "fields": {
-    "additionalDocuments": "Additional Documents",
+    "additionalDocuments": "Dokumente shtesë",
     "cancellationReason": "Arsyeja e anulimit",
     "cancelledAt": "Anuluar në",
     "client": "Klienti",
@@ -39,9 +39,9 @@
     "isActive": "Është Aktiv",
     "name": "Emri",
     "paid": "I paguar",
-    "paymentMethod": "Payment Method",
-    "referralCode": "Referral Code",
-    "reservationContract": "Reservation Contract",
+    "paymentMethod": "Mënyra e pagesës",
+    "referralCode": "Kodi i referimit",
+    "reservationContract": "Kontrata e rezervimit",
     "reservationDate": "Data e Rezervimit",
     "reservationNotes": "Shënime Rezervimi",
     "reservedBy": "Rezervuar nga",
@@ -52,11 +52,11 @@
     "updatedAt": "Përditësuar më",
     "!enums": {
       "source": {
-        "agent": "Agent",
-        "portal": "Portal",
-        "referral": "Referral",
-        "walk_in": "Walk-in",
-        "social": "Social Media",
+        "agent": "Agjenti",
+        "portal": "Portali",
+        "referral": "Referim",
+        "walk_in": "Vizitë direkte",
+        "social": "Rrjetet sociale",
         "other": "Tjetër"
       },
       "status": {

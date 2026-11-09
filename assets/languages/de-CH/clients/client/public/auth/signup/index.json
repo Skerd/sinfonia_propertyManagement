@@ -5,33 +5,33 @@
   "form": {
     "nameLabel": "Name",
     "namePlaceholder": "Name",
-    "surnameLabel": "Surname",
-    "surnamePlaceholder": "Surname",
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password"
+    "surnameLabel": "Nachname",
+    "surnamePlaceholder": "Nachname",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort",
+    "confirmPasswordLabel": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Passwort bestätigen"
   },
   "submit": "Konto erstellen",
-  "submitting": "Please wait…",
-  "formError": "Could not create your account. Please try again.",
+  "submitting": "Bitte warten…",
+  "formError": "Ihr Konto konnte nicht erstellt werden. Bitte versuchen Sie es erneut.",
   "successMessage": "Konto erstellt. Prüfe deine E-Mail für den Aktivierungslink, dann anmelden.",
   "goToLogin": "Zur Anmeldung",
   "haveAccount": "Bereits ein Konto?",
   "loginLink": "Anmelden",
   "axios": {
     "start": {
-      "title": "Creating account…",
+      "title": "Konto wird erstellt…",
       "time": 3000
     },
     "success": {
-      "title": "Account created — check your email",
+      "title": "Konto erstellt — prüfen Sie Ihre E-Mails",
       "time": 4000
     },
     "error": {
-      "title": "Sign up failed",
+      "title": "Registrierung fehlgeschlagen",
       "time": 3000
     }
   }

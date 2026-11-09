@@ -97,7 +97,7 @@
         "structural": "Strukturore",
         "electrical": "elektrike",
         "plumbing": "Hidraulik",
-        "hvac": "HVAC",
+        "hvac": "Ngrohje, ventilim dhe kondicionim",
         "cosmetic": "Kozmetike",
         "other": "Të tjera"
       },
@@ -156,7 +156,7 @@
       },
       "source": {
         "engineer_material": "Material inxhinieri",
-        "manual": "Manual"
+        "manual": "Me dorë"
       }
     }
   },

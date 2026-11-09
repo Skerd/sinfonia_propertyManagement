@@ -12,7 +12,7 @@
   "errorTitle": "Gabim",
   "errorLoadingEdifice": "Gabim gjatë ngarkimit të të dhënave të ndërtesës",
   "selectFloorLocation": "Klikoni në imazhin e projektit për të zgjedhur vendndodhjen e dyshemesë. Klikoni pranë pikës së parë për të mbyllur poligonin.",
-  "edificeNoMainImage": "Edifice nuk ka një imazh kryesor. Ju lutemi, së pari shtoni një imazh kryesor në ndërtesë.",
+  "edificeNoMainImage": "Ndërtesa nuk ka një imazh kryesor. Ju lutemi, së pari shtoni një imazh kryesor në ndërtesë.",
   "projectNoMainImage": "Projekti nuk ka imazh kryesor. Ju lutemi shtoni fillimisht një imazh kryesor në projekt.",
   "errorLoadingProject": "Gabim gjatë ngarkimit të të dhënave të projektit",
   "removeSharedSpace": "Hiq hapësirën e përbashkët",

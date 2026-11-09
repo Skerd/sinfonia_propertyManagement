@@ -19,15 +19,15 @@
   "paymentFailed": "Pagesa nuk u regjistrua",
   "axios": {
     "start": {
-      "title": "Recording payment",
+      "title": "Po regjistrohet pagesa",
       "time": 3000
     },
     "success": {
-      "title": "Payment recorded",
+      "title": "Pagesa u regjistrua",
       "time": 3000
     },
     "error": {
-      "title": "Payment could not be recorded",
+      "title": "Pagesa nuk u regjistrua",
       "time": 3000
     }
   }

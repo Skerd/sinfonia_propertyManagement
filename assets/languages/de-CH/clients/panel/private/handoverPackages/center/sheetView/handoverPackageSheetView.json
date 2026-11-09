@@ -40,7 +40,7 @@
   "statuses": {
     "draft": "Entwurf",
     "in_progress": "In Bearbeitung",
-    "ready": "Ready",
+    "ready": "Bereit",
     "completed": "Abgeschlossen"
   },
   "lifecycle": "Lebenszyklus",

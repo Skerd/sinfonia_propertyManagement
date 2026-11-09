@@ -44,16 +44,16 @@
   "failTitle": "Ngarkimi i llojeve të historive dështoi",
   "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
   "fields": {
-    "company": "Company",
-    "createdAt": "Created At",
-    "createdBy": "Created By",
-    "deletedAt": "Deleted",
-    "deletedBy": "Deleted By",
-    "description": "Description",
-    "name": "Name",
+    "company": "Kompania",
+    "createdAt": "Krijuar më",
+    "createdBy": "Krijuar nga",
+    "deletedAt": "Fshirë",
+    "deletedBy": "Fshirë nga",
+    "description": "Përshkrimi",
+    "name": "Emri",
     "slug": "Slug",
-    "sortOrder": "Sort order",
-    "updatedAt": "Updated At"
+    "sortOrder": "Renditja",
+    "updatedAt": "Përditësuar më"
   },
   "searchPlaceholder": "Kërko ose shto filtra..."
 }

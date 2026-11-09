@@ -38,7 +38,7 @@
     "paymentReference": "Zahlungsreferenz",
     "ratePercent": "Satz %",
     "recordedByActionUser": "Erfasst von",
-    "reservation": "Reservation",
+    "reservation": "Reservierung",
     "sale": "Verkauf",
     "sourceId": "Quellen-ID",
     "sourceType": "Quellentyp",
@@ -59,7 +59,7 @@
     "!enums": {
       "sourceType": {
         "sale": "Verkauf",
-        "reservation": "Reservation"
+        "reservation": "Reservierung"
       },
       "status": {
         "pending": "Ausstehend",

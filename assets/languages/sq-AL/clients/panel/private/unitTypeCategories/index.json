@@ -46,7 +46,7 @@
   "deleted": "Fshirë",
   "name": "Emri",
   "fields": {
-    "company": "Company",
+    "company": "Kompania",
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",

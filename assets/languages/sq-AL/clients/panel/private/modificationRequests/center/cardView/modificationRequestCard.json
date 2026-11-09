@@ -11,7 +11,7 @@
   "constructionType": "Lloji i ndërtimit",
   "architectApproval": "Arkitekt",
   "engineerApproval": "Inxhinier",
-  "ceoApproval": "CEO",
+  "ceoApproval": "Drejtori ekzekutiv",
   "finance": "Financa",
   "delivery": "Dorëzimi",
   "totalCost": "Kostoja totale",
@@ -62,7 +62,7 @@
     "structural": "Strukturore",
     "electrical": "elektrike",
     "plumbing": "Hidraulik",
-    "hvac": "HVAC",
+    "hvac": "Ngrohje, ventilim dhe kondicionim",
     "cosmetic": "Kozmetike",
     "other": "Të tjera"
   },
@@ -78,7 +78,7 @@
     "signature": "Nënshkrimi",
     "source": {
       "engineer_material": "Materialet e inxhinierit",
-      "manual": "Manual"
+      "manual": "Me dorë"
     }
   }
 }

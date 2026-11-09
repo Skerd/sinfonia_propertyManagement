@@ -93,18 +93,18 @@
     "edifice": "Ndërtesa",
     "keysTransferred": "Çelësat e Transferuar",
     "media": "Media",
-    "name": "Reference",
+    "name": "Referenca",
     "notes": "Shënime",
     "omManualsComplete": "Manuale O&M të Plota",
-    "project": "Project",
-    "status": "Status",
-    "title": "Title",
+    "project": "Projekti",
+    "status": "Statusi",
+    "title": "Titulli",
     "trainingComplete": "Trajnimi i Plotë",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
     "!enums": {
       "status": {
-        "draft": "Draft",
+        "draft": "Skicë",
         "in_progress": "Në Progres",
         "ready": "Gati",
         "completed": "Përfunduar"

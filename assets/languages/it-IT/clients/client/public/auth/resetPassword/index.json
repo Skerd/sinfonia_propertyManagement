@@ -2,35 +2,35 @@
   "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
   "title": "Reimposta password",
   "subtitle": "Scegli una nuova password.",
-  "verifyingSubtitle": "Checking your reset link…",
-  "verifyErrorSubtitle": "This reset link is invalid or expired.",
-  "successSubtitle": "Your password has been updated.",
-  "verifyingMessage": "Please wait…",
+  "verifyingSubtitle": "Verifica del link di reimpostazione…",
+  "verifyErrorSubtitle": "Questo link di reimpostazione non è valido o è scaduto.",
+  "successSubtitle": "La tua password è stata aggiornata.",
+  "verifyingMessage": "Attendere…",
   "verifyErrorMessage": "Richiedi un nuovo link di reset.",
   "requestAgain": "Password dimenticata",
   "form": {
-    "passwordLabel": "New password",
-    "passwordPlaceholder": "New password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password",
-    "resetPasswordCodeLabel": "Reset code"
+    "passwordLabel": "Nuova password",
+    "passwordPlaceholder": "Nuova password",
+    "confirmPasswordLabel": "Conferma password",
+    "confirmPasswordPlaceholder": "Conferma password",
+    "resetPasswordCodeLabel": "Codice di reimpostazione"
   },
   "submit": "Salva password",
-  "submitting": "Please wait…",
-  "formError": "Could not update your password. Please try again.",
+  "submitting": "Attendere…",
+  "formError": "Impossibile aggiornare la password. Riprova.",
   "successMessage": "Ora puoi accedere con la nuova password.",
   "goToLogin": "Vai all'accesso",
   "axios": {
     "start": {
-      "title": "Saving password…",
+      "title": "Salvataggio della password…",
       "time": 3000
     },
     "success": {
-      "title": "Password updated",
+      "title": "Password aggiornata",
       "time": 3000
     },
     "error": {
-      "title": "Update failed",
+      "title": "Aggiornamento non riuscito",
       "time": 3000
     }
   }

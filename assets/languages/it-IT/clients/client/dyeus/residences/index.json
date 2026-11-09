@@ -14,7 +14,7 @@
   "fromPrice": "Da €{{price}}",
   "yieldSuffix": " · {{percent}}% di rendimento",
   "amenitiesLabel": "Servizi",
-  "slide": "Slide {{index}}",
+  "slide": "Diapositiva {{index}}",
   "unitsTitle": "Unità",
   "apartmentSingular": "appartamento",
   "apartmentPlural": "appartamenti",

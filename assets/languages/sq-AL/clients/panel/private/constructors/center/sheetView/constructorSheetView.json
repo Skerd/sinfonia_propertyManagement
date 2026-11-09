@@ -14,7 +14,7 @@
   "description": "Përshkrimi",
   "vat": "TVSH",
   "phoneNumber": "Numri i telefonit",
-  "email": "Email",
+  "email": "Emaili",
   "website": "Faqja e internetit",
   "partyType": "Lloji i palës",
   "trades": "Zejet",
@@ -32,7 +32,7 @@
     "countryLabel": "Vendi",
     "latitudeLabel": "Gjerësia gjeografike",
     "longitudeLabel": "Gjatësia gjeografike",
-    "logoLabel": "Logo"
+    "logoLabel": "Logoja"
   },
   "partyTypes": {
     "contractor": "Kontraktor",

@@ -5,10 +5,10 @@
   "failedTooltipDescription": "Clicca per ricaricare i dati.",
   "status": {
     "active": "Attivo",
-    "archived": "Archived"
+    "archived": "Archiviato"
   },
   "statuses": {
     "active": "Attivo",
-    "archived": "Archived"
+    "archived": "Archiviato"
   }
 }

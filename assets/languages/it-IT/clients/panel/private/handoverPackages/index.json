@@ -84,29 +84,29 @@
   "failDescription": "Si è verificato un errore. Riprova.",
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
-    "asBuiltComplete": "As-Built Complete",
+    "asBuiltComplete": "As-built completato",
     "createdAt": "Creato il",
     "createdBy": "Creato da",
     "deletedAt": "Eliminato",
     "deletedBy": "Eliminato da",
     "description": "Descrizione",
     "edifice": "Edificio",
-    "keysTransferred": "Keys Transferred",
+    "keysTransferred": "Chiavi consegnate",
     "media": "Media",
     "name": "Riferimento",
     "notes": "Note",
-    "omManualsComplete": "O&M Manuals Complete",
+    "omManualsComplete": "Manuali d'uso e manutenzione completati",
     "project": "Progetto",
     "status": "Stato",
     "title": "Titolo",
-    "trainingComplete": "Training Complete",
+    "trainingComplete": "Formazione completata",
     "unit": "Unità",
     "updatedAt": "Aggiornato il",
     "!enums": {
       "status": {
         "draft": "Bozza",
-        "in_progress": "In Progress",
-        "ready": "Ready",
+        "in_progress": "In corso",
+        "ready": "Pronto",
         "completed": "Completato"
       }
     }

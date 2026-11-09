@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx",
-  "handoverPackage": "Handover Package",
+  "handoverPackage": "Dossier de remise",
   "overview": "Aperçu",
   "media": "Pièces jointes",
   "name": "Référence",
@@ -32,15 +32,15 @@
     "true": "Terminé",
     "false": "En attente"
   },
-  "compactView": "Compact",
+  "compactView": "Compacte",
   "cardsView": "Cartes",
   "toggleReferenceListView": "Basculer la disposition de la liste de contrôle",
   "description": "Description",
   "notes": "Notes",
   "statuses": {
     "draft": "Brouillon",
-    "in_progress": "In Progress",
-    "ready": "Ready",
+    "in_progress": "En cours",
+    "ready": "Prêt",
     "completed": "Terminé"
   },
   "lifecycle": "Cycle de vie",

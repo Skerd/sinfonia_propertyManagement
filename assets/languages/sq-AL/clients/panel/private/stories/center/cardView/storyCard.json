@@ -1,14 +1,14 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/stories/center/cardView/storyCard.tsx",
-  "published": "Published",
-  "draft": "Draft",
+  "published": "Publikuar",
+  "draft": "Skicë",
   "fields": {
-    "name": "Code",
-    "published": "Status",
-    "publishedAt": "Published date",
-    "project": "Project",
-    "edifice": "Edifice",
-    "unit": "Unit"
+    "name": "Kodi",
+    "published": "Statusi",
+    "publishedAt": "Data e publikimit",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "unit": "Njësia"
   },
   "failedTitle": "Ngarkimi dështoi",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",

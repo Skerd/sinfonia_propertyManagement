@@ -2,35 +2,35 @@
   "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
   "title": "Rivendos fjalëkalimin",
   "subtitle": "Zgjidh një fjalëkalim të ri.",
-  "verifyingSubtitle": "Checking your reset link…",
-  "verifyErrorSubtitle": "This reset link is invalid or expired.",
-  "successSubtitle": "Your password has been updated.",
-  "verifyingMessage": "Please wait…",
+  "verifyingSubtitle": "Po kontrollohet lidhja e rivendosjes…",
+  "verifyErrorSubtitle": "Kjo lidhje rivendosjeje është e pavlefshme ose ka skaduar.",
+  "successSubtitle": "Fjalëkalimi juaj u përditësua.",
+  "verifyingMessage": "Ju lutemi prisni…",
   "verifyErrorMessage": "Kërko një link të ri rivendosjeje.",
   "requestAgain": "Fjalëkalim i harruar",
   "form": {
-    "passwordLabel": "New password",
-    "passwordPlaceholder": "New password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password",
-    "resetPasswordCodeLabel": "Reset code"
+    "passwordLabel": "Fjalëkalimi i ri",
+    "passwordPlaceholder": "Fjalëkalimi i ri",
+    "confirmPasswordLabel": "Konfirmo fjalëkalimin",
+    "confirmPasswordPlaceholder": "Konfirmo fjalëkalimin",
+    "resetPasswordCodeLabel": "Kodi i rivendosjes"
   },
   "submit": "Ruaj fjalëkalimin",
-  "submitting": "Please wait…",
-  "formError": "Could not update your password. Please try again.",
+  "submitting": "Ju lutemi prisni…",
+  "formError": "Fjalëkalimi juaj nuk u përditësua. Ju lutemi provoni përsëri.",
   "successMessage": "Tani mund të hysh me fjalëkalimin e ri.",
   "goToLogin": "Shko te hyrja",
   "axios": {
     "start": {
-      "title": "Saving password…",
+      "title": "Po ruhet fjalëkalimi…",
       "time": 3000
     },
     "success": {
-      "title": "Password updated",
+      "title": "Fjalëkalimi u përditësua",
       "time": 3000
     },
     "error": {
-      "title": "Update failed",
+      "title": "Përditësimi dështoi",
       "time": 3000
     }
   }

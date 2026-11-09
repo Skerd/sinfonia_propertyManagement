@@ -2,43 +2,43 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Story type could not be updated, please try again!"
+      "title": "Lloji i tregimit nuk u përditësua, ju lutemi provoni përsëri!"
     },
     "start": {
       "time": 3000,
-      "title": "Updating story type"
+      "title": "Po përditësohet lloji i tregimit"
     },
     "success": {
       "time": 3000,
-      "title": "Story type successfully updated!"
+      "title": "Lloji i tregimit u përditësua me sukses!"
     }
   },
-  "editDescription": "Edit story type information",
-  "editTitle": "Edit Story Type",
-  "errorDescription": "An error occurred while loading the story type. Please try again.",
-  "errorTitle": "Failed to load story type",
+  "editDescription": "Ndryshoni të dhënat e llojit të tregimit",
+  "editTitle": "Ndrysho llojin e tregimit",
+  "errorDescription": "Ndodhi një gabim gjatë ngarkimit të llojit të tregimit. Ju lutemi provoni përsëri.",
+  "errorTitle": "Lloji i tregimit nuk u ngarkua",
   "form": {
-    "_idLabel": "Record ID",
-    "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Enter description",
-    "nameLabel": "Name",
-    "namePlaceholder": "Enter story type name",
-    "nameRequired": "Name is required",
+    "_idLabel": "ID e regjistrimit",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Shkruani përshkrimin",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Shkruani emrin e llojit të tregimit",
+    "nameRequired": "Emri është i detyrueshëm",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Enter slug (e.g., residential)",
-    "slugRequired": "Slug is required",
-    "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "Enter sort order"
+    "slugPlaceholder": "Shkruani slug-un (p.sh. residential)",
+    "slugRequired": "Slug-u është i detyrueshëm",
+    "sortOrderLabel": "Renditja",
+    "sortOrderPlaceholder": "Shkruani renditjen"
   },
   "formButtons": {
-    "cancel": "Cancel",
-    "submit": "Save Changes"
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   },
   "formHeader": {
     "description": "Përditëso të dhënat e këtij Llojet e historive.",
     "title": "Ndrysho Llojet e historive"
   },
-  "generalInfo": "General Information",
+  "generalInfo": "Informacion i përgjithshëm",
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/editStoryType.tsx",
   "title": "Ndrysho Llojet e historive"
 }

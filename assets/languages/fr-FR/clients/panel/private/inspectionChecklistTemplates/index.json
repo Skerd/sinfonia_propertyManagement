@@ -89,15 +89,15 @@
     "name": "Référence",
     "notes": "Notes",
     "project": "Projet",
-    "stage": "Stage",
+    "stage": "Étape",
     "status": "Statut",
     "title": "Titre",
-    "trade": "Trade",
+    "trade": "Corps de métier",
     "updatedAt": "Mis à jour le",
     "!enums": {
       "status": {
         "active": "Actif",
-        "archived": "Archived"
+        "archived": "Archivé"
       }
     }
   }

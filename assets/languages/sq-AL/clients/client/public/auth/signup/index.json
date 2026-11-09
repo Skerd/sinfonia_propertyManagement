@@ -3,35 +3,35 @@
   "title": "Regjistrohu",
   "subtitle": "Krijo llogarinë tënde të klientit Pronix.",
   "form": {
-    "nameLabel": "Name",
-    "namePlaceholder": "Name",
-    "surnameLabel": "Surname",
-    "surnamePlaceholder": "Surname",
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password"
+    "nameLabel": "Emri",
+    "namePlaceholder": "Emri",
+    "surnameLabel": "Mbiemri",
+    "surnamePlaceholder": "Mbiemri",
+    "emailLabel": "Emaili",
+    "emailPlaceholder": "Emaili",
+    "passwordLabel": "Fjalëkalimi",
+    "passwordPlaceholder": "Fjalëkalimi",
+    "confirmPasswordLabel": "Konfirmo fjalëkalimin",
+    "confirmPasswordPlaceholder": "Konfirmo fjalëkalimin"
   },
   "submit": "Krijo llogari",
-  "submitting": "Please wait…",
-  "formError": "Could not create your account. Please try again.",
+  "submitting": "Ju lutemi prisni…",
+  "formError": "Llogaria juaj nuk u krijua. Ju lutemi provoni përsëri.",
   "successMessage": "Llogaria u krijua. Kontrollo emailin për linkun e aktivizimit, pastaj hy.",
   "goToLogin": "Shko te hyrja",
   "haveAccount": "Keni tashmë llogari?",
   "loginLink": "Hyr",
   "axios": {
     "start": {
-      "title": "Creating account…",
+      "title": "Po krijohet llogaria…",
       "time": 3000
     },
     "success": {
-      "title": "Account created — check your email",
+      "title": "Llogaria u krijua — kontrolloni emailin",
       "time": 4000
     },
     "error": {
-      "title": "Sign up failed",
+      "title": "Regjistrimi dështoi",
       "time": 3000
     }
   }

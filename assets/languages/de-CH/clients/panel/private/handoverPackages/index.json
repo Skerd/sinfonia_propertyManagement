@@ -84,7 +84,7 @@
   "failDescription": "Bitte versuchen Sie es erneut.",
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
-    "asBuiltComplete": "As-Built Vollständig",
+    "asBuiltComplete": "Revisionsunterlagen vollständig",
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",
     "deletedAt": "Gelöscht",
@@ -106,7 +106,7 @@
       "status": {
         "draft": "Entwurf",
         "in_progress": "In Bearbeitung",
-        "ready": "Ready",
+        "ready": "Bereit",
         "completed": "Abgeschlossen"
       }
     }

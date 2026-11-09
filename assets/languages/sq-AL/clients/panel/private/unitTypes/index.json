@@ -60,7 +60,7 @@
   "public": "Publike",
   "fields": {
     "category": "Kategoria",
-    "company": "Company",
+    "company": "Kompania",
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",

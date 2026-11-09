@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/client/public/shared/aiChat/homepageAiChatPanel.tsx",
   "formIntro": "Lini të dhënat tuaja dhe ekipi ynë do t’ju kontaktojë.",
   "namePlaceholder": "Emri",
-  "emailPlaceholder": "Email",
+  "emailPlaceholder": "Emaili",
   "numberPlaceholder": "Numri",
   "budgetPlaceholder": "Buxheti (opsional)",
   "budgetCurrencyPlaceholder": "Monedha",

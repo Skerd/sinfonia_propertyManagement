@@ -24,7 +24,7 @@
       },
       "sourceType": {
         "sale": "Verkauf",
-        "reservation": "Reservation"
+        "reservation": "Reservierung"
       },
       "basis": {
         "depositAmount": "Reservationsanzahlung",
@@ -42,7 +42,7 @@
   "ratePercent": "Satz %",
   "amount": "Betrag",
   "sale": "Verkauf",
-  "reservation": "Reservation",
+  "reservation": "Reservierung",
   "currency": "Währung",
   "paidAt": "Bezahlt am",
   "voidedAt": "Annulliert am",

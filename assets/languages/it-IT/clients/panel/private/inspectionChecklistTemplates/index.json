@@ -89,15 +89,15 @@
     "name": "Riferimento",
     "notes": "Note",
     "project": "Progetto",
-    "stage": "Stage",
+    "stage": "Fase",
     "status": "Stato",
     "title": "Titolo",
-    "trade": "Trade",
+    "trade": "Mestiere",
     "updatedAt": "Aggiornato il",
     "!enums": {
       "status": {
         "active": "Attivo",
-        "archived": "Archived"
+        "archived": "Archiviato"
       }
     }
   }

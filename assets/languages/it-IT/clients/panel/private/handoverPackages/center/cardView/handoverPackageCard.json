@@ -11,14 +11,14 @@
   },
   "status": {
     "draft": "Bozza",
-    "in_progress": "In Progress",
-    "ready": "Ready",
+    "in_progress": "In corso",
+    "ready": "Pronto",
     "completed": "Completato"
   },
   "statuses": {
     "draft": "Bozza",
-    "in_progress": "In Progress",
-    "ready": "Ready",
+    "in_progress": "In corso",
+    "ready": "Pronto",
     "completed": "Completato"
   }
 }

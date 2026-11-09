@@ -1,54 +1,54 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/stories/editStory.tsx",
-  "title": "Edit Story",
-  "description": "Update journal story content and media",
-  "generalInfo": "Story Details",
+  "title": "Ndrysho tregimin",
+  "description": "Përditësoni përmbajtjen dhe median e tregimit të ditarit",
+  "generalInfo": "Detajet e tregimit",
   "form": {
-    "projectLabel": "Project",
-    "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice (optional)",
-    "unitLabel": "Unit",
-    "unitPlaceholder": "Select unit (optional)",
-    "titleLabel": "Title",
-    "titlePlaceholder": "Enter story title",
-    "excerptLabel": "Excerpt",
-    "excerptPlaceholder": "Short teaser shown on the journal card",
-    "contentLabel": "Content",
-    "contentPlaceholder": "Write the full story content",
-    "mainImageLabel": "Main image",
-    "imageGalleryLabel": "Image gallery",
-    "videoGalleryLabel": "Video gallery",
-    "publishedLabel": "Published",
-    "publishedAtLabel": "Published date",
-    "publishedAtPlaceholder": "Select date",
-    "sortOrderLabel": "Sort order",
+    "projectLabel": "Projekti",
+    "projectPlaceholder": "Zgjidhni projektin",
+    "edificeLabel": "Ndërtesa",
+    "edificePlaceholder": "Zgjidhni ndërtesën (opsionale)",
+    "unitLabel": "Njësia",
+    "unitPlaceholder": "Zgjidhni njësinë (opsionale)",
+    "titleLabel": "Titulli",
+    "titlePlaceholder": "Shkruani titullin e tregimit",
+    "excerptLabel": "Fragment",
+    "excerptPlaceholder": "Hyrje e shkurtër që shfaqet në kartën e ditarit",
+    "contentLabel": "Përmbajtja",
+    "contentPlaceholder": "Shkruani përmbajtjen e plotë të tregimit",
+    "mainImageLabel": "Imazhi kryesor",
+    "imageGalleryLabel": "Galeria e imazheve",
+    "videoGalleryLabel": "Galeria e videove",
+    "publishedLabel": "Publikuar",
+    "publishedAtLabel": "Data e publikimit",
+    "publishedAtPlaceholder": "Zgjidhni datën",
+    "sortOrderLabel": "Renditja",
     "sortOrderPlaceholder": "0",
-    "storyTypeLabel": "Story type",
-    "storyTypePlaceholder": "Select story type",
-    "storyTypeRequired": "Story type is required"
+    "storyTypeLabel": "Lloji i tregimit",
+    "storyTypePlaceholder": "Zgjidhni llojin e tregimit",
+    "storyTypeRequired": "Lloji i tregimit është i detyrueshëm"
   },
   "axios": {
     "start": {
-      "title": "Saving story",
+      "title": "Po ruhet tregimi",
       "time": 3000
     },
     "success": {
-      "title": "Story updated!",
+      "title": "Tregimi u përditësua!",
       "time": 3000
     },
     "error": {
-      "title": "Could not update story, please try again!",
+      "title": "Tregimi nuk u përditësua, ju lutemi provoni përsëri!",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Edit Story",
-    "description": "Update journal story content and media"
+    "title": "Ndrysho tregimin",
+    "description": "Përditësoni përmbajtjen dhe median e tregimit të ditarit"
   },
   "formButtons": {
-    "cancel": "Cancel",
-    "submit": "Save Changes"
+    "cancel": "Anulo",
+    "submit": "Ruaj ndryshimet"
   },
-  "storyType": "Story type"
+  "storyType": "Lloji i tregimit"
 }

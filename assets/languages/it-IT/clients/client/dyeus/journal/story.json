@@ -7,7 +7,7 @@
   "eyebrow": "Journal",
   "imageGalleryAria": "Galleria immagini",
   "openImage": "Apri immagine {{index}}",
-  "slide": "Slide {{index}}",
+  "slide": "Diapositiva {{index}}",
   "videoGalleryAria": "Galleria video",
   "videos": "Video",
   "playVideo": "Riproduci video {{index}}"

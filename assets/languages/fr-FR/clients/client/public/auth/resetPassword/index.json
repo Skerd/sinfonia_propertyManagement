@@ -2,35 +2,35 @@
   "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
   "title": "Réinitialiser le mot de passe",
   "subtitle": "Choisissez un nouveau mot de passe.",
-  "verifyingSubtitle": "Checking your reset link…",
-  "verifyErrorSubtitle": "This reset link is invalid or expired.",
-  "successSubtitle": "Your password has been updated.",
-  "verifyingMessage": "Please wait…",
+  "verifyingSubtitle": "Vérification de votre lien de réinitialisation…",
+  "verifyErrorSubtitle": "Ce lien de réinitialisation est invalide ou a expiré.",
+  "successSubtitle": "Votre mot de passe a été mis à jour.",
+  "verifyingMessage": "Veuillez patienter…",
   "verifyErrorMessage": "Demandez un nouveau lien de réinitialisation.",
   "requestAgain": "Mot de passe oublié",
   "form": {
-    "passwordLabel": "New password",
-    "passwordPlaceholder": "New password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password",
-    "resetPasswordCodeLabel": "Reset code"
+    "passwordLabel": "Nouveau mot de passe",
+    "passwordPlaceholder": "Nouveau mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmer le mot de passe",
+    "resetPasswordCodeLabel": "Code de réinitialisation"
   },
   "submit": "Enregistrer",
-  "submitting": "Please wait…",
-  "formError": "Could not update your password. Please try again.",
+  "submitting": "Veuillez patienter…",
+  "formError": "Impossible de mettre à jour votre mot de passe. Veuillez réessayer.",
   "successMessage": "Vous pouvez vous connecter avec le nouveau mot de passe.",
   "goToLogin": "Aller à la connexion",
   "axios": {
     "start": {
-      "title": "Saving password…",
+      "title": "Enregistrement du mot de passe…",
       "time": 3000
     },
     "success": {
-      "title": "Password updated",
+      "title": "Mot de passe mis à jour",
       "time": 3000
     },
     "error": {
-      "title": "Update failed",
+      "title": "Échec de la mise à jour",
       "time": 3000
     }
   }

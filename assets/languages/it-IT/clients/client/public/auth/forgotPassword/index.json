@@ -7,21 +7,21 @@
     "emailPlaceholder": "Email"
   },
   "submit": "Invia link",
-  "submitting": "Please wait…",
-  "formError": "Could not send the reset link. Please try again.",
+  "submitting": "Attendere…",
+  "formError": "Impossibile inviare il link di reimpostazione. Riprova.",
   "successMessage": "Se esiste un account per questa email, riceverai un link di reset.",
   "goToLogin": "Torna all'accesso",
   "axios": {
     "start": {
-      "title": "Sending reset link…",
+      "title": "Invio del link di reimpostazione…",
       "time": 3000
     },
     "success": {
-      "title": "Check your email",
+      "title": "Controlla la tua e-mail",
       "time": 3000
     },
     "error": {
-      "title": "Request failed",
+      "title": "Richiesta non riuscita",
       "time": 3000
     }
   }

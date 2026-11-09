@@ -16,15 +16,15 @@
   "paymentFailed": "Zahlung konnte nicht erfasst werden",
   "axios": {
     "start": {
-      "title": "Recording payment",
+      "title": "Zahlung wird erfasst",
       "time": 3000
     },
     "success": {
-      "title": "Payment recorded",
+      "title": "Zahlung erfasst",
       "time": 3000
     },
     "error": {
-      "title": "Payment could not be recorded",
+      "title": "Zahlung konnte nicht erfasst werden",
       "time": 3000
     }
   }

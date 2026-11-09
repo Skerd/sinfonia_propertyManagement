@@ -9,7 +9,7 @@
     "emailPlaceholder": "Email",
     "passwordLabel": "Password",
     "passwordPlaceholder": "Password",
-    "mfaCodeLabel": "Authentication code",
+    "mfaCodeLabel": "Codice di autenticazione",
     "mfaCodePlaceholder": "6-digit code"
   },
   "submit": "Accedi",
@@ -22,15 +22,15 @@
   "backToLogin": "Torna all'accesso",
   "axios": {
     "start": {
-      "title": "Signing in…",
+      "title": "Accesso in corso…",
       "time": 3000
     },
     "success": {
-      "title": "Signed in",
+      "title": "Accesso effettuato",
       "time": 2000
     },
     "error": {
-      "title": "Sign in failed",
+      "title": "Accesso non riuscito",
       "time": 3000
     }
   }

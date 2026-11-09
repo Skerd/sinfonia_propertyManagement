@@ -3,35 +3,35 @@
   "title": "Registrati",
   "subtitle": "Crea il tuo account cliente Pronix.",
   "form": {
-    "nameLabel": "Name",
-    "namePlaceholder": "Name",
-    "surnameLabel": "Surname",
-    "surnamePlaceholder": "Surname",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Nome",
+    "surnameLabel": "Cognome",
+    "surnamePlaceholder": "Cognome",
     "emailLabel": "Email",
     "emailPlaceholder": "Email",
     "passwordLabel": "Password",
     "passwordPlaceholder": "Password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password"
+    "confirmPasswordLabel": "Conferma password",
+    "confirmPasswordPlaceholder": "Conferma password"
   },
   "submit": "Crea account",
-  "submitting": "Please wait…",
-  "formError": "Could not create your account. Please try again.",
+  "submitting": "Attendere…",
+  "formError": "Impossibile creare l'account. Riprova.",
   "successMessage": "Account creato. Controlla l'email per il link di attivazione, poi accedi.",
   "goToLogin": "Vai all'accesso",
   "haveAccount": "Hai già un account?",
   "loginLink": "Accedi",
   "axios": {
     "start": {
-      "title": "Creating account…",
+      "title": "Creazione dell'account…",
       "time": 3000
     },
     "success": {
-      "title": "Account created — check your email",
+      "title": "Account creato — controlla la tua e-mail",
       "time": 4000
     },
     "error": {
-      "title": "Sign up failed",
+      "title": "Registrazione non riuscita",
       "time": 3000
     }
   }

@@ -18,8 +18,8 @@
     "cancellationReason": "Arsyeja e anulimit",
     "cancelledAt": "Anuluar në",
     "checklistItems": "Zërat e listës",
-    "checklistTemplate": "Checklist Template",
-    "clientSignatureMediaId": "Client Signature Media ID",
+    "checklistTemplate": "Shablloni i listës së kontrollit",
+    "clientSignatureMediaId": "ID e medias së nënshkrimit të klientit",
     "clientSignedAt": "Nënshkruar më",
     "completedAt": "Përfunduar në",
     "createdAt": "Krijuar në",
@@ -53,8 +53,8 @@
     "!enums": {
       "type": {
         "initial": "Fillestare",
-        "follow_up": "Ndiqni Up",
-        "final": "Final",
+        "follow_up": "Për ndjekje",
+        "final": "Përfundimtar",
         "routine": "Rutinë",
         "complaint": "Ankesa",
         "pre_sale": "Para Shitje",

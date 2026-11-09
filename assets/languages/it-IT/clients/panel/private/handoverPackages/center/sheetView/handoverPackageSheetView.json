@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx",
-  "handoverPackage": "Handover Package",
+  "handoverPackage": "Pacchetto di consegna",
   "overview": "Panoramica",
   "media": "Allegati",
   "name": "Riferimento",
@@ -39,8 +39,8 @@
   "notes": "Note",
   "statuses": {
     "draft": "Bozza",
-    "in_progress": "In Progress",
-    "ready": "Ready",
+    "in_progress": "In corso",
+    "ready": "Pronto",
     "completed": "Completato"
   },
   "lifecycle": "Ciclo di vita",

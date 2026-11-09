@@ -82,7 +82,7 @@
     "checklistTemplateLabel": "Modèle de checklist",
     "checklistTemplatePlaceholder": "Sélectionner un modèle de checklist"
   },
-  "checklist": "Checklist",
+  "checklist": "Liste de contrôle",
   "clientSignature": "Signature client",
   "axios": {
     "start": {

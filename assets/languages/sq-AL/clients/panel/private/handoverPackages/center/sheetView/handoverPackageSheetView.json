@@ -38,7 +38,7 @@
   "description": "Përshkrimi",
   "notes": "Shënime",
   "statuses": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "in_progress": "Në proces",
     "ready": "Gati",
     "completed": "Përfunduar"

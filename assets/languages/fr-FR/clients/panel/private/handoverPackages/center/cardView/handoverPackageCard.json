@@ -11,14 +11,14 @@
   },
   "status": {
     "draft": "Brouillon",
-    "in_progress": "In Progress",
-    "ready": "Ready",
+    "in_progress": "En cours",
+    "ready": "Prêt",
     "completed": "Terminé"
   },
   "statuses": {
     "draft": "Brouillon",
-    "in_progress": "In Progress",
-    "ready": "Ready",
+    "in_progress": "En cours",
+    "ready": "Prêt",
     "completed": "Terminé"
   }
 }

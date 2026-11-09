@@ -1,15 +1,15 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
-  "inspectionChecklistTemplate": "Inspection Checklist Template",
+  "inspectionChecklistTemplate": "Modèle de liste de contrôle d'inspection",
   "overview": "Aperçu",
   "media": "Pièces jointes",
   "name": "Référence",
   "title": "Titre",
   "status": "Statut",
-  "trade": "Trade",
-  "stage": "Stage",
+  "trade": "Corps de métier",
+  "stage": "Étape",
   "description": "Description",
-  "checklist": "Checklist",
+  "checklist": "Liste de contrôle",
   "itemName": "Élément",
   "itemDescription": "Description",
   "itemInstructions": "Instructions",
@@ -19,13 +19,13 @@
     "medium": "Moyenne",
     "high": "Élevée"
   },
-  "compactView": "Compact",
+  "compactView": "Compacte",
   "cardsView": "Cartes",
   "toggleReferenceListView": "Changer la disposition de la checklist",
   "notes": "Notes",
   "statuses": {
     "active": "Actif",
-    "archived": "Archived"
+    "archived": "Archivé"
   },
   "lifecycle": "Cycle de vie",
   "createdAt": "Créé le",

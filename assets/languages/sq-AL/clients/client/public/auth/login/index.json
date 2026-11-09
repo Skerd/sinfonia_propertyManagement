@@ -5,11 +5,11 @@
   "mfaTitle": "Autentifikim me dy faktorë",
   "mfaSubtitle": "Vendos kodin nga aplikacioni autentifikues.",
   "form": {
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Password",
-    "mfaCodeLabel": "Authentication code",
+    "emailLabel": "Emaili",
+    "emailPlaceholder": "Emaili",
+    "passwordLabel": "Fjalëkalimi",
+    "passwordPlaceholder": "Fjalëkalimi",
+    "mfaCodeLabel": "Kodi i vërtetimit",
     "mfaCodePlaceholder": "6-digit code"
   },
   "submit": "Hyr",
@@ -22,15 +22,15 @@
   "backToLogin": "Kthehu te hyrja",
   "axios": {
     "start": {
-      "title": "Signing in…",
+      "title": "Po hyhet…",
       "time": 3000
     },
     "success": {
-      "title": "Signed in",
+      "title": "Hytë me sukses",
       "time": 2000
     },
     "error": {
-      "title": "Sign in failed",
+      "title": "Hyrja dështoi",
       "time": 3000
     }
   }

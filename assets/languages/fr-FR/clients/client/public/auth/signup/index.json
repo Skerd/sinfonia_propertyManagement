@@ -3,35 +3,35 @@
   "title": "Inscription",
   "subtitle": "Créez votre compte client Pronix.",
   "form": {
-    "nameLabel": "Name",
-    "namePlaceholder": "Name",
-    "surnameLabel": "Surname",
-    "surnamePlaceholder": "Surname",
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password"
+    "nameLabel": "Prénom",
+    "namePlaceholder": "Prénom",
+    "surnameLabel": "Nom",
+    "surnamePlaceholder": "Nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmer le mot de passe"
   },
   "submit": "Créer un compte",
-  "submitting": "Please wait…",
-  "formError": "Could not create your account. Please try again.",
+  "submitting": "Veuillez patienter…",
+  "formError": "Impossible de créer votre compte. Veuillez réessayer.",
   "successMessage": "Compte créé. Vérifiez votre e-mail pour le lien d'activation, puis connectez-vous.",
   "goToLogin": "Aller à la connexion",
   "haveAccount": "Vous avez déjà un compte ?",
   "loginLink": "Se connecter",
   "axios": {
     "start": {
-      "title": "Creating account…",
+      "title": "Création du compte…",
       "time": 3000
     },
     "success": {
-      "title": "Account created — check your email",
+      "title": "Compte créé — consultez vos e-mails",
       "time": 4000
     },
     "error": {
-      "title": "Sign up failed",
+      "title": "Échec de l'inscription",
       "time": 3000
     }
   }

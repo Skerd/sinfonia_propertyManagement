@@ -1,31 +1,31 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/createStoryType.tsx",
   "title": "Krijo lloj historie",
-  "description": "Create a new story type",
-  "generalInfo": "General Information",
+  "description": "Krijoni një lloj të ri tregimi",
+  "generalInfo": "Informacion i përgjithshëm",
   "form": {
-    "nameLabel": "Name",
-    "namePlaceholder": "Enter story type name",
-    "nameRequired": "Name is required",
+    "nameLabel": "Emri",
+    "namePlaceholder": "Shkruani emrin e llojit të tregimit",
+    "nameRequired": "Emri është i detyrueshëm",
     "slugLabel": "Slug",
-    "slugPlaceholder": "Enter slug (e.g., residential)",
-    "slugRequired": "Slug is required",
-    "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Enter description",
-    "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "Enter sort order"
+    "slugPlaceholder": "Shkruani slug-un (p.sh. residential)",
+    "slugRequired": "Slug-u është i detyrueshëm",
+    "descriptionLabel": "Përshkrimi",
+    "descriptionPlaceholder": "Shkruani përshkrimin",
+    "sortOrderLabel": "Renditja",
+    "sortOrderPlaceholder": "Shkruani renditjen"
   },
   "axios": {
     "start": {
-      "title": "Creating story type",
+      "title": "Po krijohet lloji i tregimit",
       "time": 3000
     },
     "success": {
-      "title": "Story type successfully created!",
+      "title": "Lloji i tregimit u krijua me sukses!",
       "time": 3000
     },
     "error": {
-      "title": "Story type could not be created, please try again!",
+      "title": "Lloji i tregimit nuk u krijua, ju lutemi provoni përsëri!",
       "time": 3000
     }
   },
@@ -34,7 +34,7 @@
     "description": "Plotëso të dhënat për të krijuar Llojet e historive."
   },
   "formButtons": {
-    "cancel": "Cancel",
-    "submit": "Create Story Type"
+    "cancel": "Anulo",
+    "submit": "Krijo lloj tregimi"
   }
 }

@@ -42,7 +42,7 @@
     "finishes_paint_wallcovering": "Farbe / Wandbelag",
     "plumbing_sanitary": "Sanitär",
     "electrical_lighting": "Elektro / Beleuchtung",
-    "hvac": "HVAC",
+    "hvac": "HLK",
     "fixtures_hardware": "Beschläge / Hardware",
     "appliances": "Geräte",
     "windows_doors": "Fenster / Türen",
@@ -53,7 +53,7 @@
   "measureUnit": {
     "piece": "Stück (Stk)",
     "pair": "Paar (pr)",
-    "set": "Set (set)",
+    "set": "Satz (Set)",
     "box": "Karton (bx)",
     "pack": "Packung (pk)",
     "pallet": "Palette (pal)",

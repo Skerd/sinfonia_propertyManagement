@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/client/dyeus/residences/index.tsx",
   "eyebrow": "Résidences",
-  "fallbackTitle": "Dyeus Residence",
+  "fallbackTitle": "Résidence Dyeus",
   "noProject": "Aucun projet Dyeus n'est encore disponible pour cette origine d'entreprise. Définissez VITE_DYEUS_PROJECT_ID ou assurez-vous qu'un projet marketing nommé Dyeus existe.",
   "loadError": "Impossible de charger ce projet.",
   "retry": "Réessayer",

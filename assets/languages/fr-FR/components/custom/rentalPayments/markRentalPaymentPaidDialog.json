@@ -19,15 +19,15 @@
   "paymentFailed": "Impossible d’enregistrer le paiement",
   "axios": {
     "start": {
-      "title": "Recording payment",
+      "title": "Enregistrement du paiement",
       "time": 3000
     },
     "success": {
-      "title": "Payment recorded",
+      "title": "Paiement enregistré",
       "time": 3000
     },
     "error": {
-      "title": "Payment could not be recorded",
+      "title": "Le paiement n'a pas pu être enregistré",
       "time": 3000
     }
   }

@@ -19,7 +19,7 @@
     "remaining": "Mbetja",
     "lateFeeAmount": "Gjobë vonese"
   },
-  "failedTitle": "Dështoi ngarkimi i record",
+  "failedTitle": "Dështoi ngarkimi i regjistrimit",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."
 }

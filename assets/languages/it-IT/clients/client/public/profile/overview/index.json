@@ -20,15 +20,15 @@
   "notificationsEmpty": "Nessuna notifica.",
   "axios": {
     "start": {
-      "title": "Loading overview…",
+      "title": "Caricamento della panoramica…",
       "time": 2000
     },
     "success": {
-      "title": "Overview loaded",
+      "title": "Panoramica caricata",
       "time": 1500
     },
     "error": {
-      "title": "Could not load overview",
+      "title": "Impossibile caricare la panoramica",
       "time": 3000
     }
   }

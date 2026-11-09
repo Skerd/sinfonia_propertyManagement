@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/storyTypes/center/cardView/storyTypeCard.tsx",
-  "active": "Active",
-  "name": "Name",
+  "active": "Aktiv",
+  "name": "Emri",
   "slug": "Slug",
-  "description": "Description",
-  "sortOrder": "Sort order",
-  "deleted": "Deleted",
+  "description": "Përshkrimi",
+  "sortOrder": "Renditja",
+  "deleted": "Fshirë",
   "failedTitle": "Dështoi ngarkimi i Llojet e historive",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."

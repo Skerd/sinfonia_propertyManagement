@@ -1,9 +1,9 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
   "publicVisibility": "Faqja publike",
-  "title": "Edit Edifice",
+  "title": "Ndrysho ndërtesën",
   "description": "Përditëso informacionin e ndërtesës",
-  "editTitle": "Edit Edifice",
+  "editTitle": "Ndrysho ndërtesën",
   "editDescription": "Përditëso informacionin e ndërtesës",
   "errorTitle": "Ngarkimi i ndërtesës dështoi",
   "errorDescription": "Kliko këtu për të riprovuar",
@@ -130,7 +130,7 @@
     }
   },
   "formHeader": {
-    "title": "Edit Edifice",
+    "title": "Ndrysho ndërtesën",
     "description": "Përditëso informacionin e ndërtesës"
   },
   "formButtons": {

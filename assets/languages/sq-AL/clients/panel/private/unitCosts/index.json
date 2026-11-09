@@ -62,9 +62,9 @@
     }
   },
   "fields": {
-    "NOTE": "Note",
-    "budgetCurrency": "Budget Currency",
-    "budgetedAmount": "Budgeted Amount",
+    "NOTE": "Shënim",
+    "budgetCurrency": "Monedha e buxhetit",
+    "budgetedAmount": "Shuma e buxhetuar",
     "constructorRef": "Ndërtuesi",
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
@@ -87,9 +87,9 @@
     "paymentStatus": "Pagesa",
     "project": "Projekti",
     "purchaseDate": "Data e blerjes",
-    "purchasePerson": "Purchase Person",
-    "relatedModificationRequest": "Related Modification Request",
-    "tag": "Tag",
+    "purchasePerson": "Personi blerës",
+    "relatedModificationRequest": "Kërkesa e lidhur për modifikim",
+    "tag": "Etiketa",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
     "vendorName": "Furnizuesi",
@@ -97,18 +97,18 @@
     "!enums": {
       "expenditureItems": {
       "category": {
-        "materials_general": "Materials General",
-        "finishes_flooring": "Finishes Flooring",
-        "finishes_paint_wallcovering": "Finishes Paint Wallcovering",
-        "plumbing_sanitary": "Plumbing Sanitary",
-        "electrical_lighting": "Electrical Lighting",
-        "hvac": "HVAC",
-        "fixtures_hardware": "Fixtures Hardware",
-        "appliances": "Appliances",
-        "windows_doors": "Windows Doors",
-        "structural_masonry": "Structural Masonry",
-        "professional_services": "Professional Services",
-        "permits_fees_taxes": "Permits Fees Taxes"
+        "materials_general": "Materiale të përgjithshme",
+        "finishes_flooring": "Përfundime: dysheme",
+        "finishes_paint_wallcovering": "Përfundime: bojë dhe veshje muresh",
+        "plumbing_sanitary": "Hidraulikë dhe sanitare",
+        "electrical_lighting": "Elektrike dhe ndriçim",
+        "hvac": "Ngrohje, ventilim dhe kondicionim",
+        "fixtures_hardware": "Pajisje dhe aksesorë",
+        "appliances": "Pajisjet elektroshtëpiake",
+        "windows_doors": "Dritare dhe dyer",
+        "structural_masonry": "Strukturë dhe muraturë",
+        "professional_services": "Shërbime profesionale",
+        "permits_fees_taxes": "Leje, tarifa dhe taksa"
       },
       "unit": {
         "piece": "nj.",
@@ -118,8 +118,8 @@
         "pack": "pk",
         "pallet": "pal",
         "roll": "rl",
-        "sheet": "sht",
-        "bundle": "bdl",
+        "sheet": "fletë",
+        "bundle": "pako",
         "kg": "kg",
         "g": "g",
         "t": "t",
@@ -138,16 +138,16 @@
       }
       },
       "verificationStatus": {
-        "pending_verification": "Pending Verification",
+        "pending_verification": "Në pritje të verifikimit",
         "verified": "Verifikuar",
         "rejected": "Refuzuar",
-        "needs_revision": "Needs Revision"
+        "needs_revision": "Kërkon rishikim"
       },
       "paymentStatus": {
-        "unpaid": "Unpaid",
-        "partially_paid": "Partially Paid",
+        "unpaid": "E papaguar",
+        "partially_paid": "Pjesërisht e paguar",
         "paid": "Paguar",
-        "waived": "Waived",
+        "waived": "E falur",
         "disputed": "Në Kontest"
       }
     }

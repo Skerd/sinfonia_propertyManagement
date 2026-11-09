@@ -5,11 +5,11 @@
   "mfaTitle": "Zwei-Faktor-Authentifizierung",
   "mfaSubtitle": "Code aus der Authenticator-App eingeben.",
   "form": {
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Password",
-    "mfaCodeLabel": "Authentication code",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort",
+    "mfaCodeLabel": "Authentifizierungscode",
     "mfaCodePlaceholder": "6-digit code"
   },
   "submit": "Anmelden",
@@ -22,15 +22,15 @@
   "backToLogin": "Zurück zur Anmeldung",
   "axios": {
     "start": {
-      "title": "Signing in…",
+      "title": "Anmeldung läuft…",
       "time": 3000
     },
     "success": {
-      "title": "Signed in",
+      "title": "Angemeldet",
       "time": 2000
     },
     "error": {
-      "title": "Sign in failed",
+      "title": "Anmeldung fehlgeschlagen",
       "time": 3000
     }
   }

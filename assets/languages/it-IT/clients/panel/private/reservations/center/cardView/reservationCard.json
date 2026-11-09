@@ -46,7 +46,7 @@
   "sources": {
     "agent": "Agente",
     "portal": "Portale",
-    "referral": "Referral",
+    "referral": "Segnalazione",
     "walk_in": "Visita spontanea",
     "social": "Social",
     "other": "Altro"

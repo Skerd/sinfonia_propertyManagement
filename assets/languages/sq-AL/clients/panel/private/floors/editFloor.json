@@ -14,7 +14,7 @@
   "floorLocation": "Vendndodhja e katit në imazhin e projektit",
   "uploadError": "Ngarkimi i skedarëve të medias dështoi",
   "selectFloorLocation": "Klikoni në imazhin e projektit për të zgjedhur vendndodhjen e dyshemesë. Klikoni pranë pikës së parë për të mbyllur poligonin.",
-  "edificeNoMainImage": "Edifice nuk ka një imazh kryesor. Ju lutemi, së pari shtoni një imazh kryesor në ndërtesë.",
+  "edificeNoMainImage": "Ndërtesa nuk ka një imazh kryesor. Ju lutemi, së pari shtoni një imazh kryesor në ndërtesë.",
   "projectNoMainImage": "Projekti nuk ka imazh kryesor. Ju lutemi shtoni fillimisht një imazh kryesor në projekt.",
   "errorLoadingProject": "Gabim gjatë ngarkimit të të dhënave të projektit",
   "noEdificeSelectedTitle": "Nuk u zgjodh asnjë ndërtesë",

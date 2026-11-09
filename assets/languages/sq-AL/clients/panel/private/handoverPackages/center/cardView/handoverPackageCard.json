@@ -10,13 +10,13 @@
     "unit": "Njësi"
   },
   "status": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "in_progress": "Në Progres",
     "ready": "Gati",
     "completed": "Përfunduar"
   },
   "statuses": {
-    "draft": "Draft",
+    "draft": "Skicë",
     "in_progress": "Në Progres",
     "ready": "Gati",
     "completed": "Përfunduar"

@@ -1,13 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
-  "inspectionChecklistTemplate": "Inspection Checklist Template",
+  "inspectionChecklistTemplate": "Modello di checklist di ispezione",
   "overview": "Panoramica",
   "media": "Allegati",
   "name": "Riferimento",
   "title": "Titolo",
   "status": "Stato",
-  "trade": "Trade",
-  "stage": "Stage",
+  "trade": "Mestiere",
+  "stage": "Fase",
   "description": "Descrizione",
   "checklist": "Checklist",
   "itemName": "Voce",
@@ -25,7 +25,7 @@
   "notes": "Note",
   "statuses": {
     "active": "Attivo",
-    "archived": "Archived"
+    "archived": "Archiviato"
   },
   "lifecycle": "Ciclo di vita",
   "createdAt": "Creato il",

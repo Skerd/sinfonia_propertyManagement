@@ -3,25 +3,25 @@
   "title": "Fjalëkalim i harruar",
   "subtitle": "Vendos emailin dhe do të dërgojmë një link rivendosjeje.",
   "form": {
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email"
+    "emailLabel": "Emaili",
+    "emailPlaceholder": "Emaili"
   },
   "submit": "Dërgo linkun",
-  "submitting": "Please wait…",
-  "formError": "Could not send the reset link. Please try again.",
+  "submitting": "Ju lutemi prisni…",
+  "formError": "Lidhja e rivendosjes nuk u dërgua. Ju lutemi provoni përsëri.",
   "successMessage": "Nëse ekziston një llogari për këtë email, linku është në rrugë.",
   "goToLogin": "Kthehu te hyrja",
   "axios": {
     "start": {
-      "title": "Sending reset link…",
+      "title": "Po dërgohet lidhja e rivendosjes…",
       "time": 3000
     },
     "success": {
-      "title": "Check your email",
+      "title": "Kontrolloni emailin",
       "time": 3000
     },
     "error": {
-      "title": "Request failed",
+      "title": "Kërkesa dështoi",
       "time": 3000
     }
   }

@@ -43,7 +43,7 @@
         "all": "Të gjithë"
     },
     "statusEnum": {
-        "draft": "Draft",
+        "draft": "Skicë",
         "materializing": "Po ndërtohet audienca",
         "scheduled": "E planifikuar",
         "sending": "Po dërgohet",

@@ -4,7 +4,7 @@
   "backToFloors": "Kthehu te Katet",
   "boughtFrom": "Blerë nga",
   "boughtFromPlaceholder": "Çdo blerës",
-  "clear": "Clear",
+  "clear": "Pastro",
   "client": "Klienti",
   "createUnit": "Krijo njësi",
   "deleted": "Fshirë",
@@ -18,7 +18,7 @@
   "fields": {
     "area": "Zona",
     "connectedUnits": "Njësitë e lidhura",
-    "constructionStatus": "Construction Status",
+    "constructionStatus": "Statusi i ndërtimit",
     "createdAt": "Krijuar në",
     "createdBy": "Krijuar nga",
     "deletedAt": "Fshirë",
@@ -45,14 +45,14 @@
     "netArea": "Sipërfaqja Neto",
     "numberOfBathrooms": "Banjat",
     "numberOfRooms": "Dhomat",
-    "orientation": "Orientation",
+    "orientation": "Orientimi",
     "polygonCoordinates": {
       "x": "X",
       "y": "Y"
     },
     "price": "Çmimi",
     "priceCurrency": "Monedha",
-    "priceHistory": "Price History",
+    "priceHistory": "Historiku i çmimeve",
     "project": "Projekti",
     "reservation": "Rezervimi",
     "reservationCommissionRatePercent": "Komisioni i Rezervimeve",
@@ -64,7 +64,7 @@
     "unitNumber": "Numri",
     "unitType": "Lloji",
     "updatedAt": "Përditësuar në",
-    "verandaArea": "Veranda Area",
+    "verandaArea": "Sipërfaqja e verandës",
     "videoGallery": "Videot",
     "!enums": {
       "status": {
@@ -86,9 +86,9 @@
       },
       "constructionStatus": {
         "planned": "Planifikuar",
-        "under_construction": "Under Construction",
+        "under_construction": "Në ndërtim",
         "ready": "Gati",
-        "delivered": "Delivered"
+        "delivered": "Dorëzuar"
       },
       "priceVisibility": {
         "inherit": "Trashëgo nga niveli sipër",

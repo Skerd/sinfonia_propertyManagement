@@ -45,10 +45,10 @@
   "sourceType": "Burimi",
   "sources": {
     "agent": "Agjent",
-    "portal": "Portal",
+    "portal": "Portali",
     "referral": "Rekomandim",
-    "walk_in": "Walk-in",
-    "social": "Social",
+    "walk_in": "Vizitë direkte",
+    "social": "Rrjetet sociale",
     "other": "Të tjera"
   },
   "failedTooltipDescription": "Kliko për të ngarkuar sërish."

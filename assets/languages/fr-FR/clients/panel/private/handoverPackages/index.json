@@ -84,29 +84,29 @@
   "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
-    "asBuiltComplete": "As-Built Complete",
+    "asBuiltComplete": "Dossier tel que construit complet",
     "createdAt": "Créé le",
     "createdBy": "Créé par",
     "deletedAt": "Supprimé",
     "deletedBy": "Supprimé par",
     "description": "Description",
     "edifice": "Bâtiment",
-    "keysTransferred": "Keys Transferred",
+    "keysTransferred": "Clés remises",
     "media": "Médias",
     "name": "Référence",
     "notes": "Notes",
-    "omManualsComplete": "O&M Manuals Complete",
+    "omManualsComplete": "Manuels d'exploitation et de maintenance complets",
     "project": "Projet",
     "status": "Statut",
     "title": "Titre",
-    "trainingComplete": "Training Complete",
+    "trainingComplete": "Formation terminée",
     "unit": "Unité",
     "updatedAt": "Mis à jour le",
     "!enums": {
       "status": {
         "draft": "Brouillon",
-        "in_progress": "In Progress",
-        "ready": "Ready",
+        "in_progress": "En cours",
+        "ready": "Prêt",
         "completed": "Terminé"
       }
     }

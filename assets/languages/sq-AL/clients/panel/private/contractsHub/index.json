@@ -75,7 +75,7 @@
     "statusLabel": "Statusi",
     "statusPlaceholder": "Të gjithë statuset",
     "valueRangeLabel": "Diapazoni i vlerës (EUR)",
-    "valueMinPlaceholder": "Min",
+    "valueMinPlaceholder": "Min.",
     "valueMaxPlaceholder": "Maks",
     "noResults": "Nuk u gjetën klientë.",
     "errorTitle": "Klientët nuk u ngarkuan",
@@ -84,7 +84,7 @@
     "columns": {
       "name": "Emri",
       "phone": "Telefoni",
-      "email": "Email",
+      "email": "Emaili",
       "project": "Projekti",
       "unit": "Njësia",
       "typology": "Tipologjia",

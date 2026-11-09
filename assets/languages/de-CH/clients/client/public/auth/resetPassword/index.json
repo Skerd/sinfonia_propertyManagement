@@ -2,35 +2,35 @@
   "path": "src/modules/propertyManagement/clients/client/public/auth/resetPassword/index.tsx",
   "title": "Passwort zurücksetzen",
   "subtitle": "Neues Passwort wählen.",
-  "verifyingSubtitle": "Checking your reset link…",
-  "verifyErrorSubtitle": "This reset link is invalid or expired.",
-  "successSubtitle": "Your password has been updated.",
-  "verifyingMessage": "Please wait…",
+  "verifyingSubtitle": "Ihr Link zum Zurücksetzen wird geprüft…",
+  "verifyErrorSubtitle": "Dieser Link zum Zurücksetzen ist ungültig oder abgelaufen.",
+  "successSubtitle": "Ihr Passwort wurde aktualisiert.",
+  "verifyingMessage": "Bitte warten…",
   "verifyErrorMessage": "Neuen Reset-Link anfordern.",
   "requestAgain": "Passwort vergessen",
   "form": {
-    "passwordLabel": "New password",
-    "passwordPlaceholder": "New password",
-    "confirmPasswordLabel": "Confirm password",
-    "confirmPasswordPlaceholder": "Confirm password",
-    "resetPasswordCodeLabel": "Reset code"
+    "passwordLabel": "Neues Passwort",
+    "passwordPlaceholder": "Neues Passwort",
+    "confirmPasswordLabel": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Passwort bestätigen",
+    "resetPasswordCodeLabel": "Rücksetzcode"
   },
   "submit": "Passwort speichern",
-  "submitting": "Please wait…",
-  "formError": "Could not update your password. Please try again.",
+  "submitting": "Bitte warten…",
+  "formError": "Ihr Passwort konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut.",
   "successMessage": "Du kannst dich mit dem neuen Passwort anmelden.",
   "goToLogin": "Zur Anmeldung",
   "axios": {
     "start": {
-      "title": "Saving password…",
+      "title": "Passwort wird gespeichert…",
       "time": 3000
     },
     "success": {
-      "title": "Password updated",
+      "title": "Passwort aktualisiert",
       "time": 3000
     },
     "error": {
-      "title": "Update failed",
+      "title": "Aktualisierung fehlgeschlagen",
       "time": 3000
     }
   }

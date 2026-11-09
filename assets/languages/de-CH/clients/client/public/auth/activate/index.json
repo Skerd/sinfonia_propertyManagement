@@ -1,24 +1,24 @@
 {
   "path": "src/modules/propertyManagement/clients/client/public/auth/activate/index.tsx",
   "title": "Konto aktivieren",
-  "loadingSubtitle": "Confirming your activation link…",
-  "successSubtitle": "Your account is active.",
-  "errorSubtitle": "This activation link is invalid or expired.",
-  "loadingMessage": "Please wait…",
+  "loadingSubtitle": "Ihr Aktivierungslink wird bestätigt…",
+  "successSubtitle": "Ihr Konto ist aktiv.",
+  "errorSubtitle": "Dieser Aktivierungslink ist ungültig oder abgelaufen.",
+  "loadingMessage": "Bitte warten…",
   "successMessage": "Du kannst dich jetzt bei Pronix anmelden.",
   "errorMessage": "Neuen Aktivierungslink anfordern oder Support kontaktieren.",
   "goToLogin": "Zur Anmeldung",
   "axios": {
     "start": {
-      "title": "Activating…",
+      "title": "Wird aktiviert…",
       "time": 3000
     },
     "success": {
-      "title": "Account activated",
+      "title": "Konto aktiviert",
       "time": 3000
     },
     "error": {
-      "title": "Activation failed",
+      "title": "Aktivierung fehlgeschlagen",
       "time": 3000
     }
   }

@@ -3,25 +3,25 @@
   "title": "Passwort vergessen",
   "subtitle": "E-Mail eingeben — wir senden einen Reset-Link.",
   "form": {
-    "emailLabel": "Email",
-    "emailPlaceholder": "Email"
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "E-Mail"
   },
   "submit": "Link senden",
-  "submitting": "Please wait…",
-  "formError": "Could not send the reset link. Please try again.",
+  "submitting": "Bitte warten…",
+  "formError": "Der Link zum Zurücksetzen konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
   "successMessage": "Falls ein Konto existiert, ist ein Reset-Link unterwegs.",
   "goToLogin": "Zurück zur Anmeldung",
   "axios": {
     "start": {
-      "title": "Sending reset link…",
+      "title": "Link zum Zurücksetzen wird gesendet…",
       "time": 3000
     },
     "success": {
-      "title": "Check your email",
+      "title": "Prüfen Sie Ihre E-Mails",
       "time": 3000
     },
     "error": {
-      "title": "Request failed",
+      "title": "Anfrage fehlgeschlagen",
       "time": 3000
     }
   }
