@@ -2,6 +2,7 @@ import {filterGlobByEnabledModules} from "@coreModule/helpers/modules/enabledMod
 import {
     type ContributionGlob,
     createContributionList,
+    isFunction,
     isPlainObject,
     isString,
 } from "@coreModule/helpers/moduleContributions/contributionRegistry.ts";
@@ -20,9 +21,18 @@ function isOpenSnagsSource(value: unknown): boolean {
     return value === undefined || (isPlainObject(value) && isString(value.url) && isStringList(value.accessModels));
 }
 
+function isErpExportDataset(value: unknown): boolean {
+    return isPlainObject(value) && isString(value.value) && isString(value.responseKey);
+}
+
 function isErpExportSource(value: unknown): boolean {
     return value === undefined
-        || (isPlainObject(value) && isString(value.url) && isStringList(value.datasets) && isStringList(value.accessModels));
+        || (isPlainObject(value)
+            && isString(value.url)
+            && Array.isArray(value.datasets) && value.datasets.every(isErpExportDataset)
+            && isStringList(value.accessModels)
+            && isFunction(value.datasetLabel)
+            && isFunction(value.columnLabel));
 }
 
 function isEdificeCardSource(value: unknown): boolean {

@@ -23,11 +23,7 @@
     "commissions": "Commissions",
     "paymentPlans": "Échéances du plan de paiement",
     "rentalPayments": "Loyers",
-    "unitCosts": "Coûts des unités",
-    "boqItems": "Postes BOQ",
-    "costCommitments": "Engagements de coûts",
-    "progressClaims": "Situations de travaux",
-    "permits": "Permis"
+    "unitCosts": "Coûts des unités"
   },
   "preview": {
     "sales": "Ventes",
@@ -35,10 +31,6 @@
     "paymentPlans": "Échéances du plan de paiement",
     "rentalPayments": "Loyers",
     "unitCosts": "Coûts des unités",
-    "boqItems": "Postes BOQ",
-    "costCommitments": "Engagements de coûts",
-    "progressClaims": "Situations de travaux",
-    "permits": "Permis",
     "rows": "{count} lignes"
   },
   "help": {

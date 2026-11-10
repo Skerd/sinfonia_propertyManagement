@@ -85,8 +85,9 @@ Complex real-estate workflows (floor plans, unit grids, payment plan editors, da
 
 The module also owns one contribution kind (D119): `clients/panel/propertyManagementPanelContribution.ts(x)` in a
 module that depends on propertyManagement feeds its report screens without propertyManagement naming that module: the
-group dashboard's open snags, ERP export datasets, and edifice cards on the dashboard (`dashboardEdificeCard`: a widget
-key plus the models that show it). Read by `helpers/moduleContributions/loadPropertyManagementPanelContributions.ts`.
+group dashboard's open snags, ERP export datasets (`erpExport`: the endpoint, each dataset's value and response key, and
+the dataset and column labels, so the ERP export page lists none of them), and edifice cards on the dashboard
+(`dashboardEdificeCard`: a widget key plus the models that show it). Read by `helpers/moduleContributions/loadPropertyManagementPanelContributions.ts`.
 
 ## Path alias
 

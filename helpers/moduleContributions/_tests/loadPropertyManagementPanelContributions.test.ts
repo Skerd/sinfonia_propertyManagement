@@ -6,7 +6,14 @@ import {type AccessContextValue, type AccessObject, emptyAccessObject} from "@co
 const path = (pkg: string) => `/src/modules/${pkg}/clients/panel/propertyManagementPanelContribution.ts`;
 
 const snags = {url: "/api/a/groupDashboard", accessModels: ["snags"]};
-const erp = {url: "/api/a/erpExport", datasets: ["permits"], accessModels: ["permits"]};
+const label = (key: string, languageCode: string) => `${languageCode}:${key}`;
+const erp = {
+    url: "/api/a/erpExport",
+    datasets: [{value: "permits", responseKey: "permits"}],
+    accessModels: ["permits"],
+    datasetLabel: label,
+    columnLabel: label,
+};
 
 describe("createPropertyManagementPanelContributions", () => {
     it("takes each screen's source from the first contribution that has one", () => {
@@ -41,6 +48,10 @@ describe("createPropertyManagementPanelContributions", () => {
             [path("bad")]: {default: {id: "bad", erpExport: {url: "/api/x", datasets: "permits", accessModels: []}}},
         });
         expect(() => list()).toThrow(`Invalid default export in ${path("bad")}`);
+        const {list: unlabelledList} = createPropertyManagementPanelContributions({
+            [path("bad")]: {default: {id: "bad", erpExport: {...erp, datasets: ["permits"], datasetLabel: undefined}}},
+        });
+        expect(() => unlabelledList()).toThrow(`Invalid default export in ${path("bad")}`);
         const {list: cardList} = createPropertyManagementPanelContributions({
             [path("bad")]: {default: {id: "bad", dashboardEdificeCard: {widget: 1, accessModels: []}}},
         });

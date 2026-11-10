@@ -1,5 +1,4 @@
 import type {ContributionBase} from "@coreModule/helpers/moduleContributions/contributionRegistry.ts";
-import type {ErpExportDataset} from "armonia/src/modules/propertyManagement/api/realEstate/private/erpExport/erpExport.response.type.ts";
 
 /**
  * Per-branch open snag counts for the propertyManagement group dashboard. The endpoint is called with `POST {}` and
@@ -12,18 +11,31 @@ export type GroupDashboardOpenSnagsSource = {
     accessModels: readonly string[];
 };
 
+/** One ERP export dataset a module serves. */
+export type ErpExportSourceDataset = {
+    /** The value sent in the request's `datasets`. */
+    value: string;
+    /** The key of its rows in the endpoint's JSON answer. */
+    responseKey: string;
+};
+
 /**
  * ERP export datasets a module serves from its own endpoint. The ERP export page sends the datasets it owns to this
- * endpoint with the same body (`ErpExportFormType`) and response shape (JSON or CSV) as propertyManagement's, and
- * combines both answers into one export.
+ * endpoint with the same body (`ErpExportFormType`, the contributed dataset values in `datasets`) and response shape
+ * (JSON or CSV) as propertyManagement's, and combines both answers into one export. The contributor names its datasets
+ * and columns, so propertyManagement lists none of them (CORE-02).
  */
 export type ErpExportSource = {
     /** The contributor's endpoint, e.g. `/api/<module>/erpExport`. */
     url: string;
-    /** Datasets this endpoint answers; they are offered only while the contributing module is on. */
-    datasets: readonly ErpExportDataset[];
+    /** Datasets this endpoint answers, in picker order; they are offered only while the contributing module is on. */
+    datasets: readonly ErpExportSourceDataset[];
     /** Models whose read grant opens the page and its menu entry for these datasets; any one is enough. */
     accessModels: readonly string[];
+    /** A dataset's name in `languageCode`: the picker option and the preview title. */
+    datasetLabel: (dataset: string, languageCode: string) => string;
+    /** A preview column header in `languageCode`. */
+    columnLabel: (field: string, languageCode: string) => string;
 };
 
 /**

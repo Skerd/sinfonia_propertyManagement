@@ -23,11 +23,7 @@
     "commissions": "Provisionen",
     "paymentPlans": "Zahlungsplan-Raten",
     "rentalPayments": "Mietzahlungen",
-    "unitCosts": "Einheitskosten",
-    "boqItems": "LV-Positionen",
-    "costCommitments": "Kostenverpflichtungen",
-    "progressClaims": "Fortschrittsrechnungen",
-    "permits": "Bewilligungen"
+    "unitCosts": "Einheitskosten"
   },
   "preview": {
     "sales": "Verkäufe",
@@ -35,10 +31,6 @@
     "paymentPlans": "Zahlungsplan-Raten",
     "rentalPayments": "Mietzahlungen",
     "unitCosts": "Einheitskosten",
-    "boqItems": "LV-Positionen",
-    "costCommitments": "Kostenverpflichtungen",
-    "progressClaims": "Fortschrittsrechnungen",
-    "permits": "Bewilligungen",
     "rows": "{count} Zeilen"
   },
   "help": {

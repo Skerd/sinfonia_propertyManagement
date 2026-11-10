@@ -146,6 +146,7 @@ function PaymentAlertsInner({
                             currencyId: alert.currency?._id ?? "",
                             currencyName: alert.currency?.name,
                             currencySymbol: alert.currency?.symbol,
+                            currencyDecimalPlaces: alert.currency?.decimalPlaces,
                             value: alert.installment.amount,
                           }], locale)}
                         </span>

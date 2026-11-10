@@ -35,50 +35,33 @@ import {useAnyModelRead} from "@propertyManagementModule/helpers/access/useAnyMo
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
-const DEFAULT_DATASETS: ErpExportDataset[] = ["sales"];
-const PM_ERP_DATASETS: ErpExportDataset[] = ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts"];
+const DEFAULT_DATASETS: string[] = ["sales"];
 const NO_ACCESS_MODELS: readonly string[] = [];
 
-function countRows(result: ErpExportResponse | null, dataset: ErpExportDataset): number {
-    if (!result) return 0;
+const isPmDataset = (dataset: string): dataset is ErpExportDataset =>
+    (ERP_EXPORT_DATASET_VALUES as readonly string[]).includes(dataset);
+
+function pmDatasetRows(result: ErpExportResponse, dataset: ErpExportDataset): Record<string, unknown>[] {
     switch (dataset) {
-        case "sales": return result.sales?.length ?? 0;
-        case "commissions": return result.commissions?.length ?? 0;
-        case "paymentPlans": return result.paymentPlanInstallments?.length ?? 0;
-        case "rentalPayments": return result.rentalPayments?.length ?? 0;
-        case "unitCosts": return result.unitCosts?.length ?? 0;
-        case "boqItems": return result.boqItems?.length ?? 0;
-        case "costCommitments": return result.costCommitments?.length ?? 0;
-        case "progressClaims": return result.progressClaims?.length ?? 0;
-        case "permits": return result.permits?.length ?? 0;
+        case "sales": return result.sales ?? [];
+        case "commissions": return result.commissions ?? [];
+        case "paymentPlans": return result.paymentPlanInstallments ?? [];
+        case "rentalPayments": return result.rentalPayments ?? [];
+        case "unitCosts": return result.unitCosts ?? [];
     }
 }
 
-function datasetRows(result: ErpExportResponse, dataset: ErpExportDataset): Record<string, unknown>[] {
-    switch (dataset) {
-        case "sales": return (result.sales ?? []) as Record<string, unknown>[];
-        case "commissions": return (result.commissions ?? []) as Record<string, unknown>[];
-        case "paymentPlans": return (result.paymentPlanInstallments ?? []) as Record<string, unknown>[];
-        case "rentalPayments": return (result.rentalPayments ?? []) as Record<string, unknown>[];
-        case "unitCosts": return (result.unitCosts ?? []) as Record<string, unknown>[];
-        case "boqItems": return (result.boqItems ?? []) as Record<string, unknown>[];
-        case "costCommitments": return (result.costCommitments ?? []) as Record<string, unknown>[];
-        case "progressClaims": return (result.progressClaims ?? []) as Record<string, unknown>[];
-        case "permits": return (result.permits ?? []) as Record<string, unknown>[];
-    }
+/** A contributed dataset's rows: the JSON array under its response key (ErpExportSource). */
+function contributedRows(answer: Record<string, unknown> | undefined, responseKey: string): Record<string, unknown>[] {
+    const rows = answer?.[responseKey];
+    return Array.isArray(rows) ? rows : [];
 }
 
-const PREVIEW_TITLE_KEYS: Record<ErpExportDataset, string> = {
-    sales: "preview.sales",
-    commissions: "preview.commissions",
-    paymentPlans: "preview.paymentPlans",
-    rentalPayments: "preview.rentalPayments",
-    unitCosts: "preview.unitCosts",
-    boqItems: "preview.boqItems",
-    costCommitments: "preview.costCommitments",
-    progressClaims: "preview.progressClaims",
-    permits: "preview.permits",
-};
+/** The JSON answers of one run: propertyManagement's and the contributing module's. */
+type ExportResult = {exportedAt: string; pm?: ErpExportResponse; contributed?: Record<string, unknown>};
+
+/** One previewed dataset: its picker value, title, rows and column headers. */
+type DatasetPreview = {value: string; title: string; rows: Record<string, unknown>[]; resolveHeader: (field: string) => string};
 
 async function parseBlobError(blob: Blob): Promise<string> {
     try {
@@ -90,17 +73,20 @@ async function parseBlobError(blob: Blob): Promise<string> {
     }
 }
 
+/** The request body without `datasets`, which each endpoint gets its own share of. */
+type ExportFilters = Omit<ErpExportFormType, "datasets">;
+
 type ExportRun = {
     count: number;
     format: ErpExportFormat;
-    body: ErpExportFormType;
+    body: ExportFilters;
     pm: ErpExportDataset[];
     /** Datasets sent to the contributed endpoint (getErpExportSource). */
-    contributed: ErpExportDataset[];
+    contributed: string[];
 };
 
 /** Answers of one run, tagged with its count so a late answer from an older run is ignored. */
-type ExportParts = {count: number; pm?: Blob | ErpExportResponse; contributed?: Blob | ErpExportResponse; failure?: unknown; done?: boolean};
+type ExportParts = {count: number; pm?: Blob | ErpExportResponse; contributed?: Blob | Record<string, unknown>; failure?: unknown; done?: boolean};
 
 function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const languageCode = useSelector((state: RootState) => state.language.languageCode);
@@ -118,14 +104,11 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     };
 
     const datasetOptions = useMemo(
-        () =>
-            ERP_EXPORT_DATASET_VALUES
-                .filter((value) => PM_ERP_DATASETS.includes(value) || !!contributedSource?.datasets.includes(value))
-                .map((value) => ({
-                    value,
-                    label: rk(`dataset.${value}`),
-                })),
-        [resolveLanguageKey, contributedSource],
+        () => [
+            ...ERP_EXPORT_DATASET_VALUES.map((value) => ({value, label: rk(`dataset.${value}`)})),
+            ...(contributedSource?.datasets ?? []).map(({value}) => ({value, label: contributedSource?.datasetLabel(value, languageCode) ?? value})),
+        ],
+        [resolveLanguageKey, contributedSource, languageCode],
     );
 
     const formatOptions = useMemo(
@@ -136,17 +119,17 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         [resolveLanguageKey],
     );
 
-    const [datasets, setDatasets] = useState<ErpExportDataset[]>(DEFAULT_DATASETS);
+    const [datasets, setDatasets] = useState<string[]>(DEFAULT_DATASETS);
     const [format, setFormat] = useState<ErpExportFormat>("json");
     const [dateFrom, setDateFrom] = useState("");
     const [dateTo, setDateTo] = useState("");
     const [projectId, setProjectId] = useState("");
-    const [result, setResult] = useState<ErpExportResponse | null>(null);
+    const [result, setResult] = useState<ExportResult | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     // One export run: propertyManagement's datasets and, when a module contributes some, that module's, as two
     // requests whose answers are combined once both have settled.
-    const [exportRun, setExportRun] = useState<ExportRun>({count: 0, format: "json", body: {datasets: [], format: "json"}, pm: [], contributed: []});
+    const [exportRun, setExportRun] = useState<ExportRun>({count: 0, format: "json", body: {format: "json"}, pm: [], contributed: []});
     const [parts, setParts] = useState<ExportParts>({count: 0});
     const responseType = exportRun.format === "csv" ? "blob" : undefined;
     const pmRequest = useMemo<HttpRequest>(() => ({method: "post", url: "/api/realEstate/erpExport", responseType}), [responseType]);
@@ -158,7 +141,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, pm: data} : current)),
         error: (e) => setParts((current) => (current.count === exportRun.count ? {...current, failure: e} : current)),
     });
-    const contributedPart = useHttpRequest<Blob | ErpExportResponse>(contributedRequest, {...exportRun.body, datasets: exportRun.contributed}, exportRun.contributed.length ? exportRun.count : 0, true, {
+    const contributedPart = useHttpRequest<Blob | Record<string, unknown>>(contributedRequest, {...exportRun.body, datasets: exportRun.contributed}, exportRun.contributed.length ? exportRun.count : 0, true, {
         success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, contributed: data} : current)),
         error: (e) => setParts((current) => (current.count === exportRun.count ? {...current, failure: e} : current)),
     });
@@ -175,11 +158,16 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
             setError(handleError(parts.failure, {context: "ErpExport"})?.displayMessage ?? rk("exportFailed"));
             return;
         }
-        const answers = [parts.pm, parts.contributed].filter((part): part is Blob | ErpExportResponse => part !== undefined);
         if (exportRun.format !== "csv") {
-            setResult(Object.assign({exportedAt: new Date().toISOString()}, ...answers.filter((part): part is ErpExportResponse => !(part instanceof Blob))));
+            const pm = parts.pm instanceof Blob ? undefined : parts.pm;
+            setResult({
+                exportedAt: pm?.exportedAt ?? new Date().toISOString(),
+                pm,
+                contributed: parts.contributed instanceof Blob ? undefined : parts.contributed,
+            });
             return;
         }
+        const answers = [parts.pm, parts.contributed];
         void (async () => {
             const blobs = answers.filter((part): part is Blob => part instanceof Blob);
             // A JSON body inside a 2xx blob response is the server's error, not CSV.
@@ -211,11 +199,29 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         unitCostsAccess,
     ]);
 
-    const selectedDatasetSet = useMemo(() => new Set(datasets), [datasets]);
+    // Previewed datasets in picker order, each with its own titles and headers (contributed ones from their source).
+    const previews = useMemo<DatasetPreview[]>(() => {
+        if (!result) return [];
+        const selected = new Set(datasets);
+        const pmHeader = (field: string) => getErpExportColumnLabel(field, languageCode);
+        const pm = ERP_EXPORT_DATASET_VALUES.filter((value) => selected.has(value)).map((value) => ({
+            value,
+            title: rk(`preview.${value}`),
+            rows: result.pm ? pmDatasetRows(result.pm, value) : [],
+            resolveHeader: pmHeader,
+        }));
+        const contributed = contributedSource
+            ? contributedSource.datasets.filter(({value}) => selected.has(value)).map(({value, responseKey}) => ({
+                value,
+                title: contributedSource.datasetLabel(value, languageCode),
+                rows: contributedRows(result.contributed, responseKey),
+                resolveHeader: (field: string) => contributedSource.columnLabel(field, languageCode),
+            }))
+            : [];
+        return [...pm, ...contributed];
+    }, [result, datasets, contributedSource, languageCode, resolveLanguageKey]);
 
-    const totalRows = result
-        ? datasets.reduce((sum, ds) => sum + countRows(result, ds), 0)
-        : 0;
+    const totalRows = previews.reduce((sum, preview) => sum + preview.rows.length, 0);
 
     function handleExport() {
         if (!canRead) return;
@@ -226,16 +232,13 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
 
         setError(null);
 
-        const body: ErpExportFormType = {
-            datasets,
-            format,
-        };
+        const body: ExportFilters = {format};
         if (dateFrom) body.dateFrom = dateFrom;
         if (dateTo) body.dateTo = dateTo;
         if (projectId) body.projectId = projectId;
 
-        const pmDatasets = datasets.filter((d) => PM_ERP_DATASETS.includes(d));
-        const contributedDatasets = datasets.filter((d) => !!contributedSource?.datasets.includes(d));
+        const pmDatasets = datasets.filter(isPmDataset);
+        const contributedDatasets = datasets.filter((d) => !!contributedSource?.datasets.some(({value}) => value === d));
 
         setResult(null);
         setParts({count: exportRun.count + 1});
@@ -258,7 +261,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
                             value={datasets}
                             multiple
                             placeholder={rk("datasetsPlaceholder")}
-                            onValueChange={(value: string | string[]) => setDatasets(value as ErpExportDataset[])}
+                            onValueChange={(value: string | string[]) => setDatasets(typeof value === "string" ? [value] : value)}
                             className="w-full h-9"
                             resolveLanguageKey={resolveLanguageKey}
                         />
@@ -334,19 +337,15 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
             <div className="flex-1 overflow-auto p-4">
                 {result && format === "json" && (
                     <div className="flex flex-col gap-y-4">
-                        {ERP_EXPORT_DATASET_VALUES.filter((ds) => selectedDatasetSet.has(ds)).map((dataset) => {
-                            const rows = datasetRows(result, dataset);
-                            if (!rows.length) return null;
-                            return (
-                                <ExportDataTable
-                                    key={dataset}
-                                    title={rk(PREVIEW_TITLE_KEYS[dataset])}
-                                    rows={rows}
-                                    rowsLabel={rk("preview.rows", {count: rows.length})}
-                                    resolveHeader={(field) => getErpExportColumnLabel(field, languageCode)}
-                                />
-                            );
-                        })}
+                        {previews.filter((preview) => preview.rows.length > 0).map((preview) => (
+                            <ExportDataTable
+                                key={preview.value}
+                                title={preview.title}
+                                rows={preview.rows}
+                                rowsLabel={rk("preview.rows", {count: preview.rows.length})}
+                                resolveHeader={preview.resolveHeader}
+                            />
+                        ))}
                         {totalRows === 0 && (
                             <p className="text-center py-16 text-muted-foreground text-sm">{rk("noData")}</p>
                         )}
@@ -407,5 +406,5 @@ function ExportDataTable({
 
 export default compose(
     withLanguage("src/modules/propertyManagement/clients/panel/private/erpExport/erpExport.tsx"),
-    withDebug(true, true, ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts", "boqItems", "costCommitments", "progressClaims", "permits"]),
+    withDebug(true, true, ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts"]),
 )(ErpExportPage);

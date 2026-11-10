@@ -23,11 +23,7 @@
     "commissions": "Commissioni",
     "paymentPlans": "Rate del piano di pagamento",
     "rentalPayments": "Pagamenti affitto",
-    "unitCosts": "Costi unità",
-    "boqItems": "Voci computo",
-    "costCommitments": "Impegni di costo",
-    "progressClaims": "Stati di avanzamento",
-    "permits": "Permessi"
+    "unitCosts": "Costi unità"
   },
   "preview": {
     "sales": "Vendite",
@@ -35,10 +31,6 @@
     "paymentPlans": "Rate del piano di pagamento",
     "rentalPayments": "Pagamenti affitto",
     "unitCosts": "Costi unità",
-    "boqItems": "Voci computo",
-    "costCommitments": "Impegni di costo",
-    "progressClaims": "Stati di avanzamento",
-    "permits": "Permessi",
     "rows": "{count} righe"
   },
   "help": {

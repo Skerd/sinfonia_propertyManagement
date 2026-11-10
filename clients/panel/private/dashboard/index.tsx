@@ -187,7 +187,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("collected") ?? "Collected"}
-                                value={formatRevenueByCurrencyLines(summary?.totalRevenue, languageCode || "en-US")}
+                                value={formatRevenueByCurrencyLines(summary?.collected, languageCode || "en-US")}
                                 icon={IconWallet}
                                 variant="primary"
                                 href={kpi.kpiCollected(drillDownContext)}
