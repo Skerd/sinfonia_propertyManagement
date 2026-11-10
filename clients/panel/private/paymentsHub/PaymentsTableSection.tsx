@@ -26,6 +26,7 @@ import {
     kindLabel,
     paymentsStatusBadgeVariant,
     type PaymentsHubScope,
+    rowCode,
     scopeToBody,
     ymdOf,
 } from "./paymentsHubHelpers.ts";
@@ -166,7 +167,7 @@ export default function PaymentsTableSection({
                                             ) : null}
                                         </TableCell>
                                         <TableCell>{row.unit?.unitNumber ?? row.unit?.name ?? "—"}</TableCell>
-                                        <TableCell className="whitespace-nowrap">{row.saleCode ?? "—"}</TableCell>
+                                        <TableCell className="whitespace-nowrap">{rowCode(row) ?? "—"}</TableCell>
                                         <TableCell>{row.project?.name ?? "—"}</TableCell>
                                         <TableCell>{clientLabel(row.client)}</TableCell>
                                         <TableCell className="whitespace-nowrap">

@@ -4,6 +4,8 @@
   "paidConfirmDescription": "Voulez-vous vraiment marquer cette réservation comme payée intégralement ?",
   "cancel": "Annuler",
   "confirmPaid": "Marquer comme payée",
+  "paidDate": "Payée le",
+  "paidDateHelp": "Le jour où l’acompte a été reçu. Aujourd’hui, sauf si vous indiquez un jour antérieur ; un jour futur n’est pas autorisé.",
   "axios": {
     "start": {
       "title": "Mise à jour de la réservation…",

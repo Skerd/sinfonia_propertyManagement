@@ -14,7 +14,7 @@ import type {PaymentsCalendarFormType} from "armonia/src/modules/propertyManagem
 import type {PaymentsCalendarResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.response.type.ts";
 import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {fmtMoney, unitLabel} from "@propertyManagementModule/clients/panel/private/rentalsHub/rentalsHubHelpers.ts";
-import {clientLabel, kindLabel, paymentsStatusBadgeVariant, type PaymentsHubScope, scopeToBody} from "./paymentsHubHelpers.ts";
+import {clientLabel, kindLabel, paymentsStatusBadgeVariant, type PaymentsHubScope, rowCode, scopeToBody} from "./paymentsHubHelpers.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
 const CALENDAR_MAX_ROWS = 5000;
@@ -232,7 +232,7 @@ export default function PaymentsCalendarTab({
                                                             <p className="truncate text-xs text-muted-foreground">
                                                                 {[
                                                                     unitLabel(row.unit),
-                                                                    row.saleCode,
+                                                                    rowCode(row),
                                                                     kindLabel(row, (key) => String(resolveLanguageKey(key))),
                                                                 ].filter(Boolean).join(" · ")}
                                                             </p>

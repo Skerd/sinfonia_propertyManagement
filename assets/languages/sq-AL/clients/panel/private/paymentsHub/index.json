@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
   "title": "Pagesat",
-  "description": "Të gjitha këstet dhe parapagimet e planeve të pagesës, sipas datave, për të gjitha projektet.",
+  "description": "Të gjitha këstet dhe parapagimet e planeve të pagesës, shitjet me para në dorë dhe depozitat e paguara të rezervimeve, sipas datave, për të gjitha projektet.",
   "tabs": {
     "list": "Lista",
     "calendar": "Kalendari"
@@ -16,7 +16,9 @@
   "kind": {
     "installment": "Këst",
     "installmentNumbered": "Kësti {number}",
-    "down_payment": "Parapagim"
+    "down_payment": "Parapagim",
+    "cash_sale": "Shitje me para në dorë",
+    "reservation_deposit": "Depozita e rezervimit"
   },
   "kpis": {
     "overdue": "Të vonuara",
@@ -94,11 +96,11 @@
     "noResults": "Nuk u gjet asnjë pagesë.",
     "errorTitle": "Pagesat nuk u ngarkuan",
     "errorDescription": "Provoni përsëri ose ndryshoni filtrat.",
-    "viewAction": "Hap planin e pagesës",
+    "viewAction": "Hap",
     "previous": "Më parë",
     "next": "Më pas",
     "truncatedTitle": "Totale të pjesshme",
-    "truncatedDescription": "Ka shumë plane pagese për të lexuar njëherësh. Ngushtoni filtrat për totale të sakta.",
+    "truncatedDescription": "Ka shumë të dhëna për të lexuar njëherësh. Ngushtoni filtrat për totale të sakta.",
     "pagination": {
       "summary": "{from}–{to} nga {total}"
     }
@@ -118,7 +120,7 @@
   "help": {
     "ariaLabel": "Rreth Pagesave",
     "title": "Rreth Pagesave",
-    "overview": "Pagesat rendit sipas datave çdo këst dhe çdo parapagim të shitjeve me plan pagese, kështu shihni çfarë është vonuar dhe çfarë vjen, pa hapur çdo shitje. Janë të njëjtat të dhëna si te skeda Plani i pagesës i një shitjeje; kjo faqe vetëm i mbledh.",
+    "overview": "Pagesat rendit sipas datave çdo këst dhe çdo parapagim të shitjeve me plan pagese, çdo shitje me para në dorë dhe çdo depozitë të paguar rezervimi, kështu shihni çfarë është vonuar, çfarë vjen dhe çfarë është arkëtuar, pa hapur çdo të dhënë. E filtruar sipas datës së pagesës, totali i paguar është “Të mbledhura” i panelit për të njëjtën periudhë. Janë të njëjtat të dhëna si te shitjet dhe rezervimet; kjo faqe vetëm i mbledh.",
     "sections": [
       {
         "title": "Çfarë ofron",
@@ -133,7 +135,7 @@
         "items": [
           "Statusi del nga datat: një pagesë është e vonuar ditën pas afatit, pavarësisht përpunimit të natës.",
           "Totalet mbahen sipas monedhës dhe nuk konvertohen kurrë.",
-          "Hapja e një rreshti hap planin e pagesës, ku e regjistroni pagesën si zakonisht."
+          "Hapja e një rreshti hap planin e pagesës, ku e regjistroni pagesën si zakonisht; një shitje me para në dorë hap shitjen dhe një depozitë hap rezervimin."
         ]
       },
       {

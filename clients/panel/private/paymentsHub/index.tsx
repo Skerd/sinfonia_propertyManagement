@@ -14,6 +14,8 @@ import type {PaymentsSummaryFormType} from "armonia/src/modules/propertyManageme
 import type {PaymentsSummaryResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.response.type.ts";
 import type {PaymentsHubGroupBy} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.constants.ts";
 import PaymentPlanSheetView from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx";
+import SaleSheetView from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
+import ReservationSheetView from "@propertyManagementModule/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx";
 import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
@@ -26,7 +28,9 @@ import PaymentsCalendarTab from "./PaymentsCalendarTab.tsx";
 import {
     EMPTY_PAYMENTS_SCOPE,
     PAYMENTS_HUB_URL_PARAMS,
+    type PaymentsHubRowTarget,
     type PaymentsHubScope,
+    rowTarget,
     scopeFromSearchParams,
     scopeToBody,
 } from "./paymentsHubHelpers.ts";
@@ -50,8 +54,8 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const [scope, setScope] = useState<PaymentsHubScope>(() => scopeFromSearchParams(searchParams));
     const [searchInput, setSearchInput] = useState("");
     const [groupBy, setGroupBy] = useState<PaymentsHubGroupBy | "none">("none");
-    const [openPlanId, setOpenPlanId] = useState<string | null>(null);
-    // Bumped when the payment-plan sheet closes: a payment may have been recorded there.
+    const [openTarget, setOpenTarget] = useState<PaymentsHubRowTarget | null>(null);
+    // Bumped when a sheet closes: a payment may have been recorded there.
     const [refreshToken, setRefreshToken] = useState(0);
 
     const tab = useMemo(() => parsePaymentsHubTab(searchParams.get("tab")), [searchParams]);
@@ -119,14 +123,18 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const summary = summaryRequest.error ? null : summaryRequest.data;
     const summaryLoading = summaryCount === 0 || summaryRequest.loading;
 
+    // A plan row opens its payment plan, a cash-sale row its sale, a deposit row its reservation.
     const openRow = useCallback((row: PaymentsHubRow) => {
-        setOpenPlanId(row.planId);
+        setOpenTarget(rowTarget(row));
     }, []);
 
     const closeSheet = useCallback(() => {
-        setOpenPlanId(null);
+        setOpenTarget(null);
         setRefreshToken((token) => token + 1);
     }, []);
+    const onSheetOpenChange = useCallback((open: boolean) => {
+        if (!open) closeSheet();
+    }, [closeSheet]);
 
     if (accessHydrated === false) return <Loader />;
     if (!canRead) return <Forbidden />;
@@ -195,14 +203,15 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                 </div>
             </div>
 
-            {openPlanId && (
-                <PaymentPlanSheetView
-                    open
-                    fetchId={openPlanId}
-                    onOpenChange={(open: boolean) => {
-                        if (!open) closeSheet();
-                    }}
-                />
+            {openTarget?.type === "plan" && (
+                <PaymentPlanSheetView open fetchId={openTarget.id} onOpenChange={onSheetOpenChange} />
+            )}
+            {/* Read-only, as in the contracts hub: a sale or a reservation is managed on its own page. */}
+            {openTarget?.type === "sale" && (
+                <SaleSheetView open fetchId={openTarget.id} onOpenChange={onSheetOpenChange} hideActions />
+            )}
+            {openTarget?.type === "reservation" && (
+                <ReservationSheetView open fetchId={openTarget.id} onOpenChange={onSheetOpenChange} hideActions />
             )}
         </div>
     );

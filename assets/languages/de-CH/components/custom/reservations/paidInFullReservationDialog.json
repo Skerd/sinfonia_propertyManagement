@@ -4,6 +4,8 @@
   "paidConfirmDescription": "Möchten Sie diese Reservation wirklich als vollständig bezahlt markieren?",
   "cancel": "Abbrechen",
   "confirmPaid": "Als bezahlt markieren",
+  "paidDate": "Bezahlt am",
+  "paidDateHelp": "Der Tag, an dem die Anzahlung eingegangen ist. Heute, ausser Sie geben einen früheren Tag an; ein zukünftiger Tag ist nicht erlaubt.",
   "axios": {
     "start": {
       "title": "Reservation wird aktualisiert…",

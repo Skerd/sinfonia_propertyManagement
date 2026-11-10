@@ -108,9 +108,9 @@ export const kpiTotalRevenue = (ctx: KpiDrillDownContext) => salesUrl(ctx);
 export const kpiTotalSales = (ctx: KpiDrillDownContext) => salesUrl(ctx);
 export const kpiAverageSalePrice = (ctx: KpiDrillDownContext) => salesUrl(ctx);
 /**
- * "Collected" → the payments hub listing the installment and down payments paid in the period (by paid day, D115).
- * The hub has no rows for cash sales or reservation deposits, so its total is only part of the figure; the link label
- * says so (TD-B178).
+ * "Collected" → the payments hub listing what was paid in the period, by paid day (D115): cash sales, reservation
+ * deposits, down payments and installment payments, so its paid total is the KPI (TD-B180). No status filter: a part
+ * payment on an installment that is overdue or on a cancelled plan is money received and keeps its own status.
  */
 export const kpiCollected = (ctx: KpiDrillDownContext) =>
     buildListDrillDownUrl("/realEstate/paymentsHub", {

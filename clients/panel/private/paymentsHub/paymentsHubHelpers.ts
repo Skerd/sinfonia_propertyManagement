@@ -108,15 +108,29 @@ export function clientLabel(client: PaymentsHubRow["client"]): string {
     return [client.name, client.surname].filter(Boolean).join(" ") || "—";
 }
 
-/** "Installment 3" / "Down payment", for the Type column. */
+/** "Installment 3" / "Down payment" / "Cash sale" / "Reservation deposit", for the Type column. */
 export function kindLabel(
     row: PaymentsHubRow,
     rk: (key: string) => string,
 ): string {
-    if (row.kind === "down_payment") return rk("kind.down_payment");
+    if (row.kind !== "installment") return rk(`kind.${row.kind}`);
     return row.installmentNumber != null
         ? rk("kind.installmentNumbered").replace("{number}", String(row.installmentNumber))
         : rk("kind.installment");
+}
+
+/** The record a row opens: its payment plan, its cash sale, or its reservation. */
+export type PaymentsHubRowTarget = {type: "plan" | "sale" | "reservation"; id: string};
+
+export function rowTarget(row: PaymentsHubRow): PaymentsHubRowTarget | null {
+    if (row.kind === "cash_sale") return row.saleId ? {type: "sale", id: row.saleId} : null;
+    if (row.kind === "reservation_deposit") return row.reservationId ? {type: "reservation", id: row.reservationId} : null;
+    return row.planId ? {type: "plan", id: row.planId} : null;
+}
+
+/** The code shown for a row: its sale's, or (a deposit) its reservation's. */
+export function rowCode(row: PaymentsHubRow): string | undefined {
+    return row.saleCode ?? row.reservationCode;
 }
 
 /**

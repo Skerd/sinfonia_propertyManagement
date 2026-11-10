@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
   "title": "Zahlungen",
-  "description": "Alle Raten und Anzahlungen aus Zahlungsplänen, nach Datum, über alle Projekte.",
+  "description": "Alle Raten und Anzahlungen aus Zahlungsplänen, Barverkäufe und bezahlten Reservationsanzahlungen, nach Datum, über alle Projekte.",
   "tabs": {
     "list": "Liste",
     "calendar": "Kalender"
@@ -16,7 +16,9 @@
   "kind": {
     "installment": "Rate",
     "installmentNumbered": "Rate {number}",
-    "down_payment": "Anzahlung"
+    "down_payment": "Anzahlung",
+    "cash_sale": "Barverkauf",
+    "reservation_deposit": "Reservationsanzahlung"
   },
   "kpis": {
     "overdue": "Überfällig",
@@ -94,11 +96,11 @@
     "noResults": "Keine Zahlungen gefunden.",
     "errorTitle": "Zahlungen konnten nicht geladen werden",
     "errorDescription": "Versuchen Sie es erneut oder passen Sie die Filter an.",
-    "viewAction": "Zahlungsplan öffnen",
+    "viewAction": "Öffnen",
     "previous": "Zurück",
     "next": "Weiter",
     "truncatedTitle": "Teilweise Summen",
-    "truncatedDescription": "Zu viele Zahlungspläne für einen Durchlauf. Grenzen Sie die Filter für genaue Summen ein.",
+    "truncatedDescription": "Zu viele Datensätze für einen Durchlauf. Grenzen Sie die Filter für genaue Summen ein.",
     "pagination": {
       "summary": "{from}–{to} von {total}"
     }
@@ -118,7 +120,7 @@
   "help": {
     "ariaLabel": "Über Zahlungen",
     "title": "Über Zahlungen",
-    "overview": "Zahlungen listet jede Rate und Anzahlung aller Verkäufe mit Zahlungsplan nach Datum auf. So sehen Sie, was überfällig ist und was ansteht, ohne jeden Verkauf einzeln zu öffnen. Es sind dieselben Datensätze wie im Reiter Zahlungsplan eines Verkaufs; diese Seite sammelt sie nur.",
+    "overview": "Zahlungen listet jede Rate und Anzahlung aller Verkäufe mit Zahlungsplan, jeden Barverkauf und jede bezahlte Reservationsanzahlung nach Datum auf. So sehen Sie, was überfällig ist, was ansteht und was eingegangen ist, ohne jeden Datensatz einzeln zu öffnen. Nach Zahlungsdatum gefiltert entspricht die bezahlte Summe dem «Eingezogen» des Dashboards für denselben Zeitraum. Es sind dieselben Datensätze wie bei den Verkäufen und Reservationen; diese Seite sammelt sie nur.",
     "sections": [
       {
         "title": "Was die Seite zeigt",
@@ -133,7 +135,7 @@
         "items": [
           "Der Status ergibt sich aus den Daten: Eine Zahlung ist am Tag nach der Fälligkeit überfällig, unabhängig vom nächtlichen Lauf.",
           "Summen werden pro Währung geführt und nie umgerechnet.",
-          "Eine Zeile öffnet ihren Zahlungsplan, wo Sie die Zahlung wie gewohnt erfassen."
+          "Eine Zeile öffnet ihren Zahlungsplan, wo Sie die Zahlung wie gewohnt erfassen; ein Barverkauf öffnet seinen Verkauf, eine Anzahlung ihre Reservation."
         ]
       },
       {

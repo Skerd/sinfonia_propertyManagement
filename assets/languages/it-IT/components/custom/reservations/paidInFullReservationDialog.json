@@ -4,6 +4,8 @@
   "paidConfirmDescription": "Sei sicuro di voler contrassegnare questa prenotazione come pagata per intero?",
   "cancel": "Annulla",
   "confirmPaid": "Contrassegna come pagata",
+  "paidDate": "Pagata il",
+  "paidDateHelp": "Il giorno in cui è stato ricevuto l’acconto. Oggi, a meno che non indichi un giorno precedente; un giorno futuro non è consentito.",
   "axios": {
     "start": {
       "title": "Aggiornamento prenotazione…",

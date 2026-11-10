@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
   "title": "Paiements",
-  "description": "Toutes les échéances et tous les acomptes des plans de paiement, par date, sur tous les projets.",
+  "description": "Toutes les échéances et tous les acomptes des plans de paiement, les ventes comptant et les acomptes de réservation payés, par date, sur tous les projets.",
   "tabs": {
     "list": "Liste",
     "calendar": "Calendrier"
@@ -16,7 +16,9 @@
   "kind": {
     "installment": "Échéance",
     "installmentNumbered": "Échéance {number}",
-    "down_payment": "Acompte"
+    "down_payment": "Acompte",
+    "cash_sale": "Vente comptant",
+    "reservation_deposit": "Acompte de réservation"
   },
   "kpis": {
     "overdue": "En retard",
@@ -94,11 +96,11 @@
     "noResults": "Aucun paiement trouvé.",
     "errorTitle": "Impossible de charger les paiements",
     "errorDescription": "Réessayez ou ajustez vos filtres.",
-    "viewAction": "Ouvrir le plan de paiement",
+    "viewAction": "Ouvrir",
     "previous": "Précédent",
     "next": "Suivant",
     "truncatedTitle": "Totaux partiels",
-    "truncatedDescription": "Trop de plans de paiement à parcourir en une fois. Affinez les filtres pour des totaux exacts.",
+    "truncatedDescription": "Trop d'enregistrements à parcourir en une fois. Affinez les filtres pour des totaux exacts.",
     "pagination": {
       "summary": "{from}–{to} sur {total}"
     }
@@ -118,7 +120,7 @@
   "help": {
     "ariaLabel": "À propos des Paiements",
     "title": "À propos des Paiements",
-    "overview": "Paiements liste, par date, chaque échéance et chaque acompte des ventes avec plan de paiement : vous voyez ce qui est en retard et ce qui arrive sans ouvrir chaque vente. Ce sont les mêmes enregistrements que l'onglet Plan de paiement d'une vente ; cette page ne fait que les rassembler.",
+    "overview": "Paiements liste, par date, chaque échéance et chaque acompte des ventes avec plan de paiement, chaque vente comptant et chaque acompte de réservation payé : vous voyez ce qui est en retard, ce qui arrive et ce qui est encaissé sans ouvrir chaque enregistrement. Filtré par date de paiement, son total payé correspond à « Encaissé » du tableau de bord pour la même période. Ce sont les mêmes enregistrements que les ventes et les réservations ; cette page ne fait que les rassembler.",
     "sections": [
       {
         "title": "Ce que vous y trouvez",
@@ -133,7 +135,7 @@
         "items": [
           "Le statut vient des dates : un paiement est en retard le lendemain de son échéance, quel que soit le dernier traitement de nuit.",
           "Les totaux sont tenus par devise et ne sont jamais convertis.",
-          "Ouvrir une ligne ouvre son plan de paiement, où vous enregistrez le paiement comme d'habitude."
+          "Ouvrir une ligne ouvre son plan de paiement, où vous enregistrez le paiement comme d'habitude ; une vente comptant ouvre sa vente et un acompte de réservation sa réservation."
         ]
       },
       {

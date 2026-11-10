@@ -4,6 +4,8 @@
   "paidConfirmDescription": "Jeni i sigurt që dëshironi ta shënoni këtë rezervim si të paguar plotësisht?",
   "cancel": "Anulo",
   "confirmPaid": "Shëno si të paguar",
+  "paidDate": "Paguar më",
+  "paidDateHelp": "Dita kur u mor depozita. Sot, përveç nëse jepni një ditë më të hershme; një ditë në të ardhmen nuk lejohet.",
   "axios": {
     "start": {
       "title": "Përditësimi i rezervimit…",

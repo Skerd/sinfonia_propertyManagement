@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/paymentsHub/index.tsx",
   "title": "Payments",
-  "description": "Every payment-plan installment and down payment, by date, across all projects.",
+  "description": "Every payment-plan installment and down payment, cash sale and paid reservation deposit, by date, across all projects.",
   "tabs": {
     "list": "List",
     "calendar": "Calendar"
@@ -16,7 +16,9 @@
   "kind": {
     "installment": "Installment",
     "installmentNumbered": "Installment {number}",
-    "down_payment": "Down payment"
+    "down_payment": "Down payment",
+    "cash_sale": "Cash sale",
+    "reservation_deposit": "Reservation deposit"
   },
   "kpis": {
     "overdue": "Overdue",
@@ -94,11 +96,11 @@
     "noResults": "No payments found.",
     "errorTitle": "Could not load payments",
     "errorDescription": "Try again or adjust your filters.",
-    "viewAction": "Open payment plan",
+    "viewAction": "Open",
     "previous": "Previous",
     "next": "Next",
     "truncatedTitle": "Partial totals",
-    "truncatedDescription": "Too many payment plans to scan at once. Narrow the filters for exact totals.",
+    "truncatedDescription": "Too many records to scan at once. Narrow the filters for exact totals.",
     "pagination": {
       "summary": "Showing {from}–{to} of {total}"
     }
@@ -118,7 +120,7 @@
   "help": {
     "ariaLabel": "About Payments",
     "title": "About Payments",
-    "overview": "Payments lists every installment and down payment of every payment-plan sale, by date, so you can see what is late and what is coming without opening each sale. The rows are the same records as the Payment Plan tab of a sale; this page only gathers them.",
+    "overview": "Payments lists every installment and down payment of every payment-plan sale, every cash sale and every paid reservation deposit, by date, so you can see what is late, what is coming and what came in without opening each record. Filtered by payment date, its paid total is the dashboard's “Collected” for the same period. The rows are the same records as the sales and reservations; this page only gathers them.",
     "sections": [
       {
         "title": "What you get",
@@ -133,7 +135,7 @@
         "items": [
           "Status comes from the dates, so a payment is overdue the day after it was due, whatever the last nightly run recorded.",
           "Totals are kept per currency and are never converted.",
-          "Opening a row opens its payment plan, where you record the payment as usual."
+          "Opening a row opens its payment plan, where you record the payment as usual; a cash sale opens its sale and a deposit its reservation."
         ]
       },
       {
