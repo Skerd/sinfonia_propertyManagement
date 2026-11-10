@@ -16,6 +16,8 @@ import {
     AlertDialogTitle,
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {calendarDaysUntil} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {RentReminderKind} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/sendRentReminder.form.validator.ts";
 
@@ -29,23 +31,10 @@ type ManualRentClientEmailsProps = WithLanguageType &
         payment: RentalPayment;
     };
 
-function utcCalendarDaysUntilDueDay(iso: string): number {
-    const due = new Date(iso);
-    const dueStart = Date.UTC(due.getUTCFullYear(), due.getUTCMonth(), due.getUTCDate());
-    const n = new Date();
-    const todayStart = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
-    return Math.round((dueStart - todayStart) / 86400000);
-}
-
-function isPastDueUtcEndOfDay(iso: string): boolean {
-    const due = new Date(iso);
-    const end = Date.UTC(due.getUTCFullYear(), due.getUTCMonth(), due.getUTCDate(), 23, 59, 59, 999);
-    return Date.now() > end;
-}
-
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
-export function rentEmailVisibility(payment: RentalPayment): Record<RentReminderKind, boolean> {
+/** Which reminders fit the rent payment; days count from the company's today in `timeZone` (D116), as the server's do. */
+export function rentEmailVisibility(payment: RentalPayment, timeZone: string): Record<RentReminderKind, boolean> {
     const base: Record<RentReminderKind, boolean> = {
         "3d": false,
         "1d": false,
@@ -53,24 +42,23 @@ export function rentEmailVisibility(payment: RentalPayment): Record<RentReminder
         remaining_days: false,
         overdue: false,
     };
-    if (!payment.dueDate || !OPEN_STATUSES.has(payment.status ?? "") || (payment.remaining ?? 0) <= 0) {
+    const diff = calendarDaysUntil(payment.dueDate, timeZone);
+    if (diff === null || !OPEN_STATUSES.has(payment.status ?? "") || (payment.remaining ?? 0) <= 0) {
         return base;
     }
-    const diff = utcCalendarDaysUntilDueDay(payment.dueDate);
-    const past = isPastDueUtcEndOfDay(payment.dueDate);
     return {
         "3d": diff >= 3,
         "1d": diff >= 1,
-        "0d": diff === 0 && !past,
-        remaining_days: !past && diff >= 0,
-        overdue: past,
+        "0d": diff === 0,
+        remaining_days: diff >= 0,
+        overdue: diff < 0,
     };
 }
 
 export const RENT_MANUAL_EMAIL_KIND_ORDER: RentReminderKind[] = ["3d", "1d", "0d", "remaining_days", "overdue"];
 
-export function rentHasVisibleManualEmailActions(payment: RentalPayment): boolean {
-    const v = rentEmailVisibility(payment);
+export function rentHasVisibleManualEmailActions(payment: RentalPayment, timeZone: string): boolean {
+    const v = rentEmailVisibility(payment, timeZone);
     return RENT_MANUAL_EMAIL_KIND_ORDER.some((kind) => v[kind]);
 }
 
@@ -88,7 +76,8 @@ function ManualRentClientEmails({
     const readFields = (typeof read === "object" && read !== null ? read : {}) as Record<string, unknown>;
     const canReadTenant = readFields.tenant !== undefined;
 
-    const vis = useMemo(() => rentEmailVisibility(payment), [payment]);
+    const timeZone = useCompanyTimeZone();
+    const vis = useMemo(() => rentEmailVisibility(payment, timeZone), [payment, timeZone]);
 
     useImperativeHandle(innerRef, () => ({
         success: () => {

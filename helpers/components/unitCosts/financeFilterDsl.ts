@@ -51,7 +51,11 @@ export function buildFinanceToolbarOnlyFilterGroup(inputs: FinanceToolbarDslInpu
     };
 }
 
-export function buildPaymentDateMonthBetweenGroup(startYmd: string, endYmd: string): FilterGroup {
+/**
+ * Costs paid in one month. `paymentDate` is a local `YYYY-MM-DD` string (D115), so the month is its `YYYY-MM` prefix:
+ * a string filter, which is all a string column offers (no date range on it yet).
+ */
+export function buildPaymentDateMonthGroup(monthYm: string): FilterGroup {
     return {
         id: generateUUID(),
         operator: "and",
@@ -59,16 +63,16 @@ export function buildPaymentDateMonthBetweenGroup(startYmd: string, endYmd: stri
             {
                 id: generateUUID(),
                 field: "paymentDate",
-                operator: "between",
-                value: [startYmd, endYmd],
+                operator: "startsWith",
+                value: `${monthYm}-`,
             },
         ],
         groups: [],
     };
 }
 
-export function buildFinanceCalendarFetchFilter(monthStartYmd: string, monthEndYmd: string, toolbar: FinanceToolbarDslInputs): FilterGroup {
-    const monthGroup = buildPaymentDateMonthBetweenGroup(monthStartYmd, monthEndYmd);
+export function buildFinanceCalendarFetchFilter(monthYm: string, toolbar: FinanceToolbarDslInputs): FilterGroup {
+    const monthGroup = buildPaymentDateMonthGroup(monthYm);
     const tail = buildFinanceToolbarOnlyFilterGroup(toolbar);
     return mergeAndFilterDSL(monthGroup, tail) ?? monthGroup;
 }

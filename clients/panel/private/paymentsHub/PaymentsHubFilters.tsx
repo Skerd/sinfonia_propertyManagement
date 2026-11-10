@@ -15,33 +15,25 @@ import {
     RentalsHubFilterField as FilterField,
     RentalsHubFilterToolbar as FilterToolbar,
 } from "@propertyManagementModule/clients/panel/private/rentalsHub/RentalsHubFilterField.tsx";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
+import {addDays, companyToday, monthOf} from "@propertyManagementModule/helpers/general/companyDay.ts";
 import {hasActiveScope, type PaymentsHubScope} from "./paymentsHubHelpers.ts";
 
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-function ymd(date: Date): string {
-    return date.toISOString().slice(0, 10);
-}
-
-/** The presets behind the quick buttons: what is late, and what lands soon. */
-function presetRange(preset: "overdue" | "next7" | "next30" | "thisMonth"): Partial<PaymentsHubScope> {
-    const today = new Date();
-    const todayYmd = ymd(today);
+/**
+ * The presets behind the quick buttons: what is late, and what lands soon. Due days are the company's local days
+ * (D115), so "today" is the company's today (TD-B157), the day the server and its crons count from.
+ */
+function presetRange(preset: "overdue" | "next7" | "next30" | "thisMonth", today: string): Partial<PaymentsHubScope> {
     if (preset === "overdue") {
         return {status: "overdue", dateField: "dueDate", dateFrom: "", dateTo: ""};
     }
     if (preset === "thisMonth") {
-        const start = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 1));
-        const end = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() + 1, 0));
-        return {status: "", dateField: "dueDate", dateFrom: ymd(start), dateTo: ymd(end)};
+        const {from, to} = monthOf(today);
+        return {status: "", dateField: "dueDate", dateFrom: from, dateTo: to};
     }
-    const days = preset === "next7" ? 7 : 30;
-    return {
-        status: "",
-        dateField: "dueDate",
-        dateFrom: todayYmd,
-        dateTo: ymd(new Date(today.getTime() + days * DAY_MS)),
-    };
+    // The next 7 / 30 days including today, the window the hub's tiles count.
+    const days = preset === "next7" ? 6 : 29;
+    return {status: "", dateField: "dueDate", dateFrom: today, dateTo: addDays(today, days)};
 }
 
 type PaymentsHubFiltersProps = {
@@ -62,6 +54,7 @@ export default function PaymentsHubFilters({
     onReset,
 }: PaymentsHubFiltersProps) {
     const rk = (key: string) => String(resolveLanguageKey(`filters.${key}`));
+    const timeZone = useCompanyTimeZone();
 
     const edificeSelectBody = useMemo(
         () => selectBodyWithFilters([{field: "project", value: scope.project}]),
@@ -240,7 +233,7 @@ export default function PaymentsHubFilters({
                             variant="outline"
                             size="sm"
                             // Presets only touch the date/status side; the project → unit scope stays.
-                            onClick={() => onScopeChange(presetRange(preset))}
+                            onClick={() => onScopeChange(presetRange(preset, companyToday(timeZone)))}
                         >
                             {rk(`presets.${preset}`)}
                         </Button>

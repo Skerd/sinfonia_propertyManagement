@@ -93,8 +93,8 @@ export function kindLabel(
 
 /**
  * Period heading: a single day, a week as "from – to", or the month name. Periods
- * are bucketed in UTC on the server, so they are labelled in UTC too — otherwise a
- * viewer west of Greenwich would see a heading one day before its own bucket.
+ * are local days (`YYYY-MM-DD`, D115), read as UTC midnight and so labelled in UTC —
+ * otherwise a viewer west of Greenwich would see a heading one day before its own bucket.
  */
 export function periodLabel(
     periodStart: string,

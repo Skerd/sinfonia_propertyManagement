@@ -192,7 +192,7 @@ function OverviewPageInner({
                                                 {payment.saleName ? ` · ${payment.saleName}` : ""}
                                             </p>
                                             <p className="font-aeonik-light text-sm text-pronix-ink-muted">
-                                                {new Date(payment.dueDate).toLocaleDateString(languageCode)}
+                                                {new Date(payment.dueDate).toLocaleDateString(languageCode, {timeZone: "UTC"})}
                                             </p>
                                         </li>
                                     ))}

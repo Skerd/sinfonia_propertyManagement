@@ -6,6 +6,8 @@ import {DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut} from "@co
 import {IconMail} from "@tabler/icons-react";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {ManualReservationClientEmailForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/manualReservationClientEmail.form.type.ts";
+import {calendarDaysUntil} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {MANUAL_CLIENT_EMAIL_ACTION_PREFIX} from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
 
 type ManualReservationClientEmailsProps = WithLanguageType & {
@@ -13,21 +15,8 @@ type ManualReservationClientEmailsProps = WithLanguageType & {
     onAction: (action: string) => void;
 };
 
-function utcCalendarDaysUntilExpirationDay(iso: string): number {
-    const exp = new Date(iso);
-    const expStart = Date.UTC(exp.getUTCFullYear(), exp.getUTCMonth(), exp.getUTCDate());
-    const n = new Date();
-    const todayStart = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
-    return Math.round((expStart - todayStart) / 86400000);
-}
-
-function isPastExpirationUtcEndOfDay(iso: string): boolean {
-    const exp = new Date(iso);
-    const end = Date.UTC(exp.getUTCFullYear(), exp.getUTCMonth(), exp.getUTCDate(), 23, 59, 59, 999);
-    return Date.now() > end;
-}
-
-function manualEmailVisibility(r: Reservation): Record<ManualReservationClientEmailForm["action"], boolean> {
+/** Which emails fit the reservation; days count from the company's today (D116), as the server's expiry does. */
+function manualEmailVisibility(r: Reservation, timeZone: string): Record<ManualReservationClientEmailForm["action"], boolean> {
     const deleted = r.deletedAt != null || r.deletedBy != null;
     const cancelled = r.isActive === false;
     const paid = r.paid === true;
@@ -43,18 +32,17 @@ function manualEmailVisibility(r: Reservation): Record<ManualReservationClientEm
         return base;
     }
     base.send_confirmation = true;
-    if (!r.expirationDate) {
+    const diff = calendarDaysUntil(r.expirationDate, timeZone);
+    if (diff === null) {
         return base;
     }
-    const diff = utcCalendarDaysUntilExpirationDay(r.expirationDate);
-    const pastEnd = isPastExpirationUtcEndOfDay(r.expirationDate);
     return {
         ...base,
         remind_3d: diff >= 3,
         remind_1d: diff >= 1,
-        remind_today: diff === 0 && !pastEnd,
-        send_expired: pastEnd,
-        remind_remaining_days: !pastEnd && diff >= 0,
+        remind_today: diff === 0,
+        send_expired: diff < 0,
+        remind_remaining_days: diff >= 0,
     };
 }
 
@@ -78,7 +66,8 @@ function ManualReservationClientEmails({
     onAction,
     resolveLanguageKey,
 }: ManualReservationClientEmailsProps) {
-    const vis = useMemo(() => manualEmailVisibility(reservation), [reservation]);
+    const timeZone = useCompanyTimeZone();
+    const vis = useMemo(() => manualEmailVisibility(reservation, timeZone), [reservation, timeZone]);
     const anyVisible = ACTION_ORDER.some((a) => vis[a]);
     if (!anyVisible) {
         return null;

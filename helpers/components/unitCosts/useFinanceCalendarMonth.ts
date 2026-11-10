@@ -20,14 +20,9 @@ export type FinanceCalendarFetchOptions = {
     purchasePersonId?: string;
 };
 
-function toYmd(d: Date): string {
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-}
-
-function monthRangeYmd(month: Date): { start: string; end: string } {
-    const start = new Date(month.getFullYear(), month.getMonth(), 1);
-    const end = new Date(month.getFullYear(), month.getMonth() + 1, 0);
-    return { start: toYmd(start), end: toYmd(end) };
+/** The picked calendar month as `YYYY-MM` (the picker's month, in the viewer's calendar). */
+function monthYm(year: number, monthIndex: number): string {
+    return `${year}-${String(monthIndex + 1).padStart(2, "0")}`;
 }
 
 export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFetchOptions = {}) {
@@ -36,8 +31,7 @@ export function useFinanceCalendarMonth(month: Date, options: FinanceCalendarFet
     const { project, edifice, floor, unit, verificationStatus, paymentStatus, vendorContains, purchasePersonId } = options;
 
     const requestData = useMemo(() => {
-        const { start, end } = monthRangeYmd(new Date(y, mo, 1));
-        const filter = buildFinanceCalendarFetchFilter(start, end, {
+        const filter = buildFinanceCalendarFetchFilter(monthYm(y, mo), {
             vendorContains,
             purchasePersonId,
             verificationStatus,

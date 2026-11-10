@@ -19,6 +19,7 @@ import {Input} from "@coreModule/components/ui/input.tsx";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {useForm, type Resolver} from "react-hook-form";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
 import {ApiSelect} from "@coreModule/components/viewEngine/widgets/inputs/apiSelect/apiSelect.tsx";
@@ -73,7 +74,7 @@ function FinanceModificationRequestDialog({
     const [mediaFiles, setMediaFiles] = useState<File[]>([]);
     const mediaInputRef = useRef<HTMLInputElement>(null);
 
-    const formSchema = financeModificationRequestFormSchema(languageCode, resolveLanguageKey("form"));
+    const formSchema = financeModificationRequestFormSchema(languageCode, resolveLanguageKey("form"), undefined, undefined, {timeZone: useCompanyTimeZone()});
     const form = useForm<FinanceFormValues>({
         resolver: zodResolver(formSchema) as Resolver<FinanceFormValues>,
         defaultValues: {

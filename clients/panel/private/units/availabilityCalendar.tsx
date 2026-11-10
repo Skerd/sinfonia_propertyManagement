@@ -1,3 +1,5 @@
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
+import {addDays, companyToday} from "@propertyManagementModule/helpers/general/companyDay.ts";
 import {compose} from "redux";
 import {useState} from "react";
 import withLanguage, {WithLanguageType, type ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -40,8 +42,10 @@ function fmtDate(iso: string | undefined) {
 }
 
 function UnitAvailabilityCalendar({resolveLanguageKey: t}: WithLanguageType) {
-    const defaultFrom = new Date(Date.now() - 30  * 24 * 3600 * 1000).toISOString().split("T")[0];
-    const defaultTo   = new Date(Date.now() + 180 * 24 * 3600 * 1000).toISOString().split("T")[0];
+    // Sale and reservation days are the company's local days (D115): the default window starts from its today.
+    const today = companyToday(useCompanyTimeZone());
+    const defaultFrom = addDays(today, -30);
+    const defaultTo   = addDays(today, 180);
 
     const [projectId, setProjectId] = useState("");
     const [dateFrom,  setDateFrom]  = useState(defaultFrom);

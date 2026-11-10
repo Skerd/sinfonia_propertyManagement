@@ -137,7 +137,7 @@ function PortfolioOverviewInner({
                                         {phaseLabel(row.phase, resolveLanguageKey)}
                                     </p>
                                     <p className="font-aeonik-light text-sm text-pronix-ink-muted">
-                                        {new Date(row.updateDate).toLocaleDateString(languageCode)}
+                                        {new Date(row.updateDate).toLocaleDateString(languageCode, {timeZone: "UTC"})}
                                     </p>
                                 </li>
                             ))}

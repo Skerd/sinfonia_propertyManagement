@@ -3,6 +3,7 @@ import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts"
 import {IconDots} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -75,6 +76,7 @@ export default function LeaseSchedulePanel({
 }: LeaseSchedulePanelProps) {
     const paymentAccess = useAccess("rentalpayments");
     const leaseAccess = useAccess("leases");
+    const timeZone = useCompanyTimeZone();
     const leaseRead =
         typeof leaseAccess.read === "object" && leaseAccess.read !== null
             ? (leaseAccess.read as Record<string, unknown>)
@@ -202,7 +204,7 @@ export default function LeaseSchedulePanel({
                             {payments.map((row) => {
                                 const styles = statusStyles(row.status);
                                 const showPay = OPEN_STATUSES.has(row.status ?? "") && (row.remaining ?? 0) > 0 && !!paymentAccess.write;
-                                const showEmails = canReadTenant && rentHasVisibleManualEmailActions(row);
+                                const showEmails = canReadTenant && rentHasVisibleManualEmailActions(row, timeZone);
                                 const showMenu = showPay || showEmails;
                                 return (
                                     <TableRow key={row._id}>

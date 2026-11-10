@@ -65,7 +65,7 @@ export async function downloadModificationRequestFinancePdf(
         .filter((part): part is string => typeof part === "string" && part.trim() !== "")
         .join(" · ");
     const completion = finance.estimatedCompletionDate
-        ? formatDate(finance.estimatedCompletionDate, {format: DATE_FORMATS.date})
+        ? formatDate(finance.estimatedCompletionDate, {timeZone: "UTC", format: DATE_FORMATS.date})
         : "";
     const notes = (finance.notes ?? "").trim();
     const requestLabel = request.name?.trim() || request.title?.trim() || "";

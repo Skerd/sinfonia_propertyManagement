@@ -2,6 +2,7 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {useEffect, useState} from "react";
@@ -86,6 +87,7 @@ function PaymentPlanSheetView({
 }: PaymentPlanSheetViewOwnProps & WithLanguageType) {
     const access = useAccess("paymentPlans");
     const saleAccess = useAccess("sales");
+    const timeZone = useCompanyTimeZone();
     const saleReadFields =
         typeof saleAccess.read === "object" && saleAccess.read !== null
             ? (saleAccess.read as Record<string, unknown>)
@@ -164,7 +166,7 @@ function PaymentPlanSheetView({
                                             const paid = isInstallmentPaid(installment);
                                             const showPayAction = !paid && !!access.write && planTakesPayments(paymentPlan.status);
                                             const showInstallmentEmails =
-                                                canReadSaleBuyer && installmentHasVisibleManualEmailActions(installment);
+                                                canReadSaleBuyer && installmentHasVisibleManualEmailActions(installment, timeZone);
                                             const showRowActionsMenu = showPayAction || showInstallmentEmails;
                                             const statusStyles = getInstallmentStatusStyles(installment.status);
                                             const paidAmount = installment.paidAmount ?? 0;

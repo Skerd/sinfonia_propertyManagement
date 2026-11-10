@@ -6,6 +6,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import { useNavigate } from "react-router-dom";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {salesListPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
@@ -59,7 +60,8 @@ function CreatePaymentPlanSale({
     const setSaleExchangeRateVisibility = useCallback((value: boolean) => {setExchangeRateVisibility((prev) => prev.showSaleExchangeRate === value ? prev : {...prev, showSaleExchangeRate: value});}, []);
     const setReservationExchangeRateVisibility = useCallback((value: boolean) => {setExchangeRateVisibility((prev) => prev.showReservationExchangeRate === value ? prev : {...prev, showReservationExchangeRate: value});}, []);
     const viewConfig = useViewConfig("paymentplans", "form:create");
-    const formSchema = useMemo(() => createPaymentPlanSaleFormSchema(languageCode, resolveLanguageKey("form")), [languageCode, resolveLanguageKey],);
+    const timeZone = useCompanyTimeZone();
+    const formSchema = useMemo(() => createPaymentPlanSaleFormSchema(languageCode, resolveLanguageKey("form"), undefined, undefined, {timeZone}), [languageCode, resolveLanguageKey, timeZone]);
 
     const formExtras = useMemo(() => ({
         prefilledUnitId: !!unitId,

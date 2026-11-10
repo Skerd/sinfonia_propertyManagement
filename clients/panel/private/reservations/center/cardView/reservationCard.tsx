@@ -30,6 +30,8 @@ import {
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {useEffect, type ReactNode, type RefObject} from "react";
+import {calendarDaysUntil} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 
 function ReservationReady({
     entity,
@@ -44,14 +46,6 @@ function ReservationReady({
     return null;
 }
 
-/** Whole UTC calendar days from today to expiration day. 0 = expires today. */
-function utcCalendarDaysUntilExpirationDay(iso: string): number {
-    const exp = new Date(iso);
-    const expStart = Date.UTC(exp.getUTCFullYear(), exp.getUTCMonth(), exp.getUTCDate());
-    const n = new Date();
-    const todayStart = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
-    return Math.round((expStart - todayStart) / 86400000);
-}
 
 function reservationStatusBadgeClass(status: NonNullable<Reservation["status"]>): string {
     switch (status) {
@@ -67,11 +61,11 @@ function reservationStatusBadgeClass(status: NonNullable<Reservation["status"]>)
     }
 }
 
+/** Badge for the expiration day, counted from the company's today (D116), like the expiry cron. */
 function expirationBadgeMeta(
-    expirationDate: string,
+    days: number,
     resolveLanguageKey: ResolveLanguageKey,
 ): {label: string; className: string} {
-    const days = utcCalendarDaysUntilExpirationDay(expirationDate);
     if (days < 0) {
         return {label: String(resolveLanguageKey("expired")), className: STATUS_BADGE_DANGER};
     }
@@ -98,7 +92,8 @@ function ReservationCardBadges({
     const status = entity.status;
     const expirationDate = entity.expirationDate;
     const notes = entity.reservationNotes?.trim();
-    const expiration = expirationDate ? expirationBadgeMeta(expirationDate, resolveLanguageKey) : null;
+    const days = calendarDaysUntil(expirationDate, useCompanyTimeZone());
+    const expiration = days === null ? null : expirationBadgeMeta(days, resolveLanguageKey);
 
     if (!status && !expiration && !notes) return null;
 

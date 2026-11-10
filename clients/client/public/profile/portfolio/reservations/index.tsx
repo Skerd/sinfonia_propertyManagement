@@ -90,11 +90,11 @@ function ReservationsPageInner({
                         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                             <p className={PUBLIC_BODY}>
                                 {resolveLanguageKey("reservedOn")}{" "}
-                                {new Date(reservation.reservationDate).toLocaleDateString(languageCode)}
+                                {new Date(reservation.reservationDate).toLocaleDateString(languageCode, {timeZone: "UTC"})}
                             </p>
                             <p className={PUBLIC_BODY}>
                                 {resolveLanguageKey("expiresOn")}{" "}
-                                {new Date(reservation.expirationDate).toLocaleDateString(languageCode)}
+                                {new Date(reservation.expirationDate).toLocaleDateString(languageCode, {timeZone: "UTC"})}
                             </p>
                             {reservation.depositAmount != null ? (
                                 <p className="font-aeonik-medium text-pronix-blue">

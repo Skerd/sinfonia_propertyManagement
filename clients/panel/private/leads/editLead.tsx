@@ -16,9 +16,7 @@ export default createGenericEditPage<Lead, EditLeadFormType>({
         unitInterest:    refId(data.unitInterest),
         budgetCurrency:  refId(data.budgetCurrency),
         assignedTo:      refId(data.assignedTo),
-        followUpDate:    data.followUpDate
-            ? new Date(data.followUpDate).toISOString().split("T")[0]
-            : undefined,
+        followUpDate:    data.followUpDate || undefined,
     }),
     submitIcon: <IconDeviceFloppy />,
 });

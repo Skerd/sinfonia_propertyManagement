@@ -70,13 +70,7 @@ export default createGenericEditPage<ModificationRequest, EditModificationReques
                                   : undefined,
                           currency: refId(data.financeDetails.currency),
                           notes: data.financeDetails.notes,
-                          estimatedCompletionDate: data.financeDetails.estimatedCompletionDate
-                              ? typeof data.financeDetails.estimatedCompletionDate === "string"
-                                  ? data.financeDetails.estimatedCompletionDate.split("T")[0]
-                                  : new Date(data.financeDetails.estimatedCompletionDate as string)
-                                        .toISOString()
-                                        .split("T")[0]
-                              : undefined,
+                          estimatedCompletionDate: data.financeDetails.estimatedCompletionDate || undefined,
                           costBreakdown: (data.financeDetails.costBreakdown || []).map((i) => ({
                               item: i.item || "",
                               cost: typeof i.cost === "number" ? i.cost : Number(i.cost) || 0,

@@ -16,6 +16,8 @@ import {
     AlertDialogTitle,
 } from "@coreModule/components/ui/alert-dialog.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {calendarDaysUntil} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
 import type {ManualSaleClientEmailForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/manualSaleClientEmail.form.type.ts";
 
@@ -27,20 +29,6 @@ type ManualInstallmentClientEmailsProps = WithLanguageType &
         installment: InstallmentRowForEmail;
     };
 
-function utcCalendarDaysUntilDueDay(iso: string): number {
-    const due = new Date(iso);
-    const dueStart = Date.UTC(due.getUTCFullYear(), due.getUTCMonth(), due.getUTCDate());
-    const n = new Date();
-    const todayStart = Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate());
-    return Math.round((dueStart - todayStart) / 86400000);
-}
-
-function isPastDueUtcEndOfDay(iso: string): boolean {
-    const due = new Date(iso);
-    const end = Date.UTC(due.getUTCFullYear(), due.getUTCMonth(), due.getUTCDate(), 23, 59, 59, 999);
-    return Date.now() > end;
-}
-
 function isInstallmentPaidRow(installment: InstallmentRowForEmail): boolean {
     const status = installment.status?.toLowerCase();
     if (status === "paid") {
@@ -51,7 +39,8 @@ function isInstallmentPaidRow(installment: InstallmentRowForEmail): boolean {
 
 type InstallmentOnlyAction = Exclude<ManualSaleClientEmailForm["action"], "send_sale_confirmation">;
 
-export function installmentEmailVisibility(installment: InstallmentRowForEmail): Record<InstallmentOnlyAction, boolean> {
+/** Which reminders fit the installment; days count from the company's today in `timeZone` (D116), as the server's do. */
+export function installmentEmailVisibility(installment: InstallmentRowForEmail, timeZone: string): Record<InstallmentOnlyAction, boolean> {
     const base: Record<InstallmentOnlyAction, boolean> = {
         installment_remind_3d: false,
         installment_remind_1d: false,
@@ -59,17 +48,16 @@ export function installmentEmailVisibility(installment: InstallmentRowForEmail):
         installment_remind_remaining_days: false,
         installment_send_overdue: false,
     };
-    if (!installment.dueDate || isInstallmentPaidRow(installment)) {
+    const diff = calendarDaysUntil(installment.dueDate, timeZone);
+    if (diff === null || isInstallmentPaidRow(installment)) {
         return base;
     }
-    const diff = utcCalendarDaysUntilDueDay(installment.dueDate);
-    const past = isPastDueUtcEndOfDay(installment.dueDate);
     return {
         installment_remind_3d: diff >= 3,
         installment_remind_1d: diff >= 1,
-        installment_remind_today: diff === 0 && !past,
-        installment_remind_remaining_days: !past && diff >= 0,
-        installment_send_overdue: past,
+        installment_remind_today: diff === 0,
+        installment_remind_remaining_days: diff >= 0,
+        installment_send_overdue: diff < 0,
     };
 }
 
@@ -81,8 +69,8 @@ export const INSTALLMENT_MANUAL_EMAIL_ACTION_ORDER: InstallmentOnlyAction[] = [
     "installment_send_overdue",
 ];
 
-export function installmentHasVisibleManualEmailActions(installment: InstallmentRowForEmail): boolean {
-    const v = installmentEmailVisibility(installment);
+export function installmentHasVisibleManualEmailActions(installment: InstallmentRowForEmail, timeZone: string): boolean {
+    const v = installmentEmailVisibility(installment, timeZone);
     return INSTALLMENT_MANUAL_EMAIL_ACTION_ORDER.some((a) => v[a]);
 }
 
@@ -101,7 +89,8 @@ function ManualInstallmentClientEmails({
     const readFields = (typeof read === "object" && read !== null ? read : {}) as Record<string, unknown>;
     const canReadBuyer = readFields.buyer !== undefined;
 
-    const vis = useMemo(() => installmentEmailVisibility(installment), [installment]);
+    const timeZone = useCompanyTimeZone();
+    const vis = useMemo(() => installmentEmailVisibility(installment, timeZone), [installment, timeZone]);
 
     useImperativeHandle(innerRef, () => ({
         success: () => {

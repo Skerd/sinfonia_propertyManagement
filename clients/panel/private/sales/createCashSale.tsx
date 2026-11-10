@@ -8,6 +8,7 @@ import {createCashSaleFormSchema} from "armonia/src/modules/propertyManagement/a
 import {CreateCashSaleFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/createSale.form.type.ts";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {salesListPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
@@ -365,7 +366,8 @@ function CreateCashSale({
     const setSaleExchangeRateVisibility = useCallback((value: boolean) => {setExchangeRateVisibility((prev) => prev.showSaleExchangeRate === value ? prev : {...prev, showSaleExchangeRate: value});}, []);
     const setReservationExchangeRateVisibility = useCallback((value: boolean) => {setExchangeRateVisibility((prev) => prev.showReservationExchangeRate === value ? prev : {...prev, showReservationExchangeRate: value});}, []);
     const viewConfig = useViewConfig("sales", "form:create");
-    const formSchema = useMemo(() => createCashSaleFormSchema(languageCode, resolveLanguageKey("form")), [languageCode, resolveLanguageKey]);
+    const timeZone = useCompanyTimeZone();
+    const formSchema = useMemo(() => createCashSaleFormSchema(languageCode, resolveLanguageKey("form"), undefined, undefined, {timeZone}), [languageCode, resolveLanguageKey, timeZone]);
 
     const formExtras = useMemo(() => ({
         prefilledUnitId: !!unitId,

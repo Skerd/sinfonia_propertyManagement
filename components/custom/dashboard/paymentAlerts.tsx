@@ -159,7 +159,7 @@ function PaymentAlertsInner({
                       )}
                       <div className="flex items-center justify-between mt-1 gap-1.5">
                         <span className="text-xs text-muted-foreground">
-                          {new Date(alert.installment.dueDate).toLocaleDateString(locale)}
+                          {new Date(alert.installment.dueDate).toLocaleDateString(locale, {timeZone: "UTC"})}
                         </span>
                         <span
                           className={cn(

@@ -16,6 +16,9 @@ import {Label} from "@coreModule/components/ui/label.tsx";
 import FormMaxLengthControl from "@coreModule/components/viewEngine/widgets/inputs/formMaxLengthControl.tsx";
 import {SALE_SHORT_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.schema-def.ts";
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
+import {recordTitleTransferFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/recordTitleTransfer.form.validator.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
+import {companyToday} from "@propertyManagementModule/helpers/general/companyDay.ts";
 
 type RecordTitleTransferDialogProps = WithLanguageType & WithAxiosType<Sale> & {
     open: boolean;
@@ -33,8 +36,12 @@ function RecordTitleTransferDialog({
     onFormDataChange,
     onSuccess = () => {},
     loading,
+    languageCode,
 }: RecordTitleTransferDialogProps) {
+    // The transfer day is a company day (D115); "not in the future" is judged in the company's zone (D116), as on the server.
+    const timeZone = useCompanyTimeZone();
     const [titleTransferDate, setTitleTransferDate] = useState("");
+    const [dateError, setDateError] = useState<string | null>(null);
     const [deedNumber, setDeedNumber] = useState("");
     const [notaryName, setNotaryName] = useState("");
     const [certificate, setCertificate] = useState<File | null>(null);
@@ -42,6 +49,7 @@ function RecordTitleTransferDialog({
     useEffect(() => {
         if (open) {
             setTitleTransferDate("");
+            setDateError(null);
             setDeedNumber("");
             setNotaryName("");
             setCertificate(null);
@@ -80,9 +88,16 @@ function RecordTitleTransferDialog({
                             id="titleTransferDate"
                             type="date"
                             value={titleTransferDate}
-                            onChange={(e) => setTitleTransferDate(e.target.value)}
+                            max={companyToday(timeZone)}
+                            onChange={(e) => {
+                                setTitleTransferDate(e.target.value);
+                                setDateError(null);
+                            }}
                             disabled={loading}
+                            aria-invalid={dateError != null}
+                            aria-describedby={dateError ? "titleTransferDateError" : undefined}
                         />
+                        {dateError && <p id="titleTransferDateError" className="text-sm text-destructive">{dateError}</p>}
                     </div>
                     <div className="flex flex-col gap-y-2">
                         <Label htmlFor="deedNumber">{resolveLanguageKey("deedNumber")}</Label>
@@ -128,6 +143,17 @@ function RecordTitleTransferDialog({
                             e.preventDefault();
                             e.stopPropagation();
                             if (!canSubmit) return;
+                            const parsed = recordTitleTransferFormSchema(
+                                languageCode,
+                                {titleTransferDateLabel: String(resolveLanguageKey("titleTransferDate"))},
+                                undefined,
+                                undefined,
+                                {timeZone},
+                            ).safeParse({_id: sale._id, titleTransferDate});
+                            if (!parsed.success) {
+                                setDateError(parsed.error.issues[0]?.message ?? null);
+                                return;
+                            }
                             const formData = new FormData();
                             formData.append("_id", sale._id);
                             formData.append("titleTransferDate", titleTransferDate);
