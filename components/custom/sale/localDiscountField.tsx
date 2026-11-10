@@ -24,7 +24,7 @@ export type LocalDiscountFieldProps = {
 };
 
 /** A percentage, not money: plain rounding, for display only. */
-function round2(n: number) {
+export function round2(n: number) {
     return Math.round(n * 100) / 100;
 }
 

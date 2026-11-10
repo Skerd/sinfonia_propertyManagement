@@ -27,6 +27,7 @@ import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/ale
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {salePricingPreview} from "@propertyManagementModule/components/custom/sale/salePricingPreview.ts";
+import {round2} from "@propertyManagementModule/components/custom/sale/localDiscountField.tsx";
 
 const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
 const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
@@ -246,7 +247,7 @@ export function CashSaleReceiptSection({
                                             )}
                                             <div className="flex justify-between gap-4">
                                                 <p className="">
-                                                    {resolveLanguageKey("form.discountApplied")} ({Number(localDiscount || 0)}%)
+                                                    {resolveLanguageKey("form.discountApplied")} ({round2(Number(localDiscount || 0))}%)
                                                 </p>
                                                 <p className="font-semibold text-destructive">
                                                     -

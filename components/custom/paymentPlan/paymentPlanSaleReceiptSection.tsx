@@ -19,6 +19,7 @@ import {roundToCurrency} from "armonia/src/modules/core/helpers/money.ts";
 import {allocatePlanInterest} from "armonia/src/modules/propertyManagement/helpers/paymentPlanInterest.ts";
 import {Table} from "@coreModule/components/ui/table/table.tsx";
 import {salePricingPreview} from "@propertyManagementModule/components/custom/sale/salePricingPreview.ts";
+import {round2} from "@propertyManagementModule/components/custom/sale/localDiscountField.tsx";
 
 const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
 const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
@@ -628,7 +629,7 @@ export default function PaymentPlanSaleReceiptSection({
                                             }
                                             <div className="flex justify-between gap-4">
                                                 <p>
-                                                    {resolveLanguageKey("form.discountApplied")} ({Number(localDiscount || 0)}%)
+                                                    {resolveLanguageKey("form.discountApplied")} ({round2(Number(localDiscount || 0))}%)
                                                 </p>
                                                 <p className="font-semibold text-destructive">
                                                     -
