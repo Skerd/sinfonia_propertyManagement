@@ -25,6 +25,7 @@
   "rentOverdue": "Loyer en retard",
   "activeLeases": "Baux actifs",
   "viewRentalsHub": "Ouvrir le hub locatif",
+  "viewCollectedPlanPayments": "Voir les paiements des plans seulement (sans ventes au comptant ni acomptes)",
   "help": {
     "ariaLabel": "À propos du tableau de bord",
     "title": "À propos du tableau de bord",

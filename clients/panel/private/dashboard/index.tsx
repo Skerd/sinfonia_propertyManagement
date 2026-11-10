@@ -191,7 +191,7 @@ function RealEstateDashboard({
                                 icon={IconWallet}
                                 variant="primary"
                                 href={kpi.kpiCollected(drillDownContext)}
-                                linkLabel={viewEntriesLabel}
+                                linkLabel={String(resolveLanguageKey("viewCollectedPlanPayments"))}
                             />
                             <KpiCard
                                 compact

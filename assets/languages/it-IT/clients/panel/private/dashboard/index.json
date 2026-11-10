@@ -25,6 +25,7 @@
   "rentOverdue": "Affitto scaduto",
   "activeLeases": "Contratti attivi",
   "viewRentalsHub": "Apri hub locazioni",
+  "viewCollectedPlanPayments": "Vedi solo i pagamenti dei piani (senza vendite in contanti né caparre)",
   "help": {
     "ariaLabel": "Informazioni sulla Dashboard",
     "title": "Informazioni sulla Dashboard",

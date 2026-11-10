@@ -32,6 +32,7 @@
     "false": "Joaktiv"
   },
   "paid": "I paguar",
+  "paidDate": "Data e pagesës",
   "paidState": {
     "true": "I paguar",
     "false": "E papaguar"

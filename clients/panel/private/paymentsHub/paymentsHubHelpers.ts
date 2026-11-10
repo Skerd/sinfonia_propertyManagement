@@ -1,6 +1,8 @@
-import type {
-    PaymentsHubDateField,
-    PaymentsHubGroupBy,
+import {
+    PAYMENTS_HUB_DATE_FIELD_VALUES,
+    PAYMENTS_HUB_STATUS_VALUES,
+    type PaymentsHubDateField,
+    type PaymentsHubGroupBy,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.constants.ts";
 import type {PaymentsHubRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.dto.ts";
 import type {PaymentsHubScopeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.form.type.ts";
@@ -32,6 +34,32 @@ export const EMPTY_PAYMENTS_SCOPE: PaymentsHubScope = {
     dateFrom: "",
     dateTo: "",
 };
+
+/** The URL params a link may preset the hub with (the dashboard's "Collected" sends its period and edifice). */
+export const PAYMENTS_HUB_URL_PARAMS = ["status", "unit", "edifice", "dateField", "dateFrom", "dateTo"] as const;
+
+const LOCAL_DAY = /^\d{4}-\d{2}-\d{2}$/;
+
+function oneOf<T extends string>(values: readonly T[], value: string | null): T | undefined {
+    return values.find((candidate) => candidate === value);
+}
+
+/** The starting scope from the URL; an unknown status or date field, or a day that is not `YYYY-MM-DD`, is ignored. */
+export function scopeFromSearchParams(params: URLSearchParams): PaymentsHubScope {
+    const day = (key: string) => {
+        const value = params.get(key) ?? "";
+        return LOCAL_DAY.test(value) ? value : "";
+    };
+    return {
+        ...EMPTY_PAYMENTS_SCOPE,
+        status: oneOf(PAYMENTS_HUB_STATUS_VALUES, params.get("status")) ?? "",
+        unit: params.get("unit") ?? "",
+        edifice: params.get("edifice") ?? "",
+        dateField: oneOf(PAYMENTS_HUB_DATE_FIELD_VALUES, params.get("dateField")) ?? EMPTY_PAYMENTS_SCOPE.dateField,
+        dateFrom: day("dateFrom"),
+        dateTo: day("dateTo"),
+    };
+}
 
 export function hasActiveScope(scope: PaymentsHubScope): boolean {
     return Boolean(

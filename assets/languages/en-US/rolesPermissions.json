@@ -1316,6 +1316,7 @@
       "isHistoricalDataEntry": "Historical data entry",
       "name": "Name",
       "paid": "Paid",
+      "paidDate": "Paid date",
       "paymentMethod": "Payment method",
       "preSystemReservation": "Pre-system reservation",
       "referralCode": "Referral code",
@@ -1975,84 +1976,6 @@
       "unsubscribedAllAt": "Unsubscribed from all at",
       "source": "Source",
       "lastChangedAt": "Last changed at"
-    }
-  },
-  "roles": {
-    "re_inventory_manager": {
-      "name": "Inventory Manager",
-      "description": "Sets up the portfolio: projects, edifices, floors, units, unit types, and constructors."
-    },
-    "re_unit_cost_controller": {
-      "name": "Unit Cost Controller",
-      "description": "Maintains unit cost records. Can look up inventory but cannot change projects or units."
-    },
-    "re_marketing_editor": {
-      "name": "Marketing Editor",
-      "description": "Publishes project and unit stories. Can look up inventory but cannot change it."
-    },
-    "re_campaign_manager": {
-      "name": "Campaign Manager",
-      "description": "Builds and sends ad campaigns to clients and leads, and maintains the email templates. Can look up inventory and leads but cannot change them."
-    },
-    "re_portfolio_manager": {
-      "name": "Portfolio Manager",
-      "description": "Runs the full portfolio workflow: inventory, unit costs, and stories."
-    },
-    "re_lead_officer": {
-      "name": "Lead Officer",
-      "description": "Captures and qualifies buyer interest. Cannot create reservations or sales."
-    },
-    "re_sales_agent": {
-      "name": "Sales Agent",
-      "description": "Reserves units, converts to sale, and handles handover on the sale. Cannot create leads or commissions."
-    },
-    "re_collections_officer": {
-      "name": "Collections Officer",
-      "description": "Manages sale payment-plan installments: schedule, collect, and mark overdue."
-    },
-    "re_commission_officer": {
-      "name": "Commission Officer",
-      "description": "Records and tracks agent commissions from reservations and sales."
-    },
-    "re_contracts_officer": {
-      "name": "Contracts Officer",
-      "description": "Works the contracts & clients hub: sales and leases."
-    },
-    "re_sales_manager": {
-      "name": "Sales Manager",
-      "description": "Runs the full sales pipeline: lead → reservation → sale → payment plan → commission."
-    },
-    "re_leasing_officer": {
-      "name": "Leasing Officer",
-      "description": "Creates and terminates leases. Cannot collect rental payments."
-    },
-    "re_rent_collector": {
-      "name": "Rent Collector",
-      "description": "Collects, waives, and marks rental payments. Cannot create or end leases."
-    },
-    "re_leasing_manager": {
-      "name": "Leasing Manager",
-      "description": "Runs the full lease workflow: lease, rent collection, and exit inspection."
-    },
-    "re_change_order": {
-      "name": "Change Order Coordinator",
-      "description": "Owns buyer modification requests end-to-end, with read access to the related sale and unit."
-    },
-    "re_quality_inspector": {
-      "name": "Quality Inspector",
-      "description": "Performs unit inspections."
-    },
-    "re_aftercare_manager": {
-      "name": "Aftercare Manager",
-      "description": "Runs aftercare and quality: inspections, handover packages, and checklist templates."
-    },
-    "re_analyst": {
-      "name": "Real Estate Analyst",
-      "description": "Read-only access for overview, dashboards, agent report, ROI, and ERP export. Cannot change records."
-    },
-    "re_manager": {
-      "name": "Real Estate Manager",
-      "description": "Operates every visible Real Estate workflow: portfolio, sales, leasing, change orders, and aftercare."
     }
   }
 }

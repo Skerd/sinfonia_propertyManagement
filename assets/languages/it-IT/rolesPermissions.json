@@ -1316,6 +1316,7 @@
       "isHistoricalDataEntry": "Inserimento storico",
       "name": "Nome",
       "paid": "Pagato",
+      "paidDate": "Data pagamento",
       "paymentMethod": "Metodo di pagamento",
       "preSystemReservation": "Prenotazione pre-sistema",
       "referralCode": "Codice referral",
@@ -1975,84 +1976,6 @@
       "unsubscribedAllAt": "Disiscritto da tutto il",
       "source": "Origine",
       "lastChangedAt": "Ultima modifica il"
-    }
-  },
-  "roles": {
-    "re_inventory_manager": {
-      "name": "Gestore inventario",
-      "description": "Imposta il portafoglio: progetti, edifici, piani, unità, tipi di unità e costruttori."
-    },
-    "re_unit_cost_controller": {
-      "name": "Controllore costi unità",
-      "description": "Gestisce i costi delle unità. Può consultare l'inventario ma non può modificare progetti o unità."
-    },
-    "re_marketing_editor": {
-      "name": "Redattore marketing",
-      "description": "Pubblica le storie di progetti e unità. Può consultare l'inventario ma non modificarlo."
-    },
-    "re_campaign_manager": {
-      "name": "Responsabile campagne",
-      "description": "Crea e invia campagne pubblicitarie a clienti e potenziali clienti e gestisce i modelli e-mail. Può consultare inventario e potenziali clienti ma non modificarli."
-    },
-    "re_portfolio_manager": {
-      "name": "Gestore del portafoglio",
-      "description": "Gestisce l'intero flusso del portafoglio: inventario, costi delle unità e storie."
-    },
-    "re_lead_officer": {
-      "name": "Addetto ai contatti",
-      "description": "Raccoglie e qualifica l'interesse degli acquirenti. Non può creare prenotazioni o vendite."
-    },
-    "re_sales_agent": {
-      "name": "Agente di vendita",
-      "description": "Prenota le unità, le converte in vendita e gestisce la consegna legata alla vendita. Non può creare contatti o provvigioni."
-    },
-    "re_collections_officer": {
-      "name": "Addetto agli incassi",
-      "description": "Gestisce le rate dei piani di pagamento delle vendite: pianificare, incassare e segnare come scadute."
-    },
-    "re_commission_officer": {
-      "name": "Addetto alle provvigioni",
-      "description": "Registra e segue le provvigioni degli agenti da prenotazioni e vendite."
-    },
-    "re_contracts_officer": {
-      "name": "Addetto ai contratti",
-      "description": "Lavora nell'hub contratti e clienti: vendite e locazioni."
-    },
-    "re_sales_manager": {
-      "name": "Responsabile vendite",
-      "description": "Gestisce l'intera pipeline di vendita: contatto → prenotazione → vendita → piano di pagamento → provvigione."
-    },
-    "re_leasing_officer": {
-      "name": "Addetto alle locazioni",
-      "description": "Crea e risolve i contratti di locazione. Non può incassare i canoni."
-    },
-    "re_rent_collector": {
-      "name": "Addetto agli incassi dei canoni",
-      "description": "Incassa, condona e segna i pagamenti dei canoni. Non può creare né chiudere locazioni."
-    },
-    "re_leasing_manager": {
-      "name": "Responsabile locazioni",
-      "description": "Gestisce l'intero flusso della locazione: contratto, incasso dei canoni e ispezione di uscita."
-    },
-    "re_change_order": {
-      "name": "Coordinatore varianti",
-      "description": "Gestisce dall'inizio alla fine le richieste di modifica degli acquirenti, con accesso in lettura alla vendita e all'unità collegate."
-    },
-    "re_quality_inspector": {
-      "name": "Ispettore qualità",
-      "description": "Esegue le ispezioni delle unità."
-    },
-    "re_aftercare_manager": {
-      "name": "Responsabile post-vendita",
-      "description": "Gestisce post-vendita e qualità: ispezioni, pacchetti di consegna e modelli di checklist."
-    },
-    "re_analyst": {
-      "name": "Analista immobiliare",
-      "description": "Accesso in sola lettura a panoramica, dashboard, report agenti, ROI ed esportazione ERP. Non può modificare i record."
-    },
-    "re_manager": {
-      "name": "Responsabile immobiliare",
-      "description": "Gestisce ogni flusso immobiliare visibile: portafoglio, vendite, locazioni, richieste di modifica e post-vendita."
     }
   }
 }

@@ -25,6 +25,7 @@
   "rentOverdue": "Überfällige Miete",
   "activeLeases": "Aktive Mietverträge",
   "viewRentalsHub": "Miet-Hub öffnen",
+  "viewCollectedPlanPayments": "Nur Zahlungsplan-Zahlungen anzeigen (ohne Barverkäufe und Anzahlungen)",
   "help": {
     "ariaLabel": "Über Dashboard",
     "title": "Über Dashboard",

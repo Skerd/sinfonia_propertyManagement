@@ -1316,6 +1316,7 @@
       "isHistoricalDataEntry": "Historische Datenerfassung",
       "name": "Name",
       "paid": "Bezahlt",
+      "paidDate": "Zahlungsdatum",
       "paymentMethod": "Zahlungsart",
       "preSystemReservation": "Reservierung vor Systemeinführung",
       "referralCode": "Empfehlungscode",
@@ -1975,84 +1976,6 @@
       "unsubscribedAllAt": "Von allen abgemeldet am",
       "source": "Quelle",
       "lastChangedAt": "Zuletzt geändert am"
-    }
-  },
-  "roles": {
-    "re_inventory_manager": {
-      "name": "Inventarverwaltung",
-      "description": "Richtet das Portfolio ein: Projekte, Gebäude, Geschosse, Einheiten, Einheitstypen und Bauunternehmen."
-    },
-    "re_unit_cost_controller": {
-      "name": "Kostencontroller Einheiten",
-      "description": "Pflegt die Kostendaten der Einheiten. Kann das Inventar einsehen, aber keine Projekte oder Einheiten ändern."
-    },
-    "re_marketing_editor": {
-      "name": "Marketingredaktion",
-      "description": "Veröffentlicht Projekt- und Einheitengeschichten. Kann das Inventar einsehen, aber nicht ändern."
-    },
-    "re_campaign_manager": {
-      "name": "Kampagnenleitung",
-      "description": "Erstellt und versendet Werbekampagnen an Kunden und Interessenten und pflegt die E-Mail-Vorlagen. Kann Inventar und Interessenten einsehen, aber nicht ändern."
-    },
-    "re_portfolio_manager": {
-      "name": "Portfolioverwaltung",
-      "description": "Führt den gesamten Portfolio-Ablauf: Inventar, Einheitenkosten und Geschichten."
-    },
-    "re_lead_officer": {
-      "name": "Interessentenbetreuung",
-      "description": "Erfasst und qualifiziert das Interesse von Käufern. Kann keine Reservierungen oder Verkäufe erstellen."
-    },
-    "re_sales_agent": {
-      "name": "Verkaufsberater",
-      "description": "Reserviert Einheiten, wandelt sie in Verkäufe um und wickelt die Übergabe zum Verkauf ab. Kann keine Interessenten oder Provisionen erstellen."
-    },
-    "re_collections_officer": {
-      "name": "Inkassoverantwortlicher",
-      "description": "Verwaltet die Raten der Zahlungspläne von Verkäufen: planen, einziehen und als überfällig markieren."
-    },
-    "re_commission_officer": {
-      "name": "Provisionsverantwortlicher",
-      "description": "Erfasst und verfolgt Provisionen der Berater aus Reservierungen und Verkäufen."
-    },
-    "re_contracts_officer": {
-      "name": "Vertragsverantwortlicher",
-      "description": "Arbeitet im Hub für Verträge & Kunden: Verkäufe und Mietverträge."
-    },
-    "re_sales_manager": {
-      "name": "Verkaufsleitung",
-      "description": "Führt die gesamte Verkaufspipeline: Interessent → Reservierung → Verkauf → Zahlungsplan → Provision."
-    },
-    "re_leasing_officer": {
-      "name": "Vermietungsverantwortlicher",
-      "description": "Erstellt und beendet Mietverträge. Kann keine Mietzahlungen einziehen."
-    },
-    "re_rent_collector": {
-      "name": "Mietinkasso",
-      "description": "Zieht Mietzahlungen ein, erlässt und markiert sie. Kann keine Mietverträge erstellen oder beenden."
-    },
-    "re_leasing_manager": {
-      "name": "Vermietungsleitung",
-      "description": "Führt den gesamten Mietablauf: Mietvertrag, Mietinkasso und Abnahme beim Auszug."
-    },
-    "re_change_order": {
-      "name": "Koordination Änderungswünsche",
-      "description": "Verantwortet Änderungswünsche der Käufer von Anfang bis Ende, mit Lesezugriff auf den zugehörigen Verkauf und die Einheit."
-    },
-    "re_quality_inspector": {
-      "name": "Qualitätsprüfer",
-      "description": "Führt Abnahmen von Einheiten durch."
-    },
-    "re_aftercare_manager": {
-      "name": "Nachbetreuungsleitung",
-      "description": "Führt Nachbetreuung und Qualität: Abnahmen, Übergabepakete und Checklistenvorlagen."
-    },
-    "re_analyst": {
-      "name": "Immobilienanalyst",
-      "description": "Nur-Lese-Zugriff auf Übersicht, Dashboards, Beraterbericht, ROI und ERP-Export. Kann keine Datensätze ändern."
-    },
-    "re_manager": {
-      "name": "Immobilienleitung",
-      "description": "Betreibt jeden sichtbaren Immobilien-Ablauf: Portfolio, Verkauf, Vermietung, Änderungswünsche und Nachbetreuung."
     }
   }
 }

@@ -107,7 +107,15 @@ export const kpiOccupancyRate = (ctx: KpiDrillDownContext) => unitsUrl(ctx, Unit
 export const kpiTotalRevenue = (ctx: KpiDrillDownContext) => salesUrl(ctx);
 export const kpiTotalSales = (ctx: KpiDrillDownContext) => salesUrl(ctx);
 export const kpiAverageSalePrice = (ctx: KpiDrillDownContext) => salesUrl(ctx);
-export const kpiCollected = (ctx: KpiDrillDownContext) => salesUrl(ctx);
+/**
+ * "Collected" → the payments hub listing the installment and down payments paid in the period (by paid day, D115).
+ * The hub has no rows for cash sales or reservation deposits, so its total is only part of the figure; the link label
+ * says so (TD-B178).
+ */
+export const kpiCollected = (ctx: KpiDrillDownContext) =>
+    buildListDrillDownUrl("/realEstate/paymentsHub", {
+        queryParams: {dateField: "paidDate", dateFrom: ctx.from, dateTo: ctx.to, edifice: ctx.edificeId},
+    });
 export const kpiCashSales = (ctx: KpiDrillDownContext) =>
     salesUrl(ctx, [buildFilterRule("paymentType", "equals", SALE_PAYMENT_CASH)]);
 export const kpiPaymentPlanSales = (ctx: KpiDrillDownContext) =>

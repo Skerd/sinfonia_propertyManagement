@@ -39,6 +39,7 @@
     "isActive": "Është aktiv",
     "name": "Emri",
     "paid": "I paguar",
+    "paidDate": "Data e pagesës",
     "paymentMethod": "Mënyra e pagesës",
     "referralCode": "Kodi i referimit",
     "reservationContract": "Kontrata e rezervimit",

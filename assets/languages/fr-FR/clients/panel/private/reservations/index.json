@@ -39,6 +39,7 @@
     "isActive": "Actif",
     "name": "Nom",
     "paid": "Payée",
+    "paidDate": "Date de paiement",
     "paymentMethod": "Mode de paiement",
     "referralCode": "Code de parrainage",
     "reservationContract": "Contrat de réservation",

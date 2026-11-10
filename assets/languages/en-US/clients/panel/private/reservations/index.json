@@ -39,6 +39,7 @@
     "isActive": "Is Active",
     "name": "Name",
     "paid": "Paid",
+    "paidDate": "Paid Date",
     "paymentMethod": "Payment Method",
     "referralCode": "Referral Code",
     "reservationContract": "Reservation Contract",

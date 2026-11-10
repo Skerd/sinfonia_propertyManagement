@@ -32,6 +32,7 @@
     "false": "Inactive"
   },
   "paid": "Payée",
+  "paidDate": "Date de paiement",
   "paidState": {
     "true": "Payée",
     "false": "Non payée"

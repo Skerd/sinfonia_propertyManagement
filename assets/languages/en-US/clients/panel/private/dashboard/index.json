@@ -25,6 +25,7 @@
   "rentOverdue": "Rent overdue",
   "activeLeases": "Active leases",
   "viewRentalsHub": "View rentals hub",
+  "viewCollectedPlanPayments": "View plan payments only (no cash sales or deposits)",
   "help": {
     "ariaLabel": "About Dashboard",
     "title": "About Dashboard",

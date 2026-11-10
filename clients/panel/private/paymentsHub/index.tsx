@@ -12,10 +12,7 @@ import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import type {PaymentsHubRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.dto.ts";
 import type {PaymentsSummaryFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.form.type.ts";
 import type {PaymentsSummaryResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.response.type.ts";
-import type {
-    PaymentsHubGroupBy,
-    PaymentsHubStatus,
-} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.constants.ts";
+import type {PaymentsHubGroupBy} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.constants.ts";
 import PaymentPlanSheetView from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx";
 import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
@@ -26,7 +23,13 @@ import PaymentsHubFilters from "./PaymentsHubFilters.tsx";
 import PaymentsHubKpis from "./PaymentsHubKpis.tsx";
 import PaymentsTableSection from "./PaymentsTableSection.tsx";
 import PaymentsCalendarTab from "./PaymentsCalendarTab.tsx";
-import {EMPTY_PAYMENTS_SCOPE, type PaymentsHubScope, scopeToBody} from "./paymentsHubHelpers.ts";
+import {
+    EMPTY_PAYMENTS_SCOPE,
+    PAYMENTS_HUB_URL_PARAMS,
+    type PaymentsHubScope,
+    scopeFromSearchParams,
+    scopeToBody,
+} from "./paymentsHubHelpers.ts";
 
 type PaymentsHubTab = "list" | "calendar";
 
@@ -43,12 +46,8 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
     const accessHydrated = useAccessHydrated();
     const canRead = hasAnyAccessRead([useAccess("paymentplans"), useAccess("sales")]);
 
-    // `?status=` lets the dashboard link straight to, say, everything overdue.
-    const [scope, setScope] = useState<PaymentsHubScope>(() => ({
-        ...EMPTY_PAYMENTS_SCOPE,
-        status: (searchParams.get("status") as PaymentsHubStatus | null) ?? "",
-        unit: searchParams.get("unit") ?? "",
-    }));
+    // The URL lets the dashboard link straight to, say, everything overdue, or the payments of its period.
+    const [scope, setScope] = useState<PaymentsHubScope>(() => scopeFromSearchParams(searchParams));
     const [searchInput, setSearchInput] = useState("");
     const [groupBy, setGroupBy] = useState<PaymentsHubGroupBy | "none">("none");
     const [openPlanId, setOpenPlanId] = useState<string | null>(null);
@@ -91,8 +90,7 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
         setSearchParams(
             (prev) => {
                 const params = new URLSearchParams(prev);
-                params.delete("status");
-                params.delete("unit");
+                for (const key of PAYMENTS_HUB_URL_PARAMS) params.delete(key);
                 return params;
             },
             {replace: true},
