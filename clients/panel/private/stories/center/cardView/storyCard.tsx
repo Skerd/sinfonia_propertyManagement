@@ -106,7 +106,7 @@ function StoryCard({
                             label={resolveLanguageKey("fields.publishedAt")}
                             tooltip={resolveLanguageKey("fields.publishedAt")}
                             path="publishedAt"
-                            type="date"
+                            type="dateTime"
                             value={entity.publishedAt}
                         />
                         <EntityCardRow

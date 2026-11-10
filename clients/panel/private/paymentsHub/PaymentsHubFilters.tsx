@@ -16,7 +16,7 @@ import {
     RentalsHubFilterToolbar as FilterToolbar,
 } from "@propertyManagementModule/clients/panel/private/rentalsHub/RentalsHubFilterField.tsx";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
-import {addDays, companyToday, monthOf} from "@propertyManagementModule/helpers/general/companyDay.ts";
+import {addCalendarDays, calendarMonthOf, companyToday} from "@coreModule/helpers/general/dateTime.ts";
 import {hasActiveScope, type PaymentsHubScope} from "./paymentsHubHelpers.ts";
 
 /**
@@ -28,12 +28,12 @@ function presetRange(preset: "overdue" | "next7" | "next30" | "thisMonth", today
         return {status: "overdue", dateField: "dueDate", dateFrom: "", dateTo: ""};
     }
     if (preset === "thisMonth") {
-        const {from, to} = monthOf(today);
+        const {from, to} = calendarMonthOf(today);
         return {status: "", dateField: "dueDate", dateFrom: from, dateTo: to};
     }
     // The next 7 / 30 days including today, the window the hub's tiles count.
     const days = preset === "next7" ? 6 : 29;
-    return {status: "", dateField: "dueDate", dateFrom: today, dateTo: addDays(today, days)};
+    return {status: "", dateField: "dueDate", dateFrom: today, dateTo: addCalendarDays(today, days)};
 }
 
 type PaymentsHubFiltersProps = {

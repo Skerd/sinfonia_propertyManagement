@@ -18,7 +18,7 @@ export default createGenericCreatePage<CreateStoryFormType>({
         excerpt: "",
         published: true,
         sortOrder: 0,
-        publishedAt: new Date().toISOString().split("T")[0],
+        publishedAt: new Date().toISOString(),
     }),
     buildFormExtras: (params) => ({
         prefilledProjectId: !!params.get("projectId"),

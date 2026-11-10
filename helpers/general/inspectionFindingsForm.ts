@@ -38,9 +38,8 @@ export function normalizeFindingsFromApi(
                           .map((m: any) => m._id?.toString?.() ?? m?.toString?.() ?? "")
                           .filter(Boolean)
                     : [];
-                const resolvedAt = o.resolvedAt
-                    ? new Date(String(o.resolvedAt)).toISOString().split("T")[0]
-                    : undefined;
+                // A moment (date + time), kept as the ISO instant the date-time picker reads.
+                const resolvedAt = o.resolvedAt ? new Date(String(o.resolvedAt)).toISOString() : undefined;
                 const resolvedBy = o.resolvedBy
                     ? (typeof o.resolvedBy === "object" ? o.resolvedBy._id : String(o.resolvedBy))
                     : undefined;

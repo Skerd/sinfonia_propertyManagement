@@ -24,6 +24,7 @@ import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/re
 import {resolveWidget} from "@coreModule/components/viewEngine/widgetRegistry.ts";
 import {buildDrillDownContextFromPeriod} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {
     buildDashboardFilter,
     DashboardPeriodToolbar,
@@ -46,6 +47,7 @@ function RealEstateDashboard({
     onFilterChange,
 }: RealEstateDashboardProps) {
     const [periodKey, setPeriodKey] = useState<string>("last12months");
+    const timeZone = useCompanyTimeZone();
     // Filter, not a hard gate: null means portfolio aggregate.
     const [selectedEdifice, setSelectedEdifice] = useState<Edifice | null>(null);
     const accessHydrated = useAccessHydrated();
@@ -78,13 +80,13 @@ function RealEstateDashboard({
 
     useEffect(() => {
         if (accessHydrated === false || !canRead) return;
-        onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}));
-    }, [selectedEdifice, periodKey, accessHydrated, canRead]);
+        onFilterChange(buildDashboardFilter(periodKey, timeZone, {edificeId: selectedEdifice?._id}));
+    }, [selectedEdifice, periodKey, accessHydrated, canRead, timeZone]);
 
     const handlePeriodChange = (value: string) => {
         setPeriodKey(value);
         if (!canRead) return;
-        onFilterChange(buildDashboardFilter(value, {edificeId: selectedEdifice?._id}));
+        onFilterChange(buildDashboardFilter(value, timeZone, {edificeId: selectedEdifice?._id}));
     };
 
     const summary = dashboardData?.summary;
@@ -102,9 +104,9 @@ function RealEstateDashboard({
     const revenueChartProps = dashboardSummaryToRevenueChart(summary);
 
     const drillDownContext = useMemo(() => {
-        const f = buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id});
+        const f = buildDashboardFilter(periodKey, timeZone, {edificeId: selectedEdifice?._id});
         return buildDrillDownContextFromPeriod(f.from ?? "", f.to ?? "", selectedEdifice);
-    }, [periodKey, selectedEdifice]);
+    }, [periodKey, selectedEdifice, timeZone]);
 
     const viewEntriesLabel = resolveLanguageKey("viewEntries");
     const hasData = !!dashboardData?.summary;
@@ -117,7 +119,7 @@ function RealEstateDashboard({
             <ErrorView
                 title={resolveLanguageKey("failTitle")}
                 description={resolveLanguageKey("failDescription")}
-                onClick={() => onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}))}
+                onClick={() => onFilterChange(buildDashboardFilter(periodKey, timeZone, {edificeId: selectedEdifice?._id}))}
             />
         );
     }
@@ -132,7 +134,7 @@ function RealEstateDashboard({
                 <DashboardPeriodToolbar
                     periodKey={periodKey}
                     onPeriodChange={handlePeriodChange}
-                    onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, {edificeId: selectedEdifice?._id}))}
+                    onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone, {edificeId: selectedEdifice?._id}))}
                     periodLabel={resolveLanguageKey("period")}
                     periodLast7Days={resolveLanguageKey("periodLast7Days")}
                     periodLast30Days={resolveLanguageKey("periodLast30Days")}

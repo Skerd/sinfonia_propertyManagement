@@ -15,6 +15,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@coreModule/components/u
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {
     buildDashboardFilter,
     DashboardPeriodToolbar,
@@ -37,6 +38,7 @@ function Dashboard({
 
     const ref = useRef<HTMLDivElement>(null);
     const [periodKey, setPeriodKey] = useState<string>('last12months');
+    const timeZone = useCompanyTimeZone();
     const [activeTab, setActiveTab] = useState<string>('overview');
     const accessHydrated = useAccessHydrated();
     const canRead = hasAnyAccessRead([
@@ -56,13 +58,13 @@ function Dashboard({
 
     useEffect(() => {
         if (accessHydrated === false || !canRead) return;
-        onFilterChange(buildDashboardFilter(periodKey));
+        onFilterChange(buildDashboardFilter(periodKey, timeZone));
     }, [accessHydrated, canRead]);
 
     const handlePeriodChange = (value: string) => {
         setPeriodKey(value);
         if (!canRead) return;
-        onFilterChange(buildDashboardFilter(value));
+        onFilterChange(buildDashboardFilter(value, timeZone));
     };
 
     useEffect(() => {
@@ -72,9 +74,9 @@ function Dashboard({
     }, [activeTab]);
 
     const drillDownContext = useMemo<KpiDrillDownContext>(() => {
-        const f = buildDashboardFilter(periodKey);
+        const f = buildDashboardFilter(periodKey, timeZone);
         return { from: f.from, to: f.to };
-    }, [periodKey]);
+    }, [periodKey, timeZone]);
 
     const viewEntriesLabel = resolveLanguageKey("viewEntries");
     const tabDrillDownProps = { drillDownContext, viewEntriesLabel };
@@ -92,7 +94,7 @@ function Dashboard({
                 <DashboardPeriodToolbar
                     periodKey={periodKey}
                     onPeriodChange={handlePeriodChange}
-                    onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
+                    onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone))}
                     periodLabel={resolveLanguageKey("period")}
                     periodLast7Days={resolveLanguageKey("periodLast7Days")}
                     periodLast30Days={resolveLanguageKey("periodLast30Days")}
@@ -120,7 +122,7 @@ function Dashboard({
                                 dashboardData={dashboardData}
                                 loading={loading}
                                 error={error}
-                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
+                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone))}
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
@@ -132,7 +134,7 @@ function Dashboard({
                                 dashboardData={dashboardData}
                                 loading={loading}
                                 error={error}
-                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
+                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone))}
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
@@ -141,7 +143,7 @@ function Dashboard({
                                 dashboardData={dashboardData}
                                 loading={loading}
                                 error={error}
-                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
+                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone))}
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
@@ -150,7 +152,7 @@ function Dashboard({
                                 dashboardData={dashboardData}
                                 loading={loading}
                                 error={error}
-                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
+                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone))}
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>
@@ -159,7 +161,7 @@ function Dashboard({
                                 dashboardData={dashboardData}
                                 loading={loading}
                                 error={error}
-                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey))}
+                                onRefresh={() => onFilterChange(buildDashboardFilter(periodKey, timeZone))}
                                 {...tabDrillDownProps}
                             />
                         </TabsContent>

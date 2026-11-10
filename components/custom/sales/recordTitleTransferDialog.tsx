@@ -18,7 +18,7 @@ import {SALE_SHORT_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/re
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import {recordTitleTransferFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/recordTitleTransfer.form.validator.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
-import {companyToday} from "@propertyManagementModule/helpers/general/companyDay.ts";
+import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
 
 type RecordTitleTransferDialogProps = WithLanguageType & WithAxiosType<Sale> & {
     open: boolean;

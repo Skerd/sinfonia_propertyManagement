@@ -36,6 +36,8 @@ import {KpiCard} from "@coreModule/components/custom/kpiCard.tsx";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@coreModule/components/ui/card.tsx";
 import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
+import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 
 type DashboardOverviewProps = WithLanguageType & {
   dashboardData: DashboardFormResponseType | null | undefined;
@@ -55,6 +57,7 @@ function DashboardOverview({
   drillDownContext,
   viewEntriesLabel,
 }: DashboardOverviewProps) {
+  const timeZone = useCompanyTimeZone();
   if (loading) {
     return <Loader />;
   }
@@ -318,7 +321,7 @@ function DashboardOverview({
             subtitle={resolveLanguageKey("expiringReservationsCountDesc")}
             icon={IconClock}
             variant="warning"
-            href={kpi.kpiExpiringReservations(ctx)}
+            href={kpi.kpiExpiringReservations(ctx, companyToday(timeZone))}
             linkLabel={link}
           />
           <KpiCard

@@ -1,5 +1,6 @@
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@coreModule/components/ui/select.tsx";
+import {addCalendarDays, companyToday} from "@coreModule/helpers/general/dateTime.ts";
 
 export const DASHBOARD_PERIOD_OPTIONS: {
     value: string;
@@ -56,23 +57,19 @@ export function DashboardPeriodToolbar({
     );
 }
 
-export function toISODate(d: Date): string {
-    return d.toISOString().slice(0, 10);
-}
-
+/** The dashboard period's days, counted back from the company's today in `timeZone` (`useCompanyTimeZone()`, D116). */
 export function buildDashboardFilter(
     periodKey: string,
+    timeZone: string,
     extra?: {edificeId?: string | null},
 ) {
     const opt =
         DASHBOARD_PERIOD_OPTIONS.find((o) => o.value === periodKey) ??
         DASHBOARD_PERIOD_OPTIONS[3];
-    const to = new Date();
-    const from = new Date();
-    from.setDate(from.getDate() - opt.fromDaysAgo);
+    const today = companyToday(timeZone);
     const filter: {from: string; to: string; period: "week" | "month"; edificeId?: string} = {
-        from: toISODate(from),
-        to: toISODate(to),
+        from: addCalendarDays(today, -opt.fromDaysAgo),
+        to: addCalendarDays(today, -opt.toDaysAgo),
         period: opt.period,
     };
     if (extra?.edificeId) filter.edificeId = extra.edificeId;

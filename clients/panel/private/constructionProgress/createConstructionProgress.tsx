@@ -1,5 +1,6 @@
 import {IconBackhoe} from "@tabler/icons-react";
 import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
+import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
 import {createConstructionProgressFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructionProgress/createConstructionProgress.form.validator.ts";
 import type {CreateConstructionProgressFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructionProgress/constructionProgress.schema-def.ts";
 
@@ -8,13 +9,13 @@ export default createGenericCreatePage<CreateConstructionProgressFormType>({
     model: "constructionprogresses",
     apiUrl: "/api/realEstate/constructionProgress",
     schema: createConstructionProgressFormSchema,
-    defaultValues: (params) => ({
+    defaultValues: (params, {timeZone}) => ({
         project: params.get("projectId") ?? "",
         edifice: params.get("edificeId") ?? "",
         phase: undefined,
         title: "",
         progressPercent: 0,
-        updateDate: new Date().toISOString().split("T")[0],
+        updateDate: companyToday(timeZone),
         photos: [],
         notifyClients: true,
     }),

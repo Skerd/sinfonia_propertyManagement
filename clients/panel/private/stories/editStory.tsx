@@ -16,9 +16,7 @@ export default createGenericEditPage<Story, EditStoryFormType>({
         storyType: data.storyType?._id ?? data.storyType,
         edifice: data.edifice?._id ?? data.edifice,
         unit: data.unit?._id ?? data.unit,
-        publishedAt: data.publishedAt
-            ? new Date(data.publishedAt).toISOString().split("T")[0]
-            : undefined,
+        publishedAt: data.publishedAt || undefined,
         mainImage: refId(data.mainImage),
         imageGallery: refIds(data.imageGallery),
         videoGallery: refIds(data.videoGallery),

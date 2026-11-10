@@ -21,6 +21,8 @@ import {
 } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
 import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
+import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 
 export interface PaymentAlertsProps extends WithLanguageType {
   overdueCount: number;
@@ -45,9 +47,9 @@ function alertKind(alert: PaymentAlertItem): "installment" | "reservation" | "re
   return "installment";
 }
 
-function alertHref(alert: PaymentAlertItem, ctx: KpiDrillDownContext): string {
+function alertHref(alert: PaymentAlertItem, ctx: KpiDrillDownContext, today: string): string {
   const kind = alertKind(alert);
-  if (kind === "reservation") return kpiPaymentAlertReservationItem(ctx, alert);
+  if (kind === "reservation") return kpiPaymentAlertReservationItem(ctx, alert, today);
   if (kind === "rent") return kpiPaymentAlertRentItem(ctx, alert);
   return kpiPaymentAlertInstallmentItem(ctx, alert);
 }
@@ -62,6 +64,7 @@ function PaymentAlertsInner({
   languageCode = 'en-US',
 }: PaymentAlertsProps) {
   const navigate = useNavigate();
+  const today = companyToday(useCompanyTimeZone());
   const hasList = alerts && alerts.length > 0;
   const hasEmptyList = alerts && alerts.length === 0;
   const overdueInList = alerts ? alerts.filter((a) => a.daysUntilDue < 0).length : overdueCount;
@@ -70,7 +73,7 @@ function PaymentAlertsInner({
   const effectiveViewAllLabel = viewAllLabel ?? resolveLanguageKey('viewAllLabel');
   const locale = languageCode === 'sq-AL' ? 'sq-AL' : 'en-US';
   const paymentPlansHref = kpiPaymentAlertPlans(drillDownContext);
-  const reservationsHref = kpiPaymentAlertReservations(drillDownContext);
+  const reservationsHref = kpiPaymentAlertReservations(drillDownContext, today);
 
   return (
     <DashboardWidgetCard
@@ -117,7 +120,7 @@ function PaymentAlertsInner({
               const unitLabel = alert.unit.unitNumber ?? alert.unit.name ?? alert.unit._id;
               const kind = alertKind(alert);
               const clientLabel = getName(alert.client);
-              const href = alertHref(alert, drillDownContext);
+              const href = alertHref(alert, drillDownContext, today);
               return (
                 <Button
                     type="button"

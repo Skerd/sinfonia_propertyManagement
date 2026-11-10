@@ -15,6 +15,7 @@ import {
     buildListDrillDownUrl,
     type FilterRefLabels,
 } from "@coreModule/helpers/filter/filterUrl.ts";
+import {addCalendarDays} from "@coreModule/helpers/general/dateTime.ts";
 
 export type KpiDrillDownContext = {
     from?: string;
@@ -86,16 +87,6 @@ function reservationsUrl(ctx: KpiDrillDownContext, extraRules: ReturnType<typeof
     });
 }
 
-function toISODate(d: Date): string {
-    return d.toISOString().slice(0, 10);
-}
-
-function expiringReservationWindow(): [string, string] {
-    const now = new Date();
-    const end = new Date(now);
-    end.setDate(end.getDate() + 7);
-    return [toISODate(now), toISODate(end)];
-}
 
 // ── Units ────────────────────────────────────────────────────────────────────
 
@@ -126,25 +117,21 @@ export const kpiPaymentPlanSales = (ctx: KpiDrillDownContext) =>
 
 export const kpiActiveReservations = (ctx: KpiDrillDownContext) =>
     reservationsUrl(ctx, [buildFilterRule("isActive", "equals", true)]);
-export const kpiExpiringReservations = (ctx: KpiDrillDownContext) => {
-    const [start, end] = expiringReservationWindow();
-    return reservationsUrl(ctx, [
+/** Reservations expiring within 7 days of `today`, the company's day (`companyToday(useCompanyTimeZone())`). */
+export const kpiExpiringReservations = (ctx: KpiDrillDownContext, today: string) =>
+    reservationsUrl(ctx, [
         buildFilterRule("isActive", "equals", true),
-        buildFilterRule("expirationDate", "between", [start, end]),
+        buildFilterRule("expirationDate", "between", [today, addCalendarDays(today, 7)]),
     ]);
-};
 export const kpiReservationDeposits = (ctx: KpiDrillDownContext) => kpiActiveReservations(ctx);
 
-/** Payment-alerts widget: unpaid/partial active reservations with expiration ≤ now+30d. */
-export const kpiPaymentAlertReservations = (ctx: KpiDrillDownContext = {}) => {
-    const end = new Date();
-    end.setDate(end.getDate() + 30);
-    return reservationsUrl(ctx, [
+/** Payment-alerts widget: unpaid/partial active reservations expiring by `today` (the company's day) + 30 days. */
+export const kpiPaymentAlertReservations = (ctx: KpiDrillDownContext, today: string) =>
+    reservationsUrl(ctx, [
         buildFilterRule("isActive", "equals", true),
         buildFilterRule("paid", "equals", false),
-        buildFilterRule("expirationDate", "lessThanOrEqual", toISODate(end)),
+        buildFilterRule("expirationDate", "lessThanOrEqual", addCalendarDays(today, 30)),
     ]);
-};
 
 function unitQueryParams(
     ctx: KpiDrillDownContext,
@@ -195,13 +182,12 @@ export const kpiPaymentAlertReservationItem = (
         unit: { _id: string; unitNumber?: string; name?: string };
         client?: { _id: string; name?: string; surname?: string };
     },
+    today: string,
 ) => {
-    const end = new Date();
-    end.setDate(end.getDate() + 30);
     const rules = [
         buildFilterRule("isActive", "equals", true),
         buildFilterRule("paid", "equals", false),
-        buildFilterRule("expirationDate", "lessThanOrEqual", toISODate(end)),
+        buildFilterRule("expirationDate", "lessThanOrEqual", addCalendarDays(today, 30)),
     ];
     const filterLabels: FilterRefLabels = {};
     if (alert.client?._id) {

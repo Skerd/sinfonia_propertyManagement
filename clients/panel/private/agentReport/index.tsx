@@ -24,7 +24,8 @@ import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
-import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {DATE_FORMATS, addCalendarDays, companyToday, formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
@@ -41,20 +42,13 @@ const PERIOD_OPTIONS: {value: string; fromDaysAgo: number; langKey: string}[] = 
 
 const DEFAULT_PERIOD = "last6months";
 
-function toISODate(d: Date): string {
-    return d.toISOString().slice(0, 10);
-}
-
-function datesFromPeriod(periodKey: string): {dateFrom: string; dateTo: string} | null {
+/** The period's sale days, counted back from the company's today in `timeZone` (D116). */
+function datesFromPeriod(periodKey: string, timeZone: string): {dateFrom: string; dateTo: string} | null {
     const opt = PERIOD_OPTIONS.find((o) => o.value === periodKey);
     if (!opt) return null;
-    const to = new Date();
-    const from = new Date();
-    from.setDate(from.getDate() - opt.fromDaysAgo);
-    return {dateFrom: toISODate(from), dateTo: toISODate(to)};
+    const today = companyToday(timeZone);
+    return {dateFrom: addCalendarDays(today, -opt.fromDaysAgo), dateTo: today};
 }
-
-const INITIAL_DATES = datesFromPeriod(DEFAULT_PERIOD)!;
 
 function buildFilter(
     dateFrom: string,
@@ -78,9 +72,11 @@ function AgentReportPage({
     const rk = (key: string) => String(resolveLanguageKey(key));
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
 
+    const companyZone = useCompanyTimeZone();
     const [periodKey, setPeriodKey] = useState<string>(DEFAULT_PERIOD);
-    const [dateFrom, setDateFrom] = useState(INITIAL_DATES.dateFrom);
-    const [dateTo, setDateTo] = useState(INITIAL_DATES.dateTo);
+    const [initialDates] = useState(() => datesFromPeriod(DEFAULT_PERIOD, companyZone)!);
+    const [dateFrom, setDateFrom] = useState(initialDates.dateFrom);
+    const [dateTo, setDateTo] = useState(initialDates.dateTo);
     const [agentIds, setAgentIds] = useState<string[]>([]);
     const [exporting, setExporting] = useState(false);
     // The PDF letterhead (company name and logo).
@@ -109,7 +105,7 @@ function AgentReportPage({
     }, [agentIds, dateFrom, dateTo]);
 
     const handlePeriodChange = (value: string) => {
-        const dates = datesFromPeriod(value);
+        const dates = datesFromPeriod(value, companyZone);
         if (!dates) return;
         setPeriodKey(value);
         setDateFrom(dates.dateFrom);
