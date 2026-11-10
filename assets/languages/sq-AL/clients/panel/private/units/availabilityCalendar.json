@@ -1,3 +1,37 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx",
+  "title": "Kalendari i disponueshmërisë së njësive",
+  "description": "Shikoni periudhat e rezervimeve dhe të shitjeve për të gjitha njësitë.",
+  "projectIdLabel": "ID e projektit (opsionale)",
+  "projectIdPlaceholder": "Ngjitni ObjectId-në e projektit…",
+  "fromLabel": "Nga",
+  "toLabel": "Deri",
+  "load": "Ngarko",
+  "loading": "Duke u ngarkuar…",
+  "loadError": "Të dhënat e disponueshmërisë nuk u ngarkuan",
+  "showingOne": "Shfaqet 1 njësi",
+  "showingMany": "Shfaqen {count} njësi",
+  "noUnits": "Nuk u gjetën njësi për filtrat e zgjedhur.",
+  "noBookings": "Nuk ka rezervime në këtë periudhë.",
+  "unitFallback": "Njësia nr. {number}",
+  "ongoing": "Në vazhdim",
+  "columns": {
+    "type": "Lloji",
+    "start": "Fillimi",
+    "end": "Mbarimi",
+    "reference": "Referenca"
+  },
+  "windows": {
+    "sold": "Shitur",
+    "reserved": "Rezervuar",
+    "expired": "Skaduar",
+    "cancelled": "Anuluar",
+    "converted": "Konvertuar"
+  },
+  "unitStatus": {
+    "available_unit": "E disponueshme",
+    "reserved_unit": "E rezervuar",
+    "sold_unit": "E shitur",
+    "unavailable_unit": "E padisponueshme"
+  }
 }

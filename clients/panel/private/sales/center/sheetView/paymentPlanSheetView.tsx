@@ -63,6 +63,11 @@ function resolveStateLabel(
     return resolved === `---${key}---` ? rawValue : resolved;
 }
 
+/** The server takes payments only on a plan still running: active, or defaulted with installments to catch up on. */
+function planTakesPayments(status: string | undefined): boolean {
+    return status === "active" || status === "defaulted";
+}
+
 function isInstallmentPaid(installment: PaymentPlan["installments"][number]): boolean {
     const status = installment.status?.toLowerCase();
     if (status === "paid") return true;
@@ -123,7 +128,7 @@ function PaymentPlanSheetView({
                 hideEdit
                 deleteRestoreConfirmLabel={paymentPlan.name}
                 actionMenuChildren={
-                    !!access.read?.downPaymentPaid && !paymentPlan.downPaymentPaid ? (
+                    !!access.read?.downPaymentPaid && !paymentPlan.downPaymentPaid && planTakesPayments(paymentPlan.status) ? (
                         <SalePayDownPaymentAction
                             isPaid={!!paymentPlan.downPaymentPaid}
                             onAction={(action: string) => setLocalAction(action)}
@@ -157,7 +162,7 @@ function PaymentPlanSheetView({
                                     <TableBody>
                                         {paymentPlan.installments.map((installment) => {
                                             const paid = isInstallmentPaid(installment);
-                                            const showPayAction = !paid && !!access.write;
+                                            const showPayAction = !paid && !!access.write && planTakesPayments(paymentPlan.status);
                                             const showInstallmentEmails =
                                                 canReadSaleBuyer && installmentHasVisibleManualEmailActions(installment);
                                             const showRowActionsMenu = showPayAction || showInstallmentEmails;
@@ -206,13 +211,15 @@ function PaymentPlanSheetView({
                                                                         </Button>
                                                                     </DropdownMenuTrigger>
                                                                     <DropdownMenuContent align="end" className="w-fit">
-                                                                        <SalePayInstallmentAction
-                                                                            installment={installment}
-                                                                            onAction={(action: string) => {
-                                                                                setSelectedInstallment(installment);
-                                                                                setLocalAction(action);
-                                                                            }}
-                                                                        />
+                                                                        {showPayAction && (
+                                                                            <SalePayInstallmentAction
+                                                                                installment={installment}
+                                                                                onAction={(action: string) => {
+                                                                                    setSelectedInstallment(installment);
+                                                                                    setLocalAction(action);
+                                                                                }}
+                                                                            />
+                                                                        )}
                                                                         <ManualInstallmentClientEmails
                                                                             saleId={paymentPlan.sale?._id ?? ""}
                                                                             installment={installment}

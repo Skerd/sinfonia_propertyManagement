@@ -1,3 +1,37 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx",
+  "title": "Calendrier de disponibilité des unités",
+  "description": "Consultez les périodes de réservation et de vente de toutes les unités.",
+  "projectIdLabel": "ID du projet (facultatif)",
+  "projectIdPlaceholder": "Collez l'ObjectId du projet…",
+  "fromLabel": "Du",
+  "toLabel": "Au",
+  "load": "Charger",
+  "loading": "Chargement…",
+  "loadError": "Impossible de charger les données de disponibilité",
+  "showingOne": "1 unité affichée",
+  "showingMany": "{count} unités affichées",
+  "noUnits": "Aucune unité trouvée pour les filtres sélectionnés.",
+  "noBookings": "Aucune réservation sur cette période.",
+  "unitFallback": "Unité n° {number}",
+  "ongoing": "En cours",
+  "columns": {
+    "type": "Type",
+    "start": "Début",
+    "end": "Fin",
+    "reference": "Référence"
+  },
+  "windows": {
+    "sold": "Vendue",
+    "reserved": "Réservée",
+    "expired": "Expirée",
+    "cancelled": "Annulée",
+    "converted": "Convertie"
+  },
+  "unitStatus": {
+    "available_unit": "Disponible",
+    "reserved_unit": "Réservée",
+    "sold_unit": "Vendue",
+    "unavailable_unit": "Indisponible"
+  }
 }

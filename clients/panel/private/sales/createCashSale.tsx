@@ -26,6 +26,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import {Alert, AlertDescription, AlertTitle} from "@coreModule/components/ui/alert.tsx";
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {salePricingPreview} from "@propertyManagementModule/components/custom/sale/salePricingPreview.ts";
 
 const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
 const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
@@ -70,10 +71,7 @@ export function CashSaleReceiptSection({
     const saleCurrency = form.watch("saleCurrency");
     const saleExchangeRate = form.watch("saleExchangeRate");
 
-    const reservationDeduction = parseFloat(reservationExchangeRate?.toString() ?? "0") * (reservation?.depositAmount ?? 0);
-
-    const finalConversionRate = currency ? saleCurrency !== unit?.priceCurrency?._id?.toString() ? parseFloat(saleExchangeRate?.toString() ?? "0") || 0 : 1 : 1;
-    const finalPrice = ((unit?.price || 0) - (reservationDeduction || 0) - (Number(localDiscount || 0) / 100) * (unit?.price || 0)) * finalConversionRate;
+    const pricing = salePricingPreview({unit, reservation, saleCurrency: currency, localDiscount, saleExchangeRate, reservationExchangeRate});
 
     // Loads again when it changes or on retry.
     const [unitCount, setUnitCount] = useState(0);
@@ -115,9 +113,10 @@ export function CashSaleReceiptSection({
         },
     });
 
+    // The deposit is converted into the sale currency, so its rate is asked for when those two differ.
     useEffect(() => {
-        if (!!reservation && !!unit) {
-            if( reservation.depositCurrency?._id?.toString() !== unit.priceCurrency?._id?.toString() ){
+        if (!!reservation && !!saleCurrency) {
+            if( reservation.depositCurrency?._id?.toString() !== saleCurrency ){
                 setReservationExchangeRateVisibility(true);
                 form.setValue("reservationExchangeRate", "");
             }
@@ -126,7 +125,7 @@ export function CashSaleReceiptSection({
                 form.setValue("reservationExchangeRate", 1);
             }
         }
-    }, [reservation, unit, setReservationExchangeRateVisibility]);
+    }, [reservation, saleCurrency, setReservationExchangeRateVisibility]);
 
     useEffect(() => {
         if (!!saleCurrency && !!unit) {
@@ -145,12 +144,12 @@ export function CashSaleReceiptSection({
         setDisableSubmit(
             (!!reservation && (!readReservation.depositAmount || !readReservation.depositCurrency)) ||
             (!!saleCurrency && !currency) ||
-            (!!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate) ||
             (!!unit?.reservation && !reservation?.paid) ||
-            (!!unit?.reservation && reservation?.depositCurrency?._id?.toString() !== unit?.priceCurrency?._id?.toString() && !reservationExchangeRate) ||
-            finalPrice < 0
+            pricing.missingSaleExchangeRate ||
+            pricing.missingReservationExchangeRate ||
+            pricing.negative
         );
-    }, [readReservation, unitId, reservation, saleCurrency, currency, unit, saleExchangeRate, reservationExchangeRate, setDisableSubmit, finalPrice]);
+    }, [readReservation, reservation, saleCurrency, currency, unit, pricing.missingSaleExchangeRate, pricing.missingReservationExchangeRate, pricing.negative, setDisableSubmit]);
 
     const getUnitName = (u: Unit | null) => {
         if (!u) {
@@ -231,18 +230,15 @@ export function CashSaleReceiptSection({
                                                     <HiddenElement>
                                                         {readReservation.depositAmount && (
                                                             <p className="font-semibold text-destructive">
-                                                                {unit?.reservation &&
-                                                                reservation.depositCurrency?._id?.toString() !==
-                                                                unit.priceCurrency?._id?.toString() &&
-                                                                !reservationExchangeRate ? (
+                                                                {pricing.missingReservationExchangeRate ? (
                                                                     <span className="text-destructive">
                                                                         {resolveLanguageKey("pleaseSetReservationToUnitCurrencyExchangeRate")}
                                                                     </span>
-                                                                ) : (
+                                                                ) : pricing.depositDeduction !== null ? (
                                                                     <>
-                                                                        -{reservationDeduction} {unit?.priceCurrency?.name}
+                                                                        -{formatNumber(pricing.depositDeduction)} {currency?.name}
                                                                     </>
-                                                                )}
+                                                                ) : null}
                                                             </p>
                                                         )}
                                                     </HiddenElement>
@@ -254,7 +250,7 @@ export function CashSaleReceiptSection({
                                                 </p>
                                                 <p className="font-semibold text-destructive">
                                                     -
-                                                    {formatNumber((Number(localDiscount || 0) / 100) * (unit.price || 0))}{" "}
+                                                    {formatNumber(pricing.discount)}{" "}
                                                     {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
@@ -297,17 +293,17 @@ export function CashSaleReceiptSection({
                                                 </p>
                                                 <p className="font-semibold">
                                                     {
-                                                        !!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate ?
+                                                        pricing.missingSaleExchangeRate ?
                                                         <span className="text-destructive">
                                                             {resolveLanguageKey("pleaseSetUnitToSaleCurrencyExchangeRate")}
                                                         </span>
-                                                        : finalPrice < 0 ?
+                                                        : pricing.negative ?
                                                         <p className="text-sm text-destructive font-sans">
                                                             {resolveLanguageKey("form.finalPriceNegativeError")}
                                                         </p>
                                                         :
                                                         <>
-                                                            {formatNumber(finalPrice || 0)}{" "}
+                                                            {formatNumber(pricing.finalPrice ?? 0)}{" "}
                                                             {currency?.name || currency?.symbol}
                                                         </>
                                                     }

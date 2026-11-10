@@ -26,12 +26,8 @@
   "amortizationError": {
     "invalid_input": "Kontrolloni datat e fillimit dhe përfundimit të planit, datat e kësteve (e fundit duhet të përputhet me datën e përfundimit) dhe shumat.",
     "installment_too_small": "Ky këst është më i vogël se pjesa e interesit për periudhën përkatëse—rritni pagesën, përshtatni datat e afatit ose ulni normën e interesit.",
-    "principal_residual": "Plani nuk e shlyen plotësisht shumën e financuar brenda tolerancës.",
-    "overpayment": "Këstet do të shlyenin më shumë kryegjë se shuma e financuar (bilanci do bëhej negativ). Zvogëloni shumat e kësteve ose kontrolloni datat dhe interesin."
+    "principal_residual": "Këstet nuk e shlyejnë plotësisht shumën e financuar. Rritni shumat e kësteve."
   },
-  "principalResidualWarningTitle": "Kryegjëja e mbetur nuk është zero",
-  "principalResidualWarningDescription": "Pas këtyre kësteve, kryegjëja e financuar e papaguar është",
-  "principalResidualWarningHint": "Rritni shumat e kësteve ose përshtatni datat derisa kjo mbetje të jetë zero para dërgimit.",
   "errorTitle": "Njësia nuk mund të ngarkohet",
   "errorDescription": "Ju lutemi provoni përsëri.",
   "errorTooltip": "Kliko këtu për të riprovuar ngarkimin e të dhënave të njësisë",
@@ -40,7 +36,7 @@
   "errorTooltipCurrency": "Kliko këtu për të riprovuar ngarkimin e të dhënave të monedhës",
   "cannotProceed": "Nuk mund të vazhdohet me shitjen",
   "pleaseSetUnitToSaleCurrencyExchangeRate": "Ju lutemi vendosni kursin e këmbimit nga monedha e çmimit të listës në atë të shitjes",
-  "pleaseSetReservationToUnitCurrencyExchangeRate": "Ju lutemi vendosni kursin e këmbimit nga monedha e rezervimit në atë të listës",
+  "pleaseSetReservationToUnitCurrencyExchangeRate": "Ju lutemi caktoni kursin e këmbimit nga monedha e rezervimit në atë të shitjes",
   "linkedReservationBlocksSale": "Rezervimi i njësisë është ende i papaguar. Shënoni atë të paguar ose anuloni përpara se të krijoni shitjen.",
   "form": {
     "downPaymentPaidLabel": "Parapagimi i paguar",

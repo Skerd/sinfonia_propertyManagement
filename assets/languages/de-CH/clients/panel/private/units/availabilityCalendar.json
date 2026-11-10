@@ -1,3 +1,37 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx",
+  "title": "Verfügbarkeitskalender der Einheiten",
+  "description": "Reservierungs- und Verkaufszeiträume über alle Einheiten anzeigen.",
+  "projectIdLabel": "Projekt-ID (optional)",
+  "projectIdPlaceholder": "Projekt-ObjectId einfügen…",
+  "fromLabel": "Von",
+  "toLabel": "Bis",
+  "load": "Laden",
+  "loading": "Wird geladen…",
+  "loadError": "Verfügbarkeitsdaten konnten nicht geladen werden",
+  "showingOne": "1 Einheit angezeigt",
+  "showingMany": "{count} Einheiten angezeigt",
+  "noUnits": "Keine Einheiten für die gewählten Filter gefunden.",
+  "noBookings": "Keine Buchungen in diesem Zeitraum.",
+  "unitFallback": "Einheit Nr. {number}",
+  "ongoing": "Laufend",
+  "columns": {
+    "type": "Typ",
+    "start": "Beginn",
+    "end": "Ende",
+    "reference": "Referenz"
+  },
+  "windows": {
+    "sold": "Verkauft",
+    "reserved": "Reserviert",
+    "expired": "Abgelaufen",
+    "cancelled": "Storniert",
+    "converted": "Umgewandelt"
+  },
+  "unitStatus": {
+    "available_unit": "Verfügbar",
+    "reserved_unit": "Reserviert",
+    "sold_unit": "Verkauft",
+    "unavailable_unit": "Nicht verfügbar"
+  }
 }

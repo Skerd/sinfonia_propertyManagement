@@ -23,7 +23,7 @@
   "saleExchangeRate": "Listenpreis → Verkaufswährungskurs",
   "reservationConvertedAmount": "Reservation angerechnet (Einheitenwährung)",
   "reservationDepositCurrency": "Währung der Reservationsanzahlung",
-  "reservationExchangeRate": "Reservation → Einheitenwährungskurs",
+  "reservationExchangeRate": "Reservation → Verkaufswährungskurs",
   "parties": "Parteien",
   "buyer": "Käufer",
   "buyerCompany": "Käuferfirma",

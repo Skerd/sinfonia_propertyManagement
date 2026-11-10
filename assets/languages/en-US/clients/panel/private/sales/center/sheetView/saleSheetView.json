@@ -23,7 +23,7 @@
   "saleExchangeRate": "List price → sale currency rate",
   "reservationConvertedAmount": "Reservation applied (unit currency)",
   "reservationDepositCurrency": "Reservation deposit currency",
-  "reservationExchangeRate": "Reservation → unit currency rate",
+  "reservationExchangeRate": "Reservation → sale currency rate",
   "parties": "Parties",
   "buyer": "Buyer",
   "buyerCompany": "Buyer Company",

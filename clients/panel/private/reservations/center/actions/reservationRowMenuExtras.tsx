@@ -20,10 +20,12 @@ export default function ReservationRowMenuExtras({reservation, onAction}: Reserv
     const isModelDeleted = reservation.deletedAt != null || reservation.deletedBy != null;
     const isCancelled = reservation.isActive === false;
     const paid = reservation.paid === true;
+    // Only an active reservation can be cancelled; an expired one keeps `isActive` and a converted one is its sale's.
+    const isOver = reservation.status !== undefined && reservation.status !== "active";
 
     return (
         <>
-            {canToggleActive && !isModelDeleted && !isCancelled && !paid && (
+            {canToggleActive && !isModelDeleted && !isCancelled && !isOver && !paid && (
                 <CancelReservation onAction={onAction} />
             )}
             {canToggleActive && !isModelDeleted && isCancelled && (

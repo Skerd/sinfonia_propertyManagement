@@ -1,6 +1,6 @@
 import {compose} from "redux";
 import {useState} from "react";
-import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType, type ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {UnitAvailabilityResponse, UnitAvailabilityWindow} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unitAvailability.response.type.ts";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -14,21 +14,21 @@ import {Table} from "@coreModule/components/ui/table/table.tsx";
 
 const AVAILABILITY_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/availability"};
 
-function windowBadge(w: UnitAvailabilityWindow) {
-    if (w.type === "sold")     return <Badge variant="destructive">Sold</Badge>;
-    if (w.status === "active")    return <Badge variant="default">Reserved</Badge>;
-    if (w.status === "expired")   return <Badge variant="secondary">Expired</Badge>;
-    if (w.status === "cancelled") return <Badge variant="outline">Cancelled</Badge>;
-    if (w.status === "converted") return <Badge variant="default">Converted</Badge>;
+function windowBadge(w: UnitAvailabilityWindow, t: ResolveLanguageKey) {
+    if (w.type === "sold")     return <Badge variant="destructive">{t("windows.sold")}</Badge>;
+    if (w.status === "active")    return <Badge variant="default">{t("windows.reserved")}</Badge>;
+    if (w.status === "expired")   return <Badge variant="secondary">{t("windows.expired")}</Badge>;
+    if (w.status === "cancelled") return <Badge variant="outline">{t("windows.cancelled")}</Badge>;
+    if (w.status === "converted") return <Badge variant="default">{t("windows.converted")}</Badge>;
     return <Badge variant="secondary">{w.status}</Badge>;
 }
 
-function statusBadge(status: string) {
+function statusBadge(status: string, t: ResolveLanguageKey) {
     switch (status) {
-        case "available_unit":   return <Badge variant="default" className="bg-success">Available</Badge>;
-        case "reserved_unit":    return <Badge variant="default" className="bg-warning">Reserved</Badge>;
-        case "sold_unit":        return <Badge variant="destructive">Sold</Badge>;
-        case "unavailable_unit": return <Badge variant="secondary">Unavailable</Badge>;
+        case "available_unit":   return <Badge variant="default" className="bg-success">{t("unitStatus.available_unit")}</Badge>;
+        case "reserved_unit":    return <Badge variant="default" className="bg-warning">{t("unitStatus.reserved_unit")}</Badge>;
+        case "sold_unit":        return <Badge variant="destructive">{t("unitStatus.sold_unit")}</Badge>;
+        case "unavailable_unit": return <Badge variant="secondary">{t("unitStatus.unavailable_unit")}</Badge>;
         default:                 return <Badge variant="secondary">{status}</Badge>;
     }
 }
@@ -39,7 +39,7 @@ function fmtDate(iso: string | undefined) {
     return formatDate(iso, {timeZone: "UTC", format: CALENDAR_DATE_FORMAT}) || "—";
 }
 
-function UnitAvailabilityCalendar(_props: WithLanguageType) {
+function UnitAvailabilityCalendar({resolveLanguageKey: t}: WithLanguageType) {
     const defaultFrom = new Date(Date.now() - 30  * 24 * 3600 * 1000).toISOString().split("T")[0];
     const defaultTo   = new Date(Date.now() + 180 * 24 * 3600 * 1000).toISOString().split("T")[0];
 
@@ -50,12 +50,12 @@ function UnitAvailabilityCalendar(_props: WithLanguageType) {
     const [query, setQuery] = useState<Record<string, string>>({});
     const [loadCount, setLoadCount] = useState(0);
     const [error, setError] = useState<string | null>(null);
-    const request = useHttpRequest<{data?: UnitAvailabilityResponse}>(AVAILABILITY_REQUEST, query, loadCount, true, {
+    const request = useHttpRequest<UnitAvailabilityResponse>(AVAILABILITY_REQUEST, query, loadCount, true, {
         start: () => setError(null),
-        error: (e) => setError(handleError(e, {context: "AvailabilityCalendar"})?.displayMessage ?? "Failed to load availability data"),
+        error: (e) => setError(handleError(e, {context: "AvailabilityCalendar"})?.displayMessage ?? t("loadError")),
     });
     const loading = request.loading;
-    const data = request.error ? null : request.data?.data ?? null;
+    const data = request.error ? null : request.data ?? null;
 
     const load = () => {
         setQuery({...(projectId ? {projectId} : {}), dateFrom, dateTo});
@@ -65,33 +65,33 @@ function UnitAvailabilityCalendar(_props: WithLanguageType) {
     return (
         <div className="flex flex-col p-6 gap-y-6 max-w-5xl mx-auto">
             <div>
-                <h1 className="text-2xl font-bold">Unit Availability Calendar</h1>
+                <h1 className="text-2xl font-bold">{t("title")}</h1>
                 <p className="text-muted-foreground text-sm mt-1">
-                    View reservation and sale windows across units.
+                    {t("description")}
                 </p>
             </div>
 
             {/* Filters */}
             <div className="flex flex-wrap gap-4 items-end border rounded-lg p-4 bg-muted/30">
                 <div className="flex flex-col gap-y-1">
-                    <Label className="text-xs">Project ID (optional)</Label>
+                    <Label className="text-xs">{t("projectIdLabel")}</Label>
                     <Input
                         className="w-60 h-8 text-sm"
-                        placeholder="Paste project ObjectId…"
+                        placeholder={t("projectIdPlaceholder")}
                         value={projectId}
                         onChange={(e) => setProjectId(e.target.value)}
                     />
                 </div>
                 <div className="flex flex-col gap-y-1">
-                    <Label className="text-xs">From</Label>
+                    <Label className="text-xs">{t("fromLabel")}</Label>
                     <Input type="date" className="w-38 h-8 text-sm" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
                 </div>
                 <div className="flex flex-col gap-y-1">
-                    <Label className="text-xs">To</Label>
+                    <Label className="text-xs">{t("toLabel")}</Label>
                     <Input type="date" className="w-38 h-8 text-sm" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
                 </div>
                 <Button size="sm" onClick={load} disabled={loading}>
-                    {loading ? "Loading…" : "Load"}
+                    {loading ? t("loading") : t("load")}
                 </Button>
             </div>
 
@@ -104,12 +104,12 @@ function UnitAvailabilityCalendar(_props: WithLanguageType) {
             {data && (
                 <div className="flex flex-col gap-y-3">
                     <p className="text-xs text-muted-foreground">
-                        Showing {data.entries.length} unit{data.entries.length !== 1 ? "s" : ""} &nbsp;·&nbsp;
+                        {data.entries.length === 1 ? t("showingOne") : t("showingMany").replace("{count}", String(data.entries.length))} &nbsp;·&nbsp;
                         {fmtDate(data.dateFrom)} – {fmtDate(data.dateTo)}
                     </p>
 
                     {data.entries.length === 0 && (
-                        <p className="text-sm text-muted-foreground">No units found for the selected filters.</p>
+                        <p className="text-sm text-muted-foreground">{t("noUnits")}</p>
                     )}
 
                     {data.entries.map((entry) => (
@@ -117,33 +117,33 @@ function UnitAvailabilityCalendar(_props: WithLanguageType) {
                             <div className="flex items-center justify-between px-4 py-2 bg-muted/40">
                                 <div className="flex items-center gap-2">
                                     <span className="font-medium text-sm">
-                                        {entry.unit.name ?? `Unit #${entry.unit.unitNumber}`}
+                                        {entry.unit.name ?? t("unitFallback").replace("{number}", String(entry.unit.unitNumber))}
                                     </span>
                                     {entry.unit.floor?.name && (
                                         <span className="text-xs text-muted-foreground">· {entry.unit.floor.name}</span>
                                     )}
                                 </div>
-                                {statusBadge(entry.unit.status)}
+                                {statusBadge(entry.unit.status, t)}
                             </div>
 
                             {entry.windows.length === 0 ? (
-                                <p className="px-4 py-3 text-xs text-muted-foreground">No bookings in this period.</p>
+                                <p className="px-4 py-3 text-xs text-muted-foreground">{t("noBookings")}</p>
                             ) : (
                                 <Table bare className="w-full text-xs">
                                     <thead>
                                         <tr className="border-b bg-muted/20">
-                                            <th className="px-4 py-2 text-left font-medium">Type</th>
-                                            <th className="px-4 py-2 text-left font-medium">Start</th>
-                                            <th className="px-4 py-2 text-left font-medium">End</th>
-                                            <th className="px-4 py-2 text-left font-medium">Reference</th>
+                                            <th className="px-4 py-2 text-left font-medium">{t("columns.type")}</th>
+                                            <th className="px-4 py-2 text-left font-medium">{t("columns.start")}</th>
+                                            <th className="px-4 py-2 text-left font-medium">{t("columns.end")}</th>
+                                            <th className="px-4 py-2 text-left font-medium">{t("columns.reference")}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {entry.windows.map((w, wi) => (
                                             <tr key={wi} className="border-b last:border-0 hover:bg-muted/20">
-                                                <td className="px-4 py-2">{windowBadge(w)}</td>
+                                                <td className="px-4 py-2">{windowBadge(w, t)}</td>
                                                 <td className="px-4 py-2">{fmtDate(w.start)}</td>
-                                                <td className="px-4 py-2">{w.end ? fmtDate(w.end) : "Ongoing"}</td>
+                                                <td className="px-4 py-2">{w.end ? fmtDate(w.end) : t("ongoing")}</td>
                                                 <td className="px-4 py-2 text-muted-foreground">{w.reference ?? "—"}</td>
                                             </tr>
                                         ))}

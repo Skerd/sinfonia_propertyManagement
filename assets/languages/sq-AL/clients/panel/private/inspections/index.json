@@ -48,6 +48,9 @@
     "scheduledDate": "I planifikuar",
     "status": "Statusi",
     "type": "Lloji",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "floor": "Kati",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
     "!enums": {

@@ -23,7 +23,7 @@
   "saleExchangeRate": "Taux prix affiché → devise de vente",
   "reservationConvertedAmount": "Réservation appliquée (devise de l'unité)",
   "reservationDepositCurrency": "Devise de l'acompte de réservation",
-  "reservationExchangeRate": "Taux réservation → devise de l'unité",
+  "reservationExchangeRate": "Taux réservation → devise de vente",
   "parties": "Parties",
   "buyer": "Acheteur",
   "buyerCompany": "Entreprise acheteuse",

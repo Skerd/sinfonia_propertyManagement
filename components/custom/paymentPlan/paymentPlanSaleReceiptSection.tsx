@@ -9,7 +9,7 @@ import { ErrorView } from "@coreModule/components/custom/errors/errorView.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import { Reservation } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import { cn } from "@coreModule/components/lib/utils.ts";
-import {IconAlertCircle, IconAlertTriangle} from "@tabler/icons-react";
+import {IconAlertCircle} from "@tabler/icons-react";
 import { Alert, AlertDescription, AlertTitle } from "@coreModule/components/ui/alert.tsx";
 import { Card, CardContent, CardFooter, CardHeader } from "@coreModule/components/ui/card.tsx";
 import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -18,11 +18,10 @@ import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {roundToCurrency} from "armonia/src/modules/core/helpers/money.ts";
 import {allocatePlanInterest} from "armonia/src/modules/propertyManagement/helpers/paymentPlanInterest.ts";
 import {Table} from "@coreModule/components/ui/table/table.tsx";
+import {salePricingPreview} from "@propertyManagementModule/components/custom/sale/salePricingPreview.ts";
 
 const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
 const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
-
-const PRINCIPAL_ZERO_EPS = 0.02;
 
 /** Rounds once to cents (D35); empty form fields (NaN) count as 0. */
 function roundMoney(value: number): number {
@@ -43,7 +42,7 @@ type AmortizationRowOutput = {
 
 type AmortizationResult =
     | { ok: true; installments: AmortizationRowOutput[]; totalContractInterest: number; planDays: number }
-    | { ok: false; code: "invalid_input" | "installment_too_small" | "principal_residual" | "overpayment" };
+    | { ok: false; code: "invalid_input" | "installment_too_small" | "principal_residual" };
 
 function dayUtcMs(isoDate: string): number {
     const parts = isoDate.trim().split("-").map((x) => Number.parseInt(x, 10));
@@ -64,7 +63,7 @@ function computeSimpleAmortization(params: {
     lateFeePercentage?: number;
 }): AmortizationResult {
     const result = allocatePlanInterest(params);
-    if (!result.ok) return { ok: false, code: result.code === "installment_too_small" ? "installment_too_small" : "invalid_input" };
+    if (!result.ok) return { ok: false, code: result.code === "invalid_schedule" ? "invalid_input" : result.code };
     const installmentsInFormOrder: AmortizationRowOutput[] = new Array(params.rows.length);
     for (const { index, ...row } of result.installments) {
         installmentsInFormOrder[index] = {
@@ -135,9 +134,8 @@ export default function PaymentPlanSaleReceiptSection({
     const saleCurrency = form.watch("saleCurrency");
     const saleExchangeRate = form.watch("saleExchangeRate");
 
-    const reservationDeduction = parseFloat(reservationExchangeRate?.toString() ?? "0") * (reservation?.depositAmount ?? 0);
-    const finalConversionRate = currency ? saleCurrency !== unit?.priceCurrency?._id?.toString() ? parseFloat(saleExchangeRate?.toString() ?? "0") || 0 : 1 : 1;
-    const finalPrice = ((unit?.price || 0) - (reservationDeduction || 0) - (Number(localDiscount || 0) / 100) * (unit?.price || 0)) * finalConversionRate;
+    const pricing = salePricingPreview({unit, reservation, saleCurrency: currency, localDiscount, saleExchangeRate, reservationExchangeRate});
+    const finalPrice = pricing.finalPrice ?? 0;
 
     const downPayment = form.watch("downPayment");
     const interestRate = form.watch("interestRate");
@@ -196,9 +194,10 @@ export default function PaymentPlanSaleReceiptSection({
         },
     });
 
+    // The deposit is converted into the sale currency, so its rate is asked for when those two differ.
     useEffect(() => {
-        if (!!reservation && !!unit) {
-            if( reservation.depositCurrency?._id?.toString() !== unit.priceCurrency?._id?.toString() ){
+        if (!!reservation && !!saleCurrency) {
+            if( reservation.depositCurrency?._id?.toString() !== saleCurrency ){
                 setReservationExchangeRateVisibility(true);
                 form.setValue("reservationExchangeRate", "");
             }
@@ -207,7 +206,7 @@ export default function PaymentPlanSaleReceiptSection({
                 form.setValue("reservationExchangeRate", 1);
             }
         }
-    }, [reservation, unit, setReservationExchangeRateVisibility]);
+    }, [reservation, saleCurrency, setReservationExchangeRateVisibility]);
 
     useEffect(() => {
         if (!!saleCurrency && !!unit) {
@@ -292,34 +291,18 @@ export default function PaymentPlanSaleReceiptSection({
 
     }, [financedAmount, isFinancedNegative, interestRate, gracePeriodDays, lateFeePercentage, startDate, endDate, installments, installmentsWatch]);
 
-    /** Financed principal minus sum of scheduled principal; should be ~0 for a valid payoff. */
-    const principalResidualCheck = useMemo(() => {
-        if (amortErrorCode || scheduleRows.length === 0) {
-            return { blocksSubmit: false, residual: null as number | null };
-        }
-        const financed = roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0));
-        if (!Number.isFinite(financed) || financed <= 0) {
-            return { blocksSubmit: false, residual: null };
-        }
-        const totalPrincipal = scheduleRows.reduce((s, r) => s + (r.principalAmount ?? 0), 0);
-        const residual = roundMoney(financed - totalPrincipal);
-        const blocksSubmit = Math.abs(residual) > PRINCIPAL_ZERO_EPS;
-        return { blocksSubmit, residual: blocksSubmit ? residual : null };
-    }, [amortErrorCode, scheduleRows, finalPrice, downPayment]);
-
     useEffect(() => {
         setDisableSubmit(
             (!!reservation && (!readReservation.depositAmount || !readReservation.depositCurrency)) ||
             (!!saleCurrency && !currency) ||
-            (!!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate) ||
             (!!unit?.reservation && !reservation?.paid) ||
-            (!!unit?.reservation && reservation?.depositCurrency?._id?.toString() !== unit?.priceCurrency?._id?.toString() && !reservationExchangeRate) ||
-            finalPrice < 0 ||
+            pricing.missingSaleExchangeRate ||
+            pricing.missingReservationExchangeRate ||
+            pricing.negative ||
             isFinancedNegative ||
             // amortization block
             (finalPrice - downPayment) > 0.005 &&
                 (!!amortErrorCode ||
-                    principalResidualCheck.blocksSubmit ||
                     scheduleRows.length === 0 ||
                     !String(startDate || "").trim() ||
                     !String(endDate || "").trim() ||
@@ -328,13 +311,13 @@ export default function PaymentPlanSaleReceiptSection({
         );
     }, [
         readReservation,
-        unitId,
         reservation,
         saleCurrency,
         currency,
         unit,
-        saleExchangeRate,
-        reservationExchangeRate,
+        pricing.missingSaleExchangeRate,
+        pricing.missingReservationExchangeRate,
+        pricing.negative,
         setDisableSubmit,
         finalPrice,
         isFinancedNegative,
@@ -342,7 +325,6 @@ export default function PaymentPlanSaleReceiptSection({
         startDate,
         endDate,
         amortErrorCode,
-        principalResidualCheck.blocksSubmit,
         scheduleRows.length,
         installments,
     ]);
@@ -497,32 +479,6 @@ export default function PaymentPlanSaleReceiptSection({
                         ) : null
                     }
 
-                    {principalResidualCheck.blocksSubmit && principalResidualCheck.residual != null ? (
-                        <Alert
-                            className={cn(
-                                "border-warning/50 bg-warning/10",
-                                "dark:border-warning/40 dark:bg-warning/30",
-                            )}
-                        >
-                            <IconAlertTriangle className="h-4 w-4 text-warning" />
-                            <AlertTitle className="text-warning">
-                                {resolveLanguageKey("principalResidualWarningTitle")}
-                            </AlertTitle>
-                            <AlertDescription className="text-warning/90">
-                                {resolveLanguageKey("principalResidualWarningDescription")}{" "}
-                                <span className="font-semibold tabular-nums">
-                                    {formatNumber(principalResidualCheck.residual)}{" "}
-                                    {currency?.symbol ||
-                                        currency?.name ||
-                                        unit?.priceCurrency?.symbol ||
-                                        unit?.priceCurrency?.name ||
-                                        ""}
-                                </span>
-                                . {resolveLanguageKey("principalResidualWarningHint")}
-                            </AlertDescription>
-                        </Alert>
-                    ) : null}
-
                     {
                         formScheduleRows.length > 0 ? (
                             <div className="overflow-x-auto rounded-md border">
@@ -656,18 +612,15 @@ export default function PaymentPlanSaleReceiptSection({
                                                         {
                                                             readReservation.depositAmount &&
                                                             <p className="font-semibold text-destructive">
-                                                                {unit?.reservation &&
-                                                                reservation.depositCurrency?._id?.toString() !==
-                                                                    unit.priceCurrency?._id?.toString() &&
-                                                                !reservationExchangeRate ? (
+                                                                {pricing.missingReservationExchangeRate ? (
                                                                     <span className="text-destructive">
                                                                         {resolveLanguageKey(
                                                                             "pleaseSetReservationToUnitCurrencyExchangeRate",
                                                                         )}
                                                                     </span>
-                                                                ) : (
-                                                                    <>-{reservationDeduction} {unit?.priceCurrency?.name}</>
-                                                                )}
+                                                                ) : pricing.depositDeduction !== null ? (
+                                                                    <>-{formatNumber(pricing.depositDeduction)} {currency?.name}</>
+                                                                ) : null}
                                                             </p>
                                                         }
                                                     </HiddenElement>
@@ -679,7 +632,7 @@ export default function PaymentPlanSaleReceiptSection({
                                                 </p>
                                                 <p className="font-semibold text-destructive">
                                                     -
-                                                    {formatNumber((Number(localDiscount || 0) / 100) * (unit.price || 0))}{" "}
+                                                    {formatNumber(pricing.discount)}{" "}
                                                     {unit?.priceCurrency?.name}
                                                 </p>
                                             </div>
@@ -725,11 +678,11 @@ export default function PaymentPlanSaleReceiptSection({
                                                 </p>
                                                 <p className="font-semibold">
                                                     {
-                                                        !!saleCurrency && !!currency && saleCurrency !== unit?.priceCurrency?._id?.toString() && !saleExchangeRate ?
+                                                        pricing.missingSaleExchangeRate ?
                                                         <span className="text-destructive">
                                                             {resolveLanguageKey("pleaseSetUnitToSaleCurrencyExchangeRate")}
                                                         </span>
-                                                        : finalPrice < 0 ?
+                                                        : pricing.negative ?
                                                         <p className="text-sm text-destructive font-sans">
                                                             {resolveLanguageKey("form.finalPriceNegativeError")}
                                                         </p>

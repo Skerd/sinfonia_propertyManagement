@@ -26,12 +26,8 @@
   "amortizationError": {
     "invalid_input": "Check plan start and end dates, installment dates (last must match end date), and amounts.",
     "installment_too_small": "This installment is less than the interest portion for its period—raise the payment, adjust due dates, or lower the interest rate.",
-    "principal_residual": "The schedule does not fully pay off the financed amount within tolerance.",
-    "overpayment": "Installments would pay down more principal than the financed amount (running balance would go negative). Reduce installment amounts or check dates and interest."
+    "principal_residual": "The installments do not fully pay off the financed amount. Raise the installment amounts."
   },
-  "principalResidualWarningTitle": "Remaining principal is not zero",
-  "principalResidualWarningDescription": "After this schedule, unpaid financed principal is",
-  "principalResidualWarningHint": "Increase installment amounts or adjust dates until this remainder is zero before submitting.",
   "errorTitle": "Unable to load unit",
   "errorDescription": "Please try again.",
   "errorTooltip": "Click here to retry loading unit data",
@@ -40,7 +36,7 @@
   "errorTooltipCurrency": "Click here to retry loading currency data",
   "cannotProceed": "Cannot proceed with sale",
   "pleaseSetUnitToSaleCurrencyExchangeRate": "Please set list price to sale currency exchange rate",
-  "pleaseSetReservationToUnitCurrencyExchangeRate": "Please set reservation to list currency exchange rate",
+  "pleaseSetReservationToUnitCurrencyExchangeRate": "Please set the reservation-to-sale currency exchange rate",
   "linkedReservationBlocksSale": "The unit's reservation is still unpaid. Mark it paid or cancel it before creating the sale.",
   "form": {
     "downPaymentPaidLabel": "Down payment paid",

@@ -23,7 +23,7 @@
   "saleExchangeRate": "Tasso prezzo di listino → valuta di vendita",
   "reservationConvertedAmount": "Prenotazione applicata (valuta dell'unità)",
   "reservationDepositCurrency": "Valuta del deposito di prenotazione",
-  "reservationExchangeRate": "Tasso prenotazione → valuta dell'unità",
+  "reservationExchangeRate": "Tasso prenotazione → valuta di vendita",
   "parties": "Parti",
   "buyer": "Acquirente",
   "buyerCompany": "Azienda acquirente",

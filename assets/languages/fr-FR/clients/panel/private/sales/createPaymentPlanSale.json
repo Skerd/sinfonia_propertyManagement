@@ -26,12 +26,8 @@
   "amortizationError": {
     "invalid_input": "Vérifiez les dates de début et de fin du plan, les dates des échéances (la dernière doit correspondre à la date de fin) et les montants.",
     "installment_too_small": "Cette échéance est inférieure à la part d'intérêts de sa période — augmentez le paiement, ajustez les dates d'échéance ou baissez le taux d'intérêt.",
-    "principal_residual": "Le calendrier ne rembourse pas entièrement le montant financé dans la tolérance.",
-    "overpayment": "Les échéances rembourseraient plus de principal que le montant financé (le solde courant deviendrait négatif). Réduisez les montants des échéances ou vérifiez les dates et les intérêts."
+    "principal_residual": "Les échéances ne remboursent pas entièrement le montant financé. Augmentez les montants des échéances."
   },
-  "principalResidualWarningTitle": "Le principal restant n'est pas nul",
-  "principalResidualWarningDescription": "Après ce calendrier, le principal financé non remboursé est",
-  "principalResidualWarningHint": "Augmentez les montants des échéances ou ajustez les dates jusqu'à ce que ce reste soit nul avant de soumettre.",
   "errorTitle": "Impossible de charger l'unité",
   "errorDescription": "Veuillez réessayer.",
   "errorTooltip": "Cliquez ici pour réessayer de charger les données de l'unité",
@@ -40,7 +36,7 @@
   "errorTooltipCurrency": "Cliquez ici pour réessayer de charger les données de devise",
   "cannotProceed": "Impossible de poursuivre la vente",
   "pleaseSetUnitToSaleCurrencyExchangeRate": "Veuillez définir le taux de change prix affiché → devise de vente",
-  "pleaseSetReservationToUnitCurrencyExchangeRate": "Veuillez définir le taux de change réservation → devise du prix affiché",
+  "pleaseSetReservationToUnitCurrencyExchangeRate": "Veuillez définir le taux de change réservation → devise de vente",
   "linkedReservationBlocksSale": "La réservation de l'unité n'est pas encore payée. Marquez-la comme payée ou annulez-la avant de créer la vente.",
   "form": {
     "downPaymentPaidLabel": "Acompte payé",

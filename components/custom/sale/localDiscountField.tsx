@@ -23,7 +23,7 @@ export type LocalDiscountFieldProps = {
     formExtras?: Record<string, unknown>;
 };
 
-/** A percentage, not money: plain rounding. */
+/** A percentage, not money: plain rounding, for display only. */
 function round2(n: number) {
     return Math.round(n * 100) / 100;
 }
@@ -42,8 +42,12 @@ function listedUnitPrice(unit: Unit | null): number {
     return Number.isFinite(n) && n > 0 ? n : 0;
 }
 
+/**
+ * Unrounded, so the server's discount (the percentage of the price, rounded once to cents) comes back as the amount
+ * typed; a percentage rounded to two places would miss it by up to 0.005 % of the price.
+ */
 function percentFromAmount(amount: number, price: number) {
-    return round2(Math.min(100, Math.max(0, (amount / price) * 100)));
+    return Math.min(100, Math.max(0, (amount / price) * 100));
 }
 
 /** The discount amount, rounded once to cents (D35). */
@@ -189,7 +193,7 @@ export default function LocalDiscountField({
                                 name={field.name}
                                 ref={field.ref}
                                 onBlur={field.onBlur}
-                                value={field.value ?? ""}
+                                value={lastEdited.current === "amount" && typeof field.value === "number" ? round2(field.value) : field.value ?? ""}
                                 onChange={(e) => {
                                     lastEdited.current = "percent";
                                     const raw = e.target.value;

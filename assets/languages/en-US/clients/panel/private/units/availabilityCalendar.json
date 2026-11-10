@@ -1,3 +1,37 @@
 {
-  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx"
+  "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx",
+  "title": "Unit Availability Calendar",
+  "description": "View reservation and sale windows across units.",
+  "projectIdLabel": "Project ID (optional)",
+  "projectIdPlaceholder": "Paste project ObjectId…",
+  "fromLabel": "From",
+  "toLabel": "To",
+  "load": "Load",
+  "loading": "Loading…",
+  "loadError": "Failed to load availability data",
+  "showingOne": "Showing 1 unit",
+  "showingMany": "Showing {count} units",
+  "noUnits": "No units found for the selected filters.",
+  "noBookings": "No bookings in this period.",
+  "unitFallback": "Unit #{number}",
+  "ongoing": "Ongoing",
+  "columns": {
+    "type": "Type",
+    "start": "Start",
+    "end": "End",
+    "reference": "Reference"
+  },
+  "windows": {
+    "sold": "Sold",
+    "reserved": "Reserved",
+    "expired": "Expired",
+    "cancelled": "Cancelled",
+    "converted": "Converted"
+  },
+  "unitStatus": {
+    "available_unit": "Available",
+    "reserved_unit": "Reserved",
+    "sold_unit": "Sold",
+    "unavailable_unit": "Unavailable"
+  }
 }

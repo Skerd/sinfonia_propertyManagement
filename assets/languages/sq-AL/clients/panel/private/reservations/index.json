@@ -48,6 +48,9 @@
     "reservedByCompany": "Rezervuar nga kompania",
     "source": "Burimi",
     "status": "Statusi",
+    "project": "Projekti",
+    "edifice": "Ndërtesa",
+    "floor": "Kati",
     "unit": "Njësia",
     "updatedAt": "Përditësuar më",
     "!enums": {

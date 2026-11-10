@@ -27,7 +27,7 @@ export default function CommissionRowMenuExtras({commission, onAction}: Commissi
     return (
         <>
             {isPending && <RequestApprovalCommission onAction={onAction} />}
-            {(isPending || isApproved) && <MarkPaidCommission onAction={onAction} />}
+            {isApproved && <MarkPaidCommission onAction={onAction} />}
             {isPendingApproval && <ApprovePaymentCommission onAction={onAction} />}
             {(isPending || isPendingApproval || isApproved || isPaid) && <SetSplitsCommission onAction={onAction} />}
             {isPaid && <MarkPendingCommission onAction={onAction} />}

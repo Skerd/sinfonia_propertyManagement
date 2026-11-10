@@ -26,12 +26,8 @@
   "amortizationError": {
     "invalid_input": "Prüfen Sie Planstart- und -enddatum, Ratentermine (letzter muss dem Enddatum entsprechen) und Beträge.",
     "installment_too_small": "Diese Rate ist kleiner als der Zinsanteil für ihren Zeitraum — erhöhen Sie die Zahlung, passen Sie Fälligkeitstermine an oder senken Sie den Zinssatz.",
-    "principal_residual": "Der Terminplan tilgt den finanzierten Betrag innerhalb der Toleranz nicht vollständig.",
-    "overpayment": "Die Raten würden mehr Kapital tilgen als der finanzierte Betrag (laufender Saldo würde negativ). Reduzieren Sie Ratenbeträge oder prüfen Sie Termine und Zinsen."
+    "principal_residual": "Die Raten tilgen den finanzierten Betrag nicht vollständig. Erhöhen Sie die Ratenbeträge."
   },
-  "principalResidualWarningTitle": "Restkapital ist nicht null",
-  "principalResidualWarningDescription": "Nach diesem Terminplan beträgt das unbezahlt finanzierte Kapital",
-  "principalResidualWarningHint": "Erhöhen Sie Ratenbeträge oder passen Sie Termine an, bis dieser Restbetrag vor dem Absenden null ist.",
   "errorTitle": "Einheit konnte nicht geladen werden",
   "errorDescription": "Bitte versuchen Sie es erneut.",
   "errorTooltip": "Klicken Sie hier, um die Einheitendaten erneut zu laden",
@@ -40,7 +36,7 @@
   "errorTooltipCurrency": "Klicken Sie hier, um die Währungsdaten erneut zu laden",
   "cannotProceed": "Verkauf kann nicht fortgesetzt werden",
   "pleaseSetUnitToSaleCurrencyExchangeRate": "Bitte Wechselkurs Listenpreis → Verkaufswährung festlegen",
-  "pleaseSetReservationToUnitCurrencyExchangeRate": "Bitte Wechselkurs Reservation → Listenwährung festlegen",
+  "pleaseSetReservationToUnitCurrencyExchangeRate": "Bitte Wechselkurs Reservation → Verkaufswährung festlegen",
   "linkedReservationBlocksSale": "Die Reservation der Einheit ist noch unbezahlt. Markieren Sie sie als bezahlt oder stornieren Sie sie, bevor Sie den Verkauf erstellen.",
   "form": {
     "downPaymentPaidLabel": "Anzahlung bezahlt",

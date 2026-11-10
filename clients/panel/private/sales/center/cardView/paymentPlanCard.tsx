@@ -80,7 +80,8 @@ function PaymentPlanCard({
                             </span>
                         }
                     >
-                        {!entity.downPaymentPaid ? (
+                        {/* The server takes payments only on an active or defaulted plan. */}
+                        {!entity.downPaymentPaid && (entity.status === "active" || entity.status === "defaulted") ? (
                             <SalePayDownPaymentAction
                                 isPaid={!!entity.downPaymentPaid}
                                 onAction={(actionName: string) => setAction(actionName)}
