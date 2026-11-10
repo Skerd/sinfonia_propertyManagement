@@ -26,7 +26,8 @@
   "amortizationError": {
     "invalid_input": "Controlla le date di inizio e fine del piano, le date delle rate (l'ultima deve corrispondere alla data di fine) e gli importi.",
     "installment_too_small": "Questa rata è inferiore alla quota interessi del periodo — aumenta il pagamento, modifica le date di scadenza o abbassa il tasso di interesse.",
-    "principal_residual": "Le rate non estinguono completamente l'importo finanziato. Aumenta gli importi delle rate."
+    "principal_residual": "Le rate non estinguono completamente l'importo finanziato. Aumenta gli importi delle rate.",
+    "installment_exceeds_owed": "Una rata richiede più di quanto resta dovuto. Riduci gli importi delle rate in modo che corrispondano all'importo finanziato e ai suoi interessi."
   },
   "errorTitle": "Impossibile caricare l'unità",
   "errorDescription": "Riprova.",

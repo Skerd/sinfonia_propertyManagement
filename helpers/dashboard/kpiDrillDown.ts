@@ -308,7 +308,7 @@ export const kpiTotalFloors = (_ctx: KpiDrillDownContext) =>
 
 // ── Dashboard-specific ──────────────────────────────────────────────────────
 
-export const kpiAvgPricePerSqm = (ctx: KpiDrillDownContext) => salesUrl(ctx);
+export const kpiAvgSalePrice = (ctx: KpiDrillDownContext) => salesUrl(ctx);
 
 /** Re-export context builder used by overview/dashboard parents. */
 export function buildDrillDownContextFromPeriod(

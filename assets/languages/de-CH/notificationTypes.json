@@ -1,0 +1,196 @@
+{
+  "propertyManagement": {
+    "title": "Immobilienverkauf und Übergabe",
+    "codes": {
+      "RESERVATION_CREATED": {
+        "title": "Reservation erstellt",
+        "message": "Reservation für Einheit {unit} erstellt"
+      },
+      "RESERVATION_CREATED_STAFF": {
+        "title": "Neue Reservation (Hinweis ans Team)",
+        "message": "Neue Reservation: Einheit {unit} für {client}",
+        "variants": {
+          "noClient": "Neue Reservation: Einheit {unit}"
+        }
+      },
+      "RESERVATION_CANCELLED": {
+        "title": "Reservation storniert",
+        "message": "Reservation für Einheit {unit} storniert"
+      },
+      "RESERVATION_REINSTATED": {
+        "title": "Reservation wiederhergestellt",
+        "message": "Reservation für Einheit {unit} wiederhergestellt"
+      },
+      "RESERVATION_PAID": {
+        "title": "Reservationsanzahlung bezahlt",
+        "message": "Reservationsanzahlung bezahlt: {amount}",
+        "variants": {
+          "noAmount": "Reservationsanzahlung bezahlt"
+        }
+      },
+      "RESERVATION_PAYMENT_REVERSED": {
+        "title": "Reservationszahlung rückgängig gemacht",
+        "message": "Reservationszahlung für Einheit {unit} rückgängig gemacht"
+      },
+      "RESERVATION_EXPIRATION_REMINDER": {
+        "title": "Reservation läuft bald ab",
+        "message": "Reservation für Einheit {unit} endet in 3 Tagen",
+        "variants": {
+          "inThreeDays": "Reservation für Einheit {unit} endet in 3 Tagen",
+          "tomorrow": "Reservation für Einheit {unit} endet morgen",
+          "today": "Reservation für Einheit {unit} endet heute"
+        }
+      },
+      "RESERVATION_EXPIRED": {
+        "title": "Reservation abgelaufen (Hinweis ans Team)",
+        "message": "Reservation abgelaufen: Einheit {unit} ({client})",
+        "variants": {
+          "noClient": "Reservation abgelaufen: Einheit {unit}"
+        }
+      },
+      "SALE_CREATED": {
+        "title": "Einheit verkauft",
+        "message": "Einheit {unit} verkauft: {price}",
+        "variants": {
+          "cash": "Einheit {unit} verkauft (Barzahlung): {price}",
+          "paymentPlan": "Einheit {unit} verkauft (Zahlungsplan): {price}"
+        }
+      },
+      "SALE_CREATED_STAFF": {
+        "title": "Neuer Verkauf (Hinweis ans Team)",
+        "message": "Neuer Verkauf: Einheit {unit}",
+        "variants": {
+          "created": "Neuer Verkauf: Einheit {unit}",
+          "createdWithPrice": "Neuer Verkauf: Einheit {unit} ({price})",
+          "pending": "Neuer Verkauf zur Genehmigung: Einheit {unit}",
+          "pendingWithPrice": "Neuer Verkauf zur Genehmigung: Einheit {unit} ({price})"
+        }
+      },
+      "SALE_PENDING_APPROVAL": {
+        "title": "Verkauf wartet auf Genehmigung",
+        "message": "Ihr Verkauf der Einheit {unit} wartet auf Genehmigung"
+      },
+      "SALE_APPROVED": {
+        "title": "Verkauf genehmigt",
+        "message": "Verkauf genehmigt"
+      },
+      "SALE_REJECTED": {
+        "title": "Verkauf abgelehnt",
+        "message": "Verkauf abgelehnt: {notes}",
+        "variants": {
+          "noNotes": "Verkauf abgelehnt"
+        }
+      },
+      "PAYMENT_PLAN_DOWN_PAYMENT_PAID": {
+        "title": "Anzahlung erfasst",
+        "message": "Anzahlung erfasst: {amount}",
+        "variants": {
+          "noAmount": "Anzahlung erfasst"
+        }
+      },
+      "PAYMENT_PLAN_INSTALLMENT_PAID": {
+        "title": "Rate bezahlt",
+        "message": "Rate Nr. {number} bezahlt: {amount}",
+        "variants": {
+          "noAmount": "Rate Nr. {number} bezahlt"
+        }
+      },
+      "PAYMENT_PLAN_COMPLETED": {
+        "title": "Zahlungsplan abgeschlossen",
+        "message": "Zahlungsplan abgeschlossen: {amount}",
+        "variants": {
+          "noAmount": "Zahlungsplan abgeschlossen"
+        }
+      },
+      "PAYMENT_PLAN_DEFAULTED": {
+        "title": "Zahlungsplan in Verzug",
+        "message": "Zahlungsplan in Verzug: {plan}"
+      },
+      "MODIFICATION_REQUEST_CREATED": {
+        "title": "Änderungswunsch eingereicht",
+        "message": "Änderungswunsch eingereicht: {title}"
+      },
+      "MODIFICATION_REQUEST_APPROVED": {
+        "title": "Änderungswunsch in einer Stufe genehmigt",
+        "message": "{title}: von der Geschäftsleitung genehmigt",
+        "variants": {
+          "architect": "{title}: vom Architekten genehmigt",
+          "engineer": "{title}: vom Ingenieur genehmigt",
+          "ceo": "{title}: von der Geschäftsleitung genehmigt"
+        }
+      },
+      "MODIFICATION_REQUEST_REJECTED": {
+        "title": "Änderungswunsch zur Überarbeitung zurückgegeben",
+        "message": "{title}: Überarbeitung von der Geschäftsleitung verlangt",
+        "variants": {
+          "architect": "{title}: Überarbeitung vom Architekten verlangt",
+          "engineer": "{title}: Überarbeitung vom Ingenieur verlangt",
+          "ceo": "{title}: Überarbeitung von der Geschäftsleitung verlangt"
+        }
+      },
+      "MODIFICATION_REQUEST_CANCELLED": {
+        "title": "Änderungswunsch storniert",
+        "message": "Änderungswunsch storniert: {title}"
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_PENDING": {
+        "title": "Änderungskosten zur Genehmigung",
+        "message": "{title}: Kosten zur Genehmigung {cost}",
+        "variants": {
+          "noCost": "{title}: Kosten zur Genehmigung"
+        }
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_APPROVED": {
+        "title": "Änderungskosten genehmigt",
+        "message": "{title}: Kosten genehmigt"
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_REJECTED": {
+        "title": "Änderungskosten abgelehnt",
+        "message": "{title}: Kosten abgelehnt"
+      },
+      "MODIFICATION_REQUEST_REVISION_SUBMITTED": {
+        "title": "Änderungswunsch erneut eingereicht",
+        "message": "{title}: überarbeitet und erneut eingereicht"
+      },
+      "MODIFICATION_REQUEST_REACTIVATED": {
+        "title": "Änderungswunsch reaktiviert",
+        "message": "{title}: reaktiviert"
+      },
+      "MODIFICATION_REQUEST_SLA_BREACHED": {
+        "title": "Änderungswunsch überfällig",
+        "message": "{title}: in der aktuellen Stufe überfällig"
+      },
+      "MODIFICATION_REQUEST_DELIVERED": {
+        "title": "Änderungswunsch ausgeführt",
+        "message": "{title}: ausgeführt"
+      },
+      "COMMISSION_PAID": {
+        "title": "Provision ausbezahlt",
+        "message": "Provision ausbezahlt: {amount}",
+        "variants": {
+          "noAmount": "Provision ausbezahlt"
+        }
+      },
+      "COMMISSION_PENDING_APPROVAL": {
+        "title": "Provisionszahlung zur Genehmigung",
+        "message": "Provisionszahlung zur Genehmigung: {amount}",
+        "variants": {
+          "noAmount": "Provisionszahlung zur Genehmigung"
+        }
+      },
+      "COMMISSION_APPROVAL_REJECTED": {
+        "title": "Provisionszahlung abgelehnt",
+        "message": "Provisionszahlung abgelehnt: {notes}",
+        "variants": {
+          "noNotes": "Provisionszahlung abgelehnt"
+        }
+      },
+      "CONSTRUCTION_PROGRESS_UPDATE": {
+        "title": "Baufortschritt",
+        "message": "Einheit {units} ({place}) hat {percent} % der Arbeiten erreicht",
+        "variants": {
+          "noUnits": "{place} hat {percent} % der Arbeiten erreicht"
+        }
+      }
+    }
+  }
+}

@@ -26,7 +26,8 @@
   "amortizationError": {
     "invalid_input": "Check plan start and end dates, installment dates (last must match end date), and amounts.",
     "installment_too_small": "This installment is less than the interest portion for its period—raise the payment, adjust due dates, or lower the interest rate.",
-    "principal_residual": "The installments do not fully pay off the financed amount. Raise the installment amounts."
+    "principal_residual": "The installments do not fully pay off the financed amount. Raise the installment amounts.",
+    "installment_exceeds_owed": "An installment asks for more than is still owed. Lower the installment amounts so they add up to the financed amount and its interest."
   },
   "errorTitle": "Unable to load unit",
   "errorDescription": "Please try again.",

@@ -5,7 +5,7 @@ import {
   DASHBOARD_TAB_INTRO,
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import { AnalyticsChart, PaymentTypeChart, RevenueByPeriodChart } from "./analytics-chart.tsx";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import { compose } from "redux";
 import type { DashboardFormResponseType } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import {
@@ -39,7 +39,6 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
   const totalUnits = summary?.totalUnits ?? 0;
   const activePaymentPlans = summary?.paymentPlans?.byStatus?.active ?? 0;
   const overdueInstallments = summary?.paymentPlans?.overdueInstallmentsCount ?? 0;
-  const totalOutstanding = summary?.paymentPlans?.totalOutstanding ?? 0;
   const totalProjects = summary?.totalProjects ?? 0;
   const totalEdifices = summary?.totalEdifices ?? 0;
   const totalFloors = summary?.totalFloors ?? 0;
@@ -47,6 +46,7 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
   const followUpInspections = summary?.inspections?.followUpRequiredCount ?? 0;
 
   const hasData = summary != null;
+  const portfolioChart = dashboardSummaryToRevenueChart(summary);
   const statusChartData = unitsByStatusToChartData(
     summary?.unitsByStatus ?? { available: 0, unavailable: 0, reserved: 0, sold: 0, leased: 0 }
   );
@@ -87,7 +87,7 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
           <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={formatNumber(activePaymentPlans)} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={IconWallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={formatNumber(overdueInstallments)} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={IconWallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatCurrency(totalOutstanding)} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={IconWallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatRevenueByCurrencyLines(summary?.paymentPlans?.totalOutstanding, languageCode || "en-US")} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={IconWallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -148,7 +148,7 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
           </CardContent>
         </Card>
         <div className="min-w-0 lg:col-span-2">
-          <PortfolioValueChart {...dashboardSummaryToRevenueChart(summary)} />
+          <PortfolioValueChart series={portfolioChart} />
         </div>
       </div>
 

@@ -1,0 +1,196 @@
+{
+  "propertyManagement": {
+    "title": "Property sales and handover",
+    "codes": {
+      "RESERVATION_CREATED": {
+        "title": "Reservation created",
+        "message": "Reservation created for unit {unit}"
+      },
+      "RESERVATION_CREATED_STAFF": {
+        "title": "New reservation (staff alert)",
+        "message": "New reservation: unit {unit} for {client}",
+        "variants": {
+          "noClient": "New reservation: unit {unit}"
+        }
+      },
+      "RESERVATION_CANCELLED": {
+        "title": "Reservation cancelled",
+        "message": "Reservation for unit {unit} cancelled"
+      },
+      "RESERVATION_REINSTATED": {
+        "title": "Reservation reinstated",
+        "message": "Reservation for unit {unit} reinstated"
+      },
+      "RESERVATION_PAID": {
+        "title": "Reservation deposit paid",
+        "message": "Reservation deposit paid: {amount}",
+        "variants": {
+          "noAmount": "Reservation deposit paid"
+        }
+      },
+      "RESERVATION_PAYMENT_REVERSED": {
+        "title": "Reservation payment reversed",
+        "message": "Reservation payment for unit {unit} reversed"
+      },
+      "RESERVATION_EXPIRATION_REMINDER": {
+        "title": "Reservation ending soon",
+        "message": "Reservation for unit {unit} ends in 3 days",
+        "variants": {
+          "inThreeDays": "Reservation for unit {unit} ends in 3 days",
+          "tomorrow": "Reservation for unit {unit} ends tomorrow",
+          "today": "Reservation for unit {unit} ends today"
+        }
+      },
+      "RESERVATION_EXPIRED": {
+        "title": "Reservation expired (staff alert)",
+        "message": "Reservation expired: unit {unit} ({client})",
+        "variants": {
+          "noClient": "Reservation expired: unit {unit}"
+        }
+      },
+      "SALE_CREATED": {
+        "title": "Unit sold",
+        "message": "Unit {unit} sold: {price}",
+        "variants": {
+          "cash": "Unit {unit} sold (cash): {price}",
+          "paymentPlan": "Unit {unit} sold (payment plan): {price}"
+        }
+      },
+      "SALE_CREATED_STAFF": {
+        "title": "New sale (staff alert)",
+        "message": "New sale: unit {unit}",
+        "variants": {
+          "created": "New sale: unit {unit}",
+          "createdWithPrice": "New sale: unit {unit} ({price})",
+          "pending": "New sale pending approval: unit {unit}",
+          "pendingWithPrice": "New sale pending approval: unit {unit} ({price})"
+        }
+      },
+      "SALE_PENDING_APPROVAL": {
+        "title": "Sale awaiting approval",
+        "message": "Your sale of unit {unit} is awaiting approval"
+      },
+      "SALE_APPROVED": {
+        "title": "Sale approved",
+        "message": "Sale approved"
+      },
+      "SALE_REJECTED": {
+        "title": "Sale rejected",
+        "message": "Sale rejected: {notes}",
+        "variants": {
+          "noNotes": "Sale rejected"
+        }
+      },
+      "PAYMENT_PLAN_DOWN_PAYMENT_PAID": {
+        "title": "Down payment recorded",
+        "message": "Down payment recorded: {amount}",
+        "variants": {
+          "noAmount": "Down payment recorded"
+        }
+      },
+      "PAYMENT_PLAN_INSTALLMENT_PAID": {
+        "title": "Installment paid",
+        "message": "Installment #{number} paid: {amount}",
+        "variants": {
+          "noAmount": "Installment #{number} paid"
+        }
+      },
+      "PAYMENT_PLAN_COMPLETED": {
+        "title": "Payment plan completed",
+        "message": "Payment plan completed: {amount}",
+        "variants": {
+          "noAmount": "Payment plan completed"
+        }
+      },
+      "PAYMENT_PLAN_DEFAULTED": {
+        "title": "Payment plan defaulted",
+        "message": "Payment plan defaulted: {plan}"
+      },
+      "MODIFICATION_REQUEST_CREATED": {
+        "title": "Modification request submitted",
+        "message": "Modification request submitted: {title}"
+      },
+      "MODIFICATION_REQUEST_APPROVED": {
+        "title": "Modification request approved at a stage",
+        "message": "{title}: approved by the CEO",
+        "variants": {
+          "architect": "{title}: approved by the architect",
+          "engineer": "{title}: approved by the engineer",
+          "ceo": "{title}: approved by the CEO"
+        }
+      },
+      "MODIFICATION_REQUEST_REJECTED": {
+        "title": "Modification request sent back for revision",
+        "message": "{title}: revision requested by the CEO",
+        "variants": {
+          "architect": "{title}: revision requested by the architect",
+          "engineer": "{title}: revision requested by the engineer",
+          "ceo": "{title}: revision requested by the CEO"
+        }
+      },
+      "MODIFICATION_REQUEST_CANCELLED": {
+        "title": "Modification request cancelled",
+        "message": "Modification request cancelled: {title}"
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_PENDING": {
+        "title": "Modification cost to approve",
+        "message": "{title}: cost to approve {cost}",
+        "variants": {
+          "noCost": "{title}: cost to approve"
+        }
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_APPROVED": {
+        "title": "Modification cost approved",
+        "message": "{title}: cost approved"
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_REJECTED": {
+        "title": "Modification cost declined",
+        "message": "{title}: cost declined"
+      },
+      "MODIFICATION_REQUEST_REVISION_SUBMITTED": {
+        "title": "Modification request resubmitted",
+        "message": "{title}: revised and resubmitted"
+      },
+      "MODIFICATION_REQUEST_REACTIVATED": {
+        "title": "Modification request reactivated",
+        "message": "{title}: reactivated"
+      },
+      "MODIFICATION_REQUEST_SLA_BREACHED": {
+        "title": "Modification request overdue",
+        "message": "{title}: overdue at its current stage"
+      },
+      "MODIFICATION_REQUEST_DELIVERED": {
+        "title": "Modification request delivered",
+        "message": "{title}: delivered"
+      },
+      "COMMISSION_PAID": {
+        "title": "Commission paid",
+        "message": "Commission paid: {amount}",
+        "variants": {
+          "noAmount": "Commission paid"
+        }
+      },
+      "COMMISSION_PENDING_APPROVAL": {
+        "title": "Commission payment to approve",
+        "message": "Commission payment to approve: {amount}",
+        "variants": {
+          "noAmount": "Commission payment to approve"
+        }
+      },
+      "COMMISSION_APPROVAL_REJECTED": {
+        "title": "Commission payment rejected",
+        "message": "Commission payment rejected: {notes}",
+        "variants": {
+          "noNotes": "Commission payment rejected"
+        }
+      },
+      "CONSTRUCTION_PROGRESS_UPDATE": {
+        "title": "Construction progress update",
+        "message": "Unit {units} ({place}) has reached {percent}% of works",
+        "variants": {
+          "noUnits": "{place} has reached {percent}% of works"
+        }
+      }
+    }
+  }
+}

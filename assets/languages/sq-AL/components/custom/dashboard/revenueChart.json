@@ -4,14 +4,10 @@
   "revenue": "Të ardhurat",
   "inventory": "Inventari",
   "expenses": "Shpenzimet",
-  "collected": "Të mbledhura",
   "pendingSales": "Në pritje (Shitje)",
-  "pendingReservations": "Në pritje (Rezervime)",
-  "availableValue": "Vlera e disponueshme",
-  "blockedValue": "Vlera e bllokuar",
-  "reservedValue": "Vlera e rezervuar",
   "soldValue": "Vlera e shitur",
   "totalExpenses": "Shpenzimet totale",
   "pending": "Në pritje",
-  "unsold": "I pashitur"
+  "unsold": "I pashitur",
+  "currency": "Monedha"
 }

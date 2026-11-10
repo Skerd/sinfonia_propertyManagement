@@ -1,10 +1,10 @@
 import {compose} from "redux";
 import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
-import {useEffect} from "react";
+import {useEffect, useMemo} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {BranchKpi, GroupDashboardResponse} from "armonia/src/modules/propertyManagement/api/realEstate/private/groupDashboard/groupDashboard.response.type.ts";
+import type {BranchKpi, GroupDashboardResponse, GroupMoney} from "armonia/src/modules/propertyManagement/api/realEstate/private/groupDashboard/groupDashboard.response.type.ts";
 import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
@@ -23,14 +23,15 @@ import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
-import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import {getGroupDashboardOpenSnagsSource} from "@propertyManagementModule/helpers/moduleContributions/loadPropertyManagementPanelContributions.ts";
+import {useAnyModelRead} from "@propertyManagementModule/helpers/access/useAnyModelRead.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 type GroupDashboardProps = WithLanguageType & WithAxiosType<GroupDashboardResponse, Record<string, never>>;
 
-const SNAGS_REQUEST: HttpRequest = {method: "post", url: "/api/propertyDevelopment/groupDashboard"};
+const NO_ACCESS_MODELS: readonly string[] = [];
 
 type KpiKey = keyof Omit<BranchKpi, "companyId" | "companyName">;
 
@@ -49,6 +50,13 @@ function fmt(n: number): string {
     return formatNumber(n, {minimumFractionDigits: 0, maximumFractionDigits: 2});
 }
 
+/** A count, or money as one amount per currency (never summed across currencies). */
+function display(value: number | GroupMoney[]): string {
+    if (typeof value === "number") return fmt(value);
+    if (value.length === 0) return fmt(0);
+    return value.map((money) => `${fmt(money.value)} ${money.currency}`).join(" · ");
+}
+
 function GroupDashboard({
     resolveLanguageKey,
     data,
@@ -57,7 +65,10 @@ function GroupDashboard({
     onFilterChange,
 }: GroupDashboardProps) {
     const accessHydrated = useAccessHydrated();
-    const snagsAccess = useAccess("snags");
+    // Open snags per branch come from a contributing module, only with its read grant (D119).
+    const snagsSource = getGroupDashboardOpenSnagsSource();
+    const snagsAccess = useAnyModelRead(snagsSource?.accessModels ?? NO_ACCESS_MODELS);
+    const snagsRequest = useMemo<HttpRequest>(() => ({method: "post", url: snagsSource?.url ?? ""}), [snagsSource]);
     const canRead = hasAnyAccessRead([
         useAccess("units"),
         useAccess("sales"),
@@ -70,10 +81,9 @@ function GroupDashboard({
         onFilterChange({});
     }, [accessHydrated, canRead]);
 
-    // Open snags per branch come from propertyDevelopment's endpoint, only when that module and the grant are there.
-    const readSnags = accessHydrated !== false && canRead && isModuleEnabled("propertyDevelopment") && hasAnyAccessRead([snagsAccess]);
-    const snagsRequest = useHttpRequest<{openSnagsByCompany?: Record<string, number>}>(SNAGS_REQUEST, {}, readSnags ? 1 : 0);
-    const openSnagsByCompany = (!snagsRequest.error && snagsRequest.data?.openSnagsByCompany) || {};
+    const readSnags = accessHydrated !== false && canRead && !!snagsSource && snagsAccess;
+    const snags = useHttpRequest<{openSnagsByCompany?: Record<string, number>}>(snagsRequest, {}, readSnags ? 1 : 0);
+    const openSnagsByCompany = (!snags.error && snags.data?.openSnagsByCompany) || {};
 
     if (accessHydrated === false) return <Loader/>;
     if (!canRead) return <Forbidden />;
@@ -125,7 +135,7 @@ function GroupDashboard({
                         <KpiCard
                             key={col.key}
                             title={resolveLanguageKey(col.labelKey)}
-                            value={fmt(totals[col.key])}
+                            value={display(totals[col.key])}
                             icon={col.icon}
                             variant={col.variant}
                             compact
@@ -160,12 +170,12 @@ function GroupDashboard({
                                         <TableCell
                                             key={col.key}
                                             className={`text-right whitespace-nowrap ${
-                                                col.key === "openSnags" && branch[col.key] > 0
+                                                col.key === "openSnags" && branch.openSnags > 0
                                                     ? "text-warning font-medium"
                                                     : ""
                                             }`}
                                         >
-                                            {fmt(branch[col.key])}
+                                            {display(branch[col.key])}
                                         </TableCell>
                                     ))}
                                 </TableRow>

@@ -303,22 +303,28 @@ export default function ContractsTableSection({
                                         <TableCell>{row.project?.name ?? "—"}</TableCell>
                                         <TableCell>{unitLabel(row.unit)}</TableCell>
                                         <TableCell>
-                                            <Badge variant={contractTypeBadgeVariant(row.contractType)}>
-                                                {rk(`contractType.${row.contractType}`)}
-                                            </Badge>
+                                            {row.contractType ? (
+                                                <Badge variant={contractTypeBadgeVariant(row.contractType)}>
+                                                    {rk(`contractType.${row.contractType}`)}
+                                                </Badge>
+                                            ) : "—"}
                                         </TableCell>
                                         <TableCell>
-                                            <Badge variant={contractStatusBadgeVariant(row.status)}>
-                                                {rk(`status.${row.status}`)}
-                                            </Badge>
+                                            {row.status ? (
+                                                <Badge variant={contractStatusBadgeVariant(row.status)}>
+                                                    {rk(`status.${row.status}`)}
+                                                </Badge>
+                                            ) : "—"}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.signatureDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDateTime(row.uploadDate, timezone)}</TableCell>
                                         <TableCell>{personName(row.agent)}</TableCell>
                                         <TableCell>
-                                            <Badge variant={paymentStatusBadgeVariant(row.paymentStatus)}>
-                                                {rk(`paymentStatus.${row.paymentStatus}`)}
-                                            </Badge>
+                                            {row.paymentStatus ? (
+                                                <Badge variant={paymentStatusBadgeVariant(row.paymentStatus)}>
+                                                    {rk(`paymentStatus.${row.paymentStatus}`)}
+                                                </Badge>
+                                            ) : "—"}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button

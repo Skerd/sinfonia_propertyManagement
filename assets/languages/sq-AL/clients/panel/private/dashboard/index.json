@@ -13,7 +13,7 @@
   "totalUnits": "Njësitë totale",
   "unitsSold": "Shitur",
   "collected": "Të mbledhura",
-  "avgPricePerSqm": "Mesatarisht €/m²",
+  "avgSalePrice": "Çmimi mesatar i shitjes",
   "unitStatusBreakdown": "Statusi i njësisë",
   "failTitle": "Gabim",
   "failDescription": "Paneli nuk mund të ngarkohej. Kliko për të riprovuar.",
@@ -34,7 +34,7 @@
         "title": "Paraqitja",
         "items": [
           "Galeria e ndërtesave lart — zgjedhja përqendron çdo KPI dhe listën e njësive.",
-          "Rreshti i KPI: njësi gjithsej, të shitura, të arkëtuara, çmimi mesatar për m², plus qira e arkëtuar / e papaguar / e vonuar dhe kontrata aktive kur ekzistojnë të dhëna qiraje.",
+          "Rreshti i KPI: njësi gjithsej, të shitura, të arkëtuara, çmimi mesatar i shitjes, plus qira e arkëtuar / e papaguar / e vonuar dhe kontrata aktive kur ekzistojnë të dhëna qiraje.",
           "Periudha (7 ditë, 30 ditë, 3 muaj, 12 muaj) ndryshon dritaret e arkëtimit, jo stokun e njësive.",
           "Grafikët tregojnë përzierjen e statuseve dhe të ardhurat në periudhë.",
           "Tabela/kartat e njësive poshtë janë i njëjti burim Njësi, tashmë i kufizuar te ndërtesa e zgjedhur.",
@@ -46,7 +46,7 @@
         "items": [
           "Gjithsej / e shitur / e rezervuar / me qira janë numërime të njësive të asaj ndërtese sipas statusit tregtar.",
           "E arkëtuar vjen nga arkëtimet e shitjeve dhe aktiviteti i planit të pagesave në periudhë — jo nga një objektiv i shkruar.",
-          "Mesatarja €/m² përdor çmimet dhe sipërfaqet e atyre njësive; nuk i riçmon.",
+          "Çmimi mesatar i shitjes është shuma e çmimeve të shitjes së periudhës pjesëtuar me numrin e shitjeve, një shifër për monedhë; nuk i riçmon.",
           "Qira e arkëtuar / e papaguar / e vonuar mbledh rreshtat e pagesave të qirasë të kontratave të njësive të kësaj ndërtese.",
           "Kontratat aktive numërojnë kontratat që janë ende aktive mbi ato njësi."
         ]

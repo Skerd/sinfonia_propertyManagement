@@ -9,14 +9,13 @@ import {
     AGENT_REPORT_ACCESS_MODELS,
     CONTRACTS_HUB_ACCESS_MODELS,
     ERP_EXPORT_ACCESS_MODELS,
-    PROPERTY_DEVELOPMENT_ERP_EXPORT_ACCESS_MODELS,
     GROUP_DASHBOARD_ACCESS_MODELS,
     OVERVIEW_DASHBOARD_ACCESS_MODELS,
     PAYMENTS_HUB_ACCESS_MODELS,
     RENTALS_HUB_ACCESS_MODELS,
     ROI_ACCESS_MODELS,
 } from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
-import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import {getErpExportSource} from "@propertyManagementModule/helpers/moduleContributions/loadPropertyManagementPanelContributions.ts";
 import {registerPropertyManagementRefSelects} from "armonia/src/modules/propertyManagement/database/filter/refSelect.ts";
 
 registerPropertyManagementRefSelects();
@@ -95,9 +94,7 @@ function buildRealEstateNavGroup(resolveLanguageKey: ResolveLanguageKey): NavGro
                 "menus.reports.erpExport.title",
                 "/realEstate/erpExport",
                 IconDownload,
-                isModuleEnabled("propertyDevelopment")
-                    ? [...ERP_EXPORT_ACCESS_MODELS, ...PROPERTY_DEVELOPMENT_ERP_EXPORT_ACCESS_MODELS]
-                    : ERP_EXPORT_ACCESS_MODELS,
+                [...ERP_EXPORT_ACCESS_MODELS, ...(getErpExportSource()?.accessModels ?? [])],
             ),
         ]),
     ];

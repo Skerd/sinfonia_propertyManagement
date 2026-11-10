@@ -1,5 +1,6 @@
 import { compose } from "redux";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {GRID_KPI, DASHBOARD_TAB_STACK, DASHBOARD_CHART_GRID} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {
   IconCash,
@@ -21,6 +22,7 @@ import { RecentSales } from "./recent-sales.tsx";
 import type {
   DashboardFormResponseType,
   DashboardSummary,
+  RevenueByCurrency,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
 import { ActionException } from "armonia/src/modules/core/types";
 import {
@@ -50,6 +52,7 @@ type DashboardOverviewProps = WithLanguageType & {
 
 function DashboardOverview({
   resolveLanguageKey,
+  languageCode,
   dashboardData,
   loading,
   error,
@@ -76,28 +79,21 @@ function DashboardOverview({
   const recentSales = dashboardData?.recentSales ?? [];
   const paymentAlerts = dashboardData?.paymentAlerts;
 
-  const totalRevenue = summary?.totalRevenue?.reduce((acc, r) => acc + r.value, 0) ?? 0;
   const activeReservations = summary?.activeReservations ?? 0;
   const totalSales = summary?.totalSales ?? 0;
   const unitsSold = summary?.unitsByStatus?.sold ?? 0;
-  const averageSalePrice = summary?.averageSalePrice ?? 0;
-  const inventoryValue = summary?.inventoryValue ?? 0;
   const cashSales = summary?.salesByPaymentType?.cash ?? 0;
   const paymentPlanSales = summary?.salesByPaymentType?.payment_plan ?? 0;
   const occupancyRatePercent = summary?.occupancyRatePercent ?? 0;
   const totalInspections = summary?.totalInspections ?? 0;
   const openModificationRequests = summary?.openModificationRequests ?? 0;
   const expiringReservationsCount = summary?.expiringReservationsCount ?? 0;
-  const totalReservationDeposits = summary?.totalReservationDeposits ?? 0;
   const paymentPlansCompleted = summary?.paymentPlansCompleted ?? 0;
   const revenueTrend = dashboardData?.comparisons?.revenue;
   const salesTrend = dashboardData?.comparisons?.sales;
-  const verifiedPaidCostsSum =
-    summary?.verifiedPaidUnitCosts?.reduce((acc, r) => acc + (r?.value ?? 0), 0) ?? 0;
-  const verifiedOutstandingCostsSum =
-    summary?.verifiedOutstandingUnitCosts?.reduce((acc, r) => acc + (r?.value ?? 0), 0) ?? 0;
-  const pendingVerificationCostsSum =
-    summary?.pendingVerificationUnitCosts?.reduce((acc, r) => acc + (r?.value ?? 0), 0) ?? 0;
+  // Money is shown per currency, never summed across currencies (GLB-08).
+  const locale = languageCode || "en-US";
+  const money = (rows: RevenueByCurrency[] | undefined) => formatRevenueByCurrencyLines(rows, locale);
   const unitCostDocsCount = summary?.totalUnitCostDocuments ?? 0;
 
   const statusChartData = summary?.unitsByStatus
@@ -123,7 +119,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("totalRevenue")}
-            value={formatCurrency(totalRevenue)}
+            value={money(summary?.totalRevenue)}
             subtitle={revenueSubtitle}
             icon={IconCoin}
             variant="primary"
@@ -188,7 +184,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("averageSalePrice")}
-            value={formatCurrency(averageSalePrice)}
+            value={money(summary?.averageSalePrice)}
             subtitle={resolveLanguageKey("averageSalePriceDesc")}
             icon={IconCoin}
             variant="default"
@@ -198,7 +194,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("inventoryValue")}
-            value={formatCurrency(inventoryValue)}
+            value={money(summary?.inventoryValue)}
             subtitle={resolveLanguageKey("inventoryValueDesc")}
             icon={IconPackage}
             variant="default"
@@ -247,7 +243,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("verifiedPaidCosts")}
-            value={formatCurrency(verifiedPaidCostsSum)}
+            value={money(summary?.verifiedPaidUnitCosts)}
             subtitle={resolveLanguageKey("verifiedPaidCostsDesc")}
             icon={IconReceipt}
             variant="default"
@@ -257,7 +253,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("verifiedOutstandingCosts")}
-            value={formatCurrency(verifiedOutstandingCostsSum)}
+            value={money(summary?.verifiedOutstandingUnitCosts)}
             subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")}
             icon={IconReceipt}
             variant="warning"
@@ -267,7 +263,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("pendingVerificationCosts")}
-            value={formatCurrency(pendingVerificationCostsSum)}
+            value={money(summary?.pendingVerificationUnitCosts)}
             subtitle={resolveLanguageKey("pendingVerificationCostsDesc")}
             icon={IconFileText}
             variant="default"
@@ -327,7 +323,7 @@ function DashboardOverview({
           <KpiCard
             compact
             title={resolveLanguageKey("totalReservationDeposits")}
-            value={formatCurrency(totalReservationDeposits)}
+            value={money(summary?.totalReservationDeposits)}
             subtitle={resolveLanguageKey("totalReservationDepositsDesc")}
             icon={IconWallet}
             variant="default"

@@ -4,8 +4,10 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
 } from '@coreModule/components/ui/chart.tsx';
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import type {PeriodDatum} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
+import {revenueByPeriodSeries} from "@propertyManagementModule/helpers/dashboard/revenueByPeriodSeries.ts";
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -16,23 +18,14 @@ function formatMonth(monthStr: string): string {
   return name ? `${name} ${y}` : monthStr;
 }
 
-export type PeriodDatum = { month: string; totalRevenue?: number; count?: number };
-
 export type OverviewProps = {
   revenueByPeriod: PeriodDatum[];
   /** Optional label for empty state (i18n). */
   noDataLabel?: string;
 };
 
-const OVERVIEW_CONFIG = {
-  total: { label: 'Revenue', color: 'var(--chart-1)' },
-} satisfies ChartConfig;
-
 export const Overview: React.FC<OverviewProps> = ({ revenueByPeriod, noDataLabel }) => {
-  const data = revenueByPeriod.map((d) => ({
-    name: formatMonth(d.month),
-    total: d.totalRevenue ?? 0,
-  }));
+  const {data, config, keys} = revenueByPeriodSeries(revenueByPeriod, formatMonth);
 
   if (data.length === 0) {
     return (
@@ -43,7 +36,7 @@ export const Overview: React.FC<OverviewProps> = ({ revenueByPeriod, noDataLabel
   }
 
   return (
-    <ChartContainer config={OVERVIEW_CONFIG} className="aspect-auto h-[260px] w-full">
+    <ChartContainer config={config} className="aspect-auto h-[260px] w-full">
       <BarChart data={data}>
         <XAxis
           dataKey="name"
@@ -57,10 +50,12 @@ export const Overview: React.FC<OverviewProps> = ({ revenueByPeriod, noDataLabel
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value: number) => formatNumber(value, {compact: true})}
         />
         <ChartTooltip cursor={{ fill: 'var(--muted)', fillOpacity: 0.6 }} content={<ChartTooltipContent />} />
-        <Bar dataKey="total" fill="var(--color-total)" radius={[4, 4, 0, 0]} />
+        {keys.map((key) => (
+          <Bar key={key} dataKey={key} fill={`var(--color-${key})`} radius={[4, 4, 0, 0]} />
+        ))}
       </BarChart>
     </ChartContainer>
   );

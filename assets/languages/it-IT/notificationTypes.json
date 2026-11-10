@@ -1,0 +1,196 @@
+{
+  "propertyManagement": {
+    "title": "Vendite immobiliari e consegna",
+    "codes": {
+      "RESERVATION_CREATED": {
+        "title": "Prenotazione creata",
+        "message": "Prenotazione creata per l'unità {unit}"
+      },
+      "RESERVATION_CREATED_STAFF": {
+        "title": "Nuova prenotazione (avviso al team)",
+        "message": "Nuova prenotazione: unità {unit} per {client}",
+        "variants": {
+          "noClient": "Nuova prenotazione: unità {unit}"
+        }
+      },
+      "RESERVATION_CANCELLED": {
+        "title": "Prenotazione annullata",
+        "message": "Prenotazione dell'unità {unit} annullata"
+      },
+      "RESERVATION_REINSTATED": {
+        "title": "Prenotazione ripristinata",
+        "message": "Prenotazione dell'unità {unit} ripristinata"
+      },
+      "RESERVATION_PAID": {
+        "title": "Caparra della prenotazione pagata",
+        "message": "Caparra della prenotazione pagata: {amount}",
+        "variants": {
+          "noAmount": "Caparra della prenotazione pagata"
+        }
+      },
+      "RESERVATION_PAYMENT_REVERSED": {
+        "title": "Pagamento della prenotazione stornato",
+        "message": "Pagamento della prenotazione dell'unità {unit} stornato"
+      },
+      "RESERVATION_EXPIRATION_REMINDER": {
+        "title": "Prenotazione in scadenza",
+        "message": "La prenotazione dell'unità {unit} scade tra 3 giorni",
+        "variants": {
+          "inThreeDays": "La prenotazione dell'unità {unit} scade tra 3 giorni",
+          "tomorrow": "La prenotazione dell'unità {unit} scade domani",
+          "today": "La prenotazione dell'unità {unit} scade oggi"
+        }
+      },
+      "RESERVATION_EXPIRED": {
+        "title": "Prenotazione scaduta (avviso al team)",
+        "message": "Prenotazione scaduta: unità {unit} ({client})",
+        "variants": {
+          "noClient": "Prenotazione scaduta: unità {unit}"
+        }
+      },
+      "SALE_CREATED": {
+        "title": "Unità venduta",
+        "message": "Unità {unit} venduta: {price}",
+        "variants": {
+          "cash": "Unità {unit} venduta (in contanti): {price}",
+          "paymentPlan": "Unità {unit} venduta (piano di pagamento): {price}"
+        }
+      },
+      "SALE_CREATED_STAFF": {
+        "title": "Nuova vendita (avviso al team)",
+        "message": "Nuova vendita: unità {unit}",
+        "variants": {
+          "created": "Nuova vendita: unità {unit}",
+          "createdWithPrice": "Nuova vendita: unità {unit} ({price})",
+          "pending": "Nuova vendita in attesa di approvazione: unità {unit}",
+          "pendingWithPrice": "Nuova vendita in attesa di approvazione: unità {unit} ({price})"
+        }
+      },
+      "SALE_PENDING_APPROVAL": {
+        "title": "Vendita in attesa di approvazione",
+        "message": "La tua vendita dell'unità {unit} è in attesa di approvazione"
+      },
+      "SALE_APPROVED": {
+        "title": "Vendita approvata",
+        "message": "Vendita approvata"
+      },
+      "SALE_REJECTED": {
+        "title": "Vendita respinta",
+        "message": "Vendita respinta: {notes}",
+        "variants": {
+          "noNotes": "Vendita respinta"
+        }
+      },
+      "PAYMENT_PLAN_DOWN_PAYMENT_PAID": {
+        "title": "Acconto registrato",
+        "message": "Acconto registrato: {amount}",
+        "variants": {
+          "noAmount": "Acconto registrato"
+        }
+      },
+      "PAYMENT_PLAN_INSTALLMENT_PAID": {
+        "title": "Rata pagata",
+        "message": "Rata n. {number} pagata: {amount}",
+        "variants": {
+          "noAmount": "Rata n. {number} pagata"
+        }
+      },
+      "PAYMENT_PLAN_COMPLETED": {
+        "title": "Piano di pagamento completato",
+        "message": "Piano di pagamento completato: {amount}",
+        "variants": {
+          "noAmount": "Piano di pagamento completato"
+        }
+      },
+      "PAYMENT_PLAN_DEFAULTED": {
+        "title": "Piano di pagamento insoluto",
+        "message": "Piano di pagamento insoluto: {plan}"
+      },
+      "MODIFICATION_REQUEST_CREATED": {
+        "title": "Richiesta di modifica inviata",
+        "message": "Richiesta di modifica inviata: {title}"
+      },
+      "MODIFICATION_REQUEST_APPROVED": {
+        "title": "Richiesta di modifica approvata in una fase",
+        "message": "{title}: approvata dalla direzione",
+        "variants": {
+          "architect": "{title}: approvata dall'architetto",
+          "engineer": "{title}: approvata dall'ingegnere",
+          "ceo": "{title}: approvata dalla direzione"
+        }
+      },
+      "MODIFICATION_REQUEST_REJECTED": {
+        "title": "Richiesta di modifica rimandata per revisione",
+        "message": "{title}: revisione richiesta dalla direzione",
+        "variants": {
+          "architect": "{title}: revisione richiesta dall'architetto",
+          "engineer": "{title}: revisione richiesta dall'ingegnere",
+          "ceo": "{title}: revisione richiesta dalla direzione"
+        }
+      },
+      "MODIFICATION_REQUEST_CANCELLED": {
+        "title": "Richiesta di modifica annullata",
+        "message": "Richiesta di modifica annullata: {title}"
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_PENDING": {
+        "title": "Costo della modifica da approvare",
+        "message": "{title}: costo da approvare {cost}",
+        "variants": {
+          "noCost": "{title}: costo da approvare"
+        }
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_APPROVED": {
+        "title": "Costo della modifica approvato",
+        "message": "{title}: costo approvato"
+      },
+      "MODIFICATION_REQUEST_CLIENT_COST_REJECTED": {
+        "title": "Costo della modifica rifiutato",
+        "message": "{title}: costo rifiutato"
+      },
+      "MODIFICATION_REQUEST_REVISION_SUBMITTED": {
+        "title": "Richiesta di modifica inviata di nuovo",
+        "message": "{title}: rivista e inviata di nuovo"
+      },
+      "MODIFICATION_REQUEST_REACTIVATED": {
+        "title": "Richiesta di modifica riattivata",
+        "message": "{title}: riattivata"
+      },
+      "MODIFICATION_REQUEST_SLA_BREACHED": {
+        "title": "Richiesta di modifica in ritardo",
+        "message": "{title}: in ritardo nella fase attuale"
+      },
+      "MODIFICATION_REQUEST_DELIVERED": {
+        "title": "Richiesta di modifica consegnata",
+        "message": "{title}: consegnata"
+      },
+      "COMMISSION_PAID": {
+        "title": "Provvigione pagata",
+        "message": "Provvigione pagata: {amount}",
+        "variants": {
+          "noAmount": "Provvigione pagata"
+        }
+      },
+      "COMMISSION_PENDING_APPROVAL": {
+        "title": "Pagamento della provvigione da approvare",
+        "message": "Pagamento della provvigione da approvare: {amount}",
+        "variants": {
+          "noAmount": "Pagamento della provvigione da approvare"
+        }
+      },
+      "COMMISSION_APPROVAL_REJECTED": {
+        "title": "Pagamento della provvigione respinto",
+        "message": "Pagamento della provvigione respinto: {notes}",
+        "variants": {
+          "noNotes": "Pagamento della provvigione respinto"
+        }
+      },
+      "CONSTRUCTION_PROGRESS_UPDATE": {
+        "title": "Avanzamento dei lavori",
+        "message": "L'unità {units} ({place}) ha raggiunto il {percent}% dei lavori",
+        "variants": {
+          "noUnits": "{place} ha raggiunto il {percent}% dei lavori"
+        }
+      }
+    }
+  }
+}

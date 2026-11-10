@@ -1976,5 +1976,83 @@
       "source": "Burimi",
       "lastChangedAt": "Ndryshuar së fundi më"
     }
+  },
+  "roles": {
+    "re_inventory_manager": {
+      "name": "Menaxher inventari",
+      "description": "Ngre portofolin: projektet, ndërtesat, katet, njësitë, llojet e njësive dhe ndërtuesit."
+    },
+    "re_unit_cost_controller": {
+      "name": "Kontrollues i kostove të njësive",
+      "description": "Mirëmban kostot e njësive. Mund të shohë inventarin, por nuk mund të ndryshojë projektet ose njësitë."
+    },
+    "re_marketing_editor": {
+      "name": "Redaktor marketingu",
+      "description": "Publikon historitë e projekteve dhe njësive. Mund të shohë inventarin, por nuk mund ta ndryshojë."
+    },
+    "re_campaign_manager": {
+      "name": "Menaxher fushatash",
+      "description": "Ndërton dhe dërgon fushata reklamuese te klientët dhe kontaktet potenciale dhe mirëmban shabllonet e email-it. Mund të shohë inventarin dhe kontaktet, por nuk mund t'i ndryshojë."
+    },
+    "re_portfolio_manager": {
+      "name": "Menaxher portofoli",
+      "description": "Drejton të gjithë procesin e portofolit: inventarin, kostot e njësive dhe historitë."
+    },
+    "re_lead_officer": {
+      "name": "Përgjegjës i kontakteve",
+      "description": "Regjistron dhe kualifikon interesin e blerësve. Nuk mund të krijojë rezervime ose shitje."
+    },
+    "re_sales_agent": {
+      "name": "Agjent shitjesh",
+      "description": "Rezervon njësi, i kthen në shitje dhe trajton dorëzimin e shitjes. Nuk mund të krijojë kontakte ose komisione."
+    },
+    "re_collections_officer": {
+      "name": "Përgjegjës i arkëtimeve",
+      "description": "Menaxhon këstet e planeve të pagesës së shitjeve: planifikon, arkëton dhe shënon si të vonuara."
+    },
+    "re_commission_officer": {
+      "name": "Përgjegjës i komisioneve",
+      "description": "Regjistron dhe ndjek komisionet e agjentëve nga rezervimet dhe shitjet."
+    },
+    "re_contracts_officer": {
+      "name": "Përgjegjës i kontratave",
+      "description": "Punon në qendrën e kontratave dhe klientëve: shitjet dhe qiratë."
+    },
+    "re_sales_manager": {
+      "name": "Menaxher shitjesh",
+      "description": "Drejton të gjithë procesin e shitjes: kontakt → rezervim → shitje → plan pagese → komision."
+    },
+    "re_leasing_officer": {
+      "name": "Përgjegjës i qirave",
+      "description": "Krijon dhe ndërpret kontratat e qirasë. Nuk mund të arkëtojë pagesat e qirasë."
+    },
+    "re_rent_collector": {
+      "name": "Arkëtues i qirave",
+      "description": "Arkëton, fal dhe shënon pagesat e qirasë. Nuk mund të krijojë ose përfundojë kontrata qiraje."
+    },
+    "re_leasing_manager": {
+      "name": "Menaxher i qirave",
+      "description": "Drejton të gjithë procesin e qirasë: kontratën, arkëtimin e qirasë dhe inspektimin në largim."
+    },
+    "re_change_order": {
+      "name": "Koordinator i ndryshimeve",
+      "description": "Zotëron nga fillimi në fund kërkesat për modifikim të blerësve, me qasje për lexim në shitjen dhe njësinë përkatëse."
+    },
+    "re_quality_inspector": {
+      "name": "Inspektor cilësie",
+      "description": "Kryen inspektimet e njësive."
+    },
+    "re_aftercare_manager": {
+      "name": "Menaxher i shërbimit pas shitjes",
+      "description": "Drejton shërbimin pas shitjes dhe cilësinë: inspektimet, paketat e dorëzimit dhe shabllonet e listave të kontrollit."
+    },
+    "re_analyst": {
+      "name": "Analist i pasurive të paluajtshme",
+      "description": "Qasje vetëm për lexim në pasqyrë, panele, raportin e agjentëve, ROI dhe eksportin ERP. Nuk mund të ndryshojë regjistrimet."
+    },
+    "re_manager": {
+      "name": "Menaxher i pasurive të paluajtshme",
+      "description": "Drejton çdo proces të dukshëm të pasurive të paluajtshme: portofolin, shitjet, qiratë, kërkesat për ndryshim dhe shërbimin pas shitjes."
+    }
   }
 }

@@ -258,9 +258,11 @@ export default function RentalsCalendarTab({
                                                             <span className="font-semibold tabular-nums">
                                                                 {fmtMoney(row.remaining ?? row.amount, row.currency?.symbol)}
                                                             </span>
-                                                            <Badge variant={badgeVariant(row.status)}>
-                                                                {rk(`badge.${row.status}`)}
-                                                            </Badge>
+                                                            {row.status ? (
+                                                                <Badge variant={badgeVariant(row.status)}>
+                                                                    {rk(`badge.${row.status}`)}
+                                                                </Badge>
+                                                            ) : "—"}
                                                         </div>
                                                     </CardContent>
                                                 </Card>

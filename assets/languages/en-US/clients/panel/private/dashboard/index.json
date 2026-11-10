@@ -13,7 +13,7 @@
   "totalUnits": "Total Units",
   "unitsSold": "Sold",
   "collected": "Collected",
-  "avgPricePerSqm": "Avg €/m²",
+  "avgSalePrice": "Avg sale price",
   "unitStatusBreakdown": "Unit status",
   "failTitle": "Error",
   "failDescription": "Could not load dashboard. Click to retry.",
@@ -34,7 +34,7 @@
         "title": "Layout",
         "items": [
           "Edifice gallery at the top — select a building to focus every KPI and the units list below.",
-          "KPI row: total units, sold, collected, average price per m², plus rent collected / outstanding / overdue and active leases when rental records exist.",
+          "KPI row: total units, sold, collected, average sale price, plus rent collected / outstanding / overdue and active leases when rental records exist.",
           "Period control (last 7 days, 30 days, 3 months, 12 months) changes collected/revenue windows, not the unit inventory itself.",
           "Charts show unit-status mix and revenue over the selected period.",
           "The units table/cards below are the same Units resource, already scoped to the selected edifice.",
@@ -46,7 +46,7 @@
         "items": [
           "Total / sold / reserved / rented are counts of units in that edifice by commercial status.",
           "Collected comes from sale receipts and payment-plan activity in the period — not from typing a target.",
-          "Average €/m² uses unit prices and areas on those units; it does not reprice anything.",
+          "Average sale price is the period's sale prices over its number of sales, one figure per currency; it does not reprice anything.",
           "Rent collected / outstanding / overdue sums rental payment rows on leases for units in this edifice.",
           "Active leases counts leases that are still active on those units."
         ]

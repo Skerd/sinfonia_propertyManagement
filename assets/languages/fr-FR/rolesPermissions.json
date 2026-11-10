@@ -1976,5 +1976,83 @@
       "source": "Source",
       "lastChangedAt": "Dernière modification le"
     }
+  },
+  "roles": {
+    "re_inventory_manager": {
+      "name": "Gestionnaire d'inventaire",
+      "description": "Met en place le portefeuille : projets, bâtiments, étages, lots, types de lots et constructeurs."
+    },
+    "re_unit_cost_controller": {
+      "name": "Contrôleur des coûts des lots",
+      "description": "Tient les coûts des lots. Peut consulter l'inventaire mais ne peut modifier ni les projets ni les lots."
+    },
+    "re_marketing_editor": {
+      "name": "Éditeur marketing",
+      "description": "Publie les récits de projets et de lots. Peut consulter l'inventaire sans pouvoir le modifier."
+    },
+    "re_campaign_manager": {
+      "name": "Responsable des campagnes",
+      "description": "Crée et envoie des campagnes publicitaires aux clients et prospects, et gère les modèles d'e-mail. Peut consulter l'inventaire et les prospects sans pouvoir les modifier."
+    },
+    "re_portfolio_manager": {
+      "name": "Gestionnaire de portefeuille",
+      "description": "Mène tout le processus du portefeuille : inventaire, coûts des lots et récits."
+    },
+    "re_lead_officer": {
+      "name": "Chargé des prospects",
+      "description": "Recueille et qualifie l'intérêt des acheteurs. Ne peut créer ni réservations ni ventes."
+    },
+    "re_sales_agent": {
+      "name": "Agent commercial",
+      "description": "Réserve des lots, les convertit en vente et gère la remise des clés liée à la vente. Ne peut créer ni prospects ni commissions."
+    },
+    "re_collections_officer": {
+      "name": "Chargé du recouvrement",
+      "description": "Gère les échéances des plans de paiement des ventes : planifier, encaisser et marquer en retard."
+    },
+    "re_commission_officer": {
+      "name": "Chargé des commissions",
+      "description": "Enregistre et suit les commissions des agents issues des réservations et des ventes."
+    },
+    "re_contracts_officer": {
+      "name": "Chargé des contrats",
+      "description": "Travaille dans le hub contrats & clients : ventes et baux."
+    },
+    "re_sales_manager": {
+      "name": "Directeur commercial",
+      "description": "Mène tout le pipeline de vente : prospect → réservation → vente → plan de paiement → commission."
+    },
+    "re_leasing_officer": {
+      "name": "Chargé de location",
+      "description": "Crée et résilie les baux. Ne peut pas encaisser les loyers."
+    },
+    "re_rent_collector": {
+      "name": "Encaisseur des loyers",
+      "description": "Encaisse, remet et marque les paiements de loyer. Ne peut ni créer ni terminer des baux."
+    },
+    "re_leasing_manager": {
+      "name": "Responsable de la location",
+      "description": "Mène tout le processus locatif : bail, encaissement des loyers et état des lieux de sortie."
+    },
+    "re_change_order": {
+      "name": "Coordinateur des modifications",
+      "description": "Prend en charge de bout en bout les demandes de modification des acheteurs, avec un accès en lecture à la vente et au lot concernés."
+    },
+    "re_quality_inspector": {
+      "name": "Inspecteur qualité",
+      "description": "Réalise les inspections des lots."
+    },
+    "re_aftercare_manager": {
+      "name": "Responsable du service après-vente",
+      "description": "Dirige le service après-vente et la qualité : inspections, dossiers de remise et modèles de listes de contrôle."
+    },
+    "re_analyst": {
+      "name": "Analyste immobilier",
+      "description": "Accès en lecture seule à la vue d'ensemble, aux tableaux de bord, au rapport des agents, au ROI et à l'export ERP. Ne peut modifier aucun enregistrement."
+    },
+    "re_manager": {
+      "name": "Responsable immobilier",
+      "description": "Pilote chaque processus immobilier visible : portefeuille, ventes, location, demandes de modification et service après-vente."
+    }
   }
 }

@@ -269,9 +269,11 @@ export default function LeasesTableSection({
                                         <TableCell>{row.project?.name ?? "—"}</TableCell>
                                         <TableCell>{unitLabel(row.unit)}</TableCell>
                                         <TableCell>
-                                            <Badge variant={leaseStatusBadgeVariant(row.status)}>
-                                                {rk(`status.${row.status}`)}
-                                            </Badge>
+                                            {row.status ? (
+                                                <Badge variant={leaseStatusBadgeVariant(row.status)}>
+                                                    {rk(`status.${row.status}`)}
+                                                </Badge>
+                                            ) : "—"}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.startDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.endDate, timezone)}</TableCell>

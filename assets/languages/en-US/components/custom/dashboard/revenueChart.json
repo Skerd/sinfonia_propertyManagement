@@ -4,14 +4,10 @@
   "revenue": "Revenue",
   "inventory": "Inventory",
   "expenses": "Expenses",
-  "collected": "Collected",
   "pendingSales": "Pending (Sales)",
-  "pendingReservations": "Pending (Reservations)",
-  "availableValue": "Available Value",
-  "blockedValue": "Blocked Value",
-  "reservedValue": "Reserved Value",
   "soldValue": "Sold Value",
   "totalExpenses": "Total Expenses",
   "pending": "Pending",
-  "unsold": "Unsold"
+  "unsold": "Unsold",
+  "currency": "Currency"
 }

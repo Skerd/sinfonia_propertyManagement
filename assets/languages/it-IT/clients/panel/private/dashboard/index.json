@@ -13,7 +13,7 @@
   "totalUnits": "Unità totali",
   "unitsSold": "Vendute",
   "collected": "Incassato",
-  "avgPricePerSqm": "Media €/m²",
+  "avgSalePrice": "Prezzo medio di vendita",
   "unitStatusBreakdown": "Stato unità",
   "failTitle": "Errore",
   "failDescription": "Impossibile caricare la dashboard. Clicca per riprovare.",
@@ -34,7 +34,7 @@
         "title": "Disposizione",
         "items": [
           "Galleria edifici in alto — la selezione focalizza ogni KPI e l'elenco unità.",
-          "Riga KPI: unità totali, vendute, incassato, prezzo medio al m², più canone incassato / residuo / scaduto e contratti attivi quando esistono dati di locazione.",
+          "Riga KPI: unità totali, vendute, incassato, prezzo medio di vendita, più canone incassato / residuo / scaduto e contratti attivi quando esistono dati di locazione.",
           "Il periodo (7 giorni, 30 giorni, 3 mesi, 12 mesi) cambia le finestre di incasso, non l'inventario delle unità.",
           "I grafici mostrano il mix di stati e i ricavi nel periodo.",
           "Tabella/schede unità in basso sono la stessa risorsa Unità, già limitata all'edificio scelto.",
@@ -46,7 +46,7 @@
         "items": [
           "Totale / vendute / prenotate / affittate sono conteggi delle unità di quell'edificio per stato commerciale.",
           "Incassato deriva da ricevute di vendita e attività del piano di pagamento nel periodo — non da un obiettivo digitato.",
-          "La media €/m² usa prezzi e superfici di quelle unità; non ricalcola alcun prezzo.",
+          "Il prezzo medio di vendita è la somma dei prezzi di vendita del periodo divisa per il numero di vendite, un valore per valuta; non ricalcola alcun prezzo.",
           "Canone incassato / dovuto / scaduto somma le righe di canone dei contratti sulle unità di questo edificio.",
           "Contratti attivi conta i contratti ancora attivi su quelle unità."
         ]

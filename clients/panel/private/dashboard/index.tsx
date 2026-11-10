@@ -1,5 +1,5 @@
 import {Suspense, useEffect, useState, useMemo} from "react";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {GRID_KPI} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {compose} from "redux";
 import type {DashboardFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
@@ -34,9 +34,23 @@ import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
-import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import {getDashboardEdificeCardSources} from "@propertyManagementModule/helpers/moduleContributions/loadPropertyManagementPanelContributions.ts";
+import type {DashboardEdificeCardSource} from "@propertyManagementModule/helpers/types/propertyManagementPanelContribution.types.ts";
+import {useAnyModelRead} from "@propertyManagementModule/helpers/access/useAnyModelRead.ts";
 
 type RealEstateDashboardProps = WithLanguageType & WithAxiosType<DashboardFormResponseType, DashboardFormType>;
+
+/** A contributed edifice card, shown when its widget is registered and the caller may read one of its models. */
+function ContributedEdificeCard({source, edificeId}: {source: DashboardEdificeCardSource; edificeId: string}) {
+    const canRead = useAnyModelRead(source.accessModels);
+    const Card = resolveWidget(source.widget);
+    if (!canRead || !Card) return null;
+    return (
+        <Suspense fallback={null}>
+            <Card edificeId={edificeId} />
+        </Suspense>
+    );
+}
 
 function RealEstateDashboard({
     resolveLanguageKey,
@@ -65,18 +79,8 @@ function RealEstateDashboard({
         useAccess("rentalpayments"),
         useAccess("leases"),
     ]);
-    // Hooks run on every render; only the module check decides.
-    const deliveryReadinessAccess = [
-        useAccess("permits"),
-        useAccess("projectdocuments"),
-        useAccess("designstages"),
-        useAccess("milestones"),
-        useAccess("snags"),
-        useAccess("handoverpackages"),
-    ];
-    // propertyDevelopment contributes the card through the widget registry (CORE-02: PM never imports PD).
-    const DeliveryReadinessCard = resolveWidget("#DeliveryReadinessCard");
-    const canReadDeliveryReadiness = isModuleEnabled("propertyDevelopment") && hasAnyAccessRead(deliveryReadinessAccess);
+    // Edifice cards other modules contribute (D119), e.g. delivery readiness: PM names neither the module nor its models.
+    const edificeCards = getDashboardEdificeCardSources();
 
     useEffect(() => {
         if (accessHydrated === false || !canRead) return;
@@ -92,8 +96,6 @@ function RealEstateDashboard({
     const summary = dashboardData?.summary;
     const totalUnits = summary?.totalUnits ?? 0;
     const unitsSold = summary?.unitsByStatus?.sold ?? 0;
-    const collectedAmount = summary?.totalRevenue?.reduce((acc, r) => acc + (r?.value ?? 0), 0) ?? 0;
-    const avgPricePerSqm = summary?.averageSalePrice != null && summary.averageSalePrice > 0 ? Math.round(summary.averageSalePrice) : 0;
     const statusChartData = summary?.unitsByStatus ? unitsByStatusToChartData(summary.unitsByStatus) : {
         available: 0,
         reserved: 0,
@@ -101,7 +103,7 @@ function RealEstateDashboard({
         blocked: 0,
         leased: 0,
     };
-    const revenueChartProps = dashboardSummaryToRevenueChart(summary);
+    const revenueChartSeries = dashboardSummaryToRevenueChart(summary);
 
     const drillDownContext = useMemo(() => {
         const f = buildDashboardFilter(periodKey, timeZone, {edificeId: selectedEdifice?._id});
@@ -185,7 +187,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("collected") ?? "Collected"}
-                                value={formatCurrency(collectedAmount)}
+                                value={formatRevenueByCurrencyLines(summary?.totalRevenue, languageCode || "en-US")}
                                 icon={IconWallet}
                                 variant="primary"
                                 href={kpi.kpiCollected(drillDownContext)}
@@ -193,10 +195,10 @@ function RealEstateDashboard({
                             />
                             <KpiCard
                                 compact
-                                title={resolveLanguageKey("avgPricePerSqm") ?? "Avg €/m²"}
-                                value={formatCurrency(avgPricePerSqm)}
+                                title={resolveLanguageKey("avgSalePrice")}
+                                value={formatRevenueByCurrencyLines(summary?.averageSalePrice, languageCode || "en-US")}
                                 icon={IconCoin}
-                                href={kpi.kpiAvgPricePerSqm(drillDownContext)}
+                                href={kpi.kpiAvgSalePrice(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
                             />
                         </div>
@@ -244,7 +246,7 @@ function RealEstateDashboard({
                                 data={statusChartData}
                                 title={resolveLanguageKey("unitStatusBreakdown") ?? "Unit status"}
                             />
-                            <RevenueChart {...revenueChartProps} />
+                            <RevenueChart series={revenueChartSeries} />
 
                             <PaymentAlerts
                                 overdueCount={
@@ -261,11 +263,9 @@ function RealEstateDashboard({
                         {selectedEdifice && (
                             <>
                                 <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-                                    {canReadDeliveryReadiness && DeliveryReadinessCard && (
-                                        <Suspense fallback={null}>
-                                            <DeliveryReadinessCard edificeId={selectedEdifice._id} />
-                                        </Suspense>
-                                    )}
+                                    {edificeCards.map((source) => (
+                                        <ContributedEdificeCard key={source.widget} source={source} edificeId={selectedEdifice._id} />
+                                    ))}
                                 </div>
 
                                 <EdificeDetailPanel

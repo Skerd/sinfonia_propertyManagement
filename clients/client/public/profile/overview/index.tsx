@@ -18,6 +18,7 @@ import {usePublicAuth} from "@propertyManagementModule/clients/client/public/sha
 import {usePublicFavorites} from "@propertyManagementModule/clients/client/public/shared/favorites/publicFavoritesContext.tsx";
 import type {ClientPortalOverviewFormResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/clientPortal/clientPortalOverview.form.response.type";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {notificationMessage, notificationTitle} from "@coreModule/helpers/moduleContributions/loadNotificationTypesContributions.ts";
 
 const LANGUAGE_PATH = "src/modules/propertyManagement/clients/client/public/profile/overview/index.tsx";
 
@@ -211,30 +212,32 @@ function OverviewPageInner({
                             <p className={PUBLIC_BODY}>—</p>
                         ) : overview && overview.latestNotifications.length > 0 ? (
                             <ul className="flex flex-col gap-5">
-                                {overview.latestNotifications.map((notification) => (
-                                    <li key={notification._id} className="flex gap-3">
-                                        <span
-                                            className={cn(
-                                                "mt-2 size-2 shrink-0 rounded-full",
-                                                notification.readOn ? "bg-pronix-border" : "bg-pronix-blue",
-                                            )}
-                                            aria-hidden
-                                        />
-                                        <div className="min-w-0 flex-1">
-                                            <div className="flex flex-wrap items-baseline justify-between gap-2">
-                                                <p className="font-aeonik-medium text-lg text-pronix-ink md:text-xl">
-                                                    {notification.code}
-                                                </p>
-                                                <p className="font-aeonik-light text-sm text-pronix-ink-muted">
-                                                    {relativeTime(notification.date, languageCode)}
-                                                </p>
+                                {overview.latestNotifications.map((notification) => {
+                                    // The code's title and message in the reader's language (D117); the stored text otherwise.
+                                    const body = notificationMessage(notification, languageCode) || notification.description;
+                                    return (
+                                        <li key={notification._id} className="flex gap-3">
+                                            <span
+                                                className={cn(
+                                                    "mt-2 size-2 shrink-0 rounded-full",
+                                                    notification.readOn ? "bg-pronix-border" : "bg-pronix-blue",
+                                                )}
+                                                aria-hidden
+                                            />
+                                            <div className="min-w-0 flex-1">
+                                                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                                                    <p className="font-aeonik-medium text-lg text-pronix-ink md:text-xl">
+                                                        {notificationTitle(notification.code, languageCode) ?? notification.code}
+                                                    </p>
+                                                    <p className="font-aeonik-light text-sm text-pronix-ink-muted">
+                                                        {relativeTime(notification.date, languageCode)}
+                                                    </p>
+                                                </div>
+                                                {body ? <p className={cn(PUBLIC_BODY, "mt-1")}>{body}</p> : null}
                                             </div>
-                                            {notification.description ? (
-                                                <p className={cn(PUBLIC_BODY, "mt-1")}>{notification.description}</p>
-                                            ) : null}
-                                        </div>
-                                    </li>
-                                ))}
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         ) : (
                             <p className={PUBLIC_BODY}>{resolveLanguageKey("notificationsEmpty")}</p>

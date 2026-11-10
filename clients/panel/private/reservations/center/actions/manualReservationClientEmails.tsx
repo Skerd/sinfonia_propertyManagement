@@ -31,8 +31,9 @@ function manualEmailVisibility(r: Reservation, timeZone: string): Record<ManualR
     if (deleted || cancelled || paid) {
         return base;
     }
-    base.send_confirmation = true;
     const diff = calendarDaysUntil(r.expirationDate, timeZone);
+    // Confirm only a reservation that still holds the unit, as the server requires (TD-B149).
+    base.send_confirmation = r.status === "active" && (diff === null || diff >= 0);
     if (diff === null) {
         return base;
     }

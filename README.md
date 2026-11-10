@@ -83,6 +83,11 @@ Complex real-estate workflows (floor plans, unit grids, payment plan editors, da
 - **Widgets** — dashboard KPIs for sales, construction, rentals
 - **Tenancy settings** — property-specific company configuration
 
+The module also owns one contribution kind (D119): `clients/panel/propertyManagementPanelContribution.ts(x)` in a
+module that depends on propertyManagement feeds its report screens without propertyManagement naming that module: the
+group dashboard's open snags, ERP export datasets, and edifice cards on the dashboard (`dashboardEdificeCard`: a widget
+key plus the models that show it). Read by `helpers/moduleContributions/loadPropertyManagementPanelContributions.ts`.
+
 ## Path alias
 
 ```ts

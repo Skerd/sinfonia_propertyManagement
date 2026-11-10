@@ -6,7 +6,9 @@ import {
   type ChartConfig,
 } from '@coreModule/components/ui/chart.tsx';
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import type {PeriodDatum} from "armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts";
+import {revenueByPeriodSeries} from "@propertyManagementModule/helpers/dashboard/revenueByPeriodSeries.ts";
 
 const MONTH_AXIS_FORMAT: Intl.DateTimeFormatOptions = {month: 'short', year: 'numeric'};
 
@@ -17,8 +19,6 @@ function formatMonth(monthStr: string): string {
   if (!Number.isFinite(year)) return monthStr;
   return formatDate(new Date(year, (month ?? 1) - 1, 1), {format: MONTH_AXIS_FORMAT});
 }
-
-type PeriodDatum = { month: string; count?: number; totalRevenue?: number };
 
 type AnalyticsChartProps = {
   salesByPeriod: PeriodDatum[];
@@ -78,20 +78,13 @@ type RevenueByPeriodChartProps = {
   noDataLabel?: string;
 };
 
-const REVENUE_CONFIG = {
-  total: { label: 'Revenue', color: 'var(--chart-1)' },
-} satisfies ChartConfig;
-
 /**
  * Revenue per month. Named for what it plots rather than `RevenueChart`,
  * which collided with the stacked portfolio-value chart of the same name -
  * the analytics page imported both and had to alias one at the call site.
  */
 export function RevenueByPeriodChart({ revenueByPeriod, noDataLabel }: RevenueByPeriodChartProps) {
-  const data = revenueByPeriod.map((d) => ({
-    name: formatMonth(d.month),
-    total: d.totalRevenue ?? 0,
-  }));
+  const {data, config, keys} = revenueByPeriodSeries(revenueByPeriod, formatMonth);
 
   if (data.length === 0) {
     return (
@@ -102,7 +95,7 @@ export function RevenueByPeriodChart({ revenueByPeriod, noDataLabel }: RevenueBy
   }
 
   return (
-    <ChartContainer config={REVENUE_CONFIG} className="aspect-auto h-[260px] w-full">
+    <ChartContainer config={config} className="aspect-auto h-[260px] w-full">
       <BarChart data={data}>
         <XAxis
           dataKey="name"
@@ -116,10 +109,12 @@ export function RevenueByPeriodChart({ revenueByPeriod, noDataLabel }: RevenueBy
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value: number) => formatCurrency(value, 'EUR', {compact: true})}
+          tickFormatter={(value: number) => formatNumber(value, {compact: true})}
         />
         <ChartTooltip cursor={{ fill: 'var(--muted)', fillOpacity: 0.6 }} content={<ChartTooltipContent />} />
-        <Bar dataKey="total" fill="var(--color-total)" radius={[4, 4, 0, 0]} />
+        {keys.map((key) => (
+          <Bar key={key} dataKey={key} fill={`var(--color-${key})`} radius={[4, 4, 0, 0]} />
+        ))}
       </BarChart>
     </ChartContainer>
   );

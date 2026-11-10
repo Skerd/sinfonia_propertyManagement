@@ -382,9 +382,11 @@ export default function RentalPaymentsTableSection({
                                         <TableCell>{personName(row.tenant)}</TableCell>
                                         <TableCell>{unitLabel(row.unit)}</TableCell>
                                         <TableCell>
-                                            <Badge variant={paymentStatusBadgeVariant(row.status)}>
-                                                {rk(`status.${row.status}`)}
-                                            </Badge>
+                                            {row.status ? (
+                                                <Badge variant={paymentStatusBadgeVariant(row.status)}>
+                                                    {rk(`status.${row.status}`)}
+                                                </Badge>
+                                            ) : "—"}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.dueDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">

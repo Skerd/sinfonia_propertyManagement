@@ -26,7 +26,8 @@
   "amortizationError": {
     "invalid_input": "Vérifiez les dates de début et de fin du plan, les dates des échéances (la dernière doit correspondre à la date de fin) et les montants.",
     "installment_too_small": "Cette échéance est inférieure à la part d'intérêts de sa période — augmentez le paiement, ajustez les dates d'échéance ou baissez le taux d'intérêt.",
-    "principal_residual": "Les échéances ne remboursent pas entièrement le montant financé. Augmentez les montants des échéances."
+    "principal_residual": "Les échéances ne remboursent pas entièrement le montant financé. Augmentez les montants des échéances.",
+    "installment_exceeds_owed": "Une échéance demande plus que ce qui reste dû. Réduisez les montants des échéances pour qu'ils correspondent au montant financé et à ses intérêts."
   },
   "errorTitle": "Impossible de charger l'unité",
   "errorDescription": "Veuillez réessayer.",

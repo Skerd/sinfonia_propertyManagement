@@ -26,7 +26,8 @@
   "amortizationError": {
     "invalid_input": "Prüfen Sie Planstart- und -enddatum, Ratentermine (letzter muss dem Enddatum entsprechen) und Beträge.",
     "installment_too_small": "Diese Rate ist kleiner als der Zinsanteil für ihren Zeitraum — erhöhen Sie die Zahlung, passen Sie Fälligkeitstermine an oder senken Sie den Zinssatz.",
-    "principal_residual": "Die Raten tilgen den finanzierten Betrag nicht vollständig. Erhöhen Sie die Ratenbeträge."
+    "principal_residual": "Die Raten tilgen den finanzierten Betrag nicht vollständig. Erhöhen Sie die Ratenbeträge.",
+    "installment_exceeds_owed": "Eine Rate verlangt mehr, als noch geschuldet ist. Senken Sie die Ratenbeträge, damit sie den finanzierten Betrag und seine Zinsen ergeben."
   },
   "errorTitle": "Einheit konnte nicht geladen werden",
   "errorDescription": "Bitte versuchen Sie es erneut.",

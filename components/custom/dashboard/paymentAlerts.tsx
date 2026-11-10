@@ -19,7 +19,7 @@ import {
   kpiPaymentAlertReservationItem,
   kpiPaymentAlertReservations,
 } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
-import {formatCurrency} from "@coreModule/helpers/general/numbers.ts";
+import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
 import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
@@ -142,7 +142,12 @@ function PaymentAlertsInner({
                           {unitLabel}
                         </span>
                         <span className="text-sm font-semibold text-foreground shrink-0 tabular-nums">
-                          {formatCurrency(alert.installment.amount, "EUR", {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                          {formatRevenueByCurrencyLines([{
+                            currencyId: alert.currency?._id ?? "",
+                            currencyName: alert.currency?.name,
+                            currencySymbol: alert.currency?.symbol,
+                            value: alert.installment.amount,
+                          }], locale)}
                         </span>
                       </div>
                       {clientLabel ? (

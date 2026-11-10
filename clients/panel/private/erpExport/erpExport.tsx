@@ -30,13 +30,14 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggregationAccess.ts";
-import {isModuleEnabled} from "@coreModule/helpers/modules/enabledModules.ts";
+import {getErpExportSource} from "@propertyManagementModule/helpers/moduleContributions/loadPropertyManagementPanelContributions.ts";
+import {useAnyModelRead} from "@propertyManagementModule/helpers/access/useAnyModelRead.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
 const DEFAULT_DATASETS: ErpExportDataset[] = ["sales"];
 const PM_ERP_DATASETS: ErpExportDataset[] = ["sales", "commissions", "paymentPlans", "rentalPayments", "unitCosts"];
-const PD_ERP_DATASETS: ErpExportDataset[] = ["boqItems", "costCommitments", "progressClaims", "permits"];
+const NO_ACCESS_MODELS: readonly string[] = [];
 
 function countRows(result: ErpExportResponse | null, dataset: ErpExportDataset): number {
     if (!result) return 0;
@@ -94,14 +95,17 @@ type ExportRun = {
     format: ErpExportFormat;
     body: ErpExportFormType;
     pm: ErpExportDataset[];
-    pd: ErpExportDataset[];
+    /** Datasets sent to the contributed endpoint (getErpExportSource). */
+    contributed: ErpExportDataset[];
 };
 
 /** Answers of one run, tagged with its count so a late answer from an older run is ignored. */
-type ExportParts = {count: number; pm?: Blob | ErpExportResponse; pd?: Blob | ErpExportResponse; failure?: unknown; done?: boolean};
+type ExportParts = {count: number; pm?: Blob | ErpExportResponse; contributed?: Blob | ErpExportResponse; failure?: unknown; done?: boolean};
 
 function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const languageCode = useSelector((state: RootState) => state.language.languageCode);
+    // Datasets another module serves from its own endpoint (propertyManagementPanelContribution, D119).
+    const contributedSource = getErpExportSource();
 
     const rk = (key: string, vars?: Record<string, string | number>) => {
         let text = String(resolveLanguageKey(key));
@@ -116,12 +120,12 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const datasetOptions = useMemo(
         () =>
             ERP_EXPORT_DATASET_VALUES
-                .filter((value) => !PD_ERP_DATASETS.includes(value) || isModuleEnabled("propertyDevelopment"))
+                .filter((value) => PM_ERP_DATASETS.includes(value) || !!contributedSource?.datasets.includes(value))
                 .map((value) => ({
                     value,
                     label: rk(`dataset.${value}`),
                 })),
-        [resolveLanguageKey],
+        [resolveLanguageKey, contributedSource],
     );
 
     const formatOptions = useMemo(
@@ -140,26 +144,29 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const [result, setResult] = useState<ErpExportResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    // One export run: propertyManagement's datasets and, when enabled, propertyDevelopment's, as two
+    // One export run: propertyManagement's datasets and, when a module contributes some, that module's, as two
     // requests whose answers are combined once both have settled.
-    const [exportRun, setExportRun] = useState<ExportRun>({count: 0, format: "json", body: {datasets: [], format: "json"}, pm: [], pd: []});
+    const [exportRun, setExportRun] = useState<ExportRun>({count: 0, format: "json", body: {datasets: [], format: "json"}, pm: [], contributed: []});
     const [parts, setParts] = useState<ExportParts>({count: 0});
     const responseType = exportRun.format === "csv" ? "blob" : undefined;
     const pmRequest = useMemo<HttpRequest>(() => ({method: "post", url: "/api/realEstate/erpExport", responseType}), [responseType]);
-    const pdRequest = useMemo<HttpRequest>(() => ({method: "post", url: "/api/propertyDevelopment/erpExport", responseType}), [responseType]);
+    const contributedRequest = useMemo<HttpRequest>(
+        () => ({method: "post", url: contributedSource?.url ?? "", responseType}),
+        [contributedSource, responseType],
+    );
     const pmPart = useHttpRequest<Blob | ErpExportResponse>(pmRequest, {...exportRun.body, datasets: exportRun.pm}, exportRun.pm.length ? exportRun.count : 0, true, {
         success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, pm: data} : current)),
         error: (e) => setParts((current) => (current.count === exportRun.count ? {...current, failure: e} : current)),
     });
-    const pdPart = useHttpRequest<Blob | ErpExportResponse>(pdRequest, {...exportRun.body, datasets: exportRun.pd}, exportRun.pd.length ? exportRun.count : 0, true, {
-        success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, pd: data} : current)),
+    const contributedPart = useHttpRequest<Blob | ErpExportResponse>(contributedRequest, {...exportRun.body, datasets: exportRun.contributed}, exportRun.contributed.length ? exportRun.count : 0, true, {
+        success: (data) => setParts((current) => (current.count === exportRun.count ? {...current, contributed: data} : current)),
         error: (e) => setParts((current) => (current.count === exportRun.count ? {...current, failure: e} : current)),
     });
     const settled = parts.count === exportRun.count && exportRun.count > 0 && (
         parts.failure !== undefined
-        || ((!exportRun.pm.length || parts.pm !== undefined) && (!exportRun.pd.length || parts.pd !== undefined))
+        || ((!exportRun.pm.length || parts.pm !== undefined) && (!exportRun.contributed.length || parts.contributed !== undefined))
     );
-    const loading = pmPart.loading || pdPart.loading || (exportRun.count > 0 && !parts.done);
+    const loading = pmPart.loading || contributedPart.loading || (exportRun.count > 0 && !parts.done);
 
     useEffect(() => {
         if (!settled || parts.done) return;
@@ -168,7 +175,7 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
             setError(handleError(parts.failure, {context: "ErpExport"})?.displayMessage ?? rk("exportFailed"));
             return;
         }
-        const answers = [parts.pm, parts.pd].filter((part): part is Blob | ErpExportResponse => part !== undefined);
+        const answers = [parts.pm, parts.contributed].filter((part): part is Blob | ErpExportResponse => part !== undefined);
         if (exportRun.format !== "csv") {
             setResult(Object.assign({exportedAt: new Date().toISOString()}, ...answers.filter((part): part is ErpExportResponse => !(part instanceof Blob))));
             return;
@@ -195,19 +202,13 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
     const paymentPlansAccess = useAccess("paymentplans");
     const rentalPaymentsAccess = useAccess("rentalpayments");
     const unitCostsAccess = useAccess("unitcosts");
-    const boqItemsAccess = useAccess("boqitems");
-    const costCommitmentsAccess = useAccess("costcommitments");
-    const progressClaimsAccess = useAccess("progressclaims");
-    const permitsAccess = useAccess("permits");
-    const canRead = hasAnyAccessRead([
+    const contributedRead = useAnyModelRead(contributedSource?.accessModels ?? NO_ACCESS_MODELS);
+    const canRead = contributedRead || hasAnyAccessRead([
         salesAccess,
         commissionsAccess,
         paymentPlansAccess,
         rentalPaymentsAccess,
         unitCostsAccess,
-        ...(isModuleEnabled("propertyDevelopment")
-            ? [boqItemsAccess, costCommitmentsAccess, progressClaimsAccess, permitsAccess]
-            : []),
     ]);
 
     const selectedDatasetSet = useMemo(() => new Set(datasets), [datasets]);
@@ -234,13 +235,11 @@ function ErpExportPage({resolveLanguageKey}: WithLanguageType) {
         if (projectId) body.projectId = projectId;
 
         const pmDatasets = datasets.filter((d) => PM_ERP_DATASETS.includes(d));
-        const pdDatasets = isModuleEnabled("propertyDevelopment")
-            ? datasets.filter((d) => PD_ERP_DATASETS.includes(d))
-            : [];
+        const contributedDatasets = datasets.filter((d) => !!contributedSource?.datasets.includes(d));
 
         setResult(null);
         setParts({count: exportRun.count + 1});
-        setExportRun({count: exportRun.count + 1, format, body, pm: pmDatasets, pd: pdDatasets});
+        setExportRun({count: exportRun.count + 1, format, body, pm: pmDatasets, contributed: contributedDatasets});
     }
 
     if (accessHydrated === false) return <Loader />;

@@ -16,7 +16,7 @@ import type { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx
 import {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {roundToCurrency} from "armonia/src/modules/core/helpers/money.ts";
-import {allocatePlanInterest} from "armonia/src/modules/propertyManagement/helpers/paymentPlanInterest.ts";
+import {allocatePlanInterest, type PlanScheduleErrorCode} from "armonia/src/modules/propertyManagement/helpers/paymentPlanInterest.ts";
 import {Table} from "@coreModule/components/ui/table/table.tsx";
 import {salePricingPreview} from "@propertyManagementModule/components/custom/sale/salePricingPreview.ts";
 import {round2} from "@propertyManagementModule/components/custom/sale/localDiscountField.tsx";
@@ -24,9 +24,9 @@ import {round2} from "@propertyManagementModule/components/custom/sale/localDisc
 const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
 const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
 
-/** Rounds once to cents (D35); empty form fields (NaN) count as 0. */
-function roundMoney(value: number): number {
-    return Number.isFinite(value) ? roundToCurrency(value) : 0;
+/** Rounds once to the sale currency's decimals (D35); empty form fields (NaN) count as 0. */
+function roundMoney(value: number, decimals?: number): number {
+    return Number.isFinite(value) ? roundToCurrency(value, decimals) : 0;
 }
 
 type AmortizationRowOutput = {
@@ -43,7 +43,7 @@ type AmortizationRowOutput = {
 
 type AmortizationResult =
     | { ok: true; installments: AmortizationRowOutput[]; totalContractInterest: number; planDays: number }
-    | { ok: false; code: "invalid_input" | "installment_too_small" | "principal_residual" };
+    | { ok: false; code: "invalid_input" | Exclude<PlanScheduleErrorCode, "invalid_schedule"> };
 
 function dayUtcMs(isoDate: string): number {
     const parts = isoDate.trim().split("-").map((x) => Number.parseInt(x, 10));
@@ -59,6 +59,7 @@ function computeSimpleAmortization(params: {
     planStartDate: string;
     planEndDate: string;
     rows: Array<{ installmentNumber: number; dueDate: string; amount: number; notes?: string }>;
+    decimals?: number;
     interestRatePerInstallment?: number;
     gracePeriodDays?: number;
     lateFeePercentage?: number;
@@ -150,7 +151,8 @@ export default function PaymentPlanSaleReceiptSection({
     const [amortErrorCode, setAmortErrorCode] = useState<string | null>(null);
     const [scheduleRows, setScheduleRows] = useState<AmortizationRowOutput[]>([]);
     const [amortMeta, setAmortMeta] = useState<{ totalContractInterest: number; planDays: number } | null>(null);
-    const financedAmount = roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0));
+    const decimals = currency?.decimalPlaces;
+    const financedAmount = roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0), decimals);
     const isFinancedNegative = financedAmount < 0;
 
     const installmentsWatch = useWatch({control: form.control, name: "installments"});
@@ -252,7 +254,7 @@ export default function PaymentPlanSaleReceiptSection({
         const rows = (installments).map((row, idx: number) => ({
             installmentNumber: typeof row.installmentNumber === "number" ? row.installmentNumber : idx + 1,
             dueDate: String(row.dueDate || ""),
-            amount: roundMoney(Number(row.amount) || 0),
+            amount: roundMoney(Number(row.amount) || 0, decimals),
             notes: row.notes ? String(row.notes) : undefined,
         }));
 
@@ -269,6 +271,7 @@ export default function PaymentPlanSaleReceiptSection({
             planStartDate: String(startDate).trim(),
             planEndDate: String(endDate).trim(),
             rows,
+            decimals,
             interestRatePerInstallment: ratePct,
             gracePeriodDays: grace,
             lateFeePercentage: latePct,
@@ -290,7 +293,7 @@ export default function PaymentPlanSaleReceiptSection({
             // form.setValue("installments", result.installments);
         }
 
-    }, [financedAmount, isFinancedNegative, interestRate, gracePeriodDays, lateFeePercentage, startDate, endDate, installments, installmentsWatch]);
+    }, [financedAmount, isFinancedNegative, interestRate, gracePeriodDays, lateFeePercentage, startDate, endDate, installments, installmentsWatch, decimals]);
 
     useEffect(() => {
         setDisableSubmit(
@@ -343,7 +346,7 @@ export default function PaymentPlanSaleReceiptSection({
     const scheduleOpeningAfter = useMemo(() => {
         const n = Array.isArray(installments) ? installments.length : 0;
         if (n === 0 || isFinancedNegative) return null;
-        const financed = roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0));
+        const financed = roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0), decimals);
         if (!Number.isFinite(financed) || financed <= 0) return null;
 
         const openingByForm: (number | null)[] = new Array(n).fill(null);
@@ -358,13 +361,13 @@ export default function PaymentPlanSaleReceiptSection({
         let bal = financed;
         for (const fi of sorted) {
             openingByForm[fi] = bal;
-            const amount = roundMoney(Number(installments[fi]?.amount) || 0);
+            const amount = roundMoney(Number(installments[fi]?.amount) || 0, decimals);
             if (amount > 0) {
                 if (!amortErrorCode && scheduleRows[fi]) {
                     const p = Math.max(0, scheduleRows[fi]!.principalAmount ?? 0);
-                    bal = Math.max(0, roundMoney(bal - p));
+                    bal = Math.max(0, roundMoney(bal - p, decimals));
                 } else {
-                    bal = Math.max(0, roundMoney(bal - amount));
+                    bal = Math.max(0, roundMoney(bal - amount, decimals));
                 }
             }
             afterByForm[fi] = bal;
@@ -377,6 +380,7 @@ export default function PaymentPlanSaleReceiptSection({
         isFinancedNegative,
         amortErrorCode,
         scheduleRows,
+        decimals,
     ]);
 
     const getUnitName = (u: Unit | null) => {
@@ -460,8 +464,9 @@ export default function PaymentPlanSaleReceiptSection({
                                 <span className="text-muted-foreground">{resolveLanguageKey("totalObligationLabel")}</span>
                                 <span className="font-semibold">
                                     {formatNumber(roundMoney(
-                                        roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0)) +
+                                        roundMoney(Number(finalPrice ?? 0) - Number(downPayment ?? 0), decimals) +
                                             amortMeta.totalContractInterest,
+                                        decimals,
                                     ))}{" "}
                                     {currency?.name || currency?.symbol || unit?.priceCurrency?.name || unit?.priceCurrency?.symbol}
                                 </span>
@@ -500,7 +505,7 @@ export default function PaymentPlanSaleReceiptSection({
                                             const installmentNumber =
                                                 typeof row.installmentNumber === "number" ? row.installmentNumber : i + 1;
                                             const dueDate = String(row.dueDate || "");
-                                            const amount = roundMoney(Number(row.amount) || 0);
+                                            const amount = roundMoney(Number(row.amount) || 0, decimals);
                                             const computed =
                                                 !amortErrorCode && scheduleRows[i] !== undefined ? scheduleRows[i] : null;
                                             const principalAmt = computed?.principalAmount;

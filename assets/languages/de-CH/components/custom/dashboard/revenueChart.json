@@ -4,14 +4,10 @@
   "revenue": "Umsatz",
   "inventory": "Bestand",
   "expenses": "Ausgaben",
-  "collected": "Eingezogen",
   "pendingSales": "Ausstehend (Verkäufe)",
-  "pendingReservations": "Ausstehend (Reservationen)",
-  "availableValue": "Verfügbarer Wert",
-  "blockedValue": "Gesperrter Wert",
-  "reservedValue": "Reservierter Wert",
   "soldValue": "Verkaufter Wert",
   "totalExpenses": "Ausgaben gesamt",
   "pending": "Ausstehend",
-  "unsold": "Unverkauft"
+  "unsold": "Unverkauft",
+  "currency": "Währung"
 }

@@ -26,7 +26,8 @@
   "amortizationError": {
     "invalid_input": "Kontrolloni datat e fillimit dhe përfundimit të planit, datat e kësteve (e fundit duhet të përputhet me datën e përfundimit) dhe shumat.",
     "installment_too_small": "Ky këst është më i vogël se pjesa e interesit për periudhën përkatëse—rritni pagesën, përshtatni datat e afatit ose ulni normën e interesit.",
-    "principal_residual": "Këstet nuk e shlyejnë plotësisht shumën e financuar. Rritni shumat e kësteve."
+    "principal_residual": "Këstet nuk e shlyejnë plotësisht shumën e financuar. Rritni shumat e kësteve.",
+    "installment_exceeds_owed": "Një këst kërkon më shumë se sa mbetet për t'u paguar. Ulni shumat e kësteve që të përputhen me shumën e financuar dhe interesin e saj."
   },
   "errorTitle": "Njësia nuk mund të ngarkohet",
   "errorDescription": "Ju lutemi provoni përsëri.",

@@ -13,7 +13,7 @@
   "totalUnits": "Einheiten total",
   "unitsSold": "Verkauft",
   "collected": "Eingezogen",
-  "avgPricePerSqm": "Ø €/m²",
+  "avgSalePrice": "Ø Verkaufspreis",
   "unitStatusBreakdown": "Einheitenstatus",
   "failTitle": "Fehler",
   "failDescription": "Dashboard konnte nicht geladen werden. Klicken zum erneuten Versuch.",
@@ -34,7 +34,7 @@
         "title": "Aufbau",
         "items": [
           "Gebäudegalerie oben — die Auswahl fokussiert alle KPIs und die Einheitenliste.",
-          "KPI-Zeile: Einheiten total, verkauft, kassiert, Durchschnittspreis/m², plus kassierte / offene / überfällige Miete und aktive Mietverträge, wenn Mietdaten existieren.",
+          "KPI-Zeile: Einheiten total, verkauft, kassiert, durchschnittlicher Verkaufspreis, plus kassierte / offene / überfällige Miete und aktive Mietverträge, wenn Mietdaten existieren.",
           "Periode (7 Tage, 30 Tage, 3 Monate, 12 Monate) ändert Einnahmenfenster, nicht den Bestand selbst.",
           "Charts: Statusmix und Umsatz in der Periode.",
           "Tabelle/Karten unten sind dieselbe Einheiten-Ressource, auf das Gebäude eingeschränkt.",
@@ -46,7 +46,7 @@
         "items": [
           "Total / verkauft / reserviert / vermietet sind Zählungen der Einheiten dieses Gebäudes nach Status.",
           "Kassiert kommt aus Belegen und Zahlungsplan-Aktivität in der Periode.",
-          "Durchschnitt €/m² nutzt Preise und Flächen; es preist nichts um.",
+          "Der durchschnittliche Verkaufspreis ist die Summe der Verkaufspreise der Periode geteilt durch die Anzahl Verkäufe, ein Wert pro Währung; es preist nichts um.",
           "Miet-KPIs summieren Mietzahlungszeilen der Mietverträge dieses Gebäudes.",
           "Aktive Mietverträge zählen noch laufende Verträge auf diesen Einheiten."
         ]
