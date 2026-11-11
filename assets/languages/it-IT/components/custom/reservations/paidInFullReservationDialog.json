@@ -6,6 +6,7 @@
   "confirmPaid": "Contrassegna come pagata",
   "paidDate": "Pagata il",
   "paidDateHelp": "Il giorno in cui è stato ricevuto l’acconto. Oggi, a meno che non indichi un giorno precedente; un giorno futuro non è consentito.",
+  "paidDateBeforeReservation": "Il giorno di pagamento non può precedere il giorno della prenotazione.",
   "axios": {
     "start": {
       "title": "Aggiornamento prenotazione…",

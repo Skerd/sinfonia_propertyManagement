@@ -6,6 +6,7 @@
   "confirmPaid": "Shëno si të paguar",
   "paidDate": "Paguar më",
   "paidDateHelp": "Dita kur u mor depozita. Sot, përveç nëse jepni një ditë më të hershme; një ditë në të ardhmen nuk lejohet.",
+  "paidDateBeforeReservation": "Dita e pagesës nuk mund të jetë para ditës së rezervimit.",
   "axios": {
     "start": {
       "title": "Përditësimi i rezervimit…",

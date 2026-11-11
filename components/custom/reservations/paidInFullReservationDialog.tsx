@@ -76,6 +76,7 @@ function PaidInFullReservationDialog({
                         id="reservationPaidDate"
                         type="date"
                         value={paidDate}
+                        min={reservation.reservationDate}
                         max={companyToday(timeZone)}
                         onChange={(e) => {
                             setPaidDate(e.target.value);
@@ -110,6 +111,11 @@ function PaidInFullReservationDialog({
                             ).safeParse(form);
                             if (!parsed.success) {
                                 setDateError(parsed.error.issues[0]?.message ?? null);
+                                return;
+                            }
+                            // Same rule as the server (TD-B183): money is not received before the unit is reserved.
+                            if (form.paidDate && form.paidDate < reservation.reservationDate) {
+                                setDateError(String(resolveLanguageKey("paidDateBeforeReservation")));
                                 return;
                             }
                             onFilterChange(form);

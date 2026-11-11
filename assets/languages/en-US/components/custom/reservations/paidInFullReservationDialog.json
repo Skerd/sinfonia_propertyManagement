@@ -6,6 +6,7 @@
   "confirmPaid": "Mark as Paid",
   "paidDate": "Paid on",
   "paidDateHelp": "The day the deposit was received. Today unless you give an earlier day; a future day is not allowed.",
+  "paidDateBeforeReservation": "The paid day cannot be before the reservation day.",
   "axios": {
     "start": {
       "title": "Updating reservation…",

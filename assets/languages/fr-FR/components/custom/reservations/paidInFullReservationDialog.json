@@ -6,6 +6,7 @@
   "confirmPaid": "Marquer comme payée",
   "paidDate": "Payée le",
   "paidDateHelp": "Le jour où l’acompte a été reçu. Aujourd’hui, sauf si vous indiquez un jour antérieur ; un jour futur n’est pas autorisé.",
+  "paidDateBeforeReservation": "Le jour de paiement ne peut pas précéder le jour de la réservation.",
   "axios": {
     "start": {
       "title": "Mise à jour de la réservation…",
