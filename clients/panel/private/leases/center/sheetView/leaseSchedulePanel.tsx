@@ -88,7 +88,9 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
         if (lease._id) setFetchCount((count) => count + 1);
     }, [lease._id, localNonce]);
     const paymentsBody = useMemo(
-        () => ({offset: 0, limit: 600, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
+        // The list API pages at most 200 rows (a 600 limit was refused, so the schedule was always empty): 200 months
+        // cover leases up to 16 years; longer leases show their first 200 months (TD-F82).
+        () => ({offset: 0, limit: 200, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
         [lease._id],
     );
     const paymentsRequest = useHttpRequest<TableResponse<RentalPayment>>(LEASE_PAYMENTS_REQUEST, paymentsBody, fetchCount);

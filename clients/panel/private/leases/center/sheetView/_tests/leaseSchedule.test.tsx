@@ -31,7 +31,7 @@ describe("the lease rent schedule as a sheet token (#LeaseSchedule)", () => {
         render(<LeaseSchedulePanel lease={lease} resolveLanguageKey={(key: string) => key} />);
 
         const sent = requests.filter((request) => request.url === "/api/realEstate/rentalPayment" && request.count > 0).at(-1);
-        expect(sent?.body).toMatchObject({lease: "lease-1", sortBy: "dueDate", sortOrder: "asc"});
+        expect(sent?.body).toMatchObject({lease: "lease-1", sortBy: "dueDate", sortOrder: "asc", limit: 200});
     });
 
     it("opens the record payment dialog when the sheet menu asks for it, and reports the request handled", () => {
