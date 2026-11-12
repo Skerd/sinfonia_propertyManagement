@@ -10,6 +10,7 @@ import type {
     DashboardEdificeCardSource,
     ErpExportSource,
     GroupDashboardOpenSnagsSource,
+    ProjectSheetSectionSource,
     PropertyManagementPanelContribution,
 } from "@propertyManagementModule/helpers/types/propertyManagementPanelContribution.types.ts";
 
@@ -35,13 +36,22 @@ function isErpExportSource(value: unknown): boolean {
             && isFunction(value.columnLabel));
 }
 
+function isWidgetSource(value: unknown): boolean {
+    return isPlainObject(value) && isString(value.widget) && isStringList(value.accessModels);
+}
+
 function isEdificeCardSource(value: unknown): boolean {
-    return value === undefined || (isPlainObject(value) && isString(value.widget) && isStringList(value.accessModels));
+    return value === undefined || isWidgetSource(value);
+}
+
+function isProjectSheetSections(value: unknown): boolean {
+    return value === undefined || (Array.isArray(value) && value.every(isWidgetSource));
 }
 
 /**
  * Reader over `propertyManagementPanelContribution` files. The group dashboard and the ERP export take one source,
- * the first in contribution order; the dashboard shows every contributed edifice card. Today only propertyDevelopment
+ * the first in contribution order; the dashboard shows every contributed edifice card and the project sheet every
+ * contributed section. Today only propertyDevelopment
  * contributes.
  */
 export function createPropertyManagementPanelContributions(glob: ContributionGlob) {
@@ -50,7 +60,8 @@ export function createPropertyManagementPanelContributions(glob: ContributionGlo
         glob,
         isValid: (entry) => isOpenSnagsSource(entry.groupDashboardOpenSnags)
             && isErpExportSource(entry.erpExport)
-            && isEdificeCardSource(entry.dashboardEdificeCard),
+            && isEdificeCardSource(entry.dashboardEdificeCard)
+            && isProjectSheetSections(entry.projectSheetSections),
     });
 
     const getGroupDashboardOpenSnagsSource = (): GroupDashboardOpenSnagsSource | undefined =>
@@ -62,7 +73,10 @@ export function createPropertyManagementPanelContributions(glob: ContributionGlo
     const getDashboardEdificeCardSources = (): DashboardEdificeCardSource[] =>
         list().flatMap((entry) => (entry.dashboardEdificeCard ? [entry.dashboardEdificeCard] : []));
 
-    return {list, getGroupDashboardOpenSnagsSource, getErpExportSource, getDashboardEdificeCardSources};
+    const getProjectSheetSectionSources = (): ProjectSheetSectionSource[] =>
+        list().flatMap((entry) => entry.projectSheetSections ?? []);
+
+    return {list, getGroupDashboardOpenSnagsSource, getErpExportSource, getDashboardEdificeCardSources, getProjectSheetSectionSources};
 }
 
 const contributions = createPropertyManagementPanelContributions(
@@ -87,4 +101,9 @@ export function getErpExportSource(): ErpExportSource | undefined {
 /** The dashboard's contributed edifice cards, in contribution order, from the modules on for the company. */
 export function getDashboardEdificeCardSources(): DashboardEdificeCardSource[] {
     return contributions.getDashboardEdificeCardSources();
+}
+
+/** The project sheet's contributed sections, in contribution order, from the modules on for the company. */
+export function getProjectSheetSectionSources(): ProjectSheetSectionSource[] {
+    return contributions.getProjectSheetSectionSources();
 }

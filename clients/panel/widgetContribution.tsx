@@ -32,6 +32,7 @@ import SaleCard from "@propertyManagementModule/clients/panel/private/sales/cent
 import PaymentPlanCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx";
 import PaymentPlanInstallments from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanInstallments.tsx";
 import LeaseSchedulePanel from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSchedulePanel.tsx";
+import ProjectContributedSections from "@propertyManagementModule/components/custom/projects/projectContributedSections.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import HandoverPackageCard from "@propertyManagementModule/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx";
 import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
@@ -293,6 +294,12 @@ const propertyManagementWidgetContribution: WidgetContribution = {
                 lease: data as Lease,
                 resolveLanguageKey: ctx.resolveLanguageKey,
             });
+        },
+        /** Sections other modules contribute to the project sheet, placed by the view above Lifecycle (D151). */
+        "#ProjectContributedSections": ({node, ctx, index}) => {
+            const {data} = ctx;
+            if (!data || typeof data._id !== "string" || !sheetFieldVisible(node, ctx)) return null;
+            return createElement(ProjectContributedSections, {key: index, projectId: data._id});
         },
         "#SheetModificationLineItems": ({node, binding, ctx, index, Component}) => {
             if (!sheetFieldVisible(node, ctx)) return null;

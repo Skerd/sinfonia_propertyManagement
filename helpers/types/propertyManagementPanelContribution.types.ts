@@ -49,10 +49,21 @@ export type DashboardEdificeCardSource = {
 };
 
 /**
+ * A section on the propertyManagement project sheet, placed before Lifecycle and rendered as
+ * `<Widget projectId={...} />`; the widget draws its own titled groups and nothing when it has nothing to show.
+ */
+export type ProjectSheetSectionSource = {
+    /** Widget registry key of the section, e.g. `#ProjectDevelopmentHub`. */
+    widget: string;
+    /** Models whose read grant shows the section; any one is enough. */
+    accessModels: readonly string[];
+};
+
+/**
  * Optional attach file: `src/modules/<pkg>/clients/panel/propertyManagementPanelContribution.ts(x)`.
  *
  * A propertyManagement-owned contribution kind (D119): a module that depends on propertyManagement feeds data into
- * propertyManagement's own report screens (dashboard, group dashboard, ERP export) without propertyManagement naming that module,
+ * propertyManagement's own report screens (dashboard, group dashboard, ERP export) and its project sheet without propertyManagement naming that module,
  * its endpoints or its models (CORE-02). Discovered by `loadPropertyManagementPanelContributions.ts`, filtered by the
  * enabled and the company's modules, so a missing module contributes nothing.
  */
@@ -60,4 +71,5 @@ export type PropertyManagementPanelContribution = ContributionBase & {
     groupDashboardOpenSnags?: GroupDashboardOpenSnagsSource;
     erpExport?: ErpExportSource;
     dashboardEdificeCard?: DashboardEdificeCardSource;
+    projectSheetSections?: readonly ProjectSheetSectionSource[];
 };

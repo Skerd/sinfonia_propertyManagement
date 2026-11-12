@@ -36,11 +36,23 @@ describe("createPropertyManagementPanelContributions", () => {
         expect(getDashboardEdificeCardSources()).toEqual([card("#A"), card("#B")]);
     });
 
+    it("lists every contributed project sheet section in contribution order", () => {
+        const section = (widget: string) => ({widget, accessModels: ["budgets"]});
+        const {getProjectSheetSectionSources} = createPropertyManagementPanelContributions({
+            [path("b")]: {default: {id: "b", order: 20, projectSheetSections: [section("#B1"), section("#B2")]}},
+            [path("a")]: {default: {id: "a", order: 10, projectSheetSections: [section("#A")]}},
+            [path("c")]: {default: {id: "c", order: 30, erpExport: erp}},
+        });
+        expect(getProjectSheetSectionSources()).toEqual([section("#A"), section("#B1"), section("#B2")]);
+    });
+
     it("has no source when nothing contributes", () => {
-        const {getGroupDashboardOpenSnagsSource, getErpExportSource, getDashboardEdificeCardSources} = createPropertyManagementPanelContributions({});
+        const {getGroupDashboardOpenSnagsSource, getErpExportSource, getDashboardEdificeCardSources, getProjectSheetSectionSources} =
+            createPropertyManagementPanelContributions({});
         expect(getGroupDashboardOpenSnagsSource()).toBeUndefined();
         expect(getErpExportSource()).toBeUndefined();
         expect(getDashboardEdificeCardSources()).toEqual([]);
+        expect(getProjectSheetSectionSources()).toEqual([]);
     });
 
     it("rejects a malformed source", () => {
@@ -56,6 +68,10 @@ describe("createPropertyManagementPanelContributions", () => {
             [path("bad")]: {default: {id: "bad", dashboardEdificeCard: {widget: 1, accessModels: []}}},
         });
         expect(() => cardList()).toThrow(`Invalid default export in ${path("bad")}`);
+        const {list: sectionList} = createPropertyManagementPanelContributions({
+            [path("bad")]: {default: {id: "bad", projectSheetSections: {widget: "#A", accessModels: []}}},
+        });
+        expect(() => sectionList()).toThrow(`Invalid default export in ${path("bad")}`);
     });
 });
 
