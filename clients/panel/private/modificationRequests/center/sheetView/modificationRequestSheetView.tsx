@@ -4,6 +4,8 @@ import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLan
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import ModificationRequestRowMenuExtras, {
     modificationRequestShouldHideEdit,
 } from "@propertyManagementModule/clients/panel/private/modificationRequests/center/actions/modificationRequestRowMenuExtras.tsx";
@@ -79,6 +81,7 @@ function ModificationRequestSheetView({
     if (!entityId) return null;
 
     const deleteRestoreConfirmLabel = read?.name && sheetData?.name ? sheetData.name : undefined;
+    const asRequest = sheetData as ModificationRequest;
 
     return (
         <>
@@ -93,6 +96,22 @@ function ModificationRequestSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by its own title, the code as a badge and the state in tone (UX-01, UX-02, D151).
+                headerTitle={
+                    <SheetNameTitle
+                        name={asRequest.title ?? ""}
+                        code={asRequest.name}
+                        typeLabel={String(resolveLanguageKey("modificationRequest"))}
+                    />
+                }
+                headerDescription={
+                    <StatusBadge
+                        tableConfigKey="modificationrequests"
+                        field="status"
+                        value={asRequest.status}
+                        label={String(resolveLanguageKey(`statuses.${asRequest.status}`))}
+                    />
+                }
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

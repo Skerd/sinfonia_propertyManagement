@@ -1,11 +1,14 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconBuilding, IconCalendar, IconCashBanknote, IconReceipt, IconTag, IconTool, IconUser} from "@tabler/icons-react";
+import {IconCalendar, IconCashBanknote, IconDoor, IconReceipt, IconUser} from "@tabler/icons-react";
 import type {UnitCost} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
-import UnitCostSheetView from "@propertyManagementModule/clients/panel/private/unitCosts/center/sheetView/unitCostSheetView.tsx";
+import UnitCostSheetView, {
+    UnitCostStatusBadges,
+    unitCostTitle,
+} from "@propertyManagementModule/clients/panel/private/unitCosts/center/sheetView/unitCostSheetView.tsx";
 import {buildUnitCostEditPath} from "@propertyManagementModule/clients/panel/private/unitCosts/unitCostEditPath.ts";
 import UnitCostInvoicePdfActionMenuItem from "@propertyManagementModule/components/custom/unitCosts/unitCostInvoicePdfActionMenuItem.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -69,54 +72,55 @@ function UnitCostCard({
                 unitName: resolvedUnitName,
             })}
         >
-            {({entity}) => (
-                <>
-                    <EntityCard.Header
-                        titlePath="name"
-                        title={
-                            <span className="flex items-center gap-1 truncate">
-                                {entity.name}
-                                {entity.invoiceNumber ? (
-                                    <span className="shrink-0 text-xs font-normal text-muted-foreground">
-                                        #{entity.invoiceNumber}
-                                    </span>
-                                ) : null}
-                                <CopyTooltip text={entity.name} />
-                            </span>
-                        }
-                        icon={<IconReceipt className="h-5 w-5 text-muted-foreground" />}
-                    >
-                        <UnitCostInvoicePdfActionMenuItem entity={entity as Record<string, unknown>} />
-                    </EntityCard.Header>
-                    <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconTag}
-                            label={resolveLanguageKey("verificationStatus")}
-                            tooltip={resolveLanguageKey("verificationStatus")}
-                            path="verificationStatus"
-                            type="enum"
-                            languageKeyCategory="unitCostVerification"
-                            value={entity.verificationStatus || "pending_verification"}
-                        />
-                        <EntityCardRow
-                            icon={IconCashBanknote}
-                            label={resolveLanguageKey("paymentStatus")}
-                            tooltip={resolveLanguageKey("paymentStatus")}
-                            path="paymentStatus"
-                            type="enum"
-                            languageKeyCategory="unitCostPayment"
-                            value={entity.paymentStatus || "unpaid"}
-                        />
-                        {!small && (
-                            <>
+            {({entity}) => {
+                const title = unitCostTitle(entity);
+                const unitName = entity.unit?.name || (entity.unit?.unitNumber != null ? String(entity.unit.unitNumber) : "");
+                return (
+                    <>
+                        {/* Named by its vendor (else tag, else unit), the code beside it, both states as badges (UX-01, UX-02, D151). */}
+                        <EntityCard.Header
+                            titlePath={["vendorName", "tag", "unit"]}
+                            title={
+                                <span className="flex items-center gap-1 truncate">
+                                    {title || entity.name}
+                                    {title ? null : <CopyTooltip text={entity.name} />}
+                                </span>
+                            }
+                            subtitlePath="name"
+                            subtitle={title ? entity.name : undefined}
+                            icon={<IconReceipt className="h-5 w-5 text-muted-foreground" />}
+                            badges={<UnitCostStatusBadges cost={entity} resolveLanguageKey={resolveLanguageKey} />}
+                        >
+                            <UnitCostInvoicePdfActionMenuItem entity={entity as Record<string, unknown>} />
+                        </EntityCard.Header>
+                        {/* Where → when → how much → who bought it (UX-02). */}
+                        <EntityCard.Body>
+                            {unitName && unitName !== title ? (
                                 <EntityCardRow
-                                    icon={IconCalendar}
-                                    label={resolveLanguageKey("purchaseDate")}
-                                    tooltip={resolveLanguageKey("purchaseDate")}
-                                    path="purchaseDate"
-                                    type="date"
-                                    value={entity.purchaseDate}
+                                    icon={IconDoor}
+                                    label={resolveLanguageKey("unit")}
+                                    tooltip={resolveLanguageKey("unit")}
+                                    path="unit"
+                                    value={unitName}
                                 />
+                            ) : null}
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("purchaseDate")}
+                                tooltip={resolveLanguageKey("purchaseDate")}
+                                path="purchaseDate"
+                                type="date"
+                                value={entity.purchaseDate}
+                            />
+                            <EntityCardRow
+                                icon={IconCashBanknote}
+                                label={resolveLanguageKey("documentSubtotal")}
+                                tooltip={resolveLanguageKey("documentSubtotal")}
+                                path="expenditureItems"
+                                type="currency"
+                                value={{amount: entity.documentSubtotal, currency: entity.currency}}
+                            />
+                            {!small && (
                                 <EntityCardRow
                                     icon={IconUser}
                                     label={resolveLanguageKey("purchasePerson")}
@@ -125,43 +129,11 @@ function UnitCostCard({
                                     type="user"
                                     value={entity.purchasePerson}
                                 />
-                                <EntityCardRow
-                                    icon={IconBuilding}
-                                    label={resolveLanguageKey("vendorName")}
-                                    tooltip={resolveLanguageKey("vendorName")}
-                                    path="vendorName"
-                                    value={entity.vendorName}
-                                />
-                                <EntityCardRow
-                                    icon={IconTool}
-                                    label={resolveLanguageKey("relatedModificationRequest")}
-                                    tooltip={resolveLanguageKey("relatedModificationRequest")}
-                                    path="relatedModificationRequest.name"
-                                    value={entity.relatedModificationRequest?.name}
-                                />
-                                <EntityCardRow
-                                    icon={IconCashBanknote}
-                                    label={resolveLanguageKey("documentSubtotal")}
-                                    tooltip={resolveLanguageKey("documentSubtotal")}
-                                    path="expenditureItems"
-                                    type="currency"
-                                    value={{amount: entity.documentSubtotal, currency: entity.currency}}
-                                />
-                                {entity.budgetedAmount != null && (
-                                    <EntityCardRow
-                                        icon={IconCashBanknote}
-                                        label={resolveLanguageKey("budgetedAmount")}
-                                        tooltip={resolveLanguageKey("budgetedAmount")}
-                                        path="budgetedAmount"
-                                        type="currency"
-                                        value={{amount: entity.budgetedAmount, currency: entity.currency}}
-                                    />
-                                )}
-                            </>
-                        )}
-                    </EntityCard.Body>
-                </>
-            )}
+                            )}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

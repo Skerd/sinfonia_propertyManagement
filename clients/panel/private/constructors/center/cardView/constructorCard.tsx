@@ -1,7 +1,7 @@
 import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconBuildingCommunity, IconMail, IconPhone} from "@tabler/icons-react";
+import {IconMail, IconPhone} from "@tabler/icons-react";
 import {Constructor} from "armonia/src/modules/propertyManagement/api/realEstate/private/constructor/constructor.dto.ts";
 import ConstructorSheetView from "@propertyManagementModule/clients/panel/private/constructors/center/sheetView/constructorSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -67,15 +67,6 @@ function ConstructorCard({
                             icon={<DisplayValue path="logo" type="avatar" value={entity.logo} />}
                         />
                         <EntityCard.Body>
-                            <EntityCardRow
-                                icon={IconBuildingCommunity}
-                                label={resolveLanguageKey("edifices")}
-                                tooltip={resolveLanguageKey("edifices")}
-                                path="edifices"
-                                type="number"
-                                show={true}
-                                value={entity.edifices?.length ?? 0}
-                            />
                             {entity.phoneNumber ? (
                                 <EntityCardRow
                                     icon={IconPhone}

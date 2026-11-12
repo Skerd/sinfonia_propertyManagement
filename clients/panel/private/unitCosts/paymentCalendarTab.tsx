@@ -12,6 +12,7 @@ import { ScrollArea } from "@coreModule/components/ui/scroll-area.tsx";
 import { Skeleton } from "@coreModule/components/ui/skeleton.tsx";
 import withLanguage, { WithLanguageType } from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {
     addToCurrencyMap,
     deriveCalendarLedgerCategory,
@@ -245,10 +246,7 @@ function PaymentCalendarTab({
                             {selectedDay
                                 ? str("calendar.detailForDay").replace(
                                       "{date}",
-                                      selectedDay.toLocaleDateString(languageCode || "en-US", {
-                                          day: "numeric",
-                                          month: "long",
-                                      }),
+                                      formatDate(selectedDay, {format: {day: "numeric", month: "long"}}),
                                   )
                                 : str("calendar.selectDay")}
                         </CardTitle>

@@ -82,5 +82,7 @@
     "newFilesLabel": "Dateien hinzufügen",
     "addFile": "Datei hinzufügen",
     "filesSelected": "Dateien ausgewählt"
-  }
+  },
+  "lineTotal": "Zeilentotal",
+  "subtotal": "Zwischentotal"
 }

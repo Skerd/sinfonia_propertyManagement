@@ -9,6 +9,9 @@ import type { UnitCost } from "armonia/src/modules/propertyManagement/api/realEs
 import type { DeleteResponse } from "armonia/src/modules/core/types/shared.types.ts";
 import { buildUnitCostEditPath } from "@propertyManagementModule/clients/panel/private/unitCosts/unitCostEditPath.ts";
 import UnitCostInvoicePdfActionMenuItem from "@propertyManagementModule/components/custom/unitCosts/unitCostInvoicePdfActionMenuItem.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 
 export type UnitCostSheetViewOwnProps = {
     open: boolean;
@@ -21,6 +24,31 @@ export type UnitCostSheetViewOwnProps = {
     onRestore?: () => void;
     fetchId?: string;
 };
+
+/** What a unit cost is called (D151): its vendor, else its tag, else its unit; empty when none is readable. */
+export function unitCostTitle(cost: UnitCost): string {
+    return cost.vendorName || cost.tag || cost.unit?.name || (cost.unit?.unitNumber != null ? String(cost.unit.unitNumber) : "");
+}
+
+/** The verification and the payment state, each in its tone (UX-02). Both dictionaries carry the enum labels. */
+export function UnitCostStatusBadges({cost, resolveLanguageKey}: {cost: UnitCost; resolveLanguageKey: ResolveLanguageKey}) {
+    return (
+        <>
+            <StatusBadge
+                tableConfigKey="unitcosts"
+                field="verificationStatus"
+                value={cost.verificationStatus}
+                label={String(resolveLanguageKey(`unitCostVerification.${cost.verificationStatus}`))}
+            />
+            <StatusBadge
+                tableConfigKey="unitcosts"
+                field="paymentStatus"
+                value={cost.paymentStatus}
+                label={String(resolveLanguageKey(`unitCostPayment.${cost.paymentStatus}`))}
+            />
+        </>
+    );
+}
 
 function UnitCostSheetView({
     open,
@@ -72,6 +100,9 @@ function UnitCostSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by its vendor (else tag, else unit), the code as a badge and both states in tone (UX-01, UX-02, D151).
+            headerTitle={<SheetNameTitle name={unitCostTitle(asCost)} code={asCost.name} typeLabel={String(resolveLanguageKey("unitCost"))} />}
+            headerDescription={<UnitCostStatusBadges cost={asCost} resolveLanguageKey={resolveLanguageKey} />}
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

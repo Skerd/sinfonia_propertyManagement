@@ -1,4 +1,5 @@
-import {useFieldArray, useFormContext} from "react-hook-form";
+import {useEffect, useState} from "react";
+import {useFieldArray, useFormContext, useWatch} from "react-hook-form";
 import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@coreModule/components/ui/form.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
@@ -10,6 +11,25 @@ import FormMultiLocalFileField from "@coreModule/components/viewEngine/widgets/m
 import {compose} from "redux";
 import withLanguage from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {displayPlainText} from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import type {Currency} from "armonia/src/modules/core/api/finance/private/currency/currency.dto.ts";
+import {expenditureTotals} from "@propertyManagementModule/helpers/components/unitCosts/expenditureTotals.ts";
+
+const CURRENCY_REQUEST: HttpRequest = {method: "post", url: "/api/finance/currency/single"};
+
+/** The form's picked currency, loaded so the running totals carry its symbol (UX-07). */
+function usePickedCurrency(currencyId: unknown): Currency | undefined {
+    const [currency, setCurrency] = useState<Currency>();
+    const [requestCount, setRequestCount] = useState(0);
+    const id = typeof currencyId === "string" ? currencyId : "";
+    useEffect(() => {
+        if (id) setRequestCount((count) => count + 1);
+        else setCurrency(undefined);
+    }, [id]);
+    useHttpRequest<Currency>(CURRENCY_REQUEST, {_id: id}, requestCount, true, {success: setCurrency});
+    return currency;
+}
 
 function LineFieldMessage() {
     return (
@@ -35,6 +55,11 @@ function FormExpenditureItemsFieldInner({
 }: FormExpenditureItemsFieldProps) {
     const {control} = useFormContext();
     const {fields, append, remove} = useFieldArray({control, name});
+    // Running line totals and subtotal as the lines are typed, in the cost's currency (UX-07, D35).
+    const lines = useWatch({control, name});
+    const currency = usePickedCurrency(useWatch({control, name: "currency"}));
+    const {lineTotals, subtotal} = expenditureTotals(Array.isArray(lines) ? lines : []);
+    const money = (amount: number) => displayPlainText({amount, currency}, "currency");
 
     const categoryOptions = EXPENDITURE_CATEGORY_VALUES.map((v) => ({
         value: v,
@@ -151,6 +176,11 @@ function FormExpenditureItemsFieldInner({
                             )}
                         />
                     </div>
+                    {lineTotals[index] !== undefined ? (
+                        <p className="self-end text-sm tabular-nums text-muted-foreground">
+                            {resolveLanguageKey("lineTotal")}: <span className="font-medium text-foreground">{money(lineTotals[index])}</span>
+                        </p>
+                    ) : null}
                     <div className="col-span-full pt-1 border-t border-border/40 mt-1">
                         <FormMultiLocalFileField
                             name={`${name}.${index}.media`}
@@ -170,6 +200,11 @@ function FormExpenditureItemsFieldInner({
                     </div>
                 </div>
             ))}
+            {fields.length > 0 ? (
+                <p className="self-end text-sm tabular-nums">
+                    {resolveLanguageKey("subtotal")}: <span className="font-semibold">{money(subtotal)}</span>
+                </p>
+            ) : null}
             <Button
                 type="button"
                 variant="outline"

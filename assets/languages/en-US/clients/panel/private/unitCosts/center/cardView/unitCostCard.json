@@ -25,5 +25,6 @@
   "vendorName": "Vendor",
   "tag": "Tag",
   "relatedModificationRequest": "Modification Request",
-  "failedTooltipDescription": "Click to retry fetching data."
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "unit": "Unit"
 }

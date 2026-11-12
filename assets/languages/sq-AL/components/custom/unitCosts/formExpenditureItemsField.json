@@ -82,5 +82,7 @@
     "newFilesLabel": "Shto skedarë",
     "addFile": "Shto skedar",
     "filesSelected": "skedarë të zgjedhur"
-  }
+  },
+  "lineTotal": "Totali i rreshtit",
+  "subtotal": "Nëntotali"
 }

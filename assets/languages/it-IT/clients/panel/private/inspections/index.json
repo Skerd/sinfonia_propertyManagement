@@ -69,8 +69,14 @@
         "completed": "Completata",
         "cancelled": "Annullata",
         "rescheduled": "Ripianificata"
+      },
+      "when": {
+        "upcoming": "In arrivo",
+        "today": "Oggi",
+        "past": "Passate"
       }
-    }
+    },
+    "when": "Quando"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",

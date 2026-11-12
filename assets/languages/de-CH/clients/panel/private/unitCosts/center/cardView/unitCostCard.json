@@ -25,5 +25,6 @@
   "vendorName": "Lieferant",
   "tag": "Schlagwort",
   "relatedModificationRequest": "Änderungsanfrage",
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "unit": "Einheit"
 }

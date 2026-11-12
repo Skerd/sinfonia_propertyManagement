@@ -1,5 +1,9 @@
+import {useEffect, useState} from "react";
+import type {UseFormReturn} from "react-hook-form";
 import {IconTextPlus} from "@tabler/icons-react";
 import {createGenericCreatePage} from "@coreModule/components/entityPage/pages/createGenericCreatePage.tsx";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import {generateZodCreateUnitCostFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/createUnitCost.form.validator.ts";
 import type {CreateUnitCostFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unitCost/unitCost.schema-def.ts";
 
@@ -13,6 +17,23 @@ type CreateUnitCostFormData = CreateUnitCostFormType & {
     floor?: string;
     invoiceMedia?: File[];
 };
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
+
+/** The cost starts in the picked unit's price currency (UX-06, D151); a currency already picked stays. Renders nothing. */
+function CurrencyFromUnit({form}: {form: UseFormReturn<CreateUnitCostFormData>}) {
+    const unitId = form.watch("unit");
+    const [unitCount, setUnitCount] = useState(0);
+    useEffect(() => {
+        if (unitId) setUnitCount((count) => count + 1);
+    }, [unitId]);
+    useHttpRequest<Unit>(UNIT_REQUEST, {_id: unitId}, unitCount, true, {
+        success: (unit) => {
+            if (unit.priceCurrency?._id && !form.getValues("currency")) form.setValue("currency", unit.priceCurrency._id);
+        },
+    });
+    return null;
+}
 
 export default createGenericCreatePage<CreateUnitCostFormData>({
     languagePath: "src/modules/propertyManagement/clients/panel/private/unitCosts/createUnitCost.tsx",
@@ -105,4 +126,5 @@ export default createGenericCreatePage<CreateUnitCostFormData>({
         return formData;
     },
     submitIcon: <IconTextPlus />,
+    renderChildren: (form) => <CurrencyFromUnit form={form} />,
 });

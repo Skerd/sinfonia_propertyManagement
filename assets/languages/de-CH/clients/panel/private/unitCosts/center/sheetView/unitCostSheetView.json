@@ -113,5 +113,6 @@
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
   "deletedBy": "Gelöscht von",
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "relatedRecords": "Verknüpfte Datensätze"
 }

@@ -12,6 +12,8 @@ import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRender
 import { Inspection } from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import type { DeleteResponse } from "armonia/src/modules/core/types/shared.types.ts";
 import {buildInspectionEditPath} from "@propertyManagementModule/clients/panel/private/inspections";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 
 export type InspectionSheetViewOwnProps = {
     open: boolean;
@@ -28,6 +30,12 @@ export type InspectionSheetViewOwnProps = {
     isRestored?: boolean;
     fetchId?: string;
 };
+
+/** What an inspection is called (D151): its type and its unit, "Routine · A-101"; empty while neither is readable. */
+export function inspectionTitle(inspection: Inspection, typeLabel: string): string {
+    const unitName = inspection.unit?.name || (inspection.unit?.unitNumber != null ? String(inspection.unit.unitNumber) : "");
+    return [inspection.type ? typeLabel : "", unitName].filter(Boolean).join(" · ");
+}
 
 function InspectionSheetView({
     open,
@@ -86,6 +94,22 @@ function InspectionSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by its type and unit, the code as a badge and the state in tone (UX-01, UX-02, D151).
+            headerTitle={
+                <SheetNameTitle
+                    name={inspectionTitle(asInspection, String(resolveLanguageKey(`types.${asInspection.type}`)))}
+                    code={asInspection.name}
+                    typeLabel={String(resolveLanguageKey("inspection"))}
+                />
+            }
+            headerDescription={
+                <StatusBadge
+                    tableConfigKey="inspections"
+                    field="status"
+                    value={asInspection.status}
+                    label={String(resolveLanguageKey(`statuses.${asInspection.status}`))}
+                />
+            }
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

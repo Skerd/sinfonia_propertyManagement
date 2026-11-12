@@ -25,5 +25,6 @@
   "vendorName": "Furnitori",
   "tag": "Etiketa",
   "relatedModificationRequest": "Kërkesë për modifikim",
-  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "unit": "Njësia"
 }

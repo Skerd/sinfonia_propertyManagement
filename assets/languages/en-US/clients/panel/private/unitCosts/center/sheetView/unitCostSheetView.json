@@ -113,5 +113,6 @@
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
-  "failedTooltipDescription": "Click to retry fetching data."
+  "failedTooltipDescription": "Click to retry fetching data.",
+  "relatedRecords": "Related records"
 }

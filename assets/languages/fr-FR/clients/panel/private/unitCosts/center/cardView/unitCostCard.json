@@ -25,5 +25,6 @@
   "vendorName": "Fournisseur",
   "tag": "Étiquette",
   "relatedModificationRequest": "Demande de modification",
-  "failedTooltipDescription": "Cliquez pour recharger les données."
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "unit": "Unité"
 }

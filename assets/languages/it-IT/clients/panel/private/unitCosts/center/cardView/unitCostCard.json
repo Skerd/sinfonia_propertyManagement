@@ -25,5 +25,6 @@
   "vendorName": "Fornitore",
   "tag": "Tag",
   "relatedModificationRequest": "Richiesta di modifica",
-  "failedTooltipDescription": "Clicca per ricaricare i dati."
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "unit": "Unità"
 }

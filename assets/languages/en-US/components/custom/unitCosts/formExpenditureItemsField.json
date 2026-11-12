@@ -82,5 +82,7 @@
     "newFilesLabel": "Add files",
     "addFile": "Add file",
     "filesSelected": "files selected"
-  }
+  },
+  "lineTotal": "Line total",
+  "subtotal": "Subtotal"
 }

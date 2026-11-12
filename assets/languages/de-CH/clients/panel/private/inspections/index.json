@@ -69,8 +69,14 @@
         "completed": "Abgeschlossen",
         "cancelled": "Storniert",
         "rescheduled": "Neu geplant"
+      },
+      "when": {
+        "upcoming": "Anstehend",
+        "today": "Heute",
+        "past": "Vergangen"
       }
-    }
+    },
+    "when": "Wann"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",

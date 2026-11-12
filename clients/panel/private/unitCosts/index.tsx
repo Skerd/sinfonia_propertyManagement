@@ -109,8 +109,6 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
         }
     };
 
-    const createLabelKey = financeTab === "expenses" ? "createUnitCostExpenses" : "createUnitCost";
-
     const resolvedUnit = (unitId?.trim() || financeApplied.unit?.trim()) ?? "";
 
     const toolbarDslMerged = useMemo(
@@ -156,7 +154,8 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
                                 }}
                             >
                                 <IconTextPlus className="h-4 w-4" />
-                                {resolveLanguageKey(createLabelKey)}
+                                {/* One noun on every tab (UX-11). */}
+                                {resolveLanguageKey("createUnitCost")}
                             </Button>
                         )}
                     </HiddenElement>

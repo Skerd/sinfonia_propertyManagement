@@ -82,5 +82,7 @@
     "newFilesLabel": "Aggiungi file",
     "addFile": "Aggiungi file",
     "filesSelected": "file selezionati"
-  }
+  },
+  "lineTotal": "Totale riga",
+  "subtotal": "Subtotale"
 }

@@ -113,5 +113,6 @@
   "createdBy": "Créé par",
   "deletedAt": "Supprimé le",
   "deletedBy": "Supprimé par",
-  "failedTooltipDescription": "Cliquez pour recharger les données."
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "relatedRecords": "Enregistrements liés"
 }

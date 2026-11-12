@@ -19,7 +19,6 @@ import {
     IconCashBanknote,
     IconDownload,
     IconHome,
-    IconTag,
     IconUser,
 } from "@tabler/icons-react";
 import {cn} from "@coreModule/components/lib/utils.ts";
@@ -28,6 +27,7 @@ import {MdiIcon} from "@coreModule/components/custom/mdiIcons/mdiIcon.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import {CARD_INFO_ROWS_TWO_COL_CLASS} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 import ApproveModificationRequestDialog from "@propertyManagementModule/components/custom/modificationRequests/approveModificationRequestDialog.tsx";
@@ -58,6 +58,7 @@ type ModificationRequestCardProps = WithLanguageType & {
     onRestore?: () => void;
     onModified?: (updated?: ModificationRequest) => void;
     isRestored?: boolean;
+    /** Passed by the reference lists; the card already shows only its four key facts. */
     small?: boolean;
     sheetOnly?: boolean;
     innerRef?: RefObject<WithAxiosLifecycleRef<ModificationRequest> | null>;
@@ -74,7 +75,6 @@ function ModificationRequestCard({
     onRestore,
     onModified,
     isRestored = false,
-    small,
     sheetOnly = false,
     innerRef,
 }: ModificationRequestCardProps) {
@@ -766,16 +766,26 @@ function ModificationRequestCard({
 
                 return (
                     <>
+                        {/* Named by its own title, the code beside it, the state as a badge (UX-01, UX-02, D151). */}
                         <EntityCard.Header
-                            titlePath="name"
+                            titlePath={["title", "name"]}
                             title={
                                 <span className="flex items-center gap-1 truncate">
-                                    {displayRequest.name || resolveLanguageKey("modificationRequest")}
-                                    {displayRequest.name ? <CopyTooltip text={displayRequest.name} /> : null}
+                                    {displayRequest.title || displayRequest.name || resolveLanguageKey("modificationRequest")}
+                                    {!displayRequest.title && displayRequest.name ? <CopyTooltip text={displayRequest.name} /> : null}
                                 </span>
                             }
-                            subtitle={displayRequest.title}
-                            subtitlePath="title"
+                            subtitle={displayRequest.title ? displayRequest.name : undefined}
+                            subtitlePath="name"
+                            badgesBesideTitle
+                            badges={
+                                <StatusBadge
+                                    tableConfigKey="modificationrequests"
+                                    field="status"
+                                    value={displayRequest.status}
+                                    label={String(resolveLanguageKey(`statuses.${displayRequest.status}`))}
+                                />
+                            }
                         >
                             <ModificationRequestRowMenuExtras
                                 request={displayRequest}
@@ -786,6 +796,7 @@ function ModificationRequestCard({
                                 }}
                             />
                         </EntityCard.Header>
+                        {/* What → who → when it is due → how much (UX-02); the stage track below shows where it stands. */}
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
                             <EntityCardRow
                                 icon={IconHome}
@@ -805,24 +816,23 @@ function ModificationRequestCard({
                                 value={displayRequest.unit?.name ?? displayRequest.unit?.unitNumber}
                             />
                             <EntityCardRow
-                                icon={IconTag}
-                                label={resolveLanguageKey("constructionType")}
-                                tooltip={resolveLanguageKey("constructionType")}
-                                path="constructionType"
-                                type="enum"
-                                languageKeyCategory="constructionTypes"
-                                value={displayRequest.constructionType}
+                                icon={IconUser}
+                                label={resolveLanguageKey("requestedBy")}
+                                tooltip={resolveLanguageKey("requestedBy")}
+                                path="requestedBy"
+                                type="user"
+                                value={displayRequest.requestedBy}
                             />
-                            <EntityCardRow
-                                icon={IconTag}
-                                label={resolveLanguageKey("status")}
-                                tooltip={resolveLanguageKey("status")}
-                                path="status"
-                                type="enum"
-                                languageKeyCategory="statuses"
-                                value={displayRequest.status}
-                            />
-                            {!small && (
+                            {displayRequest.stageDueDate ? (
+                                <EntityCardRow
+                                    icon={IconCalendar}
+                                    label={resolveLanguageKey("stageDueDate")}
+                                    tooltip={resolveLanguageKey("stageDueDate")}
+                                    path="stageDueDate"
+                                    type="date"
+                                    value={displayRequest.stageDueDate}
+                                />
+                            ) : (
                                 <EntityCardRow
                                     icon={IconCalendar}
                                     label={resolveLanguageKey("submittedAt")}
@@ -832,33 +842,19 @@ function ModificationRequestCard({
                                     value={displayRequest.submittedAt}
                                 />
                             )}
-                            <EntityCardRow
-                                icon={IconCalendar}
-                                label={resolveLanguageKey("stageDueDate")}
-                                tooltip={resolveLanguageKey("stageDueDate")}
-                                path="stageDueDate"
-                                type="date"
-                                value={displayRequest.stageDueDate}
-                            />
-                            <EntityCardRow
-                                icon={IconUser}
-                                label={resolveLanguageKey("requestedBy")}
-                                tooltip={resolveLanguageKey("requestedBy")}
-                                path="requestedBy"
-                                type="user"
-                                value={displayRequest.requestedBy}
-                            />
-                            <EntityCardRow
-                                icon={IconCashBanknote}
-                                label={resolveLanguageKey("totalCost")}
-                                tooltip={resolveLanguageKey("totalCost")}
-                                path="financeDetails.totalCost"
-                                type="currency"
-                                value={{
-                                    amount: displayRequest.financeDetails?.totalCost,
-                                    currency: displayRequest.financeDetails?.currency,
-                                }}
-                            />
+                            {displayRequest.financeDetails?.currency ? (
+                                <EntityCardRow
+                                    icon={IconCashBanknote}
+                                    label={resolveLanguageKey("totalCost")}
+                                    tooltip={resolveLanguageKey("totalCost")}
+                                    path="financeDetails.totalCost"
+                                    type="currency"
+                                    value={{
+                                        amount: displayRequest.financeDetails.totalCost,
+                                        currency: displayRequest.financeDetails.currency,
+                                    }}
+                                />
+                            ) : null}
                         </EntityCard.Body>
                         <div className="grid w-full min-w-0 grid-cols-5">
                             {renderArchitectApproval("architect", resolveLanguageKey("architectApproval"))}

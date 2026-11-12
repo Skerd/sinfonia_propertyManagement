@@ -69,8 +69,14 @@
         "completed": "E përfunduar",
         "cancelled": "Anuluar",
         "rescheduled": "Riplanifikuar"
+      },
+      "when": {
+        "upcoming": "Në vijim",
+        "today": "Sot",
+        "past": "Të kaluara"
       }
-    }
+    },
+    "when": "Kur"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "Po",

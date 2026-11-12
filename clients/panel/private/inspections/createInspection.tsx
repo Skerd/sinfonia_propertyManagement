@@ -7,7 +7,6 @@ type CreateInspectionFormData = CreateInspectionFormType & {
     project?: string;
     edifice?: string;
     floor?: string;
-    cancellationReason?: string;
     media?: File[];
     clientSignatureMediaId?: File;
 };

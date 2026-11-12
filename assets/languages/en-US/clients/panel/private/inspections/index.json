@@ -69,8 +69,14 @@
         "completed": "Completed",
         "cancelled": "Cancelled",
         "rescheduled": "Rescheduled"
+      },
+      "when": {
+        "upcoming": "Upcoming",
+        "today": "Today",
+        "past": "Past"
       }
-    }
+    },
+    "when": "When"
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",

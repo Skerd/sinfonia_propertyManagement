@@ -1,98 +1,29 @@
 import {compose} from "redux";
-import withLanguage, {type ResolveLanguageKey, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
+import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import InspectionSheetView from "@propertyManagementModule/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx";
+import InspectionSheetView, {inspectionTitle} from "@propertyManagementModule/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx";
 import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
 import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
-import {
-    IconAlertTriangle,
-    IconArrowBack,
-    IconArrowForward,
-    IconCalendar,
-    IconCalendarClock,
-    IconHome,
-    IconNotes,
-    IconStar,
-    IconTag,
-    IconUser,
-} from "@tabler/icons-react";
+import {IconAlertTriangle, IconCalendar, IconCalendarClock, IconStar, IconUser} from "@tabler/icons-react";
 import {buildInspectionEditPath} from "@propertyManagementModule/clients/panel/private/inspections";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import {
-    CARD_INFO_ROWS_TWO_COL_CLASS,
-    STATUS_BADGE_NEUTRAL,
-    STATUS_BADGE_WARNING,
-} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import {CARD_INFO_ROWS_TWO_COL_CLASS, STATUS_BADGE_WARNING} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {ReactNode, RefObject} from "react";
-
-function inspectionStatusTextClass(status: string): string {
-    switch (status) {
-        case "completed":
-            return "text-success";
-        case "scheduled":
-            return "text-info";
-        case "in_progress":
-        case "rescheduled":
-            return "text-warning";
-        case "cancelled":
-            return "text-destructive";
-        default:
-            return "text-muted-foreground";
-    }
-}
+import type {RefObject} from "react";
 
 /** Rating scale is 1–10. */
 function inspectionRatingTextClass(rating: number): string {
     if (rating >= 8) return "text-success";
     if (rating >= 5) return "text-warning";
     return "text-destructive";
-}
-
-function InspectionCardFooterBadges({
-    entity,
-    resolveLanguageKey,
-}: {
-    entity: Inspection;
-    resolveLanguageKey: ResolveLanguageKey;
-}): ReactNode {
-    const followUpRequired = entity.followUpRequired;
-    const notes = entity.notes?.trim();
-
-    if (!followUpRequired && !notes) return null;
-
-    return (
-        <div className="flex flex-wrap items-center gap-1.5">
-            {followUpRequired ? (
-                <DisplayValue path="followUpRequired" type="boolean" value={followUpRequired}>
-                    {() => (
-                        <Badge variant="outline" className={cn("text-xs gap-1", STATUS_BADGE_WARNING)}>
-                            <IconAlertTriangle className="size-3" aria-hidden />
-                            {String(resolveLanguageKey("followUpRequired"))}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
-            {notes ? (
-                <DisplayValue path="notes" value={notes}>
-                    {() => (
-                        <Badge variant="secondary" className={cn("text-xs gap-1", STATUS_BADGE_NEUTRAL)}>
-                            <IconNotes className="size-3" aria-hidden />
-                            {String(resolveLanguageKey("notes"))}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
-        </div>
-    );
 }
 
 type InspectionCardProps = WithLanguageType & {
@@ -186,66 +117,49 @@ function InspectionCard({
                 )}
             >
                 {({entity, setAction}) => {
-                    const hasFooterBadges = Boolean(entity.followUpRequired || entity.notes?.trim());
-                    const status = entity.status;
                     const rating = entity.rating;
+                    const title = inspectionTitle(entity, String(resolveLanguageKey(`types.${entity.type}`)));
                     return (
                         <>
-                            <EntityCard.Header titlePath="name" title={entity.name}>
+                            {/* Named by its type and unit, the code beside it, the state and an open follow-up as badges (UX-01, UX-02, D151). */}
+                            <EntityCard.Header
+                                titlePath={["type", "unit"]}
+                                title={title || entity.name}
+                                subtitlePath="name"
+                                subtitle={title ? entity.name : undefined}
+                                badgesBesideTitle
+                                badges={
+                                    <>
+                                        <StatusBadge
+                                            tableConfigKey="inspections"
+                                            field="status"
+                                            value={entity.status}
+                                            label={String(resolveLanguageKey(`statuses.${entity.status}`))}
+                                        />
+                                        {entity.followUpRequired ? (
+                                            <DisplayValue path="followUpRequired" type="boolean" value={entity.followUpRequired}>
+                                                {() => (
+                                                    <Badge variant="outline" className={cn("text-xs gap-1", STATUS_BADGE_WARNING)}>
+                                                        <IconAlertTriangle className="size-3" aria-hidden />
+                                                        {String(resolveLanguageKey("followUpRequired"))}
+                                                    </Badge>
+                                                )}
+                                            </DisplayValue>
+                                        ) : null}
+                                    </>
+                                }
+                            >
                                 <InspectionRowMenuExtras inspection={entity} onAction={setAction} />
                             </EntityCard.Header>
-                            <EntityCard.Body className="grid min-w-0 grid-cols-1 sm:grid-cols-3 [&_[data-slot=item]]:w-full [&_[data-slot=restricted-fields]]:col-span-full">
-                                <EntityCardRow
-                                    icon={IconTag}
-                                    label={resolveLanguageKey("type")}
-                                    tooltip={resolveLanguageKey("type")}
-                                    path="type"
-                                    type="enum"
-                                    languageKeyCategory="types"
-                                    value={entity.type}
-                                />
-                                <EntityCardRow
-                                    icon={IconTag}
-                                    label={resolveLanguageKey("status")}
-                                    tooltip={resolveLanguageKey("status")}
-                                    path="status"
-                                    type="enum"
-                                    languageKeyCategory="statuses"
-                                    value={status}
-                                >
-                                    {(formatted) => (
-                                        <span className={cn("font-medium", status ? inspectionStatusTextClass(status) : undefined)}>
-                                            {formatted}
-                                        </span>
-                                    )}
-                                </EntityCardRow>
-                                <EntityCardRow
-                                    icon={IconStar}
-                                    label={resolveLanguageKey("rating")}
-                                    tooltip={resolveLanguageKey("rating")}
-                                    path="rating"
-                                    type="number"
-                                    value={rating}
-                                >
-                                    {(formatted) =>
-                                        rating != null ? (
-                                            <span className={cn("font-medium", inspectionRatingTextClass(rating))}>
-                                                {formatted}/10
-                                            </span>
-                                        ) : (
-                                            formatted
-                                        )
-                                    }
-                                </EntityCardRow>
-                            </EntityCard.Body>
-                            <Separator className="-mx-(--density-pad) w-auto self-stretch" />
+                            {/* When → who → how it went → what comes next (UX-02). */}
                             <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
                                 <EntityCardRow
-                                    icon={IconHome}
-                                    label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
-                                    tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
-                                    path="unit"
-                                    value={entity.unit?.name ?? entity.unit?.unitNumber}
+                                    icon={IconCalendar}
+                                    label={resolveLanguageKey("inspectionDate")}
+                                    tooltip={resolveLanguageKey("inspectionDate")}
+                                    path="inspectionDate"
+                                    type="date"
+                                    value={entity.inspectionDate}
                                 />
                                 <EntityCardRow
                                     icon={IconUser}
@@ -255,57 +169,33 @@ function InspectionCard({
                                     type="user"
                                     value={entity.inspectedBy}
                                 />
-                                {!small && (
-                                    <>
-                                        <EntityCardRow
-                                            icon={IconCalendar}
-                                            label={resolveLanguageKey("inspectionDate")}
-                                            tooltip={resolveLanguageKey("inspectionDate")}
-                                            path="inspectionDate"
-                                            type="date"
-                                            value={entity.inspectionDate}
-                                        />
-                                        <EntityCardRow
-                                            icon={IconCalendarClock}
-                                            label={resolveLanguageKey("nextInspectionDate")}
-                                            tooltip={resolveLanguageKey("nextInspectionDate")}
-                                            path="nextInspectionDate"
-                                            type="date"
-                                            value={entity.nextInspectionDate}
-                                        />
-                                    </>
-                                )}
-                            </EntityCard.Body>
-                            {!small && (
-                                <>
-                                    <Separator className="-mx-(--density-pad) w-auto self-stretch" />
-                                    <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                                        <EntityCardRow
-                                            icon={IconArrowForward}
-                                            label={resolveLanguageKey("followUpInspection")}
-                                            tooltip={resolveLanguageKey("followUpInspection")}
-                                            path="followUpInspection"
-                                            value={entity.followUpInspection?.name}
-                                        />
-                                        <EntityCardRow
-                                            icon={IconArrowBack}
-                                            label={resolveLanguageKey("followedUpByInspection")}
-                                            tooltip={resolveLanguageKey("followedUpByInspection")}
-                                            path="followedUpByInspection"
-                                            value={entity.followedUpByInspection?.name}
-                                        />
-                                    </EntityCard.Body>
-                                </>
-                            )}
-                            {!small && hasFooterBadges && (
-                                <>
-                                    <Separator className="-mx-(--density-pad) w-auto self-stretch" />
-                                    <InspectionCardFooterBadges
-                                        entity={entity}
-                                        resolveLanguageKey={resolveLanguageKey}
+                                {rating != null ? (
+                                    <EntityCardRow
+                                        icon={IconStar}
+                                        label={resolveLanguageKey("rating")}
+                                        tooltip={resolveLanguageKey("rating")}
+                                        path="rating"
+                                        type="number"
+                                        value={rating}
+                                    >
+                                        {(formatted) => (
+                                            <span className={cn("font-medium", inspectionRatingTextClass(rating))}>
+                                                {formatted}/10
+                                            </span>
+                                        )}
+                                    </EntityCardRow>
+                                ) : null}
+                                {!small && entity.nextInspectionDate ? (
+                                    <EntityCardRow
+                                        icon={IconCalendarClock}
+                                        label={resolveLanguageKey("nextInspectionDate")}
+                                        tooltip={resolveLanguageKey("nextInspectionDate")}
+                                        path="nextInspectionDate"
+                                        type="date"
+                                        value={entity.nextInspectionDate}
                                     />
-                                </>
-                            )}
+                                ) : null}
+                            </EntityCard.Body>
                         </>
                     );
                 }}

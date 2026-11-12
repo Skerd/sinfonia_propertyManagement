@@ -8,6 +8,7 @@ import {buildUrlWithExistingParams} from "@coreModule/helpers/general/url.ts";
 import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilterDef} from "@coreModule/components/entityPage/pages/entityListPage.tsx";
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
+import {INSPECTION_WHEN} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.constants.ts";
 import InspectionCard from "@propertyManagementModule/clients/panel/private/inspections/center/cardView/inspectionCard.tsx";
 import InspectionSheetView from "@propertyManagementModule/clients/panel/private/inspections/center/sheetView/inspectionSheetView.tsx";
 import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
@@ -41,6 +42,17 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
     const extraFilters = useMemo(() => (unitId ? {unit: unitId} : undefined), [unitId]);
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            // Not a stored field: the list route compares the inspection day with the company's today (UX-12).
+            field: "when",
+            label: resolveLanguageKey("fields.when"),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: INSPECTION_WHEN.map((value) => ({
+                value,
+                label: resolveLanguageKey(`fields.!enums.when.${value}`),
+            })),
+            asExtraParam: true,
+        },
         {
             field: "project",
             label: resolveLanguageKey("fields.project"),
