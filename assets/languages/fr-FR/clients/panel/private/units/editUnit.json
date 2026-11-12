@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/editUnit.tsx",
-  "publicVisibility": "Site public",
   "title": "Modifier l'unité",
   "description": "Mettre à jour les informations de l'unité",
   "editTitle": "Modifier l'unité",
@@ -110,7 +109,8 @@
       "inherit": "Hériter du niveau supérieur",
       "hide": "Masquer le prix (sur demande)",
       "show": "Afficher le prix"
-    }
+    },
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {
@@ -133,6 +133,5 @@
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Enregistrer les modifications"
-  },
-  "homepageFeatured": "Mis en avant sur la page d'accueil"
+  }
 }

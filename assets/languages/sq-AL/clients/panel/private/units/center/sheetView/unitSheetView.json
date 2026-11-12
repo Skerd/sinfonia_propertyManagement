@@ -143,5 +143,80 @@
     "hidden_floor": "Çmimi me kërkesë (vendosur te kati)",
     "shown_unit": "Çmimi shfaqet (vendosur te njësia)",
     "hidden_unit": "Çmimi me kërkesë (vendosur te njësia)"
+  },
+  "sales": "Shitjet",
+  "reservations": "Rezervimet",
+  "leases": "Kontratat e qirasë",
+  "rentalPayments": "Pagesat e qirasë",
+  "lease": "Kontratë qiraje",
+  "rentalPayment": "Pagesë qiraje",
+  "visibilityGroup": "Dukshmëria",
+  "saleApprovalStatus": {
+    "pending_approval": "Në pritje të miratimit",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
+  },
+  "reservationStatus": {
+    "active": "Aktiv",
+    "expired": "I skaduar",
+    "cancelled": "I anuluar",
+    "converted": "I konvertuar"
+  },
+  "leaseStatus": {
+    "active": "Aktive",
+    "expired": "E skaduar",
+    "terminated": "E ndërprerë"
+  },
+  "rentalPaymentStatus": {
+    "pending": "Në pritje",
+    "paid": "E paguar",
+    "overdue": "Me vonesë",
+    "waived": "E falur",
+    "partially_paid": "Pjesërisht paguar"
+  },
+  "unitCostVerificationStatus": {
+    "pending_verification": "Në pritje të verifikimit",
+    "verified": "E verifikuar",
+    "rejected": "E refuzuar",
+    "needs_revision": "Kërkon rishikim"
+  },
+  "unitCostPaymentStatus": {
+    "unpaid": "E papaguar",
+    "partially_paid": "Pjesërisht e paguar",
+    "paid": "E paguar",
+    "waived": "E falur",
+    "disputed": "Në mosmarrëveshje"
+  },
+  "inspectionType": {
+    "initial": "Fillestar",
+    "follow_up": "Përcjellja",
+    "followUp": "Përcjellja",
+    "final": "Përfundimtar",
+    "routine": "Rutinë",
+    "complaint": "Ankesa",
+    "pre_sale": "Para shitjes",
+    "preSale": "Para shitjes",
+    "post_sale": "Pas shitjes",
+    "postSale": "Pas shitjes"
+  },
+  "inspectionStatus": {
+    "cancelled": "Anuluar",
+    "scheduled": "I planifikuar",
+    "in_progress": "Në progres",
+    "completed": "E përfunduar",
+    "rescheduled": "Riplanifikuar"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "Në pritje të arkitektit",
+    "pending_engineer": "Në pritje të inxhinierit",
+    "pending_ceo": "Në pritje të CEO-s",
+    "pending_architect_revision": "Në pritje të rishikimit të arkitektit",
+    "pending_engineer_revision": "Në pritje të rishikimit të inxhinierit",
+    "pending_finance": "Në pritje të financës",
+    "pending_client_approval": "Në pritje të miratimit të klientit",
+    "finance_completed": "Financa e përfunduar",
+    "pending_delivery": "Në pritje të dorëzimit",
+    "completed": "E përfunduar",
+    "cancelled": "Anuluar"
   }
 }

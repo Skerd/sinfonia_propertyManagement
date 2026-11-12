@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
-  "publicVisibility": "Public website",
   "title": "Create Unit",
   "description": "Create a new unit for this floor",
   "descriptionWithoutContext": "Create a new unit",
@@ -103,7 +102,8 @@
       "inherit": "Inherit from parent",
       "hide": "Hide price (on request)",
       "show": "Show price"
-    }
+    },
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {
@@ -126,6 +126,5 @@
   "formButtons": {
     "cancel": "Cancel",
     "submit": "Create Unit"
-  },
-  "homepageFeatured": "Homepage featured"
+  }
 }

@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
-  "publicVisibility": "Public website",
   "title": "Edit Floor",
   "description": "Update floor information",
   "editTitle": "Edit Floor",
@@ -58,7 +57,9 @@
     "pricePerMeterSquaredLabel": "Price per m²",
     "pricePerMeterSquaredPlaceholder": "Empty = use the edifice rate",
     "verandaPricePerMeterSquaredLabel": "Veranda price per m²",
-    "verandaPricePerMeterSquaredPlaceholder": "Empty = use the edifice rate"
+    "verandaPricePerMeterSquaredPlaceholder": "Empty = use the edifice rate",
+    "visibilitySectionTitle": "Visibility",
+    "ratesCurrencyDescription": "In the building's sale currency."
   },
   "axios": {
     "start": {

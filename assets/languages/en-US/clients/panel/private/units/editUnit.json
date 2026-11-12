@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/editUnit.tsx",
-  "publicVisibility": "Public website",
   "title": "Edit Unit",
   "description": "Update unit information",
   "editTitle": "Edit Unit",
@@ -110,7 +109,8 @@
       "inherit": "Inherit from parent",
       "hide": "Hide price (on request)",
       "show": "Show price"
-    }
+    },
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {
@@ -133,6 +133,5 @@
   "formButtons": {
     "cancel": "Cancel",
     "submit": "Save Changes"
-  },
-  "homepageFeatured": "Homepage featured"
+  }
 }

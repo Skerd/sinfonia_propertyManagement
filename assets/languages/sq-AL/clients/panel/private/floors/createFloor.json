@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
-  "publicVisibility": "Faqja publike",
   "title": "Krijo kat",
   "description": "Krijo një kat të ri për këtë ndërtesë",
   "descriptionWithoutEdifice": "Krijo një kat të ri",
@@ -57,7 +56,9 @@
     "pricePerMeterSquaredLabel": "Çmimi për m²",
     "pricePerMeterSquaredPlaceholder": "Bosh = përdor tarifën e ndërtesës",
     "verandaPricePerMeterSquaredLabel": "Çmimi për m² verande",
-    "verandaPricePerMeterSquaredPlaceholder": "Bosh = përdor tarifën e ndërtesës"
+    "verandaPricePerMeterSquaredPlaceholder": "Bosh = përdor tarifën e ndërtesës",
+    "visibilitySectionTitle": "Dukshmëria",
+    "ratesCurrencyDescription": "Në monedhën e shitjes së ndërtesës."
   },
   "axios": {
     "start": {

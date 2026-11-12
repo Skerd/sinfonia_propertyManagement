@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
-  "publicVisibility": "Public website",
   "title": "Create Floor",
   "description": "Create a new floor for this edifice",
   "descriptionWithoutEdifice": "Create a new floor",
@@ -57,7 +56,9 @@
     "pricePerMeterSquaredLabel": "Price per m²",
     "pricePerMeterSquaredPlaceholder": "Empty = use the edifice rate",
     "verandaPricePerMeterSquaredLabel": "Veranda price per m²",
-    "verandaPricePerMeterSquaredPlaceholder": "Empty = use the edifice rate"
+    "verandaPricePerMeterSquaredPlaceholder": "Empty = use the edifice rate",
+    "visibilitySectionTitle": "Visibility",
+    "ratesCurrencyDescription": "In the building's sale currency."
   },
   "axios": {
     "start": {

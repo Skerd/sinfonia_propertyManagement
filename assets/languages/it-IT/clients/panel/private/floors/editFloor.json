@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
-  "publicVisibility": "Sito pubblico",
   "title": "Modifica piano",
   "description": "Aggiorna le informazioni del piano",
   "editTitle": "Modifica piano",
@@ -58,7 +57,9 @@
     "pricePerMeterSquaredLabel": "Prezzo al m²",
     "pricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio",
     "verandaPricePerMeterSquaredLabel": "Prezzo al m² veranda",
-    "verandaPricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio"
+    "verandaPricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio",
+    "visibilitySectionTitle": "Visibilità",
+    "ratesCurrencyDescription": "Nella valuta di vendita dell'edificio."
   },
   "axios": {
     "start": {

@@ -143,5 +143,80 @@
     "hidden_floor": "Prezzo su richiesta (impostato su piano)",
     "shown_unit": "Prezzo visibile (impostato su unità)",
     "hidden_unit": "Prezzo su richiesta (impostato su unità)"
+  },
+  "sales": "Vendite",
+  "reservations": "Prenotazioni",
+  "leases": "Contratti di locazione",
+  "rentalPayments": "Pagamenti affitto",
+  "lease": "Contratto di locazione",
+  "rentalPayment": "Pagamento affitto",
+  "visibilityGroup": "Visibilità",
+  "saleApprovalStatus": {
+    "pending_approval": "In attesa di approvazione",
+    "approved": "Approvata",
+    "rejected": "Rifiutata"
+  },
+  "reservationStatus": {
+    "active": "Attiva",
+    "expired": "Scaduta",
+    "cancelled": "Annullata",
+    "converted": "Convertita"
+  },
+  "leaseStatus": {
+    "active": "Attivo",
+    "expired": "Scaduto",
+    "terminated": "Risolto"
+  },
+  "rentalPaymentStatus": {
+    "pending": "In sospeso",
+    "paid": "Pagato",
+    "overdue": "In ritardo",
+    "waived": "Condonato",
+    "partially_paid": "Parzialmente pagato"
+  },
+  "unitCostVerificationStatus": {
+    "pending_verification": "Verifica in sospeso",
+    "verified": "Verificato",
+    "rejected": "Rifiutato",
+    "needs_revision": "Revisione necessaria"
+  },
+  "unitCostPaymentStatus": {
+    "unpaid": "Non pagato",
+    "partially_paid": "Parzialmente pagato",
+    "paid": "Pagato",
+    "waived": "Condonato",
+    "disputed": "Contestato"
+  },
+  "inspectionType": {
+    "initial": "Iniziale",
+    "follow_up": "Follow-up",
+    "followUp": "Follow-up",
+    "final": "Finale",
+    "routine": "Ordinaria",
+    "complaint": "Reclamo",
+    "pre_sale": "Pre-vendita",
+    "preSale": "Pre-vendita",
+    "post_sale": "Post-vendita",
+    "postSale": "Post-vendita"
+  },
+  "inspectionStatus": {
+    "cancelled": "Annullata",
+    "scheduled": "Pianificata",
+    "in_progress": "In corso",
+    "completed": "Completata",
+    "rescheduled": "Ripianificata"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "In attesa architetto",
+    "pending_engineer": "In attesa ingegnere",
+    "pending_ceo": "In attesa CEO",
+    "pending_architect_revision": "In attesa revisione architetto",
+    "pending_engineer_revision": "In attesa revisione ingegnere",
+    "pending_finance": "In attesa finanze",
+    "pending_client_approval": "In attesa approvazione cliente",
+    "finance_completed": "Finanze completate",
+    "pending_delivery": "In attesa consegna",
+    "completed": "Completato",
+    "cancelled": "Annullato"
   }
 }

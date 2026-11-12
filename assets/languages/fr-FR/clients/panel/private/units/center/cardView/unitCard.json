@@ -49,5 +49,7 @@
     "ready": "Prêt",
     "delivered": "Livré"
   },
-  "failedTooltipDescription": "Cliquez pour recharger les données."
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "roomsCount": "{count} pièces",
+  "roomsCountOne": "1 pièce"
 }

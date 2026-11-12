@@ -143,5 +143,80 @@
     "hidden_floor": "Price on request (set on floor)",
     "shown_unit": "Price shown (set on unit)",
     "hidden_unit": "Price on request (set on unit)"
+  },
+  "sales": "Sales",
+  "reservations": "Reservations",
+  "leases": "Leases",
+  "rentalPayments": "Rental payments",
+  "lease": "Lease",
+  "rentalPayment": "Rental payment",
+  "visibilityGroup": "Visibility",
+  "saleApprovalStatus": {
+    "pending_approval": "Pending approval",
+    "approved": "Approved",
+    "rejected": "Rejected"
+  },
+  "reservationStatus": {
+    "active": "Active",
+    "expired": "Expired",
+    "cancelled": "Cancelled",
+    "converted": "Converted"
+  },
+  "leaseStatus": {
+    "active": "Active",
+    "expired": "Expired",
+    "terminated": "Terminated"
+  },
+  "rentalPaymentStatus": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "overdue": "Overdue",
+    "waived": "Waived",
+    "partially_paid": "Partially paid"
+  },
+  "unitCostVerificationStatus": {
+    "pending_verification": "Pending verification",
+    "verified": "Verified",
+    "rejected": "Rejected",
+    "needs_revision": "Needs revision"
+  },
+  "unitCostPaymentStatus": {
+    "unpaid": "Unpaid",
+    "partially_paid": "Partially paid",
+    "paid": "Paid",
+    "waived": "Waived",
+    "disputed": "Disputed"
+  },
+  "inspectionType": {
+    "initial": "Initial",
+    "follow_up": "Follow-up",
+    "followUp": "Follow-up",
+    "final": "Final",
+    "routine": "Routine",
+    "complaint": "Complaint",
+    "pre_sale": "Pre-sale",
+    "preSale": "Pre-sale",
+    "post_sale": "Post-sale",
+    "postSale": "Post-sale"
+  },
+  "inspectionStatus": {
+    "cancelled": "Cancelled",
+    "scheduled": "Scheduled",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "rescheduled": "Rescheduled"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "Pending architect",
+    "pending_engineer": "Pending engineer",
+    "pending_ceo": "Pending CEO",
+    "pending_architect_revision": "Pending architect revision",
+    "pending_engineer_revision": "Pending engineer revision",
+    "pending_finance": "Pending finance",
+    "pending_client_approval": "Pending client approval",
+    "finance_completed": "Finance completed",
+    "pending_delivery": "Pending delivery",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
   }
 }

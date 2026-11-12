@@ -49,5 +49,7 @@
     "ready": "Pronto",
     "delivered": "Consegnato"
   },
-  "failedTooltipDescription": "Clicca per ricaricare i dati."
+  "failedTooltipDescription": "Clicca per ricaricare i dati.",
+  "roomsCount": "{count} locali",
+  "roomsCountOne": "1 locale"
 }

@@ -5,7 +5,7 @@ import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widg
 import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconDoor, IconFireExtinguisher, IconGrid4x4, IconWheelchair} from "@tabler/icons-react";
+import {IconDoor, IconGrid4x4} from "@tabler/icons-react";
 import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
 import FloorSheetView from "@propertyManagementModule/clients/panel/private/floors/center/sheetView/floorSheetView.tsx";
 import ViewUnits from "@propertyManagementModule/clients/panel/private/floors/center/actions/viewUnits.tsx";
@@ -92,6 +92,7 @@ function FloorCard({
                         <ViewUnits floor={entity} />
                         <ViewUnitsOverlay onAction={setAction} />
                     </EntityCard.Header>
+                    {/* How many units, how big, and how they stand (UX-02); accessibility and exits stay on the sheet. */}
                     <EntityCard.Body>
                         <EntityCardRow
                             icon={IconDoor}
@@ -108,22 +109,6 @@ function FloorCard({
                             path="area"
                             type="area"
                             value={entity.area}
-                        />
-                        <EntityCardRow
-                            icon={IconWheelchair}
-                            label={resolveLanguageKey("data.isAccessible")}
-                            tooltip={resolveLanguageKey("data.isAccessible")}
-                            path="isAccessible"
-                            type="boolean"
-                            value={entity.isAccessible}
-                        />
-                        <EntityCardRow
-                            icon={IconFireExtinguisher}
-                            label={resolveLanguageKey("data.hasEmergencyExit")}
-                            tooltip={resolveLanguageKey("data.hasEmergencyExit")}
-                            path="hasEmergencyExit"
-                            type="boolean"
-                            value={entity.hasEmergencyExit}
                         />
                         {entity.statistics?.unitsByStatus ? (
                             <EntityStatusBadgeRow

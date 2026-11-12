@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
-  "publicVisibility": "Öffentliche Website",
   "title": "Geschoss bearbeiten",
   "description": "Geschossinformationen aktualisieren",
   "editTitle": "Geschoss bearbeiten",
@@ -58,7 +57,9 @@
     "pricePerMeterSquaredLabel": "Preis pro m²",
     "pricePerMeterSquaredPlaceholder": "Leer = Satz des Gebäudes verwenden",
     "verandaPricePerMeterSquaredLabel": "Verandapreis pro m²",
-    "verandaPricePerMeterSquaredPlaceholder": "Leer = Satz des Gebäudes verwenden"
+    "verandaPricePerMeterSquaredPlaceholder": "Leer = Satz des Gebäudes verwenden",
+    "visibilitySectionTitle": "Sichtbarkeit",
+    "ratesCurrencyDescription": "In der Verkaufswährung des Gebäudes."
   },
   "axios": {
     "start": {

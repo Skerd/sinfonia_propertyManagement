@@ -34,6 +34,8 @@ import PaymentPlanInstallments from "@propertyManagementModule/clients/panel/pri
 import LeaseSchedulePanel from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSchedulePanel.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import HandoverPackageCard from "@propertyManagementModule/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx";
+import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
+import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import type {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
@@ -150,6 +152,9 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#ReservationCard": ReservationCard,
         "#PaymentPlanCard": PaymentPlanCard,
         "#HandoverPackageCard": HandoverPackageCard,
+        // The unit hub's lease and rent lists in cards mode (D151).
+        "#LeaseCard": LeaseCard,
+        "#RentalPaymentCard": RentalPaymentCard,
         "#ProjectSheetView": ProjectSheetViewLazy,
         "#StorySheetView": StorySheetViewLazy,
         "#ConstructionProgressSheetView": ConstructionProgressSheetViewLazy,
@@ -185,6 +190,8 @@ const propertyManagementWidgetContribution: WidgetContribution = {
         "#PaymentPlanCard": "paymentPlan",
         "#HandoverPackageCard": "entity",
         "#UnitCard": "unit",
+        "#LeaseCard": "lease",
+        "#RentalPaymentCard": "payment",
     },
     sheetFieldRenderers: {
         /**

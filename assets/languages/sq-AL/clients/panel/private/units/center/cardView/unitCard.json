@@ -49,5 +49,7 @@
     "ready": "Gati",
     "delivered": "Dorëzuar"
   },
-  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "roomsCount": "{count} dhoma",
+  "roomsCountOne": "1 dhomë"
 }

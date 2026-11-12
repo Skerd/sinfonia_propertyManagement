@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
-  "publicVisibility": "Sito pubblico",
   "title": "Crea unità",
   "description": "Crea una nuova unità per questo piano",
   "descriptionWithoutContext": "Crea una nuova unità",
@@ -103,7 +102,8 @@
       "inherit": "Eredita dal livello superiore",
       "hide": "Nascondi prezzo (su richiesta)",
       "show": "Mostra prezzo"
-    }
+    },
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {
@@ -126,6 +126,5 @@
   "formButtons": {
     "cancel": "Annulla",
     "submit": "Crea unità"
-  },
-  "homepageFeatured": "In evidenza sulla homepage"
+  }
 }

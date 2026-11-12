@@ -90,5 +90,6 @@
   "pricePerMeterSquared": "Preis pro m²",
   "pricePerMeterSquaredTooltip": "Satz für die Einheiten dieses Stockwerks: der eigene Satz des Stockwerks, falls gesetzt, sonst der Satz des Gebäudes. Einheiten mit manuell bearbeitetem Preis bleiben unverändert.",
   "verandaPricePerMeterSquared": "Verandapreis pro m²",
-  "verandaPricePerMeterSquaredTooltip": "Verandasatz für die Einheiten dieses Stockwerks: der eigene Satz des Stockwerks, falls gesetzt, sonst der Satz des Gebäudes. Einheiten mit manuell bearbeitetem Preis bleiben unverändert."
+  "verandaPricePerMeterSquaredTooltip": "Verandasatz für die Einheiten dieses Stockwerks: der eigene Satz des Stockwerks, falls gesetzt, sonst der Satz des Gebäudes. Einheiten mit manuell bearbeitetem Preis bleiben unverändert.",
+  "visibilityGroup": "Sichtbarkeit"
 }

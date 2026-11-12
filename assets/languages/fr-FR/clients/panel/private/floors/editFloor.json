@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/editFloor.tsx",
-  "publicVisibility": "Site public",
   "title": "Modifier l'étage",
   "description": "Mettre à jour les informations de l'étage",
   "editTitle": "Modifier l'étage",
@@ -58,7 +57,9 @@
     "pricePerMeterSquaredLabel": "Prix par m²",
     "pricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment",
     "verandaPricePerMeterSquaredLabel": "Prix par m² de véranda",
-    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment"
+    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment",
+    "visibilitySectionTitle": "Visibilité",
+    "ratesCurrencyDescription": "Dans la devise de vente du bâtiment."
   },
   "axios": {
     "start": {

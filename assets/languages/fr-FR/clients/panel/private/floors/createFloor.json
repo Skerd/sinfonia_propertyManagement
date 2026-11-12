@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
-  "publicVisibility": "Site public",
   "title": "Créer un étage",
   "description": "Créer un nouvel étage pour ce bâtiment",
   "descriptionWithoutEdifice": "Créer un nouvel étage",
@@ -57,7 +56,9 @@
     "pricePerMeterSquaredLabel": "Prix par m²",
     "pricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment",
     "verandaPricePerMeterSquaredLabel": "Prix par m² de véranda",
-    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment"
+    "verandaPricePerMeterSquaredPlaceholder": "Vide = tarif du bâtiment",
+    "visibilitySectionTitle": "Visibilité",
+    "ratesCurrencyDescription": "Dans la devise de vente du bâtiment."
   },
   "axios": {
     "start": {

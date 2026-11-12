@@ -143,5 +143,80 @@
     "hidden_floor": "Prix sur demande (défini sur l'étage)",
     "shown_unit": "Prix affiché (défini sur l'unité)",
     "hidden_unit": "Prix sur demande (défini sur l'unité)"
+  },
+  "sales": "Ventes",
+  "reservations": "Réservations",
+  "leases": "Baux",
+  "rentalPayments": "Paiements de loyer",
+  "lease": "Bail",
+  "rentalPayment": "Paiement de loyer",
+  "visibilityGroup": "Visibilité",
+  "saleApprovalStatus": {
+    "pending_approval": "En attente d'approbation",
+    "approved": "Approuvée",
+    "rejected": "Rejetée"
+  },
+  "reservationStatus": {
+    "active": "Actif",
+    "expired": "Expirée",
+    "cancelled": "Annulée",
+    "converted": "Convertie"
+  },
+  "leaseStatus": {
+    "active": "Actif",
+    "expired": "Expiré",
+    "terminated": "Résilié"
+  },
+  "rentalPaymentStatus": {
+    "pending": "En attente",
+    "paid": "Payé",
+    "overdue": "En retard",
+    "waived": "Annulé",
+    "partially_paid": "Partiellement payé"
+  },
+  "unitCostVerificationStatus": {
+    "pending_verification": "Vérification en attente",
+    "verified": "Vérifié",
+    "rejected": "Rejeté",
+    "needs_revision": "Révision nécessaire"
+  },
+  "unitCostPaymentStatus": {
+    "unpaid": "Impayé",
+    "partially_paid": "Partiellement payé",
+    "paid": "Payé",
+    "waived": "Annulé",
+    "disputed": "Contesté"
+  },
+  "inspectionType": {
+    "initial": "Initiale",
+    "follow_up": "Suivi",
+    "followUp": "Suivi",
+    "final": "Finale",
+    "routine": "Routine",
+    "complaint": "Réclamation",
+    "pre_sale": "Pré-vente",
+    "preSale": "Pré-vente",
+    "post_sale": "Post-vente",
+    "postSale": "Post-vente"
+  },
+  "inspectionStatus": {
+    "cancelled": "Annulée",
+    "scheduled": "Planifiée",
+    "in_progress": "En cours",
+    "completed": "Terminée",
+    "rescheduled": "Replanifiée"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "En attente architecte",
+    "pending_engineer": "En attente ingénieur",
+    "pending_ceo": "En attente CEO",
+    "pending_architect_revision": "En attente révision architecte",
+    "pending_engineer_revision": "En attente révision ingénieur",
+    "pending_finance": "En attente finances",
+    "pending_client_approval": "En attente approbation client",
+    "finance_completed": "Finances terminées",
+    "pending_delivery": "En attente livraison",
+    "completed": "Terminé",
+    "cancelled": "Annulé"
   }
 }

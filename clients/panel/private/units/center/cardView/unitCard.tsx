@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
-import {IconAlignLeft, IconBath, IconDoor, IconGrid4x4, IconListDetails, IconStack, IconTag} from "@tabler/icons-react";
+import {IconAlignLeft, IconGrid4x4, IconListDetails, IconTag} from "@tabler/icons-react";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {UnitStatusBadge, resolveUnitStatusKey} from "@propertyManagementModule/components/custom/cards/UnitStatusBadge.tsx";
@@ -12,6 +12,7 @@ import {buildUnitEditPath} from "@propertyManagementModule/clients/panel/private
 import {UnitDomainMenuItems} from "@propertyManagementModule/clients/panel/private/units/center/actions/unitDomainMenuItems.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import {displayPlainText} from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import MarkUnavailableUnitDialog from "@propertyManagementModule/components/custom/units/markUnavailableUnitDialog.tsx";
 import MarkAvailableUnitDialog from "@propertyManagementModule/components/custom/units/markAvailableUnitDialog.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -85,6 +86,8 @@ function UnitCard({
                             : "unavailable_unit"
                         : undefined);
                 const showStatusBadge = resolveUnitStatusKey(entity.status, entity.isAvailable) != null;
+                const kindAndFloor = [entity.unitType?.name, entity.floor?.name].filter(Boolean).join(" · ");
+                const rooms = !entity.numberOfRooms ? "" : entity.numberOfRooms === 1 ? resolveLanguageKey("roomsCountOne") : resolveLanguageKey("roomsCount").replace("{count}", String(entity.numberOfRooms));
                 return (
                     <>
                         <AccessGatedGalleryCarousel
@@ -112,57 +115,34 @@ function UnitCard({
                         >
                             <UnitDomainMenuItems unit={entity} onAction={setAction} />
                         </EntityCard.Header>
+                        {/* What it is and where, how big, what it costs (UX-02); features stay on the sheet. */}
                         <EntityCard.Body>
-                            {!small && (
-                                <>
-                                    <EntityCardRow
-                                        icon={IconStack}
-                                        label={resolveLanguageKey("floor")}
-                                        tooltip={resolveLanguageKey("floor")}
-                                        path="floor.name"
-                                        value={entity.floor?.name}
-                                    />
-                                    <EntityCardRow
-                                        icon={IconListDetails}
-                                        label={resolveLanguageKey("data.unitType")}
-                                        tooltip={resolveLanguageKey("data.unitType")}
-                                        path="unitType.name"
-                                        value={entity.unitType?.name}
-                                    />
-                                </>
-                            )}
+                            {!small && kindAndFloor ? (
+                                <EntityCardRow
+                                    icon={IconListDetails}
+                                    label={resolveLanguageKey("data.unitType")}
+                                    tooltip={resolveLanguageKey("data.unitType")}
+                                    path="unitType"
+                                    value={kindAndFloor}
+                                />
+                            ) : null}
                             <EntityCardRow
                                 icon={IconGrid4x4}
                                 label={resolveLanguageKey("data.area")}
                                 tooltip={resolveLanguageKey("data.area")}
                                 path="area"
-                                type="area"
-                                value={entity.area}
+                                value={[displayPlainText(entity.area, "area"), rooms].filter(Boolean).join(" · ")}
                             />
-                            <EntityCardRow
-                                icon={IconDoor}
-                                label={resolveLanguageKey("data.rooms")}
-                                tooltip={resolveLanguageKey("data.rooms")}
-                                path="numberOfRooms"
-                                type="number"
-                                value={entity.numberOfRooms}
-                            />
-                            <EntityCardRow
-                                icon={IconBath}
-                                label={resolveLanguageKey("data.numberOfBathrooms")}
-                                tooltip={resolveLanguageKey("data.numberOfBathrooms")}
-                                path="numberOfBathrooms"
-                                type="number"
-                                value={entity.numberOfBathrooms}
-                            />
-                            <EntityCardRow
-                                icon={IconTag}
-                                label={resolveLanguageKey("data.price")}
-                                tooltip={resolveLanguageKey("data.price")}
-                                path="price"
-                                type="currency"
-                                value={{amount: entity.price, currency: entity.priceCurrency}}
-                            />
+                            {entity.price != null ? (
+                                <EntityCardRow
+                                    icon={IconTag}
+                                    label={resolveLanguageKey("data.price")}
+                                    tooltip={resolveLanguageKey("data.price")}
+                                    path="price"
+                                    type="currency"
+                                    value={{amount: entity.price, currency: entity.priceCurrency}}
+                                />
+                            ) : null}
                             {entity.unavailableNotes ? (
                                 <EntityCardRow
                                     icon={IconAlignLeft}
@@ -172,31 +152,6 @@ function UnitCard({
                                     value={entity.unavailableNotes}
                                 />
                             ) : null}
-                            <EntityCardRow
-                                icon={IconDoor}
-                                label={resolveLanguageKey("features.balcony")}
-                                tooltip={resolveLanguageKey("features.balcony")}
-                                path="hasBalcony"
-                                type="boolean"
-                                value={entity.hasBalcony}
-                            />
-                            <EntityCardRow
-                                icon={IconDoor}
-                                label={resolveLanguageKey("features.terrace")}
-                                tooltip={resolveLanguageKey("features.terrace")}
-                                path="hasTerrace"
-                                type="boolean"
-                                value={entity.hasTerrace}
-                            />
-                            <EntityCardRow
-                                icon={IconListDetails}
-                                label={resolveLanguageKey("constructionStatusLabel")}
-                                tooltip={resolveLanguageKey("constructionStatusLabel")}
-                                path="constructionStatus"
-                                type="enum"
-                                languageKeyCategory="constructionStatus"
-                                value={entity.constructionStatus}
-                            />
                         </EntityCard.Body>
                     </>
                 );

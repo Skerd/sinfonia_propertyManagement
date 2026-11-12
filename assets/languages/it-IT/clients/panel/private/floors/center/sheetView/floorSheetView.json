@@ -90,5 +90,6 @@
   "pricePerMeterSquared": "Prezzo al m²",
   "pricePerMeterSquaredTooltip": "Tariffa applicata alle unità di questo piano: la tariffa del piano se impostata, altrimenti quella dell'edificio. Le unità con prezzo modificato manualmente non vengono toccate.",
   "verandaPricePerMeterSquared": "Prezzo al m² veranda",
-  "verandaPricePerMeterSquaredTooltip": "Tariffa veranda applicata alle unità di questo piano: la tariffa del piano se impostata, altrimenti quella dell'edificio. Le unità con prezzo modificato manualmente non vengono toccate."
+  "verandaPricePerMeterSquaredTooltip": "Tariffa veranda applicata alle unità di questo piano: la tariffa del piano se impostata, altrimenti quella dell'edificio. Le unità con prezzo modificato manualmente non vengono toccate.",
+  "visibilityGroup": "Visibilità"
 }

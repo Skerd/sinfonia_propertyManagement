@@ -90,5 +90,6 @@
   "pricePerMeterSquared": "Price per m²",
   "pricePerMeterSquaredTooltip": "Rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected.",
   "verandaPricePerMeterSquared": "Veranda price per m²",
-  "verandaPricePerMeterSquaredTooltip": "Veranda rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected."
+  "verandaPricePerMeterSquaredTooltip": "Veranda rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected.",
+  "visibilityGroup": "Visibility"
 }

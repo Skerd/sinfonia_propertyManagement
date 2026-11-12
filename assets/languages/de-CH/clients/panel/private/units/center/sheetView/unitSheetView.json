@@ -143,5 +143,80 @@
     "hidden_floor": "Preis auf Anfrage (festgelegt auf Etage)",
     "shown_unit": "Preis sichtbar (festgelegt auf Einheit)",
     "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
+  },
+  "sales": "Verkäufe",
+  "reservations": "Reservationen",
+  "leases": "Mietverträge",
+  "rentalPayments": "Mietzahlungen",
+  "lease": "Mietvertrag",
+  "rentalPayment": "Mietzahlung",
+  "visibilityGroup": "Sichtbarkeit",
+  "saleApprovalStatus": {
+    "pending_approval": "Freigabe ausstehend",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt"
+  },
+  "reservationStatus": {
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "cancelled": "Storniert",
+    "converted": "Umgewandelt"
+  },
+  "leaseStatus": {
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "terminated": "Beendet"
+  },
+  "rentalPaymentStatus": {
+    "pending": "Ausstehend",
+    "paid": "Bezahlt",
+    "overdue": "Überfällig",
+    "waived": "Erlassen",
+    "partially_paid": "Teilweise bezahlt"
+  },
+  "unitCostVerificationStatus": {
+    "pending_verification": "Verifizierung ausstehend",
+    "verified": "Verifiziert",
+    "rejected": "Abgelehnt",
+    "needs_revision": "Überarbeitung nötig"
+  },
+  "unitCostPaymentStatus": {
+    "unpaid": "Unbezahlt",
+    "partially_paid": "Teilweise bezahlt",
+    "paid": "Bezahlt",
+    "waived": "Erlassen",
+    "disputed": "Bestritten"
+  },
+  "inspectionType": {
+    "initial": "Erstaufnahme",
+    "follow_up": "Nachkontrolle",
+    "followUp": "Nachkontrolle",
+    "final": "Schlussabnahme",
+    "routine": "Routine",
+    "complaint": "Reklamation",
+    "pre_sale": "Vorverkauf",
+    "preSale": "Vorverkauf",
+    "post_sale": "Nachverkauf",
+    "postSale": "Nachverkauf"
+  },
+  "inspectionStatus": {
+    "cancelled": "Storniert",
+    "scheduled": "Geplant",
+    "in_progress": "In Bearbeitung",
+    "completed": "Abgeschlossen",
+    "rescheduled": "Neu geplant"
+  },
+  "modificationRequestStatus": {
+    "pending_architect": "Ausstehend Architekt",
+    "pending_engineer": "Ausstehend Ingenieur",
+    "pending_ceo": "Ausstehend CEO",
+    "pending_architect_revision": "Ausstehend Architektenrevision",
+    "pending_engineer_revision": "Ausstehend Ingenieurrevision",
+    "pending_finance": "Ausstehend Finanzen",
+    "pending_client_approval": "Ausstehend Kundenfreigabe",
+    "finance_completed": "Finanzen abgeschlossen",
+    "pending_delivery": "Ausstehend Lieferung",
+    "completed": "Abgeschlossen",
+    "cancelled": "Storniert"
   }
 }

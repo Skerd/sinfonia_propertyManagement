@@ -7,6 +7,7 @@ import type {UnitAvailabilityResponse, UnitAvailabilityWindow} from "armonia/src
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {Input} from "@coreModule/components/ui/input.tsx";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {handleError} from "@coreModule/helpers/general/errors.ts";
@@ -85,13 +86,30 @@ function UnitAvailabilityCalendar({resolveLanguageKey: t}: WithLanguageType) {
                         onChange={(e) => setProjectId(e.target.value)}
                     />
                 </div>
+                {/* The core picker, never the browser's (UX-08); the window always has both ends, from before to. */}
                 <div className="flex flex-col gap-y-1">
-                    <Label className="text-xs">{t("fromLabel")}</Label>
-                    <Input type="date" className="w-38 h-8 text-sm" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
+                    <Label className="text-xs" htmlFor="availabilityFrom">{t("fromLabel")}</Label>
+                    <DateInput
+                        id="availabilityFrom"
+                        className="w-44"
+                        valueFormat="YYYY-MM-DD"
+                        value={dateFrom}
+                        maxDate={dateTo}
+                        clearable={false}
+                        onChange={(value) => { if (value) setDateFrom(value); }}
+                    />
                 </div>
                 <div className="flex flex-col gap-y-1">
-                    <Label className="text-xs">{t("toLabel")}</Label>
-                    <Input type="date" className="w-38 h-8 text-sm" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
+                    <Label className="text-xs" htmlFor="availabilityTo">{t("toLabel")}</Label>
+                    <DateInput
+                        id="availabilityTo"
+                        className="w-44"
+                        valueFormat="YYYY-MM-DD"
+                        value={dateTo}
+                        minDate={dateFrom}
+                        clearable={false}
+                        onChange={(value) => { if (value) setDateTo(value); }}
+                    />
                 </div>
                 <Button size="sm" onClick={load} disabled={loading}>
                     {loading ? t("loading") : t("load")}

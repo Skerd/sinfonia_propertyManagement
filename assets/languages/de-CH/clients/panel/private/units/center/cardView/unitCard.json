@@ -49,5 +49,7 @@
     "ready": "Bereit",
     "delivered": "Übergeben"
   },
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "roomsCount": "{count} Zimmer",
+  "roomsCountOne": "1 Zimmer"
 }

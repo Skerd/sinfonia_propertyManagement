@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/floors/createFloor.tsx",
-  "publicVisibility": "Sito pubblico",
   "title": "Crea piano",
   "description": "Crea un nuovo piano per questo edificio",
   "descriptionWithoutEdifice": "Crea un nuovo piano",
@@ -57,7 +56,9 @@
     "pricePerMeterSquaredLabel": "Prezzo al m²",
     "pricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio",
     "verandaPricePerMeterSquaredLabel": "Prezzo al m² veranda",
-    "verandaPricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio"
+    "verandaPricePerMeterSquaredPlaceholder": "Vuoto = tariffa dell'edificio",
+    "visibilitySectionTitle": "Visibilità",
+    "ratesCurrencyDescription": "Nella valuta di vendita dell'edificio."
   },
   "axios": {
     "start": {

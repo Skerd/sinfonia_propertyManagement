@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/createUnit.tsx",
-  "publicVisibility": "Site public",
   "title": "Créer une unité",
   "description": "Créer une nouvelle unité pour cet étage",
   "descriptionWithoutContext": "Créer une nouvelle unité",
@@ -103,7 +102,8 @@
       "inherit": "Hériter du niveau supérieur",
       "hide": "Masquer le prix (sur demande)",
       "show": "Afficher le prix"
-    }
+    },
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {
@@ -126,6 +126,5 @@
   "formButtons": {
     "cancel": "Annuler",
     "submit": "Créer une unité"
-  },
-  "homepageFeatured": "Mis en avant sur la page d'accueil"
+  }
 }
