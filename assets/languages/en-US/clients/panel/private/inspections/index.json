@@ -49,7 +49,7 @@
     "status": "Status",
     "type": "Type",
     "project": "Project",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "floor": "Floor",
     "unit": "Unit",
     "updatedAt": "Updated At",
@@ -122,7 +122,7 @@
       {
         "title": "On this page",
         "items": [
-          "Create an inspection against a unit. Filter by project, edifice, floor, unit, type, status, and follow-up required.",
+          "Create an inspection against a unit. Filter by project, building, floor, unit, type, status, and follow-up required.",
           "Cards show unit, inspector, inspection date, and next inspection date. Open the sheet for findings, media, and the checklist.",
           "Company-wide list from Real Estate → Inspections; from a unit, the list can be scoped to that unit."
         ]
@@ -133,13 +133,13 @@
           "An inspection never changes unit commercial status.",
           "It is not a snag: open defects that need a trade and an assignee belong on Snags.",
           "It is not a modification request: client-asked changes go through architect / engineer / CEO / finance / delivery there.",
-          "It is not a handover package: sale handover checklists stack by project / edifice / floor / unit and tick on the sale."
+          "It is not a handover package: sale handover checklists stack by project / building / floor / unit and tick on the sale."
         ]
       },
       {
         "title": "Related records",
         "items": [
-          "Unit (and thus floor / edifice / project).",
+          "Unit (and thus floor / building / project).",
           "Inspection checklists (Tenancy → Configurations) — the reusable templates you attach here.",
           "Follow-on: Snags, Modification requests, Sale handover."
         ]

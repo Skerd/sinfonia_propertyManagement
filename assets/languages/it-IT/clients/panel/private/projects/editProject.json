@@ -16,7 +16,6 @@
   "commissions": "Aliquote di commissione",
   "currentImage": "Immagine attuale",
   "editDescription": "Modifica le informazioni del progetto",
-  "publicVisibility": "Sito pubblico",
   "title": "Modifica progetto",
   "description": "Modifica le informazioni del progetto",
   "editTitle": "Modifica progetto",
@@ -65,10 +64,10 @@
       "inherit": "Predefinito (prezzo visibile)",
       "hide": "Nascondi prezzo (su richiesta)",
       "show": "Mostra prezzo"
-    }
+    },
+    "visibilitySectionTitle": "Visibilità"
   },
   "generalInfo": "Informazioni generali",
-  "homepageFeatured": "In evidenza sulla homepage",
   "media": "Media",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
   "uploadError": "Caricamento dei file multimediali non riuscito",

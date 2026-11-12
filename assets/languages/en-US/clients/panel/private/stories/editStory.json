@@ -6,8 +6,8 @@
   "form": {
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice (optional)",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building (optional)",
     "unitLabel": "Unit",
     "unitPlaceholder": "Select unit (optional)",
     "titleLabel": "Title",

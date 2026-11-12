@@ -4,13 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {Edifice} from "armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {
-    IconCashBanknote,
-    IconDoor,
-    IconGrid4x4,
-    IconStack,
-    IconTrees,
-} from "@tabler/icons-react";
+import {IconCashBanknote, IconDoor, IconGrid4x4} from "@tabler/icons-react";
 import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
 import EdificeSheetView from "@propertyManagementModule/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx";
 import ViewFloors from "@propertyManagementModule/clients/panel/private/edifices/center/actions/viewFloors.tsx";
@@ -131,49 +125,38 @@ function EdificeCard({
                             <ViewFloorsOverlay onAction={setAction} />
                             <GenerateFloorsUnits onAction={setAction} />
                         </EntityCard.Header>
+                        {/* How many units, how big, what it cost, and how the units stand (UX-02). */}
                         <EntityCard.Body>
-                            <EntityCardRow
-                                icon={IconGrid4x4}
-                                label={resolveLanguageKey("data.totalArea")}
-                                tooltip={resolveLanguageKey("data.totalArea")}
-                                path="totalArea"
-                                type="area"
-                                value={entity.totalArea}
-                            />
-                            <EntityCardRow
-                                icon={IconTrees}
-                                label={resolveLanguageKey("data.greenArea")}
-                                tooltip={resolveLanguageKey("data.greenArea")}
-                                path="greenArea"
-                                type="area"
-                                value={entity.greenArea}
-                            />
-                            <EntityCardRow
-                                icon={IconCashBanknote}
-                                label={resolveLanguageKey("data.investmentValue")}
-                                tooltip={resolveLanguageKey("data.investmentValueTooltip")}
-                                path="investmentValue"
-                                type="currency"
-                                value={{amount: entity.investmentValue, currency: entity.investmentCurrency}}
-                            />
-                            <EntityCardRow
-                                icon={IconStack}
-                                label={resolveLanguageKey("statistics.floors")}
-                                tooltip={resolveLanguageKey("statistics.floorsTooltip")}
-                                show
-                                path="statistics.totalFloors"
-                                type="number"
-                                value={entity.statistics?.totalFloors}
-                            />
-                            <EntityCardRow
-                                icon={IconDoor}
-                                label={resolveLanguageKey("statistics.units")}
-                                tooltip={resolveLanguageKey("statistics.unitsTooltip")}
-                                show
-                                path="statistics.totalUnits"
-                                type="number"
-                                value={entity.statistics?.totalUnits}
-                            />
+                            {entity.statistics?.totalUnits != null ? (
+                                <EntityCardRow
+                                    icon={IconDoor}
+                                    label={resolveLanguageKey("statistics.units")}
+                                    tooltip={resolveLanguageKey("statistics.unitsTooltip")}
+                                    path="statistics.totalUnits"
+                                    type="number"
+                                    value={entity.statistics.totalUnits}
+                                />
+                            ) : null}
+                            {entity.totalArea != null ? (
+                                <EntityCardRow
+                                    icon={IconGrid4x4}
+                                    label={resolveLanguageKey("data.totalArea")}
+                                    tooltip={resolveLanguageKey("data.totalArea")}
+                                    path="totalArea"
+                                    type="area"
+                                    value={entity.totalArea}
+                                />
+                            ) : null}
+                            {entity.investmentValue != null ? (
+                                <EntityCardRow
+                                    icon={IconCashBanknote}
+                                    label={resolveLanguageKey("data.investmentValue")}
+                                    tooltip={resolveLanguageKey("data.investmentValueTooltip")}
+                                    path="investmentValue"
+                                    type="currency"
+                                    value={{amount: entity.investmentValue, currency: entity.investmentCurrency}}
+                                />
+                            ) : null}
                             {entity.statistics?.unitsByStatus ? (
                                 <EntityStatusBadgeRow
                                     unitsByStatus={entity.statistics.unitsByStatus}

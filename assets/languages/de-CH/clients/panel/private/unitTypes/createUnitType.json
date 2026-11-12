@@ -20,7 +20,8 @@
     "descriptionPlaceholder": "Beschreibung eingeben",
     "iconLabel": "Symbol",
     "iconPlaceholder": "Icon eingeben (z. B. mdi-home)",
-    "isPrivateLabel": "Privat"
+    "isPrivateLabel": "Privat",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

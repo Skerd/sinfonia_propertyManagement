@@ -58,13 +58,12 @@
       "inherit": "Par défaut (prix affiché)",
       "hide": "Masquer le prix (sur demande)",
       "show": "Afficher le prix"
-    }
+    },
+    "visibilitySectionTitle": "Visibilité"
   },
   "generalInfo": "Informations générales",
-  "homepageFeatured": "Mise en avant page d'accueil",
   "media": "Médias",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/createProject.tsx",
-  "publicVisibility": "Site public",
   "title": "Créer un projet",
   "uploadError": "Échec du téléversement des fichiers média",
   "formHeader": {

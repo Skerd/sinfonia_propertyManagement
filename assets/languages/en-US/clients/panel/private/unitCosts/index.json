@@ -41,8 +41,8 @@
     "clear": "Clear",
     "project": "Project",
     "projectPlaceholder": "All projects",
-    "edifice": "Edifice",
-    "edificePlaceholder": "All edifices",
+    "edifice": "Building",
+    "edificePlaceholder": "All buildings",
     "floor": "Floor",
     "floorPlaceholder": "All floors",
     "unit": "Unit",
@@ -71,14 +71,14 @@
     "NOTE": "Note",
     "budgetCurrency": "Budget Currency",
     "budgetedAmount": "Budgeted Amount",
-    "constructorRef": "Constructor",
+    "constructorRef": "Contractor",
     "createdAt": "Created At",
     "createdBy": "Created By",
     "currency": "Currency",
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
     "documentSubtotal": "Subtotal",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "expenditureItems": "Line items",
     "expenditureItems.amount": "Line quantity",
     "expenditureItems.category": "Line category",
@@ -161,7 +161,7 @@
   "help": {
     "ariaLabel": "About Unit costs",
     "title": "About Unit costs",
-    "overview": "Unit costs are owner-side purchases and invoices booked against a unit (and thus its project/edifice). This page has an expenses table and a payment calendar. It is not tenant rent (Rental payments) and not contractor invoices from the construction module.",
+    "overview": "Unit costs are owner-side purchases and invoices booked against a unit (and thus its project/building). This page has an expenses table and a payment calendar. It is not tenant rent (Rental payments) and not contractor invoices from the construction module.",
     "sections": [
       {
         "title": "Tabs",
@@ -189,7 +189,7 @@
       {
         "title": "Related records",
         "items": [
-          "Unit → Floor → Edifice → Project. ROI calculator. ERP export."
+          "Unit → Floor → Building → Project. ROI calculator. ERP export."
         ]
       }
     ]

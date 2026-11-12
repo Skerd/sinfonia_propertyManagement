@@ -13,7 +13,8 @@
     "descriptionLabel": "Përshkrimi",
     "descriptionPlaceholder": "Shkruani përshkrimin",
     "sortOrderLabel": "Renditja",
-    "sortOrderPlaceholder": "Shkruani renditjen"
+    "sortOrderPlaceholder": "Shkruani renditjen",
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "axios": {
     "start": {

@@ -35,7 +35,8 @@
     "nameRequired": "Kërkohet emri",
     "slugLabel": "Slug",
     "slugPlaceholder": "Fut slug-un (p.sh., apartment)",
-    "slugRequired": "Slug-u është i detyrueshëm"
+    "slugRequired": "Slug-u është i detyrueshëm",
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -5,8 +5,8 @@
   "form": {
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building",
     "floorLabel": "Floor",
     "floorPlaceholder": "Select floor",
     "unitLabel": "Unit",
@@ -59,7 +59,7 @@
   "help": {
     "ariaLabel": "About editing a handover package",
     "title": "About editing a handover package",
-    "overview": "You are editing a checklist configuration. Project, edifice, floor, and unit are locked. Changing items here updates open sales; sales that already have a title-transfer date stay frozen.",
+    "overview": "You are editing a checklist configuration. Project, building, floor, and unit are locked. Changing items here updates open sales; sales that already have a title-transfer date stay frozen.",
     "sections": [
       {
         "title": "What you can change",

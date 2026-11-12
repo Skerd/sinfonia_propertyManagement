@@ -5,8 +5,8 @@
   "form": {
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building",
     "floorLabel": "Floor",
     "floorPlaceholder": "Select floor",
     "unitLabel": "Unit",
@@ -54,7 +54,7 @@
   },
   "formHeader": {
     "title": "Add handover package",
-    "description": "Leave edifice, floor, or unit empty to apply this checklist at that scope. Units inherit ancestor items."
+    "description": "Leave building, floor, or unit empty to apply this checklist at that scope. Units inherit ancestor items."
   },
   "help": {
     "ariaLabel": "About adding a handover package",
@@ -65,8 +65,8 @@
         "title": "How to pick the scope",
         "items": [
           "Project is required.",
-          "Leave edifice, floor, and unit empty for a project-wide list that every unit in the project inherits.",
-          "Fill edifice (and leave floor and unit empty) for building-level extras.",
+          "Leave building, floor, and unit empty for a project-wide list that every unit in the project inherits.",
+          "Fill building (and leave floor and unit empty) for building-level extras.",
           "Fill floor (and leave unit empty) for floor-level extras. Fill unit for items that apply only to that unit.",
           "Ancestors are filled automatically from the leaf. After save, scope cannot be changed — create a new package at a different scope instead."
         ]
@@ -74,7 +74,7 @@
       {
         "title": "Uniqueness",
         "items": [
-          "There can be only one package per project, per edifice, per floor, and per unit.",
+          "There can be only one package per project, per building, per floor, and per unit.",
           "A second package at the same scope is rejected. Edit the existing one instead."
         ]
       },

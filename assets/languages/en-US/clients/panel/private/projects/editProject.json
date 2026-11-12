@@ -16,7 +16,6 @@
   "commissions": "Commission rates",
   "currentImage": "Current image",
   "editDescription": "Edit project information",
-  "publicVisibility": "Public website",
   "title": "Edit Project",
   "description": "Edit project information",
   "editTitle": "Edit Project",
@@ -65,10 +64,10 @@
       "inherit": "Default (price shown)",
       "hide": "Hide price (on request)",
       "show": "Show price"
-    }
+    },
+    "visibilitySectionTitle": "Visibility"
   },
   "generalInfo": "General Information",
-  "homepageFeatured": "Homepage featured",
   "media": "Media",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
   "uploadError": "Failed to upload media files",

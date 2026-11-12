@@ -9,12 +9,12 @@
   "scope": "Scope",
   "scopes": {
     "project": "Project",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "floor": "Floor",
     "unit": "Unit"
   },
   "project": "Project",
-  "edifice": "Edifice",
+  "edifice": "Building",
   "floor": "Floor",
   "unit": "Unit",
   "checklist": "Checklist",

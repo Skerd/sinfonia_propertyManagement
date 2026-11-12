@@ -3,7 +3,7 @@
   "failedTitle": "Impossible de charger le rapport",
   "failedDescription": "Une erreur s’est produite lors du chargement de ce rapport. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour recharger les données.",
-  "constructionProgress": "Avancement des travaux",
+  "constructionProgress": "Rapport d'avancement",
   "overview": "Aperçu",
   "name": "Référence",
   "title": "Titre",

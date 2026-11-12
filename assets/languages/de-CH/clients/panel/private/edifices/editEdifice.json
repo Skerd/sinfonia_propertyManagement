@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
-  "publicVisibility": "Öffentliche Website",
   "title": "Gebäude bearbeiten",
   "description": "Gebäudeinformationen aktualisieren",
   "editTitle": "Gebäude bearbeiten",
@@ -113,7 +112,8 @@
       "inherit": "Von übergeordneter Ebene übernehmen",
       "hide": "Preis ausblenden (auf Anfrage)",
       "show": "Preis anzeigen"
-    }
+    },
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

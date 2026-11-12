@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx",
-  "title": "Ajouter une liste",
+  "title": "Ajouter une liste de contrôle",
   "generalInfo": "Détails",
   "form": {
     "titleLabel": "Titre",
@@ -44,7 +44,7 @@
     }
   },
   "formHeader": {
-    "title": "Ajouter une liste",
+    "title": "Ajouter une liste de contrôle",
     "description": "Saisissez les informations pour créer une liste de contrôle."
   },
   "formButtons": {

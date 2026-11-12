@@ -1,9 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
-  "publicVisibility": "Public website",
-  "title": "Create Edifice",
-  "description": "Create a new edifice for this project",
-  "descriptionWithoutProject": "Create a new edifice",
+  "title": "Create Building",
+  "description": "Create a new building for this project",
+  "descriptionWithoutProject": "Create a new building",
   "generalInfo": "General Information",
   "address": "Address",
   "areaAndDistance": "Area and Distance",
@@ -11,7 +10,7 @@
   "constructionTimeline": "Construction & Compliance",
   "specifications": "Specifications",
   "investment": "Investment Information",
-  "constructors": "Constructors",
+  "constructors": "Contractors",
   "propertyTypes": "Property Types",
   "facilities": "Facilities",
   "edificeLocationOnProject": "Building location on project image",
@@ -25,12 +24,12 @@
   "uploadError": "Failed to upload media files",
   "removeCommercialFacility": "Remove commercial facility",
   "removeNeighborhoodFacility": "Remove neighborhood facility",
-  "removeConstructor": "Remove constructor",
+  "removeConstructor": "Remove contractor",
   "removePropertyType": "Remove property type",
   "form": {
-    "nameLabel": "Edifice Name",
-    "namePlaceholder": "Enter edifice name",
-    "nameRequired": "Edifice name is required",
+    "nameLabel": "Building Name",
+    "namePlaceholder": "Enter building name",
+    "nameRequired": "Building name is required",
     "countryLabel": "Country",
     "countryPlaceholder": "Select country",
     "countryRequired": "Country is required",
@@ -84,7 +83,7 @@
     "verandaPricePerMeterSquarePlaceholder": "Enter veranda sale price per square meter",
     "saleCurrencyLabel": "Sale Currency",
     "saleCurrencyPlaceholder": "Select currency",
-    "selectConstructor": "Select Constructor",
+    "selectConstructor": "Select Contractor",
     "selectPropertyType": "Select Property Type",
     "commercialFacilitiesLabel": "Commercial Facilities",
     "commercialFacilitiesPlaceholder": "Add commercial facility",
@@ -108,28 +107,29 @@
       "inherit": "Inherit from parent",
       "hide": "Hide price (on request)",
       "show": "Show price"
-    }
+    },
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {
-      "title": "Creating edifice",
+      "title": "Creating building",
       "time": 3000
     },
     "success": {
-      "title": "Edifice successfully created!",
+      "title": "Building successfully created!",
       "time": 3000
     },
     "error": {
-      "title": "Edifice could not be created, please try again!",
+      "title": "Building could not be created, please try again!",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Create Edifice",
-    "description": "Create a new edifice for this project"
+    "title": "Create Building",
+    "description": "Create a new building for this project"
   },
   "formButtons": {
     "cancel": "Cancel",
-    "submit": "Create Edifice"
+    "submit": "Create Building"
   }
 }

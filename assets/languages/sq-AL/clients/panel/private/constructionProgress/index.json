@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
-  "title": "Ecuria e punimeve",
+  "title": "Raportet e ecurisë",
   "description": "Ndiqni fazën e ndërtimit dhe % e punimeve për çdo projekt ose ndërtesë. Klientët njoftohen me foto nga kantieri kur punimet avancojnë.",
   "createConstructionProgress": "Shto raport ecurie",
   "viewTimeline": "Kronologjia e kantierit",

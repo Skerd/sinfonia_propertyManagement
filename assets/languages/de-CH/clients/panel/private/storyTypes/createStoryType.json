@@ -13,7 +13,8 @@
     "descriptionLabel": "Beschreibung",
     "descriptionPlaceholder": "Beschreibung eingeben",
     "sortOrderLabel": "Sortierreihenfolge",
-    "sortOrderPlaceholder": "Sortierreihenfolge eingeben"
+    "sortOrderPlaceholder": "Sortierreihenfolge eingeben",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

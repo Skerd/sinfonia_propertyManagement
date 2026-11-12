@@ -20,7 +20,8 @@
     "descriptionPlaceholder": "Enter description",
     "iconLabel": "Icon",
     "iconPlaceholder": "Enter icon (e.g., mdi-home)",
-    "isPrivateLabel": "Private"
+    "isPrivateLabel": "Private",
+    "visibilitySectionTitle": "Visibility"
   },
   "axios": {
     "start": {

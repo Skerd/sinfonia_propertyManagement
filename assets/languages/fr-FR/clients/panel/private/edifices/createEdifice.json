@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
-  "publicVisibility": "Site public",
   "title": "Créer un bâtiment",
   "description": "Créer un nouveau bâtiment pour ce projet",
   "descriptionWithoutProject": "Créer un nouveau bâtiment",
@@ -108,7 +107,8 @@
       "inherit": "Hériter du niveau supérieur",
       "hide": "Masquer le prix (sur demande)",
       "show": "Afficher le prix"
-    }
+    },
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {

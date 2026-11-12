@@ -10,5 +10,7 @@
   "statuses": {
     "active": "Aktiv",
     "archived": "Archiviert"
-  }
+  },
+  "itemCount": "Punkte",
+  "tradeAndStage": "Gewerk und Phase"
 }

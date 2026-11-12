@@ -7,7 +7,7 @@
     "published": "Status",
     "publishedAt": "Published date",
     "project": "Project",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "unit": "Unit"
   },
   "failedTitle": "Failed to load this record",

@@ -13,5 +13,6 @@
   "deleted": "Fshirë",
   "failedTitle": "Ngarkimi dështoi",
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
-  "failedTooltipDescription": "Kliko për të ngarkuar sërish."
+  "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
+  "privateBadge": "Privat"
 }

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/projects/center/cardView/projectCard.tsx",
-  "edifices": "Edifices",
+  "edifices": "Buildings",
   "and": "and",
   "data": {
     "name": "Name",
@@ -11,9 +11,9 @@
   },
   "statistics": {
     "area": "Building area",
-    "areaTooltip": "Sum of edifice building footprint (total area), not unit areas",
-    "edifices": "Edifices",
-    "edificesTooltip": "Total Edifices",
+    "areaTooltip": "Sum of building building footprint (total area), not unit areas",
+    "edifices": "Buildings",
+    "edificesTooltip": "Total Buildings",
     "floors": "Floors",
     "floorsTooltip": "Total Floors",
     "investment": "Invested",
@@ -31,7 +31,7 @@
     "unavailable": "Unavailable",
     "unavailableDesc": "Not available for sale"
   },
-  "viewEdifices": "View Edifices",
+  "viewEdifices": "View Buildings",
   "failedTitle": "Failed to load this record",
   "failedDescription": "Something went wrong while loading. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data."

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/editConstructionProgress.tsx",
-  "title": "Modifier le rapport",
+  "title": "Modifier le rapport d'avancement",
   "editTitle": "Modifier le rapport",
   "editDescription": "Modifier le rapport d’avancement",
   "errorTitle": "Impossible de charger le rapport",
@@ -57,7 +57,7 @@
     }
   },
   "formHeader": {
-    "title": "Modifier le rapport",
+    "title": "Modifier le rapport d'avancement",
     "description": "Modifier le rapport d’avancement"
   },
   "formButtons": {

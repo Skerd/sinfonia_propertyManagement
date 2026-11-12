@@ -110,5 +110,6 @@
     "hidden_floor": "Prezzo su richiesta (impostato su piano)",
     "shown_unit": "Prezzo visibile (impostato su unità)",
     "hidden_unit": "Prezzo su richiesta (impostato su unità)"
-  }
+  },
+  "visibilityGroup": "Visibilità"
 }

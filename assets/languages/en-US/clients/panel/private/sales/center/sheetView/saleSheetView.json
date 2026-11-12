@@ -13,7 +13,7 @@
     "payment_plan": "Payment plan"
   },
   "project": "Project",
-  "edifice": "Edifice",
+  "edifice": "Building",
   "floor": "Floor",
   "pricing": "Pricing",
   "listedUnitPrice": "Listed unit price",
@@ -67,7 +67,7 @@
   "sourceScope": "Scope",
   "sourceScopes": {
     "project": "Project",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "floor": "Floor",
     "unit": "Unit",
     "retained": "Retained"

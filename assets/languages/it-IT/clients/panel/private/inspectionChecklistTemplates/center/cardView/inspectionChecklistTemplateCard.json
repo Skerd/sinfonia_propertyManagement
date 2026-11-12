@@ -10,5 +10,7 @@
   "statuses": {
     "active": "Attivo",
     "archived": "Archiviato"
-  }
+  },
+  "itemCount": "Voci",
+  "tradeAndStage": "Mestiere e fase"
 }

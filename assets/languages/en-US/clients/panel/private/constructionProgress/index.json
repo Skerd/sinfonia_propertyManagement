@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
-  "title": "Construction progress",
+  "title": "Progress reports",
   "description": "Track the construction phase and % of works per project or building. Clients are notified with site photos when progress advances.",
   "createConstructionProgress": "Add progress report",
   "viewTimeline": "Construction timeline",

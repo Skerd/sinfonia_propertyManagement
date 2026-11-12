@@ -4,7 +4,7 @@
   "description": "Tick inherited checklist items. Removed items that were already done stay as retained.",
   "sourceScopes": {
     "project": "Project",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "floor": "Floor",
     "unit": "Unit",
     "retained": "Retained"

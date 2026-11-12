@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
-  "publicVisibility": "Sito pubblico",
   "title": "Modifica edificio",
   "description": "Aggiorna le informazioni dell'edificio",
   "editTitle": "Modifica edificio",
@@ -113,7 +112,8 @@
       "inherit": "Eredita dal livello superiore",
       "hide": "Nascondi prezzo (su richiesta)",
       "show": "Mostra prezzo"
-    }
+    },
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {

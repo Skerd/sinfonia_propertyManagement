@@ -16,7 +16,6 @@
   "commissions": "Provisionssätze",
   "currentImage": "Aktuelles Bild",
   "editDescription": "Projektinformationen bearbeiten",
-  "publicVisibility": "Öffentliche Website",
   "title": "Projekt bearbeiten",
   "description": "Projektinformationen bearbeiten",
   "editTitle": "Projekt bearbeiten",
@@ -65,10 +64,10 @@
       "inherit": "Standard (Preis sichtbar)",
       "hide": "Preis ausblenden (auf Anfrage)",
       "show": "Preis anzeigen"
-    }
+    },
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "generalInfo": "Allgemeine Informationen",
-  "homepageFeatured": "Startseite hervorgehoben",
   "media": "Medien",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
   "uploadError": "Hochladen der Mediendateien fehlgeschlagen",

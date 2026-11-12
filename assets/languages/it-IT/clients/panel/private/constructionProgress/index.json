@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
-  "title": "Avanzamento lavori",
+  "title": "Rapporti di avanzamento",
   "description": "Monitora la fase di costruzione e la % dei lavori per progetto o edificio. I clienti vengono avvisati con le foto del cantiere quando i lavori avanzano.",
-  "createConstructionProgress": "Aggiungi rapporto",
+  "createConstructionProgress": "Aggiungi rapporto di avanzamento",
   "viewTimeline": "Cronologia del cantiere",
   "noData": "Ancora nessun rapporto di avanzamento",
   "failTitle": "Impossibile caricare l’avanzamento lavori",

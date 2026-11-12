@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
-  "inspectionChecklistTemplate": "Modeli i listës së kontrollit të inspektimit",
+  "inspectionChecklistTemplate": "Listë kontrolli",
   "overview": "Përmbledhje",
   "media": "Bashkëngjitje",
   "name": "Referenca",

@@ -56,8 +56,8 @@
       "next": "Next"
     },
     "viewAction": "View",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "All edifices",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "All buildings",
     "floorLabel": "Floor",
     "floorPlaceholder": "All floors",
     "unitLabel": "Unit",
@@ -108,8 +108,8 @@
       "next": "Next"
     },
     "viewAction": "View",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "All edifices",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "All buildings",
     "floorLabel": "Floor",
     "floorPlaceholder": "All floors",
     "unitLabel": "Unit",

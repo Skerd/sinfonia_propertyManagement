@@ -74,7 +74,7 @@
       }
     ]
   },
-  "createInspectionChecklistTemplate": "Aggiungi checklist",
+  "createInspectionChecklistTemplate": "Aggiungi checklist di ispezione",
   "noData": "Nessuna checklist di ispezione trovata",
   "failTitle": "Impossibile caricare le checklist di ispezione",
   "failDescription": "Si è verificato un errore. Riprova.",

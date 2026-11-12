@@ -20,5 +20,6 @@
     "in_progress": "En cours",
     "ready": "Prêt",
     "completed": "Terminé"
-  }
+  },
+  "itemCount": "Éléments"
 }

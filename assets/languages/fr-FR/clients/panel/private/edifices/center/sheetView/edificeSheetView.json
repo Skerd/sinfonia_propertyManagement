@@ -110,5 +110,6 @@
     "hidden_floor": "Prix sur demande (défini sur l'étage)",
     "shown_unit": "Prix affiché (défini sur l'unité)",
     "hidden_unit": "Prix sur demande (défini sur l'unité)"
-  }
+  },
+  "visibilityGroup": "Visibilité"
 }

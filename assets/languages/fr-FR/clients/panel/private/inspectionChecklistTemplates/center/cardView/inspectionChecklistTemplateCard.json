@@ -10,5 +10,7 @@
   "statuses": {
     "active": "Actif",
     "archived": "Archivé"
-  }
+  },
+  "itemCount": "Éléments",
+  "tradeAndStage": "Corps de métier et étape"
 }

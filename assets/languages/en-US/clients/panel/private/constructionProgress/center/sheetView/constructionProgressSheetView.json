@@ -3,7 +3,7 @@
   "failedTitle": "Failed to load progress report",
   "failedDescription": "Something went wrong while loading this report. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
-  "constructionProgress": "Construction progress",
+  "constructionProgress": "Progress report",
   "overview": "Overview",
   "name": "Reference",
   "title": "Title",

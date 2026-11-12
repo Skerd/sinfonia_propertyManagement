@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
-  "title": "Avancement des travaux",
+  "title": "Rapports d'avancement",
   "description": "Suivez la phase du chantier et le % de travaux réalisés par projet ou bâtiment. Les clients sont notifiés avec des photos du chantier lorsque l’avancement progresse.",
-  "createConstructionProgress": "Ajouter un rapport",
+  "createConstructionProgress": "Ajouter un rapport d'avancement",
   "viewTimeline": "Chronologie du chantier",
   "noData": "Aucun rapport d’avancement pour le moment",
   "failTitle": "Impossible de charger l’avancement des travaux",

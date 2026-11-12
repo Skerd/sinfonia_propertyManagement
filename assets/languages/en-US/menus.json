@@ -11,7 +11,7 @@
       "title": "Projects"
     },
     "edifices": {
-      "title": "Edifices"
+      "title": "Buildings"
     },
     "floors": {
       "title": "Floors"
@@ -41,7 +41,7 @@
       "title": "Payment plans"
     },
     "constructors": {
-      "title": "Constructors"
+      "title": "Contractors"
     },
     "salesAndHandover": {
       "title": "Sales & handover"
@@ -101,7 +101,7 @@
       "title": "ERP export"
     },
     "constructionProgress": {
-      "title": "Construction progress"
+      "title": "Progress reports"
     },
     "adCampaigns": {
       "title": "Ad campaigns"
@@ -140,7 +140,7 @@
   "tenancy": {
     "systemSettings": {
       "constructors": {
-        "title": "Constructors"
+        "title": "Contractors"
       },
       "unitTypeCategories": {
         "title": "Unit type categories"

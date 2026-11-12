@@ -28,7 +28,8 @@
     "slugPlaceholder": "Inserisci lo slug (es. residential)",
     "slugRequired": "Lo slug è obbligatorio",
     "sortOrderLabel": "Ordine di visualizzazione",
-    "sortOrderPlaceholder": "Inserisci l’ordine di visualizzazione"
+    "sortOrderPlaceholder": "Inserisci l’ordine di visualizzazione",
+    "visibilitySectionTitle": "Visibilità"
   },
   "formButtons": {
     "cancel": "Annulla",

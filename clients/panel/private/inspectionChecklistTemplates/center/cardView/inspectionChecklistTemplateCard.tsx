@@ -3,11 +3,11 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {InspectionChecklistTemplate} from "armonia/src/modules/propertyManagement/api/realEstate/private/inspectionChecklistTemplate/inspectionChecklistTemplate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx";
-import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {IconListCheck, IconTools} from "@tabler/icons-react";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -59,17 +59,49 @@ function InspectionChecklistTemplateCard({
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
         >
-            {({entity: row}) => (
-                <EntityCard.Header
-                    titlePath="title"
-                    title={row.title}
-                    subtitle={row.name}
-                    subtitlePath="name"
-                    badges={row.status ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>{String(resolveLanguageKey(`status.${row.status}`, true) || resolveLanguageKey(`statuses.${row.status}`, true) || row.status)}</Badge>
-                    ) : null}
-                />
-            )}
+            {({entity: row}) => {
+                const tradeAndStage = [row.trade, row.stage].filter(Boolean).join(" · ");
+                return (
+                    <>
+                        {/* The state in its model tone (UX-02); what the checklist is for and how long it is. */}
+                        <EntityCard.Header
+                            titlePath="title"
+                            title={row.title}
+                            subtitle={row.name}
+                            subtitlePath="name"
+                            badges={
+                                <StatusBadge
+                                    tableConfigKey="inspectionchecklisttemplates"
+                                    field="status"
+                                    value={row.status}
+                                    label={String(resolveLanguageKey(`statuses.${row.status}`))}
+                                />
+                            }
+                        />
+                        <EntityCard.Body>
+                            {tradeAndStage ? (
+                                <EntityCardRow
+                                    icon={IconTools}
+                                    label={resolveLanguageKey("tradeAndStage")}
+                                    tooltip={resolveLanguageKey("tradeAndStage")}
+                                    path="trade"
+                                    value={tradeAndStage}
+                                />
+                            ) : null}
+                            {row.items.length > 0 ? (
+                                <EntityCardRow
+                                    icon={IconListCheck}
+                                    label={resolveLanguageKey("itemCount")}
+                                    tooltip={resolveLanguageKey("itemCount")}
+                                    path="items"
+                                    type="number"
+                                    value={row.items.length}
+                                />
+                            ) : null}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

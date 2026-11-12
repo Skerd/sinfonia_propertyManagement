@@ -15,7 +15,7 @@
   "levelNumber": "Level",
   "area": "Usable Area",
   "totalUnits": "Total Units",
-  "edifice": "Edifice",
+  "edifice": "Building",
   "project": "Project",
   "accessibility": "Accessibility",
   "isAccessible": "Accessible",
@@ -68,7 +68,7 @@
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
   "priceVisibility": "Public price",
-  "priceVisibilityTooltip": "Hide or show prices for units on this floor. Inherit follows the edifice or project; units can override it.",
+  "priceVisibilityTooltip": "Hide or show prices for units on this floor. Inherit follows the building or project; units can override it.",
   "priceVisibilityEnum": {
     "inherit": "Inherit from parent",
     "hide": "Hide price (on request)",
@@ -80,16 +80,16 @@
     "shown_default": "Price shown",
     "shown_project": "Price shown (set on project)",
     "hidden_project": "Price on request (set on project)",
-    "shown_edifice": "Price shown (set on edifice)",
-    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_edifice": "Price shown (set on building)",
+    "hidden_edifice": "Price on request (set on building)",
     "shown_floor": "Price shown (set on floor)",
     "hidden_floor": "Price on request (set on floor)",
     "shown_unit": "Price shown (set on unit)",
     "hidden_unit": "Price on request (set on unit)"
   },
   "pricePerMeterSquared": "Price per m²",
-  "pricePerMeterSquaredTooltip": "Rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected.",
+  "pricePerMeterSquaredTooltip": "Rate applied to this floor's units: the floor's own rate if set, otherwise the building rate. Units with a manually edited price are not affected.",
   "verandaPricePerMeterSquared": "Veranda price per m²",
-  "verandaPricePerMeterSquaredTooltip": "Veranda rate applied to this floor's units: the floor's own rate if set, otherwise the edifice rate. Units with a manually edited price are not affected.",
+  "verandaPricePerMeterSquaredTooltip": "Veranda rate applied to this floor's units: the floor's own rate if set, otherwise the building rate. Units with a manually edited price are not affected.",
   "visibilityGroup": "Visibility"
 }

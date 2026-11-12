@@ -110,5 +110,6 @@
     "hidden_floor": "Çmimi me kërkesë (vendosur te kati)",
     "shown_unit": "Çmimi shfaqet (vendosur te njësia)",
     "hidden_unit": "Çmimi me kërkesë (vendosur te njësia)"
-  }
+  },
+  "visibilityGroup": "Dukshmëria"
 }

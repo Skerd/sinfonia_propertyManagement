@@ -10,14 +10,14 @@
   "reservationCommissionTooltip": "Reservation commission (%)",
   "none": "None",
   "statistics": {
-    "edifices": "Edifices",
-    "edificesTooltip": "Total Edifices",
+    "edifices": "Buildings",
+    "edificesTooltip": "Total Buildings",
     "floors": "Floors",
     "floorsTooltip": "Total Floors",
     "units": "Units",
     "unitsTooltip": "Total Units",
     "area": "Building area",
-    "areaTooltip": "Sum of edifice building footprint (total area), not unit areas",
+    "areaTooltip": "Sum of building building footprint (total area), not unit areas",
     "investment": "Invested",
     "investmentTooltip": "Total Investment Value",
     "availableUnits": "Available units",
@@ -45,7 +45,7 @@
   },
   "and": "and",
   "description": "Description",
-  "edificesCount": "edifices",
+  "edificesCount": "buildings",
   "gallery": "Gallery",
   "socialLinks": "Social links",
   "socialLinkName": "Name",
@@ -75,7 +75,7 @@
   "magazineDescription": "Magazine description",
   "magazineFile": "Magazine PDF",
   "priceVisibility": "Public price",
-  "priceVisibilityTooltip": "Hide or show unit prices on the public website for this whole project. Edifices, floors and units can override it.",
+  "priceVisibilityTooltip": "Hide or show unit prices on the public website for this whole project. Buildings, floors and units can override it.",
   "priceVisibilityEnum": {
     "inherit": "Default (price shown)",
     "hide": "Hide price (on request)",
@@ -87,11 +87,13 @@
     "shown_default": "Price shown",
     "shown_project": "Price shown (set on project)",
     "hidden_project": "Price on request (set on project)",
-    "shown_edifice": "Price shown (set on edifice)",
-    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_edifice": "Price shown (set on building)",
+    "hidden_edifice": "Price on request (set on building)",
     "shown_floor": "Price shown (set on floor)",
     "hidden_floor": "Price on request (set on floor)",
     "shown_unit": "Price shown (set on unit)",
     "hidden_unit": "Price on request (set on unit)"
-  }
+  },
+  "visibilityGroup": "Visibility",
+  "commissions": "Commission rates"
 }

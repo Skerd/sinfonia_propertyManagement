@@ -2,10 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {StoryType} from "armonia/src/modules/propertyManagement/api/realEstate/private/storyType/storyType.dto.ts";
-import {IconListNumbers} from "@tabler/icons-react";
 import StoryTypeSheetView from "@propertyManagementModule/clients/panel/private/storyTypes/center/sheetView/storyTypeSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
@@ -63,16 +61,6 @@ function StoryTypeCard({
                         titlePath="name"
                         title={entity.name}
                     />
-                    <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconListNumbers}
-                            label={resolveLanguageKey("sortOrder")}
-                            tooltip={resolveLanguageKey("sortOrder")}
-                            path="sortOrder"
-                            type="number"
-                            value={entity.sortOrder}
-                        />
-                    </EntityCard.Body>
                 </>
             )}
         </EntityCard>

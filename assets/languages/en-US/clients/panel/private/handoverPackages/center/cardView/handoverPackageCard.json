@@ -5,7 +5,7 @@
   "failedTooltipDescription": "Click to retry fetching data.",
   "scopes": {
     "project": "Project",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "floor": "Floor",
     "unit": "Unit"
   },
@@ -20,5 +20,6 @@
     "in_progress": "In Progress",
     "ready": "Ready",
     "completed": "Completed"
-  }
+  },
+  "itemCount": "Items"
 }

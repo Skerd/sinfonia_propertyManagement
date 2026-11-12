@@ -11,8 +11,8 @@
   "description": "Manage units for this floor",
   "descriptionWithContext": "Manage units for this floor",
   "descriptionWithoutContext": "Manage all units",
-  "edifice": "Edifice",
-  "edifices": "Edifices",
+  "edifice": "Building",
+  "edifices": "Buildings",
   "failDescription": "An error occurred while loading units. Please try again.",
   "failTitle": "Failed to load units",
   "fields": {
@@ -24,7 +24,7 @@
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
     "description": "Description",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "featuredOnHomepage": "Featured on homepage",
     "featuredSortOrder": "Featured sort order",
     "floor": "Floor",
@@ -130,7 +130,7 @@
       {
         "title": "What a unit holds",
         "items": [
-          "Floor (required) — that implies edifice and project. Unit type (required) from Configurations → Unit types.",
+          "Floor (required) — that implies building and project. Unit type (required) from Configurations → Unit types.",
           "Unit number and name (required) — how agents and clients identify it.",
           "Area, shared area, net area (required); optional veranda area.",
           "Price and price currency (required). Number of rooms and bathrooms (required).",
@@ -157,7 +157,7 @@
       {
         "title": "On this page",
         "items": [
-          "Filter by project, edifice, floor, unit type, status, buyer, and similar.",
+          "Filter by project, building, floor, unit type, status, buyer, and similar.",
           "Create a unit — floor, unit type, number, name, areas, price and currency are required.",
           "Open the card for media, pricing, and flags. Row actions reach reservations, sales, inspections, leases, costs, depending on access.",
           "Mark as unavailable (with notes) takes an available unit off the market; Mark as available returns it. Notes show on the unit sheet.",
@@ -168,7 +168,7 @@
       {
         "title": "Related records",
         "items": [
-          "Upstream: Project → Edifice → Floor → Unit type.",
+          "Upstream: Project → Building → Floor → Unit type.",
           "Deals: Lead (optional unit interest), Reservation, Sale (+ payment plan), Lease + rental payments.",
           "Quality: Inspection, modification request, snag.",
           "Money: Unit costs, commissions (via sale or reservation).",

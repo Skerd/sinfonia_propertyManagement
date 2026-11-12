@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/createConstructionProgress.tsx",
-  "title": "Aggiungi rapporto",
+  "title": "Aggiungi rapporto di avanzamento",
   "description": "Registra la fase attuale e la % dei lavori",
   "generalInfo": "Dettagli dell’avanzamento",
   "form": {
@@ -53,7 +53,7 @@
     }
   },
   "formHeader": {
-    "title": "Aggiungi rapporto",
+    "title": "Aggiungi rapporto di avanzamento",
     "description": "Registra la fase attuale e la % dei lavori"
   },
   "formButtons": {

@@ -35,7 +35,8 @@
     "nameRequired": "Name is required",
     "slugLabel": "Slug",
     "slugPlaceholder": "Enter slug (e.g., apartment)",
-    "slugRequired": "Slug is required"
+    "slugRequired": "Slug is required",
+    "visibilitySectionTitle": "Visibility"
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -20,5 +20,6 @@
     "in_progress": "Në proces",
     "ready": "Gati",
     "completed": "Përfunduar"
-  }
+  },
+  "itemCount": "Pika"
 }

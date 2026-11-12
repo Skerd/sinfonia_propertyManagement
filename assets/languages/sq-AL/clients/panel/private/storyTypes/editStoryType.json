@@ -28,7 +28,8 @@
     "slugPlaceholder": "Shkruani slug-un (p.sh. residential)",
     "slugRequired": "Slug-u është i detyrueshëm",
     "sortOrderLabel": "Renditja",
-    "sortOrderPlaceholder": "Shkruani renditjen"
+    "sortOrderPlaceholder": "Shkruani renditjen",
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "formButtons": {
     "cancel": "Anulo",

@@ -6,8 +6,8 @@
   },
   "projectLabel": "Project",
   "projectPlaceholder": "Select project...",
-  "edificeLabel": "Edifice",
-  "edificePlaceholder": "Select edifice...",
+  "edificeLabel": "Building",
+  "edificePlaceholder": "Select building...",
   "floorLabel": "Floor",
   "floorPlaceholder": "Select floor...",
   "unitLabel": "Unit",
@@ -18,7 +18,7 @@
   "exportPdf": "Export PDF",
   "exportPdfLoading": "Generating PDF…",
   "error": "Failed to calculate ROI. Please try again.",
-  "selectUnitHint": "Select a unit to calculate its ROI. Edifice and floor narrow down the unit list.",
+  "selectUnitHint": "Select a unit to calculate its ROI. Building and floor narrow down the unit list.",
   "columns": {
     "unit": "Unit",
     "status": "Status",
@@ -54,12 +54,12 @@
   "help": {
     "ariaLabel": "About ROI calculator",
     "title": "About the ROI calculator",
-    "overview": "ROI calculator estimates return on investment for a unit (narrowed by project / edifice / floor) from costs versus sale or rental revenue. It is a calculator on top of existing records, not a stored “ROI document” and not the construction cost-control / budget module.",
+    "overview": "ROI calculator estimates return on investment for a unit (narrowed by project / building / floor) from costs versus sale or rental revenue. It is a calculator on top of existing records, not a stored “ROI document” and not the construction cost-control / budget module.",
     "sections": [
       {
         "title": "How to run it",
         "items": [
-          "Select project, optionally edifice and floor, then a unit — calculation runs on pick.",
+          "Select project, optionally building and floor, then a unit — calculation runs on pick.",
           "Summary and per-unit breakdown show sale price vs costs vs implied return.",
           "Export PDF for a snapshot of the current computation."
         ]

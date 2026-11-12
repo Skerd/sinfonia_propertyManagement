@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/components/custom/edifices/generateFloorsUnitsDialog.tsx",
   "dialogTitle": "Generate Floors & Units",
-  "dialogDescription": "Upload a PDF brochure to automatically generate floors and units for this edifice.",
+  "dialogDescription": "Upload a PDF brochure to automatically generate floors and units for this building.",
   "warningMessage": "This action can take up to 1 minute to complete, please do not close this window until completed!",
   "fileLabel": "PDF Brochure",
   "addFile": "Add PDF",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/editConstructionProgress.tsx",
-  "title": "Modifica rapporto",
+  "title": "Modifica rapporto di avanzamento",
   "editTitle": "Modifica rapporto",
   "editDescription": "Modifica rapporto di avanzamento lavori",
   "errorTitle": "Impossibile caricare il rapporto",
@@ -57,7 +57,7 @@
     }
   },
   "formHeader": {
-    "title": "Modifica rapporto",
+    "title": "Modifica rapporto di avanzamento",
     "description": "Modifica rapporto di avanzamento lavori"
   },
   "formButtons": {

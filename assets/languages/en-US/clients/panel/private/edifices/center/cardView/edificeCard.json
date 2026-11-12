@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/center/cardView/edificeCard.tsx",
-  "failedTitle": "Failed to load edifice data",
-  "failedDescription": "Failed to load data, click here to retry fetching edifice data",
+  "failedTitle": "Failed to load building data",
+  "failedDescription": "Failed to load data, click here to retry fetching building data",
   "floors": "Floors",
   "viewFloorsTooltip": "View Floors",
   "edit": "Edit",

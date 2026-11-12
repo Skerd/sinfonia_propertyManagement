@@ -74,7 +74,7 @@
       }
     ]
   },
-  "createInspectionChecklistTemplate": "Checkliste hinzufügen",
+  "createInspectionChecklistTemplate": "Abnahme-Checkliste hinzufügen",
   "noData": "Keine Einträge gefunden",
   "failTitle": "Laden fehlgeschlagen",
   "failDescription": "Bitte versuchen Sie es erneut.",

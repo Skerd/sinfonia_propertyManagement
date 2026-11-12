@@ -20,7 +20,8 @@
     "descriptionPlaceholder": "Fut përshkrimin",
     "iconLabel": "Ikona",
     "iconPlaceholder": "Fut ikonën (p.sh., mdi-home)",
-    "isPrivateLabel": "Privat"
+    "isPrivateLabel": "Privat",
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "axios": {
     "start": {

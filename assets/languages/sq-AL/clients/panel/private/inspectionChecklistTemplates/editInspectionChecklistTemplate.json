@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/editInspectionChecklistTemplate.tsx",
-  "title": "Ndrysho listën e kontrollit të inspektimit",
+  "title": "Ndrysho listën e kontrollit",
   "generalInfo": "Detajet",
   "form": {
     "titleLabel": "Titulli",
@@ -44,7 +44,7 @@
     }
   },
   "formHeader": {
-    "title": "Ndrysho listën e kontrollit të inspektimit",
+    "title": "Ndrysho listën e kontrollit",
     "description": "Përditësoni të dhënat e kësaj liste kontrolli inspektimi."
   },
   "formButtons": {

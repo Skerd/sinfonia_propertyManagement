@@ -93,5 +93,7 @@
     "hidden_floor": "Preis auf Anfrage (festgelegt auf Etage)",
     "shown_unit": "Preis sichtbar (festgelegt auf Einheit)",
     "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
-  }
+  },
+  "visibilityGroup": "Sichtbarkeit",
+  "commissions": "Provisionssätze"
 }

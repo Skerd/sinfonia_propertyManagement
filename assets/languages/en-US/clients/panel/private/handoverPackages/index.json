@@ -1,42 +1,42 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Handover packages",
-  "description": "Checklist configs inherited from project, edifice, floor, and unit",
+  "description": "Checklist configs inherited from project, building, floor, and unit",
   "help": {
     "ariaLabel": "About Handover packages",
     "title": "About Handover packages",
-    "overview": "A handover package is a reusable checklist configuration for one scope: a project, an edifice, a floor, or a unit. It is not the ticking list on a sale. Open sales assemble an effective checklist by concatenating ancestor configs; ticks, completion dates, and who completed each item live on the sale.",
+    "overview": "A handover package is a reusable checklist configuration for one scope: a project, a building, a floor, or a unit. It is not the ticking list on a sale. Open sales assemble an effective checklist by concatenating ancestor configs; ticks, completion dates, and who completed each item live on the sale.",
     "sections": [
       {
         "title": "What a package holds",
         "items": [
-          "Project (required). Optionally edifice, floor, and unit — the narrowest field you set is the scope.",
+          "Project (required). Optionally building, floor, and unit — the narrowest field you set is the scope.",
           "Title, optional description, notes, and attachments.",
           "Checklist items: name (required), optional description and instructions, importance (low / medium / high).",
-          "Computed scope: project, edifice, floor, or unit. Packages have no status here, and items have no completed flag on the config."
+          "Computed scope: project, building, floor, or unit. Packages have no status here, and items have no completed flag on the config."
         ]
       },
       {
         "title": "One package per scope",
         "items": [
-          "At most one package for a given project, one for a given edifice, one for a given floor, and one for a given unit.",
+          "At most one package for a given project, one for a given building, one for a given floor, and one for a given unit.",
           "Creating a second package at the same scope is rejected.",
-          "On create, missing ancestors are filled from the leaf (a unit package also stores its floor, edifice, and project).",
-          "Project, edifice, floor, and unit cannot be changed after create. Edit the items, title, notes, and media instead."
+          "On create, missing ancestors are filled from the leaf (a unit package also stores its floor, building, and project).",
+          "Project, building, floor, and unit cannot be changed after create. Edit the items, title, notes, and media instead."
         ]
       },
       {
         "title": "Inheritance",
-        "body": "The effective list for a unit is additive: project items, then edifice, then floor, then unit. Missing levels are skipped. The same item name at two levels stays two rows, each labeled with its scope (Project / Edifice / Floor / Unit).",
+        "body": "The effective list for a unit is additive: project items, then building, then floor, then unit. Missing levels are skipped. The same item name at two levels stays two rows, each labeled with its scope (Project / Building / Floor / Unit).",
         "items": [
-          "A project package contributes to every unit in that project. Edifice, floor, and unit packages stack on top when they exist.",
+          "A project package contributes to every unit in that project. Building, floor, and unit packages stack on top when they exist.",
           "You do not copy items down by hand. Open sales sync from whatever configs currently apply to the unit."
         ]
       },
       {
         "title": "On this page",
         "items": [
-          "Create a package — pick the scope by leaving lower levels empty (project only), or by filling edifice, floor, or unit.",
+          "Create a package — pick the scope by leaving lower levels empty (project only), or by filling building, floor, or unit.",
           "Search and filter; open a card to inspect items and attachments.",
           "Edit items, title, notes, and media. Scope fields are read-only.",
           "Delete is a soft delete and can be restored. Removing a package updates open sales: incomplete items drop; completed items stay on the sale as retained."
@@ -65,14 +65,14 @@
         "items": [
           "Sales — the ticking list, Update handover, and title transfer.",
           "Sales & handover (Tenancy → Configurations → Real Estate) — the company switch that gates title transfer.",
-          "Units, floors, edifices, and projects — the scopes you attach packages to."
+          "Units, floors, buildings, and projects — the scopes you attach packages to."
         ]
       },
       {
         "title": "Typical next step",
         "items": [
           "Create a project-level package with the items every unit must complete.",
-          "Add edifice, floor, or unit packages only for extras that should stack on top.",
+          "Add building, floor, or unit packages only for extras that should stack on top.",
           "On each open sale, tick the assembled checklist. Record title transfer when the gate allows it."
         ]
       }
@@ -90,7 +90,7 @@
     "deletedAt": "Deleted",
     "deletedBy": "Deleted By",
     "description": "Description",
-    "edifice": "Edifice",
+    "edifice": "Building",
     "keysTransferred": "Keys Transferred",
     "media": "Media",
     "name": "Reference",

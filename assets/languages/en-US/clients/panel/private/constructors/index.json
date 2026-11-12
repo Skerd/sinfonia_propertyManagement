@@ -1,14 +1,14 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/index.tsx",
-  "title": "Constructors",
-  "description": "Manage all constructors",
+  "title": "Contractors",
+  "description": "Manage all contractors",
   "help": {
-    "ariaLabel": "About Constructors",
-    "title": "About Constructors",
-    "overview": "A Constructor is a company or professional you attach to edifices and, optionally, to unit costs. This directory is contractors, architects, engineers, and similar parties — not a user account and not a building.",
+    "ariaLabel": "About Contractors",
+    "title": "About Contractors",
+    "overview": "A Contractor is a company or professional you attach to buildings and, optionally, to unit costs. This directory is contractors, architects, engineers, and similar parties — not a user account and not a building.",
     "sections": [
       {
-        "title": "What a constructor holds",
+        "title": "What a contractor holds",
         "items": [
           "Name and VAT (required).",
           "Optional email, phone, description, website, and logo.",
@@ -20,33 +20,33 @@
       {
         "title": "On this page",
         "items": [
-          "Create a constructor — name and VAT are required.",
+          "Create a contractor — name and VAT are required.",
           "Search and filter the list; open a row to edit identity, addresses, and scores.",
-          "Delete is a soft delete and can be restored. Deleting unlinks this constructor from edifices that listed it. Those buildings are not deleted."
+          "Delete is a soft delete and can be restored. Deleting unlinks this contractor from buildings that listed it. Those buildings are not deleted."
         ]
       },
       {
         "title": "How it behaves",
         "items": [
-          "Creating a constructor does not assign it anywhere. You pick it later on an edifice (optional constructors list) or on a unit cost.",
-          "Several constructors can sit on one edifice. One constructor can sit on many edifices.",
-          "Unit costs can point at one constructor as the vendor for that purchase. That link is optional."
+          "Creating a contractor does not assign it anywhere. You pick it later on a building (optional contractors list) or on a unit cost.",
+          "Several contractors can sit on one building. One contractor can sit on many buildings.",
+          "Unit costs can point at one contractor as the vendor for that purchase. That link is optional."
         ]
       },
       {
         "title": "Typical next step",
         "items": [
           "Create the firms and professionals you work with.",
-          "On each edifice, attach the relevant constructors.",
-          "When booking unit costs, pick the constructor if you want the invoice tied to this directory."
+          "On each building, attach the relevant contractors.",
+          "When booking unit costs, pick the contractor if you want the invoice tied to this directory."
         ]
       }
     ]
   },
-  "createConstructor": "Create Constructor",
-  "noData": "No constructors found",
-  "failTitle": "Failed to load constructors",
-  "failDescription": "An error occurred while loading constructors. Please try again.",
+  "createConstructor": "Create Contractor",
+  "noData": "No contractors found",
+  "failTitle": "Failed to load contractors",
+  "failDescription": "An error occurred while loading contractors. Please try again.",
   "status": "Status",
   "active": "Active",
   "deleted": "Deleted",
@@ -56,7 +56,7 @@
   "vat": "VAT",
   "phoneNumber": "Phone Number",
   "website": "Website",
-  "edifices": "Edifices",
+  "edifices": "Buildings",
   "fields": {
     "addresses": "Addresses",
     "company": "Company",

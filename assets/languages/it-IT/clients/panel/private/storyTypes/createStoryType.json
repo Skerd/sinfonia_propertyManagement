@@ -13,7 +13,8 @@
     "descriptionLabel": "Descrizione",
     "descriptionPlaceholder": "Inserisci descrizione",
     "sortOrderLabel": "Ordine di visualizzazione",
-    "sortOrderPlaceholder": "Inserisci l’ordine di visualizzazione"
+    "sortOrderPlaceholder": "Inserisci l’ordine di visualizzazione",
+    "visibilitySectionTitle": "Visibilità"
   },
   "axios": {
     "start": {

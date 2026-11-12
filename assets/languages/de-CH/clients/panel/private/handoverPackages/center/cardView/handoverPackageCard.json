@@ -20,5 +20,6 @@
     "in_progress": "In Bearbeitung",
     "ready": "Bereit",
     "completed": "Abgeschlossen"
-  }
+  },
+  "itemCount": "Punkte"
 }

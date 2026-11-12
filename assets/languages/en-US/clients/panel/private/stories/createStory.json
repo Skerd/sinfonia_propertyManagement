@@ -1,13 +1,13 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/stories/createStory.tsx",
   "title": "Add Story",
-  "description": "Create a journal story for a project, edifice, or unit",
+  "description": "Create a journal story for a project, building, or unit",
   "generalInfo": "Story Details",
   "form": {
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice (optional)",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building (optional)",
     "unitLabel": "Unit",
     "unitPlaceholder": "Select unit (optional)",
     "titleLabel": "Title",
@@ -44,7 +44,7 @@
   },
   "formHeader": {
     "title": "Add Story",
-    "description": "Create a journal story for a project, edifice, or unit"
+    "description": "Create a journal story for a project, building, or unit"
   },
   "formButtons": {
     "cancel": "Cancel",

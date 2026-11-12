@@ -28,7 +28,8 @@
     "slugPlaceholder": "Slug eingeben (z. B. residential)",
     "slugRequired": "Slug ist erforderlich",
     "sortOrderLabel": "Sortierreihenfolge",
-    "sortOrderPlaceholder": "Sortierreihenfolge eingeben"
+    "sortOrderPlaceholder": "Sortierreihenfolge eingeben",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "formButtons": {
     "cancel": "Abbrechen",

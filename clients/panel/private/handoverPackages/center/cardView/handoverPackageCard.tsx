@@ -3,11 +3,10 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {HandoverPackage} from "armonia/src/modules/propertyManagement/api/realEstate/private/handoverPackage/handoverPackage.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/handoverPackages/center/sheetView/handoverPackageSheetView.tsx";
-import {STATUS_BADGE_NEUTRAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
+import {IconListCheck, IconMapPin} from "@tabler/icons-react";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -59,19 +58,37 @@ function HandoverPackageCard({
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
         >
-            {({entity: row}) => (
-                <EntityCard.Header
-                    titlePath="title"
-                    title={row.title}
-                    subtitle={row.name}
-                    subtitlePath="name"
-                    badges={row.scope ? (
-                        <Badge variant="secondary" className={cn("text-xs", STATUS_BADGE_NEUTRAL)}>
-                            {String(resolveLanguageKey(`scopes.${row.scope}`, true) || row.scope)}
-                        </Badge>
-                    ) : null}
-                />
-            )}
+            {({entity: row}) => {
+                // The record the package hands over, named at its own level ("Unit: A-101") (UX-02).
+                const target = row.unit ?? row.floor ?? row.edifice ?? row.project;
+                const targetPath = row.unit ? "unit" : row.floor ? "floor" : row.edifice ? "edifice" : "project";
+                return (
+                    <>
+                        <EntityCard.Header titlePath="title" title={row.title} subtitle={row.name} subtitlePath="name" />
+                        <EntityCard.Body>
+                            {target.name ? (
+                                <EntityCardRow
+                                    icon={IconMapPin}
+                                    label={String(resolveLanguageKey(`scopes.${row.scope}`))}
+                                    tooltip={String(resolveLanguageKey(`scopes.${row.scope}`))}
+                                    path={targetPath}
+                                    value={target.name}
+                                />
+                            ) : null}
+                            {row.items.length > 0 ? (
+                                <EntityCardRow
+                                    icon={IconListCheck}
+                                    label={resolveLanguageKey("itemCount")}
+                                    tooltip={resolveLanguageKey("itemCount")}
+                                    path="items"
+                                    type="number"
+                                    value={row.items.length}
+                                />
+                            ) : null}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

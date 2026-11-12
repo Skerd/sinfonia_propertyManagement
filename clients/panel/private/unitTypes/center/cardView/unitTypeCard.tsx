@@ -2,7 +2,8 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {UnitType} from "armonia/src/modules/propertyManagement/api/realEstate/private/unitType/unitType.dto.ts";
-import {IconFolder, IconLock, IconStack2} from "@tabler/icons-react";
+import {IconFolder, IconStack2} from "@tabler/icons-react";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import UnitTypeSheetView from "@propertyManagementModule/clients/panel/private/unitTypes/center/sheetView/unitTypeSheetView.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -66,6 +67,8 @@ function UnitTypeCard({
                         icon={
                             <DisplayValue path="icon" type="icon" value={entity.icon} />
                         }
+                        // Only the exception is shown: a public type needs no badge (UX-02).
+                        badges={entity.isPrivate ? <Badge variant="secondary" className="text-xs">{resolveLanguageKey("privateBadge")}</Badge> : undefined}
                     />
                     <EntityCard.Body>
                         <EntityCardRow
@@ -75,21 +78,15 @@ function UnitTypeCard({
                             path="category.name"
                             value={entity.category?.name}
                         />
-                        <EntityCardRow
-                            icon={IconFolder}
-                            label={resolveLanguageKey("group")}
-                            tooltip={resolveLanguageKey("group")}
-                            path="group"
-                            value={entity.group}
-                        />
-                        <EntityCardRow
-                            icon={IconLock}
-                            label={resolveLanguageKey("isPrivate")}
-                            tooltip={resolveLanguageKey("isPrivate")}
-                            path="isPrivate"
-                            type="boolean"
-                            value={entity.isPrivate}
-                        />
+                        {entity.group ? (
+                            <EntityCardRow
+                                icon={IconFolder}
+                                label={resolveLanguageKey("group")}
+                                tooltip={resolveLanguageKey("group")}
+                                path="group"
+                                value={entity.group}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

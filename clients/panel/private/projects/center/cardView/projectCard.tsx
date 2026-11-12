@@ -4,13 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import {Project} from "armonia/src/modules/propertyManagement/api/realEstate/private/project/project.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {
-    IconBuilding,
-    IconChartArrowsVertical,
-    IconDoor,
-    IconGrid4x4,
-    IconStack,
-} from "@tabler/icons-react";
+import {IconBuilding, IconChartArrowsVertical, IconDoor} from "@tabler/icons-react";
 import {EntityStatusBadgeRow} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
 import ProjectSheetView from "@propertyManagementModule/clients/panel/private/projects/center/sheetView/projectSheetView.tsx";
 import ViewEdifices from "@propertyManagementModule/clients/panel/private/projects/center/actions/viewEdifices.tsx";
@@ -101,61 +95,40 @@ function ProjectCard({
                         allowFullScreen={false}
                         coverAfterFirst
                     />
-                    <EntityCard.Header
-                        titlePath="name"
-                        title={entity.name}
-                        subtitle={entity.description}
-                        subtitlePath="description"
-                    >
+                    <EntityCard.Header titlePath="name" title={entity.name}>
                         <ViewEdifices project={entity} />
                         <ViewEdificesOverlay onAction={setAction} />
                         <ViewFloorsOverlay onAction={setAction} />
                     </EntityCard.Header>
+                    {/* How many buildings and units, what was invested, and how the units stand (UX-02). */}
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconBuilding}
-                            label={resolveLanguageKey("statistics.edifices")}
-                            tooltip={resolveLanguageKey("statistics.edificesTooltip")}
-                            show
-                            path="statistics.totalEdifices"
-                            type="number"
-                            value={entity.statistics?.totalEdifices}
-                        />
-                        <EntityCardRow
-                            icon={IconStack}
-                            label={resolveLanguageKey("statistics.floors")}
-                            tooltip={resolveLanguageKey("statistics.floorsTooltip")}
-                            show
-                            path="statistics.totalFloors"
-                            type="number"
-                            value={entity.statistics?.totalFloors}
-                        />
-                        <EntityCardRow
-                            icon={IconDoor}
-                            label={resolveLanguageKey("statistics.units")}
-                            tooltip={resolveLanguageKey("statistics.unitsTooltip")}
-                            show
-                            path="statistics.totalUnits"
-                            type="number"
-                            value={entity.statistics?.totalUnits}
-                        />
-                        <EntityCardRow
-                            icon={IconGrid4x4}
-                            label={resolveLanguageKey("statistics.area")}
-                            tooltip={resolveLanguageKey("statistics.areaTooltip")}
-                            show
-                            path="statistics.totalArea"
-                            type="area"
-                            value={entity.statistics?.totalArea}
-                        />
-                        <EntityCardRow
-                            icon={IconChartArrowsVertical}
-                            label={resolveLanguageKey("statistics.investment")}
-                            tooltip={resolveLanguageKey("statistics.investmentTooltip")}
-                            show
-                            path="statistics.totalInvestmentValue"
-                            value={
-                                entity.statistics?.totalInvestmentValue?.length ? (
+                        {entity.statistics?.totalEdifices != null ? (
+                            <EntityCardRow
+                                icon={IconBuilding}
+                                label={resolveLanguageKey("statistics.edifices")}
+                                tooltip={resolveLanguageKey("statistics.edificesTooltip")}
+                                path="statistics.totalEdifices"
+                                type="number"
+                                value={entity.statistics.totalEdifices}
+                            />
+                        ) : null}
+                        {entity.statistics?.totalUnits != null ? (
+                            <EntityCardRow
+                                icon={IconDoor}
+                                label={resolveLanguageKey("statistics.units")}
+                                tooltip={resolveLanguageKey("statistics.unitsTooltip")}
+                                path="statistics.totalUnits"
+                                type="number"
+                                value={entity.statistics.totalUnits}
+                            />
+                        ) : null}
+                        {entity.statistics?.totalInvestmentValue?.length ? (
+                            <EntityCardRow
+                                icon={IconChartArrowsVertical}
+                                label={resolveLanguageKey("statistics.investment")}
+                                tooltip={resolveLanguageKey("statistics.investmentTooltip")}
+                                path="statistics.totalInvestmentValue"
+                                value={
                                     <span className="flex flex-wrap gap-1">
                                         {entity.statistics.totalInvestmentValue.map((inv, index) => (
                                             <DisplayValue
@@ -167,9 +140,9 @@ function ProjectCard({
                                             />
                                         ))}
                                     </span>
-                                ) : null
-                            }
-                        />
+                                }
+                            />
+                        ) : null}
                         {entity.statistics?.unitsByStatus ? (
                             <EntityStatusBadgeRow
                                 unitsByStatus={entity.statistics.unitsByStatus}

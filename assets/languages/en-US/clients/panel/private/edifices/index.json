@@ -1,14 +1,14 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/index.tsx",
-  "title": "Edifices",
-  "description": "Manage edifices for this project",
-  "descriptionWithoutProject": "Manage all edifices",
-  "createEdifice": "Create Edifice",
-  "noData": "No edifices found",
-  "failTitle": "Failed to load edifices",
-  "failDescription": "An error occurred while loading edifices. Please try again.",
+  "title": "Buildings",
+  "description": "Manage buildings for this project",
+  "descriptionWithoutProject": "Manage all buildings",
+  "createEdifice": "Create Building",
+  "noData": "No buildings found",
+  "failTitle": "Failed to load buildings",
+  "failDescription": "An error occurred while loading buildings. Please try again.",
   "projects": "Projects",
-  "edifices": "Edifices",
+  "edifices": "Buildings",
   "backToProjects": "Back to Projects",
   "name": "Name",
   "project": "Project",
@@ -29,7 +29,7 @@
     "buildingPermitNumber": "Building Permit Number",
     "commercialFacilities": "Commercial",
     "constructionStartDate": "Construction Start Date",
-    "constructors": "Constructors",
+    "constructors": "Contractors",
     "createdAt": "Created At",
     "createdBy": "Created By",
     "deletedAt": "Deleted",
@@ -83,12 +83,12 @@
   "no": "No",
   "energyClass": "Energy Class",
   "help": {
-    "ariaLabel": "About Edifices",
-    "title": "About Edifices",
-    "overview": "An Edifice is a building inside a project — the physical asset with an address, investment value, constructors, and marketing media. Floors and units live under the edifice. You cannot have sellable inventory without at least one edifice. Dashboard KPIs are edifice-scoped: this is the grain the cockpit uses.",
+    "ariaLabel": "About Buildings",
+    "title": "About Buildings",
+    "overview": "A Building is a building inside a project — the physical asset with an address, investment value, contractors, and marketing media. Floors and units live under the building. You cannot have sellable inventory without at least one building. Dashboard KPIs are building-scoped: this is the grain the cockpit uses.",
     "sections": [
       {
-        "title": "What an edifice holds",
+        "title": "What a building holds",
         "items": [
           "Name and parent project (both required). The project cannot be “empty inventory” without buildings.",
           "Main image (required) plus optional galleries, videos, extra files, and a marketing booklet.",
@@ -97,26 +97,26 @@
           "Optional sale currency, price per m², and veranda price per m² — guidance for pricing, not an automatic update of every unit price.",
           "Building facts: total area, green area, floors above/under ground, parking, garages, distance from city center.",
           "Energy class, building permit number, construction start / expected / actual completion dates.",
-          "Constructors attached to the building, commercial facilities, neighborhood facilities, property types.",
+          "Contractors attached to the building, commercial facilities, neighborhood facilities, property types.",
           "Rollups you do not type: total floors, total units, available units, total unit area — computed from children."
         ]
       },
       {
         "title": "On this page",
         "items": [
-          "When you arrived from a project, the list is already scoped to that project. From the sidebar you see every edifice in the company.",
-          "Create an edifice — it must belong to a project; main image and address are required.",
-          "Open a card to edit the building. Row actions reach floors for that edifice.",
+          "When you arrived from a project, the list is already scoped to that project. From the sidebar you see every building in the company.",
+          "Create a building — it must belong to a project; main image and address are required.",
+          "Open a card to edit the building. Row actions reach floors for that building.",
           "Soft delete can be restored. Floors and units are separate records; they are not auto-created."
         ]
       },
       {
         "title": "How it behaves",
         "items": [
-          "Dashboard: you pick an edifice and all KPIs and the units list follow it.",
-          "Public building pages and construction updates can target an edifice.",
+          "Dashboard: you pick a building and all KPIs and the units list follow it.",
+          "Public building pages and construction updates can target a building.",
           "Price per m² and investment feed portfolio views. Changing them does not rewrite unit.price.",
-          "An edifice with no floors (or floors with no units) will show empty inventory on Dashboard."
+          "A building with no floors (or floors with no units) will show empty inventory on Dashboard."
         ]
       },
       {

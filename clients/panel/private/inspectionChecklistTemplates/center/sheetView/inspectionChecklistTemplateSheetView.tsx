@@ -7,6 +7,7 @@ import type {InspectionChecklistTemplate} from "armonia/src/modules/propertyMana
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 
 type Props = WithLanguageType & {
     open: boolean;
@@ -37,6 +38,15 @@ function Sheet({open, onOpenChange, entity, resolveLanguageKey, hideActions = fa
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // The state in its model tone, under the title (UX-02).
+            headerDescription={
+                <StatusBadge
+                    tableConfigKey="inspectionchecklisttemplates"
+                    field="status"
+                    value={sheetData.status}
+                    label={String(resolveLanguageKey(`statuses.${sheetData.status}`))}
+                />
+            }
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

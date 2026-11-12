@@ -16,7 +16,6 @@
   "commissions": "Normat e komisionit",
   "currentImage": "Imazhi aktual",
   "editDescription": "Redaktoni informacionin e projektit",
-  "publicVisibility": "Faqja publike",
   "title": "Redakto projektin",
   "description": "Redaktoni informacionin e projektit",
   "editTitle": "Redakto projektin",
@@ -65,10 +64,10 @@
       "inherit": "Parazgjedhje (çmimi shfaqet)",
       "hide": "Fshih çmimin (me kërkesë)",
       "show": "Shfaq çmimin"
-    }
+    },
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "generalInfo": "Informacione të përgjithshme",
-  "homepageFeatured": "I veçuar në faqen kryesore",
   "media": "Media",
   "path": "src/modules/propertyManagement/clients/panel/private/projects/editProject.tsx",
   "uploadError": "Ngarkimi i skedarëve të medias dështoi",

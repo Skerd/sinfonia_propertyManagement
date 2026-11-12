@@ -20,5 +20,6 @@
     "in_progress": "In corso",
     "ready": "Pronto",
     "completed": "Completato"
-  }
+  },
+  "itemCount": "Voci"
 }

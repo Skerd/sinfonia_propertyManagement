@@ -13,5 +13,6 @@
   "deleted": "Gelöscht",
   "failedTitle": "Datensatz konnte nicht geladen werden",
   "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
-  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden."
+  "failedTooltipDescription": "Klicken, um die Daten erneut zu laden.",
+  "privateBadge": "Privat"
 }

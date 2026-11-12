@@ -4,22 +4,22 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Constructor could not be updated, please try again!"
+      "title": "Contractor could not be updated, please try again!"
     },
     "start": {
       "time": 3000,
-      "title": "Updating constructor"
+      "title": "Updating contractor"
     },
     "success": {
       "time": 3000,
-      "title": "Constructor successfully updated!"
+      "title": "Contractor successfully updated!"
     }
   },
   "currentLogo": "Current Logo",
-  "editDescription": "Edit constructor information",
-  "editTitle": "Edit Constructor",
-  "errorDescription": "An error occurred while loading the constructor. Please try again.",
-  "errorTitle": "Failed to load constructor",
+  "editDescription": "Edit contractor information",
+  "editTitle": "Edit Contractor",
+  "errorDescription": "An error occurred while loading the contractor. Please try again.",
+  "errorTitle": "Failed to load contractor",
   "form": {
     "cityLabel": "City",
     "cityPlaceholder": "City",
@@ -39,7 +39,7 @@
     "longitudeLabel": "Longitude",
     "longitudePlaceholder": "Longitude",
     "nameLabel": "Name",
-    "namePlaceholder": "Enter constructor name",
+    "namePlaceholder": "Enter contractor name",
     "nameRequired": "Name is required",
     "partyTypeLabel": "Party Type",
     "partyTypePlaceholder": "Select party type",
@@ -87,14 +87,14 @@
     "submit": "Save Changes"
   },
   "formHeader": {
-    "description": "Edit constructor information",
-    "title": "Edit Constructor"
+    "description": "Edit contractor information",
+    "title": "Edit Contractor"
   },
   "generalInfo": "General Information",
   "howToReach": "How to reach us",
   "logo": "Logo",
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/editConstructor.tsx",
   "remove": "Remove",
-  "title": "Edit Constructor",
+  "title": "Edit Contractor",
   "uploadError": "Failed to upload media files"
 }

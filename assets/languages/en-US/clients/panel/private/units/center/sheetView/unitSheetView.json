@@ -59,7 +59,7 @@
     "reserved_unit": "Reserved",
     "sold_unit": "Sold"
   },
-  "edifice": "Edifice",
+  "edifice": "Building",
   "project": "Project",
   "floor": "Floor",
   "buyer": "Buyer",
@@ -125,7 +125,7 @@
   "featuredOnHomepage": "Featured",
   "featuredOnHomepageTooltip": "Shown in the public homepage featured residences section",
   "priceVisibility": "Public price",
-  "priceVisibilityTooltip": "Hide or show this unit's price. Inherit follows the closest level with a choice: floor, edifice or project.",
+  "priceVisibilityTooltip": "Hide or show this unit's price. Inherit follows the closest level with a choice: floor, building or project.",
   "priceVisibilityEnum": {
     "inherit": "Inherit from parent",
     "hide": "Hide price (on request)",
@@ -137,8 +137,8 @@
     "shown_default": "Price shown",
     "shown_project": "Price shown (set on project)",
     "hidden_project": "Price on request (set on project)",
-    "shown_edifice": "Price shown (set on edifice)",
-    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_edifice": "Price shown (set on building)",
+    "hidden_edifice": "Price on request (set on building)",
     "shown_floor": "Price shown (set on floor)",
     "hidden_floor": "Price on request (set on floor)",
     "shown_unit": "Price shown (set on unit)",

@@ -1,9 +1,9 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/center/sheetView/edificeSheetView.tsx",
-  "failedTitle": "Failed to load edifice",
-  "failedDescription": "Something went wrong while loading this edifice. Click to retry.",
+  "failedTitle": "Failed to load building",
+  "failedDescription": "Something went wrong while loading this building. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
-  "edifice": "Edifice",
+  "edifice": "Building",
   "overview": "Overview",
   "buildingDetails": "Building details",
   "constructionTimeline": "Construction & compliance",
@@ -17,7 +17,7 @@
   "cardsView": "Cards",
   "facilities": "Facilities",
   "propertyTypes": "Property types",
-  "constructors": "Constructors",
+  "constructors": "Contractors",
   "commercialFacilities": "Commercial facilities",
   "neighborhoodFacilities": "Neighborhood facilities",
   "distanceFromCityCenter": "Distance from city center",
@@ -83,7 +83,7 @@
     "pendingVerificationUnitCosts": "Awaiting verification",
     "pendingVerificationUnitCostsTooltip": "Rolled up from units: spend on costs pending verification or revision",
     "totalUnitCostDocuments": "Unit cost documents",
-    "totalUnitCostDocumentsTooltip": "Total registered cost documents across units in this edifice"
+    "totalUnitCostDocumentsTooltip": "Total registered cost documents across units in this building"
   },
   "lifecycle": "Lifecycle",
   "createdAt": "Created at",
@@ -92,7 +92,7 @@
   "deletedAt": "Deleted at",
   "deletedBy": "Deleted by",
   "priceVisibility": "Public price",
-  "priceVisibilityTooltip": "Hide or show prices for this edifice (including its price per m²). Inherit follows the project; floors and units can override it.",
+  "priceVisibilityTooltip": "Hide or show prices for this building (including its price per m²). Inherit follows the project; floors and units can override it.",
   "priceVisibilityEnum": {
     "inherit": "Inherit from parent",
     "hide": "Hide price (on request)",
@@ -104,11 +104,12 @@
     "shown_default": "Price shown",
     "shown_project": "Price shown (set on project)",
     "hidden_project": "Price on request (set on project)",
-    "shown_edifice": "Price shown (set on edifice)",
-    "hidden_edifice": "Price on request (set on edifice)",
+    "shown_edifice": "Price shown (set on building)",
+    "hidden_edifice": "Price on request (set on building)",
     "shown_floor": "Price shown (set on floor)",
     "hidden_floor": "Price on request (set on floor)",
     "shown_unit": "Price shown (set on unit)",
     "hidden_unit": "Price on request (set on unit)"
-  }
+  },
+  "visibilityGroup": "Visibility"
 }

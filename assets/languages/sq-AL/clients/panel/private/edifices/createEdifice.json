@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/createEdifice.tsx",
-  "publicVisibility": "Faqja publike",
   "title": "Krijo një ndërtesë",
   "description": "Krijo një ndërtesë të re për këtë projekt",
   "descriptionWithoutProject": "Krijo një ndërtesë të re",
@@ -108,7 +107,8 @@
       "inherit": "Trashëgo nga niveli sipër",
       "hide": "Fshih çmimin (me kërkesë)",
       "show": "Shfaq çmimin"
-    }
+    },
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "axios": {
     "start": {

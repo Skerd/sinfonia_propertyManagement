@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx",
-  "inspectionChecklistTemplate": "Modello di checklist di ispezione",
+  "inspectionChecklistTemplate": "Checklist di ispezione",
   "overview": "Panoramica",
   "media": "Allegati",
   "name": "Riferimento",

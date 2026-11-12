@@ -76,22 +76,26 @@ function ConstructorCard({
                                 show={true}
                                 value={entity.edifices?.length ?? 0}
                             />
-                            <EntityCardRow
-                                icon={IconPhone}
-                                label={resolveLanguageKey("phoneNumber")}
-                                tooltip={resolveLanguageKey("phoneNumber")}
-                                path="phoneNumber"
-                                type="phoneNumber"
-                                value={entity.phoneNumber}
-                            />
-                            <EntityCardRow
-                                icon={IconMail}
-                                label={resolveLanguageKey("email")}
-                                tooltip={resolveLanguageKey("email")}
-                                path="email"
-                                type="email"
-                                value={entity.email}
-                            />
+                            {entity.phoneNumber ? (
+                                <EntityCardRow
+                                    icon={IconPhone}
+                                    label={resolveLanguageKey("phoneNumber")}
+                                    tooltip={resolveLanguageKey("phoneNumber")}
+                                    path="phoneNumber"
+                                    type="phoneNumber"
+                                    value={entity.phoneNumber}
+                                />
+                            ) : null}
+                            {entity.email ? (
+                                <EntityCardRow
+                                    icon={IconMail}
+                                    label={resolveLanguageKey("email")}
+                                    tooltip={resolveLanguageKey("email")}
+                                    path="email"
+                                    type="email"
+                                    value={entity.email}
+                                />
+                            ) : null}
                         </EntityCard.Body>
                     </>
                 );

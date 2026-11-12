@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructionProgress/index.tsx",
-  "title": "Baufortschritt",
+  "title": "Fortschrittsberichte",
   "description": "Erfassen Sie Bauphase und Fortschritt (%) pro Projekt oder Gebäude. Kunden werden bei Fortschritt mit Baustellenfotos benachrichtigt.",
   "createConstructionProgress": "Fortschrittsbericht erfassen",
   "viewTimeline": "Bauzeitachse",

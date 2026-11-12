@@ -20,14 +20,14 @@
         "title": "On this page",
         "items": [
           "Create, search, and edit types.",
-          "Delete is a soft delete, but it is blocked while any unit uses this type or any edifice lists it as a property type."
+          "Delete is a soft delete, but it is blocked while any unit uses this type or any building lists it as a property type."
         ]
       },
       {
         "title": "How it behaves",
         "items": [
           "Every unit has exactly one unit type. Price, areas, and availability live on the unit, not here.",
-          "Edifices can also list property types they offer. That list is independent of which units already exist.",
+          "Buildings can also list property types they offer. That list is independent of which units already exist.",
           "Renaming a type updates labels. It does not rewrite listed prices on existing units."
         ]
       },

@@ -1,12 +1,12 @@
 {
   "category": "Category",
-  "constructor": "Constructor",
+  "constructor": "Contractor",
   "cost": "Amount",
   "costPerUnit": "Price / unit",
   "currency": "Currency",
   "budgetedAmount": "Budgeted amount",
   "documentSubtotal": "Subtotal",
-  "edifice": "Edifice",
+  "edifice": "Building",
   "expenditureCategory": {
     "appliances": "Appliances",
     "electrical_lighting": "Electrical / lighting",

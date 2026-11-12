@@ -9,8 +9,8 @@
     "searchPlaceholder": "Search by tenant, unit, lease reference…",
     "projectLabel": "Project",
     "projectPlaceholder": "All projects",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "All edifices",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "All buildings",
     "floorLabel": "Floor",
     "floorPlaceholder": "All floors",
     "unitLabel": "Unit",
@@ -54,8 +54,8 @@
     "searchPlaceholder": "Search by tenant, lease, unit, status…",
     "projectLabel": "Project",
     "projectPlaceholder": "All projects",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "All edifices",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "All buildings",
     "floorLabel": "Floor",
     "floorPlaceholder": "All floors",
     "unitLabel": "Unit",
@@ -135,7 +135,7 @@
         "title": "How it behaves",
         "items": [
           "Opening a row uses the lease or payment sheet. Create/edit and lifecycle actions still happen on Leases / Rental payments.",
-          "Filters (project, edifice, floor, unit, status, dates) apply to this registry only.",
+          "Filters (project, building, floor, unit, status, dates) apply to this registry only.",
           "If you terminate a lease, it updates here because this is the same row."
         ]
       },

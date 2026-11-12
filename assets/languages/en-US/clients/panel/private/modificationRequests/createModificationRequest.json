@@ -10,8 +10,8 @@
   "form": {
     "projectLabel": "Project",
     "projectPlaceholder": "Select project",
-    "edificeLabel": "Edifice",
-    "edificePlaceholder": "Select edifice",
+    "edificeLabel": "Building",
+    "edificePlaceholder": "Select building",
     "floorLabel": "Floor",
     "floorPlaceholder": "Select floor",
     "unitLabel": "Unit",

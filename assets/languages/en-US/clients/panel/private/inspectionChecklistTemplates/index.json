@@ -13,7 +13,7 @@
           "Title (required). Optional description, notes, trade, and stage.",
           "At least one item: name (required), optional description and instructions, importance (low / medium / high).",
           "Status: active or archived. Items have no completed flag here.",
-          "Company-wide — not scoped to a project, edifice, floor, or unit (unlike handover packages)."
+          "Company-wide — not scoped to a project, building, floor, or unit (unlike handover packages)."
         ]
       },
       {
@@ -53,7 +53,7 @@
       {
         "title": "Not a handover package",
         "items": [
-          "Handover packages are scoped (project / edifice / floor / unit) and assemble additively on a sale.",
+          "Handover packages are scoped (project / building / floor / unit) and assemble additively on a sale.",
           "Inspection checklists are a single company template you attach to an inspection visit.",
           "Tick inspection items from the inspection (Update checklist). Tick handover items from the sale (Update handover)."
         ]
@@ -74,7 +74,7 @@
       }
     ]
   },
-  "createInspectionChecklistTemplate": "Add checklist",
+  "createInspectionChecklistTemplate": "Add inspection checklist",
   "noData": "No inspection checklists found",
   "failTitle": "Failed to load inspection checklists",
   "failDescription": "An error occurred while loading. Please try again.",

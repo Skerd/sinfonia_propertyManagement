@@ -1,6 +1,5 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/edifices/editEdifice.tsx",
-  "publicVisibility": "Faqja publike",
   "title": "Ndrysho ndërtesën",
   "description": "Përditëso informacionin e ndërtesës",
   "editTitle": "Ndrysho ndërtesën",
@@ -113,7 +112,8 @@
       "inherit": "Trashëgo nga niveli sipër",
       "hide": "Fshih çmimin (me kërkesë)",
       "show": "Shfaq çmimin"
-    }
+    },
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "axios": {
     "start": {

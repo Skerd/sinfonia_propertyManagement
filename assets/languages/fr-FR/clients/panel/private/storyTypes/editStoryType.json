@@ -28,7 +28,8 @@
     "slugPlaceholder": "Saisir l’identifiant (ex. : residential)",
     "slugRequired": "L’identifiant est obligatoire",
     "sortOrderLabel": "Ordre de tri",
-    "sortOrderPlaceholder": "Saisir l’ordre de tri"
+    "sortOrderPlaceholder": "Saisir l’ordre de tri",
+    "visibilitySectionTitle": "Visibilité"
   },
   "formButtons": {
     "cancel": "Annuler",

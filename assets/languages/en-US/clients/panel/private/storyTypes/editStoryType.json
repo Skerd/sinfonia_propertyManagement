@@ -28,7 +28,8 @@
     "slugPlaceholder": "Enter slug (e.g., residential)",
     "slugRequired": "Slug is required",
     "sortOrderLabel": "Sort order",
-    "sortOrderPlaceholder": "Enter sort order"
+    "sortOrderPlaceholder": "Enter sort order",
+    "visibilitySectionTitle": "Visibility"
   },
   "formButtons": {
     "cancel": "Cancel",

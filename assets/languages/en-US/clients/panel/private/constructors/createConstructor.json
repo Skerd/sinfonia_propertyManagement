@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/constructors/createConstructor.tsx",
-  "title": "Create Constructor",
-  "description": "Create a new constructor",
+  "title": "Create Contractor",
+  "description": "Create a new contractor",
   "generalInfo": "General Information",
   "howToReach": "How to reach us",
   "addAddress": "Add new address",
@@ -11,7 +11,7 @@
   "uploadError": "Failed to upload media files",
   "form": {
     "nameLabel": "Name",
-    "namePlaceholder": "Enter constructor name",
+    "namePlaceholder": "Enter contractor name",
     "nameRequired": "Name is required",
     "emailLabel": "Email",
     "emailPlaceholder": "Enter email address",
@@ -73,24 +73,24 @@
   },
   "axios": {
     "start": {
-      "title": "Creating constructor",
+      "title": "Creating contractor",
       "time": 3000
     },
     "success": {
-      "title": "Constructor successfully created!",
+      "title": "Contractor successfully created!",
       "time": 3000
     },
     "error": {
-      "title": "Constructor could not be created, please try again!",
+      "title": "Contractor could not be created, please try again!",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Create Constructor",
-    "description": "Create a new constructor"
+    "title": "Create Contractor",
+    "description": "Create a new contractor"
   },
   "formButtons": {
     "cancel": "Cancel",
-    "submit": "Create Constructor"
+    "submit": "Create Contractor"
   }
 }

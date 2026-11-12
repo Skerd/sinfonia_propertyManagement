@@ -83,7 +83,7 @@
       "title": "Pacchetti di consegna"
     },
     "inspectionChecklistTemplates": {
-      "title": "Checklist ispezioni"
+      "title": "Checklist di ispezione"
     },
     "agentReport": {
       "title": "Report agente"
@@ -101,7 +101,7 @@
       "title": "Export ERP"
     },
     "constructionProgress": {
-      "title": "Avanzamento lavori"
+      "title": "Rapporti di avanzamento"
     },
     "adCampaigns": {
       "title": "Campagne pubblicitarie"

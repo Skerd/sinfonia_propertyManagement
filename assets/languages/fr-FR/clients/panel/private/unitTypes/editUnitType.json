@@ -35,7 +35,8 @@
     "nameRequired": "Le nom est obligatoire",
     "slugLabel": "Identifiant",
     "slugPlaceholder": "Saisir l’identifiant (ex. : apartment)",
-    "slugRequired": "L’identifiant est obligatoire"
+    "slugRequired": "L’identifiant est obligatoire",
+    "visibilitySectionTitle": "Visibilité"
   },
   "formButtons": {
     "cancel": "Annuler",

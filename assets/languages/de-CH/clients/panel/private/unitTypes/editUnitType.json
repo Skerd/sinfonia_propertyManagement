@@ -35,7 +35,8 @@
     "nameRequired": "Name ist erforderlich",
     "slugLabel": "Slug",
     "slugPlaceholder": "Slug eingeben (z. B. apartment)",
-    "slugRequired": "Slug ist erforderlich"
+    "slugRequired": "Slug ist erforderlich",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "formButtons": {
     "cancel": "Abbrechen",

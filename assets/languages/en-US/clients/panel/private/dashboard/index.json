@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/dashboard/index.tsx",
   "title": "Dashboard",
-  "description": "Figures for one edifice. Select a building to focus units, collections, and alerts.",
+  "description": "Figures for one building. Select a building to focus units, collections, and alerts.",
   "period": "Period",
   "paymentAlerts": "Payment alerts",
   "viewPaymentPlans": "View payment plans",
@@ -17,7 +17,7 @@
   "unitStatusBreakdown": "Unit status",
   "failTitle": "Error",
   "failDescription": "Could not load dashboard. Click to retry.",
-  "companyScope": "Showing the whole company. Select an edifice to narrow these figures.",
+  "companyScope": "Showing the whole company. Select a building to narrow these figures.",
   "viewEntries": "View entries",
   "noData": "No figures for this scope yet",
   "rentCollected": "Rent collected",
@@ -28,26 +28,26 @@
   "help": {
     "ariaLabel": "About Dashboard",
     "title": "About Dashboard",
-    "overview": "Operational view of one edifice. The gallery chooses the building; units, collections, rent, and alerts follow that choice. With no edifice selected, the figures are the whole company.",
+    "overview": "Operational view of one building. The gallery chooses the building; units, collections, rent, and alerts follow that choice. With no building selected, the figures are the whole company.",
     "sections": [
       {
         "title": "Layout",
         "items": [
-          "Edifice gallery at the top — select a building to focus every KPI and the units list below.",
+          "Building gallery at the top — select a building to focus every KPI and the units list below.",
           "KPI row: total units, sold, collected, average sale price, plus rent collected / outstanding / overdue and active leases when rental records exist.",
           "Period control (last 7 days, 30 days, 3 months, 12 months) changes collected/revenue windows, not the unit inventory itself.",
           "Charts show unit-status mix and revenue over the selected period.",
-          "The units table/cards below are the same Units resource, already scoped to the selected edifice.",
+          "The units table/cards below are the same Units resource, already scoped to the selected building.",
           "Payment alerts deep-link into payment plans / reservations that need attention."
         ]
       },
       {
         "title": "How figures are produced",
         "items": [
-          "Total / sold / reserved / rented are counts of units in that edifice by commercial status.",
+          "Total / sold / reserved / rented are counts of units in that building by commercial status.",
           "Collected comes from sale receipts and payment-plan activity in the period — not from typing a target.",
           "Average sale price is the period's sale prices over its number of sales, one figure per currency; it does not reprice anything.",
-          "Rent collected / outstanding / overdue sums rental payment rows on leases for units in this edifice.",
+          "Rent collected / outstanding / overdue sums rental payment rows on leases for units in this building.",
           "Active leases counts leases that are still active on those units."
         ]
       },
@@ -55,14 +55,14 @@
         "title": "What this page will not do",
         "items": [
           "It will not change unit status. Reserve, sell, or lease from those lists.",
-          "Selecting another edifice does not change the project — each edifice already belongs to a project.",
+          "Selecting another building does not change the project — each building already belongs to a project.",
           "Portfolio is the company-wide cut of these figures. Group dashboard rolls up several companies."
         ]
       },
       {
         "title": "Related records",
         "items": [
-          "Edifice → Floor → Unit (inventory).",
+          "Building → Floor → Unit (inventory).",
           "Reservation / Sale (sold and collected).",
           "Lease / Rental payment (rent KPIs).",
           "Use “View payment plans” / “View rentals hub” when those alerts appear."
