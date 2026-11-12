@@ -87,7 +87,9 @@ The module also owns one contribution kind (D119): `clients/panel/propertyManage
 module that depends on propertyManagement feeds its report screens without propertyManagement naming that module: the
 group dashboard's open snags, ERP export datasets (`erpExport`: the endpoint, each dataset's value and response key, and
 the dataset and column labels, so the ERP export page lists none of them), and edifice cards on the dashboard
-(`dashboardEdificeCard`: a widget key plus the models that show it). Read by `helpers/moduleContributions/loadPropertyManagementPanelContributions.ts`.
+(`dashboardEdificeCard`: a widget key plus the models that show it), and sections on the project sheet
+(`projectSheetSections`: widget keys plus the models that show them, rendered as `<Widget projectId />` by the sheet
+token `#ProjectContributedSections` above Lifecycle, D151). Read by `helpers/moduleContributions/loadPropertyManagementPanelContributions.ts`.
 
 ## Path alias
 
