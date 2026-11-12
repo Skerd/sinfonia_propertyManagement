@@ -68,8 +68,13 @@
         "expired": "Expired",
         "cancelled": "Cancelled",
         "converted": "Converted"
+      },
+      "when": {
+        "expiring_soon": "Expiring within 3 days",
+        "expired": "Past expiration date"
       }
-    }
+    },
+    "when": "When"
   },
   "searchPlaceholder": "Search or add filters...",
   "yes": "Yes",

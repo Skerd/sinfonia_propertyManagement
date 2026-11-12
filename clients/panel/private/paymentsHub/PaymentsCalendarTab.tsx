@@ -1,3 +1,4 @@
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useEffect, useMemo, useState} from "react";
 import type {ComponentProps} from "react";
 import {IconAlertTriangle, IconCalendar} from "@tabler/icons-react";
@@ -196,7 +197,7 @@ export default function PaymentsCalendarTab({
                             {selectedDay
                                 ? rk("detailForDay").replace(
                                     "{date}",
-                                    selectedDay.toLocaleDateString(locale, {day: "numeric", month: "long"}),
+                                    formatDate(selectedDay, {format: {day: "numeric", month: "long"}}),
                                 )
                                 : rk("selectDay")}
                         </CardTitle>

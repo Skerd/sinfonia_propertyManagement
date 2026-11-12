@@ -54,5 +54,9 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "gracePeriodDaysValue": {
+    "one": "{value} ditë",
+    "other": "{value} ditë"
+  }
 }

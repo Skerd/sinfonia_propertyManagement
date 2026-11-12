@@ -7,6 +7,7 @@ import {
 import type {PaymentsHubRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.dto.ts";
 import type {PaymentsHubScopeFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/paymentsHub/paymentsHub.form.type.ts";
 import {fmtDate} from "@propertyManagementModule/clients/panel/private/rentalsHub/rentalsHubHelpers.ts";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 
 /** Every filter on the page. Held once by the page so the tiles, list and calendar stay in step. */
 export type PaymentsHubScope = {
@@ -142,12 +143,10 @@ export function periodLabel(
     periodStart: string,
     periodEnd: string,
     groupBy: PaymentsHubGroupBy,
-    locale: string,
 ): string {
     if (groupBy === "month") {
-        const date = new Date(periodStart);
-        if (Number.isNaN(date.getTime())) return periodStart;
-        return date.toLocaleDateString(locale, {month: "long", year: "numeric", timeZone: "UTC"});
+        // The core date helper, in the app's language (GLB-09).
+        return formatDate(periodStart, {timeZone: "UTC", format: {month: "long", year: "numeric"}}) || periodStart;
     }
     if (groupBy === "week") return `${fmtDate(periodStart, "UTC")} – ${fmtDate(periodEnd, "UTC")}`;
     return fmtDate(periodStart, "UTC");

@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 import HiddenElement from "@coreModule/components/custom/hiddenElement.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
+import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import {useSelector} from "react-redux";
+import type {RootState} from "@coreModule/helpers/redux/store/generalStore.ts";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {salesListPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
@@ -61,6 +64,7 @@ function CreatePaymentPlanSale({
     const setReservationExchangeRateVisibility = useCallback((value: boolean) => {setExchangeRateVisibility((prev) => prev.showReservationExchangeRate === value ? prev : {...prev, showReservationExchangeRate: value});}, []);
     const viewConfig = useViewConfig("paymentplans", "form:create");
     const timeZone = useCompanyTimeZone();
+    const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     const formSchema = useMemo(() => createPaymentPlanSaleFormSchema(languageCode, resolveLanguageKey("form"), undefined, undefined, {timeZone}), [languageCode, resolveLanguageKey, timeZone]);
 
     const formExtras = useMemo(() => ({
@@ -116,6 +120,9 @@ function CreatePaymentPlanSale({
             formSchema={formSchema}
             defaultValues={{
                 unit: unitId || "",
+                // The seller is who records the sale, on the company's today (UX-06, GLB-09).
+                soldBy: currentUserId,
+                saleDate: companyToday(timeZone),
                 numberOfInstallments: 1,
                 startDate: "",
                 endDate: "",

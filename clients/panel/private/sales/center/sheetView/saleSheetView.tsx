@@ -9,6 +9,14 @@ import {useEffect, useState} from "react";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
 import SaleHandoverDialogs from "@propertyManagementModule/components/custom/sales/saleHandoverDialogs.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName, type NamedUser} from "@coreModule/helpers/general/names.ts";
+
+/** The person a sale is about: its buyer, else the buyer's company (UX-01, D151). Empty when neither is readable. */
+export function saleBuyerName(sale: {buyer?: NamedUser; buyerCompany?: {name?: string}} | undefined): string {
+    return getName(sale?.buyer) || sale?.buyerCompany?.name?.trim() || "";
+}
 
 /** List route with optional unit filter (sidebar / units menu parity). */
 export function salesListPath(unitId?: string, unitName?: string): string {
@@ -118,6 +126,16 @@ function SaleSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by the buyer, the code as a badge and the approval in tone (UX-01, UX-02).
+            headerTitle={<SheetNameTitle name={saleBuyerName(asSale)} code={asSale.name} typeLabel={String(resolveLanguageKey("sale"))} />}
+            headerDescription={
+                <StatusBadge
+                    tableConfigKey="sales"
+                    field="approvalStatus"
+                    value={asSale.approvalStatus}
+                    label={String(resolveLanguageKey(`approvalStatusValues.${asSale.approvalStatus}`))}
+                />
+            }
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

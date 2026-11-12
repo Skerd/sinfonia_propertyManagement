@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/units/availabilityCalendar.tsx",
   "title": "Verfügbarkeitskalender der Einheiten",
-  "description": "Reservierungs- und Verkaufszeiträume über alle Einheiten anzeigen.",
+  "description": "Reservations- und Verkaufszeiträume über alle Einheiten anzeigen.",
   "projectIdLabel": "Projekt-ID (optional)",
   "projectIdPlaceholder": "Projekt-ObjectId einfügen…",
   "fromLabel": "Von",

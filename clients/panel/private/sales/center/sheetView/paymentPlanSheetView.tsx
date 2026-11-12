@@ -2,27 +2,19 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
-import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {useEffect, useState} from "react";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
-import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
-import SalePayInstallmentAction from "@propertyManagementModule/clients/panel/private/sales/center/actions/salePayInstallmentAction.tsx";
-import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
-import {Button} from "@coreModule/components/ui/button.tsx";
-import {DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@coreModule/components/ui/dropdown-menu.tsx";
-import {IconDots} from "@tabler/icons-react";
-import ManualInstallmentClientEmails, {
-    installmentHasVisibleManualEmailActions,
-} from "@propertyManagementModule/clients/panel/private/sales/center/actions/manualInstallmentClientEmails.tsx";
 import SalePayDownPaymentAction from "@propertyManagementModule/clients/panel/private/sales/center/actions/salePayDownPaymentAction.tsx";
 import SalePayDownPaymentDialog from "@propertyManagementModule/components/custom/sale/salePayDownPaymentDialog.tsx";
 import SalePayInstallmentDialog from "@propertyManagementModule/components/custom/sale/salePayInstallmentDialog.tsx";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {saleBuyerName} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
+import {planTakesPayments} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanInstallments.tsx";
+import {PaymentPlanPayInstallment} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanPayInstallment.ts";
 
 type PaymentPlanSheetViewOwnProps = {
     open: boolean;
@@ -35,46 +27,6 @@ type PaymentPlanSheetViewOwnProps = {
     fetchId?: string;
 };
 
-function formatMoney(value: number | undefined): string {
-    return formatNumber(value, {maximumFractionDigits: 2}) || "-";
-}
-
-function getInstallmentStatusStyles(status?: string): {bg: string; text: string; border: string} {
-    const lowered = status?.toLowerCase() ?? "";
-    if (lowered === "paid") {
-        return {bg: "bg-success/10", text: "text-success", border: "border-success/30"};
-    }
-    if (lowered === "overdue" || lowered === "cancelled") {
-        return {bg: "bg-destructive/10", text: "text-destructive", border: "border-destructive/30"};
-    }
-    if (lowered === "partially_paid") {
-        return {bg: "bg-warning/10", text: "text-warning", border: "border-warning/30"};
-    }
-    return {bg: "bg-muted/50", text: "text-muted-foreground", border: "border-muted"};
-}
-
-function resolveStateLabel(
-    resolveLanguageKey: (key: string) => string,
-    category: string,
-    rawValue?: string
-): string {
-    if (!rawValue) return "-";
-    const key = `${category}.${rawValue}`;
-    const resolved = resolveLanguageKey(key);
-    return resolved === `---${key}---` ? rawValue : resolved;
-}
-
-/** The server takes payments only on a plan still running: active, or defaulted with installments to catch up on. */
-function planTakesPayments(status: string | undefined): boolean {
-    return status === "active" || status === "defaulted";
-}
-
-function isInstallmentPaid(installment: PaymentPlan["installments"][number]): boolean {
-    const status = installment.status?.toLowerCase();
-    if (status === "paid") return true;
-    return (installment.paidAmount ?? 0) >= (installment.amount ?? 0) && (installment.amount ?? 0) > 0;
-}
-
 function PaymentPlanSheetView({
     open,
     onOpenChange,
@@ -86,13 +38,6 @@ function PaymentPlanSheetView({
     fetchId,
 }: PaymentPlanSheetViewOwnProps & WithLanguageType) {
     const access = useAccess("paymentPlans");
-    const saleAccess = useAccess("sales");
-    const timeZone = useCompanyTimeZone();
-    const saleReadFields =
-        typeof saleAccess.read === "object" && saleAccess.read !== null
-            ? (saleAccess.read as Record<string, unknown>)
-            : {};
-    const canReadSaleBuyer = saleReadFields.buyer !== undefined;
     const viewConfig = useViewConfig("paymentplans", "sheet");
     const [sheetData, setSheetData] = useState<Record<string, any>>(paymentPlanProp || {_id: fetchId});
     const [localAction, setLocalAction] = useState("");
@@ -110,7 +55,12 @@ function PaymentPlanSheetView({
     if (!entityId) return null;
 
     return (
-        <>
+        <PaymentPlanPayInstallment.Provider
+            value={(installment) => {
+                setSelectedInstallment(installment);
+                setLocalAction("payInstallment");
+            }}
+        >
             <SheetViewRenderer
                 config={viewConfig}
                 url="/api/realEstate/unit/sale/paymentPlan/single"
@@ -122,6 +72,16 @@ function PaymentPlanSheetView({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // Named by the buyer of its sale, the code as a badge and the state in tone (UX-01, UX-02, D151).
+                headerTitle={<SheetNameTitle name={saleBuyerName(paymentPlan.sale)} code={paymentPlan.name} typeLabel={String(resolveLanguageKey("paymentPlan"))} />}
+                headerDescription={
+                    <StatusBadge
+                        tableConfigKey="paymentplans"
+                        field="status"
+                        value={paymentPlan.status}
+                        label={String(resolveLanguageKey(`paymentPlanStatusState.${paymentPlan.status}`))}
+                    />
+                }
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}
@@ -137,114 +97,7 @@ function PaymentPlanSheetView({
                         />
                     ) : undefined
                 }
-            >
-                {!!access.read?.installments && (
-                    <div className="flex flex-col gap-y-2">
-                        <div className="flex items-center justify-between">
-                            <p className="text-sm font-semibold">{resolveLanguageKey("installments")}</p>
-                            <p className="text-xs text-muted-foreground">
-                                {resolveLanguageKey("totalInstallments")} {paymentPlan.installments?.length ?? 0}
-                            </p>
-                        </div>
-
-                        {paymentPlan.installments?.length ? (
-                            <div className="rounded-lg border border-border/50 bg-muted/20 p-2">
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow>
-                                            <TableHead>{resolveLanguageKey("installment")}</TableHead>
-                                            <TableHead>{resolveLanguageKey("dueDate")}</TableHead>
-                                            <TableHead>{resolveLanguageKey("amount")}</TableHead>
-                                            <TableHead>{resolveLanguageKey("paidAmount")}</TableHead>
-                                            <TableHead>{resolveLanguageKey("remainingAmount")}</TableHead>
-                                            <TableHead>{resolveLanguageKey("status")}</TableHead>
-                                            <TableHead className="text-right">{resolveLanguageKey("actions")}</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {paymentPlan.installments.map((installment) => {
-                                            const paid = isInstallmentPaid(installment);
-                                            const showPayAction = !paid && !!access.write && planTakesPayments(paymentPlan.status);
-                                            const showInstallmentEmails =
-                                                canReadSaleBuyer && installmentHasVisibleManualEmailActions(installment, timeZone);
-                                            const showRowActionsMenu = showPayAction || showInstallmentEmails;
-                                            const statusStyles = getInstallmentStatusStyles(installment.status);
-                                            const paidAmount = installment.paidAmount ?? 0;
-                                            const dueAmount = installment.amount ?? 0;
-                                            const remaining = Math.max(0, dueAmount - paidAmount);
-                                            return (
-                                                <TableRow key={installment.installmentNumber}>
-                                                    <TableCell className="font-medium">
-                                                        #{installment.installmentNumber}
-                                                    </TableCell>
-                                                    <TableCell>
-                                                        {installment.dueDate ? formatDate(installment.dueDate, {timeZone: "UTC", format: DATE_FORMATS.mediumDate}) : "-"}
-                                                    </TableCell>
-                                                    <TableCell>{formatMoney(dueAmount)}</TableCell>
-                                                    <TableCell>{formatMoney(paidAmount)}</TableCell>
-                                                    <TableCell>{formatMoney(remaining)}</TableCell>
-                                                    <TableCell>
-                                                        <Badge
-                                                            variant="outline"
-                                                            className={cn(
-                                                                "text-2xs font-medium",
-                                                                statusStyles.bg,
-                                                                statusStyles.text,
-                                                                statusStyles.border,
-                                                            )}
-                                                        >
-                                                            {resolveStateLabel(
-                                                                resolveLanguageKey,
-                                                                "installmentStatusState",
-                                                                installment.status ?? "pending",
-                                                            )}
-                                                        </Badge>
-                                                    </TableCell>
-                                                    <TableCell className="text-right">
-                                                        {!paid && showRowActionsMenu && (
-                                                            <div role="presentation"
-                                                                className="inline-flex justify-end"
-                                                                onClick={(e) => e.stopPropagation()}
-                                                            >
-                                                                <DropdownMenu>
-                                                                    <DropdownMenuTrigger asChild>
-                                                                        <Button variant="ghost" size="icon-sm" className="size-8">
-                                                                            <IconDots className="size-4" />
-                                                                        </Button>
-                                                                    </DropdownMenuTrigger>
-                                                                    <DropdownMenuContent align="end" className="w-fit">
-                                                                        {showPayAction && (
-                                                                            <SalePayInstallmentAction
-                                                                                installment={installment}
-                                                                                onAction={(action: string) => {
-                                                                                    setSelectedInstallment(installment);
-                                                                                    setLocalAction(action);
-                                                                                }}
-                                                                            />
-                                                                        )}
-                                                                        <ManualInstallmentClientEmails
-                                                                            saleId={paymentPlan.sale?._id ?? ""}
-                                                                            installment={installment}
-                                                                        />
-                                                                    </DropdownMenuContent>
-                                                                </DropdownMenu>
-                                                            </div>
-                                                        )}
-                                                    </TableCell>
-                                                </TableRow>
-                                            );
-                                        })}
-                                    </TableBody>
-                                </Table>
-                            </div>
-                        ) : (
-                            <div className="rounded-lg border border-border/50 bg-muted/20 p-3 text-xs text-muted-foreground">
-                                {resolveLanguageKey("noInstallments")}
-                            </div>
-                        )}
-                    </div>
-                )}
-            </SheetViewRenderer>
+            />
             {localAction === "payDownPayment" && (
                 <SalePayDownPaymentDialog
                     open
@@ -276,7 +129,7 @@ function PaymentPlanSheetView({
                     }}
                 />
             )}
-        </>
+        </PaymentPlanPayInstallment.Provider>
     );
 }
 

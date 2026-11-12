@@ -97,5 +97,14 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "approvalStatus": "Freigabe",
+  "approvalStatusValues": {
+    "pending_approval": "Freigabe ausstehend",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt"
+  },
+  "approvalReviewedBy": "Geprüft von",
+  "approvalReviewedAt": "Geprüft am",
+  "approvalNotes": "Notizen zur Freigabe"
 }

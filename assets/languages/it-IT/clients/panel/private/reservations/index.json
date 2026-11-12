@@ -68,8 +68,13 @@
         "expired": "Scaduta",
         "cancelled": "Annullata",
         "converted": "Convertita"
+      },
+      "when": {
+        "expiring_soon": "Scade entro 3 giorni",
+        "expired": "Scadenza superata"
       }
-    }
+    },
+    "when": "Quando"
   },
   "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",

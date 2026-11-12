@@ -68,8 +68,13 @@
         "expired": "Abgelaufen",
         "cancelled": "Storniert",
         "converted": "Umgewandelt"
+      },
+      "when": {
+        "expiring_soon": "Läuft innert 3 Tagen ab",
+        "expired": "Ablaufdatum überschritten"
       }
-    }
+    },
+    "when": "Wann"
   },
   "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",

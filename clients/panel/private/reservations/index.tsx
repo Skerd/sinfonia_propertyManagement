@@ -20,6 +20,7 @@ import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilt
 import {GRID_COLS_MAX_3, GRID_TRANSACTIONAL} from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
+import {RESERVATION_WHEN} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.constants.ts";
 
 function decodeSearchParam(value: string | null): string | undefined {
     if (value == null || value === "") return undefined;
@@ -67,6 +68,17 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
     const extraParams = useMemo(() => (edificeId ? {edifice: edificeId} : undefined), [edificeId]);
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => [
+        {
+            // Not a stored field: the list route compares the expiration day with the company's today (UX-12).
+            field: "when",
+            label: resolveLanguageKey("fields.when"),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: RESERVATION_WHEN.map((value) => ({
+                value,
+                label: resolveLanguageKey(`fields.!enums.when.${value}`),
+            })),
+            asExtraParam: true,
+        },
         {
             field: "project",
             label: resolveLanguageKey("fields.project"),

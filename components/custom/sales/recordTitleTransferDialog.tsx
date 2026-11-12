@@ -19,6 +19,7 @@ import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/p
 import {recordTitleTransferFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/recordTitleTransfer.form.validator.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 
 type RecordTitleTransferDialogProps = WithLanguageType & WithAxiosType<Sale> & {
     open: boolean;
@@ -84,13 +85,14 @@ function RecordTitleTransferDialog({
                 <div className="flex min-h-0 flex-1 flex-col gap-y-4 overflow-y-auto py-2">
                     <div className="flex flex-col gap-y-2">
                         <Label htmlFor="titleTransferDate">{resolveLanguageKey("titleTransferDate")} *</Label>
-                        <Input
+                        {/* The core picker, never the browser's (UX-08); a transfer is never in the future. */}
+                        <DateInput
                             id="titleTransferDate"
-                            type="date"
+                            valueFormat="YYYY-MM-DD"
                             value={titleTransferDate}
-                            max={companyToday(timeZone)}
-                            onChange={(e) => {
-                                setTitleTransferDate(e.target.value);
+                            maxDate={companyToday(timeZone)}
+                            onChange={(value) => {
+                                setTitleTransferDate(value);
                                 setDateError(null);
                             }}
                             disabled={loading}

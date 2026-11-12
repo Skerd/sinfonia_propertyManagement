@@ -97,5 +97,14 @@
   "updatedAt": "Përditësuar më",
   "createdBy": "Krijuar nga",
   "deletedAt": "Fshirë më",
-  "deletedBy": "Fshirë nga"
+  "deletedBy": "Fshirë nga",
+  "approvalStatus": "Miratimi",
+  "approvalStatusValues": {
+    "pending_approval": "Në pritje të miratimit",
+    "approved": "Miratuar",
+    "rejected": "Refuzuar"
+  },
+  "approvalReviewedBy": "Shqyrtuar nga",
+  "approvalReviewedAt": "Shqyrtuar më",
+  "approvalNotes": "Shënime miratimi"
 }

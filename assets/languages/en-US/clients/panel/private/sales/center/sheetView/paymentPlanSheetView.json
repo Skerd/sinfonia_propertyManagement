@@ -54,5 +54,9 @@
   "updatedAt": "Updated at",
   "createdBy": "Created by",
   "deletedAt": "Deleted at",
-  "deletedBy": "Deleted by"
+  "deletedBy": "Deleted by",
+  "gracePeriodDaysValue": {
+    "one": "{value} day",
+    "other": "{value} days"
+  }
 }

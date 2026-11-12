@@ -28,7 +28,7 @@
   "openModificationRequestsDesc": "Nicht abgeschlossen/abgelehnt/annulliert",
   "expiringReservationsCount": "Läuft bald ab",
   "expiringReservationsCountDesc": "Aktive Reservationen, die in 7 Tagen ablaufen",
-  "totalReservationDeposits": "Reservierungsanzahlungen",
+  "totalReservationDeposits": "Reservationsanzahlungen",
   "totalReservationDepositsDesc": "Anzahlungen aus aktiven Reservationen",
   "paymentPlansCompleted": "Pläne abgeschlossen",
   "paymentPlansCompletedDesc": "Abgeschlossene Zahlungspläne",

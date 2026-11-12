@@ -84,12 +84,7 @@ export default function PaymentsPeriodTotals({
                                                     className="cursor-pointer font-medium underline-offset-4 hover:underline"
                                                     onClick={() => onSelectPeriod(period)}
                                                 >
-                                                    {periodLabel(
-                                                        period.periodStart,
-                                                        period.periodEnd,
-                                                        groupBy,
-                                                        locale,
-                                                    )}
+                                                    {periodLabel(period.periodStart, period.periodEnd, groupBy)}
                                                 </Button>
                                             </TableCell>
                                             <TableCell className="text-right tabular-nums">{period.count}</TableCell>

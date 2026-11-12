@@ -68,8 +68,13 @@
         "expired": "Skaduar",
         "cancelled": "Anuluar",
         "converted": "Konvertuar"
+      },
+      "when": {
+        "expiring_soon": "Skadon brenda 3 ditëve",
+        "expired": "Afati ka kaluar"
       }
-    }
+    },
+    "when": "Kur"
   },
   "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "Po",

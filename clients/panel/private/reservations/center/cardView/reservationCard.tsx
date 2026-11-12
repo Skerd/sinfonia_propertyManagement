@@ -1,10 +1,9 @@
 import {compose} from "redux";
 import withLanguage, {type ResolveLanguageKey, WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
-import {IconCalendarClock, IconCurrencyDollar, IconHome, IconNotes, IconUser} from "@tabler/icons-react";
+import {IconCalendarClock, IconCurrencyDollar, IconHome, IconNotes} from "@tabler/icons-react";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import ReservationRowMenuExtras from "@propertyManagementModule/clients/panel/private/reservations/center/actions/reservationRowMenuExtras.tsx";
 import CancelReservationDialog from "@propertyManagementModule/components/custom/reservations/cancelReservationDialog.tsx";
 import ReinstateReservationDialog from "@propertyManagementModule/components/custom/reservations/reinstateReservationDialog.tsx";
@@ -18,16 +17,14 @@ import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCar
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {
-    CARD_INFO_ROWS_TWO_COL_CLASS,
     STATUS_BADGE_DANGER,
     STATUS_BADGE_INFO,
-    STATUS_BADGE_NEUTRAL,
-    STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import {useEffect, type ReactNode, type RefObject} from "react";
 import {calendarDaysUntil} from "@coreModule/helpers/general/dateTime.ts";
@@ -46,20 +43,6 @@ function ReservationReady({
     return null;
 }
 
-
-function reservationStatusBadgeClass(status: NonNullable<Reservation["status"]>): string {
-    switch (status) {
-        case "active":
-            return STATUS_BADGE_NEUTRAL;
-        case "converted":
-            return STATUS_BADGE_SUCCESS;
-        case "expired":
-        case "cancelled":
-            return STATUS_BADGE_DANGER;
-        default:
-            return STATUS_BADGE_NEUTRAL;
-    }
-}
 
 /** Badge for the expiration day, counted from the company's today (D116), like the expiry cron. */
 function expirationBadgeMeta(
@@ -93,21 +76,19 @@ function ReservationCardBadges({
     const expirationDate = entity.expirationDate;
     const notes = entity.reservationNotes?.trim();
     const days = calendarDaysUntil(expirationDate, useCompanyTimeZone());
-    const expiration = days === null ? null : expirationBadgeMeta(days, resolveLanguageKey);
+    // The expiry only matters while the reservation still holds the unit.
+    const expiration = days === null || status !== "active" ? null : expirationBadgeMeta(days, resolveLanguageKey);
 
     if (!status && !expiration && !notes) return null;
 
     return (
         <>
-            {status ? (
-                <DisplayValue path="status" value={status}>
-                    {() => (
-                        <Badge variant="outline" className={cn("text-xs", reservationStatusBadgeClass(status))}>
-                            {String(resolveLanguageKey(`statusValues.${status}`, true) || status)}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
+            <StatusBadge
+                tableConfigKey="reservations"
+                field="status"
+                value={status}
+                label={String(resolveLanguageKey(`statusValues.${status}`, true) || status)}
+            />
             {expiration && expirationDate ? (
                 <DisplayValue path="expirationDate" value={expirationDate}>
                     {() => (
@@ -222,63 +203,30 @@ function ReservationCard({
             }}
         >
             {({entity, setAction}) => {
-                const hasNotes = Boolean(entity.reservationNotes?.trim());
-                const hasBadges = Boolean(entity.status || entity.expirationDate || hasNotes);
                 // Without read access on the unit the API sends only its id.
                 const readableUnit = entity.unit && "name" in entity.unit ? entity.unit : undefined;
                 return (
                 <>
                     <ReservationReady entity={entity} onReady={onReady} />
+                    {/* Named by the client, the code beside it, the state as a badge (UX-01, UX-02). */}
                     <EntityCard.Header
-                        titlePath="name"
-                        title={
-                            <span className="flex items-center gap-1 truncate">
-                                {extraSmall ? (
-                                    <>
-                                        <span>{resolveLanguageKey("reservation")}:</span>
-                                        <span>{entity.name}</span>
-                                    </>
-                                ) : (
-                                    entity.name
-                                )}
-                                <CopyTooltip text={entity.name} />
-                            </span>
-                        }
-                        badges={
-                            hasBadges ? (
-                                <ReservationCardBadges entity={entity} resolveLanguageKey={resolveLanguageKey} />
-                            ) : undefined
-                        }
+                        titlePath={["client", "name"]}
+                        title={getName(entity.client) || entity.name || "—"}
+                        subtitlePath="name"
+                        subtitle={getName(entity.client) ? entity.name : undefined}
+                        badgesBesideTitle
+                        badges={<ReservationCardBadges entity={entity} resolveLanguageKey={resolveLanguageKey} />}
                     >
                         <ReservationRowMenuExtras reservation={entity} onAction={setAction} />
                     </EntityCard.Header>
-                    {hasBadges && (
-                        <Separator className="-mx-(--density-pad) w-auto self-stretch" />
-                    )}
                     {!extraSmall && (
-                        <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
+                        <EntityCard.Body>
                             <EntityCardRow
                                 icon={IconHome}
                                 label={readableUnit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 tooltip={readableUnit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 path="unit"
                                 value={readableUnit?.name ?? readableUnit?.unitNumber}
-                            />
-                            <EntityCardRow
-                                icon={IconUser}
-                                label={resolveLanguageKey("client")}
-                                tooltip={resolveLanguageKey("client")}
-                                path="client"
-                                type="user"
-                                value={entity.client}
-                            />
-                            <EntityCardRow
-                                icon={IconUser}
-                                label={resolveLanguageKey("reservedBy")}
-                                tooltip={resolveLanguageKey("reservedBy")}
-                                path="reservedBy"
-                                type="user"
-                                value={entity.reservedBy}
                             />
                             <EntityCardRow
                                 icon={IconCalendarClock}

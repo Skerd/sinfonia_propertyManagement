@@ -3,33 +3,23 @@ import withLanguage, {type ResolveLanguageKey, WithLanguageType} from "@coreModu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
-import {
-    IconBuilding,
-    IconBuildingCommunity,
-    IconCalendarClock,
-    IconCurrencyDollar,
-    IconHome,
-    IconPackage,
-    IconUser,
-} from "@tabler/icons-react";
-import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
-import SaleSheetView, {buildSaleEditPath} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
+import {IconCalendarClock, IconCurrencyDollar, IconHome} from "@tabler/icons-react";
+import SaleSheetView, {buildSaleEditPath, saleBuyerName} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SaleRowMenuExtras from "@propertyManagementModule/clients/panel/private/sales/center/actions/saleRowMenuExtras.tsx";
 import SaleHandoverDialogs from "@propertyManagementModule/components/custom/sales/saleHandoverDialogs.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import DisplayValue from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {
-    CARD_INFO_ROWS_TWO_COL_CLASS,
     STATUS_BADGE_INFO,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-import type {ReactNode, RefObject} from "react";
+import type {RefObject} from "react";
 
 function paymentTypeBadgeClass(paymentType: string): string {
     switch (paymentType) {
@@ -46,55 +36,6 @@ function paymentTypeLabel(paymentType: string, resolveLanguageKey: ResolveLangua
     if (paymentType === "cash") return String(resolveLanguageKey("cash"));
     if (paymentType === "payment_plan") return String(resolveLanguageKey("paymentPlan"));
     return paymentType;
-}
-
-function SaleCardBadges({
-    entity,
-    resolveLanguageKey,
-}: {
-    entity: Sale;
-    resolveLanguageKey: ResolveLanguageKey;
-}): ReactNode {
-    const paymentType = entity.paymentType;
-    const projectName = entity.project?.name;
-    const edificeName = entity.edifice?.name;
-
-    if (!paymentType && !projectName && !edificeName) return null;
-
-    return (
-        <>
-            {paymentType ? (
-                <DisplayValue path="paymentType" value={paymentType}>
-                    {() => (
-                        <Badge variant="outline" className={cn("text-xs", paymentTypeBadgeClass(paymentType))}>
-                            {paymentTypeLabel(paymentType, resolveLanguageKey)}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
-            {/* project/edifice are denormalized dependents (sheet uses skipReadAccessGate) */}
-            {projectName ? (
-                <DisplayValue value={projectName} show>
-                    {() => (
-                        <Badge variant="secondary" className={cn("text-xs gap-1", STATUS_BADGE_NEUTRAL)}>
-                            <IconBuilding className="size-3" aria-hidden />
-                            {projectName}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
-            {edificeName ? (
-                <DisplayValue value={edificeName} show>
-                    {() => (
-                        <Badge variant="secondary" className={cn("text-xs gap-1", STATUS_BADGE_NEUTRAL)}>
-                            <IconBuildingCommunity className="size-3" aria-hidden />
-                            {edificeName}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
-        </>
-    );
 }
 
 type SaleCardProps = WithLanguageType & {
@@ -169,91 +110,67 @@ function SaleCard({
                 />
             )}
         >
-            {({entity, setAction}) => {
-                const saleTitle =
-                    entity.name?.trim() ||
-                    [entity.unit?.name, entity.unit?.unitNumber].filter(Boolean).join(" · ") ||
-                    "—";
-                const hasBadges = Boolean(
-                    entity.paymentType || entity.project?.name || entity.edifice?.name,
-                );
-                return (
-                    <>
-                        <EntityCard.Header
-                            titlePath="name"
-                            title={
-                                <span className="flex items-center gap-1 truncate">
-                                    {saleTitle}
-                                    <CopyTooltip text={entity.name ?? saleTitle} />
-                                </span>
-                            }
-                            badges={
-                                hasBadges ? (
-                                    <SaleCardBadges entity={entity} resolveLanguageKey={resolveLanguageKey} />
-                                ) : undefined
-                            }
-                        >
-                            <SaleRowMenuExtras sale={entity} onAction={setAction} />
-                        </EntityCard.Header>
-                        {hasBadges && (
-                            <Separator className="-mx-(--density-pad) w-auto self-stretch" />
+            {({entity, setAction}) => (
+                <>
+                    <EntityCard.Header
+                        titlePath={["buyer", "buyerCompany", "name"]}
+                        title={saleBuyerName(entity) || entity.name || "—"}
+                        subtitlePath="name"
+                        // The code goes beside a name, never twice when there is no buyer to name it by.
+                        subtitle={saleBuyerName(entity) ? entity.name : undefined}
+                        badgesBesideTitle
+                        badges={
+                            <>
+                                <StatusBadge
+                                    tableConfigKey="sales"
+                                    field="approvalStatus"
+                                    value={entity.approvalStatus}
+                                    label={String(resolveLanguageKey(`approvalStatuses.${entity.approvalStatus}`))}
+                                />
+                                {entity.paymentType ? (
+                                    <DisplayValue path="paymentType" value={entity.paymentType}>
+                                        {() => (
+                                            <Badge variant="outline" className={cn("text-xs", paymentTypeBadgeClass(entity.paymentType))}>
+                                                {paymentTypeLabel(entity.paymentType, resolveLanguageKey)}
+                                            </Badge>
+                                        )}
+                                    </DisplayValue>
+                                ) : null}
+                            </>
+                        }
+                    >
+                        <SaleRowMenuExtras sale={entity} onAction={setAction} />
+                    </EntityCard.Header>
+                    {/* Who → when → how much (UX-02); the buyer is the title and the state a badge. */}
+                    <EntityCard.Body>
+                        <EntityCardRow
+                            icon={IconHome}
+                            label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
+                            tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
+                            path="unit"
+                            value={entity.unit?.name ?? entity.unit?.unitNumber}
+                        />
+                        <EntityCardRow
+                            icon={IconCalendarClock}
+                            label={resolveLanguageKey("saleDate")}
+                            tooltip={resolveLanguageKey("saleDate")}
+                            path="saleDate"
+                            type="date"
+                            value={entity.saleDate}
+                        />
+                        {!small && (
+                            <EntityCardRow
+                                icon={IconCurrencyDollar}
+                                label={resolveLanguageKey("finalPrice")}
+                                tooltip={resolveLanguageKey("finalPrice")}
+                                path="finalPrice"
+                                type="currency"
+                                value={{amount: entity.finalPrice, currency: entity.saleCurrency}}
+                            />
                         )}
-                        <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <EntityCardRow
-                                icon={IconHome}
-                                label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
-                                tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
-                                path="unit"
-                                value={entity.unit?.name ?? entity.unit?.unitNumber}
-                            />
-                            <EntityCardRow
-                                icon={IconUser}
-                                label={resolveLanguageKey("soldBy")}
-                                tooltip={resolveLanguageKey("soldBy")}
-                                path="soldBy"
-                                type="user"
-                                value={entity.soldBy}
-                            />
-                            <EntityCardRow
-                                icon={IconUser}
-                                label={resolveLanguageKey("buyer")}
-                                tooltip={resolveLanguageKey("buyer")}
-                                path="buyer"
-                                type="user"
-                                value={entity.buyer}
-                            />
-                            {!small && (
-                                <>
-                                    <EntityCardRow
-                                        icon={IconCalendarClock}
-                                        label={resolveLanguageKey("saleDate")}
-                                        tooltip={resolveLanguageKey("saleDate")}
-                                        path="saleDate"
-                                        type="date"
-                                        value={entity.saleDate}
-                                    />
-                                    <EntityCardRow
-                                        icon={IconCurrencyDollar}
-                                        label={resolveLanguageKey("finalPrice")}
-                                        tooltip={resolveLanguageKey("finalPrice")}
-                                        path="finalPrice"
-                                        type="currency"
-                                        value={{amount: entity.finalPrice, currency: entity.saleCurrency}}
-                                    />
-                                    <EntityCardRow
-                                        icon={IconPackage}
-                                        label={resolveLanguageKey("handoverDate")}
-                                        tooltip={resolveLanguageKey("handoverDate")}
-                                        path="handoverDate"
-                                        type="date"
-                                        value={entity.handoverDate}
-                                    />
-                                </>
-                            )}
-                        </EntityCard.Body>
-                    </>
-                );
-            }}
+                    </EntityCard.Body>
+                </>
+            )}
         </EntityCard>
     );
 }

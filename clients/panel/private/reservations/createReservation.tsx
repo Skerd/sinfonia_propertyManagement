@@ -1,5 +1,6 @@
 import {compose} from "redux";
-import {useMemo, useRef} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
+import type {UseFormReturn} from "react-hook-form";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
@@ -15,6 +16,26 @@ import {IconSquarePlus2} from "@tabler/icons-react";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import FormViewRenderer from "@coreModule/components/viewEngine/FormViewRenderer.tsx";
 import {reservationsListPath} from "@propertyManagementModule/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx";
+import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import type {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
+
+const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/unit/single"};
+
+/** The deposit starts in the picked unit's currency (UX-06); a currency already picked stays. Renders nothing. */
+function DepositCurrencyFromUnit({form}: {form: UseFormReturn<CreateReservationFormType>}) {
+    const unitId = form.watch("unit");
+    const [unitCount, setUnitCount] = useState(0);
+    useEffect(() => {
+        if (unitId) setUnitCount((count) => count + 1);
+    }, [unitId]);
+    useHttpRequest<Unit>(UNIT_REQUEST, {_id: unitId}, unitCount, true, {
+        success: (unit) => {
+            if (unit.priceCurrency?._id && !form.getValues("depositCurrency")) form.setValue("depositCurrency", unit.priceCurrency._id);
+        },
+    });
+    return null;
+}
 
 function localFilesFromField(value: unknown): File[] {
     if (!Array.isArray(value)) return [];
@@ -39,10 +60,12 @@ function CreateReservation({
     const {create} = useAccess("reservations");
     const unitId = propUnitId;
     const company = useSelector((state: RootState) => state.authentication?.user?.company);
+    const currentUserId = useSelector((state: RootState) => state.authentication.user.id);
     const lastSubmittedUnitId = useRef("");
 
     const viewConfig = useViewConfig("reservations", "form:create");
-    const formSchema = createReservationFormSchema(languageCode, resolveLanguageKey("form"), undefined, undefined, {timeZone: useCompanyTimeZone()});
+    const timeZone = useCompanyTimeZone();
+    const formSchema = createReservationFormSchema(languageCode, resolveLanguageKey("form"), undefined, undefined, {timeZone});
 
     const formExtras = useMemo(
         () => ({
@@ -100,7 +123,9 @@ function CreateReservation({
             defaultValues={{
                 unit: unitId ?? "",
                 reservedByCompany: company._id,
-                // reservationDate: new Date().toISOString().slice(0, 10),
+                // Reserved by whoever records it, on the company's today (UX-06, GLB-09).
+                reservedBy: currentUserId,
+                reservationDate: companyToday(timeZone),
             }}
             loading={loading}
             innerRef={innerRef}
@@ -113,6 +138,7 @@ function CreateReservation({
             formExtras={formExtras}
             extraTitles={propUnitName ? [propUnitName] : []}
             submitIcon={<IconSquarePlus2 className="h-4 w-4" />}
+            renderChildren={(form) => <DepositCurrencyFromUnit form={form} />}
         />
     );
 }

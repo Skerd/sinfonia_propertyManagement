@@ -11,13 +11,13 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@coreModule/components/ui/alert-dialog.tsx";
-import {Input} from "@coreModule/components/ui/input.tsx";
 import {Label} from "@coreModule/components/ui/label.tsx";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import {payReservationFormSchema} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/payReservation.form.validator.ts";
 import type {PayReservationForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/payReservation.form.type.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import {DateInput} from "@coreModule/components/custom/inputs/dateInput.tsx";
 
 type PaidInFullReservationDialogProps = WithLanguageType & WithAxiosType<Reservation, PayReservationForm> & {
     open: boolean;
@@ -72,14 +72,15 @@ function PaidInFullReservationDialog({
                 </AlertDialogHeader>
                 <div className="flex flex-col gap-y-2 py-2">
                     <Label htmlFor="reservationPaidDate">{resolveLanguageKey("paidDate")}</Label>
-                    <Input
+                    {/* The core picker, never the browser's (UX-08), between the reservation day and today. */}
+                    <DateInput
                         id="reservationPaidDate"
-                        type="date"
+                        valueFormat="YYYY-MM-DD"
                         value={paidDate}
-                        min={reservation.reservationDate}
-                        max={companyToday(timeZone)}
-                        onChange={(e) => {
-                            setPaidDate(e.target.value);
+                        minDate={reservation.reservationDate}
+                        maxDate={companyToday(timeZone)}
+                        onChange={(value) => {
+                            setPaidDate(value);
                             setDateError(null);
                         }}
                         disabled={loading}

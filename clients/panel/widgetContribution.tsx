@@ -30,6 +30,7 @@ import ModificationRequestCard from "@propertyManagementModule/clients/panel/pri
 import EdificeCard from "@propertyManagementModule/clients/panel/private/edifices/center/cardView/edificeCard.tsx";
 import SaleCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/saleCard.tsx";
 import PaymentPlanCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx";
+import PaymentPlanInstallments from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanInstallments.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import HandoverPackageCard from "@propertyManagementModule/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx";
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
@@ -262,6 +263,16 @@ const propertyManagementWidgetContribution: WidgetContribution = {
                 key: index,
                 paymentPlan: normalized.stub,
                 fetchId: normalized.fetchId,
+            });
+        },
+        /** The installment schedule from the loaded plan, placed by the view above Lifecycle (UX-03, D151). */
+        "#PaymentPlanInstallments": ({node, ctx, index}) => {
+            const {data} = ctx;
+            if (!data || typeof data._id !== "string" || !Array.isArray(data.installments) || !sheetFieldVisible(node, ctx)) return null;
+            return createElement(PaymentPlanInstallments, {
+                key: index,
+                plan: data as PaymentPlan,
+                resolveLanguageKey: ctx.resolveLanguageKey,
             });
         },
         "#SheetModificationLineItems": ({node, binding, ctx, index, Component}) => {

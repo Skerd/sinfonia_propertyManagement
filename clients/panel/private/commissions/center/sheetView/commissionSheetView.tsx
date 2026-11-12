@@ -9,7 +9,7 @@ import CommissionWorkflowDialogs from "@propertyManagementModule/clients/panel/p
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
 
 export type CommissionSheetViewOwnProps = {
@@ -57,23 +57,6 @@ function CommissionSheetView({
     if (!viewConfig) return null;
     if (!entityId) return null;
 
-    const statusBadge = (status: string) => {
-        const s = (status || "").toLowerCase();
-        const className =
-            s === "paid" || s === "approved"
-                ? "bg-success/10 text-success border-success/30"
-                : s === "voided"
-                  ? "bg-destructive/10 text-destructive border-destructive/30"
-                  : s === "pending_approval"
-                    ? "bg-info/10 text-info border-info/30"
-                    : "bg-warning/10 text-warning border-warning/30";
-        return (
-            <Badge variant="outline" className={cn("text-xs font-medium", className)}>
-                {resolveLanguageKey(`fields.!enums.status.${s}`)}
-            </Badge>
-        );
-    };
-
     const st = (asCommission.sourceType || "").toLowerCase();
     const sourceLabel = resolveLanguageKey(`fields.!enums.sourceType.${st}`);
 
@@ -88,7 +71,12 @@ function CommissionSheetView({
 
     const headerDescription = (
         <>
-            {statusBadge(asCommission.status)}
+            <StatusBadge
+                tableConfigKey="commissions"
+                field="status"
+                value={asCommission.status}
+                label={String(resolveLanguageKey(`fields.!enums.status.${asCommission.status}`))}
+            />
             <span className="text-muted-foreground">
                 {resolveLanguageKey("sourceType")}: {sourceLabel}
             </span>

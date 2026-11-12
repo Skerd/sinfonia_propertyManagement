@@ -54,5 +54,9 @@
   "updatedAt": "Aktualisiert am",
   "createdBy": "Erstellt von",
   "deletedAt": "Gelöscht am",
-  "deletedBy": "Gelöscht von"
+  "deletedBy": "Gelöscht von",
+  "gracePeriodDaysValue": {
+    "one": "{value} Tag",
+    "other": "{value} Tage"
+  }
 }

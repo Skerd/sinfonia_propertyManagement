@@ -15,31 +15,13 @@ import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {
     CARD_INFO_ROWS_TWO_COL_CLASS,
-    STATUS_BADGE_DANGER,
     STATUS_BADGE_INFO,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
-    STATUS_BADGE_WARNING,
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
-
-function commissionStatusBadgeClass(status: string): string {
-    switch (status) {
-        case "paid":
-            return STATUS_BADGE_SUCCESS;
-        case "approved":
-            return STATUS_BADGE_SUCCESS;
-        case "pending":
-            return STATUS_BADGE_WARNING;
-        case "pending_approval":
-            return STATUS_BADGE_INFO;
-        case "voided":
-            return STATUS_BADGE_DANGER;
-        default:
-            return STATUS_BADGE_NEUTRAL;
-    }
-}
 
 function commissionSourceBadgeClass(sourceType: string): string {
     switch (sourceType) {
@@ -78,15 +60,13 @@ function CommissionCardBadges({
                     )}
                 </DisplayValue>
             ) : null}
-            {status ? (
-                <DisplayValue path="status" value={status}>
-                    {() => (
-                        <Badge variant="outline" className={cn("text-xs", commissionStatusBadgeClass(status))}>
-                            {String(resolveLanguageKey(`fields.!enums.status.${status}`, true) || status)}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
+            {/* Painted from the model's enumTones, like the table cell (UX-02). */}
+            <StatusBadge
+                tableConfigKey="commissions"
+                field="status"
+                value={status}
+                label={String(resolveLanguageKey(`fields.!enums.status.${status}`, true) || status)}
+            />
             {basis ? (
                 <DisplayValue path="basis" value={basis}>
                     {() => (

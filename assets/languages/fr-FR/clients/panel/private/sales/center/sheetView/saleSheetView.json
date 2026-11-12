@@ -97,5 +97,14 @@
   "updatedAt": "Mis à jour le",
   "createdBy": "Créée par",
   "deletedAt": "Supprimée le",
-  "deletedBy": "Supprimée par"
+  "deletedBy": "Supprimée par",
+  "approvalStatus": "Approbation",
+  "approvalStatusValues": {
+    "pending_approval": "En attente d'approbation",
+    "approved": "Approuvée",
+    "rejected": "Rejetée"
+  },
+  "approvalReviewedBy": "Examinée par",
+  "approvalReviewedAt": "Examinée le",
+  "approvalNotes": "Notes d'approbation"
 }

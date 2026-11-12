@@ -2,9 +2,10 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconCalendarClock, IconListNumbers, IconWallet} from "@tabler/icons-react";
-import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
 import PaymentPlanSheetView from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanSheetView.tsx";
+import {saleBuyerName} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/saleSheetView.tsx";
 import SalePayDownPaymentAction from "@propertyManagementModule/clients/panel/private/sales/center/actions/salePayDownPaymentAction.tsx";
 import SalePayDownPaymentDialog from "@propertyManagementModule/components/custom/sale/salePayDownPaymentDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
@@ -71,13 +72,20 @@ function PaymentPlanCard({
         >
             {({entity, setAction}) => (
                 <>
+                    {/* Named by the buyer of its sale, the code beside it, the state as a badge (UX-01, UX-02, D151). */}
                     <EntityCard.Header
-                        titlePath="name"
-                        title={
-                            <span className="flex items-center gap-1 truncate">
-                                {entity.name?.trim() || "—"}
-                                <CopyTooltip text={entity.name ?? entity._id} />
-                            </span>
+                        titlePath={["sale", "name"]}
+                        title={saleBuyerName(entity.sale) || entity.name || "—"}
+                        subtitlePath="name"
+                        subtitle={saleBuyerName(entity.sale) ? entity.name : undefined}
+                        badgesBesideTitle
+                        badges={
+                            <StatusBadge
+                                tableConfigKey="paymentplans"
+                                field="status"
+                                value={entity.status}
+                                label={String(resolveLanguageKey(`paymentPlanStatusState.${entity.status}`))}
+                            />
                         }
                     >
                         {/* The server takes payments only on an active or defaulted plan. */}
@@ -89,15 +97,6 @@ function PaymentPlanCard({
                         ) : null}
                     </EntityCard.Header>
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconWallet}
-                            label={resolveLanguageKey("status")}
-                            tooltip={resolveLanguageKey("status")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="paymentPlanStatusState"
-                            value={entity.status}
-                        />
                         <EntityCardRow
                             icon={IconWallet}
                             label={resolveLanguageKey("remainingBalance")}

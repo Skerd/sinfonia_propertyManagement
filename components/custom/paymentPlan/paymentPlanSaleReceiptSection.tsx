@@ -170,6 +170,8 @@ export default function PaymentPlanSaleReceiptSection({
         success: (data) => {
             setUnit(data);
             setLoadingUnit(false);
+            // The sale starts in the unit's own currency (UX-06); a currency already picked stays.
+            if (data.priceCurrency?._id && !form.getValues("saleCurrency")) form.setValue("saleCurrency", data.priceCurrency._id);
         },
         error: () => {
             setUnitError(true);

@@ -15,6 +15,9 @@ import ManualReservationClientEmailDialog, {
 } from "@propertyManagementModule/components/custom/reservations/manualReservationClientEmailDialog.tsx";
 import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 /** List route with optional unit filter (sidebar / units menu parity). */
 export function reservationsListPath(unitId?: string, unitName?: string): string {
@@ -100,6 +103,16 @@ function ReservationSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by the client, the code as a badge and the state in tone (UX-01, UX-02).
+            headerTitle={<SheetNameTitle name={getName(asReservation.client)} code={asReservation.name} typeLabel={String(resolveLanguageKey("reservation"))} />}
+            headerDescription={
+                <StatusBadge
+                    tableConfigKey="reservations"
+                    field="status"
+                    value={asReservation.status}
+                    label={String(resolveLanguageKey(`statusValues.${asReservation.status}`))}
+                />
+            }
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}
