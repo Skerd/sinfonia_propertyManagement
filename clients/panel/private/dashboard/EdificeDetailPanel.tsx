@@ -40,7 +40,7 @@ function EdificeDetailPanelInner({
         setFetchCount((count) => count + 1);
     }, [edificeId]);
     const floorsRequest = useHttpRequest<TableResponse<Floor>>(FLOORS_REQUEST, {edificeId, limit: 100, offset: 0}, fetchCount);
-    const unitsRequest = useHttpRequest<TableResponse<Unit>>(UNITS_REQUEST, {edificeId, limit: 2000, offset: 0}, fetchCount);
+    const unitsRequest = useHttpRequest<TableResponse<Unit>>(UNITS_REQUEST, {edificeId, limit: 200, offset: 0}, fetchCount);
     const loading = fetchCount === 0 || floorsRequest.loading || unitsRequest.loading;
     const failed = floorsRequest.error != null || unitsRequest.error != null;
     const floors = useMemo(() => (failed ? [] : floorsRequest.data?.data ?? []), [failed, floorsRequest.data]);

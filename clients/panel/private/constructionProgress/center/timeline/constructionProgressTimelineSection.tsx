@@ -127,7 +127,7 @@ function ConstructionProgressTimelineSection({
 
     const timelineBody = useMemo(() => {
         const body: Record<string, unknown> = {
-            limit: 250,
+            limit: 200,
             offset: 0,
             sortBy: "updateDate",
             sortOrder: "asc",
