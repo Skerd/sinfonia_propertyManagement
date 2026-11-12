@@ -45,7 +45,11 @@
     "lateFeePercentageLabel": "Pourcentage de pénalité",
     "lateFeePercentagePlaceholder": "0–100",
     "gracePeriodDaysLabel": "Délai de grâce (jours)",
-    "gracePeriodDaysPlaceholder": "0"
+    "gracePeriodDaysPlaceholder": "0",
+    "unitTenantSectionTitle": "Unité et locataire",
+    "termSectionTitle": "Durée",
+    "rentSectionTitle": "Loyer et dépôt",
+    "notesSectionTitle": "Notes"
   },
   "formButtons": {
     "cancel": "Annuler",

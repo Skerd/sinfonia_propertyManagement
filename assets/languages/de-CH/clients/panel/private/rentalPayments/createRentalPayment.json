@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Zusätzliche Mietcharge hinzufügen",
-  "description": "Zusätzliche Charge oder zusätzlichen Monat hinzufügen. Dies erfasst keine Zahlung.",
+  "title": "Mietzahlung hinzufügen",
+  "description": "Eine zusätzliche Belastung oder ein zusätzlicher Monat auf dem Mietvertrag. Dies erfasst keine Zahlung.",
   "generalInfo": "Zahlungsdetails",
   "form": {
     "leaseLabel": "Mietvertrag",
@@ -20,24 +20,24 @@
   },
   "axios": {
     "start": {
-      "title": "Charge wird hinzugefügt",
+      "title": "Mietzahlung wird hinzugefügt",
       "time": 3000
     },
     "success": {
-      "title": "Zusätzliche Charge hinzugefügt",
+      "title": "Mietzahlung hinzugefügt",
       "time": 3000
     },
     "error": {
-      "title": "Charge konnte nicht hinzugefügt werden",
+      "title": "Mietzahlung konnte nicht hinzugefügt werden",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Zusätzliche Mietcharge hinzufügen",
-    "description": "Zusätzliche Charge oder zusätzlichen Monat hinzufügen. Dies erfasst keine Zahlung."
+    "title": "Mietzahlung hinzufügen",
+    "description": "Eine zusätzliche Belastung oder ein zusätzlicher Monat auf dem Mietvertrag. Dies erfasst keine Zahlung."
   },
   "formButtons": {
     "cancel": "Abbrechen",
-    "submit": "Charge hinzufügen"
+    "submit": "Mietzahlung hinzufügen"
   }
 }

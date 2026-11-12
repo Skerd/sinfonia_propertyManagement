@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Pagamenti affitto",
   "description": "Registri dei pagamenti affitto degli inquilini",
-  "createRentalPayment": "Addebito extra",
+  "createRentalPayment": "Aggiungi pagamento affitto",
   "noData": "Nessun pagamento trovato",
   "failTitle": "Impossibile caricare i pagamenti",
   "failDescription": "Si è verificato un errore durante il caricamento dei pagamenti. Riprova.",
@@ -42,8 +42,14 @@
         "overdue": "In ritardo",
         "waived": "Condonato",
         "partially_paid": "Parzialmente pagato"
+      },
+      "when": {
+        "upcoming": "In arrivo",
+        "overdue": "Scaduti",
+        "past": "Passati"
       }
-    }
+    },
+    "when": "Quando"
   },
   "help": {
     "ariaLabel": "Informazioni sui pagamenti affitto",

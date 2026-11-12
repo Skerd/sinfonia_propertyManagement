@@ -1,5 +1,5 @@
 import {compose} from "redux";
-import {useCallback, useEffect, useState, type ReactNode} from "react";
+import {useCallback, useEffect, useMemo, useState, type ReactNode} from "react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
@@ -8,7 +8,10 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import RecordRentPayment, {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
-import LeaseSchedulePanel from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSchedulePanel.tsx";
+import {LeaseScheduleRequest} from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseScheduleRequest.ts";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 
 export type LeaseSheetViewOwnProps = {
     open: boolean;
@@ -46,7 +49,6 @@ function LeaseSheetView({
     onSheetRowPatched,
 }: LeaseSheetViewOwnProps & WithLanguageType) {
     const [sheetData, setSheetData] = useState<Record<string, any>>(leaseProp || {_id: fetchId});
-    const [scheduleNonce, setScheduleNonce] = useState(0);
     const [requestedScheduleAction, setRequestedScheduleAction] = useState("");
     const access = useAccess("leases");
     const viewConfig = useViewConfig("leases", "sheet");
@@ -59,6 +61,10 @@ function LeaseSheetView({
     const handleRequestedHandled = useCallback(() => {
         setRequestedScheduleAction("");
     }, []);
+    const scheduleRequest = useMemo(
+        () => ({requestedAction: requestedScheduleAction, onRequestedActionHandled: handleRequestedHandled}),
+        [requestedScheduleAction, handleRequestedHandled],
+    );
 
     const entityId = leaseProp?._id ?? fetchId;
     if (!viewConfig || !entityId) return null;
@@ -66,50 +72,53 @@ function LeaseSheetView({
     const lease = sheetData as Lease;
 
     return (
-        <SheetViewRenderer
-            config={viewConfig}
-            url="/api/realEstate/lease/single"
-            fetchId={fetchId}
-            onDataFetched={(data) => setSheetData(data)}
-            data={sheetData}
-            open={open}
-            onOpenChange={onOpenChange}
-            resolveLanguageKey={resolveLanguageKey}
-            access={access}
-            hideActions={hideActions}
-            onDelete={onDelete}
-            onRestore={onRestore}
-            editPath={buildLeaseEditPath(lease)}
-            actionMenuAllowCustomChildren={actionMenuAllowCustomChildren ?? true}
-            onActionMenuAction={(action) => {
-                if (action === RECORD_RENT_PAYMENT_ACTION) {
-                    setRequestedScheduleAction(action);
-                }
-                onActionMenuAction?.(action);
-            }}
-            onSheetRowPatched={onSheetRowPatched}
-            actionMenuChildren={(
-                <>
-                    {actionMenuChildren}
-                    <RecordRentPayment
-                        lease={lease}
-                        onAction={(action: string) => {
-                            setRequestedScheduleAction(action);
-                            onActionMenuAction?.(action);
-                        }}
-                    />
-                </>
-            )}
-        >
-            <LeaseSchedulePanel
-                lease={lease}
+        <LeaseScheduleRequest.Provider value={scheduleRequest}>
+            <SheetViewRenderer
+                config={viewConfig}
+                url="/api/realEstate/lease/single"
+                fetchId={fetchId}
+                onDataFetched={(data) => setSheetData(data)}
+                data={sheetData}
+                open={open}
+                onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
-                refreshNonce={scheduleNonce}
-                requestedAction={requestedScheduleAction}
-                onRequestedActionHandled={handleRequestedHandled}
-                onScheduleChanged={() => setScheduleNonce((n) => n + 1)}
+                // Named by the tenant, the code as a badge and the state in tone (UX-01, UX-02, D151).
+                headerTitle={<SheetNameTitle name={getName(lease.tenant)} code={lease.name} typeLabel={String(resolveLanguageKey("lease"))} />}
+                headerDescription={
+                    <StatusBadge
+                        tableConfigKey="leases"
+                        field="status"
+                        value={lease.status}
+                        label={String(resolveLanguageKey(`statusValues.${lease.status}`))}
+                    />
+                }
+                access={access}
+                hideActions={hideActions}
+                onDelete={onDelete}
+                onRestore={onRestore}
+                editPath={buildLeaseEditPath(lease)}
+                actionMenuAllowCustomChildren={actionMenuAllowCustomChildren ?? true}
+                onActionMenuAction={(action) => {
+                    if (action === RECORD_RENT_PAYMENT_ACTION) {
+                        setRequestedScheduleAction(action);
+                    }
+                    onActionMenuAction?.(action);
+                }}
+                onSheetRowPatched={onSheetRowPatched}
+                actionMenuChildren={(
+                    <>
+                        {actionMenuChildren}
+                        <RecordRentPayment
+                            lease={lease}
+                            onAction={(action: string) => {
+                                setRequestedScheduleAction(action);
+                                onActionMenuAction?.(action);
+                            }}
+                        />
+                    </>
+                )}
             />
-        </SheetViewRenderer>
+        </LeaseScheduleRequest.Provider>
     );
 }
 

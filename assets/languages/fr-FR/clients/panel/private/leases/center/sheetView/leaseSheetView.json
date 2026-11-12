@@ -32,7 +32,7 @@
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
   "failedTooltipDescription": "Cliquez pour recharger les données.",
   "lateFeePercentage": "Pourcentage de pénalité",
-  "gracePeriodDays": "Délai de grâce (jours)",
+  "gracePeriodDays": "Délai de grâce",
   "schedule": {
     "title": "Échéancier des loyers",
     "recordPayment": "Enregistrer un paiement",
@@ -55,5 +55,9 @@
       "overdue": "En retard",
       "waived": "Annulé"
     }
+  },
+  "gracePeriodDaysValue": {
+    "one": "{value} jour",
+    "other": "{value} jours"
   }
 }

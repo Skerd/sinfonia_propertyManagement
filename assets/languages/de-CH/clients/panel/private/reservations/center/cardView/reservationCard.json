@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/reservations/center/cardView/reservationCard.tsx",
-  "reservation": "Reservierung",
+  "reservation": "Reservation",
   "failedTitle": "Reservation konnte nicht geladen werden",
   "failedDescription": "Daten konnten nicht geladen werden. Klicken Sie hier, um es erneut zu versuchen.",
   "deleted": "Gelöscht",
@@ -39,7 +39,7 @@
   "dates": "Daten",
   "people": "Personen",
   "alerts": "Hinweise",
-  "modelType": "Reservierung",
+  "modelType": "Reservation",
   "converted": "Umgewandelt",
   "partiallyPaid": "Teilweise bezahlt",
   "sourceType": "Quelle",

@@ -3,7 +3,7 @@
   "failedTitle": "Reservation konnte nicht geladen werden",
   "failedDescription": "Beim Laden dieser Reservation ist ein Fehler aufgetreten. Klicken Sie, um es erneut zu versuchen.",
   "failedTooltipDescription": "Klicken Sie, um das Laden der Daten erneut zu versuchen.",
-  "reservation": "Reservierung",
+  "reservation": "Reservation",
   "name": "Name",
   "overview": "Übersicht",
   "dates": "Daten",

@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx",
-  "rentalPayment": "Rent payment",
+  "rentalPayment": "Rental payment",
   "overview": "Overview",
   "name": "Name",
   "status": "Status",

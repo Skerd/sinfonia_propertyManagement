@@ -45,7 +45,11 @@
     "lateFeePercentageLabel": "Verzugsgebühr in Prozent",
     "lateFeePercentagePlaceholder": "0–100",
     "gracePeriodDaysLabel": "Kulanzfrist (Tage)",
-    "gracePeriodDaysPlaceholder": "0"
+    "gracePeriodDaysPlaceholder": "0",
+    "unitTenantSectionTitle": "Einheit & Mieter",
+    "termSectionTitle": "Laufzeit",
+    "rentSectionTitle": "Miete & Kaution",
+    "notesSectionTitle": "Notizen"
   },
   "formButtons": {
     "cancel": "Abbrechen",

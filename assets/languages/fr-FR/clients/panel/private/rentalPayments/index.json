@@ -1,11 +1,11 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
-  "title": "Loyers",
+  "title": "Paiements de loyer",
   "description": "Paiements de loyer des locataires",
-  "createRentalPayment": "Charge supplémentaire",
-  "noData": "Aucun loyer trouvé",
-  "failTitle": "Échec du chargement des loyers",
-  "failDescription": "Une erreur est survenue lors du chargement des loyers. Veuillez réessayer.",
+  "createRentalPayment": "Ajouter un paiement de loyer",
+  "noData": "Aucun paiement de loyer trouvé",
+  "failTitle": "Échec du chargement des paiements de loyer",
+  "failDescription": "Une erreur est survenue lors du chargement des paiements de loyer. Veuillez réessayer.",
   "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "amount": "Montant",
@@ -42,12 +42,18 @@
         "overdue": "En retard",
         "waived": "Annulé",
         "partially_paid": "Partiellement payé"
+      },
+      "when": {
+        "upcoming": "À venir",
+        "overdue": "En retard",
+        "past": "Passés"
       }
-    }
+    },
+    "when": "Quand"
   },
   "help": {
-    "ariaLabel": "À propos des loyers",
-    "title": "À propos des loyers",
+    "ariaLabel": "À propos des paiements de loyer",
+    "title": "À propos des paiements de loyer",
     "overview": "Un loyer est un mois planifié d'un bail. Le reste est dérivé (montant + pénalité − payé). Le statut avance en attente → payé | partiellement payé | en retard, ou annulé. Vous encaissez ici ; vous ne redéfinissez pas le loyer du bail ici. Laissez le bail générer le planning plutôt que de créer les mois à la main.",
     "sections": [
       {

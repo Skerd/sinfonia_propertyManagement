@@ -9,6 +9,7 @@ import {Card, CardContent, CardHeader, CardTitle} from "@coreModule/components/u
 import {ScrollArea} from "@coreModule/components/ui/scroll-area.tsx";
 import {Skeleton} from "@coreModule/components/ui/skeleton.tsx";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import type {RentalPaymentRegistryRow} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.payment.dto.ts";
 import type {RentalsCalendarFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.form.type.ts";
 import type {RentalsCalendarResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalsHub/rentalsHub.response.type.ts";
@@ -220,7 +221,7 @@ export default function RentalsCalendarTab({
                             {selectedDay
                                 ? rk("detailForDay").replace(
                                       "{date}",
-                                      selectedDay.toLocaleDateString(locale, {day: "numeric", month: "long"}),
+                                      formatDate(selectedDay, {format: {day: "numeric", month: "long"}}),
                                   )
                                 : rk("selectDay")}
                         </CardTitle>

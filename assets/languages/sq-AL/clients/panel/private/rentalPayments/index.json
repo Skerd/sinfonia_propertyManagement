@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Pagesat e qirasë",
   "description": "Regjistri i pagesave të qirasë",
-  "createRentalPayment": "Shto tarifë shtesë",
+  "createRentalPayment": "Shto pagesë qiraje",
   "noData": "Nuk u gjetën pagesa qiraje",
   "failTitle": "Dështoi ngarkimi i pagesave",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të pagesave. Ju lutemi provoni sërish.",
@@ -42,8 +42,14 @@
         "overdue": "E vonuar",
         "waived": "E falur",
         "partially_paid": "Pjesërisht paguar"
+      },
+      "when": {
+        "upcoming": "Në vijim",
+        "overdue": "Me vonesë",
+        "past": "Të kaluara"
       }
-    }
+    },
+    "when": "Kur"
   },
   "help": {
     "ariaLabel": "Rreth Pagesave të qirasë",

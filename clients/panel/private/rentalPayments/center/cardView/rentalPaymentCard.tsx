@@ -3,8 +3,10 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconCalendar, IconCurrencyDollar, IconDoor, IconLabel} from "@tabler/icons-react";
-import RentalPaymentSheetView from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
+import {IconCalendar, IconCurrencyDollar, IconDoor} from "@tabler/icons-react";
+import RentalPaymentSheetView, {
+    rentalPaymentTitle,
+} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
 import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
 import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
 import ManualRentClientEmails from "@propertyManagementModule/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx";
@@ -12,6 +14,9 @@ import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/cu
 import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {displayPlainText} from "@coreModule/components/viewEngine/widgets/display/displayValue.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -106,78 +111,85 @@ function RentalPaymentCard({
                 </>
             )}
         >
-            {({entity, setAction}) => (
-                <>
-                    <EntityCard.Header
-                        titlePath="name"
-                        title={entity.name}
-                        subtitle={entity.lease?.name}
-                        subtitlePath="lease"
-                    >
-                        <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
-                        <WaiveRentalPayment payment={entity} onAction={setAction} />
-                        <ManualRentClientEmails payment={entity} />
-                    </EntityCard.Header>
-                    <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconLabel}
-                            label={resolveLanguageKey("statusLabel")}
-                            tooltip={resolveLanguageKey("statusLabel")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="fields.!enums.status"
-                            value={entity.status}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("fields.amount")}
-                            tooltip={resolveLanguageKey("fields.amount")}
-                            path="amount"
-                            type="currency"
-                            value={{amount: entity.amount, currency: entity.currency}}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("fields.remaining")}
-                            tooltip={resolveLanguageKey("fields.remaining")}
-                            path="amount"
-                            type="currency"
-                            value={{amount: entity.remaining, currency: entity.currency}}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("fields.lateFeeAmount")}
-                            tooltip={resolveLanguageKey("fields.lateFeeAmount")}
-                            path="lateFeeAmount"
-                            type="currency"
-                            value={{amount: entity.lateFeeAmount, currency: entity.currency}}
-                        />
-                        <EntityCardRow
-                            icon={IconDoor}
-                            label={resolveLanguageKey("fields.unit")}
-                            tooltip={resolveLanguageKey("fields.unit")}
-                            path="unit"
-                            value={entity.unit?.name || entity.unit?.unitNumber}
-                        />
-                        <EntityCardRow
-                            icon={IconCalendar}
-                            label={resolveLanguageKey("fields.dueDate")}
-                            tooltip={resolveLanguageKey("fields.dueDate")}
-                            path="dueDate"
-                            type="date"
-                            value={entity.dueDate}
-                        />
-                        <EntityCardRow
-                            icon={IconCalendar}
-                            label={resolveLanguageKey("fields.paidDate")}
-                            tooltip={resolveLanguageKey("fields.paidDate")}
-                            path="paidDate"
-                            type="date"
-                            value={entity.paidDate}
-                        />
-                    </EntityCard.Body>
-                </>
-            )}
+            {({entity, setAction}) => {
+                const title = rentalPaymentTitle(entity);
+                const titledByTenant = Boolean(getName(entity.lease?.tenant));
+                // The open balance only adds something once part is paid or a late fee is on top (UX-02).
+                const showRemaining = entity.remaining > 0 && entity.remaining !== entity.amount;
+                return (
+                    <>
+                        {/* Named by the tenant, the code beside it, the state as a badge (UX-01, UX-02, D151). */}
+                        <EntityCard.Header
+                            titlePath={["lease", "unit", "name"]}
+                            title={title || entity.name || "—"}
+                            subtitlePath="name"
+                            subtitle={title ? entity.name : undefined}
+                            badgesBesideTitle
+                            badges={
+                                <StatusBadge
+                                    tableConfigKey="rentalpayments"
+                                    field="status"
+                                    value={entity.status}
+                                    label={String(resolveLanguageKey(`fields.!enums.status.${entity.status}`))}
+                                />
+                            }
+                        >
+                            <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
+                            <WaiveRentalPayment payment={entity} onAction={setAction} />
+                            <ManualRentClientEmails payment={entity} />
+                        </EntityCard.Header>
+                        <EntityCard.Body>
+                            <EntityCardRow
+                                icon={IconCurrencyDollar}
+                                label={resolveLanguageKey("fields.amount")}
+                                tooltip={resolveLanguageKey("fields.amount")}
+                                path="amount"
+                                type="currency"
+                                value={{amount: entity.amount, currency: entity.currency}}
+                            >
+                                {(formatted) =>
+                                    showRemaining ? (
+                                        <>
+                                            {formatted} · {resolveLanguageKey("fields.remaining")}{" "}
+                                            {displayPlainText({amount: entity.remaining, currency: entity.currency}, "currency")}
+                                        </>
+                                    ) : (
+                                        formatted
+                                    )
+                                }
+                            </EntityCardRow>
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("fields.dueDate")}
+                                tooltip={resolveLanguageKey("fields.dueDate")}
+                                path="dueDate"
+                                type="date"
+                                value={entity.dueDate}
+                            />
+                            {/* Without a readable tenant the unit is already the title. */}
+                            {titledByTenant ? (
+                                <EntityCardRow
+                                    icon={IconDoor}
+                                    label={resolveLanguageKey("fields.unit")}
+                                    tooltip={resolveLanguageKey("fields.unit")}
+                                    path="unit"
+                                    value={entity.unit?.name || entity.unit?.unitNumber}
+                                />
+                            ) : null}
+                            {entity.lateFeeAmount ? (
+                                <EntityCardRow
+                                    icon={IconCurrencyDollar}
+                                    label={resolveLanguageKey("fields.lateFeeAmount")}
+                                    tooltip={resolveLanguageKey("fields.lateFeeAmount")}
+                                    path="lateFeeAmount"
+                                    type="currency"
+                                    value={{amount: entity.lateFeeAmount, currency: entity.currency}}
+                                />
+                            ) : null}
+                        </EntityCard.Body>
+                    </>
+                );
+            }}
         </EntityCard>
     );
 }

@@ -22,14 +22,14 @@
     "sales": "Ventes",
     "commissions": "Commissions",
     "paymentPlans": "Échéances du plan de paiement",
-    "rentalPayments": "Loyers",
+    "rentalPayments": "Paiements de loyer",
     "unitCosts": "Coûts des unités"
   },
   "preview": {
     "sales": "Ventes",
     "commissions": "Commissions",
     "paymentPlans": "Échéances du plan de paiement",
-    "rentalPayments": "Loyers",
+    "rentalPayments": "Paiements de loyer",
     "unitCosts": "Coûts des unités",
     "rows": "{count} lignes"
   },

@@ -32,7 +32,7 @@
   "failedDescription": "Something went wrong while loading this record. Click to retry.",
   "failedTooltipDescription": "Click to retry fetching data.",
   "lateFeePercentage": "Late fee percentage",
-  "gracePeriodDays": "Grace period (days)",
+  "gracePeriodDays": "Grace period",
   "schedule": {
     "title": "Rent schedule",
     "recordPayment": "Record payment",
@@ -55,5 +55,9 @@
       "overdue": "Overdue",
       "waived": "Waived"
     }
+  },
+  "gracePeriodDaysValue": {
+    "one": "{value} day",
+    "other": "{value} days"
   }
 }

@@ -31,11 +31,13 @@ import EdificeCard from "@propertyManagementModule/clients/panel/private/edifice
 import SaleCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/saleCard.tsx";
 import PaymentPlanCard from "@propertyManagementModule/clients/panel/private/sales/center/cardView/paymentPlanCard.tsx";
 import PaymentPlanInstallments from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanInstallments.tsx";
+import LeaseSchedulePanel from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSchedulePanel.tsx";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import HandoverPackageCard from "@propertyManagementModule/clients/panel/private/handoverPackages/center/cardView/handoverPackageCard.tsx";
 import type {Sale} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/sale/sale.dto.ts";
 import type {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/reservation/reservation.dto.ts";
 import type {PaymentPlan} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/paymentPlan/paymentPlan.dto.ts";
+import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 
 const ProjectSheetViewLazy = lazy(
     () => import("@propertyManagementModule/clients/panel/private/projects/center/sheetView/projectSheetView.tsx"),
@@ -272,6 +274,16 @@ const propertyManagementWidgetContribution: WidgetContribution = {
             return createElement(PaymentPlanInstallments, {
                 key: index,
                 plan: data as PaymentPlan,
+                resolveLanguageKey: ctx.resolveLanguageKey,
+            });
+        },
+        /** The rent schedule of the loaded lease, placed by the view above Lifecycle (UX-03, D151). */
+        "#LeaseSchedule": ({node, ctx, index}) => {
+            const {data} = ctx;
+            if (!data || typeof data._id !== "string" || !sheetFieldVisible(node, ctx)) return null;
+            return createElement(LeaseSchedulePanel, {
+                key: index,
+                lease: data as Lease,
                 resolveLanguageKey: ctx.resolveLanguageKey,
             });
         },

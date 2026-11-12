@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Shto tarifë shtesë qiraje",
-  "description": "Shto një tarifë ose muaj shtesë. Kjo nuk regjistron një arkëtim.",
+  "title": "Shto pagesë qiraje",
+  "description": "Një tarifë ose muaj shtesë në kontratën e qirasë. Kjo nuk regjistron një arkëtim.",
   "generalInfo": "Detajet e pagesës",
   "form": {
     "leaseLabel": "Kontrata",
@@ -20,24 +20,24 @@
   },
   "axios": {
     "start": {
-      "title": "Duke shtuar tarifën",
+      "title": "Duke shtuar pagesën e qirasë",
       "time": 3000
     },
     "success": {
-      "title": "Tarifa shtesë u shtua",
+      "title": "Pagesa e qirasë u shtua",
       "time": 3000
     },
     "error": {
-      "title": "Tarifa shtesë nuk u shtua",
+      "title": "Pagesa e qirasë nuk u shtua",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Shto tarifë shtesë qiraje",
-    "description": "Shto një tarifë ose muaj shtesë. Kjo nuk regjistron një arkëtim."
+    "title": "Shto pagesë qiraje",
+    "description": "Një tarifë ose muaj shtesë në kontratën e qirasë. Kjo nuk regjistron një arkëtim."
   },
   "formButtons": {
     "cancel": "Anulo",
-    "submit": "Shto tarifë shtesë"
+    "submit": "Shto pagesë qiraje"
   }
 }

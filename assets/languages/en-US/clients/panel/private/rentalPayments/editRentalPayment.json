@@ -2,19 +2,19 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Payment could not be updated, please try again!"
+      "title": "Rental payment could not be updated, please try again!"
     },
     "start": {
       "time": 3000,
-      "title": "Updating payment"
+      "title": "Updating rental payment"
     },
     "success": {
       "time": 3000,
-      "title": "Payment successfully updated!"
+      "title": "Rental payment updated"
     }
   },
   "editDescription": "Update rental payment details",
-  "editTitle": "Edit Rental Payment",
+  "editTitle": "Edit rental payment",
   "errorDescription": "An error occurred while loading the rental payment. Please try again.",
   "errorTitle": "Failed to load rental payment",
   "form": {
@@ -41,9 +41,9 @@
   },
   "formHeader": {
     "description": "Update rental payment details",
-    "title": "Edit Rental Payment"
+    "title": "Edit rental payment"
   },
   "generalInfo": "Payment Details",
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/editRentalPayment.tsx",
-  "title": "Edit Rental Payment"
+  "title": "Edit rental payment"
 }

@@ -32,7 +32,7 @@
   "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Kliko për të provuar përsëri.",
   "failedTooltipDescription": "Kliko për të ngarkuar sërish.",
   "lateFeePercentage": "Përqindja e gjobës së vonesës",
-  "gracePeriodDays": "Periudha e tolerancës (ditë)",
+  "gracePeriodDays": "Periudha e tolerancës",
   "schedule": {
     "title": "Kalendari i qirasë",
     "recordPayment": "Regjistro pagesë",
@@ -55,5 +55,9 @@
       "overdue": "E vonuar",
       "waived": "Falur"
     }
+  },
+  "gracePeriodDaysValue": {
+    "one": "{value} ditë",
+    "other": "{value} ditë"
   }
 }

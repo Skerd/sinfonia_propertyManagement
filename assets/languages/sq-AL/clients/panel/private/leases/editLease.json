@@ -45,7 +45,11 @@
     "lateFeePercentageLabel": "Përqindja e gjobës së vonesës",
     "lateFeePercentagePlaceholder": "0–100",
     "gracePeriodDaysLabel": "Periudha e tolerancës (ditë)",
-    "gracePeriodDaysPlaceholder": "0"
+    "gracePeriodDaysPlaceholder": "0",
+    "unitTenantSectionTitle": "Njësia dhe qiramarrësi",
+    "termSectionTitle": "Afati",
+    "rentSectionTitle": "Qiraja dhe depozita",
+    "notesSectionTitle": "Shënime"
   },
   "formButtons": {
     "cancel": "Anulo",

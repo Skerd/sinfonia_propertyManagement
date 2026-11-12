@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/createRentalPayment.tsx",
-  "title": "Add extra rent charge",
-  "description": "Add an extra charge or extra month. This is not recording a collection.",
+  "title": "Add rental payment",
+  "description": "An extra charge or an extra month on the lease. This does not record a collection.",
   "generalInfo": "Payment Details",
   "form": {
     "leaseLabel": "Lease",
@@ -20,24 +20,24 @@
   },
   "axios": {
     "start": {
-      "title": "Adding extra charge",
+      "title": "Adding rental payment",
       "time": 3000
     },
     "success": {
-      "title": "Extra charge added",
+      "title": "Rental payment added",
       "time": 3000
     },
     "error": {
-      "title": "Extra charge could not be added",
+      "title": "Rental payment could not be added",
       "time": 3000
     }
   },
   "formHeader": {
-    "title": "Add extra rent charge",
-    "description": "Add an extra charge or extra month. This is not recording a collection."
+    "title": "Add rental payment",
+    "description": "An extra charge or an extra month on the lease. This does not record a collection."
   },
   "formButtons": {
     "cancel": "Cancel",
-    "submit": "Add extra charge"
+    "submit": "Add rental payment"
   }
 }

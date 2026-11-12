@@ -2,15 +2,15 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Impossibile aggiornare il pagamento, riprova!"
+      "title": "Impossibile aggiornare il pagamento affitto, riprova!"
     },
     "start": {
       "time": 3000,
-      "title": "Aggiornamento pagamento"
+      "title": "Aggiornamento pagamento affitto"
     },
     "success": {
       "time": 3000,
-      "title": "Pagamento aggiornato con successo!"
+      "title": "Pagamento affitto aggiornato"
     }
   },
   "editDescription": "Aggiorna i dettagli del pagamento affitto",

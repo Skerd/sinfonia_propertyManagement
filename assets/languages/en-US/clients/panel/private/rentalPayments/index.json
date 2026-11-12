@@ -1,8 +1,8 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
-  "title": "Rental Payments",
+  "title": "Rental payments",
   "description": "Tenant rental payment records",
-  "createRentalPayment": "Add extra charge",
+  "createRentalPayment": "Add rental payment",
   "noData": "No rental payments found",
   "failTitle": "Failed to load rental payments",
   "failDescription": "An error occurred while loading rental payments. Please try again.",
@@ -42,8 +42,14 @@
         "overdue": "Overdue",
         "waived": "Waived",
         "partially_paid": "Partially paid"
+      },
+      "when": {
+        "upcoming": "Upcoming",
+        "overdue": "Overdue",
+        "past": "Past"
       }
-    }
+    },
+    "when": "When"
   },
   "help": {
     "ariaLabel": "About Rental payments",

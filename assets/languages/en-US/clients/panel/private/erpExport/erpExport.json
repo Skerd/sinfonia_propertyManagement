@@ -22,14 +22,14 @@
     "sales": "Sales",
     "commissions": "Commissions",
     "paymentPlans": "Payment Plan Installments",
-    "rentalPayments": "Rental Payments",
+    "rentalPayments": "Rental payments",
     "unitCosts": "Unit Costs"
   },
   "preview": {
     "sales": "Sales",
     "commissions": "Commissions",
     "paymentPlans": "Payment Plan Installments",
-    "rentalPayments": "Rental Payments",
+    "rentalPayments": "Rental payments",
     "unitCosts": "Unit Costs",
     "rows": "{count} rows"
   },

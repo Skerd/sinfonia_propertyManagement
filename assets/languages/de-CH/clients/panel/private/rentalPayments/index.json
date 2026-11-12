@@ -2,7 +2,7 @@
   "path": "src/modules/propertyManagement/clients/panel/private/rentalPayments/index.tsx",
   "title": "Mietzahlungen",
   "description": "Mietzahlungen der Mieter",
-  "createRentalPayment": "Zusätzliche Charge",
+  "createRentalPayment": "Mietzahlung hinzufügen",
   "noData": "Keine Mietzahlungen gefunden",
   "failTitle": "Mietzahlungen konnten nicht geladen werden",
   "failDescription": "Beim Laden der Mietzahlungen ist ein Fehler aufgetreten. Bitte erneut versuchen.",
@@ -42,8 +42,14 @@
         "overdue": "Überfällig",
         "waived": "Erlassen",
         "partially_paid": "Teilweise bezahlt"
+      },
+      "when": {
+        "upcoming": "Anstehend",
+        "overdue": "Überfällig",
+        "past": "Vergangen"
       }
-    }
+    },
+    "when": "Wann"
   },
   "help": {
     "ariaLabel": "Über Mietzahlungen",

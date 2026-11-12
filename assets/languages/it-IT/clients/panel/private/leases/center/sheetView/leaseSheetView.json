@@ -32,7 +32,7 @@
   "failedDescription": "Si è verificato un errore. Clicca per riprovare.",
   "failedTooltipDescription": "Clicca per ricaricare i dati.",
   "lateFeePercentage": "Percentuale mora",
-  "gracePeriodDays": "Periodo di grazia (giorni)",
+  "gracePeriodDays": "Periodo di grazia",
   "schedule": {
     "title": "Piano affitti",
     "recordPayment": "Registra pagamento",
@@ -55,5 +55,9 @@
       "overdue": "Scaduto",
       "waived": "Condonato"
     }
+  },
+  "gracePeriodDaysValue": {
+    "one": "{value} giorno",
+    "other": "{value} giorni"
   }
 }

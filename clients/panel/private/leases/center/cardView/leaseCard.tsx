@@ -3,7 +3,7 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconCalendar, IconCurrencyDollar, IconLabel, IconUser} from "@tabler/icons-react";
+import {IconCalendar, IconCurrencyDollar, IconDoor} from "@tabler/icons-react";
 import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx";
 import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
 import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
@@ -16,6 +16,8 @@ import ReturnDepositDialog from "@propertyManagementModule/components/custom/lea
 import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
 
@@ -106,11 +108,21 @@ function LeaseCard({
         >
             {({entity, setAction}) => (
                 <>
+                    {/* Named by the tenant, the code beside it, the state as a badge (UX-01, UX-02, D151). */}
                     <EntityCard.Header
-                        titlePath="name"
-                        title={entity.name}
-                        subtitle={entity.unit?.name || entity.unit?.unitNumber}
-                        subtitlePath="unit"
+                        titlePath={["tenant", "name"]}
+                        title={getName(entity.tenant) || entity.name || "—"}
+                        subtitlePath="name"
+                        subtitle={getName(entity.tenant) ? entity.name : undefined}
+                        badgesBesideTitle
+                        badges={
+                            <StatusBadge
+                                tableConfigKey="leases"
+                                field="status"
+                                value={entity.status}
+                                label={String(resolveLanguageKey(`fields.!enums.status.${entity.status}`))}
+                            />
+                        }
                     >
                         <ViewLeasePayments lease={entity} />
                         <RecordRentPayment lease={entity} onAction={setAction} />
@@ -118,39 +130,14 @@ function LeaseCard({
                         <MarkDepositPaid lease={entity} onAction={setAction} />
                         <ReturnDeposit lease={entity} onAction={setAction} />
                     </EntityCard.Header>
+                    {/* What is rented, until when, for how much (UX-02). */}
                     <EntityCard.Body>
                         <EntityCardRow
-                            icon={IconLabel}
-                            label={resolveLanguageKey("statusLabel")}
-                            tooltip={resolveLanguageKey("statusLabel")}
-                            path="status"
-                            type="enum"
-                            languageKeyCategory="fields.!enums.status"
-                            value={entity.status}
-                        />
-                        <EntityCardRow
-                            icon={IconUser}
-                            label={resolveLanguageKey("fields.tenant")}
-                            tooltip={resolveLanguageKey("fields.tenant")}
-                            path="tenant"
-                            type="user"
-                            value={entity.tenant}
-                        />
-                        <EntityCardRow
-                            icon={IconCurrencyDollar}
-                            label={resolveLanguageKey("fields.monthlyRent")}
-                            tooltip={resolveLanguageKey("fields.monthlyRent")}
-                            path="monthlyRent"
-                            type="currency"
-                            value={{amount: entity.monthlyRent, currency: entity.rentCurrency}}
-                        />
-                        <EntityCardRow
-                            icon={IconCalendar}
-                            label={resolveLanguageKey("fields.startDate")}
-                            tooltip={resolveLanguageKey("fields.startDate")}
-                            path="startDate"
-                            type="date"
-                            value={entity.startDate}
+                            icon={IconDoor}
+                            label={resolveLanguageKey("fields.unit")}
+                            tooltip={resolveLanguageKey("fields.unit")}
+                            path="unit"
+                            value={entity.unit?.name || entity.unit?.unitNumber}
                         />
                         <EntityCardRow
                             icon={IconCalendar}
@@ -159,6 +146,14 @@ function LeaseCard({
                             path="endDate"
                             type="date"
                             value={entity.endDate}
+                        />
+                        <EntityCardRow
+                            icon={IconCurrencyDollar}
+                            label={resolveLanguageKey("fields.monthlyRent")}
+                            tooltip={resolveLanguageKey("fields.monthlyRent")}
+                            path="monthlyRent"
+                            type="currency"
+                            value={{amount: entity.monthlyRent, currency: entity.rentCurrency}}
                         />
                     </EntityCard.Body>
                 </>

@@ -19,6 +19,7 @@ import {
 import {buildPageTitle} from "@coreModule/helpers/general/pageTitle.ts";
 import {COLUMN_TYPE} from "armonia/src/modules/core/database/filter/typeOperators";
 import {cn} from "@coreModule/components/lib/utils.ts";
+import {RENTAL_PAYMENT_WHEN} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.constants.ts";
 
 interface AllRentalPaymentsProps extends WithLanguageType {
     leaseId?: string;
@@ -41,6 +42,17 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
     );
 
     const quickFilters = useMemo<QuickFilterDef[]>(() => {
+        const whenFilter: QuickFilterDef = {
+            // Not a stored field: the list route compares the due day with the company's today (UX-12).
+            field: "when",
+            label: resolveLanguageKey("fields.when"),
+            type: COLUMN_TYPE.ENUM,
+            enumValues: RENTAL_PAYMENT_WHEN.map((value) => ({
+                value,
+                label: resolveLanguageKey(`fields.!enums.when.${value}`),
+            })),
+            asExtraParam: true,
+        };
         const statusFilter: QuickFilterDef = {
             field: "status",
             label: resolveLanguageKey("fields.status"),
@@ -73,8 +85,9 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
             },
             statusFilter,
         ];
-        if (leaseId) return moneyAndDateFilters;
+        if (leaseId) return [whenFilter, ...moneyAndDateFilters];
         return [
+            whenFilter,
             {
                 field: "project",
                 label: resolveLanguageKey("fields.project"),

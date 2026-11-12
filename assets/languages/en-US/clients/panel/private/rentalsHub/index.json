@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
   "title": "Rentals Hub",
-  "description": "All leases and rent payments in one place. Search, filter and open details.",
+  "description": "All leases and rental payments in one place. Search, filter and open details.",
   "leases": {
     "title": "Leases",
     "description": "Company-wide lease registry.",
@@ -48,8 +48,8 @@
     }
   },
   "rentalPayments": {
-    "title": "Rent payments",
-    "description": "Company-wide rent payment ledger.",
+    "title": "Rental payments",
+    "description": "Company-wide rental payment ledger.",
     "searchLabel": "Search",
     "searchPlaceholder": "Search by tenant, lease, unit, status…",
     "projectLabel": "Project",
@@ -66,8 +66,8 @@
     "dateFromLabel": "From",
     "dateToLabel": "To",
     "clearFilters": "Clear filters",
-    "noResults": "No rent payments found.",
-    "errorTitle": "Could not load rent payments",
+    "noResults": "No rental payments found.",
+    "errorTitle": "Could not load rental payments",
     "errorDescription": "Try again or adjust your filters.",
     "viewAction": "View",
     "previous": "Previous",

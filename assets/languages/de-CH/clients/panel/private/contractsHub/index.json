@@ -34,7 +34,7 @@
       "actions": "Aktionen"
     },
     "contractType": {
-      "reservation": "Reservierung",
+      "reservation": "Reservation",
       "cash_sale": "Kauf-Verkauf",
       "payment_plan_sale": "Verkaufsversprechen"
     },

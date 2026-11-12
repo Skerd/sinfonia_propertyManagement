@@ -2,15 +2,15 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Zahlung konnte nicht aktualisiert werden, bitte erneut versuchen!"
+      "title": "Mietzahlung konnte nicht aktualisiert werden, bitte erneut versuchen!"
     },
     "start": {
       "time": 3000,
-      "title": "Zahlung wird aktualisiert"
+      "title": "Mietzahlung wird aktualisiert"
     },
     "success": {
       "time": 3000,
-      "title": "Zahlung erfolgreich aktualisiert!"
+      "title": "Mietzahlung aktualisiert"
     }
   },
   "editDescription": "Mietzahlungsdetails aktualisieren",

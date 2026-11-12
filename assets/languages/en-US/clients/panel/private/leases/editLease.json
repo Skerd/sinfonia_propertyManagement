@@ -45,7 +45,11 @@
     "lateFeePercentageLabel": "Late fee percentage",
     "lateFeePercentagePlaceholder": "0–100",
     "gracePeriodDaysLabel": "Grace period (days)",
-    "gracePeriodDaysPlaceholder": "0"
+    "gracePeriodDaysPlaceholder": "0",
+    "unitTenantSectionTitle": "Unit & tenant",
+    "termSectionTitle": "Term",
+    "rentSectionTitle": "Rent & deposit",
+    "notesSectionTitle": "Notes"
   },
   "formButtons": {
     "cancel": "Cancel",

@@ -45,7 +45,11 @@
     "lateFeePercentageLabel": "Percentuale mora",
     "lateFeePercentagePlaceholder": "0–100",
     "gracePeriodDaysLabel": "Periodo di grazia (giorni)",
-    "gracePeriodDaysPlaceholder": "0"
+    "gracePeriodDaysPlaceholder": "0",
+    "unitTenantSectionTitle": "Unità e inquilino",
+    "termSectionTitle": "Durata",
+    "rentSectionTitle": "Affitto e deposito",
+    "notesSectionTitle": "Note"
   },
   "formButtons": {
     "cancel": "Annulla",

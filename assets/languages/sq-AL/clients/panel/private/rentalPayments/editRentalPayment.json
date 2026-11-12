@@ -2,15 +2,15 @@
   "axios": {
     "error": {
       "time": 3000,
-      "title": "Pagesa nuk u përditësua, ju lutemi provoni sërish!"
+      "title": "Pagesa e qirasë nuk u përditësua, ju lutemi provoni sërish!"
     },
     "start": {
       "time": 3000,
-      "title": "Duke përditësuar pagesën"
+      "title": "Duke përditësuar pagesën e qirasë"
     },
     "success": {
       "time": 3000,
-      "title": "Pagesa u përditësua me sukses!"
+      "title": "Pagesa e qirasë u përditësua"
     }
   },
   "editDescription": "Përditëso detajet e pagesës së qirasë",

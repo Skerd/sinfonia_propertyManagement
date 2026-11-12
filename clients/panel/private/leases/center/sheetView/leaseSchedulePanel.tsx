@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useMemo, useState} from "react";
+import {useCallback, useContext, useEffect, useMemo, useState} from "react";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {IconDots} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
@@ -23,17 +23,15 @@ import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custo
 import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {LeaseScheduleRequest} from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseScheduleRequest.ts";
 
 const LEASE_PAYMENTS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalPayment"};
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
 type LeaseSchedulePanelProps = {
     lease: Lease;
+    /** The lease sheet's dictionary, which holds the schedule's labels. */
     resolveLanguageKey: ResolveLanguageKey;
-    refreshNonce?: number;
-    requestedAction?: string;
-    onRequestedActionHandled?: () => void;
-    onScheduleChanged?: () => void;
 };
 
 function money(value: number | undefined, symbol?: string): string {
@@ -66,14 +64,9 @@ function resolveStatusLabel(resolveLanguageKey: ResolveLanguageKey, raw?: string
     return resolved === `---${key}---` ? raw : String(resolved);
 }
 
-export default function LeaseSchedulePanel({
-    lease,
-    resolveLanguageKey,
-    refreshNonce = 0,
-    requestedAction,
-    onRequestedActionHandled,
-    onScheduleChanged,
-}: LeaseSchedulePanelProps) {
+/** The lease's rent months with their collect, waive and email actions, placed by the sheet view above Lifecycle (UX-03). */
+export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSchedulePanelProps) {
+    const {requestedAction, onRequestedActionHandled} = useContext(LeaseScheduleRequest);
     const paymentAccess = useAccess("rentalpayments");
     const leaseAccess = useAccess("leases");
     const timeZone = useCompanyTimeZone();
@@ -87,16 +80,13 @@ export default function LeaseSchedulePanel({
     const [selected, setSelected] = useState<RentalPayment | null>(null);
     const [action, setAction] = useState("");
 
-    const refetch = useCallback(() => {
-        setLocalNonce((n) => n + 1);
-        onScheduleChanged?.();
-    }, [onScheduleChanged]);
+    const refetch = useCallback(() => setLocalNonce((n) => n + 1), []);
 
-    // The lease's schedule, reloaded after every change made here or by the sheet.
+    // The lease's schedule, reloaded after every change made here.
     const [fetchCount, setFetchCount] = useState(0);
     useEffect(() => {
         if (lease._id) setFetchCount((count) => count + 1);
-    }, [lease._id, refreshNonce, localNonce]);
+    }, [lease._id, localNonce]);
     const paymentsBody = useMemo(
         () => ({offset: 0, limit: 600, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
         [lease._id],
@@ -107,7 +97,7 @@ export default function LeaseSchedulePanel({
     useEffect(() => {
         if (requestedAction === RECORD_RENT_PAYMENT_ACTION) {
             setAction(RECORD_RENT_PAYMENT_ACTION);
-            onRequestedActionHandled?.();
+            onRequestedActionHandled();
         }
     }, [requestedAction, onRequestedActionHandled]);
 
@@ -131,18 +121,14 @@ export default function LeaseSchedulePanel({
 
     return (
         <div className="flex flex-col gap-y-3">
-            <div className="flex items-center justify-between gap-2">
-                <p className="text-sm font-semibold">{rk("schedule.title")}</p>
-                {lease.status === "active" && !!paymentAccess.write && (
-                    <Button
-                        type="button"
-                        size="sm"
-                        onClick={() => setAction(RECORD_RENT_PAYMENT_ACTION)}
-                    >
+            {/* The sheet group above carries the title. */}
+            {lease.status === "active" && !!paymentAccess.write && (
+                <div className="flex justify-end">
+                    <Button type="button" size="sm" onClick={() => setAction(RECORD_RENT_PAYMENT_ACTION)}>
                         {rk("schedule.recordPayment")}
                     </Button>
-                )}
-            </div>
+                </div>
+            )}
 
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                 <div className="rounded-md border border-border/50 bg-muted/20 p-2">

@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/rentalsHub/index.tsx",
   "title": "Centre des locations",
-  "description": "Tous les baux et loyers au même endroit. Recherchez, filtrez et ouvrez les détails.",
+  "description": "Tous les baux et paiements de loyer au même endroit. Recherchez, filtrez et ouvrez les détails.",
   "leases": {
     "title": "Baux",
     "description": "Registre des baux à l’échelle de l’entreprise.",
@@ -48,7 +48,7 @@
     }
   },
   "rentalPayments": {
-    "title": "Loyers",
+    "title": "Paiements de loyer",
     "description": "Grand livre des paiements de loyer.",
     "searchLabel": "Recherche",
     "searchPlaceholder": "Rechercher par locataire, bail, unité, statut…",
@@ -66,8 +66,8 @@
     "dateFromLabel": "Du",
     "dateToLabel": "Au",
     "clearFilters": "Effacer les filtres",
-    "noResults": "Aucun loyer trouvé.",
-    "errorTitle": "Impossible de charger les loyers",
+    "noResults": "Aucun paiement de loyer trouvé.",
+    "errorTitle": "Impossible de charger les paiements de loyer",
     "errorDescription": "Réessayez ou ajustez vos filtres.",
     "viewAction": "Voir",
     "previous": "Précédent",
