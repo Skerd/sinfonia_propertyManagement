@@ -47,5 +47,12 @@
     "deletedBy": "Deleted by",
     "failedTitle": "Failed to load recipients",
     "failedDescription": "An error occurred while loading. Please try again.",
-    "failedTooltipDescription": "Click to retry fetching data."
+    "failedTooltipDescription": "Click to retry fetching data.",
+    "languageValues": {
+        "en-US": "English",
+        "de-CH": "German",
+        "fr-FR": "French",
+        "it-IT": "Italian",
+        "sq-AL": "Albanian"
+    }
 }

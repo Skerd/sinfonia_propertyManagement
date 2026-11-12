@@ -26,7 +26,8 @@
     "sortOrderPlaceholder": "0",
     "storyTypeLabel": "Lloji i tregimit",
     "storyTypePlaceholder": "Zgjidhni llojin e tregimit",
-    "storyTypeRequired": "Lloji i tregimit është i detyrueshëm"
+    "storyTypeRequired": "Lloji i tregimit është i detyrueshëm",
+    "visibilitySectionTitle": "Dukshmëria"
   },
   "axios": {
     "start": {

@@ -9,6 +9,8 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import SheetViewRenderer from "@coreModule/components/viewEngine/SheetViewRenderer.tsx";
 import LeadRowMenuExtras from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadRowMenuExtras.tsx";
 import LeadWorkflowDialogs from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadWorkflowDialogs.tsx";
+import SheetNameTitle from "@coreModule/components/entityPage/sheet/sheetNameTitle.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 
 export type LeadSheetViewOwnProps = {
     open: boolean;
@@ -83,6 +85,22 @@ function LeadSheetView({
             open={open}
             onOpenChange={onOpenChange}
             resolveLanguageKey={resolveLanguageKey}
+            // Named by the person, the code as a badge and the stage in tone (UX-01, UX-02).
+            headerTitle={
+                <SheetNameTitle
+                    name={[asLead.firstName, asLead.lastName].filter(Boolean).join(" ")}
+                    code={asLead.name}
+                    typeLabel={String(resolveLanguageKey("lead"))}
+                />
+            }
+            headerDescription={
+                <StatusBadge
+                    tableConfigKey="leads"
+                    field="status"
+                    value={asLead.status}
+                    label={String(resolveLanguageKey(`statuses.${asLead.status}`))}
+                />
+            }
             access={access}
             hideActions={hideActions}
             onDelete={onDelete}

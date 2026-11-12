@@ -123,7 +123,7 @@ function AdCampaignTemplateCard({
                             label={resolveLanguageKey("fields.locale")}
                             tooltip={resolveLanguageKey("fields.locale")}
                             path="locale"
-                            value={row.locale}
+                            value={row.locale ? String(resolveLanguageKey(`fields.!enums.locale.${row.locale}`)) : undefined}
                         />
                         <EntityCardRow
                             icon={IconMail}

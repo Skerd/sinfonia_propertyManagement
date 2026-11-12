@@ -10,6 +10,7 @@ import {useViewConfig} from "@coreModule/helpers/hooks/useViewConfig.ts";
 import AdCampaignRowMenuExtras from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx";
 import AdCampaignWorkflowDialogs from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignWorkflowDialogs.tsx";
 import AdCampaignProgressPoll from "@propertyManagementModule/clients/panel/private/adCampaigns/center/adCampaignProgressPoll.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 
 type Props = WithLanguageType & {
     open: boolean;
@@ -69,6 +70,15 @@ function Sheet({
                 open={open}
                 onOpenChange={onOpenChange}
                 resolveLanguageKey={resolveLanguageKey}
+                // The sending state in tone, under the title (UX-02).
+                headerDescription={
+                    <StatusBadge
+                        tableConfigKey="adcampaigns"
+                        field="status"
+                        value={status}
+                        label={String(resolveLanguageKey(`statusEnum.${status}`))}
+                    />
+                }
                 access={access}
                 hideActions={hideActions}
                 onDelete={onDelete}

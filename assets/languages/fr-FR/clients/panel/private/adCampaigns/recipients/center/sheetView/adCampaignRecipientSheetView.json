@@ -47,5 +47,12 @@
     "deletedBy": "Supprimé par",
     "failedTitle": "Échec du chargement des destinataires",
     "failedDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
-    "failedTooltipDescription": "Cliquez pour réessayer."
+    "failedTooltipDescription": "Cliquez pour réessayer.",
+    "languageValues": {
+        "en-US": "Anglais",
+        "de-CH": "Allemand",
+        "fr-FR": "Français",
+        "it-IT": "Italien",
+        "sq-AL": "Albanais"
+    }
 }

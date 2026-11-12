@@ -3,9 +3,11 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import type {Story} from "armonia/src/modules/propertyManagement/api/realEstate/private/story/story.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {IconBuilding, IconCalendar, IconLabel, IconStack2, IconDoorEnter} from "@tabler/icons-react";
+import {IconBuilding, IconCalendar, IconStack2, IconDoorEnter} from "@tabler/icons-react";
 import StorySheetView from "@propertyManagementModule/clients/panel/private/stories/center/sheetView/storySheetView.tsx";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
+import {Badge} from "@coreModule/components/ui/badge.tsx";
+import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
@@ -61,8 +63,20 @@ function StoryCard({
             innerRef={innerRef}
             sheetProps={() => ({fetchId})}
         >
-            {({entity}) => (
+            {({entity, read}) => (
                 <>
+                    {/* The story's own pictures lead the card (UX-02). */}
+                    <div className="-mx-(--density-pad) -mt-(--density-pad) w-[calc(100%+2*var(--density-pad))]">
+                        <AccessGatedGalleryCarousel
+                            read={read}
+                            mainImage={entity.mainImage}
+                            imageGallery={entity.imageGallery || []}
+                            videoGallery={entity.videoGallery || []}
+                            showThumbnails={false}
+                            allowFullScreen={false}
+                            coverAfterFirst
+                        />
+                    </div>
                     <EntityCard.Header
                         titlePath="title"
                         title={
@@ -71,52 +85,47 @@ function StoryCard({
                                 {entity.name ? <CopyTooltip text={entity.name} /> : null}
                             </span>
                         }
+                        // Only the exception is shown: a published story needs no badge (UX-02).
+                        badges={entity.published === false ? <Badge variant="secondary" className="text-xs">{resolveLanguageKey("unpublished")}</Badge> : undefined}
                     />
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconLabel}
-                            label={resolveLanguageKey("fields.name")}
-                            tooltip={resolveLanguageKey("fields.name")}
-                            path="name"
-                            value={entity.name}
-                        />
-                        <EntityCardRow
-                            icon={IconBuilding}
-                            label={resolveLanguageKey("fields.project")}
-                            tooltip={resolveLanguageKey("fields.project")}
-                            path="project.name"
-                            value={entity.project?.name}
-                        />
-                        <EntityCardRow
-                            icon={IconStack2}
-                            label={resolveLanguageKey("fields.edifice")}
-                            tooltip={resolveLanguageKey("fields.edifice")}
-                            path="edifice.name"
-                            value={entity.edifice?.name}
-                        />
-                        <EntityCardRow
-                            icon={IconDoorEnter}
-                            label={resolveLanguageKey("fields.unit")}
-                            tooltip={resolveLanguageKey("fields.unit")}
-                            path="unit"
-                            value={entity.unit?.name ?? entity.unit?.unitNumber}
-                        />
-                        <EntityCardRow
-                            icon={IconCalendar}
-                            label={resolveLanguageKey("fields.publishedAt")}
-                            tooltip={resolveLanguageKey("fields.publishedAt")}
-                            path="publishedAt"
-                            type="dateTime"
-                            value={entity.publishedAt}
-                        />
-                        <EntityCardRow
-                            icon={IconLabel}
-                            label={resolveLanguageKey("fields.published")}
-                            tooltip={resolveLanguageKey("fields.published")}
-                            path="published"
-                            type="boolean"
-                            value={entity.published}
-                        />
+                        {entity.project?.name ? (
+                            <EntityCardRow
+                                icon={IconBuilding}
+                                label={resolveLanguageKey("fields.project")}
+                                tooltip={resolveLanguageKey("fields.project")}
+                                path="project.name"
+                                value={entity.project?.name}
+                            />
+                        ) : null}
+                        {entity.edifice?.name ? (
+                            <EntityCardRow
+                                icon={IconStack2}
+                                label={resolveLanguageKey("fields.edifice")}
+                                tooltip={resolveLanguageKey("fields.edifice")}
+                                path="edifice.name"
+                                value={entity.edifice?.name}
+                            />
+                        ) : null}
+                        {entity.unit ? (
+                            <EntityCardRow
+                                icon={IconDoorEnter}
+                                label={resolveLanguageKey("fields.unit")}
+                                tooltip={resolveLanguageKey("fields.unit")}
+                                path="unit"
+                                value={entity.unit?.name ?? entity.unit?.unitNumber}
+                            />
+                        ) : null}
+                        {entity.publishedAt ? (
+                            <EntityCardRow
+                                icon={IconCalendar}
+                                label={resolveLanguageKey("fields.publishedAt")}
+                                tooltip={resolveLanguageKey("fields.publishedAt")}
+                                path="publishedAt"
+                                type="dateTime"
+                                value={entity.publishedAt}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}

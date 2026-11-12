@@ -47,5 +47,12 @@
     "deletedBy": "Fshirë nga",
     "failedTitle": "Ngarkimi i marrësve dështoi",
     "failedDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
-    "failedTooltipDescription": "Kliko për të riprovuar."
+    "failedTooltipDescription": "Kliko për të riprovuar.",
+    "languageValues": {
+        "en-US": "Anglisht",
+        "de-CH": "Gjermanisht",
+        "fr-FR": "Frëngjisht",
+        "it-IT": "Italisht",
+        "sq-AL": "Shqip"
+    }
 }

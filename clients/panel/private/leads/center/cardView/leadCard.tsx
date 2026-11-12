@@ -15,12 +15,12 @@ import {Separator} from "@coreModule/components/ui/separator.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {
     CARD_INFO_ROWS_TWO_COL_CLASS,
-    STATUS_BADGE_DANGER,
     STATUS_BADGE_INFO,
     STATUS_BADGE_NEUTRAL,
     STATUS_BADGE_SUCCESS,
     STATUS_BADGE_WARNING,
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {ReactNode, RefObject} from "react";
 
@@ -30,26 +30,6 @@ function leadEditPath(lead: Lead) {
     const fullName = [lead.firstName, lead.lastName].filter(Boolean).join(" ");
     if (fullName) params.set("leadName", fullName);
     return `/realEstate/leads/edit?${params.toString()}`;
-}
-
-function leadStatusBadgeClass(status: string): string {
-    switch (status) {
-        case "new":
-            return STATUS_BADGE_INFO;
-        case "contacted":
-            return STATUS_BADGE_NEUTRAL;
-        case "qualified":
-            return STATUS_BADGE_INFO;
-        case "proposal":
-        case "negotiation":
-            return STATUS_BADGE_WARNING;
-        case "won":
-            return STATUS_BADGE_SUCCESS;
-        case "lost":
-            return STATUS_BADGE_DANGER;
-        default:
-            return STATUS_BADGE_NEUTRAL;
-    }
 }
 
 function leadSourceBadgeClass(source: string): string {
@@ -86,15 +66,12 @@ function LeadCardBadges({
 
     return (
         <>
-            {status ? (
-                <DisplayValue path="status" value={status}>
-                    {() => (
-                        <Badge variant="outline" className={cn("text-xs", leadStatusBadgeClass(status))}>
-                            {String(resolveLanguageKey(`status.${status}`, true) || status)}
-                        </Badge>
-                    )}
-                </DisplayValue>
-            ) : null}
+            <StatusBadge
+                tableConfigKey="leads"
+                field="status"
+                value={status}
+                label={String(resolveLanguageKey(`status.${status}`, true) || status)}
+            />
             {source ? (
                 <DisplayValue path="source" value={source}>
                     {() => (
@@ -213,38 +190,46 @@ function LeadCard({
                             <Separator className="-mx-(--density-pad) w-auto self-stretch" />
                         )}
                         <EntityCard.Body className={CARD_INFO_ROWS_TWO_COL_CLASS}>
-                            <EntityCardRow
-                                icon={IconPhone}
-                                label={resolveLanguageKey("phone")}
-                                tooltip={resolveLanguageKey("phone")}
-                                path="phone"
-                                type="phoneNumber"
-                                value={entity.phone}
-                            />
-                            <EntityCardRow
-                                icon={IconCurrencyDollar}
-                                label={resolveLanguageKey("budget")}
-                                tooltip={resolveLanguageKey("budget")}
-                                path="budget"
-                                type="currency"
-                                value={{amount: entity.budget, currency: entity.budgetCurrency}}
-                            />
-                            <EntityCardRow
-                                icon={IconUser}
-                                label={resolveLanguageKey("assignedTo")}
-                                tooltip={resolveLanguageKey("assignedTo")}
-                                path="assignedTo"
-                                type="user"
-                                value={entity.assignedTo}
-                            />
-                            <EntityCardRow
-                                icon={IconCalendar}
-                                label={resolveLanguageKey("followUpDate")}
-                                tooltip={resolveLanguageKey("followUpDate")}
-                                path="followUpDate"
-                                type="date"
-                                value={entity.followUpDate}
-                            />
+                            {entity.phone ? (
+                                <EntityCardRow
+                                    icon={IconPhone}
+                                    label={resolveLanguageKey("phone")}
+                                    tooltip={resolveLanguageKey("phone")}
+                                    path="phone"
+                                    type="phoneNumber"
+                                    value={entity.phone}
+                                />
+                            ) : null}
+                            {entity.budget != null ? (
+                                <EntityCardRow
+                                    icon={IconCurrencyDollar}
+                                    label={resolveLanguageKey("budget")}
+                                    tooltip={resolveLanguageKey("budget")}
+                                    path="budget"
+                                    type="currency"
+                                    value={{amount: entity.budget, currency: entity.budgetCurrency}}
+                                />
+                            ) : null}
+                            {entity.assignedTo ? (
+                                <EntityCardRow
+                                    icon={IconUser}
+                                    label={resolveLanguageKey("assignedTo")}
+                                    tooltip={resolveLanguageKey("assignedTo")}
+                                    path="assignedTo"
+                                    type="user"
+                                    value={entity.assignedTo}
+                                />
+                            ) : null}
+                            {entity.followUpDate ? (
+                                <EntityCardRow
+                                    icon={IconCalendar}
+                                    label={resolveLanguageKey("followUpDate")}
+                                    tooltip={resolveLanguageKey("followUpDate")}
+                                    path="followUpDate"
+                                    type="date"
+                                    value={entity.followUpDate}
+                                />
+                            ) : null}
                         </EntityCard.Body>
                     </>
                 );

@@ -58,7 +58,11 @@
     "sourceColdCall": "Telefonatë",
     "sourceWalkIn": "Vizitë direkte",
     "sourceChat": "Chat i faqes",
-    "sourceOther": "Tjetër"
+    "sourceOther": "Tjetër",
+    "contactSectionTitle": "Kontakti",
+    "interestSectionTitle": "Interesi dhe buxheti",
+    "followUpSectionTitle": "Ndjekja",
+    "notesSectionTitle": "Shënime"
   },
   "axios": {
     "start": {

@@ -47,5 +47,12 @@
     "deletedBy": "Eliminato da",
     "failedTitle": "Impossibile caricare i destinatari",
     "failedDescription": "Si è verificato un errore durante il caricamento. Riprova.",
-    "failedTooltipDescription": "Clicca per riprovare."
+    "failedTooltipDescription": "Clicca per riprovare.",
+    "languageValues": {
+        "en-US": "Inglese",
+        "de-CH": "Tedesco",
+        "fr-FR": "Francese",
+        "it-IT": "Italiano",
+        "sq-AL": "Albanese"
+    }
 }

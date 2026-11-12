@@ -12,5 +12,6 @@
   },
   "failedTitle": "Impossible de charger cet enregistrement",
   "failedDescription": "Une erreur s'est produite. Cliquez pour réessayer.",
-  "failedTooltipDescription": "Cliquez pour recharger les données."
+  "failedTooltipDescription": "Cliquez pour recharger les données.",
+  "unpublished": "Non publié"
 }

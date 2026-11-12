@@ -26,7 +26,8 @@
     "sortOrderPlaceholder": "0",
     "storyTypeLabel": "Type de récit",
     "storyTypePlaceholder": "Sélectionner un type de récit",
-    "storyTypeRequired": "Le type de récit est obligatoire"
+    "storyTypeRequired": "Le type de récit est obligatoire",
+    "visibilitySectionTitle": "Visibilité"
   },
   "axios": {
     "start": {

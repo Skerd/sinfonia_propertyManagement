@@ -54,7 +54,11 @@
     "sourceColdCall": "Kaltakquise",
     "sourceWalkIn": "Spontanbesuch",
     "sourceChat": "Website-Chat",
-    "sourceOther": "Andere"
+    "sourceOther": "Andere",
+    "contactSectionTitle": "Kontakt",
+    "interestSectionTitle": "Interesse & Budget",
+    "followUpSectionTitle": "Nachfassen",
+    "notesSectionTitle": "Notizen"
   },
   "axios": {
     "start": {

@@ -54,7 +54,11 @@
     "sourceColdCall": "Cold Call",
     "sourceWalkIn": "Walk-in",
     "sourceChat": "Website chat",
-    "sourceOther": "Other"
+    "sourceOther": "Other",
+    "contactSectionTitle": "Contact",
+    "interestSectionTitle": "Interest & budget",
+    "followUpSectionTitle": "Follow-up",
+    "notesSectionTitle": "Notes"
   },
   "axios": {
     "start": {

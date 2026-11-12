@@ -4,36 +4,16 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconCalendarBolt, IconMail, IconBroadcast, IconUsers} from "@tabler/icons-react";
 import type {AdCampaign} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.dto.ts";
-import type {AdCampaignStatus} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.constants.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import CopyTooltip from "@coreModule/components/custom/copyTooltip.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
-import {
-    STATUS_BADGE_DANGER,
-    STATUS_BADGE_INFO,
-    STATUS_BADGE_NEUTRAL,
-    STATUS_BADGE_SUCCESS,
-    STATUS_BADGE_WARNING,
-} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import AdCampaignSheetView from "@propertyManagementModule/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx";
 import AdCampaignRowMenuExtras from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignRowMenuExtras.tsx";
 import AdCampaignWorkflowDialogs from "@propertyManagementModule/clients/panel/private/adCampaigns/center/actions/adCampaignWorkflowDialogs.tsx";
 import AdCampaignProgressPoll from "@propertyManagementModule/clients/panel/private/adCampaigns/center/adCampaignProgressPoll.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-
-const STATUS_BADGE: Record<AdCampaignStatus, string> = {
-    draft: STATUS_BADGE_NEUTRAL,
-    materializing: STATUS_BADGE_INFO,
-    scheduled: STATUS_BADGE_INFO,
-    sending: STATUS_BADGE_INFO,
-    paused: STATUS_BADGE_WARNING,
-    completed: STATUS_BADGE_SUCCESS,
-    cancelled: STATUS_BADGE_NEUTRAL,
-    failed: STATUS_BADGE_DANGER,
-};
 
 function adCampaignEditPath(campaign: AdCampaign) {
     const params = new URLSearchParams();
@@ -118,14 +98,12 @@ function AdCampaignCard({
                                 </span>
                             }
                             badges={
-                                entity.status ? (
-                                    <Badge
-                                        variant="secondary"
-                                        className={cn("text-xs", STATUS_BADGE[entity.status] ?? STATUS_BADGE_NEUTRAL)}
-                                    >
-                                        {String(resolveLanguageKey(`fields.!enums.status.${entity.status}`))}
-                                    </Badge>
-                                ) : undefined
+                                <StatusBadge
+                                    tableConfigKey="adcampaigns"
+                                    field="status"
+                                    value={entity.status}
+                                    label={String(resolveLanguageKey(`fields.!enums.status.${entity.status}`))}
+                                />
                             }
                         >
                             <AdCampaignRowMenuExtras campaign={entity} onAction={setAction} />
@@ -145,14 +123,16 @@ function AdCampaignCard({
                                 path="template.name"
                                 value={entity.template?.name}
                             />
-                            <EntityCardRow
-                                icon={IconCalendarBolt}
-                                label={resolveLanguageKey("fields.scheduledAt")}
-                                tooltip={resolveLanguageKey("fields.scheduledAt")}
-                                path="scheduledAt"
-                                type="date"
-                                value={entity.scheduledAt}
-                            />
+                            {entity.scheduledAt ? (
+                                <EntityCardRow
+                                    icon={IconCalendarBolt}
+                                    label={resolveLanguageKey("fields.scheduledAt")}
+                                    tooltip={resolveLanguageKey("fields.scheduledAt")}
+                                    path="scheduledAt"
+                                    type="dateTime"
+                                    value={entity.scheduledAt}
+                                />
+                            ) : null}
                             {/* Sent / total is the number an operator actually wants at a
                                 glance; the full breakdown lives in the sheet. */}
                             <EntityCardRow

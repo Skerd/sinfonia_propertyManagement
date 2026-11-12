@@ -47,5 +47,12 @@
     "deletedBy": "Gelöscht von",
     "failedTitle": "Empfänger konnten nicht geladen werden",
     "failedDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
-    "failedTooltipDescription": "Zum erneuten Laden klicken."
+    "failedTooltipDescription": "Zum erneuten Laden klicken.",
+    "languageValues": {
+        "en-US": "Englisch",
+        "de-CH": "Deutsch",
+        "fr-FR": "Französisch",
+        "it-IT": "Italienisch",
+        "sq-AL": "Albanisch"
+    }
 }

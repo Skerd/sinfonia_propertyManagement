@@ -26,7 +26,8 @@
     "sortOrderPlaceholder": "0",
     "storyTypeLabel": "Geschichtstyp",
     "storyTypePlaceholder": "Geschichtstyp auswählen",
-    "storyTypeRequired": "Geschichtstyp ist erforderlich"
+    "storyTypeRequired": "Geschichtstyp ist erforderlich",
+    "visibilitySectionTitle": "Sichtbarkeit"
   },
   "axios": {
     "start": {

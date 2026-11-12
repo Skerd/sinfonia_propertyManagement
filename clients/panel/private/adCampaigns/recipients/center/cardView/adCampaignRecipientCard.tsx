@@ -4,30 +4,12 @@ import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLangu
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {IconCalendarBolt, IconBan, IconRefresh, IconUser} from "@tabler/icons-react";
 import type {AdCampaignRecipient} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaignRecipient/adCampaignRecipient.dto.ts";
-import type {AdCampaignRecipientStatus} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.constants.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
-import {
-    STATUS_BADGE_DANGER,
-    STATUS_BADGE_INFO,
-    STATUS_BADGE_NEUTRAL,
-    STATUS_BADGE_SUCCESS,
-    STATUS_BADGE_WARNING,
-} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import Sheet from "@propertyManagementModule/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
-
-const STATUS_BADGE: Record<AdCampaignRecipientStatus, string> = {
-    pending: STATUS_BADGE_NEUTRAL,
-    queued: STATUS_BADGE_INFO,
-    sent: STATUS_BADGE_SUCCESS,
-    failed: STATUS_BADGE_DANGER,
-    skipped: STATUS_BADGE_WARNING,
-    suppressed: STATUS_BADGE_WARNING,
-};
 
 type AdCampaignRecipientCardProps = WithLanguageType & {
     entity: AdCampaignRecipient;
@@ -81,14 +63,12 @@ function AdCampaignRecipientCard({
                         subtitle={row.fullName}
                         subtitlePath="fullName"
                         badges={
-                            row.status ? (
-                                <Badge
-                                    variant="secondary"
-                                    className={cn("text-xs", STATUS_BADGE[row.status] ?? STATUS_BADGE_NEUTRAL)}
-                                >
-                                    {String(resolveLanguageKey(`fields.!enums.status.${row.status}`))}
-                                </Badge>
-                            ) : undefined
+                            <StatusBadge
+                                tableConfigKey="adcampaignrecipients"
+                                field="status"
+                                value={row.status}
+                                label={String(resolveLanguageKey(`fields.!enums.status.${row.status}`))}
+                            />
                         }
                     />
                     <EntityCard.Body>
@@ -99,15 +79,15 @@ function AdCampaignRecipientCard({
                             path="audienceKind"
                             value={String(resolveLanguageKey(`fields.!enums.audienceKind.${row.audienceKind}`))}
                         />
-                        <EntityCardRow
-                            icon={IconBan}
-                            label={resolveLanguageKey("fields.skipReason")}
-                            tooltip={resolveLanguageKey("fields.skipReason")}
-                            path="skipReason"
-                            value={row.skipReason
-                                ? String(resolveLanguageKey(`fields.!enums.skipReason.${row.skipReason}`))
-                                : undefined}
-                        />
+                        {row.skipReason ? (
+                            <EntityCardRow
+                                icon={IconBan}
+                                label={resolveLanguageKey("fields.skipReason")}
+                                tooltip={resolveLanguageKey("fields.skipReason")}
+                                path="skipReason"
+                                value={String(resolveLanguageKey(`fields.!enums.skipReason.${row.skipReason}`))}
+                            />
+                        ) : null}
                         <EntityCardRow
                             icon={IconRefresh}
                             label={resolveLanguageKey("fields.attempts")}
@@ -116,14 +96,16 @@ function AdCampaignRecipientCard({
                             type="number"
                             value={row.attempts}
                         />
-                        <EntityCardRow
-                            icon={IconCalendarBolt}
-                            label={resolveLanguageKey("fields.sentAt")}
-                            tooltip={resolveLanguageKey("fields.sentAt")}
-                            path="sentAt"
-                            type="date"
-                            value={row.sentAt}
-                        />
+                        {row.sentAt ? (
+                            <EntityCardRow
+                                icon={IconCalendarBolt}
+                                label={resolveLanguageKey("fields.sentAt")}
+                                tooltip={resolveLanguageKey("fields.sentAt")}
+                                path="sentAt"
+                                type="dateTime"
+                                value={row.sentAt}
+                            />
+                        ) : null}
                     </EntityCard.Body>
                 </>
             )}
