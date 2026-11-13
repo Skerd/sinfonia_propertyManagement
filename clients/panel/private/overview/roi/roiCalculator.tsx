@@ -459,7 +459,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                         {u.roiPercent !== undefined ? `${fmt(u.roiPercent)}%` : "—"}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
-                                                        {u.monthlyRent !== undefined ? fmt(u.monthlyRent) : "—"}
+                                                        {money(u.monthlyRent, 2, u.rentCurrencySymbol)}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
                                                         {u.annualGrossYield !== undefined ? `${fmt(u.annualGrossYield)}%` : "—"}

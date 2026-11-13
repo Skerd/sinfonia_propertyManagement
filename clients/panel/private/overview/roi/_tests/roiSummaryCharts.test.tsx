@@ -2,7 +2,7 @@ import {render, screen} from "@testing-library/react";
 import {describe, expect, it} from "vitest";
 import type {RoiCurrencyTotals, RoiProjectSummary} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import RoiSummaryCharts from "../roiSummaryCharts.tsx";
+import RoiSummaryCharts, {formatAxisMoney} from "../roiSummaryCharts.tsx";
 
 const resolveLanguageKey = ((key: string) => key) as ResolveLanguageKey;
 
@@ -36,5 +36,20 @@ describe("the ROI summary charts", () => {
         const {container} = render(<RoiSummaryCharts summary={summary([])} resolveLanguageKey={resolveLanguageKey} />);
         expect(screen.queryByText("charts.financialTitle")).toBeNull();
         expect(container.textContent).toContain("projectSummary.roi: —");
+    });
+});
+
+// TD-F102: the financial chart's domain ends at 112 % of the largest bar, so its ticks fall between minor units.
+describe("the ROI financial chart's Y-axis ticks", () => {
+    it("never show more fraction digits than the currency has", () => {
+        expect(formatAxisMoney(2063445.1712, 2, "€")).toBe("2,063,445.17 €");
+        expect(formatAxisMoney(1.00049, 3, "KD")).toBe("1 KD");
+        expect(formatAxisMoney(1.0456, 3, "KD")).toBe("1.046 KD");
+        expect(formatAxisMoney(1234.5, 0, "¥")).toBe("1,235 ¥");
+    });
+
+    it("keep round ticks short and read without a symbol the caller may not see", () => {
+        expect(formatAxisMoney(500000, 2, "€")).toBe("500,000 €");
+        expect(formatAxisMoney(0.5, 2)).toBe("0.5");
     });
 });

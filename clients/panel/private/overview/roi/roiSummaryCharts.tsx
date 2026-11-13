@@ -39,8 +39,18 @@ const STATUS_CONFIG = {
     value: {color: "var(--chart-1)"},
 } satisfies ChartConfig;
 
-function formatMoney(value: number, symbol?: string): string {
-    const formatted = formatNumber(value);
+/** An amount with its currency, exact at the currency's decimals (UX-07). */
+function formatMoney(value: number, decimals: number, symbol?: string): string {
+    const formatted = formatNumber(value, {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+    return symbol ? `${formatted} ${symbol}` : formatted;
+}
+
+/**
+ * A Y-axis tick (TD-F102): never past the currency's decimals, and without trailing zeros so round ticks stay short.
+ * The domain ends at 112 % of the largest bar, so a tick can fall between minor units.
+ */
+export function formatAxisMoney(value: number, decimals: number, symbol?: string): string {
+    const formatted = formatNumber(value, {maximumFractionDigits: decimals});
     return symbol ? `${formatted} ${symbol}` : formatted;
 }
 
@@ -48,17 +58,19 @@ function FinancialTooltip({
     active,
     payload,
     currencySymbol,
+    decimals,
 }: {
     active?: boolean;
     payload?: {name?: string; value?: number; payload?: {fill?: string}}[];
     currencySymbol?: string;
+    decimals: number;
 }) {
     if (!active || !payload?.length) return null;
     const item = payload[0];
     return (
         <div className="rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl">
             <p className="font-medium text-card-foreground">{item.name}</p>
-            <p className="text-muted-foreground">{formatMoney(item.value ?? 0, currencySymbol)}</p>
+            <p className="text-muted-foreground">{formatMoney(item.value ?? 0, decimals, currencySymbol)}</p>
         </div>
     );
 }
@@ -125,10 +137,10 @@ function FinancialChart({total, title, rk}: {total: RoiCurrencyTotals; title: st
                         domain={yDomain}
                         tick={{fill: "var(--muted-foreground)", fontSize: 11}}
                         axisLine={{stroke: "var(--border)"}}
-                        tickFormatter={(v: number) => formatMoney(v, currency)}
+                        tickFormatter={(v: number) => formatAxisMoney(v, total.decimals, currency)}
                         width={72}
                     />
-                    <ChartTooltip content={<FinancialTooltip currencySymbol={currency} />} cursor={{fill: "var(--muted)", fillOpacity: 0.4}} />
+                    <ChartTooltip content={<FinancialTooltip currencySymbol={currency} decimals={total.decimals} />} cursor={{fill: "var(--muted)", fillOpacity: 0.4}} />
                     <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                         {financialData.map((entry) => (
                             <Cell key={entry.name} fill={entry.fill} />

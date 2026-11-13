@@ -82,7 +82,7 @@ function InspectionSheetView({
     if (!entityId) return null;
 
     const showChecklist = canUpdateInspectionChecklist(asInspection);
-    // Start (scheduled, rescheduled), complete (in progress), cancel (scheduled) and the checklist (TD-B198).
+    // Start (scheduled, rescheduled), complete (in progress), cancel (scheduled, rescheduled) and the checklist (TD-B198).
     const showCustomMenu = ["scheduled", "rescheduled", "in_progress"].includes(asInspection.status) || showChecklist;
 
     return (

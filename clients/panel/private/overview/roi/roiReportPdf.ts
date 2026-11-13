@@ -465,7 +465,7 @@ function drawUnitRows(doc: jsPDF, startY: number, units: RoiUnitBreakdown[], col
             unit.costs.length > 0 ? unit.costs.map((cost) => fmtMoney(cost.amount, cost.currencySymbol, cost.decimals)).join("\n") : "—",
             unit.netProfit !== undefined ? fmtMoney(unit.netProfit, unit.saleCurrencySymbol) : "—",
             fmtPct(unit.roiPercent),
-            unit.monthlyRent !== undefined ? fmtMoney(unit.monthlyRent) : "—",
+            unit.monthlyRent !== undefined ? fmtMoney(unit.monthlyRent, unit.rentCurrencySymbol) : "—",
             fmtPct(unit.annualGrossYield),
         ];
         const lineSets = cells.map((cell, idx) => doc.splitTextToSize(cell, ws[idx]! - PAD * 2));

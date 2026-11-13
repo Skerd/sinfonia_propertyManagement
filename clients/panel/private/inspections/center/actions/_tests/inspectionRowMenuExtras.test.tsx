@@ -2,7 +2,7 @@ import {render, screen} from "@testing-library/react";
 import {beforeEach, describe, expect, it, vi} from "vitest";
 import type {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 
-const access = vi.hoisted(() => ({write: true, actions: {start: true, complete: true, reschedule: true} as Record<string, boolean>}));
+const access = vi.hoisted(() => ({write: true, actions: {start: true, complete: true, reschedule: true, cancelScheduled: true, updateChecklistItems: true} as Record<string, boolean>}));
 vi.mock("@coreModule/helpers/hooks/useAccess.ts", () => ({useAccess: () => ({read: true, write: access.write})}));
 vi.mock("@coreModule/helpers/hooks/useActionAccess.ts", () => ({
     useActionAccess: (collection: string, action: string) => collection === "inspections" && access.actions[action] === true,
@@ -16,13 +16,13 @@ vi.mock("@propertyManagementModule/clients/panel/private/inspections/center/acti
 
 import InspectionRowMenuExtras from "../inspectionRowMenuExtras.tsx";
 
-const inspection = (status: string): Inspection => ({
+const inspection = (status: string, checklistTemplate?: string): Inspection => ({
     _id: "inspection-1", name: "INSP-1", status, type: "routine", inspectionDate: "2026-11-20",
     unit: {_id: "unit-1", name: "A2-01"}, inspectedBy: {_id: "user-1", name: "Ana", surname: "Test"},
-    media: [], followUpRequired: false,
+    media: [], followUpRequired: false, ...(checklistTemplate ? {checklistTemplate: {_id: checklistTemplate, name: "CHK-1"}} : {}),
 });
-const items = (status: string) => {
-    const {container} = render(<InspectionRowMenuExtras inspection={inspection(status)} onAction={() => {}} />);
+const items = (status: string, checklistTemplate?: string) => {
+    const {container} = render(<InspectionRowMenuExtras inspection={inspection(status, checklistTemplate)} onAction={() => {}} />);
     return Array.from(container.querySelectorAll("p"), (item) => item.textContent);
 };
 
@@ -30,7 +30,7 @@ const items = (status: string) => {
 describe("the inspection row menu's reschedule item", () => {
     beforeEach(() => {
         access.write = true;
-        access.actions = {start: true, complete: true, reschedule: true};
+        access.actions = {start: true, complete: true, reschedule: true, cancelScheduled: true, updateChecklistItems: true};
     });
 
     it("is offered on a scheduled or rescheduled inspection", () => {
@@ -55,7 +55,7 @@ describe("the inspection row menu's reschedule item", () => {
 describe("the inspection row menu's start and complete items", () => {
     beforeEach(() => {
         access.write = true;
-        access.actions = {start: true, complete: true, reschedule: true};
+        access.actions = {start: true, complete: true, reschedule: true, cancelScheduled: true, updateChecklistItems: true};
     });
 
     it("offers start before the visit and complete during it", () => {
@@ -67,7 +67,7 @@ describe("the inspection row menu's start and complete items", () => {
     });
 
     it("hides each one without its action permission, even with write access", () => {
-        access.actions = {start: false, complete: false, reschedule: true};
+        access.actions = {...access.actions, start: false, complete: false};
         expect(items("scheduled")).not.toContain("start");
         expect(items("in_progress")).not.toContain("complete");
     });
@@ -83,7 +83,7 @@ describe("the inspection row menu's start and complete items", () => {
 describe("the inspection row menu's cancel item", () => {
     beforeEach(() => {
         access.write = true;
-        access.actions = {start: true, complete: true, reschedule: true};
+        access.actions = {start: true, complete: true, reschedule: true, cancelScheduled: true, updateChecklistItems: true};
     });
 
     it("is offered on a scheduled or rescheduled inspection only", () => {
@@ -92,5 +92,27 @@ describe("the inspection row menu's cancel item", () => {
         for (const status of ["in_progress", "completed", "cancelled"]) {
             expect(items(status)).not.toContain("cancel");
         }
+    });
+});
+
+// TD-F101: Cancel and Update checklist follow their own action permissions, not the model's write permission.
+describe("the inspection row menu's cancel and checklist items", () => {
+    beforeEach(() => {
+        access.write = true;
+        access.actions = {start: true, complete: true, reschedule: true, cancelScheduled: true, updateChecklistItems: true};
+    });
+
+    it("hides each one without its action permission, even with write access", () => {
+        access.actions = {...access.actions, cancelScheduled: false, updateChecklistItems: false};
+        const offered = items("scheduled", "template-1");
+        expect(offered).not.toContain("cancel");
+        expect(offered).not.toContain("checklist");
+    });
+
+    it("shows each one with its action permission, even without write access", () => {
+        access.write = false;
+        const offered = items("scheduled", "template-1");
+        expect(offered).toContain("cancel");
+        expect(offered).toContain("checklist");
     });
 });
