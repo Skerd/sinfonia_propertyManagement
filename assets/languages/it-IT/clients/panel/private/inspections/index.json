@@ -115,7 +115,7 @@
           "Annulla programmata — solo mentre lo stato è programmata; memorizza un motivo e un timestamp. Non si può annullare un'ispezione già completata.",
           "Aggiorna checklist — spuntare o togliere le voci attive dal menu riga, card o scheda finché l'ispezione è aperta.",
           "Completare — lo stato completata è bloccato finché ogni voce attiva (non trattenuta) non è spuntata. Senza checklist non c'è questo vincolo.",
-          "Riprogrammare impostando lo stato su riprogrammata e una nuova data — non è un nuovo documento, salvo che ne creiate uno."
+          "Ripianifica — finché l'ispezione è programmata o ripianificata, scegliete la nuova data dal menu riga, card o scheda; lo stato diventa ripianificata. Resta la stessa ispezione, non una nuova."
         ]
       },
       {

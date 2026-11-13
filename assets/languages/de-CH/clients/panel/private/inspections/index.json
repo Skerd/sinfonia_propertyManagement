@@ -115,7 +115,7 @@
           "Geplant stornieren — nur im Status geplant; speichert Grund und Zeitpunkt. Eine abgeschlossene Abnahme lässt sich nicht stornieren.",
           "Checkliste aktualisieren — offene Punkte im Menü von Zeile, Karte oder Sheet abhaken, solange die Abnahme offen ist.",
           "Abschliessen — Status abgeschlossen ist gesperrt, bis jeder lebende (nicht beibehaltene) Punkt gehakt ist. Ohne Checkliste gibt es diese Sperre nicht.",
-          "Verschieben setzt den Status auf verschoben und ein neues Datum — das ist kein neues Dokument, ausser Sie legen eines an."
+          "Verschieben — solange die Abnahme geplant oder neu geplant ist, im Menü von Zeile, Karte oder Sheet das neue Datum wählen; der Status wird «Neu geplant». Es bleibt dieselbe Abnahme, keine neue."
         ]
       },
       {

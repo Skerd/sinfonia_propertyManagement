@@ -115,7 +115,7 @@
           "Annuler la visite planifiée — seulement tant que le statut est planifiée ; enregistre un motif et un horodatage. Impossible d'annuler une inspection déjà terminée.",
           "Mettre à jour la checklist — cocher ou décocher les éléments actifs depuis le menu ligne, carte ou fiche tant que l'inspection est ouverte.",
           "Terminer — le statut terminée est bloqué tant que chaque élément actif (non retenu) n'est pas coché. Sans checklist, pas de ce verrou.",
-          "Reporter en passant le statut à reportée et une nouvelle date — ce n'est pas un nouveau document, sauf si vous en créez un."
+          "Replanifier — tant que l'inspection est planifiée ou replanifiée, choisir la nouvelle date depuis le menu ligne, carte ou fiche ; le statut devient replanifiée. C'est la même inspection, pas une nouvelle."
         ]
       },
       {

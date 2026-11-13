@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/rescheduleInspectionDialog.tsx",
+  "confirmTitle": "Reschedule inspection?",
+  "confirmDescription": "Pick the new inspection date. The inspection becomes rescheduled and can still be started.",
+  "dateLabel": "New inspection date",
+  "cancel": "Cancel",
+  "confirm": "Reschedule",
+  "axios": {
+    "start": {
+      "title": "Rescheduling inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection rescheduled",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspection could not be rescheduled, please try again!",
+      "time": 3000
+    }
+  }
+}

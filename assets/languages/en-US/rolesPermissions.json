@@ -179,7 +179,6 @@
       "deletedBy": "Deleted by",
       "edifice": "Building",
       "elementCount": "Element count",
-      "importStatus": "Import status",
       "name": "Name",
       "notes": "Notes",
       "project": "Project",
@@ -797,7 +796,8 @@
       "cancelScheduled": "Cancel scheduled inspection",
       "updateChecklistItems": "Update checklist items",
       "start": "Start inspection",
-      "complete": "Complete inspection"
+      "complete": "Complete inspection",
+      "reschedule": "Reschedule inspection"
     },
     "Landparcels": {
       "acquisitionCost": "Acquisition cost",

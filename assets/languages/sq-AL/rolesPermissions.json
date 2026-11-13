@@ -179,7 +179,6 @@
       "deletedBy": "Fshirë nga",
       "edifice": "Ndërtesa",
       "elementCount": "Numri i elementeve",
-      "importStatus": "Statusi i importit",
       "name": "Emri",
       "notes": "Shënime",
       "project": "Projekti",
@@ -797,7 +796,8 @@
       "cancelScheduled": "Anulo inspektimin e planifikuar",
       "updateChecklistItems": "Përditëso pikat e listës së kontrollit",
       "start": "Nis inspektimin",
-      "complete": "Përfundo inspektimin"
+      "complete": "Përfundo inspektimin",
+      "reschedule": "Riplanifiko inspektimin"
     },
     "Landparcels": {
       "acquisitionCost": "Kostoja e blerjes",

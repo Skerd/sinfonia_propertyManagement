@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/rescheduleInspectionDialog.tsx",
+  "confirmTitle": "Ripianificare l'ispezione?",
+  "confirmDescription": "Scegliete la nuova data dell'ispezione. L'ispezione diventa ripianificata e può ancora essere avviata.",
+  "dateLabel": "Nuova data dell'ispezione",
+  "cancel": "Annulla",
+  "confirm": "Ripianifica",
+  "axios": {
+    "start": {
+      "title": "Ripianificazione dell'ispezione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Ispezione ripianificata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile ripianificare l'ispezione, riprovate!",
+      "time": 3000
+    }
+  }
+}

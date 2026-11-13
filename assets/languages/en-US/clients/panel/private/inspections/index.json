@@ -115,7 +115,7 @@
           "Cancel scheduled — only while status is scheduled; stores a reason and timestamp. You cannot cancel a completed inspection.",
           "Update checklist — tick or untick live items from the row, card, or sheet menu while the inspection is open.",
           "Complete — status cannot become completed until every live (non-retained) checklist item is ticked. Inspections with no checklist have no such gate.",
-          "Reschedule by setting status to rescheduled and a new date — that is not a new inspection document unless you create one."
+          "Reschedule — while scheduled or rescheduled, pick the new inspection date from the row, card, or sheet menu; the status becomes rescheduled. It stays the same inspection, not a new one."
         ]
       },
       {

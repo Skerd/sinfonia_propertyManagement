@@ -211,10 +211,11 @@ function FormExpenditureItemsFieldInner({
                 size="sm"
                 className="w-full sm:w-auto"
                 onClick={() =>
+                    // Category and unit start empty for the user to pick (UX-06); saving refuses a line without them.
                     append({
                         title: "",
-                        category: EXPENDITURE_CATEGORY_VALUES[0],
-                        unit: MEASURE_UNIT_VALUES[0],
+                        category: "",
+                        unit: "",
                         amount: 1,
                         pricePerUnit: "",
                         media: [],

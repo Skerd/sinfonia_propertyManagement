@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/rescheduleInspectionDialog.tsx",
+  "confirmTitle": "Abnahme verschieben?",
+  "confirmDescription": "Wählen Sie das neue Abnahmedatum. Die Abnahme wird «Neu geplant» und kann weiterhin gestartet werden.",
+  "dateLabel": "Neues Abnahmedatum",
+  "cancel": "Abbrechen",
+  "confirm": "Verschieben",
+  "axios": {
+    "start": {
+      "title": "Abnahme wird verschoben",
+      "time": 3000
+    },
+    "success": {
+      "title": "Abnahme verschoben",
+      "time": 3000
+    },
+    "error": {
+      "title": "Abnahme konnte nicht verschoben werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  }
+}

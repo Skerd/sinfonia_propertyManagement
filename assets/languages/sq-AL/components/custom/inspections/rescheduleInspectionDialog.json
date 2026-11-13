@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/rescheduleInspectionDialog.tsx",
+  "confirmTitle": "Të riplanifikohet inspektimi?",
+  "confirmDescription": "Zgjidhni datën e re të inspektimit. Inspektimi bëhet i riplanifikuar dhe ende mund të niset.",
+  "dateLabel": "Data e re e inspektimit",
+  "cancel": "Anulo",
+  "confirm": "Riplanifiko",
+  "axios": {
+    "start": {
+      "title": "Inspektimi po riplanifikohet",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspektimi u riplanifikua",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspektimi nuk mund të riplanifikohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  }
+}

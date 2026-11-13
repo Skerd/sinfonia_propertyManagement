@@ -115,7 +115,7 @@
           "Anulo të planifikuarën — vetëm sa statusi është i planifikuar; ruan arsye dhe vulë kohe. Nuk mund të anuloni një inspektim të përfunduar.",
           "Përditëso listën e kontrollit — shënoni ose hiqni zërat aktivë nga menyja e rreshtit, kartës ose fletës sa inspektimi është i hapur.",
           "Përfundo — statusi i përfunduar bllokohet derisa çdo zë aktiv (jo i mbajtur) të jetë shënuar. Pa listë kontrolli nuk ka këtë portë.",
-          "Riplanifikoni duke vënë statusin në të riplanifikuar dhe një datë të re — kjo nuk është dokument i ri, përveçse kur krijoni një."
+          "Riplanifiko — sa kohë inspektimi është i planifikuar ose i riplanifikuar, zgjidhni datën e re nga menyja e rreshtit, kartës ose fletës; statusi bëhet i riplanifikuar. Mbetet i njëjti inspektim, jo një i ri."
         ]
       },
       {

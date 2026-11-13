@@ -179,7 +179,6 @@
       "deletedBy": "Eliminato da",
       "edifice": "Edificio",
       "elementCount": "Numero di elementi",
-      "importStatus": "Stato dell'importazione",
       "name": "Nome",
       "notes": "Note",
       "project": "Progetto",
@@ -797,7 +796,8 @@
       "cancelScheduled": "Annulla l'ispezione programmata",
       "updateChecklistItems": "Aggiorna gli elementi della checklist",
       "start": "Avvia ispezione",
-      "complete": "Completa ispezione"
+      "complete": "Completa ispezione",
+      "reschedule": "Ripianifica ispezione"
     },
     "Landparcels": {
       "acquisitionCost": "Costo di acquisizione",
