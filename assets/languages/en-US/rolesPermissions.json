@@ -795,7 +795,9 @@
       "checklistItems_sourceTemplateId": "Checklist item template",
       "checklistTemplate": "Checklist template",
       "cancelScheduled": "Cancel scheduled inspection",
-      "updateChecklistItems": "Update checklist items"
+      "updateChecklistItems": "Update checklist items",
+      "start": "Start inspection",
+      "complete": "Complete inspection"
     },
     "Landparcels": {
       "acquisitionCost": "Acquisition cost",

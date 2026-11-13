@@ -8,9 +8,10 @@ import {
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.constants.ts";
 import type {CreateAdCampaignFormType} from "armonia/src/modules/propertyManagement/api/realEstate/private/adCampaign/adCampaign.schema-def.ts";
 
-function campaignTypeFromParams(params: URLSearchParams): AdCampaignType {
+/** The type the link asks for, else none: the person picks it (UX-06, TD-F78). */
+function campaignTypeFromParams(params: URLSearchParams): AdCampaignType | undefined {
     const raw = params.get("campaignType");
-    return AD_CAMPAIGN_TYPE_VALUES.includes(raw as AdCampaignType) ? (raw as AdCampaignType) : "offer";
+    return AD_CAMPAIGN_TYPE_VALUES.find((value) => value === raw);
 }
 
 export default createGenericCreatePage<CreateAdCampaignFormType>({

@@ -45,6 +45,13 @@
                 "price_change": "Ndryshim çmimi",
                 "offer": "Ofertë",
                 "new_project": "Projekt i ri"
+            },
+            "languageCode": {
+                "en-US": "Anglisht",
+                "de-CH": "Gjermanisht",
+                "fr-FR": "Frëngjisht",
+                "it-IT": "Italisht",
+                "sq-AL": "Shqip"
             }
         }
     }

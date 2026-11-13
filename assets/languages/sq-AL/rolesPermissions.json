@@ -795,7 +795,9 @@
       "checklistItems_sourceTemplateId": "Modeli i zërit të listës",
       "checklistTemplate": "Modeli i listës së kontrollit",
       "cancelScheduled": "Anulo inspektimin e planifikuar",
-      "updateChecklistItems": "Përditëso pikat e listës së kontrollit"
+      "updateChecklistItems": "Përditëso pikat e listës së kontrollit",
+      "start": "Nis inspektimin",
+      "complete": "Përfundo inspektimin"
     },
     "Landparcels": {
       "acquisitionCost": "Kostoja e blerjes",

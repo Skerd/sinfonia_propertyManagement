@@ -5,6 +5,7 @@ import InspectionSheetView, {inspectionTitle} from "@propertyManagementModule/cl
 import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
 import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
+import InspectionLifecycleDialogs from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionLifecycleDialogs.tsx";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import {IconAlertTriangle, IconCalendar, IconCalendarClock, IconStar, IconUser} from "@tabler/icons-react";
@@ -36,6 +37,7 @@ type InspectionCardProps = WithLanguageType & {
     onRestore?: () => void;
     onCancelSuccess?: (updatedInspection?: Inspection) => void;
     onChecklistSuccess?: (updatedInspection?: Inspection) => void;
+    onLifecycleSuccess?: (updatedInspection?: Inspection) => void;
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
     sheetOnly?: boolean;
@@ -54,6 +56,7 @@ function InspectionCard({
     onRestore,
     onCancelSuccess,
     onChecklistSuccess,
+    onLifecycleSuccess,
     open,
     onOpenChange,
     sheetOnly = false,
@@ -88,6 +91,7 @@ function InspectionCard({
                     unitName,
                     onCancelSuccess,
                     onChecklistSuccess,
+                    onLifecycleSuccess,
                 })}
                 extraDialogs={({action, setAction, entity}) => (
                     <>
@@ -113,6 +117,15 @@ function InspectionCard({
                                 }}
                             />
                         )}
+                        <InspectionLifecycleDialogs
+                            action={action}
+                            inspection={entity}
+                            onClose={() => setAction("")}
+                            onSuccess={(data?: Inspection) => {
+                                onLifecycleSuccess?.(data);
+                                setAction("");
+                            }}
+                        />
                     </>
                 )}
             >
@@ -212,6 +225,7 @@ function InspectionCard({
                     onRestore={onRestore}
                     onCancelSuccess={onCancelSuccess}
                     onChecklistSuccess={onChecklistSuccess}
+                    onLifecycleSuccess={onLifecycleSuccess}
                 />
             )}
         </>

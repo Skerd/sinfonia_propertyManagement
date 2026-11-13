@@ -5,9 +5,8 @@ import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
-import {cn} from "@coreModule/components/lib/utils.ts";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuTrigger} from "@coreModule/components/ui/dropdown-menu.tsx";
 import {DEFAULT_DECIMAL_PLACES, subtractMoney} from "armonia/src/modules/core/helpers/money.ts";
@@ -19,20 +18,6 @@ import ManualInstallmentClientEmails, {
 import {PaymentPlanPayInstallment} from "@propertyManagementModule/clients/panel/private/sales/center/sheetView/paymentPlanPayInstallment.ts";
 
 type Installment = PaymentPlan["installments"][number];
-
-function getInstallmentStatusStyles(status?: string): {bg: string; text: string; border: string} {
-    const lowered = status?.toLowerCase() ?? "";
-    if (lowered === "paid") {
-        return {bg: "bg-success/10", text: "text-success", border: "border-success/30"};
-    }
-    if (lowered === "overdue" || lowered === "cancelled") {
-        return {bg: "bg-destructive/10", text: "text-destructive", border: "border-destructive/30"};
-    }
-    if (lowered === "partially_paid") {
-        return {bg: "bg-warning/10", text: "text-warning", border: "border-warning/30"};
-    }
-    return {bg: "bg-muted/50", text: "text-muted-foreground", border: "border-muted"};
-}
 
 function resolveStateLabel(resolveLanguageKey: ResolveLanguageKey, category: string, rawValue?: string): string {
     if (!rawValue) return "-";
@@ -97,7 +82,6 @@ export default function PaymentPlanInstallments({plan, resolveLanguageKey}: Prop
                                 const showPayAction = !paid && !!access.write && planTakesPayments(plan.status);
                                 const showInstallmentEmails =
                                     canReadSaleBuyer && installmentHasVisibleManualEmailActions(installment, timeZone);
-                                const statusStyles = getInstallmentStatusStyles(installment.status);
                                 const paidAmount = installment.paidAmount ?? 0;
                                 const dueAmount = installment.amount ?? 0;
                                 const remaining = Math.max(0, subtractMoney(dueAmount, paidAmount, decimals));
@@ -111,12 +95,13 @@ export default function PaymentPlanInstallments({plan, resolveLanguageKey}: Prop
                                         <TableCell>{money(paidAmount)}</TableCell>
                                         <TableCell>{money(remaining)}</TableCell>
                                         <TableCell>
-                                            <Badge
-                                                variant="outline"
-                                                className={cn("text-2xs font-medium", statusStyles.bg, statusStyles.text, statusStyles.border)}
-                                            >
-                                                {resolveStateLabel(resolveLanguageKey, "installmentStatusState", installment.status ?? "pending")}
-                                            </Badge>
+                                            {/* The model's installment tones, like the plans table (UX-02, TD-F72). */}
+                                            <StatusBadge
+                                                tableConfigKey="paymentPlans"
+                                                field="installments.status"
+                                                value={installment.status ?? "pending"}
+                                                label={resolveStateLabel(resolveLanguageKey, "installmentStatusState", installment.status ?? "pending")}
+                                            />
                                         </TableCell>
                                         <TableCell className="text-right">
                                             {!paid && (showPayAction || showInstallmentEmails) && (

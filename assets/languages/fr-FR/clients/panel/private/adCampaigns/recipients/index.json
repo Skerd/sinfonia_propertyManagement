@@ -45,6 +45,13 @@
                 "price_change": "Changement de prix",
                 "offer": "Offre",
                 "new_project": "Nouveau projet"
+            },
+            "languageCode": {
+                "en-US": "Anglais",
+                "de-CH": "Allemand",
+                "fr-FR": "Français",
+                "it-IT": "Italien",
+                "sq-AL": "Albanais"
             }
         }
     }

@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/completeInspectionDialog.tsx",
+  "confirmTitle": "Completare l'ispezione?",
+  "confirmDescription": "L'ispezione viene segnata come completata e la sua checklist viene bloccata.",
+  "checklistOpenDescription": "Spunta prima ogni voce della checklist: un'ispezione si completa solo con la checklist finita.",
+  "cancel": "Annulla",
+  "confirm": "Completa ispezione",
+  "axios": {
+    "start": {
+      "title": "Completamento dell'ispezione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Ispezione completata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile completare l'ispezione, riprova!",
+      "time": 3000
+    }
+  }
+}

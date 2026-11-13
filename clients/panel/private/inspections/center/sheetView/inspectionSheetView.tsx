@@ -5,6 +5,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
 import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
+import InspectionLifecycleDialogs from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionLifecycleDialogs.tsx";
 import {canUpdateInspectionChecklist} from "@propertyManagementModule/components/custom/inspections/inspectionChecklistVisibility.ts";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import { useViewConfig } from "@coreModule/helpers/hooks/useViewConfig.ts";
@@ -27,6 +28,7 @@ export type InspectionSheetViewOwnProps = {
     onRestore?: () => void;
     onCancelSuccess?: (updatedInspection?: Inspection) => void;
     onChecklistSuccess?: (updatedInspection?: Inspection) => void;
+    onLifecycleSuccess?: (updatedInspection?: Inspection) => void;
     isRestored?: boolean;
     fetchId?: string;
 };
@@ -49,6 +51,7 @@ function InspectionSheetView({
     onRestore,
     onCancelSuccess,
     onChecklistSuccess,
+    onLifecycleSuccess,
     fetchId,
 }: InspectionSheetViewOwnProps & WithLanguageType) {
 
@@ -79,7 +82,8 @@ function InspectionSheetView({
     if (!entityId) return null;
 
     const showChecklist = canUpdateInspectionChecklist(asInspection);
-    const showCustomMenu = asInspection.status === "scheduled" || showChecklist;
+    // Start (scheduled, rescheduled), complete (in progress), cancel (scheduled) and the checklist (TD-B198).
+    const showCustomMenu = ["scheduled", "rescheduled", "in_progress"].includes(asInspection.status) || showChecklist;
 
     return (
         <>
@@ -148,6 +152,16 @@ function InspectionSheetView({
                 }}
             />
         )}
+        <InspectionLifecycleDialogs
+            action={action}
+            inspection={asInspection}
+            onClose={() => setAction("")}
+            onSuccess={(data?: Inspection) => {
+                if (data) setSheetData(data);
+                onLifecycleSuccess?.(data);
+                setAction("");
+            }}
+        />
         </>
     );
 }

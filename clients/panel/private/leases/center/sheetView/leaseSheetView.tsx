@@ -66,6 +66,13 @@ function LeaseSheetView({
         [requestedScheduleAction, handleRequestedHandled],
     );
 
+    // While the sheet is open its rent schedule records the payment; handing the action on as well made the card or
+    // list open a second record dialog (TD-F77).
+    const handleMenuAction = (action: string) => {
+        if (action === RECORD_RENT_PAYMENT_ACTION) setRequestedScheduleAction(action);
+        else onActionMenuAction?.(action);
+    };
+
     const entityId = leaseProp?._id ?? fetchId;
     if (!viewConfig || !entityId) return null;
 
@@ -98,23 +105,12 @@ function LeaseSheetView({
                 onRestore={onRestore}
                 editPath={buildLeaseEditPath(lease)}
                 actionMenuAllowCustomChildren={actionMenuAllowCustomChildren ?? true}
-                onActionMenuAction={(action) => {
-                    if (action === RECORD_RENT_PAYMENT_ACTION) {
-                        setRequestedScheduleAction(action);
-                    }
-                    onActionMenuAction?.(action);
-                }}
+                onActionMenuAction={handleMenuAction}
                 onSheetRowPatched={onSheetRowPatched}
                 actionMenuChildren={(
                     <>
                         {actionMenuChildren}
-                        <RecordRentPayment
-                            lease={lease}
-                            onAction={(action: string) => {
-                                setRequestedScheduleAction(action);
-                                onActionMenuAction?.(action);
-                            }}
-                        />
+                        <RecordRentPayment lease={lease} onAction={handleMenuAction} />
                     </>
                 )}
             />

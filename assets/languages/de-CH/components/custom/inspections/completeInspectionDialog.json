@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/completeInspectionDialog.tsx",
+  "confirmTitle": "Abnahme abschliessen?",
+  "confirmDescription": "Die Abnahme wird als abgeschlossen markiert und ihre Checkliste gesperrt.",
+  "checklistOpenDescription": "Haken Sie zuerst jeden Checklistenpunkt ab: Eine Abnahme lässt sich nur mit vollständiger Checkliste abschliessen.",
+  "cancel": "Abbrechen",
+  "confirm": "Abnahme abschliessen",
+  "axios": {
+    "start": {
+      "title": "Abnahme wird abgeschlossen",
+      "time": 3000
+    },
+    "success": {
+      "title": "Abnahme abgeschlossen",
+      "time": 3000
+    },
+    "error": {
+      "title": "Abnahme konnte nicht abgeschlossen werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  }
+}

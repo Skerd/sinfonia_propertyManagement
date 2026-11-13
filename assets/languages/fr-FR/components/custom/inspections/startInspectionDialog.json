@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/startInspectionDialog.tsx",
+  "confirmTitle": "Démarrer l'inspection ?",
+  "confirmDescription": "L'inspection passe en cours. Sa liste de contrôle peut encore être mise à jour.",
+  "cancel": "Annuler",
+  "confirm": "Démarrer l'inspection",
+  "axios": {
+    "start": {
+      "title": "Démarrage de l'inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection démarrée",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'inspection n'a pas pu être démarrée, veuillez réessayer !",
+      "time": 3000
+    }
+  }
+}

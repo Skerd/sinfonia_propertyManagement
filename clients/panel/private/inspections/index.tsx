@@ -14,6 +14,7 @@ import InspectionSheetView from "@propertyManagementModule/clients/panel/private
 import InspectionRowMenuExtras from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionRowMenuExtras.tsx";
 import CancelInspectionDialog from "@propertyManagementModule/components/custom/inspections/cancelInspectionDialog.tsx";
 import UpdateInspectionChecklistDialog from "@propertyManagementModule/components/custom/inspections/updateInspectionChecklistDialog.tsx";
+import InspectionLifecycleDialogs from "@propertyManagementModule/clients/panel/private/inspections/center/actions/inspectionLifecycleDialogs.tsx";
 import {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconTextPlus} from "@tabler/icons-react";
@@ -160,6 +161,9 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
                     onChecklistSuccess={(updated?: Inspection) =>
                         updated && listRef.current?.updateRow?.(updated._id, updated)
                     }
+                    onLifecycleSuccess={(updated?: Inspection) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
                 />
             )}
             renderActionMenuChildren={(inspection, bindRowAction) => (
@@ -192,7 +196,17 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
                         />
                     );
                 }
-                return null;
+                return (
+                    <InspectionLifecycleDialogs
+                        action={action}
+                        inspection={entity}
+                        onClose={resetAction}
+                        onSuccess={(updated?: Inspection) => {
+                            if (updated) listRef.current?.updateRow?.(updated._id, updated);
+                            resetAction();
+                        }}
+                    />
+                );
             }}
             renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
                 <InspectionSheetView
@@ -207,6 +221,9 @@ function AllInspections({resolveLanguageKey}: WithLanguageType) {
                         updated && listRef.current?.updateRow?.(updated._id, updated)
                     }
                     onChecklistSuccess={(updated?: Inspection) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
+                    onLifecycleSuccess={(updated?: Inspection) =>
                         updated && listRef.current?.updateRow?.(updated._id, updated)
                     }
                 />

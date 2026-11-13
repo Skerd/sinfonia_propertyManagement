@@ -795,7 +795,9 @@
       "checklistItems_sourceTemplateId": "Checklistenpunkt Vorlage",
       "checklistTemplate": "Checklistenvorlage",
       "cancelScheduled": "Geplante Inspektion absagen",
-      "updateChecklistItems": "Checklistenpunkte aktualisieren"
+      "updateChecklistItems": "Checklistenpunkte aktualisieren",
+      "start": "Inspektion starten",
+      "complete": "Inspektion abschliessen"
     },
     "Landparcels": {
       "acquisitionCost": "Anschaffungskosten",

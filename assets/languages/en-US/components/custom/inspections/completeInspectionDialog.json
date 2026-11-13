@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/completeInspectionDialog.tsx",
+  "confirmTitle": "Complete inspection?",
+  "confirmDescription": "The inspection is marked completed and its checklist is locked.",
+  "checklistOpenDescription": "Tick every checklist item first: an inspection completes only with a finished checklist.",
+  "cancel": "Cancel",
+  "confirm": "Complete inspection",
+  "axios": {
+    "start": {
+      "title": "Completing inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection completed",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspection could not be completed, please try again!",
+      "time": 3000
+    }
+  }
+}

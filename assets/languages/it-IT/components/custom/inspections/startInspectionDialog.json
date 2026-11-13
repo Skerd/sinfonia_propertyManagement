@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/startInspectionDialog.tsx",
+  "confirmTitle": "Avviare l'ispezione?",
+  "confirmDescription": "L'ispezione passa a in corso. La sua checklist può ancora essere aggiornata.",
+  "cancel": "Annulla",
+  "confirm": "Avvia ispezione",
+  "axios": {
+    "start": {
+      "title": "Avvio dell'ispezione",
+      "time": 3000
+    },
+    "success": {
+      "title": "Ispezione avviata",
+      "time": 3000
+    },
+    "error": {
+      "title": "Impossibile avviare l'ispezione, riprova!",
+      "time": 3000
+    }
+  }
+}

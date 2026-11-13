@@ -795,7 +795,9 @@
       "checklistItems_sourceTemplateId": "Modèle de l’élément de checklist",
       "checklistTemplate": "Modèle de liste de contrôle",
       "cancelScheduled": "Annuler l'inspection planifiée",
-      "updateChecklistItems": "Mettre à jour la checklist"
+      "updateChecklistItems": "Mettre à jour la checklist",
+      "start": "Démarrer l'inspection",
+      "complete": "Terminer l'inspection"
     },
     "Landparcels": {
       "acquisitionCost": "Coût d'acquisition",

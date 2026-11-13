@@ -58,7 +58,7 @@ function FormExpenditureItemsFieldInner({
     // Running line totals and subtotal as the lines are typed, in the cost's currency (UX-07, D35).
     const lines = useWatch({control, name});
     const currency = usePickedCurrency(useWatch({control, name: "currency"}));
-    const {lineTotals, subtotal} = expenditureTotals(Array.isArray(lines) ? lines : []);
+    const {lineTotals, subtotal} = expenditureTotals(Array.isArray(lines) ? lines : [], currency?.decimalPlaces);
     const money = (amount: number) => displayPlainText({amount, currency}, "currency");
 
     const categoryOptions = EXPENDITURE_CATEGORY_VALUES.map((v) => ({

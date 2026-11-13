@@ -4,7 +4,9 @@ import {IconDots} from "@tabler/icons-react";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
-import {Badge} from "@coreModule/components/ui/badge.tsx";
+import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
+import {toneSwatchClass} from "@coreModule/components/entityPage/list/table/columnConfigToColumnDef.tsx";
+import {useEnumTones} from "@coreModule/helpers/hooks/useEnumTones.ts";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@coreModule/components/ui/table/table.tsx";
@@ -26,6 +28,8 @@ import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import {LeaseScheduleRequest} from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseScheduleRequest.ts";
 
 const LEASE_PAYMENTS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/rentalPayment"};
+/** The list API's page cap; a longer lease is read page by page (TD-F82). */
+const SCHEDULE_PAGE_SIZE = 200;
 const OPEN_STATUSES = new Set(["pending", "overdue", "partially_paid"]);
 
 type LeaseSchedulePanelProps = {
@@ -38,23 +42,6 @@ function money(value: number | undefined, symbol?: string): string {
     if (value == null) return "—";
     const n = formatNumber(value, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     return symbol ? `${n} ${symbol}` : n;
-}
-
-function statusStyles(status?: string): {bg: string; text: string; border: string; cell: string} {
-    const lowered = status?.toLowerCase() ?? "";
-    if (lowered === "paid") {
-        return {bg: "bg-success/10", text: "text-success", border: "border-success/30", cell: "bg-success"};
-    }
-    if (lowered === "overdue") {
-        return {bg: "bg-destructive/10", text: "text-destructive", border: "border-destructive/30", cell: "bg-destructive"};
-    }
-    if (lowered === "partially_paid") {
-        return {bg: "bg-warning/10", text: "text-warning", border: "border-warning/30", cell: "bg-warning"};
-    }
-    if (lowered === "waived") {
-        return {bg: "bg-muted/50", text: "text-muted-foreground", border: "border-muted", cell: "bg-muted-foreground/40"};
-    }
-    return {bg: "bg-muted/50", text: "text-muted-foreground", border: "border-muted", cell: "bg-muted-foreground/20"};
 }
 
 function resolveStatusLabel(resolveLanguageKey: ResolveLanguageKey, raw?: string): string {
@@ -70,6 +57,8 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
     const paymentAccess = useAccess("rentalpayments");
     const leaseAccess = useAccess("leases");
     const timeZone = useCompanyTimeZone();
+    // The rent months take the rental payment model's tones, like its table (UX-02, TD-F72).
+    const statusTones = useEnumTones("rentalPayments", "status");
     const leaseRead =
         typeof leaseAccess.read === "object" && leaseAccess.read !== null
             ? (leaseAccess.read as Record<string, unknown>)
@@ -82,19 +71,31 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
 
     const refetch = useCallback(() => setLocalNonce((n) => n + 1), []);
 
-    // The lease's schedule, reloaded after every change made here.
+    // The lease's schedule, reloaded from its first month after every change made here. The list API returns at most
+    // 200 rows a page, so a lease longer than about 16 years is read page by page until every month is in (TD-F82).
     const [fetchCount, setFetchCount] = useState(0);
+    const [offset, setOffset] = useState(0);
+    const [payments, setPayments] = useState<RentalPayment[]>([]);
     useEffect(() => {
-        if (lease._id) setFetchCount((count) => count + 1);
+        if (!lease._id) return;
+        setOffset(0);
+        setFetchCount((count) => count + 1);
     }, [lease._id, localNonce]);
     const paymentsBody = useMemo(
-        // The list API pages at most 200 rows (a 600 limit was refused, so the schedule was always empty): 200 months
-        // cover leases up to 16 years; longer leases show their first 200 months (TD-F82).
-        () => ({offset: 0, limit: 200, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
-        [lease._id],
+        () => ({offset, limit: SCHEDULE_PAGE_SIZE, lease: lease._id, sortBy: "dueDate", sortOrder: "asc"}) satisfies TableForm & {lease: string},
+        [lease._id, offset],
     );
-    const paymentsRequest = useHttpRequest<TableResponse<RentalPayment>>(LEASE_PAYMENTS_REQUEST, paymentsBody, fetchCount);
-    const payments = useMemo(() => paymentsRequest.data?.data ?? [], [paymentsRequest.data]);
+    useHttpRequest<TableResponse<RentalPayment>>(LEASE_PAYMENTS_REQUEST, paymentsBody, fetchCount, true, {
+        success: (page) => {
+            const rows = page.data;
+            setPayments((loaded) => (offset === 0 ? rows : [...loaded, ...rows]));
+            const next = offset + rows.length;
+            if (rows.length > 0 && next < page.total) {
+                setOffset(next);
+                setFetchCount((count) => count + 1);
+            }
+        },
+    });
 
     useEffect(() => {
         if (requestedAction === RECORD_RENT_PAYMENT_ACTION) {
@@ -154,7 +155,6 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
             {payments.length > 0 && (
                 <div className="flex flex-wrap gap-1">
                     {payments.map((row) => {
-                        const styles = statusStyles(row.status);
                         const canPay = OPEN_STATUSES.has(row.status ?? "") && (row.remaining ?? 0) > 0;
                         return (
                             <Button
@@ -162,7 +162,7 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
                                 variant="bare"
                                 key={row._id}
                                 title={`${row.dueDate} · ${resolveStatusLabel(resolveLanguageKey, row.status)}`}
-                                className={cn("size-5 rounded-sm border border-border/40", styles.cell, canPay && "cursor-pointer")}
+                                className={cn("size-5 rounded-sm border border-border/40", toneSwatchClass(row.status ? statusTones?.[row.status] : undefined), canPay && "cursor-pointer")}
                                 onClick={() => {
                                     if (!canPay) return;
                                     setSelected(row);
@@ -190,7 +190,6 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
                         </TableHeader>
                         <TableBody>
                             {payments.map((row) => {
-                                const styles = statusStyles(row.status);
                                 const showPay = OPEN_STATUSES.has(row.status ?? "") && (row.remaining ?? 0) > 0 && !!paymentAccess.write;
                                 const showEmails = canReadTenant && rentHasVisibleManualEmailActions(row, timeZone);
                                 const showMenu = showPay || showEmails;
@@ -204,9 +203,12 @@ export default function LeaseSchedulePanel({lease, resolveLanguageKey}: LeaseSch
                                         <TableCell className="tabular-nums">{money(row.paidAmount ?? 0, symbol)}</TableCell>
                                         <TableCell className="tabular-nums">{money(row.remaining, symbol)}</TableCell>
                                         <TableCell>
-                                            <Badge className={cn("border", styles.bg, styles.text, styles.border)} variant="outline">
-                                                {resolveStatusLabel(resolveLanguageKey, row.status)}
-                                            </Badge>
+                                            <StatusBadge
+                                                tableConfigKey="rentalPayments"
+                                                field="status"
+                                                value={row.status}
+                                                label={resolveStatusLabel(resolveLanguageKey, row.status)}
+                                            />
                                         </TableCell>
                                         <TableCell className="text-right">
                                             {showMenu ? (

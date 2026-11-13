@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/startInspectionDialog.tsx",
+  "confirmTitle": "Të niset inspektimi?",
+  "confirmDescription": "Inspektimi kalon në progres. Lista e kontrollit mund të përditësohet ende.",
+  "cancel": "Anulo",
+  "confirm": "Nis inspektimin",
+  "axios": {
+    "start": {
+      "title": "Inspektimi po niset",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspektimi nisi",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspektimi nuk mund të nisej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  }
+}

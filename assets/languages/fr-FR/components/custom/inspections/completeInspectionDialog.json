@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/completeInspectionDialog.tsx",
+  "confirmTitle": "Terminer l'inspection ?",
+  "confirmDescription": "L'inspection est marquée comme terminée et sa liste de contrôle est verrouillée.",
+  "checklistOpenDescription": "Cochez d'abord chaque point de la liste de contrôle : une inspection ne se termine qu'avec une liste complète.",
+  "cancel": "Annuler",
+  "confirm": "Terminer l'inspection",
+  "axios": {
+    "start": {
+      "title": "Finalisation de l'inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection terminée",
+      "time": 3000
+    },
+    "error": {
+      "title": "L'inspection n'a pas pu être terminée, veuillez réessayer !",
+      "time": 3000
+    }
+  }
+}

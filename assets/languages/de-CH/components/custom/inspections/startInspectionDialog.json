@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/startInspectionDialog.tsx",
+  "confirmTitle": "Abnahme starten?",
+  "confirmDescription": "Die Abnahme wechselt auf «In Bearbeitung». Die Checkliste kann weiterhin bearbeitet werden.",
+  "cancel": "Abbrechen",
+  "confirm": "Abnahme starten",
+  "axios": {
+    "start": {
+      "title": "Abnahme wird gestartet",
+      "time": 3000
+    },
+    "success": {
+      "title": "Abnahme gestartet",
+      "time": 3000
+    },
+    "error": {
+      "title": "Abnahme konnte nicht gestartet werden, bitte erneut versuchen!",
+      "time": 3000
+    }
+  }
+}

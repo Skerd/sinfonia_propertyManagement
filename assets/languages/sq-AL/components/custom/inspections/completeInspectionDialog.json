@@ -1,0 +1,22 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/completeInspectionDialog.tsx",
+  "confirmTitle": "Të përfundohet inspektimi?",
+  "confirmDescription": "Inspektimi shënohet si i përfunduar dhe lista e kontrollit kyçet.",
+  "checklistOpenDescription": "Shënoni fillimisht çdo pikë të listës së kontrollit: një inspektim përfundon vetëm me listë të plotë.",
+  "cancel": "Anulo",
+  "confirm": "Përfundo inspektimin",
+  "axios": {
+    "start": {
+      "title": "Inspektimi po përfundon",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspektimi përfundoi",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspektimi nuk mund të përfundohej, ju lutemi provoni përsëri!",
+      "time": 3000
+    }
+  }
+}

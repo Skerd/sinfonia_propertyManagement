@@ -3,19 +3,29 @@ import {describe, expect, it, vi} from "vitest";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 
 // Stable across renders, as the real hooks' results are.
-const {requests, answer} = vi.hoisted(() => ({
+const {requests, answer, pager} = vi.hoisted(() => ({
     requests: [] as {url: string; body: Record<string, unknown>; count: number}[],
     answer: {data: {data: [], total: 0}, loading: false, error: null},
+    /** When set, answers each request the way the list API pages a long schedule. */
+    pager: {respond: undefined as undefined | ((body: Record<string, unknown>) => {data: unknown[]; total: number})},
 }));
 
 vi.mock("@coreModule/helpers/hooks/useAccess.ts", () => ({useAccess: () => ({read: {tenant: {}}, write: true})}));
 vi.mock("@coreModule/helpers/hooks/useCompanyTimeZone.ts", () => ({useCompanyTimeZone: () => "Europe/Zurich"}));
-vi.mock("@coreModule/helpers/hooks/useHttpRequest.ts", () => ({
-    default: (request: {url: string}, body: Record<string, unknown>, count: number) => {
-        requests.push({url: request.url, body, count});
-        return answer;
-    },
-}));
+vi.mock("@coreModule/helpers/hooks/useHttpRequest.ts", async () => {
+    const {useEffect} = await import("react");
+    return {
+        default: function useHttpRequestMock(request: {url: string}, body: Record<string, unknown>, count: number, _inView?: boolean, lifecycle?: {success?: (data: unknown) => void}) {
+            requests.push({url: request.url, body, count});
+            // Answers after the render, as the real request does.
+            useEffect(() => {
+                if (count > 0 && pager.respond) lifecycle?.success?.(pager.respond(body));
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+            }, [count]);
+            return answer;
+        },
+    };
+});
 vi.mock("@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx", () => ({
     default: () => <p>record-dialog</p>,
 }));
@@ -44,5 +54,24 @@ describe("the lease rent schedule as a sheet token (#LeaseSchedule)", () => {
 
         expect(screen.getByText("record-dialog")).toBeTruthy();
         expect(handled).toHaveBeenCalled();
+    });
+
+    // TD-F82: a lease longer than the list API's 200-row page showed only its first 200 months.
+    it("reads a long lease's schedule page by page until every month is in", () => {
+        requests.length = 0;
+        const total = 450;
+        pager.respond = (body) => {
+            const offset = Number(body.offset);
+            const size = Math.min(200, total - offset);
+            return {data: Array.from({length: size}, (_, i) => ({_id: `row-${offset + i}`, status: "pending", amount: 100})), total};
+        };
+        try {
+            render(<LeaseSchedulePanel lease={lease} resolveLanguageKey={(key: string) => key} />);
+        } finally {
+            pager.respond = undefined;
+        }
+
+        const offsets = [...new Set(requests.filter((request) => request.count > 0).map((request) => request.body.offset))];
+        expect(offsets).toEqual([0, 200, 400]);
     });
 });

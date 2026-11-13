@@ -1,0 +1,21 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/inspections/startInspectionDialog.tsx",
+  "confirmTitle": "Start inspection?",
+  "confirmDescription": "The inspection moves to in progress. Its checklist can still be updated.",
+  "cancel": "Cancel",
+  "confirm": "Start inspection",
+  "axios": {
+    "start": {
+      "title": "Starting inspection",
+      "time": 3000
+    },
+    "success": {
+      "title": "Inspection started",
+      "time": 3000
+    },
+    "error": {
+      "title": "Inspection could not be started, please try again!",
+      "time": 3000
+    }
+  }
+}

@@ -20,4 +20,10 @@ describe("unit cost expenditure totals", () => {
             {amount: 2, pricePerUnit: "1."},
         ])).toEqual({lineTotals: [undefined, undefined, 2], subtotal: 2});
     });
+
+    it("rounds at the picked currency's decimal places", () => {
+        const lines = [{amount: 3, pricePerUnit: "1.0005"}, {amount: 2, pricePerUnit: "0.3333"}];
+        expect(expenditureTotals(lines, 3)).toEqual({lineTotals: [3.003, 0.666], subtotal: 3.669});
+        expect(expenditureTotals(lines, 0)).toEqual({lineTotals: [3, 0], subtotal: 3});
+    });
 });
