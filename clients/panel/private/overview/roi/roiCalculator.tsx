@@ -4,7 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useCallback, useMemo, useState} from "react";
 import {useSelector} from "react-redux";
 import {IconDownload} from "@tabler/icons-react";
-import type {RoiCurrencyTotals, RoiMoney, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
+import type {RoiCurrencyTotals, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {RoiRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.request.type.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
@@ -23,7 +23,7 @@ import Header from "@coreModule/components/custom/header.tsx";
 import {readPageHelp} from "@coreModule/components/custom/pageHelp.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 import RoiSummaryCharts from "./roiSummaryCharts.tsx";
-import {downloadRoiReportPdf, type RoiReportPdfLabels} from "./roiReportPdf.ts";
+import {downloadRoiReportPdf, formatRoiMoney, type RoiReportPdfLabels} from "./roiReportPdf.ts";
 import {useAccessHydrated} from "@coreModule/helpers/context/accessContext.tsx";
 import {useAccess} from "@coreModule/helpers/hooks/useAccess.ts";
 import Forbidden from "@coreModule/components/custom/pages/forbidden.tsx";
@@ -445,21 +445,21 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                         </span>
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
-                                                        {u.salePrice !== undefined ? `${fmt(u.salePrice)} ${u.saleCurrencySymbol ?? ""}` : "—"}
+                                                        {formatRoiMoney(u.salePrice)}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
                                                         {u.costs.length > 0
-                                                            ? u.costs.map((cost: RoiMoney, index) => <p key={index}>{money(cost.amount, cost.decimals, cost.currencySymbol)}</p>)
+                                                            ? u.costs.map((cost, index) => <p key={index}>{formatRoiMoney(cost)}</p>)
                                                             : "—"}
                                                     </td>
-                                                    <td className={`px-4 py-2 text-right font-medium ${(u.netProfit ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
-                                                        {money(u.netProfit, 2, u.saleCurrencySymbol)}
+                                                    <td className={`px-4 py-2 text-right font-medium ${(u.netProfit?.amount ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
+                                                        {formatRoiMoney(u.netProfit)}
                                                     </td>
                                                     <td className={`px-4 py-2 text-right font-bold ${(u.roiPercent ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
                                                         {u.roiPercent !== undefined ? `${fmt(u.roiPercent)}%` : "—"}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
-                                                        {money(u.monthlyRent, 2, u.rentCurrencySymbol)}
+                                                        {formatRoiMoney(u.monthlyRent)}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
                                                         {u.annualGrossYield !== undefined ? `${fmt(u.annualGrossYield)}%` : "—"}

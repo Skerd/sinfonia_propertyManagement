@@ -7,7 +7,7 @@ import {fetchMediaBytes} from "@coreModule/helpers/media/fetchMediaBytes.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
-import type {RoiCurrencyTotals, RoiProjectSummary, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
+import type {RoiCurrencyTotals, RoiMoney, RoiProjectSummary, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 
 export type RoiReportPdfLabels = {
     title: string;
@@ -144,6 +144,11 @@ function fmtMoney(n?: number | null, symbol?: string, decimals = 2): string {
     if (n === undefined || n === null || !Number.isFinite(n)) return "—";
     const base = formatNumber(n, {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
     return symbol ? `${base} ${symbol}` : base;
+}
+
+/** A unit's sale price, cost, net profit or rent with its currency, at that currency's decimals (TD-F103); "—" without one. */
+export function formatRoiMoney(value: RoiMoney | undefined): string {
+    return value ? fmtMoney(value.amount, value.currencySymbol, value.decimals) : "—";
 }
 
 /** One value per currency (TD-B223), never a sum across them; "—" without any. */
@@ -461,11 +466,11 @@ function drawUnitRows(doc: jsPDF, startY: number, units: RoiUnitBreakdown[], col
         const cells = [
             [unit.unitName, unit.unitNumber].filter(Boolean).join("\n"),
             statusLabel(unit.status),
-            unit.salePrice !== undefined ? fmtMoney(unit.salePrice, unit.saleCurrencySymbol) : "—",
-            unit.costs.length > 0 ? unit.costs.map((cost) => fmtMoney(cost.amount, cost.currencySymbol, cost.decimals)).join("\n") : "—",
-            unit.netProfit !== undefined ? fmtMoney(unit.netProfit, unit.saleCurrencySymbol) : "—",
+            formatRoiMoney(unit.salePrice),
+            unit.costs.length > 0 ? unit.costs.map(formatRoiMoney).join("\n") : "—",
+            formatRoiMoney(unit.netProfit),
             fmtPct(unit.roiPercent),
-            unit.monthlyRent !== undefined ? fmtMoney(unit.monthlyRent, unit.rentCurrencySymbol) : "—",
+            formatRoiMoney(unit.monthlyRent),
             fmtPct(unit.annualGrossYield),
         ];
         const lineSets = cells.map((cell, idx) => doc.splitTextToSize(cell, ws[idx]! - PAD * 2));
