@@ -2,10 +2,10 @@ import {render, screen} from "@testing-library/react";
 import {beforeEach, describe, expect, it, vi} from "vitest";
 import type {Inspection} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/inspection/inspection.dto.ts";
 
-const access = vi.hoisted(() => ({reschedule: true}));
-vi.mock("@coreModule/helpers/hooks/useAccess.ts", () => ({useAccess: () => ({read: true, write: true})}));
+const access = vi.hoisted(() => ({write: true, actions: {start: true, complete: true, reschedule: true} as Record<string, boolean>}));
+vi.mock("@coreModule/helpers/hooks/useAccess.ts", () => ({useAccess: () => ({read: true, write: access.write})}));
 vi.mock("@coreModule/helpers/hooks/useActionAccess.ts", () => ({
-    useActionAccess: (collection: string, action: string) => collection === "inspections" && action === "reschedule" && access.reschedule,
+    useActionAccess: (collection: string, action: string) => collection === "inspections" && access.actions[action] === true,
 }));
 // Each menu item as its name, so the test reads which ones the row offers.
 vi.mock("@propertyManagementModule/clients/panel/private/inspections/center/actions/start.tsx", () => ({default: () => <p>start</p>}));
@@ -29,7 +29,8 @@ const items = (status: string) => {
 // TD-B215: Reschedule sits beside Start while the inspection has not started.
 describe("the inspection row menu's reschedule item", () => {
     beforeEach(() => {
-        access.reschedule = true;
+        access.write = true;
+        access.actions = {start: true, complete: true, reschedule: true};
     });
 
     it("is offered on a scheduled or rescheduled inspection", () => {
@@ -44,8 +45,52 @@ describe("the inspection row menu's reschedule item", () => {
     });
 
     it("is not offered without the action's permission", () => {
-        access.reschedule = false;
+        access.actions.reschedule = false;
         render(<InspectionRowMenuExtras inspection={inspection("scheduled")} onAction={() => {}} />);
         expect(screen.queryByText("reschedule")).toBeNull();
+    });
+});
+
+// TD-F97: Start and Complete follow their own action permissions, not the model's write permission.
+describe("the inspection row menu's start and complete items", () => {
+    beforeEach(() => {
+        access.write = true;
+        access.actions = {start: true, complete: true, reschedule: true};
+    });
+
+    it("offers start before the visit and complete during it", () => {
+        expect(items("scheduled")).toContain("start");
+        expect(items("rescheduled")).toContain("start");
+        expect(items("in_progress")).toContain("complete");
+        expect(items("in_progress")).not.toContain("start");
+        expect(items("scheduled")).not.toContain("complete");
+    });
+
+    it("hides each one without its action permission, even with write access", () => {
+        access.actions = {start: false, complete: false, reschedule: true};
+        expect(items("scheduled")).not.toContain("start");
+        expect(items("in_progress")).not.toContain("complete");
+    });
+
+    it("shows each one with its action permission, even without write access", () => {
+        access.write = false;
+        expect(items("scheduled")).toContain("start");
+        expect(items("in_progress")).toContain("complete");
+    });
+});
+
+// TD-B224 (D156): a rescheduled inspection is cancelled like a scheduled one.
+describe("the inspection row menu's cancel item", () => {
+    beforeEach(() => {
+        access.write = true;
+        access.actions = {start: true, complete: true, reschedule: true};
+    });
+
+    it("is offered on a scheduled or rescheduled inspection only", () => {
+        expect(items("scheduled")).toContain("cancel");
+        expect(items("rescheduled")).toContain("cancel");
+        for (const status of ["in_progress", "completed", "cancelled"]) {
+            expect(items(status)).not.toContain("cancel");
+        }
     });
 });

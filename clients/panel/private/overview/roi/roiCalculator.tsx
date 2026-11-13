@@ -4,7 +4,7 @@ import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {useCallback, useMemo, useState} from "react";
 import {useSelector} from "react-redux";
 import {IconDownload} from "@tabler/icons-react";
-import type {RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
+import type {RoiCurrencyTotals, RoiMoney, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {RoiRequest} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.request.type.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
@@ -63,6 +63,28 @@ function selectBodyWithFilters(entries: { field: string; value: string | string[
 
 function fmt(n?: number, decimals = 2): string {
     return formatNumber(n, {minimumFractionDigits: decimals, maximumFractionDigits: decimals}) || "—";
+}
+
+/** An amount with its currency (UX-07), at the currency's precision. */
+function money(amount: number | undefined, decimals: number, symbol?: string): string {
+    const formatted = fmt(amount, decimals);
+    return symbol && amount !== undefined ? `${formatted} ${symbol}` : formatted;
+}
+
+/**
+ * One line per currency (TD-B223): amounts in different currencies are never added up. A single currency reads as one
+ * value, as before; none reads "—".
+ */
+function CurrencyLines({totals, render}: {totals: RoiCurrencyTotals[]; render: (total: RoiCurrencyTotals) => {text: string; className?: string}}) {
+    if (totals.length === 0) return <p className="font-semibold">—</p>;
+    return (
+        <>
+            {totals.map((total, index) => {
+                const {text, className} = render(total);
+                return <p key={`${total.currencySymbol ?? ""}-${index}`} className={className ?? "font-semibold"}>{text}</p>;
+            })}
+        </>
+    );
 }
 
 function hasRoiScope(filters: RoiFilters): boolean {
@@ -174,6 +196,7 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
         if (projectId) calcRoi(next);
     }
 
+    const severalCurrencies = (result?.project?.totals.length ?? 0) > 1;
     const summaryTitle = result?.project
         ? `${result.project.scopeLabel} — ${rk("summary")}`
         : rk("summary");
@@ -364,23 +387,28 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.totalRevenue")}</p>
-                                                    <p className="font-semibold">{fmt(result.project.totalRevenue)} {result.project.baseCurrencySymbol}</p>
+                                                    <CurrencyLines totals={result.project.totals} render={(total) => ({text: money(total.totalRevenue, total.decimals, total.currencySymbol)})} />
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.totalCosts")}</p>
-                                                    <p className="font-semibold">{fmt(result.project.totalCosts)}</p>
+                                                    <CurrencyLines totals={result.project.totals} render={(total) => ({text: money(total.totalCosts, total.decimals, total.currencySymbol)})} />
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.netProfit")}</p>
-                                                    <p className={`font-semibold ${result.project.netProfit >= 0 ? "text-success" : "text-destructive"}`}>
-                                                        {fmt(result.project.netProfit)}
-                                                    </p>
+                                                    <CurrencyLines totals={result.project.totals} render={(total) => ({
+                                                        text: money(total.netProfit, total.decimals, total.currencySymbol),
+                                                        className: `font-semibold ${total.netProfit >= 0 ? "text-success" : "text-destructive"}`,
+                                                    })} />
                                                 </div>
                                                 <div>
                                                     <p className="text-muted-foreground">{rk("projectSummary.roi")}</p>
-                                                    <p className={`font-bold text-lg ${result.project.roiPercent >= 0 ? "text-success" : "text-destructive"}`}>
-                                                        {fmt(result.project.roiPercent)}%
-                                                    </p>
+                                                    {/* Each currency's ROI is named by its currency once there are several. */}
+                                                    <CurrencyLines totals={result.project.totals} render={(total) => ({
+                                                        text: severalCurrencies && total.currencySymbol
+                                                            ? `${fmt(total.roiPercent)}% (${total.currencySymbol})`
+                                                            : `${fmt(total.roiPercent)}%`,
+                                                        className: `font-bold text-lg ${total.roiPercent >= 0 ? "text-success" : "text-destructive"}`,
+                                                    })} />
                                                 </div>
                                             </div>
                                             <RoiSummaryCharts
@@ -420,10 +448,12 @@ function RoiCalculator({resolveLanguageKey}: WithLanguageType) {
                                                         {u.salePrice !== undefined ? `${fmt(u.salePrice)} ${u.saleCurrencySymbol ?? ""}` : "—"}
                                                     </td>
                                                     <td className="px-4 py-2 text-right">
-                                                        {fmt(u.totalCosts)} {u.costCurrencySymbol ?? ""}
+                                                        {u.costs.length > 0
+                                                            ? u.costs.map((cost: RoiMoney, index) => <p key={index}>{money(cost.amount, cost.decimals, cost.currencySymbol)}</p>)
+                                                            : "—"}
                                                     </td>
                                                     <td className={`px-4 py-2 text-right font-medium ${(u.netProfit ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
-                                                        {fmt(u.netProfit)}
+                                                        {money(u.netProfit, 2, u.saleCurrencySymbol)}
                                                     </td>
                                                     <td className={`px-4 py-2 text-right font-bold ${(u.roiPercent ?? 0) >= 0 ? "text-success" : "text-destructive"}`}>
                                                         {u.roiPercent !== undefined ? `${fmt(u.roiPercent)}%` : "—"}

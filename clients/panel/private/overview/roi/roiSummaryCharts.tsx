@@ -10,7 +10,7 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
-import type {RoiProjectSummary} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
+import type {RoiCurrencyTotals, RoiProjectSummary} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {
     ChartContainer,
@@ -80,27 +80,69 @@ function StatusTooltip({
     );
 }
 
-export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSummaryChartsProps) {
-    const rk = (key: string) => String(resolveLanguageKey(key));
-    const currency = summary.baseCurrencySymbol;
-
+/** One currency's revenue, costs and net profit (TD-B223): bars in different currencies never share an axis (UX-07). */
+function FinancialChart({total, title, rk}: {total: RoiCurrencyTotals; title: string; rk: (key: string) => string}) {
+    const currency = total.currencySymbol;
     const financialData = useMemo(() => [
         {
             name: rk("projectSummary.totalRevenue"),
-            value: Math.max(0, summary.totalRevenue),
+            value: Math.max(0, total.totalRevenue),
             fill: "var(--success)",
         },
         {
             name: rk("projectSummary.totalCosts"),
-            value: Math.max(0, summary.totalCosts),
+            value: Math.max(0, total.totalCosts),
             fill: "var(--destructive)",
         },
         {
             name: rk("projectSummary.netProfit"),
-            value: summary.netProfit,
-            fill: summary.netProfit >= 0 ? "var(--success)" : "var(--destructive)",
+            value: total.netProfit,
+            fill: total.netProfit >= 0 ? "var(--success)" : "var(--destructive)",
         },
-    ], [summary, rk]);
+    ], [total, rk]);
+
+    const yMax = Math.max(...financialData.map((d) => d.value), 0);
+    const yMin = Math.min(...financialData.map((d) => d.value), 0);
+    const yDomain: [number, number] = [
+        yMin < 0 ? yMin * 1.12 : 0,
+        yMax > 0 ? yMax * 1.12 : 1,
+    ];
+
+    return (
+        <div className="flex flex-col border rounded-lg p-4 gap-y-3">
+            <h3 className="font-medium text-sm text-muted-foreground">{title}</h3>
+            <ChartContainer config={FINANCIAL_CONFIG} className="aspect-auto h-56 w-full overflow-hidden">
+                <BarChart data={financialData} margin={{top: 12, right: 12, left: 4, bottom: 8}}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
+                    <XAxis
+                        dataKey="name"
+                        tick={{fill: "var(--muted-foreground)", fontSize: 11}}
+                        axisLine={{stroke: "var(--border)"}}
+                        interval={0}
+                        tickFormatter={(v: string) => v.length > 12 ? `${v.slice(0, 11)}…` : v}
+                    />
+                    <YAxis
+                        domain={yDomain}
+                        tick={{fill: "var(--muted-foreground)", fontSize: 11}}
+                        axisLine={{stroke: "var(--border)"}}
+                        tickFormatter={(v: number) => formatMoney(v, currency)}
+                        width={72}
+                    />
+                    <ChartTooltip content={<FinancialTooltip currencySymbol={currency} />} cursor={{fill: "var(--muted)", fillOpacity: 0.4}} />
+                    <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                        {financialData.map((entry) => (
+                            <Cell key={entry.name} fill={entry.fill} />
+                        ))}
+                    </Bar>
+                </BarChart>
+            </ChartContainer>
+        </div>
+    );
+}
+
+export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSummaryChartsProps) {
+    const rk = (key: string) => String(resolveLanguageKey(key));
+    const severalCurrencies = summary.totals.length > 1;
 
     const statusData = useMemo(() => {
         const other = Math.max(
@@ -120,43 +162,20 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
 
     const statusTotal = statusData.reduce((s, d) => s + d.value, 0);
 
-    const yMax = Math.max(...financialData.map((d) => d.value), 0);
-    const yMin = Math.min(...financialData.map((d) => d.value), 0);
-    const yDomain: [number, number] = [
-        yMin < 0 ? yMin * 1.12 : 0,
-        yMax > 0 ? yMax * 1.12 : 1,
-    ];
-
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="flex flex-col border rounded-lg p-4 gap-y-3">
-                <h3 className="font-medium text-sm text-muted-foreground">{rk("charts.financialTitle")}</h3>
-                <ChartContainer config={FINANCIAL_CONFIG} className="aspect-auto h-56 w-full overflow-hidden">
-                    <BarChart data={financialData} margin={{top: 12, right: 12, left: 4, bottom: 8}}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
-                        <XAxis
-                            dataKey="name"
-                            tick={{fill: "var(--muted-foreground)", fontSize: 11}}
-                            axisLine={{stroke: "var(--border)"}}
-                            interval={0}
-                            tickFormatter={(v: string) => v.length > 12 ? `${v.slice(0, 11)}…` : v}
+            {summary.totals.length > 0 ? (
+                <div className="flex flex-col gap-4">
+                    {summary.totals.map((total, index) => (
+                        <FinancialChart
+                            key={`${total.currencySymbol ?? ""}-${index}`}
+                            total={total}
+                            title={severalCurrencies && total.currencySymbol ? `${rk("charts.financialTitle")} · ${total.currencySymbol}` : rk("charts.financialTitle")}
+                            rk={rk}
                         />
-                        <YAxis
-                            domain={yDomain}
-                            tick={{fill: "var(--muted-foreground)", fontSize: 11}}
-                            axisLine={{stroke: "var(--border)"}}
-                            tickFormatter={(v: number) => formatMoney(v, currency)}
-                            width={72}
-                        />
-                        <ChartTooltip content={<FinancialTooltip currencySymbol={currency} />} cursor={{fill: "var(--muted)", fillOpacity: 0.4}} />
-                        <Bar dataKey="value" radius={[4, 4, 0, 0]}>
-                            {financialData.map((entry) => (
-                                <Cell key={entry.name} fill={entry.fill} />
-                            ))}
-                        </Bar>
-                    </BarChart>
-                </ChartContainer>
-            </div>
+                    ))}
+                </div>
+            ) : null}
 
             <div className="flex flex-col border rounded-lg p-4 gap-y-3">
                 <h3 className="font-medium text-sm text-muted-foreground">{rk("charts.unitsByStatusTitle")}</h3>
@@ -194,9 +213,14 @@ export default function RoiSummaryCharts({summary, resolveLanguageKey}: RoiSumma
                     {rk("charts.totalUnits")}: <span className="text-foreground font-semibold">{statusTotal}</span>
                     {" · "}
                     {rk("projectSummary.roi")}:{" "}
-                    <span className={summary.roiPercent >= 0 ? "text-success font-semibold" : "text-destructive font-semibold"}>
-                        {summary.roiPercent.toFixed(1)}%
-                    </span>
+                    {summary.totals.length === 0 ? "—" : summary.totals.map((total, index) => (
+                        <span key={`${total.currencySymbol ?? ""}-${index}`}>
+                            {index > 0 ? " · " : null}
+                            <span className={total.roiPercent >= 0 ? "text-success font-semibold" : "text-destructive font-semibold"}>
+                                {total.roiPercent.toFixed(1)}%{severalCurrencies && total.currencySymbol ? ` (${total.currencySymbol})` : ""}
+                            </span>
+                        </span>
+                    ))}
                 </p>
             </div>
         </div>

@@ -15,13 +15,16 @@ type InspectionRowMenuExtrasProps = {
 
 export default function InspectionRowMenuExtras({inspection, onAction}: InspectionRowMenuExtrasProps) {
     const {write} = useAccess("inspections");
+    const canStart = useActionAccess("inspections", "start");
+    const canComplete = useActionAccess("inspections", "complete");
     const canReschedule = useActionAccess("inspections", "reschedule");
     const isDeleted = inspection.deletedAt != null || inspection.deletedBy != null;
+    const notStarted = inspection.status === "scheduled" || inspection.status === "rescheduled";
     const showUpdate = !!write && !isDeleted && canUpdateInspectionChecklist(inspection);
-    const showCancel = !!write && !isDeleted && inspection.status === "scheduled";
-    const showStart = !!write && !isDeleted && (inspection.status === "scheduled" || inspection.status === "rescheduled");
-    const showComplete = !!write && !isDeleted && inspection.status === "in_progress";
-    const showReschedule = canReschedule && !isDeleted && (inspection.status === "scheduled" || inspection.status === "rescheduled");
+    const showCancel = !!write && !isDeleted && notStarted;
+    const showStart = canStart && !isDeleted && notStarted;
+    const showComplete = canComplete && !isDeleted && inspection.status === "in_progress";
+    const showReschedule = canReschedule && !isDeleted && notStarted;
 
     return (
         <>

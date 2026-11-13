@@ -7,7 +7,7 @@ import {fetchMediaBytes} from "@coreModule/helpers/media/fetchMediaBytes.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
-import type {RoiProjectSummary, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
+import type {RoiCurrencyTotals, RoiProjectSummary, RoiResponse, RoiUnitBreakdown} from "armonia/src/modules/propertyManagement/api/realEstate/private/roi/roi.response.type.ts";
 
 export type RoiReportPdfLabels = {
     title: string;
@@ -140,10 +140,20 @@ function ensureY(doc: jsPDF, y: number, needMm: number): number {
     return y;
 }
 
-function fmtMoney(n?: number | null, symbol?: string): string {
+function fmtMoney(n?: number | null, symbol?: string, decimals = 2): string {
     if (n === undefined || n === null || !Number.isFinite(n)) return "—";
-    const base = formatNumber(n, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    const base = formatNumber(n, {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
     return symbol ? `${base} ${symbol}` : base;
+}
+
+/** One value per currency (TD-B223), never a sum across them; "—" without any. */
+function perCurrency(totals: RoiCurrencyTotals[], value: (total: RoiCurrencyTotals) => string): string {
+    return totals.length > 0 ? totals.map(value).join("  ·  ") : "—";
+}
+
+/** A currency's ROI, named by its currency once there are several. */
+function fmtCurrencyPct(total: RoiCurrencyTotals, several: boolean): string {
+    return several && total.currencySymbol ? `${fmtPct(total.roiPercent)} (${total.currencySymbol})` : fmtPct(total.roiPercent);
 }
 
 function fmtPct(n?: number | null): string {
@@ -215,16 +225,16 @@ function drawSectionTitle(doc: jsPDF, y: number, title: string): number {
 
 function drawSummary(doc: jsPDF, startY: number, summary: RoiProjectSummary, labels: RoiReportPdfLabels): number {
     let y = drawSectionTitle(doc, startY, `${summary.scopeLabel} — ${labels.summary}`);
-    const currency = summary.baseCurrencySymbol;
+    const several = summary.totals.length > 1;
     const items = [
         {label: labels.projectSummary.totalUnits, value: String(summary.totalUnits)},
         {label: labels.projectSummary.sold, value: String(summary.soldUnits)},
         {label: labels.projectSummary.available, value: String(summary.availableUnits)},
         {label: labels.projectSummary.rented, value: String(summary.rentedUnits)},
-        {label: labels.projectSummary.totalRevenue, value: fmtMoney(summary.totalRevenue, currency)},
-        {label: labels.projectSummary.totalCosts, value: fmtMoney(summary.totalCosts, currency)},
-        {label: labels.projectSummary.netProfit, value: fmtMoney(summary.netProfit, currency)},
-        {label: labels.projectSummary.roi, value: fmtPct(summary.roiPercent)},
+        {label: labels.projectSummary.totalRevenue, value: perCurrency(summary.totals, (total) => fmtMoney(total.totalRevenue, total.currencySymbol, total.decimals))},
+        {label: labels.projectSummary.totalCosts, value: perCurrency(summary.totals, (total) => fmtMoney(total.totalCosts, total.currencySymbol, total.decimals))},
+        {label: labels.projectSummary.netProfit, value: perCurrency(summary.totals, (total) => fmtMoney(total.netProfit, total.currencySymbol, total.decimals))},
+        {label: labels.projectSummary.roi, value: perCurrency(summary.totals, (total) => fmtCurrencyPct(total, several))},
         {label: labels.projectSummary.averageRoi, value: fmtPct(summary.averageRoiPercent)},
     ];
 
@@ -291,7 +301,7 @@ function drawFinancialChart(
     w: number,
     h: number,
     title: string,
-    summary: RoiProjectSummary,
+    total: RoiCurrencyTotals,
     labels: RoiReportPdfLabels,
 ): void {
     drawPanelBorder(doc, x, y, w, h, title);
@@ -309,12 +319,12 @@ function drawFinancialChart(
     const barAreaH = Math.max(baseline - barAreaTop, 8);
 
     const bars = [
-        {label: labels.projectSummary.totalRevenue, value: Math.max(0, summary.totalRevenue), color: CHART_GREEN},
-        {label: labels.projectSummary.totalCosts, value: Math.max(0, summary.totalCosts), color: CHART_RED},
+        {label: labels.projectSummary.totalRevenue, value: Math.max(0, total.totalRevenue), color: CHART_GREEN},
+        {label: labels.projectSummary.totalCosts, value: Math.max(0, total.totalCosts), color: CHART_RED},
         {
             label: labels.projectSummary.netProfit,
-            value: summary.netProfit,
-            color: summary.netProfit >= 0 ? CHART_GREEN : CHART_RED,
+            value: total.netProfit,
+            color: total.netProfit >= 0 ? CHART_GREEN : CHART_RED,
         },
     ];
     const maxVal = Math.max(...bars.map((b) => Math.abs(b.value)), 1);
@@ -342,7 +352,7 @@ function drawFinancialChart(
         doc.setFont("helvetica", "normal");
         doc.setFontSize(5);
         doc.setTextColor(0, 0, 0);
-        const valLines = doc.splitTextToSize(fmtMoney(bar.value, summary.baseCurrencySymbol), slotW - 3);
+        const valLines = doc.splitTextToSize(fmtMoney(bar.value, total.currencySymbol, total.decimals), slotW - 3);
         const valBlockH = valLines.length * 2.4;
         const valY = Math.max(y + topInset + 1, barTop - valBlockH - 0.5);
         doc.text(valLines, cx, valY, {align: "center", baseline: "top"});
@@ -406,7 +416,8 @@ function drawStatusChart(
     doc.setTextColor(0, 0, 0);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(6.5);
-    const footer = `${labels.projectSummary.totalUnits}: ${summary.totalUnits}  ·  ${labels.projectSummary.roi}: ${fmtPct(summary.roiPercent)}`;
+    const several = summary.totals.length > 1;
+    const footer = `${labels.projectSummary.totalUnits}: ${summary.totalUnits}  ·  ${labels.projectSummary.roi}: ${perCurrency(summary.totals, (total) => fmtCurrencyPct(total, several))}`;
     doc.text(footer, plotX, y + h - 4);
 }
 
@@ -421,7 +432,13 @@ function drawSummaryCharts(
     y = ensureY(doc, y, panelH + 2);
     const gap = 4;
     const panelW = (pageInnerWidth() - gap) / 2;
-    drawFinancialChart(doc, MM_MARGIN, y, panelW, panelH, labels.charts.financialTitle, summary, labels);
+    // One financial chart per currency, side by side in the left half (TD-B223); none without sales or costs.
+    const totals = summary.totals;
+    const chartW = totals.length > 0 ? (panelW - gap * (totals.length - 1)) / totals.length : 0;
+    totals.forEach((total, index) => {
+        const title = totals.length > 1 && total.currencySymbol ? `${labels.charts.financialTitle} · ${total.currencySymbol}` : labels.charts.financialTitle;
+        drawFinancialChart(doc, MM_MARGIN + index * (chartW + gap), y, chartW, panelH, title, total, labels);
+    });
     drawStatusChart(
         doc,
         MM_MARGIN + panelW + gap,
@@ -445,7 +462,7 @@ function drawUnitRows(doc: jsPDF, startY: number, units: RoiUnitBreakdown[], col
             [unit.unitName, unit.unitNumber].filter(Boolean).join("\n"),
             statusLabel(unit.status),
             unit.salePrice !== undefined ? fmtMoney(unit.salePrice, unit.saleCurrencySymbol) : "—",
-            fmtMoney(unit.totalCosts, unit.costCurrencySymbol),
+            unit.costs.length > 0 ? unit.costs.map((cost) => fmtMoney(cost.amount, cost.currencySymbol, cost.decimals)).join("\n") : "—",
             unit.netProfit !== undefined ? fmtMoney(unit.netProfit, unit.saleCurrencySymbol) : "—",
             fmtPct(unit.roiPercent),
             unit.monthlyRent !== undefined ? fmtMoney(unit.monthlyRent) : "—",
