@@ -130,10 +130,20 @@ const InspectionChecklistTemplateSheetViewLazy = lazy(
         ),
 );
 
+/** Sheets a record shared in chat opens by token, named by each sheet view's `sheetWidget` (D162). */
+const AdCampaignSheetViewLazy = lazy(() => import("@propertyManagementModule/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx"));
+const LeadSheetViewLazy = lazy(() => import("@propertyManagementModule/clients/panel/private/leads/center/sheetView/leadSheetView.tsx"));
+const AdCampaignTemplateSheetViewLazy = lazy(() => import("@propertyManagementModule/clients/panel/private/adCampaignTemplates/center/sheetView/adCampaignTemplateSheetView.tsx"));
+const AdCampaignRecipientSheetViewLazy = lazy(() => import("@propertyManagementModule/clients/panel/private/adCampaigns/recipients/center/sheetView/adCampaignRecipientSheetView.tsx"));
+
 const propertyManagementWidgetContribution: WidgetContribution = {
     id: "propertyManagement",
     order: 20,
     widgets: {
+        "#AdCampaignSheetView": AdCampaignSheetViewLazy,
+        "#LeadSheetView": LeadSheetViewLazy,
+        "#AdCampaignTemplateSheetView": AdCampaignTemplateSheetViewLazy,
+        "#AdCampaignRecipientSheetView": AdCampaignRecipientSheetViewLazy,
         "#FormFloorPolygon": FormFloorPolygon,
         "#FormEdificePolygon": FormEdificePolygon,
         "#FormUnitPolygon": FormUnitPolygon,
