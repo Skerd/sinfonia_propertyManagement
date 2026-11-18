@@ -27,7 +27,7 @@ import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggrega
 import {DATE_FORMATS, addCalendarDays, companyToday, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
 
@@ -304,10 +304,10 @@ function AgentReportPage({
                                             }
                                         </TableCell>
                                         <TableCell className="text-right text-sm tabular-nums">
-                                            {entry.totalCommissionsPaid > 0 ? formatNumber(entry.totalCommissionsPaid, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "—"}
+                                            {formatRevenueByCurrencyLines(entry.commissionsPaid)}
                                         </TableCell>
                                         <TableCell className="text-right text-sm tabular-nums">
-                                            {entry.totalCommissionsPending > 0 ? formatNumber(entry.totalCommissionsPending, {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "—"}
+                                            {formatRevenueByCurrencyLines(entry.commissionsPending)}
                                         </TableCell>
                                         <TableCell className="text-right text-sm">
                                             {entry.averageCommissionRate > 0 ? `${entry.averageCommissionRate}%` : "—"}

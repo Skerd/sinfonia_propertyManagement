@@ -5,8 +5,8 @@
 import {jsPDF} from "jspdf";
 import {fetchMediaBytes} from "@coreModule/helpers/media/fetchMediaBytes.ts";
 import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import type {BasicCompanyInfoFormResponseType} from "armonia/src/modules/core/api/company/private/company/company.dto.ts";
 import type {AgentReportEntry, AgentReportResponseType} from "armonia/src/modules/propertyManagement/api/realEstate/private/agentReport/agentReport.response.type.ts";
 
@@ -113,10 +113,6 @@ function ensureY(doc: jsPDF, y: number, needMm: number): number {
     return y;
 }
 
-function fmtMoney(n: number): string {
-    if (!Number.isFinite(n) || n === 0) return "—";
-    return formatNumber(n, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-}
 
 function agentName(entry: AgentReportEntry): string {
     const name = getName(entry.agent);
@@ -225,8 +221,8 @@ function drawEntryRows(
             String(entry.totalReservations),
             String(entry.convertedReservations),
             entry.conversionRate > 0 ? `${entry.conversionRate}%` : "—",
-            fmtMoney(entry.totalCommissionsPaid),
-            fmtMoney(entry.totalCommissionsPending),
+            formatRevenueByCurrencyLines(entry.commissionsPaid),
+            formatRevenueByCurrencyLines(entry.commissionsPending),
             entry.averageCommissionRate > 0 ? `${entry.averageCommissionRate}%` : "—",
         ];
         const lineSets = cells.map((cell, idx) => doc.splitTextToSize(cell, ws[idx]! - PAD * 2));
@@ -269,7 +265,8 @@ async function buildAgentReportPdf(
     let y = await drawHeader(doc, labels.title, branding);
 
     const periodFrom = formatDate(result.period.from, {timeZone: timezone});
-    const periodTo = formatDate(result.period.to, {timeZone: timezone});
+    // `period.to` is the start of the day after the range, so the last day is the instant before it (as on the page).
+    const periodTo = formatDate(new Date(result.period.to).getTime() - 1, {timeZone: timezone});
     y = drawMeta(doc, y, [
         {label: labels.period, value: `${periodFrom} – ${periodTo}`},
         {label: labels.generatedAt, value: formatDate(new Date().toISOString(), {timeZone: timezone}) + (timezone ? ` (${timezone})` : "")},
