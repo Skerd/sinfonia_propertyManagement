@@ -21,7 +21,7 @@
   "saleCurrency": "Valuta di vendita",
   "localDiscount": "Sconto locale",
   "saleExchangeRate": "Tasso prezzo di listino → valuta di vendita",
-  "reservationConvertedAmount": "Prenotazione applicata (valuta dell'unità)",
+  "reservationConvertedAmount": "Prenotazione applicata (valuta della vendita)",
   "reservationDepositCurrency": "Valuta del deposito di prenotazione",
   "reservationExchangeRate": "Tasso prenotazione → valuta di vendita",
   "parties": "Parti",

@@ -21,7 +21,7 @@
   "saleCurrency": "Devise de vente",
   "localDiscount": "Remise locale",
   "saleExchangeRate": "Taux prix affiché → devise de vente",
-  "reservationConvertedAmount": "Réservation appliquée (devise de l'unité)",
+  "reservationConvertedAmount": "Réservation appliquée (devise de la vente)",
   "reservationDepositCurrency": "Devise de l'acompte de réservation",
   "reservationExchangeRate": "Taux réservation → devise de vente",
   "parties": "Parties",

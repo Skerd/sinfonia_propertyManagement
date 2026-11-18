@@ -21,7 +21,7 @@
   "saleCurrency": "Sale currency",
   "localDiscount": "Local discount",
   "saleExchangeRate": "List price → sale currency rate",
-  "reservationConvertedAmount": "Reservation applied (unit currency)",
+  "reservationConvertedAmount": "Reservation applied (sale currency)",
   "reservationDepositCurrency": "Reservation deposit currency",
   "reservationExchangeRate": "Reservation → sale currency rate",
   "parties": "Parties",

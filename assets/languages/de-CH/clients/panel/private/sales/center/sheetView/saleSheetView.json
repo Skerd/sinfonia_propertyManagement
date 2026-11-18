@@ -21,7 +21,7 @@
   "saleCurrency": "Verkaufswährung",
   "localDiscount": "Lokaler Rabatt",
   "saleExchangeRate": "Listenpreis → Verkaufswährungskurs",
-  "reservationConvertedAmount": "Reservation angerechnet (Einheitenwährung)",
+  "reservationConvertedAmount": "Reservation angerechnet (Verkaufswährung)",
   "reservationDepositCurrency": "Währung der Reservationsanzahlung",
   "reservationExchangeRate": "Reservation → Verkaufswährungskurs",
   "parties": "Parteien",
