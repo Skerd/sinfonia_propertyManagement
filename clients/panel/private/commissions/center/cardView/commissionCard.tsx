@@ -21,6 +21,7 @@ import {
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
 import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
+import {getName} from "@coreModule/helpers/general/names.ts";
 import type {ReactNode, RefObject} from "react";
 
 function commissionSourceBadgeClass(sourceType: string): string {
@@ -199,7 +200,8 @@ function CommissionCard({
                                             : "fields.!enums.sourceType.sale",
                                     )}
                                     path={entity.sourceType === "reservation" ? "reservation" : "sale"}
-                                    value={entity.sale?.name ?? entity.reservation?.name}
+                                    // Named by the buyer or client; the SALE-/RES- code only when the person is not readable (UX-01).
+                                    value={getName(entity.sale?.buyer) || getName(entity.reservation?.client) || entity.sale?.name || entity.reservation?.name}
                                 />
                             </div>
                         </EntityCard.Body>
