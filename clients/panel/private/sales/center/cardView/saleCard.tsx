@@ -148,7 +148,8 @@ function SaleCard({
                             label={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                             tooltip={entity.unit?.unitType?.name ?? resolveLanguageKey("unit")}
                             path="unit"
-                            value={entity.unit?.name ?? entity.unit?.unitNumber}
+                            // Unit names repeat across buildings ("A1-02 Floor 1" in Aria A, D and E), so the building goes with it.
+                            value={[entity.unit?.name ?? entity.unit?.unitNumber, entity.edifice?.name].filter(Boolean).join(" · ")}
                         />
                         <EntityCardRow
                             icon={IconCalendarClock}

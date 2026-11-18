@@ -226,7 +226,8 @@ function ReservationCard({
                                 label={readableUnit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 tooltip={readableUnit?.unitType?.name ?? resolveLanguageKey("unit")}
                                 path="unit"
-                                value={readableUnit?.name ?? readableUnit?.unitNumber}
+                                // Unit names repeat across buildings, so the building goes with it.
+                                value={[readableUnit?.name ?? readableUnit?.unitNumber, readableUnit ? entity.edifice?.name : undefined].filter(Boolean).join(" · ")}
                             />
                             <EntityCardRow
                                 icon={IconCalendarClock}
