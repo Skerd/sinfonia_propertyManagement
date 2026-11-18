@@ -28,6 +28,12 @@ import {hasAnyAccessRead} from "@propertyManagementModule/helpers/access/aggrega
 
 type DashboardProps = WithLanguageType & WithAxiosType<DashboardFormResponseType, DashboardFormType>
 
+/**
+ * Every card on the page (KPI tiles, charts, project and building cards) gets the squarer corner of the group panels,
+ * so tiles and panels read as one grid. Scoped here so other pages keep the platform's default card radius.
+ */
+const SQUARE_CARDS = "[&_[data-slot=card]]:rounded-sm";
+
 function Dashboard({
     resolveLanguageKey,
     data: dashboardData,
@@ -116,7 +122,7 @@ function Dashboard({
                             <TabsTrigger className="hover:cursor-pointer" value='workflows'>{resolveLanguageKey("tabs.workflows")}</TabsTrigger>
                         </TabsList>
                     </div>
-                    <div className="flex-full" ref={ref}>
+                    <div className={`flex-full ${SQUARE_CARDS}`} ref={ref}>
                         <TabsContent value='overview'>
                             <DashboardOverview
                                 dashboardData={dashboardData}

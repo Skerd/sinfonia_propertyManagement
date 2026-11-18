@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {kpiCount} from "@propertyManagementModule/helpers/dashboard/kpiValue.ts";
 import {
-  GRID_KPI,
   DASHBOARD_TAB_STACK,
   DASHBOARD_TAB_INTRO,
   DASHBOARD_ENTITY_GRID,
@@ -14,7 +13,7 @@ import {ActionException} from "armonia/src/modules/core/types";
 import type {TableResponse} from "armonia/src/modules/core/types/shared.types.ts";
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import { DashboardProjectCard } from "@propertyManagementModule/components/custom/dashboard/projectCard.tsx";
-import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
+import { DashboardKpiGrid, DashboardKpiSection, DashboardSectionGrid } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import { IconBuilding, IconStack, IconTrendingUp } from "@tabler/icons-react";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
@@ -75,28 +74,29 @@ function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
         <p className="text-xs text-muted-foreground">{resolveLanguageKey("description")}</p>
       </div>
 
-      <DashboardKpiSection
-        title={resolveLanguageKey("structureSection")}
-        description={resolveLanguageKey("structureSectionDesc")}
-      >
-        <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalProjects")} value={formatNumber(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuilding} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalEdifices")} value={formatNumber(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuilding} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalFloors")} value={formatNumber(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-        </div>
-      </DashboardKpiSection>
-
-      <DashboardKpiSection
-        title={resolveLanguageKey("performanceSection")}
-        description={resolveLanguageKey("performanceSectionDesc")}
-      >
-        <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("unitsSold")} value={formatNumber(unitsSold)} subtitle={resolveLanguageKey("unitsSoldDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("avgUnitsPerProject")} value={avgUnitsPerProject} subtitle={resolveLanguageKey("avgUnitsPerProjectDesc")} icon={IconStack} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={IconBuilding} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
-        </div>
-      </DashboardKpiSection>
+      <DashboardSectionGrid>
+        <DashboardKpiSection
+          title={resolveLanguageKey("structureSection")}
+          description={resolveLanguageKey("structureSectionDesc")}
+        >
+          <DashboardKpiGrid>
+            <KpiCard compact title={resolveLanguageKey("totalProjects")} {...kpiCount(totalProjects)} subtitle={resolveLanguageKey("totalProjectsDesc")} icon={IconBuilding} href={kpi.kpiTotalProjects(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("totalEdifices")} {...kpiCount(totalEdifices)} subtitle={resolveLanguageKey("totalEdificesDesc")} icon={IconBuilding} href={kpi.kpiTotalEdifices(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("totalFloors")} {...kpiCount(totalFloors)} subtitle={resolveLanguageKey("totalFloorsDesc")} icon={IconStack} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("totalUnits")} {...kpiCount(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+          </DashboardKpiGrid>
+        </DashboardKpiSection>
+        <DashboardKpiSection
+          title={resolveLanguageKey("performanceSection")}
+          description={resolveLanguageKey("performanceSectionDesc")}
+        >
+          <DashboardKpiGrid>
+            <KpiCard compact title={resolveLanguageKey("unitsSold")} {...kpiCount(unitsSold)} subtitle={resolveLanguageKey("unitsSoldDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("avgUnitsPerProject")} value={avgUnitsPerProject} subtitle={resolveLanguageKey("avgUnitsPerProjectDesc")} icon={IconStack} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("avgFloorsPerEdifice")} value={avgFloorsPerEdifice} subtitle={resolveLanguageKey("avgFloorsPerEdificeDesc")} icon={IconBuilding} href={kpi.kpiTotalFloors(ctx)} linkLabel={link} />
+          </DashboardKpiGrid>
+        </DashboardKpiSection>
+      </DashboardSectionGrid>
 
       <DashboardKpiSection
         title={resolveLanguageKey("projectCards")}

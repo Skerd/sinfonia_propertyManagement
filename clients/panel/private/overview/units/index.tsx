@@ -1,8 +1,6 @@
 import { compose } from "redux";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
-import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
+import {kpiCount, kpiMoney} from "@propertyManagementModule/helpers/dashboard/kpiValue.ts";
 import {
-  GRID_KPI,
   DASHBOARD_TAB_STACK,
   DASHBOARD_TAB_INTRO,
 } from "@coreModule/components/entityPage/list/entityCard.constants.ts";
@@ -12,7 +10,7 @@ import {
   StatusChart,
   unitsByStatusToChartData,
 } from "@propertyManagementModule/components/custom/dashboard/StatusChart.tsx";
-import { DashboardKpiSection } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
+import { DashboardKpiGrid, DashboardKpiSection, DashboardSectionGrid } from "@propertyManagementModule/components/custom/dashboard/DashboardKpiSection.tsx";
 import {IconKey, IconReceipt, IconStack2, IconTrendingUp, IconUsers, IconWallet} from "@tabler/icons-react";
 import AllUnits from "@propertyManagementModule/clients/panel/private/units";
 import {ErrorView} from "@coreModule/components/custom/errors/errorView.tsx";
@@ -72,41 +70,41 @@ function UnitsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh
 
       <StatusChart data={statusChartData} title={resolveLanguageKey("unitStatusBreakdown")} />
 
-      <DashboardKpiSection
-        title={resolveLanguageKey("statusSection")}
-        description={resolveLanguageKey("statusSectionDesc")}
-      >
-        <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("available")} value={formatNumber(available)} subtitle={resolveLanguageKey("availableDesc")} icon={IconStack2} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("reserved")} value={formatNumber(reserved)} subtitle={resolveLanguageKey("reservedDesc")} icon={IconUsers} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("sold")} value={formatNumber(sold)} subtitle={resolveLanguageKey("soldDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("leased")} value={formatNumber(leased)} subtitle={resolveLanguageKey("leasedDesc")} icon={IconKey} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
-        </div>
-      </DashboardKpiSection>
-
-      <DashboardKpiSection
-        title={resolveLanguageKey("portfolioSection")}
-        description={resolveLanguageKey("portfolioSectionDesc")}
-      >
-        <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("unavailable")} value={formatNumber(unavailable)} subtitle={resolveLanguageKey("unavailableDesc")} icon={IconStack2} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("inventoryValue")} value={formatRevenueByCurrencyLines(summary?.inventoryValue)} subtitle={resolveLanguageKey("inventoryValueDesc")} icon={IconWallet} href={kpi.kpiInventoryValue(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("activeReservations")} value={formatNumber(activeReservations)} subtitle={resolveLanguageKey("activeReservationsDesc")} icon={IconUsers} href={kpi.kpiActiveReservations(ctx)} linkLabel={link} />
-        </div>
-      </DashboardKpiSection>
-
-      <DashboardKpiSection
-        title={resolveLanguageKey("costsSection")}
-        description={resolveLanguageKey("costsSectionDesc")}
-      >
-        <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("verifiedPaidCosts")} value={formatRevenueByCurrencyLines(summary?.verifiedPaidUnitCosts)} subtitle={resolveLanguageKey("verifiedPaidCostsDesc")} icon={IconReceipt} href={kpi.kpiVerifiedPaidCosts(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("verifiedOutstandingCosts")} value={formatRevenueByCurrencyLines(summary?.verifiedOutstandingUnitCosts)} subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")} icon={IconReceipt} variant="warning" href={kpi.kpiVerifiedOutstandingCosts(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalUnitCostDocuments")} value={formatNumber(unitCostDocsCount)} subtitle={resolveLanguageKey("totalUnitCostDocumentsShortDesc")} icon={IconReceipt} href={kpi.kpiTotalUnitCostDocuments(ctx)} linkLabel={link} />
-        </div>
-      </DashboardKpiSection>
+      <DashboardSectionGrid>
+        <DashboardKpiSection
+          title={resolveLanguageKey("statusSection")}
+          description={resolveLanguageKey("statusSectionDesc")}
+        >
+          <DashboardKpiGrid>
+            <KpiCard compact title={resolveLanguageKey("totalUnits")} {...kpiCount(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("available")} {...kpiCount(available)} subtitle={resolveLanguageKey("availableDesc")} icon={IconStack2} variant="primary" href={kpi.kpiUnitsAvailable(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("reserved")} {...kpiCount(reserved)} subtitle={resolveLanguageKey("reservedDesc")} icon={IconUsers} variant="warning" href={kpi.kpiUnitsReserved(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("sold")} {...kpiCount(sold)} subtitle={resolveLanguageKey("soldDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiUnitsSold(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("leased")} {...kpiCount(leased)} subtitle={resolveLanguageKey("leasedDesc")} icon={IconKey} href={kpi.kpiUnitsRented(ctx)} linkLabel={link} />
+          </DashboardKpiGrid>
+        </DashboardKpiSection>
+        <DashboardKpiSection
+          title={resolveLanguageKey("portfolioSection")}
+          description={resolveLanguageKey("portfolioSectionDesc")}
+        >
+          <DashboardKpiGrid>
+            <KpiCard compact title={resolveLanguageKey("unavailable")} {...kpiCount(unavailable)} subtitle={resolveLanguageKey("unavailableDesc")} icon={IconStack2} variant="danger" href={kpi.kpiUnitsUnavailable(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("occupancyRate")} value={`${occupancyRatePercent.toFixed(1)}%`} subtitle={resolveLanguageKey("occupancyRateDesc")} icon={IconTrendingUp} variant="success" href={kpi.kpiOccupancyRate(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("inventoryValue")} {...kpiMoney(summary?.inventoryValue)} subtitle={resolveLanguageKey("inventoryValueDesc")} icon={IconWallet} href={kpi.kpiInventoryValue(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("activeReservations")} {...kpiCount(activeReservations)} subtitle={resolveLanguageKey("activeReservationsDesc")} icon={IconUsers} href={kpi.kpiActiveReservations(ctx)} linkLabel={link} />
+          </DashboardKpiGrid>
+        </DashboardKpiSection>
+        <DashboardKpiSection
+          title={resolveLanguageKey("costsSection")}
+          description={resolveLanguageKey("costsSectionDesc")}
+        >
+          <DashboardKpiGrid>
+            <KpiCard compact title={resolveLanguageKey("verifiedPaidCosts")} {...kpiMoney(summary?.verifiedPaidUnitCosts)} subtitle={resolveLanguageKey("verifiedPaidCostsDesc")} icon={IconReceipt} href={kpi.kpiVerifiedPaidCosts(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("verifiedOutstandingCosts")} {...kpiMoney(summary?.verifiedOutstandingUnitCosts)} subtitle={resolveLanguageKey("verifiedOutstandingCostsDesc")} icon={IconReceipt} variant="warning" href={kpi.kpiVerifiedOutstandingCosts(ctx)} linkLabel={link} />
+            <KpiCard compact title={resolveLanguageKey("totalUnitCostDocuments")} {...kpiCount(unitCostDocsCount)} subtitle={resolveLanguageKey("totalUnitCostDocumentsShortDesc")} icon={IconReceipt} href={kpi.kpiTotalUnitCostDocuments(ctx)} linkLabel={link} />
+          </DashboardKpiGrid>
+        </DashboardKpiSection>
+      </DashboardSectionGrid>
 
       <DashboardKpiSection
         title={resolveLanguageKey("unitsList")}
