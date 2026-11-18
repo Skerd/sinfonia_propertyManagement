@@ -46,3 +46,22 @@ export function formatCompactCurrency(value: number, symbol: string = DEFAULT_CU
     if (magnitude >= 1_000) return `${sign}${(magnitude / 1_000).toFixed(0)}K ${symbol}`;
     return `${sign}${magnitude} ${symbol}`;
 }
+
+/** One amount in one currency: the statistics keep money per currency and never add two together (GLB-08). */
+export type CurrencyAmount = {value: number; symbol: string};
+
+type MoneyByCurrencyRow = {currency?: {symbol?: string; abbreviation?: string; name?: string}; value?: number};
+
+/** Statistics `{currency, value}` rows → one amount per currency, labelled by symbol, else code, else name. */
+export function toCurrencyAmounts(rows: MoneyByCurrencyRow[] | undefined): CurrencyAmount[] {
+    return (rows ?? []).map((row) => ({
+        value: row.value ?? 0,
+        symbol: row.currency?.symbol || row.currency?.abbreviation || row.currency?.name || "",
+    }));
+}
+
+/** One compact amount per currency ("5.8M € · 120K CHF"); "—" when there is none (UX-07). */
+export function formatCompactCurrencies(amounts: CurrencyAmount[]): string {
+    if (amounts.length === 0) return "—";
+    return amounts.map((amount) => formatCompactCurrency(amount.value, amount.symbol).trim()).join(" · ");
+}

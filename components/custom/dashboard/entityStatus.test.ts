@@ -6,6 +6,7 @@
 import {describe, expect, it} from "vitest";
 import {
     formatCompactCurrency,
+    formatCompactCurrencies,
     unitsByStatusToEntityStats,
 } from "@propertyManagementModule/components/custom/dashboard/entityStatus.types.ts";
 
@@ -59,5 +60,15 @@ describe("formatCompactCurrency", () => {
 
     it("still defaults to € for existing callers", () => {
         expect(formatCompactCurrency(250)).toBe("250 €");
+    });
+});
+
+describe("formatCompactCurrencies (TD-F136)", () => {
+    it("prints one compact amount per currency and never adds them", () => {
+        expect(formatCompactCurrencies([{value: 5_800_000, symbol: "€"}, {value: 120_000, symbol: "CHF"}])).toBe("5.8M € · 120K CHF");
+    });
+
+    it("prints a dash when there is no amount", () => {
+        expect(formatCompactCurrencies([])).toBe("—");
     });
 });

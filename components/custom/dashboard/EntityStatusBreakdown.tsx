@@ -1,8 +1,8 @@
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import TooltipDisplayer from "@coreModule/components/custom/tooltipDisplayer.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
-import type {EntityStatusStats, UnitsByStatusCounts} from "@propertyManagementModule/components/custom/dashboard/entityStatus.types.ts";
-import {formatCompactCurrency} from "@propertyManagementModule/components/custom/dashboard/entityStatus.types.ts";
+import type {CurrencyAmount, EntityStatusStats, UnitsByStatusCounts} from "@propertyManagementModule/components/custom/dashboard/entityStatus.types.ts";
+import {formatCompactCurrencies} from "@propertyManagementModule/components/custom/dashboard/entityStatus.types.ts";
 
 type ResolveLabel = (key: string) => string;
 
@@ -112,8 +112,9 @@ export function EntityStatusBreakdown({
 }: {
     stats: EntityStatusStats;
     resolveLanguageKey: ResolveLabel;
-    totalValue?: number;
-    collectedAmount?: number;
+    /** One amount per currency; never a sum across currencies (UX-07). */
+    totalValue?: CurrencyAmount[];
+    collectedAmount?: CurrencyAmount[];
     footer?: React.ReactNode;
 }) {
     /*
@@ -181,14 +182,14 @@ export function EntityStatusBreakdown({
                     {totalValue != null && (
                         <div>
                             <p className="text-3xs text-muted-foreground">{resolveLanguageKey(LABEL_KEYS.value)}</p>
-                            <p className="font-semibold text-sm text-foreground">{formatCompactCurrency(totalValue)}</p>
+                            <p className="font-semibold text-sm text-foreground">{formatCompactCurrencies(totalValue)}</p>
                         </div>
                     )}
                     {collectedAmount != null && (
                         <div className="text-right">
                             <p className="text-3xs text-muted-foreground">{resolveLanguageKey(LABEL_KEYS.collected)}</p>
                             <p className="font-semibold text-sm text-success">
-                                {formatCompactCurrency(collectedAmount)}
+                                {formatCompactCurrencies(collectedAmount)}
                             </p>
                         </div>
                     )}

@@ -10,7 +10,7 @@ import {cn} from "@coreModule/components/lib/utils.ts";
 import TruncatedValue from "@coreModule/components/viewEngine/widgets/display/truncatedValue.tsx";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityStatusBreakdown} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
-import {unitsByStatusToEntityStats} from "@propertyManagementModule/components/custom/cards/entityStatus.types.ts";
+import {type CurrencyAmount, toCurrencyAmounts, unitsByStatusToEntityStats} from "@propertyManagementModule/components/custom/cards/entityStatus.types.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 
 export interface ProjectStats {
@@ -20,16 +20,15 @@ export interface ProjectStats {
   blocked: number;
   leased: number;
   totalUnits: number;
-  totalValue: number;
-  collectedAmount: number;
+  totalValue: CurrencyAmount[];
+  collectedAmount: CurrencyAmount[];
 }
 
 /** Derive project stats from API Project (statistics). Uses unitsByStatus when present. */
 export function getProjectStatsFromStatistics(project: Project): ProjectStats {
   const stats = project.statistics;
   const totalUnits = stats?.totalUnits ?? 0;
-  // Same figures as the building cards beside it: listing value and money collected, not the investment.
-  const sum = (entries: {value?: number}[] | undefined) => (entries ?? []).reduce((acc, entry) => acc + (entry?.value ?? 0), 0);
+  // Same figures as the building cards beside it: listing value and money collected, not the investment; per currency.
   const breakdown = unitsByStatusToEntityStats(stats?.unitsByStatus, totalUnits);
   return {
     sold: breakdown.sold,
@@ -38,8 +37,8 @@ export function getProjectStatsFromStatistics(project: Project): ProjectStats {
     blocked: breakdown.blocked,
     leased: breakdown.leased,
     totalUnits,
-    totalValue: sum(stats?.totalValue),
-    collectedAmount: sum(stats?.collectedAmount),
+    totalValue: toCurrencyAmounts(stats?.totalValue),
+    collectedAmount: toCurrencyAmounts(stats?.collectedAmount),
   };
 }
 

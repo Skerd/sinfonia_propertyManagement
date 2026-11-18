@@ -1,12 +1,12 @@
 import {compose} from 'redux';
 import {IconBuilding, IconMapPin} from '@tabler/icons-react';
-import type {Edifice, EdificeMoneyByCurrency} from 'armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts';
+import type {Edifice} from 'armonia/src/modules/propertyManagement/api/realEstate/private/edifice/edifice.dto.ts';
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import TruncatedValue from "@coreModule/components/viewEngine/widgets/display/truncatedValue.tsx";
 import {EntityCardShell} from "@propertyManagementModule/components/custom/cards/EntityCardShell.tsx";
 import {EntityStatusBreakdown} from "@propertyManagementModule/components/custom/cards/EntityStatusBreakdown.tsx";
-import {unitsByStatusToEntityStats} from "@propertyManagementModule/components/custom/cards/entityStatus.types.ts";
+import {type CurrencyAmount, toCurrencyAmounts, unitsByStatusToEntityStats} from "@propertyManagementModule/components/custom/cards/entityStatus.types.ts";
 
 export interface EdificeStats {
     sold: number;
@@ -15,12 +15,8 @@ export interface EdificeStats {
     blocked: number;
     leased: number;
     totalUnits: number;
-    totalValue: number;
-    collectedAmount: number;
-}
-
-function sumMoneyByCurrency(entries: EdificeMoneyByCurrency[] | undefined): number {
-    return (entries ?? []).reduce((acc, r) => acc + (r?.value ?? 0), 0);
+    totalValue: CurrencyAmount[];
+    collectedAmount: CurrencyAmount[];
 }
 
 export function getEdificeStatsFromStatistics(edifice: Edifice): EdificeStats {
@@ -29,8 +25,9 @@ export function getEdificeStatsFromStatistics(edifice: Edifice): EdificeStats {
     const breakdown = unitsByStatusToEntityStats(stats?.unitsByStatus, totalUnits);
     return {
         ...breakdown,
-        totalValue: sumMoneyByCurrency(stats?.totalValue),
-        collectedAmount: sumMoneyByCurrency(stats?.collectedAmount),
+        // Per currency; two currencies are never added together (UX-07, GLB-08).
+        totalValue: toCurrencyAmounts(stats?.totalValue),
+        collectedAmount: toCurrencyAmounts(stats?.collectedAmount),
     };
 }
 
