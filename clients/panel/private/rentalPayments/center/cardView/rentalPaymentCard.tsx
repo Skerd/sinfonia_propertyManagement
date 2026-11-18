@@ -7,11 +7,7 @@ import {IconCalendar, IconCurrencyDollar, IconDoor} from "@tabler/icons-react";
 import RentalPaymentSheetView, {
     rentalPaymentTitle,
 } from "@propertyManagementModule/clients/panel/private/rentalPayments/center/sheetView/rentalPaymentSheetView.tsx";
-import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
-import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
-import ManualRentClientEmails from "@propertyManagementModule/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx";
-import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
-import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
+import {RentalPaymentActionDialogs, RentalPaymentMenuItems} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/rentalPaymentSheetActions.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
@@ -74,41 +70,19 @@ function RentalPaymentCard({
                 fetchId,
                 actionMenuAllowCustomChildren: true,
                 onActionMenuAction: setAction,
-                actionMenuChildren: (
-                    <>
-                        <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
-                        <WaiveRentalPayment payment={entity} onAction={setAction} />
-                        <ManualRentClientEmails payment={entity} />
-                    </>
-                ),
+                actionMenuChildren: <RentalPaymentMenuItems payment={entity} onAction={setAction} />,
             })}
             extraDialogs={({action, setAction, entity, setEntity}) => (
-                <>
-                    {action === MARK_RENTAL_PAYMENT_PAID_ACTION && (
-                        <MarkRentalPaymentPaidDialog
-                            open
-                            onClose={() => setAction("")}
-                            payment={entity}
-                            onSuccess={(updated?: RentalPayment) => {
-                                if (updated) setEntity({...entity, ...updated});
-                                onActionSuccess?.(updated);
-                                setAction("");
-                            }}
-                        />
-                    )}
-                    {action === WAIVE_RENTAL_PAYMENT_ACTION && (
-                        <WaiveRentalPaymentDialog
-                            open
-                            onClose={() => setAction("")}
-                            payment={entity}
-                            onSuccess={(updated?: RentalPayment) => {
-                                if (updated) setEntity({...entity, ...updated});
-                                onActionSuccess?.(updated);
-                                setAction("");
-                            }}
-                        />
-                    )}
-                </>
+                <RentalPaymentActionDialogs
+                    action={action}
+                    payment={entity}
+                    onClose={() => setAction("")}
+                    onSuccess={(updated?: RentalPayment) => {
+                        if (updated) setEntity({...entity, ...updated});
+                        onActionSuccess?.(updated);
+                        setAction("");
+                    }}
+                />
             )}
         >
             {({entity, setAction}) => {
@@ -134,9 +108,7 @@ function RentalPaymentCard({
                                 />
                             }
                         >
-                            <MarkRentalPaymentPaid payment={entity} onAction={setAction} />
-                            <WaiveRentalPayment payment={entity} onAction={setAction} />
-                            <ManualRentClientEmails payment={entity} />
+                            <RentalPaymentMenuItems payment={entity} onAction={setAction} />
                         </EntityCard.Header>
                         <EntityCard.Body>
                             <EntityCardRow

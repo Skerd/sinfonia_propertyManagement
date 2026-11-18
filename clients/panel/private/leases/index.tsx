@@ -6,16 +6,13 @@ import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilt
 import {IconFilePlus} from "@tabler/icons-react";
 import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/private/lease/lease.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
-import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
-import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
-import RecordRentPayment, {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
+import TerminateLease from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
+import MarkDepositPaid from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
+import ReturnDeposit from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
+import RecordRentPayment from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
-import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
-import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
-import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
-import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
 import LeaseCard from "@propertyManagementModule/clients/panel/private/leases/center/cardView/leaseCard.tsx";
+import {LeaseActionDialogs, LeaseTableSheet} from "@propertyManagementModule/clients/panel/private/leases/center/actions/leaseSheetActions.tsx";
 import {
     GRID_COLS_MAX_4,
     GRID_TRANSACTIONAL
@@ -168,21 +165,27 @@ function AllLeases({resolveLanguageKey, unitId, unitName}: AllLeasesProps) {
                     <ReturnDeposit lease={lease} onAction={bindRowAction} />
                 </>
             )}
-            renderFloatingModals={({action, entity, resetAction, listRef}) => {
-                const onSuccess = (updated?: Lease) => {
-                    if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
-                    resetAction();
-                };
-                if (action === TERMINATE_LEASE_ACTION)
-                    return <TerminateLeaseDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
-                if (action === MARK_DEPOSIT_PAID_ACTION)
-                    return <MarkDepositPaidDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
-                if (action === RETURN_DEPOSIT_ACTION)
-                    return <ReturnDepositDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
-                if (action === RECORD_RENT_PAYMENT_ACTION)
-                    return <RecordRentPaymentDialog open onClose={resetAction} lease={entity} onSuccess={onSuccess} />;
-                return null;
-            }}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => (
+                <LeaseActionDialogs
+                    action={action}
+                    lease={entity}
+                    onClose={resetAction}
+                    onSuccess={(updated?: Lease) => {
+                        if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
+                        resetAction();
+                    }}
+                />
+            )}
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
+                <LeaseTableSheet
+                    lease={entity}
+                    open={open}
+                    onClose={onOpenChange}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                    onUpdated={(updated: Lease) => listRef.current?.updateRow?.(updated._id, updated)}
+                />
+            )}
         />
     );
 }

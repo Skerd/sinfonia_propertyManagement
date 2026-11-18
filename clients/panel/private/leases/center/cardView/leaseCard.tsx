@@ -5,15 +5,12 @@ import type {Lease} from "armonia/src/modules/propertyManagement/api/realEstate/
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconCalendar, IconCurrencyDollar, IconDoor} from "@tabler/icons-react";
 import LeaseSheetView from "@propertyManagementModule/clients/panel/private/leases/center/sheetView/leaseSheetView.tsx";
-import TerminateLease, {TERMINATE_LEASE_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
-import MarkDepositPaid, {MARK_DEPOSIT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
-import ReturnDeposit, {RETURN_DEPOSIT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
-import RecordRentPayment, {RECORD_RENT_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
+import TerminateLease from "@propertyManagementModule/clients/panel/private/leases/center/actions/terminate.tsx";
+import MarkDepositPaid from "@propertyManagementModule/clients/panel/private/leases/center/actions/markDepositPaid.tsx";
+import ReturnDeposit from "@propertyManagementModule/clients/panel/private/leases/center/actions/returnDeposit.tsx";
+import RecordRentPayment from "@propertyManagementModule/clients/panel/private/leases/center/actions/recordRentPayment.tsx";
 import ViewLeasePayments from "@propertyManagementModule/clients/panel/private/leases/center/actions/viewPayments.tsx";
-import TerminateLeaseDialog from "@propertyManagementModule/components/custom/leases/terminateLeaseDialog.tsx";
-import MarkDepositPaidDialog from "@propertyManagementModule/components/custom/leases/markDepositPaidDialog.tsx";
-import ReturnDepositDialog from "@propertyManagementModule/components/custom/leases/returnDepositDialog.tsx";
-import RecordRentPaymentDialog from "@propertyManagementModule/components/custom/leases/recordRentPaymentDialog.tsx";
+import {LeaseActionDialogs, LeaseSheetMenuItems} from "@propertyManagementModule/clients/panel/private/leases/center/actions/leaseSheetActions.tsx";
 import EntityCardRow from "@coreModule/components/entityPage/list/card/entityCardRow.tsx";
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import StatusBadge from "@coreModule/components/entityPage/sheet/statusBadge.tsx";
@@ -73,38 +70,20 @@ function LeaseCard({
                 fetchId,
                 actionMenuAllowCustomChildren: true,
                 onActionMenuAction: setAction,
-                actionMenuChildren: (
-                    <>
-                        <ViewLeasePayments lease={entity} />
-                        <TerminateLease lease={entity} onAction={setAction} />
-                        <MarkDepositPaid lease={entity} onAction={setAction} />
-                        <ReturnDeposit lease={entity} onAction={setAction} />
-                    </>
-                ),
+                actionMenuChildren: <LeaseSheetMenuItems lease={entity} onAction={setAction} />,
             })}
-            extraDialogs={({action, setAction, entity, setEntity}) => {
-                const handleSuccess = (updated?: Lease) => {
-                    if (updated) setEntity({...entity, ...updated});
-                    onActionSuccess?.(updated);
-                    setAction("");
-                };
-                return (
-                    <>
-                        {action === TERMINATE_LEASE_ACTION && (
-                            <TerminateLeaseDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
-                        )}
-                        {action === MARK_DEPOSIT_PAID_ACTION && (
-                            <MarkDepositPaidDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
-                        )}
-                        {action === RETURN_DEPOSIT_ACTION && (
-                            <ReturnDepositDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
-                        )}
-                        {action === RECORD_RENT_PAYMENT_ACTION && (
-                            <RecordRentPaymentDialog open onClose={() => setAction("")} lease={entity} onSuccess={handleSuccess} />
-                        )}
-                    </>
-                );
-            }}
+            extraDialogs={({action, setAction, entity, setEntity}) => (
+                <LeaseActionDialogs
+                    action={action}
+                    lease={entity}
+                    onClose={() => setAction("")}
+                    onSuccess={(updated?: Lease) => {
+                        if (updated) setEntity({...entity, ...updated});
+                        onActionSuccess?.(updated);
+                        setAction("");
+                    }}
+                />
+            )}
         >
             {({entity, setAction}) => (
                 <>

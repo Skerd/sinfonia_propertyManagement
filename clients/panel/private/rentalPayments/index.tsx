@@ -6,12 +6,8 @@ import EntityListPage, {EntityListCreateButton, EntityListHeader, type QuickFilt
 import {IconReceiptDollar} from "@tabler/icons-react";
 import type {RentalPayment} from "armonia/src/modules/propertyManagement/api/realEstate/private/rentalPayment/rentalPayment.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
-import MarkRentalPaymentPaid, {MARK_RENTAL_PAYMENT_PAID_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/markPaid.tsx";
-import WaiveRentalPayment, {WAIVE_RENTAL_PAYMENT_ACTION} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/waive.tsx";
-import ManualRentClientEmails from "@propertyManagementModule/clients/panel/private/leases/center/actions/manualRentClientEmails.tsx";
-import MarkRentalPaymentPaidDialog from "@propertyManagementModule/components/custom/rentalPayments/markRentalPaymentPaidDialog.tsx";
-import WaiveRentalPaymentDialog from "@propertyManagementModule/components/custom/rentalPayments/waiveRentalPaymentDialog.tsx";
 import RentalPaymentCard from "@propertyManagementModule/clients/panel/private/rentalPayments/center/cardView/rentalPaymentCard.tsx";
+import {RentalPaymentActionDialogs, RentalPaymentMenuItems, RentalPaymentTableSheet} from "@propertyManagementModule/clients/panel/private/rentalPayments/center/actions/rentalPaymentSheetActions.tsx";
 import {
     GRID_COLS_MAX_4,
     GRID_TRANSACTIONAL
@@ -166,37 +162,29 @@ function AllRentalPayments({resolveLanguageKey, leaseId, leaseName}: AllRentalPa
                 />
             )}
             renderActionMenuChildren={(payment, bindRowAction) => (
-                <>
-                    <MarkRentalPaymentPaid payment={payment} onAction={bindRowAction} />
-                    <WaiveRentalPayment payment={payment} onAction={bindRowAction} />
-                    <ManualRentClientEmails payment={payment} />
-                </>
+                <RentalPaymentMenuItems payment={payment} onAction={bindRowAction} />
             )}
-            renderFloatingModals={({action, entity, resetAction, listRef}) => {
-                const onSuccess = (updated?: RentalPayment) => {
-                    if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
-                    resetAction();
-                };
-                if (action === MARK_RENTAL_PAYMENT_PAID_ACTION)
-                    return (
-                        <MarkRentalPaymentPaidDialog
-                            open
-                            onClose={resetAction}
-                            payment={entity}
-                            onSuccess={onSuccess}
-                        />
-                    );
-                if (action === WAIVE_RENTAL_PAYMENT_ACTION)
-                    return (
-                        <WaiveRentalPaymentDialog
-                            open
-                            onClose={resetAction}
-                            payment={entity}
-                            onSuccess={onSuccess}
-                        />
-                    );
-                return null;
-            }}
+            renderFloatingModals={({action, entity, resetAction, listRef}) => (
+                <RentalPaymentActionDialogs
+                    action={action}
+                    payment={entity}
+                    onClose={resetAction}
+                    onSuccess={(updated?: RentalPayment) => {
+                        if (updated?._id) listRef.current?.updateRow?.(updated._id, updated);
+                        resetAction();
+                    }}
+                />
+            )}
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
+                <RentalPaymentTableSheet
+                    payment={entity}
+                    open={open}
+                    onClose={onOpenChange}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                    onUpdated={(updated: RentalPayment) => listRef.current?.updateRow?.(updated._id, updated)}
+                />
+            )}
         />
     );
 }
