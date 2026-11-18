@@ -393,6 +393,24 @@ const propertyManagementWidgetContribution: WidgetContribution = {
             labelFields: ["name", "title"],
         },
     },
+    /** Create pages an `#ApiSelect` on `<apiUrl>/select` opens in a dialog ("Create new …" below the dropdown). */
+    createPages: {
+        "/api/realEstate/adCampaignTemplate": lazy(() => import("@propertyManagementModule/clients/panel/private/adCampaignTemplates/createAdCampaignTemplate.tsx")),
+        "/api/realEstate/constructor": lazy(() => import("@propertyManagementModule/clients/panel/private/constructors/createConstructor.tsx")),
+        "/api/realEstate/edifice": lazy(() => import("@propertyManagementModule/clients/panel/private/edifices/createEdifice.tsx")),
+        "/api/realEstate/floor": lazy(() => import("@propertyManagementModule/clients/panel/private/floors/createFloor.tsx")),
+        "/api/realEstate/handoverPackage": lazy(() => import("@propertyManagementModule/clients/panel/private/handoverPackages/createHandoverPackage.tsx")),
+        "/api/realEstate/inspectionChecklistTemplate": lazy(() => import("@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/createInspectionChecklistTemplate.tsx")),
+        "/api/realEstate/lead": lazy(() => import("@propertyManagementModule/clients/panel/private/leads/createLead.tsx")),
+        "/api/realEstate/lease": lazy(() => import("@propertyManagementModule/clients/panel/private/leases/createLease.tsx")),
+        "/api/realEstate/project": lazy(() => import("@propertyManagementModule/clients/panel/private/projects/createProject.tsx")),
+        "/api/realEstate/storyType": lazy(() => import("@propertyManagementModule/clients/panel/private/storyTypes/createStoryType.tsx")),
+        "/api/realEstate/unit": lazy(() => import("@propertyManagementModule/clients/panel/private/units/createUnit.tsx")),
+        "/api/realEstate/unit/inspection": lazy(() => import("@propertyManagementModule/clients/panel/private/inspections/createInspection.tsx")),
+        "/api/realEstate/unit/modificationRequest": lazy(() => import("@propertyManagementModule/clients/panel/private/modificationRequests/createModificationRequest.tsx")),
+        "/api/realEstate/unitType": lazy(() => import("@propertyManagementModule/clients/panel/private/unitTypes/createUnitType.tsx")),
+        "/api/realEstate/unitTypeCategory": lazy(() => import("@propertyManagementModule/clients/panel/private/unitTypeCategories/createUnitTypeCategory.tsx")),
+    },
 };
 
 export default propertyManagementWidgetContribution;
