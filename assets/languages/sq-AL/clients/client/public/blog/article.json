@@ -3,5 +3,6 @@
   "backToBlog": "Kthehu te blogu",
   "missingParam": "Lidhja e këtij artikulli mungon.",
   "notFound": "Ky artikull nuk është i disponueshëm.",
-  "loadError": "Artikulli nuk u ngarkua. Ju lutemi provoni përsëri."
+  "loadError": "Artikulli nuk u ngarkua. Ju lutemi provoni përsëri.",
+  "viewImage": "Shiko imazhin {number} nga {total}"
 }

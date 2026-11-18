@@ -1,10 +1,12 @@
-import {type ComponentType, useEffect, useMemo, useRef} from "react";
+import {type ComponentType, useEffect, useMemo, useRef, useState} from "react";
 import {compose} from "redux";
 import {Link, useParams} from "react-router-dom";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import withAxios, {WithAxiosType} from "@coreModule/helpers/hocs/withAxios.tsx";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
+import {Button} from "@coreModule/components/ui/button.tsx";
+import ImageLightbox from "@propertyManagementModule/clients/client/public/shared/imageLightbox.tsx";
 import PublicPageShell from "@propertyManagementModule/clients/client/public/shared/layout/publicPageShell.tsx";
 import PublicSection from "@propertyManagementModule/clients/client/public/shared/layout/publicSection.tsx";
 import PageHeaderSection from "@propertyManagementModule/clients/client/public/shared/sections/pageHeaderSection.tsx";
@@ -65,6 +67,12 @@ function BlogArticlePageInner({
         [post?.imageGallery],
     );
     const published = formatPublishedAt(post?.publishedAt, languageCode);
+    const photos = useMemo(() => (cover ? [cover, ...gallery] : gallery), [cover, gallery]);
+    const galleryStart = cover ? 1 : 0;
+    /** The photo open in the lightbox, by its place among the post's photos. */
+    const [viewing, setViewing] = useState<number | null>(null);
+    const viewLabel = (index: number) =>
+        t("viewImage").replace("{number}", String(index + 1)).replace("{total}", String(photos.length));
 
     return (
         <PublicPageShell nodeId="core:blog-article" nodeName="Blog article">
@@ -102,7 +110,15 @@ function BlogArticlePageInner({
                             {post.authorName ? <span>{post.authorName}</span> : null}
                         </div>
                         {cover ? (
-                            <img src={cover} alt="" className="mt-10 w-full rounded-[5px] object-cover" />
+                            <Button
+                                variant="bare"
+                                type="button"
+                                onClick={() => setViewing(0)}
+                                aria-label={viewLabel(0)}
+                                className="mt-10 block w-full cursor-zoom-in overflow-hidden rounded-[5px]"
+                            >
+                                <img src={cover} alt="" className="block w-full object-cover" />
+                            </Button>
                         ) : null}
                         {post.excerpt ? (
                             <p className={`mt-8 ${PUBLIC_SUBTITLE}`}>{post.excerpt}</p>
@@ -110,8 +126,17 @@ function BlogArticlePageInner({
                         <p className={`mt-8 whitespace-pre-wrap ${PUBLIC_BODY}`}>{post.content}</p>
                         {gallery.length > 0 ? (
                             <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-                                {gallery.map((url) => (
-                                    <img key={url} src={url} alt="" className="w-full rounded-[5px] object-cover" />
+                                {gallery.map((url, index) => (
+                                    <Button
+                                        key={url}
+                                        variant="bare"
+                                        type="button"
+                                        onClick={() => setViewing(galleryStart + index)}
+                                        aria-label={viewLabel(galleryStart + index)}
+                                        className="block w-full cursor-zoom-in overflow-hidden rounded-[5px]"
+                                    >
+                                        <img src={url} alt="" className="block w-full object-cover" />
+                                    </Button>
                                 ))}
                             </div>
                         ) : null}
@@ -121,6 +146,9 @@ function BlogArticlePageInner({
             <PublicSection flush fullBleed>
                 <FooterSection />
             </PublicSection>
+            {viewing !== null ? (
+                <ImageLightbox images={photos} initialIndex={viewing} onClose={() => setViewing(null)} />
+            ) : null}
         </PublicPageShell>
     );
 }

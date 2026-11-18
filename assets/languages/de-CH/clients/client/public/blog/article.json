@@ -3,5 +3,6 @@
   "backToBlog": "Zurück zum Blog",
   "missingParam": "Dieser Artikellink ist unvollständig.",
   "notFound": "Dieser Artikel ist nicht verfügbar.",
-  "loadError": "Der Artikel konnte nicht geladen werden. Bitte erneut versuchen."
+  "loadError": "Der Artikel konnte nicht geladen werden. Bitte erneut versuchen.",
+  "viewImage": "Bild {number} von {total} ansehen"
 }

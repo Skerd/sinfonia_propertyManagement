@@ -3,5 +3,6 @@
   "backToBlog": "Back to blog",
   "missingParam": "This article link is missing.",
   "notFound": "This article is not available.",
-  "loadError": "The article could not be loaded. Please try again."
+  "loadError": "The article could not be loaded. Please try again.",
+  "viewImage": "View image {number} of {total}"
 }
