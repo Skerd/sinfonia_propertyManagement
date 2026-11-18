@@ -9,13 +9,6 @@
     "calendar": "Kalendar pagesash",
     "expenses": "Shpenzime"
   },
-  "expenses": {
-    "summaryTotal": "Shpenzime totale (filtruar)",
-    "summarySuppliers": "Furnitorë unikë",
-    "summaryPeriod": "Periudha",
-    "placeholder": "—",
-    "periodRange": "— → —"
-  },
   "calendar": {
     "kpiPaid": "Të paguara",
     "kpiPending": "Në pritje",

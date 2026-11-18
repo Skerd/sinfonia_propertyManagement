@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Handover packages",
-  "description": "Checklist configs inherited from project, building, floor, and unit",
+  "description": "Handover checklists that a project, building, floor or unit passes down to its sales",
   "help": {
     "ariaLabel": "About Handover packages",
     "title": "About Handover packages",

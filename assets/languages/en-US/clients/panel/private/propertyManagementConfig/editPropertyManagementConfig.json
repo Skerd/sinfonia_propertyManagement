@@ -3,6 +3,7 @@
   "title": "Edit Sales & handover",
   "notifications": "Notifications",
   "generalInfo": "Workflow gates",
+  "visibility": "Visibility",
   "form": {
     "notifyOnSalesLabel": "Notify on sales",
     "notifyOnReservationsLabel": "Notify on reservations",

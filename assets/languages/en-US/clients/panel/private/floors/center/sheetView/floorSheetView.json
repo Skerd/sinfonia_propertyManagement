@@ -42,7 +42,7 @@
     "soldUnits": "Sold Units",
     "leasedUnits": "Leased Units",
     "unavailableUnits": "Unavailable Units",
-    "totalArea": "Total Area",
+    "totalArea": "Total area (units)",
     "averagePrice": "Average Unit Price",
     "netArea": "Net area (units)",
     "sharedArea": "Shared area (units)",

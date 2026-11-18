@@ -7,7 +7,7 @@
   "totalSalesDesc": "Nombre total de ventes",
   "unitsSold": "Unités vendues",
   "unitsSoldDesc": "Unités vendues à ce jour",
-  "allTime": "Depuis le début",
+  "inSelectedPeriod": "Sur la période choisie",
   "currencyCountSuffix": "devises",
   "primaryKpis": "Indicateurs clés",
   "financialKpis": "Indicateurs financiers",

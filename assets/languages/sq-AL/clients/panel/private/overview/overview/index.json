@@ -7,7 +7,7 @@
   "totalSalesDesc": "Numri total i shitjeve",
   "unitsSold": "Njësitë e shitura",
   "unitsSoldDesc": "Njësitë e shitura deri më sot",
-  "allTime": "Gjatë gjithë kohës",
+  "inSelectedPeriod": "Në periudhën e zgjedhur",
   "currencyCountSuffix": "monedhave",
   "primaryKpis": "Metrikat kryesore",
   "financialKpis": "Metrika financiare",

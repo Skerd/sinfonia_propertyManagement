@@ -93,23 +93,28 @@ function FloorCard({
                         <ViewUnitsOverlay onAction={setAction} />
                     </EntityCard.Header>
                     {/* How many units, how big, and how they stand (UX-02); accessibility and exits stay on the sheet. */}
+                    {/* A floor without units or a measured area leaves that row off (UX-02). */}
                     <EntityCard.Body>
-                        <EntityCardRow
-                            icon={IconDoor}
-                            label={resolveLanguageKey("data.units")}
-                            tooltip={resolveLanguageKey("data.units")}
-                            path="totalUnits"
-                            type="number"
-                            value={entity.totalUnits}
-                        />
-                        <EntityCardRow
-                            icon={IconGrid4x4}
-                            label={resolveLanguageKey("data.area")}
-                            tooltip={resolveLanguageKey("data.area")}
-                            path="area"
-                            type="area"
-                            value={entity.area}
-                        />
+                        {entity.totalUnits ? (
+                            <EntityCardRow
+                                icon={IconDoor}
+                                label={resolveLanguageKey("data.units")}
+                                tooltip={resolveLanguageKey("data.units")}
+                                path="totalUnits"
+                                type="number"
+                                value={entity.totalUnits}
+                            />
+                        ) : null}
+                        {entity.area ? (
+                            <EntityCardRow
+                                icon={IconGrid4x4}
+                                label={resolveLanguageKey("data.area")}
+                                tooltip={resolveLanguageKey("data.area")}
+                                path="area"
+                                type="area"
+                                value={entity.area}
+                            />
+                        ) : null}
                         {entity.statistics?.unitsByStatus ? (
                             <EntityStatusBadgeRow
                                 unitsByStatus={entity.statistics.unitsByStatus}

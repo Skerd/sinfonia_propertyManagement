@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Pacchetti di consegna",
-  "description": "Configurazioni checklist ereditate da progetto, edificio, piano e unità",
+  "description": "Checklist di consegna che un progetto, un edificio, un piano o un’unità trasmette alle sue vendite",
   "help": {
     "ariaLabel": "Informazioni sui pacchetti di consegna",
     "title": "Informazioni sui pacchetti di consegna",

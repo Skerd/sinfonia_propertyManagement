@@ -1,10 +1,10 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypes/index.tsx",
-  "title": "Unit Types",
+  "title": "Unit types",
   "description": "Manage all unit types",
   "help": {
     "ariaLabel": "About Unit Types",
-    "title": "About Unit Types",
+    "title": "About unit types",
     "overview": "A Unit type is the catalog type every unit must pick (apartment, office, parking, and so on). Categories organize types. Creating a type does not create units — units pick a type when you add inventory.",
     "sections": [
       {

@@ -12,7 +12,6 @@ const GROUP_OPTIONS = ["none", "day", "week", "month"] as const;
 
 type PaymentsPeriodTotalsProps = {
     resolveLanguageKey: ResolveLanguageKey;
-    locale: string;
     groupBy: PaymentsHubGroupBy | "none";
     onGroupByChange: (groupBy: PaymentsHubGroupBy | "none") => void;
     summary: PaymentsSummaryResponseType | null;
@@ -26,7 +25,6 @@ type PaymentsPeriodTotalsProps = {
  */
 export default function PaymentsPeriodTotals({
     resolveLanguageKey,
-    locale,
     groupBy,
     onGroupByChange,
     summary,
@@ -89,13 +87,13 @@ export default function PaymentsPeriodTotals({
                                             </TableCell>
                                             <TableCell className="text-right tabular-nums">{period.count}</TableCell>
                                             <TableCell className="text-right tabular-nums">
-                                                {formatRevenueByCurrencyLines(period.expectedAmount, locale)}
+                                                {formatRevenueByCurrencyLines(period.expectedAmount)}
                                             </TableCell>
                                             <TableCell className="text-right tabular-nums">
-                                                {formatRevenueByCurrencyLines(period.paidAmount, locale)}
+                                                {formatRevenueByCurrencyLines(period.paidAmount)}
                                             </TableCell>
                                             <TableCell className="text-right tabular-nums">
-                                                {formatRevenueByCurrencyLines(period.outstandingAmount, locale)}
+                                                {formatRevenueByCurrencyLines(period.outstandingAmount)}
                                             </TableCell>
                                         </TableRow>
                                     ))}

@@ -390,10 +390,10 @@ export default function RentalPaymentsTableSection({
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.dueDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">
-                                            {fmtMoney(row.amount, row.currency?.symbol)}
+                                            {fmtMoney(row.amount, row.currency)}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap">
-                                            {fmtMoney(row.remaining, row.currency?.symbol)}
+                                            {fmtMoney(row.remaining, row.currency)}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button

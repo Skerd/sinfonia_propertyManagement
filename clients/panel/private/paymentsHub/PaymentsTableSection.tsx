@@ -36,7 +36,6 @@ const PAGE_SIZE = 10;
 
 type PaymentsTableSectionProps = {
     resolveLanguageKey: ResolveLanguageKey;
-    locale: string;
     timezone?: string;
     scope: PaymentsHubScope;
     groupBy: PaymentsHubGroupBy | "none";
@@ -54,7 +53,6 @@ const LIST_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/payment
 
 export default function PaymentsTableSection({
     resolveLanguageKey,
-    locale,
     timezone,
     scope,
     groupBy,
@@ -113,7 +111,6 @@ export default function PaymentsTableSection({
 
             <PaymentsPeriodTotals
                 resolveLanguageKey={resolveLanguageKey}
-                locale={locale}
                 groupBy={groupBy}
                 onGroupByChange={onGroupByChange}
                 summary={summary}
@@ -184,13 +181,13 @@ export default function PaymentsTableSection({
                                             ) : null}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap text-right tabular-nums">
-                                            {fmtMoney(row.amount, row.currency?.symbol)}
+                                            {fmtMoney(row.amount, row.currency)}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap text-right tabular-nums">
-                                            {fmtMoney(row.paidAmount, row.currency?.symbol)}
+                                            {fmtMoney(row.paidAmount, row.currency)}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap text-right tabular-nums">
-                                            {fmtMoney(row.remaining, row.currency?.symbol)}
+                                            {fmtMoney(row.remaining, row.currency)}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button
@@ -216,15 +213,15 @@ export default function PaymentsTableSection({
                         <div className="flex flex-wrap gap-x-6 gap-y-1 tabular-nums">
                             <span>
                                 {rk("totalsExpected")}:{" "}
-                                <strong>{formatRevenueByCurrencyLines(data?.totals.expectedAmount, locale)}</strong>
+                                <strong>{formatRevenueByCurrencyLines(data?.totals.expectedAmount)}</strong>
                             </span>
                             <span>
                                 {rk("totalsPaid")}:{" "}
-                                <strong>{formatRevenueByCurrencyLines(data?.totals.paidAmount, locale)}</strong>
+                                <strong>{formatRevenueByCurrencyLines(data?.totals.paidAmount)}</strong>
                             </span>
                             <span>
                                 {rk("totalsOutstanding")}:{" "}
-                                <strong>{formatRevenueByCurrencyLines(data?.totals.outstandingAmount, locale)}</strong>
+                                <strong>{formatRevenueByCurrencyLines(data?.totals.outstandingAmount)}</strong>
                             </span>
                         </div>
                     </div>

@@ -24,6 +24,8 @@ import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashbo
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 
 const EDIFICES_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/edifice"};
+// The table API caps a page at 200 records; a larger limit is rejected with a 400.
+const EDIFICES_REQUEST_BODY = {offset: 0, limit: 200};
 
 type EdificesTabProps = WithLanguageType & {
   dashboardData: DashboardFormResponseType | null | undefined;
@@ -36,7 +38,8 @@ type EdificesTabProps = WithLanguageType & {
 
 function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh, drillDownContext, viewEntriesLabel }: EdificesTabProps) {
   const navigate = useNavigate();
-  const edificesRequest = useHttpRequest<TableResponse<Edifice>>(EDIFICES_REQUEST, {offset: 0, limit: 1000}, 1);
+  const [edificesFetchCount, setEdificesFetchCount] = useState(1);
+  const edificesRequest = useHttpRequest<TableResponse<Edifice>>(EDIFICES_REQUEST, EDIFICES_REQUEST_BODY, edificesFetchCount);
   const edifices = useMemo(() => edificesRequest.data?.data ?? [], [edificesRequest.data]);
   const edificesLoading = edificesRequest.loading;
   const edificesError = edificesRequest.error;
@@ -107,7 +110,11 @@ function EdificesTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
         {edificesLoading ? (
           <Loader />
         ) : edificesError ? (
-          <p className="text-xs text-muted-foreground">{resolveLanguageKey("failDescription")}</p>
+          <ErrorView
+            title={resolveLanguageKey("failTitle")}
+            description={resolveLanguageKey("failDescription")}
+            onClick={() => setEdificesFetchCount((count) => count + 1)}
+          />
         ) : (
           <div className={DASHBOARD_ENTITY_GRID}>
             {edifices.map((edifice) => (

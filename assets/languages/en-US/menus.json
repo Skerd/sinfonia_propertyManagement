@@ -108,6 +108,9 @@
     },
     "adCampaignTemplates": {
       "title": "Campaign templates"
+    },
+    "paymentsHub": {
+      "title": "Payments"
     }
   },
   "reports": {
@@ -153,6 +156,21 @@
       },
       "propertyManagement": {
         "title": "Real Estate"
+      },
+      "propertyManagementConfig": {
+        "title": "Sales & handover"
+      },
+      "handoverPackages": {
+        "title": "Handover packages"
+      },
+      "inspectionChecklistTemplates": {
+        "title": "Inspection checklists"
+      },
+      "adCampaigns": {
+        "title": "Ad campaigns"
+      },
+      "adCampaignTemplates": {
+        "title": "Campaign templates"
       }
     }
   }

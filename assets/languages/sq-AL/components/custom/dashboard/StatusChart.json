@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/StatusChart.tsx",
+  "title": "Statusi i njësisë",
+  "total": "Totali",
+  "available": "Në dispozicion",
+  "reserved": "Rezervuar",
+  "sold": "Shitur",
+  "leased": "Me qira",
+  "blocked": "Të padisponueshme"
+}

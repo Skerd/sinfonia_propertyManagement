@@ -52,7 +52,6 @@ type DashboardOverviewProps = WithLanguageType & {
 
 function DashboardOverview({
   resolveLanguageKey,
-  languageCode,
   dashboardData,
   loading,
   error,
@@ -92,8 +91,7 @@ function DashboardOverview({
   const revenueTrend = dashboardData?.comparisons?.revenue;
   const salesTrend = dashboardData?.comparisons?.sales;
   // Money is shown per currency, never summed across currencies (GLB-08).
-  const locale = languageCode || "en-US";
-  const money = (rows: RevenueByCurrency[] | undefined) => formatRevenueByCurrencyLines(rows, locale);
+  const money = (rows: RevenueByCurrency[] | undefined) => formatRevenueByCurrencyLines(rows);
   const unitCostDocsCount = summary?.totalUnitCostDocuments ?? 0;
 
   const statusChartData = summary?.unitsByStatus
@@ -103,7 +101,7 @@ function DashboardOverview({
   const revenueSubtitle =
     summary?.totalRevenue?.length && summary.totalRevenue.length > 1
       ? `${summary.totalRevenue.length} ${resolveLanguageKey("currencyCountSuffix")}`
-      : resolveLanguageKey("allTime");
+      : resolveLanguageKey("inSelectedPeriod");
 
   const ctx = drillDownContext;
   const link = viewEntriesLabel;

@@ -1,6 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
   "title": "Makler-Leistungsbericht",
+  "description": "Was jeder Makler im gewählten Zeitraum reserviert, verkauft und an Provisionen verdient hat.",
   "refresh": "Aktualisieren",
   "noActivity": "Keine Makleraktivität für den ausgewählten Zeitraum gefunden.",
   "errorTitle": "Maklerbericht konnte nicht geladen werden",

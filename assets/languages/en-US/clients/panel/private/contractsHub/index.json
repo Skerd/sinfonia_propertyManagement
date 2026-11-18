@@ -1,10 +1,10 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/contractsHub/index.tsx",
-  "title": "Contracts & Clients",
+  "title": "Contracts & clients",
   "description": "All contracts and clients in one place. Search, filter and manage easily.",
   "contracts": {
     "title": "Contracts",
-    "description": "All contracts in one place. Search, filter and manage easily.",
+    "description": "Each reservation and sale, with its status, signature date and payment status.",
     "searchLabel": "Search",
     "searchPlaceholder": "Search by client name, unit, contract number…",
     "projectLabel": "Project",
@@ -45,7 +45,7 @@
       "sold": "Sold"
     },
     "paymentStatus": {
-      "ok": "OK",
+      "ok": "Paid",
       "partially": "Partial",
       "unpaid": "Unpaid",
       "no_payments": "No payments"
@@ -74,7 +74,7 @@
     "typologyPlaceholder": "All typologies",
     "statusLabel": "Status",
     "statusPlaceholder": "All statuses",
-    "valueRangeLabel": "Value range (EUR)",
+    "valueRangeLabel": "Value range",
     "valueMinPlaceholder": "Min",
     "valueMaxPlaceholder": "Max",
     "noResults": "No clients found.",
@@ -89,7 +89,7 @@
       "unit": "Unit",
       "typology": "Typology",
       "surface": "Surface (m²)",
-      "unitValue": "Unit value (EUR)",
+      "unitValue": "Unit value",
       "status": "Status",
       "bookingDate": "Booking date",
       "contractDate": "Contract date",

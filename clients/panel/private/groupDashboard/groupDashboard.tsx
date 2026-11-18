@@ -28,6 +28,7 @@ import {useAnyModelRead} from "@propertyManagementModule/helpers/access/useAnyMo
 import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
 import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatAmountWithCurrency} from "@coreModule/components/viewEngine/engine/format.ts";
 
 type GroupDashboardProps = WithLanguageType & WithAxiosType<GroupDashboardResponse, Record<string, never>>;
 
@@ -54,7 +55,7 @@ function fmt(n: number): string {
 function display(value: number | GroupMoney[]): string {
     if (typeof value === "number") return fmt(value);
     if (value.length === 0) return fmt(0);
-    return value.map((money) => `${fmt(money.value)} ${money.currency}`).join(" · ");
+    return value.map((money) => formatAmountWithCurrency(money.value, {symbol: money.symbol, abbreviation: money.currency})).join(" · ");
 }
 
 function GroupDashboard({
@@ -122,7 +123,7 @@ function GroupDashboard({
         <div className="flex-full gap-4">
             <Header title={pageTitle} description={description} help={readPageHelp(resolveLanguageKey)}>
                 <p className="text-muted-foreground text-xs whitespace-nowrap">
-                    {resolveLanguageKey("computedAt")} {formatDate(data.computedAt, {format: DATE_FORMATS.dateTime})}
+                    {resolveLanguageKey("computedAt")} {formatDate(data.computedAt, {format: DATE_FORMATS.mediumDateTime})}
                 </p>
             </Header>
 

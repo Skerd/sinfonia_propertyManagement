@@ -309,7 +309,7 @@ export default function ClientsTableSection({
                                         </TableCell>
                                         <TableCell className="tabular-nums">{fmtSurface(row.surface)}</TableCell>
                                         <TableCell className="tabular-nums whitespace-nowrap">
-                                            {fmtMoney(row.unitValue, row.currency?.symbol ?? "€")}
+                                            {fmtMoney(row.unitValue, row.currency)}
                                         </TableCell>
                                         <TableCell>
                                             <Badge variant={clientStatusBadgeVariant(row.status)}>
@@ -320,10 +320,10 @@ export default function ClientsTableSection({
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.contractDate, timezone)}</TableCell>
                                         <TableCell>{personName(row.agent)}</TableCell>
                                         <TableCell className="tabular-nums whitespace-nowrap">
-                                            {fmtMoney(row.paid, row.currency?.symbol ?? "€")}
+                                            {fmtMoney(row.paid, row.currency)}
                                         </TableCell>
                                         <TableCell className="tabular-nums whitespace-nowrap">
-                                            {fmtMoney(row.remaining, row.currency?.symbol ?? "€")}
+                                            {fmtMoney(row.remaining, row.currency)}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button

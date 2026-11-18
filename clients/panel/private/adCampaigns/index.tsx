@@ -13,6 +13,7 @@ import type {AdCampaign} from "armonia/src/modules/propertyManagement/api/realEs
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {GRID_TRANSACTIONAL} from "@propertyManagementModule/components/custom/cards/entityCard.constants.ts";
 import AdCampaignCard from "@propertyManagementModule/clients/panel/private/adCampaigns/center/cardView/adCampaignCard.tsx";
+import AdCampaignSheetView from "@propertyManagementModule/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx";
 
 function buildEditPath(row: AdCampaign) {
     const params = new URLSearchParams();
@@ -66,6 +67,16 @@ function AllAdCampaigns({resolveLanguageKey}: WithLanguageType) {
             resolveLanguageKey={resolveLanguageKey}
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/adCampaigns/center/sheetView/adCampaignSheetView.tsx"
             cardViewClassName={GRID_TRANSACTIONAL}
+            // A table row opens the same sheet as a card: status badge and the send/pause menu.
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore}) => (
+                <AdCampaignSheetView
+                    open={open}
+                    onOpenChange={(o: boolean) => { if (!o) onOpenChange(); }}
+                    campaign={entity}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                />
+            )}
             renderCard={(row, onDelete, onRestore) => (
                 <AdCampaignCard
                     campaign={row}

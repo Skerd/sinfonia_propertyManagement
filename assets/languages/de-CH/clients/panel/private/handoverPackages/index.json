@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Übergabepakete",
-  "description": "Checklisten-Konfigurationen, vererbt von Projekt, Gebäude, Etage und Einheit",
+  "description": "Übergabe-Checklisten, die ein Projekt, Gebäude, eine Etage oder Einheit an ihre Verkäufe weitergibt",
   "help": {
     "ariaLabel": "Über Übergabepakete",
     "title": "Über Übergabepakete",

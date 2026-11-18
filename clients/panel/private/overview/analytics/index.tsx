@@ -30,7 +30,7 @@ type AnalyticsProps = WithLanguageType & {
   viewEntriesLabel: string;
 };
 
-function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownContext, viewEntriesLabel }: AnalyticsProps) {
+function Analytics({ resolveLanguageKey, dashboardData, drillDownContext, viewEntriesLabel }: AnalyticsProps) {
   const summary = dashboardData?.summary;
   const salesByPeriod = dashboardData?.salesByPeriod ?? [];
   const revenueByPeriod = dashboardData?.revenueByPeriod ?? [];
@@ -87,7 +87,7 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
           <KpiCard compact title={resolveLanguageKey("totalUnits")} value={formatNumber(totalUnits)} subtitle={resolveLanguageKey("totalUnitsDesc")} icon={IconStack2} href={kpi.kpiUnitsTotal(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("activePaymentPlans")} value={formatNumber(activePaymentPlans)} subtitle={resolveLanguageKey("activePaymentPlansDesc")} icon={IconWallet} variant="warning" href={kpi.kpiActivePaymentPlans(ctx)} linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("overdueInstallments")} value={formatNumber(overdueInstallments)} subtitle={resolveLanguageKey("overdueInstallmentsDesc")} icon={IconWallet} variant="danger" href={kpi.kpiOverdueInstallments(ctx)} linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatRevenueByCurrencyLines(summary?.paymentPlans?.totalOutstanding, languageCode || "en-US")} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={IconWallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("totalOutstanding")} value={formatRevenueByCurrencyLines(summary?.paymentPlans?.totalOutstanding)} subtitle={resolveLanguageKey("totalOutstandingDesc")} icon={IconWallet} href={kpi.kpiTotalOutstanding(ctx)} linkLabel={link} />
         </div>
       </DashboardKpiSection>
 
@@ -96,9 +96,9 @@ function Analytics({ resolveLanguageKey, languageCode, dashboardData, drillDownC
         description={resolveLanguageKey("rentalsSectionDesc")}
       >
         <div className={GRID_KPI}>
-          <KpiCard compact title={resolveLanguageKey("rentCollected")} value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentCollectedDesc")} icon={IconWallet} variant="success" href="/realEstate/rentalsHub" linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("rentOutstanding")} value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOutstandingDesc")} icon={IconWallet} variant="warning" href="/realEstate/rentalsHub" linkLabel={link} />
-          <KpiCard compact title={resolveLanguageKey("rentOverdue")} value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")} subtitle={resolveLanguageKey("rentOverdueDesc")} icon={IconWallet} variant="danger" href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("rentCollected")} value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount)} subtitle={resolveLanguageKey("rentCollectedDesc")} icon={IconWallet} variant="success" href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("rentOutstanding")} value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount)} subtitle={resolveLanguageKey("rentOutstandingDesc")} icon={IconWallet} variant="warning" href="/realEstate/rentalsHub" linkLabel={link} />
+          <KpiCard compact title={resolveLanguageKey("rentOverdue")} value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount)} subtitle={resolveLanguageKey("rentOverdueDesc")} icon={IconWallet} variant="danger" href="/realEstate/rentalsHub" linkLabel={link} />
           <KpiCard compact title={resolveLanguageKey("activeLeases")} value={formatNumber(summary?.rentals?.activeLeases ?? 0)} subtitle={resolveLanguageKey("activeLeasesDesc")} icon={IconKey} href="/realEstate/rentalsHub" linkLabel={link} />
         </div>
       </DashboardKpiSection>

@@ -9,6 +9,7 @@ import {Reservation} from "armonia/src/modules/propertyManagement/api/realEstate
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import ReservationCard from "@propertyManagementModule/clients/panel/private/reservations/center/cardView/reservationCard.tsx";
 import ReservationRowMenuExtras from "@propertyManagementModule/clients/panel/private/reservations/center/actions/reservationRowMenuExtras.tsx";
+import ReservationSheetView from "@propertyManagementModule/clients/panel/private/reservations/center/sheetView/reservationSheetView.tsx";
 import CancelReservationDialog from "@propertyManagementModule/components/custom/reservations/cancelReservationDialog.tsx";
 import ReinstateReservationDialog from "@propertyManagementModule/components/custom/reservations/reinstateReservationDialog.tsx";
 import PaidInFullReservationDialog from "@propertyManagementModule/components/custom/reservations/paidInFullReservationDialog.tsx";
@@ -159,6 +160,19 @@ function AllReservations({resolveLanguageKey, unitId: propUnitId, unitName: prop
                 allowMenuForCustomChildren: true,
                 hideEdit: true,
             }}
+            // A table row opens the same sheet as a card: titled by the client, with the lifecycle menu (UX-01).
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
+                <ReservationSheetView
+                    open={open}
+                    onOpenChange={(o: boolean) => { if (!o) onOpenChange(); }}
+                    reservation={entity}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                    onModifySuccess={(updated?: Reservation) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
+                />
+            )}
             renderCard={(reservation, onDelete, onRestore, listRef) => (
                 <ReservationCard
                     reservation={reservation}

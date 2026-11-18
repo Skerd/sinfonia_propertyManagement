@@ -50,7 +50,7 @@ function parseRentalsHubTab(value: string | null): RentalsHubTab {
     return "leases";
 }
 
-function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
+function RentalsHubPage({resolveLanguageKey}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
     const [searchParams, setSearchParams] = useSearchParams();
     const [sheet, setSheet] = useState<SheetState>(null);
@@ -191,7 +191,6 @@ function RentalsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                     <TabsContent value="calendar">
                         <RentalsCalendarTab
                             resolveLanguageKey={resolveLanguageKey}
-                            languageCode={languageCode}
                             onViewRow={(row) => void openPaymentRow(row)}
                         />
                     </TabsContent>

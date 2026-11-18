@@ -7,23 +7,24 @@ import type {
     ContractRegistryStatus,
     ContractRegistryType,
 } from "armonia/src/modules/propertyManagement/api/realEstate/private/contractsHub/contractsHub.constants";
-import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
+import {DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatAmountWithCurrency} from "@coreModule/components/viewEngine/engine/format.ts";
+import type {CurrencySimple} from "armonia/src/modules/core/dto/currency.dto.ts";
 
-const DAY_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "2-digit", year: "numeric"};
-
+/** A calendar day, read as UTC midnight so it never shifts a day in the viewer's zone. */
 export function fmtDate(iso: string | undefined, _timezone?: string): string {
-    return formatDate(iso, {timeZone: "UTC", format: DAY_FORMAT}) || "—";
+    return formatDate(iso, {timeZone: "UTC", format: DATE_FORMATS.mediumDate}) || "—";
 }
 
 export function fmtDateTime(iso: string | undefined, timezone?: string): string {
-    return formatDate(iso, {timeZone: timezone, format: {...DAY_FORMAT, hour: "2-digit", minute: "2-digit"}}) || "—";
+    return formatDate(iso, {timeZone: timezone, format: DATE_FORMATS.mediumDateTime}) || "—";
 }
 
-export function fmtMoney(amount: number | undefined, symbol = "€"): string {
-    const formatted = formatNumber(amount, {maximumFractionDigits: 2});
-    return formatted ? `${symbol} ${formatted}`.trim() : "—";
+/** The amount in its own currency, at the currency's decimal places (UX-07). */
+export function fmtMoney(amount: number | undefined, currency: Partial<CurrencySimple> | undefined): string {
+    return formatAmountWithCurrency(amount, currency) || "—";
 }
 
 export function fmtSurface(value: number | undefined): string {
@@ -34,9 +35,12 @@ export function personName(parts: {name?: string; surname?: string} | undefined)
     return getName(parts) || "—";
 }
 
-export function unitLabel(unit: {name?: string; unitNumber?: string} | undefined): string {
+/** "Name / number", or one of them when the other is missing or the same text. */
+export function unitLabel(unit: {name?: string; unitNumber?: string | number} | undefined): string {
     if (!unit) return "—";
-    return [unit.name, unit.unitNumber].filter(Boolean).join(" / ") || "—";
+    const number = unit.unitNumber != null ? String(unit.unitNumber) : undefined;
+    const parts = [unit.name, number].filter(Boolean);
+    return [...new Set(parts)].join(" / ") || "—";
 }
 
 export function paginationSummary(

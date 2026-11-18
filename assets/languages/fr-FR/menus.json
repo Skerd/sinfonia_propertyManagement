@@ -108,6 +108,9 @@
     },
     "adCampaignTemplates": {
       "title": "Modèles de campagne"
+    },
+    "paymentsHub": {
+      "title": "Paiements"
     }
   },
   "reports": {
@@ -153,6 +156,21 @@
       },
       "propertyManagement": {
         "title": "Immobilier"
+      },
+      "propertyManagementConfig": {
+        "title": "Ventes & remise"
+      },
+      "handoverPackages": {
+        "title": "Dossiers de remise"
+      },
+      "inspectionChecklistTemplates": {
+        "title": "Listes de contrôle"
+      },
+      "adCampaigns": {
+        "title": "Campagnes publicitaires"
+      },
+      "adCampaignTemplates": {
+        "title": "Modèles de campagne"
       }
     }
   }

@@ -4,7 +4,7 @@
   "description": "Të gjitha kontratat dhe klientët në një vend. Kërko, filtro dhe menaxho lehtësisht.",
   "contracts": {
     "title": "Kontratat",
-    "description": "Të gjitha kontratat në një vend. Kërko, filtro dhe menaxho lehtësisht.",
+    "description": "Çdo rezervim dhe shitje, me statusin, datën e nënshkrimit dhe statusin e pagesës.",
     "searchLabel": "Kërko",
     "searchPlaceholder": "Kërko sipas emrit të klientit, njësisë, numrit të kontratës…",
     "projectLabel": "Projekti",
@@ -45,7 +45,7 @@
       "sold": "Shitur"
     },
     "paymentStatus": {
-      "ok": "Në rregull",
+      "ok": "Paguar",
       "partially": "Pjesërisht",
       "unpaid": "Pa paguar",
       "no_payments": "Nuk ka pagesa"
@@ -74,7 +74,7 @@
     "typologyPlaceholder": "Të gjitha tipologjitë",
     "statusLabel": "Statusi",
     "statusPlaceholder": "Të gjitha statuset",
-    "valueRangeLabel": "Diapazoni i vlerës (EUR)",
+    "valueRangeLabel": "Diapazoni i vlerës",
     "valueMinPlaceholder": "Min.",
     "valueMaxPlaceholder": "Maks.",
     "noResults": "Nuk u gjetën klientë.",
@@ -89,7 +89,7 @@
       "unit": "Njësia",
       "typology": "Tipologjia",
       "surface": "Sipërfaqja (m²)",
-      "unitValue": "Vlera e njësisë (EUR)",
+      "unitValue": "Vlera e njësisë",
       "status": "Statusi",
       "bookingDate": "Data e rezervimit",
       "contractDate": "Data e kontratës",

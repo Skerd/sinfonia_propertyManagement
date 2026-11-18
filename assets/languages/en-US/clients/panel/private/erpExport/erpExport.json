@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/erpExport/erpExport.tsx",
-  "title": "ERP / Accounting Export",
+  "title": "ERP / accounting export",
   "description": "Export financial data to JSON or CSV for import into your accounting or ERP system.",
   "datasetsLabel": "Datasets",
   "datasetsPlaceholder": "Select datasets to export",

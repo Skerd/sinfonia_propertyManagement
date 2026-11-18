@@ -3,6 +3,7 @@
   "title": "Ndrysho Shitjet & dorëzimin",
   "notifications": "Njoftimet",
   "generalInfo": "Kontrollet e rrjedhës së punës",
+  "visibility": "Dukshmëria",
   "form": {
     "notifyOnSalesLabel": "Njofto për shitjet",
     "notifyOnReservationsLabel": "Njofto për rezervimet",

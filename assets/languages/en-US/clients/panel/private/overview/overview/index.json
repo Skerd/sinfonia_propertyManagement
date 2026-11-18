@@ -7,7 +7,7 @@
   "totalSalesDesc": "Total number of sales",
   "unitsSold": "Units Sold",
   "unitsSoldDesc": "Units sold to date",
-  "allTime": "All time",
+  "inSelectedPeriod": "In the selected period",
   "currencyCountSuffix": "currencies",
   "primaryKpis": "Key metrics",
   "financialKpis": "Financial metrics",

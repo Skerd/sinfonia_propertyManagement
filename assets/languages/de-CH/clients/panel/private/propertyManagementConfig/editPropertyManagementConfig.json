@@ -3,6 +3,7 @@
   "title": "Verkauf & Übergabe bearbeiten",
   "notifications": "Benachrichtigungen",
   "generalInfo": "Workflow-Steuerungen",
+  "visibility": "Sichtbarkeit",
   "form": {
     "notifyOnSalesLabel": "Bei Verkäufen benachrichtigen",
     "notifyOnReservationsLabel": "Bei Reservationen benachrichtigen",

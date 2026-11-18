@@ -100,9 +100,12 @@ function UnitCard({
                             coverAfterFirst={false}
                             modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
                         />
+                        {/* The same unit name repeats across buildings, so the list card says which one (UX-01). */}
                         <EntityCard.Header
                             titlePath="name"
                             title={entity.name}
+                            subtitle={small ? undefined : entity.edifice?.name}
+                            subtitlePath="edifice.name"
                             badges={
                                 showStatusBadge && unitStatus ? (
                                     <UnitStatusBadge

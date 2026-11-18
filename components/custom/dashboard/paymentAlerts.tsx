@@ -21,7 +21,7 @@ import {
 } from '@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts';
 import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/rentals/formatRevenueByCurrency.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
-import {companyToday} from "@coreModule/helpers/general/dateTime.ts";
+import {companyToday, DATE_FORMATS, formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {useCompanyTimeZone} from "@coreModule/helpers/hooks/useCompanyTimeZone.ts";
 
 export interface PaymentAlertsProps extends WithLanguageType {
@@ -61,7 +61,6 @@ function PaymentAlertsInner({
   viewAllLabel,
   drillDownContext = {},
   resolveLanguageKey,
-  languageCode = 'en-US',
 }: PaymentAlertsProps) {
   const navigate = useNavigate();
   const today = companyToday(useCompanyTimeZone());
@@ -71,7 +70,6 @@ function PaymentAlertsInner({
 
   const effectiveTitle = title ?? resolveLanguageKey('title');
   const effectiveViewAllLabel = viewAllLabel ?? resolveLanguageKey('viewAllLabel');
-  const locale = languageCode === 'sq-AL' ? 'sq-AL' : 'en-US';
   const paymentPlansHref = kpiPaymentAlertPlans(drillDownContext);
   const reservationsHref = kpiPaymentAlertReservations(drillDownContext, today);
 
@@ -138,7 +136,7 @@ function PaymentAlertsInner({
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-baseline justify-between gap-1.5">
-                        <span className="font-mono text-sm font-medium text-foreground truncate">
+                        <span className="text-sm font-medium text-foreground truncate">
                           {unitLabel}
                         </span>
                         <span className="text-sm font-semibold text-foreground shrink-0 tabular-nums">
@@ -148,7 +146,7 @@ function PaymentAlertsInner({
                             currencySymbol: alert.currency?.symbol,
                             currencyDecimalPlaces: alert.currency?.decimalPlaces,
                             value: alert.installment.amount,
-                          }], locale)}
+                          }])}
                         </span>
                       </div>
                       {clientLabel ? (
@@ -168,7 +166,7 @@ function PaymentAlertsInner({
                       )}
                       <div className="flex items-center justify-between mt-1 gap-1.5">
                         <span className="text-xs text-muted-foreground">
-                          {new Date(alert.installment.dueDate).toLocaleDateString(locale, {timeZone: "UTC"})}
+                          {formatDate(alert.installment.dueDate, {timeZone: "UTC", format: DATE_FORMATS.mediumDate})}
                         </span>
                         <span
                           className={cn(

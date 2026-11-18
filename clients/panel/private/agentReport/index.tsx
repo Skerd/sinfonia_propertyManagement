@@ -165,7 +165,7 @@ function AgentReportPage({
 
     return (
         <div className="flex flex-col h-full overflow-hidden">
-            <Header title={rk("title")} description={rk("title")} help={readPageHelp(resolveLanguageKey)}/>
+            <Header title={rk("title")} description={rk("description")} help={readPageHelp(resolveLanguageKey)}/>
 
             <div className="shrink-0 border-b px-4 py-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 items-end">
@@ -223,7 +223,10 @@ function AgentReportPage({
                 <div className="flex items-center justify-end gap-3 mt-3 min-h-9">
                     {period && (
                         <span className="text-xs text-muted-foreground mr-auto">
-                            {formatDate(period.from, {format: DATE_FORMATS.date})} – {formatDate(period.to, {format: DATE_FORMATS.date})}
+                            {/* `to` is the exclusive end (the next day's start), so the last day shown is the instant before it. */}
+                            {formatDate(period.from, {timeZone: companyZone, format: DATE_FORMATS.mediumDate})}
+                            {" – "}
+                            {formatDate(new Date(period.to).getTime() - 1, {timeZone: companyZone, format: DATE_FORMATS.mediumDate})}
                         </span>
                     )}
                     {data && entries.length > 0 && (

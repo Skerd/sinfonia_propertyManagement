@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Dossiers de remise",
-  "description": "Configurations de checklist héritées du projet, du bâtiment, de l’étage et de l’unité",
+  "description": "Checklists de remise qu’un projet, un bâtiment, un étage ou une unité transmet à ses ventes",
   "help": {
     "ariaLabel": "À propos des dossiers de remise",
     "title": "À propos des dossiers de remise",

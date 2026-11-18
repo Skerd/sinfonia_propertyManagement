@@ -1,6 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
   "title": "Raporti i performancës së agjentëve",
+  "description": "Çfarë ka rezervuar, shitur dhe fituar në komisione çdo agjent në periudhën e zgjedhur.",
   "refresh": "Rifresko",
   "noActivity": "Nuk u gjet asnjë aktivitet agjenti për periudhën e zgjedhur.",
   "errorTitle": "Ngarkimi i raportit dështoi",

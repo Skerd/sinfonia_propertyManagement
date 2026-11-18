@@ -7,7 +7,6 @@ import {formatRevenueByCurrencyLines} from "@propertyManagementModule/helpers/re
 
 type PaymentsHubKpisProps = {
     resolveLanguageKey: ResolveLanguageKey;
-    locale: string;
     summary: PaymentsSummaryResponseType | null;
     loading: boolean;
 };
@@ -19,7 +18,6 @@ type PaymentsHubKpisProps = {
  */
 export default function PaymentsHubKpis({
     resolveLanguageKey,
-    locale,
     summary,
     loading,
 }: PaymentsHubKpisProps) {
@@ -73,7 +71,7 @@ export default function PaymentsHubKpis({
                     </CardHeader>
                     <CardContent>
                         <p className="text-lg font-semibold tabular-nums">
-                            {formatRevenueByCurrencyLines(tile.value, locale)}
+                            {formatRevenueByCurrencyLines(tile.value)}
                         </p>
                     </CardContent>
                 </Card>

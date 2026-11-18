@@ -9,13 +9,6 @@
     "calendar": "Zahlungskalender",
     "expenses": "Ausgaben"
   },
-  "expenses": {
-    "summaryTotal": "Ausgaben total (gefiltert)",
-    "summarySuppliers": "Einzigartige Lieferanten",
-    "summaryPeriod": "Periode",
-    "placeholder": "—",
-    "periodRange": "— → —"
-  },
   "calendar": {
     "kpiPaid": "Bezahlt",
     "kpiPending": "Ausstehend",

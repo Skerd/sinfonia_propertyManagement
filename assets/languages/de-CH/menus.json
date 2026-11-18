@@ -108,6 +108,9 @@
     },
     "adCampaignTemplates": {
       "title": "Kampagnenvorlagen"
+    },
+    "paymentsHub": {
+      "title": "Zahlungen"
     }
   },
   "reports": {
@@ -153,6 +156,21 @@
       },
       "propertyManagement": {
         "title": "Immobilien"
+      },
+      "propertyManagementConfig": {
+        "title": "Verkauf & Übergabe"
+      },
+      "handoverPackages": {
+        "title": "Übergabepakete"
+      },
+      "inspectionChecklistTemplates": {
+        "title": "Abnahme-Checklisten"
+      },
+      "adCampaigns": {
+        "title": "Werbekampagnen"
+      },
+      "adCampaignTemplates": {
+        "title": "Kampagnenvorlagen"
       }
     }
   }

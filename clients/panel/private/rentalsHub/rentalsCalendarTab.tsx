@@ -59,17 +59,14 @@ function badgeVariant(status: string): ComponentProps<typeof Badge>["variant"] {
 
 type RentalsCalendarTabProps = {
     resolveLanguageKey: ResolveLanguageKey;
-    languageCode?: string;
     onViewRow: (row: RentalPaymentRegistryRow) => void;
 };
 
 export default function RentalsCalendarTab({
     resolveLanguageKey,
-    languageCode,
     onViewRow,
 }: RentalsCalendarTabProps) {
     const rk = (key: string) => String(resolveLanguageKey(`calendar.${key}`));
-    const locale = languageCode || "en-US";
     const [calendarMonth, setCalendarMonth] = useState(() => new Date());
     const [selectedDay, setSelectedDay] = useState<Date | undefined>(() => new Date());
 
@@ -151,7 +148,7 @@ export default function RentalsCalendarTab({
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">
-                                    {formatRevenueByCurrencyLines(data?.kpis.collectedAmount, locale)}
+                                    {formatRevenueByCurrencyLines(data?.kpis.collectedAmount)}
                                 </p>
                             </CardContent>
                         </Card>
@@ -162,7 +159,7 @@ export default function RentalsCalendarTab({
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">
-                                    {formatRevenueByCurrencyLines(data?.kpis.outstandingAmount, locale)}
+                                    {formatRevenueByCurrencyLines(data?.kpis.outstandingAmount)}
                                 </p>
                             </CardContent>
                         </Card>
@@ -173,7 +170,7 @@ export default function RentalsCalendarTab({
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-semibold tabular-nums">
-                                    {formatRevenueByCurrencyLines(data?.kpis.overdueAmount, locale)}
+                                    {formatRevenueByCurrencyLines(data?.kpis.overdueAmount)}
                                 </p>
                             </CardContent>
                         </Card>
@@ -257,7 +254,7 @@ export default function RentalsCalendarTab({
                                                         </div>
                                                         <div className="flex shrink-0 flex-col items-end gap-1">
                                                             <span className="font-semibold tabular-nums">
-                                                                {fmtMoney(row.remaining ?? row.amount, row.currency?.symbol)}
+                                                                {fmtMoney(row.remaining ?? row.amount, row.currency)}
                                                             </span>
                                                             {row.status ? (
                                                                 <Badge variant={badgeVariant(row.status)}>

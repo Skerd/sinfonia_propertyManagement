@@ -4,7 +4,7 @@
   "description": "Tous les contrats et clients au même endroit. Recherchez, filtrez et gérez facilement.",
   "contracts": {
     "title": "Contrats",
-    "description": "Tous les contrats au même endroit. Recherchez, filtrez et gérez facilement.",
+    "description": "Chaque réservation et chaque vente, avec son statut, sa date de signature et son état de paiement.",
     "searchLabel": "Rechercher",
     "searchPlaceholder": "Rechercher par nom de client, unité, numéro de contrat…",
     "projectLabel": "Projet",
@@ -45,7 +45,7 @@
       "sold": "Vendu"
     },
     "paymentStatus": {
-      "ok": "OK",
+      "ok": "Payé",
       "partially": "Partiel",
       "unpaid": "Impayé",
       "no_payments": "Aucun paiement"
@@ -74,7 +74,7 @@
     "typologyPlaceholder": "Toutes les typologies",
     "statusLabel": "Statut",
     "statusPlaceholder": "Tous les statuts",
-    "valueRangeLabel": "Plage de valeur (EUR)",
+    "valueRangeLabel": "Plage de valeur",
     "valueMinPlaceholder": "Min",
     "valueMaxPlaceholder": "Max",
     "noResults": "Aucun client trouvé.",
@@ -89,7 +89,7 @@
       "unit": "Unité",
       "typology": "Typologie",
       "surface": "Surface (m²)",
-      "unitValue": "Valeur de l'unité (EUR)",
+      "unitValue": "Valeur de l'unité",
       "status": "Statut",
       "bookingDate": "Date de réservation",
       "contractDate": "Date du contrat",

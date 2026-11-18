@@ -12,6 +12,7 @@ import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import LeadCard from "@propertyManagementModule/clients/panel/private/leads/center/cardView/leadCard.tsx";
 import LeadRowMenuExtras from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadRowMenuExtras.tsx";
 import LeadWorkflowDialogs from "@propertyManagementModule/clients/panel/private/leads/center/actions/leadWorkflowDialogs.tsx";
+import LeadSheetView from "@propertyManagementModule/clients/panel/private/leads/center/sheetView/leadSheetView.tsx";
 
 function buildLeadEditPath(lead: Lead) {
     const params = new URLSearchParams();
@@ -114,6 +115,19 @@ function AllLeads({resolveLanguageKey}: WithLanguageType) {
                         if (updated) listRef.current?.updateRow?.(updated._id, updated);
                         resetAction();
                     }}
+                />
+            )}
+            // A table row opens the same sheet as a card: titled by the person, with the stage menu (UX-01).
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore, listRef}) => (
+                <LeadSheetView
+                    open={open}
+                    onOpenChange={(o: boolean) => { if (!o) onOpenChange(); }}
+                    lead={entity}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                    onModifySuccess={(updated?: Lead) =>
+                        updated && listRef.current?.updateRow?.(updated._id, updated)
+                    }
                 />
             )}
             renderCard={(lead, onDelete, onRestore, listRef) => (

@@ -42,7 +42,7 @@
     "soldUnits": "Verkaufte Einheiten",
     "leasedUnits": "Vermietete Einheiten",
     "unavailableUnits": "Nicht verfügbare Einheiten",
-    "totalArea": "Gesamtfläche",
+    "totalArea": "Gesamtfläche (Einheiten)",
     "averagePrice": "Durchschnittlicher Einheitspreis",
     "netArea": "Nettofläche (Einheiten)",
     "sharedArea": "Gemeinschaftsfläche (Einheiten)",

@@ -278,10 +278,10 @@ export default function LeasesTableSection({
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.startDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">{fmtDate(row.endDate, timezone)}</TableCell>
                                         <TableCell className="whitespace-nowrap">
-                                            {fmtMoney(row.monthlyRent, row.currency?.symbol)}
+                                            {fmtMoney(row.monthlyRent, row.currency)}
                                         </TableCell>
                                         <TableCell className="whitespace-nowrap">
-                                            {fmtMoney(row.outstandingAmount, row.currency?.symbol)}
+                                            {fmtMoney(row.outstandingAmount, row.currency)}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <Button

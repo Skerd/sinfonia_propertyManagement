@@ -2,7 +2,7 @@ import React from 'react';
 import type { RecentSaleItem } from 'armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts';
 import {Avatar, AvatarFallback} from "@coreModule/components/ui/avatar.tsx";
 import {getName} from "@coreModule/helpers/general/names.ts";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
+import {formatAmountWithCurrency} from "@coreModule/components/viewEngine/engine/format.ts";
 
 export type RecentSalesProps = {
   recentSales: RecentSaleItem[];
@@ -28,10 +28,8 @@ export const RecentSales: React.FC<RecentSalesProps> = ({
   return (
     <div className="flex flex-col gap-y-1">
       {recentSales.map((item) => {
-        const name =
-          item.soldBy?.fullName ||
-          getName(item.soldBy) ||
-          "—";
+        // The buyer, not the staff member who recorded the sale.
+        const name = getName(item.buyer) || "—";
         const initials = name
           .split(/\s+/)
           .map((s) => s[0])
@@ -53,7 +51,7 @@ export const RecentSales: React.FC<RecentSalesProps> = ({
                 </span>
               </div>
               <span className="shrink-0 text-2xs font-semibold tabular-nums text-foreground">
-                +${formatNumber(item.finalPrice ?? 0)}
+                {formatAmountWithCurrency(item.finalPrice ?? 0, item.saleCurrency)}
               </span>
             </div>
           </div>

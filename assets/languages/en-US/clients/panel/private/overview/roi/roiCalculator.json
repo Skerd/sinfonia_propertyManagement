@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/overview/roi/roiCalculator.tsx",
   "roiCalculator": {
-    "title": "ROI Calculator",
+    "title": "ROI calculator",
     "description": "Calculate return on investment per unit or project based on costs and sale/rental revenue."
   },
   "projectLabel": "Project",

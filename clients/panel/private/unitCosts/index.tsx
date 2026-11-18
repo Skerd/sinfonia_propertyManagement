@@ -30,7 +30,6 @@ import type { UnitCost } from "armonia/src/modules/propertyManagement/api/realEs
 import type { DeletedData, TableResponse } from "armonia/src/modules/core/types/shared.types.ts";
 import { IconTextPlus } from "@tabler/icons-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@coreModule/components/ui/tabs.tsx";
-import { Card, CardContent, CardHeader, CardTitle } from "@coreModule/components/ui/card.tsx";
 
 const FINANCE_TAB_QUERY = "financeTab";
 
@@ -186,40 +185,6 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
                 </TabsContent>
 
                 <TabsContent value="expenses" className="mt-0 flex flex-col gap-4">
-                    <div className="grid gap-3 sm:grid-cols-3">
-                        <Card>
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium text-muted-foreground">
-                                    {resolveLanguageKey("expenses.summaryTotal")}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-lg font-semibold tabular-nums">{resolveLanguageKey("expenses.placeholder")}</p>
-                                <p className="text-xs text-muted-foreground">{resolveLanguageKey("expenses.placeholder")}</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium text-muted-foreground">
-                                    {resolveLanguageKey("expenses.summarySuppliers")}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-lg font-semibold tabular-nums">{resolveLanguageKey("expenses.placeholder")}</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium text-muted-foreground">
-                                    {resolveLanguageKey("expenses.summaryPeriod")}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm font-medium tabular-nums">{resolveLanguageKey("expenses.periodRange")}</p>
-                            </CardContent>
-                        </Card>
-                    </div>
-
                     <HiddenElement hideAll={true}>
                         {read && (
                             <CardAndTableView<TableResponse<UnitCost>>

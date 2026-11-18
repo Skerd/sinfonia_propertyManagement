@@ -54,7 +54,6 @@ function ContributedEdificeCard({source, edificeId}: {source: DashboardEdificeCa
 
 function RealEstateDashboard({
     resolveLanguageKey,
-    languageCode,
     data: dashboardData,
     loading,
     error,
@@ -187,7 +186,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("collected") ?? "Collected"}
-                                value={formatRevenueByCurrencyLines(summary?.collected, languageCode || "en-US")}
+                                value={formatRevenueByCurrencyLines(summary?.collected)}
                                 icon={IconWallet}
                                 variant="primary"
                                 href={kpi.kpiCollected(drillDownContext)}
@@ -196,7 +195,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("avgSalePrice")}
-                                value={formatRevenueByCurrencyLines(summary?.averageSalePrice, languageCode || "en-US")}
+                                value={formatRevenueByCurrencyLines(summary?.averageSalePrice)}
                                 icon={IconCoin}
                                 href={kpi.kpiAvgSalePrice(drillDownContext)}
                                 linkLabel={viewEntriesLabel}
@@ -207,7 +206,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("rentCollected") ?? "Rent collected"}
-                                value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount, languageCode || "en-US")}
+                                value={formatRevenueByCurrencyLines(summary?.rentals?.collectedAmount)}
                                 icon={IconWallet}
                                 variant="success"
                                 href="/realEstate/rentalsHub"
@@ -216,7 +215,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("rentOutstanding") ?? "Rent outstanding"}
-                                value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount, languageCode || "en-US")}
+                                value={formatRevenueByCurrencyLines(summary?.rentals?.outstandingAmount)}
                                 icon={IconWallet}
                                 variant="warning"
                                 href="/realEstate/rentalsHub"
@@ -225,7 +224,7 @@ function RealEstateDashboard({
                             <KpiCard
                                 compact
                                 title={resolveLanguageKey("rentOverdue") ?? "Rent overdue"}
-                                value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount, languageCode || "en-US")}
+                                value={formatRevenueByCurrencyLines(summary?.rentals?.overdueAmount)}
                                 icon={IconWallet}
                                 variant="danger"
                                 href="/realEstate/rentalsHub"

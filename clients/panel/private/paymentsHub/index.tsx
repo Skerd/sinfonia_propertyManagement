@@ -43,9 +43,8 @@ function parsePaymentsHubTab(value: string | null): PaymentsHubTab {
     return value === "calendar" ? "calendar" : "list";
 }
 
-function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
+function PaymentsHubPage({resolveLanguageKey}: WithLanguageType) {
     const {timezone} = useSelector((state: RootState) => state.authentication.user);
-    const locale = languageCode || "en-US";
     const [searchParams, setSearchParams] = useSearchParams();
     const accessHydrated = useAccessHydrated();
     const canRead = hasAnyAccessRead([useAccess("paymentplans"), useAccess("sales")]);
@@ -152,7 +151,6 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
 
                     <PaymentsHubKpis
                         resolveLanguageKey={resolveLanguageKey}
-                        locale={locale}
                         summary={summary}
                         loading={summaryLoading}
                     />
@@ -178,7 +176,6 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                         <TabsContent value="list">
                             <PaymentsTableSection
                                 resolveLanguageKey={resolveLanguageKey}
-                                locale={locale}
                                 timezone={timezone}
                                 scope={scope}
                                 groupBy={groupBy}
@@ -193,7 +190,6 @@ function PaymentsHubPage({resolveLanguageKey, languageCode}: WithLanguageType) {
                         <TabsContent value="calendar">
                             <PaymentsCalendarTab
                                 resolveLanguageKey={resolveLanguageKey}
-                                locale={locale}
                                 scope={scope}
                                 onViewRow={openRow}
                                 refreshToken={refreshToken}

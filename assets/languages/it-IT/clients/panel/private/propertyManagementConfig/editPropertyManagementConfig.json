@@ -3,6 +3,7 @@
   "title": "Modifica Vendite & consegna",
   "notifications": "Notifiche",
   "generalInfo": "Controlli del flusso di lavoro",
+  "visibility": "Visibilità",
   "form": {
     "notifyOnSalesLabel": "Notifica sulle vendite",
     "notifyOnReservationsLabel": "Notifica sulle prenotazioni",

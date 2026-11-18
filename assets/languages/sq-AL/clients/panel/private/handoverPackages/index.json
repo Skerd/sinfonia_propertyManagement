@@ -1,7 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/handoverPackages/index.tsx",
   "title": "Paketat e dorëzimit",
-  "description": "Konfigurime listash kontrolli të trashëguara nga projekti, ndërtesa, kati dhe njësia",
+  "description": "Lista kontrolli dorëzimi që një projekt, ndërtesë, kat ose njësi ua kalon shitjeve të veta",
   "help": {
     "ariaLabel": "Rreth paketave të dorëzimit",
     "title": "Rreth paketave të dorëzimit",

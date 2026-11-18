@@ -7,6 +7,7 @@ import {IconPlus} from "@tabler/icons-react";
 import type {InspectionChecklistTemplate} from "armonia/src/modules/propertyManagement/api/realEstate/private/inspectionChecklistTemplate/inspectionChecklistTemplate.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import InspectionChecklistTemplateCard from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/center/cardView/inspectionChecklistTemplateCard.tsx";
+import InspectionChecklistTemplateSheetView from "@propertyManagementModule/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx";
 
 interface Props extends WithLanguageType {
     projectId?: string;
@@ -42,6 +43,16 @@ function AllInspectionChecklistTemplates({resolveLanguageKey, projectId}: Props)
             sheetLanguagePath="src/modules/propertyManagement/clients/panel/private/inspectionChecklistTemplates/center/sheetView/inspectionChecklistTemplateSheetView.tsx"
             cardViewClassName={GRID_TRANSACTIONAL}
             extraFilters={projectId ? {projectId} : undefined}
+            // A table row opens the same sheet as a card, with its active/inactive badge.
+            renderSheet={({entity, open, onOpenChange, onDelete, onRestore}) => (
+                <InspectionChecklistTemplateSheetView
+                    open={open}
+                    onOpenChange={(o: boolean) => { if (!o) onOpenChange(); }}
+                    entity={entity}
+                    onDelete={onDelete}
+                    onRestore={onRestore}
+                />
+            )}
             renderCard={(row, onDelete, onRestore) => (
                 <InspectionChecklistTemplateCard
                     entity={row}

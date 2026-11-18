@@ -3,6 +3,7 @@
   "title": "Modifier Ventes & remise",
   "notifications": "Notifications",
   "generalInfo": "Contrôles du flux de travail",
+  "visibility": "Visibilité",
   "form": {
     "notifyOnSalesLabel": "Notifier lors des ventes",
     "notifyOnReservationsLabel": "Notifier lors des réservations",

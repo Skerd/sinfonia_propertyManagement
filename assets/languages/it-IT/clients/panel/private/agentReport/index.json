@@ -1,6 +1,7 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/agentReport/index.tsx",
   "title": "Report prestazioni agenti",
+  "description": "Cosa ha prenotato, venduto e guadagnato in commissioni ogni agente nel periodo scelto.",
   "refresh": "Aggiorna",
   "noActivity": "Nessuna attività degli agenti trovata per il periodo selezionato.",
   "errorTitle": "Impossibile caricare il report agenti",

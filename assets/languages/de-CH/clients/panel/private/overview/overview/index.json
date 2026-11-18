@@ -7,7 +7,7 @@
   "totalSalesDesc": "Gesamtzahl der Verkäufe",
   "unitsSold": "Verkaufte Einheiten",
   "unitsSoldDesc": "Bisher verkaufte Einheiten",
-  "allTime": "Gesamter Zeitraum",
+  "inSelectedPeriod": "Im gewählten Zeitraum",
   "currencyCountSuffix": "Währungen",
   "primaryKpis": "Kennzahlen",
   "financialKpis": "Finanzkennzahlen",

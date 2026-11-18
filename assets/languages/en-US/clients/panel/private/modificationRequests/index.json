@@ -1,6 +1,6 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/modificationRequests/index.tsx",
-  "title": "Modification Requests",
+  "title": "Modification requests",
   "description": "Manage client modification requests",
   "descriptionWithContext": "Manage modification requests for this unit",
   "createModificationRequest": "Create Request",

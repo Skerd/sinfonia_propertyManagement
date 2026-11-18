@@ -1,10 +1,10 @@
 {
   "path": "src/modules/propertyManagement/clients/panel/private/unitTypeCategories/index.tsx",
-  "title": "Unit Type Categories",
+  "title": "Unit type categories",
   "description": "Manage unit type categories",
   "help": {
     "ariaLabel": "About Unit Type Categories",
-    "title": "About Unit Type Categories",
+    "title": "About unit type categories",
     "overview": "A Unit type category is a grouping label for unit types (for example residential versus commercial). It has only a name. Units do not pick a category themselves — they pick a unit type, and that type belongs to a category.",
     "sections": [
       {

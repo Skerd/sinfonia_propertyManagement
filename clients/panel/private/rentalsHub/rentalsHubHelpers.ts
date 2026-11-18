@@ -1,30 +1,13 @@
 import type {ResolveLanguageKey} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import {generateUUID} from "@coreModule/helpers/general/uuid.ts";
 import type {FilterGroup, FilterRule} from "armonia/src/modules/core/database/filter";
-import {formatDate} from "@coreModule/helpers/general/dateTime.ts";
 import {getName} from "@coreModule/helpers/general/names.ts";
-import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 
-const DAY_FORMAT: Intl.DateTimeFormatOptions = {day: "2-digit", month: "2-digit", year: "numeric"};
-
-export function fmtDate(iso: string | undefined, _timezone?: string): string {
-    return formatDate(iso, {timeZone: "UTC", format: DAY_FORMAT}) || "—";
-}
-
-export function fmtMoney(amount: number | undefined, symbol?: string): string {
-    const formatted = formatNumber(amount, {maximumFractionDigits: 2});
-    return formatted ? `${symbol ?? ""} ${formatted}`.trim() : "—";
-}
+// One formatting for every hub table (contracts, payments, rentals).
+export {fmtDate, fmtMoney, unitLabel} from "@propertyManagementModule/clients/panel/private/contractsHub/contractsHubHelpers.ts";
 
 export function personName(parts: {name?: string; surname?: string} | undefined): string {
     return getName(parts) || "—";
-}
-
-export function unitLabel(unit: {name?: string; unitNumber?: string | number} | undefined): string {
-    if (!unit) return "—";
-    return [unit.name, unit.unitNumber != null ? String(unit.unitNumber) : undefined]
-        .filter(Boolean)
-        .join(" / ") || "—";
 }
 
 export function paginationSummary(

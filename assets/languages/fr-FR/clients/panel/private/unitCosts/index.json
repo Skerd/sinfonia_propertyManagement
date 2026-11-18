@@ -9,13 +9,6 @@
     "calendar": "Calendrier des paiements",
     "expenses": "Dépenses"
   },
-  "expenses": {
-    "summaryTotal": "Total des dépenses (filtrées)",
-    "summarySuppliers": "Fournisseurs uniques",
-    "summaryPeriod": "Période",
-    "placeholder": "—",
-    "periodRange": "— → —"
-  },
   "calendar": {
     "kpiPaid": "Payé",
     "kpiPending": "En attente",

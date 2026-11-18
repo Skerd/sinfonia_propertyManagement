@@ -1,0 +1,10 @@
+{
+  "path": "src/modules/propertyManagement/components/custom/dashboard/StatusChart.tsx",
+  "title": "Unit status",
+  "total": "Total",
+  "available": "Available",
+  "reserved": "Reserved",
+  "sold": "Sold",
+  "leased": "Leased",
+  "blocked": "Unavailable"
+}

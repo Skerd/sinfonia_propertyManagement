@@ -28,8 +28,8 @@ export interface ProjectStats {
 export function getProjectStatsFromStatistics(project: Project): ProjectStats {
   const stats = project.statistics;
   const totalUnits = stats?.totalUnits ?? 0;
-  const totalValue =
-    stats?.totalInvestmentValue?.reduce((acc, inv) => acc + (inv?.value ?? 0), 0) ?? 0;
+  // Same figures as the building cards beside it: listing value and money collected, not the investment.
+  const sum = (entries: {value?: number}[] | undefined) => (entries ?? []).reduce((acc, entry) => acc + (entry?.value ?? 0), 0);
   const breakdown = unitsByStatusToEntityStats(stats?.unitsByStatus, totalUnits);
   return {
     sold: breakdown.sold,
@@ -38,8 +38,8 @@ export function getProjectStatsFromStatistics(project: Project): ProjectStats {
     blocked: breakdown.blocked,
     leased: breakdown.leased,
     totalUnits,
-    totalValue,
-    collectedAmount: 0,
+    totalValue: sum(stats?.totalValue),
+    collectedAmount: sum(stats?.collectedAmount),
   };
 }
 

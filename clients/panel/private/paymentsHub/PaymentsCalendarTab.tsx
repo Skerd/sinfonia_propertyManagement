@@ -75,7 +75,6 @@ function sumByCurrency(
 
 type PaymentsCalendarTabProps = {
     resolveLanguageKey: ResolveLanguageKey;
-    locale: string;
     scope: PaymentsHubScope;
     onViewRow: (row: PaymentsHubRow) => void;
     refreshToken: number;
@@ -83,7 +82,6 @@ type PaymentsCalendarTabProps = {
 
 export default function PaymentsCalendarTab({
     resolveLanguageKey,
-    locale,
     scope,
     onViewRow,
     refreshToken,
@@ -164,7 +162,7 @@ export default function PaymentsCalendarTab({
                             {rk("title")}
                         </CardTitle>
                         <p className="text-xs text-muted-foreground">
-                            {rk("monthTotal").replace("{total}", formatRevenueByCurrencyLines(monthTotal, locale))}
+                            {rk("monthTotal").replace("{total}", formatRevenueByCurrencyLines(monthTotal))}
                         </p>
                     </CardHeader>
                     <CardContent className="pt-0">
@@ -203,7 +201,7 @@ export default function PaymentsCalendarTab({
                         </CardTitle>
                         {dayRows.length > 0 && (
                             <p className="text-xs text-muted-foreground">
-                                {rk("dayTotal").replace("{total}", formatRevenueByCurrencyLines(dayTotal, locale))}
+                                {rk("dayTotal").replace("{total}", formatRevenueByCurrencyLines(dayTotal))}
                             </p>
                         )}
                     </CardHeader>
@@ -240,7 +238,7 @@ export default function PaymentsCalendarTab({
                                                         </div>
                                                         <div className="flex shrink-0 flex-col items-end gap-1">
                                                             <span className="font-semibold tabular-nums">
-                                                                {fmtMoney(row.remaining || row.amount, row.currency?.symbol)}
+                                                                {fmtMoney(row.remaining || row.amount, row.currency)}
                                                             </span>
                                                             <Badge variant={paymentsStatusBadgeVariant(row.status)}>
                                                                 {String(resolveLanguageKey(`status.${row.status}`))}

@@ -108,6 +108,9 @@
     },
     "adCampaignTemplates": {
       "title": "Modelet e fushatave"
+    },
+    "paymentsHub": {
+      "title": "Pagesat"
     }
   },
   "reports": {
@@ -153,6 +156,21 @@
       },
       "propertyManagement": {
         "title": "Pasuri të paluajtshme"
+      },
+      "propertyManagementConfig": {
+        "title": "Shitjet & Dorëzimi"
+      },
+      "handoverPackages": {
+        "title": "Paketat e dorëzimit"
+      },
+      "inspectionChecklistTemplates": {
+        "title": "Listat e kontrollit"
+      },
+      "adCampaigns": {
+        "title": "Fushata reklamuese"
+      },
+      "adCampaignTemplates": {
+        "title": "Modelet e fushatave"
       }
     }
   }

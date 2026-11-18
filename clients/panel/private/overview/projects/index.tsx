@@ -24,6 +24,8 @@ import type {KpiDrillDownContext} from "@propertyManagementModule/helpers/dashbo
 import * as kpi from "@propertyManagementModule/helpers/dashboard/kpiDrillDown.ts";
 
 const PROJECTS_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/project"};
+// The table API caps a page at 200 records; a larger limit is rejected with a 400.
+const PROJECTS_REQUEST_BODY = {offset: 0, limit: 200};
 
 type ProjectsTabProps = WithLanguageType & {
   dashboardData: DashboardFormResponseType | null | undefined;
@@ -36,7 +38,8 @@ type ProjectsTabProps = WithLanguageType & {
 
 function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefresh, drillDownContext, viewEntriesLabel }: ProjectsTabProps) {
   const navigate = useNavigate();
-  const projectsRequest = useHttpRequest<TableResponse<Project>>(PROJECTS_REQUEST, {offset: 0, limit: 1000}, 1);
+  const [projectsFetchCount, setProjectsFetchCount] = useState(1);
+  const projectsRequest = useHttpRequest<TableResponse<Project>>(PROJECTS_REQUEST, PROJECTS_REQUEST_BODY, projectsFetchCount);
   const projects = useMemo(() => projectsRequest.data?.data ?? [], [projectsRequest.data]);
   const projectsLoading = projectsRequest.loading;
   const projectsError = projectsRequest.error;
@@ -103,7 +106,11 @@ function ProjectsTab({ resolveLanguageKey, dashboardData, loading, error, onRefr
           projectsLoading ?
           <Loader />
           : projectsError ?
-          <p className="text-xs text-muted-foreground">{resolveLanguageKey("failDescription")}</p>
+          <ErrorView
+            title={resolveLanguageKey("failTitle")}
+            description={resolveLanguageKey("failDescription")}
+            onClick={() => setProjectsFetchCount((count) => count + 1)}
+          />
           :
           <div className={DASHBOARD_ENTITY_GRID}>
             {

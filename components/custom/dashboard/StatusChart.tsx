@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+import { compose } from 'redux';
 import { PieChart, Pie, Cell } from 'recharts';
 import type { UnitsByStatus } from 'armonia/src/modules/propertyManagement/api/realEstate/private/dashboard/dashboard.form.response.type.ts';
 import {
@@ -7,6 +9,7 @@ import {
   type ChartConfig,
 } from '@coreModule/components/ui/chart.tsx';
 import { DashboardWidgetCard } from '@propertyManagementModule/components/custom/cards/DashboardWidgetCard.tsx';
+import withLanguage, { type WithLanguageType } from '@coreModule/helpers/hocs/withLanguage.tsx';
 
 export interface StatusChartData {
   available: number;
@@ -27,22 +30,8 @@ export function unitsByStatusToChartData(units: UnitsByStatus): StatusChartData 
   };
 }
 
-const LABELS: Record<keyof StatusChartData, string> = {
-  available: 'Të Lira',
-  reserved: 'Të Rezervuara',
-  sold: 'Të Shitura',
-  leased: 'Me Qira',
-  blocked: 'Të Bllokuara',
-};
-
-/** Keyed by status so the slice, the legend swatch and the tooltip all resolve the same token. */
-const CHART_CONFIG = {
-  available: { label: LABELS.available, color: 'var(--status-available)' },
-  reserved: { label: LABELS.reserved, color: 'var(--status-reserved)' },
-  sold: { label: LABELS.sold, color: 'var(--status-sold)' },
-  leased: { label: LABELS.leased, color: 'var(--status-leased)' },
-  blocked: { label: LABELS.blocked, color: 'var(--status-blocked)' },
-} satisfies ChartConfig;
+/** Slice order; `blocked` is the unit status `unavailable` (see unitsByStatusToChartData). */
+const STATUS_KEYS: (keyof StatusChartData)[] = ['available', 'reserved', 'sold', 'leased', 'blocked'];
 
 export interface StatusChartProps {
   data: StatusChartData;
@@ -50,10 +39,18 @@ export interface StatusChartProps {
   totalLabel?: string;
 }
 
-export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = 'Totali' }: StatusChartProps) {
-  const chartData = (Object.keys(LABELS) as (keyof StatusChartData)[]).map((key) => ({
+function StatusChartInner({ data, title, totalLabel, resolveLanguageKey }: StatusChartProps & WithLanguageType) {
+  /** Keyed by status so the slice, the legend swatch and the tooltip all resolve the same label and token. */
+  const chartConfig = useMemo(
+    () => Object.fromEntries(
+      STATUS_KEYS.map((key) => [key, { label: resolveLanguageKey(key), color: `var(--status-${key})` }]),
+    ) satisfies ChartConfig,
+    [resolveLanguageKey],
+  );
+
+  const chartData = STATUS_KEYS.map((key) => ({
     status: key,
-    name: LABELS[key],
+    name: resolveLanguageKey(key),
     value: data[key] ?? 0,
     /** Root-level token, not the chart-scoped `--color-*`, so the legend below resolves it too. */
     color: `var(--status-${key})`,
@@ -63,14 +60,14 @@ export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = '
 
   return (
     <DashboardWidgetCard
-      title={title}
+      title={title ?? resolveLanguageKey('title')}
       footer={
         <p className="w-full py-2 text-center text-xs text-muted-foreground">
-          {totalLabel}: <span className="font-semibold text-foreground">{total}</span>
+          {totalLabel ?? resolveLanguageKey('total')}: <span className="font-semibold text-foreground">{total}</span>
         </p>
       }
     >
-      <ChartContainer config={CHART_CONFIG} className="aspect-auto h-44 w-full">
+      <ChartContainer config={chartConfig} className="aspect-auto h-44 w-full">
         <PieChart>
           <ChartTooltip content={<ChartTooltipContent nameKey="status" hideLabel />} />
           <Pie
@@ -93,7 +90,7 @@ export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = '
 
       <div className="grid grid-cols-2 gap-2 mt-3">
         {chartData.map((item) => (
-          <div key={item.name} className="flex items-center gap-2">
+          <div key={item.status} className="flex items-center gap-2">
             <div
               className="size-2.5 rounded-full shrink-0"
               style={{ backgroundColor: item.color }}
@@ -107,3 +104,7 @@ export function StatusChart({ data, title = 'Statusi i Njësive', totalLabel = '
     </DashboardWidgetCard>
   );
 }
+
+export const StatusChart = compose(
+  withLanguage('src/modules/propertyManagement/components/custom/dashboard/StatusChart.tsx')
+)(StatusChartInner);
