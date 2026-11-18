@@ -116,7 +116,8 @@ function LeaseCard({
                             label={resolveLanguageKey("fields.unit")}
                             tooltip={resolveLanguageKey("fields.unit")}
                             path="unit"
-                            value={entity.unit?.name || entity.unit?.unitNumber}
+                            // Unit names repeat across buildings, so the building goes with it (UX-01).
+                            value={[entity.unit?.name || entity.unit?.unitNumber, entity.unit?.floor?.edifice?.name].filter(Boolean).join(" · ")}
                         />
                         <EntityCardRow
                             icon={IconCalendar}
