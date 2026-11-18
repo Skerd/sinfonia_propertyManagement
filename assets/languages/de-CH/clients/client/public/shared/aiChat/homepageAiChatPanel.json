@@ -21,5 +21,7 @@
   "formFailureBody": "Etwas ist schiefgelaufen. Bitte versuchen Sie es in einem Moment erneut.",
   "continueToChat": "Weiter zum Chat",
   "leaveDetails": "Kontaktdaten hinterlassen",
-  "talkToPerson": "Mit einer Person sprechen"
+  "talkToPerson": "Mit einer Person sprechen",
+  "edited": "bearbeitet",
+  "messageDeleted": "Diese Nachricht wurde gelöscht"
 }

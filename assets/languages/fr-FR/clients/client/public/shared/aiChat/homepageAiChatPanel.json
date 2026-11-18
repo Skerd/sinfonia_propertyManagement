@@ -21,5 +21,7 @@
   "formFailureBody": "Une erreur s'est produite. Veuillez réessayer dans un instant.",
   "continueToChat": "Continuer le chat",
   "leaveDetails": "Laisser vos coordonnées",
-  "talkToPerson": "Parler à quelqu’un"
+  "talkToPerson": "Parler à quelqu’un",
+  "edited": "modifié",
+  "messageDeleted": "Ce message a été supprimé"
 }

@@ -21,5 +21,7 @@
   "formFailureBody": "Diçka shkoi keq. Ju lutemi provoni përsëri pas pak.",
   "continueToChat": "Vazhdo te biseda",
   "leaveDetails": "Lini të dhënat tuaja",
-  "talkToPerson": "Flisni me një person"
+  "talkToPerson": "Flisni me një person",
+  "edited": "ndryshuar",
+  "messageDeleted": "Ky mesazh u fshi"
 }

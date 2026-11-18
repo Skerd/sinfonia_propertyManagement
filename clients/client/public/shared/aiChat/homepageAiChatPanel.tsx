@@ -35,9 +35,13 @@ function WindowChromeButton({
     );
 }
 
-/** One chat bubble. The visitor speaks on the right; bot and agents on the left. */
-function ChatBubble({message}: {message: AiChatMessage}) {
+/**
+ * One chat bubble. The visitor speaks on the right; bot and agents on the left. An edited message says so, a deleted
+ * one leaves a marker, and reactions show under it, as in the internal chat.
+ */
+function ChatBubble({message, labels}: {message: AiChatMessage; labels: {edited: string; deleted: string}}) {
     const isVisitor = message.author === "visitor";
+    const hasFooter = !!message.edited || !!message.reactions?.length;
 
     return (
         <div className={`flex w-full flex-col ${isVisitor ? "items-end" : "items-start"}`}>
@@ -52,10 +56,21 @@ function ChatBubble({message}: {message: AiChatMessage}) {
                     isVisitor ? "bg-white/15 text-left" : "bg-white/20 text-left",
                     message.pending ? "opacity-60" : "",
                     message.failed ? "border border-red-300/70" : "",
+                    message.deleted ? "italic text-white/70" : "",
                 ].filter(Boolean).join(" ")}
             >
-                {message.text}
+                {message.deleted ? labels.deleted : message.text}
             </p>
+            {hasFooter ? (
+                <div className={`mt-1 flex max-w-[85%] flex-wrap items-center gap-1 px-1 ${isVisitor ? "justify-end" : "justify-start"}`}>
+                    {message.reactions?.map((reaction) => (
+                        <span key={reaction.emoji} className="rounded-full bg-white/15 px-1.5 py-0.5 text-xs text-white">
+                            {reaction.emoji}{reaction.count > 1 ? ` ${reaction.count}` : ""}
+                        </span>
+                    ))}
+                    {message.edited ? <span className="font-aeonik-light text-xs text-white/60">{labels.edited}</span> : null}
+                </div>
+            ) : null}
             {message.failed ? (
                 <span className="mt-1 px-1 font-aeonik-light text-xs text-red-200">
                     Not delivered. Please try again.
@@ -603,7 +618,7 @@ function HomepageAiChatPanelInner({resolveLanguageKey}: WithLanguageType) {
                             )}
                         >
                             {messages.map((message) => (
-                                <ChatBubble key={message.id} message={message} />
+                                <ChatBubble key={message.id} message={message} labels={{edited: resolveLanguageKey("edited"), deleted: resolveLanguageKey("messageDeleted")}} />
                             ))}
                             {isAgentTyping ? (
                                 <ThinkingIndicator label={`${agentName ?? "Our team"} is typing`} />

@@ -21,5 +21,7 @@
   "formFailureBody": "Something went wrong. Please try again in a moment.",
   "continueToChat": "Continue to chat",
   "leaveDetails": "Leave your details",
-  "talkToPerson": "Talk to a person"
+  "talkToPerson": "Talk to a person",
+  "edited": "edited",
+  "messageDeleted": "This message was deleted"
 }

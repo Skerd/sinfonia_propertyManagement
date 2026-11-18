@@ -21,5 +21,7 @@
   "formFailureBody": "Qualcosa è andato storto. Riprova tra un momento.",
   "continueToChat": "Continua la chat",
   "leaveDetails": "Lascia i tuoi dati",
-  "talkToPerson": "Parla con una persona"
+  "talkToPerson": "Parla con una persona",
+  "edited": "modificato",
+  "messageDeleted": "Questo messaggio è stato eliminato"
 }
