@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {IconBed, IconBuildingSkyscraper, IconHome, IconMapPin, IconMaximize, type TablerIcon} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {PROJECT_REQUEST} from "./propertyRequests.ts";
 import {formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -32,7 +33,6 @@ import {
 } from "./propertySelectionInfo.ts";
 
 
-const PROJECT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectCatalog/single"};
 function Badges({items}: {items: readonly string[]}) {
     return (
         <div className="flex flex-wrap gap-2">

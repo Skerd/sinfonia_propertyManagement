@@ -12,7 +12,7 @@ import type {
     MarketingProjectsCatalogFormResponseType,
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingProjectsCatalog/marketingProjectsCatalog.form.response.type.ts";
 
-const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectsCatalog"};
+const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingProjectsCatalog", cache: true};
 
 /** The company's developments, each opening its project page. */
 function PropertyProjects({resolveLanguageKey}: WithLanguageType) {

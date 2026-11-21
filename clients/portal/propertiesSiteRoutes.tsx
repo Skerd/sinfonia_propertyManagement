@@ -1,7 +1,6 @@
-import {lazy, Suspense} from "react";
+import {lazy} from "react";
 import {Route, Routes} from "react-router-dom";
 import ErrorBoundary from "@coreModule/components/custom/errors/errorBoundary.tsx";
-import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import SitePageLayout from "@coreModule/clients/portal/shared/sitePageLayout.tsx";
 import PortalNotFound from "@coreModule/clients/portal/notFound/index.tsx";
 
@@ -15,15 +14,13 @@ const UnitPage = lazy(() => import("./propertyUnit.tsx"));
  */
 export default function PropertiesSiteRoutes() {
     return (
-        <Suspense fallback={<Loader />}>
-            <Routes>
-                <Route element={<SitePageLayout />}>
-                    <Route index element={<ErrorBoundary><ProjectsPage /></ErrorBoundary>} />
-                    <Route path="projects/:projectId" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
-                    <Route path="projects/:projectId/units/:unitId" element={<ErrorBoundary><UnitPage /></ErrorBoundary>} />
-                    <Route path="*" element={<PortalNotFound />} />
-                </Route>
-            </Routes>
-        </Suspense>
+        <Routes>
+            <Route element={<SitePageLayout />}>
+                <Route index element={<ErrorBoundary><ProjectsPage /></ErrorBoundary>} />
+                <Route path="projects/:projectId" element={<ErrorBoundary><ProjectPage /></ErrorBoundary>} />
+                <Route path="projects/:projectId/units/:unitId" element={<ErrorBoundary><UnitPage /></ErrorBoundary>} />
+                <Route path="*" element={<PortalNotFound />} />
+            </Route>
+        </Routes>
     );
 }

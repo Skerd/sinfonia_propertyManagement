@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {IconBath, IconBed, IconMaximize, IconStack2, type TablerIcon} from "@tabler/icons-react";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
-import useHttpRequest, {type HttpRequest} from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import useHttpRequest from "@coreModule/helpers/hooks/useHttpRequest.ts";
+import {UNIT_REQUEST} from "./propertyRequests.ts";
 import {formatCurrency, formatNumber} from "@coreModule/helpers/general/numbers.ts";
 import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
@@ -18,7 +19,6 @@ import type {
 } from "armonia/src/modules/propertyManagement/api/realEstate/public/marketingUnit/marketingUnitSingle.form.response.type.ts";
 import PropertyInquiryForm from "./propertyInquiryForm.tsx";
 
-const UNIT_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/marketingUnit/single"};
 
 const FEATURES = ["hasBalcony", "hasTerrace", "hasSeaView", "hasCityView", "hasLakeView", "hasElevator"] as const;
 
