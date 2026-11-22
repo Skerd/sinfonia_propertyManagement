@@ -21,6 +21,7 @@ import {Commission} from "armonia/src/modules/propertyManagement/api/realEstate/
 import type {MarkCommissionPaidForm} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/markCommissionPaid.form.type.ts";
 import {COMMISSION_LONG_TEXT_MAX} from "armonia/src/modules/propertyManagement/api/realEstate/private/commission/commission.schema-def.ts";
 import {uploadFilesForSubmit} from "@coreModule/helpers/media/uploadFilesForSubmit.ts";
+import {handleError} from "@coreModule/helpers/general/errors.ts";
 
 type MarkPaidCommissionDialogProps = WithLanguageType &
     WithAxiosType<Commission, MarkCommissionPaidForm> & {
@@ -83,6 +84,13 @@ function MarkPaidCommissionDialog({
                 payload.paymentReceiptMediaId = mediaId;
             }
             onFilterChange(payload);
+        } catch (error) {
+            // A refused receipt (type, size, virus scan) says why; the commission is not marked paid.
+            handleError(error, {
+                context: "MarkPaidCommission",
+                showToast: true,
+                fallbackMessage: String(resolveLanguageKey("axios.error.title")),
+            });
         } finally {
             setUploading(false);
         }
