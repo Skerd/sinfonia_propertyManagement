@@ -78,7 +78,6 @@
   "noData": "Nuk u gjetën lista kontrolli",
   "failTitle": "Ngarkimi i listave të kontrollit dështoi",
   "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",

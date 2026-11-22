@@ -72,6 +72,5 @@
     "name": "Nom",
     "slug": "Identifiant",
     "updatedAt": "Mis à jour le"
-  },
-  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+  }
 }

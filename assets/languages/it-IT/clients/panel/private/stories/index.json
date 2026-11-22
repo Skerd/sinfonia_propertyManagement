@@ -6,7 +6,6 @@
   "noData": "Nessuna storia trovata",
   "failTitle": "Caricamento storie non riuscito",
   "failDescription": "Si è verificato un errore durante il caricamento delle storie. Riprova.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "createdAt": "Creato il",
     "createdBy": "Creato da",

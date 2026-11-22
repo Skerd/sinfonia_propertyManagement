@@ -6,7 +6,6 @@
   "noData": "Aucun paiement de loyer trouvé",
   "failTitle": "Échec du chargement des paiements de loyer",
   "failDescription": "Une erreur est survenue lors du chargement des paiements de loyer. Veuillez réessayer.",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "amount": "Montant",
     "createdAt": "Créé le",

@@ -6,7 +6,6 @@
   "noData": "Nuk u gjet asnjë klient i mundshëm",
   "failTitle": "Ngarkimi i klientëve të mundshëm dështoi",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të klientëve të mundshëm. Ju lutemi provoni përsëri.",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "activityLog": "Regjistri i aktivitetit",
     "assignedTo": "Caktuar te",

@@ -6,7 +6,6 @@
   "noData": "Nessun pagamento trovato",
   "failTitle": "Impossibile caricare i pagamenti",
   "failDescription": "Si è verificato un errore durante il caricamento dei pagamenti. Riprova.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "amount": "Importo",
     "createdAt": "Creato il",

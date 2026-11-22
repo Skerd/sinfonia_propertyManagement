@@ -4,7 +4,6 @@
   "description": "Acquisti e fatture per unità",
   "descriptionWithContext": "Costi collegati a questa unità",
   "createUnitCost": "Nuovo costo unità",
-  "searchPlaceholder": "Cerca o filtra…",
   "tabs": {
     "calendar": "Calendario pagamenti",
     "expenses": "Spese"

@@ -6,7 +6,6 @@
   "noData": "Nessun lead trovato",
   "failTitle": "Caricamento lead non riuscito",
   "failDescription": "Si è verificato un errore durante il caricamento dei lead. Riprova.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "activityLog": "Registro attività",
     "assignedTo": "Assegnato a",

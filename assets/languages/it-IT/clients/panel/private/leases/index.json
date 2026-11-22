@@ -6,7 +6,6 @@
   "noData": "Nessun contratto trovato",
   "failTitle": "Impossibile caricare i contratti",
   "failDescription": "Si è verificato un errore durante il caricamento dei contratti. Riprova.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "yes": "Sì",
   "no": "No",
   "fields": {

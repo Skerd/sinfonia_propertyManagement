@@ -54,6 +54,5 @@
     "slug": "Identifiant",
     "sortOrder": "Ordre de tri",
     "updatedAt": "Mis à jour le"
-  },
-  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+  }
 }

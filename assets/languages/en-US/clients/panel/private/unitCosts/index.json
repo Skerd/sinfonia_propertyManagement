@@ -4,7 +4,6 @@
   "description": "Purchases and invoices by unit",
   "descriptionWithContext": "Costs linked to this unit",
   "createUnitCost": "New unit cost",
-  "searchPlaceholder": "Search or filter…",
   "tabs": {
     "calendar": "Payment calendar",
     "expenses": "Expenses"

@@ -4,7 +4,6 @@
   "description": "Blerjet dhe faturat sipas njësisë",
   "descriptionWithContext": "Kosto të lidhura me këtë njësi",
   "createUnitCost": "Kosto e re e njësisë",
-  "searchPlaceholder": "Kërko ose filtro…",
   "tabs": {
     "calendar": "Kalendar pagesash",
     "expenses": "Shpenzime"

@@ -82,7 +82,6 @@
   "noData": "Aucun dossier de remise trouvé",
   "failTitle": "Échec du chargement",
   "failDescription": "Une erreur s'est produite. Veuillez réessayer.",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "asBuiltComplete": "Dossier tel que construit complet",
     "createdAt": "Créé le",

@@ -6,7 +6,6 @@
   "noData": "Nuk u gjetën kontrata qiraje",
   "failTitle": "Dështoi ngarkimi i kontratave",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të kontratave. Ju lutemi provoni sërish.",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "yes": "Po",
   "no": "Jo",
   "fields": {

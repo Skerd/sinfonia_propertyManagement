@@ -54,6 +54,5 @@
     "slug": "Slug",
     "sortOrder": "Ordine di visualizzazione",
     "updatedAt": "Aggiornato il"
-  },
-  "searchPlaceholder": "Cerca o aggiungi filtri..."
+  }
 }

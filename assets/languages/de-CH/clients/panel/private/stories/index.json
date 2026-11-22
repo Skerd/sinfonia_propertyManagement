@@ -6,7 +6,6 @@
   "noData": "Keine Geschichten gefunden",
   "failTitle": "Geschichten konnten nicht geladen werden",
   "failDescription": "Beim Laden der Geschichten ist ein Fehler aufgetreten. Bitte erneut versuchen.",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

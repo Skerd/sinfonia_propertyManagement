@@ -6,7 +6,6 @@
   "noData": "No stories found",
   "failTitle": "Failed to load stories",
   "failDescription": "An error occurred while loading stories. Please try again.",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "createdAt": "Created At",
     "createdBy": "Created By",

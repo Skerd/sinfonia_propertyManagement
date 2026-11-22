@@ -82,7 +82,6 @@
   "noData": "No handover packages found",
   "failTitle": "Failed to load handover packages",
   "failDescription": "An error occurred while loading. Please try again.",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "asBuiltComplete": "As-Built Complete",
     "createdAt": "Created At",

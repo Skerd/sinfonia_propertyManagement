@@ -5,7 +5,6 @@
     "noData": "Nessun destinatario trovato",
     "failTitle": "Impossibile caricare i destinatari",
     "failDescription": "Si è verificato un errore durante il caricamento. Riprova.",
-    "searchPlaceholder": "Cerca o aggiungi filtri...",
     "fields": {
         "email": "Indirizzo e-mail",
         "fullName": "Nome",

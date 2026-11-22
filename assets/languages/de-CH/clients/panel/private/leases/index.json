@@ -6,7 +6,6 @@
   "noData": "Keine Mietverträge gefunden",
   "failTitle": "Mietverträge konnten nicht geladen werden",
   "failDescription": "Beim Laden der Mietverträge ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "yes": "Ja",
   "no": "Nein",
   "fields": {

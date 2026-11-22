@@ -72,6 +72,5 @@
     "name": "Nome",
     "slug": "Slug",
     "updatedAt": "Aggiornato il"
-  },
-  "searchPlaceholder": "Cerca o aggiungi filtri..."
+  }
 }

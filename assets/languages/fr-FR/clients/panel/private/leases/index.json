@@ -6,7 +6,6 @@
   "noData": "Aucun bail trouvé",
   "failTitle": "Échec du chargement des baux",
   "failDescription": "Une erreur est survenue lors du chargement des baux. Veuillez réessayer.",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "yes": "Oui",
   "no": "Non",
   "fields": {

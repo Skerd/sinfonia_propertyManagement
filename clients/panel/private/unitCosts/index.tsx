@@ -194,7 +194,6 @@ function AllUnitCosts({ resolveLanguageKey, unitId, unitName }: AllUnitCostsProp
                                 access="unitCosts"
                                 tableConfigOptions={{
                                     filterConfig: {
-                                        placeholder: resolveLanguageKey("searchPlaceholder"),
                                         fields: resolveLanguageKey("fields"),
                                     },
                                 }}

@@ -6,7 +6,6 @@
     "noData": "Keine Vorlagen gefunden",
     "failTitle": "Vorlagen konnten nicht geladen werden",
     "failDescription": "Beim Laden ist ein Fehler aufgetreten. Bitte erneut versuchen.",
-    "searchPlaceholder": "Suchen oder Filter hinzufügen...",
     "fields": {
         "name": "Titel",
         "campaignType": "Typ",

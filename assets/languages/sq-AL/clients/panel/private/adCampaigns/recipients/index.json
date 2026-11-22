@@ -5,7 +5,6 @@
     "noData": "Nuk u gjetën marrës",
     "failTitle": "Ngarkimi i marrësve dështoi",
     "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
-    "searchPlaceholder": "Kërko ose shto filtra...",
     "fields": {
         "email": "Adresa e emailit",
         "fullName": "Emri",

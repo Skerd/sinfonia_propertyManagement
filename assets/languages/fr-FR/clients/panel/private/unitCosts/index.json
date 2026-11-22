@@ -4,7 +4,6 @@
   "description": "Achats et factures par unité",
   "descriptionWithContext": "Coûts liés à cette unité",
   "createUnitCost": "Nouveau coût d’unité",
-  "searchPlaceholder": "Rechercher ou filtrer…",
   "tabs": {
     "calendar": "Calendrier des paiements",
     "expenses": "Dépenses"

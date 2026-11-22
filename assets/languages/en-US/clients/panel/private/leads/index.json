@@ -6,7 +6,6 @@
   "noData": "No leads found",
   "failTitle": "Failed to load leads",
   "failDescription": "An error occurred while loading leads. Please try again.",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "activityLog": "Activity Log",
     "assignedTo": "Assigned To",

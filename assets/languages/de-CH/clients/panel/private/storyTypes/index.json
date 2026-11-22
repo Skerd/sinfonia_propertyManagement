@@ -54,6 +54,5 @@
     "slug": "Slug",
     "sortOrder": "Sortierreihenfolge",
     "updatedAt": "Aktualisiert am"
-  },
-  "searchPlaceholder": "Suchen oder Filter hinzufügen..."
+  }
 }

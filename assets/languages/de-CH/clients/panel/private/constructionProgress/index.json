@@ -7,7 +7,6 @@
   "noData": "Noch keine Baufortschrittsberichte",
   "failTitle": "Baufortschritt konnte nicht geladen werden",
   "failDescription": "Beim Laden des Baufortschritts ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "createdAt": "Erstellt am",
     "createdBy": "Erstellt von",

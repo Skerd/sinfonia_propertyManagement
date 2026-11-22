@@ -6,7 +6,6 @@
     "noData": "Aucun modèle trouvé",
     "failTitle": "Échec du chargement des modèles",
     "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
-    "searchPlaceholder": "Rechercher ou ajouter des filtres...",
     "fields": {
         "name": "Titre",
         "campaignType": "Type",

@@ -5,7 +5,6 @@
     "noData": "No recipients found",
     "failTitle": "Failed to load recipients",
     "failDescription": "An error occurred while loading. Please try again.",
-    "searchPlaceholder": "Search or add filters...",
     "fields": {
         "email": "Email address",
         "fullName": "Name",

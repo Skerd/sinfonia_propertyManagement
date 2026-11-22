@@ -53,6 +53,5 @@
     "deletedBy": "Supprimé par",
     "name": "Nom",
     "updatedAt": "Mis à jour le"
-  },
-  "searchPlaceholder": "Rechercher ou ajouter des filtres..."
+  }
 }

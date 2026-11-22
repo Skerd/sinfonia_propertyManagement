@@ -6,7 +6,6 @@
   "noData": "No rental payments found",
   "failTitle": "Failed to load rental payments",
   "failDescription": "An error occurred while loading rental payments. Please try again.",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "amount": "Amount",
     "createdAt": "Created At",

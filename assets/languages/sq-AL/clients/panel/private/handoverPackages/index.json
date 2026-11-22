@@ -82,7 +82,6 @@
   "noData": "Nuk u gjetën paketa dorëzimi",
   "failTitle": "Ngarkimi i paketave të dorëzimit dështoi",
   "failDescription": "Ndodhi një gabim. Ju lutemi provoni përsëri.",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "asBuiltComplete": "Dokumentacioni as-built i plotë",
     "createdAt": "Krijuar më",

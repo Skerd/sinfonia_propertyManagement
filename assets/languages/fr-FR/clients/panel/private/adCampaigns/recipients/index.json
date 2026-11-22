@@ -5,7 +5,6 @@
     "noData": "Aucun destinataire trouvé",
     "failTitle": "Échec du chargement des destinataires",
     "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
-    "searchPlaceholder": "Rechercher ou ajouter des filtres...",
     "fields": {
         "email": "Adresse e-mail",
         "fullName": "Nom",

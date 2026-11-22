@@ -7,7 +7,6 @@
   "noData": "Aucun rapport d’avancement pour le moment",
   "failTitle": "Impossible de charger l’avancement des travaux",
   "failDescription": "Une erreur s’est produite lors du chargement. Veuillez réessayer.",
-  "searchPlaceholder": "Rechercher ou ajouter des filtres...",
   "fields": {
     "createdAt": "Créé le",
     "createdBy": "Créé par",

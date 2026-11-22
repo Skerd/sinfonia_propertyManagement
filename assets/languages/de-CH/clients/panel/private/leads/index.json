@@ -6,7 +6,6 @@
   "noData": "Keine Leads gefunden",
   "failTitle": "Leads konnten nicht geladen werden",
   "failDescription": "Beim Laden der Leads ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-  "searchPlaceholder": "Suchen oder Filter hinzufügen...",
   "fields": {
     "activityLog": "Aktivitätsprotokoll",
     "assignedTo": "Zugewiesen an",

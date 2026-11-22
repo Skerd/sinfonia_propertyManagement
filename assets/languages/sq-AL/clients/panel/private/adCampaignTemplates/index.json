@@ -6,7 +6,6 @@
     "noData": "Nuk u gjetën modele",
     "failTitle": "Ngarkimi i modeleve dështoi",
     "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
-    "searchPlaceholder": "Kërko ose shto filtra...",
     "fields": {
         "name": "Titulli",
         "campaignType": "Lloji",

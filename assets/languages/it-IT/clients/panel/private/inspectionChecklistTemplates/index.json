@@ -78,7 +78,6 @@
   "noData": "Nessuna checklist di ispezione trovata",
   "failTitle": "Impossibile caricare le checklist di ispezione",
   "failDescription": "Si è verificato un errore. Riprova.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "createdAt": "Creato il",
     "createdBy": "Creato da",

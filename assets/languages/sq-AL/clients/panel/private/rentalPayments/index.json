@@ -6,7 +6,6 @@
   "noData": "Nuk u gjetën pagesa qiraje",
   "failTitle": "Dështoi ngarkimi i pagesave",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të pagesave. Ju lutemi provoni sërish.",
-  "searchPlaceholder": "Kërko ose shto filtra...",
   "fields": {
     "amount": "Shuma",
     "createdAt": "Krijuar më",

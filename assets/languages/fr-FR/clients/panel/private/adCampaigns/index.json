@@ -6,7 +6,6 @@
     "noData": "Aucune campagne trouvée",
     "failTitle": "Échec du chargement des campagnes",
     "failDescription": "Une erreur s'est produite lors du chargement. Veuillez réessayer.",
-    "searchPlaceholder": "Rechercher ou ajouter des filtres...",
     "fields": {
         "name": "Référence",
         "title": "Titre",

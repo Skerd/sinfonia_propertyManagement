@@ -6,7 +6,6 @@
     "noData": "Nuk u gjetën fushata",
     "failTitle": "Ngarkimi i fushatave dështoi",
     "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni sërish.",
-    "searchPlaceholder": "Kërko ose shto filtra...",
     "fields": {
         "name": "Referenca",
         "title": "Titulli",

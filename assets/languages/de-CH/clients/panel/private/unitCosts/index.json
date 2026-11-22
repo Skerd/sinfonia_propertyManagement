@@ -4,7 +4,6 @@
   "description": "Einkäufe und Rechnungen nach Einheit",
   "descriptionWithContext": "Kosten verknüpft mit dieser Einheit",
   "createUnitCost": "Neue Einheitskosten",
-  "searchPlaceholder": "Suchen oder filtern…",
   "tabs": {
     "calendar": "Zahlungskalender",
     "expenses": "Ausgaben"

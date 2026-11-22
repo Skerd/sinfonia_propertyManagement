@@ -82,7 +82,6 @@
   "noData": "Nessun pacchetto di consegna trovato",
   "failTitle": "Impossibile caricare i pacchetti di consegna",
   "failDescription": "Si è verificato un errore. Riprova.",
-  "searchPlaceholder": "Cerca o aggiungi filtri...",
   "fields": {
     "asBuiltComplete": "As-built completato",
     "createdAt": "Creato il",

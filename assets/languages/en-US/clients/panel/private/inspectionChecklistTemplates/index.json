@@ -78,7 +78,6 @@
   "noData": "No inspection checklists found",
   "failTitle": "Failed to load inspection checklists",
   "failDescription": "An error occurred while loading. Please try again.",
-  "searchPlaceholder": "Search or add filters...",
   "fields": {
     "createdAt": "Created At",
     "createdBy": "Created By",

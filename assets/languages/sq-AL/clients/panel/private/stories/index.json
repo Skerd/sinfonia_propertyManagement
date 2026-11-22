@@ -6,7 +6,6 @@
   "noData": "Nuk u gjetën tregime",
   "failTitle": "Tregimet nuk u ngarkuan",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit të tregimeve. Ju lutemi provoni përsëri.",
-  "searchPlaceholder": "Kërkoni ose shtoni filtra...",
   "fields": {
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",

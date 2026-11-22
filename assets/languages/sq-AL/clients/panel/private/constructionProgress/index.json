@@ -7,7 +7,6 @@
   "noData": "Ende nuk ka raporte ecurie",
   "failTitle": "Ecuria e punimeve nuk u ngarkua",
   "failDescription": "Ndodhi një gabim gjatë ngarkimit. Ju lutemi provoni përsëri.",
-  "searchPlaceholder": "Kërkoni ose shtoni filtra...",
   "fields": {
     "createdAt": "Krijuar më",
     "createdBy": "Krijuar nga",
