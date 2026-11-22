@@ -3,6 +3,8 @@ import {prefetchHttpRequest} from "@coreModule/helpers/apiClient/responseCache.t
 import {PROJECT_REQUEST, UNIT_REQUEST} from "./propertyRequests.ts";
 import PropertyCatalogFilters from "./propertyCatalogFilters.tsx";
 import PropertiesSiteRoutes from "./propertiesSiteRoutes.tsx";
+import {IconBuildingEstate} from "@tabler/icons-react";
+import BusinessTypeSummary from "./businessTypeSummary.tsx";
 
 /** Properties on the portal: each real-estate company's projects in the home catalog; inquiries become its leads. */
 const contribution: PortalContribution = {
@@ -24,6 +26,8 @@ const contribution: PortalContribution = {
         void import("./propertyProject.tsx");
         prefetchHttpRequest(PROJECT_REQUEST, {projectId}, {siteCompany});
     },
+    // A person may create this kind of business on the portal (D178); the API declares the same key.
+    businessType: {key: "propertyManagement", Icon: IconBuildingEstate, Summary: BusinessTypeSummary},
 };
 
 export default contribution;
