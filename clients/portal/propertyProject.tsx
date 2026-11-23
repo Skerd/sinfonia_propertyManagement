@@ -96,6 +96,8 @@ function PropertyProject({resolveLanguageKey}: WithLanguageType) {
         <DetailPage
             kind="project"
             title={heading.title}
+            // The project as the catalog's card lists it, whichever building or floor is open, for its heart (TD-F148).
+            keep={{kind: "project", id: project._id, section: "properties", path: `/projects/${project._id}`, title: project.name}}
             media={hasPlan
                 ? (
                     <PropertyPolygonExplorer
