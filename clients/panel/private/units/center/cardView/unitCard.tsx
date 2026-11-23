@@ -2,7 +2,6 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
-import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
 import {IconAlignLeft, IconGrid4x4, IconListDetails, IconTag} from "@tabler/icons-react";
 import {Unit} from "armonia/src/modules/propertyManagement/api/realEstate/private/unit/unit/unit.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
@@ -98,7 +97,6 @@ function UnitCard({
                             showThumbnails={false}
                             allowFullScreen={false}
                             coverAfterFirst={false}
-                            modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
                         />
                         {/* The same unit name repeats across buildings, so the list card says which one (UX-01). */}
                         <EntityCard.Header

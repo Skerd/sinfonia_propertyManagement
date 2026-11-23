@@ -2,7 +2,6 @@ import {compose} from "redux";
 import withLanguage, {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import withDebug from "@coreModule/helpers/hocs/withDebug.tsx";
 import {AccessGatedGalleryCarousel} from "@coreModule/components/viewEngine/widgets/gallery/galleryCarousel.tsx";
-import {ModifyImagesOnDarkMode} from "@propertyManagementModule/components/custom/images/modifyImagesOnDarkMode.tsx";
 import {Floor} from "armonia/src/modules/propertyManagement/api/realEstate/private/floor/floor.dto.ts";
 import type {DeletedData} from "armonia/src/modules/core/types/shared.types.ts";
 import {IconDoor, IconGrid4x4} from "@tabler/icons-react";
@@ -81,7 +80,6 @@ function FloorCard({
                         showThumbnails={false}
                         allowFullScreen={false}
                         coverAfterFirst={false}
-                        modifyImagesOnDarkMode={ModifyImagesOnDarkMode}
                     />
                     <EntityCard.Header
                         titlePath="name"
