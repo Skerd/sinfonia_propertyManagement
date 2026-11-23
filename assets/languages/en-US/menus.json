@@ -129,6 +129,7 @@
     }
   },
   "propertyManagement": {
+    "setup": {"project": "Add your first project", "edifice": "Add a building to the project", "floor": "Add the building's floors", "unitTypeCategory": "Add a unit category", "unitTypeCategoryHint": "For example Residential or Commercial.", "unitType": "Add your unit types", "unitTypeHint": "For example two-bedroom apartment or shop.", "unit": "Add your first unit"},
     "title": "Property Management"
   },
   "finance": {

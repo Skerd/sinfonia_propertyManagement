@@ -129,6 +129,7 @@
     }
   },
   "propertyManagement": {
+    "setup": {"project": "Shtoni projektin tuaj të parë", "edifice": "Shtoni një ndërtesë në projekt", "floor": "Shtoni katet e ndërtesës", "unitTypeCategory": "Shtoni një kategori njësish", "unitTypeCategoryHint": "Për shembull Banim ose Tregtare.", "unitType": "Shtoni llojet e njësive", "unitTypeHint": "Për shembull apartament 2+1 ose dyqan.", "unit": "Shtoni njësinë tuaj të parë"},
     "title": "Menaxhimi i Pronave"
   },
   "finance": {

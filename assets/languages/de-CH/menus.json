@@ -129,6 +129,7 @@
     }
   },
   "propertyManagement": {
+    "setup": {"project": "Erstes Projekt hinzufügen", "edifice": "Gebäude zum Projekt hinzufügen", "floor": "Stockwerke des Gebäudes erfassen", "unitTypeCategory": "Einheitenkategorie hinzufügen", "unitTypeCategoryHint": "Zum Beispiel Wohnen oder Gewerbe.", "unitType": "Einheitentypen hinzufügen", "unitTypeHint": "Zum Beispiel 3,5-Zimmer-Wohnung oder Laden.", "unit": "Erste Einheit hinzufügen"},
     "title": "Liegenschaftsverwaltung"
   },
   "finance": {

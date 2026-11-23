@@ -129,6 +129,7 @@
     }
   },
   "propertyManagement": {
+    "setup": {"project": "Ajoutez votre premier projet", "edifice": "Ajoutez un bâtiment au projet", "floor": "Ajoutez les étages du bâtiment", "unitTypeCategory": "Ajoutez une catégorie de lots", "unitTypeCategoryHint": "Par exemple Résidentiel ou Commercial.", "unitType": "Ajoutez vos types de lots", "unitTypeHint": "Par exemple T3 ou local commercial.", "unit": "Ajoutez votre premier lot"},
     "title": "Gestion immobilière"
   },
   "finance": {

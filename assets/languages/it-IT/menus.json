@@ -129,6 +129,7 @@
     }
   },
   "propertyManagement": {
+    "setup": {"project": "Aggiungi il tuo primo progetto", "edifice": "Aggiungi un edificio al progetto", "floor": "Aggiungi i piani dell'edificio", "unitTypeCategory": "Aggiungi una categoria di unità", "unitTypeCategoryHint": "Ad esempio Residenziale o Commerciale.", "unitType": "Aggiungi i tipi di unità", "unitTypeHint": "Ad esempio trilocale o negozio.", "unit": "Aggiungi la tua prima unità"},
     "title": "Gestione immobiliare"
   },
   "finance": {
