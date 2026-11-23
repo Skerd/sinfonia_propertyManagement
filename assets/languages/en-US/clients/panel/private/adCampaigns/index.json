@@ -2,6 +2,30 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
     "title": "Ad campaigns",
     "description": "Email clients and leads about price changes, offers and new projects",
+    "help": {
+        "ariaLabel": "About Ad campaigns",
+        "title": "About Ad campaigns",
+        "overview": "Emails to your clients and leads about a price change, an offer or a new project. A campaign goes out in batches, and each recipient's result stays on it.",
+        "sections": [
+            {
+                "title": "Who gets it",
+                "items": [
+                    "Everyone: the buyers and reservation holders of the units in the projects or units you choose (the whole company when you choose none), plus, if you include them, the leads interested in them. Lost leads are left out.",
+                    "Selected recipients: only the clients and leads you pick.",
+                    "Each address gets one email. Anyone who turned off this kind of email is listed as opted out and not mailed."
+                ]
+            },
+            {
+                "title": "Sending",
+                "items": [
+                    "Send a test first: it goes to your own email address.",
+                    "Send now starts at once, or at the scheduled time if you set one. While it goes out you can pause, resume or cancel it.",
+                    "The email is the chosen template, in each recipient's language when the template has that version. A subject or body of your own replaces the template's text.",
+                    "If a detail of the email can't be filled in for someone, their email is not sent. View recipients shows each person's result and the reason."
+                ]
+            }
+        ]
+    },
     "createAdCampaign": "New campaign",
     "noData": "No campaigns found",
     "failTitle": "Failed to load campaigns",

@@ -170,11 +170,8 @@
       "unitPriceTitle": "Price",
       "unitPriceText": "The asking price. Buyers see it on your website unless you chose to hide prices.",
       "tour": {
-        "dashboard": "Your numbers at a glance: units sold, money collected and alerts. Pick a building to see only that one.",
-        "units": "Every unit and its status: available, reserved or sold. The status changes by itself as you reserve and sell.",
-        "leads": "People interested in a property. Keep their details here and update their stage as you talk with them.",
-        "reservations": "A reservation holds a unit for a buyer until it runs out. The unit shows as reserved, and the reservation can become a sale.",
-        "sales": "Each sale, paid at once or in installments. Completing a sale marks the unit sold."
+        "introTitle": "Your property business",
+        "introText": "This part of the panel runs your property sales and rentals: your projects, buildings and units, buyers from first contact to handover, payments and commissions, rentals, reports, and your rules. Next, the tour opens each page and explains it. The ⓘ beside a page's title shows the same help any time."
       }
     },
     "title": "Property Management"

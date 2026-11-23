@@ -170,11 +170,8 @@
       "unitPriceTitle": "Çmimi",
       "unitPriceText": "Çmimi që kërkoni. Blerësit e shohin në faqen tuaj, përveç nëse keni zgjedhur t'i fshihni çmimet.",
       "tour": {
-        "dashboard": "Shifrat tuaja me një shikim: njësitë e shitura, paratë e arkëtuara dhe sinjalizimet. Zgjidhni një ndërtesë për të parë vetëm atë.",
-        "units": "Çdo njësi me statusin e saj: e lirë, e rezervuar ose e shitur. Statusi ndryshon vetë kur rezervoni dhe shisni.",
-        "leads": "Njerëz të interesuar për një pronë. Mbani këtu të dhënat e tyre dhe përditësoni fazën ndërsa flisni me ta.",
-        "reservations": "Një rezervim e mban një njësi për një blerës derisa të skadojë. Njësia shfaqet e rezervuar, dhe rezervimi mund të kthehet në shitje.",
-        "sales": "Çdo shitje, e paguar menjëherë ose me këste. Kur e përfundoni një shitje, njësia shënohet e shitur."
+        "introTitle": "Biznesi juaj i pronave",
+        "introText": "Kjo pjesë e panelit drejton shitjet dhe qiratë e pronave tuaja: projektet, ndërtesat dhe njësitë, blerësit nga kontakti i parë deri te dorëzimi, pagesat dhe komisionet, qiratë, raportet dhe rregullat tuaja. Më pas, turi hap çdo faqe dhe e shpjegon. Butoni ⓘ pranë titullit të faqes tregon të njëjtën ndihmë në çdo kohë."
       }
     },
     "title": "Menaxhimi i Pronave"

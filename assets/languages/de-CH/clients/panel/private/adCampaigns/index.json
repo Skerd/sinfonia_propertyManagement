@@ -2,6 +2,30 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
     "title": "Werbekampagnen",
     "description": "Kundinnen und Leads über Preisänderungen, Angebote und neue Projekte informieren",
+    "help": {
+        "ariaLabel": "Über Werbekampagnen",
+        "title": "Über Werbekampagnen",
+        "overview": "E-Mails an Ihre Kunden und Leads zu einer Preisänderung, einem Angebot oder einem neuen Projekt. Eine Kampagne geht in Etappen hinaus, und das Ergebnis jedes Empfängers bleibt bei der Kampagne.",
+        "sections": [
+            {
+                "title": "Wer sie erhält",
+                "items": [
+                    "Alle: Käufer und Reservationsinhaber der Einheiten in den gewählten Projekten oder Einheiten (die ganze Firma, wenn Sie keine wählen), dazu, falls Sie sie einschliessen, die interessierten Leads. Verlorene Leads bleiben aussen vor.",
+                    "Ausgewählte Empfänger: nur die Kunden und Leads, die Sie wählen.",
+                    "Jede Adresse erhält eine E-Mail. Wer diese Art E-Mail abgestellt hat, erscheint als abgemeldet und erhält sie nicht."
+                ]
+            },
+            {
+                "title": "Versand",
+                "items": [
+                    "Senden Sie zuerst einen Test: Er geht an Ihre eigene E-Mail-Adresse.",
+                    "Jetzt senden startet sofort oder zur geplanten Zeit, falls Sie eine gesetzt haben. Während des Versands können Sie pausieren, fortsetzen oder abbrechen.",
+                    "Die E-Mail ist die gewählte Vorlage, in der Sprache jedes Empfängers, wenn die Vorlage diese Fassung hat. Ein eigener Betreff oder Text ersetzt den der Vorlage.",
+                    "Lässt sich eine Angabe der E-Mail für jemanden nicht ausfüllen, wird seine E-Mail nicht gesendet. Empfänger anzeigen zeigt das Ergebnis jeder Person und den Grund."
+                ]
+            }
+        ]
+    },
     "createAdCampaign": "Neue Kampagne",
     "noData": "Keine Kampagnen gefunden",
     "failTitle": "Kampagnen konnten nicht geladen werden",

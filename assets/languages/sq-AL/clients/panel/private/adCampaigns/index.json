@@ -2,6 +2,30 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
     "title": "Fushata reklamuese",
     "description": "Dërgoni email klientëve dhe klientëve të mundshëm për ndryshime çmimi, oferta dhe projekte të reja",
+    "help": {
+        "ariaLabel": "Rreth fushatave reklamuese",
+        "title": "Rreth fushatave reklamuese",
+        "overview": "Email për klientët dhe klientët e mundshëm për një ndryshim çmimi, një ofertë ose një projekt të ri. Fushata dërgohet me grupe, dhe rezultati i çdo marrësi ruhet te fushata.",
+        "sections": [
+            {
+                "title": "Kush e merr",
+                "items": [
+                    "Të gjithë: blerësit dhe mbajtësit e rezervimeve të njësive në projektet ose njësitë që zgjidhni (e gjithë kompania kur nuk zgjidhni asnjë), si dhe, nëse i përfshini, klientët e mundshëm të interesuar për to. Klientët e mundshëm të humbur lihen jashtë.",
+                    "Marrës të zgjedhur: vetëm klientët dhe klientët e mundshëm që zgjidhni.",
+                    "Çdo adresë merr një email. Kushdo që e ka çaktivizuar këtë lloj emaili shfaqet si i çregjistruar dhe nuk i dërgohet."
+                ]
+            },
+            {
+                "title": "Dërgimi",
+                "items": [
+                    "Dërgoni fillimisht një test: ai shkon në adresën tuaj të emailit.",
+                    "Dërgo tani e nis menjëherë, ose në orën e planifikuar nëse e keni caktuar. Ndërsa dërgohet, mund ta pauzoni, ta vazhdoni ose ta anuloni.",
+                    "Emaili është modeli i zgjedhur, në gjuhën e çdo marrësi kur modeli e ka atë version. Një temë ose tekst i juaji zëvendëson tekstin e modelit.",
+                    "Nëse një e dhënë e emailit nuk mund të plotësohet për dikë, emaili i tij nuk dërgohet. Shiko marrësit tregon rezultatin e secilit dhe arsyen."
+                ]
+            }
+        ]
+    },
     "createAdCampaign": "Fushatë e re",
     "noData": "Nuk u gjetën fushata",
     "failTitle": "Ngarkimi i fushatave dështoi",

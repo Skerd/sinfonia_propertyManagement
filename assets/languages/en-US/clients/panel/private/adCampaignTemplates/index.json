@@ -2,6 +2,29 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
     "title": "Campaign templates",
     "description": "Reusable email templates, one per campaign type and language",
+    "help": {
+        "ariaLabel": "About Campaign templates",
+        "title": "About Campaign templates",
+        "overview": "The emails your campaigns send, written once and reused. Write one for each campaign type, in each language you need.",
+        "sections": [
+            {
+                "title": "How a template works",
+                "items": [
+                    "Write the subject, the preview text and the body. Words in braces, such as {firstName}, are filled in for each recipient.",
+                    "Give translations the same title and type: each recipient then gets the version in their language when there is one.",
+                    "Every email gets a greeting and an unsubscribe link for you, so leave them out of the body."
+                ]
+            },
+            {
+                "title": "On this page",
+                "items": [
+                    "Open a template to see how the email looks.",
+                    "Use template starts a new campaign with it.",
+                    "Deactivate a template you no longer use: campaigns can't send with an inactive template."
+                ]
+            }
+        ]
+    },
     "createAdCampaignTemplate": "New template",
     "noData": "No templates found",
     "failTitle": "Failed to load templates",

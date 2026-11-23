@@ -2,6 +2,30 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
     "title": "Campagnes publicitaires",
     "description": "Informer clients et prospects des changements de prix, offres et nouveaux projets",
+    "help": {
+        "ariaLabel": "À propos des campagnes publicitaires",
+        "title": "À propos des campagnes publicitaires",
+        "overview": "Des e-mails à vos clients et prospects sur un changement de prix, une offre ou un nouveau projet. Une campagne part par lots, et le résultat de chaque destinataire reste sur la campagne.",
+        "sections": [
+            {
+                "title": "Qui la reçoit",
+                "items": [
+                    "Tout le monde : les acheteurs et titulaires de réservations des unités des projets ou unités que vous choisissez (toute la société si vous n'en choisissez aucun), plus, si vous les incluez, les prospects qui s'y intéressent. Les prospects perdus sont exclus.",
+                    "Destinataires sélectionnés : seulement les clients et prospects que vous choisissez.",
+                    "Chaque adresse reçoit un seul e-mail. Une personne qui a désactivé ce type d'e-mail apparaît comme désinscrite et ne le reçoit pas."
+                ]
+            },
+            {
+                "title": "Envoi",
+                "items": [
+                    "Envoyez d'abord un test : il part à votre propre adresse e-mail.",
+                    "Envoyer maintenant démarre tout de suite, ou à l'heure prévue si vous en avez fixé une. Pendant l'envoi, vous pouvez la mettre en pause, la reprendre ou l'annuler.",
+                    "L'e-mail reprend le modèle choisi, dans la langue de chaque destinataire quand le modèle existe dans cette langue. Un objet ou un texte à vous remplace celui du modèle.",
+                    "Si une information de l'e-mail ne peut pas être remplie pour quelqu'un, son e-mail ne part pas. Voir les destinataires montre le résultat de chacun et la raison."
+                ]
+            }
+        ]
+    },
     "createAdCampaign": "Nouvelle campagne",
     "noData": "Aucune campagne trouvée",
     "failTitle": "Échec du chargement des campagnes",

@@ -170,11 +170,8 @@
       "unitPriceTitle": "Prezzo",
       "unitPriceText": "Il prezzo richiesto. Gli acquirenti lo vedono sul tuo sito, a meno che tu non abbia scelto di nascondere i prezzi.",
       "tour": {
-        "dashboard": "I tuoi numeri a colpo d'occhio: unità vendute, incassi e avvisi. Scegli un edificio per vedere solo quello.",
-        "units": "Ogni unità con il suo stato: disponibile, prenotata o venduta. Lo stato cambia da solo quando prenoti e vendi.",
-        "leads": "Persone interessate a un immobile. Tieni qui i loro dati e aggiorna la fase man mano che ci parli.",
-        "reservations": "Una prenotazione blocca un'unità per un acquirente fino alla scadenza. L'unità risulta prenotata, e la prenotazione può diventare una vendita.",
-        "sales": "Ogni vendita, pagata subito o a rate. Quando concludi una vendita, l'unità risulta venduta."
+        "introTitle": "La tua attività immobiliare",
+        "introText": "Questa parte del pannello gestisce vendite e affitti dei tuoi immobili: progetti, edifici e unità, acquirenti dal primo contatto alla consegna, pagamenti e commissioni, affitti, report e le tue regole. Ora il tour apre ogni pagina e la spiega. La ⓘ accanto al titolo di una pagina mostra lo stesso aiuto in qualsiasi momento."
       }
     },
     "title": "Gestione immobiliare"

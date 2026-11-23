@@ -170,11 +170,8 @@
       "unitPriceTitle": "Preis",
       "unitPriceText": "Der Angebotspreis. Käufer sehen ihn auf Ihrer Website, ausser Sie haben die Preise ausgeblendet.",
       "tour": {
-        "dashboard": "Ihre Zahlen auf einen Blick: verkaufte Einheiten, Zahlungseingänge und Hinweise. Wählen Sie ein Gebäude, um nur dieses zu sehen.",
-        "units": "Jede Einheit mit ihrem Status: frei, reserviert oder verkauft. Der Status ändert sich von selbst, wenn Sie reservieren und verkaufen.",
-        "leads": "Personen, die sich für eine Immobilie interessieren. Halten Sie ihre Angaben hier fest und passen Sie die Phase an, während Sie mit ihnen sprechen.",
-        "reservations": "Eine Reservation hält eine Einheit für einen Käufer, bis sie abläuft. Die Einheit gilt als reserviert, und aus der Reservation kann ein Verkauf werden.",
-        "sales": "Jeder Verkauf, sofort bezahlt oder in Raten. Wenn Sie einen Verkauf abschliessen, gilt die Einheit als verkauft."
+        "introTitle": "Ihr Immobiliengeschäft",
+        "introText": "Dieser Teil des Panels führt Ihren Verkauf und Ihre Vermietung: Projekte, Gebäude und Einheiten, Käufer vom ersten Kontakt bis zur Übergabe, Zahlungen und Provisionen, Vermietungen, Berichte und Ihre Regeln. Als Nächstes öffnet die Tour jede Seite und erklärt sie. Das ⓘ neben dem Seitentitel zeigt dieselbe Hilfe jederzeit."
       }
     },
     "title": "Liegenschaftsverwaltung"

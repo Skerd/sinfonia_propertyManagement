@@ -2,6 +2,30 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaigns/index.tsx",
     "title": "Campagne pubblicitarie",
     "description": "Informa clienti e lead su variazioni di prezzo, offerte e nuovi progetti",
+    "help": {
+        "ariaLabel": "Informazioni sulle campagne pubblicitarie",
+        "title": "Informazioni sulle campagne pubblicitarie",
+        "overview": "E-mail a clienti e lead su una variazione di prezzo, un'offerta o un nuovo progetto. Una campagna parte a gruppi, e il risultato di ogni destinatario resta sulla campagna.",
+        "sections": [
+            {
+                "title": "Chi la riceve",
+                "items": [
+                    "Tutti: acquirenti e titolari di prenotazioni delle unità nei progetti o nelle unità che scegli (tutta l'azienda se non ne scegli nessuno), più, se li includi, i lead interessati. I lead persi restano esclusi.",
+                    "Destinatari selezionati: solo i clienti e i lead che scegli.",
+                    "Ogni indirizzo riceve una sola e-mail. Chi ha disattivato questo tipo di e-mail risulta disiscritto e non la riceve."
+                ]
+            },
+            {
+                "title": "Invio",
+                "items": [
+                    "Prima invia un test: arriva al tuo indirizzo e-mail.",
+                    "Invia ora parte subito, oppure all'orario pianificato se l'hai impostato. Durante l'invio puoi metterla in pausa, riprenderla o annullarla.",
+                    "L'e-mail è il modello scelto, nella lingua di ogni destinatario quando il modello ha quella versione. Un oggetto o un testo tuo sostituisce quello del modello.",
+                    "Se un dato dell'e-mail non si può compilare per qualcuno, la sua e-mail non parte. Vedi destinatari mostra il risultato di ognuno e il motivo."
+                ]
+            }
+        ]
+    },
     "createAdCampaign": "Nuova campagna",
     "noData": "Nessuna campagna trovata",
     "failTitle": "Impossibile caricare le campagne",

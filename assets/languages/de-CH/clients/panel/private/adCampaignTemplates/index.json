@@ -2,6 +2,29 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
     "title": "Kampagnenvorlagen",
     "description": "Wiederverwendbare E-Mail-Vorlagen, je eine pro Kampagnentyp und Sprache",
+    "help": {
+        "ariaLabel": "Über Kampagnenvorlagen",
+        "title": "Über Kampagnenvorlagen",
+        "overview": "Die E-Mails, die Ihre Kampagnen senden, einmal geschrieben und wiederverwendet. Schreiben Sie eine pro Kampagnentyp, in jeder Sprache, die Sie brauchen.",
+        "sections": [
+            {
+                "title": "So funktioniert eine Vorlage",
+                "items": [
+                    "Schreiben Sie Betreff, Vorschautext und E-Mail-Text. Wörter in geschweiften Klammern wie {firstName} werden für jeden Empfänger ausgefüllt.",
+                    "Geben Sie Übersetzungen denselben Titel und Typ: Jeder Empfänger erhält dann die Fassung in seiner Sprache, wenn es sie gibt.",
+                    "Begrüssung und Abmeldelink kommen automatisch in jede E-Mail, schreiben Sie sie also nicht in den Text."
+                ]
+            },
+            {
+                "title": "Auf dieser Seite",
+                "items": [
+                    "Öffnen Sie eine Vorlage, um zu sehen, wie die E-Mail aussieht.",
+                    "Vorlage verwenden startet damit eine neue Kampagne.",
+                    "Deaktivieren Sie eine Vorlage, die Sie nicht mehr brauchen: Mit einer inaktiven Vorlage können Kampagnen nicht senden."
+                ]
+            }
+        ]
+    },
     "createAdCampaignTemplate": "Neue Vorlage",
     "noData": "Keine Vorlagen gefunden",
     "failTitle": "Vorlagen konnten nicht geladen werden",

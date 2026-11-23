@@ -3,7 +3,7 @@ import type {HomeContribution} from "@coreModule/helpers/types/homeContribution.
 /**
  * What a new property company sets up before it can take customers (D178), in the order it needs them; each
  * step is done once its list has a row. Each step's guide points at the fields that matter most (D179), and the tour
- * shows the pages an agency uses every day. Texts are in this module's `menus.json` (`setup`, `guide`).
+ * walks every page of the module (D180). Texts are in this module's `menus.json` (`setup`, `guide`).
  */
 const contribution: HomeContribution = {
     id: "propertyManagement",
@@ -93,21 +93,52 @@ const contribution: HomeContribution = {
             },
         ];
     },
-    // Sidebar links, shown from wherever the person is, each left out without its link's model (the dashboard's link
-    // takes any of several, so it names none); the tour then ends at the last one's page help.
-    getTour: ({resolveLanguageKey: t}) => ([
-        ["dashboard", undefined],
-        ["units", "units"],
-        ["leads", "leads"],
-        ["reservations", "reservations"],
-        ["sales", "sales"],
-    ] as const).map(([page, accessModel]) => ({
-        target: `nav:/realEstate/${page}`,
-        // Named as the sidebar names them.
-        title: t(`menus.realEstate.${page}.title`),
-        text: t(`menus.propertyManagement.guide.tour.${page}`),
-        accessModel,
-    })),
+    // Every page of the module in sidebar order, then its settings, each explained by its own ⓘ help (D180); a page the
+    // person may not read is left out. A page whose sidebar link takes any of several models names the one it is about.
+    getTour: ({resolveLanguageKey: t}) => [
+        {
+            target: "page.help",
+            to: "/realEstate/overview",
+            accessModel: "units",
+            title: t("menus.propertyManagement.guide.tour.introTitle"),
+            text: t("menus.propertyManagement.guide.tour.introText"),
+        },
+        ...([
+            ["/realEstate/overview", "units"],
+            ["/realEstate/dashboard", "units"],
+            ["/realEstate/projects", "projects"],
+            ["/realEstate/edifices", "edifices"],
+            ["/realEstate/floors", "floors"],
+            ["/realEstate/units", "units"],
+            ["/realEstate/constructionProgress", "constructionprogresses"],
+            ["/realEstate/leads", "leads"],
+            ["/realEstate/inspections", "inspections"],
+            ["/realEstate/modificationRequests", "modificationRequests"],
+            ["/realEstate/reservations", "reservations"],
+            ["/realEstate/sales", "sales"],
+            ["/realEstate/contractsHub", "sales"],
+            ["/realEstate/commissions", "commissions"],
+            ["/realEstate/stories", "stories"],
+            ["/realEstate/paymentsHub", "paymentplans"],
+            ["/realEstate/unitCosts", "unitCosts"],
+            ["/realEstate/rentalsHub", "leases"],
+            ["/realEstate/leases", "leases"],
+            ["/realEstate/rentalPayments", "rentalpayments"],
+            ["/realEstate/groupDashboard", "units"],
+            ["/realEstate/agentReport", "sales"],
+            ["/realEstate/roi", "units"],
+            ["/realEstate/erpExport", "sales"],
+            ["/tenancy/systemSettings/propertyManagementConfig", "propertymanagementconfigs"],
+            ["/tenancy/systemSettings/handoverPackages", "handoverpackages"],
+            ["/tenancy/systemSettings/inspectionChecklistTemplates", "inspectionchecklisttemplates"],
+            ["/tenancy/systemSettings/constructors", "constructors"],
+            ["/tenancy/systemSettings/unitTypeCategories", "unitTypeCategories"],
+            ["/tenancy/systemSettings/unitTypes", "unitTypes"],
+            ["/tenancy/systemSettings/storyTypes", "storyTypes"],
+            ["/tenancy/systemSettings/adCampaigns", "adCampaigns"],
+            ["/tenancy/systemSettings/adCampaignTemplates", "adCampaignTemplates"],
+        ] as const).map(([page, accessModel]) => ({page, accessModel})),
+    ],
 };
 
 export default contribution;

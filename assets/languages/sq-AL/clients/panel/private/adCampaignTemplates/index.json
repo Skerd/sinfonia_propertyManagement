@@ -2,6 +2,29 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
     "title": "Modelet e fushatave",
     "description": "Modele email të ripërdorshme, një për çdo lloj fushate dhe gjuhë",
+    "help": {
+        "ariaLabel": "Rreth modeleve të fushatave",
+        "title": "Rreth modeleve të fushatave",
+        "overview": "Emailet që dërgojnë fushatat tuaja, të shkruara një herë dhe të ripërdorura. Shkruani një për çdo lloj fushate, në çdo gjuhë që ju nevojitet.",
+        "sections": [
+            {
+                "title": "Si funksionon një model",
+                "items": [
+                    "Shkruani temën, tekstin e pamjes paraprake dhe trupin e emailit. Fjalët në kllapa, si {firstName}, plotësohen për çdo marrës.",
+                    "Përkthimeve u jepni të njëjtin titull dhe lloj: çdo marrës merr versionin në gjuhën e tij kur ai ekziston.",
+                    "Përshëndetja dhe lidhja për çregjistrim shtohen vetë në çdo email, ndaj mos i shkruani në trupin e emailit."
+                ]
+            },
+            {
+                "title": "Në këtë faqe",
+                "items": [
+                    "Hapni një model për të parë si duket emaili.",
+                    "Përdor modelin nis një fushatë të re me të.",
+                    "Çaktivizoni një model që nuk e përdorni më: fushatat nuk mund të dërgojnë me një model joaktiv."
+                ]
+            }
+        ]
+    },
     "createAdCampaignTemplate": "Model i ri",
     "noData": "Nuk u gjetën modele",
     "failTitle": "Ngarkimi i modeleve dështoi",

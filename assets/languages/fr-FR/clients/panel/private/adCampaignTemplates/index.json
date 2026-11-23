@@ -2,6 +2,29 @@
     "path": "src/modules/propertyManagement/clients/panel/private/adCampaignTemplates/index.tsx",
     "title": "Modèles de campagne",
     "description": "Modèles d'e-mail réutilisables, un par type de campagne et par langue",
+    "help": {
+        "ariaLabel": "À propos des modèles de campagne",
+        "title": "À propos des modèles de campagne",
+        "overview": "Les e-mails envoyés par vos campagnes, écrits une fois et réutilisés. Écrivez-en un par type de campagne, dans chaque langue dont vous avez besoin.",
+        "sections": [
+            {
+                "title": "Comment fonctionne un modèle",
+                "items": [
+                    "Écrivez l'objet, le texte d'aperçu et le corps. Les mots entre accolades, comme {firstName}, sont remplis pour chaque destinataire.",
+                    "Donnez aux traductions le même titre et le même type : chaque destinataire reçoit alors la version dans sa langue quand elle existe.",
+                    "La salutation et le lien de désinscription sont ajoutés d'eux-mêmes à chaque e-mail : ne les écrivez pas dans le corps."
+                ]
+            },
+            {
+                "title": "Sur cette page",
+                "items": [
+                    "Ouvrez un modèle pour voir à quoi ressemble l'e-mail.",
+                    "Utiliser le modèle lance une nouvelle campagne avec lui.",
+                    "Désactivez un modèle que vous n'utilisez plus : les campagnes ne peuvent pas envoyer avec un modèle inactif."
+                ]
+            }
+        ]
+    },
     "createAdCampaignTemplate": "Nouveau modèle",
     "noData": "Aucun modèle trouvé",
     "failTitle": "Échec du chargement des modèles",

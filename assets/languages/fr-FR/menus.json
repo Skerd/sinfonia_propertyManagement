@@ -170,11 +170,8 @@
       "unitPriceTitle": "Prix",
       "unitPriceText": "Le prix demandé. Les acheteurs le voient sur votre site, sauf si vous avez choisi de masquer les prix.",
       "tour": {
-        "dashboard": "Vos chiffres d'un coup d'œil : lots vendus, encaissements et alertes. Choisissez un bâtiment pour ne voir que lui.",
-        "units": "Chaque lot et son statut : disponible, réservé ou vendu. Le statut change tout seul quand vous réservez et vendez.",
-        "leads": "Les personnes intéressées par un bien. Gardez leurs coordonnées ici et mettez à jour leur étape au fil de vos échanges.",
-        "reservations": "Une réservation bloque un lot pour un acheteur jusqu'à son échéance. Le lot apparaît comme réservé, et la réservation peut devenir une vente.",
-        "sales": "Chaque vente, payée comptant ou en plusieurs fois. Quand vous finalisez une vente, le lot passe à vendu."
+        "introTitle": "Votre activité immobilière",
+        "introText": "Cette partie du panneau fait tourner vos ventes et locations immobilières : projets, bâtiments et unités, acheteurs du premier contact à la remise, paiements et commissions, locations, rapports et vos règles. La visite ouvre maintenant chaque page et l'explique. Le ⓘ à côté du titre d'une page affiche la même aide à tout moment."
       }
     },
     "title": "Gestion immobilière"
