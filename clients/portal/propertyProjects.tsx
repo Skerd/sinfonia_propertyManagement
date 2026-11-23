@@ -7,6 +7,7 @@ import Loader from "@coreModule/components/custom/loader/loader.tsx";
 import {Badge} from "@coreModule/components/ui/badge.tsx";
 import {Empty, EmptyHeader, EmptyTitle} from "@coreModule/components/ui/empty.tsx";
 import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx";
+import {usePortalTitle} from "@coreModule/clients/portal/shared/portalTitle.ts";
 import type {
     MarketingProjectCatalogListItem,
     MarketingProjectsCatalogFormResponseType,
@@ -17,6 +18,7 @@ const CATALOG_REQUEST: HttpRequest = {method: "post", url: "/api/realEstate/mark
 /** The company's developments, each opening its project page. */
 function PropertyProjects({resolveLanguageKey}: WithLanguageType) {
     const base = useSectionBase();
+    usePortalTitle(resolveLanguageKey("title"));
     const request = useHttpRequest<MarketingProjectsCatalogFormResponseType>(CATALOG_REQUEST, {}, 1);
     const projects: MarketingProjectCatalogListItem[] | null = request.loading ? null : request.data?.projects ?? [];
 
