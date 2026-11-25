@@ -1229,6 +1229,7 @@
       "description": "Description",
       "featuredOnHomepage": "Mis en avant sur l'accueil",
       "featuredSortOrder": "Ordre de mise en avant",
+      "hiddenByPlatform": "Masqué par la plateforme",
       "imageGallery": "Galerie d'images",
       "magazineDescription": "Description du magazine",
       "magazineFile": "Fichier magazine",

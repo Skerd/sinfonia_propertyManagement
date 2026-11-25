@@ -13,6 +13,7 @@ import {useSectionBase} from "@coreModule/clients/portal/shared/sectionBase.tsx"
 import DetailPage, {DetailFacts, DetailHeading, DetailPrice, DetailSection, DetailSpecs, DetailText} from "@coreModule/clients/portal/shared/detailPage.tsx";
 import DetailGallery from "@coreModule/clients/portal/shared/detailGallery.tsx";
 import PortalProviderCard from "@coreModule/clients/portal/shared/portalProviderCard.tsx";
+import ReportButton from "@coreModule/components/custom/report/reportButton.tsx";
 import type {
     MarketingEdificeCatalogListItem,
     MarketingFloorCatalogListItem,
@@ -177,6 +178,8 @@ function PropertyProject({resolveLanguageKey}: WithLanguageType) {
             </DetailHeading>
             {heading.facts.length ? <DetailFacts facts={heading.facts} /> : null}
             <PropertyInquiryForm projectId={project._id} />
+            {/* Something wrong with the listing goes to the platform, not the company (D191). */}
+            <ReportButton kind="propertyManagement.project" recordId={project._id} className="self-start" />
         </DetailPage>
     );
 }

@@ -1229,6 +1229,7 @@
       "description": "Description",
       "featuredOnHomepage": "Featured on homepage",
       "featuredSortOrder": "Featured sort order",
+      "hiddenByPlatform": "Hidden by the platform",
       "imageGallery": "Image gallery",
       "magazineDescription": "Magazine description",
       "magazineFile": "Magazine file",

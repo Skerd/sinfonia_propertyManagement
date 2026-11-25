@@ -95,5 +95,7 @@
     "hidden_unit": "Prezzo su richiesta (impostato su unità)"
   },
   "visibilityGroup": "Visibilità",
-  "commissions": "Aliquote di commissione"
+  "commissions": "Aliquote di commissione",
+  "hiddenByPlatform": "Nascosto dalla piattaforma",
+  "hiddenByPlatformNote": "La piattaforma ha nascosto questo progetto dopo una segnalazione. Il progetto e le sue unità non compaiono più sul tuo sito né sul portale. Contatta la piattaforma per parlarne."
 }

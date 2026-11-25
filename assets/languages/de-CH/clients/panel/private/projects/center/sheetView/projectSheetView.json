@@ -95,5 +95,7 @@
     "hidden_unit": "Preis auf Anfrage (festgelegt auf Einheit)"
   },
   "visibilityGroup": "Sichtbarkeit",
-  "commissions": "Provisionssätze"
+  "commissions": "Provisionssätze",
+  "hiddenByPlatform": "Von der Plattform verborgen",
+  "hiddenByPlatformNote": "Die Plattform hat dieses Projekt nach einer Meldung verborgen. Es und seine Einheiten erscheinen nicht mehr auf Ihrer Website oder im Portal. Wenden Sie sich an die Plattform, um es zu besprechen."
 }

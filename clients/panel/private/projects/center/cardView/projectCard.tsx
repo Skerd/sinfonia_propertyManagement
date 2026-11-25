@@ -17,6 +17,7 @@ import DisplayValue from "@coreModule/components/viewEngine/widgets/display/disp
 import EntityCard from "@coreModule/components/entityPage/list/card/entityCard.tsx";
 import type {WithAxiosLifecycleRef} from "@coreModule/helpers/hocs/withAxios.tsx";
 import type {RefObject} from "react";
+import PlatformHiddenBadge from "@coreModule/components/custom/report/platformHiddenBadge.tsx";
 
 function projectEditPath(project: Project) {
     const params = new URLSearchParams();
@@ -95,7 +96,13 @@ function ProjectCard({
                         allowFullScreen={false}
                         coverAfterFirst
                     />
-                    <EntityCard.Header titlePath="name" title={entity.name}>
+                    <EntityCard.Header
+                        titlePath="name"
+                        title={entity.name}
+                        badgesBesideTitle
+                        // Hidden by the platform after a report (D191): gone from the website and the portal.
+                        badges=<PlatformHiddenBadge hidden={entity.hiddenByPlatform} />
+                    >
                         <ViewEdifices project={entity} />
                         <ViewEdificesOverlay onAction={setAction} />
                         <ViewFloorsOverlay onAction={setAction} />

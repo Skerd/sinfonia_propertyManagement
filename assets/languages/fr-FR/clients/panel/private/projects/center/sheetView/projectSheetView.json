@@ -95,5 +95,7 @@
     "hidden_unit": "Prix sur demande (défini sur l'unité)"
   },
   "visibilityGroup": "Visibilité",
-  "commissions": "Taux de commission"
+  "commissions": "Taux de commission",
+  "hiddenByPlatform": "Masqué par la plateforme",
+  "hiddenByPlatformNote": "La plateforme a masqué ce projet après un signalement. Lui et ses lots n'apparaissent plus sur votre site ni sur le portail. Contactez la plateforme pour en discuter."
 }

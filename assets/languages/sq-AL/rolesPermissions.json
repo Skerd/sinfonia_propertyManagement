@@ -1229,6 +1229,7 @@
       "description": "Përshkrimi",
       "featuredOnHomepage": "I veçuar në faqen kryesore",
       "featuredSortOrder": "Renditja e veçimit",
+      "hiddenByPlatform": "I fshehur nga platforma",
       "imageGallery": "Galeria e imazheve",
       "magazineDescription": "Përshkrimi i revistës",
       "magazineFile": "Skedari i revistës",

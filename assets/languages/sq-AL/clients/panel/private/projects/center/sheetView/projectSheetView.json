@@ -95,5 +95,7 @@
     "hidden_unit": "Çmimi me kërkesë (vendosur te njësia)"
   },
   "visibilityGroup": "Dukshmëria",
-  "commissions": "Normat e komisionit"
+  "commissions": "Normat e komisionit",
+  "hiddenByPlatform": "I fshehur nga platforma",
+  "hiddenByPlatformNote": "Platforma e fshehu këtë projekt pas një raportimi. Projekti dhe njësitë e tij nuk shfaqen më në faqen tuaj as në portal. Kontaktoni platformën për ta diskutuar."
 }

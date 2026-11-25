@@ -95,5 +95,7 @@
     "hidden_unit": "Price on request (set on unit)"
   },
   "visibilityGroup": "Visibility",
-  "commissions": "Commission rates"
+  "commissions": "Commission rates",
+  "hiddenByPlatform": "Hidden by the platform",
+  "hiddenByPlatformNote": "The platform hid this project after a report. It and its units no longer show on your website or the portal. Contact the platform to talk it over."
 }
