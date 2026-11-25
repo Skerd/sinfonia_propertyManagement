@@ -1,5 +1,6 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {IconLayoutGrid, IconList, IconX} from "@tabler/icons-react";
+import {motion} from "motion/react";
 import {cn} from "@coreModule/components/lib/utils.ts";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
@@ -18,7 +19,9 @@ import type {WithLanguageType} from "@coreModule/helpers/hocs/withLanguage.tsx";
 import type {PropertyListingCardUnit} from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
 import {Button} from "@coreModule/components/ui/button.tsx";
 
-const UNIT_GRID = "grid grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.7fr))_minmax(0,1.1fr)] gap-x-3";
+// Phones drop the Baths column so names and areas stay on one line; the unit's own panel still shows baths.
+const UNIT_GRID =
+    "grid grid-cols-[minmax(0,1.5fr)_minmax(0,0.85fr)_minmax(0,0.5fr)_minmax(0,0.85fr)] gap-x-2 sm:grid-cols-[minmax(0,1.1fr)_repeat(3,minmax(0,0.7fr))_minmax(0,1.1fr)] sm:gap-x-3";
 
 const UNIT_STATUS_POLYGON_COLORS: Record<MarketingUnitStatus, {fill: string; stroke: string}> = {
     available: {fill: "rgba(31, 190, 106, 0.5)", stroke: "rgba(31, 190, 106, 0.9)"},
@@ -26,6 +29,10 @@ const UNIT_STATUS_POLYGON_COLORS: Record<MarketingUnitStatus, {fill: string; str
     sold: {fill: "rgba(220, 38, 38, 0.5)", stroke: "rgba(220, 38, 38, 0.9)"},
     unavailable: {fill: "rgba(107, 114, 128, 0.45)", stroke: "rgba(107, 114, 128, 0.9)"},
 };
+
+/** Rows fade in one after another, capped so a long floor does not keep the list waiting. */
+const rowEntrance = (index: number) => ({animationDelay: `${Math.min(index, 10) * 35}ms`});
+const ROW_ENTRANCE_CLASS = "animate-in fade-in slide-in-from-bottom-1 fill-mode-both duration-300 motion-reduce:animate-none";
 
 type StatusColoredPolygon = MarketingPolygonItem & {fill: string; stroke: string};
 type PanelLayout = "list" | "grid";
@@ -154,7 +161,8 @@ function OpenProjectFigmaFloorPanel({
 
     return (
         <aside
-            className="flex h-full min-h-0 w-full max-h-full flex-col overflow-hidden rounded-[5px] border border-pronix-border bg-white text-pronix-ink shadow-[0_8px_40px_rgba(0,0,0,0.28)]"
+            // Size containment lets the floor plan shrink with the panel's height so the unit list keeps room.
+            className="flex h-full min-h-0 w-full max-h-full flex-col overflow-hidden rounded-[5px] border border-pronix-border bg-white text-pronix-ink shadow-[0_8px_40px_rgba(0,0,0,0.28)] [container-type:size]"
             data-node-id="287:770"
         >
             <div className="flex shrink-0 items-start justify-between gap-3 px-5 pt-5 md:px-6 md:pt-6">
@@ -175,7 +183,7 @@ function OpenProjectFigmaFloorPanel({
             </div>
 
             <div className="flex shrink-0 items-center gap-2 px-5 pb-4 pt-4 md:px-6">
-                <div className="flex min-w-0 flex-1 flex-wrap gap-2">
+                <div className="hide-scrollbar -my-1 flex min-w-0 flex-1 gap-2 overflow-x-auto py-1 sm:flex-wrap sm:overflow-visible">
                 {PROJECT_UNIT_STATUS_FILTERS.map((filter) => {
                     const active = activeFilter === filter;
                     return (
@@ -183,14 +191,24 @@ function OpenProjectFigmaFloorPanel({
                             type="button"
                             variant="bare"
                             key={filter}
-                            className={cn("cursor-pointer rounded-[5px] px-3 py-1.5 font-aeonik-light text-sm transition md:text-base",
+                            aria-pressed={active}
+                            className={cn("relative shrink-0 cursor-pointer whitespace-nowrap rounded-[5px] px-3 py-1.5 font-aeonik-light text-sm transition-colors duration-200 md:text-base",
                                 active
-                                    ? "bg-pronix-blue text-white"
+                                    ? "text-white"
                                     : "bg-[rgba(24,24,24,0.05)] text-pronix-ink hover:bg-[rgba(24,24,24,0.08)]",
                             )}
                             onClick={() => setActiveFilter(filter)}
                         >
-                            {resolveLanguageKey(`filter${filter.charAt(0).toUpperCase()}${filter.slice(1)}`)}
+                            {active ? (
+                                <motion.span
+                                    layoutId="open-project-floor-filter"
+                                    className="absolute inset-0 rounded-[5px] bg-pronix-blue"
+                                    transition={{type: "spring", stiffness: 480, damping: 38}}
+                                />
+                            ) : null}
+                            <span className="relative">
+                                {resolveLanguageKey(`filter${filter.charAt(0).toUpperCase()}${filter.slice(1)}`)}
+                            </span>
                         </Button>
                     );
                 })}
@@ -198,7 +216,7 @@ function OpenProjectFigmaFloorPanel({
                 <Button
                     type="button"
                     variant="bare"
-                    className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(24,24,24,0.05)] text-pronix-ink transition hover:bg-[rgba(24,24,24,0.08)]"
+                    className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(24,24,24,0.05)] text-pronix-ink transition hover:bg-[rgba(24,24,24,0.08)] active:scale-95"
                     aria-label={String(resolveLanguageKey(layout === "list" ? "viewAsGrid" : "viewAsList"))}
                     onClick={() => setLayout(layout === "list" ? "grid" : "list")}
                 >
@@ -222,9 +240,12 @@ function OpenProjectFigmaFloorPanel({
                                     "[&_[data-polygon-zoom-controls]_p]:min-w-7 [&_[data-polygon-zoom-controls]_p]:rounded-sm [&_[data-polygon-zoom-controls]_p]:bg-pronix-ink [&_[data-polygon-zoom-controls]_p]:px-1 [&_[data-polygon-zoom-controls]_p]:py-0.5 [&_[data-polygon-zoom-controls]_p]:text-[11px] [&_[data-polygon-zoom-controls]_p]:leading-none [&_[data-polygon-zoom-controls]_p]:text-white",
                                 )}
                             >
-                                <div className="relative aspect-[470/272] w-full [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
+                                <div className="relative aspect-[470/272] max-h-[min(22rem,max(6rem,calc(100cqh_-_21rem)))] w-full [&_[data-slot=card]]:border-0 [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:p-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:ring-0">
                                     {floorPlanImage && unitPolygons.length > 0 ? (
-                                        <div className="absolute inset-0">
+                                        <div
+                                            key={floorId}
+                                            className="absolute inset-0 animate-in fade-in duration-500 motion-reduce:animate-none"
+                                        >
                                             <PolygonSelector
                                                 key={`${floorId}:${activeFilter}`}
                                                 fillHeight
@@ -274,7 +295,7 @@ function OpenProjectFigmaFloorPanel({
                         <span>{resolveLanguageKey("colName")}</span>
                         <span>{resolveLanguageKey("colArea")}</span>
                         <span>{resolveLanguageKey("colRooms")}</span>
-                        <span>{resolveLanguageKey("colBaths")}</span>
+                        <span className="max-sm:hidden">{resolveLanguageKey("colBaths")}</span>
                         <span>{resolveLanguageKey("colPrice")}</span>
                     </div>
                     ) : null}
@@ -284,8 +305,8 @@ function OpenProjectFigmaFloorPanel({
                             {resolveLanguageKey("noUnitsOnFloor")}
                         </p>
                     ) : layout === "grid" ? (
-                        <ul className="flex flex-col gap-3">
-                            {filtered.map((unit) => {
+                        <ul key={`${floorId}:${activeFilter}:grid`} className="flex flex-col gap-3">
+                            {filtered.map((unit, index) => {
                                 const highlighted = highlightUnitId === unit._id;
                                 const status = (unit.status as MarketingUnitStatus) || "available";
                                 const badge = STATUS_BADGE[status] ?? STATUS_BADGE.available;
@@ -295,6 +316,8 @@ function OpenProjectFigmaFloorPanel({
                                 return (
                                     <li
                                         key={unit._id}
+                                        className={ROW_ENTRANCE_CLASS}
+                                        style={rowEntrance(index)}
                                         ref={(node) => {
                                             if (node) {
                                                 rowRefs.current.set(unit._id, node);
@@ -307,10 +330,10 @@ function OpenProjectFigmaFloorPanel({
                                             type="button"
                                             variant="bare"
                                             className={cn(
-                                                "flex min-h-[9.5rem] w-full overflow-hidden rounded-[5px] border bg-white text-left transition",
+                                                "flex min-h-[9.5rem] w-full overflow-hidden rounded-[5px] border bg-white text-left transition duration-200",
                                                 highlighted
-                                                    ? "border-pronix-blue ring-1 ring-pronix-blue/30"
-                                                    : "border-pronix-border hover:border-pronix-ink/20",
+                                                    ? "border-pronix-blue shadow-[0_6px_20px_rgba(2,71,254,0.12)] ring-1 ring-pronix-blue/30"
+                                                    : "border-pronix-border hover:-translate-y-0.5 hover:border-pronix-ink/20 hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)] motion-reduce:hover:translate-y-0",
                                             )}
                                             onMouseEnter={() => onUnitHover?.(unit._id)}
                                             onMouseLeave={() => onUnitHover?.(null)}
@@ -397,12 +420,16 @@ function OpenProjectFigmaFloorPanel({
                             })}
                         </ul>
                     ) : (
-                        <ul>
-                            {filtered.map((unit) => {
+                        <ul key={`${floorId}:${activeFilter}:list`}>
+                            {filtered.map((unit, index) => {
                                 const highlighted = highlightUnitId === unit._id;
+                                const status = (unit.status as MarketingUnitStatus) || "available";
+                                const badge = STATUS_BADGE[status] ?? STATUS_BADGE.available;
                                 return (
                                     <li
                                         key={unit._id}
+                                        className={ROW_ENTRANCE_CLASS}
+                                        style={rowEntrance(index)}
                                         ref={(node) => {
                                             if (node) {
                                                 rowRefs.current.set(unit._id, node);
@@ -415,7 +442,7 @@ function OpenProjectFigmaFloorPanel({
                                             type="button"
                                             variant="bare"
                                             className={cn(UNIT_GRID,
-                                                "w-full cursor-pointer py-2.5 text-left font-aeonik-light text-sm transition",
+                                                "w-full cursor-pointer rounded-[5px] py-2.5 text-left font-aeonik-light text-sm transition-colors duration-200",
                                                 highlighted
                                                     ? "bg-pronix-blue/10 text-pronix-blue"
                                                     : "text-pronix-ink hover:bg-[rgba(24,24,24,0.04)]",
@@ -426,10 +453,16 @@ function OpenProjectFigmaFloorPanel({
                                             onBlur={() => onUnitHover?.(null)}
                                             onClick={() => selectUnit(unit._id)}
                                         >
-                                            <span>{unit.name}</span>
-                                            <span>{unit.areaSqm != null ? `${unit.areaSqm} m²` : "—"}</span>
+                                            <span className="flex min-w-0 items-center gap-2">
+                                                <span className={cn("size-1.5 shrink-0 rounded-full", badge.dot)} aria-hidden />
+                                                <span className="min-w-0">{unit.name}</span>
+                                                <span className="sr-only">
+                                                    {resolveLanguageKey(`filter${status.charAt(0).toUpperCase()}${status.slice(1)}`)}
+                                                </span>
+                                            </span>
+                                            <span className="whitespace-nowrap">{unit.areaSqm != null ? `${unit.areaSqm} m²` : "—"}</span>
                                             <span>{unit.bedrooms ?? "—"}</span>
-                                            <span>{unit.bathrooms ?? "—"}</span>
+                                            <span className="max-sm:hidden">{unit.bathrooms ?? "—"}</span>
                                             <span>
                                                 {formatUnitPrice(unit)}
                                             </span>

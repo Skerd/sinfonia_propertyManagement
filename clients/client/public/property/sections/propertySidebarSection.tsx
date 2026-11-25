@@ -176,8 +176,12 @@ function PropertySidebarSection({
                         </p>
                     </div>
                     <div className={cn("h-px w-full bg-pronix-border", compact ? "my-4" : "my-6")} />
+                    <div className="@container">
                     <div
-                        className={cn("grid grid-cols-2 sm:grid-cols-3", compact ? "gap-3" : "gap-6")}
+                        className={cn(
+                            "grid grid-cols-2 [&>div]:min-w-0 [&_p]:wrap-break-word",
+                            compact ? "gap-x-4 gap-y-3 @[22rem]:grid-cols-3" : "gap-6 sm:grid-cols-3",
+                        )}
                         data-node-id="515:6149"
                     >
                         <div>
@@ -204,6 +208,7 @@ function PropertySidebarSection({
                             <p className={labelClass}>{resolveLanguageKey("unitType")}</p>
                             <p className={`${subtitleClass} text-pronix-ink`}>{unitTypeLabel}</p>
                         </div>
+                    </div>
                     </div>
                     <div className={cn("h-px w-full bg-pronix-border", compact ? "my-4" : "my-6")} />
                     <div className="flex flex-col gap-3">

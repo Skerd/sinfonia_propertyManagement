@@ -105,7 +105,7 @@ function formatPricePerSqm(
         return MISSING_VALUE;
     }
     const symbol = pricePerSqm.currency?.symbol ?? pricePerSqm.currency?.abbreviation ?? "€";
-    const formatted = pricePerSqm.value.toLocaleString(undefined, {maximumFractionDigits: 3});
+    const formatted = pricePerSqm.value.toLocaleString(undefined, {maximumFractionDigits: 2});
     return `${symbol}${formatted}/m²`;
 }
 

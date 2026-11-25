@@ -82,5 +82,8 @@
   "energyClassLabel": "Energieklasse",
   "constructionStartLabel": "Baubeginn",
   "completionLabel": "Voraussichtliche Fertigstellung",
-  "priceOnRequest": "Auf Anfrage"
+  "priceOnRequest": "Auf Anfrage",
+  "floorAvailableCount": "{{count}} verfügbar",
+  "floorOpenHint": "Einheiten ansehen",
+  "tapFloorHint": "Tippen Sie auf ein Stockwerk, um die Einheiten zu sehen"
 }

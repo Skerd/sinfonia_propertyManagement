@@ -82,5 +82,8 @@
   "energyClassLabel": "Energy class",
   "constructionStartLabel": "Construction start",
   "completionLabel": "Expected completion",
-  "priceOnRequest": "On request"
+  "priceOnRequest": "On request",
+  "floorAvailableCount": "{{count}} available",
+  "floorOpenHint": "See units",
+  "tapFloorHint": "Tap a floor to see its units"
 }

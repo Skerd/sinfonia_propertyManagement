@@ -1,4 +1,5 @@
-import {useEffect, useMemo, useState, type ReactNode} from "react";
+import {useEffect, useMemo, useState, useSyncExternalStore, type ReactNode} from "react";
+import {AnimatePresence, MotionConfig, motion, type Variants} from "motion/react";
 import {compose} from "redux";
 import {Link, Navigate, useParams, useSearchParams} from "react-router-dom";
 import {IconChevronLeft, IconEye, IconEyeOff} from "@tabler/icons-react";
@@ -40,6 +41,31 @@ const NODE_BY_VIEW = {
     grid: {id: "494:548", name: "Open project - Grid view"},
 } as const;
 
+/** Landscape screens fill the 3D render edge to edge; portrait screens keep all of it in view. */
+const LANDSCAPE_QUERY = "(min-aspect-ratio: 6/5)";
+
+function subscribeLandscape(onChange: () => void) {
+    const query = window.matchMedia(LANDSCAPE_QUERY);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+}
+
+function useLandscape(): boolean {
+    return useSyncExternalStore(subscribeLandscape, () => window.matchMedia(LANDSCAPE_QUERY).matches, () => true);
+}
+
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+
+const HERO_STAGGER: Variants = {
+    hidden: {},
+    show: {transition: {staggerChildren: 0.08, delayChildren: 0.15}},
+};
+
+const HERO_ITEM: Variants = {
+    hidden: {opacity: 0, y: 16},
+    show: {opacity: 1, y: 0, transition: {duration: 0.6, ease: EASE_OUT}},
+};
+
 type PageProps = WithLanguageType & WithAxiosType<MarketingProjectSingleResponse, {projectId: string}>;
 
 function SplitChrome({
@@ -74,27 +100,32 @@ function SplitChrome({
 
     return (
         <div className="relative flex h-full min-h-0 flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-rows-[auto_minmax(0,1fr)_auto] lg:gap-x-8 lg:gap-y-6">
-            <div className="flex shrink-0 flex-col gap-1.5 lg:col-start-1 lg:row-start-1">
-                <div className="flex min-w-0 items-center gap-2 sm:gap-3 md:gap-4">
+            <motion.div
+                className="flex shrink-0 flex-col gap-1.5 lg:col-start-1 lg:row-start-1"
+                variants={HERO_STAGGER}
+                initial="hidden"
+                animate="show"
+            >
+                <motion.div variants={HERO_ITEM} className="flex min-w-0 items-center gap-2 sm:gap-3 md:gap-4">
                     <Link
                         to="/projects"
                         className="-ml-2 flex shrink-0 items-center justify-center rounded-[5px] p-1 text-pronix-ink transition hover:bg-[rgba(24,24,24,0.04)] sm:-ml-2.5 md:-ml-3"
                         aria-label={String(resolveLanguageKey("backToProjects"))}
                     >
-                        <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                        <IconChevronLeft className="size-7 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
                     </Link>
-                    <h1 className="min-w-0 flex-1 wrap-break-word font-aeonik-medium text-4xl leading-[1.2] text-pronix-ink not-italic sm:text-5xl lg:text-[83px]">
+                    <h1 className="min-w-0 flex-1 wrap-break-word font-aeonik-medium text-[28px] leading-[1.2] text-pronix-ink not-italic sm:text-5xl lg:text-[clamp(3.25rem,4.4vw,83px)]">
                         {project.name}
                     </h1>
-                </div>
+                </motion.div>
                 {project.location ? (
-                    <p className="font-aeonik-light text-xl leading-[1.2] text-pronix-ink lg:text-2xl">
+                    <motion.p variants={HERO_ITEM} className="font-aeonik-light text-lg leading-[1.2] text-pronix-ink sm:text-xl lg:text-2xl">
                         {project.location}
-                    </p>
+                    </motion.p>
                 ) : null}
-            </div>
+            </motion.div>
             <div className="flex min-h-0 flex-1 flex-col gap-8 overflow-y-auto lg:contents">
-                <div className="w-full min-w-0 shrink-0 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:h-full lg:min-h-0">
+                <div className="w-full min-w-0 shrink-0 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:flex lg:h-full lg:min-h-0 lg:flex-col">
                     {stage({
                         selectedEdificeId: selectedEdifice?._id,
                         selectedEdifice,
@@ -104,6 +135,7 @@ function SplitChrome({
                 {selectedEdifice ? (
                     <div className="w-full min-w-0 shrink-0 pb-2 lg:col-start-1 lg:row-start-2 lg:min-h-0 lg:overflow-y-auto lg:pb-0 lg:pr-1">
                         <OpenProjectFigmaEdificeStats
+                            key={`${statsVariant}:${selectedEdifice._id}`}
                             edifice={selectedEdifice}
                             resolveLanguageKey={resolveLanguageKey}
                             variant={statsVariant}
@@ -111,9 +143,14 @@ function SplitChrome({
                     </div>
                 ) : null}
             </div>
-            <div className="shrink-0 bg-white pt-2 lg:col-start-1 lg:row-start-3 lg:bg-transparent lg:pt-4">
+            <motion.div
+                className="shrink-0 bg-white pt-2 lg:col-start-1 lg:row-start-3 lg:bg-transparent lg:pt-4"
+                initial={{opacity: 0, y: 12}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 0.3, ease: EASE_OUT}}
+            >
                 {actions}
-            </div>
+            </motion.div>
             <p className="sr-only">{resolveLanguageKey("figmaPreviewHint")}</p>
         </div>
     );
@@ -163,7 +200,10 @@ function OpenProjectFigma3dPage({
     const placeholderImage = resolveProjectFallbackImage(project);
     const [hoveredUnitId, setHoveredUnitId] = useState<string | null>(null);
     const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
-    const [phantomsAlwaysVisible, setPhantomsAlwaysVisible] = useState(false);
+    // Touch screens have no hover to discover floors, so their outlines start visible.
+    const [touchScreen] = useState(() => window.matchMedia("(hover: none)").matches);
+    const [phantomsAlwaysVisible, setPhantomsAlwaysVisible] = useState(touchScreen);
+    const landscape = useLandscape();
     const hasFloorPolygons = useMemo(
         () => (project.edifices ?? []).some((edifice) => (edifice.floorsCoordinates ?? []).length > 0),
         [project.edifices],
@@ -206,6 +246,25 @@ function OpenProjectFigma3dPage({
         setSearchParams(params);
     };
 
+    // Escape closes the unit first, then the floor. An open dialog (contact form, menu) keeps Escape for itself.
+    useEffect(() => {
+        if (!selectedFloor) {
+            return;
+        }
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key !== "Escape" || event.defaultPrevented || document.querySelector("[role=dialog]")) {
+                return;
+            }
+            if (selectedUnitId) {
+                setSelectedUnitId(null);
+                return;
+            }
+            clearFloor();
+        };
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    });
+
     return (
         <div className="relative h-dvh w-full overflow-hidden bg-[#0c1018]" data-node-id="467:685">
             <img
@@ -228,59 +287,85 @@ function OpenProjectFigma3dPage({
                     project={project}
                     resolveLanguageKey={resolveLanguageKey}
                     phantomsAlwaysVisible={phantomsAlwaysVisible}
+                    objectFit={landscape ? "cover" : "contain"}
                 />
             </div>
 
             <div className="pointer-events-none absolute inset-0 z-10">
-                <div className="pointer-events-auto">
+                {/* Keeps the white title readable over a bright render. */}
+                <div className="absolute inset-x-0 top-0 h-72 bg-linear-to-b from-[rgba(12,16,24,0.45)] to-transparent lg:h-96" />
+                <div className="pointer-events-auto relative">
                     <PublicSection flush>
                         <PageHeaderSection variant="hero" />
                     </PublicSection>
                 </div>
 
-                <div className="absolute inset-x-4 top-24 z-30 text-white sm:inset-x-6 lg:inset-x-[52px] lg:top-28">
-                    <div className="flex min-w-0 items-center gap-2 sm:gap-3 md:gap-4">
+                <motion.div
+                    className={cn(
+                        "absolute inset-x-4 top-[4.75rem] z-30 text-white transition-[opacity,visibility] duration-300 [text-shadow:0_1px_24px_rgba(0,0,0,0.35)] sm:inset-x-6 sm:top-24 lg:inset-x-[52px] lg:top-28",
+                        // Phones give an open floor the title's row too; the panel names the building and floor.
+                        selectedFloor && "max-sm:invisible max-sm:opacity-0",
+                    )}
+                    variants={HERO_STAGGER}
+                    initial="hidden"
+                    animate="show"
+                >
+                    <motion.div variants={HERO_ITEM} className="flex min-w-0 items-center gap-2 sm:gap-3 md:gap-4">
                         <Link
                             to="/projects"
                             className="pointer-events-auto -ml-2 flex shrink-0 items-center justify-center rounded-[5px] p-1 text-white transition hover:bg-white/10 sm:-ml-2.5 md:-ml-3"
                             aria-label={String(resolveLanguageKey("backToProjects"))}
                         >
-                            <IconChevronLeft className="size-8 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
+                            <IconChevronLeft className="size-7 sm:size-10 md:size-12" strokeWidth={1.5} aria-hidden />
                         </Link>
-                        <h1 className="min-w-0 flex-1 truncate whitespace-nowrap font-aeonik-medium text-4xl leading-[1.2] tracking-normal not-italic sm:text-5xl lg:text-[83.1px]">
+                        <h1 className="min-w-0 flex-1 truncate whitespace-nowrap font-aeonik-medium text-[28px] leading-[1.2] tracking-normal not-italic sm:text-5xl lg:text-[83.1px]">
                             {project.name}
                         </h1>
-                    </div>
+                    </motion.div>
                     {/* Meta stays left of panels — must not push panel top/height. */}
-                    <div
+                    <motion.div
+                        variants={HERO_ITEM}
                         className={cn(
-                            selectedFloor
-                                ? unitPanelOpen
-                                    ? "lg:max-w-[calc(100%-min(calc(100vw-6.5rem),calc(40rem+1rem+50vw))-1rem)]"
-                                    : "lg:max-w-[calc(100%-41rem)]"
-                                : undefined,
+                            "transition-[opacity,visibility] duration-300",
+                            selectedFloor && "lg:max-w-[calc(100%-41rem)] max-lg:invisible max-lg:opacity-0",
+                            // The open unit widens the panel over this column, so the meta steps aside.
+                            unitPanelOpen && "lg:invisible lg:opacity-0",
                         )}
                     >
-                        {selectedEdifice?.name ? (
-                            <p className="mt-1.5 truncate font-aeonik-light text-xl leading-[1.2] lg:text-2xl">
-                                {selectedEdifice.name}
-                            </p>
-                        ) : null}
+                        <AnimatePresence initial={false} mode="popLayout">
+                            {selectedEdifice?.name ? (
+                                <motion.p
+                                    key={selectedEdifice._id}
+                                    className="mt-1 truncate font-aeonik-light text-lg leading-[1.2] sm:mt-1.5 sm:text-xl lg:text-2xl"
+                                    initial={{opacity: 0, x: -12}}
+                                    animate={{opacity: 1, x: 0}}
+                                    exit={{opacity: 0, x: -12}}
+                                    transition={{duration: 0.35, ease: EASE_OUT}}
+                                >
+                                    {selectedEdifice.name}
+                                </motion.p>
+                            ) : null}
+                        </AnimatePresence>
                         {project.location || selectedEdifice?.location ? (
-                            <p className="mt-1.5 truncate font-aeonik-light text-xl leading-[1.2] lg:text-2xl">
+                            <p className="mt-1 truncate font-aeonik-light text-lg leading-[1.2] sm:mt-1.5 sm:text-xl lg:text-2xl">
                                 {selectedEdifice?.location || project.location}
                             </p>
                         ) : null}
                         <Link
                             to={openProjectFigmaPath("grid", project._id)}
-                            className="pointer-events-auto mt-3 inline-block font-aeonik-light text-lg text-white underline decoration-white/70 underline-offset-4 transition hover:decoration-white lg:text-xl"
+                            className="pointer-events-auto mt-2 inline-block font-aeonik-light text-base text-white sm:mt-3 sm:text-lg underline decoration-white/70 underline-offset-4 transition-[text-decoration-color,text-underline-offset] hover:decoration-white hover:underline-offset-[6px] lg:text-xl"
                         >
                             {resolveLanguageKey("viewAllUnits")}
                         </Link>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="pointer-events-auto absolute bottom-10 left-4 z-30 flex items-center gap-4 sm:left-6 lg:left-[52px]">
+                <motion.div
+                    className="pointer-events-auto absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-4 z-30 flex items-center gap-2 sm:bottom-[max(2.5rem,env(safe-area-inset-bottom))] sm:left-6 sm:gap-4 lg:left-[52px]"
+                    initial={{opacity: 0, y: 16}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.6, delay: 0.45, ease: EASE_OUT}}
+                >
                     <OpenProjectFigmaActions projectId={project._id} active="3d" tone="onDark" />
                     {hasFloorPolygons ? (
                         <Button
@@ -292,22 +377,52 @@ function OpenProjectFigma3dPage({
                                     ? String(resolveLanguageKey("hidePolygons"))
                                     : String(resolveLanguageKey("showPolygons"))
                             }
-                            className="flex size-16 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(255,255,255,0.2)] text-white backdrop-blur-[7px] transition hover:bg-[rgba(255,255,255,0.32)]"
+                            className="flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(255,255,255,0.2)] text-white backdrop-blur-[7px] transition duration-200 hover:-translate-y-0.5 hover:bg-[rgba(255,255,255,0.32)] active:scale-95 sm:size-16 motion-reduce:transform-none"
                             onClick={() => setPhantomsAlwaysVisible((prev) => !prev)}
                         >
-                            {phantomsAlwaysVisible ? (
-                                <IconEye className="size-8" strokeWidth={1.5} aria-hidden />
-                            ) : (
-                                <IconEyeOff className="size-8" strokeWidth={1.5} aria-hidden />
-                            )}
+                            <AnimatePresence initial={false} mode="wait">
+                                <motion.span
+                                    key={phantomsAlwaysVisible ? "on" : "off"}
+                                    initial={{opacity: 0, rotate: -20, scale: 0.8}}
+                                    animate={{opacity: 1, rotate: 0, scale: 1}}
+                                    exit={{opacity: 0, rotate: 20, scale: 0.8}}
+                                    transition={{duration: 0.18}}
+                                >
+                                    {phantomsAlwaysVisible ? (
+                                        <IconEye className="size-6 sm:size-8" strokeWidth={1.5} aria-hidden />
+                                    ) : (
+                                        <IconEyeOff className="size-6 sm:size-8" strokeWidth={1.5} aria-hidden />
+                                    )}
+                                </motion.span>
+                            </AnimatePresence>
                         </Button>
                     ) : null}
-                </div>
+                </motion.div>
 
+                <AnimatePresence>
+                    {touchScreen && hasFloorPolygons && !selectedFloor ? (
+                        <motion.p
+                            key="tap-floor-hint"
+                            className="absolute inset-x-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 text-center font-aeonik-light text-sm text-white/85 [text-shadow:0_1px_12px_rgba(0,0,0,0.5)] sm:bottom-32 sm:text-base"
+                            initial={{opacity: 0, y: 8}}
+                            animate={{opacity: 1, y: 0}}
+                            exit={{opacity: 0, transition: {duration: 0.2}}}
+                            transition={{duration: 0.5, delay: 0.8, ease: EASE_OUT}}
+                        >
+                            {resolveLanguageKey("tapFloorHint")}
+                        </motion.p>
+                    ) : null}
+                </AnimatePresence>
+                <AnimatePresence>
                 {selectedFloor ? (
-                    <aside
+                    <motion.aside
+                        key="floor-panel"
+                        initial={landscape ? {opacity: 0, x: 48} : {opacity: 0, y: 48}}
+                        animate={{opacity: 1, x: 0, y: 0}}
+                        exit={landscape ? {opacity: 0, x: 48} : {opacity: 0, y: 48}}
+                        transition={{duration: 0.45, ease: EASE_OUT}}
                         className={cn(
-                            "pointer-events-auto absolute inset-x-4 top-36 bottom-32 z-20 flex min-h-0 overflow-hidden sm:inset-x-6 sm:top-44",
+                            "pointer-events-auto absolute inset-x-3 top-[4.75rem] bottom-[calc(5rem+env(safe-area-inset-bottom))] z-20 flex min-h-0 overflow-hidden sm:inset-x-6 sm:top-44 sm:bottom-32",
                             // Clear project title only; edifice / address / link sit in the left column and do not shrink panel height.
                             "lg:inset-x-auto lg:right-[52px] lg:top-[14rem] lg:bottom-32 lg:h-auto lg:max-h-none lg:translate-y-0",
                             "transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
@@ -347,7 +462,7 @@ function OpenProjectFigma3dPage({
                                 />
                             </div>
                             {selectedUnitId ? (
-                                <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col animate-in fade-in slide-in-from-right-4 animation-duration-500 lg:basis-[50vw] lg:max-w-[50vw]">
+                                <div className="flex h-full min-h-0 min-w-0 flex-1 flex-col animate-in fade-in slide-in-from-right-4 animation-duration-500 motion-reduce:animate-none lg:basis-[50vw] lg:max-w-[50vw]">
                                     <OpenProjectFigmaUnitPanel
                                         projectId={project._id}
                                         unitId={selectedUnitId}
@@ -357,8 +472,9 @@ function OpenProjectFigma3dPage({
                                 </div>
                             ) : null}
                         </div>
-                    </aside>
+                    </motion.aside>
                 ) : null}
+                </AnimatePresence>
             </div>
         </div>
     );
@@ -384,6 +500,7 @@ function OpenProjectFigmaPage(props: PageProps) {
     const node = NODE_BY_VIEW[view];
 
     return (
+        <MotionConfig reducedMotion="user">
         <PublicPageShell nodeId={node.id} nodeName={node.name}>
             {view === "grid" ? (
                 <PublicSection flush>
@@ -458,6 +575,7 @@ function OpenProjectFigmaPage(props: PageProps) {
                 </div>
             )}
         </PublicPageShell>
+        </MotionConfig>
     );
 }
 

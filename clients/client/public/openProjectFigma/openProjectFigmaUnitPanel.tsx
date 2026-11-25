@@ -108,7 +108,7 @@ function OpenProjectFigmaUnitPanel({
                         {resolveLanguageKey("loadError")}
                     </p>
                 ) : (
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-2 duration-500 motion-reduce:animate-none">
                         <PropertyGallerySection unit={unit} compact />
                         <div className="grid w-full grid-cols-1 gap-4 min-[48rem]:grid-cols-12 min-[48rem]:gap-4">
                             <PropertyDetailsSection

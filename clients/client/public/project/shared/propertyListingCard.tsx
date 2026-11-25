@@ -63,16 +63,16 @@ function statusOverlayClassName(status: string): string {
     const base =
         "rounded-full px-2.5 py-1 font-aeonik-light text-xs leading-[1.2] text-white backdrop-blur-[17px] sm:px-3 sm:py-1.5 sm:text-sm";
     if (status === "available") {
-        return `${base} bg-[rgba(91,184,93,0.4)]`;
+        return `${base} bg-[rgba(47,157,68,0.85)]`;
     }
     if (status === "reserved") {
-        return `${base} bg-[rgba(245,158,11,0.45)]`;
+        return `${base} bg-[rgba(202,138,4,0.85)]`;
     }
     if (status === "sold") {
-        return `${base} bg-[rgba(24,24,24,0.45)]`;
+        return `${base} bg-[rgba(24,24,24,0.75)]`;
     }
     if (status === "unavailable") {
-        return `${base} bg-[rgba(107,114,128,0.55)]`;
+        return `${base} bg-[rgba(107,114,128,0.85)]`;
     }
     return `${base} bg-[rgba(24,24,24,0.45)]`;
 }

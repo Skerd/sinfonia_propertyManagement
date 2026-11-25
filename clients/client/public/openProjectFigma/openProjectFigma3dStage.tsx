@@ -1,5 +1,7 @@
 import {useMemo, useState} from "react";
 import {useSearchParams} from "react-router-dom";
+import {motion} from "motion/react";
+import {IconArrowRight} from "@tabler/icons-react";
 import PolygonSelector from "@coreModule/components/customUnchecked/polygonSelector.tsx";
 import {resolveMarketingMediaUrl} from "@propertyManagementModule/clients/client/public/shared/resolveMarketingMedia.ts";
 import {resolveProjectFallbackImage} from "@propertyManagementModule/clients/client/public/project/shared/resolveProjectFallbackImage.ts";
@@ -13,6 +15,8 @@ type OpenProjectFigma3dStageProps = {
     project: MarketingProjectSingle;
     resolveLanguageKey: (key: string) => string;
     phantomsAlwaysVisible: boolean;
+    /** `cover` fills a landscape screen edge to edge; portrait screens keep the whole render in view. */
+    objectFit: "contain" | "cover";
 };
 
 function resolveImageUrl(url: string | undefined, project: MarketingProjectSingle): string {
@@ -30,11 +34,12 @@ function OpenProjectFigma3dStage({
     project,
     resolveLanguageKey,
     phantomsAlwaysVisible,
+    objectFit,
 }: OpenProjectFigma3dStageProps) {
     const [searchParams, setSearchParams] = useSearchParams();
     const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-    const edifices = project.edifices ?? [];
+    const edifices = useMemo(() => project.edifices ?? [], [project.edifices]);
     const selectedFloorId = searchParams.get("floorId") ?? "";
 
     const floorPolygons = useMemo(() => {
@@ -50,6 +55,16 @@ function OpenProjectFigma3dStage({
     const floorsCanvasEdifice = useMemo(() => {
         const withFloors = edifices.filter((edifice) => (edifice.floorsCoordinates ?? []).length > 0);
         return withFloors.length === 1 ? withFloors[0] : undefined;
+    }, [edifices]);
+
+    const availableByFloorId = useMemo(() => {
+        const counts = new Map<string, number>();
+        for (const edifice of edifices) {
+            for (const floor of edifice.floors ?? []) {
+                counts.set(floor._id, (floor.units ?? []).filter((unit) => unit.status === "available").length);
+            }
+        }
+        return counts;
     }, [edifices]);
 
     const imageUrl = resolveImageUrl(floorsCanvasEdifice?.mainImage ?? project.mainImage, project);
@@ -68,9 +83,24 @@ function OpenProjectFigma3dStage({
         setSearchParams(params);
     };
 
-    const renderHover = (item: MarketingPolygonItem) => (
-        <div className="bg-white px-3 py-2 font-aeonik-medium text-sm text-pronix-ink md:text-base">{item.name}</div>
-    );
+    const renderHover = (item: MarketingPolygonItem) => {
+        const available = availableByFloorId.get(item._id);
+        return (
+            <div className="animate-in fade-in zoom-in-95 slide-in-from-top-1 bg-white px-3 py-2 text-pronix-ink duration-200 motion-reduce:animate-none">
+                <p className="font-aeonik-medium text-sm md:text-base">{item.name}</p>
+                {available != null ? (
+                    <p className="mt-0.5 flex items-center gap-1.5 font-aeonik-light text-xs text-pronix-ink-muted md:text-sm">
+                        <span className={available > 0 ? "size-1.5 rounded-full bg-[#2f9d44]" : "size-1.5 rounded-full bg-[#6b7280]"} />
+                        {resolveLanguageKey("floorAvailableCount").replace("{{count}}", String(available))}
+                    </p>
+                ) : null}
+                <p className="mt-1 flex items-center gap-1 font-aeonik-light text-xs text-pronix-blue md:text-sm">
+                    {resolveLanguageKey("floorOpenHint")}
+                    <IconArrowRight className="size-3.5" strokeWidth={1.75} aria-hidden />
+                </p>
+            </div>
+        );
+    };
 
     if (floorPolygons.length === 0) {
         return (
@@ -83,13 +113,19 @@ function OpenProjectFigma3dStage({
     }
 
     return (
-        <div className="h-full min-h-0 w-full">
+        <motion.div
+            className="h-full min-h-0 w-full"
+            initial={{opacity: 0, scale: 1.04}}
+            animate={{opacity: 1, scale: 1}}
+            transition={{duration: 1.1, ease: [0.22, 1, 0.36, 1]}}
+        >
             <PolygonSelector
                 fillHeight
                 dashboard
                 borderless
                 disabled
                 hideControls
+                objectFit={objectFit}
                 phantomsAlwaysVisible={phantomsAlwaysVisible}
                 imageUrl={imageUrl}
                 phantomPoints={floorPolygons}
@@ -101,7 +137,7 @@ function OpenProjectFigma3dStage({
                 initialPoints={[]}
                 onPointsChange={() => {}}
             />
-        </div>
+        </motion.div>
     );
 }
 

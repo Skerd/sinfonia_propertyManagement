@@ -1,4 +1,5 @@
 import {useMemo} from "react";
+import {IconChartLine} from "@tabler/icons-react";
 import type {MarketingUnitPriceHistoryEntry} from "@propertyManagementModule/clients/client/public/shared/publicTypes.ts";
 import {buildPropertyPriceHistoryPlot} from "@propertyManagementModule/clients/client/public/property/shared/propertyPriceHistoryData.ts";
 import PropertyPriceHistoryChart from "@propertyManagementModule/clients/client/public/property/components/propertyPriceHistoryChart.tsx";
@@ -47,7 +48,7 @@ function OpenProjectFigmaFinanceChart({
 
     return (
         <div
-            className="relative flex h-full min-h-[28rem] w-full flex-col rounded-[5px] border border-[rgba(24,24,24,0.2)] p-6 md:p-8"
+            className="relative flex h-full min-h-[18rem] w-full flex-col rounded-[5px] border border-[rgba(24,24,24,0.2)] p-6 animate-in fade-in duration-500 motion-reduce:animate-none sm:min-h-[24rem] md:p-8 lg:min-h-[28rem]"
             data-node-id="475:1259"
         >
             <div className="flex flex-wrap items-center justify-between gap-4" data-node-id="475:1752">
@@ -100,8 +101,9 @@ function OpenProjectFigmaFinanceChart({
                     </div>
                 </div>
             ) : (
-                <div className="mt-8 flex min-h-[240px] flex-1 items-center justify-center">
-                    <p className="font-aeonik-light text-lg text-pronix-ink-muted">{emptyLabel}</p>
+                <div className="mt-6 flex min-h-[10rem] flex-1 flex-col items-center justify-center gap-3 md:mt-8 md:min-h-[240px]">
+                    <IconChartLine className="size-10 text-pronix-ink-muted/50" strokeWidth={1.25} aria-hidden />
+                    <p className="text-center font-aeonik-light text-base text-pronix-ink-muted md:text-lg">{emptyLabel}</p>
                 </div>
             )}
         </div>

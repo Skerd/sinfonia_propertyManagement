@@ -82,5 +82,8 @@
   "energyClassLabel": "Klasa energjetike",
   "constructionStartLabel": "Fillimi i ndërtimit",
   "completionLabel": "Përfundimi i pritur",
-  "priceOnRequest": "Sipas kërkesës"
+  "priceOnRequest": "Sipas kërkesës",
+  "floorAvailableCount": "{{count}} të lira",
+  "floorOpenHint": "Shiko njësitë",
+  "tapFloorHint": "Prekni një kat për të parë njësitë"
 }

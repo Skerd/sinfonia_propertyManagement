@@ -1,6 +1,7 @@
 import {useMemo, useState} from "react";
 import {Link} from "react-router-dom";
 import {IconChevronLeft} from "@tabler/icons-react";
+import {motion} from "motion/react";
 import PropertyListingCard from "@propertyManagementModule/clients/client/public/project/shared/propertyListingCard.tsx";
 import {flattenCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/flattenCatalogUnits.ts";
 import {sortCatalogUnits} from "@propertyManagementModule/clients/client/public/project/shared/applyProjectUnitsFilters.ts";
@@ -53,7 +54,7 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                     <p className="whitespace-nowrap font-aeonik-light text-lg text-pronix-ink md:text-2xl">
                         {visible.length} {resolveLanguageKey("apartmentsLabel")}
                     </p>
-                    <label className="flex w-full max-w-xs items-center justify-between gap-4 rounded-[5px] border border-pronix-border px-4 py-2 md:px-6">
+                    <label className="flex w-full items-center justify-between gap-4 rounded-[5px] border border-pronix-border px-4 py-2 transition-colors focus-within:border-pronix-ink/40 hover:border-pronix-ink/30 sm:max-w-xs md:px-6">
                         <span className="sr-only">{resolveLanguageKey("sortBy")}</span>
                         <NativeSelect bare
                             value={sortKey}
@@ -70,17 +71,30 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                 </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 font-aeonik-light text-lg text-pronix-ink md:text-2xl" data-node-id="495:657">
+            <div
+                className="hide-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 font-aeonik-light text-lg text-pronix-ink sm:mx-0 sm:flex-wrap sm:gap-4 sm:overflow-visible sm:px-0 md:text-2xl"
+                data-node-id="495:657"
+            >
                 {STATUS_FILTERS.map((filter) => (
                     <Button
                         type="button"
                         variant="bare"
                         key={filter}
-                        className={cn(`rounded-[5px] px-6 py-2 ${
-                            status === filter ? "border border-pronix-border" : "text-pronix-ink-muted"
-                        }`)}
+                        aria-pressed={status === filter}
+                        className={cn(
+                            "relative shrink-0 whitespace-nowrap rounded-[5px] px-5 py-2 transition-colors duration-200 sm:px-6",
+                            status === filter ? "text-pronix-ink" : "text-pronix-ink-muted hover:text-pronix-ink",
+                        )}
                         onClick={() => setStatus(filter)}
                     >
+                        {status === filter ? (
+                            <motion.span
+                                layoutId="open-project-grid-filter"
+                                className="absolute inset-0 rounded-[5px] border border-pronix-border"
+                                transition={{type: "spring", stiffness: 480, damping: 38}}
+                            />
+                        ) : null}
+                        <span className="relative">
                         {resolveLanguageKey(
                             filter === "available"
                                 ? "filterAvailable"
@@ -92,6 +106,7 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                                       ? "filterUnavailable"
                                       : "filterAll",
                         )}
+                        </span>
                     </Button>
                 ))}
             </div>
@@ -99,9 +114,17 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
             {visible.length === 0 ? (
                 <p className="font-aeonik-light text-lg text-pronix-ink-muted">{resolveLanguageKey("noUnits")}</p>
             ) : (
-                <div className={PUBLIC_GRID_PROJECTS_GALLERY} data-node-id="495:671">
-                    {visible.map((unit) => (
-                        <div key={unit._id} className={PUBLIC_GRID_CELL}>
+                <div key={`${status}:${sortKey}`} className={PUBLIC_GRID_PROJECTS_GALLERY} data-node-id="495:671">
+                    {visible.map((unit, index) => (
+                        <div
+                            key={unit._id}
+                            className={cn(
+                                PUBLIC_GRID_CELL,
+                                "animate-in fade-in slide-in-from-bottom-3 fill-mode-both duration-500 motion-reduce:animate-none",
+                            )}
+                            style={{animationDelay: `${Math.min(index, 8) * 50}ms`}}
+                        >
+                            <div className="h-full transition-transform duration-300 hover:-translate-y-1 motion-reduce:hover:translate-y-0">
                             <PropertyListingCard
                                 unit={unit}
                                 projectId={project._id}
@@ -119,6 +142,7 @@ function OpenProjectFigmaGridView({project, resolveLanguageKey}: OpenProjectFigm
                                 favoriteAddLabel={String(resolveLanguageKey("favoritesAdd"))}
                                 favoriteRemoveLabel={String(resolveLanguageKey("favoritesRemove"))}
                             />
+                            </div>
                         </div>
                     ))}
                 </div>

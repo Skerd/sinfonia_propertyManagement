@@ -161,7 +161,7 @@ function GalleryStageBody({
                                 key={slide.key}
                                 aria-label={`Slide ${index + 1}`}
                                 aria-current={index === activeIndex ? "true" : undefined}
-                                className={cn(`h-2 rounded-full transition ${
+                                className={cn(`h-2 rounded-full transition-all duration-300 ${
                                     index === activeIndex ? "w-8 bg-white" : "w-2 bg-white/50"
                                 }`)}
                                 onClick={() => api?.scrollTo(index)}
@@ -220,7 +220,10 @@ function OpenProjectFigmaGalleryStage({
     );
 
     return (
-        <div className="relative h-full min-h-[28rem] w-full overflow-hidden rounded-[5px] lg:min-h-0" data-node-id="472:1229">
+        <div
+            className="relative aspect-[16/10] w-full overflow-hidden rounded-[5px] animate-in fade-in zoom-in-[0.98] duration-700 motion-reduce:animate-none lg:my-auto lg:aspect-video lg:max-h-full"
+            data-node-id="472:1229"
+        >
             <Carousel
                 key={selectedEdificeId ?? project._id}
                 opts={carouselOpts}
