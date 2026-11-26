@@ -15,8 +15,6 @@ type OpenProjectFigma3dStageProps = {
     project: MarketingProjectSingle;
     resolveLanguageKey: (key: string) => string;
     phantomsAlwaysVisible: boolean;
-    /** `cover` fills a landscape screen edge to edge; portrait screens keep the whole render in view. */
-    objectFit: "contain" | "cover";
 };
 
 function resolveImageUrl(url: string | undefined, project: MarketingProjectSingle): string {
@@ -34,7 +32,6 @@ function OpenProjectFigma3dStage({
     project,
     resolveLanguageKey,
     phantomsAlwaysVisible,
-    objectFit,
 }: OpenProjectFigma3dStageProps) {
     const [searchParams, setSearchParams] = useSearchParams();
     const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -125,7 +122,8 @@ function OpenProjectFigma3dStage({
                 borderless
                 disabled
                 hideControls
-                objectFit={objectFit}
+                // `cover` cropped a tall render on wide screens and pushed the building out of view.
+                objectFit="contain"
                 phantomsAlwaysVisible={phantomsAlwaysVisible}
                 imageUrl={imageUrl}
                 phantomPoints={floorPolygons}

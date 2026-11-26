@@ -287,7 +287,6 @@ function OpenProjectFigma3dPage({
                     project={project}
                     resolveLanguageKey={resolveLanguageKey}
                     phantomsAlwaysVisible={phantomsAlwaysVisible}
-                    objectFit={landscape ? "cover" : "contain"}
                 />
             </div>
 
